@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Environmental Health Emergencies — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">MEDICINE IN AUSTERE ENVIRONMENTS</span>
+      <div class="h1">Environmental Health Emergencies</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify <b>Environmental Health Emergencies</b>: Natural vs Man-made, Acute vs Chronic</li><li>[ ] Manage <b>Natural Disasters</b>: Floods, Cyclones/Hurricanes, Earthquakes, Tsunamis, Volcanic Eruptions</li><li>[ ] Manage <b>Man-Made Disasters</b>: Chemical Incidents, Radiation Emergencies, Industrial Accidents, Conflict/War</li><li>[ ] Apply <b>Disaster Health Management Cycle</b>: Mitigation, Preparedness, Response, Recovery</li><li>[ ] Implement <b>Public Health Response</b>: WASH, Shelter, Nutrition, Disease Surveillance, Mental Health</li><li>[ ] Apply <b>Preparedness &amp; Resilience</b>: Early Warning Systems, Hospital Surge Capacity, Community Resilience, One Health</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Disaster Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Examples</th><th>Key Characteristics</th></tr><tr><td>----------</td><td>-----------</td><td>---------------------</td></tr><tr><td>**Natural Disasters**</td><td>Floods, Cyclones/Hurricanes, Earthquakes, Tsunamis, Volcanic Eruptions, Wildfires, Droughts, Heatwaves</td><td>Natural forces, often predictable (some), wide geographic impact</td></tr><tr><td>**Man-Made (Technological)**</td><td>Chemical Spills, Radiation Accidents, Industrial Explosions, Transport Accidents, Structural Collapse</td><td>Human error/system failure, localized or regional, often sudden</td></tr><tr><td>**Complex Emergencies**</td><td>**Conflict/War**, Complex Humanitarian Crises</td><td>Conflict + Displacement + Health System Collapse + Food Insecurity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Natural Disasters — Health Impacts & Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Floods</div>
+<table class="ctable"><tr><th>Phase</th><th>Health Risks</th><th>Public Health Response</th></tr><tr><td>-------</td><td>--------------</td><td>------------------------</td></tr><tr><td>**Acute (Days)**</td><td>**Drowning**, **Trauma**, **Hypothermia**, **Electrocution**, **Snake/Animal Bites**</td><td>**Search & Rescue**, **Evacuation**, **Emergency Medical Care**, **Tetanus Prophylaxis**</td></tr><tr><td>**Subacute (Days-Weeks)**</td><td>**Waterborne**: Cholera, Typhoid, Hepatitis A/E, Leptospirosis, Dysentery<br>**Vector-borne**: Dengue, Malaria (Post-flood mosquito breeding)<br>**Skin/Soft Tissue**: Cellulitis, Fungal, Trench Foot</td><td>**WASH**: Safe Water (Chlorination/Boiling), Sanitation (Latrines), Hygiene Promotion<br>**Disease Surveillance**: EWARS (Early Warning Alert and Response System)<br>**Vaccination**: Cholera OCV, Hepatitis A, Typhoid (if indicated)</td></tr><tr><td>**Chronic (Months)**</td><td>**Mental Health** (PTSD, Depression, Anxiety), **Malnutrition**, **Vector-borne Resurgence**, **Mould/Indoor Air Quality**</td><td>**Mental Health/Psychosocial Support**, **Nutrition Support**, **Vector Control**, **Housing Repair**</td></tr></table>
+<div class="sub-h">2. Cyclones / Hurricanes / Typhoons</div>
+<table class="ctable"><tr><th>Phase</th><th>Health Risks</th><th>Key Actions</th></tr><tr><td>-------</td><td>--------------</td><td>-------------</td></tr><tr><td>**Pre-Landfall**</td><td>**Evacuation**, **Storm Surge**, **Wind Damage**</td><td>**Evacuation Orders**, **Shelters**, **Pre-position Supplies**</td></tr><tr><td>**During**</td><td>**Trauma (Debris, Structural Collapse)**, **Drowning (Storm Surge)**, **Carbon Monoxide** (Generators)</td><td>**Shelter-in-Place**, **Stay Indoors**, **CO Detectors**</td></tr><tr><td>**Post-Landfall**</td><td>**Trauma Care**, **Waterborne/Vector-borne Diseases**, **Power Outage → Cold Chain Failure**, **Mental Health**</td><td>**Triage/Triage Tags**, **Field Hospitals**, **Water/Water Purification**, **Disease Surveillance**, **Mental Health Support**</td></tr></table>
+<div class="sub-h">3. Earthquakes</div>
+<table class="ctable"><tr><th>Phase</th><th>Health Risks</th><th>Key Actions</th></tr><tr><td>-------</td><td>--------------</td><td>-------------</td></tr><tr><td>**Immediate**</td><td>**Trauma** (Crush Injuries, Fractures, Head Injury), **Crush Syndrome** (Rhabdomyolysis → AKI), **Building Collapse**, **Fire**, **Dust Inhalation**</td><td>**Triage (START/SALT)**, **FAST (Focused Assessment with Sonography for Trauma)**, **Crush Syndrome Protocol** (Hydration, Alkalinisation, Dialysis), **Surgical Capacity**</td></tr><tr><td>**Early (Days)**</td><td>**Wound Infections**, **Crush Syndrome Complications**, **Psychological Trauma**, **Displacement**</td><td>**Wound Care**, **Antibiotics**, **Renal Replacement Therapy**, **Mental Health**</td></tr><tr><td>**Recovery**</td><td>**Waterborne/Vector-borne**, **Mental Health (PTSD)**, **Displacement/Overcrowding**</td><td>**Reconstruction**, **Surveillance**, **Mental Health Services**</td></tr></table>
+<div class="callout">[!warning] <b>Crush Syndrome = Compression &gt;4-6h → Rhabdomyolysis → Hyperkalaemia, Hyperphosphataemia, Hypocalcaemia, AKI, ARF</b>. <b>Treatment: Aggressive Hydration, Alkalinisation (Bicarbonate), Dialysis</b>.</div>
+<div class="sub-h">4. Tsunamis</div>
+<table class="ctable"><tr><th>Phase</th><th>Health Risks</th><th>Key Actions</th></tr><tr><td>-------</td><td>--------------</td><td>-------------</td></tr><tr><td>**Immediate**</td><td>**Drowning**, **Trauma (Debris Impact)**, **Near-Drowning**, **Aspiration Pneumonia**</td><td>**Evacuation to Higher Ground**, **Rescue**, **CPR/Rescue Breathing**</td></tr><tr><td>**Post-Event**</td><td>**Waterborne Diseases** (Saline Contamination), **Vector-borne**, **Trauma/Wound Infections**, **Saltwater Exposure**</td><td>**Desalination/Water Purification**, **Wound Care**, **Surveillance**, **Saltwater-Specific Wound Care**</td></tr></table>
+<div class="sub-h">5. Volcanic Eruptions</div>
+<table class="ctable"><tr><th>Hazard</th><th>Health Impact</th><th>Response</th></tr><tr><td>--------</td><td>---------------</td><td>----------</td></tr><tr><td>**Ash Fall**</td><td>**Respiratory** (Asthma, COPD, Silicosis), **Eye Irritation**, **Skin Irritation**, **Roof Collapse**, **Water Contamination**</td><td>**Masks (N95/FFP2)**, **Shelter Indoors**, **Eye Protection**, **Water Treatment**</td></tr><tr><td>**Pyroclastic Flows / Lava**</td><td>**Burns**, **Trauma**, **Asphyxiation**, **Death**</td><td>**Evacuation** (Pre-emptive), **Exclusion Zones**</td></tr><tr><td>**Gas Emissions (SO2, CO2, H2S, HCl, HF)**</td><td>**Respiratory Irritation**, **Asphyxiation (CO2 in Valleys)**, **Acid Rain**</td><td>**Monitoring**, **Evacuation**, **Gas Masks**</td></tr><tr><td>**Lahars (Mudflows)**</td><td>**Drowning, Trauma, Burial**</td><td>**Early Warning**, **Evacuation Routes**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Man-Made Disasters</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Chemical Incidents</div>
+<table class="ctable"><tr><th>Agent Type</th><th>Examples</th><th>Key Health Effects</th><th>Response</th></tr><tr><td>------------</td><td>----------</td><td>-------------------</td><td>----------</td></tr><tr><td>**Chlorine / Chloramine**</td><td>Water Treatment, Industrial</td><td>**Acute Lung Injury, ARDS, RADS**</td><td>**Evacuation/Upwind**, **Decontamination**, **Supportive Respiratory**</td></tr><tr><td>**Ammonia**</td><td>Refrigeration, Fertiliser</td><td>**Corrosive Burns (Eyes, Skin, Airways)**, **Laryngeal Oedema**</td><td>**Decontamination**, **Airway Management**</td></tr><tr><td>**Cyanide**</td><td>Industrial, Fire Smoke</td><td>**Histotoxic Hypoxia** (Seizures, Coma, Cardiac Arrest)</td><td>**Hydroxocobalamin / Nitrite-Thiosulfate**, **100% O2**</td></tr><tr><td>**Phosgene**</td><td>Industrial, Chemical Warfare</td><td>**Delayed Pulmonary Oedema** (6-24h)</td><td>**Observation 24-48h**, **Oxygen, Steroids**</td></tr><tr><td>**Vesicants (Mustard Gas, Lewisite)**</td><td>Chemical Warfare</td><td>**Skin Blistering (Delayed), Eye Damage, Bone Marrow Suppression**</td><td>**Decontamination**, **Supportive**, **Lewisite → British Anti-Lewisite (BAL)**</td></tr><tr><td>**Nerve Agents (Sarin, VX, Tabun)**</td><td>Chemical Warfare</td><td>**Cholinergic Crisis** (SLUDGE), Seizures, Apnoea</td><td>**Atropine + Pralidoxime**, **Diazepam**, **Decontamination**</td></tr><tr><td>**Riot Control Agents (CS/CR Gas)**</td><td>Law Enforcement</td><td>**Eye/Respiratory Irritation**, Transient</td><td>**Fresh Air, Decontamination (Water), Symptomatic**</td></tr></table>
+<div class="sub-h">Radiation Emergencies</div>
+<table class="ctable"><tr><th>Scenario</th><th>Key Health Effects</th><th>Response</th></tr><tr><td>----------</td><td>-------------------</td><td>----------</td></tr><tr><td>**Nuclear Power Plant Accident** (Chernobyl, Fukushima)</td><td>**External/Internal Contamination**, **ARS**, **Thyroid Cancer (I-131)**, **Long-term Cancer**</td><td>**Evacuation/Sheltering**, **KI (KI 100mg Adults/Children>10y, 50mg 1m-3y, 16mg <1m)**, **Food Restrictions, Decontamination**</td></tr><tr><td>**Radiological Dispersal Device (Dirty Bomb)**</td><td>**Local Contamination**, **Psychological**</td><td>**Area Cordon, Decontamination, Monitoring**</td></tr><tr><td>**Nuclear Detonation**</td><td>**Blast, Thermal, Prompt Radiation, Fallout**</td><td>**Shelter, Decontamination, Medical Countermeasures (Cytokines, KI)**</td></tr></table>
+<table class="ctable"><tr><th>Radiation Syndrome</th><th>Dose (Gy)</th><th>Clinical Features</th></tr><tr><td>--------------------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**ARS - Haematopoietic**</td><td>1-6</td><td>**Nadir 2-4 Weeks**: Pancytopenia, Infection, Bleeding</td></tr><tr><td>**ARS - GI**</td><td>6-20</td><td>**Nausea/Vomiting (<1h) → Diarrhoea → Sepsis → Death**</td></tr><tr><td>**ARS - CNS/Cardiovascular**</td><td>>20</td><td>**Rapid Neurological Collapse → Death (Hours-Days)**</td></tr></table>
+<div class="sub-h">Industrial Accidents</div>
+<table class="ctable"><tr><th>Type</th><th>Examples</th><th>Key Response</th></tr><tr><td>------</td><td>----------</td><td>--------------</td></tr><tr><td>**Explosions / Fires**</td><td>Industrial Plants, Refineries, Warehouses</td><td>**Mass Casualty Plan**, **Burn Units**, **Triage**, **Decontamination**</td></tr><tr><td>**Structural Collapse**</td><td>Building Collapse, Bridge Collapse</td><td>**USAR (Urban Search & Rescue)**, **Crush Syndrome Protocol**</td></tr><tr><td>**Transport Accidents**</td><td>Train Derailment (Chemical), Road/Air Crashes</td><td>**Mass Casualty**, **Hazmat**, **Triage**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Disaster Health Management Cycle</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="LR">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">**Mitigation**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Preparedness**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Response**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">**Recovery**</div>
+</div>
+</div>
+<div class="sub-h">1. Mitigation (Pre-Disaster)</div>
+<table class="ctable"><tr><th>Action</th><th>Examples</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Structural**</td><td>Flood Defences (Levees, Dams), Seismic Building Codes, Cyclone Shelters, Land-Use Planning (No Build Zones)</td></tr><tr><td>**Non-Structural**</td><td>**Land-Use Planning**, **Building Codes**, **Insurance**, **Public Education**, **Environmental Protection**</td></tr></table>
+<div class="sub-h">2. Preparedness</div>
+<table class="ctable"><tr><th>Element</th><th>Key Actions</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**Early Warning Systems**</td><td>**Multi-Hazard EWS**, **Community Alerts** (SMS, Sirens, Media), **Tsunami/Cyclone/Flood Alerts**</td></tr><tr><td>**Surge Capacity**</td><td>**Hospital Surge Plans**, **Alternate Care Sites**, **Medical Supply Stockpiles**, **Staff Recall Plans**</td></tr><tr><td>**Training & Exercises**</td><td>**Mass Casualty Drills**, **Triage Training**, **PPE Drills**, **Decontamination Drills**</td></tr><tr><td>**Community Preparedness**</td><td>**Family Emergency Plans**, **Community Response Teams (CERT)**, **First Aid Training**</td></tr><tr><td>**Logistics**</td><td>**Pre-positioned Supplies** (Medical, WASH, Shelter, Food), **Supply Chain Agreements**</td></tr></table>
+<div class="sub-h">3. Response (Acute Phase)</div>
+<table class="ctable"><tr><th>Priority</th><th>Actions</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Life-Saving**</td><td>**Search & Rescue (USAR)**, **Triage (START/SALT)**, **Emergency Medical Care**, **Evacuation**</td></tr><tr><td>**Public Health**</td><td>**WASH (Water, Sanitation, Hygiene)**, **Disease Surveillance (EWARS)**, **Vaccination Campaigns**, **Nutrition Support**</td></tr><tr><td>**Coordination**</td><td>**Incident Command System (ICS)**, **Health Cluster Coordination**, **Information Management**</td></tr><tr><td>**Communication**</td><td>**Risk Communication**, **Rumour Control**, **Community Engagement**</td></tr></table>
+<div class="sub-h">4. Recovery (Post-Disaster)</div>
+<table class="ctable"><tr><th>Domain</th><th>Actions</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Health System**</td><td>**Restore Facilities**, **Workforce Recovery**, **Supply Chain Restoration**</td></tr><tr><td>**Public Health**</td><td>**Disease Surveillance**, **Vaccination Catch-up**, **Mental Health Services**, **Surveillance for Outbreaks**</td></tr><tr><td>**Infrastructure**</td><td>**Rebuild Resilient**, **WASH Infrastructure**, **Health Facility Reconstruction**</td></tr><tr><td>**Community**</td><td>**Mental Health (PTSD, Depression)**, **Livelihood Restoration**, **Displacement Solutions**</td></tr><tr><td>**Monitoring**</td><td>**After-Action Review**, **Lessons Learned**, **Update Plans**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🌊 Public Health Response — Core Interventions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">WASH (Water, Sanitation, Hygiene)</div>
+<table class="ctable"><tr><th>Component</th><th>Minimum Standards (Sphere)</th></tr><tr><td>-----------</td><td>----------------------------</td></tr><tr><td>**Water Quantity**</td><td>**15 L/person/day** (Survival: 7.5 L)</td></tr><tr><td>**Water Quality**</td><td>**E. coli 0/100mL**, **Chlorine Residual 0.2-0.5 mg/L**, **Turbidity <5 NTU**</td></tr><tr><td>**Sanitation**</td><td>**1 Toilet / 20 People** (Sex-Separated), **Handwashing Stations**</td></tr><tr><td>**Hygiene Promotion**</td><td>**Handwashing with Soap**, **Menstrual Hygiene**, **Safe Waste Disposal**</td></tr></table>
+<div class="sub-h">Disease Surveillance (EWARS)</div>
+<table class="ctable"><tr><th>Component</th><th>Action</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Syndromic Surveillance**</td><td>**Daily Reporting**: Acute Watery Diarrhoea, Bloody Diarrhoea, Measles, Meningitis, AFP, Fever+Rash, Jaundice, Unexplained Death</td></tr><tr><td>**Event-Based**</td><td>**Rumour Verification**, **Lab Confirmation**, **Outbreak Investigation**</td></tr><tr><td>**Reporting**</td><td>**Daily/Weekly Reports**, **Threshold Alerts**, **Feedback Loop**</td></tr></table>
+<div class="sub-h">Vaccination in Emergencies</div>
+<table class="ctable"><tr><th>Vaccine</th><th>Indication</th><th>Schedule</th></tr><tr><td>---------</td><td>------------</td><td>----------</td></tr><tr><td>**Measles**</td><td>**Children 6m-15y** (Camp/Displaced)</td><td>**Single Dose** (9m-15y: 2nd Dose Later)</td></tr><tr><td>**Cholera (OCV)**</td><td>**Outbreak / High Risk**</td><td>**2 Doses (14d Apart)** or **Single Dose (Reactive)**</td></tr><tr><td>**Meningitis (MenA/ACWY)**</td><td>**Meningitis Belt / Outbreak**</td><td>**Single Dose**</td></tr><tr><td>**Hepatitis A**</td><td>**Outbreak / High Risk**</td><td>**2 Doses (6-12m Apart)**</td></tr><tr><td>**Tetanus**</td><td>**Wound Management / Routine**</td><td>**Booster / Primary Series**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🏥 Hospital & Health System Preparedness</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Key Actions</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Mass Casualty Plan**</td><td>**Triage Area**, **Decontamination Area**, **Surge Wards**, **Morgue Capacity**</td></tr><tr><td>**Supply Chain**</td><td>**Buffer Stock (7-14 Days)**, **Vendor Agreements**, **Inter-hospital Transfer Agreements**</td></tr><tr><td>**Workforce**</td><td>**Surge Staffing Plan**, **Just-in-Time Training**, **Psychosocial Support for Staff**</td></tr><tr><td>**Decontamination**</td><td>**Facility (Entrance), Patient (Ambulatory/Non-Ambulatory)**, **Waste Management**</td></tr><tr><td>**Communication**</td><td>**Internal (Staff), External (Public, Media, Partners), Redundant Systems**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🧠 Mental Health & Psychosocial Support (MHPSS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Phase</th><th>Interventions</th></tr><tr><td>-------</td><td>---------------</td></tr><tr><td>**Acute**</td><td>**Psychological First Aid (PFA)**, **Safe Spaces**, **Family Reunification**, **Basic Needs**</td></tr><tr><td>**Subacute**</td><td>**Community-Based MHPSS**, **Psychoeducation**, **Support Groups**, **Referral Pathways**</td></tr><tr><td>**Long-Term**</td><td>**Specialised Care (PTSD, Depression, Anxiety)**, **Integration into PHC**, **Community Resilience Building**</td></tr></table>
+<div class="callout">[!warning] <b>PTSD Rate Post-Disaster: 20-40%</b>. <b>Children, Women, Displaced, Bereaved = High Risk</b>. <b>Integrate MHPSS into PHC</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🛡️ Preparedness & Resilience</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Early Warning Systems (EWS)</div>
+<table class="ctable"><tr><th>Component</th><th>Elements</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Risk Knowledge**</td><td>**Hazard Maps, Scenarios, Historical Data**</td></tr><tr><td>**Monitoring & Warning**</td><td>**Meteorological/Seismic/Hydrological Sensors**, **Real-Time Data, Thresholds**</td></tr><tr><td>**Dissemination**</td><td>**Multi-Channel (SMS, Siren, Radio, TV, App, Community Leaders)**, **Clear Actionable Messages**</td></tr><tr><td>**Response Capability**</td><td>**Community Drills, Evacuation Routes, Shelters, Family Plans**</td></tr></table>
+<div class="sub-h">Hospital Surge Capacity</div>
+<table class="ctable"><tr><th>Level</th><th>Strategy</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Conventional**</td><td>**Normal Operations**, **Bed Management, Staff Rosters**</td></tr><tr><td>**Contingency**</td><td>**Cancel Electives, Discharge Stable, Cohort, Convert Spaces (Gym, Auditorium)**</td></tr><tr><td>**Crisis**</td><td>**Crisis Standards of Care**, **Triage Protocols (Utilitarian), Altered Scope, Mutual Aid, Military/Civilian Support**</td></tr></table>
+<div class="sub-h">Community Resilience</div>
+<table class="ctable"><tr><th>Element</th><th>Action</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Social Capital**</td><td>**Community Networks, Social Cohesion, Local Leadership**</td></tr><tr><td>**Local Knowledge**</td><td>**Indigenous/Traditional Knowledge, Hazard Memory**</td></tr><tr><td>**Self-Reliance**</td><td>**Household Preparedness (Kits, Plans), Neighbourhood Response Teams**</td></tr><tr><td>**Equity**</td><td>**Inclusive Planning (Disability, Gender, Language, Elderly, Children)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Disaster Cycle**</td><td>**Mitigation → Preparedness → Response → Recovery**</td></tr><tr><td>**Floods**</td><td>**Drowning, Trauma → Waterborne (Cholera, Typhoid, Lepto) → Vector-borne → Mental Health**</td></tr><tr><td>**Cyclones**</td><td>**Storm Surge, Wind Damage**, **Post: Waterborne, Vector, Mental Health**</td></tr><tr><td>**Earthquakes**</td><td>**Trauma, Crush Syndrome (Rhabdo → AKI), Building Collapse, Fire**</td></tr><tr><td>**Tsunamis**</td><td>**Drowning, Trauma, Saltwater Contamination**</td></tr><tr><td>**Volcanic**</td><td>**Ash (Respiratory), Pyroclastic Flows (Burns/Death), Gases (SO2, CO2), Lahars**</td></tr><tr><td>**Chemical**</td><td>**Chlorine (ARDS), Ammonia (Corrosive), Cyanide (Hydroxocobalamin), Vesicants (BAL), Nerve Agents (Atropine+Pralidoxime)**</td></tr><tr><td>**Radiation**</td><td>**KI for I-131**, **ARS Stages (Haematopoietic, GI, CNS)**, **Decontamination**</td></tr><tr><td>**Disaster Cycle**</td><td>**Mitigation → Preparedness → Response → Recovery**</td></tr><tr><td>**WASH**</td><td>**15L/p/d Water, Chlorine Residual 0.2-0.5mg/L, 1 Toilet/20p, Handwashing**</td></tr><tr><td>**Surveillance**</td><td>**EWARS: Daily Syndromic Reporting, Threshold Alerts, Outbreak Response**</td></tr><tr><td>**Vaccines**</td><td>**Measles (6m-15y), OCV (Cholera), MenA/ACWY, Hep A**</td></tr><tr><td>**Triage**</td><td>**START (Simple Triage and Rapid Treatment)**, **SALT**</td></tr><tr><td>**Crush Syndrome**</td><td>**Hydration, Alkalinisation, Dialysis**</td></tr><tr><td>**Radiation**</td><td>**KI for I-131**, **ARS Stages, Decontamination, Cytokines**</td></tr><tr><td>**Mental Health**</td><td>**PFA, Community-Based, PTSD/Depression/Anxiety, Integrate into PHC**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the phases of the disaster management cycle?</b></li></ol>
+<ul><li><b>Mitigation, Preparedness, Response, Recovery</b></li></ul>
+<ol><li><b>What is Crush Syndrome and how is it managed?</b></li></ol>
+<ul><li><b>Crush Injury &gt;4-6h → Rhabdomyolysis → Hyperkalaemia, AKI</b> → <b>IV Fluids, Bicarbonate Alkalinisation, Dialysis if Severe</b>.</li></ul>
+<ol><li><b>What are the health priorities in the first 72 hours after a major earthquake?</b></li></ol>
+<ul><li><b>Search &amp; Rescue, Triage, Trauma Care, Crush Syndrome Management, WASH, Disease Surveillance, Mental Health</b>.</li></ul>
+<ol><li><b>How do you manage a Chlorine Gas exposure?</b></li></ol>
+<ul><li><b>Remove from Exposure, Decontaminate, Supportive Respiratory Care (O2, Bronchodilators, Steroids if ARDS), Monitor for Delayed Pulmonary Oedema</b>.</li></ul>
+<ol><li><b>What is the immediate treatment for Cyanide poisoning?</b></li></ol>
+<ul><li><b>Hydroxocobalamin 5g IV</b> (Preferred) <b>OR</b> Nitrite-Thiosulfate Kit (Amyl Nitrite Inhalation → Sodium Nitrite IV → Sodium Thiosulfate IV).</li></ul>
+<ol><li><b>What is the recommended water quantity per person per day in emergencies?</b></li></ol>
+<ul><li><b>15 Litres/person/day</b> (Minimum 7.5 L Survival).</li></ul>
+<ol><li><b>What is the role of Potassium Iodide (KI) in radiation emergencies?</b></li></ol>
+<ul><li><b>Blocks Thyroid Uptake of Radioactive I-131</b>, <b>Dose: 130mg Adult/Child&gt;10y, 65mg 3-10y, 32mg 1m-3y, 16mg &lt;1m</b>, <b>Give Before/Shortly After Exposure</b>.</li></ul>
+<ol><li><b>How do you manage Crush Syndrome?</b></li></ol>
+<ul><li><b>Aggressive IV Hydration (NS/RL), Urine Alkalinisation (Bicarbonate), Monitor K+/Ca2+/CK, Early Dialysis if AKI/Oliguria/Hyperkalaemia</b>.</li></ul>
+<ol><li><b>What are the early warning system components?</b></li></ol>
+<ul><li><b>Risk Knowledge, Monitoring/Warning, Dissemination/Communication, Response Capability</b>.</li></ul>
+<ol><li><b>What vaccines are priority in humanitarian emergencies?</b></li></ol>
+<ul><li><b>Measles (6m-15y), Cholera (OCV), Meningitis (MenA/ACWY), Hepatitis A, Tetanus</b>.</li></ul>
+<ol><li><b>How do you triage in a mass casualty event?</b></li></ol>
+<ul><li><b>START (Simple Triage and Rapid Treatment)</b> or <b>SALT (Sort, Assess, Lifesaving Interventions, Treatment/Transport)</b> — <b>Red (Immediate), Yellow (Delayed), Green (Minor), Black (Expectant/Deceased)</b>.</li></ul>
+<ol><li><b>What is the minimum water quantity per person per day in emergencies?</b></li></ol>
+<ul><li><b>15 Litres/person/day</b> (Sphere Standard), <b>Minimum Survival 7.5 Litres</b>.</li></ul>
+<ol><li><b>What is the role of Mental Health in disaster response?</b></li></ol>
+<ul><li><b>Psychological First Aid (PFA) Immediately</b>, <b>Community-Based MHPSS</b>, <b>Integrate into PHC, Screen for PTSD/Depression/Anxiety</b>, <b>Long-term Follow-up</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Triage Systems**</td><td>**START = Rapid (30s/patient)**: RPM (Respirations, Perfusion, Mental Status); **SALT = Sort, Assess, Lifesaving, Treatment/Transport**</td></tr><tr><td>**Crush Syndrome vs Compartment Syndrome**</td><td>**Crush = Systemic (Rhabdo → AKI)**; **Compartment = Local (Pressure > Perfusion) → Fasciotomy**</td></tr><tr><td>**Radiation KI Timing**</td><td>**Best: Before/During Exposure**; **Effective Up to 24h Post-Exposure**; **Useless >24h**</td></tr><tr><td>**Cholera vs Typhoid in Disasters**</td><td>**Cholera: Rice-Water Stool, No Fever, Rapid Dehydration**; **Typhoid: Step-Ladder Fever, Rose Spots, Relative Bradycardia**</td></tr><tr><td>**Triage Categories**</td><td>**Red=Immediate, Yellow=Delayed, Green=Minor, Black=Expectant/Dead**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Disaster Cycle = Mitigate → Prepare → Respond → Recover"**</td><td>Cycle</td></tr><tr><td>**"Crush = Rhabdo → K+↑ → AKI → Fluids + Bicarb + Dialysis"**</td><td>Crush Syndrome</td></tr><tr><td>**"Triage: Red=Now, Yellow=Wait, Green=Walk, Black=Gone"**</td><td>Triage</td></tr><tr><td>**"WASH = Water 15L + Sanitation + Hygiene"**</td><td>WASH</td></tr><tr><td>**"KI = Thyroid Shield for I-131"**</td><td>Radiation</td></tr><tr><td>**"START = RPM (Resp, Perfusion, Mental)"**</td><td>Triage Algorithm</td></tr><tr><td>**"PFA = Look, Listen, Link"**</td><td>Psychological First Aid</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Environmental Health Emergencies))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Natural Disasters</div>
+<div class="mm-node mm-l3">– Floods: Drowning, Waterborne, Vector, Mental</div>
+<div class="mm-node mm-l3">– Cyclones: Surge, Wind, Post-Flood Risks</div>
+<div class="mm-node mm-l3">– Earthquakes: Trauma, Crush Syndrome, Building Collapse</div>
+<div class="mm-node mm-l3">– Tsunami: Drowning, Saltwater Wounds</div>
+<div class="mm-node mm-l3">– Volcanic: Ash (Resp), Pyroclastic (Burns), Gases, Lahars</div>
+<div class="mm-node mm-l2">Man-Made</div>
+<div class="mm-node mm-l3">– Chemical: Cl2, NH3, CN, Phosgene, Vesicants, Nerve Agents</div>
+<div class="mm-node mm-l3">– Radiation: KI, ARS Stages, Decontamination</div>
+<div class="mm-node mm-l3">– Industrial: Explosion, Collapse, Transport</div>
+<div class="mm-node mm-l2">Disaster Cycle</div>
+<div class="mm-node mm-l3">– Mitigation: Structural/Non-Structural</div>
+<div class="mm-node mm-l3">– Preparedness: EWS, Surge Capacity, Training, Stockpiles</div>
+<div class="mm-node mm-l3">– Response: SAR, Triage, WASH, Surveillance, Vaccines, Coordination (ICS)</div>
+<div class="mm-node mm-l3">– Recovery: Health System, Mental Health, Infrastructure, Livelihoods</div>
+<div class="mm-node mm-l2">Public Health Response</div>
+<div class="mm-node mm-l3">– WASH: 15L/d, Cl Residual, Latrines, Hygiene</div>
+<div class="mm-node mm-l3">– Surveillance: EWARS, Syndromic, Lab, Outbreak Response</div>
+<div class="mm-node mm-l3">– Vaccines: Measles, Cholera OCV, Meningitis, Hep A</div>
+<div class="mm-node mm-l3">– Nutrition, MHPSS (PFA, Community, Specialised)</div>
+<div class="mm-node mm-l2">Health System</div>
+<div class="mm-node mm-l3">– Surge Capacity (Conventional/Contingency/Crisis)</div>
+<div class="mm-node mm-l3">– Mass Casualty Plans, Decontamination, Supply Chain</div>
+<div class="mm-node mm-l3">– Triage (START/SALT), Mass Casualty Plans</div>
+<div class="mm-node mm-l2">Mental Health</div>
+<div class="mm-node mm-l3">– PFA, Community MHPSS, PTSD/Depression/Anxiety</div>
+<div class="mm-node mm-l2">Preparedness</div>
+<div class="mm-node mm-l3">– EWS: Risk Knowledge, Monitoring, Dissemination, Response Capability</div>
+<div class="mm-node mm-l3">– Surge Capacity: Conventional/Contingency/Crisis</div>
+<div class="mm-node mm-l3">– Community Resilience: Social Capital, Local Knowledge, Equity</div>
+<div class="mm-node mm-l2">One Health</div>
+<div class="mm-node mm-l3">– Zoonotic Spillover, Climate Change, Ecosystem Health</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**ENVIRONMENTAL HEALTH EMERGENCIES – FCPS/MRCP REVISION CARD**</th></tr><tr><td>-----------------------------------------------------------------</td></tr><tr><td>**Disaster Cycle**: **Mitigation → Preparedness → Response → Recovery**</td></tr><tr><td>**Floods**: Drowning → Water/Vector-borne → Mental Health</td></tr><tr><td>**Cyclones**: Surge, Wind → Post: Water/Vector/Mental</td></tr><tr><td>**Earthquakes**: **Trauma, Crush Syndrome (Rhabdo→AKI), Collapse, Fire**</td></tr><tr><td>**Tsunami**: Drowning, Trauma, Saltwater</td></tr><tr><td>**Volcanic**: Ash (Resp), Pyroclastic (Burns), Gases (SO2/CO2), Lahars</td></tr><tr><td>**Chemical**: Cl2 (ARDS), NH3 (Corrosive), CN (Hydroxocobalamin), Vesicants (BAL), Nerve (Atropine+Pralidoxime)</td></tr><tr><td>**Radiation**: **KI for I-131**, ARS (Hematopoietic/GI/CNS), Decontamination</td></tr><tr><td>**Crush Syndrome**: **Hydration + Alkalinisation (Bicarb) + Dialysis**</td></tr><tr><td>**Triage**: **START (RPM) / SALT** — Red/Yellow/Green/Black</td></tr><tr><td>**WASH**: **15L/d, Cl Residual 0.2-0.5mg/L, 1 Toilet/20p, Handwashing**</td></tr><tr><td>**Surveillance**: **EWARS (Daily Syndromic, Thresholds, Outbreak Response)**</td></tr><tr><td>**Vaccines**: **Measles, OCV, MenACWY, Hep A, Tetanus**</td></tr><tr><td>**Mental Health**: **PFA → Community MHPSS → Specialised (PTSD/Depression)**</td></tr><tr><td>**Crush Syndrome**: **Fluids + Bicarb + Dialysis**</td></tr><tr><td>**Radiation**: **KI (I-131), ARS Stages, Decontamination**</td></tr><tr><td>**Preparedness**: **EWS, Surge Capacity, Training, Stockpiles, Community Resilience**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Disaster cycle phases, Flood/earthquake/cyclone/tsunami/volcanic health impacts, Chemical/radiation syndromes & treatment, Crush syndrome management, Triage (START/SALT), WASH standards, EWARS, Priority vaccines, Crush syndrome management, KI for radiation, Mental health (PFA, MHPSS), Disaster cycle phases</td></tr><tr><td>**Should Know**</td><td>Specific disaster subtypes (tsunami vs cyclone vs flood), Chemical agents details (sarin, chlorine, phosgene, mustard), Radiation syndromes (ARS stages, KI dosing), Crush syndrome pathophysiology, Triage algorithms (START vs SALT), WASH technical standards (Sphere), EWARS reporting, Vaccine cold chain in emergencies, MHPSS pyramid, Hospital surge capacity levels, Early warning system components, Mass fatality management</td></tr><tr><td>**Nice to Know**</td><td>Novel diagnostics in epidemics, mHealth in disasters, Climate change & disaster frequency, Ethical dilemmas in triage, Cultural aspects of disaster response, Military-civilian coordination, Urban search & rescue (USAR) standards, Dead body management, Environmental remediation post-disaster, Economic impact assessment, Insurance mechanisms, Technology in disaster response (drones, AI, satellite), Private sector role</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Natural Disasters (Flood, Cyclone, EQ, Tsunami, Volcanic)</td><td></td><td></td></tr><tr><td>Man-Made (Chemical, Radiation, Industrial)</td><td></td><td></td></tr><tr><td>Disaster Management Cycle</td><td></td><td></td></tr><tr><td>Public Health Response (WASH, Surveillance, Vaccines)</td><td></td><td></td></tr><tr><td>Triage & Mass Casualty</td><td></td><td></td></tr><tr><td>Mental Health</td><td></td><td></td></tr><tr><td>Preparedness & Resilience</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Occupational Health]]</li><li><b>Next</b>: [[Environmental Medicine MOC]]</li><li><b>Section Hub</b>: [[Environmental Medicine MOC]]</li><li><b>MOC</b>: [[Hematology MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Environmental Health Emergencies · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

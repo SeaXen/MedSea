@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antimicrobial Stewardship &amp; Resistance — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Antimicrobial Stewardship &amp; Resistance</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define <b>Antimicrobial Stewardship (AMS)</b>: Coordinated interventions to improve antibiotic use</li><li>[ ] Implement <b>Core AMS Interventions</b>: Prospective audit, formulary restriction, IV→PO, auto-stop, de-escalation</li><li>[ ] Understand <b>Resistance Mechanisms</b>: β-Lactamases (ESBL, AmpC, Carbapenemases), Methylases, Target Modification, Efflux</li><li>[ ] Identify <b>Key MDROs</b>: MRSA, VRE, ESBL, CRE, CRAB, CRPA, C. auris</li><li>[ ] Apply <b>Surveillance</b>: NHSN, EARS-Net, SIR, Point Prevalence Surveys</li><li>[ ] Implement <b>De-escalation</b>: 48-72h Review, IV→PO, Duration Optimisation</li><li>[ ] Understand <b>Rapid Diagnostics</b>: MALDI-TOF, PCR, Syndromic Panels, T2Candida, Rapid AST</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Antimicrobial Stewardship (AMS) — Core Interventions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">The "5 Core" AMS Interventions (CDC/WHO)</div>
+<table class="ctable"><tr><th>Intervention</th><th>Description</th><th>Evidence of Impact</th></tr><tr><td>--------------</td><td>-------------</td><td>-------------------</td></tr><tr><td>**1. Prospective Audit & Feedback (PAF)**</td><td>ID Pharmacist/Physician reviews prescriptions → Real-time recommendations</td><td>↓ ABX Use 20-30%, ↓ Resistance, ↓ Cost</td></tr><tr><td>**2. Formulary Restriction & Pre-Authorization**</td><td>Restricted Agents Require ID Approval (Carbapenems, Colistin, Newer Agents)</td><td>↓ Inappropriate Use, ↓ Resistance Selection</td></tr><tr><td>**3. IV-to-Oral (IV→PO) Switch Protocol**</td><td>Automatic Switch Criteria at 48-72h (Clinical Stability, GI Function, Bioavailability >90%)</td><td>↓ LOS, Cost, IV Complications, Line Days</td></tr><tr><td>**4. Automatic Stop Orders / Default Durations**</td><td>Default Duration (e.g., 5d CAP, 7d UTI, 4d IA)</td><td>Prevents Prolonged Unnecessary Therapy</td></tr><tr><td>**5. Prospective De-escalation Protocol**</td><td>Mandatory Review at 48-72h → Narrow/Stop/Stop Based on Cultures/Clinical</td><td>↓ Broad-Spectrum Exposure, ↑ Targeted Therapy</td></tr></table>
+<div class="sub-h">Additional High-Impact Interventions</div>
+<table class="ctable"><tr><th>Intervention</th><th>Description</th></tr><tr><td>--------------</td><td>-------------</td></tr><tr><td>**Rapid Diagnostics Integration**</td><td>MALDI-TOF, PCR, Syndromic Panels, T2Candida, Rapid AST → **Early Targeted Therapy**</td></tr><tr><td>**Handshake Stewardship**</td><td>Real-Time Bedside Review by ID Pharmacist/Physician (Non-Punitive)</td></tr><tr><td>**Dose Optimisation (PK/PD)**</td><td>Extended Infusion β-Lactams, AUC/MIC Vancomycin, Once-Daily Aminoglycosides</td></tr><tr><td>**Allergy De-labeling**</td><td>Structured Assessment → **>90% Penicillin Allergy Labels Removed**</td></tr><tr><td>**Outpatient Parenteral Antimicrobial Therapy (OPAT)**</td><td>Safe IV→Home Transition for Stable Patients</td></tr><tr><td>**Surgical Prophylaxis Optimisation**</td><td>**Right Drug, Right Dose, Right Timing (<60min), Right Duration (<24h)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🦠 Resistance Mechanisms — Key Classes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. β-Lactamases</div>
+<table class="ctable"><tr><th>Class</th><th>Enzymes</th><th>Substrate Profile</th><th>Inhibitor Sensitivity</th><th>Clinical Significance</th></tr><tr><td>-------</td><td>---------</td><td>-------------------</td><td>----------------------</td><td>----------------------</td></tr><tr><td>**Class A (TEM, SHV, CTX-M, KPC)**</td><td>ESBL, KPC</td><td>Penicillins, Cephalosporins (3rd/4th Gen), Aztreonam; **KPC: Carbapenems**</td><td>**Clavulanate/Tazobactam** (ESBL), **Avibactam/Vaborbactam/Relebactam** (KPC)</td><td>**ESBL: 3rd Gen Ceph Resistant**; **KPC: Carbapenemase**</td></tr><tr><td>**Class B (Metallo-β-Lactamases: NDM, VIM, IMP)**</td><td>MBL</td><td>**All β-Lactams (Incl. Carbapenems)**, NOT Aztreonam</td><td>**EDTA (Chelator)**, **NOT Clavulanate**</td><td>**NDM-1 = Global Spread**, Carbapenem Resistance</td></tr><tr><td>**Class C (AmpC)**</td><td>Chromosomal (Inducible) / Plasmid</td><td>Cephalosporins (3rd/4th Gen), NOT Carbapenems</td><td>**Not Inhibited by Clavulanate**</td><td>**Inducible (Enterobacter, Citrobacter, Serratia)**</td></tr><tr><td>**Class D (OXA)**</td><td>OXA-48, OXA-23, OXA-58</td><td>Carbapenems (Weak), Variable Cephalosporins</td><td>Variable</td><td>**OXA-48 = Carbapenemase (Enterobacterales)**, **OXA-23/58 = Acinetobacter**</td></tr></table>
+<div class="sub-h">2. Other Resistance Mechanisms</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Examples</th><th>Affected Drugs</th></tr><tr><td>----------</td><td>----------</td><td>----------------</td></tr><tr><td>**Target Modification**</td><td>**mecA (PBP2a)** → MRSA; **gyrA/parC Mutations** → FQR; **rpoB Mutations** → Rifampicin Resistance</td><td>β-Lactams (MRSA), Fluoroquinolones, Rifampicin</td></tr><tr><td>**Efflux Pumps**</td><td>**AcrAB-TolC (Enterobacterales)**, **MexAB-OprM (Pseudomonas)**, **NorA (Staph)**</td><td>Multi-Drug (FQ, Tetracyclines, Macrolides, β-Lactams)</td></tr><tr><td>**Porin Loss**</td><td>**OmpK35/OmpK36 Loss (Klebsiella)**, **OprD Loss (Pseudomonas)**</td><td>Carbapenems, β-Lactams</td></tr><tr><td>**16S rRNA Methylases**</td><td>**ArmA, RmtA–RmtG**</td><td>**High-Level Aminoglycoside Resistance**</td></tr><tr><td>**Ribosomal Protection**</td><td>**Tet(M), Tet(O)**</td><td>**Tetracyclines**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🦠 Key MDROs — Definitions & Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Major MDROs</div>
+<table class="ctable"><tr><th>Organism</th><th>Resistance Definition</th><th>Key Treatment Options</th><th>Infection Control</th></tr><tr><td>----------</td><td>----------------------</td><td>----------------------</td><td>-------------------</td></tr><tr><td>**MRSA**</td><td>**mecA/mecC** → PBP2a</td><td>**Vancomycin (AUC 400-600)**, Daptomycin, Linezolid, Ceftaroline, Ceftriaxone</td><td>Contact Precautions, Decolonisation (Mupirocin + Chlorhexidine)</td></tr><tr><td>**VRE**</td><td>**vanA/vanB** (Vancomycin Resistance)</td><td>**Linezolid, Daptomycin, Ceftaroline**, Tedizolid, Fidaxomicin (GI)</td><td>Contact Precautions, Cohorting</td></tr><tr><td>**ESBL**</td><td>**CTX-M** (Most Common), SHV, TEM</td><td>**Carbapenems (Meropenem/Ertapenem)** 1st Line</td><td>Contact Precautions, Cohorting</td></tr><tr><td>**CRE (KPC, NDM, OXA-48)**</td><td>**Carbapenemase Production**</td><td>**Ceftazidime-Avibactam, Meropenem-Vaborbactam, Imipenem-Relebactam**, Cefiderocol, Polymyxins, Tigecycline, Aminoglycosides, Fosfomycin</td><td>Strict Isolation, Cohorting, Dedicated Equipment</td></tr><tr><td>**CRAB (A. baumannii)**</td><td>**OXA-23/24/58, NDM**</td><td>**Sulbactam-Durlobactam**, **Polymyxins**, **Tigecycline**, **Minocycline**, **Cefiderocol**</td><td>Contact Precautions, Environmental Cleaning</td></tr><tr><td>**CRPA (P. aeruginosa)**</td><td>**Efflux + Porin Loss + Mutations**</td><td>**Ceftazidime-Avibactam, Ceftolozane-Tazobactam, Cefiderocol, Colistin, Fosfomycin**</td><td>Contact Precautions</td></tr><tr><td>**C. auris**</td><td>**Multidrug-Resistant Yeast**</td><td>**Echinocandins (1st Line)**, Liposomal Amphotericin B</td><td>**Contact Precautions**, **Environmental Disinfection (Bleach/UV)**</td></tr></table>
+<div class="callout">[!warning] <b>CRE = Carbapenemase Production (KPC, NDM, OXA-48, VIM, IMP)</b>. <b>CRAB = Carbapenem-Resistant A. baumannii</b>. <b>CRPA = Carbapenem-Resistant P. aeruginosa</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🔬 Surveillance & Metrics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Key Surveillance Systems</div>
+<table class="ctable"><tr><th>System</th><th>Scope</th><th>Key Metrics</th></tr><tr><td>--------</td><td>-------</td><td>-------------</td></tr><tr><td>**NHSN (CDC, USA)**</td><td>National HAI + AMR</td><td>**SIR (Standardized Infection Ratio)**, **AUR (Antimicrobial Use & Resistance)**</td></tr><tr><td>**EARS-Net (ECDC, Europe)**</td><td>European AMR Surveillance</td><td>**% Resistance by Country/Organism**, Trends</td></tr><tr><td>**GLASS (WHO Global)**</td><td>Global AMR Surveillance</td><td>**Priority Pathogens**, **National Action Plans**</td></tr><tr><td>**Local Hospital**</td><td>IPC + ASP Dashboard</td><td>**HAI Rates, SIR, DDD/1000 Patient-Days, % Compliance**</td></tr></table>
+<div class="sub-h">Key Metrics</div>
+<table class="ctable"><tr><th>Metric</th><th>Definition</th><th>Target</th></tr><tr><td>--------</td><td>------------</td><td>--------</td></tr><tr><td>**SIR (Standardized Infection Ratio)**</td><td>Observed / Predicted HAI (Risk-Adjusted)</td><td>**<1.0**</td></tr><tr><td>**DDD/1000 Patient-Days**</td><td>**Defined Daily Doses** per 1000 Bed-Days</td><td>**↓ Trend**</td></tr><tr><td>**Days of Therapy (DOT)**</td><td>**Days of Antibiotic Therapy / 1000 Patient-Days**</td><td>**↓ Trend**</td></tr><tr><td>**% Compliance** (Bundle/Stewardship)</td><td>% Adherence to Protocols</td><td>**>90%**</td></tr><tr><td>**Time to Targeted Therapy**</td><td>Time from Culture to Targeted Rx</td><td>**<48-72h**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🎯 De-escalation & IV→PO Switch — Practical Protocols</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">De-escalation Algorithm (48-72h)</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">48-72h Post-Empirical Therapy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Culture Results Available?**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Pathogen Identified?**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">**Narrow to Narrowest Effective Agent**</div>
+<div class="fc-node" data-id="E">**Reassess Diagnosis**, Consider Stop if Low Suspicion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">**Clinical Improvement?**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">**IV→PO Switch Criteria Met?**</div>
+<div class="fc-node" data-id="J">**Reassess Diagnosis/Source Control**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">**Switch to Oral** (High Bioavailability Agent)</div>
+<div class="fc-node" data-id="I">**Continue IV**, Reassess Daily</div>
+</div>
+</div>
+<div class="sub-h">IV→PO Switch Criteria</div>
+<table class="ctable"><tr><th>Criteria</th><th>Examples</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Clinical Improvement**</td><td>Afebrile 24-48h, ↓WBC/CRP, Haemodynamic Stability</td></tr><tr><td>**GI Function**</td><td>Tolerating Oral/NG, No Obstruction/Ileus</td></tr><tr><td>**Bioavailability >90%**</td><td>**Fluoroquinolones, Linezolid, Metronidazole, Doxycycline, Cotrimoxazole, Clindamycin**</td></tr><tr><td>**Bioavailability 50-90%**</td><td>**Amoxicillin, Co-amoxiclav, Cephalexin, Metronidazole**</td></tr><tr><td>**Avoid IV→PO**</td><td>**β-Lactams (Low Bioavailability), Glycopeptides, Aminoglycosides, Carbapenems**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🛡️ Infection Prevention & Control (IPC) for MDROs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Measure</th><th>Application</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Contact Precautions**</td><td>**Gown + Gloves** for All MDRO Contacts; **Single Room / Cohorting**</td></tr><tr><td>**Hand Hygiene**</td><td>**5 Moments**, **ABHR at Point of Care**, **Audit & Feedback**</td></tr><tr><td>**Environmental Cleaning**</td><td>**Daily + Terminal Cleaning**, **Bleach/Peracetic Acid for C. difficile/C. auris**, **UV/HPV for Terminal**</td></tr><tr><td>**Screening/Decolonisation**</td><td>**MRSA: Nares/Throat/Perineum Swabs → Mupirocin + Chlorhexidine**; **CRE: Rectal/Perineal Swabs**</td></tr><tr><td>**Antimicrobial Stewardship**</td><td>**Formulary Restriction**, **Audit & Feedback**, **IV→PO**, **Duration Limits**</td></tr><tr><td>**Surveillance**</td><td>**Active Surveillance Cultures** (Admission/Weekly ICU), **Environmental Cultures**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**AMS Core 5**</td><td>**PAF, Formulary Restriction, IV→PO, Auto-Stop, De-escalation**</td></tr><tr><td>**Resistance Mechanisms**</td><td>**β-Lactamases (A: ESBL/KPC, B: MBL/NDM, C: AmpC, D: OXA)**, **mecA (MRSA)**, **vanA/vanB (VRE)**, **porin loss + efflux**</td></tr><tr><td>**Key MDROs**</td><td>**MRSA (mecA), VRE (vanA/B), ESBL (CTX-M), CRE (KPC/NDM/OXA-48), CRAB, CRPA, C. auris**</td></tr><tr><td>**CRE Treatment**</td><td>**Ceftazidime-Avibactam, Meropenem-Vaborbactam, Imipenem-Relebactam, Cefiderocol, Polymyxins**</td></tr><tr><td>**Surveillance**</td><td>**SIR <1.0**, **DDD/1000 Patient-Days**, **DOT**, **% Bundle Compliance**</td></tr><tr><td>**De-escalation**</td><td>**48-72h Review → Narrow → IV→PO Switch (Bioavailability >90%)**</td></tr><tr><td>**IV→PO Switch**</td><td>**Criteria: Clinical Stability + GI Function + Bioavailability >90% (FQ, Linezolid, Metro, Doxy, Cotrimox)**</td></tr><tr><td>**MDRO IPC**</td><td>**Contact Precautions, Hand Hygiene, Screening/Decolonisation, Environmental Cleaning**</td></tr><tr><td>**Rapid Diagnostics**</td><td>**MALDI-TOF, Syndromic PCR, T2Candida, Rapid AST** → **Early Targeted Therapy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the 5 core antimicrobial stewardship interventions?</b></li></ol>
+<ul><li><b>Prospective Audit &amp; Feedback, Formulary Restriction, IV→PO Switch, Automatic Stop Orders, De-escalation Protocol</b>.</li></ul>
+<ol><li><b>What are the main resistance mechanisms for β-Lactam antibiotics?</b></li></ol>
+<ul><li><b>β-Lactamases (Class A: ESBL/KPC, B: MBL/NDM, C: AmpC, D: OXA)</b>, <b>Target Modification (mecA), Efflux, Porin Loss</b>.</li></ul>
+<ol><li><b>What are the key differences between ESBL, AmpC, and Carbapenemase producers?</b></li></ol>
+<ul><li><b>ESBL: Inhibited by Clavulanate, 3rd/4th Gen Ceph Resistant</b>; <b>AmpC: Not Inhibited by Clavulanate, Inducible</b>; <b>Carbapenemase: Carbapenem Resistant (KPC, NDM, OXA-48)</b>.</li></ul>
+<ol><li><b>What is the first-line treatment for CRE (KPC-producing Enterobacterales)?</b></li></ol>
+<ul><li><b>Ceftazidime-Avibactam, Meropenem-Vaborbactam, Imipenem-Relebactam, Cefiderocol</b> (Preferred over Polymyxins/Tigecycline).</li></ul>
+<ol><li><b>What is the definition of CRE?</b></li></ol>
+<ul><li><b>Carbapenem-Resistant Enterobacterales</b> — <b>Carbapenemase Production (KPC, NDM, OXA-48, VIM, IMP)</b> OR <b>Non-Carbapenemase Mechanisms with Reduced Susceptibility</b>.</li></ul>
+<ol><li><b>What is the difference between ESBL and AmpC?</b></li></ol>
+<ul><li><b>ESBL: Clavulanate-Inhibited, Plasmid-Mediated Usually</b>; <b>AmpC: Clavulanate-Resistant, Often Chromosomal/Inducible (Enterobacter, Citrobacter, Serratia)</b>.</li></ul>
+<ol><li><b>What are the 5 core AMS interventions?</b></li></ol>
+<ul><li><b>Prospective Audit &amp; Feedback, Formulary Restriction, IV→PO Switch, Automatic Stop Orders, De-escalation Protocol</b>.</li></ul>
+<ol><li><b>What is the definition of CRE?</b></li></ol>
+<ul><li><b>Carbapenem-Resistant Enterobacterales</b> with <b>Carbapenemase Production (KPC, NDM, OXA-48, VIM, IMP)</b>.</li></ul>
+<ol><li><b>What is the first-line treatment for CRAB?</b></li></ol>
+<ul><li><b>Sulbactam-Durlobactam</b> (New), <b>Polymyxin B/Colistin + Combination</b>, <b>Cefiderocol</b>, <b>Tigecycline/Minocycline</b>.</li></ul>
+<ol><li><b>What is the role of rapid diagnostics in antimicrobial stewardship?</b></li></ol>
+<ul><li><b>MALDI-TOF (ID in Minutes), Syndromic PCR (Hours), T2Candida (3-5h), Rapid AST</b> → <b>Early Targeted Therapy, ↓ Broad-Spectrum Days</b>.</li></ul>
+<ol><li><b>How do you calculate SIR (Standardized Infection Ratio)?</b></li></ol>
+<ul><li><b>SIR = Observed Infections / Predicted Infections</b> (Risk-Adjusted); <b>SIR &lt;1 = Better Than Expected</b>.</li></ul>
+<ol><li><b>What are the key infection control measures for C. auris?</b></li></ol>
+<ul><li><b>Contact Precautions (Gown/Gloves), Single Room/Cohort, Bleach/UV Disinfection, Screening Contacts, Echinocandins 1st Line</b>.</li></ul>
+<ol><li><b>What is the difference between ESBL and AmpC β-lactamases?</b></li></ol>
+<ul><li><b>ESBL: Inhibited by Clavulanate, Usually Plasmid, Hydrolyses 3rd/4th Gen Ceph</b>; <b>AmpC: NOT Inhibited by Clavulanate, Often Chromosomal/Inducible, Hydrolyses Cephamycins</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**ESBL vs AmpC vs Carbapenemase**</td><td>**ESBL: Clavulanate-Inhibited, Ceph-R**; **AmpC: Clavulanate-Resistant, Inducible**; **Carbapenemase: Carbapenem-R (KPC, NDM, OXA)**</td></tr><tr><td>**CRE vs CRAB vs CRPA**</td><td>**CRE = Enterobacterales (KPC/NDM/OXA-48)**; **CRAB = Acinetobacter (OXA-23/58, NDM)**; **CRPA = Pseudomonas (Efflux+Porin+Mutation)**</td></tr><tr><td>**MRSA vs VRE**</td><td>**MRSA = mecA → PBP2a (β-Lactam R)**; **VRE = vanA/vanB → Vancomycin R**</td></tr><tr><td>**SIR vs Standardised Rate**</td><td>**SIR = Observed/Predicted (Risk-Adjusted)**; **Rate = Events/Time**</td></tr><tr><td>**De-escalation vs Switch**</td><td>**De-escalation = Narrow Spectrum**; **Switch = IV→PO (Same Drug Class)**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"5 Core AMS = PAF, Formulary, IV→PO, Stop Orders, De-escalation"**</td><td>Core Interventions</td></tr><tr><td>**"ESBL = CTX-M, Clavulanate Inhibits"**</td><td>ESBL</td></tr><tr><td>**"AMPc = Not Inhibited by Clavulanate"**</td><td>AmpC</td></tr><tr><td>**"CRE = KPC/NDM/OXA-48"**</td><td>Carbapenemase Types</td></tr><tr><td>**"SIR = Observed/Predicted"**</td><td>Surveillance</td></tr><tr><td>**"IV→PO = Bioavailability >90%"**</td><td>Switch Criteria</td></tr><tr><td>**"CRE = Ceftazidime-Avibactam / Cefiderocol / Polymyxin"**</td><td>CRE Treatment</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Antimicrobial Stewardship &amp; Resistance))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">AMS Core 5</div>
+<div class="mm-node mm-l3">– Audit &amp; Feedback</div>
+<div class="mm-node mm-l3">– Formulary Restriction</div>
+<div class="mm-node mm-l3">– IV→PO Switch</div>
+<div class="mm-node mm-l3">– Auto Stop Orders</div>
+<div class="mm-node mm-l3">– De-escalation Protocol</div>
+<div class="mm-node mm-l2">Resistance Mechanisms</div>
+<div class="mm-node mm-l3">– β-Lactamases: A(CTX-M/KPC), B(NDM/VIM), C(AmpC), D(OXA)</div>
+<div class="mm-node mm-l3">– Target Mod: mecA, gyrA/parC, rpoB</div>
+<div class="mm-node mm-l3">– Efflux, Porin Loss, Methylases</div>
+<div class="mm-node mm-l2">MDROs</div>
+<div class="mm-node mm-l3">– MRSA (mecA)</div>
+<div class="mm-node mm-l3">– VRE (vanA/vanB)</div>
+<div class="mm-node mm-l3">– ESBL (CTX-M)</div>
+<div class="mm-node mm-l3">– CRE (KPC,NDM,OXA-48)</div>
+<div class="mm-node mm-l3">– CRAB (OXA-23/NDM)</div>
+<div class="mm-node mm-l3">– CRPA (Efflux+Porin)</div>
+<div class="mm-node mm-l3">– C. auris (MDR Yeast)</div>
+<div class="mm-node mm-l2">Surveillance</div>
+<div class="mm-node mm-l3">– NHSN (SIR, AUR)</div>
+<div class="mm-node mm-l3">– EARS-Net</div>
+<div class="mm-node mm-l3">– GLASS (WHO)</div>
+<div class="mm-node mm-l3">– Metrics: SIR, DDD, DOT, Compliance</div>
+<div class="mm-node mm-l2">De-escalation</div>
+<div class="mm-node mm-l3">– 48-72h Review</div>
+<div class="mm-node mm-l3">– Narrow Spectrum</div>
+<div class="mm-node mm-l3">– IV→PO Switch (Bioavail&gt;90%)</div>
+<div class="mm-node mm-l2">IPC for MDRO</div>
+<div class="mm-node mm-l3">– Contact Precautions</div>
+<div class="mm-node mm-l3">– Hand Hygiene</div>
+<div class="mm-node mm-l3">– Screening/Decolonisation</div>
+<div class="mm-node mm-l3">– Env Cleaning</div>
+<div class="mm-node mm-l2">Rapid Diagnostics</div>
+<div class="mm-node mm-l3">– MALDI-TOF</div>
+<div class="mm-node mm-l3">– PCR Panels</div>
+<div class="mm-node mm-l3">– T2Candida</div>
+<div class="mm-node mm-l3">– Rapid AST</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**ANTIMICROBIAL STEWARDSHIP & RESISTANCE – FCPS/MRCP REVISION CARD**</th></tr><tr><td>-----------------------------------------------------------------------</td></tr><tr><td>**AMS Core 5**: **PAF, Formulary Restriction, IV→PO, Auto-Stop, De-escalation**</td></tr><tr><td>**Resistance Mechanisms**: **ESBL (CTX-M, Clavulanate-Inhibited)**, **AmpC (Chromosomal, Clavulanate-Resistant)**, **CRE (KPC/NDM/OXA-48, Carbapenemase)**, **MRSA (mecA)**, **VRE (vanA/vanB)**</td></tr><tr><td>**CRE Treatment**: **Ceftazidime-Avibactam, Meropenem-Vaborbactam, Imipenem-Relebactam, Cefiderocol, Polymyxins**</td></tr><tr><td>**Surveillance**: **SIR = Observed/Predicted**, **DDD/1000pd, DOT, Bundle Compliance**</td></tr><tr><td>**De-escalation**: **48-72h Review → Narrow → IV→PO if Bioavail>90%**</td></tr><tr><td>**IV→PO Switch**: **Clinical Stability + GI Intact + Bioavail>90% (FQ, Linezolid, Metro, Doxy, Cotrimox)**</td></tr><tr><td>**MDRO IPC**: **Contact Precautions, Hand Hygiene, Screening/Decolonisation (MRSA/VRE/CRE), Env Cleaning**</td></tr><tr><td>**Rapid Diagnostics**: **MALDI-TOF, Syndromic PCR, T2Candida, Rapid AST** → **Early Targeted Therapy**</td></tr><tr><td>**CRE Treatment**: **Ceftazidime-Avibactam, Mero-Vabor, Imi-Relebactam, Cefiderocol, Colistin**</td></tr><tr><td>**Stewardship Core**: **Audit, Formulary, IV→PO, Autostop, De-escalate**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>5 Core AMS Interventions, ESBL/AmpC/Carbapenemase Differences, Key MDROs (MRSA, VRE, ESBL, CRE, CRAB, CRPA, C. auris), CRE Treatment Options, SIR/Metrics, De-escalation/IV→PO Criteria, MDRO IPC (Contact Precautions, Screening), Rapid Diagnostics Role</td></tr><tr><td>**Should Know**</td><td>Detailed β-Lactamase Classification (Ambler), Specific MDRO Treatment Algorithms (CRE, CRAB, CRPA), Rapid Diagnostic Technologies (MALDI-TOF, PCR, T2, Rapid AST), SIR Calculation/Interpretation, De-escalation Algorithms, Outbreak Management, De-labeling Penicillin Allergy, OPAT, Surgical Prophylaxis Optimisation</td></tr><tr><td>**Nice to Know**</td><td>Resistance Genomics (WGS), Evolutionary Dynamics, Novel Agents (Ibrexafungerp, Rezafungin, Cefiderocol, Sulbactam-Durlobactam, Gepotidacin), AI/ML in Stewardship, Global AMR Action Plan (WHO), Economic Evaluations, Novel Resistance Mechanisms (MCR, Rmt), Phage Therapy, Microbiome Impact, Antimicrobial Resistance in Environment/Animals</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>AMS Core Interventions</td><td></td><td></td></tr><tr><td>Resistance Mechanisms</td><td></td><td></td></tr><tr><td>MDRO Definitions & Treatment</td><td></td><td></td></tr><tr><td>Surveillance Metrics</td><td></td><td></td></tr><tr><td>De-escalation & IV→PO</td><td></td><td></td></tr><tr><td>Rapid Diagnostics</td><td></td><td></td></tr><tr><td>IPC for MDROs</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Hospital-Acquired Infections (CLABSI, CAUTI, SSI)]]</li><li><b>Next</b>: [[Travel Medicine / Pre-travel Advice]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antimicrobial Stewardship &amp; Resistance · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

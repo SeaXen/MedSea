@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>General Principles of Envenomation — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ENVENOMATION</span>
+      <div class="h1">General Principles of Envenomation</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define envenomation and classify venomous animals</li><li>Understand venom composition and pathophysiological mechanisms</li><li>Apply initial management principles (first aid, immobilisation, transport)</li><li>Recognise when to administer antivenom vs supportive care only</li><li>Apply to FCPS/MRCP vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Venom**</td><td>Secreted toxic mixture delivered via specialized apparatus (fangs, stingers, spines, cnidocytes)</td></tr><tr><td>**Poison**</td><td>Toxic substance absorbed/inhaled/ingested (no specialized delivery apparatus)</td></tr><tr><td>**Envenomation**</td><td>Clinical syndrome resulting from venom injection</td></tr><tr><td>**Dry bite**</td><td>Bite/sting by venomous animal without clinical envenomation</td></tr><tr><td>**Venom gland**</td><td>Modified salivary gland (snakes), paired glands (spiders/scorpions), nematocysts (cnidarians)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Classification of Venomous Animals</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Group</th><th>Examples</th><th>Delivery Apparatus</th><th>Venom Type</th></tr><tr><td>-------</td><td>----------</td><td>-------------------</td><td>------------</td></tr><tr><td>**Snakes**</td><td>Elapids (cobra, krait, taipan), Viperids (viper, adder, rattlesnake), Colubrids (boomslang)</td><td>Hollow/fixed fangs (elapids), hinged fangs (viperids)</td><td>Neurotoxic, haemotoxic, cytotoxic, myotoxic</td></tr><tr><td>**Scorpions**</td><td>*Androctonus*, *Leiurus*, *Tityus*, *Centruroides*</td><td>Telson (stinger)</td><td>Neurotoxic (Na⁺/K⁺ channel toxins)</td></tr><tr><td>**Spiders**</td><td>*Latrodectus* (widow), *Loxosceles* (recluse), *Atrax/Hadronyche* (funnel-web)</td><td>Chelicerae (fangs)</td><td>Neurotoxic (latrotoxin), cytotoxic (sphingomyelinase D)</td></tr><tr><td>**Marine**</td><td>Box jellyfish (*Chironex*), Irukandji (*Carukia*), stonefish (*Synanceia*), cone shell (*Conus*), blue-ringed octopus (*Hapalochlaena*)</td><td>Nematocysts, spines, beak/salivary apparatus</td><td>Cardiotoxic, neurotoxic, painful</td></tr><tr><td>**Hymenoptera**</td><td>Bees, wasps, ants (fire ant *Solenopsis*, jack jumper *Myrmecia*)</td><td>Modified ovipositor (stinger)</td><td>Allergenic, cytotoxic, phospholipase</td></tr><tr><td>**Other**</td><td>Centipedes, caterpillars, venomous fish (lionfish), Gila monster</td><td>Various</td><td>Various</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Venom Composition & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Toxin Class</th><th>Examples</th><th>Mechanism</th><th>Clinical Effect</th></tr><tr><td>-------------</td><td>----------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**Neurotoxins**</td><td></td><td></td><td></td></tr><tr><td>Postsynaptic (α-neurotoxins)</td><td>α-bungarotoxin (krait), cobra toxin</td><td>Bind nAChR → blockade</td><td>Flaccid paralysis, respiratory failure</td></tr><tr><td>Presynaptic (β-neurotoxins)</td><td>β-bungarotoxin, taipoxin, notexin</td><td>Inhibit ACh release</td><td>Irreversible paralysis</td></tr><tr><td>Ion channel toxins</td><td>Scorpion α/β-toxins, δ-atracotoxin (funnel-web)</td><td>Modify Na⁺/K⁺/Ca²⁺ channels</td><td>Autonomic storm, excitability</td></tr><tr><td>**Haemotoxins**</td><td></td><td></td><td></td></tr><tr><td>Procoagulant</td><td>Viperid venoms (RVV-V, RVV-X)</td><td>Activate factors V, X, prothrombin</td><td>Consumption coagulopathy, bleeding</td></tr><tr><td>Anticoagulant</td><td>Protein C activator (russell's viper)</td><td>Activate protein C</td><td>Bleeding</td></tr><tr><td>Platelet agonists/antagonists</td><td>Botrocetin, flavostatin</td><td>Induce aggregation or inhibit</td><td>Thrombocytopenia, thrombosis</td></tr><tr><td>Haemorrhagins</td><td>Metalloproteinases (SVMPs)</td><td>Degrade basement membrane</td><td>Local bleeding, tissue necrosis</td></tr><tr><td>**Cytotoxins / Myotoxins**</td><td></td><td></td><td></td></tr><tr><td>Phospholipases A₂</td><td>Bee, viper, sea snake</td><td>Membrane degradation</td><td>Myonecrosis, rhabdomyolysis, renal failure</td></tr><tr><td>Cytolysins / pore-formers</td><td>Melittin (bee), stonefish</td><td>Membrane pore formation</td><td>Pain, cell lysis</td></tr><tr><td>Proteases</td><td>Viperid SVMPs, spider sphingomyelinase D</td><td>Tissue degradation</td><td>Necrosis, ulceration</td></tr><tr><td>**Cardiotoxins**</td><td></td><td></td><td></td></tr><tr><td>Direct myocardial toxins</td><td>Box jellyfish, stonefish, scorpion</td><td>Na⁺/Ca²⁺ channel modulation, catecholamine surge</td><td>Arrhythmia, heart failure, pulmonary edema</td></tr><tr><td>**Allergens**</td><td></td><td></td><td></td></tr><tr><td>Phospholipase A₂, hyaluronidase, antigen 5</td><td>Bee, wasp, ant</td><td>IgE-mediated mast cell degranulation</td><td>Anaphylaxis, angioedema</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">First Aid Principles</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">DO ✅</div>
+<table class="ctable"><tr><th>Action</th><th>Indication</th><th>Technique</th></tr><tr><td>--------</td><td>------------</td><td>-----------</td></tr><tr><td>**Pressure Immobilisation Bandage (PIB)**</td><td>Elapid snake bites (neurotoxic)</td><td>Broad elastic bandage 15 cm above bite → wrap distally to proximally (fingers/toes exposed), mark bite site, splint limb</td></tr><tr><td>**Local Pressure Pad**</td><td>Viperid bites (haemotoxic/cytotoxic) — if PIB contraindicated</td><td>Firm pad over bite, bandage firmly</td></tr><tr><td>**Immobilisation**</td><td>All snake bites</td><td>Splint limb, keep at heart level, minimise movement</td></tr><tr><td>**Hot Water Immersion**</td><td>Marine stings (stonefish, lionfish, stingray, *Physalia*)</td><td>45°C for 20 min (denatures protein toxins)</td></tr><tr><td>**Vinegar (4–5% acetic acid)**</td><td>Box jellyfish (*Chironex*), *Physalia*</td><td>Inactivates undischarged nematocysts</td></tr><tr><td>**Remove stinger**</td><td>Honeybee</td><td>Scrape (don't squeeze venom sac)</td></tr><tr><td>**Tetanus prophylaxis**</td><td>All wounds</td><td>Td/Tdap per schedule</td></tr><tr><td>**Antibiotics**</td><td>If cellulitis/abscess risk</td><td>Cover skin flora + *Aeromonas* (marine)</td></tr></table>
+<div class="sub-h">DON'T ❌</div>
+<table class="ctable"><tr><th>Harmful Practice</th><th>Reason</th></tr><tr><td>------------------</td><td>--------</td></tr><tr><td>**Tourniquet**</td><td>Ischaemia, compartment syndrome, limb loss</td></tr><tr><td>**Incision & suction**</td><td>Tissue damage, infection, no venom removed</td></tr><tr><td>**Ice / cold packs**</td><td>Vasoconstriction, increased tissue damage</td></tr><tr><td>**Electric shock**</td><td>No benefit, burns, arrhythmia</td></tr><tr><td>**Alcohol / oral suction**</td><td>Increases absorption, aspiration risk</td></tr><tr><td>**Herbal / traditional remedies**</td><td>Delay definitive care, toxicity</td></tr><tr><td>**Elevation of limb**</td><td>Increases venom spread (venous/lymphatic)</td></tr><tr><td>**Exercise / running**</td><td>Increases systemic absorption</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Initial Assessment (ABCDE with Envenomation Focus)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Key Actions</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Airway**</td><td>Early intubation if neurotoxic envenomation (bulbar palsy, respiratory failure)</td></tr><tr><td>**Breathing**</td><td>Monitor SpO₂, RR, work of breathing; ABG for hypercapnia; ventilate if needed</td></tr><tr><td>**Circulation**</td><td>IV access ×2 large bore; fluid resuscitation for hypotension; vasopressors if needed; monitor for arrhythmia (scorpion, marine, hymenoptera)</td></tr><tr><td>**Disability**</td><td>GCS, pupil size/reactivity, motor strength, cranial nerves; serial neuro checks q30min</td></tr><tr><td>**Exposure**</td><td>Full exam: bite site, fang marks, local swelling, necrosis, ecchymosis, lymphangitis, regional lymphadenopathy</td></tr><tr><td>**Environment**</td><td>Identify snake/spider/scorpion (photo, description, dead specimen — DO NOT handle live)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Scoring Systems (Overview)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Use</th><th>Components</th></tr><tr><td>--------</td><td>-----</td><td>------------</td></tr><tr><td>**Snakebite Severity Score**</td><td>Triage, antivenom decision</td><td>Local signs, systemic signs, coagulation, neuro, renal</td></tr><tr><td>**WHO Snakebite Grading**</td><td>Global standard</td><td>Grade 0 (dry) to Grade 4 (severe systemic)</td></tr><tr><td>**SCORPION Score**</td><td>Scorpion sting severity</td><td>Age, local signs, systemic signs, CXR, labs</td></tr><tr><td>**Redback Spider (RADS)**</td><td>Redback envenomation</td><td>Pain severity, systemic symptoms, hypertension</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Antivenom: Principles</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Principle</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Mechanism**</td><td>Antibody (IgG/F(ab')₂/Fab) binds venom → neutralisation, enhanced clearance</td></tr><tr><td>**Types**</td><td>Monospecific (single species), Polyspecific (polyvalent — multiple species)</td></tr><tr><td>**Preparations**</td><td>Whole IgG, F(ab')₂ (pepsin digestion), Fab (papain digestion) — less Fc-mediated reactions</td></tr><tr><td>**Timing**</td><td>**Early** (within 4–6h ideal) — prevents irreversible damage; still beneficial up to 24–72h for some effects</td></tr><tr><td>**Indications**</td><td>Systemic envenomation (neurotoxicity, coagulopathy, haemolysis, renal failure, cardiovascular instability, severe local progression)</td></tr><tr><td>**Dosing**</td><td>Based on venom load, not patient weight; initial dose = neutralise average venom yield; repeat if no clinical improvement</td></tr><tr><td>**Administration**</td><td>IV infusion (diluted in saline); start slow, observe for reactions; can give IM if no IV access (slower absorption)</td></tr><tr><td>**Skin testing**</td><td>**Not recommended** — poor predictive value, delays treatment, can trigger anaphylaxis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Antivenom Adverse Reactions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Timing</th><th>Features</th><th>Management</th></tr><tr><td>------</td><td>--------</td><td>----------</td><td>------------</td></tr><tr><td>**Early anaphylactic**</td><td>Minutes</td><td>Urticaria, angioedema, bronchospasm, hypotension</td><td>Stop infusion → adrenaline IM 0.5mg (1:1000), IV fluids, antihistamines, steroids; restart slow if essential</td></tr><tr><td>**Pyrogenic (febrile)**</td><td>30–60 min</td><td>Fever, rigors, chills</td><td>Paracetamol, slow infusion, meperidine for rigors</td></tr><tr><td>**Late (serum sickness)**</td><td>5–14 days</td><td>Fever, rash, arthralgia, proteinuria, lymphadenopathy</td><td>Prednisolone 1mg/kg/day × 5–7 days; NSAIDs</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Monitoring During/After Antivenom</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Frequency</th><th>Target / Action Threshold</th></tr><tr><td>-----------</td><td>-----------</td><td>---------------------------</td></tr><tr><td>**Vitals (HR, BP, RR, SpO₂, Temp)**</td><td>q15min × 1h, then q30min × 4h, then q1h</td><td>BP >90 systolic, SpO₂ >94%</td></tr><tr><td>**Coagulation (PT/INR, aPTT, fibrinogen, D-dimer, platelets)**</td><td>6-hourly until stable</td><td>INR <1.5, fibrinogen >1g/L, platelets >50k</td></tr><tr><td>**Renal (U&E, creatinine, CK, urine output, myoglobinuria)**</td><td>6–12 hourly</td><td>Urine output >0.5mL/kg/h, CK trending down</td></tr><tr><td>**Neurological (GCS, cranial nerves, motor power)**</td><td>q30min–q1h until stable</td><td>No progression of paralysis</td></tr><tr><td>**Urinalysis (blood, protein, myoglobin)**</td><td>q6h</td><td>Clear urine, no myoglobin</td></tr><tr><td>**Antivenom reaction signs**</td><td>Continuous during infusion</td><td>Stop if anaphylaxis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Disposition & Referral</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Dry bite / asymptomatic**</td><td>Observe 12–24h (snake), 4–6h (scorpion/spider); discharge if no signs</td></tr><tr><td>**Mild envenomation (local only)**</td><td>Observe 24h; consider antivenom if progression</td></tr><tr><td>**Moderate-severe envenomation**</td><td>Admit ICU/HDU; antivenom per protocol; serial monitoring</td></tr><tr><td>**Antivenom given**</td><td>Observe 24h post-completion; ensure stabilisation</td></tr><tr><td>**Referral criteria**</td><td>No antivenom available, need for ventilator/dialysis/surgery unavailable, paediatric/pregnant, comorbidities</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>PIB for elapids (neurotoxic), local pressure for viperids (haemotoxic)</b> — different first aid for different snake families - <b>Antivenom = only specific antidote</b> — give early when indicated; dose by venom load, not weight - <b>Antivenom reactions: early (anaphylaxis), late (serum sickness)</b> — premedication not routinely recommended; treat reactions aggressively - <b>Coagulopathy in viperid bites</b> — INR, fibrinogen, platelets guide antivenom; repeat dosing if not corrected - <b>Neurotoxic paralysis: descending, bulbar first</b> — ptosis, ophthalmoplegia, dysphagia, respiratory failure - <b>Rhabdomyolysis: sea snake, some viperids</b> — CK, myoglobinuria, renal protection - <b>Scorpion: autonomic storm</b> — catecholamine surge → hypertension, pulmonary edema, myocarditis - <b>Marine: vinegar for box jellyfish, hot water for stonefish</b> — specific first aid for different marine envenomation - <b>Anaphylaxis from Hymenoptera</b> — IM adrenaline 0.5mg (1:1000) immediately; biphasic reactions possible - <b>Exam trap: Tourniquet is HARMFUL never use; PIB ≠ tourniquet</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**PIB = tourniquet**</td><td>PIB = 40–70 mmHg pressure (venous/lymphatic occlusion), arterial flow preserved</td></tr><tr><td>**Antivenom dose by weight**</td><td>Dose by venom load (vials); same for adult/child</td></tr><tr><td>**Antivenom for all snake bites**</td><td>Only for systemic envenomation; dry bites / local only = observation</td></tr><tr><td>**Skin test before antivenom**</td><td>Not recommended; delays treatment, poor predictive value</td></tr><tr><td>**Elevate bitten limb**</td><td>Increases systemic absorption; keep at heart level</td></tr><tr><td>**Ice on bite site**</td><td>Worsens tissue necrosis, vasoconstriction</td></tr><tr><td>**Antivenom reverses established necrosis**</td><td>Neutralises circulating venom only; cannot reverse tissue damage</td></tr><tr><td>**All snake bites need antivenom**</td><td>~50% dry bites; many mild = observation only</td></tr><tr><td>**Scorpion sting = always severe**</td><td>Most mild; severe in children, *Leiurus/Androctonus/Tityus*</td></tr><tr><td>**Bee sting = remove stinger by squeezing**</td><td>**Scrape** — squeezing injects more venom</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>PIB</b>: <b>P</b>ressure <b>I</b>mmobilisation <b>B</b>andage — for elapids</li><li><b>First aid DON'Ts</b>: <b>T</b>ourniquet, <b>I</b>ncision, <b>C</b>old, <b>E</b>lectric, <b>E</b>levation = <b>TICEE</b></li><li><b>Snake families</b>: <b>E</b>lapid = <b>E</b>xpert neurotoxicity; <b>V</b>iperid = <b>V</b>ascular/haemotoxic; <b>C</b>olubrid = <b>C</b>olubrid (rear-fanged, boomslang)</li><li><b>Antivenom timing</b>: <b>E</b>arly (4–6h) <b>B</b>est <b>E</b>ffect = <b>EBE</b></li><li><b>Scorpion severe</b>: <b>L</b>eiurus, <b>A</b>ndroctonus, <b>T</b>ityus = <b>LAT</b></li><li><b>Marine first aid</b>: <b>V</b>inegar for <b>V</b>isible tentacles (box jelly); <b>H</b>ot water for <b>H</b>ot venom (stonefish)</li><li><b>Anaphylaxis</b>: <b>A</b>drenaline <b>I</b>M <b>M</b>ediately = <b>AIM</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((General Envenomation Principles))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Classification</div>
+<div class="mm-node mm-l3">– Snakes[Elapid, Viperid, Colubrid]</div>
+<div class="mm-node mm-l3">– Scorpions</div>
+<div class="mm-node mm-l3">– Spiders</div>
+<div class="mm-node mm-l3">– Marine[Jellyfish, Fish, Octopus]</div>
+<div class="mm-node mm-l3">– Hymenoptera[Bee, Wasp, Ant]</div>
+<div class="mm-node mm-l2">Venom_Classes</div>
+<div class="mm-node mm-l3">– Neurotoxic[Postsynaptic, Presynaptic, Ion channel]</div>
+<div class="mm-node mm-l3">– Haemotoxic[Procoagulant, Anticoagulant, Platelet]</div>
+<div class="mm-node mm-l3">– Cytotoxic[PLA2, Cytolysins, Proteases]</div>
+<div class="mm-node mm-l3">– Cardiotoxic</div>
+<div class="mm-node mm-l3">– Allergenic</div>
+<div class="mm-node mm-l2">First_Aid</div>
+<div class="mm-node mm-l3">– DO[PIB, Immobilise, Hot water, Vinegar]</div>
+<div class="mm-node mm-l3">– DONT[Tourniquet, Incision, Ice, Shock, Elevation]</div>
+<div class="mm-node mm-l2">Assessment</div>
+<div class="mm-node mm-l3">– ABCDE[Airway, Breathing, Circulation, Disability, Exposure]</div>
+<div class="mm-node mm-l3">– Scoring[WHO grading, Snakebite severity, SCORPION]</div>
+<div class="mm-node mm-l2">Antivenom</div>
+<div class="mm-node mm-l3">– Principles[Mechanism, Types, Timing, Dosing]</div>
+<div class="mm-node mm-l3">– Reactions[Early anaphylaxis, Pyrogenic, Late serum sickness]</div>
+<div class="mm-node mm-l3">– Monitoring[Coag, Renal, Neuro, Vitals]</div>
+<div class="mm-node mm-l2">Disposition</div>
+<div class="mm-node mm-l3">– Dry_bite[Observe 12-24h]</div>
+<div class="mm-node mm-l3">– Mild[Observe 24h]</div>
+<div class="mm-node mm-l3">– Moderate-Severe[ICU, Antivenom, Serial labs]</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flowchart: Initial Envenomation Management</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Envenomation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE Stabilisation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Identify Agent</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Snake Protocol</div>
+<div class="fc-node" data-id="E">Scorpion Protocol</div>
+<div class="fc-node" data-id="F">Spider Protocol</div>
+<div class="fc-node" data-id="G">Marine Protocol</div>
+<div class="fc-node" data-id="H">Anaphylaxis Protocol</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Apply PIB if Elapid / Local Pressure if Viperid</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Immobilise, IV Access, Labs</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Systemic Envenomation?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Antivenom Protocol</div>
+<div class="fc-node" data-id="M">Observe 12-24h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Monitor: Coag, Renal, Neuro, Vitals</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="O">Disposition</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ol><li>PIB vs tourniquet — pressure, indication (elapids only)</li><li>Antivenom timing — ideal window, still useful up to 24–72h</li><li>Antivenom dose — by venom load, not weight</li><li>Antivenom reactions — early anaphylaxis, late serum sickness</li><li>Coagulopathy monitoring — PT/INR, fibrinogen, platelets, D-dimer</li><li>Neurotoxic paralysis pattern — descending, bulbar first</li><li>First aid DON'Ts — tourniquet, incision, ice, shock, elevation</li><li>Scorpion severe species — Leiurus, Androctonus, Tityus</li><li>Marine first aid — vinegar (box jelly), hot water (stonefish)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>PIB technique, antivenom indications/dosing/timing/reactions, coagulation monitoring, neurotoxic pattern, first aid principles, disposition</td></tr><tr><td>**Should Know 🟡**</td><td>Antivenom types (Fab vs F(ab')₂ vs IgG), specific regional protocols, antivenom production, serum sickness management</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel antivenoms (recombinant, monoclonal), venom proteomics, snakebite epidemiology, traditional medicine interactions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Pressure Immobilisation Bandage (PIB) is indicated for which snake family?</b></li></ol>
+<p>A. Viperidae B. <b>Elapidae</b> C. Colubridae D. All of the above E. None — never use PIB</p>
+<ol><li><b>The correct pressure for PIB is:</b></li></ol>
+<p>A. 10–20 mmHg B. <b>40–70 mmHg</b> C. 80–100 mmHg D. 100–150 mmHg E. As tight as possible</p>
+<ol><li><b>Antivenom dose is determined by:</b></li></ol>
+<p>A. Patient body weight B. <b>Venom load (number of vials to neutralise average venom yield)</b> C. Severity of symptoms only D. Age of patient D. Time since bite</p>
+<ol><li><b>Antivenom is indicated for:</b></li></ol>
+<p>A. All snake bites B. <b>Systemic envenomation (neurotoxicity, coagulopathy, haemolysis, cardiovascular instability)</b> C. Local pain and swelling only D. Dry bites E. All viperid bites only</p>
+<ol><li><b>Early anaphylactic reaction to antivenom — first-line treatment:</b></li></ol>
+<p>A. IV antihistamine B. IV steroid C. <b>IM adrenaline 0.5mg (1:1000)</b> D. Stop infusion only E. IV fluid bolus only</p>
+<ol><li><b>Late antivenom reaction (serum sickness) typically occurs at:</b></li></ol>
+<p>A. 1–2 hours B. 6–12 hours C. <b>5–14 days</b> D. 21–28 days E. 1 month</p>
+<ol><li><b>Coagulopathy monitoring after viperid envenomation — which is NOT routinely monitored?</b></li></ol>
+<p>A. PT/INR B. Fibrinogen C. <b>APTT (less reliable than PT for viperid coagulopathy)</b> D. Platelet count E. D-dimer</p>
+<ol><li><b>Neurotoxic envenomation (elapid) — first cranial nerve affected:</b></li></ol>
+<p>A. CN III (oculomotor) B. <b>CN III/IV/VI (ophthalmoplegia, ptosis) — often earliest</b> C. CN VII (facial) C. CN IX/X (bulbar) E. CN XII (hypoglossal)</p>
+<ol><li><b>Serum sickness after antivenom — first-line treatment:</b></li></ol>
+<p>A. Antihistamines B. <b>Prednisolone 1mg/kg/day × 5–7 days</b> C. IVIG D. Plasmapheresis E. Antimalarials</p>
+<ol><li><b>Which first aid is CORRECT for stonefish envenomation?</b></li></ol>
+<p>A. Ice pack B. Tourniquet C. <b>Hot water immersion (45°C × 20 min)</b> D. Vinegar D. Pressure immobilisation</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>35-year-old farmer bitten on ankle by snake in rural Bangladesh. Applies tight tourniquet, brought in 3h later. Leg pale, pulseless, painful. Correct action:</b></li></ol>
+<p>A. Keep tourniquet, give antivenom B. <b>Remove tourniquet immediately, assess perfusion, apply PIB if elapid, give antivenom if systemic signs</b> C. Fasciotomy immediately D. Amputation E. Heparin infusion</p>
+<ol><li>**Child bitten by <i>Naja naja</i> (Indian cobra). Ptosis, dysphagia, respiratory distress. Antivenom available. Critical action:**</li></ol>
+<p>A. Intubate, give antivenom IV, monitor in ICU B. PIB, then intubate C. Neostigmine trial before antivenom D. <b>Intubate, give antivenom IV, neostigmine as adjunct, ICU care</b> E. Tracheostomy first</p>
+<ol><li><b>Viperid bite — coagulopathy persists after 10 vials antivenom. INR 4.5, fibrinogen 0.5, platelets 30k. Next step:</b></li></ol>
+<p>A. Give FFP only B. <b>Give more antivenom (repeat dose) + FFP + platelets if bleeding</b> C. Stop antivenom, give heparin C. Cryoprecipitate only E. Plasma exchange</p>
+<ol><li>**Scorpion sting (<i>Leiurus quinquestriatus</i>) in 8-year-old. Hypertension, pulmonary edema, agitation. Management:**</li></ol>
+<p>A. Prazosin only B. <b>Prazosin + oxygen + diuretic + antivenom if available + ICU</b> C. Beta-blocker D. Morphine E. Diazepam only</p>
+<ol><li>**Box jellyfish (<i>Chironex fleckeri</i>) sting. Immediate first aid:**</li></ol>
+<p>A. Fresh water wash B. <b>Vinegar (4–5% acetic acid) to inactivate nematocysts</b> C. Hot water D. Ice pack E. Pressure bandage</p>
+<ol><li><b>Bee sting in known allergic adult. Generalised urticaria, wheeze, hypotension. Immediate action:</b></li></ol>
+<p>A. IV hydrocortisone B. <b>IM adrenaline 0.5mg (1:1000) immediately, THEN fluids, oxygen, antihistamine, steroids</b> C. Oral antihistamine D. Observe E. Nebulised salbutamol only</p>
+<ol><li>**Redback spider (<i>Latrodectus hasselti</i>) bite. Severe pain, hypertension, diaphoresis. Management:**</li></ol>
+<p>A. Antivenom IM B. <b>Antivenom IV (preferred), analgesia, observation</b> C. Calcium gluconate D. Diazepam only E. Incision and drainage</p>
+<ol><li>**Blue-ringed octopus (<i>Hapalochlaena</i>) bite. Progressive paralysis. No antivenom. Management:**</li></ol>
+<p>A. Neostigmine B. <b>Supportive: intubation, ventilation until recovery (tetrodotoxin wears off in hours)</b> C. Plasma exchange D. 4-AP E. Hemodialysis</p>
+<ol><li><b>Patient given polyvalent snake antivenom. Develops urticaria, hypotension, wheeze 10 min into infusion. Management:</b></li></ol>
+<p>A. Slow infusion, give chlorphenamine B. <b>Stop infusion, IM adrenaline 0.5mg, IV fluids, chlorphenamine, hydrocortisone; restart slow if essential</b> C. Stop permanently, no more antivenom D. Continue at same rate with steroids E. Switch to monospecific antivenom</p>
+<ol><li><b>Dry bite definition:</b></li></ol>
+<p>A. Bite with fang marks but no venom injected B. Bite with no fang marks C. <b>Bite by venomous snake without clinical envenomation (no local/systemic signs)</b> D. Bite by non-venomous snake E. Bite with minimal swelling</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: PIB indication?</li></ul>
+<p>A: Elapid snake bites (neurotoxic)</p>
+<ul><li>Q: PIB pressure?</li></ul>
+<p>A: 40–70 mmHg</p>
+<ul><li>Q: PIB technique?</li></ul>
+<p>A: Broad elastic bandage 15cm above bite → wrap distally → proximally, splint, mark site</p>
+<ul><li>Q: Antivenom dose?</li></ul>
+<p>A: By venom load (vials), not weight</p>
+<ul><li>Q: Antivenom indication?</li></ul>
+<p>A: Systemic envenomation (neuro, coagulopathy, haemolysis, CVS instability)</p>
+<ul><li>Q: Antivenom timing?</li></ul>
+<p>A: Early (4–6h ideal), up to 24–72h still beneficial</p>
+<ul><li>Q: Antivenom reactions?</li></ul>
+<p>A: Early anaphylaxis, pyrogenic, late serum sickness (5–14 days)</p>
+<ul><li>Q: Serum sickness treatment?</li></ul>
+<p>A: Prednisolone 1mg/kg/day × 5–7 days</p>
+<ul><li>Q: Viperid coagulopathy labs?</li></ul>
+<p>A: INR, fibrinogen, platelets, D-dimer</p>
+<ul><li>Q: Neurotoxic pattern?</li></ul>
+<p>A: Descending, bulbar first (ptosis, ophthalmoplegia, dysphagia, resp failure)</p>
+<ul><li>Q: Scorpion severe species?</li></ul>
+<p>A: Leiurus, Androctonus, Tityus</p>
+<ul><li>Q: Box jellyfish first aid?</li></ul>
+<p>A: Vinegar (4–5% acetic acid)</p>
+<ul><li>Q: Stonefish first aid?</li></ul>
+<p>A: Hot water 45°C × 20 min</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1: What is the difference between pressure immobilisation bandage (PIB) and a tourniquet?</b> A: PIB applies 40–70 mmHg pressure — sufficient to occlude venous/lymphatic flow but preserves arterial perfusion. A tourniquet occludes arterial flow, causing ischaemia, compartment syndrome, and limb loss. PIB is indicated only for elapid (neurotoxic) snake bites; tourniquets are NEVER recommended.</p>
+<p><b>Q2: How is antivenom dosing determined, and why is it not based on patient weight?</b> A: Antivenom dose is based on venom load — the number of vials needed to neutralise the average venom yield from a single bite. Adults and children receive the same dose because the venom load is identical; children are actually more vulnerable per kg. Weight-based dosing would underdose children.</p>
+<p><b>Q3: What are the three types of antivenom adverse reactions by timing?</b> A: (1) Early anaphylactic — minutes to &lt;1 hour, IgE-mediated or anaphylactoid (Fc/complement); (2) Pyrogenic — 30–60 minutes, endotoxin contamination/cytokine release; (3) Late serum sickness — 5–14 days, Type III immune complex deposition.</p>
+<p><b>Q4: Why is skin testing before antivenom not recommended?</b> A: Skin testing has poor positive and negative predictive values for anaphylaxis; it can sensitise the patient; and it delays life-saving treatment. Direct infusion with resuscitation readiness is safer.</p>
+<p><b>Q5: What first aid is appropriate for a viperid (e.g., Russell's viper) bite?</b> A: Local pressure pad over bite site + firm bandaging + immobilisation. PIB is NOT recommended for viperids (risk of worsening local cytotoxic injury). Keep limb at heart level, avoid elevation.</p>
+<p><b>Q6: Describe the neurotoxic paralysis pattern in elapid envenomation.</b> A: Descending paralysis: ptosis/ophthalmoplegia (CN III,IV,VI) → bulbar (dysphagia, dysarthria, weak cough) → limb weakness (proximal then distal) → respiratory failure. Progression over hours; recovery in reverse order.</p>
+<p><b>Q7: When should antivenom be given in pregnancy?</b> A: Antivenom is safe in pregnancy and indicated if systemic envenomation exists. Maternal benefit outweighs fetal risk. F(ab')₂ preparations preferred (less Fc-mediated placental transfer). Same dose as adult (by venom load).</p>
+<p>**Q8: What is the correct first aid for box jellyfish (<i>Chironex</i>) vs stonefish (<i>Synanceia</i>)?** A: Box jellyfish — vinegar (4–5% acetic acid) to inactivate undischarged nematocysts, then remove tentacles. Stonefish — hot water immersion at 45°C for 20 minutes to denature thermolabile venom proteins.</p>
+<p><b>Q9: How do you manage early anaphylactic reaction to antivenom?</b> A: STOP infusion immediately → IM adrenaline 0.5mg (1:1000) anterolateral thigh → high-flow O₂ → IV crystalloid bolus 500–1000 mL → chlorphenamine 10 mg IV → hydrocortisone 200 mg IV → monitor vitals continuously. Observe ≥4–6h for biphasic reaction.</p>
+<p><b>Q10: What are the absolute indications for antivenom in snakebite?</b> A: Systemic neurotoxicity (ptosis, bulbar, respiratory), coagulopathy (VICC: INR&gt;1.5, fibrinogen&lt;1, 20WBCT+), severe systemic signs (shock, arrhythmia, pulmonary edema), severe local progression (swelling &gt;half limb, compartment syndrome), rhabdomyolysis (CK&gt;5000, myoglobinuria), AKI. Dry bite / local only = observe.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>PIB = tourniquet</td><td>PIB = 40–70 mmHg pressure (venous/lymphatic occlusion), arterial flow preserved</td></tr><tr><td>Antivenom dose by weight</td><td>Dose by venom load (vials); same for adult/child</td></tr><tr><td>Antivenom for all snake bites</td><td>Only for systemic envenomation; dry bites / local only = observation</td></tr><tr><td>Skin test before antivenom</td><td>Not recommended; delays treatment, poor predictive value</td></tr><tr><td>Elevate bitten limb</td><td>Increases systemic absorption; keep at heart level</td></tr><tr><td>Ice on bite site</td><td>Worsens tissue necrosis, vasoconstriction</td></tr><tr><td>Antivenom reverses established necrosis</td><td>Neutralises circulating venom only; cannot reverse tissue damage</td></tr><tr><td>All snake bites need antivenom</td><td>~50% dry bites; many mild = observation only</td></tr><tr><td>Scorpion sting = always severe</td><td>Most mild; severe in children, *Leiurus/Androctonus/Tityus*</td></tr><tr><td>Bee sting = remove stinger by squeezing</td><td>**Scrape** — squeezing injects more venom</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>PIB</b>: <b>P</b>ressure <b>I</b>mmobilisation <b>B</b>andage — for elapids</li><li><b>First aid DON'Ts</b>: <b>T</b>ourniquet, <b>I</b>ncision, <b>C</b>old, <b>E</b>lectric, <b>E</b>levation = <b>TICEE</b></li><li><b>Snake families</b>: <b>E</b>lapid = <b>E</b>xpert neurotoxicity; <b>V</b>iperid = <b>V</b>ascular/haemotoxic; <b>C</b>olubrid = <b>C</b>olubrid (rear-fanged, boomslang)</li><li><b>Antivenom timing</b>: <b>E</b>arly (4–6h) <b>B</b>est <b>E</b>ffect = <b>EBE</b></li><li><b>Scorpion severe</b>: <b>L</b>eiurus, <b>A</b>ndroctonus, <b>T</b>ityus = <b>LAT</b></li><li><b>Marine first aid</b>: <b>V</b>inegar for <b>V</b>isible tentacles (box jelly); <b>H</b>ot water for <b>H</b>ot venom (stonefish)</li><li><b>Anaphylaxis</b>: <b>A</b>drenaline <b>I</b>M <b>M</b>ediately = <b>AIM</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((General Envenomation Principles))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Classification</div>
+<div class="mm-node mm-l3">– Snakes[Elapid, Viperid, Colubrid]</div>
+<div class="mm-node mm-l3">– Scorpions</div>
+<div class="mm-node mm-l3">– Spiders</div>
+<div class="mm-node mm-l3">– Marine[Jellyfish, Fish, Octopus]</div>
+<div class="mm-node mm-l3">– Hymenoptera[Bee, Wasp, Ant]</div>
+<div class="mm-node mm-l2">Venom_Classes</div>
+<div class="mm-node mm-l3">– Neurotoxic[Postsynaptic, Presynaptic, Ion channel]</div>
+<div class="mm-node mm-l3">– Haemotoxic[Procoagulant, Anticoagulant, Platelet]</div>
+<div class="mm-node mm-l3">– Cytotoxic[PLA2, Cytolysins, Proteases]</div>
+<div class="mm-node mm-l3">– Cardiotoxic</div>
+<div class="mm-node mm-l3">– Allergenic</div>
+<div class="mm-node mm-l2">First_Aid</div>
+<div class="mm-node mm-l3">– DO[PIB, Immobilise, Hot water, Vinegar]</div>
+<div class="mm-node mm-l3">– DONT[Tourniquet, Incision, Ice, Shock, Elevation]</div>
+<div class="mm-node mm-l2">Assessment</div>
+<div class="mm-node mm-l3">– ABCDE[Airway, Breathing, Circulation, Disability, Exposure]</div>
+<div class="mm-node mm-l3">– Scoring[WHO grading, Snakebite severity, SCORPION]</div>
+<div class="mm-node mm-l2">Antivenom</div>
+<div class="mm-node mm-l3">– Principles[Mechanism, Types, Timing, Dosing]</div>
+<div class="mm-node mm-l3">– Reactions[Early anaphylaxis, Pyrogenic, Late serum sickness]</div>
+<div class="mm-node mm-l3">– Monitoring[Coag, Renal, Neuro, Vitals]</div>
+<div class="mm-node mm-l2">Disposition</div>
+<div class="mm-node mm-l3">– Dry_bite[Observe 12-24h]</div>
+<div class="mm-node mm-l3">– Mild[Observe 24h]</div>
+<div class="mm-node mm-l3">– Moderate-Severe[ICU, Antivenom, Serial labs]</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Flowchart: Initial Envenomation Management</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Envenomation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE Stabilisation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Identify Agent</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Snake Protocol</div>
+<div class="fc-node" data-id="E">Scorpion Protocol</div>
+<div class="fc-node" data-id="F">Spider Protocol</div>
+<div class="fc-node" data-id="G">Marine Protocol</div>
+<div class="fc-node" data-id="H">Anaphylaxis Protocol</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Apply PIB if Elapid / Local Pressure if Viperid</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Immobilise, IV Access, Labs</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Systemic Envenomation?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Antivenom Protocol</div>
+<div class="fc-node" data-id="M">Observe 12-24h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Monitor: Coag, Renal, Neuro, Vitals</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="O">Disposition</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Key Point</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**PIB**</td><td>Elapids only, 40–70 mmHg, wrap distal→proximal</td></tr><tr><td>**Antivenom dose**</td><td>By venom load (vials), NOT weight; same adult/child</td></tr><tr><td>**Antivenom timing**</td><td>4–6h ideal, up to 24–72h beneficial</td></tr><tr><td>**Antivenom reactions**</td><td>Early anaphylaxis (IM adrenaline), pyrogenic (paracetamol), serum sickness (prednisolone 1mg/kg ×5–7d)</td></tr><tr><td>**Viperid coagulation**</td><td>INR↑, fibrinogen↓, platelets↓, D-dimer↑</td></tr><tr><td>**Neurotoxic pattern**</td><td>Ptosis → ophthalmoplegia → bulbar → limbs → respiratory</td></tr><tr><td>**First aid DON'Ts**</td><td>Tourniquet, incision, ice, electric shock, elevation</td></tr><tr><td>**Scorpion severe**</td><td>Leiurus, Androctonus, Tityus (LAT) — catecholamine storm</td></tr><tr><td>**Marine**</td><td>Vinegar (box jelly), hot water 45°C (stonefish)</td></tr><tr><td>**Anaphylaxis**</td><td>IM adrenaline 0.5mg (1:1000) immediately</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>PIB, antivenom dosing, reactions, neuro pattern</td></tr><tr><td>**3 d**</td><td></td><td></td><td>First aid, viperid vs elapid, scorpion, marine</td></tr><tr><td>**7 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Antivenom protocols, regional variations</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with Snake & Other topics</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>PIB technique & indications</td><td></td></tr><tr><td>Antivenom dose/timing/route</td><td></td></tr><tr><td>Antivenom reactions types & Rx</td><td></td></tr><tr><td>Viperid coagulation monitoring</td><td></td></tr><tr><td>Neurotoxic paralysis pattern</td><td></td></tr><tr><td>First aid by agent type</td><td></td></tr><tr><td>Scorpion/severe species</td><td></td></tr><tr><td>Marine first aid differences</td><td></td></tr><tr><td>Disposition criteria</td><td></td></tr><tr><td>Viva readiness</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Describe general principles of envenomation management"</td><td>ABCDE, first aid by agent, scoring, AV principles, monitoring, disposition</td></tr><tr><td>**Short Note**</td><td>"Pressure immobilisation bandage"</td><td>Indication (elapid), pressure (40–70mmHg), technique, contraindications</td></tr><tr><td>**Viva**</td><td>"Antivenom — dose, route, reactions, monitoring"</td><td>By venom load, IV, early/late reactions, repeat criteria, skin test myth</td></tr><tr><td>**Ward Round**</td><td>"Patient with snakebite — immediate steps?"</td><td>ABCDE, identify, first aid, PIB vs pressure, IV access, labs, WHO/SSS grade, AV decision</td></tr><tr><td>**Last-Night**</td><td>"Key envenomation numbers"</td><td>40–70mmHg PIB, 0.5mg IM adrenaline, 4–6h AV window, 5–14d serum sickness, INR>1.5</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">29</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Pressure Immobilisation Bandage (PIB) is indicated for which snake family?</b></li></ol>
+<p>A. Viperidae B. <b>Elapidae</b> C. Colubridae D. All of the above E. None — never use PIB</p>
+<ol><li><b>The correct pressure for PIB is:</b></li></ol>
+<p>A. 10–20 mmHg B. <b>40–70 mmHg</b> C. 80–100 mmHg D. 100–150 mmHg E. As tight as possible</p>
+<ol><li><b>Antivenom dose is determined by:</b></li></ol>
+<p>A. Patient body weight B. <b>Venom load (number of vials to neutralise average venom yield)</b> C. Severity of symptoms only D. Age of patient D. Time since bite</p>
+<ol><li><b>Antivenom is indicated for:</b></li></ol>
+<p>A. All snake bites B. <b>Systemic envenomation (neurotoxicity, coagulopathy, haemolysis, cardiovascular instability)</b> C. Local pain and swelling only D. Dry bites E. All viperid bites only</p>
+<ol><li><b>Early anaphylactic reaction to antivenom — first-line treatment:</b></li></ol>
+<p>A. IV antihistamine B. IV steroid C. <b>IM adrenaline 0.5mg (1:1000)</b> D. Stop infusion only E. IV fluid bolus only</p>
+<ol><li><b>Late antivenom reaction (serum sickness) typically occurs at:</b></li></ol>
+<p>A. 1–2 hours B. 6–12 hours C. <b>5–14 days</b> D. 21–28 days E. 1 month</p>
+<ol><li><b>Coagulopathy monitoring after viperid envenomation — which is NOT routinely monitored?</b></li></ol>
+<p>A. PT/INR B. Fibrinogen C. <b>APTT (less reliable than PT for viperid coagulopathy)</b> D. Platelet count E. D-dimer</p>
+<ol><li><b>Neurotoxic envenomation (elapid) — first cranial nerve affected:</b></li></ol>
+<p>A. CN III (oculomotor) B. <b>CN III/IV/VI (ophthalmoplegia, ptosis) — often earliest</b> C. CN VII (facial) C. CN IX/X (bulbar) E. CN XII (hypoglossal)</p>
+<ol><li><b>Serum sickness after antivenom — first-line treatment:</b></li></ol>
+<p>A. Antihistamines B. <b>Prednisolone 1mg/kg/day × 5–7 days</b> C. IVIG D. Plasmapheresis E. Antimalarials</p>
+<ol><li><b>Which first aid is CORRECT for stonefish envenomation?</b></li></ol>
+<p>A. Ice pack B. Tourniquet C. <b>Hot water immersion (45°C × 20 min)</b> D. Vinegar D. Pressure immobilisation</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">30</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>35-year-old farmer bitten on ankle by snake in rural Bangladesh. Applies tight tourniquet, brought in 3h later. Leg pale, pulseless, painful. Correct action:</b></li></ol>
+<p>A. Keep tourniquet, give antivenom B. <b>Remove tourniquet immediately, assess perfusion, apply PIB if elapid, give antivenom if systemic signs</b> C. Fasciotomy immediately D. Amputation E. Heparin infusion</p>
+<ol><li>**Child bitten by <i>Naja naja</i> (Indian cobra). Ptosis, dysphagia, respiratory distress. Antivenom available. Critical action:**</li></ol>
+<p>A. Intubate, give antivenom IV, monitor in ICU B. PIB, then intubate C. Neostigmine trial before antivenom D. <b>Intubate, give antivenom IV, neostigmine as adjunct, ICU care</b> E. Tracheostomy first</p>
+<ol><li><b>Viperid bite — coagulopathy persists after 10 vials antivenom. INR 4.5, fibrinogen 0.5, platelets 30k. Next step:</b></li></ol>
+<p>A. Give FFP only B. <b>Give more antivenom (repeat dose) + FFP + platelets if bleeding</b> C. Stop antivenom, give heparin C. Cryoprecipitate only E. Plasma exchange</p>
+<ol><li>**Scorpion sting (<i>Leiurus quinquestriatus</i>) in 8-year-old. Hypertension, pulmonary edema, agitation. Management:**</li></ol>
+<p>A. Prazosin only B. <b>Prazosin + oxygen + diuretic + antivenom if available + ICU</b> C. Beta-blocker D. Morphine E. Diazepam only</p>
+<ol><li>**Box jellyfish (<i>Chironex fleckeri</i>) sting. Immediate first aid:**</li></ol>
+<p>A. Fresh water wash B. <b>Vinegar (4–5% acetic acid) to inactivate nematocysts</b> C. Hot water D. Ice pack E. Pressure bandage</p>
+<ol><li><b>Bee sting in known allergic adult. Generalised urticaria, wheeze, hypotension. Immediate action:</b></li></ol>
+<p>A. IV hydrocortisone B. <b>IM adrenaline 0.5mg (1:1000) immediately, THEN fluids, oxygen, antihistamine, steroids</b> C. Oral antihistamine D. Observe E. Nebulised salbutamol only</p>
+<ol><li>**Redback spider (<i>Latrodectus hasselti</i>) bite. Severe pain, hypertension, diaphoresis. Management:**</li></ol>
+<p>A. Antivenom IM B. <b>Antivenom IV (preferred), analgesia, observation</b> C. Calcium gluconate D. Diazepam only E. Incision and drainage</p>
+<ol><li>**Blue-ringed octopus (<i>Hapalochlaena</i>) bite. Progressive paralysis. No antivenom. Management:**</li></ol>
+<p>A. Neostigmine B. <b>Supportive: intubation, ventilation until recovery (tetrodotoxin wears off in hours)</b> C. Plasma exchange D. 4-AP E. Hemodialysis</p>
+<ol><li><b>Patient given polyvalent snake antivenom. Develops urticaria, hypotension, wheeze 10 min into infusion. Management:</b></li></ol>
+<p>A. Slow infusion, give chlorphenamine B. <b>Stop infusion, IM adrenaline 0.5mg, IV fluids, chlorphenamine, hydrocortisone; restart slow if essential</b> C. Stop permanently, no more antivenom D. Continue at same rate with steroids E. Switch to monospecific antivenom</p>
+<ol><li><b>Dry bite definition:</b></li></ol>
+<p>A. Bite with fang marks but no venom injected B. Bite with no fang marks C. <b>Bite by venomous snake without clinical envenomation (no local/systemic signs)</b> D. Bite by non-venomous snake E. Bite with minimal swelling</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">31</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: PIB indication?</li></ul>
+<p>A: Elapid snake bites (neurotoxic)</p>
+<ul><li>Q: PIB pressure?</li></ul>
+<p>A: 40–70 mmHg</p>
+<ul><li>Q: PIB technique?</li></ul>
+<p>A: Broad elastic bandage 15cm above bite → wrap distally → proximally, splint, mark site</p>
+<ul><li>Q: Antivenom dose?</li></ul>
+<p>A: By venom load (vials), not weight</p>
+<ul><li>Q: Antivenom indication?</li></ul>
+<p>A: Systemic envenomation (neuro, coagulopathy, haemolysis, CVS instability)</p>
+<ul><li>Q: Antivenom timing?</li></ul>
+<p>A: Early (4–6h ideal), up to 24–72h still beneficial</p>
+<ul><li>Q: Antivenom reactions?</li></ul>
+<p>A: Early anaphylaxis, pyrogenic, late serum sickness (5–14 days)</p>
+<ul><li>Q: Serum sickness treatment?</li></ul>
+<p>A: Prednisolone 1mg/kg/day × 5–7 days</p>
+<ul><li>Q: Viperid coagulopathy labs?</li></ul>
+<p>A: INR, fibrinogen, platelets, D-dimer</p>
+<ul><li>Q: Neurotoxic pattern?</li></ul>
+<p>A: Descending, bulbar first (ptosis, ophthalmoplegia, dysphagia, resp failure)</p>
+<ul><li>Q: Scorpion severe species?</li></ul>
+<p>A: Leiurus, Androctonus, Tityus</p>
+<ul><li>Q: Box jellyfish first aid?</li></ul>
+<p>A: Vinegar (4–5% acetic acid)</p>
+<ul><li>Q: Stonefish first aid?</li></ul>
+<p>A: Hot water 45°C × 20 min</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">32</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — PIB is for neurotoxic elapids (cobra, krait, taipan), NOT viperids.</li><li><b>Correct: B</b> — 40–70 mmHg occludes venous/lymphatic flow while preserving arterial perfusion.</li><li><b>Correct: B</b> — Dose by venom load (vials), not patient weight. Same dose for adult and child.</li><li><b>Correct: B</b> — AV only for systemic envenomation; dry bites/local only = observation.</li><li><b>Correct: C</b> — IM adrenaline 0.5mg (1:1000) is FIRST-LINE for anaphylaxis; antihistamines/steroids are adjuncts only.</li><li><b>Correct: C</b> — Serum sickness is Type III hypersensitivity at 5–14 days post-AV.</li><li><b>Correct: C</b> — aPTT is less reliable than PT/INR for viperid VICC; PT/INR, fibrinogen, platelets, D-dimer are standard.</li><li><b>Correct: B</b> — Ptosis/ophthalmoplegia (CN III,IV,VI) is typically the earliest sign of neurotoxic envenomation.</li><li><b>Correct: B</b> — Prednisolone 1mg/kg/day × 5–7 days for serum sickness; antihistamines/NSAIDs adjunctive.</li><li><b>Correct: C</b> — Stonefish venom is thermolabile; hot water 45°C × 20 min denatures it. PIB/ice/vinegar are incorrect.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — Tourniquet causes ischaemia; remove immediately, then apply PIB if elapid, give AV for systemic signs.</li><li><b>Correct: D</b> — Neurotoxic with respiratory distress: intubate first, give AV IV, neostigmine adjunct for postsynaptic (cobra).</li><li><b>Correct: B</b> — Persistent coagulopathy at 6h = repeat AV dose. FFP/platelets for active bleeding adjunctively.</li><li><b>Correct: B</b> — Severe scorpion: prazosin (α1-blocker) for catecholamine storm + ICU + AV if available.</li><li><b>Correct: B</b> — Vinegar inactivates nematocysts; immediate application critical for box jellyfish.</li><li><b>Correct: B</b> — IM adrenaline 0.5mg FIRST, then adjunctive fluids/O₂/antihistamine/steroids.</li><li><b>Correct: B</b> — Redback antivenom IV preferred; RADS ≥2 indicates AV.</li><li><b>Correct: B</b> — No antivenom for blue-ringed octopus; tetrodotoxin clears in hours with supportive ventilation.</li><li><b>Correct: B</b> — Stop AV, treat anaphylaxis, restart slow with premedication if essential.</li><li><b>Correct: C</b> — Dry bite = venomous snake bite WITHOUT clinical envenomation (no local/systemic signs).</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">33</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>General Principles of Envenomation is a <b>Must Know 🔴</b> topic for FCPS/MRCP. <b>Key takeaway:</b> Envenomation management is agent-specific — different first aid (PIB vs pressure vs hot water vs vinegar), different antivenom protocols, but universal principles: early ABCDE, venom-load-based antivenom dosing, serial monitoring, avoid harmful first aid. <b>Exam focus:</b> PIB for elapids only, AV dose by vials (not weight), skin test NOT recommended, neurotoxic pattern descending, viperid VICC labs, scorpion prazosin, marine first aid differences. <b>Clinical relevance:</b> Directly applicable to emergency medicine, toxicology, and tropical medicine practice.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 8 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · General Principles of Envenomation · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

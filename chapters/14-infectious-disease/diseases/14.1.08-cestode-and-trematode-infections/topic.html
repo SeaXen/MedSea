@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cestode and Trematode Infections — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Cestode and Trematode Infections</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify <b>cestodes</b> (tapeworms): <i>Taenia</i> (intestinal), <i>Echinococcus</i> (hydatid), <i>Hymenolepis</i>, <i>Diphyllobothrium</i></li><li>[ ] Classify <b>trematodes</b> (flukes): Blood (<i>Schistosoma</i>), Liver (<i>Clonorchis, Opisthorchis, Fasciola</i>), Lung (<i>Paragonimus</i>), Intestinal (<i>Fasciolopsis, Heterophyes</i>)</li><li>[ ] Recognise <b>Neurocysticercosis</b>: Seizures, cysts (vesicular, colloidal, granular, calcified), Del Bruto criteria</li><li>[ ] Recognise <b>Hydatid disease</b>: Liver/lung cysts, anaphylaxis risk, "water-lily" sign, PAIR procedure</li><li>[ ] Recognise <b>Schistosomiasis</b>: Katayama fever, hepatic/intestinal/urinary chronic disease, bladder cancer</li><li>[ ] Diagnose: Stool O&amp;P, serology, imaging (CT/MRI/US), antigen detection</li><li>[ ] Manage: <b>Praziquantel</b> (most trematodes/cestodes), <b>Albendazole</b> (neurocysticercosis, hydatid), <b>Triclabendazole</b> (<i>Fasciola</i>)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📚 Cestodes (Tapeworms)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Species</th><th>Disease</th><th>Transmission</th><th>Key Features</th></tr><tr><td>---------</td><td>---------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Taenia solium**</td><td>Taeniasis (adult worm), **Cysticercosis** (larval)</td><td>Undercooked pork (taeniasis); **faecal-oral eggs** (cysticercosis)</td><td>**Neurocysticercosis** = major cause of epilepsy in endemic areas</td></tr><tr><td>**Taenia saginata**</td><td>Taeniasis only</td><td>Undercooked beef</td><td>No cysticercosis in humans; proglottids motile (pass per anus)</td></tr><tr><td>**Taenia asiatica**</td><td>Taeniasis</td><td>Undercooked pig viscera</td><td>SE Asia; similar to *T. saginata*</td></tr><tr><td>**Echinococcus granulosus**</td><td>**Cystic echinococcosis (Hydatid disease)**</td><td>Dog feces (sheep/dog cycle)</td><td>**Liver (65%), Lung (25%)**; unilocular cysts, anaphylaxis if rupture</td></tr><tr><td>**Echinococcus multilocularis**</td><td>**Alveolar echinococcosis**</td><td>Fox/rodent cycle</td><td>**Infiltrative, malignant-like**, liver → metastases; high mortality</td></tr><tr><td>**Hymenolepis nana**</td><td>Hymenolepiasis</td><td>Faecal-oral (auto-infection)</td><td>Dwarf tapeworm; children, institutionalised; asymptomatic or GI</td></tr><tr><td>**Diphyllobothrium latum**</td><td>Diphyllobothriasis</td><td>Raw/undercooked fish</td><td>**Vitamin B12 deficiency** (worm competes), megaloblastic anaemia</td></tr><tr><td>**Dipylidium caninum**</td><td>Dipylidiasis</td><td>Dog/cat fleas</td><td>Children; proglottids like rice grains</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📚 Trematodes (Flukes)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Blood Flukes — *Schistosoma*</div>
+<table class="ctable"><tr><th>Species</th><th>Location</th><th>Distribution</th><th>Key Features</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td><td>--------------</td></tr><tr><td>**S. haematobium**</td><td>Venous plexus of **bladder/ureters**</td><td>Africa, Middle East</td><td>**Haematuria**, bladder fibrosis, **SCC bladder**, hydronephrosis</td></tr><tr><td>**S. mansoni**</td><td>Portal veins → **mesenteric**</td><td>Africa, S. America, Caribbean</td><td>**Hepatosplenic** disease, portal hypertension, varices, colonic polyposis</td></tr><tr><td>**S. japonicum**</td><td>Portal veins → **mesenteric**</td><td>China, Philippines, Indonesia</td><td>**More severe** hepatic disease, higher egg output, animal reservoirs</td></tr><tr><td>**S. intercalatum**</td><td>Mesenteric veins</td><td>Central/West Africa</td><td>Mild intestinal disease</td></tr><tr><td>**S. mekongi**</td><td>Mesenteric veins</td><td>Mekong River basin</td><td>Similar to *S. japonicum*</td></tr></table>
+<div class="sub-h">Liver Flukes</div>
+<table class="ctable"><tr><th>Species</th><th>Transmission</th><th>Key Features</th></tr><tr><td>---------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Clonorchis sinensis**</td><td>Raw/undercooked **freshwater fish**</td><td>**Biliary dilatation**, cholangitis, **cholangiocarcinoma** (high risk), stones</td></tr><tr><td>**Opisthorchis viverrini/felineus**</td><td>Raw fish</td><td>Similar to *Clonorchis*; **cholangiocarcinoma** (NE Thailand)</td></tr><tr><td>**Fasciola hepatica/gigantica**</td><td>**Watercress, aquatic plants** (metacercariae)</td><td>**Acute**: fever, RUQ pain, hepatomegaly, eosinophilia; **Chronic**: biliary obstruction, stones</td></tr></table>
+<div class="sub-h">Lung Fluke</div>
+<table class="ctable"><tr><th>Species</th><th>Transmission</th><th>Key Features</th></tr><tr><td>---------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Paragonimus westermani**</td><td>Raw/undercooked **crab/crayfish**</td><td>**Haemoptysis**, "rusty sputum", eosinophilia, **CXR: ring shadows, cavities**; mimics TB; ectopic (brain, skin)</td></tr></table>
+<div class="sub-h">Intestinal Flukes</div>
+<table class="ctable"><tr><th>Species</th><th>Transmission</th><th>Key Features</th></tr><tr><td>---------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Fasciolopsis buski**</td><td>Aquatic plants (water chestnut)</td><td>Intestinal: diarrhoea, malabsorption, oedema</td></tr><tr><td>**Heterophyes/Metagonimus**</td><td>Raw fish</td><td>Mild intestinal symptoms</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🩺 Key Clinical Syndromes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Neurocysticercosis (*T. solium* larval cysts in CNS)</div>
+<table class="ctable"><tr><th>Stage</th><th>Imaging</th><th>Clinical</th></tr><tr><td>-------</td><td>---------</td><td>----------</td></tr><tr><td>**Vesicular** (viable)</td><td>**Single/multiple cysts**, thin wall, clear fluid, **scolex** (dot)</td><td>Often asymptomatic</td></tr><tr><td>**Colloidal** (degenerating)</td><td>Ring-enhancing, perilesional **oedema**</td><td>**Seizures**, headache, focal deficits</td></tr><tr><td>**Granular-nodular**</td><td>Enhancing nodule, decreasing oedema</td><td>Resolving</td></tr><tr><td>**Calcified**</td><td>**Calcified nodules**</td><td>**Late seizures** (epileptogenic focus)</td></tr></table>
+<p><b>Del Bruto Diagnostic Criteria</b> (Definite = 1 Absolute + 1 Major OR 2 Major + 1 Minor + Epidemiologic)</p>
+<ul><li><b>Absolute</b>: Scolex on CT/MRI, histopathology</li><li><b>Major</b>: Lesions suggestive (ring-enhancing, calcifications), positive serology (EITB), cysticercosis elsewhere</li><li><b>Minor</b>: Clinical manifestations, epidemiologic exposure</li></ul>
+<div class="sub-h">2. Cystic Echinococcosis / Hydatid Disease (*E. granulosus*)</div>
+<table class="ctable"><tr><th>Stage (WHO Ultrasound Classification)</th><th>Features</th></tr><tr><td>--------------------------------------</td><td>----------</td></tr><tr><td>**CE1**</td><td>Active, unilocular, anechoic (pure fluid)</td></tr><tr><td>**CE2**</td><td>Active, multiple septa ("**honeycomb**", "**wheel-spoke**")</td></tr><tr><td>**CE3**</td><td>**Detached membrane** ("**water-lily sign**") - transitional</td></tr><tr><td>**CE4**</td><td>Inactive, heterogeneous, hyperechoic (degenerate)</td></tr><tr><td>**CE5**</td><td>Inactive, **calcified** wall</td></tr></table>
+<p><b>Complications</b>: Anaphylaxis (rupture), secondary infection, biliary fistula, mass effect</p>
+<div class="sub-h">3. Schistosomiasis</div>
+<table class="ctable"><tr><th>Phase</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Acute (Katayama fever)**</td><td>4-8 weeks post-exposure: fever, cough, urticaria, hepatosplenomegaly, **marked eosinophilia**</td></tr><tr><td>**Chronic - *S. haematobium***</td><td>**Terminal haematuria**, dysuria, bladder calcification, **SCC bladder**, obstructive uropathy</td></tr><tr><td>**Chronic - *S. mansoni/japonicum***</td><td>**Portal hypertension**, varices, ascites, splenomegaly, **colonic polyposis** (pipe-stem fibrosis)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🔬 Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parasite</th><th>Diagnostic Tests</th></tr><tr><td>----------</td><td>------------------</td></tr><tr><td>**Neurocysticercosis**</td><td>**CT/MRI** (stages), **EITB/Western blot** (serum/CSF), stool O&P (taeniasis)</td></tr><tr><td>**Hydatid disease**</td><td>**Ultrasound** (WHO classification), **serology** (ELISA, IgG), CT/MRI, **PCR** (cyst fluid)</td></tr><tr><td>**Schistosomiasis**</td><td>**Stool/urine microscopy** (eggs: *S. haematobium* = terminal spine; *S. mansoni* = lateral spine; *S. japonicum* = small lateral spine), **CAAs/CCAs** (antigen), serology, rectal biopsy</td></tr><tr><td>**Clonorchis/Opisthorchis**</td><td>**Stool O&P** (small operculated eggs), **ERCP/MRCP** (biliary dilatation), serology</td></tr><tr><td>**Fasciola**</td><td>**Stool O&P** (large operculated eggs - late), **serology** (early), imaging (liver tracts)</td></tr><tr><td>**Paragonimus**</td><td>**Sputum/stool O&P** (large operculated eggs), **CXR/CT** (ring shadows, cavities), serology</td></tr></table>
+<div class="callout">[!tip] <b>Exam Pearl</b>: <i>T. solium</i> eggs = **indistinguishable from <i>T. saginata</i><b> on microscopy; need proglottids or PCR. </b>Cysticercosis from faecal-oral eggs, not pork**.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">💊 Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cestodes</div>
+<table class="ctable"><tr><th>Infection</th><th>Drug</th><th>Dose</th><th>Duration</th></tr><tr><td>-----------</td><td>------</td><td>------</td><td>----------</td></tr><tr><td>**Taeniasis** (*T. solium, T. saginata*)</td><td>**Praziquantel**</td><td>5-10 mg/kg single dose</td><td>1 dose</td></tr><tr><td></td><td>**Niclosamide**</td><td>2 g single dose</td><td>1 dose</td></tr><tr><td>**Neurocysticercosis**</td><td>**Albendazole** + **Dexamethasone**</td><td>15 mg/kg/day (max 800mg) bd</td><td>**14-28 days**</td></tr><tr><td></td><td>**Praziquantel** (alternative)</td><td>50 mg/kg/day tds</td><td>14 days</td></tr><tr><td></td><td>**Seizure control**</td><td>AEDs (levetiracetam, valproate)</td><td>As needed</td></tr><tr><td>**Hydatid disease (CE1, CE3a)**</td><td>**Albendazole**</td><td>15 mg/kg/day bd (max 800mg)</td><td>**3-6 months** (cycles 28d on/14d off)</td></tr><tr><td></td><td>**PAIR** (Puncture, Aspiration, Injection, Re-aspiration)</td><td>95% ethanol / hypertonic saline</td><td>Single procedure + albendazole</td></tr><tr><td></td><td>**Surgery**</td><td>Perioperative albendazole</td><td>Definitive for CE2, CE3b, complicated</td></tr><tr><td>**Hymenolepis nana**</td><td>**Praziquantel**</td><td>25 mg/kg single dose</td><td>1 dose (repeat 2 weeks)</td></tr><tr><td>**Diphyllobothrium**</td><td>**Praziquantel**</td><td>25 mg/kg single dose</td><td>1 dose + **B12 replacement**</td></tr></table>
+<div class="sub-h">Trematodes</div>
+<table class="ctable"><tr><th>Infection</th><th>Drug</th><th>Dose</th><th>Duration</th></tr><tr><td>-----------</td><td>------</td><td>------</td><td>----------</td></tr><tr><td>**Schistosomiasis** (all species)</td><td>**Praziquantel**</td><td>40 mg/kg single dose (or split)</td><td>1 day</td></tr><tr><td></td><td>*S. haematobium*: **40 mg/kg**; *S. mansoni/japonicum*: **60 mg/kg** (2 doses 4h apart)</td><td></td><td></td></tr><tr><td>**Clonorchis / Opisthorchis**</td><td>**Praziquantel**</td><td>25 mg/kg tds</td><td>**1-3 days**</td></tr><tr><td>**Fasciola**</td><td>**Triclabendazole**</td><td>10 mg/kg single dose (or bd)</td><td>1-2 days</td></tr><tr><td></td><td>**Praziquantel** (ineffective)</td><td>-</td><td>-</td></tr><tr><td>**Paragonimus**</td><td>**Praziquantel**</td><td>25 mg/kg tds</td><td>**2-3 days**</td></tr><tr><td></td><td>**Triclabendazole**</td><td>10 mg/kg bd</td><td>1 day</td></tr><tr><td>**Fasciolopsis / Heterophyes**</td><td>**Praziquantel**</td><td>25 mg/kg tds</td><td>1 day</td></tr></table>
+<div class="callout">[!warning] <b>Neurocysticercosis</b>: <b>ALWAYS give dexamethasone</b> (0.1 mg/kg/day) <b>before and during</b> albendazole to reduce perilesional oedema/seizures. <b>Contraindicated</b> in cysticercal encephalitis (numerous cysts + oedema) — treat oedema first.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📋 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Neurocysticercosis**</td><td>Most common cause of acquired epilepsy in endemic areas; **Albendazole + Dexamethasone**</td></tr><tr><td>**Hydatid disease**</td><td>*E. granulosus*; liver/lung cysts; **WHO US classification**; **PAIR** for CE1/CE3a; **Albendazole** adjunct</td></tr><tr><td>**Alveolar echinococcosis**</td><td>*E. multilocularis*; **infiltrative, malignant-like**, poor prognosis</td></tr><tr><td>**Schistosomiasis**</td><td>*haematobium* = haematuria/bladder cancer; *mansoni/japonicum* = portal HTN; **Praziquantel**</td></tr><tr><td>**Clonorchis/Opisthorchis**</td><td>Raw fish → **cholangiocarcinoma**; Praziquantel</td></tr><tr><td>**Fasciola**</td><td>Watercress → **acute hepatitis + eosinophilia**; **Triclabendazole** (NOT praziquantel)</td></tr><tr><td>**Paragonimus**</td><td>Raw crab → **haemoptysis, ring shadows on CXR**; Praziquantel/Triclabendazole</td></tr><tr><td>**Diphyllobothrium**</td><td>Raw fish → **B12 deficiency**; Praziquantel + B12</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions (FCPS/MRCP)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>**Differentiate <i>Taenia solium</i> taeniasis from cysticercosis. How does human cysticercosis occur?**</li><li><b>What are the Del Bruto criteria for neurocysticercosis?</b></li><li><b>Describe WHO ultrasound classification of hydatid cysts. Which stages are suitable for PAIR?</b></li><li>**Compare <i>E. granulosus</i> vs <i>E. multilocularis</i> clinical features and prognosis.**</li><li><b>A patient presents with terminal haematuria after travel to Egypt. Diagnosis and treatment?</b></li><li>**Why is praziquantel ineffective for <i>Fasciola</i>? What is the drug of choice?**</li><li>**Describe the life cycle of <i>Paragonimus westermani</i>.**</li><li>**How do you differentiate <i>Schistosoma</i> eggs on microscopy?**</li><li><b>Management of neurocysticercosis with multiple viable cysts vs calcified nodules.</b></li><li><b>A vegetarian has B12 deficiency and passes proglottids. Diagnosis?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**T. solium vs T. saginata**</td><td>*T. solium*: Pork, **cysticercosis risk**, non-motile proglottids (<13 uterine branches); *T. saginata*: Beef, **no cysticercosis**, motile proglottids (>15 branches)</td></tr><tr><td>**Cysticercosis vs Taeniasis**</td><td>Cysticercosis = **larval cysts in tissue** (ingest eggs); Taeniasis = **adult worm in intestine** (ingest cysticerci in pork)</td></tr><tr><td>**Hydatid cyst vs Liver abscess**</td><td>Hydatid: **WHO US classification**, daughter cysts, water-lily sign, eosinophilia, anaphylaxis risk; Abscess: Pyogenic, septations, no daughter cysts</td></tr><tr><td>**Fasciola vs Clonorchis**</td><td>*Fasciola*: Watercress, **acute hepatitis + eosinophilia**, **Triclabendazole**; *Clonorchis*: Raw fish, **chronic biliary dilatation, cholangiocarcinoma**, Praziquantel</td></tr><tr><td>**Paragonimus vs TB**</td><td>Paragonimus: **Eosinophilia**, haemoptysis, **ring shadows/cavities on CXR**, responds to praziquantel; TB: AFB+, caseating, ATT</td></tr></table>
+<p><b>Mnemonic - Cestodes</b>: <b>"TAENIA"</b> → <b>T</b>aenia solium (pork, cysticercosis), <b>A</b>lbendazole (neurocysticercosis), <b>E</b>chinococcus granulosus (hydatid), <b>N</b>iclosamide/Praziquantel (taeniasis), <b>I</b>nfective eggs (faecal-oral), <b>A</b>lveolar (multilocularis = bad)</p>
+<p><b>Mnemonic - Trematodes</b>: <b>"SCHISTO"</b> → <b>S</b>chistosoma (blood fluke, praziquantel), <b>C</b>lonorchis (liver fluke, fish, cholangiocarcinoma), <b>H</b>epatic fasciola (watercress, triclabendazole), <b>I</b>ntestinal flukes (fasciolopsis), <b>S</b>tages of schisto (Katayama → chronic), <b>T</b>rematodes = flukes, <b>O</b>perculated eggs (most)</p>
+<p><b>Mnemonic - Neurocysticercosis Stages</b>: <b>"VESC"</b> → <b>V</b>esicular (viable, scolex), <b>E</b>nhancing/Colloidal (oedema, seizures), <b>S</b>tage/C<b>alcified</b> (epilepsy focus)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Helminths))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Cestodes (Tapeworms)</div>
+<div class="mm-node mm-l3">– Taenia solium</div>
+<div class="mm-node mm-deep">– Taeniasis (pork)</div>
+<div class="mm-node mm-deep">– Cysticercosis (eggs)</div>
+<div class="mm-node mm-deep">– Neurocysticercosis → Albendazole + Dex</div>
+<div class="mm-node mm-l3">– Taenia saginata (beef, no cysticercosis)</div>
+<div class="mm-node mm-l3">– Echinococcus granulosus (Hydatid)</div>
+<div class="mm-node mm-deep">– Liver/Lung cysts, WHO US</div>
+<div class="mm-node mm-deep">– PAIR, Albendazole, Surgery</div>
+<div class="mm-node mm-l3">– E. multilocularis (Alveolar - malignant)</div>
+<div class="mm-node mm-l3">– Hymenolepis nana, Diphyllobothrium (B12)</div>
+<div class="mm-node mm-l2">Trematodes (Flukes)</div>
+<div class="mm-node mm-l3">– Blood: Schistosoma</div>
+<div class="mm-node mm-deep">– haematobium (bladder, haematuria, SCC)</div>
+<div class="mm-node mm-deep">– mansoni/japonicum (liver, portal HTN)</div>
+<div class="mm-node mm-deep">– Praziquantel</div>
+<div class="mm-node mm-l3">– Liver: Clonorchis/Opisthorchis (fish, CCA)</div>
+<div class="mm-node mm-deep">– Fasciola (watercress, triclabendazole)</div>
+<div class="mm-node mm-l3">– Lung: Paragonimus (crab, haemoptysis)</div>
+<div class="mm-node mm-l3">– Intestinal: Fasciolopsis</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📄 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Cestodes**</th><th>**Drug**</th><th>**Trematodes**</th><th>**Drug**</th></tr><tr><td>--------------</td><td>----------</td><td>----------------</td><td>----------</td></tr><tr><td>*T. solium* taeniasis</td><td>Praziquantel 5-10mg/kg</td><td>*Schistosoma*</td><td>Praziquantel 40-60mg/kg</td></tr><tr><td>*T. solium* neurocysticercosis</td><td>**Albendazole + Dex**</td><td>*Clonorchis/Opisthorchis*</td><td>Praziquantel 25mg/kg tds</td></tr><tr><td>*E. granulosus* hydatid</td><td>Albendazole ± PAIR/Surgery</td><td>*Fasciola*</td><td>**Triclabendazole** 10mg/kg</td></tr><tr><td>*E. multilocularis*</td><td>Albendazole long-term + Surgery</td><td>*Paragonimus*</td><td>Praziquantel / Triclabendazole</td></tr><tr><td>*H. nana*</td><td>Praziquantel 25mg/kg</td><td>*Fasciolopsis*</td><td>Praziquantel</td></tr><tr><td>*D. latum* (B12 deficiency)</td><td>Praziquantel + B12</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📊 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date</th><th>Score (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Known? (✓/✗)</th><th>Last Reviewed</th></tr><tr><td>-------</td><td>--------------</td><td>---------------</td></tr><tr><td>T. solium taeniasis vs cysticercosis</td><td></td><td></td></tr><tr><td>Neurocysticercosis stages & Del Bruto criteria</td><td></td><td></td></tr><tr><td>Hydatid cyst WHO classification & PAIR indications</td><td></td><td></td></tr><tr><td>Schistosoma species & clinical syndromes</td><td></td><td></td></tr><tr><td>Liver flukes: Clonorchis vs Fasciola</td><td></td><td></td></tr><tr><td>Paragonimus vs TB differentiation</td><td></td><td></td></tr><tr><td>Drug of choice for each parasite</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Infectious Disease MOC]]</li><li>[[Davidson Chapter 13 - Infectious Disease Hierarchy]]</li><li>[[Neurocysticercosis]]</li><li>[[Hydatid Disease]]</li><li>[[Schistosomiasis]]</li><li>[[Liver Fluke Infections]]</li><li>[[Lung Fluke]]</li><li>[[Parasitic Infections]]</li><li>[[Travel Medicine &amp; Pre-travel Advice]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Last Updated: 2025-06-17 | Based on Davidson 24e Ch 11 | FCPS/MRCP Focused</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cestode and Trematode Infections · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

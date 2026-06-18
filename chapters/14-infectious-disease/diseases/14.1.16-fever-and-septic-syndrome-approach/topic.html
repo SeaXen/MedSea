@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fever and Septic Syndrome Approach — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Fever and Septic Syndrome Approach</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define fever, hyperpyrexia, hyperthermia, and septic syndrome</li><li>Apply structured clinical approach: history (onset, pattern, travel, exposures), examination (focus, fundi, skin, joints, neurological), investigations (stepwise)</li><li>Recognise red flags for urgent intervention (sepsis, meningitis, endocarditis, necrotising infection)</li><li>Select empirical antibiotics by syndrome and local epidemiology</li><li>Differentiate infectious from non-infectious fever (drug, malignancy, autoimmune, thromboembolic)</li><li>Approach pyrexia of unknown origin (PUO) systematically</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Fever**</td><td>Core temperature ≥38.3°C (101°F) once OR ≥38.0°C for ≥1 hour</td></tr><tr><td>**Hyperpyrexia**</td><td>Temperature ≥41.5°C (106.7°F) — medical emergency</td></tr><tr><td>**Hyperthermia**</td><td>Uncontrolled temperature rise (failed thermoregulation): heat stroke, NMS, MH, thyrotoxicosis — **no hypothalamic set-point change; antipyretics INEFFECTIVE**</td></tr><tr><td>**Septic syndrome**</td><td>Fever + SIRS criteria (2/4: T>38, HR>90, RR>20, WCC>12/<4) ± organ dysfunction</td></tr><tr><td>**SIRS**</td><td>Systemic Inflammatory Response Syndrome — non-specific</td></tr><tr><td>**PUO (Classic)**</td><td>Fever ≥38.3°C on multiple occasions >3 weeks, diagnosis uncertain after 1 week inpatient investigation</td></tr><tr><td>**PUO (Modern)**</td><td>Fever >3 weeks (outpatient) or >3 days (inpatient immunocompromised) without diagnosis after standard workup</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Fever Patterns (Historical — Limited Specificity)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pattern</th><th>Description</th><th>Classic Associations</th></tr><tr><td>---------</td><td>-------------</td><td>---------------------</td></tr><tr><td>**Continuous**</td><td>Minimal diurnal variation (<1°C)</td><td>Typhoid, TB, bacterial endocarditis, pneumonia</td></tr><tr><td>**Remittent**</td><td>Diurnal variation >1°C but never normal</td><td>Infective endocarditis, TB, intra-abdominal abscess</td></tr><tr><td>**Intermittent**</td><td>Spikes to normal daily</td><td>Malaria, abscess, TB, urinary infection</td></tr><tr><td>**Quotidian**</td><td>Daily spikes</td><td>Malaria (falciparum), sepsis</td></tr><tr><td>**Tertian**</td><td>Every 48h (every 3rd day)</td><td>*P. vivax/ovale* malaria</td></tr><tr><td>**Quartan**</td><td>Every 72h (every 4th day)</td><td>*P. malariae*</td></tr><tr><td>**Relapsing**</td><td>Febrile periods separated by afebrile days</td><td>Borrelia (relapsing fever), rat-bite fever</td></tr><tr><td>**Pel-Ebstein**</td><td>Week febrile, week afebrile</td><td>Hodgkin lymphoma</td></tr></table>
+<div class="callout">[!tip] <b>Fever patterns have POOR sensitivity/specificity</b> in modern practice — do not rely for diagnosis.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Structured Clinical Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Patient with fever</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">IMMEDIATE: ABCDE, vitals, sepsis screen (qSOFA/SOFA)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Septic shock / red flags?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Activate sepsis bundle: lactate, Cx, abx 1h, fluids, vasopressors</div>
+<div class="fc-node" data-id="E">Detailed History</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Focused Examination</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Stepwise Investigations</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Syndrome-based Empirical Therapy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Source Identification &amp; Targeted Therapy</div>
+</div>
+</div>
+<div class="sub-h">1. History — Key Domains</div>
+<table class="ctable"><tr><th>Domain</th><th>Critical Questions</th></tr><tr><td>--------</td><td>-------------------</td></tr><tr><td>**Onset & Pattern**</td><td>Acute vs subacute vs chronic; rigors (bacteraemia); night sweats (TB, lymphoma)</td></tr><tr><td>**Localising Symptoms**</td><td>Cough/pleurisy (resp), dysuria/flank pain (UTI), abdominal pain (IAI), headache/neck stiffness (CNS), joint pain (septic arthritis)</td></tr><tr><td>**Travel & Geography**</td><td>Malaria (endemic + <1y), dengue, typhoid, TB, rickettsial, schistosomiasis, viral haemorrhagic fevers</td></tr><tr><td>**Exposures**</td><td>Animal contact (brucellosis, leptospirosis, Q fever), ticks (rickettsial, Lyme), freshwater (leptospira, schisto), sexual (STI, HIV), IVDU (endocarditis, abscesses)</td></tr><tr><td>**Host Factors**</td><td>Immunosuppression (steroids, chemo, transplant, HIV), diabetes, cirrhosis, asplenia, prosthetic devices, recent antibiotics/hospitalisation/surgery</td></tr><tr><td>**Drug History**</td><td>**Drug fever** (beta-lactams, sulfonamides, allopurinol, anticonvulsants, ATT, checkpoint inhibitors) — diagnosis of exclusion</td></tr><tr><td>**Vaccination Status**</td><td>COVID, influenza, pneumococcal, meningococcal, Hib, typhoid, yellow fever</td></tr></table>
+<div class="sub-h">2. Examination — Systematic &amp; Targeted</div>
+<table class="ctable"><tr><th>System</th><th>Key Signs</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**General**</td><td>Temperature (core), rigors, haemodynamic status, hydration, cachexia</td></tr><tr><td>**Skin**</td><td>**Petechiae/purpura** (meningococcal, DIC), **erythema migrans** (Lyme), **eschar** (rickettsial, scrub typhus), **necrotising fasciitis** (pain↑, crepitus, bronzing), **cellulitis**, **abscess**, **drug rash**, **Janeway/Osler nodes** (endocarditis), **splinter haemorrhages**, **Roth spots**</td></tr><tr><td>**Eyes**</td><td>**Fundoscopy**: Roth spots, papilloedema (ICP), CMV retinitis, endophthalmitis; **conjunctival haemorrhage** (meningococcal, leptospira)</td></tr><tr><td>**ENT**</td><td>Pharyngitis, peritonsillar abscess, sinus tenderness, otitis media</td></tr><tr><td>**Neck**</td><td>Stiffness (meningitis), lymphadenopathy (local/generalised), JVP</td></tr><tr><td>**Respiratory**</td><td>Consolidation, effusion, wheeze, cavity signs</td></tr><tr><td>**Cardiovascular**</td><td>**Murmurs** (new/regurgitant = endocarditis), pericardial rub, signs of heart failure</td></tr><tr><td>**Abdomen**</td><td>Hepatosplenomegaly, tenderness, guarding, masses, ascites, peritonitis</td></tr><tr><td>**Neurological**</td><td>GCS, meningeal signs (Kernig, Brudzinski), focal deficits, cranial nerves</td></tr><tr><td>**Musculoskeletal**</td><td>**Hot swollen joint** (septic arthritis — emergency), osteomyelitis, discitis</td></tr><tr><td>**Genitourinary**</td><td>Urethral discharge, epididymo-orchitis, pelvic exam (PID)</td></tr><tr><td>**Devices**</td><td>**Line sites** (erythema, purulence), urinary catheter, drains, prostheses</td></tr></table>
+<div class="sub-h">3. Stepwise Investigations</div>
+<table class="ctable"><tr><th>Tier</th><th>Tests</th><th>Indication</th></tr><tr><td>------</td><td>-------</td><td>------------</td></tr><tr><td>**Tier 1 (All)**</td><td>FBC + diff, CRP, PCT, U&E, LFTs, Ca²⁺/Mg²⁺/PO₄, glucose, **blood cultures ×2–3 sets (aerobic/anaerobic) BEFORE antibiotics**, lactate, coagulation, urinalysis + culture, **CXR**</td><td>Baseline for all</td></tr><tr><td>**Tier 2 (Syndrome-driven)**</td><td>**LP** (CNS symptoms), **echo** (new murmur, IVDU, embolic phenomena), **CT abdomen/pelvis** (abdominal symptoms), **joint aspiration** (hot joint), **sputum** (cough), **stool** (diarrhoea), **wound/line tip cultures**</td><td>Targeted</td></tr><tr><td>**Tier 3 (PUO / Unresolved)**</td><td>HIV, ANA, ANCA, RF, ACE, ferritin, LDH, urine TB PCR/GeneXpert, **CT TAP**, **PET-CT**, **bone marrow** (if cytopenias), **temporal artery biopsy** (if >50), **serology** (brucella, leptospira, rickettsia, EBV, CMV, HIV, syphilis), **IGRA/TST**</td><td>PUO protocol</td></tr><tr><td>**Tier 4 (Specialised)**</td><td>**16S rRNA PCR** (culture-negative), **metagenomic sequencing**, **autoantibody panel**, **lymph node biopsy**, **liver biopsy**</td><td>Refractory</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Syndrome-Based Empirical Approach</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Syndrome</th><th>Likely Sources</th><th>Empirical Antibiotics (adjust local)</th></tr><tr><td>-------------------</td><td>----------------</td><td>--------------------------------------</td></tr><tr><td>**Septic shock / severe sepsis**</td><td>Any — see Sepsis note</td><td>See Sepsis and Septic Shock note</td></tr><tr><td>**Community-acquired pneumonia (severe)**</td><td>*S. pneumoniae*, atypicals, *H. influenzae*</td><td>Ceftriaxone 2g IV 12h + Azithromycin 500mg IV/PO OD</td></tr><tr><td>**Healthcare-associated / ventilator pneumonia**</td><td>*Pseudomonas*, MRSA, Gram-negatives</td><td>Pip-tazo 4.5g 6h OR Meropenem 1g 8h + Vancomycin 15–20mg/kg 6h</td></tr><tr><td>**Meningitis / encephalitis**</td><td>See Acute Bacterial Meningitis / Viral Encephalitis notes</td><td>Ceftriaxone + Vancomycin + Dexamethasone ± Aciclovir</td></tr><tr><td>**Infective endocarditis**</td><td>See IE note</td><td>See IE note</td></tr><tr><td>**Intra-abdominal sepsis**</td><td>Enterobacteriaceae, *Bacteroides*, *Enterococcus*</td><td>Pip-tazo 4.5g 6h OR Meropenem 1g 8h</td></tr><tr><td>**Complicated UTI / Pyelonephritis**</td><td>*E. coli*, *Klebsiella*, *Enterococcus*, *Pseudomonas*</td><td>Ceftriaxone 2g 12h OR Pip-tazo 4.5g 6h</td></tr><tr><td>**Skin/Soft tissue (severe/necrotising)**</td><td>MSSA/MRSA, streptococci, anaerobes, Gram-neg</td><td>Pip-tazo + Vancomycin + Clindamycin</td></tr><tr><td>**Septic arthritis**</td><td>*S. aureus*, streptococci, *N. gonorrhoeae* (young)</td><td>Flucloxacillin 2g 4h + Ceftriaxone 2g 12h (add vancomycin if MRSA risk)</td></tr><tr><td>**Febrile neutropenia**</td><td>Gram-negatives (Pseudomonas), Gram-positives</td><td>Pip-tazo 4.5g 6h OR Meropenem 1g 8h (+ vancomycin if indicated)</td></tr><tr><td>**Line sepsis**</td><td>CoNS, *S. aureus*, Gram-neg, Candida</td><td>Vancomycin + Pip-tazo/Meropenem (remove line if S. aureus/Candida/BCx+ve)</td></tr><tr><td>**Post-surgical fever (day 0–2)**</td><td>Atelectasis, drugs, transfusion</td><td>Usually no antibiotics</td></tr><tr><td>**Post-surgical fever (day 3–7)**</td><td>Wound infection, UTI, line, DVT/PE</td><td>Targeted by source</td></tr><tr><td>**Post-surgical fever (>7d)**</td><td>Abscess, anastomotic leak, DVT/PE, drug</td><td>CT abdomen, cultures</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Red Flags — Urgent/Immediate Action</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Red Flag</th><th>Implication</th><th>Action</th></tr><tr><td>----------</td><td>-------------</td><td>--------</td></tr><tr><td>**Hyperpyrexia ≥41.5°C**</td><td>Heat stroke, NMS, malignant hyperthermia, severe sepsis</td><td>Cooling, dantrolene (MH/NMS), ICU</td></tr><tr><td>**Rigors + hypotension**</td><td>Bacteraemia, sepsis</td><td>Blood cultures, sepsis bundle</td></tr><tr><td>**Petechial/purpuric rash + fever**</td><td>Meningococcal sepsis, DIC, vasculitis</td><td>Sepsis bundle, ceftriaxone, ICU</td></tr><tr><td>**New murmur + fever + embolic phenomena**</td><td>Infective endocarditis</td><td>3 sets blood cultures, TTE/TOE, empirical IE antibiotics</td></tr><tr><td>**Hot swollen joint**</td><td>Septic arthritis</td><td>**Urgent joint aspiration → antibiotics → orthopaedics**</td></tr><tr><td>**Neck stiffness + AMS**</td><td>Meningitis/encephalitis</td><td>LP if safe, aciclovir + empirical meningitis abx</td></tr><tr><td>**Focal neurological deficit**</td><td>Brain abscess, stroke, TB meningitis</td><td>Urgent MRI/CT, LP if safe</td></tr><tr><td>**Immunocompromised + fever**</td><td>Neutropenic sepsis, opportunistic</td><td>Broad abx immediately, G-CSF, antifungal if persistent</td></tr><tr><td>**Returning traveller + fever**</td><td>Malaria (falciparum = emergency), dengue, typhoid, VHF</td><td>**Thick/thin films ×3 (or RDT), malaria PCR**; isolate if VHF suspected</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Non-Infectious Fever (Differential)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Examples</th><th>Clues</th></tr><tr><td>----------</td><td>----------</td><td>-------</td></tr><tr><td>**Drug fever**</td><td>Beta-lactams, sulfonamides, allopurinol, anticonvulsants, ATT, checkpoint inhibitors, biologics</td><td>Temporal relation, rash, eosinophilia, resolves on stopping</td></tr><tr><td>**Malignancy**</td><td>Lymphoma (Pel-Ebstein), leukaemia, renal cell, hepatocellular, metastases</td><td>Weight loss, night sweats, lymphadenopathy, cytopenias</td></tr><tr><td>**Autoimmune / Autoinflammatory**</td><td>SLE, Still disease, vasculitis (GCA, PAN), AOSD, FMF, TRAPS, CAPS</td><td>Rash, arthritis, serositis, high ferritin, rash evanescent (Still)</td></tr><tr><td>**Thromboembolic**</td><td>PE, DVT, cerebral venous thrombosis</td><td>Hypoxia, pleuritic pain, Wells score, D-dimer</td></tr><tr><td>**Endocrine**</td><td>Thyrotoxicosis (thyroid storm), adrenal crisis, phaeochromocytoma</td><td>Tachycardia, tremor, hypotension, hyperglycaemia</td></tr><tr><td>**Factitious**</td><td>Self-induced (thermometer manipulation, injection)</td><td>Unexplained fever, healthcare access, psychiatric history</td></tr><tr><td>**Post-procedural**</td><td>Post-embolisation, post-ablation, post-chemo</td><td>Temporal, self-limiting</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Pyrexia of Unknown Origin (PUO) — Modern Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition</div>
+<ul><li><b>Classic:</b> Fever ≥38.3°C on multiple occasions &gt;3 weeks, uncertain after 1 week inpatient workup</li><li><b>Nosocomial:</b> Fever &gt;38.3°C on multiple occasions in hospitalised patient, uncertain after 3 days workup</li><li><b>Immunocompromised:</b> Fever &gt;38.3°C in neutropenic/immunosuppressed, uncertain after 3 days</li><li><b>HIV-associated:</b> Fever &gt;38.3°C for &gt;4 weeks (outpatient) or &gt;3 days (inpatient), CD4&lt;200</li></ul>
+<div class="sub-h">Aetiology Distribution (Classic PUO)</div>
+<table class="ctable"><tr><th>Category</th><th>%</th><th>Examples</th></tr><tr><td>----------</td><td>----</td><td>----------</td></tr><tr><td>**Infections**</td><td>30–40%</td><td>TB (extrapulmonary), endocarditis, abscesses, EBV/CMV, HIV, brucellosis, typhoid, disseminated fungal</td></tr><tr><td>**Malignancy**</td><td>20–25%</td><td>Lymphoma, leukaemia, renal cell, hepatocellular, metastatic</td></tr><tr><td>**Autoimmune / Inflammatory**</td><td>15–20%</td><td>SLE, Still disease, GCA, PAN, sarcoidosis, AOSD</td></tr><tr><td>**Miscellaneous / Undiagnosed**</td><td>10–15%</td><td>Drug fever, factitious, thromboembolic, endocrine</td></tr><tr><td>**Truly Unknown**</td><td>5–10%</td><td>Resolves spontaneously</td></tr></table>
+<div class="sub-h">PUO Workup Protocol</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">PUO: Fever &gt;3w (opd) / &gt;3d (ip immunocompromised) no dx after standard workup</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Repeat History + Exam daily</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Tier 1: FBC, CRP, PCT, U&amp;E, LFTs, Ca, glucose, lactate, coag, urine Cx, blood Cx×3, CXR, HIV, TST/IGRA</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Tier 2: ANA, ANCA, RF, ACE, ferritin, LDH, ESR, urine TB PCR, stool Cx, serology (brucella, lepto, rickettsia, EBV, CMV, syphilis)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Localising clues?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Targeted imaging: CT TAP, PET-CT, echo, LP, joint aspiration, bone scan</div>
+<div class="fc-node" data-id="G">Non-localised: CT TAP → PET-CT → Bone marrow biopsy (if cytopenias) → Temporal artery biopsy (if &gt;50)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Targeted biopsies: lymph node, liver, bone marrow, temporal artery</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Empirical therapeutic trials ONLY if life-threatening: ATT (TB), steroids (Still/GCA), doxycycline (rickettsial)</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Special Populations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Key Considerations</th></tr><tr><td>------------</td><td>-------------------</td></tr><tr><td>**Elderly**</td><td>Atypical presentation (hypothermia, confusion, falls), polymorbidity, polypharmacy, blunted fever response</td></tr><tr><td>**Pregnancy**</td><td>Physiological leukocytosis, reduced cell-mediated immunity, listeriosis, pyelonephritis, chorioamnionitis; avoid fluoroquinolones/doxycycline</td></tr><tr><td>**Returning Traveller**</td><td>**Malaria until proven otherwise** — thick/thin films ×3 at 12–24h intervals or RDT+PCR; consider dengue, typhoid, rickettsial, schistosomiasis, VHF</td></tr><tr><td>**Immunocompromised (HIV CD4<200, transplant, chemo, steroids)**</td><td>**Broader differential:** atypical TB, fungal (crypto, histoplasma, PCP), CMV, EBV, MAC, toxoplasma, nocardia, strongyloides; **lower threshold for empirical broad abx + antifungal**; G-CSF if neutropenic</td></tr><tr><td>**Post-splenectomy / Functional Hyposplenism**</td><td>**Overwhelming post-splenectomy infection (OPSI):** *S. pneumoniae*, *H. influenzae*, *N. meningitidis*, *Capnocytophaga*; **vaccinate + lifelong penicillin prophylaxis**; urgent abx if fever</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Fever ≥38.3°C; hyperpyrexia ≥41.5°C = emergency; hyperthermia = antipyretics don't work</b></li><li><b>Structured approach: ABCDE → sepsis screen → history (travel, exposures, host factors, drugs) → targeted exam (skin, fundi, murmur, joints, devices) → stepwise investigations</b></li><li><b>Blood cultures BEFORE antibiotics (×2–3 sets) — do not delay abx &gt;45min for cultures</b></li><li><b>Syndrome-based empirical therapy</b> (see table) — de-escalate at 48–72h</li><li><b>Red flags:</b> rigors+hypotension, petechial rash, new murmur+emboli, hot joint, neck stiffness+AMS, focal neuro deficit, immunocompromised, returning traveller</li><li><b>Non-infectious fever:</b> drug fever (temporal, eosinophilia), malignancy (lymphoma), autoimmune (Still, GCA, vasculitis), PE/DVT, thyroid storm</li><li><b>PUO:</b> Infections 30–40%, malignancy 20–25%, autoimmune 15–20%; workup: repeat Hx/Ex, Tier 1→2 labs, CT TAP→PET-CT→biopsy</li><li><b>Returning traveller:</b> <b>Malaria first</b> — thick/thin films ×3 or RDT+PCR; falciparum = emergency</li><li><b>Immunocompromised:</b> broader differential, lower threshold for broad abx+antifungal, consider PCP, CMV, MAC, TB, fungal</li><li><b>Drug fever:</b> diagnosis of exclusion; temporal relation, eosinophilia, rash, resolves on stopping</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the difference between fever and hyperthermia?</b> Fever = hypothalamic set-point ↑ (antipyretics work); Hyperthermia = failed thermoregulation, set-point normal (antipyretics DON'T work) — heat stroke, NMS, MH, thyrotoxicosis.</li><li><b>What are the tier 1 investigations for a patient with fever?</b> FBC, CRP, PCT, U&amp;E, LFTs, glucose, lactate, coag, blood cultures ×2–3, urinalysis+Cx, CXR.</li><li><b>How do you approach a returning traveller with fever?</b> Malaria first: thick/thin films ×3 at 12–24h intervals OR RDT+PCR. If negative, consider dengue, typhoid, rickettsial, VHF. Isolate if VHF suspected.</li><li><b>What are the common causes of PUO?</b> Infections (TB, endocarditis, abscesses) 30–40%, Malignancy (lymphoma) 20–25%, Autoimmune (Still, GCA, vasculitis) 15–20%.</li><li><b>What is the workup for PUO?</b> Repeat Hx/Ex daily; Tier 1 labs (FBC, CRP, blood cx×3, HIV, TST/IGRA, CXR); Tier 2 (autoimmune, serology, TB PCR); CT TAP → PET-CT → biopsies (lymph node, bone marrow, temporal artery if &gt;50).</li><li><b>When do you suspect drug fever?</b> Temporal relation to drug start, rash, eosinophilia, fever resolves on stopping — diagnosis of exclusion.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Treat fever with antipyretics routinely</td><td>**Treat the CAUSE; antipyretics only for comfort/hyperpyrexia/underlying cardiac/respiratory compromise**</td></tr><tr><td>Fever pattern diagnoses specific disease</td><td>**Patterns have POOR specificity** — do not rely</td></tr><tr><td>Single blood culture sufficient</td><td>**2–3 sets (aerobic/anaerobic) from DIFFERENT sites**</td></tr><tr><td>Start antibiotics before cultures in all fever</td><td>**Cultures BEFORE abx if stable; if septic/unstable → abx within 1h, cultures concurrent**</td></tr><tr><td>PUO = just infections</td><td>**Malignancy 20–25%, Autoimmune 15–20% — must investigate all**</td></tr><tr><td>Empirical steroids in PUO</td><td>**Therapeutic trials ONLY if life-threatening (TB meningitis, Still, GCA) — otherwise delays diagnosis**</td></tr><tr><td>Returning traveller = just malaria</td><td>**Dengue, typhoid, rickettsial, VHF, schisto — broad differential**</td></tr><tr><td>Immunocompromised = same workup</td><td>**Lower threshold for broad abx, antifungal, early imaging, bronchoscopy, LP**</td></tr><tr><td>All post-op fever = infection</td><td>**Day 0–2: atelectasis, drugs, transfusion; Day 3–7: wound, UTI, line, DVT; >7d: abscess, leak**</td></tr></table>
+<p><i>...continued (truncated to 200 lines for renderer)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fever and Septic Syndrome Approach · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

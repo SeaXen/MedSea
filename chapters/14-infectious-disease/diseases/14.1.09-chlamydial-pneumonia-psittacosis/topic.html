@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chlamydial Pneumonia &amp; Psittacosis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Chlamydial Pneumonia &amp; Psittacosis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Distinguish <b>Chlamydia Species</b>: <i>C. pneumoniae</i> (Respiratory), <i>C. psittaci</i> (Psittacosis — Birds), <i>C. trachomatis</i> (LGV/STI — Ch 15)</li><li>[ ] Recognise <b>Clinical Syndromes</b>: <i>C. pneumoniae</i> = Atypical CAP (Young Adults, Persistent Cough), <i>C. psittaci</i> = Psittacosis (Bird Exposure, Severe Pneumonia, Horder Nodes)</li><li>[ ] Diagnose: <b>Serology</b> (MIF — Gold Standard), <b>PCR</b> (Respiratory Specimens), <b>Culture</b> (Specialised, Slow)</li><li>[ ] Manage: <b>Doxycycline 100mg BD</b> / <b>Azithromycin 500mg Day 1 then 250mg OD</b> / <b>Levofloxacin/Moxifloxacin</b> (Alternatives)</li><li>[ ] Recognise <b>Complications</b>: Endocarditis, Encephalitis, Hepatitis, Reactive Arthritis</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Chlamydia Species Overview</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Species</th><th>Primary Disease</th><th>Transmission</th><th>Key Features</th></tr><tr><td>---------</td><td>----------------</td><td>--------------</td><td>--------------</td></tr><tr><td>**C. pneumoniae** (TWAR)</td><td>**Atypical CAP**, Bronchitis, Pharyngitis, Sinusitis</td><td>Respiratory Droplets (Person-to-Person)</td><td>**Young Adults**, **Persistent Cough** (Weeks), **Wheeze**, **Hoarseness**, **Mild**</td></tr><tr><td>**C. psittaci**</td><td>**Psittacosis (Ornithosis)** — Zoonotic Pneumonia</td><td>**Bird Droppings/Secretions** (Aerosol), Parrot, Pigeon, Turkey, Duck</td><td>**Bird Exposure**, **Severe Pneumonia**, **Horder Nodes** (Splenic), **Hepatitis**, **Endocarditis**, **Meningitis**</td></tr><tr><td>**C. trachomatis** (L1-L3)</td><td>**LGV** (L1-L3) — Genital Ulcer, Buboes, Proctitis; **Ocular** (Trachoma)</td><td>Sexual Contact (L1-L3) / Flies/Fomites (Trachoma)</td><td>**LGV: Painful Inguinal Buboes**, **Proctocolitis**, **Genital Ulcer**; **Trachoma: Blindness**</td></tr></table>
+<div class="callout">[!tip] <b>C. pneumoniae = Atypical CAP in Young Adults</b> (Persistent Dry Cough, Hoarseness, Low-Grade Fever). <b>C. psittaci = Bird Exposure + Severe Pneumonia + Horder Nodes (Splenic Microabscesses)</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 C. pneumoniae — "Walking Pneumonia" Agent</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Epidemiology</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Age**</td><td>**Children (5-15y) & Young Adults**; **Reinfection Common**</td></tr><tr><td>**Transmission**</td><td>**Respiratory Droplets** (Person-to-Person); **Incubation 3-4 Weeks**</td></tr><tr><td>**Seasonality**</td><td>**Year-Round** (Peaks Winter/Spring)</td></tr><tr><td>**Seroprevalence**</td><td>**50-70% Adults** (Past Infection Common)</td></tr></table>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Typical Presentation</th></tr><tr><td>---------</td><td>----------------------</td></tr><tr><td>**Onset**</td><td>**Insidious** (1-3 Weeks Prodrome: Sore Throat, Hoarseness, Dry Cough)</td></tr><tr><td>**Cough**</td><td>**Persistent, Dry → Productive**, **Weeks** (Hallmark: **Prolonged Cough >3 Weeks**)</td></tr><tr><td>**Fever**</td><td>Low-Grade / Absent (Often Afebrile)</td></tr><tr><td>**Extra-Pulmonary**</td><td>**Pharyngitis**, **Laryngitis**, **Sinusitis**, **Otitis Media**, **Reactive Arthritis**, **Guillain-Barré** (Rare)</td></tr><tr><td>**CXR**</td><td>**Patchy/Interstitial Infiltrates** (Often Lower Lobe), **Minimal** for Symptom Severity</td></tr></table>
+<div class="callout">[!tip] <b>C. pneumoniae = "Walking Pneumonia"</b>: Young Adult, <b>Persistent Cough &gt;3 Weeks</b>, <b>Hoarseness/Laryngitis</b>, <b>Mild Constitutional</b>, <b>Patchy CXR</b> — <b>Doxycycline/Azithromycin</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Psittacosis (Ornithosis) — C. psittaci</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Epidemiology</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Reservoir**</td><td>**Birds**: **Psittacines** (Parrots, Macaws, Cockatiels), **Pigeons**, **Poultry** (Turkeys, Ducks), **Wild Birds**</td></tr><tr><td>**Transmission**</td><td>**Inhalation** of **Dried Droppings/Secretions/Feathers** (Aerosol); **Bird Handlers, Pet Owners, Poultry Workers, Vets**</td></tr><tr><td>**Incubation**</td><td>**5-19 Days** (Median 10 Days)</td></tr><tr><td>**Outbreaks**</td><td>**Pet Shops, Aviaries, Poultry Farms, Abattoirs**, **Bird Fairs**</td></tr></table>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Constitutional**</td><td>**High Fever**, **Severe Headache**, **Myalgia**, **Photophobia**, **Prostration**</td></tr><tr><td>**Respiratory**</td><td>**Dry Cough → Productive**, **Dyspnoea**, **Pleuritic Pain**, **Rales/Consolidation**</td></tr><tr><td>**Hepatic**</td><td>**Hepatomegaly**, **Mild Transaminitis**, **Jaundice (Rare)**</td></tr><tr><td>**Splenic**</td><td>**Horder Nodes** (Splenic Microabscesses) — **Pathognomonic** (20-30%)</td></tr><tr><td>**Neurological**</td><td>**Meningitis, Encephalitis, Cranial Nerve Palsies** (Rare)</td></tr><tr><td>**Cardiac**</td><td>**Myocarditis, Pericarditis, Endocarditis** (Rare)</td></tr><tr><td>**Dermatological**</td><td>**Maculopapular Rash** (10-20%), **Erythema Nodosum**, **Erythema Multiforme**</td></tr></table>
+<div class="callout">[!tip] <b>Psittacosis = Bird Exposure + Severe Pneumonia + Horder Nodes (Splenic Microabscesses) + Relative Bradycardia</b>. <b>Horder Nodes = Pathognomonic</b> (Splenic Microabscesses on Imaging).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🔬 Diagnostic Workup</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Atypical Pneumonia / Bird Exposure + Fever</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Clinical Suspicion**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Suspect C. pneumoniae / C. psittaci**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">**Serology: MIF (Gold Standard)**</div>
+<div class="fc-node" data-id="F">**PCR (Sputum/BAL/Throat Swab)**</div>
+<div class="fc-node" data-id="H">**Culture** (Specialised, Egg Yolk Sac / Cell Culture, BSL-3)</div>
+<div class="fc-node" data-id="J">**Antigen Detection** (DFA/IHC — Sputum/Tissue)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E1">**MIF IgM/IgG** — *4-fold Rise Paired Sera (2-4w)*</div>
+<div class="fc-node" data-id="E2">**CF Test** — *Historical, Less Used*</div>
+<div class="fc-node" data-id="G">**Rapid, High Sensitivity**</div>
+<div class="fc-node" data-id="I">**Slow (Weeks), Low Sensitivity**</div>
+</div>
+</div>
+<div class="sub-h">Diagnostic Tests Comparison</div>
+<table class="ctable"><tr><th>Test</th><th>C. pneumoniae</th><th>C. psittaci</th><th>Timing</th><th>Utility</th></tr><tr><td>------</td><td>---------------</td><td>-------------</td><td>--------</td><td>---------</td></tr><tr><td>**MIF (Microimmunofluorescence)**</td><td>**Gold Standard**</td><td>**Gold Standard**</td><td>**Acute + Convalescent (2-4w Apart)**</td><td>**Confirmatory** (4-fold Rise)</td></tr><tr><td>**CF (Complement Fixation)**</td><td>Older Standard</td><td>Older Standard</td><td>Convalescent</td><td>Historical</td></tr><tr><td>**PCR (Sputum/BAL/Throat/NP)**</td><td>**High Sensitivity**</td><td>High Sensitivity</td><td>**Acute Phase (Day 1-14)**</td><td>**Early Diagnosis**</td></tr><tr><td>**Culture**</td><td>**Specialised (HEL/HL Cells/Egg Yolk)**</td><td>Specialised (Yolk Sac/Cell Culture)</td><td>Weeks</td><td>**Reference Only** (BSL-3)</td></tr><tr><td>**Serum IgM/IgG (EIA/ELISA)**</td><td>Commercial Available</td><td>Commercial Available</td><td>Acute/Convalescent</td><td>Screening</td></tr></table>
+<div class="callout">[!tip] <b>MIF = Gold Standard</b> for both. <b>PCR = Early Diagnosis</b>. <b>IgM/IgG Rise (4-fold) in Paired Sera = Confirmatory</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">💊 Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Antibiotic Therapy</div>
+<table class="ctable"><tr><th>Infection</th><th>1st Line</th><th>Alternative</th><th>Duration</th></tr><tr><td>-----------</td><td>----------</td><td>-------------</td><td>----------</td></tr><tr><td>**C. pneumoniae (CAP)**</td><td>**Doxycycline 100mg PO BD**</td><td>**Azithromycin 500mg Day 1 → 250mg OD** / **Levofloxacin 500mg OD** / **Moxifloxacin 400mg OD**</td><td>**10-14 Days** (Persistent Cough → Extend)</td></tr><tr><td>**C. psittaci (Psittacosis)**</td><td>**Doxycycline 100mg PO BD** (or IV if Severe)</td><td>**Azithromycin 500mg Day 1 → 250mg OD** / **Erythromycin 500mg QID** (Pregnancy)</td><td>**14-21 Days** (Prevent Relapse)</td></tr><tr><td>**Severe Psittacosis (ICU)**</td><td>**Doxycycline 100mg IV BD** + **Hydrocortisone** (If Shock)</td><td>**IV Azithromycin** / **Levofloxacin IV**</td><td>**14-21 Days**</td></tr><tr><td>**C. trachomatis (LGV/STI)**</td><td>**Doxycycline 100mg BD ×21d**</td><td>**Azithromycin 1g Single Dose** (Genital) / **Erythromycin** (Pregnancy)</td><td>**21 Days (LGV)**</td></tr></table>
+<div class="callout">[!warning] <b>Tetracyclines Contraindicated in Pregnancy/Children &lt;8y</b> → <b>Azithromycin / Erythromycin</b>.</div>
+<div class="callout">[!tip] <b>Psittacosis = Doxycycline 100mg BD × 14-21 Days</b> (Prevent Relapse). <b>Severe: IV Doxycycline + ICU Support</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🔬 Laboratory Findings</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>C. pneumoniae</th><th>C. psittaci</th></tr><tr><td>------</td><td>---------------</td><td>-------------</td></tr><tr><td>**CBC**</td><td>Normal / Mild Leukocytosis</td><td>**Leukopenia** (Early), **Thrombocytopenia** (Possible)</td></tr><tr><td>**LFT**</td><td>Normal / Mild ↑ ALT/AST</td><td>**↑ ALT/AST** (Hepatitis Common), **↑ ALP**</td></tr><tr><td>**CXR**</td><td>**Patchy/Interstitial Infiltrates** (Lower Lobe)</td><td>**Consolidation / Multifocal Infiltrates**, **Pleural Effusion**</td></tr><tr><td>**Serology**</td><td>**MIF IgM/IgG** (4-fold Rise)</td><td>**MIF IgM/IgG** (4-fold Rise)</td></tr><tr><td>**PCR**</td><td>Sputum/BAL/Throat Swab</td><td>Sputum/BAL/Throat Swab</td></tr></table>
+<div class="callout">[!tip] <b>Horder Nodes (Splenic Microabscesses) = Pathognomonic for Psittacosis</b> (Seen on CT/US in 20-30%).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">💊 Treatment Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Infection</th><th>1st Line</th><th>Duration</th><th>Notes</th></tr><tr><td>-----------</td><td>----------</td><td>----------</td><td>-------</td></tr><tr><td>**C. pneumoniae CAP**</td><td>**Doxycycline 100mg PO BD**</td><td>**10-14 Days**</td><td>Persistent Cough → Extend to 21d</td></tr><tr><td>**C. psittaci (Psittacosis)**</td><td>**Doxycycline 100mg BD PO/IV**</td><td>**14-21 Days**</td><td>Prevent Relapse</td></tr><tr><td>**Severe Psittacosis**</td><td>**Doxycycline 100mg IV BD** + ICU Support</td><td>**14-21 Days**</td><td>ICU Monitoring</td></tr><tr><td>**Pregnancy/Children**</td><td>**Azithromycin 500mg Day 1 → 250mg OD** / **Erythromycin**</td><td>**10-14 Days**</td><td>**Avoid Tetracyclines**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🔄 Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>C. pneumoniae</th><th>C. psittaci</th></tr><tr><td>-----------</td><td>---------------</td><td>-------------</td></tr><tr><td>**Mycoplasma pneumoniae**</td><td>**Younger Age**, **Cold Agglutinins**, **Cold Haemolysis**, **Rash**, **Stevens-Johnson**</td><td>**Bird Exposure**, **Horder Nodes**, **Hepatitis**</td></tr><tr><td>**Legionella**</td><td>**Diarrhoea, Confusion, Hyponatraemia**, **Urinary Ag+**</td><td>**Bird Exposure**, **Horder Nodes**, **Relative Bradycardia**</td></tr><tr><td>**Viral Pneumonia**</td><td>**Myalgia, GI Symptoms**, **Viral PCR+**</td><td>**Bird Exposure**, **Hepatitis**, **Horder Nodes**</td></tr><tr><td>**Typical Bacterial CAP**</td><td>**Abrupt Onset**, **High Fever**, **Lobar Consolidation**, **Leucocytosis**</td><td>**Bird Exposure**, **Relative Bradycardia**, **Hepatitis**</td></tr><tr><td>**Viral Pneumonia (Influenza/COVID)**</td><td>**Rapid Onset**, **Myalgia, GI**, **Viral PCR+**</td><td>**Bird Exposure**, **Horder Nodes**, **Relative Bradycardia**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**C. pneumoniae**</td><td>**Atypical CAP** in **Young Adults**, **Persistent Dry Cough >3 Weeks**, **Hoarseness**, **Mild**, **Patchy CXR**</td></tr><tr><td>**C. psittaci (Psittacosis)**</td><td>**Bird Exposure** (Parrots, Pigeons, Poultry), **Severe Pneumonia**, **Horder Nodes (Splenic Microabscesses)**, **Relative Bradycardia**</td></tr><tr><td>**Diagnosis**</td><td>**MIF (Gold Standard)** — **4-fold Rise IgG/IgM Paired Sera**; **PCR** (Early, Sputum/BAL)</td></tr><tr><td>**Treatment**</td><td>**Doxycycline 100mg BD** (1st Line All Chlamydia); **Azithromycin/Macrolide** (Pregnancy/Alternative); **14-21 Days** (Psittacosis Longer to Prevent Relapse)</td></tr><tr><td>**Pregnancy/Children**</td><td>**Azithromycin/Erythromycin** (Avoid Tetracyclines)</td></tr><tr><td>**Psittacosis Clues**</td><td>**Bird Exposure**, **Horder Nodes (Splenic Microabscesses)**, **Relative Bradycardia**, **Hepatitis**, **Relative Bradycardia**</td></tr><tr><td>**Complications**</td><td>**Endocarditis, Myocarditis, Meningitis, Hepatitis, Reactive Arthritis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the typical clinical presentation of C. pneumoniae pneumonia?</b></li></ol>
+<ul><li><b>Young Adult</b>, <b>Insidious Onset</b>, <b>Persistent Dry Cough &gt;3 Weeks</b>, <b>Hoarseness/Laryngitis</b>, <b>Low-Grade Fever</b>, <b>Patchy CXR</b>.</li></ul>
+<ol><li><b>What are the classic features of Psittacosis?</b></li></ol>
+<ul><li><b>Bird Exposure</b>, <b>High Fever, Severe Headache, Myalgia</b>, <b>Pneumonia</b>, <b>Horder Nodes (Splenic Microabscesses)</b>, <b>Relative Bradycardia</b>, <b>Hepatitis</b>.</li></ul>
+<ol><li><b>What is the diagnostic test of choice for Chlamydia species?</b></li></ol>
+<ul><li><b>Microimmunofluorescence (MIF)</b> — <b>Gold Standard</b>; <b>4-fold Rise in Paired Sera (IgG/IgM)</b>; <b>PCR</b> for Early Diagnosis.</li></ul>
+<ol><li><b>How do you treat C. pneumoniae pneumonia?</b></li></ol>
+<ul><li><b>Doxycycline 100mg PO BD × 10-14 Days</b> (or <b>Azithromycin 500mg Day 1 → 250mg OD ×5 Days</b>).</li></ul>
+<ol><li><b>How does Psittacosis differ from typical bacterial pneumonia?</b></li></ol>
+<ul><li><b>Bird Exposure</b>, <b>Relative Bradycardia</b>, <b>Horder Nodes (Splenic Microabscesses)</b>, <b>Hepatitis</b>, <b>Relative Bradycardia</b>, <b>Photophobia, Severe Headache</b>.</li></ul>
+<ol><li><b>What are Horder Nodes and their significance?</b></li></ol>
+<ul><li><b>Splenic Microabscesses</b> seen on Imaging (US/CT) in <b>20-30% of Psittacosis</b>; <b>Pathognomonic</b>.</li></ul>
+<ol><li><b>What is the treatment of choice for Psittacosis?</b></li></ol>
+<ul><li><b>Doxycycline 100mg BD PO/IV × 14-21 Days</b>; <b>Azithromycin/Erythromycin if Pregnant/Child</b>.</li></ul>
+<ol><li><b>How do you differentiate C. pneumoniae from Mycoplasma pneumoniae?</b></li></ol>
+<ul><li><b>C. pneumoniae: Younger Adults, Prolonged Cough, Hoarseness, No Cold Agglutinins</b>; <b>M. pneumoniae: Younger, Cold Agglutinins, Haemolysis, Rash, Stevens-Johnson Risk</b>.</li></ul>
+<ol><li><b>What is the significance of Relative Bradycardia in Psittacosis?</b></li></ol>
+<ul><li><b>Relative Bradycardia = Fever without Expected Tachycardia</b>; <b>Seen in Psittacosis, Typhoid, Legionella, Brucellosis, Drug Effect (Beta-Blockers)</b>.</li></ul>
+<ol><li><b>How do you diagnose C. pneumoniae in a patient with persistent cough?</b></li></ol>
+<ul><li><b>Serology (MIF) — 4-fold Rise Paired Sera</b>; <b>PCR (Sputum/BAL)</b> — Rapid; <b>CXR: Patchy Interstitial Infiltrates</b>.</li></ul>
+<ol><li><b>What is the treatment duration for Psittacosis to prevent relapse?</b></li></ol>
+<ul><li><b>14-21 Days Doxycycline</b> (Shorter Courses → Relapse Risk).</li></ul>
+<ol><li><b>Differentiate C. pneumoniae from C. psittaci clinically.</b></li></ol>
+<ul><li><b>C. pneumoniae</b>: Community-Acquired, Young Adult, Persistent Cough, Hoarseness, Mild; <b>C. psittaci</b>: Bird Exposure, Severe, Horder Nodes, Hepatitis, Relative Bradycardia.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**C. pneumoniae vs M. pneumoniae**</td><td>**C. pneumoniae: Hoarseness, No Cold Agglutinins, Older Age**; **M. pneumoniae: Cold Agglutinins+, Rash, Younger, Haemolysis**</td></tr><tr><td>**Psittacosis vs Ornithosis**</td><td>**Same Disease**; **Psittacosis = Parrot-Borne**, **Ornithosis = Bird-Borne (General)**</td></tr><tr><td>**C. pneumoniae vs Legionella**</td><td>**C. pneumoniae: No Diarrhoea/Confusion/Hyponatraemia, No Urinary Ag**; **Legionella: GI/Neuro, Urinary Ag+, Hyponatraemia**</td></tr><tr><td>**C. psittaci vs Typhoid**</td><td>**Psittacosis: Bird Exposure, Horder Nodes, Relative Bradycardia, Hepatitis**; **Typhoid: Relative Bradycardia, Rose Spots, Blood Culture+**</td></tr><tr><td>**C. pneumoniae vs Viral Pneumonia**</td><td>**C. pneumoniae: Persistent Cough >3 Weeks, Hoarseness, Patchy CXR**; **Viral: Rapid Onset, Myalgia, GI, Viral PCR+**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Psittacosis = Bird + Horder Nodes + Bradycardia"**</td><td>Psittacosis Triad</td></tr><tr><td>**"C. pneumoniae = Persistent Cough >3 Weeks + Hoarseness"**</td><td>C. pneumoniae Hallmarks</td></tr><tr><td>**"Doxycycline = All Chlamydia"**</td><td>Universal Treatment</td></tr><tr><td>**"Horder Nodes = Splenic Microabscesses = Psittacosis"**</td><td>Pathognomonic</td></tr><tr><td>**"MIF = Gold Standard = 4-fold Rise Paired Sera"**</td><td>Serology Gold Standard</td></tr><tr><td>**"Bird Exposure = Think Psittacosis"**</td><td>Exposure History</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Chlamydial Pneumonia &amp; Psittacosis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">C. pneumoniae</div>
+<div class="mm-node mm-l3">– Atypical CAP</div>
+<div class="mm-node mm-l3">– Young Adults</div>
+<div class="mm-node mm-l3">– Persistent Cough &gt;3wks</div>
+<div class="mm-node mm-l3">– Hoarseness/Laryngitis</div>
+<div class="mm-node mm-l3">– Patchy CXR</div>
+<div class="mm-node mm-l3">– MIF/PCR Diagnosis</div>
+<div class="mm-node mm-l3">– Doxycycline 10-14d</div>
+<div class="mm-node mm-l2">C. psittaci (Psittacosis)</div>
+<div class="mm-node mm-l3">– Bird Exposure (Parrots/Pigeons/Poultry)</div>
+<div class="mm-node mm-l3">– Severe Pneumonia</div>
+<div class="mm-node mm-l3">– Horder Nodes (Splenic Microabscesses)</div>
+<div class="mm-node mm-l3">– Relative Bradycardia</div>
+<div class="mm-node mm-l3">– Hepatitis/Photophobia</div>
+<div class="mm-node mm-l3">– MIF/PCR Diagnosis</div>
+<div class="mm-node mm-l3">– Doxycycline 14-21d</div>
+<div class="mm-node mm-l3">– Relapse if Short Course</div>
+<div class="mm-node mm-l2">C. trachomatis</div>
+<div class="mm-node mm-l3">– LGV (L1-L3): Genital Ulcer, Buboes, Proctitis</div>
+<div class="mm-node mm-l3">– Trachoma (A-C): Blindness</div>
+<div class="mm-node mm-l3">– STI: Azithromycin 1g Single Dose</div>
+<div class="mm-node mm-l3">– LGV: Doxycycline 21d</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– MIF: Gold Standard (4-fold Rise)</div>
+<div class="mm-node mm-l3">– PCR: Early (Sputum/BAL)</div>
+<div class="mm-node mm-l3">– Culture: Specialised, BSL-3</div>
+<div class="mm-node mm-l3">– CF: Historical</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Doxycycline 100mg BD (All)</div>
+<div class="mm-node mm-l3">– Azithromycin/Erythromycin (Pregnancy/Children)</div>
+<div class="mm-node mm-l3">– Duration: C.pneum 10-14d, C.psittaci 14-21d</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– Endocarditis, Meningitis, Hepatitis</div>
+<div class="mm-node mm-l3">– Reactive Arthritis (Reiter's)</div>
+<div class="mm-node mm-l3">– Relapse (Psittacosis if Short Course)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**CHLAMYDIAL PNEUMONIA & PSITTACOSIS – FCPS/MRCP REVISION CARD**</th></tr><tr><td>--------------------------------------------------------------------</td></tr><tr><td>**C. pneumoniae**: **Atypical CAP**, Young Adult, **Persistent Cough >3wks**, **Hoarseness**, Patchy CXR, **Doxy 10-14d**</td></tr><tr><td>**C. psittaci (Psittacosis)**: **Bird Exposure**, **Severe Pneumonia**, **Horder Nodes** (Splenic Microabscesses), **Relative Bradycardia**, **Hepatitis**, **Doxy 14-21d**</td></tr><tr><td>**Diagnosis**: **MIF (Gold Standard)** — **4-fold Rise Paired Sera (IgG/IgM)**; **PCR (Sputum/BAL)** Early</td></tr><tr><td>**Treatment**: **Doxycycline 100mg BD** (All Chlamydia); **Azithromycin/Erythro** (Pregnancy/Children)</td></tr><tr><td>**Psittacosis Clues**: **Bird Exposure**, **Horder Nodes**, **Relative Bradycardia**, **Hepatitis**, **Photophobia**</td></tr><tr><td>**Horder Nodes**: **Splenic Microabscesses** (CT/US) — **Pathognomonic**</td></tr><tr><td>**C. trachomatis LGV**: **Genital Ulcer + Buboes**, **Doxy 21d**; **Trachoma**: **Azithromycin**</td></tr><tr><td>**Complications**: **Endocarditis, Meningitis, Hepatitis, Reactive Arthritis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>C. pneumoniae = Atypical CAP (Persistent cough, hoarseness); C. psittaci = Bird exposure + Horder nodes + Bradycardia; MIF gold standard (4-fold rise); Doxycycline 1st line all Chlamydia; Azithromycin/Erythromycin for pregnancy/children; Psittacosis 14-21d doxy to prevent relapse</td></tr><tr><td>**Should Know**</td><td>C. pneumoniae vs M. pneumoniae differentiation; Psittacosis vs Q fever vs Legionella; Horder nodes CT findings; PCR vs MIF sensitivity/timing; Complications (endocarditis, meningitis, reactive arthritis); Pregnancy management (azithromycin/erythromycin); Bird exposure history taking</td></tr><tr><td>**Nice to Know**</td><td>C. pneumoniae role in atherosclerosis (controversial); C. pneumoniae in asthma exacerbations; Chlamydial genomics; C. psittaci zoonotic cycles; Psittacosis in poultry workers; C. trachomatis serovars (LGV vs ocular); Trachoma elimination strategy (SAFE); Chlamydial vaccine research; C. pneumoniae in Alzheimer's (controversial)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>C. pneumoniae Clinical Features</td><td></td><td></td></tr><tr><td>Psittacosis Clinical Features</td><td></td><td></td></tr><tr><td>Diagnostic Methods (MIF, PCR)</td><td></td><td></td></tr><tr><td>Treatment Protocols</td><td></td><td></td></tr><tr><td>Differential Diagnosis</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Rickettsial Infections]]</li><li><b>Next</b>: [[Invasive Candidiasis / Candidaemia]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Chlamydial Pneumonia &amp; Psittacosis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

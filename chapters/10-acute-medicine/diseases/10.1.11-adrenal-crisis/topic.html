@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adrenal Crisis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Adrenal Crisis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise adrenal crisis</li><li>Distinguish primary (Addison) vs secondary (ACTH def) vs tertiary (long-term steroid withdrawal)</li><li>Initiate emergency treatment (hydrocortisone + fluids)</li><li>Order investigations (cortisol, ACTH, Synacthen test, electrolytes)</li><li>Plan long-term glucocorticoid + mineralocorticoid replacement</li><li>Counsel patient on sick-day rules and emergency injection</li><li>Identify relative adrenal insufficiency in critical illness</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Adrenal crisis</b>: severe hypotension unresponsive to fluids + vasopressors + features of adrenal insufficiency + resolves rapidly with parenteral glucocorticoids</li><li><b>Biochemical criterion</b>: random cortisol &lt;300 nmol/L in acute illness (some use &lt;500 nmol/L or &lt;150 nmol/L random in stress)</li><li><b>Classic criteria (Allgrove 2003)</b>: ≥2 of: hypotension (SBP &lt;100), nausea/vomiting, severe fatigue, hyponatraemia, hyperkalaemia (primary)</li><li><b>Mortality</b>: 6–15% even with treatment</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Adrenal Anatomy & Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Adrenal cortex</b>: 3 zones</li><li><b>Zona glomerulosa</b> (outer): mineralocorticoids (aldosterone)</li><li><b>Zona fasciculata</b> (middle): glucocorticoids (cortisol)</li><li><b>Zona reticularis</b> (inner): androgens (DHEA)</li><li><b>Adrenal medulla</b>: catecholamines</li><li><b>Cortisol</b>: glucocorticoid, peak 08:00, nadir 24:00; bound to CBG (~90%)</li><li><b>Aldosterone</b>: regulated by RAAS; K⁺</li><li><b>HPA axis</b>: CRH (hypothalamus) → ACTH (pituitary) → cortisol (adrenal); negative feedback</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Causes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Primary Adrenal Insufficiency (Addison's) — cortisol + aldosterone both ↓</div>
+<ul><li><b>Autoimmune adrenalitis</b> (most common in developed world) — TB, mets</li><li><b>Infections</b>: TB (world's most common cause), HIV, CMV, histoplasmosis</li><li><b>Metastases</b>: lung, breast, melanoma, kidney</li><li><b>Infiltrative</b>: amyloidosis, sarcoidosis, haemochromatosis</li><li><b>Bilateral adrenalectomy</b></li><li><b>Adrenal haemorrhage</b>: Waterhouse-Friderichsen syndrome (meningococcal sepsis), antiphospholipid syndrome, anticoagulation</li><li><b>Congenital</b>: CAH (21-hydroxylase deficiency), X-linked adrenoleukodystrophy, Allgrove syndrome</li></ul>
+<div class="sub-h">Secondary (ACTH deficiency) — cortisol ↓, aldosterone normal</div>
+<ul><li><b>Long-term exogenous glucocorticoid withdrawal</b> (most common cause overall)</li><li><b>Pituitary disease</b>: hypopituitarism, pituitary surgery/radiation, Sheehan's syndrome</li><li><b>Craniopharyngioma</b>, sellar masses</li><li><b>Empty sella</b></li></ul>
+<div class="sub-h">Tertiary (CRH deficiency)</div>
+<ul><li><b>Chronic exogenous glucocorticoids</b> (most common)</li><li><b>Hypothalamic disease</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Primary</th><th>Secondary</th></tr><tr><td>---------</td><td>---------</td><td>-----------</td></tr><tr><td>Weakness/fatigue</td><td>✓✓</td><td>✓</td></tr><tr><td>Weight loss</td><td>✓✓</td><td>✓</td></tr><tr><td>Anorexia</td><td>✓✓</td><td>✓</td></tr><tr><td>Hypotension (postural)</td><td>✓✓</td><td>✓ (mild)</td></tr><tr><td>Nausea/vomiting</td><td>✓✓</td><td>✓</td></tr><tr><td>Hyponatraemia</td><td>✓✓</td><td>✓✓</td></tr><tr><td>Hyperkalaemia</td><td>✓</td><td>✗</td></tr><tr><td>Hypoglycaemia</td><td>✓</td><td>✓✓</td></tr><tr><td>Hyperpigmentation</td><td>✓✓ (ACTH↑)</td><td>✗</td></tr><tr><td>Hypercalcaemia (mild)</td><td>✓</td><td>✗</td></tr><tr><td>Vitiligo, autoimmune features</td><td>✓</td><td>✗</td></tr><tr><td>Aldosterone effects (salt craving)</td><td>✓</td><td>✗</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Adrenal Crisis Triggers</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Infection/sepsis (most common)</li><li>Surgery/trauma</li><li>GI illness (vomiting/diarrhoea → dehydration + oral intake ↓)</li><li>Dehydration</li><li>Stopping/reducing glucocorticoid</li><li>Pregnancy/labour</li><li>Acute MI, stroke</li><li>Emotional stress</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Bedside</div>
+<ul><li><b>Blood glucose</b> (hypoglycaemia)</li><li><b>BP</b> (postural drop)</li><li><b>ECG</b> (hyperkalaemia)</li></ul>
+<div class="sub-h">Lab</div>
+<table class="ctable"><tr><th>Test</th><th>Result in Adrenal Crisis</th></tr><tr><td>------</td><td>--------------------------</td></tr><tr><td>**Cortisol (random)**</td><td><300 nmol/L in acute illness</td></tr><tr><td>**ACTH**</td><td>↑ primary, ↓ secondary</td></tr><tr><td>**Na⁺**</td><td>↓ (135); often <130</td></tr><tr><td>**K⁺**</td><td>↑ (5.5-7.0) in primary</td></tr><tr><td>**Glucose**</td><td><4 mmol/L</td></tr><tr><td>**Urea/creatinine**</td><td>↑ (prerenal AKI)</td></tr><tr><td>**Ca²⁺**</td><td>↑ (mild)</td></tr><tr><td>**TSH**</td><td>↑ (often co-existing autoimmune thyroid)</td></tr><tr><td>**21-hydroxylase antibodies**</td><td>Positive in autoimmune adrenalitis</td></tr><tr><td>**FBC**</td><td>Lymphocytosis, eosinophilia</td></tr></table>
+<div class="sub-h">Confirmatory Tests</div>
+<ul><li><b>Short Synacthen (tetracosactide) test</b>: 250 mcg IV, cortisol at 0, 30 min</li><li><b>Pass</b>: cortisol ≥450–550 nmol/L (varies by lab)</li><li><b>Fail</b>: &lt;450 nmol/L → adrenal insufficiency</li><li><b>Can be done in crisis after initial hydrocortisone replaced</b> (delay until 24 h after dose if possible)</li><li><b>CRH test</b>: distinguishes secondary (ACTH low) from tertiary</li><li><b>CT/MRI adrenals</b>: autoimmune (small/atrophic), TB/bleed (enlarged), mets/masses</li><li><b>Pituitary MRI</b>: if secondary suspected</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management — Acute Adrenal Crisis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Immediate (Do NOT delay)</div>
+<ol><li><b>IV access</b> × 2</li><li><b>Bloods</b> (cortisol, ACTH, U&amp;E, glucose, FBC, cultures if sepsis)</li><li><b>Hydrocortisone 100 mg IV bolus immediately</b></li><li><b>1 L 0.9% saline IV rapidly</b> (repeat to SBP ≥90, no obvious fluid overload)</li><li><b>Dextrose</b> if hypoglycaemic (50% glucose 50 mL)</li><li><b>Continuous monitoring</b> (BP, HR, urine output)</li><li><b>Reassess</b> at 30-60 min</li></ol>
+<div class="sub-h">Continued</div>
+<ul><li><b>Hydrocortisone 50 mg IV q6h</b> (or 200 mg/24 h continuous IV infusion)</li><li><b>IV fluids</b> as needed (3-6 L 0.9% saline over 24 h typical)</li><li><b>Dextrose</b> if hypoglycaemia</li><li><b>Treat precipitating cause</b> (antibiotics if sepsis)</li><li><b>Dose can be doubled or 100 mg q6h</b> if severe</li><li><b>Switch to oral</b> when stable and tolerating (then taper to maintenance)</li></ul>
+<div class="sub-h">Stop</div>
+<ul><li><b>Don't wait for Synacthen</b> to give hydrocortisone</li><li><b>Don't give fludrocortisone acutely</b> (high-dose hydrocortisone has mineralocorticoid effect)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Long-Term Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Primary AI (Addison's)</div>
+<ul><li><b>Hydrocortisone 15-25 mg/day</b> in 2-3 divided doses (e.g., 10 mg + 5 mg + 5 mg)</li><li>Or <b>prednisolone 3-5 mg/day</b> (single daily dose)</li><li>Take with food, first dose on waking</li><li><b>Fludrocortisone 50-200 mcg/day</b> (mineralocorticoid)</li><li><b>Titrate</b> fludrocortisone: BP, K⁺, Na⁺, renin</li></ul>
+<div class="sub-h">Secondary AI</div>
+<ul><li><b>Hydrocortisone 15-20 mg/day</b> (similar)</li><li><b>No fludrocortisone</b> needed (aldosterone preserved)</li><li><b>Replace other pituitary hormones</b> (levothyroxine, GH, sex steroids)</li></ul>
+<div class="sub-h">Sick-Day Rules (patient education)</div>
+<table class="ctable"><tr><th>Stress</th><th>Action</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Mild illness (cold, fever)**</td><td>Double hydrocortisone until well</td></tr><tr><td>**Vomiting / diarrhoea**</td><td>IM/SC hydrocortisone 100 mg + seek medical help</td></tr><tr><td>**Surgery**</td><td>Hydrocortisone 100 mg IV at induction; 50-100 mg q6-8h for 48-72 h</td></tr><tr><td>**Dental work**</td><td>100 mg IM/SC before procedure</td></tr><tr><td>**Trauma / major stress**</td><td>100 mg IV bolus then infusion</td></tr><tr><td>**Travel with fever**</td><td>Double oral dose, carry IM kit</td></tr><tr><td>**Emergency bracelet / card**</td><td>Essential</td></tr></table>
+<div class="sub-h">Patient Kit</div>
+<ul><li><b>Hydrocortisone 100 mg IM/SC emergency injection</b></li><li><b>Solu-Cortef Act-O-Vial</b> (preferred) or pre-filled syringes</li><li><b>Carry at all times</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Relative Adrenal Insufficiency in Critical Illness</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Common in sepsis, severe trauma, surgery</b></li><li><b>Definition</b>: random cortisol &lt;300 nmol/L OR delta cortisol &lt;150 nmol/L after Synacthen</li><li><b>Treatment</b>: hydrocortisone 50 mg q6h IV (especially in vasopressor-refractory septic shock)</li><li><b>ADRENAL trial (2018)</b>: hydrocortisone in septic shock → faster shock reversal, no mortality benefit</li><li><b>APROCCHSS trial</b>: hydrocortisone + fludrocortisone → mortality benefit in severe septic shock</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Crisis mortality</b>: 6–15%</li><li><b>Quality of life</b>: often impaired if undertreated</li><li><b>Crisis risk</b>: 5–10 crises/100 patient-years</li><li><b>Autoimmune polyglandular syndrome</b>: monitor for thyroid, T1DM</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Adrenal crisis</b> = severe hypotension + AI features + rapid response to IV hydrocortisone</li><li><b>Hydrocortisone 100 mg IV bolus</b> = first-line (don't wait for Synacthen)</li><li><b>1 L 0.9% saline rapid bolus</b> + IV fluids</li><li><b>Then 50 mg IV q6h</b> or 200 mg/24 h infusion</li><li><b>Do NOT need fludrocortisone acutely</b> (high-dose hydrocortisone has mineralocorticoid effect)</li><li><b>Primary AI</b>: hyponatraemia + hyperkalaemia + hyperpigmentation</li><li><b>Secondary AI</b>: hyponatraemia + hypoglycaemia, NO hyperkalaemia</li><li><b>Most common cause of secondary AI</b>: chronic steroid withdrawal</li><li><b>Most common cause of primary AI in developing world</b>: TB</li><li><b>Long-term: hydrocortisone 15-25 mg/day</b> in divided doses</li><li><b>Fludrocortisone 50-200 mcg/day</b> for primary AI</li><li><b>Sick-day rules</b>: double oral dose for mild illness; IM injection if vomiting</li><li><b>Emergency IM hydrocortisone kit</b> + medical alert bracelet</li><li><b>Addisonian pigmentation</b>: mucous membranes, palmar creases, scars</li><li><b>Hypercalcaemia</b> in Addison's (mild, due to volume contraction)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define adrenal crisis</li><li>Causes of primary vs secondary AI</li><li>Immediate management of adrenal crisis</li><li>Long-term steroid + mineralocorticoid replacement</li><li>Sick-day rules</li><li>Synacthen test</li><li>Waterhouse-Friderichsen syndrome</li><li>Relative adrenal insufficiency in critical illness</li><li>Stress-dose steroids in AI patients for surgery</li><li>Adrenal antibodies in autoimmune Addison's</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Don't wait for Synacthen</b> to give hydrocortisone in crisis</li><li><b>Hydrocortisone has mineralocorticoid effect</b> at high doses → no fludrocortisone acutely</li><li><b>Prednisolone</b> = pure glucocorticoid, no mineralocorticoid → can't use as monotherapy in primary AI</li><li><b>Dexamethasone</b> = no mineralocorticoid effect; doesn't interfere with cortisol assay</li><li><b>Long-term steroid patient</b>: ALWAYS ask "have you taken your stress dose?"</li><li><b>Pre-op AI patients</b>: stress-dose steroids (100 mg IV hydrocortisone at induction)</li><li><b>TB</b> is the world's most common cause of Addison's</li><li><b>Autoimmune adrenalitis</b> = most common in developed world; check for other autoimmune disease</li><li><b>Hypercalcaemia</b> in Addison's (volume contraction)</li><li><b>Eosinophilia + lymphocytosis</b> in cortisol deficiency</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Crisis Rx</b>: <b>H</b>ydrocortisone 100 mg IV + <b>S</b>aline 1 L</li><li><b>Hydrocortisone continuation</b>: 50 mg q6h</li><li><b>Long-term primary AI</b>: <b>H</b>ydrocortisone + <b>F</b>ludrocortisone</li><li><b>Primary AI features</b>: <b>SKIN</b> (Salt craving, K+↑, Igt pigmNtation, Na↓)</li><li><b>Triggers</b>: <b>STOP steroids</b>, <b>S</b>epsis, <b>T</b>rauma, <b>O</b>peration, <b>P</b>regnancy</li><li><b>Sick-day rule</b>: <b>DOUBLE</b> oral for mild; <b>IM</b> if vomiting</li><li><b>Surgery</b>: <b>100 mg IV</b> at induction → 50-100 mg q6-8h × 48-72 h</li><li><b>Relative AI in sepsis</b>: hydrocortisone <b>50 mg IV q6h</b> (vasopressor refractory)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Adrenal Crisis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Causes</div>
+<div class="mm-node mm-l3">– Primary Addison</div>
+<div class="mm-node mm-deep">– Autoimmune (developed world)</div>
+<div class="mm-node mm-deep">– TB (developing world)</div>
+<div class="mm-node mm-deep">– Mets, haemorrhage</div>
+<div class="mm-node mm-deep">– Waterhouse-Friderichsen</div>
+<div class="mm-node mm-l3">– Secondary</div>
+<div class="mm-node mm-deep">– Chronic steroids (most common)</div>
+<div class="mm-node mm-deep">– Pituitary disease</div>
+<div class="mm-node mm-deep">– Sheehan, hypopituitarism</div>
+<div class="mm-node mm-l3">– Tertiary</div>
+<div class="mm-node mm-deep">– Hypothalamic</div>
+<div class="mm-node mm-deep">– Chronic steroids</div>
+<div class="mm-node mm-l2">Features</div>
+<div class="mm-node mm-l3">– Hypotension (postural)</div>
+<div class="mm-node mm-l3">– Hyponatraemia</div>
+<div class="mm-node mm-l3">– Hyperkalaemia (primary)</div>
+<div class="mm-node mm-l3">– Hypoglycaemia (secondary)</div>
+<div class="mm-node mm-l3">– Hyperpigmentation (primary)</div>
+<div class="mm-node mm-l3">– Weakness, fatigue, weight loss</div>
+<div class="mm-node mm-l2">Investigations</div>
+<div class="mm-node mm-l3">– Random cortisol &lt;300 in illness</div>
+<div class="mm-node mm-l3">– ACTH, UandE, glucose</div>
+<div class="mm-node mm-l3">– Short Synacthen test</div>
+<div class="mm-node mm-l3">– Adrenal antibodies</div>
+<div class="mm-node mm-l3">– CT adrenals</div>
+<div class="mm-node mm-l2">Management Acute</div>
+<div class="mm-node mm-l3">– Hydrocortisone 100mg IV bolus</div>
+<div class="mm-node mm-l3">– 1L 0.9% saline</div>
+<div class="mm-node mm-l3">– Hydrocortisone 50mg q6h</div>
+<div class="mm-node mm-l3">– Treat precipitant</div>
+<div class="mm-node mm-l2">Long-term</div>
+<div class="mm-node mm-l3">– Hydrocortisone 15-25mg/day</div>
+<div class="mm-node mm-l3">– Fludrocortisone 50-200mcg</div>
+<div class="mm-node mm-l3">– Sick-day rules</div>
+<div class="mm-node mm-l3">– Emergency IM kit</div>
+<div class="mm-node mm-l3">– Medical alert bracelet</div>
+<div class="mm-node mm-l2">Special</div>
+<div class="mm-node mm-l3">– Stress-dose for surgery</div>
+<div class="mm-node mm-l3">– Relative AI in sepsis</div>
+<div class="mm-node mm-l3">– Vasopressor refractory shock</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flowchart — Adrenal Crisis Management</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Adrenal Crisis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">IV access x2, bloods</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Hydrocortisone 100mg IV bolus</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">1L 0.9% saline rapid</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hydrocortisone 50mg IV q6h or 200mg/24h infusion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Reassess: BP, UO, electrolytes</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Stable?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">More fluids, vasopressors</div>
+<div class="fc-node" data-id="I">Continue q6h, switch to oral, taper</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Synacthen test after 24h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Long-term: Hydro + Fludro, sick-day rules</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Adrenal crisis</b>: severe hypotension + AI features + responds to IV hydrocortisone</li><li><b>Hydrocortisone 100 mg IV bolus</b> + <b>1 L 0.9% saline</b> immediately</li><li><b>Then 50 mg IV q6h</b> or 200 mg/24 h infusion</li><li><b>Don't wait for Synacthen</b> in crisis</li><li><b>Primary AI</b>: hyponatraemia + hyperkalaemia + hyperpigmentation</li><li><b>Secondary AI</b>: hyponatraemia + hypoglycaemia; NO hyperkalaemia</li><li><b>Long-term</b>: Hydrocortisone 15-25 mg/day + Fludrocortisone 50-200 mcg (primary)</li><li><b>Sick-day</b>: double oral for mild; IM if vomiting; 100 mg IV at surgery</li><li><b>Most common cause of primary AI in developing world</b>: TB</li><li><b>Most common cause of secondary AI</b>: chronic steroid withdrawal</li><li><b>Relative AI in sepsis</b>: hydrocortisone 50 mg q6h IV (vasopressor refractory)</li><li><b>Waterhouse-Friderichsen</b>: meningococcal sepsis + adrenal haemorrhage</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>List immediate Rx of adrenal crisis</li><li>Distinguish primary vs secondary AI features</li><li>List long-term AI treatment</li><li>State sick-day rules</li><li>List causes of adrenal crisis</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Adrenal crisis definition</li><li>Hydrocortisone 100 mg IV bolus + 1 L saline</li><li>Continuation: 50 mg q6h or 200 mg/24 h infusion</li><li>Don't wait for Synacthen</li><li>Primary vs secondary AI features</li><li>Long-term: hydrocortisone + fludrocortisone</li><li>Sick-day rules and stress-dose</li><li>TB = most common primary cause worldwide</li><li>Chronic steroids = most common secondary cause</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Waterhouse-Friderichsen syndrome</li><li>Synacthen test</li><li>Autoimmune polyglandular syndrome</li><li>Relative AI in septic shock</li><li>Hydrocortisone mineralocorticoid effect at high dose</li><li>Addisonian crisis triggers</li><li>Hypercalcaemia in Addison's</li><li>Eosinophilia, lymphocytosis</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>APROCCHSS vs ADRENAL trial</li><li>DHEA replacement</li><li>Adrenal antibodies</li><li>ACTH, CRH test</li><li>CAH (21-hydroxylase)</li><li>Adrenoleukodystrophy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition adrenal crisis</li><li>Pathophysiology + HPA axis</li><li>Causes (primary, secondary, tertiary)</li><li>Clinical features (primary vs secondary)</li><li>Investigations (cortisol, ACTH, U&amp;E, Synacthen)</li><li>Acute management (hydrocortisone 100 mg IV, saline, continuation 50 mg q6h)</li><li>Long-term management (hydrocortisone + fludrocortisone, sick-day rules)</li><li>Special situations (relative AI, stress-dose)</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Adrenal crisis acute Rx</li><li>Primary vs secondary AI</li><li>Long-term AI treatment</li><li>Sick-day rules</li><li>Synacthen test</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Adrenal crisis = severe hypotension + AI + rapid response to IV hydrocortisone"</li><li>"Hydrocortisone 100 mg IV bolus + 1 L saline immediately"</li><li>"Then 50 mg IV q6h or 200 mg/24 h infusion"</li><li>"Don't wait for Synacthen in crisis"</li><li>"Primary AI: hyponatraemia + hyperkalaemia + hyperpigmentation"</li><li>"Secondary AI: hyponatraemia + hypoglycaemia; NO hyperkalaemia"</li><li>"Long-term: hydrocortisone 15-25 mg/day + fludrocortisone 50-200 mcg (primary)"</li><li>"Sick-day: double oral for mild; IM if vomiting"</li><li>"Surgery: 100 mg IV at induction → 50-100 mg q6-8h × 48-72 h"</li><li>"TB = most common primary cause in developing world"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Vomiting, SBP 80, hyponatraemia, hyperpigmentation → Addison's crisis → 100 mg IV hydrocortisone + saline</li><li>Long-term prednisolone patient, septic shock, vasopressor refractory → relative AI → hydrocortisone 50 mg q6h</li><li>Pre-op AI patient for hip replacement → 100 mg IV at induction, then 50 mg q6h × 48-72 h</li><li>Patient with vomiting and unable to keep oral steroids down → IM hydrocortisone 100 mg</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Crisis = 100 mg IV hydrocortisone + 1 L saline</li><li>Then 50 mg q6h</li><li>Don't wait for Synacthen</li><li>Primary: Na↓, K↑, pigment</li><li>Secondary: Na↓, glucose↓</li><li>Long-term: Hydro + Fludro (primary)</li><li>Sick-day: double oral; IM if vomiting</li><li>Surgery: 100 mg IV</li><li>TB = primary cause (developing)</li><li>Steroid withdrawal = secondary cause</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Adrenal crisis</b> = severe hypotension + features of adrenal insufficiency + rapid response to IV glucocorticoid. <b>Primary AI (Addison's)</b>: hyponatraemia + <b>hyperkalaemia</b> + hyperpigmentation + hypotension. <b>Secondary AI (ACTH def)</b>: hyponatraemia + <b>hypoglycaemia</b> + NO hyperkalaemia + NO hyperpigmentation. <b>Most common primary cause worldwide: TB</b>; in developed world: autoimmune. <b>Most common secondary cause: chronic exogenous glucocorticoid withdrawal</b>. <b>Acute management</b>: <b>Hydrocortisone 100 mg IV bolus immediately</b> (don't wait for Synacthen) + <b>1 L 0.9% saline rapid</b> + <b>Hydrocortisone 50 mg IV q6h or 200 mg/24 h infusion</b> + treat precipitant. <b>Long-term primary AI</b>: Hydrocortisone <b>15-25 mg/day</b> (2-3 divided doses) + <b>Fludrocortisone 50-200 mcg/day</b> (mineralocorticoid). <b>Secondary AI</b>: Hydrocortisone only (no fludrocortisone needed). <b>Sick-day rules</b>: double oral for mild illness; <b>IM/SC 100 mg if vomiting</b>; pre-op: 100 mg IV at induction. <b>Investigations</b>: random cortisol &lt;300 nmol/L in acute illness, ACTH (high primary, low secondary), Short Synacthen test (cortisol &lt;450-550 nmol/L at 30 min = AI), U&amp;E (Na↓, K↑), glucose, eosinophilia. <b>Waterhouse-Friderichsen</b>: meningococcal sepsis + bilateral adrenal haemorrhage. <b>Relative AI in septic shock</b>: hydrocortisone 50 mg q6h IV (ADRENAL, APROCCHSS trials).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Adrenal crisis first-line immediate treatment:</li></ol>
+<p>A. Oral hydrocortisone 20 mg B. <b>IV hydrocortisone 100 mg bolus + 1 L 0.9% saline</b> C. IV dexamethasone 6 mg D. IV fludrocortisone 100 mcg</p>
+<ol><li>Hydrocortisone continuation dose in adrenal crisis:</li></ol>
+<p>A. 25 mg q6h B. <b>50 mg IV q6h or 200 mg/24 h infusion</b> C. 100 mg q12h D. 200 mg q8h</p>
+<ol><li>Most common cause of primary adrenal insufficiency worldwide:</li></ol>
+<p>A. Autoimmune B. <b>TB</b> C. Metastases D. Adrenalectomy</p>
+<ol><li>Most common cause of secondary adrenal insufficiency:</li></ol>
+<p>A. Pituitary tumour B. <b>Chronic exogenous glucocorticoid withdrawal</b> C. Sheehan's syndrome D. Hypophysectomy</p>
+<ol><li>Primary AI features include all EXCEPT:</li></ol>
+<p>A. Hyponatraemia B. Hyperkalaemia C. Hyperpigmentation D. <b>Hyperglycaemia</b></p>
+<ol><li>Long-term fludrocortisone dose in primary AI:</li></ol>
+<p>A. 5-10 mcg B. <b>50-200 mcg</b> C. 1-2 mg D. 10-20 mg</p>
+<ol><li>Stress-dose hydrocortisone for major surgery in AI patient:</li></ol>
+<p>A. 10 mg IV B. 25 mg IV C. <b>100 mg IV at induction, then 50-100 mg q6-8h × 48-72 h</b> D. 200 mg IV once</p>
+<ol><li>Short Synacthen test: normal response is cortisol:</li></ol>
+<p>A. &lt;300 nmol/L B. <b>≥450-550 nmol/L at 30 min</b> C. &gt;700 nmol/L D. Doubles from baseline</p>
+<ol><li>Waterhouse-Friderichsen syndrome is associated with:</li></ol>
+<p>A. TB B. <b>Meningococcal sepsis + bilateral adrenal haemorrhage</b> C. Autoimmune D. Pituitary apoplexy</p>
+<ol><li>Relative adrenal insufficiency in septic shock treatment:</li></ol>
+<p>A. Prednisolone 40 mg B. <b>Hydrocortisone 50 mg IV q6h</b> C. Dexamethasone 6 mg D. Fludrocortisone 100 mcg</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 35-year-old woman, vomiting, SBP 80, Na 128, K 5.8, brown buccal pigmentation. Most likely diagnosis:</li></ol>
+<p>A. Septic shock B. <b>Addisonian crisis</b> C. DKA D. Hypovolaemic shock</p>
+<ol><li>Addisonian patient, 6 months stable on hydrocortisone + fludrocortisone, presents with vomiting, can't take oral. Action:</li></ol>
+<p>A. Wait for vomiting to settle B. <b>IM hydrocortisone 100 mg immediately + IV fluids</b> C. Oral ondansetron D. Increase oral dose</p>
+<ol><li>Secondary AI features (chronic steroid withdrawal). Expected finding:</li></ol>
+<p>A. Hyperkalaemia B. Hyperpigmentation C. <b>Hypoglycaemia + hyponatraemia without hyperkalaemia</b> D. All of above</p>
+<ol><li>Pre-op AI patient for hip replacement. Hydrocortisone plan:</li></ol>
+<p>A. Continue oral B. <b>100 mg IV at induction → 50-100 mg IV q6-8h × 48-72 h, then taper</b> C. 200 mg IV once D. Stress-dose oral</p>
+<ol><li>Random cortisol 200 nmol/L in acutely ill hypotensive patient. Interpretation:</li></ol>
+<p>A. Normal B. <b>Inadequate for stress; likely adrenal crisis</b> C. Exogenous steroid effect D. Test for Cushing's</p>
+<ol><li>Addison's disease, optimal fludrocortisone titration based on:</li></ol>
+<p>A. Random cortisol B. <b>BP, Na, K, renin</b> C. ACTH D. Glucose</p>
+<ol><li>Adrenal crisis mortality even with treatment:</li></ol>
+<p>A. &lt;1% B. <b>6-15%</b> C. 30-40% D. 50%</p>
+<ol><li>Autoimmune polyglandular syndrome type 2 (APS-2) includes Addison's plus:</li></ol>
+<p>A. Hypoparathyroidism B. <b>Type 1 DM + autoimmune thyroid disease</b> C. Hypothyroidism only D. Pernicious anaemia</p>
+<ol><li>Long-term AI, mild URTI, no vomiting. Sick-day rule:</li></ol>
+<p>A. Stop hydrocortisone B. <b>Double hydrocortisone until well</b> C. IM 100 mg D. Admit for IV</p>
+<ol><li>Hydrocortisone 200 mg/24 h vs 50 mg q6h in crisis:</li></ol>
+<p>A. Hydro 200 is wrong B. <b>Either is acceptable; some prefer continuous infusion (less glycaemic variability)</b> C. Only bolus D. 50 mg q12h is correct</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Adrenal crisis first-line Rx</li></ul>
+<p>A: Hydrocortisone 100 mg IV + 1 L saline</p>
+<ul><li>Q: Hydrocortisone continuation</li></ul>
+<p>A: 50 mg IV q6h or 200 mg/24 h</p>
+<ul><li>Q: Don't wait for what test in crisis</li></ul>
+<p>A: Synacthen</p>
+<ul><li>Q: Primary AI causes</li></ul>
+<p>A: Autoimmune, TB, mets, haemorrhage</p>
+<ul><li>Q: Secondary AI cause</li></ul>
+<p>A: Chronic steroid withdrawal</p>
+<ul><li>Q: Primary AI features</li></ul>
+<p>A: Na↓, K↑, pigment, hypotensive</p>
+<ul><li>Q: Secondary AI features</li></ul>
+<p>A: Na↓, glucose↓, no K↑</p>
+<ul><li>Q: Long-term primary AI</li></ul>
+<p>A: Hydrocortisone 15-25 mg + Fludrocortisone 50-200 mcg</p>
+<ul><li>Q: Sick-day rules</li></ul>
+<p>A: Double oral; IM if vomiting</p>
+<ul><li>Q: Surgical stress-dose</li></ul>
+<p>A: 100 mg IV at induction</p>
+<ul><li>Q: Waterhouse-Friderichsen</li></ul>
+<p>A: Meningococcal sepsis + adrenal haemorrhage</p>
+<ul><li>Q: Relative AI in sepsis</li></ul>
+<p>A: Hydrocortisone 50 mg q6h</p>
+<ul><li>Q: Synacthen test dose</li></ul>
+<p>A: 250 mcg IV; cortisol 0 and 30 min</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Hydrocortisone 100 mg IV + 1 L saline immediately. <b>MCQ 2</b>: B — 50 mg IV q6h or 200 mg/24 h. <b>MCQ 3</b>: B — TB is the most common cause worldwide. <b>MCQ 4</b>: B — Chronic steroid withdrawal is the most common cause. <b>MCQ 5</b>: D — Hypoglycaemia is expected; hyperglycaemia is NOT. <b>MCQ 6</b>: B — Fludrocortisone 50-200 mcg. <b>MCQ 7</b>: C — 100 mg IV at induction for surgical stress. <b>MCQ 8</b>: B — Synacthen pass = ≥450-550 nmol/L at 30 min. <b>MCQ 9</b>: B — Meningococcal + adrenal haemorrhage. <b>MCQ 10</b>: B — Hydrocortisone 50 mg IV q6h in relative AI/sepsis.</p>
+<p><b>SBA 1</b>: B — Addisonian crisis (Na↓, K↑, pigment, hypotensive). <b>SBA 2</b>: B — IM hydrocortisone if vomiting. <b>SBA 3</b>: C — Secondary: Na↓, glucose↓, NO K↑. <b>SBA 4</b>: B — Surgical stress-dose. <b>SBA 5</b>: B — Cortisol &lt;300 in illness = inadequate. <b>SBA 6</b>: B — BP, Na, K, renin guide fludrocortisone. <b>SBA 7</b>: B — 6-15% mortality. <b>SBA 8</b>: B — APS-2 = Addison + T1DM + autoimmune thyroid. <b>SBA 9</b>: B — Double oral for mild illness. <b>SBA 10</b>: B — Either is acceptable.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-15</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Adrenal Crisis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

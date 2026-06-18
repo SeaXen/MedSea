@@ -151,27 +151,32 @@ header.site .ext-links a {
 header.site .ext-links a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ===== Landing page main ===== */
-main { padding: 32px; max-width: 1500px; margin: 0 auto; }
+main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
 .chapters-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
   margin-top: 8px;
 }
+@media (max-width: 1400px) { .chapters-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1100px) { .chapters-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .chapters-grid { grid-template-columns: 1fr; } }
 .section-title {
   font-size: 13px; color: var(--text-dim);
   text-transform: uppercase; letter-spacing: 0.12em;
-  margin-bottom: 16px; font-weight: 600;
+  margin-bottom: 14px; font-weight: 600;
 }
 .chapter-card {
   background: var(--bg-2);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
-  transition: all 0.2s ease;
+  border-radius: 12px;
+  padding: 16px 16px 14px;
+  transition: all 0.18s ease;
   position: relative; overflow: hidden;
   text-decoration: none !important; color: inherit !important;
-  display: block;
+  display: flex; flex-direction: column;
+  cursor: pointer; min-height: 150px;
 }
 .chapter-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
@@ -180,38 +185,40 @@ main { padding: 32px; max-width: 1500px; margin: 0 auto; }
 .chapter-card:hover {
   transform: translateY(-2px);
   border-color: var(--accent-color, var(--accent));
-  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.1);
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.08);
 }
 .chapter-card .ch-num {
-  display: inline-block; padding: 4px 10px;
+  display: inline-block; padding: 2px 8px;
   background: var(--accent-color, var(--accent)); color: #0a0e1a;
-  border-radius: 6px; font-size: 11px; font-weight: 700;
+  border-radius: 4px; font-size: 10px; font-weight: 700;
   font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  align-self: flex-start;
 }
 .chapter-card h2 {
-  font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
-  margin-bottom: 8px;
+  font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
+  margin-bottom: 10px; line-height: 1.25;
+  flex: 1;
 }
-.chapter-card .desc { color: var(--text-dim); font-size: 14px; margin-bottom: 16px; min-height: 40px; }
 .chapter-card .ch-stats {
-  display: flex; gap: 16px; padding: 12px 0; border-top: 1px solid var(--border);
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 13px;
+  display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid var(--border);
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 12px;
 }
 .chapter-card .ch-stats .cs { display: flex; flex-direction: column; }
-.chapter-card .ch-stats .num { font-size: 20px; font-weight: 700; color: var(--accent); }
-.chapter-card .ch-stats .label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
-.preview-strip {
-  display: flex; gap: 8px; margin-top: 16px;
-  height: 80px;
+.chapter-card .ch-stats .num { font-size: 16px; font-weight: 700; color: var(--accent); line-height: 1; }
+.chapter-card .ch-stats .label { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+.chapter-card .ch-links {
+  display: flex; gap: 12px; margin-top: 8px;
+  font-size: 11px;
 }
-.preview-strip .preview {
-  flex: 1; border-radius: 6px; overflow: hidden;
-  background: var(--bg-3); border: 1px solid var(--border);
+.chapter-card .ch-link-primary {
+  color: var(--accent); font-weight: 600; text-decoration: none !important;
 }
-.preview-strip .preview img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top;
+.chapter-card .ch-link-secondary {
+  color: var(--text-dim); text-decoration: none !important;
 }
+.chapter-card .ch-link-primary:hover { color: #7dd3fc; }
+.chapter-card .ch-link-secondary:hover { color: var(--accent); }
 
 /* ===== Chapter page (SPA: sidebar + main) ===== */
 .chapter-page {
@@ -454,7 +461,7 @@ footer a:hover { color: var(--accent); }
       <span class="current-ch">Cardiology</span> <span class="arrow">▾</span>
     </button>
     <div class="drop-menu">
-      <a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">1</span><span class="name">Clinical decision-making</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">2</span><span class="name">Clinical therapeutics and good prescribing</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">3</span><span class="name">Clinical genetics</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">4</span><span class="name">Clinical immunology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">5</span><span class="name">Nutritional factors in disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">6</span><span class="name">Population health and epidemiology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">7</span><span class="name">Principles of infection</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">8</span><span class="name">Oncology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">9</span><span class="name">Palliative and supportive care</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">10</span><span class="name">Acute medicine and critical illness</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">11</span><span class="name">Poisoning</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">12</span><span class="name">Envenomation</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">13</span><span class="name">Medicine in austere environments</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">14</span><span class="name">Infectious disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">15</span><span class="name">Sexually transmitted infections</span><span class="badge">○</span></a><a class="item active" href="/16-cardiology/"><span class="num">16</span><span class="name">Cardiology</span><span class="badge">●</span></a><a class="item" href="/17-respiratory-medicine/"><span class="num">17</span><span class="name">Respiratory Medicine</span><span class="badge">●</span></a><a class="item" href="/15-nephrology-urology/"><span class="num">18</span><span class="name">Nephrology and Urology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">19</span><span class="name">Clinical biochemistry and metabolic medicine</span><span class="badge">○</span></a><a class="item" href="/18-endocrinology/"><span class="num">20</span><span class="name">Endocrinology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">21</span><span class="name">Diabetes mellitus</span><span class="badge">○</span></a><a class="item" href="/21-gastroenterology/"><span class="num">22</span><span class="name">Gastroenterology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">23</span><span class="name">Hepatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">24</span><span class="name">Haematology and transfusion medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">25</span><span class="name">Rheumatology and bone disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">26</span><span class="name">Dermatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">27</span><span class="name">Neurology and stroke medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">28</span><span class="name">Medical ophthalmology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">29</span><span class="name">Medical psychiatry</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">30</span><span class="name">Maternal medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">31</span><span class="name">Adolescence, transition and young adult medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">32</span><span class="name">Older adult medicine and frailty</span><span class="badge">○</span></a>
+      <a class="item" href="/1-clinical-decision-making/"><span class="num">1</span><span class="name">Clinical Decision-Making</span><span class="badge">●</span></a><a class="item" href="/2-clinical-therapeutics/"><span class="num">2</span><span class="name">Clinical Therapeutics & Prescribing</span><span class="badge">●</span></a><a class="item" href="/3-clinical-genetics/"><span class="num">3</span><span class="name">Clinical Genetics</span><span class="badge">●</span></a><a class="item" href="/4-clinical-immunology/"><span class="num">4</span><span class="name">Clinical Immunology</span><span class="badge">●</span></a><a class="item" href="/5-nutritional-factors/"><span class="num">5</span><span class="name">Nutritional Factors in Disease</span><span class="badge">●</span></a><a class="item" href="/6-population-health/"><span class="num">6</span><span class="name">Population Health & Epidemiology</span><span class="badge">●</span></a><a class="item" href="/7-principles-of-infection/"><span class="num">7</span><span class="name">Principles of Infection</span><span class="badge">●</span></a><a class="item" href="/8-oncology/"><span class="num">8</span><span class="name">Oncology</span><span class="badge">●</span></a><a class="item" href="/9-palliative-care/"><span class="num">9</span><span class="name">Palliative & Supportive Care</span><span class="badge">●</span></a><a class="item" href="/10-acute-medicine/"><span class="num">10</span><span class="name">Acute Medicine</span><span class="badge">●</span></a><a class="item" href="/11-poisoning/"><span class="num">11</span><span class="name">Poisoning</span><span class="badge">●</span></a><a class="item" href="/12-envenomation/"><span class="num">12</span><span class="name">Envenomation</span><span class="badge">●</span></a><a class="item" href="/13-austere-medicine/"><span class="num">13</span><span class="name">Austere Medicine</span><span class="badge">●</span></a><a class="item" href="/14-infectious-disease/"><span class="num">14</span><span class="name">Infectious Disease</span><span class="badge">●</span></a><a class="item" href="/15-sexually-transmitted-infections/"><span class="num">15</span><span class="name">Sexually Transmitted Infections</span><span class="badge">●</span></a><a class="item active" href="/16-cardiology/"><span class="num">16</span><span class="name">Cardiology</span><span class="badge">●</span></a><a class="item" href="/17-respiratory-medicine/"><span class="num">17</span><span class="name">Respiratory Medicine</span><span class="badge">●</span></a><a class="item" href="/18-nephrology-urology/"><span class="num">18</span><span class="name">Nephrology & Urology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">19</span><span class="name">Clinical biochemistry and metabolic medicine</span><span class="badge">○</span></a><a class="item" href="/20-endocrinology/"><span class="num">20</span><span class="name">Endocrinology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">21</span><span class="name">Diabetes mellitus</span><span class="badge">○</span></a><a class="item" href="/22-gastroenterology/"><span class="num">22</span><span class="name">Gastroenterology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">23</span><span class="name">Hepatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">24</span><span class="name">Haematology and transfusion medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">25</span><span class="name">Rheumatology and bone disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">26</span><span class="name">Dermatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">27</span><span class="name">Neurology and stroke medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">28</span><span class="name">Medical ophthalmology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">29</span><span class="name">Medical psychiatry</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">30</span><span class="name">Maternal medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">31</span><span class="name">Adolescence, transition and young adult medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">32</span><span class="name">Older adult medicine and frailty</span><span class="badge">○</span></a>
     </div>
   </div>
   <div class="ext-links">
@@ -853,7 +860,7 @@ footer a:hover { color: var(--accent); }
   <section class="chapter-main">
     <div class="chapter-header">
       <h1>Cardiology</h1>
-      <div class="meta">Davidson Ch 16 · 17 hubs · 330 topics · <a href="https://app.notion.com/p/SeaHub/Chapter-16-Cardiology-0bfc7d3c798a450fb5c0ac1bf3848da2" target="_blank">Notion ↗</a></div>
+      <div class="meta">Davidson Ch 16 · 17 hubs · 330 topics · <a href="https://app.notion.com/p/SeaHub/Chapter-16-Cardiology-8baa010d9cc94c48826136417d383973" target="_blank">Notion ↗</a></div>
     </div>
     <div id="topicContainer" class="topic-detail-placeholder">
       <div class="placeholder">
@@ -949,7 +956,7 @@ loadManifest();
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-18 18:10 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 05:03 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside

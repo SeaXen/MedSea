@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shock - Overview — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Shock - Overview</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define shock and classify its types</li><li>Understand the common final pathway of cellular hypoxia</li><li>Apply a rapid clinical approach to any shocked patient</li><li>Recognise compensated vs decompensated shock</li><li>Initiate immediate resuscitation while identifying the underlying cause</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Shock is a state of <b>acute circulatory failure</b> leading to <b>inadequate tissue perfusion</b> and <b>cellular hypoxia</b>, resulting in cellular dysfunction and, if untreated, organ failure and death.</p>
+<p>Key concept: <b>Blood pressure may be normal</b> in early/compensated shock.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Oxygen delivery (DO₂) = Cardiac Output (CO) × Arterial Oxygen Content (CaO₂)</li><li>CO = Heart Rate (HR) × Stroke Volume (SV)</li><li>SV depends on preload, afterload, and contractility</li><li>Shock occurs when DO₂ is insufficient to meet tissue oxygen demand</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Normal Values / Important Cut-offs</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Lactate: &gt;2 mmol/L → tissue hypoperfusion (≥4 mmol/L = severe)</li><li>MAP target in septic shock: ≥65 mmHg</li><li>ScvO₂ target: ≥70%</li><li>Urine output: ≥0.5 mL/kg/hr</li><li>Base deficit: &gt;6 → significant hypoperfusion</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Examples</th><th>Skin</th><th>CVP</th><th>CO</th></tr><tr><td>-----------------------</td><td>------------------------------------</td><td>-----------------------------------</td><td>---------------</td><td>-------</td><td>-------</td></tr><tr><td>**Hypovolaemic**</td><td>Reduced preload</td><td>Haemorrhage, dehydration</td><td>Cool, clammy</td><td>Low</td><td>Low</td></tr><tr><td>**Cardiogenic**</td><td>Pump failure</td><td>MI, cardiomyopathy, arrhythmia</td><td>Cool, clammy</td><td>High</td><td>Low</td></tr><tr><td>**Obstructive**</td><td>Mechanical obstruction</td><td>PE, tamponade, tension PTX</td><td>Cool, clammy</td><td>High</td><td>Low</td></tr><tr><td>**Distributive**</td><td>Vasodilatation + capillary leak</td><td>Sepsis, anaphylaxis, neurogenic</td><td>Warm</td><td>Low</td><td>High</td></tr><tr><td>**Septic**</td><td>Distributive + myocardial depression</td><td>Gram-negative / positive sepsis</td><td>Warm → cold</td><td>Low</td><td>High → Low</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Etiology / Causes</span>
+  </div>
+  <div class="sec-body">
+<p>See individual shock type notes.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Pathophysiology (Common Final Pathway)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Inadequate perfusion → cellular hypoxia</li><li>Anaerobic metabolism → lactate production</li><li>Cellular swelling, mitochondrial dysfunction</li><li>Inflammatory cascade activation</li><li>Endothelial damage, capillary leak</li><li>Worsening hypovolaemia and myocardial depression (vicious cycle)</li><li>Irreversible cell death and multi-organ failure</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<p><b>Compensated shock</b> (early)</p>
+<ul><li>Tachycardia, tachypnoea</li><li>Narrow pulse pressure</li><li>Cool peripheries, delayed capillary refill</li><li>Anxiety, mild confusion</li><li>Normal or slightly low BP</li></ul>
+<p><b>Decompensated shock</b> (late)</p>
+<ul><li>Hypotension</li><li>Altered mental status</li><li>Oliguria / anuria</li><li>Cold, mottled skin</li><li>Metabolic acidosis, high lactate</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Approach / Algorithm (ABCDE + Source Control)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Airway</b> — protect if GCS low</li><li><b>Breathing</b> — high-flow O₂, consider intubation</li><li><b>Circulation</b> — 2 large-bore IV cannulae, bloods, lactate, blood gas</li><li><b>Disability</b> — AVPU/GCS, blood glucose</li><li><b>Exposure</b> — full exposure, look for source (rash, wound, abdomen, legs)</li></ol>
+<p>Simultaneously:</p>
+<ul><li>Fluid challenge (250–500 mL crystalloid)</li><li>Identify type of shock clinically + bedside echo/US</li><li>Early source control (antibiotics, drainage, surgery)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Immediate</b>: VBG/ABG + lactate, FBC, U&amp;E, LFT, coagulation, glucose, troponin, ECG, CXR</li><li><b>Targeted</b>: Echo (bedside), CT (if stable), cultures, procalcitonin, etc.</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Interpretation Frameworks</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Lactate clearance: aim for ≥10–20% reduction every 2 hours</li><li>ScvO₂ or SvO₂: low in most shocks except distributive (may be high)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Management (General Principles)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Oxygen</b> — target SpO₂ 94–98% (or 88–92% in COPD)</li><li><b>Fluids</b> — crystalloids first (balanced solutions preferred)</li><li><b>Vasopressors</b> — start early if fluid-refractory (noradrenaline first-line in most cases)</li><li><b>Inotropes</b> — dobutamine if low cardiac output</li><li><b>Source control</b> — within 1–3 hours for sepsis</li><li><b>Monitoring</b> — arterial line, central line, urine output, lactate</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Red Flags / Emergencies</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Lactate ≥4 mmol/L</li><li>Hypotension not responding to 1–2 L fluid</li><li>Altered consciousness</li><li>Signs of tamponade, massive PE, or tension pneumothorax</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Mortality rises sharply with duration of shock and number of organs failing</li><li>Early goal-directed therapy + source control significantly improves survival</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Shock can exist with <b>normal blood pressure</b> (especially in young patients)</li><li>Warm peripheries + high CO classically point to <b>distributive shock</b></li><li>Always measure <b>lactate</b> — it is the single best bedside marker of tissue hypoperfusion</li><li>In any shocked patient, think <b>"Is this hypovolaemic, cardiogenic, obstructive, or distributive?"</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define shock. How do you classify it?</li><li>What is the difference between compensated and decompensated shock?</li><li>Why can BP be normal in early shock?</li><li>What is the role of lactate in shock management?</li><li>Outline your immediate management of a shocked patient.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Assuming hypotension is required for diagnosis of shock</li><li>Treating all shock with large-volume fluids (dangerous in cardiogenic/obstructive)</li><li>Delaying antibiotics/source control while chasing "more fluids"</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Shock = inadequate tissue perfusion</b></p>
+<ul><li>Classify by mechanism (4 main types)</li><li>Use ABCDE + lactate + bedside echo</li><li>Resuscitate while identifying cause</li><li>Source control is as important as haemodynamics</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Definition and 4-type classification</li><li>Clinical differentiation of shock types</li><li>Lactate as key marker</li><li>ABCDE resuscitation sequence</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Pathophysiology of cellular hypoxia</li><li>Vasopressor choice by shock type</li><li>Lactate clearance targets</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Detailed haemodynamic profiles (CO, SVR, PCWP)</li><li>Advanced monitoring (PiCCO, PA catheter)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Which shock type typically presents with warm peripheries and bounding pulses?</li></ol>
+<p>A. Hypovolaemic B. Cardiogenic C. <b>Distributive</b> D. Obstructive</p>
+<ol><li>Most sensitive bedside marker of tissue hypoperfusion:</li></ol>
+<p>A. Blood pressure B. Heart rate C. <b>Serum lactate</b> D. Urine output</p>
+<ol><li>Shock can exist with:</li></ol>
+<p>A. Always with hypotension B. Always with tachycardia C. <b>Normal blood pressure (compensated)</b> D. Always with bradycardia</p>
+<ol><li>MAP target in septic shock resuscitation:</li></ol>
+<p>A. ≥55 mmHg B. <b>≥65 mmHg</b> C. ≥75 mmHg D. ≥85 mmHg</p>
+<ol><li>Base deficit &gt;6 indicates:</li></ol>
+<p>A. Normal B. Mild hypoperfusion C. <b>Significant hypoperfusion / occult shock</b> D. Respiratory alkalosis</p>
+<ol><li>Cool, clammy skin + flat neck veins + tachycardia suggests:</li></ol>
+<p>A. Distributive shock B. <b>Hypovolaemic shock</b> C. Cardiogenic shock with pulmonary oedema D. Obstructive shock</p>
+<ol><li>First fluid of choice in hypovolaemic shock (non-haemorrhagic):</li></ol>
+<p>A. 5% albumin B. Gelatin C. <b>Balanced crystalloid (Hartmann's/Plasma-Lyte)</b> D. 0.9% saline only</p>
+<ol><li>Lactate clearance target in shock:</li></ol>
+<p>A. 5% per hour B. <b>≥10–20% per 2 hours</b> C. Normal in 30 min D. &lt;1 mmol/L in 6 hours</p>
+<ol><li>ScvO₂ target in early goal-directed therapy:</li></ol>
+<p>A. ≥50% B. ≥60% C. <b>≥70%</b> D. ≥80%</p>
+<ol><li>Urine output target in shock resuscitation:</li></ol>
+<p>A. &gt;10 mL/hr B. <b>&gt;0.5 mL/kg/hr</b> C. &gt;2 mL/kg/hr D. &gt;5 mL/kg/hr</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 68-year-old man with pneumonia becomes hypotensive (BP 85/50), tachycardic (HR 130), and has warm peripheries with a lactate of 5.2. Which is the most likely shock type?</li></ol>
+<p>A. Hypovolaemic B. Cardiogenic C. <b>Septic (distributive)</b> D. Obstructive</p>
+<ol><li>A 30-year-old trauma patient with HR 140, BP 80/50, cool peripheries, flat neck veins, lactate 8. Best initial fluid:</li></ol>
+<p>A. 0.9% saline 5 L B. 5% albumin C. <b>Balanced crystalloid bolus, then blood products (1:1:1) early</b> D. Noradrenaline</p>
+<ol><li>A 55-year-old with anterior STEMI, BP 75/50, HR 120, cold clammy, JVP elevated, basal crackles. Diagnosis:</li></ol>
+<p>A. Hypovolaemic shock B. <b>Cardiogenic shock</b> C. Septic shock D. Distributive shock</p>
+<ol><li>A 70-year-old post-op, sudden hypotension 70/40, tachycardia 130, raised JVP, muffled heart sounds. Diagnosis:</li></ol>
+<p>A. Massive PE B. <b>Cardiac tamponade</b> C. Pneumothorax D. Hypovolaemia</p>
+<ol><li>A young trauma patient, hypotension, trachea deviated to right, absent breath sounds left. Immediate management:</li></ol>
+<p>A. Chest drain B. <b>Needle decompression (2nd ICS midclavicular) then chest drain</b> C. CT chest D. Fluid bolus</p>
+<ol><li>Best bedside test to differentiate shock types in ED:</li></ol>
+<p>A. CT chest B. <b>Bedside echocardiography</b> C. MRI D. Lactate alone</p>
+<ol><li>A septic shock patient on noradrenaline 0.5 mcg/kg/min still MAP 60. Next step:</li></ol>
+<p>A. Stop vasopressors B. <b>Add vasopressin or increase noradrenaline; target MAP ≥65</b> C. Hydroxocobalamin D. Adrenaline infusion</p>
+<ol><li>Source control in septic shock from abdominal abscess — timing:</li></ol>
+<p>A. Within 24 h B. <b>Within 1–3 hours (or as soon as feasible)</b> C. After antibiotics only D. Never</p>
+<ol><li>A patient with anaphylaxis, BP 70/40, wheeze. First-line treatment:</li></ol>
+<p>A. Adrenaline 0.5 mg IV B. <b>Adrenaline 0.5 mg IM (anterolateral thigh)</b> C. Hydrocortisone 200 mg IV D. Saline 5 L</p>
+<ol><li>Persistent shock despite 2 L crystalloid in 30 min. Next step:</li></ol>
+<p>A. More fluid only B. <b>Start vasopressors early + identify type of shock</b> C. Stop fluids D. CT scan</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Define shock</li></ul>
+<p>A: Acute circulatory failure causing inadequate tissue perfusion and cellular hypoxia</p>
+<ul><li>Q: Most sensitive bedside marker of tissue hypoperfusion</li></ul>
+<p>A: Serum lactate</p>
+<ul><li>Q: 4 main shock types</li></ul>
+<p>A: Hypovolaemic, Cardiogenic, Obstructive, Distributive</p>
+<ul><li>Q: MAP target in septic shock</li></ul>
+<p>A: ≥65 mmHg</p>
+<ul><li>Q: ScvO₂ target</li></ul>
+<p>A: ≥70%</p>
+<ul><li>Q: Urine output target</li></ul>
+<p>A: ≥0.5 mL/kg/hr</p>
+<ul><li>Q: Lactate clearance target</li></ul>
+<p>A: ≥10–20% per 2 hours</p>
+<ul><li>Q: Warm peripheries + high CO = ?</li></ul>
+<p>A: Distributive (septic, anaphylactic, neurogenic)</p>
+<ul><li>Q: Cool peripheries + low JVP = ?</li></ul>
+<p>A: Hypovolaemic shock</p>
+<ul><li>Q: Cool peripheries + high JVP = ?</li></ul>
+<p>A: Cardiogenic OR obstructive</p>
+<ul><li>Q: Base deficit &gt;6 means</li></ul>
+<p>A: Significant hypoperfusion / occult shock</p>
+<ul><li>Q: First fluid in hypovolaemic shock (non-haemorrhagic)</li></ul>
+<p>A: Balanced crystalloid (Hartmann's / Plasma-Lyte)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: C — Distributive shock causes vasodilatation → warm peripheries. <b>MCQ 2</b>: C — Lactate is the best single marker of tissue hypoperfusion. <b>MCQ 3</b>: C — BP can be normal in early/compensated shock. <b>MCQ 4</b>: B — MAP target ≥65 mmHg in septic shock (Surviving Sepsis). <b>MCQ 5</b>: C — Base deficit &gt;6 = significant hypoperfusion. <b>MCQ 6</b>: B — Cool + flat neck veins = hypovolaemic. <b>MCQ 7</b>: C — Balanced crystalloid preferred (Plasma-Lyte/Hartmann's). <b>MCQ 8</b>: B — Lactate clearance ≥10–20% per 2 hours. <b>MCQ 9</b>: C — ScvO₂ ≥70% (EGDT target). <b>MCQ 10</b>: B — UO target ≥0.5 mL/kg/hr.</p>
+<p><b>SBA 1</b>: C — Pneumonia + warm peripheries + high lactate = septic shock. <b>SBA 2</b>: C — Trauma + shock → balanced crystalloid bolus + early blood products. <b>SBA 3</b>: B — STEMI + hypotension + raised JVP + crackles = cardiogenic shock. <b>SBA 4</b>: B — Beck's triad (hypotension, muffled heart sounds, raised JVP) = tamponade. <b>SBA 5</b>: B — Tension pneumothorax → immediate needle decompression 2nd ICS MCL. <b>SBA 6</b>: B — Bedside echo rapidly differentiates shock types. <b>SBA 7</b>: B — Septic shock on noradrenaline with low MAP → escalate/add vasopressin. <b>SBA 8</b>: B — Source control within 1–3 hours. <b>SBA 9</b>: B — Anaphylaxis: IM adrenaline 0.5 mg (anterolateral thigh). <b>SBA 10</b>: B — Persistent shock → start vasopressors + identify type.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-05</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Shock - Overview · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

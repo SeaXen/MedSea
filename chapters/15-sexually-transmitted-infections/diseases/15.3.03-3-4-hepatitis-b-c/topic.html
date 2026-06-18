@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3.4 Hepatitis B &amp; C — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">3.4 Hepatitis B &amp; C</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Differentiate <b>Hepatitis B vs C</b> sexual transmission, natural history, and management</li><li>[ ] Apply <b>Hepatitis B vaccination</b> strategies (Universal, Risk-Based, Post-Exposure)</li><li>[ ] Interpret <b>Hepatitis B serology</b> (HBsAg, Anti-HBs, Anti-HBc IgM/IgG, HBeAg, Anti-HBe, HBV DNA)</li><li>[ ] Stage <b>Hepatitis B</b> (Acute, Chronic Inactive, Immune Active, HBeAg-Negative Chronic Hepatitis)</li><li>[ ] Interpret <b>Hepatitis C serology</b> (Anti-HCV, HCV RNA, Genotype)</li><li>[ ] Apply <b>HCV Direct-Acting Antiviral (DAA)</b> therapy (Pan-Genotypic, Duration, SVR)</li><li>[ ] Manage <b>HBV/HCV in HIV Co-infection</b> and <b>Pregnancy</b></li><li>[ ] Apply <b>Post-Exposure Prophylaxis (PEP)</b> for HBV/HCV</li><li>[ ] Answer viva: "HBV Serology Interpretation" and "HCV DAA Regimens" and "HBV in Pregnancy" and "PEP for Needlestick"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: HBV vs HCV — Sexual Transmission Context</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Viral Hepatitis — Sexual Transmission</div>
+<div class="fc-node" data-id="D">D</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Hepatitis B (HBV)</div>
+<div class="fc-node" data-id="C">Hepatitis C (HCV)</div>
+<div class="fc-node" data-id="D1">Multiple Partners, MSM, Sex Workers, HIV Co-infection</div>
+<div class="fc-node" data-id="D2">Needle Sharing, Perinatal, Occupational</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B1">DNA Virus, Partially dsDNA</div>
+<div class="fc-node" data-id="B2">Highly Infectious Sexually</div>
+<div class="fc-node" data-id="B3">Vaccine Preventable</div>
+<div class="fc-node" data-id="B4">Chronic Carriage → Cirrhosis/HCC</div>
+<div class="fc-node" data-id="B5">Effective Suppression (NUCs)</div>
+<div class="fc-node" data-id="C1">RNA Virus, Flavivirus</div>
+<div class="fc-node" data-id="C2">Less Infectious Sexually</div>
+<div class="fc-node" data-id="C3">No Vaccine</div>
+<div class="fc-node" data-id="C4">Curable with DAAs (SVR &gt;95%)</div>
+<div class="fc-node" data-id="C5">No Chronic Carriage if Cured</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ Hepatitis B (HBV)</div>
+<div class="sub-h">Epidemiology &amp; Sexual Transmission</div>
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Global Prevalence**</td><td>**296 Million Chronic** (2019); **1.5 Million New Infections/Year**</td></tr><tr><td>**Sexual Transmission Efficiency**</td><td>**High** (100x HIV, 10x HCV); **MSM, Multiple Partners, Sex Workers = High Risk**</td></tr><tr><td>**Other Routes**</td><td>Perinatal (Vertical), Percutaneous (Needles, Tattoo, medical), Horizontal (Household)</td></tr><tr><td>**Incubation**</td><td>**60-150 Days** (Average 90 Days)</td></tr></table>
+<div class="sub-h">HBV Serology — Interpretation Masterclass</div>
+<table class="ctable"><tr><th>Marker</th><th>Significance</th><th>Interpretation</th></tr><tr><td>--------</td><td>--------------</td><td>----------------</td></tr><tr><td>**HBsAg**</td><td>**Surface Antigen**</td><td>**Current Infection (Acute or Chronic)**; **Positive >6 Months = Chronic**</td></tr><tr><td>**Anti-HBs**</td><td>**Surface Antibody**</td><td>**Immunity** (Vaccination or Resolved Infection); **>10 mIU/mL = Protected**</td></tr><tr><td>**Anti-HBc Total**</td><td>**Core Antibody (IgG+IgM)**</td><td>**Past or Current Infection** (Never Positive from Vaccine Alone)</td></tr><tr><td>**Anti-HBc IgM**</td><td>**Core IgM Antibody**</td><td>**Acute/Recent Infection** (<6 Months); **Window Period Marker**</td></tr><tr><td>**HBeAg**</td><td>**e Antigen**</td><td>**High Replicative State**, High Infectivity</td></tr><tr><td>**Anti-HBe**</td><td>**e Antibody**</td><td>**Lower Replication**, Seroconversion (Usually Good Prognosis)</td></tr><tr><td>**HBV DNA**</td><td>**Viral Load**</td><td>**Quantitative Replication**; **Guides Treatment, Monitors Response**</td></tr></table>
+<div class="sub-h">HBV Serology Interpretation Matrix</div>
+<table class="ctable"><tr><th>Clinical Scenario</th><th>HBsAg</th><th>Anti-HBs</th><th>Anti-HBc Total</th><th>Anti-HBc IgM</th><th>HBeAg</th><th>Anti-HBe</th><th>HBV DNA</th></tr><tr><td>-------------------</td><td>-------</td><td>----------</td><td>----------------</td><td>--------------</td><td>-------</td><td>----------</td><td>---------</td></tr><tr><td>**Susceptible**</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr><tr><td>**Immune (Vaccinated)**</td><td>–</td><td>**+**</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr><tr><td>**Resolved Infection**</td><td>–</td><td>**+**</td><td>**+**</td><td>–</td><td>–</td><td>**+**</td><td>–</td></tr><tr><td>**Acute HBV**</td><td>**+**</td><td>–</td><td>**+**</td><td>**+**</td><td>**+**</td><td>–</td><td>High</td></tr><tr><td>**Chronic Inactive Carrier**</td><td>**+**</td><td>–</td><td>**+**</td><td>–</td><td>–</td><td>**+**</td><td>Low/Undetectable</td></tr><tr><td>**Chronic Active (HBeAg +ve)**</td><td>**+**</td><td>–</td><td>**+**</td><td>–</td><td>**+**</td><td>–</td><td>High</td></tr><tr><td>**HBeAg-Negative Chronic Hepatitis**</td><td>**+**</td><td>–</td><td>**+**</td><td>–</td><td>–</td><td>**+**</td><td>Int/High</td></tr><tr><td>**Window Period**</td><td>–</td><td>–</td><td>**+**</td><td>**+**</td><td>–</td><td>–</td><td>Detectable</td></tr><tr><td>**Isolated Anti-HBc**</td><td>–</td><td>–</td><td>**+**</td><td>–</td><td>–</td><td>–</td><td>Usually –</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Anti-HBc = Past/Current Infection (Never from Vaccine)</b>; <b>Anti-HBs = Immunity (Vaccine or Resolved)</b>; <b>HBsAg &gt;6 Months = Chronic</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Hepatitis B — Staging &amp; Treatment Indications</div>
+<div class="sub-h">Chronic HBV Staging (EASL/AASLD)</div>
+<table class="ctable"><tr><th>Phase</th><th>HBsAg</th><th>HBeAg</th><th>HBV DNA</th><th>ALT</th><th>Histology</th><th>Treatment Indication</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>---------</td><td>-----</td><td>-----------</td><td>----------------------</td></tr><tr><td>**Immune Tolerant**</td><td>+</td><td>**+**</td><td>**Very High (>10⁷ IU/mL)**</td><td>**Normal**</td><td>Minimal</td><td>**No** (Observe)</td></tr><tr><td>**Immune Active (HBeAg +ve)**</td><td>+</td><td>**+**</td><td>**High (>10⁴ IU/mL)**</td><td>**Elevated**</td><td>Inflammation/Fibrosis</td><td>**Yes**</td></tr><tr><td>**Inactive Carrier**</td><td>+</td><td>**–**</td><td>**Low (<2,000 IU/mL)**</td><td>**Normal**</td><td>Minimal</td><td>**No** (Monitor)</td></tr><tr><td>**HBeAg-Negative Chronic Hepatitis**</td><td>+</td><td>**–**</td><td>**>2,000 IU/mL**</td><td>**Elevated**</td><td>Inflammation/Fibrosis</td><td>**Yes**</td></tr><tr><td>**Reactivated**</td><td>+</td><td>Variable</td><td>Rising</td><td>Rising</td><td>Worsening</td><td>**Yes** (Urgent)</td></tr></table>
+<div class="callout"><b>Treatment Goal</b>: <b>HBsAg Loss (Functional Cure)</b>; <b>HBeAg Seroconversion</b>; <b>HBV DNA Suppression (&lt;20 IU/mL)</b>; <b>ALT Normalisation</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Hepatitis B — Treatment (Nucleos(t)ide Analogues)</div>
+<div class="sub-h">First-Line NUCs (Potent, High Barrier to Resistance)</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose (Adult)</th><th>Renal Adjustment</th><th>Resistance Barrier</th><th>Key Features</th></tr><tr><td>------</td><td>--------------</td><td>------------------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**Tenofovir Alafenamide (TAF)**</td><td>**25mg OD**</td><td>**eGFR ≥15**</td><td>**Highest**</td><td>**Preferred** (Bone/Renal Safety), **Pregnancy Safe**</td></tr><tr><td>**Tenofovir Disoproxil Fumarate (TDF)**</td><td>**245mg (300mg) OD**</td><td>**eGFR ≥30**</td><td>**Highest**</td><td>**Alternative** (Renal/Bone Toxicity)</td></tr><tr><td>**Entecavir (ETV)**</td><td>**0.5mg OD** (1mg if NAIVE)</td><td>**eGFR <50: Dose Adjust**</td><td>**High**</td><td>**Alternative** (Resistance in NAIVE Low)</td></tr></table>
+<div class="callout"><b>Preferred</b>: <b>TAF &gt; TDF &gt; ETV</b>; <b>Avoid Lamivudine/Adefovir/Telbivudine</b> (Low Barrier, High Resistance)</div>
+<div class="sub-h">Treatment Duration &amp; Stopping Rules</div>
+<table class="ctable"><tr><th>Scenario</th><th>Duration</th><th>Stopping Criteria</th></tr><tr><td>----------</td><td>----------</td><td>-------------------</td></tr><tr><td>**HBeAg +ve Chronic Hepatitis**</td><td>**Until HBeAg Seroconversion + 12 Months Consolidation**</td><td>**HBeAg Seroconversion + Anti-HBe + HBV DNA Undetectable × 12 Months**</td></tr><tr><td>**HBeAg -ve Chronic Hepatitis**</td><td>**Long-Term (Indefinite)**</td><td>**HBsAg Loss (Rare)**; **Consider Stop if HBsAg Loss + 12 Months**</td></tr><tr><td>**Cirrhosis**</td><td>**Lifelong**</td><td>**Do Not Stop** (Risk of Decompensation)</td></tr><tr><td>**Pregnancy (TDF/TAF/ETV)**</td><td>**Throughout Pregnancy + 3-12 Months Postpartum**</td><td>**Prevent Vertical Transmission**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Hepatitis B — Special Situations</div>
+<div class="sub-h">HBV in Pregnancy</div>
+<table class="ctable"><tr><th>Aspect</th><th>Management</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Screening**</td><td>**Universal HBsAg at Booking** (All Pregnant Women)</td></tr><tr><td>**High Viral Load (>200,000 IU/mL)**</td><td>**TAF/TDF/ETV from 28-32 Weeks → 3-12 Months Postpartum** (Prevent Vertical Transmission)</td></tr><tr><td>**HBsAg +ve Mother**</td><td>**Infant: HBIG (100 IU IM) + HBV Vaccine (0, 1, 6 Months) Within 24 Hours of Birth**</td></tr><tr><td>**Breastfeeding**</td><td>**Safe** (If Infant Received HBIG + Vaccine)</td></tr><tr><td>**Antivirals in Pregnancy**</td><td>**TAF/TDF/ETV Safe** (Preferred: TAF/TDF); **Start 28-32 Weeks if HBV DNA >200,000 IU/mL**</td></tr></table>
+<div class="sub-h">HBV/HCV Co-infection with HIV</div>
+<table class="ctable"><tr><th>Aspect</th><th>Management</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**ART Regimen**</td><td>**TDF/TAF + 3TC/FTC (Backbone Covers HBV)**</td></tr><tr><td>**HBV Mono-infected on NUCs**</td><td>**Continue NUCs** (Do Not Stop — Risk of Flare)</td></tr><tr><td>**Monitoring**</td><td>**HBV DNA, ALT q3-6 Months**; **HBsAg q6-12 Months**</td></tr><tr><td>**Hepatitis Flare**</td><td>**ART Initiation (IRIS)** or **NUC Stoppage** — **Manage Expectantly/Restart NUC**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Hepatitis B — Vaccination &amp; PEP</div>
+<div class="sub-h">Hepatitis B Vaccination</div>
+<table class="ctable"><tr><th>Population</th><th>Schedule</th><th>Indication</th></tr><tr><td>------------</td><td>----------</td><td>------------</td></tr><tr><td>**Universal (Infants)**</td><td>**Birth, 1, 6 Months** (or 6, 10, 14 Weeks EPI)</td><td>**Universal**</td></tr><tr><td>**Adults Risk-Based**</td><td>**0, 1, 6 Months** (or Accelerated 0, 1, 2, 12 Months)</td><td>**MSM, Sex Workers, PWID, HIV, CKD, Prisoners, Healthcare Workers, Partners of HBsAg+**</td></tr><tr><td>**Non-Responders (Anti-HBs <10 mIU/mL)**</td><td>**Repeat Series (Double Dose/Accelerated)** → **Check Anti-HBs 1-2m Post**</td><td>Consider **Twinrix (A+B)** if Also Hep A Indicated</td></tr></table>
+<div class="sub-h">Hepatitis B Post-Exposure Prophylaxis (PEP)</div>
+<table class="ctable"><tr><th>Exposure Type</th><th>Source HBsAg</th><th>Exposed Status</th><th>PEP Regimen</th></tr><tr><td>---------------</td><td>--------------</td><td>----------------</td><td>-------------</td></tr><tr><td>**Percutaneous/Mucosal/Sexual**</td><td>**+ve**</td><td>**Unvaccinated / Non-Responder**</td><td>**HBIG (0.06 mL/kg IM) + HBV Vaccine (0, 1, 6 Months)** — **Within 24h (Ideally), Up to 7 Days**</td></tr><tr><td></td><td>**+ve**</td><td>**Vaccinated, Known Responder (Anti-HBs >10)**</td><td>**No PEP Needed**</td></tr><tr><td></td><td>**+ve**</td><td>**Vaccinated, Unknown Response**</td><td>**Test Anti-HBs: If >10 → No PEP; If <10 → HBIG + Booster**</td></tr><tr><td></td><td>**Unknown/-ve**</td><td>**Unvaccinated**</td><td>**HBV Vaccine Series (0, 1, 6 Months)**</td></tr><tr><td>**Sexual Exposure**</td><td>**HBsAg +ve Partner**</td><td>**Susceptible Partner**</td><td>**HBIG + Vaccine (Within 14 Days, Ideally <24h)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Hepatitis C (HCV)</div>
+<div class="sub-h">Epidemiology &amp; Sexual Transmission</div>
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Global Prevalence**</td><td>**58 Million Chronic** (2019); **1.5 Million New Infections/Year**</td></tr><tr><td>**Sexual Transmission Efficiency**</td><td>**Low** (Overall); **Higher in MSM (HIV+, Chemsex, Rough Sex, Mucosal Trauma)**</td></tr><tr><td>**Primary Route**</td><td>**Percutaneous (PWID, Unsafe Medical, Transfusion Pre-1992)**</td></tr><tr><td>**Incubation**</td><td>**2 Weeks – 6 Months** (Average 6-9 Weeks)</td></tr></table>
+<div class="sub-h">Natural History</div>
+<table class="ctable"><tr><th>Stage</th><th>Probability</th><th>Timeline</th></tr><tr><td>-------</td><td>-------------</td><td>----------</td></tr><tr><td>**Acute HCV**</td><td>**15-25% Symptomatic**</td><td>**2-26 Weeks**</td></tr><tr><td>**Spontaneous Clearance**</td><td>**15-45%** (Higher in Women, Young, IL28B CC)</td><td>**6 Months**</td></tr><tr><td>**Chronic HCV**</td><td>**55-85%**</td><td>**>6 Months**</td></tr><tr><td>**Cirrhosis**</td><td>**15-30% over 20-30 Years**</td><td>Accelerated by Alcohol, HIV, Age, Male, Obesity</td></tr><tr><td>**HCC**</td><td>**1-4%/Year (Cirrhosis)**</td><td>Surveillance Required</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Hepatitis C — Diagnosis &amp; Staging</div>
+<div class="sub-h">Diagnostic Algorithm</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected HCV</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Anti-HCV (EIA/CIA)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">No HCV Infection&lt;br/&gt;(If Recent Exposure → HCV RNA)</div>
+<div class="fc-node" data-id="D">HCV RNA (Quantitative PCR)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Resolved Infection&lt;br/&gt;(Past Exposure, Spontaneous Clearance)</div>
+<div class="fc-node" data-id="F">Chronic HCV Infection</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Genotype/Subtype (1-6)</div>
+<div class="fc-node" data-id="H">HCV RNA Quantification (Baseline)</div>
+<div class="fc-node" data-id="I">Fibrosis Assessment&lt;br/&gt;(FibroScan, APRI, FIB-4, Biopsy)</div>
+</div>
+</div>
+<div class="sub-h">HCV Serology &amp; RNA Interpretation</div>
+<table class="ctable"><tr><th>Scenario</th><th>Anti-HCV</th><th>HCV RNA</th><th>Interpretation</th></tr><tr><td>----------</td><td>----------</td><td>---------</td><td>----------------</td></tr><tr><td>**Never Exposed**</td><td>–</td><td>–</td><td>Susceptible</td></tr><tr><td>**Acute HCV**</td><td>+ (Seroconversion)</td><td>**+**</td><td>Acute Infection</td></tr><tr><td>**Chronic HCV**</td><td>+</td><td>**+**</td><td>Chronic Infection</td></tr><tr><td>**Resolved (Spontaneous/Treated)**</td><td>+</td><td>–</td><td>Past Infection, Cured</td></tr><tr><td>**False Positive Anti-HCV**</td><td>+</td><td>–</td><td>Low Prevalence, Confirm RNA</td></tr></table>
+<div class="sub-h">HCV Genotypes &amp; Clinical Relevance</div>
+<table class="ctable"><tr><th>Genotype</th><th>Global Distribution</th><th>Historical DAA Relevance</th><th>Current Pan-Genotypic DAAs</th></tr><tr><td>----------</td><td>---------------------</td><td>--------------------------</td><td>----------------------------</td></tr><tr><td>**1**</td><td>**46%** (USA/Europe)</td><td>Subtype 1a/1b Matters</td><td>**Pan-Genotypic (All)**</td></tr><tr><td>**2**</td><td>20%</td><td></td><td>**Pan-Genotypic (All)**</td></tr><tr><td>**3**</td><td>30% (Asia, PWID)</td><td>Difficult (SVR Lower)</td><td>**Pan-Genotypic (All)**</td></tr><tr><td>**4**</td><td>Egypt, Middle East, Africa</td><td></td><td>**Pan-Genotypic (All)**</td></tr><tr><td>**5, 6**</td><td>Rare</td><td></td><td>**Pan-Genotypic (All)**</td></tr></table>
+<div class="callout"><b>Current Standard</b>: <b>Pan-Genotypic DAAs</b> — <b>Genotype Testing Optional</b> (Still Useful for Epidemiology, Resistance, Regimen Selection in Some Guidelines)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Hepatitis C — Direct-Acting Antiviral (DAA) Therapy</div>
+<div class="sub-h">Pan-Genotypic DAA Regimens (Current Standard)</div>
+<table class="ctable"><tr><th>Regimen</th><th>Composition</th><th>Duration</th><th>Genotypes</th><th>Key Notes</th></tr><tr><td>---------</td><td>-------------</td><td>----------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Sofosbuvir/Velpatasvir (Epclusa)**</td><td>SOF 400mg + VEL 100mg OD</td><td>**12 Weeks**</td><td>**1-6 (Pan-Genotypic)**</td><td>**First-Line (All)**; **Cirrhosis: Add Ribavirin if Decompensated**</td></tr><tr><td>**Glecaprevir/Pibrentasvir (Maviret)**</td><td>GLE 300mg + PIB 120mg OD (3 Tablets)</td><td>**8 Weeks (Non-Cirrhotic); 12 Weeks (Cirrhotic)**</td><td>**1-6 (Pan-Genotypic)**</td><td>**Shortest (8w Non-Cirrhotics)**; **Renal Safe (eGFR <30)**; **NOT in Decompensated Cirrhosis**</td></tr><tr><td>**Sofosbuvir/Velpatasvir/Voxilaprevir (Vosevi)**</td><td>SOF 400mg + VEL 100mg + VOX 100mg OD</td><td>**12 Weeks**</td><td>**1-6 (Pan-Genotypic)**</td><td>**Retreatment (Daa-Experienced)**</td></tr></table>
+<div class="callout"><b>Preferred First-Line</b>: <b>Sofosbuvir/Velpatasvir 12 Weeks</b> (All Genotypes); <b>Glecaprevir/Pibrentasvir 8 Weeks (Non-Cirrhotic)</b> — <b>Choice by Renal, Cirrhosis, Drug Interactions</b></div>
+<div class="sub-h">DAA Regimen Selection Guide</div>
+<table class="ctable"><tr><th>Patient Profile</th><th>Preferred Regimen</th><th>Duration</th></tr><tr><td>-----------------</td><td>-------------------</td><td>----------</td></tr><tr><td>**Treatment-Naive, Non-Cirrhotic**</td><td>**Glecaprevir/Pibrentasvir 8 Weeks** OR **Sofosbuvir/Velpatasvir 12 Weeks**</td><td>8 / 12 Weeks</td></tr><tr><td>**Treatment-Naive, Compensated Cirrhosis**</td><td>**Sofosbuvir/Velpatasvir 12 Weeks** OR **Glecaprevir/Pibrentasvir 12 Weeks**</td><td>12 Weeks</td></tr><tr><td>**Decompensated Cirrhosis (Child-Pugh B/C)**</td><td>**Sofosbuvir/Velpatasvir + Ribavirin 12 Weeks**</td><td>12 Weeks</td></tr><tr><td>**DAA-Experienced (Treatment Failure)**</td><td>**Sofosbuvir/Velpatasvir/Voxilaprevir 12 Weeks**</td><td>12 Weeks</td></tr><tr><td>**Renal Impairment (eGFR <30 / Dialysis)**</td><td>**Glecaprevir/Pibrentasvir** (Renal Safe)</td><td>8/12 Weeks</td></tr><tr><td>**HIV Co-infection**</td><td>**Same as Mono-Infected** (Check Drug Interactions with ART)</td><td>Same Duration</td></tr><tr><td>**Pregnancy**</td><td>**Defer DAA Until Postpartum**</td><td>—</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Glecaprevir/Pibrentasvir = Renal Safe, Shortest (8w)</b>; <b>Sofosbuvir/Velpatasvir = Decompensated Safe (w/ RBV)</b>; <b>Vosevi = Retreatment</b></div>
+<div class="sub-h">Treatment Monitoring &amp; SVR</div>
+<table class="ctable"><tr><th>Timepoint</th><th>Test</th><th>Target</th></tr><tr><td>-----------</td><td>------</td><td>--------</td></tr><tr><td>**Baseline**</td><td>HCV RNA, Genotype (Optional), Fibrosis, Renal/Hepatic Function</td><td>Baseline</td></tr><tr><td>**Week 4 (Optional)**</td><td>HCV RNA</td><td>**Rapid Virological Response (RVR) = Predictor of SVR**</td></tr><tr><td>**End of Treatment (EOT)**</td><td>HCV RNA</td><td>**Undetectable = EOT Response**</td></tr><tr><td>**12 Weeks Post-Treatment (SVR12)**</td><td>**HCV RNA**</td><td>**SVR12 = Undetectable = CURE (>95%)**</td></tr><tr><td>**24 Weeks Post-Treatment (SVR24)**</td><td>HCV RNA</td><td>**SVR24 = Confirmation (Optional)**</td></tr></table>
+<div class="callout"><b>SVR12 = Cure</b>; <b>Reinfection Possible</b> (Risk Reduction Counselling); <b>HCC Surveillance Continues if Cirrhosis</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ HCV — Special Situations</div>
+<div class="sub-h">HCV in Pregnancy</div>
+<table class="ctable"><tr><th>Aspect</th><th>Management</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Screening**</td><td>**Universal Anti-HCV at Booking** (Recommended by WHO/CDC)</td></tr><tr><td>**DAA Therapy**</td><td>**Contraindicated in Pregnancy** (No Safety Data); **Defer Until Postpartum**</td></tr><tr><td>**Vertical Transmission**</td><td>**~5-6%** (Higher if HIV Co-infection, High Viral Load); **No Proven Intervention**</td></tr><tr><td>**Breastfeeding**</td><td>**Safe** (If Nipples Intact); **Avoid if Cracked/Bleeding Nipples**</td></tr><tr><td>**Infant Testing**</td><td>**HCV RNA at 2-6 Months** (Anti-HCV Passive Maternal Transfer); **Confirm Chronic at 18 Months**</td></tr></table>
+<div class="sub-h">HCV/HIV Co-infection</div>
+<table class="ctable"><tr><th>Aspect</th><th>Management</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**DAA Therapy**</td><td>**Same Regimens/Durations as Mono-Infected** (Check Drug Interactions with ART)</td></tr><tr><td>**Key Interactions**</td><td>**Glecaprevir/Pibrentasvir ↔ Rifampicin (Contraindicated); Sofosbuvir/Velpatasvir ↔ Certain ART (Check Liverpool Database)**</td></tr><tr><td>**ART Regimen**</td><td>**Integrase Inhibitor Based Preferred** (DTG, BIC, RAL) — Fewest DAA Interactions</td></tr><tr><td>**Monitoring**</td><td>**SVR12 = Cure**; **HCV Reinfection Risk Higher (Continue Risk Reduction)**</td></tr></table>
+<div class="sub-h">HCV in Renal Impairment</div>
+<table class="ctable"><tr><th>eGFR</th><th>Preferred Regimen</th></tr><tr><td>------</td><td>-------------------</td></tr><tr><td>**≥30**</td><td>Any Pan-Genotypic</td></tr><tr><td>**<30 / Dialysis**</td><td>**Glecaprevir/Pibrentasvir** (Renal Safe — No Dose Adjustment)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ HCV Sexual Transmission &amp; Prevention</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Sexual Transmission**</td><td>**Low Overall**; **Higher: MSM (HIV+, Chemsex, Group Sex, Mucosal Trauma), Multiple Partners, Co-existing STIs**</td></tr><tr><td>**Prevention**</td><td>**Condoms (Reduce Risk)**, **Treat HCV (SVR = No Transmission)**, **Harm Reduction (PWID)**</td></tr><tr><td>**PEP for HCV**</td><td>**No Standard PEP** (No Proven Post-Exposure Antiviral); **Early Detection → Early Treatment**</td></tr><tr><td>**Reinfection**</td><td>**Possible After SVR** (Continued Risk Behaviours → Reinfection Rate 1-5%/Year)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**HBV Serology**</td><td>**HBsAg = Current Infection; Anti-HBs = Immunity; Anti-HBc = Past/Current; Anti-HBc IgM = Acute; HBeAg = High Replication; HBV DNA = Quantification**</td></tr><tr><td>**HBV Phases**</td><td>Immune Tolerant (HBeAg+, High DNA, Normal ALT) → Immune Active (HBeAg+, High DNA, ↑ALT) → Inactive Carrier (HBeAg-, Low DNA, Normal ALT) → HBeAg-Negative CHB (HBeAg-, ↑DNA, ↑ALT)</td></tr><tr><td>**HBV Treatment**</td><td>**TAF > TDF > ETV** (High Barrier); **HBeAg+ → Seroconversion + 12m Consolidation**; **HBeAg- → Long-Term/Indefinite**; **Cirrhosis = Lifelong**</td></tr><tr><td>**HBV Vaccination**</td><td>**Birth, 1, 6m (Infants)**; **Risk Adults: 0,1,6m**; **PEP: HBIG + Vaccine (≤24h/7d)**</td></tr><tr><td>**HCV Natural History**</td><td>**15-45% Spontaneous Clearance; 55-85% Chronic → Cirrhosis (15-30% in 20-30y) → HCC**</td></tr><tr><td>**HCV Diagnosis**</td><td>**Anti-HCV + HCV RNA (Quantitative PCR) = Chronic**; **Genotype Optional (Pan-Genotypic DAAs)**</td></tr><tr><td>**HCV DAA Therapy**</td><td>**Pan-Genotypic: SOF/VEL 12w, GLE/PIB 8w (Non-Cirrhotics), SOF/VEL/VOX 12w (Retreatment)**; **SVR12 = Cure (>95%)**</td></tr><tr><td>**HCV in Pregnancy**</td><td>**Screen at Booking; DAA Contraindicated; Defer to Postpartum; Vertical Transmission ~5-6%**</td></tr><tr><td>**HBV/HCV in HIV**</td><td>**TDF/TAF+3TC/FTC Covers HBV**; **HCV DAA Same Regimens (Check Interactions)**</td></tr><tr><td>**PEP**</td><td>**HBV: HBIG + Vaccine (≤24h); HCV: No PEP (Early Detection/Treatment)**</td></tr><tr><td>**Vaccination**</td><td>**HBV Universal (Birth, 1, 6m); Risk Adults 0,1,6m; No HCV Vaccine**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>HBV serology interpretation — acute vs chronic vs immune?</td><td>**Acute: HBsAg+, Anti-HBc IgM+, HBeAg+**; **Chronic: HBsAg>6m, Anti-HBc IgG+, HBeAg Variable**; **Immune (Vaccine): Anti-HBs>10, Anti-HBc-**; **Resolved: Anti-HBs+, Anti-HBc+**</td></tr><tr><td>2</td><td>HBV treatment indications by phase?</td><td>**Immune Active (HBeAg+, ↑ALT, High DNA) → Treat**; **HBeAg-Negative CHB (HBeAg-, ↑ALT, DNA>2000) → Treat**; **Immune Tolerant/Inactive Carrier → Monitor**</td></tr><tr><td>3</td><td>First-line HBV antivirals and why?</td><td>**TAF > TDF > ETV** (High Barrier, Potent); **TAF Preferred (Renal/Bone Safety)**; **Avoid Lamivudine/Adefovir/Telbivudine (Low Barrier)**</td></tr><tr><td>4</td><td>HBV in pregnancy — vertical transmission prevention?</td><td>**Infant: HBIG + HBV Vaccine (Within 24h)**; **Mother: TAF/TDF/ETV from 28-32w if HBV DNA >200,000 IU/mL**</td></tr><tr><td>5. HCV diagnosis algorithm?</td><td>**Anti-HCV + → HCV RNA (Quantitative)**; **RNA + = Chronic; RNA – = Resolved**; **Genotype Optional (Pan-Genotypic DAAs)**</td></tr><tr><td>6. Pan-genotypic DAA regimens — first-line?</td><td>**SOF/VEL 12w (All); GLE/PIB 8w (Non-Cirrhotic) / 12w (Cirrhotic) — Renal Safe**; **SOF/VEL/VOX 12w (Retreatment)**</td></tr><tr><td>7. HCV in pregnancy — management?</td><td>**Screen at Booking; DAA Contraindicated → Defer Postpartum; Vertical Transmission ~5-6%; Breastfeeding Safe (If Nipples Intact); Infant HCV RNA at 2-6m**</td></tr><tr><td>8. HBV/HCV PEP for needlestick injury?</td><td>**HBV: HBIG + Vaccine (Within 24h/7d) if Source +ve & Exposed Non-Responder**; **HCV: No PEP (Early RNA Testing, Treat if Positive)**</td></tr><tr><td>9. HCV DAA treatment — SVR definition?</td><td>**SVR12 = HCV RNA Undetectable at 12 Weeks Post-Treatment = CURE (>95%)**</td></tr><tr><td>10. HBV/HCV in HIV co-infection — key points?</td><td>**HBV: TDF/TAF+3TC/FTC in ART (Covers HBV); Continue NUCs if Already On**; **HCV: Same DAA Regimens (Check Interactions); SVR= Cure; Reinfection Risk Higher**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"HBV and HCV both have vaccines"**</td><td>**NO.** **HBV = Vaccine Available**; **HCV = NO Vaccine**</td></tr><tr><td>**"HBeAg +ve = Always Treat"**</td><td>**NO.** **Immune Tolerant (HBeAg+, High DNA, Normal ALT) = Monitor, NOT Treat**</td></tr><tr><td>**"HCV Genotype Matters for Current DAAs"**</td><td>**NO.** **Pan-Genotypic DAAs (GLE/PIB, SOF/VEL) Cover All Genotypes 1-6**; **Genotyping Optional**</td></tr><tr><td>**"HCV Vaccine Exists"**</td><td>**NO.** **NO HCV Vaccine** (High Genetic Diversity); **Only HBV Vaccine**</td></tr><tr><td>**"HCV Spontaneous Clearance = Immunity"**</td><td>**NO.** **Reinfection Possible** (No Protective Immunity); **Risk Reduction Still Needed After SVR**</td></tr><tr><td>**"HBV Vaccine = Lifelong Immunity"**</td><td>**Mostly Yes**; **Booster Not Routine**; **Anti-HBs >10 = Protected**; **Non-Responders: Repeat Series**</td></tr><tr><td>**"HCV PEP = Give DAAs"**</td><td>**NO.** **No HCV PEP**; **Early Detection (RNA at 4-12 Weeks) → Early Treatment**</td></tr><tr><td>**"All Chronic HBV Need Treatment"**</td><td>**NO.** **Immune Tolerant & Inactive Carrier = Monitor Only**</td></tr><tr><td>**"HCV Genotype 3 = Hardest to Treat"**</td><td>**Historical**; **Current Pan-Genotypic DAAs (GLE/PIB, SOF/VEL) Achieve >95% SVR in GT3**</td></tr><tr><td>**"HBV = Sexual, HCV = Blood Only"**</td><td>**NO.** **HBV = Highly Sexual (100x HIV)**; **HCV = Low Sexual Overall, BUT Higher in MSM (HIV+, Chemsex, Trauma)**</td></tr></table>
+<div class="callout"><b>Mnemonic: HEPATITIS B vs C MASTER</b> <b>H</b>BV Serology: <b>HBsAg (Current), Anti-HBs (Immune), Anti-HBc (Past/Current), Anti-HBc IgM (Acute), HBeAg (Replication), DNA (Quant)</b> <b>E</b>pidemiology: <b>HBV 296M, HCV 58M Chronic</b> <b>P</b>hases HBV: <b>Immune Tolerant (No Tx) → Immune Active (Tx) → Inactive (Monitor) → HBeAg-Neg CHB (Tx)</b> <b>A</b>ntivirals HBV: <b>TAF &gt; TDF &gt; ETV (High Barrier); Avoid LAM/ADV/TBV (Low Barrier)</b> <b>T</b>reatment Indication: <b>Immune Active (HBeAg+, ↑ALT) + HBeAg-Neg CHB (↑ALT, DNA&gt;2000) = Tx</b> <b>I</b>n Pregnancy: <b>HBV → HBIG + Vaccine (Infant) + TAF/TDF/ETV (Mother if DNA&gt;200k); HCV → Screen, Defer DAA</b> <b>T</b>reatment HBV: <b>HBeAg+ → Seroconversion +12m; HBeAg- → Long-Term/Indefinite; Cirrhosis = Lifelong</b> <b>I</b>mmunity: <b>Anti-HBs &gt;10 = Protected; Non-Responder → Repeat Series; PEP = HBIG + Vaccine (24h/7d)</b> <b>S</b>exual Transmission: <b>HBV = High (100x HIV); HCV = Low (Except MSM HIV+/Chemsex)</b> <b>C</b>HC: <b>Anti-HCV + RNA = Chronic; Genotype Optional (Pan-Genotypic); SVR12 = Cure</b> <b>D</b>AAs: <b>SOF/VEL 12w (All); GLE/PIB 8w (Non-Cirrhotics)/12w (Cirrhotics); SOF/VEL/VOX 12w (Retreatment)</b> <b>R</b>enal: <b>GLE/PIB Renal Safe (eGFR&lt;30); SOF/VEL Dose Adjust</b> <b>H</b>CV in Pregnancy: <b>Screen Booking; DAA Contraindicated → Defer; Vertical Trans ~5-6%; Breastfeeding Safe</b> <b>I</b>n HIV: <b>HBV → TDF/TAF+3TC/FTC in ART; HCV → Same DAA Regimens (Check Interactions)</b> <b>S</b>VR: <b>SVR12 = Undetectable RNA 12w Post-Tx = CURE (&gt;95%)</b> <b>P</b>EP: <b>HBV: HBIG + Vaccine (24h/7d); HCV: No PEP (Early RNA → Treat)</b> <b>V</b>accines: <b>HBV = Yes (Universal Birth, Risk Adults); HCV = NO Vaccine</b> <b>I</b>nteraction Check: <b>GLE/PIB ↔ Rifampicin (Contra); SOF/VEL ↔ ART (Check Liverpool DB)</b> <b>R</b>einfection: <b>HCV Reinfection Possible After SVR (Risk Reduction Essential)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Hepatitis B &amp; C))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">HBV</div>
+<div class="mm-node mm-l3">– Serology: HBsAg, Anti-HBs, Anti-HBc, HBeAg, DNA</div>
+<div class="mm-node mm-l3">– Phases: Immune Tolerant → Immune Active → Inactive → HBeAg-Neg CHB</div>
+<div class="mm-node mm-l3">– Tx: TAF &gt; TDF &gt; ETV</div>
+<div class="mm-node mm-l3">– Indications: Immune Active, HBeAg-Neg CHB</div>
+<div class="mm-node mm-l3">– Pregnancy: Infant HBIG+Vaccine; Mom TAF/TDF/ETV if DNA&gt;200k</div>
+<div class="mm-node mm-l3">– PEP: HBIG + Vaccine (24h/7d)</div>
+<div class="mm-node mm-l3">– Vaccine: Universal Birth, Risk Adults</div>
+<div class="mm-node mm-l2">HCV</div>
+<div class="mm-node mm-l3">– Natural History: 15-45% Clearance, 55-85% Chronic</div>
+<div class="mm-node mm-l3">– Diagnosis: Anti-HCV + RNA = Chronic</div>
+<div class="mm-node mm-l3">– Pan-Genotypic DAAs:</div>
+<div class="mm-node mm-deep">– SOF/VEL 12w (All)</div>
+<div class="mm-node mm-deep">– GLE/PIB 8w (Non-Cirrhotic) / 12w (Cirrhotic)</div>
+<div class="mm-node mm-deep">– SOF/VEL/VOX 12w (Retreatment)</div>
+<div class="mm-node mm-l3">– SVR12 = Cure (&gt;95%)</div>
+<div class="mm-node mm-l3">– Pregnancy: Screen, Defer DAA, Vertical ~5%</div>
+<div class="mm-node mm-l3">– Sexual: Low Overall, Higher MSM HIV+</div>
+<div class="mm-node mm-l3">– HIV Co-infection: Same DAAs, Check Interactions</div>
+<div class="mm-node mm-l3">– Renal: GLE/PIB Safe (eGFR&lt;30)</div>
+<div class="mm-node mm-l2">Sexual Transmission</div>
+<div class="mm-node mm-l3">– HBV: High (100x HIV)</div>
+<div class="mm-node mm-l3">– HCV: Low Overall, ↑ MSM HIV+/Chemsex</div>
+<div class="mm-node mm-l2">PEP</div>
+<div class="mm-node mm-l3">– HBV: HBIG + Vaccine (24h/7d)</div>
+<div class="mm-node mm-l3">– HCV: No PEP (Early RNA → Treat)</div>
+<div class="mm-node mm-l2">HIV Co-infection</div>
+<div class="mm-node mm-l3">– HBV: TDF/TAF+3TC/FTC in ART</div>
+<div class="mm-node mm-l3">– HCV: Same DAAs, Check Interactions</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>HBV Serology & Phases</td><td>3</td><td></td><td></td></tr><tr><td>HBV Treatment & Indications</td><td>3</td><td></td><td></td></tr><tr><td>HBV Vaccination & PEP</td><td>2</td><td></td><td></td></tr><tr><td>HCV Natural History & Diagnosis</td><td>3</td><td></td><td></td></tr><tr><td>HCV DAA Therapy & Regimens</td><td>3</td><td></td><td></td></tr><tr><td>HCV Special Situations (Pregnancy, HIV, Renal)</td><td>3</td><td></td><td></td></tr><tr><td>Sexual Transmission & Prevention</td><td>2</td><td></td><td></td></tr><tr><td>HBV/HCV in HIV Co-infection</td><td>1</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Compare and contrast Hepatitis B and C in terms of sexual transmission, diagnosis, treatment, and prevention."</td><td>HBV: Highly Sexual, DNA Virus, Vaccine, NUCs (TAF>TDF>ETV), Phases, Chronicity; HCV: Low Sexual (↑ MSM), RNA Virus, No Vaccine, Curable (DAAs >95% SVR), Pan-Genotypic, PEP Differences</td></tr><tr><td>**Short Note**</td><td>"HBV Serology Interpretation in a Patient with Acute Hepatitis."</td><td>**HBsAg+, Anti-HBc IgM+, HBeAg+, High HBV DNA, IgM Anti-HBc = Acute**; Anti-HBs -, Anti-HBe -; HBV DNA High</td></tr><tr><td>**Viva**</td><td>"Needlestick injury from HBsAg+ source. Exposed HCW unvaccinated. PEP?"</td><td>**HBIG 0.06 mL/kg IM + HBV Vaccine (0, 1, 6 Months) Within 24h (Ideally), Up to 7 Days**; Test Anti-HBs at 1-2 Months Post-Series</td></tr><tr><td>**Ward Round**</td><td>"30M, MSM, HIV+, HCV RNA positive, Genotype 1a, non-cirrhotic. DAA regimen?"</td><td>**Glecaprevir/Pibrentasvir 8 Weeks (Preferred — Renal Safe, Shortest)** OR **Sofosbuvir/Velpatasvir 12 Weeks**; Check Drug Interactions with ART (DTG/BIC Preferred); SVR12 = Cure</td></tr><tr><td>**Last-Night**</td><td>"HBV Serology: HBsAg=Current, Anti-HBs=Immune, Anti-HBc=Past/Current, IgM=Acute, HBeAg=Replication. Phases: Immune Tol (No Tx), Immune Active (Tx), Inactive (Monitor), HBeAg-Neg CHB (Tx). Tx: TAF>TDF>ETV. HCV: Anti-HCV+RNA=Chronic. Pan-Genotypic DAAs: SOF/VEL 12w, GLE/PIB 8w (Non-Cirr), SOF/VEL/VOX 12w (Retreat). SVR12=Cure. HBV PEP: HBIG+Vacc(24h). HCV: No PEP. Preg: HBV Infant HBIG+Vacc+Mom TAF if DNA>200k; HCV Screen, Defer DAA."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>HBV Serology</b>: <b>HBsAg = Current Infection; Anti-HBs = Immunity; Anti-HBc = Past/Current; Anti-HBc IgM = Acute; HBeAg = High Replication; HBV DNA = Quantification</b></li><li><b>HBV Phases</b>: <b>Immune Tolerant (HBeAg+, High DNA, Normal ALT) → NO TREATMENT</b>; <b>Immune Active (HBeAg+, ↑ALT, High DNA) → TREAT</b>; <b>Inactive Carrier (HBeAg-, Low DNA, Normal ALT) → MONITOR</b>; <b>HBeAg-Negative CHB (HBeAg-, ↑DNA &gt;2000, ↑ALT) → TREAT</b></li><li><b>HBV Treatment</b>: <b>TAF &gt; TDF &gt; ETV</b> (High Barrier); <b>HBeAg+ → Seroconversion + 12m Consolidation</b>; <b>HBeAg- → Long-Term/Indefinite</b>; <b>Cirrhosis = LIFELONG</b></li><li><b>HBV Vaccination</b>: <b>Universal (Birth, 1, 6m)</b>; <b>Risk Adults (0,1,6m)</b>; <b>PEP: HBIG + Vaccine (≤24h/7d)</b></li><li><b>HCV Natural History</b>: <b>15-45% Spontaneous Clearance</b>; <b>55-85% Chronic → Cirrhosis (15-30% in 20-30y) → HCC</b></li><li><b>HCV Diagnosis</b>: <b>Anti-HCV + HCV RNA (Positive) = Chronic Infection</b>; <b>Genotype Optional (Pan-Genotypic DAAs)</b></li><li><b>HCV DAA Therapy</b>: <b>Pan-Genotypic: SOF/VEL 12w (All); GLE/PIB 8w (Non-Cirrhotic) / 12w (Cirrhotic); SOF/VEL/VOX 12w (Retreatment)</b>; <b>SVR12 = CURE (&gt;95%)</b></li><li><b>HCV in Pregnancy</b>: <b>Screen at Booking</b>; <b>DAA Contraindicated → Defer Postpartum</b>; <b>Vertical Transmission ~5-6%</b>; <b>Breastfeeding Safe (If Nipples Intact)</b></li><li><b>HBV/HCV in HIV</b>: <b>HBV: TDF/TAF+3TC/FTC in ART (Covers HBV); Continue NUCs</b>; <b>HCV: Same DAA Regimens (Check Drug Interactions)</b></li><li><b>PEP</b>: <b>HBV: HBIG + Vaccine (Within 24h, Up to 7 Days)</b>; <b>HCV: No PEP (Early RNA Testing → Early Treatment)</b></li><li><b>Sexual Transmission</b>: <b>HBV = Highly Efficient (100x HIV)</b>; <b>HCV = Low Overall, Higher in MSM (HIV+, Chemsex, Trauma)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>HBV serology — marker of acute infection?</b></li></ol>
+<p>A. HBsAg  B. <b>Anti-HBc IgM</b>  C. Anti-HBs  D. HBeAg <i>Answer: B. Anti-HBc IgM = Acute/Recent Infection.</i></p>
+<ol><li><b>HBV phase — immune tolerant phase characteristics?</b></li></ol>
+<p>A. HBeAg-, Low DNA, Normal ALT  B. <b>HBeAg+, High DNA, Normal ALT</b>  C. HBeAg-, High DNA, Elevated ALT  D. HBsAg-, Anti-HBs+ <i>Answer: B. Immune Tolerant = HBeAg+, High DNA (&gt;10⁷), Normal ALT, No Treatment.</i></p>
+<ol><li><b>First-line HBV antiviral — preferred agent?</b></li></ol>
+<p>A. Lamivudine  B. <b>Tenofovir Alafenamide (TAF)</b>  C. Adefovir  D. Telbivudine <i>Answer: B. TAF &gt; TDF &gt; ETV (Highest Barrier, Renal/Bone Safety).</i></p>
+<ol><li><b>HCV diagnosis — confirmatory test for chronic infection?</b></li></ol>
+<p>A. Anti-HCV  B. <b>HCV RNA (Quantitative PCR)</b>  C. Anti-HCV IgM  D. Liver Biopsy <i>Answer: B. HCV RNA (Quantitative PCR) Positive = Chronic Infection.</i></p>
+<ol><li><b>Pan-genotypic DAA regimen for treatment-naive non-cirrhotic?</b></li></ol>
+<p>A. SOF/VEL 8 Weeks  B. <b>GLE/PIB 8 Weeks (Preferred)</b>  C. SOF/VEL/VOX 12 Weeks  D. SOF/VEL 24 Weeks <i>Answer: B. GLE/PIB 8 Weeks (Shortest, Renal Safe, Pan-Genotypic).</i></p>
+<ol><li><b>HCV SVR definition?</b></li></ol>
+<p>A. RNA Negative at End of Treatment  B. <b>RNA Negative at 12 Weeks Post-Treatment (SVR12)</b>  C. RNA Negative at 24 Weeks  D. Antibody Negative <i>Answer: B. SVR12 = HCV RNA Undetectable 12 Weeks Post-Treatment = Cure (&gt;95%).</i></p>
+<ol><li><b>HCV in pregnancy — DAA therapy?</b></li></ol>
+<p>A. Safe, Recommended  B. <b>Contraindicated → Defer Until Postpartum</b>  C. Only 2nd Trimester  D. Only Genotype 1 <i>Answer: B. DAA Contraindicated in Pregnancy → Defer Until Postpartum.</i></p>
+<ol><li><b>HBV in pregnancy — infant prophylaxis?</b></li></ol>
+<p>A. HBV Vaccine Only  B. <b>HBIG (100 IU) + HBV Vaccine Within 24 Hours of Birth</b>  C. HBIG Only  D. No Prophylaxis Needed <i>Answer: B. HBIG + HBV Vaccine Within 24 Hours of Birth (Standard of Care).</i></p>
+<ol><li><b>HBV/HCV PEP for needlestick from HBsAg+ source — unvaccinated HCW?</b></li></ol>
+<p>A. HBV Vaccine Only  B. <b>HBIG (0.06 mL/kg IM) + HBV Vaccine (0, 1, 6 Months) Within 24h</b>  C. HBIG Only  D. No PEP Needed <i>Answer: B. HBIG + HBV Vaccine Series (Within 24h Ideally, Up to 7 Days).</i></p>
+<ol><li><b>Pan-genotypic DAA for treatment-experienced (retreatment)?</b></li></ol>
+<p>A. SOF/VEL 12 Weeks  B. GLE/PIB 8 Weeks  C. <b>SOF/VEL/VOX 12 Weeks</b>  D. SOF/VEL 24 Weeks <i>Answer: C. SOF/VEL/VOX (Vosevi) 12 Weeks = Retreatment Regimen.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>30M, HBsAg+, HBeAg+, HBV DNA 10⁸ IU/mL, ALT normal. Phase &amp; management?</b></li></ol>
+<p>A. Immune Active, Treat  B. <b>Immune Tolerant, Monitor (No Treatment)</b>  C. Inactive Carrier, Monitor  D. HBeAg-Neg CHB, Treat <i>Answer: B. Immune Tolerant (HBeAg+, High DNA, Normal ALT) → No Treatment.</i></p>
+<ol><li><b>HCV treatment-naive, non-cirrhotic, any genotype. Preferred regimen?</b></li></ol>
+<p>A. SOF/VEL 12 Weeks  B. <b>GLE/PIB 8 Weeks</b>  C. SOF/VEL/VOX 12 Weeks  D. SOF/VEL 24 Weeks <i>Answer: B. GLE/PIB 8 Weeks (Shortest, Renal Safe, Pan-Genotypic).</i></p>
+<ol><li><b>Pregnant woman at 28 weeks, HBsAg+, HBV DNA 500,000 IU/mL. Management?</b></li></ol>
+<p>A. No Antiviral  B. <b>TAF/TDF/ETV from 28-32 Weeks → 3-12 Months Postpartum</b>  C. Cesarean Section  D. HBIG Only <i>Answer: B. TAF/TDF/ETV from 28-32 Weeks (If DNA &gt;200,000) → 3-12 Months Postpartum.</i></p>
+<ol><li><b>HCV treatment-experienced (failed SOF/VEL), compensated cirrhosis. Retreatment?</b></li></ol>
+<p>A. SOF/VEL 24 Weeks  B. <b>SOF/VEL/VOX 12 Weeks (Vosevi)</b>  C. GLE/PIB 12 Weeks  D. Interferon + Ribavirin <i>Answer: B. SOF/VEL/VOX (Vosevi) 12 Weeks = Standard Retreatment Regimen.</i></p>
+<ol><li><b>Needlestick injury from HBsAg+ source. HCW unvaccinated. PEP?</b></li></ol>
+<p>A. HBV Vaccine Only  B. <b>HBIG + HBV Vaccine (0, 1, 6 Months) Within 24h</b>  C. HBIG Only  D. No PEP <i>Answer: B. HBIG + HBV Vaccine Series (Within 24h Ideally, Up to 7 Days).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Chlamydia.md]] — Co-infection, Screening</li><li>[[2.2 Gonorrhoea.md]] — Co-infection</li><li>[[2.3 Syphilis.md]] — Co-infection, Differential</li><li>[[2.4-2.6 Other Bacterial STIs.md]] — Co-infection</li><li>[[3.2 HSV.md]] — Co-infection, Differential</li><li>[[3.3 HPV.md]] — Co-infection, Vaccination</li><li>[[3.5 Mpox.md]] — Co-infection, Sexual Transmission</li><li>[[5.1-5.8 Syndromic Management.md]] — Urethral Discharge, PID</li><li>[[HIV/AIDS Cross-Reference]] — HBV/HCV in HIV, ART Interactions, DAA Interactions</li><li>[[Population &amp; Newborn Screening]] — Antenatal Screening, Vaccination Programmes</li><li>[[9. ELSI]] — Vaccination Ethics, Harm Reduction, Access to DAAs</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next:</b> Build <code>3.5 Mpox.md</code>, <code>3.6 Other Viral STIs.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 3.4 Hepatitis B &amp; C · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

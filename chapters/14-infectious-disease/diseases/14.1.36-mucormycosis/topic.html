@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mucormycosis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Mucormycosis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Aetiology</b>: <b>Mucorales</b> (Rhizopus, Mucor, Rhizomucor, Lichtheimia, Cunninghamella) — <b>Angioinvasion</b>, <b>Tissue Necrosis</b></li><li>[ ] Recognise <b>Risk Factors</b>: <b>Diabetes (DKA)</b>, <b>Iron Overload / Deferoxamine</b>, <b>Neutropenia</b>, <b>Transplant</b>, <b>Corticosteroids</b>, <b>Malignancy</b>, <b>Burns</b>, <b>Trauma</b></li><li>[ ] Recognise <b>Clinical Forms</b>: <b>Rhino-Orbital-Cerebral (ROCM)</b> (Most Common), <b>Pulmonary</b>, <b>Cutaneous</b>, <b>GI</b>, <b>Disseminated</b></li><li>[ ] Diagnose: <b>KOH Mount / Histopathology</b> (Broad, Aseptate, Right-Angle Branching Hyphae), <b>Culture</b>, <b>PCR</b>, <b>Imaging</b> (CT/MRI)</li><li>[ ] Manage: <b>Liposomal Amphotericin B (High Dose)</b> + <b>Surgical Debridement</b> (Urgent), <b>Iron Chelation Discontinue</b>, <b>Glycaemic Control</b></li><li>[ ] Recognise <b>Complications</b>: <b>Cerebral Invasion</b>, <b>Carotid Artery Invasion</b>, <b>Cavernous Sinus Thrombosis</b>, <b>Dissemination</b></li><li>[ ] Recognise <b>C. auris vs Mucormycosis</b>: Different Organisms, Different Treatment</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Causative Agents**</td><td>**Mucorales**: *Rhizopus* (Most Common), *Mucor*, *Rhizomucor*, *Lichtheimia*, *Cunninghamella*, *Apophysomyces*, *Saksenaea*</td></tr><tr><td>**Pathophysiology**</td><td>**Angioinvasion** → **Vascular Thrombosis** → **Tissue Necrosis** → **Haematogenous Dissemination**</td></tr><tr><td>**Risk Factors**</td><td>**Diabetes (DKA) — 50-70%**, **Iron Overload / Deferoxamine**, **Neutropenia**, **HSCT**, **Corticosteroids**, **Malignancy**, **Burns**, **Trauma**, **Prematurity**</td></tr><tr><td>**Iron Overload**</td><td>**Deferoxamine** → Acts as **Siderophore** for Mucorales → **Enhanced Growth**</td></tr><tr><td>**Geography**</td><td>**Worldwide**; **India** (High Burden, Rhino-Orbital-Cerebral), **Diabetes/DKA** Major Driver</td></tr><tr><td>**Mortality**</td><td>**Overall 50-80%**; **ROCM 50-85%**; **Disseminated >90%**</td></tr></table>
+<div class="callout">[!warning] <b>Mucormycosis = Angioinvasion → Tissue Necrosis → Rapid Progression</b>. <b>Diabetes/DKA = #1 Risk Factor</b>. <b>Deferoxamine = Siderophore for Mucorales</b>. <b>Mortality 50-80%</b> even with treatment.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Clinical Forms</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Form</th><th>Frequency</th><th>Key Features</th></tr><tr><td>------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Rhino-Orbital-Cerebral (ROCM)**</td><td>**Most Common (40-50%)**</td><td>**Sinusitis**, **Periorbital Swelling**, **Proptosis**, **Ophthalmoplegia**, **Vision Loss**, **Palatal/Nasal Eschar (Black Necrosis)**, **Cranial Nerve Palsies**, **Cerebral Invasion → Altered Mental Status**</td></tr><tr><td>**Pulmonary**</td><td>**20-30%**</td><td>**Fever, Cough, Haemoptysis**, **Dyspnoea**, **Pleural Effusion**, **CXR/CT: Nodules, Consolidation, Cavitation, Reverse Halo Sign**</td></tr><tr><td>**Cutaneous**</td><td>**10-15%**</td><td>**Trauma/Burns/Surgery Site**, **Erythema → Necrosis → Eschar**, **Rapid Spread**, **Necrotising Fasciitis**</td></tr><tr><td>**GI**</td><td>**<5%**</td><td>**Abdominal Pain**, **Nausea/Vomiting**, **GI Bleeding**, **Perforation**, **Ischaemic Bowel**</td></tr><tr><td>**Disseminated**</td><td>**10-20%**</td><td>**Multiple Organs** (Brain, Lungs, Skin, Spleen, Heart), **High Mortality (>90%)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Risk Factors — The "Classic" Triad</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Risk Factor</th><th>Mechanism</th></tr><tr><td>-------------</td><td>-----------</td></tr><tr><td>**Diabetes + DKA**</td><td>**Acidosis** → **Enhanced Fungal Growth**; **Iron Availability** (Ketones Chelate Iron); **Neutrophil Dysfunction**</td></tr><tr><td>**Iron Overload / Deferoxamine**</td><td>**Deferoxamine = Siderophore** for Mucorales → **Enhanced Iron Acquisition** → **Rapid Growth**</td></tr><tr><td>**Neutropenia / Immunosuppression**</td><td>**Impaired Neutrophil Function** → **Impaired Phagocytosis/Killing**</td></tr></table>
+<div class="callout">[!warning] <b>Diabetes + DKA = #1 Risk Factor (50-70%)</b>. <b>Deferoxamine = Siderophore for Mucorales</b> → <b>Contraindicated in Suspected Mucormycosis</b>. <b>Steroid Use = ↑ Risk</b> (COVID-19 Associated Mucormycosis).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Clinical Presentations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Rhino-Orbital-Cerebral (ROCM) — Most Common</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Initial**</td><td>**Facial Pain**, **Nasal Congestion/Discharge (Bloody/Black)**, **Facial Swelling**, **Headache**, **Fever**</td></tr><tr><td>**Orbital**</td><td>**Periorbital Swelling**, **Proptosis**, **Ophthalmoplegia** (III, IV, VI Palsies), **Vision Loss**, **Chemosis**</td></tr><tr><td>**Palate/Nose**</td><td>**Black Eschar** (Necrotic Turbinates/Palate), **Nasal Obliteration**</td></tr><tr><td>**Cerebral**</td><td>**Altered Mental Status**, **Seizures**, **Hemiparesis**, **Cavernous Sinus Thrombosis**, **Carotid Artery Invasion**</td></tr></table>
+<div class="sub-h">Pulmonary</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Symptoms**</td><td>**Fever**, **Cough**, **Haemoptysis**, **Dyspnoea**, **Chest Pain**</td></tr><tr><td>**Imaging**</td><td>**Nodules, Consolidation, Cavitation**, **Reverse Halo Sign** (Atoll Sign), **Air-Crescent Sign**</td></tr><tr><td>**Host**</td><td>**Neutropenic, HSCT, Leukaemia, Steroids**</td></tr></table>
+<div class="sub-h">Cutaneous</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Portal**</td><td>**Trauma, Burns, Surgery, IV Catheter, Injections**</td></tr><tr><td>**Appearance**</td><td>**Erythema → Rapid Necrosis → Black Eschar**, **Rapid Spread**, **Necrotising Fasciitis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🔬 Diagnostic Workup</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Mucormycosis: Risk Factors + Clinical Syndrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Imaging (Urgent)**</div>
+<div class="fc-node" data-id="C">**Tissue Biopsy (Gold Standard)**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B1">**CT Sinuses/Orbit/Brain** (ROCM): Sinus Opacification, Bone Erosion, Orbital Invasion, Cerebral Invasion</div>
+<div class="fc-node" data-id="B2">**CT Chest** (Pulmonary): Nodules, Consolidation, Reverse Halo Sign</div>
+<div class="fc-node" data-id="B3">**MRI Brain** (Superior for Cerebral Invasion): Perineural Spread, Cavernous Sinus Thrombosis</div>
+<div class="fc-node" data-id="C1">**KOH Mount / Calcofluor White** (Rapid): **Broad, Aseptate, Right-Angle Branching Hyphae**</div>
+<div class="fc-node" data-id="C2">**Histopathology (H&amp;E/GMS/PAS)**: **Broad, Aseptate, Right-Angle Branching Hyphae**, **Angioinvasion**</div>
+<div class="fc-node" data-id="C3">**Culture** (Sabouraud): **Rapid Growth (24-48h), Fluffy, Grey-Brown**</div>
+<div class="fc-node" data-id="C4">C4</div>
+</div>
+</div>
+<div class="sub-h">Key Diagnostic Features (Histopathology)</div>
+<table class="ctable"><tr><th>Feature</th><th>Mucormycosis</th><th>Aspergillosis</th><th>Candidiasis</th></tr><tr><td>--------</td><td>--------------</td><td>---------------</td><td>-------------</td></tr><tr><td>**Hyphae**</td><td>**Broad (10-20µm), Aseptate (Coenocytic)**</td><td>**Septate (3-5µm), Acute Angle Branching (45°)**</td><td>**Yeast + Pseudohyphae (Septate)**</td></tr><tr><td>**Branching**</td><td>**Right-Angle (90°)**</td><td>**Acute Angle (45°)**</td><td>**Pseudohyphae (Elongated Yeast)**</td></tr><tr><td>**Angioinvasion**</td><td>**Prominent**</td><td>**Present**</td><td>**Rare**</td></tr><tr><td>**Staining**</td><td>**H&E: Pale, Wide, Ribbon-Like**</td><td>**H&E: Narrow, Septate**</td><td>**H&E: Yeast + Pseudohyphae**</td></tr></table>
+<div class="callout">[!tip] <b>KOH Mount / Histopathology = Rapid Diagnosis</b>. <b>Broad, Aseptate, Right-Angle Branching Hyphae = Mucormycosis</b>. <b>Angioinvasion = Hallmark</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">💊 Management — The "Iron Triangle": Antifungal + Surgical + Metabolic Control</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Antifungal Therapy</div>
+<table class="ctable"><tr><th>Agent</th><th>Dose</th><th>Indication</th><th>Notes</th></tr><tr><td>-------</td><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Liposomal Amphotericin B (LAmB)**</td><td>**5-10 mg/kg/day IV** (Up to 10 mg/kg in CNS)</td><td>**1st Line** (All Forms)</td><td>**Renal Sparing**, **Higher Doses for CNS**</td></tr><tr><td>**Amphotericin B Deoxycholate**</td><td>**1-1.5 mg/kg/day IV**</td><td>Alternative if LAmB Unavailable</td><td>**Nephrotoxicity**, **Infusion Reactions**</td></tr><tr><td>**Posaconazole**</td><td>**300mg BD (Day 1) → 300mg OD PO/IV**</td><td>**Step-Down / Salvage / Prophylaxis**</td><td>**Good CNS Penetration**, **CYP3A4 Interactions**</td></tr><tr><td>**Isavuconazole**</td><td>**200mg IV/PO TID ×2d → 200mg OD**</td><td>**Alternative / Step-Down**</td><td>**Good CNS Penetration**, **Less Drug Interactions**</td></tr><tr><td>**Combination**</td><td>**LAmB + Posaconazole/Isavuconazole**</td><td>**Severe/Refractory**</td><td>**No Strong RCT Evidence**</td></tr></table>
+<div class="callout">[!warning] <b>Echinocandins (Caspofungin/Micafungin/Anidulafungin) = NO ACTIVITY against Mucorales</b> — <b>DO NOT USE</b>.</div>
+<div class="sub-h">2. Surgical Debridement — **Urgent &amp; Radical**</div>
+<table class="ctable"><tr><th>Principle</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Timing**</td><td>**ASAP** (Within Hours of Diagnosis) — **Delay = ↑ Mortality**</td></tr><tr><td>**Extent**</td><td>**Radical Debridement** → **Violable Tissue Removal** (Necrotic Bone, Sinus, Orbit, Palate)</td></tr><tr><td>**Repeat**</td><td>**Re-Look Surgery q24-48h** Until Healthy Tissue</td></tr><tr><td>**Specialised**</td><td>**Maxillofacial/ENT/Neurosurgery/Ophthalmology** — **Multidisciplinary Team**</td></tr></table>
+<div class="callout">[!warning] <b>Surgical Debridement = Life-Saving</b>. <b>Radical + Early = Survival</b>. <b>Orbital Exenteration</b> if Orbital Invasion. <b>Palatal/Maxillary Resection</b> if Palatal Necrosis.</div>
+<div class="sub-h">3. Metabolic Control (Critical Adjunct)</div>
+<table class="ctable"><tr><th>Factor</th><th>Target / Action</th></tr><tr><td>--------</td><td>-----------------</td></tr><tr><td>**Glycaemic Control**</td><td>**Strict Glycaemic Control** (Insulin Infusion) — **DKA Resolution Critical**</td></tr><tr><td>**Iron Chelation**</td><td>**STOP Deferoxamine IMMEDIATELY** — **Siderophore for Mucorales**</td></tr><tr><td>**Acidosis Correction**</td><td>**Bicarbonate / Insulin** — Correct DKA</td></tr><tr><td>**Immunosuppression**</td><td>**Reduce/Stop Steroids/Immunosuppressants** if Possible</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🩺 Clinical Forms & Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Form</th><th>Key Features</th><th>Mortality</th></tr><tr><td>------</td><td>-------------</td><td>-----------</td></tr><tr><td>**ROCM**</td><td>**Sinusitis → Orbital → Cerebral**, **Palatal Eschar**, **Cranial Nerve Palsies**, **Cavernous Sinus Thrombosis**, **Carotid Artery Invasion**</td><td>**50-85%**</td></tr><tr><td>**Pulmonary**</td><td>**Nodules, Consolidation, Cavitation, Reverse Halo Sign**, **Haemoptysis**</td><td>**50-70%**</td></tr><tr><td>**Cutaneous**</td><td>**Trauma/Burns/IV Site**, **Rapid Necrosis**, **Eschar**</td><td>**30-50%**</td></tr><tr><td>**Disseminated**</td><td>**Multi-Organ**, **Cerebral Haemorrhage**, **Septic Shock**</td><td>**>90%**</td></tr></table>
+<div class="sub-h">Complications</div>
+<table class="ctable"><tr><th>Complication</th><th>Mechanism</th><th>Management</th></tr><tr><td>--------------</td><td>-----------</td><td>------------</td></tr><tr><td>**Cavernous Sinus Thrombosis**</td><td>**Angioinvasion → Cavernous Sinus**</td><td>**Anticoagulation (Controversial) + Antifungals + Surgery**</td></tr><tr><td>**Carotid Artery Invasion**</td><td>**Angioinvasion → ICA**</td><td>**Stroke Risk, Endovascular/Surgical**</td></tr><tr><td>**Cerebral Infarction**</td><td>**Angioinvasion → MCA/ACA Occlusion**</td><td>**Anticoagulation (Cautious) + Antifungals**</td></tr><tr><td>**Cranial Nerve Palsies**</td><td>**Orbital Apex / Cavernous Sinus Invasion**</td><td>**Antifungals + Surgery**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🔬 Diagnosis Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Sensitivity/Specificity</th><th>Role</th></tr><tr><td>------</td><td>------------------------</td><td>------</td></tr><tr><td>**KOH Mount / Calcofluor White**</td><td>**Rapid (Minutes)**, **High Sens (Broad, Aseptate, 90° Branching)**</td><td>**Bedside Rapid Screening**</td></tr><tr><td>**Histopathology (H&E/GMS/PAS)**</td><td>**Gold Standard** (Tissue Invasion, Angioinvasion)</td><td>**Confirmatory**</td></tr><tr><td>**Culture (Sabouraud)**</td><td>**Rapid Growth (24-48h), Fluffy, Grey-Brown**, **No Cycloheximide Inhibition**</td><td>**Species ID**</td></tr><tr><td>**PCR / Sequencing**</td><td>**Species ID (Rhizopus, Mucor, Lichtheimia)**</td><td>**Definitive**</td></tr><tr><td>**Imaging (CT/MRI)**</td><td>**Extent, Invasion, Surgical Planning**</td><td>**Staging/Surgical Planning**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">💊 Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Mucormycosis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Urgent Imaging (CT/MRI)**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Tissue Biopsy + KOH Mount**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">**Confirmed?**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">**Immediate LAmB 5-10mg/kg IV**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">**Urgent Surgical Debridement**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">**Metabolic Control**: DKA Correction, Stop Deferoxamine, Glycaemic Control</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">**Monitor**: Renal, Electrolytes, Electrolytes, Imaging Follow-up</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">**Step-Down**: Posaconazole/Isavuconazole (After Improvement)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">**Duration**: 3-6 Weeks Minimum, Until Clinical/Radiological Resolution</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">💊 Antifungal Regimens</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Agent</th><th>Dose</th><th>Indication</th></tr><tr><td>-------</td><td>------</td><td>-----------</td></tr><tr><td>**Liposomal Amphotericin B (LAmB)**</td><td>**5-10 mg/kg/day IV** (Up to 10 mg/kg CNS)</td><td>**1st Line** (All Forms)</td></tr><tr><td>**Posaconazole**</td><td>**300mg BD (Day 1) → 300mg OD PO/IV**</td><td>**Step-Down / Salvage / Prophylaxis**</td></tr><tr><td>**Isavuconazole**</td><td>**200mg IV/PO TID ×2d → 200mg OD**</td><td>**Alternative / Step-Down**</td></tr><tr><td>**Amphotericin B Deoxycholate**</td><td>**1-1.5 mg/kg/day IV**</td><td>**If LAmB Unavailable**</td></tr><tr><td>**Combination**</td><td>**LAmB + Posaconazole/Isavuconazole**</td><td>**Severe/Refractory** (No RCT Evidence)</td></tr></table>
+<div class="callout">[!warning] <b>ECHINOCANDINS (CASPOFUNGIN/MICAFUNGIN/ANIDULAFUNGIN) = NO ACTIVITY VS MUCORALES</b> — <b>CONTRAINDICATED AS MONOTHERAPY</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Aetiology**</td><td>**Mucorales (Rhizopus, Mucor, Rhizomucor)**, **Angioinvasion → Necrosis**</td></tr><tr><td>**Risk Factors**</td><td>**Diabetes/DKA (50-70%)**, **Deferoxamine (Siderophore)**, **Neutropenia, Steroids, Transplant, Burns**</td></tr><tr><td>**Clinical Forms**</td><td>**ROCM (Most Common), Pulmonary, Cutaneous, GI, Disseminated**</td></tr><tr><td>**ROCM**</td><td>**Sinusitis → Orbit → Brain**, **Black Eschar, Proptosis, Ophthalmoplegia, CN Palsies, Cavernous Sinus Thrombosis**</td></tr><tr><td>**Diagnosis**</td><td>**KOH Mount (Broad, Aseptate, 90° Branching)**, **Histology (Angioinvasion)**, **Culture, PCR**, **CT/MRI (Erosion, Invasion)**</td></tr><tr><td>**Treatment Triad**</td><td>**LAmB 5-10mg/kg IV + Urgent Radical Debridement + Metabolic Control (DKA, Stop Deferoxamine)**</td></tr><tr><td>**Antifungals**</td><td>**LAmB 5-10mg/kg (1st Line)**; **Posaconazole/Isavuconazole (Step-Down/Salvage)**; **NO ECHINOCANDINS**</td></tr><tr><td>**Surgery**</td><td>**Urgent, Radical, Multidisciplinary** (ENT, Neurosurgery, Ophthalmology, Maxillofacial)</td></tr><tr><td>**Metabolic**</td><td>**DKA Correction, STOP Deferoxamine, Glycaemic Control, Reduce Steroids**</td></tr><tr><td>**Mortality**</td><td>**ROCM 50-85%, Disseminated >90%**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the hallmark histopathological feature of Mucormycosis?</b></li></ol>
+<ul><li><b>Broad (10-20µm), Aseptate (Coenocytic), Right-Angle (90°) Branching Hyphae</b> with <b>Angioinvasion</b>.</li></ul>
+<ol><li><b>Why are Echinocandins contraindicated in Mucormycosis?</b></li></ol>
+<ul><li><b>Mucorales Lack β-1,3-D-Glucan in Cell Wall</b> (Target of Echinocandins) → <b>Inherently Resistant</b>.</li></ul>
+<ol><li><b>What is the significance of Deferoxamine in Mucormycosis?</b></li></ol>
+<ul><li><b>Deferoxamine Acts as Siderophore for Mucorales</b> → <b>Enhances Iron Acquisition → Rapid Fungal Growth</b> → <b>Contraindicated in Suspected/Proven Mucormycosis</b>.</li></ul>
+<ol><li><b>Describe the classic presentation of Rhino-Orbital-Cerebral Mucormycosis.</b></li></ol>
+<ul><li><b>Diabetic/DKA Patient</b>, <b>Facial Pain/Swelling</b>, <b>Nasal Discharge (Bloody/Black)</b>, <b>Periorbital Swelling, Proptosis, Ophthalmoplegia</b>, <b>Palatal/Nasal Black Eschar</b>, <b>Cranial Nerve Palsies</b>, <b>Altered Sensorium</b>.</li></ul>
+<ol><li><b>What is the drug of choice for Mucormycosis?</b></li></ol>
+<ul><li><b>Liposomal Amphotericin B 5-10 mg/kg/day IV</b> (1st Line); <b>Posaconazole/Isavuconazole for Step-Down/Salvage</b>.</li></ul>
+<ol><li><b>Why are Echinocandins ineffective against Mucormycosis?</b></li></ol>
+<ul><li><b>Mucorales Lack β-1,3-D-Glucan</b> in Cell Wall (Target of Echinocandins) → <b>Inherently Resistant</b>.</li></ul>
+<ol><li><b>What is the "Iron Triangle" of Mucormycosis Management?</b></li></ol>
+<ul><li><b>High-Dose LAmB + Radical Surgical Debridement + Metabolic Control (DKA Correction, Stop Deferoxamine, Glycaemic Control)</b>.</li></ul>
+<ol><li><b>Why is Deferoxamine contraindicated in Mucormycosis?</b></li></ol>
+<ul><li><b>Acts as Siderophore</b> → <b>Binds Iron → Delivers to Mucorales</b> → <b>Enhances Fungal Growth &amp; Virulence</b>.</li></ul>
+<ol><li><b>What are the typical MRI findings in Rhino-Orbital-Cerebral Mucormycosis?</b></li></ol>
+<ul><li><b>Sinus Opacification, Bone Erosion, Orbital Invasion, Perineural Spread, Cavernous Sinus Thrombosis, Cerebral Infarcts, Carotid Artery Invasion</b>.</li></ul>
+<ol><li><b>How do you manage a patient with Cutaneous Mucormycosis at an insulin injection site?</b></li></ol>
+<ul><li><b>Urgent Surgical Debridement + LAmB 5-10mg/kg IV + Glycaemic Control + Stop Deferoxamine</b>.</li></ul>
+<ol><li><b>What is the "Reverse Halo Sign" and in which condition is it seen?</b></li></ol>
+<ul><li><b>Central Ground-Glass Opacity Surrounded by Dense Consolidation Ring</b> — <b>Seen in Pulmonary Mucormycosis</b> (Also Organising Pneumonia, TB).</li></ul>
+<ol><li><b>What is the role of Posaconazole in Mucormycosis?</b></li></ol>
+<ul><li><b>Step-Down Therapy (After LAmB Improvement)</b>, <b>Salvage (Refractory)</b>, <b>Primary Prophylaxis (High-Risk: HSCT, GVHD)</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Mucormycosis vs Aspergillosis**</td><td>**Mucor: Broad, Aseptate, 90° Branching, Angioinvasion**; **Aspergillus: Septate, 45° Branching**</td></tr><tr><td>**Echinocandins in Mucormycosis**</td><td>**NO ACTIVITY** — **Mucorales Lack β-1,3-D-Glucan**</td></tr><tr><td>**Deferoxamine**</td><td>**Siderophore for Mucorales** → **CONTRAINDICATED**</td></tr><tr><td>**Mucormycosis vs Aspergillosis on Imaging**</td><td>**Mucor: Rapid, Aggressive, Bone Erosion, Palatal Necrosis**; **Aspergillus: Slower, Cavitation, Halo Sign**</td></tr><tr><td>**ROCM vs Invasive Aspergillus Sinusitis**</td><td>**Mucor: Rapid, Palatal Eschar, Cranial Nerves, Carotid Invasion**; **Aspergillus: Slower, Less Bone Destruction Initially**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Mucor = Broad, Aseptate, 90° Branching, Angioinvasion"**</td><td>Histology</td></tr><tr><td>**"DKA + Deferoxamine = Mucor's Best Friends"**</td><td>Risk Factors</td></tr><tr><td>**"Echinocandins = NO GO for Mucor"**</td><td>Contraindicated</td></tr><tr><td>**"LAmB + Surgery + DKA Control = Survival Triad"**</td><td>Management</td></tr><tr><td>**"Rhino-Orbital-Cerebral = Sinus → Orbit → Brain"**</td><td>ROCM Spread</td></tr><tr><td>**"Deferoxamine = Siderophore = Mucor Fuel"**</td><td>Deferoxamine Danger</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Mucormycosis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Aetiology</div>
+<div class="mm-node mm-l3">– Mucorales: Rhizopus, Mucor, Rhizomucor</div>
+<div class="mm-node mm-l3">– Angioinvasion → Necrosis</div>
+<div class="mm-node mm-l2">Risk Factors</div>
+<div class="mm-node mm-l3">– DKA (50-70%)</div>
+<div class="mm-node mm-l3">– Deferoxamine (Siderophore!)</div>
+<div class="mm-node mm-l3">– Neutropenia, Steroids, Transplant</div>
+<div class="mm-node mm-l3">– Burns/Trauma</div>
+<div class="mm-node mm-l2">Clinical Forms</div>
+<div class="mm-node mm-l3">– ROCM (Most Common)</div>
+<div class="mm-node mm-deep">– Sinus → Orbit → Brain</div>
+<div class="mm-node mm-deep">– Black Eschar, Proptosis, CN Palsies</div>
+<div class="mm-node mm-l3">– Pulmonary</div>
+<div class="mm-node mm-deep">– Reverse Halo Sign</div>
+<div class="mm-node mm-l3">– Cutaneous</div>
+<div class="mm-node mm-deep">– Trauma/Burns, Rapid Necrosis</div>
+<div class="mm-node mm-l3">– Disseminated</div>
+<div class="mm-node mm-deep">– &gt;90% Mortality</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– KOH: Broad, Aseptate, 90° Branching</div>
+<div class="mm-node mm-l3">– Histology: Angioinvasion</div>
+<div class="mm-node mm-l3">– Culture: Rapid, Fluffy</div>
+<div class="mm-node mm-l3">– PCR/Sequencing</div>
+<div class="mm-node mm-l3">– CT/MRI: Bone Erosion, Invasion</div>
+<div class="mm-node mm-l2">Management Triad</div>
+<div class="mm-node mm-l3">– LAmB 5-10mg/kg IV</div>
+<div class="mm-node mm-l3">– Radical Surgery (Urgent)</div>
+<div class="mm-node mm-l3">– Metabolic Control (DKA, Stop Deferoxamine)</div>
+<div class="mm-node mm-l2">Contraindicated</div>
+<div class="mm-node mm-l3">– Echinocandins (No Activity)</div>
+<div class="mm-node mm-l3">– Deferoxamine (Siderophore)</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– Cavernous Sinus Thrombosis</div>
+<div class="mm-node mm-l3">– Carotid Invasion</div>
+<div class="mm-node mm-l3">– Cerebral Infarction</div>
+<div class="mm-node mm-l3">– Dissemination</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**MUCORMYCOSIS – FCPS/MRCP REVISION CARD**</th></tr><tr><td>---------------------------------------------</td></tr><tr><td>**Aetiology**: **Mucorales** (Rhizopus, Mucor) — **Angioinvasion → Necrosis**</td></tr><tr><td>**Risk Factors**: **DKA (50-70%)**, **Deferoxamine (Siderophore!)**, Neutropenia, Steroids, Transplant</td></tr><tr><td>**Histology**: **Broad, Aseptate, Right-Angle (90°) Branching Hyphae + Angioinvasion**</td></tr><tr><td>**ROCM**: **Sinus → Orbit → Brain** — Black Eschar, Proptosis, CN Palsies, Cavernous Sinus Thrombosis</td></tr><tr><td>**Diagnosis**: **KOH Mount** (Broad, Aseptate, 90° Branching) **Rapid**; **Histology**: Angioinvasion; **Culture/PCR**</td></tr><tr><td>**Azole/Echinocandin**: **Echinocandins NO ACTIVITY**; **Azoles (Posaconazole/Isavuconazole) = Step-Down/Salvage**</td></tr><tr><td>**Treatment Triad**: **LAmB 5-10mg/kg IV + Urgent Radical Debridement + Metabolic Control (DKA, Stop Deferoxamine!)**</td></tr><tr><td>**Echinocandins**: **CONTRAINDICATED** (No β-1,3-D-Glucan in Mucorales Wall)</td></tr><tr><td>**Deferoxamine**: **SIDEROPHORE → CONTRADICATED** (Enhances Growth)</td></tr><tr><td>**Mortality**: ROCM 50-85%, Disseminated >90%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Mucormycosis = Mucorales, Angioinvasion, KOH: Broad/Aseptate/90°, LAmB 5-10mg/kg + Surgery + DKA Control, Deferoxamine Contraindicated, Echinocandins No Activity, ROCM Spread (Sinus→Orbit→Brain), Mortality, Deferoxamine = Siderophore Contraindicated</td></tr><tr><td>**Should Know**</td><td>ROCM staging, Cavernous sinus thrombosis management, Carotid artery invasion, Reverse halo sign pulmonary, Cutaneous mucormycosis (burns/trauma), Posaconazole/isavuconazole step-down, Renal dosing LAmB, Paediatric dosing, Pregnancy management, Isavuconazole advantages, C. auris vs mucormycosis differentiation</td></tr><tr><td>**Nice to Know**</td><td>Mucorales genomics, Spore germination triggers, Iron acquisition mechanisms, Host immune response (neutrophils, macrophages), Iron chelation therapy beyond deferoxamine, Posaconazole pharmacokinetics (food effect), Isavuconazole BALANCE trial, Mucormycosis in COVID-19 (CAMCO), Global epidemiology shifts, Climate change impact, Novel antifungals (ibrexafungerp, rezafungin, fosmanogepix), One Health approach</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Aetiology & Pathophysiology</td><td></td><td></td></tr><tr><td>Risk Factors & Clinical Forms</td><td></td><td></td></tr><tr><td>Histopathology & Diagnosis</td><td></td><td></td></tr><tr><td>Management Triad (LAmB, Surgery, Metabolic)</td><td></td><td></td></tr><tr><td>Antifungal Selection & Contraindications</td><td></td><td></td></tr><tr><td>Complications & Mortality</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Cryptococcal Meningitis]]</li><li><b>Next</b>: [[Endemic Mycoses]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Mucormycosis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

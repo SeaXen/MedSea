@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clostridioides difficile Infection (CDI) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Clostridioides difficile Infection (CDI)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define CDI diagnostic criteria (clinical + laboratory)</li><li>Apply 2-step testing algorithm (GDH/EIA → PCR/NAAT)</li><li>Assess severity (non-severe, severe, fulminant)</li><li>Select first-line treatment by severity</li><li>Manage first recurrence and multiple recurrences</li><li>Understand faecal microbiota transplantation (FMT) indications</li><li>Implement infection prevention and control measures</li><li>Recognise fulminant CDI requiring surgery</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Pathogenesis & Risk Factors</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Factor</th><th>Mechanism</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**Antibiotics** (clindamycin, fluoroquinolones, cephalosporins, penicillins, carbapenems)</td><td>Disrupt normal anaerobic flora → *C. difficile* overgrowth</td></tr><tr><td>**Age ≥65**</td><td>Immunosenescence, comorbidity, healthcare exposure</td></tr><tr><td>**Hospitalisation / LTCF**</td><td>Acquisition pressure, environmental spores</td></tr><tr><td>**PPI use**</td><td>Gastric acid barrier loss (controversial, modest risk)</td></tr><tr><td>**Immunosuppression**</td><td>Chemo, steroids, biologics, transplant, HIV</td></tr><tr><td>**GI surgery / Ileus**</td><td>Stasis, loss of colonisation resistance</td></tr><tr><td>**Renal failure**</td><td>Altered microbiome, healthcare exposure</td></tr><tr><td>**Prior CDI**</td><td>Recurrence risk 15–30% after 1st episode</td></tr></table>
+<div class="callout">[!tip] <b>Highest risk antibiotics: clindamycin &gt; fluoroquinolones &gt; cephalosporins &gt; penicillins.</b> <b>Ribotype 027/NAP1/BI = hypervirulent, increased toxin production, fluoroquinolone resistance, higher severity/recurrence.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Presentation</th><th>Features</th></tr><tr><td>--------------</td><td>----------</td></tr><tr><td>**Mild/Non-severe**</td><td>Watery diarrhoea ≥3/day, mild abdominal cramps, no systemic toxicity</td></tr><tr><td>**Severe**</td><td>Diarrhoea ≥3/day + **WCC >15×10⁹/L OR creatinine >1.5×baseline OR temp ≥38.5°C**</td></tr><tr><td>**Fulminant**</td><td>**Hypotension/shock, ileus, toxic megacolon, perforation, lactate ↑, WCC >35 or <2, lactate >5**</td></tr><tr><td>**Asymptomatic carriage**</td><td>Positive test, no diarrhoea — **DO NOT TREAT**</td></tr></table>
+<div class="callout">[!warning] <b>Ileus = diarrhoea may be ABSENT in fulminant CDI (toxic megacolon).</b> <b>Abdominal distension, pain, tachycardia, leukopenia/leukocytosis, lactate ↑ = surgical emergency.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Diagnosis — 2-Step Algorithm (Recommended)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Step 1: Screen (High Sensitivity)</div>
+<table class="ctable"><tr><th>Test</th><th>Target</th><th>Sensitivity</th><th>Specificity</th><th>Turnaround</th></tr><tr><td>------</td><td>--------</td><td>-------------</td><td>-------------</td><td>------------</td></tr><tr><td>**GDH EIA**</td><td>Glutamate dehydrogenase (enzyme produced by all *C. difficile*)</td><td>High (~95%)</td><td>Moderate</td><td>1–2h</td></tr><tr><td>**Toxin A/B EIA**</td><td>Toxins A and B</td><td>Low (~70–80%)</td><td>High (>95%)</td><td>1–2h</td></tr><tr><td>**Combined GDH + Toxin EIA**</td><td>Both</td><td>Moderate</td><td>High</td><td>1–2h</td></tr></table>
+<div class="sub-h">Step 2: Confirm (If Step 1 Discordant or Positive)</div>
+<table class="ctable"><tr><th>Test</th><th>Target</th><th>Sensitivity</th><th>Specificity</th></tr><tr><td>------</td><td>--------</td><td>-------------</td><td>-------------</td></tr><tr><td>**NAAT / PCR**</td><td>*tcdB* (toxin B gene)</td><td>Very high (>95%)</td><td>High (>95%)</td></tr><tr><td>**Toxigenic culture**</td><td>Viable toxin-producing organism</td><td>Gold standard</td><td>Gold standard</td></tr></table>
+<div class="sub-h">Algorithm</div>
+<p>``<code> Diarrhoea (≥3 loose stools/24h) + clinical suspicion ↓ Step 1: GDH EIA + Toxin A/B EIA ↓ GDH− / Toxin−       → CDI EXCLUDED (NPV &gt;99%) GDH+ / Toxin+       → CDI CONFIRMED (PPV &gt;95%) GDH+ / Toxin−       → <b>Step 2: NAAT/PCR</b> ↓ NAAT+               → CDI CONFIRMED NAAT−               → CDI EXCLUDED </code>``</p>
+<div class="callout">[!key] <b>NAAT alone NOT recommended as stand-alone (low PPV in low prevalence = overdiagnosis).</b> <b>Toxigenic culture = reference standard but slow (48–72h).</b> <b>Test only if ≥3 unformed stools/24h.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Severity Assessment</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Criteria</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Non-severe**</td><td>WCC ≤15, Creatinine ≤1.5×baseline, Temp <38.5°C, No organ failure</td></tr><tr><td>**Severe**</td><td>**WCC >15×10⁹/L OR Creatinine >1.5×baseline OR Temp ≥38.5°C**</td></tr><tr><td>**Fulminant**</td><td>**Hypotension/shock, Ileus, Toxic megacolon, Perforation, Lactate >5, WCC >35 or <2**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Treatment by Severity</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First Episode</div>
+<table class="ctable"><tr><th>Severity</th><th>Preferred</th><th>Alternative</th><th>Notes</th></tr><tr><td>----------</td><td>-----------</td><td>-------------</td><td>-------</td></tr><tr><td>**Non-severe**</td><td>**Vancomycin 125mg PO 6h ×10d**</td><td>Fidaxomicin 200mg PO 12h ×10d</td><td>Metronidazole NO LONGER 1st line (inferior cure, ↑ recurrence)</td></tr><tr><td>**Severe**</td><td>**Vancomycin 125mg PO 6h ×10d**</td><td>Fidaxomicin 200mg PO 12h ×10d</td><td>High-dose vancomycin 500mg 6h NOT superior</td></tr><tr><td>**Fulminant**</td><td>**Vancomycin 500mg PO/NG 6h + Metronidazole 500mg IV 8h**</td><td>Fidaxomicin + Metronidazole IV</td><td>**Surgical consult early**; consider IV tigecycline if ileus</td></tr></table>
+<div class="callout">[!critical] <b>Oral vancomycin NOT absorbed systemically — achieves high colonic concentrations.</b> <b>IV vancomycin does NOT treat CDI.</b> <b>Fidaxomicin: narrower spectrum, less microbiome disruption, lower recurrence (if available).</b> <b>Metronidazole: only if vancomycin/fidaxomicin unavailable AND non-severe.</b></div>
+<div class="sub-h">First Recurrence</div>
+<table class="ctable"><tr><th>Option</th><th>Regimen</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Preferred**</td><td>**Fidaxomicin 200mg PO 12h ×10d** (lowest recurrence)</td></tr><tr><td>**Alternative**</td><td>**Vancomycin taper/pulse**: 125mg 6h ×10d → 125mg 12h ×7d → 125mg 24h ×7d → 125mg every 48h ×7d → 125mg every 72h ×7d</td></tr></table>
+<div class="sub-h">Second/Subsequent Recurrence (≥2 recurrences)</div>
+<table class="ctable"><tr><th>Option</th><th>Regimen</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Preferred**</td><td>**Faecal Microbiota Transplantation (FMT)**</td></tr><tr><td>**Alternative**</td><td>Vancomycin taper/pulse +/− Rifaximin 400mg 12h ×20d (chaser)</td></tr><tr><td>**Alternative**</td><td>Fidaxomicin ×10d + Bezlotoxumab (monoclonal anti-toxin B, single IV dose with antibiotics)</td></tr></table>
+<div class="callout">[!tip] <b>FMT: cure rate 85–95% for recurrent CDI.</b> <b>Delivery: colonoscopy (preferred), enema, capsules, nasogastric.</b> <b>Donor screening mandatory.</b> <b>Bezlotoxumab: reduces recurrence in high-risk (age&gt;65, immunocompromised, severe CDI, prior CDI) — give with standard antibiotics.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Fulminant CDI — Surgical Indications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>Action</th></tr><tr><td>------------</td><td>--------</td></tr><tr><td>**Toxic megacolon** (colonic dilatation >6cm + systemic toxicity)</td><td>**Urgent subtotal colectomy + end ileostomy**</td></tr><tr><td>**Perforation**</td><td>**Urgent laparotomy**</td></tr><tr><td>**Refractory shock**</td><td>**Surgery if medical management failing**</td></tr><tr><td>**Lactate >5, WCC >35 or <2, rising lactate**</td><td>**Early surgical consult**</td></tr></table>
+<div class="callout">[!warning] <b>Diverting loop ileostomy + antegrade vancomycin flushes = alternative to colectomy in selected centres.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Infection Prevention & Control (IPC)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Measure</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Contact precautions**</td><td>**Private room or cohort; gown/gloves for ALL contact**</td></tr><tr><td>**Duration**</td><td>**≥48h after diarrhoea resolves** (some guidelines: until discharge)</td></tr><tr><td>**Hand hygiene**</td><td>**Soap and water** (alcohol gel NOT sporicidal)</td></tr><tr><td>**Environmental cleaning**</td><td>**Sporicidal agent: hypochlorite 1000ppm OR peracetic acid OR hydrogen peroxide vapour**</td></tr><tr><td>**Equipment**</td><td>**Dedicated or sporicidal wipe between patients**</td></tr><tr><td>**Antibiotic stewardship**</td><td>**Restrict clindamycin, fluoroquinolones, cephalosporins; review at 48–72h**</td></tr><tr><td>**Diagnostic stewardship**</td><td>**Test only ≥3 unformed stools/24h; no test of cure**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Situation</th><th>Management</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Pregnancy**</td><td>Vancomycin PO safe (not absorbed); fidaxomicin limited data; metronidazole avoid 1st trimester</td></tr><tr><td>**Immunosuppressed**</td><td>Higher risk severe/fulminant; lower threshold for fidaxomicin/FMT</td></tr><tr><td>**IBD flare vs CDI**</td><td>Test for CDI in ALL IBD flares (co-infection common); treat CDI first</td></tr><tr><td>**Ileus**</td><td>Vancomycin 500mg PR q6h + Metronidazole 500mg IV q8h; consider fidaxomicin oral if some motility</td></tr><tr><td>**Paediatric**</td><td>Metronidazole 1st line (mild); Vancomycin PO (severe); FMT established</td></tr><tr><td>**Test of cure**</td><td>**NOT RECOMMENDED** (colonisation persists weeks after cure)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CDI: toxin-mediated diarrhoea post-antibiotics</b></li><li><b>Risk: antibiotics (clindamycin &gt; fluoroquinolones &gt; cephalosporins), age&gt;65, hospital/LTCF, PPI, immunosuppression</b></li><li><b>Diagnosis: 2-step algorithm (GDH/Toxin EIA → NAAT if discordant); test only ≥3 loose stools/day</b></li><li><b>Severity: non-severe, severe (WCC&gt;15 or Cr&gt;1.5×baseline or temp≥38.5), fulminant (shock, ileus, toxic megacolon)</b></li><li><b>1st line ALL severity: Vancomycin 125mg PO 6h ×10d (fidaxomicin alternative)</b></li><li><b>Metronidazole: ONLY if vancomycin/fidaxomicin unavailable AND non-severe</b></li><li><b>Fulminant: Vancomycin 500mg PO/NG 6h + Metronidazole 500mg IV 8h + SURGICAL CONSULT</b></li><li><b>Recurrence: 1st → Fidaxomicin or Vancomycin taper/pulse; ≥2 → FMT (85–95% cure)</b></li><li><b>Bezlotoxumab: anti-toxin B monoclonal, single IV dose with antibiotics for high-risk recurrence</b></li><li><b>IPC: Contact precautions, soap/water hand hygiene, hypochlorite 1000ppm cleaning, antibiotic stewardship</b></li><li><b>No test of cure; asymptomatic carriage not treated</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the recommended diagnostic algorithm for CDI?</b> 2-step: GDH + Toxin EIA → if discordant (GDH+/Toxin−), confirm with NAAT/PCR.</li><li><b>When do you test for CDI?</b> ≥3 unformed stools/24h with clinical suspicion. No test of cure.</li><li><b>First-line treatment for non-severe CDI?</b> Vancomycin 125mg PO 6h ×10d (fidaxomicin alternative). Metronidazole no longer 1st line.</li><li><b>First-line treatment for severe CDI?</b> Vancomycin 125mg PO 6h ×10d (same as non-severe). Fidaxomicin alternative.</li><li><b>Fulminant CDI treatment?</b> Vancomycin 500mg PO/NG 6h + Metronidazole 500mg IV 8h + urgent surgical consult.</li><li><b>First recurrence management?</b> Fidaxomicin 200mg 12h ×10d preferred OR Vancomycin taper/pulse.</li><li><b>Multiple recurrences (≥2) management?</b> Faecal microbiota transplantation (FMT) preferred (85–95% cure).</li><li><b>Bezlotoxumab indication?</b> High-risk recurrence (age&gt;65, immunocompromised, severe CDI, prior CDI) — single IV dose with standard antibiotics.</li><li><b>IPC measures for CDI?</b> Contact precautions, soap/water hand hygiene, hypochlorite 1000ppm cleaning, antibiotic stewardship.</li><li><b>Why is IV vancomycin NOT used for CDI?</b> Not absorbed orally → no colonic concentration. Oral vancomycin achieves high colonic levels.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Metronidazole 1st line for all CDI</td><td>**Vancomycin 1st line for ALL severity; Metronidazole only if no access to vancomycin/fidaxomicin AND non-severe**</td></tr><tr><td>IV vancomycin for CDI</td><td>**IV vancomycin does not reach colon; MUST be oral/NG/PR**</td></tr><tr><td>NAAT alone sufficient</td><td>**NAAT alone = overdiagnosis (low PPV); 2-step algorithm recommended**</td></tr><tr><td>Test of cure needed</td><td>**No test of cure; colonisation persists weeks after clinical cure**</td></tr><tr><td>Asymptomatic carrier = treat</td><td>**Asymptomatic carriage: DO NOT TREAT**</td></tr><tr><td>Fidaxomicin for all = cost-effective</td><td>**Fidaxomicin preferred for recurrence prevention; cost may limit 1st line use**</td></tr><tr><td>FMT only for 3+ recurrences</td><td>**FMT for ≥2 recurrences (some guidelines: after 2nd recurrence)**</td></tr><tr><td>Alcohol gel kills spores</td><td>**Alcohol gel NOT sporicidal; SOAP AND WATER required**</td></tr><tr><td>Hypochlorite 100ppm sufficient</td><td>**Hypochlorite 1000ppm (0.1%) required for sporicidal activity**</td></tr><tr><td>Diarrhoea always present in fulminant</td><td>**Ileus/toxic megacolon = diarrhoea may be ABSENT; distension, pain, lactate ↑**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CDI RISK</b>: <b>C</b>lindamycin, <b>F</b>luoroquinolones, <b>C</b>ephalosporins, <b>P</b>PI, <b>A</b>ge&gt;65, <b>H</b>ospital, <b>I</b>mmunosuppression</li><li><b>2-STEP ALGORITHM</b>: <b>G</b>DH + <b>T</b>oxin EIA → <b>D</b>iscordant → <b>N</b>AAT</li><li><b>SEVERITY</b>: <b>N</b>on-severe (none), <b>S</b>evere (WCC&gt;15 or Cr↑ or Temp≥38.5), <b>F</b>ulminant (Shock, Ileus, Megacolon, Perforation)</li><li><b>TREATMENT</b>: <b>V</b>anco 125mg PO 6h ×10d (ALL); <b>F</b>ulminant = <b>V</b>anco 500mg + <b>M</b>etro IV + <b>S</b>urgery</li><li><b>RECURRENCE</b>: <b>1st</b> → <b>F</b>idaxomicin or <b>V</b>anco taper; <b>≥2</b> → <b>F</b>MT</li><li><b>IPC</b>: <b>C</b>ontact, <b>S</b>oap/<b>W</b>ater, <b>H</b>ypochlorite <b>1000ppm</b>, <b>A</b>b<b>x</b> stewardship</li><li><b>BEZLOTOXUMAB</b>: <b>B</b>ezlo = <b>R</b>ecurrence reduction in <b>H</b>igh-<b>R</b>isk (single IV with abx)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Clostridioides difficile Infection))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Pathogenesis</div>
+<div class="mm-node mm-l3">– Antibiotic disruption → overgrowth → toxins A/B</div>
+<div class="mm-node mm-l3">– Ribotype 027 = hypervirulent</div>
+<div class="mm-node mm-l2">Risk Factors</div>
+<div class="mm-node mm-l3">– Antibiotics (Clinda &gt; FQ &gt; Ceph)</div>
+<div class="mm-node mm-l3">– Age &gt;65, Hospital/LTCF, PPI, Immunosuppression</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– 2-step: GDH/Toxin EIA → NAAT if discordant</div>
+<div class="mm-node mm-l3">– Test only ≥3 loose stools/day</div>
+<div class="mm-node mm-l3">– No test of cure</div>
+<div class="mm-node mm-deep">– *...continued (truncated to 200 lines for renderer)*</div>
+</div>
+</div>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Clostridioides difficile Infection (CDI) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

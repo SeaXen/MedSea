@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hypertensive Emergencies — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Hypertensive Emergencies</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define hypertensive emergency vs urgency</li><li>Identify target organ damage (TOD)</li><li>Apply BP reduction strategy (timing, target)</li><li>Choose IV antihypertensive based on scenario</li><li>Manage specific emergencies: dissection, eclampsia, stroke, ACS, catecholamine crisis, encephalopathy</li><li>Avoid common pitfalls (sublingual nifedipine, rapid drop)</li><li>Counsel on hypertensive urgency</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Hypertensive Emergency</div>
+<ul><li><b>SBP &gt;180 mmHg</b> (or DBP &gt;120 mmHg) <b>+ acute target organ damage (TOD)</b></li><li><b>TOD</b>: end-organ ischaemia or damage</li><li><b>Life-threatening</b>, requires <b>IV therapy</b> in monitored setting</li></ul>
+<div class="sub-h">Hypertensive Urgency</div>
+<ul><li><b>SBP &gt;180 mmHg</b> (or DBP &gt;120 mmHg) <b>WITHOUT TOD</b></li><li><b>NOT</b> life-threatening</li><li><b>Oral therapy</b>, gradual reduction</li></ul>
+<div class="sub-h">Malignant Hypertension</div>
+<ul><li><b>Severe HTN + papilloedema + retinopathy (grade III/IV) ± AKI</b></li><li><b>Subset</b> of hypertensive emergency</li><li><b>Microangiopathic haemolytic anaemia</b> (MAHA)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Essential hypertension</b> (chronic, undiagnosed/uncontrolled)</li><li><b>Renal</b>: renal artery stenosis, glomerulonephritis, polycystic</li><li><b>Endocrine</b>: phaeochromocytoma, Cushing's, primary hyperaldosteronism, thyrotoxicosis</li><li><b>Drugs</b>: cocaine, amphetamines, MAOI + tyramine, OCP, NSAID, decongestants, sympathomimetics</li><li><b>Pregnancy</b>: pre-eclampsia, eclampsia</li><li><b>Withdrawal</b>: β-blocker, clonidine, alcohol, methyldopa</li><li><b>Aortic dissection</b></li><li><b>CNS</b>: stroke, trauma, raised ICP</li><li><b>Burns, severe pain</b></li><li><b>Renal transplant</b> (transplant renal artery stenosis)</li><li><b>Autonomic dysreflexia</b> (spinal cord injury)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Acute BP rise</b> → exceeds autoregulation → endothelial injury</li><li><b>Fibrinoid necrosis</b> of arterioles</li><li><b>Ischaemia</b> of brain (encephalopathy), heart (ACS), kidneys (AKI), retina</li><li><b>Catecholamine surge</b> (sympathetic activation)</li><li><b>RAAS activation</b> → vasoconstriction, sodium retention</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Features (TOD)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Neurological</div>
+<ul><li><b>Hypertensive encephalopathy</b> (headache, confusion, seizures, visual disturbance, papilloedema)</li><li><b>Stroke</b> (ischaemic, haemorrhagic, TIA)</li><li><b>Subarachnoid haemorrhage</b></li></ul>
+<div class="sub-h">Cardiovascular</div>
+<ul><li><b>Acute LV failure / pulmonary oedema</b></li><li><b>Acute coronary syndrome</b> (MI, unstable angina)</li><li><b>Aortic dissection</b></li><li><b>Aortic aneurysm</b> rupture</li></ul>
+<div class="sub-h">Renal</div>
+<ul><li><b>Acute kidney injury</b> (AKI)</li><li><b>Haematuria, proteinuria</b></li><li><b>Acute renal failure</b></li></ul>
+<div class="sub-h">Other</div>
+<ul><li><b>Retinopathy</b> (grade III/IV, papilloedema, exudates, haemorrhages)</li><li><b>Microangiopathic haemolytic anaemia (MAHA)</b></li><li><b>DIC</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Urgent</div>
+<ul><li><b>Bloods</b>: FBC, U&amp;E, creatinine, glucose, urate, TSH</li><li><b>FBC with film</b> (schistocytes, MAHA)</li><li><b>Urinalysis</b> (proteinuria, haematuria)</li><li><b>Cardiac</b>: ECG (LVH, ischaemia), troponin</li><li><b>CXR</b> (cardiomegaly, pulmonary oedema, widened mediastinum for dissection)</li><li><b>CT head</b> (encephalopathy, bleed, stroke)</li><li><b>CT aortogram</b> (dissection)</li><li><b>Echocardiography</b> (LV function, regional wall motion)</li></ul>
+<div class="sub-h">Specific</div>
+<ul><li><b>Renal ultrasound, Doppler</b> (renal artery stenosis)</li><li><b>Plasma metanephrines, urinary VMA</b> (phaeochromocytoma)</li><li><b>Pregnancy test</b> (eclampsia)</li><li><b>Toxicology screen</b> (cocaine, amphetamines)</li><li><b>Aldosterone, renin</b> (Conn's syndrome)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management Principles</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">General</div>
+<ul><li><b>Monitored bed</b> (HDU/ICU)</li><li><b>IV access</b> × 2</li><li><b>Arterial line</b> for continuous BP</li><li><b>Urinary catheter</b> (urine output)</li><li><b>Treat pain, anxiety, hypoxia</b> (sympathetic)</li><li><b>Identify + treat cause</b></li><li><b>Don't drop too fast</b> (cerebral hypoperfusion)</li></ul>
+<div class="sub-h">BP Reduction Targets</div>
+<table class="ctable"><tr><th>Phase</th><th>Target</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>**First hour**</td><td>↓ 20-25% from baseline</td></tr><tr><td>**2-6 hours**</td><td><160/100 mmHg</td></tr><tr><td>**24-48 hours**</td><td><140/90 mmHg (chronic levels)</td></tr><tr><td>**Aortic dissection**</td><td>SBP **100-120** + HR <60 (rapidly, within 20 min)</td></tr><tr><td>**Stroke (ischaemic, tPA)**</td><td>SBP <185 (pre-tPA), then <180 × 24 h</td></tr><tr><td>**Stroke (haemorrhagic)**</td><td>SBP <140 within 1 h</td></tr><tr><td>**Eclampsia**</td><td><160/110, then MAP 80-100</td></tr><tr><td>**Catecholamine crisis**</td><td>gradual (avoid hypotension)</td></tr></table>
+<div class="sub-h">Why Not Too Fast?</div>
+<ul><li><b>Cerebral autoregulation</b> shifts right in chronic HTN</li><li><b>Rapid drop</b> → watershed cerebral infarcts, stroke, blindness</li><li><b>Aim: gradual reduction</b> over hours to days</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">IV Antihypertensive Drugs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Onset</th><th>Use</th></tr><tr><td>------</td><td>------</td><td>-------</td><td>-----</td></tr><tr><td>**Labetalol**</td><td>10-20 mg IV bolus, then 1-2 mg/min infusion OR 20 mg q5min</td><td>5-10 min</td><td>**First-line**; most scenarios; pregnancy-safe; asthma (β-blocker)</td></tr><tr><td>**Nicardipine**</td><td>5-15 mg/h IV infusion</td><td>5-10 min</td><td>Most scenarios; post-op; **avoid in acute LVF**</td></tr><tr><td>**Sodium nitroprusside**</td><td>0.5-10 mcg/kg/min IV infusion</td><td><1 min</td><td>Most severe; **monitor cyanide toxicity**; not first-line</td></tr><tr><td>**Nitroglycerin (GTN)**</td><td>5-200 mcg/min IV infusion</td><td>2-5 min</td><td>**ACS, acute LVF**; not great for cerebral</td></tr><tr><td>**Hydralazine**</td><td>5-10 mg IV q20min</td><td>10-20 min</td><td>**Pregnancy** (eclampsia); reflex tachycardia</td></tr><tr><td>**Phentolamine**</td><td>2.5-5 mg IV q5-15min</td><td>1-2 min</td><td>**Catecholamine crisis** (phaeo, MAOI)</td></tr><tr><td>**Esmolol**</td><td>500 mcg/kg bolus, then 50-200 mcg/kg/min</td><td>1-2 min</td><td>**Aortic dissection** (rate control); perioperative</td></tr><tr><td>**Urapidil**</td><td>10-50 mg IV bolus, then 5-40 mg/h</td><td>5 min</td><td>Europe; alternative to labetalol</td></tr><tr><td>**Clevidipine**</td><td>1-32 mg/h IV</td><td>1-2 min</td><td>Perioperative</td></tr></table>
+<div class="sub-h">Drug Choice by Scenario</div>
+<table class="ctable"><tr><th>Scenario</th><th>First-line</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Most emergencies**</td><td>**Labetalol** or **nicardipine**</td></tr><tr><td>**Aortic dissection**</td><td>**Labetalol** + **esmolol** (rate + BP)</td></tr><tr><td>**Acute coronary syndrome**</td><td>**Nitroglycerin (GTN)** + β-blocker</td></tr><tr><td>**Acute LVF / pulmonary oedema**</td><td>**Nitroglycerin** + diuretics, ± labetalol</td></tr><tr><td>**Eclampsia**</td><td>**Labetalol** + **magnesium** + delivery</td></tr><tr><td>**Stroke (ischaemic, tPA)**</td><td>**Labetalol** (SBP <185)</td></tr><tr><td>**Stroke (haemorrhagic)**</td><td>**Labetalol** (SBP <140)</td></tr><tr><td>**Catecholamine crisis**</td><td>**Phentolamine** ± β-blocker</td></tr><tr><td>**Encephalopathy**</td><td>**Labetalol** or **nicardipine**</td></tr><tr><td>**Renal failure**</td><td>**Labetalol**, **nicardipine**, **urapidil** (avoid nitroprusside)</td></tr><tr><td>**Pregnancy**</td><td>**Labetalol**, **hydralazine**, **nifedipine**</td></tr><tr><td>**Post-op**</td><td>**Clevidipine**, **nicardipine**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Specific Emergencies</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Aortic Dissection</div>
+<ul><li><b>SBP 100-120 + HR &lt;60</b> (rapidly, within 20-30 min)</li><li><b>IV β-blocker FIRST</b>: esmolol or labetalol (reduce dP/dt)</li><li><b>Then</b> vasodilator (nicardipine or nitroprusside)</li><li><b>Pain control</b> (morphine)</li><li><b>Surgical consultation</b> for Type A</li><li><b>Type B</b>: medical management, β-blocker + CCB</li></ul>
+<div class="sub-h">Hypertensive Encephalopathy</div>
+<ul><li><b>Exclude</b>: stroke, bleed, mass (CT head first)</li><li><b>IV labetalol or nicardipine</b></li><li><b>20-25% reduction in MAP</b> in first hour</li><li><b>Seizure control</b> (lorazepam, levetiracetam)</li><li><b>Avoid</b> nitroprusside (↑ICP)</li></ul>
+<div class="sub-h">Stroke (Ischaemic)</div>
+<ul><li><b>Not tPA</b>: lower BP only if &gt;220/120 (for tPA-eligible, &lt;185/110)</li><li><b>tPA candidate</b>: SBP &lt;185, then &lt;180 × 24 h</li><li><b>Mechanical thrombectomy</b>: similar BP targets</li><li><b>IV labetalol, nicardipine</b></li><li><b>AVOID</b> rapid drop (worsen ischaemia)</li><li><b>Permissive</b> HTN if not thrombolysed (up to 220/120)</li></ul>
+<div class="sub-h">Stroke (Haemorrhagic)</div>
+<ul><li><b>INTERACT3, ATACH-2</b>: SBP &lt;140 within 1-2 h</li><li><b>Reduces haematoma expansion</b></li><li><b>IV labetalol, nicardipine, urapidil</b></li><li><b>Reversal</b> of anticoagulation if needed</li><li><b>Neurosurgery</b> referral</li></ul>
+<div class="sub-h">Acute Coronary Syndrome</div>
+<ul><li><b>GTN</b> (nitroglycerin) IV + β-blocker (metoprolol IV)</li><li><b>Aspirin</b>, <b>heparin</b>, <b>P2Y12</b>, <b>statin</b> per ACS protocol</li><li><b>PCI</b> if STEMI</li></ul>
+<div class="sub-h">Acute LVF / Pulmonary Oedema</div>
+<ul><li><b>GTN</b> IV + <b>diuretics</b> (furosemide)</li><li><b>CPAP/BiPAP</b></li><li><b>± Morphine</b></li><li><b>Labetalol</b> if HTN coexists</li></ul>
+<div class="sub-h">Acute Kidney Injury</div>
+<ul><li><b>Treat cause</b></li><li><b>IV labetalol, nicardipine</b></li><li><b>Avoid</b> ACE-i/ARB in AKI</li><li><b>Dobutamine</b> if cardiogenic component</li></ul>
+<div class="sub-h">Eclampsia (see [[Acute Medicine in Pregnancy]])</div>
+<ul><li><b>MgSO₄ 4 g IV over 5 min</b> (load), then 1 g/h infusion</li><li><b>BP control</b>: <b>labetalol</b> (first-line) or <b>hydralazine</b> or <b>nifedipine</b></li><li><b>Delivery</b> definitive treatment</li><li><b>HELLP syndrome</b>: deliver + supportive</li></ul>
+<div class="sub-h">Catecholamine Crisis (Phaeochromocytoma, MAOI)</div>
+<ul><li><b>α-blockade FIRST</b>: <b>phentolamine</b> 2.5-5 mg IV OR phenoxybenzamine</li><li><b>Then β-blocker</b> (esmolol/labetalol) — NEVER β alone (unopposed α)</li><li><b>Avoid</b>: morphine (histamine), metoclopramide, glucagon</li><li><b>Pre-op</b> preparation: α-blockade × 10-14 days, then β</li></ul>
+<div class="sub-h">Sympathomimetic Toxidrome (Cocaine, Amphetamine)</div>
+<ul><li><b>Benzodiazepines</b> (first-line): lorazepam, diazepam</li><li><b>Nitroglycerin</b> (CCB controversial in cocaine: ↑CNS toxicity)</li><li><b>Phentolamine</b> for severe HTN</li><li><b>AVOID β-blockers</b> (unopposed α)</li></ul>
+<div class="sub-h">Autonomic Dysreflexia (SCI)</div>
+<ul><li><b>Sit up</b> + remove tight clothing + empty bladder</li><li><b>Nifedipine</b> SL (or chew)</li><li><b>Treat cause</b>: full bladder, constipation, noxious stimulus</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Hypertensive Urgency</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>NOT</b> life-threatening</li><li><b>Oral therapy</b>: amlodipine, losartan, atenolol, etc.</li><li><b>Reduce over 24-48 h</b> to &lt;160/100</li><li><b>Outpatient</b> if no TOD</li><li><b>AVOID</b> IV therapy (rapid drop → stroke)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Complications of Therapy</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cerebral hypoperfusion</b> (rapid drop)</li><li><b>Ischaemic stroke</b></li><li><b>Retinal infarction</b></li><li><b>Myocardial ischaemia</b></li><li><b>Rebound HTN</b> (clonidine, β-blocker withdrawal)</li><li><b>Cyanide toxicity</b> (nitroprusside &gt;4 mcg/kg/min &gt;24 h)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Contraindicated Drugs</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Sublingual nifedipine</b> (unpredictable absorption, stroke risk)</li><li><b>β-blocker in catecholamine crisis</b> (unopposed α)</li><li><b>Nitroprusside in renal failure</b> (cyanide)</li><li><b>Nitroprusside in pregnancy</b> (cyanide crosses placenta)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Without treatment</b>: 1-year mortality 90% in malignant HTN</li><li><b>With treatment</b>: 5-year survival 60-80%</li><li><b>TOD improves</b> with BP control (some, e.g., LVH)</li><li><b>Aortic dissection</b>: 1-month mortality 50% (Type A) or 10% (Type B)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Emergency = SBP &gt;180 + TOD</b> (vs urgency = no TOD)</li><li><b>Reduction target</b>: ↓ 20-25% in 1st hour, &lt;160/100 in 6 h, &lt;140/90 in 24-48 h</li><li><b>Most emergencies: labetalol or nicardipine</b></li><li><b>Aortic dissection: SBP 100-120 + HR &lt;60</b> (β-blocker first: esmolol/labetalol)</li><li><b>Eclampsia: labetalol + MgSO₄ + delivery</b></li><li><b>Stroke (ischaemic, tPA): SBP &lt;185</b></li><li><b>Stroke (haemorrhagic): SBP &lt;140 within 1 h</b></li><li><b>ACS/Acute LVF: GTN</b></li><li><b>Catecholamine crisis: phentolamine</b> (α first, then β)</li><li><b>Cocaine/amphetamines: benzodiazepines, AVOID β-blockers</b></li><li><b>Sublingual nifedipine: AVOID</b> (unpredictable)</li><li><b>Malignant HTN = papilloedema + retinopathy + AKI + MAHA</b></li><li><b>Avoid rapid drop</b> (cerebral hypoperfusion)</li><li><b>Hypertensive urgency: oral Rx, NOT IV</b></li><li><b>Nitroprusside: monitor cyanide</b> (&gt;4 mcg/kg/min &gt;24 h)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Hypertensive emergency vs urgency</li><li>BP reduction targets</li><li>First-line drugs</li><li>Aortic dissection management</li><li>Eclampsia management</li><li>Stroke BP targets</li><li>Catecholamine crisis</li><li>Cocaine HTN</li><li>Why avoid sublingual nifedipine</li><li>Malignant hypertension</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Emergency = TOD present</b>, not just BP level</li><li><b>Avoid rapid drop</b> (cerebral hypoperfusion)</li><li><b>β-blocker alone in catecholamine crisis = unopposed α</b></li><li><b>Sublingual nifedipine</b> = dangerous (unpredictable)</li><li><b>Aortic dissection</b> = β-blocker first (esmolol/labetalol), then vasodilator</li><li><b>Nitroprusside</b> in renal failure = cyanide toxicity</li><li><b>Encephalopathy</b>: exclude stroke/bleed first</li><li><b>Stroke ischaemic</b>: permissive HTN (220/120) unless tPA</li><li><b>Stroke haemorrhagic</b>: SBP &lt;140 (INTERACT3)</li><li><b>Cocaine</b>: benzodiazepines, not β-blockers</li><li><b>Eclampsia</b>: MgSO₄ (NOT diazepam/phenytoin for seizure)</li><li><b>Malignant HTN</b>: MAHA + AKI + retinopathy</li><li><b>Hypertensive urgency</b>: oral, NOT IV</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Emergency = TOD</b>, Urgency = no TOD</li><li><b>BP targets</b>: <b>20-25% in 1 h</b>, &lt;160/100 in 6 h, &lt;140/90 in 24-48 h</li><li><b>Most</b>: <b>Labetalol</b> or <b>Nicardipine</b></li><li><b>Aortic dissection</b>: <b>SBP 100-120 + HR &lt;60</b> (β first)</li><li><b>Eclampsia</b>: <b>Labetalol + MgSO₄ + Delivery</b></li><li><b>Stroke (isch, tPA)</b>: <b>SBP &lt;185</b></li><li><b>Stroke (haem)</b>: <b>SBP &lt;140</b></li><li><b>ACS/LVF</b>: <b>GTN</b></li><li><b>Catecholamine crisis</b>: <b>α first</b> (phentolamine)</li><li><b>Cocaine</b>: <b>Benzos, NO β-blocker</b></li><li><b>Malignant HTN</b>: <b>MAHA + AKI + retinopathy</b></li><li><b>AVOID</b>: <b>sublingual nifedipine</b></li><li><b>Nitroprusside</b>: <b>monitor cyanide</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Hypertensive Emergencies))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definitions</div>
+<div class="mm-node mm-l3">– Emergency: SBP&gt;180 + TOD</div>
+<div class="mm-node mm-l3">– Urgency: SBP&gt;180 no TOD</div>
+<div class="mm-node mm-l3">– Malignant: papilloedema + retinopathy</div>
+<div class="mm-node mm-l2">Causes</div>
+<div class="mm-node mm-l3">– Essential</div>
+<div class="mm-node mm-l3">– Renal (RAS, GN)</div>
+<div class="mm-node mm-l3">– Endocrine (phaeo, Cushing)</div>
+<div class="mm-node mm-l3">– Drugs (cocaine, MAOI)</div>
+<div class="mm-node mm-l3">– Pregnancy (eclampsia)</div>
+<div class="mm-node mm-l3">– Aortic dissection</div>
+<div class="mm-node mm-l3">– Withdrawal</div>
+<div class="mm-node mm-l2">Features</div>
+<div class="mm-node mm-l3">– TOD</div>
+<div class="mm-node mm-deep">– Encephalopathy</div>
+<div class="mm-node mm-deep">– Stroke</div>
+<div class="mm-node mm-deep">– ACS</div>
+<div class="mm-node mm-deep">– LVF</div>
+<div class="mm-node mm-deep">– Dissection</div>
+<div class="mm-node mm-deep">– AKI</div>
+<div class="mm-node mm-deep">– Retinopathy</div>
+<div class="mm-node mm-deep">– MAHA</div>
+<div class="mm-node mm-l2">Investigations</div>
+<div class="mm-node mm-l3">– FBC, UandE, glucose</div>
+<div class="mm-node mm-l3">– Urinalysis</div>
+<div class="mm-node mm-l3">– ECG, troponin</div>
+<div class="mm-node mm-l3">– CXR</div>
+<div class="mm-node mm-l3">– CT head</div>
+<div class="mm-node mm-l3">– CT aortogram (dissection)</div>
+<div class="mm-node mm-l3">– Echo</div>
+<div class="mm-node mm-l3">– Plasma metanephrines</div>
+<div class="mm-node mm-l2">Targets</div>
+<div class="mm-node mm-l3">– 20-25% in 1h</div>
+<div class="mm-node mm-l3">– &lt;160/100 in 6h</div>
+<div class="mm-node mm-l3">– &lt;140/90 in 24-48h</div>
+<div class="mm-node mm-l3">– Dissection: 100-120</div>
+<div class="mm-node mm-l3">– Eclampsia: &lt;160/110</div>
+<div class="mm-node mm-l3">– Stroke tPA: &lt;185</div>
+<div class="mm-node mm-l3">– Stroke haem: &lt;140</div>
+<div class="mm-node mm-l2">Drugs</div>
+<div class="mm-node mm-l3">– Labetalol (most)</div>
+<div class="mm-node mm-l3">– Nicardipine</div>
+<div class="mm-node mm-l3">– Nitroprusside (cyanide)</div>
+<div class="mm-node mm-l3">– GTN (ACS/LVF)</div>
+<div class="mm-node mm-l3">– Esmolol (dissection)</div>
+<div class="mm-node mm-l3">– Phentolamine (phaeo)</div>
+<div class="mm-node mm-l3">– Hydralazine (pregnancy)</div>
+<div class="mm-node mm-l2">Specific</div>
+<div class="mm-node mm-l3">– Dissection: SBP 100-120, HR &lt;60</div>
+<div class="mm-node mm-l3">– Eclampsia: labetalol + MgSO4 + delivery</div>
+<div class="mm-node mm-l3">– Stroke isch (tPA): SBP &lt;185</div>
+<div class="mm-node mm-l3">– Stroke haem: SBP &lt;140</div>
+<div class="mm-node mm-l3">– ACS: GTN + beta-blocker</div>
+<div class="mm-node mm-l3">– LVF: GTN + diuretic</div>
+<div class="mm-node mm-l3">– Catecholamine: alpha first (phentolamine)</div>
+<div class="mm-node mm-l3">– Cocaine: benzos, no beta</div>
+<div class="mm-node mm-l2">Pitfalls</div>
+<div class="mm-node mm-l3">– Avoid rapid drop</div>
+<div class="mm-node mm-l3">– Sublingual nifedipine (NO)</div>
+<div class="mm-node mm-l3">– Beta alone in phaeo (NO)</div>
+<div class="mm-node mm-l3">– Nitroprusside in renal failure (NO)</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flowchart — Hypertensive Emergency</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">BP &gt;180</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">TOD present?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Urgency: oral, gradual, outpatient</div>
+<div class="fc-node" data-id="D">Monitored bed, arterial line</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Scenario?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Esmolol/labetalol FIRST, then vasodilator, SBP 100-120</div>
+<div class="fc-node" data-id="G">GTN + diuretic</div>
+<div class="fc-node" data-id="H">Labetalol + MgSO4 + delivery</div>
+<div class="fc-node" data-id="I">SBP &lt;140 within 1h</div>
+<div class="fc-node" data-id="J">SBP &lt;185</div>
+<div class="fc-node" data-id="K">Phentolamine alpha first</div>
+<div class="fc-node" data-id="L">Benzos, NO beta</div>
+<div class="fc-node" data-id="M">Labetalol/nicardipine</div>
+<div class="fc-node" data-id="N">Labetalol/nicardipine</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="O">20-25% reduction in 1h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="P">Target &lt;160/100 in 6h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="Q">Target &lt;140/90 in 24-48h</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Emergency = SBP &gt;180 + TOD</b>; <b>urgency = no TOD</b> (oral Rx)</li><li><b>Reduction</b>: 20-25% in 1st hour, &lt;160/100 in 6 h, &lt;140/90 in 24-48 h</li><li><b>Most emergencies: labetalol or nicardipine</b></li><li><b>Aortic dissection: SBP 100-120 + HR &lt;60</b> (β-blocker first)</li><li><b>Eclampsia: labetalol + MgSO₄ + delivery</b></li><li><b>Stroke ischaemic (tPA): SBP &lt;185</b>; <b>haemorrhagic: SBP &lt;140 within 1 h</b></li><li><b>ACS/LVF: GTN + β-blocker</b></li><li><b>Catecholamine crisis: α first (phentolamine)</b>, then β</li><li><b>Cocaine: benzos, AVOID β-blockers</b></li><li><b>Malignant HTN</b>: MAHA + AKI + retinopathy</li><li><b>AVOID sublingual nifedipine</b> (unpredictable)</li><li><b>Avoid rapid drop</b> (cerebral hypoperfusion)</li><li><b>Nitroprusside</b>: monitor cyanide (&gt;4 mcg/kg/min &gt;24 h)</li><li><b>Hypertensive urgency: oral, NOT IV</b></li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>Define hypertensive emergency vs urgency</li><li>State BP reduction targets</li><li>Outline aortic dissection management</li><li>Describe eclampsia management</li><li>List stroke BP targets</li><li>Outline catecholamine crisis Rx</li><li>State cocaine HTN management</li><li>List contraindications</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Emergency vs urgency</li><li>BP reduction targets</li><li>Labetalol/nicardipine first-line</li><li>Aortic dissection (SBP 100-120, HR &lt;60)</li><li>Eclampsia (labetalol + MgSO₄)</li><li>Stroke BP targets (ischaemic, haemorrhagic)</li><li>ACS/LVF (GTN)</li><li>Catecholamine crisis (α first)</li><li>Cocaine (benzos, no β)</li><li>Malignant HTN</li><li>AVOID sublingual nifedipine</li><li>Avoid rapid drop</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Hydralazine in pregnancy</li><li>Nitroprusside (cyanide)</li><li>Esmolol (rate control)</li><li>Autonomic dysreflexia</li><li>Phentolamine dose</li><li>HELLP syndrome</li><li>Phaeochromocytoma pre-op</li><li>Drug choice by scenario</li><li>Sympathomimetic toxidrome</li><li>Hypertensive urgency Rx</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>INTERACT3, ATACH-2 trials</li><li>Clevidipine</li><li>Cyanide toxicity</li><li>Rebound HTN</li><li>Nitroprusside monitoring</li><li>Watershed infarcts</li><li>Urapidil</li><li>Renal failure dosing</li><li>MAHA</li><li>ESRD/HD patients</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definitions (emergency vs urgency vs malignant)</li><li>Pathophysiology</li><li>Causes</li><li>Clinical features (TOD)</li><li>Investigations</li><li>BP reduction targets (timing, %)</li><li>IV antihypertensive drugs (table)</li><li>Specific emergencies:</li><li>Aortic dissection</li><li>Eclampsia</li><li>Stroke (ischaemic + haemorrhagic)</li><li>ACS / LVF</li><li>Catecholamine crisis</li><li>Cocaine</li><li>Encephalopathy</li><li>AKI</li><li>Avoid pitfalls (sublingual nifedipine, rapid drop, β alone in phaeo)</li><li>Hypertensive urgency (oral, not IV)</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Hypertensive emergency Rx</li><li>Aortic dissection HTN Rx</li><li>Eclampsia HTN Rx</li><li>Stroke BP targets</li><li>Catecholamine crisis Rx</li><li>Malignant HTN</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Emergency = SBP &gt;180 + TOD; urgency = no TOD"</li><li>"Reduce 20-25% in 1st hour, &lt;160/100 in 6 h, &lt;140/90 in 24-48 h"</li><li>"Labetalol or nicardipine first-line for most"</li><li>"Aortic dissection: SBP 100-120, HR &lt;60, β-blocker first"</li><li>"Eclampsia: labetalol + MgSO₄ + delivery"</li><li>"Stroke ischaemic (tPA): SBP &lt;185; haemorrhagic: SBP &lt;140"</li><li>"ACS/LVF: GTN + β-blocker"</li><li>"Catecholamine crisis: α first (phentolamine), then β"</li><li>"Cocaine: benzos, NO β-blockers"</li><li>"Malignant HTN: MAHA + AKI + retinopathy"</li><li>"AVOID sublingual nifedipine"</li><li>"Hypertensive urgency: oral, NOT IV"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>60-year-old, SBP 220, headache, papilloedema → encephalopathy → IV labetalol, monitor</li><li>Aortic dissection, SBP 220, HR 110 → esmolol + labetalol, target SBP 100-120</li><li>Eclampsia 32 weeks, BP 170/110, seizures → MgSO₄ + labetalol + delivery</li><li>Stroke ICH, SBP 180 → SBP &lt;140 within 1 h, labetalol</li><li>Cocaine chest pain + HTN → benzos, GTN, avoid β</li><li>Phaeochromocytoma intra-op, BP 240/130 → phentolamine</li><li>Hypertensive urgency SBP 180, asymptomatic → oral amlodipine, gradual, outpatient</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Emergency = TOD, urgency = no TOD</li><li>Reduce 20-25% in 1h</li><li>Most: labetalol/nicardipine</li><li>Dissection: SBP 100-120, HR &lt;60</li><li>Eclampsia: labetalol + MgSO₄ + delivery</li><li>Stroke isch (tPA): SBP &lt;185</li><li>Stroke haem: SBP &lt;140</li><li>ACS/LVF: GTN</li><li>Catecholamine: α first</li><li>Cocaine: benzos, no β</li><li>Malignant: MAHA + AKI</li><li>NO sublingual nifedipine</li><li>NO rapid drop</li><li>Nitroprusside → cyanide</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Hypertensive emergency</b> = <b>SBP &gt;180 + acute target organ damage (TOD)</b>; <b>urgency</b> = severe HTN without TOD (oral Rx, gradual). <b>TOD</b>: encephalopathy, stroke (ischaemic/haemorrhagic), ACS, acute LVF, aortic dissection, AKI, retinopathy (grade III/IV), MAHA. <b>Malignant HTN</b>: severe HTN + papilloedema + retinopathy + AKI + MAHA. <b>BP reduction targets</b>: ↓ 20-25% in 1st hour → &lt;160/100 in 6 h → &lt;140/90 in 24-48 h. <b>Avoid rapid drop</b> (cerebral hypoperfusion → watershed infarcts). <b>First-line IV drugs</b>: <b>labetalol</b> (10-20 mg bolus, 1-2 mg/min infusion; first-line in most + pregnancy), <b>nicardipine</b> (5-15 mg/h; most scenarios), <b>GTN</b> (5-200 mcg/min; ACS/LVF), <b>esmolol</b> (dissection), <b>phentolamine</b> (catecholamine crisis), <b>hydralazine</b> (pregnancy alt), <b>nitroprusside</b> (most severe; monitor cyanide &gt;4 mcg/kg/min &gt;24 h). <b>Specific emergencies</b>: <b>Aortic dissection</b> → SBP 100-120 + HR &lt;60 (β-blocker first: <b>esmolol/labetalol</b>, then vasodilator). <b>Eclampsia</b> → <b>labetalol</b> + <b>MgSO₄ 4 g IV load</b> + 1 g/h + delivery. <b>Stroke ischaemic (tPA-eligible)</b> → SBP &lt;185 (pre), then &lt;180 × 24 h; <b>non-tPA</b> → permissive HTN up to 220/120. <b>Stroke haemorrhagic</b> → SBP &lt;140 within 1 h (INTERACT3, ATACH-2). <b>ACS/LVF</b> → GTN + β-blocker. <b>Catecholamine crisis</b> (phaeo, MAOI) → <b>α-blockade FIRST (phentolamine 2.5-5 mg IV)</b>, then β. <b>Cocaine/amphetamines</b> → <b>benzodiazepines</b> (NOT β-blockers — unopposed α). <b>Autonomic dysreflexia</b> (SCI) → sit up + empty bladder + nifedipine SL. <b>Hypertensive urgency</b>: oral therapy (amlodipine, losartan, atenolol), gradual reduction, <b>NOT IV</b> (rapid drop → stroke). <b>AVOID sublingual nifedipine</b> (unpredictable absorption, stroke risk). <b>AVOID</b> rapid drop, β-blocker alone in phaeo, nitroprusside in renal failure/pregnancy (cyanide). <b>Prognosis</b>: 1-year mortality 90% untreated malignant HTN, 5-yr survival 60-80% treated.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Hypertensive emergency defined as:</li></ol>
+<p>A. SBP &gt;180 B. <b>SBP &gt;180 + acute target organ damage</b> C. DBP &gt;100 D. Malignant HTN</p>
+<ol><li>First-line IV drug in most hypertensive emergencies:</li></ol>
+<p>A. Sodium nitroprusside B. <b>Labetalol or nicardipine</b> C. Hydralazine D. GTN</p>
+<ol><li>Aortic dissection BP target:</li></ol>
+<p>A. &lt;140/90 B. &lt;160/100 C. <b>SBP 100-120 + HR &lt;60</b> D. &lt;120/80</p>
+<ol><li>Eclampsia treatment includes:</li></ol>
+<p>A. Diazepam B. Phenytoin C. <b>MgSO₄ + labetalol + delivery</b> D. β-blocker only</p>
+<ol><li>Catecholamine crisis first drug:</li></ol>
+<p>A. β-blocker B. <b>α-blocker (phentolamine)</b> C. Calcium channel blocker D. ACE inhibitor</p>
+<ol><li>Cocaine-induced HTN first-line:</li></ol>
+<p>A. β-blocker B. <b>Benzodiazepine</b> C. Nitroprusside D. Phentolamine</p>
+<ol><li>Stroke (ischaemic, tPA-eligible) SBP target:</li></ol>
+<p>A. &lt;140 B. <b>&lt;185</b> C. &lt;220 D. &lt;120</p>
+<ol><li>Stroke (haemorrhagic) SBP target:</li></ol>
+<p>A. &lt;180 B. <b>&lt;140 within 1 h</b> C. &lt;220 D. &lt;120</p>
+<ol><li>Sublingual nifedipine in hypertensive emergency:</li></ol>
+<p>A. First-line B. Safe C. <b>AVOIDED (unpredictable, stroke risk)</b> D. Cheap and effective</p>
+<ol><li>Malignant hypertension features include all EXCEPT:</li></ol>
+<p>A. Papilloedema B. Grade IV retinopathy C. <b>Bradycardia</b> D. MAHA</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>60-year-old, SBP 220, headache, papilloedema, no focal deficit, AKI. Diagnosis:</li></ol>
+<p>A. Hypertensive urgency B. <b>Hypertensive emergency (encephalopathy + AKI)</b> C. Stroke D. Migraine</p>
+<ol><li>Aortic dissection, SBP 220, HR 110. First drug:</li></ol>
+<p>A. Nitroprusside B. <b>Esmolol or labetalol (β-blocker first)</b> C. Hydralazine D. GTN</p>
+<ol><li>Eclampsia, 32 weeks, BP 170/110, seizures. First-line seizure Rx:</li></ol>
+<p>A. Diazepam B. Phenytoin C. <b>MgSO₄ 4 g IV over 5 min</b> D. Levetiracetam</p>
+<ol><li>ICH stroke, SBP 180. Target:</li></ol>
+<p>A. &lt;180 B. <b>&lt;140 within 1 h (INTERACT3)</b> C. &lt;220 D. &lt;120</p>
+<ol><li>Phaeochromocytoma, BP 240/130 intra-op. First drug:</li></ol>
+<p>A. Esmolol B. <b>Phentolamine (α first)</b> C. Nitroprusside D. Labetalol</p>
+<ol><li>Cocaine chest pain, BP 180/110, SOB. Rx:</li></ol>
+<p>A. β-blocker B. <b>Benzodiazepine + GTN</b> C. Aspirin D. Morphine</p>
+<ol><li>Hypertensive urgency, SBP 180, asymptomatic. Rx:</li></ol>
+<p>A. IV labetalol B. <b>Oral amlodipine, gradual reduction, outpatient</b> C. Sublingual nifedipine D. Admit + IV</p>
+<ol><li>Nitroprusside &gt;4 mcg/kg/min for &gt;24 h risk:</li></ol>
+<p>A. Methaemoglobinaemia B. <b>Cyanide toxicity</b> C. HyperK D. Rhabdomyolysis</p>
+<ol><li>Autonomic dysreflexia, SCI, BP 200/120. First action:</li></ol>
+<p>A. IV hydralazine B. <b>Sit up + remove tight clothing + empty bladder + nifedipine</b> C. Intubate D. Anaesthesia</p>
+<ol><li>ESRD patient, hypertensive emergency. Drug to avoid:</li></ol>
+<p>A. Labetalol B. Nicardipine C. <b>Nitroprusside (cyanide accumulation)</b> D. Urapidil</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Hypertensive emergency definition</li></ul>
+<p>A: SBP &gt;180 + acute TOD</p>
+<ul><li>Q: BP reduction targets</li></ul>
+<p>A: 20-25% in 1h, &lt;160/100 in 6h, &lt;140/90 in 24-48h</p>
+<ul><li>Q: First-line IV drugs</li></ul>
+<p>A: Labetalol or nicardipine</p>
+<ul><li>Q: Aortic dissection target</li></ul>
+<p>A: SBP 100-120 + HR &lt;60</p>
+<ul><li>Q: Aortic dissection first drug</li></ul>
+<p>A: Esmolol/labetalol (β first)</p>
+<ul><li>Q: Eclampsia Rx</li></ul>
+<p>A: Labetalol + MgSO4 + delivery</p>
+<ul><li>Q: MgSO4 dose</li></ul>
+<p>A: 4 g IV load, then 1 g/h</p>
+<ul><li>Q: Catecholamine crisis first drug</li></ul>
+<p>A: Phentolamine (α first)</p>
+<ul><li>Q: Cocaine HTN Rx</li></ul>
+<p>A: Benzodiazepine</p>
+<ul><li>Q: Stroke (isch, tPA) SBP target</li></ul>
+<p>A: &lt;185</p>
+<ul><li>Q: Stroke (haem) SBP target</li></ul>
+<p>A: &lt;140</p>
+<ul><li>Q: Malignant HTN features</li></ul>
+<p>A: Papilloedema + retinopathy + AKI + MAHA</p>
+<ul><li>Q: AVOID drug</li></ul>
+<p>A: Sublingual nifedipine</p>
+<ul><li>Q: Hypertensive urgency Rx</li></ul>
+<p>A: Oral, gradual, outpatient</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Emergency = SBP &gt;180 + TOD. <b>MCQ 2</b>: B — Labetalol or nicardipine first-line. <b>MCQ 3</b>: C — Dissection: SBP 100-120 + HR &lt;60. <b>MCQ 4</b>: C — MgSO₄ + labetalol + delivery. <b>MCQ 5</b>: B — α-blocker (phentolamine) first in catecholamine crisis. <b>MCQ 6</b>: B — Benzodiazepine in cocaine. <b>MCQ 7</b>: B — Stroke isch (tPA): SBP &lt;185. <b>MCQ 8</b>: B — Stroke haem: SBP &lt;140. <b>MCQ 9</b>: C — Sublingual nifedipine avoided. <b>MCQ 10</b>: C — Bradycardia is not a feature of malignant HTN.</p>
+<p><b>SBA 1</b>: B — Emergency (TOD = encephalopathy + AKI). <b>SBA 2</b>: B — β-blocker first in dissection. <b>SBA 3</b>: C — MgSO₄ 4 g IV. <b>SBA 4</b>: B — ICH: SBP &lt;140 within 1 h. <b>SBA 5</b>: B — Phentolamine (α first) in phaeo. <b>SBA 6</b>: B — Benzos + GTN in cocaine. <b>SBA 7</b>: B — Oral, gradual, outpatient. <b>SBA 8</b>: B — Nitroprusside &gt;24 h = cyanide. <b>SBA 9</b>: B — Sit up + empty bladder + nifedipine. <b>SBA 10</b>: C — Nitroprusside avoided in ESRD.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-15</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hypertensive Emergencies · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

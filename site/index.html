@@ -151,27 +151,32 @@ header.site .ext-links a {
 header.site .ext-links a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ===== Landing page main ===== */
-main { padding: 32px; max-width: 1500px; margin: 0 auto; }
+main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
 .chapters-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
   margin-top: 8px;
 }
+@media (max-width: 1400px) { .chapters-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1100px) { .chapters-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .chapters-grid { grid-template-columns: 1fr; } }
 .section-title {
   font-size: 13px; color: var(--text-dim);
   text-transform: uppercase; letter-spacing: 0.12em;
-  margin-bottom: 16px; font-weight: 600;
+  margin-bottom: 14px; font-weight: 600;
 }
 .chapter-card {
   background: var(--bg-2);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
-  transition: all 0.2s ease;
+  border-radius: 12px;
+  padding: 16px 16px 14px;
+  transition: all 0.18s ease;
   position: relative; overflow: hidden;
   text-decoration: none !important; color: inherit !important;
-  display: block;
+  display: flex; flex-direction: column;
+  cursor: pointer; min-height: 150px;
 }
 .chapter-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
@@ -180,38 +185,40 @@ main { padding: 32px; max-width: 1500px; margin: 0 auto; }
 .chapter-card:hover {
   transform: translateY(-2px);
   border-color: var(--accent-color, var(--accent));
-  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.1);
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.08);
 }
 .chapter-card .ch-num {
-  display: inline-block; padding: 4px 10px;
+  display: inline-block; padding: 2px 8px;
   background: var(--accent-color, var(--accent)); color: #0a0e1a;
-  border-radius: 6px; font-size: 11px; font-weight: 700;
+  border-radius: 4px; font-size: 10px; font-weight: 700;
   font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  align-self: flex-start;
 }
 .chapter-card h2 {
-  font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
-  margin-bottom: 8px;
+  font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
+  margin-bottom: 10px; line-height: 1.25;
+  flex: 1;
 }
-.chapter-card .desc { color: var(--text-dim); font-size: 14px; margin-bottom: 16px; min-height: 40px; }
 .chapter-card .ch-stats {
-  display: flex; gap: 16px; padding: 12px 0; border-top: 1px solid var(--border);
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 13px;
+  display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid var(--border);
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 12px;
 }
 .chapter-card .ch-stats .cs { display: flex; flex-direction: column; }
-.chapter-card .ch-stats .num { font-size: 20px; font-weight: 700; color: var(--accent); }
-.chapter-card .ch-stats .label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
-.preview-strip {
-  display: flex; gap: 8px; margin-top: 16px;
-  height: 80px;
+.chapter-card .ch-stats .num { font-size: 16px; font-weight: 700; color: var(--accent); line-height: 1; }
+.chapter-card .ch-stats .label { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+.chapter-card .ch-links {
+  display: flex; gap: 12px; margin-top: 8px;
+  font-size: 11px;
 }
-.preview-strip .preview {
-  flex: 1; border-radius: 6px; overflow: hidden;
-  background: var(--bg-3); border: 1px solid var(--border);
+.chapter-card .ch-link-primary {
+  color: var(--accent); font-weight: 600; text-decoration: none !important;
 }
-.preview-strip .preview img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top;
+.chapter-card .ch-link-secondary {
+  color: var(--text-dim); text-decoration: none !important;
 }
+.chapter-card .ch-link-primary:hover { color: #7dd3fc; }
+.chapter-card .ch-link-secondary:hover { color: var(--accent); }
 
 /* ===== Chapter page (SPA: sidebar + main) ===== */
 .chapter-page {
@@ -448,13 +455,13 @@ footer a:hover { color: var(--accent); }
     <span class="logo">⚕</span>
     <a href="/">MedSea</a>
   </div>
-  <div class="stats"><span class="stat"><span class="num">5</span><span class="label">Chapters</span></span><span class="stat"><span class="num">52</span><span class="label">Hubs</span></span><span class="stat"><span class="num">762</span><span class="label">Topics</span></span><span class="stat"><span class="num">760</span><span class="label">PNGs</span></span><span class="stat"><span class="num">32</span><span class="label">Total (25th)</span></span></div>
+  <div class="stats"><span class="stat"><span class="num">20</span><span class="label">Chapters</span></span><span class="stat"><span class="num">131</span><span class="label">Hubs</span></span><span class="stat"><span class="num">1287</span><span class="label">Topics</span></span><span class="stat"><span class="num">1285</span><span class="label">PNGs</span></span><span class="stat"><span class="num">32</span><span class="label">Total (25th)</span></span></div>
   <div class="chapter-dropdown" id="chapterDropdown">
     <button class="drop-btn" type="button" onclick="document.getElementById('chapterDropdown').classList.toggle('open')">
       <span>Chapters</span> <span class="arrow">▾</span>
     </button>
     <div class="drop-menu">
-      <a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">1</span><span class="name">Clinical decision-making</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">2</span><span class="name">Clinical therapeutics and good prescribing</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">3</span><span class="name">Clinical genetics</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">4</span><span class="name">Clinical immunology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">5</span><span class="name">Nutritional factors in disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">6</span><span class="name">Population health and epidemiology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">7</span><span class="name">Principles of infection</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">8</span><span class="name">Oncology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">9</span><span class="name">Palliative and supportive care</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">10</span><span class="name">Acute medicine and critical illness</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">11</span><span class="name">Poisoning</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">12</span><span class="name">Envenomation</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">13</span><span class="name">Medicine in austere environments</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">14</span><span class="name">Infectious disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">15</span><span class="name">Sexually transmitted infections</span><span class="badge">○</span></a><a class="item" href="/16-cardiology/"><span class="num">16</span><span class="name">Cardiology</span><span class="badge">●</span></a><a class="item" href="/17-respiratory-medicine/"><span class="num">17</span><span class="name">Respiratory Medicine</span><span class="badge">●</span></a><a class="item" href="/15-nephrology-urology/"><span class="num">18</span><span class="name">Nephrology and Urology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">19</span><span class="name">Clinical biochemistry and metabolic medicine</span><span class="badge">○</span></a><a class="item" href="/18-endocrinology/"><span class="num">20</span><span class="name">Endocrinology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">21</span><span class="name">Diabetes mellitus</span><span class="badge">○</span></a><a class="item" href="/21-gastroenterology/"><span class="num">22</span><span class="name">Gastroenterology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">23</span><span class="name">Hepatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">24</span><span class="name">Haematology and transfusion medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">25</span><span class="name">Rheumatology and bone disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">26</span><span class="name">Dermatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">27</span><span class="name">Neurology and stroke medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">28</span><span class="name">Medical ophthalmology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">29</span><span class="name">Medical psychiatry</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">30</span><span class="name">Maternal medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">31</span><span class="name">Adolescence, transition and young adult medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">32</span><span class="name">Older adult medicine and frailty</span><span class="badge">○</span></a>
+      <a class="item" href="/1-clinical-decision-making/"><span class="num">1</span><span class="name">Clinical Decision-Making</span><span class="badge">●</span></a><a class="item" href="/2-clinical-therapeutics/"><span class="num">2</span><span class="name">Clinical Therapeutics & Prescribing</span><span class="badge">●</span></a><a class="item" href="/3-clinical-genetics/"><span class="num">3</span><span class="name">Clinical Genetics</span><span class="badge">●</span></a><a class="item" href="/4-clinical-immunology/"><span class="num">4</span><span class="name">Clinical Immunology</span><span class="badge">●</span></a><a class="item" href="/5-nutritional-factors/"><span class="num">5</span><span class="name">Nutritional Factors in Disease</span><span class="badge">●</span></a><a class="item" href="/6-population-health/"><span class="num">6</span><span class="name">Population Health & Epidemiology</span><span class="badge">●</span></a><a class="item" href="/7-principles-of-infection/"><span class="num">7</span><span class="name">Principles of Infection</span><span class="badge">●</span></a><a class="item" href="/8-oncology/"><span class="num">8</span><span class="name">Oncology</span><span class="badge">●</span></a><a class="item" href="/9-palliative-care/"><span class="num">9</span><span class="name">Palliative & Supportive Care</span><span class="badge">●</span></a><a class="item" href="/10-acute-medicine/"><span class="num">10</span><span class="name">Acute Medicine</span><span class="badge">●</span></a><a class="item" href="/11-poisoning/"><span class="num">11</span><span class="name">Poisoning</span><span class="badge">●</span></a><a class="item" href="/12-envenomation/"><span class="num">12</span><span class="name">Envenomation</span><span class="badge">●</span></a><a class="item" href="/13-austere-medicine/"><span class="num">13</span><span class="name">Austere Medicine</span><span class="badge">●</span></a><a class="item" href="/14-infectious-disease/"><span class="num">14</span><span class="name">Infectious Disease</span><span class="badge">●</span></a><a class="item" href="/15-sexually-transmitted-infections/"><span class="num">15</span><span class="name">Sexually Transmitted Infections</span><span class="badge">●</span></a><a class="item" href="/16-cardiology/"><span class="num">16</span><span class="name">Cardiology</span><span class="badge">●</span></a><a class="item" href="/17-respiratory-medicine/"><span class="num">17</span><span class="name">Respiratory Medicine</span><span class="badge">●</span></a><a class="item" href="/18-nephrology-urology/"><span class="num">18</span><span class="name">Nephrology & Urology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">19</span><span class="name">Clinical biochemistry and metabolic medicine</span><span class="badge">○</span></a><a class="item" href="/20-endocrinology/"><span class="num">20</span><span class="name">Endocrinology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">21</span><span class="name">Diabetes mellitus</span><span class="badge">○</span></a><a class="item" href="/22-gastroenterology/"><span class="num">22</span><span class="name">Gastroenterology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">23</span><span class="name">Hepatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">24</span><span class="name">Haematology and transfusion medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">25</span><span class="name">Rheumatology and bone disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">26</span><span class="name">Dermatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">27</span><span class="name">Neurology and stroke medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">28</span><span class="name">Medical ophthalmology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">29</span><span class="name">Medical psychiatry</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">30</span><span class="name">Maternal medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">31</span><span class="name">Adolescence, transition and young adult medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">32</span><span class="name">Older adult medicine and frailty</span><span class="badge">○</span></a>
     </div>
   </div>
   <div class="ext-links">
@@ -465,89 +472,269 @@ footer a:hover { color: var(--accent); }
 <div class="section-title">Built Chapters · Davidson 25th Edition</div>
 <div class="chapters-grid">
 
-<article class="chapter-card" style="--accent-color: #06b6d4" onclick="location.href='/15-nephrology-urology/'" role="button" tabindex="0">
-  <span class="ch-num">Ch 15</span>
-  <h2>Nephrology and Urology</h2>
-  <p class="desc">Renal anatomy, AKI/CKD, glomerular disease, UTI, dialysis.</p>
+<article class="chapter-card" style="--accent-color: #64748b" onclick="location.href='/1-clinical-decision-making/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 1</span>
+  <h2>Clinical Decision-Making</h2>
   <div class="ch-stats">
     <div class="cs"><span class="num">6</span><span class="label">Hubs</span></div>
-    <div class="cs"><span class="num">49</span><span class="label">Topics</span></div>
-    <div class="cs"><span class="num">49</span><span class="label">PNGs</span></div>
+    <div class="cs"><span class="num">6</span><span class="label">Topics</span></div>
   </div>
-  <div class="preview-strip"><div class="preview"><img src="/15-nephrology-urology/diseases/15.1.1-clinical-examination-kidney-urinary-tract/topic.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/15-nephrology-urology/diseases/15.2.1-acute-kidney-injury-aki/topic.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/15-nephrology-urology/diseases/15.3.1-glomerular-diseases-overview-classification/topic.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/15-nephrology-urology/diseases/15.4.1-acute-interstitial-nephritis-ain/topic.png" alt="preview" loading="lazy"></div></div>
-  <div class="ch-stats" style="border-top: none; padding-top: 0; margin-top: 8px;">
-    <a href="/15-nephrology-urology/" style="color:var(--accent); font-size:13px; font-weight:500;">Browse Topics →</a>
-    <a href="https://app.notion.com/p/SeaHub/Chapter-15-Nephrology-and-Urology-d29e1888740b4d809dd1b0cab7616c05" target="_blank" onclick="event.stopPropagation()" style="color:var(--text-dim); font-size:13px; margin-left:12px;">Notion ↗</a>
+  <div class="ch-links">
+    <a href="/1-clinical-decision-making/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-1-Clinical-decision-making-8e5cd1ec34904d69aa7fb21ab056a508" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #0ea5e9" onclick="location.href='/2-clinical-therapeutics/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 2</span>
+  <h2>Clinical Therapeutics & Prescribing</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">14</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">71</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/2-clinical-therapeutics/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-2-Clinical-therapeutics-and-good-prescribing-5ec47a8c567148fc91af45d63691e6e6" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #84cc16" onclick="location.href='/3-clinical-genetics/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 3</span>
+  <h2>Clinical Genetics</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">6</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">6</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/3-clinical-genetics/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-3-Clinical-genetics-0b1c71bf18984f99ab97018154d0ad71" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #f97316" onclick="location.href='/4-clinical-immunology/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 4</span>
+  <h2>Clinical Immunology</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">2</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">2</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/4-clinical-immunology/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-4-Clinical-immunology-0b4e940adc464a56b120b1e4ba682c63" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #eab308" onclick="location.href='/5-nutritional-factors/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 5</span>
+  <h2>Nutritional Factors in Disease</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">7</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">35</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/5-nutritional-factors/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-5-Nutritional-factors-in-disease-20ae0f805c75401983af5d981bccbe72" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #14b8a6" onclick="location.href='/6-population-health/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 6</span>
+  <h2>Population Health & Epidemiology</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">5</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">27</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/6-population-health/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-6-Population-health-and-epidemiology-83035ef3c78d462b816a3d8ad0b0e653" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #dc2626" onclick="location.href='/7-principles-of-infection/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 7</span>
+  <h2>Principles of Infection</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">5</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">26</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/7-principles-of-infection/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-7-Principles-of-infection-6469084f1ff046798f4f4bab9f1d0802" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #7c3aed" onclick="location.href='/8-oncology/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 8</span>
+  <h2>Oncology</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">20</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">119</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/8-oncology/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-8-Oncology-8d4228ea84974d4db2e7f62a746f39d1" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #be185d" onclick="location.href='/9-palliative-care/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 9</span>
+  <h2>Palliative & Supportive Care</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">6</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">51</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/9-palliative-care/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-9-Palliative-and-supportive-care-c65289d8222748e3a809cb07e2b70f66" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
   </div>
 </article>
 
 <article class="chapter-card" style="--accent-color: #ef4444" onclick="location.href='/16-cardiology/'" role="button" tabindex="0">
   <span class="ch-num">Ch 16</span>
   <h2>Cardiology</h2>
-  <p class="desc">ACS, arrhythmias, heart failure, valvular, hypertension, pericardial.</p>
   <div class="ch-stats">
     <div class="cs"><span class="num">17</span><span class="label">Hubs</span></div>
     <div class="cs"><span class="num">330</span><span class="label">Topics</span></div>
-    <div class="cs"><span class="num">328</span><span class="label">PNGs</span></div>
   </div>
-  <div class="preview-strip"><div class="preview"><img src="/16-cardiology/diseases/16.1.25-atherosclerosis-pathogenesis/topic.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/16-cardiology/diseases/16.10.262-aortic-dissection-stanford-a-b-debakey-management/topic.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/16-cardiology/diseases/16.11.100-palliative-care-in-advanced-hf/topic.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/16-cardiology/diseases/16.12.280-classification-acc-aha-vs-esc-esh/topic.png" alt="preview" loading="lazy"></div></div>
-  <div class="ch-stats" style="border-top: none; padding-top: 0; margin-top: 8px;">
-    <a href="/16-cardiology/" style="color:var(--accent); font-size:13px; font-weight:500;">Browse Topics →</a>
-    <a href="https://app.notion.com/p/SeaHub/Chapter-16-Cardiology-0bfc7d3c798a450fb5c0ac1bf3848da2" target="_blank" onclick="event.stopPropagation()" style="color:var(--text-dim); font-size:13px; margin-left:12px;">Notion ↗</a>
+  <div class="ch-links">
+    <a href="/16-cardiology/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-16-Cardiology-8baa010d9cc94c48826136417d383973" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
   </div>
 </article>
 
 <article class="chapter-card" style="--accent-color: #10b981" onclick="location.href='/17-respiratory-medicine/'" role="button" tabindex="0">
   <span class="ch-num">Ch 17</span>
   <h2>Respiratory Medicine</h2>
-  <p class="desc">Airway disease, infection, pleural, ILD, respiratory failure, malignancy.</p>
   <div class="ch-stats">
     <div class="cs"><span class="num">10</span><span class="label">Hubs</span></div>
     <div class="cs"><span class="num">149</span><span class="label">Topics</span></div>
-    <div class="cs"><span class="num">149</span><span class="label">PNGs</span></div>
   </div>
-  <div class="preview-strip"><div class="preview"><img src="/17-respiratory-medicine/diseases/17.1.01-a-a-gradient-and-oxygenation-failure.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/17-respiratory-medicine/diseases/17.10.01-bronchial-carcinoid-tumor.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/17-respiratory-medicine/diseases/17.2.01-acute-hypoxemia-approach.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/17-respiratory-medicine/diseases/17.3.01-foreign-body-aspiration-in-adults.png" alt="preview" loading="lazy"></div></div>
-  <div class="ch-stats" style="border-top: none; padding-top: 0; margin-top: 8px;">
-    <a href="/17-respiratory-medicine/" style="color:var(--accent); font-size:13px; font-weight:500;">Browse Topics →</a>
-    <a href="https://app.notion.com/p/SeaHub/Chapter-17-Respiratory-medicine-d4fe7d456ca4481581e806ebe9e177cf" target="_blank" onclick="event.stopPropagation()" style="color:var(--text-dim); font-size:13px; margin-left:12px;">Notion ↗</a>
+  <div class="ch-links">
+    <a href="/17-respiratory-medicine/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-17-Respiratory-medicine-d4fe7d456ca4481581e806ebe9e177cf" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
   </div>
 </article>
 
-<article class="chapter-card" style="--accent-color: #a855f7" onclick="location.href='/18-endocrinology/'" role="button" tabindex="0">
+<article class="chapter-card" style="--accent-color: #06b6d4" onclick="location.href='/18-nephrology-urology/'" role="button" tabindex="0">
   <span class="ch-num">Ch 18</span>
+  <h2>Nephrology & Urology</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">6</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">49</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/18-nephrology-urology/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-18-Nephrology-and-Urology-d29e1888740b4d809dd1b0cab7616c05" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #a855f7" onclick="location.href='/20-endocrinology/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 20</span>
   <h2>Endocrinology</h2>
-  <p class="desc">Pituitary, thyroid, adrenal, parathyroid, reproductive, MEN, NETs.</p>
   <div class="ch-stats">
     <div class="cs"><span class="num">10</span><span class="label">Hubs</span></div>
     <div class="cs"><span class="num">87</span><span class="label">Topics</span></div>
-    <div class="cs"><span class="num">87</span><span class="label">PNGs</span></div>
   </div>
-  <div class="preview-strip"><div class="preview"><img src="/18-endocrinology/diseases/18.1.01-dynamic-testing-principles.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/18-endocrinology/diseases/18.11.01-endocrine-complications-of-immunotherapy.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/18-endocrinology/diseases/18.2.01-acth-cortisol-axis.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/18-endocrinology/diseases/18.3.01-anaplastic-thyroid-cancer.png" alt="preview" loading="lazy"></div></div>
-  <div class="ch-stats" style="border-top: none; padding-top: 0; margin-top: 8px;">
-    <a href="/18-endocrinology/" style="color:var(--accent); font-size:13px; font-weight:500;">Browse Topics →</a>
-    <a href="https://app.notion.com/p/SeaHub/Chapter-18-Endocrinology-9db6455d6ae840f0ac29129217d6ccef" target="_blank" onclick="event.stopPropagation()" style="color:var(--text-dim); font-size:13px; margin-left:12px;">Notion ↗</a>
+  <div class="ch-links">
+    <a href="/20-endocrinology/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-20-Endocrinology-9db6455d6ae840f0ac29129217d6ccef" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
   </div>
 </article>
 
-<article class="chapter-card" style="--accent-color: #f59e0b" onclick="location.href='/21-gastroenterology/'" role="button" tabindex="0">
-  <span class="ch-num">Ch 21</span>
+<article class="chapter-card" style="--accent-color: #f59e0b" onclick="location.href='/22-gastroenterology/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 22</span>
   <h2>Gastroenterology</h2>
-  <p class="desc">Oesophageal, gastric, IBD, colorectal, pancreatic, malabsorption.</p>
   <div class="ch-stats">
     <div class="cs"><span class="num">9</span><span class="label">Hubs</span></div>
     <div class="cs"><span class="num">147</span><span class="label">Topics</span></div>
-    <div class="cs"><span class="num">147</span><span class="label">PNGs</span></div>
   </div>
-  <div class="preview-strip"><div class="preview"><img src="/21-gastroenterology/diseases/21.1.01-acute-abdominal-pain-and-peritonism-red-flags.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/21-gastroenterology/diseases/21.2.01-biopsy-strategy-at-upper-gi-endoscopy.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/21-gastroenterology/diseases/21.3.01-achalasia.png" alt="preview" loading="lazy"></div><div class="preview"><img src="/21-gastroenterology/diseases/21.4.01-acute-gastritis-and-erosive-gastropathy.png" alt="preview" loading="lazy"></div></div>
-  <div class="ch-stats" style="border-top: none; padding-top: 0; margin-top: 8px;">
-    <a href="/21-gastroenterology/" style="color:var(--accent); font-size:13px; font-weight:500;">Browse Topics →</a>
-    <a href="https://app.notion.com/p/SeaHub/Chapter-21-Gastroenterology-bbfd97790eca482eaed8d47428a642b2" target="_blank" onclick="event.stopPropagation()" style="color:var(--text-dim); font-size:13px; margin-left:12px;">Notion ↗</a>
+  <div class="ch-links">
+    <a href="/22-gastroenterology/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-22-Gastroenterology-bbfd97790eca482eaed8d47428a642b2" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #f43f5e" onclick="location.href='/10-acute-medicine/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 10</span>
+  <h2>Acute Medicine</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">1</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">43</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/10-acute-medicine/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-10-Acute-medicine-and-critical-illness" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #84cc16" onclick="location.href='/11-poisoning/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 11</span>
+  <h2>Poisoning</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">1</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">37</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/11-poisoning/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-11-Poisoning" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #22c55e" onclick="location.href='/12-envenomation/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 12</span>
+  <h2>Envenomation</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">1</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">13</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/12-envenomation/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-12-Envenomation" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #0d9488" onclick="location.href='/13-austere-medicine/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 13</span>
+  <h2>Austere Medicine</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">1</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">9</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/13-austere-medicine/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-13-Medicine-in-austere-environments" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #0891b2" onclick="location.href='/14-infectious-disease/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 14</span>
+  <h2>Infectious Disease</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">1</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">54</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/14-infectious-disease/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-14-Infectious-disease" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
+  </div>
+</article>
+
+<article class="chapter-card" style="--accent-color: #db2777" onclick="location.href='/15-sexually-transmitted-infections/'" role="button" tabindex="0">
+  <span class="ch-num">Ch 15</span>
+  <h2>Sexually Transmitted Infections</h2>
+  <div class="ch-stats">
+    <div class="cs"><span class="num">3</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">26</span><span class="label">Topics</span></div>
+  </div>
+  <div class="ch-links">
+    <a href="/15-sexually-transmitted-infections/" class="ch-link-primary">Browse →</a>
+    <a href="https://app.notion.com/p/SeaHub/Chapter-15-Sexually-transmitted-infections" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
   </div>
 </article>
 </div></main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-18 18:10 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 05:03 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside

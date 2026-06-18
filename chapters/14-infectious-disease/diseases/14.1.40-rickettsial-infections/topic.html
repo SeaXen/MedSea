@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rickettsial Infections — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Rickettsial Infections</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify <b>Rickettsial Diseases</b>: <b>Spotted Fever Group</b> (RMSF, Mediterranean Spotted Fever, African Tick Typhus) vs <b>Typhus Group</b> (Epidemic, Murine) vs <b>Scrub Typhus</b> (Orientia tsutsugamushi)</li><li>[ ] Recognise <b>Clinical Presentation</b>: Fever, Headache, Rash, <b>Eschar (Tache Noire)</b> — Pathognomonic for Spotted Fever/Scrub Typhus</li><li>[ ] Diagnose: <b>IFA</b> (Gold Standard), <b>PCR</b> (Early), <b>Weil-Felix</b> (Historical/Low Sensitivity), <b>PCR/Immunohistochemistry</b> (Tissue)</li><li>[ ] Manage: <b>Doxycycline 100mg BD PO</b> (1st Line All Rickettsial), <b>Chloramphenicol</b> (Pregnancy/Children), <b>Ceftriaxone</b> (CNS)</li><li>[ ] Recognise <b>Complications</b>: Vasculitis, Encephalitis, Renal Failure, ARDS, Multi-Organ Failure</li><li>[ ] Distinguish <b>Spotted Fever</b> (Eschar + Maculopapular Rash) vs <b>Typhus</b> (No Eschar, Central Rash) vs <b>Scrub Typhus</b> (Eschar + Lymphadenopathy)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Classification & Key Species</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Group</th><th>Representative Species</th><th>Disease</th><th>Vector</th><th>Geography</th></tr><tr><td>-------</td><td>----------------------</td><td>---------</td><td>--------</td><td>-----------</td></tr><tr><td>**Spotted Fever Group (SFG)**</td><td>*R. rickettsii*</td><td>**Rocky Mountain Spotted Fever (RMSF)**</td><td>*Dermacentor* Tick</td><td>Americas (USA, Mexico, Brazil)</td></tr><tr><td></td><td>*R. conorii*</td><td>**Mediterranean Spotted Fever (MSF)**</td><td>*Rhipicephalus* Tick</td><td>Mediterranean, Africa, India</td></tr><tr><td></td><td>*R. africae*</td><td>**African Tick Bite Fever (ATBF)**</td><td>*Amblyomma* Tick</td><td>Sub-Saharan Africa</td></tr><tr><td></td><td>*R. japonica*</td><td>**Japanese Spotted Fever**</td><td>*Haemaphysalis* Tick</td><td>Japan</td></tr><tr><td></td><td>*R. honei*</td><td>**Flinders Island Spotted Fever**</td><td>*Bothriocroton* Tick</td><td>Australia</td></tr><tr><td>**Typhus Group**</td><td>*R. prowazekii*</td><td>**Epidemic Typhus** (Louse-Borne)</td><td>*Pediculus humanus* (Body Louse)</td><td>Crowded/Displaced Populations, Cold Climate</td></tr><tr><td></td><td>*R. typhi*</td><td>**Murine (Endemic) Typhus** (Flea-Borne)</td><td>*Xenopsylla* Flea (Rat)</td><td>Worldwide (Tropical/Subtropical)</td></tr><tr><td>**Scrub Typhus Group**</td><td>*Orientia tsutsugamushi*</td><td>**Scrub Typhus** (Tsutsugamushi Disease)</td><td>*Leptotrombidium* Mite (Chigger)</td><td>**Asia-Pacific** (Tsutsugamushi Triangle)</td></tr><tr><td>**Other**</td><td>*Anaplasma phagocytophilum*</td><td>**Human Granulocytic Anaplasmosis (HGA)**</td><td>*Ixodes* Tick</td><td>USA, Europe, Asia</td></tr><tr><td></td><td>*Ehrlichia chaffeensis*</td><td>**Human Monocytic Ehrlichiosis (HME)**</td><td>*Amblyomma* Tick</td><td>USA (SE/South-Central)</td></tr><tr><td></td><td>*Ehrlichia ewingii*</td><td>**E. ewingii Infection**</td><td>*Amblyomma* Tick</td><td>USA (SE)</td></tr></table>
+<div class="callout">[!tip] <b>Key Differentiator: Eschar (Tache Noire)</b> = <b>Present in Spotted Fever Group &amp; Scrub Typhus</b>; <b>Absent in Typhus Group</b> (Epidemic/Murine).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Clinical Syndromes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Spotted Fever Group (SFG)</div>
+<table class="ctable"><tr><th>Disease</th><th>Vector</th><th>Geography</th><th>Key Features</th></tr><tr><td>---------</td><td>--------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Rocky Mountain Spotted Fever (RMSF)**</td><td>*Dermacentor* Tick (Dog Tick, Wood Tick)</td><td>**USA (NC, OK, AR, TN, MO, AR)**, Mexico, Brazil, Canada</td><td>**High Fever, Headache, Myalgia**, **Centrifugal Rash** (Wrists/Ankles → Centripetal), **Palmoplantar Involvement**, **NO Eschar** (Usually), **High Mortality if Untreated**</td></tr><tr><td>**Mediterranean Spotted Fever (MSF)**</td><td>*Rhipicephalus sanguineus* (Brown Dog Tick)</td><td>Mediterranean, Africa, India, Black Sea</td><td>**Eschar (Tache Noire) @ Bite Site**, **Maculopapular Rash**, **Fever, Headache**, **Benign Course** (Usually)</td></tr><tr><td>**African Tick Bite Fever (ATBF)**</td><td>*Amblyocroton* Tick</td><td>Sub-Saharan Africa, Caribbean</td><td>**Multiple Eschars**, **Regional Lymphadenopathy**, **Mild Fever**, **Self-Limited**</td></tr></table>
+<div class="sub-h">Typhus Group</div>
+<table class="ctable"><tr><th>Disease</th><th>Vector</th><th>Geography</th><th>Key Features</th></tr><tr><td>---------</td><td>--------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Epidemic Typhus**</td><td>Human Body Louse (*Pediculus humanus corporis*)</td><td>**Crowded/Displaced Populations**, Cold Climate, War, Famine</td><td>**High Fever, Headache, Rash (Centripetal → Trunk → Extremities)**, **NO Eschar**, **Neurological (Confusion, Delirium)**, **High Mortality if Untreated**</td></tr><tr><td>**Murine (Endemic) Typhus**</td><td>Rat Flea (*Xenopsylla cheopis*)</td><td>Worldwide (Tropical/Subtropical — Port Cities)</td><td>**Fever, Headache, Rash (Trunk → Extremities)**, **NO Eschar**, Milder than Epidemic</td></tr></table>
+<div class="sub-h">Scrub Typhus</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Agent**</td><td>*Orientia tsutsugamushi* (Mite/Chigger — *Leptotrombidium*)</td></tr><tr><td>**Geography**</td><td>**Tsutsugamushi Triangle** (Asia-Pacific: Japan, China, Korea, SE Asia, India, Pakistan, N. Australia)</td></tr><tr><td>**Vector**</td><td>**Chigger (Larval Mite)** — Bite in **Sweaty Areas** (Axilla, Groin, Belt Line)</td></tr><tr><td>**Key Feature**</td><td>**Eschar** at Bite Site (Painless, 5-10mm, Necrotic Centre, Black Crust) + **Regional Lymphadenopathy**</td></tr><tr><td>**Clinical**</td><td>Fever, Headache, Maculopapular Rash (Centrifugal), **Lymphadenopathy (Generalised)**, **Hepatosplenomegaly**, **Interstitial Pneumonitis**, **Meningoencephalitis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🔬 Diagnostic Workup</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Fever + Rash + Exposure History</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Eschar Present?**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Spotted Fever Group / Scrub Typhus**</div>
+<div class="fc-node" data-id="D">**Typhus Group / Other**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">**Geography + Vector**</div>
+<div class="fc-node" data-id="I">**Typhus Group**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">**Scrub Typhus** (Eschar + Lymphadenopathy)</div>
+<div class="fc-node" data-id="G">**MSF / ATBF**</div>
+<div class="fc-node" data-id="H">**RMSF**</div>
+<div class="fc-node" data-id="J">**Epidemic Typhus**</div>
+<div class="fc-node" data-id="K">**Murine Typhus**</div>
+</div>
+</div>
+<div class="sub-h">Key Investigations</div>
+<table class="ctable"><tr><th>Test</th><th>Role</th><th>Timing</th><th>Sensitivity/Specificity</th></tr><tr><td>------</td><td>------</td><td>--------</td><td>------------------------</td></tr><tr><td>**IFA (Immunofluorescence Assay)**</td><td>**Gold Standard** (IgG/IgM)</td><td>**Convalescent (Day 10-14)**; **Paired Sera 2-4w Apart**</td><td>**High Sens/Spec**</td></tr><tr><td>**PCR**</td><td>**Early Diagnosis** (Blood/ESCHAR Swab)</td><td>**Acute Phase (Day 1-10)**</td><td>High Sens/Spec (ESCHAR > Blood)</td></tr><tr><td>**Weil-Felix Test**</td><td>**Historical** (OX19, OX2, OXK)</td><td>**Week 2**</td><td>**Low Sens/Spec** (OBsolete)</td></tr><tr><td>**Immunohistochemistry**</td><td>**Tissue Biopsy** (Eschar/Skin)</td><td>Any Time</td><td>High Specificity</td></tr><tr><td>**Culture**</td><td>Reference Only</td><td>Weeks</td><td>Low Sensitivity, Biosafety Level 3</td></tr></table>
+<div class="sub-h">Weil-Felix Test (Historical/Limited Use)</div>
+<table class="ctable"><tr><th>Antigen</th><th>Reactivity</th><th>Disease</th></tr><tr><td>---------</td><td>------------</td><td>---------</td></tr><tr><td>**OX19**</td><td>Positive</td><td>**Epidemic/Murine Typhus**, **Spotted Fever (RMSF, MSF)**</td></tr><tr><td>**OX2**</td><td>Positive</td><td>**Spotted Fever (RMSF, MSF)**</td></tr><tr><td>**OXK**</td><td>Positive</td><td>**Scrub Typhus**</td></tr></table>
+<div class="callout">[!warning] <b>Weil-Felix = Obsolete, Low Sensitivity/Specificity</b>. <b>Use IFA/PCR</b>. Kept for Resource-Limited Settings.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">💊 Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Antibiotic Therapy</div>
+<table class="ctable"><tr><th>Disease / Severity</th><th>1st Line</th><th>Alternative (Pregnancy/Children)</th><th>Duration</th></tr><tr><td>--------------------</td><td>----------</td><td>----------------------------------</td><td>----------</td></tr><tr><td>**All Rickettsial (Spotted Fever, Typhus, Scrub Typhus)**</td><td>**Doxycycline 100mg PO BD**</td><td>**Chloramphenicol 500mg QID** (Pregnancy/Children <8y)</td><td>**7-14 Days** (Until Afebrile 48-72h)</td></tr><tr><td>**Severe/RMSF/Scrub Typhus with Complications**</td><td>**Doxycycline 100mg IV/PO BD** + **Chloramphenicol** (If CNS)</td><td>**Chloramphenicol 500mg IV QID**</td><td>**7-14 Days**</td></tr><tr><td>**Epidemic Typhus (Severe)**</td><td>**Doxycycline 200mg IV/PO Day 1, then 100mg BD**</td><td>**Chloramphenicol 500mg IV QID**</td><td>**10-14 Days**</td></tr><tr><td>**Anaplasmosis / Ehrlichiosis**</td><td>**Doxycycline 100mg BD PO/IV**</td><td>**Rifampin 600mg BD** (Pregnancy)</td><td>**7-14 Days**</td></tr></table>
+<div class="callout">[!warning] <b>Doxycycline = 1st Line for ALL Rickettsial Diseases</b>. <b>Chloramphenicol = Pregnancy/Children &lt;8y</b> (Bone Marrow Toxicity Risk). <b>Fluoroquinolones NOT Reliable</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🩺 Clinical Syndromes & Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Key Features</th><th>Complications</th></tr><tr><td>----------</td><td>--------------</td><td>-------------</td></tr><tr><td>**RMSF**</td><td>Fever, Headache, Myalgia, **Centripetal Rash** (Wrists/Ankles → Trunk → Palms/Soles), **No Eschar** (Usually)</td><td>**Vasculitis → Encephalitis, Renal Failure, ARDS, DIC, Myocarditis**</td></tr><tr><td>**MSF**</td><td>**Eschar (Tache Noire)**, Maculopapular Rash, Fever, Headache</td><td>**Usually Self-Limited**, Rare Severe</td></tr><tr><td>**ATBF**</td><td>**Multiple Eschars**, Regional Lymphadenopathy, Mild</td><td>**Generally Benign**</td></tr><tr><td>**Epidemic Typhus**</td><td>High Fever, Headache, **Central Rash (Trunk→Extremities)**, **NO ESCHAR**, Neurological</td><td>**Gangrene, Myocarditis, Renal Failure, Encephalitis**</td></tr><tr><td>**Murine Typhus**</td><td>Fever, Headache, Rash (Trunk→Extremities), **NO ESCHAR**</td><td>**Milder**, Rare Complications</td></tr><tr><td>**Scrub Typhus**</td><td>**Eschar + Lymphadenopathy**, Fever, Rash, Cough, Hepatosplenomegaly</td><td>**Interstitial Pneumonitis, Meningoencephalitis, ARDS, Myocarditis, ARF**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🔬 Laboratory Findings</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Typical Findings</th></tr><tr><td>------</td><td>-----------------</td></tr><tr><td>**CBC**</td><td>**Thrombocytopenia** (Common), **Leukopenia/Leukocytosis**, **Anaemia**</td></tr><tr><td>**LFT**</td><td>**↑ AST/ALT** (Mild-Moderate), **↑ Bilirubin** (Mild)</td></tr><tr><td>**Renal**</td><td>**↑ Creatinine** (Renal Impairment), **Proteinuria**</td></tr><tr><td>**Coagulation**</td><td>**↑ PT/APTT**, **↓ Fibrinogen**, **↑ D-dimer** (DIC in Severe)</td></tr><tr><td>**CSF**</td><td>**Lymphocytic Pleocytosis**, ↑ Protein, Normal Glucose (Meningitis)</td></tr><tr><td>**Hyponatraemia**</td><td>**SIADH** (Common in Scrub Typhus, RMSF)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">💊 Treatment Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**All Rickettsial (Outpatient/Mild)**</td><td>**Doxycycline 100mg PO BD × 7-14 Days** (Until Afebrile 48h + Clinical Improvement)</td></tr><tr><td>**Severe / Hospitalised**</td><td>**Doxycycline 100mg IV/PO BD** + **Supportive Care**; **Chloramphenicol if Pregnant/Child**</td></tr><tr><td>**CNS Involvement**</td><td>**Doxycycline IV/PO** (Good CNS Penetration) + **Ceftriaxone** (If Meningitis Suspected)</td></tr><tr><td>**Pregnancy / Children <8y**</td><td>**Chloramphenicol 500mg QID PO/IV** (Alternative: Azithromycin — Limited Data)</td></tr></table>
+<div class="callout">[!warning] <b>Doxycycline = 1st Line for ALL</b>. <b>Chloramphenicol = Pregnancy/Children &lt;8y</b> (Grey Baby Syndrome Risk). <b>Fluoroquinolones NOT Recommended</b> (Variable Efficacy).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🔄 Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Differentiating Features</th></tr><tr><td>---------</td><td>--------------------------</td></tr><tr><td>**RMSF vs Meningococcemia**</td><td>**RMSF: Rash Peripheral → Central, No Meningismus Initially**; **Meningococcemia: Petechial/Purpuric, Rapid, Meningismus**</td></tr><tr><td>**RMSF vs Dengue**</td><td>**RMSF: Rash Peripheral→Central, No Thrombocytopenia Initially**; **Dengue: Thrombocytopenia, Plasma Leakage, NS1+**</td></tr><tr><td>**Scrub Typhus vs Typhoid**</td><td>**Scrub: Eschar + Lymphadenopathy + Doxycycline**; **Typhoid: Relative Bradycardia, Blood Culture+, Ceftriaxone**</td></tr><tr><td>**Epidemic Typhus vs Murine Typhus**</td><td>**Epidemic = Louse, Crowded, Severe, Neurological**; **Murine = Flea, Rat, Milder**</td></tr><tr><td>**Scrub Typhus vs Leptospirosis**</td><td>**Scrub: Eschar + Lymphadenopathy**; **Lepto: Conjunctival Suffusion, Calf Myalgia, Renal Failure, Pulm Haemorrhage**</td></tr><tr><td>**Rickettsial vs Leptospirosis**</td><td>**Rickettsial: Eschar (SFG/Scrub), No Conjunctival Suffusion**; **Lepto: Conjunctival Suffusion, Calf Myalgia, Pulm Haemorrhage**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Unifying Treatment**</td><td>**Doxycycline 100mg BD PO/IV = 1st Line for ALL Rickettsial Diseases**</td></tr><tr><td>**Chloramphenicol**</td><td>**Pregnancy / Children <8y** (Bone Marrow Toxicity)</td></tr><tr><td>**Eschar (Tache Noire)**</td><td>**Present in Spotted Fever Group + Scrub Typhus**; **Absent in Typhus Group**</td></tr><tr><td>**RMSF**</td><td>**No Eschar**, **Centrifugal Rash (Wrists/Ankles→Trunk)**, **Palmoplantar Involvement**, **High Mortality if Delayed**</td></tr><tr><td>**Mediterranean Spotted Fever**</td><td>**Eschar + Maculopapular Rash + Fever**, *R. conorii*, Mediterranean</td></tr><tr><td>**Scrub Typhus**</td><td>**Eschar + Lymphadenopathy + Pneumonitis**, *Orientia tsutsugamushi*, Asia-Pacific</td></tr><tr><td>**Epidemic Typhus**</td><td>**Louse-Borne**, **Crowded/Displaced**, **Central Rash**, **NO ESCHAR**</td></tr><tr><td>**Murine Typhus**</td><td>**Flea-Borne**, **Rat**, **No Eschar**, Milder</td></tr><tr><td>**Doxycycline**</td><td>**100mg BD PO/IV** — **1st Line ALL Rickettsial**</td></tr><tr><td>**Chloramphenicol**</td><td>**Pregnancy / Children <8y** — Alternative</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the unifying treatment for all Rickettsial infections?</b></li></ol>
+<ul><li><b>Doxycycline 100mg BD PO/IV</b> — 1st Line for ALL Rickettsial diseases.</li></ul>
+<ol><li><b>How do you distinguish Spotted Fever Group from Typhus Group clinically?</b></li></ol>
+<ul><li><b>Spotted Fever Group = Eschar (Tache Noire) Present</b>; <b>Typhus Group = No Eschar</b>.</li></ul>
+<ol><li><b>What is the classic triad of Rocky Mountain Spotted Fever?</b></li></ol>
+<ul><li><b>Fever, Headache, Rash</b> (Centrifugal: Wrists/Ankles → Trunk → Palms/Soles); <b>NO ESCHAR</b> typically.</li></ul>
+<ol><li><b>What is the characteristic feature of Scrub Typhus?</b></li></ol>
+<ul><li><b>Eschar (Tache Noire) at Bite Site + Generalised Lymphadenopathy + Interstitial Pneumonitis</b>.</li></ul>
+<ol><li><b>How do you differentiate Mediterranean Spotted Fever from RMSF?</b></li></ol>
+<ul><li><b>MSF: Eschar Present (Tache Noire), Benign Course, Mediterranean</b>; <b>RMSF: No Eschar Usually, Severe, Americas</b>.</li></ul>
+<ol><li><b>What is the treatment for a pregnant woman with Scrub Typhus?</b></li></ol>
+<ul><li><b>Chloramphenicol 500mg QID PO/IV</b> (Doxycycline Contraindicated), <b>Azithromycin Alternative (Limited Data)</b>.</li></ul>
+<ol><li><b>What is the Weil-Felix test and its limitations?</b></li></ol>
+<ul><li><b>Agglutination Test</b> using <i>Proteus</i> Antigens (OX19, OX2, OXK); <b>Low Sensitivity/Specificity</b> (Obsolete); <b>Used Only in Resource-Limited Settings</b>.</li></ul>
+<ol><li><b>How do you diagnose Rickettsial infection?</b></li></ol>
+<ul><li><b>IFA (Gold Standard)</b>: IgG/IgM Seroconversion (Paired Sera 2-4 Weeks); <b>PCR</b> (Blood/Eschar Swab, Early); <b>Immunohistochemistry</b> (Tissue Biopsy).</li></ul>
+<ol><li><b>What is the drug of choice for all Rickettsial infections?</b></li></ol>
+<ul><li><b>Doxycycline 100mg PO/IV BD</b> (7-14 Days until Afebrile 48h).</li></ul>
+<ol><li><b>What is the significance of an eschar in a febrile patient?</b></li></ol>
+<ul><li><b>Pathognomonic for Spotted Fever Group Rickettsiosis or Scrub Typhus</b>; <b>Absent in Typhus Group</b>.</li></ul>
+<ol><li><b>How do you manage Scrub Typhus with pneumonitis?</b></li></ol>
+<ul><li><b>Doxycycline 100mg BD IV/PO + Supportive</b> (Oxygen, Ventilation if Severe); <b>Chloramphenicol if Pregnancy</b>.</li></ul>
+<ol><li><b>Differentiate Epidemic Typhus from Murine Typhus.</b></li></ol>
+<ul><li><b>Epidemic: Louse-Borne, Crowded/Displaced, Severe, Neurological Involvement, NO ESCHAR</b>; <b>Murine: Flea-Borne (Rat), Mild, NO ESCHAR, Worldwide Ports</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Spotted Fever vs Typhus Group**</td><td>**Spotted Fever = Eschar Present**; **Typhus Group = No Eschar**</td></tr><tr><td>**RMSF vs MSF**</td><td>**RMSF: Americas, No Eschar, Severe**; **MSF: Mediterranean, Eschar Present, Benign**</td></tr><tr><td>**Scrub Typhus vs Murine Typhus**</td><td>**Scrub: Eschar + Lymphadenopathy, Mite Vector**; **Murine: No Eschar, Flea Vector, No Lymphadenopathy**</td></tr><tr><td>**Epidemic vs Murine Typhus**</td><td>**Epidemic: Louse, Severe, Neurological, Crowded**; **Murine: Flea, Milder, Worldwide Ports**</td></tr><tr><td>**Weil-Felix vs IFA**</td><td>**Weil-Felix = Obsolete, Low Sensitivity**; **IFA = Gold Standard**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Eschar = Spotted Fever / Scrub Typhus"**</td><td>Eschar = SFG/Scrub</td></tr><tr><td>**"No Eschar = Typhus Group"**</td><td>Typhus = No Eschar</td></tr><tr><td>**"Doxycycline = Universal for Rickettsial"**</td><td>Universal Treatment</td></tr><tr><td>**"RMSF = No Eschar, Severe, Palmoplantar Rash"**</td><td>RMSF Features</td></tr><tr><td>**"Scrub = Eschar + Lymphadenopathy + Pneumonitis"**</td><td>Scrub Typhus</td></tr><tr><td>**"Chloramphenicol = Pregnancy / Kids"**</td><td>Pregnancy Alternative</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Rickettsial Infections))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Spotted Fever Group (SFG)</div>
+<div class="mm-node mm-l3">– RMSF: R. rickettsii, Dermacentor, USA, No Eschar, Severe</div>
+<div class="mm-node mm-l3">– MSF: R. conorii, Rhipicephalus, Mediterranean, Eschar (Tache Noire)</div>
+<div class="mm-node mm-l3">– ATBF: R. africae, Amblyomma, Africa, Multiple Eschars, Mild</div>
+<div class="mm-node mm-l2">Typhus Group</div>
+<div class="mm-node mm-l3">– Epidemic: R. prowazekii, Louse, Crowded, NO Eschar, Severe</div>
+<div class="mm-node mm-l3">– Murine: R. typhi, Flea (Rat), Worldwide, NO Eschar, Mild</div>
+<div class="mm-node mm-l2">Scrub Typhus</div>
+<div class="mm-node mm-l3">– Orientia tsutsugamushi</div>
+<div class="mm-node mm-l3">– Leptotrombidium Mite</div>
+<div class="mm-node mm-l3">– Asia-Pacific (Tsutsugamushi Triangle)</div>
+<div class="mm-node mm-l3">– Eschar + Lymphadenopathy + Pneumonitis</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– IFA (Gold Standard, Paired Sera)</div>
+<div class="mm-node mm-l3">– PCR (Blood/Eschar)</div>
+<div class="mm-node mm-l3">– Weil-Felix (Obsolete)</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Doxycycline 100mg BD (All)</div>
+<div class="mm-node mm-l3">– Chloramphenicol (Pregnancy/Children)</div>
+<div class="mm-node mm-l3">– Ceftriaxone (CNS)</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– Vasculitis, Encephalitis, Renal Failure, ARDS, DIC</div>
+<div class="mm-node mm-l3">– Scrub: Pneumonitis, Meningoencephalitis</div>
+<div class="mm-node mm-l3">– RMSF: High Mortality if Delayed Doxy</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**RICKETTSIAL INFECTIONS – FCPS/MRCP REVISION CARD**</th></tr><tr><td>-------------------------------------------------------</td></tr><tr><td>**Unifying Rx**: **Doxycycline 100mg BD PO/IV** (All Rickettsial)</td></tr><tr><td>**Pregnancy/Children <8y**: **Chloramphenicol 500mg QID**</td></tr><tr><td>**Spotted Fever Group (SFG)**: **Eschar (Tache Noire) Present**</td></tr><tr><td>- RMSF: R. rickettsii, **No Eschar**, Centrifugal Rash, Palmoplantar, Severe</td></tr><tr><td>- MSF: R. conorii, **Eschar (Tache Noire)**, Mediterranean, Benign</td></tr><tr><td>- ATBF: R. africae, Multiple Eschars, Lymphadenopathy, Mild</td></tr><tr><td>**Typhus Group**: **NO ESCHAR**</td></tr><tr><td>- Epidemic: R. prowazekii, Louse, Crowded, Severe, CNS</td></tr><tr><td>- Murine: R. typhi, Flea (Rat), Mild, Worldwide</td></tr><tr><td>**Scrub Typhus**: **Orientia tsutsugamushi**, Mite, **Eschar + Lymphadenopathy + Pneumonitis**, Asia-Pacific</td></tr><tr><td>**Diagnosis**: **IFA (Gold Standard, Paired Sera)**, PCR (Eschar/Blood), Weil-Felix (Obsolete)</td></tr><tr><td>**Treatment**: **Doxycycline 100mg BD ×7-14d**; Pregnancy/Child: **Chloramphenicol**</td></tr><tr><td>**Complications**: Vasculitis, Encephalitis, Renal Failure, ARDS, DIC, Myocarditis</td></tr><tr><td>**Weil-Felix**: OX19/OX2 = Typhus/SFG; OXK = Scrub Typhus (Obsolete)</td></tr><tr><td>**Key Differentiator**: **Eschar = SFG/Scrub; No Eschar = Typhus**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Doxycycline universal 1st line, Eschar = Spotted Fever/Scrub vs No Eschar = Typhus, RMSF vs MSF vs ATBF, Scrub typhus eschar/lymphadenopathy/pneumonitis, IFA gold standard, Weil-Felix obsolete, Doxycycline dosing, Pregnancy = Chloramphenicol</td></tr><tr><td>**Should Know**</td><td>Specific vector for each (Dermacentor, Rhipicephalus, Amblyomma, Ixodes, Louse, Flea, Mite), Geographic distribution, RMSF palmoplantar rash, Scrub typhus pneumonitis, Anaplasma/Ehrlichia (HGA/HME) differentiation, IFA methodology, Weil-Felix antigen reactivity patterns</td></tr><tr><td>**Nice to Know**</td><td>Rickettsial genomics, Vacuole escape mechanism, Actin-based motility, Host immune evasion, Vaccine development (historical failures), Bioterrorism potential (R. prowazekii), Climate change impact on vector distribution, Co-infections (Babesia, Borrelia), Antimicrobial resistance in Rickettsia</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Classification & Vector</td><td></td><td></td></tr><tr><td>Clinical Syndromes (RMSF, MSF, Typhus, Scrub)</td><td></td><td></td></tr><tr><td>Eschar Significance</td><td></td><td></td></tr><tr><td>Diagnosis (IFA, PCR, Weil-Felix)</td><td></td><td></td></tr><tr><td>Treatment (Doxycycline, Chloramphenicol)</td><td></td><td></td></tr><tr><td>Complications</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Lyme Disease]]</li><li><b>Next</b>: [[Chlamydial Pneumonia / Psittacosis]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Rickettsial Infections · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

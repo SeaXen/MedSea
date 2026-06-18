@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>1. Fundamentals of STIs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">1. Fundamentals of STIs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Understand <b>global &amp; regional STI epidemiology</b> and <b>high-risk populations</b></li><li>[ ] Apply <b>syndromic management</b> (WHO algorithms for urethral/vaginal discharge, GUD, PID)</li><li>[ ] Perform <b>sexual history taking</b> and <b>physical examination</b> for STIs</li><li>[ ] Select appropriate <b>diagnostic tests</b> (NAAT, culture, serology, microscopy, POC)</li><li>[ ] Implement <b>prevention strategies</b> (condoms, vaccination, PrEP, PEP, partner notification)</li><li>[ ] Manage <b>special populations</b> (pregnancy, neonates, immunocompromised, MSM)</li><li>[ ] Answer viva: "STI epidemiology" and "Syndromic management flow" and "Partner notification"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: STI Public Health Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">STI Control</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Prevention</div>
+<div class="fc-node" data-id="C">Case Detection</div>
+<div class="fc-node" data-id="D">Treatment &amp; Cure</div>
+<div class="fc-node" data-id="E">Partner Notification</div>
+<div class="fc-node" data-id="F">Surveillance &amp; AMR Monitoring</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B1">Condoms</div>
+<div class="fc-node" data-id="B2">Vaccination (HPV, HepB, Mpox)</div>
+<div class="fc-node" data-id="B3">PrEP/PEP for HIV</div>
+<div class="fc-node" data-id="B4">Education/Behaviour Change</div>
+<div class="fc-node" data-id="C1">Syndromic Management</div>
+<div class="fc-node" data-id="C2">Screening (High-Risk)</div>
+<div class="fc-node" data-id="C3">Diagnostic Tests (NAAT, Culture, Serology)</div>
+<div class="fc-node" data-id="D1">Antimicrobials (Guidelines)</div>
+<div class="fc-node" data-id="D2">Resistance Management</div>
+<div class="fc-node" data-id="D3">Test of Cure</div>
+<div class="fc-node" data-id="E1">EPT / Provider Referral</div>
+<div class="fc-node" data-id="E2">Contact Tracing</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ STI Epidemiology &amp; Public Health Impact</div>
+<div class="sub-h">Global Burden (WHO 2023 Estimates)</div>
+<table class="ctable"><tr><th>STI</th><th>Annual New Cases (Global)</th><th>Key Populations</th></tr><tr><td>-----</td><td>---------------------------</td><td>-----------------</td></tr><tr><td>**Chlamydia (CT)**</td><td>**129 Million**</td><td>Adolescents, Young Adults (15-24y)</td></tr><tr><td>**Gonorrhoea (GC)**</td><td>**82 Million**</td><td>MSM, Young Adults, Sex Workers</td></tr><tr><td>**Syphilis**</td><td>**7.1 Million**</td><td>MSM, Pregnant Women, Prisoners</td></tr><tr><td>**Trichomoniasis**</td><td>**156 Million**</td><td>Women (Symptomatic), Men (Asymptomatic)</td></tr><tr><td>**HSV-2**</td><td>**491 Million** (HSV-2 Seroprevalence)</td><td>General Population, HSV-1 Rising Genital</td></tr><tr><td>**HPV**</td><td>**290 Million Women** (Cervical HPV)</td><td>Women (Cervical Cancer Risk)</td></tr><tr><td>**HSV-2**</td><td>491M (13% aged 15-49)</td><td>Women > Men, HSV-1 Increasing Genital</td></tr><tr><td>**HPV**</td><td>290M Women (Cervical HPV)</td><td>Cervical Cancer (340k Deaths/yr)</td></tr><tr><td>**Hepatitis B**</td><td>296M Chronic (Global)</td><td>Vertical Transmission, IDU, Sexual</td></tr><tr><td>**Hepatitis C**</td><td>58M Chronic</td><td>IDU, Unsafe Medical, Sexual</td></tr><tr><td>**HIV**</td><td>39M PLHIV (1.3M New 2022)</td><td>Key Pops (MSM, SW, PWID, Transgender)</td></tr></table>
+<div class="sub-h">High-Risk Populations (Targeted Screening)</div>
+<table class="ctable"><tr><th>Population</th><th>Key Risks</th><th>Recommended Screening</th></tr><tr><td>------------</td><td>-----------</td><td>----------------------</td></tr><tr><td>**MSM**</td><td>HIV, Syphilis, GC, CT, LGV, HPV, Mpox</td><td>**Annual**: HIV, Syphilis, GC/CT (Urethral/Pharyngeal/Rectal)</td></tr><tr><td>**Sex Workers**</td><td>All STIs, HIV, Violence</td><td>**Quarterly**: HIV, Syphilis, GC/CT; **Bi-annual**: HBV/HCV</td></tr><tr><td>**Adolescents/Young Adults (15-24y)**</td><td>High STI Incidence, Asymptomatic</td><td>**Annual**: GC/CT (Urine/Swab); HPV Vaccine</td></tr><tr><td>**Pregnant Women**</td><td>Vertical Transmission Risk</td><td>**Booking**: HIV, Syphilis, HBV, HCV, (GC/CT if Risk)</td></tr><tr><td>**Prisoners**</td><td>High Prevalence (HCV, HIV, STIs)</td><td>**Entry Screening**: HIV, Syphilis, HBV, HCV, STIs</td></tr><tr><td>**Transgender/Non-Binary**</td><td>High HIV/STI Burden, Barriers to Care</td><td>Gender-Affirming Care + STI Screening</td></tr><tr><td>**People Who Inject Drugs (PWID)**</td><td>HIV, HBV, HCV, STIs</td><td>**Annual**: HIV, HBV, HCV, STIs; Harm Reduction</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Clinical Assessment — Sexual History &amp; Examination</div>
+<div class="sub-h">Sexual History (CD4 — Comprehensive)</div>
+<table class="ctable"><tr><th>Domain</th><th>Key Questions</th></tr><tr><td>--------</td><td>---------------</td></tr><tr><td>**P**artners</td><td>Number, Gender(s), New/Concurrent, Anonymous, Overseas, Sex Work</td></tr><tr><td>**P**ractices</td><td>Vaginal, Anal, Oral, Sex Toys, Fisting, Group Sex, Chemsex</td></tr><tr><td>**P**rotection</td><td>Condom Use (Consistent/Correct), PrEP, PEP, Vaccination</td></tr><tr><td>**P**ast STIs</td><td>Previous STIs, HIV, Partner Notification, Treatment History</td></tr></table>
+<div class="callout"><b>Tips</b>: Non-judgmental, Open-ended, Normalize, Confidentiality, Use Patient's Language</div>
+<div class="sub-h">Physical Examination</div>
+<table class="ctable"><tr><th>Site</th><th>Key Findings</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**Genital**</td><td>Ulcers (Painful vs Painless), Warts, Discharge, Erythema, Oedema</td></tr><tr><td>**Inguinal**</td><td>Lymphadenopathy (Inguinal, Femoral), Buboes (Suppurative/Non-suppurative)</td></tr><tr><td>**Pharyngeal**</td><td>Exudate, Erythema, Ulcers, Tonsillar Exudate</td></tr><tr><td>**Rectal**</td><td>Discharge, Ulcers, Warts, Proctitis Signs (Mucus, Blood, Tenesmus)</td></tr><tr><td>**Oral**</td><td>Ulcers, Vesicles, Exudate, Pharyngitis</td></tr><tr><td>**Skin**</td><td>Rash (Syphilitic, HIV, Drug Eruption), Molluscum, Molluscum Contagiosum</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Syndromic Management (WHO Flowcharts)</div>
+<div class="sub-h">Approach: "Treat for the Syndrome, Investigate for the Cause"</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Key Pathogens</th><th>First-Line Empiric Treatment</th><th>Key Investigations</th></tr><tr><td>--------</td><td>---------------</td><td>------------------------------</td><td>-------------------</td></tr><tr><td>**Urethral Discharge (Male)**</td><td>**GC, CT**, MG, TV, HSV</td><td>**Ceftriaxone 500mg IM Stat + Doxycycline 100mg BD × 7d**</td><td>NAAT GC/CT, Gram Stain (GC: Gram -ve Diplococci)</td></tr><tr><td>**Vaginal Discharge (Female)**</td><td>**BV, TV, Candida**, GC, CT</td><td>**BV**: Metronidazole 400mg BD × 7d; **TV**: Metronidazole 2g Stat; **Candida**: Fluconazole 150mg Stat; **GC/CT**: Ceftriaxone + Doxy (as Male)</td><td>Wet Mount (Whiff, Clue Cells, Trichomonads), NAAT GC/CT, pH, Whiff Test</td></tr><tr><td>**Genital Ulcer Disease (GUD)**</td><td>**Syphilis, HSV, Chancroid, LGV, Donovanosis**</td><td>**Syphilis**: Benzathine Penicillin G 2.4MU IM; **HSV**: Acyclovir 400mg TDS × 7-10d; **Chancroid**: Azithro 1g Stat / Ceftriaxone 250mg IM</td><td>Dark Field (Syphilis), HSV PCR, Chancroid Culture, Syphilis Serology</td></tr><tr><td>**Pelvic Inflammatory Disease (PID)**</td><td>**GC, CT, Anaerobes, M. genitalium**</td><td>**Ceftriaxone 500mg IM + Doxy 100mg BD × 14d + Metro 400mg BD × 14d**</td><td>Transvaginal US, NAAT GC/CT/MG, CRP, Laparoscopy (Severe)</td></tr><tr><td>**Epididymo-orchitis**</td><td>**GC, CT, Enteric (Older Men)**</td><td>**Ceftriaxone 500mg IM + Doxy 100mg BD × 10-14d** (Enteric: Ciprofloxacin/Ofloxacin)</td><td>NAAT GC/CT, Urine Culture, Scrotal US</td></tr><tr><td>**Genital Ulcer Disease (GUD)**</td><td>**Syphilis, HSV, Chancroid, LGV, Donovanosis**</td><td>Empiric: Benzathine Penicillin G 2.4MU IM + Acyclovir 400mg TDS × 7d + Azithro 1g Stat</td><td>Syphilis Serology, HSV PCR, Chancroid Culture, HIV Test</td></tr><tr><td>**Proctitis / Proctocolitis**</td><td>**GC, CT, LGV, HSV, Syphilis, Mpox, Shigella**</td><td>**Ceftriaxone 500mg IM + Doxy 100mg BD × 7-14d + Acyclovir 400mg TDS × 7-10d**</td><td>NAAT GC/CT/LGV/HSV/Syphilis, Anoscopy, Sigmoidoscopy</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Always treat for GC + CT empirically</b> unless clear alternative diagnosis. <b>Test of Cure</b> for GC (2w), CT (4w), M. genitalium (4w).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Diagnostic Tests — Selection &amp; Interpretation</div>
+<table class="ctable"><tr><th>Test</th><th>Target</th><th>Sensitivity/Specificity</th><th>Turnaround</th><th>Best Use</th></tr><tr><td>------</td><td>--------</td><td>-------------------------</td><td>------------</td><td>----------</td></tr><tr><td>**NAAT (PCR/TMA/SDA)**</td><td>GC, CT, MG, TV, HSV, HPV</td><td>**High Sens (>95%) & Spec (>98%)**</td><td>1-24h</td><td>**First-Line** (Urine, Swab, Rectal/Pharyngeal)</td></tr><tr><td>**Culture**</td><td>GC, TV, Candida, Herpes</td><td>**Gold Standard** (Viability, AST)</td><td>24-72h</td><td>**AST Required**, Treatment Failure, Legal</td></tr><tr><td>**Serology**</td><td>Syphilis, HIV, HBV, HCV, HSV</td><td>**Screening, Staging, Past Infection**</td><td>Hours-Days</td><td>**Screening, Staging, Past Exposure**</td></tr><tr><td>**Microscopy**</td><td>GC (Gram Stain), TV (Wet Mount), Candida, BV (Whiff, Clue Cells)</td><td>Rapid, Low Cost</td><td>Immediate</td><td>**Bedside**, Resource-Limited</td></tr><tr><td>**POC Tests**</td><td>Syphilis (DPP), HIV, HCV, Syphilis Dual</td><td>Rapid (<30min)</td><td>Minutes</td><td>**Field/Outreach**, Immediate Treatment</td></tr><tr><td>**Microscopy (Gram Stain)**</td><td>GC (Gram -ve Diplococci), Candida (Hyphae), BV (Clue Cells)</td><td>Rapid, Cheap</td><td>Immediate</td><td>Urethral Smear, Vaginal Wet Mount</td></tr><tr><td>**Culture**</td><td>GC, TV, Candida, HSV</td><td>**Gold Standard** (Viability, AST)</td><td>24-72h</td><td>**AST Required**, Treatment Failure, Legal</td></tr><tr><td>**POC NAAT**</td><td>GC, CT, TV, HIV, Syphilis</td><td>Near-Patient, Rapid</td><td>20-90min</td><td>**Clinic/Outreach**, Immediate Treatment</td></tr></table>
+<div class="callout"><b>Key</b>: <b>NAAT = First-Line</b> for GC, CT, MG, TV, HSV, HPV. <b>Culture</b> for AST, Viability, Legal. <b>Serology</b> for Syphilis, HIV, HSV (Past/Current).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Prevention Strategies</div>
+<div class="sub-h">Condom Promotion</div>
+<table class="ctable"><tr><th>Type</th><th>Effectiveness (Typical Use)</th><th>Key Points</th></tr><tr><td>------</td><td>----------------------------</td><td>------------</td></tr><tr><td>**Male Latex Condom**</td><td>**85-98%** (STI/HIV Prevention)</td><td>**Correct Use**: Before Contact, Pinch Tip, Unroll, Hold Base on Withdrawal</td></tr><tr><td>**Female Condom**</td><td>79-95%</td><td>Female-Controlled, Can Insert Hours Before</td></tr><tr><td>**Dental Dam**</td><td>Oral Sex Barrier</td><td>Latex/Polyurethane Sheet</td></tr><tr><td>**PrEP (HIV)**</td><td>**TDF/FTC Daily** (99% Effective), **Cabotegravir LA** (Bimonthly IM)</td><td>High-Risk: MSM, Serodiscordant, Sex Workers</td></tr><tr><td>**PEP (HIV)**</td><td>**TDF/FTC + DTG/RAL** — **Start ≤72h**, Continue 28 Days</td><td>Initiate ASAP Post-Exposure</td></tr><tr><td>**HPV Vaccine**</td><td>**9vHPV** (6,11,16,18,31,33,45,52,58) — **2-Dose (<15y), 3-Dose (≥15y)**</td><td>Cervical/Anal/Oropharyngeal Cancer Prevention</td></tr><tr><td>**Hepatitis B Vaccine**</td><td>**3-Dose** (0, 1, 6 Months) — **All Infants, High-Risk Adults**</td><td>Prevent HBV Sexual Transmission</td></tr><tr><td>**Mpox Vaccine**</td><td>**MVA-BN (JYNNEOS/IMVANEX)** — 2 Doses (4w Apart), High-Risk Groups</td><td>Mpox Prevention</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ Partner Notification &amp; Expedited Partner Therapy (EPT)</div>
+<div class="sub-h">Partner Notification (PN)</div>
+<table class="ctable"><tr><th>Strategy</th><th>Description</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**Patient Referral**</td><td>Index Patient Informs Partners (Preferred for Trust)</td></tr><tr><td>**Provider Referral**</td><td>Health Staff Notifies Partners (Confidential)</td></tr><tr><td>**Contract Referral**</td><td>Patient Agrees to Notify Within Timeframe, Else Provider Does</td></tr></table>
+<div class="sub-h">Expedited Partner Therapy (EPT)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Definition**</td><td>Treating Partner(s) **Without Clinical Assessment** (Prescription/Medication Given to Index Patient)</td></tr><tr><td>**Indications**</td><td>**GC, CT, Trichomonas** (Where Legal/Allowed)</td></tr><tr><td>**Agents**</td><td>**GC**: Ceftriaxone 500mg IM + Azithro 1g PO; **CT**: Doxycycline 100mg BD × 7d; **TV**: Metronidazole 2g Stat</td></tr><tr><td>**Legal/Barriers**</td><td>Varies by Jurisdiction; Liability, Allergy, Compliance, Resistance</td></tr><tr><td>**Effectiveness**</td><td>↓ Reinfection Rates, ↑ Partner Treatment Coverage</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6️⃣ Special Populations</div>
+<div class="sub-h">Pregnancy &amp; STIs</div>
+<table class="ctable"><tr><th>STI</th><th>Risk to Mother/Fetus</th><th>Management</th></tr><tr><td>-----</td><td>----------------------</td><td>------------</td></tr><tr><td>**Syphilis**</td><td>**Congenital Syphilis** (Stillbirth, Hydrops, SN, Bone Deformities)</td><td>**Penicillin G** (Only Effective), Desensitise if Allergic</td></tr><tr><td>**Gonorrhoea**</td><td>Ophthalmia Neonatorum, PID, Preterm Labour</td><td>Ceftriaxone 500mg IM + Azithro 1g (Safe in Pregnancy)</td></tr><tr><td>**Chlamydia**</td><td>Neonatal Pneumonia, Conjunctivitis, Preterm Labour</td><td>**Azithromycin 1g Stat** (Safe), Avoid Doxycycline</td></tr><tr><td>**Gonorrhoea**</td><td>Ophthalmia Neonatorum, PID, Preterm</td><td>Ceftriaxone 500mg IM + Azithro 1g</td></tr><tr><td>**HSV**</td><td>**Neonatal Herpes** (Disseminated, CNS, SEM)</td><td>**Cesarean if Active Lesions at Labour**; Acyclovir Suppressive (36w+)</td></tr><tr><td>**HIV**</td><td>**Vertical Transmission** (MTCT <1% on ART)</td><td>**ART (TDF/FTC/DTG)**, Avoid Breastfeeding (Resource-Dependent), C-Section if VL>1000</td></tr><tr><td>**Hepatitis B**</td><td>**Vertical Transmission 90% (HBeAg+)**</td><td>**HBIG + Hep B Vaccine (Birth Dose)**</td></tr><tr><td>**HCV**</td><td>Vertical Transmission ~5%</td><td>**No PEP**, Monitor Infant, Breastfeeding Safe if No Cracked Nipples</td></tr></table>
+<div class="sub-h">Neonates &amp; Children</div>
+<table class="ctable"><tr><th>Condition</th><th>Presentation</th><th>Management</th></tr><tr><td>---------</td><td>--------------</td><td>------------</td></tr><tr><td>**Ophthalmia Neonatorum**</td><td>**GC** (Day 2-5, Purulent), **CT** (Day 5-14, Mild), **HSV** (Day 7-14, Vesicles)</td><td>**GC**: Ceftriaxone 50mg/kg IM; **CT**: Azithro 20mg/kg/d × 14d; **HSV**: Acyclovir IV 20mg/kg q8h × 14-21d</td></tr><tr><td>**Congenital Syphilis**</td><td>Snuffles, Rash, Osteochondritis, Hepatosplenomegaly, Neurosyphilis</td><td>**Penicillin G IV 50,000U/kg/dose q12h × 10d** OR Procaine Penicillin 50,000U/kg IM Daily × 10d</td></tr><tr><td>**Sexual Abuse (STI in Child)**</td><td>GC, CT, Syphilis, HIV, HSV</td><td>**Mandatory Reporting**, Multidisciplinary (Paeds, Forensic, Social Work)</td></tr></table>
+<div class="sub-h">MSM (Men Who Have Sex with Men)</div>
+<table class="ctable"><tr><th>Risk</th><th>Screening Recommendation</th></tr><tr><td>------</td><td>--------------------------</td></tr><tr><td>**HIV**</td><td>Annual (or 3-6m if High Risk), PrEP Discussion</td></tr><tr><td>**Syphilis**</td><td>**Annual** (or 3-6m If High Risk), RPR/VDRL + TPPA</td></tr><tr><td>**Gonorrhoea/Chlamydia**</td><td>**3-Site Testing** (Urethral, Pharyngeal, Rectal) — **Annual** (3-6m If High Risk)</td></tr><tr><td>**LGV**</td><td>Test if Proctitis/Proctocolitis, Rectal Swab (LGV NAAT)</td></tr><tr><td>**HPV**</td><td>Vaccination (9vHPV) up to Age 26 (Catch-Up to 26), Anal Cancer Screening (High-Risk)</td></tr><tr><td>**Mpox**</td><td>Vaccination (MVA-BN), Risk Reduction (Partner Reduction, Condoms)</td></tr><tr><td>**Hepatitis A/B/C**</td><td>Vaccinate (Hep A/B), Screen Hep C, DAA if HCV+</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6️⃣ Antimicrobial Resistance (AMR) in STIs</div>
+<div class="sub-h">Gonorrhoea Resistance — Global Threat</div>
+<table class="ctable"><tr><th>Antimicrobial</th><th>Resistance Status</th><th>Current Recommendation</th></tr><tr><td>---------------</td><td>-------------------</td><td>------------------------</td></tr><tr><td>**Ciprofloxacin**</td><td>**High Resistance** (>50% Global)</td><td>**Do Not Use** Empirically</td></tr><tr><td>**Azithromycin**</td><td>Rising Resistance</td><td>**Adjunct Only** (Not Monotherapy)</td></tr><tr><td>**Ceftriaxone**</td><td>**Emerging Resistance** (MIC Creep, Ceftriaxone-R)</td><td>**Dual Therapy**: Ceftriaxone 500mg IM + Azithromycin 1g PO</td></tr><tr><td>**Cefixime**</td><td>Declining Susceptibility</td><td>**Not Preferred** for Pharyngeal Gonorrhoea</td></tr><tr><td>**Cefixime + Azithro**</td><td>Alternative if Ceftriaxone Unavailable</td><td>Ceftriaxone Preferred</td></tr><tr><td>**Gentamicin + Azithro**</td><td>Alternative for Ceftriaxone Allergy</td><td>240mg IM + 2g Azithro</td></tr></table>
+<div class="sub-h">AMR Surveillance (WHO GASP)</div>
+<table class="ctable"><tr><th>Component</th><th>Action</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Sentinel Surveillance**</td><td>Sentinel Sites, Representative Sampling</td></tr><tr><td>**AMR Testing**</td><td>Culture + AST (Ceftriaxone, Ciprofloxacin, Azithro, Cefixime)</td></tr><tr><td>**Molecular**</td><td>gyrA/parC (Ciprofloxacin), penA (Ceftriaxone), mtrR (Azithro), penB (Penicillin)</td></tr><tr><td>**Data Sharing**</td><td>WHO GASP, National AMR Surveillance</td></tr></table>
+<div class="sub-h">Other STI AMR</div>
+<table class="ctable"><tr><th>Organism</th><th>Resistance Concern</th><th>Management</th></tr><tr><td>----------</td><td>-------------------</td><td>------------</td></tr><tr><td>**M. genitalium**</td><td>**Macrolide (Azithro) Resistance >50%**, Fluoroquinolone Resistance Rising</td><td>**Resistance-Guided Therapy** (Moxifloxacin 400mg/d × 7-14d if Macrolide-R)</td></tr><tr><td>**Syphilis**</td><td>**No Penicillin Resistance** (Rare), Macrolide Resistance (Azithro)</td><td>Penicillin Remains 1st Line</td></tr><tr><td>**HSV**</td><td>Acyclovir Resistance (Rare, Immunocompromised)</td><td>Foscarnet, Cidofovir</td></tr><tr><td>**HIV**</td><td>**Transmitted Drug Resistance (TDR)** ~10%</td><td>**Baseline Resistance Testing** Before ART</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Epidemiology**</td><td>CT 129M, GC 82M, Syphilis 7.1M, TV 156M, HSV-2 491M, HPV 290M women, HIV 39M</td></tr><tr><td>**High-Risk Groups**</td><td>MSM, Sex Workers, Youth 15-24, Prisoners, PWID, Transgender, Pregnant Women</td></tr><tr><td>**Syndromic Management**</td><td>**Urethral Discharge**: Ceftriaxone 500mg IM + Doxy 100mg BD × 7d; **Vaginal Discharge**: BV/TV/Candida → Metronidazole/Clotrimazole; **GUD**: Syphilis/HSV/Chancroid; **PID**: Ceftriaxone + Doxy + Metro</td></tr><tr><td>**Diagnostics**</td><td>**NAAT = 1st Line** (GC, CT, MG, TV, HSV, HPV); Culture for AST; Serology (Syphilis, HIV, HSV)</td></tr><tr><td>**Prevention**</td><td>Condoms (85-98%), Vaccines (HPV 9v, HepB, Mpox), PrEP (TDF/FTC, CAB-LA), PEP (72h), Vaccines (HPV 9v, Hep B, Mpox)</td></tr><tr><td>**Partner Notification**</td><td>Patient/Provider/Contract Referral; **EPT** for GC/CT/TV (Where Legal)</td></tr><tr><td>**Special Pops**</td><td>Pregnancy (Syphilis→Penicillin, GC→Ceftriaxone, CT→Azi, HSV→C-section if Active); Neonates (Ophthalmia, Congenital Syphilis); MSM (3-Site Testing, PrEP, HPV Vaccine)</td></tr><tr><td>**AMR**</td><td>GC Ceftriaxone Resistance Rising (Dual Therapy: Ceftriaxone + Azithro); MG Macrolide Resistance → Moxifloxacin</td></tr><tr><td>**Syphilis Staging**</td><td>Primary (Chancre), Secondary (Rash), Latent (Early/Late), Tertiary (Gumma, CV, Neuro), Congenital</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>STI Syndromic management — urethral discharge in male?</td><td>**Ceftriaxone 500mg IM Stat + Doxycycline 100mg BD × 7d** (Covers GC + CT); NAAT GC/CT; Partner Notification</td></tr><tr><td>2</td><td>Vaginal discharge syndrome — approach?</td><td>Differentiate: **BV** (Clue Cells, pH>4.5, Whiff+) → Metronidazole; **TV** (Motile Trichomonads, pH>4.5) → Metronidazole 2g Stat; **Candida** (Hyphae, pH<4.5) → Fluconazole 150mg; **GC/CT** → Treat as Male</td></tr><tr><td>3</td><td>Genital Ulcer Disease (GUD) — differential & management?</td><td>**Syphilis** (Painless, Indurated Chancre, +RPR/TPPA) → Benzathine Penicillin G 2.4MU IM; **HSV** (Painful Vesicles/Ulcers, Recurrent) → Acyclovir 400mg TDS × 7-10d; **Chancroid** (Painful, Suppurative Bubo) → Azithro 1g Stat or Ceftriaxone 250mg IM; **LGV** → Doxy 100mg BD × 21d</td></tr><tr><td>4</td><td>Syphilis staging & treatment?</td><td>Primary/Secondary/Early Latent: Benzathine Penicillin G 2.4MU IM Single; Late Latent/Tertiary: 2.4MU Weekly × 3; Neurosyphilis: Penicillin G IV 18-24MU/d × 14d; Congenital: Penicillin G IV 50,000U/kg q12h × 10d</td></tr><tr><td>5</td><td>Gonorrhoea AMR — current treatment?</td><td>**Ceftriaxone 500mg IM + Azithromycin 1g PO** (Dual Therapy); Pharyngeal: Ceftriaxone 1g IM; Ceftriaxone-R: Gentamicin 240mg IM + Azithro 2g</td></tr><tr><td>6</td><td>Chlamydia — diagnosis & treatment?</td><td>**NAAT** (Urine/Swab) 1st Line; **Doxycycline 100mg BD × 7d** (1st Line); **Azithromycin 1g Stat** (Alternative, Pregnancy)</td></tr><tr><td>7</td><td>Syphilis in pregnancy — management?</td><td>**Penicillin G Benzathine** (Only Effective); Stage-Based Dosing; **Desensitise if Allergic**; Congenital Prevention (Treat ≥30d Before Delivery)</td></tr><tr><td>8</td><td>Partner notification — methods & EPT?</td><td>**Patient Referral** (Preferred), **Provider Referral**, **Contract Referral**; **EPT Legal for GC/CT/TV** (Where Permitted) — Deliver Meds to Partner via Index Patient</td></tr><tr><td>9</td><td>Syphilis in pregnancy — management?</td><td>**Penicillin G Benzathine Only Effective**; Stage-Based Dosing; **Desensitise if Allergic**; Treat ≥30d Before Delivery to Prevent Congenital Syphilis</td></tr><tr><td>10</td><td>Mpox — Clades, transmission, vaccine?</td><td>**Clade I (Congo, Severe), Clade Ib (Global 2022), Clade II (Endemic West Africa)**; Sexual Networks (MSM); **Vaccine: MVA-BN (2 Doses 4w Apart); Tecovirimat (Treatment)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Syphilis is just a genital disease"**</td><td>**NO.** Systemic: Skin, Mucosal, CV, Neurological, Ocular, Congenital</td></tr><tr><td>**"Gonorrhoea = Just Urethritis"**</td><td>**NO.** Pharyngeal, Rectal, DGI (Arthritis, Dermatitis, Tenosynovitis), PID, Ophthalmia Neonatorum</td></tr><tr><td>**"Chlamydia = Always Symptomatic"**</td><td>**NO.** **70-80% Women Asymptomatic**, 50% Men Asymptomatic → Screening Essential</td></tr><tr><td>**"Syphilis = Just Penicillin"**</td><td>**YES for all stages**, but **Dose/Route/Duration Varies by Stage**; Neurosyphilis = IV Penicillin G</td></tr><tr><td>**"HPV Vaccine = Only for Girls"**</td><td>**NO.** **Both Genders**; Prevents Cervical, Anal, Oropharyngeal, Penile Cancers + Genital Warts</td></tr><tr><td>**"HPV Vaccine = Only for Virgins"**</td><td>**NO.** Benefit Even If Sexually Active (Protects Against Types Not Yet Acquired)</td></tr><tr><td>**"HSV = Only Genital"**</td><td>**NO.** HSV-1 = Oral (Cold Sores) + Increasing Genital; HSV-2 = Predominantly Genital</td></tr><tr><td>**"Syphilis = Cured After Penicillin"**</td><td>**NO.** **Jarisch-Herxheimer Reaction** (Fever, Chills, Rash) in 50% Secondary; **Follow-Up Serology Essential** (RPR Titer Decline)</td></tr><tr><td>**"HIV = Only STI for PrEP"**</td><td>**NO.** **PrEP for HIV Only**; **Doxy-PEP** (Doxy 200mg Post-Sex) Emerging for Bacterial STIs (GC/CT/Syphilis)</td></tr><tr><td>**"Partner Notification = Provider Duty Only"**</td><td>**NO.** **Patient Referral** (Preferred, Empowers Patient), **EPT** (Legal Where Permitted), **Contract Referral**</td></tr></table>
+<div class="callout"><b>Mnemonic: STI FUNDAMENTALS MASTER</b> <b>S</b>yndromic Management: <b>UD (M): Ceftriaxone + Doxy; Vaginal: BV/TV/Candida; GUD: Syphilis/HSV/Chancroid; PID: Ceftriaxone+Doxy+Metro; Epididymitis: Ceftriaxone+Doxy</b> <b>T</b>ransmission: <b>Sexual (Genital/Oral/Anal), Vertical (Mother→Child), Blood/Tissue (HIV, HCV, HBV)</b> <b>I</b>ncidence: <b>Chlamydia (129M), Gonorrhoea (82M), Syphilis (7M), Trichomonas (156M), HSV-2 (491M), HPV (290M Women)</b> <b>F</b>undamentals: <b>History (CD4), Exam (Genital/Inguinal/Pharyngeal/Rectal), Syndromic Mgmt (WHO)</b> <b>U</b>niversal Precautions: <b>Condoms (85-98%), PrEP (TDF/FTC/Cabotegravir), PEP (72h), Vaccines (HPV, HepB, Mpox)</b> <b>N</b>otifiable: <b>Syphilis, Gonorrhoea, Chlamydia, HIV, Hepatitis, Chancroid, LGV</b> (Reportable) <b>D</b>iagnostics: <b>NAAT 1st Line (GC, CT, MG, TV, HSV, HPV); Culture (AST); Serology (Syphilis, HIV, HSV)</b> <b>A</b>ntimicrobial Resistance: <b>GC Ceftriaxone Resistance Rising (Dual Therapy); MG Macrolide Resistance (Moxifloxacin)</b> <b>D</b>ifferential: <b>UD (GC/CT/MG/TV), Vaginal (BV/TV/Candida), GUD (Syphilis/HSV/Chancroid/LGV), PID (GC/CT/MG/An)</b> <b>A</b>ntibiotics: <b>GC (Ceftriaxone+Azi), CT (Doxy/Azithro), Syphilis (Penicillin G), HSV (Acyclovir), TV (Metro), PID (Ceftriaxone+Doxy+Metro)</b> <b>M</b>onitoring: <b>Test of Cure (GC 2w, CT 4w, MG 4w), Partner Notification (EPT if Legal), Re-screen (3-6m High Risk)</b> <b>E</b>pidemiology: <b>High Risk (MSM, SW, Youth, Prisoners, Trans, PWID, Pregnant)</b> <b>N</b>eonatal: <b>Ophthalmia (GC/CT/HSV), Congenital Syphilis (Penicillin G IV), HSV Neonatal (Acyclovir IV)</b> <b>T</b>reatment of Partners: <b>EPT (GC/CT/TV Legal), Partner Notification (Patient/Provider/Contract)</b> <b>A</b>MR: <b>GC Ceftriaxone Resistance (Dual Therapy), MG Macrolide Resist (Moxifloxacin)</b> <b>A</b>cquired Immunodeficiency: <b>HIV (ART, PrEP/PEP), HBV/HCV Co-infection</b> <b>L</b>GV: <b>L1/L2/L3 Serovars, Proctitis, Buboes</b> → <b>Doxy 100mg BD × 21d</b> <b>S</b>yphilis Staging: <b>Primary (Chancre) → Secondary (Rash) → Latent (Early/Late) → Tertiary (Gumma/CV/Neuro)</b> <b>P</b>artner Notification: <b>Patient/Provider/Contract Referral</b> → <b>EPT (GC/CT/TV)</b> <b>S</b>creening: <b>High Risk (MSM, SW, Youth, Prisoners, Trans, PWID, Pregnant)</b> — <b>Annual/Quarterly</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((STI Fundamentals))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Epidemiology</div>
+<div class="mm-node mm-l3">– Global Burden: CT 129M, GC 82M, Syphilis 7M</div>
+<div class="mm-node mm-l3">– High-Risk: MSM, SW, Youth, Prisoners, Pregnant</div>
+<div class="mm-node mm-l2">Syndromic Management</div>
+<div class="mm-node mm-l3">– UD: Ceftriaxone+Doxy</div>
+<div class="mm-node mm-l3">– Vaginal: BV/TV/Candida</div>
+<div class="mm-node mm-l3">– GUD: Syphilis/HSV/Chancroid/LGV</div>
+<div class="mm-node mm-l3">– PID: Ceftriaxone+Doxy+Metro</div>
+<div class="mm-node mm-l2">Diagnostics</div>
+<div class="mm-node mm-l3">– NAAT 1st Line (GC, CT, MG, TV, HSV, HPV)</div>
+<div class="mm-node mm-l3">– Culture: AST</div>
+<div class="mm-node mm-l3">– Serology: Syphilis, HIV, HSV</div>
+<div class="mm-node mm-l2">Prevention</div>
+<div class="mm-node mm-l3">– Condoms (85-98%)</div>
+<div class="mm-node mm-l3">– Vaccines: HPV, HepB, Mpox</div>
+<div class="mm-node mm-l3">– PrEP (TDF/FTC, CAB-LA)</div>
+<div class="mm-node mm-l3">– PEP (72h)</div>
+<div class="mm-node mm-l2">Special Pops</div>
+<div class="mm-node mm-l3">– Pregnancy: Syphilis→Penicillin; GC→Ceftriaxone; CT→Azi; HSV→C-section</div>
+<div class="mm-node mm-l3">– Neonates: Ophthalmia, Congenital Syphilis</div>
+<div class="mm-node mm-l3">– MSM: 3-Site Testing, PrEP, HPV Vaccine</div>
+<div class="mm-node mm-l2">Resistance</div>
+<div class="mm-node mm-l3">– GC: Ceftriaxone Resist → Dual Therapy</div>
+<div class="mm-node mm-l3">– MG: Macrolide Resistance → Moxifloxacin</div>
+<div class="mm-node mm-l3">– AMR Surveillance: WHO GASP</div>
+<div class="mm-node mm-l2">Public Health</div>
+<div class="mm-node mm-l3">– Partner Notification (EPT)</div>
+<div class="mm-node mm-l3">– AMR Surveillance (GASP)</div>
+<div class="mm-node mm-l3">– Surveillance &amp; Reporting</div>
+<div class="mm-node mm-l3">– Partner Notification (EPT)</div>
+<div class="mm-node mm-l2">Special Populations</div>
+<div class="mm-node mm-l3">– Pregnancy, Neonates, MSM, Immunocompromised</div>
+<div class="mm-node mm-l3">– HIV/STI Co-infection</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Epidemiology & High-Risk Groups</td><td>3</td><td></td><td></td></tr><tr><td>Syndromic Management Algorithms</td><td>4</td><td></td><td></td></tr><tr><td>Diagnostic Tests (NAAT, Culture, Serology)</td><td>3</td><td></td><td></td></tr><tr><td>Prevention (Condoms, Vaccines, PrEP/PEP)</td><td>3</td><td></td><td></td></tr><tr><td>Partner Notification & EPT</td><td>2</td><td></td><td></td></tr><tr><td>Special Populations (Pregnancy, Neonates, MSM)</td><td>3</td><td></td><td></td></tr><tr><td>AMR in STIs</td><td>3</td><td></td><td></td></tr><tr><td>Special Populations</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the approach to a patient with urethral discharge."</td><td>Syndromic Management (Ceftriaxone + Doxy), NAAT GC/CT, Partner Notification (EPT), Follow-Up (Test of Cure), Prevention (Condoms, Vaccines)</td></tr><tr><td>**Short Note**</td><td>"Syndromic management of vaginal discharge."</td><td>Differential (BV, TV, Candida, GC/CT), Wet Mount (Clue Cells, Trichomonads, Hyphae), pH, Whiff Test, Treatment per Etiology</td></tr><tr><td>**Viva**</td><td>"Patient with genital ulcer. Differential diagnosis and management?"</td><td>Syphilis (Painless Chancre, RPR/TPPA, Penicillin G), HSV (Painful Vesicles, Acyclovir), Chancroid (Painful, Suppurative Buboes, Azithro), LGV (Doxy 21d)</td></tr><tr><td>**Ward Round**</td><td>"Pregnant woman at 28 weeks with positive syphilis serology (RPR 1:64, TPPA+). Management?"</td><td>**Penicillin G Benzathine 2.4MU IM Weekly × 2 Doses** (Late Latent in Pregnancy), **Desensitise if Allergy**, Monitor RPR Titers, **Congenital Syphilis Prevention** (Treat ≥30d Before Delivery)</td></tr><tr><td>**Last-Night**</td><td>"Epi: CT 129M, GC 82M, Syphilis 7M, TV 156M, HSV-2 491M, HPV 290M. Syndromic: UD=Ceftriaxone+Doxy, Vag=BV/TV/Candida, GUD=Syphilis/HSV/Chancroid, PID=Ceftriaxone+Doxy+Metro. Diag: NAAT 1st line. Prevention: Condom, Vaccines (HPV 9v, HepB, Mpox), PrEP/PEP. Partner Notify: EPT for GC/CT/TV. AMR: GC Ceftriaxone resist, MG Macrolide resist. Syphilis stages: 1°/2°/Latent/Tertiary, Penicillin staging. Pregnancy: Penicillin only."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Epidemiology</b>: CT (129M), GC (82M), Syphilis (7M), TV (156M), HSV-2 (491M), HPV (290M women)</li><li><b>High-Risk</b>: MSM, Sex Workers, Youth (15-24), Prisoners, Pregnant, MSM → <b>Annual/Quarterly Screening</b></li><li><b>Syndromic Management</b>: <b>Urethral Discharge</b>: Ceftriaxone 500mg IM + Doxy 100mg BD×7d; <b>Vaginal Discharge</b>: BV/TV/Candida → Metronidazole/Fluconazole; <b>GUD</b>: Syphilis/HSV/Chancroid/LGV; <b>PID</b>: Ceftriaxone + Doxy + Metro</li><li><b>Diagnostics</b>: <b>NAAT 1st Line</b> (GC, CT, MG, TV, HSV, HPV); <b>Culture</b> for AST; <b>Serology</b> (Syphilis, HIV, HSV)</li><li><b>Prevention</b>: <b>Condoms (85-98%)</b>, <b>Vaccines</b> (HPV 9v, Hep B, Mpox), <b>PrEP</b> (TDF/FTC, Cabotegravir LA), <b>PEP</b> (72h)</li><li><b>Partner Notification</b>: <b>EPT</b> (GC, CT, TV — Where Legal); <b>Cascade Testing</b></li><li><b>Special Pops</b>: Pregnancy (Syphilis→Penicillin, GC→Ceftriaxone, CT→Azi, HSV→C-section), Neonates (Ophthalmia, Congenital Syphilis), MSM (3-Site Testing, PrEP, HPV Vaccine)</li><li><b>AMR</b>: <b>GC Ceftriaxone Resistance Rising</b> → Dual Therapy; <b>MG Macrolide Resistance</b> → Moxifloxacin; <b>WHO GASP Surveillance</b></li><li><b>Syphilis</b>: Staging (1°/2°/Latent/Tertiary), <b>Penicillin G Only Effective</b>, Congenital Prevention</li><li><b>HIV/STI Integration</b>: PrEP (TDF/FTC/Cabotegravir LA), PEP (72h), TasP (U=U)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>First-line empirical treatment for male urethral discharge syndrome?</b></li></ol>
+<p>A. Azithromycin 1g Stat  B. <b>Ceftriaxone 500mg IM + Doxycycline 100mg BD × 7d</b>  C. Ciprofloxacin 500mg BD  D. Metronidazole 400mg BD <i>Answer: B. Covers GC + CT (Dual Therapy).</i></p>
+<ol><li><b>Vaginal discharge — clue cells + positive whiff test + pH &gt;4.5. Diagnosis?</b></li></ol>
+<p>A. Candidiasis  B. Trichomoniasis  C. <b>Bacterial Vaginosis</b>  D. Gonorrhoea <i>Answer: C. BV: Clue Cells, pH &gt;4.5, Positive Whiff Test, Fishy Odour.</i></p>
+<ol><li><b>Genital ulcer — painless, indurated, clean base, non-tender inguinal lymphadenopathy. Most likely?</b></li></ol>
+<p>A. Chancroid  B. <b>Primary Syphilis</b>  C. HSV  D. LGV <i>Answer: B. Painless, Indurated Chancre + Non-Tender Lymphadenopathy = Primary Syphilis.</i></p>
+<ol><li><b>Most specific autoantibody for syphilis?</b></li></ol>
+<p>A. RPR  B. VDRL  C. <b>TPPA / FTA-ABS (Treponemal)</b>  D. Anti-CCP <i>Answer: C. Treponemal Tests (TPPA, FTA-ABS) — 100% Specific for Treponema pallidum.</i></p>
+<ol><li><b>Gonorrhoea antimicrobial resistance — current dual therapy?</b></li></ol>
+<p>A. Ceftriaxone 500mg IM + Azithromycin 1g PO  B. Ciprofloxacin 500mg BD  C. Ceftriaxone 500mg IM Alone  D. Azithromycin 1g PO Alone <i>Answer: A. <b>Ceftriaxone 500mg IM + Azithromycin 1g PO</b> (Dual Therapy to Suppress Resistance).</i></p>
+<ol><li><b>Chlamydia treatment in pregnancy?</b></li></ol>
+<p>A. Doxycycline  B. <b>Azithromycin 1g Single Dose</b>  C. Erythromycin  D. Ofloxacin <i>Answer: B. Azithromycin 1g Stat (Safe in Pregnancy). Doxycycline Contraindicated.</i></p>
+<ol><li><b>Syphilis in pregnancy — management?</b></li></ol>
+<p>A. Ceftriaxone  B. <b>Penicillin G Benzathine (Stage-Based Dosing)</b>  C. Azithromycin  D. Doxycycline <i>Answer: B. Penicillin G Benzathine Only Effective; Stage-Based Dosing; Desensitise if Allergic.</i></p>
+<ol><li><b>Gonorrhoea antimicrobial resistance — emerging threat?</b></li></ol>
+<p>A. Penicillin Resistance  B. <b>Ceftriaxone Resistance (MIC Creep)</b>  C. Tetracycline Resistance  D. Azithromycin Resistance Only <i>Answer: B. Ceftriaxone Resistance Emerging (MIC Creep) → Dual Therapy, Alternative (Gentamicin + Azithro).</i></p>
+<ol><li><b>HPV Vaccine — schedule for 14-year-old?</b></li></ol>
+<p>A. Single Dose  B. <b>2 Doses (0, 6 Months)</b>  C. 3 Doses (0, 1, 6 Months)  D. Not Indicated <i>Answer: B. <b>2 Doses (0, 6 Months)</b> for Age &lt;15 Years.</i></p>
+<ol><li><b>Partner notification — most effective method?</b></li></ol>
+<p>A. Provider Referral  B. <b>Patient Referral (Preferred — Empowers Patient)</b>  C. Contract Referral  D. No Notification <i>Answer: B. Patient Referral Preferred (Empowers Patient); EPT for GC/CT/TV Where Legal.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25M with urethral discharge, Gram stain: Gram-negative intracellular diplococci. Treatment?</b></li></ol>
+<p>A. Azithromycin 1g  B. <b>Ceftriaxone 500mg IM + Doxycycline 100mg BD × 7d</b>  C. Ciprofloxacin 500mg BD  D. Metronidazole 400mg BD <i>Answer: B. Gram-Negative Intracellular Diplococci = Gonorrhoea → Dual Therapy.</i></p>
+<ol><li><b>25F with vaginal discharge, clue cells+, pH 5.0, positive whiff test. Treatment?</b></li></ol>
+<p>A. Fluconazole 150mg  B. <b>Metronidazole 400mg BD × 7d</b>  C. Ceftriaxone IM  D. Azithromycin 1g <i>Answer: B. Bacterial Vaginosis → Metronidazole 400mg BD × 7d (or 2g Stat).</i></p>
+<ol><li><b>Pregnant woman at 28 weeks with primary syphilis (RPR 1:64, TPPA+). Management?</b></li></ol>
+<p>A. Ceftriaxone  B. <b>Benzathine Penicillin G 2.4MU IM Single Dose</b>  C. Azithromycin  D. Doxycycline <i>Answer: B. Penicillin G Benzathine 2.4MU IM Single Dose (Stage-Appropriate).</i></p>
+<ol><li><b>Man with painful genital ulcer, suppurative inguinal bubo. Diagnosis?</b></li></ol>
+<p>A. Syphilis  B. <b>Chancroid</b>  C. LGV  D. Herpes <i>Answer: B. Painful Ulcer + Suppurative Bubo = Chancroid (H. ducreyi).</i></p>
+<ol><li><b>MSM, asymptomatic, requests STI screening. Tests?</b></li></ol>
+<p>A. HIV Only  B. HIV + Syphilis Only  C. <b>3-Site NAAT (Urethral, Pharyngeal, Rectal) for GC/CT + HIV + Syphilis</b>  D. HIV Only <i>Answer: C. 3-Site Testing (Urethral, Pharyngeal, Rectal) for GC/CT + HIV + Syphilis per Guidelines.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-C, 3-C, 4-B, 5-C, 6-B, 7-B, 8-B, 9-B, 10-C</td><td>1-B, 2-B, 3-B, 4-B, 5-C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Chlamydia.md]] — Genital, LGV, Extra-genital, Neonatal</li><li>[[2.2 Gonorrhoea.md]] — AMR, Pharyngeal/Rectal, DGI</li><li>[[2.3 Syphilis.md]] — Staging, Serology, Neurosyphilis, Congenital</li><li>[[2.4-2.6 Other Bacterial STIs.md]] — Chancroid, MG, Other</li><li>[[3.2 HSV.md]] — Genital Herpes, Neonatal, Suppressive Therapy</li><li>[[3.3 HPV.md]] — Vaccination, Screening, Cancer Prevention</li><li>[[3.4 Hepatitis B &amp; C.md]] — Sexual Transmission, Vaccination, DAA</li><li>[[3.5 Mpox.md]] — Clades, Transmission, Vaccination, Tecovirimat</li><li>[[4.1-4.3 Parasitic &amp; Fungal STIs.md]] — Trichomonas, Pubic Lice/Scabies, Candidiasis</li><li>[[5.1-5.8 Syndromic Management.md]] — Urethral/Vaginal/GUD/PID/Epididymitis/Proctitis/Neonatal</li><li>[[6. HIV-AIDS Cross-Reference.md]] — Chapter 12 Cross-Reference</li><li>[[7.1-7.4 Public Health &amp; Control.md]] — Surveillance, Partner Notification, AMR, Emerging STIs</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next Action:</b> Build <code>2.1 Chlamydia.md</code>, <code>2.2 Gonorrhoea.md</code>, <code>2.3 Syphilis.md</code> (Priority 1)</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 1. Fundamentals of STIs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

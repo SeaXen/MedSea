@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acid-Base and Electrolyte Emergencies — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Acid-Base and Electrolyte Emergencies</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Interpret ABG systematically (traditional + Stewart approach)</li><li>Identify primary disorders and appropriate compensation</li><li>Calculate anion gap, delta-delta, strong ion difference</li><li>Manage hyperkalaemia, hyponatraemia, hyper/hypocalcaemia, hyper/hypomagnesaemia, phosphate emergencies</li><li>Apply correction rate limits to avoid osmotic demyelination / cardiac arrhythmias</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">ABG Interpretation — Systematic Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stepwise Algorithm</div>
+<ol><li><b>pH</b> → acidaemia (&lt;7.35) or alkalaemia (&gt;7.45)</li><li><b>PaCO₂</b> → respiratory component (↑ = respiratory acidosis, ↓ = respiratory alkalosis)</li><li><b>HCO₃⁻</b> → metabolic component (↓ = metabolic acidosis, ↑ = metabolic alkalosis)</li><li><b>Primary vs Compensatory</b> → match direction of pH change</li><li><b>Compensation assessment</b> → appropriate vs inadequate vs mixed</li><li><b>Anion gap</b> (if metabolic acidosis)</li><li><b>Delta-delta</b> (if high AG metabolic acidosis)</li><li><b>Clinical correlation</b> (history, examination, other labs)</li></ol>
+<div class="sub-h">Normal Values</div>
+<table class="ctable"><tr><th>Parameter</th><th>Normal Range</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>pH</td><td>7.35–7.45</td></tr><tr><td>PaCO₂</td><td>4.7–6.0 kPa (35–45 mmHg)</td></tr><tr><td>HCO₃⁻</td><td>22–26 mmol/L</td></tr><tr><td>Base Excess</td><td>−2 to +2 mmol/L</td></tr><tr><td>Lactate</td><td><2 mmol/L</td></tr><tr><td>Anion Gap</td><td>8–12 mmol/L (albumin-corrected: AG + 2.5×(40−Alb g/L))</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Primary Acid-Base Disorders</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Disorder</th><th>Primary Change</th><th>Compensation</th><th>Expected Compensation Formula</th></tr><tr><td>----------</td><td>----------------</td><td>--------------</td><td>-------------------------------</td></tr><tr><td>**Respiratory Acidosis**</td><td>↑ PaCO₂</td><td>↑ HCO₃⁻ (renal)</td><td>**Acute**: HCO₃⁻ ↑ 1 per 10 PaCO₂ ↑<br>**Chronic**: HCO₃⁻ ↑ 4 per 10 PaCO₂ ↑</td></tr><tr><td>**Respiratory Alkalosis**</td><td>↓ PaCO₂</td><td>↓ HCO₃⁻ (renal)</td><td>**Acute**: HCO₃⁻ ↓ 2 per 10 PaCO₂ ↓<br>**Chronic**: HCO₃⁻ ↓ 5 per 10 PaCO₂ ↓</td></tr><tr><td>**Metabolic Acidosis**</td><td>↓ HCO₃⁻</td><td>↓ PaCO₂ (hyperventilation)</td><td>**Winter's**: PaCO₂ = 1.5×HCO₃⁻ + 8 ± 2</td></tr><tr><td>**Metabolic Alkalosis**</td><td>↑ HCO₃⁻</td><td>↑ PaCO₂ (hypoventilation)</td><td>PaCO₂ = 0.7×HCO₃⁻ + 20 ± 5</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Anion Gap & Delta-Delta</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Anion Gap (AG)</div>
+<p><b>AG = Na⁺ − (Cl⁻ + HCO₃⁻)</b> — <b>albumin-corrected</b>: <b>AG_corr = AG + 2.5 × (40 − Albumin g/L)</b></p>
+<table class="ctable"><tr><th>AG Type</th><th>Causes (MUDPILES)</th></tr><tr><td>---------</td><td>-------------------</td></tr><tr><td>**High AG**</td><td>**M**ethanol, **U**raemia, **D**KA, **P**araldehyde, **I**ron/Isoniazid, **L**actic acidosis, **E**thylene glycol, **S**alicylate</td></tr><tr><td>**Normal AG**</td><td>Diarrhoea, RTA, carbonic anhydrase inhibitors, pancreatic fistula, ureterosigmoidostomy, **saline infusion**</td></tr><tr><td>**Low AG**</td><td>Hypoalbuminaemia, paraproteinaemia, bromide/lithium toxicity</td></tr></table>
+<div class="sub-h">Delta-Delta (ΔΔ) — **Unmasks Mixed Disorders in High AG Acidosis**</div>
+<ul><li><b>ΔAG = Measured AG − Normal AG (12)</b></li><li><b>ΔHCO₃ = Normal HCO₃ (24) − Measured HCO₃</b></li><li><b>ΔΔ = ΔAG − ΔHCO₃</b></li><li><b>ΔΔ ≈ 0</b> → pure high AG metabolic acidosis</li><li><b>ΔΔ &gt; +6</b> → <b>concomitant metabolic alkalosis</b> (ΔAG &gt; ΔHCO₃)</li><li><b>ΔΔ &lt; −6</b> → <b>concomitant normal AG metabolic acidosis</b> (ΔHCO₃ &gt; ΔAG)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Electrolyte Emergencies</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Hyperkalaemia (K⁺ &gt;6.5 mmol/L or ECG changes) — **CARDIAC EMERGENCY**</div>
+<p>#### ECG Changes (Progressive) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;K⁺ Level&lt;/th&gt;&lt;th&gt;ECG Findings&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>5.5–6.5</b>&lt;/td&gt;&lt;td&gt;Peaked T waves, shortened QT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>6.5–7.5</b>&lt;/td&gt;&lt;td&gt;PR prolongation, QRS widening, P wave flattening&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>&gt;7.5</b>&lt;/td&gt;&lt;td&gt;<b>Sine wave</b> (QRS merges with T), VT/VF, asystole&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### Emergency Treatment (Sequential — Minutes Matter) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Step&lt;/th&gt;&lt;th&gt;Treatment&lt;/th&gt;&lt;th&gt;Dose/Details&lt;/th&gt;&lt;th&gt;Onset&lt;/th&gt;&lt;th&gt;Duration&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>1. Membrane Stabilisation</b>&lt;/td&gt;&lt;td&gt;<b>Calcium gluconate 10%</b>&lt;/td&gt;&lt;td&gt;<b>10 mL IV</b> over 2–5 min&lt;/td&gt;&lt;td&gt;<b>1–3 min</b>&lt;/td&gt;&lt;td&gt;30–60 min&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Calcium chloride 10%&lt;/td&gt;&lt;td&gt;5–10 mL IV (central)&lt;/td&gt;&lt;td&gt;1–3 min&lt;/td&gt;&lt;td&gt;30–60 min&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>2. Shift K⁺ Into Cells</b>&lt;/td&gt;&lt;td&gt;<b>Insulin + Dextrose</b>&lt;/td&gt;&lt;td&gt;<b>10 U Actrapid + 25g (50 mL 50%)</b> IV&lt;/td&gt;&lt;td&gt;15–30 min&lt;/td&gt;&lt;td&gt;2–4 h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Salbutamol nebuliser&lt;/td&gt;&lt;td&gt;10–20 mg (5 mg × 2–4)&lt;/td&gt;&lt;td&gt;15–30 min&lt;/td&gt;&lt;td&gt;2 h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Sodium bicarbonate&lt;/td&gt;&lt;td&gt;50–100 mmol IV (if acidosis)&lt;/td&gt;&lt;td&gt;15–30 min&lt;/td&gt;&lt;td&gt;1–2 h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>3. Enhance Elimination</b>&lt;/td&gt;&lt;td&gt;<b>Loop diuretic</b> (if urine output)&lt;/td&gt;&lt;td&gt;Furosemide 40–80 mg IV&lt;/td&gt;&lt;td&gt;30 min&lt;/td&gt;&lt;td&gt;2–4 h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Sodium polystyrene sulfonate&lt;/td&gt;&lt;td&gt;15–30 g PO/PR&lt;/td&gt;&lt;td&gt;1–2 h&lt;/td&gt;&lt;td&gt;6–12 h&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;<b>Hemodialysis</b>&lt;/td&gt;&lt;td&gt;Definitive (if renal failure/refractory)&lt;/td&gt;&lt;td&gt;Immediate&lt;/td&gt;&lt;td&gt;—&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="callout"><b>Priority</b>: <b>Calcium first if ECG changes</b> → Insulin/Dextrose → Dialysis if refractory/renal failure</div>
+<div class="sub-h">2. Hyponatraemia (Na⁺ &lt;130 mmol/L) — **NEUROLOGICAL EMERGENCY if &lt;120 or symptomatic**</div>
+<p>#### Assessment &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Step&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;1. <b>Symptoms?</b>&lt;/td&gt;&lt;td&gt;Seizures, coma, confusion → <b>emergency</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2. <b>Volume status</b>&lt;/td&gt;&lt;td&gt;Hypovolaemic / Euvolaemic / Hypervolaemic&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;3. <b>Urine osmolality</b>&lt;/td&gt;&lt;td&gt;&gt;100 = ADH active (SIADH, hypovolaemia, heart failure)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4. <b>Urine Na⁺</b>&lt;/td&gt;&lt;td&gt;&gt;20 = renal loss (diuretics, salt-wasting); &lt;20 = extrarenal&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### Aetiology by Volume &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Volume&lt;/th&gt;&lt;th&gt;Causes&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;--------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hypovolaemic</b>&lt;/td&gt;&lt;td&gt;Diuretics, GI losses, cerebral salt wasting, adrenal insufficiency&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Euvolaemic</b>&lt;/td&gt;&lt;td&gt;<b>SIADH</b> (drugs, malignancy, CNS, pulmonary), hypothyroidism, cortisol deficiency, reset osmostat&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hypervolaemic</b>&lt;/td&gt;&lt;td&gt;Heart failure, cirrhosis, nephrotic syndrome, CKD&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### Correction Limits — <b>CRITICAL</b> &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Scenario&lt;/th&gt;&lt;th&gt;Max Rate&lt;/th&gt;&lt;th&gt;Max 24h&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Asymptomatic / Chronic</b>&lt;/td&gt;&lt;td&gt;0.5 mmol/L/h&lt;/td&gt;&lt;td&gt;<b>≤8 mmol/L</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Symptomatic (seizures/coma) / Acute (&lt;48h)</b>&lt;/td&gt;&lt;td&gt;<b>1–2 mmol/L/h</b>&lt;/td&gt;&lt;td&gt;<b>≤10–12 mmol/L</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Severe symptomatic</b>&lt;/td&gt;&lt;td&gt;<b>3% NaCl 100–150 mL bolus</b> (repeat if needed)&lt;/td&gt;&lt;td&gt;≤12 mmol/L&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="callout"><b>Osmotic Demyelination Risk</b>: overcorrection &gt;10–12 mmol/L in 24h → <b>central pontine myelinolysis</b> (delayed 2–6 days: quadriparesis, dysphagia, locked-in)</div>
+<p>#### Management by Type &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Treatment&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hypovolaemic</b>&lt;/td&gt;&lt;td&gt;0.9% NaCl (volume + Na⁺)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>SIADH (Euvolaemic)</b>&lt;/td&gt;&lt;td&gt;<b>Fluid restriction</b> 800–1000 mL/day; <b>3% NaCl</b> if severe symptomatic; <b>demeclocycline</b> (chronic)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hypervolaemic</b>&lt;/td&gt;&lt;td&gt;Fluid restriction, loop diuretic, treat underlying (HF, cirrhosis)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Adrenal insufficiency</b>&lt;/td&gt;&lt;td&gt;<b>Hydrocortisone 100 mg IV</b> + saline&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Cerebral salt wasting</b>&lt;/td&gt;&lt;td&gt;Volume + Na⁺ replacement (fludrocortisone)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="sub-h">3. Hypernatraemia (Na⁺ &gt;145 mmol/L) — **CELLULAR DEHYDRATION**</div>
+<p>#### Assessment</p>
+<ul><li><b>Volume status</b>: Hypovolaemic (water loss &gt; Na⁺ loss) / Euvolaemic (pure water loss) / Hypervolaemic (Na⁺ gain &gt; water)</li><li><b>Urine osmolality</b> &gt;800 = appropriate ADH; &lt;300 = diabetes insipidus</li></ul>
+<p>#### Correction Limits &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Scenario&lt;/th&gt;&lt;th&gt;Max Rate&lt;/th&gt;&lt;th&gt;Max 24h&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Chronic / Asymptomatic</b>&lt;/td&gt;&lt;td&gt;0.5 mmol/L/h&lt;/td&gt;&lt;td&gt;<b>≤10 mmol/L</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Acute (&lt;24h) / Symptomatic</b>&lt;/td&gt;&lt;td&gt;1–2 mmol/L/h&lt;/td&gt;&lt;td&gt;≤12 mmol/L&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### Management &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Treatment&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hypovolaemic</b>&lt;/td&gt;&lt;td&gt;0.9% NaCl → switch to 0.45%/5% dextrose once euvolaemic&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Euvolaemic (DI)</b>&lt;/td&gt;&lt;td&gt;<b>5% Dextrose</b> or <b>0.45% NaCl</b> + <b>Desmopressin</b> (central DI)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Hypervolaemic</b>&lt;/td&gt;&lt;td&gt;Loop diuretic + 5% dextrose; dialysis if severe&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="sub-h">4. Hypocalcaemia (Corrected Ca²⁺ &lt;2.0 mmol/L / Ionised &lt;1.0 mmol/L)</div>
+<p>#### ECG: <b>Prolonged QT</b> (ST prolongation), risk Torsades #### Acute Symptomatic (tetany, seizure, laryngospasm, QT prolongation):</p>
+<ul><li><b>Calcium gluconate 10% 10 mL IV</b> over 10 min (→ 2.25 mmol Ca²⁺)</li><li>Repeat q10 min until symptoms resolve</li><li><b>Monitor</b>: continuous ECG, serum Ca²⁺ q2–4h</li><li><b>Correct Mg²⁺</b> if hypomagnesaemia (refractory without Mg²⁺)</li></ul>
+<p>#### Chronic/Asymptomatic:</p>
+<ul><li>Oral calcium + vitamin D (alfacalcidol/calcitriol)</li><li>Treat underlying cause (hypoparathyroidism, vitamin D deficiency, CKD)</li></ul>
+<div class="sub-h">5. Hypercalcaemia (Corrected Ca²⁺ &gt;2.6 mmol/L / Ionised &gt;1.3 mmol/L)</div>
+<p>#### ECG: Shortened QT, bradycardia, AV block #### Severity:</p>
+<ul><li><b>Mild</b> (2.6–3.0): asymptomatic/mild symptoms</li><li><b>Moderate</b> (3.0–3.5): polyuria, nausea, constipation, confusion</li><li><b>Severe</b> (&gt;3.5): <b>emergency</b> — coma, AKI, arrhythmias, pancreatitis</li></ul>
+<p>#### Management</p>
+<ol><li><b>IV 0.9% NaCl</b> 2–4 L/day (volume repletion + calciuresis) — target urine output &gt;200 mL/h</li><li><b>Loop diuretic</b> (furosemide 40–80 mg) <b>after</b> volume repletion</li><li><b>Bisphosphonate</b>: <b>Zoledronic acid 4 mg IV</b> over 15 min (or Pamidronate 60–90 mg)</li><li><b>Denosumab</b> 120 mg SC (if bisphosphonate contraindicated/renal failure)</li><li><b>Calcitonin</b> 4–8 U/kg SC q6–12h (rapid but tachyphylaxis in 48h)</li><li><b>Dialysis</b> (if severe + renal failure/refractory)</li></ol>
+<div class="sub-h">6. Hypomagnesaemia (Mg²⁺ &lt;0.7 mmol/L) — **REFRACTORY K⁺/Ca²⁺, ARRHYTHMIAS**</div>
+<p>#### ECG: prolonged QT, Torsades risk, VT #### Causes: diuretics, PPI, aminoglycosides, alcohol, diarrhoea, malnutrition, refeeding #### Treatment:</p>
+<ul><li><b>Severe (&lt;0.4 / symptomatic)</b>: <b>MgSO₄ 2 g IV</b> over 10–20 min (8 mmol)</li><li><b>Moderate</b>: <b>MgSO₄ 10–20 mmol IV</b> over 1–2h, then oral</li><li><b>Refractory hypokalaemia</b> → <b>must correct Mg²⁺ first</b> (K⁺ won't correct without Mg²⁺)</li></ul>
+<div class="sub-h">7. Hypermagnesaemia (Mg²⁺ &gt;1.5 mmol/L)</div>
+<p>#### Causes: renal failure, Mg²⁺-containing antacids/laxatives, enemas #### Signs: loss of reflexes, hypotension, respiratory depression, heart block, cardiac arrest #### Treatment: <b>Calcium gluconate 10 mL IV</b> (antagonist), <b>IV fluids + furosemide</b>, <b>dialysis</b> if severe/renal failure</p>
+<div class="sub-h">8. Phosphate Disorders</div>
+<p>#### Hypophosphataemia (&lt;0.3 mmol/L severe):</p>
+<ul><li><b>Causes</b>: refeeding, alcohol, DKA recovery, respiratory alkalosis, diuretics</li><li><b>Effects</b>: muscle weakness, rhabdo, respiratory failure, haemolysis, seizures</li><li><b>Treatment</b>: <b>0.5 mmol/kg IV</b> over 6–12h (monitor Ca²⁺ — hypocalcaemia risk)</li></ul>
+<p>#### Hyperphosphataemia (&gt;2.0 mmol/L):</p>
+<ul><li><b>Causes</b>: renal failure, rhabdo, tumour lysis, hypoparathyroidism</li><li><b>Treatment</b>: phosphate binders (calcium acetate, sevelamer), dialysis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Mixed Acid-Base Disorders — **Common in ICU**</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clue</th><th>Suggests</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>**pH normal** but abnormal PaCO₂/HCO₃⁻</td><td>Mixed disorder</td></tr><tr><td>**Compensation over/under**</td><td>Concomitant opposite disorder</td></tr><tr><td>**High AG + normal AG**</td><td>Delta-delta >6 (metabolic alkalosis) or <−6 (normal AG acidosis)</td></tr></table>
+<p><i>...continued (truncated to 200 lines for renderer)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Acid-Base and Electrolyte Emergencies · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

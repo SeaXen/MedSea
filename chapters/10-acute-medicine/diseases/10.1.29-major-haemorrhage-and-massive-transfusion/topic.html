@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Major Haemorrhage and Massive Transfusion — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Major Haemorrhage and Massive Transfusion</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define major haemorrhage and MTP activation criteria</li><li>Apply damage control resuscitation (1:1:1, permissive hypotension, TXA)</li><li>Recognise and treat coagulopathy (hypothermia, acidosis, hypocalcaemia)</li><li>Reverse anticoagulants in major bleeding</li><li>Use viscoelastic testing (ROTEM/TEG) for targeted transfusion</li><li>Identify and treat hyperkalaemia, hypocalcaemia, TRALI, TACO</li><li>Manage obstetric haemorrhage specifically</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Major haemorrhage (BCSH)</b>: bleed requiring ≥4 units RBC in &lt;1 h OR ongoing bleeding + SBP &lt;90 + HR &gt;110 + base deficit &gt;-6</li><li><b>Massive transfusion</b>: ≥10 units RBC in 24 h OR ≥4 units in 1 h</li><li><b>Damage control resuscitation (DCR)</b>: balanced blood product transfusion to mimic whole blood, permissive hypotension, avoid crystalloid</li><li><b>Lethal triad</b>: hypothermia + acidosis + coagulopathy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Examples</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Trauma**</td><td>Road traffic accident, falls, penetrating injury</td></tr><tr><td>**Surgical**</td><td>Vascular rupture, intra-op bleed</td></tr><tr><td>**GI**</td><td>Variceal bleed, peptic ulcer, diverticular, aortoenteric fistula</td></tr><tr><td>**Obstetric**</td><td>Postpartum haemorrhage (PPH), ectopic, abruption</td></tr><tr><td>**Vascular**</td><td>Ruptured AAA, aortic dissection</td></tr><tr><td>**Haematological**</td><td>Coagulopathy, DIC, ITP</td></tr><tr><td>**Anticoagulant-related**</td><td>Warfarin, DOAC overdose</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Initial Assessment — ABCDE</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Airway + C-spine</b> protection</li><li><b>Breathing</b>: high-flow O₂, treat tension PTX</li><li><b>Circulation</b>: 2 large-bore IVs (14-16G) or central access; bloods including crossmatch, FBC, coagulation, fibrinogen, U&amp;E, lactate, ABG, calcium</li><li><b>Disability</b>: GCS, pupils</li><li><b>Exposure</b>: full exam, log roll, warm patient</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>FBC</b>: Hb may be normal initially (not diluted yet)</li><li><b>Coagulation</b>: PT, aPTT, INR</li><li><b>Fibrinogen (Clauss)</b>: target &gt;1.5 g/L (obstetric &gt;2.0)</li><li><b>U&amp;E</b>: K⁺ (hyperkalaemia from stored blood)</li><li><b>ABG/lactate</b>: tissue hypoperfusion marker</li><li><b>Ionised calcium</b>: citrate in stored blood binds Ca²⁺ → hypocalcaemia</li><li><b>Viscoelastic testing</b> (ROTEM/TEG): rapid, point-of-care; guides targeted transfusion</li><li><b>Group and save / crossmatch</b> (uncrossmatched O-negative if critical)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Massive Transfusion Protocol (MTP)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Activation Criteria</div>
+<ul><li>≥4 units RBC in &lt;1 h</li><li>≥10 units RBC anticipated in 24 h</li><li>SBP &lt;90 + HR &gt;110 + base deficit &gt;-6</li><li>Activated by senior clinician (ED, anaesthetics, surgery)</li></ul>
+<div class="sub-h">MTP Bundle (Damage Control Resuscitation)</div>
+<table class="ctable"><tr><th>Component</th><th>Initial Action</th></tr><tr><td>-----------</td><td>----------------</td></tr><tr><td>**RBC**</td><td>Group O-neg until crossmatched; switch to type-specific</td></tr><tr><td>**FFP**</td><td>1:1 ratio with RBC (15 mL/kg)</td></tr><tr><td>**Platelets**</td><td>1:1:1 ratio; aim >50 × 10⁹/L (>100 in TBI/eye/CNS)</td></tr><tr><td>**Cryoprecipitate/fibrinogen**</td><td>2 pools (10 units) if fibrinogen <1.5 g/L (target >1.5)</td></tr><tr><td>**TXA**</td><td>1 g IV within 3 h of injury, then 1 g over 8 h</td></tr><tr><td>**Calcium**</td><td>10% Ca gluconate 10 mL per 4 units RBC (or 1 g CaCl₂)</td></tr><tr><td>**Warm fluids**</td><td>Bair Hugger, fluid warmers, ambient warming</td></tr><tr><td>**Permissive hypotension**</td><td>SBP 80-90 (MAP 50-60) until surgical control (EXCEPT TBI)</td></tr></table>
+<div class="sub-h">1:1:1 Ratio (PROPPR Trial)</div>
+<ul><li><b>RBC : FFP : Platelets = 1:1:1</b></li><li>Equivalent to whole blood</li><li>Reduced death from exsanguination at 24 h vs 1:1:2</li><li>Reduced death from haemorrhage</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Specific Therapies</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">TXA (Tranexamic Acid)</div>
+<ul><li><b>Indication</b>: major trauma bleeding within 3 h of injury</li><li><b>Dose</b>: 1 g IV over 10 min, then 1 g over 8 h</li><li><b>Mechanism</b>: antifibrinolytic, blocks plasminogen activation</li><li><b>CRASH-2 trial</b>: reduced all-cause mortality (14.5% vs 16.0%) when given &lt;3 h</li><li><b>Caution</b>: increased mortality if given &gt;3 h</li><li><b>WOMAN trial (PPH)</b>: 1 g IV; reduced death from bleeding</li><li><b>Contraindications</b>: active thromboembolic disease, subarachnoid haemorrhage</li></ul>
+<div class="sub-h">Calcium</div>
+<ul><li><b>Why</b>: citrate in stored blood → binds Ca²⁺ → hypocalcaemia</li><li><b>Dose</b>: 10% Ca gluconate 10 mL per 4 units RBC (or 1 g CaCl₂ central line)</li><li><b>Target</b>: ionised Ca²⁺ &gt;1.1 mmol/L</li><li><b>Important</b>: hypocalcaemia worsens coagulopathy + cardiac depression</li></ul>
+<div class="sub-h">Fibrinogen</div>
+<ul><li><b>Threshold</b>: &lt;1.5 g/L (obstetric &lt;2.0 g/L) → give cryoprecipitate or fibrinogen concentrate</li><li><b>Dose</b>: 2 pools cryoprecipitate (10 units, ~4 g fibrinogen) OR 2-4 g fibrinogen concentrate</li><li><b>Source</b>: cryo (FFP precipitate) or concentrate (Riastap)</li></ul>
+<div class="sub-h">Platelets</div>
+<ul><li><b>Threshold</b>: &lt;50 × 10⁹/L (or &lt;100 in TBI/eye)</li><li><b>Dose</b>: 1 adult dose (typically 1 pool of 5-6 donations or apheresis)</li><li><b>Continuous infusion</b> in some MTP protocols</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Reversal of Anticoagulants in Major Bleeding</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Anticoagulant</th><th>Reversal Agent</th><th>Dose</th></tr><tr><td>---------------</td><td>----------------</td><td>------</td></tr><tr><td>**Warfarin**</td><td>Vitamin K + PCC (4-factor)</td><td>Vit K 5-10 mg IV + PCC 25-50 U/kg</td></tr><tr><td>**Dabigatran**</td><td>Idarucizumab</td><td>5 g IV (2 × 2.5 g)</td></tr><tr><td>**Apixaban**</td><td>Andexanet alfa (or PCC 4-factor 50 U/kg)</td><td>Andexanet bolus + infusion; PCC alternative</td></tr><tr><td>**Rivaroxaban**</td><td>Andexanet alfa (or PCC 4-factor 50 U/kg)</td><td>Andexanet bolus + infusion; PCC alternative</td></tr><tr><td>**Heparin (UFH)**</td><td>Protamine</td><td>1 mg per 100 U heparin (last 2-3 h)</td></tr><tr><td>**LMWH (enoxaparin)**</td><td>Protamine (partial)</td><td>1 mg per 1 mg enoxaparin; 50% reversal</td></tr><tr><td>**Aspirin/clopidogrel**</td><td>Platelet transfusion (consider)</td><td>1 adult dose</td></tr><tr><td>**TPA/streptokinase**</td><td>Cryoprecipitate, FFP, TXA</td><td>Supportive</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Permissive Hypotension</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Target SBP 80-90 mmHg</b> until bleeding controlled</li><li><b>Mechanism</b>: avoid "pop the clot" by elevating BP</li><li><b>EXCEPTIONS</b>:</li><li><b>Traumatic brain injury</b>: SBP ≥110 (or MAP ≥80)</li><li><b>Spinal cord injury</b>: MAP ≥85</li><li><b>Pregnancy</b>: SBP 100-110 (uterine perfusion)</li><li><b>Penetrating torso</b>: shorter time to OR → less fluid</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viscoelastic Testing (ROTEM/TEG)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Point-of-care</b> tests of whole blood clot formation</li><li><b>ROTEM</b>: EXTEM (extrinsic), INTEM (intrinsic), FIBTEM (fibrinogen), HEPTEM (heparin effect)</li><li><b>TEG</b>: kaolin, rapid TEG, functional fibrinogen</li><li><b>Advantages</b> over standard coagulation: faster, functional, identifies hyperfibrinolysis</li><li><b>Guides</b> targeted transfusion (e.g., FIBTEM MCF &lt;7 mm → give fibrinogen)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Obstetric Haemorrhage (PPH)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Definition</b>: &gt;500 mL (vaginal) or &gt;1000 mL (CS) blood loss, or any bleed causing haemodynamic compromise</li><li><b>Primary</b> (24 h) vs <b>secondary</b> (24 h-6 weeks)</li><li><b>Causes</b>: 4 T's — <b>Tone</b> (atony, 70%), <b>Trauma</b> (lacerations), <b>Tissue</b> (retained), <b>Thrombin</b> (coagulopathy)</li><li><b>Management</b>:</li></ul>
+<ol><li><b>2 large-bore IVs</b>, crossmatch 4-6 units</li><li><b>Oxytocin 5 U IV</b> + 40 U in 500 mL over 4 h</li><li><b>Ergometrine 0.2 mg IV/IM</b> (avoid in HTN)</li><li><b>Carboprost (Hemabate) 250 mcg IM</b> q15-90 min (avoid in asthma)</li><li><b>Misoprostol 800 mcg PR</b> if other uterotonics fail</li><li><b>TXA 1 g IV</b> (WOMAN trial)</li><li><b>Bimanual compression</b>, intrauterine balloon (Bakri), B-Lynch suture</li><li><b>Surgical</b>: uterine artery ligation, B-Lynch suture, hysterectomy</li><li><b>Activate MTP</b></li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Complications of Massive Transfusion</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Cause</th><th>Management</th></tr><tr><td>--------------</td><td>-------</td><td>------------</td></tr><tr><td>**Hypothermia**</td><td>Cold products</td><td>Warm fluids, blanket, ambient</td></tr><tr><td>**Hypocalcaemia**</td><td>Citrate toxicity</td><td>10 mL Ca gluconate per 4 units RBC</td></tr><tr><td>**Hyperkalaemia**</td><td>Stored blood lysis</td><td>Insulin/dextrose, Ca²⁺, dialysis</td></tr><tr><td>**Acidosis**</td><td>Tissue hypoperfusion + stored blood</td><td>Treat underlying, consider NaHCO₃</td></tr><tr><td>**Coagulopathy**</td><td>Dilutional, consumption</td><td>FFP, platelets, cryo</td></tr><tr><td>**TRALI**</td><td>Donor antibodies</td><td>Supportive, O₂, ventilation</td></tr><tr><td>**TACO**</td><td>Volume overload</td><td>Diuretics, slow transfusion</td></tr><tr><td>**DIC**</td><td>Underlying shock</td><td>Treat cause, blood products</td></tr><tr><td>**ARDS**</td><td>SIRS, transfusions</td><td>Supportive ventilation</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Ruptured AAA</div>
+<ul><li><b>Permissive hypotension</b> + <b>activate MTP</b></li><li><b>Endovascular (EVAR) vs open repair</b></li><li><b>Allowed SBP 80-100</b></li></ul>
+<div class="sub-h">Variceal Bleeding</div>
+<ul><li>See [[Acute Medicine in Pregnancy]]/GI bleeding chapter</li><li><b>Resuscitate</b> to Hb 70-80 (restrictive)</li><li><b>Terlipressin 2 mg IV</b> bolus, then 1-2 mg q4h</li><li><b>Antibiotics</b> (ceftriaxone)</li><li><b>Endoscopic band ligation</b></li></ul>
+<div class="sub-h">Anticoagulant-Related Bleeding</div>
+<ul><li>See table above for reversal</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Trauma haemorrhage mortality</b>: 30-50% if uncontrolled</li><li><b>MTP with 1:1:1</b>: 24 h mortality 17% (PROPPR)</li><li><b>Trauma deaths</b>: 30% pre-hospital, 30% intra-op, 30% post-op (coagulopathy, SIRS)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Major haemorrhage</b>: ≥4 units RBC in &lt;1 h OR ongoing bleeding + SBP &lt;90 + HR &gt;110</li><li><b>MTP activation</b>: senior clinician</li><li><b>Damage control resuscitation (DCR)</b>: 1:1:1 (RBC:FFP:Platelets) + permissive hypotension + avoid crystalloid</li><li><b>TXA 1 g IV within 3 h of injury</b> (CRASH-2)</li><li><b>Fibrinogen target &gt;1.5 g/L</b> (obstetric &gt;2.0)</li><li><b>Calcium 10 mL 10% per 4 units RBC</b></li><li><b>Lethal triad</b>: hypothermia + acidosis + coagulopathy</li><li><b>Permissive hypotension SBP 80-90</b> (EXCEPT TBI MAP ≥80, pregnancy SBP 100-110)</li><li><b>Group O-neg until crossmatched</b></li><li><b>Viscoelastic testing (ROTEM/TEG)</b> for targeted transfusion</li><li><b>Warfarin reversal</b>: Vitamin K 5-10 mg IV + PCC 4-factor</li><li><b>Dabigatran reversal</b>: Idarucizumab 5 g</li><li><b>Apixaban/rivaroxaban reversal</b>: Andexanet alfa (or PCC)</li><li><b>Heparin reversal</b>: Protamine 1 mg/100 U</li><li><b>PPH 4 T's</b>: Tone, Trauma, Tissue, Thrombin</li><li><b>CRASH-2</b>: TXA within 3 h</li><li><b>WOMAN trial</b>: TXA 1 g IV in PPH</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define massive transfusion</li><li>List MTP activation criteria</li><li>Damage control resuscitation components</li><li>TXA indications, dose, timing</li><li>Reversal of warfarin, dabigatran, apixaban</li><li>Fibrinogen threshold and replacement</li><li>Permissive hypotension indications</li><li>ROTEM/TEG interpretation</li><li>PPH 4 T's and management</li><li>Complications of massive transfusion</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Hb may be normal initially</b> in acute bleed (not yet haemodiluted)</li><li><b>TXA only within 3 h</b> (mortality ↑ if later)</li><li><b>Calcium is essential</b> (citrate toxicity)</li><li><b>Permissive hypotension EXCEPT in TBI</b> (MAP ≥80)</li><li><b>FFP and platelets 1:1:1 with RBC</b> (not 1:1:2)</li><li><b>Cryoprecipitate for fibrinogen</b> (FFP alone won't raise fibrinogen adequately)</li><li><b>Fibrinogen target higher in obstetric</b> (&gt;2.0)</li><li><b>Vitamin K + PCC for warfarin</b> (not vitamin K alone if active bleed)</li><li><b>Andexanet for DOAC reversal</b> (factor Xa inhibitors)</li><li><b>Idarucizumab for dabigatran</b> (direct thrombin inhibitor)</li><li><b>TRALI vs TACO</b>: TRALI = acute lung injury; TACO = fluid overload</li><li><b>Stored blood has no platelets/function</b> → need platelet transfusion</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>MTP criteria</b>: <b>4 units in 1 h, OR 10 in 24 h</b></li><li><b>DCR components</b>: <b>1:1:1</b>, <b>TXA</b>, <b>Calcium</b>, <b>Warm</b>, <b>Permissive hypotension</b></li><li><b>TXA</b>: <b>1 g IV within 3 h, then 1 g over 8 h</b></li><li><b>Calcium</b>: <b>10 mL per 4 units RBC</b></li><li><b>Fibrinogen</b>: <b>&gt;1.5</b> (&gt;2.0 obstetric)</li><li><b>Lethal triad</b>: <b>HAC</b> (Hypothermia, Acidosis, Coagulopathy)</li><li><b>PPH 4 T's</b>: <b>Tone, Trauma, Tissue, Thrombin</b></li><li><b>Warfarin reversal</b>: <b>Vitamin K + PCC</b></li><li><b>Dabigatran</b>: <b>Idarucizumab</b></li><li><b>Apixaban/Rivaroxaban</b>: <b>Andexanet</b> (or PCC)</li><li><b>Permissive hypotension</b>: <b>SBP 80-90</b> (TBI excluded)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Major Haemorrhage / MTP))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definitions</div>
+<div class="mm-node mm-l3">– Major haemorrhage: 4 units/h or SBP&lt;90+HR&gt;110</div>
+<div class="mm-node mm-l3">– MTP: 10 units in 24h</div>
+<div class="mm-node mm-l2">Aetiology</div>
+<div class="mm-node mm-l3">– Trauma, surgical, GI, obstetric, vascular</div>
+<div class="mm-node mm-l2">MTP Bundle</div>
+<div class="mm-node mm-l3">– 1:1:1 (RBC:FFP:Platelets)</div>
+<div class="mm-node mm-l3">– TXA 1g IV &lt;3h</div>
+<div class="mm-node mm-l3">– Calcium 10mL/4 units</div>
+<div class="mm-node mm-l3">– Fibrinogen &gt;1.5</div>
+<div class="mm-node mm-l3">– Warm patient</div>
+<div class="mm-node mm-l3">– Permissive hypotension</div>
+<div class="mm-node mm-l2">Drugs</div>
+<div class="mm-node mm-l3">– TXA (CRASH-2)</div>
+<div class="mm-node mm-l3">– Calcium gluconate</div>
+<div class="mm-node mm-l3">– Fibrinogen / cryo</div>
+<div class="mm-node mm-l3">– Vitamin K, PCC</div>
+<div class="mm-node mm-l3">– Idarucizumab (dabigatran)</div>
+<div class="mm-node mm-l3">– Andexanet (apixaban/riva)</div>
+<div class="mm-node mm-l2">Reversal</div>
+<div class="mm-node mm-l3">– Warfarin: Vit K + PCC</div>
+<div class="mm-node mm-l3">– DOAC: Idarucizumab/Andexanet</div>
+<div class="mm-node mm-l3">– Heparin: Protamine</div>
+<div class="mm-node mm-l3">– LMWH: Protamine partial</div>
+<div class="mm-node mm-l2">Viscoelastic</div>
+<div class="mm-node mm-l3">– ROTEM</div>
+<div class="mm-node mm-l3">– TEG</div>
+<div class="mm-node mm-l3">– Targets: FIBTEM MCF &gt;7mm</div>
+<div class="mm-node mm-l2">Permissive Hypotension</div>
+<div class="mm-node mm-l3">– SBP 80-90</div>
+<div class="mm-node mm-l3">– Except TBI MAP &gt;=80</div>
+<div class="mm-node mm-l3">– Pregnancy SBP 100-110</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– Lethal triad</div>
+<div class="mm-node mm-l3">– Hypocalcaemia</div>
+<div class="mm-node mm-l3">– Hyperkalaemia</div>
+<div class="mm-node mm-l3">– TRALI, TACO</div>
+<div class="mm-node mm-l3">– DIC, ARDS</div>
+<div class="mm-node mm-l2">PPH</div>
+<div class="mm-node mm-l3">– 4 Ts Tone Trauma Tissue Thrombin</div>
+<div class="mm-node mm-l3">– Oxytocin, ergometrine, carboprost, misoprostol</div>
+<div class="mm-node mm-l3">– TXA</div>
+<div class="mm-node mm-l3">– Surgical: B-Lynch, hysterectomy</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flowchart — MTP Activation</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Major Haemorrhage</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">MTP Activated by Senior</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">2x Large-bore IVs, Group O-neg until cross</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">MTP Pack 1: 4 RBC + 4 FFP + 1 Platelets</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Repeat Pack</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Calcium 10mL/4 units</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">TXA 1g IV within 3h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Viscoelastic testing: ROTEM/TEG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Fibrinogen &lt;1.5: Cryoprecipitate 2 pools</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Anticoagulant reversal if needed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Surgical Control?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Continue MTP, surgical/radiology</div>
+<div class="fc-node" data-id="M">Stop MTP, monitor</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Major haemorrhage</b>: ≥4 units/h, SBP &lt;90, HR &gt;110, ongoing bleeding</li><li><b>MTP = 1:1:1</b> (RBC:FFP:Platelets) = damage control resuscitation</li><li><b>TXA 1 g IV within 3 h</b> (CRASH-2)</li><li><b>Calcium 10 mL 10% per 4 units RBC</b></li><li><b>Fibrinogen target &gt;1.5 g/L</b> (&gt;2.0 obstetric)</li><li><b>Permissive hypotension SBP 80-90</b> (TBI exception: MAP ≥80)</li><li><b>Warm patient</b> (lethal triad: hypothermia, acidosis, coagulopathy)</li><li><b>Warfarin</b>: Vitamin K + PCC; <b>Dabigatran</b>: Idarucizumab; <b>Apixaban/Riva</b>: Andexanet (or PCC)</li><li><b>Viscoelastic testing</b> (ROTEM/TEG) for targeted transfusion</li><li><b>PPH 4 T's</b>: Tone, Trauma, Tissue, Thrombin</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State MTP activation criteria</li><li>Describe damage control resuscitation</li><li>List reversal of warfarin, dabigatran, apixaban</li><li>State TXA dose and timing</li><li>Outline PPH 4 T's and management</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Major haemorrhage definition</li><li>MTP activation criteria</li><li>1:1:1 ratio (RBC:FFP:Platelets)</li><li>TXA 1 g within 3 h</li><li>Calcium 10 mL per 4 units RBC</li><li>Fibrinogen target &gt;1.5</li><li>Permissive hypotension (SBP 80-90)</li><li>Lethal triad (HAC)</li><li>PPH 4 T's</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Reversal of warfarin, dabigatran, apixaban</li><li>ROTEM/TEG interpretation</li><li>FIBTEM MCF target</li><li>LMWH reversal (protamine partial)</li><li>TRALI vs TACO</li><li>PPH pharmacological ladder</li><li>Permissive hypotension exclusions (TBI)</li><li>PPH surgical options (B-Lynch, hysterectomy)</li><li>Stored blood electrolyte issues</li><li>Citrate toxicity</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>PROPPR trial details</li><li>CRASH-2 mortality numbers</li><li>Andexanet dosing details</li><li>Viscoelastic test parameters</li><li>Cryoprecipitate composition</li><li>EVAR in ruptured AAA</li><li>rFVIIa (off-label)</li><li>Fibrinogen concentrate (Riastap)</li><li>Viscoelastic algorithm details</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition major haemorrhage + MTP</li><li>Aetiology (trauma, surgical, GI, obstetric, vascular, haematological)</li><li>Initial assessment (ABCDE)</li><li>Investigations (FBC, coag, fibrinogen, ABG, ionised Ca, ROTEM/TEG)</li><li>MTP bundle (1:1:1, TXA, calcium, warm, permissive hypotension)</li><li>Reversal of anticoagulants</li><li>PPH 4 T's and management</li><li>Complications (TRALI, TACO, hyperkalaemia, hypocalcaemia, ARDS)</li><li>Viscoelastic testing</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>MTP activation criteria</li><li>Damage control resuscitation</li><li>TXA dose and timing</li><li>Reversal of warfarin, DOACs</li><li>PPH management</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"MTP: ≥4 units/h or 10 units in 24 h"</li><li>"DCR: 1:1:1, TXA, calcium, warm, permissive hypotension"</li><li>"TXA 1 g IV within 3 h (CRASH-2)"</li><li>"Calcium 10 mL per 4 units RBC"</li><li>"Fibrinogen target &gt;1.5 g/L"</li><li>"Permissive hypotension SBP 80-90 (TBI excluded)"</li><li>"Lethal triad: hypothermia, acidosis, coagulopathy"</li><li>"Warfarin reversal: Vit K + PCC"</li><li>"Dabigatran reversal: Idarucizumab"</li><li>"Apixaban/rivaroxaban reversal: Andexanet (or PCC)"</li><li>"PPH 4 T's: Tone, Trauma, Tissue, Thrombin"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Trauma MTP: 1:1:1 + TXA + calcium + warm + permissive hypotension</li><li>Warfarin + GI bleed: Vit K + PCC + endoscopy</li><li>DOAC + intracranial bleed: PCC or specific antidote (Andexanet/Idarucizumab)</li><li>PPH: 4 T's, uterotonics, TXA, balloon, surgery if needed</li><li>Ruptured AAA: permissive hypotension, MTP, EVAR vs open</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>MTP criteria: 4 units/h</li><li>1:1:1 ratio</li><li>TXA 1 g IV &lt;3 h</li><li>Calcium 10 mL/4 units</li><li>Fibrinogen &gt;1.5</li><li>Permissive SBP 80-90 (TBI excluded)</li><li>HAC = lethal triad</li><li>Warfarin → Vit K + PCC</li><li>Dabigatran → Idarucizumab</li><li>Apixaban/Riva → Andexanet</li><li>PPH 4 T's</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Major haemorrhage</b> = life-threatening bleed requiring rapid, balanced transfusion. <b>MTP activation criteria</b>: ≥4 units RBC in &lt;1 h, ≥10 units in 24 h, or anticipated need (SBP &lt;90, HR &gt;110, base deficit &gt;-6). <b>Damage Control Resuscitation (DCR)</b>: 1:1:1 (RBC:FFP:Platelets) (PROPPR), permissive hypotension (SBP 80-90), avoid crystalloid, <b>TXA 1 g IV within 3 h</b> (CRASH-2), then 1 g over 8 h. <b>Calcium 10 mL 10% per 4 units RBC</b> (citrate toxicity). <b>Fibrinogen target &gt;1.5 g/L</b> (obstetric &gt;2.0) — give cryoprecipitate 2 pools. <b>Lethal triad</b>: Hypothermia + Acidosis + Coagulopathy. <b>Permissive hypotension EXCEPTIONS</b>: TBI (MAP ≥80), pregnancy (SBP 100-110), spinal cord injury. <b>Viscoelastic testing</b> (ROTEM/TEG) for targeted transfusion (FIBTEM MCF &gt;7 mm). <b>Anticoagulant reversal</b>: Warfarin → Vit K 5-10 mg + PCC 25-50 U/kg; Dabigatran → Idarucizumab 5 g; Apixaban/Rivaroxaban → Andexanet (or PCC); Heparin → Protamine 1 mg/100 U; LMWH → Protamine partial. <b>Complications</b>: hypocalcaemia, hyperkalaemia, TRALI, TACO, DIC, ARDS. <b>PPH 4 T's</b>: Tone (70%, atony), Trauma, Tissue (retained), Thrombin. <b>PPH Rx</b>: Oxytocin + Ergometrine + Carboprost + Misoprostol + TXA + balloon/B-Lynch/hysterectomy. <b>Group O-neg until crossmatched</b>.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Massive transfusion definition:</li></ol>
+<p>A. ≥4 units RBC in 24 h B. <b>≥10 units RBC in 24 h OR ≥4 units in 1 h</b> C. ≥20 units in 24 h D. ≥2 units/h</p>
+<ol><li>Damage control resuscitation ratio:</li></ol>
+<p>A. 1:1:2 (RBC:FFP:Platelets) B. <b>1:1:1 (RBC:FFP:Platelets)</b> C. 2:1:1 D. 3:1:0</p>
+<ol><li>TXA dose in major trauma:</li></ol>
+<p>A. 500 mg IV B. <b>1 g IV within 3 h of injury, then 1 g over 8 h</b> C. 2 g bolus D. 4 g infusion</p>
+<ol><li>Fibrinogen target in major haemorrhage (non-obstetric):</li></ol>
+<p>A. &gt;1.0 g/L B. <b>&gt;1.5 g/L</b> C. &gt;2.5 g/L D. &gt;3.0 g/L</p>
+<ol><li>Calcium replacement in massive transfusion:</li></ol>
+<p>A. 5 mL per 4 units B. <b>10 mL of 10% Ca gluconate per 4 units RBC</b> C. 20 mL per unit D. Not needed</p>
+<ol><li>Permissive hypotension target (non-TBI):</li></ol>
+<p>A. SBP 50-60 B. <b>SBP 80-90 mmHg</b> C. SBP 100-110 D. SBP 120</p>
+<ol><li>Warfarin reversal in major bleed:</li></ol>
+<p>A. Vitamin K alone B. <b>Vitamin K 5-10 mg IV + PCC 4-factor 25-50 U/kg</b> C. FFP alone D. Protamine</p>
+<ol><li>Dabigatran reversal:</li></ol>
+<p>A. Andexanet B. PCC C. <b>Idarucizumab 5 g IV</b> D. Vitamin K</p>
+<ol><li>PPH 4 T's include all EXCEPT:</li></ol>
+<p>A. Tone B. Trauma C. <b>Toxins</b> D. Thrombin</p>
+<ol><li>CRASH-2 trial showed TXA in trauma:</li></ol>
+<p>A. Increased mortality B. <b>Reduced all-cause mortality (when given &lt;3 h)</b> C. No effect D. Increased VTE</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Trauma MTP activated. First pack contents:</li></ol>
+<p>A. 4 RBC + 2 FFP + 1 Platelets B. <b>4 RBC + 4 FFP + 1 Platelets (1:1:1)</b> C. 6 RBC + 2 FFP D. 10 RBC</p>
+<ol><li>PPH, uterine atony. First-line uterotonic:</li></ol>
+<p>A. Ergometrine B. <b>Oxytocin 5 U IV</b> C. Carboprost D. Misoprostol</p>
+<ol><li>Massive transfusion, ionised Ca drops to 0.8 mmol/L. Action:</li></ol>
+<p>A. Continue B. <b>Give 10% Ca gluconate 10 mL IV</b> C. Stop transfusion D. Vitamin D</p>
+<ol><li>ROTEM FIBTEM MCF &lt;7 mm. Indicates need for:</li></ol>
+<p>A. Platelets B. <b>Fibrinogen (cryoprecipitate or concentrate)</b> C. FFP D. RBC</p>
+<ol><li>Trauma patient on apixaban with intracranial bleed. Best reversal:</li></ol>
+<p>A. Vitamin K B. Idarucizumab C. <b>Andexanet alfa (or PCC 4-factor 50 U/kg)</b> D. Protamine</p>
+<ol><li>Permissive hypotension contraindication:</li></ol>
+<p>A. Penetrating trauma B. <b>Traumatic brain injury (need MAP ≥80)</b> C. Young patient D. Female patient</p>
+<ol><li>PPH, oxytocin and ergometrine failed. Next uterotonic:</li></ol>
+<p>A. <b>Carboprost 250 mcg IM (avoid in asthma)</b> B. Misoprostol C. Surgery D. TXA</p>
+<ol><li>Major haemorrhage, body temperature 33°C. Action:</li></ol>
+<p>A. Continue B. <b>Active warming (Bair Hugger, fluid warmers, ambient)</b> C. Cool patient D. No action needed</p>
+<ol><li>Stored blood transfusion causing hyperkalaemia (K 6.8). Rx:</li></ol>
+<p>A. Calcium only B. <b>Insulin/dextrose + calcium + consider dialysis</b> C. Stop D. Salbutamol only</p>
+<ol><li>Fibrinogen &lt;1.5, obstetric haemorrhage. Target:</li></ol>
+<p>A. &gt;1.5 B. <b>&gt;2.0 g/L (higher in obstetric)</b> C. &gt;2.5 D. &gt;3.0</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Massive transfusion definition</li></ul>
+<p>A: ≥10 units RBC in 24 h or ≥4 units in 1 h</p>
+<ul><li>Q: DCR ratio</li></ul>
+<p>A: 1:1:1 (RBC:FFP:Platelets)</p>
+<ul><li>Q: TXA dose</li></ul>
+<p>A: 1 g IV within 3 h, then 1 g over 8 h</p>
+<ul><li>Q: Calcium replacement</li></ul>
+<p>A: 10 mL 10% Ca gluconate per 4 units RBC</p>
+<ul><li>Q: Fibrinogen target</li></ul>
+<p>A: &gt;1.5 g/L (obstetric &gt;2.0)</p>
+<ul><li>Q: Permissive hypotension</li></ul>
+<p>A: SBP 80-90 (TBI excluded)</p>
+<ul><li>Q: Lethal triad</li></ul>
+<p>A: Hypothermia, Acidosis, Coagulopathy</p>
+<ul><li>Q: Warfarin reversal</li></ul>
+<p>A: Vitamin K + PCC</p>
+<ul><li>Q: Dabigatran reversal</li></ul>
+<p>A: Idarucizumab 5 g</p>
+<ul><li>Q: Apixaban reversal</li></ul>
+<p>A: Andexanet (or PCC)</p>
+<ul><li>Q: PPH 4 T's</li></ul>
+<p>A: Tone, Trauma, Tissue, Thrombin</p>
+<ul><li>Q: FIBTEM MCF &lt;7 mm</li></ul>
+<p>A: Fibrinogen needed</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">29</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — ≥10 units in 24 h or ≥4 in 1 h. <b>MCQ 2</b>: B — 1:1:1 (PROPPR). <b>MCQ 3</b>: B — TXA 1 g IV &lt;3 h, then 1 g over 8 h. <b>MCQ 4</b>: B — &gt;1.5 g/L. <b>MCQ 5</b>: B — 10 mL Ca gluconate per 4 units RBC. <b>MCQ 6</b>: B — SBP 80-90. <b>MCQ 7</b>: B — Vit K + PCC. <b>MCQ 8</b>: C — Idarucizumab for dabigatran. <b>MCQ 9</b>: C — "Toxins" not a T; PPH 4 T's are Tone, Trauma, Tissue, Thrombin. <b>MCQ 10</b>: B — CRASH-2 reduced mortality &lt;3 h.</p>
+<p><b>SBA 1</b>: B — 1:1:1 first pack. <b>SBA 2</b>: B — Oxytocin first. <b>SBA 3</b>: B — Ca gluconate. <b>SBA 4</b>: B — FIBTEM MCF &lt;7 mm = low fibrinogen. <b>SBA 5</b>: C — Andexanet or PCC for apixaban. <b>SBA 6</b>: B — TBI excluded. <b>SBA 7</b>: A — Carboprost (avoid in asthma). <b>SBA 8</b>: B — Active warming. <b>SBA 9</b>: B — Insulin/dextrose + Ca + dialysis if needed. <b>SBA 10</b>: B — Fibrinogen target &gt;2.0 in obstetric.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-15</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Major Haemorrhage and Massive Transfusion · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

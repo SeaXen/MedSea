@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Delirium in Critical Care — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Delirium in Critical Care</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Diagnose delirium using CAM-ICU / ICDSC</li><li>Distinguish hyperactive, hypoactive, mixed subtypes</li><li>Identify predisposing + precipitating risk factors</li><li>Apply prevention (ABCDE bundle, non-pharmacological)</li><li>Manage pharmacological treatment (haloperidol, atypical antipsychotics, dexmedetomidine)</li><li>Avoid benzodiazepines (deliriogenic)</li><li>Treat underlying medical causes</li><li>Counsel family</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition (DSM-5)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Disturbance of attention, awareness, cognition</b> (develops over hours-days, fluctuates)</li><li><b>Not better explained</b> by pre-existing neurocognitive disorder</li><li><b>Evidence of physiological cause</b> (substance intoxication/withdrawal, medication, medical condition)</li><li><b>Severity</b>: mild (1 criterion) to severe (multiple criteria)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>General medical inpatients</b>: 10-30%</li><li><b>ICU mechanically ventilated</b>: 30-80% (up to 80%)</li><li><b>Post-operative elderly</b>: 15-50%</li><li><b>Palliative care</b>: 25-85%</li><li><b>Increased mortality</b>: OR 1.5-2x</li><li><b>Increased LOS</b>, long-term cognitive impairment</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Subtypes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Subtype</th><th>Frequency</th><th>Features</th><th>Notes</th></tr><tr><td>---------</td><td>-----------</td><td>----------</td><td>-------</td></tr><tr><td>**Hyperactive**</td><td>5-25%</td><td>Agitation, restlessness, hallucinations, combative</td><td>Often drug/withdrawal</td></tr><tr><td>**Hypoactive**</td><td>25-50%</td><td>Lethargy, inattention, reduced motor activity, withdrawal</td><td>Often missed; worse prognosis</td></tr><tr><td>**Mixed**</td><td>30-75%</td><td>Fluctuates between hyper- and hypoactive</td><td>Most common</td></tr><tr><td>**Subsyndromal**</td><td>Variable</td><td>Mild symptoms, not full criteria</td><td>At risk of progression</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cholinergic deficiency</b> (acetylcholine ↓)</li><li><b>Dopamine excess</b></li><li><b>Serotonin dysregulation</b></li><li><b>Inflammation</b> (cytokines, SIRS)</li><li><b>Direct neuronal injury</b> (hypoxia, hypoglycaemia, sepsis)</li><li><b>Disrupted sleep-wake cycle</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Risk Factors</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Predisposing (Baseline)</div>
+<ul><li><b>Age</b> (especially &gt;65)</li><li><b>Dementia</b> (strongest single factor)</li><li><b>Frailty</b></li><li><b>Prior delirium, stroke, Parkinson's</b></li><li><b>Sensory impairment</b> (vision, hearing)</li><li><b>Alcohol, smoking</b></li><li><b>Polypharmacy</b></li><li><b>Depression</b></li><li><b>Malnutrition</b></li></ul>
+<div class="sub-h">Precipitating (Acute)</div>
+<ul><li><b>Infection/sepsis</b> (most common)</li><li><b>Medications</b> (especially <b>benzodiazepines</b>, anticholinergics, opioids, corticosteroids, antihistamines)</li><li><b>Sedation</b> (deep sedation, prolonged)</li><li><b>Metabolic</b>: hyponatraemia, hypoglycaemia, hypercalcaemia, AKI, liver failure</li><li><b>Hypoxia, hypercapnia</b></li><li><b>Pain</b> (undertreated or overtreated)</li><li><b>Sleep deprivation</b></li><li><b>Mechanical ventilation</b></li><li><b>Surgery</b> (especially cardiac, orthopaedic, hip fracture)</li><li><b>Withdrawal</b> (alcohol, benzodiazepines)</li><li><b>Constipation, urinary retention</b></li><li><b>Lines, tubes, restraints</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Acute onset</b> (hours-days), <b>fluctuating course</b> (often worse at night — "sundowning")</li><li><b>Inattention</b> (key feature): difficulty focusing, can't follow conversation</li><li><b>Disorganised thinking</b></li><li><b>Altered level of consciousness</b> (hyper or hypo)</li><li><b>Cognitive impairment</b>: disorientation, memory loss</li><li><b>Psychomotor</b>: agitation OR retardation</li><li><b>Perceptual</b>: hallucinations (visual &gt; auditory), delusions</li><li><b>Emotional</b>: fear, anxiety, depression, lability</li><li><b>Sleep-wake disturbance</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Diagnosis — ICU Screening Tools</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">CAM-ICU (Confusion Assessment Method — ICU)</div>
+<p><b>Feature 1</b>: Acute change/fluctuating mental status <b>Feature 2</b>: Inattention (letters test, picture test) <b>Feature 3</b>: Altered level of consciousness (RASS) <b>Feature 4</b>: Disorganised thinking <b>Positive CAM-ICU = Features 1+2 + (3 or 4)</b></p>
+<div class="sub-h">ICDSC (Intensive Care Delirium Screening Checklist)</div>
+<ul><li>8 items, scored 0-8; ≥4 = delirium; 1-3 = subsyndromal</li><li>Items: altered LOC, inattention, disorientation, hallucination/delusion, psychomotor, speech, sleep-wake, symptom fluctuation</li></ul>
+<div class="sub-h">RASS (Richmond Agitation-Sedation Scale)</div>
+<ul><li>Target <b>0 to -1</b> (alert to drowsy)</li><li><b>+4</b> combative, +1 restless, <b>0</b> alert, <b>-1</b> drowsy, -5 unarousable</li><li>Patient arousable (RASS -3 to +4) → can assess CAM-ICU</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Investigations — Look for Cause</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Bloods</b>: FBC, U&amp;E, Ca²⁺, Mg²⁺, glucose, LFTs, ammonia (liver), CRP, blood culture</li><li><b>ABG</b>: hypoxaemia, hypercapnia, acidosis</li><li><b>ECG</b>: QTc (if antipsychotic considered)</li><li><b>Imaging</b>: CXR, CT head (if focal neurology, falls, anticoagulation, head injury)</li><li><b>LP</b> (if fever +/− meningism, immunocompromised)</li><li><b>EEG</b> (if seizures suspected, non-convulsive status)</li><li><b>Toxicology screen</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Non-Pharmacological (First-Line, All Patients)</div>
+<ol><li><b>Reorientation</b>: clock, calendar, glasses, hearing aids</li><li><b>Sleep-wake cycle</b>: day/night lighting, sleep hygiene, minimise night interventions</li><li><b>Early mobilisation</b> (ABCDEF bundle)</li><li><b>Avoid restraints</b>, lines, catheters if possible</li><li><b>Treat pain</b> (analgesia first)</li><li><b>Adequate hydration + nutrition</b></li><li><b>Frequent reorientation</b>, family visits</li><li><b>Avoid benzodiazepines</b> unless alcohol/benzo withdrawal</li><li><b>Address constipation, urinary retention</b></li><li><b>Review medications</b> (STOP anticholinergics)</li><li><b>Oxygen</b> if hypoxic</li><li><b>Reassess daily</b></li></ol>
+<div class="sub-h">ABCDEF Bundle (SCCM)</div>
+<ul><li><b>A</b>: Assess, prevent, manage pain</li><li><b>B</b>: Both SAT (spontaneous awakening trial) + SBT (spontaneous breathing trial)</li><li><b>C</b>: Choice of analgesia and sedation (light sedation, avoid benzos)</li><li><b>D</b>: Delirium: assess, prevent, manage</li><li><b>E</b>: Early mobility and exercise</li><li><b>F</b>: Family engagement and empowerment</li></ul>
+<div class="sub-h">Pharmacological</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Use</th></tr><tr><td>------</td><td>------</td><td>-----</td></tr><tr><td>**Haloperidol**</td><td>0.5-2 mg PO/IV q15-30 min (max 30 mg/24 h ICU)</td><td>Hyperactive distressing symptoms; agitation risk to self/others</td></tr><tr><td>**Olanzapine**</td><td>2.5-5 mg PO/IM</td><td>Alternative; less EPS</td></tr><tr><td>**Quetiapine**</td><td>12.5-50 mg PO q12h</td><td>Hypoactive?; low-dose, also for sleep</td></tr><tr><td>**Risperidone**</td><td>0.5-1 mg PO</td><td>Less used in ICU</td></tr><tr><td>**Dexmedetomidine**</td><td>0.2-1.5 mcg/kg/h IV infusion</td><td>Hyperactive; facilitates extubation (DahLBA, MIDEX trials)</td></tr><tr><td>**Melatonin / Ramelteon**</td><td>3-5 mg PO nocte</td><td>Sleep-wake cycle</td></tr></table>
+<div class="callout"><b>Avoid</b> benzodiazepines (deliriogenic). Exception: alcohol/benzodiazepine withdrawal (use diazepam/chlordiazepoxide per CIWA).</div>
+<div class="sub-h">Haloperidol Cautions</div>
+<ul><li><b>QTc prolongation</b> → baseline ECG, monitor (especially with other QT drugs)</li><li><b>EPS</b> (acute dystonia, parkinsonism, tardive dyskinesia with chronic)</li><li><b>NMS</b> (rare but serious)</li><li><b>Reduce dose</b> in elderly, hepatic impairment</li><li><b>IV haloperidol</b> not licensed in UK (use oral/IM/NG)</li></ul>
+<div class="sub-h">Treatment of Underlying Cause</div>
+<ul><li><b>Sepsis</b>: antibiotics, source control</li><li><b>Metabolic</b>: correct Na⁺, glucose, Ca²⁺, Mg²⁺</li><li><b>Hypoxia</b>: oxygen, ventilation</li><li><b>Withdrawal</b>: CIWA protocol</li><li><b>Pain</b>: analgesia (paracetamol, opioids as needed)</li><li><b>Constipation/retention</b>: laxatives, catheter</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Alcohol Withdrawal Delirium (Delirium Tremens)</div>
+<ul><li><b>Onset</b>: 48-96 h after last drink</li><li><b>Features</b>: agitation, tremor, sweating, tachycardia, visual hallucinations, seizures</li><li><b>Rx</b>: <b>Chlordiazepoxide</b> (librium) or <b>diazepam</b> (CIWA-Ar protocol)</li><li><b>+ Thiamine</b> (Pabrinex IV 2 pairs tds × 3 days, then oral)</li><li><b>+ Beta-blocker/clonidine</b> for sympathetic overactivity</li><li><b>+ Haloperidol</b> for hallucinations (avoid in withdrawal as monotherapy)</li><li><b>DT mortality</b>: 5-15% untreated</li></ul>
+<div class="sub-h">Benzodiazepine Withdrawal</div>
+<ul><li><b>Symptoms</b>: anxiety, agitation, tremor, seizures</li><li><b>Rx</b>: long-acting benzo (diazepam) tapering OR restart benzo</li></ul>
+<div class="sub-h">Terminal/Palliative Delirium</div>
+<ul><li><b>Haloperidol</b> first-line</li><li><b>Levomepromazine</b> (broad-spectrum antipsychotic) for refractory</li><li><b>Midazolam SC</b> for terminal agitation</li><li><b>Family counselling</b>: often reversible cause</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ICU delirium duration</b> → predictor of long-term cognitive dysfunction</li><li><b>In-hospital mortality</b>: 25-30% (vs 5-10% non-delirious)</li><li><b>6-month mortality</b>: 30-40% in elderly</li><li><b>Long-term</b>: post-ICU cognitive impairment, PTSD, depression</li><li><b>Functional decline</b>: prolonged</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Delirium = acute fluctuating disturbance of attention + awareness + cognition</b></li><li><b>Hypoactive subtype</b> = most common, often missed, worst prognosis</li><li><b>Strongest predisposing factor</b>: dementia</li><li><b>Strongest precipitating factor</b>: benzodiazepines + sepsis</li><li><b>CAM-ICU = gold standard</b> screening in ICU (Features 1+2 + 3 or 4)</li><li><b>ICDSC ≥4 = delirium</b> (1-3 subsyndromal)</li><li><b>RASS target 0 to -1</b> (light sedation)</li><li><b>First-line Rx</b>: non-pharmacological (reorientation, sleep-wake, early mobility, family)</li><li><b>Avoid benzodiazepines</b> (deliriogenic)</li><li><b>Haloperidol</b> for distressing/agitated symptoms (QTc, EPS risk)</li><li><b>Dexmedetomidine</b> for hyperactive ICU delirium, facilitates extubation</li><li><b>ABCDEF bundle</b> = standard of care</li><li><b>DT = alcohol withdrawal</b> (48-96 h); chlordiazepoxide + thiamine</li><li><b>Thiamine before glucose</b> (Wernicke's)</li><li><b>Hypoactive delirium</b>: mortality higher than hyperactive</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define delirium</li><li>Subtypes of delirium</li><li>CAM-ICU criteria</li><li>Predisposing vs precipitating risk factors</li><li>Non-pharmacological management</li><li>Pharmacological management (haloperidol, dexmedetomidine)</li><li>ABCDEF bundle</li><li>Delirium tremens management</li><li>Thiamine and Wernicke's</li><li>Haloperidol adverse effects</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Hypoactive delirium</b> often missed (looks "calm")</li><li><b>Dementia ≠ delirium</b> (delirium acute, fluctuating)</li><li><b>Benzodiazepines cause delirium</b> (avoid unless withdrawal)</li><li><b>Antipsychotics don't treat underlying cause</b> — find and treat</li><li><b>Haloperidol QTc</b> — check baseline, monitor</li><li><b>IV haloperidol</b> not licensed in UK (use oral/IM)</li><li><b>Thiamine before glucose</b> to prevent Wernicke's</li><li><b>DT mortality 5-15%</b> untreated</li><li><b>Haloperidol</b> for ALCOHOL withdrawal is adjunct, NOT monotherapy</li><li><b>Dexmedetomidine</b> expensive, ICU-only, bradycardia/hypotension risk</li><li><b>Post-ICU cognitive impairment</b> is a real long-term sequela</li><li><b>Restraints WORSEN</b> delirium</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Delirium DSM-5</b>: <b>Attention</b> (primary) + <b>Fluctuating</b> + <b>Acute</b> + <b>Physiological cause</b></li><li><b>CAM-ICU</b>: <b>1+2 + 3 or 4</b></li><li><b>Hyper hypo mixed</b>: most common is <b>MIXED</b></li><li><b>Strongest risk factor</b>: <b>DEMENTIA</b></li><li><b>Strongest precipitant</b>: <b>BENZOS + SEPSIS</b></li><li><b>ABCDEF bundle</b>: <b>A</b>ssess pain, <b>B</b>oth SAT/SBT, <b>C</b>hoice of sedation, <b>D</b>elirium, <b>E</b>arly mobility, <b>F</b>amily</li><li><b>First-line Rx</b>: <b>NON-PHARM</b> (reorient, sleep, mobilise)</li><li><b>Haloperidol cautions</b>: <b>QTc, EPS, NMS</b></li><li><b>DT Rx</b>: <b>Benzodiazepine</b> + <b>Thiamine</b></li><li><b>Thiamine before glucose</b> (Wernicke's)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((ICU Delirium))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definition</div>
+<div class="mm-node mm-l3">– Acute fluctuating</div>
+<div class="mm-node mm-l3">– Attention + awareness</div>
+<div class="mm-node mm-l3">– Underlying cause</div>
+<div class="mm-node mm-l2">Subtypes</div>
+<div class="mm-node mm-l3">– Hyperactive (agitation)</div>
+<div class="mm-node mm-l3">– Hypoactive (lethargy) - WORST</div>
+<div class="mm-node mm-l3">– Mixed (most common)</div>
+<div class="mm-node mm-l3">– Subsyndromal</div>
+<div class="mm-node mm-l2">Risk Factors</div>
+<div class="mm-node mm-l3">– Predisposing</div>
+<div class="mm-node mm-deep">– Dementia</div>
+<div class="mm-node mm-deep">– Age &gt;65</div>
+<div class="mm-node mm-deep">– Frailty</div>
+<div class="mm-node mm-deep">– Polypharmacy</div>
+<div class="mm-node mm-l3">– Precipitating</div>
+<div class="mm-node mm-deep">– Sepsis</div>
+<div class="mm-node mm-deep">– Benzodiazepines</div>
+<div class="mm-node mm-deep">– Sedation depth</div>
+<div class="mm-node mm-deep">– Metabolic</div>
+<div class="mm-node mm-deep">– Hypoxia</div>
+<div class="mm-node mm-deep">– Pain</div>
+<div class="mm-node mm-deep">– Withdrawal</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– CAM-ICU (1+2+3/4)</div>
+<div class="mm-node mm-l3">– ICDSC &gt;=4</div>
+<div class="mm-node mm-l3">– RASS 0 to -1</div>
+<div class="mm-node mm-l2">Investigations</div>
+<div class="mm-node mm-l3">– FBC, UE, Ca, Mg</div>
+<div class="mm-node mm-l3">– Glucose, ABG</div>
+<div class="mm-node mm-l3">– CRP, cultures</div>
+<div class="mm-node mm-l3">– CT head, EEG, LP</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Non-pharmacological</div>
+<div class="mm-node mm-deep">– Reorientation</div>
+<div class="mm-node mm-deep">– Sleep-wake</div>
+<div class="mm-node mm-deep">– Early mobility</div>
+<div class="mm-node mm-deep">– Family</div>
+<div class="mm-node mm-deep">– Avoid restraints</div>
+<div class="mm-node mm-l3">– Pharmacological</div>
+<div class="mm-node mm-deep">– Haloperidol (distressing)</div>
+<div class="mm-node mm-deep">– Atypical antipsychotics</div>
+<div class="mm-node mm-deep">– Dexmedetomidine</div>
+<div class="mm-node mm-l3">– Treat cause</div>
+<div class="mm-node mm-deep">– Sepsis, metabolic</div>
+<div class="mm-node mm-deep">– Withdrawal</div>
+<div class="mm-node mm-l2">ABCDEF Bundle</div>
+<div class="mm-node mm-l3">– Assess pain</div>
+<div class="mm-node mm-l3">– Both SAT/SBT</div>
+<div class="mm-node mm-l3">– Choice of sedation</div>
+<div class="mm-node mm-l3">– Delirium</div>
+<div class="mm-node mm-l3">– Early mobility</div>
+<div class="mm-node mm-l3">– Family</div>
+<div class="mm-node mm-l2">Special</div>
+<div class="mm-node mm-l3">– DT: chlordiazepoxide + thiamine</div>
+<div class="mm-node mm-l3">– Terminal: haloperidol, levomepromazine</div>
+<div class="mm-node mm-l2">Prognosis</div>
+<div class="mm-node mm-l3">– Mortality 25-30%</div>
+<div class="mm-node mm-l3">– Long-term cognitive impairment</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flowchart — Delirium Management</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Screen CAM-ICU/ICDSC</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Positive?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Continue monitoring</div>
+<div class="fc-node" data-id="D">Look for cause: bloods, ABG, cultures, imaging</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Treat underlying cause</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Non-pharmacological: reorient, sleep, mobilise, family, avoid restraints</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Distressing/agitated?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Reassess</div>
+<div class="fc-node" data-id="I">Haloperidol 0.5-2 mg or atypical antipsychotic</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Daily CAM-ICU, ABCDEF bundle</div>
+<div class="fc-node" data-id="J">Refractory: dexmedetomidine</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Delirium = acute, fluctuating disturbance of attention + awareness + cognition</b></li><li><b>CAM-ICU = gold standard</b> (Features 1+2 + 3 or 4)</li><li><b>Hypoactive</b> = most common, often missed, worst prognosis</li><li><b>Strongest risk factor</b>: dementia; <b>precipitant</b>: benzodiazepines + sepsis</li><li><b>First-line Rx</b>: non-pharmacological (reorient, sleep, mobilise, family)</li><li><b>Avoid benzodiazepines</b> (deliriogenic; exception: withdrawal)</li><li><b>Haloperidol 0.5-2 mg</b> for distressing/agitated (QTc, EPS risk)</li><li><b>Dexmedetomidine</b> for hyperactive; facilitates extubation</li><li><b>ABCDEF bundle</b> = standard of care</li><li><b>DT = alcohol withdrawal</b> (48-96 h): chlordiazepoxide + thiamine (Pabrinex)</li><li><b>Thiamine BEFORE glucose</b> to prevent Wernicke's</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>Define delirium and list 3 subtypes</li><li>List CAM-ICU features</li><li>Outline non-pharmacological management</li><li>State haloperidol dose and cautions</li><li>List ABCDEF bundle components</li><li>Describe DT management</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Delirium definition</li><li>3 subtypes</li><li>CAM-ICU features</li><li>Risk factors (dementia, benzos, sepsis)</li><li>Non-pharmacological management</li><li>Haloperidol indications and dose</li><li>Avoid benzodiazepines</li><li>DT management (chlordiazepoxide + thiamine)</li><li>Thiamine before glucose</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>ICDSC</li><li>RASS target</li><li>ABCDEF bundle</li><li>Atypical antipsychotics (olanzapine, quetiapine)</li><li>Dexmedetomidine use</li><li>Haloperidol adverse effects (QTc, EPS, NMS)</li><li>Wernicke's encephalopathy</li><li>Terminal delirium</li><li>Benzodiazepine withdrawal</li><li>Post-ICU cognitive impairment</li><li>Hypoactive vs hyperactive prognosis</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>DahLBA, MIDEX trials (dexmedetomidine)</li><li>Propofol-related infusion syndrome</li><li>Long-term PTSD after ICU</li><li>Sleep architecture in ICU</li><li>Anticholinergic burden scale</li><li>Right- vs left-sided limb restraints paradox</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition delirium (DSM-5)</li><li>Pathophysiology</li><li>Subtypes (hyperactive, hypoactive, mixed)</li><li>Risk factors (predisposing + precipitating)</li><li>Diagnosis (CAM-ICU, ICDSC, RASS)</li><li>Investigations (look for cause)</li><li>Management:</li><li>Non-pharmacological (reorientation, sleep, mobility, family)</li><li>Pharmacological (haloperidol, atypical, dexmedetomidine)</li><li>Treat underlying cause</li><li>ABCDEF bundle</li><li>Special situations (DT, terminal, withdrawal)</li><li>Prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>CAM-ICU</li><li>ABCDEF bundle</li><li>Haloperidol dose and cautions</li><li>DT management</li><li>Non-pharmacological management</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Delirium = acute, fluctuating disturbance of attention + awareness + cognition"</li><li>"CAM-ICU: 1+2 + 3 or 4"</li><li>"Most common subtype: mixed; worst prognosis: hypoactive"</li><li>"Strongest risk factor: dementia"</li><li>"Strongest precipitant: benzodiazepines"</li><li>"First-line Rx: non-pharmacological"</li><li>"Avoid benzodiazepines unless withdrawal"</li><li>"Haloperidol 0.5-2 mg for distressing agitation"</li><li>"Dexmedetomidine for hyperactive ICU delirium"</li><li>"DT: chlordiazepoxide + thiamine (Pabrinex)"</li><li>"Thiamine before glucose (Wernicke's)"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>75-year-old post-op, fluctuating confusion, hallucinations, inattention → CAM-ICU positive, look for sepsis/UTI, haloperidol if distressing</li><li>ICU ventilated, RASS -1, CAM-ICU positive → daily SAT/SBT, dexmedetomidine</li><li>Alcoholic, 48 h post-admission, tremor, sweating, visual hallucinations → DT, chlordiazepoxide, Pabrinex</li><li>ICU survivor, long cognitive issues → post-ICU cognitive impairment, cognitive rehab</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Delirium = acute + fluctuating + attention</li><li>CAM-ICU: 1+2 + 3 or 4</li><li>Mixed = most common</li><li>Hypoactive = worst prognosis</li><li>Dementia = strongest risk</li><li>Benzos = strongest precipitant</li><li>Non-pharm first</li><li>Haloperidol for distressing</li><li>Avoid benzos (except withdrawal)</li><li>DT: chlordiazepoxide + thiamine</li><li>Thiamine before glucose</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Delirium</b> = acute, fluctuating disturbance of attention + awareness + cognition due to physiological cause (DSM-5). <b>3 subtypes</b>: <b>Hyperactive</b> (agitation, hallucinations, ~5-25%), <b>Hypoactive</b> (lethargy, often missed, ~25-50%, <b>worst prognosis</b>), <b>Mixed</b> (most common, ~30-75%). <b>Strongest risk factors</b>: dementia (predisposing), benzodiazepines + sepsis (precipitating). <b>Diagnosis — CAM-ICU</b>: Features 1 (acute change) + 2 (inattention) + 3 (altered LOC) or 4 (disorganised thinking) = positive. <b>RASS target 0 to -1</b> (light sedation). <b>Investigations</b>: FBC, U&amp;E, Ca, Mg, glucose, ABG, CRP, cultures, CT head (if focal), LP (if fever/meningism). <b>Management</b>: <b>Non-pharmacological first</b> — reorientation (clock, calendar, glasses, hearing aids), sleep-wake cycle, early mobility, family engagement, avoid restraints, treat pain, review meds (stop anticholinergics). <b>Pharmacological</b>: <b>Haloperidol 0.5-2 mg</b> for distressing/agitated (QTc, EPS, NMS risk); atypical (olanzapine, quetiapine); <b>dexmedetomidine</b> for hyperactive ICU delirium. <b>AVOID benzodiazepines</b> (deliriogenic) except alcohol/benzodiazepine withdrawal. <b>ABCDEF bundle</b>: Assess pain, Both SAT/SBT, Choice of sedation, Delirium, Early mobility, Family. <b>Delirium Tremens</b> (48-96 h after last drink): <b>chlordiazepoxide</b> (or diazepam) per CIWA + <b>Pabrinex IV thiamine 2 pairs tds × 3 days</b> + haloperidol adjunct + thiamine before glucose. <b>DT mortality 5-15% untreated</b>. <b>Wernicke's</b>: confusion + ataxia + ophthalmoplegia. <b>Prognosis</b>: in-hospital mortality 25-30%, long-term cognitive impairment, post-ICU PTSD/depression common.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Most common delirium subtype:</li></ol>
+<p>A. Hyperactive B. Hypoactive C. <b>Mixed</b> D. Subsyndromal</p>
+<ol><li>Strongest predisposing risk factor for delirium:</li></ol>
+<p>A. Age B. <b>Dementia</b> C. Polypharmacy D. Vision impairment</p>
+<ol><li>CAM-ICU positive requires:</li></ol>
+<p>A. Features 1+2+3 B. <b>Features 1+2 + 3 or 4</b> C. All 4 features D. Inattention alone</p>
+<ol><li>First-line management of ICU delirium:</li></ol>
+<p>A. Haloperidol B. Benzodiazepine C. <b>Non-pharmacological (reorientation, sleep, mobility)</b> D. Dexmedetomidine</p>
+<ol><li>Haloperidol adverse effects include all EXCEPT:</li></ol>
+<p>A. QTc prolongation B. EPS C. NMS D. <b>Hyperthermia only</b></p>
+<ol><li>ICU delirium mortality rate:</li></ol>
+<p>A. 1-5% B. <b>25-30%</b> C. 50-60% D. 80%</p>
+<ol><li>Delirium tremens onset after last drink:</li></ol>
+<p>A. 6 h B. 24 h C. <b>48-96 h</b> D. 2 weeks</p>
+<ol><li>First-line treatment of delirium tremens:</li></ol>
+<p>A. Haloperidol alone B. <b>Chlordiazepoxide + thiamine (Pabrinex)</b> C. IV glucose D. Dexmedetomidine</p>
+<ol><li>Wernicke's encephalopathy triad:</li></ol>
+<p>A. Confusion, ataxia, ophthalmoplegia B. Confusion, seizures, nystagmus C. Memory loss, ataxia, neuropathy D. Confusion, dysarthria, dysphagia</p>
+<ol><li>Thiamine must be given before:</li></ol>
+<p>A. Antibiotics B. <b>Glucose</b> C. Haloperidol D. Sedation</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>ICU ventilated patient, RASS -1, fluctuating attention, disorganised thinking. CAM-ICU:</li></ol>
+<p>A. Negative B. <b>Positive (1+2+4)</b> C. Inconclusive D. Subsyndromal</p>
+<ol><li>Hypoactive delirium in ICU. Most likely:</li></ol>
+<p>A. Missed; high mortality B. Easy to diagnose C. Agitation present D. Haloperidol first-line</p>
+<ol><li>Haloperidol dose in ICU delirium:</li></ol>
+<p>A. 0.1 mg B. <b>0.5-2 mg (max 30 mg/24 h)</b> C. 10 mg D. 100 mg</p>
+<ol><li>Benzodiazepine for ICU delirium (non-withdrawal):</li></ol>
+<p>A. First-line B. <b>Avoid (deliriogenic)</b> C. IV midazolam D. Lorazepam 2 mg</p>
+<ol><li>Haloperidol contraindication caution:</li></ol>
+<p>A. Diabetes B. <b>QTc prolongation</b> C. Anaemia D. Hypothyroidism</p>
+<ol><li>65-year-old post-hip surgery, fluctuating confusion at night, disoriented. Most likely:</li></ol>
+<p>A. Dementia B. <b>Delirium (acute, fluctuating)</b> C. Stroke D. Depression</p>
+<ol><li>Dexmedetomidine advantage in ICU:</li></ol>
+<p>A. Cheaper B. <b>Light sedation, facilitates extubation, less delirium</b> C. Anticholinergic D. NMJ blocker</p>
+<ol><li>ABCDEF bundle includes all EXCEPT:</li></ol>
+<p>A. Assess pain B. Both SAT/SBT C. Choice of sedation D. <b>No antipsychotics</b></p>
+<ol><li>80-year-old ICU, family at bedside reorienting patient. This is:</li></ol>
+<p>A. Pharmacological Rx B. <b>Non-pharmacological Rx (reorientation + family engagement)</b> C. Restraint D. Sedation</p>
+<ol><li>Thiamine (Pabrinex) IV dose in DT:</li></ol>
+<p>A. 1 pair stat B. <b>2 pairs tds × 3 days, then oral thiamine</b> C. 10 g D. Oral only</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Delirium definition</li></ul>
+<p>A: Acute fluctuating disturbance of attention + awareness + cognition</p>
+<ul><li>Q: Most common delirium subtype</li></ul>
+<p>A: Mixed</p>
+<ul><li>Q: Worst prognosis subtype</li></ul>
+<p>A: Hypoactive</p>
+<ul><li>Q: Strongest risk factor</li></ul>
+<p>A: Dementia</p>
+<ul><li>Q: Strongest precipitant</li></ul>
+<p>A: Benzodiazepines</p>
+<ul><li>Q: CAM-ICU positive</li></ul>
+<p>A: Features 1+2 + 3 or 4</p>
+<ul><li>Q: RASS target</li></ul>
+<p>A: 0 to -1</p>
+<ul><li>Q: First-line Rx</li></ul>
+<p>A: Non-pharmacological</p>
+<ul><li>Q: Haloperidol dose</li></ul>
+<p>A: 0.5-2 mg</p>
+<ul><li>Q: Avoid in ICU delirium (non-withdrawal)</li></ul>
+<p>A: Benzodiazepines</p>
+<ul><li>Q: Dexmedetomidine advantage</li></ul>
+<p>A: Light sedation, less delirium</p>
+<ul><li>Q: DT Rx</li></ul>
+<p>A: Chlordiazepoxide + thiamine</p>
+<ul><li>Q: DT onset</li></ul>
+<p>A: 48-96 h after last drink</p>
+<ul><li>Q: Wernicke's triad</li></ul>
+<p>A: Confusion + ataxia + ophthalmoplegia</p>
+<ul><li>Q: Thiamine before what</li></ul>
+<p>A: Glucose</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: C — Mixed is most common. <b>MCQ 2</b>: B — Dementia is the strongest predisposing factor. <b>MCQ 3</b>: B — 1+2 + 3 or 4. <b>MCQ 4</b>: C — Non-pharmacological first. <b>MCQ 5</b>: D — QTc, EPS, NMS are all adverse effects. <b>MCQ 6</b>: B — 25-30% mortality. <b>MCQ 7</b>: C — DT 48-96 h. <b>MCQ 8</b>: B — Chlordiazepoxide + Pabrinex. <b>MCQ 9</b>: A — Wernicke's: confusion + ataxia + ophthalmoplegia. <b>MCQ 10</b>: B — Thiamine before glucose.</p>
+<p><b>SBA 1</b>: B — CAM-ICU positive: 1+2+4. <b>SBA 2</b>: A — Hypoactive: often missed, high mortality. <b>SBA 3</b>: B — 0.5-2 mg. <b>SBA 4</b>: B — Avoid benzos in non-withdrawal delirium. <b>SBA 5</b>: B — QTc prolongation. <b>SBA 6</b>: B — Delirium is acute and fluctuating. <b>SBA 7</b>: B — Dexmedetomidine: light sedation, less delirium. <b>SBA 8</b>: D — ABCDEF includes antipsychotic consideration. <b>SBA 9</b>: B — Non-pharmacological. <b>SBA 10</b>: B — Pabrinex 2 pairs tds × 3 days.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-15</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Delirium in Critical Care · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

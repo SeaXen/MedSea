@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acute Bacterial Meningitis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Acute Bacterial Meningitis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise classic triad (fever, neck stiffness, altered mental status) — only in 44–66%</li><li>Perform LP safely: contraindications, CSF interpretation (opening pressure, cells, protein, glucose, Gram stain, culture, PCR)</li><li>Select empirical antibiotics by age, risk factors, and local resistance</li><li>Administer dexamethasone correctly (timing, dose, duration)</li><li>Manage complications: raised ICP, seizures, SIADH, cranial nerve palsies, hydrocephalus, DIC</li><li>Recognise specific pathogen clues (petechial rash = meningococcal, rhombencephalitis = Listeria)</li><li>Initiate public health measures (chemoprophylaxis, notification)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Aetiology by Age / Risk Group</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Group</th><th>Common Pathogens</th></tr><tr><td>-------</td><td>------------------</td></tr><tr><td>**Neonates (<1 month)**</td><td>Group B Strep, *E. coli*, *Listeria monocytogenes*, *Klebsiella*</td></tr><tr><td>**Infants/Children (1m–18y)**</td><td>*S. pneumoniae*, *N. meningitidis*, *H. influenzae* type b (Hib)</td></tr><tr><td>**Adults (18–50y)**</td><td>**S. pneumoniae** (50–70%), **N. meningitidis** (15–30%)</td></tr><tr><td>**Adults >50y / Immunocompromised / Alcoholics**</td><td>*S. pneumoniae*, *N. meningitidis*, **Listeria monocytogenes**</td></tr><tr><td>**Post-neurosurgery / Trauma / CSF shunt**</td><td>*S. aureus*, CoNS, Gram-negatives (*Pseudomonas*), *Cutibacterium acnes*</td></tr><tr><td>**Penetrating head injury**</td><td>*S. aureus*, *Clostridium*, Gram-negatives, anaerobes</td></tr></table>
+<div class="callout">[!tip] <b>Listeria risk: &gt;50y, immunocompromised, pregnancy, alcoholics, steroids.</b> <b>Add Ampicillin/Amoxicillin to empirical regimen.</b> <b>Cephalosporins DO NOT cover Listeria.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classic Triad (Present in 44–66%)</div>
+<ol><li><b>Fever</b> (≥38°C)</li><li><b>Neck stiffness</b> (nuchal rigidity)</li><li><b>Altered mental status</b> (confusion, lethargy, coma)</li></ol>
+<div class="sub-h">Other Signs</div>
+<table class="ctable"><tr><th>Sign</th><th>Description</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**Kernig's sign**</td><td>Pain on knee extension with hip flexed</td></tr><tr><td>**Brudzinski's sign**</td><td>Neck flexion → involuntary hip/knee flexion</td></tr><tr><td>**Photophobia**</td><td>Common</td></tr><tr><td>**Petechial / purpuric rash**</td><td>**Meningococcal sepsis** (specific, NOT in pneumococcal)</td></tr><tr><td>**Focal neurological deficits**</td><td>Cranial nerve palsies (III, IV, VI, VII), hemiparesis</td></tr><tr><td>**Seizures**</td><td>20–30%</td></tr><tr><td>**Signs of raised ICP**</td><td>Papilloedema, hypertension, bradycardia, irregular breathing (Cushing's triad)</td></tr></table>
+<div class="callout">[!warning] <b>Elderly/immunocompromised: ATYPICAL presentation — may lack fever, neck stiffness, or meningeal signs.</b> <b>Altered mental status may be the ONLY sign.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Contraindications to Immediate LP</span>
+  </div>
+  <div class="sec-body">
+<p><b>CT Brain BEFORE LP if ANY of:</b></p>
+<ul><li><b>Immunocompromised</b> (HIV, steroids, transplant, chemo)</li><li><b>History of CNS disease</b> (mass lesion, stroke, shunt)</li><li><b>New-onset seizure</b> (within 1 week)</li><li><b>Papilloedema</b> (or fundoscopy not possible)</li><li><b>Focal neurological deficit</b></li><li><b>GCS &lt;12</b> (or deteriorating)</li><li><b>Age &gt;60y</b> (some guidelines)</li></ul>
+<div class="callout">[!critical] <b>If CT indicated → Blood cultures → START antibiotics + dexamethasone IMMEDIATELY → CT → LP.</b> <b>Do NOT wait for CT/LP to give antibiotics.</b> <b>Delay &gt;1h = ↑ mortality.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">CSF Interpretation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Bacterial Meningitis</th><th>Viral Meningitis</th><th>TB Meningitis</th><th>Normal</th></tr><tr><td>-----------</td><td>---------------------</td><td>------------------</td><td>---------------</td><td>--------</td></tr><tr><td>**Opening pressure**</td><td>**High (>20 cmH₂O)**</td><td>Normal/slightly ↑</td><td>**High**</td><td>10–20 cmH₂O</td></tr><tr><td>**WCC**</td><td>**High (100–10,000+)**</td><td>**Lymphocytic (10–1000)**</td><td>**Lymphocytic (100–500)**</td><td><5 (all lymphocytes)</td></tr><tr><td>**Differential**</td><td>**Neutrophil-predominant**</td><td>Lymphocyte-predominant</td><td>Lymphocyte-predominant</td><td>Lymphocytes</td></tr><tr><td>**Protein**</td><td>**High (>1 g/L, often >2)**</td><td>Mildly ↑ (0.4–1)</td><td>**High (1–3 g/L)**</td><td>0.15–0.45 g/L</td></tr><tr><td>**Glucose (CSF:Serum)**</td><td>**Low (<0.4, often <2.2 mmol/L)**</td><td>Normal (>0.6)</td><td>**Low (<0.5)**</td><td>>0.6 (2.5–4.4 mmol/L)</td></tr><tr><td>**Gram stain**</td><td>**Positive 60–90%**</td><td>Negative</td><td>Negative</td><td>Negative</td></tr><tr><td>**Culture**</td><td>Positive 70–90% (↓ if pre-abx)</td><td>Negative</td><td>Positive 50–70% (slow)</td><td>Negative</td></tr><tr><td>**PCR**</td><td>**Rapid, high sensitivity**</td><td>Enterovirus, HSV, VZV</td><td>TB PCR (Xpert)</td><td>N/A</td></tr><tr><td>**Lactate**</td><td>**High (>3.5 mmol/L)**</td><td>Normal</td><td>High</td><td><2.1 mmol/L</td></tr></table>
+<div class="callout">[!tip] <b>CSF:Serum glucose ratio &lt;0.4 = bacterial/TB/fungal.</b> <b>CSF lactate &gt;3.5 supports bacterial.</b> <b>Prior antibiotics ↓ culture yield but NOT PCR/GLucose/Protein/WCC pattern.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Empirical Antibiotic Therapy (START WITHIN 1 HOUR)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Regimen</th><th>Doses</th></tr><tr><td>------------</td><td>---------</td><td>-------</td></tr><tr><td>**Adults (standard)**</td><td>**Ceftriaxone 2g IV 12h + Vancomycin 15–20mg/kg IV 6h**</td><td>Ceftriaxone covers pneumococcus, meningococcus, Hib; Vancomycin covers penicillin-resistant pneumococcus</td></tr><tr><td>**Adults >50y / Immunocompromised / Alcoholics / Pregnancy (Listeria risk)**</td><td>**Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h + Amoxicillin 2g IV 4h**</td><td>**Add Amoxicillin for Listeria** (cephalosporins ineffective)</td></tr><tr><td>**Post-neurosurgery / Trauma / Shunt**</td><td>**Vancomycin 15–20mg/kg 6h + Meropenem 2g 8h (or Ceftazidime 2g 8h)**</td><td>Covers Staph (including MRSA), Gram-neg (Pseudomonas)</td></tr><tr><td>**Penicillin allergy (anaphylaxis)**</td><td>**Vancomycin + Meropenem (or Moxifloxacin 400mg IV/PO OD)**</td><td>Avoid cephalosporins</td></tr><tr><td>**Children >1 month**</td><td>Ceftriaxone 50mg/kg 12h (max 2g) + Vancomycin 15mg/kg 6h</td><td>Add Ampicillin if <3m or Listeria risk</td></tr><tr><td>**Neonates**</td><td>Ampicillin 50mg/kg 6–8h + Cefotaxime 50mg/kg 6–8h (or Gentamicin)</td><td>No ceftriaxone (bilirubin displacement)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Dexamethasone — Adjunctive Therapy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>**Suspected pneumococcal meningitis** (strongest evidence)</th></tr><tr><td>------------</td><td>------------------------------------------------------------</td></tr><tr><td>**Dose**</td><td>**0.15mg/kg IV 6h ×4 days**</td></tr><tr><td>**Timing**</td><td>**WITH or BEFORE 1st antibiotic dose** (≤1h before; benefit lost if given >4h after abx)</td></tr><tr><td>**Duration**</td><td>4 days (then stop — no taper)</td></tr><tr><td>**Contraindications**</td><td>Septic shock (relative), post-neurosurgery, immunocompromised (less evidence)</td></tr><tr><td>**Paediatrics**</td><td>Same dose; not for neonates</td></tr></table>
+<div class="callout">[!key] <b>Dexamethasone reduces mortality and neurological sequelae in pneumococcal meningitis (NNT ~10). Must be given WITH/BEFORE first antibiotic dose.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Targeted Therapy (After Culture/Sensitivity)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pathogen</th><th>Regimen</th><th>Duration</th></tr><tr><td>----------</td><td>---------</td><td>----------</td></tr><tr><td>**S. pneumoniae (penicillin-susceptible)**</td><td>Penicillin G 24MU/day IV ÷4–6h OR Ceftriaxone 2g 12h</td><td>10–14 days</td></tr><tr><td>**S. pneumoniae (penicillin-intermediate/resistant)**</td><td>Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h</td><td>10–14 days</td></tr><tr><td>**N. meningitidis**</td><td>Ceftriaxone 2g 12h OR Penicillin G 24MU/day</td><td>5–7 days</td></tr><tr><td>**H. influenzae**</td><td>Ceftriaxone 2g 12h</td><td>7–10 days</td></tr><tr><td>**Listeria monocytogenes**</td><td>**Amoxicillin 2g IV 4h + Gentamicin 3mg/kg OD ×7–10d** (synergy)</td><td>**21 days** (longer due to brainstem involvement)</td></tr><tr><td>**S. aureus (MSSA)**</td><td>Flucloxacillin 2g 4h (or Cefazolin)</td><td>14–21 days</td></tr><tr><td>**S. aureus (MRSA)**</td><td>Vancomycin 15–20mg/kg 6h (trough 15–20)</td><td>14–21 days</td></tr><tr><td>**Gram-negative (E. coli, Klebsiella, Pseudomonas)**</td><td>Ceftriaxone/Cefepime/Meropenem per susceptibility</td><td>21 days</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Complications & Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Features</th><th>Management</th></tr><tr><td>--------------</td><td>----------</td><td>------------</td></tr><tr><td>**Raised ICP**</td><td>Headache, vomiting, papilloedema, Cushing's triad, herniation</td><td>**Head up 30°, normocapnia (PaCO₂ 4.5–5), mannitol 0.5–1g/kg / hypertonic saline, consider ICP monitor, ventriculostomy**</td></tr><tr><td>**Seizures**</td><td>20–30%</td><td>**Levetiracetam 500mg IV 12h or Phenytoin**; prophylactics not routine</td></tr><tr><td>**SIADH**</td><td>Hyponatraemia, euvolaemic</td><td>Fluid restriction; hypertonic saline if severe symptomatic</td></tr><tr><td>**Cranial nerve palsies**</td><td>III, IV, VI, VII most common</td><td>Usually resolve over weeks–months</td></tr><tr><td>**Hydrocephalus**</td><td>Communicating (common), obstructive</td><td>**Serial LPs, ventriculoperitoneal shunt if persistent**</td></tr><tr><td>**Subdural effusion / empyema**</td><td>Persistent fever, neuro deficit</td><td>Imaging, surgical drainage</td></tr><tr><td>**Cerebral venous thrombosis**</td><td>Headache, seizures, focal signs, papilloedema</td><td>**Anticoagulation (LMWH) even with haemorrhage**</td></tr><tr><td>**DIC**</td><td>Purpura, bleeding, low fibrinogen, high D-dimer</td><td>Supportive, platelets, FFP, cryo; treat underlying sepsis</td></tr><tr><td>**Hearing loss**</td><td>Sensorineural (pneumococcal)</td><td>Audiology at discharge, cochlear implant if profound</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Public Health Measures</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pathogen</th><th>Chemoprophylaxis (Close Contacts)</th><th>Notification</th></tr><tr><td>----------</td><td>-----------------------------------</td><td>--------------</td></tr><tr><td>**N. meningitidis**</td><td>**Ciprofloxacin 500mg PO single dose** (preferred) OR Rifampicin 600mg BD ×2d OR Ceftriaxone 250mg IM single dose</td><td>**Urgent (within 24h)**</td></tr><tr><td>**H. influenzae type b**</td><td>**Rifampicin 20mg/kg OD ×4d** (if unvaccinated/under-vaccinated contacts <4y)</td><td>Yes</td></tr><tr><td>**S. pneumoniae**</td><td>Not routinely recommended</td><td>No</td></tr><tr><td>**Other**</td><td>Not indicated</td><td>As per local policy</td></tr></table>
+<div class="callout">[!tip] <b>Close contacts = household, kissing, overnight stay, healthcare workers with unprotected respiratory secretion exposure.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Situation</th><th>Adjustment</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Pregnancy**</td><td>Ceftriaxone + Vancomycin + **Amoxicillin** (Listeria risk); avoid fluoroquinolones; dexamethasone safe</td></tr><tr><td>**HIV**</td><td>Same empirical; higher Listeria, TB, fungal risk; consider cryptococcal antigen if CD4<100</td></tr><tr><td>**Immunocompromised**</td><td>Broader empirical (add Ampicillin, consider Meropenem); CT before LP usually</td></tr><tr><td>**Penicillin allergy (non-anaphylaxis)**</td><td>Ceftriaxone usually tolerated (cross-reactivity <1–2%)</td></tr><tr><td>**Post-neurosurgery**</td><td>Vancomycin + Meropenem; device removal if shunt infection</td></tr><tr><td>**Traveller**</td><td>Consider *N. meningitidis* serogroups A, C, W, Y, X; *S. pneumoniae* common</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Meningitis = medical emergency; antibiotics WITHIN 1 HOUR of suspicion</b></li><li><b>CT before LP if: immunocompromised, CNS disease, seizure, papilloedema, focal deficit, GCS&lt;12, age&gt;60</b></li><li><b>If CT needed → blood cultures → antibiotics + dexamethasone → CT → LP</b></li><li><b>CSF: Neutrophils, high protein, low glucose (CSF:serum &lt;0.4), high opening pressure</b></li><li><b>Empirical adult: Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h</b></li><li><b>Add Amoxicillin 2g 4h if &gt;50y, immunocompromised, alcohol, pregnancy (Listeria)</b></li><li><b>Dexamethasone 0.15mg/kg 6h ×4d WITH/BEFORE 1st antibiotic dose (pneumococcal)</b></li><li><b>Meningococcal: petechial rash, ciprofloxacin 500mg single dose prophylaxis for contacts</b></li><li><b>Listeria: rhombencephalitis, brainstem signs, ampicillin/amoxicillin + gentamicin ×21d</b></li><li><b>Complications: raised ICP, seizures, SIADH, hydrocephalus, hearing loss, DIC</b></li><li><b>Hearing loss: screen at discharge (pneumococcal most common)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the classic triad of bacterial meningitis?</b> Fever, neck stiffness, altered mental status (only 44–66% have all three).</li><li><b>When do you do CT before LP?</b> Immunocompromised, CNS disease, new seizure, papilloedema, focal deficit, GCS&lt;12, age&gt;60.</li><li><b>What is the empirical antibiotic regimen for an adult with suspected bacterial meningitis?</b> Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h.</li><li><b>When do you add amoxicillin?</b> Age &gt;50, immunocompromised, alcoholics, pregnancy (Listeria risk).</li><li><b>Dexamethasone dose and timing?</b> 0.15mg/kg IV 6h ×4 days, WITH or BEFORE first antibiotic dose.</li><li><b>CSF findings in bacterial meningitis?</b> High opening pressure, neutrophilic pleocytosis, high protein, low glucose (ratio &lt;0.4), Gram stain +ve 60–90%.</li><li><b>Chemoprophylaxis for meningococcal contacts?</b> Ciprofloxacin 500mg PO single dose (preferred).</li><li><b>Listeria meningitis treatment?</b> Amoxicillin 2g IV 4h + Gentamicin 3mg/kg OD ×21 days.</li><li><b>Complications of bacterial meningitis?</b> Raised ICP, seizures, SIADH, hydrocephalus, cranial nerve palsies, hearing loss, DIC, venous thrombosis.</li><li><b>What is the treatment duration for pneumococcal meningitis?</b> 10–14 days; meningococcal 5–7 days; Listeria 21 days.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Wait for CT/LP before antibiotics</td><td>**Antibiotics WITHIN 1 HOUR — never delay for CT/LP**</td></tr><tr><td>Dexamethasone after antibiotics</td><td>**Must be WITH or BEFORE 1st dose — no benefit if >4h after**</td></tr><tr><td>Ceftriaxone covers Listeria</td><td>**Cephalosporins DO NOT cover Listeria — ADD Amoxicillin/Ampicillin**</td></tr><tr><td>Meningococcal rash always present</td><td>**Petechial rash in ~50–60%; absent in 40–50%**</td></tr><tr><td>All contacts need prophylaxis for all meningitis</td><td>**Only N. meningitidis and Hib (unvaccinated contacts) need prophylaxis**</td></tr><tr><td>Dexamethasone for all bacterial meningitis</td><td>**Strongest evidence for pneumococcal; consider for Hib; less clear for meningococcal/Listeria**</td></tr><tr><td>Listeria treatment duration 10–14d</td><td>**Listeria = 21 days (brainstem involvement)**</td></tr><tr><td>CT contraindication = don't do LP ever</td><td>**CT first, then LP after antibiotics started**</td></tr><tr><td>Viral = low protein</td><td>**Viral: protein mildly elevated (0.4–1), glucose NORMAL**</td></tr><tr><td>Hearing loss only in children</td><td>**Adults also — screen at discharge**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>MENINGITIS TRIAD</b>: <b>F</b>ever, <b>N</b>eck stiffness, <b>A</b>ltered mental status</li><li><b>CT BEFORE LP</b>: <b>I</b>mmunocompromised, <b>C</b>NS disease, <b>S</b>eizure, <b>P</b>apilloedema, <b>F</b>ocal deficit, <b>G</b>CS&lt;12, <b>A</b>ge&gt;60</li><li><b>EMPIRICAL ADULT</b>: <b>C</b>eftriaxone + <b>V</b>ancomycin (+ <b>A</b>moxicillin if Listeria risk)</li><li><b>CSF BACTERIAL</b>: <b>N</b>eutrophils, <b>H</b>igh protein, <b>L</b>ow glucose, <b>H</b>igh pressure</li><li><b>DEXAMETHASONE</b>: <b>0.15mg/kg 6h ×4d, WITH/BEFORE abx</b></li><li><b>LISTERIA RISK</b>: <b>&gt;50, Immunocompromised, Pregnancy, Alcohol, Steroids</b></li><li><b>MENINGOCOCCAL PROPHYLAXIS</b>: <b>C</b>iprofloxacin 500mg single dose</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Acute Bacterial Meningitis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Emergency</div>
+<div class="mm-node mm-l3">– Abx within 1h</div>
+<div class="mm-node mm-l3">– CT before LP if indicated</div>
+<div class="mm-node mm-l3">– Blood cultures first</div>
+<div class="mm-node mm-deep">– *...continued (truncated to 200 lines for renderer)*</div>
+</div>
+</div>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Acute Bacterial Meningitis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

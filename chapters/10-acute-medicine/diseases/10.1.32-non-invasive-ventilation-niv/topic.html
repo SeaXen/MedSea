@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Non-Invasive Ventilation (NIV) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Non-Invasive Ventilation (NIV)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Know the indications and contraindications for NIV</li><li>Choose between CPAP and BiPAP</li><li>Monitor for NIV failure</li><li>Know when to escalate to intubation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Indications</span>
+  </div>
+  <div class="sec-body">
+<p><b>Strong evidence</b></p>
+<ul><li>COPD exacerbation with respiratory acidosis (pH &lt;7.35)</li><li>Cardiogenic pulmonary oedema</li><li>Immunocompromised patients with hypoxaemic respiratory failure</li></ul>
+<p><b>Other uses</b></p>
+<ul><li>Obesity hypoventilation syndrome</li><li>Weaning from invasive ventilation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">CPAP vs BiPAP</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Indication</th><th>Typical Settings</th></tr><tr><td>--------</td><td>--------------------------------</td><td>---------------------------</td></tr><tr><td>CPAP</td><td>Pulmonary oedema, atelectasis</td><td>5–15 cmH₂O</td></tr><tr><td>BiPAP</td><td>COPD, hypercapnic failure</td><td>IPAP 10–20, EPAP 4–8</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Contraindications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Cardiac/respiratory arrest</li><li>GCS &lt;8 or inability to protect airway</li><li>Vomiting / high aspiration risk</li><li>Facial trauma or burns</li><li>Untreated pneumothorax</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Monitoring & Failure Criteria</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Reassess at 1–2 hours</li><li>Worsening pH, rising PaCO₂, persistent hypoxia</li><li>Increasing respiratory rate or distress</li><li>Haemodynamic instability</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Start NIV early in COPD with acidosis — do not wait for severe acidosis</li><li>CPAP is first choice in acute cardiogenic pulmonary oedema</li><li>Always have a plan for intubation if NIV fails</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>What are the indications for NIV in acute respiratory failure?</li><li>When would you choose CPAP over BiPAP?</li><li>What are the signs of NIV failure?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>NIV = CPAP or BiPAP</b> Indicated in COPD acidosis + cardiogenic oedema Contraindicated if low GCS or aspiration risk Monitor closely — intubate if failing</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Indications: COPD exacerbation (pH&lt;7.35), cardiogenic pulmonary oedema, immunocompromised</li><li>CPAP for oedema/atelectasis (5–15 cmH₂O); BiPAP for COPD/hypercapnia (IPAP 10–20, EPAP 4–8)</li><li>Contraindications: arrest, GCS&lt;8, aspiration risk, facial trauma, untreated pneumothorax</li><li>Monitor at 1–2h: worsening pH, rising PaCO₂, exhaustion → intubate</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Early NIV in COPD — don't wait for severe acidosis</li><li>HFNO (high-flow nasal oxygen) as alternative in some hypoxaemic failure</li><li>Weaning: SIMV → PS → CPAP trial</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>NIV in do-not-intubate patients (palliative)</li><li>Home NIV for OHS/COPD</li><li>Helmet NIV vs mask</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Strongest evidence for NIV in acute respiratory failure:</li></ol>
+<p>A. Asthma B. <b>COPD exacerbation with respiratory acidosis</b> C. Pneumonia alone D. PE</p>
+<ol><li>BiPAP settings for COPD:</li></ol>
+<p>A. CPAP 10 B. <b>IPAP 10–20, EPAP 4–8</b> C. CPAP 20 D. IPAP 5, EPAP 15</p>
+<ol><li>CPAP first-line in:</li></ol>
+<p>A. COPD B. <b>Cardiogenic pulmonary oedema</b> C. Asthma D. Neuromuscular disease</p>
+<ol><li>Contraindication to NIV:</li></ol>
+<p>A. COPD pH 7.30 B. <b>GCS &lt;8 / unable to protect airway</b> C. Cardiogenic oedema D. Immunocompromised</p>
+<ol><li>NIV failure criteria at 1–2 hours:</li></ol>
+<p>A. pH improving B. <b>Worsening pH, rising PaCO₂, persistent hypoxia, exhaustion</b> C. RR &lt;20 D. SpO₂ 95%</p>
+<ol><li>Immunocompromised patient with hypoxaemic failure — NIV:</li></ol>
+<p>A. Contraindicated B. <b>Indicated (avoids intubation complications)</b> C. Only if CD4 &gt;200 D. Only in ICU</p>
+<ol><li>BiPAP vs CPAP — BiPAP provides:</li></ol>
+<p>A. CPAP only B. <b>IPAP + EPAP (pressure support)</b> C. Higher FiO₂ only D. No difference</p>
+<ol><li>Facial trauma — NIV:</li></ol>
+<p>A. Safe B. <b>Contraindicated (mask seal/leaks)</b> C. Preferred D. Helmet only</p>
+<ol><li>Untreated pneumothorax + NIV:</li></ol>
+<p>A. Helps re-expand B. <b>Contraindicated (worsens tension)</b> C. Safe with low pressures D. Only if chest drain planned</p>
+<ol><li>Weaning from invasive ventilation using NIV:</li></ol>
+<p>A. Not possible B. <b>Possible (SIMV → PS → CPAP trial)</b> C. Contraindicated D. Only in COPD</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 68-year-old COPD exacerbation, pH 7.28, PaCO₂ 8.5, RR 35. Best initial NIV:</li></ol>
+<p>A. CPAP 10 B. <b>BiPAP IPAP 12, EPAP 4</b> C. High-flow O₂ only D. Intubate immediately</p>
+<ol><li>A 75-year-old acute cardiogenic pulmonary oedema, hypoxic, crackles. NIV:</li></ol>
+<p>A. BiPAP IPAP 15, EPAP 5 B. <b>CPAP 10 cmH₂O</b> C. No NIV — intubate D. HFNO only</p>
+<ol><li>A 50-year-old immunocompromised post-chemo, bilateral infiltrates, hypoxic. NIV:</li></ol>
+<p>A. Contraindicated B. <b>Trial of NIV (avoids intubation)</b> C. Intubate immediately D. CPAP only</p>
+<ol><li>A COPD patient on BiPAP for 2h. pH 7.18 (was 7.28), PaCO₂ rising, exhausted. Next:</li></ol>
+<p>A. Increase IPAP B. <b>Intubate (NIV failure)</b> C. Switch to CPAP D. Continue 4 more hours</p>
+<ol><li>A patient with GCS 8, respiratory failure. NIV:</li></ol>
+<p>A. Start BiPAP B. <b>Contraindicated — intubate (GCS &lt;8)</b> C. CPAP trial D. HFNO</p>
+<ol><li>NIV mask leak — management:</li></ol>
+<p>A. Ignore B. <b>Re-fit, try different size, consider helmet</b> C. Increase pressures D. Intubate</p>
+<ol><li>High-flow nasal oxygen (HFNO) vs NIV:</li></ol>
+<p>A. HFNO = NIV B. <b>HFNO for hypoxaemic failure; NIV for hypercapnic (COPD) + cardiogenic oedema</b> C. NIV only D. HFNO contraindicated</p>
+<ol><li>A patient vomiting on NIV. Action:</li></ol>
+<p>A. Continue, suction B. <b>Stop NIV — aspiration risk → intubate</b> C. Give antiemetic, continue D. Turn to side</p>
+<ol><li>Obesity hypoventilation syndrome — home NIV:</li></ol>
+<p>A. Not indicated B. <b>Indicated (BiPAP overnight)</b> C. CPAP only D. Oxygen only</p>
+<ol><li>Reassessment time after NIV start:</li></ol>
+<p>A. 4–6 hours B. <b>1–2 hours</b> C. 12 hours D. 24 hours</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: NIV indications (strong evidence)</li></ul>
+<p>A: COPD acidosis (pH&lt;7.35), cardiogenic oedema, immunocompromised</p>
+<ul><li>Q: BiPAP settings</li></ul>
+<p>A: IPAP 10–20, EPAP 4–8</p>
+<ul><li>Q: CPAP settings</li></ul>
+<p>A: 5–15 cmH₂O</p>
+<ul><li>Q: CPAP first-line for</li></ul>
+<p>A: Cardiogenic pulmonary oedema</p>
+<ul><li>Q: Contraindications</li></ul>
+<p>A: Arrest, GCS&lt;8, aspiration risk, facial trauma, untreated PTX</p>
+<ul><li>Q: NIV failure at 1–2h</li></ul>
+<p>A: Worsening pH, rising PaCO₂, persistent hypoxia, exhaustion</p>
+<ul><li>Q: Immunocompromised</li></ul>
+<p>A: NIV indicated (avoids intubation)</p>
+<ul><li>Q: HFNO vs NIV</li></ul>
+<p>A: HFNO for Type 1; NIV (BiPAP) for Type 2 / COPD</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — COPD acidosis = strongest NIV evidence. <b>MCQ 2</b>: B — BiPAP = IPAP + EPAP. <b>MCQ 3</b>: B — CPAP for cardiogenic oedema (reduces preload/afterload). <b>MCQ 4</b>: B — GCS&lt;8 = airway risk = contraindicated. <b>MCQ 5</b>: B — Failure = worsening pH/CO₂, hypoxia, exhaustion. <b>MCQ 6</b>: B — NIV avoids intubation in immunocompromised. <b>MCQ 7</b>: B — BiPAP = pressure support (IPAP-EPAP). <b>MCQ 8</b>: B — Facial trauma = mask seal issues. <b>MCQ 9</b>: B — Untreated PTX = NIV worsens tension. <b>MCQ 10</b>: B — NIV used for weaning (PS/CPAP trials).</p>
+<p><b>SBA 1</b>: B — COPD acidosis = BiPAP first-line. <b>SBA 2</b>: B — Cardiogenic oedema = CPAP. <b>SBA 3</b>: B — Immunocompromised = NIV trial to avoid intubation. <b>SBA 4</b>: B — pH falling, rising CO₂, exhausted = intubate. <b>SBA 5</b>: B — GCS&lt;8 = airway risk = intubate. <b>SBA 6</b>: B — Mask leak = re-fit, helmet. <b>SBA 7</b>: B — HFNO for hypoxaemic; NIV for hypercapnic/COPD. <b>SBA 8</b>: B — Vomiting = aspiration risk = intubate. <b>SBA 9</b>: B — OHS = home BiPAP overnight. <b>SBA 10</b>: B — Reassess at 1–2h.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Non-Invasive Ventilation (NIV) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

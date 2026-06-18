@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2.3 Syphilis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">2.3 Syphilis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Master <b>syphilis staging</b> (Primary, Secondary, Early/Late Latent, Tertiary, Neurosyphilis, Congenital)</li><li>[ ] Interpret <b>syphilis serology</b> (Non-Treponemal: RPR/VDRL; Treponemal: TPPA/FTA-ABS) and apply <b>Reverse vs Traditional Algorithm</b></li><li>[ ] Apply <b>stage-specific penicillin treatment</b> (Dose, Route, Duration) and manage <b>Penicillin Allergy</b> (Desensitisation)</li><li>[ ] Diagnose and manage <b>Neurosyphilis</b> (CSF VDRL, CSF PCR, High-Dose Penicillin G IV)</li><li>[ ] Diagnose and manage <b>Congenital Syphilis</b> (Maternal Treatment, Neonatal Evaluation, Penicillin G IV)</li><li>[ ] Manage <b>Jarisch-Herxheimer Reaction</b> and <b>Treatment Failure/Re-infection</b></li><li>[ ] Apply <b>Syphilis in Pregnancy</b> protocols (Screening, Treatment, Congenital Prevention)</li><li>[ ] Answer viva: "Syphilis staging &amp; treatment" and "Serology interpretation" and "Neurosyphilis vs Meningovascular" and "Congenital syphilis prevention"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Syphilis Natural History & Staging</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Treponema pallidum Infection</div>
+<div class="fc-node" data-id="G">G</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Primary Syphilis&lt;br/&gt;Chancre (Painless, Indurated, Clean Base)&lt;br/&gt;Regional Lymphadenopathy (Non-Tender) &lt;br/&gt;3w-90d Post-Exposure</div>
+<div class="fc-node" data-id="H">Congenital Syphilis&lt;br/&gt;Transplacental Transmission&lt;br/&gt;Early (&lt;2y) / Late (&gt;2y) Manifestations</div>
+<div class="fc-node" data-id="G1">Gummatous: Granulomatous Lesions (Skin, Bone, Liver)</div>
+<div class="fc-node" data-id="G2">Cardiovascular: Aortitis, Aortic Regurgitation, Aneurysm</div>
+<div class="fc-node" data-id="G3">Neurosyphilis: Meningovascular, General Paresis, Tabes Dorsalis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Secondary Syphilis&lt;br/&gt;Systemic Dissemination&lt;br/&gt;Rash (Palms/Soles, Maculopapular)&lt;br/&gt;Condylomata Lata, Mucous Patches&lt;br/&gt;Generalised Lymphadenopathy&lt;br/&gt;Constitutional Symptoms&lt;br/&gt;4-10w Post-Chancre</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Latent Syphilis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Early Latent&lt;br/&gt;Seroreversion Risk High&lt;br/&gt;Asymptomatic, Seropositive</div>
+<div class="fc-node" data-id="F">Late Latent&lt;br/&gt;Low Infectivity&lt;br/&gt;Asymptomatic, Seropositive</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ Syphilis Staging — Clinical Features</div>
+<div class="sub-h">Primary Syphilis</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incubation**</td><td>**10-90 Days** (Median 21 Days)</td></tr><tr><td>**Chancre**</td><td>**Painless**, **Indurated**, **Clean Base**, **Well-Defined Margins**, **Single** (Multiple in HIV), **Heals Spontaneously in 3-6 Weeks**</td></tr><tr><td>**Lymphadenopathy**</td><td>**Regional**, **Non-Tender**, **Rubbery**, **Non-Suppurative**</td></tr><tr><td>**Serology**</td><td>**RPR/VDRL Negative Early** (Seroconversion 1-4 Weeks Post-Chancre); **TPPA/FTA-ABS Positive Earlier**</td></tr><tr><td>**Duration**</td><td>**3-6 Weeks** Untreated → Heals Spontaneously</td></tr></table>
+<div class="sub-h">Secondary Syphilis</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Timing**</td><td>**4-10 Weeks** Post-Chancre (Overlap Possible)</td></tr><tr><td>**Rash**</td><td>**Maculopapular**, **Palms & Soles** (Pathognomonic), **Trunk, Extremities, Face**, **Non-Pruritic**, **Copper-Coloured**</td></tr><tr><td>**Mucous Membranes**</td><td>**Condylomata Lata** (Moist, Flat, Infectious Papules — Perineum/Anal), **Mucous Patches** (Oral/Genital), **Snail-Track Ulcers**</td></tr><tr><td>**Systemic**</td><td>**Generalised Lymphadenopathy** (Rubbery, Non-Tender), Fever, Malaise, Headache, Pharyngitis, Hepatosplenomegaly, Iritis, Nephritis</td></tr><tr><td>**Other**</td><td>**Alopecia** (Moth-Eaten), **Periostitis**, **Glomerulonephritis**</td></tr><tr><td>**Duration**</td><td>**2-6 Weeks** (Waxing/Waning), Resolution → Latent</td></tr></table>
+<div class="sub-h">Latent Syphilis</div>
+<table class="ctable"><tr><th>Stage</th><th>Definition</th><th>Serology</th><th>Infectivity</th><th>Duration</th></tr><tr><td>-------</td><td>------------</td><td>----------</td><td>-------------</td><td>----------</td></tr><tr><td>**Early Latent**</td><td>**<1 Year** Post-Infection (or <2 Years CDC)</td><td>**RPR/VDRL High Titre** (≥1:16), TPPA+</td><td>**Infectious** (Early Relapse to Secondary)</td><td>Variable</td></tr><tr><td>**Late Latent**</td><td>**>1 Year** Post-Infection (or >2 Years CDC)</td><td>**RPR/VDRL Low/Declining**, TPPA+</td><td>**Non-Infectious** (Sexual)</td><td>Years-Decades</td></tr></table>
+<div class="callout"><b>Key Distinction</b>: <b>Early Latent = &lt;1 Year</b> (or &lt;2 Years CDC); <b>Late Latent = &gt;1 Year</b> (Duration Unknown → Assume Late Latent)</div>
+<div class="sub-h">Tertiary Syphilis (Late Manifestations)</div>
+<table class="ctable"><tr><th>Type</th><th>Features</th><th>Timing</th></tr><tr><td>------</td><td>----------</td><td>--------</td></tr><tr><td>**Gummatous**</td><td>**Gummas** (Granulomatous, Necrotic Lesions) — Skin (Ulcers), Bone (Osteitis), Liver (Hepatitis), Testes, Brain, Heart; Slowly Progressive, Scarring</td><td>**3-30 Years**</td></tr><tr><td>**Cardiovascular**</td><td>**Aortitis** (Ascending Aorta), **Aortic Regurgitation**, **Aortic Aneurysm** (Saccular, Ascending), **Coronary Ostial Stenosis** → Angina/MI</td><td>**10-30 Years**</td></tr><tr><td>**Neurosyphilis**</td><td>See Below</td><td>**Any Time** (Can Occur Early)</td></tr></table>
+<div class="sub-h">Neurosyphilis (Neurological Syphilis)</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Features</th><th>CSF Findings</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>**Asymptomatic**</td><td>Normal Neurological Exam</td><td>**CSF Abnormalities** (↑ WBC, ↑ Protein, +VDRL)</td></tr><tr><td>**Meningeal**</td><td>Headache, Nuchal Rigidity, Cranial Nerve Palsies (III, VI, VII), Photophobia</td><td>↑ Lymphocytes, ↑ Protein, **CSF-VDRL +ve**</td></tr><tr><td>**Meningovascular**</td><td>**Stroke (Ischaemic) in Young**, Cranial Nerve Palsies, Seizures, Hemiparesis, Aphasia</td><td>↑ WBC, ↑ Protein, **CSF-VDRL +ve**</td></tr><tr><td>**General Paresis (Dementia Paralytica)**</td><td>**Personality Change**, **Cognitive Decline**, **Memory Loss**, **Delusions**, **Apathy**, **Argyll Robertson Pupils** (Accommodate, Not React to Light)</td><td>↑ WBC, ↑ Protein, **CSF-VDRL +ve**</td></tr><tr><td>**Tabes Dorsalis**</td><td>**Lightning Pains** (Lancinating Leg Pains), **Sensory Ataxia**, **Loss of Proprioception/Vibration**, **Argyll Robertson Pupils**, **Absent Reflexes**, **Charcot Joints**</td><td>↑ WBC, ↑ Protein, **CSF-VDRL +ve**</td></tr><tr><td>**Ocular Syphilis**</td><td>Uveitis, Optic Neuritis, Retinitis, Interstitial Keratitis</td><td>↑ WBC, ↑ Protein, **CSF-VDRL +ve**</td></tr><tr><td>**Otic Syphilis**</td><td>Sensorineural Hearing Loss, Tinnitus, Vertigo</td><td>↑ WBC, ↑ Protein, **CSF-VDRL +ve**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Neurosyphilis Can Occur at ANY STAGE</b> (Even Primary/Secondary); <b>CSF Examination Mandatory</b> if Neurological Signs, HIV+, Treatment Failure, Late Latent/Tertiary</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ Congenital Syphilis</div>
+<div class="sub-h">Transmission &amp; Risk</div>
+<table class="ctable"><tr><th>Factor</th><th>Risk</th></tr><tr><td>--------</td><td>------</td></tr><tr><td>**Transplacental**</td><td>**Any Stage of Pregnancy** (Highest 2nd/3rd Trimester)</td></tr><tr><td>**Maternal Stage**</td><td>Primary/Secondary: **70-100%**; Early Latent: **40%**, Late Latent: **10%**; Treated: **<1-2%** if Adequate Treatment ≥30 Days Before Delivery</td></tr><tr><td>**Timing**</td><td>**No Barrier** After 16-18 Weeks Gestation; Treponemes Cross Placenta Freely</td></tr></table>
+<div class="sub-h">Clinical Classification</div>
+<table class="ctable"><tr><th>Category</th><th>Features</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Early Congenital (<2 Years)**</td><td>**Snuffles** (Bloody, Mucopurulent Rhinitis), **Rash** (Maculopapular, Palms/Soles, Vesiculobullous), **Hepatosplenomegaly**, **Jaundice**, **Pneumonitis**, **Osteochondritis** (Symmetric Long Bone Lesions), **Pseudoparalysis** (Parrot's — Painful Limb Movement), **Lymphadenopathy**, **Nephrotic Syndrome**, **Thrombocytopenia**</td></tr><tr><td>**Late Congenital (>2 Years)**</td><td>**Hutchinson's Triad**: **Hutchinson's Teeth** (Notched, Peg-Shaped Incisors), **Interstitial Keratitis**, **8th Nerve Deafness**; **Other**: Saddle Nose, Saber Shins, Clutton's Joints (Knee Effusions), Mulberry Molars, Rhagades</td></tr></table>
+<div class="sub-h">Diagnosis — Neonatal Evaluation</div>
+<table class="ctable"><tr><th>Investigation</th><th>Indication</th><th>Interpretation</th></tr><tr><td>--------------</td><td>------------</td><td>----------------</td></tr><tr><td>**Maternal Serology**</td><td>All Pregnant Women</td><td>RPR/VDRL + TPPA (Stage Maternal Infection)</td></tr><tr><td>**Neonatal RPR/VDRL**</td><td>Compared to Maternal</td><td>**Neonatal Titre ≥4x Maternal → Probable/Congenital**; Same/Declining → Monitor</td></tr><tr><td>**Treponemal Test (TPPA/FTA-ABS)**</td><td>Confirmatory</td><td>**Positive = Exposed** (Maternal IgG Transfer); **IgM FTA-ABS / PCR / Dark Field** = Active Infection</td></tr><tr><td>**CSF Examination**</td><td>All Probable/Confirmed Cases</td><td>**VDRL, WBC, Protein** — Neurosyphilis if Abnormal</td></tr><tr><td>**Long Bone X-Rays**</td><td>Probable/Confirmed</td><td>**Osteochondritis** (Metaphyseal Lucencies, Periostitis)</td></tr><tr><td>**CBC, LFT, Coagulation**</td><td>Baseline</td><td>Thrombocytopenia, Anaemia, Elevated LFTs</td></tr><tr><td>**Dark Field / PCR (Lesion Fluid)**</td><td>If Lesions Present</td><td>**Direct Detection** of T. pallidum</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Syphilis Serology — Interpretation Mastery</div>
+<div class="sub-h">Test Types</div>
+<table class="ctable"><tr><th>Category</th><th>Tests</th><th>Principle</th><th>Characteristics</th></tr><tr><td>----------</td><td>-------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**Non-Treponemal (NTT)**</td><td>**RPR** (Rapid Plasma Reagin), **VDRL** (Venereal Disease Research Lab)</td><td>Detect **Anti-Cardiolipin (Lipoidal) Antibodies**</td><td>**Quantitative (Titre)**, **Sensitive for Active Disease**, **Correlates with Activity**, **Prozone Phenomenon** (False -ve at High Titre), **Biological False Positives (BFP)** (Autoimmune, Viral, Pregnancy, Age)</td></tr><tr><td>**Treponemal (TT)**</td><td>**TPPA** (Treponema pallidum Particle Agglutination), **FTA-ABS** (Fluorescent Treponemal Antibody Absorption), **EIA/CIA** (Enzyme/Chemiluminescence Immunoassay), **Western Blot**</td><td>Detect **Anti-T. pallidum Specific Antibodies**</td><td>**Qualitative (Positive/Negative)**, **Highly Specific**, **Lifelong Positivity** (Even After Cure), **Does Not Correlate with Activity**</td></tr></table>
+<div class="sub-h">Testing Algorithms</div>
+<table class="ctable"><tr><th>Algorithm</th><th>Sequence</th><th>Advantage</th></tr><tr><td>-----------</td><td>----------</td><td>-----------</td></tr><tr><td>**Traditional**</td><td>**NTT (RPR/VDRL) → If Positive → TT (TPPA/FTA-ABS)**</td><td>Cheaper, Detects Active Disease First, Quantifies Activity</td></tr><tr><td>**Reverse (CDC/WHO Recommended)**</td><td>**TT (EIA/CIA/TPPA) → If Positive → NTT (RPR/VDRL) for Titres**</td><td>Higher Sensitivity (Detects Early Primary, Latent, Treated), Automated, High-Throughput</td></tr></table>
+<div class="sub-h">Serology Interpretation Matrix</div>
+<table class="ctable"><tr><th>Clinical Stage</th><th>NTT (RPR/VDRL)</th><th>TT (TPPA/FTA-ABS)</th><th>Notes</th></tr><tr><td>----------------</td><td>----------------</td><td>-------------------</td><td>-------</td></tr><tr><td>**Primary**</td><td>**Negative → Positive (Seroconversion 1-4w)**</td><td>**Positive Early**</td><td>**TT Positive Before NTT**; Repeat NTT if Clinical Suspicion</td></tr><tr><td>**Secondary**</td><td>**High Titre** (1:64 to 1:1024)</td><td>**Positive**</td><td>Peak NTT Activity</td></tr><tr><td>**Early Latent**</td><td>**Positive (Moderate-High)**</td><td>**Positive**</td><td>High Relapse Risk</td></tr><tr><td>**Late Latent**</td><td>**Low/Declining Titre** (<1:16) or **Negative**</td><td>**Positive**</td><td>NTT May Be Negative</td></tr><tr><td>**Tertiary (Gumma/CV)**</td><td>**Often Negative**</td><td>**Positive**</td><td>NTT Insensitive in Late Disease</td></tr><tr><td>**Neurosyphilis**</td><td>**CSF-VDRL +ve** (Specific)</td><td>CSF TPPA/FTA-ABS</td><td>**CSF-VDRL = Diagnostic** (High Specificity, Low Sensitivity)</td></tr><tr><td>**Congenital**</td><td>**Neonatal Titre ≥4x Maternal**</td><td>**Neonatal Positive** (Maternal IgG Transfer = Positive)</td><td>**IgM FTA-ABS / PCR** = Active Infection; **Maternal IgG** = Passive Transfer</td></tr><tr><td>**Treated (Cured)**</td><td>**Titre Decline ≥4-Fold (2 Dilutions)**</td><td>**Remains Positive (Lifelong)**</td><td>**Serofast** (Persistent Low Titre) Common; **NTT Negative = Cure**</td></tr><tr><td>**Re-infection**</td><td>**Titre Rise ≥4-Fold (2 Dilutions)**</td><td>**Remains Positive**</td><td>Distinguished from Serofast</td></tr></table>
+<div class="callout"><b>Key Concepts</b>: - <b>Seroconversion</b> = NTT Negative → Positive - <b>Serofast</b> = Persistent Low NTT Titre After Treatment (&lt;1:4) — Not Treatment Failure - <b>Prozone Phenomenon</b> = False Negative NTT at Very High Titre → Dilute Serum - <b>Biological False Positive (BFP)</b> = Positive NTT, Negative TT — Autoimmune, Viral, Pregnancy, Age</div>
+<div class="sub-h">Treatment Response &amp; Follow-Up</div>
+<table class="ctable"><tr><th>Parameter</th><th>Expected Response</th></tr><tr><td>-----------</td><td>-------------------</td></tr><tr><td>**NTT Titre (RPR/VDRL)**</td><td>**≥4-Fold Decline (2 Dilutions)** by **6 Months (1°/2°)**, **12-24 Months (Latent/Tertiary)**</td></tr><tr><td>**Serofast**</td><td>Persistent Low Titre (<1:4) After Adequate Treatment — **Not Failure**</td></tr><tr><td>**Treatment Failure**</td><td>**Titre Rise ≥4-Fold** (Re-infection/Failure) or **No Decline by 6-12 Months**</td></tr><tr><td>**Re-infection**</td><td>**Titre Rise ≥4-Fold** (After Prior Decline) — Treat Again</td></tr></table>
+<div class="sub-h">CSF Analysis for Neurosyphilis</div>
+<table class="ctable"><tr><th>Parameter</th><th>Normal</th><th>Neurosyphilis</th></tr><tr><td>-----------</td><td>--------</td><td>---------------</td></tr><tr><td>**WBC (Lymphocytes)**</td><td><5/μL</td><td>**>5-20/μL** (Mild-Moderate)</td></tr><tr><td>**Protein**</td><td><45 mg/dL</td><td>**>45 mg/dL**</td></tr><tr><td>**CSF-VDRL**</td><td>Negative</td><td>**Positive (Specific, Low Sensitivity ~50-70%)**</td></tr><tr><td>**CSF FTA-ABS/TPPA**</td><td>Negative</td><td>Positive (High Sensitivity, Low Specificity)</td></tr><tr><td>**Glucose**</td><td>Normal</td><td>Normal or Low</td></tr></table>
+<div class="callout"><b>Diagnosis of Neurosyphilis</b>: <b>Reactive CSF-VDRL + Clinical/CSF Abnormalities</b> (No Single Test Perfect)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Treatment — Stage-Specific Penicillin Regimens</div>
+<div class="sub-h">Penicillin G — The Only Proven Curative Agent</div>
+<table class="ctable"><tr><th>Stage</th><th>Regimen</th><th>Dose & Route</th><th>Duration</th><th>Alternative (Penicillin Allergy)</th></tr><tr><td>-------</td><td>---------</td><td>--------------</td><td>----------</td><td>----------------------------------</td></tr><tr><td>**Primary / Secondary / Early Latent**</td><td>**Benzathine Penicillin G**</td><td>**2.4 Million Units IM Single Dose**</td><td>**Single Dose**</td><td>**Desensitise → Penicillin** (Preferred); **Doxycycline 100mg BD × 14d** (Non-Pregnant); **Ceftriaxone 1g IM/IV Daily × 10-14d** (Limited Data)</td></tr><tr><td>**Late Latent / Tertiary (Gummatous, Cardiovascular)**</td><td>**Benzathine Penicillin G**</td><td>**2.4 Million Units IM Weekly × 3 Doses** (Total 7.2 MU)</td><td>**3 Weekly Doses**</td><td>**Desensitise → Penicillin**; **Doxycycline 100mg BD × 28d** (Non-Pregnant); **Ceftriaxone 1-2g IV Daily × 14d**</td></tr><tr><td>**Neurosyphilis (All Forms)**</td><td>**Aqueous Penicillin G IV**</td><td>**18-24 Million Units/Day** (3-4 MU q4h) **OR 18-24 MU Continuous Infusion**</td><td>**10-14 Days**</td><td>**Desensitise → Penicillin G IV**; **Ceftriaxone 2g IV Daily × 14d** (Alternative)</td></tr><tr><td>**Congenital Syphilis**</td><td>**Aqueous Penicillin G IV**</td><td>**50,000 Units/kg/dose q12h (First 7 Days) → q8h (Day 8-10)**</td><td>**10 Days Total**</td><td>**Desensitise → Penicillin** (Only Proven); **Procaine Penicillin 50,000 U/kg IM Daily × 10d** (If IV Access Difficult)</td></tr></table>
+<div class="callout"><b>Critical</b>: <b>Penicillin G is the ONLY PROVEN Curative Agent for Syphilis in Pregnancy and Neurosyphilis; No Oral Alternatives Proven for Neurosyphilis/Congenital</b></div>
+<div class="sub-h">Penicillin Allergy Management</div>
+<table class="ctable"><tr><th>Approach</th><th>Detail</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Desensitisation**</td><td>**Preferred for ALL Stages** (Especially Pregnancy, Neurosyphilis, Congenital); **Oral/IV Protocols** (Gradual Dose Escalation Over Hours); **Specialist Allergist/ID Supervision**</td></tr><tr><td>**Alternative (Non-Pregnant, Non-Neurosyphilis)**</td><td>**Doxycycline 100mg BD** — Primary/Secondary/Early Latent: **14 Days**; Late Latent/Tertiary: **28 Days**</td></tr><tr><td>**Alternative (Pregnancy)**</td><td>**NO PROVEN ORAL ALTERNATIVE** — **Desensitisation Mandatory**</td></tr><tr><td>**Ceftriaxone**</td><td>**1-2g IV/IM Daily × 10-14 Days** (Limited Data, Not 1st Line); **Not for Neurosyphilis/Congenital as 1st Choice**</td></tr><tr><td>**Azithromycin**</td><td>**NOT RECOMMENDED** (Resistance Documented, Treatment Failures)</td></tr></table>
+<div class="sub-h">Jarisch-Herxheimer Reaction (JHR)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Mechanism**</td><td>**Massive Treponemal Lysis** → Release of Lipoproteins → Cytokine Storm (TNF-α, IL-6, IL-8)</td></tr><tr><td>**Incidence**</td><td>**~50% Secondary**, 10-25% Primary, <10% Latent; **Higher in HIV+**</td></tr><tr><td>**Timing**</td><td>**2-12 Hours Post-Treatment** (Peak 4-6h), Resolves in 12-24h</td></tr><tr><td>**Symptoms**</td><td>Fever, Chills, Rigors, Headache, Myalgia, **Worsening of Rash**, Hypotension, Tachycardia</td></tr><tr><td>**Management**</td><td>**Supportive**: Antipyretics (Paracetamol), Fluids, **Do NOT Delay/Stop Penicillin**; **Prednisolone Prophylaxis** (1mg/kg Pre-Treatment) Optional in Severe Cases</td></tr><tr><td>**Differential**</td><td>Anaphylaxis (Urticaria, Angioedema, Wheeze, Stridor — Immediate <1h) — **Treat as Anaphylaxis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Neurosyphilis — Detailed Management</div>
+<div class="sub-h">Indications for CSF Examination (Lumbar Puncture)</div>
+<table class="ctable"><tr><th>Indication</th><th>Mandatory / Recommended</th></tr><tr><td>------------</td><td>--------------------------</td></tr><tr><td>**Neurological Symptoms**</td><td>**Mandatory** (Headache, Cranial Nerve Palsy, Sensory/Motor Deficits, Cognitive Changes)</td></tr><tr><td>**HIV Infection**</td><td>**Mandatory** (All Stages — Higher Neurosyphilis Risk, Atypical Serology)</td></tr><tr><td>**Treatment Failure**</td><td>**Mandatory** (Titre Rise/No Decline)</td></tr><tr><td>**Late Latent / Tertiary Syphilis**</td><td>**Recommended** (If Duration Unknown)</td></tr><tr><td>**Congenital Syphilis**</td><td>**Mandatory** (All Probable/Confirmed Cases)</td></tr><tr><td>**Ocular/Otic Syphilis**</td><td>**Mandatory**</td></tr></table>
+<div class="sub-h">CSF Diagnostic Criteria for Neurosyphilis</div>
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**CSF-VDRL Reactive**</td><td>**Highly Specific (~99%)**, Low Sensitivity (~50-70%) — **Diagnostic if Positive**</td></tr><tr><td>**CSF WBC >5/μL (Lymphocytes)**</td><td>**Supportive** (Mild Pleocytosis)</td></tr><tr><td>**CSF Protein >45 mg/dL**</td><td>**Supportive**</td></tr><tr><td>**CSF FTA-ABS/TPPA Reactive**</td><td>**High Sensitivity (~90%)**, Low Specificity — **Negative Rules Out**</td></tr><tr><td>**CSF PCR (T. pallidum)**</td><td>Emerging, High Sensitivity/Specificity — Not Widely Available</td></tr></table>
+<div class="callout"><b>Diagnosis</b>: <b>Reactive CSF-VDRL + Clinical/CSF Abnormalities</b> = Definite Neurosyphilis; <b>Clinical + CSF Abnormalities + Reactive Serology</b> = Probable Neurosyphilis</div>
+<div class="sub-h">Neurosyphilis Treatment Algorithm</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Neurosyphilis Diagnosed</div>
+<div class="fc-node" data-id="F">F</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Penicillin Allergy?</div>
+<div class="fc-node" data-id="G">If HIV+: Monitor Closer&lt;br/&gt;CSF at 3m, 6m, 12m</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Aqueous Penicillin G IV&lt;br/&gt;18-24 MU/Day ÷ 4h × 10-14d&lt;br/&gt;(or Continuous Infusion)</div>
+<div class="fc-node" data-id="D">Desensitisation Possible?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Ceftriaxone 2g IV Daily × 14d&lt;br/&gt;(Alternative — Limited Data)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Syphilis in Pregnancy &amp; Congenital Prevention</div>
+<div class="sub-h">Maternal Screening &amp; Staging</div>
+<table class="ctable"><tr><th>Timing</th><th>Action</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Booking (First Trimester)**</td><td>**Universal Screening: RPR/VDRL + TPPA** (Reverse Algorithm Preferred)</td></tr><tr><td>**High Risk / High Prevalence Areas**</td><td>**Repeat at 28-32 Weeks & Delivery**</td></tr><tr><td>**Positive Screen**</td><td>**Stage Maternal Infection** (Clinical, Serology, CSF if Indicated)</td></tr></table>
+<div class="sub-h">Treatment in Pregnancy</div>
+<table class="ctable"><tr><th>Maternal Stage</th><th>Regimen</th><th>Comments</th></tr><tr><td>----------------</td><td>---------</td><td>----------</td></tr><tr><td>**Primary / Secondary / Early Latent**</td><td>**Benzathine Penicillin G 2.4MU IM Single Dose**</td><td>**Only Proven Treatment**; **Desensitise if Allergic**; **Treat ≥30 Days Before Delivery**</td></tr><tr><td>**Late Latent / Unknown Duration**</td><td>**Benzathine Penicillin G 2.4MU IM Weekly × 3 Doses**</td><td>**Treat ≥30 Days Before Delivery**</td></tr><tr><td>**Neurosyphilis**</td><td>**Penicillin G IV 18-24 MU/Day × 10-14 Days**</td><td>**Desensitise if Allergic**</td></tr><tr><td>**Penicillin Allergy**</td><td>**Desensitisation → Penicillin** (Mandatory — No Proven Alternative)</td><td>**Doxycycline/Tetracycline Contraindicated** (Teratogenic)</td></tr></table>
+<div class="callout"><b>Critical</b>: <b>Adequate Maternal Treatment ≥30 Days Before Delivery = &lt;1-2% Congenital Transmission</b>; <b>Untreated/Inadequate = 40-100% Transmission (Stage-Dependent)</b></div>
+<div class="sub-h">Congenital Syphilis — Neonatal Evaluation &amp; Management</div>
+<p>#### Classification &amp; Management Algorithm</p>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Maternal Syphilis Positive</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Infant Evaluation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Neonatal RPR/VDRL Titre&lt;br/&gt;Compared to Maternal</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Neonatal Titre ≥4x Maternal?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">**Probable/Confirmed Congenital Syphilis**&lt;br/&gt;→ Full Workup (CSF, X-Ray, CBC, LFT)&lt;br/&gt;→ **Penicillin G IV 50,000 U/kg q12h × 7d → q8h × 3d (Total 10d)**</div>
+<div class="fc-node" data-id="F">Abnormal Clinical/X-Ray/CSF?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Maternal Treatment Adequate?&lt;br/&gt;(≥30d Before Delivery, 4-Fold Decline)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">**Unlikely Congenital**&lt;br/&gt;→ Observe, Serial RPR (Monthly × 3m)&lt;br/&gt;→ Ensure Titres Decline</div>
+<div class="fc-node" data-id="I">**Consider Treatment**&lt;br/&gt;→ Procaine Penicillin 50,000 U/kg IM Daily × 10d&lt;br/&gt;(If Follow-Up Uncertain)</div>
+</div>
+</div>
+<p>#### Neonatal Treatment Regimens</p>
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Proven/Probable Congenital (Abnormal CSF/X-Ray/Clinical/Neonatal Titre ≥4x Maternal)**</td><td>**Aqueous Penicillin G IV 50,000 Units/kg/dose q12h (Days 1-7) → q8h (Days 8-10)** — **Total 10 Days**</td></tr><tr><td>**Possible Congenital (Maternal Untreated/Inadequate, Normal Infant Workup)**</td><td>**Procaine Penicillin G 50,000 Units/kg IM Daily × 10 Days** (If IV Access Difficult / Follow-Up Uncertain)</td></tr><tr><td>**Unlikely Congenital (Maternal Adequately Treated, Normal Infant)**</td><td>**Observation Only** — Serial RPR/VDRL Monthly × 3 Months (Ensure Decline)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Special Situations &amp; Complications</div>
+<div class="sub-h">Syphilis in HIV Infection</div>
+<table class="ctable"><tr><th>Aspect</th><th>Impact</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Serology**</td><td>**Atypical**: Lower NTT Titres, Delayed Seroconversion, False-Negative NTT (Prozone), BFP More Common</td></tr><tr><td>**Clinical**</td><td>**More Severe**: Multiple Chancres, Rapid Progression, Neurosyphilis More Common/At Earlier Stage</td></tr><tr><td>**CSF Examination**</td><td>**Mandatory at All Stages** (Higher Neurosyphilis Risk)</td></tr><tr><td>**Treatment**</td><td>**Same Penicillin Regimens**; **Close Follow-Up** (NTT Monthly × 3m, Then 3-Monthly × 2y); **CSF at 6m if Neurosyphilis**</td></tr><tr><td>**JHR**</td><td>**More Frequent/Severe** (Cytokine Dysregulation)</td></tr></table>
+<div class="sub-h">Treatment Failure &amp; Re-infection</div>
+<table class="ctable"><tr><th>Scenario</th><th>Definition</th><th>Management</th></tr><tr><td>----------</td><td>------------</td><td>------------</td></tr><tr><td>**Treatment Failure**</td><td>**NTT Titre No 4-Fold Decline by 6-12 Months** (or Rise)</td><td>**CSF Examination Mandatory**; **Re-treat As Per Stage** (Usually Late Latent Regimen: BPC 2.4MU Weekly × 3)</td></tr><tr><td>**Re-infection**</td><td>**NTT Titre Rise ≥4-Fold After Previous Decline**</td><td>**Treat as New Infection** (Stage-Appropriate Regimen); **Partner Notification**</td></tr><tr><td>**Serofast**</td><td>**Persistent Low NTT Titre (<1:4) After Adequate Treatment**</td><td>**Not Failure** — Monitor, No Re-Treatment Needed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Syphilis — Public Health &amp; Surveillance</div>
+<div class="sub-h">Notifiable Disease Reporting</div>
+<table class="ctable"><tr><th>Disease</th><th>Reporting Timeframe</th></tr><tr><td>---------</td><td>---------------------</td></tr><tr><td>**Syphilis (Infectious: Primary, Secondary, Early Latent)**</td><td>**Within 24-72 Hours** (Notifiable)</td></tr><tr><td>**Late Latent / Tertiary / Congenital**</td><td>**Within 1 Week** (Notifiable)</td></tr><tr><td>**Syphilis in Pregnancy**</td><td>**Immediate** (Maternal Safeguarding Team Referral)</td></tr></table>
+<div class="sub-h">Partner Notification</div>
+<table class="ctable"><tr><th>Strategy</th><th>Description</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**Patient Referral**</td><td>Index Patient Informs Partners (Preferred)</td></tr><tr><td>**Provider Referral**</td><td>Health Staff Notifies (Confidential)</td></tr><tr><td>**Contract Referral**</td><td>Time-Limited Agreement</td></tr><tr><td>**Lookback Period**</td><td>**Primary: 3 Months + Duration of Symptoms**; **Secondary: 6 Months + Duration**; **Early Latent: 1 Year**; **Late Latent: Long-Term Partners**</td></tr></table>
+<div class="sub-h">Surveillance Indicators (WHO)</div>
+<table class="ctable"><tr><th>Indicator</th><th>Target</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Congenital Syphilis Rate**</td><td>**<50 Cases per 100,000 Live Births** (Elimination Target)</td></tr><tr><td>**Maternal Syphilis Screening Coverage**</td><td>**>95%** at First Antenatal Visit</td></tr><tr><td>**Maternal Treatment Adequacy**</td><td>**>95%** Treated ≥30 Days Before Delivery</td></tr><tr><td>**Partner Notification Coverage**</td><td>**>80%** of Partners Treated</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Staging**</td><td>**1°: Chancre (Painless, Indurated)**, **2°: Rash (Palms/Soles), Condylomata Lata, Mucous Patches**, **Early Latent (<1y)**, **Late Latent (>1y)**, **Tertiary: Gumma, CV (Aortitis), Neurosyphilis**</td></tr><tr><td>**Serology**</td><td>**NTT (RPR/VDRL): Quantitative, Activity; TT (TPPA/FTA-ABS): Qualitative, Lifelong** — **Reverse Algorithm (TT→NTT) Preferred**</td></tr><tr><td>**Serology Interpretation**</td><td>**Primary: NTT -ve → +ve (Seroconversion); 2°: High NTT (+ve TT); Latent: Low/Declining NTT (+ve TT); Tertiary: NTT Often -ve (+ve TT)**</td></tr><tr><td>**Treatment**</td><td>**Penicillin G ONLY Proven Cure**; **1°/2°/Early Latent: BPC 2.4MU IM Single**; **Late Latent/Tertiary: BPC 2.4MU IM Weekly × 3**; **Neurosyphilis: Penicillin G IV 18-24MU/d × 10-14d**; **Congenital: Pen G IV 50,000U/kg q12h × 7d → q8h × 3d**</td></tr><tr><td>**Penicillin Allergy**</td><td>**Desensitisation → Penicillin (Preferred, Mandatory in Pregnancy/Neurosyphilis/Congenital)**; **Doxycycline 100mg BD × 14-28d (Non-Pregnant, Non-Neurosyphilis)**</td></tr><tr><td>**Neurosyphilis**</td><td>**CSF VDRL +ve (Specific)**; **Penicillin G IV 18-24MU/d × 10-14d**; **CSF F/U at 6m**</td></tr><tr><td>**Congenital**</td><td>**Maternal Treatment ≥30d Before Delivery = Prevention**; **Neonatal Pen G IV 50,000U/kg q12h × 7d → q8h × 3d**</td></tr><tr><td>**JHR**</td><td>**2-12h Post-Tx**: Fever, Chills, Worsening Rash — **Supportive, Do NOT Stop Penicillin**</td></tr><tr><td>**Syphilis in HIV**</td><td>**Atypical Serology, More Severe, Neurosyphilis Common** — **CSF Mandatory All Stages**</td></tr><tr><td>**Screening**</td><td>**Pregnancy: Booking (All)**; **High Risk: Repeat 28-32w, Delivery**; **MSM: Annual**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Syphilis staging — clinical features of each stage?</td><td>**1°: Painless Indurated Chancre + Non-Tender Lymphadenopathy**; **2°: Maculopapular Rash (Palms/Soles), Condylomata Lata, Mucous Patches, Generalised Lymphadenopathy**; **Early Latent (<1y): Asymptomatic, Seropositive**; **Late Latent (>1y): Asymptomatic, Low/Declining RPR**; **Tertiary: Gumma, Aortitis, Neurosyphilis**</td></tr><tr><td>2</td><td>Syphilis serology — NTT vs TT, interpretation?</td><td>**NTT (RPR/VDRL): Quantitative, Correlates with Activity, Can Be False +ve/Prozone**; **TT (TPPA/FTA-ABS): Qualitative, Specific, Lifelong Positive**; **Reverse Algorithm: TT First → If Positive → NTT for Titres**</td></tr><tr><td>3</td><td>Penicillin treatment by stage — regimens?</td><td>**1°/2°/Early Latent: BPC 2.4MU IM Single**; **Late Latent/Tertiary: BPC 2.4MU IM Weekly × 3**; **Neurosyphilis: Pen G IV 18-24MU/d × 10-14d**; **Congenital: Pen G IV 50,000U/kg q12h × 7d → q8h × 3d**</td></tr><tr><td>4</td><td>Neurosyphilis — diagnosis & management?</td><td>**CSF VDRL +ve (Specific, Low Sens)**; **CSF Pleocytosis, High Protein**; **Pen G IV 18-24MU/d × 10-14d**; **Desensitise if Allergic**; **CSF F/U at 6m**</td></tr><tr><td>5. Congenital syphilis — prevention & neonatal management?</td><td>**Maternal BPC ≥30d Before Delivery = Prevention**; **Neonatal: Pen G IV 50,000U/kg q12h × 7d → q8h × 3d (10d Total)**; **Maternal Adequate Treatment + Declining Titres = Observe Neonate**</td></tr><tr><td>6. Jarisch-Herxheimer reaction — features & management?</td><td>**2-12h Post-Tx**: Fever, Chills, Myalgia, Worsening Rash, Hypotension; **Supportive (Antipyretics, Fluids), Do NOT Stop Penicillin**; **Prednisolone Prophylaxis Optional**</td></tr><tr><td>7. Syphilis in pregnancy — management algorithm?</td><td>**Screen at Booking (All)**; **Positive: Stage → BPC Regimen (Stage-Based)**; **Treat ≥30d Before Delivery**; **Allergy → Desensitise → Penicillin**; **Doxycycline Contraindicated**</td></tr><tr><td>8. NTT vs TT — which is quantitative, which is qualitative?</td><td>**NTT (RPR/VDRL) = Quantitative (Titre); TT (TPPA/FTA-ABS) = Qualitative (Positive/Negative)**</td></tr><tr><td>9. Late latent syphilis — definition & treatment?</td><td>**>1 Year (or Unknown Duration)**; **BPC 2.4MU IM Weekly × 3 Doses**</td></tr><tr><td>10. Biologic false positive (BFP) RPR — causes?</td><td>**Autoimmune (SLE, APS), Viral Infections (EBV, CMV, Hepatitis), Pregnancy, Age, TB, Leprosy, Drugs (Procainamide)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Syphilis = Only Genital Disease"**</td><td>**NO.** Systemic: Skin, Mucous Membranes, Bone, Liver, CV, CNS, Eyes, Ears, Placenta</td></tr><tr><td>**"RPR Positive = Active Syphilis"**</td><td>**NO.** RPR = Quantitative Activity Marker; **Can Be BFP, Prozone, Serofast, Persist After Cure**; **TT (TPPA) = Lifelong Positive**</td></tr><tr><td>**"Late Latent = Not Infectious"**</td><td>**YES (Sexually)**; **But Can Transmit Vertically (Pregnancy)**; **Treat as Infectious for Partner Notification**</td></tr><tr><td>**"Neurosyphilis = Only Late Stage"**</td><td>**NO.** Can Occur **At ANY Stage** (Even Primary/Secondary); **HIV Increases Early Risk**</td></tr><tr><td>**"Penicillin Allergy = Use Doxycycline"**</td><td>**NO.** **Pregnancy/Neurosyphilis/Congenital: NO PROVEN ALTERNATIVE** — **Desensitise → Penicillin Mandatory**</td></tr><tr><td>**"Ceftriaxone = Alternative to Penicillin for Neurosyphilis"**</td><td>**NO.** **Limited Data, Not 1st Line**; **Penicillin G IV Only Proven**; **Ceftriaxole = Alternative if Desensitisation Absolutely Impossible**</td></tr><tr><td>**"RPR Negative = No Syphilis"**</td><td>**NO.** **Primary: RPR Negative Early (Seroconversion 1-4w)**; **Late Latent/Tertiary: RPR Can Be Negative**; **Prozone = False Negative at High Titre**</td></tr><tr><td>**"All Syphilis Stages Same Penicillin Dose"**</td><td>**NO.** **Early Stages = Single Dose BPC**; **Late Stages = 3 Weekly Doses BPC**; **Neurosyphilis/Congenital = High-Dose IV Pen G**</td></tr><tr><td>**"Serofast = Treatment Failure"**</td><td>**NO.** **Persistent Low Titre (<1:4) After Adequate Treatment** — **Not Failure, No Re-Treatment**</td></tr><tr><td>**"RPR Titre 4-Fold Decline = Cure at 3 Months"**</td><td>**NO.** **1°/2°: 6 Months**; **Latent/Tertiary: 12-24 Months**; **If No Decline by Expected Time → CSF/LP**</td></tr></table>
+<div class="callout"><b>Mnemonic: SYPHILIS MASTER SEROLOGY</b> <b>S</b>yphilis Stages: <b>1° (Chancre) → 2° (Rash/Palms-Soles/Condylomata Lata) → Early Latent (&lt;1y) → Late Latent (&gt;1y) → Tertiary (Gumma/Aortitis/Neurosyphilis)</b> <b>Y</b> (Why Penicillin?): <b>Only Proven Cure</b> — <b>1°/2°/Early Latent: BPC 2.4MU IM Single</b>; <b>Late Latent/Tertiary: BPC 2.4MU IM × 3 Weekly</b>; <b>Neurosyphilis: Pen G IV 18-24MU/d × 10-14d</b>; <b>Congenital: Pen G IV 50k/kg q12h × 7d → q8h × 3d</b> <b>P</b>enicillin Allergy: <b>Desensitise → Penicillin (Preferred, Mandatory Pregnancy/Neuro/Congenital)</b>; <b>Doxy 14-28d (Non-Pregnant/Non-Neurosyphilis)</b> <b>H</b>IV Co-infection: <b>Atypical Serology, More Severe, Neurosyphilis Common → LP Mandatory All Stages</b> <b>I</b>n Pregnancy: <b>Screen All (Booking)</b>; <b>Positive → BPC Stage-Based</b>; <b>Treat ≥30d Before Delivery</b>; <b>Allergy → Desensitise</b> <b>L</b>atent Syphilis: <b>Early (&lt;1y) = BPC Single</b>; <b>Late (&gt;1y/Unknown) = BPC × 3 Weekly</b> <b>I</b>nterpretation Serology: <b>NTT (RPR/VDRL) = Quantitative, Activity; TT (TPPA/FTA-ABS) = Qualitative, Lifelong</b> <b>S</b>erology Algorithms: <b>Traditional (NTT→TT) vs Reverse (TT→NTT) — Reverse Preferred (WHO/CDC)</b> <b>C</b>ongenital: <b>Maternal BPC ≥30d Before Delivery = Prevention</b>; <b>Neonatal Pen G IV 50k/kg q12h × 7d → q8h × 3d</b>; <b>Maternal Adequate + Declining = Observe</b> <b>J</b>arisch-Herxheimer: <b>2-12h Post-Tx (Fever, Chills, Worsening Rash)</b> — <b>Supportive, Do NOT Stop Penicillin</b> <b>A</b>ntimicrobial: <b>Penicillin G ONLY Proven</b>; <b>No Oral Alternatives for Neuro/Congenital/Pregnancy</b> <b>L</b>umbar Puncture: <b>Indicated: Neuro Symptoms, HIV All Stages, Treatment Failure, Late Latent/Tertiary, Congenital</b> <b>T</b>reatment Failure: <b>No 4-Fold NTT Decline by 6-12m → LP Mandatory</b>; <b>Re-treat as Late Latent (BPC × 3)</b> <b>R</b>e-infection: <b>NTT Rise ≥4-Fold After Prior Decline</b> → Treat as New Infection <b>S</b>erofast: <b>Persistent Low NTT (&lt;1:4) After Adequate Tx</b> — Not Failure, Monitor <b>S</b>yphilis Congenital: <b>Maternal Treatment ≥30d Before Delivery = Prevention</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Syphilis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Staging</div>
+<div class="mm-node mm-l3">– Primary: Chancre (Painless, Indurated)</div>
+<div class="mm-node mm-l3">– Secondary: Rash (Palms/Soles), Condylomata Lata, Mucous Patches</div>
+<div class="mm-node mm-l3">– Early Latent: &lt;1y, Seropositive</div>
+<div class="mm-node mm-l3">– Late Latent: &gt;1y, Low/Declining RPR</div>
+<div class="mm-node mm-l3">– Tertiary: Gumma, Aortitis, Neurosyphilis</div>
+<div class="mm-node mm-l2">Serology</div>
+<div class="mm-node mm-l3">– NTT (RPR/VDRL): Quantitative, Activity, Prozone, BFP</div>
+<div class="mm-node mm-l3">– TT (TPPA/FTA-ABS): Qualitative, Lifelong</div>
+<div class="mm-node mm-l3">– Algorithms: Traditional (NTT→TT) vs Reverse (TT→NTT) [Preferred]</div>
+<div class="mm-node mm-l3">– Interpretation: Stage-Based Patterns</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Penicillin G ONLY Proven Cure</div>
+<div class="mm-node mm-l3">– 1°/2°/Early Latent: BPC 2.4MU IM Single</div>
+<div class="mm-node mm-l3">– Late Latent/Tertiary: BPC 2.4MU IM × 3 Weekly</div>
+<div class="mm-node mm-l3">– Neurosyphilis: Pen G IV 18-24MU/d × 10-14d</div>
+<div class="mm-node mm-l3">– Congenital: Pen G IV 50k/kg q12h × 7d → q8h × 3d</div>
+<div class="mm-node mm-l3">– Allergy: Desensitise → Penicillin (Mandatory Pregnancy/Neuro/Congenital)</div>
+<div class="mm-node mm-l2">Neurosyphilis</div>
+<div class="mm-node mm-l3">– CSF VDRL +ve (Specific)</div>
+<div class="mm-node mm-l3">– Pen G IV 18-24MU/d × 10-14d</div>
+<div class="mm-node mm-l3">– LP Indications: Neuro Sx, HIV, Tx Failure, Late Latent, Congenital</div>
+<div class="mm-node mm-l3">– CSF F/U at 6m</div>
+<div class="mm-node mm-l2">Congenital</div>
+<div class="mm-node mm-l3">– Maternal BPC ≥30d Before Delivery = Prevention</div>
+<div class="mm-node mm-l3">– Neonatal Pen G IV 50k/kg q12h × 7d → q8h × 3d</div>
+<div class="mm-node mm-l3">– Maternal Adequate + Declining → Observe</div>
+<div class="mm-node mm-l2">Special</div>
+<div class="mm-node mm-l3">– HIV: Atypical Serology, Neuro Common, LP Mandatory</div>
+<div class="mm-node mm-l3">– JHR: 2-12h Post-Tx (Fever, Chills, Worsening Rash) → Supportive, Don't Stop Pen</div>
+<div class="mm-node mm-l3">– Screening: Pregnancy (Booking), MSM (Annual), High Risk (Repeat)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Staging & Clinical Features</td><td>4</td><td></td><td></td></tr><tr><td>Serology (NTT/TT, Algorithms, Interpretation)</td><td>4</td><td></td><td></td></tr><tr><td>Treatment by Stage (Penicillin Regimens)</td><td>4</td><td></td><td></td></tr><tr><td>Neurosyphilis (Diagnosis, CSF, Treatment)</td><td>3</td><td></td><td></td></tr><tr><td>Congenital Syphilis (Prevention, Neonatal Management)</td><td>3</td><td></td><td></td></tr><tr><td>Syphilis in HIV / Special Situations</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the clinical features, diagnosis, and management of syphilis including staging, serology, and treatment."</td><td>Staging (1° Chancre, 2° Rash/Palms-Soles/Condylomata Lata, Latent, Tertiary), Serology (NTT vs TT, Reverse Algorithm), Treatment (Penicillin G Stage-Specific), Neurosyphilis (CSF VDRL, Pen G IV), Congenital (Prevention, Neonatal Pen G), JHR, Penicillin Allergy (Desensitisation), HIV Co-infection</td></tr><tr><td>**Short Note**</td><td>"Syphilis serology — NTT vs TT, interpretation, and algorithms."</td><td>NTT (RPR/VDRL): Quantitative, Activity, Prozone, BFP; TT (TPPA/FTA-ABS): Qualitative, Lifelong; Reverse Algorithm (TT→NTT) Preferred; Stage-Based Interpretation (1°: NTT -ve→+ve; 2°: High NTT; Latent: Low NTT; Tertiary: NTT -ve)</td></tr><tr><td>**Viva**</td><td>"25-year-old man with painless genital ulcer, RPR 1:128, TPPA positive. Stage and treatment?"</td><td>**Primary Syphilis** (Chancre, High RPR, Positive TPPA) → **Benzathine Penicillin G 2.4MU IM Single Dose**; Partner Notification, HIV/Syphilis Screen, Follow-Up RPR at 3, 6, 12 Months</td></tr><tr><td>**Ward Round**</td><td>"Pregnant woman at 28 weeks with early latent syphilis (RPR 1:32, TPPA+). Management?"</td><td>**Benzathine Penicillin G 2.4MU IM Single Dose** (Early Latent); **Treat ≥30 Days Before Delivery**; **Monitor RPR at Delivery, Neonatal Follow-Up**; **Allergy → Desensitise → Penicillin**; **Doxycycline Contraindicated**</td></tr><tr><td>**Last-Night**</td><td>"Stages: 1° Chancre, 2° Rash/Condylomata/Mucous Patches, Latent Early/Late, Tertiary Gumma/Aortitis/Neuro. Serology: NTT=Quantitative(RPR/VDRL), TT=Qualitative(TPPA/FTA-ABS), Reverse Algorithm. Tx: BPC 2.4MU IM Single (1°/2°/Early Latent), ×3 Weekly (Late Latent/Tertiary), Pen G IV 18-24MU/d (Neuro), Pen G IV 50k/kg (Congenital). Allergy: Desensitise→Pen. JHR: 2-12h Fever/Chills/Rash—Supportive. Congenital: Maternal BPC ≥30d=Prevention, Neonatal Pen G IV 10d. HIV: LP Mandatory. Screen: Pregnancy Booking."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Staging</b>: <b>1° Chancre (Painless, Indurated)</b>, <b>2° Rash (Palms/Soles), Condylomata Lata, Mucous Patches</b>, <b>Early Latent (&lt;1y)</b>, <b>Late Latent (&gt;1y)</b>, <b>Tertiary (Gumma, Aortitis, Neurosyphilis)</b></li><li><b>Serology</b>: <b>NTT (RPR/VDRL) = Quantitative, Activity</b>; <b>TT (TPPA/FTA-ABS) = Qualitative, Lifelong</b> — <b>Reverse Algorithm (TT→NTT) Preferred</b></li><li><b>Interpretation</b>: <b>1°: NTT Negative→Positive</b>; <b>2°: High Titre NTT</b>; <b>Latent: Low/Declining NTT</b>; <b>Tertiary: NTT Often Negative</b></li><li><b>Treatment</b>: <b>Penicillin G ONLY Proven Cure</b> — <b>1°/2°/Early Latent: BPC 2.4MU IM Single</b>; <b>Late Latent/Tertiary: BPC 2.4MU IM Weekly × 3</b>; <b>Neurosyphilis: Pen G IV 18-24MU/d × 10-14d</b>; <b>Congenital: Pen G IV 50,000U/kg q12h × 7d → q8h × 3d (Total 10d)</b></li><li><b>Penicillin Allergy</b>: <b>Desensitise → Penicillin (Mandatory in Pregnancy, Neurosyphilis, Congenital)</b>; <b>Doxycycline 100mg BD × 14-28d (Non-Pregnant, Non-Neurosyphilis Only)</b></li><li><b>Neurosyphilis</b>: <b>CSF VDRL Positive (Specific, Low Sensitivity)</b>; <b>Pen G IV 18-24MU/d × 10-14d</b>; <b>CSF Follow-Up at 6 Months</b></li><li><b>Congenital Prevention</b>: <b>Maternal BPC ≥30 Days Before Delivery</b>; <b>Neonatal Pen G IV 10 Days</b> if Proven/Probable</li><li><b>JHR</b>: <b>2-12 Hours Post-Treatment</b> — Fever, Chills, Worsening Rash — <b>Supportive, Do NOT Stop Penicillin</b></li><li><b>Syphilis in HIV</b>: <b>Atypical Serology, More Severe, Neurosyphilis Common</b> — <b>LP Mandatory at All Stages</b></li><li><b>Screening</b>: <b>Pregnancy (Booking, Universal)</b>; <b>MSM (Annual)</b>; <b>High Risk (Repeat 28-32w, Delivery)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Primary syphilis — characteristic chancre features?</b></li></ol>
+<p>A. Painful, Purulent, Multiple  B. <b>Painless, Indurated, Clean Base, Non-Tender Lymphadenopathy</b>  C. Painful, Soft, Undermined Edges  D. Multiple, Tender, Suppurative <i>Answer: B. Painless, Indurated, Clean Base, Non-Tender Regional Lymphadenopathy.</i></p>
+<ol><li><b>Syphilis serology — which test is quantitative and correlates with disease activity?</b></li></ol>
+<p>A. TPPA  B. FTA-ABS  C. <b>RPR / VDRL (Non-Treponemal)</b>  D. Western Blot <i>Answer: C. NTT (RPR/VDRL) = Quantitative, Activity Marker; TT = Qualitative, Lifelong.</i></p>
+<ol><li><b>Late latent syphilis definition &amp; treatment?</b></li></ol>
+<p>A. &lt;1 Year, BPC Single Dose  B. <b>&gt;1 Year (or Unknown), BPC 2.4MU IM Weekly × 3 Doses</b>  C. &gt;2 Years, No Treatment  D. &lt;1 Year, BPC × 3 Weekly <i>Answer: B. Late Latent = &gt;1 Year (or Unknown Duration) → Benzathine Penicillin G 2.4MU IM Weekly × 3 Doses.</i></p>
+<ol><li><b>Neurosyphilis — most specific CSF test?</b></li></ol>
+<p>A. CSF FTA-ABS  B. CSF Protein  C. <b>CSF VDRL</b>  D. CSF WBC Count <i>Answer: C. CSF VDRL = Highly Specific (~99%), Low Sensitivity; Diagnostic if Positive.</i></p>
+<ol><li><b>Syphilis in pregnancy — prevention of congenital syphilis?</b></li></ol>
+<p>A. Treat at Delivery  B. <b>Treat ≥30 Days Before Delivery (Stage-Appropriate Penicillin)</b>  C. Treat at 36 Weeks Only  D. No Treatment Needed if RPR Low <i>Answer: B. Maternal Penicillin Treatment ≥30 Days Before Delivery = Prevention (&lt;1-2% Transmission).</i></p>
+<ol><li><b>Jarisch-Herxheimer reaction — timing and management?</b></li></ol>
+<p>A. Immediate (&lt;1h), Stop Penicillin  B. <b>2-12 Hours Post-Treatment, Supportive (Do NOT Stop Penicillin)</b>  C. 24-48 Hours, Steroids  D. 1 Week, Antihistamines <i>Answer: B. 2-12 Hours Post-Treatment (Fever, Chills, Worsening Rash) → Supportive, Do NOT Stop Penicillin.</i></p>
+<ol><li><b>Penicillin allergy in neurosyphilis — correct management?</b></li></ol>
+<p>A. Ceftriaxone 2g IV Daily  B. <b>Desensitisation → Penicillin G IV (Only Proven Cure)</b>  C. Doxycycline 100mg BD  D. Azithromycin <i>Answer: B. Desensitisation → Penicillin G IV Mandatory (Only Proven Cure for Neurosyphilis/Congenital/Pregnancy).</i></p>
+<ol><li><b>Neonatal congenital syphilis — proven/probable case treatment?</b></li></ol>
+<p>A. Procaine Penicillin IM 10d  B. <b>Aqueous Penicillin G IV 50,000 U/kg q12h × 7d → q8h × 3d (Total 10d)</b>  C. Ceftriaxone IV  D. Azithromycin <i>Answer: B. Aqueous Penicillin G IV 50,000 U/kg/dose q12h (Days 1-7) → q8h (Days 8-10) = Total 10 Days.</i></p>
+<ol><li><b>Syphilis screening in pregnancy — when?</b></li></ol>
+<p>A. 36 Weeks Only  B. <b>Booking (First Trimester) — Universal; Repeat 28-32w &amp; Delivery if High Risk</b>  C. Only If Symptoms  D. 20 Weeks Only <i>Answer: B. Universal at Booking; Repeat at 28-32 Weeks &amp; Delivery if High Risk/High Prevalence.</i></p>
+<ol><li><b>Biologic false positive (BFP) RPR — common causes?</b></li></ol>
+<p>A. HIV, Syphilis  B. <b>Autoimmune (SLE, APS), Viral (EBV, CMV), Pregnancy, Age, TB, Leprosy, Drugs</b>  C. Recent Vaccination  D. Hepatitis Only <i>Answer: B. Autoimmune (SLE, APS), Viral Infections (EBV, CMV, Hepatitis), Pregnancy, Age, TB, Drugs.</i></p>
+<ol><li><b>Syphilis treatment failure — definition?</b></li></ol>
+<p>A. RPR Negative at 6 Months  B. <b>No 4-Fold Decline in RPR by 6-12 Months (or Rise)</b>  C. Persistent Low RPR  D. TT Becomes Negative <i>Answer: B. No 4-Fold Decline in RPR by 6-12 Months (or Titre Rise) = Treatment Failure; CSF Mandatory.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25M with painless genital ulcer, RPR 1:128, TPPA+. Stage &amp; treatment?</b></li></ol>
+<p>A. Secondary, Ceftriaxone  B. <b>Primary, Benzathine Penicillin G 2.4MU IM Single Dose</b>  C. Early Latent, Doxycycline  D. Secondary, BPC × 3 Weekly <i>Answer: B. Primary Syphilis (Chancre, High RPR, TPPA+) → BPC 2.4MU IM Single Dose.</i></p>
+<ol><li><b>Late latent syphilis (RPR 1:4, TPPA+, acquired 5 years ago). Treatment?</b></li></ol>
+<p>A. BPC 2.4MU IM Single Dose  B. <b>BPC 2.4MU IM Weekly × 3 Doses</b>  C. Doxycycline 100mg BD × 28d  D. No Treatment Needed <i>Answer: B. Late Latent (&gt;1y) → BPC 2.4MU IM Weekly × 3 Doses.</i></p>
+<ol><li><b>Pregnant woman at 28 weeks with secondary syphilis (RPR 1:256). Management?</b></li></ol>
+<p>A. Ceftriaxone  B. <b>Benzathine Penicillin G 2.4MU IM Single Dose</b>  C. Doxycycline  D. Azithromycin <i>Answer: B. BPC 2.4MU IM Single Dose (Stage-Appropriate); Treat ≥30d Before Delivery; Allergy → Desensitise.</i></p>
+<ol><li><b>Neurosyphilis — CSF finding most specific for diagnosis?</b></li></ol>
+<p>A. CSF FTA-ABS Positive  B. <b>CSF VDRL Positive</b>  C. CSF Protein &gt;45 mg/dL  D. CSF WBC 10/μL <i>Answer: B. CSF VDRL Positive = Highly Specific (~99%), Diagnostic if Positive.</i></p>
+<ol><li><b>Congenital syphilis prevention — maternal treatment timing?</b></li></ol>
+<p>A. At Delivery  B. <b>≥30 Days Before Delivery</b>  C. 36 Weeks Gestation  D. 20 Weeks Gestation <i>Answer: B. Maternal Adequate Penicillin Treatment ≥30 Days Before Delivery = Prevention (&lt;1-2% Transmission).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-C, 3-B, 4-C, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Chlamydia.md]] — Differential (Genital Ulcer), Co-infection</li><li>[[2.2 Gonorrhoea.md]] — Differential (GUD), Co-infection</li><li>[[2.4-2.6 Other Bacterial STIs.md]] — Differential (GUD: Chancroid)</li><li>[[3.2 HSV.md]] — Differential (GUD), Co-infection</li><li>[[5.1-5.8 Syndromic Management.md]] — GUD Algorithm, Neonatal STIs</li><li>[[5.5 Genetic Counselling]] — Partner Notification Ethics, Reproductive Options</li><li>[[9. ELSI]] — Partner Notification Ethics, Congenital Prevention Ethics</li><li>[[HIV/AIDS Cross-Reference]] — Syphilis in HIV, Atypical Serology, LP Indications</li><li>[[Population &amp; Newborn Screening]] — Antenatal Screening, Congenital Syphilis Elimination</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next:</b> Build <code>2.4-2.6 Other Bacterial STIs.md</code>, <code>3.2 HSV.md</code>, <code>3.3 HPV.md</code>, <code>3.4 Hepatitis B &amp; C.md</code>, <code>3.5 Mpox.md</code>, <code>3.6 Other Viral STIs.md</code>, <code>4.1-4.3 Parasitic &amp; Fungal STIs.md</code>, <code>5.1-5.8 Syndromic Management.md</code>, <code>6. HIV-AIDS Cross-Reference.md</code>, <code>7.1-7.4 Public Health &amp; Control.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 2.3 Syphilis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

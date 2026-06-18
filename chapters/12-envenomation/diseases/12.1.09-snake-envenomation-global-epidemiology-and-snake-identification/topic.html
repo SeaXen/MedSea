@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Snake Envenomation- Global Epidemiology and Snake Identification — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ENVENOMATION</span>
+      <div class="h1">Snake Envenomation- Global Epidemiology and Snake Identification</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] State global burden of snakebite (deaths, envenomations, disabilities)</li><li>[ ] Identify high-risk regions and populations</li><li>[ ] Classify medically important snake families (Elapidae, Viperidae, Colubridae)</li><li>[ ] Describe fang morphology (proteroglyphous, solenoglyphous, opisthoglyphous)</li><li>[ ] Apply morphological, geographical, and clinical identification principles</li><li>[ ] Recognise key species in each region for antivenom selection</li><li>[ ] Use WHO snake identification resources</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Background</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Item</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Definition**</td><td>Envenomation resulting from bite by a venomous snake (fangs inject venom via modified salivary glands)</td></tr><tr><td>**Global burden (WHO 2017)**</td><td>5.4 M bites/year, 1.8–2.7 M envenomations, 81,000–138,000 deaths, 400,000 amputations/disabilities</td></tr><tr><td>**Daily burden**</td><td>~7,400 envenomations, 220–370 deaths</td></tr><tr><td>**Highest burden countries**</td><td>India (> 50,000 deaths/yr), Bangladesh, Pakistan, Nepal, Sri Lanka, sub-Saharan Africa, Brazil, SE Asia</td></tr><tr><td>**Risk groups**</td><td>Rural agricultural workers, children (worse per-kg), herders, fishermen, hunters</td></tr><tr><td>**Time of day**</td><td>Most bites during day (farming) or dusk (snakes emerge); some nocturnal (kraits)</td></tr><tr><td>**Settings**</td><td>Farm fields (Russell, krait, cobra), water (sea snake, water cobra), bush (mamba, taipan), gardens (krait)</td></tr><tr><td>**WHO classification**</td><td>Category A neglected tropical disease since 2017</td></tr><tr><td>**SDG impact**</td><td>Affects SDG 1 (poverty), 3 (health), 5 (gender — women often bitten gathering water/firewood)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology & Pathophysiology of Snakebite</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Snake Classification — Medically Important Families</div>
+<table class="ctable"><tr><th>Family</th><th>Subfamily</th><th>Fang Type</th><th>Common Names</th><th>Venom Profile</th><th>Examples</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Elapidae**</td><td>Elapinae</td><td>**Fixed front fangs (proteroglyphous)**</td><td>Cobras, kraits, mambas, taipans, coral snakes, tiger snakes, brown snakes</td><td>**Neurotoxic** (pre/post-synaptic)</td><td>*Naja naja*, *Bungarus caeruleus*, *Dendroaspis*, *Oxyuranus*, *Notechis*, *Pseudonaja*</td></tr><tr><td>**Elapidae**</td><td>Hydrophiinae</td><td>Fixed front (short)</td><td>Sea snakes</td><td>**Myotoxic** (+ neurotoxic)</td><td>*Enhydrina schistosa*, *Hydrophis*</td></tr><tr><td>**Viperidae**</td><td>**Viperinae (true vipers)**</td><td>**Hinged front fangs (solenoglyphous)**</td><td>Russell's viper, saw-scaled viper, puff adder, Gaboon viper, European adder</td><td>**Haemotoxic** (VICC), cytotoxic, nephrotoxic</td><td>*Daboia russelii*, *Echis carinatus*, *Bitis arietans*, *B. gabonica*, *Vipera berus*</td></tr><tr><td>**Viperidae**</td><td>**Crotalinae (pit vipers)**</td><td>Hinged front + heat-sensing pit</td><td>Rattlesnakes, copperheads, cottonmouths, Asian pit vipers, Bothrops, Lachesis (bushmaster)</td><td>Haemotoxic, cytotoxic, neurotoxic (some)</td><td>*Crotalus*, *Agkistrodon*, *Trimeresurus*, *Bothrops*, *Lachesis*</td></tr><tr><td>**Colubridae**</td><td>Colubrinae</td><td>**Rear fangs (opisthoglyphous)**</td><td>Boomslang, twig snake</td><td>**Coagulopathy** (delayed)</td><td>*Dispholidus typus*, *Thelotornis*</td></tr><tr><td>**Atractaspididae**</td><td>—</td><td>Side fangs (modified front)</td><td>Burrowing asp, stiletto snake</td><td>Cardiotoxic, local</td><td>*Atractaspis*</td></tr></table>
+<div class="sub-h">Fang Morphology</div>
+<table class="ctable"><tr><th>Type</th><th>Description</th><th>Families</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Proteroglyphous**</td><td>Fixed, short front fangs (erect, immobile); small delivery channel</td><td>Elapidae</td></tr><tr><td>**Solenoglyphous**</td><td>Long, hinged front fangs; folded back when mouth closed, erect when biting; large delivery channel (hypodermic-needle-like)</td><td>Viperidae</td></tr><tr><td>**Opisthoglyphous**</td><td>Rear fangs (enlarged back teeth); venom flows by gravity; often requires chewing to envenomate</td><td>Colubridae (boomslang)</td></tr><tr><td>**Aglyphous**</td><td>No fangs; no venom delivery</td><td>Non-venomous colubrids</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features — Global Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Risk Factors</div>
+<table class="ctable"><tr><th>Factor</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Geography**</td><td>Rural tropics > urban; tropical > temperate</td></tr><tr><td>**Occupation**</td><td>Farming, herding, fishing, hunting, forestry</td></tr><tr><td>**Age**</td><td>20–40 yr (working age); children worse per kg</td></tr><tr><td>**Sex**</td><td>Male 2:1 (occupational exposure); female higher in water-gathering regions</td></tr><tr><td>**Time of year**</td><td>Rainy season (snakes more active); harvest (more contact)</td></tr><tr><td>**Time of day**</td><td>Most daytime (farming); kraits nocturnal (people sleeping on ground)</td></tr><tr><td>**Activities**</td><td>Stepping on snake, handling, sleeping outdoors, fishing</td></tr><tr><td>**Footwear**</td><td>Barefoot > sandals > boots (boots most protective)</td></tr><tr><td>**Housing**</td><td>Mud/thatch houses harbour kraits; rural > urban</td></tr></table>
+<div class="sub-h">Risk Reduction</div>
+<table class="ctable"><tr><th>Intervention</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Footwear**</td><td>Closed-toe shoes/boots; reduce bites by 60–80%</td></tr><tr><td>**Sleeping**</td><td>Mosquito nets / bed nets; raised bed; reduce krait bites</td></tr><tr><td>**Housing**</td><td>Concrete, sealed walls, door sweeps; reduce indoor kraits</td></tr><tr><td>**Lighting**</td><td>Torches at night; reduce stepping on snakes</td></tr><tr><td>**Awareness**</td><td>Community education; avoid handling dead snakes (reflex bite)</td></tr><tr><td>**Snake control**</td><td>Avoid; many "harmless" snakes are protected; translocation is controversial</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Snake Identification</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical / Bedside Identification</div>
+<table class="ctable"><tr><th>Feature</th><th>Elapidae</th><th>Viperidae</th><th>Colubridae</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Head shape**</td><td>Short, indistinct neck (many); some (cobra) hood</td><td>Triangular, distinct neck, broad head</td><td>Variable</td></tr><tr><td>**Eye**</td><td>Round pupil (most); some vertical (sea snake)</td><td>Vertical pupil (most); elliptical</td><td>Round</td></tr><tr><td>**Body**</td><td>Slender, smooth scales</td><td>Stout, keeled scales (often)</td><td>Variable</td></tr><tr><td>**Tail**</td><td>Tapers</td><td>Short, abrupt</td><td>Long</td></tr><tr><td>**Fang mark**</td><td>1–2 small punctures, 5–10 mm apart</td><td>2 large punctures, 8–15 mm apart (with local swelling)</td><td>Often multiple, irregular (chewing)</td></tr><tr><td>**Behaviour**</td><td>Some hood display (cobra); some "dry bite" common (krait 50%)</td><td>Defensive, loud hiss (saw-scaled), rattle</td><td>Defensive, mimic non-venomous</td></tr><tr><td>**Geography**</td><td>Tropics/subtropics (Asia, Africa, Australia, Americas)</td><td>Worldwide (most diversity in tropics)</td><td>Africa, Asia, Americas</td></tr></table>
+<div class="sub-h">Geographic Distribution — Major Medically Important Snakes</div>
+<table class="ctable"><tr><th>Region</th><th>Major Elapids</th><th>Major Viperids</th><th>Other</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**South Asia (India, Bangladesh, Pakistan, Sri Lanka, Nepal)**</td><td>Indian cobra (*Naja naja*), common krait (*Bungarus caeruleus*), Indian krait (*B. candidus*), king cobra, banded krait</td><td>Russell's viper (*Daboia russelii*), saw-scaled viper (*Echis carinatus*), hump-nosed pit viper (*Hypnale hypnale*)</td><td>—</td></tr><tr><td>**SE Asia (Myanmar, Thailand, Vietnam, Indonesia, Philippines, Malaysia)**</td><td>Monocled cobra, Malayan krait, banded krait, king cobra, long-glanded coral snake</td><td>Malayan pit viper, green pit viper (*Trimeresurus*), Russell's viper</td><td>—</td></tr><tr><td>**East Asia (China, Japan, Taiwan, Korea)**</td><td>Chinese cobra, many-banded krait, Taiwan cobra</td><td>Chinese pit viper (*Gloydius*), mamushi</td><td>—</td></tr><tr><td>**Sub-Saharan Africa**</td><td>Black mamba, green mamba, Jameson's mamba, forest cobra, snouted cobra, ring-necked spitting cobra, Egyptian cobra</td><td>Puff adder (*Bitis arietans*), Gaboon viper (*B. gabonica*), rhinoceros viper, saw-scaled viper, Berg adder</td><td>Boomslang, twig snake, burrowing asp</td></tr><tr><td>**North Africa / Middle East**</td><td>Egyptian cobra, desert black snake</td><td>Saw-scaled viper, horned viper, Palestine viper</td><td>—</td></tr><tr><td>**Europe**</td><td>Nose-horned viper (not elapid!)</td><td>Common European adder (*Vipera berus*), nose-horned viper</td><td>—</td></tr><tr><td>**Australia**</td><td>Taipan (*Oxyuranus*), brown snake (*Pseudonaja*), tiger snake (*Notechis*), black snake (*Pseudechis*), death adder</td><td>**No native viperids** (only elapids)</td><td>—</td></tr><tr><td>**North America**</td><td>Eastern/western coral snake (*Micrurus*)</td><td>Rattlesnakes (*Crotalus*), copperhead (*Agkistrodon*), cottonmouth (*A. piscivorus*), pygmy rattlesnake</td><td>—</td></tr><tr><td>**Central / South America**</td><td>Coral snakes (*Micrurus*), fer-de-lance (Bothrops = viperid)</td><td>**Bothrops** (lance-headed vipers), **Crotalus** (rattlesnakes), bushmaster (*Lachesis*), eyelash viper</td><td>—</td></tr><tr><td>**Marine**</td><td>Sea snakes (Hydrophiinae — Indian/Pacific)</td><td>—</td><td>—</td></tr></table>
+<div class="sub-h">Tools for Identification</div>
+<table class="ctable"><tr><th>Tool</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**WHO Snake Identification Guide**</td><td>Photo-based key for medically important species by region</td></tr><tr><td>**Regional photographic guides**</td><td>India: Whitaker, Romulus Whitaker; Africa: Branch, Spawls; Aus: Mirtschin; US: Ernst</td></tr><tr><td>**Apps**</td><td>SnakeID, SnakeBiteID, iNaturalist, SnakeSnap</td></tr><tr><td>**Clinical syndrome**</td><td>Neurotoxic = elapid; coagulopathic = viperid (VICC); myotoxic = sea snake; haemorrhagic = viperid</td></tr><tr><td>**VDK (Venom Detection Kit)**</td><td>Australia only; ELISA-based species ID</td></tr><tr><td>**Dead specimen**</td><td>Photograph with scale; do NOT bring live; caution — reflex bite possible for > 1 h post-mortem</td></tr><tr><td>**Patient/eyewitness description**</td><td>"Hooded", "rattled", "patterned", "size", "behaviour"</td></tr><tr><td>**Local expert**</td><td>Herpetologist, zoo, museum, snake catcher</td></tr></table>
+<div class="sub-h">Pitfalls of Identification</div>
+<table class="ctable"><tr><th>Pitfall</th><th>Lesson</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Dead snake can still bite</td><td>Reflex bite > 1 h post-mortem — handle with hook only</td></tr><tr><td>Many non-venomous mimics</td><td>Pattern alone unreliable; behaviour + geography better</td></tr><tr><td>Colour variations within species</td><td>Albino, melanistic, juvenile patterns differ</td></tr><tr><td>Hybridisation (rare)</td><td>Some elapid hybrids exist</td></tr><tr><td>Misidentification by patient</td><td>Panic distorts description</td></tr><tr><td>"Drunk" snakes in mating season</td><td>Behaviour atypical</td></tr><tr><td>Snakes in unusual locations</td><td>Found in cities (kraits in houses, cobras in gardens)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnosis & Investigations for Identification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Indication</th><th>Interpretation</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Bedside clinical**</td><td>All bites</td><td>Fang marks (number, spacing), local signs</td></tr><tr><td>**Geographic history**</td><td>All</td><td>Limits species list</td></tr><tr><td>**Photo / specimen**</td><td>Safe only</td><td>Match with guide; never touch live</td></tr><tr><td>**Venom Detection Kit (VDK)**</td><td>Australia</td><td>Species-specific (Brown, Tiger, Taipan, Black)</td></tr><tr><td>**ELISA venom detection**</td><td>Research; some countries</td><td>Detects venom in wound, blood, urine</td></tr><tr><td>**20WBCT + clinical syndrome**</td><td>All snakebites</td><td>Coagulopathy = VICC (viperid)</td></tr><tr><td>**Neuro exam**</td><td>All</td><td>Descending paralysis = elapid</td></tr><tr><td>**Myoglobinuria + CK**</td><td>Sea snake, some viperids</td><td>Myotoxic</td></tr><tr><td>**WD test (Whole Blood Clotting Time)**</td><td>Resource-limited</td><td>Coagulopathy screen</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management — Identification-Guided</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. First aid**</td><td>PIB (elapids), local pressure (viperids), immobilise</td></tr><tr><td>**2. Geographic + clinical syndrome**</td><td>Narrow likely species</td></tr><tr><td>**3. WHO/regional AV**</td><td>Polyvalent if uncertain; monospecific if ID confident</td></tr><tr><td>**4. Antivenom per protocol**</td><td>See Antivenom Principles & Specific Protocols</td></tr><tr><td>**5. Monitor**</td><td>Coagulation, neuro, renal, vitals</td></tr><tr><td>**6. Disposition**</td><td>ICU/HDU based on severity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Fact</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Global snakebite deaths**</td><td>81,000–138,000/year (WHO 2017)</td></tr><tr><td>**Global envenomations**</td><td>1.8–2.7 M/year</td></tr><tr><td>**Global bites**</td><td>5.4 M/year</td></tr><tr><td>**Disabilities**</td><td>400,000/year (amputations, blindness, chronic kidney disease)</td></tr><tr><td>**Worst-affected region**</td><td>South Asia (esp. India > 50,000 deaths/yr)</td></tr><tr><td>**Elapidae fang type**</td><td>Fixed front (proteroglyphous)</td></tr><tr><td>**Viperidae fang type**</td><td>Hinged front (solenoglyphous)</td></tr><tr><td>**Colubridae fang type**</td><td>Rear (opisthoglyphous)</td></tr><tr><td>**Elapid venom**</td><td>Neurotoxic (pre/post-synaptic)</td></tr><tr><td>**Viperid venom**</td><td>Haemotoxic (VICC), cytotoxic, nephrotoxic</td></tr><tr><td>**Sea snake venom**</td><td>Myotoxic (+ neurotoxic)</td></tr><tr><td>**Viperinae (true vipers)**</td><td>Russell's, saw-scaled, puff adder, Gaboon</td></tr><tr><td>**Crotalinae (pit vipers)**</td><td>Rattlesnakes, copperheads, Bothrops, Lachesis</td></tr><tr><td>**Heat-sensing pit**</td><td>Crotalinae only</td></tr><tr><td>**Indian Big Four**</td><td>Cobra, krait, Russell's viper, saw-scaled viper</td></tr><tr><td>**WHO NTD**</td><td>Snakebite listed 2017</td></tr><tr><td>**Boomslang**</td><td>Colubridae, rear-fanged, severe delayed coagulopathy</td></tr><tr><td>**Saw-scaled viper**</td><td>Viperinae; responsible for most deaths in some regions (Africa, India)</td></tr><tr><td>**Russell's viper**</td><td>Viperinae; VICC, AKI, neurotoxic (some populations)</td></tr><tr><td>**Krait**</td><td>Elapidae; common in India; nocturnal, indoor, **often minimal local signs**, delayed neurotoxicity 6–24 h</td></tr><tr><td>**Identification priority**</td><td>Fang type > scale pattern > head shape > colour</td></tr><tr><td>**Dead snake can still bite**</td><td>Reflex bite for > 1 h post-mortem</td></tr><tr><td>**Avoid**</td><td>Tourniquet, incision, ice, electric shock, herbal</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1: What is the global burden of snakebite?</b> A: 5.4 M bites/year, 1.8–2.7 M envenomations, 81,000–138,000 deaths, 400,000 permanent disabilities. Highest in South Asia, Sub-Saharan Africa, SE Asia, Latin America. India alone accounts for &gt; 50,000 deaths/yr.</p>
+<p><b>Q2: How are medically important snake families classified by fang type?</b> A: Elapidae = fixed front fangs (proteroglyphous); Viperidae = hinged front fangs (solenoglyphous); Colubridae (e.g., boomslang) = rear fangs (opisthoglyphous). Fang type is the most reliable identification feature.</p>
+<p><b>Q3: What are the Indian "Big Four" snakes?</b> A: Indian cobra (<i>Naja naja</i>), common krait (<i>Bungarus caeruleus</i>), Russell's viper (<i>Daboia russelii</i>), saw-scaled viper (<i>Echis carinatus</i>). These are responsible for most snakebite deaths in South Asia and are covered by polyvalent Indian ASV.</p>
+<p><b>Q4: Why is the common krait (Bungarus caeruleus) particularly dangerous?</b> A: Bites are often nocturnal, occur indoors, may not be felt. Minimal local signs (small fang marks, no swelling), so victim may not seek care. <b>Delayed neurotoxicity 6–24 h later</b> with descending paralysis and respiratory failure.</p>
+<p><b>Q5: What is the difference between Viperinae and Crotalinae?</b> A: Viperinae = "true vipers" — Old World (Russell, saw-scaled, puff adder, Gaboon). Crotalinae = "pit vipers" — have heat-sensing loreal pits (between eye and nostril); New World (rattlesnakes) and Asian (Trimeresurus, Gloydius). Both have hinged fangs.</p>
+<p><b>Q6: How do you identify a boomslang envenomation?</b> A: Rear-fanged colubrid; requires prolonged chewing to envenomate. Delayed (often 24–48 h) severe consumptive coagulopathy with bleeding (mucocutaneous, intracranial). <b>Antivenom available (South African Vaccine Producers)</b> but only if species confirmed.</p>
+<p><b>Q7: Why is a dead snake still dangerous?</b> A: Reflex biting can occur for &gt; 1 h after death (muscle spasm, intact venom gland). <b>Never handle dead snakes with bare hands</b> — use a stick/hook. Photograph from a distance.</p>
+<p><b>Q8: What are the most useful clinical clues for snake family?</b> A: Fang marks (spacing, depth), local signs (elapid: minimal; viperid: swelling, necrosis), systemic syndrome (neurotoxic = elapid; VICC = viperid; myotoxic = sea snake; delayed coagulopathy = boomslang), geographic location.</p>
+<p><b>Q9: What is the WHO strategy to reduce snakebite burden by 50% by 2030?</b> A: Four pillars: (1) Empower communities (education, first aid, prevention); (2) Deliver safe, effective treatments (AV access, supportive care); (3) Strengthen health systems (training, surveillance); (4) Increase coordination, partnerships, resources. Target: 50% reduction in deaths and disabilities by 2030.</p>
+<p><b>Q10: Which is the most important feature for snake identification when a specimen is available?</b> A: Fang type is the most reliable. Then scale patterns (midbody rows, ventral scute count, subcaudals — single vs paired), head scute pattern, and colour. Patient description and geography are useful but less reliable.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>---</td><td>---</td></tr><tr><td>All big snakes are dangerous</td><td>NO — many large pythons/boas are non-venomous</td></tr><tr><td>Coral snake vs king snake</td><td>Coral: red-yellow-black ("red on yellow kills a fellow"); kingsnake: red-black</td></tr><tr><td>Viperid = pit viper</td><td>NOT always — true vipers (Viperinae) lack pit</td></tr><tr><td>Saw-scaled viper = Russell's viper</td><td>NO — different genera, different distributions</td></tr><tr><td>Sea snake = viper</td><td>NO — sea snake is elapid (Hydrophiinae)</td></tr><tr><td>Boomslang = elapid</td><td>NO — colubrid, rear-fanged</td></tr><tr><td>Colour alone identifies</td><td>NO — within-species variation; mimicry common</td></tr><tr><td>Dead snake = safe</td><td>NO — reflex bite > 1 h</td></tr><tr><td>All krait bites cause immediate symptoms</td><td>NO — delayed 6–24 h; minimal local signs</td></tr><tr><td>Australia = no snakes</td><td>NO — has world's most venomous (taipan) but no vipers</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>Elapidae</b>: <b>E</b>xpert <b>N</b>eurotoxin = cobra, krait, mamba, taipan, coral, sea snake</li><li><b>Viperidae</b>: <b>V</b>ascular/<b>H</b>aemotoxic = Russell, saw-scaled, puff adder, Gaboon, rattlesnake, Bothrops</li><li><b>Indian Big Four</b>: <b>C</b>obra, <b>K</b>rait, <b>R</b>ussell's, <b>S</b>aw-scaled = <b>CKRS</b></li><li><b>Fang types</b>: <b>P</b>roteroglyphous (E<b>l</b>a<b>p</b>id = <b>E</b>rect), <b>S</b>olenoglyphous (<b>V</b>iperid = <b>S</b>word-like, hinged), <b>O</b>pisthoglyphous (C<b>o</b>lubrid = <b>O</b>pposite/rear)</li><li><b>Global burden</b>: <b>5</b> bites, <b>2</b> envenomations, <b>100</b>K deaths, <b>400</b>K disabilities (M, M, K, K)</li><li><b>Heat-sensing pit</b>: <b>C</b>rotalinae = <b>C</b>heat (detector)</li><li><b>Coral snake rhyme (US)</b>: "<b>R</b>ed on <b>y</b>ellow kills a <b>f</b>ellow; <b>r</b>ed on <b>b</b>lack, <b>v</b>enom <b>l</b>ack" = <b>RYKF / RBVL</b></li><li><b>Sea snake</b>: Hydrophiinae = <b>H</b>ydro (water)</li><li><b>Boomslang</b>: <b>B</b>ack = <b>B</b>ite (rear-fanged, delayed)</li><li><b>Snakebite prevention</b>: <b>F</b>ootwear, <b>S</b>leeping surface, <b>L</b>ighting, <b>A</b>wareness = <b>FSLA</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Snakebite Epidemiology &amp; ID)) Global_Burden 5.4M_bites 2M_envenomations 100K_deaths 400K_disabilities South_Asia_worst WHO_NTD Families Elapidae Fixed_front_fangs Neurotoxic Cobra_krait_mamba_taipan Sea_snake Viperidae Hinged_fangs Viperinae[True vipers] Crotalinae[Pit vipers] VICC_haemotoxic Russell_saw-scaled_puff_rattlesnake Colubridae Rear_fangs Boomslang Delayed_coagulopathy Identification Fang_type Scale_pattern Head_shape Geography Behaviour VDK_Australia Prevention Footwear Sleeping Lighting Awareness </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Key Point</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Deaths/yr**</td><td>81,000–138,000</td></tr><tr><td>**Envenomations/yr**</td><td>1.8–2.7 M</td></tr><tr><td>**Elapidae fang**</td><td>Fixed front (proteroglyphous)</td></tr><tr><td>**Viperidae fang**</td><td>Hinged front (solenoglyphous)</td></tr><tr><td>**Colubridae fang**</td><td>Rear (opisthoglyphous)</td></tr><tr><td>**Elapid venom**</td><td>Neurotoxic</td></tr><tr><td>**Viperid venom**</td><td>VICC, cytotoxic, nephrotoxic</td></tr><tr><td>**Sea snake venom**</td><td>Myotoxic</td></tr><tr><td>**Indian Big Four**</td><td>Cobra, krait, Russell, saw-scaled</td></tr><tr><td>**Crotalinae feature**</td><td>Heat-sensing loreal pit</td></tr><tr><td>**Boomslang**</td><td>Rear-fanged, delayed coagulopathy</td></tr><tr><td>**Viperinae examples**</td><td>Russell, saw-scaled, puff, Gaboon</td></tr><tr><td>**Crotalinae examples**</td><td>Rattlesnake, Bothrops, copperhead, cottonmouth</td></tr><tr><td>**Most reliable ID**</td><td>Fang type > scales > head > colour</td></tr><tr><td>**Dead snake can bite**</td><td>Reflex > 1 h</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>Global burden, families, fang types</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Indian Big 4, key species per region, venom profile</td></tr><tr><td>**7 d**</td><td></td><td></td><td>Identification priority, prevention, WHO strategy</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with Snake Clinical & Regional topics</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Global burden numbers</td><td></td></tr><tr><td>Elapidae vs Viperidae vs Colubridae</td><td></td></tr><tr><td>Fang morphology</td><td></td></tr><tr><td>Indian Big Four</td><td></td></tr><tr><td>Viperinae vs Crotalinae</td><td></td></tr><tr><td>Sea snake family</td><td></td></tr><tr><td>Identification priority</td><td></td></tr><tr><td>Regional distribution</td><td></td></tr><tr><td>Prevention</td><td></td></tr><tr><td>WHO NTD strategy</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Global epidemiology of snakebite"</td><td>5 M bites, 2 M envenomations, 100 K deaths, 400 K disabilities; high-risk regions; prevention; WHO strategy</td></tr><tr><td>**Short Note**</td><td>"Snake identification"</td><td>Fang type (proteroglyphous vs solenoglyphous vs opisthoglyphous), scales, head shape, geography, VDK</td></tr><tr><td>**Viva**</td><td>"Indian Big Four"</td><td>Cobra, krait, Russell's viper, saw-scaled viper; elapid, elapid, viper, viper; covered by Indian ASV</td></tr><tr><td>**Ward Round**</td><td>"Patient bitten by snake, can't identify"</td><td>Geographic + clinical syndrome; PIB if elapid, pressure if viperid; polyvalent AV; 20WBCT + labs</td></tr><tr><td>**Last-Night**</td><td>"Key snakebite numbers"</td><td>5 M / 2 M / 100 K / 400 K; fixed vs hinged fang; 6–24 h krait delay; 50% by 2030 target</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>WHO estimates annual snakebite envenomations globally:</b></li></ol>
+<p>A. 500,000 B. <b>1.8–2.7 million</b> C. 5 million D. 10 million E. &lt; 100,000</p>
+<ol><li><b>Elapidae snakes have which fang type?</b></li></ol>
+<p>A. Hinged front B. <b>Fixed front (proteroglyphous)</b> C. Rear (opisthoglyphous) D. No fangs E. Retractable</p>
+<ol><li><b>Viperidae have which fang type?</b></li></ol>
+<p>A. Fixed front B. <b>Hinged front (solenoglyphous)</b> C. Rear D. No fangs E. Multiple rows</p>
+<ol><li><b>Which is NOT in the Elapidae?</b></li></ol>
+<p>A. Indian cobra B. Common krait C. Taipan D. <b>Russell's viper</b> E. Sea snake</p>
+<ol><li><b>Heat-sensing loreal pit is found in:</b></li></ol>
+<p>A. All elapids B. All vipers C. <b>Crotalinae (pit vipers) only</b> D. Viperinae only E. All colubrids</p>
+<ol><li><b>Boomslang (Dispholidus typus) is in family:</b></li></ol>
+<p>A. Elapidae B. Viperidae C. <b>Colubridae (rear-fanged)</b> D. Hydrophiinae E. Atractaspididae</p>
+<ol><li><b>Sea snakes belong to subfamily:</b></li></ol>
+<p>A. Viperinae B. Crotalinae C. <b>Hydrophiinae (within Elapidae)</b> D. Natricinae E. Lamprophiinae</p>
+<ol><li><b>Most reliable identification feature for a specimen:</b></li></ol>
+<p>A. Colour B. Size C. <b>Fang type</b> D. Tail shape E. Behaviour</p>
+<ol><li><b>Indian "Big Four" snakes — all covered by one AV EXCEPT:</b></li></ol>
+<p>A. Indian cobra B. Common krait C. Russell's viper D. Saw-scaled viper E. <b>Hump-nosed pit viper (not in Indian ASV — major gap)</b></p>
+<ol><li><b>Dead snake can still bite due to:</b></li></ol>
+<p>A. Venom persists B. <b>Reflex biting (muscle spasm) &gt; 1 h post-mortem</b> C. Venom glands regenerate D. Snake revives E. Decomposition releases venom</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>45-yr-old farmer in Bangladesh bitten at night, minimal local signs, no fang marks visible. 18 h later: ptosis, descending paralysis. Most likely snake?</b></li></ol>
+<p>A. Russell's viper B. <b>Common krait (Bungarus caeruleus) — nocturnal, minimal local signs, delayed neurotoxicity</b> C. Saw-scaled viper D. Indian cobra E. Indian python</p>
+<ol><li><b>Africa, patient bitten by green snake, severe delayed coagulopathy 24 h later. Most likely?</b></li></ol>
+<p>A. Black mamba B. Puff adder C. <b>Boomslang (rear-fanged colubrid, delayed VICC)</b> D. Gaboon viper E. Green mamba</p>
+<ol><li><b>Farmer bitten in Brazil, severe local necrosis, coagulopathy, mild neuro signs. Snake has heat-sensing pit, triangular head. Family?</b></li></ol>
+<p>A. Elapidae B. <b>Crotalinae (pit viper — Bothrops, Crotalus)</b> C. Viperinae D. Colubridae E. Hydrophiinae</p>
+<ol><li><b>Patient stepped on snake in Australian outback. Brown snake, rapid neurotoxicity and coagulopathy. Most appropriate AV?</b></li></ol>
+<p>A. Indian ASV B. <b>CSL Australian Polyvalent (covers Brown, Tiger, Taipan, Black, Death Adder)</b> C. SAIMR D. CroFab E. Antivipmyn</p>
+<ol><li><b>Sea snake bite in fisherman. Severe myalgia, dark urine, AKI, paralysis. Mechanism?</b></li></ol>
+<p>A. Neurotoxic B. <b>Myotoxic (PLA₂ → rhabdomyolysis → myoglobinuria → AKI)</b> C. Cytotoxic D. Haemotoxic E. Cardiotoxic</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Snake Envenomation: Clinical Syndromes (Elapid vs Viperid)]]</li><li>[[Snake Envenomation: Specific Regional Snakes (Asia, Africa, Australia, Americas)]]</li><li>[[Snake Envenomation: Laboratory Investigation and Monitoring]]</li><li>[[Snake Envenomation: Specific Antivenom Protocols]]</li><li>[[Antivenom: Principles, Types, and Administration]]</li><li>[[Antivenom Adverse Reactions and Management]]</li><li>[[General Principles of Envenomation]]</li><li>[[Envenomation MOC]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Snake Envenomation- Global Epidemiology and Snake Identification · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

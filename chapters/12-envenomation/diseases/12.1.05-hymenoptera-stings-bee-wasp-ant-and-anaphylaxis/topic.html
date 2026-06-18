@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hymenoptera Stings (Bee, Wasp, Ant) and Anaphylaxis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ENVENOMATION</span>
+      <div class="h1">Hymenoptera Stings (Bee, Wasp, Ant) and Anaphylaxis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Differentiate bee vs wasp vs ant venom composition</li><li>Recognise anaphylaxis vs large local reaction</li><li>Apply emergency management of anaphylaxis (IM adrenaline first-line)</li><li>Understand venom immunotherapy (VIT) indications</li><li>Manage fire ant and other ant stings</li><li>Apply to FCPS/MRCP vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions & Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Hymenoptera**</td><td>Order: bees, wasps, ants — modified ovipositor = stinger</td></tr><tr><td>**Anaphylaxis**</td><td>Acute IgE-mediated hypersensitivity — rapid onset, multisystem</td></tr><tr><td>**Large local reaction (LLR)**</td><td>>10 cm swelling, peaks 24–48h, resolves 5–10 days — NOT anaphylaxis</td></tr><tr><td>**Biphasic anaphylaxis**</td><td>Recurrence 4–12h (up to 72h) after initial resolution</td></tr><tr><td>**Venom Immunotherapy (VIT)**</td><td>Subcutaneous escalating doses → 95–98% protection for 3–5 years</td></tr><tr><td>**Melittin**</td><td>Bee venom major peptide — membrane lysis, pain, mast cell degranulation</td></tr><tr><td>**Phospholipase A1/A2**</td><td>Major allergens (Api m 1, Ves v 1) — membrane degradation</td></tr><tr><td>**Antigen 5 (Ag5)**</td><td>Wasp/ant major allergen — pathogenesis unclear</td></tr><tr><td>**Solenopsin**</td><td>Fire ant alkaloid venom — pustule formation, necrosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Hymenoptera Biology &amp; Venom Composition</div>
+<p>#### Bee (<i>Apis mellifera</i> — Honeybee)</p>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Stinger**</td><td>**Barbed** — remains embedded with venom sac; continues pumping</td></tr><tr><td>**Stings**</td><td>Single (stinger tears away → bee dies)</td></tr><tr><td>**Venom yield**</td><td>~50–140 µg dry weight</td></tr><tr><td>**Major allergens**</td><td>**Api m 1** (phospholipase A2), **Api m 2** (hyaluronidase), **Api m 3** (melittin), **Api m 10** (icarapin)</td></tr><tr><td>**Key components**</td><td>Melittin (50% dry wt) — membrane lysis, pain; PLA2 — membrane degradation; hyaluronidase — spread; mast cell degranulating peptide</td></tr><tr><td>**Distribution**</td><td>Worldwide (domesticated + feral)</td></tr></table>
+<p>#### Wasp (<i>Vespula, Polistes, Dolichovespula</i> — Yellowjackets, Paper Wasps, Hornets)</p>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Stinger**</td><td>**Smooth** — no barbs; can sting repeatedly</td></tr><tr><td>**Stings**</td><td>Multiple</td></tr><tr><td>**Venom yield**</td><td>~1–17 µg dry weight (less than bee)</td></tr><tr><td>**Major allergens**</td><td>**Ves v 1** (phospholipase A1), **Ves v 5** (antigen 5), **Ves v 2** (hyaluronidase)</td></tr><tr><td>**Key components**</td><td>Phospholipase A1, antigen 5 (Ag5), mastoparan (mast cell degranulation), kinins, serotonin</td></tr><tr><td>**Distribution**</td><td>Worldwide; *Vespula* (ground-nesting) most aggressive</td></tr></table>
+<p>#### Ant (Formicidae)</p>
+<table class="ctable"><tr><th>Species</th><th>Venom</th><th>Clinical</th></tr><tr><td>---------</td><td>-------</td><td>----------</td></tr><tr><td>**Fire ant (*Solenopsis invicta/richteri*)**</td><td>**Piperidine alkaloids (solenopsin)** — cytotoxic, necrotic</td><td>Immediate burning → **sterile pustule at 24h** (diagnostic); anaphylaxis risk</td></tr><tr><td>**Jack jumper ant (*Myrmecia pilosula* — Australia)**</td><td>Protein venom (Myr p 1, Myr p 2) — similar to wasp</td><td>**Major cause of anaphylaxis in Tasmania/SE Australia**</td></tr><tr><td>**Bulldog ant (*Myrmecia* spp.)**</td><td>Protein venom</td><td>Severe anaphylaxis</td></tr><tr><td>**Harvester ant (*Pogonomyrmex* — USA)**</td><td>Protein venom</td><td>Painful, local reaction, rare anaphylaxis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Presentation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Anaphylaxis (IgE-Mediated)</div>
+<p>#### Diagnostic Criteria (WAO / Resuscitation Council UK) <b>Acute onset (minutes–hours) + at least ONE of:</b></p>
+<ol><li><b>Skin/mucosal</b> — urticaria, angioedema, flushing, itching</li><li><b>Respiratory</b> — wheeze, stridor, dyspnoea, hypoxia, hoarseness</li><li><b>Circulatory</b> — hypotension, tachycardia, syncope, shock</li><li><b>Gastrointestinal</b> — vomiting, abdominal pain, incontinence (supportive)</li></ol>
+<table class="ctable"><tr><th>Feature</th><th>Timing</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Onset**</td><td>Minutes (typically < 30 min)</td></tr><tr><td>**Peak**</td><td>5–30 min</td></tr><tr><td>**Biphasic**</td><td>4–12h (up to 72h) after resolution</td></tr><tr><td>**Late**</td><td>Serum sickness-like (days) — rare</td></tr></table>
+<p>#### Clinical Features by System</p>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Skin**</td><td>Generalised urticaria, angioedema (lips, tongue, eyelids), flushing, pruritus</td></tr><tr><td>**Respiratory**</td><td>Laryngeal oedema (stridor, hoarseness), bronchospasm (wheeze), dyspnoea, hypoxia</td></tr><tr><td>**Cardiovascular**</td><td>Hypotension (distributive shock), tachycardia (reflex or direct), arrhythmia, syncope</td></tr><tr><td>**GI**</td><td>Nausea, vomiting, abdominal cramps, diarrhoea</td></tr><tr><td>**Neurological**</td><td>Anxiety, sense of doom, confusion, loss of consciousness</td></tr></table>
+<div class="sub-h">Large Local Reaction (LLR) — NOT Anaphylaxis</div>
+<table class="ctable"><tr><th>Feature</th><th>LLR</th><th>Anaphylaxis</th></tr><tr><td>---------</td><td>-----</td><td>-------------</td></tr><tr><td>**Swelling**</td><td>**>10 cm**, crosses joint, peaks 24–48h</td><td>May have urticaria/angioedema (transient)</td></tr><tr><td>**Systemic**</td><td>**None** — no respiratory/circulatory compromise</td><td>**Yes** — respiratory, CVS, GI</td></tr><tr><td>**Onset**</td><td>Delayed (hours)</td><td>Immediate (minutes)</td></tr><tr><td>**Duration**</td><td>5–10 days</td><td>Acute (hours), biphasic possible</td></tr><tr><td>**Tryptase**</td><td>Normal</td><td>Elevated (peak 1–2h, baseline 24h)</td></tr><tr><td>**Management**</td><td>Antihistamines, oral steroids, cold compress</td><td>**IM adrenaline 0.5mg FIRST**</td></tr></table>
+<div class="sub-h">Fire Ant (*Solenopsis*) Envenomation</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Bite + sting**</td><td>Mandibles grip → pivot → multiple stings in circle</td></tr><tr><td>**Venom**</td><td>95% piperidine alkaloids (solenopsin) — cytotoxic</td></tr><tr><td>**Immediate**</td><td>Intense burning ("fire"), wheal-and-flare</td></tr><tr><td>**Characteristic**</td><td>**Sterile pustule at 24h** (cloudy fluid, not pus)</td></tr><tr><td>**Allergic**</td><td>Local reaction common; systemic anaphylaxis in ~1%</td></tr><tr><td>**Secondary**</td><td>Infection if pustule ruptured; scarring</td></tr></table>
+<div class="sub-h">Jack Jumper Ant (*Myrmecia pilosula*) — Australia</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Region**</td><td>Tasmania, SE Australia (Victoria, NSW, ACT)</td></tr><tr><td>**Significance**</td><td>**Major cause of ant anaphylaxis** — 2–3% of population sensitised</td></tr><tr><td>**Venom**</td><td>Protein (Myr p 1, Myr p 2) — cross-reacts with wasp venom</td></tr><tr><td>**VIT available**</td><td>Yes — jack jumper ant VIT (Tasmania)</td></tr><tr><td>**Anaphylaxis rate**</td><td>~3% per sting in sensitised</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnostic Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Bedside / Point-of-Care</div>
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Interpretation</th></tr><tr><td>------</td><td>------------</td><td>----------------</td></tr><tr><td>**History**</td><td>All</td><td>Timing, insect ID (bee vs wasp vs ant), previous reactions, atopy</td></tr><tr><td>**Stinger check**</td><td>Bee</td><td>Barbed stinger + venom sac in skin → remove by scraping</td></tr><tr><td>**Tryptase**</td><td>Suspected anaphylaxis</td><td>**Peak 1–2h**, baseline 24h; elevated = mast cell activation</td></tr><tr><td>**Serum IgE**</td><td>VIT workup</td><td>Specific IgE to bee/wasp/ant venom</td></tr><tr><td>**Skin prick**</td><td>VIT workup</td><td>Positive at 0.1–1 µg/mL; correlate with clinical history</td></tr><tr><td>**Basophil activation test (BAT)**</td><td>Refractory/ambiguous</td><td>Functional assay — emerging</td></tr></table>
+<div class="sub-h">Laboratory Investigations</div>
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Expected Findings</th></tr><tr><td>------</td><td>------------</td><td>-------------------</td></tr><tr><td>**Tryptase**</td><td>Anaphylaxis confirmation</td><td>> 11.4 µg/L or > 2 + 1.2× baseline</td></tr><tr><td>**FBC**</td><td>Post-anaphylaxis</td><td>Eosinophilia (late), leukocytosis</td></tr><tr><td>**U&E, creatinine**</td><td>Severe hypotension</td><td>AKI from hypoperfusion</td></tr><tr><td>**ABG**</td><td>Respiratory compromise</td><td>Respiratory acidosis, hypoxia</td></tr><tr><td>**ECG**</td><td>Cardiovascular</td><td>Sinus tachy, ischaemia (rare)</td></tr><tr><td>**Mast cell tryptase (baseline)**</td><td>Recurrent anaphylaxis</td><td>> 20 µg/L suggests mastocytosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Immediate / Pre-hospital (Anaphylaxis)</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th><th>Dose/Detail</th></tr><tr><td>------</td><td>--------</td><td>-------------</td></tr><tr><td>**1. Recognise**</td><td>Acute + skin/mucosal + (respiratory OR circulatory)</td><td>Call for help</td></tr><tr><td>**2. IM Adrenaline**</td><td>**FIRST-LINE, IMMEDIATELY**</td><td>**0.5 mg (1:1000) IM anterolateral thigh** (vastus lateralis)</td></tr><tr><td>**3. Position**</td><td>Supine ± legs raised (if hypotensive)</td><td>Left lateral if pregnant</td></tr><tr><td>**4. Airway/O₂**</td><td>High-flow O₂ via non-rebreather</td><td>Intubate early if stridor/hoarseness</td></tr><tr><td>**5. IV Access**</td><td>2 large-bore cannulae</td><td>500–1000 mL crystalloid bolus (NS/Hartmann's)</td></tr><tr><td>**6. Repeat Adrenaline**</td><td>If no improvement</td><td>IM 0.5 mg q5–15 min PRN</td></tr><tr><td>**7. Adjuncts**</td><td>After adrenaline + fluids</td><td>Chlorphenamine 10 mg IV, Hydrocortisone 200 mg IV</td></tr><tr><td>**8. Nebulised Salbutamol**</td><td>Bronchospasm</td><td>5 mg neb PRN</td></tr><tr><td>**9. Refractory Shock**</td><td>Adrenaline infusion</td><td>1 mg in 100 mL NS at 1–10 mL/min (titrate)</td></tr><tr><td>**10. Glucagon**</td><td>β-blocker patients</td><td>1–5 mg IV bolus, then 1–5 mg/h infusion</td></tr></table>
+<div class="sub-h">Bee Stinger Removal</div>
+<table class="ctable"><tr><th>Correct</th><th>Incorrect</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Scrape** (credit card, fingernail, knife edge)</td><td>Pull/squeeze with forceps/tweezers</td></tr><tr><td>Remove intact venoms sac</td><td>Squeezes venom sac → more venom injected</td></tr><tr><td>Lateral scraping motion</td><td>Digging, pinching</td></tr></table>
+<div class="sub-h">Post-Acute / Observation</div>
+<table class="ctable"><tr><th>Parameter</th><th>Duration</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Observation**</td><td>**6–12 hours** minimum (biphasic risk) — longer if severe/late presentation</td></tr><tr><td>**Discharge criteria**</td><td>Symptom-free ≥ 4h off treatment, oral fluids tolerated, written action plan, EpiPen if indicated</td></tr><tr><td>**Prednisolone**</td><td>30–50 mg PO daily × 3 days (may reduce biphasic, controversial)</td></tr><tr><td>**Antihistamines**</td><td>Non-sedating (cetirizine/loratadine) × 3–5 days</td></tr><tr><td>**Follow-up**</td><td>Allergy referral for VIT assessment</td></tr></table>
+<div class="sub-h">Large Local Reaction (LLR) Management</div>
+<table class="ctable"><tr><th>Intervention</th><th>Dose</th></tr><tr><td>--------------</td><td>------</td></tr><tr><td>**Oral antihistamine**</td><td>Cetirizine 10 mg daily / loratadine</td></tr><tr><td>**Oral corticosteroid**</td><td>Prednisolone 30–50 mg daily × 3–5 days</td></tr><tr><td>**Cold compress**</td><td>15 min q4–6h</td></tr><tr><td>**Elevation**</td><td>Affected limb</td></tr><tr><td>**Antibiotics**</td><td>**NOT** indicated (sterile inflammation)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Venom Immunotherapy (VIT)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Indications (Must Meet **BOTH**)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**1. Clinical**</td><td>**Recurrent systemic anaphylaxis** to Hymenoptera sting (≥2 episodes) OR **1 episode + high risk** (high exposure, mastocytosis, high baseline tryptase)</td></tr><tr><td>**2. Immunological**</td><td>**Positive skin test** AND/OR **specific IgE** to relevant venom</td></tr><tr><td>**NOT indicated for:**</td><td>Large local reactions only, single mild systemic reaction (cutaneous only), positive test without clinical history</td></tr></table>
+<div class="sub-h">Protocol (Standard)</div>
+<table class="ctable"><tr><th>Phase</th><th>Duration</th><th>Dose Escalation</th></tr><tr><td>-------</td><td>----------</td><td>-----------------</td></tr><tr><td>**Build-up**</td><td>12–16 weeks (conventional) / days–weeks (rush/ultra-rush)</td><td>Weekly/biweekly → maintenance dose</td></tr><tr><td>**Maintenance**</td><td>**3–5 years**</td><td>100 µg venom (∼1–2 stings equivalent) every 4–8 weeks</td></tr><tr><td>**Discontinuation**</td><td>After 3–5 years if low risk</td><td>Shared decision — some continue >5y</td></tr></table>
+<div class="sub-h">Efficacy &amp; Safety</div>
+<table class="ctable"><tr><th>Metric</th><th>Value</th></tr><tr><td>--------</td><td>-------</td></tr><tr><td>**Protection rate**</td><td>**95–98%** against systemic reaction</td></tr><tr><td>**Duration**</td><td>**3–5 years** after stop — waning immunity</td></tr><tr><td>**Systemic reaction rate**</td><td>5–15% of injections (mostly mild)</td></tr><tr><td>**Fatalities**</td><td>Extremely rare (< 1: million injections)</td></tr><tr><td>**Contraindications**</td><td>Uncontrolled asthma, active autoimmune, β-blockers (relative), pregnancy (continue if already on; don't start)</td></tr></table>
+<div class="sub-h">Adjunct: Omalizumab (Anti-IgE)</div>
+<table class="ctable"><tr><th>Role</th><th>Detail</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Indication**</td><td>Recurrent systemic reactions during VIT build-up; high baseline tryptase; mastocytosis</td></tr><tr><td>**Dose**</td><td>150–300 mg SC q2–4wks per IgE/weight</td></tr><tr><td>**Effect**</td><td>Reduces systemic reactions during build-up, allows faster up-titration</td></tr><tr><td>**Not**</td><td>Replacement for VIT</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mastocytosis</div>
+<table class="ctable"><tr><th>Feature</th><th>Management</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Risk**</td><td>**Increased severity** of anaphylaxis; may lack skin signs</td></tr><tr><td>**Screening**</td><td>Baseline tryptase > 20 µg/L → bone marrow biopsy</td></tr><tr><td>**VIT**</td><td>**Indicated** for any anaphylaxis; higher maintenance dose (200 µg); longer duration</td></tr><tr><td>**Omalizumab**</td><td>Strongly recommended adjunct</td></tr><tr><td>**EpiPen**</td><td>Carry **2 autoinjectors**</td></tr></table>
+<div class="sub-h">Children</div>
+<table class="ctable"><tr><th>Feature</th><th>Management</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**LLR**</td><td>Common; NOT anaphylaxis; antihistamines + steroids</td></tr><tr><td>**Anaphylaxis**</td><td>Same IM adrenaline dose by weight (0.01 mg/kg max 0.5 mg)</td></tr><tr><td>**VIT**</td><td>Indicated if recurrent anaphylaxis; paediatric allergist</td></tr></table>
+<div class="sub-h">Pregnancy</div>
+<table class="ctable"><tr><th>Feature</th><th>Management</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Anaphylaxis**</td><td>IM adrenaline 0.5 mg — **safe**, maternal benefit > fetal risk</td></tr><tr><td>**VIT**</td><td>**Continue** if already on maintenance; **do not initiate** build-up</td></tr><tr><td>**Omalizumab**</td><td>Category B — continue if needed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Recognition</th><th>Management</th></tr><tr><td>--------------</td><td>-------------</td><td>------------</td></tr><tr><td>**Biphasic anaphylaxis**</td><td>Recurrence 4–12h (up to 72h)</td><td>Prolonged observation (12–24h if severe); prednisolone × 3d</td></tr><tr><td>**Refractory shock**</td><td>β-blocker, ACEi, severe</td><td>Adrenaline infusion, glucagon, vasopressin, IV fluids</td></tr><tr><td>**Cardiac arrest**</td><td>Severe anaphylaxis, Kounis syndrome (allergic MI)</td><td>ALS + adrenaline 1 mg IV q3–5min; coronary angiogram if STEMI</td></tr><tr><td>**Airway obstruction**</td><td>Laryngeal oedema</td><td>Early intubation; cricothyroidotomy if failed</td></tr><tr><td>**Kounis syndrome**</td><td>Allergic ACS — STEMI/NSTEMI</td><td>Troponin, ECG; manage as ACS + anaphylaxis</td></tr><tr><td>**Mastocytosis unmasked**</td><td>Severe anaphylaxis, high tryptase</td><td>Screen tryptase; bone marrow if > 20 µg/L</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Disposition Criteria</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Admit (ICU/HDU)</th><th>Observe (ED/Ward 6–12h)</th><th>Discharge</th></tr><tr><td>------------------</td><td>--------------------------</td><td>-----------</td></tr><tr><td>**Severe anaphylaxis** — refractory shock, intubation, biphasic</td><td>**Moderate anaphylaxis** — responded to 1–2 IM adrenaline</td><td>**Mild/LLR** — antihistamine ± steroids, action plan</td></tr><tr><td>**β-blocker/ACEi** — refractory risk</td><td>**First anaphylaxis** — need allergy referral</td><td>**EpiPen prescribed** + allergy follow-up</td></tr><tr><td>**Mastocytosis**</td><td>**Paediatric** — lower threshold</td><td>**Written action plan** + allergy referral</td></tr><tr><td>**Comorbidities** (cardiac, respiratory)</td><td>**High exposure** (beekeeper)</td><td>**VIT assessment** referral</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Anaphylaxis = IM adrenaline 0.5mg (1:1000) anterolateral thigh FIRST-LINE</b> — not antihistamine, not steroid, not IV adrenaline - <b>Bee stinger = SCRAPE</b> — barbed stinger leaves venom sac; squeezing injects more venom - <b>Large local reaction (LLR) ≠ anaphylaxis</b> — &gt;10cm swelling at 24–48h, <b>NO respiratory/circulatory compromise</b> - <b>VIT indication = recurrent anaphylaxis</b> (not LLR) + positive skin test/IgE; 95–98% protection, 3–5 years - <b>Biphasic anaphylaxis = 4–12h</b> after resolution; observe ≥6–12h; prednisolone × 3d may help - <b>Fire ant</b> = multiple stings + <b>sterile pustule at 24h</b> (piperidine alkaloids) - <b>Jack jumper ant (Australia)</b> = major anaphylaxis cause; protein venom; VIT available - <b>Mastocytosis</b> = screen tryptase if severe/unexplained anaphylaxis; VIT + omalizumab - <b>Tryptase timing</b> = peak 1–2h post-reaction, baseline at 24h - <b>β-blocker + anaphylaxis</b> = refractory; <b>glucagon</b> 1–5 mg IV</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Antihistamine = first-line for anaphylaxis**</td><td>**NO** — IM adrenaline is FIRST-LINE; antihistamine adjunct only</td></tr><tr><td>**Steroid = first-line for anaphylaxis**</td><td>**NO** — delayed (4–6h); adjunct only</td></tr><tr><td>**IV adrenaline better than IM**</td><td>**NO** — IM safer, faster absorption; IV only for arrest/refractory shock</td></tr><tr><td>**LLR = mild anaphylaxis**</td><td>**NO** — LLR is local only; NO systemic features</td></tr><tr><td>**Bee stinger = pull out with tweezers**</td><td>**NO** — SCRAPE; squeezing injects venom sac</td></tr><tr><td>**VIT for LLR**</td><td>**NO** — only for recurrent anaphylaxis</td></tr><tr><td>**Single anaphylaxis = needs VIT**</td><td>**Usually NO** — need recurrent OR high-risk features</td></tr><tr><td>**Fire ant = single sting**</td><td>**NO** — pivots, multiple stings in circle</td></tr><tr><td>**All ants = protein venom**</td><td>**NO** — fire ant = alkaloid (solenopsin); jack jumper = protein</td></tr><tr><td>**Tryptase normal = not anaphylaxis**</td><td>**NO** — can be normal; clinical diagnosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Anaphylaxis first-line</b>: <b>A</b>drenaline <b>I</b>M <b>M</b>ediately = <b>AIM</b></li><li><b>Adrenaline dose</b>: <b>0.5 mg IM 1:1000 anterolateral thigh</b> = <b>0.5-IM-Thigh</b></li><li><b>Bee stinger</b>: <b>S</b>crape <b>D</b>on't <b>S</b>queeze = <b>SDS</b></li><li><b>LLR vs Anaphylaxis</b>: <b>L</b>LR = <b>L</b>ocal <b>L</b>arge only = <b>LLL</b></li><li><b>Biphasic timing</b>: <b>4–12 hours</b> = <b>4-12</b></li><li><b>VIT indication</b>: <b>R</b>ecurrent <b>A</b>naphylaxis + <b>P</b>ositive test = <b>RAP</b></li><li><b>Fire ant</b>: <b>P</b>ustule at <b>2</b>4<b>h</b> = <b>P24</b></li><li><b>Jack jumper</b>: <b>T</b>asmania <b>J</b>umper = <b>TJ</b></li><li><b>Mastocytosis</b>: <b>T</b>ryptase &gt; <b>20</b> = <b>T20</b></li><li><b>β-blocker rescue</b>: <b>G</b>lucagon = <b>G</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Hymenoptera Stings)) Bee[<i>Apis mellifera</i>] Stinger[Barbed - single sting] Venom[Melittin, PLA2 (Api m 1), Hyaluronidase (Api m 2)] First_Aid[Scrape stinger] Wasp[<i>Vespula, Polistes</i>] Stinger[Smooth - multiple stings] Venom[PLA1 (Ves v 1), Antigen 5 (Ves v 5)] Ant[Formicidae] Fire_Ant[Solenopsis] Venom[Solenopsin (alkaloid)] Pustule[24h sterile pustule] Jack_Jumper[Myrmecia] Protein_Venom[Major anaphylaxis AUS] VIT[Available] Anaphylaxis Criteria[Acute + Skin + (Resp/Circ)] First_Line[IM Adrenaline 0.5mg] Adjuncts[Fluids, O2, Antihistamine, Steroid] Biphasic[4-12h, observe 6-12h] Refractory[Glucagon if beta-blocker] Large_Local_Reaction Features[&gt;10cm, 24-48h peak, NO systemic] Rx[Antihistamine, Steroid, Cold] VIT Indication[Recurrent anaphylaxis + positive test] Build_Up[12-16 wks / rush] Maintenance[3-5 years, 100µg q4-8wk] Efficacy[95-98% protection] Omalizumab[Adjunct for reactions] Mastocytosis Tryptase[&gt;20 µg/L] VIT[Higher dose, longer] Omalizumab[Strong adjunct] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart: Hymenoptera Sting Management</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Hymenoptera Sting] --&gt; B{Stinger Present?} B --&gt;|Yes (Bee)| C[SCRAPE stinger - don't squeeze] B --&gt;|No (Wasp/Ant)| D[Assess Reaction] C --&gt; D D --&gt; E{Systemic Features?} E --&gt;|Urticaria + Wheeze/Hypotension| F[ANAPHYLAXIS] F --&gt; G[IM Adrenaline 0.5mg 1:1000 IMMEDIATELY] G --&gt; H[Supine, O2, IV Access, Fluids] H --&gt; I[Repeat Adrenaline q5-15min PRN] I --&gt; J[Adjuncts: Chlorphenamine 10mg IV, Hydrocortisone 200mg IV] J --&gt; K[Observe 6-12h for Biphasic] E --&gt;|Local Swelling &gt;10cm, NO Systemic| L[LARGE LOCAL REACTION] L --&gt; M[Antihistamine + Oral Steroid + Cold Compress] E --&gt;|Mild Local Only| N[Simple Analgesia, Cold Compress] K --&gt; O[Allergy Referral for VIT if Recurrent Anaphylaxis] M --&gt; O </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Key Point</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Bee stinger**</td><td>Barbed — **SCRAPE** (don't squeeze); venom sac continues pumping</td></tr><tr><td>**Wasp stinger**</td><td>Smooth — multiple stings; no stinger left</td></tr><tr><td>**Anaphylaxis**</td><td>Acute + skin/mucosal + (resp OR circ); **IM adrenaline 0.5mg 1:1000 FIRST**</td></tr><tr><td>**Biphasic**</td><td>4–12h after resolution; observe 6–12h min</td></tr><tr><td>**LLR**</td><td>>10cm swelling, 24–48h peak, **NO systemic features**</td></tr><tr><td>**Fire ant**</td><td>Multiple stings, **sterile pustule 24h**, solenopsin alkaloid</td></tr><tr><td>**Jack jumper**</td><td>Australia, major anaphylaxis, protein venom, VIT available</td></tr><tr><td>**VIT**</td><td>Recurrent anaphylaxis + positive test; 95–98% protection, 3–5 years</td></tr><tr><td>**Mastocytosis**</td><td>Tryptase >20 µg/L; higher anaphylaxis risk; VIT + omalizumab</td></tr><tr><td>**Tryptase**</td><td>Peak 1–2h, baseline 24h</td></tr><tr><td>**β-blocker**</td><td>Refractory anaphylaxis → **glucagon** 1–5 mg IV</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>Adrenaline first-line, bee vs wasp, LLR vs anaphylaxis, VIT</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Biphasic, fire ant, jack jumper, mastocytosis, tryptase</td></tr><tr><td>**7 d**</td><td></td><td></td><td>Omalizumab, paediatric, pregnancy, Kounis syndrome</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with general envenomation</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Anaphylaxis criteria & IM adrenaline first-line, bee vs wasp stinger, LLR vs anaphylaxis, VIT indications, biphasic anaphylaxis, fire ant/jack jumper</td></tr><tr><td>**Should Know 🟡**</td><td>VIT protocol, omalizumab adjunct, mastocytosis screening, component-resolved diagnostics, paediatric dosing, pregnancy</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel biologics (omalizumab + VIT), recombinant venom, basophil activation test, population prevention, Kounis syndrome detail</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Anaphylaxis recognition & IM adrenaline</td><td></td></tr><tr><td>Bee vs wasp vs ant differentiation</td><td></td></tr><tr><td>Stinger removal (SCRAPE)</td><td></td></tr><tr><td>LLR vs anaphylaxis</td><td></td></tr><tr><td>VIT indications & protocol</td><td></td></tr><tr><td>Biphasic anaphylaxis</td><td></td></tr><tr><td>Fire ant / jack jumper</td><td></td></tr><tr><td>Mastocytosis + anaphylaxis</td><td></td></tr><tr><td>Tryptase timing</td><td></td></tr><tr><td>Viva readiness</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Anaphylaxis to Hymenoptera stings"</td><td>Pathophysiology, criteria, IM adrenaline first-line, biphasic, VIT, mastocytosis</td></tr><tr><td>**Short Note**</td><td>"Venom immunotherapy"</td><td>Indications (recurrent anaphylaxis), build-up/maintenance, 95–98% efficacy, 3–5y</td></tr><tr><td>**Viva**</td><td>"Why is IM adrenaline first-line for anaphylaxis?"</td><td>Safer than IV, faster absorption, easier, titratable; antihistamines/steroids delayed</td></tr><tr><td>**Ward Round**</td><td>"Bee sting, urticaria, wheeze, hypotension"</td><td>IM adrenaline 0.5mg IM immediately, supine, O2, fluids, chlorphenamine, hydrocortisone, observe 6–12h, refer VIT</td></tr><tr><td>**Last-Night**</td><td>"Hymenoptera key numbers"</td><td>0.5mg IM 1:1000, scrape bee stinger, 4–12h biphasic, >10cm LLR, 95–98% VIT, 3–5y</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Honeybee stinger — correct removal:</b></li></ol>
+<p>A. Pull out with forceps (squeeze venom sac) B. <b>Scrape off (credit card, fingernail) — DO NOT squeeze</b> C. Leave it, body will expel D. Suction device E. Cut out</p>
+<ol><li><b>Anaphylaxis — first-line treatment:</b></li></ol>
+<p>A. IV antihistamine B. IV steroid C. <b>IM adrenaline 0.5mg (1:1000) anterolateral thigh</b> D. IV adrenaline E. Subcutaneous adrenaline</p>
+<ol><li><b>Anaphylaxis diagnostic criteria — acute onset + at least ONE of:</b></li></ol>
+<p>A. Skin/mucosal + respiratory/circulatory B. Respiratory + circulatory C. Skin/mucosal only D. Respiratory only E. Circulatory only</p>
+<ol><li><b>Large local reaction (LLR) vs anaphylaxis — key difference:</b></li></ol>
+<p>A. LLR has systemic features B. <b>LLR = &gt;10cm swelling, 24–48h peak, NO respiratory/circulatory compromise</b> C. LLR requires adrenaline D. LLR = anaphylaxis E. LLR never needs treatment</p>
+<ol><li><b>Venom Immunotherapy (VIT) — indication:</b></li></ol>
+<p>A. All bee stings B. <b>Recurrent anaphylaxis to Hymenoptera (not LLR)</b> C. Large local reactions D. Single mild reaction E. Positive skin test only</p>
+<ol><li><b>VIT protection rate and duration:</b></li></ol>
+<p>A. 50%, 1 year B. <b>95–98%, 3–5 years</b> C. 80%, 2 years D. 100%, lifelong E. 60%, 10 years</p>
+<ol><li><b>Biphasic anaphylaxis — typical timing of second phase:</b></li></ol>
+<p>A. 1–2 hours B. <b>4–12 hours after initial reaction</b> C. 24 hours D. 48 hours E. 1 week</p>
+<ol><li><b>Fire ant (Solenopsis) sting — characteristic:</b></li></ol>
+<p>A. Single sting, barbed stinger B. <b>Multiple stings, sterile pustule at 24h, alkaloid venom (solenopsin)</b> C. Barbed stinger, melittin D. Smooth stinger, multiple stings E. No pustule</p>
+<ol><li><b>Jack jumper ant (Myrmecia) — region and significance:</b></li></ol>
+<p>A. Africa, mild B. <b>Australia, major cause of anaphylaxis</b> C. South America, mild D. Southeast Asia, fatal E. Europe, rare</p>
+<ol><li><b>Bee sting — serum tryptase timing for anaphylaxis confirmation:</b></li></ol>
+<p>A. Immediately B. <b>1–2 hours post-reaction (peak), baseline at 24h</b> C. 6 hours D. 24 hours E. Not useful</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Bee sting — patient develops urticaria, wheeze, hypotension 5 min post-sting. First action:</b></li></ol>
+<p>A. IV chlorphenamine B. <b>IM adrenaline 0.5mg (1:1000) anterolateral thigh</b> C. IV hydrocortisone C. Oxygen only E. Subcutaneous adrenaline</p>
+<ol><li><b>Patient with bee sting anaphylaxis treated with IM adrenaline. 8h later: recurrent wheeze, hypotension. Diagnosis:</b></li></ol>
+<p>A. Treatment failure B. <b>Biphasic anaphylaxis</b> C. Late asthma exacerbation D. New sting E. Serum sickness</p>
+<ol><li><b>Bee sting — 15cm swelling at site, peaking at 24h, no systemic symptoms. Management:</b></li></ol>
+<p>A. IM adrenaline B. <b>Oral antihistamine + oral prednisolone 30mg × 3–5 days + cold compress</b> C. IM adrenaline + antihistamine D. Admission for observation E. Antivenom</p>
+<ol><li><b>Patient with 3 previous anaphylactic reactions to wasp stings. Referral for VIT indicated?</b></li></ol>
+<p>A. No B. <b>Yes (recurrent anaphylaxis — VIT indicated)</b> C. Only if skin test positive D. Only if specific IgE positive E. Only after 5 reactions</p>
+<ol><li><b>Fire ant sting in southern USA. Multiple pustules on legs, intense burning. Management:</b></li></ol>
+<p>A. Incise pustules B. <b>Antihistamines, topical corticosteroids, keep intact, monitor for anaphylaxis</b> C. Systemic antibiotics D. Dapsone E. Surgical debridement</p>
+<ol><li><b>Patient with known bee venom allergy, stung. Self-administers EpiPen (adrenaline autoinjector). Symptoms resolve. Next step:</b></li></ol>
+<p>A. Go home B. <b>Observe in ED 6–12h (biphasic risk), consider VIT referral</b> C. Take oral antihistamine only D. Take prednisolone only E. No further action needed</p>
+<ol><li><b>Jack jumper ant sting in Tasmania. Patient develops anaphylaxis. Antivenom available?</b></li></ol>
+<p>A. Yes, specific antivenom B. <b>No specific antivenom; treat anaphylaxis per protocol + consider immunotherapy</b> C. Only redback antivenom works D. Only funnel-web antivenom E. Scorpion antivenom works</p>
+<ol><li><b>Patient with mastocytosis. Wasp sting → severe anaphylaxis. Long-term management:</b></li></ol>
+<p>A. Avoid IM adrenaline B. <b>Screen for mastocytosis (tryptase), VIT indicated, carry 2 autoinjectors, consider omalizumab adjunct</b> C. Only antihistamines C. No VIT E. Splenectomy</p>
+<ol><li><b>Bee venom allergy — component-resolved diagnosis (CRD) utility:</b></li></ol>
+<p>A. Replaces skin test B. <b>Identifies specific allergen components (Api m 1, Api m 3, Api m 10) → predicts severity, guides VIT</b> C. Only for research D. Not available E. Worse than skin test</p>
+<ol><li><b>Large local reaction to bee sting — 12cm swelling at 24h, no systemic symptoms. Tryptase:</b></li></ol>
+<p>A. Elevated B. <b>Normal (not anaphylaxis)</b> C. Equivocal C. Only if infected E. Always elevated</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Bee stinger removal?</li></ul>
+<p>A: Scrape off, DON'T squeeze</p>
+<ul><li>Q: Anaphylaxis first-line?</li></ul>
+<p>A: IM adrenaline 0.5mg (1:1000) anterolateral thigh</p>
+<ul><li>Q: Anaphylaxis criteria?</li></ul>
+<p>A: Acute + skin/mucosal + (respiratory OR circulatory)</p>
+<ul><li>Q: Large local reaction?</li></ul>
+<p>A: &gt;10cm swelling, 24-48h, NO systemic features</p>
+<ul><li>Q: LLR treatment?</li></ul>
+<p>A: Antihistamine + oral steroid + cold compress</p>
+<ul><li>Q: VIT indication?</li></ul>
+<p>A: Recurrent anaphylaxis (not LLR)</p>
+<ul><li>Q: VIT protection?</li></ul>
+<p>A: 95-98%, 3-5 years</p>
+<ul><li>Q: Biphasic anaphylaxis?</li></ul>
+<p>A: 4-12h after initial</p>
+<ul><li>Q: Bee stinger?</li></ul>
+<p>A: Barbed, leaves stinger + venom sac</p>
+<ul><li>Q: Wasp stinger?</li></ul>
+<p>A: Smooth, multiple stings</p>
+<ul><li>Q: Fire ant venom?</li></ul>
+<p>A: Piperidine alkaloids (solenopsin)</p>
+<ul><li>Q: Jack jumper ant?</li></ul>
+<p>A: Australia, major anaphylaxis cause</p>
+<ul><li>Q: Tryptase timing?</li></ul>
+<p>A: Peak 1-2h, baseline 24h</p>
+<ul><li>Q: Mastocytosis + anaphylaxis?</li></ul>
+<p>A: Increased risk; screen tryptase; VIT indicated</p>
+<ul><li>Q: Omalizumab + VIT?</li></ul>
+<p>A: Reduces reactions during build-up</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1: What is the first-line treatment for anaphylaxis and why is IM preferred over IV?</b> A: <b>IM adrenaline 0.5mg (1:1000) anterolateral thigh.</b> IM is preferred because: safer (lower risk of arrhythmia, hypertensive crisis), easier administration (no IV access needed), reliable absorption (vastus lateralis), and easier to titrate than IV bolus. IV adrenaline reserved for cardiac arrest or refractory shock with cardiac monitoring.</p>
+<p><b>Q2: How do you differentiate a large local reaction (LLR) from anaphylaxis?</b> A: LLR = &gt;10 cm swelling peaking at 24–48h, <b>NO respiratory or circulatory compromise</b>, tryptase normal. Anaphylaxis = acute onset + skin/mucosal features + (respiratory OR circulatory compromise), tryptase elevated (peak 1–2h). LLR managed with antihistamines + oral steroids; anaphylaxis requires IM adrenaline.</p>
+<p><b>Q3: What is the correct way to remove a honeybee stinger and why?</b> A: <b>Scrape off</b> (credit card, fingernail, knife edge) — <b>DO NOT squeeze or pull with forceps</b>. The barbed stinger remains attached to the venom sac; squeezing injects the remaining venom. Scraping removes the stinger intact with the sac.</p>
+<p><b>Q4: What are the indications for venom immunotherapy (VIT)?</b> A: <b>Recurrent systemic anaphylaxis</b> (≥2 episodes) OR 1 episode with high-risk features (high exposure, mastocytosis, elevated baseline tryptase) <b>PLUS</b> positive skin test and/or specific IgE to relevant venom. <b>NOT for LLR, not for single mild cutaneous reaction.</b></p>
+<p><b>Q5: What is the VIT protocol and efficacy?</b> A: Build-up 12–16 weeks (conventional) to maintenance dose 100 µg venom (∼1–2 sting equivalents), then maintenance every 4–8 weeks for <b>3–5 years</b>. Efficacy <b>95–98%</b> protection against systemic reactions. Waning immunity after stopping.</p>
+<p><b>Q6: What is biphasic anaphylaxis and how is it managed?</b> A: Recurrence of anaphylaxis symptoms <b>4–12h (up to 72h)</b> after initial resolution. Occurs in 1–20% of cases. Management: observe minimum <b>6–12h</b> in ED (longer if severe), consider prednisolone 30–50 mg × 3 days (controversial), written action plan, EpiPen on discharge.</p>
+<p><b>Q7: Describe fire ant envenomation and its management.</b> A: <b>Solenopsis</b> — pivots on mandibles, <b>multiple stings in circular pattern</b>. Venom = <b>piperidine alkaloids (solenopsin)</b>. Clinical: immediate burning, wheal-and-flare → <b>sterile pustule at 24h</b> (diagnostic). Management: antihistamines, topical steroids, keep pustules intact (do not incise), monitor for anaphylaxis. Secondary infection if ruptured.</p>
+<p>**Q8: What is the significance of jack jumper ant (<i>Myrmecia pilosula</i>) in Australia?<b> A: </b>Major cause of ant anaphylaxis in Tasmania/SE Australia<b> — 2–3% of population sensitised. Protein venom (Myr p 1, Myr p 2) cross-reacts with wasp venom. </b>VIT available** (Tasmania). Anaphylaxis rate ~3% per sting in sensitised.</p>
+<p><b>Q9: How does mastocytosis affect anaphylaxis risk and management?</b> A: Mastocytosis = clonal mast cell disorder → <b>increased risk of severe anaphylaxis</b>, may present without skin signs. Screen with <b>baseline tryptase &gt; 20 µg/L</b> → bone marrow biopsy. VIT indicated for any anaphylaxis (higher maintenance dose 200 µg, longer duration). <b>Omalizumab strongly recommended</b> as adjunct. Carry 2 EpiPens.</p>
+<p><b>Q10: Why is glucagon used for anaphylaxis in patients on β-blockers?</b> A: β-blockers blunt the response to adrenaline (β2-mediated bronchodilation, vasodilation, chronotropy). <b>Glucagon</b> bypasses β-receptors → increases cAMP directly → positive inotropy, chronotropy, bronchodilation. Dose: 1–5 mg IV bolus, then 1–5 mg/h infusion. Also consider atropine for bradycardia, vasopressin for refractory shock.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Correction</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>Antihistamine = first-line for anaphylaxis</td><td>**NO** — IM adrenaline is FIRST-LINE; antihistamine adjunct only</td></tr><tr><td>Steroid = first-line for anaphylaxis</td><td>**NO** — delayed (4–6h); adjunct only</td></tr><tr><td>IV adrenaline better than IM</td><td>**NO** — IM safer, faster absorption; IV only for arrest/refractory shock</td></tr><tr><td>LLR = mild anaphylaxis</td><td>**NO** — LLR is local only; NO systemic features</td></tr><tr><td>Bee stinger = pull out with tweezers</td><td>**NO** — SCRAPE; squeezing injects venom sac</td></tr><tr><td>VIT for LLR</td><td>**NO** — only for recurrent anaphylaxis</td></tr><tr><td>Single anaphylaxis = needs VIT</td><td>**Usually NO** — need recurrent OR high-risk features</td></tr><tr><td>Fire ant = single sting</td><td>**NO** — pivots, multiple stings in circle</td></tr><tr><td>All ants = protein venom</td><td>**NO** — fire ant = alkaloid (solenopsin); jack jumper = protein</td></tr><tr><td>Tryptase normal = not anaphylaxis</td><td>**NO** — can be normal; clinical diagnosis</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>Anaphylaxis first-line</b>: <b>A</b>drenaline <b>I</b>M <b>M</b>ediately = <b>AIM</b></li><li><b>Adrenaline dose</b>: <b>0.5 mg IM 1:1000 anterolateral thigh</b> = <b>0.5-IM-Thigh</b></li><li><b>Bee stinger</b>: <b>S</b>crape <b>D</b>on't <b>S</b>queeze = <b>SDS</b></li><li><b>LLR vs Anaphylaxis</b>: <b>L</b>LR = <b>L</b>ocal <b>L</b>arge only = <b>LLL</b></li><li><b>Biphasic timing</b>: <b>4–12 hours</b> = <b>4-12</b></li><li><b>VIT indication</b>: <b>R</b>ecurrent <b>A</b>naphylaxis + <b>P</b>ositive test = <b>RAP</b></li><li><b>Fire ant</b>: <b>P</b>ustule at <b>2</b>4<b>h</b> = <b>P24</b></li><li><b>Jack jumper</b>: <b>T</b>asmania <b>J</b>umper = <b>TJ</b></li><li><b>Mastocytosis</b>: <b>T</b>ryptase &gt; <b>20</b> = <b>T20</b></li><li><b>β-blocker rescue</b>: <b>G</b>lucagon = <b>G</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Hymenoptera Stings)) Bee[<i>Apis mellifera</i>] Stinger[Barbed - single sting] Venom[Melittin, PLA2 (Api m 1), Hyaluronidase (Api m 2)] First_Aid[Scrape stinger] Wasp[<i>Vespula, Polistes</i>] Stinger[Smooth - multiple stings] Venom[PLA1 (Ves v 1), Antigen 5 (Ves v 5)] Ant[Formicidae] Fire_Ant[Solenopsis] Venom[Solenopsin (alkaloid)] Pustule[24h sterile pustule] Jack_Jumper[Myrmecia] Protein_Venom[Major anaphylaxis AUS] VIT[Available] Anaphylaxis Criteria[Acute + Skin + (Resp/Circ)] First_Line[IM Adrenaline 0.5mg] Adjuncts[Fluids, O2, Antihistamine, Steroid] Biphasic[4-12h, observe 6-12h] Refractory[Glucagon if beta-blocker] Large_Local_Reaction Features[&gt;10cm, 24-48h peak, NO systemic] Rx[Antihistamine, Steroid, Cold] VIT Indication[Recurrent anaphylaxis + positive test] Build_Up[12-16 wks / rush] Maintenance[3-5 years, 100µg q4-8wk] Efficacy[95-98% protection] Omalizumab[Adjunct for reactions] Mastocytosis Tryptase[&gt;20 µg/L] VIT[Higher dose, longer] Omalizumab[Strong adjunct] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Flowchart: Hymenoptera Sting Management</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Hymenoptera Sting] --&gt; B{Stinger Present?} B --&gt;|Yes (Bee)| C[SCRAPE stinger - don't squeeze] B --&gt;|No (Wasp/Ant)| D[Assess Reaction] C --&gt; D D --&gt; E{Systemic Features?} E --&gt;|Urticaria + Wheeze/Hypotension| F[ANAPHYLAXIS] F --&gt; G[IM Adrenaline 0.5mg 1:1000 IMMEDIATELY] G --&gt; H[Supine, O2, IV Access, Fluids] H --&gt; I[Repeat Adrenaline q5-15min PRN] I --&gt; J[Adjuncts: Chlorphenamine 10mg IV, Hydrocortisone 200mg IV] J --&gt; K[Observe 6-12h for Biphasic] E --&gt;|Local Swelling &gt;10cm, NO Systemic| L[LARGE LOCAL REACTION] L --&gt; M[Antihistamine + Oral Steroid + Cold Compress] E --&gt;|Mild Local Only| N[Simple Analgesia, Cold Compress] K --&gt; O[Allergy Referral for VIT if Recurrent Anaphylaxis] M --&gt; O </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Key Point</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Bee stinger**</td><td>Barbed — **SCRAPE** (don't squeeze); venom sac continues pumping</td></tr><tr><td>**Wasp stinger**</td><td>Smooth — multiple stings; no stinger left</td></tr><tr><td>**Anaphylaxis**</td><td>Acute + skin/mucosal + (resp OR circ); **IM adrenaline 0.5mg 1:1000 FIRST**</td></tr><tr><td>**Biphasic**</td><td>4–12h after resolution; observe 6–12h min</td></tr><tr><td>**LLR**</td><td>>10cm swelling, 24–48h peak, **NO systemic features**</td></tr><tr><td>**Fire ant**</td><td>Multiple stings, **sterile pustule 24h**, solenopsin alkaloid</td></tr><tr><td>**Jack jumper**</td><td>Australia, major anaphylaxis, protein venom, VIT available</td></tr><tr><td>**VIT**</td><td>Recurrent anaphylaxis + positive test; 95–98% protection, 3–5 years</td></tr><tr><td>**Mastocytosis**</td><td>Tryptase >20 µg/L; higher anaphylaxis risk; VIT + omalizumab</td></tr><tr><td>**Tryptase**</td><td>Peak 1–2h, baseline 24h</td></tr><tr><td>**β-blocker**</td><td>Refractory anaphylaxis → **glucagon** 1–5 mg IV</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">29</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>Adrenaline first-line, bee vs wasp, LLR vs anaphylaxis, VIT</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Biphasic, fire ant, jack jumper, mastocytosis, tryptase</td></tr><tr><td>**7 d**</td><td></td><td></td><td>Omalizumab, paediatric, pregnancy, Kounis syndrome</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with general envenomation</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">30</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Anaphylaxis criteria & IM adrenaline first-line, bee vs wasp stinger, LLR vs anaphylaxis, VIT indications, biphasic anaphylaxis, fire ant/jack jumper</td></tr><tr><td>**Should Know 🟡**</td><td>VIT protocol, omalizumab adjunct, mastocytosis screening, component-resolved diagnostics, paediatric dosing, pregnancy</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel biologics (omalizumab + VIT), recombinant venom, basophil activation test, population prevention, Kounis syndrome detail</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">31</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Anaphylaxis recognition & IM adrenaline</td><td></td></tr><tr><td>Bee vs wasp vs ant differentiation</td><td></td></tr><tr><td>Stinger removal (SCRAPE)</td><td></td></tr><tr><td>LLR vs anaphylaxis</td><td></td></tr><tr><td>VIT indications & protocol</td><td></td></tr><tr><td>Biphasic anaphylaxis</td><td></td></tr><tr><td>Fire ant / jack jumper</td><td></td></tr><tr><td>Mastocytosis + anaphylaxis</td><td></td></tr><tr><td>Tryptase timing</td><td></td></tr><tr><td>Viva readiness</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">32</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Anaphylaxis to Hymenoptera stings"</td><td>Pathophysiology, criteria, IM adrenaline first-line, biphasic, VIT, mastocytosis</td></tr><tr><td>**Short Note**</td><td>"Venom immunotherapy"</td><td>Indications (recurrent anaphylaxis), build-up/maintenance, 95–98% efficacy, 3–5y</td></tr><tr><td>**Viva**</td><td>"Why is IM adrenaline first-line for anaphylaxis?"</td><td>Safer than IV, faster absorption, easier, titratable; antihistamines/steroids delayed</td></tr><tr><td>**Ward Round**</td><td>"Bee sting, urticaria, wheeze, hypotension"</td><td>IM adrenaline 0.5mg IM immediately, supine, O2, fluids, chlorphenamine, hydrocortisone, observe 6–12h, refer VIT</td></tr><tr><td>**Last-Night**</td><td>"Hymenoptera key numbers"</td><td>0.5mg IM 1:1000, scrape bee stinger, 4–12h biphasic, >10cm LLR, 95–98% VIT, 3–5y</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">33</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Honeybee stinger — correct removal:</b></li></ol>
+<p>A. Pull out with forceps (squeeze venom sac) B. <b>Scrape off (credit card, fingernail) — DO NOT squeeze</b> C. Leave it, body will expel D. Suction device E. Cut out</p>
+<ol><li><b>Anaphylaxis — first-line treatment:</b></li></ol>
+<p>A. IV antihistamine B. IV steroid C. <b>IM adrenaline 0.5mg (1:1000) anterolateral thigh</b> D. IV adrenaline E. Subcutaneous adrenaline</p>
+<ol><li><b>Anaphylaxis diagnostic criteria — acute onset + at least ONE of:</b></li></ol>
+<p>A. Skin/mucosal + respiratory/circulatory B. Respiratory + circulatory C. Skin/mucosal only D. Respiratory only E. Circulatory only</p>
+<ol><li><b>Large local reaction (LLR) vs anaphylaxis — key difference:</b></li></ol>
+<p>A. LLR has systemic features B. <b>LLR = &gt;10cm swelling, 24–48h peak, NO respiratory/circulatory compromise</b> C. LLR requires adrenaline D. LLR = anaphylaxis E. LLR never needs treatment</p>
+<ol><li><b>Venom Immunotherapy (VIT) — indication:</b></li></ol>
+<p>A. All bee stings B. <b>Recurrent anaphylaxis to Hymenoptera (not LLR)</b> C. Large local reactions D. Single mild reaction E. Positive skin test only</p>
+<ol><li><b>VIT protection rate and duration:</b></li></ol>
+<p>A. 50%, 1 year B. <b>95–98%, 3–5 years</b> C. 80%, 2 years D. 100%, lifelong E. 60%, 10 years</p>
+<ol><li><b>Biphasic anaphylaxis — typical timing of second phase:</b></li></ol>
+<p>A. 1–2 hours B. <b>4–12 hours after initial reaction</b> C. 24 hours D. 48 hours E. 1 week</p>
+<ol><li><b>Fire ant (Solenopsis) sting — characteristic:</b></li></ol>
+<p>A. Single sting, barbed stinger B. <b>Multiple stings, sterile pustule at 24h, alkaloid venom (solenopsin)</b> C. Barbed stinger, melittin D. Smooth stinger, multiple stings E. No pustule</p>
+<ol><li><b>Jack jumper ant (Myrmecia) — region and significance:</b></li></ol>
+<p>A. Africa, mild B. <b>Australia, major cause of anaphylaxis</b> C. South America, mild D. Southeast Asia, fatal E. Europe, rare</p>
+<ol><li><b>Bee sting — serum tryptase timing for anaphylaxis confirmation:</b></li></ol>
+<p>A. Immediately B. <b>1–2 hours post-reaction (peak), baseline at 24h</b> C. 6 hours D. 24 hours E. Not useful</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">34</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Bee sting — patient develops urticaria, wheeze, hypotension 5 min post-sting. First action:</b></li></ol>
+<p>A. IV chlorphenamine B. <b>IM adrenaline 0.5mg (1:1000) anterolateral thigh</b> C. IV hydrocortisone C. Oxygen only E. Subcutaneous adrenaline</p>
+<ol><li><b>Patient with bee sting anaphylaxis treated with IM adrenaline. 8h later: recurrent wheeze, hypotension. Diagnosis:</b></li></ol>
+<p>A. Treatment failure B. <b>Biphasic anaphylaxis</b> C. Late asthma exacerbation D. New sting E. Serum sickness</p>
+<ol><li><b>Bee sting — 15cm swelling at site, peaking at 24h, no systemic symptoms. Management:</b></li></ol>
+<p>A. IM adrenaline B. <b>Oral antihistamine + oral prednisolone 30mg × 3–5 days + cold compress</b> C. IM adrenaline + antihistamine D. Admission for observation E. Antivenom</p>
+<ol><li><b>Patient with 3 previous anaphylactic reactions to wasp stings. Referral for VIT indicated?</b></li></ol>
+<p>A. No B. <b>Yes (recurrent anaphylaxis — VIT indicated)</b> C. Only if skin test positive D. Only if specific IgE positive E. Only after 5 reactions</p>
+<ol><li><b>Fire ant sting in southern USA. Multiple pustules on legs, intense burning. Management:</b></li></ol>
+<p>A. Incise pustules B. <b>Antihistamines, topical corticosteroids, keep intact, monitor for anaphylaxis</b> C. Systemic antibiotics D. Dapsone E. Surgical debridement</p>
+<ol><li><b>Patient with known bee venom allergy, stung. Self-administers EpiPen (adrenaline autoinjector). Symptoms resolve. Next step:</b></li></ol>
+<p>A. Go home B. <b>Observe in ED 6–12h (biphasic risk), consider VIT referral</b> C. Take oral antihistamine only D. Take prednisolone only E. No further action needed</p>
+<ol><li><b>Jack jumper ant sting in Tasmania. Patient develops anaphylaxis. Antivenom available?</b></li></ol>
+<p>A. Yes, specific antivenom B. <b>No specific antivenom; treat anaphylaxis per protocol + consider immunotherapy</b> C. Only redback antivenom works D. Only funnel-web antivenom E. Scorpion antivenom works</p>
+<ol><li><b>Patient with mastocytosis. Wasp sting → severe anaphylaxis. Long-term management:</b></li></ol>
+<p>A. Avoid IM adrenaline B. <b>Screen for mastocytosis (tryptase), VIT indicated, carry 2 autoinjectors, consider omalizumab adjunct</b> C. Only antihistamines C. No VIT E. Splenectomy</p>
+<ol><li><b>Bee venom allergy — component-resolved diagnosis (CRD) utility:</b></li></ol>
+<p>A. Replaces skin test B. <b>Identifies specific allergen components (Api m 1, Api m 3, Api m 10) → predicts severity, guides VIT</b> C. Only for research D. Not available E. Worse than skin test</p>
+<ol><li><b>Large local reaction to bee sting — 12cm swelling at 24h, no systemic symptoms. Tryptase:</b></li></ol>
+<p>A. Elevated B. <b>Normal (not anaphylaxis)</b> C. Equivocal C. Only if infected E. Always elevated</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">35</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Bee stinger removal?</li></ul>
+<p>A: Scrape off, DON'T squeeze</p>
+<ul><li>Q: Anaphylaxis first-line?</li></ul>
+<p>A: IM adrenaline 0.5mg (1:1000) anterolateral thigh</p>
+<ul><li>Q: Anaphylaxis criteria?</li></ul>
+<p>A: Acute + skin/mucosal + (respiratory OR circulatory)</p>
+<ul><li>Q: Large local reaction?</li></ul>
+<p>A: &gt;10cm swelling, 24-48h, NO systemic features</p>
+<ul><li>Q: LLR treatment?</li></ul>
+<p>A: Antihistamine + oral steroid + cold compress</p>
+<ul><li>Q: VIT indication?</li></ul>
+<p>A: Recurrent anaphylaxis (not LLR)</p>
+<ul><li>Q: VIT protection?</li></ul>
+<p>A: 95-98%, 3-5 years</p>
+<ul><li>Q: Biphasic anaphylaxis?</li></ul>
+<p>A: 4-12h after initial</p>
+<ul><li>Q: Bee stinger?</li></ul>
+<p>A: Barbed, leaves stinger + venom sac</p>
+<ul><li>Q: Wasp stinger?</li></ul>
+<p>A: Smooth, multiple stings</p>
+<ul><li>Q: Fire ant venom?</li></ul>
+<p>A: Piperidine alkaloids (solenopsin)</p>
+<ul><li>Q: Jack jumper ant?</li></ul>
+<p>A: Australia, major anaphylaxis cause</p>
+<ul><li>Q: Tryptase timing?</li></ul>
+<p>A: Peak 1-2h, baseline 24h</p>
+<ul><li>Q: Mastocytosis + anaphylaxis?</li></ul>
+<p>A: Increased risk; screen tryptase; VIT indicated</p>
+<ul><li>Q: Omalizumab + VIT?</li></ul>
+<p>A: Reduces reactions during build-up</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">36</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — Honeybee barbed stinger leaves venom sac; scraping removes intact, squeezing injects more venom.</li><li><b>Correct: C</b> — IM adrenaline 0.5mg (1:1000) is FIRST-LINE for anaphylaxis; antihistamines/steroids/IV adrenaline are adjuncts.</li><li><b>Correct: A</b> — Anaphylaxis = acute onset + skin/mucosal involvement + (respiratory OR circulatory compromise).</li><li><b>Correct: B</b> — LLR = &gt;10cm swelling at 24–48h, <b>NO respiratory/circulatory compromise</b>, tryptase normal.</li><li><b>Correct: B</b> — VIT indicated for recurrent anaphylaxis + positive test; NOT for LLR or single mild reaction.</li><li><b>Correct: B</b> — VIT provides 95–98% protection for 3–5 years after completion.</li><li><b>Correct: B</b> — Biphasic anaphylaxis recurs at 4–12 hours (up to 72h) after initial resolution.</li><li><b>Correct: B</b> — Fire ant: multiple stings (pivot on mandibles), sterile pustule at 24h, alkaloid venom (solenopsin).</li><li><b>Correct: B</b> — Jack jumper ant (<i>Myrmecia pilosula</i>) — Tasmania/SE Australia, major anaphylaxis cause, protein venom, VIT available.</li><li><b>Correct: B</b> — Tryptase peaks 1–2h post-anaphylaxis, baseline at 24h; normal in LLR.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — IM adrenaline 0.5mg IMMEDIATELY for anaphylaxis (urticaria + wheeze + hypotension).</li><li><b>Correct: B</b> — Recurrent wheeze/hypotension at 8h = biphasic anaphylaxis (4–12h window).</li><li><b>Correct: B</b> — 15cm swelling at 24h with NO systemic symptoms = LLR → antihistamine + oral steroid + cold compress.</li><li><b>Correct: B</b> — 3 previous anaphylactic reactions = recurrent anaphylaxis → VIT indicated.</li><li><b>Correct: B</b> — Fire ant pustules: keep intact, antihistamines, topical steroids, monitor for anaphylaxis.</li><li><b>Correct: B</b> — Post-EpiPen resolution: ED observation 6–12h for biphasic risk + VIT referral.</li><li><b>Correct: B</b> — No jack jumper ant antivenom; treat anaphylaxis per protocol + immunotherapy referral.</li><li><b>Correct: B</b> — Mastocytosis + anaphylaxis: screen tryptase, VIT indicated, 2 autoinjectors, omalizumab adjunct.</li><li><b>Correct: B</b> — CRD identifies Api m 1, Api m 3, Api m 10 → predicts severity, guides VIT selection.</li><li><b>Correct: B</b> — LLR = no systemic anaphylaxis → tryptase normal (not elevated).</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">37</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Hymenoptera Stings and Anaphylaxis is a <b>Must Know 🔴</b> topic. <b>Key takeaway:</b> Anaphylaxis = <b>IM adrenaline 0.5mg (1:1000) FIRST-LINE</b> within minutes. Bee = barbed stinger → <b>SCRAPE</b>; wasp/ant = smooth → multiple stings. <b>LLR ≠ anaphylaxis</b> (&gt;10cm, 24–48h, no systemic). VIT for <b>recurrent anaphylaxis</b> (95–98%, 3–5y). <b>Biphasic 4–12h</b> → observe 6–12h. Fire ant = pustule 24h; jack jumper = Australia anaphylaxis. Mastocytosis = tryptase &gt;20 → VIT + omalizumab. <b>Exam focus:</b> IM adrenaline first-line, stinger removal, LLR vs anaphylaxis, VIT criteria, biphasic timing, tryptase. <b>Clinical relevance:</b> Core emergency medicine, allergy/immunology, travel medicine, occupational health.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 8 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hymenoptera Stings (Bee, Wasp, Ant) and Anaphylaxis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

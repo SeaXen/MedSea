@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3.2 HSV — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">3.2 HSV</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Differentiate <b>HSV-1 vs HSV-2</b> epidemiology, clinical features, recurrence patterns</li><li>[ ] Diagnose <b>primary vs recurrent genital herpes</b> and <b>extra-genital manifestations</b> (Pharyngeal, Rectal, Sacral, Neonatal)</li><li>[ ] Apply <b>diagnostic algorithms</b> (NAAT, PCR, Culture, Serology, Tzanck) and interpret results</li><li>[ ] Apply <b>episodic vs suppressive antiviral therapy</b> (Acyclovir, Valacyclovir, Famciclovir)</li><li>[ ] Manage <b>HSV in Pregnancy</b> (Neonatal Prevention, Cesarean Indication, Acyclovir Suppression)</li><li>[ ] Manage <b>Neonatal HSV</b> (Disseminated, CNS, SEM — Classification &amp; Treatment)</li><li>[ ] Manage <b>HSV in Immunocompromised</b> (Severe Mucocutaneous, Resistance)</li><li>[ ] Answer viva: "Primary vs Recurrent HSV" and "Neonatal HSV Classification" and "Cesarean Indication" and "Suppressive Therapy Indications"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: HSV Biology & Pathogenesis</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Herpes Simplex Virus</div>
+<div class="fc-node" data-id="D">D</div>
+<div class="fc-node" data-id="E">E</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">HSV-1 (Oral/Facial)</div>
+<div class="fc-node" data-id="C">HSV-2 (Genital)</div>
+<div class="fc-node" data-id="D1">Enveloped, dsDNA</div>
+<div class="fc-node" data-id="D2">Neurotropic</div>
+<div class="fc-node" data-id="D3">Latency in Sensory Ganglia</div>
+<div class="fc-node" data-id="E1">Direct Contact (Viral Shedding)</div>
+<div class="fc-node" data-id="E2">Asymptomatic Shedding (Major Driver)</div>
+<div class="fc-node" data-id="E3">Vertical (Neonatal)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Reactivation Triggers</div>
+<div class="fc-node" data-id="G">Clinical Manifestations</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F1">Stress, UV, Fever, Trauma, Immunosuppression, Hormonal</div>
+<div class="fc-node" data-id="G1">Primary Infection</div>
+<div class="fc-node" data-id="G2">Recurrent Episodes</div>
+<div class="fc-node" data-id="G3">Asymptomatic Shedding</div>
+<div class="fc-node" data-id="G4">Neonatal HSV</div>
+<div class="fc-node" data-id="G5">Extra-Genital (Whitelow, Keratitis, Encephalitis)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ HSV-1 vs HSV-2 — Epidemiology &amp; Clinical Differences</div>
+<table class="ctable"><tr><th>Feature</th><th>HSV-1</th><th>HSV-2</th></tr><tr><td>---------</td><td>-------</td><td>-------</td></tr><tr><td>**Traditional Site**</td><td>**Orolabial** (Cold Sores)</td><td>**Genital**</td></tr><tr><td>**Current Trend**</td><td>**Increasing Genital HSV-1** (Oral Sex)</td><td>Still Predominantly Genital</td></tr><tr><td>**Global Seroprevalence**</td><td>**67% (<50y)** — 3.7 Billion</td><td>**13% (15-49y)** — 491 Million</td></tr><tr><td>**Genital Infection**</td><td>**Rising** (30-50% New Genital Herpes = HSV-1)</td><td>**Declining Proportion**</td></tr><tr><td>**Recurrence Rate (Genital)**</td><td>**Low** (~1/Year After 1st Year)</td><td>**High** (~4-5/Year)</td></tr><tr><td>**Asymptomatic Shedding**</td><td>Less Frequent (Genital)</td><td>**More Frequent** (Genital)</td></tr><tr><td>**Neonatal Transmission**</td><td>**Higher Risk** (Primary Infection in Pregnancy)</td><td>**Lower Risk** (But More Common Source)</td></tr><tr><td>**Primary Episode Severity**</td><td>Often Mild</td><td>Often Severe</td></tr></table>
+<div class="callout"><b>Key</b>: <b>HSV-1 = Increasing Cause of Genital Herpes</b>; <b>HSV-2 = More Frequent Recurrences, More Asymptomatic Shedding</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Clinical Manifestations</div>
+<div class="sub-h">Primary Genital Herpes (First Episode)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incubation**</td><td>**2-12 Days** (Median 4 Days)</td></tr><tr><td>**Systemic Symptoms**</td><td>**Fever, Malaise, Myalgia, Headache, Inguinal Lymphadenopathy** (Bilateral, Tender)</td></tr><tr><td>**Local Symptoms**</td><td>**Pain, Burning, Pruritus** → **Multiple Vesicles → Painful Ulcers** (Coalesce), Mucopurulent Discharge</td></tr><tr><td>**Lesion Distribution**</td><td>**Vulva, Vagina, Cervix, Penis, Perianal, Thighs, Buttocks**</td></tr><tr><td>**Duration (Untreated)**</td><td>**2-4 Weeks** (Viral Shedding ~12 Days)</td></tr><tr><td>**Complications**</td><td>**Aseptic Meningitis** (10-15%, HSV-2), **Urinary Retention** (Sacral Radiculopathy), **Proctitis** (MSM), **Pharyngitis** (Oral Sex)</td></tr></table>
+<div class="sub-h">Recurrent Genital Herpes</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Prodrome**</td><td>**Burning, Tingling, Pruritus** at Recurrence Site (Hours-Days Before Lesions)</td></tr><tr><td>**Lesions**</td><td>**Fewer Vesicles/Ulcers**, **Smaller**, **Less Painful**, **Shorter Duration**</td></tr><tr><td>**Systemic Symptoms**</td><td>**Absent or Mild** (No Fever, Minimal Lymphadenopathy)</td></tr><tr><td>**Duration (Untreated)**</td><td>**5-10 Days** (Viral Shedding ~5 Days)</td></tr><tr><td>**Frequency**</td><td>**HSV-2: 4-5/Year** (Range 0-12+); **HSV-1: ~1/Year**</td></tr><tr><td>**Triggers**</td><td>**Stress, UV, Fever, Trauma, Immunosuppression, Menstruation, Friction**</td></tr></table>
+<div class="sub-h">Extra-Genital Manifestations</div>
+<table class="ctable"><tr><th>Manifestation</th><th>Features</th></tr><tr><td>---------------</td><td>----------</td></tr><tr><td>**Herpetic Whitlow**</td><td>**Vesicular/Pustular Lesions on Fingers** (Healthcare Workers, Autoinoculation), Painful, Tender</td></tr><tr><td>**Herpes Keratitis**</td><td>**Dendritic Ulcer** (Cornea), Pain, Photophobia, Blurred Vision — **Ophthalmic Emergency**</td></tr><tr><td>**Herpes Encephalitis**</td><td>**HSV-1** (Temporal Lobe), Fever, Confusion, Seizures, Focal Deficits — **Acute Emergency**</td></tr><tr><td>**Eczema Herpeticum**</td><td>**Disseminated Vesicles** on Eczematous Skin, Fever, Malaise — **Dermatological Emergency**</td></tr><tr><td>**Sacral/Radiculomyelitis**</td><td>**Urinary Retention**, Saddle Anaesthesia, Leg Weakness (S2-S4 Roots)</td></tr><tr><td>**Herpes Gladiatorum**</td><td>**Wrestlers/Contact Sports** — Face, Neck, Arms</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Diagnosis — Algorithms &amp; Interpretation</div>
+<div class="sub-h">Diagnostic Algorithm</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Genital Herpes</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Lesions Present?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">NAAT (PCR) — Preferred&lt;br/&gt;(Vesicle Fluid, Ulcer Base Swab)</div>
+<div class="fc-node" data-id="D">Type-Specific Serology (IgG)&lt;br/&gt;HSV-1 vs HSV-2 gG-Based</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">NAAT Result</div>
+<div class="fc-node" data-id="H">Serology Result</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Type Subtyping (HSV-1 vs HSV-2)&lt;br/&gt;→ Counselling, Prognosis, Tx</div>
+<div class="fc-node" data-id="G">Consider Alternative&lt;br/&gt;(Syphilis, Chancroid, LGV, Aphthosis)</div>
+<div class="fc-node" data-id="I">Genital Herpes Likely&lt;br/&gt;(HSV-2 = Genital)</div>
+<div class="fc-node" data-id="J">Genital HSV-1 Possible&lt;br/&gt;(Oral→Genital) or Past Oral</div>
+<div class="fc-node" data-id="K">Dual Infection or Cross-Reactivity</div>
+</div>
+</div>
+<div class="sub-h">Diagnostic Test Comparison</div>
+<table class="ctable"><tr><th>Test</th><th>Sensitivity</th><th>Specificity</th><th>TAT</th><th>Best Use</th></tr><tr><td>------</td><td>-------------</td><td>-------------</td><td>-----</td><td>----------</td></tr><tr><td>**NAAT (PCR)**</td><td>**>95%**</td><td>**>98%**</td><td>1-24h</td><td>**1st Line (Lesions)** — Vesicle Fluid/Ulcer Swab</td></tr><tr><td>**Viral Culture**</td><td>70-80%</td><td>**100%**</td><td>24-48h</td><td>**Viability, Typing, Resistance** (If NAAT Unavailable)</td></tr><tr><td>**Type-Specific Serology (IgG)**</td><td>90-95%</td><td>95-98%</td><td>Hours-Days</td><td>**Asymptomatic Screening, Partner Testing, Pregnancy** — **gG-Based (HSV-1 gG1, HSV-2 gG2)**</td></tr><tr><td>**Tzanck Smear**</td><td>60-70%</td><td>80-90%</td><td>Minutes</td><td>**Bedside** (Multinucleated Giant Cells) — Not Type-Specific</td></tr><tr><td>**DFA (Direct Fluorescent Antibody)**</td><td>80-90%</td><td>95%</td><td>Hours</td><td>**Rapid** (Lesion Smear) — Type-Specific</td></tr><tr><td>**Non-Type-Specific Serology**</td><td>Poor</td><td>Poor</td><td>—</td><td>**NOT RECOMMENDED** (Cross-Reactivity, Confusing)</td></tr></table>
+<div class="callout"><b>Key</b>: <b>NAAT = 1st Line for Lesions</b>; <b>Type-Specific IgG (gG-Based) = 1st Line for Asymptomatic/Pregnancy/Partner Testing</b></div>
+<div class="sub-h">Type-Specific Serology Interpretation</div>
+<table class="ctable"><tr><th>Result</th><th>Interpretation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**HSV-2 IgG +ve**</td><td>**Genital Herpes Likely** (HSV-2 = Genital) — Counsel on Transmission, Recurrence, Suppressive Therapy</td></tr><tr><td>**HSV-1 IgG +ve, HSV-2 IgG -ve**</td><td>**Past Oral HSV-1** OR **Genital HSV-1** (If Genital Symptoms) — Increasing Genital HSV-1</td></tr><tr><td>**Both +ve**</td><td>**Dual Infection** OR **Cross-Reactivity** (Older Assays) — **gG-Based = High Specificity**</td></tr><tr><td>**Both -ve**</td><td>**Susceptible** — Primary Infection Risk (Neonatal Risk if Partner +ve)</td></tr></table>
+<div class="callout"><b>Important</b>: <b>IgM Not Recommended</b> (Poor Specificity, Persistent After Primary); <b>IgG gG-Based = Standard</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Treatment — Antiviral Therapy</div>
+<div class="sub-h">Antiviral Agents</div>
+<table class="ctable"><tr><th>Drug</th><th>Bioavailability</th><th>Half-Life</th><th>Dosing Frequency</th><th>Key Advantage</th></tr><tr><td>------</td><td>----------------</td><td>-----------</td><td>------------------</td><td>---------------</td></tr><tr><td>**Acyclovir**</td><td>15-30% (Oral)</td><td>2.5-3.3h</td><td>**5x Daily** (Standard)</td><td>**Cheapest**, IV Formulation</td></tr><tr><td>**Valacyclovir**</td><td>54% (Prodrug → Acyclovir)</td><td>2.5-3.3h</td><td>**2-3x Daily**</td><td>**Better Bioavailability**, Less Frequent Dosing</td></tr><tr><td>**Famciclovir**</td><td>77% (Prodrug → Penciclovir)</td><td>2.5-3.3h</td><td>**2-3x Daily**</td><td>**Longer Intracellular Half-Life**, Good Compliance</td></tr></table>
+<div class="callout"><b>Mechanism</b>: <b>Viral Thymidine Kinase</b> → Phosphorylation → <b>DNA Polymerase Inhibition</b> → <b>Chain Termination</b></div>
+<div class="sub-h">Episodic Treatment (Primary &amp; Recurrent)</div>
+<table class="ctable"><tr><th>Episode</th><th>Regimen (Choose One)</th></tr><tr><td>---------</td><td>----------------------</td></tr><tr><td>**Primary**</td><td>**Acyclovir 400mg 5x Daily × 7-10 Days** OR **Valacyclovir 1g BD × 7-10 Days** OR **Famciclovir 250mg TDS × 7-10 Days**</td></tr><tr><td>**Recurrent**</td><td>**Acyclovir 400mg 5x Daily × 5 Days** OR **Valacyclovir 500mg BD × 3-5 Days** OR **Famciclovir 125mg BD × 5 Days** (Or **Famciclovir 1g Stat × 2 Doses 12h Apart**)</td></tr><tr><td>**Initiation**</td><td>**Within 24h of Prodrome/Lesion Onset** — **Earlier = Better**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Start Within 24h of Prodrome/Onset</b>; <b>Valacyclovir/Famciclovir Preferred</b> (Better Compliance, Less Frequent Dosing)</div>
+<div class="sub-h">Suppressive Therapy (Chronic Suppression)</div>
+<table class="ctable"><tr><th>Indication</th><th>Criteria</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**Frequent Recurrences**</td><td>**≥6 Episodes/Year** (Or ≥4 if Severe/Distressing)</td></tr><tr><td>**Psychosocial Impact**</td><td>**Significant Anxiety, Relationship Issues, Sexual Dysfunction**</td></tr><tr><td>**Discordant Couple**</td><td>**HSV-2 +ve Partner** → Reduce Transmission to Susceptible Partner</td></tr><tr><td>**Pregnancy (3rd Trimester)**</td><td>**HSV-2 +ve or Primary HSV in Pregnancy** → **36 Weeks to Delivery**</td></tr><tr><td>**Immunocompromised**</td><td>**HIV, Transplant, Immunosuppression** — Reduce Severity/Shedding</td></tr></table>
+<div class="sub-h">Suppressive Regimens</div>
+<table class="ctable"><tr><th>Drug</th><th>Regimen</th><th>Duration</th><th>Monitoring</th></tr><tr><td>------</td><td>---------</td><td>----------</td><td>------------</td></tr><tr><td>**Acyclovir**</td><td>**400mg BD** (Or 200mg QID)</td><td>**6-12 Months** (Reassess)</td><td>Renal Function (If Renal Impairment: Dose Adjust)</td></tr><tr><td>**Valacyclovir**</td><td>**500mg OD** (500mg BD if HIV+)</td><td>**6-12 Months**</td><td>Renal Function</td></tr><tr><td>**Famciclovir**</td><td>**250mg BD**</td><td>**6-12 Months**</td><td>Hepatic Function</td></tr></table>
+<div class="callout"><b>Reassessment</b>: <b>After 6-12 Months</b> — Attempt <b>Drug Holiday</b> (Stop 3-6 Months, Reassess Recurrence Frequency)</div>
+<div class="sub-h">Treatment Efficacy (Suppressive Therapy)</div>
+<table class="ctable"><tr><th>Outcome</th><th>Reduction</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Recurrence Frequency**</td><td>**70-80%**</td></tr><tr><td>**Asymptomatic Shedding**</td><td>**80-90%**</td></tr><tr><td>**Transmission to Partner**</td><td>**~50%** (Valacyclovir 500mg OD)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ HSV in Pregnancy &amp; Neonatal Prevention</div>
+<div class="sub-h">Maternal HSV Infection Risk to Neonate</div>
+<table class="ctable"><tr><th>Maternal Scenario</th><th>Neonatal Risk</th><th>Management</th></tr><tr><td>-------------------</td><td>---------------</td><td>------------</td></tr><tr><td>**Primary HSV (1st/2nd Trimester)**</td><td>**Low (<1%)** (Maternal Antibodies Transfer)</td><td>**Acyclovir 400mg TDS 36w→Delivery** (Consider)</td></tr><tr><td>**Primary HSV (3rd Trimester/Peripartum)**</td><td>**HIGH (30-50%)** (No Maternal Antibodies, High Viral Load)</td><td>**Acyclovir 400mg TDS 36w→Delivery**; **Cesarean if Active Lesions/Prodrome at Labour**</td></tr><tr><td>**Recurrent HSV (Any Trimester)**</td><td>**Low (1-3%)** (Maternal Antibodies Protective)</td><td>**Acyclovir 400mg TDS 36w→Delivery** (Standard); **Cesarean ONLY if Active Lesions/Prodrome at Labour**</td></tr><tr><td>**Primary HSV at Labour**</td><td>**VERY HIGH (50%+)**</td><td>**Urgent Cesarean** (Within 4-6h of Membrane Rupture) + **Neonatal Acyclovir IV**</td></tr><tr><td>**Unknown Status (Lesions at Labour)**</td><td>**Assume Primary**</td><td>**Cesarean** (If Within 4-6h of Rupture) + **Maternal/Neonatal Acyclovir**</td></tr></table>
+<div class="sub-h">Suppressive Therapy in Pregnancy</div>
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**HSV-2 +ve (Recurrent)**</td><td>**Acyclovir 400mg TDS from 36 Weeks → Delivery** (Standard)</td></tr><tr><td>**Primary HSV in 3rd Trimester**</td><td>**Acyclovir 400mg TDS from Diagnosis → Delivery** + **Cesarean if Active Lesions at Labour**</td></tr><tr><td>**HIV Co-infection**</td><td>**Valacyclovir 500mg BD** (Preferred — Better Bioavailability)</td></tr></table>
+<div class="sub-h">Cesarean Section Indications</div>
+<table class="ctable"><tr><th>Scenario</th><th>Recommendation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Active Genital Lesions at Onset of Labour**</td><td>**Elective Cesarean** (Before Membrane Rupture)</td></tr><tr><td>**Prodromal Symptoms (Pain, Tingling) at Labour**</td><td>**Cesarean** (Viral Shedding Likely)</td></tr><tr><td>**Primary HSV in 3rd Trimester/Peripartum**</td><td>**Cesarean** (Ideally Before Membrane Rupture, ≤4-6h After Rupture)</td></tr><tr><td>**Recurrent HSV (No Lesions/Prodrome)**</td><td>**Vaginal Delivery OK** (Suppressive Therapy from 36w)</td></tr><tr><td>**Membrane Rupture >4-6h with Active Lesions**</td><td>**Cesarean Benefit Diminished** — Vaginal Delivery + Neonatal Prophylaxis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6️⃣ Neonatal HSV — Classification &amp; Management</div>
+<div class="sub-h">Classification (Kimberlin)</div>
+<table class="ctable"><tr><th>Type</th><th>Features</th><th>Mortality (Untreated)</th><th>Sequelae</th></tr><tr><td>------</td><td>----------</td><td>----------------------</td><td>----------</td></tr><tr><td>**SEM (Skin, Eye, Mouth)**</td><td>**Vesicles on Skin, Conjunctivitis, Oral Mucosa**</td><td>**4%**</td><td>Minimal if Treated Early</td></tr><tr><td>**CNS (Central Nervous System)**</td><td>**Encephalitis** (Seizures, Lethargy, Irritability, Bulging Fontanelle), CSF Pleocytosis</td><td>**15%**</td><td>**Significant Neurodevelopmental Delay** (50%+)</td></tr><tr><td>**DIS (Disseminated)**</td><td>**Multi-Organ** (Hepatitis, Pneumonitis, Coagulopathy, Thrombocytopenia, Adrenal Necrosis, Skin Lesions ± CNS)</td><td>**57%**</td><td>**High Neurodevelopmental Disability** (Survivors)</td></tr></table>
+<div class="callout"><b>Note</b>: <b>~45% SEM</b>, <b>30% CNS</b>, <b>25% DIS</b>; <b>Overlap Common</b> (SEM + CNS = CNS Disease)</div>
+<div class="sub-h">Neonatal HSV — Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Sample</th><th>Timing</th></tr><tr><td>------</td><td>--------</td><td>--------</td></tr><tr><td>**HSV PCR (NAAT)**</td><td>**CSF (Mandatory)**, Blood, Surface Swabs (Conjunctiva, Oral, Rectal, Skin Lesions)</td><td>**At Suspicion / 24-48h Post-Birth** (If High Risk)</td></tr><tr><td>**Viral Culture**</td><td>CSF, Blood, Surface Swabs</td><td>If PCR Unavailable</td></tr><tr><td>**CSF Analysis**</td><td>WBC, Protein, Glucose, HSV PCR</td><td>**Mandatory** (CNS/DIS Classification)</td></tr><tr><td>**Liver Function**</td><td>ALT, AST, Coagulation</td><td>DIS Monitoring</td></tr></table>
+<div class="callout"><b>Critical</b>: <b>HSV PCR on CSF = Gold Standard for CNS/DIS</b>; <b>Surface Swabs (Conjunctiva, Oral, Rectal) at 24h</b> for SEM</div>
+<div class="sub-h">Neonatal HSV — Treatment (IV Acyclovir)</div>
+<table class="ctable"><tr><th>Classification</th><th>Regimen</th><th>Duration</th></tr><tr><td>----------------</td><td>---------</td><td>----------</td></tr><tr><td>**SEM**</td><td>**Acyclovir 20mg/kg IV q8h**</td><td>**14 Days**</td></tr><tr><td>**CNS**</td><td>**Acyclovir 20mg/kg IV q8h**</td><td>**21 Days**</td></tr><tr><td>**DIS**</td><td>**Acyclovir 20mg/kg IV q8h**</td><td>**21 Days** (Longer if Persistent Viremia)</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Acyclovir IV 20mg/kg q8h</b>; <b>Adjust for Renal Function</b>; <b>CSF PCR at End of Therapy (CNS/DIS) — If +ve → Extend</b></div>
+<div class="sub-h">Neonatal HSV — Post-Treatment Suppression</div>
+<table class="ctable"><tr><th>Regimen</th><th>Duration</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Oral Acyclovir 300mg/m²/dose TDS**</td><td>**6 Months** (Post-IV) — **Improves Neurodevelopmental Outcomes** (CNS/DIS)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6️⃣ HSV in Immunocompromised &amp; Resistance</div>
+<div class="sub-h">Immunocompromised (HIV, Transplant, Chemotherapy)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Clinical**</td><td>**Severe, Extensive, Chronic, Non-Healing Ulcers**, Atypical Presentations, Higher Dissemination Risk</td></tr><tr><td>**Diagnosis**</td><td>**NAAT + Culture (Resistance Testing)**</td></tr><tr><td>**Treatment**</td><td>**Higher Doses/Longer Durations** — Acyclovir 400mg 5x Daily (Episodic), **Suppressive: Valacyclovir 500mg BD** (HIV)</td></tr><tr><td>**Resistance**</td><td>**Thymidine Kinase (TK) Mutations** → **Acyclovir/Valacyclovir/Famciclovir Cross-Resistance**</td></tr><tr><td>**Resistant HSV Treatment**</td><td>**Foscarnet 40mg/kg IV q8h** (TK Mutants); **Cidofovir 5mg/kg IV Weekly** (Alternative); **Topical Cidofovir/Imuquimod** (Mucocutaneous)</td></tr></table>
+<div class="sub-h">HSV Resistance</div>
+<table class="ctable"><tr><th>Mutation</th><th>Mechanism</th><th>Cross-Resistance</th></tr><tr><td>----------</td><td>-----------</td><td>------------------</td></tr><tr><td>**TK (Thymidine Kinase)**</td><td>Defective Phosphorylation</td><td>**Acyclovir/Valacyclovir/Famciclovir** (All)</td></tr><tr><td>**DNA Polymerase**</td><td>Altered Drug Binding</td><td>**Foscarnet/Cidofovir** (Usually Sensitive)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6️⃣ Counselling &amp; Partner Management</div>
+<div class="sub-h">Key Counselling Points</div>
+<table class="ctable"><tr><th>Topic</th><th>Key Messages</th></tr><tr><td>-------</td><td>--------------</td></tr><tr><td>**Transmission**</td><td>**Asymptomatic Shedding = Major Driver**; **HSV-2 > HSV-1**; **Condoms Reduce Risk ~30-50%**</td></tr><tr><td>**Recurrence**</td><td>**Prodrome = Infectious**; **Suppressive Therapy Reduces Frequency/Shedding/Transmission**</td></tr><tr><td>**Pregnancy**</td><td>**Primary = High Risk; Recurrent = Low Risk**; **Cesarean if Active Lesions at Labour**</td></tr><tr><td>**Neonatal**</td><td>**Rare but Serious**; **Suppression 36w→Delivery Reduces Risk**</td></tr><tr><td>**Psychosocial**</td><td>**Stigma, Anxiety, Relationship Impact** — **Counselling, Support Groups, Accurate Information**</td></tr><tr><td>**Partner Testing**</td><td>**Type-Specific Serology** — If Partner -ve → Discordant Couple → Suppressive Therapy + Condoms</td></tr><tr><td>**Disclosure**</td><td>**Ethical/Legal Duty** (Varies by Jurisdiction) — **Before Sexual Contact**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**HSV-1 vs HSV-2**</td><td>**HSV-1: Orolabial → Increasing Genital (Oral Sex); HSV-2: Predominantly Genital**; **HSV-2 > Recurrences, Asymptomatic Shedding**</td></tr><tr><td>**Primary vs Recurrent**</td><td>**Primary: Systemic (Fever, Lymphadenopathy), Severe, 2-4 Weeks**; **Recurrent: Prodrome, Fewer Lesions, Shorter (5-10 Days), No Systemic**</td></tr><tr><td>**Diagnosis**</td><td>**NAAT (PCR) = 1st Line (Lesions)**; **Type-Specific IgG (gG-Based) = Asymptomatic/Pregnancy/Partner**; **Tzanck = Bedside (Multinucleated Giant Cells)**</td></tr><tr><td>**Episodic Treatment**</td><td>**Acyclovir 400mg 5x/d × 7-10d (Primary), ×5d (Recurrent)**; **Valacyclovir 1g BD × 7-10d (Primary), 500mg BD × 3-5d (Recurrent)**</td></tr><tr><td>**Suppressive Therapy**</td><td>**≥6 Recurrences/Year**, Discordant Couple, Pregnancy (36w→Delivery), Psychosocial; **Valacyclovir 500mg OD / Acyclovir 400mg BD**</td></tr><tr><td>**Pregnancy**</td><td>**Primary 3rd Trimester = HIGH Risk (Cesarean if Active Lesions at Labour)**; **Recurrent = Low Risk (Vaginal OK if No Lesions)**; **Suppression 36w→Delivery**</td></tr><tr><td>**Neonatal HSV**</td><td>**SEM (Skin/Eye/Mouth) = 14d IV Acyclovir**; **CNS = 21d IV Acyclovir + 6mo Oral Suppression**; **DIS = 21d IV Acyclovir**</td></tr><tr><td>**Neonatal Prevention**</td><td>**Primary at Labour = Cesarean + Neonatal IV Acyclovir**; **Recurrent = Suppression 36w→Delivery, Cesarean if Active Lesions**</td></tr><tr><td>**Resistance**</td><td>**TK Mutations → Acyclovir/Valacyclovir/Famciclovir Cross-R** → **Foscarnet IV**</td></tr><tr><td>**Suppressive Therapy Reduces**</td><td>**Recurrences 70-80%**, **Shedding 80-90%**, **Transmission ~50%**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Primary vs Recurrent genital herpes — clinical differences?</td><td>**Primary: Fever, Bilateral Tender Lymphadenopathy, Multiple Vesicles/Ulcers, 2-4 Weeks**; **Recurrent: Prodrome (Tingling/Burning), Fewer/Smaller Lesions, No Systemic Symptoms, 5-10 Days**</td></tr><tr><td>2</td><td>HSV-1 vs HSV-2 genital infection — key differences?</td><td>**HSV-1: Increasing Genital (Oral Sex), Lower Recurrence Rate (~1/Year), Less Shedding**; **HSV-2: Predominantly Genital, High Recurrence (~4-5/Year), More Asymptomatic Shedding**</td></tr><tr><td>3</td><td>Neonatal HSV classification & treatment durations?</td><td>**SEM (Skin/Eye/Mouth): IV Acyclovir 20mg/kg q8h × 14 Days**; **CNS: IV Acyclovir 20mg/kg q8h × 21 Days + 6mo Oral Suppression**; **DIS: IV Acyclovir 20mg/kg q8h × 21 Days**</td></tr><tr><td>4</td><td>HSV in pregnancy — management algorithm?</td><td>**Primary 3rd Trimester/Peripartum = HIGH Risk → Cesarean if Active Lesions at Labour + Neonatal IV Acyclovir**; **Recurrent = Low Risk → Vaginal OK if No Lesions; Suppression 36w→Delivery**; **Primary at Labour = Cesarean Within 4-6h of Membrane Rupture**</td></tr><tr><td>5. Neonatal HSV — when is Cesarean indicated?</td><td>**Active Genital Lesions at Onset of Labour**; **Prodromal Symptoms at Labour**; **Primary HSV in 3rd Trimester/Peripartum**; **Membrane Rupture <4-6h with Active Lesions**</td></tr><tr><td>6. HSV suppressive therapy — indications & regimen?</td><td>**≥6 Recurrences/Year, Discordant Couple, Pregnancy (36w→Delivery), Psychosocial Distress**; **Valacyclovir 500mg OD or Acyclovir 400mg BD**; **Reassess at 6-12 Months**</td></tr><tr><td>7. HSV resistance — mechanism & treatment?</td><td>**TK (Thymidine Kinase) Mutations → Acyclovir/Valacyclovir/Famciclovir Cross-Resistance** → **Foscarnet 40mg/kg IV q8h** (IV Only); **Cidofovir Alternative**</td></tr><tr><td>8. HSV diagnosis — when to use NAAT vs Serology?</td><td>**NAAT (PCR) = Lesions Present (1st Line, Type-Specific)**; **Type-Specific IgG (gG-Based) = Asymptomatic, Pregnancy, Partner Testing, No Lesions**</td></tr><tr><td>9. HSV in HIV — differences in management?</td><td>**Higher Doses/Longer Duration**; **Episodic: Acyclovir 400mg 5x/d (Higher); Suppressive: Valacyclovir 500mg BD**; **Resistance More Common (TK Mutations)**</td></tr><tr><td>10. Cesarean for HSV — timing relative to membrane rupture?</td><td>**Before Membrane Rupture (Ideally)**; **Within 4-6 Hours of Rupture if Already Ruptured**; **Benefit Diminished After 6h**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"HSV-1 = Only Oral, HSV-2 = Only Genital"**</td><td>**NO.** **HSV-1 Increasingly Causes Genital Herpes** (Oral Sex); **HSV-2 Can Cause Oral** (Oral Sex)</td></tr><tr><td>**"Recurrent HSV = Always Mild"**</td><td>**NO.** **Can Be Severe** (Immunocompromised, Extensive, Prolonged); **Sacral Radiculopathy (Urinary Retention) Possible**</td></tr><tr><td>**"Asymptomatic = Not Infectious"**</td><td>**NO.** **Asymptomatic Shedding = Major Driver of Transmission** (HSV-2 > HSV-1)</td></tr><tr><td>**"Suppressive Therapy = Cure"**</td><td>**NO.** **Reduces Frequency/Shedding/Transmission** — **Not Eradication**; **Latency Persists**</td></tr><tr><td>**"Cesarean = 100% Prevents Neonatal HSV"**</td><td>**NO.** **Risk Reduced ~85%**; **Transascending Infection Possible (Membrane Rupture to Delivery)**; **Also Intrauterine Infection Rare**</td></tr><tr><td>**"Acyclovir Resistance = Just Use Valacyclovir"**</td><td>**NO.** **TK Mutation = Cross-Resistance to Acyclovir/Valacyclovir/Famciclovir** → **Foscarnet**</td></tr><tr><td>**"HSV IgM = Acute Infection"**</td><td>**NO.** **IgM Poor Specificity, Persists, Not Recommended**; **Type-Specific IgG (gG-Based) = Standard**</td></tr><tr><td>**"All Genital Ulcers = HSV"**</td><td>**NO.** **DDx: Syphilis (Painless Indurated), Chancroid (Painful+Suppurative Buboes), LGV (Painless Primary→Buboes), Behçet, Aphthous, Drug Eruption**</td></tr><tr><td>**"Suppressive Therapy = Lifelong Mandatory"**</td><td>**NO.** **Reassess at 6-12 Months**; **Drug Holiday (Stop 3-6 Months), Reassess Recurrence**</td></tr><tr><td>**"HSV-1 Genital = Less Severe Than HSV-2"**</td><td>**Primary HSV-1 Can Be Severe**; **But Recurrences Much Less Frequent (~1/Year vs 4-5/Year)**</td></tr></table>
+<div class="callout"><b>Mnemonic: HSV MASTER MANAGEMENT</b> <b>H</b>SV-1 vs HSV-2: <b>HSV-1 Oral→Genital (Oral Sex), Low Recurrence; HSV-2 Genital, High Recurrence/High Shedding</b> <b>S</b>erology: <b>Type-Specific IgG (gG-Based) = Standard; IgM NOT Recommended</b> <b>V</b>iral NAAT: <b>Lesions → PCR (1st Line, Type-Specific); No Lesions → Type-Specific IgG</b> <b>P</b>rimary vs Recurrent: <b>Primary = Systemic (Fever, LAD), Severe, 2-4w; Recurrent = Prodrome, Fewer Lesions, 5-10d</b> <b>E</b>pisodic Tx: <b>Acyclovir 400mg 5x/d ×7-10d (Primary), ×5d (Recurrent); Valacyclovir 1g BD (Primary), 500mg BD (Recurrent)</b> <b>S</b>uppressive: <b>≥6/Year, Discordant Couple, Pregnancy (36w→Delivery), Psychosocial</b>; <b>Valacyclovir 500mg OD / Aci 400mg BD</b> <b>R</b>esistance: <b>TK Mutations → ACV/VCV/FCV Cross-R → Foscarnet IV</b> <b>P</b>regnancy: <b>Primary 3rd Tri = HIGH Risk (Cesarean if Active); Recurrent = Low Risk; Suppression 36w→Delivery</b> <b>N</b>eonatal: <b>SEM (14d), CNS (21d + 6mo Oral Suppression), DIS (21d)</b> — <b>IV Acyclovir 20mg/kg q8h</b> <b>C</b>esarean Indication: <b>Active Lesions/Prodrome at Labour; Primary 3rd Tri/Peripartum</b>; <b>Vaginal OK if Recurrent + No Lesions</b> <b>T</b>reatment Adjustment: <b>HIV: Higher Doses/Longer (Aci 400mg 5x/d, Val 500mg BD); Renal: Dose Adjust</b> <b>H</b>SV Encephalitis: <b>HSV-1, Temporal Lobe, Fever/Confusion/Seizures</b> — <b>IV Acyclovir 10mg/kg q8h × 14-21d</b> (Emergency) <b>E</b>xtra-Genital: <b>Whitlow (Fingers), Keratitis (Dendritic Ulcer - Emergency), Eczema Herpeticum</b> <b>T</b>riggers: <b>Stress, UV, Fever, Trauma, Menstruation, Immunosuppression</b> <b>K</b>ey Counselling: <b>Asymptomatic Shedding = Transmission; Suppressive Reduces 50%; Discordant Couple = Suppression + Condoms</b> <b>I</b>n Pregnancy: <b>Primary = High Risk; Recurrent = Low Risk; Suppression 36w→Delivery</b> <b>N</b>eonatal: <b>SEM 14d, CNS 21d+6mo Oral, DIS 21d</b> — <b>IV Aci 20mg/kg q8h</b> <b>M</b>onitoring: <b>Suppressive: Reassess 6-12mo (Drug Holiday); Neonatal: Neurodevelopmental Follow-Up</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((HSV))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Types</div>
+<div class="mm-node mm-l3">– HSV-1: Oral→Genital, Low Recurrence</div>
+<div class="mm-node mm-l3">– HSV-2: Genital, High Recurrence, High Shedding</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Primary: Systemic, Severe, 2-4w</div>
+<div class="mm-node mm-l3">– Recurrent: Prodrome, Fewer Lesions, 5-10d</div>
+<div class="mm-node mm-l3">– Extra-Genital: Whitlow, Keratitis, Encephalitis, Eczema Herpeticum</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Lesions: NAAT (PCR) 1st Line, Type-Specific</div>
+<div class="mm-node mm-l3">– Asymptomatic: Type-Specific IgG (gG-Based)</div>
+<div class="mm-node mm-l3">– Bedside: Tzanck (Multinucleated Giant Cells)</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Episodic: Aci 400mg 5x/d / Val 1g BD</div>
+<div class="mm-node mm-l3">– Suppressive: Val 500mg OD / Aci 400mg BD</div>
+<div class="mm-node mm-l3">– Indications: ≥6/yr, Discordant, Pregnancy, Psychosocial</div>
+<div class="mm-node mm-l3">– Resistance: TK Mutations → Foscarnet IV</div>
+<div class="mm-node mm-l2">Pregnancy</div>
+<div class="mm-node mm-l3">– Primary 3rd Tri: HIGH Risk, Cesarean</div>
+<div class="mm-node mm-l3">– Recurrent: Low Risk, Vaginal OK</div>
+<div class="mm-node mm-l3">– Suppression 36w→Delivery</div>
+<div class="mm-node mm-l2">Neonatal</div>
+<div class="mm-node mm-l3">– SEM: 14d IV Aci</div>
+<div class="mm-node mm-l3">– CNS: 21d IV Aci + 6mo Oral</div>
+<div class="mm-node mm-l3">– DIS: 21d IV Aci</div>
+<div class="mm-node mm-l3">– Prevention: Suppression 36w, Cesarean if Active Lesions</div>
+<div class="mm-node mm-l2">Resistance</div>
+<div class="mm-node mm-l3">– TK Mutations → Foscarnet</div>
+<div class="mm-node mm-l3">– HIV: Higher Doses, Resistance More Common</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>HSV-1 vs HSV-2 / Primary vs Recurrent</td><td>3</td><td></td><td></td></tr><tr><td>Diagnosis (NAAT, Serology, Tzanck)</td><td>3</td><td></td><td></td></tr><tr><td>Episodic & Suppressive Therapy</td><td>3</td><td></td><td></td></tr><tr><td>Pregnancy & Neonatal HSV</td><td>4</td><td></td><td></td></tr><tr><td>Resistance & Immunocompromised</td><td>3</td><td></td><td></td></tr><tr><td>Counselling & Partner Management</td><td>2</td><td></td><td></td></tr><tr><td>Extra-Genital Manifestations</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the clinical features, diagnosis, and management of genital herpes including special situations in pregnancy and neonate."</td><td>HSV-1 vs HSV-2, Primary vs Recurrent, NAAT/Serology, Episodic/Suppressive Tx, Pregnancy Algorithm (Primary=High Risk/Cesarean, Recurrent=Low Risk/Suppression), Neonatal Classification (SEM/CNS/DIS) & Treatment, Resistance (TK Mutations→Foscarnet), Counselling</td></tr><tr><td>**Short Note**</td><td>"Neonatal HSV — classification, diagnosis, and treatment."</td><td>**SEM (Skin/Eye/Mouth): IV Acyclovir 20mg/kg q8h × 14d**; **CNS (Encephalitis): IV Acyclovir 20mg/kg q8h × 21d + 6mo Oral Suppression**; **DIS (Disseminated): IV Acyclovir 20mg/kg q8h × 21d**; **PCR CSF = Gold Standard**; **Prevention: Suppression 36w→Delivery, Cesarean if Active Lesions**</td></tr><tr><td>**Viva**</td><td>"25-year-old pregnant woman at 34 weeks with first episode genital herpes. Management?"</td><td>**Primary Genital HSV in 3rd Trimester = HIGH Risk**; **Acyclovir 400mg TDS from Diagnosis → Delivery**; **MRI/US for Fetal Assessment**; **Cesarean if Active Lesions/Prodrome at Onset of Labour (Ideally Before Membrane Rupture, ≤4-6h After Rupture)**; **Neonatal IV Acyclovir 20mg/kg q8h × 14-21d Based on Classification**; **Maternal/Neonatal HSV PCR at Birth**</td></tr><tr><td>**Ward Round**</td><td>"3-day-old neonate with vesicular rash, lethargy, seizures. CSF: Lymphocytic pleocytosis, HSV PCR positive. Diagnosis and management?"</td><td>**Neonatal HSV — CNS Disease (Encephalitis)**; **IV Acyclovir 20mg/kg IV q8h × 21 Days**; **Supportive Care (Anticonvulsants, Fluids, Respiratory Support)**; **Oral Acyclovir Suppression 300mg/m² TDS × 6 Months Post-IV**; **Neurodevelopmental Follow-Up**; **Maternal HSV Status + Serology**</td></tr><tr><td>**Last-Night**</td><td>"HSV-1/2: Oral/Genital, Recurrence/Shedding. Primary vs Recurrent: Systemic/Severe/2-4w vs Prodrome/Mild/5-10d. NAAT (Lesions), IgG (Asymptomatic). Episodic: Aci 400mg 5x/d (Prim 7-10d, Rec 5d). Suppressive: ≥6/yr, Discordant, Preg 36w→Del, Val 500mg OD. Preg: Primary 3rd Tri=High/Cesarean, Rec=Low/Vaginal OK. Neonatal: SEM 14d, CNS 21d+6mo Oral, DIS 21d. Resist: TK Mut→Foscarnet. Cesarean: Active Lesions/Prodrome at Labour."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>HSV-1 vs HSV-2</b>: <b>HSV-1</b> (Oral→Increasing Genital, Lower Recurrence); <b>HSV-2</b> (Predominantly Genital, Higher Recurrence ~4-5/Year, More Asymptomatic Shedding)</li><li><b>Primary Genital Herpes</b>: <b>Systemic</b> (Fever, Bilateral Tender Lymphadenopathy), <b>Multiple Vesicles/Ulcers</b>, <b>2-4 Weeks</b></li><li><b>Recurrent Genital Herpes</b>: <b>Prodrome</b> (Tingling/Burning), <b>Fewer/Smaller Lesions</b>, <b>No Systemic Symptoms</b>, <b>5-10 Days</b></li><li><b>Diagnosis</b>: <b>NAAT (PCR) = 1st Line (Lesions, Type-Specific)</b>; <b>Type-Specific IgG (gG-Based) = Asymptomatic/Pregnancy/Partner Screening</b></li><li><b>Episodic Treatment</b>: <b>Acyclovir 400mg 5x Daily × 7-10 Days (Primary), ×5 Days (Recurrent)</b>; <b>Valacyclovir 1g BD (Primary), 500mg BD (Recurrent)</b></li><li><b>Suppressive Therapy</b>: <b>Indications: ≥6 Recurrences/Year, Discordant Couple, Pregnancy (36w→Delivery), Psychosocial</b>; <b>Valacyclovir 500mg OD / Acyclovir 400mg BD</b></li><li><b>Pregnancy</b>: <b>Primary 3rd Trimester = HIGH Neonatal Risk → Cesarean if Active Lesions at Labour</b>; <b>Recurrent = Low Risk → Vaginal Delivery OK if No Lesions</b>; <b>Suppression 36w→Delivery Standard</b></li><li><b>Neonatal HSV</b>: <b>SEM (Skin/Eye/Mouth) = 14d IV Acyclovir</b>; <b>CNS (Encephalitis) = 21d IV Acyclovir + 6mo Oral Suppression</b>; <b>DIS (Disseminated) = 21d IV Acyclovir</b></li><li><b>Resistance</b>: <b>TK Mutations → Acyclovir/Valacyclovir/Famciclovir Cross-Resistance</b> → <b>Foscarnet IV</b></li><li><b>Cesarean Indication</b>: <b>Active Genital Lesions at Labour</b>, <b>Prodrome at Labour</b>, <b>Primary HSV 3rd Trimester/Peripartum</b></li><li><b>HSV in HIV</b>: <b>Higher Doses, Longer Duration, Resistance More Common</b> — <b>Valacyclovir 500mg BD for Suppression</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Primary genital herpes — characteristic systemic features?</b></li></ol>
+<p>A. Asymptomatic  B. <b>Fever, Malaise, Bilateral Tender Inguinal Lymphadenopathy</b>  C. Only Local Lesions  D. Pruritus Only <i>Answer: B. Fever, Malaise, Bilateral Tender Inguinal Lymphadenopathy.</i></p>
+<ol><li><b>HSV-1 vs HSV-2 genital infection — which has higher recurrence rate?</b></li></ol>
+<p>A. HSV-1  B. <b>HSV-2</b>  C. Equal  D. Neither Recur <i>Answer: B. HSV-2: ~4-5 Recurrences/Year; HSV-1: ~1/Year.</i></p>
+<ol><li><b>Neonatal HSV — CNS disease treatment duration?</b></li></ol>
+<p>A. 14 Days  B. <b>21 Days IV Acyclovir + 6 Months Oral Suppression</b>  C. 10 Days  D. 7 Days <i>Answer: B. CNS: IV Acyclovir 20mg/kg q8h × 21 Days + Oral Acyclovir Suppression × 6 Months.</i></p>
+<ol><li><b>HSV suppressive therapy — indication?</b></li></ol>
+<p>A. 1 Recurrence/Year  B. <b>≥6 Recurrences/Year</b>  C. No Recurrences  D. Only in Pregnancy <i>Answer: B. ≥6 Episodes/Year (or ≥4 if Severe/Distressing), Discordant Couple, Pregnancy (36w→Delivery), Psychosocial.</i></p>
+<ol><li><b>Cesarean section for HSV — when indicated?</b></li></ol>
+<p>A. All HSV+ Women  B. <b>Active Genital Lesions or Prodrome at Onset of Labour</b>  C. Recurrent HSV Only  D. Never Indicated <i>Answer: B. Active Lesions/Prodrome at Labour; Primary HSV 3rd Trimester/Peripartum.</i></p>
+<ol><li><b>HSV resistance — mechanism and treatment?</b></li></ol>
+<p>A. DNA Pol Mutation → Foscarnet  B. <b>TK (Thymidine Kinase) Mutation → Acyclovir/Valacyclovir/Famciclovir Cross-Resistance → Foscarnet IV</b>  C. Efflux Pump → Cidofovir  D. Beta-Lactamase → Acyclovir <i>Answer: B. TK Mutation → Cross-Resistance to Acyclovir/Valacyclovir/Famciclovir → Foscarnet IV.</i></p>
+<ol><li><b>HSV in pregnancy — primary infection at 36 weeks. Management?</b></li></ol>
+<p>A. Vaginal Delivery  B. <b>Cesarean (Ideally Before Membrane Rupture) + Maternal/Neonatal IV Acyclovir</b>  C. Expectant Management  D. Induction of Labor <i>Answer: B. Primary HSV in 3rd Trimester/Peripartum → Cesarean (Before Rupture/Within 4-6h) + Maternal/Neonatal IV Acyclovir.</i></p>
+<ol><li><b>HSV diagnosis — test of choice for active lesions?</b></li></ol>
+<p>A. Type-Specific IgG  B. <b>NAAT (PCR) — Type-Specific</b>  C. Tzanck Smear  D. Viral Culture <i>Answer: B. NAAT (PCR) = 1st Line for Active Lesions (High Sensitivity/Specificity, Type-Specific).</i></p>
+<ol><li><b>Neonatal HSV — SEM (Skin, Eye, Mouth) treatment duration?</b></li></ol>
+<p>A. 7 Days  B. <b>14 Days</b>  C. 21 Days  D. 28 Days <i>Answer: B. SEM: IV Acyclovir 20mg/kg q8h × 14 Days.</i></p>
+<ol><li><b>HSV resistance — TK mutation cross-resistance pattern?</b></li></ol>
+<p>A. Acyclovir Only  B. <b>Acyclovir, Valacyclovir, Famciclovir (All)</b>  C. Foscarnet Only  D. Cidofovir Only <i>Answer: B. TK Mutation → Cross-Resistance to Acyclovir, Valacyclovir, Famciclovir → Foscarnet IV.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Pregnant woman at 34 weeks with first-episode genital herpes. Management?</b></li></ol>
+<p>A. Expectant Vaginal Delivery  B. <b>Acyclovir 400mg TDS → Delivery + Cesarean if Active Lesions at Labour</b>  C. Cesarean at 36 Weeks  D. No Treatment Needed <i>Answer: B. Primary HSV 3rd Trimester → Acyclovir 400mg TDS → Delivery + Cesarean if Active Lesions/Prodrome at Labour.</i></p>
+<ol><li><b>Neonate with vesicular rash, conjunctivitis, oral ulcers. CSF normal. Classification &amp; treatment?</b></li></ol>
+<p>A. CNS, 21d IV Aci + 6mo Oral  B. <b>SEM, 14d IV Aci</b>  C. DIS, 21d IV Aci  D. CNS, 14d IV Aci <i>Answer: B. SEM (Skin/Eye/Mouth) → IV Acyclovir 20mg/kg q8h × 14 Days.</i></p>
+<ol><li><b>Woman with 8 recurrences/year genital HSV-2, distressed. Best management?</b></li></ol>
+<p>A. Episodic Acyclovir Each Episode  B. <b>Suppressive Valacyclovir 500mg OD</b>  C. No Treatment  D. Cesarean Section <i>Answer: B. Suppressive Therapy Indicated (≥6/Year): Valacyclovir 500mg OD or Acyclovir 400mg BD.</i></p>
+<ol><li><b>HSV-2 positive woman, 3rd trimester, no lesions. Delivery plan?</b></li></ol>
+<p>A. Elective Cesarean  B. <b>Vaginal Delivery (Suppressive Acyclovir 400mg TDS from 36w)</b>  C. Induction at 37 Weeks  D. Cesarean at 38 Weeks <i>Answer: B. Recurrent HSV, No Lesions → Vaginal Delivery OK + Suppressive Therapy from 36 Weeks.</i></p>
+<ol><li><b>Immunocompromised patient with acyclovir-resistant HSV. Treatment?</b></li></ol>
+<p>A. Increase Acyclovir Dose  B. <b>Foscarnet 40mg/kg IV q8h</b>  C. Valacyclovir  C. Famciclovir <i>Answer: B. TK Mutation → Cross-Resistance → Foscarnet 40mg/kg IV q8h (IV Only).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Chlamydia.md]] — Differential (Urethritis), Co-infection</li><li>[[2.2 Gonorrhoea.md]] — Differential (Urethritis), Co-infection</li><li>[[2.3 Syphilis.md]] — Differential (GUD), Co-infection</li><li>[[5.1-5.8 Syndromic Management.md]] — GUD Algorithm, Neonatal STIs</li><li>[[HIV/AIDS Cross-Reference]] — HSV in HIV, Severe Mucocutaneous, Resistance</li><li>[[9. ELSI]] — Serology Ethics, Disclosure, Stigma</li><li>[[Population &amp; Newborn Screening]] — Antenatal Screening, Neonatal HSV Prevention</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next:</b> Build <code>3.3 HPV.md</code>, <code>3.4 Hepatitis B &amp; C.md</code>, <code>3.5 Mpox.md</code>, <code>3.6 Other Viral STIs.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 3.2 HSV · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

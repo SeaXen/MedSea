@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tuberculous Meningitis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Tuberculous Meningitis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise subacute clinical presentation: headache, fever, AMS, cranial nerve palsies</li><li>Interpret CSF: lymphocytic pleocytosis, very low glucose, high protein, opening pressure ↑</li><li>Use GeneXpert MTB/RIF Ultra on CSF (rapid, moderate sensitivity)</li><li>Initiate empirical anti-TB + dexamethasone immediately if high suspicion</li><li>Manage hydrocephalus (VP shunt), stroke (vasculitis), raised ICP</li><li>Understand TB/HIV co-management and IRIS in TBM</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p><b>Tuberculous meningitis</b> = <i>Mycobacterium tuberculosis</i> infection of the meninges. <b>Subacute</b> (days–weeks). <b>Basilar exudates</b> → cranial nerve palsies, hydrocephalus, vasculitis → stroke.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Pathogenesis</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Primary TB → haematogenous spread → <b>Rich focus</b> (subpial/ependymal granuloma in brain/spine)</li><li>Rupture of Rich focus into subarachnoid space → <b>meningeal inflammation</b></li><li><b>Basilar exudate</b> (thick, gelatinous) → entrapment of cranial nerves (III, VI, VII), vessels (vasculitis), CSF pathways (hydrocephalus)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Prodrome (1–3w)**</td><td>Low-grade fever, malaise, headache, personality change, irritability</td></tr><tr><td>**Meningeal (1–2w)**</td><td>Severe headache, vomiting, neck stiffness, photophobia, fever</td></tr><tr><td>**Neurological (late)**</td><td>**Cranial nerve palsies** (III → ptosis, dilated pupil; VI → diplopia; VII → facial weakness), **AMS** (confusion → coma), **focal deficits** (hemiparesis from vasculitis), **seizures**</td></tr><tr><td>**Complications**</td><td>**Hydrocephalus** (communicating → non-communicating), **stroke** (MCA territory, basal ganglia), **SIADH**, hyponatraemia</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Normal Values / Important Cut-offs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>TBM CSF</th><th>Bacterial Meningitis</th><th>Viral Meningitis</th></tr><tr><td>-----------</td><td>---------</td><td>----------------------</td><td>------------------</td></tr><tr><td>**Opening pressure**</td><td>**↑↑ (often >30 cmH₂O)**</td><td>↑↑</td><td>Normal/mild ↑</td></tr><tr><td>**WBC**</td><td>**50–500 (lymphocytes)**</td><td>Neutrophils ↑↑↑</td><td>Lymphocytes 10–500</td></tr><tr><td>**Protein**</td><td>**↑↑ (100–500 mg/dL, often >200)**</td><td>↑↑</td><td>Mild ↑</td></tr><tr><td>**Glucose (CSF/serum)**</td><td>**↓↓ (<0.5, often <2.2 mmol/L or <40 mg/dL)**</td><td>↓↓ (<0.4)</td><td>Normal (>0.6)</td></tr><tr><td>**GeneXpert MTB/RIF Ultra**</td><td>**50–80% sensitivity**</td><td>N/A</td><td>N/A</td></tr><tr><td>**AFB smear**</td><td>10–20%</td><td>N/A</td><td>N/A</td></tr><tr><td>**Culture**</td><td>50–70% (4–8 weeks)</td><td>N/A</td><td>N/A</td></tr><tr><td>**ADA**</td><td>>10 U/L (supportive)</td><td>N/A</td><td>N/A</td></tr></table>
+<div class="callout">[!tip] <b>CSF glucose &lt;2.2 mmol/L (40 mg/dL) or ratio &lt;0.5</b> = TBM / bacterial / fungal. <b>Lymphocytic pleocytosis + very low glucose + high protein + high pressure</b> = classic TBM triad.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Approach / Algorithm</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Subacute meningitis: headache 1-4w + fever + AMS/cranial nerve palsies</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">LP if safe (contraindications: papilloedema, GCS&lt;10, focal deficit)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">CSF: opening pressure, cell count, protein, glucose, AFB, GeneXpert, culture</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">CT/MRI brain with contrast: basal exudates, hydrocephalus, infarcts, enhancement</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Empirical anti-TB + Dexamethasone IMMEDIATELY if high suspicion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">GeneXpert +ve → confirm; GeneXpert -ve but high suspicion → continue Rx, await culture</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Monitor: ICP, hydrocephalus (serial imaging), stroke, hyponatraemia, drug toxicity</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Duration: 12 months total (2HRZE/10HR)</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Utility</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**CSF GeneXpert MTB/RIF Ultra**</td><td>**Rapid (2h), sensitivity 50–80%, specificity >98%**; detects RIF resistance</td></tr><tr><td>**CSF AFB smear**</td><td>Low sensitivity (10–20%); >1 smear increases yield</td></tr><tr><td>**CSF culture (MGIT)**</td><td>Gold standard (50–70%); 2–4 weeks; allows DST</td></tr><tr><td>**CSF LPA / WGS**</td><td>Rapid DST if culture +ve</td></tr><tr><td>**CSF ADA**</td><td>>10 U/L supportive (not diagnostic); high in lymphocytic exudates</td></tr><tr><td>**CT/MRI brain (contrast)**</td><td>**Basilar exudates** (meningeal enhancement), **hydrocephalus**, infarcts (vasculitis), tuberculomas</td></tr><tr><td>**Chest X-ray / CT**</td><td>Active pulmonary TB in 30–50%</td></tr><tr><td>**IGRA / TST**</td><td>Supportive; not diagnostic for active TBM</td></tr><tr><td>**HIV test**</td><td>Mandatory (co-infection changes Rx duration, ART timing, IRIS risk)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Treatment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Standard Regimen (12 Months Total)</div>
+<table class="ctable"><tr><th>Phase</th><th>Duration</th><th>Drugs</th><th>Doses</th></tr><tr><td>-------</td><td>----------</td><td>-------</td><td>-------</td></tr><tr><td>**Intensive**</td><td>**2 months**</td><td>**HRZE** (Rifampicin, Isoniazid, Pyrazinamide, Ethambutol)</td><td>R 10mg/kg, H 5mg/kg, Z 25mg/kg, E 15mg/kg</td></tr><tr><td>**Continuation**</td><td>**10 months**</td><td>**HR** (Rifampicin, Isoniazid)</td><td>Same doses</td></tr></table>
+<div class="callout">[!important] <b>Total 12 months</b> (not 6 months like pulmonary TB). <b>Ethambutol essential</b> in intensive phase (good CSF penetration). <b>Pyridoxine 25mg/day</b> mandatory with INH.</div>
+<div class="sub-h">Adjunctive Dexamethasone — MORTALITY BENEFIT</div>
+<table class="ctable"><tr><th>Population</th><th>Dose</th><th>Duration</th></tr><tr><td>------------</td><td>------</td><td>----------</td></tr><tr><td>**Adults**</td><td>**Dexamethasone 0.3–0.4mg/kg/day IV** (max 24mg/day)</td><td>**4–6 weeks taper** (reduce every 1–2w)</td></tr><tr><td>**Children**</td><td>Dexamethasone 0.6mg/kg/day IV (max 30mg/day)</td><td>4–6 weeks taper</td></tr></table>
+<div class="callout">[!warning] <b>Start dexamethasone WITH or BEFORE first anti-TB dose.</b> Reduces mortality by ~30%. <b>Monitor glucose, GI bleed, psychiatric effects.</b> Taper slowly to avoid rebound inflammation.</div>
+<div class="sub-h">Drug Penetration into CSF (Inflamed Meninges)</div>
+<table class="ctable"><tr><th>Drug</th><th>CSF Penetration</th><th>Notes</th></tr><tr><td>------</td><td>-----------------</td><td>-------</td></tr><tr><td>**Isoniazid**</td><td>Excellent (100%)</td><td>Core drug</td></tr><tr><td>**Pyrazinamide**</td><td>Excellent (100%)</td><td>Core drug</td></tr><tr><td>**Ethambutol**</td><td>Good (50–70%)</td><td>**Include in intensive phase**</td></tr><tr><td>**Rifampicin**</td><td>Poor (10–20%)</td><td>**High dose (10mg/kg) compensates**; protein binding</td></tr><tr><td>**Streptomycin**</td><td>Poor</td><td>Avoid (otalgia, no CSF penetration)</td></tr><tr><td>**Fluoroquinolones (Mfx/Lfx)**</td><td>Good (50–70%)</td><td>MDR-TBM regimens</td></tr><tr><td>**Bedaquiline**</td><td>Poor</td><td>Not for TBM</td></tr><tr><td>**Linezolid**</td><td>Good (>80%)</td><td>MDR-TBM if needed</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">HIV Co-infection</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Management</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**ART timing**</td><td>**Delay 8–12 weeks** after starting TB Rx (IRIS risk high in TBM)</td></tr><tr><td>**Dexamethasone**</td><td>Still indicated; monitor closely</td></tr><tr><td>**Rifampicin + ART**</td><td>Dolutegravir 50mg **BD** (double dose); EFV 600mg OK; avoid PIs</td></tr><tr><td>**IRIS**</td><td>Paradoxical worsening 2–12w post-ART; **prednisolone 1.5mg/kg taper** if moderate-severe</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Complications & Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Hydrocephalus**</td><td>**VP shunt** if symptomatic (GCS declining, papilloedema, imaging progression); EVD temporising</td></tr><tr><td>**Vasculitis / Stroke**</td><td>Aspirin 75–150mg/day (some evidence); anticoagulation controversial; continue anti-TB + dex</td></tr><tr><td>**Raised ICP**</td><td>Head elevation, mannitol/hypertonic saline, hyperventilation (temp), dexamethasone</td></tr><tr><td>**SIADH / Hyponatraemia**</td><td>Fluid restriction, hypertonic saline if symptomatic; **check cortisol (adrenal TB)**</td></tr><tr><td>**Cranial nerve palsies**</td><td>Usually improve with treatment; III/VI most common</td></tr><tr><td>**Tuberculomas**</td><td>Same anti-TB regimen; surgery if mass effect/refractory</td></tr><tr><td>**Drug-induced hepatotoxicity**</td><td>LFTs baseline, 2w, monthly; hold/reintroduce per guidelines</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Red Flags / Emergencies</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>GCS declining</b> → hydrocephalus, stroke, raised ICP → urgent imaging, VP shunt/EVD</li><li><b>Focal deficit / seizure</b> → stroke (vasculitis) → aspirin, continue dex, imaging</li><li><b>Severe hyponatraemia (Na⁺&lt;120)</b> → hypertonic saline, fluid restriction, check cortisol</li><li><b>Drug-induced liver injury (ALT&gt;5×ULN or &gt;3×ULN+symptoms)</b> → hold hepatotoxic drugs</li><li><b>Adrenal insufficiency</b> (TB adrenalitis) → hydrocortisone replacement + fludrocortisone</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>-------------------------</td></tr><tr><td>**Bacterial meningitis**</td><td>Acute (hours–days), neutrophilic CSF, very low glucose, Gram stain +ve</td></tr><tr><td>**Viral meningitis**</td><td>Acute, normal glucose, self-limiting, no cranial nerves/hydrocephalus</td></tr><tr><td>**Fungal (Cryptococcal)**</td><td>Immunocompromised, ↑↑ opening pressure, India ink/CrAg +ve</td></tr><tr><td>**Carcinomatous meningitis**</td><td>Malignancy known; CSF malignant cells, low glucose, high protein</td></tr><tr><td>**Sarcoid / Behçet / autoimmune**</td><td>Systemic features; CSF lymphocytic, low glucose possible; no AFB/GeneXpert</td></tr><tr><td>**Partially treated bacterial**</td><td>History of antibiotics; mixed CSF picture</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Situation</th><th>Adjustment</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Pregnancy**</td><td>Standard 2HRZE/10HR safe; **avoid streptomycin, fluoroquinolones, bedaquiline**; pyridoxine mandatory; dexamethasone OK</td></tr><tr><td>**Renal impairment**</td><td>H, R, Z dose adjust; **E contraindicated if CrCl<30**; moxifloxacin/levofloxacin OK</td></tr><tr><td>**Hepatic impairment**</td><td>Avoid Z if severe; monitor LFTs weekly; R/H/E caution</td></tr><tr><td>**MDR-TBM**</td><td>Expert consultation; **fluoroquinolone + linezolid + clofazimine + cycloserine + bedaquiline (poor CNS) + high-dose INH**; duration 18–24m</td></tr><tr><td>**Children**</td><td>Weight-based dosing; dexamethasone 0.6mg/kg/day; VP shunt threshold lower; monitor growth, development</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>TBM = subacute (1–4w), basilar exudates, cranial nerves III/VI/VII, hydrocephalus, vasculitis → stroke</b></li><li><b>CSF: lymphocytic, very low glucose (&lt;2.2 mmol/L, ratio &lt;0.5), high protein (&gt;200), high pressure</b></li><li><b>GeneXpert on CSF: sensitivity 50–80%, specificity &gt;98%, detects RIF resistance in 2h</b></li><li><b>Treatment: 12 months (2HRZE/10HR) — NOT 6 months</b></li><li><b>Dexamethasone 0.3–0.4mg/kg/day ×4–6w taper: MORTALITY BENEFIT — start WITH/BEFORE anti-TB</b></li><li><b>Ethambutol essential in intensive phase (good CSF penetration); pyridoxine mandatory</b></li><li><b>HIV: delay ART 8–12w (IRIS risk high); DTG 50mg BD with rifampicin</b></li><li><b>Hydrocephalus = VP shunt if symptomatic; stroke = aspirin consideration</b></li><li><b>MDR-TBM: prolonged regimen (18–24m), fluoroquinolone + linezolid + clofazimine + cycloserine</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the duration of treatment for tuberculous meningitis?</b> 12 months (2 months HRZE + 10 months HR).</li><li><b>What is the role of dexamethasone in TBM?</b> Reduces mortality by ~30%; 0.3–0.4mg/kg/day ×4–6w taper; start with/ before anti-TB.</li><li><b>What is the CSF profile in TBM?</b> Lymphocytic pleocytosis (50–500), very low glucose (&lt;2.2 mmol/L, ratio &lt;0.5), high protein (&gt;100, often &gt;200), high opening pressure.</li><li><b>What is the sensitivity of GeneXpert on CSF for TBM?</b> 50–80% (moderate); specificity &gt;98%.</li><li><b>When do you start ART in HIV/TBM co-infection?</b> Delay 8–12 weeks after starting TB treatment (high IRIS risk).</li><li><b>Which anti-TB drugs have good CSF penetration?</b> INH, PZA, EMB, fluoroquinolones, linezolid. Rifampicin has poor penetration (compensated by high dose).</li><li><b>How do you manage hydrocephalus in TBM?</b> VP shunt if symptomatic (declining GCS, papilloedema, progressive imaging).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>TBM duration = 6 months like pulmonary TB</td><td>**12 months** (2HRZE/10HR) — continuation phase 10 months</td></tr><tr><td>Dexamethasone optional in TBM</td><td>**Strong mortality benefit** — standard of care</td></tr><tr><td>GeneXpert negative = rule out TBM</td><td>**Sensitivity only 50–80%** — clinical suspicion + culture if -ve</td></tr><tr><td>Rifampicin penetrates CSF well</td><td>**Poor (10–20%)** — high dose 10mg/kg compensates</td></tr><tr><td>Streptomycin for TBM</td><td>**No CSF penetration + ototoxicity** — contraindicated</td></tr><tr><td>ART timing same as pulmonary TB/HIV</td><td>**TBM: delay 8–12w** (pulmonary: CD4<50 → 2w)</td></tr><tr><td>VP shunt never needed</td><td>**Symptomatic hydrocephalus → VP shunt** (EVD temporising)</td></tr><tr><td>Aspirin contraindicated in TBM stroke</td><td>**Aspirin 75–150mg/day may reduce infarcts** (some evidence)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>TBM CSF</b>: <b>L</b>ymphocytes, <b>O</b>ver 200 protein, <b>W</b>ater (glucose) low, <b>P</b>ressure high = <b>LOW P</b></li><li><b>TBM RX</b>: <b>12 MONTHS</b> = <b>2 HRZE / 10 HR</b> (not 6 months)</li><li><b>DEX TBM</b>: <b>0.3–0.4mg/kg/day IV ×4–6w taper</b> — <b>START WITH ANTI-TB</b></li><li><b>TBM COMPLICATIONS</b>: <b>H</b>ydrocephalus (VP shunt), <b>S</b>troke (vasculitis, aspirin), <b>C</b>ranial nerves (III, VI, VII), <b>S</b>IADH, <b>I</b>CPs raised</li><li><b>HIV TBM ART</b>: <b>DELAY 8–12 WEEKS</b> (IRIS risk)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Tuberculous Meningitis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Pathogenesis</div>
+<div class="mm-node mm-l3">– Haematogenous spread</div>
+<div class="mm-node mm-l3">– Rich focus rupture</div>
+<div class="mm-node mm-l3">– Basilar exudate</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Subacute 1-4w</div>
+<div class="mm-node mm-l3">– Headache, fever, AMS</div>
+<div class="mm-node mm-l3">– Cranial nerves (III, VI, VII)</div>
+<div class="mm-node mm-l3">– Hydrocephalus</div>
+<div class="mm-node mm-l3">– Stroke (vasculitis)</div>
+<div class="mm-node mm-l2">CSF</div>
+<div class="mm-node mm-l3">– Lymphocytes 50-500</div>
+<div class="mm-node mm-deep">– *...continued (truncated to 200 lines for renderer)*</div>
+</div>
+</div>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Tuberculous Meningitis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

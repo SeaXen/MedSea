@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>5.1-5.8 Syndromic Management — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">5.1-5.8 Syndromic Management</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>WHO Syndromic Management</b> algorithms for all major STI syndromes</li><li>[ ] Manage <b>Urethral Discharge Syndrome</b> (Male &amp; Female differentials)</li><li>[ ] Manage <b>Vaginal Discharge Syndrome</b> (BV, Candida, Trichomonas, GC/CT)</li><li>[ ] Manage <b>Genital Ulcer Disease (GUD)</b> (Syphilis, HSV, Chancroid, LGV, Donovanosis)</li><li>[ ] Manage <b>Pelvic Inflammatory Disease (PID)</b> (Diagnosis, Treatment, Complications)</li><li>[ ] Manage <b>Epididymo-orchitis</b> (GC/CT, Enteric, TB, Mumps)</li><li>[ ] Manage <b>Anorectal STIs / Proctitis</b> (GC/CT, LGV, HSV, Syphilis, Mpox, Shigella)</li><li>[ ] Manage <b>Oropharyngeal STIs</b> (GC/CT, HSV, Syphilis, HPV, Mpox)</li><li>[ ] Manage <b>Neonatal STIs</b> (Ophthalmia Neonatorum, Pneumonia, Congenital Syphilis)</li><li>[ ] Apply <b>Partner Notification, Test of Cure, Follow-Up</b> protocols</li><li>[ ] Answer viva: "Urethral Discharge Algorithm" and "PID Diagnosis" and "GUD Differential" and "Neonatal Ophthalmia"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Syndromic Management Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Syndromic Management</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Patient Presents with Syndrome</div>
+<div class="fc-node" data-id="H">Syndromes</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Clinical Assessment</div>
+<div class="fc-node" data-id="D">Empiric Treatment Covers Most Likely Pathogens</div>
+<div class="fc-node" data-id="H1">Urethral Discharge (M/F)</div>
+<div class="fc-node" data-id="H2">Vaginal Discharge</div>
+<div class="fc-node" data-id="H3">Genital Ulcer Disease (GUD)</div>
+<div class="fc-node" data-id="H4">Pelvic Inflammatory Disease (PID)</div>
+<div class="fc-node" data-id="H5">Epididymo-orchitis</div>
+<div class="fc-node" data-id="H6">Anorectal STIs/Proctitis</div>
+<div class="fc-node" data-id="H7">Oropharyngeal STIs</div>
+<div class="fc-node" data-id="H8">Neonatal STIs</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C1">History (Sexual, Symptoms, Partners)</div>
+<div class="fc-node" data-id="C2">Examination (Genital, Inguinal, Systemic)</div>
+<div class="fc-node" data-id="C3">Point-of-Care Tests (NAAT, Microscopy, Serology)</div>
+<div class="fc-node" data-id="E">Partner Notification &amp; Treatment</div>
+<div class="fc-node" data-id="F">Follow-Up &amp; Test of Cure</div>
+<div class="fc-node" data-id="G">Prevention Counselling (Condoms, Vaccination, PrEP)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5.1 Urethral Discharge Syndrome (Male)</div>
+<div class="sub-h">Clinical Assessment</div>
+<table class="ctable"><tr><th>Component</th><th>Key Elements</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**History**</td><td>Dysuria, Urethral Discharge (Purulent/Mucopurulent), Urinary Frequency, Sexual History (New/Multiple Partners, Condom Use, MSM), Previous STIs</td></tr><tr><td>**Examination**</td><td>**Urethral Discharge** (Milk Urethra if Not Spontaneous), Meatal Erythema/Edema, Inguinal Lymphadenopathy, Testicular/Scrotal Exam (Epididymitis), Rectal/Pharyngeal Exam if MSM</td></tr></table>
+<div class="sub-h">Differential Diagnosis</div>
+<table class="ctable"><tr><th>Pathogen</th><th>Clinical Clues</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Neisseria gonorrhoeae**</td><td>**Profuse Purulent Discharge**, Acute Onset (<5 Days), Gram-Neg Intracellular Diplococci on Smear</td></tr><tr><td>**Chlamydia trachomatis**</td><td>**Mucopurulent/Mucoid Discharge**, Subacute (1-3 Weeks), Often Asymptomatic</td></tr><tr><td>**Mycoplasma genitalium**</td><td>**Mucopurulent Discharge**, Persistent/Recurrent NGU, Macrolide Resistance</td></tr><tr><td>**Trichomonas vaginalis**</td><td>**Mild Dysuria**, Scanty Discharge, Motile Flagellates on Microscopy</td></tr><tr><td>**Ureaplasma/Mycoplasma spp.**</td><td>Controversial Pathogenicity, Often Asymptomatic</td></tr><tr><td>**Non-Infectious**</td><td>Chemical Urethritis, Trauma, Foreign Body, Behçet's, Reactive Arthritis</td></tr></table>
+<div class="sub-h">WHO Syndromic Algorithm — Male Urethral Discharge</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Male with Urethral Discharge</div>
+<div class="fc-node" data-id="H">H</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Microscopy (Urethral Smear) — Gram Stain</div>
+<div class="fc-node" data-id="I">Test of Cure: GC 2w, CT 4w, MG 4w</div>
+<div class="fc-node" data-id="J">Counselling: Condoms, HIV/STI Screen, Vaccination</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Gram-Neg Intracellular Diplococci?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Treat for GC + CT&lt;br/&gt;Ceftriaxone 500mg IM + Doxycycline 100mg BD × 7d</div>
+<div class="fc-node" data-id="E">NAAT for GC/CT (If Available)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">NAAT Result</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Consider MG/TV/UU&lt;br/&gt;Doxycycline 100mg BD × 7d&lt;br/&gt;(+/- Metronidazole 2g if TV Suspected)</div>
+</div>
+</div>
+<div class="sub-h">Treatment Regimens (Empiric)</div>
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Gram-Neg Diplococci +ve (Presumptive GC)**</td><td>**Ceftriaxone 500mg IM Stat + Doxycycline 100mg BD × 7 Days**</td></tr><tr><td>**NAAT GC/CT +ve**</td><td>**Ceftriaxone 500mg IM Stat + Doxycycline 100mg BD × 7 Days**</td></tr><tr><td>**NGU (GC/CT Negative)**</td><td>**Doxycycline 100mg BD × 7 Days** (Covers CT, MG, UU)</td></tr><tr><td>**Persistent/Recurrent NGU**</td><td>**Test for MG (NAAT) → If +ve: Moxifloxacin 400mg OD × 7-14d**; **Add Metronidazole 2g Stat if TV Suspected**</td></tr><tr><td>**MSM**</td><td>**3-Site Testing (Urethral, Pharyngeal, Rectal)**; **Treat All Positive Sites**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5.2 Vaginal Discharge Syndrome (Female)</div>
+<div class="sub-h">Clinical Assessment</div>
+<table class="ctable"><tr><th>Component</th><th>Key Elements</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**History**</td><td>Vaginal Discharge (Colour, Consistency, Odour), Vulval Pruritus/Burning, Dysuria, Dyspareunia, Intermenstrual/Post-Coital Bleeding, Contraception, Sexual History, Pregnancy Status</td></tr><tr><td>**Examination**</td><td>**Vulval Inspection** (Erythema, Oedema, Lesions), **Speculum Exam** (Cervix: Ectopy, Friability, Discharge, Strawberry Cervix), **Bimanual Exam** (Adnexal Tenderness, Cervical Motion Tenderness — PID Screen)</td></tr><tr><td>**POC Tests**</td><td>**pH Paper**, **Whiff Test (KOH)**, **Wet Mount (Saline/KOH)**, **NAAT (GC/CT/TV/MG)**, **Rapid Syphilis/HIV**</td></tr></table>
+<div class="sub-h">Differential Diagnosis</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Key Features</th><th>pH</th><th>Microscopy</th><th>Treatment</th></tr><tr><td>----------</td><td>--------------</td><td>-----</td><td>------------</td><td>-----------</td></tr><tr><td>**Bacterial Vaginosis (BV)**</td><td>Thin Grey-White Homogeneous Discharge, **Fishy Odour (Amine)**, No/Vague Inflammation</td><td>**>4.5**</td><td>**Clue Cells**, Few WBCs</td><td>**Metronidazole 400mg BD × 7d** / Tinidazole 2g Stat</td></tr><tr><td>**Vulvovaginal Candidiasis (VVC)**</td><td>**Thick White "Cottage Cheese"**, **Pruritus**, Vulvar Erythema/Oedema, Satellite Lesions</td><td>**<4.5**</td><td>**KOH: Hyphae/Pseudohyphae/Buds**</td><td>**Fluconazole 150mg Stat** / Topical Azole</td></tr><tr><td>**Trichomoniasis**</td><td>**Frothy Yellow-Green**, **Strawberry Cervix**, Vulval Erythema, Pruritus</td><td>**>4.5**</td><td>**Wet Mount: Motile Trichomonads (Pear-Shaped)**</td><td>**Metronidazole 2g Stat** / Tinidazole 2g Stat</td></tr><tr><td>**Gonorrhoea/Chlamydia**</td><td>Mucopurulent Cervicitis, Ectopy, Friability, ICB/IM Bleeding</td><td>**Normal/↑**</td><td>**NAAT GC/CT**</td><td>**Ceftriaxone 500mg IM + Doxycycline 100mg BD × 7d**</td></tr><tr><td>**Mixed/Co-infection**</td><td>Features of Multiple</td><td>Variable</td><td>Multiple Positive</td><td>Treat All Identified</td></tr></table>
+<div class="sub-h">WHO Syndromic Algorithm — Female Vaginal Discharge</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Female with Vaginal Discharge</div>
+<div class="fc-node" data-id="I">I</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Speculum Exam + pH + Whiff + Wet Mount (Saline/KOH)</div>
+<div class="fc-node" data-id="J">Follow-Up / Test of Cure (GC 2w, CT 4w, TV 4w)</div>
+<div class="fc-node" data-id="K">Counselling: Condoms, Contraception, HPV Vaccine, HIV Screen</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Microscopy Result</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Treat for BV&lt;br/&gt;Metronidazole 400mg BD × 7d / Tinidazole 2g</div>
+<div class="fc-node" data-id="E">Treat for Candida&lt;br/&gt;Fluconazole 150mg Stat / Topical Azole</div>
+<div class="fc-node" data-id="F">Treat for Trichomonas&lt;br/&gt;Metronidazole 2g Stat / Tinidazole 2g</div>
+<div class="fc-node" data-id="G">NAAT GC/CT&lt;br/&gt;If +ve: Ceftriaxone 500mg IM + Doxy 100mg BD × 7d</div>
+<div class="fc-node" data-id="H">Treat Empirically for Most Likely&lt;br/&gt;(BV + Candida Common) OR Refer</div>
+</div>
+</div>
+<div class="sub-h">Treatment Summary (Vaginal Discharge)</div>
+<table class="ctable"><tr><th>Syndrome</th><th>1st Line</th><th>Alternative</th><th>Pregnancy</th></tr><tr><td>----------</td><td>----------</td><td>-------------</td><td>-----------</td></tr><tr><td>**BV**</td><td>**Metronidazole 400mg BD × 7d**</td><td>**Tinidazole 2g Stat** / **Metronidazole 0.75% Gel × 5d**</td><td>**Metronidazole 400mg BD × 7d** (Safe)</td></tr><tr><td>**Candida (Uncomplicated)**</td><td>**Fluconazole 150mg Stat**</td><td>**Clotrimazole 500mg Pessary × 1d / Miconazole 200mg × 3-7d**</td><td>**Topical Azole Only** (Clotrimazole 500mg × 7d)</td></tr><tr><td>**Trichomonas**</td><td>**Metronidazole 2g Stat**</td><td>**Tinidazole 2g Stat**</td><td>**Metronidazole 2g Stat** (Safe)</td></tr><tr><td>**GC/CT Cervicitis**</td><td>**Ceftriaxone 500mg IM + Doxy 100mg BD × 7d**</td><td>**Azithromycin 1g Stat (If Doxy Contraindicated)**</td><td>**Ceftriaxone 500mg IM + Azithromycin 1g Stat**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5.3 Genital Ulcer Disease (GUD) Syndrome</div>
+<div class="sub-h">Clinical Assessment</div>
+<table class="ctable"><tr><th>Component</th><th>Key Elements</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**History**</td><td>Ulcer Onset/Duration, Pain (Painless vs Painful), Number of Ulcers, Systemic Symptoms (Fever, Lymphadenopathy), Sexual History, HIV Status</td></tr><tr><td>**Examination**</td><td>**Ulcer(s): Number, Size, Edge (Indurated/Undermined), Base (Clean/Purulent), Pain (Palpation), Induration**, **Lymphadenopathy (Regional: Inguinal/Femoral, Characteristics: Tender/Non-Tender, Suppurative/Non-Suppurative, Matted)**, **Other Sites (Oral, Anal, Perianal)**</td></tr><tr><td>**POC Tests**</td><td>**RPR/VDRL + TPPA (Syphilis)**, **HSV PCR (Lesion Swab)**, **H. ducreyi PCR (Chancroid)**, **LGV PCR (C. trachomatis L1-3)**, **Dark Field Microscopy (Syphilis)**</td></tr></table>
+<div class="sub-h">Differential Diagnosis</div>
+<table class="ctable"><tr><th>Pathogen</th><th>Ulcer Characteristics</th><th>Lymphadenopathy</th><th>Key Features</th></tr><tr><td>----------</td><td>----------------------</td><td>-----------------</td><td>--------------</td></tr><tr><td>**Treponema pallidum (Syphilis)**</td><td>**Single, Painless, Clean Base, Indurated, Sharply Demarcated**</td><td>**Non-Tender, Rubbery, Bilateral/Regional**</td><td>**Chancre (Primary)**, Serology (RPR/VDRL + TPPA)</td></tr><tr><td>**Herpes Simplex (HSV-1/2)**</td><td>**Multiple, Painful, Vesicles → Shallow Ulcers, Irregular Edges**</td><td>**Tender, Bilateral**</td><td>**Vesicles → Ulcers**, Recurrent, PCR +ve</td></tr><tr><td>**Haemophilus ducreyi (Chancroid)**</td><td>**Painful, Soft, Undermined Edges, Ragged, Purulent Base, Bleeds Easily**</td><td>**Suppurative Buboes (Unilateral, Fluctuant, Tender, Mire)**</td><td>**Multiple Ulcers**, **H. ducreyi PCR**</td></tr><tr><td>**LGV (C. trachomatis L1-3)**</td><td>**Painless (Primary) → Proctitis/Buboes (Secondary)**</td><td>**Suppurative Buboes (Groin/Femoral)**, Fistulae</td><td>**MSM, Proctocolitis**, **LGV PCR (L1-3)**</td></tr><tr><td>**Donovanosis (Klebsiella granulomatis)**</td><td>**Progressive, Painless, Beefy Red, Granulomatous, Bleeds on Touch**</td><td>**Inguinal Lymphadenopathy (Rare)**</td><td>**Endemic Areas**, **K. granulomatis PCR**</td></tr></table>
+<div class="sub-h">WHO Syndromic Algorithm — GUD</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Patient with Genital Ulcer</div>
+<div class="fc-node" data-id="L">L</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Clinical Assessment: Pain, Number, Edges, Base, Lymphadenopathy</div>
+<div class="fc-node" data-id="M">Partner Notification + HIV Test</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Ulcer Painless, Indurated, Clean Base + Non-Tender Lymphadenopathy?</div>
+<div class="fc-node" data-id="N">Follow-Up: Syphilis RPR 3/6/12m; HSV Suppressive if ≥6/yr</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Syphilis Likely&lt;br/&gt;RPR/VDRL + TPPA&lt;br/&gt;Benzathine Penicillin G 2.4MU IM Single Dose</div>
+<div class="fc-node" data-id="E">Ulcer Painful, Vesicles → Ulcers, Tender Lymphadenopathy?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">HSV Likely&lt;br/&gt;HSV PCR (Lesion Swab)&lt;br/&gt;Acyclovir 400mg TDS × 7-10d</div>
+<div class="fc-node" data-id="G">Ulcer Painful, Soft, Undermined Edges, Purulent + Suppurative Buboes?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Chancroid Likely&lt;br/&gt;H. ducreyi PCR&lt;br/&gt;Azithromycin 1g Stat / Ceftriaxone 250mg IM</div>
+<div class="fc-node" data-id="I">LGV Suspected (MSM, Proctitis, Buboes)?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">LGV PCR (L1-3)&lt;br/&gt;Doxycycline 100mg BD × 21d</div>
+<div class="fc-node" data-id="K">Consider Donovanosis/Other&lt;br/&gt;Refer/Specialist</div>
+</div>
+</div>
+<div class="sub-h">Treatment Summary (GUD)</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Treatment</th><th>Notes</th></tr><tr><td>----------</td><td>-----------</td><td>-------</td></tr><tr><td>**Syphilis (Primary/Secondary/Early Latent)**</td><td>**Benzathine Penicillin G 2.4MU IM Single Dose**</td><td>**Late Latent/Tertiary: ×3 Weekly Doses**</td></tr><tr><td>**HSV (Primary/Recurrent)**</td><td>**Acyclovir 400mg TDS × 7-10d (Primary) / ×5d (Recurrent)**</td><td>**Suppressive if ≥6/yr: Valacyclovir 500mg OD**</td></tr><tr><td>**Chancroid**</td><td>**Azithromycin 1g Stat** / **Ceftriaxone 250mg IM**</td><td>**Bubo Needle Aspiration**</td></tr><tr><td>**LGV**</td><td>**Doxycycline 100mg BD × 21 Days**</td><td>**Erythromycin if Pregnant**</td></tr><tr><td>**Donovanosis**</td><td>**Azithromycin 1g Weekly × 3-4 Weeks** / **Doxycycline 100mg BD × 3 Weeks**</td><td>**Endemic Areas**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5.4 Pelvic Inflammatory Disease (PID) Syndrome</div>
+<div class="sub-h">Diagnostic Criteria (CDC/WHO)</div>
+<table class="ctable"><tr><th>Criteria</th><th>Minimum Required</th></tr><tr><td>----------</td><td>------------------</td></tr><tr><td>**Major**</td><td>**Lower Abdominal Tenderness**, **Adnexal Tenderness**, **Cervical Motion Tenderness** (All 3 = High Specificity)</td></tr><tr><td>**Minor/Supportive**</td><td>Fever >38.3°C, Abnormal Vaginal/Cervical Discharge, **Leukocytosis**, **Elevated CRP/ESR**, **Microscopy: WBCs on Wet Mount**, **Positive NAAT GC/CT**, **Fever**, **Temperature >38°C**</td></tr></table>
+<div class="callout"><b>Diagnosis</b>: <b>Empiric Treatment</b> if <b>All Major Criteria Present</b> + <b>No Alternative Diagnosis</b>; <b>Low Threshold</b> in Young Sexually Active Women</div>
+<div class="sub-h">Clinical Assessment</div>
+<table class="ctable"><tr><th>Component</th><th>Key Elements</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**History**</td><td>Lower Abdominal Pain (Bilateral), Abnormal Vaginal Discharge, Fever, Dyspareunia, Abnormal Bleeding, Recent Sexual Exposure, IUD Insertion, Previous PID/STI</td></tr><tr><td>**Examination**</td><td>**Cervical Motion Tenderness**, **Adnexal Tenderness**, **Uterine Tenderness**, **Cervicitis** (Mucopurulent Discharge, Ectopy, Friability), **Adnexal Mass** (TOA), **Fever**, **Rebound Tenderness** (Peritonitis)</td></tr><tr><td>**Investigations**</td><td>**NAAT GC/CT (Urine/Swab)**, **RPR/VDRL**, **HSV/HIV**, **CBC, CRP, ESR**, **Urinalysis**, **Pregnancy Test (β-hCG)**, **Transvaginal US** (TOA, Hydrosalpinx, Free Fluid)</td></tr></table>
+<div class="sub-h">WHO Syndromic Algorithm — PID</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Woman with Lower Abdominal Pain</div>
+<div class="fc-node" data-id="K">K</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Pelvic Exam: CMT + Adnexal Tenderness + CMT?</div>
+<div class="fc-node" data-id="L">Test of Cure: GC 2w, CT 4w; Follow-Up 7d, 30d</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Empiric PID Treatment</div>
+<div class="fc-node" data-id="D">Additional Criteria: Fever, Discharge, Leukocytosis, CRP↑, GC/CT+</div>
+<div class="fc-node" data-id="M">Contraception Counselling, IUD Removal if Present, HIV/Syphilis Screen</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Empiric Treatment:&lt;br/&gt;Ceftriaxone 500mg IM Stat&lt;br/&gt;+ Doxycycline 100mg BD × 14d&lt;br/&gt;+ Metronidazole 400mg BD × 14d&lt;br/&gt;(+/- Azithromycin 1g if MG Suspected)</div>
+<div class="fc-node" data-id="E">≥1 Additional Criterion?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Severe / TOA / Pregnancy / Failed Outpatient?</div>
+<div class="fc-node" data-id="F">Consider Alternative (Appendicitis, Ectopic, Endometriosis, UTI, IBS)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Admit IV:&lt;br/&gt;Ceftriaxone 2g IV q24h&lt;br/&gt;+ Doxycycline 100mg IV/PO BD&lt;br/&gt;+ Metronidazole 500mg IV q8h&lt;br/&gt;(+/- Clindamycin if TOA)</div>
+<div class="fc-node" data-id="J">Outpatient + Follow-Up 72h</div>
+</div>
+</div>
+<div class="sub-h">Treatment Regimens</div>
+<table class="ctable"><tr><th>Setting</th><th>Regimen</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Outpatient (Mild-Moderate)**</td><td>**Ceftriaxone 500mg IM Stat + Doxycycline 100mg BD × 14d + Metronidazole 400mg BD × 14d**</td></tr><tr><td>**Inpatient (Severe/TOA/Pregnancy/Failed OP)**</td><td>**Ceftriaxone 2g IV q24h + Doxycycline 100mg IV/PO BD + Metronidazole 500mg IV q8h** (+ Clindamycin 900mg IV q8h if TOA Suspected)</td></tr><tr><td>**IUD In Situ**</td><td>**Remove IUD If Possible** (After 1-2 Days Antibiotics)</td></tr><tr><td>**TOA (Tubo-Ovarian Abscess)**</td><td>**IV Antibiotics (As Above) + Image-Guided Drainage** (If >5cm or Failed 48-72h Medical)</td></tr></table>
+<div class="sub-h">Complications &amp; Sequelae</div>
+<table class="ctable"><tr><th>Complication</th><th>Incidence</th><th>Impact</th></tr><tr><td>--------------</td><td>-----------</td><td>--------</td></tr><tr><td>**Infertility (Tubal Factor)**</td><td>**10-15% per Episode**</td><td>**Cumulative (3 Episodes → 50-75%)**</td></tr><tr><td>**Ectopic Pregnancy**</td><td>**6-10x Increased Risk**</td><td>**Life-Threatening**</td></tr><tr><td>**Chronic Pelvic Pain**</td><td>**18-30%**</td><td>**Quality of Life Impact**</td></tr><tr><td>**TOA**</td><td>**5-10%**</td><td>**Sepsis Risk, May Need Drainage/Surgery**</td></tr><tr><td>**Fitz-Hugh-Curtis Syndrome**</td><td>**4-14%**</td><td>**Perihepatitis, RUQ Pain, Violin String Adhesions**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5.5 Epididymo-orchitis Syndrome</div>
+<div class="sub-h">Clinical Assessment</div>
+<table class="ctable"><tr><th>Component</th><th>Key Elements</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**History**</td><td>Acute Scrotal Pain (Unilateral), Swelling, Dysuria, Urethral Discharge, Fever, Sexual History, Trauma, Mumps Exposure, TB Risk</td></tr><tr><td>**Examination**</td><td>**Tender, Swollen Epididymis/Testis**, **Erythema/Oedema Scrotum**, **Prehn's Sign** (Relief on Elevation), **Cremasteric Reflex Absent**, **Urethral Discharge**, **Inguinal Lymphadenopathy**</td></tr><tr><td>**Investigations**</td><td>**NAAT GC/CT (Urine/Urethral Swab)**, **Urine Culture**, **Scrotal Doppler US** (Rule Out Torsion), **RPR/VDRL**, **HIV**, **TB Screen (If Chronic/Atypical)**</td></tr></table>
+<div class="sub-h">Differential Diagnosis</div>
+<table class="ctable"><tr><th>Aetiology</th><th>Age Group</th><th>Key Features</th></tr><tr><td>-----------</td><td>-----------</td><td>--------------</td></tr><tr><td>**GC/CT (STI)**</td><td>**<35 Years**</td><td>Urethral Discharge, Acute Onset, Sexually Active</td></tr><tr><td>**Enteric Organisms (E. coli, Pseudomonas)**</td><td>**>35 Years / Urinary Abnormalities / Catheter**</td><td>No Urethral Discharge, Urinary Symptoms, Recurrent UTI</td></tr><tr><td>**Mumps**</td><td>**Post-Pubertal Males**</td><td>Parotitis Precedes Orchitis (4-8 Days), Bilateral (20-30%)</td></tr><tr><td>**TB**</td><td>**Endemic Areas / Immunocompromised**</td><td>Chronic, Painless, Constitutional Symptoms, Positive Mantoux/IGRA</td></tr><tr><td>**Behçet's**</td><td>**Young Adults**</td><td>Oral/Genital Ulcers, Uveitis, Pathergy</td></tr><tr><td>**Torsion (Surgical Emergency)**</td><td>**Adolescents**</td><td>**Sudden Severe Pain**, **High-Riding Testis**, **Absent Cremasteric Reflex**, **Urgent US**</td></tr></table>
+<div class="sub-h">Treatment</div>
+<table class="ctable"><tr><th>Aetiology</th><th>Regimen</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**GC/CT (STI)**</td><td>**Ceftriaxone 500mg IM Stat + Doxycycline 100mg BD × 10-14 Days**</td></tr><tr><td>**Enteric (E. coli, Pseudomonas)**</td><td>**Ciprofloxacin 500mg BD × 10-14d** / **Ofloxacin 200mg BD × 10-14d**</td></tr><tr><td>**Mumps**</td><td>**Supportive** (Analgesia, Scrotal Support, Ice Packs)</td></tr><tr><td>**TB**</td><td>**Standard Anti-TB Regimen (6 Months)**</td></tr><tr><td>**Supportive (All)**</td><td>**Scrotal Elevation, Ice Packs (Intermittent), NSAIDs/Opioids, Scrotal Support**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5.6 Anorectal STIs / Proctitis Syndrome</div>
+<div class="sub-h">Clinical Assessment</div>
+<table class="ctable"><tr><th>Component</th><th>Key Elements</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**History**</td><td>Anal/Rectal Pain, Discharge, Bleeding, Tenesmus, Diarrhoea/Constipation, Sexual History (MSM, Receptive Anal), HIV Status</td></tr><tr><td>**Examination**</td><td>**Perianal Inspection** (Lesions, Warts, Ulcers, Fissures, Tags), **Digital Rectal Exam** (Tenderness, Mass, Blood), **Anoscopy/Proctoscopy** (Mucosal Erythema, Ulcers, Discharge, Ulcers, Masses)</td></tr><tr><td>**Investigations**</td><td>**NAAT GC/CT/LGV/HSV (Rectal Swab)**, **RPR/VDRL**, **HIV**, **Shigella Culture/PCR**, **Mpox PCR**</td></tr></table>
+<div class="sub-h">Differential Diagnosis (MSM Focus)</div>
+<table class="ctable"><tr><th>Pathogen</th><th>Clinical Features</th></tr><tr><td>----------</td><td>-------------------</td></tr><tr><td>**GC/CT**</td><td>Mucopurulent Discharge, Mild Proctitis</td></tr><tr><td>**LGV (C. trachomatis L1-3)**</td><td>**Proctocolitis (Rectal Pain, Bloody Mucus, Tenesmus, Constipation), Suppurative Inguinal Buboes**</td></tr><tr><td>**HSV**</td><td>**Vesicles → Ulcers**, Painful, Recurrent</td></tr><tr><td>**Syphilis**</td><td>**Painless Ulcer (Primary), Mucous Patches (Secondary)**</td></tr><tr><td>**Mpox**</td><td>**Genital/Perianal Lesions, Proctitis, Lymphadenopathy**</td></tr><tr><td>**Shigella**</td><td>**Dysentery (Bloody Diarrhoea, Fever, Tenesmus)**</td></tr></table>
+<div class="sub-h">WHO Syndromic Algorithm — Proctitis (MSM)</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">MSM with Proctitis</div>
+<div class="fc-node" data-id="M">M</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Anoscopy + Rectal Swabs</div>
+<div class="fc-node" data-id="N">Follow-Up: LGV 4-6w, GC/CT 2w/4w, HSV Suppressive if ≥6/yr</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">NAAT: GC/CT/LGV/HSV + RPR/VDRL + HIV</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">LGV PCR +ve?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Treat LGV: Doxycycline 100mg BD × 21d</div>
+<div class="fc-node" data-id="F">GC/CT +ve?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Treat GC/CT: Ceftriaxone 500mg IM + Doxy 100mg BD × 7d</div>
+<div class="fc-node" data-id="H">HSV PCR +ve?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Treat HSV: Acyclovir 400mg TDS × 7-10d</div>
+<div class="fc-node" data-id="J">Shigella PCR/Culture +ve?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Treat Shigella: Ciprofloxacin 500mg BD × 5d / Azithromycin 500mg BD × 3d</div>
+<div class="fc-node" data-id="L">Consider Mpox, Syphilis, IBD, Other</div>
+</div>
+</div>
+<div class="sub-h">Treatment Summary (Proctitis)</div>
+<table class="ctable"><tr><th>Pathogen</th><th>Treatment</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**LGV**</td><td>**Doxycycline 100mg BD × 21 Days**</td></tr><tr><td>**GC/CT**</td><td>**Ceftriaxone 500mg IM Stat + Doxycycline 100mg BD × 7 Days**</td></tr><tr><td>**HSV**</td><td>**Acyclovir 400mg TDS × 7-10 Days** (Suppressive if Recurrent)</td></tr><tr><td>**Syphilis**</td><td>**Stage-Appropriate Penicillin**</td></tr><tr><td>**Mpox**</td><td>**Supportive / Tecovirimat if Severe**</td></tr><tr><td>**Shigella**</td><td>**Ciprofloxacin 500mg BD × 5d / Azithromycin 500mg BD × 3d**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5.7 Oropharyngeal STIs Syndrome</div>
+<div class="sub-h">Clinical Assessment</div>
+<table class="ctable"><tr><th>Component</th><th>Key Elements</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**History**</td><td>Sore Throat, Dysphagia, Odynophagia, Cervical Lymphadenopathy, Oral Lesions, Sexual History (Oral Sex, MSM), HIV Status</td></tr><tr><td>**Examination**</td><td>**Oropharyngeal Exam** (Tonsillar Exudate, Ulcers, Vesicles, Erythema, Lymphadenopathy), **Genital Exam** (Concurrent STI Screen)</td></tr><tr><td>**Investigations**</td><td>**NAAT GC/CT (Pharyngeal Swab)**, **HSV PCR (Lesion Swab)**, **RPR/VDRL**, **HIV**, **Mpox PCR (If Lesions)**</td></tr></table>
+<div class="sub-h">Differential &amp; Treatment</div>
+<table class="ctable"><tr><th>Pathogen</th><th>Features</th><th>Treatment</th></tr><tr><td>----------</td><td>----------</td><td>-----------</td></tr><tr><td>**GC (Pharyngeal Gonorrhoea)**</td><td>Often Asymptomatic; Sore Throat, Exudate</td><td>**Ceftriaxone 1g IM Stat + Azithromycin 1g Stat**; **TOC Mandatory at 2 Weeks**</td></tr><tr><td>**CT (Pharyngeal Chlamydia)**</td><td>Rare Symptomatic</td><td>**Doxycycline 100mg BD × 7 Days** / **Azithromycin 1g Stat**</td></tr><tr><td>**HSV**</td><td>Vesicles → Ulcers, Painful</td><td>**Acyclovir 400mg TDS × 7-10d**</td></tr><tr><td>**Syphilis**</td><td>Mucous Patches, Snail-Track Ulcers</td><td>**Stage-Appropriate Penicillin**</td></tr><tr><td>**Mpox**</td><td>Oral/Perioral Lesions</td><td>**Supportive / Tecovirimat if Severe**</td></tr><tr><td>**HPV**</td><td>Oral Warts (Rare), Oropharyngeal Cancer</td><td>**Surveillance / Vaccination**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Pharyngeal GC → Higher Ceftriaxone Dose (1g IM) + Mandatory TOC at 2 Weeks</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5.8 Neonatal STIs Syndrome</div>
+<div class="sub-h">Clinical Assessment</div>
+<table class="ctable"><tr><th>Component</th><th>Key Elements</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**History**</td><td>Maternal STI Status (Syphilis, GV, CT, HSV, HBV, HCV, HIV), Delivery Mode, Gestational Age, Birth Weight, Breastfeeding</td></tr><tr><td>**Examination**</td><td>**Conjunctiva** (Discharge, Redness, Swelling), **Skin** (Rash, Vesicles, Ulcers, Pustules), **Oral Mucosa** (White Patches, Ulcers), **Genitalia** (Discharge, Lesions), **Neurological** (Tone, Reflexes, Seizures), **Respiratory** (Distress, Pneumonia), **Growth Parameters**</td></tr></table>
+<div class="sub-h">Neonatal STI Syndromes</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Key Features</th><th>Aetiology</th><th>Urgent Action</th></tr><tr><td>----------</td><td>--------------</td><td>-----------</td><td>---------------</td></tr><tr><td>**Ophthalmia Neonatorum**</td><td>**Conjunctival Injection, Swelling, Discharge (Purulent/Mucopurulent)**</td><td>**GC (Day 2-5, Hyperacute)**, **CT (Day 5-14, Mucopurulent)**, **HSV (Day 7-14, Vesicles)**, **Chemical (Day 1, Mild)**</td><td>**Urgent Eye Swabs (GC/CT/HSV PCR, Gram Stain, Culture)** → **Empiric Ceftriaxone 50mg/kg IM/IV Single Dose** (Pending Results)</td></tr><tr><td>**Neonatal HSV**</td><td>**SEM (Skin/Eye/Mouth), CNS (Encephalitis), DIS (Disseminated)**</td><td>**HSV-1/2** (Vertical Transmission)</td><td>**IV Acyclovir 20mg/kg IV q8h** (14d SEM, 21d CNS/DIS + 6mo Oral Suppression)</td></tr><tr><td>**Neonatal Pneumonia (CT)**</td><td>**Staccato Cough, Tachypnoea, Hypoxaemia, 3-16 Weeks**</td><td>**Chlamydia trachomatis**</td><td>**Azithromycin 20mg/kg OD × 10-14 Days**</td></tr><tr><td>**Congenital Syphilis**</td><td>**Snuffles, Rash, Hepatosplenomegaly, Osteochondritis, Pseudoparalysis**</td><td>**Treponema pallidum**</td><td>**Penicillin G IV 50,000 U/kg q12h × 7d → q8h × 3d (10 Days Total)**</td></tr><tr><td>**Neonatal Gonorrhoea (Scalp Abscess)**</td><td>**Fluctuant Scalp Swelling (Fetal Scalp Electrode/Forceps)**</td><td>**Neisseria gonorrhoeae**</td><td>**I&D + Ceftriaxone 50mg/kg IM/IV × 7 Days**</td></tr></table>
+<div class="sub-h">Neonatal Ophthalmia — Empiric Algorithm</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Neonate with Conjunctivitis</div>
+<div class="fc-node" data-id="H">H</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Urgent Swabs: Gram Stain, GC/CT/HSV PCR, Culture</div>
+<div class="fc-node" data-id="I">Parental STI Screen + Partner Notification</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Early/Severe (Day 2-5, Hyperacute)?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Empiric Ceftriaxone 50mg/kg IM/IV Single Dose + Topical Erythromycin</div>
+<div class="fc-node" data-id="E">Mucopurulent (Day 5-14)?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Empiric Ceftriaxone 50mg/kg IM/IV Single Dose + Azithromycin 20mg/kg OD × 3d (If CT Suspected)</div>
+<div class="fc-node" data-id="G">Consider HSV (Vesicles), Chemical (Day 1), Other</div>
+</div>
+</div>
+<div class="sub-h">Partner Notification — Neonatal STIs</div>
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Neonatal GC/CT/HSV/Syphilis**</td><td>**Maternal + Partner(s) Screening & Treatment**</td></tr><tr><td>**Maternal STI Identified**</td><td>**Full STI Screen (HIV, Syphilis, HBV, HCV, GC, CT, HSV, Trichomonas)**</td></tr><tr><td>**Partner(s)**</td><td>**Treat as Per Maternal Infection**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Key Algorithm Points</th></tr><tr><td>----------</td><td>----------------------</td></tr><tr><td>**Urethral Discharge (M)**</td><td>**Gram-Neg Diplococci → GC+CT (Ceftriaxone 500mg IM + Doxy 7d)**; **NAAT GC/CT+ve → Same**; **GC/CT-ve → Doxy 7d (NGU)**</td></tr><tr><td>**Vaginal Discharge**</td><td>**BV: Clue Cells/Whiff+ → Metro/Tini**; **Candida: KOH Hyphae → Fluconazole/Topical**; **Trich: Motile Trichomonas → Metro/Tini 2g**; **Cervicitis: GC/CT NAAT → Ceftriaxone + Doxy**</td></tr><tr><td>**GUD**</td><td>**Painless+Indurated+Non-Tender LAD = Syphilis (BPC 2.4MU IM)**; **Painful+Vesicles = HSV (Acyclovir)**; **Painful+Undermined+Suppurative Buboes = Chancroid (Azi 1g/Ceftriaxone)**; **LGV: Doxy 21d**</td></tr><tr><td>**PID**</td><td>**CMT + Adnexal Tenderness + Uterine Tenderness = Empiric Tx** → **Ceftriaxone 500mg IM + Doxy 14d + Metro 14d**</td></tr><tr><td>**Epididymo-orchitis**</td><td>**<35y: GC/CT (Ceftriaxone + Doxy 10-14d)**; **>35y/Urinary Abnormalities: Enteric (Cipro/Ofloxacin 10-14d)**</td></tr><tr><td>**Proctitis (MSM)**</td><td>**LGV (Doxy 21d) > GC/CT (Ceftriaxone+Doxy) > HSV (Acyclovir) > Shigella (Cipro/Azi)**</td></tr><tr><td>**Neonatal Ophthalmia**</td><td>**Day 2-5 Hyperacute = GC (Ceftriaxone 50mg/kg IM)**; **Day 5-14 = CT (Azi 20mg/kg OD × 3d)**; **HSV = IV Aci 20mg/kg q8h**</td></tr><tr><td>**Partner Notification**</td><td>**All STI Syndromes: Treat Partners (Last 60d GC/CT/Trich, 3-12m Syphilis, 60d HSV/HPV)**</td></tr><tr><td>**Test of Cure**</td><td>**GC: 2 Weeks; CT/TV/MG: 4 Weeks; LGV: 4-6 Weeks; Syphilis: RPR 3/6/12m**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Male urethral discharge — WHO syndromic algorithm?</td><td>**Gram Stain → Gram-Neg Diplococci → Ceftriaxone 500mg IM + Doxy 7d**; **GC/CT NAAT+ve → Same**; **GC/CT-ve → Doxy 7d (NGU)**</td></tr><tr><td>2</td><td>Female vaginal discharge — syndromic approach?</td><td>**Speculum + pH + Whiff + Wet Mount**; **Clue Cells/Whiff+ = BV (Metro/Tini)**; **KOH Hyphae = Candida (Fluconazole/Topical)**; **Motile Trichomonads = Trich (Metro/Tini 2g)**; **Cervicitis = GC/CT NAAT → Ceftriaxone + Doxy**</td></tr><tr><td>3</td><td>Genital ulcer — differential diagnosis and management?</td><td>**Painless+Indurated+Non-Tender LAD = Syphilis (BPC Single Dose)**; **Painful+Vesicles = HSV (Acyclovir)**; **Painful+Undermined+Suppurative Buboes = Chancroid (Azi/Ceftriaxone)**; **LGV = Proctitis/Buboes (Doxy 21d)**</td></tr><tr><td>4</td><td>PID — diagnostic criteria and empirical treatment?</td><td>**CMT + Adnexal Tenderness + Uterine Tenderness = Empiric Tx**; **Ceftriaxone 500mg IM + Doxy 14d + Metro 14d**; **Severe/TOA/Preg = IV Ceftriaxone 2g + Doxy IV + Metro IV**</td></tr><tr><td>5. Epididymo-orchitis — aetiology by age and treatment?</td><td>**<35y: GC/CT → Ceftriaxone + Doxy 10-14d**; **>35y/Urinary Abnormalities: Enteric (Cipro/Ofloxacin 10-14d)**; **Mumps: Supportive; TB: Anti-TB**</td></tr><tr><td>6. Proctitis in MSM — syndromic algorithm?</td><td>**Anoscopy + Rectal Swabs (GC/CT/LGV/HSV/Shigella PCR + RPR + HIV)**; **LGV PCR+ → Doxy 21d**; **GC/CT+ → Ceftriaxone+Doxy**; **HSV+ → Acyclovir**; **Shigella → Cipro/Azi**</td></tr><tr><td>7. Neonatal ophthalmia — aetiology by age and treatment?</td><td>**Day 2-5 Hyperacute = GC (Ceftriaxone 50mg/kg IM)**; **Day 5-14 = CT (Azi 20mg/kg OD × 3d)**; **HSV = IV Aci 20mg/kg q8h × 14-21d**</td></tr><tr><td>8. Partner notification — lookback periods?</td><td>**GC/CT/Trich: 60 Days**; **Syphilis: 1° 3m, 2° 6m, Early Latent 1y, Late Latent Long-Term Partners**; **HSV/HPV: 60 Days**</td></tr><tr><td>9. Test of Cure intervals?</td><td>**GC: 2 Weeks; CT/TV/MG: 4 Weeks; LGV: 4-6 Weeks; Syphilis: RPR 3/6/12 Months**</td></tr><tr><td>10. Neonatal HSV — classification and IV acyclovir duration?</td><td>**SEM: 14 Days; CNS: 21 Days + 6 Months Oral Suppression; DIS: 21 Days**; **IV Acyclovir 20mg/kg q8h**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"All Urethral Discharge = GC"**</td><td>**NO.** **NGU (CT, MG, TV) Common**; **Gram Stain/NAAT Differentiates**</td></tr><tr><td>**"All Vaginal Discharge = Candida"**</td><td>**NO.** **BV Most Common; Trichomonas Common; Co-infections Frequent**</td></tr><tr><td>**"PID = Only STI"**</td><td>**NO.** **Endogenous Flora (Anaerobes, GBS) Also Cause**; **Empiric Covers Polymicrobial**</td></tr><tr><td>**"All GUD = Syphilis"**</td><td>**NO.** **HSV Most Common in Many Settings; Chancroid, LGV, Donovanosis Also**</td></tr><tr><td>**"Epididymitis = Always STI in Young Men"**</td><td>**NO.** **Enteric Organisms in Older Men/Urinary Abnormalities**</td></tr><tr><td>**"Proctitis = Only LGV in MSM"**</td><td>**NO.** **GC/CT Most Common; HSV, Syphilis, Shigella, Mpox Also**</td></tr><tr><td>**"Neonatal Ophthalmia = Only GC"**</td><td>**NO.** **CT (Day 5-14), HSV (Day 7-14), Chemical (Day 1)**</td></tr><tr><td>**"PID = Always Needs Admission"**</td><td>**NO.** **Mild-Moderate = Outpatient (Ceftriaxone IM + Doxy + Metro)**</td></tr><tr><td>**"All Scrotal Pain = Torsion"**</td><td>**NO.** **Epididymitis Common; Torsion = Surgical Emergency (Absent Cremasteric, High-Riding)**</td></tr><tr><td>**"All Neonatal Eye Discharge = GC"**</td><td>**NO.** **CT (Day 5-14), HSV (Day 7-14), Chemical (Day 1)**</td></tr></table>
+<div class="callout"><b>Mnemonic: SYNDROMIC MASTER ALGORITHMS</b> <b>S</b>yndromic: <b>Treat Syndrome Empirically (Cover Most Likely Pathogens), Confirm Later</b> <b>Y</b> (Why Syndromic?): <b>Resource-Limited, Rapid, Covers Co-Infections, Public Health Impact</b> <b>N</b>ext Step: <b>Partner Notification (Lookback: GC/CT/Trich 60d, Syphilis 3m-1y+, HSV/HPV 60d)</b> <b>D</b>ischarge Male: <b>Gram Stain → GC+CT (Ceftriaxone+Doxy); NAAT; NGU=Doxy</b> <b>R</b>eproductive Female: <b>BV (Clue/Whiff=Metro), Candida (KOH=Fluc), Trich (Motile=Metro), Cervicitis (GC/CT=Ceph+Doxy)</b> <b>O</b>rganism GUD: <b>Syphilis (Painless+Indurated=BPC), HSV (Painful+Vesicles=Aci), Chancroid (Painful+Bubo=Azi), LGV (Proctitis=Doxy21d)</b> <b>M</b>ID: <b>CMT+Adnexal+CMT = PID → Ceftriaxone+Doxy+Metro</b> <b>I</b>n Epididymitis: <b>&lt;35y=GC/CT (Ceph+Doxy); &gt;35y=Enteric (Cipro)</b> <b>C</b>ondition Proctitis MSM: <b>LGV (Doxy21d) &gt; GC/CT (Ceph+Doxy) &gt; HSV (Aci) &gt; Shigella (Cipro)</b> <b>N</b>eonatal Eye: <b>Day 2-5 GC (Ceph 50mg/kg); Day 5-14 CT (Azi); HSV (IV Aci)</b> <b>I</b>nfant HSV: <b>SEM 14d, CNS 21d+6mo Oral, DIS 21d</b> (IV Aci 20mg/kg q8h) <b>C</b>ondition PID: <b>CMT+Adnexal+CMT = Empiric Tx</b> <b>A</b>ll STIs: <b>Partner Notify (GC/CT/Trich 60d; Syphilis 3m-1y+; HSV/HPV 60d)</b> <b>T</b>est of Cure: <b>GC 2w, CT/TV/MG 4w, LGV 4-6w, Syphilis RPR 3/6/12m</b> <b>S</b>tage Syphilis: <b>1°=Chancre (BPC Single); 2°=Rash (BPC Single); Early Latent (BPC Single); Late Latent/Tertiary (BPC ×3w); Neuro (Pen G IV 10-14d); Congenital (Pen G IV 10d)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Syndromic Management))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Urethral Discharge (M)</div>
+<div class="mm-node mm-l3">– Gram Stain → GC+CT → Ceph+Doxy</div>
+<div class="mm-node mm-l3">– NAAT → GC/CT → Ceph+Doxy</div>
+<div class="mm-node mm-l3">– NGU → Doxy</div>
+<div class="mm-node mm-l2">Vaginal Discharge (F)</div>
+<div class="mm-node mm-l3">– BV: Clue/Whiff → Metro</div>
+<div class="mm-node mm-l3">– Candida: KOH Hyphae → Fluconazole</div>
+<div class="mm-node mm-l3">– Trich: Motile → Metro/Tini</div>
+<div class="mm-node mm-l3">– Cervicitis: GC/CT NAAT → Ceph+Doxy</div>
+<div class="mm-node mm-l2">Genital Ulcer Disease</div>
+<div class="mm-node mm-l3">– Syphilis: Painless/Indurated → BPC</div>
+<div class="mm-node mm-l3">– HSV: Painful/Vesicles → Aci</div>
+<div class="mm-node mm-l3">– Chancroid: Painful/Bubo → Azi</div>
+<div class="mm-node mm-l3">– LGV: Proctitis → Doxy 21d</div>
+<div class="mm-node mm-l2">PID</div>
+<div class="mm-node mm-l3">– CMT+Adnexal+CMT → Ceph+Doxy+Metro</div>
+<div class="mm-node mm-l3">– Severe: IV Ceph 2g + Doxy IV + Metro IV</div>
+<div class="mm-node mm-l2">Epididymitis</div>
+<div class="mm-node mm-l3">– &lt;35y: GC/CT → Ceph+Doxy</div>
+<div class="mm-node mm-l3">– &gt;35y: Enteric → Cipro</div>
+<div class="mm-node mm-l2">Proctitis (MSM)</div>
+<div class="mm-node mm-l3">– LGV: Doxy 21d</div>
+<div class="mm-node mm-l3">– GC/CT: Ceph+Doxy</div>
+<div class="mm-node mm-l3">– HSV: Aci</div>
+<div class="mm-node mm-l3">– Shigella: Cipro</div>
+<div class="mm-node mm-l2">Neonatal</div>
+<div class="mm-node mm-l3">– Eye: Day 2-5 GC (Ceph 50mg/kg); Day 5-14 CT (Azi); HSV (IV Aci)</div>
+<div class="mm-node mm-l3">– HSV: SEM 14d, CNS 21d+6mo Oral</div>
+<div class="mm-node mm-l3">– Congenital Syphilis: Pen G IV 10d</div>
+<div class="mm-node mm-l2">Partner Notification</div>
+<div class="mm-node mm-l3">– GC/CT/Trich: 60d</div>
+<div class="mm-node mm-l3">– Syphilis: 3m-1y+</div>
+<div class="mm-node mm-l3">– HSV/HPV: 60d</div>
+<div class="mm-node mm-l2">Test of Cure</div>
+<div class="mm-node mm-l3">– GC: 2w; CT/TV/MG: 4w; LGV: 4-6w; Syphilis: 3/6/12m</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Urethral Discharge (M)</td><td>3</td><td></td><td></td></tr><tr><td>Vaginal Discharge (F)</td><td>3</td><td></td><td></td></tr><tr><td>Genital Ulcer Disease</td><td>3</td><td></td><td></td></tr><tr><td>PID</td><td>3</td><td></td><td></td></tr><tr><td>Epididymo-orchitis</td><td>2</td><td></td><td></td></tr><tr><td>Proctitis (MSM)</td><td>2</td><td></td><td></td></tr><tr><td>Neonatal STIs</td><td>3</td><td></td><td></td></tr><tr><td>Partner Notification & TOC</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the WHO syndromic management of male urethral discharge, female vaginal discharge, and genital ulcer disease."</td><td>**Urethral (M): Gram Stain → GC+CT (Ceph+Doxy); NAAT; NGU=Doxy**; **Vaginal (F): BV (Clue/Whiff=Metro), Candida (KOH=Fluconazole), Trich (Motile=Metro), Cervicitis=GC/CT NAAT**; **GUD: Syphilis (Painless/Indurated=BPC), HSV (Painful/Vesicles=Aci), Chancroid (Painful+Bubo=Azi), LGV (Doxy21d)**</td></tr><tr><td>**Short Note**</td><td>"WHO syndromic management of PID."</td><td>**Diagnosis: CMT + Adnexal Tenderness + Uterine Tenderness = Empiric Tx**; **Outpatient: Ceftriaxone 500mg IM + Doxy 14d + Metro 14d**; **Inpatient: IV Ceftriaxone 2g + Doxy IV + Metro IV (+ Clindamycin if TOA)**</td></tr><tr><td>**Viva**</td><td>"Young man with urethral discharge. Gram stain shows intracellular Gram-negative diplococci. Management?"</td><td>**Presumptive GC → Ceftriaxone 500mg IM + Doxycycline 100mg BD × 7d**; **NAAT GC/CT + Culture**; **Partner Notification (60d)**; **TOC at 2 Weeks (NAAT)**</td></tr><tr><td>**Ward Round**</td><td>"25F with lower abdominal pain, cervical motion tenderness, adnexal tenderness, mucopurulent discharge. Management?"</td><td>**PID (Mild-Moderate) → Ceftriaxone 500mg IM + Doxy 100mg BD × 14d + Metronidazole 400mg BD × 14d**; **Partner Notification (60d)**; **TOC GC 2w, CT 4w**; **Remove IUD if Present**</td></tr><tr><td>**Last-Night**</td><td>"Urethral M: Gram Stain GC+CT → Ceph+Doxy; NGU=Doxy. Vaginal F: BV=Metro/Tini, Candida=Fluconazole, Trich=Metro/Tini, Cervicitis=Ceph+Doxy. GUD: Syph=Painless/BPC, HSV=Painful/Aci, Chancroid=Painful+Bubo/Azi, LGV=Doxy21d. PID: CMT+Adnexal+CMT → Ceph+Doxy+Metro. Epididymitis <35y=Ceph+Doxy, >35y=Cipro. Proctitis MSM: LGV>Doxy21d, GC/CT=Ceph+Doxy, HSV=Aci. Neonatal Eye: Day2-5=GC(Ceph50mg/kg), Day5-14=CT(Azi), HSV=IV Aci. Partner Notify: GC/CT/Trich 60d, Syphilis 3m-1y+, HSV 60d. TOC: GC 2w, CT/TV/MG 4w, Syphilis RPR 3/6/12m."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Urethral Discharge (M)</b>: <b>Gram Stain → GC+CT (Ceftriaxone 500mg IM + Doxy 7d)</b>; <b>NAAT GC/CT+ve → Same</b>; <b>GC/CT-ve → Doxy 7d (NGU)</b></li><li><b>Vaginal Discharge (F)</b>: <b>BV: Clue Cells/Whiff+ → Metro/Tini</b>; <b>Candida: KOH Hyphae → Fluconazole 150mg/Topical</b>; <b>Trichomonas: Motile Flagellates → Metro/Tini 2g</b>; <b>Cervicitis: GC/CT NAAT+ve → Ceftriaxone + Doxy</b></li><li><b>GUD</b>: <b>Syphilis (Painless, Indurated, Non-Tender LAD) → BPC 2.4MU IM</b>; <b>HSV (Painful Vesicles) → Acyclovir</b>; <b>Chancroid (Painful, Undermined, Suppurative Buboes) → Azithromycin 1g/Ceftriaxone</b>; <b>LGV (Proctitis/Buboes) → Doxycycline 21d</b></li><li><b>PID</b>: <b>CMT + Adnexal + Uterine Tenderness = Empiric Tx</b> → <b>Ceftriaxone 500mg IM + Doxy 14d + Metro 14d</b></li><li><b>Epididymo-orchitis</b>: <b>&lt;35y: GC/CT → Ceftriaxone + Doxy 10-14d</b>; <b>&gt;35y/Urinary Abnormalities: Enteric → Ciprofloxacin/Ofloxacin 10-14d</b></li><li><b>Proctitis (MSM)</b>: <b>LGV (Doxy 21d) &gt; GC/CT (Ceftriaxone+Doxy) &gt; HSV (Acyclovir) &gt; Shigella (Cipro/Azi)</b></li><li><b>Neonatal Ophthalmia</b>: <b>Day 2-5 = GC (Ceftriaxone 50mg/kg IM)</b>; <b>Day 5-14 = CT (Azithromycin 20mg/kg OD × 3d)</b>; <b>HSV = IV Acyclovir 20mg/kg q8h</b></li><li><b>Partner Notification</b>: <b>GC/CT/Trich: 60 Days</b>; <b>Syphilis: 1° 3m, 2° 6m, Early Latent 1y, Late Latent Long-Term</b>; <b>HSV/HPV: 60 Days</b></li><li><b>Test of Cure</b>: <b>GC: 2 Weeks</b>; <b>CT/TV/MG: 4 Weeks</b>; <b>LGV: 4-6 Weeks</b>; <b>Syphilis: RPR 3/6/12 Months</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Male urethral discharge — Gram stain shows intracellular Gram-negative diplococci. Empiric treatment?</b></li></ol>
+<p>A. Doxycycline 100mg BD × 7d  B. <b>Ceftriaxone 500mg IM + Doxycycline 100mg BD × 7d</b>  C. Azithromycin 1g Stat  D. Ciprofloxacin 500mg BD <i>Answer: B. Dual therapy for presumptive GC + CT.</i></p>
+<ol><li><b>Vaginal discharge — clue cells present, positive whiff test. Diagnosis and treatment?</b></li></ol>
+<p>A. Candidiasis, Fluconazole  C. <b>Bacterial Vaginosis, Metronidazole 400mg BD × 7d</b>  C. Trichomoniasis, Metronidazole 2g  D. Gonorrhoea, Ceftriaxone <i>Answer: B. BV = Clue Cells + Whiff Test + pH&gt;4.5 → Metronidazole/Tinidazole.</i></p>
+<ol><li><b>Genital ulcer — painful, undermined edges, purulent base, suppurative inguinal buboes. Diagnosis?</b></li></ol>
+<p>A. Primary Syphilis  B. HSV  C. <b>Chancroid</b>  D. LGV <i>Answer: C. Chancroid = Painful, Soft/Undermined Ulcers, Suppurative Buboes.</i></p>
+<ol><li><b>Pelvic Inflammatory Disease — minimum diagnostic criteria?</b></li></ol>
+<p>A. Lower Abdominal Pain Only  B. <b>Cervical Motion Tenderness + Adnexal Tenderness + Uterine Tenderness</b>  C. Fever + Discharge  D. Positive NAAT for GC/CT <i>Answer: B. All Three Major Criteria (CMT + Adnexal + Uterine Tenderness) = Empiric PID Treatment.</i></p>
+<ol><li><b>Pharyngeal gonorrhoea in MSM — treatment and follow-up?</b></li></ol>
+<p>A. Ceftriaxone 500mg IM + TOC 4w  B. <b>Ceftriaxone 1g IM + Azithromycin 1g + TOC at 2 Weeks (Mandatory)</b>  C. Doxycycline 7d  D. Azithromycin 1g Only <i>Answer: B. Pharyngeal GC = Higher Ceftriaxone Dose (1g IM) + Mandatory TOC at 2 Weeks.</i></p>
+<ol><li><b>Epididymo-orchitis in 40-year-old man with urinary symptoms. Likely aetiology &amp; treatment?</b></li></ol>
+<p>A. GC/CT, Ceftriaxone + Doxy  B. <b>Enteric Organisms, Ciprofloxacin 500mg BD × 10-14d</b>  C. Mumps, Supportive  D. TB, Anti-TB <i>Answer: B. &gt;35y with Urinary Symptoms → Enteric Organisms (E. coli) → Ciprofloxacin/Ofloxacin 10-14d.</i></p>
+<ol><li><b>MSM with proctitis, rectal pain, bloody mucus, tenesmus. LGV PCR positive. Treatment?</b></li></ol>
+<p>A. Ceftriaxone + Doxy 7d  B. <b>Doxycycline 100mg BD × 21 Days</b>  C. Acyclovir 400mg TDS × 7d  D. Azithromycin 1g <i>Answer: B. LGV Confirmed → Doxycycline 100mg BD × 21 Days.</i></p>
+<ol><li><b>Neonatal ophthalmia at Day 3, hyperacute, copious purulent discharge. Most likely aetiology?</b></li></ol>
+<p>A. Chlamydia  B. <b>Gonorrhoea</b>  C. HSV  D. Chemical <i>Answer: B. Gonorrhoea = Day 2-5, Hyperacute, Copious Purulent.</i></p>
+<ol><li><b>Test of Cure for genital Chlamydia — recommended interval?</b></li></ol>
+<p>A. 1 Week  B. 2 Weeks  C. <b>4 Weeks</b>  D. 8 Weeks <i>Answer: C. 4 Weeks Post-Treatment (NAAT); Avoid &lt;3 Weeks (Residual DNA).</i></p>
+<ol><li><b>Partner notification for early latent syphilis — lookback period?</b></li></ol>
+<p>A. 3 Months  B. 6 Months  C. <b>1 Year</b>  D. 2 Years <i>Answer: C. Early Latent Syphilis (&lt;1 Year) → Lookback 1 Year.</i></p>
+<ol><li><b>Neonatal HSV — CNS disease treatment duration?</b></li></ol>
+<p>A. 14 Days  B. <b>21 Days IV Acyclovir + 6 Months Oral Suppression</b>  C. 10 Days  D. 7 Days <i>Answer: B. CNS HSV: IV Acyclovir 20mg/kg q8h × 21 Days + Oral Suppression × 6 Months.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Man with urethral discharge. Gram stain: intracellular Gram-negative diplococci. Empiric treatment?</b></li></ol>
+<p>A. Doxycycline Only  B. <b>Ceftriaxone 500mg IM + Doxycycline 100mg BD × 7d</b>  C. Azithromycin 1g  D. Ciprofloxacin 500mg BD <i>Answer: B. Dual Therapy for Presumptive GC + CT.</i></p>
+<ol><li><b>Woman with vaginal discharge, clue cells+, positive whiff test, pH 5.0. Treatment?</b></li></ol>
+<p>A. Fluconazole 150mg  B. <b>Metronidazole 400mg BD × 7d</b>  C. Ceftriaxone IM  D. Azithromycin 1g <i>Answer: B. BV → Metronidazole 400mg BD × 7d (or Tinidazole 2g Stat).</i></p>
+<ol><li><b>MSM with proctitis, LGV PCR positive. Treatment?</b></li></ol>
+<p>A. Ceftriaxone + Doxy 7d  B. <b>Doxycycline 100mg BD × 21 Days</b>  C. Azithromycin 1g  D. Acyclovir <i>Answer: B. LGV → Doxycycline 100mg BD × 21 Days.</i></p>
+<ol><li><b>PID — outpatient empirical regimen?</b></li></ol>
+<p>A. Ceftriaxone 500mg IM Alone  B. <b>Ceftriaxone 500mg IM + Doxycycline 100mg BD × 14d + Metronidazole 400mg BD × 14d</b>  C. Doxycycline + Metronidazole  D. Azithromycin + Metronidazole <i>Answer: B. Ceftriaxone 500mg IM + Doxy 14d + Metro 14d (Standard Outpatient Regimen).</i></p>
+<ol><li><b>Neonate with mucopurulent conjunctivitis at Day 10. Most likely aetiology?</b></li></ol>
+<p>A. Gonorrhoea  B. <b>Chlamydia trachomatis</b>  C. HSV  D. Chemical <i>Answer: B. Chlamydia = Day 5-14 Onset, Mucopurulent Discharge.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-C, 3-C, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Chlamydia.md]] — Urethral Discharge, Vaginal Discharge, PID, Epididymitis, Proctitis, Neonatal</li><li>[[2.2 Gonorrhoea.md]] — Urethral Discharge, Vaginal Discharge, PID, Epididymitis, Proctitis, Neonatal, Pharyngeal</li><li>[[2.3 Syphilis.md]] — GUD, PID, Neonatal, Congenital</li><li>[[2.4-2.6 Other Bacterial STIs.md]] — GUD (Chancroid), Vaginal Discharge (Trichomonas), PID</li><li>[[3.2 HSV.md]] — GUD, Proctitis, Neonatal, PID</li><li>[[3.3 HPV.md]] — Cervical Screening, Vaginal Discharge (Warts)</li><li>[[3.4 Hepatitis B &amp; C.md]] — Vertical Transmission, Neonatal</li><li>[[3.5 Mpox.md]] — GUD, Proctitis, Pharyngeal</li><li>[[3.6 Other Viral STIs.md]] — Neonatal (CMV, Zika, EBV)</li><li>[[4.1-4.4 Parasitic &amp; Fungal STIs.md]] — Vaginal Discharge (Candida, Trichomonas), GUD (Donovanosis)</li><li>[[6. HIV-AIDS Cross-Reference.md]] — STIs in HIV, Immunosuppression</li><li>[[7.1-7.4 Public Health &amp; Control.md]] — Partner Notification, Surveillance, Vaccination, PEP</li><li>[[Population &amp; Newborn Screening]] — Antenatal Screening, Neonatal STI Screening</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next:</b> Build <code>6. HIV-AIDS Cross-Reference.md</code> and <code>7.1-7.4 Public Health &amp; Control.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 5.1-5.8 Syndromic Management · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

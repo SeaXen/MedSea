@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Status Epilepticus — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Status Epilepticus</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define status epilepticus</li><li>Apply time-based treatment protocol</li><li>Know first-, second-, and third-line drugs</li><li>Manage complications (airway, rhabdomyolysis, acidosis)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Continuous seizure activity &gt;5 minutes <b>or</b> recurrent seizures without recovery of consciousness.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Time-Based Management (UK Protocol)</span>
+  </div>
+  <div class="sec-body">
+<p><b>0–5 min</b>: ABCDE + glucose + benzodiazepine (lorazepam 4 mg IV or midazolam 10 mg buccal) <b>5–20 min</b>: Repeat benzodiazepine once <b>20–40 min</b>: Phenytoin 20 mg/kg IV <b>or</b> levetiracetam 60 mg/kg <b>40–60 min</b>: Phenobarbital or general anaesthesia (propofol/thiopental) + ICU</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Key Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Glucose, electrolytes, ABG, lactate, CK</li><li>CT/MRI brain (after stabilisation)</li><li>EEG (if non-convulsive status suspected)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Red Flags / Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Airway compromise</li><li>Rhabdomyolysis, hyperkalaemia, acidosis</li><li>Cerebral oedema, permanent neuronal damage</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Lorazepam is preferred IV benzodiazepine</li><li>Treat aggressively — neuronal damage begins after 20–30 minutes</li><li>Always check glucose first</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define status epilepticus and outline time-based management.</li><li>What is first-line treatment?</li><li>When would you intubate?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>0–5 min</b>: Benzodiazepine <b>5–20 min</b>: Repeat benzo <b>20–40 min</b>: Phenytoin / Levetiracetam <b>&gt;40 min</b>: Anaesthesia + ICU</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Definition: continuous seizure &gt;5 min OR recurrent without recovery</li><li>Time-based protocol: 0–5 (benzo), 5–20 (repeat benzo), 20–40 (phenytoin/levetiracetam), &gt;40 (anaesthesia+ICU)</li><li>First-line: lorazepam 4mg IV (or midazolam 10mg buccal/IM)</li><li>Always check glucose FIRST</li><li>Intubate if GCS ≤8 or airway compromised</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Phenytoin 20 mg/kg IV (max 2g) OR levetiracetam 60 mg/kg (preferred — fewer side effects)</li><li>Third-line: phenobarbital or anaesthetic agents (propofol/thiopental/midazolam infusion)</li><li>Complications: rhabdomyolysis, hyperkalaemia, acidosis, aspiration pneumonia</li><li>Non-convulsive status: EEG diagnosis (subtle: eye deviation, automatisms)</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Refractory status: continuous EEG monitoring, ketamine, lacosamide, magnesium</li><li>Febrile status epilepticus in children</li><li>Newer agents: brivaracetam, perampanel</li><li>Long-term outcomes: cognitive, epilepsy risk</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Status epilepticus definition (current):</li></ol>
+<p>A. Seizure &gt;10 min B. <b>Seizure &gt;5 min OR recurrent without recovery</b> C. Seizure &gt;30 min D. &gt;3 seizures in 1 hour</p>
+<ol><li>First-line treatment (0–5 min):</li></ol>
+<p>A. Phenytoin 20 mg/kg IV B. <b>Lorazepam 4 mg IV (or midazolam 10 mg buccal)</b> C. Phenobarbital D. Propofol infusion</p>
+<ol><li>Second-line (5–20 min) if seizure continues:</li></ol>
+<p>A. Levetiracetam B. <b>Repeat benzodiazepine ONCE</b> C. Phenytoin D. Intubate</p>
+<ol><li>Third-line (20–40 min):</li></ol>
+<p>A. Repeat benzo again B. <b>Phenytoin 20 mg/kg IV OR levetiracetam 60 mg/kg</b> C. Propofol infusion D. Magnesium</p>
+<ol><li>Preferred IV benzodiazepine:</li></ol>
+<p>A. Diazepam B. Midazolam C. <b>Lorazepam</b> (longer duration, less respiratory depression) D. Clonazepam</p>
+<ol><li>Levetiracetam dose in status epilepticus:</li></ol>
+<p>A. 20 mg/kg B. 40 mg/kg C. <b>60 mg/kg</b> (max 4.5g) D. 100 mg/kg</p>
+<ol><li>Non-convulsive status epilepticus diagnosed by:</li></ol>
+<p>A. Clinical observation B. CT head C. <b>EEG</b> D. MRI brain</p>
+<ol><li>Complications of prolonged status include ALL EXCEPT:</li></ol>
+<p>A. Rhabdomyolysis B. Hyperkalaemia C. <b>Hypertension</b> (usually hypotension) D. Metabolic acidosis</p>
+<ol><li>Refractory status epilepticus — anaesthetic agent:</li></ol>
+<p>A. Lorazepam infusion B. <b>Propofol / thiopental / midazolam infusion</b> + ICU C. Phenytoin infusion D. Levetiracetam infusion</p>
+<ol><li>Phenytoin IV — key precautions:</li></ol>
+<p>A. Give rapidly B. <b>Cardiac monitoring, avoid extravasation (purple glove syndrome), max 50 mg/min</b> C. No monitoring needed D. Give IM</p>
+<ol><li>Treat aggressively because neuronal damage begins after:</li></ol>
+<p>A. 10 minutes B. <b>20–30 minutes</b> C. 1 hour D. 2 hours</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 30-year-old known epileptic, seizure for 10 minutes, IV access available. Next:</li></ol>
+<p>A. Wait for spontaneous stop B. <b>Lorazepam 4 mg IV</b> (first-line) C. Phenytoin 20 mg/kg D. Call ICU</p>
+<ol><li>Same patient, still seizing after lorazepam 4mg IV (given at 5 min). At 15 min:</li></ol>
+<p>A. Give levetiracetam B. <b>Repeat lorazepam 4 mg IV</b> (second benzo dose) C. Intubate D. Propofol</p>
+<ol><li>A 50-year-old, seizure 30 minutes, received lorazepam x2. Still seizing. Next:</li></ol>
+<p>A. Midazolam B. <b>Levetiracetam 60 mg/kg IV (or phenytoin 20 mg/kg)</b> C. Phenobarbital D. Propofol infusion</p>
+<ol><li>A 40-year-old on levetiracetam, status epilepticus for 45 minutes, received benzo x2, levetiracetam 60 mg/kg. Still seizing. Next:</li></ol>
+<p>A. More levetiracetam B. <b>Anaesthetic agent (propofol/thiopental) + intubate + ICU</b> C. Phenytoin D. Magnesium</p>
+<ol><li>A 25-year-old with first seizure, status for 20 min, no IV access. Best first drug:</li></ol>
+<p>A. Rectal diazepam B. <b>Buccal midazolam 10 mg</b> C. IM phenytoin D. Oral clonazepam</p>
+<ol><li>Non-convulsive status — patient confused, subtle eye movements, no tonic-clonic. Diagnosis:</li></ol>
+<p>A. Encephalopathy B. <b>EEG confirmation</b> (continuous epileptiform activity) C. Psychogenic D. Post-ictal</p>
+<ol><li>Rhabdomyolysis in status epilepticus — monitoring:</li></ol>
+<p>A. Creatinine only B. <b>CK, electrolytes (K⁺), renal function, urine myoglobin</b> C. CK only D. No monitoring needed</p>
+<ol><li>Phenytoin 20 mg/kg IV — administration:</li></ol>
+<p>A. Rapid push B. <b>Cardiac monitor, 0.9% saline only, max 50 mg/min, avoid extravasation</b> C. Give in 5% dextrose D. IM route preferred</p>
+<ol><li>A child with febrile status epilepticus &gt;30 min. Management:</li></ol>
+<p>A. Different protocol B. <b>Same time-based protocol (benzo → repeat → phenytoin/levetira → anaesthesia)</b> C. Only rectal diazepam D. Observation</p>
+<ol><li>Post-status management:</li></ol>
+<p>A. Discharge if stopped B. <b>Maintenance AED, identify/treat trigger, EEG, neuroimaging, admission</b> C. Stop all AEDs D. Only follow-up in 1 month</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Status epilepticus definition</li></ul>
+<p>A: Continuous seizure &gt;5 min OR recurrent without recovery</p>
+<ul><li>Q: Time-based protocol</li></ul>
+<p>A: 0–5 benzo, 5–20 repeat benzo, 20–40 phenytoin/levetiracetam, &gt;40 anaesthesia+ICU</p>
+<ul><li>Q: First-line</li></ul>
+<p>A: Lorazepam 4mg IV (or midazolam 10mg buccal/IM)</p>
+<ul><li>Q: Second-line</li></ul>
+<p>A: Repeat benzodiazepine ONCE</p>
+<ul><li>Q: Third-line</li></ul>
+<p>A: Phenytoin 20mg/kg IV OR levetiracetam 60mg/kg</p>
+<ul><li>Q: Fourth-line</li></ul>
+<p>A: Anaesthetic agents (propofol/thiopental) + intubation + ICU</p>
+<ul><li>Q: Always check first</li></ul>
+<p>A: Blood glucose (reversible!)</p>
+<ul><li>Q: Non-convulsive status</li></ul>
+<p>A: EEG diagnosis (confusion, subtle movements)</p>
+<ul><li>Q: Complications</li></ul>
+<p>A: Rhabdo, hyperkalaemia, acidosis, aspiration, neuronal damage</p>
+<ul><li>Q: Refractory status</li></ul>
+<p>A: Anaesthetic infusion + continuous EEG + ICU</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — &gt;5 min continuous OR recurrent without recovery. <b>MCQ 2</b>: B — Lorazepam 4mg IV first-line. <b>MCQ 3</b>: B — Repeat benzo once at 5–20 min. <b>MCQ 4</b>: B — Phenytoin 20mg/kg OR levetiracetam 60mg/kg. <b>MCQ 5</b>: C — Lorazepam preferred (longer half-life, less respiratory depression). <b>MCQ 6</b>: C — Levetiracetam 60 mg/kg. <b>MCQ 7</b>: C — EEG for non-convulsive status. <b>MCQ 8</b>: C — Hypertension not typical (usually hypotension from meds/shock). <b>MCQ 9</b>: B — Propofol/thiopental/midazolam infusion + ICU. <b>MCQ 10</b>: B — Cardiac monitor, saline only, max 50mg/min, avoid extravasation. Neuronal damage begins 20–30 min.</p>
+<p><b>SBA 1</b>: B — 10 min seizure = status, IV access = lorazepam 4mg IV. <b>SBA 2</b>: B — 5–20 min = repeat benzo once. <b>SBA 3</b>: B — 20–40 min = phenytoin/levetiracetam. <b>SBA 4</b>: B — &gt;40 min = anaesthetic + intubate + ICU. <b>SBA 5</b>: B — No IV access = buccal midazolam 10mg. <b>SBA 6</b>: B — Non-convulsive = EEG confirmation. <b>SBA 7</b>: B — Rhabdo = CK, K⁺, renal, urine myoglobin. <b>SBA 8</b>: B — Phenytoin: cardiac monitor, saline only, 50mg/min, no extravasation. <b>SBA 9</b>: B — Same time-based protocol applies to febrile status. <b>SBA 10</b>: B — Maintenance AED, treat trigger, EEG, imaging, admit.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Status Epilepticus · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

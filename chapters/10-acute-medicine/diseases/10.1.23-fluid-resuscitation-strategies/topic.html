@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fluid Resuscitation Strategies — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Fluid Resuscitation Strategies</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Choose appropriate fluid type (crystalloids vs colloids vs blood)</li><li>Apply fluid responsiveness concepts</li><li>Know static vs dynamic predictors</li><li>Avoid fluid overload</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Fluid Types</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Fluid</th><th>Composition</th><th>Indication</th><th>Caution</th></tr><tr><td>-------</td><td>-------------</td><td>------------</td><td>---------</td></tr><tr><td>**Balanced crystalloids** (Hartmann's, Plasma-Lyte)</td><td>Near-physiological</td><td>**First-line for most**</td><td>Large volumes → metabolic alkalosis</td></tr><tr><td>**0.9% Saline**</td><td>Na⁺ 154, Cl⁻ 154</td><td>Hyperchloraemic acidosis risk; avoid large volumes</td><td></td></tr><tr><td>**Albumin 4.5–5%**</td><td>Colloid</td><td>Sepsis (SSC), large-volume resuscitation</td><td>Cost, no mortality benefit vs crystalloids</td></tr><tr><td>**Blood products**</td><td>RBC, FFP, platelets, cryo</td><td>Active bleeding, Hb <70, coagulopathy</td><td>Transfusion reactions</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Fluid Responsiveness</span>
+  </div>
+  <div class="sec-body">
+<p>Only ~50% of shocked patients are <b>fluid responders</b> (CO increases &gt;10–15% with fluid bolus).</p>
+<p><b>Static (poor predictors)</b>: CVP, PAWP, IVC diameter <b>Dynamic (good predictors)</b>:</p>
+<ul><li><b>Passive leg raise (PLR)</b> — temporary preload increase</li><li><b>Stroke volume variation (SVV)</b> / <b>Pulse pressure variation (PPV)</b> — need ventilator, sinus rhythm, tidal volume ≥8 mL/kg</li><li><b>Mini-fluid challenge</b> (100–250 mL over 1–2 min)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Resuscitation Protocol (Sepsis / Undifferentiated Shock)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>500 mL balanced crystalloid</b> over 15 min (or 30 mL/kg over 3h if severe sepsis)</li><li>Reassess: MAP, lactate, urine output, clinical perfusion</li><li>Repeat if fluid responsive</li><li><b>Stop</b> if no response after 1–2 L → start vasopressors</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cardiogenic shock</b>: small boluses (250 mL) only if clear hypovolaemia</li><li><b>Obstructive shock</b>: avoid fluids (worsens obstruction)</li><li><b>Trauma</b>: permissive hypotension (SBP 80–90) until bleeding controlled</li><li><b>Burns</b>: Parkland formula (4 mL/kg/%TBSA in 24h, half in first 8h)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Complications of Fluid Overload</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Pulmonary oedema</li><li>Abdominal compartment syndrome</li><li>Dilutional coagulopathy</li><li>Worsened tissue oedema → impaired wound healing, ileus</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Balanced crystalloids preferred</b> over 0.9% saline</li><li><b>Dynamic measures</b> (PLR, SVV, PPV) &gt; static (CVP)</li><li><b>Fluid responsiveness</b> must be proven — do not blindly bolus</li><li><b>Conservative fluid strategy</b> after initial resuscitation improves outcomes</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Why are balanced crystalloids preferred over normal saline?</li><li>What is a dynamic predictor of fluid responsiveness?</li><li>How do you manage fluids in cardiogenic shock?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>First-line</b>: Balanced crystalloids (500 mL boluses) <b>Assess responsiveness</b>: PLR, SVV/PPV, mini-challenge <b>Stop if unresponsive</b> → vasopressors <b>Avoid overload</b> — conservative strategy after initial resuscitation</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Balanced crystalloids first-line (Hartmann's, Plasma-Lyte)</li><li>0.9% saline → hyperchloraemic acidosis, AKI risk</li><li>Dynamic &gt; static for fluid responsiveness (PLR, SVV, PPV)</li><li>Stop fluids if unresponsive → vasopressors</li><li>Permissive hypotension in trauma</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Albumin in sepsis (SSC suggests if large volumes)</li><li>Blood products: Hb &lt;70 (restrictive)</li><li>Parkland formula for burns</li><li>Fluid overload complications (pulmonary oedema, ACS)</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Starling curve physiology</li><li>Colloid vs crystalloid trials (SAFE, CHEST, VISEP)</li><li>Goal-directed therapy evolution (EGDT → PROCESS/ARISE/PROMISE)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>First-line fluid for sepsis resuscitation (SSC):</li></ol>
+<p>A. 0.9% saline B. Balanced crystalloid (Hartmann's/Plasma-Lyte) C. Albumin 5% D. Gelatin</p>
+<ol><li>0.9% saline large volumes cause:</li></ol>
+<p>A. Metabolic alkalosis B. Hyperchloraemic metabolic acidosis C. Respiratory acidosis D. No acid-base disturbance</p>
+<ol><li>Best dynamic predictor of fluid responsiveness:</li></ol>
+<p>A. CVP B. PAWP C. Passive leg raise (PLR) D. IVC diameter</p>
+<ol><li>SVV/PPV require all EXCEPT:</li></ol>
+<p>A. Sinus rhythm B. Mechanical ventilation C. Tidal volume ≥8 mL/kg D. Spontaneous breathing</p>
+<ol><li>Fluid bolus in cardiogenic shock:</li></ol>
+<p>A. 1L rapid B. 30 mL/kg C. Small (250 mL) only if clear hypovolaemia D. Avoid completely</p>
+<ol><li>Permissive hypotension target in trauma (uncontrolled bleeding):</li></ol>
+<p>A. SBP 60–70 B. SBP 80–90 C. SBP 100–110 D. SBP 120–130</p>
+<ol><li>Parkland formula for burns:</li></ol>
+<p>A. 2 mL/kg/%TBSA in 24h B. 4 mL/kg/%TBSA in 24h (half in first 8h) C. 6 mL/kg/%TBSA in 24h D. 8 mL/kg/%TBSA in 24h</p>
+<ol><li>Blood transfusion threshold in critical care (no active bleed/ischaemia):</li></ol>
+<p>A. Hb &lt;70 g/L B. Hb &lt;80 g/L C. Hb &lt;90 g/L D. Hb &lt;100 g/L</p>
+<ol><li>Conservative fluid strategy after initial resuscitation:</li></ol>
+<p>A. Worsens outcomes B. Improves outcomes (less pulmonary oedema, shorter ventilation) C. No difference D. Increases mortality</p>
+<ol><li>Complication of fluid overload:</li></ol>
+<p>A. Improved wound healing B. Pulmonary oedema C. Increased urine output D. Better oxygenation</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 65-year-old septic patient receives 2L balanced crystalloid. MAP 60, lactate 4.5 (was 4.2). Best next step:</li></ol>
+<p>A. Give another 2L B. Start noradrenaline (fluid unresponsive) C. Switch to albumin D. Give furosemide</p>
+<ol><li>A cardiogenic shock patient (LVEF 25%, pulmonary oedema) with BP 85/50. Fluid management:</li></ol>
+<p>A. 1L saline bolus B. 30 mL/kg crystalloid C. 250 mL bolus if clear hypovolaemia only, then vasopressors/inotropes D. No fluids ever</p>
+<ol><li>A trauma patient with suspected pelvic fracture, BP 80/50, HR 130. Fluid strategy:</li></ol>
+<p>A. 2L saline rapid B. Permissive hypotension (SBP 80–90) until bleeding controlled C. 30 mL/kg crystalloid D. Albumin 5% 1L</p>
+<ol><li>A ventilated septic patient, TV 8 mL/kg, sinus rhythm. SVV 18%. Interpretation:</li></ol>
+<p>A. Not fluid responsive B. Fluid responsive C. Need CVP D. Need echo</p>
+<ol><li>Why balanced crystalloids over 0.9% saline?</li></ol>
+<p>A. Cheaper B. Lower chloride → less hyperchloraemic acidosis, less AKI C. Higher sodium D. Better for hyponatraemia</p>
+<ol><li>A 70kg man with 40% TBSA burns. Parkland calculation:</li></ol>
+<p>A. 5600 mL in 24h (2800 mL first 8h) B. 11200 mL in 24h (5600 mL first 8h) C. 2800 mL in 24h D. 22400 mL in 24h</p>
+<ol><li>In sepsis, if no fluid response after 1–2L:</li></ol>
+<p>A. Continue fluids B. Start vasopressors C. Give albumin D. Give blood</p>
+<ol><li>Albumin in sepsis (SSC):</li></ol>
+<p>A. First-line for all B. Consider if large-volume resuscitation needed C. Contraindicated D. Only in burns</p>
+<ol><li>Fluid overload causes all EXCEPT:</li></ol>
+<p>A. Pulmonary oedema B. Abdominal compartment syndrome C. Dilutional coagulopathy D. Improved tissue oxygenation</p>
+<ol><li>Best initial fluid bolus in undifferentiated shock:</li></ol>
+<p>A. 100 mL B. 250 mL C. 500 mL balanced crystalloid D. 1000 mL</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: First-line fluid sepsis</li></ul>
+<p>A: Balanced crystalloid (Hartmann's/Plasma-Lyte)</p>
+<ul><li>Q: 0.9% saline risk</li></ul>
+<p>A: Hyperchloraemic metabolic acidosis</p>
+<ul><li>Q: Dynamic fluid responsiveness</li></ul>
+<p>A: PLR, SVV, PPV, mini-challenge</p>
+<ul><li>Q: Static (poor)</li></ul>
+<p>A: CVP, PAWP, IVC diameter</p>
+<ul><li>Q: Cardiogenic shock fluids</li></ul>
+<p>A: 250 mL small boluses only if hypovolaemic</p>
+<ul><li>Q: Permissive hypotension trauma</li></ul>
+<p>A: SBP 80–90 until bleeding controlled</p>
+<ul><li>Q: Parkland burns</li></ul>
+<p>A: 4 mL/kg/%TBSA in 24h, half first 8h</p>
+<ul><li>Q: Transfusion threshold</li></ul>
+<p>A: Hb &lt;70 (restrictive)</p>
+<ul><li>Q: Conservative fluids after resuscitation</li></ul>
+<p>A: Improves outcomes (FACTT, CLASSIC trials)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Balanced crystalloids preferred (SSC). <b>MCQ 2</b>: B — 0.9% saline Cl⁻ 154 → hyperchloraemic acidosis. <b>MCQ 3</b>: C — PLR gold standard dynamic. <b>MCQ 4</b>: D — SVV/PPV require controlled ventilation (not spontaneous). <b>MCQ 5</b>: C — Small boluses only if hypovolaemic. <b>MCQ 6</b>: B — SBP 80–90 permissive hypotension. <b>MCQ 7</b>: B — 4 mL/kg/%TBSA, half first 8h. <b>MCQ 8</b>: A — Restrictive Hb &lt;70. <b>MCQ 9</b>: B — Conservative strategy improves outcomes. <b>MCQ 10</b>: B — Pulmonary oedema from overload.</p>
+<p><b>SBA 1</b>: B — Lactate rising after 2L = fluid unresponsive → vasopressors. <b>SBA 2</b>: C — Cardiogenic = small bolus only if hypovolaemic, then inotropes/vasopressors. <b>SBA 3</b>: B — Permissive hypotension in trauma with active bleeding. <b>SBA 4</b>: B — SVV &gt;13% = fluid responsive. <b>SBA 5</b>: B — Lower chloride, less AKI, less acidosis. <b>SBA 5</b>: B — 4 × 70 × 40 = 11200 mL total, 5600 mL first 8h. <b>SBA 6</b>: B — No response after fluids → vasopressors. <b>SBA 7</b>: B — Albumin if large volumes needed. <b>SBA 8</b>: D — Overload impairs tissue oxygenation. <b>SBA 9</b>: C — 500 mL balanced crystalloid standard bolus.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fluid Resuscitation Strategies · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

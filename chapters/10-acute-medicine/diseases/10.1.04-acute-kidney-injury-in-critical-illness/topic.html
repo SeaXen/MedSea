@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acute Kidney Injury in Critical Illness — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Acute Kidney Injury in Critical Illness</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Apply KDIGO criteria for AKI diagnosis and staging</li><li>Differentiate pre-renal, intrinsic, and post-renal AKI</li><li>Apply prevention strategies (especially contrast-induced)</li><li>Identify indications for renal replacement therapy (RRT)</li><li>Choose appropriate RRT modality and timing</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>AKI = abrupt decline in kidney function over hours to days, resulting in retention of nitrogenous wastes (creatinine, urea) and dysregulation of fluid, electrolyte, and acid-base balance.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">KDIGO Criteria (Diagnosis & Staging)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Creatinine Criteria</th><th>Urine Output Criteria</th></tr><tr><td>-------</td><td>---------------------</td><td>----------------------</td></tr><tr><td>**1**</td><td>1.5–1.9× baseline OR ≥26.5 µmol/L (0.3 mg/dL) rise in 48h</td><td><0.5 mL/kg/h for 6–12h</td></tr><tr><td>**2**</td><td>2.0–2.9× baseline</td><td><0.5 mL/kg/h for ≥12h</td></tr><tr><td>**3**</td><td>3.0× baseline OR ≥354 µmol/L (4.0 mg/dL) OR RRT initiation</td><td><0.3 mL/kg/h for ≥24h OR anuria ≥12h</td></tr></table>
+<div class="callout"><b>Note</b>: Baseline = lowest creatinine in prior 3 months. If unknown, assume MDRD eGFR 75 mL/min → estimate baseline creatinine.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Aetiology / Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Causes</th><th>Key Features</th></tr><tr><td>----------</td><td>--------</td><td>--------------</td></tr><tr><td>**Pre-renal** (70%)</td><td>Hypovolaemia, heart failure, cirrhosis, sepsis, medications (ACEi, NSAIDs, diuretics)</td><td>**Reversible** with volume/haemodynamic optimisation; FENa <1%, urine osmolality >500</td></tr><tr><td>**Intrinsic** (25%)</td><td>**ATN** (ischaemia, nephrotoxins: contrast, aminoglycosides, amphotericin), AIN (drugs), GN, vasculitis, rhabdo, tumour lysis</td><td>FENa >2%, muddy brown casts; **ATN = most common intrinsic**</td></tr><tr><td>**Post-renal** (5%)</td><td>Obstruction (prostate, stones, tumour, retroperitoneal fibrosis)</td><td>Hydronephrosis on US; may be anuric</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Oliguria</b> (&lt;0.5 mL/kg/h) or anuria</li><li><b>Fluid overload</b>: pulmonary oedema, hypertension, raised JVP</li><li><b>Electrolytes</b>: hyperkalaemia, metabolic acidosis, hyperphosphataemia, hypocalcaemia</li><li><b>Uraemic symptoms</b>: nausea, pericarditis, encephalopathy, bleeding (platelet dysfunction)</li><li><b>Hyperpigmentation</b>, pruritus (chronic)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Creatinine, urea</b> (trend more important than absolute)</li><li><b>Urine output</b> (strict hourly measurement — <b>Foley catheter</b>)</li><li><b>Urinalysis</b>: protein, blood, casts (muddy brown = ATN), eosinophils (AIN)</li><li><b>FENa</b> = (U&lt;sub&gt;Na&lt;/sub&gt; × P&lt;sub&gt;Cr&lt;/sub&gt;) / (P&lt;sub&gt;Na&lt;/sub&gt; × U&lt;sub&gt;Cr&lt;/sub&gt;) × 100</li><li><b>Urine osmolality</b>, urine sodium</li><li><b>Renal US</b>: kidney size, hydronephrosis (exclude obstruction), cortical echogenicity</li><li><b>CK</b> (rhabdo), lactate, electrolytes, ABG</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. General Measures (All AKI)</div>
+<ul><li><b>Stop nephrotoxins</b> (ACEi/ARB, NSAIDs, aminoglycosides, contrast, diuretics)</li><li><b>Optimise haemodynamics</b>: MAP ≥65, euvolaemia, avoid hypotension</li><li><b>Correct hypovolaemia</b> (fluids) then <b>avoid fluid overload</b> (risk of pulmonary oedema)</li><li><b>Monitor</b>: strict fluid balance, daily weight, hourly urine output, daily creatinine/electrolytes</li><li><b>Nutrition</b>: adequate calories, protein 0.8–1.0 g/kg/day (higher on RRT)</li><li><b>Drug dosing</b>: adjust ALL renally cleared drugs (use eGFR/CrCl)</li></ul>
+<div class="sub-h">2. Pre-renal AKI</div>
+<ul><li><b>Volume resuscitation</b>: crystalloids (balanced preferred), target MAP ≥65</li><li><b>Vasopressors</b> if fluid-refractory (noradrenaline first-line)</li><li><b>Treat underlying cause</b> (sepsis, heart failure, haemorrhage)</li></ul>
+<div class="sub-h">3. Intrinsic AKI (ATN)</div>
+<ul><li><b>Supportive</b> — no specific therapy to accelerate recovery</li><li><b>Avoid nephrotoxins</b></li><li><b>Loop diuretics</b> do <b>not</b> prevent or treat ATN (may convert oliguric to non-oliguric but no mortality benefit)</li><li><b>Dopamine</b> — <b>no role</b> in ATN prevention/treatment</li></ul>
+<div class="sub-h">4. Contrast-Induced Nephropathy (CIN) Prevention</div>
+<ul><li><b>High risk</b>: eGFR &lt;30, diabetes, heart failure, age &gt;75, volume depletion, myeloma, concurrent nephrotoxins</li><li><b>Hydration</b>: IV 0.9% saline or bicarbonate 1 mL/kg/h for 6–12h pre and post</li><li><b>Use low-osmolar/iso-osmolar contrast</b>, minimise volume</li><li><b>N-acetylcysteine</b> — <b>evidence weak</b>, not routinely recommended</li><li><b>Stop nephrotoxins</b> 48h before/after</li><li><b>Hold metformin</b> 48h post-contrast if eGFR &lt;60</li></ul>
+<div class="sub-h">5. Drug-Induced AKI</div>
+<ul><li><b>AIN</b>: eosinophilia, eosinophiluria, fever, rash — <b>stop offending drug, consider steroids</b></li><li><b>Nephrotoxins</b>: aminoglycosides (trough monitoring), amphotericin (liposomal preferred), calcineurin inhibitors (trough levels), TKIs</li></ul>
+<div class="sub-h">5. Post-renal AKI</div>
+<ul><li><b>Relieve obstruction</b>: Foley catheter, nephrostomy, stent, surgery</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Renal Replacement Therapy (RRT)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Indications for RRT (AEIOU)</div>
+<table class="ctable"><tr><th>Indication</th><th>Details</th></tr><tr><td>------------</td><td>---------</td></tr><tr><td>**A**cidosis</td><td>pH <7.15 (metabolic) unresponsive to medical therapy</td></tr><tr><td>**E**lectrolytes</td><td>**K⁺ >6.5 mmol/L** (or >6.0 with ECG changes) refractory to medical Rx</td></tr><tr><td>**I**ngestions</td><td>Dialysable toxins (methanol, ethylene glycol, lithium, salicylate, metformin)</td></tr><tr><td>**O**verload</td><td>**Fluid overload** refractory to diuretics (pulmonary oedema)</td></tr><tr><td>**U**raemia</td><td>Pericarditis, encephalopathy, bleeding (platelet dysfunction), neuropathy</td></tr></table>
+<div class="sub-h">RRT Modalities</div>
+<table class="ctable"><tr><th>Modality</th><th>Indication</th><th>Key Features</th></tr><tr><td>----------</td><td>------------</td><td>--------------</td></tr><tr><td>**IHD** (Intermittent HD)</td><td>Stable, hypercatabolic, intoxication</td><td>3–4h sessions, 3x/week; hemodynamic instability risk</td></tr><tr><td>**SLED** (Sustained Low-Efficiency Dialysis)</td><td>Moderate instability</td><td>6–12h sessions, slower solute/fluid removal</td></tr><tr><td>**CRRT** (CVVH/CVVHDF)</td><td>**Haemodynamically unstable**, sepsis, cerebral oedema</td><td>Continuous; better haemodynamic tolerance; superior solute control</td></tr><tr><td>**PD** (Peritoneal Dialysis)</td><td>Resource-limited, no vascular access</td><td>Lower clearance; infection risk</td></tr></table>
+<div class="callout"><b>Timing</b>: <b>Early RRT</b> (within 12h of indication) may improve survival in septic AKI — <b>don't wait for life-threatening complications</b>.</div>
+<div class="sub-h">CRRT Prescription (Typical)</div>
+<ul><li><b>Blood flow</b>: 150–200 mL/min</li><li><b>Effluent dose</b>: 20–25 mL/kg/h (standard); 35 mL/kg/h (septic AKI/fluid overload)</li><li><b>Anticoagulation</b>: Regional citrate (preferred) or unfractionated heparin</li><li><b>Replacement fluid</b>: Pre-dilution (filter life) vs post-dilution (clearance)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Complications of AKI</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Fluid overload → pulmonary oedema, prolonged ventilation</li><li>Hyperkalaemia → arrhythmias, death</li><li>Metabolic acidosis → haemodynamic instability</li><li>Uraemic pericarditis, encephalopathy, bleeding</li><li>Infection (catheter-related sepsis)</li><li>Chronic kidney disease (CKD) — 20–30% survivors develop CKD/progress to ESRD</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ICU mortality</b>: 40–60% with severe AKI requiring RRT</li><li><b>Renal recovery</b>: 50–60% at hospital discharge (better if pre-renal, worse if ATN + multiorgan failure)</li><li><b>Risk factors for non-recovery</b>: older age, CKD baseline, severe ATN, prolonged oliguria, multiorgan failure</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>KDIGO criteria</b>: Creatinine rise 1.5× OR urine output &lt;0.5 mL/kg/h × 6h</li><li><b>Staging</b>: Stage 1/2/3 based on Cr rise or UO</li><li><b>FENa</b>: &lt;1% pre-renal, &gt;2% ATN (invalid if diuretics)</li><li><b>Contrast nephropathy</b>: hydration is key; NAC weak evidence</li><li><b>Loop diuretics</b>: no mortality benefit in ATN</li><li><b>RRT indications</b> = <b>AEIOU</b> (Acidosis, Electrolytes, Ingestions, Overload, Uraemia)</li><li><b>CRRT</b> preferred in haemodynamically unstable; IHD if stable</li><li><b>Early RRT</b> within 12h of indication may improve survival</li><li><b>Drug dosing</b>: adjust all renally excreted drugs</li><li><b>Contrast</b>: hold metformin 48h post if eGFR &lt;60</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>KDIGO staging criteria for AKI</li><li>Differentiate pre-renal vs intrinsic (ATN) using FENa, urine osmolality, sediment</li><li>Contrast-induced nephropathy: risk factors and prevention</li><li>RRT indications (AEIOU)</li><li>CRRT vs IHD — when to choose which?</li><li>Fluid management in oliguric AKI</li><li>Drug dosing adjustment in AKI</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>FENa invalid if on diuretics</b> → use FeUrea (&lt;35% pre-renal)</li><li><b>Diuretics prevent/treat ATN</b> → NO (no mortality benefit)</li><li><b>Dopamine for renal protection</b> → NO role</li><li><b>NAC for contrast nephropathy</b> → weak evidence, not standard</li><li><b>K⁺ &gt;6.5 = immediate RRT</b> → treat medically first (insulin/dextrose, calcium, salbutamol, kayexalate) — RRT if refractory</li><li><b>Creatinine rise = AKI</b> → need baseline; trend matters more than single value</li><li><b>Urine output alone ≈ AKI</b> → use both Cr and UO criteria</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>AKI STAGING</b>: <b>1</b> = 1.5×/0.5 UO, <b>2</b> = 2×/0.5 UO longer, <b>3</b> = 3×/RRT/0.3 UO</li><li><b>AEIOU</b>: <b>A</b>cidosis, <b>E</b>lectrolytes (K), <b>I</b>ngestions, <b>O</b>verload, <b>U</b>raemia</li><li><b>FENa</b>: <b>&lt;1%</b> Pre-renal; <b>&gt;2%</b> ATN (diuretics = invalid)</li><li><b>CONTRAST RISK</b>: <b>E</b>GFR &lt;30, <b>D</b>M, <b>H</b>F, <b>A</b>ge&gt;75, <b>V</b>olume depletion, <b>N</b>ephrotoxins</li><li><b>RRT DIALYSABLE TOXINS</b>: <b>M</b>ethanol, <b>E</b>thylene glycol, <b>L</b>ithium, <b>S</b>alicylate, <b>M</b>etformin</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((AKI in Critical Illness))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– KDIGO: Cr + UO</div>
+<div class="mm-node mm-l3">– Stages 1-3</div>
+<div class="mm-node mm-l3">– Baseline Cr Essential</div>
+<div class="mm-node mm-l2">Classification</div>
+<div class="mm-node mm-l3">– Pre-renal (70%)</div>
+<div class="mm-node mm-l3">– Intrinsic: ATN (most), AIN, GN</div>
+<div class="mm-node mm-l3">– Post-renal (5%)</div>
+<div class="mm-node mm-l2">Investigations</div>
+<div class="mm-node mm-l3">– Cr trend, UO, FENa, Urinalysis</div>
+<div class="mm-node mm-l3">– US: Hydronephrosis</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Stop Nephrotoxins</div>
+<div class="mm-node mm-l3">– Haemodynamic Optimisation</div>
+<div class="mm-node mm-l3">– Fluid Balance</div>
+<div class="mm-node mm-l3">– Drug Dosing</div>
+<div class="mm-node mm-l2">CIN Prevention</div>
+<div class="mm-node mm-l3">– Hydration (Saline/Bicarb)</div>
+<div class="mm-node mm-l3">– Low-Osmolar Contrast</div>
+<div class="mm-node mm-l3">– Hold Metformin</div>
+<div class="mm-node mm-l2">RRT</div>
+<div class="mm-node mm-l3">– Indications: AEIOU</div>
+<div class="mm-node mm-l3">– CRRT vs IHD vs SLED</div>
+<div class="mm-node mm-l3">– Timing: Early Better</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– HyperK, Acidosis, Fluid Overload, Uraemia</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Olive Urine Output / Rising Creatinine</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">KDIGO Criteria Met?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Stage AKI 1/2/3</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Exclude Post-Renal\nUS Kidneys</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Relieve Obstruction\nCatheter/Nephrostomy</div>
+<div class="fc-node" data-id="F">Pre-renal vs Intrinsic</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">FENa &lt;1%\nUrine Osm &gt;500\nBland Sediment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Pre-renal: Volume Resuscitation\nOptimise Haemodynamics\nStop Diuretics/ACEi/NSAIDs</div>
+<div class="fc-node" data-id="I">Intrinsic: ATN Most Likely\nStop Nephrotoxins\nSupportive Care\nMonitor for RRT Indications</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Monitor Response\nCr, UO, Fluid Balance\nElectrolytes Daily</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">RRT Indications?\nAEIOU</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">CRRT if Unstable\nIHD/SLED if Stable</div>
+<div class="fc-node" data-id="M">Continue Supportive\nDrug Dose Adjustment\nAvoid Fluid Overload</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>KDIGO staging table</li><li>AEIOU indications card</li><li>FENa interpretation diagram</li><li>CRRT prescription card</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>KDIGO AKI guidelines overview</li><li>CRRT practical setup</li><li>Fluid responsiveness in AKI</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>KDIGO</b>: Cr ×1.5 or UO &lt;0.5 mL/kg/h ×6h = AKI</li><li><b>Staging</b>: 1 (1.5–1.9×), 2 (2–2.9×), 3 (3× or RRT or UO &lt;0.3)</li><li><b>FENa</b>: &lt;1% pre-renal; &gt;2% ATN (diuretics invalidate)</li><li><b>CIN</b>: Hydration is key; low-osmolar contrast; hold metformin if eGFR&lt;60</li><li><b>RRT Indications</b>: AEIOU (Acidosis pH&lt;7.15, K&gt;6.5, Ingestions, Overload, Uraemia)</li><li><b>CRRT</b> for unstable; <b>IHD</b> for stable; <b>Early RRT</b> within 12h of indication</li><li><b>Drug dosing</b>: adjust ALL renally cleared drugs</li><li><b>Diuretics</b>: no benefit in ATN; <b>dopamine no role</b></li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State KDIGO Stage 1/2/3 criteria</li><li>List 5 RRT indications (AEIOU)</li><li>Differentiate pre-renal vs ATN using FENa/sediment</li><li>State CIN prevention bundle</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>KDIGO criteria + staging</li><li>FENa interpretation (and diuretic caveat)</li><li>AEIOU for RRT</li><li>CIN prevention (hydration, hold metformin)</li><li>CRRT vs IHD choice</li><li>Adjust drug doses</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>FeUrea if diuretics</li><li>CRRT prescription details</li><li>Contrast nephropathy risk factors</li><li>ATN vs AIN differentiation</li><li>Early vs late RRT timing evidence</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Biomarkers (NGAL, KIM-1, L-FABP)</li><li>SLED hybrid modality</li><li>Peritoneal dialysis in critically ill</li><li>Long-term CKD/ESRD risk post-AKI</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition + KDIGO criteria + staging table</li><li>Classification (pre-renal, intrinsic, post-renal) with table</li><li>FENa/FeUra interpretation</li><li>CIN prevention</li><li>RRT: indications (AEIOU), modalities, timing</li><li>Complications + prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>KDIGO staging box</li><li>AEIOU indications box</li><li>FENa/FeUrea table</li><li>CRRT vs IHD comparison</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"AKI = Cr ×1.5 or UO &lt;0.5 mL/kg/h ×6h (KDIGO)"</li><li>"Stage 1: 1.5–1.9×Cr; Stage 2: 2–2.9×; Stage 3: 3× or RRT"</li><li>"FENa &lt;1% = pre-renal; &gt;2% = ATN (diuretics invalidate)"</li><li>"AEIOU = Acidosis, Electrolytes (K), Ingestions, Overload, Uraemia"</li><li>"CIN: Hydration &gt; NAC; hold metformin 48h if eGFR&lt;60"</li><li>"CRRT for unstable; IHD for stable; Early RRT within 12h"</li><li>"Drug doses: adjust ALL renally cleared drugs"</li><li>"Diuretics no mortality benefit in ATN; dopamine no role"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Sepsis + oliguria + rising Cr → KDIGO Stage 2 → FENa 0.8% → fluids + noradrenaline → monitor for RRT</li><li>Post-contrast Cr rise 1.8× baseline at 48h → CIN Stage 1 → aggressive hydration, stop nephrotoxins, monitor</li><li>eGFR 20, needs urgent contrast CT → saline/bicarb hydration, iso-osmolar contrast, hold metformin</li><li>Severe sepsis + K⁺ 7.0 unresponsive to medical Rx → RRT (AEIOU: Electrolytes)</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>KDIGO: 1.5×Cr / 0.5 UO = AKI</li><li>Stages: 1.5-1.9 / 2-2.9 / 3+</li><li>FENa: &lt;1 Pre, &gt;2 ATN</li><li>AEIOU: A-E-I-O-U</li><li>CIN: Hydrate, Low-osmolar, Hold Metformin</li><li>CRRT unstable, IHD stable</li><li>Early RRT better</li><li>Drug dosing adjust</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>AKI in critical illness = common, high mortality. <b>KDIGO</b> criteria (Cr + UO) for diagnosis/staging. <b>FENa</b> differentiates pre-renal (&lt;1%) from ATN (&gt;2%) — <b>invalid if diuretics</b> (use FeUrea). <b>CIN prevention</b>: hydration &gt; NAC; hold metformin 48h if eGFR&lt;60. <b>RRT indications = AEIOU</b>. <b>CRRT for unstable</b>, IHD/SLED for stable. <b>Early RRT</b> within 12h may improve survival. <b>Adjust ALL renally cleared drugs</b>. Diuretics/dopamine no role in ATN.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>KDIGO AKI criteria include all EXCEPT:</li></ol>
+<p>A. Rise in serum creatinine ≥26.5 μmol/L in 48 h B. <b>Rise in creatinine ≥50% in 7 days</b> C. Oliguria &lt;0.5 mL/kg/h for 6 h D. Anuria for 12 h</p>
+<ol><li>FENa &lt;1% suggests:</li></ol>
+<p>A. ATN B. <b>Pre-renal AKI</b> C. Post-renal AKI D. Glomerulonephritis</p>
+<ol><li>FENa is unreliable in:</li></ol>
+<p>A. ATN B. <b>Patients on diuretics (use FeUrea)</b> C. Pre-renal AKI D. Hepatorenal syndrome</p>
+<ol><li>RRT indications — AEIOU includes all EXCEPT:</li></ol>
+<p>A. Acidosis B. Electrolytes (hyperkalaemia) C. <b>Anaemia</b> D. Overload (fluid)</p>
+<ol><li>CRRT is preferred over intermittent haemodialysis in:</li></ol>
+<p>A. All patients B. <b>Haemodynamically unstable patients</b> C. CKD stage 3 D. Outpatient setting</p>
+<ol><li>Contrast-induced nephropathy prevention includes:</li></ol>
+<p>A. High-dose NAC B. <b>IV hydration (0.9% saline) ± low-dose NAC</b> C. Loop diuretics D. Dopamine</p>
+<ol><li>Pre-renal AKI due to hepatorenal syndrome is treated with:</li></ol>
+<p>A. Dopamine B. <b>Terlipressin + albumin (or noradrenaline + albumin)</b> C. Loop diuretic D. ACE inhibitor</p>
+<ol><li>Nephrotoxic drugs commonly causing AKI in ICU:</li></ol>
+<p>A. Paracetamol B. <b>Aminoglycosides, vancomycin, contrast, NSAIDs, ACEi/ARBs</b> C. Statins D. Beta-blockers</p>
+<ol><li>Rhabdomyolysis AKI prevention:</li></ol>
+<p>A. Restrict fluids B. <b>Aggressive IV crystalloid + consider urinary alkalinisation</b> C. Loop diuretics D. ACEi</p>
+<ol><li>Dopamine in AKI:</li></ol>
+<p>A. Recommended B. <b>NOT recommended — no benefit, increases harm</b> C. Only low dose D. With ACEi</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 70-year-old, sepsis, UO 0.3 mL/kg/h for 8 h, Cr 250 (baseline 100). KDIGO stage:</li></ol>
+<p>A. Stage 1 B. <b>Stage 2</b> (Cr 2.5× baseline = stage 2; UO &lt;0.5 for 8 h = stage 2) C. Stage 3 D. Not AKI</p>
+<ol><li>A patient on furosemide, AKI workup, FENa 0.4%. Interpretation:</li></ol>
+<p>A. ATN B. <b>FENa invalid; use FeUrea (&lt;35% = pre-renal)</b> C. Pre-renal D. Post-renal</p>
+<ol><li>Severe hyperkalaemia (K⁺ 7.0) + AKI + oliguria. Next step:</li></ol>
+<p>A. Repeat K⁺ B. <b>Emergency RRT (haemodialysis) + standard hyperK management</b> C. IV fluids D. Insulin only</p>
+<ol><li>Refractory metabolic acidosis (pH 7.10, HCO₃⁻ 10) in AKI. Indication for RRT:</li></ol>
+<p>A. No B. <b>Yes — refractory acidosis (A in AEIOU)</b> C. Bicarbonate only D. Dialysis 3×/week</p>
+<ol><li>CRRT vs IHD — haemodynamically unstable septic AKI patient. Best:</li></ol>
+<p>A. IHD B. <b>CRRT (CVVHDF) — gradual solute/fluid removal</b> C. SLED D. Peritoneal dialysis</p>
+<ol><li>Patient with ACE inhibitor + sepsis + hypovolaemia. AKI mechanism:</li></ol>
+<p>A. ATN B. <b>Pre-renal (efferent arteriole dilation + hypoperfusion)</b> C. Post-renal D. AIN</p>
+<ol><li>AKI on contrast — when does Cr peak?</li></ol>
+<p>A. 6 h B. 24 h C. <b>48–72 h</b> D. 1 week</p>
+<ol><li>Rhabdomyolysis (CK 25,000) prevention of AKI:</li></ol>
+<p>A. Restrict fluids B. <b>Aggressive IV crystalloid 1–2 L/h (target UO 200–300 mL/h)</b> C. Loop diuretic D. ACEi</p>
+<ol><li>Acute interstitial nephritis (AIN) — most common cause:</li></ol>
+<p>A. ATN B. <b>Drugs (NSAIDs, antibiotics — penicillins, PPIs, allopurinol)</b> C. Pre-renal D. Glomerulonephritis</p>
+<ol><li>Early vs late RRT initiation in critically ill AKI (ELAIN / AKIKI trials):</li></ol>
+<p>A. Always early B. <b>AKIKI: no benefit of early; ELAIN: early within 8h of stage 2 may benefit; wait-and-see approach acceptable</b> C. Always late D. Never</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: KDIGO AKI criteria</li></ul>
+<p>A: Cr ↑ ≥26.5 μmol/L in 48h or ≥1.5× baseline within 7d; or UO &lt;0.5 mL/kg/h for ≥6h</p>
+<ul><li>Q: FENa interpretation</li></ul>
+<p>A: &lt;1% pre-renal; &gt;2% ATN</p>
+<ul><li>Q: FENa caveat</li></ul>
+<p>A: Invalid on diuretics — use FeUrea (&lt;35% pre-renal)</p>
+<ul><li>Q: AEIOU (RRT indications)</li></ul>
+<p>A: Acidosis, Electrolytes, Ingestion, Overload, Uraemia</p>
+<ul><li>Q: CRRT indication</li></ul>
+<p>A: Haemodynamically unstable</p>
+<ul><li>Q: IHD indication</li></ul>
+<p>A: Haemodynamically stable</p>
+<ul><li>Q: HRS treatment</li></ul>
+<p>A: Terlipressin + albumin (or noradrenaline + albumin)</p>
+<ul><li>Q: CIN prevention</li></ul>
+<p>A: IV hydration; hold metformin, ACEi, ARBs, NSAIDs</p>
+<ul><li>Q: Rhabdomyolysis AKI prevention</li></ul>
+<p>A: Aggressive IV crystalloid; target UO 200–300 mL/h</p>
+<ul><li>Q: Dopamine in AKI</li></ul>
+<p>A: NOT recommended (no benefit)</p>
+<ul><li>Q: AIN most common cause</li></ul>
+<p>A: Drugs (NSAIDs, penicillins, PPIs, allopurinol)</p>
+<ul><li>Q: Rhabdomyolysis CK target</li></ul>
+<p>A: Peak Cr 48–72 h post-contrast / rhabdo</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — KDIGO: Cr ↑ ≥26.5 in 48h or ≥1.5× in 7d; oliguria &lt;0.5 mL/kg/h for 6h (KDIGO stage 1).</li><li><b>B</b> — FENa &lt;1% = pre-renal.</li><li><b>B</b> — FENa invalid on diuretics — use FeUrea.</li><li><b>C</b> — AEIOU: Acidosis, Electrolytes, Ingestion, Overload, Uraemia (NOT Anaemia).</li><li><b>B</b> — CRRT for unstable patients.</li><li><b>B</b> — CIN prevention: IV hydration ± NAC.</li><li><b>B</b> — HRS: terlipressin + albumin.</li><li><b>B</b> — Common nephrotoxins: aminoglycosides, vancomycin, contrast, NSAIDs, ACEi/ARBs.</li><li><b>B</b> — Rhabdo: aggressive IV crystalloid.</li><li><b>B</b> — Dopamine NOT recommended in AKI.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Cr 2.5× baseline or UO &lt;0.5 for 8h = KDIGO stage 2.</li><li><b>B</b> — FENa invalid on diuretics; use FeUrea.</li><li><b>B</b> — HyperK + AKI + oliguria = emergency RRT.</li><li><b>B</b> — Refractory acidosis = RRT indication (A in AEIOU).</li><li><b>B</b> — CRRT for haemodynamic instability.</li><li><b>B</b> — ACEi + hypovolaemia = pre-renal (efferent dilation).</li><li><b>C</b> — CIN peaks at 48–72 h.</li><li><b>B</b> — Rhabdo: aggressive IV crystalloid, target UO 200–300 mL/h.</li><li><b>B</b> — AIN: drugs (NSAIDs, penicillins, PPIs, allopurinol).</li><li><b>B</b> — AKIKI: wait-and-see; ELAIN: early may help.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Acute Kidney Injury in Critical Illness · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

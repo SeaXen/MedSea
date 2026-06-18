@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Soil &amp; Food Contamination — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">MEDICINE IN AUSTERE ENVIRONMENTS</span>
+      <div class="h1">Soil &amp; Food Contamination</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Soil Contaminants</b>: Heavy metals (Pb, Cd, Hg, As), POPs (dioxins, PCBs, OCPs), radioactive contamination</li><li>[ ] Assess <b>Urban Gardening Risks</b>: Soil testing, raised beds, phytoremediation</li><li>[ ] Identify <b>Foodborne Pathogens</b>: Salmonella, Campylobacter, Listeria, E. coli, Clostridium, Norovirus</li><li>[ ] Identify <b>Chemical Food Contaminants</b>: Mycotoxins, heavy metals, pesticide residues, veterinary drugs, food additives</li><li>[ ] Apply <b>Food Safety Systems</b>: HACCP, Codex Alimentarius, foodborne outbreak investigation</li><li>[ ] Apply <b>Regulatory Frameworks</b>: National/EU/CODEX standards, MRLs, ADIs</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Soil Contamination & Health</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Major Soil Contaminants</div>
+<table class="ctable"><tr><th>Contaminant</th><th>Source</th><th>Health Effect</th><th>Key Metric</th></tr><tr><td>-------------</td><td>--------</td><td>---------------</td><td>------------</td></tr><tr><td>**Lead (Pb)**</td><td>Leaded petrol (historical), paint, batteries, smelting, industry</td><td>**Neurodevelopmental (children IQ loss)**, CVD, renal</td><td>**Soil: <400 ppm (residential)**, Blood Pb <5 µg/dL</td></tr><tr><td>**Cadmium (Cd)**</td><td>Phosphate fertilisers, batteries, plating, waste incineration</td><td>**Renal (tubular), Osteomalacia (Itai-Itai), Cancer (lung)**</td><td>**Soil: <3 ppm**, Urinary Cd <1 µg/g creat</td></tr><tr><td>**Mercury (Hg)**</td><td>Chlor-alkali, gold mining, coal combustion, waste incineration</td><td>**Neurotoxicity (MeHg), renal, developmental**</td><td>**Soil: <1 ppm**, Hair Hg <1 ppm</td></tr><tr><td>**Arsenic (As)**</td><td>Pesticides (historical), mining, smelting, geogenic</td><td>**Skin lesions, cancer (skin, lung, bladder), CVD, diabetes**</td><td>**Soil: <20 ppm**, Water <10 µg/L</td></tr><tr><td>**POPs: Dioxins/Furans**</td><td>Waste incineration, industrial processes, chlorine bleaching</td><td>**Cancer (TCDD Group 1), Chloracne, Endocrine, Immune**</td><td>**TEQ (WHO-TEQ) pg/g**</td></tr><tr><td>**POPs: PCBs**</td><td>Transformers, capacitors, hydraulic fluids, old building materials</td><td>**Cancer, neurodevelopmental, endocrine, immune**</td><td>**Congener-specific TEQ**</td></tr><tr><td>**OCPs (DDT, Dieldrin, Aldrin, etc.)**</td><td>Historical agricultural use</td><td>**Endocrine disruption, cancer, neurotoxicity, eggshell thinning**</td><td>**Various MRLs**</td></tr><tr><td>**Radionuclides**</td><td>Nuclear accidents (Chernobyl, Fukushima), weapons testing, mining</td><td>**Cancer (thyroid, leukaemia), ARS, genetic**</td><td>**Bq/kg**, Dose (mSv/yr)</td></tr></table>
+<div class="callout">[!tip] <b>Soil Contamination = Ingestion (hand-to-mouth), Inhalation (dust), Dermal, Food Chain Transfer</b>. <b>Children = High Risk</b> (pica, hand-to-mouth, higher absorption).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Urban Gardening & Food Production Risks</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Risk</th><th>Source</th><th>Mitigation</th></tr><tr><td>------</td><td>--------</td><td>------------</td></tr><tr><td>**Lead in Soil**</td><td>Historical leaded petrol, paint, industry</td><td>**Test soil**, **Raised beds with clean soil**, **Mulch**, **Wash produce**</td></tr><tr><td>**Cadmium/Arsenic**</td><td>Phosphate fertilisers, former orchards, smelting</td><td>**Soil testing**, **pH management (liming reduces Cd uptake)**, **Avoid high-Cd crops (rice, leafy)**</td></tr><tr><td>**PAHs / Dioxins**</td><td>Urban deposition, incinerators</td><td>**Peel root vegetables**, **Wash thoroughly**, **Avoid root crops in contaminated soil**</td></tr><tr><td>**Microbiological**</td><td>Manure, sewage sludge, irrigation water</td><td>**Compost properly (time/temperature)**, **Wash produce**, **Gap between application/harvest**</td></tr></table>
+<div class="callout">[!warning] <b>Urban Gardening on Contaminated Soil = Significant Exposure Route</b>. <b>Test Soil Before Planting</b>. <b>Root Vegetables &gt; Leafy &gt; Fruits</b> for contaminant uptake.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Foodborne Pathogens — Major Agents</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pathogen</th><th>Source / Vehicle</th><th>Incubation</th><th>Key Clinical Features</th></tr><tr><td>----------</td><td>------------------</td><td>------------</td><td>----------------------</td></tr><tr><td>**Salmonella (non-typhoidal)**</td><td>Poultry, eggs, meat, produce</td><td>6-72h</td><td>Diarrhoea, fever, cramps</td></tr><tr><td>**Campylobacter jejuni**</td><td>Poultry, raw milk, water</td><td>2-5 days</td><td>Bloody diarrhoea, fever, GBS trigger</td></tr><tr><td>**Salmonella Typhi/Paratyphi**</td><td>Water, food, carriers</td><td>1-3 weeks</td><td>Typhoid fever (step-ladder fever, rose spots)</td></tr><tr><td>**E. coli O157:H7 (EHEC)**</td><td>Beef, produce, petting zoos</td><td>3-4 days</td><td>**Bloody diarrhoea, HUS (children)**</td></tr><tr><td>**Listeria monocytogenes**</td><td>Deli meats, soft cheese, smoked fish, produce</td><td>1-70 days</td><td>**Meningitis, sepsis, pregnancy loss**, **Cold growth**</td></tr><tr><td>**Clostridium botulinum**</td><td>Canned foods, honey, vacuum-packed</td><td>12-36h</td><td>**Descending flaccid paralysis**, **Dysphagia, diplopia**</td></tr><tr><td>**Clostridium perfringens**</td><td>Meat, gravy, reheated foods</td><td>8-16h</td><td>**Watery diarrhoea, cramps**, self-limiting</td></tr><tr><td>**Bacillus cereus**</td><td>Rice (emetic), meats/vegetables (diarrhoeal)</td><td>1-6h (emetic), 8-16h (diarrhoeal)</td><td>**Two syndromes**: Emetic (vomiting), Diarrhoeal</td></tr><tr><td>**Staphylococcus aureus**</td><td>Cream pies, meats, salads (enterotoxin)</td><td>1-6h</td><td>**Rapid vomiting**, self-limiting</td></tr><tr><td>**Vibrio parahaemolyticus**</td><td>Raw seafood (oysters)</td><td>4-96h</td><td>Watery diarrhoea, abdominal cramps</td></tr><tr><td>**Norovirus**</td><td>Shellfish, ready-to-eat, person-to-person</td><td>12-48h</td><td>**Vomiting, diarrhoea**, outbreaks (cruise ships, institutions)</td></tr><tr><td>**Hepatitis A**</td><td>Shellfish, produce, water, person-to-person</td><td>15-50 days</td><td>Acute hepatitis, jaundice</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Chemical Food Contaminants</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mycotoxins (Fungal Metabolites)</div>
+<table class="ctable"><tr><th>Mycotoxin</th><th>Producing Fungi</th><th>Main Foods</th><th>Health Effect</th></tr><tr><td>-----------</td><td>----------------</td><td>------------</td><td>---------------</td></tr><tr><td>**Aflatoxins (B1, B2, G1, G2)**</td><td>*Aspergillus flavus, parasiticus*</td><td>**Groundnuts, maize, tree nuts, spices, dried fruit**</td><td>**Hepatocellular Carcinoma (Group 1)**, Acute hepatotoxicity</td></tr><tr><td>**Ochratoxin A**</td><td>*Aspergillus ochraceus, Penicillium verrucosum*</td><td>Cereals, coffee, wine, dried fruit, spices</td><td>**Nephrotoxic, Carcinogenic (Group 2B)**</td></tr><tr><td>**Fumonisins (B1, B2)**</td><td>*Fusarium verticillioides, proliferatum*</td><td>**Maize, maize products**</td><td>**Oesophageal cancer, Neural tube defects**</td></tr><tr><td>**Deoxynivalenol (DON / Vomitoxin)**</td><td>*Fusarium graminearum, culmorum*</td><td>**Cereals (wheat, barley, maize)**</td><td>**Gastrointestinal (vomiting), Immunosuppression**</td></tr><tr><td>**Zearalenone (ZEN)**</td><td>*Fusarium graminearum*</td><td>**Cereals, maize**</td><td>**Oestrogenic (reproductive toxicity)**</td></tr><tr><td>**Patulin**</td><td>*Penicillium, Aspergillus*</td><td>**Apple juice, fruit products**</td><td>**Genotoxic, immunotoxic**</td></tr></table>
+<div class="sub-h">Heavy Metals in Food</div>
+<table class="ctable"><tr><th>Metal</th><th>Main Dietary Sources</th><th>Health Concern</th><th>Key Regulation</th></tr><tr><td>-------</td><td>---------------------</td><td>----------------</td><td>----------------</td></tr><tr><td>**Lead**</td><td>Cereals, vegetables, water, spices, game meat (shot)</td><td>**Neurodevelopmental (children)**</td><td>ML: 0.01-0.3 mg/kg (varies by food)</td></tr><tr><td>**Cadmium**</td><td>**Cereals, vegetables, shellfish, offal**, smokers</td><td>**Renal (tubular), Osteomalacia (Itai-Itai)**</td><td>ML: 0.01-0.2 mg/kg</td></tr><tr><td>**Mercury (Methylmercury)**</td><td>**Fish (predatory: tuna, swordfish, shark)**</td><td>**Neurodevelopmental (fetal/infant)**</td><td>ML: 0.5-1.0 mg/kg (fish)</td></tr><tr><td>**Arsenic (Inorganic)**</td><td>**Rice, rice products, water, seaweed**</td><td>**Cancer, skin lesions, CVD**</td><td>ML: 0.1-0.2 mg/kg (rice)</td></tr><tr><td>**Arsenic (Organic - Arsenobetaine)**</td><td>**Seafood (fish, shellfish)**</td><td>**Low toxicity (excreted)**</td><td>Not regulated</td></tr></table>
+<div class="sub-h">Pesticide Residues &amp; Veterinary Drugs</div>
+<table class="ctable"><tr><th>Category</th><th>Concerns</th><th>Regulation</th></tr><tr><td>----------</td><td>----------</td><td>------------</td></tr><tr><td>**Organophosphates/Carbamates**</td><td>Acute neurotoxicity (cholinesterase inhibition)</td><td>**MRLs (Maximum Residue Limits)**, **ADI**, **PHI (Pre-Harvest Interval)**</td></tr><tr><td>**Organochlorines (DDT, Dieldrin, etc.)**</td><td>**Persistent, bioaccumulative, endocrine disruption**</td><td>**Banned/Restricted (Stockholm Convention)**</td></tr><tr><td>**Pyrethroids / Neonicotinoids**</td><td>**Lower acute toxicity**, bee toxicity, environmental persistence</td><td>**MRLs, Pollinator Risk Assessment**</td></tr><tr><td>**Glyphosate**</td><td>**Controversial carcinogenicity (IARC 2A)**</td><td>**MRLs, Re-evaluation ongoing**</td></tr><tr><td>**Veterinary Drugs** (Antibiotics, hormones, β-agonists)</td><td>**Residues in meat/milk/eggs**, **AMR, Hormonal effects**</td><td>**MRLs, Withdrawal Periods, EU Ban on Growth Promoters**</td></tr></table>
+<div class="sub-h">Food Additives &amp; Adulterants</div>
+<table class="ctable"><tr><th>Category</th><th>Examples</th><th>Concerns</th></tr><tr><td>----------</td><td>----------</td><td>----------</td></tr><tr><td>**Preservatives**</td><td>Benzoates, sulfites, nitrites/nitrates</td><td>**Allergy (sulfites), Carcinogenicity (nitrosamines from nitrites)**</td></tr><tr><td>**Colourants**</td><td>Tartrazine, Sunset Yellow, Carmine</td><td>**Hyperactivity (controversial), Allergy**</td></tr><tr><td>**Sweeteners**</td><td>Aspartame, saccharin, sucralose, stevia</td><td>**Carcinogenicity debates (aspartame), Metabolic effects**</td></tr><tr><td>**Adulterants**</td><td>Melamine (milk), Sudan dyes (spices), industrial dyes</td><td>**Fraud, Acute/Chronic Toxicity**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📖 Food Safety Systems — HACCP & Codex</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">HACCP — 7 Principles</div>
+<table class="ctable"><tr><th>Principle</th><th>Action</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**1. Hazard Analysis**</td><td>**Identify** biological, chemical, physical hazards at each step</td></tr><tr><td>**2. CCP Identification**</td><td>**Critical Control Points** where control is essential</td></tr><tr><td>**3. Critical Limits**</td><td>**Measurable criteria** (time, temp, pH, Aw) at each CCP</td></tr><tr><td>**4. Monitoring**</td><td>**Planned observations/measurements** at CCPs</td></tr><tr><td>**5. Corrective Actions**</td><td>**Pre-defined actions** when CCP limit exceeded</td></tr><tr><td>**6. Verification**</td><td>**Procedures to confirm HACCP works** (audits, testing, reviews)</td></tr><tr><td>**7. Documentation**</td><td>**Records** of HACCP plan, monitoring, corrective actions</td></tr></table>
+<div class="sub-h">Codex Alimentarius — International Food Standards</div>
+<table class="ctable"><tr><th>Component</th><th>Role</th></tr><tr><td>---------</td><td>------</td></tr><tr><td>**General Standards**</td><td>Labelling, additives, contaminants, hygiene, Methods of Analysis</td></tr><tr><td>**Commodity Standards**</td><td>**Specific foods**: Milk, meat, fish, cereals, fruit/veg, fats/oils</td></tr><tr><td>**Pesticide Residues (MRLs)**</td><td>**Codex MRLs** → Basis for National/International Trade (WTO SPS)</td></tr><tr><td>**Veterinary Drug Residues (MRLs)**</td><td>**Codex MRLs** → **Withdrawal Periods**, **Acceptable Daily Intake (ADI)**</td></tr><tr><td>**Food Additives (INS/JECFA)**</td><td>**ADI, Maximum Levels**, Technological Justification</td></tr><tr><td>**Contaminants (MLs)**</td><td>**Lead, Cadmium, Arsenic, Mercury, Tin, Mycotoxins, PAHs, PAHs, Dioxins**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📖 Foodborne Outbreak Investigation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Steps</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Detection**</td><td>**Surveillance** (Syndromic, Lab, Complaints), **Cluster Detection**</td></tr><tr><td>**2. Case Definition**</td><td>**Clinical + Lab + Epidemiological** (Person, Place, Time)</td></tr><tr><td>**2. Hypothesis Generation**</td><td>**Interviews** (Food History), **Case-Control Study**</td></tr><tr><td>**4. Hypothesis Testing**</td><td>**Analytical Study** (Case-Control / Cohort), **Statistical Association**</td></tr><tr><td>**5. Source Identification**</td><td>**Traceback / Traceforward**, **Environmental Sampling**, **WGS Comparison**</td></tr><tr><td>**6. Control Measures**</td><td>**Recall**, **Recall**, **Public Alert**, **Facility Correction**, **Exclusion**</td></tr><tr><td>**7. Reporting**</td><td>**Local/National/International (INFOSAN, RASFF, PulseNet)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🌍 Climate Change & Food Safety</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Impact</th><th>Examples</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Temperature Rise**</td><td>**Increased Microbial Growth** (Salmonella, Vibrio), **Mycotoxin Production** (Aflatoxin in maize)</td></tr><tr><td>**Extreme Weather**</td><td>**Floods → Contamination**, **Drought → Concentration of Contaminants**</td></tr><tr><td>**Ocean Warming**</td><td>**Vibrio spp. Expansion** (Cholera, Vibrio wound infections), **HABs (Ciguatera, PSP)**</td></tr><tr><td>**CO2 Rise**</td><td>**Reduced Nutrient Density** (Protein, Zn, Fe in crops)</td></tr><tr><td>**Pest/Disease Shifts**</td><td>**New Pests → Increased Pesticide Use**, **New Mycotoxin Risks**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Soil Contaminants**</td><td>**Pb, Cd, Hg, As, POPs (Dioxins, PCBs, OCPs), Radionuclides** → **Ingestion/Inhalation/Dermal/Food Chain**</td></tr><tr><td>**Urban Gardening**</td><td>**Test Soil**, **Raised Beds**, **Peel/Wash Produce**, **Avoid Root Crops in Contaminated Soil**</td></tr><tr><td>**Foodborne Pathogens**</td><td>**Salmonella, Campylobacter, Listeria, EHEC, Norovirus** → **Diarrhoea, HUS, Meningitis, Pregnancy Loss**</td></tr><tr><td>**Mycotoxins**</td><td>**Aflatoxin (Liver Cancer), Ochratoxin A (Kidney), Fumonisins (Oesophageal Ca), DON (GI), ZEN (Endocrine)**</td></tr><tr><td>**Heavy Metals in Food**</td><td>**Pb (Neurodev), Cd (Renal/Bone), Hg (Neurodev-fetal), As (Cancer), Hg in Fish (Pregnancy Advice)**</td></tr><tr><td>**Pesticides/Vet Drugs**</td><td>**MRLs, ADIs, PHIs**, **OP/Carbamate (ChE Inhibition), OCPs (POPs, Banned)**</td></tr><tr><td>**Food Additives**</td><td>**Preservatives (Nitrites→Nitrosamines), Colours (Hyperactivity), Sweeteners (Aspartame debate)**</td></tr><tr><td>**HACCP**</td><td>**7 Principles: Hazard Analysis → CCP → Critical Limits → Monitoring → Corrective Action → Verification → Documentation**</td></tr><tr><td>**Codex Alimentarius**</td><td>**International Standards (MRLs, MLs, Additive ADIs) → WTO SPS Reference**</td></tr><tr><td>**Outbreak Investigation**</td><td>**Detect → Define Cases → Hypothesis → Test (Case-Control) → Source ID → Control → Report**</td></tr><tr><td>**Climate Change**</td><td>**↑ Mycotoxins, ↑ Vibrio, ↑ Aflatoxin, ↓ Crop Nutrients, ↑ Pests/Pesticides**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the main heavy metals contaminating soil and their health effects?</b></li></ol>
+<ul><li><b>Pb (Neurodevelopmental), Cd (Renal/Osteomalacia), Hg (Neurotoxicity), As (Cancer, Skin lesions, CVD)</b></li></ul>
+<ol><li><b>What is the main risk of urban gardening on contaminated soil?</b></li></ol>
+<ul><li><b>Direct ingestion of soil/dust, Inhalation of dust, Consumption of contaminated produce (root vegetables highest uptake).</b></li></ul>
+<ol><li><b>Which mycotoxin is most strongly associated with hepatocellular carcinoma?</b></li></ol>
+<ul><li><b>Aflatoxin B1 (Group 1 Carcinogen)</b> — Synergistic with Hepatitis B.</li></ul>
+<ol><li><b>What are the key heavy metals regulated in food and their main sources?</b></li></ol>
+<ul><li><b>Pb (Cereals, veg, water, spices), Cd (Cereals, veg, shellfish, offal), Hg (Predatory fish), As (Rice, water, seaweed).</b></li></ul>
+<ol><li><b>What are the main mycotoxins and their health effects?</b></li></ol>
+<ul><li><b>Aflatoxins (HCC), Ochratoxin A (Nephrotoxic), Fumonisins (Oesophageal Ca, NTD), DON (GI), ZEN (Endocrine).</b></li></ul>
+<ol><li><b>What are Maximum Residue Limits (MRLs) and who sets them internationally?</b></li></ol>
+<ul><li><b>Codex Alimentarius Commission (FAO/WHO)</b> sets <b>Codex MRLs</b>; basis for WTO SPS Agreement.</li></ul>
+<ol><li><b>What is HACCP and its 7 principles?</b></li></ol>
+<ul><li><b>Hazard Analysis → CCP Identification → Critical Limits → Monitoring → Corrective Actions → Verification → Documentation</b>.</li></ul>
+<ol><li><b>How do you investigate a foodborne outbreak?</b></li></ol>
+<ul><li><b>Detect → Define Cases → Hypothesis (Interviews) → Test (Case-Control) → Traceback/Traceforward → Control → Report</b>.</li></ul>
+<ol><li><b>What are the climate change impacts on food safety?</b></li></ol>
+<ul><li><b>↑ Mycotoxins (Aflatoxin), ↑ Vibrio/cholera, ↑ Aflatoxin in maize, ↓ Crop nutrients, ↑ Pests/Pesticides.</b></li></ul>
+<ol><li><b>What is the difference between MRL and ADI?</b></li></ol>
+<ul><li><b>MRL = Max legal residue in food</b>; <b>ADI = Acceptable Daily Intake (safe lifetime exposure).</b></li></ul>
+<ol><li><b>What are the Codex Alimentarius standards used for?</b></li></ol>
+<ul><li><b>International Food Standards, MRLs, MLs, Additive ADIs → WTO SPS Agreement Reference.</b></li></ul>
+<ol><li><b>What is the most common cause of foodborne botulism and its clinical presentation?</b></li></ol>
+<ul><li><b>Clostridium botulinum</b> in improperly canned/preserved foods → <b>Descending flaccid paralysis, dysphagia, diplopia, respiratory failure</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Aflatoxin vs Other Mycotoxins**</td><td>**Aflatoxin = Liver Cancer (Potent Carcinogen)**; **Others: Kidney, Oesophagus, GI, Endocrine**</td></tr><tr><td>**Lead in Soil vs Food**</td><td>**Soil → Direct Ingestion/Dust + Plant Uptake**; **Food = Multiple Sources (Cereals, Water, Spices, Game)**</td></tr><tr><td>**Acute vs Chronic Heavy Metal Toxicity**</td><td>**Acute = GI, Shock**; **Chronic = Neuro, Renal, Cancer, Endocrine**</td></tr><tr><td>**MRL vs ADI**</td><td>**MRL = Legal Limit in Food**; **ADI = Safe Daily Intake for Lifetime**</td></tr><tr><td>**HACCP vs GMP**</td><td>**HACCP = Hazard-Specific, Science-Based**; **GMP = General Hygiene/Manufacturing Practice**</td></tr><tr><td>**Codex vs National Standards**</td><td>**Codex = International Reference (WTO SPS)**; National can be Stricter</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Aflatoxin = Liver Cancer (HCC)"**</td><td>Aflatoxin Carcinogenicity</td></tr><tr><td>**"Lead = Neurodev, Cadmium = Kidney/Bone, Mercury = Neuro (Fetal), Arsenic = Cancer/Skin"**</td><td>Heavy Metals</td></tr><tr><td>**"HACCP = 7 Steps: HA → CCP → CL → Monitor → CA → Verify → Doc"**</td><td>HACCP Principles</td></tr><tr><td>**"MRL = Legal Limit in Food; ADI = Safe Daily Dose"**</td><td>MRL vs ADI</td></tr><tr><td>**"Codex = WTO SPS Reference"**</td><td>Codex Role</td></tr><tr><td>**"Outbreak = Detect → Define → Hypothesis → Test → Trace → Control → Report"**</td><td>Outbreak Steps</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Soil &amp; Food Contamination))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Soil Contamination</div>
+<div class="mm-node mm-l3">– Heavy Metals: Pb, Cd, Hg, As</div>
+<div class="mm-node mm-l3">– POPs: Dioxins, PCBs, OCPs</div>
+<div class="mm-node mm-l3">– Radionuclides</div>
+<div class="mm-node mm-l3">– Urban Gardening Risks</div>
+<div class="mm-node mm-l3">– Mitigation: Test, Raised Beds, pH, Wash</div>
+<div class="mm-node mm-l2">Foodborne Pathogens</div>
+<div class="mm-node mm-l3">– Salmonella, Campylobacter, Listeria</div>
+<div class="mm-node mm-l3">– EHEC, Norovirus, Hep A</div>
+<div class="mm-node mm-l3">– Botulism, Staph aureus</div>
+<div class="mm-node mm-l3">– Bacillus cereus</div>
+<div class="mm-node mm-l3">– Vibrio, Clostridium perfringens</div>
+<div class="mm-node mm-l2">Chemical Contaminants</div>
+<div class="mm-node mm-l3">– Mycotoxins: Aflatoxin, Ochratoxin, Fumonisin, DON, ZEN</div>
+<div class="mm-node mm-l3">– Heavy Metals: Pb, Cd, Hg, As</div>
+<div class="mm-node mm-l3">– Pesticides: OP, Carbamate, OC, Pyrethroid, Glyphosate</div>
+<div class="mm-node mm-l3">– Vet Drugs: Abx, Hormones, Beta-agonists</div>
+<div class="mm-node mm-l3">– Additives: Preservatives, Colours, Sweeteners</div>
+<div class="mm-node mm-l3">– Adulterants: Melamine, Sudan dyes</div>
+<div class="mm-node mm-l2">Food Safety Systems</div>
+<div class="mm-node mm-l3">– HACCP (7 Principles)</div>
+<div class="mm-node mm-l3">– Codex Alimentarius (MRLs, MLs, ADIs)</div>
+<div class="mm-node mm-l3">– Outbreak Investigation</div>
+<div class="mm-node mm-l2">Climate Change</div>
+<div class="mm-node mm-l3">– ↑ Mycotoxins, Vibrio, Aflatoxin</div>
+<div class="mm-node mm-l3">– ↓ Crop Nutrients</div>
+<div class="mm-node mm-l3">– ↑ Pests/Pesticides</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**SOIL & FOOD CONTAMINATION – FCPS/MRCP REVISION CARD**</th></tr><tr><td>---------------------------------------------------------</td></tr><tr><td>**Soil Contaminants**: **Pb, Cd, Hg, As**, **POPs (Dioxins, PCBs, OCPs)**, **Radionuclides**</td></tr><tr><td>**Urban Gardening**: **Test Soil**, **Raised Beds**, **Peel/Wash**, **Avoid Root Crops**</td></tr><tr><td>**Foodborne Pathogens**: **Salmonella, Campylobacter, Listeria, EHEC, Norovirus**</td></tr><tr><td>**Mycotoxins**: **Aflatoxin (HCC)**, **Ochratoxin A (Kidney)**, **Fumonisin (Oesoph Ca)**, **DON (GI)**, **ZEN (Endocrine)**</td></tr><tr><td>**Heavy Metals in Food**: **Pb (Neurodev), Cd (Renal/Bone), Hg (Neurodev-fetal), As (Cancer)**</td></tr><tr><td>**Pesticides/Vet Drugs**: **MRLs, ADIs, PHIs**, **OPs/Carbamates = ChE Inhibitors**, **OCPs = POPs**</td></tr><tr><td>**Additives/Adulterants**: Preservatives (Nitrites→Nitrosamines), Colours, Sweeteners, Adulterants (Melamine)</td></tr><tr><td>**HACCP**: **7 Principles** (HA → CCP → CL → Monitor → CA → Verify → Doc)</td></tr><tr><td>**Codex**: **MRLs, MLs, ADIs** → WTO SPS Reference</td></tr><tr><td>**Outbreak**: Detect → Define → Hypothesis → Test → Trace → Control → Report</td></tr><tr><td>**Climate Change**: ↑ Mycotoxins, ↑ Vibrio, ↓ Crop Nutrients, ↑ Pests</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Soil contaminants (Pb, Cd, Hg, As, POPs, Radionuclides), Urban gardening precautions, Major foodborne pathogens, Key mycotoxins (Aflatoxin, Ochratoxin, Fumonisin, DON, ZEN), Heavy metals in food (Pb, Cd, Hg, As), Pesticide/vet drug MRLs/ADIs, HACCP 7 principles, Codex Alimentarius role, Outbreak investigation steps, Climate change impacts on food safety</td></tr><tr><td>**Should Know**</td><td>Soil testing methods, Phytoremediation/bioremediation, Specific mycotoxin regulations (EU/FAO/WHO), Pesticide residue monitoring programmes, Veterinary drug withdrawal periods, Food additive safety evaluation (JECFA), Foodborne outbreak investigation techniques (WGS, traceback), Climate change adaptation strategies for food safety, Emerging risks (nanoplastics, novel proteins)</td></tr><tr><td>**Nice to Know**</td><td>Genomic epidemiology of foodborne pathogens, Metabolomics in food safety, Blockchain for traceability, Alternative proteins safety, Cellular agriculture risks, Food fraud detection (NMR, Isotope ratios), Planetary health diet & contaminants, One Health integration, Cost of foodborne illness, Global food safety governance (INFOSAN, GFN)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Soil Contaminants & Urban Gardening</td><td></td><td></td></tr><tr><td>Foodborne Pathogens</td><td></td><td></td></tr><tr><td>Chemical Contaminants (Mycotoxins, Heavy Metals, Pesticides)</td><td></td><td></td></tr><tr><td>Food Additives & Adulterants</td><td></td><td></td></tr><tr><td>HACCP & Codex Alimentarius</td><td></td><td></td></tr><tr><td>Outbreak Investigation</td><td></td><td></td></tr><tr><td>Climate Change & Food Safety</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Water Pollution &amp; Waterborne Diseases]]</li><li><b>Next</b>: [[Climate Change &amp; Health]]</li><li><b>Section Hub</b>: [[Environmental Medicine MOC]]</li><li><b>MOC</b>: [[Hematology MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Soil &amp; Food Contamination · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

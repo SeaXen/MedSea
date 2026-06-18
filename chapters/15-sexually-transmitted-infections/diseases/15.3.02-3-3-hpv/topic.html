@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3.3 HPV — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">3.3 HPV</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify <b>HPV types</b> (High-Risk vs Low-Risk) and their disease associations</li><li>[ ] Understand <b>HPV natural history</b> (Transient vs Persistent Infection → CIN → Cancer)</li><li>[ ] Apply <b>HPV vaccination</b> schedules (9-valent, 2-dose &lt;15y, 3-dose ≥15y, Catch-up, Males)</li><li>[ ] Apply <b>cervical screening</b> algorithms (HPV Primary Screening, Cytology Triage, Colposcopy Referral)</li><li>[ ] Manage <b>anogenital warts</b> (Patient-Applied, Provider-Administered, Surgical)</li><li>[ ] Manage <b>HPV-related cancers</b> (Cervical, Anal, Oropharyngeal, Penile, Vulvar, Vaginal)</li><li>[ ] Apply <b>HPV in special populations</b> (HIV, Immunocompromised, Pregnancy, MSM)</li><li>[ ] Answer viva: "HPV types &amp; cancer risk" and "Vaccination schedule" and "Screening algorithm" and "Wart treatment"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: HPV Biology & Natural History</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Human Papillomavirus</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Non-Enveloped, dsDNA Virus</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">&gt;200 Types Identified</div>
+<div class="fc-node" data-id="F">Natural History</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">High-Risk (Oncogenic)</div>
+<div class="fc-node" data-id="E">Low-Risk (Non-Oncogenic)</div>
+<div class="fc-node" data-id="F1">Transient Infection (90% Clear in 1-2 Years)</div>
+<div class="fc-node" data-id="F2">Persistent Infection (High-Risk) → CIN → Cancer</div>
+<div class="fc-node" data-id="F3">Immune Evasion (E6/E7 Oncoproteins)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D1">HPV 16, 18 (70% Cervical Cancer)</div>
+<div class="fc-node" data-id="D2">HPV 31, 33, 45, 52, 58 (Additional 20%)</div>
+<div class="fc-node" data-id="D3">HPV 35, 39, 51, 56, 59, 66, 68 (Probable/High-Risk)</div>
+<div class="fc-node" data-id="E1">HPV 6, 11 (90% Genital Warts)</div>
+<div class="fc-node" data-id="E2">HPV 40, 42, 43, 44, 54, 61, 70, 72, 81</div>
+<div class="fc-node" data-id="G">Carcinogenesis Pathway</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G1">E6 → p53 Degradation (Apoptosis Block)</div>
+<div class="fc-node" data-id="G2">E7 → pRb Degradation (Cell Cycle Dysregulation)</div>
+<div class="fc-node" data-id="G3">Genomic Instability → Integration → Cancer</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ HPV Classification &amp; Disease Associations</div>
+<div class="sub-h">High-Risk (Oncogenic) HPV Types</div>
+<table class="ctable"><tr><th>Group</th><th>Types</th><th>Cancer Contribution</th><th>Key Associations</th></tr><tr><td>-------</td><td>-------</td><td>---------------------</td><td>------------------</td></tr><tr><td>**Highest Risk**</td><td>**16, 18**</td><td>**~70% Cervical Cancer**</td><td>**Cervical, Anal, Oropharyngeal, Penile, Vulvar, Vaginal**</td></tr><tr><td>**High Risk**</td><td>**31, 33, 45, 52, 58**</td><td>**~20% Cervical Cancer**</td><td>Same Cancers</td></tr><tr><td>**Probable High Risk**</td><td>26, 53, 66, 67, 68, 70, 73, 82</td><td>Minor Contribution</td><td>Cervical, Anal</td></tr><tr><td>**Possible High Risk**</td><td>30, 34, 35, 39, 40, 42, 43, 44, 45, 51, 52, 54, 55, 56, 57, 59, 61, 62, 64, 67, 69, 70, 71, 72, 73, 81, 82, 83, 84, 85, 86, 87, 89, 90, 91</td><td>Minimal</td><td>—</td></tr></table>
+<div class="sub-h">Low-Risk (Non-Oncogenic) HPV Types</div>
+<table class="ctable"><tr><th>Types</th><th>Disease Association</th></tr><tr><td>-------</td><td>---------------------</td></tr><tr><td>**6, 11**</td><td>**~90% Genital Warts** (Condyloma Acuminata), Recurrent Respiratory Papillomatosis (RRP), Low-Grade Cervical Lesions (LSIL)</td></tr><tr><td>40, 42, 43, 44, 54, 61, 70, 72, 81, 89</td><td>Minor (Rare Warts, LSIL)</td></tr></table>
+<div class="sub-h">IARC Classification (2012/2020)</div>
+<table class="ctable"><tr><th>Group</th><th>Types</th><th>Definition</th></tr><tr><td>-------</td><td>-------</td><td>------------</td></tr><tr><td>**Group 1 (Carcinogenic)**</td><td>16, 18, 31, 33, 35, 39, 45, 51, 52, 56, 58, 59</td><td>Sufficient Evidence</td></tr><tr><td>**Group 2A (Probably Carcinogenic)**</td><td>68</td><td>Limited Evidence Human, Sufficient Animal</td></tr><tr><td>**Group 2B (Possibly Carcinogenic)**</td><td>26, 53, 66, 67, 70, 73, 82</td><td>Limited Evidence</td></tr><tr><td>**Group 3 (Not Classifiable)**</td><td>Low-Risk Types (6, 11, etc.)</td><td>Inadequate Evidence</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ HPV Natural History &amp; Carcinogenesis</div>
+<div class="sub-h">Infection Outcomes</div>
+<table class="ctable"><tr><th>Outcome</th><th>Probability</th><th>Timeline</th></tr><tr><td>---------</td><td>-------------</td><td>----------</td></tr><tr><td>**Transient Clearance**</td><td>**~90%**</td><td>**1-2 Years** (Median 8-12 Months)</td></tr><tr><td>**Persistence**</td><td>**~10%**</td><td>**>2 Years** → Risk of CIN2+</td></tr><tr><td>**Progression to CIN2/3**</td><td>**~5-10% of Persistent**</td><td>**3-10 Years**</td></tr><tr><td>**Progression to Invasive Cancer**</td><td>**<1% of CIN3**</td><td>**10-20+ Years**</td></tr></table>
+<div class="sub-h">Carcinogenesis Pathway (High-Risk HPV)</div>
+<table class="ctable"><tr><th>Step</th><th>Molecular Mechanism</th></tr><tr><td>------</td><td>---------------------</td></tr><tr><td>**1. Viral Entry**</td><td>HPV Infects Basal Keratinocytes (Microtrauma)</td></tr><tr><td>**2. Viral Replication**</td><td>**Episomal** (Productive) in Differentiating Epithelium</td></tr><tr><td>**3. Immune Evasion**</td><td>**E6/E7 Oncoproteins** Downregulate HLA, Interferon Response</td></tr><tr><td>**4. Cell Cycle Dysregulation**</td><td>**E7 → pRb Degradation** → E2F Release → Uncontrolled S-Phase Entry</td></tr><tr><td>**5. Apoptosis Block**</td><td>**E6 → p53 Degradation** → Failed DNA Repair/Apoptosis</td></tr><tr><td>**6. Genomic Instability**</td><td>Chromosomal Aberrations, Integration into Host Genome</td></tr><tr><td>**7. Clonal Expansion**</td><td>Integrated HPV (E6/E7 Overexpression) → CIN → Cancer</td></tr></table>
+<div class="callout"><b>Key</b>: <b>E6 → p53 Degradation</b> (Apoptosis Block); <b>E7 → pRb Degradation</b> (Cell Cycle Dysregulation)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Clinical Manifestations</div>
+<div class="sub-h">Anogenital Warts (Condyloma Acuminata)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Causative Types**</td><td>**HPV 6, 11** (90% of Warts)</td></tr><tr><td>**Appearance**</td><td>**Fleshy, Cauliflower-like, Pedunculated or Sessile**, Skin-Coloured/Whitish</td></tr><tr><td>**Distribution**</td><td>**Perianal, Perineal, Vulvar, Vaginal, Cervical, Penile, Scrotal, Urethral, Anal**</td></tr><tr><td>**Symptoms**</td><td>Often Asymptomatic; Pruritus, Bleeding, Dyspareunia, Discharge</td></tr><tr><td>**Differential**</td><td>**Condyloma Lata (Syphilis)**, Molluscum, Seborrheic Keratosis, Skin Tags, SCC</td></tr></table>
+<div class="sub-h">Cervical Intraepithelial Neoplasia (CIN)</div>
+<table class="ctable"><tr><th>Grade</th><th>Histology</th><th>HPV Association</th><th>Management</th></tr><tr><td>-------</td><td>-----------</td><td>-----------------</td><td>------------</td></tr><tr><td>**CIN1 (LSIL)**</td><td>**Low-Grade** (Basal 1/3)</td><td>High/Low-Risk</td><td>**Observation** (90% Regress), HPV Test at 12 Months</td></tr><tr><td>**CIN2 (HSIL)**</td><td>**High-Grade** (Basal 2/3)</td><td>High-Risk</td><td>**Treatment (Excision/Ablation)** OR Observation (Selected)</td></tr><tr><td>**CIN3 (HSIL / CIS)**</td><td>**High-Grade** (Full Thickness)</td><td>High-Risk</td><td>**Treatment (Excision Preferred)**</td></tr></table>
+<div class="sub-h">HPV-Related Cancers</div>
+<table class="ctable"><tr><th>Cancer Site</th><th>HPV Attribution</th><th>High-Risk Types</th><th>Screening</th></tr><tr><td>-------------</td><td>----------------</td><td>-----------------</td><td>-----------</td></tr><tr><td>**Cervical**</td><td>**~100%**</td><td>16, 18 (70%), 31, 33, 45, 52, 58</td><td>**HPV Primary Screening** (Cytology Triage)</td></tr><tr><td>**Anal**</td><td>**~90%**</td><td>16, 18</td><td>**MSM/HIV: Annual Cytology/HPV**</td></tr><tr><td>**Oropharyngeal**</td><td>**~70% (HPV+)**</td><td>**16 (Dominant)**</td><td>No Organised Screening</td></tr><tr><td>**Vulvar**</td><td>**~40-70%**</td><td>16, 18</td><td>Visual Inspection, Biopsy</td></tr><tr><td>**Vaginal**</td><td>**~70%**</td><td>16, 18</td><td>Cytology/HPV (Rare)</td></tr><tr><td>**Penile**</td><td>**~50%**</td><td>16, 18</td><td>Visual Inspection, Biopsy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ HPV Vaccination</div>
+<div class="sub-h">Available Vaccines</div>
+<table class="ctable"><tr><th>Vaccine</th><th>Types Covered</th><th>Dosing Schedule</th></tr><tr><td>---------</td><td>---------------</td><td>-----------------</td></tr><tr><td>**9-Valent (Gardasil 9)**</td><td>**6, 11, 16, 18, 31, 33, 45, 52, 58** (90% Cervical Cancer, 90% Genital Warts)</td><td>**2-Dose (<15y: 0, 6-12m)**; **3-Dose (≥15y: 0, 2, 6m)**</td></tr><tr><td>**Quadrivalent (Gardasil)**</td><td>6, 11, 16, 18 (70% Cervical Cancer, 90% Warts)</td><td>Same as 9vHPV</td></tr><tr><td>**Bivalent (Cervarix)**</td><td>16, 18 (70% Cervical Cancer)</td><td>Same as 9vHPV</td></tr></table>
+<div class="callout"><b>9-Valent = Preferred</b> (Broadest Protection); <b>Quadrivalent/Bivalent = Acceptable if 9v Unavailable</b></div>
+<div class="sub-h">Vaccination Schedules</div>
+<table class="ctable"><tr><th>Age Group</th><th>9vHPV Schedule</th><th>Notes</th></tr><tr><td>-----------</td><td>----------------</td><td>-------</td></tr><tr><td>**<15 Years**</td><td>**2 Doses: 0, 6-12 Months** (Minimum Interval 5 Months)</td><td>**Preferred** (Robust Immune Response)</td></tr><tr><td>**≥15 Years**</td><td>**3 Doses: 0, 2, 6 Months** (Month 0, 1-2, 6)</td><td>**Immunocompromised: 3 Doses Regardless of Age**</td></tr><tr><td>**Catch-Up**</td><td>**Females ≤26 Years, Males ≤21 Years** (Up to 26 for MSM/Immunocompromised)</td><td>**Shared Clinical Decision 27-45 Years**</td></tr><tr><td>**HIV/Immunocompromised**</td><td>**3 Doses (0, 2, 6 Months)** Regardless of Age</td><td>**MSM ≤26 Years (Up to 26)**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>2-Dose &lt;15y, 3-Dose ≥15y</b>; <b>Catch-Up to 26y (F), 21y (M) / 26y (MSM/Immunocomp)</b>; <b>Shared Decision 27-45y</b></div>
+<div class="sub-h">Vaccine Efficacy &amp; Impact</div>
+<table class="ctable"><tr><th>Outcome</th><th>Efficacy (9vHPV)</th></tr><tr><td>---------</td><td>------------------</td></tr><tr><td>**HPV 6/11/16/18/31/33/45/52/58 Infection**</td><td>**>90%** (Type-Specific)</td></tr><tr><td>**CIN2+ (HPV 16/18/31/33/45/52/58)**</td><td>**>95%**</td></tr><tr><td>**Genital Warts (6/11)**</td><td>**>90%**</td></tr><tr><td>**Vulvar/Vaginal/Anal Precancer**</td><td>**>90%**</td></tr><tr><td>**Population Impact (Countries with High Coverage)**</td><td>**>80% Reduction in Vaccine-Type HPV, >50% Reduction in CIN2+**</td></tr></table>
+<div class="sub-h">Contraindications &amp; Precautions</div>
+<table class="ctable"><tr><th>Contraindication</th><th>Detail</th></tr><tr><td>-----------------</td><td>--------</td></tr><tr><td>**Anaphylaxis to Previous Dose/Component**</td><td>Absolute Contraindication</td></tr><tr><td>**Pregnancy**</td><td>**Defer Until Postpartum** (Safety Data Reassuring, But Not Licensed in Pregnancy)</td></tr><tr><td>**Moderate/Severe Acute Illness**</td><td>**Defer**</td></tr><tr><td>**Immunocompromised**</td><td>**3 Doses Regardless of Age** (Safety: Inactivated, Non-Live)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Cervical Screening — HPV Primary Screening Algorithm</div>
+<div class="sub-h">WHO/UK/IARC Recommended Algorithm (HPV Primary Screening)</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Cervical Sample (LBC/HPV Test)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">HPV Test Result</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Return to Routine Recall&lt;br/&gt;(3-5 Years Age-Dependent)</div>
+<div class="fc-node" data-id="D">Partial Genotyping&lt;br/&gt;(HPV 16/18 vs Other HR)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Immediate Colposcopy Referral</div>
+<div class="fc-node" data-id="F">Reflex Cytology</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Colposcopy Referral</div>
+<div class="fc-node" data-id="H">Repeat HPV Test in 12 Months</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Colposcopy Referral</div>
+</div>
+</div>
+<div class="sub-h">Key Screening Parameters</div>
+<table class="ctable"><tr><th>Parameter</th><th>Recommendation</th></tr><tr><td>-----------</td><td>----------------</td></tr><tr><td>**Start Age**</td><td>**25 Years** (UK/WHO) / 21-25 Years (Country-Specific)</td></tr><tr><td>**Interval**</td><td>**3 Years (25-49)**, **5 Years (50-64)** / **5 Years** (HPV Primary)</td></tr><tr><td>**Stop Age**</td><td>**64-65 Years** (If Adequate Negative History)</td></tr><tr><td>**Test**</td><td>**HPV Primary (PCR/TMA)** + **Reflex Cytology** (Non-16/18 HR HPV)</td></tr><tr><td>**Self-Sampling**</td><td>**Validated** (Improves Coverage)</td></tr></table>
+<div class="sub-h">Colposcopy &amp; Treatment Guidelines</div>
+<table class="ctable"><tr><th>Finding</th><th>Management</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**CIN1**</td><td>**Observation** (12-Month HPV Test) — 90% Regress</td></tr><tr><td>**CIN2**</td><td>**Excision (LLETZ/LEEP) Preferred** OR Ablation (If Small/Peripheral)</td></tr><tr><td>**CIN3 / CIS**</td><td>**Excision (LLETZ/LEEP) Mandatory** — Diagnostic & Therapeutic</td></tr><tr><td>**CGIN (Adenocarcinoma In Situ)**</td><td>**Excision (Cone Biopsy)** — Hysterectomy if Completed Family</td></tr></table>
+<div class="sub-h">Post-Treatment Follow-Up (Test of Cure)</div>
+<table class="ctable"><tr><th>Timeline</th><th>Test</th><th>Action</th></tr><tr><td>----------</td><td>------</td><td>--------</td></tr><tr><td>**6 Months Post-Treatment**</td><td>**HPV Test (+ Cytology)**</td><td>**HPV Negative → Routine Recall**; **HPV Positive → Colposcopy**</td></tr><tr><td>**18 Months**</td><td>**HPV Test**</td><td>**If Negative → Routine Recall**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Anogenital Warts — Management</div>
+<div class="sub-h">Treatment Options</div>
+<table class="ctable"><tr><th>Category</th><th>Agent/Method</th><th>Regimen</th><th>Clearance Rate</th><th>Recurrence</th></tr><tr><td>---------</td><td>--------------</td><td>---------</td><td>----------------</td><td>------------</td></tr><tr><td>**Patient-Applied (Topical)**</td><td>**Podophyllotoxin 0.15% Cream/Gel**</td><td>**BD × 3 Days On, 4 Days Off** (Cycles ≤4)</td><td>70-90%</td><td>20-30%</td></tr><tr><td></td><td>**Imiquimod 5% Cream**</td><td>**HS 3x/Week (Alternate Nights) × 8-16 Weeks**</td><td>50-80%</td><td>10-20%</td></tr><tr><td></td><td>**Sinecatechins 15% Ointment**</td><td>**TDS × 16 Weeks**</td><td>50-60%</td><td>Low</td></tr><tr><td>**Provider-Administered (Office)**</td><td>**Cryotherapy (Liquid Nitrogen)**</td><td>**Freeze-Thaw-Freeze Cycles**</td><td>70-90%</td><td>20-30%</td></tr><tr><td></td><td>**Trichloroacetic Acid (TCA) 80-90%**</td><td>**Weekly × 4-6 Weeks**</td><td>70-85%</td><td>20-30%</td></tr><tr><td></td><td>**Podophyllin Resin 10-25%**</td><td>**Weekly** (Less Used, Toxicity)</td><td>30-70%</td><td>High</td></tr><tr><td>**Surgical**</td><td>**Excision, Electrocautery, Laser (CO2), Loop Excision**</td><td>Single Session</td><td>90-100%</td><td>10-20%</td></tr></table>
+<div class="sub-h">Treatment Algorithm (Warts)</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Anogenital Warts</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Patient Preference / Anatomy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Podophyllotoxin or Imiquimod</div>
+<div class="fc-node" data-id="D">Cryotherapy / TCA / Surgical</div>
+<div class="fc-node" data-id="E">Cryotherapy / TCA / Surgical&lt;br/&gt;(Avoid Podophyllotoxin/Imiquimod)</div>
+<div class="fc-node" data-id="F">Surgical / Cryotherapy / TCA&lt;br/&gt;(Higher Recurrence, Consider HPV Vaccine)</div>
+</div>
+</div>
+<div class="sub-h">Wart Treatment in Special Populations</div>
+<table class="ctable"><tr><th>Population</th><th>Preferred</th><th>Avoid</th></tr><tr><td>------------</td><td>-----------</td><td>-------</td></tr><tr><td>**Pregnancy**</td><td>**Cryotherapy, TCA, Surgical**</td><td>**Podophyllotoxin (Teratogenic), Imiquimod (Limited Data)**</td></tr><tr><td>**Immunocompromised (HIV, Transplant)**</td><td>**Surgical, Cryotherapy**</td><td>**Topical (Lower Efficacy, Higher Recurrence)**</td></tr><tr><td>**Children (Non-Sexual Transmission Possible)**</td><td>**Cryotherapy, TCA**</td><td>**Podophyllotoxin, Imiquimod**</td></tr><tr><td>**Urethral/Intravaginal/Intra-anal Warts**</td><td>**Specialist Referral** (Cryotherapy, Laser, Surgical)</td><td>**Topical (Ineffective)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ HPV in Special Populations</div>
+<div class="sub-h">HIV / Immunocompromised</div>
+<table class="ctable"><tr><th>Aspect</th><th>Impact</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**HPV Prevalence**</td><td>**Higher** (Higher Acquisition, Lower Clearance)</td></tr><tr><td>**HPV Types**</td><td>**Multiple Concurrent Infections** (High-Risk + Low-Risk)</td></tr><tr><td>**Disease Progression**</td><td>**Faster** (CIN → Cancer), **Higher Grade Lesions**</td></tr><tr><td>**Warts**</td><td>**More Extensive, Refractory, Higher Recurrence**</td></tr><tr><td>**Screening**</td><td>**Annual Cervical Screening** (Cytology + HPV); **Anal Cytology/HPV Annual (MSM/HIV)**</td></tr><tr><td>**Vaccination**</td><td>**3 Doses (0, 2, 6m)** Regardless of Age; **Catch-Up to 26y (MSM to 26y)**</td></tr><tr><td>**Treatment**</td><td>**Higher Recurrence**; **Surgical Preferred for Warts**; **Excision for CIN**</td></tr></table>
+<div class="sub-h">Men Who Have Sex with Men (MSM)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Recommendation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Anal Cancer Risk**</td><td>**~20-40x Higher** (vs General Population); **HIV+ = 80-100x**</td></tr><tr><td>**Screening**</td><td>**Annual Anal Cytology + HPV Testing** (If HIV+); **Consider Age 35+**</td></tr><tr><td>**Vaccination**</td><td>**9vHPV Up to Age 26** (Catch-Up); **MSM ≤26y Priority**</td></tr><tr><td>**Warts**</td><td>**Perianal/Intra-anal Common**; **Surgical/Laser Preferred**</td></tr></table>
+<div class="sub-h">Pregnancy</div>
+<table class="ctable"><tr><th>Aspect</th><th>Management</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Warts**</td><td>**Cryotherapy/TCA/Surgical** (Avoid Podophyllotoxin/Imiquimod); **Cesarean NOT Indicated for Warts**</td></tr><tr><td>**Cervical Lesions**</td><td>**Colposcopy Safe**; **Treatment Deferred Postpartum** (Unless Invasive Cancer Suspected)</td></tr><tr><td>**Vaccination**</td><td>**Defer Until Postpartum** (Not Licensed in Pregnancy)</td></tr><tr><td>**Cesarean**</td><td>**NOT Indicated for Genital Warts** (Rare Laryngeal Papillomatosis)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Non-Cervical HPV-Related Cancers</div>
+<table class="ctable"><tr><th>Cancer</th><th>HPV Attribution</th><th>Screening</th><th>High-Risk Types</th></tr><tr><td>--------</td><td>----------------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**Anal**</td><td>**~90%**</td><td>**Annual Anal Cytology/HPV (MSM/HIV)**</td><td>16, 18</td></tr><tr><td>**Oropharyngeal**</td><td>**~70% (HPV+)**</td><td>**No Organised Screening**</td><td>**16 (Dominant)**</td></tr><tr><td>**Vulvar**</td><td>**~40-70%**</td><td>**Visual Inspection + Biopsy**</td><td>16, 18</td></tr><tr><td>**Vaginal**</td><td>**~70%**</td><td>**Cytology/HPV (Rare)**</td><td>16, 18</td></tr><tr><td>**Penile**</td><td>**~50%**</td><td>**Visual Inspection + Biopsy**</td><td>16, 18</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Recurrent Respiratory Papillomatosis (RRP)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Causative**</td><td>**HPV 6, 11**</td></tr><tr><td>**Transmission**</td><td>Vertical (Mother→Infant at Delivery), Rare Horizontal</td></tr><tr><td>**Presentation**</td><td>**Hoarseness, Stridor, Airway Obstruction** (Laryngeal Papillomas)</td></tr><tr><td>**Forms**</td><td>**Juvenile-Onset (JORRP)** (<12y, More Aggressive); **Adult-Onset (AORRP)**</td></tr><tr><td>**Treatment**</td><td>**Surgical Debridement (Microdebrider/CO2 Laser)**; **Adjuvant: Cidofovir (Intralesional), Bevacizumab (Intralesional), HPV Vaccine (Adjunct)**</td></tr><tr><td>**HPV Vaccine**</td><td>**Adjunct Therapy** (Reduces Recurrence, Not Licensed as Treatment)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**HPV Types**</td><td>**High-Risk: 16, 18 (70% Cervical Ca), 31, 33, 45, 52, 58**; **Low-Risk: 6, 11 (90% Warts)**</td></tr><tr><td>**Natural History**</td><td>**90% Clear in 1-2 Years**; **Persistence → CIN2/3 → Cancer (10-20+ Years)**; **E6→p53, E7→pRb**</td></tr><tr><td>**Vaccine (9vHPV)**</td><td>**Types: 6,11,16,18,31,33,45,52,58**; **2-Dose <15y (0,6-12m); 3-Dose ≥15y (0,2,6m); Catch-Up F≤26y, M≤21y (MSM/Immunocomp ≤26y)**</td></tr><tr><td>**Screening**</td><td>**HPV Primary + Reflex Cytology**; **HPV -ve → Routine Recall**; **HPV 16/18 +ve → Colposcopy**; **Other HR HPV + Cytology → Colposcopy if Abnormal, Repeat 12m if Normal**</td></tr><tr><td>**CIN Management**</td><td>**CIN1: Observe (12m HPV)**; **CIN2: Excision Preferred**; **CIN3: Excision Mandatory**; **Test of Cure 6m (HPV Test)**</td></tr><tr><td>**Anogenital Warts**</td><td>**HPV 6, 11**; **Topical (Podophyllotoxin, Imiquimod)**; **Office (Cryo, TCA)**; **Surgical (Laser/Excision)**; **Pregnancy: Cryo/TCA/Surgical Only**</td></tr><tr><td>**Screening Algorithm**</td><td>**HPV Primary → If 16/18+ → Colposcopy; Other HR HPV → Cytology → Abnormal=Colpo, Normal=Repeat 12m**</td></tr><tr><td>**Non-Cervical Cancers**</td><td>**Anal (90% HPV, Screen MSM/HIV), Oropharyngeal (70% HPV+, 16 Dominant), Vulvar/Vaginal/Penile (40-70%)**</td></tr><tr><td>**Vaccination**</td><td>**9vHPV: 2-Dose <15y (0,6-12m), 3-Dose ≥15y (0,2,6m); Catch-Up F≤26y, M≤21y (MSM/Immunocomp ≤26y)**</td></tr><tr><td>**HIV/Immunocompromised**</td><td>**3 Doses (Any Age)**; **Annual Cervical/Anal Screening**; **More Extensive Disease, Higher Recurrence**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>HPV types — high-risk vs low-risk and associated diseases?</td><td>**High-Risk: 16, 18 (70% Cervical Ca), 31, 33, 45, 52, 58 → Cervical, Anal, Oropharyngeal, Penile, Vulvar, Vaginal Cancer**; **Low-Risk: 6, 11 → 90% Genital Warts, RRP**</td></tr><tr><td>2</td><td>HPV natural history and carcinogenesis?</td><td>**90% Clear in 1-2y; Persistent HR HPV → CIN → Cancer (10-20y)**; **E6→p53 Degradation (Apoptosis Block), E7→pRb Degradation (Cell Cycle Dysregulation)**</td></tr><tr><td>3</td><td>HPV vaccination — 9vHPV schedule and catch-up?</td><td>**<15y: 2 Doses (0, 6-12m); ≥15y: 3 Doses (0, 2, 6m)**; **Catch-Up: F≤26y, M≤21y (MSM/Immunocomp ≤26y); Shared Decision 27-45y**</td></tr><tr><td>4</td><td>Cervical screening algorithm — HPV primary screening?</td><td>**HPV Primary → -ve → Routine Recall; 16/18 +ve → Colposcopy; Other HR HPV +ve → Reflex Cytology → Abnormal → Colposcopy, Normal → Repeat 12m**</td></tr><tr><td>5. CIN management by grade?</td><td>**CIN1: Observe (12m HPV Test); CIN2: Excision (LLETZ) Preferred; CIN3: Excision Mandatory (LLETZ/Cone); Test of Cure 6m (HPV Test)**</td></tr><tr><td>6. Anogenital warts — treatment options?</td><td>**Patient-Applied: Podophyllotoxin 0.15% (BD ×3d On/4d Off), Imiquimod 5% (3x/Week); Provider: Cryotherapy, TCA 80-90%, Surgical (Laser/Excision); Pregnancy: Cryo/TCA/Surgical Only**</td></tr><tr><td>7. HPV screening algorithm — HPV primary with reflex cytology?</td><td>**HPV -ve → Routine Recall (3-5y); HPV 16/18 +ve → Immediate Colposcopy; Other HR HPV +ve → Reflex Cytology → Abnormal → Colposcopy, Normal → Repeat HPV in 12m → If +ve → Colposcopy**</td></tr><tr><td>8. HPV vaccination — schedule for 14-year-old vs 16-year-old?</td><td>**14y: 2 Doses (0, 6-12m); 16y: 3 Doses (0, 2, 6m)**; **Catch-Up: F≤26y, M≤21y (MSM/Immunocomp ≤26y)**</td></tr><tr><td>9. Non-cervical HPV cancers — screening recommendations?</td><td>**Anal: Annual Cytology/HPV (MSM/HIV); Oropharyngeal: No Organised Screening (HPV 16 Dominant); Vulvar/Vaginal/Penile: Visual Inspection + Biopsy**</td></tr><tr><td>10. HPV vaccine in pregnancy and immunocompromised?</td><td>**Pregnancy: Defer Until Postpartum (Not Licensed); Immunocompromised/HIV: 3 Doses (0, 2, 6m) Regardless of Age**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"HPV = Only Cervical Cancer"**</td><td>**NO.** **Anal (90%), Oropharyngeal (70%), Vulvar/Vaginal (40-70%), Penile (50%)** — All HPV-Related</td></tr><tr><td>**"HPV Vaccine = Only for Girls"**</td><td>**NO.** **Both Genders**; **Prevents Anal, Oropharyngeal, Penile Cancers + Warts in Males**</td></tr><tr><td>**"HPV Vaccine = Only for Virgins"**</td><td>**NO.** **Benefit Even If Sexually Active** (Protects Against Types Not Yet Acquired)</td></tr><tr><td>**"All HPV = Cancer"**</td><td>**NO.** **Low-Risk (6, 11) = Warts, RRP; High-Risk = Cancer**; **90% Clear Spontaneously**</td></tr><tr><td>**"HPV Vaccine = Only for <15y"**</td><td>**NO.** **Catch-Up to 26y (F), 21y (M) / 26y (MSM/Immunocomp)**; **Shared Decision 27-45y**</td></tr><tr><td>**"CIN1 = Treat Immediately"**</td><td>**NO.** **CIN1 = Observe (90% Regress)**; **12-Month HPV Test, Treat if Persistent/Progresses**</td></tr><tr><td>**"HPV Test Positive = Cancer"**</td><td>**NO.** **HPV +ve = Infection**; **Reflex Cytology/Colposcopy Needed for Risk Stratification**</td></tr><tr><td>**"Cesarean Prevents HPV Transmission to Infant"**</td><td>**NO.** **RRP (HPV 6/11) Rare**; **Cesarean NOT Indicated for Warts**; **Vaccination = Prevention**</td></tr><tr><td>**"HPV Vaccine = Only for <15y"**</td><td>**NO.** **Catch-Up to 26y (F), 21y (M) / 26y (MSM/Immunocomp)**; **Shared Decision 27-45y**</td></tr><tr><td>**"All HPV Types = Same Cancer Risk"**</td><td>**NO.** **16, 18 = 70% Cervical Cancer**; **Other HR = Additional 20%**; **Low-Risk = Warts Only**</td></tr></table>
+<div class="callout"><b>Mnemonic: HPV MASTER CANCER PREVENTION</b> <b>H</b>PV Types: <b>High-Risk (16,18,31,33,45,52,58) = Cancer; Low-Risk (6,11) = Warts</b> <b>P</b>athogenesis: <b>E6→p53 (Apoptosis Block), E7→pRb (Cell Cycle Dysregulation) → Genomic Instability → Cancer</b> <b>V</b>accine: <b>9vHPV (6,11,16,18,31,33,45,52,58); 2-Dose (&lt;15y), 3-Dose (≥15y); Catch-Up F≤26, M≤21 (MSM≤26)</b> <b>S</b>creening: <b>HPV Primary → -ve = Routine; 16/18 +ve = Colpo; Other HR → Cyto → Abnormal = Colpo</b> <b>C</b>IN Management: <b>CIN1 Observe (12m HPV); CIN2 Excise; CIN3 Excise Mandatory; TOC 6m HPV Test</b> <b>W</b>arts: <b>HPV 6/11; Topical (Podophyllotoxin, Imiquimod), Office (Cryo, TCA), Surgical</b> <b>W</b>arts Pregnancy: <b>Cryo/TCA/Surgical ONLY (No Podophyllotoxin/Imiquimod)</b> <b>A</b>nal Cancer: <b>MSM/HIV → Annual Anal Cyto/HPV</b> <b>O</b>ropharyngeal: <b>HPV 16 Dominant, No Organised Screening</b> <b>V</b>accine Schedule: <b>&lt;15y = 2 Doses (0, 6-12m); ≥15y = 3 Doses (0, 2, 6m)</b> <b>C</b>atch-Up: <b>F ≤26, M ≤21 (MSM/Immunocomp ≤26); Shared Decision 27-45</b> <b>C</b>ervical Screen: <b>HPV Primary → -ve = Recall; 16/18 = Colpo; Other HR → Cyto</b> <b>C</b>IN: <b>CIN1 Observe; CIN2/3 Excise; TOC 6m HPV</b> <b>H</b>IV/Immunocompromised: <b>3 Doses Vaccine; Annual Cyto+HPV; Anal Cyto Annual</b> <b>R</b>RP: <b>HPV 6/11, Juvenile/Adult Onset, Surgical Debridement, Vaccine Adjunct</b> <b>P</b>revention: <b>Vaccine = Primary Prevention; Screening = Secondary Prevention</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((HPV))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Types</div>
+<div class="mm-node mm-l3">– High-Risk: 16,18,31,33,45,52,58 (Cancer)</div>
+<div class="mm-node mm-l3">– Low-Risk: 6,11 (Warts, RRP)</div>
+<div class="mm-node mm-l2">Natural History</div>
+<div class="mm-node mm-l3">– 90% Clear 1-2y</div>
+<div class="mm-node mm-l3">– Persistent → CIN → Cancer (10-20y)</div>
+<div class="mm-node mm-l3">– E6→p53, E7→pRb</div>
+<div class="mm-node mm-l2">Vaccine</div>
+<div class="mm-node mm-l3">– 9vHPV: 6,11,16,18,31,33,45,52,58</div>
+<div class="mm-node mm-l3">– 2-Dose &lt;15y (0,6-12m)</div>
+<div class="mm-node mm-l3">– 3-Dose ≥15y (0,2,6m)</div>
+<div class="mm-node mm-l3">– Catch-Up: F≤26, M≤21 (MSM≤26)</div>
+<div class="mm-node mm-l2">Screening</div>
+<div class="mm-node mm-l3">– HPV Primary</div>
+<div class="mm-node mm-l3">– -ve: Recall</div>
+<div class="mm-node mm-l3">– 16/18 +ve: Colposcopy</div>
+<div class="mm-node mm-l3">– Other HR: Cyto → Abnormal=Colpo, -ve=Repeat 12m</div>
+<div class="mm-node mm-l2">CIN Management</div>
+<div class="mm-node mm-l3">– CIN1: Observe (12m HPV)</div>
+<div class="mm-node mm-l3">– CIN2: Excise (LLETZ)</div>
+<div class="mm-node mm-l3">– CIN3: Excise Mandatory</div>
+<div class="mm-node mm-l3">– TOC: 6m HPV Test</div>
+<div class="mm-node mm-l2">Warts</div>
+<div class="mm-node mm-l3">– HPV 6/11</div>
+<div class="mm-node mm-l3">– Topical: Podophyllotoxin, Imiquimod</div>
+<div class="mm-node mm-l3">– Office: Cryo, TCA, Surgical</div>
+<div class="mm-node mm-l3">– Pregnancy: Cryo/TCA/Surg Only</div>
+<div class="mm-node mm-l2">Non-Cervical Cancers</div>
+<div class="mm-node mm-l3">– Anal: 90% HPV, MSM/HIV Screen</div>
+<div class="mm-node mm-l3">– Oropharyngeal: 70% HPV (16), No Screen</div>
+<div class="mm-node mm-l3">– Vulvar/Vaginal/Penile: 40-70%</div>
+<div class="mm-node mm-l2">Special Pops</div>
+<div class="mm-node mm-l3">– HIV: 3 Dose Vaccine, Annual Screen</div>
+<div class="mm-node mm-l3">– Pregnancy: Defer Vaccine, Cryo/TCA Warts</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>HPV Types & Disease Associations</td><td>3</td><td></td><td></td></tr><tr><td>Natural History & Carcinogenesis</td><td>3</td><td></td><td></td></tr><tr><td>Vaccination (Schedule, Catch-Up, Special Pops)</td><td>3</td><td></td><td></td></tr><tr><td>Cervical Screening Algorithm</td><td>3</td><td></td><td></td></tr><tr><td>CIN Management & TOC</td><td>3</td><td></td><td></td></tr><tr><td>Anogenital Warts Management</td><td>2</td><td></td><td></td></tr><tr><td>Non-Cervical Cancers & Screening</td><td>2</td><td></td><td></td></tr><tr><td>Special Populations (HIV, Pregnancy)</td><td>1</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the HPV vaccination programme, cervical screening algorithm, and management of CIN."</td><td>9vHPV Types, Schedule (2-Dose <15y, 3-Dose ≥15y), Catch-Up, HPV Primary Screening (Algorithm), CIN Management (CIN1 Observe, CIN2/3 Excision), TOC, Warts Management</td></tr><tr><td>**Short Note**</td><td>"HPV vaccination — types, schedule, and catch-up recommendations."</td><td>**9vHPV: 6,11,16,18,31,33,45,52,58**; **<15y: 2 Doses (0,6-12m); ≥15y: 3 Doses (0,2,6m); Catch-Up F≤26, M≤21 (MSM≤26); HIV/Immunocomp: 3 Doses Any Age**</td></tr><tr><td>**Viva**</td><td>"25-year-old woman with HPV 16 positive, cytology normal. Next step?"</td><td>**HPV 16 Positive → Immediate Colposcopy Referral** (Per HPV Primary Screening Algorithm: HPV 16/18 Positive → Colposcopy Regardless of Cytology)</td></tr><tr><td>**Ward Round**</td><td>"25-year-old woman, CIN2 on biopsy. Management?"</td><td>**Excision (LLETZ/LEEP) Preferred** (Diagnostic & Therapeutic); **Test of Cure at 6 Months (HPV Test)**; **Contraception Until Healed**; **Follow-Up: HPV Test at 6 Months, then Routine Recall if Negative**</td></tr><tr><td>**Last-Night**</td><td>"HPV: HR 16,18,31,33,45,52,58 (Cancer); LR 6,11 (Warts). E6→p53, E7→pRb. Vaccine 9vHPV: 2-dose<15y, 3-dose≥15y, Catch-Up F≤26/M≤21(MSM≤26). Screen: HPV Primary→-ve=Recall; 16/18+=Colpo; Other HR→Cyto→Abnormal=Colpo, -ve=Repeat 12m. CIN1=Observe; CIN2/3=Excise (LLETZ). TOC 6m HPV. Warts: Podophyllotoxin, Imiquimod, Cryo, TCA, Surgical. Preg: Cryo/TCA/Surg. Anal: Annual MSM/HIV. Oropharyngeal: 16 Dominant, No Screen."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>HPV Types</b>: <b>High-Risk (16, 18, 31, 33, 45, 52, 58) = Cancer</b>; <b>Low-Risk (6, 11) = Warts, RRP</b></li><li><b>Natural History</b>: <b>90% Clear in 1-2 Years</b>; <b>Persistence → CIN2/3 → Cancer (10-20+ Years)</b>; <b>E6→p53 Degradation, E7→pRb Degradation</b></li><li><b>Vaccination</b>: <b>9vHPV (6,11,16,18,31,33,45,52,58)</b>; <b>&lt;15y: 2 Doses (0, 6-12m)</b>; <b>≥15y: 3 Doses (0, 2, 6m)</b>; <b>Catch-Up: F≤26, M≤21 (MSM/Immunocomp ≤26); HIV: 3 Doses Any Age</b></li><li><b>Screening</b>: <b>HPV Primary → Negative = Routine Recall; HPV 16/18 Positive = Colposcopy; Other HR HPV + Cytology → Abnormal = Colposcopy, Normal = Repeat 12 Months</b></li><li><b>CIN Management</b>: <b>CIN1 = Observe (12-Month HPV Test)</b>; <b>CIN2 = Excision (LLETZ) Preferred</b>; <b>CIN3 = Excision Mandatory</b>; <b>Test of Cure at 6 Months (HPV Test)</b></li><li><b>Anogenital Warts</b>: <b>HPV 6, 11</b>; <b>Patient-Applied (Podophyllotoxin, Imiquimod)</b>; <b>Provider (Cryotherapy, TCA, Surgical)</b>; <b>Pregnancy: Cryo/TCA/Surgical Only</b></li><li><b>Non-Cervical Cancers</b>: <b>Anal (90% HPV, Annual Screen MSM/HIV)</b>, <b>Oropharyngeal (70% HPV+, 16 Dominant, No Screen)</b>, <b>Vulvar/Vaginal/Penile (40-70%)</b></li><li><b>Special Populations</b>: <b>HIV/Immunocompromised = 3-Dose Vaccine, Annual Screen, More Extensive Disease</b>; <b>Pregnancy = Defer Vaccine, Cryo/TCA/Surgical for Warts Only</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>HPV types most commonly associated with cervical cancer?</b></li></ol>
+<p>A. 6, 11  B. <b>16, 18</b>  C. 31, 33  D. 45, 52 <i>Answer: B. HPV 16, 18 = ~70% of Cervical Cancer.</i></p>
+<ol><li><b>9-valent HPV vaccine — which additional types beyond quadrivalent?</b></li></ol>
+<p>A. 6, 11, 16, 18  B. <b>31, 33, 45, 52, 58</b>  C. 26, 53, 66  D. 40, 42, 43 <i>Answer: B. 9vHPV Adds 31, 33, 45, 52, 58 to 6, 11, 16, 18.</i></p>
+<ol><li><b>HPV vaccination schedule for a 14-year-old girl?</b></li></ol>
+<p>A. 3 Doses (0, 1, 6 Months)  B. <b>2 Doses (0, 6-12 Months)</b>  C. Single Dose  D. 3 Doses (0, 2, 6 Months) <i>Answer: B. &lt;15 Years = 2 Doses (0, 6-12 Months).</i></p>
+<ol><li><b>Cervical screening — HPV primary algorithm: HPV 16 positive, cytology normal. Next step?</b></li></ol>
+<p>A. Repeat in 12 Months  B. <b>Immediate Colposcopy Referral</b>  C. Reflex Cytology  C. Routine Recall <i>Answer: B. HPV 16/18 Positive → Immediate Colposcopy Referral (Regardless of Cytology).</i></p>
+<ol><li><b>CIN1 management?</b></li></ol>
+<p>A. Immediate Excision  B. <b>Observation with 12-Month HPV Test</b>  C. Ablation  D. Cone Biopsy <i>Answer: B. CIN1 = Observe (90% Regress); 12-Month HPV Test.</i></p>
+<ol><li><b>CIN3 management?</b></li></ol>
+<p>A. Observation  B. <b>Excision Mandatory (LLETZ/Cone Biopsy)</b>  C. Ablation Only  D. Hysterectomy <i>Answer: B. CIN3 = High-Grade, Excision Mandatory (LLETZ or Cone Biopsy).</i></p>
+<ol><li><b>Anogenital warts — causative HPV types?</b></li></ol>
+<p>A. 16, 18  B. <b>6, 11</b>  C. 31, 33  D. 45, 52 <i>Answer: B. HPV 6, 11 = ~90% of Genital Warts.</i></p>
+<ol><li><b>Anogenital warts in pregnancy — preferred treatment?</b></li></ol>
+<p>A. Podophyllotoxin  B. <b>Cryotherapy / TCA / Surgical</b>  C. Imiquimod  D. Podophyllin Resin <i>Answer: B. Cryotherapy, TCA, Surgical Only (Avoid Podophyllotoxin/Imiquimod in Pregnancy).</i></p>
+<ol><li><b>Anal cancer screening — recommended for?</b></li></ol>
+<p>A. All Adults  B. <b>MSM and HIV-Positive Individuals (Annual Cytology/HPV)</b>  C. Women Only  D. Not Recommended <i>Answer: B. MSM and HIV-Positive → Annual Anal Cytology/HPV Testing.</i></p>
+<ol><li><b>Oropharyngeal cancer — dominant HPV type?</b></li></ol>
+<p>A. HPV 18  B. <b>HPV 16</b>  C. HPV 6  D. HPV 11 <i>Answer: B. HPV 16 = Dominant in HPV+ Oropharyngeal Cancer (~90% of HPV+).</i></p>
+<ol><li><b>HPV vaccine in pregnancy?</b></li></ol>
+<p>A. Safe, Recommended  B. <b>Defer Until Postpartum (Not Licensed in Pregnancy)</b>  C. Only 2nd Trimester  D. Only 3rd Trimester <i>Answer: B. Defer Until Postpartum (Not Licensed in Pregnancy; Safety Data Reassuring But Not Licensed).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25-year-old woman, HPV 16 positive, cytology normal. Next step?</b></li></ol>
+<p>A. Repeat in 12 Months  B. <b>Immediate Colposcopy Referral</b>  C. Reflex Cytology  D. Routine Recall <i>Answer: B. HPV 16/18 Positive → Immediate Colposcopy (Algorithm).</i></p>
+<ol><li><b>20-year-old woman, CIN2 on biopsy. Management?</b></li></ol>
+<p>A. Observation  B. <b>Excision (LLETZ/LEEP) Preferred</b>  C. Ablation  D. Hysterectomy <i>Answer: B. CIN2 = Excision (LLETZ) Preferred.</i></p>
+<ol><li><b>14-year-old girl, HPV vaccination schedule?</b></li></ol>
+<p>A. 3 Doses (0, 1, 6 Months)  B. <b>2 Doses (0, 6-12 Months)</b>  C. Single Dose  D. 3 Doses (0, 2, 6 Months) <i>Answer: B. &lt;15 Years = 2 Doses (0, 6-12 Months).</i></p>
+<ol><li><b>Pregnant woman with extensive vulval warts. Treatment?</b></li></ol>
+<p>A. Podophyllotoxin  B. <b>Cryotherapy / TCA / Surgical</b>  C. Imiquimod  D. Podophyllin Resin <i>Answer: B. Cryotherapy / TCA / Surgical Only (Avoid Podophyllotoxin/Imiquimod).</i></p>
+<ol><li><b>MSM, HIV-positive, age 30. Anal screening recommendation?</b></li></ol>
+<p>A. Not Recommended  B. <b>Annual Anal Cytology + HPV Testing</b>  C. Every 3 Years  D. Every 5 Years <i>Answer: B. Annual Anal Cytology + HPV Testing (MSM/HIV).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-C, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Chlamydia.md]] — Co-infection, Co-testing</li><li>[[2.2 Gonorrhoea.md]] — Co-infection</li><li>[[2.3 Syphilis.md]] — Differential (GUD), Co-infection</li><li>[[3.2 HSV.md]] — Differential (GUD), Co-infection</li><li>[[5.1-5.8 Syndromic Management.md]] — GUD Algorithm</li><li>[[HIV/AIDS Cross-Reference]] — HPV in HIV, Screening, Vaccination</li><li>[[Population &amp; Newborn Screening]] — Cervical Screening Programme, Vaccination Programme</li><li>[[9. ELSI]] — Vaccination Ethics, Gender Equity, Mandatory Vaccination Debate</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next:</b> Build <code>3.4 Hepatitis B &amp; C.md</code>, <code>3.5 Mpox.md</code>, <code>3.6 Other Viral STIs.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 3.3 HPV · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

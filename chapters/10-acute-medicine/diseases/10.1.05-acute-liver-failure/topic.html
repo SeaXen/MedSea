@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acute Liver Failure — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Acute Liver Failure</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define ALF and differentiate from acute-on-chronic liver failure (ACLF)</li><li>Apply King's College Criteria for transplant referral</li><li>Manage cerebral oedema, coagulopathy, infection, renal failure</li><li>Apply NAC in both paracetamol and non-paracetamol ALF</li><li>Perform aetiology workup and initiate specific therapies</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p><b>Acute Liver Failure (ALF)</b> = <b>INR ≥1.5 + any degree of encephalopathy</b> in a patient <b>without prior liver disease</b> and <b>illness duration &lt;26 weeks</b>.</p>
+<p><b>Sub-classification by tempo</b>:</p>
+<ul><li><b>Hyperacute</b>: encephalopathy within 7 days of jaundice (best prognosis: paracetamol, HAV)</li><li><b>Acute</b>: 8–28 days</li><li><b>Subacute</b>: 5–26 weeks (worst prognosis: drug-induced, autoimmune)</li></ul>
+<p><b>NOT ACLF</b>: ACLF = acute decompensation in <b>cirrhotic</b> with organ failure(s) (CLIF-C ACLF score)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology (Common Causes)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Specific Causes</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Drug-induced**</td><td>**Paracetamol** (most common in UK/US), **isoniazid**, methotrexate, halothane, valproate, carbamazepine, herbal (kava, germander), **amatoxins** (Amanita)</td></tr><tr><td>**Viral**</td><td>**HEV** (common in endemic areas), HAV, HBV (acute/reactivation), HSV, VZV, EBV, CMV, yellow fever, dengue</td></tr><tr><td>**Autoimmune**</td><td>Autoimmune hepatitis (AIH), Wilson's disease (acute presentation)</td></tr><tr><td>**Vascular**</td><td>Budd-Chiari (hepatic vein thrombosis), acute portal vein thrombosis, ischaemic hepatitis (shock liver)</td></tr><tr><td>**Metabolic**</td><td>Acute fatty liver of pregnancy (AFLP), Reye's syndrome, hereditary fructose intolerance</td></tr><tr><td>**Idiopathic**</td><td>~15–20% (seronegative)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Encephalopathy (West Haven Grading)</div>
+<table class="ctable"><tr><th>Grade</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**0**</td><td>Normal</td></tr><tr><td>**1**</td><td>Trivial lack of awareness, euphoria/irritability, reversed sleep cycle</td></tr><tr><td>**2**</td><td>Lethargy, disorientation, asterixis, inappropriate behaviour</td></tr><tr><td>**3**</td><td>Confused, incoherent, somnolent but arousable</td></tr><tr><td>**4**</td><td>Coma (unresponsive to pain)</td></tr></table>
+<div class="sub-h">Other Features</div>
+<ul><li><b>Jaundice</b> (often deep)</li><li><b>Coagulopathy</b>: INR ≥1.5 (often markedly elevated)</li><li><b>Renal impairment</b>: AKI (hepatorenal syndrome, ATN)</li><li><b>Metabolic</b>: hypoglycaemia, metabolic acidosis, hyperventilation, hyponatraemia</li><li><b>Infection</b>: high risk (spontaneous bacterial peritonitis, line sepsis, pneumonia)</li><li><b>Cerebral oedema</b>: <b>major cause of death</b> (especially Grade 3–4 encephalopathy)</li><li><b>Sepsis-like picture</b>: hyperdynamic circulation, hypotension</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mandatory</div>
+<ul><li><b>LFTs</b>: ALT, AST, ALP, bilirubin, albumin</li><li><b>INR</b> (daily — <b>trend more important than single value</b>)</li><li><b>Ammonia</b> (correlates with encephalopathy/cerebral oedema risk)</li><li><b>Glucose</b> (q2–4h — hypoglycaemia common)</li><li><b>ABG/VBG</b>: lactate, pH, base deficit</li><li><b>Renal function</b>: creatinine, urea, electrolytes</li><li><b>FBC</b>: thrombocytopenia common (sequestration, decreased production)</li><li><b>Viral serology</b>: HAV IgM, HBsAg/HBcIgM, HEV IgM/IgG, HSV/VZV PCR, CMV/EBV PCR</li><li><b>Autoimmune</b>: ANA, SMA, LKM1, IgG, caeruloplasmin (Wilson's)</li><li><b>Toxicology</b>: <b>paracetamol level</b> (mandatory — even if denied), drug screen</li><li><b>Pregnancy test</b> (AFLP, HELLP)</li><li><b>CT head</b> if Grade 3–4 encephalopathy (exclude bleed, assess oedema)</li></ul>
+<div class="sub-h">Aetiology-Specific</div>
+<ul><li><b>Paracetamol level</b> (at 4h post-ingestion for nomogram; if &gt;24h or staggered → treat empirically)</li><li><b>Caeruloplasmin + urinary copper</b> (Wilson's)</li><li><b>Amanita toxins</b> (specialised lab)</li><li><b>HEV RNA PCR</b> (if endemic)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">King's College Criteria (Transplant Referral Indicators)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Paracetamol-Induced ALF</div>
+<p><b>ANY ONE of:</b></p>
+<ol><li><b>Arterial pH &lt;7.30</b> (after adequate fluid resuscitation) <b>OR</b></li><li><b>ALL THREE</b>:</li></ol>
+<ul><li>INR &gt;6.5</li><li>Creatinine &gt;300 µmol/L (3.4 mg/dL)</li><li><b>Grade III/IV encephalopathy</b></li></ul>
+<div class="sub-h">Non-Paracetamol ALF</div>
+<p><b>ANY ONE of:</b></p>
+<ol><li><b>INR &gt;6.5</b> (or &gt;3.5 if &lt;10 yrs / &gt;40 yrs) <b>OR</b></li><li><b>ANY THREE of:</b></li></ol>
+<ul><li>Age &lt;10 or &gt;40</li><li><b>Aetiology</b>: drug-induced, indeterminate, HAV (non-A non-B)</li><li><b>Jaundice to encephalopathy &gt;7 days</b></li><li>INR &gt;3.5</li><li><b>Bilirubin &gt;300 µmol/L (17.5 mg/dL)</b></li></ul>
+<div class="callout"><b>Refer early</b>: transplant centre discussion at diagnosis of ALF; do NOT wait for all criteria.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Supportive Care (All ALF)</div>
+<ul><li><b>ICU admission</b> (Grade ≥2 encephalopathy)</li><li><b>Airway</b>: intubate Grade ≥3 (protect airway, control ventilation)</li><li><b>Circulation</b>: noradrenaline for hypotension; balanced crystalloids; avoid fluid overload</li><li><b>Glucose</b>: <b>2–4 hourly monitoring</b>; 10% dextrose infusion to maintain 4–8 mmol/L</li><li><b>Ammonia</b>: monitor q6–12h; lactulose (if bowel sounds), rifaximin; consider L-ornithine-L-aspartate</li><li><b>Nutrition</b>: early enteral (protein 1.0–1.5 g/kg/day); avoid protein restriction</li><li><b>Infection surveillance</b>: daily cultures (blood, urine, sputum, ascites, line tips); <b>low threshold for antibiotics</b></li><li><b>Renal</b>: monitor creatinine, fluid balance; CRRT if AKI + fluid overload</li><li><b>Liver transplant coordination</b>: <b>early referral</b> (King's College criteria)</li></ul>
+<div class="sub-h">2. Cerebral Oedema Management (Grade 3–4)</div>
+<table class="ctable"><tr><th>Measure</th><th>Target</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Head elevation**</td><td>30° (neutral neck position)</td></tr><tr><td>**Ventilation**</td><td>PaCO₂ 30–35 mmHg (mild hyperventilation)</td></tr><tr><td>**Osmotherapy**</td><td>**Mannitol 0.5–1 g/kg** bolus (if ICP signs) or **Hypertonic saline 3% 2–5 mL/kg**</td></tr><tr><td>**ICP monitoring**</td><td>Consider in Grade 4 (bolt/EVD) — controversial</td></tr><tr><td>**Sedation**</td><td>Propofol/midazolam (maintain light sedation, allow neuro checks)</td></tr><tr><td>**Seizure prophylaxis**</td><td>Phenytoin/levetiracetam (controversial — treat clinical seizures only)</td></tr><tr><td>**Avoid**</td><td>Hypotension, hypoxia, hypercapnia, fever, fluid overload, jugular compression</td></tr></table>
+<div class="callout"><b>Signs of raised ICP</b>: deteriorating GCS, fixed/dilated pupils, Cushing's reflex (HTN + brady + irregular breathing), posturing</div>
+<div class="sub-h">3. Coagulopathy Management</div>
+<ul><li><b>Do NOT routinely correct INR</b> (INR = severity marker)</li><li><b>FFP</b> only for: active bleeding, pre-procedure (target INR &lt;1.5), before RRT</li><li><b>Vitamin K</b> 10 mg IV daily (if prolonged INR + cholestasis/malnutrition)</li><li><b>Platelets</b> if &lt;50×10⁹/L (or &lt;100 if bleeding/procedure)</li><li><b>Recombinant factor VIIa</b> — <b>avoid</b> (thrombotic risk, no mortality benefit)</li></ul>
+<div class="sub-h">4. Specific Aetiology Therapies</div>
+<table class="ctable"><tr><th>Aetiology</th><th>Specific Treatment</th></tr><tr><td>-----------</td><td>-------------------</td></tr><tr><td>**Paracetamol**</td><td>**NAC IV** (full course — even >24h; improves survival in non-paracetamol ALF too)</td></tr><tr><td>**Amanita**</td><td>**Silibinin** 5mg/kg load + 20mg/kg/day IV + **Penicillin G** 300–400K U/kg/day + NAC</td></tr><tr><td>**Viral (HAV, HBV)**</td><td>Supportive; **entecavir/tenofovir** for HBV</td></tr><tr><td>**AIH**</td><td>**Prednisolone 40–60 mg/day** (if biopsy confirms)</td></tr><tr><td>**Wilson's**</td><td>**Penicillamine/trientine**, zinc, **early transplant evaluation**</td></tr><tr><td>**AFLP**</td><td>**Immediate delivery** (cure); supportive</td></tr><tr><td>**Ischaemic hepatitis**</td><td>Treat underlying shock; supportive</td></tr></table>
+<div class="sub-h">5. N-Acetylcysteine (NAC) in Non-Paracetamol ALF</div>
+<ul><li><b>Evidence</b>: <b>ALF Study Group (2009)</b> — NAC improves transplant-free survival in early coma (Grade 1–2) non-paracetamol ALF</li><li><b>Protocol</b>: same as paracetamol (SNAP 2-bag or 3-bag) — <b>start asap</b></li><li><b>Benefit</b>: improves oxygen delivery, microcirculation, transplant-free survival</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Cerebral oedema**</td><td>Head up 30°, hyperventilation (PaCO₂ 30–35), mannitol/hypertonic saline, ICP monitoring</td></tr><tr><td>**Sepsis**</td><td>Daily surveillance cultures; broad-spectrum antibiotics (meropenem/piperacillin-tazobactam)</td></tr><tr><td>**Renal failure (HRS/AKI)**</td><td>Terlipressin + albumin (HRS-AKI); CRRT if fluid overload/refractory</td></tr><tr><td>**Infection (SBP, pneumonia, line)**</td><td>Low threshold antibiotics; surveillance cultures</td></tr><tr><td>**Hypoglycaemia**</td><td>10% dextrose infusion; q2–4h glucose checks</td></tr><tr><td>**Metabolic acidosis**</td><td>Bicarbonate if pH <7.2; CRRT if severe</td></tr><tr><td>**Pancreatitis**</td><td>Serum amylase/lipase; supportive</td></tr><tr><td>**Arrhythmias**</td><td>Electrolyte correction (K⁺, Mg²⁺, Ca²⁺); amiodarone if needed</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aetiology</th><th>Transplant-free Survival</th><th>With Transplant</th></tr><tr><td>-----------</td><td>-------------------------</td><td>-----------------</td></tr><tr><td>**Paracetamol**</td><td>50–70%</td><td>~80%</td></tr><tr><td>**Viral (HAV, HEV)**</td><td>60–80%</td><td>~80%</td></tr><tr><td>**Drug-induced (non-paracetamol)**</td><td>20–40%</td><td>~60%</td></tr><tr><td>**Indeterminate**</td><td>15–30%</td><td>~60%</td></tr><tr><td>**Autoimmune / Wilson's**</td><td>Variable (steroid/copper response)</td><td>~70%</td></tr></table>
+<p><b>Poor prognostic markers</b> (non-paracetamol): age &gt;40, jaundice-encephalopathy interval &gt;7 days, high bilirubin, high INR, deep encephalopathy, renal failure, sepsis, metabolic acidosis, lack of NAC benefit.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>ALF definition</b>: INR ≥1.5 + encephalopathy in &lt;26 weeks, no prior liver disease</li><li><b>King's College Criteria</b>: Paracetamol = pH&lt;7.30 OR (INR&gt;6.5 + Cr&gt;300 + Grade III/IV); Non-paracetamol = INR&gt;6.5 OR (any 3 of: age&lt;10/&gt;40, drug/indeterminate/HBV, jaundice-encephalopathy&gt;7d, INR&gt;3.5, bilirubin&gt;300)</li><li><b>Cerebral oedema</b> = major cause of death; manage with 30° head, PaCO₂ 30–35, mannitol/hypertonic saline</li><li><b>NAC in non-paracetamol ALF</b> = improves transplant-free survival (early coma grades)</li><li><b>Do NOT routinely correct INR</b> (INR = severity marker); FFP only for bleeding/procedure</li><li><b>Ammonia</b> correlates with encephalopathy/oedema; lactulose/rifaximin</li><li><b>Early transplant referral</b> at ALF diagnosis (King's College criteria)</li><li><b>Specific therapies</b>: NAC (paracetamol + non-paracetamol), silibinin+penicillin G (Amanita), steroids (AIH), delivery (AFLP)</li><li><b>Hypoglycaemia</b> = common, monitor q2–4h, 10% dextrose infusion</li><li><b>Infection surveillance</b> = daily cultures; low threshold antibiotics</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>King's College Criteria (paracetamol vs non-paracetamol)</li><li>Cerebral oedema management in ALF</li><li>Difference between ALF and ACLF</li><li>Role of NAC in non-paracetamol ALF</li><li>INR management (why not routinely correct?)</li><li>Ammonia management</li><li>Specific aetiologies and targeted therapies</li><li>Encephalopathy grading (West Haven)</li><li>Paracetamol vs non-paracetamol King's College criteria differences</li><li>AFLP management</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>INR correction</b> → NO (unless bleeding/procedure); INR = severity marker</li><li><b>Protein restriction</b> → NO (malnutrition risk); adequate protein 1.0–1.5g/kg</li><li><b>Prophylactic FFP</b> → NO (masks severity, volume overload, no survival benefit)</li><li><b>Mannitol vs hypertonic saline</b> → both ok; hypertonic saline preferred if Na⁺ low</li><li><b>Prophylactic anticonvulsants</b> → NO (treat clinical seizures only)</li><li><b>Protein restriction in encephalopathy</b> → NO (causes malnutrition)</li><li><b>Aggressive hyperventilation (PaCO₂&lt;30)</b> → AVOID (cerebral vasoconstriction → ischaemia)</li><li><b>Early intubation for Grade 2</b> → NO, Grade ≥3 only</li><li><b>ACLF = ALF</b> → NO, ACLF = acute-on-chronic (cirrhosis + organ failures)</li><li><b>Transplant referral only when criteria met</b> → NO, refer AT DIAGNOSIS</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>KING'S COLLEGE (PARACETAMOL)</b>: <b>pH &lt;7.3</b> OR <b>INR&gt;6.5 + Cr&gt;300 + Enceph Grade 3/4</b></li><li><b>KING'S COLLEGE (NON-PARACETAMOL)</b>: <b>INR&gt;6.5</b> OR <b>ANY 3 of: Age&lt;10/&gt;40, Drug/Indeterminate/HBV, Jaundice-Enceph&gt;7d, INR&gt;3.5, Bilirubin&gt;300</b></li><li><b>CEREBRAL OEDEMA</b>: <b>30° Head</b>, <b>PaCO₂ 30–35</b>, <b>Mannitol/Hypertonic Saline</b>, <b>ICP Monitor</b></li><li><b>INR MANAGEMENT</b>: <b>M</b>onitor <b>O</b>nly; <b>R</b>eplace <b>O</b>nly if <b>B</b>leeding/<b>P</b>rocedure</li><li><b>NAC IN NON-PARACETAMOL</b>: <b>E</b>arly <b>C</b>oma (G1–2) → <b>T</b>ransplant-free survival benefit</li><li><b>AMMONIA</b>: <b>L</b>actulose + <b>R</b>ifaximin; <b>A</b>mmonia &gt;100–150 = oedema risk</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Acute Liver Failure))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definition</div>
+<div class="mm-node mm-l3">– INR &gt;=1.5 + Encephalopathy</div>
+<div class="mm-node mm-l3">– &lt;26 weeks, No Prior Liver Disease</div>
+<div class="mm-node mm-l3">– Hyperacute/Acute/Subacute</div>
+<div class="mm-node mm-l2">Aetiology</div>
+<div class="mm-node mm-l3">– Paracetamol (Commonest)</div>
+<div class="mm-node mm-l3">– Viral: HAV, HEV, HBV</div>
+<div class="mm-node mm-l3">– Drug: INH, Valproate, Amanita</div>
+<div class="mm-node mm-l3">– Autoimmune, Wilson's, AFLP, Budd-Chiari</div>
+<div class="mm-node mm-l2">King's College</div>
+<div class="mm-node mm-l3">– Paracetamol: pH&lt;7.3 OR (INR&gt;6.5+Cr+Enceph)</div>
+<div class="mm-node mm-l3">– Non-Paracetamol: INR&gt;6.5 OR 3 of 5</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– ICU, NAC, Cerebral Oedema, Coagulopathy</div>
+<div class="mm-node mm-l3">– Specific: NAC, Silibinin, Steroids, Delivery</div>
+<div class="mm-node mm-l3">– Transplant Referral Early</div>
+<div class="mm-node mm-l2">Cerebral Oedema</div>
+<div class="mm-node mm-l3">– 30° Head, PaCO2 30-35</div>
+<div class="mm-node mm-l3">– Mannitol / 3% Saline</div>
+<div class="mm-node mm-l3">– ICP Monitor (Grade 4)</div>
+<div class="mm-node mm-l2">Coagulopathy</div>
+<div class="mm-node mm-l3">– INR = Severity Marker</div>
+<div class="mm-node mm-l3">– NO Routine Correction</div>
+<div class="mm-node mm-l3">– FFP: Bleeding/Procedure</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Jaundice + Encephalopathy + INR&gt;=1.5\nNo Prior Liver Disease\n&lt;26 Weeks</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ALF Diagnosis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ICU Admission\nGrade &gt;=2 Encephalopathy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">NAC Infusion\n(Start Immediately\nParacetamol + Non-Paracetamol)</div>
+<div class="fc-node" data-id="E">Grade Encephalopathy\nWest Haven Scale</div>
+<div class="fc-node" data-id="G">King's College Criteria\nParacetamol vs Non-Paracetamol</div>
+<div class="fc-node" data-id="J">Specific Aetiology Workup\nParacetamol Level, Viral, Autoimmune, Wilson's</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Cerebral Oedema Protocol\n30° Head, PaCO2 30-35\nMannitol/3% Saline</div>
+<div class="fc-node" data-id="H">Transplant Referral\nImmediate</div>
+<div class="fc-node" data-id="I">Continue Supportive\nDaily King's Reassessment</div>
+<div class="fc-node" data-id="K">Specific Therapy?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Continue NAC Full Course</div>
+<div class="fc-node" data-id="M">Silibinin + Penicillin G + NAC</div>
+<div class="fc-node" data-id="N">Prednisolone 40-60mg</div>
+<div class="fc-node" data-id="O">Immediate Delivery</div>
+<div class="fc-node" data-id="P">Penicillamine + Transplant</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>King's College Criteria comparison table (paracetamol vs non-paracetamol)</li><li>West Haven encephalopathy grading</li><li>Cerebral oedema management algorithm</li><li>Aetiology-based specific therapies table</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>ALF management (King's College criteria, cerebral oedema)</li><li>NAC in non-paracetamol ALF evidence</li><li>Transplant referral pathway</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ALF</b>: INR ≥1.5 + encephalopathy, no prior liver disease, &lt;26 weeks</li><li><b>King's College</b>: Paracetamol = pH&lt;7.3 OR (INR&gt;6.5+Cr&gt;300+Enceph 3/4); Non-paracetamol = INR&gt;6.5 OR 3 of 5</li><li><b>Cerebral oedema</b>: 30° head, PaCO₂ 30–35, mannitol/hypertonic saline, avoid aggressive hyperventilation</li><li><b>NAC</b>: ALL ALF (paracetamol + non-paracetamol) — improves survival in non-paracetamol G1–2</li><li><b>INR</b>: do NOT correct routinely; FFP only for bleeding/procedure</li><li><b>Ammonia</b>: lactulose + rifaximin; &gt;100–150 = oedema risk</li><li><b>Specific therapies</b>: NAC (all), silibinin+penicillin G (Amanita), steroids (AIH), delivery (AFLP)</li><li><b>Early transplant referral</b> at diagnosis (King's College)</li><li><b>Hypoglycaemia</b>: q2–4h glucose, 10% dextrose</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State King's College Criteria for paracetamol vs non-paracetamol</li><li>List cerebral oedema management targets</li><li>Explain why INR not routinely corrected</li><li>State NAC role in non-paracetamol ALF</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>ALF definition (INR≥1.5 + encephalopathy)</li><li>King's College Criteria (paracetamol vs non-paracetamol)</li><li>Cerebral oedema management (30°, PaCO₂ 30–35, mannitol/3% saline)</li><li>NAC in ALL ALF (paracetamol + non-paracetamol)</li><li>INR = severity marker, do not routinely correct</li><li>Early transplant referral</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>West Haven grading</li><li>Specific aetiology therapies (silibinin, steroids, delivery)</li><li>Ammonia management (lactulose + rifaximin)</li><li>Hypoglycaemia monitoring</li><li>Renal failure management (terlipressin + albumin → CRRT)</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Hyperacute/acute/subacute prognosis differences</li><li>Wilson's disease specific management</li><li>MARS/Plasma exchange as bridge</li><li>Biomarkers (phosphatase, factor V, lactate)</li><li>Post-transplant immunosuppression</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition + aetiology table</li><li>King's College Criteria (paracetamol vs non-paracetamol)</li><li>Encephalopathy grading</li><li>Investigations</li><li>Management: supportive → specific aetiology → cerebral oedema → coagulopathy → transplant</li><li>Prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>King's College comparison table</li><li>Cerebral oedema box</li><li>Specific therapies table</li><li>INR management box</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"ALF = INR≥1.5 + encephalopathy, no prior liver disease, &lt;26 weeks"</li><li>"King's College: paracetamol = pH&lt;7.3 OR (INR&gt;6.5+Cr&gt;300+G3/4); non-paracetamol = INR&gt;6.5 OR 3 of 5"</li><li>"Cerebral oedema: 30° head, PaCO₂ 30–35, mannitol/3% saline, NO aggressive hyperventilation"</li><li>"NAC in ALL ALF — improves transplant-free survival in non-paracetamol G1–2"</li><li>"INR = severity marker — do NOT routinely correct; FFP only bleeding/procedure"</li><li>"Ammonia: lactulose + rifaximin; &gt;100–150 = oedema risk"</li><li>"Early transplant referral at ALF diagnosis"</li><li>"Specific: Amanita = silibinin+penicillin G; AIH = steroids; AFLP = delivery"</li><li>"Hypoglycaemia = monitor q2–4h, 10% dextrose"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Paracetamol OD 18h ago, INR 2.5, GCS 12 → NAC full course, King's College monitoring</li><li>ALF Grade 3 encephalopathy, INR 5.0, ammonia 180 → cerebral oedema protocol + lactulose/rifaximin</li><li>Young woman 36w pregnant, nausea, elevated LFTs → AFLP? immediate delivery + supportive</li><li>Mushroom ingestion, delayed presentation → Amanita? silibinin + penicillin G + NAC + transplant eval</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>ALF: INR≥1.5 + Encephalopathy (&lt;26 wks)</li><li>King's Paracetamol: pH&lt;7.3 OR (INR&gt;6.5+Cr&gt;300+G3/4)</li><li>King's Non-Paracetamol: INR&gt;6.5 OR 3of5</li><li>Cerebral Oedema: 30°, PaCO2 30-35, Mannitol/3% Saline</li><li>NAC: ALL ALF (Paracetamol + Non-Paracetamol)</li><li>INR: Severity Marker - NO Routine Correction</li><li>Specific: Silibinin+PenG (Amanita), Steroids (AIH), Delivery (AFLP)</li><li>Hypoglycaemia: q2-4h Glucose</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>ALF = INR ≥1.5 + encephalopathy in &lt;26 weeks without prior liver disease. <b>King's College Criteria</b>: Paracetamol = pH&lt;7.3 OR (INR&gt;6.5 + Cr&gt;300 + Grade 3/4 encephalopathy); Non-paracetamol = INR&gt;6.5 OR any 3 of 5 (age&lt;10/&gt;40, drug/indeterminate/HBV, jaundice-encephalopathy&gt;7d, INR&gt;3.5, bilirubin&gt;300). <b>Cerebral oedema</b>: 30° head elevation, PaCO₂ 30–35 mmHg, mannitol/hypertonic saline. <b>NAC in ALL ALF</b> (improves transplant-free survival in non-paracetamol). <b>INR = severity marker — do NOT routinely correct</b>. <b>Early transplant referral</b> per King's College. <b>Specific</b>: NAC (all), silibinin+penicillin G (Amanita), steroids (AIH), delivery (AFLP). <b>Hypoglycaemia</b> monitor q2–4h.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Acute liver failure (ALF) is defined as development of encephalopathy and coagulopathy in:</li></ol>
+<p>A. A patient with pre-existing cirrhosis B. <b>A patient without pre-existing liver disease, within 8 weeks of symptom onset</b> C. Any patient with jaundice D. After 6 months of liver disease</p>
+<ol><li>Most common cause of ALF in the UK:</li></ol>
+<p>A. Viral hepatitis A B. <b>Paracetamol (acetaminophen) overdose</b> C. Wilson's disease D. Autoimmune hepatitis</p>
+<ol><li>King's College Criteria for paracetamol-induced ALF — indication for transplant:</li></ol>
+<p>A. pH &lt;7.4 alone B. <b>pH &lt;7.3 OR (INR &gt;6.5 + Cr &gt;300 + grade 3–4 encephalopathy)</b> C. ALT &gt;1000 D. Bilirubin &gt;300</p>
+<ol><li>Cerebral oedema in ALF is treated with:</li></ol>
+<p>A. Steroids B. <b>Mannitol 0.5–1 g/kg + hypertonic saline + head elevation + consider cooling</b> C. Vitamin K D. NAC</p>
+<ol><li>N-acetylcysteine (NAC) is indicated in:</li></ol>
+<p>A. All ALF B. <b>Paracetamol-induced ALF (and may benefit non-paracetamol)</b> C. Viral ALF D. Wilson's disease</p>
+<ol><li>Coagulopathy in ALF (raised INR) — when to transfuse FFP:</li></ol>
+<p>A. Always B. <b>Only if bleeding or pre-procedure (avoid routine correction — masks trend)</b> C. INR &gt;5 D. Never</p>
+<ol><li>Hepatorenal syndrome (HRS) treatment:</li></ol>
+<p>A. Dopamine B. <b>Terlipressin + albumin (or noradrenaline + albumin)</b> C. Loop diuretic D. Paracetamol</p>
+<ol><li>Hypoglycaemia in ALF is treated with:</li></ol>
+<p>A. 0.9% saline B. <b>10% dextrose infusion (continuous)</b> C. Insulin D. Glucagon</p>
+<ol><li>Sepsis in ALF — common organisms:</li></ol>
+<p>A. Gram-positive only B. <b>Gram-positive and gram-negative (esp. S. aureus, E. coli, candida)</b> C. Viral only D. None</p>
+<ol><li>Indications for emergency liver transplant in ALF include:</li></ol>
+<p>A. Jaundice alone B. <b>King's College Criteria met, irreversible cause, no contraindications</b> C. ALT &gt;1000 D. AST &gt;1000</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 25-year-old took 30 g paracetamol, presents 36 h later with vomiting, INR 4, ALT 5000. Management:</li></ol>
+<p>A. Discharge B. <b>NAC infusion + transfer to liver unit + monitor for ALF</b> C. Vitamin K D. Antiemetics only</p>
+<ol><li>ALF with pH 7.20, INR 8, Cr 350, encephalopathy grade 3. Next step:</li></ol>
+<p>A. Palliative care B. <b>Urgent liver transplant evaluation (King's College Criteria met)</b> C. NAC D. Wait 48 h</p>
+<ol><li>A 30-year-old with ALF, sudden GCS drop, unequal pupils. Management:</li></ol>
+<p>A. CT head B. <b>Treat as raised ICP — mannitol 0.5–1 g/kg + hypertonic saline + intubate if GCS ≤8</b> C. NAC D. Steroids</p>
+<ol><li>Coagulopathy in ALF (INR 6) without active bleeding. Management:</li></ol>
+<p>A. FFP B. <b>No FFP — monitor INR as prognostic marker; transfuse only if bleeding/pre-procedure</b> C. Vitamin K D. Cryoprecipitate</p>
+<ol><li>ALF patient, Na⁺ 125, GCS 10. Differential:</li></ol>
+<p>A. SIADH B. <b>Cerebral oedema / hyponatraemia worsening cerebral oedema</b> C. Hypovolaemia D. Cerebral salt wasting</p>
+<ol><li>Hyponatraemia (Na⁺ 125) in ALF. Management:</li></ol>
+<p>A. 0.9% saline bolus B. <b>Hypertonic saline 3% 100–250 mL + fluid restriction + treat cerebral oedema</b> C. Vaptans D. Demeclocycline</p>
+<ol><li>ALF with sepsis — empirical antibiotics:</li></ol>
+<p>A. None B. <b>Broad-spectrum (e.g., piperacillin-tazobactam) + antifungal cover (high risk)</b> C. Penicillin V D. Aminoglycoside only</p>
+<ol><li>Ammonia-lowering therapies in ALF hepatic encephalopathy:</li></ol>
+<p>A. L-DOPA B. <b>Lactulose + rifaximin + consider L-ornithine L-aspartate (LOLA)</b> C. Steroids D. NAC</p>
+<ol><li>A young woman, ALF, ANA+, IgG↑, anti-smooth muscle antibody+. Diagnosis:</li></ol>
+<p>A. Wilson's B. <b>Autoimmune hepatitis (AIH)</b> C. Viral hepatitis D. PBC</p>
+<ol><li>ALF, INR 10, fibrinogen 0.8, bleeding from line site. Best product:</li></ol>
+<p>A. Platelet B. <b>FFP + cryoprecipitate (fibrinogen &lt;1)</b> C. Vitamin K D. Saline</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: ALF definition</li></ul>
+<p>A: Severe acute liver injury with encephalopathy + coagulopathy in patient without pre-existing liver disease (within 8 weeks)</p>
+<ul><li>Q: Most common ALF cause UK</li></ul>
+<p>A: Paracetamol overdose</p>
+<ul><li>Q: King's College Criteria (paracetamol)</li></ul>
+<p>A: pH &lt;7.3 OR INR &gt;6.5 + Cr &gt;300 + grade 3–4 encephalopathy</p>
+<ul><li>Q: NAC indication</li></ul>
+<p>A: Paracetamol-induced ALF (may benefit non-paracetamol)</p>
+<ul><li>Q: Cerebral oedema treatment</li></ul>
+<p>A: Mannitol + hypertonic saline + head-up 30°</p>
+<ul><li>Q: HRS treatment</li></ul>
+<p>A: Terlipressin + albumin</p>
+<ul><li>Q: Hypoglycaemia in ALF</li></ul>
+<p>A: 10% dextrose infusion</p>
+<ul><li>Q: FFP in ALF</li></ul>
+<p>A: Only if bleeding or pre-procedure (don't mask INR trend)</p>
+<ul><li>Q: Sepsis in ALF</li></ul>
+<p>A: Broad-spectrum antibiotics + antifungal cover</p>
+<ul><li>Q: AIH diagnosis</li></ul>
+<p>A: ANA+, ASMA+, IgG↑, liver biopsy</p>
+<ul><li>Q: Hepatic encephalopathy</li></ul>
+<p>A: Lactulose + rifaximin</p>
+<ul><li>Q: Ammonia target</li></ul>
+<p>A: Reduce with lactulose, rifaximin, LOLA</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — ALF: no pre-existing liver disease, within 8 weeks of symptoms.</li><li><b>B</b> — Paracetamol is the most common cause in UK.</li><li><b>B</b> — King's College paracetamol: pH &lt;7.3 OR INR &gt;6.5 + Cr &gt;300 + grade 3–4 encephalopathy.</li><li><b>B</b> — Cerebral oedema: mannitol + hypertonic saline + head-up + cooling.</li><li><b>B</b> — NAC for paracetamol; may benefit non-paracetamol.</li><li><b>B</b> — FFP only if bleeding or pre-procedure.</li><li><b>B</b> — HRS: terlipressin + albumin.</li><li><b>B</b> — Hypoglycaemia: 10% dextrose infusion.</li><li><b>B</b> — Sepsis: gram + and - (S. aureus, E. coli, candida).</li><li><b>B</b> — Transplant: King's College met, irreversible, no contraindications.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Late paracetamol overdose → NAC + transfer to liver unit.</li><li><b>B</b> — King's College met → urgent transplant evaluation.</li><li><b>B</b> — Treat as raised ICP.</li><li><b>B</b> — Don't correct INR if no bleeding (prognostic marker).</li><li><b>B</b> — Hyponatraemia worsens cerebral oedema.</li><li><b>B</b> — Hypertonic saline + treat cerebral oedema.</li><li><b>B</b> — Broad-spectrum + antifungal cover.</li><li><b>B</b> — Lactulose + rifaximin.</li><li><b>B</b> — AIH: ANA+, ASMA+, IgG↑.</li><li><b>B</b> — FFP + cryoprecipitate for bleeding with low fibrinogen.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Acute Liver Failure · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

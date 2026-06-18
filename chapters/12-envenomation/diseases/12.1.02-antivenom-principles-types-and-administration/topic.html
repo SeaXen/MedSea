@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antivenom- Principles, Types, and Administration — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ENVENOMATION</span>
+      <div class="h1">Antivenom- Principles, Types, and Administration</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe antivenom mechanism of action and pharmacokinetics</li><li>[ ] Differentiate whole IgG, F(ab')₂, and Fab preparations</li><li>[ ] Distinguish monospecific from polyspecific (polyvalent) antivenoms</li><li>[ ] Apply indications, dosing, and administration principles</li><li>[ ] Recognise and manage antivenom adverse reactions</li><li>[ ] Monitor patients during and after antivenom administration</li><li>[ ] Apply regional differences in antivenom availability and choice</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Background</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Item</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Definition**</td><td>Antivenom = immunoglobulin preparation (whole IgG or fragments) from hyperimmunised animals, capable of neutralising specific venom toxins</td></tr><tr><td>**Source animals**</td><td>Horses (equine) most common; sheep (ovine), rabbits, camelids (camelid nanobodies — newer)</td></tr><tr><td>**Production**</td><td>Animal hyperimmunised with sublethal venom doses → plasma harvested → IgG purified → fragmented if required</td></tr><tr><td>**First developed**</td><td>1895–96 (Calmette, Phisalix) — anti-cobra serum</td></tr><tr><td>**Global supply**</td><td>Polyvalent products from Australia (CSL), India (VINS, Bharat Serums), South Africa (SAIMR), Mexico (Birmex), Brazil (Butantan)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Mechanism of Action</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Binding**</td><td>Antibody variable region binds venom epitope (toxin, enzyme)</td></tr><tr><td>**2. Neutralisation**</td><td>Prevents venom binding to cellular/tissue targets (receptors, basement membrane, clotting factors)</td></tr><tr><td>**3. Clearance**</td><td>Fc receptor–mediated phagocytosis by RES (for IgG/F(ab')₂); renal clearance for Fab</td></tr><tr><td>**4. Redistribution**</td><td>Antibody-venom complexes dissociate slowly, releasing active venom (theoretical concern)</td></tr><tr><td>**5. Aggregate formation**</td><td>Large immune complexes cleared by spleen/liver</td></tr></table>
+<p><b>Limitation:</b> Antivenom <b>cannot reverse</b> established tissue damage (necrosis, established paralysis) — only neutralises circulating venom. Therefore <b>early</b> administration is critical.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Types of Antivenom</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">By Molecular Composition</div>
+<table class="ctable"><tr><th>Type</th><th>Production</th><th>Molecular Weight</th><th>Half-life</th><th>Reactions</th><th>Use</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Whole IgG**</td><td>Intact IgG from animal plasma</td><td>150 kDa</td><td>Long (3–7 d)</td><td>More common (Fc-mediated complement activation)</td><td>Older products, some Indian/EQUIP antivenoms</td></tr><tr><td>**F(ab')₂**</td><td>Pepsin digestion of IgG (removes Fc)</td><td>100 kDa</td><td>Intermediate (1–3 d)</td><td>Fewer reactions</td><td>**Most common** (CSL Australia, SAIMR, BIOCLON)</td></tr><tr><td>**Fab**</td><td>Papain digestion of IgG (removes Fc + 1 Fab)</td><td>50 kDa</td><td>Short (4–12 h)</td><td>Fewer reactions but may need repeat dosing</td><td>Digitalis antivenom, *Crotalus* Fab (CroFab — US)</td></tr></table>
+<div class="sub-h">By Specificity</div>
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Use</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Monospecific (monovalent)**</td><td>Antibodies against single species</td><td>Definite ID, common in Australia (Taipan AV, Brown AV)</td></tr><tr><td>**Polyvalent (polyspecific)**</td><td>Antibodies against multiple species (often 4–6)</td><td>Unidentified snake, multiple species in region (India ASV, SAIMR)</td></tr></table>
+<div class="sub-h">By Region / Product</div>
+<table class="ctable"><tr><th>Region</th><th>Common Product</th><th>Specificity</th><th>Type</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Australia**</td><td>CSL Polyvalent (Taipan, Brown, Tiger, Black, Death Adder)</td><td>Polyvalent</td><td>F(ab')₂ (sheep)</td></tr><tr><td>**India**</td><td>Bharat Serums / VINS Polyvalent (Indian Big Four: Cobra, Krait, Russell's Viper, Saw-scaled Viper)</td><td>Polyvalent</td><td>Whole IgG (equine)</td></tr><tr><td>**South Africa**</td><td>SAIMR Polyvalent (Banded Cobra, Snouted Cobra, Cape Cobra, Black Mamba, Puff Adder, Gaboon Viper, Rinkhals)</td><td>Polyvalent</td><td>F(ab')₂ (equine)</td></tr><tr><td>**USA**</td><td>CroFab (Crotalidae Polyvalent Immune Fab — North American pit vipers)</td><td>Polyvalent</td><td>Fab (ovine)</td></tr><tr><td>**Mexico/Central America**</td><td>Antivipmyn / Coralmyn</td><td>Polyvalent</td><td>F(ab')₂ (equine)</td></tr><tr><td>**Brazil**</td><td>Butantan / BIOCLON (Bothrops, Crotalus, Lachesis, Micrurus)</td><td>Polyvalent (Bothrops, Crotalus)</td><td>F(ab')₂ (equine)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Pharmacokinetics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Whole IgG</th><th>F(ab')₂</th><th>Fab</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**MW (kDa)**</td><td>150</td><td>100</td><td>50</td></tr><tr><td>**Vd**</td><td>Plasma + interstitial</td><td>Plasma + interstitial (smaller)</td><td>Plasma only (small)</td></tr><tr><td>**t½α (distribution)**</td><td>1–4 h</td><td>0.5–2 h</td><td>0.5 h</td></tr><tr><td>**t½β (elimination)**</td><td>60–180 h</td><td>30–90 h</td><td>12–20 h</td></tr><tr><td>**Clearance**</td><td>RES (FcRn recycling)</td><td>Renal + RES</td><td>Renal (filtered)</td></tr><tr><td>**Tissue penetration**</td><td>Limited (large)</td><td>Better</td><td>Best (small)</td></tr><tr><td>**Redistribution**</td><td>Slow</td><td>Faster</td><td>Fastest</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Indications for Antivenom</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Absolute Indications (AV Required)</div>
+<table class="ctable"><tr><th>Indication</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Systemic neurotoxicity**</td><td>Ptosis, ophthalmoplegia, bulbar palsy, respiratory failure (elapid)</td></tr><tr><td>**Coagulopathy (VICC)**</td><td>INR > 1.5, fibrinogen < 1 g/L, platelets < 50, 20WBCT positive (viperid)</td></tr><tr><td>**Severe systemic signs**</td><td>Hypotension, shock, arrhythmia, pulmonary oedema</td></tr><tr><td>**Severe local progression**</td><td>Swelling > half limb in 24 h, necrosis, compartment syndrome</td></tr><tr><td>**Rhabdomyolysis**</td><td>Sea snake, myotoxic viperids — CK > 5000, myoglobinuria, AKI</td></tr><tr><td>**Acute kidney injury**</td><td>Creatinine rise, oliguria</td></tr><tr><td>**Cardiovascular collapse**</td><td>Scorpion, marine, anaphylaxis</td></tr></table>
+<div class="sub-h">Relative Indications (Consider AV)</div>
+<table class="ctable"><tr><th>Indication</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Mild systemic**</td><td>Nausea, vomiting, mild pain, no coagulopathy</td></tr><tr><td>**Local swelling progressive**</td><td>< half limb, no systemic</td></tr><tr><td>**Possible envenomation**</td><td>Unidentified snake, high suspicion</td></tr></table>
+<div class="sub-h">NOT Indications (Observe Only)</div>
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Dry bite**</td><td>Fang marks, no local/systemic signs, normal 20WBCT — observe 12–24 h</td></tr><tr><td>**Local pain/swelling only**</td><td>Mild, not progressive — analgesia, observe</td></tr><tr><td>**Non-venomous bite**</td><td>Identify — no AV needed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Dosing Principles</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Principle</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Dose by venom load**</td><td>Based on number of vials to neutralise AVERAGE venom yield from one bite</td></tr><tr><td>**NOT by patient weight**</td><td>Same dose for adult and child (children have worse envenomation per kg but same venom load)</td></tr><tr><td>**Initial dose**</td><td>Usually 1–2 vials (some products 4–10) to neutralise average envenomation</td></tr><tr><td>**Repeat dose**</td><td>If no clinical improvement or coagulopathy not corrected at 6 h</td></tr><tr><td>**Maximum dose**</td><td>No strict maximum; titrate to clinical response</td></tr><tr><td>**Adjunctive therapy**</td><td>Supportive care, not a substitute</td></tr></table>
+<div class="sub-h">Examples of Initial Dosing</div>
+<table class="ctable"><tr><th>Product</th><th>Initial Dose</th><th>Repeat Criteria</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**CSL Australian Polyvalent**</td><td>1–2 vials (3 vials for severe)</td><td>Repeat if symptoms persist at 1–2 h</td></tr><tr><td>**Indian Polyvalent ASV**</td><td>8–10 vials (severe), 5 vials (moderate)</td><td>Repeat if 20WBCT +ve at 6 h</td></tr><tr><td>**SAIMR Polyvalent**</td><td>10 vials (severe), 5 vials (moderate)</td><td>Repeat if bleeding/coagulopathy persists</td></tr><tr><td>**CroFab**</td><td>4–6 vials (initial), 2 vials (repeat)</td><td>Repeat at 6, 12, 18 h if needed</td></tr><tr><td>**Antivipmyn**</td><td>2–5 vials (initial)</td><td>Repeat based on clinical response</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Administration Protocol</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pre-Infusion</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Confirm indication**</td><td>WHO grade / SSS / clinical signs</td></tr><tr><td>**2. Obtain consent**</td><td>Explain risks (anaphylaxis 5–20%, serum sickness)</td></tr><tr><td>**3. IV access**</td><td>Two large-bore (≥18G)</td></tr><tr><td>**4. Resuscitation equipment**</td><td>Adrenaline, antihistamine, hydrocortisone, oxygen, suction, ambu-bag</td></tr><tr><td>**5. Baseline labs**</td><td>Coagulation, FBC, U&E, CK, urinalysis, ECG, 20WBCT</td></tr><tr><td>**6. Skin test**</td><td>**NOT recommended** (poor predictive value, can sensitise, delay treatment)</td></tr><tr><td>**7. Premedication**</td><td>**Not routine**; consider SC adrenaline 0.25 mg in high-risk (atopic) patients</td></tr><tr><td>**8. Fluid pre-load**</td><td>500 mL crystalloid in adults; reduces hypotension</td></tr></table>
+<div class="sub-h">Infusion</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Dilution**</td><td>Reconstitute in 10–50 mL saline; further dilute in 100–250 mL saline</td></tr><tr><td>**2. Initial rate**</td><td>Start SLOW — 1 mL/min for 15 min (observe for reaction)</td></tr><tr><td>**3. If tolerated**</td><td>Increase to full infusion over 1 h total</td></tr><tr><td>**4. Total time**</td><td>30–60 min for most products; some 1–2 h</td></tr><tr><td>**5. Observation**</td><td>Continuous during infusion; q15min vitals</td></tr><tr><td>**6. IM alternative**</td><td>Only if no IV access — slower absorption, lower peak, more tissue reaction</td></tr></table>
+<div class="sub-h">Post-Infusion</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Monitor**</td><td>q15min × 1 h, q30min × 4 h, q1h × 24 h</td></tr><tr><td>**2. Repeat labs**</td><td>20WBCT at 1 h, 6 h, 12 h, 24 h; coagulation 6-hourly</td></tr><tr><td>**3. Clinical response**</td><td>Coagulopathy reversal, neuro improvement, vital stability</td></tr><tr><td>**4. Repeat dose**</td><td>If no improvement at 1–6 h</td></tr><tr><td>**5. Watch for late reaction**</td><td>Serum sickness at 5–14 d (prednisolone if severe)</td></tr><tr><td>**6. Documentation**</td><td>Product, batch, dose, time, reactions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Special Populations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Consideration</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Pregnancy**</td><td>AV indicated if envenomation; benefits outweigh risk; use F(ab')₂ if available</td></tr><tr><td>**Children**</td><td>Same dose as adult (by venom load); careful fluid balance; close monitoring</td></tr><tr><td>**Elderly**</td><td>Higher anaphylaxis risk; comorbidities; start slower</td></tr><tr><td>**Atopic / multiple allergy**</td><td>Higher reaction risk; consider SC adrenaline prophylaxis</td></tr><tr><td>**β-blocker use**</td><td>Blunts anaphylaxis response; consider glucagon</td></tr><tr><td>**ACE inhibitor use**</td><td>Higher angioedema risk with reaction</td></tr><tr><td>**Renal impairment**</td><td>Fab preparations cleared renally — may accumulate</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Regional / Product-Specific Considerations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Product</th><th>Notes</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**CSL (Australia)**</td><td>Sheep-derived F(ab')₂, low reaction rate, requires VDK for ID</td></tr><tr><td>**Indian ASV**</td><td>Equine whole IgG, higher reaction rate (10–20%), doses 8–10 vials typical</td></tr><tr><td>**SAIMR (Africa)**</td><td>Equine F(ab')₂, moderate reactions, useful for mamba + viper</td></tr><tr><td>**CroFab (US)**</td><td>Ovine Fab, need REPEAT dosing (short t½); "control + maintenance" protocol</td></tr><tr><td>**Antivipmyn (Mexico)**</td><td>Equine F(ab')₂, 2–5 vials initial</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Fact</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Antivenom mechanism**</td><td>Antibody binds venom → neutralisation + enhanced clearance</td></tr><tr><td>**Types**</td><td>Whole IgG, F(ab')₂, Fab</td></tr><tr><td>**Whole IgG**</td><td>Long t½, more reactions (Fc-mediated complement)</td></tr><tr><td>**F(ab')₂**</td><td>Most common; no Fc, intermediate t½, fewer reactions</td></tr><tr><td>**Fab**</td><td>Smallest, fastest clearance, may need repeat dosing (CroFab)</td></tr><tr><td>**Monospecific**</td><td>Single species</td></tr><tr><td>**Polyvalent (polyspecific)**</td><td>Multiple species — used when snake unidentified</td></tr><tr><td>**Dose by venom load**</td><td>Vials, not patient weight</td></tr><tr><td>**Same dose adult & child**</td><td>By venom yield; child more vulnerable per kg</td></tr><tr><td>**Route**</td><td>IV infusion (IM only if no IV access)</td></tr><tr><td>**Skin test**</td><td>**NOT recommended** (poor PPV, delays)</td></tr><tr><td>**Premedication**</td><td>**Not routine**; SC adrenaline in high-risk</td></tr><tr><td>**Early AV**</td><td>Best within 4–6 h; still beneficial up to 24–72 h</td></tr><tr><td>**Cannot reverse**</td><td>Established tissue damage / necrosis</td></tr><tr><td>**Repeat dose**</td><td>If coagulopathy not corrected at 6 h, or no clinical improvement</td></tr><tr><td>**Pregnancy**</td><td>Indicated if envenomation; F(ab')₂ preferred</td></tr><tr><td>**Common products**</td><td>CSL (Aus), ASV (India), SAIMR (Africa), CroFab (US), Antivipmyn (Mexico)</td></tr><tr><td>**Vials**</td><td>Initial 1–10 depending on product & severity; titrate to response</td></tr><tr><td>**Most common exam trap**</td><td>Dose by weight; skin test; reversal of necrosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1: What is the mechanism of action of antivenom?</b> A: Antibody (IgG or fragment) binds venom epitope → neutralises circulating venom by preventing target binding → antibody-venom complex cleared by RES (Fc receptor mediated) for IgG/F(ab')₂, or by renal filtration for Fab.</p>
+<p><b>Q2: Compare whole IgG, F(ab')₂, and Fab antivenoms.</b> A: Whole IgG = intact, 150 kDa, long t½ (60–180 h), more reactions (Fc-mediated complement); F(ab')₂ = pepsin-digested, 100 kDa, intermediate t½ (30–90 h), fewer reactions; Fab = papain-digested, 50 kDa, short t½ (12–20 h), fewest reactions but may need repeat dosing.</p>
+<p><b>Q3: What is the difference between monospecific and polyspecific antivenom?</b> A: Monospecific = antibodies against a single species (used when snake is identified, e.g., Australian taipan AV). Polyspecific/polyvalent = antibodies against multiple species (4–6), used when snake is unidentified or multiple species in region (Indian ASV, SAIMR).</p>
+<p><b>Q4: How is the dose of antivenom determined?</b> A: By VENOM LOAD (number of vials to neutralise the average venom yield from one bite), not by patient weight. Adults and children receive the same dose because venom load is the same; children are more vulnerable per kg.</p>
+<p><b>Q5: What is the preferred route and rate of antivenom administration?</b> A: IV infusion in saline, starting slowly (1 mL/min for 15 min), then increased to complete in 30–60 min. IM is a last resort if no IV access (slower absorption, lower peak).</p>
+<p><b>Q6: Why is skin testing no longer recommended before antivenom?</b> A: Poor predictive value for anaphylaxis (both false + and −); can sensitise the patient; delays life-saving treatment. Direct infusion with resuscitation readiness is safer.</p>
+<p><b>Q7: When should antivenom be repeated?</b> A: If there is no clinical improvement at 1–6 h, or if coagulopathy (INR, fibrinogen, 20WBCT) is not corrected at 6 h post-infusion. Repeat with the same or higher dose.</p>
+<p><b>Q8: What are the limits of antivenom?</b> A: Cannot reverse established tissue damage, necrosis, or established paralysis. Only neutralises circulating (free) venom. Cannot prevent ongoing venom release from depot at bite site. Antivenom does not cross BBB well — neurotoxins already in CSF may continue to act.</p>
+<p><b>Q9: Should antivenom be given in pregnancy?</b> A: Yes, if indicated for envenomation. Maternal benefit outweighs fetal risk. F(ab')₂ preferred (less Fc-mediated placental transfer). Early AV reduces risk of fetal demise from maternal shock or coagulopathy.</p>
+<p><b>Q10: What is the role of premedication before antivenom?</b> A: Not routine. Adrenaline (0.25 mg SC) may be considered in high-risk (atopic, previous AV) patients. Antihistamines and steroids are NOT effective at preventing anaphylaxis. Resuscitation readiness is more important.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Antivenom dose by weight</td><td>NO — by venom load (vials)</td></tr><tr><td>Skin test mandatory</td><td>NO — not recommended; poor PPV, delays</td></tr><tr><td>Antivenom reverses necrosis</td><td>NO — only neutralises circulating venom</td></tr><tr><td>One dose cures</td><td>NO — may need repeat at 6 h if coagulopathy persists</td></tr><tr><td>AV = vaccine</td><td>NO — passive immunisation, short-term only</td></tr><tr><td>Premedication always needed</td><td>NO — resuscitation readiness > routine premed</td></tr><tr><td>All snakebites need AV</td><td>NO — only systemic or severe local</td></tr><tr><td>IM AV as effective as IV</td><td>NO — IV is faster, higher peak, preferred</td></tr><tr><td>Children need less AV</td><td>NO — same as adult (by venom load)</td></tr><tr><td>AV prevents all reactions</td><td>NO — early (5–20%) and late (5–14 d serum sickness) reactions still occur</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>AV types</b>: <b>I</b>ntact (IgG) = <b>I</b>mmunogenic; <b>F(ab')₂</b> = <b>F</b>ragment; <b>Fab</b> = <b>F</b>astest clearance</li><li><b>Dose by</b>: <b>V</b>enom, <b>N</b>ot <b>W</b>eight = <b>VNVW</b></li><li><b>Route</b>: <b>I</b>V <b>N</b>ot <b>I</b>M (preferred) = <b>IVNIM</b></li><li><b>Indications</b>: <b>N</b>euro, <b>C</b>oag, <b>C</b>VS, <b>R</b>enal, <b>S</b>evere local = <b>NCCRS</b></li><li><b>Skin test</b>: <b>N</b>ever <b>N</b>ow = <b>NN</b></li><li><b>Premed</b>: <b>N</b>ot <b>R</b>outine = <b>NR</b></li><li><b>Repeat dose</b>: If <b>N</b>o improvement at <b>6 h</b> = <b>N6</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Antivenom)) Mechanism Antibody_Fragments Binds_Venom Neutralisation Clearance[RES, renal] Types IgG[Whole, long t½, more reactions] Fab2[F(ab')₂, intermediate, fewer] Fab[Smallest, short t½, repeat dose] Specificity Monospecific[Single species] Polyvalent[Multiple species] Indications Neurotoxic Coagulopathy CVS_instability AKI Severe_local Dosing Venom_load Not_weight Vials Repeat_6h Administration IV_preferred Slow_start 30-60_min_total IM_last_resort Skin_test Not_recommended Poor_PPV Delays Premedication Not_routine SC_adrenaline_high_risk Monitoring Vitals Coagulation Renal Neuro Late_serum_sickness Limits No_necrosis_reversal No_established_paralysis Short_duration </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Key Point</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Mechanism**</td><td>Antibody binds venom → neutralise + clearance</td></tr><tr><td>**Whole IgG**</td><td>150 kDa, t½ 60–180 h, more reactions</td></tr><tr><td>**F(ab')₂**</td><td>100 kDa, t½ 30–90 h, fewer reactions — most common</td></tr><tr><td>**Fab**</td><td>50 kDa, t½ 12–20 h, repeat dose needed</td></tr><tr><td>**Monospecific**</td><td>1 species (definite ID)</td></tr><tr><td>**Polyvalent**</td><td>Multiple species (unidentified)</td></tr><tr><td>**Dose**</td><td>By venom load, NOT weight; same adult & child</td></tr><tr><td>**Route**</td><td>IV infusion (saline), 30–60 min</td></tr><tr><td>**Skin test**</td><td>Not recommended</td></tr><tr><td>**Premed**</td><td>Not routine; SC adrenaline in high-risk</td></tr><tr><td>**Indications**</td><td>Neurotoxicity, coagulopathy, CVS instability, AKI, severe local</td></tr><tr><td>**Repeat**</td><td>At 6 h if no improvement or coagulopathy persists</td></tr><tr><td>**Cannot reverse**</td><td>Necrosis, established paralysis</td></tr><tr><td>**Pregnancy**</td><td>Indicated; F(ab')₂ preferred</td></tr><tr><td>**Limits**</td><td>Circulating venom only; depot at bite site continues release</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>Mechanism, types, route, dose principle, skin test</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Pharmacokinetics, indications, repeat criteria, monitoring</td></tr><tr><td>**7 d**</td><td></td><td></td><td>Regional products, special populations, limits</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with Snake & Reactions notes</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Mechanism</td><td></td></tr><tr><td>IgG vs F(ab')₂ vs Fab</td><td></td></tr><tr><td>Monospecific vs polyvalent</td><td></td></tr><tr><td>Dosing principle</td><td></td></tr><tr><td>IV administration protocol</td><td></td></tr><tr><td>Indications</td><td></td></tr><tr><td>Repeat dose criteria</td><td></td></tr><tr><td>Skin test & premedication</td><td></td></tr><tr><td>Special populations</td><td></td></tr><tr><td>Regional products</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Describe antivenom in snakebite"</td><td>Mechanism, types, indications, dosing, route, monitoring, reactions, limits</td></tr><tr><td>**Short Note**</td><td>"Antivenom pharmacokinetics"</td><td>Whole IgG vs F(ab')₂ vs Fab — MW, t½, clearance, Vd</td></tr><tr><td>**Viva**</td><td>"Why is antivenom dose not by weight?"</td><td>By venom load (vials), same adult & child; venom yield determines vials</td></tr><tr><td>**Ward Round**</td><td>"Patient needs antivenom, what now?"</td><td>2 IV access, resuscitation ready, no skin test, IV infusion in saline, slow start, monitor</td></tr><tr><td>**Last-Night**</td><td>"Antivenom must-know"</td><td>IV, by vials, no skin test, repeat 6h, cannot reverse necrosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Antivenom mechanism of action:</b></li></ol>
+<p>A. Chelates venom B. <b>Antibody binds venom → neutralisation + enhanced clearance</b> C. Degrades venom enzymes D. Blocks venom synthesis E. Direct cellular protection</p>
+<ol><li><b>Which antivenom preparation has the LONGEST half-life?</b></li></ol>
+<p>A. Fab B. <b>Whole IgG</b> C. F(ab')₂ D. All same E. Depends on species</p>
+<ol><li><b>Antivenom dose is calculated based on:</b></li></ol>
+<p>A. Patient weight B. <b>Venom load (number of vials)</b> C. Severity score only D. Age E. Time since bite</p>
+<ol><li><b>Preferred route of antivenom administration:</b></li></ol>
+<p>A. Intramuscular B. Subcutaneous C. <b>Intravenous infusion</b> D. Intradermal E. Intra-arterial</p>
+<ol><li><b>Skin testing before antivenom:</b></li></ol>
+<p>A. Mandatory B. <b>Not recommended (poor PPV, delays treatment)</b> C. Only in atopic D. Only for polyspecific E. Only in children</p>
+<ol><li><b>Which antivenom is F(ab')₂ sheep-derived (Australia)?</b></li></ol>
+<p>A. CroFab B. Indian ASV C. <b>CSL Polyvalent</b> D. SAIMR E. Antivipmyn</p>
+<ol><li><b>Which antivenom REQUIRES repeat dosing at 6, 12, 18 h due to short t½?</b></li></ol>
+<p>A. CSL B. Indian ASV C. <b>CroFab (Fab)</b> D. SAIMR E. Antivipmyn</p>
+<ol><li><b>Antivenom CANNOT reverse:</b></li></ol>
+<p>A. Coagulopathy B. <b>Established tissue necrosis</b> C. Hypotension D. Active bleeding E. Neurotoxicity (early)</p>
+<ol><li><b>Initial dose of Indian ASV for severe systemic envenomation:</b></li></ol>
+<p>A. 1 vial B. 3 vials C. 5 vials D. <b>8–10 vials</b> E. 20 vials</p>
+<ol><li><b>Indications for AV include all EXCEPT:</b></li></ol>
+<p>A. Neurotoxicity B. Coagulopathy C. <b>Dry bite (fang marks only)</b> D. CVS instability E. Severe local progression</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>30-year-old bitten by unidentified snake. 2 h later: ptosis, ophthalmoplegia, RR 30, SpO₂ 92%. No AV yet. Best action?</b></li></ol>
+<p>A. Observe, repeat exam 6 h B. <b>Intubate + IV antivenom (polyvalent) + ICU + monitor</b> C. Antihistamine only D. Discharge with prednisolone E. Wait for VDK</p>
+<ol><li><b>Viperid bite 4 h ago. 10 vials ASV given. 6 h later: 20WBCT still +ve, INR 5, fibrinogen 0.3. Best action?</b></li></ol>
+<p>A. Stop AV B. <b>Repeat AV (10 more vials) + FFP if bleeding + repeat labs at 6 h</b> C. Heparin D. Aspirin E. Surgical debridement</p>
+<ol><li><b>45-year-old needs antivenom. History: atopic, asthma, previous AV reaction. Best premedication?</b></li></ol>
+<p>A. IV hydrocortisone B. IV chlorphenamine C. <b>SC adrenaline 0.25 mg + resuscitation ready + slow infusion</b> D. Oral prednisolone E. Nothing</p>
+<ol><li><b>Pregnant woman (24 weeks) with systemic neurotoxic envenomation. AV indicated?</b></li></ol>
+<p>A. No, teratogenic B. <b>Yes, F(ab')₂ preferred; benefits outweigh risk</b> C. Yes, but use Fab only D. Yes, half dose E. Wait for delivery</p>
+<ol><li><b>10-year-old bitten by cobra. Ptosis, dysphagia. AV given but minimal response after 2 h. Best action?</b></li></ol>
+<p>A. Stop AV B. <b>Repeat AV dose, ensure intubation, ICU</b> C. Antihistamine D. Steroid E. Observe</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[General Principles of Envenomation]]</li><li>[[Clinical Assessment and Scoring Systems]]</li><li>[[Snake Envenomation: Specific Antivenom Protocols]]</li><li>[[Snake Envenomation: Clinical Syndromes (Elapid vs Viperid)]]</li><li>[[Antivenom Adverse Reactions and Management]]</li><li>[[Snake Envenomation: Laboratory Investigation and Monitoring]]</li><li>[[Hymenoptera Stings (Bee, Wasp, Ant) and Anaphylaxis]]</li><li>[[Envenomation MOC]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antivenom- Principles, Types, and Administration · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

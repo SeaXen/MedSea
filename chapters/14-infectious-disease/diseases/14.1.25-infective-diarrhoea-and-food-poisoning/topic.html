@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Infective Diarrhoea and Food Poisoning — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Infective Diarrhoea and Food Poisoning</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify diarrhoea by duration and mechanism</li><li>Identify red flags for invasive/bloody diarrhoea and systemic illness</li><li>Select appropriate investigations (stool culture, PCR, toxins, endoscopy)</li><li>Apply empirical and pathogen-directed therapy</li><li>Manage dehydration, electrolytes, and complications</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification by Duration</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Duration</th><th>Common Causes</th></tr><tr><td>----------</td><td>----------</td><td>---------------</td></tr><tr><td>**Acute**</td><td><14 days</td><td>Viral (norovirus, rotavirus), bacterial (Campylobacter, Salmonella, Shigella, ETEC), protozoal (Giardia, Cryptosporidium)</td></tr><tr><td>**Persistent**</td><td>14–30 days</td><td>Giardia, Cryptosporidium, Cyclospora, C. difficile, post-infectious IBS</td></tr><tr><td>**Chronic**</td><td>>30 days</td><td>IBD, IBS, malabsorption, chronic infections (HIV, TB), medications, neoplasia</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Classification by Mechanism</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Examples</th></tr><tr><td>------</td><td>-----------</td><td>----------</td></tr><tr><td>**Secretory**</td><td>Active ion secretion (CFTR) → water follows</td><td>Cholera (CTX), ETEC (LT/ST), VIPoma, laxatives</td></tr><tr><td>**Osmotic**</td><td>Non-absorbable solutes retain water</td><td>Lactose intolerance, magnesium, sorbitol, malabsorption</td></tr><tr><td>**Inflammatory/Invasive**</td><td>Mucosal damage → blood, pus, mucus</td><td>Shigella, Salmonella, Campylobacter, EIEC, C. difficile, IBD</td></tr><tr><td>**Fatty (Steatorrhoea)**</td><td>Fat malabsorption</td><td>Pancreatic insufficiency, coeliac, bile acid diarrhoea</td></tr><tr><td>**Motility-related**</td><td>Altered transit</td><td>Hyperthyroidism, diabetic autonomic neuropathy, carcinoid</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Assessment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">History</div>
+<table class="ctable"><tr><th>Element</th><th>Key Questions</th></tr><tr><td>---------</td><td>---------------</td></tr><tr><td>**Duration**</td><td>Acute (<14d) vs persistent vs chronic</td></tr><tr><td>**Frequency/Volume**</td><td>Large volume (secretory/osmotic) vs small frequent (inflammatory)</td></tr><tr><td>**Blood/Mucus**</td><td>**Yes = inflammatory/invasive** (dysentery); No = secretory/osmotic</td></tr><tr><td>**Severity**</td><td>≥6/day, nocturnal, weight loss</td></tr><tr><td>**Associated**</td><td>Fever, abdominal pain, vomiting, tenesmus</td></tr><tr><td>**Epidemiology**</td><td>Travel, antibiotics, hospitalisation, food source, contacts, immunocompromise</td></tr></table>
+<div class="sub-h">Red Flags (Admit / Urgent Investigation)</div>
+<table class="ctable"><tr><th>Red Flag</th><th>Significance</th></tr><tr><td>----------</td><td>--------------</td></tr><tr><td>**Bloody diarrhoea**</td><td>Invasive (Shigella, Campylobacter, EHEC, Salmonella, EIEC, C. difficile, IBD)</td></tr><tr><td>**High fever (>38.5°C)**</td><td>Systemic invasion (bacteraemia, sepsis)</td></tr><tr><td>**Signs of dehydration**</td><td>Hypovolaemia, shock risk</td></tr><tr><td>**Severe abdominal pain**</td><td>Surgical abdomen, toxic megacolon, ischaemia</td></tr><tr><td>**Immunocompromise**</td><td>HIV, chemo, steroids — broader differential, severe disease</td></tr><tr><td>**Elderly / Comorbidities**</td><td>Higher mortality, atypical presentation</td></tr><tr><td>**Recent antibiotics / hospitalisation**</td><td>C. difficile risk</td></tr><tr><td>**Recent travel**</td><td>ETEC, Giardia, Cyclospora, Cholera, parasitic</td></tr><tr><td>**Neurological symptoms**</td><td>Botulism, listeria, ciguatera, shellfish poisoning</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">When to Investigate (NICE / IDSA)</div>
+<table class="ctable"><tr><th>Indication</th><th>Tests</th></tr><tr><td>------------</td><td>-------</td></tr><tr><td>**Bloody/mucoid diarrhoea**</td><td>Stool culture + PCR, C. difficile toxin</td></tr><tr><td>**Fever ≥38.5°C**</td><td>Blood cultures, stool culture/PCR</td></tr><tr><td>**Severe / dehydrated**</td><td>U&E, CRP, lactate, VBG/ABG, FBC</td></tr><tr><td>**Immunocompromised**</td><td>Extended PCR panel, O&P, viral PCR, fungal</td></tr><tr><td>**Persistent >7d**</td><td>Stool culture/PCR, O&P, Giardia/Crypto antigen</td></tr><tr><td>**Recent antibiotics / hospital**</td><td>C. difficile toxin/PCR</td></tr><tr><td>**Recent travel**</td><td>O&P, Cyclospora, microsporidia, viral PCR</td></tr><tr><td>**Foodborne outbreak**</td><td>Culture, WGS, public health notification</td></tr></table>
+<div class="sub-h">Stool Culture vs PCR</div>
+<table class="ctable"><tr><th>Test</th><th>Advantages</th><th>Limitations</th></tr><tr><td>------</td><td>------------</td><td>-------------</td></tr><tr><td>**Culture + AST**</td><td>Essential for resistance, susceptibility, outbreak</td><td>Slow (2–5d); lower sensitivity</td></tr><tr><td>**Multiplex PCR panel**</td><td>Rapid (1–2h), high sensitivity, multiple targets</td><td>No AST; detects DNA not viability; cost</td></tr><tr><td>**Ova & Parasites (O&P)**</td><td>Required for Giardia, Crypto, Cyclospora, helminths</td><td>Low sensitivity (3 samples); operator-dependent</td></tr><tr><td>**C. difficile toxin/PCR**</td><td>Gold standard for CDI</td><td>PCR more sensitive; toxin more specific</td></tr></table>
+<div class="sub-h">Pathogen-Specific Tests</div>
+<table class="ctable"><tr><th>Pathogen</th><th>Best Test</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**C. difficile**</td><td>PCR (toxin B gene) +/− toxin EIA</td></tr><tr><td>**Giardia / Crypto**</td><td>Stool antigen (EIA) or PCR</td></tr><tr><td>**Cyclospora / Microsporidia**</td><td>Modified acid-fast stain / PCR</td></tr><tr><td>**Vibrio cholerae**</td><td>Culture (TCBS) + PCR</td></tr><tr><td>**EHEC (O157:H7)**</td><td>Culture (sorbitol-MacConkey) + PCR (stx1/stx2)</td></tr><tr><td>**VDRL / RPR**</td><td>Not for diarrhoea! (syphilis)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Empirical Management Principles</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Rehydration (Cornerstone)</div>
+<table class="ctable"><tr><th>Severity</th><th>ORS / IV Fluid</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**No dehydration**</td><td>ORS ad lib (50–100mL/kg/24h); continue feeding</td></tr><tr><td>**Some dehydration**</td><td>ORS 75mL/kg over 4h; reassess</td></tr><tr><td>**Severe dehydration**</td><td>**IV Ringer's Lactate / Normal Saline** 100mL/kg over 3h (adults: 1L bolus, reassess)</td></tr></table>
+<div class="callout"><b>ORS</b> = WHO reduced osmolarity (245 mOsm/L); <b>Zinc 20mg/day × 10–14d</b> in children &lt;5y</div>
+<div class="sub-h">Antimotility Agents</div>
+<table class="ctable"><tr><th>Agent</th><th>Use</th><th>Contraindications</th></tr><tr><td>-------</td><td>-----</td><td>-------------------</td></tr><tr><td>**Loperamide**</td><td>Acute watery (no blood/fever); adjunct to antibiotics</td><td>**Bloody diarrhoea, fever, suspected C. difficile, children <12y**</td></tr><tr><td>**Racecadotril**</td><td>Secretory diarrhoea (adjunct)</td><td>Similar to loperamide</td></tr></table>
+<div class="sub-h">Antibiotic Therapy (Indicated for Specific Pathogens / Severity)</div>
+<table class="ctable"><tr><th>Pathogen / Scenario</th><th>1st-line</th><th>Duration</th></tr><tr><td>---------------------</td><td>----------</td><td>----------</td></tr><tr><td>**Shigella**</td><td>Ciprofloxacin 500mg BD / Azithromycin 500mg OD</td><td>3–5d</td></tr><tr><td>**Campylobacter**</td><td>Azithromycin 500mg OD</td><td>3d</td></tr><tr><td>**Salmonella (non-typhoidal, invasive)**</td><td>Ciprofloxacin 500mg BD / Ceftriaxone 2g IV</td><td>7–10d (IV→oral)</td></tr><tr><td>**Salmonella Typhi/Paratyphi**</td><td>Ceftriaxone 2g IV / Azithromycin 1g OD</td><td>7–14d</td></tr><tr><td>**ETEC (traveller's diarrhoea)**</td><td>Azithromycin 500mg OD × 1–3d / Rifaximin 200mg TDS × 3d</td><td>1–3d</td></tr><tr><td>**Vibrio cholerae**</td><td>Doxycycline 100mg BD × 3d / Azithromycin 1g single</td><td>3d / 1d</td></tr><tr><td>**C. difficile (mild-mod)**</td><td>Vancomycin 125mg QDS PO / Fidaxomicin 200mg BD</td><td>10d</td></tr><tr><td>**C. difficile (severe)**</td><td>Vancomycin 500mg QDS PO/IV + Metronidazole 500mg IV QDS</td><td>10–14d</td></tr><tr><td>**Giardia**</td><td>Metronidazole 400mg TDS / Tinidazole 2g single</td><td>5–7d / 1d</td></tr><tr><td>**Cryptosporidium**</td><td>Nitazoxanide 500mg BD (if immunocompetent)</td><td>3d</td></tr><tr><td>**EHEC O157:H7**</td><td>**No antibiotics** (↑ HUS risk)</td><td>Supportive only</td></tr><tr><td>**Food poisoning (S. aureus, B. cereus)**</td><td>Supportive (toxin-mediated)</td><td>—</td></tr></table>
+<div class="callout"><b>Avoid antibiotics</b> in: EHEC (↑ HUS), mild viral, self-limiting</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Food Poisoning (Toxin-Mediated)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Organism / Toxin</th><th>Incubation</th><th>Key Features</th></tr><tr><td>----------</td><td>------------------</td><td>------------</td><td>--------------</td></tr><tr><td>**Staphylococcal**</td><td>S. aureus enterotoxin</td><td>1–6h</td><td>**Vomiting prominent**, abdominal cramps, diarrhoea; self-limiting 24–48h</td></tr><tr><td>**Bacillus cereus (emetic)**</td><td>Cereulide</td><td>1–6h</td><td>Vomiting > diarrhoea; fried rice</td></tr><tr><td>**Bacillus cereus (diarrhoeal)**</td><td>Enterotoxin</td><td>8–16h</td><td>Diarrhoea > vomiting; meat, vegetables</td></tr><tr><td>**Clostridium perfringens**</td><td>Enterotoxin</td><td>8–24h</td><td>Diarrhoea, cramps; no fever/vomiting; meat/gravy</td></tr><tr><td>**Botulism**</td><td>C. botulinum neurotoxin</td><td>12–72h</td><td>**Descending paralysis**, diplopia, dysphagia, respiratory failure; **ANTITOXIN urgent**</td></tr><tr><td>**Ciguatera**</td><td>Ciguatoxin</td><td>2–24h</td><td>GI + **neurological** (paradoxical temp reversal, paraesthesia)</td></tr><tr><td>**Scombroid**</td><td>Histamine</td><td>10–60min</td><td>Flushing, headache, urticaria, palpitations; **antihistamines**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>High-Risk Pathogens</th></tr><tr><td>-------------</td><td>---------------------</td></tr><tr><td>**HUS** (Haemolytic Uraemic Syndrome)</td><td>**EHEC O157:H7** (Shiga toxin); Shigella dysenteriae</td></tr><tr><td>**TTP**</td><td>Similar to HUS; ADAMTS13 deficiency</td></tr><tr><td>**Reactive Arthritis**</td><td>Salmonella, Shigella, Campylobacter, Yersinia, Chlamydia (HLA-B27)</td></tr><tr><td>**Guillain-Barré Syndrome**</td><td>Campylobacter jejuni (molecular mimicry)</td></tr><tr><td>**Septicaemia**</td><td>Salmonella, Campylobacter, invasive E. coli</td></tr><tr><td>**Toxic Megacolon**</td><td>C. difficile, Shigella, IBD</td></tr><tr><td>**Post-infectious IBS**</td><td>Campylobacter, Salmonella, Giardia</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Traveller's Diarrhoea</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Recommendation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Definition**</td><td>≥3 loose stools/24h + cramps/nausea/fever during/after travel</td></tr><tr><td>**Aetiology**</td><td>ETEC (~50%), Campylobacter, Salmonella, Shigella, norovirus, Giardia</td></tr><tr><td>**Prophylaxis**</td><td>**Not routine**; Rifaximin 200mg BD (high-risk short-term)</td></tr><tr><td>**Self-treatment**</td><td>Azithromycin 500mg OD × 1–3d + Loperamide + ORS</td></tr><tr><td>**Standby antibiotics**</td><td>Azithromycin 500mg OD × 3d (SE Asia); Rifaximin 200mg TDS (low-risk)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Bloody diarrhoea = invasive</b> → culture/PCR + empirical antibiotics</li><li><b>EHEC O157:H7</b> = NO antibiotics (↑ HUS risk)</li><li><b>C. difficile</b> = recent antibiotics/hospital → PCR + vancomycin/fidaxomicin</li><li><b>Traveller's diarrhoea</b> = ETEC most common; azithromycin standby</li><li><b>Cholera</b> = rice-water stool, massive secretory → doxycycline/azithro + massive ORS</li><li><b>Botulism</b> = descending paralysis → antitoxin + ventilatory support</li><li><b>Reactive arthritis</b> = post-Salmonella/Shigella/Campylobacter (HLA-B27)</li><li><b>HUS</b> = EHEC O157:H7 (no antibiotics!) + Shigella</li><li><b>Food poisoning</b> = short incubation (S. aureus 1–6h) = vomiting predominant</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>When do you give antibiotics for diarrhoea?</li><li>Why no antibiotics in EHEC O157:H7?</li><li>How do you manage C. difficile?</li><li>What is the management of traveller's diarrhoea?</li><li>When do you suspect HUS?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Antibiotics in EHEC</b> = ↑ HUS (NEVER give)</li><li><b>Antibiotics in mild viral</b> = unnecessary, ↑ resistance</li><li><b>Loperamide in bloody diarrhoea</b> = contraindicated</li><li><b>Antibiotics for all traveller's diarrhoea</b> = only moderate-severe</li><li><b>C. difficile</b> = stop causative antibiotic first; metronidazole no longer 1st-line</li><li><b>Cholera</b> = rice-water stool, massive fluid loss → doxycycline + massive ORS</li><li><b>Botulism</b> = antitoxin + ventilatory support (not antibiotics)</li><li><b>HUS triad</b> = microangiopathic haemolytic anaemia + thrombocytopenia + AKI</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Bloody diarrhoea pathogens</b>: <b>S</b>higella, <b>S</b>almonella, <b>C</b>ampylobacter, <b>E</b>HEC, <b>C</b>. difficile, <b>E</b>IEC = <b>SSCEE</b></li><li><b>No antibiotics</b>: <b>E</b>HEC, <b>V</b>iral, <b>M</b>ild self-limiting = <b>EVM</b></li><li><b>HUS triad</b>: <b>M</b>icroangiopathic <b>H</b>aemolytic <b>A</b>naemia + <b>T</b>hrombocytopenia + <b>A</b>KI = <b>MHA-T</b></li><li><b>Traveller's diarrhoea</b>: <b>E</b>TEC &gt; <b>C</b>ampylobacter &gt; <b>S</b>almonella &gt; <b>S</b>higella = <b>ECSS</b></li><li><b>Food poisoning incubation</b>: <b>S</b>. aureus/<b>B</b>. cereus (emetic) = <b>1–6h</b> = <b>SB-6</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Diarrhoea = Acute (&lt;14d) / Persistent (14–30d) / Chronic (&gt;30d)</b></p>
+<ul><li><b>Bloody = invasive</b> → culture/PCR + antibiotics</li><li><b>Watery = secretory/osmotic</b> → rehydration ± antiemetics</li><li><b>EHEC O157:H7</b> = NO antibiotics (HUS risk)</li><li><b>C. difficile</b> = recent antibiotics → vancomycin/fidaxomicin</li><li><b>Traveller's</b> = ETEC most common; azithromycin standby</li><li><b>Cholera</b> = rice-water, massive loss → doxy/azithro + massive ORS</li><li><b>Food poisoning</b> = short incubation = vomiting (S. aureus/B. cereus)</li><li><b>Botulism</b> = descending paralysis → antitoxin + ventilator</li><li><b>HUS</b> = EHEC (NO antibiotics!)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Bloody diarrhoea = invasive → culture + antibiotics</li><li>EHEC = NO antibiotics (HUS risk)</li><li>C. difficile = vancomycin/fidaxomicin (metronidazole 2nd-line)</li><li>Cholera = rice-water + doxycycline + massive ORS</li><li>Traveller's diarrhoea = azithromycin standby</li><li>Botulism = antitoxin + ventilator</li><li>HUS = EHEC (no antibiotics!)</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Food poisoning syndromes (S. aureus, B. cereus, C. perfringens)</li><li>Parasitic (Giardia, Crypto, Cyclospora)</li><li>Reactive arthritis (post-infectious)</li><li>Paediatric dehydration assessment</li><li>Probiotic evidence</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>FMT for recurrent C. difficile</li><li>New PCR panels (syndromic testing)</li><li>Post-infectious IBS mechanisms</li><li>Vaccine development (ETEC, Shigella, cholera)</li><li>Microbiome therapeutics</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Invasive diarrhoea (bloody/mucoid) — most common bacterial causes:</li></ol>
+<p>A. ETEC, Vibrio B. <b>Shigella, Salmonella, Campylobacter, EHEC</b> C. Norovirus, Rotavirus D. Giardia, Cryptosporidium</p>
+<ol><li>EHEC O157:H7 — antibiotic treatment:</li></ol>
+<p>A. Ciprofloxacin 500mg BD B. <b>No antibiotics (↑ HUS risk)</b> C. Azithromycin 500mg OD D. Ceftriaxone 2g IV</p>
+<ol><li>C. difficile infection — 1st-line treatment (mild-moderate):</li></ol>
+<p>A. Metronidazole 500mg TDS B. <b>Vancomycin 125mg QDS PO</b> (or Fidaxomicin 200mg BD) C. Ciprofloxacin D. Doxycycline</p>
+<ol><li>Cholera — characteristic stool:</li></ol>
+<p>A. Bloody, mucoid B. <b>Rice-water, massive volume</b> C. Fatty, foul-smelling D. Small volume, frequent</p>
+<ol><li>Traveller's diarrhoea — most common cause:</li></ol>
+<p>A. Norovirus B. <b>ETEC (enterotoxigenic E. coli)</b> C. Salmonella D. Giardia</p>
+<ol><li>Food poisoning with vomiting predominant, incubation 2h — likely:</li></ol>
+<p>A. Salmonella B. <b>S. aureus / B. cereus (emetic)</b> C. C. perfringens D. EHEC</p>
+<ol><li>Botulism — definitive treatment:</li></ol>
+<p>A. Penicillin B. <b>Antitoxin + ventilatory support</b> C. Clindamycin C. IVIG</p>
+<ol><li>HUS triad:</li></ol>
+<p>A. Haemolytic anaemia + thrombocytosis + AKI B. <b>Microangiopathic haemolytic anaemia + thrombocytopenia + AKI</b> C. Haemolytic anaemia + leukocytosis + AKI D. Thrombocytopenia + leukocytosis + AKI</p>
+<ol><li>C. difficile — when to use fidaxomicin:</li></ol>
+<p>A. Mild only B. <b>Recurrent CDI / high recurrence risk / cost not barrier</b> C. Severe only D. First episode only</p>
+<ol><li>Reactive arthritis — classic triad post-diarrhoea:</li></ol>
+<p>A. Arthritis + conjunctivitis + urethritis B. Arthritis + conjunctivitis + rash C. <b>Arthritis + conjunctivitis + urethritis</b> (HLA-B27 associated) D. Arthritis + rash + fever</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 25-year-old returns from India, 3 days watery diarrhoea, cramps, low-grade fever. No blood. Best empirical treatment:</li></ol>
+<p>A. Ciprofloxacin 500mg BD × 3d B. <b>Azithromycin 500mg OD × 1–3d</b> (resistance to fluoroquinolones in SE Asia) C. Loperamide only D. Rifaximin 200mg TDS × 3d</p>
+<ol><li>A 3-year-old with bloody diarrhoea, fever 39°C, abdominal pain. Stool culture: Shigella flexneri. Best treatment:</li></ol>
+<p>A. Supportive only B. <b>Ciprofloxacin 500mg BD × 3d</b> (or Azithromycin 20mg/kg OD × 3d) C. Loperamide + ORS D. IV fluids only</p>
+<ol><li>A 65-year-old, 5 days post-clindamycin for dental abscess, profuse watery diarrhoea ×8/day, fever 38.5°C, abdominal tenderness. PCR: C. difficile toxin positive. Best initial treatment:</li></ol>
+<p>A. Metronidazole 500mg TDS B. <b>Vancomycin 125mg QDS PO × 10d</b> (mild-moderate) C. Fidaxomicin 200mg BD D. Oral metronidazole + vancomycin</p>
+<ol><li>A 30-year-old returns from Mexico, severe watery diarrhoea "rice-water", vomiting, profound dehydration. Suspected cholera. Best antibiotic:</li></ol>
+<p>A. Ciprofloxacin B. <b>Doxycycline 100mg BD × 3d</b> (or Azithromycin 1g single) C. Metronidazole C. Ceftriaxone</p>
+<ol><li>A 6-year-old with bloody diarrhoea, HUS (Hb 70, platelets 50, creatinine 150). Stool: EHEC O157:H7. Management:</li></ol>
+<p>A. Ciprofloxacin 500mg BD B. <b>Supportive only (NO antibiotics — ↑ HUS); renal replacement if needed</b> C. Ceftriaxone 2g IV D. Azithromycin</p>
+<ol><li>A 40-year-old post-cholecystectomy, 10 days clindamycin, watery diarrhoea, mild abdominal pain. C. difficile PCR positive, mild. Treatment:</li></ol>
+<p>A. Metronidazole 500mg TDS B. <b>Vancomycin 125mg QDS PO × 10d</b> C. Stop clindamycin only D. Fidaxomicin 200mg BD</p>
+<ol><li>A traveller to Thailand, 2 days watery diarrhoea, no blood/fever. Prescribed standby azithromycin. When to take?</li></ol>
+<p>A. Immediately B. <b>If &gt;6 stools/24h OR blood OR fever OR severe cramps</b> (moderate-severe) C. Only if persists &gt;48h D. Only if fever</p>
+<ol><li>A patient with Campylobacter jejuni infection develops ascending paralysis 2 weeks later. Diagnosis:</li></ol>
+<p>A. Stroke B. <b>Guillain-Barré Syndrome</b> (molecular mimicry) C. Transverse myelitis D. Botulism</p>
+<ol><li>A 25-year-old returns from Bangladesh, 2 weeks watery diarrhoea, weight loss. Stool O&amp;P: Giardia cysts. Treatment:</li></ol>
+<p>A. Metronidazole 400mg TDS × 5–7d B. Tinidazole 2g single dose C. <b>Both A and B acceptable</b> D. Albendazole</p>
+<ol><li>Scombroid poisoning — management:</li></ol>
+<p>A. Antibiotics B. <b>Antihistamines (H1/H2 blockers)</b> C. Adrenaline D. Steroids</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Bloody diarrhoea pathogens</li></ul>
+<p>A: Shigella, Salmonella, Campylobacter, EHEC, C. difficile, EIEC</p>
+<ul><li>Q: EHEC antibiotics</li></ul>
+<p>A: NEVER (↑ HUS)</p>
+<ul><li>Q: C. difficile 1st-line</li></ul>
+<p>A: Vancomycin 125mg QDS PO (fidaxomicin alt)</p>
+<ul><li>Q: Cholera</li></ul>
+<p>A: Rice-water stool + doxycycline + massive ORS</p>
+<ul><li>Q: Traveller's diarrhoea</li></ul>
+<p>A: ETEC most common; azithromycin standby</p>
+<ul><li>Q: Food poisoning 1–6h</li></ul>
+<p>A: S. aureus / B. cereus (emetic) = vomiting</p>
+<ul><li>Q: Botulism</li></ul>
+<p>A: Descending paralysis → antitoxin + ventilator</p>
+<ul><li>Q: HUS</li></ul>
+<p>A: MAHA + thrombocytopenia + AKI (EHEC most common)</p>
+<ul><li>Q: Reactive arthritis</li></ul>
+<p>A: Post-Salmonella/Shigella/Campylobacter/Yersinia (HLA-B27)</p>
+<ul><li>Q: C. difficile 1st-line</li></ul>
+<p>A: Vancomycin 125mg QDS PO (not metronidazole)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Shigella, Salmonella, Campylobacter, EHEC = invasive. <b>MCQ 2</b>: B — EHEC = NO antibiotics (↑ HUS risk with antibiotics). <b>MCQ 3</b>: B — Vancomycin/fidaxomicin 1st-line; metronidazole 2nd-line. <b>MCQ 4</b>: B — Rice-water stool = massive secretory diarrhoea. <b>MCQ 5</b>: B — ETEC ~50% of traveller's diarrhoea. <b>MCQ 6</b>: B — S. aureus/B. cereus emetic = 1–6h, vomiting predominant. <b>MCQ 7</b>: B — Antitoxin + ventilatory support (paralysis). <b>MCQ 8</b>: B — MAHA + thrombocytopenia + AKI. <b>MCQ 9</b>: B — Fidaxomicin for recurrent/high recurrence risk. <b>MCQ 10</b>: C — Arthritis + conjunctivitis + urethritis (Reiter's triad).</p>
+<p><b>SBA 1</b>: B — Azithromycin preferred in SE Asia (fluoroquinolone resistance). <b>SBA 2</b>: B — Shigella = ciprofloxacin/azithromycin (invasive = antibiotics). <b>SBA 3</b>: B — Mild-mod CDI = vancomycin 125mg QDS (metronidazole 2nd-line). <b>SBA 4</b>: B — Cholera = doxycycline 100mg BD × 3d or azithromycin 1g. <b>SBA 5</b>: B — EHEC + HUS = NO antibiotics, supportive ± RRT. <b>SBA 6</b>: B — CDI mild = vancomycin 125mg QDS (metronidazole no longer 1st-line). <b>SBA 7</b>: B — Standby antibiotics for moderate-severe (&gt;6 stools/blood/fever/cramps). <b>SBA 8</b>: C — Post-Campylobacter = Guillain-Barré. <b>SBA 9</b>: C — Both metronidazole and tinidazole effective for Giardia. <b>SBA 10</b>: B — Scombroid = antihistamines (histamine-mediated).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Infective Diarrhoea and Food Poisoning · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

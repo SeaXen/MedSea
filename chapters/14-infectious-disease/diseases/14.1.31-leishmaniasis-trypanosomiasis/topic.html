@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Leishmaniasis &amp; Trypanosomiasis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Leishmaniasis &amp; Trypanosomiasis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify <b>Leishmania Species</b>: <i>L. donovani/infantum</i> (Visceral), <i>L. tropica/major/ethiopica</i> (Cutaneous), <i>L. braziliensis</i> (Mucocutaneous)</li><li>[ ] Recognise <b>Visceral Leishmaniasis (VL/Kala-azar)</b>: Fever, Splenomegaly, Pancytopenia, Weight Loss, Hypergammaglobulinaemia</li><li>[ ] Recognise <b>Cutaneous (CL)</b> &amp; <b>Mucocutaneous (ML)</b>: Ulcers, Mucosal Destruction (Nose/Pharynx)</li><li>[ ] Diagnose <b>Leishmaniasis</b>: <b>rK39 Dipstick</b> (VL), <b>Smear/PCR/Culture</b> (CL/ML), <b>MAT/ELISA</b> (Serology)</li><li>[ ] Manage <b>Leishmaniasis</b>: <b>Liposomal Amphotericin B</b> (VL), <b>Miltefosine</b> (VL/CL), <b>Amphotericin B</b> (ML), <b>Antimonials</b> (Historical)</li><li>[ ] Classify <b>Trypanosomes</b>: <i>T. brucei gambiense/rhodesiense</i> (African Sleeping Sickness), <i>T. cruzi</i> (Chagas Disease)</li><li>[ ] Recognise <b>African Trypanosomiasis</b>: <b>Stage 1 (Haemo-lymphatic)</b> vs <b>Stage 2 (Meningo-encephalitic)</b></li><li>[ ] Recognise <b>Chagas Disease</b>: Acute (Romaña Sign), Chronic (Cardiac, GI Megasyndromes)</li><li>[ ] Manage <b>Trypanosomiasis</b>: <b>Suramin/Pentamidine (Stage 1)</b>, <b>Eflornithine/Nifurtimox (Stage 2)</b>, <b>Benznidazole/Nifurtimox</b> (Chagas)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Leishmaniasis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classification &amp; Geography</div>
+<table class="ctable"><tr><th>Clinical Form</th><th>Species</th><th>Geography</th><th>Vector</th></tr><tr><td>---------------</td><td>---------</td><td>-----------</td><td>--------</td></tr><tr><td>**Visceral (VL/Kala-azar)**</td><td>*L. donovani* (Indian Subcontinent, East Africa), *L. infantum* (Mediterranean, Middle East, China, Latin America)</td><td>**India (Bihar), East Africa (Sudan, Ethiopia, Kenya), Brazil**</td><td>*Phlebotomus* Sandfly</td></tr><tr><td>**Cutaneous (CL)**</td><td>*L. tropica* (Urban, Middle East), *L. major* (Rural, Middle East, Africa), *L. mexicana* (Americas)</td><td>**Middle East, Central Asia, Americas**</td><td>*Phlebotomus* / *Lutzomyia*</td></tr><tr><td>**Mucocutaneous (ML)**</td><td>*L. braziliensis* (Brazil, Bolivia, Peru), *L. panamensis* (Central America)</td><td>**Latin America**</td><td>*Lutzomyia* Sandfly</td></tr><tr><td>**Post-Kala-Azar Dermal Leishmaniasis (PKDL)**</td><td>*L. donovani*</td><td>**India, Sudan**</td><td>*Phlebotomus*</td></tr></table>
+<div class="callout">[!tip] <b>VL = Kala-azar = Fever + Splenomegaly + Pancytopenia + Hypergammaglobulinaemia</b>. <b>CL = Orient Sore (Self-Healing Ulcer)</b>. <b>ML = Mucosal Destruction (Espundia)</b>. <b>PKDL = Post-Kala-Azar Dermal Leishmaniasis</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Visceral Leishmaniasis (VL / Kala-azar)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Classic Triad**</td><td>**Fever** (Intermittent, Double Quotidian), **Massive Splenomegaly**, **Pancytopenia**</td></tr><tr><td>**Other**</td><td>**Weight Loss**, **Wasting**, **Hypergammaglobulinaemia** (↑ IgG/IgM), **Liver Enlargement**, **Lymphadenopathy** (African VL), **Skin Changes** (Hyperpigmentation/Kala-azar = "Black Fever")</td></tr><tr><td>**Complications**</td><td>**Secondary Infections** (TB, Pneumonia), **Bleeding** (Thrombocytopenia), **Renal Failure**, **PKDL** (Post-Treatment)</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Sensitivity/Specificity</th><th>Role</th></tr><tr><td>------</td><td>------------------------</td><td>------</td></tr><tr><td>**rK39 Dipstick** (Rapid)</td><td>**Sens 95-98%, Spec 90-95%**</td><td>**Field-Friendly, Rapid Screening (VL)**</td></tr><tr><td>**Serology (DAT, ELISA, IFAT)**</td><td>High Sens/Spec</td><td>**Confirmatory**, **Antibody Persists**</td></tr><tr><td>**Parasite Demonstration**</td><td>**Splenic Aspiration > BM > Lymph Node**</td><td>**Gold Standard** (Microscopy: LD Bodies in Macrophages)</td></tr><tr><td>**PCR**</td><td>**High Sens/Spec**</td><td>**Species ID, Monitoring**</td></tr><tr><td>**Aldehyde Test (Formal Gel)**</td><td>Low Sensitivity</td><td>Historical</td></tr></table>
+<div class="sub-h">Treatment (VL)</div>
+<table class="ctable"><tr><th>Region / Scenario</th><th>1st Line</th><th>Alternative</th><th>Duration</th></tr><tr><td>-------------------</td><td>----------</td><td>-------------</td><td>----------</td></tr><tr><td>**Indian Subcontinent (L. donovani)**</td><td>**LAmB 10mg/kg Single Dose** (or 5mg/kg Day 1-5)</td><td>**Miltefosine 50mg BD (Weight-Based) × 28d**</td><td>**Single Dose LAmB**</td></tr><tr><td>**East Africa (L. donovani)**</td><td>**LAmB 3-5mg/kg/day × 5-10d**</td><td>**SSG+PM (Sodium Stibogluconate + Paromomycin) × 17d**</td><td>**5-10 Days LAmB**</td></tr><tr><td>**Mediterranean/Latin America (L. infantum)**</td><td>**LAmB 3-5mg/kg/day × 5-10d**</td><td>**Miltefosine**</td><td>**5-10 Days**</td></tr><tr><td>**HIV Co-infection**</td><td>**LAmB 4mg/kg/day Days 1-5, 10, 14, 21, 28, 35, 42**</td><td>**Secondary Prophylaxis: LAmB Monthly**</td><td>**Induction + Maintenance**</td></tr></table>
+<div class="callout">[!warning] <b>Miltefosine = Teratogenic</b> (Contraindicated in Pregnancy). <b>SSG = Cardiotoxicity/Pancreatitis</b> (Monitor ECG/Amylase). <b>LAmB = Preferred</b> (Safety, Efficacy).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Cutaneous Leishmaniasis (CL) & Mucocutaneous (ML)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cutaneous Leishmaniasis (CL)</div>
+<table class="ctable"><tr><th>Feature</th><th>Old World (L. tropica, L. major)</th><th>New World (L. mexicana, L. braziliensis)</th></tr><tr><td>---------</td><td>----------------------------------</td><td>------------------------------------------</td></tr><tr><td>**Lesion**</td><td>**Single/Multiple Ulcers** (Volcano-Shaped, Raised Edge, Indurated Base)</td><td>**Larger, More Inflammatory**, **Multiple**</td></tr><tr><td>**Healing**</td><td>**Self-Limiting (3-6 Months)** → **Hypopigmented Scar**</td><td>**Slower, Higher Risk ML** (L. braziliensis)</td></tr><tr><td>**Types**</td><td>**Dry (Urban/L. tropica)** vs **Wet (Rural/L. major)**</td><td></td></tr></table>
+<div class="sub-h">Mucocutaneous Leishmaniasis (ML / Espundia)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Agent**</td><td>**L. braziliensis** (Predominant), *L. panamensis*, *L. guyanensis*</td></tr><tr><td>**Pathogenesis**</td><td>**Metastatic Spread** from Primary Cutaneous Lesion → Mucosa (Nose, Pharynx, Larynx)</td></tr><tr><td>**Presentation**</td><td>**Nose** (Epistaxis, Septal Perforation, Saddle Nose), **Pharynx/Larynx** (Dysphagia, Hoarseness, Airway Obstruction)</td></tr><tr><td>**Timing**</td><td>**Months-Years** After Primary Cutaneous Lesion Heals</td></tr></table>
+<div class="sub-h">Treatment (CL/ML)</div>
+<table class="ctable"><tr><th>Form</th><th>1st Line</th><th>Alternative</th></tr><tr><td>------</td><td>----------</td><td>-------------</td></tr><tr><td>**CL (Old World)**</td><td>**Intral Lesional Sodium Stibogluconate** / **Cryotherapy** / **Topical Paromomycin** / **Thermotherapy**</td><td>**Systemic: Miltefosine / LAmB / Pentavalent Antimonials**</td></tr><tr><td>**CL (New World) / ML**</td><td>**LAmB 3mg/kg/day × 5-10d** / **Miltefosine**</td><td>**Pentavalent Antimonials (SSG/MA)**</td></tr><tr><td>**ML**</td><td>**LAmB 3-5mg/kg/day × 20-30d**</td><td>**Pentavalent Antimonials × 30d**</td></tr></table>
+<div class="callout">[!warning] <b>ML = Medical Emergency</b> (Airway Risk). <b>Early Systemic Treatment Essential</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Trypanosomiasis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">African Trypanosomiasis (Sleeping Sickness)</div>
+<table class="ctable"><tr><th>Feature</th><th>*T. b. gambiense* (West/Central Africa)</th><th>*T. b. rhodesiense* (East/Southern Africa)</th></tr><tr><td>---------</td><td>-----------------------------------------</td><td>--------------------------------------------</td></tr><tr><td>**Epidemiology**</td><td>**Chronic** (98% Cases), **Anthroponotic**</td><td>**Acute** (Weeks), **Zoonotic** (Cattle/Game)</td></tr><tr><td>**Vector**</td><td>*Glossina palpalis* (Riverine)</td><td>*Glossina morsitans* (Savannah)</td></tr><tr><td>**Stage 1 (Haemo-lymphatic)**</td><td>Fever, Lymphadenopathy (Winterbottom's Sign: Posterior Cervical), Splenomegaly, Pruritus, Rash</td><td>Similar but **Rapid Progression** (Weeks)</td></tr><tr><td>**Stage 2 (Meningo-encephalitic)**</td><td>**Months-Years**</td><td>**Weeks-Months**</td></tr><tr><td></td><td>**Sleep Disturbance** (Reversed Circadian), **Neuropsychiatric**, **Tremor**, **Ataxia**, **Seizures**, **Coma**</td><td>Same but Faster</td></tr></table>
+<div class="callout">[!tip] <b>Winterbottom's Sign = Posterior Cervical Lymphadenopathy = Pathognomonic for T.b. gambiense</b>.</div>
+<div class="sub-h">Stage 1 vs Stage 2 Diagnostic Criteria</div>
+<table class="ctable"><tr><th>Criterion</th><th>Stage 1 (Haemo-lymphatic)</th><th>Stage 2 (Meningo-encephalitic)</th></tr><tr><td>-----------</td><td>---------------------------</td><td>-------------------------------</td></tr><tr><td>**CSF WBC**</td><td>**<5/µL**</td><td>**>5/µL** (Usually >20)</td></tr><tr><td>**CSF Protein**</td><td>**Normal**</td><td>**Elevated (>50mg/dL)**</td></tr><tr><td>**Trypanosomes in CSF**</td><td>**Absent**</td><td>**Present**</td></tr><tr><td>**Clinical**</td><td>No Neurological Signs</td><td>**Neurological Signs Present**</td></tr></table>
+<div class="sub-h">Treatment (African Trypanosomiasis)</div>
+<table class="ctable"><tr><th>Stage</th><th>*T. b. gambiense*</th><th>*T. b. rhodesiense*</th></tr><tr><td>-------</td><td>-------------------</td><td>----------------------</td></tr><tr><td>**Stage 1**</td><td>**Fexinidazole 1800mg OD × 10 Days** (Oral, All Stages) **OR** Pentamidine 4mg/kg IM × 7-10d</td><td>**Suramin 20mg/kg IV Days 1,3,7,14,21** (Test Dose First)</td></tr><tr><td>**Stage 2**</td><td>**Fexinidazole 1800mg OD × 10d** (If No Severe Neuro) **OR** Nifurtimox-Eflornithine Combination (NECT)</td><td>**Melarsoprol 2.2mg/kg IV Days 1-3, 10, 17-19, 25-27** (Arsenical, Toxic)</td></tr></table>
+<div class="callout">[!warning] <b>Fexinidazole = Oral, Effective for Both Stages (gambiense)</b>. <b>NECT = Eflornithine 400mg/kg Q6H IV ×14d + Nifurtimox 15mg/kg BD PO ×14d</b> (Safer than Melarsoprol). <b>Melarsoprol = Arsenical, Encephalopathy Risk (5-10%)</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📖 Chagas Disease (American Trypanosomiasis)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical Phases</div>
+<table class="ctable"><tr><th>Phase</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Acute (Weeks 1-8)**</td><td>**Romaña's Sign** (Unilateral Periorbital Oedema + Conjunctivitis), **Chagoma** (Inoculation Site), Fever, Lymphadenopathy, Hepatosplenomegaly, **Myocarditis** (Arrhythmia, Heart Failure), **Meningoencephalitis** (Rare)</td></tr><tr><td>**Indeterminate (Latent)**</td><td>**Asymptomatic**, **Positive Serology**, **Can Last Decades**</td></tr><tr><td>**Chronic (10-30 Years Later)**</td><td>**Cardiac** (Cardiomyopathy, Arrhythmias, Heart Failure, Thromboembolism, Sudden Death), **GI** (Megaesophagus, Megacolon), **Neurological**</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Phase</th><th>Test</th></tr><tr><td>-------</td><td>------</td></tr><tr><td>**Acute**</td><td>**Microscopy (Blood - Motile Trypomastigotes)**, **PCR** (High Sens), **Antigen Detection**</td></tr><tr><td>**Chronic**</td><td>**Serology** (IgG ELISA/IHA/IIF — **Two Tests Required**), **PCR** (Low Sensitivity in Chronic)</td></tr></table>
+<div class="sub-h">Treatment</div>
+<table class="ctable"><tr><th>Phase</th><th>Regimen</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Acute / Congenital / Reactivation**</td><td>**Benznidazole 5-7mg/kg/day BD × 60 Days** (1st Line) **OR Nifurtimox 8-10mg/kg/day BD × 60-90 Days**</td></tr><tr><td>**Chronic (Indeterminate/Early Cardiac)**</td><td>**Benznidazole 5-7mg/kg/day BD × 60 Days** (Benefit Controversial)</td></tr><tr><td>**Advanced Cardiac/GI**</td><td>**Supportive** (Heart Failure Rx, Pacemaker, Surgery for Megaesophagus/Colon)</td></tr></table>
+<div class="callout">[!warning] <b>Benznidazole = Teratogenic</b> (Contraindicated in Pregnancy). <b>Nifurtimox = Neurotoxicity/Psychosis</b>. <b>Both Require 60 Days</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Leishmaniasis**</td><td>**VL = Fever + Splenomegaly + Pancytopenia + Hypergammaglobulinaemia**; **CL = Self-Healing Ulcer**; **ML = Mucosal Destruction (Espundia)**</td></tr><tr><td>**VL Diagnosis**</td><td>**rK39 Dipstick (Rapid)**, **Splenic Aspirate (Gold Standard)**, **DAT/ELISA**</td></tr><tr><td>**VL Treatment**</td><td>**LAmB Single Dose (India)**, **LAmB 5d (Africa/L. infantum)**, **Miltefosine** (Contraindicated Pregnancy)</td></tr><tr><td>**CL/ML**</td><td>**CL = Self-Healing Ulcer (Old World) / Larger Ulcers (New World)**; **ML = Mucosal Destruction (Espundia) = Emergency**</td></tr><tr><td>**African Trypanosomiasis**</td><td>**gambiense = Chronic (Winterbottom's Sign)**; **rhodesiense = Acute (Zoonotic)**</td></tr><tr><td>**Stage 1 vs 2**</td><td>**CSF WBC ≤5 vs >5**, **Trypanosomes in CSF**</td></tr><tr><td>**Treatment (gambiense)**</td><td>**Stage 1: Fexinidazole 10d / Pentamidine**; **Stage 2: Fexinidazole / NECT**</td></tr><tr><td>**Treatment (rhodesiense)**</td><td>**Stage 1: Suramin**; **Stage 2: Melarsoprol** (Toxic)</td></tr><tr><td>**Chagas Disease**</td><td>**Acute: Romaña's Sign + Myocarditis**; **Chronic: Cardiac (Cardiomyopathy) + GI (Megaesophagus/Colon)**</td></tr><tr><td>**Chagas Treatment**</td><td>**Benznidazole 60 Days** (Acute/Congenital/Early Chronic); **Supportive Chronic**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the classic presentation of Visceral Leishmaniasis (Kala-azar)?</b></li></ol>
+<ul><li><b>Fever + Massive Splenomegaly + Pancytopenia + Hypergammaglobulinaemia</b>.</li></ul>
+<ol><li><b>What is the rapid diagnostic test for Visceral Leishmaniasis?</b></li></ol>
+<ul><li><b>rK39 Dipstick</b> (Sensitivity 95-98%, Specificity 90-95%).</li></ul>
+<ol><li><b>What is the first-line treatment for Visceral Leishmaniasis in the Indian Subcontinent?</b></li></ol>
+<ul><li><b>Single Dose Liposomal Amphotericin B 10mg/kg</b>.</li></ul>
+<ol><li><b>What is the difference between Old World and New World Cutaneous Leishmaniasis?</b></li></ol>
+<ul><li><b>Old World (L. tropica/major): Self-Limiting, Single Ulcer</b>; <b>New World (L. braziliensis/mexicana): Larger, Multiple, Higher ML Risk</b>.</li></ul>
+<ol><li><b>What is Mucocutaneous Leishmaniasis and which species causes it?</b></li></ol>
+<ul><li><b>Mucosal Destruction (Nose/Pharynx/Larynx) = Espundia</b>, caused by <b>L. braziliensis</b> (New World).</li></ul>
+<ol><li><b>What is Winterbottom's Sign and which disease is it associated with?</b></li></ol>
+<ul><li><b>Posterior Cervical Lymphadenopathy</b> = <b>Pathognomonic for T. b. gambiense (African Trypanosomiasis)</b>.</li></ul>
+<ol><li><b>How do you distinguish Stage 1 from Stage 2 African Trypanosomiasis?</b></li></ol>
+<ul><li><b>Stage 1: CSF WBC ≤5, No Trypanosomes in CSF, No Neuro Signs</b>; <b>Stage 2: CSF WBC &gt;5, Trypanosomes in CSF, Neuro Signs Present</b>.</li></ul>
+<ol><li><b>What is the treatment for Stage 2 T. b. gambiense?</b></li></ol>
+<ul><li><b>Fexinidazole 1800mg OD × 10 Days</b> OR <b>NECT (Nifurtimox + Eflornithine)</b>.</li></ul>
+<ol><li><b>What is Romaña's Sign in Chagas Disease?</b></li></ol>
+<ul><li><b>Unilateral Periorbital Oedema + Conjunctivitis</b> at Inoculation Site (Acute Phase).</li></ul>
+<ol><li><b>What is the treatment for Acute Chagas Disease?</b></li></ol>
+<ul><li><b>Benznidazole 5-7mg/kg/day BD × 60 Days</b> (1st Line) or <b>Nifurtimox 8-10mg/kg/day BD × 60-90d</b>.</li></ul>
+<ol><li><b>What are the chronic manifestations of Chagas Disease?</b></li></ol>
+<ul><li><b>Cardiac</b> (Cardiomyopathy, Arrhythmias, Heart Failure, Sudden Death) + <b>GI</b> (Megaesophagus, Megacolon).</li></ul>
+<ol><li><b>How do you diagnose Chronic Chagas Disease?</b></li></ol>
+<ul><li><b>Two Serological Tests Positive</b> (ELISA + IHA/IIF) <b>AND/OR PCR (Low Sensitivity in Chronic)</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**VL vs CL vs ML**</td><td>**VL = Systemic (Fever, Spleen, Pancytopenia)**; **CL = Skin Ulcer**; **ML = Mucosal Destruction**</td></tr><tr><td>**Old World vs New World CL**</td><td>**Old World (L. tropica/major): Self-Healing**; **New World (L. braziliensis): Larger, ML Risk**</td></tr><tr><td>**gambiense vs rhodesiense**</td><td>**gambiense = Chronic, Anthroponotic, Gambia/West Africa**; **rhodesiense = Acute, Zoonotic, East Africa**</td></tr><tr><td>**Stage 1 vs Stage 2 HAT**</td><td>**CSF WBC ≤5 vs >5**, **Trypanosomes in CSF**, **Neuro Signs**</td></tr><tr><td>**Chagas Acute vs Chronic**</td><td>**Acute: Romaña's Sign, Myocarditis**; **Chronic: Cardiac (Cardiomyopathy) + GI (Megaesophagus/Colon)**</td></tr><tr><td>**rK39 vs DAT**</td><td>**rK39 = Rapid Dipstick (Field)**; **DAT = Quantitative Serology (Lab)**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Kala-Azar = Fever + Spleen + Pancytopenia + Hypergammaglobulinaemia"**</td><td>VL Triad</td></tr><tr><td>**"rK39 = Rapid Test for Kala-Azar"**</td><td>Rapid Test</td></tr><tr><td>**"LAmB = 1st Line VL Everywhere"**</td><td>Treatment</td></tr><tr><td>**"Winterbottom = Gambiense"**</td><td>T.b. gambiense Sign</td></tr><tr><td>**"Stage 1 = Blood/Lymph, Stage 2 = CNS"**</td><td>HAT Stages</td></tr><tr><td>**"Fexinidazole = Oral, Both Stages (Gambiense)"**</td><td>Fexinidazole</td></tr><tr><td>**"Romaña's Sign = Periorbital Oedema"**</td><td>Chagas Acute</td></tr><tr><td>**"Chagas = Heart + Gut"**</td><td>Chronic Chagas</td></tr><tr><td>**"Benznidazole = 60 Days"**</td><td>Chagas Treatment</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Leishmaniasis &amp; Trypanosomiasis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Leishmaniasis</div>
+<div class="mm-node mm-l3">– Visceral (VL/Kala-azar)</div>
+<div class="mm-node mm-deep">– L. donovani / L. infantum</div>
+<div class="mm-node mm-deep">– Fever, Splenomegaly, Pancytopenia</div>
+<div class="mm-node mm-deep">– rK39, Splenic Aspirate</div>
+<div class="mm-node mm-deep">– Rx: LAmB Single Dose (India) / 5-10d (Africa)</div>
+<div class="mm-node mm-l3">– Cutaneous (CL)</div>
+<div class="mm-node mm-deep">– Old World: L. tropica, L. major (Self-healing)</div>
+<div class="mm-node mm-deep">– New World: L. mexicana, L. braziliensis (ML Risk)</div>
+<div class="mm-node mm-deep">– Rx: Intralesional / Topical / Systemic (LAmB/Miltefosine)</div>
+<div class="mm-node mm-l3">– Mucocutaneous (ML/Espundia)</div>
+<div class="mm-node mm-deep">– L. braziliensis</div>
+<div class="mm-node mm-deep">– Mucosal Destruction (Nose/Pharynx)</div>
+<div class="mm-node mm-deep">– Rx: LAmB + Surgery</div>
+<div class="mm-node mm-l3">– PKDL</div>
+<div class="mm-node mm-deep">– Post-VL Dermal Lesions</div>
+<div class="mm-node mm-l3">– Rx: Miltefosine / LAmB</div>
+<div class="mm-node mm-l2">Trypanosomiasis</div>
+<div class="mm-node mm-l3">– African (Sleeping Sickness)</div>
+<div class="mm-node mm-deep">– T.b. gambiense (Chronic, West/Central Africa)</div>
+<div class="mm-node mm-deep">– T.b. rhodesiense (Acute, East/Southern Africa)</div>
+<div class="mm-node mm-deep">– Stage 1: Haemo-lymphatic (Winterbottom's Sign)</div>
+<div class="mm-node mm-deep">– Stage 2: Meningo-encephalitic (CSF WBC&gt;5, Tryps in CSF)</div>
+<div class="mm-node mm-deep">– Rx: Stage 1 = Fexinidazole/Pentamidine/Suramin</div>
+<div class="mm-node mm-deep">– Stage 2 = Fexinidazole / NECT / Melarsoprol</div>
+<div class="mm-node mm-l3">– American (Chagas)</div>
+<div class="mm-node mm-deep">– T. cruzi</div>
+<div class="mm-node mm-deep">– Acute: Romaña's Sign, Myocarditis</div>
+<div class="mm-node mm-deep">– Chronic: Cardiac (Cardiomyopathy) + GI (Megaesophagus/Colon)</div>
+<div class="mm-node mm-deep">– Rx: Benznidazole 60d / Nifurtimox</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**LEISHMANIASIS & TRYPANOSOMIASIS – FCPS/MRCP REVISION CARD**</th></tr><tr><td>---------------------------------------------------------------</td></tr><tr><td>**VL (Kala-azar)**: Fever + **Massive Splenomegaly** + **Pancytopenia** + **Hypergammaglobulinaemia**</td></tr><tr><td>**rK39 Dipstick**: Rapid, Sens 95-98%</td></tr><tr><td>**VL Rx**: **LAmB 10mg/kg Single Dose (India)**, **LAmB 5mg/kg ×5d (Africa)**, **Miltefosine** (No Preg)</td></tr><tr><td>**CL**: Old World = Self-Healing; New World = Larger, ML Risk</td></tr><tr><td>**ML (Espundia)**: **L. braziliensis**, Mucosal Destruction → **LAmB + Surgery**</td></tr><tr><td>**African Trypanosomiasis**: **gambiense** (Chronic, Winterbottom's Sign), **rhodesiense** (Acute)</td></tr><tr><td>**Stage 1**: Haemo-lymphatic (CSF WBC ≤5); **Stage 2**: CNS (CSF WBC >5, Tryps+)</td></tr><tr><td>**Rx**: **gambiense** Stage 1 = Fexinidazole/Pentamidine; Stage 2 = Fexinidazole/NECT; **rhodesiense** Stage 1 = Suramin; Stage 2 = Melarsoprol</td></tr><tr><td>**Chagas (T. cruzi)**: Acute = **Romaña's Sign + Myocarditis**; Chronic = **Cardiac + GI (Megaesophagus/Colon)**</td></tr><tr><td>**Chagas Rx**: **Benznidazole 5-7mg/kg BD × 60d** (Acute/Indeterminate)</td></tr><tr><td>**Diagnosis**: VL = rK39/Splenic Aspirate; HAT = CSF; Chagas = Serology (2 Tests) / PCR (Acute)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>VL Clinical Triad + rK39 + LAmB Rx, CL/ML Difference, HAT Stages + Winterbottom's Sign + Fexinidazole/NECT/Melarsoprol, Chagas Acute/Chronic + Romaña's Sign + Benznidazole, Diagnosis Methods (rK39, CSF, Serology)</td></tr><tr><td>**Should Know**</td><td>PKDL, ML Emergency Management, HIV-VL Co-infection Rx, HAT Surveillance/Control, Chagas Congenital Transmission, Benznidazole vs Nifurtimox, Vector Control Strategies, Drug Resistance, Post-Treatment Follow-up</td></tr><tr><td>**Nice to Know**</td><td>Leishmania Genomics/Species Complex, Trypanosome Antigenic Variation (VSG), Vaccine Development (Leish-F1, Leish-F3, Chagas), Drug Resistance Mechanisms, One Health Approach, Climate Change Impact on Vector Distribution, Elimination Programs (Kala-azar in India, HAT Elimination), Drug Development Pipeline (Oxaboroles, Oxadiazoles)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Visceral Leishmaniasis</td><td></td><td></td></tr><tr><td>Cutaneous / Mucocutaneous Leishmaniasis</td><td></td><td></td></tr><tr><td>African Trypanosomiasis (HAT)</td><td></td><td></td></tr><tr><td>American Trypanosomiasis (Chagas)</td><td></td><td></td></tr><tr><td>Diagnosis & Treatment Algorithms</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Toxoplasmosis]]</li><li><b>Next</b>: [[Soil-Transmitted Helminths / Strongyloides]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Leishmaniasis &amp; Trypanosomiasis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

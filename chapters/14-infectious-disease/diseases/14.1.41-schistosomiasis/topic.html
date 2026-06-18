@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Schistosomiasis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Schistosomiasis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Schistosome Species</b>: <i>S. haematobium</i> (Urinary), <i>S. mansoni</i> (Intestinal/Hepatic), <i>S. japonicum</i> (Intestinal/Hepatic, Zoonotic), <i>S. intercalatum</i>, <i>S. mekongi</i></li><li>[ ] Understand <b>Life Cycle</b>: Snail Intermediate Host → Cercariae → Skin Penetration → Schistosomula → Portal Venous System → Adult Worms → Egg Migration</li><li>[ ] Recognise <b>Acute (Katayama Fever)</b>: Fever, Cough, Hepatosplenomegaly, Eosinophilia (Weeks Post-Exposure)</li><li>[ ] Recognise <b>Chronic Intestinal (S. mansoni/japonicum)</b>: Abdominal Pain, Bloody Diarrhoea, Hepatosplenomegaly, <b>Periportal Fibrosis (Pipestem Fibrosis)</b>, Portal Hypertension</li><li>[ ] Recognise <b>Chronic Urinary (S. haematobium)</b>: <b>Terminal Haematuria</b>, Bladder Pathology, <b>SCC Risk</b>, Hydronephrosis, Renal Failure</li><li>[ ] Diagnose: <b>Egg Detection (Urine/Stool)</b>, <b>Serology (ELISA/IHA)</b>, <b>PCR</b>, <b>Ultrasound</b> (Liver/Spleen/Bladder), <b>Cystoscopy</b></li><li>[ ] Manage: <b>Praziquantel 40mg/kg Single Dose</b> (1st Line All Species), <b>Oxamniquine</b> (S. mansoni Alternative), <b>Corticosteroids</b> (Acute Katayama)</li><li>[ ] Recognise <b>Complications</b>: Portal Hypertension, Variceal Bleeding, Splenomegaly, Bladder Cancer (SCC), Glomerulonephritis, Pulmonary Hypertension</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Life Cycle & Transmission</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Eggs in Water (Urine/Stool)</div>
+<div class="fc-node" data-id="C">C</div>
+<div class="fc-node" data-id="E">E</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Miracidium Hatches</div>
+<div class="fc-node" data-id="D">Sporocyst → Cercariae Released</div>
+<div class="fc-node" data-id="F">Schistosomula → Lung → Liver → Portal Vein</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Adult Worms Mate in Mesenteric/Pelvic Veins</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H1">S. haematobium → Vesical Plexus → Eggs in Urine</div>
+<div class="fc-node" data-id="H2">S. mansoni/japonicum → Mesenteric Veins → Eggs in Stool</div>
+</div>
+</div>
+<table class="ctable"><tr><th>Species</th><th>Adult Location</th><th>Egg Excretion</th><th>Geographic Distribution</th></tr><tr><td>---------</td><td>----------------</td><td>---------------</td><td>------------------------</td></tr><tr><td>**S. haematobium**</td><td>Vesical/Pelvic Venous Plexus</td><td>**Urine** (Terminal Haematuria)</td><td>**Africa, Middle East**</td></tr><tr><td>**S. mansoni**</td><td>Inferior Mesenteric Veins</td><td>**Stool**</td><td>**Africa, Middle East, South America, Caribbean**</td></tr><tr><td>**S. japonicum**</td><td>Superior Mesenteric Veins</td><td>**Stool**</td><td>**China, Philippines, Philippines, Indonesia**</td></tr><tr><td>**S. intercalatum**</td><td>Mesenteric Veins</td><td>Stool</td><td>Central/West Africa</td></tr><tr><td>**S. mekongi**</td><td>Mesenteric Veins</td><td>Stool</td><td>Mekong River Basin (Laos/Cambodia)</td></tr></table>
+<div class="callout">[!tip] <b>S. haematobium = Urinary (Terminal Haematuria)</b>; <b>S. mansoni/japonicum = Intestinal/Hepatic (Stool Eggs)</b>. <b>Snail = Intermediate Host</b> (Species-Specific).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Clinical Syndromes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Acute Schistosomiasis (Katayama Fever)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Timing**</td><td>**4-8 Weeks** Post-Exposure (Coincides with Egg Laying)</td></tr><tr><td>**Symptoms**</td><td>**High Fever**, **Cough**, **Hepatosplenomegaly**, **Eosinophilia** (Marked), **Rash**, **Abdominal Pain**, **Diarrhoea**</td></tr><tr><td>**Pathophysiology**</td><td>**Immune Complex Reaction** to Egg Antigens (Type III Hypersensitivity)</td></tr><tr><td>**Species**</td><td>**S. japonicum > S. mansoni > S. haematobium**</td></tr></table>
+<div class="sub-h">2. Chronic Intestinal / Hepatic Schistosomiasis (S. mansoni, S. japonicum)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Intestinal**</td><td>**Abdominal Pain**, **Bloody/Mucus Diarrhoea**, **Tenesmus**, **Rectal Prolapse** (Heavy Infection)</td></tr><tr><td>**Hepatic (Hepatosplenic)**</td><td>**Periportal Fibrosis (Pipestem Fibrosis)** → **Portal Hypertension**, **Splenomegaly**, **Oesophageal Varices**, **Ascites**, **Thrombocytopenia**</td></tr><tr><td>**S. japonicum**</td><td>**More Severe**, **Higher Egg Output**, **More Hepatic Involvement**, **Zoonotic (Cattle/Water Buffalo)**</td></tr></table>
+<div class="sub-h">3. Urinary Schistosomiasis (S. haematobium)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Cardinal Sign**</td><td>**Terminal Haematuria** (Painless, End of Micturition)</td></tr><tr><td>**Bladder Pathology**</td><td>**Sandy Patches**, **Granulomas**, **Ulceration**, **Calcification**, **Squamous Cell Carcinoma (SCC)** Risk ↑</td></tr><tr><td>**Upper Tract**</td><td>**Ureteric Strictures**, **Hydronephrosis**, **Renal Failure**</td></tr><tr><td>**Genital**</td><td>**Seminal Vesicle/Prostate Involvement**, **Haematospermia**, **Infertility**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🔬 Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Schistosomiasis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Species / Clinical Syndrome**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Urine Microscopy (Terminal Urine)**</div>
+<div class="fc-node" data-id="D">**Stool Microscopy (Kato-Katz)**</div>
+<div class="fc-node" data-id="E">**Serology (ELISA/IHA/IFA)**</div>
+<div class="fc-node" data-id="F">**Imaging**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C1">**Eggs with Terminal Spine** (S. haematobium)</div>
+<div class="fc-node" data-id="D1">**Lateral Spine Egg** (S. mansoni) / **Lateral Knob** (S. japonicum)</div>
+<div class="fc-node" data-id="F1">**US Liver/Spleen** (Portal Hypertension, Bladder Wall Thickening)</div>
+<div class="fc-node" data-id="F2">**Cystoscopy** (Bladder Lesions)</div>
+</div>
+</div>
+<div class="sub-h">Diagnostic Methods</div>
+<table class="ctable"><tr><th>Method</th><th>Sample</th><th>Sensitivity/Specificity</th><th>Role</th></tr><tr><td>--------</td><td>--------</td><td>------------------------</td><td>------</td></tr><tr><td>**Urine Microscopy (Terminal)**</td><td>**Terminal Urine**</td><td>**High (S. haematobium)**</td><td>**1st Line (Urinary)**</td></tr><tr><td>**Stool Microscopy (Kato-Katz)**</td><td>**Stool**</td><td>**Quantitative (EPG)**</td><td>**1st Line (Intestinal)**</td></tr><tr><td>**Urine Filtration**</td><td>Urine</td><td>Concentrates Eggs</td><td>Field-Friendly</td></tr><tr><td>**Serology (ELISA/IHA/IFA)**</td><td>Serum</td><td>**High Sens/Spec**</td><td>**Travellers, Low Parasite Load**</td></tr><tr><td>**PCR (Urine/Stool/Blood)**</td><td>Various</td><td>**High Sens/Spec**</td><td>**Low Parasite Load, Species ID**</td></tr><tr><td>**Ultrasound (Liver/Spleen/Bladder)**</td><td>—</td><td>**Portal Hypertension, Bladder Wall**</td><td>**Morbidity Assessment**</td></tr><tr><td>**Cystoscopy**</td><td>Bladder</td><td>Visualize Lesions</td><td>Bladder Pathology Assessment</td></tr></table>
+<div class="callout">[!tip] <b>Urine Microscopy (Terminal) = S. haematobium</b>. <b>Stool Kato-Katz = S. mansoni/japonicum</b>. <b>Serology = Travellers/Low Burden</b>. <b>Ultrasound = Morbidity Assessment (Portal Hypertension, Bladder)</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">💊 Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Praziquantel — **Drug of Choice for ALL Species**</div>
+<table class="ctable"><tr><th>Species</th><th>Dose</th><th>Schedule</th></tr><tr><td>---------</td><td>------</td><td>----------</td></tr><tr><td>**S. haematobium / S. mansoni / S. intercalatum**</td><td>**40mg/kg Single Dose**</td><td>**Single Dose**</td></tr><tr><td>**S. japonicum / S. mekongi**</td><td>**60mg/kg** (Divided 2-3 Doses)</td><td>**Single Day**</td></tr><tr><td>**Acute Katayama Fever**</td><td>**Praziquantel 40-60mg/kg** + **Prednisolone 1mg/kg** (Anti-Inflammatory)</td><td>**Single Dose + Steroids 5-7 Days**</td></tr></table>
+<div class="callout">[!warning] <b>Praziquantel = Drug of Choice for ALL Schistosome Species</b>. <b>Single Dose (40-60mg/kg)</b>. <b>Give with Food</b> (↑ Absorption). <b>Corticosteroids for Acute Katayama</b> (Anti-Inflammatory).</div>
+<div class="sub-h">Oxamniquine — **Alternative for S. mansoni Only**</div>
+<table class="ctable"><tr><th>Indication</th><th>Dose</th><th>Notes</th></tr><tr><td>------------</td><td>------</td><td>-------</td></tr><tr><td>**S. mansoni (Praziquantel Failure/Allergy)**</td><td>**15mg/kg Single Dose** (Up to 40mg/kg)</td><td>**Only for S. mansoni**</td></tr></table>
+<div class="sub-h">Chronic Complications Management</div>
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Portal Hypertension / Varices**</td><td>**Beta-Blockers**, **Endoscopic Band Ligation**, **TIPS**, **Splenectomy**</td></tr><tr><td>**Bladder Cancer (SCC)**</td><td>**Cystoscopic Surveillance**, **TURBT**, **Radical Cystectomy**</td></tr><tr><td>**Glomerulonephritis**</td><td>**ACEi/ARB**, **Immunosuppression** (If Nephrotic), **Praziquantel**</td></tr><tr><td>**Pulmonary Hypertension**</td><td>**Anticoagulation**, **PDE5 Inhibitors**, **Prostacyclin**, **Lung Transplant** (End-Stage)</td></tr><tr><td>**Neuroschistosomiasis**</td><td>**Praziquantel + Corticosteroids** (Dexamethasone)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🔬 Diagnostic Summary Table</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Species</th><th>Egg Morphology</th><th>Sample</th><th>Key Feature</th></tr><tr><td>---------</td><td>----------------</td><td>--------</td><td>-------------</td></tr><tr><td>**S. haematobium**</td><td>**Terminal Spine**</td><td>**Urine (Terminal)**</td><td>**Terminal Haematuria**</td></tr><tr><td>**S. mansoni**</td><td>**Lateral Spine**</td><td>**Stool**</td><td>Hepatosplenic Disease</td></tr><tr><td>**S. japonicum**</td><td>**Lateral Knob / Small Spine**</td><td>**Stool**</td><td>**More Severe, Zoonotic**</td></tr><tr><td>**S. intercalatum**</td><td>**Terminal Spine (Longer)**</td><td>Stool</td><td>Mild Intestinal</td></tr><tr><td>**S. mekongi**</td><td>**Small Lateral Spine**</td><td>Stool</td><td>Mekong Basin</td></tr></table>
+<div class="callout">[!tip] <b>Egg Morphology = Species ID</b>. <b>Terminal Spine = S. haematobium (Urine)</b>. <b>Lateral Spine = S. mansoni (Stool)</b>. <b>Lateral Knob = S. japonicum (Stool)</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🩺 Morbidity Assessment (WHO Ultrasound Grading)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Organ</th><th>Findings</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Liver**</td><td>**Periportal Fibrosis (Pipestem)**, **Portal Vein Dilatation**, **Splenomegaly**</td></tr><tr><td>**Spleen**</td><td>**Splenomegaly** (Size, Texture)</td></tr><tr><td>**Bladder**</td><td>**Wall Thickening**, **Sandy Patches**, **Polyps, Masses (SCC)**, **Calcification**</td></tr><tr><td>**Kidney**</td><td>**Hydronephrosis**, **Ureteric Dilatation**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Life Cycle**</td><td>**Snail → Cercaria → Skin Penetration → Schistosomula → Portal Vein → Adult Worms → Eggs**</td></tr><tr><td>**S. haematobium**</td><td>**Urinary**, **Terminal Haematuria**, **Terminal Spine Egg**, **Bladder Cancer (SCC)** Risk</td></tr><tr><td>**S. mansoni**</td><td>**Intestinal/Hepatic**, **Lateral Spine Egg**, **Pipestem Fibrosis, Portal HTN**</td></tr><tr><td>**S. japonicum**</td><td>**Intestinal/Hepatic**, **More Severe**, **Zoonotic**, **Lateral Knob Egg**</td></tr><tr><td>**Acute (Katayama)**</td><td>**Fever, Cough, Hepatosplenomegaly, Eosinophilia** (Weeks Post-Exposure) → **Praziquantel + Prednisolone**</td></tr><tr><td>**Chronic Intestinal**</td><td>**Abdominal Pain, Bloody Diarrhoea**, **Hepatosplenomegaly**, **Portal HTN**</td></tr><tr><td>**Chronic Urinary**</td><td>**Terminal Haematuria**, **Bladder Pathology**, **SCC Risk**</td></tr><tr><td>**Diagnosis**</td><td>**Egg Microscopy (Urine/Stool/Kato-Katz)**, **Serology/PCR**, **Ultrasound (Morbidity)**</td></tr><tr><td>**Treatment**</td><td>**Praziquantel 40mg/kg Single Dose (haematobium/mansoni)**, **60mg/kg (japonicum)**</td></tr><tr><td>**Acute Katayama**</td><td>**Praziquantel + Prednisolone**</td></tr><tr><td>**Complications**</td><td>**Portal HTN, Variceal Bleeding, Bladder SCC, Glomerulonephrosis, Pulm HTN**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the drug of choice for all Schistosome species?</b></li></ol>
+<ul><li><b>Praziquantel 40mg/kg Single Dose</b> (60mg/kg for S. japonicum).</li></ul>
+<ol><li><b>How do you differentiate Schistosome species by egg morphology?</b></li></ol>
+<ul><li><b>S. haematobium = Terminal Spine (Urine)</b>; <b>S. mansoni = Lateral Spine (Stool)</b>; <b>S. japonicum = Lateral Knob/Small Spine (Stool)</b>.</li></ul>
+<ol><li><b>What is Katayama Fever and how is it managed?</b></li></ol>
+<ul><li><b>Acute Serum Sickness-Like Illness</b> (Fever, Cough, Hepatosplenomegaly, Eosinophilia) <b>4-8 Weeks Post-Exposure</b> → <b>Praziquantel + Prednisolone 1mg/kg</b>.</li></ul>
+<ol><li><b>What is the clinical presentation of S. haematobium infection?</b></li></ol>
+<ul><li><b>Terminal Haematuria</b> (Painless, End of Micturition), <b>Bladder Pathology (Sandy Patches, Granulomas)</b>, <b>SCC Risk</b>.</li></ul>
+<ol><li><b>What is the pathology of chronic S. mansoni infection?</b></li></ol>
+<ul><li><b>Periportal Fibrosis (Pipestem Fibrosis)</b> → <b>Portal Hypertension</b> → <b>Splenomegaly, Oesophageal Varices, Ascites</b>.</li></ul>
+<ol><li><b>What is the egg morphology of S. haematobium and where is it found?</b></li></ol>
+<ul><li><b>Terminal Spine</b>, <b>Found in Urine (Terminal Specimen Best)</b>.</li></ul>
+<ol><li><b>What are the complications of chronic S. haematobium infection?</b></li></ol>
+<ul><li><b>Bladder Cancer (SCC)</b>, <b>Ureteric Stricture → Hydronephrosis → Renal Failure</b>, <b>Glomerulonephritis</b>.</li></ul>
+<ol><li><b>How do you differentiate S. mansoni from S. japonicum clinically?</b></li></ol>
+<ul><li><b>S. japonicum = More Severe, Higher Egg Output, Zoonotic (Cattle/Water Buffalo), Lateral Knob Egg</b>.</li></ul>
+<ol><li><b>What is the treatment for Katayama Fever?</b></li></ol>
+<ul><li><b>Praziquantel 40-60mg/kg + Prednisolone 1mg/kg/day × 5-7 Days</b>.</li></ul>
+<ol><li><b>What is the diagnostic method of choice for S. haematobium?</b></li></ol>
+<ul><li><b>Urine Microscopy (Terminal Urine) for Terminal Spine Eggs</b>; <b>Filtration Concentrates Eggs</b>.</li></ul>
+<ol><li><b>What is the treatment for S. japonicum infection?</b></li></ol>
+<ul><li><b>Praziquantel 60mg/kg (Divided 2-3 Doses) Single Day</b>.</li></ul>
+<ol><li><b>What is the "Pipestem Fibrosis" in Schistosomiasis?</b></li></ol>
+<ul><li><b>Periportal Fibrosis</b> radiating from Portal Vein → <b>Portal Hypertension</b> → <b>Splenomegaly, Varices</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**S. haematobium vs S. mansoni vs S. japonicum**</td><td>**Haematobium = Urine + Terminal Spine**; **Mansoni = Stool + Lateral Spine**; **Japonicum = Stool + Lateral Knob**</td></tr><tr><td>**Katayama vs Acute Schistosomiasis**</td><td>**Same** — Acute Serum Sickness-Like Reaction ~4-8 Weeks Post-Infection</td></tr><tr><td>**Praziquantel vs Oxamniquine**</td><td>**Praziquantel = All Species**; **Oxamniquine = S. mansoni Only**</td></tr><tr><td>**S. mansoni vs S. japonicum Egg**</td><td>**Lateral Spine vs Lateral Knob**</td></tr><tr><td>**S. haematobium vs Bladder Cancer**</td><td>**Chronic Infection → SCC Risk**; **Cystoscopy Surveillance**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Haematobium = Haematuria + Terminal Spine"**</td><td>Urinary Schisto</td></tr><tr><td>**"Mansoni = Mansoni = Stool + Lateral Spine"**</td><td>Intestinal Schisto</td></tr><tr><td>**"Japonicum = Japan/Asia + Lateral Knob + Severe"**</td><td>Japanese Schisto</td></tr><tr><td>**"Praziquantel = 40mg/kg (All), 60mg/kg (Japonicum)"**</td><td>Dosing</td></tr><tr><td>**"Katayama = Fever + Cough + Hepatosplenomegaly + Eosinophilia"**</td><td>Acute Schisto</td></tr><tr><td>**"Pipestem Fibrosis = Portal Hypertension"**</td><td>Chronic Hepatic</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Schistosomiasis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Life Cycle</div>
+<div class="mm-node mm-l3">– Eggs in Water → Miracidium → Snail → Cercaria</div>
+<div class="mm-node mm-l3">– Skin Penetration → Schistosomula → Lung → Liver → Portal Vein</div>
+<div class="mm-node mm-l3">– Adult Worms → Mesenteric (Mansoni/Japonicum) / Vesical (Haematobium)</div>
+<div class="mm-node mm-l3">– Eggs → Veins → Intestine/Bladder → Water</div>
+<div class="mm-node mm-l2">Species</div>
+<div class="mm-node mm-l3">– S. haematobium: Urine, Terminal Spine, Terminal Haematuria, Bladder Cancer</div>
+<div class="mm-node mm-l3">– S. mansoni: Stool, Lateral Spine, Pipestem Fibrosis, Portal HTN</div>
+<div class="mm-node mm-l3">– S. japonicum: Stool, Lateral Knob, Zoonotic, Severe</div>
+<div class="mm-node mm-l3">– S. intercalatum/meongi: Minor</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Acute: Katayama Fever (Fever, Cough, Hepatosplenomegaly, Eosinophilia)</div>
+<div class="mm-node mm-l3">– Chronic Intestinal: Pain, Bloody Diarrhoea</div>
+<div class="mm-node mm-l3">– Chronic Hepatic: Pipestem Fibrosis, Portal HTN, Varices</div>
+<div class="mm-node mm-l3">– Chronic Urinary: Terminal Haematuria, Bladder Pathology, SCC</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Urine Microscopy (Terminal) → Haematobium</div>
+<div class="mm-node mm-l3">– Stool Kato-Katz → Mansoni/Japonicum</div>
+<div class="mm-node mm-l3">– Serology/PCR</div>
+<div class="mm-node mm-l3">– US Liver/Spleen/Bladder</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Praziquantel 40mg/kg (All except Japonicum)</div>
+<div class="mm-node mm-l3">– Praziquantel 60mg/kg (Japonicum)</div>
+<div class="mm-node mm-l3">– Katayama: Praziquantel + Prednisolone</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– Portal HTN, Varices, Ascites</div>
+<div class="mm-node mm-l3">– Bladder SCC</div>
+<div class="mm-node mm-l3">– Glomerulonephritis</div>
+<div class="mm-node mm-l3">– Pulm HTN</div>
+<div class="mm-node mm-l3">– Neuro (Rare)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**SCHISTOSOMIASIS – FCPS/MRCP REVISION CARD**</th></tr><tr><td>-------------------------------------------------</td></tr><tr><td>**S. haematobium**: **Urine**, **Terminal Spine**, **Terminal Haematuria**, **Bladder SCC**</td></tr><tr><td>**S. mansoni**: **Stool**, **Lateral Spine**, **Pipestem Fibrosis**, **Portal HTN**</td></tr><tr><td>**S. japonicum**: **Stool**, **Lateral Knob**, **Zoonotic**, **Severe**, **Meningitis Risk**</td></tr><tr><td>**Katayama Fever**: **4-8w Post-Exposure**, **Fever/Cough/HSM/Eosinophilia**, **Praziquantel + Prednisolone**</td></tr><tr><td>**Chronic Intestinal**: Abdominal Pain, Bloody Diarrhoea, Hepatosplenomegaly</td></tr><tr><td>**Chronic Hepatic**: **Pipestem Fibrosis** → **Portal HTN** → Varices/Ascites</td></tr><tr><td>**Chronic Urinary**: **Terminal Haematuria**, Bladder Pathology, **SCC Risk**</td></tr><tr><td>**Diagnosis**: **Urine Microscopy (Terminal)** for haematobium; **Stool Kato-Katz** for mansoni/japonicum</td></tr><tr><td>**Treatment**: **Praziquantel 40mg/kg Single Dose** (All except Japonicum 60mg/kg)</td></tr><tr><td>**Acute Katayama**: **Praziquantel + Prednisolone**</td></tr><tr><td>**Complications**: Portal HTN, Varices, **Bladder SCC**, Glomerulonephritis, Pulm HTN</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Species differentiation by egg morphology, Clinical syndromes (Katayama, Intestinal, Hepatic, Urinary), Praziquantel dosing (40 vs 60mg/kg), Katayama management, Complications (Portal HTN, Bladder SCC, Glomerulonephritis), Egg morphology (Terminal/Lateral Spine/Knob)</td></tr><tr><td>**Should Know**</td><td>Snail intermediate hosts, Life cycle details, Kato-Katz technique, Ultrasound morbidity grading, Oxamniquine alternative for S. mansoni, S. intercalatum/meongi, Neuroschistosomiasis, Pregnancy management, Control programs (MDA), Vaccine development</td></tr><tr><td>**Nice to Know**</td><td>Hybrid schistosomes, Hybridization zones, Snail control (Molluscicides), Genetic susceptibility, Vaccine candidates (Sm14, Sh28GST), Climate change impact on distribution, Economic burden, Elimination targets (WHO 2030), One Health approach, Schistosomiasis-HIV co-infection</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Species Differentiation (Egg Morphology)</td><td></td><td></td></tr><tr><td>Clinical Syndromes (Acute/Chronic)</td><td></td><td></td></tr><tr><td>Diagnosis (Microscopy, Serology, Imaging)</td><td></td><td></td></tr><tr><td>Treatment (Praziquantel Dosing)</td><td></td><td></td></tr><tr><td>Complications & Management</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Soil-Transmitted Helminths &amp; Strongyloides]]</li><li><b>Next</b>: [[Hospital-Acquired Infections (CLABSI, CAUTI, SSI)]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Schistosomiasis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

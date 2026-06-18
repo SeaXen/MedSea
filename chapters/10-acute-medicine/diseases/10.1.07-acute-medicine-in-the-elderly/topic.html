@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acute Medicine in the Elderly — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Acute Medicine in the Elderly</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise atypical presentations of acute illness in older adults</li><li>Apply Comprehensive Geriatric Assessment (CGA) principles</li><li>Use frailty scores (CFS) to guide escalation decisions</li><li>Adjust investigations and management for physiological changes</li><li>Avoid common prescribing pitfalls (polypharmacy, anticholinergics)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Key Physiological Changes with Ageing</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Change</th><th>Clinical Implication</th></tr><tr><td>--------</td><td>--------</td><td>----------------------</td></tr><tr><td>**Cardiovascular**</td><td>↓ Compliance, ↓ β-receptor response, ↑ afterload</td><td>Blunted tachycardia in shock; higher baseline BP; prone to orthostatic hypotension</td></tr><tr><td>**Respiratory**</td><td>↓ Chest wall compliance, ↓ FRC, ↓ cough reflex</td><td>Rapid desaturation; silent aspiration; "normal" RR may be high for age</td></tr><tr><td>**Renal**</td><td>↓ GFR ~1 mL/min/yr after 40, ↓ concentrating ability</td><td>Drug accumulation; dehydration risk; "normal" creatinine may = CKD</td></tr><tr><td>**Neurological**</td><td>↓ Brain volume, ↓ neurotransmitters</td><td>Delirium risk; atypical stroke presentation; altered drug sensitivity</td></tr><tr><td>**Thermoregulation**</td><td>↓ Shivering, ↓ vasoconstriction</td><td>Hypothermia in sepsis; absent fever in infection</td></tr><tr><td>**Immune**</td><td>Immunosenescence</td><td>Atypical infection presentation; poor vaccine response</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Atypical Presentations ("Geriatric Giants")</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Typical Presentation</th><th>Elderly Presentation</th></tr><tr><td>----------------------</td><td>----------------------</td></tr><tr><td>Pneumonia: fever, cough, pleuritic pain</td><td>Falls, confusion, anorexia, functional decline</td></tr><tr><td>MI: crushing chest pain</td><td>Dyspnoea, confusion, syncope, epigastric pain</td></tr><tr><td>Sepsis: fever, rigors, tachycardia</td><td>Hypothermia, new confusion, falls, lethargy</td></tr><tr><td>UTI: dysuria, frequency</td><td>Confusion, incontinence, falls</td></tr><tr><td>PE: pleuritic pain, haemoptysis</td><td>Syncope, delirium, unexplained tachycardia</td></tr><tr><td>Bowel obstruction: pain, vomiting</td><td>Distension, constipation, confusion</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Frailty Assessment (Clinical Frailty Scale — CFS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Score</th><th>Description</th><th>1-Year Mortality</th></tr><tr><td>-------</td><td>-------------</td><td>------------------</td></tr><tr><td>1–3</td><td>Fit / Well / Managing well</td><td><5%</td></tr><tr><td>4</td><td>Vulnerable / Slow</td><td>~10%</td></tr><tr><td>5</td><td>Mildly frail</td><td>~20%</td></tr><tr><td>6</td><td>Moderately frail</td><td>~40%</td></tr><tr><td>7</td><td>Severely frail</td><td>~60%</td></tr><tr><td>8</td><td>Very severely frail</td><td>~80%</td></tr><tr><td>9</td><td>Terminally ill</td><td>~90%</td></tr></table>
+<p><b>CFS ≥5 = frail</b> — guides ceiling of care discussions, ICU admission thresholds, and rehabilitation potential.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Comprehensive Geriatric Assessment (CGA) Domains</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Medical</b> — diagnoses, medications, polypharmacy review</li><li><b>Functional</b> — ADLs, IADLs, mobility, falls risk</li><li><b>Cognitive</b> — MMSE/MoCA, delirium screening (4AT)</li><li><b>Psychological</b> — mood (GDS-15), anxiety</li><li><b>Social</b> — support network, housing, carer burden</li><li><b>Environmental</b> — home safety, aids/adaptations</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Delirium (Acute Confusional State)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>4AT</b>: Alertness, AMT4, Attention, Acute change</li><li><b>Hypoactive</b> (lethargy) more common than hyperactive in elderly — missed!</li><li><b>PINCH ME</b> causes: Pain, Infection, Nutrition, Constipation, Hydration, Medication, Environment</li><li><b>Management</b>: Treat cause + non-pharmacological (reorientation, sleep hygiene) + haloperidol/risperidone if severe distress</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Falls Assessment</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Definition</b>: Unintentional rest on ground/floor</li><li><b>Multifactorial</b>: gait/balance, medications (↓ psychotropics), vision, footwear, environment, postural hypotension</li><li><b>After fall</b>: Lie/sit/stand BP, medication review, bone health (vit D, bisphosphonate if osteoporotic)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Polypharmacy & Prescribing (STOPP/START Criteria)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Common Inappropriate Prescriptions in Elderly (STOPP)</b></p>
+<ul><li>Long-acting benzodiazepines (falls, delirium)</li><li>Anticholinergics (confusion, constipation, urinary retention)</li><li>NSAIDs (GI bleed, AKI, HF exacerbation)</li><li>Duplicate drug classes</li><li>Drugs without indication</li></ul>
+<p><b>START</b> — omissions (e.g. vit D, bisphosphonate in osteoporosis, ACEi in HF, anticoagulation in AF)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Fluid Resuscitation in Elderly</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Smaller boluses</b> (250 mL) with frequent reassessment</li><li>Higher risk of pulmonary oedema (↓ cardiac compliance)</li><li>Target urine output ≥0.5 mL/kg/hr but accept lower in frail</li><li>Monitor JVP, lung bases, NT-proBNP</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Red Flags</span>
+  </div>
+  <div class="sec-body">
+<ul><li>"Off legs" / "not themselves" = occult sepsis</li><li>New confusion = delirium until proven otherwise</li><li>Fall = marker of acute illness (not just mechanical)</li><li>Hypothermia in sepsis = poor prognosis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Frailty (CFS) &gt; chronological age</b> for decision-making</li><li><b>"Normal" vital signs ≠ well</b> — blunted responses</li><li><b>Delirium = medical emergency</b> — screen with 4AT</li><li><b>Polypharmacy review</b> at every admission (STOPP/START)</li><li><b>CGA improves outcomes</b> — MDT approach</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>How does frailty influence ICU admission decisions?</li><li>What is the 4AT for delirium?</li><li>List 5 drugs to avoid in elderly (STOPP).</li><li>Why do elderly patients present atypically?</li><li>What is Comprehensive Geriatric Assessment?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Attributing new confusion to "dementia progression" without excluding delirium</li><li>Assuming "no fever" = no infection</li><li>Giving fluid boluses without reassessment (flash pulmonary oedema)</li><li>Prescribing anticholinergics/benzodiazepines for "agitation" — worsens delirium</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>4AT</b> — Alertness, AMT4, Attention, Acute change</li><li><b>PINCH ME</b> — Pain, Infection, Nutrition, Constipation, Hydration, Medication, Environment</li><li><b>CGA</b> — Medical, Functional, Cognitive, Psychological, Social, Environmental</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Elderly = atypical + frail + polypharmacy</b></p>
+<ul><li>CFS ≥5 = frail (guides escalation)</li><li>"Normal" obs may mask shock/sepsis</li><li>Delirium: 4AT + PINCH ME</li><li>Falls = screen for acute illness</li><li>Medication review: STOPP/START every admission</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Atypical presentations (confusion, falls, functional decline)</li><li>Clinical Frailty Scale (CFS)</li><li>4AT for delirium</li><li>PINCH ME causes</li><li>STOPP/START principles</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>CGA domains and MDT role</li><li>Fluid resuscitation cautions</li><li>Falls assessment framework</li><li>Ceiling of care discussions using CFS</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Specific geriatric syndromes (sarcopenia, anorexia of ageing)</li><li>Intermediate care / rehabilitation pathways</li><li>End-of-life trajectories in frailty</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Which frailty score predicts 1-year mortality ~40%?</li></ol>
+<p>A. CFS 4 B. CFS 5 C. CFS 6 D. CFS 7</p>
+<ol><li>Most common presentation of sepsis in elderly:</li></ol>
+<p>A. Fever and rigors B. Tachycardia and hypotension C. New confusion D. Leukocytosis</p>
+<ol><li>4AT for delirium assesses:</li></ol>
+<p>A. Alertness, AMT4, Attention, Acute change B. Age, AMT10, Attention, Acute change C. Alertness, AMT4, Orientation, Chronic change D. Alertness, Abbreviated Mental Test, Amnesia, Acute change</p>
+<ol><li>PINCH ME mnemonic for delirium causes — which is NOT included?</li></ol>
+<p>A. Pain B. Infection C. Hypertension D. Medication</p>
+<ol><li>Long-acting benzodiazepines are inappropriate in elderly (STOPP) because:</li></ol>
+<p>A. Cause hypertension B. Increase falls and delirium risk C. Cause hyperkalaemia D. Are ineffective</p>
+<ol><li>Target fluid bolus in frail elderly:</li></ol>
+<p>A. 500 mL B. 250 mL with reassessment C. 1000 mL D. 30 mL/kg</p>
+<ol><li>Hypoactive delirium:</li></ol>
+<p>A. Is rare B. Is more common than hyperactive in elderly C. Does not need treatment D. Only occurs in dementia</p>
+<ol><li>After a fall, which is NOT routinely assessed?</li></ol>
+<p>A. Lying and standing BP B. Medication review C. Bone health D. Echocardiogram</p>
+<ol><li>"Normal" creatinine in elderly may indicate:</li></ol>
+<p>A. Normal renal function B. CKD (due to low muscle mass) C. Dehydration D. Rhabdomyolysis</p>
+<ol><li>CFS 7 =</li></ol>
+<p>A. Mildly frail B. Moderately frail C. Severely frail D. Very severely frail</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>An 85-year-old woman (CFS 6) presents with "off legs" for 2 days. Temp 36.8°C, HR 98, BP 130/80, RR 20, GCS 14 (confused to time). Urine dipstick positive for nitrites. Best next step:</li></ol>
+<p>A. Discharge with oral antibiotics B. Admit for IV antibiotics — this is sepsis with atypical presentation C. CT head for confusion D. Increase home care package</p>
+<ol><li>An 80-year-old man on 12 medications falls at home. Medications include: amitriptyline, diazepam, ibuprofen PRN, furosemide, ramipril. Most appropriate action:</li></ol>
+<p>A. Add bisphosphonate B. Review and stop amitriptyline, diazepam, ibuprofen (STOPP) C. Start donepezil D. Refer for pacemaker</p>
+<ol><li>A 78-year-old woman develops acute confusion 2 days post-hip replacement. She is drowsy, inattentive. 4AT positive. Most likely cause:</li></ol>
+<p>A. Dementia progression B. Opioid analgesia + dehydration + unfamiliar environment C. Stroke D. Subdural haematoma</p>
+<ol><li>A 90-year-old man (CFS 8) with severe dementia develops aspiration pneumonia. Family want "everything done." His ADRT refuses antibiotics for "chest infections." Management:</li></ol>
+<p>A. Ignore ADRT, give antibiotics B. Follow ADRT — comfort care, anticipatory medications C. Seek court order D. Give antibiotics but no ICU</p>
+<ol><li>An 82-year-old woman presents with syncope. She takes: furosemide 40mg, ramipril 10mg, amlodipine 5mg, metoprolol 50mg. Lying BP 150/90, standing BP 90/60. Best action:</li></ol>
+<p>A. Stop all antihypertensives B. Reduce furosemide, review metoprolol, check lying/standing BP serially C. Start fludrocortisone D. Admit for pacemaker</p>
+<ol><li>In an elderly patient with delirium, first-line pharmacological management for severe distress:</li></ol>
+<p>A. Lorazepam 1mg B. Haloperidol 0.5mg PO/SC C. Quetiapine 25mg D. Zopiclone 7.5mg</p>
+<ol><li>Comprehensive Geriatric Assessment includes all EXCEPT:</li></ol>
+<p>A. Cognitive assessment B. Social circumstances C. Genetic testing D. Medication review</p>
+<ol><li>An elderly patient with CFS 6 develops septic shock. ICU team asks for ceiling of care. Best approach:</li></ol>
+<p>A. Admit to ICU regardless of frailty B. Decline ICU based on CFS alone C. Discuss realistic outcomes with family using CFS as guide, consider ward/HDU ceiling D. DNACPR and comfort care only</p>
+<ol><li>Which drug is MOST anticholinergic?</li></ol>
+<p>A. Codeine B. Amitriptyline C. Paracetamol D. Morphine</p>
+<ol><li>A 75-year-old man with new incontinence and confusion. Urine dipstick negative. Most likely:</li></ol>
+<p>A. UTI (dipstick insensitive in elderly) B. Constipation / faecal impaction C. Prostate cancer D. Diuretic effect</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: CFS ≥5 =</li></ul>
+<p>A: Frail (guides ceiling of care)</p>
+<ul><li>Q: 4AT components</li></ul>
+<p>A: Alertness, AMT4, Attention, Acute change</p>
+<ul><li>Q: PINCH ME</li></ul>
+<p>A: Pain, Infection, Nutrition, Constipation, Hydration, Medication, Environment</p>
+<ul><li>Q: Delirium in elderly — most common type</li></ul>
+<p>A: Hypoactive (lethargic, missed)</p>
+<ul><li>Q: STOPP red flags in elderly</li></ul>
+<p>A: Long-acting benzos, anticholinergics, NSAIDs, duplicates, no indication</p>
+<ul><li>Q: Fluid bolus in frail elderly</li></ul>
+<p>A: 250 mL + reassess</p>
+<ul><li>Q: Creatinine in elderly</li></ul>
+<p>A: "Normal" may = CKD (low muscle mass)</p>
+<ul><li>Q: Falls assessment</li></ul>
+<p>A: Lie/sit/stand BP, meds review, bone health, vision, environment</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: C — CFS 6 (moderately frail) ~40% 1-year mortality. <b>MCQ 2</b>: C — New confusion is the hallmark of sepsis in elderly. <b>MCQ 3</b>: A — 4AT = Alertness, AMT4, Attention, Acute change. <b>MCQ 4</b>: C — Hypertension not in PINCH ME. <b>MCQ 5</b>: B — Falls + delirium risk. <b>MCQ 6</b>: B — 250 mL boluses with reassessment. <b>MCQ 7</b>: B — Hypoactive more common, often missed. <b>MCQ 8</b>: D — Echo not routine after fall. <b>MCQ 9</b>: B — Low muscle mass → low creatinine production. <b>MCQ 10</b>: C — CFS 7 = severely frail.</p>
+<p><b>SBA 1</b>: B — Atypical sepsis (confusion, no fever, HR not tachycardic enough for age) = admit for IV antibiotics. <b>SBA 2</b>: B — Amitriptyline (anticholinergic), diazepam (long-acting benzo), ibuprofen (NSAID) all STOPP criteria. <b>SBA 3</b>: B — Multifactorial delirium post-op (opioids + dehydration + environment = PINCH ME). <b>SBA 4</b>: B — Valid ADRT applies; comfort care. <b>SBA 5</b>: B — Orthostatic hypotension from polypharmacy; reduce diuretic/beta-blocker, serial BP. <b>SBA 6</b>: B — Haloperidol low-dose first-line for delirium distress; avoid benzos. <b>SBA 7</b>: C — CGA = Medical, Functional, Cognitive, Psychological, Social, Environmental. <b>SBA 8</b>: C — CFS guides but doesn't mandate; discuss outcomes, consider ward/HDU ceiling. <b>SBA 9</b>: B — Amitriptyline (TCA) highly anticholinergic. <b>SBA 10</b>: B — Constipation/faecal impaction common cause of overflow incontinence + confusion.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Acute Medicine in the Elderly · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

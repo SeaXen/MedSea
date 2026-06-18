@@ -30,19 +30,19 @@ DAVIDSON_25TH = [
     (7,  "Principles of infection",                 "7-principles-of-infection"),
     (8,  "Oncology",                                "8-oncology"),
     (9,  "Palliative and supportive care",          "9-palliative-care"),
-    (10, "Acute medicine and critical illness",     None),
-    (11, "Poisoning",                               None),
-    (12, "Envenomation",                            None),
-    (13, "Medicine in austere environments",        None),
-    (14, "Infectious disease",                      None),
-    (15, "Sexually transmitted infections",         None),
+    (10, "Acute medicine and critical illness",     "10-acute-medicine"),
+    (11, "Poisoning",                               "11-poisoning"),
+    (12, "Envenomation",                            "12-envenomation"),
+    (13, "Medicine in austere environments",        "13-austere-medicine"),
+    (14, "Infectious disease",                      "14-infectious-disease"),
+    (15, "Sexually transmitted infections",         "15-sexually-transmitted-infections"),
     (16, "Cardiology",                              "16-cardiology"),
     (17, "Respiratory medicine",                    "17-respiratory-medicine"),
-    (18, "Nephrology and urology",                  "15-nephrology-urology"),  # MedSea uses 15
+    (18, "Nephrology and urology",                  "18-nephrology-urology"),
     (19, "Clinical biochemistry and metabolic medicine", None),
-    (20, "Endocrinology",                           "18-endocrinology"),       # MedSea uses 18
+    (20, "Endocrinology",                           "20-endocrinology"),
     (21, "Diabetes mellitus",                       None),
-    (22, "Gastroenterology",                        "21-gastroenterology"),    # MedSea uses 21
+    (22, "Gastroenterology",                        "22-gastroenterology"),
     (23, "Hepatology",                              None),
     (24, "Haematology and transfusion medicine",    None),
     (25, "Rheumatology and bone disease",           None),
@@ -55,91 +55,107 @@ DAVIDSON_25TH = [
     (32, "Older adult medicine and frailty",        None),
 ]
 
-# Built chapters with metadata: (slug, display_name, notion_url, description, accent_color)
+# Built chapters with metadata: (slug, display_name, notion_url, accent_color)
 BUILT_CHAPTERS = {
-    "15-nephrology-urology": (
-        "Nephrology and Urology",
-        "https://app.notion.com/p/SeaHub/Chapter-15-Nephrology-and-Urology-d29e1888740b4d809dd1b0cab7616c05",
-        "Renal anatomy, AKI/CKD, glomerular disease, UTI, dialysis.",
-        "#06b6d4",
-    ),
-    "16-cardiology": (
-        "Cardiology",
-        "https://app.notion.com/p/SeaHub/Chapter-16-Cardiology-0bfc7d3c798a450fb5c0ac1bf3848da2",
-        "ACS, arrhythmias, heart failure, valvular, hypertension, pericardial.",
-        "#ef4444",
-    ),
-    "17-respiratory-medicine": (
-        "Respiratory Medicine",
-        "https://app.notion.com/p/SeaHub/Chapter-17-Respiratory-medicine-d4fe7d456ca4481581e806ebe9e177cf",
-        "Airway disease, infection, pleural, ILD, respiratory failure, malignancy.",
-        "#10b981",
-    ),
-    "18-endocrinology": (
-        "Endocrinology",
-        "https://app.notion.com/p/SeaHub/Chapter-18-Endocrinology-9db6455d6ae840f0ac29129217d6ccef",
-        "Pituitary, thyroid, adrenal, parathyroid, reproductive, MEN, NETs.",
-        "#a855f7",
-    ),
-    "21-gastroenterology": (
-        "Gastroenterology",
-        "https://app.notion.com/p/SeaHub/Chapter-21-Gastroenterology-bbfd97790eca482eaed8d47428a642b2",
-        "Oesophageal, gastric, IBD, colorectal, pancreatic, malabsorption.",
-        "#f59e0b",
-    ),
     "1-clinical-decision-making": (
         "Clinical Decision-Making",
         "https://app.notion.com/p/SeaHub/Chapter-1-Clinical-decision-making-8e5cd1ec34904d69aa7fb21ab056a508",
-        "Clinical reasoning, EBM, communication, ethics, QI, guidelines.",
         "#64748b",
     ),
     "2-clinical-therapeutics": (
         "Clinical Therapeutics & Prescribing",
         "https://app.notion.com/p/SeaHub/Chapter-2-Clinical-therapeutics-and-good-prescribing-5ec47a8c567148fc91af45d63691e6e6",
-        "ADRs, drug interactions, polypharmacy, rational prescribing, TDM.",
         "#0ea5e9",
     ),
     "3-clinical-genetics": (
         "Clinical Genetics",
         "https://app.notion.com/p/SeaHub/Chapter-3-Clinical-genetics-0b1c71bf18984f99ab97018154d0ad71",
-        "Mendelian, chromosomal, genetic testing, cancer genetics, pharmacogenetics.",
         "#84cc16",
     ),
     "4-clinical-immunology": (
         "Clinical Immunology",
         "https://app.notion.com/p/SeaHub/Chapter-4-Clinical-immunology-0b4e940adc464a56b120b1e4ba682c63",
-        "Immunodeficiency, autoimmunity, hypersensitivity, transplant, tumour immunology.",
         "#f97316",
     ),
     "5-nutritional-factors": (
         "Nutritional Factors in Disease",
         "https://app.notion.com/p/SeaHub/Chapter-5-Nutritional-factors-in-disease-20ae0f805c75401983af5d981bccbe72",
-        "Macronutrients, vitamins, minerals, nutritional disorders, clinical nutrition.",
         "#eab308",
     ),
     "6-population-health": (
         "Population Health & Epidemiology",
         "https://app.notion.com/p/SeaHub/Chapter-6-Population-health-and-epidemiology-83035ef3c78d462b816a3d8ad0b0e653",
-        "Epi methods, population health, major disease epidemiology, global health.",
         "#14b8a6",
     ),
     "7-principles-of-infection": (
         "Principles of Infection",
         "https://app.notion.com/p/SeaHub/Chapter-7-Principles-of-infection-6469084f1ff046798f4f4bab9f1d0802",
-        "Microbial biology, antimicrobials, IPC, vaccines.",
         "#dc2626",
     ),
     "8-oncology": (
         "Oncology",
         "https://app.notion.com/p/SeaHub/Chapter-8-Oncology-8d4228ea84974d4db2e7f62a746f39d1",
-        "CNS, breast, lung, GI, GU, haem, paediatric, oncologic emergencies.",
         "#7c3aed",
     ),
     "9-palliative-care": (
         "Palliative & Supportive Care",
         "https://app.notion.com/p/SeaHub/Chapter-9-Palliative-and-supportive-care-c65289d8222748e3a809cb07e2b70f66",
-        "Pain management, opioids, adjuvant analgesics, EOL care, communication.",
         "#be185d",
+    ),
+    "16-cardiology": (
+        "Cardiology",
+        "https://app.notion.com/p/SeaHub/Chapter-16-Cardiology-8baa010d9cc94c48826136417d383973",
+        "#ef4444",
+    ),
+    "17-respiratory-medicine": (
+        "Respiratory Medicine",
+        "https://app.notion.com/p/SeaHub/Chapter-17-Respiratory-medicine-d4fe7d456ca4481581e806ebe9e177cf",
+        "#10b981",
+    ),
+    "18-nephrology-urology": (
+        "Nephrology & Urology",
+        "https://app.notion.com/p/SeaHub/Chapter-18-Nephrology-and-Urology-d29e1888740b4d809dd1b0cab7616c05",
+        "#06b6d4",
+    ),
+    "20-endocrinology": (
+        "Endocrinology",
+        "https://app.notion.com/p/SeaHub/Chapter-20-Endocrinology-9db6455d6ae840f0ac29129217d6ccef",
+        "#a855f7",
+    ),
+    "22-gastroenterology": (
+        "Gastroenterology",
+        "https://app.notion.com/p/SeaHub/Chapter-22-Gastroenterology-bbfd97790eca482eaed8d47428a642b2",
+        "#f59e0b",
+    ),
+    "10-acute-medicine": (
+        "Acute Medicine",
+        "https://app.notion.com/p/SeaHub/Chapter-10-Acute-medicine-and-critical-illness",
+        "#f43f5e",
+    ),
+    "11-poisoning": (
+        "Poisoning",
+        "https://app.notion.com/p/SeaHub/Chapter-11-Poisoning",
+        "#84cc16",
+    ),
+    "12-envenomation": (
+        "Envenomation",
+        "https://app.notion.com/p/SeaHub/Chapter-12-Envenomation",
+        "#22c55e",
+    ),
+    "13-austere-medicine": (
+        "Austere Medicine",
+        "https://app.notion.com/p/SeaHub/Chapter-13-Medicine-in-austere-environments",
+        "#0d9488",
+    ),
+    "14-infectious-disease": (
+        "Infectious Disease",
+        "https://app.notion.com/p/SeaHub/Chapter-14-Infectious-disease",
+        "#0891b2",
+    ),
+    "15-sexually-transmitted-infections": (
+        "Sexually Transmitted Infections",
+        "https://app.notion.com/p/SeaHub/Chapter-15-Sexually-transmitted-infections",
+        "#db2777",
     ),
 }
 
@@ -350,27 +366,32 @@ header.site .ext-links a {
 header.site .ext-links a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ===== Landing page main ===== */
-main { padding: 32px; max-width: 1500px; margin: 0 auto; }
+main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
 .chapters-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
   margin-top: 8px;
 }
+@media (max-width: 1400px) { .chapters-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1100px) { .chapters-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .chapters-grid { grid-template-columns: 1fr; } }
 .section-title {
   font-size: 13px; color: var(--text-dim);
   text-transform: uppercase; letter-spacing: 0.12em;
-  margin-bottom: 16px; font-weight: 600;
+  margin-bottom: 14px; font-weight: 600;
 }
 .chapter-card {
   background: var(--bg-2);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
-  transition: all 0.2s ease;
+  border-radius: 12px;
+  padding: 16px 16px 14px;
+  transition: all 0.18s ease;
   position: relative; overflow: hidden;
   text-decoration: none !important; color: inherit !important;
-  display: block;
+  display: flex; flex-direction: column;
+  cursor: pointer; min-height: 150px;
 }
 .chapter-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
@@ -379,38 +400,40 @@ main { padding: 32px; max-width: 1500px; margin: 0 auto; }
 .chapter-card:hover {
   transform: translateY(-2px);
   border-color: var(--accent-color, var(--accent));
-  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.1);
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.08);
 }
 .chapter-card .ch-num {
-  display: inline-block; padding: 4px 10px;
+  display: inline-block; padding: 2px 8px;
   background: var(--accent-color, var(--accent)); color: #0a0e1a;
-  border-radius: 6px; font-size: 11px; font-weight: 700;
+  border-radius: 4px; font-size: 10px; font-weight: 700;
   font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  align-self: flex-start;
 }
 .chapter-card h2 {
-  font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
-  margin-bottom: 8px;
+  font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
+  margin-bottom: 10px; line-height: 1.25;
+  flex: 1;
 }
-.chapter-card .desc { color: var(--text-dim); font-size: 14px; margin-bottom: 16px; min-height: 40px; }
 .chapter-card .ch-stats {
-  display: flex; gap: 16px; padding: 12px 0; border-top: 1px solid var(--border);
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 13px;
+  display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid var(--border);
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 12px;
 }
 .chapter-card .ch-stats .cs { display: flex; flex-direction: column; }
-.chapter-card .ch-stats .num { font-size: 20px; font-weight: 700; color: var(--accent); }
-.chapter-card .ch-stats .label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
-.preview-strip {
-  display: flex; gap: 8px; margin-top: 16px;
-  height: 80px;
+.chapter-card .ch-stats .num { font-size: 16px; font-weight: 700; color: var(--accent); line-height: 1; }
+.chapter-card .ch-stats .label { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+.chapter-card .ch-links {
+  display: flex; gap: 12px; margin-top: 8px;
+  font-size: 11px;
 }
-.preview-strip .preview {
-  flex: 1; border-radius: 6px; overflow: hidden;
-  background: var(--bg-3); border: 1px solid var(--border);
+.chapter-card .ch-link-primary {
+  color: var(--accent); font-weight: 600; text-decoration: none !important;
 }
-.preview-strip .preview img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top;
+.chapter-card .ch-link-secondary {
+  color: var(--text-dim); text-decoration: none !important;
 }
+.chapter-card .ch-link-primary:hover { color: #7dd3fc; }
+.chapter-card .ch-link-secondary:hover { color: var(--accent); }
 
 /* ===== Chapter page (SPA: sidebar + main) ===== */
 .chapter-page {
@@ -905,41 +928,22 @@ def write_index(site_data):
     html += '<div class="section-title">Built Chapters · Davidson 25th Edition</div>\n'
     html += '<div class="chapters-grid">\n'
 
-    for ch_slug, (ch_name, ch_url, ch_desc, ch_color) in BUILT_CHAPTERS.items():
+    for ch_slug, (ch_name, ch_url, ch_color) in BUILT_CHAPTERS.items():
         info = site_data.get(ch_slug)
         if not info or info["n_topics"] == 0:
             continue
-        previews = []
-        for hub_num in sorted(info["by_hub"].keys()):
-            for t in info["by_hub"][hub_num]:
-                if t["png"]:
-                    if t["folder"]:
-                        rel = f"{ch_slug}/diseases/{t['folder']}/topic.png"
-                    else:
-                        rel = f"{ch_slug}/diseases/{t['local_prefix']}-{t['slug']}.png"
-                    previews.append(rel)
-                    break
-            if len(previews) >= 4:
-                break
-        preview_html = '<div class="preview-strip">'
-        for p in previews[:4]:
-            preview_html += f'<div class="preview"><img src="/{p}" alt="preview" loading="lazy"></div>'
-        preview_html += "</div>"
         ch_display_num = ch_slug.split("-")[0]
         html += f"""
 <article class="chapter-card" style="--accent-color: {ch_color}" onclick="location.href='/{ch_slug}/'" role="button" tabindex="0">
   <span class="ch-num">Ch {ch_display_num}</span>
   <h2>{ch_name}</h2>
-  <p class="desc">{ch_desc}</p>
   <div class="ch-stats">
     <div class="cs"><span class="num">{info['n_hubs']}</span><span class="label">Hubs</span></div>
     <div class="cs"><span class="num">{info['n_topics']}</span><span class="label">Topics</span></div>
-    <div class="cs"><span class="num">{info['n_pngs']}</span><span class="label">PNGs</span></div>
   </div>
-  {preview_html}
-  <div class="ch-stats" style="border-top: none; padding-top: 0; margin-top: 8px;">
-    <a href="/{ch_slug}/" style="color:var(--accent); font-size:13px; font-weight:500;">Browse Topics →</a>
-    <a href="{ch_url}" target="_blank" onclick="event.stopPropagation()" style="color:var(--text-dim); font-size:13px; margin-left:12px;">Notion ↗</a>
+  <div class="ch-links">
+    <a href="/{ch_slug}/" class="ch-link-primary">Browse →</a>
+    <a href="{ch_url}" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
   </div>
 </article>
 """
@@ -949,7 +953,7 @@ def write_index(site_data):
     print(f"  Wrote index.html ({total_topics} topics across {n_built} chapters)")
 
 
-def write_chapter_spa(ch_slug, ch_name, ch_url, ch_desc, ch_color, info):
+def write_chapter_spa(ch_slug, ch_name, ch_url, ch_color, info):
     """Build chapter SPA with sidebar (topics) | main (topic content)."""
     ch_display_num = ch_slug.split("-")[0]
     stats = [
@@ -1193,8 +1197,8 @@ def main():
             continue
         n = copy_assets(ch_slug, info)
         print(f"  Copied {n} PNGs to site/{ch_slug}/")
-        ch_name, ch_url, ch_desc, ch_color = BUILT_CHAPTERS[ch_slug]
-        write_chapter_spa(ch_slug, ch_name, ch_url, ch_desc, ch_color, info)
+        ch_name, ch_url, ch_color = BUILT_CHAPTERS[ch_slug]
+        write_chapter_spa(ch_slug, ch_name, ch_url, ch_color, info)
 
     write_index(site_data)
 

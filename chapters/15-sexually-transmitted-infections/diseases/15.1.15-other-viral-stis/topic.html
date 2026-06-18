@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Other Viral STIs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">Other Viral STIs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe <b>Zika Virus</b> Sexual Transmission, Congenital Syndrome, Testing, Prevention</li><li>[ ] Describe <b>Hepatitis A &amp; E</b> Sexual Transmission (MSM Outbreaks), Vaccination, Management</li><li>[ ] Describe <b>HHV-8 (KSHV)</b> — Kaposi Sarcoma, MCD, PEL, HIV Association</li><li>[ ] Describe <b>COVID-19</b> Sexual Transmission Potential, Viral Shedding in Semen, Testicular Involvement</li><li>[ ] Describe <b>Other Emerging Viral STIs</b> (Monkeypox — See Separate Note, Ebola Sexual Persistence, CMV Sexual Transmission)</li><li>[ ] Apply <b>Diagnostic Algorithms</b> and <b>Public Health Measures</b> for Each</li><li>[ ] Answer viva: "Zika Sexual Transmission &amp; Congenital Syndrome" and "Hepatitis A in MSM" and "HHV-8 &amp; HIV" and "Ebola Sexual Persistence"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Expanding Spectrum of Viral STIs</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Other Viral STIs))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Established Sexual Transmission</div>
+<div class="mm-node mm-l3">– Zika Virus (Flavivirus)</div>
+<div class="mm-node mm-l3">– Hepatitis A (Picornavirus) — MSM Outbreaks</div>
+<div class="mm-node mm-l3">– Hepatitis E (Hepevirus) — MSM/Immunocompromised</div>
+<div class="mm-node mm-l3">– HHV-8 / KSHV (Herpesvirus) — Kaposi, MCD, PEL</div>
+<div class="mm-node mm-l2">Emerging / Re-emerging</div>
+<div class="mm-node mm-l3">– SARS-CoV-2 (COVID-19) — Semen Detection, Testicular Tropism</div>
+<div class="mm-node mm-l3">– Ebola Virus — Sexual Persistence (Months)</div>
+<div class="mm-node mm-l3">– CMV — Sexual Transmission (Seroconversion)</div>
+<div class="mm-node mm-l3">– Mpox — See Separate Note</div>
+<div class="mm-node mm-l2">Common Themes</div>
+<div class="mm-node mm-l3">– Viral Shedding in Semen/Genital Fluids</div>
+<div class="mm-node mm-l3">– Asymptomatic Transmission Possible</div>
+<div class="mm-node mm-l3">– Complications in Pregnancy/Immunocompromised</div>
+<div class="mm-node mm-l3">– Public Health Surveillance Critical</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ Zika Virus (ZIKV)</div>
+<div class="sub-h">Virology &amp; Transmission</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Virus**</td><td>**Flavivirus** (Arbovirus); **RNA, Positive-Sense**; Related to Dengue, Yellow Fever, West Nile</td></tr><tr><td>**Primary Vector**</td><td>**Aedes aegypti / Aedes albopictus** (Day-Biting Mosquitoes)</td></tr><tr><td>**Sexual Transmission**</td><td>**Confirmed (Male→Female, Male→Male, Female→Male)**; **Viral RNA in Semen Prolonged (Months)**; **Vaginal Fluid, Saliva Also**</td></tr><tr><td>**Vertical Transmission**</td><td>**Transplacental (All Trimesters); Perinatal; Breastfeeding (Low Risk)**</td></tr><tr><td>**Other**</td><td>**Blood Transfusion, Lab Exposure**</td></tr><tr><td>**Incubation**</td><td>**3-14 Days** (Typically 3-7 Days)</td></tr></table>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Features</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Asymptomatic**</td><td>**~80% Infections**</td></tr><tr><td>**Zika Fever (Symptomatic)**</td><td>**Low-Grade Fever, Maculopapular Rash (Pruritic), Conjunctivitis (Non-Purulent), Arthralgia (Small Joints), Myalgia, Headache, Retro-Orbital Pain**; **Self-Limited 2-7 Days**</td></tr><tr><td>**Neurological**</td><td>**Guillain-Barré Syndrome (GBS) — ↑ Incidence During Outbreaks**; **Meningitis, Encephalitis, Myelitis (Rare)**</td></tr><tr><td>**Congenital Zika Syndrome (CZS)**</td><td>**Microcephaly (Severe), Cortical Malformations, Ventriculomegaly, Ocular Abnormalities (Chorioretinal Atrophy, Optic Nerve Hypoplasia), Congenital Contractures (Arthrogryposis), Hypertonia, Seizures, Hearing Loss**</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Specimen</th><th>Timing</th><th>Interpretation</th></tr><tr><td>------</td><td>----------</td><td>--------</td><td>----------------</td></tr><tr><td>**RT-PCR (ZIKV RNA)**</td><td>Serum, Urine, Semen, CSF, Amniotic Fluid, Placenta</td><td>**Serum: <7 Days; Urine: <21 Days; Semen: Months**</td><td>**Positive = Acute/Recent Infection**</td></tr><tr><td>**IgM Antibody (ELISA)**</td><td>Serum, CSF</td><td>**≥4 Days Post-Onset**</td><td>**Positive = Recent; Cross-Reactivity with Dengue/Other Flaviviruses (PRNT Needed)**</td></tr><tr><td>**PRNT (Plaque Reduction Neutralisation Test)**</td><td>Serum</td><td>**Confirmatory**</td><td>**Specific Neutralising Antibodies; Differentiates ZIKV from Dengue**</td></tr></table>
+<div class="callout"><b>WHO Algorithm</b>: <b>RT-PCR First (Acute); If Negative &gt;7 Days OR Convalescent → IgM + PRNT</b></div>
+<div class="sub-h">Sexual Transmission — Key Evidence</div>
+<ul><li><b>Male→Female</b>: Documented; Semen RNA Detectable <b>Mean 34 Days (Up to 370 Days)</b>; Infectious Virus Cultured ≤69 Days</li><li><b>Male→Male</b>: Anal Sex Transmission Documented</li><li><b>Female→Male</b>: Vaginal Fluid RNA Detectable; Transmission Documented</li><li><b>Asymptomatic Sexual Transmission</b>: Documented</li></ul>
+<div class="sub-h">Prevention &amp; Counselling</div>
+<table class="ctable"><tr><th>Population</th><th>Recommendation</th></tr><tr><td>------------</td><td>----------------</td></tr><tr><td>**Pregnant Women / Couples Planning Pregnancy**</td><td>**Avoid Travel to Active ZIKV Areas**; **Condoms or Abstinence Throughout Pregnancy if Partner Exposed**</td></tr><tr><td>**Men with ZIKV Exposure (Symptomatic/Asymptomatic)**</td><td>**Condoms/Abstinence ≥3 Months** (WHO) / **≥6 Months** (CDC Conservative)</td></tr><tr><td>**Women with ZIKV Exposure**</td><td>**Condoms/Abstinence ≥2 Months**</td></tr><tr><td>**Blood Donation**</td><td>**Deferral 28-120 Days Post-Exposure/Recovery**</td></tr><tr><td>**Mosquito Bite Prevention**</td><td>**DEET, Picaridin, Permethrin Clothing, Screens, Eliminate Breeding Sites**</td></tr></table>
+<div class="sub-h">Treatment</div>
+<ul><li><b>Supportive Only</b> (Antipyretics, Fluids, Rest); <b>Avoid NSAIDs Until Dengue Ruled Out (Bleeding Risk)</b></li><li><b>GBS</b>: IVIG / Plasmapheresis (Standard)</li><li><b>CZS</b>: Multidisciplinary Supportive Care (No Specific Antiviral)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Hepatitis A Virus (HAV) — Sexual Transmission in MSM</div>
+<div class="sub-h">Virology &amp; Transmission</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Virus**</td><td>**Picornavirus (Hepatovirus)**; **RNA, Positive-Sense**; **Non-Enveloped, Stable in Environment**</td></tr><tr><td>**Primary Route**</td><td>**Faecal-Oral** (Contaminated Food/Water, Person-to-Person)</td></tr><tr><td>**Sexual Transmission**</td><td>**Anal-Oral Practices (Rimming), Digital-Anal Contact, Sex Toys** — **Major Driver in MSM Outbreaks**</td></tr><tr><td>**Incubation**</td><td>**15-50 Days** (Average 28 Days)</td></tr><tr><td>**Infectious Period**</td><td>**2 Weeks Pre-Jaundice → 1 Week Post-Jaundice**</td></tr></table>
+<div class="sub-h">MSM Outbreaks (Global, 2016-2024)</div>
+<ul><li><b>Large Outbreaks in Europe, Americas, Australia</b> — <b>Genotype IA/IB</b></li><li><b>Risk Factors</b>: <b>Multiple Partners, Sex-on-Premises Venues, Chemsex, Recreational Drugs, HIV+</b></li><li><b>Co-infections Common</b>: <b>STIs (GC, CT, Syphilis, HIV, HCV)</b></li></ul>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Presentation</th><th>Features</th></tr><tr><td>--------------</td><td>----------</td></tr><tr><td>**Asymptomatic**</td><td>**Common in Children (<70% <6y Symptomatic); Less in Adults**</td></tr><tr><td>**Acute Hepatitis**</td><td>**Fever, Malaise, Anorexia, Nausea, RUQ Pain, Dark Urine, Pale Stools, Jaundice**; **Self-Limited 2-8 Weeks**</td></tr><tr><td>**Complications**</td><td>**Fulminant Hepatitis (Rare ~0.1-0.3%); Relapsing/Cholestatic Course (10-15%)**</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Interpretation</th></tr><tr><td>------</td><td>----------------</td></tr><tr><td>**Anti-HAV IgM**</td><td>**Acute/Recent Infection (Positive 5-10 Days Post-Exposure, Persists 3-6 Months)**</td></tr><tr><td>**Anti-HAV IgG (Total)**</td><td>**Past Infection or Vaccination (Lifelong Immunity)**</td></tr><tr><td>**HAV RNA PCR**</td><td>**Research/Outbreak Investigation; Not Routine**</td></tr></table>
+<div class="sub-h">Management</div>
+<ul><li><b>Supportive</b> (Rest, Hydration, Avoid Hepatotoxins); <b>No Antiviral</b></li><li><b>Hospitalisation</b> if <b>Fulminant Signs (Coagulopathy, Encephalopathy)</b> or <b>Severe Dehydration</b></li><li><b>Post-Exposure Prophylaxis (Contacts)</b>: <b>HAV Vaccine (1 Dose) ± Human Normal Immunoglobulin (HNIG) if High Risk / Immunocompromised / Chronic Liver Disease</b></li></ul>
+<div class="sub-h">Prevention — Vaccination</div>
+<table class="ctable"><tr><th>Vaccine</th><th>Schedule</th><th>Target</th></tr><tr><td>---------</td><td>----------</td><td>--------</td></tr><tr><td>**Inactivated HAV Vaccine (Havrix, Vaqta, Avaxim)**</td><td>**2 Doses (0, 6-12 Months)**</td><td>**All Children (Routine), MSM, PWID, Chronic Liver Disease, Travelers, HIV+, Occupational Risk**</td></tr><tr><td>**Combined HAV/HBV (Twinrix)**</td><td>**3 Doses (0, 1, 6 Months) or Accelerated (0, 7, 21 Days + 12m)**</td><td>**Adults Needing Both**</td></tr></table>
+<div class="callout"><b>MSM = Priority Group for HAV Vaccination (Outbreak Control)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Hepatitis E Virus (HEV)</div>
+<div class="sub-h">Virology &amp; Transmission</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Virus**</td><td>**Hepevirus (Orthohepevirus A)**; **RNA, Positive-Sense**; **Genotypes 1-4 (Human)**</td></tr><tr><td>**Genotype 1 & 2**</td><td>**Human Only; Faecal-Oral (Waterborne); Developing Countries; Acute Epidemics**</td></tr><tr><td>**Genotype 3 & 4**</td><td>**Zoonotic (Pigs, Deer, Boar); Foodborne (Undercooked Pork/Offal); Developed Countries; Chronic in Immunocompromised**</td></tr><tr><td>**Sexual Transmission**</td><td>**Possible (Anal-Oral, MSM Outbreaks Reported); Blood Transfusion Also**</td></tr><tr><td>**Incubation**</td><td>**15-60 Days** (Average 40 Days)</td></tr></table>
+<div class="sub-h">Clinical Syndromes</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Population</th><th>Features</th></tr><tr><td>----------</td><td>------------</td><td>----------</td></tr><tr><td>**Acute Hepatitis E**</td><td>**General (GT1/2/3/4)**</td><td>**Similar to HAV; Jaundice, Malaise, RUQ Pain; Self-Limited 2-6 Weeks**</td></tr><tr><td>**Severe in Pregnancy (GT1/2)**</td><td>**Pregnant Women (3rd Trimester)**</td><td>**Fulminant Hepatitis, Maternal Mortality 10-25%; Vertical Transmission High**</td></tr><tr><td>**Chronic HEV (GT3/4)**</td><td>**Immunocompromised (Transplant, HIV CD4<200, Chemo, Steroids)**</td><td>**Persistent Viraemia >3 Months → Rapid Fibrosis → Cirrhosis**</td></tr><tr><td>**Extrahepatic**</td><td>**All**</td><td>**Neurological (Guillain-Barré, Neuralgic Amyotrophy, Encephalitis); Renal (Membranous GN); Haematologic**</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Interpretation</th></tr><tr><td>------</td><td>----------------</td></tr><tr><td>**Anti-HEV IgM**</td><td>**Acute Infection (Positive ~4 Weeks Post-Exposure, Persists 3-6 Months)**</td></tr><tr><td>**Anti-HEV IgG**</td><td>**Past Infection (Persistence Variable)**</td></tr><tr><td>**HEV RNA PCR (Stool/Serum)**</td><td>**Viraemia (Acute/Chronic); Genotyping Possible**</td></tr></table>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Scenario</th><th>Treatment</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**Acute (Immunocompetent)**</td><td>**Supportive; No Antiviral**</td></tr><tr><td>**Pregnancy (Severe/3rd Trimester)**</td><td>**Supportive ICU; Ribavirin Contraindicated (Teratogenic); Consider Early Delivery**</td></tr><tr><td>**Chronic (Immunocompromised)**</td><td>**Reduce Immunosuppression if Possible**; **Ribavirin 600-1000mg/Day × 3 Months (Off-Label, Monitor Haemolysis)**; **PegIFN-α (Transplant) — Risk Rejection**</td></tr></table>
+<div class="sub-h">Prevention</div>
+<ul><li><b>Sanitation, Safe Water (GT1/2)</b></li><li><b>Thorough Cooking of Pork/Offal (GT3/4)</b></li><li><b>Vaccine (Hecolin® / p239) — Licensed China Only; Efficacy &gt;95% (GT1/4); Not WHO Prequalified Globally</b></li><li><b>Blood Screening (Some Countries)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Human Herpesvirus 8 (HHV-8) / Kaposi Sarcoma Herpesvirus (KSHV)</div>
+<div class="sub-h">Virology &amp; Transmission</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Virus**</td><td>**Gammaherpesvirus (Rhadinovirus)**; **dsDNA**; **Latency in B Cells, Endothelial Cells**</td></tr><tr><td>**Transmission**</td><td>**Sexual (MSM — Saliva, Semen); Vertical (Mother→Child); Blood/Transfusion; Transplant; Saliva (Household in Endemic Areas)**</td></tr><tr><td>**Epidemiology**</td><td>**High in Sub-Saharan Africa, Mediterranean, MSM Populations; Low in General Western Populations**</td></tr><tr><td>**HIV Association**</td><td>**Strong — HHV-8 Seroprevalence 30-50% in HIV+ MSM vs <5% General**</td></tr></table>
+<div class="sub-h">Disease Associations</div>
+<table class="ctable"><tr><th>Disease</th><th>Pathogenesis</th><th>Clinical Features</th></tr><tr><td>---------</td><td>--------------</td><td>-------------------</td></tr><tr><td>**Kaposi Sarcoma (KS)**</td><td>**HHV-8 Infected Endothelial/Spindle Cells → VEGF, Cytokines → Angioproliferation**</td><td>**Cutaneous (Violaceous Macules/Plaques/Nodules), Mucosal (Oral, GI, Pulmonary); Lymphoedema; HIV+ = More Aggressive/Disseminated**</td></tr><tr><td>**Multicentric Castleman Disease (MCD)**</td><td>**HHV-8 Infected B Cells (Plasmablasts) → IL-6, vIL-6 → Lymphoproliferation**</td><td>**Generalised Lymphadenopathy, Fever, Splenomegaly, Cytopenias, Hypergammaglobulinaemia, POEMS-like; HIV+ Associated**</td></tr><tr><td>**Primary Effusion Lymphoma (PEL)**</td><td>**HHV-8+ EBV+ B-Cell Lymphoma in Body Cavities**</td><td>**Pleural/Pericardial/Peritoneal Effusions (No Mass); HIV+; Poor Prognosis**</td></tr><tr><td>**KSHV Inflammatory Cytokine Syndrome (KICS)**</td><td>**vIL-6, Cytokine Storm**</td><td>**Fever, Cytopenias, Splenomegaly, Oedema, Hypoalbuminaemia; HIV+**</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Use</th></tr><tr><td>------</td><td>-----</td></tr><tr><td>**HHV-8 PCR (Blood, Lesion, Effusion)**</td><td>**Viral Load, Disease Monitoring**</td></tr><tr><td>**HHV-8 Serology (LANA-1 IgG)**</td><td>**Exposure (Latent Infection); High in Endemic/MSM/HIV**</td></tr><tr><td>**KS Biopsy (Histology + LANA-1 IHC)**</td><td>**Definitive (Spindle Cells, Slit-Like Vessels, LANA-1+)**</td></tr><tr><td>**MCD/PEL Biopsy**</td><td>**Plasmablasts (MCD) / Large B Cells (PEL) + HHV-8+**</td></tr></table>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Disease</th><th>Treatment</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**KS (HIV+)**</td><td>**ART (Immune Reconstitution = Regression); Local (Radiation, Intralesional Vinblastine, Topical Alitretinoin); Systemic (Liposomal Doxorubicin, Paclitaxel) if Visceral/Disseminated/Symptomatic**</td></tr><tr><td>**KS (HIV- / Classic / Endemic / Transplant)**</td><td>**Reduce Immunosuppression (Transplant); Local/Systemic as Above**</td></tr><tr><td>**MCD**</td><td>**Rituximab (Anti-CD20) — 1st Line (Depletes HHV-8+ B Cells); +/- Chemo (CHOP) if Severe; IL-6 Blockade (Siltuximab/Tocilizumab) Refractory**</td></tr><tr><td>**PEL**</td><td>**CHOP/EPOCH + Rituximab; ART if HIV+; Poor Prognosis (Median OS <1 Year)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ SARS-CoV-2 (COVID-19) — Sexual Transmission Potential</div>
+<div class="sub-h">Evidence for Genital/Sexual Involvement</div>
+<table class="ctable"><tr><th>Finding</th><th>Evidence</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Viral RNA in Semen**</td><td>**Detected in ~10-20% Acute/Convalescent Men (Up to 30-60 Days Post-Onset); Infectious Virus Rarely Cultured**</td></tr><tr><td>**Testicular Involvement**</td><td>**ACE2/TMPRSS2 Expression in Testes (Spermatogonia, Leydig, Sertoli); Orchitis Rare; Temporary Sperm Quality Decline**</td></tr><tr><td>**Vaginal Fluid RNA**</td><td>**Detected in Some Women (Lower Frequency/Duration Than Semen)**</td></tr><tr><td>**Sexual Transmission**</td><td>**Theoretical (RNA ≠ Infectious Virus); No Confirmed Sexual Transmission Cases; Close Contact/Respiratory Dominant**</td></tr><tr><td>**Erectile Dysfunction**</td><td>**Post-COVID Sequela (Vascular, Endothelial, Psychological); PDE5i Responsive**</td></tr></table>
+<div class="sub-h">Practical Guidance</div>
+<ul><li><b>Not Classified as STI</b>; <b>Standard Respiratory Precautions Sufficient</b></li><li><b>Condoms Not Required for COVID Prevention Alone</b> (But for Other STIs)</li><li><b>Fertility</b>: <b>Temporary Sperm Parameters Decline (3-6 Months Recovery); No Long-Term Infertility Evidence</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6️⃣ Ebola Virus Disease (EVD) — Sexual Persistence</div>
+<div class="sub-h">Key Facts</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Virus**</td><td>**Filovirus (Zaire ebolavirus)**; **RNA, Negative-Sense**</td></tr><tr><td>**Sexual Persistence**</td><td>**RNA in Semen Detectable Months to Years Post-Recovery (Median ~115 Days; Max >500 Days)**</td></tr><tr><td>**Infectious Virus in Semen**</td><td>**Cultured Up to ~180-500 Days Post-Onset**</td></tr><tr><td>**Sexual Transmission**</td><td>**Documented (Survivor→Partner); Rare but Critical for Outbreak Resurgence**</td></tr><tr><td>**Guidance (WHO)**</td><td>**Male Survivors: Condoms or Abstinence Until **2 Consecutive Negative Semen RT-PCR (Weekly Interval)** OR **≥12 Months Post-Onset if Testing Unavailable**</td></tr><tr><td>**Breast Milk**</td><td>**RNA Detected; Avoid Breastfeeding Until Negative PCR**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7️⃣ Cytomegalovirus (CMV) — Sexual Transmission</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Virus**</td><td>**Betaherpesvirus (HHV-5)**; **dsDNA**</td></tr><tr><td>**Transmission**</td><td>**Sexual (Semen, Cervical Secretions, Saliva, Urine, Breast Milk); Vertical (Congenital Major); Transfusion/Transplant**</td></tr><tr><td>**Seroprevalence**</td><td>**~50-90% Adults (Age/SES Dependent)**</td></tr><tr><td>**Primary Infection in Pregnancy**</td><td>**~30-40% Vertical Transmission Congenital CMV (Sensorineural Hearing Loss, Neurodevelopmental Delay, Microcephaly)**</td></tr><tr><td>**Reactivation**</td><td>**Common in Immunocompromised (CMV Syndrome, End-Organ Disease: Retinitis, Colitis, Pneumonitis); HIV CD4<50**</td></tr><tr><td>**Diagnosis**</td><td>**IgM + IgG Avidity (Primary); PCR (Viraemia/Quantitative — Monitor Immunocompromised)**</td></tr><tr><td>**Treatment**</td><td>**Ganciclovir/Valganciclovir (Immunocompromised); Letermovir (Prophylaxis Transplant); No Routine Tx Immunocompetent**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Virus</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Zika**</td><td>**Flavivirus, Mosquito (Aedes) + Sexual (Semen Months); 80% Asymptomatic; Congenital Zika Syndrome (Microcephaly, Ocular, Contractures); GBS; RT-PCR (Serum<7d, Urine<21d, Semen Months); IgM+PRNT; Prevention: Condoms 3m (M), 2m (W); Avoid Pregnancy Travel**</td></tr><tr><td>**Hepatitis A**</td><td>**Picornavirus, Faecal-Oral + Sexual (Anal-Oral MSM Outbreaks); Acute Hepatitis, Self-Limited; Anti-HAV IgM = Acute; Vaccine 2-Dose (0,6-12m) — MSM Priority; PEP: Vaccine ± HNIG**</td></tr><tr><td>**Hepatitis E**</td><td>**Hepevirus, GT1/2 Waterborne (Pregnancy Severe), GT3/4 Zoonotic (Pork, Chronic in Immunocomp); Anti-HEV IgM Acute; Chronic GT3/4: Reduce Immunosupp + Ribavirin 3m; Vaccine China Only**</td></tr><tr><td>**HHV-8/KSHV**</td><td>**Gammaherpesvirus, Sexual (MSM Saliva/Semen); KS (Cutaneous/Mucosal/Visceral), MCD (Lymphadenopathy, IL-6), PEL (Effusions); HIV+ Strong Association; Dx: PCR, LANA-1 IHC; Tx: KS→ART+Local/Systemic Chemo; MCD→Rituximab; PEL→CHOP+Rituximab**</td></tr><tr><td>**COVID-19**</td><td>**SARS-CoV-2 RNA in Semen (10-20%, Up to 60d); Testicular ACE2 Expression; Not Classified STI; No Confirmed Sexual Transmission**</td></tr><tr><td>**Ebola**</td><td>**Semen RNA Persistence (Months-Years); Infectious Virus Cultured ~180-500d; Sexual Transmission Documented; Survivor Guidance: Condoms/Abstinence Until 2 Neg Semen PCR or 12m**</td></tr><tr><td>**CMV**</td><td>**Betaherpesvirus, Sexual/Vertical/Transfusion; Congenital CMV (Hearing Loss, Neurodelay); Immunocomp: Reactivation (Retinitis, Colitis); Tx: Ganciclovir/Valganciclovir**</td></tr><tr><td>**Viva**</td><td>"Zika Congenital Syndrome", "HAV MSM Outbreaks", "HEV Pregnancy Severity", "HHV-8 Diseases", "Ebola Semen Persistence"</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Zika Virus — Sexual Transmission & Congenital Syndrome.</td><td>**Sexual Transmission Confirmed (Male→Female, Male→Male, Female→Male); Semen RNA Prolonged (Mean 34d, Up to 370d); Infectious Virus Cultured ≤69d**; **Congenital Zika Syndrome: Microcephaly, Cortical Malformations, Ventriculomegaly, Ocular Abnormalities, Congenital Contractures, Hypertonia, Seizures, Hearing Loss**; **Prevention: Men Exposed → Condoms/Abstinence 3 Months (WHO)/6 Months (CDC); Women 2 Months; Avoid Travel in Pregnancy**</td></tr><tr><td>2</td><td>Hepatitis A in MSM — Transmission, Outbreaks, Vaccination.</td><td>**Transmission: Anal-Oral (Rimming), Digital-Anal, Sex Toys (Faecal-Oral Sexual); Outbreaks: Global MSM (2016-2024), Genotype IA/IB, Risk: Multiple Partners, Venues, Chemsex, HIV+**; **Dx: Anti-HAV IgM; Mgmt: Supportive; Prevention: Inactivated HAV Vaccine 2-Dose (0,6-12m) — MSM PRIORITY; PEP: Vaccine ± HNIG**</td></tr><tr><td>3</td><td>Hepatitis E — Genotypes, Pregnancy, Chronic Infection.</td><td>**GT1/2: Human, Waterborne, Developing Countries; GT3/4: Zoonotic (Pigs), Foodborne, Developed Countries**; **Pregnancy (GT1/2, 3rd Trimester): Fulminant Hepatitis, Maternal Mortality 10-25%; Vertical Transmission High**; **Chronic HEV (GT3/4): Immunocompromised (Transplant, HIV CD4<200, Steroids) → Persistent Viraemia >3m → Rapid Fibrosis/Cirrhosis; Tx: Reduce Immunosupp + Ribavirin 600-1000mg/d × 3m**</td></tr><tr><td>4</td><td>HHV-8 / KSHV — Diseases, HIV Association, Management.</td><td>**Diseases: Kaposi Sarcoma (Cutaneous/Mucosal/Visceral), Multicentric Castleman Disease (Lymphadenopathy, IL-6), Primary Effusion Lymphoma (Effusions), KICS**; **HIV Association: Strong — HHV-8 Seroprevalence 30-50% HIV+ MSM vs <5% General**; **KS: ART 1st Line (Immune Reconstitution); Local (Rad, Intralesional Vinblastine); Systemic (Liposomal Doxorubicin, Paclitaxel) if Visceral**; **MCD: Rituximab 1st Line; IL-6 Blockade (Siltuximab) Refractory**; **PEL: CHOP+Rituximab; Poor Prognosis**</td></tr><tr><td>5</td><td>Ebola Virus — Sexual Persistence & Survivor Guidance.</td><td>**Semen RNA Detectable Months-Years (Median ~115d, Max >500d); Infectious Virus Cultured Up to ~500d; Sexual Transmission Documented (Survivor→Partner)**; **WHO Guidance: Male Survivors → Condoms/Abstinence Until 2 Consecutive Negative Semen RT-PCR (Weekly) OR ≥12 Months Post-Onset if Testing Unavailable; Breast Milk RNA → Avoid Breastfeeding Until Negative**</td></tr><tr><td>6</td><td>SARS-CoV-2 Genital Involvement — Evidence & STI Classification.</td><td>**RNA in Semen ~10-20% (Up to 60d); Testicular ACE2/TMPRSS2 Expression; Orchitis Rare; Sperm Quality Temporary Decline; Vaginal Fluid RNA Low Frequency**; **NOT Classified as STI (No Confirmed Sexual Transmission); Respiratory/Close Contact Dominant**</td></tr><tr><td>7</td><td>CMV — Sexual Transmission, Congenital, Immunocompromised.</td><td>**Sexual: Semen, Cervical Secretions, Saliva; Vertical: Congenital (30-40% Primary Infection in Pregnancy) → Sensorineural Hearing Loss, Neurodevelopmental Delay, Microcephaly**; **Immunocompromised (HIV CD4<50, Transplant): Reactivation → CMV Syndrome, Retinitis, Colitis, Pneumonitis; Dx: PCR Quantitative; Tx: Ganciclovir/Valganciclovir/Letermovir**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Zika = Only Mosquito Transmission"**</td><td>**NO.** **Sexual Transmission WELL DOCUMENTED (Semen Months); Vertical Transmission Major Concern**</td></tr><tr><td>**"HAV = Food/Water Only"**</td><td>**NO.** **MSM Outbreaks Driven by Sexual Practices (Anal-Oral); Vaccination Critical for MSM**</td></tr><tr><td>**"HEV = Only Pregnancy Risk"**</td><td>**NO.** **GT3/4 Chronic Infection in Immunocompromised = Rapid Cirrhosis; Ribavirin Effective**</td></tr><tr><td>**"HHV-8 = Only KS"**</td><td>**NO.** **Also MCD, PEL, KICS; All HHV-8 Driven B-Cell/Endothelial Proliferation**</td></tr><tr><td>**"COVID-19 = STI Because Semen RNA"**</td><td>**NO.** **RNA ≠ Infectious Virus; No Confirmed Sexual Transmission; Classified as Respiratory/Close Contact**</td></tr><tr><td>**"Ebola = Only Acute Outbreak Disease"**</td><td>**NO.** **Sexual Persistence in Survivors = Risk of Outbreak Resurgence (Months-Years Later)**</td></tr><tr><td>**"CMV = Only Congenital Problem"**</td><td>**NO.** **Major Pathogen in Immunocompromised (Retinitis, Colitis, Pneumonitis); Reactivation Common**</td></tr><tr><td>**"Zika IgM = Definitive Diagnosis"**</td><td>**NO.** **Cross-Reactivity with Dengue/Other Flaviviruses HIGH; PRNT Required for Confirmation**</td></tr><tr><td>**"HAV Vaccine = 1 Dose Enough"**</td><td>**ROUTINE = 2 Doses (0, 6-12 Months) FOR LONG-TERM IMMUNITY; 1 Dose = PEP/Outbreak Response**</td></tr><tr><td>**"HEV Vaccine = Globally Available"**</td><td>**NO.** **Hecolin® (p239) = Licensed CHINA ONLY; Not WHO Prequalified; Not Available Globally**</td></tr></table>
+<div class="callout"><b>Mnemonic: OTHER VIRAL STI SHIELD</b> <b>O</b>ther Viral STIs: <b>Zika, HAV, HEV, HHV-8, COVID, Ebola, CMV</b> <b>T</b> Zika: <b>Flavivirus, Aedes + Sexual (Semen Months); 80% Asx; CZS (Microcephaly, Ocular, Contractures); GBS; RT-PCR Serum&lt;7d/Urine&lt;21d/Semen; PRNT Confirm; Prevent: Condoms M3m/W2m</b> <b>H</b> HAV: <b>Picornavirus, Faecal-Oral + Sexual (Anal-Oral MSM Outbreaks); Anti-HAV IgM Acute; Vacc 2-Dose 0,6-12m (MSM PRIORITY); PEP: Vacc±HNIG</b> <b>E</b> HEV: <b>GT1/2 Waterborne (Preg Severe Fulminant 10-25% Mat Mort); GT3/4 Zoonotic Pork (Chronic Immunocomp→Ribavirin 3m); Vacc China Only</b> <b>R</b> HHV-8: <b>Gammaherpesvirus, Sexual MSM (Saliva/Semen); KS (ART→Regression, Liposomal Dox); MCD (Rituximab); PEL (CHOP+R); HIV Strong Assoc</b> <b>V</b> COVID: <b>SARS-CoV-2 RNA Semen 10-20%≤60d; Testicular ACE2; Not STI (No Confirmed Sexual Tx); Resp Dominant</b> <b>I</b> Ebola: <b>Filovirus; Semen RNA Months-Years (Median 115d, Max&gt;500d); Sex Tx Documented; Survivor: Condoms/Abst 2 Neg PCR or 12m</b> <b>R</b> CMV: <b>Betaherpesvirus, Sexual/Vertical/Transfusion; Congenital (1° Preg→Hearing Loss/Neurodelay); Immunocomp→Reactivation (Retinitis/Colitis); Tx: Ganciclovir/Valganciclovir</b> <b>A</b>lert: <b>Emerging Viral STIs Require Surveillance (Zika, Mpox, Ebola Persistence, COVID Semen)</b> <b>L</b>ab: PCR Key for Acute (Zika RNA, HAV IgM, HEV IgM, HHV-8 PCR, Ebola Semen PCR, CMV PCR) <b>S</b>exual Transmission Proven: <b>Zika, HAV (MSM), HEV (Possible), HHV-8, Ebola, CMV; COVID Theoretical</b> <b>H</b>IV Association Strongest: <b>HHV-8 (KS/MCD/PEL), CMV (Reactivation), HEV (Chronic), Zika (Severe if HIV)</b> <b>I</b>mmunocompromised: <b>HEV Chronic→Ribavirin; HHV-8 MCD/PEL→Rituximab/Chemo; CMV→Ganciclovir; Ebola Persistence</b> <b>E</b>liminate: <b>HAV Vacc Elimination Possible; Zika Vector Control; HEV Sanitation; HHV-8 ART→KS Regression</b> <b>L</b>ong-term Sequelae: <b>Zika CZS, CMV Congenital, Ebola Survivor Syndrome, COVID Long COVID, HEV Cirrhosis</b> <b>D</b>iagnosis Algorithm: <b>Acute→PCR; Convalescent→IgM+Confirmatory (PRNT/RNA); Chronic→Quant PCR</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Other Viral STIs))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Zika</div>
+<div class="mm-node mm-l3">– Flavivirus, Aedes Mosquito + Sexual</div>
+<div class="mm-node mm-l3">– Semen RNA Months</div>
+<div class="mm-node mm-l3">– 80% Asymptomatic</div>
+<div class="mm-node mm-l3">– CZS: Microcephaly, Ocular, Contractures</div>
+<div class="mm-node mm-l3">– GBS</div>
+<div class="mm-node mm-l3">– Dx: PCR (Serum&lt;7d, Urine&lt;21d, Semen) + PRNT</div>
+<div class="mm-node mm-l3">– Prevent: Condoms M3m/W2m, Avoid Travel Pregnancy</div>
+<div class="mm-node mm-l2">HAV</div>
+<div class="mm-node mm-l3">– Picornavirus, Faecal-Oral + Sexual MSM</div>
+<div class="mm-node mm-l3">– Outbreaks: Anal-Oral, Chemsex, Venues</div>
+<div class="mm-node mm-l3">– Acute Hepatitis, Self-Limited</div>
+<div class="mm-node mm-l3">– Dx: Anti-HAV IgM</div>
+<div class="mm-node mm-l3">– Vacc: 2-Dose 0,6-12m (MSM Priority)</div>
+<div class="mm-node mm-l2">HEV</div>
+<div class="mm-node mm-l3">– GT1/2: Waterborne, Preg Severe (Fulminant, Mortality)</div>
+<div class="mm-node mm-l3">– GT3/4: Zoonotic Pork, Chronic Immunocomp</div>
+<div class="mm-node mm-l3">– Dx: Anti-HEV IgM, RNA PCR</div>
+<div class="mm-node mm-l3">– Tx Chronic: Reduce Immunosupp + Ribavirin 3m</div>
+<div class="mm-node mm-l3">– Vacc: China Only</div>
+<div class="mm-node mm-l2">HHV-8/KSHV</div>
+<div class="mm-node mm-l3">– Gammaherpesvirus, Sexual MSM</div>
+<div class="mm-node mm-l3">– KS: Cutaneous/Mucosal/Visceral (ART Regresses)</div>
+<div class="mm-node mm-l3">– MCD: Lymphadenopathy, IL-6 (Rituximab)</div>
+<div class="mm-node mm-l3">– PEL: Effusions (CHOP+Rituximab)</div>
+<div class="mm-node mm-l3">– Dx: PCR, LANA-1 IHC</div>
+<div class="mm-node mm-l2">COVID-19</div>
+<div class="mm-node mm-l3">– SARS-CoV-2 RNA Semen 10-20% (≤60d)</div>
+<div class="mm-node mm-l3">– Testicular ACE2 Expression</div>
+<div class="mm-node mm-l3">– Not STI (No Confirmed Sexual Tx)</div>
+<div class="mm-node mm-l2">Ebola</div>
+<div class="mm-node mm-l3">– Semen RNA Months-Years</div>
+<div class="mm-node mm-l3">– Sexual Transmission Documented</div>
+<div class="mm-node mm-l3">– Survivor: Condoms/Abst 2 Neg PCR or 12m</div>
+<div class="mm-node mm-l2">CMV</div>
+<div class="mm-node mm-l3">– Betaherpesvirus, Sexual/Vertical/Transfusion</div>
+<div class="mm-node mm-l3">– Congenital: Hearing Loss, Neurodelay</div>
+<div class="mm-node mm-l3">– Immunocompromised: Reactivation (Retinitis/Colitis)</div>
+<div class="mm-node mm-l3">– Tx: Ganciclovir/Valganciclovir/Letermovir</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Zika (Virology, Transmission, CZS, Diagnosis, Prevention)</td><td>4</td><td></td><td></td></tr><tr><td>HAV (MSM Outbreaks, Vaccination, PEP)</td><td>3</td><td></td><td></td></tr><tr><td>HEV (Genotypes, Pregnancy, Chronic, Treatment)</td><td>3</td><td></td><td></td></tr><tr><td>HHV-8 (KS, MCD, PEL, HIV Association, Management)</td><td>4</td><td></td><td></td></tr><tr><td>COVID-19 (Genital Involvement, STI Classification)</td><td>1</td><td></td><td></td></tr><tr><td>Ebola (Semen Persistence, Survivor Guidance)</td><td>2</td><td></td><td></td></tr><tr><td>CMV (Congenital, Immunocompromised, Treatment)</td><td>2</td><td></td><td></td></tr><tr><td>Cross-Cutting Themes (Surveillance, Emerging)</td><td>1</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the viral STIs beyond HSV, HPV, Hepatitis B/C, and HIV — including Zika, Hepatitis A/E, HHV-8, and emerging viruses."</td><td>**Zika: Flavivirus, Aedes Mosquito + Sexual (Semen Months); CZS (Microcephaly, Ocular, Contractures, Hypertonia, Seizures); GBS; Dx: RT-PCR (Serum<7d, Urine<21d, Semen), IgM+PRNT; Prevention: Condoms M3m/W2m, Avoid Travel Pregnancy**; **HAV: Picornavirus, Faecal-Oral + Sexual (Anal-Oral MSM Outbreaks); Outbreaks Global MSM (Chemsex, Venues, HIV+); Dx: Anti-HAV IgM; Vaccine 2-Dose 0,6-12m (MSM Priority); PEP: Vaccine±HNIG**; **HEV: GT1/2 Waterborne (Pregnancy Fulminant 10-25% Mortality); GT3/4 Zoonotic Pork (Chronic Immunocompromised); Dx: Anti-HEV IgM, RNA PCR; Chronic Tx: Reduce Immunosupp+Ribavirin 3m; Vaccine China Only**; **HHV-8/KSHV: Gammaherpesvirus, Sexual MSM; KS (ART Regression, Liposomal Doxorubicin), MCD (Rituximab), PEL (CHOP+R); HIV Strong Association; Dx: PCR, LANA-1 IHC**; **COVID-19: SARS-CoV-2 RNA Semen 10-20% (≤60d), Testicular ACE2; Not STI (Respiratory Dominant)**; **Ebola: Semen RNA Months-Years (Infectious Virus Cultured ~500d); Sexual Transmission Documented; Survivor Guidance: Condoms/Abstinence Until 2 Neg Semen PCR or 12m**; **CMV: Betaherpesvirus, Sexual/Vertical/Transfusion; Congenital (Hearing Loss, Neurodelay); Immunocompromised Reactivation (Retinitis, Colitis); Tx: Ganciclovir/Valganciclovir/Letermovir**</td></tr><tr><td>**Short Note**</td><td>"Zika Virus — Congenital Syndrome & Sexual Transmission Prevention."</td><td>**Congenital Zika Syndrome (CZS): Microcephaly (Severe), Cortical Malformations, Ventriculomegaly, Ocular Abnormalities (Chorioretinal Atrophy, Optic Nerve Hypoplasia), Congenital Contractures (Arthrogryposis), Hypertonia, Seizures, Hearing Loss**; **Sexual Transmission: Male→Female, Male→Male, Female→Male Confirmed; Semen RNA Mean 34 Days (Up to 370 Days); Infectious Virus Cultured ≤69 Days**; **Prevention: Men with Exposure → Condoms/Abstinence ≥3 Months (WHO) / ≥6 Months (CDC); Women ≥2 Months; Pregnant Couples → Avoid Travel, Condoms Throughout Pregnancy if Partner Exposed**; **Diagnosis: RT-PCR (Serum <7d, Urine <21d, Semen Months); IgM + PRNT (Cross-Reactivity with Dengue)**</td></tr><tr><td>**Viva**</td><td>"Hepatitis E in Pregnancy vs Immunocompromised — Differences."</td><td>**Pregnancy (GT1/2, 3rd Trimester): Acute Fulminant Hepatitis, Maternal Mortality 10-25%, High Vertical Transmission; No Antiviral (Ribavirin Teratogenic); Supportive ICU, Early Delivery Consideration**; **Immunocompromised (GT3/4, Transplant/HIV CD4<200/Steroids): Chronic HEV (Persistent Viraemia >3 Months), Rapid Fibrosis → Cirrhosis; Treatment: Reduce Immunosuppression + Ribavirin 600-1000mg/d × 3 Months (Off-Label, Monitor Haemolysis)**</td></tr><tr><td>**Ward Round**</td><td>"MSM, HIV+, Presents with Violaceous Cutaneous Nodules, Oral Lesions, Lymphadenopathy, Fever. Suspected HHV-8 Disease. Workup & Management?"</td><td>**Differential: KS (Cutaneous/Mucosal), MCD (Lymphadenopathy, Fever, IL-6), PEL (Effusions)**; **Workup: HIV Viral Load/CD4; HHV-8 PCR (Blood/Lesion); LANA-1 IHC on Biopsy (KS: Spindle Cells, Slit Vessels); Lymph Node Biopsy (MCD: Plasmablasts); Effusion Cytology (PEL: Large B Cells, HHV-8+)**; **Management: Optimise ART (KS Regression); KS → Local (Radiation, Intralesional Vinblastine) / Systemic (Liposomal Doxorubicin) if Visceral; MCD → Rituximab 1st Line (+/- Siltuximab); PEL → CHOP+Rituximab; All: ART Critical**</td></tr><tr><td>**Last-Night**</td><td>"Zika: Flavivirus, Aedes+Sexual(Semen Months), CZS(Microcephaly/Ocular/Contractures), GBS, PCR Serum<7d/Urine<21d/Semen, PRNT, Prevent Condoms M3m/W2m. HAV: Picornavirus, Faecal-Oral+Sexual MSM Outbreaks(Anal-Oral), Anti-HAV IgM, Vacc 2-Dose 0,6-12m (MSM Priority). HEV: GT1/2 Waterborne(Preg Fulminant 10-25% Mort), GT3/4 Pork(Chronic Immunocomp→Ribavirin 3m), Vacc China Only. HHV-8: Gammaherpesvirus, Sexual MSM, KS(ART+LipoDox), MCD(Rituximab), PEL(CHOP+R), HIV Strong Assoc. COVID: RNA Semen 10-20%≤60d, Testicular ACE2, Not STI. Ebola: Semen RNA Months-Years(Infectious Virus~500d), Sex Tx Documented, Survivor Condoms/Abst 2Neg PCR/12m. CMV: Betaherpesvirus, Sexual/Vertical, Congenital(Hearing/Neuro), Immunocomp Reactiv(Retinitis/Colitis), Tx Ganciclovir/Valganciclovir."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Zika</b>: <b>Flavivirus, Mosquito (Aedes) + Sexual (Semen Months); 80% Asymptomatic; Congenital Zika Syndrome (Microcephaly, Ocular, Contractures, Hypertonia, Seizures); GBS; RT-PCR (Serum&lt;7d, Urine&lt;21d, Semen Months); IgM+PRNT; Prevention: Condoms 3m (M), 2m (W); Avoid Pregnancy Travel</b></li><li><b>Hepatitis A</b>: <b>Picornavirus, Faecal-Oral + Sexual (Anal-Oral MSM Outbreaks); Acute Self-Limited Hepatitis; Anti-HAV IgM = Acute; Inactivated Vaccine 2-Dose (0, 6-12m) — MSM PRIORITY; PEP: Vaccine ± HNIG</b></li><li><b>Hepatitis E</b>: <b>GT1/2 Waterborne (Pregnancy: Fulminant, Mortality 10-25%); GT3/4 Zoonotic Pork (Chronic in Immunocompromised → Rapid Cirrhosis); Anti-HEV IgM Acute; Chronic Tx: Reduce Immunosupp + Ribavirin 3m; Vaccine China Only</b></li><li><b>HHV-8/KSHV</b>: <b>Gammaherpesvirus, Sexual (MSM Saliva/Semen); KS (Cutaneous/Mucosal/Visceral — ART Regresses, Liposomal Doxorubicin), MCD (Lymphadenopathy, IL-6 — Rituximab), PEL (Effusions — CHOP+Rituximab); HIV Strong Association; LANA-1 IHC Diagnostic</b></li><li><b>COVID-19</b>: <b>SARS-CoV-2 RNA in Semen 10-20% (Up to 60 Days); Testicular ACE2 Expression; NOT Classified as STI (No Confirmed Sexual Transmission); Respiratory Dominant</b></li><li><b>Ebola</b>: <b>Semen RNA Persistence Months-Years (Median 115d, Max &gt;500d); Infectious Virus Cultured ~180-500d; Sexual Transmission Documented; Survivor Guidance: Condoms/Abstinence Until 2 Negative Semen PCR (Weekly) OR ≥12 Months Post-Onset</b></li><li><b>CMV</b>: <b>Betaherpesvirus; Sexual, Vertical, Transfusion; Congenital (Primary Pregnancy → Sensorineural Hearing Loss, Neurodevelopmental Delay); Immunocompromised Reactivation (Retinitis, Colitis, Pneumonitis); Treatment: Ganciclovir/Valganciclovir/Letermovir</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Zika Virus — Primary Vector and Sexual Transmission Confirmation?</b></li></ol>
+<p>A. Anopheles, No Sexual Transmission  B. <b>Aedes aegypti/albopictus, Sexual Transmission CONFIRMED (Semen Months)</b>  C. Culex, Theoretical Only  D. Aedes, Sexual Transmission Not Documented <i>Answer: B. Aedes Mosquitoes + Sexual Transmission Well Documented (Semen RNA Prolonged, Infectious Virus Cultured).</i></p>
+<ol><li><b>Hepatitis A MSM Outbreaks — Primary Sexual Risk Practice?</b></li></ol>
+<p>A. Vaginal Intercourse  B. <b>Anal-Oral (Rimming)</b>  C. Oral-Genital  D. Mutual Masturbation <i>Answer: B. Anal-Oral Contact (Rimming) = Major Driver of Faecal-Oral Sexual HAV Transmission in MSM.</i></p>
+<ol><li><b>Hepatitis E — Which Genotype Causes Chronic Infection in Immunocompromised?</b></li></ol>
+<p>A. GT1  B. GT2  C. <b>GT3/4</b>  D. All Equal <i>Answer: C. GT3/4 (Zoonotic, Pork) Cause Chronic HEV in Immunocompromised (Transplant, HIV, Steroids).</i></p>
+<ol><li><b>HHV-8 Associated Diseases — Which is NOT Associated?</b></li></ol>
+<p>A. Kaposi Sarcoma  B. Multicentric Castleman Disease  C. Primary Effusion Lymphoma  D. <b>Burkitt Lymphoma</b> <i>Answer: D. Burkitt Lymphoma = EBV (HHV-4) Associated, Not HHV-8.</i></p>
+<ol><li><b>Kaposi Sarcoma in HIV+ Patient — 1st Line Management?</b></li></ol>
+<p>A. Liposomal Doxorubicin  B. Radiation  C. <b>ART (Immune Reconstitution)</b>  D. Rituximab <i>Answer: C. ART = 1st Line for HIV-Associated KS (Immune Reconstitution Induces Regression).</i></p>
+<ol><li><b>SARS-CoV-2 Sexual Transmission — Current Classification?</b></li></ol>
+<p>A. Confirmed STI  B. <b>Not Classified as STI (No Confirmed Sexual Transmission)</b>  C. Probable STI  D. Theoretical Only <i>Answer: B. RNA in Semen ≠ Infectious Virus; No Confirmed Sexual Transmission Cases; Respiratory Dominant.</i></p>
+<ol><li><b>Ebola Virus — Semen PCR Persistence &amp; Survivor Guidance?</b></li></ol>
+<p>A. Weeks, No Restrictions  B. <b>Months-Years (Median 115d); Condoms/Abstinence Until 2 Neg PCR or 12 Months</b>  C. Days, 30-Days Abstinence  D. Not Detected in Semen <i>Answer: B. Semen RNA Median 115 Days (Max &gt;500d); Infectious Virus Cultured ~500d; WHO: 2 Neg Semen PCR or 12 Months.</i></p>
+<ol><li><b>Congenital CMV — Most Common Sequela?</b></li></ol>
+<p>A. Microcephaly  B. <b>Sensorineural Hearing Loss</b>  C. Chorioretinitis  D. Hydrocephalus <i>Answer: B. Sensorineural Hearing Loss = Most Common Sequela of Congenital CMV (Can Be Progressive/Late-Onset).</i></p>
+<ol><li><b>Zika Prevention — Male Partner Exposed, Couple Planning Pregnancy?</b></li></ol>
+<p>A. Condoms 1 Month  B. <b>Condoms/Abstinence 3 Months (WHO) / 6 Months (CDC)</b>  C. No Restrictions  D. Vaccination Available <i>Answer: B. WHO: 3 Months; CDC Conservative: 6 Months for Men with Zika Exposure.</i></p>
+<ol><li><b>HEV Vaccine — Global Availability?</b></li></ol>
+<p>A. WHO Prequalified, Global  B. <b>Licensed China Only (Hecolin®/p239), Not Global</b>  C. Europe/US Approved  D. In Development Only <i>Answer: B. Hecolin® (p239) Licensed in China Only (Efficacy &gt;95% GT1/4); Not WHO Prequalified/Globally Available.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>28-year-old pregnant woman (20 weeks), Partner Returned from Brazil (Zika Endemic) 2 Weeks Ago. Asymptomatic. Best Prevention Counselling?</b></li></ol>
+<p>A. No Risk, Reassure  B. <b>Condoms Throughout Pregnancy (Partner Asymptomatic Sexual Transmission Possible)</b>  C. Amniocentesis Now  D. Termination Advised <i>Answer: B. Asymptomatic Sexual Transmission Documented; Condoms/Abstinence Throughout Pregnancy Recommended if Partner Exposed.</i></p>
+<ol><li><b>45-year-old HIV+ Man (CD4 350, on ART), Chronic HEV GT3 (RNA Positive 6 Months, Fibrosis F2). Management?</b></li></ol>
+<p>A. No Treatment, Monitor  B. <b>Reduce Immunosuppression if Possible + Ribavirin 600-1000mg/Day × 3 Months</b>  C. PegIFN-α  D. Sofosbuvir/Velpatasvir <i>Answer: B. Chronic HEV GT3 in Immunocompromised → Reduce Immunosupp + Ribavirin 3 Months (Off-Label, Monitor Haemolysis).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-C, 4-D, 5-C, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[3.6 Other Viral STIs.md]] — Main Detailed Other Viral STIs Note (New Format)</li><li>[[3.5 Mpox.md]] — Mpox (Separate Detailed Note)</li><li>[[3.4 Hepatitis B &amp; C.md]] — Hepatitis B &amp; C</li><li>[[6. HIV-AIDS Cross-Reference.md]] — HIV &amp; Viral Co-infections</li><li>[[Contact Tracing and Partner Notification.md]] — PN for Viral STIs</li><li>[[Sexually Transmitted Infections MOC.md]] — Master Index</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Version:</b> Full FCPS/MRCP Template Upgrade</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Other Viral STIs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

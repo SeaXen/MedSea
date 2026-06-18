@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lithium Poisoning — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Lithium Poisoning</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Differentiate acute vs chronic lithium toxicity</li><li>Apply dialysis criteria for each scenario</li><li>Recognize nephrogenic diabetes insipidus</li><li>Manage neurotoxicity (SILENT syndrome)</li><li>Monitor lithium levels correctly (timing critical)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Lithium poisoning = toxicity from lithium carbonate/citrate causing <b>neurological, renal, endocrine, and GI</b> manifestations. Narrow therapeutic index (0.4-1.0 mmol/L).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Mechanism</b>: competes with Mg²⁺/Na⁺ → inhibits <b>GSK-3β</b>, <b>inositol monophosphatase</b> (IMPase) → ↓ inositol recycling → ↓ PIP₂ signaling → mood stabilization</li><li><b>Renal</b>: <b>inhibits ADH action</b> on collecting duct (↓ aquaporin-2) → <b>nephrogenic DI</b> → polyuria, polydipsia, <b>hypernatremia</b></li><li><b>Thyroid</b>: inhibits thyroid hormone release → <b>hypothyroidism</b>, goitre</li><li><b>Pharmacokinetics</b>: <b>no protein binding</b>, small Vd (~0.6-0.9 L/kg), <b>renal excretion</b> (60% reabsorbed proximally), <b>long half-life 18-36h</b> (prolonged in renal failure/elderly)</li><li><b>Crosses BBB slowly</b> — neurotoxicity lags behind serum levels in acute OD</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Acute Toxicity (Intentional Overdose)</div>
+<ul><li><b>GI</b>: nausea, vomiting, diarrhea (early, prominent)</li><li><b>Neuro</b>: coarse tremor, hyperreflexia, ataxia, nystagmus, confusion, seizures, coma</li><li><b>CV</b>: hypotension, arrhythmias (rare)</li><li><b>Renal</b>: usually normal initially</li></ul>
+<div class="sub-h">Chronic Toxicity (Therapeutic Accumulation)</div>
+<ul><li><b>Neuro</b>: <b>SILENT syndrome</b> — <b>S</b>yndrom of <b>I</b>rreversible <b>L</b>ithium-<b>E</b>ffectuated <b>N</b>euro<b>T</b>oxicity: cerebellar dysfunction (ataxia, dysarthria, nystagmus), cognitive impairment, <b>peripheral neuropathy</b> — <b>may be PERMANENT</b></li><li><b>Renal</b>: <b>nephrogenic DI</b> — polyuria (&gt; 3L/d), polydipsia, <b>hypernatremia</b>, renal tubular damage (interstitial fibrosis)</li><li><b>Thyroid</b>: hypothyroidism, goitre</li><li><b>CV</b>: ECG changes (T-wave flattening, U waves)</li><li><b>GI</b>: less prominent</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Acute vs Chronic Comparison</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Acute OD</th><th>Chronic Toxicity</th></tr><tr><td>---------</td><td>----------</td><td>------------------</td></tr><tr><td>**Serum level**</td><td>Often > 4 mmol/L</td><td>Often 1.5-2.5 mmol/L</td></tr><tr><td>**GI symptoms**</td><td>**Prominent** (vomiting, diarrhea)</td><td>Mild/absent</td></tr><tr><td>**Neuro symptoms**</td><td>Lag behind level (BBB crossing)</td><td>**Correlate with level**</td></tr><tr><td>**Nephrogenic DI**</td><td>Rare</td><td>**Hallmark**</td></tr><tr><td>**SILENT syndrome**</td><td>No</td><td>**Yes** (permanent risk)</td></tr><tr><td>**Dialysis threshold**</td><td>**> 4 mmol/L**</td><td>**> 2.5 mmol/L + neuro/renal/elderly**</td></tr><tr><td>**Dialysis duration**</td><td>Shorter</td><td>Longer (tissue redistribution)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Serum lithium level</b> — <b>critical timing</b>: draw <b>≥ 12h post-dose</b> (steady state); acute OD — repeat q6-12h (distribution phase)</li><li><b>Renal function</b>: urea, creatinine, eGFR</li><li><b>Electrolytes</b>: <b>Na⁺ (hypernatremia)</b>, K⁺, Ca²⁺, Mg²⁺</li><li><b>Thyroid function</b>: TSH, free T4 (hypothyroidism)</li><li><b>ABG/VBG</b>: metabolic acidosis possible</li><li><b>ECG</b>: T-wave changes, arrhythmias</li><li><b>Paracetamol level</b> (always)</li><li><b>CK</b>: if seizures/rhabdo</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Supportive Care</div>
+<ul><li><b>Airway</b>: protect if GCS &lt; 8, seizures</li><li><b>Fluids</b>: <b>NS 1-2 L bolus then 150-200 mL/hr</b> — <b>maintain urine output &gt; 1.5 mL/kg/hr</b>; <b>avoid saline overload</b> (lung injury); <b>NS preferred</b> (Na⁺ enhances Li⁺ clearance)</li><li><b>Correct hypernatremia</b> slowly (free water deficit calculation)</li><li><b>Seizures</b>: benzodiazepines (lorazepam/diazepam) — <b>phenytoin less effective</b></li><li><b>Monitor</b>: neuro status q2-4h, fluid balance, electrolytes q4-6h</li></ul>
+<div class="sub-h">2. Decontamination</div>
+<ul><li><b>Activated charcoal</b>: <b>NOT effective</b> (lithium not adsorbed)</li><li><b>Whole bowel irrigation</b>: <b>INDICATED for sustained-release</b> (lithium carbonate SR) — PEG 1-2 L/hr until clear effluent</li><li><b>Gastric lavage</b>: not indicated</li></ul>
+<div class="sub-h">3. Hemodialysis — **DEFINITIVE TREATMENT**</div>
+<p><b>Indications (ANY ONE)</b>:</p>
+<table class="ctable"><tr><th>Scenario</th><th>Criteria</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Acute OD**</td><td>**Level > 4.0 mmol/L** (or > 2.5 mmol/L if severe neuro/cardiac)</td></tr><tr><td>**Chronic toxicity**</td><td>**Level > 2.5 mmol/L** + **neuro symptoms / renal impairment (Cr > 150) / elderly (> 65)**</td></tr><tr><td>**Any**</td><td>**Severe neurotoxicity** (confusion, seizures, coma) regardless of level</td></tr><tr><td>**Any**</td><td>**Renal failure** (AKI, anuria)</td></tr><tr><td>**Any**</td><td>**Life-threatening cardiac arrhythmia**</td></tr></table>
+<p><b>Dialysis Prescription</b>:</p>
+<ul><li><b>High-flux dialyzer</b>, blood flow 300-400 mL/min, dialysate 500-800 mL/min</li><li><b>Duration</b>: 4-6h sessions</li><li><b>Frequency</b>: <b>daily</b> until level &lt; 1.0 mmol/L (chronic) or &lt; 1.5 mmol/L (acute)</li><li><b>Rebound</b>: expect <b>20-30% rebound</b> post-dialysis (redistribution from tissues) — <b>repeat if needed</b></li><li><b>CRRT</b>: alternative if hemodynamically unstable</li></ul>
+<div class="sub-h">4. No Specific Antidote</div>
+<ul><li><b>Sodium polystyrene sulfonate</b> — not recommended</li><li><b>Furosemide</b> — may ↑ Li⁺ clearance but risk volume depletion</li><li><b>Aminophylline/theophylline</b> — historical, not used</li></ul>
+<div class="sub-h">5. Drug Interactions (Precipitants of Chronic Toxicity)</div>
+<ul><li><b>ACEi/ARB</b> (↓ GFR, ↑ proximal reabsorption)</li><li><b>Diuretics</b> (thiazide &gt; loop — volume depletion → ↑ Li⁺ reabsorption)</li><li><b>NSAIDs</b> (↓ renal prostaglandins → ↓ GFR)</li><li><b>Antibiotics</b>: metronidazole, tetracyclines (rare)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>SILENT syndrome</b> (irreversible cerebellar/neuro)</li><li>Permanent nephrogenic DI (chronic interstitial nephritis)</li><li>Chronic kidney disease</li><li>Hypothyroidism</li><li>Rhabdomyolysis (seizures)</li><li>Death (rare with dialysis)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Acute</b>: good with early dialysis; neuro recovery usual</li><li><b>Chronic</b>: <b>SILENT syndrome may be permanent</b>; DI may persist; neuro recovery incomplete</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Therapeutic range</b>: 0.4-1.0 mmol/L; <b>toxic &gt; 1.5 mmol/L</b></li><li><b>Acute vs Chronic</b>: GI prominent in acute; DI + neuro in chronic</li><li><b>Dialysis thresholds</b>: <b>Acute &gt; 4 mmol/L</b>; <b>Chronic &gt; 2.5 mmol/L + neuro/renal/elderly</b></li><li><b>Nephrogenic DI</b> = polyuria, polydipsia, <b>hypernatremia</b> (ADH resistance)</li><li><b>SILENT syndrome</b> = irreversible cerebellar/peripheral neuropathy (chronic)</li><li><b>Level timing</b>: <b>≥ 12h post-dose</b> (steady state); acute — repeat q6-12h</li><li><b>NS preferred for hydration</b> (Na⁺ competes with Li⁺ for reabsorption)</li><li><b>Charcoal NOT effective</b>; <b>WBI for SR formulations</b></li><li><b>Rebound post-dialysis</b> 20-30% — repeat daily until level safe</li><li><b>Precipitants</b>: ACEi/ARB, thiazides, NSAIDs</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Acute vs chronic lithium toxicity features</li><li>Dialysis indications (acute vs chronic thresholds)</li><li>Nephrogenic DI mechanism and management</li><li>SILENT syndrome</li><li>Lithium level timing</li><li>Drug interactions precipitating toxicity</li><li>Why NS not D5W for hydration?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Acute level 3.5 = no dialysis</b> → true (threshold 4.0), but neuro symptoms = dialyze</li><li><b>Chronic level 2.0 = safe</b> → NO if neuro symptoms/renal impairment/elderly</li><li><b>Charcoal for lithium</b> → NOT effective</li><li><b>D5W for hydration</b> → NO, NS (Na⁺ competes)</li><li><b>Level at 6h post-dose</b> → NOT steady state (distribution phase)</li><li><b>SILENT = reversible</b> → NO, <b>permanent</b></li><li><b>Polyuria = diabetes mellitus</b> → check glucose, think nephrogenic DI</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>LITHIUM DIALYSIS</b>: <b>A</b>cute <b>&gt;4</b>, <b>C</b>hronic <b>&gt;2.5</b> + <b>N</b>euro/<b>R</b>enal/<b>E</b>lderly</li><li><b>NEPHROGENIC DI</b>: <b>P</b>olyuria, <b>P</b>olydipsia, <b>H</b>yper<b>N</b>atremia</li><li><b>SILENT</b>: <b>S</b>yndrom of <b>I</b>rreversible <b>L</b>ithium <b>E</b>ffectuated <b>N</b>euro<b>T</b>oxicity</li><li><b>CHRONIC TOXICITY</b>: <b>D</b>I, <b>H</b>ypothyroidism, <b>I</b>nterstitial <b>N</b>ephropathy, <b>C</b>erebellar <b>N</b>eurotoxicity</li><li><b>PRECIPITANTS</b>: <b>A</b>CEi/ARB, <b>D</b>iuretics (thiazide), <b>N</b>SAIDs</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Lithium Poisoning))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Forms</div>
+<div class="mm-node mm-l3">– Acute: OD, GI Prominent, Level&gt;4 Dialysis</div>
+<div class="mm-node mm-l3">– Chronic: Accumulation, DI+Neuro, Level&gt;2.5+Features Dialysis</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– GI: N/V/D (Acute)</div>
+<div class="mm-node mm-l3">– Neuro: Tremor, Confusion, Seizures, SILENT (Chronic)</div>
+<div class="mm-node mm-l3">– Renal: Nephrogenic DI (Polyuria, HyperNa)</div>
+<div class="mm-node mm-l3">– Thyroid: Hypothyroidism</div>
+<div class="mm-node mm-l3">– CV: T-wave flattening</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Level Timing: &gt;=12h Post-Dose</div>
+<div class="mm-node mm-l3">– Renal, Thyroid, Electrolytes</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Hydration: NS (Na+ competes)</div>
+<div class="mm-node mm-l3">– WBI (SR)</div>
+<div class="mm-node mm-l3">– Dialysis (Thresholds)</div>
+<div class="mm-node mm-l3">– No Antidote</div>
+<div class="mm-node mm-l3">– No Charcoal</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– SILENT (Permanent)</div>
+<div class="mm-node mm-l3">– Permanent DI</div>
+<div class="mm-node mm-l3">– CKD</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Lithium Toxicity</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Li Level (&gt;=12h post-dose)\n+ Renal, Thyroid, Na+, CK, ECG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Acute OD or Chronic?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Level &gt; 4.0 mmol/L?</div>
+<div class="fc-node" data-id="H">Level &gt; 2.5 mmol/L?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hemodialysis</div>
+<div class="fc-node" data-id="F">Severe Neuro/Cardiac?</div>
+<div class="fc-node" data-id="I">Neuro Symptoms\nor Renal Impairment\nor Elderly?</div>
+<div class="fc-node" data-id="G">NS Hydration 1-2L Bolus\nThen 150-200mL/hr\nWBI if SR</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Daily HD Until Level\nAcute &lt;1.5 / Chronic &lt;1.0\nExpect 20-30% Rebound</div>
+<div class="fc-node" data-id="J">Monitor Level q6-12h\nNeuro q2-4h\nFluid Balance\nElectrolytes q4-6h</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Acute vs chronic comparison table</li><li>Dialysis criteria card</li><li>SILENT syndrome features</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Lithium toxicity and dialysis (Toxbase, Nephrology)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Therapeutic</b>: 0.4-1.0 mmol/L</li><li><b>Acute</b>: GI prominent, level &gt; 4 = dialysis</li><li><b>Chronic</b>: DI (polyuria, hyperNa), neuro, level &gt; 2.5 + features = dialysis</li><li><b>Level timing</b>: ≥ 12h post-dose</li><li><b>Hydration</b>: NS (Na⁺ competes), NOT D5W</li><li><b>Charcoal NO; WBI for SR</b></li><li><b>Dialysis</b>: daily until level safe, expect rebound</li><li><b>SILENT</b> = permanent cerebellar/neuro (chronic)</li><li><b>Precipitants</b>: ACEi/ARB, thiazides, NSAIDs</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State acute vs chronic dialysis thresholds</li><li>Describe nephrogenic DI triad</li><li>Explain SILENT syndrome</li><li>Why NS not D5W for hydration?</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Therapeutic range 0.4-1.0 mmol/L</li><li>Acute: GI, &gt;4 mmol/L dialysis</li><li>Chronic: DI + neuro, &gt;2.5 + features dialysis</li><li>Level ≥ 12h post-dose</li><li>NS hydration (Na⁺ competes)</li><li>SILENT = permanent (chronic)</li><li>Charcoal NO, WBI for SR</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Dialysis rebound 20-30%</li><li>Precipitants: ACEi/ARB, thiazides, NSAIDs</li><li>Hypothyroidism association</li><li>CRRT if unstable</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Specific SILENT features (ataxia, dysarthria, neuropathy)</li><li>Lithium in pregnancy (Ebstein's anomaly)</li><li>Peritoneal dialysis less effective</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Mechanism and pharmacokinetics</li><li>Acute vs chronic comparison table</li><li>Investigations (level timing critical)</li><li>Management: hydration, WBI, dialysis thresholds</li><li>Complications (SILENT, DI, CKD)</li><li>Drug interactions</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Acute vs chronic table</li><li>Dialysis criteria box</li><li>Level timing box</li><li>SILENT syndrome</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Lithium: therapeutic 0.4-1.0, toxic &gt;1.5"</li><li>"Acute: GI prominent, dialysis &gt;4 mmol/L"</li><li>"Chronic: DI + neuro, dialysis &gt;2.5 + symptoms"</li><li>"Level: ≥12h post-dose (steady state)"</li><li>"Hydration: NS (Na⁺ competes with Li⁺ reabsorption)"</li><li>"SILENT = irreversible cerebellar/neuro (chronic)"</li><li>"Charcoal NO; WBI for SR"</li><li>"Rebound 20-30% post-HD — repeat daily"</li><li>"Precipitants: ACEi/ARB, thiazides, NSAIDs"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Elderly on lithium + thiazide + ACEi → confusion, level 2.2 → DIALYZE (chronic + renal + elderly)</li><li>Acute OD level 4.5 at 6h → wait for 12h level? NO, clinical toxicity + rising level → dialyze</li><li>Chronic patient with polyuria, hypernatremia → nephrogenic DI, water restriction + NS</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Acute: GI, Dialysis &gt;4</li><li>Chronic: DI+Neuro, Dialysis &gt;2.5+Features</li><li>Level: &gt;=12h</li><li>NS Hydration</li><li>SILENT = Permanent</li><li>Charcoal NO</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Lithium poisoning = narrow therapeutic index (0.4-1.0 mmol/L). <b>Acute</b>: GI prominent, dialysis &gt; 4 mmol/L. <b>Chronic</b>: nephrogenic DI (polyuria, hypernatremia) + neurotoxicity, dialysis &gt; 2.5 mmol/L + neuro/renal/elderly. <b>Level ≥ 12h post-dose</b>. <b>Hydration with NS</b> (Na⁺ competes). <b>SILENT syndrome</b> = irreversible cerebellar/peripheral neuro (chronic). <b>Charcoal NO; WBI for SR</b>. Dialysis daily until level safe, expect 20-30% rebound.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Question 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Question 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Question 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Question 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Question 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Question 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Question 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Question 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Question 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Question 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Scenario 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Scenario 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Scenario 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Scenario 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Scenario 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Scenario 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Scenario 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Scenario 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Scenario 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Scenario 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Flashcard 1 question</li></ul>
+<p>A: Flashcard 1 answer</p>
+<ul><li>Q: Flashcard 2 question</li></ul>
+<p>A: Flashcard 2 answer</p>
+<ul><li>Q: Flashcard 3 question</li></ul>
+<p>A: Flashcard 3 answer</p>
+<ul><li>Q: Flashcard 4 question</li></ul>
+<p>A: Flashcard 4 answer</p>
+<ul><li>Q: Flashcard 5 question</li></ul>
+<p>A: Flashcard 5 answer</p>
+<ul><li>Q: Flashcard 6 question</li></ul>
+<p>A: Flashcard 6 answer</p>
+<ul><li>Q: Flashcard 7 question</li></ul>
+<p>A: Flashcard 7 answer</p>
+<ul><li>Q: Flashcard 8 question</li></ul>
+<p>A: Flashcard 8 answer</p>
+<ul><li>Q: Flashcard 9 question</li></ul>
+<p>A: Flashcard 9 answer</p>
+<ul><li>Q: Flashcard 10 question</li></ul>
+<p>A: Flashcard 10 answer</p>
+<ul><li>Q: Flashcard 11 question</li></ul>
+<p>A: Flashcard 11 answer</p>
+<ul><li>Q: Flashcard 12 question</li></ul>
+<p>A: Flashcard 12 answer</p>
+<ul><li>Q: Flashcard 13 question</li></ul>
+<p>A: Flashcard 13 answer</p>
+<ul><li>Q: Flashcard 14 question</li></ul>
+<p>A: Flashcard 14 answer</p>
+<ul><li>Q: Flashcard 15 question</li></ul>
+<p>A: Flashcard 15 answer</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Lithium Poisoning · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Infective Endocarditis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Infective Endocarditis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Apply Modified Duke Criteria for definite/possible/rejected IE</li><li>Obtain optimal blood cultures (timing, volume, sets)</li><li>Select empirical antibiotics by valve type, timing, and risk factors</li><li>Recognise complications: heart failure, embolic events, abscess, conduction abnormalities</li><li>Apply surgical indications and timing (urgent vs elective)</li><li>Manage special situations: prosthetic valve, device-related, culture-negative, right-sided, HIV</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Native valve endocarditis (NVE)**</td><td>Infection of native valve leaflets</td></tr><tr><td>**Prosthetic valve endocarditis (PVE)**</td><td>Infection of prosthetic valve (mechanical/bioprosthetic) or reconstruction material</td></tr><tr><td>**Early PVE**</td><td><1 year post-implant (usually nosocomial, Staphylococcus, Gram-neg, fungi)</td></tr><tr><td>**Late PVE**</td><td>>1 year post-implant (community-acquired flora similar to NVE)</td></tr><tr><td>**Cardiac device-related IE (CDRIE)**</td><td>Infection of pacemaker/ICD leads, generator pocket</td></tr><tr><td>**Right-sided IE**</td><td>Tricuspid/pulmonic valve (IVDU, central lines)</td></tr><tr><td>**Culture-negative IE**</td><td>Clinical IE with negative blood cultures (prior antibiotics, fastidious organisms)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Modified Duke Criteria (2000 / ESC 2015)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">**Major Criteria**</div>
+<ol><li><b>Positive blood cultures for typical IE organism:</b></li></ol>
+<ul><li>Typical microorganism from <b>2 separate blood cultures</b>: <i>Viridans streptococci, Streptococcus gallolyticus (bovis), HACEK, Staphylococcus aureus, Enterococcus faecalis</i> OR</li><li><b>Persistently positive</b> blood cultures: ≥2 positive cultures &gt;12h apart, or all of 3/4+ sets, or single positive culture for Coxiella burnetii / antiphase I IgG &gt;1:800</li></ul>
+<ol><li><b>Evidence of endocardial involvement:</b></li></ol>
+<ul><li><b>Echocardiogram (TTE/TOE):</b> Oscillating intracardiac mass (vegetation) on valve/supporting structures, abscess, new partial dehiscence of prosthetic valve</li><li><b>New valvular regurgitation</b> (worsening of pre-existing not sufficient)</li></ul>
+<div class="sub-h">**Minor Criteria**</div>
+<ol><li><b>Predisposition:</b> Predisposing heart condition or IVDU</li><li><b>Fever:</b> ≥38°C</li><li><b>Vascular phenomena:</b> Major arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial haemorrhage, conjunctival haemorrhages, Janeway lesions</li><li><b>Immunological phenomena:</b> Glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor</li><li><b>Microbiological:</b> Positive blood culture not meeting major criterion (e.g., single culture, atypical organism), serological evidence of active infection</li></ol>
+<div class="sub-h">**Diagnosis**</div>
+<table class="ctable"><tr><th>Classification</th><th>Criteria</th></tr><tr><td>----------------</td><td>----------</td></tr><tr><td>**Definite IE**</td><td>2 Major OR 1 Major + 3 Minor OR 5 Minor</td></tr><tr><td>**Possible IE**</td><td>1 Major + 1 Minor OR 3 Minor</td></tr><tr><td>**Rejected**</td><td>Firm alternative diagnosis, resolution with ≤4 days antibiotics, no pathological evidence at surgery/autopsy</td></tr></table>
+<div class="callout">[!tip] <b>TOE superior to TTE</b> (sensitivity ~95% vs ~65% for vegetations). <b>Repeat TOE in 7–10d if initial negative but high suspicion.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Microbiology — Aetiology by Clinical Scenario</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Common Organisms</th><th>%</th></tr><tr><td>----------</td><td>------------------</td><td>---</td></tr><tr><td>**Native valve (community-acquired)**</td><td>*Streptococcus viridans* (20–30%), *S. gallolyticus (bovis)* (5–10%), *Staphylococcus aureus* (20–30%), *Enterococcus* (5–10%), HACEK (1–3%)</td><td>~80%</td></tr><tr><td>**Native valve (healthcare-associated)**</td><td>*S. aureus* (MRSA/MSSA), *Enterococcus*, CoNS, Gram-negatives</td><td></td></tr><tr><td>**Prosthetic valve (early <1y)**</td><td>CoNS (30–40%), *S. aureus*, Gram-negatives (*Pseudomonas*, *Serratia*), *Candida*, *Cutibacterium*</td><td></td></tr><tr><td>**Prosthetic valve (late >1y)**</td><td>Similar to NVE: *Viridans strep*, *S. gallolyticus*, *Enterococcus*, *S. aureus*</td><td></td></tr><tr><td>**IVDU (right-sided)**</td><td>*S. aureus* (60–80%), *Enterococcus*, *Streptococci*, Gram-negatives, *Candida*</td><td></td></tr><tr><td>**Cardiac device-related**</td><td>CoNS (50–70%), *S. aureus*, *Enterococcus*, Gram-negatives, *Cutibacterium*</td><td></td></tr><tr><td>**Culture-negative**</td><td>Prior antibiotics (40%), *Bartonella*, *Coxiella* (Q fever), *Brucella*, *Tropheryma whipplei*, *Mycoplasma*, *Chlamydia*, *Legionella*, fungi, *Mycobacteria*</td><td></td></tr></table>
+<div class="callout">[!important] ***S. gallolyticus* (bovis) bacteraemia/IE → MANDATORY COLONOSCOPY<b> (association with colonic adenoma/carcinoma 25–50%). </b>HACEK** = <i>Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella</i> — subacute, often culture-negative if not held long enough.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Blood Culture Optimisation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Standard</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Sets**</td><td>**3 sets** (each set = 1 aerobic + 1 anaerobic bottle) from **different venipuncture sites**</td></tr><tr><td>**Volume**</td><td>**20–30mL per set** (10mL per bottle) — low volume ↓ sensitivity</td></tr><tr><td>**Timing**</td><td>**Before antibiotics**; if already on abx → culture at trough, hold abx if possible</td></tr><tr><td>**Incubation**</td><td>**14 days** (standard 5d misses HACEK, *Bartonella*, *Brucella*, *Coxiella*, *T. whipplei*)</td></tr><tr><td>**Special requests**</td><td>Prolonged incubation, lysis-centrifugation (fungi, mycobacteria), PCR/16S rRNA, serology (Coxiella phase I/II, Bartonella, Brucella)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Frequency</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Fever**</td><td>90–95%</td></tr><tr><td>**New/Changed murmur**</td><td>85–90%</td></tr><tr><td>**Fatigue, weight loss, anorexia**</td><td>70–80%</td></tr><tr><td>**Embolic phenomena**</td><td>20–50% (stroke, splenic infarct, mesenteric ischaemia, mycotic aneurysm)</td></tr><tr><td>**Immunological phenomena**</td><td>10–20% (Osler nodes, Roth spots, Janeway lesions, glomerulonephritis)</td></tr><tr><td>**Splenomegaly**</td><td>30–50%</td></tr><tr><td>**Heart failure**</td><td>30–40% (acute AR/MR, valve perforation)</td></tr><tr><td>**Conduction abnormalities**</td><td>5–10% (PR prolongation, AV block = perivalvular abscess)</td></tr></table>
+<div class="sub-h">Peripheral Signs (Classic but Uncommon)</div>
+<table class="ctable"><tr><th>Sign</th><th>Description</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**Osler nodes**</td><td>Tender, erythematous nodules on pulp of fingers/toes (immune complex)</td></tr><tr><td>**Janeway lesions**</td><td>Non-tender, haemorrhagic macules on palms/soles (septic emboli)</td></tr><tr><td>**Roth spots**</td><td>Retinal haemorrhages with pale centres</td></tr><tr><td>**Splinter haemorrhages**</td><td>Linear subungual haemorrhages</td></tr><tr><td>**Conjunctival haemorrhages**</td><td>Pale conjunctivae with petechiae</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Echocardiography</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Modality</th><th>Sensitivity</th><th>Role</th></tr><tr><td>----------</td><td>-------------</td><td>------</td></tr><tr><td>**TTE**</td><td>~65%</td><td>First-line; assess valve function, haemodynamics, complications</td></tr><tr><td>**TOE**</td><td>~95%</td><td>**Definitive**; vegetations <5mm, abscess, fistula, prosthetic dehiscence, prosthetic valve detail</td></tr><tr><td>**Repeat TOE**</td><td>—</td><td>7–10d if initial negative + high suspicion; or new complication</td></tr></table>
+<div class="callout">[!tip] <b>Vegetation size &gt;10mm = higher embolic risk.</b> <b>Mobile/pedunculated &gt; sessile.</b> <b>Abscess = perivalvular extension → conduction abnormalities, fistula, dehiscence.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Empirical Antibiotic Therapy (Before Culture Results)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Scenario</th><th>Regimen</th><th>Notes</th></tr><tr><td>-------------------</td><td>---------</td><td>-------</td></tr><tr><td>**Native valve (community-acquired)**</td><td>**Ceftriaxone 2g IV 12h + Vancomycin 15–20mg/kg IV 6h** (+/- Gentamicin 3mg/kg IV OD ×2w)</td><td>Covers viridans strep, *S. gallolyticus*, *S. aureus*, *Enterococcus*; gentamicin for synergy (optional, nephrotoxicity)</td></tr><tr><td>**Native valve (healthcare-associated / IVDU)**</td><td>**Vancomycin 15–20mg/kg IV 6h + Ceftriaxone 2g IV 12h + Gentamicin 3mg/kg IV OD**</td><td>MRSA coverage; gentamicin for *Enterococcus* synergy if suspected</td></tr><tr><td>**Prosthetic valve (early <1y)**</td><td>**Vancomycin 15–20mg/kg 6h + Meropenem 2g 8h + Rifampicin 300mg PO/IV 12h + Gentamicin 3mg/kg OD ×2w**</td><td>CoNS, *S. aureus*, Gram-neg; rifampicin for biofilm</td></tr><tr><td>**Prosthetic valve (late >1y)**</td><td>**Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h + Rifampicin 300mg 12h + Gentamicin 3mg/kg OD ×2w**</td><td>Similar to NVE + rifampicin</td></tr><tr><td>**Right-sided IE (IVDU, tricuspid)**</td><td>**Ceftriaxone 2g 12h + Flucloxacillin 2g 4h (or Cefazolin) + Gentamicin 3mg/kg OD ×2w** (+/- Vancomycin if MRSA risk)</td><td>*S. aureus* dominant; shorter course possible (2–4w)</td></tr><tr><td>**Penicillin allergy (anaphylaxis)**</td><td>**Vancomycin + Meropenem + Gentamicin + Rifampicin** (avoid cephalosporins)</td><td></td></tr><tr><td>**Culture-negative (subacute, community)**</td><td>**Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h + Gentamicin 3mg/kg OD ×2w**</td><td>Add doxycycline 100mg 12h if *Bartonella/Coxiella* suspected</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Targeted Therapy — Duration & Regimens</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Organism / Scenario</th><th>Regimen</th><th>Duration</th></tr><tr><td>---------------------</td><td>---------</td><td>----------</td></tr><tr><td>**Viridans streptococci / S. gallolyticus (NVE, susceptible)**</td><td>**Penicillin G 24MU/day IV ÷4–6h OR Ceftriaxone 2g IV 12h** + **Gentamicin 3mg/kg IV OD ×2w** (synergy for shorter course)</td><td>**4 weeks** (2w if uncomplicated + gentamicin)</td></tr><tr><td>**Viridans streptococci (penicillin MIC 0.12–0.5)**</td><td>Ceftriaxone 2g 12h + Gentamicin 3mg/kg OD ×4–6w</td><td>4–6 weeks</td></tr><tr><td>**Enterococcus faecalis (NVE, susceptible)**</td><td>**Ampicillin 12g/day IV ÷4–6h + Ceftriaxone 2g 12h** (preferred, less nephrotoxicity) OR **Ampicillin + Gentamicin 3mg/kg OD**</td><td>**6 weeks** (4w if ampicillin-ceftriaxone)</td></tr><tr><td>**Enterococcus faecalis (high-level aminoglycoside resistance)**</td><td>Ampicillin 12g/day IV ÷4–6h + Ceftriaxone 2g 12h</td><td>6 weeks</td></tr><tr><td>**Enterococcus faecium (usually ampicillin-resistant)**</td><td>**Vancomycin 15–20mg/kg 6h + Daptomycin 8–10mg/kg IV OD** (or Linezolid)</td><td>6 weeks</td></tr><tr><td>**S. aureus MSSA (NVE)**</td><td>**Flucloxacillin 2g IV 4h (or Cefazolin 2g 8h)** + **Gentamicin 3mg/kg OD ×2w**</td><td>**6 weeks** (NVE); 4w if uncomplicated right-sided</td></tr><tr><td>**S. aureus MRSA (NVE)**</td><td>**Vancomycin 15–20mg/kg 6h (trough 15–20)** + **Gentamicin 3mg/kg OD ×2w**</td><td>6 weeks</td></tr><tr><td>**S. aureus (PVE)**</td><td>**Vancomycin + Rifampicin 300mg 12h + Gentamicin 3mg/kg OD ×2w** (MSSA: flucloxacillin/cefazolin instead of vancomycin)</td><td>**6 weeks**</td></tr><tr><td>**CoNS (PVE)**</td><td>**Vancomycin + Rifampicin 300mg 12h + Gentamicin 3mg/kg OD ×2w**</td><td>6 weeks</td></tr><tr><td>**HACEK**</td><td>Ceftriaxone 2g 12h</td><td>4 weeks</td></tr><tr><td>**Culture-negative (suspected Bartonella)**</td><td>Ceftriaxone 2g 12h + Doxycycline 100mg 12h + Gentamicin 3mg/kg OD ×2w</td><td>6 weeks</td></tr><tr><td>**Culture-negative (suspected Coxiella / Q fever)**</td><td>**Doxycycline 100mg 12h + Hydroxychloroquine 200mg 8h** (raise phagosomal pH)</td><td>**18 months**</td></tr><tr><td>**Fungal (Candida)**</td><td>**Liposomal Amphotericin B 3–5mg/kg + Flucytosine 25mg/kg 6h** → step-down fluconazole/echinocandin</td><td>**6 weeks post-valve replacement** (surgery mandatory)</td></tr></table>
+<div class="callout">[!key] <b>Key Principle: Rifampicin ESSENTIAL for PVE and device-related IE</b> (biofilm penetration). <b>Gentamicin synergy shortens course for strep/Enterococcus but nephrotoxicity risk.</b> <b>Ampicillin-ceftriaxone preferred over ampicillin-gentamicin for E. faecalis.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Surgical Indications (ESC 2017 / AHA 2015)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">**Class I (Strong Recommendation)**</div>
+<table class="ctable"><tr><th>Indication</th><th>Timing</th></tr><tr><td>------------</td><td>--------</td></tr><tr><td>**Heart failure** due to valve dysfunction (acute severe AR/MR, dehiscence)</td><td>**URGENT / EMERGENCY**</td></tr><tr><td>**Uncontrolled infection**: persistent fever/bacteraemia >5–7d appropriate antibiotics, abscess, fistula, enlarging vegetation</td><td>**URGENT** (within days)</td></tr><tr><td>**Recurrent emboli** despite appropriate antibiotics + large (>10mm) mobile vegetation</td><td>**URGENT**</td></tr><tr><td>**Fungal / multidrug-resistant organism** IE</td><td>**URGENT**</td></tr></table>
+<div class="sub-h">**Class IIa (Reasonable)**</div>
+<table class="ctable"><tr><th>Indication</th><th>Timing</th></tr><tr><td>------------</td><td>--------</td></tr><tr><td>**Large vegetation >10mm** + other high-risk features (embolic, severe valve stenosis)</td><td>**ELECTIVE** (after 1–2w antibiotics if stable)</td></tr><tr><td>**Vegetation >15mm** (high embolic risk)</td><td>Consider early surgery</td></tr><tr><td>**Perivalvular abscess / fistula** without HF</td><td>**URGENT / ELECTIVE**</td></tr><tr><td>**Severe valve stenosis**</td><td>**ELECTIVE**</td></tr></table>
+<div class="sub-h">**Neurological Complications &amp; Surgery Timing**</div>
+<table class="ctable"><tr><th>Neurological Status</th><th>Surgery Timing</th></tr><tr><td>---------------------</td><td>----------------</td></tr><tr><td>**Ischaemic stroke WITHOUT haemorrhage**</td><td>**Delay NOT required** — surgery if indicated (Class IIa)</td></tr><tr><td>**Ischaemic stroke WITH haemorrhagic transformation**</td><td>Delay **≥4 weeks** (if possible)</td></tr><tr><td>**Intracranial haemorrhage**</td><td>Delay **≥4 weeks**</td></tr><tr><td>**Brain abscess / mycotic aneurysm**</td><td>Multidisciplinary; often delay surgery</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Features</th><th>Management</th></tr><tr><td>--------------</td><td>----------</td><td>------------</td></tr><tr><td>**Heart failure**</td><td>Acute AR/MR, valve perforation, chordal rupture</td><td>**Urgent surgery**</td></tr><tr><td>**Perivalvular abscess**</td><td>New conduction defect (PR↑, AV block), fistula, dehiscence</td><td>Surgery (often urgent); TOE for diagnosis</td></tr><tr><td>**Embolic events**</td><td>Stroke (MCA), splenic infarct, mesenteric ischaemia, mycotic aneurysm, septic pulmonary emboli (right-sided)</td><td>Anticoagulation generally AVOIDED; surgery if recurrent/large veg</td></tr><tr><td>**Septic metastatic foci**</td><td>Osteomyelitis, discitis, septic arthritis, endophthalmitis, renal infarcts</td><td>Source control + antibiotics</td></tr><tr><td>**Glomerulonephritis**</td><td>Immune complex; haematuria, proteinuria, RBC casts</td><td>Resolves with antibiotic treatment</td></tr><tr><td>**Renal embolism / infarct**</td><td>Flank pain, haematuria</td><td>Supportive</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Situation</th><th>Key Points</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Prosthetic valve IE**</td><td>Rifampicin mandatory (biofilm); early (<1y) = nosocomial flora; late (>1y) = community flora; surgery often needed</td></tr><tr><td>**Cardiac device-related IE**</td><td>**Device removal mandatory** if pocket infection, S. aureus, Gram-neg, fungaemia, sepsis; lead extraction (laser/mechanical); antibiotics 2–6w post-removal</td></tr><tr><td>**Right-sided IE (IVDU)**</td><td>*S. aureus* tricuspid; shorter course (2–4w) if uncomplicated; septic pulmonary emboli common; surgery rare</td></tr><tr><td>**Culture-negative IE**</td><td>Prior antibiotics (stop 2w if possible); serology (Coxiella phase I IgG >1:800, Bartonella, Brucella); 16S rRNA PCR on valve tissue; PET-CT for metastatic foci</td></tr><tr><td>**HIV**</td><td>Same organisms; *S. aureus* more common; drug interactions (rifampicin + ART); immune reconstitution</td></tr><tr><td>**Pregnancy**</td><td>Avoid aminoglycosides (otic toxicity), fluoroquinolones, doxycycline; ceftriaxone, vancomycin, ampicillin safe; TOE safe; surgery if indicated</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Modified Duke Criteria: 2 Major / 1M+3m / 5m = definite; 1M+1m / 3m = possible</b></li><li><b>Blood cultures: 3 sets, 20–30mL/set, 14-day incubation, BEFORE antibiotics</b></li><li><b>TOE &gt; TTE for vegetations, abscess, prosthetic detail</b></li><li><b>NVE empirical: Ceftriaxone + Vancomycin (+/- Gentamicin)</b></li><li><b>PVE empirical: Vancomycin + Meropenem + Rifampicin + Gentamicin (early); Ceftriaxone + Vancomycin + Rifampicin + Gentamicin (late)</b></li><li><b>Rifampicin ESSENTIAL for PVE and device IE (biofilm)</b></li><li><b>Targeted therapy durations: Strep 4w (2w + gentamicin), Enterococcus 6w, S. aureus 6w, PVE 6w</b></li><li><b>Ampicillin-ceftriaxone for E. faecalis (less nephrotoxicity than gentamicin)</b></li><li><b>S. gallolyticus (bovis) → COLONOSCOPY mandatory</b></li><li><b>Surgery indications: HF (urgent), uncontrolled infection (urgent), recurrent emboli + large veg (urgent), fungal/MDR (urgent)</b></li><li><b>Neurological: ischaemic stroke no haemorrhage → no delay; haemorrhage → delay 4w</b></li><li><b>Device IE: REMOVE device if pocket infection, S. aureus, Gram-neg, fungaemia, sepsis</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the Modified Duke Criteria for definite IE?</b> 2 Major OR 1 Major + 3 Minor OR 5 Minor.</li><li><b>How many blood culture sets for IE?</b> 3 sets (aerobic + anaerobic each) from different sites, 20–30mL/set, 14-day incubation.</li><li><b>What is the empirical regimen for community-acquired NVE?</b> Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h (+/- Gentamicin).</li><li><b>What is the empirical regimen for early PVE (&lt;1y)?</b> Vancomycin + Meropenem + Rifampicin + Gentamicin.</li><li><b>Why is rifampicin essential in PVE?</b> Biofilm penetration on prosthetic material.</li></ol>
+<p><i>...continued (truncated to 200 lines for renderer)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Infective Endocarditis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

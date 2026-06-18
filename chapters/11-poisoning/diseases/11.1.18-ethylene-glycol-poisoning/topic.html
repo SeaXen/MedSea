@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ethylene Glycol Poisoning — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Ethylene Glycol Poisoning</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognize ethylene glycol poisoning (metabolic acidosis, renal failure, crystalluria)</li><li>Apply fomepizole/ethanol protocol</li><li>Identify dialysis indications</li><li>Administer thiamine/pyridoxine adjunct</li><li>Differentiate from methanol and isopropyl alcohol</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Ethylene glycol poisoning = toxicity from ethylene glycol (antifreeze) metabolized to <b>glycolic acid</b> (metabolic acidosis) and <b>oxalic acid</b> (calcium oxalate crystallization → renal failure).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Metabolism</b>: Ethylene glycol → (ADH) → <b>Glycoaldehyde</b> → (ALDH) → <b>Glycolic acid</b> → (GO/GDH) → <b>Glyoxylic acid</b> → (LDH/GRHPR) → <b>Oxalic acid</b></li><li><b>Glycolic acid</b>: inhibits mitochondrial respiration → <b>high anion gap metabolic acidosis</b> (main acid)</li><li><b>Oxalic acid</b>: chelates calcium → <b>hypocalcemia</b> + <b>calcium oxalate crystals</b> (monohydrate = needle/dumbbell; dihydrate = envelope) → <b>renal tubular obstruction/necrosis</b> → AKI</li><li><b>Alternative pathways</b> (thiamine/pyridoxine dependent): glyoxylic acid → glycine (pyridoxine) or α-hydroxy-β-ketoadipate (thiamine) — non-toxic</li><li><b>ADH inhibition</b>: fomepizole/ethanol blocks first step</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features (Three Stages)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stage 1: Neurological (0-12h) — "Drunkenness"</div>
+<ul><li>Inebriation, ataxia, slurred speech, nystagmus</li><li>Nausea, vomiting</li><li><b>No metabolic acidosis yet</b> (parent compound)</li><li><b>Osmolar gap elevated</b></li></ul>
+<div class="sub-h">Stage 2: Cardiopulmonary (12-24h)</div>
+<ul><li><b>Metabolic acidosis</b> (glycolic acid accumulation)</li><li>Tachycardia, hypertension/hypotension, pulmonary edema</li><li><b>Calcium oxalate crystalluria begins</b></li><li>Hypocalcemia (chelated by oxalate) → QT prolongation, tetany</li></ul>
+<div class="sub-h">Stage 3: Renal (24-72h)</div>
+<ul><li><b>Acute kidney injury</b> (oliguric/anuric) — calcium oxalate tubular deposition</li><li>Flank pain, hematuria</li><li>Persistent metabolic acidosis</li><li>Multi-organ failure if untreated</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Methanol</b>: metabolic acidosis + <b>visual loss</b> (no renal failure early, no crystals)</li><li><b>Isopropyl alcohol</b>: <b>ketosis WITHOUT acidosis</b>, hemorrhagic gastritis, CNS depression</li><li><b>Diabetic ketoacidosis</b>: hyperglycemia, ketones</li><li><b>Sepsis/lactic acidosis</b>: no osmolar gap, no crystals</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mandatory</div>
+<ol><li><b>Ethylene glycol level</b> (if available) &gt; 20 mg/dL (3.2 mmol/L) toxic</li><li><b>Osmolality</b> → <b>osmolar gap</b> &gt; 10 (early)</li><li><b>ABG/VBG</b> — anion gap metabolic acidosis (late)</li><li><b>Urinalysis</b> — <b>calcium oxalate crystals</b> (envelope/dumbbell/needle) — <b>HALLMARK</b></li><li><b>Electrolytes</b> — <b>hypocalcemia</b> (chelates), K⁺, Na⁺, glucose</li><li><b>Renal function</b> — creatinine, urea (AKI marker)</li><li><b>Calcium</b> (ionized) — low</li><li><b>Paracetamol level</b> (always)</li><li><b>ECG</b> — QT prolongation (hypocalcemia)</li></ol>
+<div class="sub-h">Calculated</div>
+<ul><li>Osmolar gap = measured - calculated</li><li>Anion gap = Na - (Cl + HCO₃)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Resuscitation (ABCDE)</div>
+<ul><li>Airway/breathing/circulation standard</li><li><b>Correct hypocalcemia</b> if symptomatic (tetany, seizures, QT prolongation) — <b>IV calcium gluconate 10% 10-20 mL</b></li></ul>
+<div class="sub-h">2. Antidote: Fomepizole — **PREFERRED** (Same as Methanol)</div>
+<ul><li><b>Loading</b>: <b>15 mg/kg IV</b> over 30 min</li><li><b>Maintenance</b>: <b>10 mg/kg IV q12h</b> × 4 doses, then <b>15 mg/kg q12h</b> if dialysis planned</li><li><b>During dialysis</b>: <b>1 mg/kg/hr</b> infusion OR redose post-dialysis</li><li><b>Until</b>: EG &lt; 20 mg/dL (3.2 mmol/L) AND asymptomatic AND normal pH</li></ul>
+<div class="sub-h">3. Alternative: Ethanol (if Fomepizole Unavailable)</div>
+<ul><li>Target blood ethanol <b>100-150 mg/dL</b> (22-33 mmol/L)</li><li>10% ethanol central line, monitor q1-2h</li></ul>
+<div class="sub-h">4. Adjuncts: Thiamine + Pyridoxine (Enhance Alternative Metabolism)</div>
+<ul><li><b>Thiamine 100 mg IV q6h</b> (glyoxylic acid → α-hydroxy-β-ketoadipate)</li><li><b>Pyridoxine 50 mg IV q6h</b> (glyoxylic acid → glycine)</li><li><b>Both</b> enhance non-toxic elimination pathways</li></ul>
+<div class="sub-h">5. Hemodialysis — **Indications (Any One)**</div>
+<ul><li><b>pH &lt; 7.30</b> (persistent despite bicarbonate)</li><li><b>Renal failure</b> (AKI, oliguria/anuria, rising creatinine)</li><li><b>Ethylene glycol level &gt; 50 mmol/L (310 mg/dL)</b> — some guidelines &gt; 20 mmol/L with acidosis</li><li><b>Refractory electrolyte disturbances</b></li><li>Continue until EG &lt; 20 mg/dL AND pH normal AND renal recovering</li></ul>
+<div class="sub-h">6. Supportive</div>
+<ul><li><b>Bicarbonate infusion</b> for pH &lt; 7.3</li><li><b>Correct hypocalcemia</b> (symptomatic)</li><li><b>Thiamine 100 mg IV</b> (Wernicke prevention)</li><li><b>Fluids</b> for renal perfusion (avoid overload if oliguric)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Permanent renal failure (dialysis-dependent)</li><li>Cranial neuropathies (CN VII, VIII, IX, X) — late</li><li>Peripheral neuropathy</li><li>Metabolic acidosis → multi-organ failure</li><li>Death</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Good if treated <b>before</b> significant oxalate crystallization (early fomepizole)</li><li>Renal recovery possible if dialysis initiated early</li><li>Mortality &lt; 10% with early treatment</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Ethylene glycol → glycolic acid (acidosis) + oxalic acid (crystals/renal)</b></li><li><b>Calcium oxalate crystals in urine</b> = hallmark (envelope/dumbbell/needle)</li><li><b>Hypocalcemia</b> (oxalate chelates calcium) → QT prolongation, tetany</li><li><b>Fomepizole</b>: 15 mg/kg load → 10 mg/kg q12h (same as methanol)</li><li><b>Thiamine 100 mg q6h + Pyridoxine 50 mg q6h</b> (enhance alternative pathways)</li><li><b>Dialysis</b>: pH &lt; 7.3, <b>renal failure</b>, level &gt; 50 mmol/L</li><li><b>Three stages</b>: CNS (0-12h) → Cardiopulmonary/acidosis (12-24h) → Renal (24-72h)</li><li><b>Osmolar gap early</b> → anion gap acidosis + crystalluria late</li><li><b>Ethanol alternative</b> same as methanol</li><li><b>Differentiate</b>: Methanol = visual; EG = renal/crystals; IPA = ketosis no acidosis</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Ethylene glycol metabolic pathway and toxic metabolites</li><li>Urinary crystal findings</li><li>Fomepizole dosing</li><li>Role of thiamine/pyridoxine</li><li>Dialysis indications</li><li>Three clinical stages</li><li>Hypocalcemia mechanism and management</li><li>Differentiate from methanol and isopropyl alcohol</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Oxalic acid causes crystals</b>, glycolic acid causes acidosis</li><li><b>Hypocalcemia</b> = treat if symptomatic (tetany, seizures)</li><li><b>Thiamine/pyridoxine</b> = adjuncts, not primary antidotes</li><li><b>Fomepizole dosing same as methanol</b> (15 load, 10 q12h)</li><li><b>Dialysis for renal failure</b> even if pH OK</li><li><b>Crystals may be absent early</b> (before metabolism) or late (anuric)</li><li><b>Isopropyl alcohol = ketosis NO acidosis</b> vs EG = acidosis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>EG PATHWAY</b>: <b>E</b>G → <b>G</b>lycolic acid (<b>A</b>cidosis) + <b>O</b>xalic acid (<b>O</b>xalate crystals, <b>R</b>enal)</li><li><b>CRYSTALS</b>: <b>C</b>alcium <b>O</b>xalate = <b>E</b>nvelope, <b>D</b>umbbell, <b>N</b>eedle</li><li><b>THREE STAGES</b>: <b>1</b> CNS <b>drunk</b>, <b>2</b> <b>A</b>cidosis + <b>P</b>ulmonary, <b>3</b> <b>R</b>enal <b>F</b>ailure</li><li><b>FOMEPIZOLE</b>: <b>1</b>5 load, <b>1</b>0 q12h (same as methanol)</li><li><b>ADJUNCTS</b>: <b>T</b>hiamine <b>1</b>00 q6h, <b>P</b>yridoxine <b>5</b>0 q6h</li><li><b>DIALYSIS</b>: <b>pH &lt; 7.3</b>, <b>R</b>enal failure, <b>L</b>evel &gt; 50</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Ethylene Glycol Poisoning))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Metabolism</div>
+<div class="mm-node mm-l3">– ADH → Glycoaldehyde → Glycolic Acid (Acidosis)</div>
+<div class="mm-node mm-l3">– → Glyoxylic Acid → Oxalic Acid (Crystals, Renal)</div>
+<div class="mm-node mm-l3">– Alternative: Thiamine → α-Hydroxy-β-ketoadipate</div>
+<div class="mm-node mm-l3">– Alternative: Pyridoxine → Glycine</div>
+<div class="mm-node mm-l2">Clinical Stages</div>
+<div class="mm-node mm-l3">– 1: 0-12h CNS (Drunk, Osmolar Gap)</div>
+<div class="mm-node mm-l3">– 2: 12-24h Acidosis, Pulmonary, Crystalluria, HypoCa</div>
+<div class="mm-node mm-l3">– 3: 24-72h Renal Failure</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Osmolar Gap Early</div>
+<div class="mm-node mm-l3">– Anion Gap Acidosis Late</div>
+<div class="mm-node mm-l3">– Calcium Oxalate Crystals (Hallmark)</div>
+<div class="mm-node mm-l3">– Hypocalcemia</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Fomepizole (15 load, 10 q12h)</div>
+<div class="mm-node mm-l3">– Thiamine 100mg q6h + Pyridoxine 50mg q6h</div>
+<div class="mm-node mm-l3">– Bicarbonate pH&lt;7.3</div>
+<div class="mm-node mm-l3">– Calcium if Symptomatic HypoCa</div>
+<div class="mm-node mm-l3">– Dialysis (pH&lt;7.3, Renal, Level&gt;50)</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected EG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Osmolality + ABG + Urinalysis\n+ EG Level + Calcium + Renal</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Fomepizole Available?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Fomepizole 15mg/kg Load\n10mg/kg q12h\nThiamine 100mg q6h\nPyridoxine 50mg q6h</div>
+<div class="fc-node" data-id="E">Ethanol 10% Central\nTarget 100-150 mg/dL\nThiamine + Pyridoxine</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Bicarbonate if pH &lt; 7.3\nCalcium if Symptomatic HypoCa</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Dialysis Indicated?\npH&lt;7.3, Renal Failure,\nLevel&gt;50 mmol/L</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Hemodialysis\nFomepizole 1mg/kg/hr during</div>
+<div class="fc-node" data-id="I">Monitor q4-6h\nUntil EG&lt;20, pH Normal,\nRenal Recovering</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>EG metabolic pathway</li><li>Calcium oxalate crystal types (envelope, dumbbell, needle)</li><li>Three stages timeline</li><li>Fomepizole/thiamine/pyridoxine dosing card</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Ethylene glycol poisoning (Toxbase, EM:RAP)</li><li>Crystal identification microscopy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Toxic metabolites</b>: glycolic acid (acidosis) + oxalic acid (crystals → renal failure)</li><li><b>Calcium oxalate crystals</b> = hallmark (envelope/dumbbell/needle)</li><li><b>Hypocalcemia</b> (oxalate chelates Ca²⁺)</li><li><b>Fomepizole</b>: 15 mg/kg load → 10 mg/kg q12h (same as methanol)</li><li><b>Thiamine 100 mg q6h + Pyridoxine 50 mg q6h</b> (alternative pathways)</li><li><b>Dialysis</b>: pH &lt; 7.3, <b>renal failure</b>, level &gt; 50 mmol/L</li><li><b>Three stages</b>: CNS drunk → acidosis/pulmonary → renal failure</li><li><b>Osmolar gap early → anion gap + crystals late</b></li><li><b>Differentiate</b>: Methanol=vision, EG=renal/crystals, IPA=ketosis no acidosis</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State two toxic metabolites and their effects</li><li>Recite fomepizole dosing</li><li>List thiamine/pyridoxine doses</li><li>Name 3 dialysis indications</li><li>Describe urinary crystal types</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Glycolic acid = acidosis; oxalic acid = crystals + renal failure</li><li>Calcium oxalate crystals (envelope/dumbbell/needle)</li><li>Fomepizole: 15 load, 10 q12h (dialysis: 1 mg/kg/hr)</li><li>Thiamine 100mg q6h + Pyridoxine 50mg q6h</li><li>Dialysis: pH&lt;7.3, renal failure, level&gt;50</li><li>Three stages: CNS → Cardiopulmonary → Renal</li><li>Hypocalcemia mechanism</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Crystal absence doesn't rule out (early/late)</li><li>Ethanol alternative protocol</li><li>Cranial neuropathies late sequelae</li><li>Ionized calcium monitoring</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Glyoxylic acid intermediate</li><li>GRHPR mutation (primary hyperoxaluria)</li><li>Fomepizole pharmacokinetics details</li><li>Specific crystal morphology timing</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Metabolic pathway (glycolic + oxalic acid)</li><li>Three clinical stages</li><li>Diagnosis (osmolar gap, anion gap, crystals, hypocalcemia)</li><li>Treatment: fomepizole, thiamine/pyridoxine, bicarbonate, calcium, dialysis</li><li>Complications/prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Metabolic pathway diagram</li><li>Crystal types</li><li>Fomepizole + adjuncts dosing box</li><li>Dialysis criteria</li><li>Three stages table</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"EG → glycolic acid (acidosis) + oxalic acid (crystals, renal failure)"</li><li>"Calcium oxalate crystals = envelope, dumbbell, needle (hallmark)"</li><li>"Fomepizole: 15 load, 10 q12h (same as methanol)"</li><li>"Thiamine 100mg q6h + Pyridoxine 50mg q6h (alternative pathways)"</li><li>"Dialysis: pH&lt;7.3, renal failure, level&gt;50 mmol/L"</li><li>"Three stages: 1) Drunk, 2) Acidosis/pulmonary, 3) Renal failure"</li><li>"Hypocalcemia: oxalate chelates calcium → treat if symptomatic"</li><li>"Methanol=vision, EG=renal/crystals, IPA=ketosis no acidosis"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>"Drunk" patient with anion gap acidosis + crystalluria → EG until proven otherwise</li><li>Hypocalcemia with tetany in "alcoholic" → check for oxalate crystals</li><li>Fomepizole started, patient oliguric → dialysis indicated</li><li>Anuric patient with EG → dialysis for toxin removal (fomepizole alone insufficient)</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Toxic: Glycolic (acidosis) + Oxalic (crystals/renal)</li><li>Crystals: Envelope, Dumbbell, Needle</li><li>Fomepizole: 15 load, 10 q12h</li><li>Thiamine 100 q6h + Pyridoxine 50 q6h</li><li>Dialysis: pH&lt;7.3, Renal, Level&gt;50</li><li>Stages: 1 Drunk, 2 Acidosis, 3 Renal</li><li>HypoCa: Oxalate chelates</li><li>Methanol=Vision, EG=Renal, IPA=Ketosis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Ethylene glycol poisoning = glycolic acid (metabolic acidosis) + oxalic acid (calcium oxalate crystals → renal failure + hypocalcemia). Calcium oxalate crystalluria = hallmark. Fomepizole 15 mg/kg load → 10 mg/kg q12h. Thiamine 100 mg q6h + pyridoxine 50 mg q6h enhance alternative metabolism. Dialysis for pH&lt;7.3, renal failure, level&gt;50 mmol/L. Three stages: CNS (0-12h) → cardiopulmonary/acidosis (12-24h) → renal (24-72h). Differentiate: methanol=visual, EG=renal/crystals, IPA=ketosis no acidosis.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Ethylene glycol toxic metabolites?</li></ol>
+<p>A. Formic acid B. Glycolic acid and oxalic acid C. Formaldehyde D. Acetone <b>Answer: B</b> <i>Explanation: EG → ADH → glycolaldehyde → glycolic acid (acidosis) → oxalic acid (calcium oxalate crystals → renal failure, hypocalcemia).</i></p>
+<ol><li>Ethylene glycol classic features?</li></ol>
+<p>A. Visual disturbances B. Renal failure, calcium oxalate crystals, hypocalcemia C. Pure respiratory alkalosis D. Only CNS depression <b>Answer: B</b> <i>Explanation: EG: high anion gap metabolic acidosis (glycolic acid), renal failure (calcium oxalate crystal deposition), hypocalcemia (oxalate binds Ca²⁺). Envelope-shaped crystals in urine. NO visual symptoms.</i></p>
+<ol><li>EG urine crystals?</li></ol>
+<p>A. Needle-shaped B. Envelope-shaped (calcium oxalate monohydrate) and dumbbell-shaped (dihydrate) C. Hexagonal D. No crystals <b>Answer: B</b> <i>Explanation: Calcium oxalate monohydrate = envelope/dumbbell shaped. Dihydrate = bipyramidal. Crystalluria = hallmark. Flouresce under Wood's lamp (some EG formulations).</i></p>
+<ol><li>EG hypocalcemia - mechanism?</li></ol>
+<p>A. Renal Ca loss B. Oxalate binds ionized calcium → precipitation C. PTH suppression D. Vitamin D deficiency <b>Answer: B</b> <i>Explanation: Oxalic acid binds ionized calcium → calcium oxalate precipitation → hypocalcemia. Can cause tetany, QT prolongation. Calcium replacement if symptomatic.</i></p>
+<ol><li>Fomepizole for EG - same as methanol?</li></ol>
+<p>A. No, different dose B. Yes - 15 mg/kg load, 10 mg/kg q12h C. Only ethanol works for EG D. Fomepizole contraindicated <b>Answer: B</b> <i>Explanation: Fomepizole inhibits ADH for BOTH methanol and EG. Same dosing: 15 mg/kg load, 10 mg/kg q12h. Dialysis criteria similar.</i></p>
+<ol><li>EG dialysis criteria?</li></ol>
+<p>A. pH &lt; 7.3, renal failure, level &gt; 50 mmol/L B. Only if anuric C. Only if level &gt; 100 D. Never indicated <b>Answer: A</b> <i>Explanation: Dialysis for EG: pH &lt; 7.3, renal failure (oliguric/anuric), level &gt; 50 mmol/L (620 mg/dL), refractory acidosis. Also if deteriorating despite fomepizole.</i></p>
+<ol><li>Thiamine and pyridoxine in EG - role?</li></ol>
+<p>A. Antidotes B. Cofactors for alternative glycolic acid metabolism (less toxic pathways) C. Treat acidosis D. Prevent crystallization <b>Answer: B</b> <i>Explanation: Thiamine 100mg IV q6h + pyridoxine 50mg IV q6h: cofactors for alternative glycolate metabolism → shifts away from oxalate formation. Adjunct.</i></p>
+<ol><li>EG vs methanol - key distinguishing feature?</li></ol>
+<p>A. EG has visual symptoms B. Methanol has renal failure C. EG = renal failure + crystals, Methanol = visual D. Same presentation <b>Answer: C</b> <i>Explanation: EG: renal failure, calcium oxalate crystals, hypocalcemia. Methanol: visual disturbances. Both: anion gap acidosis, osmolal gap early.</i></p>
+<ol><li>EG propylene glycol (in IV meds) - toxicity?</li></ol>
+<p>A. Not toxic B. High doses → lactic acidosis (not glycolic/oxalic), osmolal gap C. Same as EG D. Causes renal failure only <b>Answer: B</b> <i>Explanation: Propylene glycol (in IV lorazepam, phenytoin, etc.): metabolized to lactate → lactic acidosis + osmolal gap. Not glycolic/oxalic acid. High infusion rates in ICU.</i></p>
+<ol><li>EG - Wood's lamp urine fluorescence?</li></ol>
+<p>A. All EG B. Only if EG contains fluorescein (industrial antifreeze) C. Never D. Only with methanol <b>Answer: B</b> <i>Explanation: Some commercial antifreeze contains fluorescein → urine fluoresces under Wood's lamp. Not universal. Diagnostic clue if present.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Patient drinks antifreeze (EG). Presents 8h later with confusion, metabolic acidosis (pH 7.18), oliguric. Urine shows envelope-shaped crystals. Management?</li></ol>
+<p>A. Observe B. Fomepizole 15mg/kg load + hemodialysis C. Ethanol only D. Bicarbonate only <b>Answer: B</b> <i>Explanation: EG: metabolic acidosis + renal failure + crystals = dialysis indicated. Fomepizole load immediately. Thiamine 100mg + pyridoxine 50mg q6h IV adjunct. Correct hypocalcemia if symptomatic.</i></p>
+<ol><li>EG level 60 mmol/L, pH 7.30, no renal failure. Dialysis?</li></ol>
+<p>A. No - pH &gt; 7.3 B. Yes - level &gt; 50 mmol/L C. Only if pH drops D. Only if renal failure <b>Answer: B</b> <i>Explanation: Dialysis criteria: pH &lt; 7.3 OR renal failure OR level &gt; 50 mmol/L. This patient: level 60 = dialysis indicated.</i></p>
+<ol><li>Patient on high-dose IV lorazepam (propylene glycol) in ICU. Develops high anion gap metabolic acidosis, osmolal gap 30. No renal failure, no crystals. Diagnosis?</li></ol>
+<p>A. EG poisoning B. Propylene glycol toxicity (lactic acidosis) C. Methanol D. Lactic acidosis from sepsis <b>Answer: B</b> <i>Explanation: Propylene glycol (in IV lorazepam, phenytoin, diazepam): metabolized to lactate → lactic acidosis + osmolal gap. No glycolic/oxalic acid, no crystals. Reduce/stop infusion.</i></p>
+<ol><li>EG - hypocalcemia with tetany. Calcium replacement?</li></ol>
+<p>A. Avoid (worsens precipitation) B. Give if symptomatic (tetany, QT prolongation) - ionized Ca²⁺ target &gt; 1.0 C. Only after dialysis D. Only oral <b>Answer: B</b> <i>Explanation: Symptomatic hypocalcemia (tetany, QT prolongation): give IV calcium gluconate 1-2g. Oxalate binds Ca²⁺ but symptomatic hypocalcemia is dangerous. Monitor ionized Ca²⁺.</i></p>
+<ol><li>EG - thiamine/pyridoxine dosing?</li></ol>
+<p>A. Thiamine 100mg IV q6h + pyridoxine 50mg IV q6h B. Thiamine 500mg once C. Pyridoxine only D. Not needed <b>Answer: A</b> <i>Explanation: Thiamine 100mg IV q6h + pyridoxine 50mg IV q6h: cofactors for alternative glycolate metabolism (glycolate → glycine → less toxic). Adjunct to fomepizole/dialysis.</i></p>
+<ol><li>EG + methanol co-ingestion. Fomepizole?</li></ol>
+<p>A. Only covers methanol B. Covers both (ADH inhibitor) C. Need separate antidotes D. Contraindicated <b>Answer: B</b> <i>Explanation: Fomepizole inhibits ADH for BOTH methanol and EG. Same dosing. Dialysis criteria apply to each (pH&lt;7.3, renal failure, level&gt;50, visual for methanol).</i></p>
+<ol><li>EG - urine fluoresces under Wood's lamp. Significance?</li></ol>
+<p>A. Confirms EG B. Suggests EG with fluorescein additive (some antifreeze) C. Confirms methanol D. Artifact <b>Answer: B</b> <i>Explanation: Some antifreeze contains fluorescein → urine fluorescence. Supports EG diagnosis but not universal (not all EG has it). Absence doesn't exclude EG.</i></p>
+<ol><li>EG - osmolal gap vs anion gap timeline?</li></ol>
+<p>A. Both high throughout B. Early: high osmolal gap, normal anion gap. Late: osmolal gap normal, high anion gap C. Both normal early D. Anion gap high early only <b>Answer: B</b> <i>Explanation: Early: parent alcohol (EG) → high osmolal gap, normal anion gap. As metabolized → glycolic/oxalic acid → anion gap rises, osmolal gap normalizes. Gap = measured - (2×Na + glu/18 + BUN/2.8 + EtOH/4.6).</i></p>
+<ol><li>EG - fomepizole on dialysis?</li></ol>
+<p>A. Stop B. Increase to 15 mg/kg q12h (dialyzed out) C. Same dose D. Double dose <b>Answer: B</b> <i>Explanation: Fomepizole dialyzed out → increase to 15 mg/kg q12h during/after dialysis. Continue until EG level &lt; 20 mmol/L and pH normal.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: EG toxic metabolites?</li></ul>
+<p>A: Glycolic acid (metabolic acidosis) + oxalic acid (calcium oxalate crystals → renal failure, hypocalcemia).</p>
+<ul><li>Q: EG classic triad?</li></ul>
+<p>A: High anion gap metabolic acidosis + renal failure (calcium oxalate crystals) + hypocalcemia. NO visual symptoms.</p>
+<ul><li>Q: EG urine crystals?</li></ul>
+<p>A: Envelope/dumbbell (calcium oxalate monohydrate), bipyramidal (dihydrate). Fluoresce under Wood's lamp if antifreeze has fluorescein.</p>
+<ul><li>Q: EG hypocalcemia mechanism?</li></ul>
+<p>A: Oxalate binds ionized Ca²⁺ → calcium oxalate precipitation → hypocalcemia. Symptomatic = IV calcium.</p>
+<ul><li>Q: Fomepizole for EG?</li></ul>
+<p>A: Same as methanol: 15mg/kg load, 10mg/kg q12h. Increase to 15mg/kg q12h on dialysis. Blocks ADH for both.</p>
+<ul><li>Q: EG dialysis criteria?</li></ul>
+<p>A: pH &lt; 7.3 OR renal failure OR level &gt; 50 mmol/L (620 mg/dL) OR refractory acidosis.</p>
+<ul><li>Q: Thiamine/pyridoxine in EG?</li></ul>
+<p>A: Thiamine 100mg IV q6h + pyridoxine 50mg IV q6h: cofactors for alternative glycolate metabolism (less oxalate).</p>
+<ul><li>Q: EG vs methanol?</li></ul>
+<p>A: EG: renal failure, crystals, hypocalcemia. Methanol: visual. Both: anion gap acidosis, osmolal gap early.</p>
+<ul><li>Q: Propylene glycol toxicity?</li></ul>
+<p>A: IV lorazepam/phenytoin vehicle → lactate → lactic acidosis + osmolal gap. No glycolic/oxalic, no crystals. Reduce infusion.</p>
+<ul><li>Q: EG Wood's lamp?</li></ul>
+<p>A: Fluorescence only if antifreeze contains fluorescein (some brands). Supports diagnosis but absence doesn't exclude.</p>
+<ul><li>Q: EG osmolal/anion gap timeline?</li></ul>
+<p>A: Early: high osmolal gap (parent EG), normal anion gap. Late: osmolal gap normal, high anion gap (acids).</p>
+<ul><li>Q: EG fomepizole on dialysis?</li></ul>
+<p>A: Dialyzed out → increase to 15mg/kg q12h. Continue until EG &lt; 20 mmol/L and pH normal.</p>
+<ul><li>Q: EG calcium replacement?</li></ul>
+<p>A: Only if symptomatic (tetany, QT prolongation). Oxalate binds Ca²⁺ but symptomatic hypocalcemia dangerous.</p>
+<ul><li>Q: EG disposition?</li></ul>
+<p>A: Observe until pH normal, renal function stable, EG level &lt; 20 mmol/L. Psych if DSH. Monitor for delayed renal failure.</p>
+<ul><li>Q: EG crystalluria timing?</li></ul>
+<p>A: May not appear early (need time for metabolism to oxalate). Absence doesn't exclude EG.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> - EG → ADH → glycolaldehyde → glycolic acid (acidosis) → oxalic acid (calcium oxalate crystals → renal failure, hypocalcemia).</li><li><b>B</b> - EG: high anion gap metabolic acidosis (glycolic acid), renal failure (calcium oxalate crystal deposition), hypocalcemia (oxalate binds Ca²⁺). Envelope-shaped crystals in urine. NO visual symptoms.</li><li><b>B</b> - Calcium oxalate monohydrate = envelope/dumbbell shaped. Dihydrate = bipyramidal. Crystalluria = hallmark. Flouresce under Wood's lamp (some EG formulations).</li><li><b>B</b> - Oxalic acid binds ionized calcium → calcium oxalate precipitation → hypocalcemia. Can cause tetany, QT prolongation. Calcium replacement if symptomatic.</li><li><b>B</b> - Fomepizole inhibits ADH for BOTH methanol and EG. Same dosing: 15 mg/kg load, 10 mg/kg q12h. Dialysis criteria similar.</li><li><b>A</b> - Dialysis for EG: pH &lt; 7.3, renal failure (oliguric/anuric), level &gt; 50 mmol/L (620 mg/dL), refractory acidosis. Also if deteriorating despite fomepizole.</li><li><b>B</b> - Thiamine 100mg IV q6h + pyridoxine 50mg IV q6h: cofactors for alternative glycolate metabolism → shifts away from oxalate formation. Adjunct.</li><li><b>C</b> - EG: renal failure, calcium oxalate crystals, hypocalcemia. Methanol: visual disturbances. Both: anion gap acidosis, osmolal gap early.</li><li><b>B</b> - Propylene glycol (in IV lorazepam, phenytoin, etc.): metabolized to lactate → lactic acidosis + osmolal gap. Not glycolic/oxalic acid. High infusion rates in ICU.</li><li><b>B</b> - Some commercial antifreeze contains fluorescein → urine fluoresces under Wood's lamp. Not universal. Diagnostic clue if present.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> - EG: metabolic acidosis + renal failure + crystals = dialysis indicated. Fomepizole load immediately. Thiamine 100mg + pyridoxine 50mg q6h IV adjunct. Correct hypocalcemia if symptomatic.</li><li><b>B</b> - Dialysis criteria: pH &lt; 7.3 OR renal failure OR level &gt; 50 mmol/L. This patient: level 60 = dialysis indicated.</li><li><b>B</b> - Propylene glycol (in IV lorazepam, phenytoin, diazepam): metabolized to lactate → lactic acidosis + osmolal gap. No glycolic/oxalic acid, no crystals. Reduce/stop infusion.</li><li><b>B</b> - Symptomatic hypocalcemia (tetany, QT prolongation): give IV calcium gluconate 1-2g. Oxalate binds Ca²⁺ but symptomatic hypocalcemia is dangerous. Monitor ionized Ca²⁺.</li><li><b>A</b> - Thiamine 100mg IV q6h + pyridoxine 50mg IV q6h: cofactors for alternative glycolate metabolism (glycolate → glycine → less toxic). Adjunct to fomepizole/dialysis.</li><li><b>B</b> - Fomepizole inhibits ADH for BOTH methanol and EG. Same dosing. Dialysis criteria apply to each (pH&lt;7.3, renal failure, level&gt;50, visual for methanol).</li><li><b>B</b> - Some antifreeze contains fluorescein → urine fluorescence. Supports EG diagnosis but not universal (not all EG has it). Absence doesn't exclude EG.</li><li><b>B</b> - Early: parent alcohol (EG) → high osmolal gap, normal anion gap. As metabolized → glycolic/oxalic acid → anion gap rises, osmolal gap normalizes. Gap = measured - (2×Na + glu/18 + BUN/2.8 + EtOH/4.6).</li><li><b>B</b> - Fomepizole dialyzed out → increase to 15 mg/kg q12h during/after dialysis. Continue until EG level &lt; 20 mmol/L and pH normal.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Ethylene Glycol Poisoning · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hydrocarbon Poisoning — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Hydrocarbon Poisoning</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognize hydrocarbon aspiration syndrome</li><li>Understand why decontamination is contraindicated</li><li>Apply observation and imaging protocol</li><li>Differentiate specific hydrocarbon types (halogenated, aromatic)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Hydrocarbon poisoning = toxicity from ingestion/aspiration of petroleum distillates and related compounds causing <b>chemical pneumonitis</b> (primary) and <b>systemic CNS/cardiac toxicity</b> (secondary, rare).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Physical properties</b>: <b>low viscosity</b>, <b>low surface tension</b>, <b>high volatility</b> → <b>easily aspirated</b> even with small volumes</li><li><b>Aspiration pneumonitis</b>: <b>chemical injury</b> to alveolar epithelium → inflammation, surfactant disruption, V/Q mismatch → <b>hypoxia</b> (peaks 4-6h)</li><li><b>Systemic absorption</b>: minimal for aliphatic; higher for <b>halogenated</b> (CCl₄, TCE) and <b>aromatic</b> (benzene, toluene, xylene) → <b>CNS depression, cardiac sensitization, hepatic/renal toxicity</b></li><li><b>Volatility</b>: exhaled via lungs → characteristic odor on breath</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Aspiration Pneumonitis (Main Complication)</div>
+<ul><li><b>Onset</b>: coughing, choking, gagging <b>during/immediately after</b> ingestion</li><li><b>Respiratory</b>: tachypnea, hypoxia, grunting, retractions, <b>crackles/rhonchi</b>, cyanosis</li><li><b>CXR</b>: <b>bilateral lower lobe infiltrates</b> (peaks 2-6h, may lag initial presentation)</li><li><b>Timing</b>: <b>symptoms within 30 min</b> if significant aspiration; <b>CXR changes lag 2-6h</b></li></ul>
+<div class="sub-h">Systemic Toxicity (Rare, Halogenated/Aromatic)</div>
+<ul><li><b>CNS</b>: headache, dizziness, euphoria, confusion, <b>seizures</b>, coma</li><li><b>Cardiac</b>: <b>"sudden sniffing death"</b> — <b>cardiac sensitization to catecholamines</b> → <b>VF</b> (halogenated: CCl₄, TCE; aromatic: toluene)</li><li><b>Hepatic</b>: centrilobular necrosis (CCl₄, chloroform)</li><li><b>Renal</b>: tubular necrosis (toluene, CCl₄)</li><li><b>Hematologic</b>: <b>aplastic anemia, leukemia</b> (benzene chronic)</li><li><b>Peripheral neuropathy</b>: n-hexane, toluene (chronic)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Specific Hydrocarbon Types</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Examples</th><th>Key Toxicity</th></tr><tr><td>------</td><td>----------</td><td>--------------</td></tr><tr><td>**Aliphatic** (straight/branched chain)</td><td>Kerosene, gasoline, diesel, lamp oil, mineral oil</td><td>**Aspiration pneumonitis** (main); minimal systemic</td></tr><tr><td>**Halogenated**</td><td>Carbon tetrachloride, trichloroethylene, perchloroethylene, chloroform</td><td>**Hepatic necrosis (CCl₄), renal, cardiac sensitization → VF**</td></tr><tr><td>**Aromatic**</td><td>Benzene, toluene, xylene</td><td>**CNS depression, cardiac sensitization → VF, aplastic anemia/leukemia (benzene chronic)**</td></tr><tr><td>**Pine oil / Turpentine**</td><td></td><td>GI irritation, aspiration, CNS depression</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Other aspiration</b>: food, gastric contents (similar pneumonitis)</li><li><b>Chemical pneumonitis</b> from other agents (chlorine, smoke)</li><li><b>Community-acquired pneumonia</b>: fever, productive cough, infiltrate (later onset)</li><li><b>Cardiac arrest</b>: "sudden sniffing death" (halogenated/aromatic)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CXR</b>: <b>baseline then at 6h</b> — bilateral lower lobe infiltrates (aspiration); <b>normal initial CXR ≠ excludes aspiration</b> (lags 2-6h)</li><li><b>ABG/VBG</b>: hypoxia, respiratory acidosis</li><li><b>ECG</b>: arrhythmias (halogenated/aromatic)</li><li><b>LFTs, renal function</b>: if halogenated/aromatic</li><li><b>CBC</b>: leukocytosis (pneumonitis), anemia (benzene chronic)</li><li><b>Paracetamol level</b> (always)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. **NEVER** (Absolute Contraindications)</div>
+<ul><li><b>NO emesis</b> — <b>increases aspiration risk</b></li><li><b>NO gastric lavage</b> — <b>increases aspiration risk</b></li><li><b>NO activated charcoal</b> — <b>does not adsorb hydrocarbons well; increases aspiration risk if vomited</b></li><li><b>NO neutralization</b> (not applicable)</li></ul>
+<div class="sub-h">2. Supportive Care (Mainstay)</div>
+<ul><li><b>Airway</b>: protect if coughing, choking, altered mental status — <b>intubate if respiratory failure</b></li><li><b>Breathing</b>: <b>O₂</b>, <b>NIV/CPAP</b> for hypoxia, <b>mechanical ventilation</b> with PEEP if severe ARDS</li><li><b>Circulation</b>: fluids, vasopressors if needed</li><li><b>Position</b>: <b>head elevated 30°</b> (reduce aspiration risk)</li></ul>
+<div class="sub-h">3. Observation Protocol</div>
+<ul><li><b>Asymptomatic + normal CXR at 6h</b> → <b>discharge</b> (with return precautions)</li><li><b>Symptomatic OR abnormal CXR</b> → <b>admit</b> (obs 24-48h until resolving)</li><li><b>CXR at 6h mandatory</b> for all significant ingestions (even if asymptomatic initially)</li></ul>
+<div class="sub-h">4. Specific Complications</div>
+<ul><li><b>Secondary bacterial pneumonia</b> (superinfection): <b>antibiotics ONLY if evidence</b> (fever, leukocytosis, purulent sputum, new infiltrate) — NOT prophylactic</li><li><b>ARDS</b>: PEEP, lung-protective ventilation, prone if severe</li><li><b>Pneumothorax</b>: chest drain if tension</li><li><b>Cardiac arrhythmia</b> (halogenated/aromatic): <b>avoid catecholamines</b> (β-agonists); <b>lidocaine</b> or <b>amiodarone</b> for VF; <b>β-blockers</b> controversial (avoid if possible)</li><li><b>Hepatic/renal failure</b> (CCl₄, toluene): supportive, dialysis if needed</li></ul>
+<div class="sub-h">5. Decontamination</div>
+<ul><li><b>Skin</b>: remove contaminated clothing, wash with soap/water</li><li><b>Eyes</b>: copious irrigation 15+ min</li><li><b>GI</b>: <b>NO emesis, NO lavage, NO charcoal</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Chemical pneumonitis</b> → ARDS → respiratory failure</li><li><b>Secondary bacterial pneumonia</b></li><li><b>Pneumothorax/pneumomediastinum</b></li><li><b>Cardiac arrhythmia</b> (sudden sniffing death)</li><li><b>Hepatic/renal failure</b> (halogenated/aromatic)</li><li><b>Chronic neurological</b> (peripheral neuropathy, cognitive — chronic toluene/n-hexane)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Aspiration pneumonitis</b>: excellent with supportive care (most resolve 3-7 days)</li><li><b>Severe ARDS</b>: mortality 10-20%</li><li><b>Sudden sniffing death</b>: high mortality</li><li><b>Chronic toxicity</b>: permanent neurological/hematological sequelae</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Aspiration pneumonitis = main danger</b> (not systemic toxicity)</li><li><b>NEVER</b>: emesis, gastric lavage, activated charcoal — <b>all increase aspiration risk</b></li><li><b>CXR at 6h mandatory</b> — changes lag 2-6h; normal initial ≠ excludes</li><li><b>Observe 6h</b> — asymptomatic + normal CXR at 6h = discharge</li><li><b>Halogenated (CCl₄) = hepatic necrosis + cardiac sensitization → VF</b></li><li><b>Aromatic (benzene) = aplastic anemia/leukemia (chronic), cardiac sensitization</b></li><li><b>Toluene = renal tubular acidosis, peripheral neuropathy (chronic)</b></li><li><b>NO prophylactic antibiotics</b> — only if secondary infection</li><li><b>Cardiac sensitization</b> → avoid catecholamines; lidocaine/amiodarone for VF</li><li><b>Sudden sniffing death</b> = VF from cardiac sensitization (halogenated/aromatic)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Why no emesis/lavage/charcoal for hydrocarbons?</li><li>Observation protocol (CXR at 6h)</li><li>Halogenated vs aromatic specific toxicities</li><li>Cardiac sensitization and management</li><li>Sudden sniffing death mechanism</li><li>Benzene chronic toxicity</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Charcoal for hydrocarbon ingestion</b> → NO (poor adsorption + aspiration risk)</li><li><b>Emesis to empty stomach</b> → NO (increases aspiration)</li><li><b>Prophylactic antibiotics</b> → NO (only if secondary infection)</li><li><b>Normal initial CXR = no aspiration</b> → NO (lags 2-6h)</li><li><b>All hydrocarbons same</b> → halogenated/aromatic have systemic toxicity</li><li><b>Adrenaline for VF in hydrocarbon</b> → NO (catecholamines worsen sensitized myocardium)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>HYDROCARBON NO-NOs</b>: <b>N</b>o <b>E</b>mesis, <b>N</b>o <b>L</b>avage, <b>N</b>o <b>C</b>harcoal</li><li><b>ASPIRATION RISK</b>: <b>L</b>ow <b>V</b>iscosity, <b>L</b>ow <b>S</b>urface <b>T</b>ension, <b>H</b>igh <b>V</b>olatility</li><li><b>HALOGENATED</b>: <b>C</b>Cl₄ = <b>H</b>epatic <b>N</b>ecrosis, <b>C</b>ardiac <b>S</b>ensitization</li><li><b>AROMATIC</b>: <b>B</b>enzene = <b>A</b>plastic <b>A</b>nemia, <b>L</b>eukemia; <b>T</b>oluene = <b>R</b>enal, <b>N</b>europathy</li><li><b>OBSERVATION</b>: <b>6h</b> CXR, <b>Asymptomatic</b> + <b>Normal CXR</b> = <b>Discharge</b></li><li><b>VF IN HYDROCARBON</b>: <b>N</b>o <b>C</b>atecholamines, <b>L</b>idocaine/<b>A</b>miodarone</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Hydrocarbon Poisoning))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Main Danger</div>
+<div class="mm-node mm-l3">– Aspiration Pneumonitis</div>
+<div class="mm-node mm-l3">– Chemical Injury → Surfactant Loss → Hypoxia</div>
+<div class="mm-node mm-l2">Contraindications</div>
+<div class="mm-node mm-l3">– No Emesis</div>
+<div class="mm-node mm-l3">– No Lavage</div>
+<div class="mm-node mm-l3">– No Charcoal</div>
+<div class="mm-node mm-l2">Observation</div>
+<div class="mm-node mm-l3">– CXR at 6h (Lags 2-6h)</div>
+<div class="mm-node mm-l3">– Asymptomatic + Normal CXR = Discharge</div>
+<div class="mm-node mm-l2">Specific Types</div>
+<div class="mm-node mm-l3">– Aliphatic: Kerosene, Gasoline → Aspiration Main</div>
+<div class="mm-node mm-l3">– Halogenated: CCl₄ → Hepatic, Cardiac Sensitization</div>
+<div class="mm-node mm-l3">– Aromatic: Benzene → Aplastic Anemia; Toluene → Renal, Neuropathy</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– ARDS</div>
+<div class="mm-node mm-l3">– Secondary Pneumonia (Abx if Proven)</div>
+<div class="mm-node mm-l3">– VF (Cardiac Sensitization)</div>
+<div class="mm-node mm-l2">Cardiac Sensitization</div>
+<div class="mm-node mm-l3">– Avoid Catecholamines</div>
+<div class="mm-node mm-l3">– Lidocaine/Amiodarone</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hydrocarbon Ingestion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE: Assess Aspiration\nCoughing/Choking/Hypoxia?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Airway Protection\nO2, CPAP/NIV, Intubate if Severe\nHead Elevated 30°</div>
+<div class="fc-node" data-id="D">Observe</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">CXR at 6h Mandatory\n(Even if Asymptomatic Initially)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">CXR Abnormal or\nSymptomatic at 6h?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Admit\nSupportive: O2, Ventilation if Needed\nFluids, Monitor\nAbx ONLY if Secondary Infection</div>
+<div class="fc-node" data-id="H">Discharge with Return Precautions</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Halogenated/Aromatic?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Monitor ECG for Arrhythmias\nAvoid Catecholamines\nLidocaine/Amiodarone for VF\nLFTs, Renal Function</div>
+<div class="fc-node" data-id="K">Continue Supportive</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Discharge When Stable\nCXR Clearing\nNo Respiratory Distress</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Hydrocarbon aspiration CXR progression (0h, 2h, 6h, 24h)</li><li>Cardiac sensitization mechanism</li><li>Observation protocol card</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Hydrocarbon aspiration management (Toxbase, Pediatric Toxicology)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Aspiration pneumonitis = main danger</b> (chemical injury → surfactant loss → hypoxia)</li><li><b>NEVER</b>: emesis, lavage, charcoal — all increase aspiration</li><li><b>CXR at 6h mandatory</b> — lags 2-6h; normal initial ≠ excludes</li><li><b>Observe 6h</b>: asymptomatic + normal CXR = discharge</li><li><b>Halogenated (CCl₄)</b>: hepatic necrosis + cardiac sensitization → VF</li><li><b>Aromatic (benzene)</b>: aplastic anemia/leukemia (chronic); toluene: renal, neuropathy</li><li><b>Cardiac sensitization</b>: avoid catecholamines; lidocaine/amiodarone for VF</li><li><b>No prophylactic antibiotics</b> — only if secondary infection</li><li><b>Sudden sniffing death</b> = VF from cardiac sensitization</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State 3 contraindications for hydrocarbon ingestion</li><li>Explain why CXR at 6h (not immediately)</li><li>List halogenated vs aromatic specific toxicities</li><li>Explain cardiac sensitization management</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Aspiration pneumonitis = main danger</li><li>NO emesis, NO lavage, NO charcoal</li><li>CXR at 6h (lags 2-6h)</li><li>Observe 6h, asymptomatic + normal CXR = discharge</li><li>Halogenated = hepatic + VF; Aromatic = benzene anemia/leukemia</li><li>Cardiac sensitization → avoid catecholamines</li><li>No prophylactic antibiotics</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Sudden sniffing death mechanism</li><li>Toluene renal tubular acidosis, neuropathy</li><li>ARDS management</li><li>Skin/eye decontamination</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>n-hexane peripheral neuropathy</li><li>Benzene leukemogenesis mechanism</li><li>Specific aliphatic chain length toxicity</li><li>Chronic vs acute Differentiation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Physical properties → aspiration risk</li><li>Contraindications (emesis, lavage, charcoal)</li><li>Observation protocol (CXR at 6h)</li><li>Specific hydrocarbon toxicities table</li><li>Cardiac sensitization mechanism and management</li><li>Complications and prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Contraindications box</li><li>Observation protocol card</li><li>Hydrocarbon types table</li><li>Cardiac sensitization box</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Hydrocarbon: aspiration pneumonitis = main danger"</li><li>"NEVER: emesis, lavage, charcoal for hydrocarbons"</li><li>"CXR at 6h mandatory (lags 2-6h)"</li><li>"Observe 6h: asymptomatic + normal CXR = discharge"</li><li>"Halogenated: CCl₄ = hepatic necrosis + cardiac sensitization"</li><li>"Aromatic: benzene = aplastic anemia/leukemia; toluene = renal/neuropathy"</li><li>"Cardiac sensitization: NO catecholamines; lidocaine/amiodarone for VF"</li><li>"No prophylactic antibiotics for pneumonitis"</li><li>"Sudden sniffing death = VF from cardiac sensitization"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Child drank kerosene, coughing → observe 6h, CXR at 6h, no charcoal</li><li>Teenager "huffing" toluene, cardiac arrest → lidocaine, no adrenaline</li><li>Worker with CCl₄ exposure, jaundice → hepatic necrosis, monitor LFTs</li><li>Chronic benzene exposure → CBC for aplastic anemia/leukemia</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Main: Aspiration Pneumonitis</li><li>NO: Emesis, Lavage, Charcoal</li><li>CXR: 6h (Lags)</li><li>Obs: 6h, Discharge if Normal</li><li>Halogenated: Hepatic + VF</li><li>Aromatic: Benzene = Anemia/Leukemia</li><li>Cardiac Sensitization: No Adrenaline, Lido/Amiodarone</li><li>No Prophylactic Abx</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Hydrocarbon poisoning = <b>aspiration pneumonitis</b> (main danger). <b>NEVER emesis, lavage, charcoal</b>. <b>CXR at 6h mandatory</b> (lags 2-6h). <b>Observe 6h</b>: asymptomatic + normal CXR = discharge. <b>Halogenated</b> (CCl₄): hepatic necrosis + <b>cardiac sensitization → VF</b>. <b>Aromatic</b> (benzene): aplastic anemia/leukemia; toluene: renal tubular acidosis, neuropathy. <b>Cardiac sensitization</b>: avoid catecholamines; <b>lidocaine/amiodarone for VF</b>. No prophylactic antibiotics. Sudden sniffing death = VF from sensitization.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Question 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Question 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Question 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Question 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Question 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Question 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Question 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Question 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Question 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Question 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Scenario 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Scenario 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Scenario 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Scenario 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Scenario 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Scenario 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Scenario 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Scenario 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Scenario 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Scenario 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Flashcard 1 question</li></ul>
+<p>A: Flashcard 1 answer</p>
+<ul><li>Q: Flashcard 2 question</li></ul>
+<p>A: Flashcard 2 answer</p>
+<ul><li>Q: Flashcard 3 question</li></ul>
+<p>A: Flashcard 3 answer</p>
+<ul><li>Q: Flashcard 4 question</li></ul>
+<p>A: Flashcard 4 answer</p>
+<ul><li>Q: Flashcard 5 question</li></ul>
+<p>A: Flashcard 5 answer</p>
+<ul><li>Q: Flashcard 6 question</li></ul>
+<p>A: Flashcard 6 answer</p>
+<ul><li>Q: Flashcard 7 question</li></ul>
+<p>A: Flashcard 7 answer</p>
+<ul><li>Q: Flashcard 8 question</li></ul>
+<p>A: Flashcard 8 answer</p>
+<ul><li>Q: Flashcard 9 question</li></ul>
+<p>A: Flashcard 9 answer</p>
+<ul><li>Q: Flashcard 10 question</li></ul>
+<p>A: Flashcard 10 answer</p>
+<ul><li>Q: Flashcard 11 question</li></ul>
+<p>A: Flashcard 11 answer</p>
+<ul><li>Q: Flashcard 12 question</li></ul>
+<p>A: Flashcard 12 answer</p>
+<ul><li>Q: Flashcard 13 question</li></ul>
+<p>A: Flashcard 13 answer</p>
+<ul><li>Q: Flashcard 14 question</li></ul>
+<p>A: Flashcard 14 answer</p>
+<ul><li>Q: Flashcard 15 question</li></ul>
+<p>A: Flashcard 15 answer</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hydrocarbon Poisoning · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

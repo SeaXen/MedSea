@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Tracing and Partner Notification — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">Contact Tracing and Partner Notification</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define <b>Contact Tracing (Partner Notification)</b> and its role in STI control</li><li>[ ] Apply <b>Lookback Periods</b> by STI type</li><li>[ ] Differentiate <b>Partner Notification Methods</b> (Patient Referral, Provider Referral, Contract Referral)</li><li>[ ] Apply <b>Expedited Partner Therapy (EPT)</b> principles, regimens, and legal framework</li><li>[ ] Manage <b>Special Situations</b> (Anonymous partners, Clusters, Outbreaks, HIV Co-infection)</li><li>[ ] Answer viva: "Partner notification methods" and "EPT indications" and "Lookback period for Syphilis" and "Cluster management"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Partner Notification Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Index Patient Diagnosed with STI</div>
+<div class="fc-node" data-id="E">E</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Risk Assessment &amp; Counselling</div>
+<div class="fc-node" data-id="F">Test of Cure / Follow-Up</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Determine Lookback Period by STI</div>
+<div class="fc-node" data-id="G">Re-infection Prevention &amp; Re-screening</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Choose Notification Method</div>
+<div class="fc-node" data-id="H">Surveillance Data Entry</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D1">Patient Referral (Self)</div>
+<div class="fc-node" data-id="D2">Provider Referral (Health Dept)</div>
+<div class="fc-node" data-id="D3">Contract Referral (Hybrid)</div>
+<div class="fc-node" data-id="D4">EPT (Expedited Partner Therapy)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ Principles of Contact Tracing</div>
+<table class="ctable"><tr><th>Principle</th><th>Description</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Confidentiality**</td><td>Index patient identity **never disclosed** to partners</td></tr><tr><td>**Timeliness**</td><td>Initiate **within 24-48h** of diagnosis</td></tr><tr><td>**Comprehensiveness**</td><td>**All partners** within lookback period</td></tr><tr><td>**Empathy/Non-judgemental**</td><td>Supportive counselling, reduce stigma</td></tr><tr><td>**Partner-Centred**</td><td>Offer testing/treatment **on-site or via EPT**</td></tr><tr><td>**Documentation**</td><td>Record **method, outcomes, partner count** for surveillance</td></tr><tr><td>**Integration**</td><td>**HIV/Syphilis co-testing** for all STI diagnoses</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Lookback Periods by STI</div>
+<table class="ctable"><tr><th>STI</th><th>Symptomatic</th><th>Asymptomatic</th><th>Rationale</th></tr><tr><td>-----</td><td>-------------</td><td>--------------</td><td>-----------</td></tr><tr><td>**Gonorrhoea / Chlamydia / Trichomonas / Mycoplasma genitalium**</td><td>**60 Days** before symptom onset</td><td>**60 Days** before diagnosis</td><td>Short incubation, high infectivity</td></tr><tr><td>**Syphilis (Primary)**</td><td>**3 Months** + duration of symptoms</td><td>**3 Months**</td><td>Chancre incubation 3w-90d</td></tr><tr><td>**Syphilis (Secondary)**</td><td>**6 Months** + duration of symptoms</td><td>**6 Months**</td><td>Systemic dissemination period</td></tr><tr><td>**Syphilis (Early Latent <1 Year)**</td><td>—</td><td>**1 Year**</td><td>Seroconversion window</td></tr><tr><td>**Syphilis (Late Latent / Unknown Duration)**</td><td>—</td><td>**Long-term partners** (No fixed limit)</td><td>Potential long latency</td></tr><tr><td>**HSV (Symptomatic Episode)**</td><td>**60 Days** before episode</td><td>**60 Days**</td><td>Recurrence shedding period</td></tr><tr><td>**HPV (New Warts/Dysplasia)**</td><td>**6 Months** before detection</td><td>**6 Months**</td><td>Subclinical infection window</td></tr><tr><td>**Hepatitis B**</td><td>**6 Months** before symptoms</td><td>**6 Months**</td><td>Long incubation (60-150d)</td></tr><tr><td>**Hepatitis C**</td><td>**6 Months** before symptoms</td><td>**6 Months** (If sexual transmission suspected)</td><td>Variable incubation</td></tr><tr><td>**Mpox**</td><td>**21 Days** before symptom onset</td><td>**21 Days**</td><td>Incubation 5-21d</td></tr><tr><td>**HIV**</td><td>**Since last negative test** or **Indefinite**</td><td>**Since last negative test** or **Indefinite**</td><td>All sexual/needle-sharing partners</td></tr></table>
+<div class="callout"><b>Rule</b>: <b>Partner notification is MANDATORY for all notifiable STIs</b>; <b>Lookback based on incubation + infectivity window</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Partner Notification Methods</div>
+<div class="sub-h">Comparison</div>
+<table class="ctable"><tr><th>Method</th><th>Description</th><th>Partner Treatment Rate</th><th>Resources Required</th><th>Best For</th></tr><tr><td>--------</td><td>-------------</td><td>------------------------</td><td>-------------------</td><td>----------</td></tr><tr><td>**Patient Referral (Self-Referral)**</td><td>Index patient informs partners themselves</td><td>**30-50%**</td><td>Low</td><td>Motivated patients, Low stigma, Few partners</td></tr><tr><td>**Provider Referral (Health Dept Notification)**</td><td>Trained staff notify partners confidentially</td><td>**70-90%**</td><td>High (Staff, Database)</td><td>**Syphilis, HIV, Clusters**, Anonymous partners</td></tr><tr><td>**Contract Referral (Conditional)**</td><td>Patient agrees to notify within 1-2 weeks; If not done, Provider does it</td><td>**50-70%**</td><td>Moderate</td><td>**Balanced approach**, Empowers patient with safety net</td></tr><tr><td>**EPT (Expedited Partner Therapy)**</td><td>**Patient delivers medication/prescription** to partners without clinical assessment</td><td>**70-90%** (Where legal)</td><td>Moderate (Med supply)</td><td>**Chlamydia, Gonorrhoea (where injection feasible), Trichomonas**</td></tr></table>
+<div class="callout"><b>Evidence</b>: <b>Provider Referral + EPT = Highest Partner Treatment Rates</b>; <b>Combination Approaches Optimal</b></div>
+<div class="sub-h">Method Selection Algorithm</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Index Patient</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">STI Type</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Provider Referral (Mandatory)</div>
+<div class="fc-node" data-id="D">Patient Preference &amp; Capacity</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Patient Referral + EPT Offer</div>
+<div class="fc-node" data-id="F">Provider Referral</div>
+<div class="fc-node" data-id="G">Contract Referral (1-2 Week Deadline)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Expedited Partner Therapy (EPT)</div>
+<div class="sub-h">EPT Regimens by STI</div>
+<table class="ctable"><tr><th>STI</th><th>EPT Regimen</th><th>Feasibility</th><th>Notes</th></tr><tr><td>-----</td><td>-------------</td><td>-------------</td><td>-------</td></tr><tr><td>**Chlamydia**</td><td>**Doxycycline 100mg PO BD × 7d** or **Azithromycin 1g PO Stat**</td><td>**High (Oral, Simple)**</td><td>**Preferred EPT**; Azithro if Pregnant</td></tr><tr><td>**Gonorrhoea**</td><td>**Ceftriaxone 500mg IM + Azithromycin 1g PO**</td><td>**Low (Requires Injection)**</td><td>**Not Practical for EPT**; Provider Referral Preferred</td></tr><tr><td>**Trichomonas**</td><td>**Metronidazole 2g PO Stat** or **Tinidazole 2g PO Stat**</td><td>**High (Oral, Single Dose)**</td><td>Effective EPT</td></tr><tr><td>**M. genitalium**</td><td>**Moxifloxacin 400mg OD × 7-14d**</td><td>**Moderate (Resistance Testing Needed)**</td><td>**Not Standard EPT** (Resistance-guided)</td></tr><tr><td>**Syphilis**</td><td>**Not Suitable**</td><td>**None**</td><td>**Injection, Staging, CSF, Follow-Up Required**</td></tr><tr><td>**HSV / HPV**</td><td>**Not Suitable**</td><td>**None**</td><td>**Chronic/Recurrent, Not Curable by Single Course**</td></tr></table>
+<div class="sub-h">EPT Implementation Checklist</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>1</td><td>**Confirm Index Diagnosis** (Lab confirmed)</td></tr><tr><td>2</td><td>**Counsel Index** on partner notification importance</td></tr><tr><td>3</td><td>**Assess Partner Number/Accessibility**</td></tr><tr><td>4</td><td>**Provide EPT Pack** (Medication + Info Sheet + Allergy Warning + STI Testing Advice)</td></tr><tr><td>5</td><td>**Document** (Partner Count, Regimen Given, Lot Numbers)</td></tr><tr><td>6</td><td>**Advise Index** to encourage partners to seek full STI screen</td></tr><tr><td>7</td><td>**Follow-Up** Index at 2 weeks (Adverse Events, Partner Uptake)</td></tr></table>
+<div class="sub-h">EPT Legal Status (Key Jurisdictions)</div>
+<table class="ctable"><tr><th>Jurisdiction</th><th>Chlamydia</th><th>Gonorrhoea</th><th>Trichomonas</th><th>Notes</th></tr><tr><td>--------------</td><td>-----------</td><td>------------</td><td>-------------</td><td>-------</td></tr><tr><td>**UK (England)**</td><td>**Legal** (PGD/PGD)</td><td>**Not Routine** (Injection)</td><td>Legal</td><td>BASHH Guidelines Support</td></tr><tr><td>**US (Most States)**</td><td>**Legal** (Varies by State)</td><td>**Legal in Some** (IM)</td><td>Legal</td><td>CDC Recommends for GC/CT</td></tr><tr><td>**Canada**</td><td>**Legal** (Provincial)</td><td>**Not Routine**</td><td>Legal</td><td>Provincial Variation</td></tr><tr><td>**Australia**</td><td>**Legal** (State-Based)</td><td>**Not Routine**</td><td>Legal</td><td>RACGP Supports</td></tr><tr><td>**WHO**</td><td>**Recommended**</td><td>**Conditional** (If Feasible)</td><td>Recommended</td><td>Global Strategy 2016-2021</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ Special Situations</div>
+<div class="sub-h">Anonymous Partners / Digital Contacts</div>
+<table class="ctable"><tr><th>Scenario</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Apps/Websites (Grindr, Tinder, etc.)**</td><td>Use **in-app notification features** (Anonymous); **Provider Referral** via health dept if platform cooperates</td></tr><tr><td>**One-night Stands / No Contact Info**</td><td>**EPT** if chlamydia; **Document** "Anonymous Partner — Unable to Notify"</td></tr><tr><td>**Sex Venues (Saunas, Clubs)**</td><td>**Venue-Based Notification** (Posters, Staff Alerts); **Outreach Testing**</td></tr></table>
+<div class="sub-h">Clusters &amp; Outbreaks</div>
+<table class="ctable"><tr><th>Trigger</th><th>Definition</th><th>Response</th></tr><tr><td>---------</td><td>------------</td><td>----------</td></tr><tr><td>**Cluster**</td><td>**≥3 Cases** linked epidemiologically (Time, Place, Person)</td><td>**Enhanced Surveillance**, **Contact Tracing Expansion**, **Molecular Typing (WGS/MLST)**, **Public Health Alert**</td></tr><tr><td>**Outbreak**</td><td>**Unexpected Increase** above baseline</td><td>**Incident Management Team**, **Media Communication**, **Mass Screening**, **Policy Review**</td></tr></table>
+<div class="sub-h">HIV Co-infection</div>
+<ul><li><b>All STI Diagnoses → Offer HIV Test</b> (Opt-out)</li><li><b>HIV+ Index → Enhanced PN</b> (Provider Referral Preferred)</li><li><b>PrEP Users → 3-Monthly STI Screen + PN for Each Positive</b></li></ul>
+<div class="sub-h">Pregnancy</div>
+<ul><li><b>Syphilis/GC/CT/HIV/HBV → Mandatory PN</b> (Provider Referral)</li><li><b>Congenital Prevention → Partner Treatment Critical</b></li><li><b>EPT Azithromycin for CT</b> (Doxy Contraindicated)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6️⃣ Outcomes &amp; Quality Indicators</div>
+<div class="sub-h">PN Outcome Categories</div>
+<table class="ctable"><tr><th>Category</th><th>Definition</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Notified & Treated**</td><td>Partner informed, tested, treated</td></tr><tr><td>**Notified, Not Treated**</td><td>Partner informed, declined/testing pending</td></tr><tr><td>**Not Notifiable**</td><td>Outside lookback, already treated, partner deceased</td></tr><tr><td>**Unable to Notify**</td><td>No contact info, anonymous, refused</td></tr><tr><td>**Index Refused**</td><td>Patient declines all notification methods</td></tr></table>
+<div class="sub-h">Quality Indicators (BASHH/WHO)</div>
+<table class="ctable"><tr><th>Indicator</th><th>Target</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**PN Initiated within 48h**</td><td>**>90%**</td></tr><tr><td>**Partners Treated per Index**</td><td>**>0.8 (GC), >0.6 (CT)**</td></tr><tr><td>**EPT Utilisation (where legal)**</td><td>**>50% of Eligible CT Cases**</td></tr><tr><td>**Re-infection Rate at 3 Months**</td><td>**<10%**</td></tr><tr><td>**Cluster Detection Time**</td><td>**<2 Weeks**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Definition**</td><td>Contact Tracing = Identifying, informing, testing, treating sexual partners of index STI patient</td></tr><tr><td>**Lookback Periods**</td><td>**GC/CT/TV/MG: 60d**; **Syphilis: 1°3m, 2°6m, Early Latent 1y, Late Latent Long-term**; **HSV/HPV: 60d/6m**; **Mpox: 21d**; **HIV: Since Last Negative/Indefinite**</td></tr><tr><td>**Notification Methods**</td><td>**Patient Referral (30-50%)**, **Provider Referral (70-90%)**, **Contract Referral (50-70%)**, **EPT (70-90%)**</td></tr><tr><td>**EPT Regimens**</td><td>**CT: Doxy BD×7d / Azi 1g**; **TV: Metro/Tini 2g Stat**; **GC: Not Practical (IM); Syphilis: No EPT**</td></tr><tr><td>**EPT Legal**</td><td>**Legal for CT/TV in UK/US/Canada/Aus**; **GC = Injection Barrier**</td></tr><tr><td>**Special Situations**</td><td>Anonymous Partners → Apps/EPT/Document; Clusters → WGS/Enhanced Surveillance; HIV+ → Provider Referral</td></tr><tr><td>**Quality Indicators**</td><td>PN <48h >90%; Partner Tx/Index >0.8(GC)/0.6(CT); Re-infection <10% at 3mo</td></tr><tr><td>**Viva**</td><td>"Syphilis lookback by stage", "EPT regimens & legal status", "Provider vs Patient referral", "Cluster management"</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>What are the lookback periods for partner notification for common STIs?</td><td>**GC/CT/TV/MG: 60 days**; **Syphilis 1°: 3m+Sx, 2°: 6m+Sx, Early Latent: 1y, Late Latent: Long-term**; **HSV: 60d; HPV: 6m; Mpox: 21d; HIV: Since last negative/Indefinite**</td></tr><tr><td>2</td><td>Compare partner notification methods — which has highest partner treatment rate?</td><td>**Provider Referral (70-90%) > EPT (70-90%) > Contract (50-70%) > Patient Referral (30-50%)**; **Combination approaches optimal**</td></tr><tr><td>3</td><td>What is Expedited Partner Therapy (EPT) and for which STIs is it recommended?</td><td>**Patient delivers medication to partners without clinical assessment**; **CT: Doxy BD×7d/Azi 1g; TV: Metro/Tini 2g**; **GC: Impractical (IM); Syphilis: Not suitable**; **Legal in UK/US/Can/Aus for CT/TV**</td></tr><tr><td>4</td><td>How do you manage partner notification for anonymous partners met on dating apps?</td><td>**In-app anonymous notification features**; **Provider Referral via Health Dept if platform cooperates**; **EPT for Chlamydia**; **Document "Anonymous Partner — Unable to Notify"**</td></tr><tr><td>5</td><td>What defines an STI cluster and how is it managed?</td><td>**≥3 Cases linked (Time/Place/Person)** → **Enhanced Surveillance, Contact Tracing Expansion, Molecular Typing (WGS/MLST), Public Health Alert**; **Outbreak = Unexpected Increase Above Baseline → Incident Management Team**</td></tr><tr><td>6</td><td>Syphilis partner notification — lookback by stage?</td><td>**Primary: 3 months + symptom duration**; **Secondary: 6 months + symptom duration**; **Early Latent (<1y): 1 year**; **Late Latent/Unknown: Long-term partners (No fixed limit)**</td></tr><tr><td>7</td><td>What are the key quality indicators for partner notification programmes?</td><td>**PN Initiated <48h (>90%)**; **Partners Treated/Index >0.8(GC)/>0.6(CT)**; **EPT Utilisation >50% (CT)**; **Re-infection Rate <10% at 3 Months**; **Cluster Detection <2 Weeks**</td></tr><tr><td>8</td><td>When is Provider Referral mandatory over Patient Referral?</td><td>**Syphilis (All Stages), HIV, Late Latent Syphilis, Clusters/Outbreaks, Anonymous Partners, Index Patient Refuses/Unable**</td></tr><tr><td>9</td><td>EPT for Gonorrhoea — why is it not routinely recommended?</td><td>**Requires Ceftriaxone IM Injection** — Not feasible for patient-delivered; **Safety (Allergy, Needle Injury)**; **Provider Referral Preferred**; **Dual Therapy Complexity**</td></tr><tr><td>10</td><td>Pregnant woman with Chlamydia — partner notification approach?</td><td>**Mandatory PN (Provider Referral Preferred)**; **EPT: Azithromycin 1g Stat (Doxy Contraindicated)**; **Congenital Prevention Critical**; **Partner Tested for Full STI Screen Including HIV/Syphilis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"EPT = For All STIs"**</td><td>**NO.** **CT/TV Oral Only (Legal)**; **GC = Injection (Impractical)**; **Syphilis = No EPT (Staging/CSF/Follow-Up)**</td></tr><tr><td>**"Lookback = Same for All STIs"**</td><td>**NO.** **Varies by Incubation/Infectivity**: **GC/CT 60d, Syphilis 3m-1y+, HIV Indefinite**</td></tr><tr><td>**"Patient Referral = Always Best"**</td><td>**NO.** **Lowest Completion (30-50%)**; **Provider Referral = Highest (70-90%)**; **Use Combination**</td></tr><tr><td>**"EPT = Legal Everywhere"**</td><td>**NO.** **Jurisdiction Dependent**; **Check Local Laws**; **UK/US/Can/Aus Legal for CT/TV**</td></tr><tr><td>**"Syphilis = 6 Months Lookback Always"**</td><td>**NO.** **Stage-Dependent: 1°3m, 2°6m, Early Latent 1y, Late Latent Long-Term**</td></tr><tr><td>**"Anonymous Partners = No PN Needed"**</td><td>**NO.** **Use App Features, EPT, Document Attempt**; **Cluster Risk if Multiple Anonymous**</td></tr><tr><td>**"Cluster = Just More Cases"**</td><td>**NO.** **Epidemiologically Linked (Time/Place/Person)**; **Requires Molecular Typing (WGS/MLST)**</td></tr><tr><td>**"Re-infection = Treatment Failure"**</td><td>**Often Re-infection from Untreated Partner**; **TOC + PN + Re-screen at 3mo Critical**</td></tr><tr><td>**"HIV PN = Same as Other STIs"**</td><td>**NO.** **Enhanced (Provider Referral Mandatory), All Sexual/Needle Partners Since Last Negative**</td></tr><tr><td>**"EPT = Replaces Partner Testing"**</td><td>**NO.** **EPT = Treatment Only**; **Partners Still Need Full STI Screen (HIV, Syphilis, etc.)**</td></tr></table>
+<div class="callout"><b>Mnemonic: PARTNER NOTICE MASTER</b> <b>P</b>artner Notification = <b>Identify, Inform, Test, Treat</b> Sexual Partners of Index STI Patient <b>A</b>ll Notifiable STIs = <b>Mandatory PN</b> (Legal Duty) → <b>Surveillance Integration</b> <b>R</b> Lookback: <b>GC/CT/TV/MG 60d</b>; <b>Syph 1°3m/2°6m/EarlyLat1y/LateLat LT</b>; <b>HIV Indefinite</b> <b>T</b> Methods: <b>Patient (30-50%) &lt; Contract (50-70%) &lt; Provider (70-90%) ≈ EPT (70-90%)</b> <b>N</b> EPT Regimens: <b>CT Doxy BD×7d/Azi 1g; TV Metro/Tini 2g</b>; <b>GC No (IM); Syph No</b> <b>E</b> EPT Legal: <b>UK/US/Can/Aus for CT/TV</b>; <b>Check Local Law</b> <b>R</b> Provider Referral Mandatory: <b>Syph/HIV/Late Latent/Clusters/Anonymous/Refusal</b> <b>A</b>nonymous Partners: <b>App Features, EPT (CT), Document "Unable to Notify"</b> <b>C</b>lusters: <b>≥3 Linked (Time/Place/Person) → WGS/MLST + Enhanced PN + Public Alert</b> <b>E</b> HIV Co-infection: <b>All STI Dx → HIV Test (Opt-Out); HIV+ → Enhanced PN (Provider)</b> <b>Q</b>uality Indicators: <b>PN &lt;48h &gt;90%; Partner Tx/Idx &gt;0.8(GC)/&gt;0.6(CT); Re-inf &lt;10%@3mo; Cluster &lt;2wk</b> <b>U</b> Pregnancy: <b>Mandatory PN (Syph/GC/CT/HIV/HBV); EPT Azi for CT; Congenital Prevention</b> <b>I</b>ntegration: <b>STI/HIV/SRH Services One-Stop → Better PN Outcomes</b> <b>R</b>e-screening: <b>3 Months Post-Tx All → Detects Re-infection (Partner Failure)</b> <b>D</b>ocumentation: <b>Method, Partners Count, Outcomes, Lot Numbers → Surveillance/Legal</b> <b>S</b>tructural: <b>Decriminalisation, Stigma Reduction → ↑ PN Completion, ↑ Access</b> <b>T</b>echnology: <b>Digital PN Apps, In-App Notifications, Automated Reminders</b> <b>O</b>utbreak Management: <b>IMT + Media + Mass Screen + Policy Review</b> <b>W</b>HO Targets: <b>90% PN Coverage Key Pops; Integrated STI/HIV Services</b> <b>H</b>arm Reduction: <b>PWID → PN Includes Needle-Sharing Partners</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Partner Notification))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Principles</div>
+<div class="mm-node mm-l3">– Confidentiality (Index Identity Protected)</div>
+<div class="mm-node mm-l3">– Timeliness (&lt;48h)</div>
+<div class="mm-node mm-l3">– Comprehensiveness (All Partners in Lookback)</div>
+<div class="mm-node mm-l3">– Empathy/Non-judgemental</div>
+<div class="mm-node mm-l2">Lookback Periods</div>
+<div class="mm-node mm-l3">– GC/CT/TV/MG: 60 Days</div>
+<div class="mm-node mm-l3">– Syphilis: 1°3m, 2°6m, EarlyLat1y, LateLat LT</div>
+<div class="mm-node mm-l3">– HSV: 60d, HPV: 6m, Mpox: 21d</div>
+<div class="mm-node mm-l3">– HIV: Since Last Negative/Indefinite</div>
+<div class="mm-node mm-l2">Methods</div>
+<div class="mm-node mm-l3">– Patient Referral (Self) - 30-50%</div>
+<div class="mm-node mm-l3">– Provider Referral (Health Dept) - 70-90%</div>
+<div class="mm-node mm-l3">– Contract Referral (Hybrid) - 50-70%</div>
+<div class="mm-node mm-l3">– EPT (Expedited) - 70-90%</div>
+<div class="mm-node mm-l2">EPT</div>
+<div class="mm-node mm-l3">– CT: Doxy BD×7d / Azi 1g</div>
+<div class="mm-node mm-l3">– TV: Metro/Tini 2g</div>
+<div class="mm-node mm-l3">– GC: Impractical (IM)</div>
+<div class="mm-node mm-l3">– Syphilis: Not Suitable</div>
+<div class="mm-node mm-l3">– Legal: UK/US/Can/Aus (CT/TV)</div>
+<div class="mm-node mm-l2">Special Situations</div>
+<div class="mm-node mm-l3">– Anonymous/Apps: In-App Alerts, EPT, Document</div>
+<div class="mm-node mm-l3">– Clusters: ≥3 Linked → WGS + Enhanced PN</div>
+<div class="mm-node mm-l3">– HIV+: Provider Referral Mandatory</div>
+<div class="mm-node mm-l3">– Pregnancy: Mandatory PN, EPT Azi for CT</div>
+<div class="mm-node mm-l2">Quality Indicators</div>
+<div class="mm-node mm-l3">– PN &lt;48h &gt;90%</div>
+<div class="mm-node mm-l3">– Partner Tx/Idx &gt;0.8/&gt;0.6</div>
+<div class="mm-node mm-l3">– Re-infection &lt;10%@3mo</div>
+<div class="mm-node mm-l3">– Cluster Detection &lt;2wk</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Lookback Periods by STI</td><td>4</td><td></td><td></td></tr><tr><td>Notification Methods (Comparison)</td><td>3</td><td></td><td></td></tr><tr><td>EPT (Regimens, Legal, Limitations)</td><td>4</td><td></td><td></td></tr><tr><td>Special Situations (Anonymous, Clusters, HIV, Pregnancy)</td><td>4</td><td></td><td></td></tr><tr><td>Quality Indicators & Outcomes</td><td>2</td><td></td><td></td></tr><tr><td>Viva Readiness</td><td>3</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the principles, methods, and quality indicators of partner notification for STIs."</td><td>**Principles: Confidentiality, Timeliness (<48h), Comprehensiveness**; **Lookback: GC/CT/TV 60d, Syphilis Stage-Dependent (1°3m/2°6m/EarlyLat1y/LateLat LT), HIV Indefinite**; **Methods: Patient (30-50%), Provider (70-90%), Contract (50-70%), EPT (70-90%)**; **EPT: CT Doxy BD×7d/Azi 1g, TV Metro/Tini 2g, GC Impractical (IM), Syphilis Not Suitable**; **Legal: UK/US/Can/Aus for CT/TV**; **Special: Anonymous/Apps (In-App/EPT/Document), Clusters (≥3 Linked→WGS/Enhanced PN), HIV+ (Provider Mandatory), Pregnancy (Mandatory PN, EPT Azi for CT)**; **Quality: PN<48h>90%, Partner Tx/Idx>0.8/0.6, Re-inf<10%@3mo, Cluster<2wk**</td></tr><tr><td>**Short Note**</td><td>"Expedited Partner Therapy (EPT) — indications, regimens, and limitations."</td><td>**Definition: Patient-Delivered Medication to Partners Without Clinical Assessment**; **Indications: CT, TV (Oral, Simple)**; **Regimens: CT Doxy 100mg BD×7d / Azi 1g Stat; TV Metro 2g/Tini 2g Stat**; **Not For: GC (IM Injection), Syphilis (Staging/CSF/Follow-Up), HSV/HPV (Chronic)**; **Legal: Permitted UK/US/Can/Aus for CT/TV**; **Limitations: No Partner Testing (HIV/Syphilis Missed), Allergy Risk, Adherence Unknown, Legal Barriers (Some Jurisdictions)**</td></tr><tr><td>**Viva**</td><td>"Syphilis partner notification — lookback periods by stage."</td><td>**Primary: 3 Months + Duration of Symptoms (Chancre Incubation 3w-90d)**; **Secondary: 6 Months + Duration of Symptoms (Systemic Dissemination)**; **Early Latent (<1 Year): 1 Year (Seroconversion Window)**; **Late Latent/Unknown Duration: Long-Term Partners (No Fixed Limit) — Assess Risk Individually**</td></tr><tr><td>**Ward Round**</td><td>"MSM diagnosed with gonorrhoea. 5 Grindr contacts — no names, only profiles. Management?"</td><td>**EPT Not Feasible for GC (Requires Ceftriaxone IM)**; **Use Grindr In-App Anonymous Notification Feature**; **Provider Referral via Health Dept if Platform Cooperates**; **Document "Anonymous Partners — Unable to Notify Individually"**; **Index: Full STI Screen (HIV, Syphilis, CT, HCV), TOC if Pharyngeal/Rectal**; **Cluster Assessment: If ≥3 Linked → Molecular Typing (WGS), Public Health Alert**</td></tr><tr><td>**Last-Night**</td><td>"PN: Principles (Confid, <48h, All Partners). Lookback: GC/CT/TV 60d, Syph 1°3m/2°6m/EarlyLat1y/LateLat LT, HIV Indef. Methods: Pt Ref 30-50% < Contr 50-70% < Prov Ref 70-90% ≈ EPT 70-90%. EPT: CT Doxy BD×7d/Azi 1g, TV Metro/Tini 2g, GC No (IM), Syph No. Legal: UK/US/Can/Aus CT/TV. Special: Anonymous→App/EPT/Document, Cluster≥3→WGS/Enhanced PN, HIV+→Provider Mandatory, Preg→Mandatory+EPT Azi. Quality: PN<48h>90%, Partner Tx/Idx>0.8/0.6, Re-inf<10%@3mo."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Contact Tracing</b> = <b>Identify, Inform, Test, Treat</b> sexual partners; <b>Mandatory for All Notifiable STIs</b></li><li><b>Lookback Periods</b>: <b>GC/CT/TV/MG 60d</b>; <b>Syphilis: 1°3m+Sx, 2°6m+Sx, Early Latent 1y, Late Latent Long-term</b>; <b>HSV 60d, HPV 6m, Mpox 21d, HIV Indefinite</b></li><li><b>Notification Methods</b>: <b>Patient Referral (30-50%) &lt; Contract Referral (50-70%) &lt; Provider Referral (70-90%) ≈ EPT (70-90%)</b></li><li><b>EPT Regimens</b>: <b>CT: Doxy 100mg BD×7d / Azi 1g Stat</b>; <b>TV: Metronidazole/Tinidazole 2g Stat</b>; <b>GC: Impractical (IM); Syphilis: Not Suitable</b></li><li><b>EPT Legal</b>: <b>UK/US/Canada/Australia for CT/TV</b>; <b>Check Local Laws</b></li><li><b>Provider Referral Mandatory</b>: <b>Syphilis (All Stages), HIV, Clusters, Anonymous Partners, Index Refusal</b></li><li><b>Special</b>: <b>Anonymous/Apps → In-App Alerts + EPT + Document</b>; <b>Clusters (≥3 Linked) → WGS/MLST + Enhanced PN + Alert</b>; <b>HIV+ → Provider Referral + All Sexual/Needle Partners</b></li><li><b>Quality Indicators</b>: <b>PN &lt;48h &gt;90%; Partners Treated/Index &gt;0.8(GC)/0.6(CT); Re-infection &lt;10% at 3mo; Cluster Detection &lt;2 Weeks</b></li><li><b>Pregnancy</b>: <b>Mandatory PN (Syph/GC/CT/HIV/HBV); EPT Azithromycin for CT; Congenital Prevention Critical</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Standard lookback period for Chlamydia partner notification?</b></li></ol>
+<p>A. 30 Days  B. <b>60 Days</b>  C. 90 Days  D. 1 Year <i>Answer: B. 60 Days before symptom onset or diagnosis.</i></p>
+<ol><li><b>Partner notification method with HIGHEST partner treatment rate?</b></li></ol>
+<p>A. Patient Referral  B. Contract Referral  C. <b>Provider Referral</b>  D. All Equal <i>Answer: C. Provider Referral (70-90%) — Confidential, Professional, Systematic.</i></p>
+<ol><li><b>EPT regimen for Chlamydia in non-pregnant adult?</b></li></ol>
+<p>A. Ceftriaxone 500mg IM  B. <b>Doxycycline 100mg BD × 7 Days</b>  C. Metronidazole 2g Stat  D. Azithromycin 1g Weekly × 3 <i>Answer: B. Doxycycline 100mg BD × 7d (or Azithromycin 1g Stat).</i></p>
+<ol><li><b>EPT for Gonorrhoea — why NOT routinely recommended?</b></li></ol>
+<p>A. Illegal Everywhere  B. <b>Requires Ceftriaxone IM Injection (Not Feasible for Patient-Delivered)</b>  C. Ineffective  D. Resistance <i>Answer: B. Ceftriaxone IM Required — Injection Barrier, Safety, Legal Complexity; Provider Referral Preferred.</i></p>
+<ol><li><b>Syphilis (Secondary) — partner notification lookback?</b></li></ol>
+<p>A. 3 Months  B. <b>6 Months + Duration of Symptoms</b>  C. 1 Year  D. Indefinite <i>Answer: B. 6 Months + Duration of Symptoms (Systemic Dissemination Period).</i></p>
+<ol><li><b>Anonymous partners met on dating apps — best notification approach?</b></li></ol>
+<p>A. Ignore  B. <b>In-App Anonymous Notification + EPT if CT + Document</b>  C. Police Report  D. Provider Referral Only <i>Answer: B. Use App Features (Grindr/Tinder Anonymous Notify), EPT for CT, Document "Unable to Notify Individually".</i></p>
+<ol><li><b>What defines an STI cluster requiring enhanced response?</b></li></ol>
+<p>A. &gt;10 Cases in a Month  B. <b>≥3 Cases Epidemiologically Linked (Time, Place, Person)</b>  C. &gt;50% Increase Yearly  D. Any Drug-Resistant Case <i>Answer: B. ≥3 Cases Linked by Time/Place/Person → Enhanced Surveillance, WGS/MLST, Public Health Alert.</i></p>
+<ol><li><b>Quality indicator — Target for PN initiated within 48 hours?</b></li></ol>
+<p>A. &gt;70%  B. <b>&gt;90%</b>  C. &gt;50%  D. 100% <i>Answer: B. &gt;90% of Index Cases Should Have PN Initiated Within 48 Hours.</i></p>
+<ol><li><b>HIV+ patient diagnosed with Gonorrhoea — partner notification method?</b></li></ol>
+<p>A. Patient Referral Only  B. <b>Provider Referral (Mandatory for HIV Co-infection)</b>  C. EPT Only  D. No PN Needed <i>Answer: B. HIV Co-infection → Enhanced PN with Provider Referral Mandatory; All Sexual/Needle Partners Since Last Negative.</i></p>
+<ol><li><b>Recommended EPT regimen for Trichomonas?</b></li></ol>
+<p>A. Doxycycline 100mg BD × 7d  B. <b>Metronidazole 2g Stat or Tinidazole 2g Stat</b>  C. Azithromycin 1g Stat  D. Ceftriaxone 500mg IM <i>Answer: B. Metronidazole 2g Single Dose or Tinidazole 2g Single Dose (Oral, Simple, Effective).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25-year-old woman with Chlamydia. 3 partners in 60 days — 1 regular (contactable), 2 anonymous (app only). Best PN approach?</b></li></ol>
+<p>A. Patient Referral for All  B. <b>Provider Referral for Regular + EPT (Doxy BD×7d) for Regular; In-App Notify + EPT Pack for Anonymous</b>  C. EPT Only for All  D. No PN for Anonymous <i>Answer: B. Regular Partner: Provider Referral (Best) or Patient Referral + EPT; Anonymous: In-App Notify + EPT Pack + Document.</i></p>
+<ol><li><b>Syphilis (Early Latent &lt;1 year) diagnosed. Lookback period for PN?</b></li></ol>
+<p>A. 3 Months  B. 6 Months  C. <b>1 Year</b>  D. Since Last Negative Test <i>Answer: C. Early Latent Syphilis (&lt;1 Year) → 1 Year Lookback.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-C, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[7.1-7.4 Public Health &amp; Control.md]] — Public Health Dashboard</li><li>[[2.1 Chlamydia.md]] — Chlamydia PN &amp; EPT</li><li>[[2.2 Gonorrhoea.md]] — Gonorrhoea PN (No EPT)</li><li>[[2.3 Syphilis.md]] — Syphilis PN (Stage-Specific Lookback)</li><li>[[5.1-5.8 Syndromic Management.md]] — Syndrome PN Protocols</li><li>[[6. HIV-AIDS Cross-Reference.md]] — HIV Enhanced PN</li><li>[[Sexually Transmitted Infections MOC.md]] — Master Index</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Version:</b> Full FCPS/MRCP Template Upgrade</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Contact Tracing and Partner Notification · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

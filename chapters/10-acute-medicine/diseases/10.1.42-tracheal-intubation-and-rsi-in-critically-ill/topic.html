@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tracheal Intubation and RSI in Critically Ill — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Tracheal Intubation and RSI in Critically Ill</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Apply DAS 2015 airway assessment</li><li>Conduct pre-intubation optimisation</li><li>Perform RSI with appropriate drug doses</li><li>Manage difficult airway (Plan A-D)</li><li>Recognise and manage post-intubation complications</li><li>Document airway assessment</li><li>Plan extubation strategy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Why Critically Ill Intubation Is High Risk</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cardiovascular collapse</b> (30-40% hypotension post-RSI): ↓sympathetic tone + ↓venous return + positive pressure ventilation</li><li><b>Hypoxaemia</b> (10-30%): ↑shunt physiology, ↓FRC, aspiration</li><li><b>Aspiration risk</b> (full stomach, ileus, gastric distension)</li><li><b>Difficult airway</b> (3-5%): anatomical, physiological</li><li><b>Cardiac arrest</b> in 1-3% (especially shock)</li><li><b>Physiological reserve</b> exhausted</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Pre-Intubation Checklist (Crash Induction)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Preparation (5-7 minutes)</div>
+<ul><li><b>Drugs drawn up</b> + checked</li><li><b>Equipment</b>: bag-mask, suction, ETT (7.0-8.0), laryngoscope (Mac + Miller), bougie, supraglottic (LMA/i-gel), 2nd gen LMA</li><li><b>Monitoring</b>: SpO₂, ECG, BP (cycling), capnography</li><li><b>IV access</b> × 2</li><li><b>Suction working</b> (large-bore Yankauer)</li><li><b>Plan A-D verbalised</b></li><li><b>Team briefed</b></li><li><b>Pre-oxygenation</b> (3-5 min, 100% O₂ via non-rebreather or NIV/HFNO)</li></ul>
+<div class="sub-h">Patient Optimisation</div>
+<ul><li><b>IV fluid</b>: 500 mL crystalloid bolus (if no overload risk)</li><li><b>Vasopressor ready</b> (noradrenaline)</li><li><b>NG tube</b> to decompress stomach</li><li><b>Positioning</b>: Ramping (obese, pregnant), head-up 30°</li><li><b>Cardiac arrest rescue</b> (CPR plan, difficult airway trolley)</li><li><b>NG decompression</b></li><li><b>C-spine precautions</b> if trauma</li><li><b>Glycaemic control</b></li><li><b>Anticipate hypotension</b> → give vasopressor early</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">DAS 2015 Airway Assessment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Look-Evaluate-Add-Optimise-Plan-Verify (LEAP-FV)</div>
+<ul><li><b>L</b>: Look (facial features, scars)</li><li><b>E</b>: Evaluate (3-3-2 rule)</li><li><b>A</b>: Add (fentanyl "bulldozer")</li><li><b>O</b>: Optimise (positioning, ramping)</li><li><b>P</b>: Plan (verbalise Plan A, B, C, D)</li><li><b>V</b>: Verify (supraglottic rescue)</li></ul>
+<div class="sub-h">3-3-2 Rule</div>
+<ul><li><b>3</b> fingers mouth opening (&gt;3 cm)</li><li><b>3</b> fingers hyoid-mental distance (&gt;3 fingers)</li><li><b>2</b> fingers thyroid-hyoid distance (&gt;2 fingers)</li></ul>
+<div class="sub-h">Predictors of Difficult Intubation</div>
+<table class="ctable"><tr><th>Category</th><th>Features</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Anatomical**</td><td>Short neck, thick neck, obesity, micrognathia, retrognathia, limited mouth opening, large tongue, prominent teeth, narrow palate</td></tr><tr><td>**Pathological**</td><td>Tumour, abscess, trauma, oedema, radiation, previous surgery</td></tr><tr><td>**Physiological**</td><td>Hypoxia, shock, agitation</td></tr><tr><td>**Infective**</td><td>Epiglottitis, Ludwig's angina, retropharyngeal abscess</td></tr><tr><td>**Dynamic**</td><td>Bleeding, vomiting</td></tr><tr><td>**DAS 2015** (specific)</td><td>Restricted neck mobility + reduced mouth opening + jaw protrusion + Mallampati 3-4 + prominent incisors + beard + OSA</td></tr></table>
+<div class="sub-h">Mallampati Score</div>
+<ul><li><b>I</b>: Tonsils, uvula, soft palate visible</li><li><b>II</b>: Soft palate, partial uvula</li><li><b>III</b>: Soft palate only</li><li><b>IV</b>: Hard palate only</li><li><b>III-IV</b> = difficult intubation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Preoxygenation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Methods</div>
+<ul><li><b>100% O₂ via non-rebreather mask</b> × 3-5 min</li><li><b>NIV (CPAP/BiPAP)</b> for shunted lungs (ARDS, pulmonary oedema)</li><li><b>HFNO (high-flow nasal oxygen)</b> during apnoeic period</li><li><b>Bag-mask with 100% O₂</b> (less effective)</li></ul>
+<div class="sub-h">Goals</div>
+<ul><li><b>O₂ reserve</b>: SpO₂ &gt;95% (or as high as achievable)</li><li><b>Time to desaturation</b>: 8-10 min in healthy; <b>30-60 s in critically ill</b></li><li><b>End-tidal O₂</b> &gt;85%</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">RSI Drugs (Doses)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Induction Agents</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td></tr><tr><td>**Ketamine**</td><td>1-2 mg/kg IV</td><td>**Preferred in shock, sepsis, asthma**; preserves airway reflexes, bronchodilator</td></tr><tr><td>**Propofol**</td><td>0.5-1.5 mg/kg IV</td><td>Reduce dose in shock; hypotension risk</td></tr><tr><td>**Etomidate**</td><td>0.3 mg/kg IV</td><td>Stable haemodynamics but **adrenal suppression** (avoid in sepsis)</td></tr><tr><td>**Midazolam**</td><td>0.15-0.3 mg/kg IV</td><td>Slower onset, more hypotension, amnestic</td></tr><tr><td>**Thiopentone**</td><td>3-5 mg/kg IV</td><td>Historical; hypotension</td></tr></table>
+<div class="sub-h">NMJ Blockers</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Onset</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td><td>-------</td></tr><tr><td>**Suxamethonium**</td><td>1-1.5 mg/kg IV</td><td>30-60 s</td><td>**Depolarising**; contraindicated in burns (>24 h), denervation, hyperK, MH, muscular dystrophy; fasciculations; ↑ICP/↑IOP</td></tr><tr><td>**Rocuronium**</td><td>1.2 mg/kg IV</td><td>45-60 s</td><td>**Non-depolarising**; rapid; **reversible with sugammadex 16 mg/kg**</td></tr><tr><td>**Vecuronium**</td><td>0.1 mg/kg IV</td><td>Slower</td><td>Less used</td></tr></table>
+<div class="sub-h">Adjuncts</div>
+<ul><li><b>Fentanyl</b> 1-3 mcg/kg IV (blunt laryngoscopy response, ↓ICP); titrate to haemodynamics</li><li><b>Atropine</b> 0.5-1 mg IV (bradycardia, succinylcholine, paediatric)</li><li><b>Lidocaine</b> 1-1.5 mg/kg IV (↓ICP, ↓IOP, ↓airway response)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">RSI Procedure (Step by Step)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pre-Phase (5-7 min)</div>
+<ol><li><b>Pre-oxygenate</b> 100% O₂ × 3-5 min</li><li><b>IV access</b> × 2</li><li><b>IV fluid bolus</b> 500 mL</li><li><b>NG tube</b> decompression</li><li><b>Position</b>: ramping (obese), head-up 30°</li><li><b>Suction working</b></li><li><b>Brief team</b> (Plan A-D)</li><li><b>Pre-load drugs</b>: fentanyl, atropine, lidocaine as needed</li></ol>
+<div class="sub-h">Induction Phase</div>
+<ol><li><b>Pre-oxygenate</b> final 1-2 min</li><li><b>Induction agent</b> IV push</li><li><b>NMJ blocker</b> IV push (immediately after)</li><li><b>Cricoid pressure</b> (10 N, applied on induction) — <b>controversial</b> (DAS 2015: not routine)</li><li><b>Wait 45-60 s</b> (suxamethonium) or 60-90 s (rocuronium)</li><li><b>Verify paralysis</b> (TOF = 0)</li></ol>
+<div class="sub-h">Laryngoscopy Phase</div>
+<ol><li><b>Position</b> (sniffing position)</li><li><b>Laryngoscope</b> (Mac 4 blade standard)</li><li><b>Bougie</b> if needed</li><li><b>BURP</b> (back-up-right-pressure) instead of cricoid</li><li><b>Confirm ETT position</b>:</li></ol>
+<ul><li><b>Waveform capnography</b> (mandatory)</li><li><b>Bilateral breath sounds</b></li><li><b>SpO₂</b></li><li><b>Depth at teeth</b> (22 cm male, 20 cm female)</li></ul>
+<ol><li><b>Cuff</b> inflated, ETT secured</li><li><b>Cricoid pressure release</b></li></ol>
+<div class="sub-h">Post-Intubation</div>
+<ol><li><b>Continue sedation</b> + analgesia</li><li><b>Lung-protective ventilation</b> (6 mL/kg PBW, PEEP, plateau &lt;30)</li><li><b>Vasopressor</b> if MAP &lt;65</li><li><b>CXR</b> to confirm ETT position</li><li><b>NG tube</b> to suction</li><li><b>Documentation</b> (grade, ETT size, depth, drugs)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">DAS 2015 Plan A-D</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Plan A: Tracheal Intubation</div>
+<ul><li>Laryngoscopy (Mac 4 first; video laryngoscope available)</li><li><b>Bougie</b> if needed</li><li><b>Max 3 attempts</b> (1 operator, 2 operators)</li><li><b>Declare failure</b> if: failed within 3 attempts</li></ul>
+<div class="sub-h">Plan B: Supraglottic Airway</div>
+<ul><li><b>2nd generation LMA</b> (i-gel, ProSeal, LMA Supreme)</li><li><b>Max 3 attempts</b></li><li><b>Don't push</b> if supraglottic not working → Plan C</li></ul>
+<div class="sub-h">Plan C: Face Mask Ventilation</div>
+<ul><li><b>2-person technique</b></li><li><b>OPA/NPA</b></li><li><b>Plan for awakening</b> if face mask works</li><li><b>Max 2 attempts</b> if no awakening</li></ul>
+<div class="sub-h">Plan D: Front-of-Neck Access (FONA)</div>
+<ul><li><b>Cricothyroidotomy</b> (scalpel-bougie-tube technique)</li><li><b>No time</b> for delay</li><li><b>15 mm ETT 6.0-7.0</b> or tracheostomy tube</li><li><b>Surgical FONA &gt; needle</b> in adults</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Cricoid Pressure</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Traditional</b>: Sellick manoeuvre (10-20 N on cricoid)</li><li><b>Aim</b>: occlude upper oesophagus, prevent aspiration</li><li><b>DAS 2015</b>: not routine, may impede ventilation/laryngoscopy</li><li><b>Use</b> only if: cricoid (not thyroid) cartilage, relaxed patient</li><li><b>Burp</b> if: distorted view, can't intubate</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Failed Intubation Drill</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Call for help</b></li><li><b>Declare failure</b> (3 attempts, 3 minutes)</li><li><b>Bag-mask ventilation</b> (2-person, OPA/NPA)</li><li><b>Plan B</b>: LMA</li><li><b>If Plan B fails</b> → <b>Plan C</b> (face mask) or <b>Plan D</b> (FONA)</li><li><b>Consider awakening</b> (reverse NMJ if able)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Post-Intubation Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Hypotension** (30-50%)</td><td>IV fluid + vasopressor (noradrenaline)</td></tr><tr><td>**Hypoxia**</td><td>Pre-oxygenate, reposition, exclude oesophageal intubation</td></tr><tr><td>**Oesophageal intubation**</td><td>Capnography, remove, re-intubate</td></tr><tr><td>**Aspiration**</td><td>Suction, antibiotics if needed</td></tr><tr><td>**Arrhythmia**</td><td>Treat cause (hypoxia, hyperK)</td></tr><tr><td>**Cardiac arrest**</td><td>CPR per ALS</td></tr><tr><td>**Right mainstem intubation**</td><td>Pull back, auscultate</td></tr><tr><td>**Pneumothorax**</td><td>Chest drain</td></tr><tr><td>**Dental trauma**</td><td>Manage, document</td></tr><tr><td>**Sore throat**</td><td>Supportive</td></tr><tr><td>**Hoarseness/vocal cord paralysis**</td><td>ENT referral</td></tr><tr><td>**Laryngeal oedema**</td><td>Steroids, extubation care</td></tr><tr><td>**Tracheal stenosis** (late)</td><td>ENT, surgical</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Awake Fibreoptic Intubation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Indication</b>: known difficult airway, unstable C-spine, oral/pharyngeal cancer</li><li><b>Technique</b>: topical anaesthesia (lignocaine 4%) + sedation (remifentanil/midazolam)</li><li><b>Equipment</b>: fibrescope, oral/nasal approach</li><li><b>Reserve</b> for elective or semi-elective intubation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Extubation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Plan</b> from start (DAS 2015: extubation strategy)</li><li><b>Cuff leak test</b> (see [[Weaning from Mechanical Ventilation]])</li><li><b>Postextubation stridor</b>: racemic adrenaline, dexamethasone, Heliox</li><li><b>Advanced techniques</b>: extubation to supraglottic (Bailey manoeuvre), staged extubation set</li><li><b>Re-intubation</b> if necessary</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Difficult Airway Society (DAS) Documentation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Airway assessment</b> recorded</li><li><b>Plan A-D</b> documented</li><li><b>Failed attempts</b>: number, technique</li><li><b>Final outcome</b> (intubated, FONA, awakened)</li><li><b>Follow-up</b>: ICU, surgical airway</li><li><b>ICU review</b> by airway-trained specialist</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cardiac Arrest</div>
+<ul><li><b>No RSI needed</b> — proceed with intubation if skilled</li><li><b>Waveform capnography</b> mandatory</li><li><b>Drugs</b>: minimal sedation needed</li></ul>
+<div class="sub-h">Trauma</div>
+<ul><li><b>C-spine immobilisation</b></li><li><b>Aspiration risk</b> (full stomach, blood)</li><li><b>Awake fibreoptic</b> if known difficult</li><li><b>Surgical airway</b> if orofacial trauma + can't intubate</li></ul>
+<div class="sub-h">Pregnancy</div>
+<ul><li><b>Reduced FRC</b> (desaturates fast)</li><li><b>Aspiration risk</b> (full stomach, ↑progesterone)</li><li><b>Left lateral tilt</b> &gt;20 weeks</li><li><b>Smaller ETT</b> (6.5-7.0)</li><li><b>Pre-oxygenate</b> thoroughly</li><li><b>Difficult airway</b> (oedema, weight gain)</li><li><b>Ramping</b> mandatory</li></ul>
+<div class="sub-h">Sepsis</div>
+<ul><li><b>Ketamine</b> preferred (preserves haemodynamics)</li><li><b>Avoid etomidate</b> (adrenal suppression)</li><li><b>Aggressive fluid + vasopressor</b></li><li><b>Lactate, MAP target</b></li></ul>
+<div class="sub-h">Asthma</div>
+<ul><li><b>Ketamine</b> preferred (bronchodilator)</li><li><b>RSI</b>, not elective fibreoptic</li><li><b>Ventilation</b> strategy: low RR, low Vt, long expiratory time</li><li><b>Permissive hypercapnia</b> OK</li><li><b>Avoid</b> tube irritation (deep sedation + NMB)</li></ul>
+<div class="sub-h">Morbid Obesity</div>
+<ul><li><b>Ramping</b> (ear-to-sternal-notch)</li><li><b>HFNO + NIV</b> for preoxygenation</li><li><b>Difficult airway</b> (BMI &gt;40)</li><li><b>Postural</b> (reverse Trendelenburg, head up)</li><li><b>Smaller ETT</b> (airway oedema)</li><li><b>Difficult ventilation</b> (obstructive, ↓FRC)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Paediatric Considerations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Narrowest part</b>: cricoid (not vocal cords)</li><li><b>Uncuffed</b> below 8 years</li><li><b>Age/4 + 4</b> formula (e.g., 1 y → 1+4 = 4.0, 4 y → 4+4 = 4.0, etc.)</li><li><b>Atropine</b> 0.5-1 mg (bradycardia)</li><li><b>Suxamethonium</b> OK (no contraindications usually)</li><li><b>Difficult airway</b> rare (mostly congenital syndromes)</li><li><b>Family</b> presence for non-emergent</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Critically ill intubation = high risk</b> (10-20% complications)</li><li><b>DAS 2015 algorithm</b>: Plan A-D (Intubation, Supraglottic, Face mask, FONA)</li><li><b>3-3-2 rule</b> for airway assessment</li><li><b>Mallampati III-IV</b> = difficult intubation</li><li><b>RSI</b>: preoxygenate + induction + NMJ blocker</li><li><b>Suxamethonium 1-1.5 mg/kg</b> (contraindications: burns &gt;24 h, denervation, hyperK, MH)</li><li><b>Rocuronium 1.2 mg/kg</b> (reversible with sugammadex 16 mg/kg)</li><li><b>Ketamine 1-2 mg/kg</b> preferred in shock, sepsis, asthma</li><li><b>Etomidate</b> avoids in sepsis (adrenal suppression)</li><li><b>Cricoid pressure</b> controversial (not routine per DAS 2015)</li><li><b>BURP</b> better for laryngoscopy</li><li><b>Waveform capnography</b> mandatory for confirmation</li><li><b>Pre-intubation optimisation</b>: 500 mL fluid, NG decompression, ramping, vasopressor ready</li><li><b>Pregnancy</b>: left lateral tilt + ramping + smaller ETT</li><li><b>Plan D = cricothyroidotomy (scalpel-bougie-tube)</b></li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>DAS 2015 Plan A-D</li><li>RSI procedure step by step</li><li>Difficult airway predictors</li><li>Induction agent choice in shock</li><li>Suxamethonium contraindications</li><li>Cricoid pressure controversy</li><li>Pre-intubation optimisation</li><li>FONA technique</li><li>Post-intubation complications</li><li>Pregnancy intubation</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Capnography</b> mandatory (not auscultation alone)</li><li><b>Waveform capnography</b> = oesophageal vs tracheal</li><li><b>Suxamethonium</b> contraindicated in burns (&gt;24 h), denervation, hyperK, MH</li><li><b>Etomidate</b> avoid in sepsis (single dose → adrenal suppression)</li><li><b>Ketamine</b> preferred in shock (preserves sympathetic tone)</li><li><b>Propofol</b> ↓BP (avoid in shock at full dose)</li><li><b>Cricoid pressure</b> may impair view — use BURP instead</li><li><b>Ramping</b> in obese (ear-to-sternal-notch)</li><li><b>Pregnancy</b>: left lateral tilt + small ETT + rapid desat</li><li><b>Failed intubation</b> = 3 attempts, declare early</li><li><b>Plan D</b> = scalpel-bougie-tube FONA (not needle)</li><li><b>Sugammadex 16 mg/kg</b> reverses rocuronium</li><li><b>Paediatric</b>: age/4 + 4 for ETT, atropine</li><li><b>Asthma</b>: ketamine (bronchodilator)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>3-3-2 rule</b>: <b>3 fingers</b> mouth, <b>3 fingers</b> hyoid-mental, <b>2 fingers</b> thyroid-hyoid</li><li><b>DAS Plan A-D</b>: <b>A</b> tracheal, <b>B</b> supraglottic, <b>C</b> face mask, <b>D</b> FONA</li><li><b>RSI</b>: <b>Preox</b> + <b>Induction</b> + <b>NMJ</b> + <b>Wait</b> + <b>Laryngoscopy</b> + <b>Confirm</b></li><li><b>Suxamethonium dose</b>: <b>1-1.5 mg/kg</b></li><li><b>Rocuronium dose</b>: <b>1.2 mg/kg</b></li><li><b>Sugammadex</b>: <b>16 mg/kg</b> for rocuronium</li><li><b>Ketamine</b>: <b>1-2 mg/kg</b> (shock, asthma, sepsis)</li><li><b>Pre-intubation</b>: <b>500 mL fluid, NG, vasopressor, ramping</b></li><li><b>Capnography</b> mandatory</li><li><b>BURP</b> not cricoid (routine)</li><li><b>C-spine</b>: no sniffing position</li><li><b>Pregnancy</b>: left lateral + ramping</li><li><b>FONA</b>: scalpel-bougie-tube</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Tracheal Intubation / RSI))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">DAS 2015</div>
+<div class="mm-node mm-l3">– Plan A: Tracheal</div>
+<div class="mm-node mm-l3">– Plan B: Supraglottic</div>
+<div class="mm-node mm-l3">– Plan C: Face mask</div>
+<div class="mm-node mm-l3">– Plan D: FONA</div>
+<div class="mm-node mm-l2">Airway Assessment</div>
+<div class="mm-node mm-l3">– 3-3-2 rule</div>
+<div class="mm-node mm-l3">– Mallampati</div>
+<div class="mm-node mm-l3">– Difficult predictors</div>
+<div class="mm-node mm-l2">Pre-intubation</div>
+<div class="mm-node mm-l3">– Preoxygenate (3-5 min, 100% O2)</div>
+<div class="mm-node mm-l3">– IV x2</div>
+<div class="mm-node mm-l3">– Fluid 500mL</div>
+<div class="mm-node mm-l3">– NG tube</div>
+<div class="mm-node mm-l3">– Vasopressor ready</div>
+<div class="mm-node mm-l3">– Ramping (obese)</div>
+<div class="mm-node mm-l3">– Team brief</div>
+<div class="mm-node mm-l2">RSI Drugs</div>
+<div class="mm-node mm-l3">– Induction</div>
+<div class="mm-node mm-deep">– Ketamine 1-2 mg/kg (preferred shock, asthma, sepsis)</div>
+<div class="mm-node mm-deep">– Propofol 0.5-1.5 mg/kg (avoid shock)</div>
+<div class="mm-node mm-deep">– Etomidate 0.3 mg/kg (avoid sepsis)</div>
+<div class="mm-node mm-deep">– Midazolam 0.15-0.3 mg/kg</div>
+<div class="mm-node mm-l3">– NMJ</div>
+<div class="mm-node mm-deep">– Suxamethonium 1-1.5 mg/kg (rapid, contraindicated)</div>
+<div class="mm-node mm-deep">– Rocuronium 1.2 mg/kg (reversed by sugammadex)</div>
+<div class="mm-node mm-l2">Procedure</div>
+<div class="mm-node mm-l3">– Preoxygenate</div>
+<div class="mm-node mm-l3">– Induction</div>
+<div class="mm-node mm-l3">– NMJ</div>
+<div class="mm-node mm-l3">– Wait 45-90 s</div>
+<div class="mm-node mm-l3">– Laryngoscopy</div>
+<div class="mm-node mm-l3">– BURP not cricoid</div>
+<div class="mm-node mm-l3">– Confirm capnography</div>
+<div class="mm-node mm-l3">– Secure ETT</div>
+<div class="mm-node mm-l3">– Post-intubation sedation</div>
+<div class="mm-node mm-l2">Difficult Airway</div>
+<div class="mm-node mm-l3">– Plan B LMA 2nd gen</div>
+<div class="mm-node mm-l3">– Plan C face mask</div>
+<div class="mm-node mm-l3">– Plan D FONA (scalpel-bougie-tube)</div>
+<div class="mm-node mm-l2">Sux Contraindications</div>
+<div class="mm-node mm-l3">– Burns &gt;24h</div>
+<div class="mm-node mm-l3">– Denervation</div>
+<div class="mm-node mm-l3">– Hyperkalaemia</div>
+<div class="mm-node mm-l3">– Malignant hyperthermia</div>
+<div class="mm-node mm-l3">– Muscular dystrophy</div>
+<div class="mm-node mm-l2">Post-Intubation</div>
+<div class="mm-node mm-l3">– Sedation</div>
+<div class="mm-node mm-l3">– Lung-protective vent</div>
+<div class="mm-node mm-l3">– Vasopressor if needed</div>
+<div class="mm-node mm-l3">– CXR for position</div>
+<div class="mm-node mm-l2">Special</div>
+<div class="mm-node mm-l3">– Pregnancy: left tilt, ramping, small ETT</div>
+<div class="mm-node mm-l3">– Sepsis: ketamine, avoid etomidate</div>
+<div class="mm-node mm-l3">– Asthma: ketamine, deep sedation</div>
+<div class="mm-node mm-l3">– Obesity: ramping, HFNO/NIV</div>
+<div class="mm-node mm-l3">– Trauma: C-spine, surgical airway</div>
+<div class="mm-node mm-l3">– Paeds: age/4+4, atropine</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flowchart — DAS 2015</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Pre-intubation Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Difficult predictors?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Plan awake fibreoptic / senior help</div>
+<div class="fc-node" data-id="D">RSI: Preoxygenate + Induction + NMJ</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Plan A: Laryngoscopy 3 attempts max</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Confirm capnography, secure ETT</div>
+<div class="fc-node" data-id="G">Plan B: 2nd gen LMA</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Plan C: 2-person face mask</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Plan D: FONA cricothyroidotomy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Surgical airway</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Flowchart — Pre-Intubation Optimisation</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Critically Ill Patient Needs Intubation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Preoxygenate 100% O2 x 3-5 min</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">IV x2, fluid 500 mL</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">NG decompression</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Position: ramping if obese, head-up 30 deg</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Vasopressor ready</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Suction working</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Team brief: Plan A-D</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">RSI: Ketamine or Propofol + Sux or Roc</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Wait 45-90 s</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Laryngoscopy, BURP</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Capnography confirms</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Post-intubation sedation, lung-protective vent</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">CXR for position</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Critically ill intubation = high risk</b> (10-20% complications)</li><li><b>DAS 2015</b>: Plan A (intubation), Plan B (LMA), Plan C (face mask), Plan D (FONA)</li><li><b>3-3-2 rule</b> for airway assessment; <b>Mallampati III-IV</b> difficult</li><li><b>Pre-intubation</b>: preoxygenate 100% O₂ 3-5 min, IV x2, fluid 500 mL, NG, vasopressor, ramping, team brief</li><li><b>RSI</b>: preoxygenate + induction + NMJ blocker</li><li><b>Ketamine 1-2 mg/kg</b> (preferred in shock, sepsis, asthma)</li><li><b>Propofol</b> (avoid in shock at full dose)</li><li><b>Etomidate</b> avoid in sepsis (adrenal suppression)</li><li><b>Suxamethonium 1-1.5 mg/kg</b> (burns &gt;24 h, denervation, hyperK, MH = NO)</li><li><b>Rocuronium 1.2 mg/kg</b> (reversible with sugammadex 16 mg/kg)</li><li><b>Cricoid pressure</b> controversial (not routine per DAS 2015); <b>BURP</b> better</li><li><b>Waveform capnography</b> mandatory for confirmation</li><li><b>FONA</b> = scalpel-bougie-tube cricothyroidotomy</li><li><b>Pregnancy</b>: left lateral tilt + ramping + small ETT</li><li><b>Asthma/sepsis</b>: ketamine preferred</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>List DAS 2015 Plan A-D</li><li>State RSI drug doses (ketamine, propofol, suxamethonium, rocuronium)</li><li>List suxamethonium contraindications</li><li>Outline pre-intubation optimisation</li><li>Describe FONA technique</li><li>State pregnancy intubation considerations</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>DAS 2015 Plan A-D</li><li>3-3-2 rule</li><li>Mallampati</li><li>RSI procedure</li><li>Ketamine 1-2 mg/kg in shock</li><li>Suxamethonium 1-1.5 mg/kg</li><li>Rocuronium 1.2 mg/kg</li><li>Suxamethonium contraindications</li><li>Capnography mandatory</li><li>FONA scalpel-bougie-tube</li><li>Pre-intubation optimisation</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Cricoid pressure controversy</li><li>BURP</li><li>Etomidate avoid in sepsis</li><li>Sugammadex 16 mg/kg</li><li>Pregnancy considerations</li><li>Asthma/sepsis</li><li>Morbid obesity ramping</li><li>Paediatric intubation</li><li>Awake fibreoptic</li><li>Failed intubation drill</li><li>Post-intubation complications</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>DAS 2015 algorithm details</li><li>Difficult airway predictors (obesity, beard, OSA)</li><li>LEAP-FV (DAS 2015)</li><li>Video laryngoscopy</li><li>Cricothyroidotomy anatomy</li><li>Bailey manoeuvre</li><li>Extubation strategy</li><li>Airway documentation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Critically ill intubation risks</li><li>DAS 2015 Plan A-D</li><li>Airway assessment (3-3-2, Mallampati, predictors)</li><li>Pre-intubation optimisation</li><li>RSI procedure</li><li>Drugs (induction + NMJ)</li><li>Confirmation (capnography)</li><li>Difficult airway management</li><li>FONA technique</li><li>Special situations (pregnancy, sepsis, asthma, obesity, trauma)</li><li>Post-intubation management</li><li>Documentation</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>DAS 2015 algorithm</li><li>RSI drug doses</li><li>Suxamethonium contraindications</li><li>FONA technique</li><li>Pre-intubation optimisation</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"DAS 2015: A intubation, B LMA, C face mask, D FONA"</li><li>"3-3-2 rule: 3 fingers mouth, 3 fingers hyoid-mental, 2 fingers thyroid-hyoid"</li><li>"RSI: preoxygenate + induction + NMJ"</li><li>"Ketamine 1-2 mg/kg preferred in shock"</li><li>"Suxamethonium 1-1.5 mg/kg; contraindicated in burns &gt;24 h, hyperK, MH, denervation"</li><li>"Rocuronium 1.2 mg/kg; sugammadex 16 mg/kg reversal"</li><li>"Capnography mandatory for ETT confirmation"</li><li>"BURP, not cricoid (controversial per DAS 2015)"</li><li>"FONA: scalpel-bougie-tube cricothyroidotomy"</li><li>"Pregnancy: left lateral + ramping + small ETT"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>65-year-old septic shock, hypoxia, requires intubation → ketamine + rocuronium, fluid + noradrenaline</li><li>80-year-old predicted difficult, oropharyngeal cancer → awake fibreoptic, senior</li><li>Failed intubation, 3 attempts, can't ventilate → LMA → face mask → FONA</li><li>Morbid obese, ORIF femur, BMI 50 → ramping + HFNO + senior + awake fibreoptic</li><li>Pregnancy 32 weeks, eclampsia, seizure → left lateral, small ETT, RSI</li><li>Anaphylaxis airway oedema → early intubation; if fails, FONA</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>DAS A-D: Intubation, LMA, Face mask, FONA</li><li>3-3-2 rule</li><li>RSI: preox + induction + NMJ</li><li>Ketamine 1-2 mg/kg (shock, sepsis, asthma)</li><li>Sux 1-1.5 mg/kg (NO burns, hyperK, MH, denervation)</li><li>Roc 1.2 mg/kg (sugammadex 16 mg/kg)</li><li>Etomidate avoid in sepsis</li><li>BURP not cricoid</li><li>Capnography mandatory</li><li>FONA: scalpel-bougie-tube</li><li>Pregnancy: left tilt, ramping, small ETT</li><li>Pre-intubation: 500 mL fluid, NG, vasopressor</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Critically ill intubation = high-risk procedure</b> (10-20% complications: hypotension 30-50%, hypoxia, aspiration, cardiac arrest 1-3%). <b>DAS 2015 algorithm</b>: <b>Plan A</b> tracheal intubation (3 attempts max), <b>Plan B</b> 2nd gen LMA (i-gel, ProSeal), <b>Plan C</b> 2-person face mask, <b>Plan D</b> FONA (front-of-neck access, scalpel-bougie-tube cricothyroidotomy). <b>Airway assessment</b>: <b>3-3-2 rule</b> (3 fingers mouth opening, 3 fingers hyoid-mental distance, 2 fingers thyroid-hyoid); <b>Mallampati III-IV</b> difficult; look for obesity, beard, OSA, neck mobility. <b>Pre-intubation optimisation</b> ("crash induction"): 100% O₂ × 3-5 min, IV × 2, 500 mL fluid, NG decompression, ramping (obese, pregnant), vasopressor ready, suction working, team brief (Plan A-D). <b>RSI drugs</b>: <b>Induction</b> — <b>ketamine 1-2 mg/kg</b> (preferred in shock, sepsis, asthma), propofol 0.5-1.5 mg/kg (avoid in shock at full dose), etomidate 0.3 mg/kg (avoid in sepsis — adrenal suppression); <b>NMJ</b> — <b>suxamethonium 1-1.5 mg/kg</b> (contraindicated in burns &gt;24 h, denervation, hyperK, MH, muscular dystrophy) or <b>rocuronium 1.2 mg/kg</b> (reversible with <b>sugammadex 16 mg/kg</b>). <b>Cricoid pressure</b> controversial (not routine per DAS 2015); <b>BURP</b> (back-up-right-pressure) preferred. <b>Waveform capnography</b> mandatory for ETT confirmation (not auscultation alone). <b>Pregnancy</b>: left lateral tilt &gt;20 weeks, ramping, smaller ETT (6.5-7.0), rapid desaturation. <b>Asthma</b>: ketamine (bronchodilator), deep sedation + NMB. <b>Sepsis</b>: ketamine, avoid etomidate, vasopressor ready. <b>Morbid obesity</b>: ramping, HFNO/NIV preoxygenation, smaller ETT. <b>Post-intubation</b>: lung-protective ventilation (6 mL/kg PBW, PEEP, plateau &lt;30), sedation, vasopressor, CXR.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">29</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>DAS 2015 Plan A is:</li></ol>
+<p>A. Supraglottic B. <b>Tracheal intubation</b> C. Face mask D. FONA</p>
+<ol><li>RSI standard NMJ blocker:</li></ol>
+<p>A. Rocuronium 0.6 mg/kg B. <b>Suxamethonium 1-1.5 mg/kg</b> C. Cisatracurium D. Pancuronium</p>
+<ol><li>Sugammadex reverses:</li></ol>
+<p>A. Suxamethonium B. <b>Rocuronium</b> C. Cisatracurium D. Atracurium</p>
+<ol><li>Preferred induction agent in septic shock:</li></ol>
+<p>A. Propofol B. Etomidate C. <b>Ketamine</b> D. Thiopentone</p>
+<ol><li>Etomidate is avoided in sepsis because of:</li></ol>
+<p>A. Hypertension B. <b>Adrenal suppression</b> C. Bronchospasm D. HyperK</p>
+<ol><li>Suxamethonium contraindication:</li></ol>
+<p>A. Pregnancy B. <b>Burns &gt;24 h, hyperK, MH, denervation</b> C. Diabetes D. Hypertension</p>
+<ol><li>Capnography is mandatory to confirm:</li></ol>
+<p>A. Anaesthesia depth B. <b>Tracheal intubation (vs oesophageal)</b> C. Block level D. O₂ saturation</p>
+<ol><li>BURP stands for:</li></ol>
+<p>A. Bag-Up-Right-Pressure B. <b>Back-Up-Right-Pressure</b> C. Bilateral-Under-Right-Pressure D. Bougie-Use-Right-Position</p>
+<ol><li>3-3-2 rule describes:</li></ol>
+<p>A. <b>Airway assessment</b> B. Cricothyroidotomy C. Suxamethonium dose D. Paediatric intubation</p>
+<ol><li>FONA technique in DAS Plan D:</li></ol>
+<p>A. Needle cricothyroidotomy B. <b>Scalpel-bougie-tube cricothyroidotomy</b> C. Tracheostomy D. LMA</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">30</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>60-year-old septic shock, hypoxia, requires intubation. Best induction:</li></ol>
+<p>A. Propofol 2 mg/kg B. Etomidate C. <b>Ketamine 1-2 mg/kg</b> D. Thiopentone</p>
+<ol><li>Obese patient (BMI 50) for emergency intubation. Best preoxygenation:</li></ol>
+<p>A. 100% O₂ via mask B. <b>NIV/HFNO + ramping</b> C. Bag-mask D. Wait</p>
+<ol><li>Pregnant 32 weeks, eclampsia, seizure. Intubation considerations:</li></ol>
+<p>A. Standard B. <b>Left lateral tilt + ramping + small ETT (6.5-7.0)</b> C. Avoid intubation D. Fibreoptic only</p>
+<ol><li>Failed intubation, 3 attempts, face mask not working. Next:</li></ol>
+<p>A. Try again B. <b>Plan D: FONA (scalpel-bougie-tube)</b> C. Wait D. Wake up</p>
+<ol><li>25-year-old asthma exacerbation, severe, requires intubation. Best induction:</li></ol>
+<p>A. Propofol B. <b>Ketamine 1-2 mg/kg (bronchodilator)</b> C. Etomidate D. Thiopentone</p>
+<ol><li>Post-intubation hypotension 70/40, MAP 50. First:</li></ol>
+<p>A. Trendelenburg B. <b>IV fluid + noradrenaline</b> C. Stop sedation D. Re-intubate</p>
+<ol><li>Burns patient &gt;24 h, RSI. Best NMJ:</li></ol>
+<p>A. <b>Suxamethonium is CONTRAINDICATED; use rocuronium</b> B. Suxamethonium C. Vecuronium D. Cisatracurium</p>
+<ol><li>C-spine injury + need for intubation. Best approach:</li></ol>
+<p>A. Cricoid pressure B. <b>Awake fibreoptic OR video laryngoscope with manual in-line stabilisation</b> C. Sniffing position D. Face mask</p>
+<ol><li>Crashing airway, can't intubate, can't ventilate. Next:</li></ol>
+<p>A. Wait B. <b>FONA (cricothyroidotomy)</b> C. LMA attempt D. Wake up</p>
+<ol><li>Paediatric intubation, 4-year-old, ETT size:</li></ol>
+<p>A. 6.5 B. <b>4.5 (4/4 + 4)</b> C. 7.0 D. 5.5</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">31</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: DAS 2015 Plan A</li></ul>
+<p>A: Tracheal intubation</p>
+<ul><li>Q: DAS 2015 Plan D</li></ul>
+<p>A: FONA (scalpel-bougie-tube)</p>
+<ul><li>Q: Suxamethonium dose</li></ul>
+<p>A: 1-1.5 mg/kg</p>
+<ul><li>Q: Rocuronium dose</li></ul>
+<p>A: 1.2 mg/kg</p>
+<ul><li>Q: Sugammadex dose</li></ul>
+<p>A: 16 mg/kg</p>
+<ul><li>Q: Preferred induction in shock</li></ul>
+<p>A: Ketamine</p>
+<ul><li>Q: Etomidate avoid in</li></ul>
+<p>A: Sepsis (adrenal suppression)</p>
+<ul><li>Q: Sux contraindications</li></ul>
+<p>A: Burns &gt;24h, hyperK, MH, denervation, muscular dystrophy</p>
+<ul><li>Q: BURP</li></ul>
+<p>A: Back-Up-Right-Pressure</p>
+<ul><li>Q: Capnography for</li></ul>
+<p>A: ETT confirmation</p>
+<ul><li>Q: 3-3-2 rule</li></ul>
+<p>A: Airway assessment</p>
+<ul><li>Q: Pregnancy intubation</li></ul>
+<p>A: Left lateral + ramping + small ETT</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">32</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Plan A is tracheal intubation. <b>MCQ 2</b>: B — Suxamethonium 1-1.5 mg/kg is standard. <b>MCQ 3</b>: B — Sugammadex reverses rocuronium. <b>MCQ 4</b>: C — Ketamine in shock. <b>MCQ 5</b>: B — Etomidate causes adrenal suppression. <b>MCQ 6</b>: B — Sux contraindicated in burns &gt;24h, hyperK, MH, denervation. <b>MCQ 7</b>: B — Capnography confirms tracheal vs oesophageal. <b>MCQ 8</b>: B — Back-Up-Right-Pressure. <b>MCQ 9</b>: A — 3-3-2 is airway assessment. <b>MCQ 10</b>: B — FONA = scalpel-bougie-tube.</p>
+<p><b>SBA 1</b>: C — Ketamine in shock. <b>SBA 2</b>: B — NIV/HFNO + ramping for obese. <b>SBA 3</b>: B — Left lateral + ramping + small ETT. <b>SBA 4</b>: B — Plan D: FONA. <b>SBA 5</b>: B — Ketamine in asthma (bronchodilator). <b>SBA 6</b>: B — IV fluid + noradrenaline. <b>SBA 7</b>: A — Sux contraindicated in burns; use rocuronium. <b>SBA 8</b>: B — Awake fibreoptic or video laryngoscope. <b>SBA 9</b>: B — FONA. <b>SBA 10</b>: B — 4/4 + 4 = 4.5.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-15</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Tracheal Intubation and RSI in Critically Ill · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

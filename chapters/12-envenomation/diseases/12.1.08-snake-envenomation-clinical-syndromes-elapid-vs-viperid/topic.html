@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Snake Envenomation- Clinical Syndromes (Elapid vs Viperid) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ENVENOMATION</span>
+      <div class="h1">Snake Envenomation- Clinical Syndromes (Elapid vs Viperid)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Differentiate elapid (neurotoxic) from viperid (haemotoxic/cytotoxic) syndromes</li><li>[ ] Distinguish presynaptic from postsynaptic neurotoxicity</li><li>[ ] Recognise coagulopathy (VICC) and its complications</li><li>[ ] Identify mixed syndromes (Mojave, sea snake, some cobras)</li><li>[ ] Apply clinical knowledge to antivenom decision</li><li>[ ] Recognise and manage complications (respiratory failure, AKI, compartment syndrome)</li><li>[ ] Use neostigmine appropriately (postsynaptic only)</li><li>[ ] Apply to FCPS/MRCP clinical vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Clinical Syndromes — Overview</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Elapidae (Neurotoxic)</th><th>Viperidae (Haemotoxic/Cytotoxic)</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Venom profile**</td><td>Pre/post-synaptic neurotoxins</td><td>Procoagulants, haemorrhagins, cytotoxins, nephrotoxins</td></tr><tr><td>**Local signs**</td><td>Often MINIMAL (small fang marks, no swelling)</td><td>Often PROMINENT (swelling, pain, blistering, necrosis)</td></tr><tr><td>**Systemic — Neuro**</td><td>Descending paralysis (ptosis → resp failure)</td><td>Rare (Mojave, some Bothrops)</td></tr><tr><td>**Systemic — Coag**</td><td>Mild (some species)</td><td>**Severe VICC (INR↑, fibrinogen↓, platelets↓)**</td></tr><tr><td>**Systemic — Renal**</td><td>Rare (sea snake myoglobinuria)</td><td>Common (Russell's, Bothrops)</td></tr><tr><td>**Cardiovascular**</td><td>Autonomic dysfunction</td><td>Shock, hypotension</td></tr><tr><td>**Time course**</td><td>Rapid (30 min – 24 h)</td><td>1 h – several days</td></tr><tr><td>**First aid**</td><td>PIB</td><td>Local pressure + immobilise</td></tr><tr><td>**Antivenom examples**</td><td>CSL (Aus), Indian ASV (krait/cobra component), SAIMR</td><td>Indian ASV (viper), CroFab, Antivipmyn</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">ELAPID SYNDROME — Neurotoxic</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mechanism of Neurotoxicity</div>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Examples</th><th>Reversibility</th><th>Neostigmine Response</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Postsynaptic (α-neurotoxin)**</td><td>Competitive blockade of nAChR at motor endplate; **reversible** with time or AChE inhibitor</td><td>Cobra (*Naja*), some coral snakes, mamba, some Australian elapids</td><td>**Reversible**</td><td>**Effective** (adjunct)</td></tr><tr><td>**Presynaptic (β-neurotoxin)**</td><td>PLA₂-mediated hydrolysis of presynaptic terminal membrane → ↓ ACh release; **irreversible** (terminal must regenerate)</td><td>Krait (*Bungarus*), taipan, some Australian, sea snakes (also myotoxic)</td><td>**Irreversible**</td><td>**NOT effective** (must wait for AV + nerve regeneration)</td></tr></table>
+<div class="sub-h">Clinical Pattern — Descending Paralysis</div>
+<table class="ctable"><tr><th>Stage</th><th>Time Course (typical)</th><th>Features</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**1. Early (0.5–6 h)**</td><td>Variable</td><td>Ptosis (most common early sign), ophthalmoplegia, blurred vision, diplopia</td></tr><tr><td>**2. Bulbar (1–12 h)**</td><td>Progressive</td><td>Dysphagia, dysarthria, dysphonia, weak cough, pooled secretions</td></tr><tr><td>**3. Limb (3–24 h)**</td><td>Progressive</td><td>Proximal weakness, then distal; reduced reflexes</td></tr><tr><td>**4. Respiratory (3–48 h)**</td><td>Life-threatening</td><td>Hypoventilation, hypoxia, respiratory acidosis, respiratory arrest</td></tr><tr><td>**Recovery**</td><td>Days to weeks</td><td>Reverse order; presynaptic = delayed regeneration</td></tr></table>
+<div class="sub-h">Examination — Neurotoxic</div>
+<table class="ctable"><tr><th>Sign</th><th>Test</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Ptosis**</td><td>Look for drooping eyelids; ask patient to look up (test sustained upgaze — fatigues)</td></tr><tr><td>**Ophthalmoplegia**</td><td>Test extraocular movements (EOM); nystagmus</td></tr><tr><td>**Facial weakness**</td><td>Smile, close eyes against resistance</td></tr><tr><td>**Bulbar**</td><td>Swallow water, speak clearly, cough strength</td></tr><tr><td>**Limb**</td><td>Proximal first (shoulder abduction, hip flexion), then distal</td></tr><tr><td>**Respiratory**</td><td>FVC, NIF, RR, accessory muscles, ABG</td></tr><tr><td>**Reflexes**</td><td>Reduced/absent</td></tr></table>
+<div class="sub-h">Specific Elapid Syndromes</div>
+<table class="ctable"><tr><th>Snake</th><th>Special Features</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Indian cobra (*Naja naja*)**</td><td>Postsynaptic (reversible); local swelling + necrosis common; ptosis early</td></tr><tr><td>**Common krait (*Bungarus caeruleus*)**</td><td>Presynaptic (irreversible); nocturnal; minimal local signs; **delayed 6–24 h**; high mortality in sleeping victims</td></tr><tr><td>**Black mamba**</td><td>Presynaptic + postsynaptic; rapid; autonomic storm (tachycardia, sweating)</td></tr><tr><td>**Taipan (*Oxyuranus*)**</td><td>Presynaptic + procoagulant; rapid neuro + VICC</td></tr><tr><td>**Brown snake (*Pseudonaja*)**</td><td>Australia; rapid VICC + neuro; cardiac arrest common</td></tr><tr><td>**Tiger snake (*Notechis*)**</td><td>Presynaptic + procoagulant + myotoxic</td></tr><tr><td>**Sea snake**</td><td>Presynaptic + myotoxic (severe)</td></tr><tr><td>**Coral snake (US)**</td><td>Postsynaptic; delayed neurotoxicity 12–24 h</td></tr></table>
+<div class="sub-h">Neostigmine Trial — Postsynaptic Blockade</div>
+<table class="ctable"><tr><th>Step</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Indication**</td><td>Suspected postsynaptic blockade (cobra, coral snake); NOT for presynaptic (krait, taipan)</td></tr><tr><td>**Premedication**</td><td>Atropine 0.6 mg IV (prevent muscarinic effects)</td></tr><tr><td>**Dose**</td><td>Neostigmine 0.5–2.5 mg IV (or IM/SC)</td></tr><tr><td>**Response**</td><td>Improvement in ptosis, EOM, limb power within 30–60 min</td></tr><tr><td>**Repeat**</td><td>Every 30–60 min as needed (with atropine)</td></tr><tr><td>**Adjunct to AV**</td><td>YES — does NOT replace antivenom; bridges the gap until AV works</td></tr><tr><td>**Caution**</td><td>Can worsen cholinergic symptoms (bradycardia, bronchospasm) — always with atropine</td></tr><tr><td>**Not effective**</td><td>Presynaptic blockade (krait, taipan, brown snake)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">VIPERID SYNDROME — Haemotoxic / Cytotoxic</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mechanism of Coagulopathy (VICC)</div>
+<table class="ctable"><tr><th>Toxin</th><th>Mechanism</th><th>Effect</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Procoagulants (RVV-V, RVV-X, ecarin)**</td><td>Activate factors V, X, prothrombin</td><td>Consumption of clotting factors → VICC</td></tr><tr><td>**Thrombin-like enzymes (TLE)**</td><td>Fibrinogen → fibrin (defective clots)</td><td>Afibrinogenaemia, ↑ D-dimer</td></tr><tr><td>**Anticoagulants (protein C activator)**</td><td>Activate protein C</td><td>Bleeding</td></tr><tr><td>**Platelet modulators (botrocetin, flavostatin)**</td><td>Induce/inhibit aggregation</td><td>Thrombocytopenia</td></tr><tr><td>**Haemorrhagins (SVMPs)**</td><td>Degrade basement membrane, capillary integrity</td><td>Local + systemic bleeding</td></tr></table>
+<div class="sub-h">Coagulopathy Labs</div>
+<table class="ctable"><tr><th>Lab</th><th>VICC Pattern</th><th>Interpretation</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**PT/INR**</td><td>**↑↑** (often > 5)</td><td>Severe factor consumption</td></tr><tr><td>**aPTT**</td><td>**↑**</td><td>Less reliable than INR for viperid</td></tr><tr><td>**Fibrinogen**</td><td>**↓↓** (often < 1 g/L)</td><td>Fibrinogen consumption</td></tr><tr><td>**D-dimer**</td><td>**↑↑**</td><td>Fibrin breakdown</td></tr><tr><td>**Platelets**</td><td>**↓↓** (variable)</td><td>Consumption, sequestration</td></tr><tr><td>**20WBCT**</td><td>**+ve (no clot)**</td><td>Bedside screen for VICC</td></tr><tr><td>**Fibrin degradation products**</td><td>**↑**</td><td>Fibrinolysis active</td></tr></table>
+<div class="sub-h">Clinical Pattern — Haemotoxic / Cytotoxic</div>
+<table class="ctable"><tr><th>Stage</th><th>Features</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Local (0.5–12 h)**</td><td>Pain, swelling (rapidly progressive), erythema, fang marks, ecchymosis, lymphangitis, regional nodes</td></tr><tr><td>**2. Coagulopathy (1–24 h)**</td><td>Bleeding from bite site, gums, IV sites; petechiae; intracranial haemorrhage (worst); haematuria; GI bleed</td></tr><tr><td>**3. Cytotoxic (6–48 h)**</td><td>Blistering, necrosis, compartment syndrome (severe); secondary infection; gangrene</td></tr><tr><td>**4. Shock (6–24 h)**</td><td>Hypotension, tachycardia, hypovolaemia (third-spacing)</td></tr><tr><td>**5. Renal (12–72 h)**</td><td>AKI (VICC, myoglobinuria, direct nephrotoxicity); anuria, uraemia</td></tr><tr><td>**Recovery (coag)**</td><td>Days to weeks (prothrombin, fibrinogen recover slowly)</td></tr></table>
+<div class="sub-h">Specific Viperid Syndromes</div>
+<table class="ctable"><tr><th>Snake</th><th>Special Features</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Russell's viper (*Daboia russelii*)**</td><td>VICC + AKI (most common); some populations also neurotoxic; **pituitary haemorrhage (Sheehan-like)**</td></tr><tr><td>**Saw-scaled viper (*Echis carinatus*)**</td><td>Procoagulant (RVV-X activator); VICC; **highest mortality per bite in some regions**; less local necrosis</td></tr><tr><td>**Puff adder (*Bitis arietans*)**</td><td>Cytotoxic dominant; severe local necrosis; less coagulopathy</td></tr><tr><td>**Gaboon viper (*Bitis gabonica*)**</td><td>Massive venom yield; severe local + coagulopathy; shock</td></tr><tr><td>**Bothrops (lance-headed vipers, Latin America)**</td><td>Local necrosis + coagulopathy + AKI</td></tr><tr><td>**Rattlesnake (*Crotalus*)**</td><td>Variable; some have neuro (Mojave); some haemorrhagic (timber, diamondback)</td></tr><tr><td>**European adder (*Vipera berus*)**</td><td>Mild-moderate local + systemic; rarely lethal</td></tr><tr><td>**Green pit viper (*Trimeresurus*)**</td><td>Mild local + coagulopathy; less severe</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">MIXED SYNDROMES</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Snake</th><th>Syndrome</th><th>Key Features</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Mojave rattlesnake (*Crotalus scutulatus*)**</td><td>Neuro + haemotoxic (Type A) vs haemotoxic only (Type B)</td><td>Mojave toxin (presynaptic β-neurotoxin); variable</td></tr><tr><td>**Some Australian elapids (taipan, brown, tiger)**</td><td>Neuro + VICC</td><td>Both pre- and post-synaptic; rapid VICC</td></tr><tr><td>**Russell's viper (some populations)**</td><td>Haemotoxic + neuro + nephrotoxic</td><td>Variable geographically; Sri Lankan RV very nephrotoxic</td></tr><tr><td>**Sea snakes**</td><td>Neuro + myotoxic</td><td>Rhabdomyolysis, myoglobinuria, AKI</td></tr><tr><td>**Spitting cobras (African, Asian)**</td><td>Cytotoxic + neurotoxic + **ocular**</td><td>Venom "spat" up to 3 m → corneal injury, blindness</td></tr><tr><td>**King cobra**</td><td>Neuro + cytotoxic</td><td>Massive yield</td></tr><tr><td>**Boomslang**</td><td>Delayed coagulopathy (24–48 h)</td><td>Rear-fanged colubrid; severe VICC</td></tr></table>
+<div class="sub-h">Spitting Cobra Ocular Injury</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Immediate**</td><td>Copious irrigation with water/saline for 15–20 min (don't rub)</td></tr><tr><td>**2. Topical anaesthetic**</td><td>Proxymetacaine 0.5% (for exam and irrigation comfort)</td></tr><tr><td>**3. Slit-lamp exam**</td><td>Look for corneal abrasion, opacification, uveitis, hypopyon</td></tr><tr><td>**4. Fluorescein staining**</td><td>Identify epithelial defects</td></tr><tr><td>**5. Topical antibiotic**</td><td>Chloramphenicol or fusidic acid (prevent secondary infection)</td></tr><tr><td>**6. Topical cycloplegic**</td><td>Atropine 1% (prevent posterior synechiae from uveitis)</td></tr><tr><td>**7. Topical steroid**</td><td>If significant uveitis (by ophthalmologist)</td></tr><tr><td>**8. Antivenom**</td><td>NOT given for ocular exposure alone (no systemic envenomation)</td></tr><tr><td>**9. Tetanus cover**</td><td>If corneal defect</td></tr><tr><td>**10. Ophthalmology follow-up**</td><td>Daily until healed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Sea Snake Envenomation (Special)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Bite context**</td><td>Fishermen handling nets; swimmers/divers</td></tr><tr><td>**Fang**</td><td>Short, fixed; may not envenomate</td></tr><tr><td>**Venom**</td><td>Presynaptic neurotoxin + **PLA₂ myotoxin**</td></tr><tr><td>**Onset**</td><td>30 min – 6 h</td></tr><tr><td>**Neuro**</td><td>Descending paralysis, bulbar, respiratory failure</td></tr><tr><td>**Myotoxic**</td><td>Myalgia, stiffness, muscle tenderness, trismus, **dark urine (myoglobinuria)**</td></tr><tr><td>**Lab**</td><td>CK > 10,000 (often > 50,000), myoglobinuria, AKI</td></tr><tr><td>**Antivenom**</td><td>Sea snake antivenom (CSL — rare; polyvalent may work)</td></tr><tr><td>**Management**</td><td>AV + aggressive fluid + alkalinisation + dialysis if AKI</td></tr><tr><td>**Prognosis**</td><td>Good if ventilated early and AKI managed</td></tr></table>
+<div class="sub-h">Myotoxicity / Rhabdomyolysis Protocol</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Antivenom**</td><td>If available and indicated (early!)</td></tr><tr><td>**2. IV fluids**</td><td>Aggressive — 1–2 L/h initially; target urine > 200–300 mL/h</td></tr><tr><td>**3. Alkalinisation**</td><td>NaHCO₃ — target urine pH > 6.5</td></tr><tr><td>**4. Mannitol**</td><td>0.5–1 g/kg IV (controversial)</td></tr><tr><td>**5. Monitor**</td><td>CK 6–12 hourly, urine output, creatinine, K⁺</td></tr><tr><td>**6. Dialysis**</td><td>If AKI (creatinine ↑, oliguria, hyperkalaemia, acidosis)</td></tr><tr><td>**7. Avoid**</td><td>NSAIDs, nephrotoxins, contrast</td></tr><tr><td>**8. Tetanus**</td><td>Cover</td></tr><tr><td>**9. Compartment**</td><td>Rare with sea snake; possible with severe swelling</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Recognition</th><th>Management</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Respiratory failure**</td><td>RR↑, FVC↓, SpO₂↓, ABG (PCO₂↑)</td><td>Intubate + ventilate; early in bulbar palsy</td></tr><tr><td>**VICC bleeding**</td><td>INR↑, fibrinogen↓, active bleeding</td><td>Repeat AV; FFP, cryoprecipitate, platelets PRN</td></tr><tr><td>**Intracranial haemorrhage**</td><td>↓ GCS, focal neuro</td><td>CT head, neurosurgery consult, reverse coagulopathy</td></tr><tr><td>**Pituitary haemorrhage (Russell's)**</td><td>Panhypopituitary, hypoglycaemia, hypotension</td><td>Stress-dose hydrocortisone, levothyroxine later</td></tr><tr><td>**AKI**</td><td>Creatinine↑, oliguria</td><td>Fluids, avoid nephrotoxins, dialysis if severe</td></tr><tr><td>**Compartment syndrome**</td><td>Severe pain, pain on stretch, pallor, paraesthesia, pulselessness (late)</td><td>**AV first**; confirm with pressure measurement; fasciotomy ONLY if confirmed</td></tr><tr><td>**Myotoxicity**</td><td>CK↑↑, myalgia, dark urine</td><td>Fluids, alkalinise, AV</td></tr><tr><td>**Anaphylaxis to AV**</td><td>Urticaria, wheeze, hypotension</td><td>Stop AV, IM adrenaline, see Antivenom Reactions</td></tr><tr><td>**Serum sickness**</td><td>Day 5–14, fever, rash, arthralgia</td><td>Prednisolone 1 mg/kg × 5–7 d</td></tr><tr><td>**Secondary infection**</td><td>Cellulitis, abscess, necrotising fasciitis</td><td>Antibiotics (cover *Aeromonas* if marine; *Morganella*, *S. aureus*); tetanus</td></tr><tr><td>**Pregnancy complications**</td><td>Fetal demise, miscarriage, abruption</td><td>Aggressive AV, supportive, obstetric input</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Compartment Syndrome — Critical Decision</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Suspect**</td><td>Severe pain (> expected), pain on passive stretch, swelling beyond bite site, tense compartment, pallor, paraesthesia, pulselessness (LATE)</td></tr><tr><td>**2. Antivenom FIRST**</td><td>Give AV to neutralise ongoing venom; may reduce swelling and improve perfusion</td></tr><tr><td>**3. Reassess 1–2 h after AV**</td><td>Most swelling improves with adequate AV; distinguish from compartment</td></tr><tr><td>**4. Measure compartment pressure**</td><td>Stryker needle; > 30 mmHg = compartment syndrome</td></tr><tr><td>**5. Fasciotomy ONLY if confirmed**</td><td>After adequate AV; prophylactic fasciotomy NOT recommended</td></tr><tr><td>**6. Surgical consult**</td><td>Early involvement</td></tr><tr><td>**7. Avoid**</td><td>Ice, elevation, blind fasciotomy</td></tr></table>
+<p><b>Pitfall:</b> Prophylactic fasciotomy worsens outcome (bleeding, infection, nerve damage). Always give AV first.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Fact</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Elapid syndrome**</td><td>Neurotoxic; minimal local; descending paralysis</td></tr><tr><td>**Viperid syndrome**</td><td>Haemotoxic/cytotoxic; local swelling; VICC</td></tr><tr><td>**Postsynaptic**</td><td>Reversible nAChR blockade; neostigmine works</td></tr><tr><td>**Presynaptic**</td><td>Irreversible ACh release blockade; neostigmine fails</td></tr><tr><td>**Presynaptic examples**</td><td>Krait, taipan, sea snake, brown snake</td></tr><tr><td>**Postsynaptic examples**</td><td>Cobra, coral snake, mamba</td></tr><tr><td>**Neurotoxic pattern**</td><td>Ptosis → ophthalmoplegia → bulbar → respiratory</td></tr><tr><td>**Krait**</td><td>Nocturnal, minimal local, **delayed 6–24 h**</td></tr><tr><td>**Cobra**</td><td>Local swelling + neuro; neostigmine adjunct</td></tr><tr><td>**VICC labs**</td><td>INR↑, fibrinogen↓, platelets↓, D-dimer↑</td></tr><tr><td>**20WBCT**</td><td>Bedside VICC screen</td></tr><tr><td>**Russell's viper**</td><td>VICC + AKI + pituitary haemorrhage</td></tr><tr><td>**Saw-scaled viper**</td><td>Procoagulant dominant; high mortality</td></tr><tr><td>**Sea snake**</td><td>Neuro + myotoxic; CK↑↑, myoglobinuria</td></tr><tr><td>**Mojave Type A**</td><td>Neuro (Mojave toxin) + haemotoxic</td></tr><tr><td>**Spitting cobra**</td><td>Ocular injury; copious irrigation</td></tr><tr><td>**Compartment syndrome**</td><td>AV first; fasciotomy ONLY if confirmed by pressure</td></tr><tr><td>**Neostigmine trial**</td><td>Postsynaptic (cobra) only; with atropine</td></tr><tr><td>**Fasciotomy**</td><td>Not prophylactic; only after AV + pressure confirmed</td></tr><tr><td>**Krait mortality**</td><td>High — delayed presentation; minimal local signs mislead</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1: What is the difference between presynaptic and postsynaptic neurotoxicity?</b> A: Postsynaptic (α-neurotoxin) = competitive blockade of nAChR at motor endplate → reversible. Examples: cobra, coral snake, mamba. <b>Neostigmine works</b> (with atropine). Presynaptic (β-neurotoxin) = PLA₂-mediated hydrolysis of presynaptic terminal → ↓ ACh release, <b>irreversible</b> (terminal must regenerate). Examples: krait, taipan, sea snake. <b>Neostigmine ineffective</b>; must wait for antivenom + nerve regeneration (days to weeks).</p>
+<p><b>Q2: Describe the typical pattern of descending paralysis in elapid envenomation.</b> A: Stage 1 (0.5–6 h): ptosis, ophthalmoplegia, diplopia. Stage 2 (1–12 h): bulbar — dysphagia, dysarthria, dysphonia, weak cough. Stage 3 (3–24 h): limb — proximal then distal weakness, reduced reflexes. Stage 4 (3–48 h): respiratory — hypoventilation, respiratory arrest. Recovery: reverse order; presynaptic = delayed (weeks).</p>
+<p><b>Q3: What is VICC and which snakes cause it?</b> A: Venom-Induced Consumption Coagulopathy — procoagulants in venom activate clotting cascade (factors V, X, prothrombin) → consumption of clotting factors and fibrinogen. Lab: ↑ INR (often &gt; 5), ↓ fibrinogen (&lt; 1 g/L), ↓ platelets, ↑ D-dimer. Viperid snakes: Russell's, saw-scaled, Bothrops, Echis, some Australian elapids. Bedside: 20WBCT positive (no clot).</p>
+<p><b>Q4: How does Russell's viper cause pituitary haemorrhage?</b> A: Disseminated intravascular coagulation from venom procoagulants → bleeding into pituitary (Sheehan-like syndrome). Presents acutely: shock, hypoglycaemia, hypotension not responding to fluids. Long-term: panhypopituitarism, diabetes insipidus. Management: stress-dose hydrocortisone, levothyroxine (later), desmopressin.</p>
+<p><b>Q5: Why is neostigmine useful in cobra but not krait envenomation?</b> A: Cobra = postsynaptic blockade (reversible nAChR antagonism). Neostigmine (AChE inhibitor) → ↑ ACh at synapse → competitive displacement of toxin from nAChR → recovery. Krait = presynaptic blockade (irreversible destruction of presynaptic terminal). Neostigmine cannot restore ACh release from destroyed terminal. <b>Neostigmine is adjunct to AV, not replacement.</b></p>
+<p><b>Q6: How do you manage suspected compartment syndrome after viper bite?</b> A: 1. Give antivenom first (may reduce swelling). 2. Reassess 1–2 h after AV. 3. Measure compartment pressure (Stryker); &gt; 30 mmHg = compartment. 4. Fasciotomy ONLY if confirmed by pressure after adequate AV. 5. Prophylactic fasciotomy worsens outcome (bleeding, infection). 6. Surgical consult early.</p>
+<p><b>Q7: What is unique about sea snake envenomation?</b> A: Presynaptic neurotoxin (descending paralysis) + PLA₂ myotoxin (severe rhabdomyolysis, CK often &gt; 50,000, myoglobinuria, AKI). Onset 30 min – 6 h. Management: AV (sea snake or polyvalent), aggressive fluids, urine alkalinisation (target pH &gt; 6.5), dialysis if AKI. Prognosis good if ventilated and AKI managed.</p>
+<p><b>Q8: How do you manage cobra venom spat in the eye?</b> A: Immediate copious irrigation with water/saline for 15–20 min (no rubbing). Topical anaesthetic (proxymetacaine). Slit-lamp exam + fluorescein for corneal defect. Topical antibiotic (chloramphenicol), cycloplegic (atropine 1%) if uveitis. Antivenom NOT given (no systemic). Tetanus cover. Ophthalmology follow-up daily.</p>
+<p><b>Q9: What are the lab features of VICC?</b> A: ↑ PT/INR (often &gt; 5), ↑ aPTT, ↓ fibrinogen (often &lt; 1 g/L), ↑ D-dimer, ↓ platelets, positive 20WBCT. Differentiated from DIC by absence of schistocytes, normal factor VIII (consumed in DIC, not in VICC), and rapid recovery with antivenom.</p>
+<p><b>Q10: What is the most common cause of death in elapid envenomation?</b> A: Respiratory failure from descending paralysis (especially bulbar + diaphragmatic). Early intubation and mechanical ventilation are life-saving. Antivenom may not reverse established paralysis if presynaptic.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Elapid = no local signs</td><td>NOT always — cobras have local swelling/necrosis; krait has minimal</td></tr><tr><td>Viperid = no neuro</td><td>NOT always — Mojave, some Bothrops, some RV</td></tr><tr><td>All neurotoxins = neostigmine</td><td>NO — only postsynaptic (cobra); NOT presynaptic (krait)</td></tr><tr><td>VICC = DIC</td><td>CLOSE — similar labs; VICC recovers with AV; factor VIII low in DIC, normal in VICC</td></tr><tr><td>Fasciotomy for severe swelling</td><td>NO — AV first; only if pressure > 30 mmHg after AV</td></tr><tr><td>Sea snake = elapid</td><td>YES — Hydrophiinae within Elapidae</td></tr><tr><td>Antivenom reverses paralysis</td><td>NO — may prevent progression; established presynaptic paralysis takes days–weeks</td></tr><tr><td>Mojave = pure haemotoxic</td><td>NO — Type A is neuro + haemotoxic</td></tr><tr><td>All cobras can spit</td><td>NO — only African/Asian spitting cobras (e.g., *N. nigricollis*, *N. siamensis*)</td></tr><tr><td>All krait bites are symptomatic</td><td>NO — ~30% are "dry bites"</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>Elapid = E (Expert) Neurotoxicity</b></li><li><b>Viperid = V (Vascular) Haemotoxicity</b></li><li><b>Postsynaptic = cobra/coral/mamba = "CCM" — Curable by ChE inhibitor</b></li><li><b>Presynaptic = krait/taipan/sea snake = "KTS" — Kills Terminals (irreversible)</b></li><li><b>Descending paralysis</b>: <b>P</b>tosis, <b>O</b>phthalmoplegia, <b>B</b>ulbar, <b>L</b>imbs, <b>R</b>espiratory = <b>POBLR</b></li><li><b>VICC labs</b>: <b>I</b>NR↑, <b>F</b>ibrinogen↓, <b>P</b>latelets↓, <b>D</b>-dimer↑ = <b>IFPD</b></li><li><b>Russell's viper features</b>: <b>V</b>ICC, <b>A</b>KI, <b>N</b>euro (some), <b>P</b>ituitary haemorrhage = <b>VANP</b></li><li><b>Spitting cobra</b>: <b>S</b>pat, <b>S</b>aline irrigation, <b>S</b>lit-lamp</li><li><b>Fasciotomy rule</b>: <b>A</b>V first, <b>P</b>ressure next = <b>AP</b></li><li><b>Neostigmine</b>: <b>C</b>obra <b>O</b>nly (postsynaptic) = <b>CO</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Snake Clinical Syndromes)) Elapid Neurotoxic Postsynaptic[Cobra, coral, mamba] Presynaptic[Krait, taipan, sea snake] Pattern Ptosis Ophthalmoplegia Bulbar Limbs Respiratory Treatment Antivenom Neostigmine[Postsynaptic only] Intubation Viperid Haemotoxic VICC[INR↑, fibrinogen↓, platelets↓] Examples[Russell's, saw-scaled, Bothrops] Cytotoxic Swelling Necrosis Compartment Renal AKI Dialysis Mixed Mojave_Type_A Sea_snake[Neuro + myotoxic] Spitting_cobra[Neuro + cytotoxic + ocular] Complications Respiratory_failure VICC_bleeding AKI Compartment_syndrome Myotoxicity Neostigmine Atropine_premed Postsynaptic_only Adjunct_to_AV Fasciotomy AV_first Pressure_&gt;_30 Confirmed_only </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Elapid</th><th>Viperid</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Venom**</td><td>Neurotoxin</td><td>VICC + cytotoxin + nephrotoxin</td></tr><tr><td>**Local**</td><td>Minimal (cobra exception)</td><td>Swelling, necrosis</td></tr><tr><td>**Systemic — Neuro**</td><td>Descending paralysis</td><td>Rare (Mojave)</td></tr><tr><td>**Systemic — Coag**</td><td>Rare</td><td>**VICC**</td></tr><tr><td>**Systemic — Renal**</td><td>Rare (sea snake)</td><td>Common</td></tr><tr><td>**First aid**</td><td>PIB</td><td>Local pressure</td></tr><tr><td>**AV**</td><td>CSL, Indian ASV, SAIMR</td><td>Indian ASV, CroFab, Antivipmyn</td></tr><tr><td>**Neostigmine**</td><td>Postsynaptic only (cobra)</td><td>N/A</td></tr><tr><td>**Compartment**</td><td>No</td><td>AV first; fasciotomy if pressure > 30</td></tr><tr><td>**Time course**</td><td>Minutes to 24 h</td><td>Hours to days</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>Elapid vs viperid, neuro pattern, VICC</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Presynaptic vs postsynaptic, neostigmine, Mojave, sea snake</td></tr><tr><td>**7 d**</td><td></td><td></td><td>Specific snakes, complications, compartment, neostigmine protocol</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with Regional, Lab, AV topics</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Elapid vs viperid syndromes</td><td></td></tr><tr><td>Presynaptic vs postsynaptic</td><td></td></tr><tr><td>Descending paralysis pattern</td><td></td></tr><tr><td>VICC labs</td><td></td></tr><tr><td>Neostigmine use</td><td></td></tr><tr><td>Sea snake myotoxicity</td><td></td></tr><tr><td>Mojave Type A vs B</td><td></td></tr><tr><td>Spitting cobra management</td><td></td></tr><tr><td>Compartment syndrome algorithm</td><td></td></tr><tr><td>Russell's viper complications</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Elapid vs viperid envenomation"</td><td>Neuro vs VICC + cytotoxic; mechanism; clinical; first aid; AV</td></tr><tr><td>**Short Note**</td><td>"Neostigmine in snakebite"</td><td>Postsynaptic (cobra) only; with atropine; adjunct to AV</td></tr><tr><td>**Viva**</td><td>"VICC vs DIC"</td><td>Mechanism, labs, factor VIII, recovery with AV</td></tr><tr><td>**Ward Round**</td><td>"Compartment syndrome after viper bite"</td><td>AV first, measure pressure, fasciotomy if > 30 mmHg after AV</td></tr><tr><td>**Last-Night**</td><td>"Key snake syndromes"</td><td>Elapid = neuro, viperid = VICC; descending paralysis; INR/fibrinogen/platelet</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Postsynaptic α-neurotoxin mechanism:</b></li></ol>
+<p>A. Inhibit ACh release B. <b>Competitively block nAChR at motor endplate</b> C. Degrade ACh D. Block Na⁺ channels E. Enhance ACh release</p>
+<ol><li><b>Presynaptic β-neurotoxin mechanism:</b></li></ol>
+<p>A. <b>Inhibit ACh release from presynaptic terminal</b> B. Block nAChR C. Degrade ACh D. Block Na⁺ channels E. Enhance ACh release</p>
+<ol><li><b>Neostigmine is effective for which neurotoxin?</b></li></ol>
+<p>A. Presynaptic only B. <b>Postsynaptic only (cobra, coral, mamba)</b> C. Both D. Neither E. Only if AV unavailable</p>
+<ol><li><b>Neurotoxic progression:</b></li></ol>
+<p>A. Limb → ptosis → respiratory B. <b>Ptosis → ophthalmoplegia → bulbar → limb → respiratory</b> C. Respiratory first D. Limb only E. No pattern</p>
+<ol><li><b>Viperid coagulopathy labs:</b></li></ol>
+<p>A. Normal INR B. <b>↑ INR, ↓ fibrinogen, ↓ platelets, ↑ D-dimer</b> C. Normal fibrinogen D. Isolated thrombocytopenia E. Isolated aPTT</p>
+<ol><li><b>Russell's viper venom contains:</b></li></ol>
+<p>A. Only neurotoxins B. <b>Procoagulants + haemorrhagins + nephrotoxins + (some) neuro</b> C. Only haemorrhagins D. Only nephrotoxins E. No coagulants</p>
+<ol><li><b>Saw-scaled viper coagulopathy mechanism:</b></li></ol>
+<p>A. Anticoagulant B. <b>Procoagulant → factor X/prothrombin activation → consumption</b> C. Platelet inhibition D. Fibrinolysis E. Heparin-like</p>
+<ol><li><b>Spitting cobra unique feature:</b></li></ol>
+<p>A. Only neurotoxic B. <b>Cytotoxic + ocular injury when spat</b> C. Only haemotoxic D. No venom E. Presynaptic only</p>
+<ol><li><b>Sea snake envenomation unique feature:</b></li></ol>
+<p>A. Pure neurotoxic B. <b>Neurotoxic + myotoxic (rhabdo, renal)</b> C. Pure haemotoxic D. Pure cytotoxic E. Only local</p>
+<ol><li><b>Mojave Type A venom:</b></li></ol>
+<p>A. Haemotoxic only B. <b>Neuro (Mojave toxin) + haemotoxic</b> C. Neuro only D. Cytotoxic only E. No venom</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Krait bite — ptosis, ophthalmoplegia. Neostigmine trial indicated for:</b></li></ol>
+<p>A. All neurotoxic B. <b>Postsynaptic (cobra) NOT krait (presynaptic)</b> C. Presynaptic only D. Only if no AV E. Never</p>
+<ol><li><b>Sea snake bite — fisherman, myalgia, dark urine, CK 50,000. Priority:</b></li></ol>
+<p>A. AV only B. <b>IV fluids, alkalinisation, urine &gt; 200 mL/h + AV</b> C. Dialysis immediately D. Mannitol only E. Fasciotomy</p>
+<ol><li><b>Cobra bite — ptosis, ophthalmoplegia, no coagulopathy. Neostigmine trial:</b></li></ol>
+<p>A. <b>Indicated (postsynaptic)</b> B. Contraindicated C. After AV only D. Only if no AV E. With atropine</p>
+<ol><li><b>Viper bite — coagulopathy persists after 10 vials AV. INR 3 at 6 h. Next step:</b></li></ol>
+<p>A. Stop AV B. <b>Repeat AV (persistent coagulopathy = ongoing venom)</b> C. Heparin D. FFP only E. Plasma exchange</p>
+<ol><li><b>Cobra spits in eyes. Immediate management:</b></li></ol>
+<p>A. Topical antibiotics B. <b>Copious irrigation 15–20 min, topical anaesthetic, slit-lamp, antibiotics if abrasion</b> C. AV eye drops D. Steroid only E. Patch eye</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Snake Envenomation: Global Epidemiology and Snake Identification]]</li><li>[[Snake Envenomation: Specific Regional Snakes (Asia, Africa, Australia, Americas)]]</li><li>[[Snake Envenomation: Laboratory Investigation and Monitoring]]</li><li>[[Snake Envenomation: Specific Antivenom Protocols]]</li><li>[[Antivenom: Principles, Types, and Administration]]</li><li>[[Antivenom Adverse Reactions and Management]]</li><li>[[General Principles of Envenomation]]</li><li>[[Envenomation MOC]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Snake Envenomation- Clinical Syndromes (Elapid vs Viperid) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

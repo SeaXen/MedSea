@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anticholinergic Toxidrome — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Anticholinergic Toxidrome</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognize classic anticholinergic toxidrome</li><li>Differentiate pure anticholinergic from mixed (TCA, antihistamines)</li><li>Identify indications for physostigmine and its CONTRAINDICATIONS</li><li>Contrast with cholinergic, sympathomimetic, serotonin, NMS</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Anticholinergic toxidrome = clinical syndrome from competitive blockade of muscarinic acetylcholine receptors (central and peripheral).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Mechanism</b>: competitive antagonism at muscarinic receptors (M1-M5)</li><li><b>Central</b> (M1, M4): delirium, agitation, hallucinations, seizures, coma</li><li><b>Peripheral</b> (M2, M3): tachycardia, dry skin/mucous membranes, mydriasis, ileus, urinary retention, hyperthermia (impaired sweating)</li><li><b>Agents</b>: atropine, scopolamine, benztropine, biperiden, trihexyphenidyl; <b>Tricyclic antidepressants</b> (strong anticholinergic + Na channel blockade); <b>Antihistamines</b> (diphenhydramine, promethazine, hydroxyzine); <b>Antipsychotics</b> (clozapine, olanzapine, chlorpromazine); <b>Antispasmodics</b> (hyoscine, dicyclomine); <b>Plants</b> (Datura, Belladonna, Jimson weed); <b>Antiparkinson</b> (benztropine, trihexyphenidyl); <b>Myrianth</b> (OTC cold meds)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features (The "Anticholinergic Mnemonic")</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classic: "Red as a beet, Dry as a bone, Blind as a bat, Mad as a hatter, Hot as a hare, Full as a flask"</div>
+<table class="ctable"><tr><th>Feature</th><th>Mechanism</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Hyperthermia**</td><td>Impaired sweating (anhidrosis) + heat production from agitation</td></tr><tr><td>**Flushed, dry, hot skin**</td><td>Vasodilation + anhidrosis</td></tr><tr><td>**Mydriasis** (dilated pupils)</td><td>Loss of parasympathetic tone to iris sphincter</td></tr><tr><td>**Blurred vision / Photophobia**</td><td>Cycloplegia (loss of accommodation)</td></tr><tr><td>**Tachycardia**</td><td>M2 blockade in SA node (loss of vagal tone)</td></tr><tr><td>**Urinary retention**</td><td>Detrusor relaxation (M3)</td></tr><tr><td>**Ileus / Constipation**</td><td>Decreased GI motility (M3)</td></tr><tr><td>**Delirium / Agitation / Hallucinations**</td><td>Central M1/M4 blockade</td></tr><tr><td>**Seizures**</td><td>Severe central blockade (esp. diphenhydramine, TCA)</td></tr><tr><td>**Coma**</td><td>Severe</td></tr><tr><td>**Myoclonus / Choreoathetosis**</td><td>Central</td></tr></table>
+<div class="sub-h">Key Differentiators</div>
+<table class="ctable"><tr><th>Feature</th><th>Pure Anticholinergic</th><th>TCA</th><th>Sympathomimetic</th><th>Serotonin</th><th>NMS</th></tr><tr><td>---------</td><td>---------------------</td><td>-----</td><td>-----------------</td><td>-----------</td><td>-----</td></tr><tr><td>**Skin**</td><td>Hot, dry, flushed</td><td>Hot, dry</td><td>Diaphoretic</td><td>Diaphoretic</td><td>Diaphoretic</td></tr><tr><td>**Pupils**</td><td>Dilated (mydriasis)</td><td>Dilated</td><td>Dilated</td><td>Normal/dilated</td><td>Normal</td></tr><tr><td>**Bowel sounds**</td><td>Absent</td><td>Absent</td><td>Normal/increased</td><td>Normal</td><td>Normal</td></tr><tr><td>**Reflexes**</td><td>Normal</td><td>Normal</td><td>Hyperreflexic</td><td>**Hyperreflexic + Clonus**</td><td>Normal/increased tone</td></tr><tr><td>**Muscle tone**</td><td>Normal</td><td>Normal</td><td>Normal</td><td>Normal</td><td>**Rigidity (lead-pipe)**</td></tr><tr><td>**QRS**</td><td>Normal</td><td>**WIDENED**</td><td>Normal</td><td>Normal</td><td>Normal</td></tr><tr><td>**Onset**</td><td>Rapid</td><td>Rapid</td><td>Rapid</td><td>Rapid (hrs)</td><td>Days</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cholinergic</b>: opposite (wet, brady, miosis, bronchorrhea) → physostigmine indicated</li><li><b>Sympathomimetic</b>: diaphoresis, hyperreflexia, not dry/bladder retention</li><li><b>Serotonin Syndrome</b>: <b>CLONUS</b> (spontaneous/inducible/ocular), hyperreflexia, diaphoresis, rapid onset + serotonergic agent</li><li><b>NMS</b>: <b>lead-pipe rigidity</b>, bradykinesia, gradual onset (days), dopaminergic withdrawal/blockade</li><li><b>Malignant hyperthermia</b>: anesthetic trigger, rigid, hyperkalemia, rhabdo</li><li><b>Heat stroke</b>: environmental, anhidrosis, no anticholinergic agent</li><li><b>Encephalitis/meningitis</b>: fever, altered mental status, meningeal signs</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Clinical diagnosis</b> — toxidrome recognition</li><li><b>ECG</b>: sinus tachycardia, <b>QRS normal</b> (if widened → think TCA, not pure anticholinergic)</li><li><b>ABG</b>: respiratory alkalosis (agitation), metabolic acidosis (seizures, rhabdo)</li><li><b>CK</b>: if rhabdo (seizures, agitation)</li><li><b>Urine drug screen</b>: diphenhydramine, TCA, others (limited utility)</li><li><b>Paracetamol level</b> (always)</li><li><b>Trop/BNP</b> if cardiac concern</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Supportive Care (Mainstay)</div>
+<ul><li><b>ABCDE</b>: airway protection if GCS &lt; 8 or seizure</li><li><b>Cooling</b>: active cooling if T &gt; 39°C (evaporative, ice packs, cold IV fluids) — <b>primary life threat</b></li><li><b>Benzodiazepines</b>: <b>1st line for agitation/seizures</b> — Lorazepam 2-4 mg IV or Diazepam 5-10 mg IV. Repeat prn.</li><li><b>IV fluids</b>: hydration, rhabdo prevention</li><li><b>Foley catheter</b>: urinary retention</li><li><b>Monitor</b>: continuous ECG, temp, GCS</li></ul>
+<div class="sub-h">2. Physostigmine (Acetylcholinesterase Inhibitor) — **CONTROVERSIAL, RESTRICTED USE**</div>
+<ul><li><b>Mechanism</b>: reversible AChE inhibitor → ↑ ACh → overcomes competitive blockade. Crosses BBB → treats central delirium.</li><li><b>Indications</b>: <b>SEVERE</b> anticholinergic toxicity unresponsive to benzodiazepines:</li><li>Refractory agitation/delirium with risk of harm</li><li>Severe hyperthermia (&gt; 40°C) unresponsive to cooling</li><li>Seizures uncontrolled by benzodiazepines</li><li><b>Contraindications (ABSOLUTE — FATAL IF IGNORED)</b>:</li><li><b>QRS widening</b> (&gt; 100 ms) — TCA co-ingestion risk → precipitates asystole/V-fib</li><li><b>Bradycardia / Heart block</b> — cholinergic excess</li><li><b>Bronchospasm / Asthma / COPD</b> — bronchoconstriction</li><li><b>Bowel obstruction</b> — increased motility → perforation</li><li><b>Urinary obstruction</b> (BPH) — increased tone</li><li><b>Pregnancy</b> (uterine stimulation)</li><li><b>Dose</b>: 0.5-1 mg IV slowly over 2-5 min (child 0.02 mg/kg). Repeat q20-30 min (max 2 mg/hr, 5 mg/24h).</li><li><b>Onset</b>: 2-5 min (IV), peaks 30 min. Duration 30-60 min → may need repeat.</li><li><b>Monitor</b>: continuous ECG during/after. Atropine at bedside.</li><li><b>Consult toxicology</b> before use.</li></ul>
+<div class="sub-h">3. Decontamination</div>
+<ul><li><b>Activated charcoal</b>: 1 g/kg if &lt; 1-2h, intact airway. Many anticholinergics delay gastric emptying → may be effective later than usual.</li><li><b>Gastric lavage</b>: rarely indicated.</li><li><b>WBI</b>: body packers, sustained-release (rare).</li></ul>
+<div class="sub-h">4. Monitoring &amp; Disposition</div>
+<ul><li>Observe 6h after resolution of symptoms (long duration agents: TCA, antihistamines, plants)</li><li>Psychiatric assessment if intentional</li><li>Admit if: persistent delirium, hyperthermia, rhabdo, TCA co-ingestion suspected (QRS), unreliable history</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Rhabdomyolysis → AKI (agitation, hyperthermia, seizures)</li><li>Aspiration pneumonia (ileus, decreased gag, sedation)</li><li>Seizure injury</li><li>Hyperthermia → multi-organ failure, DIC</li><li>Falls/trauma (elderly on anticholinergics)</li><li>TCA cardiotoxicity if co-ingested</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Excellent with supportive care</li><li>Mortality rare (&lt; 1%) — usually from hyperthermia, rhabdo, or TCA co-ingestion</li><li>Full recovery typical</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Classic mnemonic</b>: "Red as a beet, dry as a bone, blind as a bat, mad as a hatter, hot as a hare, full as a flask"</li><li><b>Benzodiazepines = 1st line</b> for agitation/seizures (physostigmine is 2nd line, restricted)</li><li><b>Physostigmine contraindications are examinable</b>: QRS widening, bradycardia, asthma, bowel obstruction, urinary obstruction, pregnancy</li><li><b>QRS widening = think TCA</b> → physostigmine CONTRAINDICATED</li><li><b>Skin</b>: dry vs diaphoretic (sympathomimetic/serotonin/NMS)</li><li><b>Clonus/hyperreflexia = serotonin</b>, Rigidity = NMS</li><li><b>Anticholinergic burden in elderly</b>: falls, delirium, dementia worsening — Beer's criteria</li><li><b>Diphenhydramine</b>: seizures common at high dose</li><li><b>TCA = mixed</b> (anticholinergic + Na channel blockade) — manage as TCA (NaHCO₃ for QRS)</li><li><b>Activated charcoal effective longer</b> (anticholinergics delay gastric emptying)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Anticholinergic toxidrome features (mnemonic)</li><li>Differentiate from sympathomimetic, serotonin syndrome, NMS</li><li>Physostigmine indications AND contraindications</li><li>Why is physostigmine dangerous in TCA co-ingestion?</li><li>Management of hyperthermia in anticholinergic poisoning</li><li>Role of activated charcoal</li><li>Anticholinergic burden in elderly</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Physostigmine in TCA</b> → fatal arrhythmia (QRS widening)</li><li><b>Physostigmine in asthma/COPD</b> → bronchospasm</li><li><b>Skin wet vs dry</b>: anticholinergic = DRY; sympathomimetic/serotonin/NMS = WET</li><li><b>Reflexes</b>: anticholinergic = normal; serotonin = hyperreflexia + CLONUS; NMS = normal/increased tone</li><li><b>Pupils</b>: anticholinergic = dilated; opioid = constricted; sympathomimetic = dilated</li><li><b>Onset</b>: NMS = days, Serotonin = hours</li><li><b>Rigidity</b>: NMS = lead-pipe; Serotonin = normal tone + clonus</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Red as a beet, Dry as a bone, Blind as a bat, Mad as a hatter, Hot as a hare, Full as a flask</b></li><li><b>PHYSOSTIGMINE CONTRAINDICATIONS</b>: "Q-BAB-P" = <b>Q</b>RS widening, <b>B</b>radycardia/block, <b>A</b>sthma/bronchospasm, <b>B</b>owel obstruction, <b>P</b>regnancy/Prostatic obstruction</li><li><b>MEANT</b> (anticholinergic agents): <b>M</b>uscarinic antagonists (atropine), <b>E</b>lderly meds (anticholinergic burden), <b>A</b>ntihistamines (1st gen), <b>N</b>euroleptics (low potency), <b>T</b>ricyclics, <b>T</b>oxic plants (Datura)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Anticholinergic Toxidrome))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Mechanism</div>
+<div class="mm-node mm-l3">– Muscarinic Blockade</div>
+<div class="mm-node mm-l3">– Central + Peripheral</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Hot/Dry/Red Skin</div>
+<div class="mm-node mm-l3">– Mydriasis</div>
+<div class="mm-node mm-l3">– Tachycardia</div>
+<div class="mm-node mm-l3">– Urinary Retention</div>
+<div class="mm-node mm-l3">– Ileus</div>
+<div class="mm-node mm-l3">– Delirium/Agitation</div>
+<div class="mm-node mm-l3">– Seizures</div>
+<div class="mm-node mm-l3">– Hyperthermia</div>
+<div class="mm-node mm-l2">Agents</div>
+<div class="mm-node mm-l3">– Pure: Atropine, Scopolamine, Benztropine</div>
+<div class="mm-node mm-l3">– Mixed: TCA, Antihistamines, Antipsychotics, Plants</div>
+<div class="mm-node mm-l2">DDx</div>
+<div class="mm-node mm-l3">– Sympathomimetic (Wet, Hyperreflexia)</div>
+<div class="mm-node mm-l3">– Serotonin (CLONUS, Hyperreflexia, Wet)</div>
+<div class="mm-node mm-l3">– NMS (Rigidity, Bradykinesia, Days)</div>
+<div class="mm-node mm-l3">– Cholinergic (Opposite)</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Supportive (Cooling, Benzo, Fluids)</div>
+<div class="mm-node mm-l3">– Physostigmine (Restricted)</div>
+<div class="mm-node mm-l3">– Charcoal (Longer Window)</div>
+<div class="mm-node mm-l2">Physostigmine</div>
+<div class="mm-node mm-l3">– Indications: Severe refractory</div>
+<div class="mm-node mm-l3">– Contraindications: QRS, Brady, Asthma, Obstruction</div>
+<div class="mm-node mm-l3">– Dose: 0.5-1mg IV</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hot, Dry, Delirious, Tachycardic, Mydriasis, Urinary Retention</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Anticholinergic Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE + Cooling + Benzodiazepines</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Severe Refractory&lt;br/&gt;Agitation/Hyperthermia/Seizures?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Observation 6h&lt;br/&gt;Psych Assessment</div>
+<div class="fc-node" data-id="F">Contraindications?\nQRS&gt;100, Brady, Asthma,\nBowel/Urinary Obstruction</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Discharge if Resolved\n+ Psych Safe</div>
+<div class="fc-node" data-id="G">DO NOT GIVE PHYSOSTIGMINE\nContinue Supportive\nICU Admission</div>
+<div class="fc-node" data-id="H">Physostigmine 0.5-1mg IV\nOver 2-5 min\nMonitor ECG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">ICU: Cooling, Benzo,\nFoley, Monitor</div>
+<div class="fc-node" data-id="I">Repeat if needed q20-30min\nMax 2mg/hr</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Comparison table: anticholinergic vs sympathomimetic vs serotonin vs NMS</li><li>Physostigmine contraindications poster</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Anticholinergic toxidrome review (EM:RAP, ToxTalks)</li><li>Physostigmine decision algorithm</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Toxidrome</b>: hot, dry, red, blind, mad, hot, full (mnemonic)</li><li><b>Key</b>: dry skin, mydriasis, tachycardia, urinary retention, ileus, delirium, hyperthermia</li><li><b>DDx</b>: Sympathomimetic (wet), Serotonin (clonus/hyperreflexia/wet), NMS (rigidity/days), Cholinergic (opposite)</li><li><b>Benzos 1st line</b> (lorazepam/diazepam) for agitation/seizures</li><li><b>Physostigmine</b>: 0.5-1mg IV, ONLY if severe refractory, CONTRAINDICATED: QRS&gt;100, bradycardia, asthma, bowel/urinary obstruction, pregnancy</li><li><b>QRS widening = TCA = NO physostigmine</b></li><li><b>Charcoal</b>: longer window (delayed gastric emptying)</li><li><b>Cooling critical</b> for hyperthermia</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>Recite anticholinergic mnemonic</li><li>List 5 physostigmine contraindications</li><li>Contrast anticholinergic vs serotonin vs NMS (skin, reflexes, rigidity, onset)</li><li>State physostigmine dose and monitoring</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Anticholinergic mnemonic</li><li>Clinical features (hot, dry, red, blind, mad, full)</li><li>DDx table (skin, reflexes, pupils, clonus, rigidity, onset)</li><li>Benzodiazepines 1st line</li><li>Physostigmine indications + CONTRAINDICATIONS (QRS, brady, asthma, obstruction)</li><li>TCA = mixed, QRS widening → NaHCO₃ not physostigmine</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Physostigmine dose: 0.5-1mg IV over 2-5 min, repeat q20-30 min</li><li>Agents: pure vs mixed (TCA, antihistamines, antipsychotics, plants)</li><li>Anticholinergic burden in elderly (Beer's criteria)</li><li>Charcoal window extended</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Central vs peripheral muscarinic receptors</li><li>Physostigmine pharmacokinetics (BBB penetration, short duration)</li><li>Specific plant toxins (Datura, Belladonna)</li><li>Diphenhydramine seizure threshold</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition + mechanism</li><li>Clinical features (mnemonic)</li><li>Differential diagnosis table</li><li>Investigations (clinical diagnosis, ECG for QRS)</li><li>Management: supportive → benzos → physostigmine (restricted)</li><li>Physostigmine: mechanism, dose, indications, contraindications (emphasize)</li><li>Complications + prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Anticholinergic mnemonic</li><li>Physostigmine contraindications list</li><li>Comparison table: 4 toxidromes</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Anticholinergic: hot as a hare, dry as a bone, red as a beet, blind as a bat, mad as a hatter, full as a flask"</li><li>"Physostigmine contraindicated: QRS widening, bradycardia, asthma, bowel/urinary obstruction, pregnancy"</li><li>"Dry skin = anticholinergic; Wet skin = sympathomimetic/serotonin/NMS"</li><li>"Clonus = serotonin; Rigidity = NMS"</li><li>"TCA overdose: QRS widening → NaHCO₃, NOT physostigmine"</li><li>"QRS &gt; 100 ms + anticholinergic features = TCA co-ingestion = physostigmine fatal"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Elderly on multiple anticholinergics → delirium, falls (Beer's criteria)</li><li>Unknown overdose with anticholinergic features — check ECG for QRS</li><li>Cooling + benzos before considering physostigmine</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Mnemonic: Red/Dry/Blind/Mad/Hot/Full</li><li>Physostigmine NO-GO: QRS, Brady, Asthma, Obstruction, Pregnancy</li><li>Wet vs Dry skin</li><li>Clonus vs Rigidity</li><li>Benzos 1st line</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Anticholinergic toxidrome = muscarinic blockade → hot/dry/red/blind/mad/full. Benzodiazepines 1st line for agitation/seizures. Physostigmine reserved for severe refractory cases BUT contraindicated if QRS widening (TCA), bradycardia, asthma, bowel/urinary obstruction, pregnancy. Key exam: mnemonic, physostigmine contraindications, differentiation from sympathomimetic/serotonin/NMS (skin moisture, reflexes, clonus, rigidity, onset).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Anticholinergic toxidrome mnemonic?</li></ol>
+<p>A. SLUDGE B. Red as a beet, dry as a bone, blind as a bat, mad as a hatter, hot as a hare, full as a flask C. MUDPILES D. FEVER <b>Answer: B</b> <i>Explanation: Classic: Hot as a hare (hyperthermia), dry as a bone (anhidrosis), red as a beet (flushing), blind as a bat (mydriasis/cycloplegia), mad as a hatter (delirium), full as a flask (urinary retention). Also: tachycardia, ileus.</i></p>
+<ol><li>Anticholinergic vs cholinergic - key differentiating feature?</li></ol>
+<p>A. Both have miosis B. Anticholinergic: dry skin, mydriasis, tachycardia. Cholinergic: wet (SLUDGE), miosis, bradycardia C. Both have bradycardia D. Both have diaphoresis <b>Answer: B</b> <i>Explanation: Anticholinergic: dry/hot/red/blind/mad/full + tachycardia. Cholinergic: SLUDGE + miosis + bradycardia + fasciculations.</i></p>
+<ol><li>Physostigmine for anticholinergic - when indicated?</li></ol>
+<p>A. All anticholinergic cases B. ONLY severe (seizure, severe agitation, hyperthermia &gt;40°C) AND no contraindications C. Mild cases only D. Never indicated <b>Answer: B</b> <i>Explanation: Physostigmine 1-2mg IV over 5min: ONLY for severe cases (seizure, severe agitation, hyperthermia) AND no contraindications (QRS widening, asthma, bradycardia, bowel obstruction). Risk: seizures, bradycardia, asystole, bronchospasm.</i></p>
+<ol><li>Physostigmine contraindications?</li></ol>
+<p>A. Only in children B. QRS widening (TCA), asthma, bradycardia, bowel obstruction C. Only with seizures D. None <b>Answer: B</b> <i>Explanation: Contraindicated: QRS widening (TCA co-ingestion → asystole risk), asthma (bronchospasm), bradycardia (worsens), bowel obstruction (↑ tone). Also avoid in cardiac conduction disease.</i></p>
+<ol><li>Diphenhydramine overdose - specific features?</li></ol>
+<p>A. Pure anticholinergic B. Anticholinergic + Na channel blockade (QRS widening, seizures) C. Only sedation D. Cholinergic <b>Answer: B</b> <i>Explanation: Diphenhydramine: anticholinergic + sodium channel blockade → QRS widening, seizures, wide-complex tachycardia. Treat seizures with benzos, QRS with NaHCO₃. Physostigmine contraindicated if QRS widened.</i></p>
+<ol><li>Anticholinergic delirium - management?</li></ol>
+<p>A. Haloperidol B. Benzodiazepines (lorazepam) for agitation C. Physostigmine first line D. Antipsychotics <b>Answer: B</b> <i>Explanation: Agitation/delirium: benzodiazepines 1st line (lorazepam 1-2mg IV). Avoid antipsychotics (lower seizure threshold, anticholinergic side effects). Physostigmine only for severe + no contraindications.</i></p>
+<ol><li>Jimson weed (Datura) poisoning?</li></ol>
+<p>A. Opioid-like B. Anticholinergic (atropine, scopolamine) C. Cholinergic D. Sympathomimetic <b>Answer: B</b> <i>Explanation: Jimson weed (Datura stramonium): contains atropine, scopolamine, hyoscyamine → anticholinergic toxidrome. Common in adolescents experimenting.</i></p>
+<ol><li>Anticholinergic + TCA co-ingestion - physostigmine?</li></ol>
+<p>A. Safe B. CONTRAINDICATED (QRS widening → asystole) C. First line D. Only for seizures <b>Answer: B</b> <i>Explanation: TCA = Na channel blockade → QRS widening. Physostigmine + QRS widening = asystole risk. CONTRAINDICATED. Treat TCA cardiotoxicity with NaHCO₃.</i></p>
+<ol><li>Atropine (therapeutic) vs anticholinergic poisoning - difference?</li></ol>
+<p>A. Atropine doesn't cross BBB B. Atropine crosses BBB → central effects (delirium) in poisoning C. No difference D. Poisoning has no peripheral effects <b>Answer: B</b> <i>Explanation: Therapeutic atropine: peripheral mainly (poor BBB penetration). Poisoning/overdose: high dose → crosses BBB → central anticholinergic syndrome (delirium, hallucinations, seizures).</i></p>
+<ol><li>Anticholinergic hyperthermia - mechanism?</li></ol>
+<p>A. ↑ metabolic rate B. Anhidrosis (loss of sweating) + central thermoregulatory dysfunction C. Muscle rigidity D. Thyroid storm <b>Answer: B</b> <i>Explanation: Hyperthermia: anhidrosis (blocks muscarinic sweat glands) + central hypothalamic thermoregulatory dysfunction. Treat with active cooling (evaporative, ice packs). Antipyretics ineffective.</i></p>
+<ol><li>Anticholinergic toxidrome - urinary retention management?</li></ol>
+<p>A. Catheterization B. Bethanechol C. Physostigmine D. Wait for resolution <b>Answer: A</b> <i>Explanation: Urinary retention: catheterization (straight cath or Foley). Bethanechol/physostigmine not used for this. Resolves as drug clears.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Adolescent found agitated, hallucinating, hot, dry skin, dilated pupils, tachycardic 130. Empty diphenhydramine bottle. QRS 110ms. Management?</li></ol>
+<p>A. Physostigmine 1mg IV B. Benzodiazepines + NaHCO₃ for QRS + cooling C. Haloperidol D. Atropine <b>Answer: B</b> <i>Explanation: Diphenhydramine = anticholinergic + Na channel blockade (QRS 110ms). Physostigmine CONTRAINDICATED (QRS widening). Treat: benzos for agitation/seizures, NaHCO₃ for QRS &gt; 100ms, active cooling. Haloperidol lowers seizure threshold.</i></p>
+<ol><li>Pure anticholinergic poisoning (jimson weed tea). Severe agitation, hyperthermia 40.5°C, no QRS widening, no asthma. Physostigmine?</li></ol>
+<p>A. Contraindicated B. Indicated - 1-2mg IV over 5min for severe agitation/hyperthermia C. Only if seizures D. Never in plant poisoning <b>Answer: B</b> <i>Explanation: Pure anticholinergic (no TCA, no QRS widening, no asthma, no bradycardia, no bowel obstruction): physostigmine 1-2mg IV over 5min INDICATED for severe agitation, hyperthermia &gt;40°C, seizures. Monitor for bradycardia, bronchorrhea.</i></p>
+<ol><li>Anticholinergic poisoning with seizures. First-line?</li></ol>
+<p>A. Phenytoin B. Benzodiazepines (lorazepam/diazepam) C. Physostigmine D. Levetiracetam <b>Answer: B</b> <i>Explanation: Anticholinergic seizures: benzos 1st line. Physostigmine risky (seizure side effect). Phenytoin not needed unless Na channel blockade (diphenhydramine).</i></p>
+<ol><li>Elderly on multiple anticholinergic meds (oxynbutynin, amitriptyline, diphenhydramine). Confused, dry mouth, constipation. Management?</li></ol>
+<p>A. Physostigmine B. Stop offending agents, supportive, hydration C. Bethanechol D. Rivastigmine <b>Answer: B</b> <i>Explanation: Chronic anticholinergic burden in elderly: stop offending agents, supportive care, hydration. Physostigmine not for chronic use. Rivastigmine (AChE inhibitor) for dementia, not acute poisoning.</i></p>
+<ol><li>Atropine 10mg IV given for organophosphate. Patient now delirious, hallucinating, hot, dry. Diagnosis?</li></ol>
+<p>A. Organophosphate worsening B. Atropine toxicity (central anticholinergic syndrome) C. New stroke D. Sepsis <b>Answer: B</b> <i>Explanation: High-dose atropine crosses BBB → central anticholinergic syndrome (delirium, hallucinations, hyperthermia, mydriasis). Therapeutic atropine usually peripheral. Reduce atropine dose if possible.</i></p>
+<ol><li>Anticholinergic + QRS widening. Drug most likely?</li></ol>
+<p>A. Atropine B. Scopolamine C. Diphenhydramine (or TCA) D. Benztropine <b>Answer: C</b> <i>Explanation: Diphenhydramine: anticholinergic + Na channel blockade → QRS widening, seizures. TCA also. Pure anticholinergics (atropine, scopolamine, benztropine) don't cause QRS widening.</i></p>
+<ol><li>Anticholinergic hyperthermia 41°C. Cooling method?</li></ol>
+<p>A. Paracetamol B. Ibuprofen C. Active evaporative cooling + ice packs (antipyretics ineffective) D. Dantrolene <b>Answer: C</b> <i>Explanation: Anticholinergic hyperthermia: anhidrosis + central dysregulation. Antipyretics INEFFECTIVE (not prostaglandin-mediated). Active cooling: evaporative, ice packs, cold IV fluids. Dantrolene for NMS/MH.</i></p>
+<ol><li>Benztropine overdose (anticholinergic for EPS). Seizures. Physostigmine?</li></ol>
+<p>A. Yes, first line B. Only if no QRS widening C. Contraindicated (benztropine has Na channel blockade?) D. No - benzos first <b>Answer: D</b> <i>Explanation: Benztropine: anticholinergic, minimal Na channel effect. Seizures: benzos 1st line. Physostigmine only if severe agitation/hyperthermia AND no contraindications. Not first line for seizures.</i></p>
+<ol><li>Anticholinergic poisoning - bowel sounds?</li></ol>
+<p>A. Hyperactive B. Absent (ileus) C. Normal D. Tympany only <b>Answer: B</b> <i>Explanation: Anticholinergic: blocks muscarinic → ↓ GI motility → ileus (absent bowel sounds), constipation, urinary retention. 'Full as a flask' = urinary retention.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Anticholinergic mnemonic?</li></ul>
+<p>A: Hot as a hare (hyperthermia), dry as a bone (anhidrosis), red as a beet (flushing), blind as a bat (mydriasis), mad as a hatter (delirium), full as a flask (urinary retention). + tachycardia, ileus.</p>
+<ul><li>Q: Anticholinergic vs cholinergic?</li></ul>
+<p>A: Anticholinergic: dry, hot, red, blind, mad, full + tachycardia. Cholinergic: SLUDGE + miosis + bradycardia + fasciculations.</p>
+<ul><li>Q: Physostigmine indications?</li></ul>
+<p>A: ONLY severe: seizure, severe agitation, hyperthermia &gt;40°C. AND no contraindications (QRS widening, asthma, bradycardia, bowel obstruction). 1-2mg IV over 5min.</p>
+<ul><li>Q: Physostigmine contraindications?</li></ul>
+<p>A: QRS widening (TCA/diphenhydramine → asystole), asthma (bronchospasm), bradycardia (worsens), bowel obstruction (↑ tone), cardiac conduction disease.</p>
+<ul><li>Q: Diphenhydramine specific?</li></ul>
+<p>A: Anticholinergic + Na channel blockade → QRS widening, seizures, wide-complex tachycardia. Treat: benzos + NaHCO₃ for QRS. Physostigmine contraindicated.</p>
+<ul><li>Q: Anticholinergic delirium treatment?</li></ul>
+<p>A: Benzos 1st line (lorazepam 1-2mg IV). Avoid antipsychotics (lower seizure threshold, anticholinergic SE). Physostigmine only severe + no contraindications.</p>
+<ul><li>Q: Jimson weed (Datura)?</li></ul>
+<p>A: Atropine, scopolamine, hyoscyamine → anticholinergic toxidrome. Adolescents experimenting.</p>
+<ul><li>Q: Atropine toxicity (high dose)?</li></ul>
+<p>A: Crosses BBB → central anticholinergic syndrome: delirium, hallucinations, hyperthermia, mydriasis. Reduce dose if possible.</p>
+<ul><li>Q: Anticholinergic hyperthermia mechanism?</li></ul>
+<p>A: Anhidrosis (blocks sweat glands) + central hypothalamic dysregulation. Antipyretics INEFFECTIVE. Active cooling.</p>
+<ul><li>Q: Urinary retention in anticholinergic?</li></ul>
+<p>A: Catheterization. Bethanechol/physostigmine not used. Resolves as drug clears.</p>
+<ul><li>Q: Bowel sounds in anticholinergic?</li></ul>
+<p>A: Absent (ileus). Muscarinic blockade → ↓ GI motility.</p>
+<ul><li>Q: Benztropine overdose?</li></ul>
+<p>A: Anticholinergic for EPS. Minimal Na channel effect. Seizures: benzos. Physostigmine only severe + no contraindications.</p>
+<ul><li>Q: Chronic anticholinergic burden elderly?</li></ul>
+<p>A: Stop offending agents, supportive, hydration. Physostigmine not for chronic. Rivastigmine for dementia.</p>
+<ul><li>Q: Anticholinergic + TCA?</li></ul>
+<p>A: Physostigmine CONTRAINDICATED (QRS widening → asystole). NaHCO₃ for TCA cardiotoxicity.</p>
+<ul><li>Q: Anticholinergic pupil?</li></ul>
+<p>A: Mydriasis (dilated), cycloplegia (blurred near vision) - 'blind as a bat'. NOT pinpoint.</p>
+<ul><li>Q: Anticholinergic skin?</li></ul>
+<p>A: Dry, hot, flushed - 'dry as a bone, red as a beet, hot as a hare'. Anhidrosis.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> - Classic: Hot as a hare (hyperthermia), dry as a bone (anhidrosis), red as a beet (flushing), blind as a bat (mydriasis/cycloplegia), mad as a hatter (delirium), full as a flask (urinary retention). Also: tachycardia, ileus.</li><li><b>B</b> - Anticholinergic: dry/hot/red/blind/mad/full + tachycardia. Cholinergic: SLUDGE + miosis + bradycardia + fasciculations.</li><li><b>B</b> - Physostigmine 1-2mg IV over 5min: ONLY for severe cases (seizure, severe agitation, hyperthermia) AND no contraindications (QRS widening, asthma, bradycardia, bowel obstruction). Risk: seizures, bradycardia, asystole, bronchospasm.</li><li><b>B</b> - Contraindicated: QRS widening (TCA co-ingestion → asystole risk), asthma (bronchospasm), bradycardia (worsens), bowel obstruction (↑ tone). Also avoid in cardiac conduction disease.</li><li><b>B</b> - Diphenhydramine: anticholinergic + sodium channel blockade → QRS widening, seizures, wide-complex tachycardia. Treat seizures with benzos, QRS with NaHCO₃. Physostigmine contraindicated if QRS widened.</li><li><b>B</b> - Agitation/delirium: benzodiazepines 1st line (lorazepam 1-2mg IV). Avoid antipsychotics (lower seizure threshold, anticholinergic side effects). Physostigmine only for severe + no contraindications.</li><li><b>B</b> - Jimson weed (Datura stramonium): contains atropine, scopolamine, hyoscyamine → anticholinergic toxidrome. Common in adolescents experimenting.</li><li><b>B</b> - TCA = Na channel blockade → QRS widening. Physostigmine + QRS widening = asystole risk. CONTRAINDICATED. Treat TCA cardiotoxicity with NaHCO₃.</li><li><b>B</b> - Therapeutic atropine: peripheral mainly (poor BBB penetration). Poisoning/overdose: high dose → crosses BBB → central anticholinergic syndrome (delirium, hallucinations, seizures).</li><li><b>B</b> - Hyperthermia: anhidrosis (blocks muscarinic sweat glands) + central hypothalamic thermoregulatory dysfunction. Treat with active cooling (evaporative, ice packs). Antipyretics ineffective.</li><li><b>A</b> - Urinary retention: catheterization (straight cath or Foley). Bethanechol/physostigmine not used for this. Resolves as drug clears.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> - Diphenhydramine = anticholinergic + Na channel blockade (QRS 110ms). Physostigmine CONTRAINDICATED (QRS widening). Treat: benzos for agitation/seizures, NaHCO₃ for QRS &gt; 100ms, active cooling. Haloperidol lowers seizure threshold.</li><li><b>B</b> - Pure anticholinergic (no TCA, no QRS widening, no asthma, no bradycardia, no bowel obstruction): physostigmine 1-2mg IV over 5min INDICATED for severe agitation, hyperthermia &gt;40°C, seizures. Monitor for bradycardia, bronchorrhea.</li><li><b>B</b> - Anticholinergic seizures: benzos 1st line. Physostigmine risky (seizure side effect). Phenytoin not needed unless Na channel blockade (diphenhydramine).</li><li><b>B</b> - Chronic anticholinergic burden in elderly: stop offending agents, supportive care, hydration. Physostigmine not for chronic use. Rivastigmine (AChE inhibitor) for dementia, not acute poisoning.</li><li><b>B</b> - High-dose atropine crosses BBB → central anticholinergic syndrome (delirium, hallucinations, hyperthermia, mydriasis). Therapeutic atropine usually peripheral. Reduce atropine dose if possible.</li><li><b>C</b> - Diphenhydramine: anticholinergic + Na channel blockade → QRS widening, seizures. TCA also. Pure anticholinergics (atropine, scopolamine, benztropine) don't cause QRS widening.</li><li><b>C</b> - Anticholinergic hyperthermia: anhidrosis + central dysregulation. Antipyretics INEFFECTIVE (not prostaglandin-mediated). Active cooling: evaporative, ice packs, cold IV fluids. Dantrolene for NMS/MH.</li><li><b>D</b> - Benztropine: anticholinergic, minimal Na channel effect. Seizures: benzos 1st line. Physostigmine only if severe agitation/hyperthermia AND no contraindications. Not first line for seizures.</li><li><b>B</b> - Anticholinergic: blocks muscarinic → ↓ GI motility → ileus (absent bowel sounds), constipation, urinary retention. 'Full as a flask' = urinary retention.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Anticholinergic Toxidrome · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

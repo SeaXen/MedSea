@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>6. HIV-AIDS Cross-Reference — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">6. HIV-AIDS Cross-Reference</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Understand <b>HIV-STI Synergy</b> (Biological Mechanisms, Epidemiological Overlap)</li><li>[ ] Apply <b>STI Screening &amp; Management in HIV</b> (Enhanced Frequency, Atypical Presentations, Immune Reconstitution)</li><li>[ ] Manage <b>STI Co-infections in HIV</b> (Syphilis, HSV, HPV, HCV, Mpox, Cryptosporidium, Microsporidia)</li><li>[ ] Apply <b>ART &amp; DAA / STI Drug Interactions</b> (CYP3A4, Transporters, Overlapping Toxicities)</li><li>[ ] Manage <b>Immune Reconstitution Inflammatory Syndrome (IRIS)</b> related to STIs</li><li>[ ] Apply <b>PrEP/PEP Impact on STI Epidemiology</b></li><li>[ ] Answer viva: "HIV-Syphilis Co-infection" and "HSV in HIV" and "IRIS Management" and "PrEP &amp; STI Rates"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: HIV-STI Synergy Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">HIV-STI Synergy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Biological Mechanisms</div>
+<div class="fc-node" data-id="C">Clinical Implications</div>
+<div class="fc-node" data-id="D">Public Health Response</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B1">Genital Mucosal Disruption → ↑ HIV Acquisition/Transmission</div>
+<div class="fc-node" data-id="B2">HIV Immunosuppression → ↑ STI Acquisition/Reactivation/Severity</div>
+<div class="fc-node" data-id="B3">Shared Risk Behaviours (MSM, Multiple Partners, Chemsex)</div>
+<div class="fc-node" data-id="B4">Concentric Epidemics (Network Interconnectedness)</div>
+<div class="fc-node" data-id="C1">Atypical STI Presentations in HIV</div>
+<div class="fc-node" data-id="C2">Accelerated STI Progression in HIV</div>
+<div class="fc-node" data-id="C3">IRIS (Immune Reconstitution Inflammatory Syndrome)</div>
+<div class="fc-node" data-id="C4">Drug Interactions (ART ↔ STI Tx)</div>
+<div class="fc-node" data-id="D1">Integrated STI/HIV Services</div>
+<div class="fc-node" data-id="D2">Combined Screening/Testing</div>
+<div class="fc-node" data-id="D3">PrEP/PEP + STI Risk Reduction</div>
+<div class="fc-node" data-id="D4">Partner Notification Integrated</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ HIV-STI Co-infection Epidemiology</div>
+<table class="ctable"><tr><th>STI</th><th>HIV Co-infection Impact</th><th>Key Statistics</th></tr><tr><td>-----</td><td>------------------------</td><td>----------------</td></tr><tr><td>**Syphilis**</td><td>**↑ Acquisition (2-5x)**, **↑ Transmission**, **Atypical Serology**, **Rapid Progression**, **Neurosyphilis More Common**</td><td>**MSM: 20-40% Syphilis in HIV+**; **Syphilis ↑ HIV Viral Load**</td></tr><tr><td>**HSV-2**</td><td>**↑ Acquisition (3x)**, **↑ Shedding**, **Severe/Recurrent**, **Ulcers Facilitate HIV**</td><td>**60-80% HIV+ MSM HSV-2+**; **HSV-2 ↑ HIV Acquisition 3x**</td></tr><tr><td>**HPV**</td><td>**↑ Persistence**, **↑ CIN2/3 Progression**, **↑ Anal/Oropharyngeal Cancer**</td><td>**HIV+ Women: 2-3x CIN2+**; **Anal Cancer 80-100x HIV+ MSM**</td></tr><tr><td>**HCV**</td><td>**↑ Sexual Transmission (MSM, HIV+)**; **Accelerated Fibrosis**; **DAA Cure = SVR**</td><td>**MSM HIV+: HCV Incidence 5-10x Higher**</td></tr><tr><td>**Mpox**</td><td>**CD4<200 = Severe, Prolonged, Disseminated**</td><td>**2022 Outbreak: 40-50% Cases HIV+**</td></tr><tr><td>**Cryptosporidium/Microsporidia**</td><td>**Chronic Diarrhoea (HIV CD4<100)**</td><td>**ART = Cure (Immune Reconstitution)**</td></tr><tr><td>**Mycobacterium tuberculosis**</td><td>**TB-IRIS**, **Disseminated TB**</td><td>**Leading Cause of Death in HIV**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ STI Screening in HIV — Enhanced Protocols</div>
+<div class="sub-h">Screening Frequency (BHIVA/EACS/WHO)</div>
+<table class="ctable"><tr><th>Population</th><th>Screening Interval</th><th>Tests</th></tr><tr><td>------------</td><td>-------------------</td><td>-------</td></tr><tr><td>**All HIV+**</td><td>**At Diagnosis + Annually**</td><td>**Syphilis (RPR/VDRL+TPPA), HCV (Anti-HCV+RNA), HBV (HBsAg/Anti-HBs), HSV (Clinical), Chlamydia/Gonorrhoea (NAAT 3-Site if MSM)**</td></tr><tr><td>**MSM**</td><td>**Every 3-6 Months**</td><td>**3-Site NAAT (Urethral, Pharyngeal, Rectal) GC/CT**; **Syphilis (RPR/VDRL+TPPA) Every 3-6m**; **HCV RNA Annually**</td></tr><tr><td>**Sex Workers**</td><td>**Every 3 Months**</td><td>**Full STI Screen (GC/CT 3-Site, Syphilis, HIV, HBV, HCV, HSV, Trichomonas)**</td></tr><tr><td>**Pregnant HIV+**</td><td>**Booking + 28-32w + Delivery**</td><td>**Syphilis, HBV, HCV, HIV VL, GC/CT (If Risk), HSV (If Lesions)**</td></tr><tr><td>**PrEP Users**</td><td>**Every 3 Months**</td><td>**HIV Ag/Ab, Syphilis, GC/CT (3-Site if MSM), HCV (If Risk), Renal Function**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>3-Site Testing (Urethral, Pharyngeal, Rectal) for GC/CT in MSM</b>; <b>Syphilis Every 3-6m in MSM</b>; <b>HCV RNA Annually if Risk</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ STI Co-infection Management in HIV</div>
+<div class="sub-h">Syphilis in HIV</div>
+<table class="ctable"><tr><th>Aspect</th><th>HIV-Specific Management</th></tr><tr><td>--------</td><td>-------------------------</td></tr><tr><td>**Serology**</td><td>**Atypical**: Lower RPR Titres, Delayed Seroconversion, **Prozone Phenomenon**, **Biologic False Positives (BFP) More Common**, **IgM Less Reliable**</td></tr><tr><td>**Clinical**</td><td>**More Severe**: Multiple Chancres, Rapid Progression, **Neurosyphilis More Common/At Earlier Stage**, Ocular Syphilis, Relapse After Treatment</td></tr><tr><td>**CSF Examination**</td><td>**Mandatory at ALL Stages** (Higher Neurosyphilis Risk, Atypical CSF)</td></tr><tr><td>**Treatment**</td><td>**Same Penicillin Regimens**; **Longer Follow-Up (RPR 3, 6, 12, 24 Months)**; **CSF at 6 Months if Neurosyphilis**</td></tr><tr><td>**Jarisch-Herxheimer**</td><td>**More Frequent/Severe** (Cytokine Dysregulation) — **Prednisolone Prophylaxis Considered**</td></tr><tr><td>**Treatment Failure**</td><td>**More Common** — **CSF Mandatory if RPR No 4-Fold Decline by 12 Months**</td></tr></table>
+<div class="sub-h">HSV in HIV</div>
+<table class="ctable"><tr><th>Aspect</th><th>HIV-Specific Management</th></tr><tr><td>--------</td><td>-------------------------</td></tr><tr><td>**Clinical**</td><td>**More Severe/Extensive/Chronic**: Deep Ulcers, Mucosal Involvement, Perianal/Rectal, Disseminated, Oesophagitis, Encephalitis</td></tr><tr><td>**Recurrences**</td><td>**More Frequent, Prolonged, Severe**</td></tr><tr><td>**Resistance**</td><td>**TK Mutations More Common** → **Acyclovir/Valacyclovir/Famciclovir Cross-Resistance**</td></tr><tr><td>**Treatment**</td><td>**Episodic: Acyclovir 400mg 5x Daily × 7-10d** (Higher Dose/Longer); **Suppressive: Valacyclovir 500mg BD** (Preferred); **Resistant → Foscarnet IV 40mg/kg q8h**</td></tr><tr><td>**Suppressive Therapy**</td><td>**Indicated for All HIV+ with HSV-2** (Reduces Recurrences, Shedding, HIV Transmission); **Valacyclovir 500mg BD**</td></tr></table>
+<div class="sub-h">HPV in HIV</div>
+<table class="ctable"><tr><th>Aspect</th><th>HIV-Specific Management</th></tr><tr><td>--------</td><td>-------------------------</td></tr><tr><td>**Cervical/Anal Disease**</td><td>**Higher Prevalence, Multiple Types, ↑ Persistence, Faster CIN2+ Progression**</td></tr><tr><td>**Screening**</td><td>**Cervical: Annual Cytology + HPV (vs 3-5y General)**; **Anal: Annual Cytology + HPV (MSM/HIV+)**</td></tr><tr><td>**Vaccination**</td><td>**9vHPV: 3 Doses (0, 2, 6m) Regardless of Age**; **Catch-Up to Age 26 (MSM to 26)**</td></tr><tr><td>**Treatment**</td><td>**CIN: Same Excision (LLETZ)**; **Warts: More Extensive/Refractory → Surgical Preferred**; **Recurrence Higher**</td></tr></table>
+<div class="sub-h">HCV in HIV</div>
+<table class="ctable"><tr><th>Aspect</th><th>HIV-Specific Management</th></tr><tr><td>--------</td><td>-------------------------</td></tr><tr><td>**DAA Therapy**</td><td>**Same Regimens/Durations as Mono-Infected** (SOF/VEL 12w, GLE/PIB 8w/12w, SOF/VEL/VOX 12w Retreatment)</td></tr><tr><td>**SVR Rates**</td><td>**>95%** (Same as Mono-Infected with Modern DAAs)</td></tr><tr><td>**Drug Interactions**</td><td>**Critical**: **Glecaprevir/Pibrentasvir ↔ Rifampicin (Contraindicated)**; **Sofosbuvir/Velpatasvir ↔ Certain ART (Check Liverpool Database)**</td></tr><tr><td>**ART Regimen Choice**</td><td>**Integrase Inhibitor Based (DTG, BIC, RAL) Preferred** (Fewest DAA Interactions)</td></tr><tr><td>**Reinfection**</td><td>**Higher Risk (Continued Risk Behaviours)** — **Annual HCV RNA Screen**</td></tr></table>
+<div class="sub-h">Mpox in HIV</div>
+<table class="ctable"><tr><th>Aspect</th><th>HIV-Specific Management</th></tr><tr><td>--------</td><td>-------------------------</td></tr><tr><td>**Severity**</td><td>**CD4<200 = Severe, Prolonged, Disseminated, Higher Mortality**</td></tr><tr><td>**Antiviral**</td><td>**Tecovirimat Indicated (CD4<200/Severe)**; **Drug Interactions (Tecovirimat ↔ CYP3A4 Inducers/Inhibitors — Rifampicin, EFV, Boosted PIs)**</td></tr><tr><td>**Vaccination**</td><td>**MVA-BN Safe (2 Doses)** — **Prioritise HIV+ (CD4<200)**</td></tr><tr><td>**ART**</td><td>**Continue/Initiate ART** (Immune Reconstitution Critical)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ ART &amp; STI Drug Interactions — Critical Reference</div>
+<div class="sub-h">Key Interaction Principles</div>
+<table class="ctable"><tr><th>Mechanism</th><th>ART Classes Affected</th><th>STI Drugs Affected</th><th>Clinical Significance</th></tr><tr><td>-----------</td><td>---------------------</td><td>-------------------</td><td>----------------------</td></tr><tr><td>**CYP3A4 Inhibition**</td><td>**Boosted PIs (DRV/r, ATV/r, LPV/r)**, **Cobicistat**</td><td>**Tecovirimat, DAA (GLE/PIB, SOF/VEL), Azole Antifungals, Azithromycin**</td><td>**↑ STI Drug Levels → Toxicity** or **↑ ART Levels → Toxicity**</td></tr><tr><td>**CYP3A4 Induction**</td><td>**EFV, NVP, ETV, RPV, Rifampicin (TB Tx)**</td><td>**Tecovirimat, DAA (GLE/PIB, SOF/VEL), Azole Antifungals**</td><td>**↓ STI Drug Levels → Treatment Failure**</td></tr><tr><td>**Renal Tubular Secretion**</td><td>**TDF, TAF, 3TC, FTC**</td><td>**Acyclovir, Valacyclovir, Ganciclovir, Valganciclovir, Tenofovir**</td><td>**↑ Renal Toxicity** (Monitor eGFR)</td></tr><tr><td>**Bone Marrow Suppression**</td><td>**ZDV, TMP-SMX**</td><td>**Ganciclovir, Valganciclovir**</td><td>**↑ Neutropenia/Anemia**</td></tr></table>
+<div class="sub-h">High-Risk Interaction Pairs</div>
+<table class="ctable"><tr><th>ART</th><th>STI Drug</th><th>Interaction</th><th>Management</th></tr><tr><td>-----</td><td>----------</td><td>-------------</td><td>------------</td></tr><tr><td>**Boosted PIs (DRV/r, ATV/r)**</td><td>**Tecovirimat**</td><td>**↑ Tecovirimat (CYP3A4 Inhibition)**</td><td>**Monitor Tecovirimat Toxicity; Consider Dose Reduction**</td></tr><tr><td>**EFV/NVP**</td><td>**Tecovirimat**</td><td>**↓ Tecovirimat (CYP3A4 Induction)**</td><td>**Avoid Combination; Use Alternative Antiviral**</td></tr><tr><td>**Boosted PIs**</td><td>**Glecaprevir/Pibrentasvir**</td><td>**↑ DAA Levels**</td><td>**Avoid; Use SOF/VEL Instead**</td></tr><tr><td>**DTG/BIC/RAL**</td><td>**Most STI Drugs**</td><td>**Minimal Interactions**</td><td>**Preferred ART for STI Co-treatment**</td></tr><tr><td>**Rifampicin (TB Tx)**</td><td>**All DAAs, Tecovirimat, Azole Antifungals**</td><td>**Strong Induction → Treatment Failure**</td><td>**Avoid; Use Rifabutin or Alternative TB Regimen**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>DTG/BIC/RAL-Based ART = Fewest STI Drug Interactions</b>; <b>Always Check Liverpool HIV Drug Interactions Database</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Immune Reconstitution Inflammatory Syndrome (IRIS) — STI-Related</div>
+<div class="sub-h">IRIS Definition</div>
+<div class="callout"><b>Paradoxical Worsening or New Onset of Symptoms</b> after ART Initiation due to <b>Immune Reconstitution</b> unmasking subclinical infection or exaggerated inflammatory response.</div>
+<div class="sub-h">STI-Associated IRIS</div>
+<table class="ctable"><tr><th>STI</th><th>IRIS Presentation</th><th>Timing</th><th>Management</th></tr><tr><td>-----</td><td>-------------------</td><td>--------</td><td>------------</td></tr><tr><td>**M. tuberculosis (TB-IRIS)**</td><td>Fevers, Lymphadenopathy, Worsening CXR, New Lesions</td><td>**2-8 Weeks Post-ART**</td><td>**Continue ART + TB Tx**; **Steroids (Prednisolone 1.5mg/kg) if Severe**</td></tr><tr><td>**Herpes Simplex (HSV-IRIS)**</td><td>Severe Mucocutaneous Ulcers, Oesophagitis, Encephalitis</td><td>**2-12 Weeks**</td><td>**Continue ART + Antivirals (Higher Dose/Longer)**; **Steroids if Severe**</td></tr><tr><td>**Varicella Zoster (VZV-IRIS)**</td><td>Disseminated Shingles, Meningitis</td><td>**4-12 Weeks**</td><td>**IV Acyclovir/Foscarnet + Steroids**</td></tr><tr><td>**Cryptococcal Meningitis (CM-IRIS)**</td><td>Worsening Headache, ICP ↑, Neurological Decline</td><td>**2-10 Weeks**</td><td>**ART Delay if Possible; Steroids + Amphotericin/Flucytosine**</td></tr><tr><td>**Syphilis (Syphilis-IRIS)**</td><td>Worsening RPR, New Lesions, Neurosyphilis Flare</td><td>**4-12 Weeks**</td><td>**Continue ART + Penicillin; Steroids if Neurosyphilis Flare**</td></tr><tr><td>**HPV (Warts/CIN-IRIS)**</td><td>Rapid Wart Growth, New CIN Lesions</td><td>**3-12 Months**</td><td>**Standard Treatment (Excision/Imiquimod); Continue ART**</td></tr><tr><td>**HCV (Hepatitis Flare)**</td><td>ALT Flare >5x ULN Post-ART</td><td>**4-12 Weeks**</td><td>**Monitor; Continue ART + DAA if Indicated**; **Steroids Rarely Needed**</td></tr></table>
+<div class="sub-h">IRIS Diagnostic Criteria (General)</div>
+<ol><li><b>New/Worsening Symptoms</b> after ART Initiation</li><li><b>Temporal Association</b> (Typically 2-12 Weeks Post-ART)</li><li><b>CD4 Rise / HIV VL Drop</b> (Immune Reconstitution)</li><li><b>Exclusion of Drug Toxicity, Treatment Failure, New Infection</b></li></ol>
+<div class="sub-h">IRIS Management Principles</div>
+<ol><li><b>Continue ART</b> (Except Life-Threatening CM-IRIS → Delay ART if Possible)</li><li><b>Treat Underlying Infection</b> (Appropriate Antimicrobials)</li><li><b>Anti-Inflammatory</b> (Corticosteroids if Severe/Organ-Threatening)</li><li><b>Monitor</b> (Clinical, Lab, Imaging)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ PrEP/PEP Impact on STI Epidemiology</div>
+<div class="sub-h">PrEP (Pre-Exposure Prophylaxis) for HIV</div>
+<table class="ctable"><tr><th>Regimen</th><th>Efficacy</th><th>STI Impact</th></tr><tr><td>---------</td><td>----------</td><td>------------</td></tr><tr><td>**TDF/FTC Daily**</td><td>**>99%** (Adherent)</td><td>**↑ STI Incidence** (Risk Compensation: ↓ Condom Use, ↑ Partners)</td></tr><tr><td>**Event-Driven (2-1-1)**</td><td>**High (MSM)**</td><td>Similar Risk Compensation</td></tr><tr><td>**Cabotegravir LA (Bimonthly IM)**</td><td>**>99%**</td><td>**STI Monitoring Critical** (No Daily Pill Reminder)</td></tr></table>
+<div class="sub-h">PrEP &amp; STI Monitoring</div>
+<table class="ctable"><tr><th>Recommendation</th><th>Frequency</th></tr><tr><td>----------------</td><td>-----------</td></tr><tr><td>**HIV Testing**</td><td>**Every 3 Months**</td></tr><tr><td>**Syphilis (RPR/VDRL+TPPA)**</td><td>**Every 3 Months**</td></tr><tr><td>**GC/CT (3-Site if MSM)**</td><td>**Every 3 Months**</td></tr><tr><td>**HCV RNA**</td><td>**Annually (If Risk)**</td></tr><tr><td>**Renal Function (eGFR)**</td><td>**Every 6 Months (TDF/FTC)**</td></tr><tr><td>**STI Counselling**</td><td>**Every Visit** (Condoms, Vaccination, Doxy-PEP)</td></tr></table>
+<div class="sub-h">Doxy-PEP (Post-Exposure Doxycycline for Bacterial STIs)</div>
+<table class="ctable"><tr><th>Regimen</th><th>Efficacy</th><th>Population</th></tr><tr><td>---------</td><td>----------</td><td>------------</td></tr><tr><td>**Doxycycline 200mg Single Dose Within 72h Post-Sex**</td><td>**GC ↓55%, CT ↓88%, Syphilis ↓87%** (DoxyPEP Trial)</td><td>**MSM, Trans Women on PrEP or Living with HIV**</td></tr><tr><td>**Caveats**</td><td>**Tetracycline Resistance (M. genitalium, Commensals)**, **GI Side Effects**, **Photosensitivity**</td><td>**Not Standard of Care Yet (Guidelines Emerging)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ STI Management in Specific HIV Clinical Scenarios</div>
+<div class="sub-h">Acute HIV Infection (Primary HIV)</div>
+<table class="ctable"><tr><th>STI Screening</th><th>Timing</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**Full STI Screen**</td><td>**At HIV Diagnosis** (Syphilis, HCV, HBV, HSV, GC/CT 3-Site, Trichomonas, HPV)</td></tr><tr><td>**HCV RNA**</td><td>**At Diagnosis + 6 Months** (Acute HCV Co-infection Possible)</td></tr><tr><td>**Syphilis RPR/VDRL**</td><td>**At Diagnosis + 3 Months** (Window Period)</td></tr></table>
+<div class="sub-h">Advanced HIV (CD4&lt;200)</div>
+<table class="ctable"><tr><th>STI</th><th>Management Priority</th></tr><tr><td>-----</td><td>---------------------</td></tr><tr><td>**OIs (PCP, Toxo, Crypto, MAC)**</td><td>**Priority 1** (Life-Threatening)</td></tr><tr><td>**Syphilis**</td><td>**CSF Mandatory, Penicillin, Monitor RPR Monthly × 3**</td></tr><tr><td>**HSV**</td><td>**Suppressive Valacyclovir 500mg BD** (Reduce Reactivation)</td></tr><tr><td>**CMV**</td><td>**Ganciclovir/Valganciclovir (Retinitis/Colitis)**</td></tr><tr><td>**Mpox**</td><td>**Tecovirimat Indicated**</td></tr><tr><td>**Cryptosporidium/Microsporidia**</td><td>**ART = Definitive Therapy; Nitazoxanide/Albendazole Adjunct**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ STI &amp; ART Drug-Drug Interaction Quick Reference</div>
+<table class="ctable"><tr><th>STI Drug</th><th>Key ART Interactions</th><th>Monitoring</th></tr><tr><td>----------</td><td>---------------------</td><td>------------</td></tr><tr><td>**Tecovirimat**</td><td>**↑ with CYP3A4 Inhibitors (Boosted PIs, Cobicistat); ↓ with CYP3A4 Inducers (EFV, Rifampicin)**</td><td>LFT, Tecovirimat Level if Available</td></tr><tr><td>**Glecaprevir/Pibrentasvir**</td><td>**Contraindicated with Rifampicin; ↑ with Boosted PIs**</td><td>LFT, HCV RNA</td></tr><tr><td>**Sofosbuvir/Velpatasvir**</td><td>**↓ with EFV/Rifampicin; Few Interactions with INSTI**</td><td>HCV RNA, Renal Function (SOF)</td></tr><tr><td>**Acyclovir/Valacyclovir**</td><td>**↑ Renal Toxicity with TDF/TAF**</td><td>Renal Function (eGFR)</td></tr><tr><td>**Ganciclovir/Valganciclovir**</td><td>**↑ Myelosuppression with ZDV/TMP-SMX**</td><td>CBC, Renal Function</td></tr><tr><td>**Foscarnet**</td><td>**↑ Renal Toxicity with TDF/TAF, Aminoglycosides**</td><td>Renal Function, Electrolytes (Ca, Mg, K, P)</td></tr><tr><td>**Azithromycin**</td><td>**QT Prolongation with Certain ART (RPV, LPV/r)**</td><td>ECG if Risk Factors</td></tr><tr><td>**Fluconazole**</td><td>**↑ Levels with Boosted PIs; CYP3A4 Inhibition**</td><td>LFT, Drug Levels if Available</td></tr></table>
+<div class="callout"><b>Rule of Thumb</b>: <b>INSTI-Based ART (DTG, BIC, RAL) = Fewest STI Drug Interactions</b>; <b>Always Check Liverpool HIV Drug Interactions Database Before Co-Prescribing</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**HIV-STI Synergy**</td><td>**↑ HIV Acquisition via STI Ulcers/Inflammation**; **↑ STI Severity/Reactivation in HIV**; **Shared Risk Networks (MSM, Chemsex)**</td></tr><tr><td>**Syphilis in HIV**</td><td>**Atypical Serology (Low RPR, Prozone, BFP)**; **Neurosyphilis More Common/Earlier**; **CSF Mandatory All Stages**; **Same Penicillin Tx, Longer F/U**</td></tr><tr><td>**HSV in HIV**</td><td>**Severe/Extensive/Recurrent**; **TK Resistance More Common**; **Suppressive Valacyclovir 500mg BD Indicated for All HIV+**</td></tr><tr><td>**HPV in HIV**</td><td>**↑ Persistence, ↑ CIN2+, ↑ Anal Cancer (MSM)**; **Annual Anal Cytology+HPV (MSM/HIV+)**; **3-Dose 9vHPV Regardless Age**</td></tr><tr><td>**HCV in HIV**</td><td>**DAA Same Regimens (SOF/VEL 12w, GLE/PIB 8w); Check ART Interactions (Liverpool DB)**; **Reinfection Risk Higher**</td></tr><tr><td>**Mpox in HIV**</td><td>**CD4<200 = Severe**; **Tecovirimat Indicated**; **MVA-BN Safe; ART Continue**</td></tr><tr><td>**IRIS**</td><td>**Paradoxical Worsening Post-ART**; **TB-IRIS, HSV-IRIS, Syphilis-IRIS, CM-IRIS**; **Continue ART + Antimicrobials + Steroids if Severe**</td></tr><tr><td>**Drug Interactions**</td><td>**Tecovirimat ↔ CYP3A4 (Boosted PIs ↑, EFV ↓); DAA ↔ Rifampicin (Contraindicated); DTG/BIC/RAL = Fewest Interactions**</td></tr><tr><td>**PrEP & STIs**</td><td>**Risk Compensation → ↑ STIs**; **3-Monthly Screen (HIV, Syphilis, GC/CT 3-Site, HCV)**; **Doxy-PEP Emerging (MSM/Trans Women on PrEP/HIV)**</td></tr><tr><td>**Screening in HIV**</td><td>**MSM: 3-Site GC/CT q3-6m, Syphilis q3-6m, HCV RNA Annually**; **Pregnant: Booking + 28-32w + Delivery**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Syphilis in HIV — serological differences?</td><td>**Atypical: Lower RPR Titres, Delayed Seroconversion, Prozone (False -ve at High Titre), More BFP, IgM Less Reliable**</td></tr><tr><td>2</td><td>Neurosyphilis in HIV — CSF indication?</td><td>**Mandatory at ALL Stages** (Higher Risk, Atypical Presentation, Earlier Onset)</td></tr><tr><td>3</td><td>HSV in HIV — suppressive therapy indication?</td><td>**All HIV+ with HSV-2** (Reduces Recurrences, Shedding, HIV Transmission); **Valacyclovir 500mg BD**</td></tr><tr><td>4. HCV in HIV — DAA regimen choice?</td><td>**Same as Mono-Infected**; **GLE/PIB 8w (Non-Cirrhotics, Renal Safe), SOF/VEL 12w (All, Decompensated w/ RBV)**; **Check ART Interactions (Liverpool DB)**</td></tr><tr><td>5. Mpox in HIV — when to treat with tecovirimat?</td><td>**CD4<200 or Severe Disease** → **Tecovirimat 600mg BD × 14d**; **Check ART Interactions (CYP3A4)**</td></tr><tr><td>6. IRIS — definition and common STI-associated types?</td><td>**Paradoxical Worsening/Unmasking Post-ART**; **TB-IRIS, HSV-IRIS, Syphilis-IRIS, CM-IRIS, HCV Flare**</td></tr><tr><td>7. IRIS management — key principles?</td><td>**Continue ART (Except Life-Threatening CM-IRIS); Treat Underlying Infection; Steroids if Severe/Organ-Threatening**</td></tr><tr><td>8. PrEP & STI monitoring — what and how often?</td><td>**HIV q3m, Syphilis q3m, GC/CT 3-Site q3m, HCV RNA Annually, Renal q6m**</td></tr><tr><td>9. Doxy-PEP — efficacy and population?</td><td>**GC ↓55%, CT ↓88%, Syphilis ↓87% (DoxyPEP Trial)**; **MSM, Trans Women on PrEP or HIV+**</td></tr><tr><td>10. ART choice for STI co-treatment — preferred?</td><td>**INSTI-Based (DTG, BIC, RAL) = Fewest STI Drug Interactions**; **Always Check Liverpool HIV Drug Interactions Database**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"HIV = Always Worse STI Outcomes"**</td><td>**Mostly True**, but **ART Restores Immunity** → **IRIS = Paradoxical Worsening** (Not Treatment Failure)</td></tr><tr><td>**"HIV = Worse Syphilis Serology"**</td><td>**Yes (Atypical)** but **Penicillin Still Works**; **CSF Mandatory All Stages**</td></tr><tr><td>**"HIV = Worse HSV, No Suppressive Therapy"**</td><td>**NO.** **Suppressive Valacyclovir 500mg BD Indicated for ALL HIV+ with HSV-2**</td></tr><tr><td>**"HCV DAA = Different in HIV"**</td><td>**NO.** **Same Regimens/Durations**; **Just Check ART Interactions (Liverpool DB)**</td></tr><tr><td>**"IRIS = Treatment Failure"**</td><td>**NO.** **Paradoxical Immune Reconstitution** → **Continue ART + Treat Infection + Steroids if Severe**</td></tr><tr><td>**"IRIS = Stop ART"**</td><td>**NO.** **Continue ART (Except Life-Threatening CM-IRIS Where Delay May Be Needed)**</td></tr><tr><td>**"PrEP = No STI Risk"**</td><td>**NO.** **Risk Compensation → ↑ STIs (GC/CT/Syphilis ↑ in PrEP Users)**</td></tr><tr><td>**"Doxy-PEP = Standard of Care"**</td><td>**NO.** **Emerging Evidence (DoxyPEP Trial); Guidelines Emerging; Resistance Concerns (M. genitalium)**</td></tr><tr><td>**"All ART = Same STI Interactions"**</td><td>**NO.** **INSTI (DTG/BIC/RAL) = Fewest Interactions**; **Boosted PIs = Most Interactions**</td></tr><tr><td>**"Mpox = No Vaccine for HIV+"**</td><td>**NO.** **MVA-BN Safe (2 Doses) for HIV+ (Even CD4<200); ACAM2000 Contraindicated**</td></tr></table>
+<div class="callout"><b>Mnemonic: HIV-STI SYNERGY MASTER</b> <b>H</b>IV-STI Synergy: <b>Biological (Mucosal Disruption, Immunosuppression) + Epidemiological (Shared Networks)</b> <b>I</b>n HIV: <b>STIs More Severe, Atypical, Faster Progression, Higher Reactivation</b> <b>V</b>iral STIs in HIV: <b>HSV (Severe, Suppressive Valacyclovir 500mg BD), HPV (Annual Anal Cyto+HPV), HCV (DAA Same Regimens, Check Interactions)</b> <b>S</b>yphilis in HIV: <b>Atypical Serology (Low RPR, Prozone, BFP), Neurosyphilis Common → LP Mandatory All Stages</b> <b>I</b>RIS: <b>Paradoxical Worsening Post-ART (TB, HSV, Syphilis, Crypto, CMV, HCV Flare)</b> → <b>Continue ART + Antimicrobials + Steroids if Severe</b> <b>D</b>rug Interactions: <b>Tecovirimat ↔ CYP3A4 (PIs ↑, EFV ↓); DAAs ↔ Rifampicin (Contra); INSTI = Fewest Interactions</b> <b>P</b>rEP &amp; STIs: <b>Risk Compensation → ↑ STIs; 3m Screen (HIV, Syphilis, GC/CT 3-Site, HCV); Doxy-PEP Emerging</b> <b>S</b>creening in HIV: <b>MSM: 3-Site GC/CT q3-6m, Syphilis q3-6m, HCV RNA Annually</b> <b>Y</b> (Why Integrated Services?): <b>Concentric Epidemics, Shared Risk, Efficiency, Better Outcomes</b> <b>N</b>eurosyphilis HIV: <b>LP Mandatory All Stages; Penicillin G IV 18-24MU/d × 10-14d</b> <b>E</b>PI/PEP: <b>Doxy-PEP (200mg ≤72h Post-Sex) → GC↓55%, CT↓88%, Syphilis↓87% (MSM/Trans Women on PrEP/HIV)</b> <b>R</b>efrence: <b>Liverpool HIV Drug Interactions Database = Gold Standard for ART-STI Co-Prescribing Check</b> <b>G</b>uidelines: <b>WHO/BHIVA/EACS/CDC → Integrated STI/HIV Services, Combined Screening, Shared Decision-Making</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((HIV-STI Cross-Reference))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">HIV-STI Synergy</div>
+<div class="mm-node mm-l3">– Biological: Mucosal Disruption + Immunosuppression</div>
+<div class="mm-node mm-l3">– Epidemiological: Shared Networks (MSM, Chemsex)</div>
+<div class="mm-node mm-l2">Syphilis in HIV</div>
+<div class="mm-node mm-l3">– Atypical Serology (Low RPR, Prozone, BFP)</div>
+<div class="mm-node mm-l3">– Neurosyphilis Common → LP Mandatory All Stages</div>
+<div class="mm-node mm-l3">– Same Penicillin Tx, Longer F/U</div>
+<div class="mm-node mm-l3">– JHR More Frequent/Severe</div>
+<div class="mm-node mm-l2">HSV in HIV</div>
+<div class="mm-node mm-l3">– Severe/Extensive/Recurrent</div>
+<div class="mm-node mm-l3">– TK Resistance More Common</div>
+<div class="mm-node mm-l3">– Suppressive Valacyclovir 500mg BD (Indicated All HIV+)</div>
+<div class="mm-node mm-l2">HPV in HIV</div>
+<div class="mm-node mm-l3">– ↑ Persistence, ↑ CIN2+, ↑ Anal Cancer</div>
+<div class="mm-node mm-l3">– Annual Anal Cyto+HPV (MSM/HIV)</div>
+<div class="mm-node mm-l3">– 3-Dose 9vHPV (Any Age)</div>
+<div class="mm-node mm-l2">HCV in HIV</div>
+<div class="mm-node mm-l3">– DAA Same Regimens (SOF/VEL 12w, GLE/PIB 8w)</div>
+<div class="mm-node mm-l3">– Check ART Interactions (Liverpool DB)</div>
+<div class="mm-node mm-l3">– Reinfection Risk Higher</div>
+<div class="mm-node mm-l2">Mpox in HIV</div>
+<div class="mm-node mm-l3">– CD4&lt;200 = Severe</div>
+<div class="mm-node mm-l3">– Tecovirimat Indicated</div>
+<div class="mm-node mm-l3">– MVA-BN Safe (2 Doses)</div>
+<div class="mm-node mm-l3">– ART Continue</div>
+<div class="mm-node mm-l2">IRIS</div>
+<div class="mm-node mm-l3">– Paradoxical Worsening Post-ART</div>
+<div class="mm-node mm-l3">– TB-IRIS, HSV-IRIS, Syphilis-IRIS, CM-IRIS, HCV Flare</div>
+<div class="mm-node mm-l3">– Continue ART + Antimicrobials + Steroids if Severe</div>
+<div class="mm-node mm-l2">Drug Interactions</div>
+<div class="mm-node mm-l3">– Tecovirimat ↔ CYP3A4 (PIs ↑, EFV ↓)</div>
+<div class="mm-node mm-l3">– DAAs ↔ Rifampicin (Contraindicated)</div>
+<div class="mm-node mm-l3">– INSTI (DTG/BIC/RAL) = Fewest Interactions</div>
+<div class="mm-node mm-l3">– Always Check Liverpool HIV Drug Interactions DB</div>
+<div class="mm-node mm-l2">PrEP/PEP</div>
+<div class="mm-node mm-l3">– Risk Compensation → ↑ STIs</div>
+<div class="mm-node mm-l3">– 3m Screen: HIV, Syphilis, GC/CT 3-Site, HCV</div>
+<div class="mm-node mm-l3">– Doxy-PEP Emerging (GC↓55%, CT↓88%, Syphilis↓87%)</div>
+<div class="mm-node mm-l2">Screening in HIV</div>
+<div class="mm-node mm-l3">– MSM: 3-Site GC/CT q3-6m, Syphilis q3-6m, HCV RNA Annual</div>
+<div class="mm-node mm-l3">– Pregnant: Booking + 28-32w + Delivery</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>HIV-STI Synergy & Epidemiology</td><td>3</td><td></td><td></td></tr><tr><td>Syphilis in HIV</td><td>3</td><td></td><td></td></tr><tr><td>HSV/HPV/HCV/Mpox in HIV</td><td>4</td><td></td><td></td></tr><tr><td>IRIS (Mechanism, Types, Management)</td><td>3</td><td></td><td></td></tr><tr><td>Drug Interactions (ART ↔ STI Tx)</td><td>3</td><td></td><td></td></tr><tr><td>PrEP/PEP & STI Monitoring</td><td>2</td><td></td><td></td></tr><tr><td>Screening Strategies in HIV</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the interaction between HIV and other STIs, including screening, management, and drug interactions."</td><td>**HIV-STI Synergy (Biological/Epidemiological)**; **Syphilis in HIV (Atypical Serology, Neurosyphilis, LP Mandatory)**; **HSV in HIV (Suppressive Valacyclovir Indicated)**; **HPV/HCV/Mpox in HIV**; **IRIS (TB, HSV, Syphilis, Crypto) — Continue ART + Treat + Steroids**; **Drug Interactions (Tecovirimat/DAAs ↔ ART, Liverpool DB)**; **PrEP & STI Risk Compensation**; **Integrated Screening (3-Site MSM, Annual HCV, Syphilis q3-6m)**</td></tr><tr><td>**Short Note**</td><td>"Syphilis in HIV — serological atypicalities and management."</td><td>**Atypical Serology: Low RPR, Delayed Seroconversion, Prozone, BFP**; **Neurosyphilis More Common → LP Mandatory All Stages**; **Treatment: Same Penicillin Regimens**; **Follow-Up: RPR Monthly × 3, Then 3-Monthly; CSF at 6m if Neurosyphilis**</td></tr><tr><td>**Viva**</td><td>"HIV+ MSM on TDF/FTC/DTG PrEP presents with Mpox. CD4 350. Management?"</td><td>**Mild Mpox (CD4>200) → Supportive Care + Isolation**; **No Tecovirimat Indicated**; **MVA-BN Vaccination (2 Doses 28d Apart) if Not Vaccinated**; **Continue PrEP (DTG Few Interactions)**; **Contact Tracing + PEP for High-Risk Contacts**; **STI Screen (Syphilis, GC/CT 3-Site, HCV)**</td></tr><tr><td>**Ward Round**</td><td>"HIV+ patient (CD4 80) on ART 4 weeks develops new genital ulcers, fever, worsening RPR. Diagnosis & Management?"</td><td>**Syphilis IRIS (Paradoxical Worsening Post-ART)** → **Continue ART + Continue Penicillin (Stage-Appropriate)**; **Supportive Care**; **Consider Steroids if Severe Neurosyphilis Flare**; **Monitor RPR Monthly**; **CSF if Neurological Signs**</td></tr><tr><td>**Last-Night**</td><td>"HIV-STI: Synergy (Mucosal/Immuno). Syphilis: Atypical Serology (Low RPR/Prozone/BFP), Neuro Common, LP All Stages, BPC Same, F/U Longer. HSV: Severe, Suppressive Valacyclovir 500mg BD All HIV+. HPV: Annual Anal Cyto/HPV, 3-Dose 9vHPV Any Age. HCV: DAA Same (SOF/VEL 12w, GLE/PIB 8w), Check Interactions. Mpox CD4<200 Severe, Tecovirimat. IRIS: Paradoxical Post-ART (TB/HSV/Syphilis/Crypto/CMV/HCV) → Continue ART + Treat + Steroids if Severe. Interactions: Tecovirimat↔CYP3A4 (PIs↑, EFV↓), DAAs↔Rifampicin (Contra), DTG/BIC/RAL=Fewest. PrEP: 3m Screen HIV/Syph/GC/CT/HCV, Risk Compens↑STIs, Doxy-PEP Emerging. Screen MSM: 3-Site GC/CT q3-6m, Syph q3-6m, HCV RNA Annual."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>HIV-STI Synergy</b>: <b>Biological (Mucosal Disruption, Immunosuppression) + Epidemiological (Shared Risk Networks)</b> → <b>↑ Acquisition, Severity, Reactivation</b></li><li><b>Syphilis in HIV</b>: <b>Atypical Serology (Low RPR, Prozone, BFP)</b>, <b>Neurosyphilis More Common</b> → <b>LP Mandatory All Stages</b>; <b>Same Penicillin Regimens</b>, <b>Longer Follow-Up (RPR Monthly × 3, CSF at 6m)</b></li><li><b>HSV in HIV</b>: <b>Severe, Extensive, Recurrent, TK Resistance</b> → <b>Suppressive Valacyclovir 500mg BD Indicated for ALL HIV+</b></li><li><b>HPV in HIV</b>: <b>↑ Persistence, CIN2+, Anal Cancer</b> → <b>Annual Anal Cytology+HPV (MSM/HIV+), 3-Dose 9vHPV Any Age</b></li><li><b>HCV in HIV</b>: <b>DAA Same Regimens</b> (SOF/VEL 12w, GLE/PIB 8w/12w, SOF/VEL/VOX 12w) — <b>Check ART Interactions (Liverpool Database)</b></li><li><b>Mpox in HIV</b>: <b>CD4&lt;200 = Severe</b> → <b>Tecovirimat Indicated</b>; <b>MVA-BN Safe (2 Doses)</b>; <b>ART Continue</b></li><li><b>IRIS</b>: <b>Paradoxical Worsening Post-ART</b> (TB, HSV, Syphilis, CM, Crypto, HCV Flare) → <b>Continue ART + Treat Infection + Steroids if Severe/Organ-Threatening</b></li><li><b>Drug Interactions</b>: <b>Tecovirimat ↔ CYP3A4 (Boosted PIs ↑, EFV ↓); DAAs ↔ Rifampicin (Contraindicated); INSTI (DTG/BIC/RAL) = Fewest Interactions</b> — <b>Always Check Liverpool HIV Drug Interactions Database</b></li><li><b>PrEP &amp; STIs</b>: <b>Risk Compensation → ↑ STI Incidence</b>; <b>3-Monthly Screening (HIV, Syphilis, GC/CT 3-Site, HCV RNA)</b>; <b>Doxy-PEP Emerging (GC↓55%, CT↓88%, Syphilis↓87%)</b></li><li><b>Screening in HIV</b>: <b>MSM: 3-Site GC/CT q3-6m, Syphilis q3-6m, HCV RNA Annually</b>; <b>Pregnant: Booking + 28-32w + Delivery</b>; <b>All HIV+: Annual Full STI Screen</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Syphilis in HIV — serological hallmark?</b></li></ol>
+<p>A. High RPR Titres  B. <b>Atypical: Low RPR, Prozone, Biologic False Positives</b>  C. Rapid Seroconversion  D. Negative TPPA <i>Answer: B. Atypical Serology: Low/Erratic RPR, Prozone Effect, More BFP, Delayed Seroconversion.</i></p>
+<ol><li><b>Neurosyphilis in HIV — CSF examination indication?</b></li></ol>
+<p>A. Only if Neurological Symptoms  B. <b>Mandatory at ALL Stages</b>  C. Only Late Latent  D. Only if RPR &gt;1:32 <i>Answer: B. LP Mandatory at ALL Stages in HIV (Higher Neurosyphilis Risk, Atypical Presentation).</i></p>
+<ol><li><b>HSV suppressive therapy in HIV — indication?</b></li></ol>
+<p>A. Only if ≥10 Recurrences/Year  B. <b>All HIV+ with HSV-2</b>  C. Only if CD4&lt;200  D. Not Recommended <i>Answer: B. Suppressive Valacyclovir 500mg BD Indicated for ALL HIV+ with HSV-2 (Reduces Shedding, Recurrence, HIV Transmission).</i></p>
+<ol><li><b>HCV DAA regimen in HIV — same as mono-infected?</b></li></ol>
+<p>A. No, Different  B. <b>Yes, Same Regimens/Durations (Check ART Interactions)</b>  C. Only IFN-Based  D. Only Ribavirin-Based <i>Answer: B. Same Pan-Genotypic Regimens (SOF/VEL 12w, GLE/PIB 8w/12w, SOF/VEL/VOX 12w); Check ART Interactions (Liverpool DB).</i></p>
+<ol><li><b>Mpox in HIV — tecovirimat indication?</b></li></ol>
+<p>A. All HIV+  B. <b>CD4&lt;200 or Severe Disease</b>  C. Only CD4&lt;50  D. Never  <i>Answer: B. CD4&lt;200 or Severe Disease → Tecovirimat 600mg BD × 14d (Check CYP3A4 Interactions).</i></p>
+<ol><li><b>IRIS definition?</b></li></ol>
+<p>A. Treatment Failure  B. <b>Paradoxical Worsening/Unmasking Post-ART Due to Immune Reconstitution</b>  C. Drug Toxicity  D. New Infection  <i>Answer: B. Paradoxical Worsening/Unmasking Within Weeks of ART Initiation Due to Immune Reconstitution.</i></p>
+<ol><li><b>IRIS management — key principle?</b></li></ol>
+<p>A. Stop ART  B. <b>Continue ART + Treat Underlying Infection + Steroids if Severe/Organ-Threatening</b>  C. Stop ART + Treat  D. Reduce ART Dose <i>Answer: B. Continue ART (Except Life-Threatening CM-IRIS) + Treat Infection + Steroids if Severe.</i></p>
+<ol><li><b>PrEP &amp; STI monitoring — recommended frequency for MSM?</b></li></ol>
+<p>A. Annually  B. <b>Every 3 Months (HIV, Syphilis, GC/CT 3-Site, HCV RNA Annually, Renal q6m)</b>  C. Every 6 Months  D. Only at Initiation <i>Answer: B. Every 3 Months (HIV Ag/Ab, Syphilis RPR/VDRL+TPPA, GC/CT 3-Site NAAT, HCV RNA Annually, Renal q6m).</i></p>
+<ol><li><b>Tecovirimat ART interaction — boosted PIs?</b></li></ol>
+<p>A. ↓ Tecovirimat  B. <b>↑ Tecovirimat (CYP3A4 Inhibition)</b>  C. No Interaction  D. Contraindicated <i>Answer: B. Boosted PIs (CYP3A4 Inhibitors) → ↑ Tecovirimat Levels; Monitor Toxicity/Dose Adjust.</i></p>
+<ol><li><b>Doxy-PEP — efficacy for bacterial STIs?</b></li></ol>
+<p>A. GC ↓90%, CT ↓90%, Syphilis ↓90%  B. <b>GC ↓55%, CT ↓88%, Syphilis ↓87% (DoxyPEP Trial)</b>  C. No Significant Reduction  D. Only Syphilis Reduced <i>Answer: B. DoxyPEP Trial: GC ↓55%, CT ↓88%, Syphilis ↓87% (MSM/Trans Women on PrEP/HIV).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>HIV+ MSM, CD4 350, on TDF/FTC/DTG PrEP, diagnosed with Mpox. Management?</b></li></ol>
+<p>A. Tecovirimat 600mg BD × 14d  B. <b>Supportive Care + Isolation (Mild, CD4&gt;200)</b>  C. MVA-BN Vaccine Only  D. Ceftriaxone <i>Answer: B. Mild Mpox (CD4&gt;200) → Supportive Care + Isolation; Tecovirimat Only if Severe/High-Risk.</i></p>
+<ol><li><b>HIV+ patient on ART 4 weeks develops fever, worsening RPR, new rash. Diagnosis?</b></li></ol>
+<p>A. Drug Rash  B. <b>Syphilis IRIS</b>  C. Acute HIV Seroconversion  D. Secondary Syphilis <i>Answer: B. Syphilis IRIS (Paradoxical Worsening 2-12w Post-ART); Continue ART + Penicillin + Consider Steroids.</i></p>
+<ol><li><b>HIV+ patient with HSV-2, 8 recurrences/year. Suppressive therapy?</b></li></ol>
+<p>A. Acyclovir 400mg BD  B. <b>Valacyclovir 500mg OD (or BD)</b>  C. No Suppression  D. Foscarnet <i>Answer: B. Valacyclovir 500mg OD (Preferred) or Acyclovir 400mg BD; Indicated for ALL HIV+ with HSV-2.</i></p>
+<ol><li><b>HIV+ patient on efavirenz-based ART needs HCV DAA. Preferred regimen?</b></li></ol>
+<p>A. Glecaprevir/Pibrentasvir  B. <b>Sofosbuvir/Velpatasvir (Fewer Interactions with EFV)</b>  C. SOF/VEL/VOX  D. Interferon+Ribavirin <i>Answer: B. SOF/VEL Preferred with EFV (GLE/PIB Contraindicated with Rifampicin, EFV Significant Interaction).</i></p>
+<ol><li><b>HIV+ MSM on PrEP, 3-month STI screen. Tests?</b></li></ol>
+<p>A. HIV Only  B. HIV + Syphilis  C. <b>HIV + Syphilis + 3-Site GC/CT NAAT + HCV RNA (Annually)</b>  D. HIV + HCV Only <i>Answer: C. 3-Site GC/CT + Syphilis + HCV RNA (Annually) + Renal Function q6m.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Chlamydia.md]] — STI Screening in HIV</li><li>[[2.2 Gonorrhoea.md]] — 3-Site Testing in MSM, DAA Interactions</li><li>[[2.3 Syphilis.md]] — Syphilis in HIV (Atypical Serology, Neurosyphilis, IRIS)</li><li>[[2.4-2.6 Other Bacterial STIs.md]] — STIs in HIV</li><li>[[3.2 HSV.md]] — HSV in HIV (Suppressive Therapy, Resistance)</li><li>[[3.3 HPV.md]] — HPV in HIV (Anal Cancer Screening, Vaccination)</li><li>[[3.4 Hepatitis B &amp; C.md]] — HCV in HIV (DAA Therapy, ART Interactions)</li><li>[[3.5 Mpox.md]] — Mpox in HIV</li><li>[[3.6 Other Viral STIs.md]] — CMV/EBV/HTLV in HIV</li><li>[[4.1-4.4 Parasitic &amp; Fungal STIs.md]] — Candidiasis/Cryptosporidium/Microsporidia in HIV</li><li>[[5.1-5.8 Syndromic Management.md]] — STI Syndromes in HIV</li><li>[[7.1-7.4 Public Health &amp; Control.md]] — Integrated STI/HIV Services, Surveillance</li><li>[[Population &amp; Newborn Screening]] — Antenatal HIV/STI Screening</li><li>[[9. ELSI]] — Stigma, Criminalisation, Access to DAAs/PrEP, IRIS Ethics</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next:</b> Build <code>7.1-7.4 Public Health &amp; Control.md</code></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 6. HIV-AIDS Cross-Reference · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

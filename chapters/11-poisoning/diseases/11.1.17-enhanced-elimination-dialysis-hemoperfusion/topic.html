@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enhanced Elimination (Dialysis, Hemoperfusion) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Enhanced Elimination (Dialysis, Hemoperfusion)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Identify indications for hemodialysis/hemoperfusion in poisoning</li><li>Apply criteria for dialyzability of toxins</li><li>Prescribe urinary alkalinization protocol</li><li>Apply MDAC indications</li><li>Understand ILE (Intralipid) rescue indications</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Methods of Enhanced Elimination</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Method</th><th>Principle</th><th>Best For</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Intermittent Hemodialysis (IHD)**</td><td>Diffusion across semipermeable membrane</td><td>Small, water-soluble, low protein binding, low Vd toxins</td></tr><tr><td>**Continuous Renal Replacement Therapy (CRRT)**</td><td>Convection + diffusion</td><td>Hemodynamically unstable; larger molecules</td></tr><tr><td>**Hemoperfusion (HP)/Hemoadsorption**</td><td>Adsorption onto charcoal/resin</td><td>Protein-bound, larger molecules (historical: paraquat, phenobarbital)</td></tr><tr><td>**Plasma Exchange (PLEX/TPE)**</td><td>Removal of plasma + replacement</td><td>Protein-bound, large Vd (mushroom, TTP-like)</td></tr><tr><td>**Multiple-Dose Activated Charcoal (MDAC)**</td><td>Gut dialysis + enterohepatic interruption</td><td>Enterohepatic recirculation toxins</td></tr><tr><td>**Urinary Alkalinization**</td><td>Ion trapping in urine (weak acids)</td><td>Salicylate, phenobarbital, chlorpropamide, methotrexate</td></tr><tr><td>**Intralipid Emulsion (ILE)**</td><td>Lipid sink + metabolic support</td><td>Lipophilic cardiotoxic drugs (BB, CCB, TCA, LA)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Dialyzability Criteria (The "Dialysis Quartet")</span>
+  </div>
+  <div class="sec-body">
+<p>A toxin is <b>well dialyzed</b> if it has <b>ALL FOUR</b>:</p>
+<ol><li><b>Low molecular weight</b> (&lt; 500 Da)</li><li><b>Low protein binding</b> (&lt; 80%, ideally &lt; 50%)</li><li><b>Low volume of distribution</b> (&lt; 1 L/kg, ideally &lt; 0.5 L/kg)</li><li><b>Water soluble</b> (not highly lipid soluble)</li></ol>
+<div class="callout"><b>Mnemonic</b>: <b>"Lo-Pro-Lo-Vol"</b> (Low MW, Low Protein binding, Low Vd, Water soluble = High dialyzability)</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Hemodialysis Indications by Toxin</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">**Methanol / Ethylene Glycol** — **DIALYZE EARLY**</div>
+<ul><li><b>pH &lt; 7.30</b> (persistent despite bicarbonate)</li><li><b>Renal failure</b> (AKI, oliguria/anuria)</li><li><b>Visual symptoms</b> (methanol) — <b>any degree</b></li><li><b>Level &gt; 50 mmol/L</b> (methanol 160 mg/dL; EG 310 mg/dL) — some guidelines &gt; 20 mmol/L with acidosis</li><li><b>Refractory electrolyte disturbance</b></li><li><b>Continue until</b>: level &lt; 20 mg/dL (6.2 mmol/L) AND pH normal AND asymptomatic</li></ul>
+<div class="sub-h">**Salicylate** — **DIALYZE FOR SEVERE**</div>
+<ul><li><b>pH &lt; 7.20</b> (arterial) despite alkalinization</li><li><b>Renal failure</b></li><li><b>CNS toxicity</b> (confusion, seizures, coma) — <b>poorly correlates with level</b></li><li><b>Serum level</b>:</li><li><b>Acute</b>: <b>&gt; 700 mg/L (70 mg/dL / 5.1 mmol/L)</b></li><li><b>Chronic</b>: <b>&gt; 400 mg/L (40 mg/dL / 2.9 mmol/L)</b></li><li><b>Non-cardiogenic pulmonary edema</b> (refractory)</li><li><b>Severe hyperthermia</b> (&gt; 40°C)</li></ul>
+<div class="sub-h">**Lithium** — **DIALYZE FOR TOXICITY**</div>
+<ul><li><b>Acute ingestion</b>: <b>level &gt; 4.0 mmol/L</b></li><li><b>Chronic toxicity</b>: <b>level &gt; 2.5 mmol/L</b> + <b>neuro symptoms / renal impairment / elderly</b></li><li><b>Renal failure</b> (any level)</li><li><b>Severe neurotoxicity</b> (seizures, coma)</li><li><b>NOTE</b>: Lithium redistributes from tissues → <b>repeat dialysis</b> often needed (rebound)</li></ul>
+<div class="sub-h">**Theophylline** — **DIALYZE FOR SEVERE**</div>
+<ul><li><b>Severe toxicity</b>: seizures, refractory arrhythmias, hypotension</li><li><b>Level &gt; 100 mg/L (550 µmol/L)</b> acute</li><li><b>Chronic</b>: level &gt; 60 mg/L + toxicity</li><li><b>Highly dialyzable</b> (low protein binding, low Vd)</li></ul>
+<div class="sub-h">**Metformin** — **DIALYZE FOR LACTIC ACIDOSIS**</div>
+<ul><li><b>pH &lt; 7.15</b> (severe lactic acidosis)</li><li><b>Lactate &gt; 20 mmol/L</b></li><li><b>Refractory shock</b></li><li><b>Renal failure</b> (metformin accumulates)</li><li><b>Highly dialyzable</b> (low protein binding, low Vd)</li></ul>
+<div class="sub-h">**Valproate** — **DIALYZE FOR SEVERE**</div>
+<ul><li><b>Level &gt; 1300 mg/L (9000 µmol/L)</b> or &gt; 900 mg/L with toxicity</li><li><b>Coma (GCS &lt; 8)</b></li><li><b>Refractory hypotension/shock</b></li><li><b>Hyperammonemic encephalopathy</b></li><li><b>CRRT preferred</b> (high protein binding but low Vd; CVVH better than IHD)</li></ul>
+<div class="sub-h">**Ethanol/Isopropyl Alcohol** — **RARELY DIALYZE**</div>
+<ul><li>Only if <b>severe metabolic acidosis</b> unresponsive, <b>renal failure</b>, or <b>hemodynamic collapse</b></li><li>Supportive care usually sufficient</li></ul>
+<div class="sub-h">**Carbamazepine** — **MDAC Preferred, Dialysis Refractory**</div>
+<ul><li><b>MDAC first-line</b> (interrupts enterohepatic recirculation)</li><li><b>Dialysis/HP</b> if refractory, coma, refractory seizures, level &gt; 60 mg/L</li></ul>
+<div class="sub-h">**Phenobarbital** — **MDAC + Alkalinization + Dialysis**</div>
+<ul><li><b>MDAC</b> (1g/kg q4-6h)</li><li><b>Urinary alkalinization</b> (pH 7.5-8.0)</li><li><b>Dialysis/HP</b> if refractory, level &gt; 100 mg/L (acute)</li></ul>
+<div class="sub-h">**Digoxin** — **FAB FIRST, DIALYSIS FOR FAB-DIGOXIN COMPLEX**</div>
+<ul><li><b>Digoxin-specific Fab</b> = primary (see [[Digoxin Poisoning]])</li><li><b>Dialysis</b> only if <b>renal failure</b> + Fab unavailable OR Fab-digoxin complex accumulation (anuric)</li></ul>
+<div class="sub-h">**Other Dialyzable Toxins**</div>
+<ul><li><b>Methotrexate</b> (high-dose) — dialysis + leucovorin</li><li><b>Procainamide</b> — dialysis (NAC analogue)</li><li><b>Chloral hydrate</b> — dialysis</li><li><b>Sotalol</b> — dialysis (if QT/Torsades refractory)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Hemodialysis Practical Considerations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Vascular Access</div>
+<ul><li><b>Large-bore catheter</b> (12-14 Fr) — femoral, IJ, or subclavian</li><li><b>Adequate flow</b> (&gt; 300 mL/min blood, &gt; 500 mL/min dialysate)</li></ul>
+<div class="sub-h">Dialysis Prescription for Poisoning</div>
+<ul><li><b>High-efficiency</b>: high-flux dialyzer, max blood/dialysate flow</li><li><b>Duration</b>: <b>4-6 hours</b> per session (longer than renal)</li><li><b>Frequency</b>: <b>daily</b> until criteria met</li><li><b>Anticoagulation</b>: citrate preferred (regional) or heparin</li><li><b>Rebound</b>: expect 20-30% level rebound post-dialysis (tissue redistribution) — <b>repeat if needed</b></li></ul>
+<div class="sub-h">CRRT vs IHD</div>
+<table class="ctable"><tr><th>Feature</th><th>IHD</th><th>CRRT (CVVHDF)</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Clearance**</td><td>Higher peak</td><td>Sustained, lower peak</td></tr><tr><td>**Hemodynamics**</td><td>May cause instability</td><td>Better tolerated</td></tr><tr><td>**Rebound**</td><td>Significant</td><td>Less</td></tr><tr><td>**Best for**</td><td>Stable, small molecules</td><td>Unstable, larger molecules (valproate)</td></tr><tr><td>**Availability**</td><td>Often limited</td><td>ICU-based</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Urinary Alkalinization</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Principle</div>
+<ul><li><b>Weak acids</b> (pKa 3-7) → more ionized in alkaline urine → <b>ion trapping</b> → ↑ renal excretion 10-20x</li><li><b>Target urine pH</b>: <b>7.5-8.0</b> (check q1-2h with dipstick)</li></ul>
+<div class="sub-h">Indications</div>
+<ol><li><b>Salicylate poisoning</b> — <b>primary enhanced elimination</b></li><li><b>Phenobarbital</b> (pKa 7.2) — adjunct to MDAC/dialysis</li><li><b>Chlorpropamide</b> (sulfonylurea)</li><li><b>Methotrexate</b> (high-dose) — adjunct to leucovorin</li><li><b>Herbicides</b> (2,4-D, mecoprop)</li></ol>
+<div class="sub-h">Protocol</div>
+<ul><li><b>NaHCO₃ 150 mEq</b> (3 amps 50 mEq) in <b>1 L D5W</b></li><li><b>Infusion rate</b>: 150-250 mL/hr (adjust to maintain urine pH 7.5-8.0)</li><li><b>Add KCl 20-40 mEq/L</b> — <b>hypokalemia impairs alkalinization</b> (K⁺ shifts intracellular)</li><li><b>Furosemide 0.5-1 mg/kg</b> if oliguric (maintain UOP &gt; 2 mL/kg/hr)</li><li><b>Monitor</b>: urine pH q1-2h, serum pH/pCO₂/K⁺/Na⁺/glucose, fluid balance</li></ul>
+<div class="sub-h">Contraindications</div>
+<ul><li>Severe pulmonary edema / heart failure</li><li>Renal failure (anuric)</li><li>Severe metabolic alkalemia (pH &gt; 7.50)</li></ul>
+<div class="sub-h">Urinary Acidification — **AVOID**</div>
+<ul><li><b>Not recommended</b> — risks (worsens acidosis, rhabdo, renal failure) outweigh benefits</li><li>Was used for weak bases (amphetamines, phencyclidine) — <b>no longer standard</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Multiple-Dose Activated Charcoal (MDAC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mechanism</div>
+<ol><li><b>Gut dialysis</b>: charcoal in lumen adsorbs drug diffusing from blood → "dialysis" across gut wall</li><li><b>Enterohepatic interruption</b>: adsorbs drug excreted in bile → prevents reabsorption</li></ol>
+<div class="sub-h">Indications (Evidence-Based)</div>
+<ul><li><b>Carbamazepine</b></li><li><b>Phenobarbital</b></li><li><b>Theophylline</b></li><li><b>Quinine</b></li><li><b>Dapsone</b></li><li><b>Digitoxin</b> (digoxin: Fab preferred)</li><li><b>Amanita phalloides</b> (mushroom) — adjunct</li></ul>
+<div class="sub-h">Dosing</div>
+<ul><li><b>Initial</b>: 1 g/kg (max 50g) with sorbitol (or without)</li><li><b>Maintenance</b>: <b>1 g/kg (max 25-50g) q4-6h</b> × 2-6 doses <b>without sorbitol</b></li><li><b>Via</b>: NG tube (if not protecting airway, intubate first)</li><li><b>Stop</b>: when clinical improvement + falling levels</li></ul>
+<div class="sub-h">Contraindications</div>
+<ul><li>Unprotected airway (aspiration risk)</li><li>GI obstruction/perforation</li><li>Ileus</li><li>Charcoal bezoar risk</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Intralipid Emulsion (ILE) — **Rescue Therapy**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mechanism</div>
+<ul><li><b>"Lipid sink"</b>: sequesters lipophilic drug in plasma lipid phase</li><li><b>Metabolic</b>: provides fatty acid substrate for myocardial energy</li></ul>
+<div class="sub-h">Indications</div>
+<ul><li><b>Refractory cardiovascular collapse</b> from <b>lipophilic cardiotoxic</b> drugs despite:</li><li>Vasopressors + antidotes (glucagon, HIET, calcium, Fab, NaHCO₃)</li><li><b>Agents</b>: BB (propranolol), CCB (verapamil, amlodipine), TCA, local anesthetics (bupivacaine), others</li></ul>
+<div class="sub-h">Dose (20% Lipid Emulsion)</div>
+<ul><li><b>Bolus</b>: <b>1.5 mL/kg</b> (100 mL for 70 kg) over <b>1 minute</b></li><li><b>Infusion</b>: <b>0.25 mL/kg/min</b> (1000 mL/hr for 70 kg) for <b>30-60 minutes</b></li><li><b>Repeat bolus</b>: x2 if persistent arrest (max 10 mL/kg first 30 min)</li><li><b>Total max</b>: ~12 mL/kg over 60 min</li></ul>
+<div class="sub-h">Monitoring</div>
+<ul><li>Triglycerides (target &lt; 1000 mg/dL / 11 mmol/L)</li><li>Fat overload syndrome (rare)</li><li>Pancreatitis (rare)</li><li>Interference with lab assays (lipemia)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Plasmapheresis / Plasma Exchange (PLEX)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Indications</div>
+<ul><li><b>Amanita phalloides</b> (mushroom) — removes amatoxins (protein-bound)</li><li><b>TTP/HUS-like</b> syndromes from toxins</li><li><b>Highly protein-bound, large Vd</b> toxins where dialysis ineffective</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Decision Algorithm for Enhanced Elimination</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Poisoned Patient</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Life-Threatening Toxicity\nDespite Antidotes/Supportive?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Observe / MDAC if Indicated\nAlkalinization if Indicated</div>
+<div class="fc-node" data-id="D">Toxin Dialyzable?\n&lt;500 Da, &lt;80% Protein Bind,\n&lt;1 L/kg Vd, Water Soluble</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hemodialysis / CRRT\nPer Toxin-Specific Criteria</div>
+<div class="fc-node" data-id="F">Lipophilic Cardiotoxic?\nBB, CCB, TCA, Local Anesthetic</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Intralipid Emulsion Rescue\n1.5mL/kg Bolus + 0.25mL/kg/min</div>
+<div class="fc-node" data-id="H">Enterohepatic Recirculation?\nCarbamazepine, Phenobarbital,\nTheophylline, Quinine, Dapsone</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">MDAC 1g/kg q4-6h</div>
+<div class="fc-node" data-id="J">Weak Acid?\nSalicylate, Phenobarbital</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Urinary Alkalinization\nUrine pH 7.5-8.0</div>
+<div class="fc-node" data-id="L">Supportive Care\nConsider PLEX if Protein-Bound\nToxicology Consult</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Dialyzability criteria card</li><li>Dialysis indications table by toxin</li><li>MDAC/alkalinization/ILE dosing cards</li><li>Decision algorithm poster</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Dialysis for poisoning (Toxbase, Nephrology)</li><li>ILE rescue demonstration</li><li>MDAC/alkalinization protocols</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Dialyzable</b>: &lt;500 Da, &lt;80% protein bind, &lt;1 L/kg Vd, water soluble (Lo-Pro-Lo-Vol)</li><li><b>HD for MeOH/EG</b>: pH&lt;7.3, renal, visual (MeOH), level&gt;50</li><li><b>HD for Salicylate</b>: pH&lt;7.2, renal, CNS, level&gt;700/400</li><li><b>HD for Lithium</b>: &gt;4 acute, &gt;2.5 chronic+neuro/renal, renal failure</li><li><b>HD for Theophylline</b>: seizures/arrhythmia, level&gt;100</li><li><b>HD for Metformin</b>: pH&lt;7.15, lactate&gt;20</li><li><b>HD for Valproate</b>: coma, level&gt;1300/900, shock (CRRT preferred)</li><li><b>MDAC</b>: carbamazepine, phenobarbital, theophylline, quinine, dapsone</li><li><b>Alkalinization</b>: salicylate, phenobarbital; target urine pH 7.5-8.0, K⁺ replacement</li><li><b>ILE rescue</b>: 1.5mL/kg bolus + 0.25mL/kg/min; BB/CCB/TCA/LA refractory</li><li><b>Rebound</b>: expect 20-30% post-HD — repeat if needed</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>List 4 dialyzability criteria</li><li>State dialysis criteria for methanol, salicylate, lithium</li><li>Explain urinary alkalinization target and monitoring</li><li>State ILE dose and indications</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Dialyzability criteria (Lo-Pro-Lo-Vol)</li><li>Dialysis criteria per toxin (MeOH/EG, Salicylate, Lithium, Theophylline, Metformin, Valproate)</li><li>MDAC indications (5 main)</li><li>Urinary alkalinization: target pH 7.5-8.0, K⁺ replacement</li><li>ILE rescue: 1.5mL/kg + 0.25mL/kg/min for lipophilic cardiotoxic refractory</li><li>Rebound phenomenon post-dialysis</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>CRRT vs IHD indications</li><li>Plasmapheresis for Amanita</li><li>MDAC dosing (no sorbitol after first)</li><li>Alkalinization contraindications</li><li>Fab-digoxin complex dialysis</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Hemoperfusion historical use</li><li>Specific dialyzer characteristics</li><li>Plasmapheresis details</li><li>Toxin-specific clearance values</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Dialyzability criteria</li><li>Dialysis indications table by toxin</li><li>MDAC/alkalinization/ILE protocols</li><li>Practical HD considerations</li><li>Decision algorithm</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Dialyzability box</li><li>Dialysis criteria table</li><li>MDAC/alkaline/ILE dosing cards</li><li>Decision algorithm</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Dialyzable: &lt;500 Da, &lt;80% protein, &lt;1 L/kg Vd, water soluble (Lo-Pro-Lo-Vol)"</li><li>"HD MeOH/EG: pH&lt;7.3, renal, visual, level&gt;50"</li><li>"HD Salicylate: pH&lt;7.2, renal, CNS, level&gt;700/400"</li><li>"HD Lithium: &gt;4 acute, &gt;2.5 chronic+neuro/renal, renal failure"</li><li>"HD Theophylline: seizures/arrhythmia, level&gt;100"</li><li>"HD Metformin: pH&lt;7.15, lactate&gt;20"</li><li>"HD Valproate: coma, level&gt;1300, shock (CRRT preferred)"</li><li>"MDAC: Carbamazepine, Phenobarbital, Theophylline, Quinine, Dapsone"</li><li>"Alkalinization: Salicylate, Phenobarbital; urine pH 7.5-8.0, K⁺ replacement"</li><li>"ILE: 1.5mL/kg + 0.25mL/kg/min; BB/CCB/TCA/LA refractory"</li><li>"Rebound: 20-30% post-HD — repeat if needed"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Salicylate pH 7.15 despite alkalinization → HD indicated</li><li>Lithium 3.0 mmol/L chronic with confusion → HD indicated</li><li>Valproate coma level 1500 → CRRT preferred</li><li>Propranolol refractory shock despite glucagon/HIET/NE → ILE</li><li>Carbamazepine level 60 with coma → MDAC + consider HD</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Dialyzable: Lo-Pro-Lo-Vol</li><li>HD MeOH/EG: pH&lt;7.3, Renal, Visual, &gt;50</li><li>HD Sal: pH&lt;7.2, Renal, CNS, &gt;700/400</li><li>HD Li: &gt;4 acute, &gt;2.5 chronic, Renal</li><li>HD Theo: Sz/Arrhythmia, &gt;100</li><li>HD Met: pH&lt;7.15, Lac&gt;20</li><li>HD Val: Coma, &gt;1300 (CRRT)</li><li>MDAC: Carba, Phenob, Theo, Quinine, Dapsone</li><li>Alkalinize: Sal, Phenob; pH 7.5-8.0, K+</li><li>ILE: 1.5 + 0.25; BB/CCB/TCA/LA</li><li>Rebound: 20-30%</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Enhanced elimination reserved for life-threatening toxicity unresponsive to antidotes/supportive care. <b>Hemodialysis</b> for dialyzable toxins (Lo-Pro-Lo-Vol: &lt;500 Da, &lt;80% protein binding, &lt;1 L/kg Vd, water soluble). Specific criteria per toxin: MeOH/EG (pH&lt;7.3, renal, visual, level&gt;50), salicylate (pH&lt;7.2, renal, CNS, level&gt;700/400), lithium (&gt;4 acute, &gt;2.5 chronic+neuro), theophylline, metformin, valproate (CRRT preferred). <b>MDAC</b> for enterohepatic recirculation toxins (carbamazepine, phenobarbital, theophylline, quinine, dapsone). <b>Urinary alkalinization</b> (pH 7.5-8.0) for weak acids (salicylate, phenobarbital). <b>ILE rescue</b> (1.5mL/kg + 0.25mL/kg/min) for refractory lipophilic cardiotoxic collapse. Expect 20-30% rebound post-HD.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Question 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Question 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Question 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Question 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Question 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Question 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Question 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Question 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Question 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Question 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Scenario 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Scenario 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Scenario 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Scenario 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Scenario 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Scenario 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Scenario 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Scenario 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Scenario 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Scenario 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Flashcard 1 question</li></ul>
+<p>A: Flashcard 1 answer</p>
+<ul><li>Q: Flashcard 2 question</li></ul>
+<p>A: Flashcard 2 answer</p>
+<ul><li>Q: Flashcard 3 question</li></ul>
+<p>A: Flashcard 3 answer</p>
+<ul><li>Q: Flashcard 4 question</li></ul>
+<p>A: Flashcard 4 answer</p>
+<ul><li>Q: Flashcard 5 question</li></ul>
+<p>A: Flashcard 5 answer</p>
+<ul><li>Q: Flashcard 6 question</li></ul>
+<p>A: Flashcard 6 answer</p>
+<ul><li>Q: Flashcard 7 question</li></ul>
+<p>A: Flashcard 7 answer</p>
+<ul><li>Q: Flashcard 8 question</li></ul>
+<p>A: Flashcard 8 answer</p>
+<ul><li>Q: Flashcard 9 question</li></ul>
+<p>A: Flashcard 9 answer</p>
+<ul><li>Q: Flashcard 10 question</li></ul>
+<p>A: Flashcard 10 answer</p>
+<ul><li>Q: Flashcard 11 question</li></ul>
+<p>A: Flashcard 11 answer</p>
+<ul><li>Q: Flashcard 12 question</li></ul>
+<p>A: Flashcard 12 answer</p>
+<ul><li>Q: Flashcard 13 question</li></ul>
+<p>A: Flashcard 13 answer</p>
+<ul><li>Q: Flashcard 14 question</li></ul>
+<p>A: Flashcard 14 answer</p>
+<ul><li>Q: Flashcard 15 question</li></ul>
+<p>A: Flashcard 15 answer</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Enhanced Elimination (Dialysis, Hemoperfusion) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

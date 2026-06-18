@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antimicrobial Prescribing Principles — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Antimicrobial Prescribing Principles</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>empirical therapy</b> principles: severity assessment, likely pathogens, local epidemiology</li><li>[ ] Interpret <b>culture &amp; susceptibility</b> results: MIC, breakpoints, S/I/R categories</li><li>[ ] Apply <b>PK/PD principles</b>: time-dependent vs concentration-dependent killing, AUC/MIC, Cmax/MIC</li><li>[ ] Select <b>appropriate agents</b>: spectrum, tissue penetration, toxicity, interactions</li><li>[ ] Implement <b>stewardship</b>: de-escalation, IV-to-oral switch, duration optimisation</li><li>[ ] Manage <b>drug allergy</b>: cross-reactivity, desensitisation, alternative agents</li><li>[ ] Adjust for <b>special populations</b>: renal/hepatic impairment, pregnancy, obesity, extremes of age</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Principles of Antimicrobial Therapy</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Infection</div>
+<div class="fc-node" data-id="E">E</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Clinical Severity</div>
+<div class="fc-node" data-id="F">**Monitor Response** Clinical + Labs + Biomarkers (PCT, CRP)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Immediate Empirical Therapy** Broad-spectrum + Source Control</div>
+<div class="fc-node" data-id="D">**Targeted/Mild Empirical** Narrow-spectrum if possible</div>
+<div class="fc-node" data-id="G">**Culture Results**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">**Directed Therapy** Narrow spectrum per susceptibilities</div>
+<div class="fc-node" data-id="I">**Reassess** De-escalate or Stop if no infection</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Empirical Therapy Principles</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stepwise Approach</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th><th>Rationale</th></tr><tr><td>------</td><td>--------</td><td>-----------</td></tr><tr><td>**1. Assess Severity**</td><td>**Severe/Septic Shock** → Immediate broad-spectrum IV</td><td>Mortality ↑ with each hour of delay</td></tr><tr><td>**2. Identify Likely Source**</td><td>Clinical syndrome → Predict likely pathogens</td><td>CAP vs UTI vs IA vs CNS guide empiric choice</td></tr><tr><td>**3. Assess Host Factors**</td><td>Immunocompromise, recent ABX, travel, device, allergy</td><td>Alters pathogen spectrum & resistance risk</td></tr><tr><td>**4. Check Local Epidemiology**</td><td>**Local Antibiogram** → Resistance patterns</td><td>Guides spectrum selection</td></tr><tr><td>**4. Start Empirical Therapy**</td><td>**Broad if severe, Narrow if stable**</td><td>Balance efficacy vs resistance/C. diff risk</td></tr><tr><td>**6. Obtain Cultures First**</td><td>**Before 1st dose** (blood, urine, sputum, tissue)</td><td>Enables de-escalation</td></tr><tr><td>**7. Monitor & Reassess**</td><td>**48-72h** → De-escalate/stop based on cultures/clinical</td><td>Limit resistance & toxicity</td></tr></table>
+<div class="callout">[!tip] <b>Empirical ≠ Blind</b>. Always base on syndrome, epidemiology, host factors. <b>Cultures before antibiotics</b> (except septic shock - don't delay &gt;45 min).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Common Empirical Regimens (Adults)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Community-Acquired Infections</div>
+<table class="ctable"><tr><th>Syndrome</th><th>1st Line (Low Resistance Areas)</th><th>Alternatives (Penicillin Allergy / Resistance)</th></tr><tr><td>----------</td><td>--------------------------------</td><td>----------------------------------------------</td></tr><tr><td>**CAP (Outpatient)**</td><td>Amoxicillin 500-1000mg TDS OR Doxycycline 100mg BD</td><td>Clarithromycin 500mg BD</td></tr><tr><td>**CAP (Inpatient, Non-severe)**</td><td>Co-amoxiclav 1.2g TDS IV OR Ceftriaxone 2g OD IV</td><td>Levofloxacin 500mg OD IV</td></tr><tr><td>**CAP (Severe/ICU)**</td><td>Ceftriaxone 2g OD + Clarithromycin 500mg BD IV</td><td>Levofloxacin 500mg OD + Azithromycin 500mg OD</td></tr><tr><td>**UTI (Uncomplicated)**</td><td>Nitrofurantoin 100mg MR BD 5d / Trimethoprim 200mg BD 3d</td><td>Fosfomycin 3g single dose</td></tr><tr><td>**UTI (Complicated/Pyelonephritis)**</td><td>Ceftriaxone 2g OD IV / Ciprofloxacin 500mg BD (if susceptible)</td><td>Gentamicin 5mg/kg OD / Piperacillin-tazobactam</td></tr><tr><td>**Cellulitis (Non-purulent)**</td><td>Flucloxacillin 1g QDS IV / Co-amoxiclav 1.2g TDS IV</td><td>Clindamycin 600mg TDS IV</td></tr><tr><td>**Animal/Human Bite**</td><td>Co-amoxiclav 1.2g TDS IV/PO</td><td>Metronidazole 400mg TDS + Doxycycline 100mg BD</td></tr><tr><td>**Community-Acquired Intra-abdominal**</td><td>Co-amoxiclav 1.2g TDS IV / Piperacillin-tazobactam 4.5g TDS</td><td>Meropenem 1g TDS (if severe/resistant)</td></tr></table>
+<div class="sub-h">Hospital-Acquired / High-Risk</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Preferred Empirical Regimen</th><th>Key Addition</th></tr><tr><td>----------</td><td>----------------------------</td><td>--------------</td></tr><tr><td>**HAP/VAP (Non-MDR risk)**</td><td>Piperacillin-tazobactam 4.5g TDS / Ceftriaxone 2g OD</td><td>Add Vancomycin if MRSA risk</td></tr><tr><td>**HAP/VAP (MDR Risk)**</td><td>Meropenem 1g TDS / Piperacillin-tazobactam + Aminoglycoside</td><td>+/- Inhaled Colistin/Polymyxin</td></tr><tr><td>**Febrile Neutropenia**</td><td>Piperacillin-tazobactam 4.5g TDS / Meropenem 1g TDS</td><td>Add Vancomycin if line/Hickman/MRSA known</td></tr><tr><td>**Sepsis Unknown Source**</td><td>Piperacillin-tazobactam 4.5g TDS / Meropenem 1g TDS</td><td>+ Vancomycin if MRSA risk</td></tr><tr><td>**Suspected IA**</td><td>Piperacillin-tazobactam 4.5g TDS / Meropenem 1g TDS</td><td>+ Metronidazole if not covered</td></tr></table>
+<div class="callout">[!warning] <b>Local Antibiogram Essential</b>. Above are examples - <b>always consult local guidelines &amp; antibiogram</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 PK/PD Principles</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug Class</th><th>PK/PD Index</th><th>Dosing Strategy</th><th>Examples</th></tr><tr><td>------------</td><td>-------------</td><td>-----------------</td><td>----------</td></tr><tr><td>**β-Lactams** (Penicillins, Cephalosporins, Carbapenems)</td><td>**Time-dependent** → **%fT>MIC**</td><td>**Prolonged/Continuous Infusion** (e.g. Meropenem 2g over 3h q8h)</td><td>Piperacillin-tazobactam, Meropenem, Ceftriaxone</td></tr><tr><td>**Aminoglycosides**</td><td>**Concentration-dependent** → **Cmax/MIC**</td><td>**Once-Daily Dosing** (Extended Interval)</td><td>Gentamicin, Amikacin, Tobramycin</td></tr><tr><td>**Fluoroquinolones**</td><td>**Concentration-dependent** → **AUC/MIC**</td><td>**Once-Daily Dosing**</td><td>Ciprofloxacin, Levofloxacin, Moxifloxacin</td></tr><tr><td>**Glycopeptides** (Vancomycin, Teicoplanin)</td><td>**Time-dependent** → **AUC/MIC** (AUC/MIC ≥400)</td><td>**Continuous Infusion** (Vancomycin) or TDM-guided intermittent</td><td>Vancomycin</td></tr><tr><td>**Azoles** (Fluconazole, Voriconazole)</td><td>**Time-dependent**</td><td>**Loading Dose** → Maintenance</td><td>Voriconazole</td></tr><tr><td>**Echinocandins**</td><td>**Concentration-dependent**</td><td>**Once Daily**</td><td>Caspofungin, Micafungin, Anidulafungin</td></tr></table>
+<div class="callout">[!tip] <b>Extended/Continuous Infusion β-Lactams</b>: ↑ fT&gt;MIC, ↓ Nephrotoxicity (Pip-Tazo), ↑ Clinical Cure in Severe Sepsis.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📖 Spectrum of Activity Quick Reference</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Class</th><th>Gram +ve Cocci</th><th>Gram -ve Bacilli</th><th>Atypicals</th><th>Anaerobes</th><th>Key Exceptions</th></tr><tr><td>-------</td><td>----------------</td><td>------------------</td><td>-----------</td><td>-----------</td><td>----------------</td></tr><tr><td>**Penicillins** (Pen G, Ampicillin)</td><td>+++ (MSSA, Strep)</td><td>- (H. influenzae +)</td><td>-</td><td>+ (Oral anaerobes)</td><td>MSSA only, No Enterobacterales</td></tr><tr><td>**Aminopenicillins** (Amp/Amox)</td><td>++</td><td>+ (H.inf, M.cat)</td><td>-</td><td>+</td><td>No Pseudomonas, No ESBL</td></tr><tr><td>**β-Lactam/β-Lactamase Inhibitor** (Co-amoxiclav, Pip-Tazo)</td><td>+++</td><td>+++ (incl. Pseudomonas for Pip-Tazo)</td><td>-</td><td>+++</td><td>Not for ESBL (except Pip-Tazo partial)</td></tr><tr><td>**1st Gen Cephalosporins**</td><td>+++</td><td>-</td><td>-</td><td>+</td><td>Skin/Soft tissue, Surgical Prophylaxis</td></tr><tr><td>**3rd Gen Cephalosporins** (Ceph/Ceftriaxone)</td><td>++</td><td>+++ (Enterobacterales)</td><td>-</td><td>-</td><td>No Pseudomonas (Ceftazidime/Cefepime)</td></tr><tr><td>**4th Gen / Anti-Pseudomonal** (Cefepime)</td><td>++</td><td>+++ (incl. Pseudomonas)</td><td>-</td><td>-</td><td>CRT often needed</td></tr><tr><td>**Carbapenems**</td><td>+++</td><td>+++ (incl. ESBL, Pseudomonas)</td><td>-</td><td>+++</td><td>**Last Resort**, Avoid ESBL colonisation</td></tr><tr><td>**Fluoroquinolones** (Cipro/Levo/Moxi)</td><td>+ (Moxi +++)</td><td>+++</td><td>+++ (Moxi)</td><td>- (Moxi +)</td><td>Resistance rising, ↓ C. diff risk with Moxi</td></tr><tr><td>**Glycopeptides** (Vanco/Teico)</td><td>+++ (MRSA, CoNS)</td><td>-</td><td>-</td><td>-</td><td>No Gram -ve activity</td></tr><tr><td>**Oxazolidinones** (Linezolid)</td><td>+++ (VRE, MRSA)</td><td>-</td><td>+++</td><td>-</td><td>Myelosuppression (long-term)</td></tr><tr><td>**Lipopeptides** (Daptomycin)</td><td>+++</td><td>-</td><td>-</td><td>-</td><td>**Inactivated by Surfactant** (No Pneumonia)</td></tr><tr><td>**Metronidazole**</td><td>-</td><td>-</td><td>-</td><td>+++</td><td>**Anaerobe Specialist**</td></tr><tr><td>**Carbapenems**</td><td>+++</td><td>+++</td><td>-</td><td>+++</td><td>**Carbapenem-Sparing** Stewardship</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📖 Renal & Hepatic Dose Adjustment</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>CrCl 30-50</th><th>CrCl 15-30</th><th>CrCl <15 / HD</th><th>Hepatic Impairment</th></tr><tr><td>------</td><td>------------</td><td>------------</td><td>---------------</td><td>-------------------</td></tr><tr><td>**Vancomycin**</td><td>↓ Dose / ↑ Interval</td><td>↓ Dose / ↑ Interval</td><td>Post-HD Dosing</td><td>No Adjustment</td></tr><tr><td>**Gentamicin**</td><td>↓ Dose / ↑ Interval</td><td>↑ Interval</td><td>Post-HD</td><td>No Adjustment</td></tr><tr><td>**Meropenem**</td><td>Standard</td><td>1g 12hly (CrCl<30)</td><td>500mg 12hly post-HD</td><td>No Adjustment</td></tr><tr><td>**Piperacillin-tazobactam**</td><td>Standard</td><td>2.25g Q6H (CrCl<30)</td><td>2.25g 12hly post-HD</td><td>No Adjustment</td></tr><tr><td>**Vancomycin (Continuous)**</td><td>Monitor AUC</td><td>Monitor AUC</td><td>Post-HD Only</td><td>Monitor</td></tr><tr><td>**Linezolid**</td><td>No Adjustment</td><td>No Adjustment</td><td>No Adjustment</td><td>No Adjustment</td></tr><tr><td>**Linezolid**</td><td>No Adjustment</td><td>No Adjustment</td><td>No Adjustment</td><td>No Adjustment</td></tr></table>
+<div class="callout">[!warning] <b>Dose Adjust ≠ Omit</b>. Therapeutic Drug Monitoring (TDM) Essential for Vancomycin, Aminoglycosides.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📖 IV-to-Oral Switch Criteria</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Criteria</th><th>Examples</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Clinical Improvement**</td><td>Afebrile 24-48h, ↓ WBC/CRP, Tolerating Oral</td></tr><tr><td>**GI Function**</td><td>Tolerating Oral/NG, No Obstruction/Ileus</td></tr><tr><td>**Bioavailability**</td><td>**High (>90%)**: Fluoroquinolones, Linezolid, Metronidazole, Cotrimoxazole, Doxycycline, Clindamycin</td></tr><tr><td>**Bioavailability**</td><td>**Moderate (50-90%)**: Amoxicillin, Co-amoxiclav, Cephalexin, Metronidazole, Clindamycin</td></tr><tr><td>**Avoid IV→PO**</td><td>**Low Bioavailability**: β-Lactams (except above), Glycopeptides, Aminoglycosides, Carbapenems</td></tr></table>
+<div class="callout">[!tip] <b>IV-to-Oral Switch Saves</b>: Cost, IV Access Complications, LOS, Nursing Time. <b>Implement by Day 3-5</b> if criteria met.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📖 Duration of Therapy (Evidence-Based)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Infection</th><th>Recommended Duration</th><th>Evidence</th></tr><tr><td>-----------</td><td>---------------------</td><td>----------</td></tr><tr><td>**CAP (Non-severe)**</td><td>**5 days**</td><td>CAP-IT, PTC</td></tr><tr><td>**CAP (Severe)**</td><td>**5-7 days**</td><td></td></tr><tr><td>**UTI (Uncomplicated Cystitis)**</td><td>**3 days (Women) / 7 days (Men)**</td><td></td></tr><tr><td>**Pyelonephritis**</td><td>**7-10 days**</td><td></td></tr><tr><td>**Uncomplicated SSTI**</td><td>**5 days**</td><td></td></tr><tr><td>**Cellulitis**</td><td>**5-6 days**</td><td></td></tr><tr><td>**Intra-abdominal (Adequate Source Control)**</td><td>**4 days**</td><td>STOP-IT Trial</td></tr><tr><td>**Catheter-related BS**</td><td>**7 days** (Catheter Removed) / **14 days** (Retained)</td><td></td></tr><tr><td>**Bacteremia (Uncomplicated)**</td><td>**7 days**</td><td>BALANCE Trial</td></tr><tr><td>**S. aureus Bacteremia (Uncomplicated)**</td><td>**14 days**</td><td></td></tr><tr><td>**Infective Endocarditis**</td><td>**4-6 weeks** (Valve Dependent)</td><td></td></tr><tr><td>**Osteomyelitis**</td><td>**6 weeks** (Chronic) / **4-6 weeks** (Acute)</td><td></td></tr><tr><td>**Septic Arthritis**</td><td>**2-4 weeks** (Joint Dependent)</td><td></td></tr></table>
+<div class="callout">[!tip] <b>Shorter = Better</b>. <b>Short Course = Less Resistance, Less C. diff, Less Toxicity, Lower Cost</b>. <b>Stop Antibiotics When Clinical Criteria Met</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📖 Allergy & Cross-Reactivity</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Allergy</th><th>Cross-Reactivity Risk</th><th>Alternative</th></tr><tr><td>---------</td><td>----------------------</td><td>-------------</td></tr><tr><td>**Penicillin (IgE)**</td><td>**~1-2% Cross-Reactivity** with 1st Gen Cephalosporins (Similar R1 Side Chain); **<1% with 3rd/4th Gen**</td><td>**Avoid Penicillins**; **3rd/4th Gen Cephalosporins Generally Safe** (Skin Test if Severe)</td></tr><tr><td>**Cephalosporin**</td><td>**Cephalosporin-Cephalosporin** (Shared R1); **Low Penicillin Cross-Reactivity** (<1%)</td><td>**Avoid Same Class**; Carbapenems ~1% Cross-Reactivity</td></tr><tr><td>**Carbapenem**</td><td>**~1% Cross-Reactivity with Penicillins**</td><td>**Usually Safe** if Penicillin Allergy (Skin Test if Severe)</td></tr><tr><td>**Sulfonamide**</td><td>**Sulfonamide-Sulfonamide** (Not with Sulfones/Dapsone)</td><td>Avoid All Sulfonamides</td></tr><tr><td>**Fluoroquinolone**</td><td>**Class Effect** (Cross-Reactivity Within Class)</td><td>Avoid All FQs</td></tr></table>
+<div class="callout">[!warning] <b>"Penicillin Allergy" Over-Reported</b>. <b>&gt;90% Not Truly Allergic</b> on Testing. <b>De-labeling</b> Reduces Broad-Spectrum Use, C. diff, Resistance.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📖 Antimicrobial Stewardship Core Interventions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Intervention</th><th>Description</th><th>Impact</th></tr><tr><td>--------------</td><td>-------------</td><td>--------</td></tr><tr><td>**Prospective Audit & Feedback**</td><td>ID Pharmacist/Physician Review → Recommendations</td><td>↓ ABX Use 20-30%, ↓ Resistance</td></tr><tr><td>**Formulary Restriction**</td><td>Pre-authorization for Restricted Agents (Carbapenems, Colistin, Newer Agents)</td><td>↓ Resistance Selection</td></tr><tr><td>**IV-to-Oral Switch Protocol**</td><td>Automatic Switch Criteria at 48-72h</td><td>↓ LOS, Cost, IV Complications</td></tr><tr><td>**Automatic Stop Orders**</td><td>Default Duration (e.g., 5d CAP, 7d UTI)</td><td>Prevents Prolonged Courses</td></tr><tr><td>**De-escalation Protocols**</td><td>Mandatory Review at 48-72h</td><td>↓ Broad-Spectrum Exposure</td></tr><tr><td>**Rapid Diagnostics** (PCR, MALDI-TOF, Syndromic Panels)</td><td>**Rapid ID + AST** → Early Targeted Therapy</td><td>↓ Broad-Spectrum Days</td></tr><tr><td>**Education & Guidelines**</td><td>Local Guidelines, Prescriber Education</td><td>Sustained Culture Change</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📖 Common Clinical Scenarios - Quick Reference</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Key Action</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Penicillin Allergy + Need for Cephalosporin**</td><td>**3rd/4th Gen Cephalosporin Safe** (Cross-Reactivity <1%); **Skin Test if Anaphylaxis History**</td></tr><tr><td>**MRSA Bacteremia**</td><td>**Vancomycin (AUC 400-600)** ± Daptomycin/Linezolid if Failure/Intolerance</td></tr><tr><td>**ESBL Bacteremia**</td><td>**Carbapenem (Meropenem 1g TDS)**; Avoid β-Lactam/BLI (Inoculum Effect)</td></tr><tr><td>**CRE Bacteremia**</td><td>**Combination**: High-Dose Meropenem + Polymyxin/Tigecycline/Aminoglycoside ± Ceftazidime-Avibactam</td></tr><tr><td>**C. diff Infection**</td><td>**Oral Vancomycin 125mg QID** (Severe: +IV Metronidazole + Rectal Vancomycin)</td></tr><tr><td>**Febrile Neutropenia**</td><td>**Pip-Taz 4.5g TDS / Meropenem 1g TDS**; +Vancomycin if Line/Mucositis/MRSA Known</td></tr><tr><td>**Prosthetic Joint Infection**</td><td>**Rifampin-Based Combination** (Staph); **Debridement + Long Course**</td></tr><tr><td>**Endocarditis (Native Valve)**</td><td>**Native Valve: Pen G + Gent (Strep) / Vancomycin + Gent (Staph)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Empirical Therapy**</td><td>**Cultures First**, Broad if Severe, Narrow if Stable, Local Antibiogram</td></tr><tr><td>**PK/PD**</td><td>**β-Lactams = Time-Dependent (Prolonged Infusion)**; **Aminoglycosides/FQ = Concentration-Dependent**</td></tr><tr><td>**IV→Oral Switch**</td><td>**Criteria**: Clinical Improvement, GI Function, Bioavailability >90% (FQ, Linezolid, Metronidazole, Doxy)</td></tr><tr><td>**Duration**</td><td>**Short Course** Evidence-Based (5d CAP, 7d UTI, 4d IA, 7d Bacteremia)</td></tr><tr><td>**Penicillin Allergy**</td><td>**Cross-Reactivity ~1-2% (1st Gen Ceph)**; **3rd/4th Gen Safe**</td></tr><tr><td>**Stewardship Core**</td><td>**Audit & Feedback, Formulary Restriction, IV→PO, Auto-Stop, De-escalation, Rapid Diagnostics**</td></tr><tr><td>**Renal Dose Adjust**</td><td>**Vancomycin, Aminoglycosides, Carbapenems, Pip-Tazo** - TDM Essential</td></tr><tr><td>**IV→PO Switch Criteria**</td><td>**Clinical Improvement + GI Function + High Bioavailability (>90%)**</td></tr><tr><td>**Duration**</td><td>**Short Course = Less Resistance, Less C. diff, Less Toxicity**</td></tr><tr><td>**Penicillin Allergy**</td><td>**Skin Test if Anaphylaxis**; **De-label >90%**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the PK/PD indices for β-Lactams, Aminoglycosides, Fluoroquinolones, Vancomycin?</b></li></ol>
+<ul><li><b>β-Lactams</b>: %fT&gt;MIC (Time-dependent); <b>Aminoglycosides</b>: Cmax/MIC (Concentration-dependent); <b>Fluoroquinolones</b>: AUC/MIC; <b>Vancomycin</b>: AUC/MIC (Target 400-600)</li></ul>
+<ol><li><b>When do you switch IV to Oral antibiotics?</b></li></ol>
+<ul><li><b>Clinical Improvement (Afebrile 24-48h, ↓WBC/CRP), GI Function Intact, Bioavailability &gt;90%</b> (Fluoroquinolones, Linezolid, Metronidazole, Doxycycline, Cotrimoxazole)</li></ul>
+<ol><li><b>What is the recommended duration for CAP, UTI, Intra-abdominal Infection?</b></li></ol>
+<ul><li><b>CAP: 5 days</b>; <b>UTI (Cystitis): 3d (F) / 7d (M)</b>; <b>Pyelonephritis: 7-10d</b>; <b>Intra-abdominal (Source Control): 4 days</b></li></ul>
+<ol><li><b>What is the cross-reactivity between Penicillin and Cephalosporins?</b></li></ol>
+<ul><li><b>~1-2% with 1st Gen Cephalosporins</b>; <b>&lt;1% with 3rd/4th Gen</b>; <b>Shared R1 Side Chain</b></li></ul>
+<ol><li><b>When do you use Extended/Continuous Infusion β-Lactams?</b></li></ol>
+<ul><li><b>Severe Sepsis, High MIC Organisms, Prolonged fT&gt;MIC Needed</b>; <b>Meropenem 2g over 3h q8h, Pip-Tazo 4.5g over 4h q6h</b></li></ul>
+<ol><li><b>What is the first-line empirical therapy for Febrile Neutropenia?</b></li></ol>
+<ul><li><b>Piperacillin-Tazobactam 4.5g TDS IV</b> or <b>Meropenem 1g TDS</b>; <b>Add Vancomycin if Line/MRSA/Catheter</b></li></ul>
+<ol><li><b>When do you use Combination Therapy for CRE?</b></li></ol>
+<ul><li><b>High-Dose Meropenem + Polymyxin/Tigecycline/Aminoglycoside</b> ± Ceftazidime-Avibactam</li></ul>
+<ol><li><b>What is the recommended duration for Uncomplicated S. aureus Bacteremia?</b></li></ol>
+<ul><li><b>14 Days</b> (2 Weeks); <b>Complicated: 4-6 Weeks</b></li></ul>
+<ol><li><b>When do you use Idarucizumab vs Andexanet Alfa?</b></li></ol>
+<ul><li><b>Idarucizumab = Dabigatran Only (5g IV)</b>; <b>Andexanet Alfa = Factor Xa Inhibitors (Rivaroxaban, Apixaban, Edoxaban)</b></li></ul>
+<ol><li><b>What is the dose of Vancomycin for MRSA Bacteremia and Target AUC/MIC?</b></li></ol>
+<ul><li><b>15-20 mg/kg q8-12h (Adjusted by AUC/MIC)</b>; <b>Target AUC/MIC 400-600</b></li></ul>
+<ol><li><b>When do you use Extended Infusion β-Lactams?</b></li></ol>
+<ul><li><b>Severe Sepsis, High MIC, Critically Ill</b>; <b>Meropenem 2g over 3h q8h, Pip-Tazo 4.5g over 4h q6h</b>; <b>↑ fT&gt;MIC, ↓ Nephrotoxicity</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Time vs Concentration Dependent**</td><td>**β-Lactams = Time (fT>MIC)**; **Aminoglycosides/FQ = Concentration (Cmax/MIC, AUC/MIC)**</td></tr><tr><td>**Vancomycin TDM**</td><td>**AUC/MIC 400-600** (Not Trough-Only); **AUC = AUC24 / MIC**</td></tr><tr><td>**Penicillin Allergy ≠ Cephalosporin Allergy**</td><td>**Cross-Reactivity ~1-2% (1st Gen) <1% (3rd/4th Gen)**; **De-label if Low Risk**</td></tr><tr><td>**IV → PO Switch**</td><td>**Not Just Bioavailability** - Need Clinical Improvement + GI Function</td></tr><tr><td>**Duration**</td><td>**Shorter is Better** (5d CAP, 7d UTI, 4d IA, 7d Bacteremia)</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Time for β-Lactams, Concentration for Aminoglycosides/FQ"**</td><td>PK/PD</td></tr><tr><td>**"AUC 400-600 = Vanco Target"**</td><td>Vancomycin TDM</td></tr><tr><td>**"Penicillin Allergy ≠ Cephalosporin Allergy (3rd/4th Gen Safe)"**</td><td>Cross-Reactivity</td></tr><tr><td>**"Short Course = Less Resistance"**</td><td>Duration</td></tr><tr><td>**"Cultures Before Antibiotics"**</td><td>Stewardship</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Antimicrobial Prescribing))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Empirical Therapy</div>
+<div class="mm-node mm-l3">– Severity Assessment</div>
+<div class="mm-node mm-l3">– Source Identification</div>
+<div class="mm-node mm-l3">– Local Epidemiology</div>
+<div class="mm-node mm-l3">– Cultures Before Abx</div>
+<div class="mm-node mm-l2">PK/PD</div>
+<div class="mm-node mm-l3">– β-Lactams: %fT&gt;MIC</div>
+<div class="mm-node mm-l3">– Aminoglycosides: Cmax/MIC</div>
+<div class="mm-node mm-l3">– FQ: AUC/MIC</div>
+<div class="mm-node mm-l3">– Vancomycin: AUC/MIC 400-600</div>
+<div class="mm-node mm-l2">Spectrum</div>
+<div class="mm-node mm-l3">– Gram +ve: Vanco, Linezolid, Daptomycin</div>
+<div class="mm-node mm-l3">– Gram -ve: Carbapenems, Aminoglycosides, FQ</div>
+<div class="mm-node mm-l3">– Anaerobes: Metronidazole, Pip-Tazo, Carbapenems</div>
+<div class="mm-node mm-l3">– Atypicals: Macrolides, Doxy, FQ (Moxi)</div>
+<div class="mm-node mm-l2">Stewardship</div>
+<div class="mm-node mm-l3">– Audit &amp; Feedback</div>
+<div class="mm-node mm-l3">– Formulary Restriction</div>
+<div class="mm-node mm-l3">– IV→PO Switch</div>
+<div class="mm-node mm-l3">– Auto-Stop Orders</div>
+<div class="mm-node mm-l3">– De-escalation</div>
+<div class="mm-node mm-l3">– Rapid Diagnostics</div>
+<div class="mm-node mm-l2">IV→PO Switch</div>
+<div class="mm-node mm-l3">– Criteria: Clinical + GI + Bioavailability</div>
+<div class="mm-node mm-l3">– High Bioavailability: FQ, Linezolid, Metro, Doxy, Cotrimox</div>
+<div class="mm-node mm-l2">Duration</div>
+<div class="mm-node mm-l3">– CAP 5d, UTI 3-7d, IA 4d, Bacteremia 7-14d</div>
+<div class="mm-node mm-l2">Allergy</div>
+<div class="mm-node mm-l3">– PCN Allergy ≠ Ceph Allergy (3rd/4th Gen Safe)</div>
+<div class="mm-node mm-l3">– De-label &gt;90%</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**ANTIMICROBIAL PRESCRIBING – FCPS/MRCP REVISION CARD**</th></tr><tr><td>----------------------------------------------------------</td></tr><tr><td>**Empirical Rx**: Cultures 1st → Severity-Based Spectrum → Local Antibiogram</td></tr><tr><td>**PK/PD**: β-Lactams = %fT>MIC (Prolonged Infusion); Aminoglycosides = Cmax/MIC (Once Daily); FQ = AUC/MIC; Vancomycin = AUC/MIC 400-600</td></tr><tr><td>**IV→PO Switch**: Clinical Improvement + GI Intact + Bioavailability >90% (FQ, Linezolid, Metronidazole, Doxy, Cotrimox)</td></tr><tr><td>**Duration**: CAP 5d, UTI 3-7d, IA 4d, Bacteremia 7-14d, Endocarditis 4-6wks</td></tr><tr><td>**Allergy**: PCN Allergy ≠ Ceph Allergy (3rd/4th Gen Safe); De-label >90%</td></tr><tr><td>**Stewardship**: Audit & Feedback, Formulary Restriction, IV→PO, Auto-Stop, De-escalation, Rapid Diagnostics</td></tr><tr><td>**Renal Adjust**: Vanco/Aminoglycosides/Carbapenems/Pip-Tazo - TDM Essential</td></tr><tr><td>**IV→PO**: Clinical Improvement + GI Function + High Bioavailability</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>PK/PD indices, Empirical therapy principles, IV→PO criteria, Duration guidelines, Penicillin allergy cross-reactivity, Stewardship interventions, Renal dose adjustment, IV→PO switch criteria</td></tr><tr><td>**Should Know**</td><td>Extended infusion β-lactam evidence, TDM methods (AUC vs Trough), De-escalation algorithms, Rapid diagnostic impact, Drug interaction specifics, Outpatient parenteral therapy (OPAT), De-labeling protocols</td></tr><tr><td>**Nice to Know**</td><td>PK/PD modelling (Monte Carlo), Novel β-lactam/β-lactamase inhibitors (Cefiderocol, Imipenem-Relebactam), Resistance mechanisms (MCR, NDM, OXA), Antimicrobial pipeline, Pharmacoeconomics, AI-guided prescribing</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>PK/PD Principles</td><td></td><td></td></tr><tr><td>Empirical Therapy Selection</td><td></td><td></td></tr><tr><td>Spectrum of Activity</td><td></td><td></td></tr><tr><td>IV-to-Oral Switch</td><td></td><td></td></tr><tr><td>Duration Guidelines</td><td></td><td></td></tr><tr><td>Allergy Cross-Reactivity</td><td></td><td></td></tr><tr><td>Stewardship Interventions</td><td></td><td></td></tr><tr><td>Renal/Hepatic Dosing</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Sepsis and Septic Shock]]</li><li><b>Next</b>: [[Fever in Returned Traveller / FUO]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antimicrobial Prescribing Principles · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

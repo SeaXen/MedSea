@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Marine Envenomation (Jellyfish, Stonefish, Cone Shell, Blue-Ringed Octopus) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ENVENOMATION</span>
+      <div class="h1">Marine Envenomation (Jellyfish, Stonefish, Cone Shell, Blue-Ringed Octopus)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Identify major marine envenomation syndromes</li><li>Apply specific first aid (vinegar, hot water, PIB)</li><li>Recognise life-threatening syndromes (box jellyfish, stonefish, blue-ringed octopus)</li><li>Apply antivenom where available</li><li>Manage supportive care (ventilation, cardiovascular support)</li><li>Apply to FCPS/MRCP vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions & Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Cnidaria**</td><td>Phylum including jellyfish, corals, sea anemones — nematocysts for envenomation</td></tr><tr><td>**Nematocyst**</td><td>Stinging cell — coiled tubule everts on trigger, injects venom</td></tr><tr><td>**Tetrodotoxin (TTX)**</td><td>Na⁺ channel blocker — pufferfish, blue-ringed octopus, some newts</td></tr><tr><td>**Conotoxins**</td><td>Cone shell peptides — target ion channels (Na⁺, Ca²⁺, K⁺), receptors (nAChR)</td></tr><tr><td>**Irukandji syndrome**</td><td>Delayed catecholamine storm from small box jellyfish (*Carukia barnesi*, *Malo* spp.)</td></tr><tr><td>**Stonefish antivenom**</td><td>Anti-*Synanceia* (CSL) — equine F(ab')₂, IM/IV</td></tr><tr><td>**Box jellyfish antivenom**</td><td>Anti-*Chironex* (CSL) — sheep F(ab')₂, IV for cardiotoxic signs</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Content</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Section 1: Box Jellyfish (*Chironex fleckeri* — Major Box Jellyfish)</div>
+<p>#### Key Points</p>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Distribution**</td><td>Indo-Pacific, northern Australia (QLD, NT, WA), Thailand, Malaysia, Philippines</td></tr><tr><td>**Venom**</td><td>Cardiotoxin (pore-forming protein), dermatonecrotic, neurotoxic</td></tr><tr><td>**Mechanism**</td><td>Massive nematocyst discharge (up to 5 billion/cap) → rapid systemic absorption</td></tr><tr><td>**Onset**</td><td>Immediate severe pain ("whip-like" welts), cardiac arrest within minutes in severe cases</td></tr><tr><td>**Mortality**</td><td>~70 deaths in Australia (1883–2020); children at higher risk (body surface area)</td></tr><tr><td>**Antivenom**</td><td>CSL Box Jellyfish Antivenom (sheep F(ab')₂) — 1 vial (20,000 units) IV</td></tr></table>
+<p>#### Clinical Features</p>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Skin**</td><td>Immediate severe pain, linear whip-like erythematous welts ("tentacle prints"), blistering, necrosis</td></tr><tr><td>**Cardiovascular**</td><td>**Cardiotoxic** — arrhythmia (VF, VT, asystole), hypotension, cardiac arrest (within 5–20 min)</td></tr><tr><td>**Respiratory**</td><td>Apnoea (cardiac arrest), pulmonary oedema</td></tr><tr><td>**Neurological**</td><td>Agitation, confusion, seizures (hypoxic)</td></tr><tr><td>**Irukandji-like**</td><td>Some patients develop delayed catecholamine features</td></tr></table>
+<p>#### First Aid</p>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Remove from water**</td><td>Prevent further discharge</td></tr><tr><td>**2. Vinegar (4–5% acetic acid)**</td><td>**Inactivate undischarged nematocysts** — pour liberally for 30 sec</td></tr><tr><td>**3. Remove tentacles**</td><td>After vinegar, pick off with gloves/stick (don't rub)</td></tr><tr><td>**4. Pressure immobilisation**</td><td>**NOT recommended** — may trigger nematocyst discharge</td></tr><tr><td>**5. CPR if arrested**</td><td>BLS/ALS — antivenom during resuscitation</td></tr></table>
+<div class="sub-h">Section 2: Irukandji Syndrome (*Carukia barnesi*, *Malo* spp., *Morbakka* spp. — Small Box Jellyfish)</div>
+<p>#### Key Points</p>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Size**</td><td>1–2 cm bell (hard to see)</td></tr><tr><td>**Distribution**</td><td>Northern Australia, Indo-Pacific, Caribbean, Japan, Florida</td></tr><tr><td>**Venom**</td><td>Unknown protein → massive catecholamine release (noradrenaline > adrenaline)</td></tr><tr><td>**Onset**</td><td>**5–40 min delay** after minor sting</td></tr><tr><td>**Antivenom**</td><td>**None** — box jellyfish AV does NOT cross-neutralise</td></tr><tr><td>**Magnesium**</td><td>Evidence-based therapy — blocks catecholamine effects</td></tr></table>
+<p>#### Clinical Features — "Irukandji Syndrome"</p>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Pain**</td><td>**Minimal local pain** → delayed severe **back, abdominal, chest pain** (visceral)</td></tr><tr><td>**Cardiovascular**</td><td>Severe hypertension (200–300/100–150), tachycardia, **pulmonary oedema**, cardiogenic shock</td></tr><tr><td>**Neurological**</td><td>Severe headache, anxiety, restlessness, diaphoresis, piloerection</td></tr><tr><td>**Other**</td><td>Nausea, vomiting, muscle cramps, priapism, sense of impending doom</td></tr><tr><td>**Duration**</td><td>Hours to days (catecholamine storm self-limits)</td></tr></table>
+<p>#### Magnesium Infusion Protocol (Standard Australian)</p>
+<table class="ctable"><tr><th>Step</th><th>Dose/Action</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**Bolus**</td><td>**20 mmol (4 g MgSO₄) IV over 10–15 min**</td></tr><tr><td>**Infusion**</td><td>**5–10 mmol/h** (1–2 g/h) titrated to response</td></tr><tr><td>**Target**</td><td>Pain control, BP normalisation, pulmonary oedema resolution</td></tr><tr><td>**Duration**</td><td>12–24 h typically; wean as symptoms resolve</td></tr><tr><td>**Monitor**</td><td>BP, RR, SpO₂, reflexes (loss = toxicity), urine output</td></tr><tr><td>**Contraindications**</td><td>Severe renal failure, heart block, myasthenia gravis</td></tr></table>
+<div class="sub-h">Section 3: Stonefish (*Synanceia* spp. — Most Venomous Fish)</div>
+<p>#### Key Points</p>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Distribution**</td><td>Indo-Pacific, northern Australia, Red Sea, Southeast Asia</td></tr><tr><td>**Venom**</td><td>**Thermolabile** proteins (stonefish toxin = verrucotoxin, stonustoxin) — cardiotoxic, myotoxic, neurotoxic</td></tr><tr><td>**Mechanism**</td><td>13 dorsal spines with venom glands → puncture → deep injection</td></tr><tr><td>**Onset**</td><td>Immediate **excruciating pain** (disproportionate to wound), cardiovascular collapse</td></tr><tr><td>**Antivenom**</td><td>CSL Stonefish Antivenom (equine F(ab')₂) — 2000 units (2 vials) IM/IV</td></tr></table>
+<p>#### Clinical Features</p>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Pain**</td><td>**Severe, immediate, disproportionate** — radiates proximally, lasts hours–days</td></tr><tr><td>**Cardiovascular**</td><td>Hypotension, bradycardia, **cardiovascular collapse**, arrhythmia</td></tr><tr><td>**Local**</td><td>Puncture wounds, swelling, cyanosis, necrosis, lymphangitis</td></tr><tr><td>**Systemic**</td><td>Nausea, vomiting, diaphoresis, muscle weakness, respiratory distress</td></tr><tr><td>**Renal**</td><td>Myoglobinuria possible (myotoxic component)</td></tr></table>
+<p>#### First Aid</p>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Hot water immersion**</td><td>**45°C (113°F) for 20 min** — denatures thermolabile venom; repeat PRN</td></tr><tr><td>**2. Analgesia**</td><td>Opioids often needed (pain severe)</td></tr><tr><td>**3. Stonefish AV**</td><td>2000 units IM or IV for systemic signs (hypotension, arrhythmia, severe pain)</td></tr><tr><td>**4. Tetanus**</td><td>Prophylaxis</td></tr><tr><td>**5. Antibiotics**</td><td>Cover *Vibrio*, *Aeromonas* (marine wounds)</td></tr></table>
+<div class="sub-h">Section 4: Cone Shell (*Conus* spp.)</div>
+<p>#### Key Points</p>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Distribution**</td><td>Tropical Indo-Pacific (Great Barrier Reef, Hawaii, Red Sea)</td></tr><tr><td>**Venom**</td><td>**Conotoxins** — diverse peptides targeting Na⁺, Ca²⁺, K⁺ channels, nAChR, NMDA</td></tr><tr><td>**Mechanism**</td><td>Harpoon-like radula tooth injects venom — often painless puncture</td></tr><tr><td>**Onset**</td><td>Minutes to hours — **neuromuscular paralysis**, respiratory failure</td></tr><tr><td>**Antivenom**</td><td>**None** — supportive ventilation only</td></tr><tr><td>**Mortality**</td><td>~30% without ventilatory support</td></tr></table>
+<p>#### Clinical Features</p>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Local**</td><td>Painless or mild pain, minor puncture, ischaemia, paraesthesia</td></tr><tr><td>**Neuromuscular**</td><td>**Descending paralysis** — ptosis, ophthalmoplegia, dysphagia, limb weakness, **respiratory failure**</td></tr><tr><td>**Sensory**</td><td>Paraesthesia, numbness, impaired proprioception</td></tr><tr><td>**Autonomic**</td><td>Hypertension, hypotension, cardiac arrhythmia</td></tr><tr><td>**Consciousness**</td><td>**Preserved** — locked-in syndrome possible</td></tr></table>
+<p>#### Management</p>
+<ul><li><b>Supportive ventilation</b> — intubate for respiratory failure; paralysis resolves over hours–days as conotoxins clear</li><li><b>No antivenom available</b></li><li><b>Monitor</b> — CK, renal, cardiac</li><li><b>Tetanus prophylaxis</b></li></ul>
+<div class="sub-h">Section 5: Blue-Ringed Octopus (*Hapalochlaena* spp.)</div>
+<p>#### Key Points</p>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Distribution**</td><td>Indo-Pacific (Australia, Japan, Southeast Asia, Pacific Islands)</td></tr><tr><td>**Venom**</td><td>**Tetrodotoxin (TTX)** — potent voltage-gated Na⁺ channel blocker</td></tr><tr><td>**Mechanism**</td><td>Salivary gland secretion → bite (often painless) → systemic absorption</td></tr><tr><td>**Onset**</td><td>Minutes — **rapid flaccid paralysis**, respiratory arrest</td></tr><tr><td>**Antivenom**</td><td>**None**</td></tr><tr><td>**Recovery**</td><td>**Hours to days** — TTX cleared renally; supportive ventilation life-saving</td></tr></table>
+<p>#### Clinical Features</p>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Local**</td><td>Painless bite, minimal local reaction, 1–2 puncture marks</td></tr><tr><td>**Neuromuscular**</td><td>**Rapid flaccid paralysis** — ptosis, ophthalmoplegia, dysphagia, limb paralysis, **apnoea**</td></tr><tr><td>**Consciousness**</td><td>**Fully preserved** — "locked-in"</td></tr><tr><td>**Autonomic**</td><td>Hypertension, tachycardia, hypotension (late), fixed dilated pupils</td></tr><tr><td>**Cardiac**</td><td>Arrhythmia, cardiac arrest (hypoxic)</td></tr></table>
+<p>#### Management</p>
+<ul><li><b>Immediate BLS</b> — mouth-to-mouth or bag-valve-mask if apnoeic</li><li><b>Intubation + mechanical ventilation</b> — until spontaneous recovery (6–24 h typically)</li><li><b>No antivenom, no neostigmine</b> (TTX blocks Na⁺ channels, not nAChR)</li><li><b>Tetanus prophylaxis</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Diagnostic Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Bedside / Point-of-Care</div>
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Interpretation</th></tr><tr><td>------</td><td>------------</td><td>----------------</td></tr><tr><td>**History**</td><td>All</td><td>Exposure (swim, dive, handling), geography, time delay</td></tr><tr><td>**Skin exam**</td><td>All</td><td>Welts (box jelly), puncture (stonefish, cone, octopus), minimal signs (irukandji)</td></tr><tr><td>**ECG**</td><td>Box jelly, stonefish, irukandji</td><td>Arrhythmia, ST changes, QT prolongation</td></tr><tr><td>**CXR**</td><td>Irukandji, stonefish</td><td>Pulmonary oedema, cardiomegaly</td></tr><tr><td>**CK, myoglobin**</td><td>Stonefish, cone shell</td><td>Rhabdomyolysis, myoglobinuria</td></tr></table>
+<div class="sub-h">Laboratory Investigations</div>
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Expected Findings</th></tr><tr><td>------</td><td>------------</td><td>-------------------</td></tr><tr><td>**FBC**</td><td>Severe envenomation</td><td>Leucocytosis, haemoconcentration</td></tr><tr><td>**U&E, creatinine**</td><td>All severe</td><td>AKI (myoglobinuria, hypotension)</td></tr><tr><td>**CK**</td><td>Stonefish, cone, blue-ringed</td><td>Rhabdomyolysis (CK > 1000)</td></tr><tr><td>**Troponin**</td><td>Box jelly, stonefish</td><td>Myocardial injury</td></tr><tr><td>**ABG**</td><td>Respiratory failure</td><td>Respiratory acidosis, hypoxia</td></tr><tr><td>**Coagulation**</td><td>Stonefish</td><td>Usually normal (not VICC)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management Summary Table</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Envenomation</th><th>First Aid</th><th>Antivenom</th><th>Key Supportive</th></tr><tr><td>--------------</td><td>-----------</td><td>-----------</td><td>----------------</td></tr><tr><td>**Box jellyfish (*Chironex*)**</td><td>**Vinegar** → remove tentacles → CPR if arrested</td><td>**CSL Box Jellyfish AV** 1 vial IV (cardiotoxic signs)</td><td>ALS, ventilatory support</td></tr><tr><td>**Irukandji**</td><td>Vinegar (if tentacles), remove from water</td><td>**None**</td><td>**Magnesium infusion** 20 mmol bolus + 5–10 mmol/h, analgesia (fentanyl), antihypertensives</td></tr><tr><td>**Stonefish**</td><td>**Hot water 45°C × 20 min**</td><td>**CSL Stonefish AV** 2000 units IM/IV (systemic signs)</td><td>Opioids, fluids, cardiovascular support</td></tr><tr><td>**Cone shell**</td><td>PIB (if limb), immobilise</td><td>**None**</td><td>**Ventilation** until recovery</td></tr><tr><td>**Blue-ringed octopus**</td><td>PIB, BLS</td><td>**None**</td><td>**Ventilation** until recovery (hours–days)</td></tr><tr><td>**Stingray**</td><td>Hot water 45°C × 30–90 min, remove barb</td><td>None</td><td>Wound exploration, antibiotics (*Vibrio*), tetanus</td></tr><tr><td>**Sea urchin**</td><td>Hot water, remove spines</td><td>None</td><td>Spine removal, antibiotics if infected</td></tr><tr><td>**Lionfish**</td><td>Hot water 45°C</td><td>None</td><td>Analgesia, wound care</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Envenomation</th><th>Management</th></tr><tr><td>--------------</td><td>--------------</td><td>------------</td></tr><tr><td>**Cardiac arrest**</td><td>Box jellyfish, stonefish, irukandji</td><td>ALS + antivenom (box jelly, stonefish)</td></tr><tr><td>**Pulmonary oedema**</td><td>Irukandji, box jellyfish, stonefish</td><td>O₂, diuretics, magnesium (irukandji), PEEP/ventilation</td></tr><tr><td>**Respiratory failure**</td><td>Cone shell, blue-ringed octopus, severe box jelly</td><td>Intubation, mechanical ventilation</td></tr><tr><td>**AKI / Rhabdomyolysis**</td><td>Stonefish, cone shell</td><td>Fluids, alkalinisation, dialysis if severe</td></tr><tr><td>**Secondary infection**</td><td>All (marine wounds)</td><td>Antibiotics covering *Vibrio*, *Aeromonas*, *Staph*</td></tr><tr><td>**Necrosis**</td><td>Box jellyfish, stonefish</td><td>Debridement, grafting</td></tr><tr><td>**Locked-in syndrome**</td><td>Blue-ringed octopus, cone shell</td><td>Communication support, rehab</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Disposition Criteria</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Admit (ICU/HDU)</th><th>Observe (Ward)</th><th>Discharge</th></tr><tr><td>------------------</td><td>----------------</td><td>-----------</td></tr><tr><td>**Box jellyfish** — cardiotoxic signs, AV given, arrhythmia</td><td>**Box jellyfish** — minor skin only, no systemic signs (6h)</td><td>**Minor sting** — identified benign species, no symptoms</td></tr><tr><td>**Irukandji** — all (catecholamine storm, Mg infusion)</td><td>**Stonefish** — local pain only, no systemic (6h)</td><td>**Stingray/urchin** — barb/spines removed, pain controlled</td></tr><tr><td>**Stonefish** — systemic (CVS, severe pain needing AV)</td><td>**Cone shell** — asymptomatic after 6h observation</td><td>—</td></tr><tr><td>**Cone shell / Blue-ringed octopus** — any paralysis</td><td>**Jellyfish** — mild local only</td><td>—</td></tr><tr><td>**Anaphylaxis** (any)</td><td>—</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - **Box jellyfish (<i>Chironex</i>)<b> = immediate cardiotoxic risk → </b>vinegar<b> inactivates nematocysts, </b>antivenom<b> for cardiotoxic signs, CPR + AV during arrest - </b>Irukandji syndrome<b> = delayed (5–40 min) severe visceral pain + </b>catecholamine storm<b> (HTN, pulmonary oedema) → </b>magnesium infusion<b> 20 mmol bolus + 5–10 mmol/h (evidence-based), NO antivenom - </b>Stonefish<b> = excruciating pain → </b>hot water 45°C × 20 min<b> (denatures thermolabile venom), </b>antivenom<b> 2000 units IM/IV for systemic signs - </b>Cone shell<b> = conotoxins → </b>neuromuscular paralysis, respiratory failure<b> → </b>supportive ventilation ONLY (no antivenom)<b> - </b>Blue-ringed octopus<b> = </b>tetrodotoxin<b> → </b>flaccid paralysis, apnoea, preserved consciousness<b> → </b>ventilation until recovery (no antivenom, no neostigmine)<b> - </b>Stingray/sea urchin/lionfish<b> = hot water immersion for pain - </b>Marine wounds** = antibiotics cover <i>Vibrio</i>, <i>Aeromonas</i> + tetanus - <b>PIB for cone shell/blue-ringed octopus</b> (neurotoxic, like elapids); <b>hot water for stonefish/stingray/urchin/lionfish</b> (thermolabile venom); <b>vinegar for box jellyfish</b> (nematocyst inactivation)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Vinegar for all jellyfish**</td><td>Vinegar ONLY for box jellyfish (*Chironex*); may WORSEN *Physalia* (Portuguese man o' war)</td></tr><tr><td>**Hot water for box jellyfish**</td><td>Hot water for stonefish/stingray/urchin/lionfish; vinegar for box jellyfish</td></tr><tr><td>**Box jellyfish AV for Irukandji**</td><td>**NO cross-neutralisation** — Irukandji has NO antivenom</td></tr><tr><td>**Neostigmine for blue-ringed octopus**</td><td>**NO** — TTX blocks Na⁺ channels, not nAChR; neostigmine ineffective</td></tr><tr><td>**Antivenom for cone shell**</td><td>**None exists** — supportive ventilation only</td></tr><tr><td>**Pressure immobilisation for stonefish**</td><td>**NO** — hot water is first aid; PIB for neurotoxic (cone, blue-ringed)</td></tr><tr><td>**Irukandji = immediate severe pain**</td><td>**Delayed 5–40 min** — minimal local pain initially</td></tr><tr><td>**Blue-ringed octopus bite = painful**</td><td>**Often painless** — minimal local signs</td></tr><tr><td>**Stonefish = only local pain**</td><td>Systemic: cardiovascular collapse, arrhythmia, myotoxicity</td></tr><tr><td>**All marine envenomation = same first aid**</td><td>Agent-specific: vinegar (box jelly), hot water (fish), PIB (neurotoxic molluscs)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Box jellyfish</b>: <b>V</b>inegar for <b>V</b>isible tentacles = <b>VV</b> (inactivates nematocysts)</li><li><b>Irukandji</b>: <b>D</b>elayed 5–40 min, <b>V</b>isceral pain, <b>C</b>atecholamine storm, <b>M</b>agnesium = <b>DVCM</b></li><li><b>Stonefish</b>: <b>H</b>ot water <b>H</b>eat-labile venom = <b>HH</b> (45°C × 20 min)</li><li><b>Cone shell</b>: <b>C</b>onotoxins → <b>C</b>hannel blockade → <b>C</b>ollapse (respiratory) = <b>CCC</b></li><li><b>Blue-ringed octopus</b>: <b>T</b>TX → <b>T</b>etrodotoxin → <b>T</b>otal paralysis, <b>T</b>ime recovers = <b>TTT</b></li><li><b>Marine first aid triad</b>: <b>V</b>inegar (box jelly), <b>H</b>ot water (fish), <b>P</b>IB (neuro molluscs) = <b>VHP</b></li><li><b>Irukandji magnesium</b>: <b>20 mmol bolus, 5–10 mmol/h infusion</b> = <b>20-5-10</b></li><li><b>No AV</b>: <b>C</b>one shell, <b>B</b>lue-ringed octopus, <b>I</b>rukandji = <b>CBI</b></li><li><b>Cardiotoxic</b>: <b>B</b>ox jellyfish, <b>S</b>tonefish, <b>I</b>rukandji = <b>BSI</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Marine Envenomation)) Cnidaria Box_Jellyfish[Chironex fleckeri] First_Aid[Vinegar] Antivenom[CSL AV IV] Cardiotoxic[Cardiac arrest risk] Irukandji[Carukia, Malo] Delayed[5-40 min] Catecholamine_Storm[HTN, Pulm Oedema] Magnesium[20mmol bolus + infusion] No_AV[None] Portuguese_Man_O_War[Physalia] Vinegar[May worsen - hot water instead] Fish Stonefish[Synanceia] Hot_Water[45°C 20 min] Antivenom[CSL 2000 units] Thermolabile_Venom Stingray Hot_Water[45°C 30-90 min] Barb_Removal Lionfish Hot_Water[45°C] Molluscs Cone_Shell[Conus] Conotoxins[Channel blockade] Paralysis[Respiratory failure] No_AV[Ventilation only] Blue_Ringed_Octopus[Hapalochlaena] Tetrodotoxin[Na+ channel block] Flaccid_Paralysis[Preserved consciousness] No_AV[Ventilation hours-days] Sea_Urchin Spine_Removal Hot_Water </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Flowchart: Marine Envenomation First Aid</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Marine Envenomation] --&gt; B{Identify Agent} B --&gt;|Box Jellyfish (Chironex)| C[VINEGAR 4-5%] C --&gt; D[Remove Tentacles] D --&gt; E{Cardiotoxic Signs?} E --&gt;|Yes| F[CSL Box Jellyfish AV IV + ALS] E --&gt;|No| G[Analgesia, Observe 6h] B --&gt;|Irukandji| H[Vinegar if Tentacles] H --&gt; I[Magnesium Infusion 20mmol + 5-10mmol/h] I --&gt; J[Analgesia, Antihypertensives] B --&gt;|Stonefish| K[HOT WATER 45°C × 20 min] K --&gt; L{Systemic Signs?} L --&gt;|Yes| M[CSL Stonefish AV 2000 units IM/IV] L --&gt;|No| N[Analgesia, Observe] B --&gt;|Cone Shell / Blue-ringed Octopus| O[PIB + Immobilise] O --&gt; P{Respiratory Failure?} P --&gt;|Yes| Q[INTUBATE + VENTILATE] P --&gt;|No| R[Monitor, Observe] B --&gt;|Stingray / Urchin / Lionfish| S[HOT WATER 45°C] S --&gt; T[Remove Barb/Spines, Wound Care] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Envenomation</th><th>First Aid</th><th>Antivenom</th><th>Key Feature</th></tr><tr><td>--------------</td><td>-----------</td><td>-----------</td><td>-------------</td></tr><tr><td>**Box jellyfish (*Chironex*)**</td><td>**Vinegar** → remove tentacles</td><td>**CSL AV 1 vial IV** (cardiotoxic)</td><td>Immediate pain, whip marks, cardiac arrest</td></tr><tr><td>**Irukandji**</td><td>Vinegar if tentacles</td><td>**NONE**</td><td>Delayed 5–40 min, visceral pain, HTN, pulm oedema</td></tr><tr><td>**Stonefish**</td><td>**Hot water 45°C × 20 min**</td><td>**CSL AV 2000u IM/IV**</td><td>Excruciating pain, cardiovascular collapse</td></tr><tr><td>**Cone shell**</td><td>PIB, immobilise</td><td>**NONE**</td><td>Painless → paralysis → respiratory failure</td></tr><tr><td>**Blue-ringed octopus**</td><td>PIB, BLS</td><td>**NONE**</td><td>Painless → flaccid paralysis, apnoea, aware</td></tr><tr><td>**Stingray**</td><td>Hot water 45°C, remove barb</td><td>None</td><td>Laceration + venom</td></tr><tr><td>**Portuguese man o' war**</td><td>Hot water (NOT vinegar)</td><td>None</td><td>Multiple tentacles, painful</td></tr><tr><td>**Sea urchin**</td><td>Hot water, remove spines</td><td>None</td><td>Spine granuloma risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>Box jellyfish vs Irukandji, stonefish hot water, tetrodotoxin</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Magnesium protocol, cone shell ventilation, differential</td></tr><tr><td>**7 d**</td><td></td><td></td><td>All first aid distinctions, antivenom specifics</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with general envenomation</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Box jellyfish (vinegar, antivenom), Irukandji (catecholamine storm, magnesium), stonefish (hot water, antivenom), blue-ringed octopus (tetrodotoxin, ventilation), cone shell (paralysis, ventilation)</td></tr><tr><td>**Should Know 🟡**</td><td>Irukandji magnesium protocol detail, stonefish antivenom dosing, cone shell conotoxin subtypes, regional species distribution, *Physalia* management</td></tr><tr><td>**Nice to Know 🟢**</td><td>Conotoxin pharmacology, novel antivenoms, Irukandji pathophysiology research, marine envenomation epidemiology, stonefish venom components</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Box jellyfish first aid & AV</td><td></td></tr><tr><td>Irukandji syndrome & Mg protocol</td><td></td></tr><tr><td>Stonefish hot water & AV</td><td></td></tr><tr><td>Cone shell management</td><td></td></tr><tr><td>Blue-ringed octopus management</td><td></td></tr><tr><td>First aid differentiation (vinegar vs hot water vs PIB)</td><td></td></tr><tr><td>Stingray/urchin/lionfish</td><td></td></tr><tr><td>Complications & disposition</td><td></td></tr><tr><td>Differential marine stings</td><td></td></tr><tr><td>Viva readiness</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Marine envenomation"</td><td>Classification, box jellyfish vs Irukandji, stonefish, cone shell, blue-ringed octopus, first aid specifics</td></tr><tr><td>**Short Note**</td><td>"Irukandji syndrome"</td><td>Delayed catecholamine storm, magnesium infusion 20mmol bolus + 5-10mmol/h, no AV</td></tr><tr><td>**Viva**</td><td>"Blue-ringed octopus vs cone shell"</td><td>Both = paralysis + respiratory failure, no AV; octopus = TTX (Na+ block, painless, aware); cone = conotoxins (channel mix, painful)</td></tr><tr><td>**Ward Round**</td><td>"Diver with stonefish sting, hypotensive"</td><td>Hot water 45°C, stonefish AV 2000u IM/IV, fluids, analgesia, antibiotics (Vibrio), monitor</td></tr><tr><td>**Last-Night**</td><td>"Marine first aid key"</td><td>Vinegar (box jelly), Hot water 45°C (stonefish/stingray/urchin/lionfish), PIB (cone/blue-ringed), Mg (Irukandji)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>**Box jellyfish (<i>Chironex fleckeri</i>) — immediate first aid:**</li></ol>
+<p>A. Fresh water wash B. <b>Vinegar (4–5% acetic acid) to inactivate nematocysts</b> C. Hot water immersion D. Ice pack E. Pressure immobilisation bandage</p>
+<ol><li><b>Box jellyfish antivenom — indication:</b></li></ol>
+<p>A. All stings B. <b>Cardiotoxic signs (arrhythmia, cardiac arrest, hypotension)</b> C. Pain only D. Local skin reaction only E. Only if vinegar unavailable</p>
+<ol><li><b>Irukandji syndrome — characteristic delayed presentation:</b></li></ol>
+<p>A. Immediate severe local pain B. <b>Minimal local pain → 5–40 min delayed severe back/abdominal/chest pain, hypertension, pulmonary oedema</b> C. Immediate paralysis D. Immediate cardiac arrest E. Local necrosis only</p>
+<ol><li><b>Irukandji syndrome — pathophysiology:</b></li></ol>
+<p>A. Cardiotoxin B. <b>Catecholamine storm (massive noradrenaline/adrenaline release)</b> C. Neurotoxin (paralysis) D. Haemolysin E. Necrotoxin</p>
+<ol><li><b>Irukandji syndrome — evidence-based treatment:</b></li></ol>
+<p>A. Antivenom B. <b>Analgesia (fentanyl/morphine), magnesium infusion (reduces catecholamine effects), antihypertensives, supportive</b> C. Antivenom + magnesium D. Only analgesia E. Prazosin</p>
+<ol><li>**Stonefish (<i>Synanceia</i>) — immediate first aid:**</li></ol>
+<p>A. Vinegar B. <b>Hot water immersion (45°C × 20 min)</b> C. Ice pack D. Pressure immobilisation E. Vinegar + hot water</p>
+<ol><li><b>Stonefish antivenom — route:</b></li></ol>
+<p>A. IV only B. <b>IM or IV (both effective)</b> C. IM only D. Subcutaneous E. Topical</p>
+<ol><li>**Blue-ringed octopus (<i>Hapalochlaena</i>) envenomation — toxin:**</li></ol>
+<p>A. Conotoxin C. <b>Tetrodotoxin (TTX) — voltage-gated Na⁺ channel blocker</b> C. Latrotoxin D. Ciguatoxin E. Saxitoxin</p>
+<ol><li><b>Blue-ringed octopus — no antivenom. Management:</b></li></ol>
+<p>A. Neostigmine B. <b>Supportive: intubation, mechanical ventilation until toxin clears (hours to days)</b> C. 4-AP (potassium channel blocker) D. Plasma exchange E. Hemodialysis</p>
+<ol><li>**Cone shell (<i>Conus</i>) envenomation — toxin mechanism:**</li></ol>
+<p>A. Tetrodotoxin B. <b>Conotoxins (ω-conotoxin → Na⁺/Ca²⁺ channel blockade)</b> C. Tetrodotoxin derivative D. Saxitoxin E. Latrotoxin</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Swimmer stung by box jellyfish in Queensland. Unconscious, pulseless. Immediate action:</b></li></ol>
+<p>A. Vinegar, then CPR B. <b>CPR immediately (airway, breathing, circulation) — vinegar after if feasible; antivenom IV during resuscitation</b> C. Antivenom first C. Vinegar only E. Hot water</p>
+<ol><li><b>Tourist in Great Barrier Reef. 20 min after swim: severe back/abdominal pain, hypertension (200/120), pulmonary oedema. Irukandji suspected. Management:</b></li></ol>
+<p>A. Prazosin B. <b>Magnesium infusion (20 mmol bolus then infusion) + potent analgesia (fentanyl) + antihypertensives (GTN/phentolamine) + supportive</b> C. Antivenom D. Prazosin + magnesium E. Only analgesia</p>
+<ol><li><b>Fisherman steps on stonefish. Severe pain, hypotension, local swelling. First aid:</b></li></ol>
+<p>A. Ice pack B. <b>Hot water 45°C × 20 min</b> C. Vinegar C. Pressure bandage E. Ice + vinegar</p>
+<ol><li><b>Stonefish envenomation — cardiovascular collapse. Antivenom dose:</b></li></ol>
+<p>A. 1 vial IM B. <b>2000 units (2 vials) IM or IV</b> C. 1000 units IV D. 500 units IM E. 5000 units IV</p>
+<ol><li><b>Child handling blue-ringed octopus at beach. Progressive weakness, respiratory distress, conscious. Management:</b></li></ol>
+<p>A. Neostigmine B. <b>Intubation, mechanical ventilation, supportive care until toxin clears (hours to days)</b> C. 4-aminopyridine D. Plasma exchange E. Neostigmine + atropine</p>
+<ol><li><b>Cone shell sting on hand. Progressive paralysis, respiratory distress. No antivenom. Management:</b></li></ol>
+<p>A. Neostigmine B. <b>Supportive ventilation until recovery (conotoxins wear off over hours)</b> C. 4-aminopyridine D. Plasma exchange E. Magnesium infusion</p>
+<ol><li><b>Stingray barb to foot. Puncture wound, severe pain. First aid:</b></li></ol>
+<p>A. Remove barb, cold pack B. **Remove barb if superficial, hot water 45°C × 30–90 min, wound exploration, antibiotics (<i>Vibrio</i>), tetanus** C. Vinegar D. Pressure bandage E. Ice pack only</p>
+<ol><li><b>Irukandji magnesium infusion — mechanism of benefit:</b></li></ol>
+<p>A. Antivenom enhancer B. <b>Blocks catecholamine release, reduces calcium influx, vasodilation</b> C. Antivenom substitute D. Sedation only E. Diuretic</p>
+<ol><li>**Portuguese man o' war (<i>Physalia physalis</i>) sting — first aid:**</li></ol>
+<p>A. Vinegar B. <b>Hot water immersion (45°C) — vinegar may worsen nematocyst discharge</b> C. Ice pack D. PIB E. Fresh water wash</p>
+<ol><li><b>Patient bitten by cone shell. Progressive ptosis, dysphagia, respiratory failure. Critical distinction from blue-ringed octopus:</b></li></ol>
+<p>A. Cone shell = painful, blue-ringed = painless B. Cone shell = TTX, blue-ringed = conotoxin C. <b>Cone shell = conotoxins (mixed channel), blue-ringed = TTX (Na+ block only)</b> D. Both have antivenom E. Both need neostigmine</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Box jellyfish first aid?</li></ul>
+<p>A: Vinegar 4-5% acetic acid (inactivates nematocysts)</p>
+<ul><li>Q: Box jellyfish antivenom indication?</li></ul>
+<p>A: Cardiotoxic signs (arrhythmia, arrest, hypotension)</p>
+<ul><li>Q: Irukandji syndrome?</li></ul>
+<p>A: Delayed severe pain, HTN, pulmonary oedema, catecholamine storm</p>
+<ul><li>Q: Irukandji treatment?</li></ul>
+<p>A: Magnesium infusion + analgesia + antihypertensives</p>
+<ul><li>Q: Stonefish first aid?</li></ul>
+<p>A: Hot water 45°C × 20 min</p>
+<ul><li>Q: Stonefish antivenom?</li></ul>
+<p>A: 2000 units IM/IV</p>
+<ul><li>Q: Blue-ringed octopus toxin?</li></ul>
+<p>A: Tetrodotoxin (Na+ channel blocker)</p>
+<ul><li>Q: Blue-ringed octopus treatment?</li></ul>
+<p>A: Supportive ventilation until recovery (no antivenom)</p>
+<ul><li>Q: Cone shell toxin?</li></ul>
+<p>A: Conotoxins (Na+/Ca2+ channel blockade)</p>
+<ul><li>Q: Irukandji magnesium dose?</li></ul>
+<p>A: 20 mmol (4g) bolus over 10-15 min, then 5-10 mmol/h infusion</p>
+<ul><li>Q: Box jellyfish vinegar?</li></ul>
+<p>A: Inactivates undischarged nematocysts</p>
+<ul><li>Q: Irukandji delayed onset?</li></ul>
+<p>A: 5-40 min after sting</p>
+<ul><li>Q: Portuguese man o' war first aid?</li></ul>
+<p>A: Hot water (NOT vinegar)</p>
+<ul><li>Q: Stingray first aid?</li></ul>
+<p>A: Hot water 45°C, remove barb, wound care, antibiotics</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p>**Q1: What is the specific first aid for box jellyfish (<i>Chironex fleckeri</i>) and why?<b> A: Vinegar (4–5% acetic acid) poured liberally for 30 seconds. Acetic acid inactivates undischarged nematocysts, preventing further envenomation. </b>Do NOT rub** tentacles before vinegar — mechanical stimulation triggers discharge.</p>
+<p><b>Q2: How does Irukandji syndrome differ from box jellyfish envenomation?</b> A: Irukandji = small box jellyfish (<i>Carukia</i>, <i>Malo</i>); <b>delayed 5–40 min</b> onset after minimal sting; severe visceral pain (back/abdomen/chest), <b>catecholamine storm</b> (hypertension, pulmonary oedema, tachycardia); <b>no antivenom</b>; treated with <b>magnesium infusion</b>. Box jellyfish = immediate severe pain, whip marks, <b>cardiotoxic</b> (arrest), <b>antivenom available</b> (CSL), vinegar first aid.</p>
+<p><b>Q3: What is the magnesium infusion protocol for Irukandji syndrome?</b> A: 20 mmol (4 g MgSO₄) IV bolus over 10–15 min, then infusion 5–10 mmol/h (1–2 g/h) titrated to pain/BP response. Monitor reflexes (loss = toxicity), BP, RR, urine output. Avoid in severe renal failure, heart block, myasthenia. Mechanism: blocks catecholamine release, reduces Ca²⁺ influx, vasodilation.</p>
+<p><b>Q4: Why is hot water (45°C) first aid for stonefish but NOT for box jellyfish?</b> A: Stonefish venom is <b>thermolabile</b> — heat denatures the protein toxins. Box jellyfish venom is NOT reliably heat-denatured at safe temperatures; vinegar inactivates nematocysts. Applying hot water to box jellyfish may worsen nematocyst discharge.</p>
+<p><b>Q5: How does blue-ringed octopus envenomation differ from cone shell envenomation?</b> A: Both cause neuromuscular paralysis + respiratory failure with <b>no antivenom</b>. Blue-ringed octopus = <b>tetrodotoxin (TTX)</b> → voltage-gated <b>Na⁺ channel block</b> → <b>flaccid paralysis</b>, <b>painless bite</b>, <b>preserved consciousness</b> ("locked-in"). Cone shell = <b>conotoxins</b> (mixed Na⁺/Ca²⁺/K⁺ channel, nAChR) → <b>descending paralysis</b>, often painful, variable sensory/autonomic features.</p>
+<p><b>Q6: Can neostigmine be used for blue-ringed octopus paralysis?</b> A: <b>NO.</b> Neostigmine (AChE inhibitor) works at the neuromuscular junction (nAChR) for postsynaptic blockade (e.g., cobra). TTX blocks <b>voltage-gated Na⁺ channels on axons</b>, preventing action potential propagation — neostigmine cannot bypass this block. Only supportive ventilation until TTX renal clearance (hours–days).</p>
+<p><b>Q7: What is the stonefish antivenom dose and route?</b> A: CSL Stonefish Antivenom (equine F(ab')₂) — <b>2000 units (2 vials) IM or IV</b> for systemic envenomation (hypotension, arrhythmia, severe pain). IM route preferred historically; IV acceptable with monitoring. Repeat PRN.</p>
+<p><b>Q8: Why is there no antivenom for cone shell or blue-ringed octopus?</b> A: Low incidence, high venom complexity (cone shell has 100+ conotoxins), technical difficulty producing broad-neutralising antibody, small market. Research ongoing (recombinant antibodies, monoclonal).</p>
+<p>**Q9: What is the first aid for <i>Physalia</i> (Portuguese man o' war) and why NOT vinegar?<b> A: </b>Hot water immersion (45°C)<b>. Vinegar may </b>trigger nematocyst discharge** in <i>Physalia</i> (different cnidarian class — Siphonophorae). Hot water denatures thermolabile venom. Remove tentacles carefully after heat.</p>
+<p><b>Q10: What antibiotics cover marine wound infections?</b> A: Cover <i>Vibrio</i> spp., <i>Aeromonas</i> spp., <i>Staphylococcus aureus</i>, <i>Streptococcus</i>. <b>Doxycycline + ciprofloxacin</b> (or TMP-SMX + ciprofloxacin) or <b>ceftriaxone + doxycycline</b>. Tetanus prophylaxis always.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Correction</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>Vinegar for all jellyfish</td><td>Vinegar ONLY for box jellyfish (*Chironex*); may WORSEN *Physalia*</td></tr><tr><td>Hot water for box jellyfish</td><td>Hot water for stonefish/stingray/urchin/lionfish; vinegar for box jellyfish</td></tr><tr><td>Box jellyfish AV for Irukandji</td><td>**NO cross-neutralisation** — Irukandji has NO antivenom</td></tr><tr><td>Neostigmine for blue-ringed octopus</td><td>**NO** — TTX blocks Na⁺ channels, not nAChR</td></tr><tr><td>Antivenom for cone shell</td><td>**None exists** — supportive ventilation only</td></tr><tr><td>Pressure immobilisation for stonefish</td><td>**NO** — hot water is first aid; PIB for neurotoxic (cone, blue-ringed)</td></tr><tr><td>Irukandji = immediate severe pain</td><td>**Delayed 5–40 min** — minimal local pain initially</td></tr><tr><td>Blue-ringed octopus bite = painful</td><td>**Often painless** — minimal local signs</td></tr><tr><td>Stonefish = only local pain</td><td>Systemic: cardiovascular collapse, arrhythmia, myotoxicity</td></tr><tr><td>All marine envenomation = same first aid</td><td>Agent-specific: vinegar (box jelly), hot water (fish), PIB (neuro molluscs)</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>Box jellyfish</b>: <b>V</b>inegar for <b>V</b>isible tentacles = <b>VV</b></li><li><b>Irukandji</b>: <b>D</b>elayed 5–40 min, <b>V</b>isceral pain, <b>C</b>atecholamine storm, <b>M</b>agnesium = <b>DVCM</b></li><li><b>Stonefish</b>: <b>H</b>ot water <b>H</b>eat-labile venom = <b>HH</b> (45°C × 20 min)</li><li><b>Cone shell</b>: <b>C</b>onotoxins → <b>C</b>hannel blockade → <b>C</b>ollapse (respiratory) = <b>CCC</b></li><li><b>Blue-ringed octopus</b>: <b>T</b>TX → <b>T</b>etrodotoxin → <b>T</b>otal paralysis, <b>T</b>ime recovers = <b>TTT</b></li><li><b>Marine first aid triad</b>: <b>V</b>inegar (box jelly), <b>H</b>ot water (fish), <b>P</b>IB (neuro molluscs) = <b>VHP</b></li><li><b>Irukandji magnesium</b>: <b>20 mmol bolus, 5–10 mmol/h infusion</b> = <b>20-5-10</b></li><li><b>No AV</b>: <b>C</b>one shell, <b>B</b>lue-ringed octopus, <b>I</b>rukandji = <b>CBI</b></li><li><b>Cardiotoxic</b>: <b>B</b>ox jellyfish, <b>S</b>tonefish, <b>I</b>rukandji = <b>BSI</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Marine Envenomation)) Cnidaria Box_Jellyfish[Chironex fleckeri] First_Aid[Vinegar] Antivenom[CSL AV IV] Cardiotoxic[Cardiac arrest risk] Irukandji[Carukia, Malo] Delayed[5-40 min] Catecholamine_Storm[HTN, Pulm Oedema] Magnesium[20mmol bolus + infusion] No_AV[None] Portuguese_Man_O_War[Physalia] Vinegar[May worsen - hot water instead] Fish Stonefish[Synanceia] Hot_Water[45°C 20 min] Antivenom[CSL 2000 units] Thermolabile_Venom Stingray Hot_Water[45°C 30-90 min] Barb_Removal Lionfish Hot_Water[45°C] Molluscs Cone_Shell[Conus] Conotoxins[Channel blockade] Paralysis[Respiratory failure] No_AV[Ventilation only] Blue_Ringed_Octopus[Hapalochlaena] Tetrodotoxin[Na+ channel block] Flaccid_Paralysis[Preserved consciousness] No_AV[Ventilation hours-days] Sea_Urchin Spine_Removal Hot_Water </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Flowchart: Marine Envenomation First Aid</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid flowchart TD A[Marine Envenomation] --&gt; B{Identify Agent} B --&gt;|Box Jellyfish (Chironex)| C[VINEGAR 4-5%] C --&gt; D[Remove Tentacles] D --&gt; E{Cardiotoxic Signs?} E --&gt;|Yes| F[CSL Box Jellyfish AV IV + ALS] E --&gt;|No| G[Analgesia, Observe 6h] B --&gt;|Irukandji| H[Vinegar if Tentacles] H --&gt; I[Magnesium Infusion 20mmol + 5-10mmol/h] I --&gt; J[Analgesia, Antihypertensives] B --&gt;|Stonefish| K[HOT WATER 45°C × 20 min] K --&gt; L{Systemic Signs?} L --&gt;|Yes| M[CSL Stonefish AV 2000 units IM/IV] L --&gt;|No| N[Analgesia, Observe] B --&gt;|Cone Shell / Blue-ringed Octopus| O[PIB + Immobilise] O --&gt; P{Respiratory Failure?} P --&gt;|Yes| Q[INTUBATE + VENTILATE] P --&gt;|No| R[Monitor, Observe] B --&gt;|Stingray / Urchin / Lionfish| S[HOT WATER 45°C] S --&gt; T[Remove Barb/Spines, Wound Care] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Envenomation</th><th>First Aid</th><th>Antivenom</th><th>Key Feature</th></tr><tr><td>--------------</td><td>-----------</td><td>-----------</td><td>-------------</td></tr><tr><td>**Box jellyfish (*Chironex*)**</td><td>**Vinegar** → remove tentacles</td><td>**CSL AV 1 vial IV** (cardiotoxic)</td><td>Immediate pain, whip marks, cardiac arrest</td></tr><tr><td>**Irukandji**</td><td>Vinegar if tentacles</td><td>**NONE**</td><td>Delayed 5–40 min, visceral pain, HTN, pulm oedema</td></tr><tr><td>**Stonefish**</td><td>**Hot water 45°C × 20 min**</td><td>**CSL AV 2000u IM/IV**</td><td>Excruciating pain, cardiovascular collapse</td></tr><tr><td>**Cone shell**</td><td>PIB, immobilise</td><td>**NONE**</td><td>Painless → paralysis → respiratory failure</td></tr><tr><td>**Blue-ringed octopus**</td><td>PIB, BLS</td><td>**NONE**</td><td>Painless → flaccid paralysis, apnoea, aware</td></tr><tr><td>**Stingray**</td><td>Hot water 45°C, remove barb</td><td>None</td><td>Laceration + venom</td></tr><tr><td>**Portuguese man o' war**</td><td>Hot water (NOT vinegar)</td><td>None</td><td>Multiple tentacles, painful</td></tr><tr><td>**Sea urchin**</td><td>Hot water, remove spines</td><td>None</td><td>Spine granuloma risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>Box jellyfish vs Irukandji, stonefish hot water, tetrodotoxin</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Magnesium protocol, cone shell ventilation, differential</td></tr><tr><td>**7 d**</td><td></td><td></td><td>All first aid distinctions, antivenom specifics</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with general envenomation</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Box jellyfish (vinegar, antivenom), Irukandji (catecholamine storm, magnesium), stonefish (hot water, antivenom), blue-ringed octopus (tetrodotoxin, ventilation), cone shell (paralysis, ventilation)</td></tr><tr><td>**Should Know 🟡**</td><td>Irukandji magnesium protocol detail, stonefish antivenom dosing, cone shell conotoxin subtypes, regional species distribution, *Physalia* management</td></tr><tr><td>**Nice to Know 🟢**</td><td>Conotoxin pharmacology, novel antivenoms, Irukandji pathophysiology research, marine envenomation epidemiology, stonefish venom components</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Box jellyfish first aid & AV</td><td></td></tr><tr><td>Irukandji syndrome & Mg protocol</td><td></td></tr><tr><td>Stonefish hot water & AV</td><td></td></tr><tr><td>Cone shell management</td><td></td></tr><tr><td>Blue-ringed octopus management</td><td></td></tr><tr><td>First aid differentiation (vinegar vs hot water vs PIB)</td><td></td></tr><tr><td>Stingray/urchin/lionfish</td><td></td></tr><tr><td>Complications & disposition</td><td></td></tr><tr><td>Differential marine stings</td><td></td></tr><tr><td>Viva readiness</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">29</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Marine envenomation"</td><td>Classification, box jellyfish vs Irukandji, stonefish, cone shell, blue-ringed octopus, first aid specifics</td></tr><tr><td>**Short Note**</td><td>"Irukandji syndrome"</td><td>Delayed catecholamine storm, magnesium infusion 20mmol bolus + 5-10mmol/h, no AV</td></tr><tr><td>**Viva**</td><td>"Blue-ringed octopus vs cone shell"</td><td>Both = paralysis + respiratory failure, no AV; octopus = TTX (Na+ block, painless, aware); cone = conotoxins (channel mix, painful)</td></tr><tr><td>**Ward Round**</td><td>"Diver with stonefish sting, hypotensive"</td><td>Hot water 45°C, stonefish AV 2000u IM/IV, fluids, analgesia, antibiotics (*Vibrio*), monitor</td></tr><tr><td>**Last-Night**</td><td>"Marine first aid key"</td><td>Vinegar (box jelly), Hot water 45°C (stonefish/stingray/urchin/lionfish), PIB (cone/blue-ringed), Mg (Irukandji)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">30</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>**Box jellyfish (<i>Chironex fleckeri</i>) — immediate first aid:**</li></ol>
+<p>A. Fresh water wash B. <b>Vinegar (4–5% acetic acid) to inactivate nematocysts</b> C. Hot water immersion D. Ice pack E. Pressure immobilisation bandage</p>
+<ol><li><b>Box jellyfish antivenom — indication:</b></li></ol>
+<p>A. All stings B. <b>Cardiotoxic signs (arrhythmia, cardiac arrest, hypotension)</b> C. Pain only D. Local skin reaction only E. Only if vinegar unavailable</p>
+<ol><li><b>Irukandji syndrome — characteristic delayed presentation:</b></li></ol>
+<p>A. Immediate severe local pain B. <b>Minimal local pain → 5–40 min delayed severe back/abdominal/chest pain, hypertension, pulmonary oedema</b> C. Immediate paralysis D. Immediate cardiac arrest E. Local necrosis only</p>
+<ol><li><b>Irukandji syndrome — pathophysiology:</b></li></ol>
+<p>A. Cardiotoxin B. <b>Catecholamine storm (massive noradrenaline/adrenaline release)</b> C. Neurotoxin (paralysis) D. Haemolysin E. Necrotoxin</p>
+<ol><li><b>Irukandji syndrome — evidence-based treatment:</b></li></ol>
+<p>A. Antivenom B. <b>Analgesia (fentanyl/morphine), magnesium infusion (reduces catecholamine effects), antihypertensives, supportive</b> C. Antivenom + magnesium D. Only analgesia E. Prazosin</p>
+<ol><li>**Stonefish (<i>Synanceia</i>) — immediate first aid:**</li></ol>
+<p>A. Vinegar B. <b>Hot water immersion (45°C × 20 min)</b> C. Ice pack D. Pressure immobilisation E. Vinegar + hot water</p>
+<ol><li><b>Stonefish antivenom — route:</b></li></ol>
+<p>A. IV only B. <b>IM or IV (both effective)</b> C. IM only D. Subcutaneous E. Topical</p>
+<ol><li>**Blue-ringed octopus (<i>Hapalochlaena</i>) envenomation — toxin:**</li></ol>
+<p>A. Conotoxin C. <b>Tetrodotoxin (TTX) — voltage-gated Na⁺ channel blocker</b> C. Latrotoxin D. Ciguatoxin E. Saxitoxin</p>
+<ol><li><b>Blue-ringed octopus — no antivenom. Management:</b></li></ol>
+<p>A. Neostigmine B. <b>Supportive: intubation, mechanical ventilation until toxin clears (hours to days)</b> C. 4-AP (potassium channel blocker) D. Plasma exchange E. Hemodialysis</p>
+<ol><li>**Cone shell (<i>Conus</i>) envenomation — toxin mechanism:**</li></ol>
+<p>A. Tetrodotoxin B. <b>Conotoxins (ω-conotoxin → Na⁺/Ca²⁺ channel blockade)</b> C. Tetrodotoxin derivative D. Saxitoxin E. Latrotoxin</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">31</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Swimmer stung by box jellyfish in Queensland. Unconscious, pulseless. Immediate action:</b></li></ol>
+<p>A. Vinegar, then CPR B. <b>CPR immediately (airway, breathing, circulation) — vinegar after if feasible; antivenom IV during resuscitation</b> C. Antivenom first C. Vinegar only E. Hot water</p>
+<ol><li><b>Tourist in Great Barrier Reef. 20 min after swim: severe back/abdominal pain, hypertension (200/120), pulmonary oedema. Irukandji suspected. Management:</b></li></ol>
+<p>A. Prazosin B. <b>Magnesium infusion (20 mmol bolus then infusion) + potent analgesia (fentanyl) + antihypertensives (GTN/phentolamine) + supportive</b> C. Antivenom D. Prazosin + magnesium E. Only analgesia</p>
+<ol><li><b>Fisherman steps on stonefish. Severe pain, hypotension, local swelling. First aid:</b></li></ol>
+<p>A. Ice pack B. <b>Hot water 45°C × 20 min</b> C. Vinegar C. Pressure bandage E. Ice + vinegar</p>
+<ol><li><b>Stonefish envenomation — cardiovascular collapse. Antivenom dose:</b></li></ol>
+<p>A. 1 vial IM B. <b>2000 units (2 vials) IM or IV</b> C. 1000 units IV D. 500 units IM E. 5000 units IV</p>
+<ol><li><b>Child handling blue-ringed octopus at beach. Progressive weakness, respiratory distress, conscious. Management:</b></li></ol>
+<p>A. Neostigmine B. <b>Intubation, mechanical ventilation, supportive care until toxin clears (hours to days)</b> C. 4-aminopyridine D. Plasma exchange E. Neostigmine + atropine</p>
+<ol><li><b>Cone shell sting on hand. Progressive paralysis, respiratory distress. No antivenom. Management:</b></li></ol>
+<p>A. Neostigmine B. <b>Supportive ventilation until recovery (conotoxins wear off over hours)</b> C. 4-aminopyridine D. Plasma exchange E. Magnesium infusion</p>
+<ol><li><b>Stingray barb to foot. Puncture wound, severe pain. First aid:</b></li></ol>
+<p>A. Remove barb, cold pack B. **Remove barb if superficial, hot water 45°C × 30–90 min, wound exploration, antibiotics (<i>Vibrio</i>), tetanus** C. Vinegar D. Pressure bandage E. Ice pack only</p>
+<ol><li><b>Irukandji magnesium infusion — mechanism of benefit:</b></li></ol>
+<p>A. Antivenom enhancer B. <b>Blocks catecholamine release, reduces calcium influx, vasodilation</b> C. Antivenom substitute D. Sedation only E. Diuretic</p>
+<ol><li>**Portuguese man o' war (<i>Physalia physalis</i>) sting — first aid:**</li></ol>
+<p>A. Vinegar B. <b>Hot water immersion (45°C) — vinegar may worsen nematocyst discharge</b> C. Ice pack D. PIB E. Fresh water wash</p>
+<ol><li><b>Patient bitten by cone shell. Progressive ptosis, dysphagia, respiratory failure. Critical distinction from blue-ringed octopus:</b></li></ol>
+<p>A. Cone shell = painful, blue-ringed = painless B. Cone shell = TTX, blue-ringed = conotoxin C. <b>Cone shell = conotoxins (mixed channel), blue-ringed = TTX (Na+ block only)</b> D. Both have antivenom E. Both need neostigmine</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">32</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Box jellyfish first aid?</li></ul>
+<p>A: Vinegar 4-5% acetic acid (inactivates nematocysts)</p>
+<ul><li>Q: Box jellyfish antivenom indication?</li></ul>
+<p>A: Cardiotoxic signs (arrhythmia, arrest, hypotension)</p>
+<ul><li>Q: Irukandji syndrome?</li></ul>
+<p>A: Delayed severe pain, HTN, pulmonary oedema, catecholamine storm</p>
+<ul><li>Q: Irukandji treatment?</li></ul>
+<p>A: Magnesium infusion + analgesia + antihypertensives</p>
+<ul><li>Q: Stonefish first aid?</li></ul>
+<p>A: Hot water 45°C × 20 min</p>
+<ul><li>Q: Stonefish antivenom?</li></ul>
+<p>A: 2000 units IM/IV</p>
+<ul><li>Q: Blue-ringed octopus toxin?</li></ul>
+<p>A: Tetrodotoxin (Na+ channel blocker)</p>
+<ul><li>Q: Blue-ringed octopus treatment?</li></ul>
+<p>A: Supportive ventilation until recovery (no antivenom)</p>
+<ul><li>Q: Cone shell toxin?</li></ul>
+<p>A: Conotoxins (Na+/Ca2+ channel blockade)</p>
+<ul><li>Q: Irukandji magnesium dose?</li></ul>
+<p>A: 20 mmol (4g) bolus over 10-15 min, then 5-10 mmol/h infusion</p>
+<ul><li>Q: Box jellyfish vinegar?</li></ul>
+<p>A: Inactivates undischarged nematocysts</p>
+<ul><li>Q: Irukandji delayed onset?</li></ul>
+<p>A: 5-40 min after sting</p>
+<ul><li>Q: Portuguese man o' war first aid?</li></ul>
+<p>A: Hot water (NOT vinegar)</p>
+<ul><li>Q: Stingray first aid?</li></ul>
+<p>A: Hot water 45°C, remove barb, wound care, antibiotics</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">33</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>Correct: B</b> — Vinegar inactivates undischarged nematocysts; fresh water/ice/rubbing trigger discharge.</li><li><b>Correct: B</b> — Box jellyfish AV (CSL sheep F(ab')₂) indicated for cardiotoxic signs only.</li><li><b>Correct: B</b> — Irukandji = delayed visceral pain + catecholamine storm (HTN, pulm oedema) at 5–40 min.</li><li><b>Correct: B</b> — Massive catecholamine (noradrenaline &gt; adrenaline) release; not direct cardiotoxin.</li><li><b>Correct: B</b> — Magnesium infusion (20 mmol bolus + 5–10 mmol/h) is evidence-based; analgesia + antihypertensives adjunct; no AV.</li><li><b>Correct: B</b> — Stonefish venom thermolabile; hot water 45°C × 20 min denatures it.</li><li><b>Correct: B</b> — CSL Stonefish AV 2000 units (2 vials) IM or IV both effective.</li><li><b>Correct: C</b> — Blue-ringed octopus = tetrodotoxin (TTX), Na⁺ channel blocker.</li><li><b>Correct: B</b> — No AV for blue-ringed; supportive ventilation until TTX clears (hours–days).</li><li><b>Correct: B</b> — Cone shell = conotoxins (ω-conotoxin blocks Na⁺/Ca²⁺ channels).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>Correct: B</b> — Arrested patient: CPR first; vinegar after if feasible; AV IV during resuscitation for cardiotoxic component.</li><li><b>Correct: B</b> — Irukandji: Mg infusion 20 mmol bolus then 5–10 mmol/h, fentanyl, GTN/phentolamine for HTN/pulm oedema.</li><li><b>Correct: B</b> — Stonefish: hot water 45°C × 20 min immediate first aid.</li><li><b>Correct: B</b> — Stonefish AV 2000 units (2 vials) IM/IV for systemic signs.</li><li><b>Correct: B</b> — Blue-ringed octopus = TTX, no AV; intubate, ventilate until recovery (hours–days).</li><li><b>Correct: B</b> — Cone shell = conotoxins, no AV; supportive ventilation until recovery.</li><li><b>Correct: B</b> — Stingray: hot water 45°C × 30–90 min, remove barb, explore wound, antibiotics (<i>Vibrio</i>), tetanus.</li><li><b>Correct: B</b> — Mg blocks catecholamine release, reduces Ca²⁺ influx, causes vasodilation.</li><li><b>Correct: B</b> — <i>Physalia</i>: hot water (vinegar may trigger nematocysts).</li><li><b>Correct: C</b> — Cone = conotoxins (mixed channels); blue-ringed = TTX (Na⁺ block only); both no AV, no neostigmine.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">34</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Marine Envenomation is a <b>Must Know 🔴</b> topic. <b>Key takeaway:</b> Agent-specific first aid is critical — vinegar for box jellyfish, hot water 45°C for stonefish/stingray/urchin/lionfish, PIB for cone shell/blue-ringed octopus. Irukandji = delayed catecholamine storm treated with magnesium infusion. Box jellyfish and stonefish have antivenoms; cone shell, blue-ringed octopus, Irukandji do not. <b>No neostigmine for TTX/blue-ringed octopus.</b> <b>Exam focus:</b> First aid differentiation, Irukandji magnesium protocol, antivenom indications, respiratory support for neurotoxic molluscs. <b>Clinical relevance:</b> Common in coastal/tropical emergency medicine; travel medicine; marine biology fieldwork.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Template version: 1.0 | Davidson 24e Ch 8 aligned | FCPS/MRCP oriented</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Marine Envenomation (Jellyfish, Stonefish, Cone Shell, Blue-Ringed Octopus) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

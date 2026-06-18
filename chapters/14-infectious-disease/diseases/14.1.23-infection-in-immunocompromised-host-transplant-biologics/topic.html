@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Infection in Immunocompromised Host (Transplant, Biologics) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Infection in Immunocompromised Host (Transplant, Biologics)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify immunodeficiency by immune deficit and risk profile</li><li>Apply transplant timeline for infection risk (0–1m, 1–6m, &gt;6m)</li><li>Recognise biologic-specific infection risks (anti-TNF, anti-CD20, integrin inhibitors, JAK inhibitors)</li><li>Select appropriate prophylaxis (PCP, fungal, viral, TB)</li><li>Diagnose and manage key opportunistic infections (CMV, PCP, EBV-PTLD, BK virus, HHV-6)</li><li>Apply vaccination principles in immunocompromised (timing, live vs inactivated)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification by Immune Deficit</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Deficit</th><th>Causes</th><th>Typical Infections</th></tr><tr><td>---------</td><td>--------</td><td>-------------------</td></tr><tr><td>**Neutropenia**</td><td>Chemo, HSCT, drugs (ganciclovir, valproate), aplastic anaemia</td><td>**Bacteria (Gram-neg, Staph), Candida, Aspergillus, Gram-neg sepsis**</td></tr><tr><td>**T-cell Deficiency**</td><td>HIV, transplant (CNI, mTOR, steroids), biologics (anti-TNF, alemtuzumab), chemo</td><td>**Viruses (CMV, EBV, BK, HHV-6, VZV), TB, fungi (Pneumocystis, Cryptococcus), Listeria, Nocardia, Toxoplasma**</td></tr><tr><td>**B-cell / Humoral**</td><td>Anti-CD20 (rituximab), BTK inhibitors, CLL, myeloma, hypogammaglobulinaemia</td><td>**Encapsulated bacteria (S. pneumoniae, H. influenzae), Giardia, enteroviruses, chronic sinopulmonary**</td></tr><tr><td>**Complement**</td><td>C1q–C9 deficiency, eculizumab, C1-INH deficiency</td><td>**Encapsulated bacteria (Neisseria, S. pneumoniae), immune complex disease**</td></tr><tr><td>**Phagocyte**</td><td>CGD, diabetes, steroids, dialysis, Burns</td><td>**Catalase-positive organisms (S. aureus, Burkholderia, Nocardia, Aspergillus)**</td></tr><tr><td>**Barrier Defect**</td><td>Burns, surgery, lines, drains, mucositis</td><td>**Skin flora (Staph, Strep), Candida, Gram-neg**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Transplant Timeline — Infection Risk by Period</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Period</th><th>Timeframe</th><th>Key Risks</th><th>Typical Pathogens</th></tr><tr><td>--------</td><td>-----------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Early**</td><td>**0–1 month**</td><td>Surgical, hospital-acquired</td><td>**Wound infection, bacteremia (CoNS, Gram-neg), UTI, C. difficile, donor-derived**</td></tr><tr><td>**Intermediate**</td><td>**1–6 months**</td><td>**OPPORTUNISTIC** (peak)</td><td>**CMV (peak 1–4m), PCP, invasive fungi (Aspergillus, Candida), EBV-PTLD, BK virus, HHV-6, adenovirus, TB, Nocardia, Listeria**</td></tr><tr><td>**Late**</td><td>**>6 months**</td><td>Community-acquired + chronic rejection</td><td>**Community viruses, encapsulated bacteria, chronic viral (BK, CMV), chronic rejection**</td></tr><tr><td>**All periods**</td><td>Any time</td><td>**Net state of immunosuppression**</td><td>**Net state = baseline risk + current immunosuppression + exposures**</td></tr></table>
+<div class="callout">[!key] <b>CMV = MOST IMPORTANT opportunistic infection in transplant.</b> <b>Peak 1–4 months.</b> <b>PCP prophylaxis universal 6–12 months.</b> <b>Antifungal prophylaxis in high-risk (lung, liver, heart, re-transplant).</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Biologic-Specific Infection Risks</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Biologic Class</th><th>Target</th><th>Key Infection Risks</th><th>Screening/Monitoring</th></tr><tr><td>----------------</td><td>--------</td><td>---------------------</td><td>----------------------</td></tr><tr><td>**Anti-TNF** (infliximab, adalimumab, etanercept, certolizumab, golimumab)</td><td>TNF-α</td><td>**TB (reactivation), intracellular bacteria (Listeria, Salmonella, Nocardia), histoplasmosis, coccidioidomycosis, hepatitis B reactivation**</td><td>**TB screen (IGRA/TST) BEFORE; HBV screen; monitor for infection**</td></tr><tr><td>**Anti-IL-12/23** (ustekinumab)</td><td>IL-12/IL-23</td><td>TB, fungal, viral (similar to anti-TNF but lower risk)</td><td>TB screen before</td></tr><tr><td>**Anti-IL-17** (secukinumab, ixekizumab)</td><td>IL-17A</td><td>**Candida (mucocutaneous), TB (rare)**</td><td>Monitor for Candida</td></tr><tr><td>**Anti-IL-23** (guselkumab, risankizumab)</td><td>IL-23</td><td>TB, fungal (lower risk than anti-TNF)</td><td>TB screen before</td></tr><tr><td>**Anti-IL-6** (tocilizumab, sarilumab)</td><td>IL-6R</td><td>Bacterial, TB, diverticulitis, hepatotoxicity</td><td>TB screen; monitor LFTs, neutrophils</td></tr><tr><td>**Anti-CD20** (rituximab, ocrelizumab, ofatumumab)</td><td>CD20 (B-cells)</td><td>**HBV reactivation (HBsAg+ or anti-HBc+), PML (JCV), hypogammaglobulinaemia, encapsulated bacteria, VZV**</td><td>**HBV screen (HBsAg, anti-HBc) BEFORE; IgG levels; JCV index if natalizumab hx**</td></tr><tr><td>**Anti-CD52** (alemtuzumab)</td><td>CD52 (T/B/NK)</td><td>**Severe T-cell depletion → CMV, VZV, Listeria, Nocardia, TB, fungal, PML**</td><td>Intensive monitoring; prophylaxis (PCP, viral, fungal)</td></tr><tr><td>**Anti-integrin** (natalizumab, vedolizumab)</td><td>α4β1/α4β7 integrin</td><td>**PML (JCV) — natalizumab; vedolizumab gut-selective = lower PML risk**</td><td>**JCV antibody index (natalizumab); monitor**</td></tr><tr><td>**JAK Inhibitors** (tofacitinib, baricitinib, upadacitinib)</td><td>JAK1/2/3</td><td>**Herpes zoster (VZV) ↑↑, TB, bacterial, fungal, CMV, EBV, lymphopenia**</td><td>VZV vaccination before; TB screen; monitor lymphocytes</td></tr><tr><td>**BTK Inhibitors** (ibrutinib, acalabrutinib)</td><td>BTK</td><td>**Bleeding, atrial fibrillation, infections (sinopulmonary, fungal), PML risk**</td><td>Monitor IgG, infections</td></tr><tr><td>**BCL-2 Inhibitor** (venetoclax)</td><td>BCL-2</td><td>**TLS, neutropenia, infections**</td><td>TLS prophylaxis; monitor counts</td></tr></table>
+<div class="callout">[!tip] <b>TB screen (IGRA/TST) REQUIRED BEFORE starting anti-TNF, anti-IL-12/23, anti-IL-17, anti-IL-23, JAK inhibitors, alemtuzumab.</b> <b>HBV screen (HBsAg, anti-HBc) REQUIRED BEFORE anti-CD20, anti-TNF, JAK inhibitors.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Key Opportunistic Infections in Transplant</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">CMV Disease</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Risk**</td><td>D+/R− (highest), lung/heart/intestinal transplant, lymphocyte-depleting induction</td></tr><tr><td>**Syndromes**</td><td>**Viraemia, syndrome (fever, leucopenia, hepatitis), tissue-invasive (pneumonitis, colitis, retinitis, encephalitis)**</td></tr><tr><td>**Diagnosis**</td><td>**Quantitative PCR (blood)** — viral load guides pre-emptive therapy</td></tr><tr><td>**Prophylaxis vs Pre-emptive**</td><td>**High-risk: prophylaxis (valganciclovir 900mg OD ×3–6m); Standard-risk: pre-emptive (weekly PCR ×3–6m)**</td></tr><tr><td>**Treatment**</td><td>**Valganciclovir 900mg BD (oral) OR Ganciclovir 5mg/kg IV 12h** ×2–3w → maintenance; **Foscarnet/Cidofovir** if resistant (UL97/UL54 mut)</td></tr><tr><td>**Resistance**</td><td>**UL97 mutation = ganciclovir/valganciclovir resistance; UL54 = cidofovir/foscarnet resistance**</td></tr></table>
+<div class="sub-h">PCP (Pneumocystis jirovecii Pneumonia)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Risk**</td><td>All transplant (T-cell suppression); HSCT; biologics (anti-TNF, alemtuzumab); HIV CD4<200</td></tr><tr><td>**Prophylaxis**</td><td>**TMP-SMX 960mg PO daily (or 3×/wk)**; alternatives: dapsone, atovaquone, inhaled pentamidine</td></tr><tr><td>**Duration**</td><td>**≥6–12 months post-transplant**; lifelong if ongoing immunosuppression</td></tr><tr><td>**Treatment**</td><td>**High-dose TMP-SMX 15–20mg/kg TMP IV/PO q6h ×21d** + steroids if hypoxic</td></tr></table>
+<div class="sub-h">EBV-PTLD (Post-Transplant Lymphoproliferative Disorder)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Risk**</td><td>EBV D+/R−, intense immunosuppression (OKT3, ATG), paediatric, intestinal/lung transplant</td></tr><tr><td>**Spectrum**</td><td>**Early lesions → polymorphic PTLD → monomorphic PTLD (lymphoma)**</td></tr><tr><td>**Diagnosis**</td><td>**EBV PCR (blood)** — rising viral load; biopsy for histology</td></tr><tr><td>**Treatment**</td><td>**Reduce immunosuppression (RI) = cornerstone**; **Rituximab** (anti-CD20); **EBV-CTL**; chemo for monomorphic</td></tr></table>
+<div class="sub-h">BK Virus Nephropathy</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Risk**</td><td>Kidney transplant; immunosuppression (Tacrolimus, MMF); ureteric stent</td></tr><tr><td>**Diagnosis**</td><td>**Quantitative PCR (blood, urine)** — decoy cells in urine; biopsy (SV40 staining)</td></tr><tr><td>**Treatment**</td><td>**Reduce immunosuppression (reduce/stop Tac/MMF)**; **Leflunomide, Cidofovir, IVIG** (adjunctive)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Fungal Infections in Immunocompromised</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Fungus</th><th>High-Risk Host</th><th>Prophylaxis</th><th>Treatment</th></tr><tr><td>--------</td><td>----------------</td><td>-------------</td><td>-----------</td></tr><tr><td>**Aspergillus**</td><td>Lung transplant, HSCT, prolonged neutropenia, steroids</td><td>Posaconazole (HSCT, AML), voriconazole (lung)</td><td>**Voriconazole 1st-line**; isavuconazole; L-AmB</td></tr><tr><td>**Candida**</td><td>ICU, abdominal surgery, neutropenia, TPN, broad antibiotics</td><td>Fluconazole (selective), echinocandin (high-risk)</td><td>Echinocandin 1st-line; step-down fluconazole</td></tr><tr><td>**Mucormycosis**</td><td>DKA, neutropenia, deferoxamine, steroids, transplant</td><td>None standard</td><td>L-AmB + urgent surgery</td></tr><tr><td>**Pneumocystis**</td><td>All transplant, HIV CD4<200, biologics</td><td>**TMP-SMX** universal</td><td>High-dose TMP-SMX + steroids</td></tr><tr><td>**Cryptococcus**</td><td>HIV CD4<100, transplant, steroids</td><td>Fluconazole (targeted)</td><td>L-AmB + flucytosine → fluconazole</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Prophylaxis Protocols — Transplant (Example: Kidney)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pathogen</th><th>Agent</th><th>Duration</th><th>High-Risk Indications</th></tr><tr><td>----------</td><td>-------</td><td>----------</td><td>----------------------</td></tr><tr><td>**PCP**</td><td>TMP-SMX 960mg 3×/wk</td><td>6–12 months</td><td>All (lifelong if ongoing immunosuppression)</td></tr><tr><td>**CMV**</td><td>Valganciclovir 900mg OD</td><td>3–6 months (prophylaxis) OR pre-emptive</td><td>D+/R−, lung/heart, lymphocyte depletion</td></tr><tr><td>**Fungal**</td><td>Fluconazole 200mg OD / Posaconazole</td><td>1–3 months</td><td>Lung, liver, heart, re-transplant, prolonged ICU</td></tr><tr><td>**VZV**</td><td>Acyclovir 400mg BD</td><td>3–6 months</td><td>Seropositive recipients</td></tr><tr><td>**HBV**</td><td>Entecavir/TDF</td><td>Indefinite</td><td>HBsAg+ recipients</td></tr><tr><td>**UTI**</td><td>TMP-SMX / Nitrofurantoin</td><td>3–6 months</td><td>Recurrent UTI, structural abnormality</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Vaccination in Immunocompromised</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Vaccine</th><th>Type</th><th>Timing</th><th>Notes</th></tr><tr><td>---------</td><td>------</td><td>--------</td><td>-------</td></tr><tr><td>**Inactivated (Flu, Pneumococcal, Hep A/B, HPV, Tdap, COVID, Rabies, IPV, Hib, MenACWY)**</td><td>Inactivated</td><td>**Anytime**; ideally **≥2 weeks BEFORE immunosuppression**</td><td>May have reduced response; give extra doses per schedule</td></tr><tr><td>**Live (MMR, Varicella, Zoster live, Yellow Fever, BCG, Oral Typhoid, Rotavirus, LAIV)**</td><td>Live</td><td>**≥4 weeks BEFORE immunosuppression**; **CONTRAINDICATED during**</td><td>**Except**: Zoster recombinant (Shingrix) = safe during; MMR/Varicella if CD4>200 in HIV</td></tr><tr><td>**Zoster Recombinant (Shingrix)**</td><td>Recombinant (non-live)</td><td>**Safe during immunosuppression**</td><td>**Preferred for immunocompromised ≥18y**</td></tr><tr><td>**Post-Transplant**</td><td>Inactivated: 3–6m post; Live: **≥2 years post** (if off immunosuppression)</td><td>Check local guidelines</td></tr></table>
+<div class="callout">[!warning] <b>Live vaccines CONTRAINDICATED during immunosuppression.</b> <b>Exception: Shingrix (recombinant) safe.</b> <b>HIV CD4&gt;200: MMR/Varicella may be given.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Transplant timeline: 0–1m (surgical/hospital), 1–6m (opportunistic: CMV, PCP, fungi, EBV-PTLD), &gt;6m (community)</b></li><li><b>CMV = most important opportunistic infection; D+/R− highest risk; prophylaxis vs pre-emptive; valganciclovir/ganciclovir</b></li><li><b>PCP prophylaxis: TMP-SMX universal 6–12m post-transplant; lifelong if ongoing immunosuppression</b></li><li><b>Anti-TNF: TB reactivation (screen IGRA/TST BEFORE); histoplasma, coccidioides, HBV reactivation</b></li><li><b>Anti-CD20 (rituximab): HBV reactivation (screen HBsAg/anti-HBc BEFORE); PML risk; hypogammaglobulinaemia</b></li><li><b>JAK inhibitors: VZV (shingles) ↑↑; TB; vaccinate VZV before; screen TB</b></li><li><b>Alemtuzumab: severe T-cell depletion; intense prophylaxis (PCP, viral, fungal)</b></li><li><b>PCP prophylaxis: TMP-SMX 6–12m post-transplant; lifelong if ongoing immunosuppression</b></li><li><b>Fungal prophylaxis: posaconazole/voriconazole in high-risk (lung, liver, heart, HSCT)</b></li><li><b>Vaccination: live vaccines contraindicated during immunosuppression; Shingrix safe; give inactivated ≥2w before</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Transplant infection timeline?</b> 0–1m: surgical/hospital; 1–6m: opportunistic (CMV, PCP, fungi, EBV); &gt;6m: community.</li><li><b>CMV prophylaxis vs pre-emptive?</b> High-risk (D+/R−, lung/heart, lymphocyte depletion) = prophylaxis 3–6m; standard-risk = pre-emptive PCR-guided.</li><li><b>Anti-TNF screening?</b> TB (IGRA/TST), HBV BEFORE starting.</li><li><b>Anti-CD20 (rituximab) screening?</b> HBV (HBsAg, anti-HBc) BEFORE; monitor IgG, infections.</li><li><b>JAK inhibitor infection risk?</b> VZV (shingles) ↑↑, TB, bacterial, fungal; vaccinate VZV before; monitor lymphocytes.</li><li><b>PCP prophylaxis post-transplant?</b> TMP-SMX 960mg 3×/wk ×6–12m; lifelong if ongoing immunosuppression.</li><li><b>CMV treatment?</b> Valganciclovir 900mg BD or ganciclovir 5mg/kg IV 12h; foscarnet/cidofovir if resistant.</li><li><b>BK virus nephropathy management?</b> Reduce immunosuppression (Tac/MMF); leflunomide/cidofovir/IVIG adjunct.</li><li><b>Anti-CD20 HBV reactivation?</b> Screen HBsAg/anti-HBc BEFORE; prophylactic antivirals if HBsAg+ or anti-HBc+.</li><li><b>JAK inhibitor VZV risk?</b> Shingles ↑↑; vaccinate with Shingrix BEFORE starting.</li><li><b>Alemtuzumab prophylaxis?</b> PCP (TMP-SMX), viral (acyclovir/valganciclovir), fungal (posaconazole) — intensive.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>CMV prophylaxis for all transplant</td><td>**Only high-risk (D+/R−, lung/heart, lymphocyte depletion); standard-risk = pre-emptive**</td></tr><tr><td>PCP prophylaxis only 6 months</td><td>**Continue lifelong if ongoing immunosuppression**</td></tr><tr><td>Anti-TNF safe if TB screen negative</td><td>**Screen IGRA/TST BEFORE; but can still reactivate latent TB (false neg) — educate patient**</td></tr><tr><td>Rituximab only affects B-cells</td><td>**Also causes hypogammaglobulinaemia → encapsulated bacteria; PML risk (JCV)**</td></tr><tr><td>JAK inhibitors = just oral DMARDs</td><td>**Significant VZV ↑↑, TB, infection risk; vaccinate Shingrix BEFORE**</td></tr><tr><td>Live vaccines always contraindicated</td><td>**Shingrix (recombinant) = SAFE during immunosuppression**</td></tr><tr><td>CMV treatment = valganciclovir only</td><td>**Resistance common (UL97/UL54); foscarnet/cidofovir for resistance**</td></tr><tr><td>PCP only in HIV</td><td>**Transplant, biologics, steroids, malignancy all at risk**</td></tr><tr><td>Fungal prophylaxis for all transplant</td><td>**Only high-risk (lung, liver, heart, re-tx, prolonged neutropenia, steroids)**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>TRANSPLANT TIMELINE</b>: <b>0-1m</b> = <b>S</b>urgical/<b>H</b>ospital; <b>1-6m</b> = <b>O</b>pportunistic (<b>C</b>MV, <b>P</b>CP, <b>F</b>ungi, <b>E</b>BV); <b>&gt;6m</b> = <b>C</b>ommunity</li><li><b>CMV RISK</b>: <b>D</b>onor+/<b>R</b>ecipient-<b>N</b>eg = <b>H</b>ighest; <b>L</b>ung/<b>H</b>eart/<b>I</b>ntestinal <b>T</b>x; <b>L</b>ymphocyte depletion</li><li><b>ANTI-TNF SCREEN</b>: <b>T</b>B (IGRA/TST) + <b>H</b>BV <b>B</b>EFORE</li><li><b>RITUXIMAB SCREEN</b>: <b>H</b>BV (HBsAg, <b>A</b>nti-HBc) <b>B</b>EFORE</li><li><b>JAK INHIBITORS</b>: <b>V</b>ZV ↑↑, <b>T</b>B, <b>L</b>ymphopenia → <b>S</b>hingrix <b>B</b>EFORE</li><li><b>PCP PROPHYLAXIS</b>: <b>T</b>MP-SMX <b>6-12m</b> post-tx; <b>L</b>ifelong if <b>I</b>mmunosuppressed</li><li><b>LIVE VACCINES</b>: <b>C</b>ontraindicated <b>D</b>uring <b>I</b>mmunosuppression; <b>S</b>hingrix = <b>S</b>afe</li><li><b>ALEMTUZUMAB</b>: <b>S</b>evere <b>T</b>-cell depletion → <b>I</b>ntense <b>P</b>rophylaxis (<b>P</b>CP, <b>V</b>iral, <b>F</b>ungal)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Immunocompromised Host))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Transplant Timeline</div>
+<div class="mm-node mm-l3">– 0-1m: Surgical, Hospital</div>
+<div class="mm-node mm-l3">– 1-6m: Opportunistic (CMV, PCP, Fungi, EBV-PTLD, BK)</div>
+<div class="mm-node mm-l3">– &gt;6m: Community + Chronic rejection</div>
+<div class="mm-node mm-l2">Biologics</div>
+<div class="mm-node mm-l3">– Anti-TNF: TB, Histo, Cocci, HBV</div>
+<div class="mm-node mm-l3">– Anti-CD20: HBV reactivation, PML, Hypogammaglobulinaemia</div>
+<div class="mm-node mm-l3">– JAK Inhibitors: VZV↑↑, TB, Lymphopenia</div>
+<div class="mm-node mm-l3">– Alemtuzumab: Severe T-cell depletion</div>
+<div class="mm-node mm-l3">– Anti-integrin: PML (natalizumab)</div>
+<div class="mm-node mm-l2">Key OIs</div>
+<div class="mm-node mm-l3">– CMV: D+/R- highest; Prophylaxis vs Pre-emptive; Valganciclovir</div>
+<div class="mm-node mm-l3">– PCP: TMP-SMX 6-12m universal</div>
+<div class="mm-node mm-l3">– EBV-PTLD: Reduce IS + Rituximab</div>
+<div class="mm-node mm-l3">– BK Virus: Reduce IS</div>
+<div class="mm-node mm-l3">– Fungal: Aspergillus (Vorico), Candida (Echinocandin), Mucor (L-AmB+Surg)</div>
+<div class="mm-node mm-deep">– *...continued (truncated to 200 lines for renderer)*</div>
+</div>
+</div>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Infection in Immunocompromised Host (Transplant, Biologics) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

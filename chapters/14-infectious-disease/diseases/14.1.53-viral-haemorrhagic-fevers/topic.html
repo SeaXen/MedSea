@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Viral Haemorrhagic Fevers — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Viral Haemorrhagic Fevers</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify VHF by virus family, vector, geography</li><li>Recognise clinical syndrome: fever + bleeding + multi-organ involvement</li><li>Apply immediate isolation and infection control measures</li><li>Initiate supportive management and specific antivirals where available</li><li>Apply contact tracing and infection control measures</li><li>Recognise when to suspect VHF in returned traveller</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Virus Family</th><th>Viruses</th><th>Vector/Reservoir</th><th>Geography</th></tr><tr><td>--------------</td><td>---------</td><td>------------------</td><td>-----------</td></tr><tr><td>**Filoviridae**</td><td>**Ebola virus (EBOV)**</td><td>Fruit bats; human-to-human</td><td>Central/West Africa (DRC, Guinea, Sierra Leone, Liberia)</td></tr><tr><td></td><td>**Marburg virus (MARV)**</td><td>Fruit bats; human-to-human</td><td>Central/East/Southern Africa</td></tr><tr><td>**Arenaviridae**</td><td>**Lassa virus (LASV)**</td><td>Multimammate rat (Mastomys); aerosol/excreta</td><td>West Africa (Nigeria, Sierra Leone, Liberia, Guinea)</td></tr><tr><td></td><td>**Lujo virus**</td><td>Unknown rodent</td><td>Southern Africa</td></tr><tr><td>**Bunyaviridae (Nairoviridae)**</td><td>**Crimean-Congo Haemorrhagic Fever (CCHF) virus**</td><td>Hyalomma ticks; livestock; human-to-human</td><td>Africa, Middle East, Asia, Eastern Europe</td></tr><tr><td></td><td>**Rift Valley Fever (RVF) virus**</td><td>Mosquitoes; livestock</td><td>Africa, Arabian Peninsula</td></tr><tr><td>**Flaviviridae**</td><td>**Dengue virus (DENV)** — severe dengue/DHF/DSS</td><td>Aedes mosquitoes</td><td>Tropical/subtropical worldwide</td></tr><tr><td></td><td>**Yellow Fever (YFV)**</td><td>Aedes/Haemagogus mosquitoes</td><td>Africa, South America</td></tr><tr><td></td><td>**Kyasanur Forest Disease (KFD) virus**</td><td>Ticks; monkeys</td><td>India (Western Ghats)</td></tr><tr><td></td><td>**Omsk Haemorrhagic Fever**</td><td>Ticks; rodents</td><td>Russia (Western Siberia)</td></tr><tr><td></td><td>**Alkhurma Haemorrhagic Fever**</td><td>Ticks; camels</td><td>Saudi Arabia, Egypt</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Syndrome</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Typical Presentation</th></tr><tr><td>---------</td><td>----------------------</td></tr><tr><td>**Incubation**</td><td>2–21 days (Ebola 2–21; Lassa 6–21; CCHF 1–13; Dengue 4–10)</td></tr><tr><td>**Prodrome**</td><td>Fever, myalgia, headache, fatigue, anorexia, nausea/vomiting</td></tr><tr><td>**Haemorrhagic Manifestations**</td><td>Petechiae, ecchymoses, mucosal bleeding (gums, nose), GI bleeding, haematuria, vaginal bleeding, injection site bleeding</td></tr><tr><td>**Organ Involvement**</td><td>Hepatitis (↑ AST/ALT), renal failure, encephalopathy, myocarditis, pancreatitis, ARDS, DIC, shock</td></tr><tr><td>**Laboratory**</td><td>Thrombocytopenia, leukopenia (Ebola, Lassa), ↑ AST/ALT, ↑ creatinine, prolonged PT/aPTT, fibrinogen ↓, D-dimer ↑</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Key Viruses — Clinical Pearls</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Ebola Virus Disease (EVD)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Transmission**</td><td>Direct contact with blood/body fluids of symptomatic patient; fomites; bushmeat; sexual (persistent in semen)</td></tr><tr><td>**Clinical**</td><td>Sudden fever, severe headache, myalgia → vomiting, diarrhoea, abdominal pain → haemorrhage (day 5–7), multi-organ failure</td></tr><tr><td>**CFR**</td><td>**50–90%** (Zaire ebolavirus); Sudan ebolavirus ~50%</td></tr><tr><td>**Treatment**</td><td>**Inmazeb (atoltivimab/maftivimab/odesivimab) OR Ebanga (ansuvimab)** — monoclonal antibodies; supportive care</td></tr><tr><td>**Vaccine**</td><td>**rVSV-ZEBOV (Ervebo)** — single dose, ring vaccination</td></tr></table>
+<div class="sub-h">Marburg Virus Disease (MVD)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Transmission**</td><td>Similar to Ebola; bat exposure (caves/mines)</td></tr><tr><td>**Clinical**</td><td>Indistinguishable from Ebola; severe MACULOPAPULAR RASH (day 5)</td></tr><tr><td>**CFR**</td><td>**24–88%**</td></tr><tr><td>**Treatment**</td><td>Supportive; no licenced antiviral/vaccine (experimental monoclonal)</td></tr></table>
+<div class="sub-h">Lassa Fever</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Transmission**</td><td>**Aerosol/excreta of Mastomys rats**; person-to-person (body fluids); nosocomial</td></tr><tr><td>**Clinical**</td><td>Insidious onset; fever, pharyngitis, retrosternal pain, **facial oedema**, pleural effusions, **sensorineural hearing loss** (common sequela), encephalopathy</td></tr><tr><td>**CFR**</td><td>**1–15%** (hospitalised); higher in pregnancy (3rd trimester)</td></tr><tr><td>**Treatment**</td><td>**Ribavirin IV** (early = better outcome); supportive; convalescent plasma (experimental)</td></tr><tr><td>**Vaccine**</td><td>None licenced (candidates in development)</td></tr></table>
+<div class="sub-h">Crimean-Congo Haemorrhagic Fever (CCHF)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Transmission**</td><td>**Hyalomma tick bite**; contact with infected livestock blood/tissues; nosocomial</td></tr><tr><td>**Clinical**</td><td>Sudden fever, myalgia, headache, dizziness → haemorrhage (day 3–5), hepatomegaly, confusion, multiorgan failure</td></tr><tr><td>**CFR**</td><td>**10–40%**</td></tr><tr><td>**Treatment**</td><td>**Ribavirin IV** (early = better outcome); supportive</td></tr><tr><td>**Vaccine**</td><td>None licenced (inactivated vaccine in limited use)</td></tr></table>
+<div class="sub-h">Dengue Haemorrhagic Fever / Dengue Shock Syndrome (DHF/DSS)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Transmission**</td><td>**Aedes aegypti/albopictus** mosquito</td></tr><tr><td>**Clinical**</td><td>**DHF**: fever, thrombocytopenia (<100k), haemorrhagic manifestations, plasma leakage (pleural effusion, ascites); **DSS**: shock, narrow pulse pressure</td></tr><tr><td>**CFR**</td><td>**<1%** with proper fluid management; **>20%** untreated</td></tr><tr><td>**Treatment**</td><td>**Fluid management** (crystalloids, colloids; avoid overload); no antiviral</td></tr><tr><td>**Vaccine**</td><td>**Dengvaxia** — ONLY for seropositive individuals (9–45y)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Utility</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**RT-PCR (blood)**</td><td>**Gold standard**; rapid (hours); available for Ebola, Marburg, Lassa, CCHF, Dengue, YF</td></tr><tr><td>**IgM/IgG ELISA**</td><td>Acute/convalescent; Lassa, CCHF, Dengue, YF</td></tr><tr><td>**Antigen Detection (Rapid Test)**</td><td>Dengue NS1; Ebola VP40 (field use)</td></tr><tr><td>**Virus Isolation**</td><td>BSL-4; definitive; not for acute management</td></tr><tr><td>**Routine Labs**</td><td>Thrombocytopenia, ↑ AST/ALT, prolonged PT, DIC screen</td></tr></table>
+<div class="callout">[!critical] <b>VHF SUSPICION → IMMEDIATE ISOLATION + PPE + PUBLIC HEALTH NOTIFICATION.</b> <b>Do NOT send samples routine lab — use dedicated VHF pathway.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Immediate (Hour 0)</div>
+<table class="ctable"><tr><th>Action</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**1. ISOLATE**</td><td>**Negative pressure room**; **PPE**: double gloves, impermeable gown, N95/FFP3, face shield, hood, boots; **trained buddy system** for donning/doffing</td></tr><tr><td>**2. NOTIFY**</td><td>**Public health authorities** immediately (statutory notification); hospital IPC team</td></tr><tr><td>**3. SUPPORTIVE**</td><td>**Fluid resuscitation** (crystalloids, avoid overload), **blood products** (platelets, FFP, cryoprecipitate for DIC), **vasopressors**, **renal replacement**, **mechanical ventilation** as needed</td></tr><tr><td>**4. SPECIFIC ANTIVIRALS**</td><td>**Ebola**: Inmazeb (atoltivimab/maftivimab/odesivimab) OR Ebanga (ansuvimab); **Lassa/CCHF**: **Ribavirin IV** (30mg/kg load → 16mg/kg q6h ×4d → 8mg/kg q8h ×6d); **Dengue**: Fluid management only; **Marburg**: Supportive only</td></tr></table>
+<div class="sub-h">Infection Control (IPC)</div>
+<table class="ctable"><tr><th>Measure</th><th>Standard</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Isolation**</td><td>Negative pressure room; anteroom; dedicated equipment</td></tr><tr><td>**PPE**</td><td>**Double gloves**; impermeable gown; N95/FFP3; face shield; hood; boots; **buddy system**</td></tr><tr><td>**Waste**</td><td>Category A infectious; autoclave/incinerate</td></tr><tr><td>**Decontamination**</td><td>Hypochlorite 10,000ppm (1%) for surfaces; 0.5% chlorine for skin</td></tr><tr><td>**Contact Tracing**</td><td>**21 days** (Ebola/Marburg); **17 days** (Lassa); **14 days** (CCHF)</td></tr><tr><td>**Dead Body Management**</td><td>Trained team; minimal handling; sealed body bag; cremation/deep burial</td></tr></table>
+<div class="sub-h">Post-Exposure Prophylaxis (PEP)</div>
+<table class="ctable"><tr><th>Virus</th><th>PEP</th></tr><tr><td>-------</td><td>-----</td></tr><tr><td>**Ebola**</td><td>**Monoclonal antibodies (Inmazeb/Ebanga) ± rVSV-ZEBOV vaccine** (ring vaccination)</td></tr><tr><td>**Lassa/CCHF**</td><td>**Ribavirin** (controversial; limited evidence)</td></tr><tr><td>**Dengue**</td><td>None (no PEPreventative vaccine for seronegative)</td></tr><tr><td>**Marburg**</td><td>None licenced</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">VHF in Returned Traveller</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Fever + travel to VHF-endemic area + bleeding/contact history**</td><td>**ISOLATE IMMEDIATELY**; notify IPC/public health; send blood for **RT-PCR (Ebola, Marburg, Lassa, CCHF, Dengue, YF)**</td></tr><tr><td>**HCW needlestick from VHF patient**</td><td>**Immediate washing**; baseline labs; **PEP per virus** (Ebola: vaccine ± mAb; Lassa/CCHF: ribavirin controversial); monitor 21 days</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>VHF = fever + bleeding + multi-organ failure; high CFR</b></li><li><b>Ebola/Marburg = Filoviridae; contact fluids; CFR 50-90%; monoclonal antibodies (Inmazeb/Ebanga); rVSV-ZEBOV vaccine</b></li><li><b>Lassa = Arenaviridae; Mastomys rat; aerosol; facial oedema, hearing loss; Ribavirin IV early</b></li><li><b>CCHF = Nairoviridae; Hyalomma tick; livestock; Ribavirin IV early</b></li><li><b>Dengue DHF/DSS = plasma leakage, thrombocytopenia; fluid management; Dengvaxia seropositive only</b></li><li><b>ISOLATE IMMEDIATELY on suspicion; PPE; negative pressure; public health notification</b></li><li><b>RT-PCR = gold standard; send via dedicated VHF pathway</b></li><li><b>Ribavirin for Lassa/CCHF (early = better)</b></li><li><b>Ebola: Inmazeb/Ebanga monoclonals; rVSV-ZEBOV vaccine</b></li><li><b>No person-to-person for CCHF except nosocomial; Ebola/Marburg = body fluids; Lassa = aerosol/fluid</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>First action on suspecting VHF?</b> Isolate immediately (negative pressure), PPE, notify public health.</li><li><b>Which VHF has specific antiviral?</b> Lassa &amp; CCHF = Ribavirin; Ebola = monoclonal antibodies (Inmazeb/Ebanga).</li><li><b>Lassa fever characteristic features?</b> Facial oedema, pharyngitis, retrosternal pain, sensorineural hearing loss.</li><li><b>CCHF transmission?</b> Hyalomma tick bite; livestock contact; nosocomial.</li><li><b>Ebola treatment?</b> Inmazeb or Ebanga (monoclonal antibodies); supportive care; rVSV-ZEBOV vaccine for prevention.</li><li><b>Dengue DHF vs DSS?</b> DHF = plasma leakage + haemorrhage; DSS = shock (narrow pulse pressure).</li><li><b>First action on VHF suspicion?</b> ISOLATE (negative pressure), PPE, notify public health.</li><li><b>Ribavirin use?</b> Lassa fever &amp; CCHF (early = better outcome).</li><li><b>Ebola vaccine?</b> rVSV-ZEBOV (Ervebo) single dose.</li><li><b>VHF in pregnancy?</b> Lassa severe in 3rd trimester; Ebola high mortality; Ribavirin teratogenic (avoid in pregnancy).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Ribavirin for all VHF</td><td>**Only Lassa & CCHF** (early); **NOT for Ebola/Marburg/Dengue**</td></tr><tr><td>Ebola = airborne</td><td>**Contact with body fluids**; NOT airborne (except lab aerosols)</td></tr><tr><td>Dengue vaccine for all</td><td>**Dengvaxia ONLY seropositive** (9-45y); seronegative = ↑ severe dengue</td></tr><tr><td>Ribavirin safe in pregnancy</td><td>**Teratogenic (Category X)** — avoid in pregnancy; Lassa in pregnancy = high mortality</td></tr><tr><td>Ebola = always haemorrhage</td><td>Only 50% develop overt bleeding; fever + GI symptoms common presentation</td></tr><tr><td>Marburg = same as Ebola</td><td>Clinically similar but distinct virus; maculopapular rash more prominent in Marburg</td></tr><tr><td>CCHF = only Africa</td><td>Also Middle East, Asia, Eastern Europe</td></tr><tr><td>Lassa = only rural</td><td>Urban transmission occurs (rat infestation); nosocomial outbreaks common</td></tr><tr><td>Vaccine for all VHF</td><td>Only Ebola (rVSV-ZEBOV), YF, Dengue (seropositive only) have licenced vaccines</td></tr><tr><td>VHF = always fatal</td><td>Supportive care + early specific therapy ↓ mortality significantly</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>VHF FIRST</b>: <b>I</b>solate <b>N</b>egative <b>P</b>ressure; <b>P</b>PE <b>B</b>uddy; <b>N</b>otify <b>P</b>ublic <b>H</b>ealth</li><li><b>EBOLA</b>: <b>E</b>bolavirus; <b>B</b>ody fluids; <b>O</b>utbreak (Africa); <b>L</b>ethal (50-90%); <b>A</b>ntiviral mAbs</li><li><b>LASSA</b>: <b>L</b>assa; <b>A</b>renavirus; <b>S</b>ensorineural <b>H</b>earing <b>L</b>oss; <b>A</b>erosol (rat); <b>R</b>ibavirin</li><li><b>CCHF</b>: <b>C</b>rimean-<b>C</b>ongo; <b>H</b>yalomma <b>T</b>ick; <b>R</b>ibavirin; <b>H</b>aemorrhage</li><li><b>DENGUE</b>: <b>D</b>engue; <b>E</b>pidemic; <b>N</b>g <b>G</b>lucose <b>U</b>ea <b>E</b>lectrolytes; <b>A</b>edes mosquito; <b>H</b>aemorrhagic <b>F</b>ever (DHF) → <b>S</b>hock (DSS)</li><li><b>RIBAVIRIN</b>: <b>L</b>assa + <b>C</b>CHF (early) = <b>R</b>ibavirin; <b>N</b>OT Ebola/Marburg/Dengue</li><li><b>VHF ISOLATE</b>: <b>I</b>mmediate <b>S</b>ingle <b>O</b>ccupancy <b>L</b>egative <b>P</b>ressure <b>A</b>nteroom <b>T</b>rained <b>E</b>xpert</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Viral Haemorrhagic Fevers))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Filoviridae</div>
+<div class="mm-node mm-l3">– Ebola: Contact fluids, CFR 50-90%, mAbs (Inmazeb/Ebanga), rVSV-ZEBOV vaccine</div>
+<div class="mm-node mm-l3">– Marburg: Bats/caves, CFR 24-88%, maculopapular rash, supportive only</div>
+<div class="mm-node mm-l2">Arenaviridae</div>
+<div class="mm-node mm-l3">– Lassa: Mastomys rat, aerosol, facial oedema, hearing loss, Ribavirin</div>
+<div class="mm-node mm-l3">– Lujo: Rare, Southern Africa</div>
+<div class="mm-node mm-l2">Nairoviridae</div>
+<div class="mm-node mm-deep">– *...continued (truncated to 200 lines for renderer)*</div>
+</div>
+</div>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Viral Haemorrhagic Fevers · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

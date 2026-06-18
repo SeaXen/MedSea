@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antidotes Overview — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Antidotes Overview</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recall key antidotes, doses, and indications</li><li>Identify contraindications and monitoring requirements</li><li>Know ED/ICU antidote stocking list</li><li>Apply antidote decision-making in specific poisonings</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Antidote Quick Reference Table</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Poison/Antidote</th><th>Antidote</th><th>Dose (Adult)</th><th>Key Indication</th><th>Contraindication/Caution</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Paracetamol**</td><td>**N-acetylcysteine (NAC)**</td><td>IV SNAP: 200mg/kg/4h + 100mg/kg/16h (300mg/kg/20h)</td><td>Level > treatment line, staggered, >24h with ALT↑</td><td>Anaphylactoid (Bag 1) — stop, chlorphenamine/salbutamol, restart half rate</td></tr><tr><td>**Opioid**</td><td>**Naloxone**</td><td>0.04-0.1mg IV bolus, repeat q2-3min to RR>10; infusion 2/3 bolus/hr</td><td>Respiratory depression (RR<10)</td><td>Precipitated withdrawal — titrate low; re-sedation common (shorter half-life)</td></tr><tr><td>**Benzodiazepine**</td><td>**Flumazenil**</td><td>0.2mg IV q1min max 1mg, then 1mg/hr if re-sedation</td><td>**ONLY**: procedural oversedation, diagnostic uncertainty</td><td>**TCA co-ingestion (QRS>100), seizure hx, chronic benzo use, head injury** — SEIZURE RISK</td></tr><tr><td>**TCA**</td><td>**Sodium bicarbonate**</td><td>1-2mEq/kg IV bolus, target pH 7.50-7.55, QRS<100ms; infusion to maintain</td><td>QRS>100ms, R aVR>3mm, VT/VF, refractory hypotension</td><td>Volume overload, alkalemia >7.55, hypokalemia</td></tr><tr><td>**Organophosphate**</td><td>**Atropine + Pralidoxime**</td><td>Atropine 1-2mg IV q5-10min to dry secretions/HR>80 (NO max); Pralidoxime 1-2g IV + 0.5-1g/hr x24-48h</td><td>Muscarinic + nicotinic signs</td><td>Pralidoxime: NOT in carbamate (avoid)</td></tr><tr><td>**Cyanide**</td><td>**Hydroxocobalamin**</td><td>5g IV over 15min (Cyanokit), repeat 5g if needed max 10g</td><td>Smoke inhalation, industrial, ingestion</td><td>Red urine/skin (harmless, lab interference)</td></tr><tr><td></td><td>**Nitrite + Thiosulfate**</td><td>Nitrite 300mg IV + Thiosulfate 12.5g IV</td><td>**IF hydroxocobalamin unavailable**</td><td>**CONTRAINDICATED in fire/CO** (MetHb+COHb=fatal); anemia, G6PD</td></tr><tr><td>**CO**</td><td>**100% O₂**</td><td>NRB 15L/min (half-life 30min)</td><td>All symptomatic</td><td>—</td></tr><tr><td></td><td>**HBO**</td><td>2.5-3.0 ATA 90-120min</td><td>COHb>25%, LOC, cardiac, pregnancy>15%, neuro, acidosis</td><td>Chamber availability</td></tr><tr><td>**Methanol/EG**</td><td>**Fomepizole**</td><td>15mg/kg load then 10mg/kg q12h (dialysis: 1mg/kg/hr or 15mg/kg q12h)</td><td>Level>20mg/dL, acidosis, visual (MeOH), renal (EG)</td><td>Cost; dose adjust in dialysis</td></tr><tr><td></td><td>**Ethanol**</td><td>10% central line, target 100-150mg/dL</td><td>If fomepizole unavailable</td><td>CNS depression, hypoglycemia, thrombophlebitis</td></tr><tr><td></td><td>**Folinic acid**</td><td>50mg IV q6h</td><td>Methanol/EG adjunct</td><td>—</td></tr><tr><td>**Beta-blocker**</td><td>**Glucagon**</td><td>5-10mg IV bolus + 5-15mg/hr infusion + antiemetic</td><td>Bradycardia, hypotension</td><td>Tachyphylaxis, nausea/vomiting, supply</td></tr><tr><td></td><td>**HIET**</td><td>Insulin 1U/kg bolus + D50W 25g → 1-10U/kg/hr + dextrose (glucose 150-250), K⁺>2.8</td><td>Refractory shock</td><td>Hypoglycemia, hypokalemia — monitor q15-30min</td></tr><tr><td>**CCB**</td><td>**Calcium chloride**</td><td>1g (10mL 10%) IV central q10-20min, then infusion 20-50mg/kg/hr</td><td>Hypotension, bradycardia/heart block</td><td>Hypercalcemia; gluconate 3x less Ca²⁺, peripheral OK</td></tr><tr><td></td><td>**HIET**</td><td>Same as BB</td><td>Refractory shock</td><td>Same</td></tr><tr><td>**Digoxin**</td><td>**Digoxin-specific Fab**</td><td>Empirical: 10-20 vials; Calculated: (level ng/mL × weight kg)/100</td><td>Life-threatening arrhythmia, K⁺>5.5, level>10/6, ingest>10mg</td><td>Renal failure → Fab-digoxin complex accumulates (may need dialysis)</td></tr><tr><td>**Iron**</td><td>**Deferoxamine**</td><td>15mg/kg/hr IV infusion (max 80mg/kg/24h), NO bolus</td><td>Systemic toxicity, level>500µg/dL, >60mg/kg ingest</td><td>Hypotension (rapid), ARDS (>24h), Yersinia, red urine</td></tr><tr><td>**Hydrogen sulfide**</td><td>**Nitrite**</td><td>Same as cyanide (induces MetHb)</td><td>H₂S inhalation</td><td>Same as nitrite cautions</td></tr><tr><td>**Methemoglobinemia**</td><td>**Methylene blue**</td><td>1-2mg/kg IV (0.1-0.2mL/kg 1%) over 5min, repeat if needed</td><td>MetHb>30% or symptomatic</td><td>G6PD deficiency (hemolysis), high dose → metHb</td></tr><tr><td>**Anticholinergic**</td><td>**Physostigmine**</td><td>0.5-1mg IV over 2-5min, repeat q20-30min max 2mg/hr</td><td>**SEVERE refractory** anticholinergic</td><td>**QRS>100, bradycardia, asthma, bowel/urinary obstruction, pregnancy**</td></tr><tr><td>**Warfarin**</td><td>**Vitamin K1 (Phytomenadione)**</td><td>10mg IV (slow) + FFP/PCC if bleeding</td><td>INR>10 or bleeding</td><td>Anaphylaxis (rare, slow IV)</td></tr><tr><td>**Heparin**</td><td>**Protamine**</td><td>1mg per 100U heparin (max 50mg) IV over 10min</td><td>Heparin overdose/bleeding</td><td>Hypotension, anaphylaxis (fish allergy)</td></tr><tr><td>**Beta-agonist**</td><td>**Propranolol/Esmolol**</td><td>Esmolol 50mcg/kg/min infusion</td><td>Theophylline, BB overdose (cautious)</td><td>Avoid in CCB, asthma</td></tr><tr><td>**Lithium**</td><td>**Hemodialysis**</td><td>Standard HD</td><td>Level>4 acute / >2.5 chronic + neuro/renal</td><td>—</td></tr><tr><td>**Ethylene glycol**</td><td>**Thiamine 100mg + Pyridoxine 50mg**</td><td>IV q6h each</td><td>Adjunct to fomepizole</td><td>—</td></tr><tr><td>**Isoniazid**</td><td>**Pyridoxine**</td><td>1g IV per 1g INH ingested (max 5g)</td><td>INH seizures</td><td>—</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">ED/ICU Antidote Stocking List (Minimum)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Must Have (Immediate Access)**</th><th>**Should Have (Pharmacy - 30 min)**</th><th>**Specialized (Toxicology/Regional)**</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>Naloxone</td><td>Hydroxocobalamin (Cyanokit)</td><td>Digoxin Fab (DigiFab/Digibind)</td></tr><tr><td>Flumazenil</td><td>Fomepizole (Antizol)</td><td>Deferoxamine</td></tr><tr><td>Sodium bicarbonate (8.4%)</td><td>Glucagon (multiple vials)</td><td>Pralidoxime</td></tr><tr><td>Atropine (multiple vials)</td><td>Calcium chloride 10%</td><td>Physostigmine</td></tr><tr><td>N-acetylcysteine (IV/PO)</td><td>Sodium nitrite + thiosulfate</td><td>Methylene blue</td></tr><tr><td>100% O₂ + NRB</td><td>Methylene blue</td><td>Dicobalt edetate</td></tr><tr><td>Regular insulin + D50W/D10W/D20W</td><td>Pyridoxine (high dose)</td><td>Vasopressors (NE, Epi, Vasopressin)</td></tr><tr><td>Vitamin K1</td><td>Thiamine</td><td>ECMO capability</td></tr><tr><td>Protamine</td><td></td><td></td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Monitoring Requirements by Antidote</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Antidote</th><th>Monitor</th><th>Frequency</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**NAC**</td><td>Anaphylactoid signs, LFTs, INR, renal</td><td>During infusion, then 20-24h</td></tr><tr><td>**Naloxone**</td><td>RR, GCS, withdrawal</td><td>q5-15min during titration, then q30-60min</td></tr><tr><td>**Flumazenil**</td><td>Seizures, GCS, re-sedation, ECG</td><td>Continuous during/after, 2-4h post</td></tr><tr><td>**NaHCO₃ (TCA)**</td><td>pH (target 7.50-7.55), QRS, K⁺, ECG</td><td>q15-30min</td></tr><tr><td>**Pralidoxime**</td><td>Secretions, HR, muscle strength, cholinesterase</td><td>q30-60min</td></tr><tr><td>**Hydroxocobalamin**</td><td>BP, urine color, labs (colorimetric interference)</td><td>q1-2h</td></tr><tr><td>**Nitrite**</td><td>MetHb (target 10-20%), BP, SpO₂ (co-oximetry)</td><td>Continuous</td></tr><tr><td>**Glucagon**</td><td>Nausea/vomiting, glucose, HR/BP</td><td>q15-30min</td></tr><tr><td>**HIET**</td><td>Glucose q15-30min (2h), K⁺ q1-2h, Mg²⁺, Ca²⁺, fluid balance</td><td>Intensive</td></tr><tr><td>**Calcium**</td><td>Ionized Ca²⁺, ECG (QT), mental status</td><td>q30-60min</td></tr><tr><td>**Digoxin Fab**</td><td>K⁺ q1-2h (rebound hypokalemia), arrhythmias, dig level at 24h</td><td>24h</td></tr><tr><td>**Deferoxamine**</td><td>Urine color (vin rosé), BP, ARDS signs, Yersinia</td><td>q1-2h</td></tr><tr><td>**Methylene blue**</td><td>MetHb, Hb, G6PD status</td><td>q1-2h</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Antidote Contraindications Quick Reference (HIGH YIELD)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Antidote**</th><th>**ABSOLUTE Contraindications**</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Flumazenil**</td><td>TCA co-ingestion (QRS>100), seizure disorder, chronic benzo use, head injury</td></tr><tr><td>**Phenytoin**</td><td>**TCA, BB, CCB, Diphenhydramine, Cocaine** (Na channel blockers)</td></tr><tr><td>**Physostigmine**</td><td>QRS>100, bradycardia/block, asthma/COPD, bowel obstruction, urinary obstruction, pregnancy</td></tr><tr><td>**Nitrites**</td><td>**Fire victims / CO poisoning** (MetHb+COHb), anemia, G6PD, cardiovascular disease</td></tr><tr><td>**Calcium**</td><td>Digoxin toxicity (stone heart)</td></tr><tr><td>**Beta-blockers**</td><td>Cocaine, amphetamine, alpha-stimulant toxicity (unopposed alpha)</td></tr><tr><td>**Atropine**</td><td>Glaucoma (relative), obstructive GI/GU (relative)</td></tr><tr><td>**Methylene blue**</td><td>G6PD deficiency (high dose)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Antidote Decision Flowchart (General)</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Identify Poison/Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Antidote Available?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Give Antidote per Protocol\nCheck Contraindications First</div>
+<div class="fc-node" data-id="D">Supportive Care + Enhanced Elimination\n+ Toxicology Consult</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Monitor for Response\nand Adverse Effects</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Clinical Improvement?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Continue/Observe\nPsych Assessment</div>
+<div class="fc-node" data-id="H">Reassess Diagnosis\nConsider Additional Antidotes\nECMO/Rescue</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Antidote stocking list poster for ED</li><li>Contraindications quick card</li><li>Monitoring requirements table</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Antidote administration workshop</li><li>Toxicology pharmacy stocking</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>NAC</b>: SNAP 2-bag 300mg/kg/20h; anaphylactoid Bag 1 → restart half rate</li><li><b>Naloxone</b>: 0.04-0.1mg IV → RR&gt;10; re-sedation common; infusion 2/3 bolus/hr</li><li><b>Flumazenil</b>: 0.2mg IV max 1mg; <b>NO: TCA, seizure, chronic benzo, head injury</b></li><li><b>NaHCO₃ (TCA)</b>: 1-2mEq/kg → pH 7.50-7.55, QRS&lt;100</li><li><b>Atropine/Pralidoxime (OP)</b>: Atropine to dry/HR&gt;80 (NO max); Pralidoxime 1-2g load + infusion (OP only)</li><li><b>Hydroxocobalamin (CN)</b>: 5g IV (Cyanokit); <b>safe in CO</b>; red urine/skin</li><li><b>Nitrites (CN)</b>: <b>CONTRAINDICATED in fire/CO</b> (MetHb+COHb)</li><li><b>100% O₂ (CO)</b>: half-life 30min; HBO: COHb&gt;25%, LOC, cardiac, preg&gt;15%, neuro</li><li><b>Fomepizole (MeOH/EG)</b>: 15 load, 10 q12h; dialysis: 1mg/kg/hr</li><li><b>Glucagon (BB)</b>: 5-10mg bolus + 5-15mg/hr + antiemetic</li><li><b>HIET (BB/CCB)</b>: Insulin 1U/kg + D50W → 1-10U/kg/hr, glucose 150-250, K⁺&gt;2.8</li><li><b>Calcium (CCB)</b>: Cl 1g IV central q10-20min (Glu 3x less, peripheral)</li><li><b>Digoxin Fab</b>: 10-20 vials empirical OR level×wt/100; <b>HyperK = Fab FIRST</b></li><li><b>Deferoxamine (Fe)</b>: 15mg/kg/hr IV; vin rosé urine</li><li><b>Physostigmine</b>: 0.5-1mg IV; <b>NO: QRS&gt;100, brady, asthma, obstruction</b></li><li><b>Methylene blue</b>: 1-2mg/kg; <b>NO: G6PD</b></li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>List 5 antidotes with absolute contraindications</li><li>State digoxin Fab empirical vs calculated dose</li><li>Explain why nitrites contraindicated in fire victims</li><li>Differentiate flumazenil vs naloxone indications/contraindications</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>All antidotes in quick reference table (indication, dose, contraindication)</li><li>Flumazenil NO-GO list</li><li>Nitrites contraindicated in CO/fire</li><li>Calcium contraindicated in digoxin</li><li>Phenytoin contraindicated in Na channel blocker toxicity</li><li>Hydroxocobalamin preferred for CN (safe in CO)</li><li>Digoxin Fab for hyperkalemia in digoxin toxicity</li><li>HIET protocol (BB/CCB)</li><li>Deferoxamine + vin rosé urine</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>ED stocking list</li><li>Monitoring requirements per antidote</li><li>Glucagon tachyphylaxis</li><li>Fab monitoring (K⁺ rebound)</li><li>Colorimetric interference (hydroxocobalamin, methylene blue)</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Obidoxime alternative</li><li>Dicobalt edetate (historical)</li><li>Specific pediatric doses</li><li>Antidote shortages/alternatives</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Table of antidotes by category</li><li>Contraindications emphasized</li><li>Monitoring protocols</li><li>Stocking list</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Contraindications table</li><li>Dosing card</li><li>Stocking list</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Flumazenil NO: TCA, seizure, chronic benzo, head injury"</li><li>"Nitrites NO in fire/CO: MetHb+COHb=fatal"</li><li>"Calcium NO in digoxin: stone heart"</li><li>"Phenytoin NO in TCA/BB/CCB/cocaine: Na channel"</li><li>"Hydroxocobalamin 5g IV: CN preferred, safe in CO, red urine"</li><li>"Digoxin Fab: 10-20 vials empirical OR level×wt/100; HyperK=Fab FIRST"</li><li>"HIET: Insulin 1U/kg+D50W → 1-10U/kg/hr, glu 150-250, K&gt;2.8"</li><li>"Glucagon BB: 5-10mg + 5-15mg/hr + antiemetic"</li><li>"CCB Calcium: Cl 1g central q10-20min (Glu 3x less)"</li><li>"Deferoxamine Fe: 15mg/kg/hr IV, vin rosé urine"</li><li>"Physostigmine NO: QRS&gt;100, brady, asthma, obstruction"</li><li>"Methylene blue: 1-2mg/kg, NO G6PD"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Unknown overdose: naloxone trial + flumazenil ONLY if no contraindications</li><li>Fire victim: hydroxocobalamin + 100% O₂ + HBO for CO</li><li>Digoxin toxicity with K⁺ 7.0: Fab immediate, NO calcium/insulin</li><li>TCA QRS 140ms: NaHCO₃ bolus, NO phenytoin/flumazenil</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Flumazenil NO: TCA, Sz, Chronic, Head</li><li>Nitrites NO: Fire/CO</li><li>Calcium NO: Digoxin</li><li>Phenytoin NO: TCA/BB/CCB/Cocaine</li><li>Hydroxocobalamin: 5g, Safe CO, Red urine</li><li>Fab: 10-20 vials / Level×Wt/100; HyperK=Fab</li><li>HIET: 1U/kg, 1-10U/kg/hr, Glu150-250, K&gt;2.8</li><li>Glucagon: 5-10mg + 5-15mg/hr</li><li>CCB Ca: Cl 1g central q10-20min</li><li>Deferoxamine: 15mg/kg/hr, Vin rosé</li><li>Physostigmine NO: QRS, Brady, Asthma, Obs</li><li>Methylene blue: G6PD NO</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Key antidotes for FCPS/MRCP: NAC (paracetamol), naloxone (opioid), flumazenil (benzo — restricted), NaHCO₃ (TCA), atropine/pralidoxime (OP), hydroxocobalamin (CN — preferred), nitrites (CN — contraindicated in CO/fire), 100% O₂/HBO (CO), fomepizole (MeOH/EG), glucagon/HIET (BB), calcium/HIET (CCB), digoxin Fab, deferoxamine (Fe), physostigmine (anticholinergic — restricted), methylene blue (MetHb). Critical contraindications: flumazenil in TCA/seizure/chronic/head injury; nitrites in CO/fire; calcium in digoxin; phenytoin in Na channel blocker toxicity; beta-blockers in cocaine.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>N-acetylcysteine is the antidote for:</li></ol>
+<p>A. Salicylate B. Paracetamol C. Opioid D. Benzodiazepine <b>Answer: B</b> <i>Explanation: NAC for paracetamol. Mechanisms: GSH precursor, direct NAPQI scavenging, antioxidant, improves hepatic perfusion.</i></p>
+<ol><li>Flumazenil dose for benzo reversal?</li></ol>
+<p>A. 0.2 mg IV, repeat to max 3 mg B. 2 mg IV once C. 10 mg IV D. 0.04 mg IV <b>Answer: A</b> <i>Explanation: Flumazenil: 0.2 mg IV over 15 sec, repeat 0.2 mg q1min to max 3 mg. CONTRAINDICATED: TCA co-ingestion, seizure disorder, chronic benzo use.</i></p>
+<ol><li>Naloxone initial IV dose for opioid overdose?</li></ol>
+<p>A. 0.4-2 mg B. 0.04-0.1 mg C. 2-4 mg D. 4-8 mg <b>Answer: B</b> <i>Explanation: TITRATED naloxone: 0.04-0.1 mg IV (child 0.01 mg/kg). Goal RR &gt; 10-12, NOT full arousal. Avoid precipitated withdrawal.</i></p>
+<ol><li>Sodium bicarbonate for TCA - target?</li></ol>
+<p>A. pH 7.35-7.45 B. pH 7.50-7.55 + QRS &lt; 100 ms C. pH &gt; 7.60 D. Normalize K⁺ only <b>Answer: B</b> <i>Explanation: NaHCO₃ 1-2 mEq/kg bolus → target pH 7.50-7.55 AND QRS &lt; 100 ms. Alkalemia ↑ protein binding, Na⁺ overcomes channel blockade.</i></p>
+<ol><li>Atropine + pralidoxime for:</li></ol>
+<p>A. Cyanide B. Organophosphate C. Iron D. Methanol <b>Answer: B</b> <i>Explanation: Organophosphate: atropine (till secretions dry, HR&gt;80, no bronchospasm) + pralidoxime 1-2g IV over 30min (within 24-48h). IMS day 1-4, OPIDN weeks.</i></p>
+<ol><li>Fomepizole for:</li></ol>
+<p>A. Methanol and ethylene glycol B. Paracetamol C. Salicylate D. Iron <b>Answer: A</b> <i>Explanation: Fomepizole (ADH inhibitor): methanol, ethylene glycol. 15 mg/kg load, 10 mg/kg q12h. Dialysis if pH&lt;7.3, renal failure, visual (methanol), level&gt;50mmol/L.</i></p>
+<ol><li>Digoxin-specific Fab dose calculation?</li></ol>
+<p>A. Level × weight / 100 B. Serum level (ng/mL) × weight (kg) / 100 = vials, OR empirical 10-20 vials C. 1 vial per mg digoxin D. Fixed 10 vials for all <b>Answer: B</b> <i>Explanation: Fab dose = (serum level ng/mL × weight kg) / 100 = number of vials. Or empirical 10-20 vials if level unknown/acute massive ingestion.</i></p>
+<ol><li>Hydroxocobalamin for:</li></ol>
+<p>A. Cyanide B. Carbon monoxide C. Iron D. Methanol <b>Answer: A</b> <i>Explanation: Hydroxocobalamin 5g IV (2.5g/100mL over 15min) for cyanide. Binds CN⁻ → cyanocobalamin (excreted renally). Alternative: nitrites + sodium thiosulfate.</i></p>
+<ol><li>Deferoxamine for iron - urine color change?</li></ol>
+<p>A. Red B. Blue C. Vin rosé (pink/red) D. Green <b>Answer: C</b> <i>Explanation: Deferoxamine: chelates iron → ferrioxamine excreted in urine → VIN ROSÉ (pink/red) urine. Indicated if systemic toxicity (shock, metabolic acidosis) or level &gt; 500 µg/dL.</i></p>
+<ol><li>Glucagon + HIET for:</li></ol>
+<p>A. Beta-blocker / Calcium channel blocker B. Opioid C. Benzodiazepine D. TCA <b>Answer: A</b> <i>Explanation: Glucagon 5-10mg IV then 5-15mg/hr infusion (BB). HIET: insulin 1U/kg/hr + dextrose (maintain glucose 5-10mmol/L) + K⁺ replacement. For BB/CCB cardiogenic shock.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Paracetamol overdose, 4h level above treatment line. NAC protocol preferred in UK?</li></ol>
+<p>A. Oral 72-hour B. IV 3-bag traditional C. IV SNAP 2-bag (NHSE 2021+) D. Methionine <b>Answer: C</b> <i>Explanation: UK NHSE 2021+ prefers SNAP 2-bag: 200mg/kg/4h + 100mg/kg/16h = 300mg/kg/20h. Less anaphylactoid, shorter duration. Oral alternative if IV access difficult.</i></p>
+<ol><li>Benzo overdose, pure, no seizure risk, no TCA. Flumazenil given, patient wakes. 1 hour later, seizures. Why?</li></ol>
+<p>A. Flumazenil causes seizures B. Flumazenil short half-life (0.7-1.3h) vs benzo → re-sedation then withdrawal seizures C. Undiagnosed epilepsy D. Flumazenil dose too high <b>Answer: B</b> <i>Explanation: Flumazenil t½ 0.7-1.3h &lt; benzo t½ → re-sedation. Also acute benzo withdrawal can cause seizures. Monitor 2-3h post-flumazenil. Contraindicated in chronic benzo use.</i></p>
+<ol><li>Opioid overdose, naloxone 0.4mg IV given, patient arousable but RR 8. Next step?</li></ol>
+<p>A. More naloxone B. Intubate C. Observe D. Give flumazenil <b>Answer: A</b> <i>Explanation: Titrate naloxone to RR &gt; 10-12. 0.4mg may be insufficient. Repeat 0.1, 0.2, 0.4, 0.8, 2mg q2-3min. Max 10mg. If no response → reconsider diagnosis.</i></p>
+<ol><li>TCA overdose, QRS 130ms. NaHCO₃ bolus given. Target for repeat bolus?</li></ol>
+<p>A. QRS &lt; 120ms B. QRS &lt; 100ms AND pH 7.50-7.55 C. pH &gt; 7.60 D. BP normal <b>Answer: B</b> <i>Explanation: NaHCO₃ target: pH 7.50-7.55 AND QRS &lt; 100 ms. Repeat bolus if QRS not narrowing. Infusion to maintain. Hyperventilate intubated patients to same pH target.</i></p>
+<ol><li>Organophosphate poisoning, atropine 10mg given, secretions still wet. Next?</li></ol>
+<p>A. Stop atropine B. Continue atropine - NO max dose, titrate to dry secretions/HR&gt;80 C. Give pralidoxime only D. Intubate <b>Answer: B</b> <i>Explanation: Atropine: NO MAX DOSE. Titrate to dry secretions, HR &gt; 80, no bronchospasm. Pralidoxime 1-2g IV over 30min (within 24-48h) - reactivates AChE. IMS day 1-4.</i></p>
+<ol><li>Methanol poisoning, pH 7.25, creatinine rising. Antidote + dialysis?</li></ol>
+<p>A. Fomepizole + observe B. Fomepizole + hemodialysis C. Ethanol + observe D. Dialysis only <b>Answer: B</b> <i>Explanation: Methanol/EG: fomepizole 15mg/kg load + 10mg/kg q12h. Dialysis if pH &lt; 7.3, renal failure, visual symptoms (methanol), level &gt; 50 mmol/L. This patient meets dialysis criteria (pH 7.25, rising Cr).</i></p>
+<ol><li>Digoxin overdose, level 6 ng/mL, K⁺ 6.2, bradycardic. Management?</li></ol>
+<p>A. Insulin/dextrose + calcium for K⁺ B. Digoxin-specific Fab 10-20 vials empirically C. Atropine for bradycardia D. Pacemaker <b>Answer: B</b> <i>Explanation: Digoxin hyperkalemia = Fab FIRST (reverses Na/K-ATPase blockade → K⁺ shifts into cells). Standard hyperK measures can be dangerous. Bradycardia: atropine if hemodynamically unstable, but Fab is definitive.</i></p>
+<ol><li>Cyanide poisoning from house fire. Antidote?</li></ol>
+<p>A. Hydroxocobalamin 5g IV B. Amyl nitrite inhalant C. Sodium thiosulfate alone D. Naloxone <b>Answer: A</b> <i>Explanation: Hydroxocobalamin 5g IV (2.5g/100mL over 15min) preferred. Binds CN⁻ → cyanocobalamin. Alternative: nitrites (amyl/sodium) + sodium thiosulfate. CO also common in fires - 100% O₂.</i></p>
+<ol><li>Iron overdose, 6h post-ingestion, vomiting, metabolic acidosis, level 600 µg/dL. Management?</li></ol>
+<p>A. Observe B. Deferoxamine infusion C. Hemodialysis D. Whole bowel irrigation <b>Answer: B</b> <i>Explanation: Deferoxamine if systemic toxicity (shock, metabolic acidosis, coma) OR level &gt; 500 µg/dL. Vin rosé urine. WBI if recent large ingestion (iron tablets radiopaque). HD not effective.</i></p>
+<ol><li>Propranolol overdose, refractory hypotension. Glucagon dose?</li></ol>
+<p>A. 1 mg IV B. 5-10 mg IV then 5-15 mg/hr infusion C. 20 mg IV D. 0.5 mg IV <b>Answer: B</b> <i>Explanation: Glucagon: 5-10 mg IV over 1-2 min, then 5-15 mg/hr infusion. Bypasses β-receptor. Side effect: vomiting (protect airway). HIET additive for myocardial support.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Paracetamol antidote?</li></ul>
+<p>A: N-acetylcysteine (IV SNAP 2-bag or 3-bag, oral 72h). Mechanisms: GSH precursor, NAPQI scavenging, antioxidant, hepatic perfusion.</p>
+<ul><li>Q: Benzo antidote?</li></ul>
+<p>A: Flumazenil 0.2mg IV q1min to max 3mg. CONTRAINDICATED: TCA co-ingestion, seizure disorder, chronic benzo use.</p>
+<ul><li>Q: Opioid antidote?</li></ul>
+<p>A: Naloxone 0.04-0.1mg IV titrated to RR&gt;10. Max 10mg. Duration 30-90min &lt; opioid → re-sedation common. Infusion 2/3 bolus/hr.</p>
+<ul><li>Q: TCA cardiotoxicity antidote?</li></ul>
+<p>A: Sodium bicarbonate 1-2 mEq/kg bolus → target pH 7.50-7.55, QRS &lt; 100ms. Alkalemia ↑ protein binding, Na⁺ overcomes channel block.</p>
+<ul><li>Q: Organophosphate antidotes?</li></ul>
+<p>A: Atropine (NO max dose, titrate to dry secretions/HR&gt;80) + Pralidoxime 1-2g IV over 30min (within 24-48h). IMS day 1-4, OPIDN weeks.</p>
+<ul><li>Q: Methanol/EG antidote?</li></ul>
+<p>A: Fomepizole 15mg/kg load, 10mg/kg q12h. Dialysis if pH&lt;7.3, renal failure, visual (methanol), level&gt;50mmol/L. Ethanol alternative.</p>
+<ul><li>Q: Digoxin antidote?</li></ul>
+<p>A: Digoxin-specific Fab. Dose = (level ng/mL × weight kg) / 100 = vials. Or empirical 10-20 vials. HyperK = give Fab FIRST.</p>
+<ul><li>Q: Cyanide antidote?</li></ul>
+<p>A: Hydroxocobalamin 5g IV (preferred). Alternative: nitrites + sodium thiosulfate. Smoke inhalation = CN⁻ + CO.</p>
+<ul><li>Q: Iron antidote?</li></ul>
+<p>A: Deferoxamine. Vin rosé urine. Indicated: systemic toxicity OR level &gt;500µg/dL. WBI for recent large ingestion.</p>
+<ul><li>Q: BB/CCB cardiogenic shock?</li></ul>
+<p>A: BB: Glucagon 5-10mg IV + infusion + HIET. CCB: Calcium + HIET. Both: vasopressors (NE) for refractory shock.</p>
+<ul><li>Q: Salicylate enhanced elimination?</li></ul>
+<p>A: Urinary alkalinization (urine pH 7.5-8.0, replace K⁺). HD if pH&lt;7.2, renal failure, CNS toxicity, level&gt;700(acute)/&gt;400(chronic).</p>
+<ul><li>Q: Lithium enhanced elimination?</li></ul>
+<p>A: Hemodialysis. Acute &gt;4mmol/L, Chronic &gt;2.5 + neuro/renal/elderly. Lithium rebounds post-HD (redistributes).</p>
+<ul><li>Q: Methotrexate antidote?</li></ul>
+<p>A: Leucovorin (folinic acid) rescue. Urinary alkalinization enhances elimination. Hydration.</p>
+<ul><li>Q: Anticholinergic severe?</li></ul>
+<p>A: Physostigmine 1-2mg IV over 5min (ONLY if severe AND no QRS widening/asthma/bradycardia/bowel obstruction). Risk: seizures, bradycardia, asystole.</p>
+<ul><li>Q: Serotonin syndrome antidote?</li></ul>
+<p>A: Cyproheptadine 12mg PO/NG then 2mg q2h PRN. Supportive: benzos, cooling, paralysis if severe. Stop serotonergic drugs.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> - NAC for paracetamol. Mechanisms: GSH precursor, direct NAPQI scavenging, antioxidant, improves hepatic perfusion.</li><li><b>A</b> - Flumazenil: 0.2 mg IV over 15 sec, repeat 0.2 mg q1min to max 3 mg. CONTRAINDICATED: TCA co-ingestion, seizure disorder, chronic benzo use.</li><li><b>B</b> - TITRATED naloxone: 0.04-0.1 mg IV (child 0.01 mg/kg). Goal RR &gt; 10-12, NOT full arousal. Avoid precipitated withdrawal.</li><li><b>B</b> - NaHCO₃ 1-2 mEq/kg bolus → target pH 7.50-7.55 AND QRS &lt; 100 ms. Alkalemia ↑ protein binding, Na⁺ overcomes channel blockade.</li><li><b>B</b> - Organophosphate: atropine (till secretions dry, HR&gt;80, no bronchospasm) + pralidoxime 1-2g IV over 30min (within 24-48h). IMS day 1-4, OPIDN weeks.</li><li><b>A</b> - Fomepizole (ADH inhibitor): methanol, ethylene glycol. 15 mg/kg load, 10 mg/kg q12h. Dialysis if pH&lt;7.3, renal failure, visual (methanol), level&gt;50mmol/L.</li><li><b>B</b> - Fab dose = (serum level ng/mL × weight kg) / 100 = number of vials. Or empirical 10-20 vials if level unknown/acute massive ingestion.</li><li><b>A</b> - Hydroxocobalamin 5g IV (2.5g/100mL over 15min) for cyanide. Binds CN⁻ → cyanocobalamin (excreted renally). Alternative: nitrites + sodium thiosulfate.</li><li><b>C</b> - Deferoxamine: chelates iron → ferrioxamine excreted in urine → VIN ROSÉ (pink/red) urine. Indicated if systemic toxicity (shock, metabolic acidosis) or level &gt; 500 µg/dL.</li><li><b>A</b> - Glucagon 5-10mg IV then 5-15mg/hr infusion (BB). HIET: insulin 1U/kg/hr + dextrose (maintain glucose 5-10mmol/L) + K⁺ replacement. For BB/CCB cardiogenic shock.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>C</b> - UK NHSE 2021+ prefers SNAP 2-bag: 200mg/kg/4h + 100mg/kg/16h = 300mg/kg/20h. Less anaphylactoid, shorter duration. Oral alternative if IV access difficult.</li><li><b>B</b> - Flumazenil t½ 0.7-1.3h &lt; benzo t½ → re-sedation. Also acute benzo withdrawal can cause seizures. Monitor 2-3h post-flumazenil. Contraindicated in chronic benzo use.</li><li><b>A</b> - Titrate naloxone to RR &gt; 10-12. 0.4mg may be insufficient. Repeat 0.1, 0.2, 0.4, 0.8, 2mg q2-3min. Max 10mg. If no response → reconsider diagnosis.</li><li><b>B</b> - NaHCO₃ target: pH 7.50-7.55 AND QRS &lt; 100 ms. Repeat bolus if QRS not narrowing. Infusion to maintain. Hyperventilate intubated patients to same pH target.</li><li><b>B</b> - Atropine: NO MAX DOSE. Titrate to dry secretions, HR &gt; 80, no bronchospasm. Pralidoxime 1-2g IV over 30min (within 24-48h) - reactivates AChE. IMS day 1-4.</li><li><b>B</b> - Methanol/EG: fomepizole 15mg/kg load + 10mg/kg q12h. Dialysis if pH &lt; 7.3, renal failure, visual symptoms (methanol), level &gt; 50 mmol/L. This patient meets dialysis criteria (pH 7.25, rising Cr).</li><li><b>B</b> - Digoxin hyperkalemia = Fab FIRST (reverses Na/K-ATPase blockade → K⁺ shifts into cells). Standard hyperK measures can be dangerous. Bradycardia: atropine if hemodynamically unstable, but Fab is definitive.</li><li><b>A</b> - Hydroxocobalamin 5g IV (2.5g/100mL over 15min) preferred. Binds CN⁻ → cyanocobalamin. Alternative: nitrites (amyl/sodium) + sodium thiosulfate. CO also common in fires - 100% O₂.</li><li><b>B</b> - Deferoxamine if systemic toxicity (shock, metabolic acidosis, coma) OR level &gt; 500 µg/dL. Vin rosé urine. WBI if recent large ingestion (iron tablets radiopaque). HD not effective.</li><li><b>B</b> - Glucagon: 5-10 mg IV over 1-2 min, then 5-15 mg/hr infusion. Bypasses β-receptor. Side effect: vomiting (protect airway). HIET additive for myocardial support.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antidotes Overview · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

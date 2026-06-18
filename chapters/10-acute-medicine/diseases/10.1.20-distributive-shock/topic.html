@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Distributive Shock — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Distributive Shock</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise the haemodynamic profile of distributive shock</li><li>Differentiate aetiologies: septic, anaphylactic, neurogenic, adrenal crisis</li><li>Apply vasopressor strategy appropriately</li><li>Identify and treat the underlying cause</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Shock caused by widespread vasodilatation → reduced systemic vascular resistance (SVR) → relative hypovolaemia despite normal absolute volume.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Key Feature</th></tr><tr><td>-------------------</td><td>------------------------------</td><td>--------------------------------</td></tr><tr><td>**Septic**</td><td>Endotoxin + cytokine storm</td><td>Warm peripheries, high CO</td></tr><tr><td>**Anaphylactic**</td><td>Mast cell degranulation</td><td>Rapid onset, urticaria, angioedema</td></tr><tr><td>**Neurogenic**</td><td>Loss of sympathetic tone</td><td>Bradycardia + warm peripheries</td></tr><tr><td>**Adrenal crisis**</td><td>Cortisol deficiency</td><td>Hypoglycaemia, hyponatraemia</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Haemodynamic Profile</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>High</b> cardiac output (initially)</li><li><b>Low</b> SVR</li><li><b>Low</b> MAP</li><li><b>Warm</b>, bounding peripheries (until decompensation)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Fluids: large-volume crystalloids initially</li><li>Vasopressors: <b>Noradrenaline</b> first-line (except neurogenic where phenylephrine may be used)</li><li><b>Treat cause</b>: antibiotics, adrenaline, steroids, hormone replacement</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Red Flags</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Refractory hypotension on high-dose vasopressors</li><li>Deteriorating mental status</li><li>Lactate rising despite resuscitation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Neurogenic shock: <b>bradycardia</b> + hypotension + warm skin (differentiates from other shocks)</li><li>Adrenal crisis: consider in any unexplained hypotension + hyponatraemia + hyperkalaemia</li><li>Anaphylaxis needs <b>adrenaline first</b> — fluids and vasopressors are adjuncts</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>How do you differentiate distributive from cardiogenic shock haemodynamically?</li><li>What is the hallmark of neurogenic shock?</li><li>Which vasopressor is preferred in septic shock?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Distributive = vasodilatation + relative hypovolaemia</b> Septic, anaphylactic, neurogenic, adrenal crisis Warm peripheries (initially) Noradrenaline first-line</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Definition and haemodynamic profile (high CO, low SVR)</li><li>Four subtypes: septic, anaphylactic, neurogenic, adrenal crisis</li><li>Noradrenaline first-line (except neurogenic)</li><li>Neurogenic = bradycardia + hypotension</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Adrenal crisis: hypotension + hyponatraemia + hyperkalaemia</li><li>Anaphylaxis: adrenaline IM first, fluids second</li><li>Vasopressin as catecholamine-sparing add-on</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Detailed receptor mechanisms</li><li>Angiotensin II for refractory vasoplegia</li><li>ECMO in refractory distributive shock</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Which shock type is characterised by warm peripheries and bounding pulses?</li></ol>
+<p>A. Cardiogenic B. Hypovolaemic C. Distributive D. Obstructive</p>
+<ol><li>Neurogenic shock is caused by:</li></ol>
+<p>A. Massive vasodilatation from histamine B. Loss of sympathetic tone C. Pump failure D. Hypovolaemia</p>
+<ol><li>First-line vasopressor in septic shock:</li></ol>
+<p>A. Adrenaline B. Noradrenaline C. Vasopressin D. Dopamine</p>
+<ol><li>Anaphylactic shock first-line treatment:</li></ol>
+<p>A. IV fluids B. IV hydrocortisone C. IM adrenaline D. IV antihistamine</p>
+<ol><li>Neurogenic shock hallmark:</li></ol>
+<p>A. Tachycardia B. Bradycardia + hypotension C. Cool peripheries D. High SVR</p>
+<ol><li>Adrenal crisis presents with:</li></ol>
+<p>A. Hypernatraemia, hypokalaemia B. Hyponatraemia, hyperkalaemia C. Normal electrolytes D. Metabolic alkalosis</p>
+<ol><li>In distributive shock, cardiac output is initially:</li></ol>
+<p>A. Low B. Normal C. High D. Variable</p>
+<ol><li>SVR in distributive shock is:</li></ol>
+<p>A. High B. Normal C. Low D. Variable</p>
+<ol><li>Vasopressin is used in septic shock as:</li></ol>
+<p>A. First-line monotherapy B. Catecholamine-sparing add-on C. Replacement for noradrenaline D. Only in neurogenic shock</p>
+<ol><li>Fluid management in distributive shock:</li></ol>
+<p>A. Restrict fluids B. Large-volume crystalloids initially C. Colloids only D. Blood products first</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 45-year-old man with spinal cord injury at T4 develops hypotension (BP 80/50), bradycardia (HR 48), warm skin. Most likely diagnosis:</li></ol>
+<p>A. Hypovolaemic shock B. Cardiogenic shock C. Neurogenic shock D. Septic shock</p>
+<ol><li>A 30-year-old woman with known Addison's disease presents with vomiting, hypotension (70/40), hyponatraemia (125), hyperkalaemia (6.2). Immediate management:</li></ol>
+<p>A. IV fluids + hydrocortisone 100mg IV B. Vasopressors only C. Oral fludrocortisone D. Insulin/dextrose for hyperkalaemia</p>
+<ol><li>A 25-year-old man stung by a bee develops stridor, wheeze, hypotension, urticaria. First and most important drug:</li></ol>
+<p>A. Chlorphenamine 10mg IV B. Hydrocortisone 200mg IV C. Adrenaline 0.5mg IM D. Salbutamol nebuliser</p>
+<ol><li>In septic shock, when do you add vasopressin to noradrenaline?</li></ol>
+<p>A. Immediately B. When noradrenaline &gt;0.25–0.5 µg/kg/min C. Only when noradrenaline &gt;2 µg/kg/min D. Never</p>
+<ol><li>A patient with neurogenic shock after spinal injury. BP 85/50, HR 52. Fluid resuscitation given. Persistent hypotension. Best vasopressor:</li></ol>
+<p>A. Noradrenaline B. Adrenaline C. Phenylephrine D. Dobutamine</p>
+<ol><li>Which is NOT a feature of distributive shock?</li></ol>
+<p>A. Low SVR B. High CO (initially) C. Cool peripheries D. Warm peripheries</p>
+<ol><li>Adrenal crisis is precipitated by:</li></ol>
+<p>A. Sudden steroid withdrawal B. Stress (infection, surgery) in known adrenal insufficiency C. Both A and B D. Neither A nor B</p>
+<ol><li>In anaphylactic shock, IV adrenaline is used when:</li></ol>
+<p>A. Always first-line B. IM adrenaline failed and patient has cardiovascular collapse C. Only in children D. Never</p>
+<ol><li>A patient on chronic steroids presents with hypotension, hyponatraemia, hyperkalaemia, hypoglycaemia. Diagnosis:</li></ol>
+<p>A. Sepsis B. Adrenal crisis C. Neurogenic shock D. Anaphylaxis</p>
+<ol><li>Vasopressin mechanism in septic shock:</li></ol>
+<p>A. β₁ agonist B. V₁ receptor agonist (non-catecholamine vasoconstriction) C. α₁ agonist D. PDE inhibitor</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Distributive shock definition</li></ul>
+<p>A: Widespread vasodilatation → low SVR → relative hypovolaemia</p>
+<ul><li>Q: Four types of distributive shock</li></ul>
+<p>A: Septic, anaphylactic, neurogenic, adrenal crisis</p>
+<ul><li>Q: Neurogenic shock triad</li></ul>
+<p>A: Hypotension + bradycardia + warm peripheries</p>
+<ul><li>Q: First-line vasopressor in septic shock</li></ul>
+<p>A: Noradrenaline</p>
+<ul><li>Q: First-line in anaphylaxis</li></ul>
+<p>A: Adrenaline 0.5mg IM</p>
+<ul><li>Q: Adrenal crisis electrolytes</li></ul>
+<p>A: Hyponatraemia + hyperkalaemia</p>
+<ul><li>Q: Vasopressin role</li></ul>
+<p>A: Catecholamine-sparing add-on in septic shock</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: C — Distributive shock = vasodilatation → warm peripheries. <b>MCQ 2</b>: B — Neurogenic = loss of sympathetic tone. <b>MCQ 3</b>: B — Noradrenaline first-line. <b>MCQ 4</b>: C — Adrenaline IM first and most important. <b>MCQ 5</b>: B — Bradycardia + hypotension (unopposed vagal tone). <b>MCQ 6</b>: B — Cortisol deficiency → aldosterone deficiency → Na loss, K retention. <b>MCQ 7</b>: C — High CO initially (compensatory). <b>MCQ 8</b>: C — Low SVR (vasodilatation). <b>MCQ 9</b>: B — Add-on to spare noradrenaline. <b>MCQ 10</b>: B — Large-volume crystalloids initially.</p>
+<p><b>SBA 1</b>: C — Spinal injury + bradycardia + hypotension + warm skin = neurogenic. <b>SBA 2</b>: A — Adrenal crisis = fluids + hydrocortisone 100mg IV immediate. <b>SBA 3</b>: C — Adrenaline IM is first-line and life-saving. <b>SBA 4</b>: B — Add vasopressin at NA ~0.25–0.5 to spare catecholamines. <b>SBA 5</b>: C — Phenylephrine (pure α₁) preferred in neurogenic to avoid tachycardia. <b>SBA 6</b>: C — Distributive = warm peripheries (initially). <b>SBA 7</b>: C — Both steroid withdrawal and stress precipitate crisis. <b>SBA 8</b>: B — IV adrenaline only if IM failed / cardiovascular collapse. <b>SBA 9</b>: B — Chronic steroids + stress → relative adrenal insufficiency. <b>SBA 10</b>: B — V₁ receptor agonist, non-catecholamine.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Distributive Shock · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

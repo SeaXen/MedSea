@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SSRI-SNRI Poisoning and Serotonin Syndrome — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">SSRI-SNRI Poisoning and Serotonin Syndrome</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognize serotonin syndrome using Hunter Criteria</li><li>Differentiate from NMS, sympathomimetic, anticholinergic toxidromes</li><li>Apply cyproheptadine dosing</li><li>Identify high-risk drug combinations</li><li>Manage SSRI/SNRI overdose (usually supportive)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>SSRI/SNRI poisoning = toxicity from selective serotonin reuptake inhibitors (fluoxetine, sertraline, citalopram, escitalopram, paroxetine) or serotonin-norepinephrine reuptake inhibitors (venlafaxine, duloxetine, desvenlafaxine) causing serotonin excess. <b>Serotonin syndrome</b> = life-threatening condition from excessive serotonergic activity in CNS and periphery.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Mechanism</b>: SRI → ↑ synaptic serotonin → overstimulation of 5-HT₁ₐ and 5-HT₂ₐ receptors</li><li><b>Serotonin syndrome</b>: triad of <b>neuromuscular hyperactivity</b>, <b>autonomic instability</b>, <b>altered mental status</b></li><li><b>Agents</b>: SSRIs, SNRIs, <b>MAOIs</b> (irreversible &gt; reversible), <b>tramadol</b>, <b>linezolid</b>, <b>fentanyl</b>, <b>dextromethorphan</b>, <b>meperidine</b>, <b>ondansetron</b>, <b>metoclopramide</b>, <b>St John's Wort</b>, <b>L-tryptophan</b>, <b>lithium</b>, <b>buspirone</b>, <b>triptans</b></li><li><b>Risk</b>: combinations (SSRI + MAOI = fatal; SSRI + tramadol/linezolid = common)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Serotonin Syndrome (Hunter Criteria)</div>
+<p><b>Diagnostic</b>: Patient taking serotonergic agent + <b>ANY ONE</b> of:</p>
+<ol><li><b>Spontaneous clonus</b></li><li><b>Inducible clonus</b> + agitation OR diaphoresis</li><li><b>Ocular clonus</b> + agitation OR diaphoresis</li><li><b>Tremor</b> + hyperreflexia</li><li><b>Hypertonia</b> + temperature &gt; 38°C + ocular/inducible clonus</li></ol>
+<div class="sub-h">Clinical Triad</div>
+<table class="ctable"><tr><th>Domain</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Neuromuscular**</td><td>**Clonus** (spontaneous, inducible, ocular), hyperreflexia, tremor, hypertonia, myoclonus, **rigidity** (severe)</td></tr><tr><td>**Autonomic**</td><td>Tachycardia, hypertension, hyperthermia (often > 40°C), diaphoresis, mydriasis, diarrhea, tachypnea</td></tr><tr><td>**Mental**</td><td>Agitation, confusion, delirium, coma</td></tr></table>
+<div class="sub-h">SSRI/SNRI Overdose Alone (No Syndrome)</div>
+<ul><li><b>GI</b>: nausea, vomiting, diarrhea</li><li><b>CNS</b>: drowsiness, tremor, dizziness</li><li><b>CV</b>: sinus tachycardia, QT prolongation (citalopram/escitalopram &gt; 40mg/20mg)</li><li><b>Seizures</b>: rare (more with citalopram, venlafaxine)</li><li><b>Hyponatremia</b>: SIADH (elderly, chronic use)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Serotonin Syndrome</th><th>NMS</th><th>Sympathomimetic</th><th>Anticholinergic</th></tr><tr><td>---------</td><td>-------------------</td><td>-----</td><td>-----------------</td><td>----------------</td></tr><tr><td>**Onset**</td><td>**Hours** (rapid)</td><td>**Days** (gradual)</td><td>Minutes-hours</td><td>Minutes-hours</td></tr><tr><td>**Clonus**</td><td>**YES (Hallmark)**</td><td>No</td><td>No</td><td>No</td></tr><tr><td>**Hyperreflexia**</td><td>**YES**</td><td>Normal/↑</td><td>Yes</td><td>Normal</td></tr><tr><td>**Rigidity**</td><td>Variable</td><td>**Lead-pipe**</td><td>No</td><td>No</td></tr><tr><td>**Diaphoresis**</td><td>Yes</td><td>Yes</td><td>Yes</td><td>**NO (dry)**</td></tr><tr><td>**Fever**</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>**Medication**</td><td>Serotonergic</td><td>Dopamine blocker/withdrawal</td><td>Stimulants</td><td>Anticholinergics</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Clinical diagnosis</b> (Hunter Criteria) — <b>no confirmatory test</b></li><li><b>Serum serotonin</b> — not useful</li><li><b>ABG/VBG</b>: metabolic acidosis, hypoxia</li><li><b>CK</b>: rhabdomyolysis (severe cases)</li><li><b>Renal function</b>: AKI (rhabdo, hyperthermia)</li><li><b>Electrolytes</b>: Na⁺ (hyponatremia), K⁺, Ca²⁺</li><li><b>ECG</b>: QT prolongation (citalopram/escitalopram), tachycardia</li><li><b>Paracetamol level</b> (always)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Immediate: Stop All Serotonergic Drugs</div>
+<ul><li><b>Discontinue</b> offending agents immediately</li></ul>
+<div class="sub-h">2. Supportive Care (Mainstay)</div>
+<ul><li><b>ABCDE</b>: airway protection if GCS &lt; 8, seizures</li><li><b>Hyperthermia &gt; 41°C</b>: <b>aggressive cooling</b> (evaporative, ice packs, cold IV fluids, paralysis + ventilation if refractory) — <b>NOT dantrolene</b> (no role)</li><li><b>Benzodiazepines</b>: <b>lorazepam 2-4 mg IV</b> q5-10 min for agitation, hyperreflexia, clonus — <b>first-line</b></li><li><b>IV fluids</b>: hydration, rhabdo prevention</li><li><b>Cardiovascular</b>: treat tachycardia/HTN with short-acting agents (esmolol, nicardipine)</li></ul>
+<div class="sub-h">3. Specific Antidote: Cyproheptadine</div>
+<ul><li><b>Mechanism</b>: 5-HT₂ₐ antagonist</li><li><b>Dose</b>: <b>12 mg PO/NG initially</b> (2 mg q1h × 6 doses), then <b>8 mg q6h PRN</b></li><li><b>Alternative</b>: <b>4 mg IV</b> (not widely available) — <b>chlorpromazine</b> (IM/IV) alternative but causes hypotension</li><li><b>Onset</b>: 1-2h PO</li><li><b>Monitor</b>: resolution of clonus, hyperreflexia, hyperthermia</li></ul>
+<div class="sub-h">4. Severe/Refractory Cases</div>
+<ul><li><b>Paralysis + ventilation</b>: vecuronium + propofol/midazolam (stops muscular heat production)</li><li><b>Avoid</b>: dantrolene (no evidence), propranolol (5-HT₁ₐ agonist → may worsen), bromocriptine (dopamine agonist → worsens NMS confusion)</li></ul>
+<div class="sub-h">5. Decontamination</div>
+<ul><li><b>Activated charcoal</b>: 1 g/kg if &lt; 1-2h (delayed absorption with some SSRIs)</li><li><b>WBI</b>: extended-release (venlafaxine XR, fluoxetine weekly)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Rhabdomyolysis → AKI</li><li>DIC (severe hyperthermia)</li><li>Seizures</li><li>Multi-organ failure</li><li>Death (if untreated)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Excellent with early recognition</b> — resolves 24-72h after stopping drugs</li><li>Mortality &lt; 5% with aggressive cooling + benzos + cyproheptadine</li><li><b>Fatal if missed</b> (hyperthermia, rhabdo, DIC)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Hunter Criteria</b> = diagnostic standard (clonus-based)</li><li><b>Clonus</b> (spontaneous/inducible/ocular) = <b>HALLMARK</b> vs NMS</li><li><b>Onset</b>: hours (serotonin) vs days (NMS)</li><li><b>Cyproheptadine 12 mg PO</b> = antidote (2mg q1h × 6, then 8mg q6h)</li><li><b>Benzodiazepines first-line</b> for agitation/clonus</li><li><b>Aggressive cooling</b> for hyperthermia &gt; 41°C</li><li><b>NO dantrolene</b> (NMS drug, no role in serotonin syndrome)</li><li><b>High-risk combos</b>: SSRI + MAOI (14d washout), SSRI + tramadol/linezolid/fentanyl</li><li><b>Citalopram/escitalopram</b>: QT prolongation → ECG monitoring</li><li><b>Venlafaxine</b>: seizure risk, SNRI → more cardiac toxicity</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Hunter Criteria for serotonin syndrome</li><li>Differentiate serotonin syndrome from NMS</li><li>Cyproheptadine dose and route</li><li>High-risk drug combinations</li><li>Why no dantrolene?</li><li>Citalopram QT risk</li><li>Management of hyperthermia</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Serotonin syndrome = NMS</b> → NO, clonus vs rigidity, onset hours vs days</li><li><b>Dantrolene for serotonin syndrome</b> → NO role</li><li><b>Propranolol for tachycardia</b> → may worsen (5-HT₁ₐ agonist)</li><li><b>Bromocriptine</b> → worsens (dopamine agonist)</li><li><b>Cyproheptadine IV</b> → not widely available, use PO/NG</li><li><b>MAOI + SSRI</b> → 14d washout (irreversible MAOI)</li><li><b>Mirtazepine</b> = serotonergic (α₂ antagonist → ↑ serotonin)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>HUNTER</b>: <b>H</b>yperreflexia, <b>U</b> (clonus), <b>N</b>euromuscular, <b>T</b>remor, <b>E</b> (temp), <b>R</b>igidity</li><li><b>SEROTONIN TRIAD</b>: <b>N</b>euromuscular (clonus), <b>A</b>utonomic (tachy, hyperthermia), <b>M</b>ental (agitation)</li><li><b>CYPROHEPTADINE</b>: <b>1</b>2mg <b>P</b>O → <b>2</b>mg q1h ×6 → <b>8</b>mg q6h</li><li><b>NO DANTROLENE</b> in serotonin syndrome</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((SSRI/SNRI Poisoning &amp; Serotonin Syndrome))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Agents</div>
+<div class="mm-node mm-l3">– SSRIs (Fluoxetine, Sertraline, Citalopram)</div>
+<div class="mm-node mm-l3">– SNRIs (Venlafaxine, Duloxetine)</div>
+<div class="mm-node mm-l3">– MAOIs, Tramadol, Linezolid, Fentanyl</div>
+<div class="mm-node mm-l2">Serotonin Syndrome</div>
+<div class="mm-node mm-l3">– Hunter Criteria (Clonus-based)</div>
+<div class="mm-node mm-l3">– Triad: Neuromuscular + Autonomic + Mental</div>
+<div class="mm-node mm-l3">– Onset: Hours</div>
+<div class="mm-node mm-l2">DDx</div>
+<div class="mm-node mm-l3">– NMS (Days, Rigidity, No Clonus)</div>
+<div class="mm-node mm-l3">– Sympathomimetic (No Clonus)</div>
+<div class="mm-node mm-l3">– Anticholinergic (Dry)</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Stop Serotonergics</div>
+<div class="mm-node mm-l3">– Benzos (1st Line)</div>
+<div class="mm-node mm-l3">– Cyproheptadine 12mg PO</div>
+<div class="mm-node mm-l3">– Cooling &gt;41°C</div>
+<div class="mm-node mm-l3">– Paralysis if Refractory</div>
+<div class="mm-node mm-l2">High Risk Combinations</div>
+<div class="mm-node mm-l3">– SSRI + MAOI (14d washout)</div>
+<div class="mm-node mm-l3">– SSRI + Tramadol/Linezolid/Fentanyl</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">On Serotonergic + Clonus/Hyperreflexia/\nAgitation/Hyperthermia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Serotonin Syndrome\nHunter Criteria</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">STOP All Serotonergic Drugs\nABCDE</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Benzodiazepines\nLorazepam 2-4mg IV q5-10min</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Temp &gt; 41°C?</div>
+<div class="fc-node" data-id="G">Cyproheptadine 12mg PO/NG\n2mg q1h x6, then 8mg q6h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Aggressive Cooling\nEvaporative, Ice, Cold Fluids\nParalyze + Ventilate if Refractory</div>
+<div class="fc-node" data-id="H">Monitor: Clonus Resolution\nTemp, HR, BP, CK, Renal</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Improving?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Continue Supportive\nObserve 24h Post-Resolution</div>
+<div class="fc-node" data-id="K">Paralyze + Ventilate\nICU</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Hunter Criteria flowchart</li><li>Serotonin vs NMS comparison table</li><li>Cyproheptadine dosing card</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Serotonin syndrome recognition (EM:RAP, Toxicology)</li><li>Hunter Criteria demonstration</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Hunter Criteria</b>: clonus-based (spontaneous/inducible/ocular + agitation/diaphoresis)</li><li><b>Triad</b>: neuromuscular (clonus, hyperreflexia), autonomic (tachy, HTN, hyperthermia, diaphoresis), mental (agitation)</li><li><b>Onset</b>: HOURS (vs NMS days)</li><li><b>Cyproheptadine</b>: 12mg PO → 2mg q1h ×6 → 8mg q6h</li><li><b>Benzos 1st line</b> (lorazepam)</li><li><b>Cooling &gt; 41°C</b> (NOT dantrolene)</li><li><b>High-risk combos</b>: SSRI+MAOI (14d), SSRI+tramadol/linezolid/fentanyl</li><li><b>Citalopram</b>: QT prolongation</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>Recite Hunter Criteria (5 criteria)</li><li>State cyproheptadine dosing</li><li>List 3 key differences from NMS</li><li>Name high-risk combinations</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Hunter Criteria (clonus-based)</li><li>Clonus = hallmark (vs NMS rigidity)</li><li>Onset hours vs days</li><li>Cyproheptadine 12mg PO protocol</li><li>Benzos first-line</li><li>Cooling &gt; 41°C, NO dantrolene</li><li>SSRI+MAOI 14d washout</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Cyproheptadine 2mg q1h ×6 then 8mg q6h</li><li>Chlorpromazine alternative (hypotension risk)</li><li>Venlafaxine seizure/cardiac risk</li><li>Citalopram QT &gt; 40mg</li><li>Paralysis for refractory cases</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Mirtazapine serotonergic</li><li>Buspirone, triptans, ondansetron serotonergic</li><li>Serotonin syndrome incidence</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition + pathophysiology (5-HT excess)</li><li>Hunter Criteria (detail all 5)</li><li>Clinical triad</li><li>DDx table (Serotonin vs NMS vs Sympathomimetic vs Anticholinergic)</li><li>Management: stop drugs → benzos → cyproheptadine → cooling → paralysis</li><li>High-risk combinations</li><li>Prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Hunter Criteria box</li><li>Serotonin vs NMS table</li><li>Cyproheptadine protocol</li><li>High-risk combos list</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Serotonin syndrome: Hunter Criteria = clonus-based"</li><li>"Clonus = serotonin; Rigidity = NMS"</li><li>"Onset: serotonin = hours, NMS = days"</li><li>"Cyproheptadine: 12mg PO, 2mg q1h×6, 8mg q6h"</li><li>"Benzos 1st line for agitation/clonus"</li><li>"NO dantrolene in serotonin syndrome"</li><li>"SSRI+MAOI = 14d washout"</li><li>"Citalopram &gt; 40mg = QT prolongation"</li><li>"Aggressive cooling &gt; 41°C"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Patient on sertraline started linezolid → confusion, clonus, hyperthermia → serotonin syndrome</li><li>Citalopram overdose → check ECG for QT</li><li>MAOI + SSRI → hypertensive crisis + serotonin syndrome</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Hunter: Clonus (spont/induc/ocul) + agitation/diaph</li><li>Clonus=Serotonin, Rigidity=NMS</li><li>Onset: Hrs vs Days</li><li>Cypro: 12mg PO → 2mg q1h×6 → 8mg q6h</li><li>Benzos 1st line</li><li>Cooling &gt;41°C, NO Dantrolene</li><li>SSRI+MAOI 14d</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Serotonin syndrome = 5-HT excess → Hunter Criteria (clonus-based). Triad: neuromuscular (clonus, hyperreflexia), autonomic (tachy, HTN, hyperthermia, diaphoresis), mental (agitation). <b>Cyproheptadine 12mg PO</b> (2mg q1h×6 → 8mg q6h). <b>Benzos 1st line</b>. <b>Aggressive cooling &gt; 41°C (NO dantrolene)</b>. Onset hours vs NMS days. High-risk: SSRI+MAOI (14d), SSRI+tramadol/linezolid/fentanyl. Citalopram QT prolongation.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Question 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Question 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Question 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Question 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Question 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Question 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Question 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Question 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Question 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Question 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Scenario 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Scenario 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Scenario 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Scenario 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Scenario 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Scenario 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Scenario 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Scenario 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Scenario 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Scenario 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Flashcard 1 question</li></ul>
+<p>A: Flashcard 1 answer</p>
+<ul><li>Q: Flashcard 2 question</li></ul>
+<p>A: Flashcard 2 answer</p>
+<ul><li>Q: Flashcard 3 question</li></ul>
+<p>A: Flashcard 3 answer</p>
+<ul><li>Q: Flashcard 4 question</li></ul>
+<p>A: Flashcard 4 answer</p>
+<ul><li>Q: Flashcard 5 question</li></ul>
+<p>A: Flashcard 5 answer</p>
+<ul><li>Q: Flashcard 6 question</li></ul>
+<p>A: Flashcard 6 answer</p>
+<ul><li>Q: Flashcard 7 question</li></ul>
+<p>A: Flashcard 7 answer</p>
+<ul><li>Q: Flashcard 8 question</li></ul>
+<p>A: Flashcard 8 answer</p>
+<ul><li>Q: Flashcard 9 question</li></ul>
+<p>A: Flashcard 9 answer</p>
+<ul><li>Q: Flashcard 10 question</li></ul>
+<p>A: Flashcard 10 answer</p>
+<ul><li>Q: Flashcard 11 question</li></ul>
+<p>A: Flashcard 11 answer</p>
+<ul><li>Q: Flashcard 12 question</li></ul>
+<p>A: Flashcard 12 answer</p>
+<ul><li>Q: Flashcard 13 question</li></ul>
+<p>A: Flashcard 13 answer</p>
+<ul><li>Q: Flashcard 14 question</li></ul>
+<p>A: Flashcard 14 answer</p>
+<ul><li>Q: Flashcard 15 question</li></ul>
+<p>A: Flashcard 15 answer</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · SSRI-SNRI Poisoning and Serotonin Syndrome · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

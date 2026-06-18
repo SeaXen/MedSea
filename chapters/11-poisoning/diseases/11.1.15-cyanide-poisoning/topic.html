@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cyanide Poisoning — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Cyanide Poisoning</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognize cyanide poisoning (metabolic acidosis, high venous O₂, bitter almond smell)</li><li>Apply hydroxocobalamin protocol (preferred)</li><li>Apply nitrite/thiosulfate protocol (if hydroxocobalamin unavailable)</li><li>Differentiate from CO poisoning</li><li>Manage fire victim with CO + CN co-exposure</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Cyanide poisoning = <b>histotoxic hypoxia</b> from cyanide (CN⁻) binding to ferric iron (Fe³⁺) in <b>cytochrome c oxidase (Complex IV)</b> → blocks mitochondrial electron transport chain → <b>cells cannot utilize oxygen</b> despite normal delivery.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Mechanism</b>: CN⁻ + Fe³⁺ (cytochrome a₃) → <b>stable complex</b> → <b>arrests oxidative phosphorylation</b> → ATP depletion → anaerobic metabolism → <b>lactic acidosis</b></li><li><b>Venous blood</b>: <b>bright red / high O₂ saturation</b> (O₂ not extracted by tissues)</li><li><b>Sources</b>:</li><li><b>Fire smoke</b> (polyurethane, wool, silk, nylon combustion) — <b>most common</b></li><li><b>Industrial</b>: electroplating, metal cleaning, gold mining</li><li><b>Ingestion</b>: sodium/potassium cyanide salts, amygdalin (apricot pits, bitter almonds)</li><li><b>Iatrogenic</b>: nitroprusside infusion (prolonged/high dose) → thiocyanate toxicity</li><li><b>Detoxification</b>: <b>rhodanese</b> (mitochondrial enzyme) + <b>thiosulfate</b> → <b>thiocyanate</b> (renally excreted, less toxic)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Rapid onset</b> (seconds-minutes inhalation; minutes ingestion)</li><li><b>Severe metabolic acidosis</b> (pH often &lt; 7.0, lactate &gt; 10-15 mmol/L)</li><li><b>High venous O₂</b> (venous pO₂ &gt; arterial pO₂, venous blood bright red)</li><li><b>CNS</b>: headache, confusion, seizures, coma, fixed dilated pupils</li><li><b>Cardiac</b>: bradycardia, hypotension, arrhythmias, cardiac arrest</li><li><b>Respiratory</b>: tachypnea → apnea</li><li><b>Bitter almond smell</b> (only ~40% population can detect — <b>absence ≠ excludes</b>)</li><li><b>Cherry-red skin</b> (like CO, but rare)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Cyanide</th><th>Carbon Monoxide</th><th>Hydrogen Sulfide</th></tr><tr><td>---------</td><td>---------</td><td>-----------------</td><td>------------------</td></tr><tr><td>**Mechanism**</td><td>Cytochrome oxidase inhibition</td><td>COHb + cytochrome inhibition</td><td>Cytochrome oxidase inhibition</td></tr><tr><td>**Venous O₂**</td><td>**High** (bright red)</td><td>Normal/low</td><td>High</td></tr><tr><td>**Lactate**</td><td>**Very high** (> 10)</td><td>High</td><td>High</td></tr><tr><td>**Smell**</td><td>Bitter almond (40%)</td><td>None</td><td>**Rotten egg**</td></tr><tr><td>**COHb**</td><td>Normal</td><td>**Elevated**</td><td>Normal</td></tr><tr><td>**Antidote**</td><td>Hydroxocobalamin / Nitrite+Thiosulfate</td><td>100% O₂ ± HBO</td><td>Nitrites / Hydroxocobalamin</td></tr><tr><td>**Fire victim**</td><td>**Common co-exposure**</td><td>**Common**</td><td>Rare</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ABG/VBG</b> — <b>severe metabolic acidosis</b>, <b>venous pO₂ high</b> (venous &gt; arterial), <b>lactate very high</b></li><li><b>Lactate</b> — <b>&gt; 10 mmol/L = highly suggestive</b> (specificity &gt; 90% for CN in fire victims)</li><li><b>COHb</b> — <b>elevated if fire victim</b> (co-exposure)</li><li><b>Cyanide level</b> — not routinely available acutely (send but don't wait)</li><li><b>Thiocyanate</b> — nitroprusside toxicity</li><li><b>ECG</b> — arrhythmias, ischemia</li><li><b>CXR</b> — pulmonary edema (fire)</li><li><b>Paracetamol level</b> (always)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Immediate: 100% Oxygen (NRB) — **Always First**</div>
+<ul><li>High-flow O₂ via NRB — <b>do not delay for antidote</b></li><li><b>Mechanism</b>: competitive displacement of CN from cytochrome oxidase (weak but helps)</li></ul>
+<div class="sub-h">2. Hydroxocobalamin (Cyanokit) — **PREFERRED ANTIDOTE**</div>
+<ul><li><b>Mechanism</b>: <b>directly binds CN⁻</b> → <b>cyanocobalamin (vitamin B12)</b> → renally excreted</li><li><b>Dose</b>: <b>5 g IV</b> (one 5g vial = Cyanokit) over <b>15 min</b> (in 200 mL NS/D5W)</li><li><b>Repeat</b>: second 5g vial if inadequate response (max 10g)</li><li><b>Advantages</b>: <b>no methemoglobinemia</b> (safe in CO co-exposure/fire victims), no hypotension, single agent</li><li><b>Adverse</b>: <b>red skin/urine</b> (harmless, interferes with colorimetric labs), rash, hypertension (transient)</li><li><b>Lab interference</b>: falsely ↑ bilirubin, creatinine, glucose, lactate (colorimetric) — <b>use non-colorimetric methods if critical</b></li></ul>
+<div class="sub-h">3. Nitrite + Thiosulfate (Traditional) — **IF Hydroxocobalamin UNAVAILABLE**</div>
+<ul><li><b>Sodium nitrite</b> 300 mg (10 mL of 3%) IV over 5-10 min → <b>induces methemoglobinemia</b> (MetHb 10-20%) → metHb binds CN⁻ → cyanomethemoglobin</li><li><b>Sodium thiosulfate</b> 12.5 g (50 mL of 25%) IV over 10-20 min → <b>sulfur donor for rhodanese</b> → thiocyanate</li><li><b>CONTRAINDICATED in fire victims with CO poisoning</b> — <b>MetHb + COHb = worse hypoxia</b></li><li><b>Contraindicated</b>: anemia, cardiovascular disease, G6PD deficiency</li><li><b>Monitor</b>: MetHb level (target 10-20%), BP, O₂ saturation</li></ul>
+<div class="sub-h">4. Dicobalt Edetate (Kelocyanor) — **UK Historical, Rarely Used Now**</div>
+<ul><li>300 mg IV — cobalt binds CN; <b>pro-hypertensive, convulsive risk</b> — <b>avoid if hydroxocobalamin available</b></li></ul>
+<div class="sub-h">5. Nitroprusside Toxicity</div>
+<ul><li><b>Prolonged infusion</b> &gt; 2 mcg/kg/min or &gt; 24h or renal failure → <b>thiocyanate accumulation</b></li><li><b>Features</b>: metabolic acidosis, confusion, seizures</li><li><b>Treatment</b>: <b>stop nitroprusside</b>, <b>hydroxocobalamin</b> (binds CN), <b>dialysis</b> (thiocyanate dialyzable)</li></ul>
+<div class="sub-h">6. Supportive Care</div>
+<ul><li><b>Intubation/ventilation</b> (apnea common)</li><li><b>Vasopressors</b> (norepinephrine) for hypotension</li><li><b>Seizures</b>: benzodiazepines</li><li><b>Correct acidosis</b> (bicarbonate if pH &lt; 7.2)</li><li><b>Rhythm management</b> (standard ACLS)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Neurological sequelae (parkinsonism, cognitive deficits, cerebellar)</li><li>Myocardial injury</li><li>Rhabdomyolysis</li><li>Death (rapid if untreated)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Excellent with early hydroxocobalamin</b></li><li>Mortality high if delayed (&gt; 50% without antidote)</li><li><b>Lactate &gt; 10-15 mmol/L</b> = poor prognosis</li><li>Neurological sequelae in survivors (basal ganglia, hippocampus)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Histotoxic hypoxia</b> — cytochrome c oxidase inhibition</li><li><b>Hallmark labs</b>: <b>high anion gap metabolic acidosis + HIGH VENOUS O₂</b> (venous blood bright red)</li><li><b>Lactate &gt; 10 mmol/L</b> = highly suggestive in fire victim</li><li><b>Hydroxocobalamin 5g IV</b> = preferred (safe in CO co-exposure, no metHb)</li><li><b>Nitrites CONTRAINDICATED in fire victims</b> (COHb + MetHb = worse hypoxia)</li><li><b>Fire victims: assume CO + CN co-exposure</b> — give 100% O₂ + hydroxocobalamin</li><li><b>Bitter almond smell</b> — only ~40% detect, absence ≠ excludes</li><li><b>Nitroprusside toxicity</b> → thiocyanate (hydroxocobalamin + dialysis)</li><li><b>Red urine/skin</b> with hydroxocobalamin = harmless, interferes with colorimetric labs</li><li><b>Venous pO₂ &gt; arterial pO₂</b> = diagnostic clue</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Mechanism of cyanide toxicity</li><li>Hydroxocobalamin dose and advantages</li><li>Why nitrites contraindicated in fire victims?</li><li>Lab findings (lactate, venous O₂)</li><li>Fire victim management (CO + CN)</li><li>Nitroprusside toxicity management</li><li>Differential: CN vs CO vs H₂S</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Nitrites in fire victims</b> → <b>CONTRAINDICATED</b> (MetHb + COHb = fatal hypoxia)</li><li><b>Hydroxocobalamin red urine</b> → not hemolysis, interferes with colorimetric labs</li><li><b>COHb elevated ≠ only CO</b> — fire victims have both</li><li><b>Lactate &gt; 10</b> = CN until proven otherwise in smoke inhalation</li><li><b>Venous blood bright red</b> = CN (or CO), not arterial</li><li><b>Cherry-red skin</b> = rare in both CN and CO</li><li><b>Absence of almond smell ≠ no cyanide</b></li><li><b>Hydroxocobalamin = vitamin B12 precursor</b> (cyanocobalamin after binding CN)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CN MECHANISM</b>: <b>C</b>yanide → <b>C</b>ytochrome <b>O</b>xidase <b>I</b>nhibition → <b>H</b>istotoxic <b>H</b>ypoxia</li><li><b>LABS</b>: <b>H</b>igh <b>A</b>nion <b>G</b>ap + <b>H</b>igh <b>V</b>enous <b>O</b>₂ + <b>L</b>actate <b>&gt; 10</b></li><li><b>HYDROXOCOBALAMIN</b>: <b>5g IV</b>, <b>NO MetHb</b>, <b>SAFE in CO</b>, <b>RED urine/skin</b></li><li><b>NITRITES</b>: <b>MetHb</b> → binds CN → <b>CONTRAINDICATED in CO/Fire</b></li><li><b>FIRE VICTIM</b>: <b>CO + CN</b> → <b>100% O₂ + Hydroxocobalamin</b> (NO nitrites)</li><li><b>NITROPRESSIDE</b>: <b>Thiocyanate</b> → <b>Hydroxocobalamin + Dialysis</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Cyanide Poisoning))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Mechanism</div>
+<div class="mm-node mm-l3">– Cytochrome Oxidase Inhibition</div>
+<div class="mm-node mm-l3">– Histotoxic Hypoxia</div>
+<div class="mm-node mm-l3">– ATP Depletion → Lactic Acidosis</div>
+<div class="mm-node mm-l2">Labs</div>
+<div class="mm-node mm-l3">– High Anion Gap Acidosis</div>
+<div class="mm-node mm-l3">– High Venous O2 (Bright Red)</div>
+<div class="mm-node mm-l3">– Lactate &gt; 10</div>
+<div class="mm-node mm-l3">– Normal COHb (unless Fire)</div>
+<div class="mm-node mm-l2">Antidotes</div>
+<div class="mm-node mm-l3">– Hydroxocobalamin 5g IV (Preferred)</div>
+<div class="mm-node mm-l3">– Nitrite + Thiosulfate (If No Hydroxocobalamin)</div>
+<div class="mm-node mm-l3">– NO Nitrites in Fire/CO</div>
+<div class="mm-node mm-l2">Fire Victim</div>
+<div class="mm-node mm-l3">– CO + CN Co-exposure</div>
+<div class="mm-node mm-l3">– 100% O2 + Hydroxocobalamin</div>
+<div class="mm-node mm-l3">– NO Nitrites</div>
+<div class="mm-node mm-l2">Special</div>
+<div class="mm-node mm-l3">– Nitroprusside → Thiocyanate</div>
+<div class="mm-node mm-l3">– Bitter Almond Smell (40%)</div>
+<div class="mm-node mm-l3">– Hydroxocobalamin Red Urine</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected CN: Acidosis + High Venous O2 + Lactate&gt;10\nFire Victim / Industrial / Ingestion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Immediate 100% O2 NRB\nIntubate if Needed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Hydroxocobalamin Available?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Hydroxocobalamin 5g IV\nOver 15 min\nRepeat 5g if Needed\nMax 10g</div>
+<div class="fc-node" data-id="E">Fire Victim / CO Exposure?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Supportive: Vasopressors,\nBicarbonate pH&lt;7.2,\nSeizure Control,\nMonitor Labs (Colorimetric Interference)</div>
+<div class="fc-node" data-id="F">NO NITRITES\nSupportive Only\nConsider Dicobalt Edetate if Available</div>
+<div class="fc-node" data-id="G">Nitrite 300mg IV\nThiosulfate 12.5g IV\nMonitor MetHb 10-20%</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>CN mechanism diagram (cytochrome oxidase)</li><li>Hydroxocobalamin vs nitrite/thiosulfate comparison</li><li>Fire victim algorithm (CO + CN)</li><li>Lactate/venous O₂ interpretation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Cyanide antidote kit (Cyanokit) demonstration</li><li>Fire victim toxicology (CO + CN)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Mechanism</b>: CN binds cytochrome c oxidase (Fe³⁺) → histotoxic hypoxia</li><li><b>Labs</b>: high anion gap acidosis + <b>high venous O₂</b> (bright red) + <b>lactate &gt; 10</b></li><li><b>Hydroxocobalamin 5g IV</b> = preferred (no metHb, safe in CO)</li><li><b>Nitrites CONTRAINDICATED in fire/CO</b> (MetHb + COHb = worse)</li><li><b>Fire victim</b>: assume CO + CN → 100% O₂ + hydroxocobalamin</li><li><b>Bitter almond smell</b> = 40% detect</li><li><b>Nitroprusside toxicity</b> → thiocyanate → hydroxocobalamin + dialysis</li><li><b>Hydroxocobalamin</b>: red urine/skin (harmless, interferes with colorimetric labs)</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State hydroxocobalamin dose and key advantage</li><li>Explain why nitrites are contraindicated in fire victims</li><li>List 3 hallmark lab findings</li><li>Describe fire victim management algorithm</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Mechanism: cytochrome oxidase inhibition → histotoxic hypoxia</li><li>Labs: high anion gap + high venous O₂ + lactate &gt; 10</li><li>Hydroxocobalamin 5g IV = preferred</li><li>Nitrites contraindicated in fire/CO</li><li>Fire victim = CO + CN → hydroxocobalamin</li><li>Bitter almond smell ≤ 40% detection</li><li>Nitroprusside → thiocyanate</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Hydroxocobalamin red urine/skin (lab interference)</li><li>Venous pO₂ &gt; arterial pO₂</li><li>Dicobalt edetate (historical)</li><li>Neurological sequelae (basal ganglia)</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Rhodanese/thiosulfate pathway details</li><li>Cobalt-based antidotes</li><li>Specific industrial sources</li><li>Cyanide generation from acrylonitrile</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Mechanism (cytochrome oxidase, histotoxic hypoxia)</li><li>Clinical features</li><li>Labs (hallmark triad)</li><li>Antidotes: hydroxocobalamin (preferred) vs nitrite/thiosulfate (contraindicated in CO)</li><li>Fire victim algorithm</li><li>Nitroprusside toxicity</li><li>Supportive care</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Hallmark labs box</li><li>Hydroxocobalamin vs nitrite comparison</li><li>Fire victim algorithm</li><li>Nitroprusside box</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"CN: cytochrome oxidase inhibition → histotoxic hypoxia"</li><li>"Labs: high anion gap + HIGH VENOUS O₂ + lactate &gt; 10"</li><li>"Hydroxocobalamin 5g IV: preferred, NO metHb, SAFE in CO"</li><li>"Nitrites: CONTRAINDICATED in fire/CO (MetHb + COHb = fatal)"</li><li>"Fire victim: 100% O₂ + hydroxocobalamin (assume CO + CN)"</li><li>"Lactate &gt; 10 in smoke inhalation = CN until proven otherwise"</li><li>"Venous blood bright red = CN (or CO)"</li><li>"Bitter almond smell: only 40% detect"</li><li>"Nitroprusside toxicity: thiocyanate → hydroxocobalamin + dialysis"</li><li>"Hydroxocobalamin red urine: harmless, interferes with colorimetric labs"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Smoke inhalation patient: lactate 14, COHb 20% → hydroxocobalamin + 100% O₂ + HBO for CO</li><li>Nitroprusside infusion 48h, renal failure, acidosis → stop nitroprusside, hydroxocobalamin, dialysis</li><li>Industrial worker sudden collapse, bitter almond smell → hydroxocobalamin immediately</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>CN: Cytochrome oxidase inhibition</li><li>Labs: Anion gap + Venous O2 high + Lactate &gt;10</li><li>Hydroxocobalamin: 5g IV, No MetHb, Safe in CO</li><li>Nitrites: Contraindicated in Fire/CO</li><li>Fire: CO + CN → 100% O2 + Hydroxocobalamin</li><li>Lactate &gt;10 = CN</li><li>Nitroprusside: Thiocyanate</li><li>Red urine = Hydroxocobalamin</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Cyanide poisoning = cytochrome c oxidase inhibition → histotoxic hypoxia. Hallmark labs: high anion gap metabolic acidosis + <b>high venous O₂</b> + <b>lactate &gt; 10</b>. <b>Hydroxocobalamin 5g IV</b> = preferred antidote (no metHb, safe in CO). <b>Nitrites CONTRAINDICATED in fire/CO</b> (metHb + COHb = fatal hypoxia). Fire victims: assume CO + CN → 100% O₂ + hydroxocobalamin. Bitter almond smell ≤ 40% detect. Nitroprusside toxicity → thiocyanate → hydroxocobalamin + dialysis.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Cyanide mechanism of toxicity?</li></ol>
+<p>A. Methemoglobin formation B. Inhibits cytochrome c oxidase (Complex IV) → cellular hypoxia C. Hemoglobin binding D. Pulmonary edema <b>Answer: B</b> <i>Explanation: CN⁻ binds ferric iron (Fe³⁺) in cytochrome c oxidase (Complex IV) → blocks electron transport → cellular hypoxia (histotoxic hypoxia). High O₂ extraction failure → venous blood bright red.</i></p>
+<ol><li>Cyanide classic presentation?</li></ol>
+<p>A. Cherry red skin, metabolic acidosis, coma B. Cyanosis, respiratory alkalosis C. Mydriasis, tachycardia D. Only seizures <b>Answer: A</b> <i>Explanation: CN⁻: 'cherry red' skin (rare, post-mortem), severe metabolic acidosis (lactic), coma, seizures, cardiovascular collapse. Venous blood bright red (high O₂ content, not extracted). Bitter almond odor (genetic).</i></p>
+<ol><li>Hydroxocobalamin dose for cyanide?</li></ol>
+<p>A. 1 g IV B. 5 g IV (2.5g/100mL over 15 min) C. 10 g IV D. 2.5 g IV <b>Answer: B</b> <i>Explanation: Hydroxocobalamin 5g IV (2.5g/100mL over 15 min). Binds CN⁻ → cyanocobalamin (excreted renally). Preferred antidote (no metHb). Skin/r urine turns red. Interferes with lab assays (color).</i></p>
+<ol><li>Nitrite + thiosulfate alternative - mechanism?</li></ol>
+<p>A. Nitrite forms metHb → binds CN⁻; thiosulfate → rhodanese → thiocyanate (renally excreted) B. Both bind CN⁻ directly C. Nitrite displaces CN⁻ from cytochrome D. Thiosulfate reactivates cytochrome <b>Answer: A</b> <i>Explanation: Nitrites (amyl/sodium): oxidize Hb → metHb → binds CN⁻ (forming cyanmetHb). Thiosulfate: sulfur donor for rhodanese → converts CN⁻ → thiocyanate (renal excretion). Risk: metHbemia, hypotension.</i></p>
+<ol><li>Cyanide + carbon monoxide co-exposure?</li></ol>
+<p>A. Treat CN⁻ only B. House fires: both common. Hydroxocobalamin for CN⁻ + 100% O₂ for CO. Avoid nitrites (worsen O₂ delivery) C. Nitrites help both D. HBO contraindicated <b>Answer: B</b> <i>Explanation: House fires: CO + CN⁻ (plastics, wool, silk). Hydroxocobalamin preferred for CN⁻ (no metHb). 100% O₂ for CO. Nitrites worsen O₂ delivery (metHb + COHb). HBO for CO if indicated.</i></p>
+<ol><li>Cyanide - lactic acidosis mechanism?</li></ol>
+<p>A. Anaerobic metabolism from cellular hypoxia (cytochrome oxidase inhibition) B. Seizures only C. Liver failure D. Renal failure <b>Answer: A</b> <i>Explanation: CN⁻ blocks cytochrome c oxidase → cells can't use O₂ → anaerobic metabolism → lactic acidosis. Venous O₂ high (bright red blood). Lactate &gt; 10 = strong CN⁻ indicator.</i></p>
+<ol><li>Hydroxocobalamin adverse effects?</li></ol>
+<p>A. Methemoglobinemia B. Red skin/urine, hypertension, interference with lab assays (colorimetric) C. Seizures D. Hypotension <b>Answer: B</b> <i>Explanation: Hydroxocobalamin: skin/urine turns red (transient), transient hypertension, interferes with colorimetric lab assays (creatinine, bilirubin, glucose, etc.). No metHb.</i></p>
+<ol><li>Cyanide - amyl nitrite pearls?</li></ol>
+<p>A. Oral B. Inhalation (break pearl, inhale vapor q1-2min) C. IV D. IM <b>Answer: B</b> <i>Explanation: Amyl nitrite: break pearl, inhale vapor for 30 sec q1-2min. Pre-hospital/bridging to IV nitrites. MetHb formation → binds CN⁻.</i></p>
+<ol><li>Cyanide - thiosulfate dose?</li></ol>
+<p>A. 1 g IV B. 12.5 g (50 mL of 25%) IV over 10 min C. 100 mg IV D. 50 mg/kg <b>Answer: B</b> <i>Explanation: Sodium thiosulfate: 12.5 g (50 mL of 25%) IV over 10 min. Can repeat half dose. Sulfur donor for rhodanese. Give AFTER nitrites (if using nitrite/thiosulfate regimen).</i></p>
+<ol><li>Cyanide - hydroxycobalamin vs nitrites in smoke inhalation?</li></ol>
+<p>A. Nitrites preferred B. Hydroxocobalamin preferred (no metHb, COHb already impairing O₂ delivery) C. Equal D. Nitrites only <b>Answer: B</b> <i>Explanation: Smoke inhalation = CO + CN⁻. Hydroxocobalamin preferred: no metHb (nitrites worsen O₂ delivery with COHb). 100% O₂ for CO. HBO if CO criteria met.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>House fire victim. Unconscious, soot in airway, lactate 14, venous blood bright red. COHb 30%. Management?</li></ol>
+<p>A. Hydroxocobalamin 5g IV + 100% O₂ NRB + arrange HBO B. Nitrites + thiosulfate + 100% O₂ C. 100% O₂ only D. HBO only <b>Answer: A</b> <i>Explanation: Smoke inhalation: CO + CN⁻. Lactate &gt; 10 = CN⁻. Hydroxocobalamin 5g IV (no metHb). 100% O₂ for CO. HBO for CO (COHb &gt;25%, LOC). Avoid nitrites (metHb + COHb = worse O₂ delivery).</i></p>
+<ol><li>Industrial worker, sodium cyanide spill. Collapse, seizures, metabolic acidosis. Hydroxocobalamin not available. Alternative?</li></ol>
+<p>A. Amyl nitrite pearls (inhale) → sodium nitrite 300mg IV → sodium thiosulfate 12.5g IV B. 100% O₂ only C. Methylene blue D. Naloxone <b>Answer: A</b> <i>Explanation: Nitrite/thiosulfate regimen: amyl nitrite inhale (bridge) → sodium nitrite 300mg IV (10mg/kg child) over 5-10min → sodium thiosulfate 12.5g IV. Monitor metHb (keep &lt;30%). Hydroxocobalamin preferred if available.</i></p>
+<ol><li>Cyanide poisoning - hydroxycobalamin given. Lab shows creatinine 300 (baseline 80). Why?</li></ol>
+<p>A. Acute kidney injury from CN⁻ B. Assay interference (red color) - falsely elevated creatinine C. Rhabdomyolysis D. Dehydration <b>Answer: B</b> <i>Explanation: Hydroxocobalamin turns plasma/urine red → interferes with COLORIMETRIC assays: creatinine, bilirubin, glucose, COHb, metHb, etc. Use non-colorimetric methods or interpret with caution.</i></p>
+<ol><li>CN⁻ poisoning - venous blood gas shows pO₂ 80 mmHg (high). Why?</li></ol>
+<p>A. Hyperventilation B. Cells can't extract O₂ (cytochrome oxidase blocked) → venous O₂ remains high C. Sampling error D. CO poisoning <b>Answer: B</b> <i>Explanation: CN⁻ blocks cytochrome c oxidase → cells can't utilize O₂ → venous blood retains high O₂ content → bright red, high venous pO₂. Classic finding.</i></p>
+<ol><li>Child finds cyanide salts, ingests. Rapid collapse. Antidote?</li></ol>
+<p>A. Hydroxocobalamin 5g IV (weight-based 70mg/kg max 5g) B. Nitrites only C. Thiosulfate only D. Supportive only <b>Answer: A</b> <i>Explanation: Hydroxocobalamin: pediatric dose 70 mg/kg IV (max 5g). Same for nitrite/thiosulfate (nitrite 10mg/kg, thiosulfate 400mg/kg). Rapid administration critical.</i></p>
+<ol><li>CN⁻ - metHb level after nitrites should be kept?</li></ol>
+<p>A. &lt; 10% B. &lt; 30% C. &lt; 50% D. No limit <b>Answer: B</b> <i>Explanation: Nitrites → metHb (binds CN⁻). Keep metHb &lt; 30% (monitor). Higher = impaired O₂ delivery. Sodium nitrite 300mg IV → metHb ~10-20%.</i></p>
+<ol><li>Hydroxocobalamin - blood pressure effect?</li></ol>
+<p>A. Hypotension B. Transient hypertension C. No effect D. Bradycardia <b>Answer: B</b> <i>Explanation: Hydroxocobalamin causes transient hypertension (mechanism unclear, possibly NO scavenging). Monitor BP. Resolves spontaneously.</i></p>
+<ol><li>Cyanide - rhodanese enzyme?</li></ol>
+<p>A. Converts CN⁻ to cyanocobalamin B. Converts CN⁻ + thiosulfate → thiocyanate (renal excretion) C. Reactivates cytochrome oxidase D. Binds CN⁻ in blood <b>Answer: B</b> <i>Explanation: Rhodanese (sulfurtransferase): uses thiosulfate as sulfur donor → converts CN⁻ → thiocyanate (SCN⁻) → renal excretion. Thiosulfate provides sulfur.</i></p>
+<ol><li>Cyanide - disposition after hydroxocobalamin?</li></ol>
+<p>A. Discharge if asymptomatic B. Observe 24h (rebound toxicity possible, monitor lactate, neurologic) C. 6h observation D. ICU only if intubated <b>Answer: B</b> <i>Explanation: Observe 24h: CN⁻ can redistribute, rebound toxicity. Monitor lactate, neurologic status, cardiac. Psych if DSH.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Cyanide mechanism?</li></ul>
+<p>A: Binds Fe³⁺ in cytochrome c oxidase (Complex IV) → blocks electron transport → cellular (histotoxic) hypoxia. Cells can't use O₂.</p>
+<ul><li>Q: CN⁻ classic findings?</li></ul>
+<p>A: Metabolic acidosis (lactic), coma, seizures, CV collapse. Venous blood BRIGHT RED (high O₂). Cherry red skin (rare, post-mortem). Bitter almond odor (genetic).</p>
+<ul><li>Q: Lactate &gt; 10 in smoke inhalation?</li></ul>
+<p>A: Strong indicator of CN⁻ poisoning (cellular hypoxia → anaerobic metabolism).</p>
+<ul><li>Q: Hydroxocobalamin?</li></ul>
+<p>A: 5g IV (2.5g/100mL over 15min). Binds CN⁻ → cyanocobalamin (renal excretion). Preferred: no metHb. Skin/urine red. Lab assay interference.</p>
+<ul><li>Q: Nitrite + thiosulfate?</li></ul>
+<p>A: Nitrite → metHb (binds CN⁻). Thiosulfate → rhodanese → thiocyanate (renal). Keep metHb &lt;30%. Hypotension risk.</p>
+<ul><li>Q: CN⁻ + CO co-exposure?</li></ul>
+<p>A: House fires: both. Hydroxocobalamin for CN⁻ (no metHb) + 100% O₂ for CO. Avoid nitrites (worsen O₂ delivery). HBO for CO if indicated.</p>
+<ul><li>Q: CN⁻ venous blood gas?</li></ul>
+<p>A: High venous pO₂ (cells can't extract O₂). Bright red venous blood. Normal/high pO₂ with severe acidosis.</p>
+<ul><li>Q: Hydroxocobalamin lab interference?</li></ul>
+<p>A: Red color interferes with COLORIMETRIC assays: creatinine, bilirubin, glucose, COHb, metHb, etc. Use non-colorimetric methods.</p>
+<ul><li>Q: Amyl nitrite pearls?</li></ul>
+<p>A: Inhalation: break pearl, inhale vapor 30 sec q1-2min. Bridge to IV nitrites. MetHb formation.</p>
+<ul><li>Q: Thiosulfate dose?</li></ul>
+<p>A: 12.5g (50mL 25%) IV over 10min. Sulfur donor for rhodanese. Give after nitrites (if using that regimen).</p>
+<ul><li>Q: Pediatric CN⁻ antidote?</li></ul>
+<p>A: Hydroxocobalamin 70mg/kg IV (max 5g). Nitrite 10mg/kg. Thiosulfate 400mg/kg.</p>
+<ul><li>Q: MetHb target with nitrites?</li></ul>
+<p>A: &lt; 30%. Monitor. Sodium nitrite 300mg IV → ~10-20% metHb.</p>
+<ul><li>Q: Hydroxocobalamin BP effect?</li></ul>
+<p>A: Transient hypertension. Monitor. Resolves spontaneously.</p>
+<ul><li>Q: Rhodanese?</li></ul>
+<p>A: Sulfurtransferase: CN⁻ + thiosulfate → thiocyanate (SCN⁻) → renal excretion. Thiosulfate = sulfur donor.</p>
+<ul><li>Q: CN⁻ disposition?</li></ul>
+<p>A: Observe 24h (rebound toxicity possible). Monitor lactate, neuro, cardiac. Psych if DSH.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> - CN⁻ binds ferric iron (Fe³⁺) in cytochrome c oxidase (Complex IV) → blocks electron transport → cellular hypoxia (histotoxic hypoxia). High O₂ extraction failure → venous blood bright red.</li><li><b>A</b> - CN⁻: 'cherry red' skin (rare, post-mortem), severe metabolic acidosis (lactic), coma, seizures, cardiovascular collapse. Venous blood bright red (high O₂ content, not extracted). Bitter almond odor (genetic).</li><li><b>B</b> - Hydroxocobalamin 5g IV (2.5g/100mL over 15 min). Binds CN⁻ → cyanocobalamin (excreted renally). Preferred antidote (no metHb). Skin/r urine turns red. Interferes with lab assays (color).</li><li><b>A</b> - Nitrites (amyl/sodium): oxidize Hb → metHb → binds CN⁻ (forming cyanmetHb). Thiosulfate: sulfur donor for rhodanese → converts CN⁻ → thiocyanate (renal excretion). Risk: metHbemia, hypotension.</li><li><b>B</b> - House fires: CO + CN⁻ (plastics, wool, silk). Hydroxocobalamin preferred for CN⁻ (no metHb). 100% O₂ for CO. Nitrites worsen O₂ delivery (metHb + COHb). HBO for CO if indicated.</li><li><b>A</b> - CN⁻ blocks cytochrome c oxidase → cells can't use O₂ → anaerobic metabolism → lactic acidosis. Venous O₂ high (bright red blood). Lactate &gt; 10 = strong CN⁻ indicator.</li><li><b>B</b> - Hydroxocobalamin: skin/urine turns red (transient), transient hypertension, interferes with colorimetric lab assays (creatinine, bilirubin, glucose, etc.). No metHb.</li><li><b>B</b> - Amyl nitrite: break pearl, inhale vapor for 30 sec q1-2min. Pre-hospital/bridging to IV nitrites. MetHb formation → binds CN⁻.</li><li><b>B</b> - Sodium thiosulfate: 12.5 g (50 mL of 25%) IV over 10 min. Can repeat half dose. Sulfur donor for rhodanese. Give AFTER nitrites (if using nitrite/thiosulfate regimen).</li><li><b>B</b> - Smoke inhalation = CO + CN⁻. Hydroxocobalamin preferred: no metHb (nitrites worsen O₂ delivery with COHb). 100% O₂ for CO. HBO if CO criteria met.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>A</b> - Smoke inhalation: CO + CN⁻. Lactate &gt; 10 = CN⁻. Hydroxocobalamin 5g IV (no metHb). 100% O₂ for CO. HBO for CO (COHb &gt;25%, LOC). Avoid nitrites (metHb + COHb = worse O₂ delivery).</li><li><b>A</b> - Nitrite/thiosulfate regimen: amyl nitrite inhale (bridge) → sodium nitrite 300mg IV (10mg/kg child) over 5-10min → sodium thiosulfate 12.5g IV. Monitor metHb (keep &lt;30%). Hydroxocobalamin preferred if available.</li><li><b>B</b> - Hydroxocobalamin turns plasma/urine red → interferes with COLORIMETRIC assays: creatinine, bilirubin, glucose, COHb, metHb, etc. Use non-colorimetric methods or interpret with caution.</li><li><b>B</b> - CN⁻ blocks cytochrome c oxidase → cells can't utilize O₂ → venous blood retains high O₂ content → bright red, high venous pO₂. Classic finding.</li><li><b>A</b> - Hydroxocobalamin: pediatric dose 70 mg/kg IV (max 5g). Same for nitrite/thiosulfate (nitrite 10mg/kg, thiosulfate 400mg/kg). Rapid administration critical.</li><li><b>B</b> - Nitrites → metHb (binds CN⁻). Keep metHb &lt; 30% (monitor). Higher = impaired O₂ delivery. Sodium nitrite 300mg IV → metHb ~10-20%.</li><li><b>B</b> - Hydroxocobalamin causes transient hypertension (mechanism unclear, possibly NO scavenging). Monitor BP. Resolves spontaneously.</li><li><b>B</b> - Rhodanese (sulfurtransferase): uses thiosulfate as sulfur donor → converts CN⁻ → thiocyanate (SCN⁻) → renal excretion. Thiosulfate provides sulfur.</li><li><b>B</b> - Observe 24h: CN⁻ can redistribute, rebound toxicity. Monitor lactate, neurologic status, cardiac. Psych if DSH.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cyanide Poisoning · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

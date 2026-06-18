@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Septic Shock — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Septic Shock</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Apply Sepsis-3 septic shock definition</li><li>Execute the Hour-1 Bundle and 3-hour/6-hour bundles</li><li>Titrate vasopressors and inotropes to haemodynamic targets</li><li>Apply fluid responsiveness concepts to avoid overload</li><li>Recognise and manage refractory septic shock</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition (Sepsis-3, 2016)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Septic shock</b> = Sepsis with:</p>
+<ol><li>Persisting hypotension requiring vasopressors to maintain <b>MAP ≥65 mmHg</b></li><li><b>Serum lactate &gt;2 mmol/L (18 mg/dL)</b></li></ol>
+<p><b>Despite adequate volume resuscitation</b> (30 mL/kg crystalloid)</p>
+<p><b>Mortality</b>: Hospital mortality ~40–50%</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Haemodynamic Phenotypes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Phenotype</th><th>Characteristics</th><th>Prevalence</th></tr><tr><td>-----------</td><td>-----------------</td><td>------------</td></tr><tr><td>**Hyperdynamic** (classic)</td><td>High CO, low SVR, warm peripheries</td><td>~70%</td></tr><tr><td>**Hypodynamic**</td><td>Low CO, low SVR (myocardial depression)</td><td>~30%</td></tr><tr><td>**Vasoplegic**</td><td>Refractory hypotension, very low SVR</td><td>Subset</td></tr></table>
+<p><b>Bedside echo</b> is essential to differentiate — guides inotrope vs vasopressor choice.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Hour-1 Bundle (Surviving Sepsis 2021)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Measure lactate</b> (repeat if &gt;2 mmol/L)</li><li><b>Blood cultures</b> before antibiotics (2 sets + line cultures if present)</li><li><b>Broad-spectrum antibiotics</b> within 1 hour</li><li><b>30 mL/kg crystalloid</b> for hypotension or lactate ≥4 mmol/L</li><li><b>Vasopressors</b> if hypotensive during/after fluid resuscitation (target MAP ≥65)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Vasopressor Strategy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Agent</th><th>Dose</th><th>Role</th><th>Key Points</th></tr><tr><td>-------</td><td>------</td><td>------</td><td>------------</td></tr><tr><td>**Noradrenaline**</td><td>0.01–2 µg/kg/min</td><td>**First-line**</td><td>α₁ > β₁; increases MAP, minimal CO effect</td></tr><tr><td>**Vasopressin**</td><td>0.01–0.04 U/min</td><td>**Add-on (2nd line)**</td><td>Non-catecholamine; spares noradrenaline; may improve renal perfusion</td></tr><tr><td>**Adrenaline**</td><td>0.01–1 µg/kg/min</td><td>**2nd/3rd line**</td><td>α + β₁ + β₂; increases CO but ↑ lactate, arrhythmias</td></tr><tr><td>**Angiotensin II**</td><td>2.5–80 ng/kg/min</td><td>**Refractory**</td><td>AT1 receptor; trials show MAP improvement</td></tr></table>
+<p><b>Titration</b>: Start noradrenaline <b>early</b> (even peripherally for short-term) — do not wait for central line.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Fluid Responsiveness in Septic Shock</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Only ~50% are fluid responders</li><li><b>Dynamic measures</b> &gt; static:</li><li><b>Passive Leg Raise (PLR)</b> + CO monitoring (gold standard)</li><li><b>SVV / PPV</b> (requires: sedated, ventilated, sinus rhythm, TV ≥8 mL/kg)</li><li><b>Mini-fluid challenge</b> (100 mL over 1 min)</li><li><b>Stop fluids</b> if no response → escalate vasopressors</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Inotrope Use (if myocardial depression)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Dobutamine</b> 2.5–20 µg/kg/min (β₁ &gt; β₂) — increases CO, may ↓ MAP (add noradrenaline)</li><li><b>Levosimendan</b> (Ca²⁺ sensitiser + PDE inhibitor) — alternative, longer half-life</li><li><b>Echo-guided</b>: LVEF &lt;30% or new wall motion abnormality + low CO</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Adjunctive Therapies</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Therapy</th><th>Indication</th><th>Evidence</th></tr><tr><td>---------</td><td>------------</td><td>----------</td></tr><tr><td>**Hydrocortisone** 200 mg/day IV</td><td>Vasopressor-dependent septic shock</td><td>↓ Vasopressor duration, ?mortality</td></tr><tr><td>**IVIG**</td><td>Consider in streptococcal/staphylococcal TSS</td><td>Low certainty</td></tr><tr><td>**Blood products**</td><td>Hb <70 (or <80 if ischaemia)</td><td>Restrictive strategy</td></tr><tr><td>**Renal replacement**</td><td>Standard AKI indications</td><td>No early benefit</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Source Control — Critical Timeline</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Source</th><th>Intervention</th><th>Target Time</th></tr><tr><td>--------</td><td>--------------</td><td>-------------</td></tr><tr><td>Infected line</td><td>Remove</td><td>Immediately</td></tr><tr><td>Abscess</td><td>Drain (percut/surgical)</td><td>≤6 hours</td></tr><tr><td>Cholangitis</td><td>ERCP</td><td>≤24 hours</td></tr><tr><td>Necrotising fasciitis</td><td>Debridement</td><td>**Immediate**</td></tr><tr><td>Perforated viscus</td><td>Surgery</td><td>**Immediate**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Refractory Septic Shock Definition</span>
+  </div>
+  <div class="sec-body">
+<ul><li>MAP &lt;65 mmHg despite <b>noradrenaline ≥0.5 µg/kg/min</b> (+ vasopressin)</li><li><b>Or</b> lactate &gt;4 mmol/L not clearing</li><li><b>Or</b> new organ failure despite support</li></ul>
+<p><b>Escalation</b>:</p>
+<ol><li>Add vasopressin 0.03 U/min</li><li>Consider adrenaline (if low CO)</li><li>Hydrocortisone 200 mg/day</li><li>Consider angiotensin II (if available)</li><li>ECMO (selected centres)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Red Flags</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Lactate not clearing (&gt;10–20% per 2h)</li><li>Rising noradrenaline dose &gt;1 µg/kg/min</li><li>New oliguria / anuria</li><li>Ischaemic limbs / gut (vasopressor toxicity)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Septic shock definition</b>: vasopressor + lactate &gt;2 AFTER 30 mL/kg fluid</li><li><b>Noradrenaline first-line</b> — start early, peripherally if needed</li><li><b>Vasopressin add-on</b> at noradrenaline ~0.25–0.5 µg/kg/min (spares catecholamines)</li><li><b>Fluid responsiveness</b> must be tested — avoid fluid overload</li><li><b>Source control</b> within 6h for drainable foci</li><li><b>Hydrocortisone</b> if vasopressor-dependent</li><li><b>Echo</b> to differentiate hyperdynamic vs hypodynamic</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define septic shock (Sepsis-3).</li><li>What is the Hour-1 Bundle?</li><li>When do you add vasopressin to noradrenaline?</li><li>How do you assess fluid responsiveness?</li><li>What is the role of hydrocortisone?</li><li>When do you use dobutamine in septic shock?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Giving 30 mL/kg fluid to <b>all</b> septic patients (some need less, some more — assess responsiveness)</li><li>Delaying vasopressors waiting for central line</li><li>Assuming "high CO" = no need for inotropes (myocardial depression still possible)</li><li>Confusing sepsis (infection + organ dysfunction) with septic shock (subset with circulatory failure)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>SEPSIS-3</b>: SOFA ≥2 + infection</li><li><b>SEPTIC SHOCK</b>: Vasopressor + Lactate &gt;2 + Fluids</li><li><b>Hour-1</b>: Lactate + Cultures + Antibiotics + Fluids + Vasopressors</li><li><b>Vasopressor ladder</b>: Noradrenaline → +Vasopressin → +Adrenaline → Hydrocortisone → Angiotensin II/ECMO</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Septic Shock = Vasopressor + Lactate &gt;2 after 30 mL/kg</b></p>
+<ul><li>Hour-1: Lactate, Cultures, Abx, Fluids, Vasopressors</li><li>Noradrenaline first (start peripherally early)</li><li>Test fluid responsiveness (PLR, SVV/PPV)</li><li>Vasopressin add-on at ~0.25–0.5 µg/kg/min NA</li><li>Echo: hyperdynamic vs hypodynamic</li><li>Source control ≤6h</li><li>Hydrocortisone if vasopressor-dependent</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Sepsis-3 septic shock definition</li><li>Hour-1 Bundle</li><li>Noradrenaline first-line</li><li>Fluid responsiveness testing</li><li>Vasopressin as add-on</li><li>Source control timeline</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Hypodynamic vs hyperdynamic phenotypes</li><li>Dobutamine for myocardial depression</li><li>Hydrocortisone indication</li><li>Refractory shock escalation</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Angiotensin II, IVIG, levosimendan</li><li>ECMO criteria</li><li>Biomarkers (procalcitonin, presepsin)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Sepsis-3 septic shock definition requires:</li></ol>
+<p>A. SBP &lt;90 + lactate &gt;2 B. Vasopressor for MAP ≥65 + lactate &gt;2 after 30 mL/kg fluid C. SBP &lt;90 + lactate &gt;4 D. Vasopressor + lactate &gt;4</p>
+<ol><li>First-line vasopressor in septic shock:</li></ol>
+<p>A. Adrenaline B. Vasopressin C. Noradrenaline D. Dopamine</p>
+<ol><li>Target MAP in septic shock (SSC):</li></ol>
+<p>A. ≥60 mmHg B. ≥65 mmHg C. ≥70 mmHg D. ≥75 mmHg</p>
+<ol><li>Vasopressin dose in septic shock:</li></ol>
+<p>A. 0.01–0.04 U/min B. 0.1–0.4 U/min C. 1–4 U/min D. 10–40 U/min</p>
+<ol><li>Best dynamic measure of fluid responsiveness:</li></ol>
+<p>A. CVP B. Passive leg raise with CO monitoring C. Urine output D. Blood pressure</p>
+<ol><li>Hydrocortisone indication in septic shock:</li></ol>
+<p>A. All septic shock B. Vasopressor-dependent shock C. Lactate &gt;4 only D. First 6 hours only</p>
+<ol><li>When to start antibiotics in septic shock:</li></ol>
+<p>A. After CT scan B. After blood cultures only C. Within 1 hour (Hour-1 Bundle) D. After source identification</p>
+<ol><li>Fluid bolus in SSC guidelines for hypotension/lactate ≥4:</li></ol>
+<p>A. 10 mL/kg B. 20 mL/kg C. 30 mL/kg crystalloid D. 50 mL/kg</p>
+<ol><li>Noradrenaline can be started:</li></ol>
+<p>A. Only via central line B. Peripherally (short-term) while central access obtained C. Only after 3L fluid D. Only in ICU</p>
+<ol><li>Refractory septic shock = noradrenaline &gt;0.5 µg/kg/min + vasopressin +:</li></ol>
+<p>A. MAP &lt;65 B. Lactate not clearing C. New organ failure D. All of the above</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 65-year-old man with pneumonia, BP 75/40 after 2L fluid, lactate 5.2. On noradrenaline 0.3 µg/kg/min. Next step:</li></ol>
+<p>A. Give another 2L fluid B. Add vasopressin 0.03 U/min C. Switch to adrenaline D. Stop noradrenaline</p>
+<ol><li>A 70-year-old woman with septic shock, noradrenaline 0.8 µg/kg/min + vasopressin 0.04 U/min, MAP 60, lactate 6 (was 5 at 2h). Echo shows LVEF 25%, dilated LV. Best addition:</li></ol>
+<p>A. More fluid B. Dobutamine C. Adrenaline D. Hydrocortisone</p>
+<ol><li>Assessing fluid responsiveness in ventilated septic patient. Best method:</li></ol>
+<p>A. CVP &gt;12 B. SVV &gt;13% (if sinus rhythm, TV ≥8 mL/kg) C. Urine output &lt;0.5 mL/kg/hr D. MAP response to 100 mL fluid</p>
+<ol><li>A patient with septic shock from cholangitis. Source control timeline:</li></ol>
+<p>A. ERCP within 24 hours B. ERCP within 6 hours C. Antibiotics only D. Surgery immediately</p>
+<ol><li>Hydrocortisone dose in septic shock:</li></ol>
+<p>A. 50 mg/day B. 100 mg/day C. 200 mg/day D. 400 mg/day</p>
+<ol><li>A septic patient with "cold shock" (cool peripheries, low CO). Most appropriate:</li></ol>
+<p>A. Noradrenaline only B. Noradrenaline + dobutamine C. Vasopressin only D. Adrenaline only</p>
+<ol><li>Lactate clearance target:</li></ol>
+<p>A. ≥5% per hour B. ≥10–20% per 2 hours C. Normalise in 6 hours D. &lt;2 mmol/L in 1 hour</p>
+<ol><li>In septic shock, blood transfusion threshold (no active bleed/ischaemia):</li></ol>
+<p>A. Hb &lt;70 g/L B. Hb &lt;80 g/L C. Hb &lt;90 g/L D. Hb &lt;100 g/L</p>
+<ol><li>Angiotensin II is used for:</li></ol>
+<p>A. First-line septic shock B. Refractory shock despite catecholamines + vasopressin C. Cardiogenic shock D. Anaphylaxis</p>
+<ol><li>Best initial fluid in septic shock (SSC):</li></ol>
+<p>A. 0.9% saline B. Balanced crystalloid (Hartmann's/Plasma-Lyte) C. Albumin 5% D. Gelatin</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Septic shock definition (Sepsis-3)</li></ul>
+<p>A: Vasopressor for MAP ≥65 + lactate &gt;2 AFTER 30 mL/kg crystalloid</p>
+<ul><li>Q: Hour-1 Bundle</li></ul>
+<p>A: Lactate, Cultures, Antibiotics, 30 mL/kg Fluid, Vasopressors</p>
+<ul><li>Q: First-line vasopressor</li></ul>
+<p>A: Noradrenaline (start peripherally early)</p>
+<ul><li>Q: Vasopressin dose</li></ul>
+<p>A: 0.01–0.04 U/min (add-on at NA ~0.25–0.5)</p>
+<ul><li>Q: Fluid responsiveness test</li></ul>
+<p>A: PLR + CO monitoring (gold); SVV/PPV if ventilated</p>
+<ul><li>Q: Hydrocortisone indication</li></ul>
+<p>A: Vasopressor-dependent septic shock — 200 mg/day</p>
+<ul><li>Q: Dobutamine in septic shock</li></ul>
+<p>A: If myocardial depression (low EF, low CO) — may need NA combo</p>
+<ul><li>Q: Source control</li></ul>
+<p>A: Drainable foci ≤6h; necrotising fasciitis = immediate surgery</p>
+<ul><li>Q: Refractory septic shock</li></ul>
+<p>A: NA &gt;0.5 + vasopressin + still hypotensive → adrenaline, hydrocortisone, consider ECMO</p>
+<ul><li>Q: Balanced crystalloids vs saline</li></ul>
+<p>A: Balanced preferred (less hyperchloraemic acidosis, less AKI)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Exact Sepsis-3 definition. <b>MCQ 2</b>: C — Noradrenaline first-line. <b>MCQ 3</b>: B — MAP ≥65 mmHg. <b>MCQ 4</b>: A — 0.01–0.04 U/min. <b>MCQ 5</b>: B — PLR + CO is gold standard dynamic test. <b>MCQ 6</b>: B — Hydrocortisone for vasopressor-dependent shock. <b>MCQ 7</b>: C — Within 1 hour. <b>MCQ 8</b>: C — 30 mL/kg crystalloid. <b>MCQ 9</b>: B — Peripheral start acceptable short-term. <b>MCQ 10</b>: D — All define refractory shock.</p>
+<p><b>SBA 1</b>: B — On NA 0.3, add vasopressin (standard ladder). <b>SBA 2</b>: B — Hypodynamic phenotype (low EF) → dobutamine for inotropy. <b>SBA 3</b>: B — SVV &gt;13% dynamic index (requires conditions). <b>SBA 4</b>: A — Cholangitis: ERCP ≤24h (unless unstable). <b>SBA 5</b>: C — 200 mg/day IV. <b>SBA 6</b>: B — Cold shock = hypodynamic → NA + dobutamine. <b>SBA 7</b>: B — ≥10–20% per 2 hours. <b>SBA 8</b>: A — Restrictive Hb &lt;70. <b>SBA 9</b>: B — Refractory shock salvage. <b>SBA 10</b>: B — Balanced crystalloids per SSC.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Septic Shock · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

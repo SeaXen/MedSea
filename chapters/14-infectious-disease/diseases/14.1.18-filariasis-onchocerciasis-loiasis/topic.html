@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Filariasis Onchocerciasis Loiasis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Filariasis Onchocerciasis Loiasis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify <b>filarial parasites</b> by niche: lymphatic (<i>W. bancrofti, B. malayi, B. timori</i>), subcutaneous (<i>O. volvulus, L. loa, M. perstans, M. ozzardi</i>), body cavity (<i>M. perstans</i>)</li><li>[ ] Recognise <b>Lymphatic filariasis</b>: Asymptomatic microfilaraemia → acute adenolymphangitis → chronic lymphoedema/elephantiasis/hydrocele</li><li>[ ] Recognise <b>Onchocerciasis</b>: Skin (onchocercoma, lichenified dermatitis), eye (river blindness - corneal opacity, chorioretinitis)</li><li>[ ] Recognise <b>Loiasis</b>: Calabar swellings, subconjunctival worm migration, high microfilariae → encephalopathy risk with DEC</li><li>[ ] Diagnose: <b>Nocturnal/peri-diurnal blood smear</b> (microfilariae), <b>skin snip</b> (onchocerciasis), <b>serology/antigen (Og4C3)</b>, PCR</li><li>[ ] Manage: <b>DEC</b> (lymphatic, loiasis - <i>with caution</i>), <b>Ivermectin</b> (onchocerciasis, lymphatic - <i>not loiasis</i>), <b>Albendazole</b> (adjunct)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📚 Filarial Nematodes Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Group</th><th>Species</th><th>Vector</th><th>Geographic Distribution</th><th>Niche in Human</th></tr><tr><td>-------</td><td>---------</td><td>--------</td><td>------------------------</td><td>----------------</td></tr><tr><td>**Lymphatic**</td><td>*Wuchereria bancrofti* (90%)</td><td>*Culex, Anopheles, Aedes* mosquitoes</td><td>Tropics/subtropics (Africa, Asia, Pacific, Americas)</td><td>Lymphatics</td></tr><tr><td></td><td>*Brugia malayi*</td><td>*Mansonia, Anopheles*</td><td>SE Asia, India, Indonesia</td><td>Lymphatics</td></tr><tr><td></td><td>*Brugia timori*</td><td>*Anopheles*</td><td>Timor, Flores (Indonesia)</td><td>Lymphatics</td></tr><tr><td>**Subcutaneous**</td><td>*Onchocerca volvulus*</td><td>*Simulium* (black fly)</td><td>**Africa** (99%), Yemen, Americas (focal)</td><td>Subcutaneous nodules, skin, eyes</td></tr><tr><td></td><td>*Loa loa*</td><td>*Chrysops* (deer/mango fly)</td><td>**Central/West Africa** rainforest</td><td>Subcutaneous, eye, Calabar swellings</td></tr><tr><td></td><td>*Mansonella perstans*</td><td>*Culicoides* (midge)</td><td>Africa, South America</td><td>Body cavity (peritoneal, pleural), skin</td></tr><tr><td></td><td>*Mansonella ozzardi*</td><td>*Simulium, Culicoides*</td><td>Central/South America, Caribbean</td><td>Subcutaneous, body cavity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🩺 1. Lymphatic Filariasis (*W. bancrofti, B. malayi, B. timori*)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pathogenesis</div>
+<ul><li>Adult worms in lymphatics → <b>lymphatic dilation, inflammation, fibrosis</b> → obstruction</li><li><b>Immune response</b> to microfilariae/adults → recurrent acute attacks</li></ul>
+<div class="sub-h">Clinical Stages</div>
+<table class="ctable"><tr><th>Stage</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Asymptomatic microfilaraemia**</td><td>Microfilariae in blood (nocturnal periodicity - *W. bancrofti*); hidden lung/kidney damage (proteinuria, haematuria)</td></tr><tr><td>**Acute**</td><td>**Acute adenolymphangitis (ADL)**: Fever, painful lymphadenitis, lymphangitis (retrograde), funiculitis, epididymitis; **bacterial superinfection** common</td></tr><tr><td>**Chronic**</td><td>**Lymphoedema** (grades 1-7), **elephantiasis** (leg, scrotum, vulva, breast), **hydrocele** (most common in men), chyluria, chylous ascites</td></tr></table>
+<div class="sub-h">Tropical Pulmonary Eosinophilia (TPE)</div>
+<ul><li><b>Hyperimmune response</b> to microfilariae in lungs</li><li><b>Symptoms</b>: Nocturnal cough, wheeze, dyspnoea, weight loss, fever</li><li><b>Labs</b>: <b>Marked eosinophilia (&gt;3000/μL)</b>, high IgE, high antifilarial titres</li><li><b>CXR</b>: Miliary/reticulonodular infiltrates</li><li><b>Treatment</b>: <b>DEC 6mg/kg/day × 14-21 days</b> (dramatic response)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🩺 2. Onchocerciasis — *Onchocerca volvulus* (River Blindness)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Transmission</div>
+<ul><li><b>Black fly</b> (<i>Simulium</i>) breeds in <b>fast-flowing rivers</b> → "river blindness"</li></ul>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Skin**</td><td>**Onchocercomas** (subcutaneous nodules over bony prominences), **pruritus**, **lichenified dermatitis** ("leopard skin", "lizard skin"), **depigmentation** ("leopard skin"), atrophy, hanging groin</td></tr><tr><td>**Eye**</td><td>**River blindness**: Punctate keratitis → sclerosing keratitis → **corneal opacity**, iridocyclitis, glaucoma, chorioretinitis, optic atrophy → **blindness**</td></tr><tr><td>**Systemic**</td><td>Lymphadenopathy, low-grade fever</td></tr></table>
+<div class="sub-h">Classification of Skin Disease</div>
+<ul><li><b>Acute papular onchodermatitis</b> (pruritic papules)</li><li><b>Chronic papular onchodermatitis</b> (hyperpigmented)</li><li><b>Lichenified onchodermatitis</b> (thickened, "elephant skin")</li><li><b>Atrophy</b> ("cigarette paper skin")</li><li><b>Depigmentation</b> ("leopard skin")</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🩺 3. Loiasis — *Loa loa* (African Eye Worm)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Transmission</div>
+<ul><li><b>Deer fly / Mango fly</b> (<i>Chrysops</i>) bites during day in rainforest</li></ul>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Calabar swellings**</td><td>Transient, non-painful, non-pruritic **angioedema** (hand, wrist, face); last 1-3 days; allergic response to migrating adult</td></tr><tr><td>**Subconjunctival worm**</td><td>**Adult worm migrates across eye** (visible, 3-15 min); "African eye worm"; no permanent damage</td></tr><tr><td>**Microfilaraemia**</td><td>**Diurnal periodicity** (peak 10am-2pm); can be **very high** (>50,000/mL)</td></tr><tr><td>**Complications**</td><td>Encephalopathy (with DEC if high microfilariae), nephropathy, endomyocardial fibrosis</td></tr></table>
+<div class="sub-h">Loa Loa Encephalopathy Risk</div>
+<ul><li><b>High microfilarial density</b> (&gt;8,000-30,000/mL) + <b>DEC/ivermectin</b> → <b>fatal encephalopathy</b></li><li><b>Screen before MDA</b> in co-endemic areas (RAPLOA - rapid assessment)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🔬 Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Lymphatic Filariasis</th><th>Onchocerciasis</th><th>Loiasis</th></tr><tr><td>------</td><td>---------------------</td><td>----------------</td><td>---------</td></tr><tr><td>**Blood smear (microfilariae)**</td><td>**Nocturnal** (peak midnight); *W. bancrofti* = sheath + nuclei to tip; *Brugia* = sheath, 2 terminal nuclei</td><td>Not useful</td><td>**Diurnal** (peak 10am-2pm); **sheath + nuclei to tip**; high density</td></tr><tr><td>**Skin snip**</td><td>-</td><td>**Gold standard**: Microfilariae emerge in saline; PCR</td><td>-</td></tr><tr><td>**Antigen test (Og4C3 / Wb123)**</td><td>**Rapid ICT card** (sensitivity >90%); detects adult worm antigen</td><td>-</td><td>-</td></tr><tr><td>**Serology (ELISA/IFA)**</td><td>High titre in TPE</td><td>Supportive</td><td>Supportive</td></tr><tr><td>**PCR**</td><td>Species ID</td><td>Species ID</td><td>Species ID</td></tr><tr><td>**Ultrasound**</td><td>**Filarial dance sign** (adult worms in lymphatics/scrotum)</td><td>Nodules</td><td>-</td></tr><tr><td>**Slit lamp**</td><td>-</td><td>Microfilariae in anterior chamber</td><td>**Adult worm in subconjunctiva**</td></tr></table>
+<div class="callout">[!tip] <b>Exam Pearl</b>: <i>W. bancrofti</i> microfilariae = <b>sheath + nuclei extend to tip</b>; <i>Brugia</i> = <b>sheath + 2 terminal nuclei distinct</b>; <i>Loa loa</i> = <b>sheath + nuclei to tip + diurnal</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">💊 Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Lymphatic Filariasis</div>
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Individual treatment**</td><td>**DEC 6 mg/kg/day × 12 days** (or single dose 6mg/kg + Albendazole 400mg)</td></tr><tr><td>**Mass Drug Administration (MDA)**</td><td>**Ivermectin 200 μg/kg + Albendazole 400mg** (annual) OR **DEC + Albendazole** (where onchocerciasis/loiasis not co-endemic)</td></tr><tr><td>**Hydrocele**</td><td>**Surgery** (hydrocelectomy)</td></tr><tr><td>**Lymphoedema / Elephantiasis**</td><td>**Hygiene** (wash, elevate, exercise, skin care), **antibiotics** for ADL, **compression**, surgery (debulking)</td></tr><tr><td>**TPE**</td><td>**DEC 6 mg/kg/day × 14-21 days** + steroids if severe</td></tr></table>
+<div class="sub-h">Onchocerciasis</div>
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Individual / MDA**</td><td>**Ivermectin 150-200 μg/kg single dose** (repeat **every 6-12 months** for 10-15 years)</td></tr><tr><td>**Adjunct**</td><td>**Doxycycline 100mg bd × 6 weeks** (targets *Wolbachia* endosymbiont → macrofilaricidal)</td></tr><tr><td>**Note**</td><td>**DEC contraindicated** (severe Mazzotti reaction)</td></tr></table>
+<div class="sub-h">Loiasis</div>
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Low microfilaraemia** (<8,000/mL)</td><td>**DEC 6 mg/kg/day × 21 days** (or 8-10 mg/kg/day × 3 weeks)</td></tr><tr><td>**High microfilaraemia** (>8,000/mL)</td><td>**Apheresis** to reduce load → **Albendazole 400mg bd × 3 weeks** → then **DEC** with steroids/antihistamines</td></tr><tr><td>**Ivermectin**</td><td>**CONTRAINDICATED** if high microfilaraemia (encephalopathy risk)</td></tr><tr><td>**Eye worm**</td><td>**Manual removal** (slit lamp + forceps)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📋 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Vector**</td><td>*W. bancrofti*: *Culex* mosquito; *Onchocerca*: *Simulium* (black fly, rivers); *Loa loa*: *Chrysops* (deer fly, day)</td></tr><tr><td>**Periodicity**</td><td>*W. bancrofti*: **Nocturnal**; *Loa loa*: **Diurnal**; *Brugia*: Nocturnal/subperiodic</td></tr><tr><td>**Microfilariae ID**</td><td>*Wuchereria*: Sheath, nuclei to tip; *Brugia*: Sheath, 2 terminal nuclei; *Loa*: Sheath, nuclei to tip</td></tr><tr><td>**Skin snip**</td><td>Onchocerciasis gold standard</td></tr><tr><td>**Antigen test**</td><td>Og4C3/Wb123 ICT card = lymphatic filariasis (adult worm antigen)</td></tr><tr><td>**DEC vs Ivermectin**</td><td>DEC: Lymphatic, Loiasis; Ivermectin: Onchocerciasis, Lymphatic (MDA); **Both contraindicated in high Loa loa**</td></tr><tr><td>**TPE**</td><td>Nocturnal cough/wheeze, **eosinophilia >3000**, high IgE, DEC responsive</td></tr><tr><td>**River blindness**</td><td>Corneal opacity → blindness; ivermectin q6-12mo</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">❓ Viva Questions (FCPS/MRCP)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Classify filarial nematodes by anatomic niche with examples.</b></li><li>**Describe the life cycle and periodicity of <i>Wuchereria bancrofti</i>.**</li><li>**How do you differentiate microfilariae of <i>W. bancrofti</i>, <i>B. malayi</i>, and <i>L. loa</i> on blood smear?**</li><li><b>What is Tropical Pulmonary Eosinophilia? Diagnosis and treatment?</b></li><li><b>Compare clinical features of lymphatic filariasis, onchocerciasis, and loiasis.</b></li><li><b>Why is DEC contraindicated in onchocerciasis? What is Mazzotti reaction?</b></li><li><b>A patient from Cameroon has high microfilaraemia. Why is ivermectin dangerous?</b></li><li><b>What is the "filarial dance sign" on ultrasound?</b></li><li><b>Mass drug administration regimens for lymphatic filariasis in different co-endemic settings.</b></li><li><b>Management of hydrocele vs lymphoedema in lymphatic filariasis.</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**DEC vs Ivermectin indications**</td><td>DEC: Lymphatic, Loiasis; Ivermectin: Onchocerciasis, Lymphatic (MDA); **Never ivermectin in high Loa loa**</td></tr><tr><td>**Nocturnal vs Diurnal periodicity**</td><td>*Wuchereria/Brugia*: Nocturnal (mosquito vectors bite night); *Loa loa*: Diurnal (*Chrysops* bites day)</td></tr><tr><td>**Onchocerciasis vs Loiasis eye involvement**</td><td>Onchocerciasis: **Microfilariae** in anterior chamber → corneal opacity/blindness; Loiasis: **Adult worm** migrates across conjunctiva (transient, no blindness)</td></tr><tr><td>**TPE vs Asthma**</td><td>TPE: **Eosinophilia >3000**, high antifilarial IgE, nocturnal cough, responds to DEC; Asthma: Variable eosinophilia, atopy, bronchodilator response</td></tr></table>
+<p><b>Mnemonic - Lymphatic Filariasis</b>: <b>"WUCHERERIA"</b> → <b>W</b>uchereria, <b>U</b>rban/rural <i>Culex</i>, <b>C</b>hronic elephantiasis, <b>H</b>ydrocele, <b>E</b>lephantiasis, <b>R</b>ecurrent ADL, <b>E</b>osinophilia (TPE), <b>R</b>iver/coastal, <b>I</b>vermectin/DEC/Alb, <b>A</b>ntigen Og4C3</p>
+<p><b>Mnemonic - Onchocerciasis</b>: <b>"ONCHO"</b> → <b>O</b>nchocerca, <b>N</b>odules (onchocercomas), <b>C</b>orneal opacity (river blindness), <b>H</b>anging groin/leopard skin, <b>O</b>nchocercoma, <b>I</b>vermectin q6-12mo, <b>S</b>imulium (black fly), <b>R</b>iver breeding</p>
+<p><b>Mnemonic - Loiasis</b>: <b>"LOA"</b> → <b>L</b>oa loa, <b>O</b>cular worm (subconjunctival), <b>A</b>ngioedema (Calabar), <b>C</b>hrysops (deer fly), <b>D</b>iurnal periodicity, <b>E</b>ncephalopathy risk (DEC), <b>N</b>o ivermectin</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Filarial Nematodes))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Lymphatic</div>
+<div class="mm-node mm-l3">– W. bancrofti (90%)</div>
+<div class="mm-node mm-l3">– B. malayi/timori</div>
+<div class="mm-node mm-l3">– Vector: Mosquito (Culex)</div>
+<div class="mm-node mm-l3">– Nocturnal periodicity</div>
+<div class="mm-node mm-l3">– Elephantiasis, hydrocele</div>
+<div class="mm-node mm-l3">– TPE (eosinophilia)</div>
+<div class="mm-node mm-l3">– Antigen: Og4C3</div>
+<div class="mm-node mm-l3">– Rx: DEC, Ivermectin+Alb</div>
+<div class="mm-node mm-l2">Subcutaneous</div>
+<div class="mm-node mm-l3">– Onchocerca volvulus</div>
+<div class="mm-node mm-deep">– Vector: Simulium (black fly)</div>
+<div class="mm-node mm-deep">– River blindness</div>
+<div class="mm-node mm-deep">– Skin nodules, leopard skin</div>
+<div class="mm-node mm-deep">– Skin snip diagnosis</div>
+<div class="mm-node mm-deep">– Rx: Ivermectin (NO DEC)</div>
+<div class="mm-node mm-l3">– Loa loa</div>
+<div class="mm-node mm-deep">– Vector: Chrysops (deer fly)</div>
+<div class="mm-node mm-deep">– Diurnal periodicity</div>
+<div class="mm-node mm-deep">– Calabar swellings</div>
+<div class="mm-node mm-deep">– Eye worm migration</div>
+<div class="mm-node mm-deep">– High microfilaraemia = encephalopathy risk</div>
+<div class="mm-node mm-deep">– Rx: DEC (with caution), NO ivermectin</div>
+<div class="mm-node mm-l3">– Mansonella</div>
+<div class="mm-node mm-deep">– Perstans/Ozzardi</div>
+<div class="mm-node mm-deep">– Usually asymptomatic</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📄 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Lymphatic Filariasis**</th><th>**Onchocerciasis**</th><th>**Loiasis**</th></tr><tr><td>--------------------------</td><td>-------------------</td><td>-------------</td></tr><tr><td>**Organism**</td><td>*W. bancrofti*, *B. malayi*</td><td>*O. volvulus*</td><td>*L. loa*</td></tr><tr><td>**Vector**</td><td>*Culex/Anopheles/Aedes*</td><td>*Simulium* (black fly)</td><td>*Chrysops* (deer fly)</td></tr><tr><td>**Periodicity**</td><td>**Nocturnal**</td><td>-</td><td>**Diurnal**</td></tr><tr><td>**Key Features**</td><td>Elephantiasis, hydrocele, ADL, TPE</td><td>River blindness, nodules, leopard skin</td><td>Calabar swellings, eye worm</td></tr><tr><td>**Diagnosis**</td><td>Nocturnal blood smear, **Og4C3 antigen**</td><td>**Skin snip**, slit lamp</td><td>Diurnal blood smear, eye worm</td></tr><tr><td>**Treatment**</td><td>**DEC** or **Ivermectin+Albendazole**</td><td>**Ivermectin** q6-12mo (+ Doxy)</td><td>**DEC** (caution if high Mf), **NO ivermectin**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📊 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date</th><th>Score (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Known? (✓/✗)</th><th>Last Reviewed</th></tr><tr><td>-------</td><td>--------------</td><td>---------------</td></tr><tr><td>Classification by niche & species</td><td></td><td></td></tr><tr><td>Microfilariae identification (sheath, nuclei, periodicity)</td><td></td><td></td></tr><tr><td>Lymphatic filariasis stages & TPE</td><td></td><td></td></tr><tr><td>Onchocerciasis skin/eye manifestations</td><td></td><td></td></tr><tr><td>Loiasis Calabar swellings & encephalopathy risk</td><td></td><td></td></tr><tr><td>MDA regimens (co-endemic considerations)</td><td></td><td></td></tr><tr><td>DEC vs Ivermectin indications/contraindications</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🔗 Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Infectious Disease MOC]]</li><li>[[Davidson Chapter 13 - Infectious Disease Hierarchy]]</li><li>[[Parasitic Infections]]</li><li>[[Travel Medicine &amp; Pre-travel Advice]]</li><li>[[Eosinophilia]]</li><li>[[Tropical Medicine]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Last Updated: 2025-06-17 | Based on Davidson 24e Ch 11 | FCPS/MRCP Focused</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Filariasis Onchocerciasis Loiasis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

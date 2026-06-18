@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Raised Intracranial Pressure — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Raised Intracranial Pressure</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define raised ICP and its pathophysiology (Monro-Kellie)</li><li>Identify causes (focal, diffuse)</li><li>Recognise clinical signs (Cushing's triad, herniation syndromes)</li><li>Apply stepwise management (positioning, osmotherapy, ventilation)</li><li>Know indications for surgical decompression</li><li>Differentiate from mimics</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Normal ICP</b>: 5–15 mmHg (supine)</li><li><b>Sustained &gt;20 mmHg</b> = raised ICP (pathological)</li><li><b>Refractory &gt;25 mmHg</b> despite treatment</li><li><b>Brain Trauma Foundation</b>: treat ICP &gt;22 mmHg (target &lt;22)</li><li>Cerebral perfusion pressure (CPP) = MAP − ICP; target <b>CPP 60–70 mmHg</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Monro-Kellie Doctrine</span>
+  </div>
+  <div class="sec-body">
+<p>The skull is a fixed-volume container with 3 components: &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Component&lt;/th&gt;&lt;th&gt;% Volume&lt;/th&gt;&lt;th&gt;Compensation&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;--------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Brain parenchyma&lt;/td&gt;&lt;td&gt;80%&lt;/td&gt;&lt;td&gt;Limited (compliance)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Blood&lt;/td&gt;&lt;td&gt;10%&lt;/td&gt;&lt;td&gt;Vasoconstriction, venous drainage&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSF&lt;/td&gt;&lt;td&gt;10%&lt;/td&gt;&lt;td&gt;Displacement into spinal canal&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p><b>Any increase in one component must be offset by decrease in another</b> (or ICP rises). When compliance exhausted, small volume changes cause large ICP rises.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Aetiology</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Intracranial (3 categories)</div>
+<table class="ctable"><tr><th>Category</th><th>Examples</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Focal mass**</td><td>Haematoma (extradural, subdural, intracerebral), tumour, abscess</td></tr><tr><td>**Diffuse brain swelling**</td><td>Traumatic brain injury (TBI), hypoxic-ischaemic injury, encephalitis, fulminant hepatic failure, Reye syndrome, DKA</td></tr><tr><td>**CSF flow obstruction**</td><td>Hydrocephalus (obstructive, communicating), Chiari, aqueduct stenosis</td></tr><tr><td>**Venous**</td><td>Cerebral venous sinus thrombosis (CVST)</td></tr></table>
+<div class="sub-h">Extracranial Causes</div>
+<ul><li><b>Hypoxia, hypercarbia</b> (cerebral vasodilation)</li><li><b>Hyponatraemia</b> (cerebral oedema)</li><li><b>Hepatic/renal failure</b> (encephalopathy, oedema)</li><li><b>Malignant hypertension</b> (PRES)</li><li><b>High altitude cerebral oedema</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Volume increase</b> (mass, blood, oedema, CSF)</li><li><b>Initial compensation</b>: CSF displacement, venous collapse</li><li><b>Compliance exhausted</b> → ICP rises steeply</li><li><b>Reduced CPP</b> → cerebral ischaemia</li><li><b>Herniation syndromes</b> (see below)</li><li><b>Cushing's reflex</b>: systemic hypertension → reflex bradycardia (preserves CPP)</li><li><b>Brainstem compression</b> → irregular respirations, death</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Symptoms</div>
+<ul><li><b>Headache</b> (worse on lying, coughing, Valsalva; worse in morning)</li><li><b>Vomiting</b> (often without nausea — "positional")</li><li><b>Visual disturbance</b> (transient obscurations, diplopia — CN VI palsy from stretch)</li><li><b>Altered consciousness</b> (lethargy → coma)</li><li><b>Seizures</b></li></ul>
+<div class="sub-h">Signs</div>
+<ul><li><b>Papilloedema</b> (often late — absent in acute rises)</li><li><b>Cushing's triad</b> (late, ominous):</li></ul>
+<ol><li>Hypertension (widened pulse pressure)</li><li>Bradycardia</li><li>Irregular respirations (Cheyne-Stokes, central neurogenic hyperventilation, apneustic, ataxic)</li></ol>
+<ul><li><b>Pupillary changes</b> (uncal herniation: ipsilateral fixed dilated pupil)</li><li><b>Decorticate / decerebrate posturing</b></li><li><b>Upward gaze palsy</b> (Parinaud — dorsal midbrain)</li></ul>
+<div class="sub-h">Cushing's Triad — Explained</div>
+<ul><li><b>Hypertension</b> = compensatory to maintain CPP</li><li><b>Bradycardia</b> = baroreceptor response to hypertension</li><li><b>Irregular respirations</b> = brainstem (medulla) compression</li><li><b>All three = impending herniation</b> — treat immediately</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Herniation Syndromes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Cause</th><th>Features</th></tr><tr><td>----------</td><td>-------</td><td>----------</td></tr><tr><td>**Uncal (transtentorial)**</td><td>Temporal lobe through tentorial notch</td><td>Ipsilateral CN III palsy (fixed dilated pupil), contralateral hemiparesis, decreased consciousness</td></tr><tr><td>**Central transtentorial**</td><td>Diffuse downward pressure</td><td>Bilateral pinpoint pupils → midposition fixed, decorticate → decerebrate, Cushing's, death</td></tr><tr><td>**Tonsillar (coning)**</td><td>Cerebellar tonsils through foramen magnum</td><td>Neck stiffness, cardiac arrest, sudden death</td></tr><tr><td>**Subfalcine (cingulate)**</td><td>Cingulate gyrus under falx</td><td>Contralateral leg weakness, ACA territory infarct</td></tr><tr><td>**Upward transtentorial**</td><td>Posterior fossa mass pushing up</td><td>Coma, small pupils, Parinaud's</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CT head</b> (urgent, non-contrast): mass effect, midline shift, effaced sulci, basal cisterns</li><li><b>MRI brain</b>: better for posterior fossa, infiltrative disease</li><li><b>CT venogram / MRV</b>: if CVST suspected</li><li><b>LP</b> — <b>contraindicated</b> if raised ICP suspected (herniation risk); only after imaging</li><li><b>Fundoscopy</b>: papilloedema (chronic), but may be absent in acute</li><li><b>ICP monitoring</b>: gold standard (ventricular catheter, parenchymal bolt) — for TBI in ICU</li><li><b>ABG, U&amp;E, glucose, LFT, ammonia, ABG</b>: identify extracranial causes</li><li><b>EEG</b>: non-convulsive status epilepticus</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Step 1: ABCDE + Position</div>
+<ul><li><b>Airway</b>: intubate if GCS ≤8 or deteriorating</li><li><b>Breathing</b>: controlled ventilation, target <b>PaCO₂ 4.5–5.0 kPa (35–38 mmHg)</b></li><li><b>Head-up 30°</b>, head midline (avoid jugular compression)</li><li><b>Loosen neck ties / cervical collars</b> (venous drainage)</li><li>Avoid hypotension: MAP target for CPP</li></ul>
+<div class="sub-h">Step 2: Osmotherapy</div>
+<table class="ctable"><tr><th>Agent</th><th>Dose</th><th>Onset</th><th>Notes</th></tr><tr><td>-------</td><td>------</td><td>-------</td><td>-------</td></tr><tr><td>**Mannitol 20%**</td><td>0.5–1 g/kg IV bolus (250–500 mL)</td><td>15–30 min</td><td>Osmotic diuretic; monitor UO, Na⁺</td></tr><tr><td>**Hypertonic saline 3%**</td><td>150–250 mL IV over 10–20 min</td><td>5–15 min</td><td>Preferred in hypovolaemia; target Na⁺ 145–155</td></tr><tr><td>**Hypertonic saline 23.4%**</td><td>30 mL IV over 10–20 min</td><td>Rapid</td><td>Central line required</td></tr></table>
+<div class="callout"><b>Hold mannitol if serum osmolality &gt;320 mOsm/kg</b> (renal failure risk)</div>
+<div class="sub-h">Step 3: Sedation + Analgesia</div>
+<ul><li><b>Propofol</b> (reduces cerebral metabolism, ICP)</li><li><b>Fentanyl / morphine</b> (analgesia, ICP ↓)</li><li><b>Midazolam</b> if paralysed</li></ul>
+<div class="sub-h">Step 4: Treat Underlying Cause</div>
+<ul><li><b>Mass lesion</b> → neurosurgical decompression</li><li><b>Hydrocephalus</b> → external ventricular drain (EVD) / shunt</li><li><b>CVST</b> → anticoagulation (LMWH even with haemorrhage)</li><li><b>Infection</b> → antibiotics, abscess drainage</li><li><b>Metabolic</b> → correct sodium, glucose, ammonia</li><li><b>TBI</b> → decompressive craniectomy if refractory</li></ul>
+<div class="sub-h">Step 5: Rescue Therapies (Refractory ICP)</div>
+<ul><li><b>Hyperventilation</b> to PaCO₂ 4.0–4.5 kPa (transient only — vasoconstriction, risk of ischaemia; do NOT &lt;4.0 kPa)</li><li><b>Therapeutic hypothermia</b> (35–36°C) — controversial, rebound ICP</li><li><b>Barbiturate coma</b> (thiopentone) — last resort, EEG monitoring</li><li><b>Decompressive craniectomy</b> (e.g., DECRA trial — refractory ICP)</li><li><b>External ventricular drain (EVD)</b> for hydrocephalus</li><li><b>Paralysis</b> (cisatracurium infusion)</li></ul>
+<div class="sub-h">Step 6: Supportive Care</div>
+<ul><li><b>DVT prophylaxis</b> (mechanical, then LMWH when safe)</li><li><b>Seizure prophylaxis</b> (levetiracetam — phenytoin not in TBI)</li><li><b>Stress ulcer prophylaxis</b> (PPI)</li><li><b>Glycaemic control</b> (6–10 mmol/L)</li><li><b>Temperature control</b> (fever worsens ICP)</li><li><b>Maintain CPP 60–70</b> (vasopressors if needed)</li><li><b>Avoid</b>: hypoxia, hyperthermia, hyponatraemia, hyperglycaemia, hypovolaemia, anaemia</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Red Flags</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cushing's triad</b> (impending herniation)</li><li><b>Fixed dilated pupil</b></li><li><b>GCS drop &gt;2 points</b></li><li><b>Decerebrate posturing</b></li><li><b>Apnoea / irregular respirations</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Brainstem herniation</b> → death</li><li><b>Cerebral ischaemia / infarction</b></li><li><b>Hydrocephalus</b> (post-haemorrhagic, post-meningitis)</li><li><b>Hypopituitarism</b> (pituitary apoplexy, surgery)</li><li><b>Central venous thrombosis</b> (dehydration, immobility)</li><li><b>Visual loss</b> (prolonged papilloedema, optic atrophy)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Outcome depends on cause, duration, CPP, age</li><li>TBI: GCS, pupillary response, age, CT findings (Marshall classification) predict outcome</li><li>6-month outcome: GOSE (Extended Glasgow Outcome Scale)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Monro-Kellie doctrine</b>: skull fixed volume — brain 80%, blood 10%, CSF 10%</li><li><b>Cushing's triad</b>: HT + Brady + Irregular RR = impending herniation</li><li><b>Normal ICP</b>: 5–15 mmHg; treat &gt;20–22 mmHg</li><li><b>CPP = MAP − ICP</b>; target 60–70 mmHg</li><li><b>Head-up 30°</b> + head midline</li><li><b>Mannitol 0.5–1 g/kg</b> OR <b>3% saline 150–250 mL</b> for osmotherapy</li><li><b>Hyperventilation</b> to PaCO₂ 35–38 mmHg (do NOT &lt;30)</li><li><b>Drain CSF</b> via EVD if hydrocephalus</li><li><b>Decompressive craniectomy</b> for refractory ICP (DECRA)</li><li><b>Avoid hypoxia, hyperthermia, hyponatraemia, anaemia</b></li><li><b>Pupillary changes</b> (CN III) = uncal herniation</li><li><b>LP contraindicated</b> without imaging</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define raised ICP. What is the Monro-Kellie doctrine?</li><li>List causes of raised ICP</li><li>Describe Cushing's triad and pathophysiology</li><li>Outline the management of raised ICP step-by-step</li><li>What are the herniation syndromes?</li><li>How do you calculate CPP? What is the target?</li><li>Indications for decompressive craniectomy</li><li>Why avoid LP in suspected raised ICP?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Confusing ICP and CPP targets</b> — CPP = MAP − ICP, target 60–70</li><li><b>Hyperventilation below PaCO₂ 4.0 kPa</b> → cerebral ischaemia</li><li><b>Mannitol in hypovolaemia</b> → hypoperfusion; use hypertonic saline</li><li><b>Hypotonic fluids</b> (5% dextrose) worsen cerebral oedema — use 0.9% NaCl</li><li><b>LP without imaging</b> → tonsillar herniation</li><li><b>Head-down positioning</b> → ↑ ICP</li><li><b>Sedation reduces ICP</b> but must be titrated, not withheld</li><li><b>Steroids</b> in TBI no benefit; only for vasogenic oedema (tumour)</li><li><b>Hypoxia + hypercapnia</b> → cerebral vasodilation → ↑ ICP</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>MONRO-KELLIE</b>: 3 compartments — <b>B</b>rain 80%, <b>B</b>lood 10%, <b>C</b>SF 10%</li><li><b>CUSHING's triad</b>: <b>H</b>ypertension, <b>B</b>radycardia, <b>I</b>rregular RR</li><li><b>CPP = MAP − ICP</b>, target <b>60–70</b></li><li><b>MANNITOL</b>: <b>M</b>annitol 0.5–1 g/kg; <b>N</b>a⁺ 145–155 if hypertonic saline</li><li><b>UNCAL HERNIATION</b>: <b>CN III</b> palsy (fixed dilated pupil) + contralateral hemiparesis</li><li><b>CINGULATE/SUBFALCINE</b>: contralateral leg weakness</li><li><b>Tonsillar</b>: sudden death</li><li><b>TBI steroids</b>: NO (CRASH trial)</li><li><b>LP contraindications</b>: raised ICP, mass lesion, coagulopathy, infection at site</li><li><b>Avoid</b>: hypotonic fluids, hypoxia, hyperthermia, hyponatraemia, hypoglycaemia</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Raised ICP))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definition</div>
+<div class="mm-node mm-l3">– Normal 5-15 mmHg</div>
+<div class="mm-node mm-l3">– Treat &gt;20-22 mmHg</div>
+<div class="mm-node mm-l3">– CPP = MAP - ICP (target 60-70)</div>
+<div class="mm-node mm-l2">Monro-Kellie</div>
+<div class="mm-node mm-l3">– Skull fixed volume</div>
+<div class="mm-node mm-l3">– Brain 80%, Blood 10%, CSF 10%</div>
+<div class="mm-node mm-l3">– Compensation by displacement</div>
+<div class="mm-node mm-l2">Causes</div>
+<div class="mm-node mm-l3">– Mass: Haematoma, Tumour, Abscess</div>
+<div class="mm-node mm-l3">– Diffuse: TBI, Encephalitis, FHF, DKA</div>
+<div class="mm-node mm-l3">– CSF: Hydrocephalus</div>
+<div class="mm-node mm-l3">– Venous: CVST</div>
+<div class="mm-node mm-l3">– Extracranial: Hyponatraemia, Hypoxia, Hypercapnia</div>
+<div class="mm-node mm-l2">Clinical Features</div>
+<div class="mm-node mm-l3">– Symptoms: Headache, Vomiting, Visual</div>
+<div class="mm-node mm-l3">– Signs: Papilloedema (chronic)</div>
+<div class="mm-node mm-l3">– Cushing's Triad: HT + Brady + Irregular RR</div>
+<div class="mm-node mm-l3">– Pupils: Uncal (CN III)</div>
+<div class="mm-node mm-l3">– Posturing: Decorticate, Decerebrate</div>
+<div class="mm-node mm-l2">Herniation</div>
+<div class="mm-node mm-l3">– Uncal: CN III + contralateral hemiparesis</div>
+<div class="mm-node mm-l3">– Central: Downward pressure</div>
+<div class="mm-node mm-l3">– Tonsillar: Sudden death</div>
+<div class="mm-node mm-l3">– Subfalcine: Contralateral leg</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– ABCDE + Position (30deg)</div>
+<div class="mm-node mm-l3">– Sedation + Analgesia</div>
+<div class="mm-node mm-l3">– Osmotherapy</div>
+<div class="mm-node mm-deep">– Mannitol 0.5-1g/kg</div>
+<div class="mm-node mm-deep">– Hypertonic saline 3% 150-250ml</div>
+<div class="mm-node mm-l3">– PaCO2 35-38 mmHg</div>
+<div class="mm-node mm-l3">– Treat underlying cause</div>
+<div class="mm-node mm-l3">– EVD for hydrocephalus</div>
+<div class="mm-node mm-l3">– Rescue: Hyperventilate, Barbiturates, Decompressive craniectomy</div>
+<div class="mm-node mm-l3">– Supportive: DVT, Seizure Ppx, Temp control</div>
+<div class="mm-node mm-l2">Avoid</div>
+<div class="mm-node mm-l3">– LP without imaging</div>
+<div class="mm-node mm-l3">– Hypotonic fluids</div>
+<div class="mm-node mm-l3">– Steroids in TBI</div>
+<div class="mm-node mm-l3">– PaCO2 &lt;30 mmHg</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flowchart — Raised ICP Management</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Raised ICP Suspected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Head-up 30 deg + Head midline</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Intubate if GCS &lt;=8 + PaCO2 35-38 mmHg</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Sedation + Analgesia Propofol + Fentanyl</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Osmotherapy: Mannitol 0.5-1g/kg OR 3% Saline 150-250ml</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">CT Head: Identify Cause</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Neurosurgical Referral + Decompression</div>
+<div class="fc-node" data-id="H">EVD Insertion</div>
+<div class="fc-node" data-id="I">Continue medical management</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">ICP Still &gt;25?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Rescue: Brief Hyperventilation + Paralysis</div>
+<div class="fc-node" data-id="L">Barbiturate coma OR Decompressive craniectomy</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Normal ICP</b>: 5–15 mmHg; treat &gt;20–22 mmHg</li><li><b>CPP = MAP − ICP</b>; target 60–70</li><li><b>Monro-Kellie</b>: Brain 80%, Blood 10%, CSF 10% in fixed skull</li><li><b>Cushing's triad</b>: HT + Bradycardia + Irregular RR = herniation imminent</li><li><b>Uncal</b>: CN III palsy (fixed dilated pupil) + contralateral hemiparesis</li><li><b>Tonsillar</b>: sudden death</li><li><b>Stepwise management</b>: ABCDE + Head-up 30° → Sedation → Osmotherapy (mannitol 0.5–1 g/kg OR 3% saline 150–250 mL) → PaCO₂ 35–38 mmHg → EVD for hydrocephalus → Decompressive craniectomy</li><li><b>Avoid</b>: LP without imaging, hypotonic fluids, steroids in TBI, PaCO₂ &lt;30 mmHg</li><li><b>Treat underlying cause</b> (mass, hydrocephalus, CVST, infection)</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State Monro-Kellie doctrine</li><li>List Cushing's triad and its significance</li><li>Outline the management of raised ICP</li><li>Describe uncal herniation signs</li><li>Calculate CPP and state target</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Monro-Kellie doctrine</li><li>Cushing's triad</li><li>CPP calculation and target (60–70)</li><li>Stepwise management: head-up, sedation, osmotherapy, ventilation</li><li>Mannitol 0.5–1 g/kg + hypertonic saline 3% doses</li><li>Herniation syndromes (uncal, tonsillar, central, subfalcine)</li><li>Avoid LP without imaging</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Decompressive craniectomy (DECRA trial)</li><li>Barbiturate coma for refractory ICP</li><li>EVD for hydrocephalus</li><li>Avoid steroids in TBI</li><li>PaCO₂ target 35–38 mmHg</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>ICP monitoring devices (ventricular catheter, parenchymal bolt)</li><li>Therapeutic hypothermia (controversial)</li><li>GOSE outcome scale</li><li>Marshall CT classification in TBI</li><li>PRES, hepatic encephalopathy specifics</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition of raised ICP</li><li>Monro-Kellie doctrine</li><li>Aetiology (mass, diffuse, CSF, venous, extracranial)</li><li>Pathophysiology</li><li>Clinical features (symptoms + signs)</li><li>Cushing's triad explanation</li><li>Herniation syndromes</li><li>Investigations (CT, MRI, ICP monitoring)</li><li>Stepwise management</li><li>Complications + prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Monro-Kellie doctrine diagram</li><li>Cushing's triad box</li><li>Herniation syndromes table</li><li>Osmotherapy doses</li><li>ICP/CPP targets</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Normal ICP 5–15 mmHg, treat &gt;20"</li><li>"CPP = MAP − ICP, target 60–70"</li><li>"Cushing's triad = HT + Brady + Irregular RR"</li><li>"Uncal: CN III palsy + contralateral hemiparesis"</li><li>"Mannitol 0.5–1 g/kg OR 3% saline 150–250 mL"</li><li>"PaCO₂ target 35–38 mmHg"</li><li>"Head-up 30°, head midline"</li><li>"LP contraindicated without imaging"</li><li>"Monro-Kellie: brain 80, blood 10, CSF 10"</li><li>"Tonsillar herniation = sudden death"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>TBI, GCS 6, blown right pupil → intubate, mannitol, urgent CT, neurosurgical decompression</li><li>Subarachnoid haemorrhage, GCS 13, severe headache → CT angio, nimodipine, EVD if hydrocephalus</li><li>Fulminant hepatic failure, confusion, hyperventilation → ammonia, treat as raised ICP, hypertonic saline</li><li>Post-op craniopharyngioma, Na⁺ 128, GCS 10 → hyponatraemia, DDAVP withheld, fluid restrict, MRI</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>ICP 5–15; treat &gt;20</li><li>CPP = MAP − ICP, target 60–70</li><li>Monro-Kellie: 80/10/10</li><li>Cushing's: HT + Brady + Irregular RR</li><li>Uncal: CN III + contralateral hemi</li><li>Head-up 30° + head midline</li><li>Mannitol 0.5–1 g/kg OR 3% saline 150–250 mL</li><li>PaCO₂ 35–38 mmHg</li><li>No LP without imaging</li><li>No steroids in TBI</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Raised ICP is a life-threatening emergency</b> causing cerebral ischaemia and brainstem herniation. <b>Monro-Kellie doctrine</b>: skull is a fixed-volume container (brain 80%, blood 10%, CSF 10%); any ↑ in one component must be offset by ↓ in another. <b>Normal ICP</b>: 5–15 mmHg; treat &gt;20–22 mmHg. <b>CPP = MAP − ICP</b>; target 60–70 mmHg. <b>Cushing's triad</b> (late, ominous): hypertension + bradycardia + irregular respirations. <b>Herniation syndromes</b>: uncal (CN III palsy + contralateral hemiparesis), central, tonsillar (sudden death), subfalcine. <b>Stepwise management</b>: ABCDE + head-up 30° + head midline → intubation + controlled ventilation (PaCO₂ 4.5–5.0 kPa / 35–38 mmHg) → sedation + analgesia → osmotherapy (<b>mannitol 0.5–1 g/kg</b> OR <b>hypertonic saline 3% 150–250 mL</b>) → identify and treat underlying cause (mass → surgical decompression; hydrocephalus → EVD) → rescue therapies (brief hyperventilation, paralysis, barbiturate coma, decompressive craniectomy). <b>Avoid</b>: LP without imaging, hypotonic fluids, steroids in TBI (CRASH), PaCO₂ &lt;30 mmHg. Supportive: DVT/PUD prophylaxis, seizure prophylaxis, temperature control, glycaemic control.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Monro-Kellie doctrine: cranial cavity components in proportion:</li></ol>
+<p>A. Brain 70%, Blood 20%, CSF 10% B. <b>Brain 80%, Blood 10%, CSF 10%</b> C. Brain 60%, Blood 30%, CSF 10% D. Brain 90%, Blood 5%, CSF 5%</p>
+<ol><li>Cushing's triad includes all EXCEPT:</li></ol>
+<p>A. Hypertension B. Bradycardia C. Irregular respirations D. <b>Tachycardia</b></p>
+<ol><li>Normal ICP in adults:</li></ol>
+<p>A. 0–5 mmHg B. <b>5–15 mmHg</b> C. 20–30 mmHg D. 30–40 mmHg</p>
+<ol><li>CPP is calculated by:</li></ol>
+<p>A. ICP − MAP B. <b>MAP − ICP</b> C. MAP + ICP D. MAP / ICP</p>
+<ol><li>Target CPP in raised ICP:</li></ol>
+<p>A. 30–40 mmHg B. 50–60 mmHg C. <b>60–70 mmHg</b> D. 80–90 mmHg</p>
+<ol><li>Mannitol dose in raised ICP:</li></ol>
+<p>A. 0.1 g/kg B. <b>0.5–1 g/kg</b> C. 2 g/kg D. 5 g/kg</p>
+<ol><li>Uncal herniation classically presents with:</li></ol>
+<p>A. Pinpoint pupils bilaterally B. <b>Ipsilateral fixed dilated pupil + contralateral hemiparesis</b> C. Cheyne-Stokes respiration D. Bilateral leg weakness</p>
+<ol><li>PaCO₂ target in controlled ventilation for raised ICP:</li></ol>
+<p>A. 25–30 mmHg B. <b>35–38 mmHg</b> C. 45–50 mmHg D. 50–55 mmHg</p>
+<ol><li>Steroids in raised ICP due to traumatic brain injury:</li></ol>
+<p>A. Recommended at high dose B. Recommended at low dose C. <b>Not recommended (CRASH trial)</b> D. Recommended only in children</p>
+<ol><li>LP is contraindicated in suspected raised ICP because of risk of:</li></ol>
+<p>A. Infection B. <b>Tonsillar herniation</b> C. Bleeding D. Hypotension</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 25-year-old with severe TBI, intubated, ICP 28 mmHg, MAP 80 mmHg. CPP is:</li></ol>
+<p>A. 50 mmHg B. <b>52 mmHg (below target 60–70)</b> C. 100 mmHg D. 108 mmHg</p>
+<ol><li>A patient with raised ICP has Cushing's triad. Most likely herniation type:</li></ol>
+<p>A. Subfalcine B. <b>Tonsillar / uncal</b> C. Upward D. None</p>
+<ol><li>Hypertonic saline 3% dose in raised ICP:</li></ol>
+<p>A. 50 mL B. <b>150–250 mL over 10–20 min</b> C. 1 L D. 5 mL</p>
+<ol><li>A patient with obstructive hydrocephalus and raised ICP — best treatment:</li></ol>
+<p>A. Mannitol only B. <b>External ventricular drain (EVD)</b> C. Lumbar puncture D. Steroids</p>
+<ol><li>Cushing's triad is a sign of:</li></ol>
+<p>A. Early raised ICP B. <b>Impending herniation (late)</b> C. Hyperventilation D. Sleep</p>
+<ol><li>Mannitol should be held if serum osmolality exceeds:</li></ol>
+<p>A. 280 mOsm/kg B. 300 mOsm/kg C. <b>320 mOsm/kg</b> D. 350 mOsm/kg</p>
+<ol><li>A patient with fulminant hepatic failure develops confusion. Most likely raised ICP cause:</li></ol>
+<p>A. Mass lesion B. <b>Cerebral oedema (hyperammonaemia)</b> C. Hydrocephalus D. CVST</p>
+<ol><li>Brief hyperventilation in raised ICP:</li></ol>
+<p>A. Sustained therapy B. <b>Rescue therapy only (transient, risk of ischaemia)</b> C. First-line D. Never used</p>
+<ol><li>Decompressive craniectomy is indicated in:</li></ol>
+<p>A. <b>Refractory raised ICP despite medical management</b> B. All TBI C. Stroke D. Meningitis only</p>
+<ol><li>A patient on mannitol develops hypovolaemia. Better alternative:</li></ol>
+<p>A. More mannitol B. <b>Hypertonic saline 3%</b> C. 5% dextrose D. 0.45% saline</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Monro-Kellie doctrine</li></ul>
+<p>A: Brain 80%, Blood 10%, CSF 10% in fixed skull</p>
+<ul><li>Q: Normal ICP</li></ul>
+<p>A: 5–15 mmHg (treat &gt;20)</p>
+<ul><li>Q: CPP formula</li></ul>
+<p>A: CPP = MAP − ICP</p>
+<ul><li>Q: CPP target</li></ul>
+<p>A: 60–70 mmHg</p>
+<ul><li>Q: Cushing's triad</li></ul>
+<p>A: Hypertension + Bradycardia + Irregular respirations</p>
+<ul><li>Q: Mannitol dose</li></ul>
+<p>A: 0.5–1 g/kg IV</p>
+<ul><li>Q: Hypertonic saline 3% dose</li></ul>
+<p>A: 150–250 mL over 10–20 min</p>
+<ul><li>Q: PaCO₂ target</li></ul>
+<p>A: 35–38 mmHg (4.5–5.0 kPa)</p>
+<ul><li>Q: Uncal herniation</li></ul>
+<p>A: CN III palsy (fixed dilated pupil) + contralateral hemiparesis</p>
+<ul><li>Q: Tonsillar herniation</li></ul>
+<p>A: Sudden death</p>
+<ul><li>Q: Head position in raised ICP</li></ul>
+<p>A: Head-up 30°, head midline</p>
+<ul><li>Q: Steroids in TBI</li></ul>
+<p>A: NOT recommended (CRASH trial)</p>
+<ul><li>Q: Decompressive craniectomy</li></ul>
+<p>A: Refractory raised ICP despite medical management</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Monro-Kellie: brain 80%, blood 10%, CSF 10%. <b>MCQ 2</b>: D — Cushing's = HT + Brady + Irregular RR (NOT tachycardia). <b>MCQ 3</b>: B — Normal ICP 5–15 mmHg. <b>MCQ 4</b>: B — CPP = MAP − ICP. <b>MCQ 5</b>: C — CPP target 60–70 mmHg. <b>MCQ 6</b>: B — Mannitol 0.5–1 g/kg. <b>MCQ 7</b>: B — Uncal: ipsilateral CN III + contralateral hemiparesis. <b>MCQ 8</b>: B — PaCO₂ 35–38 mmHg. <b>MCQ 9</b>: C — CRASH trial: steroids ↑ mortality in TBI. <b>MCQ 10</b>: B — LP can cause tonsillar herniation.</p>
+<p><b>SBA 1</b>: B — CPP = 80 − 28 = 52 mmHg, below target. <b>SBA 2</b>: B — Cushing's = impending herniation. <b>SBA 3</b>: B — 150–250 mL over 10–20 min. <b>SBA 4</b>: B — EVD is definitive for hydrocephalus. <b>SBA 5</b>: B — Cushing's = late/impending herniation. <b>SBA 6</b>: C — Hold mannitol if osmolality &gt;320. <b>SBA 7</b>: B — Hyperammonaemia causes cerebral oedema in FHF. <b>SBA 8</b>: B — Brief hyperventilation = rescue only. <b>SBA 9</b>: A — Refractory raised ICP despite medical management. <b>SBA 10</b>: B — Hypertonic saline 3% — preferred in hypovolaemia.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-15</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Raised Intracranial Pressure · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

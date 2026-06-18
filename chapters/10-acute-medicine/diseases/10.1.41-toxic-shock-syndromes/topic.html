@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Toxic Shock Syndromes — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Toxic Shock Syndromes</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise diagnostic criteria for TSS</li><li>Differentiate staphylococcal vs streptococcal TSS</li><li>Apply immediate management (antibiotics + IVIG + source control)</li><li>Know the role of clindamycin as toxin inhibitor</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Diagnostic Criteria (CDC)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Staphylococcal TSS</b></p>
+<ol><li>Fever ≥38.9°C</li><li>Rash (diffuse macular erythroderma)</li><li>Desquamation (1–2 weeks later, palms/soles)</li><li>Hypotension (SBP ≤90)</li><li>≥3 organ systems involved (GI, muscular, mucosal, renal, hepatic, haematologic, CNS)</li></ol>
+<p><b>Streptococcal TSS</b> (more severe)</p>
+<ul><li>Isolation of GAS + hypotension + ≥2 organ failures (renal, coagulopathy, hepatic, ARDS, soft tissue necrosis)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Staphylococcal</b>: TSST-1, enterotoxins — tampons, surgical wounds, nasal packing</li><li><b>Streptococcal</b>: SpeA, SpeB — skin/soft tissue infection, varicella, postpartum</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>ICU admission</b></li><li><b>Aggressive fluid resuscitation</b> (crystalloids)</li><li><b>Broad-spectrum antibiotics</b>: clindamycin + beta-lactam (piperacillin-tazobactam/carbapenem) + vancomycin</li><li><b>Clindamycin</b> — inhibits toxin synthesis (key!)</li><li><b>Source control</b>: remove tampon/drain abscess/explore wound</li><li><b>IVIG</b> 1–2 g/kg (consider in severe/refractory)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Red Flags</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Rapid deterioration</li><li>ARDS, DIC, renal failure</li><li>Necrotising fasciitis (surgical emergency)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Clindamycin is essential — inhibits protein (toxin) synthesis</li><li>IVIG may be lifesaving in severe cases</li><li>Streptococcal TSS has higher mortality</li><li>Desquamation is late sign — do not wait for it</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>What are the diagnostic criteria for staphylococcal TSS?</li><li>Why is clindamycin preferred in TSS?</li><li>What is the role of IVIG?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>TSS = superantigen toxin-mediated shock</b> Staph (tampons/wounds) vs Strep (soft tissue) Clindamycin + beta-lactam + vancomycin Source removal + IVIG + fluids</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>CDC criteria for staphylococcal TSS (5 criteria)</li><li>Streptococcal TSS = GAS + hypotension + ≥2 organ failures</li><li>Clindamycin inhibits toxin synthesis (key)</li><li>Source removal essential (tampon, wound, abscess)</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>IVIG 1–2 g/kg in severe/refractory</li><li>Strep TSS higher mortality than Staph</li><li>Desquamation late sign (1–2 weeks)</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Specific toxins: TSST-1, enterotoxins (Staph), SpeA/SpeB (Strep)</li><li>Necrotising fasciitis as complication</li><li>Prophylactic clindamycin in surgical packing</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>CDC criteria for staphylococcal TSS require how many organ systems involved?</li></ol>
+<p>A. 1 B. 2 C. 3 D. 4</p>
+<ol><li>Key antibiotic in TSS that inhibits toxin synthesis:</li></ol>
+<p>A. Vancomycin B. Clindamycin C. Piperacillin-tazobactam D. Meropenem</p>
+<ol><li>Staphylococcal TSS is associated with:</li></ol>
+<p>A. TSST-1 and enterotoxins B. SpeA and SpeB C. Alpha toxin D. Panton-Valentine leukocidin</p>
+<ol><li>Desquamation in staphylococcal TSS typically occurs:</li></ol>
+<p>A. Within 24 hours B. 1–2 weeks later C. 3–4 weeks later D. Never</p>
+<ol><li>Streptococcal TSS requires isolation of:</li></ol>
+<p>A. S. aureus B. GAS (Group A Strep) C. S. pneumoniae D. S. agalactiae</p>
+<ol><li>IVIG dose in severe TSS:</li></ol>
+<p>A. 0.5 g/kg B. 1–2 g/kg C. 3–4 g/kg D. 5 g/kg</p>
+<ol><li>Most common portal for staphylococcal TSS:</li></ol>
+<p>A. Bloodstream B. Tampons / surgical wounds / nasal packing C. Respiratory tract D. Urinary tract</p>
+<ol><li>Clindamycin works in TSS by:</li></ol>
+<p>A. Killing bacteria rapidly B. Inhibiting protein (toxin) synthesis C. Neutralising toxin directly D. Enhancing phagocytosis</p>
+<ol><li>Necrotising fasciitis in TSS requires:</li></ol>
+<p>A. Antibiotics only B. Surgical debridement (emergency) C. IVIG only D. Observation</p>
+<ol><li>Streptococcal TSS has _____ mortality than staphylococcal TSS.</li></ol>
+<p>A. Lower B. Higher C. Same D. Unknown</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 24-year-old woman using tampons presents with fever 39.5°C, diffuse rash, hypotension (80/50), vomiting, diarrhoea, and confusion. Most likely diagnosis:</li></ol>
+<p>A. Staphylococcal TSS B. Streptococcal TSS C. Meningococcal sepsis D. Anaphylaxis</p>
+<ol><li>A 40-year-old man with a surgical wound develops fever, hypotension, and a diffuse rash. Blood cultures grow S. aureus. Antibiotic regimen MUST include:</li></ol>
+<p>A. Vancomycin alone B. Clindamycin + beta-lactam + vancomycin C. Ceftriaxone alone D. Metronidazole + ciprofloxacin</p>
+<ol><li>A patient with necrotising fasciitis and septic shock. Best management:</li></ol>
+<p>A. Antibiotics + IVIG B. Emergency surgical debridement + antibiotics + ICU C. Conservative management D. IVIG alone</p>
+<ol><li>Clindamycin is essential in TSS because:</li></ol>
+<p>A. It has best bactericidal activity B. It inhibits toxin synthesis at ribosome level C. It penetrates abscesses best D. It covers anaerobes</p>
+<ol><li>A 30-year-old woman postpartum develops fever, hypotension, and a painful spreading leg rash. GAS isolated from wound. Diagnosis:</li></ol>
+<p>A. Staphylococcal TSS B. Streptococcal TSS C. Cellulitis D. DVT</p>
+<ol><li>IVIG in TSS:</li></ol>
+<p>A. First-line, before antibiotics B. Consider in severe/refractory cases (1–2 g/kg) C. Contraindicated D. Only for streptococcal TSS</p>
+<ol><li>In staphylococcal TSS, desquamation of palms/soles:</li></ol>
+<p>A. Early diagnostic sign B. Occurs 1–2 weeks after onset C. Never occurs D. Pathognomonic</p>
+<ol><li>Antibiotic covering TSST-1 producing S. aureus:</li></ol>
+<p>A. Flucloxacillin B. Clindamycin + beta-lactam C. Vancomycin alone D. Gentamicin</p>
+<ol><li>A patient with TSS from nasal packing after rhinoplasty. Source control:</li></ol>
+<p>A. Antibiotics only B. Remove nasal packing C. IVIG D. Steroids</p>
+<ol><li>Streptococcal TSS organ failures include all EXCEPT:</li></ol>
+<p>A. Renal B. Coagulopathy C. Hepatic D. Pancreatitis</p>
+<ol><li>Superantigen mechanism:</li></ol>
+<p>A. Binds MHC II and TCR non-specifically → massive cytokine release B. Direct endothelial damage C. Complement activation D. Antibody-mediated</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Staph TSS CDC criteria</li></ul>
+<p>A: Fever ≥38.9 + rash + desquamation + hypotension + ≥3 organ systems</p>
+<ul><li>Q: Strep TSS criteria</li></ul>
+<p>A: GAS isolation + hypotension + ≥2 organ failures</p>
+<ul><li>Q: Key antibiotic in TSS</li></ul>
+<p>A: Clindamycin (inhibits toxin synthesis)</p>
+<ul><li>Q: IVIG dose</li></ul>
+<p>A: 1–2 g/kg in severe/refractory</p>
+<ul><li>Q: Desquamation timing</li></ul>
+<p>A: 1–2 weeks late sign</p>
+<ul><li>Q: Staph TSS portals</li></ul>
+<p>A: Tampons, surgical wounds, nasal packing</p>
+<ul><li>Q: Strep TSS portals</li></ul>
+<p>A: Skin/soft tissue, varicella, postpartum</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: C — ≥3 organ systems. <b>MCQ 2</b>: B — Clindamycin inhibits protein/toxin synthesis. <b>MCQ 3</b>: A — TSST-1, enterotoxins. <b>MCQ 4</b>: B — 1–2 weeks late sign. <b>MCQ 5</b>: B — GAS (Group A Strep). <b>MCQ 6</b>: B — 1–2 g/kg. <b>MCQ 7</b>: B — Tampons, surgical wounds, nasal packing. <b>MCQ 8</b>: B — Inhibits protein synthesis at 50S ribosome. <b>MCQ 9</b>: B — Emergency surgical debridement. <b>MCQ 10</b>: B — Strep TSS higher mortality.</p>
+<p><b>SBA 1</b>: A — Tampon use + fever + rash + hypotension + multi-organ = Staph TSS. <b>SBA 2</b>: B — Clindamycin (toxin) + beta-lactam + vancomycin (MRSA cover). <b>SBA 3</b>: B — Necrotising fasciitis = surgical emergency. <b>SBA 4</b>: B — Clindamycin inhibits toxin synthesis (key mechanism). <b>SBA 5</b>: B — Postpartum + GAS + shock = Strep TSS. <b>SBA 6</b>: B — IVIG 1–2 g/kg in severe/refractory. <b>SBA 7</b>: B — Late sign. <b>SBA 8</b>: B — Clindamycin + beta-lactam covers TSST-1 producers. <b>SBA 9</b>: B — Remove packing (source control). <b>SBA 10</b>: D — Pancreatitis not typical organ failure in Strep TSS. <b>SBA 11</b>: A — Superantigen binds MHC II + TCR → cytokine storm.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Toxic Shock Syndromes · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

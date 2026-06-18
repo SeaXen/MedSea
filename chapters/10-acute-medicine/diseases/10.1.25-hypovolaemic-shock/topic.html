@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hypovolaemic Shock — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Hypovolaemic Shock</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Identify causes of hypovolaemic shock</li><li>Differentiate haemorrhagic vs non-haemorrhagic hypovolaemia</li><li>Apply ATLS principles of fluid resuscitation</li><li>Recognise when blood products are needed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification by Volume Loss</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Class</th><th>Blood Loss</th><th>Pulse</th><th>BP</th><th>Urine Output</th><th>Mental Status</th></tr><tr><td>-------</td><td>------------</td><td>-------</td><td>----</td><td>--------------</td><td>---------------</td></tr><tr><td>I</td><td><750 mL</td><td><100</td><td>Normal</td><td>>30 mL/hr</td><td>Normal</td></tr><tr><td>II</td><td>750–1500</td><td>100–120</td><td>Normal</td><td>20–30 mL/hr</td><td>Mild anxiety</td></tr><tr><td>III</td><td>1500–2000</td><td>120–140</td><td>Decreased</td><td>5–15 mL/hr</td><td>Confused</td></tr><tr><td>IV</td><td>>2000</td><td>>140</td><td>Decreased</td><td>Minimal</td><td>Lethargic</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Causes</span>
+  </div>
+  <div class="sec-body">
+<p><b>Haemorrhagic</b></p>
+<ul><li>Trauma (external + internal)</li><li>GI bleed, ruptured AAA, ectopic pregnancy</li></ul>
+<p><b>Non-haemorrhagic</b></p>
+<ul><li>Severe dehydration (diarrhoea, vomiting, burns, DKA, diabetes insipidus)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Cool, clammy skin, delayed capillary refill</li><li>Tachycardia, narrow pulse pressure</li><li>Flat neck veins, low JVP</li><li>Oliguria, confusion</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Stop the bleeding</b> (pressure, tourniquet, surgery, endoscopy)</li><li>Two large-bore IV cannulae</li><li>Crystalloid resuscitation (balanced solutions)</li><li>Blood products early if Class III/IV or ongoing bleeding (1:1:1 ratio)</li><li>Permissive hypotension (SBP 80–90 mmHg) in penetrating trauma until bleeding controlled</li><li>Monitor lactate, base deficit, urine output</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Red Flags</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Class III/IV shock</li><li>Ongoing bleeding</li><li>Coagulopathy / trauma-induced coagulopathy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Tachycardia may be absent in elderly or beta-blocked patients</li><li>Hypotension is a <b>late</b> sign</li><li>Give blood early in haemorrhagic shock — crystalloids alone worsen coagulopathy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Classify hypovolaemic shock by blood loss.</li><li>What is permissive hypotension and when is it used?</li><li>When would you activate massive transfusion protocol?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Hypovolaemia = low preload</b> Stop bleeding + large-bore IV access + balanced crystalloids Early blood in significant haemorrhage Monitor lactate and urine output</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>ATLS classification I–IV by blood loss (pulse, BP, UO, mental status)</li><li>Haemorrhagic vs non-haemorrhagic causes</li><li>Stop bleeding first, then 2 large-bore IV + balanced crystalloids</li><li>Early blood products (1:1:1) for Class III/IV or ongoing bleed</li><li>Permissive hypotension SBP 80–90 in penetrating trauma</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Lactate, base deficit, UO as resuscitation targets</li><li>Trauma-induced coagulopathy (crystalloids dilute clotting factors)</li><li>Tranexamic acid within 3 hours of trauma</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Damage control resuscitation vs surgery</li><li>Cell salvage, REBOA</li><li>Permissive hypotension contraindicated in TBI</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>ATLS Class III haemorrhage blood loss:</li></ol>
+<p>A. &lt;750 mL B. 750–1500 mL C. <b>1500–2000 mL</b> D. &gt;2000 mL</p>
+<ol><li>ATLS Class IV — pulse:</li></ol>
+<p>A. &lt;100 B. 100–120 C. 120–140 D. <b>&gt;140</b></p>
+<ol><li>Permissive hypotension target SBP in penetrating trauma:</li></ol>
+<p>A. 60–70 B. <b>80–90</b> C. 100–110 D. 120–130</p>
+<ol><li>Massive transfusion protocol ratio (RBC:FFP:Platelets):</li></ol>
+<p>A. 1:1:2 B. <b>1:1:1</b> C. 2:1:1 D. 1:2:1</p>
+<ol><li>Hypovolaemic shock from dehydration — fluid of choice:</li></ol>
+<p>A. Albumin B. <b>Balanced crystalloids</b> (Hartmann's/Plasma-Lyte) C. 0.9% saline only D. Gelatin</p>
+<ol><li>Flat neck veins + low JVP in hypovolaemic shock:</li></ol>
+<p>A. Normal finding B. <b>Key differentiating sign from cardiogenic</b> C. Only in severe shock D. Not reliable</p>
+<ol><li>Tranexamic acid in trauma — timing:</li></ol>
+<p>A. Within 1 hour B. <b>Within 3 hours</b> of injury C. Within 6 hours D. Only in theatre</p>
+<ol><li>Crystalloids alone in major haemorrhage worsen:</li></ol>
+<p>A. Hypertension B. <b>Coagulopathy</b> (dilutional) C. Tachycardia D. Hypothermia only</p>
+<ol><li>Urine output target in resuscitation:</li></ol>
+<p>A. &gt;30 mL/hr B. <b>&gt;0.5 mL/kg/hr</b> C. &gt;1 mL/kg/hr D. &gt;2 mL/kg/hr</p>
+<ol><li>Hypotension in hypovolaemic shock is a:</li></ol>
+<p>A. Early sign B. <b>Late sign</b> (compensated until Class III) C. Only in Class IV D. Not seen</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 30-year-old stab wound abdomen, BP 85/50, HR 130, cool peripheries, Hb 80 g/L. FAST positive. Management:</li></ol>
+<p>A. 2L crystalloid then CT B. <b>Blood products early (1:1:1) + urgent laparotomy</b> (permissive hypotension) C. Noradrenaline + CT D. Observe</p>
+<ol><li>A 70-year-old on warfarin, GI bleed, BP 80/50, Hb 65, INR 4.5. Fluid/blood:</li></ol>
+<p>A. Crystalloid 2L B. <b>Packed RBCs + FFP (reverse warfarin) + PCC/4F-PCC</b> C. Platelets only D. Albumin</p>
+<ol><li>A 25-year-old trauma, pelvic fracture, SBP 70. Pelvic binder applied. Resuscitation:</li></ol>
+<p>A. Aggressive crystalloid to SBP &gt;110 B. <b>Permissive hypotension SBP 80–90 + blood products + pelvic packing/angio</b> C. Noradrenaline to SBP &gt;100 D. 3L crystalloid</p>
+<ol><li>ATLS Class II haemorrhage (750–1500 mL) — typical pulse:</li></ol>
+<p>A. &lt;100 B. <b>100–120</b> C. 120–140 D. &gt;140</p>
+<ol><li>A patient with DKA, severe dehydration, HR 120, BP 90/60. Fluid:</li></ol>
+<p>A. 0.9% saline 1L bolus then balanced B. <b>Balanced crystalloids</b> (0.9% saline initially if severe hyponatraemia) C. Albumin D. Blood</p>
+<ol><li>Lactate clearance target in shock resuscitation:</li></ol>
+<p>A. 5% per hour B. <b>≥10–20% per 2 hours</b> C. Normalise in 1 hour D. &lt;1 mmol/L in 6 hours</p>
+<ol><li>Base deficit &gt;6 in trauma indicates:</li></ol>
+<p>A. Mild shock B. <b>Significant hypoperfusion / occult shock</b> C. Normal D. Respiratory alkalosis</p>
+<ol><li>A 40-year-old postpartum haemorrhage, ongoing bleed, BP 70/40. TXA:</li></ol>
+<p>A. Not indicated B. <b>1g IV within 3 hours of birth</b> (WOMAN trial) C. Only if fibrinogen low D. After hysterectomy</p>
+<ol><li>Hypovolaemic shock vs cardiogenic — flat neck veins means:</li></ol>
+<p>A. Cardiogenic B. <b>Hypovolaemic</b> (low preload) C. Both D. Neither</p>
+<ol><li>Two large-bore IV cannulae in trauma — size:</li></ol>
+<p>A. 18G B. <b>14–16G</b> (or intraosseous) C. 20G C. 22G</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: ATLS Class I–IV</li></ul>
+<p>A: I&lt;750, II 750–1500, III 1500–2000, IV&gt;2000 mL</p>
+<ul><li>Q: Permissive hypotension</li></ul>
+<p>A: SBP 80–90 in penetrating trauma until bleeding controlled</p>
+<ul><li>Q: Massive transfusion ratio</li></ul>
+<p>A: 1:1:1 (RBC:FFP:Platelets)</p>
+<ul><li>Q: Flat neck veins =</li></ul>
+<p>A: Hypovolaemic (differentiates from cardiogenic)</p>
+<ul><li>Q: TXA in trauma</li></ul>
+<p>A: 1g IV within 3 hours</p>
+<ul><li>Q: Lactate clearance</li></ul>
+<p>A: ≥10–20% per 2 hours</p>
+<ul><li>Q: Blood early in haemorrhagic shock</li></ul>
+<p>A: Crystalloids worsen coagulopathy</p>
+<ul><li>Q: Hypotension = late sign</li></ul>
+<p>A: Compensated until Class III</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: C — Class III = 1500–2000 mL. <b>MCQ 2</b>: D — Class IV pulse &gt;140. <b>MCQ 3</b>: B — SBP 80–90 permissive hypotension. <b>MCQ 4</b>: B — 1:1:1 ratio. <b>MCQ 5</b>: B — Balanced crystalloids preferred. <b>MCQ 6</b>: B — Low JVP = hypovolaemic; high JVP = cardiogenic. <b>MCQ 7</b>: B — TXA within 3 hours (CRASH-2). <b>MCQ 8</b>: B — Crystalloids dilute clotting factors. <b>MCQ 9</b>: B — UO &gt;0.5 mL/kg/hr. <b>MCQ 10</b>: B — Hypotension is late (compensated).</p>
+<p><b>SBA 1</b>: B — FAST positive + shock = urgent laparotomy + blood (1:1:1) + permissive hypotension. <b>SBA 2</b>: B — Warfarin bleed = RBC + FFP + PCC/4F-PCC for INR reversal. <b>SBA 3</b>: B — Pelvic fracture = permissive hypotension + blood + pelvic binder/packing/angio. <b>SBA 4</b>: B — Class II pulse 100–120. <b>SBA 5</b>: B — Balanced crystalloids for dehydration (0.9% saline if severe hyponatraemia). <b>SBA 6</b>: B — Lactate clearance ≥10–20% per 2h. <b>SBA 7</b>: B — Base deficit &gt;6 = significant hypoperfusion. <b>SBA 8</b>: B — TXA 1g IV within 3h postpartum (WOMAN trial). <b>SBA 9</b>: B — Flat neck veins = low preload = hypovolaemic. <b>SBA 10</b>: B — 14–16G or IO access.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hypovolaemic Shock · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

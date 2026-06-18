@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fungal Pneumonias — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Fungal Pneumonias</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify fungal pneumonias by host immune deficit and geographic epidemiology</li><li>Recognise clinical-radiological syndromes: angioinvasive, airway-invasive, chronic, endemic mycoses</li><li>Select appropriate diagnostics: galactomannan, β-D-glucan, PCR, culture, histopathology</li><li>Initiate empirical and targeted antifungal therapy (azole, echinocandin, polyene)</li><li>Understand prophylaxis strategies in high-risk groups</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p><b>Fungal pneumonia</b> = lower respiratory tract infection caused by pathogenic or opportunistic fungi. Classified by:</p>
+<ul><li><b>Host immune status</b>: neutropenic vs non-neutropenic immunocompromised vs immunocompetent</li><li><b>Pathogenesis</b>: angioinvasive (Aspergillus, Mucorales), airway-invasive (Aspergillus tracheobronchitis), chronic (CPA, ABPA), endemic dimorphic (Histoplasma, Coccidioides, Blastomyces)</li><li><b>Acquisition</b>: inhalation of conidia/spores (moulds), reactivation (endemic), aspiration (Candida)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Microbiology — Key Pathogens by Host Context</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Host Context</th><th>Primary Pathogens</th><th>Key Features</th></tr><tr><td>--------------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**Prolonged neutropenia (AML, HSCT)**</td><td>*Aspergillus fumigatus* (80%), *A. flavus*, *A. niger*, *A. terreus* (azole resistance)</td><td>Angioinvasive, hemorrhagic infarcts, halo sign → air-crescent</td></tr><tr><td></td><td>*Mucorales* (Rhizopus, Mucor, Lichtheimia)</td><td>Ribbon-like aseptate hyphae, 90° branching, vascular invasion, palate/sinus involvement</td></tr><tr><td></td><td>*Fusarium*, *Scedosporium*, *Lomentospora*</td><td>Resistant moulds; fusarium = bloodstream invasion</td></tr><tr><td>**Non-neutropenic immunocompromised** (steroids, COPD, transplant, biologics, CGD)</td><td>*Aspergillus* (chronic, allergic, invasive)</td><td>CPA, ABPA, invasive aspergillosis (IA)</td></tr><tr><td></td><td>*Pneumocystis jirovecii*</td><td>HIV CD4<200, transplant, steroids; ground-glass, ↑β-D-glucan</td></tr><tr><td></td><td>*Candida* (pneumonia rare)</td><td>Usually haematogenous dissemination; consider in VAP</td></tr><tr><td></td><td>*Cryptococcus neoformans/gattii*</td><td>HIV, transplant; nodular/miliary, meningoencephalitis common</td></tr><tr><td></td><td>*Nocardia* (bacterium, mimics fungus)</td><td>Subacute, cavitating, immunocompromised; sulfa treatment</td></tr><tr><td>**Endemic mycoses** (immunocompetent or immunocompromised)</td><td>*Histoplasma capsulatum*</td><td>Ohio/Mississippi valleys; bat/bird droppings; intracellular yeast</td></tr><tr><td></td><td>*Coccidioides immitis/posadasii*</td><td>SW USA, CA, Mexico; "Valley fever"; spherules in tissue</td></tr><tr><td></td><td>*Blastomyces dermatitidis*</td><td>Great Lakes, SE USA; broad-based budding yeast</td></tr><tr><td></td><td>*Paracoccidioides*, *Talaromyces (Penicillium) marneffei*</td><td>Latin America, SE Asia; HIV-associated</td></tr><tr><td></td><td>*Emergomyces*</td><td>Emerging, HIV, Africa/Asia</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Normal Values / Important Cut-offs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Biomarker</th><th>Threshold</th><th>Interpretation</th></tr><tr><td>-----------</td><td>-----------</td><td>----------------</td></tr><tr><td>**Serum galactomannan (GM)**</td><td>Index ≥0.5 (or ≥1.0 for specificity)</td><td>IA in neutropenic; false +ve: π-lactams, Candida, food</td></tr><tr><td>**BAL galactomannan**</td><td>Index ≥1.0</td><td>Higher specificity for pulmonary aspergillosis</td></tr><tr><td>**Serum β-D-glucan (BDG)**</td><td>≥80 pg/mL (varies by assay)</td><td>Pan-fungal (Aspergillus, Candida, Pneumocystis, Histoplasma); **not Mucorales, Cryptococcus**</td></tr><tr><td>**Aspergillus PCR (blood/BAL)**</td><td>Positive (validated assay)</td><td>Emerging; not yet standard</td></tr><tr><td>**Histoplasma antigen (urine/serum)**</td><td>Positive</td><td>High sensitivity in disseminated/histoplasmosis; cross-reacts Blastomyces</td></tr><tr><td>**Coccidioides serology (IgM/IgG)**</td><td>Positive</td><td>IgM = acute; IgG = past/complement fixation titre for severity</td></tr><tr><td>**Cryptococcal antigen (CrAg)**</td><td>Positive (LFA, serum/CSF)</td><td>High sensitivity/specificity; titre correlates with burden</td></tr></table>
+<div class="callout">[!tip] <b>Galactomannan:</b> False positives with piperacillin-tazobactam (cross-reactivity), certain foods, gut translocation. <b>β-D-glucan:</b> False positives with haemodialysis (cellulose membranes), IVIG, gauze, bacteraemia. <b>Cryptococcal Ag:</b> Not detected by BDG (capsular polysaccharide).</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Syndromes and Radiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Typical Host</th><th>Radiology</th><th>Key Features</th></tr><tr><td>----------</td><td>--------------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Invasive pulmonary aspergillosis (IPA)**</td><td>Neutropenic, HSCT, steroids</td><td>**Halo sign** (early, CT) → **air-crescent sign** (recovery), nodules, cavitation</td><td>Fever refractory, pleuritic pain, haemoptysis; angioinvasion → thrombosis, infarction</td></tr><tr><td>**Chronic pulmonary aspergillosis (CPA)**</td><td>Pre-existing lung disease (TB, COPD, sarcoid)</td><td>Cavities ± fungal ball (aspergilloma), pleural thickening</td><td>≥3 months; weight loss, cough, haemoptysis</td></tr><tr><td>**Allergic bronchopulmonary aspergillosis (ABPA)**</td><td>Asthma, CF</td><td>Central bronchiectasis (glove-finger), mucoid impaction, fleeting infiltrates</td><td>High IgE, Aspergillus-specific IgE/IgG, eosinophilia</td></tr><tr><td>**Aspergillus tracheobronchitis**</td><td>Lung transplant, airway stENTS</td><td>Ulcerative/pseudomembranous/obstructing tracheobronchitis</td><td>Cough, dyspnoea, wheeze; bronchoscopy diagnostic</td></tr><tr><td>**Pneumocystis pneumonia (PCP)**</td><td>HIV CD4<200, transplant, steroids</td><td>**Bilateral perihilar ground-glass** (classic), cysts, pneumothorax</td><td>Subacute dyspnoea, dry cough, fever; LDH ↑, SpO₂ ↓ on exertion</td></tr><tr><td>**Mucormycosis**</td><td>DKA, neutropenia, deferoxamine, transplant</td><td>**Reverse halo sign**, sinus/orbital/palate invasion, vascular thrombosis</td><td>Rapid progression; KOH: ribbon-like aseptate hyphae 90° branching</td></tr><tr><td>**Disseminated histoplasmosis**</td><td>HIV CD4<150, endemic area</td><td>Miliary, mediastinal LAD, hepatosplenomegaly</td><td>Fever, weight loss, pancytopenia; urine Ag +ve</td></tr><tr><td>**Coccidioidal pneumonia**</td><td>Endemic area exposure</td><td>Lobar/complex pneumonia, hilar LAD, eosinophilia</td><td>"Valley fever"; erythema nodosum, arthralgia; spherules on histology</td></tr><tr><td>**Blastomycosis**</td><td>Endemic area, outdoor exposure</td><td>Mass-like pneumonia, skin lesions, osteoarticular, GU</td><td>Broad-based budding yeast on KOH/histology</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Approach / Algorithm</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected fungal pneumonia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Host immune status</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">High suspicion IPA / Mucorales</div>
+<div class="fc-node" data-id="H">Consider IPA, CPA, PCP, Cryptococcus, endemic</div>
+<div class="fc-node" data-id="L">Endemic mycoses: Histoplasma, Coccidioides, Blastomyces</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">CT chest (halo/air-crescent/reverse halo)</div>
+<div class="fc-node" data-id="I">CT chest + serum GM/BDG/CrAg/Histoplasma Ag</div>
+<div class="fc-node" data-id="M">Serology, urine Ag, culture, histology</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Serum GM + BDG</div>
+<div class="fc-node" data-id="J">BAL if PCP/IPA suspected&lt;br/&gt;Bronchoscopy if airway disease</div>
+<div class="fc-node" data-id="N">Itraconazole for mild-moderate; ampho B for severe</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">BAL for GM, PCR, culture, histopathology</div>
+<div class="fc-node" data-id="K">Targeted therapy based on pathogen</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Empirical voriconazole / isavuconazole&lt;br/&gt;+ liposomal ampho B if Mucorales suspected</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Sample</th><th>Pathogen(s)</th><th>Utility</th></tr><tr><td>------</td><td>--------</td><td>-------------</td><td>---------</td></tr><tr><td>**CT chest (HRCT)**</td><td>—</td><td>All</td><td>Halo sign, air-crescent, reverse halo, tree-in-bud, cavities, GGO</td></tr><tr><td>**Serum galactomannan**</td><td>Blood</td><td>Aspergillus</td><td>Screening in neutropenic; serial monitoring</td></tr><tr><td>**BAL galactomannan**</td><td>BAL</td><td>Aspergillus</td><td>Higher specificity for IPA</td></tr><tr><td>**Serum β-D-glucan**</td><td>Blood</td><td>Pan-fungal (not Mucorales, Cryptococcus)</td><td>Rule-out; monitor response</td></tr><tr><td>**Aspergillus PCR**</td><td>Blood/BAL</td><td>Aspergillus</td><td>Adjunct; not standalone</td></tr><tr><td>**Histoplasma antigen**</td><td>Urine/serum/BAL</td><td>Histoplasma</td><td>High sensitivity disseminated; cross-reacts Blastomyces</td></tr><tr><td>**Coccidioides serology (IgM/IgG, CF titre)**</td><td>Blood</td><td>Coccidioides</td><td>Diagnosis + severity monitoring</td></tr><tr><td>**Blastomyces antigen**</td><td>Urine/serum</td><td>Blastomyces</td><td>Emerging</td></tr><tr><td>**Cryptococcal antigen (CrAg LFA)**</td><td>Blood/CSF</td><td>Cryptococcus</td><td>Rapid, high sensitivity</td></tr><tr><td>**Pneumocystis PCR / DFA**</td><td>BAL / induced sputum</td><td>P. jirovecii</td><td>Gold standard for PCP</td></tr><tr><td>**KOH / Calcofluor white**</td><td>BAL / sputum / tissue</td><td>Moulds, yeasts</td><td>Rapid morphology</td></tr><tr><td>**Fungal culture**</td><td>BAL / blood / tissue</td><td>All</td><td>Species ID, susceptibility; slow (days-weeks)</td></tr><tr><td>**Histopathology (H&E, PAS, GMS)**</td><td>Tissue (biopsy)</td><td>All</td><td>**Gold standard** for invasive moulds; hyphal morphology</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Antifungal Therapy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pathogen</th><th>First-Line</th><th>Alternative / Salvage</th><th>Duration / Notes</th></tr><tr><td>----------</td><td>------------</td><td>------------------------</td><td>------------------</td></tr><tr><td>**Invasive aspergillosis**</td><td>**Voriconazole** 6mg/kg IV BD ×2d → 4mg/kg IV/PO BD (TDM target 1–5.5 mg/L)</td><td>Isavuconazole 372mg (200mg ×3) IV/PO BD ×2d → 372mg OD (no TDM needed); L-AmB 3–5mg/kg IV OD</td><td>**≥6–12 weeks**; until immune recovery + clinical/radiological resolution; surgery for solitary lesions</td></tr><tr><td>**Mucormycosis**</td><td>**Liposomal amphotericin B** 5–10mg/kg IV OD</td><td>Isavuconazole (secondary); posaconazole delayed-release 300mg PO BD</td><td>**Surgical debridement mandatory**; continue until resolution + immune recovery</td></tr><tr><td>**Chronic pulmonary aspergillosis (CPA)**</td><td>**Itraconazole** 200mg BD (TDM target 1–2 mg/L) or **Voriconazole**</td><td>Posaconazole DR 300mg OD; isavuconazole</td><td>**Months to years**; monitor IgE, imaging, symptoms</td></tr><tr><td>**ABPA**</td><td>**Prednisolone** 0.5mg/kg OD ×2w → taper + **itraconazole** 200mg BD ×16w (TDM)</td><td>Voriconazole; omalizumab (refractory)</td><td>Monitor IgE, CXR, spirometry</td></tr><tr><td>**Pneumocystis (PCP)**</td><td>**TMP-SMX** 15–20mg/kg TMP IV/PO TID (HIV: 21d; non-HIV: 14d)</td><td>Clindamycin + primaquine; pentamidine IV; atovaquone; dapsone + TMP</td><td>**Adjunctive steroids** if PaO₂<70 or A-a gradient≥35 (HIV)</td></tr><tr><td>**Cryptococcal pneumonia**</td><td>**L-AmB 3–5mg/kg + flucytosine 100mg/kg** ×2w → fluconazole 400mg OD ×8w</td><td>Fluconazole monotherapy if mild</td><td>**Screen for meningitis** (LP); manage raised ICP</td></tr><tr><td>**Histoplasmosis (moderate-severe/disseminated)**</td><td>**L-AmB 3mg/kg IV OD ×1–2w** → **Itraconazole 200mg BD ×12m**</td><td>Fluconazole if itraconazole intolerant</td><td>Monitor urine Ag clearance; chronic cavitary → itraconazole ≥12m</td></tr><tr><td>**Coccidioidomycosis (moderate-severe/disseminated)**</td><td>**Fluconazole 400–800mg OD** or **Itraconazole 200mg BD**</td><td>L-AmB if severe/meningitis</td><td>**Meningitis: fluconazole 800–1200mg OD lifelong**</td></tr><tr><td>**Blastomycosis (moderate-severe/disseminated)**</td><td>**L-AmB 3–5mg/kg ×1–2w** → **Itraconazole 200mg BD ×6–12m**</td><td>Fluconazole (less effective)</td><td>CNS/meningitis: L-AmB + fluconazole 800mg OD</td></tr></table>
+<div class="callout">[!important] <b>Voriconazole TDM:</b> Essential — non-linear kinetics, drug interactions (CYP2C19, CYP3A4), hepatotoxicity, visual disturbances, phototoxicity, periostitis (long-term). <b>Isavuconazole</b> = no TDM needed, fewer interactions, QTc shortening (not prolongation), renal adjust not needed.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prophylaxis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Agent</th><th>Duration</th></tr><tr><td>------------</td><td>-------</td><td>----------</td></tr><tr><td>**AML induction / HSCT (neutropenic)**</td><td>Posaconazole DR 300mg PO OD (or IV)</td><td>Until neutrophil recovery</td></tr><tr><td></td><td>Voriconazole (if posaconazole intolerant)</td><td></td></tr><tr><td></td><td>Micafungin 50mg IV OD (echinocandin)</td><td></td></tr><tr><td>**Lung transplant**</td><td>Voriconazole / itraconazole / nebulised amphotericin</td><td>3–12 months (centre-specific)</td></tr><tr><td>**HIV CD4<200**</td><td>TMP-SMX 960mg PO OD (or 3x/week)</td><td>Until CD4>200 ×3m</td></tr><tr><td></td><td>Dapsone; atovaquone; aerosolised pentamidine</td><td>Alternatives</td></tr><tr><td>**Prolonged steroids (≥20mg prednisolone >4w)**</td><td>TMP-SMX 960mg OD 3x/week</td><td>Duration of immunosuppression</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Red Flags / Emergencies</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Haemoptysis</b> (massive) in IPA → bronchial artery embolisation, surgery</li><li><b>Airway obstruction</b> from Aspergillus tracheobronchitis / mucormycosis → bronchoscopic debridement, stenting</li><li><b>Cavitary rupture</b> → pneumothorax, pyopneumothorax</li><li><b>Cerebral mucormycosis</b> (rhino-orbito-cerebral) → emergent surgical debridement + L-AmB</li><li><b>Raised ICP in cryptococcal meningitis</b> → serial LP, ventriculostomy</li><li><b>Adrenal insufficiency</b> in disseminated histoplasmosis/coccidioidomycosis → steroid replacement</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mimic</th><th>Clues</th></tr><tr><td>-------</td><td>-------</td></tr><tr><td>**TB**</td><td>Cavitation, upper lobe, night sweats, AFB +ve, GeneXpert; endemic overlap</td></tr><tr><td>**Malignancy**</td><td>Mass, weight loss, smoking history; PET-CT; biopsy</td></tr><tr><td>**Granulomatosis with polyangiitis (GPA)**</td><td>Cavitary nodules, renal, sinuses, c-ANCA/PR3 +ve</td></tr><tr><td>**Septic emboli**</td><td>Multiple cavitary nodules, IVDU, tricuspid endocarditis, blood cultures</td></tr><tr><td>**Organising pneumonia**</td><td>COP pattern, responsive to steroids, no organism</td></tr><tr><td>**Nocardia**</td><td>Subacute, cavitating, immunocompromised; modified AFB +ve; sulfa treatment</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Situation</th><th>Adjustment</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Renal impairment**</td><td>L-AmB preferred over conventional AmB; voriconazole IV (SBECD vehicle) accumulates — use PO or isavuconazole; flucytosine adjust by CrCl; echinocandins safe</td></tr><tr><td>**Hepatic impairment**</td><td>Voriconazole/itraconazole/posaconazole caution (hepatotoxicity); isavuconazole safer; L-AmB safe</td></tr><tr><td>**Drug interactions (voriconazole/itraconazole/posaconazole)**</td><td>**Strong CYP3A4 inhibitors/inducers** — avoid with rifampicin, carbamazepine, phenytoin, St John's wort; **check all meds** (TDM essential)</td></tr><tr><td>**Pregnancy**</td><td>**Avoid azoles** (teratogenic); L-AmB safe; echinocandins 2nd/3rd trimester if needed; TMP-SMX avoid 1st trimester</td></tr><tr><td>**Liver transplant**</td><td>Voriconazole/posaconazole interactions with tacrolimus/ciclosporin — **dose reduce CNI 50–75%, TDM mandatory**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>IPA diagnosis:</b> Host + halo sign/air-crescent + GM + culture/histology (EORTC/MSG criteria: proven/probable/possible)</li><li><b>Halo sign</b> = early CT finding in neutropenic IPA (haemorrhagic infarct); <b>air-crescent</b> = recovery (cavitation)</li><li><b>Reverse halo sign</b> = mucormycosis (central GGO + consolidated ring)</li><li><b>Galactomannan:</b> serum ≥0.5 (screening), BAL ≥1.0 (diagnostic); false +ve with pip-tazo</li><li><b>β-D-glucan:</b> pan-fungal; <b>negative in Mucorales and Cryptococcus</b></li><li><b>PCP:</b> bilateral perihilar GGO, CD4&lt;200, high LDH, ↑BDG; induced sputum/BAL PCR/DFA</li><li><b>First-line IPA:</b> voriconazole (TDM); alternative isavuconazole (no TDM)</li><li><b>First-line mucormycosis:</b> L-AmB 5–10mg/kg + <b>urgent surgical debridement</b></li><li><b>PCP treatment:</b> TMP-SMX high-dose; <b>adjunctive steroids if hypoxic</b> (PaO₂&lt;70)</li><li><b>Cryptococcal pneumonia:</b> screen for meningitis (LP); L-AmB + flucytosine induction</li><li><b>Endemic mycoses:</b> Histoplasma (urine Ag), Coccidioides (serology CF titre), Blastomyces (broad-based budding yeast, urine Ag)</li><li><b>Prophylaxis:</b> posaconazole in AML/HSCT; TMP-SMX in HIV CD4&lt;200 and steroid immunosuppression</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the halo sign and in which condition is it seen?</b> Early CT in neutropenic IPA — haemorrhagic infarction around nodule; indicates angioinvasion.</li><li><b>How does β-D-glucan differ from galactomannan?</b> BDG = pan-fungal (Aspergillus, Candida, Pneumocystis, Histoplasma); GM = Aspergillus-specific. BDG negative in Mucorales, Cryptococcus.</li><li><b>First-line treatment for invasive aspergillosis?</b> Voriconazole (with TDM); alternative isavuconazole.</li><li><b>Mucormycosis management cornerstone?</b> Liposomal amphotericin B + <b>urgent surgical debridement</b>.</li><li><b>When do you give adjunctive steroids in PCP?</b> HIV + PaO₂&lt;70 mmHg or A-a gradient≥35; non-HIV: also if severe hypoxia.</li><li><b>What is the reverse halo sign?</b> Central ground-glass opacity surrounded by ring of consolidation — suggestive of mucormycosis (also organising pneumonia, TB).</li><li><b>Which antifungal requires TDM?</b> Voriconazole, itraconazole, posaconazole, flucytosine. Isavuconazole does not.</li><li><b>Histoplasma vs Blastomyces urine antigen cross-reactivity?</b> Histoplasma Ag cross-reacts with Blastomyces (~80%); Blastomyces Ag more specific.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Halo sign = air-crescent sign</td><td>Halo = early (hemorrhagic rim); air-crescent = late (cavitation with crescent of air)</td></tr><tr><td>BDG positive in all fungi</td><td>**Negative in Mucorales (no β-glucan in cell wall) and Cryptococcus (capsule masks)**</td></tr><tr><td>Voriconazole = first-line for everything</td><td>Mucormycosis = L-AmB; CPA = itraconazole; ABPA = steroids + itraconazole</td></tr><tr><td>GM positive = proven aspergillosis</td><td>GM = probable (with host + radiology); **proven = histology + culture from sterile site**</td></tr><tr><td>PCP only in HIV</td><td>Also in transplant, steroids, biologics, rheumatology — any T-cell defect</td></tr><tr><td>Itraconazole capsules = solution</td><td>**Solution has better bioavailability**; capsules need food/acid; use solution for prophylaxis</td></tr><tr><td>Fluconazole for aspergillosis</td><td>**No activity against moulds** (Aspergillus, Mucorales) — only yeasts</td></tr><tr><td>Echinocandins for mucormycosis</td><td>**No activity against Mucorales** (lack target β-1,3-glucan synthase)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>HALO</b>: <b>H</b>aemorrhagic <b>A</b>ngioinvasion in <b>L</b>eukopenia <b>O</b>n CT = IPA</li><li><b>AIR-CRESCENT</b>: <b>A</b>ir crescent = <b>R</b>ecovery in <b>C</b>hest = <b>E</b>arly <b>S</b>ign of <b>C</b>avitation <b>E</b>merging <b>N</b>ow <b>T</b>reatment working</li><li><b>REVERSE HALO</b> = <b>MUCOR</b> (central GGO + consolidation ring)</li><li><b>GM FALSE +VE</b>: <b>P</b>ip-tazo, <b>F</b>ood, <b>G</b>ut translocation, <b>C</b>andida, <b>A</b>ntibiotics (β-lactams)</li><li><b>BDG NEGATIVE</b>: <b>M</b>ucorales, <b>C</b>ryptococcus</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Fungal Pneumonias))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">By Host</div>
+<div class="mm-node mm-l3">– Neutropenic/HSCT</div>
+<div class="mm-node mm-deep">– *...continued (truncated to 200 lines for renderer)*</div>
+</div>
+</div>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fungal Pneumonias · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

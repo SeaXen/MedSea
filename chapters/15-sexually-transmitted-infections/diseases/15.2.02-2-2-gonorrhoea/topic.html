@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2.2 Gonorrhoea — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">2.2 Gonorrhoea</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Recognise <b>N. gonorrhoeae</b> clinical manifestations (Urethritis, Cervicitis, PID, DGI, Pharyngeal, Rectal, Conjunctival)</li><li>[ ] Apply <b>antimicrobial resistance (AMR) knowledge</b> — Ceftriaxone resistance, dual therapy, alternative regimens</li><li>[ ] Apply <b>evidence-based treatment</b> algorithms for all sites (Genital, Pharyngeal, Rectal, DGI, Neonatal)</li><li>[ ] Implement <b>diagnostic algorithms</b> (NAAT, Culture + AST, Microscopy) and interpret results</li><li>[ ] Manage <b>Disseminated Gonococcal Infection (DGI)</b> — Arthritis-Dermatitis Syndrome, Septic Arthritis</li><li>[ ] Manage <b>Neonatal</b> Gonorrhoea (Ophthalmia Neonatorum, Scalp Abscess, DGI)</li><li>[ ] Implement <b>Test of Cure, Partner Notification, AMR Surveillance</b> strategies</li><li>[ ] Answer viva: "Gonorrhoea AMR" and "DGI presentation" and "Pharyngeal gonorrhoea treatment" and "Neonatal ophthalmia"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Neisseria gonorrhoeae Biology & AMR</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Neisseria gonorrhoeae</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Gram-Negative Diplococcus</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Obligate Human Pathogen</div>
+<div class="fc-node" data-id="D">Virulence Factors</div>
+<div class="fc-node" data-id="E">Antimicrobial Resistance Mechanisms</div>
+<div class="fc-node" data-id="F">Clinical Syndromes</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D1">Pili (Adherence, Antigenic Variation)</div>
+<div class="fc-node" data-id="D2">Opa Proteins (Invasion, Immune Evasion)</div>
+<div class="fc-node" data-id="D3">LPS (LOS, Endotoxic)</div>
+<div class="fc-node" data-id="D4">IgA1 Protease (Mucosal Immunity Evasion)</div>
+<div class="fc-node" data-id="E1">Chromosomal Mutations&lt;br/&gt;penA (Ceftriaxone), gyrA/parC (Ciprofloxacin), mtrR (Azithromycin), penB (Penicillin)</div>
+<div class="fc-node" data-id="E2">Plasmid-Mediated&lt;br/&gt;TetM (Tetracycline), TEM-1 (Penicillinase)</div>
+<div class="fc-node" data-id="E3">Efflux Pumps (MtrCDE)</div>
+<div class="fc-node" data-id="F1">Genital (Urethritis, Cervicitis, PID)</div>
+<div class="fc-node" data-id="F2">Extra-Genital (Pharyngeal, Rectal, Conjunctival)</div>
+<div class="fc-node" data-id="F3">DGI (Arthritis-Dermatitis, Septic Arthritis)</div>
+<div class="fc-node" data-id="F4">Neonatal (Ophthalmia, Scalp Abscess, DGI)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ Gonorrhoea — Clinical Manifestations</div>
+<div class="sub-h">Epidemiology</div>
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Global Incidence**</td><td>**~82 Million** New Cases/Year (WHO 2023)</td></tr><tr><td>**Prevalence**</td><td>**0.9%** (Women 15-49), **0.7%** (Men 15-49)</td></tr><tr><td>**Age Peak**</td><td>**15-24 Years** (Highest Incidence)</td></tr><tr><td>**Asymptomatic Rate**</td><td>**10-20% Men**, **50-80% Women**, **>90% Pharyngeal/Rectal**</td></tr><tr><td>**Transmission**</td><td>Sexual (Vaginal, Anal, Oral), Vertical (Mother→Child)</td></tr><tr><td>**Co-infection**</td><td>**10-40%** with Chlamydia; **HIV** Co-infection ↑ Risk</td></tr><tr><td>**AMR Threat**</td><td>**WHO Priority 2 (High)** — Ceftriaxone Resistance Emerging Globally</td></tr></table>
+<div class="sub-h">Clinical Presentation by Site</div>
+<table class="ctable"><tr><th>Site</th><th>Symptomatic</th><th>Key Features</th><th>Complications</th></tr><tr><td>------</td><td>-------------</td><td>--------------</td><td>---------------</td></tr><tr><td>**Male Urethra**</td><td>**80-90%**</td><td>**Urethritis**: Dysuria, **Purulent Urethral Discharge**, Meatal Erythema/Edema</td><td>**Epididymo-orchitis**, Stricture, DGI</td></tr><tr><td>**Female Cervix**</td><td>**30-50%**</td><td>**Cervicitis**: Mucopurulent Discharge, Ectopy, Friability, ICB/IM Bleeding</td><td>**PID**, Infertility, Ectopic, Chronic Pelvic Pain</td></tr><tr><td>**Rectal**</td><td>**Often Asymptomatic** (>90%)</td><td>Proctitis: Mucus, Blood, Tenesmus, Pain (If Symptomatic)</td><td>**Proctitis**, Strictures, Anal Fissures</td></tr><tr><td>**Pharyngeal**</td><td>**Rarely Symptomatic** (>90% Asymptomatic)</td><td>Sore Throat, Exudate (Rare)</td><td>**Reservoir for AMR**, Transmission</td></tr><tr><td>**Conjunctival**</td><td>**Acute**</td><td>**Hyperacute Conjunctivitis**: Copious Purulent Discharge, Eyelid Edema, Chemosis</td><td>**Corneal Ulceration**, Perforation, Blindness</td></tr><tr><td>**DGI**</td><td>**0.5-3%**</td><td>**Arthritis-Dermatitis Syndrome** (Migratory Polyarthralgia, Tenosynovitis, Pustular Rash) → **Septic Arthritis** (Monoarticular)</td><td>**Septic Arthritis**, Endocarditis, Meningitis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ Disseminated Gonococcal Infection (DGI)</div>
+<div class="sub-h">Pathophysiology</div>
+<table class="ctable"><tr><th>Mechanism</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Bacteremia**</td><td>Gonococci Enter Bloodstream → Haematogenous Spread</td></tr><tr><td>**Immune Complexes**</td><td>IgG-Gonococcal Antigen Complexes → Vasculitis, Dermatitis</td></tr><tr><td>**Direct Invasion**</td><td>Joints, Skin, Tendons, Pericardium, Meninges</td></tr></table>
+<div class="sub-h">Clinical Presentation</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Features</th><th>Prevalence</th></tr><tr><td>----------</td><td>----------</td><td>------------</td></tr><tr><td>**Arthritis-Dermatitis Syndrome**</td><td>Fever, **Migratory Polyarthralgia**, **Tenosynovitis** (Wrist/Ankle), **Pustular Rash** (Vesiculopustular, Acral/Distal Extremities), **Palpable Purpura**</td><td>**~60%**</td></tr><tr><td>**Septic Arthritis**</td><td>**Monoarticular** (Knee > Wrist > Ankle), Severe Pain, Effusion, Fever, **No Rash**</td><td>**~40%**</td></tr><tr><td>**Other**</td><td>Endocarditis, Meningitis, Hepatitis, Myocarditis</td><td>Rare</td></tr></table>
+<div class="callout"><b>Key</b>: <b>DGI = Bacteremia + Arthritis/Dermatitis</b>; <b>Blood Culture Often Negative</b>; <b>Joint Fluid Culture + NAAT</b> for Diagnosis</div>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Utility</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Joint Fluid (NAAT + Culture + AST)**</td><td>**Gold Standard** (Crucial for AST)</td></tr><tr><td>**Blood Culture**</td><td>Often Negative (<30% Positive)</td></tr><tr><td>**Mucosal Sites (NAAT + Culture)**</td><td>Urethral, Cervical, Pharyngeal, Rectal — Identify Source</td></tr><tr><td>**Skin Lesion Biopsy/NAAT**</td><td>Vesiculopustular Lesions</td></tr></table>
+<div class="sub-h">Treatment (DGI)</div>
+<table class="ctable"><tr><th>Regimen</th><th>Dose</th></tr><tr><td>---------</td><td>------</td></tr><tr><td>**Ceftriaxone**</td><td>**1g IV/IM q24h** (or q12h if Severe) × **7 Days** (Switch to Oral When Improving)</td></tr><tr><td>**Alternative** (If Ceftriaxone Allergy)</td><td>**Gentamicin 240mg IM Stat + Azithromycin 2g PO Stat** (Or Azithro 1g Weekly × 2)</td></tr><tr><td>**Plus**</td><td>**Doxycycline 100mg BD × 7d** (Co-infection CT Cover)</td></tr><tr><td>**Joint Management**</td><td>Aspiration (Repeated if Needed), Immobilisation, Physiotherapy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Antimicrobial Resistance (AMR) — The Global Crisis</div>
+<div class="sub-h">Resistance Mechanisms &amp; Surveillance</div>
+<table class="ctable"><tr><th>Antimicrobial</th><th>Resistance Mechanism</th><th>Global Status (WHO GASP 2023)</th></tr><tr><td>--------------</td><td>---------------------</td><td>-------------------------------</td></tr><tr><td>**Penicillin**</td><td>**penA** (PBP2 Mutation), **TEM-1 Plasmid (Penicillinase)**</td><td>**High Resistance Global** (Historically 1st Drug)</td></tr><tr><td>**Tetracycline**</td><td>**TetM Plasmid (Ribosomal Protection)**, Mutations</td><td>**High Resistance**</td></tr><tr><td>**Ciprofloxacin (Fluoroquinolones)**</td><td>**gyrA/parC Mutations** (DNA Gyrase/Topoisomerase IV)</td><td>**High Resistance >50% Global**; **Do Not Use Empirically**</td></tr><tr><td>**Azithromycin (Macrolides)**</td><td>**23S rRNA Mutations**, **Efflux Pumps (MtrCDE)**, **erm**</td><td>**Rising Resistance** (MIC Creep); Not Monotherapy</td></tr><tr><td>**Cefixime (Oral Cephalosporins)**</td><td>**penA Mutations**, Mosaic penA</td><td>**Declining Susceptibility**; Not Preferred for Pharyngeal</td></tr><tr><td>**Ceftriaxone (Injectable Cephalosporins)**</td><td>**penA Mutations (Mosaic penA XXXIV)**, **porB**, **mtrR**</td><td>**Emerging Resistance** (MIC Creep, Ceftriaxone-R Strains Reported)</td></tr></table>
+<div class="sub-h">WHO GASP (Gonococcal Antimicrobial Surveillance Programme)</div>
+<table class="ctable"><tr><th>Component</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Sentinel Surveillance**</td><td>Sentinel Sites, Representative Sampling (Geographic, Population)</td></tr><tr><td>**AMR Testing**</td><td>Culture + AST (Ceftriaxone, Ciprofloxacin, Azithromycin, Cefixime, Spectinomycin)</td></tr><tr><td>**Molecular Surveillance**</td><td>**penA** (Ceftriaxone), **gyrA/parC** (Ciprofloxacin), **23S rRNA** (Azithromycin), **mtrR** (Efflux)</td></tr><tr><td>**Data Sharing**</td><td>WHO GASP Database, National AMR Surveillance, AMR Action Plans</td></tr></table>
+<div class="sub-h">Ceftriaxone Resistance — Critical Threat</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Mechanism**</td><td>**penA Mosaic Mutations** (XXXIV, XIX, etc.), **porB**, **mtrR** Efflux, **pilQ**</td></tr><tr><td>**Resistance Level**</td><td>**MIC >0.125 mg/L** (EUCAST/CLSI Breakpoints)</td></tr><tr><td>**Geographic Spread**</td><td>**Japan, China, Europe, Australia, USA** — Global Spread</td></tr><tr><td>**Response**</td><td>**Dual Therapy**, **Higher Dose Ceftriaxone**, **Alternative Regimens**, **Spectinomycin** (If Available)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Treatment — Evidence-Based Regimens</div>
+<div class="sub-h">Uncomplicated Genital Gonorrhoea</div>
+<table class="ctable"><tr><th>Population</th><th>1st Line (Dual Therapy)</th><th>Alternative (If Ceftriaxone Allergy/Unavailable)</th></tr><tr><td>------------</td><td>-------------------------</td><td>--------------------------------------------------</td></tr><tr><td>**Adults/Adolescents (>45kg)**</td><td>**Ceftriaxone 500mg IM Stat + Azithromycin 1g PO Stat**</td><td>**Gentamicin 240mg IM Stat + Azithromycin 2g PO Stat**</td></tr><tr><td>**Weight <45kg**</td><td>**Ceftriaxone 250mg IM Stat + Azithromycin 1g PO Stat**</td><td>**Gentamicin 120mg IM Stat + Azithromycin 2g PO Stat**</td></tr><tr><td>**Pregnancy**</td><td>**Ceftriaxone 500mg IM Stat + Azithromycin 1g PO Stat** (Safe)</td><td>**Ceftriaxone 500mg IM + Azithro 1g** (Only Option)</td></tr><tr><td>**Ceftriaxone Allergy**</td><td>**Gentamicin 240mg IM Stat + Azithromycin 2g PO Stat**</td><td>**Cefixime 400mg PO + Azithro 1g** (Less Effective Pharyngeal)</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Dual Therapy Mandatory</b> (Ceftriaxone + Azithromycin) — <b>Suppresses Resistance</b>, <b>Treats Co-Infection (CT)</b></div>
+<div class="sub-h">Pharyngeal Gonorrhoea</div>
+<table class="ctable"><tr><th>Population</th><th>1st Line</th><th>Notes</th></tr><tr><td>------------</td><td>----------</td><td>-------</td></tr><tr><td>**All**</td><td>**Ceftriaxone 1g IM Stat + Azithromycin 1g PO Stat**</td><td>**Higher Dose Ceftriaxone (1g)**; **Test of Cure Mandatory at 2 Weeks**</td></tr><tr><td>**Ceftriaxone Allergy**</td><td>**Gentamicin 240mg IM Stat + Azithromycin 2g PO Stat**</td><td>Preferred Alternative</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Pharyngeal GC Harder to Treat</b> — Higher Ceftriaxone Dose (1g), <b>Test of Cure Mandatory at 2 Weeks</b></div>
+<div class="sub-h">Rectal Gonorrhoea</div>
+<table class="ctable"><tr><th>Population</th><th>1st Line</th><th>Notes</th></tr><tr><td>------------</td><td>----------</td><td>-------</td></tr><tr><td>**All**</td><td>**Ceftriaxone 500mg IM Stat + Azithromycin 1g PO Stat**</td><td>Standard Dose; **Co-infection Cover (CT)** with Azithro/Doxy</td></tr></table>
+<div class="sub-h">Gonorrhoea in Pregnancy</div>
+<table class="ctable"><tr><th>Regimen</th><th>Safety</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Ceftriaxone 500mg IM Stat + Azithromycin 1g PO Stat**</td><td>**Safe in All Trimesters** (Ceftriaxone B, Azithro B)</td></tr><tr><td>**Alternative**</td><td>**Ceftriaxone 500mg IM + Azithro 1g** (Only Evidence-Based Option)</td></tr></table>
+<div class="callout"><b>Contraindicated in Pregnancy</b>: Doxycycline, Ciprofloxacin, Ofloxacin, Gentamicin (Ototoxicity/Nephrotoxicity Risk)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Disseminated Gonococcal Infection (DGI) — Treatment</div>
+<table class="ctable"><tr><th>Phase</th><th>Regimen</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Initial (Parenteral)**</td><td>**Ceftriaxone 1g IV/IM q24h** (or q12h if Severe) × **7 Days**</td></tr><tr><td>**Step-Down (Oral)**</td><td>**Cefixime 400mg BD PO** (When Clinical Improvement, Total 7 Days)</td></tr><tr><td>**Ceftriaxone Allergy**</td><td>**Gentamicin 240mg IM Stat + Azithromycin 2g PO Stat** (Then Azithro 1g Weekly × 2)</td></tr><tr><td>**Co-Infection Cover**</td><td>**Doxycycline 100mg BD × 7d** (Added for CT, MG)</td></tr><tr><td>**Joint Management**</td><td>**Repeated Aspiration**, Immobilisation, Physiotherapy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Neonatal Gonorrhoea</div>
+<div class="sub-h">Ophthalmia Neonatorum</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Onset**</td><td>**Day 2-5** Post-Partum (Incubation 2-5 Days) — **Earlier than Chlamydia**</td></tr><tr><td>**Clinical**</td><td>**Hyperacute Conjunctivitis**: **Copious Purulent Discharge**, **Marked Eyelid Edema**, **Chemosis**, **Periorbital Cellulitis**</td></tr><tr><td>**Complications**</td><td>**Corneal Ulceration**, **Perforation**, **Blindness** (Rapid Onset, Hours)</td></tr><tr><td>**Diagnosis**</td><td>**Gram Stain** (Gram-Negative Intracellular Diplococci — **Presumptive**), **NAAT**, **Culture + AST**</td></tr><tr><td>**Treatment**</td><td>**Ceftriaxone 50mg/kg (Max 125mg) IM/IV Single Dose** + **Saline Irrigation**</td></tr><tr><td>**Prophylaxis**</td><td>**Erythromycin/Tetracycline Ointment** at Birth (Prevents GC/CT)</td></tr></table>
+<div class="sub-h">Neonatal Scalp Abscess</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Cause**</td><td>**Fetal Scalp Electrode** or **Forceps/Vacuum Trauma** → Gonococcal Inoculation</td></tr><tr><td>**Clinical**</td><td>**Abscess** (Fluctuant, Purulent), Cellulitis</td></tr><tr><td>**Treatment**</td><td>**Incision & Drainage** + **Ceftriaxone 50mg/kg IM/IV × 7 Days**</td></tr></table>
+<div class="sub-h">Neonatal DGI</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Onset**</td><td>**Day 7-14** Post-Partum</td></tr><tr><td>**Clinical**</td><td>Sepsis, Arthritis (Septic), Meningitis, Dermatitis</td></tr><tr><td>**Treatment**</td><td>**Ceftriaxone 50mg/kg IV/IM q24h × 7-10 Days** + Supportive</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Diagnosis — Algorithms &amp; Interpretation</div>
+<div class="sub-h">Diagnostic Algorithm</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Gonorrhoea</div>
+<div class="fc-node" data-id="H">H</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Symptomatic?</div>
+<div class="fc-node" data-id="I">Culture + AST Results&lt;br/&gt;Guide Resistance Management</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Microscopy (Gram Stain)&lt;br/&gt;Rapid, Bedside</div>
+<div class="fc-node" data-id="D">NAAT (Urine/Swab)&lt;br/&gt;1st Line</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Gram Stain: Intracellular Gram-Neg Diplococci?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Presumptive GC → Treat Empirically</div>
+<div class="fc-node" data-id="G">NAAT + Culture + AST&lt;br/&gt;Send Both</div>
+</div>
+</div>
+<div class="sub-h">Diagnostic Test Comparison</div>
+<table class="ctable"><tr><th>Test</th><th>Sensitivity</th><th>Specificity</th><th>TAT</th><th>Sample</th><th>Best Use</th></tr><tr><td>------</td><td>-------------</td><td>-------------</td><td>-----</td><td>--------</td><td>----------</td></tr><tr><td>**Gram Stain (Urethral M)**</td><td>**95% (Symptomatic Male)**</td><td>**>99%**</td><td>Minutes</td><td>Urethral Smear</td><td>**Presumptive Dx (Male Urethral)**</td></tr><tr><td>**Gram Stain (Female/Extra)**</td><td>Poor (<50%)</td><td>High</td><td>Minutes</td><td>Swab</td><td>**Not Reliable** (Female Cervical, Pharyngeal, Rectal)</td></tr><tr><td>**NAAT (PCR/TMA/SDA)**</td><td>**>95%**</td><td>**>98%**</td><td>1-24h</td><td>Urine, Swab</td><td>**1st Line (Screening, All Sites)**</td></tr><tr><td>**Culture + AST**</td><td>90-95%</td><td>**100%**</td><td>48-72h</td><td>Swab</td><td>**Gold Standard** (Viability, **AST Mandatory**)</td></tr><tr><td>**POC NAAT**</td><td>90-95%</td><td>97-99%</td><td>20-90min</td><td>Swab/Urine</td><td>**Rapid/Outreach**</td></tr><tr><td>**Microscopy (Joint Fluid)**</td><td>Variable</td><td>High</td><td>Minutes</td><td>Joint Aspirate</td><td>**DGI Presumptive**</td></tr></table>
+<div class="sub-h">Specimen Collection</div>
+<table class="ctable"><tr><th>Site</th><th>Specimen</th><th>Transport</th></tr><tr><td>------</td><td>----------</td><td>-----------</td></tr><tr><td>**Male Urethral**</td><td>**First-Catch Urine** (Hold ≥1h) OR Urethral Swab</td><td>NAAT Medium / Amies/Modified Thayer-Martin (Culture)</td></tr><tr><td>**Female Cervical**</td><td>Endocervical Swab (Remove Mucus)</td><td>NAAT Medium / Culture Medium</td></tr><tr><td>**Rectal**</td><td>Rectal Swab (2-3cm)</td><td>NAAT Medium / Culture Medium</td></tr><tr><td>**Pharyngeal**</td><td>Pharyngeal Swab (Posterior Oropharynx)</td><td>NAAT Medium / Culture Medium</td></tr><tr><td>**Conjunctival**</td><td>Conjunctival Swab</td><td>NAAT Medium / Culture Medium</td></tr><tr><td>**DGI (Joint)**</td><td>Joint Fluid Aspirate (Sterile)</td><td>NAAT Medium / Culture Medium (Blood Culture Bottles)</td></tr><tr><td>**DGI (Blood)**</td><td>Blood Culture Bottles (Aerobic/Anaerobic)</td><td>Blood Culture System</td></tr></table>
+<div class="callout"><b>Key</b>: <b>NAAT = 1st Line for Screening/ALL Sites</b>; <b>Culture + AST = Mandatory for Resistance Surveillance, Treatment Failure, DGI</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Test of Cure (TOC) &amp; Partner Notification</div>
+<div class="sub-h">Test of Cure</div>
+<table class="ctable"><tr><th>Infection</th><th>Timing</th><th>Test</th><th>Notes</th></tr><tr><td>-----------</td><td>--------</td><td>------</td><td>-------</td></tr><tr><td>**Genital GC**</td><td>**2 Weeks** Post-Treatment</td><td>**NAAT** (or Culture)</td><td>**Mandatory for Pharyngeal GC**</td></tr><tr><td>**Pharyngeal GC**</td><td>**2 Weeks** Post-Treatment</td><td>**NAAT** (or Culture + AST)</td><td>**Mandatory** (Higher Failure Rate)</td></tr><tr><td>**Rectal GC**</td><td>**2 Weeks** Post-Treatment</td><td>**NAAT**</td><td>If High Risk / Treatment Failure</td></tr><tr><td>**DGI**</td><td>**2-4 Weeks** Post-Treatment</td><td>**NAAT + Culture (Joint/Blood)**</td><td>Clinical + Microbiological Cure</td></tr><tr><td>**Neonatal**</td><td>**End of Treatment**</td><td>NAAT/Culture</td><td>Ophthalmia (Day 1), DGI (End of Rx)</td></tr></table>
+<div class="callout"><b>Key</b>: <b>GC TOC at 2 Weeks</b> (vs CT 4 Weeks); <b>Pharyngeal TOC Mandatory</b>; <b>Avoid &lt;1 Week</b> (False +ve)</div>
+<div class="sub-h">Partner Notification &amp; EPT (Expedited Partner Therapy)</div>
+<table class="ctable"><tr><th>Strategy</th><th>Description</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**Patient Referral**</td><td>Index Patient Informs Partners (Preferred — Empowers Patient)</td></tr><tr><td>**Provider Referral**</td><td>Health Staff Notifies Partners (Confidential)</td></tr><tr><td>**Contract Referral**</td><td>Time-Limited Agreement (Patient Notifies or Provider Does)</td></tr><tr><td>**EPT (Expedited Partner Therapy)**</td><td>**Legal Where Permitted**: Index Patient Delivers Medication — **GC: Ceftriaxone 500mg IM + Azithro 1g** (Requires Injection)</td></tr></table>
+<div class="callout"><b>GC EPT Complexity</b>: Ceftriaxone IM Requires Injection — <b>Provider Referral Preferred for GC</b>; <b>CT/TV EPT Easier (Oral)</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ Screening &amp; Public Health</div>
+<div class="sub-h">Screening Recommendations (UK/NICE/CDC/WHO)</div>
+<table class="ctable"><tr><th>Population</th><th>Recommendation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Sexually Active Women <25y**</td><td>**Annual GC/CT Screen** (Opportunistic, Urine/Swab)</td></tr><tr><td>**Pregnant Women**</td><td>**Booking**: GC/CT (If <25y or Risk Factors)</td></tr><tr><td>**MSM**</td><td>**3-Site Testing** (Urethral, Pharyngeal, Rectal) **Annual** (3-6m if High Risk)</td></tr><tr><td>**Pregnant Women <25y**</td><td>**Routine GC/CT Screen** at Booking</td></tr><tr><td>**MSM**</td><td>**3-Site NAAT** (Urethral, Pharyngeal, Rectal) **Annual** (3-6m if High Risk)</td></tr><tr><td>**HIV Positive**</td><td>**Annual** CT/GC/Syphilis (3-Site if MSM)</td></tr><tr><td>**Sex Workers**</td><td>**Quarterly** HIV, Syphilis, GC/CT; **Bi-annual** HBV/HCV</td></tr><tr><td>**Termination of Pregnancy**</td><td>**Routine GC/CT Screen**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ AMR Management — Clinical Decision Pathway</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">GC Diagnosed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Treat: Ceftriaxone 500mg IM + Azithro 1g PO</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Send Culture + AST&lt;br/&gt;Mandatory for Resistance Surveillance</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">AST Results</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Continue Standard Therapy&lt;br/&gt;TOC at 2w</div>
+<div class="fc-node" data-id="F">Escalate/Alternative&lt;br/&gt;Expert Advice Required</div>
+<div class="fc-node" data-id="G">Ceftriaxone 1g IM (Higher Dose)&lt;br/&gt;Drop Azithro if Resistant</div>
+<div class="fc-node" data-id="H">Consider Ciprofloxacin&lt;br/&gt;If Ceftriaxone Allergy/Unavailable</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Expert Consultation&lt;br/&gt;Spectinomycin (If Available)&lt;br/&gt;Gentamicin + Azithro&lt;br/&gt;Higher Dose Ceftriaxone 1g IM</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Epidemiology**</td><td>**82M New Cases/Year**, Peak 15-24y, Asymptomatic 50-80% (F), 10-20% (M), >90% Pharyngeal/Rectal</td></tr><tr><td>**Clinical**</td><td>**Urethritis (M: Purulent Discharge)**, **Cervicitis/PID (F)**, **Pharyngeal/Rectal (Asymptomatic)**, **DGI (Arthritis-Dermatitis, Septic Arthritis)**, **Neonatal (Ophthalmia Day 2-5)**</td></tr><tr><td>**Diagnosis**</td><td>**Male Urethral: Gram Stain (Intracellular Gram-Neg Diplococci) = Presumptive**; **All Sites: NAAT 1st Line**; **Culture + AST Mandatory** for Resistance Surveillance, Treatment Failure, DGI</td></tr><tr><td>**Treatment**</td><td>**Ceftriaxone 500mg IM + Azithromycin 1g PO (Dual Therapy)**; Pharyngeal: **Ceftriaxone 1g IM**; **Pregnancy: Same Dual Therapy**</td></tr><tr><td>**AMR**</td><td>**Ciprofloxacin Resistance >50% Global — Do Not Use**; **Azithromycin MIC Creep**; **Ceftriaxone Resistance Emerging (MIC >0.125)** — Dual Therapy, Higher Dose (1g IM)</td></tr><tr><td>**DGI**</td><td>**Arthritis-Dermatitis Syndrome** (Migratory Polyarthralgia, Tenosynovitis, Pustular Rash) + **Septic Arthritis**; **Ceftriaxone 1g IV/IM Daily × 7d**</td></tr><tr><td>**Neonatal**</td><td>**Ophthalmia (Day 2-5, Hyperacute)** → **Ceftriaxone 50mg/kg IM/IV Single Dose**; Scalp Abscess → I&D + Ceftriaxone</td></tr><tr><td>**Test of Cure**</td><td>**2 Weeks (NAAT)** — **Mandatory for Pharyngeal**; DGI/Neonatal: End of Rx</td></tr><tr><td>**Partner Notification**</td><td>**Provider Referral Preferred for GC** (IM Injection); **EPT Complex for GC**</td></tr><tr><td>**Screening**</td><td>**MSM 3-Site Annual**, **Women <25y Annual**, **Pregnancy <25y**, **HIV+ Annual**</td></tr><tr><td>**AMR**</td><td>**Ciprofloxacin R >50% (Do Not Use)**; **Ceftriaxone Resistance Emerging** — Dual Therapy, Higher Dose, Alternatives (Gentamicin+Azithro)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Gonorrhoea — current first-line treatment?</td><td>**Ceftriaxone 500mg IM Stat + Azithromycin 1g PO Stat** (Dual Therapy); Pharyngeal: **Ceftriaxone 1g IM**; Pregnancy: **Same Dual Therapy** (Safe)</td></tr><tr><td>2</td><td>Why dual therapy for gonorrhoea?</td><td>**Suppresses Resistance** (Ceftriaxone + Azithromycin Target Different Mechanisms), **Treats Co-Infection (Chlamydia)**, **Higher Cure Rate**</td></tr><tr><td>3</td><td>Gonorrhoea AMR — ciprofloxacin resistance?</td><td>**>50% Global Resistance — Do Not Use Empirically**; Mechanisms: **gyrA/parC Mutations**</td></tr><tr><td>4</td><td>Pharyngeal gonorrhoea — treatment & TOC?</td><td>**Ceftriaxone 1g IM + Azithromycin 1g PO** (Higher Ceftriaxone Dose); **Test of Cure Mandatory at 2 Weeks (NAAT)**</td></tr><tr><td>5. Disseminated Gonococcal Infection (DGI) — presentation & management?</td><td>**Arthritis-Dermatitis Syndrome** (Migratory Polyarthralgia, Tenosynovitis, Pustular Rash) or **Septic Arthritis** (Monoarticular); **Ceftriaxone 1g IV/IM Daily × 7 Days**; Joint Aspiration, Physiotherapy</td></tr><tr><td>6. Neonatal ophthalmia — gonorrhoea vs chlamydia onset?</td><td>**GC: Day 2-5 (Hyperacute, Copious Purulent)**; **CT: Day 5-14 (Mucopurulent)**; **GC Treatment: Ceftriaxone 50mg/kg IM/IV Single Dose**</td></tr><tr><td>7. Gonorrhoea antimicrobial resistance — current threat?</td><td>**Ceftriaxone Resistance Emerging (MIC >0.125 mg/L)**; **penA Mosaic Mutations**; **Dual Therapy, Higher Dose Ceftriaxone 1g IM, Alternatives (Gentamicin+Azithro)**</td></tr><tr><td>8. Test of Cure for GC — timing & method?</td><td>**2 Weeks (NAAT)** — **Mandatory for Pharyngeal**; Avoid <1 Week (False Positive); DGI/Neonatal: End of Treatment</td></tr><tr><td>9. Gonorrhoea in pregnancy — treatment?</td><td>**Ceftriaxone 500mg IM + Azithromycin 1g PO** (Safe in All Trimesters); Doxycycline/Ciprofloxacin/Gentamicin Contraindicated</td></tr><tr><td>10. Partner notification for gonorrhoea — EPT complexity?</td><td>**EPT Complex for GC** (Ceftriaxone IM Requires Injection); **Provider Referral Preferred**; **CT/TV EPT Easier (Oral)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Gonorrhoea always symptomatic"**</td><td>**NO.** **50-80% Women Asymptomatic**, **>90% Pharyngeal/Rectal Asymptomatic** — Screening Essential</td></tr><tr><td>**"Ciprofloxacin still works for GC"**</td><td>**NO.** **>50% Global Resistance — Do Not Use**; Only If AST Confirms Susceptibility (Rare)</td></tr><tr><td>**"Azithromycin 1g = Monotherapy for GC"**</td><td>**NO.** **Dual Therapy Mandatory** (Ceftriaxone + Azithromycin) — Resistance Suppression</td></tr><tr><td>**"Pharyngeal GC = Same Treatment as Genital"**</td><td>**NO.** **Higher Ceftriaxone Dose (1g IM)**, **Test of Cure Mandatory at 2 Weeks**</td></tr><tr><td>**"GC TOC = 4 Weeks like CT"**</td><td>**NO.** **GC TOC = 2 Weeks**; **CT TOC = 4 Weeks**</td></tr><tr><td>**"Gram Stain = Gold Standard for GC"**</td><td>**NO.** **Culture + AST = Gold Standard** (Viability, AST); **Gram Stain = Presumptive (Male Urethral Only)**</td></tr><tr><td>**"GC EPT = Easy Like CT"**</td><td>**NO.** **GC EPT Complex** (Ceftriaxone IM Injection Required); **Provider Referral Preferred**</td></tr><tr><td>**"Ceftriaxone Resistance = Not a Problem"**</td><td>**NO.** **Emerging Global Threat**; **penA Mosaic Mutations**, MIC Creep — Dual Therapy, Higher Dose, Alternatives</td></tr><tr><td>**"DGI = Only Arthritis"**</td><td>**NO.** **Arthritis-Dermatitis Syndrome** (Migratory Polyarthralgia, Tenosynovitis, Pustular Rash) **OR** Septic Arthritis</td></tr><tr><td>**"Neonatal GC Ophthalmia = Same Onset as CT"**</td><td>**NO.** **GC: Day 2-5 (Hyperacute, Copious Purulent)**; **CT: Day 5-14 (Mucopurulent, Milder)**</td></tr></table>
+<div class="callout"><b>Mnemonic: GONORRHOEA AMR MASTER</b> <b>G</b>onorrhoea: <b>82M/Year</b>, Peak 15-24y, Asymptomatic 50-80% F <b>O</b>bligate Human: <b>Gram-Negative Diplococcus</b>, Intracellular, Pili, Opa, LOS <b>N</b>AAT 1st Line: <b>All Sites</b>, Urine/Swab, &gt;95% Sens/Spec <b>O</b>cular: <b>Hyperacute Conjunctivitis (Day 2-5)</b> — <b>Ceftriaxone 50mg/kg IM</b> <b>R</b>esistance: <b>Cipro &gt;50% (No Use), Azi MIC Creep, Ceftriaxone Emerging (MIC &gt;0.125)</b> <b>R</b>egimen: <b>Dual Therapy</b> — Ceftriaxone 500mg IM + Azi 1g PO <b>H</b>igher Dose: <b>Pharyngeal = Ceftriaxone 1g IM</b> (Not 500mg) <b>O</b>phthalmia Neonatorum: <b>Day 2-5, Hyperacute</b> — Ceftriaxone 50mg/kg IM <b>E</b>pidemiology: <b>82M/Year</b>, 50-80% F Asympt, &gt;90% Pharyngeal/Rectal Asympt <b>A</b>ntimicrobial: <b>Ceftriaxone Resistance Emerging (penA Mosaic)</b>, Dual Therapy, Higher Dose, Alternatives <b>A</b>rthritis-Dermatitis: <b>DGI</b> (Migratory Polyarthralgia, Tenosynovitis, Pustular Rash) <b>S</b>eptic Arthritis: <b>Monoarticular</b> (Knee &gt; Wrist &gt; Ankle) <b>E</b>pidemiology: <b>82M/Year</b>, Peak 15-24y, Co-infection CT 10-40% <b>A</b>MR Surveillance: <b>WHO GASP</b> (Culture+AST, penA/gyrA/23S/mtrR) <b>S</b>creening: <b>MSM 3-Site Annual</b>, Women &lt;25y Annual, Pregnancy &lt;25y <b>T</b>est of Cure: <b>2 Weeks (NAAT)</b> — Mandatory Pharyngeal <b>O</b>ptions (Resistance): <b>Gentamicin 240mg IM + Azi 2g, Spectinomycin, Higher Ceftriaxone 1g</b> <b>T</b>reatment Dual: <b>Ceftriaxone 500mg IM + Azi 1g PO</b> (Dual Mandatory) <b>I</b>n pregnancy: <b>Same Dual Therapy</b> (Safe), No Doxy/Cipro/Genta <b>O</b>ptions Ceftriaxone Allergy: <b>Gentamicin 240mg IM + Azi 2g PO</b> <b>N</b>eonatal: <b>Ophthalmia (Day 2-5) → Ceftriaxone 50mg/kg IM</b>; <b>Scalp Abscess → I&amp;D + Ceftriaxone</b> <b>R</b>esistance: <b>Cipro No, Azi Creep, Ceftriaxone Emerging</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Gonorrhoea))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Epidemiology</div>
+<div class="mm-node mm-l3">– 82M/Year</div>
+<div class="mm-node mm-l3">– Peak 15-24y</div>
+<div class="mm-node mm-l3">– Asymptomatic: 50-80% F, &gt;90% Pharyngeal/Rectal</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Male: Urethritis (Purulent)</div>
+<div class="mm-node mm-l3">– Female: Cervicitis, PID</div>
+<div class="mm-node mm-l3">– Extra: Pharyngeal, Rectal (Asymptomatic)</div>
+<div class="mm-node mm-l3">– DGI: Arthritis-Dermatitis, Septic Arthritis</div>
+<div class="mm-node mm-l3">– Neonatal: Ophthalmia (Day 2-5), Scalp Abscess</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Male Urethral: Gram Stain (Intracellular Gram-Neg Diplococci)</div>
+<div class="mm-node mm-l3">– All Sites: NAAT 1st Line</div>
+<div class="mm-node mm-l3">– Culture+AST: Gold Standard (Viability, AST)</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Dual Therapy: Ceftriaxone 500mg IM + Azi 1g PO</div>
+<div class="mm-node mm-l3">– Pharyngeal: Ceftriaxone 1g IM</div>
+<div class="mm-node mm-l3">– Pregnancy: Same Dual Therapy</div>
+<div class="mm-node mm-l2">AMR</div>
+<div class="mm-node mm-l3">– Cipro &gt;50% (No Use)</div>
+<div class="mm-node mm-l3">– Azi Creep</div>
+<div class="mm-node mm-l3">– Ceftriaxone Emerging (MIC &gt;0.125)</div>
+<div class="mm-node mm-l3">– penA Mosaic, porB, mtrR</div>
+<div class="mm-node mm-l2">DGI</div>
+<div class="mm-node mm-l3">– Arthritis-Dermatitis (Migratory Polyarthralgia, Tenosynovitis, Pustular Rash)</div>
+<div class="mm-node mm-l3">– Septic Arthritis (Monoarticular)</div>
+<div class="mm-node mm-l3">– Ceftriaxone 1g IV/IM Daily x7d</div>
+<div class="mm-node mm-l2">Neonatal</div>
+<div class="mm-node mm-l3">– Ophthalmia (Day 2-5): Ceftriaxone 50mg/kg IM</div>
+<div class="mm-node mm-l3">– Scalp Abscess: I&amp;D + Ceftriaxone</div>
+<div class="mm-node mm-l2">TOC</div>
+<div class="mm-node mm-l3">– 2 Weeks (NAAT)</div>
+<div class="mm-node mm-l3">– Mandatory Pharyngeal</div>
+<div class="mm-node mm-l3">– DGI/Neonatal: End of Rx</div>
+<div class="mm-node mm-l2">Screening</div>
+<div class="mm-node mm-l3">– MSM 3-Site Annual</div>
+<div class="mm-node mm-l3">– Women &lt;25y Annual</div>
+<div class="mm-node mm-l3">– Pregnancy &lt;25y</div>
+<div class="mm-node mm-l3">– HIV+ Annual</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Clinical Manifestations (Genital, Extra, DGI, Neonatal)</td><td>4</td><td></td><td></td></tr><tr><td>Diagnosis (Gram Stain, NAAT, Culture, AST)</td><td>3</td><td></td><td></td></tr><tr><td>Treatment Regimens (Dual Therapy, Pharyngeal, Pregnancy, DGI, Neonatal)</td><td>4</td><td></td><td></td></tr><tr><td>AMR (Mechanisms, Surveillance, Ceftriaxone Resistance, Alternatives)</td><td>4</td><td></td><td></td></tr><tr><td>Test of Cure & Partner Notification</td><td>2</td><td></td><td></td></tr><tr><td>Screening & Public Health</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the current management of gonorrhoea including antimicrobial resistance."</td><td>Dual Therapy (Ceftriaxone + Azithromycin), Pharyngeal (1g Ceftriaxone), Pregnancy (Safe Dual), AMR (Ciprofloxacin R, Ceftriaxone Emerging, penA, Alternatives: Gentamicin+Azithro, Spectinomycin), DGI (Ceftriaxone 1g IV), Neonatal (Ceftriaxone 50mg/kg), TOC (2w), Partner Notification (Provider Referral)</td></tr><tr><td>**Short Note**</td><td>"Disseminated Gonococcal Infection — clinical features and treatment."</td><td>Arthritis-Dermatitis Syndrome (Migratory Polyarthralgia, Tenosynovitis, Pustular Rash) + Septic Arthritis (Monoarticular); Ceftriaxone 1g IV/IM Daily × 7d; Joint Aspiration, Physiotherapy</td></tr><tr><td>**Viva**</td><td>"25-year-old man with 3 days of dysuria and purulent urethral discharge. Gram stain shows intracellular Gram-negative diplococci. How will you treat?"</td><td>**Ceftriaxone 500mg IM + Azithromycin 1g PO** (Dual Therapy); NAAT + Culture/AST; Partner Notification (Provider Referral); TOC at 2 Weeks (NAAT); HIV/Syphilis Screen</td></tr><tr><td>**Ward Round**</td><td>"MSM with pharyngeal gonorrhoea on NAAT. Treatment and follow-up?"</td><td>**Ceftriaxone 1g IM + Azithromycin 1g PO** (Higher Ceftriaxone Dose); **Test of Cure Mandatory at 2 Weeks (NAAT)**; 3-Site Testing (Urethral, Rectal); HIV/Syphilis Screen; Condom Counselling</td></tr><tr><td>**Last-Night**</td><td>"GC: 82M/yr, Dual Therapy (Ceftriaxone 500mg IM + Azi 1g PO), Pharyngeal 1g Ceftriaxone + TOC 2w mandatory. AMR: Cipro >50% No Use, Azi Creep, Ceftriaxone Emerging (penA). DGI: Arthritis-Dermatitis + Septic Arthritis, Ceftriaxone 1g IV x7d. Neonatal: Ophthalmia Day 2-5, Ceftriaxone 50mg/kg IM. TOC: 2w NAAT. Screen: MSM 3-Site Annual. TOC: GC 2w, CT 4w."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Epidemiology</b>: 82M/Year, Peak 15-24y, Asymptomatic 50-80% (F), &gt;90% Pharyngeal/Rectal</li><li><b>Clinical</b>: Urethritis (M), Cervicitis/PID (F), Pharyngeal/Rectal (Asymptomatic), <b>DGI</b> (Arthritis-Dermatitis, Septic Arthritis), Neonatal Ophthalmia (Day 2-5)</li><li><b>Diagnosis</b>: <b>Male Urethral: Gram Stain (Intracellular Gram-Neg Diplococci) = Presumptive</b>; <b>All Sites: NAAT 1st Line</b>; <b>Culture+AST Mandatory</b> for Resistance Surveillance</li><li><b>Treatment</b>: <b>Dual Therapy</b> — <b>Ceftriaxone 500mg IM + Azithromycin 1g PO</b>; <b>Pharyngeal: Ceftriaxone 1g IM</b>; <b>Pregnancy: Same Dual Therapy</b></li><li><b>AMR</b>: <b>Ciprofloxacin Resistance &gt;50% — Do Not Use</b>; <b>Ceftriaxone Resistance Emerging (MIC &gt;0.125)</b> — Dual Therapy, <b>Higher Dose (1g IM)</b>, Alternatives (Gentamicin+Azithro, Spectinomycin)</li><li><b>DGI</b>: Arthritis-Dermatitis Syndrome + Septic Arthritis — <b>Ceftriaxone 1g IV/IM Daily × 7 Days</b></li><li><b>Neonatal</b>: Ophthalmia (Day 2-5) — <b>Ceftriaxone 50mg/kg IM/IV Single Dose</b>; Scalp Abscess → I&amp;D + Ceftriaxone</li><li><b>Test of Cure</b>: <b>2 Weeks (NAAT)</b> — <b>Mandatory for Pharyngeal</b>; DGI/Neonatal: End of Rx</li><li><b>Screening</b>: MSM 3-Site Annual, Women &lt;25y Annual, Pregnancy &lt;25y, HIV+ Annual</li><li><b>Partner Notification</b>: <b>Provider Referral Preferred for GC</b> (IM Injection); EPT Complex for GC</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Current first-line treatment for uncomplicated genital gonorrhoea?</b></li></ol>
+<p>A. Ciprofloxacin 500mg BD × 7d  B. <b>Ceftriaxone 500mg IM Stat + Azithromycin 1g PO Stat</b>  C. Azithromycin 1g Stat  D. Ceftriaxone 500mg IM Stat <i>Answer: B. Dual Therapy Mandatory (Ceftriaxone + Azithromycin).</i></p>
+<ol><li><b>Pharyngeal gonorrhoea treatment differs from genital by:</b></li></ol>
+<p>A. Longer Duration  B. <b>Higher Ceftriaxone Dose (1g IM vs 500mg IM)</b>  C. Different Antibiotic  D. Oral Ceftriaxone <i>Answer: B. Pharyngeal: Ceftriaxone 1g IM (Higher Dose) + Mandatory TOC at 2 Weeks.</i></p>
+<ol><li><b>Ciprofloxacin for gonorrhoea — current recommendation?</b></li></ol>
+<p>A. 1st Line  B. <b>Do Not Use — &gt;50% Global Resistance</b>  C. Alternative if Allergic  D. Use with Azithromycin <i>Answer: B. &gt;50% Global Resistance — Do Not Use Empirically; Only If AST Confirms Susceptibility.</i></p>
+<ol><li><b>Disseminated Gonococcal Infection — classic clinical presentation?</b></li></ol>
+<p>A. Monoarticular Septic Arthritis Only  B. <b>Arthritis-Dermatitis Syndrome (Migratory Polyarthralgia, Tenosynovitis, Pustular Rash) + Septic Arthritis</b>  C. Only Pustular Rash  D. Only Fever and Arthralgia <i>Answer: B. Arthritis-Dermatitis Syndrome + Septic Arthritis (Two Major Syndromes).</i></p>
+<ol><li><b>Neonatal gonococcal ophthalmia — typical onset vs chlamydia?</b></li></ol>
+<p>A. Same Onset  B. <b>GC: Day 2-5 (Hyperacute); CT: Day 5-14 (Mucopurulent)</b>  C. GC Later  D. CT Earlier <i>Answer: B. GC: Day 2-5 (Hyperacute, Copious Purulent); CT: Day 5-14 (Mucopurulent, Milder).</i></p>
+<ol><li><b>Gonorrhoea test of cure — timing for pharyngeal infection?</b></li></ol>
+<p>A. 1 Week  B. <b>2 Weeks (Mandatory)</b>  C. 4 Weeks  D. 8 Weeks <i>Answer: B. <b>2 Weeks (Mandatory for Pharyngeal GC)</b> — Higher Failure Rate.</i></p>
+<ol><li><b>Gonorrhoea in pregnancy — safe treatment?</b></li></ol>
+<p>A. Ciprofloxacin 500mg BD  B. <b>Ceftriaxone 500mg IM + Azithromycin 1g PO</b>  C. Doxycycline 100mg BD  D. Gentamicin IM <i>Answer: B. Dual Therapy Safe in Pregnancy; Doxy/Cipro/Genta Contraindicated.</i></p>
+<ol><li><b>Ceftriaxone resistance in gonorrhoea — current status?</b></li></ol>
+<p>A. Non-Existent  B. <b>Emerging (MIC &gt;0.125 mg/L), penA Mosaic Mutations</b>  C. Widespread &gt;50%  D. Only in Japan <i>Answer: B. Emerging Globally (MIC &gt;0.125 mg/L); penA Mosaic Mutations; Dual Therapy, Higher Dose, Alternatives.</i></p>
+<ol><li><b>Gonorrhoea test of cure — minimum time after treatment?</b></li></ol>
+<p>A. 3 Days  B. <b>2 Weeks</b>  C. 4 Weeks  D. 8 Weeks <i>Answer: B. 2 Weeks (GC TOC); CT = 4 Weeks.</i></p>
+<ol><li><b>Partner notification for gonorrhoea — EPT complexity?</b></li></ol>
+<p>A. Simple Oral Meds  B. <b>Complex — Ceftriaxone IM Injection Required</b>  C. Not Needed  D. Provider Referral Illegal <i>Answer: B. GC EPT Complex (Ceftriaxone IM Injection); Provider Referral Preferred.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25M, purulent urethral discharge, Gram stain: intracellular Gram-negative diplococci. Treatment?</b></li></ol>
+<p>A. Azithromycin 1g  B. <b>Ceftriaxone 500mg IM + Azithromycin 1g PO</b>  C. Ciprofloxacin 500mg BD  D. Ceftriaxone 500mg IM Alone <i>Answer: B. Dual Therapy (Ceftriaxone + Azithromycin).</i></p>
+<ol><li><b>MSM with pharyngeal gonorrhoea on NAAT. Correct management?</b></li></ol>
+<p>A. Ceftriaxone 500mg IM + TOC 4w  B. <b>Ceftriaxone 1g IM + Azithro 1g + TOC 2w Mandatory</b>  C. Oral Cefixime 400mg  D. Azithromycin 1g Alone <i>Answer: B. Pharyngeal: Higher Ceftriaxone Dose (1g IM) + Mandatory TOC at 2 Weeks.</i></p>
+<ol><li><b>MSM with migratory polyarthralgia, tenosynovitis, pustular rash on hands/feet. Blood culture negative. Diagnosis?</b></li></ol>
+<p>A. Rheumatic Fever  B. <b>DGI (Arthritis-Dermatitis Syndrome)</b>  C. SLE  D. Reactive Arthritis <i>Answer: B. DGI Arthritis-Dermatitis Syndrome (Migratory Polyarthralgia, Tenosynovitis, Pustular Rash).</i></p>
+<ol><li><b>Neonate with hyperacute conjunctivitis at Day 3. Gram stain: Gram-neg diplococci. Treatment?</b></li></ol>
+<p>A. Topical Erythromycin Only  B. <b>Ceftriaxone 50mg/kg IM/IV Single Dose</b>  C. Oral Azithromycin  D. IV Penicillin <i>Answer: B. Ceftriaxone 50mg/kg IM/IV Single Dose + Saline Irrigation.</i></p>
+<ol><li><b>GC TOC — minimum interval after treatment completion?</b></li></ol>
+<p>A. 3 Days  B. <b>2 Weeks</b>  C. 4 Weeks  D. 6 Weeks <i>Answer: B. 2 Weeks (GC TOC); CT = 4 Weeks.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Chlamydia.md]] — Differential (Urethral Discharge), Co-infection, Dual Therapy</li><li>[[2.3 Syphilis.md]] — Differential (GUD), Co-infection</li><li>[[5.1-5.8 Syndromic Management.md]] — Urethral Discharge, Vaginal Discharge, PID, DGI Algorithms</li><li>[[3.2 HSV.md]] — Differential (GUD), Co-infection</li><li>[[5.1-5.8 Syndromic Management.md]] — Urethral Discharge, Vaginal Discharge, PID, DGI, Proctitis</li><li>[[5.5 Genetic Counselling]] — Partner Notification Ethics, Cascade Testing</li><li>[[9. ELSI]] — EPT Legality, AMR Ethics, Resource Allocation</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next:</b> Build <code>2.3 Syphilis.md</code> (Priority 1)</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 2.2 Gonorrhoea · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

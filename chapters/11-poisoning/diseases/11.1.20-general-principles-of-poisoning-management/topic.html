@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>General Principles of Poisoning Management — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">General Principles of Poisoning Management</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Apply structured ABCDE approach to poisoned patient</li><li>Perform risk assessment (agent, dose, time, clinical features, co-ingestants)</li><li>Select appropriate decontamination method</li><li>Identify indications for enhanced elimination</li><li>Apply disposition criteria (medical vs psychiatric)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Poisoning: exposure to a substance causing harmful effects. Overdose: ingestion &gt; therapeutic dose. Toxicology: study of adverse effects of chemicals.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Approach: ABCDE + F (Focused History)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">A - Airway</div>
+<ul><li>Protect if GCS &lt; 8, seizure risk, aspiration risk</li><li>Intubate early if deteriorating</li></ul>
+<div class="sub-h">B - Breathing</div>
+<ul><li>High-flow O₂ (15L NRB)</li><li>Monitor SpO₂, RR, ABG</li><li>Assist ventilation if respiratory depression</li></ul>
+<div class="sub-h">C - Circulation</div>
+<ul><li>IV access x2 large bore</li><li>Fluid resuscitation for hypotension</li><li>Vasopressors if fluid-refractory (norepinephrine)</li><li>ECG monitoring continuous</li></ul>
+<div class="sub-h">D - Disability</div>
+<ul><li>GCS monitoring q15-30 min</li><li>Pupil size/reactivity</li><li>Blood glucose (must check)</li><li>Temperature</li></ul>
+<div class="sub-h">E - Exposure/Environment</div>
+<ul><li>Full undress, search for patches, needles, containers</li><li>Core temperature</li><li>Decontaminate skin/eyes if dermal/ocular exposure</li></ul>
+<div class="sub-h">F - Focused History (RISK ASSESSMENT)</div>
+<ul><li><b>What</b>: agent(s), formulation (SR/ER), concentration</li><li><b>How much</b>: estimated dose (mg/kg)</li><li><b>When</b>: time of ingestion</li><li><b>Why</b>: intentional vs accidental</li><li><b>Co-ingestants</b>: alcohol, other drugs</li><li><b>Past medical</b>: cardiac, psychiatric, renal, hepatic</li><li><b>Current medications</b>: interactions</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Pharmacokinetics altered in overdose: delayed absorption (SR/ER, anticholinergic, opioid), increased volume of distribution, saturable metabolism, reduced clearance</li><li>Ion trapping: weak acids excreted in alkaline urine; weak bases in acidic urine</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Normal Values / Important Cut-offs</span>
+  </div>
+  <div class="sec-body">
+<ul><li>GCS &lt; 8 → intubation</li><li>Paracetamol &gt; 150 mg/kg or &gt; 7.5 g → treat</li><li>Salicylate &gt; 500 mg/kg (moderate), &gt; 700 mg/kg (severe)</li><li>QRS &gt; 100 ms (TCA) → sodium bicarbonate</li><li>pH &lt; 7.2 (salicylate/toxic alcohol) → dialysis consideration</li><li>COHb &gt; 25% (or &gt; 15% in pregnancy) → HBO consideration</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Classification</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>By intent</b>: accidental, deliberate self-harm (DSH), iatrogenic, occupational, environmental</li><li><b>By route</b>: ingestion, inhalation, dermal, IV, ocular</li><li><b>By clinical severity</b>: minor, moderate, severe (Poisoning Severity Score)</li><li><b>By toxidrome</b>: cholinergic, anticholinergic, sympathomimetic, sedative-hypnotic, opioid, serotonin, NMS</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Risk Assessment Tools</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Rumack-Matthew Nomogram</b>: paracetamol (4-24h post-ingestion)</li><li><b>Done Nomogram</b>: salicylate (limited use)</li><li><b>Prognostic scores</b>: PSS, APACHE II (ICU), Glasgow Coma Scale</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<p><b>Routine</b> (all significant ingestions):</p>
+<ul><li>VBG/ABG: pH, pCO₂, lactate, glucose, electrolytes</li><li>ECG: rate, rhythm, QRS, QT, terminal R wave in aVR (TCA)</li><li>Paracetamol level (ALL overdoses — co-ingestion common)</li><li>Glucose (bedside)</li><li>U&amp;E, creatinine, LFTs, CK, coagulation, FBC</li><li>Pregnancy test (females childbearing age)</li></ul>
+<p><b>Targeted</b> (based on history):</p>
+<ul><li>Specific drug levels: salicylate, lithium, digoxin, theophylline, ethanol, methanol, ethylene glycol (osmolal gap), iron, COHb</li><li>Urine drug screen (limited utility — qualitative only, false +/-)</li><li>CXR (aspiration, hydrocarbon)</li><li>CT head (trauma, coma of unclear cause)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Interpretation Frameworks</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Anion gap metabolic acidosis</b> (MUDPILES): methanol, uremia, DKA, paraldehyde, iron/isoniazid, lactic acidosis, ethylene glycol, salicylate</li><li><b>Osmolal gap</b> = measured osmolality - calculated (2×Na + glucose/18 + BUN/2.8 + EtOH/4.6). &gt;10 suggests toxic alcohol</li><li><b>QRS &gt; 100 ms + terminal R in aVR + AV block</b> = TCA cardiotoxicity</li><li><b>Hyperkalemia in digoxin poisoning</b> = poor prognosis (binds Na⁺/K⁺-ATPase)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<p>Clinical diagnosis based on history + toxidrome + targeted investigations. Confirmatory levels guide specific therapy but <b>do not delay resuscitation</b>.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Coma: metabolic (hypoglycemia, hepatic encephalopathy, uremia), structural (stroke, hemorrhage), infection (meningitis), seizure (post-ictal)</li><li>Agitation: sympathomimetic, anticholinergic, serotonin, alcohol/sedative withdrawal, encephalitis, thyrotoxicosis</li><li>Seizures: TCA, bupropion, tramadol, theophylline, isoniazid, camphor, withdrawal (alcohol, benzo), hypoglycemia, hyponatremia</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Red Flags / Emergencies</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Airway compromise</b> — GCS &lt; 8, seizure, aspiration</li><li><b>Hemodynamic instability</b> — refractory hypotension, dysrhythmia</li><li><b>Severe metabolic acidosis</b> — pH &lt; 7.15</li><li><b>Hyperthermia</b> — &gt; 39°C (serotonin, NMS, sympathomimetic, anticholinergic)</li><li><b>Rhabdomyolysis</b> — CK &gt; 5000 (compartment syndrome, renal failure)</li><li><b>Co-ingestion</b> — always assume multiple agents</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Poisoned Patient</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE Stabilization</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Risk Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Life Threat?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">ICU/HDU Admission&lt;br/&gt;Specific Antidotes&lt;br/&gt;Enhanced Elimination</div>
+<div class="fc-node" data-id="F">Observation Unit&lt;br/&gt;Decontamination if indicated&lt;br/&gt;Psychiatric Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Disposition</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Medically Fit&lt;br/&gt;+ Psych Safe?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Discharge + Follow-up</div>
+<div class="fc-node" data-id="J">Admit/Transfer</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Resuscitation (ABCDE)</div>
+<ul><li>Airway: intubation if GCS &lt; 8 or failure to protect</li><li>Breathing: O₂, ventilatory support</li><li>Circulation: fluids → vasopressors (NE) → specific (glucagon, HIET, calcium)</li><li>Seizures: benzodiazepines 1st line (lorazepam 2-4 mg IV), then phenobarbital/ propofol (avoid phenytoin in TCA)</li></ul>
+<div class="sub-h">2. Decontamination (see [[Gastrointestinal Decontamination]])</div>
+<ul><li><b>Activated charcoal (AC)</b>: 1 g/kg (max 50g), ideally &lt; 1h, 1:10 ratio to estimated dose. Indicated for most toxins with significant toxicity. Contraindicated: unprotected airway, corrosives, hydrocarbons, GI perforation/obstruction.</li><li><b>Gastric lavage</b>: RARELY indicated (&lt; 1h post life-threatening ingestion, protected airway). Not routine.</li><li><b>Whole bowel irrigation</b>: sustained-release, enteric-coated, body packers, iron, lithium.</li><li><b>Ocular/dermal</b>: copious irrigation 15+ min.</li></ul>
+<div class="sub-h">3. Enhanced Elimination (see [[Enhanced Elimination]])</div>
+<table class="ctable"><tr><th>Method</th><th>Indications</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**MDAC** (multi-dose AC)</td><td>Carbamazepine, phenobarbital, theophylline, quinine, dapsone</td></tr><tr><td>**Urinary alkalinization** (pH 7.5-8)</td><td>Salicylate, phenobarbital, chlorpropamide, methotrexate</td></tr><tr><td>**Urinary acidification**</td><td>**Avoid** (risks > benefits). Was used for weak bases (amph/meth).</td></tr><tr><td>**Hemodialysis**</td><td>Methanol, ethylene glycol, salicylate (severe), lithium, theophylline, metformin, valproate</td></tr><tr><td>**Hemoperfusion/HP**</td><td>Carbamazepine, phenobarbital, paraquat (historical)</td></tr><tr><td>**Plasma exchange**</td><td>Mushroom (Amanita), TTP-like syndromes</td></tr></table>
+<div class="sub-h">4. Antidotes (see [[Antidotes Overview]])</div>
+<p>Key antidotes to memorize:</p>
+<ul><li><b>N-acetylcysteine</b>: paracetamol</li><li><b>Flumazenil</b>: benzo (CONTRAINDICATED: TCA co-ingestion, seizure disorder, chronic benzo use)</li><li><b>Naloxone</b>: opioid (titrate 0.04-0.4 mg, avoid precipitated withdrawal)</li><li><b>Sodium bicarbonate</b>: TCA (QRS &gt; 100 ms), salicylate (alkalinization)</li><li><b>Atropine + pralidoxime</b>: organophosphate</li><li><b>Fomepizole/ethanol</b>: methanol, ethylene glycol</li><li><b>Digoxin-specific Fab</b>: digoxin (dose = serum level × weight / 100, or empirical 10-20 vials)</li><li><b>Hydroxocobalamin</b>: cyanide</li><li><b>Deferoxamine</b>: iron (vin rosé urine)</li><li><b>Glucagon + HIET</b>: beta-blocker / calcium channel blocker</li><li><b>Cyproheptadine</b>: serotonin syndrome</li><li><b>Dantrolene</b>: NMS (also malignant hyperthermia)</li></ul>
+<div class="sub-h">5. Supportive Care</div>
+<ul><li>Monitor: continuous ECG, SpO₂, GCS q15-30 min, temp, urine output</li><li>Electrolyte replacement (K⁺, Mg²⁺, PO₄³⁻)</li><li>Thiamine 100 mg IV before glucose (Wernicke prevention)</li><li>DVT prophylaxis, stress ulcer prophylaxis (ICU)</li><li>Temperature management (active cooling if &gt; 39°C)</li></ul>
+<div class="sub-h">6. Psychiatric Assessment</div>
+<ul><li><b>Mandatory</b> for all intentional overdoses before discharge</li><li>Assess: intent, plan, hopelessness, support, follow-up</li><li>Mental Health Act if high risk and refusing admission</li><li>Liaison psychiatry referral</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Aspiration pneumonia (hydrocarbon, sedatives, seizures)</li><li>Rhabdomyolysis → AKI (compartment syndrome, crush, prolonged immobilization)</li><li>Acute kidney injury (hemodynamic, rhabdo, direct nephrotoxins: lithium, ethylene glycol, heavy metals)</li><li>Hepatic failure (paracetamol, Amanita, valproate)</li><li>Cardiac arrhythmias (TCA, BB/CCB, digoxin, K⁺ disturbances)</li><li>Seizure-related injury</li><li>Compartment syndrome (prolonged immobilization, IV extravasation)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Most recover with supportive care</li><li>Mortality predictors: age &gt; 65, GCS &lt; 8, cardiac arrest, pH &lt; 7.0, lactate &gt; 10, multi-organ failure</li><li>Paracetamol: excellent if NAC within 8h; poor if &gt; 24h with encephalopathy</li><li>TCA: good with early NaHCO₃; high fatality if delayed</li><li>BB/CCB: high mortality if refractory shock</li><li>Toxic alcohols: good with early fomepizole/dialysis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Paracetamol</b>: treat on nomogram OR &gt; 75 mg/kg at any time if staggered/uncertain timing; NAC IV/PO protocols (SNAP 2-bag vs 3-bag)</li><li><b>Salicylate</b>: respiratory alkalosis + metabolic acidosis; alkalinize urine (NaHCO₃) + dialysis if pH &lt; 7.2, renal failure, altered mental status, level &gt; 700 mg/L</li><li><b>TCA</b>: QRS widening → NaHCO₃ (1-2 mEq/kg bolus, target pH 7.5-7.55, QRS &lt; 100 ms); avoid Class Ia/Ic antiarrhythmics, phenytoin, flumazenil</li><li><b>BB/CCB</b>: glucagon (BB) 5-10 mg IV then infusion; calcium (CCB); HIET (insulin 1 U/kg/hr + dextrose); vasopressors</li><li><b>Digoxin</b>: Fab fragments; hyperK = give Fab first (not insulin/dextrose/calcium)</li><li><b>Opioid</b>: naloxone titration (avoid withdrawal); observe 4-6h post last dose (longer for methadone, SR)</li><li><b>Benzo</b>: flumazenil ONLY if pure benzo, no seizure risk, no TCA — otherwise supportive</li><li><b>CO</b>: 100% O₂ (half-life 30 min vs 4-5h on RA); HBO if COHb &gt; 25%, LOC, cardiac ischemia, pregnancy &gt; 15%, persistent neuro symptoms</li><li><b>Organophosphate</b>: atropine (till secretions dry, HR &gt; 80), pralidoxime (1-2 g IV over 30 min, repeat), IMS (day 1-4), OPIDN (weeks)</li><li><b>Methanol/EG</b>: fomepizole 15 mg/kg load then 10 mg/kg q12h; dialysis if pH &lt; 7.3, renal failure, visual (methanol), level &gt; 50 mmol/L</li><li><b>Iron</b>: deferoxamine if systemic toxicity (shock, metabolic acidosis) or level &gt; 500 µg/dL; vin rosé urine</li><li><b>Lithium</b>: dialysis if &gt; 4 mmol/L (acute) or &gt; 2.5 (chronic) + neuro symptoms / renal impairment / elderly</li><li><b>Cocaine/Amph</b>: benzos 1st line; avoid beta-blockers (unopposed alpha); treat hyperthermia aggressively</li><li><b>Anticholinergic</b>: physostigmine ONLY if severe (seizure, severe agitation, hyperthermia) and no contraindication (QRS widening, asthma, bradycardia, bowel obstruction)</li><li><b>Serotonin vs NMS</b>: serotonergic = hyperreflexia, clonus, rapid onset (Hunter criteria); NMS = lead-pipe rigidity, bradykinesia, gradual onset (FEVER)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Paracetamol nomogram use and limitations (staggered, late presentation)</li><li>Salicylate acid-base disorder and dialysis criteria</li><li>TCA overdose: ECG changes, NaHCO₃ dosing, contraindicated drugs</li><li>Beta-blocker vs calcium channel blocker: management differences</li><li>Digoxin Fab dosing and hyperkalemia significance</li><li>CO poisoning: HBO indications</li><li>Methanol/ethylene glycol: fomepizole vs ethanol, dialysis criteria</li><li>Organophosphate: atropine vs pralidoxime roles, IMS</li><li>Flumazenil contraindications</li><li>Serotonin syndrome vs NMS differentiation</li><li>Lithium dialysis criteria</li><li>Anticholinergic toxidrome and physostigmine risks</li><li>Enhanced elimination methods and indications</li><li>Approach to unknown overdose (ABCDE + paracetamol level + ECG + ABG)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Flumazenil in mixed overdose</b> → seizures if TCA co-ingestion</li><li><b>Phenytoin in TCA</b> → worsens sodium channel blockade</li><li><b>Beta-blocker in cocaine</b> → unopposed alpha vasoconstriction</li><li><b>Urinary acidification</b> → not recommended (worsens renal elimination of acids, rhabdo risk)</li><li><b>Digoxin hyperkalemia</b> → treat with Fab, NOT standard hyperK measures</li><li><b>Paracetamol nomogram &lt; 4h</b> → not valid (absorption phase); treat if &gt; 75 mg/kg</li><li><b>Staggered paracetamol</b> → nomogram invalid; treat on clinical suspicion + level</li><li><b>COHb normal ≠ excludes CO poisoning</b> (if on O₂ before sample)</li><li><b>Physostigmine in anticholinergic</b> → risk of bradycardia, seizures, bronchospasm; only for severe cases</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>MUDPILES</b> (anion gap acidosis): Methanol, Uremia, DKA, Paraldehyde, Iron/Isoniazid, Lactic acidosis, Ethylene glycol, Salicylate</li><li><b>SLUDGE</b> (cholinergic): Salivation, Lacrimation, Urination, Defecation, GI upset, Emesis</li><li><b>DUMBELLS</b>: Defecation, Urination, Miosis, Bradycardia, Emesis, Lacrimation, Salivation, Sweating</li><li><b>Red as a beet, dry as a bone, blind as a bat, mad as a hatter, hot as a hare, full as a flask</b> (anticholinergic)</li><li><b>FEVER</b> (NMS): Fever, Encephalopathy, Vitals unstable, Elevated Enzymes (CK), Rigidity</li><li><b>Hunter criteria</b> (serotonin): Spontaneous clonus OR inducible clonus + agitation/diaphoresis OR ocular clonus + agitation/diaphoresis OR tremor + hyperreflexia + hyperthermia + diaphoresis</li><li><b>PRIME</b> (benzodiazepine withdrawal): Psychosis, Rebound anxiety, Insomnia, Myoclonus, Epilepsy (seizures)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((General Poisoning Management))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">ABCDE</div>
+<div class="mm-node mm-l3">– Airway</div>
+<div class="mm-node mm-l3">– Breathing</div>
+<div class="mm-node mm-l3">– Circulation</div>
+<div class="mm-node mm-l3">– Disability</div>
+<div class="mm-node mm-l3">– Exposure</div>
+<div class="mm-node mm-l2">Risk Assessment</div>
+<div class="mm-node mm-l3">– Agent</div>
+<div class="mm-node mm-l3">– Dose</div>
+<div class="mm-node mm-l3">– Time</div>
+<div class="mm-node mm-l3">– Co-ingestants</div>
+<div class="mm-node mm-l3">– Comorbidities</div>
+<div class="mm-node mm-l2">Decontamination</div>
+<div class="mm-node mm-l3">– Activated Charcoal</div>
+<div class="mm-node mm-l3">– Gastric Lavage</div>
+<div class="mm-node mm-l3">– WBI</div>
+<div class="mm-node mm-l3">– Ocular/Dermal</div>
+<div class="mm-node mm-l2">Antidotes</div>
+<div class="mm-node mm-l3">– Specific</div>
+<div class="mm-node mm-l3">– Stocking List</div>
+<div class="mm-node mm-l2">Enhanced Elimination</div>
+<div class="mm-node mm-l3">– MDAC</div>
+<div class="mm-node mm-l3">– Urinary Alkalinization</div>
+<div class="mm-node mm-l3">– Hemodialysis</div>
+<div class="mm-node mm-l3">– Hemoperfusion</div>
+<div class="mm-node mm-l2">Disposition</div>
+<div class="mm-node mm-l3">– Medical Stability</div>
+<div class="mm-node mm-l3">– Psychiatric Safety</div>
+<div class="mm-node mm-l2">Psych Assessment</div>
+<div class="mm-node mm-l3">– Mandatory for DSH</div>
+<div class="mm-node mm-l3">– Mental Health Act</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Patient Presents With Possible Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Immediate ABCDE Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Life-Threatening Features?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Resuscitate + ICU&lt;br/&gt;Specific Antidotes&lt;br/&gt;Enhanced Elimination</div>
+<div class="fc-node" data-id="E">Risk Assessment&lt;br/&gt;History + Exam + Targeted Tests</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Psychiatric Assessment&lt;br/&gt;(Mandatory for DSH)</div>
+<div class="fc-node" data-id="F">Paracetamol Level + ECG + ABG + Glucose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Medically Fit &amp;\nPsych Safe?</div>
+<div class="fc-node" data-id="G">Significant Ingestion?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Discharge + Follow-up</div>
+<div class="fc-node" data-id="M">Admit/Transfer</div>
+<div class="fc-node" data-id="H">Decontamination if &lt; 1-2h&lt;br/&gt;Antidote if Indicated&lt;br/&gt;Observation/Admission</div>
+<div class="fc-node" data-id="I">Discharge if Low Risk&lt;br/&gt;+ Psych Assessment if DSH</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Rumack-Matthew nomogram</li><li>Salicylate acid-base triad diagram</li><li>TCA ECG progression (wide QRS → sine wave → asystole)</li><li>Organophosphate management algorithm</li><li>Enhanced elimination decision tree</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Toxicology: Approach to the Poisoned Patient (EM:RAP, Life in the Fast Lane)</li><li>Specific antidotes review (Clinical Toxicology rotation)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li>ABCDE first, always</li><li>Paracetamol level in ALL overdoses</li><li>Risk assessment: agent, dose, time, co-ingestants</li><li>Charcoal 1g/kg &lt; 1h (most toxins); WBI for SR/body packers</li><li>Key antidotes: NAC, naloxone, NaHCO₃, atropine/pralidoxime, fomepizole, Fab, hydroxocobalamin, deferoxamine, glucagon/HIET, cyproheptadine</li><li>Dialysis: methanol, EG, salicylate (severe), lithium, theophylline, metformin, valproate</li><li>Psych assessment mandatory for DSH</li><li>Contraindications: flumazenil (TCA, seizure hx), phenytoin (TCA), beta-blockers (cocaine), urinary acidification</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>Outline ABCDE + risk assessment for poisoned patient</li><li>List 5 indications for hemodialysis in poisoning</li><li>Contrast serotonin syndrome vs NMS</li><li>State TCA ECG changes and NaHCO₃ protocol</li><li>Name flumazenil contraindications</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>ABCDE + risk assessment framework</li><li>Paracetamol: nomogram, NAC protocols, staggered ingestion</li><li>Salicylate: acid-base, alkalinization, dialysis criteria</li><li>TCA: QRS &gt; 100 ms → NaHCO₃; avoid phenytoin/flumazenil</li><li>BB/CCB: glucagon, calcium, HIET, vasopressors</li><li>Opioid: naloxone titration, re-sedation risk</li><li>CO: 100% O₂, HBO indications</li><li>Organophosphate: atropine + pralidoxime, IMS</li><li>Methanol/EG: fomepizole, dialysis criteria</li><li>Digoxin: Fab dosing, hyperK significance</li><li>Lithium: dialysis criteria (acute vs chronic)</li><li>Flumazenil contraindications</li><li>Serotonin vs NMS differentiation</li><li>Psych assessment mandatory</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Enhanced elimination indications per toxin</li><li>Anticholinergic toxidrome + physostigmine risks</li><li>Iron: deferoxamine, vin rosé urine</li><li>Cyanide: hydroxocobalamin</li><li>Cocaine/Amph: benzos, avoid beta-blockers</li><li>Toxic alcohol osmolal/anion gap</li><li>Specific antidote stocking list</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Mushroom poisoning (Amanita) specifics</li><li>Hydrocarbon aspiration risk</li><li>Corrosive ingestion grading</li><li>Body packer management</li><li>Heavy metal chelation details</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition + classification</li><li>Risk assessment (agent, dose, time, co-factors)</li><li>Clinical features by toxidrome</li><li>Investigations (targeted)</li><li>Management: resuscitation → decontamination → antidote → enhanced elimination → supportive → psych</li><li>Complications + prognosis</li><li>Disposition</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Key toxidrome features (table)</li><li>Antidote + dose + indication</li><li>Dialysis criteria for specific poison</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Paracetamol: nomogram 4-24h, staggered = treat empirically"</li><li>"TCA: QRS &gt; 100 ms = NaHCO₃; never give phenytoin or flumazenil"</li><li>"Salicylate: respiratory alkalosis + metabolic acidosis = dialysis if pH &lt; 7.2"</li><li>"Beta-blocker overdose: glucagon + HIET; CCB: calcium + HIET"</li><li>"Digoxin: hyperK = poor prognosis, give Fab not insulin/calcium"</li><li>"CO: 100% O₂, HBO if COHb &gt; 25% or neuro/cardiac/pregnancy"</li><li>"Organophosphate: atropine till dry, pralidoxime 1-2g IV"</li><li>"Methanol/EG: fomepizole, dialysis if pH &lt; 7.3 or end-organ"</li><li>"Lithium: dialysis if &gt; 4 acute / &gt; 2.5 chronic + neuro/renal"</li><li>"Serotonin vs NMS: clonus/hyperreflexia vs rigidity/bradykinesia"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Unknown overdose: paracetamol level + ECG + ABG mandatory</li><li>Staggered paracetamol: do not use nomogram</li><li>Psychiatric clearance before discharge in DSH</li><li>observing methadone/benzo/TCA &gt; 6h post naloxone/flumazenil</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>MUDPILES, SLUDGE, DUMBELLS, FEVER, Hunter criteria</li><li>Antidote table (agent, antidote, dose, key indication)</li><li>Dialysis criteria table</li><li>Contraindications table (flumazenil, phenytoin, beta-blockers, physostigmine)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">29</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>General poisoning management is ABCDE-driven supportive care. Specific antidotes exist for few agents and must be given early. Decontamination (charcoal &lt; 1h) and enhanced elimination (dialysis for specific indications) are adjuncts. Psychiatric assessment is mandatory for deliberate self-harm. Key exam areas: paracetamol nomogram/staggered, salicylate acid-base/dialysis, TCA NaHCO₃/contraindications, BB/CCB glucagon/HIET, digoxin Fab/hyperK, CO HBO, organophosphate atropine/pralidoxime/IMS, methanol/EG fomepizole/dialysis, lithium dialysis criteria, flumazenil contraindications, serotonin vs NMS.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">30</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>What is the FIRST step in managing any poisoned patient?</li></ol>
+<p>A. Give activated charcoal B. Identify the poison C. ABCDE stabilization D. Check paracetamol level <b>Answer: C</b> <i>Explanation: ABCDE stabilization ALWAYS comes first. Resuscitation precedes identification and specific treatment. Paracetamol level in ALL overdoses but after ABCDE.</i></p>
+<ol><li>Paracetamol level should be checked in:</li></ol>
+<p>A. Only paracetamol overdoses B. ALL overdoses C. Overdoses with hepatic risk factors D. Only intentional overdoses <b>Answer: B</b> <i>Explanation: Paracetamol level in ALL overdoses — co-ingestion is common. Paracetamol often taken with other agents (opioids, benzos, alcohol). Missed paracetamol = missed NAC window.</i></p>
+<ol><li>Activated charcoal dose and optimal timing?</li></ol>
+<p>A. 0.5 g/kg within 4 hours B. 1 g/kg ideally &lt; 1 hour C. 2 g/kg within 2 hours D. 1 g/kg up to 12 hours <b>Answer: B</b> <i>Explanation: AC 1 g/kg (max 50g), ideally &lt; 1h, 1:10 ratio to estimated dose. Benefit up to 2-4h for some toxins (paracetamol delays gastric emptying, anticholinergics).</i></p>
+<ol><li>Contraindications to activated charcoal?</li></ol>
+<p>A. All overdoses B. Unprotected airway, corrosives, hydrocarbons, GI perforation/obstruction C. Only in children D. Only with SR preparations <b>Answer: B</b> <i>Explanation: Contraindicated: unprotected airway (aspiration risk), corrosives (obscures endoscopy), hydrocarbons (aspiration pneumonitis risk), GI perforation/obstruction.</i></p>
+<ol><li>Flumazenil contraindications?</li></ol>
+<p>A. Only in children B. TCA co-ingestion, seizure disorder, chronic benzo use C. Only with alcohol co-ingestion D. None - safe in all benzo overdoses <b>Answer: B</b> <i>Explanation: Flumazenil CONTRAINDICATED: TCA co-ingestion (unmasks seizures), seizure disorder (withdrawal seizures), chronic benzo use (withdrawal). Only for pure benzo overdose, no seizure risk, no TCA.</i></p>
+<ol><li>Hemodialysis indications in poisoning - which agent?</li></ol>
+<p>A. Paracetamol B. Methanol, ethylene glycol, salicylate (severe), lithium, theophylline, metformin, valproate C. Benzodiazepines D. Opioids <b>Answer: B</b> <i>Explanation: HD for: methanol, ethylene glycol, severe salicylate, lithium, theophylline, metformin, valproate. Also toxic alcohols, iron (rarely). NOT for paracetamol, benzos, opioids (high protein binding/large Vd).</i></p>
+<ol><li>MUDPILES anion gap metabolic acidosis - what does S stand for?</li></ol>
+<p>A. Sepsis B. Salicylate C. Starvation D. Strychnine <b>Answer: B</b> <i>Explanation: MUDPILES: Methanol, Uremia, DKA, Paraldehyde, Iron/Isoniazid, Lactic acidosis, Ethylene glycol, Salicylate.</i></p>
+<ol><li>Osmolal gap calculation?</li></ol>
+<p>A. Measured - 2×Na B. Measured osmolality - calculated (2×Na + glucose/18 + BUN/2.8 + EtOH/4.6) C. Calculated - measured D. Only measured osmolality <b>Answer: B</b> <i>Explanation: Osmolal gap = measured osmolality - calculated (2×Na + glucose/18 + BUN/2.8 + EtOH/4.6). &gt; 10 suggests toxic alcohol (methanol, ethylene glycol, isopropanol).</i></p>
+<ol><li>Digoxin poisoning with hyperkalemia - management?</li></ol>
+<p>A. Insulin/dextrose + calcium B. Digoxin-specific Fab fragments FIRST C. Sodium bicarbonate D. Hemodialysis <b>Answer: B</b> <i>Explanation: Digoxin hyperkalemia = poor prognosis (binds Na⁺/K⁺-ATPase). Treat with Fab FIRST, NOT standard hyperK measures (insulin/dextrose/calcium). Fab reverses the Na⁺/K⁺-ATPase blockade.</i></p>
+<ol><li>CO poisoning - HBO indications?</li></ol>
+<p>A. COHb &gt; 10% B. COHb &gt; 25% (or &gt;15% pregnancy), LOC, cardiac ischemia, persistent neuro symptoms C. Only if COHb &gt; 50% D. Never indicated <b>Answer: B</b> <i>Explanation: HBO if: COHb &gt; 25% (or &gt;15% in pregnancy), loss of consciousness, cardiac ischemia, persistent neuro symptoms. 100% O₂ first (half-life 30min vs 4-5h on RA).</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">31</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Unknown overdose. Patient comatose, GCS 6. Initial management priority?</li></ol>
+<p>A. Identify the poison B. ABCDE - intubate, oxygen, IV access, glucose C. Give naloxone + flumazenil empirically D. Activated charcoal via NG tube <b>Answer: B</b> <i>Explanation: ABCDE ALWAYS first. Airway protection (GCS &lt; 8 → intubate). Then risk assessment + targeted tests (paracetamol level + ECG + ABG + glucose mandatory).</i></p>
+<ol><li>DSH overdose, unknown pills. Risk assessment - what is LEAST important?</li></ol>
+<p>A. Agent and formulation (SR/ER) B. Estimated dose (mg/kg) C. Exact time of ingestion D. Patient's favorite color <b>Answer: D</b> <i>Explanation: Risk assessment: What (agent, formulation), How much (dose mg/kg), When (time), Why (intent), Co-ingestants, Past medical, Current meds. 'Favorite color' is irrelevant.</i></p>
+<ol><li>TCA overdose with QRS 140ms. Which drug is MOST dangerous to give?</li></ol>
+<p>A. Sodium bicarbonate B. Lorazepam for seizures C. Phenytoin for seizures D. Norepinephrine for hypotension <b>Answer: C</b> <i>Explanation: Phenytoin CONTRAINDICATED in TCA - Na channel blocker worsens cardiotoxicity (QRS widening, VF). NaHCO₃ is treatment. Lorazepam 1st line for seizures. NE for hypotension.</i></p>
+<ol><li>Salicylate poisoning with pH 7.18, level 750 mg/L, confused. Management?</li></ol>
+<p>A. Urinary alkalinization only B. Hemodialysis C. Observe only D. Charcoal only <b>Answer: B</b> <i>Explanation: Dialysis criteria: pH &lt; 7.2, renal failure, CNS toxicity, level &gt; 700 (acute). This patient meets 3 criteria (pH 7.18, level 750, confusion). Urine alkalinization adjunct but dialysis indicated.</i></p>
+<ol><li>Beta-blocker overdose with hypotension refractory to fluids. Next step?</li></ol>
+<p>A. More fluids B. Glucagon 5-10mg IV then infusion + HIET C. Norepinephrine only D. Atropine <b>Answer: B</b> <i>Explanation: BB overdose: Glucagon 5-10mg IV then 5-15mg/hr infusion (bypasses β-receptor). HIET (insulin 1U/kg/hr + dextrose) for myocardial support. Vasopressors adjunct.</i></p>
+<ol><li>Calcium channel blocker overdose - specific antidote?</li></ol>
+<p>A. Glucagon B. Calcium (IV calcium gluconate/chloride) + HIET C. Naloxone D. Flumazenil <b>Answer: B</b> <i>Explanation: CCB overdose: Calcium (IV calcium gluconate 3g or chloride 1g) + HIET (insulin 1U/kg/hr + dextrose). Glucagon less effective than in BB. Vasopressors for refractory shock.</i></p>
+<ol><li>Organophosphate poisoning - atropine dosing target?</li></ol>
+<p>A. HR &gt; 60 B. Secretions dry, HR &gt; 80, no bronchospasm C. Pupils dilated D. BP normal <b>Answer: B</b> <i>Explanation: Atropine: titrate to dry secretions, HR &gt; 80, no bronchospasm. No max dose. Pralidoxime 1-2g IV over 30min (within 24-48h). IMS day 1-4, OPIDN weeks later.</i></p>
+<ol><li>Methanol/ethylene glycol poisoning - fomepizole dose?</li></ol>
+<p>A. 15 mg/kg load then 10 mg/kg q12h B. 10 mg/kg load then 5 mg/kg q6h C. 20 mg/kg load then 15 mg/kg q24h D. 5 mg/kg load then 2 mg/kg q8h <b>Answer: A</b> <i>Explanation: Fomepizole: 15 mg/kg load, then 10 mg/kg q12h (increase to 15 mg/kg q12h after 48h if on dialysis). Dialysis if pH &lt; 7.3, renal failure, visual symptoms (methanol), level &gt; 50 mmol/L.</i></p>
+<ol><li>Lithium poisoning - dialysis criteria?</li></ol>
+<p>A. Level &gt; 1.5 mmol/L B. Acute &gt; 4 mmol/L OR Chronic &gt; 2.5 mmol/L + neuro symptoms/renal impairment/elderly C. Level &gt; 3 mmol/L always D. Only if anuric <b>Answer: B</b> <i>Explanation: Lithium dialysis: Acute &gt; 4 mmol/L. Chronic &gt; 2.5 mmol/L + neuro symptoms/renal impairment/elderly. Also if level &gt; 5 mmol/L any case. Lithium rebounds post-dialysis (redistributes).</i></p>
+<ol><li>Cocaine/sympathomimetic toxicity - 1st line for agitation/seizures?</li></ol>
+<p>A. Beta-blockers B. Benzodiazepines C. Phenytoin D. Haloperidol <b>Answer: B</b> <i>Explanation: Cocaine/amph: Benzodiazepines 1st line (lorazepam/diazepam). AVOID beta-blockers (unopposed α vasoconstriction → hypertension crisis). Treat hyperthermia aggressively (active cooling).</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">32</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: General poisoning management priority?</li></ul>
+<p>A: ABCDE first, ALWAYS. Resuscitation before identification.</p>
+<ul><li>Q: Paracetamol level in ALL overdoses?</li></ul>
+<p>A: Yes - co-ingestion common. Paracetamol often with opioids, benzos, alcohol.</p>
+<ul><li>Q: Activated charcoal dose/timing?</li></ul>
+<p>A: 1 g/kg (max 50g), ideally &lt;1h, 1:10 ratio. Benefit up to 2-4h for some (paracetamol, anticholinergics).</p>
+<ul><li>Q: Charcoal contraindications?</li></ul>
+<p>A: Unprotected airway, corrosives, hydrocarbons, GI perforation/obstruction.</p>
+<ul><li>Q: Flumazenil contraindications?</li></ul>
+<p>A: TCA co-ingestion, seizure disorder, chronic benzo use. Only pure benzo, no seizure risk, no TCA.</p>
+<ul><li>Q: MUDPILES members?</li></ul>
+<p>A: Methanol, Uremia, DKA, Paraldehyde, Iron/Isoniazid, Lactic acidosis, Ethylene glycol, Salicylate.</p>
+<ul><li>Q: Osmolal gap formula?</li></ul>
+<p>A: Measured - (2×Na + glucose/18 + BUN/2.8 + EtOH/4.6). &gt;10 = toxic alcohol.</p>
+<ul><li>Q: Digoxin + hyperkalemia?</li></ul>
+<p>A: Give Fab FIRST, not insulin/dextrose/calcium. HyperK = poor prognosis (Na/K-ATPase blockade).</p>
+<ul><li>Q: CO poisoning HBO criteria?</li></ul>
+<p>A: COHb &gt;25% (&gt;15% pregnancy), LOC, cardiac ischemia, persistent neuro symptoms. 100% O₂ first.</p>
+<ul><li>Q: HD indications in poisoning?</li></ul>
+<p>A: Methanol, EG, salicylate (severe), lithium, theophylline, metformin, valproate. NOT paracetamol, benzos, opioids.</p>
+<ul><li>Q: Serotonin vs NMS differentiation?</li></ul>
+<p>A: Serotonin: hyperreflexia, clonus, rapid onset (Hunter criteria). NMS: lead-pipe rigidity, bradykinesia, gradual onset (FEVER).</p>
+<ul><li>Q: Anticholinergic toxidrome mnemonic?</li></ul>
+<p>A: Red as a beet, dry as a bone, blind as a bat, mad as a hatter, hot as a hare, full as a flask.</p>
+<ul><li>Q: Physostigmine in anticholinergic - when?</li></ul>
+<p>A: ONLY if severe (seizure, severe agitation, hyperthermia) AND no contraindication (QRS widening, asthma, bradycardia, bowel obstruction).</p>
+<ul><li>Q: BB vs CCB overdose key difference?</li></ul>
+<p>A: BB: Glucagon + HIET. CCB: Calcium + HIET. Both: vasopressors for refractory shock.</p>
+<ul><li>Q: Poisoning Severity Score (PSS)?</li></ul>
+<p>A: Grades: 0=none, 1=minor, 2=moderate, 3=severe, 4=fatal. Used for triage/research.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">33</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> - ABCDE stabilization ALWAYS comes first. Resuscitation precedes identification and specific treatment. Paracetamol level in ALL overdoses but after ABCDE.</li><li><b>B</b> - Paracetamol level in ALL overdoses — co-ingestion is common. Paracetamol often taken with other agents (opioids, benzos, alcohol). Missed paracetamol = missed NAC window.</li><li><b>B</b> - AC 1 g/kg (max 50g), ideally &lt; 1h, 1:10 ratio to estimated dose. Benefit up to 2-4h for some toxins (paracetamol delays gastric emptying, anticholinergics).</li><li><b>B</b> - Contraindicated: unprotected airway (aspiration risk), corrosives (obscures endoscopy), hydrocarbons (aspiration pneumonitis risk), GI perforation/obstruction.</li><li><b>B</b> - Flumazenil CONTRAINDICATED: TCA co-ingestion (unmasks seizures), seizure disorder (withdrawal seizures), chronic benzo use (withdrawal). Only for pure benzo overdose, no seizure risk, no TCA.</li><li><b>B</b> - HD for: methanol, ethylene glycol, severe salicylate, lithium, theophylline, metformin, valproate. Also toxic alcohols, iron (rarely). NOT for paracetamol, benzos, opioids (high protein binding/large Vd).</li><li><b>B</b> - MUDPILES: Methanol, Uremia, DKA, Paraldehyde, Iron/Isoniazid, Lactic acidosis, Ethylene glycol, Salicylate.</li><li><b>B</b> - Osmolal gap = measured osmolality - calculated (2×Na + glucose/18 + BUN/2.8 + EtOH/4.6). &gt; 10 suggests toxic alcohol (methanol, ethylene glycol, isopropanol).</li><li><b>B</b> - Digoxin hyperkalemia = poor prognosis (binds Na⁺/K⁺-ATPase). Treat with Fab FIRST, NOT standard hyperK measures (insulin/dextrose/calcium). Fab reverses the Na⁺/K⁺-ATPase blockade.</li><li><b>B</b> - HBO if: COHb &gt; 25% (or &gt;15% in pregnancy), loss of consciousness, cardiac ischemia, persistent neuro symptoms. 100% O₂ first (half-life 30min vs 4-5h on RA).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> - ABCDE ALWAYS first. Airway protection (GCS &lt; 8 → intubate). Then risk assessment + targeted tests (paracetamol level + ECG + ABG + glucose mandatory).</li><li><b>D</b> - Risk assessment: What (agent, formulation), How much (dose mg/kg), When (time), Why (intent), Co-ingestants, Past medical, Current meds. 'Favorite color' is irrelevant.</li><li><b>C</b> - Phenytoin CONTRAINDICATED in TCA - Na channel blocker worsens cardiotoxicity (QRS widening, VF). NaHCO₃ is treatment. Lorazepam 1st line for seizures. NE for hypotension.</li><li><b>B</b> - Dialysis criteria: pH &lt; 7.2, renal failure, CNS toxicity, level &gt; 700 (acute). This patient meets 3 criteria (pH 7.18, level 750, confusion). Urine alkalinization adjunct but dialysis indicated.</li><li><b>B</b> - BB overdose: Glucagon 5-10mg IV then 5-15mg/hr infusion (bypasses β-receptor). HIET (insulin 1U/kg/hr + dextrose) for myocardial support. Vasopressors adjunct.</li><li><b>B</b> - CCB overdose: Calcium (IV calcium gluconate 3g or chloride 1g) + HIET (insulin 1U/kg/hr + dextrose). Glucagon less effective than in BB. Vasopressors for refractory shock.</li><li><b>B</b> - Atropine: titrate to dry secretions, HR &gt; 80, no bronchospasm. No max dose. Pralidoxime 1-2g IV over 30min (within 24-48h). IMS day 1-4, OPIDN weeks later.</li><li><b>A</b> - Fomepizole: 15 mg/kg load, then 10 mg/kg q12h (increase to 15 mg/kg q12h after 48h if on dialysis). Dialysis if pH &lt; 7.3, renal failure, visual symptoms (methanol), level &gt; 50 mmol/L.</li><li><b>B</b> - Lithium dialysis: Acute &gt; 4 mmol/L. Chronic &gt; 2.5 mmol/L + neuro symptoms/renal impairment/elderly. Also if level &gt; 5 mmol/L any case. Lithium rebounds post-dialysis (redistributes).</li><li><b>B</b> - Cocaine/amph: Benzodiazepines 1st line (lorazepam/diazepam). AVOID beta-blockers (unopposed α vasoconstriction → hypertension crisis). Treat hyperthermia aggressively (active cooling).</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · General Principles of Poisoning Management · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

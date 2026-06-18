@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brain Abscess — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Brain Abscess</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise subacute presentation: headache, fever, focal deficits, seizures, papilloedema</li><li>Identify predisposing sources: contiguous spread (sinus/ear/dental), haematogenous, trauma/surgery</li><li>Select empirical antibiotics covering likely pathogens by source</li><li>Interpret imaging: ring-enhancing lesion, DWI restriction, MR spectroscopy (lactate, acetate, succinate)</li><li>Manage raised ICP, seizures, timing of surgical intervention</li><li>Duration and monitoring of antibiotic therapy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p><b>Brain abscess</b> = encapsulated collection of pus within brain parenchyma. <b>Stages:</b> cerebritis (days 1–3) → capsule formation (days 10–14) → mature abscess. <b>Incidence:</b> ~0.5–1/100,000; higher in immunocompromised, cyanotic heart disease, IVDU.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Microbiology — Aetiology by Source</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Source / Route</th><th>Common Pathogens</th><th>Notes</th></tr><tr><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>**Contiguous spread** (sinusitis, otitis, mastoiditis, dental)</td><td>**Anaerobes** (Bacteroides, Peptostreptococcus, Fusobacterium, Prevotella), **Streptococci** (S. milleri group, viridans), **Enterobacteriaceae**</td><td>Frontal lobe (sinusitis), temporal lobe/cerebellum (otitis)</td></tr><tr><td>**Haematogenous** (cyanotic CHD, endocarditis, pulmonary AVM, IVDU)</td><td>**Streptococci** (viridans, S. milleri), **Staphylococci** (S. aureus), **Anaerobes**, **Gram-negatives**, **Fungi** (Aspergillus, Candida), **Nocardia**</td><td>Multiple abscesses common (MCA territory); septic emboli</td></tr><tr><td>**Post-trauma / Post-neurosurgery**</td><td>**S. aureus** (MSSA/MRSA), **CoNS**, **Gram-negatives** (Pseudomonas, Enterobacter), **Anaerobes**</td><td>Early (<1m) vs late (>1m)</td></tr><tr><td>**Immunocompromised** (HIV, transplant, steroids, chemo)</td><td>**Toxoplasma** (HIV CD4<100), **Nocardia**, **Aspergillus**, **Mucorales**, **Cryptococcus**, **Listeria**, **TB**, **Lymphoma** (mimic)</td><td>**Toxoplasma #1 in HIV CD4<100** — ring-enhancing, multiple, basal ganglia</td></tr><tr><td>**Cryptogenic**</td><td>Streptococci, anaerobes</td><td>No source identified (~15–25%)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Normal Values / Important Cut-offs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Brain Abscess</th><th>Tumour / Necrotic Tumour</th><th>Demyelination</th></tr><tr><td>-----------</td><td>---------------</td><td>--------------------------</td><td>---------------</td></tr><tr><td>**CT/MRI**</td><td>**Ring-enhancing lesion, smooth thin wall, surrounding oedema**</td><td>Irregular thick wall, heterogeneous enhancement</td><td>Open-ring / incomplete ring, perivenular</td></tr><tr><td>**DWI**</td><td>**Restricted diffusion (pus = high viscosity)**</td><td>Variable (not typically restricted)</td><td>Not restricted</td></tr><tr><td>**MR Spectroscopy**</td><td>**Lactate ↑, acetate ↑, succinate ↑, alanine ↑; NO NAA, NO creatine, NO choline**</td><td>Choline ↑, NAA ↓, lipids/lactate ↑</td><td>Choline ↑, NAA ↓</td></tr><tr><td>**CSF**</td><td>**Usually normal or mild neutrophilic pleocytosis; protein ↑; DO NOT LP if mass effect**</td><td>Variable</td><td>Oligoclonal bands, IgG index ↑</td></tr><tr><td>**Blood cultures**</td><td>Positive 10–25% (haematogenous)</td><td>Negative</td><td>Negative</td></tr></table>
+<div class="callout">[!warning] <b>Contraindication to LP:</b> Mass effect, midline shift, papilloedema, GCS&lt;10 — risk of herniation. <b>Diagnosis by imaging + blood cultures + surgical aspirate.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Frequency</th><th>Notes</th></tr><tr><td>---------</td><td>-----------</td><td>-------</td></tr><tr><td>**Headache**</td><td>70–90%</td><td>Progressive, severe, worse with Valsalva</td></tr><tr><td>**Fever**</td><td>50–70%</td><td>May be absent in immunocompromised, elderly</td></tr><tr><td>**Focal neurological deficits**</td><td>50–70%</td><td>Hemiparesis, aphasia, visual field defect (depends on location)</td></tr><tr><td>**Seizures**</td><td>25–50%</td><td>Focal or generalised; may be presenting feature</td></tr><tr><td>**Altered mental status**</td><td>30–50%</td><td>Late sign = raised ICP / herniation</td></tr><tr><td>**Papilloedema**</td><td>25–40%</td><td>Sign of raised ICP</td></tr><tr><td>**Nuchal rigidity**</td><td><20%</td><td>If rupture → ventriculitis → meningism</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Approach / Algorithm</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Subacute headache + fever + focal deficit/seizure/papilloedema</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">CT/MRI brain with contrast URGENTLY</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Ring-enhancing lesion + DWI restriction + MRS lactate/acetate/succinate</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Brain abscess likely</div>
+<div class="fc-node" data-id="E">Consider tumour, TB, fungal, Toxoplasma, demyelination, lymphoma</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Blood cultures x2-3 BEFORE antibiotics</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Empirical IV antibiotics by source</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Neurosurgical review: aspiration vs craniotomy vs stereotactic biopsy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Aspirate for Gram stain, culture, PCR, 16S rRNA</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Targeted antibiotics 6-8 weeks IV</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Serial imaging: size reduction, oedema resolution</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Role</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**MRI brain (contrast, DWI, MRS)**</td><td>**Gold standard**: ring-enhancement, DWI restriction (pus), MRS (lactate, acetate, succinate = abscess; choline/NAA = tumour)</td></tr><tr><td>**CT brain (contrast)**</td><td>Alternative if MRI unavailable; ring-enhancement, oedema</td></tr><tr><td>**Blood cultures (×2–3 sets)**</td><td>Before antibiotics; positive in haematogenous spread</td></tr><tr><td>**Surgical aspirate**</td><td>**Gram stain, aerobic/anaerobic culture, PCR, 16S rRNA, fungal AFB, Nocardia**</td></tr><tr><td>**CRP, PCT, FBC, U&E, LFTs, coag**</td><td>Baseline, monitoring</td></tr><tr><td>**Echocardiogram (TTE/TOE)**</td><td>If haematogenous suspected (endocarditis, CHD)</td></tr><tr><td>**Chest CT**</td><td>If pulmonary source suspected (AVM, abscess, tumour)</td></tr><tr><td>**Sinuses/ears/dental imaging**</td><td>If contiguous spread suspected</td></tr><tr><td>**HIV test, CD4**</td><td>If immunocompromised (Toxoplasma, fungal, Nocardia)</td></tr><tr><td>**Serology (Toxoplasma IgG)**</td><td>HIV CD4<100 with ring-enhancing lesions</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Empirical Antibiotic Therapy (Start AFTER Blood Cultures)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Scenario</th><th>Regimen</th><th>Rationale</th></tr><tr><td>-------------------</td><td>---------</td><td>-----------</td></tr><tr><td>**Community-acquired (contiguous: sinus/ear/dental)**</td><td>**Ceftriaxone 2g IV 12h + Metronidazole 500mg IV 8h + Vancomycin 15–20mg/kg IV 6h**</td><td>Streptococci, anaerobes, staphylococci</td></tr><tr><td>**Haematogenous (endocarditis, cyanotic CHD, IVDU, pulmonary)**</td><td>**Vancomycin 15–20mg/kg IV 6h + Ceftriaxone 2g IV 12h + Metronidazole 500mg IV 8h** (+/- Meropenem if Gram-neg suspected)</td><td>Staphylococci, streptococci, anaerobes, Gram-negatives</td></tr><tr><td>**Post-neurosurgery / Trauma (<1 month)**</td><td>**Vancomycin 15–20mg/kg IV 6h + Meropenem 2g IV 8h**</td><td>MSSA/MRSA, Gram-negatives (Pseudomonas), CoNS</td></tr><tr><td>**Post-neurosurgery / Trauma (>1 month)**</td><td>**Vancomycin 15–20mg/kg IV 6h + Ceftriaxone 2g IV 12h**</td><td>Less Pseudomonas risk late</td></tr><tr><td>**Immunocompromised (HIV CD4<100)**</td><td>**Pyrimethamine + Sulfadiazine + Folinic acid (for Toxoplasma) + broad antibacterial**</td><td>Toxoplasma #1; empirical anti-Toxoplasma if multiple ring-enhancing</td></tr><tr><td>**Suspected Nocardia**</td><td>**TMP-SMX high-dose (15–20mg/kg TMP IV/PO 6–8h) + Meropenem/Imipenem + Amikacin**</td><td>Nocardia: sulfonamides first-line</td></tr><tr><td>**Suspected Fungal (Aspergillus, Mucorales)**</td><td>**Voriconazole/L-AmB per fungal pneumonia guidelines**</td><td>See Fungal Pneumonias note</td></tr></table>
+<div class="callout">[!important] <b>Metronidazole</b> essential for anaerobic coverage in contiguous spread. <b>Vancomycin</b> for staphylococcal coverage (MSSA/MRSA). <b>Ceftriaxone/meropenem</b> for streptococci/Gram-negatives. <b>Duration 6–8 weeks IV</b> after surgical drainage.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Targeted Therapy (Post-Aspirate Culture)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pathogen</th><th>Targeted Regimen</th><th>Duration</th></tr><tr><td>----------</td><td>------------------</td><td>----------</td></tr><tr><td>**S. milleri / viridans streptococci**</td><td>Penicillin G 24MU/day IV ÷4–6h OR Ceftriaxone 2g 12h</td><td>6–8 weeks</td></tr><tr><td>**Anaerobes (Bacteroides, Fusobacterium, etc.)**</td><td>Metronidazole 500mg IV 8h + Penicillin/Ceftriaxone</td><td>6–8 weeks</td></tr><tr><td>**S. aureus (MSSA)**</td><td>Flucloxacillin 2g IV 4h OR Cefazolin 2g IV 8h</td><td>6–8 weeks</td></tr><tr><td>**S. aureus (MRSA)**</td><td>Vancomycin 15–20mg/kg 6h (trough 15–20) OR Daptomycin 8–10mg/kg IV OD</td><td>6–8 weeks</td></tr><tr><td>**Gram-negatives (Enterobacteriaceae)**</td><td>Ceftriaxone 2g 12h OR Meropenem 2g 8h (if ESBL)</td><td>6–8 weeks</td></tr><tr><td>**Pseudomonas**</td><td>Meropenem 2g 8h + Ciprofloxacin 400mg IV 12h</td><td>6–8 weeks</td></tr><tr><td>**Nocardia**</td><td>TMP-SMX high-dose + Meropenem/Imipenem + Amikacin</td><td>**12 months** (prolonged)</td></tr><tr><td>**Aspergillus**</td><td>Voriconazole 6mg/kg 12h ×2d → 4mg/kg 12h (TDM)</td><td>**8–12 weeks**</td></tr><tr><td>**Toxoplasma**</td><td>Pyrimethamine 75mg load → 25–50mg OD + Sulfadiazine 1–1.5g 6h + Folinic acid 10–25mg OD</td><td>**6 weeks after resolution** (then secondary prophylaxis)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Surgical Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Approach</th><th>Indications</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**Stereotactic aspiration**</td><td>**Preferred** for deep, eloquent, single, accessible abscess; diagnostic + therapeutic</td></tr><tr><td>**Craniotomy + excision**</td><td>Multiloculated, superficial, failed aspiration, cerebellar abscess (herniation risk), fungal (debulking)</td></tr><tr><td>**Burr hole drainage**</td><td>Limited access; less common now</td></tr><tr><td>**Ventriculostomy (EVD)**</td><td>Intraventricular rupture → ventriculitis, hydrocephalus</td></tr></table>
+<div class="callout">[!tip] <b>Stereotactic aspiration = lower morbidity, shorter stay, diagnostic yield.</b> <b>Total excision for fungal, multiloculated, cerebellar.</b> <b>Antibiotics continue 6–8w post-drainage.</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Duration & Monitoring</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Schedule</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Antibiotics IV**</td><td>**6–8 weeks total** (including pre-drainage empirical)</td></tr><tr><td>**Oral step-down**</td><td>Sometimes used for last 2–4w (e.g., metronidazole PO, co-amoxiclav, linezolid PO) if clinical/radiological improvement</td></tr><tr><td>**MRI/CT**</td><td>Baseline, 1–2w post-drainage, then 2–4w intervals until resolution</td></tr><tr><td>**CRP, FBC, LFTs**</td><td>Weekly</td></tr><tr><td>**Vancomycin trough**</td><td>2–3x/week (target 15–20 for CNS)</td></tr><tr><td>**Seizure prophylaxis**</td><td>Levetiracetam during acute phase; continue if seizures occurred</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Rupture into ventricle**</td><td>**Ventriculitis, hydrocephalus, high mortality** → EVD + intraventricular antibiotics (vancomycin, gentamicin, amphotericin) + systemic antibiotics</td></tr><tr><td>**Raised ICP / Herniation**</td><td>Mannitol, hypertonic saline, hyperventilation, dexamethasone (controversial — may reduce capsule formation), surgical decompression</td></tr><tr><td>**Seizures**</td><td>Levetiracetam; long-term AED if recurrent</td></tr><tr><td>**Recurrence**</td><td>Repeat imaging, re-aspiration, extended antibiotics</td></tr><tr><td>**Empyema (subdural/epidural)**</td><td>Surgical drainage + antibiotics</td></tr><tr><td>**Neurological deficits**</td><td>Rehabilitation; may be permanent</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Red Flags / Emergencies</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Rapid neurosurgical deterioration</b> (GCS drop, pupil asymmetry) → herniation → emergency decompression</li><li><b>Intraventricular rupture</b> → sudden deterioration, meningism, hydrocephalus → EVD + intraventricular antibiotics</li><li><b>Cerebellar abscess</b> → high risk of tonsillar herniation → urgent posterior fossa decompression</li><li><b>Septic shock</b> (haematogenous source) → fluids, vasopressors, source control</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Differential Diagnosis (Ring-Enhancing Lesions)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Key Differentiators</th></tr><tr><td>-----------</td><td>---------------------</td></tr><tr><td>**Brain abscess**</td><td>DWI restriction (pus), MRS: lactate/acetate/succinate, smooth thin ring, clinical infection</td></tr><tr><td>**Necrotic tumour (glioblastoma, metastasis)**</td><td>Irregular thick wall, MRS: choline↑, NAA↓, lipids; no DWI restriction</td></tr><tr><td>**Toxoplasmosis (HIV CD4<100)**</td><td>Multiple, basal ganglia, IgG +ve, responds to anti-Toxoplasma Rx in 2w</td></tr><tr><td>**TB (tuberculoma)**</td><td>Subacute, basal exudates, CSF low glucose, GeneXpert +ve, responds to anti-TB</td></tr><tr><td>**Fungal (Aspergillus, Mucorales)**</td><td>Immunocompromised, haemorrhagic, angioinvasion, galactomannan/CrAg</td></tr><tr><td>**Nocardia**</td><td>Immunocompromised, multiple, beading on imaging, TMP-SMX responsive</td></tr><tr><td>**Demyelination (tumefactive MS)**</td><td>Open ring, perivenular, CSF oligoclonal bands, no infection markers</td></tr><tr><td>**Primary CNS lymphoma (immunocompromised)**</td><td>Homogeneous enhancement (if not treated with steroids), EBV +ve CSF</td></tr><tr><td>**Infected aneurysm / mycotic aneurysm**</td><td>Vascular location, CT angiography, blood cultures +ve</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Situation</th><th>Adjustment</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Pregnancy**</td><td>Ceftriaxone + metronidazole safe; avoid fluoroquinolones; vancomycin OK</td></tr><tr><td>**Renal impairment**</td><td>Adjust vancomycin, aminoglycosides, meropenem; ceftriaxone no adjustment</td></tr><tr><td>**Hepatic impairment**</td><td>Metronidazole caution; ceftriaxone (biliary excretion)</td></tr><tr><td>**Penicillin allergy (anaphylaxis)**</td><td>Meropenem + vancomycin (avoid cephalosporins if true IgE)</td></tr><tr><td>**HIV CD4<100**</td><td>Empirical anti-Toxoplasma + broad antibacterial if multiple ring-enhancing; brain biopsy if no response in 2w</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Brain abscess = ring-enhancing lesion + DWI restriction + MRS (lactate, acetate, succinate)</b></li><li><b>Sources:</b> contiguous (sinus/ear/dental → anaerobes + streptococci), haematogenous (endocarditis, CHD, IVDU → multiple, MCA territory), post-trauma/surgery (S. aureus, Gram-neg)</li><li><b>Empirical abx:</b> Ceftriaxone + Metronidazole + Vancomycin (covers streptococci, anaerobes, staphylococci)</li><li><b>Stereotactic aspiration preferred</b> — diagnostic + therapeutic</li><li><b>Duration: 6–8 weeks IV antibiotics</b> after drainage</li><li><b>CSF usually normal</b> — <b>DO NOT LP if mass effect/papilloedema</b> (herniation risk)</li><li><b>Intraventricular rupture = catastrophe</b> → ventriculitis, hydrocephalus, EVD + intraventricular antibiotics</li><li><b>Toxoplasma in HIV CD4&lt;100:</b> multiple ring-enhancing, basal ganglia, empirical pyrimethamine/sulfadiazine</li><li><b>Nocardia:</b> immunocompromised, TMP-SMX high-dose, 12-month duration</li><li><b>Cerebellar abscess:</b> high herniation risk → urgent posterior fossa decompression</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the classic imaging triad for brain abscess?</b> Ring-enhancing lesion, DWI restriction (pus), MR spectroscopy showing lactate/acetate/succinate peaks.</li><li><b>What are the three main routes of infection?</b> Contiguous spread (sinus/ear/dental), haematogenous (endocarditis, CHD, IVDU), post-trauma/surgery.</li><li><b>What is the empirical antibiotic regimen for a community-acquired brain abscess?</b> Ceftriaxone 2g 12h + Metronidazole 500mg 8h + Vancomycin 15–20mg/kg 6h.</li><li><b>Why is lumbar puncture contraindicated in brain abscess?</b> Mass effect, risk of tonsillar/uncal herniation.</li><li><b>What is the treatment duration?</b> 6–8 weeks IV antibiotics after surgical drainage.</li><li><b>How do you differentiate brain abscess from necrotic tumour on MRI?</b> DWI restriction + MRS lactate/acetate/succinate = abscess; choline↑/NAA↓ + irregular thick wall = tumour.</li><li><b>What is the management of intraventricular rupture?</b> EVD + intraventricular antibiotics (vancomycin, gentamicin) + systemic antibiotics.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>LP safe in brain abscess</td><td>**CONTRAINDICATED** if mass effect, midline shift, papilloedema, GCS<10</td></tr><tr><td>Single antibiotic sufficient</td><td>**Polymicrobial** — need streptococcal, anaerobic, staphylococcal coverage</td></tr><tr><td>Duration same as meningitis</td><td>**6–8 weeks IV** (meningitis 10–14d for pneumococcus)</td></tr><tr><td>Aspiration not needed if antibiotics started</td><td>**Surgical drainage essential** — antibiotics alone fail in encapsulated abscess</td></tr><tr><td>All ring-enhancing = abscess</td><td>**DWI restriction + MRS** distinguishes; tumour, TB, Toxoplasma, fungal, lymphoma mimic</td></tr><tr><td>Toxoplasma only in HIV</td><td>Also in transplant, steroids; but #1 in HIV CD4<100</td></tr><tr><td>Nocardia = short course</td><td>**12 months** (prolonged)</td></tr><tr><td>Dexamethasone routine in abscess</td><td>**NOT routine** — may impair capsule formation; only for raised ICP/herniation</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>BRAIN ABSCESS</b>: <b>B</b>lood cultures first, <b>R</b>ing-enhancing + <b>D</b>WI restriction + <b>M</b>RS lactate, <b>A</b>naerobes + <b>S</b>trep + <b>S</b>taph, <b>I</b>ntracranial source (sinus/ear), <b>N</b>eurosurgical aspiration</li><li><b>MRS ABScess</b>: <b>A</b>cetate, <b>B</b>succinate, <b>S</b>Lactate = <b>ABS</b> (NO NAA, NO creatine, NO choline)</li><li><b>SOURCES</b>: <b>S</b>inus/ear/dental (contiguous), <b>O</b>prehaematogenous (endocarditis, CHD), <b>U</b>trauma/surgery, <b>R</b>IVDU, <b>C</b>ryptic, <b>E</b>ndocarditis, <b>S</b>eptic emboli</li></ul>
+<p><i>...continued (truncated to 200 lines for renderer)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Brain Abscess · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

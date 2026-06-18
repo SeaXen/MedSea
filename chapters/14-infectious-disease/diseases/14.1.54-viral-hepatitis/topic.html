@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Viral Hepatitis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Viral Hepatitis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Differentiate hepatitis viruses by transmission, clinical course, and chronicity</li><li>Interpret serology and molecular markers for each hepatitis virus</li><li>Stage Hepatitis B and C (fibrosis, cirrhosis, HCC risk)</li><li>Select and monitor antiviral therapy for Hepatitis B and C</li><li>Manage complications (cirrhosis, HCC, reactivation)</li><li>Apply vaccination and prevention strategies</li><li>Manage special populations (pregnancy, HIV coinfection, immunosuppression, transplant)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Overview of Hepatitis Viruses</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>HAV</th><th>HBV</th><th>HCV</th><th>HDV</th><th>HEV</th></tr><tr><td>---------</td><td>-----</td><td>-----</td><td>-----</td><td>-----</td><td>-----</td></tr><tr><td>**Family**</td><td>Picornaviridae</td><td>Hepadnaviridae</td><td>Flaviviridae</td><td>Deltaviridae (defective)</td><td>Hepeviridae</td></tr><tr><td>**Genome**</td><td>RNA (+)</td><td>DNA (partially ds)</td><td>RNA (+)</td><td>RNA (-)</td><td>RNA (+)</td></tr><tr><td>**Transmission**</td><td>Faecal-oral</td><td>Blood, sexual, vertical</td><td>Blood (mainly), sexual, vertical</td><td>Blood, sexual (requires HBV)</td><td>Faecal-oral (waterborne)</td></tr><tr><td>**Chronicity**</td><td>**Never**</td><td>**5–10% adults; 90% neonates**</td><td>**70–85%**</td><td>**Only with HBV**</td><td>Rare (except immunosuppressed)</td></tr><tr><td>**Incubation**</td><td>15–50 days</td><td>60–150 days</td><td>14–180 days</td><td>30–180 days</td><td>15–60 days</td></tr><tr><td>**Vaccine**</td><td>**Yes**</td><td>**Yes**</td><td>No</td><td>**Hep B vaccine prevents**</td><td>Yes (China only)</td></tr><tr><td>**Treatment**</td><td>Supportive</td><td>NUCs (suppress), PegIFN</td><td>**DAA cure >95%**</td><td>PegIFN (limited)</td><td>Supportive (Ribavirin if chronic)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Hepatitis A (HAV)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Transmission**</td><td>Faecal-oral (contaminated food/water, person-to-person); shellfish; outbreaks in institutions</td></tr><tr><td>**Risk Groups**</td><td>Travellers to endemic areas, MSM, PWID, household contacts, institutionalised</td></tr><tr><td>**Clinical**</td><td>**Acute self-limiting**; prodrome (fever, malaise, anorexia, nausea) → jaundice, dark urine, pale stools; **no chronic infection**; fulminant rare (<0.5%)</td></tr><tr><td>**Diagnosis**</td><td>**Anti-HAV IgM** (acute); Anti-HAV IgG (past immunity); HAV RNA (research)</td></tr><tr><td>**Management**</td><td>Supportive; **no specific antiviral**; hospitalise if severe/fulminant; avoid hepatotoxins</td></tr><tr><td>**Prevention**</td><td>**Hep A vaccine (inactivated)**: 2 doses (0, 6–12m); **Post-exposure**: vaccine ± IgG (within 2w); hygiene</td></tr><tr><td>**Special**</td><td>**Pregnancy**: increased severity in 3rd trimester; vaccine safe</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Hepatitis B (HBV)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Natural History</div>
+<table class="ctable"><tr><th>Phase</th><th>HBsAg</th><th>HBeAg</th><th>HBV DNA</th><th>ALT</th><th>Histology</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>---------</td><td>-----</td><td>-----------</td></tr><tr><td>**Immune Tolerant**</td><td>+</td><td>+</td><td>Very high (>10⁷)</td><td>Normal</td><td>Minimal inflammation</td></tr><tr><td>**Immune Active (HBeAg+)**</td><td>+</td><td>+</td><td>High (>10⁵)</td><td>**Elevated**</td><td>Moderate-severe inflammation</td></tr><tr><td>**Inactive Carrier**</td><td>+</td><td>**−**</td><td>Low (<2000)</td><td>**Normal**</td><td>Minimal</td></tr><tr><td>**HBeAg-Negative Chronic Hepatitis**</td><td>+</td><td>−</td><td>Intermittent >2000</td><td>**Elevated**</td><td>Moderate-severe</td></tr><tr><td>**Resolved**</td><td>**−**</td><td>−</td><td>Undetectable</td><td>Normal</td><td>Resolved (anti-HBs+, anti-HBc+)</td></tr></table>
+<div class="sub-h">Serology Interpretation</div>
+<table class="ctable"><tr><th>Marker</th><th>Meaning</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**HBsAg**</td><td>Current infection (acute or chronic)</td></tr><tr><td>**Anti-HBs**</td><td>Immunity (vaccine or resolved)</td></tr><tr><td>**Anti-HBc IgM**</td><td>Acute/recent infection (<6m)</td></tr><tr><td>**Anti-HBc IgG**</td><td>Past or chronic infection</td></tr><tr><td>**HBeAg**</td><td>High replicative, high infectivity</td></tr><tr><td>**Anti-HBe**</td><td>Lower replicative (usually)</td></tr><tr><td>**HBV DNA**</td><td>Viral load (quantifies replication)</td></tr></table>
+<div class="sub-h">Fibrosis Staging &amp; HCC Surveillance</div>
+<table class="ctable"><tr><th>Tool</th><th>Indication</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Transient Elastography (FibroScan)**</td><td>Non-invasive fibrosis staging (kPa)</td></tr><tr><td>**APRI / FIB-4**</td><td>Serum-based fibrosis scores</td></tr><tr><td>**Liver Biopsy**</td><td>Gold standard (if noninvasive discordant)</td></tr><tr><td>**HCC Surveillance**</td><td>**6-monthly US ± AFP** if cirrhosis OR high-risk chronic HBV (Asian male >40, female >50, family HCC, cirrhosis)</td></tr></table>
+<div class="sub-h">HBV Treatment Indications (EASL/AASLD/APASL)</div>
+<table class="ctable"><tr><th>Indication</th><th>Criteria</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**Immune Active (HBeAg+)**</td><td>HBV DNA >20,000 IU/mL + ALT >2×ULN (≥2× over 3–6m)</td></tr><tr><td>**HBeAg-Negative Chronic Hepatitis**</td><td>HBV DNA >2,000 IU/mL + ALT >ULN (≥2× over 3–6m)</td></tr><tr><td>**Cirrhosis (Compensated)**</td><td>**Any detectable HBV DNA**</td></tr><tr><td>**Decompensated Cirrhosis**</td><td>Any detectable HBV DNA</td></tr><tr><td>**Reactivation Risk**</td><td>Immunosuppression/chemo (prophylactic NUCs)</td></tr></table>
+<div class="sub-h">HBV Treatment — Nucleos(t)ide Analogues (NUCs)</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Potency</th><th>Resistance</th><th>Renal Adjust</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>---------</td><td>------------</td><td>--------------</td><td>-------</td></tr><tr><td>**Tenofovir Disoproxil Fumarate (TDF)**</td><td>245mg OD</td><td>High</td><td>**Extremely low**</td><td>**↓ if CrCl <50**</td><td>Bone/renal toxicity; 1st-line</td></tr><tr><td>**Tenofovir Alafenamide (TAF)**</td><td>25mg OD</td><td>High</td><td>**Extremely low**</td><td>Safer renal/bone</td><td>Preferred over TDF</td></tr><tr><td>**Entecavir (ETV)**</td><td>0.5mg OD (1mg if NUC-experienced)</td><td>High</td><td>Low (naïve); higher if LAM-experienced</td><td>**↓ if CrCl <50**</td><td>1st-line</td></tr><tr><td>**Lamivudine (LAM)**</td><td>100mg OD</td><td>Low</td><td>**High (70% at 5y)**</td><td>**↓ if CrCl <50**</td><td>Not 1st-line</td></tr><tr><td>**Adefovir**</td><td>10mg OD</td><td>Low</td><td>Moderate</td><td>**↓ if CrCl <50**</td><td>Nephrotoxic</td></tr><tr><td>**Telbivudine**</td><td>600mg OD</td><td>Moderate</td><td>Moderate</td><td>**↓ if CrCl <50**</td><td>Myopathy, neuropathy</td></tr></table>
+<div class="callout">[!critical] <b>TAF/TDF/ETV = 1st-line (high barrier, potent).</b> <b>Lifelong therapy usually needed.</b> <b>Stop criteria: HBeAg+ → HBeAg seroconversion + consolidation 12m; HBeAg− → sustained suppression 3y + HBsAg loss (rare).</b> <b>PegIFN-α: finite duration (48w); lower SVR; side effects.</b></div>
+<div class="sub-h">Special HBV Situations</div>
+<table class="ctable"><tr><th>Situation</th><th>Management</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Pregnancy**</td><td>**TDF/TAF safe**; avoid ETV (limited data); **TDF 3rd trimester if HBV DNA >200,000** (reduce vertical transmission); infant HBIG + vaccine 12h</td></tr><tr><td>**HIV Coinfection**</td><td>**TDF/TAF + 3TC/FTC** covers both; DTG preferred; avoid 3TC monotherapy</td></tr><tr><td>**Immunosuppression/Chemo**</td><td>**Prophylactic NUCs (TDF/TAF/ETV)** if HBsAg+ or anti-HBc+ (reactivation risk)</td></tr><tr><td>**HBV Reactivation**</td><td>**NUCs immediately**; monitor HBV DNA; continue ≥12m post-immunosuppression</td></tr><tr><td>**Hep D Coinfection**</td><td>**PegIFN-α 48w** only effective therapy; NUCs alone insufficient</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Hepatitis C (HCV)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Natural History</div>
+<table class="ctable"><tr><th>Stage</th><th>Outcome</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Acute HCV**</td><td>15–25% spontaneous clearance; 75–85% chronic</td></tr><tr><td>**Chronic HCV**</td><td>20–30% cirrhosis over 20–30y; risk factors: age >50, male, alcohol, HIV, obesity, steatosis</td></tr><tr><td>**Cirrhosis**</td><td>Decompensation (ascites, varices, encephalopathy), HCC (1–4%/yr)</td></tr></table>
+<div class="sub-h">HCV Genotypes &amp; Treatment Selection</div>
+<table class="ctable"><tr><th>Genotype</th><th>Prevalence</th><th>Preferred DAA Regimen</th><th>Duration</th></tr><tr><td>----------</td><td>------------</td><td>----------------------</td><td>----------</td></tr><tr><td>**GT1**</td><td>40–50%</td><td>**Glecaprevir/Pibrentasvir (GLE/PIB) 300/120mg OD** OR Sofosbuvir/Velpatasvir (SOF/VEL)</td><td>8w (no cirrhosis) / 12w (cirrhosis)</td></tr><tr><td>**GT2**</td><td>15–20%</td><td>**GLE/PIB** OR **SOF/VEL**</td><td>8w / 12w</td></tr><tr><td>**GT3**</td><td>30–40%</td><td>**GLE/PIB** (preferred) OR **SOF/VEL**</td><td>8w (no cirrhosis) / 16w (cirrhosis)</td></tr><tr><td>**GT4**</td><td>10–15%</td><td>**GLE/PIB** OR **SOF/VEL**</td><td>12w</td></tr><tr><td>**GT5/6**</td><td>Rare</td><td>**GLE/PIB**</td><td>12w</td></tr></table>
+<div class="callout">[!key] <b>Glecaprevir/Pibrentasvir (GLE/PIB) = pan-genotypic, 8w for non-cirrhotic, 12w cirrhotic.</b> <b>Sofosbuvir/Velpatasvir (SOF/VEL) = pan-genotypic alternative.</b> <b>SVR &gt;95% all genotypes.</b></div>
+<div class="sub-h">HCV Treatment — Key Principles</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**SVR Definition**</td><td>HCV RNA undetectable **12 weeks post-treatment (SVR12)** = cure</td></tr><tr><td>**Pre-treatment**</td><td>Genotype, Fibrosis (FibroScan/APRI/FIB-4), NS5A RAS testing (GT3/1a if cirrhosis), Drug interactions, Renal function</td></tr><tr><td>**Monitoring**</td><td>HCV RNA at week 4 (rapid virological response), end of treatment, SVR12</td></tr><tr><td>**Retreatment Failure**</td><td>**GLE/PIB + SOF + RBV** (16–24w) OR **SOF/VEL/VOX (Vosevi)** 12w</td></tr></table>
+<div class="sub-h">Special HCV Situations</div>
+<table class="ctable"><tr><th>Situation</th><th>Management</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**HIV Coinfection**</td><td>Same DAA regimens; check interactions (DTG/GLE/PIB OK); same SVR</td></tr><tr><td>**Renal Impairment (CrCl<30)**</td><td>**GLE/PIB** (no renal adjust) OR **SOF/VEL** (avoid SOF if <30); **Grazoprevir/Elbasvir** alternative</td></tr><tr><td>**Decompensated Cirrhosis** (Child-Pugh B/C)</td><td>**SOF/VEL + RBV** 12w (Child-Pugh B); avoid protease inhibitors (GLE/PIB contraindicated)</td></tr><tr><td>**Post-Liver Transplant**</td><td>**SOF/VEL** 12w (preferred); GLE/PIB alternative; monitor interactions with CNI</td></tr><tr><td>**Acute HCV**</td><td>**DAA if persists >12w**; treat as chronic</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Hepatitis D (HDV)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Defective Virus**</td><td>Requires HBsAg for assembly/transmission</td></tr><tr><td>**Transmission**</td><td>Co-infection (simultaneous HBV+HDV) or superinfection (HDV on chronic HBV)</td></tr><tr><td>**Clinical**</td><td>**Superinfection = more severe**; rapid cirrhosis, high HCC risk</td></tr><tr><td>**Diagnosis**</td><td>**Anti-HDV IgM/IgG**; **HDV RNA** (quantitative)</td></tr><tr><td>**Treatment**</td><td>**PegIFN-α 48 weeks** (only effective therapy); **SVR ~25%**; NUCs alone insufficient</td></tr><tr><td>**New Therapies**</td><td>**Bulevirtide (entry inhibitor)** — approved EU; **Lonafarnib** (assembly inhibitor) in trials</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Hepatitis E (HEV)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Genotypes**</td><td>**GT1/2** (human, faecal-oral, waterborne, endemic Asia/Africa); **GT3/4** (zoonotic, pigs, undercooked pork, Europe/USA)</td></tr><tr><td>**Clinical**</td><td>**Acute self-limiting** (GT1/2); **GT3/4 = chronic in immunosuppressed** (transplant, HIV, chemo)</td></tr><tr><td>**Severe in Pregnancy**</td><td>**GT1: 20–30% mortality in 3rd trimester** (fulminant hepatic failure)</td></tr><tr><td>**Diagnosis**</td><td>**Anti-HEV IgM** (acute); **HEV RNA** (blood/stool); Anti-HEV IgG (past)</td></tr><tr><td>**Treatment**</td><td>**Acute: supportive**; **Chronic (GT3/4 in immunosuppressed): Ribavirin 600mg OD ×3m** (reduce immunosuppression); **PegIFN-α** if ribavirin fails</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Reactivation & Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">HBV Reactivation</div>
+<table class="ctable"><tr><th>Risk</th><th>Prophylaxis</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**HBsAg+** (any immunosuppression)</td><td>**TDF/TAF/ETV prophylaxis** (start before/during, continue ≥12m post)</td></tr><tr><td>**HBsAg−/anti-HBc+** (rituximab, high-dose steroids, HSCT)</td><td>**TDF/TAF/ETV prophylaxis** or close monitoring (HBV DNA q1–3m)</td></tr><tr><td>**Resolved HBV (anti-HBc+ only)**</td><td>Low risk; monitor HBV DNA if high-risk (rituximab, HSCT, alemtuzumab)</td></tr></table>
+<div class="sub-h">HCV Reinfection</div>
+<table class="ctable"><tr><th>Risk</th><th>Management</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Post-SVR reinfection**</td><td>Re-treat with DAA; same SVR rates; harm reduction (PWID: OAT, needle exchange)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>HAV/HEV = faecal-oral, acute only; HBV/HCV/HDV = blood-borne, chronic risk</b></li><li><b>HBV: immune tolerant → immune active → inactive carrier → HBeAg-negative CHB</b></li><li><b>HBV treatment: TDF/TAF/ETV 1st-line (high barrier); lifelong usually; stop if HBeAg seroconversion + 12m consolidation</b></li><li><b>HCV: DAA cure &gt;95%; GLE/PIB pan-genotypic 8w (non-cirr) / 12w (cirr); GT3 cirrhosis = 16w SOF/VEL or 12w GLE/PIB</b></li><li><b>HDV: requires HBsAg; superinfection worse; PegIFN only effective therapy; bulevirtide emerging</b></li><li><b>HEV: GT1/2 acute; GT3/4 chronic in immunocompromised; pregnancy GT1 = 20-30% mortality; chronic = ribavirin</b></li><li><b>HBV reactivation: HBsAg+ = prophylactic NUCs; anti-HBc+ (rituximab/HSCT) = prophylactic NUCs</b></li><li><b>Pregnancy: HAV/HEV severe in 3rd tri; HBV TDF 3rd tri if DNA&gt;200k; HCV treat postpartum; HEV severe in pregnancy</b></li><li><b>HCC surveillance: 6-monthly US ± AFP if cirrhosis or high-risk chronic HBV</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>HBV serology interpretation?</b> HBsAg = infection; Anti-HBs = immunity; Anti-HBc IgM = acute; Anti-HBc IgG = past/chronic; HBeAg = high replication.</li><li><b>HBV treatment indications?</b> Immune active (DNA&gt;20k + ALT&gt;2×ULN), HBeAg-neg CHB (DNA&gt;2k + ALT&gt;ULN), cirrhosis (any DNA).</li><li><b>HCV treatment — pan-genotypic regimen?</b> GLE/PIB 300/120mg OD ×8w (non-cirr) / 12w (cirr); SOF/VEL alternative.</li><li><b>HCV GT3 cirrhosis treatment?</b> SOF/VEL 16w OR GLE/PIB 12w (with RBV if prior treatment failure).</li><li><b>HDV treatment?</b> PegIFN-α 48w only proven; bulevirtide emerging; NUCs alone insufficient.</li><li><b>HEV in pregnancy?</b> GT1 3rd trimester = 20-30% mortality; supportive only.</li></ol>
+<p><i>...continued (truncated to 200 lines for renderer)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Viral Hepatitis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

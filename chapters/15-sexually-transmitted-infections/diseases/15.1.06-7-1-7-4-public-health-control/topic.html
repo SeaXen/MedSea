@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>7.1-7.4 Public Health &amp; Control — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">7.1-7.4 Public Health &amp; Control</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>STI Surveillance</b> principles (Case-Based, Sentinel, AMR, Syndromic, Behavioral)</li><li>[ ] Implement <b>Partner Notification (PN)</b> strategies (Patient Referral, Provider Referral, Contract Referral, EPT)</li><li>[ ] Apply <b>STI Vaccination Programmes</b> (HPV, Hepatitis B, Mpox, Hepatitis A)</li><li>[ ] Understand <b>Antimicrobial Resistance (AMR) in STIs</b> (Gonorrhoea, M. genitalium, Syphilis) &amp; <b>GASP</b></li><li>[ ] Implement <b>STI Prevention &amp; Control</b> (Condoms, PrEP, Doxy-PEP, Harm Reduction, Structural Interventions)</li><li>[ ] Apply <b>STI Services &amp; Service Delivery Models</b> (Specialised, Integrated, Primary Care, Digital, Self-Sampling)</li><li>[ ] Implement <b>Key Population Programmes</b> (MSM, Sex Workers, Transgender, PWID, Prisoners, Adolescents, Migrants)</li><li>[ ] Apply <b>STI in Pregnancy &amp; Neonatal</b> Prevention (Screening, Treatment, Partner Management)</li><li>[ ] Answer viva: "Gonorrhoea AMR Surveillance" and "Partner Notification Strategies" and "HPV Vaccination Programme" and "STI Prevention in Key Populations"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: STI Public Health Control Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">STI Public Health Control</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Surveillance</div>
+<div class="fc-node" data-id="C">Prevention</div>
+<div class="fc-node" data-id="D">Case Management</div>
+<div class="fc-node" data-id="E">Vaccination Programmes</div>
+<div class="fc-node" data-id="F">Key Population Programmes</div>
+<div class="fc-node" data-id="G">Health Systems</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B1">Case-Based Notification</div>
+<div class="fc-node" data-id="B2">Sentinel Surveillance (Gonorrhoea GASP)</div>
+<div class="fc-node" data-id="B3">Syndromic Surveillance</div>
+<div class="fc-node" data-id="B4">AMR Surveillance (WHO GASP)</div>
+<div class="fc-node" data-id="B5">Behavioural Surveillance (IBBS)</div>
+<div class="fc-node" data-id="C1">Biomedical (Condoms, PrEP, Vaccines, Microbicides)</div>
+<div class="fc-node" data-id="C2">Behavioural (Counselling, Peer Education, Doxy-PEP)</div>
+<div class="fc-node" data-id="C3">Structural (Decriminalisation, Stigma Reduction, Access)</div>
+<div class="fc-node" data-id="D1">Syndromic Management</div>
+<div class="fc-node" data-id="D2">Partner Notification (PN/EPT)</div>
+<div class="fc-node" data-id="D3">Test of Cure &amp; Follow-Up</div>
+<div class="fc-node" data-id="E1">HPV (9vHPV, School-Based + Catch-Up)</div>
+<div class="fc-node" data-id="E2">Hepatitis B (Universal Birth + Risk Adults)</div>
+<div class="fc-node" data-id="E3">Mpox (MVA-BN, High-Risk Groups)</div>
+<div class="fc-node" data-id="E4">Hepatitis A (Risk Groups)</div>
+<div class="fc-node" data-id="F1">MSM (3-Site Testing, PrEP, Anal Screening, Vaccines)</div>
+<div class="fc-node" data-id="F2">Sex Workers (Peer-Led, Empowerment, Decriminalisation)</div>
+<div class="fc-node" data-id="F3">Transgender (Gender-Affirming Care, PrEP, Hormones)</div>
+<div class="fc-node" data-id="F4">PWID (Harm Reduction, OAT, Needle Exchange, HCV/HBV)</div>
+<div class="fc-node" data-id="F5">Prisoners (Screening, Treatment, Continuity)</div>
+<div class="fc-node" data-id="F6">Adolescents (CSE, Youth-Friendly Services, HPV Vaccine)</div>
+<div class="fc-node" data-id="F7">Migrants/Refugees (Access, Language, Cultural Competence)</div>
+<div class="fc-node" data-id="G1">Integrated STI/HIV/SRH Services</div>
+<div class="fc-node" data-id="G2">Digital Health (Self-Sampling, Telemedicine, Apps)</div>
+<div class="fc-node" data-id="G3">Quality Assurance (Accreditation, Audits, Training)</div>
+<div class="fc-node" data-id="G4">Lab Networks (EQA, GASP, NAAT Expansion)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7.1 STI Surveillance</div>
+<div class="sub-h">Types of STI Surveillance</div>
+<table class="ctable"><tr><th>Type</th><th>Purpose</th><th>Methods</th><th>Examples</th></tr><tr><td>------</td><td>---------</td><td>---------</td><td>----------</td></tr><tr><td>**Case-Based Notification**</td><td>**Mandatory Reporting** of Diagnosed Cases (Legal Requirement)</td><td>**Statutory Notification** (Lab/Clinician → Public Health)</td><td>**Syphilis, Gonorrhoea, Chlamydia, HIV, Hepatitis B/C, Chancroid, LGV, Mpox**</td></tr><tr><td>**Sentinel Surveillance**</td><td>**Detailed Data** from Selected Sites (Representative)</td><td>**Designated STI Clinics/GUM** → Enhanced Data (Demographics, Risk, AMR)</td><td>**Gonorrhoea AMR (WHO GASP)**, **Chlamydia Positivity**, **Syphilis Stage Distribution**</td></tr><tr><td>**Syndromic Surveillance**</td><td>**Early Warning** (Pre-Lab)</td><td>**Symptom-Based (UD, VD, GUD, PID)** from Primary Care/ED</td><td>**Outbreak Detection (Shigella, Mpox, LGV Clusters)**</td></tr><tr><td>**AMR Surveillance (WHO GASP)**</td><td>**Monitor Resistance Trends**</td><td>**Culture + AST from Sentinel Sites** (National/Regional)</td><td>**Gonorrhoea (Ceftriaxone, Ciprofloxacin, Azithromycin, Cefixime)**</td></tr><tr><td>**Behavioural Surveillance (IBBS)**</td><td>**Risk Behaviours & Determinants**</td><td>**Integrated Bio-Behavioural Surveys (IBBS)** in Key Populations</td><td>**MSM, Sex Workers, PWID, Prisoners, Migrants**</td></tr><tr><td>**Molecular Surveillance**</td><td>**Transmission Dynamics, Clusters**</td><td>**Whole Genome Sequencing (WGS), MLST, SNP Analysis**</td><td>**Gonorrhoea (NG-MAST), Syphilis (TPA), HIV, HCV, Mpox Clades**</td></tr></table>
+<div class="sub-h">Key Surveillance Indicators (WHO/Global Health Sector Strategy)</div>
+<table class="ctable"><tr><th>Indicator</th><th>Target (2030)</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Incidence of Syphilis (Maternal)**</td><td>**<50 Cases per 100,000 Live Births** (Elimination)</td></tr><tr><td>**Incidence of Gonorrhoea**</td><td>**90% Reduction** (vs 2018 Baseline)</td></tr><tr><td>**Incidence of Chlamydia**</td><td>**90% Reduction** (vs 2018 Baseline)</td></tr><tr><td>**Hepatitis B Surface Antigen (Children <5)**</td><td>**<0.1%** (Elimination)</td></tr><tr><td>**HPV Vaccination Coverage (Girls 15y)**</td><td>**>90%**</td></tr><tr><td>**STI Service Coverage (Key Populations)**</td><td>**>90% Access**</td></tr><tr><td>**AMR: Ceftriaxone-Resistant Gonorrhoea**</td><td>**<5% of Isolates**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7.2 Partner Notification (PN)</div>
+<div class="sub-h">PN Strategies</div>
+<table class="ctable"><tr><th>Strategy</th><th>Description</th><th>Advantages</th><th>Disadvantages</th></tr><tr><td>----------</td><td>-------------</td><td>------------</td><td>---------------</td></tr><tr><td>**Patient Referral (Self-Referral)**</td><td>Index Patient Informs Partners</td><td>**Empowers Patient, Preserves Autonomy, Lower Cost**</td><td>**Low Completion**, Relies on Patient Motivation/Skill</td></tr><tr><td>**Provider Referral (Health Dept Notification)**</td><td>Health Staff Notify Partners (Confidential)</td><td>**High Completion, Professional, Confidential**</td><td>**Resource-Intensive**, Requires Infrastructure</td></tr><tr><td>**Contract Referral (Conditional)**</td><td>Patient Agrees to Notify Within Timeframe (e.g., 1-2 Weeks), Else Provider Does</td><td>**Balances Autonomy & Assurance**</td><td>**Complex, Requires Follow-Up**</td></tr><tr><td>**Expedited Partner Therapy (EPT)**</td><td>**Patient Delivers Medication/Prescription to Partners** (No Clinical Assessment)</td><td>**Rapid, High Coverage**, Overcomes Barriers</td><td>**Legal Barriers**, Allergy/Adverse Event Risk, No Clinical Assessment</td></tr></table>
+<div class="sub-h">PN Effectiveness &amp; Coverage</div>
+<table class="ctable"><tr><th>Strategy</th><th>Partner Treatment Rate</th><th>Resources Required</th></tr><tr><td>----------</td><td>------------------------</td><td>-------------------</td></tr><tr><td>**Patient Referral**</td><td>30-50%</td><td>Low</td></tr><tr><td>**Provider Referral**</td><td>70-90%</td><td>High (Staff, Database)</td></tr><tr><td>**Contract Referral**</td><td>50-70%</td><td>Moderate</td></tr><tr><td>**EPT**</td><td>**70-90%** (Where Legal)</td><td>Moderate (Medication Supply)</td></tr></table>
+<div class="callout"><b>Evidence</b>: <b>Provider Referral + EPT = Highest Partner Treatment Rates</b>; <b>Combination Approaches Optimal</b></div>
+<div class="sub-h">Lookback Periods (Timeframe for Partner Notification)</div>
+<table class="ctable"><tr><th>Infection</th><th>Lookback Period</th></tr><tr><td>-----------</td><td>-----------------</td></tr><tr><td>**Gonorrhoea / Chlamydia / Trichomonas**</td><td>**60 Days** Prior to Symptom Onset/Diagnosis</td></tr><tr><td>**Syphilis (Primary)**</td><td>**3 Months + Duration of Symptoms**</td></tr><tr><td>**Syphilis (Secondary)**</td><td>**6 Months + Duration of Symptoms**</td></tr><tr><td>**Syphilis (Early Latent <1 Year)**</td><td>**1 Year**</td></tr><tr><td>**Syphilis (Late Latent/Unknown)**</td><td>**Long-Term Partners (No Fixed Limit)**</td></tr><tr><td>**HSV / HPV**</td><td>**60 Days** (If Symptomatic Episode)</td></tr><tr><td>**Hepatitis B / C**</td><td>**6 Months** (Sexual Partners)</td></tr><tr><td>**Mpox**</td><td>**21 Days** Prior to Symptom Onset</td></tr><tr><td>**HIV**</td><td>**Since Last Negative Test or Indefinite** (All Sexual/Needle-Sharing Partners)</td></tr></table>
+<div class="sub-h">EPT (Expedited Partner Therapy) — Current Status</div>
+<table class="ctable"><tr><th>Infection</th><th>EPT Regimen</th><th>Legal Status (UK/US/WHO)</th></tr><tr><td>-----------</td><td>-------------</td><td>--------------------------</td></tr><tr><td>**Gonorrhoea**</td><td>**Ceftriaxone 500mg IM + Azithromycin 1g PO** (Requires Injection)</td><td>**Complex** (Injection Required); **Provider Referral Preferred**</td></tr><tr><td>**Chlamydia**</td><td>**Doxycycline 100mg BD × 7d** or **Azithromycin 1g Stat**</td><td>**Legal in Many Jurisdictions** (Oral, Simple)</td></tr><tr><td>**Trichomoniasis**</td><td>**Metronidazole 2g Stat** / **Tinidazole 2g Stat**</td><td>**Legal Where Permitted**</td></tr><tr><td>**Syphilis**</td><td>**Not Suitable for EPT** (Injection, Staging, CSF, Follow-Up Required)</td><td>**Not Recommended**</td></tr><tr><td>**Mpox**</td><td>**MVA-BN Vaccine (2 Doses) + Tecovirimat if High-Risk**</td><td>**Not Standard EPT** (Vaccine = PrEP/PEP)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7.3 STI Vaccination Programmes</div>
+<div class="sub-h">HPV Vaccination Programme</div>
+<table class="ctable"><tr><th>Component</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Vaccine**</td><td>**9-Valent (Gardasil 9): 6, 11, 16, 18, 31, 33, 45, 52, 58**</td></tr><tr><td>**Target Population**</td><td>**Girls (Primary): Age 9-14** (Pre-Sexual Debut); **Boys: Increasingly Included**</td></tr><tr><td>**Schedule**</td><td>**<15 Years: 2 Doses (0, 6-12 Months)**; **≥15 Years: 3 Doses (0, 2, 6 Months)**</td></tr><tr><td>**Catch-Up**</td><td>**Females ≤26 Years, Males ≤21 Years** (MSM/Immunocompromised ≤26 Years)</td></tr><tr><td>**Shared Clinical Decision**</td><td>**Ages 27-45 Years** (Individual Benefit Assessment)</td></tr><tr><td>**HIV/Immunocompromised**</td><td>**3 Doses (0, 2, 6 Months) Regardless of Age**</td></tr><tr><td>**Delivery Platform**</td><td>**School-Based (Primary)** + **Primary Care/Catch-Up Clinics**</td></tr><tr><td>**Impact Targets (WHO 2030)**</td><td>**90% Coverage (Girls 15y)**; **Screening 70% (35y & 45y)**; **Treatment 90% CIN**</td></tr></table>
+<div class="sub-h">Hepatitis B Vaccination Programme</div>
+<table class="ctable"><tr><th>Component</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Universal Infant**</td><td>**Birth Dose (Within 24h) + 1, 6 Months** (or 6, 10, 14 Weeks EPI)</td></tr><tr><td>**Adult Risk Groups**</td><td>**MSM, Sex Workers, PWID, HIV, CKD, Healthcare Workers, Prisoners, Partners of HBsAg+, Travelers to Endemic Areas**</td></tr><tr><td>**Schedule**</td><td>**0, 1, 6 Months** (or Accelerated 0, 1, 2, 12 Months)</td></tr><tr><td>**Non-Responders (Anti-HBs <10 mIU/mL)**</td><td>**Repeat Series (Double Dose/Accelerated)** → **Recheck Anti-HBs 1-2 Months Post**</td></tr><tr><td>**Pregnancy**</td><td>**Screen All (HBsAg)**; **Infant: HBIG + Vaccine (Birth) if Mother HBsAg+**</td></tr><tr><td>**Impact Target**</td><td>**<0.1% HBsAg in Children <5 Years (Elimination)**</td></tr></table>
+<div class="sub-h">Mpox Vaccination Programme</div>
+<table class="ctable"><tr><th>Component</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Vaccine**</td><td>**MVA-BN (JYNNEOS/IMVANEX/IMVAMUNE) — Non-Replicating**</td></tr><tr><td>**Schedule**</td><td>**2 Doses (28 Days Apart)**; **Booster if Ongoing Risk**</td></tr><tr><td>**Priority Groups (PrEP)**</td><td>**MSM (High Risk: Multiple Partners, PrEP Users, Recent STIs)**, **Sex Workers**, **Lab Workers (Orthopoxvirus)**, **Healthcare Workers (High-Risk Exposure)**</td></tr><tr><td>**PEP**</td><td>**MVA-BN ≤4 Days Post-Exposure (Up to 14 Days) + Tecovirimat if High-Risk Individual**</td></tr><tr><td>**Special Populations**</td><td>**HIV (Safe, 2 Doses), Pregnancy (Safe), Immunocompromised (Safe); ACAM2000 Contraindicated**</td></tr></table>
+<div class="sub-h">Hepatitis A Vaccination (Relevant to MSM/Travel)</div>
+<table class="ctable"><tr><th>Component</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Risk Groups**</td><td>**MSM, PWID, Travellers to Endemic Areas, Chronic Liver Disease, Occupational**</td></tr><tr><td>**Schedule**</td><td>**2 Doses (0, 6-12 Months)**; **Combined Hep A+B (Twinrix): 0, 1, 6 Months**</td></tr><tr><td>**Co-administration**</td><td>**Safe with All Other Vaccines**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7.4 Antimicrobial Resistance (AMR) in STIs — Control Strategies</div>
+<div class="sub-h">Gonorrhoea AMR — Global Threat (WHO Priority 2)</div>
+<table class="ctable"><tr><th>Antimicrobial</th><th>Resistance Mechanism</th><th>Global Status (2023)</th><th>Control Strategy</th></tr><tr><td>---------------</td><td>---------------------</td><td>----------------------</td><td>------------------</td></tr><tr><td>**Ciprofloxacin**</td><td>**gyrA/parC Mutations**</td><td>**>50% Global Resistance**</td><td>**Do Not Use Empirically**</td></tr><tr><td>**Azithromycin**</td><td>**23S rRNA Mutations, Efflux (MtrCDE)**</td><td>**Rising (MIC Creep)**</td><td>**Adjunct Only (Not Monotherapy)**</td></tr><tr><td>**Cefixime**</td><td>**penA Mosaic, porB**</td><td>**Declining Susceptibility**</td><td>**Not Preferred for Pharyngeal**</td></tr><tr><td>**Ceftriaxone**</td><td>**penA Mosaic (XXXIV, XIX), porB, mtrR**</td><td>**Emerging (MIC >0.125 mg/L)**</td><td>**Dual Therapy, Higher Dose (1g IM), Surveillance**</td></tr><tr><td>**Spectinomycin**</td><td>**rpsE Mutation**</td><td>**Low (Rarely Used)**</td><td>**Alternative (If Available)**</td></tr></table>
+<div class="sub-h">WHO GASP (Gonococcal Antimicrobial Surveillance Programme)</div>
+<table class="ctable"><tr><th>Component</th><th>Action</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Sentinel Sites**</td><td>**Representative Geographic/Population Coverage**</td></tr><tr><td>**Culture + AST**</td><td>**Ceftriaxone, Ciprofloxacin, Azithromycin, Cefixime, Spectinomycin**</td></tr><tr><td>**Molecular Surveillance**</td><td>**penA, gyrA/parC, 23S rRNA, mtrR, porB** (Track Resistance Determinants)</td></tr><tr><td>**Data Sharing**</td><td>**WHO GASP Database, National Reports, Regional Networks**</td></tr><tr><td>**Early Warning**</td><td>**Ceftriaxone MIC >0.06 mg/L → Enhanced Surveillance**</td></tr></table>
+<div class="sub-h">M. genitalium AMR</div>
+<table class="ctable"><tr><th>Resistance</th><th>Mechanism</th><th>Management</th></tr><tr><td>------------</td><td>-----------</td><td>------------</td></tr><tr><td>**Macrolide (Azithromycin)**</td><td>**23S rRNA A2058/2059 Mutations**</td><td>**Moxifloxacin 400mg OD × 7-14d** (Preferred if Resistance Confirmed/High Prevalence)</td></tr><tr><td>**Fluoroquinolone (Moxifloxacin)**</td><td>**parC (S83I), gyrA (S83I) Mutations**</td><td>**Pristinamycin 1g QID × 10-14d** (If Available)</td></tr><tr><td>**Dual Resistance (Macrolide + Fluoroquinolone)**</td><td>**Both Mechanisms**</td><td>**Pristinamycin** (If Available) → **Specialist Referral**</td></tr></table>
+<div class="sub-h">AMR Control Strategies (WHO Global Action Plan)</div>
+<table class="ctable"><tr><th>Strategy</th><th>Actions</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Surveillance**</td><td>**WHO GASP Expansion**, Molecular Tracking, Data Sharing</td></tr><tr><td>**Antimicrobial Stewardship**</td><td>**Dual Therapy (GC), Resistance-Guided Therapy (MG), Avoid Monotherapy**</td></tr><tr><td>**Treatment Guidelines**</td><td>**Regular Updates Based on AMR Data**, Resistance-Guided Algorithms</td></tr><tr><td>**New Drug Development**</td><td>**Zoliflodacin (Spiropyrimidinetrione), Gepotidacin (Topoisomerase Inhibitor)** — **Phase 3 Trials**</td></tr><tr><td>**Diagnostics**</td><td>**Rapid POC AMR Testing (NAAT + Resistance Markers)**</td></tr><tr><td>**Vaccines**</td><td>**Gonorrhoea Vaccine Candidates (NgOMP, rPorB, etc.) — Phase 1/2**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7.5 STI Prevention &amp; Control Interventions</div>
+<div class="sub-h">Biomedical Interventions</div>
+<table class="ctable"><tr><th>Intervention</th><th>Effectiveness</th><th>Target Population</th></tr><tr><td>--------------</td><td>---------------</td><td>-------------------</td></tr><tr><td>**Male Condoms (Latex/Polyurethane)**</td><td>**85-98% (Consistent Correct Use)**</td><td>**All Sexually Active**</td></tr><tr><td>**Female Condoms**</td><td>**79-95%**</td><td>**Women (Female-Controlled)**</td></tr><tr><td>**PrEP (TDF/FTC Daily / Event-Driven / CAB-LA)**</td><td>**>99% HIV Prevention**</td><td>**High-Risk (MSM, Serodiscordant, Sex Workers, PWID)**</td></tr><tr><td>**Doxy-PEP (200mg ≤72h Post-Sex)**</td><td>**GC ↓55%, CT ↓88%, Syphilis ↓87%** (MSM/Trans Women on PrEP/HIV)</td><td>**MSM/Trans Women on PrEP/HIV**</td></tr><tr><td>**HPV Vaccine (9vHPV)**</td><td>**>90% Vaccine-Type HPV/CIN/Warts**</td><td>**Girls <15y (2-Dose), Catch-Up ≤26y**</td></tr><tr><td>**HBV Vaccine**</td><td>**>95% Protection**</td><td>**Universal Birth + Risk Adults**</td></tr><tr><td>**Mpox Vaccine (MVA-BN)**</td><td>**~85% Protection**</td><td>**High-Risk MSM, Sex Workers, Lab/HCW**</td></tr><tr><td>**Hepatitis A Vaccine**</td><td>**>95%**</td><td>**MSM, PWID, Travellers, Chronic Liver Disease**</td></tr></table>
+<div class="sub-h">Behavioural Interventions</div>
+<table class="ctable"><tr><th>Intervention</th><th>Evidence</th><th>Delivery</th></tr><tr><td>--------------</td><td>----------</td><td>----------</td></tr><tr><td>**Comprehensive Sexuality Education (CSE)**</td><td>**Delays Sexual Debut, ↑ Condom Use, ↓ Partners**</td><td>**School-Based (Age-Appropriate), Community**</td></tr><tr><td>**Brief Risk Reduction Counselling**</td><td>**Modest STI Reduction**</td><td>**Clinical Settings (STI/Contraception/PrEP Visits)**</td></tr><tr><td>**Motivational Interviewing (MI)**</td><td>**Modest Behaviour Change**</td><td>**Trained Counsellors, Peer Educators**</td></tr><tr><td>**Peer Education/Navigation**</td><td>**High Acceptability in Key Populations**</td><td>**Peer-Led (MSM, Sex Workers, PWID, Transgender)**</td></tr><tr><td>**Digital Interventions (Apps, SMS, Web)**</td><td>**Modest, Scalable**</td><td>**Apps (PrEP Reminders, STI Testing Reminders, Partner Notification)**</td></tr></table>
+<div class="sub-h">Structural Interventions</div>
+<table class="ctable"><tr><th>Intervention</th><th>Impact</th><th>Example</th></tr><tr><td>--------------</td><td>--------</td><td>---------</td></tr><tr><td>**Decriminalisation of Sex Work**</td><td>**↓ Violence, ↑ Condom Use, ↑ Health Access**</td><td>**New Zealand Model (Decriminalised 2003)**</td></tr><tr><td>**Stigma Reduction**</td><td>**↑ Testing, ↑ Treatment Adherence, ↓ Discrimination**</td><td>**Anti-Stigma Campaigns, Health Worker Training**</td></tr><tr><td>**Gender Equality / IPV Prevention**</td><td>**↓ Sexual Violence, ↑ Women's Autonomy**</td><td>**Legal reform, Community Mobilisation**</td></tr><tr><td>**Universal Health Coverage (UHC)**</td><td>**↑ Access to STI Services, ↓ Financial Barriers**</td><td>**Free STI Testing/Treatment, Free Vaccines**</td></tr><tr><td>**Harm Reduction (PWID)**</td><td>**↓ HIV/HCV Transmission**</td><td>**OAT (Methadone/Buprenorphine), Needle/Syringe Programmes**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7.6 STI Service Delivery Models</div>
+<div class="sub-h">Service Delivery Models</div>
+<table class="ctable"><tr><th>Model</th><th>Features</th><th>Advantages</th><th>Challenges</th></tr><tr><td>-------</td><td>----------</td><td>------------</td><td>------------</td></tr><tr><td>**Specialised STI/GUM Clinics**</td><td>**Expertise, Full Diagnostics, Partner Notification, Complex Cases**</td><td>**High Quality, Specialist Skills**</td><td>**Stigma, Access Barriers, Cost**</td></tr><tr><td>**Integrated STI/HIV/SRH**</td><td>**One-Stop Shop (HIV, STI, Contraception, Cervical Screen, PrEP, Gender-Affirming)**</td><td>**Efficiency, Person-Centred, Reduced Stigma, Retention**</td><td>**Complex Coordination, Staff Training**</td></tr><tr><td>**Primary Care / General Practice**</td><td>**Accessible, Familiar, Opportunistic Screening**</td><td>**High Access, Low Stigma**</td><td>**Variable Expertise, Time Constraints**</td></tr><tr><td>**Community / Outreach**</td><td>**Mobile Vans, Pop-Up, Peer-Led, Key Population-Focused**</td><td>**Reaches Marginalised, Low Threshold**</td><td>**Limited Diagnostics, Sustainability**</td></tr><tr><td>**Digital / Self-Sampling**</td><td>**Online Ordering, Home Self-Sampling (Vaginal/Rectal/Pharyngeal/Urine), Postal Return, Results by Text/App**</td><td>**High Acceptability, Privacy, Reaches Youth/MSM**</td><td>**Lab Capacity, Clinical Follow-Up Pathways, Digital Divide**</td></tr><tr><td>**Pharmacy-Led**</td><td>**EPT, Condoms, Vaccines, Self-Test Kits, Counselling**</td><td>**High Access, Extended Hours**</td><td>**Limited Clinical Assessment**</td></tr></table>
+<div class="sub-h">Digital Health Innovations</div>
+<table class="ctable"><tr><th>Innovation</th><th>Application</th><th>Evidence</th></tr><tr><td>------------</td><td>-------------</td><td>----------</td></tr><tr><td>**Online STI Testing**</td><td>**Order Kit → Self-Sample → Post → Results by Text/Email**</td><td>**High Uptake (MSM, Youth), Equivalent Positivity to Clinic**</td></tr><tr><td>**Partner Notification Apps**</td><td>**Anonymous/Confidentia l Partner Notification via SMS/Email**</td><td>**Increases PN Completion, Reduces Stigma**</td></tr><tr><td>**PrEP/STI Reminder Apps**</td><td>**Medication Reminders, Appointment Reminders, Test Reminders**</td><td>**Improves Adherence, Retention**</td></tr><tr><td>**Telemedicine (Video/Phone)**</td><td>**STI Consultations, Results, Prescriptions**</td><td>**Non-Inferior for Uncomplicated STIs, High Satisfaction**</td></tr><tr><td>**AI Triage/Chatbots**</td><td>**Symptom Checker, Risk Assessment, Signposting**</td><td>**Early Stage, Potential for Triage**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7.7 Key Population Programmes</div>
+<div class="sub-h">MSM (Men Who Have Sex with Men)</div>
+<table class="ctable"><tr><th>Component</th><th>Intervention</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**Screening**</td><td>**3-Site NAAT (Urethral, Pharyngeal, Rectal) GC/CT q3-6m**; **Syphilis q3-6m**; **HCV RNA Annual**; **HIV q3m (if PrEP)**</td></tr><tr><td>**Vaccination**</td><td>**9vHPV (≤26y), Hep A/B, Mpox (MVA-BN)**</td></tr><tr><td>**PrEP**</td><td>**TDF/FTC Daily / Event-Driven / CAB-LA**; **Doxy-PEP (200mg ≤72h Post-Sex)**</td></tr><tr><td>**Screening**</td><td>**Annual Anal Cytology + HPV (HIV+)**; **Mental Health, Chemsex Support**</td></tr><tr><td>**Community**</td><td>**Peer-Led Services, Chemsex Support, Sauna/Club Outreach, App-Based Prevention**</td></tr></table>
+<div class="sub-h">Sex Workers</div>
+<table class="ctable"><tr><th>Component</th><th>Intervention</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**Service Model**</td><td>**Peer-Led, Drop-In Centres, Mobile Outreach, Decriminalisation Advocacy**</td></tr><tr><td>**Screening**</td><td>**Monthly HIV/Syphilis, Quarterly GC/CT (3-Site), 6-Monthly HBV/HCV**</td></tr><tr><td>**Prevention**</td><td>**Condom Programming (Free, Variety), PrEP, Hep A/B Vaccine**</td></tr><tr><td>**Structural**</td><td>**Decriminalisation, Labour Rights, Anti-Stigma, Police Sensitisation**</td></tr></table>
+<div class="sub-h">Transgender &amp; Gender-Diverse</div>
+<table class="ctable"><tr><th>Component</th><th>Intervention</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**Care Model**</td><td>**Gender-Affirming + STI/HIV Integrated**</td></tr><tr><td>**Screening**</td><td>**Anatomy-Based (Neovagina, Front Hole, Penile, Rectal, Pharyngeal)**</td></tr><tr><td>**Hormones + PrEP**</td><td>**No Significant Interactions (Check CYP3A4)**</td></tr><tr><td>**Vaccination**</td><td>**HPV, Hep A/B, Mpox**</td></tr><tr><td>**Surgical**</td><td>**Post-Op STI Screening (Neovagina, Urethra)**</td></tr></table>
+<div class="sub-h">People Who Inject Drugs (PWID)</div>
+<table class="ctable"><tr><th>Component</th><th>Intervention</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**Harm Reduction**</td><td>**OAT (Methadone/Buprenorphine), NSP, Safe Injection Sites, Overdose Prevention (Naloxone)**</td></tr><tr><td>**STI/HIV/HCV Screening**</td><td>**Quarterly HIV/HCV, Syphilis, HBV; Annual GC/CT**</td></tr><tr><td>**Vaccination**</td><td>**Hep A/B, Mpox**</td></tr><tr><td>**Treatment**</td><td>**HCV DAA (Pangenotypic), HIV ART, HBV NUCs**</td></tr></table>
+<div class="sub-h">Prisoners &amp; Detainees</div>
+<table class="ctable"><tr><th>Component</th><th>Intervention</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**Screening**</td><td>**Entry (HIV, Syphilis, HBV, HCV, TB, STI Syndrome)**; **Periodic (6-Monthly)**</td></tr><tr><td>**Treatment**</td><td>**Continuity of ART/HCV/STI Tx**; **OAT Continuity**</td></tr><tr><td>**Prevention**</td><td>**Condoms, Lubricant, NSP (Where Permitted), Vaccination**</td></tr><tr><td>**Release Planning**</td><td>**Community Linkage (ART, OAT, STI Care, Housing)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7.8 STI in Pregnancy &amp; Neonatal Prevention</div>
+<div class="sub-h">Antenatal STI Screening (Universal)</div>
+<table class="ctable"><tr><th>Test</th><th>Timing</th><th>Repeat</th></tr><tr><td>------</td><td>--------</td><td>--------</td></tr><tr><td>**Syphilis (RPR/VDRL + TPPA)**</td><td>**Booking (First Trimester)**</td><td>**28-32 Weeks + Delivery (High Risk/High Prevalence)**</td></tr><tr><td>**Hepatitis B (HBsAg)**</td><td>**Booking**</td><td>**If Negative, No Repeat (Unless Risk)**</td></tr><tr><td>**Hepatitis C (Anti-HCV)**</td><td>**Booking**</td><td>**If Risk Factors**</td></tr><tr><td>**HIV**</td><td>**Booking**</td><td>**28-32 Weeks + Delivery (High Prevalence)**</td></tr><tr><td>**Gonorrhoea/Chlamydia**</td><td>**If <25y or Risk Factors**</td><td>**28-32 Weeks (If Risk)**</td></tr><tr><td>**HSV**</td><td>**If Lesions/History**</td><td>**36 Weeks Onwards (Suppressive Therapy Decision)**</td></tr></table>
+<div class="sub-h">Neonatal Prevention Package</div>
+<table class="ctable"><tr><th>STI</th><th>Intervention</th></tr><tr><td>-----</td><td>--------------</td></tr><tr><td>**Syphilis**</td><td>**Maternal BPC ≥30d Before Delivery** → **Infant: Observe (If Adequate) / Penicillin G IV 10d (If Inadequate/Uncertain)**</td></tr><tr><td>**Gonorrhoea**</td><td>**Infant: Ceftriaxone 50mg/kg IM/IV Single Dose (If Maternal GC+ / Untreated)**</td></tr><tr><td>**Chlamydia**</td><td>**Infant: Azithromycin 20mg/kg OD × 3d (If Maternal CT+ / Untreated)**</td></tr><tr><td>**HSV**</td><td>**Maternal Suppression (Acyclovir 400mg TDS 36w→Delivery)**; **Cesarean if Active Lesions/Prodrome at Labour**</td></tr><tr><td>**HBV**</td><td>**Infant: HBIG (100 IU) + HBV Vaccine (0, 1, 6 Months) Within 24h**</td></tr><tr><td>**HCV**</td><td>**No Proven Prevention**; **Breastfeeding Safe (If Nipples Intact)**</td></tr><tr><td>**HIV**</td><td>**Maternal ART (VL<50); Infant AZT ± NVP (4-6 Weeks); Cesarean if VL>1000; No Breastfeeding (Resource-Dependent)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Surveillance**</td><td>**Case-Based (Mandatory), Sentinel (GASP), Syndromic, AMR (GASP), Behavioural (IBBS), Molecular (WGS)**</td></tr><tr><td>**Partner Notification**</td><td>**Patient/Provider/Contract Referral + EPT**; **Lookback: GC/CT/TV 60d, Syphilis 3m-1y+, HSV/HPV 60d, Mpox 21d**</td></tr><tr><td>**EPT**</td><td>**GC/CT/TV Oral (Legal Where Permitted)**; **GC = Injection Complex; Syphilis = No EPT**</td></tr><tr><td>**Vaccination**</td><td>**HPV 9vHPV: 2-Dose <15y (0,6-12m), 3-Dose ≥15y (0,2,6m); Catch-Up F≤26/M≤21 (MSM≤26); HIV: 3 Doses**</td></tr><tr><td>**HBV Vaccine**</td><td>**Universal Birth + Risk Adults (0,1,6m); Infant HBIG+Vaccine if Mother HBsAg+**</td></tr><tr><td>**Mpox Vaccine**</td><td>**MVA-BN 2 Doses (28d); PrEP: MSM High Risk, Sex Workers, Lab/HCW; PEP: ≤4d (Up to 14d) + Tecovirimat if High-Risk**</td></tr><tr><td>**Gonorrhoea AMR**</td><td>**Cipro >50% (No Use); Ceftriaxone Emerging (MIC >0.125)**; **Dual Therapy; GASP Surveillance; New Drugs (Zoliflodacin, Gepotidacin)**</td></tr><tr><td>**M. genitalium AMR**</td><td>**Macrolide R >50% (23S rRNA); FQ Resistance Rising**; **Moxifloxacin for Macrolide-R; Pristinamycin for Dual R**</td></tr><tr><td>**Partner Notification**</td><td>**Lookback: GC/CT/TV 60d; Syphilis 1° 3m, 2° 6m, Early Latent 1y, Late Latent Long-Term; HSV/HPV 60d**</td></tr><tr><td>**Key Populations**</td><td>**MSM: 3-Site q3-6m, PrEP, Anal Screen, Doxy-PEP**; **SW: Peer-Led, Decriminalisation**; **PWID: OAT+NSP+HCV DAA; Prisoners: Entry Screen + Continuity**</td></tr><tr><td>**Prevention**</td><td>**Condoms, PrEP (TDF/FTC/CAB-LA), Doxy-PEP (GC↓55%, CT↓88%, Syphilis↓87%), Vaccines (HPV, HBV, Mpox, Hep A)**</td></tr><tr><td>**Digital Health**</td><td>**Self-Sampling, Online Testing, PN Apps, Telemedicine, Reminder Apps**</td></tr><tr><td>**Pregnancy**</td><td>**Universal Syphilis/HBV/HIV Screening; BV/GC/CT if Risk; HSV Suppression 36w; Neonatal Package (GC/CTV/HSV/HBV/HIV)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Gonorrhoea AMR — current global threat and control?</td><td>**Cipro >50% (No Use); Ceftriaxone Emerging (penA Mosaic, MIC >0.125)**; **Dual Therapy (Ceftriaxone+Azithro); Higher Dose Ceftriaxone (1g IM) for Pharyngeal**; **WHO GASP Surveillance; New Drugs (Zoliflodacin, Gepotidacin)**</td></tr><tr><td>2</td><td>Partner notification — strategies and lookback periods?</td><td>**Patient/Provider/Contract Referral + EPT**; **GC/CT/TV: 60d; Syphilis: 1°3m, 2°6m, Early Latent 1y, Late Latent Long-Term; HSV/HPV: 60d; Mpox: 21d**</td></tr><tr><td>3</td><td>EPT — which infections, regimens, legal status?</td><td>**GC (Complex - Injection), CT (Doxy/Azi), TV (Metro/Tini) — Legal Where Permitted**; **Syphilis = No EPT**</td></tr><tr><td>4. HPV vaccination programme — schedule and catch-up?</td><td>**<15y: 2 Doses (0, 6-12m); ≥15y: 3 Doses (0, 2, 6m); Catch-Up F≤26, M≤21 (MSM≤26); HIV/Immunocomp: 3 Doses Any Age; 9vHPV Preferred**</td></tr><tr><td>5. Gonorrhoea AMR — surveillance and control?</td><td>**WHO GASP (Culture+AST Sentinel Sites, Molecular penA/gyrA/23S); Dual Therapy; Higher Dose Ceftriaxone 1g IM Pharyngeal; New Drugs (Zoliflodacin, Gepotidacin)**</td></tr><tr><td>6. M. genitalium AMR — macrolide resistance management?</td><td>**>50% Resistance (23S rRNA A2058/2059); Moxifloxacin 400mg OD × 7-14d if Macrolide-R; Pristinamycin if Dual R**</td></tr><tr><td>7. Key populations — MSM STI prevention package?</td><td>**3-Site GC/CT q3-6m, Syphilis q3-6m, HCV RNA Annual, PrEP, 9vHPV, Hep A/B, Mpox, Doxy-PEP, Anal Screen (HIV+), Peer-Led, Chemsex Support**</td></tr><tr><td>8. Pregnancy STI screening — universal tests and timing?</td><td>**Booking: Syphilis, HBV, HIV; GC/CT if <25y/Risk; 28-32w Repeat Syphilis/HIV (High Risk); HSV Suppression 36w→Delivery**</td></tr><tr><td>9. Neonatal STI prevention package?</td><td>**Syphilis: Maternal BPC ≥30d Before Delivery; GC: Infant Ceftriaxone 50mg/kg IM; CT: Infant Azi 20mg/kg OD×3d; HBV: Infant HBIG+Vaccine 24h; HSV: Suppression 36w→Delivery, Cesarean if Active Lesions**</td></tr><tr><td>10. STI prevention — most effective biomedical interventions?</td><td>**Condoms (85-98%), PrEP (>99% HIV), Doxy-PEP (GC↓55%, CT↓88%, Syphilis↓87%), Vaccines (HPV 9vHPV, HBV, Mpox, HepA), Male Circumcision (↓ HIV/HPV/HSV in Men)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"EPT = For All STIs"**</td><td>**NO.** **GC/CT/TV (Oral) Only Where Legal**; **GC = Injection (Complex); Syphilis = No EPT**</td></tr><tr><td>**"Partner Notification = Only for HIV"**</td><td>**NO.** **All STIs Require PN**; **Lookback Periods Vary by Infection**</td></tr><tr><td>**"Gonorrhoea AMR = Only Ceftriaxone"**</td><td>**NO.** **Cipro >50% Resistant (Don't Use); Azithro MIC Creep; Cefixime Declining; Ceftriaxone Emerging (penA Mosaic)**</td></tr><tr><td>**"M. genitalium = Just Treat with Azithro"**</td><td>**NO.** **>50% Macrolide Resistance → Test for Resistance / Use Moxifloxacin if Resistant**</td></tr><tr><td>**"Partner Notification = Only for HIV"**</td><td>**NO.** **All STIs Require PN**; **Lookback Periods Vary (GC/CT 60d, Syphilis 3m-1y+)**</td></tr><tr><td>**"HPV Vaccine = Only for Girls"**</td><td>**NO.** **Boys Also (Anal/Oropharyngeal/Penile Cancer Prevention); MSM Priority**</td></tr><tr><td>**"HPV Vaccine = Only for Virgins"**</td><td>**NO.** **Benefit Even If Sexually Active (Protects Against Types Not Yet Acquired)**</td></tr><tr><td>**"Condoms = 100% Effective"**</td><td>**NO.** **85-98% (Consistent Correct Use); Typical Use ~85%**</td></tr><tr><td>**"PrEP = No STI Risk"**</td><td>**NO.** **Risk Compensation → ↑ STIs (GC/CT/Syphilis ↑ in PrEP Users)**</td></tr><tr><td>**"Doxy-PEP = Standard of Care"**</td><td>**NO.** **Emerging Evidence (DoxyPEP Trial); Guidelines Emerging; Resistance Concerns (M. genitalium)**</td></tr></table>
+<div class="callout"><b>Mnemonic: PUBLIC HEALTH STI CONTROL MASTER</b> <b>P</b>artner Notification: <b>Patient/Provider/Contract Referral + EPT (GC/CT/TV); Lookback: GC/CT/TV 60d, Syph 3m-1y+, HSV/HPV 60d</b> <b>U</b>niversal Vaccination: <b>HPV 9vHPV (2d&lt;15y, 3d≥15y), HBV (Birth+1+6m), Mpox (MVA-BN 2d), HepA (Risk Groups)</b> <b>B</b>ehavioural: <b>CSE, Peer Ed, MI, Digital Apps (PrEP Reminders, PN Apps)</b> <b>L</b>ab Surveillance: <b>GASP (GC AMR), Sentinel, Syndromic, Molecular (WGS), IBBS (Key Pops)</b> <b>I</b>ntegrated Services: <b>STI/HIV/SRH One-Stop, Digital (Self-Sample, Tele, Apps, PN Apps)</b> <b>C</b>ondom/PrEP: <b>Condoms 85-98%, PrEP &gt;99% HIV, Doxy-PEP (GC↓55%, CT↓88%, Syph↓87%)</b> <b>H</b>PV Vaccine: <b>9vHPV (6,11,16,18,31,33,45,52,58); 2d&lt;15y, 3d≥15y; Catch-Up F≤26/M≤21 (MSM≤26)</b> <b>H</b>BV Vaccine: <b>Universal Birth (0,1,6m), Infant HBIG+Vacc if Mother +ve</b> <b>M</b>pox Vaccine: <b>MVA-BN 2d (28d), PrEP (MSM High Risk, SW, Lab/HCW), PEP ≤4d+Tecovirimat</b> <b>G</b>C AMR: <b>Cipro&gt;50% No Use; Ceftriaxone Emerging (penA Mosaic); Dual Therapy; GASP Surveillance; Zoliflodacin/Gepotidacin Pipeline</b> <b>M</b>G AMR: <b>Macrolide &gt;50% (23S rRNA A2058/2059); Moxi if R; Pristinamycin Dual R</b> <b>K</b>ey Populations: <b>MSM (3-Site q3-6m, PrEP, Doxy-PEP, Anal Screen), SW (Peer-Led, Decrim), PWID (OAT+NSP+HCV DAA), Prison (Entry Screen+Continuity)</b> <b>P</b>regnancy: <b>Syph/HBV/HIV Booking; GC/CT &lt;25y/Risk; HSV Supp 36w; Neonatal Package (GC/CT/HSV/HBV/HIV)</b> <b>H</b>ealth Systems: <b>Integrated STI/HIV/SRH, Digital (Self-Sample, Tele, Apps, PN), Quality Assurance, Training</b> <b>E</b>limination Targets: <b>Syphilis Maternal &lt;50/100k LB, HBV Child &lt;0.1%, HPV Vacc 90% Girls 15y, GC/CT 90% Reduction</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((STI Public Health Control))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Surveillance</div>
+<div class="mm-node mm-l3">– Case-Based (Mandatory)</div>
+<div class="mm-node mm-l3">– Sentinel (GASP)</div>
+<div class="mm-node mm-l3">– Syndromic (Early Warning)</div>
+<div class="mm-node mm-l3">– AMR (WHO GASP)</div>
+<div class="mm-node mm-l3">– Behavioural (IBBS)</div>
+<div class="mm-node mm-l3">– Molecular (WGS)</div>
+<div class="mm-node mm-l2">Partner Notification</div>
+<div class="mm-node mm-l3">– Patient/Provider/Contract Referral</div>
+<div class="mm-node mm-l3">– EPT (GC/CT/TV Oral)</div>
+<div class="mm-node mm-l3">– Lookback Periods (GC/CT/TV 60d, Syph 3m-1y+)</div>
+<div class="mm-node mm-l2">Vaccination</div>
+<div class="mm-node mm-l3">– HPV 9vHPV (2d&lt;15y, 3d≥15y)</div>
+<div class="mm-node mm-l3">– HBV (Birth+1+6m)</div>
+<div class="mm-node mm-l3">– Mpox (MVA-BN 2d)</div>
+<div class="mm-node mm-l3">– HepA (Risk Groups)</div>
+<div class="mm-node mm-l2">AMR Control</div>
+<div class="mm-node mm-l3">– GC: Cipro&gt;50% (No Use), Ceftriaxone Emerging</div>
+<div class="mm-node mm-l3">– Dual Therapy, Higher Dose, GASP</div>
+<div class="mm-node mm-l3">– MG: Macrolide R &gt;50% (Moxi), Dual R (Prinstinamycin)</div>
+<div class="mm-node mm-l3">– Pipeline: Zoliflodacin, Gepotidacin</div>
+<div class="mm-node mm-l2">Prevention</div>
+<div class="mm-node mm-l3">– Condoms, PrEP, Doxy-PEP</div>
+<div class="mm-node mm-l3">– Vaccines (HPV, HBV, Mpox, HepA)</div>
+<div class="mm-node mm-l3">– Male Circumcision</div>
+<div class="mm-node mm-l2">Key Populations</div>
+<div class="mm-node mm-l3">– MSM (3-Site, PrEP, Doxy-PEP, Anal Screen)</div>
+<div class="mm-node mm-l3">– SW (Peer-Led, Decrim)</div>
+<div class="mm-node mm-l3">– PWID (OAT, NSP, HCV DAA)</div>
+<div class="mm-node mm-l3">– Trans, Prisoners, Adolescents</div>
+<div class="mm-node mm-l2">Digital Health</div>
+<div class="mm-node mm-l3">– Self-Sampling, Online Testing</div>
+<div class="mm-node mm-l3">– PN Apps, Telemedicine, Reminder Apps</div>
+<div class="mm-node mm-l2">Pregnancy/Neonatal</div>
+<div class="mm-node mm-l3">– Syph/HBV/HIV Booking</div>
+<div class="mm-node mm-l3">– HSV Supp 36w</div>
+<div class="mm-node mm-l3">– Neonatal Package (GC/CT/HSV/HBV/HIV)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Surveillance (Types, GASP, Indicators)</td><td>3</td><td></td><td></td></tr><tr><td>Partner Notification (Strategies, Lookback, EPT)</td><td>3</td><td></td><td></td></tr><tr><td>Vaccination Programmes (HPV, HBV, Mpox, Hep A)</td><td>3</td><td></td><td></td></tr><tr><td>AMR Control (GC, MG, Pipeline, GASP)</td><td>3</td><td></td><td></td></tr><tr><td>Prevention (Biomedical, Behavioural, Structural, Digital)</td><td>3</td><td></td><td></td></tr><tr><td>Key Populations (MSM, SW, PWID, Trans, Prisoners)</td><td>3</td><td></td><td></td></tr><tr><td>Pregnancy & Neonatal Prevention</td><td>2</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the public health control strategies for gonorrhoea antimicrobial resistance."</td><td>**GASP Surveillance (Culture+AST, Molecular), Dual Therapy, Higher Dose Ceftriaxone, New Drugs (Zoliflodacin, Gepotidacin), Treatment Guidelines, Vaccines**</td></tr><tr><td>**Short Note**</td><td>"Partner notification strategies for STIs."</td><td>**Patient/Provider/Contract Referral + EPT; Lookback: GC/CT/TV 60d, Syphilis 3m-1y+, HSV/HPV 60d; EPT Legal for CT/TV (Oral), Complex for GC (Injection)**</td></tr><tr><td>**Viva**</td><td>"Gonorrhoea antimicrobial resistance — current global status and control measures."</td><td>**Ciprofloxacin >50% Resistant (Do Not Use); Ceftriaxone Emerging (penA Mosaic, MIC >0.125); Dual Therapy (Ceftriaxone+Azithro); Higher Dose 1g IM for Pharyngeal; WHO GASP Surveillance; Pipeline Drugs (Zoliflodacin, Gepotidacin)**</td></tr><tr><td>**Ward Round**</td><td>"MSM on PrEP requests STI screening. What tests and how often?"</td><td>**HIV Ag/Ab, Syphilis (RPR/VDRL+TPPA), 3-Site GC/CT NAAT (Urethral, Pharyngeal, Rectal), HCV RNA (Annually), Renal Function q6m; Every 3 Months**</td></tr><tr><td>**Last-Night**</td><td>"Surveillance: Case-Based, Sentinel(GASP), Syndromic, AMR, Behavioural. PN: Patient/Provider/Contract+EPT; Lookback: GC/CT/TV 60d, Syph 1°3m/2°6m/EarlyLat1y/LateLat LT, HSV/HPV 60d. EPT: GC/CT/TV Oral (Legal), GC Injection Complex. Vaccines: HPV 9vHPV 2d<15y/3d≥15y, Catch-Up F≤26/M≤21(MSM≤26), HBV Birth+1+6m, Mpox MVA-BN 2d. GC AMR: Cipro>50% No, Ceph Emerging penA, Dual Therapy, Pharyngeal 1g IM, GASP. MG: Macrolide R>50% → Moxi, Dual R Pristinamycin. Key Pops: MSM 3-Site q3-6m, SW Peer/Decrim, PWID OAT+NSP+HCV DAA, Prison Entry Screen. Preg: Syph/HBV/HIV Booking, HSV Supp 36w. Neonatal: GC Ceph50mg/kg, CT Azi, HBV HBIG+Vacc, HSV Supp 36w+Cesarean, HIV ART+AZT."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Surveillance</b>: <b>Case-Based (Mandatory), Sentinel (GASP), Syndromic, AMR (GASP), Behavioural (IBBS), Molecular (WGS)</b></li><li><b>Partner Notification</b>: <b>Patient/Provider/Contract Referral + EPT</b>; <b>Lookback: GC/CT/TV 60d, Syphilis 1°3m/2°6m/EarlyLat 1y/LateLat Long-Term, HSV/HPV 60d, Mpox 21d</b></li><li><b>EPT</b>: <b>GC/CT/TV Oral (Legal Where Permitted)</b>; <b>GC = Injection (Complex)</b>; <b>Syphilis = No EPT</b></li><li><b>Vaccination</b>: <b>HPV 9vHPV: 2-Dose &lt;15y (0,6-12m), 3-Dose ≥15y (0,2,6m); Catch-Up F≤26/M≤21 (MSM≤26); HIV: 3 Doses</b>; <b>HBV: Universal Birth + Risk Adults</b>; <b>Mpox: MVA-BN 2 Doses (28d), PrEP/PEP</b></li><li><b>AMR Control</b>: <b>GC: Cipro &gt;50% (No Use); Ceftriaxone Emerging (penA Mosaic, MIC &gt;0.125) → Dual Therapy, Higher Dose (1g IM Pharyngeal), GASP Surveillance, Pipeline (Zoliflodacin, Gepotidacin)</b>; <b>MG: Macrolide Resistance &gt;50% (23S rRNA) → Moxifloxacin; Dual Resistance → Pristinamycin</b></li><li><b>Partner Notification</b>: <b>Lookback: GC/CT/TV 60d; Syphilis 1°3m/2°6m/EarlyLat 1y/LateLat Long-Term; HSV/HPV 60d</b></li><li><b>Key Populations</b>: <b>MSM: 3-Site q3-6m, PrEP, Doxy-PEP, Anal Screen, Vaccines</b>; <b>SW: Peer-Led, Decriminalisation</b>; <b>PWID: OAT, NSP, HCV DAA</b>; <b>Prisoners: Entry Screen + Continuity</b></li><li><b>Prevention</b>: <b>Condoms, PrEP (TDF/FTC/CAB-LA), Doxy-PEP (GC↓55%, CT↓88%, Syphilis↓87%), Vaccines (HPV, HBV, Mpox, Hep A)</b></li><li><b>Digital Health</b>: <b>Self-Sampling, Online Testing, PN Apps, Telemedicine, Reminder Apps</b></li><li><b>Pregnancy/Neonatal</b>: <b>Universal Syphilis/HBV/HIV Screening; HSV Suppression 36w→Delivery; Neonatal Package (GC/CT/HSV/HBV/HIV Prevention)</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Gonorrhoea antimicrobial resistance — current status of ciprofloxacin?</b></li></ol>
+<p>A. Fully Sensitive  B. <b>&gt;50% Global Resistance (Do Not Use Empirically)</b>  C. Low Resistance  D. Only in Asia <i>Answer: B. Ciprofloxacin Resistance &gt;50% Globally — Do Not Use Empirically.</i></p>
+<ol><li><b>Chlamydia partner notification — recommended lookback period?</b></li></ol>
+<p>A. 30 Days  B. <b>60 Days</b>  C. 90 Days  D. 1 Year <i>Answer: B. 60 Days Prior to Symptom Onset/Diagnosis.</i></p>
+<ol><li><b>HPV vaccination — schedule for 14-year-old girl?</b></li></ol>
+<p>A. 3 Doses (0, 1, 6 Months)  B. <b>2 Doses (0, 6-12 Months)</b>  C. Single Dose  D. 3 Doses (0, 2, 6 Months) <i>Answer: B. &lt;15 Years = 2 Doses (0, 6-12 Months).</i></p>
+<ol><li><b>Gonorrhoea AMR — ceftriaxone resistance mechanism?</b></li></ol>
+<p>A. Efflux Pump  B. <b>penA Mosaic Mutations (XXXIV, XIX)</b>  C. 23S rRNA Mutation  D. gyrA Mutation <i>Answer: B. penA Mosaic Mutations (XXXIV, XIX) + porB + mtrR.</i></p>
+<ol><li><b>M. genitalium macrolide resistance — first-line alternative?</b></li></ol>
+<p>A. Doxycycline  B. <b>Moxifloxacin 400mg OD × 7-14 Days</b>  C. Azithromycin Extended  D. Ceftriaxone <i>Answer: B. Moxifloxacin 400mg OD × 7-14 Days (Preferred for Macrolide-Resistant M. genitalium).</i></p>
+<ol><li><b>Partner notification for primary syphilis — lookback period?</b></li></ol>
+<p>A. 30 Days  B. <b>3 Months + Duration of Symptoms</b>  C. 6 Months  D. 1 Year <i>Answer: B. 3 Months + Duration of Symptoms.</i></p>
+<ol><li><b>EPT (Expedited Partner Therapy) — which STIs in UK?</b></li></ol>
+<p>A. All STIs  B. <b>Chlamydia &amp; Trichomonas (Oral); Gonorrhoea Complex (Injection)</b>  C. Only Gonorrhoea  D. Only Syphilis <i>Answer: B. CT/TV Oral (Legal Where Permitted); GC Requires Injection (Complex); Syphilis Not Suitable.</i></p>
+<ol><li><b>HPV vaccination catch-up — upper age limit for females in UK?</b></li></ol>
+<p>A. 18 Years  B. <b>26 Years</b>  C. 30 Years  D. 45 Years <i>Answer: B. Females ≤26 Years (Shared Clinical Decision 27-45 Years).</i></p>
+<ol><li><b>Gonorrhoea AMR surveillance — WHO programme?</b></li></ol>
+<p>A. GASP (Gonococcal Antimicrobial Surveillance Programme)  B. WHO-GASP  C. Both A &amp; B  D. None <i>Answer: C. Both A &amp; B (WHO GASP = Gonococcal Antimicrobial Surveillance Programme).</i></p>
+<ol><li><b>Key population — MSM STI screening package?</b></li></ol>
+<p>A. HIV Only  B. <b>3-Site GC/CT (Urethral, Pharyngeal, Rectal) q3-6m, Syphilis q3-6m, HCV RNA Annual</b>  C. HIV + Syphilis Only  D. No Screening Needed <i>Answer: B. 3-Site GC/CT (Urethral, Pharyngeal, Rectal) q3-6m, Syphilis q3-6m, HCV RNA Annual.</i></p>
+<ol><li><b>Doxy-PEP — efficacy for bacterial STIs in MSM?</b></li></ol>
+<p>A. GC ↓90%, CT ↓90%, Syphilis ↓90%  B. <b>GC ↓55%, CT ↓88%, Syphilis ↓87% (DoxyPEP Trial)</b>  C. No Benefit  C. Only Syphilis Reduced <i>Answer: B. DoxyPEP Trial: GC ↓55%, CT ↓88%, Syphilis ↓87% (MSM/Trans Women on PrEP/HIV).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>MSM on PrEP requests STI screening. Recommended tests and frequency?</b></li></ol>
+<p>A. HIV Only Annually  B. <b>HIV + Syphilis + 3-Site GC/CT NAAT q3-6m + HCV RNA Annually</b>  C. HIV + Syphilis Only  D. HIV + HCV Only <i>Answer: B. Comprehensive 3-Monthly Screen (HIV, Syphilis, 3-Site GC/CT, HCV RNA Annual).</i></p>
+<ol><li><b>Gonorrhoea resistance — which antibiotic should NOT be used empirically?</b></li></ol>
+<p>A. Ceftriaxone  B. <b>Ciprofloxacin</b>  C. Azithromycin  D. Cefixime <i>Answer: B. Ciprofloxacin &gt;50% Global Resistance — Do Not Use Empirically.</i></p>
+<ol><li><b>Partner notification for early latent syphilis — lookback?</b></li></ol>
+<p>A. 3 Months  B. 6 Months  C. <b>1 Year</b>  D. 2 Years <i>Answer: C. Early Latent Syphilis (&lt;1 Year) → 1 Year Lookback.</i></p>
+<ol><li><b>M. genitalium macrolide-resistant — treatment?</b></li></ol>
+<p>A. Azithromycin 1g  B. <b>Moxifloxacin 400mg OD × 7-14 Days</b>  C. Doxycycline 100mg BD × 7d  D. Ceftriaxone 500mg IM <i>Answer: B. Moxifloxacin 400mg OD × 7-14 Days (Preferred for Macrolide-R).</i></p>
+<ol><li><b>Pregnant woman at booking — universal STI screening tests?</b></li></ol>
+<p>A. HIV Only  B. <b>Syphilis (RPR/VDRL+TPPA), HBV (HBsAg), HIV</b>  C. HIV + HCV  D. GC/CT Only <i>Answer: B. Universal at Booking: Syphilis (RPR/VDRL+TPPA), HBV (HBsAg), HIV.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.1 Chlamydia.md]] — Partner Notification, Screening, EPT</li><li>[[2.2 Gonorrhoea.md]] — AMR, GASP, Partner Notification, EPT</li><li>[[2.3 Syphilis.md]] — Partner Notification, Screening, Congenital Prevention</li><li>[[2.4-2.6 Other Bacterial STIs.md]] — Partner Notification, EPT</li><li>[[3.2 HSV.md]] — Partner Notification, Vaccination</li><li>[[3.3 HPV.md]] — Vaccination Programme, Screening</li><li>[[3.4 Hepatitis B &amp; C.md]] — Vaccination, Screening, PEP</li><li>[[3.5 Mpox.md]] — Vaccination, PEP, Key Populations</li><li>[[3.6 Other Viral STIs.md]] — Surveillance, Prevention</li><li>[[4.1-4.4 Parasitic &amp; Fungal STIs.md]] — Partner Notification, Treatment</li><li>[[5.1-5.8 Syndromic Management.md]] — Partner Notification, TOC, Follow-Up</li><li>[[6. HIV-AIDS Cross-Reference.md]] — Integrated STI/HIV Services, Screening, PrEP</li><li>[[Population &amp; Newborn Screening]] — Antenatal Screening, Neonatal Prevention, Vaccination Programmes</li><li>[[9. ELSI]] — Stigma, Decriminalisation, EPT Ethics, Vaccine Equity, Partner Notification Confidentiality</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Chapter 13: Sexually Transmitted Infections — COMPLETE (15 Files)</b></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 7.1-7.4 Public Health &amp; Control · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

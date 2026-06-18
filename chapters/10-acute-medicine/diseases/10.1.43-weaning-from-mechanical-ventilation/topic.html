@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weaning from Mechanical Ventilation — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Weaning from Mechanical Ventilation</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Identify when patient is ready to wean</li><li>Apply daily screening for SBT eligibility</li><li>Conduct SBT (T-piece vs PS)</li><li>Interpret RSBI</li><li>Identify extubation failure and management</li><li>Perform cuff leak test</li><li>Manage post-extubation stridor</li><li>Decide tracheostomy timing</li><li>Apply NIV as rescue post-extubation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions (Boles 2007)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Weaning</b>: process of reducing ventilator support → extubation</li><li><b>Simple weaning</b>: successful extubation after first SBT (~70%)</li><li><b>Difficult weaning</b>: failure of first SBT, success within 3 SBTs or ≤7 days (~20%)</li><li><b>Prolonged weaning</b>: failure of ≥3 SBTs OR &gt;7 days weaning (~10%)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Pathophysiology of Weaning Failure</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Respiratory</b>: increased work of breathing, muscle fatigue, gas exchange failure</li><li><b>Cardiac</b>: weaning-induced cardiac dysfunction (↑venous return, LV failure)</li><li><b>Neuro</b>: depressed drive, delirium, anxiety</li><li><b>Airway</b>: oedema, secretions, obstruction</li><li><b>Metabolic</b>: electrolyte abnormalities, malnutrition</li><li><b>Infective</b>: VAP, sepsis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Daily Screening for SBT Eligibility</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pre-Weaning Criteria</div>
+<ol><li><b>Underlying cause</b> of respiratory failure resolving/improved</li><li><b>Adequate oxygenation</b>: PaO₂/FiO₂ &gt;200, PEEP ≤5 cmH₂O, FiO₂ ≤0.4-0.5</li><li><b>Haemodynamic stability</b>: no/minimal vasopressors, MAP ≥65</li><li><b>Spontaneous breathing effort</b> present</li><li><b>Mental status</b>: arousable, GCS ≥8, able to follow commands</li><li><b>No acidaemia</b>: pH ≥7.30</li><li><b>Adequate cough</b>, manageable secretions</li><li><b>Afebrile</b> or improving infection</li></ol>
+<div class="sub-h">SBT Contraindications (Hold)</div>
+<ul><li>Active cardiac ischaemia, arrhythmia</li><li>Severe agitation, distress</li><li>Active seizures</li><li>Increased ICP</li><li>Active withdrawal</li><li>Aggressive suctioning needs</li><li>Recent major surgery (≤24 h)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Conducting SBT</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Method</div>
+<table class="ctable"><tr><th>Mode</th><th>Settings</th><th>Duration</th></tr><tr><td>------</td><td>----------</td><td>----------</td></tr><tr><td>**T-piece**</td><td>T-piece with O₂ (no PS/PEEP)</td><td>30-120 min</td></tr><tr><td>**PS + PEEP**</td><td>PS 5-8 cmH₂O + PEEP 5 cmH₂O</td><td>30-120 min</td></tr><tr><td>**CPAP**</td><td>CPAP 5 cmH₂O</td><td>30-120 min</td></tr><tr><td>**ATC (Automatic Tube Compensation)**</td><td>Compensation for ETT resistance</td><td>30-120 min</td></tr></table>
+<div class="sub-h">Pass Criteria</div>
+<ul><li><b>RR</b> ≤30-35/min</li><li><b>SpO₂</b> ≥90% (FiO₂ ≤0.4)</li><li><b>HR</b> &lt;120-140, no new arrhythmia</li><li><b>SBP</b> 90-180 mmHg</li><li><b>No distress</b> (no use of accessory muscles, paradoxical breathing, diaphoresis)</li><li><b>No change in mental status</b></li><li><b>Stable pH</b> ≥7.30</li></ul>
+<div class="sub-h">Fail Criteria</div>
+<ul><li>RR &gt;35 for &gt;5 min</li><li>SpO₂ &lt;90% on FiO₂ &gt;0.4</li><li>HR &gt;140 or &lt;50, new arrhythmia</li><li>SBP &gt;180 or &lt;90</li><li>Agitation, panic, diaphoresis</li><li>Increased work of breathing</li><li>pH &lt;7.30 or PaCO₂ rise &gt;10 mmHg</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Predictors of Successful Weaning</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">RSBI (Rapid Shallow Breathing Index)</div>
+<ul><li><b>Formula</b>: f/Vt (RR / Tidal Volume in L)</li><li><b>Threshold</b>: <b>RSBI &lt;105</b> predicts successful extubation</li><li><b>Measure</b>: 1 min of spontaneous breathing on T-piece or PS 0/PEEP 0</li><li><b>Sensitivity</b> ~80%, <b>Specificity</b> ~60%</li><li><b>High negative predictive value</b></li></ul>
+<div class="sub-h">Other Predictors</div>
+<table class="ctable"><tr><th>Test</th><th>Threshold</th><th>Notes</th></tr><tr><td>------</td><td>-----------</td><td>-------</td></tr><tr><td>**RSBI**</td><td><105</td><td>Most useful single test</td></tr><tr><td>**MIP (Max Inspiratory Pressure)**</td><td>≤-30 cmH₂O</td><td>Respiratory muscle strength</td></tr><tr><td>**C20/Cdyn ratio**</td><td>C20/Cdyn >0.8</td><td>Detect flow limitation</td></tr><tr><td>**P0.1** (airway occlusion pressure)</td><td><4-6 cmH₂O</td><td>Drive; high = fatiguing</td></tr><tr><td>**Abdominal paradox**</td><td>Absent</td><td>Good</td></tr><tr><td>**Cough strength**</td><td>Strong</td><td>Predicts extubation success</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Extubation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pre-Extubation Checklist</div>
+<ul><li>SBT passed</li><li><b>Cough strength</b> adequate</li><li><b>Secretions</b> manageable</li><li><b>Cuff leak test</b> (if high risk of laryngeal oedema)</li><li><b>Mental status</b> adequate (GCS ≥8)</li><li><b>Aspiration risk</b> assessed</li><li><b>No airway obstruction</b> concern</li></ul>
+<div class="sub-h">Cuff Leak Test</div>
+<ul><li><b>Why</b>: detect laryngeal oedema → post-extubation stridor</li><li><b>How</b>: deflate cuff, measure leak volume (difference between inspired and expired tidal volume)</li><li><b>Positive leak</b> (adequate): leak volume &gt;110-130 mL or &gt;10-15% of Vt</li><li><b>Negative leak</b> (poor): high risk of post-extubation stridor</li><li><b>High risk</b>: prolonged intubation, traumatic intubation, large ETT, female gender, asthma</li><li><b>If negative</b>: consider steroids (e.g., methylprednisolone 20-40 mg q4-6h × 24 h pre-extubation)</li></ul>
+<div class="sub-h">Extubation Steps</div>
+<ol><li>Pre-oxygenate</li><li>Suction oropharyngeal and tracheal</li><li>Deflate cuff</li><li>Remove ETT at end-inspiration (cough)</li><li>Supplemental O₂ (mask, NC)</li><li>Monitor (RR, SpO₂, stridor, distress)</li><li>If stridor: <b>stridor → racemic adrenaline, helium-O₂, re-intubate</b></li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Post-Extubation Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Monitoring</div>
+<ul><li>RR, SpO₂, work of breathing q1h initially</li><li>ABG at 1-2 h post-extubation</li><li>Watch for <b>stridor, distress, aspiration</b></li></ul>
+<div class="sub-h">Post-Extubation Stridor</div>
+<ul><li><b>Cause</b>: laryngeal oedema, laryngospasm, secretions</li><li><b>Risk factors</b>: prolonged MV (&gt;7 days), traumatic intubation, large ETT, female, asthma</li><li><b>Management</b>:</li><li>Mild: cool mist, reassurance</li><li>Moderate: <b>nebulised racemic adrenaline</b> (0.5-1 mL of 2.25% in 3 mL saline) + <b>dexamethasone 8 mg IV</b></li><li>Severe: <b>Heliox (helium-oxygen 70:30 or 80:20)</b>, prepare re-intubation</li><li><b>Re-intubate</b> if SpO₂ &lt;90%, exhaustion, severe distress</li></ul>
+<div class="sub-h">Extubation Failure</div>
+<ul><li><b>Definition</b>: need for re-intubation within <b>48-72 h</b> post-extubation</li><li><b>Rate</b>: 10-20% overall</li><li><b>Risk factors</b>: age &gt;65, CHF, COPD, prolonged MV, APACHE II, weak cough, abundant secretions, delirium, positive fluid balance</li><li><b>Causes</b>: upper airway oedema, residual sedation, respiratory muscle weakness, cardiac failure, aspiration, VAP</li><li><b>Management</b>:</li><li>Treat cause (steroids for oedema, diuretics for cardiac, antibiotics for VAP)</li><li><b>NIV rescue</b> (in COPD especially)</li><li><b>Re-intubate</b> if failure</li></ul>
+<div class="sub-h">NIV as Rescue Post-Extubation</div>
+<ul><li><b>Indication</b>: <b>high-risk COPD patients</b> developing post-extubation respiratory failure</li><li><b>Evidence</b>: Esteban 2004 — NIV delays but doesn't reduce mortality in mixed; Ferrer 2009 — early NIV in high-risk reduces re-intubation</li><li><b>Apply early</b> in at-risk patients (prophylactic)</li><li><b>Avoid</b> in: post-extubation in non-COPD (worse outcomes)</li><li><b>Be ready to intubate</b> if fails</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Tracheostomy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Indications</div>
+<ul><li><b>Prolonged MV</b> (&gt;7-14 days expected)</li><li><b>Failed extubation</b> (multiple)</li><li><b>Severe upper airway obstruction</b> (tumour, bilateral vocal cord palsy)</li><li><b>Airway protection</b> (severe bulbar dysfunction, neuromuscular disease)</li><li><b>Secretion management</b> (ineffective cough)</li><li><b>Failed SBT</b> due to airway/secretion issues</li></ul>
+<div class="sub-h">Timing</div>
+<ul><li><b>Early (≤7 days)</b>: no clear mortality benefit; may reduce sedation, ICU LOS</li><li><b>Late (≥10-14 days)</b>: standard for most</li><li><b>TTM trial</b>: early tracheostomy did not improve 30-day mortality</li><li><b>Decision</b>: individualise; consider patient trajectory</li></ul>
+<div class="sub-h">Types</div>
+<ul><li><b>Percutaneous</b> (Ciaglia, Griggs): bedside, ICU; less infection</li><li><b>Surgical</b>: theatre, severe cervical spine injury, obesity, anatomical difficulties</li></ul>
+<div class="sub-h">Decannulation</div>
+<ul><li>Patient passing SBT + cuff leak + swallowing assessment</li><li><b>Downsize</b> to smaller tube, then <b>cork</b> for 24-48 h</li><li><b>If tolerated</b> → decannulate</li><li><b>Monitor</b> for stridor, distress</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Weaning Strategies</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pressure Support Weaning</div>
+<ul><li><b>Gradual reduction</b> in PS (e.g., 2-4 cmH₂O/day)</li><li>Most common, smooth, easy</li></ul>
+<div class="sub-h">T-piece Weaning</div>
+<ul><li><b>Incremental</b> (e.g., 5 min/h → 30 min/h → 2 h → 4 h → 24 h)</li><li>Or <b>once daily</b> T-piece trial</li><li>Esteban 1995: once daily SBT equivalent to multiple</li></ul>
+<div class="sub-h">Protocolised Weaning</div>
+<ul><li><b>Nurse/therapist-driven</b> protocols reduce duration vs physician-driven</li><li><b>Standardised</b> daily screening, SBT, extubation criteria</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Specific Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">COPD Weaning</div>
+<ul><li><b>Slower</b> weaning (respiratory muscle fatigue risk)</li><li><b>NIV</b> as rescue (BTS evidence-based)</li><li><b>Watch</b> for weaning-induced cardiac dysfunction</li><li><b>BiPAP</b> 5-15 cmH₂O + 5 cmH₂O EPAP for 1-2 h initially, then longer</li></ul>
+<div class="sub-h">Cardiac Weaning</div>
+<ul><li><b>Weaning-induced cardiac dysfunction</b>: ↑venous return + ↓afterload reversal → LV failure</li><li><b>Risk</b>: pre-existing LV dysfunction</li><li><b>Manage</b>: diuretics, vasodilators, slower weaning</li><li><b>Trial</b>: extubate with BiPAP support</li></ul>
+<div class="sub-h">Neuro-Weaning</div>
+<ul><li><b>GCS</b> must be adequate (≥8)</li><li><b>Delirium</b> screen (CAM-ICU)</li><li><b>Airway protection</b> in bulbar dysfunction</li><li><b>Tracheostomy</b> common in stroke, TBI, neuromuscular disease</li></ul>
+<div class="sub-h">Prolonged MV (PMV)</div>
+<ul><li><b>Definition</b>: MV ≥21 days (or ≥14 days in some definitions)</li><li><b>Tracheostomy</b> usual</li><li><b>Long-term weaning</b> units (LWU)</li><li><b>Slow</b> weaning, individualised</li><li><b>Psychological</b> support (anxiety, depression common)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Complications of Prolonged MV/Weaning</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>VAP</b> (ventilator-associated pneumonia)</li><li><b>VILI</b> (ventilator-induced lung injury)</li><li><b>Diaphragm atrophy/disuse myotrauma</b></li><li><b>ICU-acquired weakness</b> (CIP, CIM)</li><li><b>Delirium</b>, PTSD, depression</li><li><b>Tracheostomy complications</b>: bleeding, displacement, stenosis, fistula</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Simple weaning</b>: 60-70% success</li><li><b>Difficult weaning</b>: 20% success</li><li><b>Prolonged weaning</b>: 10% success</li><li><b>Extubation failure</b>: ↑mortality (especially if re-intubated)</li><li><b>NIV rescue</b> reduces re-intubation in COPD</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Daily screening for SBT</b> (resolution of disease + PaO₂/FiO₂ &gt;200 + PEEP ≤5 + haemodynamic stability)</li><li><b>SBT</b>: T-piece 30-120 min OR PS 5-8 + PEEP 5 × 30-120 min</li><li><b>RSBI &lt;105</b> = best single predictor of extubation success</li><li><b>Simple vs difficult vs prolonged weaning</b> (Boles classification)</li><li><b>Cuff leak test</b>: leak volume &gt;110-130 mL → safe to extubate</li><li><b>Negative cuff leak</b> → steroids pre-extubation</li><li><b>Post-extubation stridor</b>: racemic adrenaline, dexamethasone, Heliox, re-intubate</li><li><b>Extubation failure</b>: re-intubation within 48-72 h</li><li><b>NIV rescue</b> in high-risk COPD (not non-COPD)</li><li><b>Tracheostomy</b>: prolonged MV (&gt;7-14 days)</li><li><b>Early tracheostomy</b>: no mortality benefit (TTM trial)</li><li><b>Once-daily SBT</b> equivalent to multiple (Esteban)</li><li><b>Protocolised weaning</b> reduces duration</li><li><b>Weaning-induced cardiac dysfunction</b>: LV failure, manage with diuretics</li><li><b>MIP ≤-30 cmH₂O</b> = adequate respiratory muscle strength</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>SBT criteria and conduct</li><li>RSBI calculation and interpretation</li><li>Cuff leak test</li><li>Extubation failure causes</li><li>Post-extubation stridor management</li><li>NIV rescue post-extubation</li><li>Tracheostomy indications and timing</li><li>Weaning-induced cardiac dysfunction</li><li>Difficult vs prolonged weaning</li><li>TTM trial (early tracheostomy)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>RSBI &lt;105 predicts success</b> (not 100%)</li><li><b>SBT duration 30-120 min</b> (not 5 min)</li><li><b>Cuff leak negative</b> = high-risk oedema</li><li><b>NIV rescue</b> in <b>COPD only</b> (worse in non-COPD)</li><li><b>Re-intubate</b> if SpO₂ &lt;90%, exhaustion</li><li><b>Once-daily SBT</b> equivalent to multiple</li><li><b>Early tracheostomy</b> does NOT reduce mortality</li><li><b>Tracheostomy decannulation</b> requires cuff leak + swallow + SBT</li><li><b>Heliox</b> for severe stridor (not first-line in mild)</li><li><b>Steroids</b> before extubation if negative cuff leak</li><li><b>Weaning failure</b> ≠ extubation failure</li><li><b>Weaning-induced pulmonary oedema</b> in cardiac patients</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>SBT pass</b>: <b>35, 90, 140, 180</b> (RR&lt;35, SpO₂&gt;90, HR&lt;140, SBP&lt;180)</li><li><b>RSBI &lt;105</b> = success</li><li><b>Cuff leak &gt;110 mL</b> = safe</li><li><b>Stridor Rx</b>: <b>Racemic Epi + Dexa + Heliox + Re-intubate</b></li><li><b>NIV rescue</b> in <b>COPD</b></li><li><b>Tracheostomy</b> = <b>prolonged MV</b></li><li><b>Weaning 3 types</b>: <b>Simple, Difficult, Prolonged</b></li><li><b>BTS/ICS</b>: <b>Once-daily SBT</b> equivalent</li><li><b>Daily screening</b>: <b>Resolution + Oxygenation + Haemodynamics + Mental + Cough</b></li><li><b>Cuff leak</b> if prolonged MV, large ETT, female, asthma</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Weaning MV))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definitions</div>
+<div class="mm-node mm-l3">– Simple (1st SBT)</div>
+<div class="mm-node mm-l3">– Difficult (3 SBT, &lt;7d)</div>
+<div class="mm-node mm-l3">– Prolonged (&gt;=3 SBT, &gt;7d)</div>
+<div class="mm-node mm-l2">Daily Screening</div>
+<div class="mm-node mm-l3">– Disease resolving</div>
+<div class="mm-node mm-l3">– PaO2/FiO2 &gt;200</div>
+<div class="mm-node mm-l3">– PEEP &lt;=5</div>
+<div class="mm-node mm-l3">– Haemodynamic stable</div>
+<div class="mm-node mm-l3">– Mental adequate</div>
+<div class="mm-node mm-l3">– Cough, secretions</div>
+<div class="mm-node mm-l2">SBT</div>
+<div class="mm-node mm-l3">– T-piece 30-120 min</div>
+<div class="mm-node mm-l3">– PS 5-8 + PEEP 5</div>
+<div class="mm-node mm-l3">– CPAP 5</div>
+<div class="mm-node mm-l3">– Pass: RR&lt;35, SpO2&gt;90, HR&lt;140, SBP&lt;180</div>
+<div class="mm-node mm-l2">Predictors</div>
+<div class="mm-node mm-l3">– RSBI &lt;105 (f/Vt)</div>
+<div class="mm-node mm-l3">– MIP &lt;=-30</div>
+<div class="mm-node mm-l3">– P0.1 &lt;4</div>
+<div class="mm-node mm-l3">– Cough strong</div>
+<div class="mm-node mm-l3">– No paradox</div>
+<div class="mm-node mm-l2">Extubation</div>
+<div class="mm-node mm-l3">– Cuff leak test (&gt;110 mL)</div>
+<div class="mm-node mm-l3">– Cough adequate</div>
+<div class="mm-node mm-l3">– Secretions manageable</div>
+<div class="mm-node mm-l3">– Aspiration risk</div>
+<div class="mm-node mm-l2">Stridor</div>
+<div class="mm-node mm-l3">– Racemic adrenaline</div>
+<div class="mm-node mm-l3">– Dexamethasone</div>
+<div class="mm-node mm-l3">– Heliox</div>
+<div class="mm-node mm-l3">– Re-intubate</div>
+<div class="mm-node mm-l2">Failure</div>
+<div class="mm-node mm-l3">– Re-intubation 48-72h</div>
+<div class="mm-node mm-l3">– 10-20%</div>
+<div class="mm-node mm-l3">– Risk: age, CHF, COPD, prolonged MV</div>
+<div class="mm-node mm-l3">– NIV rescue in COPD</div>
+<div class="mm-node mm-l2">Tracheostomy</div>
+<div class="mm-node mm-l3">– Prolonged MV (&gt;7-14d)</div>
+<div class="mm-node mm-l3">– Failed extubation</div>
+<div class="mm-node mm-l3">– Upper airway obstruction</div>
+<div class="mm-node mm-l3">– Bulbar dysfunction</div>
+<div class="mm-node mm-l3">– Early vs late (TTM trial: no benefit)</div>
+<div class="mm-node mm-l2">Decannulation</div>
+<div class="mm-node mm-l3">– Cuff leak, swallow</div>
+<div class="mm-node mm-l3">– Downsize, cork</div>
+<div class="mm-node mm-l3">– 24-48h tolerated</div>
+<div class="mm-node mm-l2">Populations</div>
+<div class="mm-node mm-l3">– COPD: slower, NIV</div>
+<div class="mm-node mm-l3">– Cardiac: LV failure, diuretics</div>
+<div class="mm-node mm-l3">– Neuro: GCS, delirium, airway</div>
+<div class="mm-node mm-l3">– PMV: tracheostomy, LWU</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flowchart — Weaning</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Ventilated Patient</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Daily Screening: Resolution + Oxygenation + Haemodynamics + Mental + Cough</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Calculate RSBI</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">SBT T-piece or PS 30-120 min</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Cuff Leak Test</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Extubate</div>
+<div class="fc-node" data-id="G">Steroids 24h, re-test</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Monitor for stridor, distress</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Racemic Epi + Dexa + Heliox + Re-intubate</div>
+<div class="fc-node" data-id="J">Continue weaning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Re-intubate</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flowchart — Post-Extubation</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Extubated</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Monitor RR, SpO2, distress</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Continue monitoring</div>
+<div class="fc-node" data-id="D">High Risk COPD?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">NIV Trial 1-2h</div>
+<div class="fc-node" data-id="F">Re-intubate if severe</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Identify cause, treat, re-extubate later</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Daily screening</b>: Disease resolving + PaO₂/FiO₂ &gt;200 + PEEP ≤5 + haemodynamic + mental</li><li><b>SBT</b>: T-piece or PS 5-8/PEEP 5 × 30-120 min</li><li><b>RSBI &lt;105</b> predicts success</li><li><b>Cuff leak test</b>: leak &gt;110-130 mL = safe</li><li><b>Extubation failure</b>: re-intubation 48-72 h, 10-20%</li><li><b>Post-extubation stridor</b>: racemic adrenaline + dexamethasone + Heliox</li><li><b>NIV rescue</b> in <b>high-risk COPD</b> (not non-COPD)</li><li><b>Tracheostomy</b>: prolonged MV (&gt;7-14 d)</li><li><b>Early tracheostomy</b>: no mortality benefit (TTM trial)</li><li><b>3 weaning types</b>: Simple / Difficult / Prolonged</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>List daily SBT screening criteria</li><li>State RSBI threshold and calculation</li><li>Outline cuff leak test</li><li>Describe post-extubation stridor management</li><li>List tracheostomy indications</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Daily SBT screening criteria</li><li>SBT methods (T-piece, PS)</li><li>RSBI &lt;105</li><li>Cuff leak test</li><li>Extubation failure definition</li><li>Post-extubation stridor management</li><li>NIV rescue (COPD)</li><li>Tracheostomy indications</li><li>Weaning 3 types (Simple/Difficult/Prolonged)</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Cuff leak negative → steroids</li><li>Cuff leak thresholds (&gt;110-130 mL)</li><li>Risk factors for extubation failure</li><li>T-piece vs PS for SBT</li><li>Once-daily SBT equivalent</li><li>Early vs late tracheostomy</li><li>Tracheostomy decannulation steps</li><li>Weaning-induced cardiac dysfunction</li><li>MIP ≤-30</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Boles 2007 classification</li><li>Esteban 1995 once-daily SBT</li><li>TTM trial</li><li>C20/Cdyn ratio</li><li>P0.1</li><li>ATC mode</li><li>Heliox</li><li>BTS/ICS guidelines</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definitions of weaning (Simple, Difficult, Prolonged)</li><li>Pathophysiology of weaning failure</li><li>Daily screening criteria for SBT</li><li>SBT methods (T-piece vs PS)</li><li>Pass/fail criteria</li><li>Predictors of success (RSBI, MIP, P0.1, cough)</li><li>Extubation checklist (cuff leak, secretions, mental)</li><li>Cuff leak test (negative → steroids)</li><li>Post-extubation stridor management</li><li>Extubation failure (10-20%, risk factors, management)</li><li>NIV rescue (COPD)</li><li>Tracheostomy (indications, timing, decannulation)</li><li>Specific populations (COPD, cardiac, neuro, PMV)</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>SBT screening criteria</li><li>RSBI calculation</li><li>Cuff leak test</li><li>Stridor management</li><li>Tracheostomy timing</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"RSBI &lt;105 predicts extubation success"</li><li>"Cuff leak &gt;110-130 mL = safe to extubate"</li><li>"SBT: T-piece or PS 5-8 + PEEP 5 × 30-120 min"</li><li>"Extubation failure: re-intubation 48-72 h, 10-20%"</li><li>"Post-extubation stridor: racemic epi + dexamethasone + Heliox"</li><li>"NIV rescue in high-risk COPD (not non-COPD)"</li><li>"Tracheostomy for prolonged MV (&gt;7-14 d)"</li><li>"Early tracheostomy: no mortality benefit (TTM)"</li><li>"Once-daily SBT equivalent to multiple (Esteban)"</li><li>"Daily screening: resolution + PaO₂/FiO₂ &gt;200 + PEEP ≤5"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>65-year-old ventilated for pneumonia, day 5, P/F 280, PEEP 5, RASS 0 → daily screening → SBT → extubate</li><li>70-year-old COPD, 10 days MV, RSBI 80, cuff leak 150 mL → extubate, NIV if needed</li><li>60-year-old traumatic intubation, 14 days MV, cuff leak 50 mL → methylprednisolone 24 h, re-test</li><li>Prolonged MV, day 12 → consider tracheostomy</li><li>Post-extubation stridor → racemic epi + dexa + Heliox, re-intubate if severe</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>SBT: T-piece or PS/PEEP × 30-120 min</li><li>RSBI &lt;105 = success</li><li>Cuff leak &gt;110 mL = safe</li><li>Stridor: racemic + dexa + Heliox</li><li>NIV rescue: COPD</li><li>Tracheostomy: &gt;7-14 d</li><li>Early trach: no benefit</li><li>Simple/Difficult/Prolonged weaning</li><li>Cuff leak negative → steroids</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Weaning = process of reducing ventilator support → extubation</b>. <b>3 types</b> (Boles 2007): <b>Simple</b> (success on first SBT, ~70%), <b>Difficult</b> (3 SBTs, ≤7 d, ~20%), <b>Prolonged</b> (≥3 SBTs, &gt;7 d, ~10%). <b>Daily screening for SBT</b>: underlying disease resolving + PaO₂/FiO₂ &gt;200 + PEEP ≤5 + haemodynamic stability (MAP ≥65, minimal vasopressors) + GCS ≥8 + adequate cough + manageable secretions. <b>SBT methods</b>: T-piece 30-120 min OR PS 5-8 + PEEP 5 cmH₂O 30-120 min OR CPAP 5 cmH₂O. <b>Pass</b>: RR &lt;35, SpO₂ ≥90%, HR &lt;140, SBP &lt;180, no distress. <b>RSBI (Rapid Shallow Breathing Index) &lt;105</b> = best single predictor of success (f/Vt). <b>MIP ≤-30 cmH₂O</b> = adequate muscle strength. <b>Extubation</b>: ensure cuff leak &gt;110-130 mL (if negative → methylprednisolone 20-40 mg q4-6h × 24 h pre-extubation). <b>Post-extubation stridor</b>: racemic adrenaline + dexamethasone + Heliox + re-intubate if severe. <b>Extubation failure</b>: 10-20%, re-intubation within 48-72 h, risk factors (age, CHF, COPD, prolonged MV, weak cough, delirium). <b>NIV rescue</b> in high-risk COPD only (worse in non-COPD). <b>Tracheostomy</b>: prolonged MV (&gt;7-14 d), failed extubation, severe upper airway obstruction, bulbar dysfunction. <b>Early tracheostomy (TTM)</b>: no mortality benefit. <b>Decannulation</b>: cuff leak + swallow assessment + SBT pass. <b>Specific populations</b>: COPD (slow, NIV), cardiac (weaning-induced LV failure, diuretics), neuro (GCS, delirium, airway protection), PMV (LWU).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>RSBI &lt;105 indicates:</li></ol>
+<p>A. Failure B. <b>Likely successful extubation</b> C. Tracheostomy needed D. Prolonged MV</p>
+<ol><li>Cuff leak volume &lt;110 mL suggests:</li></ol>
+<p>A. Safe to extubate B. <b>High risk of post-extubation stridor</b> C. Re-intubate now D. No concern</p>
+<ol><li>SBT typically lasts:</li></ol>
+<p>A. 5 min B. 15 min C. <b>30-120 min</b> D. 4-6 h</p>
+<ol><li>Extubation failure defined as re-intubation within:</li></ol>
+<p>A. 6 h B. <b>48-72 h</b> C. 1 week D. 1 month</p>
+<ol><li>First-line post-extubation stridor management:</li></ol>
+<p>A. Re-intubate B. <b>Nebulised racemic adrenaline + dexamethasone</b> C. Heliox only D. Heliox first</p>
+<ol><li>NIV rescue post-extubation is effective in:</li></ol>
+<p>A. All patients B. <b>High-risk COPD</b> C. Heart failure D. Young patients</p>
+<ol><li>Tracheostomy indication:</li></ol>
+<p>A. &lt;24 h MV B. <b>Prolonged MV (&gt;7-14 days)</b> C. Pneumonia D. Hyperkalaemia</p>
+<ol><li>Early tracheostomy (TTM trial):</li></ol>
+<p>A. Reduced mortality B. <b>Did not reduce mortality</b> C. Reduced VAP D. Always indicated</p>
+<ol><li>Once-daily SBT is equivalent to:</li></ol>
+<p>A. Continuous T-piece B. <b>Multiple SBTs (Esteban 1995)</b> C. Pressure support D. CPAP</p>
+<ol><li>Negative cuff leak pre-extubation management:</li></ol>
+<p>A. Immediate extubation B. <b>Steroids 24 h pre-extubation, re-test</b> C. Re-intubate D. Tracheostomy</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">27</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>65-year-old 5 days MV, PaO₂/FiO₂ 280, PEEP 5, RASS 0, RSBI 75. Next:</li></ol>
+<p>A. Tracheostomy B. <b>SBT (T-piece or PS)</b> C. Continue MV D. NMJ blockade</p>
+<ol><li>60-year-old, 14 days MV, RSBI 80, cuff leak 80 mL. Best action:</li></ol>
+<p>A. Immediate extubation B. <b>Steroids × 24 h, re-test, then extubate</b> C. Tracheostomy D. Continue MV</p>
+<ol><li>Post-extubation, inspiratory stridor, SpO₂ 90%. First action:</li></ol>
+<p>A. Re-intubate B. <b>Nebulised racemic adrenaline + dexamethasone</b> C. Heliox D. Tracheostomy</p>
+<ol><li>COPD patient, post-extubation, RR 30, SpO₂ 88%, distress. Next:</li></ol>
+<p>A. Re-intubate B. <b>Trial of NIV (high-risk COPD)</b> C. Morphine D. Heliox</p>
+<ol><li>12 days MV, failed 2 SBTs, RSBI 90. Plan:</li></ol>
+<p>A. Extubate B. <b>Continue weaning, daily SBT; consider tracheostomy if &gt;14-21 d</b> C. NMJ blockade D. Tracheostomy now</p>
+<ol><li>SBT fail criteria include all EXCEPT:</li></ol>
+<p>A. RR &gt;35 B. SpO₂ &lt;90% C. HR &gt;140 D. <b>RR &lt;20</b></p>
+<ol><li>Weaning classification (Boles 2007): simple weaning = success on:</li></ol>
+<p>A. 2nd SBT B. <b>1st SBT</b> C. 3rd SBT D. &gt;3 SBTs</p>
+<ol><li>Tracheostomy decannulation requires:</li></ol>
+<p>A. Just SBT B. <b>Cuff leak + swallow assessment + SBT pass</b> C. Nothing D. Bronchoscopy</p>
+<ol><li>Weaning-induced cardiac dysfunction in cardiac patients managed by:</li></ol>
+<p>A. Stop weaning B. <b>Diuretics, vasodilators, slower weaning</b> C. NMJ blockade D. β-blockers only</p>
+<ol><li>MIP ≤-30 cmH₂O indicates:</li></ol>
+<p>A. Failure B. <b>Adequate respiratory muscle strength</b> C. Tracheostomy D. Severe weakness</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">28</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: RSBI threshold</li></ul>
+<p>A: &lt;105</p>
+<ul><li>Q: Cuff leak volume</li></ul>
+<p>A: &gt;110-130 mL = safe</p>
+<ul><li>Q: SBT duration</li></ul>
+<p>A: 30-120 min</p>
+<ul><li>Q: Extubation failure defined</li></ul>
+<p>A: Re-intubation 48-72 h</p>
+<ul><li>Q: Stridor Rx</li></ul>
+<p>A: Racemic epi + dexa + Heliox</p>
+<ul><li>Q: NIV rescue</li></ul>
+<p>A: High-risk COPD</p>
+<ul><li>Q: Tracheostomy indication</li></ul>
+<p>A: Prolonged MV &gt;7-14 d</p>
+<ul><li>Q: Early tracheostomy</li></ul>
+<p>A: No mortality benefit (TTM)</p>
+<ul><li>Q: Weaning 3 types</li></ul>
+<p>A: Simple / Difficult / Prolonged</p>
+<ul><li>Q: Negative cuff leak</li></ul>
+<p>A: Steroids 24 h</p>
+<ul><li>Q: Once-daily SBT</li></ul>
+<p>A: Equivalent to multiple (Esteban)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">29</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — RSBI &lt;105 predicts success. <b>MCQ 2</b>: B — Negative cuff leak = high stridor risk. <b>MCQ 3</b>: C — SBT 30-120 min. <b>MCQ 4</b>: B — Extubation failure 48-72 h. <b>MCQ 5</b>: B — Racemic adrenaline + dexamethasone. <b>MCQ 6</b>: B — NIV rescue in COPD. <b>MCQ 7</b>: B — Prolonged MV &gt;7-14 d. <b>MCQ 8</b>: B — Early trach: no benefit (TTM). <b>MCQ 9</b>: B — Once-daily SBT = multiple. <b>MCQ 10</b>: B — Negative cuff leak → steroids.</p>
+<p><b>SBA 1</b>: B — SBT. <b>SBA 2</b>: B — Steroids first. <b>SBA 3</b>: B — Racemic + dexa. <b>SBA 4</b>: B — NIV trial in COPD. <b>SBA 5</b>: B — Continue weaning; consider trach if prolonged. <b>SBA 6</b>: D — RR &lt;20 is normal. <b>SBA 7</b>: B — Simple = 1st SBT. <b>SBA 8</b>: B — Cuff leak + swallow + SBT. <b>SBA 9</b>: B — Diuretics + vasodilators. <b>SBA 10</b>: B — MIP ≤-30 = adequate.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-15</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Weaning from Mechanical Ventilation · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

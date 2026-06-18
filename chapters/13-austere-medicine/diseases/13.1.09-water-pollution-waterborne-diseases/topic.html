@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Water Pollution &amp; Waterborne Diseases — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">MEDICINE IN AUSTERE ENVIRONMENTS</span>
+      <div class="h1">Water Pollution &amp; Waterborne Diseases</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Water Quality Parameters</b>: Microbiological, chemical, radiological, physical</li><li>[ ] Classify <b>Water Contaminants</b>: Microbiological (bacteria, viruses, protozoa, helminths), chemical (heavy metals, nitrates, fluoride, pesticides, PFAS), radiological</li><li>[ ] Recognise <b>Waterborne Diseases</b>: Cholera, typhoid, hepatitis A/E, giardiasis, cryptosporidiosis, shigellosis</li><li>[ ] Apply <b>Water Treatment</b>: Disinfection (chlorination, ozonation, UV), filtration, coagulation, point-of-use</li><li>[ ] Apply <b>Water Safety Plans (WSPs)</b>: WHO framework, hazard analysis, critical control points</li><li>[ ] Apply <b>WHO Guidelines</b>: Drinking-water quality (2017), recreational water, wastewater reuse</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Water Quality Parameters & Contaminants</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Categories of Contaminants</div>
+<table class="ctable"><tr><th>Category</th><th>Parameters</th><th>Health Significance</th></tr><tr><td>----------</td><td>------------</td><td>---------------------</td></tr><tr><td>**Microbiological**</td><td>**E. coli / Thermotolerant Coliforms** (Faecal Indicator), **Enterococci**, **Clostridium perfringens**, **Coliphages**, **Pathogens** (Bacteria, Viruses, Protozoa, Helminths)</td><td>**Faecal Contamination**, **Pathogen Presence**</td></tr><tr><td>**Chemical**</td><td>**Heavy Metals** (As, Pb, Hg, Cd, Cr), **Nitrate/Nitrite**, **Fluoride**, **Pesticides**, **PFAS**, **Pharmaceuticals**, **DBPs** (THMs, HAAs)</td><td>**Acute/Chonic Toxicity**, **Cancer**, **Endocrine Disruption**</td></tr><tr><td>**Radiological**</td><td>**Radon**, **Uranium**, **Radium**, **Gross Alpha/Beta**</td><td>**Cancer Risk**</td></tr><tr><td>**Physical/Aesthetic**</td><td>**Turbidity**, **Colour**, **Taste/Odour**, **pH**, **TDS**, **Hardness**</td><td>**Acceptability**, **Treatment Efficiency Indicator**</td></tr></table>
+<div class="callout">[!tip] <b>E. coli / Thermotolerant Coliforms = Primary Faecal Indicator</b>. <b>Enterococci = Better for Marine/Recreational Water</b>. <b>Turbidity = Key for Filtration Efficiency &amp; Disinfection Efficacy</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Water Contaminants — Health Significance</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Chemical Contaminants of Major Concern</div>
+<table class="ctable"><tr><th>Contaminant</th><th>Source</th><th>Health Effect</th><th>WHO Guideline Value</th></tr><tr><td>-------------</td><td>--------</td><td>---------------</td><td>---------------------</td></tr><tr><td>**Arsenic (As)**</td><td>**Geogenic (Groundwater)**, Mining, Pesticides</td><td>**Skin Lesions, Cancer (Skin, Lung, Bladder), CVD, Diabetes, Neurodevelopment**</td><td>**10 µg/L**</td></tr><tr><td>**Lead (Pb)**</td><td>**Plumbing (Pipes, Solder, Brass)**, Industrial, Paint</td><td>**Neurodevelopmental (Children IQ Loss), CVD, Renal**</td><td>**10 µg/L**</td></tr><tr><td>**Mercury (Hg)**</td><td>**Industrial, Mining, Coal Combustion**</td><td>**Neurotoxicity (Methylmercury), Renal, Developmental**</td><td>**6 µg/L (Inorganic)**</td></tr><tr><td>**Fluoride (F⁻)**</td><td>**Geogenic (Groundwater), Fluoridation**</td><td>**Dental/Skeletal Fluorosis** (High), **Caries Prevention** (Optimal ~0.5-1.0 mg/L)</td><td>**1.5 mg/L**</td></tr><tr><td>**Nitrate / Nitrite**</td><td>**Agriculture (Fertilisers, Manure), Septic Tanks, Wastewater**</td><td>**Methaemoglobinaemia (Infants)**, **Potential Cancer**</td><td>**50 mg/L (NO3-), 3 mg/L (NO2-)**</td></tr><tr><td>**Fluoride**</td><td>Geogenic, Fluoridation</td><td>Dental/Skeletal Fluorosis</td><td>1.5 mg/L</td></tr><tr><td>**Pesticides** (Organophosphates, Organochlorines, Carbamates, Pyrethroids)</td><td>Agriculture, Vector Control</td><td>**Acute Toxicity**, **Neurotoxicity**, **Endocrine Disruption, Cancer**</td><td>Compound-Specific</td></tr><tr><td>**DBPs (THMs, HAAs)**</td><td>**Chlorination of Organic Matter**</td><td>**Cancer (Bladder), Reproductive Effects**</td><td>**THMs: 100 µg/L (Sum)**</td></tr><tr><td>**PFAS (PFOS, PFOA)**</td><td>**Industrial, Firefighting Foam, Consumer Products**</td><td>**Immune, Thyroid, Cancer, Developmental**</td><td>**Provisional: 100 ng/L (Sum PFOS+PFOA)**</td></tr><tr><td>**Pharmaceuticals / Endocrine Disruptors**</td><td>Wastewater, Agriculture</td><td>**Emerging Concern** (Endocrine, Resistance)</td><td>**Under Review**</td></tr></table>
+<div class="callout">[!warning] <b>Arsenic = Major Global Problem</b> (Bangladesh, India, Pakistan, Argentina, Chile, China, USA). <b>Nitrate = Infant Methaemoglobinaemia (Blue Baby Syndrome)</b>. <b>Fluoride = Dental/Skeletal Fluorosis (Endemic Areas)</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Microbiological Waterborne Diseases</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Major Waterborne Pathogens</div>
+<table class="ctable"><tr><th>Pathogen</th><th>Disease</th><th>Transmission</th><th>Key Features</th></tr><tr><td>----------</td><td>---------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Vibrio cholerae O1/O139**</td><td>**Cholera**</td><td>Water/Food</td><td>**Rice-Water Stools**, **Rapid Dehydration**, **Epidemic Potential**</td></tr><tr><td>**Salmonella Typhi / Paratyphi**</td><td>**Typhoid / Paratyphoid Fever**</td><td>Water/Food</td><td>**Fever, Relative Bradycardia, Rose Spots, Hepatosplenomegaly**</td></tr><tr><td>**Shigella spp.**</td><td>**Shigellosis (Dysentery)**</td><td>Water/Food/Person-to-Person</td><td>**Bloody Diarrhoea, Tenesmus, Fever, Toxic Megacolon**</td></tr><tr><td>**Salmonella non-typhoidal**</td><td>**Salmonellosis**</td><td>Food/Water</td><td>**Diarrhoea, Fever, Abdominal Cramps**</td></tr><tr><td>**E. coli (EHEC O157:H7)**</td><td>**Haemorrhagic Colitis, HUS**</td><td>Food/Water/Animal Contact</td><td>**Bloody Diarrhoea, HUS (Children)**</td></tr><tr><td>**Campylobacter jejuni**</td><td>**Campylobacteriosis**</td><td>Poultry, Water, Milk</td><td>**Bloody Diarrhoea, GBS Trigger**</td></tr><tr><td>**Hepatitis A Virus**</td><td>**Hepatitis A**</td><td>Water/Food/Person-to-Person</td><td>**Acute Hepatitis, Jaundice, Self-Limited**</td></tr><tr><td>**Hepatitis E Virus**</td><td>**Hepatitis E**</td><td>Water (Genotype 1/2), Zoonotic (3,4)</td><td>**Acute Hepatitis, High Mortality in Pregnancy**</td></tr><tr><td>**Giardia lamblia**</td><td>**Giardiasis**</td><td>Water (Cysts), Food, Person-to-Person</td><td>**Diarrhoea, Steatorrhoea, Malabsorption**</td></tr><tr><td>**Cryptosporidium spp.**</td><td>**Cryptosporidiosis**</td><td>Water (Oocysts), Person-to-Person</td><td>**Watery Diarrhoea, Immunocompromised: Severe/Chronic**</td></tr><tr><td>**Cyclospora cayetanensis**</td><td>**Cyclosporiasis**</td><td>Food/Water (Berries, Herbs)</td><td>**Prolonged Watery Diarrhoea**</td></tr><tr><td>**Entamoeba histolytica**</td><td>**Amoebiasis**</td><td>Water/Food (Cysts)</td><td>**Dysentery, Liver Abscess**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Key Waterborne Disease Profiles</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cholera (*Vibrio cholerae* O1/O139)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Transmission**</td><td>**Water/Food** contaminated with faeces</td></tr><tr><td>**Incubation**</td><td>**2 Hours – 5 Days**</td></tr><tr><td>**Clinical**</td><td>**Painless Rice-Water Diarrhoea**, **Vomiting**, **Rapid Dehydration**, **Rice-Water Stools**, **No Fever**</td></tr><tr><td>**Complications**</td><td>**Severe Dehydration**, **Hypovolaemic Shock**, **Acute Renal Failure**, **Hypokalaemia**</td></tr><tr><td>**Diagnosis**</td><td>**Stool Culture (TCBS)**, **Rapid Dipstick (VC-O1/O139)**, **PCR**</td></tr><tr><td>**Treatment**</td><td>**ORT (WHO-ORS)** → **IV Fluids (Ringer's Lactate) if Severe**, **Doxycycline 300mg Single Dose / Azithromycin 1g Single Dose / Ciprofloxacin**</td></tr><tr><td>**Control**</td><td>**WASH**, **Oral Cholera Vaccine (OCV) - Killed Whole Cell (Shanchol/Euvichol)**, **Sanitation**</td></tr></table>
+<div class="sub-h">Typhoid Fever (*Salmonella Typhi*)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Transmission**</td><td>**Water/Food** contaminated by chronic carriers</td></tr><tr><td>**Incubation**</td><td>**1-3 Weeks**</td></tr><tr><td>**Clinical**</td><td>**Step-Ladder Fever**, **Relative Bradycardia**, **Rose Spots**, **Hepatosplenomegaly**, **Leukopenia**</td></tr><tr><td>**Complications**</td><td>**Intestinal Perforation**, **Haemorrhage**, **Encephalopathy**, **Relapse**</td></tr><tr><td>**Diagnosis**</td><td>**Blood Culture (Gold Standard)**, **Widal Test (Low Sens/Spec)**, **PCR**</td></tr><tr><td>**Treatment**</td><td>**Ceftriaxone 2g IV BD / Azithromycin 1g OD × 7d** (Resistance Rising)</td></tr></table>
+<div class="sub-h">Hepatitis A &amp; E</div>
+<table class="ctable"><tr><th>Feature</th><th>**Hepatitis A**</th><th>**Hepatitis E**</th></tr><tr><td>---------</td><td>----------------</td><td>----------------</td></tr><tr><td>**Transmission**</td><td>**Faecal-Oral (Water, Food, Person-to-Person)**</td><td>**Water (Genotype 1/2), Zoonotic (Genotype 3/4 - Pork/Game)**</td></tr><tr><td>**Incubation**</td><td>**15-50 Days**</td><td>**15-60 Days**</td></tr><tr><td>**Clinical**</td><td>**Acute Hepatitis, Jaundice, Self-Limited**</td><td>**Acute Hepatitis, **High Mortality in Pregnancy (20-25%)**, Chronic in Immunocompromised**</td></tr><tr><td>**Diagnosis**</td><td>**IgM Anti-HAV**</td><td>**IgM Anti-HEV, RNA PCR**</td></tr><tr><td>**Prevention**</td><td>**Hep A Vaccine (2 Doses)**, **Hygiene, Safe Water**</td><td>**Hygiene, Safe Water, Cook Pork Thoroughly (Genotype 3/4)**</td></tr></table>
+<div class="sub-h">Protozoal Parasites</div>
+<table class="ctable"><tr><th>Parasite</th><th>Key Features</th><th>Diagnosis</th><th>Treatment</th></tr><tr><td>----------</td><td>--------------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Giardia lamblia**</td><td>**Diarrhoea, Steatorrhoea, Bloating, Malabsorption**</td><td>**Stool Antigen ELISA (Gold Standard), PCR**</td><td>**Metronidazole 400mg TDS × 5-7d / Tinidazole 2g Single Dose**</td></tr><tr><td>**Cryptosporidium**</td><td>**Watery Diarrhoea**, **Immunocompromised: Severe/Chronic**, **Chlorine Resistant**</td><td>**Stool Antigen ELISA, PCR, Modified Acid-Fast Stain**</td><td>**Nitazoxanide 500mg BD × 3d**, **Supportive (Immunocompetent)**</td></tr><tr><td>**Cyclospora**</td><td>**Prolonged Watery Diarrhoea**, **Fatigue, Anorexia**</td><td>**Modified Acid-Fast Stain (Autofluorescence), PCR**</td><td>**TMP-SMX (Bactrim) DS BD × 7-10d**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📖 Water Treatment — Multi-Barrier Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Conventional Treatment Train</div>
+<table class="ctable"><tr><th>Step</th><th>Process</th><th>Purpose</th><th>Key Parameters</th></tr><tr><td>------</td><td>---------</td><td>---------</td><td>----------------</td></tr><tr><td>**1. Screening**</td><td>**Screens / Microstrainers**</td><td>Remove Large Debris</td><td>—</td></tr><tr><td>**2. Coagulation / Flocculation**</td><td>**Coagulants**: Alum, Ferric Chloride, PACl</td><td>Destabilise Colloids, Form Flocs</td><td>**pH, Dose, Rapid Mix**</td></tr><tr><td>**3. Sedimentation / Clarification**</td><td>**Settling Tanks / Lamella Clarifiers / DAF**</td><td>Remove Flocs</td><td>**Detention Time, Surface Loading Rate**</td></tr><tr><td>**4. Filtration**</td><td>**Rapid Sand / Dual Media / Membrane (UF/MF/RO)**</td><td>Remove Particles, Microbes</td><td>**Turbidity <0.1-0.3 NTU**, **LRV**</td></tr><tr><td>**5. Disinfection**</td><td>**Chlorination (Primary)**, **Ozone, UV, Chloramines**</td><td>**Pathogen Inactivation**</td><td>**CT Value, Residual**</td></tr><tr><td>**6. pH Correction / Fluoridation**</td><td>**Lime / Soda Ash / CO2**, **Fluoride**</td><td>**Corrosion Control, Dental Health**</td><td>**pH 7.5-8.5, F⁻ 0.7-1.0 mg/L**</td></tr></table>
+<div class="sub-h">Disinfection Methods</div>
+<table class="ctable"><tr><th>Method</th><th>Mechanism</th><th>Advantages</th><th>Limitations</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td><td>-------------</td></tr><tr><td>**Chlorination (Cl₂, NaOCl, Ca(OCl)₂)**</td><td>**Oxidation**, HOCl/OCl⁻</td><td>**Residual Protection**, Low Cost, Established</td><td>**DBPs (THMs, HAAs)**, Taste/Odour, Less Effective on Protozoa Cysts</td></tr><tr><td>**Chloramination (NH₂Cl)**</td><td>Chlorine + Ammonia</td><td>**Longer Lasting Residual**, Less DBPs</td><td>**Weaker Disinfectant**, Nitrification, Lead Solubility</td></tr><tr><td>**Ozonation (O₃)**</td><td>**Strong Oxidation**</td><td>**Strongest Disinfectant**, No Residual, Removes Taste/Odour/Colour</td><td>**No Residual**, Bryate Formation, High Cost, Complex</td></tr><tr><td>**UV Irradiation (254 nm)**</td><td>**DNA Damage**</td><td>**No Chemicals/DBPs**, Effective on Protozoa (Crypto/Giardia)</td><td>**No Residual**, Turbidity Dependent, No Residual Protection</td></tr><tr><td>**Chlorine Dioxide (ClO₂)**</td><td>Oxidation</td><td>**Effective on Biofilm**, Less THMs</td><td>**Chlorite/Chlorate Byproducts, Unstable**</td></tr></table>
+<div class="callout">[!tip] <b>Multi-Barrier = Best Protection</b>. <b>Filtration + Chlorination = Standard</b>. <b>UV/Ozone = Protozoa (Crypto/Giardia)</b>. <b>Chlorine = Residual + Cost-Effective</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📖 Point-of-Use (POU) Treatment</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Method</th><th>Target</th><th>Use Case</th></tr><tr><td>--------</td><td>--------</td><td>----------</td></tr><tr><td>**Boiling**</td><td>**All Pathogens**</td><td>**Emergency, Household**</td></tr><tr><td>**Chlorination (Tablets/Liquid)**</td><td>**Bacteria, Viruses**</td><td>**Emergency, Travel**</td></tr><tr><td>**Ceramic Filters**</td><td>**Bacteria, Protozoa**</td><td>**Household (LMIC)**</td></tr><tr><td>**Biosand Filters**</td><td>**Bacteria, Protozoa, Turbidity**</td><td>**Household/Community (LMIC)**</td></tr><tr><td>**SODIS (Solar Disinfection)**</td><td>**Bacteria, Viruses**</td><td>**Low-Resource, Clear Bottles + Sunlight 6h**</td></tr><tr><td>**Membrane Filters (UF/MF)**</td><td>**Bacteria, Protozoa**</td><td>**Household, Emergency**</td></tr><tr><td>**Coagulant/Disinfectant Sachets** (e.g., PUR)</td><td>**Coagulation + Disinfection**</td><td>**Emergency, Household**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📖 Water Safety Plans (WSP) — WHO Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">**WSP Development**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Team Assembly** (Multi-disciplinary)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**System Description** (Source → Consumer)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">**Hazard Identification &amp; Risk Assessment**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">**Critical Control Points (CCPs)**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">**Operational Monitoring** (CCP Parameters)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">**Corrective Actions** (Deviation Response)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">**Verification** (Audit, Water Quality Monitoring)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">**Documentation &amp; Communication**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">**Review &amp; Improvement** (Periodic, Incident-Triggered)</div>
+</div>
+</div>
+<div class="sub-h">Key Components</div>
+<table class="ctable"><tr><th>Component</th><th>Description</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**System Assessment**</td><td>**Source Water Quality**, **Treatment Processes**, **Distribution System**, **Consumer Points**</td></tr><tr><td>**Hazard Identification**</td><td>**Microbiological (Pathogens)**, **Chemical (Priority Chemicals)**, **Physical/Radiological**</td></tr><tr><td>**Risk Assessment**</td><td>**Likelihood × Severity** → **Risk Matrix**</td></tr><tr><td>**CCPs (Critical Control Points)**</td><td>**Points Where Control is Essential** (e.g., Disinfection CT, Filter Turbidity, pH)</td></tr><tr><td>**Operational Monitoring**</td><td>**Real-Time/Online** at CCPs (Turbidity, Chlorine Residual, pH, Flow)</td></tr><tr><td>**Corrective Actions**</td><td>**Pre-Defined Actions** if CCP Limits Exceeded</td></tr><tr><td>**Verification**</td><td>**Water Quality Monitoring**, **Audits**, **Consumer Complaints**</td></tr><tr><td>**Management Procedures**</td><td>**Documentation, Training, Emergency Response, Record Keeping**</td></tr></table>
+<div class="callout">[!tip] <b>WSP = Proactive, Risk-Based, Multi-Barrier</b>. <b>CCPs = Points Where Loss of Control = Unacceptable Risk</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📖 Recreational Water Quality (WHO Guidelines)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Guideline Value</th><th>Health Outcome</th></tr><tr><td>-----------</td><td>----------------</td><td>----------------</td></tr><tr><td>**E. coli / Enterococci**</td><td>**Coastal: <100/100 cfu/100mL (95th %ile)**<br>**Freshwater: <200/200 cfu/100mL (95th %ile)**</td><td>**GI Illness (GI), AFRI**</td></tr><tr><td>**Cyanobacteria (Blue-Green Algae)**</td><td>**Vigilance: >20,000 cells/mL**<br>**Alert: >100,000 cells/mL**</td><td>**Skin Irritation, GI, Hepatotoxins (Microcystin), Neurotoxins**</td></tr><tr><td>**Free-Living Amoebae**</td><td>**Absent**</td><td>**PAM (Naegleria fowleri)**</td></tr><tr><td>**pH**</td><td>**6.5-8.5**</td><td>**Irritation, Disinfection Efficacy**</td></tr><tr><td>**Turbidity**</td><td>**<5 NTU** (Pool)</td><td>**Disinfection Efficacy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Key Microbiological Indicator**</td><td>**E. coli / Thermotolerant Coliforms** (Faecal Contamination)</td></tr><tr><td>**Major Waterborne Diseases**</td><td>**Cholera, Typhoid, Hepatitis A/E, Giardiasis, Cryptosporidiosis, Shigellosis**</td></tr><tr><td>**Cholera**</td><td>**Rice-Water Stools, Rapid Dehydration**, **ORT/IV Fluids, Doxycycline/Azithromycin, OCV**</td></tr><tr><td>**Typhoid**</td><td>**Fever, Relative Bradycardia, Rose Spots**, **Blood Culture, Ceftriaxone/Azithromycin**</td></tr><tr><td>**Hepatitis A/E**</td><td>**Faecal-Oral**, **Hep A: Self-Limited, Vaccine; Hep E: High Mortality in Pregnancy**</td></tr><tr><td>**Protozoa**</td><td>**Giardia (Steatorrhoea), Crypto (Chlorine Resistant, Immuocomp), Cyclospora**</td></tr><tr><td>**Water Treatment**</td><td>**Multi-Barrier**: Coag/Floc/Sed/Filtration/Disinfection, **CT Value**</td></tr><tr><td>**Disinfection**</td><td>**Chlorine (Residual)**, **UV/Ozone (Crypto), Ozone/Chlorine Dioxide**</td></tr><tr><td>**POU**</td><td>**Boiling, Chlorine Tablets, Ceramic Filters, SODIS, POU Coagulant/Disinfectant**</td></tr><tr><td>**WSP**</td><td>**WHO Framework: System Assessment → Hazard ID → CCPs → Monitoring → Verification**</td></tr><tr><td>**WHO Guidelines**</td><td>**E. coli <1/100mL (Drinking)**, **Enterococci (Recreational)**, **Chemical GV**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the indicator organism for faecal contamination of water?</b></li></ol>
+<ul><li><b>E. coli / Thermotolerant Coliforms</b> (Primary); <b>Enterococci</b> (Marine/Recreational)</li></ul>
+<ol><li><b>What is the treatment of choice for Cholera?</b></li></ol>
+<ul><li><b>ORT (WHO-ORS) First</b>, <b>IV Ringer's Lactate if Severe</b>, <b>Doxycycline 300mg Single Dose</b> or <b>Azithromycin 1g Single Dose</b>.</li></ul>
+<ol><li><b>What is the treatment for Typhoid Fever?</b></li></ol>
+<ul><li><b>Ceftriaxone 2g IV BD</b> or <b>Azithromycin 1g OD × 7 Days</b>.</li></ul>
+<ol><li><b>How is Cryptosporidium resistant to chlorine?</b></li></ol>
+<ul><li><b>Oocysts Have Thick Wall</b>, <b>Highly Chlorine-Resistant</b>, <b>UV/Ozone Effective</b>.</li></ul>
+<ol><li><b>What is the standard water treatment train?</b></li></ol>
+<ul><li><b>Screening → Coagulation/Flocculation → Sedimentation → Filtration → Disinfection (Chlorination) → pH Correction</b>.</li></ul>
+<ol><li><b>What is the CT value in water disinfection?</b></li></ol>
+<ul><li><b>CT = Concentration (mg/L) × Contact Time (min)</b>; <b>Measure of Disinfection Efficacy</b>.</li></ul>
+<ol><li><b>What is the WHO guideline value for Arsenic in drinking water?</b></li></ol>
+<ul><li><b>10 µg/L</b>.</li></ul>
+<ol><li><b>What is the point-of-use treatment for emergency water purification?</b></li></ol>
+<ul><li><b>Boiling (1 min)</b>, <b>Chlorine Tablets</b>, <b>SODIS (Clear Bottle + Sun 6h)</b>, <b>Ceramic Filter</b>, <b>Coagulant/Disinfectant Sachets</b>.</li></ul>
+<ol><li><b>What is a Water Safety Plan (WSP) and its key components?</b></li></ol>
+<ul><li><b>Risk-Based Management</b>: System Assessment → Hazard ID → CCPs → Operational Monitoring → Corrective Actions → Verification → Management Procedures.</li></ul>
+<ol><li><b>How do Cryptosporidium oocysts resist chlorination?</b></li></ol>
+<ul><li><b>Thick Wall, Low Metabolic Rate</b>, <b>CT Value Required &gt; Standard Chlorination Provides</b>.</li></ul>
+<ol><li><b>What is the treatment for Typhoid Fever?</b></li></ol>
+<ul><li><b>Ceftriaxone 2g IV BD</b> or <b>Azithromycin 1g OD × 7 Days</b>.</li></ul>
+<ol><li><b>What is the WHO guideline for E. coli in drinking water?</b></li></ol>
+<ul><li><b>0 CFU/100mL (Must Not Be Detected in 100mL Sample)</b>.</li></ul>
+<ol><li><b>What is the arsenic guideline value and its main health effect?</b></li></ol>
+<ul><li><b>10 µg/L</b>, <b>Skin Lesions, Cancer (Skin/Lung/Bladder), CVD, Diabetes, Neurodevelopmental</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Cholera vs Typhoid**</td><td>**Cholera: Rice-Water Stools, No Fever, Rapid Dehydration**; **Typhoid: Step-Ladder Fever, Rose Spots, Relative Bradycardia**</td></tr><tr><td>**Hepatitis A vs E**</td><td>**Hep A: Self-Limited, Vaccine Available**; **Hep E: High Mortality in Pregnancy, Zoonotic (Genotype 3/4)**</td></tr><tr><td>**Giardia vs Crypto**</td><td>**Giardia: Steatorrhoea, Cysts in Stool, Metronidazole/Tinidazole**; **Crypto: Chlorine Resistant, Immunocompromised Severe, Nitazoxanide**</td></tr><tr><td>**Cholera vs Typhoid Vaccines**</td><td>**Cholera: OCV (Killed WC, 2 Doses)**; **Typhoid: Vi PS (Single) or Ty21a Oral (3 Doses)**</td></tr><tr><td>**POU Methods**</td><td>**Boiling = Gold Standard**; **Chlorine Tablets = Easy**; **SODIS = Sun + Clear Bottle**; **Ceramic = Household**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Cholera = Rice Water + ORS + Doxy"**</td><td>Cholera Management</td></tr><tr><td>**"Typhoid = Ceftriaxone / Azithro"**</td><td>Typhoid Tx</td></tr><tr><td>**"Crypto = Chlorine Resistant + UV/Ozone"**</td><td>Crypto Resistance</td></tr><tr><td>**"Multi-Barrier = Coag → Sed → Filt → Disinfect"**</td><td>Treatment Train</td></tr><tr><td>**"WSP = System → Hazard → CCP → Monitor → Verify"**</td><td>Water Safety Plan</td></tr><tr><td>**"POU = Boil / Chlorine Tab / SODIS / Ceramic"**</td><td>Household Options</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Water Pollution &amp; Waterborne Diseases))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Contaminants</div>
+<div class="mm-node mm-l3">– Microbiological: E. coli, Enterococci, Pathogens</div>
+<div class="mm-node mm-l3">– Chemical: As, Pb, Hg, F, NO3, Pesticides, PFAS, DBPs</div>
+<div class="mm-node mm-l3">– Radiological: Radon, U</div>
+<div class="mm-node mm-l3">– Physical: Turbidity, Colour, pH</div>
+<div class="mm-node mm-l2">Diseases</div>
+<div class="mm-node mm-l3">– Cholera: Rice-Water Stool, ORS, Doxy, OCV</div>
+<div class="mm-node mm-l3">– Typhoid: Step-Ladder Fever, Rose Spots, Ceftriaxone</div>
+<div class="mm-node mm-l3">– Hep A/E: Faecal-Oral, Hep A Vaccine, Hep E Pregnancy Risk</div>
+<div class="mm-node mm-l3">– Protozoa: Giardia (Steatorrhoea), Crypto (Cl-Resistant), Cyclospora</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Multi-Barrier: Screen → Coag/Floc/Sed → Filt → Disinfect</div>
+<div class="mm-node mm-l3">– Disinfection: Chlorine (Residual), UV/Ozone (Crypto), ClO2</div>
+<div class="mm-node mm-l3">– CT Value = Conc × Time</div>
+<div class="mm-node mm-l3">– POU: Boil, Chlorine Tabs, SODIS, Ceramic, Sachets</div>
+<div class="mm-node mm-l2">WSP</div>
+<div class="mm-node mm-l3">– System → Hazard ID → CCP → Monitor → Correct → Verify</div>
+<div class="mm-node mm-l3">– CCP: Disinfection CT, Filter Turbidity, pH</div>
+<div class="mm-node mm-l2">Recreational</div>
+<div class="mm-node mm-l3">– E. coli / Enterococci Limits</div>
+<div class="mm-node mm-l3">– Cyanobacteria Alerts</div>
+<div class="mm-node mm-l3">– pH 6.5-8.5</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**WATER POLLUTION & WATERBORNE DISEASES – FCPS/MRCP REVISION CARD**</th></tr><tr><td>-----------------------------------------------------------------------</td></tr><tr><td>**Indicator**: **E. coli / Thermotolerant Coliforms** (Faecal Contamination)</td></tr><tr><td>**Cholera**: **Rice-Water Stools**, **ORS + IV Fluids**, **Doxy 300mg Single / Azithro 1g**, OCV</td></tr><tr><td>**Typhoid**: **Step-Ladder Fever, Rose Spots, Relative Bradycardia**, **Blood Culture**, **Ceftriaxone / Azithro**</td></tr><tr><td>**Hep A/E**: **Faecal-Oral**, Hep A Vaccine, Hep E High Mortality in Pregnancy</td></tr><tr><td>**Protozoa**: **Giardia (Steatorrhoea, Antigen/PCR, Metro/Tinidazole)**, **Crypto (Cl-Resistant, Nitazoxanide)**, **Cyclospora**</td></tr><tr><td>**Water Treatment**: **Screen → Coag/Floc/Sed → Filtration → Disinfection (Cl₂, UV, O₃) → pH/Fluoride**</td></tr><tr><td>**Disinfection**: **Cl₂ = Residual, Cheap**; **UV/O₃ = Crypto/Giardia**; **CT Value = Conc × Time**</td></tr><tr><td>**POU**: **Boil, Chlorine Tabs, SODIS, Ceramic Filter, Coagulant/Disinfectant Sachets**</td></tr><tr><td>**WSP**: **System → Hazard → CCP (CT, Turbidity, pH) → Monitor → Correct → Verify**</td></tr><tr><td>**WHO GV**: **E. coli 0/100mL, As 10µg/L, Pb 10µg/L, F 1.5mg/L, NO3 50mg/L**</td></tr><tr><td>**Recreational**: E. coli/Enterococci Limits, Cyanobacteria Alerts</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Key waterborne diseases (Cholera, Typhoid, Hep A/E, Giardia, Crypto), Water treatment train, Disinfection methods (Chlorine, UV, Ozone), POU methods, WSP framework, WHO guideline values (As, Pb, F, NO3, E. coli), Egg morphology for schistosomiasis</td></tr><tr><td>**Should Know**</td><td>Water treatment process details (coagulation chemistry, filtration types), DBP formation and control, Cryptosporidium chlorine resistance mechanisms, WSP implementation steps, CCP identification, Recreational water guidelines, Water safety in emergencies, Arsenicosis clinical features, Fluoride balance (caries vs fluorosis)</td></tr><tr><td>**Nice to Know**</td><td>Emerging contaminants (PFAS, pharmaceuticals, microplastics), Antimicrobial resistance in water, Water reuse (potable/non-potable), Desalination health aspects, Sanitation systems (F-diagram), Water safety in healthcare facilities, Legionella in water systems, Economic analysis of water interventions, Climate change impacts on water security, Novel treatment technologies (AOPs, membranes, nanotechnology)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Waterborne Diseases (Cholera, Typhoid, Hep A/E, Protozoa)</td><td></td><td></td></tr><tr><td>Water Treatment & Disinfection</td><td></td><td></td></tr><tr><td>Diagnostics (Microscopy, Serology, PCR)</td><td></td><td></td></tr><tr><td>Water Safety Plans</td><td></td><td></td></tr><tr><td>WHO Guidelines & Chemical Standards</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Air Pollution &amp; Respiratory Health]]</li><li><b>Next</b>: [[Soil &amp; Food Contamination]]</li><li><b>Section Hub</b>: [[Environmental Medicine MOC]]</li><li><b>MOC</b>: [[Hematology MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Water Pollution &amp; Waterborne Diseases · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

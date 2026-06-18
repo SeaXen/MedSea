@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Malaria — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Malaria</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Identify clinical features of uncomplicated and severe malaria</li><li>Differentiate <i>Plasmodium</i> species by blood film and clinical features</li><li>Apply diagnostic algorithms (microscopy + RDT)</li><li>Treat uncomplicated and severe malaria per WHO/UK guidelines</li><li>Manage chemoprophylaxis and special populations (pregnancy, children)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Plasmodium Species</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Species</th><th>Geography</th><th>Severity</th><th>Key Features</th></tr><tr><td>---------</td><td>-----------</td><td>----------</td><td>--------------</td></tr><tr><td>**P. falciparum**</td><td>Africa, SE Asia, S America, Haiti</td><td>**Most severe**; cerebral, severe anaemia, acidosis, renal</td><td>**Ring forms only** in peripheral blood; sequestration in deep vessels</td></tr><tr><td>**P. vivax**</td><td>Asia, Latin America, Horn of Africa</td><td>Relapsing (hypnozoites); rarely severe</td><td>**Schüffner's dots**; larger rings; amoeboid trophozoites</td></tr><tr><td>**P. ovale**</td><td>West Africa, Pacific</td><td>Relapsing (hypnozoites); milder</td><td>**Schüffner's dots**; oval-infected RBC; fimbriated</td></tr><tr><td>**P. malariae**</td><td>Worldwide (patchy)</td><td>Chronic; quartan fever (72h); nephrotic syndrome</td><td>**Band forms**; rosettes; no hypnozoites</td></tr><tr><td>**P. knowlesi**</td><td>SE Asia (Borneo)</td><td>Zoonotic (macaques); can be severe/fatal</td><td>**All stages** in peripheral blood; daily fever (24h cycle)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Uncomplicated Malaria</div>
+<table class="ctable"><tr><th>Feature</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Fever**</td><td>Paroxysmal (tertian 48h: vivax/ovale/falciparum; quartan 72h: malariae) or continuous</td></tr><tr><td>**Rigors**</td><td>Cold phase → hot phase → sweating</td></tr><tr><td>**Headache, myalgia, arthralgia**</td><td>Common</td></tr><tr><td>**Nausea, vomiting, diarrhoea**</td><td>Frequent</td></tr><tr><td>**Anaemia**</td><td>Haemolysis + suppressed erythropoiesis</td></tr><tr><td>**Splenomegaly**</td><td>Common (palpable by day 7)</td></tr><tr><td>**Mild jaundice**</td><td>Haemolysis + hepatic dysfunction</td></tr></table>
+<div class="sub-h">Severe Malaria (WHO Criteria) — *P. falciparum* predominantly</div>
+<table class="ctable"><tr><th>Criterion</th><th>Threshold</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Impaired consciousness / cerebral malaria**</td><td>GCS <11 (adults) / Blantyre <3 (children)</td></tr><tr><td>**Severe anaemia**</td><td>Hb <70 g/L (or <50 in children) + parasites</td></tr><tr><td>**Acidosis**</td><td>Bicarbonate <15 mmol/L or lactate ≥5 mmol/L</td></tr><tr><td>**Hypoglycaemia**</td><td>Blood glucose <2.2 mmol/L</td></tr><tr><td>**Renal impairment**</td><td>Creatinine >265 µmol/L (or >3 mg/dL)</td></tr><tr><td>**Pulmonary oedema / ARDS**</td><td>Radiological + hypoxaemia</td></tr><tr><td>**Significant bleeding / DIC**</td><td>Platelets <50, PT prolonged</td></tr><tr><td>**Shock**</td><td>SBP <80 (adults) / <50 (children)</td></tr><tr><td>**Parasitaemia**</td><td>>10% (or >250,000/µL in low transmission)</td></tr><tr><td>**Hyperparasitaemia**</td><td>>20% (>500,000/µL)</td></tr></table>
+<div class="callout"><b>Cerebral malaria</b> = unrousable coma + falciparum + no other cause <b>Blackwater fever</b> = massive intravascular haemolysis + haemoglobinuria + renal failure (falciparum + G6PD deficiency + oxidant drugs)</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Gold Standard: Microscopy (Thick + Thin Blood Films)</div>
+<table class="ctable"><tr><th>Film</th><th>Purpose</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Thick film**</td><td>**Screening** (concentrated, 20–30x sensitivity); detect low parasitaemia; count parasitaemia</td></tr><tr><td>**Thin film**</td><td>**Species identification** (morphology); quantify % parasitaemia</td></tr></table>
+<div class="callout"><b>3 negative films 12–24h apart</b> to exclude malaria (if high suspicion, continue)</div>
+<div class="sub-h">Rapid Diagnostic Tests (RDTs)</div>
+<table class="ctable"><tr><th>Target</th><th>Sensitivity</th><th>Specificity</th><th>Notes</th></tr><tr><td>--------</td><td>-------------</td><td>-------------</td><td>-------</td></tr><tr><td>**HRP2 (falciparum-specific)**</td><td>High (>95%)</td><td>High</td><td>Persists weeks post-treatment (false +)</td></tr><tr><td>**pLDH (pan-specific or species-specific)**</td><td>High</td><td>High</td><td>Clears rapidly post-treatment</td></tr><tr><td>**Aldolase (pan-specific)**</td><td>Moderate</td><td>High</td><td>Less common</td></tr></table>
+<div class="callout"><b>RDT + microscopy</b> = ideal; <b>RDT negative + high suspicion</b> → repeat microscopy</div>
+<div class="sub-h">Parasitaemia Quantification</div>
+<table class="ctable"><tr><th>Method</th><th>Formula</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Thin film**</td><td>% parasitised RBCs = (parasitised RBCs / total RBCs) × 100</td></tr><tr><td>**Thick film**</td><td>Parasites/µL = (parasites counted / WBC counted) × patient WBC count</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Treatment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Uncomplicated *P. falciparum* (WHO/UK Guidelines)</div>
+<table class="ctable"><tr><th>Regimen</th><th>Dose</th><th>Duration</th><th>Notes</th></tr><tr><td>---------</td><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Artemether-Lumefantrine (AL)**</td><td>20/120mg: 4 tabs BD (weight-based)</td><td>3 days</td><td>**1st-line UK/WHO**; take with fat</td></tr><tr><td>**Dihydroartemisinin-Piperaquine (DHA-PPQ)**</td><td>40/320mg: 3 tabs OD</td><td>3 days</td><td>Alternative; long half-life (piperaquine)</td></tr><tr><td>**Artesunate-Amodiaquine (AS-AQ)**</td><td>Weight-based</td><td>3 days</td><td>Africa preferred; not UK 1st-line</td></tr><tr><td>**Artesunate-Mefloquine (AS-MQ)**</td><td>Weight-based</td><td>3 days</td><td>SE Asia; neuropsychiatric AE (mefloquine)</td></tr></table>
+<div class="callout"><b>ACT = Artemisinin + Partner drug</b> (artemisinin rapidly reduces biomass; partner eliminates remainder) <b>Take with fatty food</b> (lumefantrine, piperaquine absorption ↑) <b>Avoid artemisinin monotherapy</b> (resistance)</div>
+<div class="sub-h">Uncomplicated Non-Falciparum (*P. vivax, P. ovale, P. malariae*)</div>
+<table class="ctable"><tr><th>Species</th><th>Acute Treatment</th><th>Radical Cure (Hypnozoites)</th></tr><tr><td>---------</td><td>----------------</td><td>----------------------------</td></tr><tr><td>**P. vivax / P. ovale**</td><td>**Chloroquine** (if sensitive) OR **ACT** (if resistant)</td><td>**Primaquine 15mg OD × 14d** (G6PD test mandatory!)</td></tr><tr><td>**P. malariae**</td><td>**Chloroquine** (usually sensitive)</td><td>**Not needed** (no hypnozoites)</td></tr><tr><td>**P. knowlesi**</td><td>**ACT** (artemether-lumefantrine)</td><td>**Primaquine not needed** (no hypnozoites)</td></tr></table>
+<div class="callout"><b>Primaquine</b>: <b>G6PD testing MANDATORY</b> (haemolysis risk); 15mg OD × 14d (adults); 0.5mg/kg/d in children <b>G6PD deficiency</b>: Weekly primaquine 0.75mg/kg × 8w (supervised)</div>
+<div class="sub-h">Chloroquine Dose (if sensitive)</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**Chloroquine base**</td><td>10mg/kg stat → 5mg/kg at 6h, 24h, 48h (total 25mg/kg over 3 days)</td></tr></table>
+<div class="sub-h">Severe Malaria (*P. falciparum*) — **Medical Emergency**</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Route</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td><td>-------</td></tr><tr><td>**Artesunate**</td><td>**2.4mg/kg IV/IM** at 0, 12, 24h then daily</td><td>**IV preferred**</td><td>**1st-line WHO/UK**; continue 24h after clinical improvement → switch oral ACT × 3d total</td></tr><tr><td>**Quinine** (if artesunate unavailable)</td><td>20mg/kg loading IV over 4h → 10mg/kg q8h</td><td>IV</td><td>Cardiotoxicity (QT); monitor ECG, glucose; switch oral when improving</td></tr></table>
+<div class="callout"><b>Artesunate superior to quinine</b> (↓ mortality 22–35%, fewer side effects) <b>Parenteral for min 24h</b> → switch to full oral ACT course</div>
+<div class="sub-h">Adjunctive Management of Severe Malaria</div>
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Cerebral malaria**</td><td>Airways, anticonvulsants (levetiracetam), mannitol if raised ICP, avoid steroids</td></tr><tr><td>**Severe anaemia**</td><td>Transfuse Hb <70 (or <50 children); avoid overload</td></tr><tr><td>**Acidosis**</td><td>Bicarbonate if pH <7.1; ventilatory support</td></tr><tr><td>**Renal failure**</td><td>Fluid balance, RRT if indicated</td></tr><tr><td>**Hypoglycaemia**</td><td>10% dextrose bolus + infusion; monitor glucose q4–6h</td></tr><tr><td>**Pulmonary oedema**</td><td>Fluid restriction, diuretics, CPAP/ventilation</td></tr><tr><td>**DIC**</td><td>FFP, platelets, cryoprecipitate</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Chemoprophylaxis (Travellers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Start/Stop</th><th>Indications</th></tr><tr><td>------</td><td>------</td><td>------------</td><td>-------------</td></tr><tr><td>**Atovaquone-Proguanil (Malarone)**</td><td>250/100mg OD</td><td>1–2d before → 7d after</td><td>**1st-line** (well-tolerated, short post-travel)</td></tr><tr><td>**Doxycycline**</td><td>100mg OD</td><td>1–2d before → 4w after</td><td>Cheap; photosensitivity, GI, oesophagitis</td></tr><tr><td>**Mefloquine**</td><td>250mg weekly</td><td>2–3w before → 4w after</td><td>Neuropsychiatric AE (contraindicated if hx); long half-life</td></tr><tr><td>**Chloroquine + Proguanil**</td><td>Chloroquine weekly + Proguanil daily</td><td>1w before → 4w after</td><td>Limited areas (chloroquine-sensitive only)</td></tr></table>
+<div class="callout"><b>No prophylaxis 100% effective</b> — bite avoidance essential (DEET, nets, clothing) <b>Standby emergency treatment (SBET)</b>: Carry AL for self-treatment if medical care &gt;24h away</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Malaria in Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pregnancy</div>
+<table class="ctable"><tr><th>Aspect</th><th>Recommendation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Risk**</td><td>↑ severity (falciparum); ↑ maternal/fetal mortality; placental malaria → LBW, stillbirth</td></tr><tr><td>**Treatment (uncomplicated)**</td><td>**2nd/3rd tri: ACT (AL preferred)**; **1st tri: Quinine + Clindamycin** (artemisinin safety uncertain)</td></tr><tr><td>**Treatment (severe)**</td><td>**Artesunate IV** all trimesters (life-saving)</td></tr><tr><td>**Prophylaxis**</td><td>**Mefloquine** (2nd/3rd tri); **Atovaquone-Proguanil** (2nd/3rd); **Doxycycline CONTRAINDICATED**; Chloroquine + Proguanil + Folic acid</td></tr></table>
+<div class="sub-h">Children</div>
+<table class="ctable"><tr><th>Aspect</th><th>Recommendation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Weight-based dosing**</td><td>Essential (artesunate 2.4mg/kg AL weight-based)</td></tr><tr><td>**Severe malaria**</td><td>Artesunate IV 2.4mg/kg (same as adults); rectal artesunate if IV unavailable</td></tr><tr><td>**Primaquine**</td><td>G6PD test mandatory; 0.5mg/kg/d × 14d</td></tr></table>
+<div class="sub-h">HIV Co-infection</div>
+<table class="ctable"><tr><th>Aspect</th><th>Recommendation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Severity**</td><td>↑ parasitaemia, ↑ severe malaria if CD4 low</td></tr><tr><td>**Treatment**</td><td>Same ACT (check interactions: efavirenz ↓ lumefantrine; DTG + AL OK)</td></tr><tr><td>**Prophylaxis**</td><td>Atovaquone-proguanil OK with ART; Mefloquine + EFV = ↓ mefloquine levels</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">UK Imported Malaria Guidelines (Key Points)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>All fever in returned traveller from endemic area</b> = malaria until proven otherwise</li><li><b>3 blood films 12–24h apart</b> before excluding</li><li><b>RDT + microscopy</b> = standard</li><li><b>Artesunate IV</b> = 1st-line severe malaria</li><li><b>AL (artemether-lumefantrine)</b> = 1st-line uncomplicated falciparum</li><li><b>Primaquine 15mg OD × 14d</b> for vivax/ovale (G6PD test!)</li><li><b>Notify Public Health</b> (statutory)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Falciparum</b> = cerebral, severe anaemia, acidosis, renal; <b>ring forms only</b></li><li><b>Vivax/Ovale</b> = relapsing (hypnozoites), <b>primaquine 14d</b> (G6PD test!)</li><li><b>Severe malaria</b> = artesunate IV 2.4mg/kg (not quinine)</li><li><b>Uncomplicated falciparum</b> = AL (artemether-lumefantrine) 3d</li><li><b>Chemoprophylaxis</b>: Atovaquone-proguanil 1st-line; doxycycline; mefloquine (neuropsychiatric)</li><li><b>Cerebral malaria</b> = GCS &lt;11 + falciparum; artesunate + supportive</li><li><b>Blackwater fever</b> = massive haemolysis + Hburia + renal failure (G6PD + falciparum)</li><li><b>P. knowlesi</b> = daily fever (24h), SE Asia, can be severe</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>What is the first-line treatment for severe falciparum malaria?</li><li>How do you differentiate P. falciparum from P. vivax on blood film?</li><li>When do you give primaquine and what is the essential test before giving it?</li><li>What is the treatment for uncomplicated falciparum malaria?</li><li>Which antimalarials are safe in pregnancy?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Quinine no longer 1st-line for severe malaria</b> — artesunate IV is superior</li><li><b>Primaquine = G6PD test mandatory</b> (haemolysis)</li><li><b>Artesunate IV &gt; quinine</b> (mortality benefit)</li><li><b>Cerebral malaria</b> = treat with artesunate, NOT steroids</li><li><b>Chloroquine resistance</b> = widespread (P. falciparum, P. vivax in many areas)</li><li><b>RDT HRP2 persists</b> weeks post-treatment = false positive</li><li><b>RDT negative ≠ no malaria</b> if high suspicion → microscopy</li><li><b>ACT = artemisinin + partner</b> (never use artemisinin alone)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Severe malaria criteria</b>: <b>I</b>mpaired consciousness, <b>S</b>evere anaemia, <b>A</b>cidosis, <b>H</b>ypoglycaemia, <b>R</b>enal, <b>P</b>ulmonary, <b>B</b>leeding, <b>S</b>hock, <b>P</b>arasitaemia = <b>ISAHRPBSP</b></li><li><b>Falciparum blood film</b>: <b>R</b>ing forms <b>O</b>nly = <b>RO</b></li><li><b>Vivax/Ovale</b>: <b>H</b>ypnozoites → <b>P</b>rimaquine 14d</li><li><b>Severe malaria Rx</b>: <b>A</b>rtesunate <b>I</b>V = <b>AI</b></li><li><b>Primaquine</b>: <b>G6PD</b> test mandatory</li><li><b>Pregnancy malaria</b>: <b>A</b>CT (2/3 tri), <b>Q</b>uinine (1st tri), <b>A</b>rtesunate IV (severe)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Malaria = Plasmodium spp.</b></p>
+<ul><li><b>Falciparum</b> = ring forms only, cerebral, severe; <b>Artesunate IV</b> severe; <b>AL</b> uncomplicated</li><li><b>Vivax/Ovale</b> = relapsing (hypnozoites), <b>Primaquine 14d</b> (G6PD!)</li><li><b>Severe</b> = artesunate IV 2.4mg/kg (not quinine)</li><li><b>Uncomplicated</b> = AL 3d (take with fat)</li><li><b>Prophylaxis</b>: Atovaquone-proguanil 1st-line; doxycycline; mefloquine (neuropsychiatric)</li><li><b>Pregnancy</b>: 2/3 tri ACT; severe = artesunate IV; 1st tri quinine+clinda</li><li><b>Cerebral</b> = artesunate IV + supportive; no steroids</li><li><b>Primaquine</b> = G6PD test mandatory!</li><li><b>Chemoprophylaxis</b>: Atovaquone-proguanil 1st-line</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Falciparum vs vivax/ovale blood film differences</li><li>Severe malaria criteria (WHO)</li><li>Artesunate IV 1st-line severe; AL 1st-line uncomplicated</li><li>Primaquine for vivax/ovale (G6PD test!)</li><li>Pregnancy treatment differences</li><li>Chemoprophylaxis options</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>P. knowlesi features</li><li>Blackwater fever</li><li>Antimalarial resistance patterns</li><li>Supportive care of severe malaria</li><li>UK imported malaria guidelines</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Artemisinin resistance (kelch13 mutations)</li><li>Malaria vaccine (RTS,S/AS01)</li><li>Transmission-blocking drugs</li><li>Host genetics (sickle cell, thalassaemia, G6PD, Duffy)</li><li>Economic burden and elimination strategies</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>First-line treatment for severe falciparum malaria:</li></ol>
+<p>A. Quinine IV B. <b>Artesunate IV 2.4mg/kg</b> C. Artemether-lumefantrine D. Chloroquine</p>
+<ol><li><i>P. falciparum</i> on thin blood film shows:</li></ol>
+<p>A. All stages B. <b>Ring forms only</b> (sequestration) C. Schüffner's dots D. Band forms</p>
+<ol><li>Radical cure for <i>P. vivax</i> / <i>P. ovale</i>:</li></ol>
+<p>A. Chloroquine alone B. <b>Primaquine 15mg OD × 14d</b> (G6PD test mandatory) C. Artesunate alone D. Mefloquine</p>
+<ol><li>Mandatory test before primaquine:</li></ol>
+<p>A. HIV B. <b>G6PD</b> C. Hepatitis B D. Creatinine</p>
+<ol><li>First-line uncomplicated <i>P. falciparum</i> in UK:</li></ol>
+<p>A. Quinine B. <b>Artemether-lumefantrine (AL)</b> C. Mefloquine D. Doxycycline</p>
+<ol><li>Cerebral malaria definition:</li></ol>
+<p>A. Any coma with malaria B. <b>GCS &lt;11 (adults) + falciparum + no other cause</b> C. Seizures + malaria D. Confusion + fever</p>
+<ol><li><i>P. vivax</i> blood film features:</li></ol>
+<p>A. Ring forms only B. <b>Schüffner's dots, larger rings, amoeboid trophozoites</b> C. Band forms only D. Rosettes</p>
+<ol><li>Primaquine contraindication:</li></ol>
+<p>A. Pregnancy B. <b>G6PD deficiency</b> C. Renal failure D. Hepatic failure</p>
+<ol><li>Chemoprophylaxis — 1st-line for most travellers:</li></ol>
+<p>A. Mefloquine B. <b>Atovaquone-proguanil</b> C. Doxycycline D. Chloroquine</p>
+<ol><li>Artesunate vs quinine in severe malaria:</li></ol>
+<p>A. Quinine superior B. <b>Artesunate reduces mortality 22–35%</b> C. Equal efficacy D. Quinine fewer side effects</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 30-year-old returned from Nigeria 10 days ago, fever 39°C, GCS 10, Hb 65, lactate 5. Blood film: ring forms only, 15% parasitaemia. Immediate management:</li></ol>
+<p>A. IV Quinine loading B. <b>IV Artesunate 2.4mg/kg + ICU supportive care</b> C. Oral artemether-lumefantrine D. IM Artemether</p>
+<ol><li>A 25-year-old returned from India 3 weeks ago, fever, chills 48h cycle. Blood film: Schüffner's dots, amoeboid trophozoites. Species and treatment:</li></ol>
+<p>A. Falciparum — AL B. <b>Vivax — ACT (or chloroquine if sensitive) + Primaquine 14d</b> C. Ovale — Chloroquine only D. Malariae — Chloroquine only</p>
+<ol><li>A 40-year-old with <i>P. vivax</i>, G6PD deficient (mild). Radical cure:</li></ol>
+<p>A. Primaquine 15mg OD × 14d B. <b>Primaquine 0.75mg/kg weekly × 8w (supervised)</b> C. No primaquine needed C. Tafenoquine single dose</p>
+<ol><li>A 28-week pregnant woman, returned from Ghana, uncomplicated <i>P. falciparum</i>. Best treatment:</li></ol>
+<p>A. Artemether-lumefantrine B. <b>Quinine + Clindamycin</b> (1st trimester) C. Artesunate IV D. Mefloquine</p>
+<ol><li>A 30-year-old at 32 weeks pregnant, severe falciparum malaria (GCS 9). Treatment:</li></ol>
+<p>A. Quinine IV B. <b>Artesunate IV</b> (all trimesters if severe) C. Artemether-lumefantrine D. Mefloquine</p>
+<ol><li>A traveller to Kenya for 2 weeks. Best chemoprophylaxis:</li></ol>
+<p>A. Mefloquine (cheap) B. <b>Atovaquone-proguanil</b> (well-tolerated, short post-travel) C. Chloroquine D. No prophylaxis needed</p>
+<ol><li>A 5-year-old child, returned from Uganda, severe malaria, weight 18kg. Artesunate dose:</li></ol>
+<p>A. 2.4mg/kg IV B. 2.4mg/kg IV (same as adult) C. 1.2mg/kg IV D. 4.8mg/kg IV</p>
+<ol><li>A 35-year-old returned from Papua New Guinea, daily fever 24h cycle, all stages on blood film, severe. Species:</li></ol>
+<p>A. Falciparum B. <b>Knowlesi</b> (daily fever, all stages, SE Asia) C. Vivax C. Malariae</p>
+<ol><li>A patient on doxycycline prophylaxis for malaria, returns with fever, confirmed <i>P. falciparum</i>. Treatment:</li></ol>
+<p>A. Continue doxycycline B. <b>AL (artemether-lumefantrine)</b> (avoid doxycycline as treatment if used for prophylaxis) C. Quinine + doxycycline D. Artesunate IV</p>
+<ol><li><i>P. malariae</i> — characteristic feature:</li></ol>
+<p>A. Daily fever B. <b>Quartan fever (72h cycle)</b> C. Relapsing (hypnozoites) D. Cerebral involvement common</p>
+<ol><li>Blackwater fever — association:</li></ol>
+<p>A. <i>P. vivax</i> + G6PD deficiency B. <b>P. falciparum + G6PD deficiency + oxidant drugs</b> C. <i>P. ovale</i> + sulphur drugs C. <i>P. knowlesi</i> + quinine</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Severe falciparum Rx</li></ul>
+<p>A: Artesunate IV 2.4mg/kg</p>
+<ul><li>Q: Falciparum blood film</li></ul>
+<p>A: Ring forms only</p>
+<ul><li>Q: Vivax/Ovale radical cure</li></ul>
+<p>A: Primaquine 15mg OD × 14d (G6PD test!)</p>
+<ul><li>Q: Primaquine prerequisite</li></ul>
+<p>A: G6PD test mandatory</p>
+<ul><li>Q: Cerebral malaria</li></ul>
+<p>A: GCS &lt;11 + falciparum + no other cause</p>
+<ul><li>Q: Uncomplicated falciparum</li></ul>
+<p>A: Artemether-lumefantrine 3d (with fat)</p>
+<ul><li>Q: Prophylaxis 1st-line</li></ul>
+<p>A: Atovaquone-proguanil</p>
+<ul><li>Q: Pregnancy uncomplicated</li></ul>
+<p>A: ACT (2/3 tri); Quinine+clinda (1st tri)</p>
+<ul><li>Q: Severe pregnancy</li></ul>
+<p>A: Artesunate IV all trimesters</p>
+<ul><li>Q: Cerebral malaria supportive</li></ul>
+<p>A: Artesunate + anticonvulsants + mannitol; NO steroids</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Artesunate IV 2.4mg/kg = 1st-line severe malaria. <b>MCQ 2</b>: B — Falciparum = ring forms only (sequestration). <b>MCQ 3</b>: B — Primaquine 15mg OD × 14d for hypnozoites. <b>MCQ 4</b>: B — G6PD test mandatory (haemolysis risk). <b>MCQ 5</b>: B — AL = 1st-line UK/WHO. <b>MCQ 6</b>: B — GCS &lt;11 + falciparum = cerebral. <b>MCQ 7</b>: B — Vivax = Schüffner's dots, amoeboid. <b>MCQ 8</b>: B — G6PD deficiency = primaquine contraindicated. <b>MCQ 9</b>: B — Atovaquone-proguanil 1st-line prophylaxis. <b>MCQ 10</b>: B — Artesunate ↓ mortality 22–35% vs quinine.</p>
+<p><b>SBA 1</b>: B — Severe malaria = IV artesunate + ICU. <b>SBA 2</b>: B — Vivax features → chloroquine/ACT + primaquine 14d. <b>SBA 3</b>: B — G6PD deficient = weekly primaquine 8w supervised. <b>SBA 4</b>: B — 1st trimester = quinine + clindamycin. <b>SBA 5</b>: B — Severe malaria in pregnancy = artesuate IV all trimesters. <b>SBA 6</b>: B — Artesunate IV 2.4mg/kg same dose all ages. <b>SBA 7</b>: B — P. knowlesi = 24h cycle, all stages, SE Asia. <b>SBA 8</b>: B — Doxycycline prophylaxis failure → AL (different class). <b>SBA 9</b>: B — Malariae = quartan 72h. <b>SBA 10</b>: B — Falciparum + G6PD + oxidant = blackwater fever.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Malaria · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

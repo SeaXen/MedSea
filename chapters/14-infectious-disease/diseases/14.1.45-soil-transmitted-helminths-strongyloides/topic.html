@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Soil-Transmitted Helminths &amp; Strongyloides — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Soil-Transmitted Helminths &amp; Strongyloides</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Four Main STH</b>: <i>Ascaris lumbricoides</i>, <i>Necator americanus/Ancylostoma duodenale</i> (Hookworm), <i>Trichuris trichiura</i> (Whipworm), <i>Strongyloides stercoralis</i></li><li>[ ] Recognise <b>Clinical Presentations</b>: Intestinal (Obstruction, Malnutrition), Pulmonary (Löffler's Syndrome), Cutaneous (Larva Migrans), Hyperinfection (Strongyloides)</li><li>[ ] Diagnose: <b>Stool Microscopy</b> (Ova/Parasites), <b>Larva Detection</b> (Strongyloides), <b>Serology/PCR</b> (Strongyloides), <b>Eosinophilia</b> (Marked)</li><li>[ ] Manage: <b>Albendazole/Mebendazole</b> (STH), <b>Ivermectin</b> (Strongyloides), <b>Mass Drug Administration (MDA)</b> Programs</li><li>[ ] Recognise <b>Strongyloides Hyperinfection</b>: Immunocompromised, Steroids, HTLV-1, Disseminated, High Mortality</li><li>[ ] Apply <b>MDA</b>: <b>Albendazole 400mg / Mebendazole 500mg</b> (Annual/Bi-Annual), <b>Ivermectin</b> (Strongyloides Areas)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Overview of Soil-Transmitted Helminths (STH)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parasite</th><th>Common Name</th><th>Size (Adult)</th><th>Location</th><th>Egg/Cyst in Stool</th></tr><tr><td>----------</td><td>-------------</td><td>--------------</td><td>----------</td><td>-------------------</td></tr><tr><td>**Ascaris lumbricoides**</td><td>**Roundworm**</td><td>15-35 cm</td><td>Small Intestine</td><td>**Fertilised Egg (Mammillated)** / Unfertilised</td></tr><tr><td>**Necator americanus**</td><td>**New World Hookworm**</td><td>10 mm</td><td>Duodenum/Proximal Jejune</td><td>**Thin-Shelled Oval Egg** (4-Cell Stage)</td></tr><tr><td>**Ancylostoma duodenale**</td><td>**Old World Hookworm**</td><td>10-15 mm</td><td>Duodenum</td><td>**Thin-Shelled Oval Egg** (4-8 Cell Stage)</td></tr><tr><td>**Trichuris trichiura**</td><td>**Whipworm**</td><td>3-5 cm</td><td>Caecum/Colon</td><td>**Barrel-Shaped (Lemon) Egg** (Bipolar Plugs)</td></tr><tr><td>**Strongyloides stercoralis**</td><td>**Threadworm**</td><td>2 mm</td><td>Duodenum/Proximal Jejunum</td><td>**Rhabditiform Larva** (Not Egg) in Stool</td></tr></table>
+<table class="ctable"><tr><th>Helminth</th><th>Transmission</th><th>Primary Site</th><th>Key Clinical Feature</th></tr><tr><td>----------</td><td>--------------</td><td>--------------</td><td>---------------------</td></tr><tr><td>**Ascaris**</td><td>Ingestion of Embryonated Eggs</td><td>Small Intestine</td><td>**Intestinal Obstruction**, **Löffler's Syndrome** (Pulmonary)</td></tr><tr><td>**Hookworm** (Necator/Ancylostoma)</td><td>**Skin Penetration** (Filariform Larva)</td><td>Duodenum</td><td>**Iron Deficiency Anaemia** (Blood Loss)</td></tr><tr><td>**Trichuris**</td><td>Ingestion of Embryonated Eggs</td><td>Caecum/Colon</td><td>**Dysentery**, **Rectal Prolapse** (Heavy Infection), **Trichuris Dysentery Syndrome**</td></tr><tr><td>**Strongyloides**</td><td>**Skin Penetration** (Filariform Larva) + **Autoinfection**</td><td>Duodenum</td><td>**Autoinfection**, **Hyperinfection** (Immunocompromised), **Larva Currens**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Ascariasis (Ascaris lumbricoides)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Life Cycle &amp; Pathogenesis</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Ingestion of Embryonated Eggs</div>
+<div class="fc-node" data-id="E">E</div>
+<div class="fc-node" data-id="H">H</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Hatch in Duodenum: Larvae</div>
+<div class="fc-node" data-id="F">Trachea → Swallowed → Small Intestine</div>
+<div class="fc-node" data-id="I">Embryonation in Soil (2-3 Weeks)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Penetrate Intestinal Wall → Portal Circulation</div>
+<div class="fc-node" data-id="G">Adult Worms Mature (2-3 Months)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Liver → Heart → Lungs</div>
+</div>
+</div>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Phase</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Pulmonary (Löffler's Syndrome)**</td><td>**Dry Cough, Wheeze, Fever**, **Eosinophilia**, **Transient Pulmonary Infiltrates** (Migratory)</td></tr><tr><td>**Intestinal (Adult Worms)**</td><td>**Abdominal Pain**, **Malnutrition**, **Vitamin A Deficiency**, **Intestinal Obstruction** (Worm Bolus), **Biliary/Pancreatic Duct Obstruction**, **Appendicitis**</td></tr><tr><td>**Complications**</td><td>**Intestinal Obstruction** (Children, Worm Bolus), **Biliary Ascariasis** (Cholangitis, Pancreatitis), **Peritonitis** (Perforation)</td></tr></table>
+<div class="sub-h">Diagnosis &amp; Treatment</div>
+<table class="ctable"><tr><th>Test</th><th>Finding</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Stool Microscopy**</td><td>**Fertilised Egg (Mammillated)**, **Unfertilised Egg** (Longer, Narrow)</td></tr><tr><td>**Eosinophilia**</td><td>**Marked** (Pulmonary Phase > Intestinal)</td></tr><tr><td>**Imaging (US/CT)**</td><td>**Worms in Intestine/Biliary Tree**, **Obstruction**</td></tr></table>
+<table class="ctable"><tr><th>Treatment</th><th>Dose</th><th>Duration</th></tr><tr><td>-----------</td><td>------</td><td>----------</td></tr><tr><td>**Albendazole**</td><td>**400mg Single Dose**</td><td>**Single Dose**</td></tr><tr><td>**Mebendazole**</td><td>**500mg Single Dose** (or 100mg BD × 3 Days)</td><td>**Single / 3 Days**</td></tr><tr><td>**Pyrantel Pamoate**</td><td>**10mg/kg (Max 1g) Single Dose**</td><td>**Single Dose**</td></tr></table>
+<div class="callout">[!tip] <b>Ascariasis = Löffler's Syndrome (Pulmonary) + Intestinal Obstruction</b>. <b>Albendazole 400mg Single Dose = 1st Line</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Hookworm Infection (Ancylostomiasis/Necatoriasis)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pathogenesis</div>
+<table class="ctable"><tr><th>Feature</th><th>*Ancylostoma duodenale* (Old World)</th><th>*Necator americanus* (New World)</th></tr><tr><td>---------</td><td>-----------------------------------</td><td>----------------------------------</td></tr><tr><td>**Site**</td><td>Duodenum</td><td>Duodenum/Proximal Jejunum</td></tr><tr><td>**Entry**</td><td>**Skin Penetration** + **Oral Ingestion**</td><td>**Skin Penetration Only**</td></tr><tr><td>**Anticoagulant**</td><td>**Potent**</td><td>Less Potent</td></tr><tr><td>**Blood Loss/Worm/Day**</td><td>**0.2-0.5 mL**</td><td>**0.03-0.05 mL**</td></tr><tr><td>**Egg in Stool**</td><td>**4-8 Cell Stage**</td><td>**4-Cell Stage**</td></tr></table>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Phase</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Cutaneous (Entry)**</td><td>**Ground Itch** (Pruritic Papules at Entry Site — Feet/Hands)</td></tr><tr><td>**Pulmonary (Larval Migration)**</td><td>**Cough, Wheeze, Eosinophilia** (Löffler-like)</td></tr><tr><td>**Intestinal (Chronic)**</td><td>**Iron Deficiency Anaemia** (Microcytic Hypochromic), **Protein-Losing Enteropathy**, **Protein Malnutrition**, **Pica** (Geophagia)</td></tr></table>
+<div class="sub-h">Diagnosis &amp; Treatment</div>
+<table class="ctable"><tr><th>Test</th><th>Finding</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Stool Microscopy**</td><td>**Thin-Shelled Oval Eggs** (4-Cell Necator, 4-8 Cell Ancylostoma)</td></tr><tr><td>**CBC**</td><td>**Microcytic Hypochromic Anaemia**, **Eosinophilia**</td></tr><tr><td>**Iron Studies**</td><td>**Low Ferritin, Low Serum Iron, High TIBC**</td></tr></table>
+<table class="ctable"><tr><th>Treatment</th><th>Dose</th></tr><tr><td>-----------</td><td>------</td></tr><tr><td>**Albendazole 400mg Single Dose**</td><td>**Preferred**</td></tr><tr><td>**Mebendazole 500mg Single Dose**</td><td>**Alternative**</td></tr><tr><td>**Pyrantel Pamoate 10mg/kg**</td><td>**Alternative**</td></tr><tr><td>**Iron Supplementation**</td><td>**Ferrous Sulphate 200mg TDS × 3 Months**</td></tr></table>
+<div class="callout">[!tip] <b>Hookworm = Iron Deficiency Anaemia + Eosinophilia + Ground Itch</b>. <b>Albendazole 400mg Single Dose = 1st Line</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Trichuriasis (Whipworm)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Intensity</th><th>Features</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Light**</td><td>Asymptomatic</td></tr><tr><td>**Moderate**</td><td>**Abdominal Pain**, **Diarrhoea**, **Mucus/Blood in Stool**, **Growth Retardation**</td></tr><tr><td>**Heavy (Trichuris Dysentery Syndrome)**</td><td>**Chronic Mucus/Bloody Diarrhoea**, **Rectal Prolapse** (Tenesmus), **Anaemia**, **Protein-Losing Enteropathy**, **Growth Failure**</td></tr><tr><td>**Complications**</td><td>**Rectal Prolapse**, **Appendicitis**, **Severe Anaemia**, **Growth Failure**</td></tr></table>
+<div class="sub-h">Diagnosis &amp; Treatment</div>
+<table class="ctable"><tr><th>Test</th><th>Finding</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Stool Microscopy**</td><td>**Barrel-Shaped (Lemon) Egg with Bipolar Plugs** (Trichuris)</td></tr><tr><td>**Eosinophilia**</td><td>Mild-Moderate</td></tr></table>
+<table class="ctable"><tr><th>Treatment</th><th>Dose</th><th>Duration</th></tr><tr><td>-----------</td><td>------</td><td>----------</td></tr><tr><td>**Albendazole 400mg Single Dose**</td><td>**Single Dose**</td><td>**Low Cure Rate** (Repeat in 2-4 Weeks)</td></tr><tr><td>**Mebendazole 500mg Single Dose** (or 100mg BD × 3 Days)</td><td>**1-3 Days**</td><td>**Better Cure Rate**</td></tr><tr><td>**Combination (Albendazole + Ivermectin)**</td><td>**Best for Heavy Infections**</td><td>**Sequential/Concurrent**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📖 Strongyloidiasis (Strongyloides stercoralis) — **Unique: Autoinfection**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Unique Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Significance</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**Autoinfection**</td><td>**Rhabditiform → Filariform in Gut** → **Re-invasion** (Perianal/Venous) → **Lifelong Infection** if Untreated</td></tr><tr><td>**Hyperinfection**</td><td>**Immunocompromised** (Steroids, HTLV-1, Transplant, HTLV-1) → **Massive Larval Burden** → **Disseminated Disease**, **High Mortality (80-90%)**</td></tr><tr><td>**Larva Currens**</td><td>**Urticarial, Serpiginous, Rapidly Moving (cm/min)** — **Pathognomonic** (Perianal/Buttocks/Thighs)</td></tr><tr><td>**Hyperinfection Syndrome**</td><td>**Immunosuppressed** → **Massive Larval Burden** → **Sepsis, ARDS, Meningitis, Septicaemia (Gram -ve from Gut Flora)**</td></tr></table>
+<div class="sub-h">Clinical Forms</div>
+<table class="ctable"><tr><th>Form</th><th>Features</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>**Asymptomatic / Chronic**</td><td>Intermittent Abdominal Pain, Diarrhoea, **Larva Currens**, Eosinophilia</td></tr><tr><td>**Acute Pulmonary**</td><td>**Löffler-like Syndrome** (Cough, Wheeze, Eosinophilia, Infiltrates)</td></tr><tr><td>**Chronic Intestinal**</td><td>Intermittent Diarrhoea, Abdominal Pain, Weight Loss</td></tr><tr><td>**Hyperinfection / Disseminated**</td><td>**Immunocompromised**, **Sepsis (Gram -ve)**, **Meningitis (Enteric Flora)**, **ARDS, DIC**, **High Mortality (80-90%)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🔬 Diagnosis — Strongyloides</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Strongyloidiasis: Eosinophilia + Diarrhoea + Travel/Immunocompromised</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Stool Microscopy (3 Samples)**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Larvae Seen?**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">**Rhabditiform Larvae** (Not Eggs) → **Diagnosis**</div>
+<div class="fc-node" data-id="E">**Specialised Tests**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F1">**Baermann Funnel / Harada-Mori** (Larval Culture)</div>
+<div class="fc-node" data-id="F2">**Serology (IgG ELISA)** — **High Sens/Spec**</div>
+<div class="fc-node" data-id="F3">**PCR (Stool/Sputum/Blood)** — **High Sens/Spec**</div>
+<div class="fc-node" data-id="F4">**Duodenal Aspirate/Biopsy** — Larvae in Mucosa</div>
+</div>
+</div>
+<table class="ctable"><tr><th>Test</th><th>Sensitivity</th><th>Specificity</th><th>Role</th></tr><tr><td>------</td><td>-------------</td><td>-------------</td><td>------</td></tr><tr><td>**Stool Microscopy (x3)**</td><td>**30-50%** (Intermittent Shedding)</td><td>High</td><td>Routine, Low Sens</td></tr><tr><td>**Larval Culture (Harada-Mori)**</td><td>**80-90%**</td><td>High</td><td>**Increased Sensitivity**</td></tr><tr><td>**Serology (IgG ELISA)**</td><td>**90-95%**</td><td>**90-95%**</td><td>**Screening / Confirmatory**</td></tr><tr><td>**PCR (Stool/Serum)**</td><td>**>95%**</td><td>**>95%**</td><td>**Gold Standard (Increasing Use)**</td></tr><tr><td>**Duodenal Biopsy**</td><td>High</td><td>High</td><td>**If GI Symptoms + Negative Stool**</td></tr></table>
+<div class="callout">[!tip] <b>Strongyloides = Rhabditiform Larva in Stool (Not Egg) + Autoinfection + Hyperinfection Risk</b>. <b>Serology = Best Screening Test</b>. <b>Ivermectin = Drug of Choice</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">💊 Treatment — Strongyloides</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>1st Line</th><th>Alternative</th><th>Duration</th></tr><tr><td>----------</td><td>----------</td><td>-------------</td><td>----------</td></tr><tr><td>**Uncomplicated**</td><td>**Ivermectin 200µg/kg PO Single Dose** (Repeat Day 14)</td><td>**Albendazole 400mg BD × 3 Days**</td><td>**1-2 Doses**</td></tr><tr><td>**Strongyloidiasis (Chronic)**</td><td>**Ivermectin 200µg/kg Day 1 & 14**</td><td>**Albendazole 400mg BD × 3-7 Days**</td><td>**Extended**</td></tr><tr><td>**Hyperinfection / Disseminated**</td><td>**Ivermectin 200µg/kg/day PO/NG** (Daily Until Parasite Clearance)</td><td>**Albendazole 400mg BD IV/PO** + **Subcutaneous Ivermectin** (If GI Absorption Impaired)</td><td>**Until 2 Weeks Parasite-Free**</td></tr><tr><td>**Immunocompromised (Prophylaxis)**</td><td>**Ivermectin 200µg/kg Monthly**</td><td>—</td><td>**Duration of Immunosuppression**</td></tr></table>
+<div class="callout">[!warning] <b>Hyperinfection = Medical Emergency</b>. <b>Ivermectin Daily Until Parasite Clearance</b>. <b>Broad-Spectrum ABX for Gram-Negative Sepsis</b> (Gut Translocation). <b>Meningitis Risk → Cover CNS</b>.</div>
+<div class="callout">[!warning] <b>Corticosteroids = Major Trigger for Hyperinfection</b>. <b>Screen Before Immunosuppression</b> (Serology/PCR).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🛡️ Mass Drug Administration (MDA) — WHO Strategy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Target Population</th><th>Drug</th><th>Dose</th><th>Frequency</th></tr><tr><td>-------------------</td><td>------</td><td>------</td><td>-----------</td></tr><tr><td>**Pre-School Children (1-4y)**</td><td>**Albendazole 400mg** (or Mebendazole 500mg)</td><td>**Single Dose**</td><td>**Annual** (If Prevalence >20%) / **Bi-Annual** (>50%)</td></tr><tr><td>**School-Age Children (5-14y)**</td><td>**Albendazole 400mg** (or Mebendazole 500mg)</td><td>**Single Dose**</td><td>**Annual / Bi-Annual**</td></tr><tr><td>**Women of Reproductive Age**</td><td>**Albendazole 400mg**</td><td>**Single Dose**</td><td>**Annual** (In Endemic Areas)</td></tr><tr><td>**Strongyloides Endemic**</td><td>**Ivermectin 200µg/kg**</td><td>**Single Dose**</td><td>**Annual/Bi-Annual**</td></tr></table>
+<div class="callout">[!warning] <b>Pregnancy: Avoid 1st Trimester</b>. <b>Albendazole/Mebendazole Category C</b>. <b>Ivermectin: Avoid in Pregnancy</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Ascaris**</td><td>**Löffler's Syndrome (Pulmonary)**, **Intestinal Obstruction**, **Albendazole 400mg Single Dose**</td></tr><tr><td>**Hookworm**</td><td>**Iron Deficiency Anaemia**, **Ground Itch**, **Eosinophilia**, **Albendazole 400mg Single Dose**</td></tr><tr><td>**Trichuris**</td><td>**Trichuris Dysentery Syndrome** (Bloody Diarrhoea, Rectal Prolapse), **Albendazole/Mebendazole** (Low Cure Rate, Repeat)</td></tr><tr><td>**Strongyloides**</td><td>**Autoinfection**, **Larva Currens (Pathognomonic)**, **Hyperinfection (Immunocompromised, Steroids)**, **Ivermectin 200µg/kg**</td></tr><tr><td>**Hyperinfection**</td><td>**Steroids/HTLV-1/Transplant → Disseminated → Sepsis/Meningitis/ARDS**, **Ivermectin Daily Until Clear**</td></tr><tr><td>**Eosinophilia**</td><td>**Marked in All STH** (Except Heavy Trichuris), **Strongyloides = Persistent**</td></tr><tr><td>**MDA**</td><td>**Albendazole 400mg / Mebendazole 500mg Annual/Bi-Annual**, **Ivermectin for Strongyloides**</td></tr><tr><td>**Drug of Choice**</td><td>**Albendazole 400mg** (Ascaris, Hookworm, Trichuris), **Ivermectin** (Strongyloides)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the drug of choice for Strongyloides stercoralis?</b></li></ol>
+<ul><li><b>Ivermectin 200µg/kg PO Single Dose</b> (Repeat Day 14).</li></ul>
+<ol><li><b>What is the hallmark clinical feature of Strongyloides hyperinfection?</b></li></ol>
+<ul><li><b>Disseminated Disease in Immunocompromised</b> → <b>Sepsis (Gram -ve), Meningitis, ARDS, High Mortality</b>.</li></ul>
+<ol><li><b>What is the difference between Hookworm and Strongyloides skin penetration?</b></li></ol>
+<ul><li><b>Hookworm = Ground Itch (Pruritic Papules)</b>; <b>Strongyloides = Larva Currens (Urticarial, Serpiginous, Rapidly Moving)</b>.</li></ul>
+<ol><li><b>Why is Strongyloides unique among helminths?</b></li></ol>
+<ul><li><b>Autoinfection Cycle</b> → <b>Lifelong Infection Possible</b>, <b>Hyperinfection Risk in Immunocompromised</b>.</li></ul>
+<ol><li><b>What is the drug of choice for Trichuriasis?</b></li></ol>
+<ul><li><b>Mebendazole 500mg Single Dose</b> (Better than Albendazole) or <b>Albendazole + Ivermectin</b> for Heavy Infection.</li></ul>
+<ol><li><b>What is the drug of choice for Ascariasis?</b></li></ol>
+<ul><li><b>Albendazole 400mg Single Dose</b> (or Mebendazole 500mg Single Dose).</li></ul>
+<ol><li><b>How do you diagnose Strongyloides if stool microscopy is negative?</b></li></ol>
+<ul><li><b>Serology (IgG ELISA)</b>, <b>Larval Culture (Baermann/Harada-Mori)</b>, <b>PCR</b>, <b>Duodenal Biopsy</b>.</li></ul>
+<ol><li><b>What is the management of Strongyloides Hyperinfection?</b></li></ol>
+<ul><li><b>Ivermectin 200µg/kg Daily Until Parasite Clearance</b>, <b>Broad-Spectrum ABX for Gram-Negative Sepsis</b>, <b>Stop Steroids/Immunosuppressants</b>.</li></ul>
+<ol><li><b>What is the drug of choice for Hookworm?</b></li></ol>
+<ul><li><b>Albendazole 400mg Single Dose</b> (Alternative: Mebendazole 500mg).</li></ul>
+<ol><li><b>What is the MDA strategy for STH?</b></li></ol>
+<ul><li><b>Albendazole 400mg / Mebendazole 500mg Annual/Bi-Annual</b> for Pre-School &amp; School-Age Children in Endemic Areas.</li></ul>
+<ol><li><b>What is the characteristic finding in Hookworm infection?</b></li></ol>
+<ul><li><b>Iron Deficiency Anaemia</b> (Microcytic Hypochromic) + <b>Ground Itch</b> + <b>Eosinophilia</b>.</li></ul>
+<ol><li><b>How does Strongyloides autoinfection occur?</b></li></ol>
+<ul><li><b>Rhabditiform Larvae → Filariform Larvae in Gut → Penetrate Colonic Mucosa/Perianal Skin → Systemic Migration → Duodenum</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Hookworm vs Strongyloides**</td><td>**Hookworm: Eggs in Stool, Ground Itch, Anaemia**; **Strongyloides: Larvae in Stool, Larva Currens, Autoinfection**</td></tr><tr><td>**Ascaris vs Hookworm**</td><td>**Ascaris: Obstruction, Löffler's Syndrome, Large Worms**; **Hookworm: Anaemia, Ground Itch, Blood Loss**</td></tr><tr><td>**Trichuris vs Other**</td><td>**Trichuris: Whipworm, Barrel Egg, Rectal Prolapse, Dysentery Syndrome**</td></tr><tr><td>**Strongyloides Autoinfection**</td><td>**Filariform Larva Penetrates Colonic Mucosa/Perianal Skin → Re-enters Circulation**</td></tr><tr><td>**Hyperinfection Trigger**</td><td>**Corticosteroids, HTLV-1, Transplant, Immunosuppression**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Ascaris = Löffler's + Obstruction"**</td><td>Ascariasis</td></tr><tr><td>**"Hookworm = Anaemia + Ground Itch"**</td><td>Hookworm</td></tr><tr><td>**"Trichuris = Whipworm + Dysentery + Rectal Prolapse"**</td><td>Trichuriasis</td></tr><tr><td>**"Strongyloides = Larva Currens + Autoinfection + Hyperinfection"**</td><td>Strongyloides</td></tr><tr><td>**"Ivermectin = Strongyloides Drug"**</td><td>Treatment</td></tr><tr><td>**"Steroids = Strongyloides Hyperinfection Trigger"**</td><td>Danger</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Soil-Transmitted Helminths))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Ascaris lumbricoides</div>
+<div class="mm-node mm-l3">– Löffler's Syndrome (Pulmonary)</div>
+<div class="mm-node mm-l3">– Intestinal Obstruction</div>
+<div class="mm-node mm-l3">– Albendazole 400mg Single Dose</div>
+<div class="mm-node mm-l2">Hookworm (Ancylostoma/Necator)</div>
+<div class="mm-node mm-l3">– Ground Itch (Entry)</div>
+<div class="mm-node mm-l3">– Iron Deficiency Anaemia</div>
+<div class="mm-node mm-l3">– Albendazole 400mg Single Dose</div>
+<div class="mm-node mm-l2">Trichuris trichiura</div>
+<div class="mm-node mm-l3">– Whipworm</div>
+<div class="mm-node mm-l3">– Dysentery Syndrome (Rectal Prolapse)</div>
+<div class="mm-node mm-l3">– Mebendazole &gt; Albendazole</div>
+<div class="mm-node mm-l2">Strongyloides stercoralis</div>
+<div class="mm-node mm-l3">– Autoinfection (Unique!)</div>
+<div class="mm-node mm-l3">– Larva Currens (Pathognomonic)</div>
+<div class="mm-node mm-l3">– Hyperinfection (Immunosuppressed)</div>
+<div class="mm-node mm-l3">– Ivermectin 200µg/kg (Drug of Choice)</div>
+<div class="mm-node mm-l3">– Hyperinfection: Ivermectin Daily Until Clear</div>
+<div class="mm-node mm-l2">MDA Strategy</div>
+<div class="mm-node mm-l3">– Albendazole 400mg / Mebendazole 500mg</div>
+<div class="mm-node mm-l3">– Annual/Bi-Annual</div>
+<div class="mm-node mm-l3">– Ivermectin for Strongyloides Endemic</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**SOIL-TRANSMITTED HELMINTHS – FCPS/MRCP REVISION CARD**</th></tr><tr><td>-----------------------------------------------------------</td></tr><tr><td>**Ascaris**: Löffler's Syndrome, Obstruction, **Albendazole 400mg Single Dose**</td></tr><tr><td>**Hookworm**: **Iron Deficiency Anaemia**, Ground Itch, **Albendazole 400mg**</td></tr><tr><td>**Trichuris**: **Dysentery Syndrome**, Rectal Prolapse, **Mebendazole > Albendazole**</td></tr><tr><td>**Strongyloides**: **Autoinfection**, **Larva Currens**, **Hyperinfection (Steroids/HTLV-1)**</td></tr><tr><td>**Strongyloides Rx**: **Ivermectin 200µg/kg** (Single/Repeat Day 14)</td></tr><tr><td>**Hyperinfection**: **Ivermectin Daily Until Clear + Broad ABX + Stop Steroids**</td></tr><tr><td>**Eosinophilia**: **All STH** (Except Heavy Trichuris)</td></tr><tr><td>**MDA**: **Albendazole 400mg / Mebendazole 500mg Annual/Bi-Annual**</td></tr><tr><td>**Egg/Larva ID**: Ascaris (Mammillated), Hookworm (Thin Oval), Trichuris (Barrel+Bipolar), Strongyloides (Rhabditiform Larva)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Four STH + Clinical Features, Egg/Larva Identification, Drug of Choice (Albendazole vs Ivermectin), Strongyloides Autoinfection/Hyperinfection, Ivermectin for Strongyloides, MDA Strategy, Eosinophilia Patterns</td></tr><tr><td>**Should Know**</td><td>Life Cycles, Pulmonary Migration Phases (Löffler's), Diagnostic Methods (Microscopy, Serology, PCR, Culture), Heavy Infection Complications, MDA Implementation Challenges, Drug Resistance, Paediatric/Pregnancy Dosing, Co-infections</td></tr><tr><td>**Nice to Know**</td><td>Genomic Epidemiology, Anthelmintic Resistance Mechanisms, Vaccine Development (Hookworm, Ascaris), Integrated Control (WASH + MDA), Economic Impact, Elimination Targets (WHO 2030), Zoonotic Ascaris (A. suum), Strongyloides in HTLV-1, Coinfection Interactions (Malaria, TB, HIV)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Ascaris</td><td></td><td></td></tr><tr><td>Hookworm</td><td></td><td></td></tr><tr><td>Trichuris</td><td></td><td></td></tr><tr><td>Strongyloides (Including Hyperinfection)</td><td></td><td></td></tr><tr><td>Diagnosis (Microscopy, Serology, PCR)</td><td></td><td></td></tr><tr><td>Treatment Protocols</td><td></td><td></td></tr><tr><td>MDA Strategy</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Amoebiasis / Giardiasis]]</li><li><b>Next</b>: [[Schistosomiasis]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Soil-Transmitted Helminths &amp; Strongyloides · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

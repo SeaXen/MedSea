@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cardiogenic Shock — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Cardiogenic Shock</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise cardiogenic shock clinically and haemodynamically</li><li>Differentiate from other shock types</li><li>Understand initial management (avoid excess fluid)</li><li>Know when to use inotropes and mechanical support</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Cardiac index &lt;2.2 L/min/m² + PCWP &gt;18 mmHg + signs of hypoperfusion (or SBP &lt;90 mmHg with end-organ dysfunction).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Common Causes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Acute MI (most common) — especially anterior or right ventricular</li><li>Acute decompensated heart failure</li><li>Myocarditis, cardiomyopathy, arrhythmia, valve rupture</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Cool, clammy skin</li><li>Raised JVP, S3 gallop, pulmonary oedema</li><li>Hypotension + narrow pulse pressure</li><li>Signs of congestion (crackles, oedema)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Key Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li>ECG, troponin, echo (bedside crucial)</li><li>CXR (pulmonary oedema)</li><li>ABG + lactate</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Avoid excess fluid</b> — cautious 250 mL boluses only if clear hypovolaemia</li><li><b>Inotropes</b>: Dobutamine or milrinone (if low output)</li><li><b>Vasopressors</b>: Noradrenaline if hypotensive</li><li><b>Revascularisation</b>: Urgent PCI for STEMI</li><li><b>Mechanical support</b>: IABP, Impella, ECMO in refractory cases</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Red Flags</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Refractory hypotension</li><li>Worsening pulmonary oedema</li><li>Right ventricular infarction (hypotension + clear lungs + raised JVP)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Cardiogenic shock can occur with <b>normal blood pressure</b> initially</li><li>Bedside echo is the most useful investigation</li><li>Do not give large fluid boluses — it worsens pulmonary oedema</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>How do you differentiate cardiogenic from hypovolaemic shock?</li><li>What is the first-line inotrope in cardiogenic shock?</li><li>When is urgent revascularisation indicated?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Cardiogenic = pump failure + congestion</b> Bedside echo + cautious fluids Inotropes + revascularisation Mechanical support if refractory</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Definition: CI &lt;2.2 + PCWP &gt;18 + hypoperfusion</li><li>Clinical: cool/clammy, raised JVP, S3, pulmonary oedema, hypotension</li><li><b>AVOID large fluids</b> — cautious 250 mL boluses only</li><li>First-line inotrope: Dobutamine; add Noradrenaline if hypotensive</li><li>STEMI = urgent PCI</li><li>RV infarction: hypotension + clear lungs + raised JVP</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Mechanical support: IABP, Impella, ECMO</li><li>Milrinone alternative (PDE III inhibitor) — avoid if hypotensive</li><li>Echocardiography crucial for diagnosis</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>LVAD, transplant pathways</li><li>Cardiogenic shock registries (CSWG)</li><li>VA-ECMO vs VV-ECMO</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Cardiogenic shock definition includes:</li></ol>
+<p>A. CI &gt;2.5, PCWP &lt;15 B. CI &lt;2.2, PCWP &gt;18 C. CI &gt;3.0, PCWP &gt;20 D. CI &lt;2.2, PCWP &lt;12</p>
+<ol><li>First-line inotrope in cardiogenic shock:</li></ol>
+<p>A. Noradrenaline B. <b>Dobutamine</b> C. Adrenaline D. Vasopressin</p>
+<ol><li>Cardiogenic shock clinical features include all EXCEPT:</li></ol>
+<p>A. Cool, clammy skin B. Raised JVP C. Warm peripheries D. Pulmonary oedema</p>
+<ol><li>Fluid management in cardiogenic shock:</li></ol>
+<p>A. 30 mL/kg crystalloid bolus B. Cautious 250 mL boluses ONLY if clear hypovolaemia C. No fluids ever D. Albumin 5% 1L</p>
+<ol><li>STEMI with cardiogenic shock — revascularisation:</li></ol>
+<p>A. Delayed 24h B. Urgent PCI C. Medical management only D. CABG next week</p>
+<ol><li>Right ventricular infarction presents with:</li></ol>
+<p>A. Hypotension + pulmonary oedema B. Hypotension + CLEAR lungs + raised JVP C. Hypertension + clear lungs D. Normal JVP + pulmonary oedema</p>
+<ol><li>Dobutamine in cardiogenic shock — common issue:</li></ol>
+<p>A. Causes hypertension B. Causes vasodilatation → hypotension (needs noradrenaline combo) C. Causes bradycardia D. No side effects</p>
+<ol><li>Milrinone is:</li></ol>
+<p>A. β₁ agonist B. <b>PDE III inhibitor</b> (inodilator) C. α₁ agonist D. V₁ agonist</p>
+<ol><li>Bedside echo in cardiogenic shock:</li></ol>
+<p>A. Not useful B. Most useful investigation (LV/RV function, valves, tamponade) C. Only for stable patients D. Replaces PCI</p>
+<ol><li>Mechanical support options for refractory cardiogenic shock:</li></ol>
+<p>A. IABP only B. Impella only C. IABP, Impella, ECMO D. Ventilator only</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 60-year-old anterior STEMI, BP 80/50, HR 110, cool peripheries, crackles both lungs, JVP raised. Echo: LVEF 25%, no RV involvement. Best initial management:</li></ol>
+<p>A. 1L saline bolus B. Dobutamine + urgent PCI C. Noradrenaline only D. Furosemide 80mg IV</p>
+<ol><li>Same patient, on dobutamine 10 µg/kg/min, still hypotensive (MAP 55). Next:</li></ol>
+<p>A. Increase dobutamine B. <b>Add noradrenaline</b> (vasopressor for perfusion pressure) C. Add milrinone D. Stop dobutamine</p>
+<ol><li>A 70-year-old inferior STEMI, hypotensive (85/50), JVP raised, CLEAR lungs. Kussmaul's sign. Diagnosis:</li></ol>
+<p>A. Cardiogenic shock (LV failure) B. <b>RV infarction</b> C. Tamponade D. PE</p>
+<ol><li>RV infarction management — AVOID:</li></ol>
+<p>A. Fluids (actually NEEDS preload) B. Nitrates (venodilatation → collapse) C. Dobutamine D. PCI</p>
+<ol><li>A patient on noradrenaline + dobutamine, still hypotensive, lactate rising, LVEF 15%. Mechanical support:</li></ol>
+<p>A. IABP only B. <b>Impella or VA-ECMO</b> (PCI centre) C. Continue medical only D. CPAP</p>
+<ol><li>Milrinone CONTRAINDICATED in:</li></ol>
+<p>A. Hypertension B. <b>Hypotension</b> (pure vasodilator + inotrope) C. Bradycardia D. Tachycardia</p>
+<ol><li>Cardiogenic shock vs hypovolaemic shock — key differentiator:</li></ol>
+<p>A. BP only B. <b>JVP + lung crackles + S3</b> (congestion vs empty) C. Heart rate D. Temperature</p>
+<ol><li>Urgent PCI indicated in cardiogenic shock due to:</li></ol>
+<p>A. NSTEMI B. <b>STEMI</b> (class I) C. Stable angina D. Pericarditis</p>
+<ol><li>Dobutamine dose range:</li></ol>
+<p>A. 0.01–0.5 µg/kg/min B. <b>2.5–20 µg/kg/min</b> C. 0.1–0.4 U/min D. 10–50 µg/kg/min</p>
+<ol><li>Pulmonary artery catheter in cardiogenic shock shows:</li></ol>
+<p>A. Low PCWP, high CO B. <b>High PCWP (&gt;18), low CO</b> C. Normal PCWP, high CO D. Low PCWP, low CO</p>
+<ol><li>S3 gallop in cardiogenic shock indicates:</li></ol>
+<p>A. Normal heart B. <b>LV systolic dysfunction / volume overload</b> C. RV failure only D. Valvular stenosis</p>
+<ol><li>A patient with acute mitral regurgitation (papillary muscle rupture) post-MI, cardiogenic shock. Management:</li></ol>
+<p>A. Medical only B. <b>Emergency surgery + IABP bridge</b> C. PCI only D. Diuretics</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Cardiogenic shock definition</li></ul>
+<p>A: CI &lt;2.2 + PCWP &gt;18 + hypoperfusion</p>
+<ul><li>Q: First-line inotrope</li></ul>
+<p>A: Dobutamine (β₁ &gt; β₂)</p>
+<ul><li>Q: Fluids in cardiogenic</li></ul>
+<p>A: Cautious 250 mL ONLY if hypovolaemic — avoid large boluses</p>
+<ul><li>Q: RV infarction</li></ul>
+<p>A: Hypotension + CLEAR lungs + raised JVP + Kussmaul's sign</p>
+<ul><li>Q: Dobutamine side effect</li></ul>
+<p>A: Vasodilatation → hypotension (add noradrenaline)</p>
+<ul><li>Q: Milrinone</li></ul>
+<p>A: PDE III inhibitor, avoid in hypotension</p>
+<ul><li>Q: STEMI + cardiogenic shock</li></ul>
+<p>A: Urgent PCI (class I)</p>
+<ul><li>Q: Mechanical support</li></ul>
+<p>A: IABP, Impella, VA-ECMO</p>
+<ul><li>Q: Echo</li></ul>
+<p>A: Most useful investigation</p>
+<ul><li>Q: Differentiate from hypovolaemic</li></ul>
+<p>A: Congestion (JVP, crackles, S3) vs empty</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — CI &lt;2.2, PCWP &gt;18. <b>MCQ 2</b>: B — Dobutamine first-line inotrope. <b>MCQ 3</b>: C — Cardiogenic = COOL peripheries (vasoconstriction). <b>MCQ 4</b>: B — Cautious 250 mL only if hypovolaemic. <b>MCQ 5</b>: B — STEMI = urgent PCI. <b>MCQ 6</b>: B — RV infarct = hypotension + clear lungs + raised JVP. <b>MCQ 7</b>: B — β₂ vasodilatation → hypotension. <b>MCQ 8</b>: B — PDE III inhibitor. <b>MCQ 9</b>: B — Most useful investigation. <b>MCQ 10</b>: C — IABP, Impella, ECMO.</p>
+<p><b>SBA 1</b>: B — Dobutamine for inotropy + urgent PCI for revascularisation. <b>SBA 2</b>: B — Hypotension on dobutamine → add noradrenaline for perfusion pressure. <b>SBA 3</b>: B — Inferior STEMI + hypotension + clear lungs + raised JVP = RV infarct. <b>SBA 4</b>: B — Nitrates cause venodilatation → preload drop → collapse in RV infarct. <b>SBA 5</b>: B — Refractory + low EF → Impella/VA-ECMO at PCI centre. <b>SBA 6</b>: B — Milrinone = vasodilator, worsens hypotension. <b>SBA 6</b>: B — Congestion signs = cardiogenic; empty = hypovolaemic. <b>SBA 7</b>: B — STEMI = urgent PCI. <b>SBA 8</b>: B — 2.5–20 µg/kg/min. <b>SBA 9</b>: B — High PCWP, low CO. <b>SBA 10</b>: B — S3 = LV systolic dysfunction. <b>SBA 11</b>: B — Acute MR = surgical emergency + IABP bridge.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cardiogenic Shock · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

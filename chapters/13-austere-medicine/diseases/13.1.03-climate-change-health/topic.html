@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Climate Change &amp; Health — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">MEDICINE IN AUSTERE ENVIRONMENTS</span>
+      <div class="h1">Climate Change &amp; Health</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Direct Health Impacts</b>: Heat-related illness, extreme weather events, UV radiation</li><li>[ ] Analyse <b>Indirect Health Impacts</b>: Vector-borne disease shifts, water/food-borne diseases, air quality, food security/nutrition, mental health</li><li>[ ] Identify <b>Vulnerable Populations</b>: Geographic, demographic, occupational, socioeconomic</li><li>[ ] Apply <b>Mitigation &amp; Adaptation</b>: Health co-benefits, health system resilience, early warning systems</li><li>[ ] Understand <b>Planetary Health Framework</b>: Sustainable development goals, One Health, planetary boundaries</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Direct Health Impacts</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Heat-Related Illness</div>
+<table class="ctable"><tr><th>Condition</th><th>Definition</th><th>Risk Factors</th><th>Management</th></tr><tr><td>-----------</td><td>------------</td><td>--------------</td><td>------------</td></tr><tr><td>**Heat Exhaustion**</td><td>**Core temp 37-40°C**, heavy sweating, weakness, nausea, headache, dizziness</td><td>Elderly, chronic disease, exertion, humidity</td><td>**Cool, Hydrate, Rest**, Monitor</td></tr><tr><td>**Heat Stroke**</td><td>**Core temp >40°C**, **CNS dysfunction** (confusion, seizures, coma), hot dry skin</td><td>**Medical Emergency**, High mortality</td><td>**Rapid Cooling (Ice water immersion)**, **ABCs**, **ICU**, **Avoid antipyretics**</td></tr><tr><td>**Heat Cramps**</td><td>**Painful muscle spasms**, electrolyte loss</td><td>Exercise in heat</td><td>**Oral electrolytes, Rest, Cool**</td></tr><tr><td>**Heat Syncope**</td><td>**Orthostatic dizziness/syncope**, vasodilation + dehydration</td><td>Prolonged standing in heat</td><td>**Supine, Fluids, Cool**</td></tr></table>
+<table class="ctable"><tr><th>Population at Risk</th><th>Mechanism</th></tr><tr><td>-------------------</td><td>-----------</td></tr><tr><td>**Elderly**</td><td>Reduced thermoregulation, comorbidities, medications (diuretics, beta-blockers), social isolation</td></tr><tr><td>**Children**</td><td>Higher surface area:mass, higher metabolic rate, dependent on caregivers</td></tr><tr><td>**Chronic Disease** (CVD, respiratory, diabetes, renal, mental illness)</td><td>Impaired thermoregulation, medication effects (diuretics, anticholinergics, beta-blockers)</td></tr><tr><td>**Urban Poor**</td><td>Urban heat islands, poor housing, no AC, occupational exposure</td></tr><tr><td>**Outdoor Workers**</td><td>Construction, agriculture, delivery, construction</td><td>High metabolic heat + environmental heat</td></tr></table>
+<div class="sub-h">Extreme Weather Events</div>
+<table class="ctable"><tr><th>Event</th><th>Health Impacts</th><th>Vulnerable Groups</th></tr><tr><td>-------</td><td>----------------</td><td>-------------------</td></tr><tr><td>**Floods**</td><td>**Drowning, Trauma**, **Waterborne diseases** (Cholera, Leptospirosis, Hepatitis A), **Vector-borne** (Mosquito proliferation), **Mental health (PTSD, depression)**, **Displacement**</td><td>Low-lying areas, poor housing, poor sanitation, limited evacuation capacity</td></tr><tr><td>**Cyclones/Hurricanes**</td><td>**Trauma, Drowning**, **Waterborne/Vector-borne outbreaks**, **Health system disruption**, **Mental health**</td><td>Coastal populations, poor infrastructure, evacuation challenges</td></tr><tr><td>**Wildfires**</td><td>**Burns, Smoke inhalation (PM2.5, CO, VOCs)**, **Exacerbation of COPD/Asthma**, **CV events**, **Mental health**, **Displacement**</td><td>Firefighters, nearby communities, cardiopulmonary disease</td></tr><tr><td>**Droughts**</td><td>**Food insecurity, Malnutrition**, **Water scarcity (WASH)**, **Dust storms**, **Wildfire risk**, **Mental health (farmer suicide)**</td><td>Rural/agricultural, subsistence farmers, low-income</td></tr><tr><td>**Heatwaves**</td><td>**Excess mortality (CVD, Respiratory, Renal)**, **Heat stroke, Exacerbation of chronic disease**, **Power outages → Cold chain failure**</td><td>Elderly, isolated, chronic disease, urban poor</td></tr></table>
+<div class="sub-h">UV Radiation</div>
+<table class="ctable"><tr><th>Effect</th><th>Mechanism</th><th>Prevention</th></tr><tr><td>--------</td><td>-----------</td><td>------------</td></tr><tr><td>**Skin Cancer** (Melanoma, BCC, SCC)</td><td>**UVB (Direct DNA damage)**, UVA (Photoaging, indirect DNA damage)</td><td>**Sun protection (Slip, Slop, Slap, Seek, Slide)**, Avoid midday sun</td></tr><tr><td>**Cataracts / Pterygium**</td><td>UVB absorption by lens</td><td>UV-blocking sunglasses, hats</td></tr><tr><td>**Immune Suppression**</td><td>UV-induced local/systemic immunosuppression</td><td>Photoprotection</td></tr><tr><td>**Vitamin D Synthesis**</td><td>UVB → 7-dehydrocholesterol → Vitamin D3</td><td>**Balanced exposure** (10-15 min midday sun, arms/legs)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Indirect Health Impacts</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Vector-Borne Disease Shifts</div>
+<table class="ctable"><tr><th>Disease / Vector</th><th>Climate Driver</th><th>Projected Change</th></tr><tr><td>------------------</td><td>----------------</td><td>------------------</td></tr><tr><td>**Malaria** (*Anopheles*)</td><td>**Temperature ↑ → Faster parasite development, longer transmission season, altitudinal/latitudinal expansion**</td><td>**Highland expansion (E. Africa, Andes), Season extension**</td></tr><tr><td>**Dengue / Chikungunya / Zika** (*Aedes aegypti/albopictus*)</td><td>**Temperature ↑ → Faster viral replication in mosquito, shorter EIP, expanded range**, **Rainfall → Breeding sites**</td><td>**Geographic expansion (temperate zones), Year-round transmission in tropics**</td></tr><tr><td>**Lyme Disease** (*Ixodes* ticks)</td><td>**Warmer winters → Tick survival ↑**, **Range expansion northward/upward**</td><td>**Northern Europe, Canada, Highlands**</td></tr><tr><td>**Tick-Borne Encephalitis**</td><td>**Warmer → Tick activity ↑, Virus replication ↑**</td><td>**Northern Europe, Higher altitudes**</td></tr><tr><td>**Leishmaniasis** (Sandflies)</td><td>**Temperature/Humidity → Vector range expansion**</td><td>**Mediterranean northward, Urbanisation**</td></tr><tr><td>**Schistosomiasis**</td><td>**Temperature → Snail habitat expansion**, **Irrigation/dams**</td><td>**New foci, Re-emergence**</td></tr></table>
+<div class="sub-h">Water- &amp; Food-Borne Diseases</div>
+<table class="ctable"><tr><th>Driver</th><th>Impact</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Temperature ↑**</td><td>**Vibrio cholerae, V. parahaemolyticus** proliferation in coastal waters → **Cholera, Seafood illness**</td></tr><tr><td>**Heavy Rainfall / Flooding**</td><td>**Sewage overflow**, **Water contamination** → **Cholera, Typhoid, Hepatitis A/E, Leptospirosis, Cryptosporidium**</td></tr><tr><td>**Drought**</td><td>**Water scarcity → Poor hygiene**, **Concentration of contaminants**, **Cyanobacterial blooms (Microcystins)**</td></tr><tr><td>**Temperature ↑**</td><td>**Foodborne pathogens** (Salmonella, Campylobacter, Listeria) **growth rate ↑**, **Mycotoxin (Aflatoxin) production in crops**</td></tr></table>
+<div class="sub-h">Air Quality Interactions</div>
+<table class="ctable"><tr><th>Interaction</th><th>Mechanism</th><th>Health Impact</th></tr><tr><td>-------------</td><td>-----------</td><td>---------------</td></tr><tr><td>**Heat + O3**</td><td>**Heat → ↑ O3 formation**</td><td>**Respiratory exacerbation, CV mortality**</td></tr><tr><td>**Wildfires + Climate**</td><td>**Drought/Heat → Wildfires → PM2.5, CO, VOCs**</td><td>**Respiratory/CV morbidity, Mortality**</td></tr><tr><td>**Pollen + CO2/Temp**</td><td>**CO2 ↑ → Pollen production ↑, Season longer**, **Temp ↑ → Earlier season**</td><td>**Allergic Rhinitis, Asthma exacerbation**</td></tr><tr><td>**Dust Storms**</td><td>**Drought/Desertification → Dust → PM10/2.5**</td><td>**Respiratory/Cardiovascular**</td></tr></table>
+<div class="sub-h">Food Security &amp; Nutrition</div>
+<table class="ctable"><tr><th>Pathway</th><th>Impact</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Crop Yields**</td><td>**Heat/Drought/Floods → ↓ Yields (Wheat, Maize, Rice)** → **Food Insecurity, Price Volatility**</td></tr><tr><td>**Nutrient Density**</td><td>**Elevated CO2 → ↓ Protein, Zinc, Iron in Staples (C3 Crops)** → **Micronutrient Deficiencies**</td></tr><tr><td>**Fisheries**</td><td>**Ocean Warming/Acidification → ↓ Catch, Range Shifts** → **Protein Loss (Coastal/Island Populations)**</td></tr><tr><td>**Food Safety**</td><td>**Mycotoxins (Aflatoxin), Vibrio, Salmonella** proliferation in heat/humidity</td></tr></table>
+<div class="sub-h">Mental Health Impacts</div>
+<table class="ctable"><tr><th>Pathway</th><th>Manifestations</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Acute Events**</td><td>**PTSD, Depression, Anxiety, Grief** (Post-disaster)</td></tr><tr><td>**Chronic Stress**</td><td>**Eco-anxiety, Solastalgia (distress from environmental change)**, **Displacement Migration**</td></tr><tr><td>**Heat**</td><td>**Aggression, Suicide, Cognitive Impairment**</td></tr><tr><td>**Displacement**</td><td>**Loss of Livelihood, Community, Cultural Identity**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Vulnerable Populations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Dimension</th><th>Groups</th><th>Specific Risks</th></tr><tr><td>-----------</td><td>--------</td><td>--------------</td></tr><tr><td>**Geographic**</td><td>**Small Island States** (SLR, Cyclones), **Coastal Megacities** (Floods, Heat Islands), **Arctic** (Permafrost Thaw, Indigenous Health), **Arid/Semi-Arid** (Drought, Dust)</td><td>SLR, Salinisation, Cyclones, Heat, Vector Shift</td></tr><tr><td>**Demographic**</td><td>**Children** (Developmental vulnerability), **Elderly** (Physiological reserve), **Pregnant Women** (Fetal vulnerability), **Indigenous Peoples** (Land connection, Marginalisation)</td><td>Heat, Malnutrition, Infectious Disease, Displacement</td></tr><tr><td>**Socioeconomic**</td><td>**Urban Poor** (Slums, Heat Island, Flood Risk), **Rural Subsistence Farmers** (Drought, Crop Failure), **Informal Workers** (Heat Exposure, No Safety Net)</td><td>Heat, Flood, Vector-Borne, Food Insecurity</td></tr><tr><td>**Health Status**</td><td>**Chronic Disease** (CVD, Resp, Diabetes, CKD), **Mental Illness**, **Immunocompromised**</td><td>Heat, Air Pollution, Infection Risk, Medication Interactions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🛡️ Mitigation & Adaptation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mitigation (Reduce GHG Emissions) — Health Co-Benefits</div>
+<table class="ctable"><tr><th>Sector</th><th>Mitigation Action</th><th>**Health Co-Benefit**</th></tr><tr><td>--------</td><td>------------------</td><td>----------------------</td></tr><tr><td>**Energy**</td><td>**Coal Phase-Out → Renewables**</td><td>**↓ Air Pollution (PM2.5, NO2, SO2) → ↓ CVD, Respiratory, Lung Cancer**</td></tr><tr><td>**Transport**</td><td>**Active Travel (Walk/Cycle)**, **Public Transit**, **EV Shift**</td><td>**↑ Physical Activity → ↓ Obesity, Diabetes, CVD**, **↓ Air/Noise Pollution**</td></tr><tr><td>**Food Systems**</td><td>**Plant-Based Diets**, **Reduce Food Waste**, **Sustainable Agriculture**</td><td>**↓ Red Meat → ↓ CVD/Cancer**, **↓ Land Use/Water, Biodiversity**</td></tr><tr><td>**Buildings**</td><td>**Energy Efficiency, Passive Cooling**</td><td>**Thermal Comfort, ↓ Heat Exposure, ↓ Energy Poverty**</td></tr><tr><td>**Healthcare**</td><td>**Decarbonise Supply Chain**, **Climate-Resilient Facilities**</td><td>**Resilient Health Systems, Leadership**</td></tr></table>
+<div class="callout">[!tip] <b>Mitigation = Largest Global Health Opportunity of 21st Century</b> (Lancet Countdown). <b>Health Co-Benefits Exceed Mitigation Costs</b>.</div>
+<div class="sub-h">Adaptation (Manage Unavoidable Impacts)</div>
+<table class="ctable"><tr><th>Domain</th><th>Measures</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Health Systems**</td><td>**Climate-Resilient Infrastructure**, **Surge Capacity**, **Early Warning Systems**, **Disease Surveillance (EWARS)**, **Workforce Training**</td></tr><tr><td>**Heat**</td><td>**Heat-Health Action Plans**, **Cooling Centres**, **Urban Greening/Cool Roofs**, **Heat-Health Alerts**</td></tr><tr><td>**Flood/Storm**</td><td>**Early Warning Systems**, **Evacuation Plans, Flood Defences, Resilient Infrastructure, WASH Resilience**</td></tr><tr><td>**Vector-Borne**</td><td>**Integrated Vector Management**, **Surveillance/Genomic Surveillance**, **Vaccine Deployment**, **Community Engagement**</td></tr><tr><td>**Food/Water**</td><td>**Climate-Smart Agriculture**, **Drought-Resilient Crops**, **Water Safety Plans**, **Food Safety Surveillance**</td></tr><tr><td>**Mental Health**</td><td>**Psychosocial Support**, **Community Resilience**, **Disaster Mental Health Plans**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🌍 Planetary Health Framework</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Description</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Planetary Boundaries**</td><td>**9 Boundaries**: Climate Change, Biodiversity Loss, Nitrogen/Phosphorus Cycles, Land Use, Ocean Acidification, Freshwater Use, Ozone Depletion, Aerosol Loading, Novel Entities — **Health Depends on Staying Within Boundaries**</td></tr><tr><td>**One Health**</td><td>**Human, Animal, Environmental Health Interconnected** — **Zoonoses, AMR, Food Safety, Ecosystem Services**</td></tr><tr><td>**Sustainable Development Goals (SDGs)**</td><td>**SDG 3 (Health) Interlinked with SDG 13 (Climate), 2 (Zero Hunger), 6 (Water), 7 (Energy), 11 (Cities), 13 (Climate), 15 (Life on Land)**</td></tr><tr><td>**Just Transition**</td><td>**Equitable Shift to Low-Carbon** — **Workers/Communities Not Left Behind**, **Health Equity Central**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Direct Impacts**</td><td>**Heat (Stroke/Exhaustion)**, **Extreme Weather (Floods, Cyclones, Wildfires, Droughts)**, **UV (Skin Cancer, Cataracts)**</td></tr><tr><td>**Vector-Borne Shifts**</td><td>**Malaria, Dengue, Zika, Lyme** expanding poleward/upward; **Longer Seasons**, **New Areas**</td></tr><tr><td>**Water/Food-Borne**</td><td>**Cholera/Vibrio (Warming Waters), Floods → Waterborne, Drought → Food Insecurity/Toxins**</td></tr><tr><td>**Air Quality**</td><td>**Heat → O3 ↑, Wildfires → PM2.5, Pollen ↑** → **Respiratory/CV**</td></tr><tr><td>**Food Security**</td><td>**↓ Yields, ↓ Nutrient Density (CO2), Fisheries Decline** → **Malnutrition**</td></tr><tr><td>**Mental Health**</td><td>**PTSD (Disasters), Eco-anxiety, Heat → Suicide/Aggression, Displacement**</td></tr><tr><td>**Vulnerable**</td><td>**Children, Elderly, Pregnant, Poor, Chronic Disease, Coastal/Island/Arctic/Urban Poor**</td></tr><tr><td>**Mitigation = Health**</td><td>**Coal → Renewables (Clean Air), Active Transport (Activity), Plant-Based Diet (Health), Green Cities**</td></tr><tr><td>**Adaptation**</td><td>**Heat Plans, Early Warning, Resilient Health Systems, Climate-Smart Ag, Early Warning Systems**</td></tr><tr><td>**Planetary Health**</td><td>**Planetary Boundaries, One Health, SDGs, Just Transition**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the direct health impacts of climate change?</b></li></ol>
+<ul><li><b>Heat-related illness (exhaustion, stroke), Extreme weather injuries/deaths (floods, cyclones, wildfires, droughts), UV radiation (skin cancer, cataracts)</b>.</li></ul>
+<ol><li><b>How does climate change affect vector-borne diseases?</b></li></ol>
+<ul><li><b>Temperature ↑ → Faster pathogen replication in vectors, longer transmission seasons, geographic range expansion (latitude/altitude)</b>.</li></ul>
+<ol><li><b>What is the health impact of wildfires?</b></li></ol>
+<ul><li><b>PM2.5/CO/VOCs from smoke → Respiratory/CV exacerbation, Premature mortality, Mental health impacts, Displacement</b>.</li></ul>
+<ol><li><b>How does climate change affect food security and nutrition?</b></li></ol>
+<ul><li><b>↓ Crop yields (heat/drought/floods), ↓ Nutrient density (Protein, Zn, Fe) due to CO2, Fisheries decline → Malnutrition, Micronutrient Deficiencies</b>.</li></ul>
+<ol><li><b>What are the mental health impacts of climate change?</b></li></ol>
+<ul><li><b>PTSD/Depression/Anxiety post-disasters, Eco-anxiety/Solastalgia, Heat → Aggression/Suicide, Displacement Trauma</b>.</li></ul>
+<ol><li><b>Which populations are most vulnerable to climate change health impacts?</b></li></ol>
+<ul><li><b>Children, Elderly, Pregnant Women, Chronic Disease, Low-Income, Coastal/Island/Arctic/Urban Poor, Outdoor Workers, Indigenous</b>.</li></ul>
+<ol><li><b>What are the health co-benefits of climate mitigation?</b></li></ol>
+<ul><li><b>Energy Transition (Coal→Renewables) → Clean Air → ↓ CVD/Resp/Cancer; Active Transport → Physical Activity → ↓ Obesity/Diabetes/CVD; Plant-Based Diets → ↓ CVD/Cancer/Land Use</b>.</li></ul>
+<ol><li><b>How should health systems adapt to climate change?</b></li></ol>
+<ul><li><b>Climate-Resilient Infrastructure, Surge Capacity, Early Warning Systems, Disease Surveillance, Workforce Training, Supply Chain Resilience, Community Engagement</b>.</li></ul>
+<ol><li><b>What is the One Health approach?</b></li></ol>
+<ul><li><b>Human, Animal, Environmental Health Interconnected</b> — <b>Zoonoses, AMR, Food Safety, Ecosystem Services</b>.</li></ul>
+<ol><li><b>What are Planetary Boundaries and their relevance to health?</b></li></ol>
+<ul><li><b>9 Boundaries (Climate, Biodiversity, N/P Cycles, Land Use, Ocean Acidification, Freshwater, Ozone, Aerosols, Novel Entities) — Health Depends on Staying Within Safe Operating Space</b>.</li></ul>
+<ol><li><b>What is the role of health professionals in climate action?</b></li></ol>
+<ul><li><b>Advocacy, Education, Clinical Practice (Heat/Counselling), Health System Decarbonisation, Policy Engagement, Research</b>.</li></ul>
+<ol><li><b>How does climate change affect vector-borne disease transmission?</b></li></ol>
+<ul><li><b>Temperature ↑ → Vector development rate ↑, Extrinsic Incubation Period ↓, Survival ↑, Geographic Range Expansion (Latitude/Altitude), Season Length ↑</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Mitigation vs Adaptation**</td><td>**Mitigation = Reduce GHG (Prevent)**; **Adaptation = Manage Impacts (Prepare/Respond)**</td></tr><tr><td>**Climate Change vs Weather**</td><td>**Climate = Long-Term Average (30+ Years)**; **Weather = Short-Term Atmospheric State**</td></tr><tr><td>**Direct vs Indirect Health Impacts**</td><td>**Direct = Heat, Extreme Weather, UV**; **Indirect = Vector/Food/Water/Vector, Air Quality, Food Security, Mental Health**</td></tr><tr><td>**Malaria Expansion vs Intensity**</td><td>**Expansion = New Areas (Highlands, Latitudes)**; **Intensity = Longer Season, Higher Transmission in Endemic Areas**</td></tr><tr><td>**Mitigation Co-Benefits vs Costs**</td><td>**Health Co-Benefits Often Exceed Mitigation Costs** (Lancet)</td></tr><tr><td>**Planetary Health vs Global Health**</td><td>**Planetary = Earth Systems Focus (Boundaries, One Health)**; **Global = Human Health Equity Focus**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Heat Kills (CVD/Resp), Floods Drown/Infect, Fire Burns/Breathes, Drought Starves"**</td><td>Direct Impacts</td></tr><tr><td>**"Vectors Love Warmth → Expand & Intensify"**</td><td>Vector-Borne Shift</td></tr><tr><td>**"CO2 ↓ Nutrients → Hidden Hunger"**</td><td>Food Nutrition</td></tr><tr><td>**"Mitigation = Health Win-Win"**</td><td>Co-Benefits</td></tr><tr><td>**"Planetary Boundaries = Safe Operating Space"**</td><td>Planetary Health</td></tr><tr><td>**"One Health = Human + Animal + Environment"**</td><td>One Health</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Climate Change &amp; Health))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Direct Impacts</div>
+<div class="mm-node mm-l3">– Heat: Stroke, Exhaustion, CVD, Renal</div>
+<div class="mm-node mm-l3">– Extreme Weather: Floods, Cyclones, Fires, Droughts</div>
+<div class="mm-node mm-l3">– UV: Skin Cancer, Cataracts, Immune Suppression</div>
+<div class="mm-node mm-l2">Indirect Impacts</div>
+<div class="mm-node mm-l3">– Vector-Borne</div>
+<div class="mm-node mm-deep">– Malaria, Dengue, Zika, Chikungunya</div>
+<div class="mm-node mm-deep">– Lyme, TBE, Leishmania</div>
+<div class="mm-node mm-deep">– Expansion: Latitude/Altitude/Season</div>
+<div class="mm-node mm-l3">– Water/Food-Borne</div>
+<div class="mm-node mm-deep">– Cholera, Vibrio, Typhoid</div>
+<div class="mm-node mm-deep">– Floods/Droughts</div>
+<div class="mm-node mm-deep">– Mycotoxins, Vibrio</div>
+<div class="mm-node mm-l3">– Air Quality</div>
+<div class="mm-node mm-deep">– O3 + Heat, Wildfire PM2.5, Pollen</div>
+<div class="mm-node mm-l3">– Food Security</div>
+<div class="mm-node mm-deep">– Yields ↓, Nutrients ↓, Fisheries ↓</div>
+<div class="mm-node mm-l3">– Mental Health</div>
+<div class="mm-node mm-deep">– PTSD, Eco-anxiety, Heat Suicide, Displacement</div>
+<div class="mm-node mm-l2">Vulnerable Populations</div>
+<div class="mm-node mm-l3">– Children, Elderly, Pregnant</div>
+<div class="mm-node mm-l3">– Chronic Disease</div>
+<div class="mm-node mm-l3">– Poor, Coastal, Arctic, Urban, Indigenous</div>
+<div class="mm-node mm-l2">Mitigation (Co-Benefits)</div>
+<div class="mm-node mm-l3">– Energy: Coal→Renewables = Clean Air</div>
+<div class="mm-node mm-l3">– Transport: Active Travel = Physical Activity</div>
+<div class="mm-node mm-l3">– Food: Plant-Based = Health + Planet</div>
+<div class="mm-node mm-l3">– Buildings: Efficiency = Comfort + Health</div>
+<div class="mm-node mm-l2">Adaptation</div>
+<div class="mm-node mm-l3">– Heat Plans + Early Warning</div>
+<div class="mm-node mm-l3">– Flood Defences + WASH</div>
+<div class="mm-node mm-l3">– Surveillance + Vaccines</div>
+<div class="mm-node mm-l3">– Climate-Smart Ag + Food Safety</div>
+<div class="mm-node mm-l3">– Health System Resilience</div>
+<div class="mm-node mm-l2">Planetary Health</div>
+<div class="mm-node mm-l3">– 9 Boundaries: Climate, Biodiversity, N/P, Land, Ocean, Water, Ozone, Aerosol, Novel Entities</div>
+<div class="mm-node mm-l3">– One Health: Human + Animal + Environment</div>
+<div class="mm-node mm-l3">– SDGs: 3, 13, 2, 6, 7, 11, 15, 17</div>
+<div class="mm-node mm-l3">– Just Transition</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**CLIMATE CHANGE & HEALTH – FCPS/MRCP REVISION CARD**</th></tr><tr><td>--------------------------------------------------------</td></tr><tr><td>**Direct**: Heat (Stroke/Exhaustion), Extreme Weather (Flood/Cyclone/Fire/Drought), UV (Skin Cancer/Cataract)</td></tr><tr><td>**Vector-Borne**: **Warming → Expansion (Malaria, Dengue, Zika, Lyme)** — Longer Season, Higher Altitude/Latitude</td></tr><tr><td>**Water/Food**: **Cholera/Vibrio (Warm Water)**, Floods (Waterborne), Drought (Food Insecurity/Toxins), **Mycotoxins**</td></tr><tr><td>**Air Quality**: **Heat → O3↑**, **Wildfires → PM2.5**, **Pollen↑** → Respiratory/CV</td></tr><tr><td>**Food Security**: **Yields↓, Nutrients↓ (CO2), Fisheries↓** → Malnutrition</td></tr><tr><td>**Mental Health**: PTSD (Disasters), Eco-anxiety, Heat→Suicide/Aggression, Displacement</td></tr><tr><td>**Vulnerable**: **Children, Elderly, Pregnant, Chronic Disease, Poor, Coastal/Island/Arctic/Urban/Outdoor Workers**</td></tr><tr><td>**Mitigation = Health**: **Coal→Renewables (Clean Air), Active Transport (Activity), Plant-Based (CVD↓), Green Cities (Heat↓)**</td></tr><tr><td>**Adaptation**: **Heat Plans, Early Warning, Resilient Health Systems, Climate-Smart Ag, WASH**</td></tr><tr><td>**Planetary Health**: **9 Boundaries, One Health, SDGs, Just Transition**</td></tr><tr><td>**Health Co-Benefits > Mitigation Costs**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Direct impacts (heat, extreme weather, UV), Vector-borne shifts (malaria, dengue, Lyme), Water/food-borne (cholera, floods, droughts), Air quality (O3, wildfires, pollen), Food security (yields, nutrients, fisheries), Mental health (PTSD, eco-anxiety, heat), Vulnerable populations, Mitigation co-benefits (clean air, active transport, plant-based diet), Adaptation priorities (heat plans, early warning, resilient health systems), Planetary boundaries, One Health, SDGs</td></tr><tr><td>**Should Know**</td><td>Specific disease-model projections (malaria maps, dengue Aedes expansion), Attribution science (event attribution), Health impact attribution, Economic costs of climate-health impacts, Heat-health action plan components, Early warning systems (EWARS), Climate-smart agriculture practices, Climate-resilient health infrastructure, Climate finance for health, Loss & damage mechanism, Indigenous knowledge, Gender/climate intersections</td></tr><tr><td>**Nice to Know**</td><td>Attribution science methodologies, Compound events (heat+humidity, drought+heat), Tipping points & irreversible changes, Climate-health vulnerability mapping, Health national adaptation plans (HNAPs), Climate litigation & health, Health in NDCs (Nationally Determined Contributions), Indigenous knowledge systems, Planetary health education frameworks, Transformative adaptation, Degrowth & health, Artificial intelligence in climate-health surveillance</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Direct Climate Health Impacts</td><td></td><td></td></tr><tr><td>Indirect Impacts (Vector, Water, Food, Air)</td><td></td><td></td></tr><tr><td>Vulnerable Populations</td><td></td><td></td></tr><tr><td>Mitigation Co-Benefits</td><td></td><td></td></tr><tr><td>Adaptation Strategies</td><td></td><td></td></tr><tr><td>Planetary Health & One Health</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Soil &amp; Food Contamination]]</li><li><b>Next</b>: [[Chemical Hazards &amp; Toxicology]]</li><li><b>Section Hub</b>: [[Environmental Medicine MOC]]</li><li><b>MOC</b>: [[Hematology MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Climate Change &amp; Health · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2.1 Chlamydia — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">2.1 Chlamydia</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Recognise <b>Chlamydia trachomatis</b> clinical manifestations (Genital, LGV, Extra-genital, Neonatal)</li><li>[ ] Apply <b>diagnostic algorithms</b> (NAAT, Culture, POC) and interpret results</li><li>[ ] Apply <b>evidence-based treatment</b> (Doxycycline, Azithromycin, Amoxicillin in Pregnancy)</li><li>[ ] Manage <b>LGV</b> (L1/L2/L3 Serovars) and <b>Extra-genital</b> infections (Pharyngeal, Rectal, Conjunctival)</li><li>[ ] Manage <b>Neonatal</b> Chlamydia (Ophthalmia Neonatorum, Pneumonia)</li><li>[ ] Implement <b>Screening, Partner Notification, Test of Cure</b> strategies</li><li>[ ] Answer viva: "Chlamydia screening in pregnancy" and "LGV vs Classic Chlamydia" and "Test of Cure timing"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Chlamydia trachomatis Biology</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Chlamydia trachomatis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Obligate Intracellular Bacterium</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Developmental Cycle</div>
+<div class="fc-node" data-id="D">Serovars</div>
+<div class="fc-node" data-id="E">Pathogenesis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C1">Replication → EB Release → Cell Lysis</div>
+<div class="fc-node" data-id="C2">Entry → Endosome → RB</div>
+<div class="fc-node" data-id="D1">A-K</div>
+<div class="fc-node" data-id="D2">L1, L2, L3</div>
+<div class="fc-node" data-id="D3">A-C</div>
+<div class="fc-node" data-id="E1">Invasion → Epithelial Cells → Inflammation</div>
+<div class="fc-node" data-id="E2">Immune Evasion → Persistence, Reinfection</div>
+<div class="fc-node" data-id="E3">Scarring → Fibrosis → Sequelae (PID, Ectopic, Infertility)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ Chlamydia trachomatis — Genital Infection</div>
+<div class="sub-h">Epidemiology</div>
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Global Incidence**</td><td>**~129 Million** New Cases/Year (WHO 2023)</td></tr><tr><td>**Prevalence**</td><td>**3.8%** (Women 15-49), **2.7%** (Men 15-49)</td></tr><tr><td>**Age Peak**</td><td>**15-24 Years** (Highest Incidence)</td></tr><tr><td>**Asymptomatic Rate**</td><td>**70-80% Women**, **50% Men** — **Silent Epidemic**</td></tr><tr><td>**Transmission**</td><td>Sexual (Vaginal, Anal, Oral), Vertical (Mother→Child)</td></tr><tr><td>**Co-infection**</td><td>**10-40%** with Gonorrhoea; **HIV** Co-infection ↑ Risk</td></tr></table>
+<div class="sub-h">Clinical Presentation</div>
+<table class="ctable"><tr><th>Sex</th><th>Symptomatic</th><th>Asymptomatic</th><th>Key Features</th></tr><tr><td>-----</td><td>-------------</td><td>--------------</td><td>--------------</td></tr><tr><td>**Male**</td><td>**Urethritis** (50%)</td><td>50%</td><td>Dysuria, Urethral Discharge (Mucopurulent), Meatal Erythema, **Epididymo-orchitis** (Complication)</td></tr><tr><td>**Female**</td><td>**Cervicitis** (30%)</td><td>**70-80%**</td><td>Cervicitis (Mucopurulent Discharge, Ectopy, Friability), **PID** (↑ Risk), Dyspareunia, Intermenstrual Bleeding</td></tr><tr><td>**Rectal**</td><td>Proctitis (MSM)</td><td>Often Asymptomatic</td><td>Mucus Discharge, Tenesmus, Rectal Pain</td></tr><tr><td>**Pharyngeal**</td><td>Rarely Symptomatic</td><td>Most Asymptomatic</td><td>Usually Asymptomatic Carriage</td></tr></table>
+<div class="callout"><b>Key</b>: <b>70-80% Women Asymptomatic</b> → <b>Screening Essential</b> (Opportunistic &amp; Targeted)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Lymphogranuloma Venereum (LGV)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Serovars**</td><td>**L1, L2, L3** (Invasive, Invade Lymphatics)</td></tr><tr><td>**Epidemiology**</td><td>**MSM Outbreaks** (Europe, NA), Endemic in Africa, SE Asia, S. America</td></tr><tr><td>**Transmission**</td><td>Sexual (Anal > Vaginal), **MSM Outbreaks** (Proctitis)</td></tr></table>
+<div class="sub-h">Clinical Stages</div>
+<table class="ctable"><tr><th>Stage</th><th>Features</th><th>Duration</th></tr><tr><td>-------</td><td>----------</td><td>----------</td></tr><tr><td>**Primary**</td><td>**Painless Papule/Ulcer** (Genital/Rectal), Transient, Often Missed</td><td>Days-Weeks</td></tr><tr><td>**Secondary**</td><td>**Suppurative Inguinal/Femoral Buboes** (Matted, Fluctuant), **Proctocolitis** (Rectal Pain, Tenesmus, Bloody Mucus, Constipation), Fever, Constitutional</td><td>Weeks-Months</td></tr><tr><td>**Tertiary**</td><td>**Chronic** — Strictures, Fistulas, **Rectal Strictures**, **Elephantiasis** (Genital), **Frozen Pelvis** (Frozen Pelvis Syndrome)</td><td>Years</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Utility</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**NAAT (CT + LGV Specific)**</td><td>**1st Line** — Differentiates LGV (L1/L2/L3) from Non-LGV CT</td></tr><tr><td>**Serology**</td><td>Complement Fixation (CF) — Historical, Low Sensitivity</td></tr><tr><td>**Culture**</td><td>Rarely Available, Specialised Labs</td></tr></table>
+<div class="sub-h">Treatment (LGV)</div>
+<table class="ctable"><tr><th>Regimen</th><th>Dose & Duration</th></tr><tr><td>---------</td><td>-----------------</td></tr><tr><td>**Doxycycline**</td><td>**100mg BD × 21 Days** (Longer than Genital CT)</td></tr><tr><td>**Alternative**</td><td>Erythromycin 500mg QID × 21d (Pregnancy)</td></tr><tr><td>**Partner Management**</td><td>**All Partners Last 60 Days** — Screen, Treat, Counselling</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Extra-Genital Infections</div>
+<div class="sub-h">Pharyngeal Chlamydia</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Prevalence**</td><td>High in MSM (Pharyngeal CT ~3-5%), Low in Heterosexual</td></tr><tr><td>**Symptoms**</td><td>Usually Asymptomatic, Sore Throat (Rare)</td></tr><tr><td>**Testing**</td><td>NAAT (Pharyngeal Swab) — **Not Routine Unless Risk**</td></tr><tr><td>**Treatment**</td><td>**Same as Genital** (Doxycycline/Azithromycin)</td></tr></table>
+<div class="sub-h">Rectal Chlamydia (Including LGV)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Risk Groups**</td><td>**MSM** (Receptive Anal), Women (Anal Sex)</td></tr><tr><td>**Symptoms**</td><td>Proctitis (Pain, Mucus, Blood, Tenesmus), **LGV: Proctocolitis, Buboes**</td></tr><tr><td>**Testing**</td><td>NAAT (Rectal Swab) — **LGV-Specific PCR** if Proctitis</td></tr><tr><td>**Treatment**</td><td>**LGV: Doxy 100mg BD × 21d**; **Non-LGV: Standard CT Regimen**</td></tr></table>
+<div class="sub-h">Conjunctival Chlamydia</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Transmission**</td><td>Autoinoculation (Genital→Eye), Direct Contact</td></tr><tr><td>**Clinical**</td><td>**Follicular Conjunctivitis**, Mucopurulent Discharge, Preauricular Lymphadenopathy</td></tr><tr><td>**Diagnosis**</td><td>NAAT (Conjunctival Swab), Giemsa (Inclusion Bodies)</td></tr><tr><td>**Treatment**</td><td>**Systemic** (Doxy/Azithro) + **Topical** (Tetracycline/Erythromycin Ointment)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Neonatal Chlamydia</div>
+<div class="sub-h">Ophthalmia Neonatorum</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Onset**</td><td>**Day 5-14** Post-Partum (Incubation 5-14 Days)</td></tr><tr><td>**Clinical**</td><td>**Mucopurulent Conjunctivitis**, Eyelid Oedema, Conjunctival Injection</td></tr><tr><td>**Complications**</td><td>Corneal Scarring, Blindness (If Untreated)</td></tr><tr><td>**Diagnosis**</td><td>**NAAT (Conjunctival Swab)**, Giemsa (Inclusion Bodies)</td></tr><tr><td>**Treatment**</td><td>**Systemic**: Azithromycin 20mg/kg/dose OD × 3d (Oral) OR Erythromycin 50mg/kg/d ÷4 × 14d <br> **Topical**: Erythromycin/Tetracycline Ointment QID × 14d</td></tr></table>
+<div class="sub-h">Neonatal Pneumonia</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Onset**</td><td>**3-16 Weeks** Post-Partum</td></tr><tr><td>**Clinical**</td><td>**Staccato Cough**, Tachypnoea, Wheeze, Hypoxaemia, **No Fever**, CXR: Bilateral Diffuse Infiltrates, Hyperinflation</td></tr><tr><td>**Diagnosis**</td><td>**NAAT (Nasopharyngeal Swab)**, CXR (Bilateral Diffuse Infiltrates, Hyperinflation)</td></tr><tr><td>**Treatment**</td><td>**Azithromycin 20mg/kg/dose OD × 10-14 Days** (Preferred), Erythromycin Alternative</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Diagnosis — Algorithms &amp; Interpretation</div>
+<div class="sub-h">Diagnostic Algorithm</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Chlamydia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Symptomatic?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">NAAT (Urine/Swab)&lt;br/&gt;1st Line</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">NAAT Result</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Treat + Partner Notify&lt;br/&gt;Test of Cure (GC: 2w, CT: 4w)</div>
+<div class="fc-node" data-id="F">Consider Other Causes&lt;br/&gt;MG, TV, HSV, Urethral Syndrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Test of Cure (CT: 4 Weeks)&lt;br/&gt;If Pregnant: Repeat at 36w</div>
+</div>
+</div>
+<div class="sub-h">Diagnostic Test Comparison</div>
+<table class="ctable"><tr><th>Test</th><th>Sensitivity</th><th>Specificity</th><th>TAT</th><th>Sample</th><th>Best For</th></tr><tr><td>------</td><td>-------------</td><td>-------------</td><td>-----</td><td>--------</td><td>----------</td></tr><tr><td>**NAAT (PCR/TMA/SDA)**</td><td>**>95%**</td><td>**>98%**</td><td>1-24h</td><td>Urine, Swab (Endocervical, Vaginal, Urethral, Rectal, Pharyngeal)</td><td>**1st Line** (All Sites)</td></tr><tr><td>**Culture**</td><td>70-80%</td><td>**100%**</td><td>48-72h</td><td>Swab</td><td>**AST**, Legal, Treatment Failure</td></tr><tr><td>**POC NAAT**</td><td>90-95%</td><td>97-99%</td><td>20-90min</td><td>Swab/Urine</td><td>**Rapid/Outreach**</td></tr><tr><td>**Rapid Antigen**</td><td>70-80%</td><td>95-98%</td><td>10-30min</td><td>Swab</td><td>**Not Recommended** (Low Sensitivity)</td></tr><tr><td>**Serology**</td><td>Low</td><td>Low</td><td>Days</td><td>Serum</td><td>**Not for Acute Diagnosis** (Past Infection)</td></tr></table>
+<div class="sub-h">Specimen Collection</div>
+<table class="ctable"><tr><th>Site</th><th>Specimen</th><th>Transport</th></tr><tr><td>------</td><td>----------</td><td>-----------</td></tr><tr><td>**Male Urethral**</td><td>**First-Catch Urine** (20-30mL, Hold ≥1h) OR Urethral Swab</td><td>NAAT Transport Medium</td></tr><tr><td>**Female Endocervical**</td><td>Endocervical Swab (Remove Mucus First)</td><td>NAAT Transport Medium</td></tr><tr><td>**Female Vaginal**</td><td>Self-Collected Vaginal Swab (Validated)</td><td>NAAT Transport Medium</td></tr><tr><td>**Rectal**</td><td>Rectal Swab (Insert 2-3cm)</td><td>NAAT Transport Medium</td></tr><tr><td>**Pharyngeal**</td><td>Pharyngeal Swab</td><td>NAAT Transport Medium</td></tr><tr><td>**Conjunctival**</td><td>Conjunctival Swab</td><td>NAAT Transport Medium</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Urine = Non-Invasive, Good for Screening</b>; <b>Swab = Better for Symptomatic, Extra-Genital Sites</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Treatment — Evidence-Based Regimens</div>
+<div class="sub-h">Uncomplicated Genital Chlamydia</div>
+<table class="ctable"><tr><th>Population</th><th>1st Line</th><th>Alternative</th><th>Duration</th></tr><tr><td>------------</td><td>----------</td><td>-------------</td><td>----------</td></tr><tr><td>**Adults/Adolescents (≥12y)**</td><td>**Doxycycline 100mg BD × 7 Days**</td><td>**Azithromycin 1g Stat** (Single Dose)</td><td>7 Days / Single Dose</td></tr><tr><td>**Pregnancy**</td><td>**Azithromycin 1g Stat** (Safe)</td><td>Amoxicillin 500mg TDS × 7d</td><td>Single Dose / 7 Days</td></tr><tr><td>**Breastfeeding**</td><td>**Azithromycin 1g Stat** (Compatible)</td><td>Erythromycin 500mg QID × 7-14d</td><td>Single Dose</td></tr><tr><td>**Allergy (Tetracycline/Macrolide)**</td><td>**Levofloxacin 500mg OD × 7d**</td><td>Moxifloxacin 400mg OD × 7d</td><td>7 Days</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Doxycycline 1st Line</b> (Higher Cure Rate, Rectal Efficacy); <b>Azithro 1g Stat</b> = Convenience, Pregnancy Safe</div>
+<div class="sub-h">Rectal Chlamydia (Non-LGV)</div>
+<table class="ctable"><tr><th>Population</th><th>Regimen</th></tr><tr><td>------------</td><td>---------</td></tr><tr><td>**All**</td><td>**Doxycycline 100mg BD × 7 Days** (Preferred — Better Rectal Cure)</td></tr></table>
+<div class="sub-h">Lymphogranuloma Venereum (LGV)</div>
+<table class="ctable"><tr><th>Regimen</th><th>Duration</th></tr><tr><td>---------</td><td>----------</td></tr><tr><td>**Doxycycline 100mg BD × 21 Days**</td><td>**21 Days** (Longer than Genital CT)</td></tr><tr><td>**Alternative**</td><td>Erythromycin 500mg QID × 21d (Pregnancy)</td></tr></table>
+<div class="sub-h">Neonatal Chlamydia</div>
+<table class="ctable"><tr><th>Condition</th><th>Regimen</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Ophthalmia Neonatorum**</td><td>**Azithromycin 20mg/kg/dose OD × 3 Days** (Oral) + **Topical Erythromycin/Tetracycline Ointment QID × 14d**</td></tr><tr><td>**Pneumonia**</td><td>**Azithromycin 20mg/kg/dose OD × 10-14 Days** (Preferred)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ Partner Notification &amp; Test of Cure</div>
+<div class="sub-h">Partner Notification</div>
+<table class="ctable"><tr><th>Template</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Index Patient**</td><td>Notify All Partners **Last 60 Days** (or Last Partner if >60 Days)</td></tr><tr><td>**Methods**</td><td>1. **Patient Referral** (Preferred) 2. **Provider Referral** 3. **Contract Referral** (Time-Limited)</td></tr><tr><td>**EPT (Expedited Partner Therapy)**</td><td>**Legal Where Permitted**: Provide Medication to Index Patient for Partner(s) — **CT**: Doxy 100mg BD × 7d; **GC**: Ceftriaxone 500mg IM + Azithro 1g</td></tr></table>
+<div class="sub-h">Test of Cure (TOC)</div>
+<table class="ctable"><tr><th>Infection</th><th>Timing</th><th>Test</th></tr><tr><td>-----------</td><td>--------</td><td>------</td></tr><tr><td>**Gonorrhoea**</td><td>**2 Weeks** Post-Treatment</td><td>NAAT (or Culture + AST)</td></tr><tr><td>**Chlamydia**</td><td>**4 Weeks** Post-Treatment</td><td>NAAT (Avoid <3w — False +)</td></tr><tr><td>**LGV**</td><td>**4-6 Weeks**</td><td>NAAT</td></tr><tr><td>**M. genitalium**</td><td>**4 Weeks**</td><td>NAAT (Resistance Testing)</td></tr><tr><td>**Pregnancy**</td><td>**3rd Trimester (36w)**</td><td>Repeat NAAT (Ensure Cure Pre-Delivery)</td></tr></table>
+<div class="callout"><b>Key</b>: <b>No TOC &lt;3 Weeks</b> (Residual DNA → False Positive NAAT)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ Screening &amp; Public Health</div>
+<div class="sub-h">Screening Recommendations (UK/NICE/CDC)</div>
+<table class="ctable"><tr><th>Population</th><th>Recommendation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Sexually Active Women <25y**</td><td>**Annual CT/GC Screen** (Opportunistic, Self-Sample)</td></tr><tr><td>**Pregnant Women**</td><td>**Booking**: CT/GC (If <25y or Risk Factors)</td></tr><tr><td>**MSM**</td><td>**3-Site Testing** (Urethral, Pharyngeal, Rectal) **Annual** (3-6m if High Risk)</td></tr><tr><td>**Pregnant Women <25y**</td><td>**Routine CT/GC Screen** at Booking</td></tr><tr><td>**Termination of Pregnancy**</td><td>**Routine CT/GC Screen**</td></tr><tr><td>**HIV Positive**</td><td>**Annual** CT/GC/Syphilis (3-Site if MSM)</td></tr></table>
+<div class="sub-h">Partner Notification &amp; EPT</div>
+<table class="ctable"><tr><th>Strategy</th><th>Description</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**Patient Referral**</td><td>Index Patient Informs Partners (Preferred — Empowers Patient)</td></tr><tr><td>**Provider Referral**</td><td>Health Staff Notifies Partners (Confidential)</td></tr><tr><td>**EPT (Expedited Partner Therapy)**</td><td>**Legal Where Permitted**: Index Patient Delivers Medication to Partner(s) — **CT: Doxy 100mg BD × 7d**; **GC**: Ceftriaxone 500mg IM + Azithro 1g; **TV**: Metronidazole 2g Stat</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6️⃣ Complications &amp; Sequelae</div>
+<table class="ctable"><tr><th>Complication</th><th>Pathophysiology</th><th>Long-Term Impact</th></tr><tr><td>--------------</td><td>----------------</td><td>------------------</td></tr><tr><td>**Pelvic Inflammatory Disease (PID)**</td><td>Ascending Infection → Endometritis, Salpingitis, Peritonitis</td><td>**Infertility** (Tubal Factor), **Ectopic Pregnancy** (↑ 6-10x), Chronic Pelvic Pain</td></tr><tr><td>**Epididymo-orchitis**</td><td>Ascending Urethral Infection</td><td>**Infertility** (Obstructive), Chronic Scrotal Pain</td></tr><tr><td>**Perihepatitis (Fitz-Hugh-Curtis)**</td><td>Peri-hepatic Inflammation</td><td>RUQ Pain, Violin String Adhesions</td></tr><tr><td>**Reactive Arthritis (ReA)**</td><td>Post-Chlamydial (HLA-B27 Association)</td><td>Asymmetric Oligoarthritis, Conjunctivitis, Urethritis (Reiter's Triad)</td></tr><tr><td>**Infertility**</td><td>Tubal Damage (PID), Epididymal Obstruction</td><td>**Primary/Secondary Infertility**</td></tr><tr><td>**Ectopic Pregnancy**</td><td>Tubal Damage (PID)</td><td>**↑ 6-10x Risk**</td></tr><tr><td>**Perinatal**</td><td>Ophthalmia Neonatorum, Pneumonia</td><td>Blindness, Chronic Lung Disease</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7️⃣ Lymphogranuloma Venereum (LGV) — Detailed</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Causative Agent**</td><td>**C. trachomatis Serovars L1, L2, L3** (Invasive)</td></tr><tr><td>**Epidemiology**</td><td>**MSM Outbreaks** (Europe, NA), Endemic (Africa, SE Asia, Caribbean)</td></tr><tr><td>**Transmission**</td><td>Anal Sex (MSM), Vaginal Sex (Endemic Areas)</td></tr><tr><td>**Clinical Stages**</td><td>1°: Painless Ulcer → 2°: **Suppurative Buboes, Proctocolitis** → 3°: Strictures, Fistulas, Elephantiasis</td></tr><tr><td>**Diagnosis**</td><td>**NAAT (LGV-Specific PCR)** — Differentiates L1/L2/L3 from Genital CT</td></tr><tr><td>**Treatment**</td><td>**Doxycycline 100mg BD × 21 Days** (Longer than Genital CT)</td></tr><tr><td>**Partner Management**</td><td>**All Partners Last 60 Days** — Screen, Treat, Counselling</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Epidemiology**</td><td>**129M New Cases/Year** (Most Common Bacterial STI), **70-80% Women Asymptomatic**, Peak 15-24y</td></tr><tr><td>**Clinical**</td><td>**Urethritis (M)**, **Cervicitis/PID (F)**, **Rectal/Pharyngeal (MSM)**, **LGV** (MSM, Buboes, Proctitis)</td></tr><tr><td>**Diagnosis**</td><td>**NAAT (PCR/TMA/SDA) = 1st Line** (Urine/Swab), >95% Sens/Spec; Culture for AST</td></tr><tr><td>**Treatment**</td><td>**Doxycycline 100mg BD × 7d** (1st Line); **Azithromycin 1g Stat** (Alt, Pregnancy); **LGV: Doxy 21d**</td></tr><tr><td>**Pregnancy**</td><td>**Azithromycin 1g Stat** (Safe); **Avoid Doxycycline** (Teratogenic)</td></tr><tr><td>**LGV**</td><td>**Serovars L1-3**, **Doxy 100mg BD × 21d**, MSM Outbreaks, Proctitis/Buboes</td></tr><tr><td>**Neonatal**</td><td>**Conjunctivitis (Day 5-14)** → Azithro 20mg/kg OD × 3d + Topical; **Pneumonia** (3-16w, Staccato Cough) → Azithro 20mg/kg × 10-14d</td></tr><tr><td>**Test of Cure**</td><td>**CT: 4 Weeks** (NAAT); **Pregnancy**: Repeat at 36w; **LGV: 4-6 Weeks**</td></tr><tr><td>**Screening**</td><td>**Women <25y Annual**, **MSM 3-Site Annual**, **Pregnancy <25y**, **HIV+ Annual**</td></tr><tr><td>**LGV**</td><td>**Serovars L1/L2/L3**, **Doxy 21d**, **MSM Proctitis/Buboes**</td></tr><tr><td>**Complications**</td><td>**PID → Infertility, Ectopic, Chronic Pain**; **Reactive Arthritis** (HLA-B27)</td></tr><tr><td>**Screening**</td><td>**Women <25y Annual**, **MSM 3-Site Annual**, **Pregnancy <25y**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Chlamydia — most common clinical presentation in women?</td><td>**Asymptomatic (70-80%)**; Symptomatic: Cervicitis (Mucopurulent Discharge, Ectopy, Friability), PID</td></tr><tr><td>2</td><td>Chlamydia treatment in pregnancy?</td><td>**Azithromycin 1g Stat** (Single Dose) — Safe, Effective; **Doxycycline Contraindicated** (Teratogenic)</td></tr><tr><td>3</td><td>LGV vs non-LGV Chlamydia — key differences?</td><td>**LGV (Serovars L1-L3)**: Invasive, Lymphatic Spread, Buboes, Proctocolitis, Strictures; **Treatment: Doxy 21d** vs 7d for Non-LGV</td></tr><tr><td>4</td><td>Test of Cure for Chlamydia — when & how?</td><td>**4 Weeks Post-Treatment** (NAAT); **Pregnancy: Repeat at 36w**; Avoid <3w (False +ve Residual DNA)</td></tr><tr><td>5</td><td>Neonatal chlamydial pneumonia — presentation & treatment?</td><td>**3-16 Weeks**, Staccato Cough, Tachypnoea, CXR Bilateral Diffuse Infiltrates → **Azithromycin 20mg/kg/d OD × 10-14d**</td></tr><tr><td>6</td><td>LGV vs non-LGV Chlamydia treatment difference?</td><td>**LGV: Doxy 100mg BD × 21 Days**; **Non-LGV Genital: Doxy 7d**</td></tr><tr><td>7</td><td>Chlamydia test of cure — timing & method?</td><td>**4 Weeks Post-Treatment** (NAAT); Avoid <3w (False +ve); **Pregnancy: Repeat at 36w**</td></tr><tr><td>8</td><td>Chlamydia in pregnancy — treatment?</td><td>**Azithromycin 1g Stat** (Safe); **Avoid Doxycycline** (Teratogenic); Amoxicillin 500mg TDS × 7d (Alternative)</td></tr><tr><td>9</td><td>LGV clinical presentation in MSM?</td><td>**Proctocolitis** (Rectal Pain, Mucus/Blood, Tenesmus), **Suppurative Inguinal Buboes**, Strictures/Fistulas (Late)</td></tr><tr><td>10</td><td>Chlamydia screening — who & when?</td><td>**Women <25y Annual**, **MSM 3-Site Annual (Urethral/Pharyngeal/Rectal)**, **Pregnancy <25y**, **MSM High Risk 3-6 Monthly**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Chlamydia is rare"**</td><td>**NO.** **Most Common Bacterial STI** (129M New Cases/Year Globally)</td></tr><tr><td>**"Chlamydia always symptomatic"**</td><td>**NO.** **70-80% Women Asymptomatic**, 50% Men Asymptomatic — **Screening Essential**</td></tr><tr><td>**"Doxycycline safe in pregnancy"**</td><td>**NO.** **Contraindicated** (Teratogenic — Teeth/Bone); **Azithromycin 1g Stat** is Safe</td></tr><tr><td>**"AZM 1g = Doxy 7d in Efficacy"**</td><td>**NO.** **Doxycycline Superior** (Higher Cure Rate, Better Rectal Efficacy); AZM = Convenience/Pregnancy</td></tr><tr><td>**"LGV = Just Another Chlamydia"**</td><td>**NO.** **Different Serovars (L1-L3)**, Invasive, Lymphatic Spread, **Doxy 21d vs 7d**, Proctitis/Buboes/Strictures</td></tr><tr><td>**"Test of Cure = Immediately After Treatment"**</td><td>**NO.** **Wait 4 Weeks** (Residual DNA → False Positive); Pregnancy: Repeat at 36 Weeks</td></tr><tr><td>**"LGV = Only in Tropics"**</td><td>**NO.** **MSM Outbreaks in Europe/N. America** (L2b Variant), Endemic in Africa/SE Asia</td></tr><tr><td>**"Rectal Chlamydia = Always LGV"**</td><td>**NO.** Most Rectal CT = **Non-LGV** (Genital Serovars D-K); LGV = Specific Proctocolitis/Buboes</td></tr><tr><td>**"Azithromycin 1g = Inferior to Doxy"**</td><td>**For Genital CT: Non-Inferior (Uncomplicated)**; **For Rectal: Doxy Superior**; **Pregnancy: Azithro Only Option**</td></tr><tr><td>**"Test of Cure at 2 Weeks"**</td><td>**NO.** **4 Weeks Minimum** (Residual DNA → False Positive); Pregnancy = 36 Weeks</td></tr></table>
+<div class="callout"><b>Mnemonic: CHLAMYDIA MASTER</b> <b>C</b>hlamydia: <b>Most Common Bacterial STI</b> (129M/Year Global) <b>H</b>igh Prevalence: <b>15-24y Peak</b>, <b>70-80% Women Asymptomatic</b> <b>L</b>GV: <b>L1/L2/L3 Serovars</b>, <b>Doxy 21d</b>, <b>MSM Proctitis/Buboes</b> <b>A</b>symptomatic: <b>70-80% Women</b>, <b>50% Men</b> — <b>Screening Essential</b> <b>M</b>AT: <b>Pregnancy</b> → <b>Azithromycin 1g Stat</b> (Safe); <b>Doxy Contraindicated</b> <b>Y</b> (Why Screen?): <b>Asymptomatic → PID → Infertility/Ectopic/Infertility</b> <b>D</b>x: <b>NAAT 1st Line</b> (Urine/Swab), &gt;95% Sens/Spec; Culture for AST <b>I</b>mmunology: <b>Obligate Intracellular</b>, EB→RB Cycle, Immune Evasion <b>A</b>ntibiotic: <b>Doxy 100mg BD × 7d (1st Line)</b>, <b>Azi 1g Stat (Pregnancy)</b> <b>T</b>reatment LGV: <b>Doxy 100mg BD × 21d</b> (Longer) <b>N</b>eonatal: <b>Ophthalmia (Day 5-14) → Azi 20mg/kg × 3d</b>; <b>Pneumonia (3-16wk) → Azi 20mg/kg × 10-14d</b> <b>T</b>est of Cure: <b>4 Weeks (NAAT)</b>, <b>Pregnancy 36w</b>, <b>LGV 4-6w</b> <b>R</b>ectal CT: <b>Doxy 7d</b> (Better Rectal Cure); <b>LGV Rectal = 21d Doxy</b> <b>R</b>eproductive Sequelae: <b>PID → Infertility, Ectopic, Chronic Pain</b> <b>A</b>MR: <b>Rare</b>, But <b>LGV Emerging</b> (Monitor) <b>S</b>creening: <b>Women &lt;25y Annual; MSM 3-Site Annual; Pregnancy &lt;25y; HIV+ Annual</b> <b>T</b>est of Cure: <b>4 Weeks (NAAT)</b>, <b>Pregnancy 36w</b>, <b>LGV 4-6w</b> <b>R</b>isk Factors: <b>&lt;25y, New Partner, Multiple Partners, Inconsistent Condom</b> <b>A</b>ntibiotic: <b>Doxy 100mg BD × 7d (1st Line)</b>, <b>Azi 1g Stat (Pregnancy)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Chlamydia trachomatis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Epidemiology</div>
+<div class="mm-node mm-l3">– 129M New Cases/Year</div>
+<div class="mm-node mm-l3">– Peak 15-24y</div>
+<div class="mm-node mm-l3">– 70-80% Women Asymptomatic</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Male: Urethritis, Epididymitis</div>
+<div class="mm-node mm-l3">– Female: Cervicitis, PID, Infertility</div>
+<div class="mm-node mm-l3">– Rectal/Pharyngeal (MSM)</div>
+<div class="mm-node mm-l3">– LGV: Serovars L1/L2/L3</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– NAAT 1st Line (Urine/Swab)</div>
+<div class="mm-node mm-l3">– Culture (AST)</div>
+<div class="mm-node mm-l3">– Specimens: Urine, Swabs</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Doxy 100mg BD x7d (1st Line)</div>
+<div class="mm-node mm-l3">– Azi 1g Stat (Pregnancy)</div>
+<div class="mm-node mm-l3">– LGV: Doxy 21d</div>
+<div class="mm-node mm-l3">– Pregnancy: Azi 1g Stat</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– PID → Infertility, Ectopic, Chronic Pain</div>
+<div class="mm-node mm-l3">– Reactive Arthritis (Reiter's)</div>
+<div class="mm-node mm-l3">– Neonatal: Conjunctivitis, Pneumonia</div>
+<div class="mm-node mm-l2">LGV</div>
+<div class="mm-node mm-l3">– Serovars L1, L2, L3</div>
+<div class="mm-node mm-l3">– Doxy 21d</div>
+<div class="mm-node mm-l3">– MSM Proctitis, Buboes</div>
+<div class="mm-node mm-l2">Screening</div>
+<div class="mm-node mm-l3">– Women &lt;25y Annual</div>
+<div class="mm-node mm-l3">– MSM 3-Site Annual</div>
+<div class="mm-node mm-l3">– Pregnancy &lt;25y</div>
+<div class="mm-node mm-l3">– HIV+ Annual</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Epidemiology & Clinical Features</td><td>3</td><td></td><td></td></tr><tr><td>Diagnosis (NAAT, Specimens, Interpretation)</td><td>3</td><td></td><td></td></tr><tr><td>Treatment Regimens (Standard, Pregnancy, LGV, Neonatal)</td><td>4</td><td></td><td></td></tr><tr><td>Complications & Sequelae</td><td>2</td><td></td><td></td></tr><tr><td>LGV Specifics</td><td>2</td><td></td><td></td></tr><tr><td>Screening & Public Health</td><td>2</td><td></td><td></td></tr><tr><td>Test of Cure & Partner Notification</td><td>2</td><td></td><td></td></tr><tr><td>Special Populations (Pregnancy, Neonatal, MSM)</td><td>3</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the clinical manifestations, diagnosis, and management of genital Chlamydia trachomatis infection."</td><td>Epidemiology, Clinical (M/F/Rectal/Pharyngeal/LGV/Neonatal), Diagnosis (NAAT 1st Line), Treatment (Doxy 1st Line, Azi in Pregnancy, LGV 21d), Complications (PID, Infertility, Ectopic, Reactive Arthritis), Neonatal, Screening, Partner Notification, Test of Cure</td></tr><tr><td>**Short Note**</td><td>"Chlamydia in pregnancy — diagnosis and management."</td><td>NAAT 1st Line, **Azithromycin 1g Stat** (Safe), Avoid Doxycycline, Test of Cure at 36w, Partner Notification, Neonatal Prophylaxis if Untreated</td></tr><tr><td>**Viva**</td><td>"25-year-old pregnant woman at 12 weeks tests positive for Chlamydia. Management?"</td><td>**Azithromycin 1g Stat** (Safe in Pregnancy), **Test of Cure at 36 Weeks**, Partner Notification/Treatment, Counselling, Retest at 36w</td></tr><tr><td>**Ward Round**</td><td>"MSM with rectal pain, mucus discharge. NAAT positive for Chlamydia. LGV PCR negative. Management?"</td><td>**Doxycycline 100mg BD × 7 Days** (Non-LGV Rectal CT), Test of Cure at 4 Weeks, Partner Notification, HIV/Syphilis Screen, Condom Counselling</td></tr><tr><td>**Last-Night**</td><td>"CT: 129M/yr, 70-80% F Asympt. NAAT 1st Line. Tx: Doxy 7d (1st), Azi 1g (Preg). LGV: L1-L3, Doxy 21d. Neonate: Ophthalmia (Azi 20mg/kg×3d), Pneumonia (Azi 20mg/kg×10-14d). TOC: 4w (NAAT), Preg=36w. LGV: Doxy 21d. Screen: <25y F Annual, MSM 3-Site Annual. Complications: PID, Infertility, Ectopic, Reactive Arthritis."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Chlamydia trachomatis</b>: Most Common Bacterial STI (129M/Year), <b>70-80% Women Asymptomatic</b>, Peak 15-24y</li><li><b>Clinical</b>: Urethritis/Cervicitis/PID, Rectal/Pharyngeal (MSM), <b>LGV (L1-L3)</b> — Invasive, Buboes, Proctitis</li><li><b>Diagnosis</b>: <b>NAAT 1st Line</b> (Urine/Swab, &gt;95% Sens/Spec), Culture for AST</li><li><b>Treatment</b>: <b>Doxycycline 100mg BD × 7d (1st Line)</b>; <b>Azithromycin 1g Stat</b> (Pregnancy); <b>LGV: Doxy 100mg BD × 21d</b></li><li><b>Pregnancy</b>: <b>Azithromycin 1g Stat</b> (Safe); <b>Avoid Doxycycline</b> (Teratogenic)</li><li><b>Neonatal</b>: Ophthalmia (Day 5-14) → <b>Azithro 20mg/kg OD × 3d + Topical</b>; Pneumonia (3-16w) → <b>Azithro 20mg/kg × 10-14d</b></li><li><b>LGV</b>: Serovars <b>L1, L2, L3</b>; <b>Doxy 100mg BD × 21d</b>; MSM Proctitis, Buboes, Strictures</li><li><b>Test of Cure</b>: <b>4 Weeks (NAAT)</b>; Pregnancy → 36 Weeks; LGV 4-6 Weeks</li><li><b>Screening</b>: Women &lt;25y Annual, MSM 3-Site Annual, Pregnancy &lt;25y, HIV+ Annual</li><li><b>Complications</b>: PID → Infertility, Ectopic, Chronic Pain; Neonatal Ophthalmia/Pneumonia; Reactive Arthritis</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Most common clinical presentation of Chlamydia in women?</b></li></ol>
+<p>A. Pelvic Inflammatory Disease  B. <b>Asymptomatic (70-80%)</b>  C. Cervicitis  D. Urethritis <i>Answer: B. 70-80% of women with Chlamydia are asymptomatic.</i></p>
+<ol><li><b>Chlamydia treatment in pregnancy — recommended regimen?</b></li></ol>
+<p>A. Doxycycline 100mg BD × 7 Days  B. <b>Azithromycin 1g Single Dose</b>  C. Erythromycin 500mg QID × 14 Days  D. Ofloxacin 400mg BD × 7 Days <i>Answer: B. Azithromycin 1g Stat — Safe in Pregnancy; Doxycycline Contraindicated.</i></p>
+<ol><li><b>Lymphogranuloma Venereum (LGV) — causative serovars?</b></li></ol>
+<p>A. A-K  B. <b>L1, L2, L3</b>  C. A, B, Ba  D. D-K <i>Answer: B. LGV caused by Serovars L1, L2, L3 (Invasive, Lymphotropic).</i></p>
+<ol><li><b>LGV treatment duration vs. Non-LGV Chlamydia?</b></li></ol>
+<p>A. Same (7 Days)  B. <b>21 Days (vs 7 Days for Non-LGV)</b>  C. 14 Days  D. Single Dose <i>Answer: B. LGV requires <b>Doxycycline 100mg BD × 21 Days</b> (vs 7 Days for Non-LGV).</i></p>
+<ol><li><b>Neonatal chlamydial conjunctivitis — presentation &amp; treatment?</b></li></ol>
+<p>A. Day 1-2, Topical Only  B. <b>Day 5-14, Systemic Azithromycin 20mg/kg OD × 3 Days + Topical</b>  C. Day 1-3, IV Ceftriaxone  D. Day 3-5, Oral Erythromycin <i>Answer: B. Onset Day 5-14, Systemic Azithromycin 20mg/kg OD × 3 Days + Topical Erythromycin/Tetracycline Ointment.</i></p>
+<ol><li><b>Chlamydia test of cure — recommended timing?</b></li></ol>
+<p>A. 1 Week  B. 2 Weeks  C. <b>4 Weeks</b>  D. 8 Weeks <i>Answer: C. 4 Weeks Post-Treatment (NAAT); Avoid &lt;3 Weeks (False Positive Residual DNA).</i></p>
+<ol><li><b>LGV treatment duration vs Non-LGV Chlamydia?</b></li></ol>
+<p>A. 7 Days  B. 10 Days  C. <b>21 Days</b>  D. Single Dose <i>Answer: C. LGV requires Doxycycline 100mg BD × 21 Days (vs 7 Days for Non-LGV).</i></p>
+<ol><li><b>Chlamydia screening — UK recommendation for women?</b></li></ol>
+<p>A. Annual for All Women  B. <b>Annual for Women &lt;25 Years</b>  C. Every 5 Years  D. Only If Symptomatic <i>Answer: B. Opportunistic Annual Screening for Sexually Active Women &lt;25 Years (NICE).</i></p>
+<ol><li><b>Chlamydia in pregnancy — first-line treatment?</b></li></ol>
+<p>A. Doxycycline 100mg BD × 7 Days  B. <b>Azithromycin 1g Single Dose</b>  C. Erythromycin 500mg QID × 14 Days  D. Amoxicillin 500mg TDS × 7 Days <i>Answer: B. Azithromycin 1g Stat — Safe in Pregnancy; Doxycycline Contraindicated.</i></p>
+<ol><li><b>LGV serovars?</b></li></ol>
+<p>A. A-K  B. <b>L1, L2, L3</b>  C. D-K  D. A, B, Ba <i>Answer: B. LGV Caused by Serovars L1, L2, L3 (Invasive, Lymphotropic).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25-year-old pregnant woman at 12 weeks tests positive for Chlamydia on NAAT. Best treatment?</b></li></ol>
+<p>A. Doxycycline 100mg BD × 7 Days  B. <b>Azithromycin 1g Stat</b>  C. Erythromycin 500mg QID × 14 Days  D. Ceftriaxone 500mg IM <i>Answer: B. Azithromycin 1g Stat — Safe in Pregnancy; Doxycycline Contraindicated.</i></p>
+<ol><li><b>MSM with rectal pain, mucus discharge. NAAT positive for Chlamydia, LGV PCR negative. Management?</b></li></ol>
+<p>A. Doxycycline 100mg BD × 21 Days  B. <b>Doxycycline 100mg BD × 7 Days</b>  C. Ceftriaxone 500mg IM  D. Azithromycin 1g <i>Answer: B. Non-LGV Rectal Chlamydia → Doxycycline 100mg BD × 7 Days.</i></p>
+<ol><li><b>Neonate with mucopurulent conjunctivitis at Day 10 of life. Mother had untreated Chlamydia. Treatment?</b></li></ol>
+<p>A. Topical Erythromycin Only  B. <b>Systemic Azithromycin 20mg/kg/dose OD × 3 Days + Topical Erythromycin Ointment</b>  C. IV Ceftriaxone  D. Oral Doxycycline <i>Answer: B. Systemic Azithromycin 20mg/kg/dose OD × 3 Days + Topical Erythromycin Ointment QID × 14 Days.</i></p>
+<ol><li><b>MSM with painful proctitis, bloody mucus, inguinal buboes. NAAT positive for CT, LGV PCR positive. Treatment?</b></li></ol>
+<p>A. Doxycycline 100mg BD × 7 Days  B. <b>Doxycycline 100mg BD × 21 Days</b>  C. Azithromycin 1g Stat  D. Ceftriaxone IM <i>Answer: B. LGV Confirmed → Doxycycline 100mg BD × 21 Days.</i></p>
+<ol><li><b>Chlamydia test of cure — when to repeat NAAT?</b></li></ol>
+<p>A. 1 Week  B. 2 Weeks  C. <b>4 Weeks</b>  D. 8 Weeks <i>Answer: C. 4 Weeks Post-Treatment (NAAT); Avoid &lt;3 Weeks (Residual DNA False Positive).</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[2.2 Gonorrhoea.md]] — Differential Diagnosis (Urethral Discharge), Co-infection</li><li>[[2.3 Syphilis.md]] — Differential (GUD), Co-infection, Congenital</li><li>[[5.1-5.8 Syndromic Management.md]] — Urethral Discharge, Vaginal Discharge, PID Algorithms</li><li>[[3.2 HSV.md]] — Differential (Genital Ulcer Disease)</li><li>[[5.1-5.8 Syndromic Management.md]] — Urethral Discharge, Vaginal Discharge, PID, Proctitis Algorithms</li><li>[[3.2 HSV.md]] — Differential (Genital Ulcer Disease)</li><li>[[5.1-5.8 Syndromic Management.md]] — Neonatal STIs (Ophthalmia, Pneumonia)</li><li>[[5.5 Genetic Counselling]] — Partner Notification, Cascade Testing, Reproductive Options</li><li>[[9. ELSI]] — Partner Notification Ethics, Confidentiality, EPT Legality</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Next:</b> Build <code>2.2 Gonorrhoea.md</code> (Priority 1)</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · 2.1 Chlamydia · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

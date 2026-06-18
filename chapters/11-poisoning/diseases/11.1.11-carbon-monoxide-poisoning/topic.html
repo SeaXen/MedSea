@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Carbon Monoxide Poisoning — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Carbon Monoxide Poisoning</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognize CO poisoning (headache, nausea, confusion, cherry-red skin rare)</li><li>Apply 100% oxygen therapy (non-rebreather mask)</li><li>Identify hyperbaric oxygen (HBO) indications</li><li>Understand COHb kinetics and limitations</li><li>Recognize delayed neurological sequelae (DNS)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Carbon monoxide poisoning = tissue hypoxia from CO binding to hemoglobin (forming carboxyhemoglobin, COHb) and inhibition of mitochondrial cytochrome c oxidase (Complex IV).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CO source</b>: incomplete combustion (fires, generators, car exhaust, faulty heaters, methylene chloride metabolism)</li><li><b>CO-Hb affinity</b>: <b>200-250x</b> &gt; O₂-Hb → <b>COHb</b> formation</li><li><b>Effects</b>:</li></ul>
+<ol><li><b>Functional anemia</b>: Hb bound to CO cannot carry O₂</li><li><b>Left shift</b> of O₂-Hb dissociation curve → impaired O₂ offloading to tissues</li><li><b>Cytochrome c oxidase inhibition</b> (Complex IV) → <b>cellular hypoxia</b> (independent of COHb)</li><li><b>Myoglobin binding</b> → cardiac dysfunction</li><li><b>Inflammatory/immune mediators</b> → delayed neurological sequelae (DNS)</li></ol>
+<ul><li><b>Half-life</b>:</li><li>Room air (21% O₂): <b>4-5 hours</b></li><li>100% O₂ (NRB): <b>~30-60 minutes</b></li><li>HBO (2.5-3 ATA): <b>~15-20 minutes</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Acute</div>
+<ul><li><b>Headache</b> (most common, often frontal)</li><li><b>Nausea, vomiting</b></li><li><b>Dizziness, confusion, ataxia</b></li><li><b>Chest pain</b> (cardiac ischemia — COHb &gt; 10-20%)</li><li><b>Dyspnea</b></li><li><b>Cherry-red skin</b> — <b>RARE</b> (&lt; 10%), post-mortem finding mostly</li><li><b>Syncope, seizures, coma</b> (severe)</li><li><b>Cardiac</b>: arrhythmias, MI, heart failure</li></ul>
+<div class="sub-h">Delayed Neurological Sequelae (DNS) — 2-40 days post-exposure</div>
+<ul><li><b>Incidence</b>: 10-30% (higher if LOC, age &gt; 35, COHb &gt; 25%)</li><li><b>Features</b>: cognitive impairment, memory loss, personality change, <b>parkinsonism</b>, incontinence, gait disturbance, cortical blindness</li><li><b>Pathophysiology</b>: demyelination (white matter), oxidative stress, inflammation</li><li><b>Not prevented by HBO</b> (evidence mixed)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Viral illness</b> (flu-like): headache, nausea, myalgia — <b>CO clustering</b> (multiple people, same location)</li><li><b>Cyanide</b>: soot in fires, bitter almond smell, lactic acidosis, <b>COHb normal</b></li><li><b>Hydrogen sulfide</b>: rotten egg smell</li><li><b>Alcohol/sedative OD</b>: no COHb elevation</li><li><b>Meningitis/encephalitis</b>: fever, meningeal signs</li><li><b>Stroke</b>: focal deficits</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mandatory</div>
+<ol><li><b>Carboxyhemoglobin (COHb)</b> — <b>arterial or venous</b> (difference minimal); <b>non-invasive CO-oximeter (SpCO)</b> available but confirm with lab</li><li><b>100% O₂ immediately</b> — do NOT wait for COHb</li><li><b>ABG/VBG</b> — pH, lactate (tissue hypoxia marker)</li><li><b>ECG</b> — ischemia, arrhythmias</li><li><b>Troponin</b> — if cardiac symptoms</li><li><b>CXR</b> — aspiration, pulmonary edema</li><li><b>CK</b> — rhabdo if prolonged immobilization</li><li><b>Paracetamol level</b> (always)</li><li><b>Pregnancy test</b> (females childbearing age)</li></ol>
+<div class="sub-h">Interpretation Caveats</div>
+<ul><li><b>COHb normal on 100% O₂ ≠ excludes CO poisoning</b> — half-life 30 min on O₂</li><li><b>COHb level correlates poorly with severity</b> — tissue hypoxia from cytochrome inhibition independent</li><li><b>Pulse oximetry (SpO₂) reads FALSELY NORMAL</b> — reads COHb as oxyhemoglobin (2-wavelength)</li><li><b>CO-oximetry (SpCO/COHb) required</b> — 4+ wavelength</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Immediate: 100% Oxygen (NRB Mask) — **FIRST-LINE ANTIDOTE**</div>
+<ul><li><b>Non-rebreather mask 15 L/min</b> — <b>do NOT delay</b> for COHb level</li><li><b>Continue until</b>: asymptomatic AND COHb &lt; 5% (or &lt; 10% some guidelines)</li><li><b>Duration</b>: typically 4-6 hours (4-5 half-lives)</li><li><b>Intubated</b>: FiO₂ 1.0</li></ul>
+<div class="sub-h">2. Hyperbaric Oxygen (HBO) — **Indications (Any One)**</div>
+<ul><li><b>COHb &gt; 25%</b> (or &gt; 20% some guidelines)</li><li><b>Loss of consciousness</b> (any duration)</li><li><b>Cardiac ischemia</b> (chest pain, ECG changes, elevated troponin)</li><li><b>Pregnancy</b> with <b>COHb &gt; 15%</b> (fetal Hb higher affinity, longer half-life)</li><li><b>Persistent neurological symptoms</b> (confusion, ataxia, memory deficits) after normobaric O₂</li><li><b>Metabolic acidosis</b> (pH &lt; 7.2, lactate &gt; 4)</li><li><b>Age &gt; 65</b> (some guidelines)</li></ul>
+<p><b>HBO Protocol</b>: 2.5-3.0 ATA for 90-120 min, 1-3 sessions (controversial; NICE: consider if above criteria)</p>
+<div class="sub-h">3. Supportive Care</div>
+<ul><li><b>Cardiac monitoring</b> (continuous)</li><li><b>Fluid resuscitation</b> (cautious — pulmonary edema risk)</li><li><b>Treat seizures</b> (benzodiazepines)</li><li><b>Correct metabolic acidosis</b> (bicarbonate if pH &lt; 7.2)</li><li><b>Thiamine 100 mg IV</b> (Wernicke prevention)</li></ul>
+<div class="sub-h">4. Pregnancy</div>
+<ul><li><b>Fetal COHb 10-15% higher than maternal</b> (higher affinity)</li><li><b>Fetal half-life longer</b> (5-7h on RA)</li><li><b>HBO threshold lower</b>: COHb &gt; 15% OR any symptoms</li><li><b>Obstetric consultation</b> + fetal monitoring</li></ul>
+<div class="sub-h">5. Delayed Neurological Sequelae (DNS)</div>
+<ul><li><b>Follow-up</b>: 4-6 weeks post-discharge</li><li><b>Screen</b>: cognitive testing (MMSE/MoCA), neurological exam</li><li><b>MRI brain</b> (T2/FLAIR) — white matter hyperintensities (globus pallidus, hippocampus, white matter)</li><li><b>Management</b>: supportive, rehabilitation, neuropsychology</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Myocardial infarction</li><li>Arrhythmias</li><li>Rhabdomyolysis</li><li>Pulmonary edema (neurogenic/non-cardiogenic)</li><li>Delayed neurological sequelae (DNS)</li><li>Death</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Acute</b>: good with early 100% O₂</li><li><b>Mortality</b>: &lt; 5% with treatment; higher if cardiac arrest</li><li><b>DNS</b>: 10-30% incidence; may be permanent</li><li><b>Pregnancy</b>: fetal loss risk up to 50% in severe maternal poisoning</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>100% O₂ via NRB = first-line antidote</b> (half-life 30 min vs 4-5h RA)</li><li><b>Cherry-red skin RARE</b> (&lt; 10%) — do not rely on it</li><li><b>HBO indications</b>: COHb &gt; 25%, LOC, cardiac ischemia, <b>pregnancy &gt; 15%</b>, persistent neuro symptoms, acidosis</li><li><b>Pulse oximetry FALSELY NORMAL</b> — need CO-oximetry</li><li><b>Normal COHb on O₂ ≠ excludes poisoning</b> (half-life 30 min)</li><li><b>COHb correlates poorly with severity</b> (cytochrome inhibition independent)</li><li><b>Delayed neurological sequelae (DNS)</b>: 2-40 days, 10-30%, parkinsonism, cognitive</li><li><b>Pregnancy</b>: lower HBO threshold (COHb &gt; 15%), fetal risk</li><li><b>Methylene chloride</b> (paint stripper) metabolized to CO</li><li><b>Fire victims</b>: consider <b>cyanide co-exposure</b> (soot, lactic acidosis)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>100% O₂ half-life vs room air</li><li>HBO indications (memorize list)</li><li>Why pulse oximetry misleading?</li><li>COHb correlation with severity</li><li>Pregnancy management</li><li>Delayed neurological sequelae features/timing</li><li>Methylene chloride connection</li><li>Fire victim: CO vs cyanide differentiation</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cherry-red skin</b> = common misconception — it's RARE</li><li><b>SpO₂ normal = no CO</b> → FALSE (reads COHb as oxyHb)</li><li><b>COHb normal on O₂ = no poisoning</b> → FALSE (half-life 30 min)</li><li><b>HBO for all CO poisoning</b> → NO, specific indications only</li><li><b>COHb &gt; 25% = mandatory HBO</b> → guideline dependent (some &gt; 20%)</li><li><b>DNS prevented by HBO</b> → evidence mixed, not guaranteed</li><li><b>Pregnancy threshold same as adult</b> → NO, lower (COHb &gt; 15%)</li><li><b>Methylene chloride</b> → metabolized to CO (paint strippers)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CO PATHOPHYSIOLOGY</b>: <b>2</b>00x <b>A</b>ffinity → <b>COHb</b> + <b>C</b>ytochrome <b>O</b>xidase <b>I</b>nhibition</li><li><b>100% O₂ HALF-LIFE</b>: <b>R</b>oom <b>A</b>ir <b>4-5h</b> → <b>1</b>00% <b>O₂ 30min</b> → <b>H</b>BO <b>15-20min</b></li><li><b>HBO INDICATIONS</b>: <b>C</b>OHb &gt; 25%, <b>L</b>OC, <b>C</b>ardiac <b>I</b>schemia, <b>P</b>regnancy &gt; 15%, <b>N</b>euro <b>S</b>ymptoms, <b>A</b>cidosis</li><li><b>PREGNANCY</b>: <b>F</b>etal <b>C</b>OHb <b>H</b>igher, <b>L</b>onger <b>T</b>½, <b>H</b>BO &gt; 15%</li><li><b>DNS</b>: <b>D</b>elayed <b>N</b>eurological <b>S</b>equelae: <b>2-40 days</b>, <b>P</b>arkinsonism, <b>C</b>ognitive</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Carbon Monoxide Poisoning))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Mechanism</div>
+<div class="mm-node mm-l3">– CO-Hb 200-250x Affinity</div>
+<div class="mm-node mm-l3">– Left Shift O2-Hb Curve</div>
+<div class="mm-node mm-l3">– Cytochrome Oxidase Inhibition</div>
+<div class="mm-node mm-l3">– Myoglobin Binding</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Acute: Headache, Nausea, Confusion, Chest Pain</div>
+<div class="mm-node mm-l3">– Cherry Red Skin: RARE</div>
+<div class="mm-node mm-l3">– DNS: 2-40 Days (Parkinsonism, Cognitive)</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– COHb (Co-oximetry)</div>
+<div class="mm-node mm-l3">– SpO2 FALSELY NORMAL</div>
+<div class="mm-node mm-l3">– ABG (Lactate)</div>
+<div class="mm-node mm-l3">– ECG/Trop</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– 100% O2 NRB (1st Line)</div>
+<div class="mm-node mm-l3">– HBO (Indications)</div>
+<div class="mm-node mm-l3">– Supportive</div>
+<div class="mm-node mm-l3">– Pregnancy: Lower HBO Threshold</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– MI, Arrhythmias</div>
+<div class="mm-node mm-l3">– DNS (10-30%)</div>
+<div class="mm-node mm-l3">– Fetal Loss</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected CO Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Immediate 100% O2 NRB 15L/min\nDo NOT Wait for COHb</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">COHb Level + ABG + ECG + Trop\nPregnancy Test</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">HBO Indicated?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hyperbaric Oxygen\n2.5-3.0 ATA 90-120min\n1-3 Sessions</div>
+<div class="fc-node" data-id="F">Continue 100% O2\nUntil Asymptomatic\nCOHb&lt;5-10%</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Monitor Cardiac, Neuro\nDNS Follow-up 4-6 Weeks\nMRI if Symptoms</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>O₂-Hb dissociation curve left shift</li><li>HBO indications poster</li><li>COHb half-life graph (RA vs 100% O₂ vs HBO)</li><li>DNS timeline</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>CO poisoning management (NICE, Toxbase)</li><li>HBO therapy overview</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Mechanism</b>: COHb (200x affinity) + cytochrome oxidase inhibition</li><li><b>100% O₂ NRB</b> = antidote (half-life 30 min vs 4-5h RA)</li><li><b>HBO</b>: COHb&gt;25%, LOC, cardiac ischemia, <b>pregnancy&gt;15%</b>, neuro symptoms, acidosis</li><li><b>Cherry-red skin RARE</b> (&lt; 10%)</li><li><b>SpO₂ FALSELY NORMAL</b> — need co-oximetry</li><li><b>Normal COHb on O₂ ≠ excludes</b></li><li><b>DNS</b>: 2-40 days, parkinsonism, cognitive</li><li><b>Pregnancy</b>: fetal COHb higher, HBO &gt; 15%</li><li><b>Methylene chloride</b> → CO</li><li><b>Fire victims</b>: consider cyanide</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State 100% O₂ half-life and HBO half-life</li><li>List 6 HBO indications</li><li>Explain why SpO₂ is falsely normal</li><li>Describe DNS timing and features</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>100% O₂ NRB immediate (half-life 30 min)</li><li>HBO indications (COHb&gt;25%, LOC, cardiac, pregnancy&gt;15%, neuro, acidosis)</li><li>SpO₂ falsely normal</li><li>Cherry-red skin rare</li><li>DNS 2-40 days</li><li>Pregnancy lower threshold</li><li>COHb correlates poorly with severity</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>HBO protocol (2.5-3 ATA, 90-120 min)</li><li>Methylene chloride metabolized to CO</li><li>Fire victims: consider cyanide</li><li>Lactate elevation from cytochrome inhibition</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>DNS pathophysiology (demyelination, inflammation)</li><li>Neuroimaging findings (globus pallidus, hippocampus)</li><li>HBO evidence controversies</li><li>Specific CO sources (generators, heaters, fires)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Mechanism (COHb + cytochrome oxidase)</li><li>Clinical (acute + DNS)</li><li>Diagnosis (COHb, SpO₂ limitation, ABG)</li><li>Management: 100% O₂ → HBO (indications) → supportive → pregnancy → DNS follow-up</li><li>Complications/prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>HBO indications list</li><li>COHb half-life comparison</li><li>Acute vs DNS features</li><li>Pregnancy box</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"CO: 200x affinity → COHb + cytochrome oxidase inhibition"</li><li>"100% O₂: half-life 30 min (RA 4-5h); HBO: 15-20 min"</li><li>"HBO: COHb&gt;25%, LOC, cardiac, pregnancy&gt;15%, neuro, acidosis"</li><li>"SpO₂ FALSELY NORMAL (reads COHb as oxyHb) — need co-oximetry"</li><li>"Cherry-red skin RARE (&lt;10%)"</li><li>"Normal COHb on O₂ ≠ excludes (half-life 30 min)"</li><li>"DNS: 2-40 days, parkinsonism, cognitive (10-30%)"</li><li>"Pregnancy: HBO &gt; 15% COHb (fetal Hb higher affinity)"</li><li>"Methylene chloride → CO"</li><li>"Fire victims: think cyanide too"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Family with headache/nausea from faulty heater → all need COHb + 100% O₂</li><li>Patient on 100% O₂ for 2h, COHb 3% → continue until asymptomatic</li><li>Pregnant woman COHb 18% → HBO indicated</li><li>Firefighter with soot, lactate 8, COHb 15% → consider cyanide, HBO for both</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>100% O2: 30min half-life</li><li>HBO: COHb&gt;25, LOC, Cardiac, Preg&gt;15, Neuro, Acidosis</li><li>SpO2: False normal</li><li>Cherry red: Rare</li><li>COHb: Poor severity correlation</li><li>DNS: 2-40 days, Parkinsonism</li><li>Preg: HBO &gt;15%</li><li>Methylene chloride → CO</li><li>Fire: + Cyanide</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>CO poisoning = COHb (200x affinity) + cytochrome oxidase inhibition → tissue hypoxia. 100% O₂ NRB immediate (half-life 30 min). HBO for COHb&gt;25%, LOC, cardiac ischemia, pregnancy&gt;15%, persistent neuro symptoms, acidosis. SpO₂ falsely normal. Cherry-red skin rare. DNS 2-40 days (parkinsonism, cognitive). Pregnancy: fetal risk, HBO &gt; 15%. Methylene chloride → CO. Fire victims: consider cyanide co-exposure.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>CO poisoning - mechanism of toxicity?</li></ol>
+<p>A. Competitive inhibition of cytochrome oxidase B. High-affinity binding to hemoglobin (200-250x O₂) + cytochrome oxidase inhibition C. Methemoglobin formation D. Direct pulmonary toxicity <b>Answer: B</b> <i>Explanation: CO: binds Hb with 200-250x affinity vs O₂ → carboxyhemoglobin (COHb) → left shift O₂ dissociation curve (impaired O₂ delivery) + inhibits cytochrome c oxidase (cellular hypoxia).</i></p>
+<ol><li>CO half-life on room air vs 100% O₂ vs HBO?</li></ol>
+<p>A. 4-5h / 60min / 20min B. 4-5h / 30min / 20min C. 2h / 30min / 10min D. 4-5h / 90min / 30min <b>Answer: B</b> <i>Explanation: COHb half-life: Room air 4-5h, 100% O₂ (NRB) 30-90min, HBO (3 ATA) 20-30min. 100% O₂ first-line.</i></p>
+<ol><li>HBO indications for CO poisoning?</li></ol>
+<p>A. COHb &gt; 10% B. COHb &gt; 25% (or &gt;15% pregnancy), LOC, cardiac ischemia, persistent neuro symptoms C. COHb &gt; 50% only D. Never indicated <b>Answer: B</b> <i>Explanation: HBO if: COHb &gt; 25% (or &gt;15% in pregnancy), loss of consciousness, cardiac ischemia, persistent neuro symptoms. 100% O₂ first.</i></p>
+<ol><li>CO poisoning - cherry red skin?</li></ol>
+<p>A. Always present B. Rare, late sign, NOT reliable C. Only in fatal cases D. Only with severe acidosis <b>Answer: B</b> <i>Explanation: Cherry red skin: rare, late, post-mortem finding. NOT reliable for diagnosis. Most patients look normal/pale.</i></p>
+<ol><li>COHb level correlates with clinical severity?</li></ol>
+<p>A. Yes, perfectly B. Poorly - clinical picture guides treatment, not level alone C. Only &gt; 50% D. Only in children <b>Answer: B</b> <i>Explanation: COHb level correlates POORLY with severity. Clinical picture (LOC, cardiac, neuro) guides HBO decision. Level can be normal if on O₂ before sampling.</i></p>
+<ol><li>CO poisoning in pregnancy - fetal risk?</li></ol>
+<p>A. None B. Fetal Hb has higher affinity for CO → fetal COHb 10-15% higher than maternal, longer half-life C. Same as maternal D. Lower risk <b>Answer: B</b> <i>Explanation: Fetal Hb has higher affinity for CO → fetal COHb 10-15% higher than maternal, longer half-life. HBO threshold lower (&gt;15% maternal COHb).</i></p>
+<ol><li>Delayed neuropsychiatric syndrome (DNS) post-CO?</li></ol>
+<p>A. Immediate B. 2-40 days post-exposure: cognitive deficit, personality change, Parkinsonism, incontinence C. Only with HBO D. Never occurs <b>Answer: B</b> <i>Explanation: DNS: 2-40 days after apparent recovery. Cognitive deficit, personality change, Parkinsonism, incontinence, gait disturbance. Up to 30-50% without HBO. HBO reduces incidence.</i></p>
+<ol><li>CO poisoning - cyanide co-exposure?</li></ol>
+<p>A. Never B. Common in house fires - treat both C. Only in industrial D. Only with smoke inhalation <b>Answer: B</b> <i>Explanation: House fires: CO + cyanide (from plastics, wool, silk). Treat both: 100% O₂ for CO, hydroxocobalamin 5g IV for CN⁻. COHb may be normal if on O₂.</i></p>
+<ol><li>CO poisoning - pulse oximetry reading?</li></ol>
+<p>A. Accurate SpO₂ B. Falsely NORMAL (reads COHb as O₂Hb) - need CO-oximetry C. Falsely low D. Cannot read <b>Answer: B</b> <i>Explanation: Standard pulse ox (2-wavelength) reads COHb as O₂Hb → falsely NORMAL SpO₂. Need CO-oximetry (4-wavelength) or ABG with COHb measurement.</i></p>
+<ol><li>CO poisoning - 100% O₂ duration?</li></ol>
+<p>A. Until COHb &lt; 5% B. Until COHb &lt; 10% AND asymptomatic C. 6 hours fixed D. 24 hours fixed <b>Answer: B</b> <i>Explanation: 100% O₂ until COHb &lt; 10% AND asymptomatic. If HBO given, continue O₂ after. Monitor for DNS.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>House fire victim. GCS 10, soot in nares, SpO₂ 98% on RA. COHb 28%. Management?</li></ol>
+<p>A. Observe - SpO₂ normal B. 100% O₂ NRB + assess for HBO (COHb &gt; 25%, LOC, fire) C. HBO immediately without 100% O₂ D. Discharge <b>Answer: B</b> <i>Explanation: SpO₂ falsely normal (COHb reads as O₂Hb). COHb 28% + house fire (CN⁻ risk) + GCS 10 (LOC) = HBO indicated. 100% O₂ immediately, arrange HBO. Also give hydroxocobalamin for CN⁻.</i></p>
+<ol><li>Pregnant woman, COHb 18%, asymptomatic. HBO?</li></ol>
+<p>A. No - asymptomatic B. Yes - pregnancy threshold &gt;15% C. Only if symptomatic D. Only if &gt;25% <b>Answer: B</b> <i>Explanation: Pregnancy: fetal Hb higher CO affinity → fetal COHb 10-15% higher, longer half-life. HBO threshold &gt;15% maternal COHb (or any symptomatic).</i></p>
+<ol><li>CO poisoning, patient on 100% O₂ for 2h. COHb now 5%, asymptomatic. Discharge?</li></ol>
+<p>A. Yes B. No - observe for DNS, neuro assessment, psych if DSH C. Only if HBO given D. Only if cardiac workup negative <b>Answer: B</b> <i>Explanation: COHb &lt; 10% + asymptomatic = can stop 100% O₂. BUT: observe for DNS (2-40 days), neuro assessment. If DSH → psych assessment. DNS up to 30-50% without HBO.</i></p>
+<ol><li>Firefighter, smoke inhalation, COHb 35%, lactate 8, unconscious. Cyanide?</li></ol>
+<p>A. Not needed B. Give hydroxocobalamin 5g IV empirically (house fire = CN⁻ co-exposure) C. Only if COHb &gt; 50% D. Sodium thiosulfate only <b>Answer: B</b> <i>Explanation: House fires: CO + CN⁻ (plastics, wool, silk). Lactate &gt; 10 suggests CN⁻. Hydroxocobalamin 5g IV empirically. 100% O₂ for CO. HBO for CO if indicated.</i></p>
+<ol><li>CO poisoning, patient wakes up, 3 weeks later memory loss, personality change. Diagnosis?</li></ol>
+<p>A. PTSD B. Delayed neuropsychiatric syndrome (DNS) C. Early dementia D. Malingering <b>Answer: B</b> <i>Explanation: DNS: 2-40 days post-exposure. Cognitive deficit, personality change, Parkinsonism, incontinence. Up to 30-50% without HBO. HBO reduces incidence.</i></p>
+<ol><li>CO poisoning - SpO₂ 99% on RA, but patient confused. Why?</li></ol>
+<p>A. Not CO B. Pulse ox reads COHb as O₂Hb → falsely normal. Need CO-oximetry/ABG C. Pulse ox broken D. Patient not confused <b>Answer: B</b> <i>Explanation: Standard 2-wavelength pulse ox cannot distinguish COHb from O₂Hb → reads sum as SpO₂ = falsely normal. Need CO-oximetry (4-wavelength) or ABG with COHb.</i></p>
+<ol><li>COHb 30%, patient given 100% O₂. Half-life?</li></ol>
+<p>A. 4-5 hours B. 30-90 minutes C. 20-30 minutes D. 2 hours <b>Answer: B</b> <i>Explanation: 100% O₂ (NRB 15L): COHb half-life 30-90 min. HBO (3 ATA): 20-30 min. Room air: 4-5h.</i></p>
+<ol><li>CO poisoning - when is HBO NOT available?</li></ol>
+<p>A. Never give 100% O₂ B. 100% O₂ NRB for 6-12 hours minimum, monitor for DNS C. Discharge D. Only support <b>Answer: B</b> <i>Explanation: If HBO unavailable: 100% O₂ NRB for minimum 6-12h (or until COHb &lt; 10% + asymptomatic). Monitor for DNS. 100% O₂ still effective (t½ 30-90min).</i></p>
+<ol><li>CO poisoning + methemoglobinemia (from antidote?)</li></ol>
+<p>A. Not possible B. Nitrites for CN⁻ cause metHb - monitor metHb if using nitrite/thiosulfate C. HBO causes metHb D. 100% O₂ causes metHb <b>Answer: B</b> <i>Explanation: Nitrites (for CN⁻) oxidize Hb → methemoglobinemia. Monitor metHb if using nitrite/thiosulfate. Hydroxocobalamin preferred (no metHb). 100% O₂ and HBO do not cause metHb.</i></p>
+<ol><li>CO poisoning - discharge criteria?</li></ol>
+<p>A. COHb &lt; 5% B. COHb &lt; 10% + asymptomatic + neuro intact + no cardiac ischemia + psych safe if DSH C. COHb &lt; 20% D. After 6h O₂ <b>Answer: B</b> <i>Explanation: Discharge: COHb &lt; 10% AND asymptomatic AND neuro intact AND no cardiac ischemia AND psych safe (if DSH). Warn re: DNS (2-40 days). Follow-up neuro.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: CO mechanism?</li></ul>
+<p>A: Binds Hb 200-250x O₂ affinity → COHb → left shift O₂ curve (impaired delivery) + inhibits cytochrome c oxidase (cellular hypoxia).</p>
+<ul><li>Q: COHb half-lives?</li></ul>
+<p>A: Room air: 4-5h. 100% O₂ (NRB): 30-90min. HBO (3 ATA): 20-30min.</p>
+<ul><li>Q: HBO indications?</li></ul>
+<p>A: COHb &gt;25% (&gt;15% pregnancy), LOC, cardiac ischemia, persistent neuro symptoms. 100% O₂ first.</p>
+<ul><li>Q: Cherry red skin?</li></ul>
+<p>A: Rare, late, post-mortem. NOT reliable. Most patients look normal/pale.</p>
+<ul><li>Q: COHb correlates with severity?</li></ul>
+<p>A: POORLY. Clinical picture guides treatment. Level normal if on O₂ before sampling.</p>
+<ul><li>Q: Pregnancy + CO?</li></ul>
+<p>A: Fetal Hb higher CO affinity → fetal COHb 10-15% higher, longer t½. HBO threshold &gt;15% maternal COHb.</p>
+<ul><li>Q: DNS (delayed neuropsychiatric syndrome)?</li></ul>
+<p>A: 2-40 days post-exposure: cognitive deficit, personality change, Parkinsonism, incontinence. 30-50% without HBO. HBO reduces.</p>
+<ul><li>Q: House fire = CO + CN⁻?</li></ul>
+<p>A: Yes - plastics, wool, silk → CN⁻. Lactate &gt;10 suggests CN⁻. Hydroxocobalamin 5g IV + 100% O₂ for CO.</p>
+<ul><li>Q: Pulse ox in CO poisoning?</li></ul>
+<p>A: Falsely NORMAL (reads COHb as O₂Hb). Need CO-oximetry (4-wavelength) or ABG with COHb.</p>
+<ul><li>Q: 100% O₂ duration?</li></ul>
+<p>A: Until COHb &lt;10% AND asymptomatic. If HBO given, continue O₂ after. Monitor for DNS.</p>
+<ul><li>Q: CO + CN⁻ treatment?</li></ul>
+<p>A: 100% O₂ for CO. Hydroxocobalamin 5g IV for CN⁻ (preferred over nitrites - no metHb). HBO for CO if indicated.</p>
+<ul><li>Q: DNS timing?</li></ul>
+<p>A: 2-40 days after apparent recovery. Not immediate.</p>
+<ul><li>Q: CO poisoning discharge?</li></ul>
+<p>A: COHb &lt;10% + asymptomatic + neuro intact + cardiac normal + psych safe. Warn re DNS. Follow-up.</p>
+<ul><li>Q: No HBO available?</li></ul>
+<p>A: 100% O₂ NRB minimum 6-12h (or COHb &lt;10% + asymptomatic). Monitor DNS. 100% O₂ still effective (t½ 30-90min).</p>
+<ul><li>Q: Nitrites for CN⁻ + CO?</li></ul>
+<p>A: Nitrites cause metHb - avoid if CO (already impaired O₂ delivery). Hydroxocobalamin preferred.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> - CO: binds Hb with 200-250x affinity vs O₂ → carboxyhemoglobin (COHb) → left shift O₂ dissociation curve (impaired O₂ delivery) + inhibits cytochrome c oxidase (cellular hypoxia).</li><li><b>B</b> - COHb half-life: Room air 4-5h, 100% O₂ (NRB) 30-90min, HBO (3 ATA) 20-30min. 100% O₂ first-line.</li><li><b>B</b> - HBO if: COHb &gt; 25% (or &gt;15% in pregnancy), loss of consciousness, cardiac ischemia, persistent neuro symptoms. 100% O₂ first.</li><li><b>B</b> - Cherry red skin: rare, late, post-mortem finding. NOT reliable for diagnosis. Most patients look normal/pale.</li><li><b>B</b> - COHb level correlates POORLY with severity. Clinical picture (LOC, cardiac, neuro) guides HBO decision. Level can be normal if on O₂ before sampling.</li><li><b>B</b> - Fetal Hb has higher affinity for CO → fetal COHb 10-15% higher than maternal, longer half-life. HBO threshold lower (&gt;15% maternal COHb).</li><li><b>B</b> - DNS: 2-40 days after apparent recovery. Cognitive deficit, personality change, Parkinsonism, incontinence, gait disturbance. Up to 30-50% without HBO. HBO reduces incidence.</li><li><b>B</b> - House fires: CO + cyanide (from plastics, wool, silk). Treat both: 100% O₂ for CO, hydroxocobalamin 5g IV for CN⁻. COHb may be normal if on O₂.</li><li><b>B</b> - Standard pulse ox (2-wavelength) reads COHb as O₂Hb → falsely NORMAL SpO₂. Need CO-oximetry (4-wavelength) or ABG with COHb measurement.</li><li><b>B</b> - 100% O₂ until COHb &lt; 10% AND asymptomatic. If HBO given, continue O₂ after. Monitor for DNS.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> - SpO₂ falsely normal (COHb reads as O₂Hb). COHb 28% + house fire (CN⁻ risk) + GCS 10 (LOC) = HBO indicated. 100% O₂ immediately, arrange HBO. Also give hydroxocobalamin for CN⁻.</li><li><b>B</b> - Pregnancy: fetal Hb higher CO affinity → fetal COHb 10-15% higher, longer half-life. HBO threshold &gt;15% maternal COHb (or any symptomatic).</li><li><b>B</b> - COHb &lt; 10% + asymptomatic = can stop 100% O₂. BUT: observe for DNS (2-40 days), neuro assessment. If DSH → psych assessment. DNS up to 30-50% without HBO.</li><li><b>B</b> - House fires: CO + CN⁻ (plastics, wool, silk). Lactate &gt; 10 suggests CN⁻. Hydroxocobalamin 5g IV empirically. 100% O₂ for CO. HBO for CO if indicated.</li><li><b>B</b> - DNS: 2-40 days post-exposure. Cognitive deficit, personality change, Parkinsonism, incontinence. Up to 30-50% without HBO. HBO reduces incidence.</li><li><b>B</b> - Standard 2-wavelength pulse ox cannot distinguish COHb from O₂Hb → reads sum as SpO₂ = falsely normal. Need CO-oximetry (4-wavelength) or ABG with COHb.</li><li><b>B</b> - 100% O₂ (NRB 15L): COHb half-life 30-90 min. HBO (3 ATA): 20-30 min. Room air: 4-5h.</li><li><b>B</b> - If HBO unavailable: 100% O₂ NRB for minimum 6-12h (or until COHb &lt; 10% + asymptomatic). Monitor for DNS. 100% O₂ still effective (t½ 30-90min).</li><li><b>B</b> - Nitrites (for CN⁻) oxidize Hb → methemoglobinemia. Monitor metHb if using nitrite/thiosulfate. Hydroxocobalamin preferred (no metHb). 100% O₂ and HBO do not cause metHb.</li><li><b>B</b> - Discharge: COHb &lt; 10% AND asymptomatic AND neuro intact AND no cardiac ischemia AND psych safe (if DSH). Warn re: DNS (2-40 days). Follow-up neuro.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Carbon Monoxide Poisoning · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Endemic Mycoses — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Endemic Mycoses</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Dimorphic Fungi</b>: <b>Mould at 25°C / Yeast at 37°C</b> — <i>Histoplasma, Coccidioides, Blastomyces, Paracoccidioides, Talaromyces (Penicillium)</i></li><li>[ ] Recognise <b>Endemic Geography</b>: <b>Histoplasma</b> (Ohio/Mississippi River Valleys), <b>Coccidioides</b> (SW USA, N Mexico), <b>Blastomyces</b> (Great Lakes, SE USA), <b>Paracoccidioides</b> (Latin America), <b>Talaromyces</b> (SE Asia)</li><li>[ ] Recognise <b>Clinical Presentations</b>: Acute/Subacute Pneumonia, Chronic Pulmonary, Disseminated (Skin, Bone, CNS, Adrenal), Immunocompromised</li><li>[ ] Diagnose: <b>Culture (Gold Standard)</b>, <b>Antigen Detection (Urine/Blood/CSF)</b>, <b>Serology (CF, ID, EIA)</b>, <b>PCR</b>, <b>Histopathology</b> (Yeast in Macrophages)</li><li>[ ] Manage: <b>Itraconazole</b> (Mild-Mod), <b>Amphotericin B</b> (Severe), <b>Lifelong Suppression</b> (Immunosuppressed), <b>Azoles</b> (Itraconazole, Voriconazole, Posaconazole)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 General Features of Dimorphic Fungi</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Dimorphism**</td><td>**Mould at 25°C (Environment)** → **Yeast at 37°C (Host)** — **Thermal Dimorphism**</td></tr><tr><td>**Infection Route**</td><td>**Inhalation** of Conidia → **Primary Pulmonary** → **Haematogenous Dissemination**</td></tr><tr><td>**Risk Factors**</td><td>**Immunocompromise** (HIV/CD4<150, Transplant, TNF-α Inhibitors, Steroids), **Occupational/Recreational Exposure** (Caves, Soil, Construction)</td></tr><tr><td>**Endemicity**</td><td>**Geographically Restricted** (See Table Below)</td></tr><tr><td>**Incubation**</td><td>**1-3 Weeks** (Acute), **Months-Years** (Reactivation)</td></tr></table>
+<table class="ctable"><tr><th>Pathogen</th><th>Endemic Region</th><th>Vector/Source</th></tr><tr><td>----------</td><td>---------------</td><td>---------------</td></tr><tr><td>**Histoplasma capsulatum**</td><td>**Ohio/Mississippi River Valleys** (USA), Central/South America, Africa, SE Asia</td><td>**Bird/Bat Guano** (Caves, Chicken Coops, Old Buildings)</td></tr><tr><td>**Coccidioides immitis/posadasii**</td><td>**SW USA (CA, AZ, NV, NM, TX), N Mexico**</td><td>**Soil** (Desert, Dust Storms, Construction, Archaeology)</td></tr><tr><td>**Blastomyces dermatitidis**</td><td>**Great Lakes, SE USA, Ohio/Mississippi River Valleys, Canada (Ontario, Manitoba)**</td><td>**Moist Soil, Decaying Wood** (Riverbanks, Lakes, Excavation)</td></tr><tr><td>**Paracoccidioides brasiliensis/lutzii**</td><td>**Latin America** (Brazil, Colombia, Venezuela, Argentina)</td><td>**Soil** (Rural, Agricultural)</td></tr><tr><td>**Talaromyces (Penicillium) marneffei**</td><td>**SE Asia** (Thailand, Vietnam, Hong Kong, Taiwan, NE India)</td><td>**Bamboo Rats, Soil** (Immunocompromised Hosts)</td></tr></table>
+<div class="callout">[!tip] <b>Endemic Mycoses = Dimorphic Fungi (Mould 25°C → Yeast 37°C)</b>. <b>Inhalation → Primary Pulmonary → Dissemination</b>. <b>Geography = Diagnosis Clue</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Specific Endemic Mycoses</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Histoplasmosis (*Histoplasma capsulatum*)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Endemic Areas**</td><td>**Ohio/Mississippi River Valleys (USA)**, Central/South America, Africa, SE Asia</td></tr><tr><td>**Exposure**</td><td>**Bird/Bat Guano** (Caves, Chicken Coops, Old Buildings, Bridge Demolition)</td></tr><tr><td>**Clinical Forms**</td><td>**Acute Pulmonary** (Self-Limited), **Chronic Pulmonary** (Cavitary, COPD-like), **Disseminated** (Immunocompromised — Adrenal, Skin, CNS, Mucosal), **Mediastinal Fibrosis** (Broncholithiasis, SVCO)</td></tr><tr><td>**Acute Pulmonary**</td><td>Flu-like, Cough, Fever, Chest Pain, Hilar Lymphadenopathy, **Self-Limited**</td></tr><tr><td>**Chronic Pulmonary**</td><td>**Cavitary Apollo Upper Lobes**, **Cough, Haemoptysis, Weight Loss**, Mimics TB</td></tr><tr><td>**Disseminated**</td><td>**HIV/CD4<150**, **Adrenal Insufficiency (Addison's)**, **Oral/NG Ulcers**, **Hepatosplenomegaly**, **CNS**</td></tr></table>
+<p>#### Diagnosis</p>
+<table class="ctable"><tr><th>Test</th><th>Sensitivity/Specificity</th><th>Role</th></tr><tr><td>------</td><td>------------------------</td><td>------</td></tr><tr><td>**Urine/Serum Histoplasma Antigen**</td><td>**High Sens/Spec (90%+)**</td><td>**Rapid, First-Line**</td></tr><tr><td>**Culture (Gold Standard)**</td><td>**Definitive**</td><td>**Slow (2-4 Weeks), BSL-3**</td></tr><tr><td>**Serology (CF, ID, EIA)**</td><td>Antibody Detection</td><td>Supportive</td></tr><tr><td>**Histopathology**</td><td>**Yeast in Macrophages** (Small, Oval, Intracellular)</td><td>**Diagnostic** (Biopsy)</td></tr><tr><td>**PCR**</td><td>**Rapid**</td><td>Emerging</td></tr></table>
+<p>#### Treatment</p>
+<table class="ctable"><tr><th>Syndrome</th><th>1st Line</th><th>Duration</th></tr><tr><td>----------</td><td>----------</td><td>----------</td></tr><tr><td>**Acute Pulmonary (Mild)**</td><td>**Observe** (Self-Limited) / **Itraconazole 200mg BD** if Prolonged >1 Month</td><td>6-12 Weeks</td></tr><tr><td>**Chronic Pulmonary**</td><td>**Itraconazole 200mg BD**</td><td>**12-24 Months**</td></tr><tr><td>**Disseminated / CNS**</td><td>**LAmB 3-5mg/kg/day IV ×2w** → **Itraconazole 200mg BD**</td><td>**12 Months** (Lifelong if Immunosuppressed)</td></tr><tr><td>**Mediastinal Fibrosis**</td><td>**No Antifungal** → **Surgery/Stents** if SVCO</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2. Coccidioidomycosis (Valley Fever)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Agent**</td><td>*Coccidioides immitis* (CA), *C. posadasii* (AZ, MX, Rest)</td></tr><tr><td>**Endemic**</td><td>**SW USA (CA, AZ, NV, NM, UT, TX), N Mexico**</td></tr><tr><td>**Exposure**</td><td>**Soil Dust** (Construction, Archaeology, Dust Storms, Military, Agriculture)</td></tr><tr><td>**Clinical**</td><td>**60% Asymptomatic**; **Acute Pneumonia (Valley Fever)**: Fever, Cough, Fatigue, **Erythema Nodosum** (Erythema Multiforme), **Arthralgia** ("Desert Rheumatism"), **Chronic Cavitary**, **Disseminated** (Meningitis, Skin, Bone, Joints)</td></tr><tr><td>**Risk Factors**</td><td>**Immunocompromised**, **Pregnancy (3rd Trimester)**, **African/Filipino Ancestry** (↑ Dissemination)</td></tr></table>
+<p>#### Diagnosis &amp; Treatment</p>
+<table class="ctable"><tr><th>Test</th><th>Utility</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Serology (CF, ID, EIA)**</td><td>**IgM (Early), IgG (Late), CF Titer (Prognosis)**</td></tr><tr><td>**Culture**</td><td>**Definitive** (BSL-3)</td></tr><tr><td>**Antigen (Urine/Serum)**</td><td>Available</td></tr></table>
+<table class="ctable"><tr><th>Syndrome</th><th>1st Line</th><th>Duration</th></tr><tr><td>----------</td><td>----------</td><td>----------</td></tr><tr><td>**Primary Pulmonary (Mild)**</td><td>**Observe** / **Fluconazole 400mg OD**</td><td>3-6 Months</td></tr><tr><td>**Chronic Pulmonary / Disseminated**</td><td>**Fluconazole 400-800mg OD** / **Itraconazole 200mg BD**</td><td>**12+ Months**</td></tr><tr><td>**Meningitis**</td><td>**Fluconazole 800-1200mg OD** + **Intrathecal Amphotericin** (Refractory)</td><td>**Lifelong**</td></tr></table>
+<div class="callout">[!warning] <b>Coccidioidal Meningitis = Lifelong Suppression</b> (Fluconazole 800-1200mg OD). <b>Relapse Common if Stopped</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3. Blastomycosis</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Agent**</td><td>*Blastomyces dermatitidis*</td></tr><tr><td>**Endemic**</td><td>**Great Lakes, SE USA, Ohio/Mississippi River Valleys**, Canada (ON, MB)</td></tr><tr><td>**Exposure**</td><td>**Moist Soil, Decaying Wood** (Riverbanks, Lakes, Excavation, Construction)</td></tr><tr><td>**Clinical**</td><td>**Acute Pneumonia** (Flu-like), **Chronic Pneumonia** (Cavitary, Mimics TB), **Disseminated** (Skin: Verrucous Ulcers, **Bone (Osteomyelitis)**, **Prostatitis**, **CNS**)</td></tr><tr><td>**Skin Lesions**</td><td>**Verrucous, Ulcerative, Crusted** (Face, Extremities) — **"Blastomycotic Dermatitis"**</td></tr></table>
+<p>#### Diagnosis &amp; Treatment</p>
+<table class="ctable"><tr><th>Test</th><th>Utility</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Culture**</td><td>**Gold Standard** (Yeast at 37°C, Broad-Based Budding)</td></tr><tr><td>**Antigen (Urine/Serum)**</td><td>**High Sens/Spec** (Cross-Reacts with Histoplasma)</td></tr><tr><td>**KOH/Histology**</td><td>**Broad-Based Budding Yeast (8-15µm), Thick Wall**</td></tr></table>
+<table class="ctable"><tr><th>Syndrome</th><th>1st Line</th><th>Duration</th></tr><tr><td>----------</td><td>----------</td><td>----------</td></tr><tr><td>**Pulmonary (Mild/Moderate)**</td><td>**Itraconazole 200mg BD**</td><td>**6-12 Months**</td></tr><tr><td>**Severe / CNS / Disseminated**</td><td>**LAmB 3-5mg/kg/day ×2w** → **Itraconazole 200mg BD**</td><td>**6-12 Months**</td></tr><tr><td>**CNS**</td><td>**LAmB 5mg/kg/day ×4-6w** → **Fluconazole 800mg OD**</td><td>**Lifelong**</td></tr></table>
+<div class="callout">[!warning] <b>Blastomycosis = Broad-Based Budding Yeast (8-15µm) on KOH/Histology</b>. <b>Skin Lesions = Verrucous Ulcers</b>. <b>Prostatitis Common in Men</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4. Paracoccidioidomycosis</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Agent**</td><td>*Paracoccidioides brasiliensis* / *P. lutzii*</td></tr><tr><td>**Endemic**</td><td>**Latin America** (Brazil, Colombia, Venezuela, Argentina, Ecuador)</td></tr><tr><td>**Clinical**</td><td>**Acute/Subacute (Juvenile)**: Fever, Lymphadenopathy, Hepatosplenomegaly; **Chronic Adult (Adult)**: **Pulmonary (Cavitary)**, **Mucosal (Oral/Pharyngeal — "Mulberry" Ulcers)**, **Adrenal Insufficiency**, **Lymphadenopathy**</td></tr><tr><td>**Microscopy**</td><td>**"Pilot's Wheel" / "Mariner's Wheel"** Yeast (Multiple Budding)</td></tr></table>
+<table class="ctable"><tr><th>Syndrome</th><th>Treatment</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**Acute/Subacute**</td><td>**Amphotericin B** → **Itraconazole 200mg BD × 6-12 Months**</td></tr><tr><td>**Chronic**</td><td>**Itraconazole 200mg BD** × **6-18 Months**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5. Talaromycosis (Penicilliosis marneffei)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Agent**</td><td>*Talaromyces (Penicillium) marneffei*</td></tr><tr><td>**Endemic**</td><td>**SE Asia** (Thailand, Vietnam, Hong Kong, Taiwan, NE India)</td></tr><tr><td>**Host**</td><td>**HIV/AIDS (CD4<100)** — **AIDS-Defining Illness**</td></tr><tr><td>**Clinical**</td><td>**Fever, Weight Loss, Anaemia**, **Skin Lesions (Umbilicated Papules, Central Necrosis)**, **Lymphadenopathy**, **Hepatosplenomegaly**, **Respiratory**, **GI**</td></tr><tr><td>**Diagnosis**</td><td>**Culture (Red Colony, Soluble Red Pigment)**, **PCR**, **Histology (Yeast in Macrophages, Transverse Septa)**</td></tr><tr><td>**Treatment**</td><td>**LAmB 3-5mg/kg/day IV ×2w** → **Itraconazole 200mg BD ×10 Weeks** (Secondary Prophylaxis: **Itraconazole 200mg OD** until Immune Reconstitution)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Dimorphism**</td><td>**Mould at 25°C → Yeast at 37°C** (Thermal Dimorphism)</td></tr><tr><td>**Histoplasma**</td><td>**Ohio/Mississippi Valleys**, Bat/Bird Guano, **Urine/Serum Ag (Gold Standard)**, Itraconazole</td></tr><tr><td>**Coccidioides**</td><td>**SW USA (Valley Fever)**, **Erythema Nodosum, Arthralgia**, Fluconazole, **Meningitis = Lifelong Suppression**</td></tr><tr><td>**Blastomyces**</td><td>**Great Lakes/SE USA, Broad-Based Budding Yeast**, Itraconazole, **Skin Lesions (Verrucous), Prostatitis**</td></tr><tr><td>**Paracoccidioides**</td><td>**Latin America**, **"Pilot's Wheel" Yeast**, Mucosal Ulcers ("Mulberry"), Itraconazole</td></tr><tr><td>**Talaromyces (Penicillium) marneffei**</td><td>**SE Asia, HIV/AIDS**, **Umbilicated Skin Papules**, **Red Pigment Culture**, LAmB → Itraconazole</td></tr><tr><td>**Treatment Principles**</td><td>**Mild: Itraconazole**; **Severe/CNS: LAmB → Itraconazole**; **Long Duration (6-24 Months)**</td></tr><tr><td>**Diagnosis**</td><td>**Antigen (Urine/Serum) → Rapid**, **Culture (Gold Standard)**, **PCR**</td></tr><tr><td>**Morphology**</td><td>**Histoplasma: Small Yeast in Macrophage**, **Blastomyces: Broad-Based Budding**, **Paracoccidioides: Pilot's Wheel**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the endemic region for Histoplasmosis?</b></li></ol>
+<ul><li><b>Ohio and Mississippi River Valleys</b> (USA), also Central/South America, Africa, SE Asia.</li></ul>
+<ol><li><b>What is the classic radiological finding in Chronic Pulmonary Histoplasmosis?</b></li></ol>
+<ul><li><b>Cavitary Lesions in Upper Lobes</b> (Mimics TB).</li></ul>
+<ol><li><b>What is the diagnostic test of choice for Histoplasmosis?</b></li></ol>
+<ul><li><b>Urine/Serum Histoplasma Antigen (High Sens/Spec, Rapid)</b>; <b>Culture = Gold Standard</b>.</li></ul>
+<ol><li><b>What is the endemic region for Coccidioidomycosis?</b></li></ol>
+<ul><li><b>SW USA</b> (CA, AZ, NV, NM, UT, TX) + <b>Northern Mexico</b>.</li></ul>
+<ol><li><b>What is the classic triad of Coccidioidomycosis ("Valley Fever")?</b></li></ol>
+<ul><li><b>Fever, Cough, Erythema Nodosum</b> (Plus Arthralgia = "Desert Rheumatism").</li></ul>
+<ol><li><b>What is the treatment for Coccidioidal Meningitis?</b></li></ol>
+<ul><li><b>Fluconazole 800-1200mg OD Lifelong</b> (Relapse Common if Stopped).</li></ul>
+<ol><li><b>What is the characteristic microscopic appearance of Blastomyces?</b></li></ol>
+<ul><li><b>Broad-Based Budding Yeast (8-15µm), Thick Double Wall</b> ("Broad-Based Budding").</li></ul>
+<ol><li><b>What is the endemic area for Blastomycosis?</b></li></ol>
+<ul><li><b>Great Lakes, SE USA, Ohio/Mississippi River Valleys, Canada (Ontario, Manitoba)</b>.</li></ul>
+<ol><li><b>What is the characteristic skin lesion of Blastomycosis?</b></li></ol>
+<ul><li><b>Verrucous, Ulcerated, Crusted</b> ("Blastomycotic Dermatitis").</li></ul>
+<ol><li><b>Describe Paracoccidioidomycosis microscopy.</b></li></ol>
+<ul><li><b>"Pilot's Wheel" / "Mariner's Wheel" Yeast</b> (Multiple Budding Daughter Cells Around Mother Cell).</li></ul>
+<ol><li><b>What is the treatment for Paracoccidioidomycosis?</b></li></ol>
+<ul><li><b>Itraconazole 200mg BD × 6-18 Months</b> (Chronic); <b>Amphotericin B → Itraconazole</b> (Acute).</li></ul>
+<ol><li><b>Where is Talaromyces marneffei endemic and who does it affect?</b></li></ol>
+<ul><li><b>SE Asia (Thailand, Vietnam, Hong Kong, Taiwan, NE India)</b>; <b>HIV/AIDS (CD4&lt;100) — AIDS-Defining</b>.</li></ul>
+<ol><li><b>Differentiate Histoplasmosis from Blastomycosis on microscopy.</b></li></ol>
+<ul><li><b>Histoplasma: Small Yeast (2-4µm) Inside Macrophages</b>; <b>Blastomyces: Large Yeast (8-15µm), Broad-Based Budding, Thick Wall, Extracellular</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Histoplasma vs Blastomyces**</td><td>**Histoplasma: Small Intracellular Yeast (2-4µm) in Macrophages**; **Blastomyces: Large Extracellular Yeast (8-15µm), Broad-Based Budding**</td></tr><tr><td>**Coccidioides vs Histoplasma**</td><td>**Cocci: SW USA, Erythema Nodosum, Arthralgia, CF Serology**; **Histo: Ohio/Mississippi Valleys, Bat Guano, Urine Antigen**</td></tr><tr><td>**Blastomyces vs Paracoccidioides**</td><td>**Blasto: Broad-Based Budding Yeast (8-15µm)**; **Paracoccidioides: "Pilot's Wheel" Multiple Budding**</td></tr><tr><td>**Talaromyces vs Penicillium**</td><td>**T. marneffei = Former Penicillium marneffei**; **Red Pigment, Transverse Septa, SE Asia + HIV**</td></tr><tr><td>**Itraconazole vs Fluconazole**</td><td>**Itraconazole = 1st Line for Most Endemic Mycoses**; **Fluconazole = Coccidioidal Meningitis, Maintenance**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Histo = Ohio/Mississippi + Bat Guano + Urine Antigen"**</td><td>Histoplasma</td></tr><tr><td>**"Cocci = SW USA + Valley Fever + Erythema Nodosum + Fluconazole"**</td><td>Coccidioides</td></tr><tr><td>**"Blasto = Great Lakes + Broad-Based Budding + Skin Ulcers"**</td><td>Blastomyces</td></tr><tr><td>**"Paracoccidioides = Latin America + Pilot's Wheel + Mucosal Ulcers"**</td><td>Paracoccidioides</td></tr><tr><td>**"Talaromyces = SE Asia + HIV + Red Pigment + Umbilicated Papules"**</td><td>Talaromycosis</td></tr><tr><td>**"Dimorphic = Mould 25°C → Yeast 37°C"**</td><td>Thermal Dimorphism</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Endemic Mycoses))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Dimorphic Fungi</div>
+<div class="mm-node mm-l3">– Mould 25°C → Yeast 37°C</div>
+<div class="mm-node mm-l3">– Inhalation → Primary Pulmonary</div>
+<div class="mm-node mm-l2">Histoplasma</div>
+<div class="mm-node mm-l3">– Ohio/Mississippi Valleys</div>
+<div class="mm-node mm-l3">– Bat/Bird Guano</div>
+<div class="mm-node mm-l3">– Urine/Serum Antigen (Gold)</div>
+<div class="mm-node mm-l3">– Itraconazole</div>
+<div class="mm-node mm-l2">Coccidioides</div>
+<div class="mm-node mm-l3">– SW USA (Valley Fever)</div>
+<div class="mm-node mm-l3">– Erythema Nodosum + Arthralgia</div>
+<div class="mm-node mm-l3">– Meningitis = Fluconazole Lifelong</div>
+<div class="mm-node mm-l3">– CF Serology</div>
+<div class="mm-node mm-l2">Blastomyces</div>
+<div class="mm-node mm-l3">– Great Lakes / SE USA</div>
+<div class="mm-node mm-l3">– Broad-Based Budding Yeast</div>
+<div class="mm-node mm-l3">– Skin Ulcers / Prostatitis</div>
+<div class="mm-node mm-l3">– Itraconazole</div>
+<div class="mm-node mm-l2">Paracoccidioides</div>
+<div class="mm-node mm-l3">– Latin America</div>
+<div class="mm-node mm-l3">– Pilot's Wheel Yeast</div>
+<div class="mm-node mm-l3">– Mucosal Ulcers (Mulberry)</div>
+<div class="mm-node mm-l3">– Itraconazole</div>
+<div class="mm-node mm-l2">Talaromyces (Penicillium) marneffei</div>
+<div class="mm-node mm-l3">– SE Asia</div>
+<div class="mm-node mm-l3">– HIV/AIDS (CD4&lt;100)</div>
+<div class="mm-node mm-l3">– Red Pigment Culture</div>
+<div class="mm-node mm-l3">– Umbilicated Papules</div>
+<div class="mm-node mm-l3">– LAmB → Itraconazole</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Mild: Itraconazole 200mg BD</div>
+<div class="mm-node mm-l3">– Severe/CNS: LAmB → Itraconazole</div>
+<div class="mm-node mm-l3">– Duration: 6-24 Months (Lifelong Meningitis)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**ENDEMIC MYCOSES – FCPS/MRCP REVISION CARD**</th></tr><tr><td>-------------------------------------------------</td></tr><tr><td>**Histoplasma**: Ohio/Mississippi Valleys, Bat Guano, **Urine/Serum Antigen (Gold)**, Itraconazole</td></tr><tr><td>**Coccidioides**: SW USA, **Valley Fever**, Erythema Nodosum, Arthralgia, **Meningitis = Fluconazole Lifelong**</td></tr><tr><td>**Blastomyces**: Great Lakes/SE USA, **Broad-Based Budding Yeast**, Skin Ulcers, Prostatitis, Itraconazole</td></tr><tr><td>**Paracoccidioides**: Latin America, **Pilot's Wheel Yeast**, Mucosal "Mulberry" Ulcers, Itraconazole</td></tr><tr><td>**Talaromyces (Penicillium) marneffei**: SE Asia, HIV/AIDS, **Red Pigment**, Umbilicated Papules, LAmB → Itraconazole</td></tr><tr><td>**All Dimorphic**: Mould 25°C → Yeast 37°C, Inhalation, Itraconazole 1st Line</td></tr><tr><td>**Severe/CNS**: LAmB 3-5mg/kg ×2w → Itraconazole 200mg BD</td></tr><tr><td>**Diagnosis**: Antigen (Urine/Serum) Rapid, Culture Gold Standard, PCR, Microscopy (Yeast Morphology)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>5 Major Endemic Mycoses + Geography, Dimorphism, Key Clinical Features, Diagnostic Tests (Antigen, Culture, Microscopy), Itraconazole 1st Line, LAmB for Severe/CNS, Coccidioidal Meningitis Lifelong Fluconazole, Talaromyces in HIV/AIDS</td></tr><tr><td>**Should Know**</td><td>Histoplasma antigen cross-reactivity with Blastomyces, Coccidioidal CF titers for prognosis, Blastomyces skin lesions, Paracoccidioides mucosal ulcers, Talaromyces in HIV/AIDS, Mediastinal fibrosis in histoplasmosis, Adrenal insufficiency in disseminated histoplasmosis, Coccidioidal dissemination in pregnancy/Black/Filipino</td></tr><tr><td>**Nice to Know**</td><td>Emerging endemic fungi (Emmonsia, Emergomyces), Climate change impact on endemicity, Histoplasma capsulatum vs duboisii (African histoplasmosis), Blastomyces gilchristii/percurvata/helicus, Coccidioides posadasii vs immitis, Paracoccidioides brasiliensis vs lutzii, Talaromyces spp. diversity, Antifungal resistance patterns, Genomic epidemiology</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Histoplasmosis</td><td></td><td></td></tr><tr><td>Coccidioidomycosis</td><td></td><td></td></tr><tr><td>Blastomycosis</td><td></td><td></td></tr><tr><td>Paracoccidioidomycosis</td><td></td><td></td></tr><tr><td>Talaromycosis</td><td></td><td></td></tr><tr><td>Diagnosis & Treatment Principles</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Mucormycosis]]</li><li><b>Next</b>: [[Amoebiasis / Giardiasis]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Endemic Mycoses · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

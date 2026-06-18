@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chemical Hazards &amp; Toxicology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">MEDICINE IN AUSTERE ENVIRONMENTS</span>
+      <div class="h1">Chemical Hazards &amp; Toxicology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Major Chemical Hazards</b>: Heavy metals, pesticides, industrial chemicals, POPs, radiation</li><li>[ ] Understand <b>Toxicokinetics</b>: Absorption, distribution, metabolism, excretion (ADME)</li><li>[ ] Apply <b>Toxicodynamics</b>: Mechanisms of toxicity, dose-response, thresholds</li><li>[ ] Recognise <b>Clinical Syndromes</b>: Acute poisoning, chronic toxicity, carcinogenicity</li><li>[ ] Apply <b>Risk Assessment</b>: Hazard ID, dose-response, exposure assessment, risk characterization</li><li>[ ] Implement <b>Biomonitoring</b>: Blood, urine, hair, nails, breath</li><li>[ ] Apply <b>Regulatory Frameworks</b>: REACH, GHS, Stockholm, Rotterdam, Basel, Minamata, IARC</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Heavy Metals — Major Toxicities</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Metal</th><th>Sources</th><th>Target Organs</th><th>Key Clinical Features</th><th>Biomonitoring</th><th>Treatment</th></tr><tr><td>-------</td><td>---------</td><td>---------------</td><td>----------------------</td><td>--------------</td><td>-----------</td></tr><tr><td>**Lead (Pb)**</td><td>Paint, batteries, plumbing, gasoline (historical), smelting, ceramics, spices, toys</td><td>**CNS (neurodev), Haematopoietic (anaemia), Renal, CV, GI**</td><td>**Children**: IQ loss, behavioural, abdominal pain, anaemia<br>**Adults**: Neuropathy, hypertension, gout, infertility</td><td>**Blood Pb (BLL)**: **<5 µg/dL (CDC reference)**<br>**ZPP** (Zinc Protoporphyrin)</td><td>**Chelation**: **Succimer (DMSA) PO**, **CaNa₂EDTA IV**, **D-penicillamine**<br>**Threshold**: **BLL ≥45 µg/dL** (symptomatic), **≥20 µg/dL** (asymptomatic child)</td></tr><tr><td>**Mercury (Hg)**</td><td>**Elemental**: Thermometers, dental amalgam, gold mining<br>**Inorganic**: Skin lightening, disinfectants<br>**Methylmercury (MeHg)**: Fish (predatory), rice</td><td>**Elemental**: CNS (tremor, erethism), renal, respiratory<br>**Methylmercury**: **Neurodevelopmental (fetal)**, sensory, motor</td><td>**Blood Hg** (MeHg), **Urine Hg** (Inorganic), **Hair Hg** (MeHg, long-term)</td><td>**Chelation**: **DMPS/DMSA** (Inorganic), **No proven chelator for MeHg** (Supportive)</td></tr><tr><td>**Arsenic (As)**</td><td>**Groundwater (Geogenic)**, Pesticides (historical), Mining, Smelting, CCA Wood</td><td>**Skin (Hyperkeratosis, Cancer)**, **CVD**, **Diabetes**, **Cancer (Skin, Lung, Bladder)**, **Neuro**</td><td>**Urine As (Inorganic + Metabolites)**: **<10 µg/L** (Speciated best)</td><td>**Chelation**: **DMPS/DMSA** (Acute), **Supportive** (Chronic)</td></tr><tr><td>**Cadmium (Cd)**</td><td>**Batteries, Plating, Fertilisers (Phosphate), Smelting, Tobacco**</td><td>**Renal (Tubular Proteinuria, Itai-Itai), Bone (Osteomalacia), Lung Cancer, Prostate**</td><td>**Blood Cd** (Recent), **Urine Cd** (Body Burden), **β2-Microglobulin** (Renal)</td><td>**No Effective Chelation** → **Source Reduction**, **Iron/Zinc Supplementation**</td></tr><tr><td>**Manganese (Mn)**</td><td>Welding, Mining, Batteries, Fuel Additive (MMT)</td><td>**Neuro (Manganism: Parkinsonism)**, **Lung**</td><td>**Blood Mn**, **Urine Mn**, **MRI (Basal Ganglia)**</td><td>**Supportive**, **Iron Repletion** (Competitive Absorption)</td></tr></table>
+<div class="callout">[!tip] <b>Heavy Metal Toxicity = Chronic &gt; Acute</b>. <b>Biomonitoring = Blood (Recent), Urine (Inorganic/Recent), Hair (Long-term/MeHg)</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Pesticides</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classification &amp; Toxicity</div>
+<table class="ctable"><tr><th>Class</th><th>Examples</th><th>Mechanism</th><th>Acute Toxicity</th><th>Chronic Effects</th></tr><tr><td>-------</td><td>----------</td><td>-----------</td><td>----------------</td><td>-----------------</td></tr><tr><td>**Organophosphates (OPs)**</td><td>Malathion, Parathion, Chlorpyrifos, Diazinon, Dichlorvos</td><td>**Irreversible AChE Inhibition** → **Cholinergic Crisis** (SLUDGE: Salivation, Lacrimation, Urination, Defecation, GI cramps, Emesis + Bradycardia, Miosis, Bronchorrhoea, Muscle Fasciculations, Weakness, Respiratory Failure)</td><td>**High** (LD50 Low)</td><td>**Neuropathy (OPIDN)**, **Neurodevelopmental**, **Carcinogenicity** (Some)</td></tr><tr><td>**Carbamates**</td><td>Carbaryl, Aldicarb, Carbofuran, Methomyl</td><td>**Reversible AChE Inhibition**</td><td>**Moderate-High**</td><td>**Less Neurodevelopmental than OPs**</td></tr><tr><td>**Organochlorines (OCs)**</td><td>**DDT, Dieldrin, Aldrin, Endrin, Heptachlor, Chlordane, Mirex, Lindane (γ-HCH)**</td><td>**Na⁺ Channel Modulation** (Prolonged Depolarisation), **GABA Antagonism**</td><td>**Low Acute**</td><td>**Persistent, Bioaccumulative, Endocrine Disruption, Cancer (DDT), Neurotoxicity**</td></tr><tr><td>**Pyrethroids** (Type I/II)</td><td>Permethrin, Cypermethrin, Deltamethrin, Cyfluthrin</td><td>**Na⁺ Channel Modulation** (Type I: Transient, Type II: Prolonged)</td><td>**Low (Mammals)**, High (Insects)</td><td>**Endocrine Disruption, Neurodevelopmental**</td></tr><tr><td>**Neonicotinoids**</td><td>Imidacloprid, Clothianidin, Thiamethoxam</td><td>**nAChR Agonism** (Insects)</td><td>**Low (Mammals)**</td><td>**Bee Colony Collapse**, **Neurodevelopmental?**</td></tr><tr><td>**Glyphosate**</td><td>**Herbicide (Roundup)**</td><td>**EPSPS Inhibition** (Shikimate Pathway)</td><td>**Low Acute**</td><td>**IARC Group 2A (Probable Carcinogen)**, Microbiome, Endocrine</td></tr></table>
+<div class="sub-h">Acute Pesticide Poisoning Management</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Decontamination**</td><td>**Remove Clothing, Wash Skin/Hair (Soap/Water)**, **Ocular Irrigation**</td></tr><tr><td>**2. Resuscitation**</td><td>**ABCs**, **Atropine 2mg IV** (Repeat q5-10min until Dry Secretions/HR>80), **Oxime (Pralidoxime 1-2g IV)** if OP **<24-48h**</td></tr><tr><td>**3. Supportive**</td><td>**Ventilation** (Intubation), **Seizure Control** (Benzodiazepines), **Fluids/Electrolytes**</td></tr><tr><td>**4. Enhanced Elimination**</td><td>**Gastric Lavage (If <1h, Protected Airway)**, **Activated Charcoal 50g**, **Alkaline Diuresis** (Some), **Haemodialysis** (Severe, Dialyzable)</td></tr><tr><td>**5. Monitor**</td><td>**Cholinesterase Activity (RBC/Plasma)**, **ECG, LFT, Renal, Coagulation**</td></tr></table>
+<div class="callout">[!warning] <b>Atropine = Life-Saving in OP Poisoning</b>. <b>Oxime (Pralidoxime) = Only Effective if Given Early (&lt;24-48h)</b>. <b>Carbamates = Reversible → Atropine Usually Sufficient, Avoid Oximes</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Industrial Chemicals — Key Toxicities</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Chemical</th><th>Use / Source</th><th>Target Organ / Toxicity</th></tr><tr><td>----------</td><td>--------------</td><td>-------------------------</td></tr><tr><td>**Asbestos** (Chrysotile, Amphibole)</td><td>Insulation, Roofing, Tiles, Brake Pads</td><td>**Pleural Plaques, Asbestosis, Mesothelioma, Lung Cancer** (Latency 20-40y)</td></tr><tr><td>**Silica (Crystalline Quartz)**</td><td>Mining, Sandblasting, Construction, Ceramics</td><td>**Silicosis (Nodular Fibrosis)**, **Lung Cancer**, **Autoimmune (SLE, RA, Scleroderma), TB Risk**</td></tr><tr><td>**Benzene**</td><td>Petrochemical, Fuel, Solvent, Rubber</td><td>**AML (Leukaemia), Aplastic Anaemia, Lymphoma** (Bone Marrow Toxicity)</td></tr><tr><td>**Vinyl Chloride**</td><td>PVC Production</td><td>**Angiosarcoma (Liver), HCC, Raynaud's, Acroosteolysis**</td></tr><tr><td>**Trichloroethylene (TCE) / Perchloroethylene (Perc)**</td><td>Degreasing, Dry Cleaning</td><td>**Renal Cancer, Liver Cancer, Lymphoma, Neuro (Trigeminal Neuropathy), Scleroderma-like**</td></tr><tr><td>**Formaldehyde**</td><td>Resins, Disinfectant, Pathology</td><td>**Nasopharyngeal Cancer, Leukaemia**, Irritation, Sensitisation</td></tr><tr><td>**Dioxins (TCDD)** / **Furans / PCBs**</td><td>Waste Incineration, Industrial Accidents (Seveso), Transformers</td><td>**Chloracne, Endocrine Disruption, Immune Suppression, Cancer (TCDD Group 1)**</td></tr><tr><td>**PFAS (PFOA, PFOS, GenX)**</td><td>Non-stick, Firefighting Foam, Textiles</td><td>**Immune Suppression, Thyroid Disruption, Cancer (Kidney, Testicular), Developmental**</td></tr><tr><td>**Solvents (Toluene, Xylene, Styrene, n-Hexane)**</td><td>Paints, Glues, Industry, Glues</td><td>**Neurotoxicity (n-Hexane → Peripheral Neuropathy), CNS Depression, Ototoxicity**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Dioxins, Furans, PCBs — POPs (Persistent Organic Pollutants)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Compound</th><th>Source</th><th>Key Toxicity</th><th>Stockholm Convention</th></tr><tr><td>----------</td><td>--------</td><td>--------------</td><td>---------------------</td></tr><tr><td>**TCDD (2,3,7,8-Tetrachlorodibenzo-p-dioxin)**</td><td>Waste Incineration, Herbicide Production (Agent Orange), Pulp Bleaching</td><td>**Most Toxic Synthetic Chemical**, **Carcinogen (Group 1)**, **Chloracne, Endocrine, Immune, Developmental**</td><td>**Listed (Elimination)**</td></tr><tr><td>**PCBs (Polychlorinated Biphenyls)**</td><td>Transformers, Capacitors, Hydraulic Fluids, Paints</td><td>**Neurodevelopmental, Endocrine, Immune, Cancer (Liver, Melanoma)**</td><td>**Listed (Elimination)**</td></tr><tr><td>**PCDD/Fs (Dioxins/Furans)**</td><td>Combustion, Chlorine Bleaching, Metal Smelting</td><td>**Similar to TCDD**, **TEQ (Toxic Equivalency) Based on TCDD**</td><td>**Listed**</td></tr></table>
+<div class="callout">[!tip] <b>TEQ (Toxic Equivalency) = Sum of (Concentration × TEF)</b> for each Congener. <b>TCDD = Reference (TEF=1)</b>. <b>WHO-TEQ Used for Risk Assessment</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📖 PFAS (Per- and Polyfluoroalkyl Substances) — "Forever Chemicals"</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Compound</th><th>Use</th><th>Health Concerns</th><th>Regulation</th></tr><tr><td>----------</td><td>-------</td><td>-----------------</td><td>------------</td></tr><tr><td>**PFOA / PFOS**</td><td>Non-stick (PTFE), Firefighting Foam (AFFF), Textiles, Food Packaging</td><td>**Immune Dysfunction, Thyroid Disruption, Cancer (Kidney, Testicular), Developmental, Cholesterol**</td><td>**Stockholm Convention (PFOS Listed, PFOA Under Review)**, **EU/US Drinking Water Limits (4-70 ng/L)**</td></tr><tr><td>**GenX / Short-Chain**</td><td>**Replacements**</td><td>**Similar Toxicity Concerns**</td><td>**Under Scrutiny**</td></tr></table>
+<div class="callout">[!warning] <b>PFAS = "Forever Chemicals" (C-F Bond Stability)</b>. <b>Bioaccumulate, Persistent, Mobile</b>. <b>Drinking Water = Major Exposure Route</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📖 Radiation Hazards</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Source</th><th>Health Effects</th><th>Protection</th></tr><tr><td>--------</td><td>--------</td><td>----------------</td><td>------------</td></tr><tr><td>**Ionising**</td><td>**Radon** (Indoor, #2 Lung Cancer Cause), **Medical (CT, X-ray, Nuclear Med)**, **Occupational (Miners, Nuclear Workers)**, **Nuclear Accidents (Chernobyl, Fukushima)**</td><td>**Cancer (Leukaemia, Thyroid, Breast, Lung, Solid Tumours)**, **Cataracts**, **Hereditary Effects**, **Acute Radiation Syndrome (ARS)**</td><td>**ALARA (As Low As Reasonably Achievable)**, **Time, Distance, Shielding**, **Dose Limits (Public 1 mSv/yr, Workers 20 mSv/yr)**</td></tr><tr><td>**Non-Ionising (UV)**</td><td>**Sun, Tanning Beds**</td><td>**Skin Cancer (Melanoma, NMSC), Cataracts, Photoaging, Immune Suppression**</td><td>**Sun Protection (Slip, Slop, Slap, Seek, Slide)**</td></tr><tr><td>**Non-Ionising (RF/EMF)**</td><td>**Mobile Phones, Base Stations, WiFi, Power Lines**</td><td>**IARC 2B (Possible Carcinogen)**, **Thermal Effects (High Power)**, **EHS (Controversial)**</td><td>**Precautionary, SAR Limits, Distance**</td></tr></table>
+<div class="callout">[!warning] <b>Radon = #2 Cause of Lung Cancer</b> (After Smoking). <b>Test Homes in High-Radon Areas</b>. <b>Medical Radiation = Largest Man-Made Source</b> → <b>Justification &amp; Optimisation (ALARA)</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📖 Risk Assessment & Biomonitoring</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Human Health Risk Assessment (HHRA) Steps</div>
+<table class="ctable"><tr><th>Step</th><th>Description</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**1. Hazard Identification**</td><td>**Can the chemical cause harm?** (Animal, Human, Mechanistic Data)</td></tr><tr><td>**2. Dose-Response Assessment**</td><td>**NOAEL/LOAEL → BMD → RfD (Non-Cancer) / CSF (Cancer)**</td></tr><tr><td>**3. Exposure Assessment**</td><td>**Source → Pathway → Receptor** (Concentration × Intake Rate × Duration × Frequency)</td></tr><tr><td>**4. Risk Characterization**</td><td>**Risk = Hazard × Exposure** (Qualitative/Quantitative), **Uncertainty Analysis**</td></tr></table>
+<div class="sub-h">Biomonitoring — Key Matrices</div>
+<table class="ctable"><tr><th>Matrix</th><th>Reflects</th><th>Half-Life / Window</th><th>Examples</th></tr><tr><td>--------</td><td>----------</td><td>-------------------</td><td>----------</td></tr><tr><td>**Blood**</td><td>**Recent Exposure** (Hours-Months)</td><td>**Pb (30d), Hg (MeHg 50d), Cd (Months), POPs (Years)**</td><td>**Lead, Mercury, POPs, VOCs**</td></tr><tr><td>**Urine**</td><td>**Recent/Excreted** (Hours-Days)</td><td>**As (Inorganic), Cd, Pesticides, Phthalates, BPA, PAH Metabolites**</td><td>**Arsenic, Pesticides, Phthalates**</td></tr><tr><td>**Hair**</td><td>**Long-Term (Months-Years)**</td><td>**MeHg (Hair Growth ~1cm/month), Metals**</td><td>**Methylmercury, Chronic Metal Exposure**</td></tr><tr><td>**Nails**</td><td>**Long-Term (Months)**</td><td>**As, Se, Heavy Metals**</td><td>**Arsenic**</td></tr><tr><td>**Breast Milk**</td><td>**Lipophilic POPs**</td><td>**Lactation Period**</td><td>**PCBs, Dioxins, OCPs, BFRs**</td></tr><tr><td>**Exhaled Breath**</td><td>**Volatile Organics**</td><td>**Real-Time**</td><td>**VOCs, Solvents**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📖 Regulatory Frameworks</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Framework</th><th>Scope</th><th>Key Provisions</th></tr><tr><td>--------</td><td>-------</td><td>----------------</td></tr><tr><td>**REACH (EU)**</td><td>**Registration, Evaluation, Authorisation, Restriction of Chemicals**</td><td>**Industry Responsibility**, **SVHC (Substances of Very High Concern)**, **Authorisation, Restriction**</td></tr><tr><td>**GHS (Globally Harmonized System)**</td><td>**Classification, Labelling, Packaging (CLP)**</td><td>**Hazard Pictograms, Signal Words, H/P Statements, SDS (16 Sections)**</td></tr><tr><td>**Stockholm Convention**</td><td>**POPs (DDT, PCBs, Dioxins, PFOS, New Additions)**</td><td>**Elimination/Restriction**, **Exemptions (DDT for Malaria)**</td></tr><tr><td>**Rotterdam Convention**</td><td>**Prior Informed Consent (PIC)**</td><td>**Hazardous Chemicals/ Pesticides Trade**</td></tr><tr><td>**Basel Convention**</td><td>**Hazardous Waste Transboundary Movement**</td><td>**Minimisation, Prior Informed Consent, Ban on Export to Non-OECD**</td></tr><tr><td>**Minamata Convention**</td><td>**Mercury**</td><td>**Phase-Out (Products, Processes, ASGM), Emissions Control**</td></tr><tr><td>**IARC Monographs**</td><td>**Cancer Classification (Group 1, 2A, 2B, 3, 4)**</td><td>**Carcinogen Identification**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Heavy Metals**</td><td>**Pb (Neurodev, Anaemia), Hg (Neuro, Fetal), As (Cancer, Skin, CVD), Cd (Renal, Bone), Mn (Parkinsonism)**</td></tr><tr><td>**Pesticides**</td><td>**OPs/Carbamates = Cholinergic Crisis (Atropine + Pralidoxime)**, **OCs = Persistent/Endocrine**, **Pyrethroids = Low Mammalian Tox**, **Glyphosate = 2A Carcinogen**</td></tr><tr><td>**Industrial Chemicals**</td><td>**Asbestos (Mesothelioma, Asbestosis), Silica (Silicosis, Lung Ca), Benzene (AML), Vinyl Chloride (Angiosarcoma), TCE/Perc (Renal/Liver Ca), Dioxins/PCBs (Chloracne, Endocrine, Cancer)**</td></tr><tr><td>**PFAS**</td><td>**"Forever Chemicals"**, **Immune, Thyroid, Cancer, Developmental**, **Drinking Water Major Route**</td></tr><tr><td>**Radiation**</td><td>**Radon = #2 Lung Cancer Cause**, **Medical = Largest Man-Made**, **ALARA**, **UV = Skin Cancer**</td></tr><tr><td>**Risk Assessment**</td><td>**Hazard ID → Dose-Response → Exposure → Risk Char**</td></tr><tr><td>**Biomonitoring**</td><td>**Blood (Recent), Urine (Recent/Excreted), Hair (Long-Term/MeHg), Nails (Long-Term), Breast Milk (POPs)**</td></tr><tr><td>**Regulation**</td><td>**REACH, GHS, Stockholm, Rotterdam, Basel, Minamata, IARC**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the clinical features of acute organophosphate poisoning?</b></li></ol>
+<ul><li><b>SLUDGE</b>: Salivation, Lacrimation, Urination, Defecation, GI cramps, Emesis; <b>Miosis, Bradycardia, Bronchorrhoea, Muscle Fasciculations, Weakness, Respiratory Failure</b>.</li></ul>
+<ol><li><b>What is the antidote for organophosphate poisoning and when should it be given?</b></li></ol>
+<ul><li><b>Atropine 2mg IV</b> (Repeat q5-10min until dry secretions/HR&gt;80); <b>Pralidoxime 1-2g IV</b> (Within 24-48h).</li></ul>
+<ol><li><b>What are the health effects of chronic arsenic exposure?</b></li></ol>
+<ul><li><b>Skin lesions (Hyperkeratosis, Hyperpigmentation), Cancer (Skin, Lung, Bladder), CVD, Diabetes, Neurotoxicity</b>.</li></ul>
+<ol><li><b>Why is cadmium particularly toxic to the kidneys?</b></li></ol>
+<ul><li><b>Accumulates in Proximal Tubules</b> → <b>Tubular Proteinuria (β2-Microglobulin), Fanconi Syndrome, Osteomalacia (Itai-Itai Disease)</b>.</li></ul>
+<ol><li><b>What is the mechanism of benzene-induced leukaemia?</b></li></ol>
+<ul><li><b>Metabolites (Benzene Oxide, Quinones) → DNA Damage, Chromosomal Aberrations (Aneuploidy, Translocations) → AML</b>.</li></ul>
+<ol><li><b>What is the significance of dioxins (TCDD) and how are they measured?</b></li></ol>
+<ul><li><b>Most Toxic Synthetic Chemical</b>, <b>Carcinogen Group 1</b>, <b>Measured as TEQ (Toxic Equivalency) relative to TCDD</b>.</li></ul>
+<ol><li><b>What are PFAS and why are they called "Forever Chemicals"?</b></li></ol>
+<ul><li><b>Per/Polyfluoroalkyl Substances</b>, <b>C-F Bond Extremely Stable</b> → <b>Persistent, Bioaccumulative, Mobile</b> → <b>Drinking Water Major Exposure</b>.</li></ul>
+<ol><li><b>How is radiation risk assessed for radon exposure?</b></li></ol>
+<ul><li><b>Radon = #2 Lung Cancer Cause</b>, <b>Indoor Accumulation</b>, <b>Test Homes in High-Risk Areas</b>, <b>Mitigation (Sub-Slab Depressurisation)</b>.</li></ul>
+<ol><li><b>What are the key biomarkers for lead exposure?</b></li></ol>
+<ul><li><b>Blood Lead Level (BLL) = Recent Exposure</b>, <b>Zinc Protoporphyrin (ZPP) = Chronic Effect</b>, <b>Bone Lead (XRF) = Cumulative Burden</b> (Research).</li></ul>
+<ol><li><b>What is the management of acute arsenic poisoning?</b></li></ol>
+<ul><li><b>Chelation: DMPS/DMSA</b> (IV/PO), <b>Supportive (Fluids, Electrolytes, Cardiac Monitoring)</b>, <b>Source Removal</b>.</li></ul>
+<ol><li><b>What is the significance of biomonitoring in environmental health?</b></li></ol>
+<ul><li><b>Measures Internal Dose (Integrates All Routes)</b>, <b>Reflects Biologically Effective Dose</b>, <b>Guides Risk Assessment &amp; Public Health Action</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Organophosphates vs Carbamates**</td><td>**OP = Irreversible AChE Inhibition (Requires Oxime)**; **Carbamate = Reversible (Atropine Usually Sufficient)**</td></tr><tr><td>**Acute vs Chronic Heavy Metal**</td><td>**Acute = GI, Shock, CNS**; **Chronic = Neuro, Renal, Cancer, Endocrine**</td></tr><tr><td>**Asbestos vs Silica**</td><td>**Asbestos = Mesothelioma, Pleural Plaques**; **Silica = Silicosis, Lung Cancer, Autoimmune**</td></tr><tr><td>**Dioxins vs PCBs**</td><td>**Both POPs, Chlorinated**, **TCDD = Most Toxic Dioxin**, **PCBs = Transformers, Neurodevelopmental**</td></tr><tr><td>**PFAS vs Other Chemicals**</td><td>**PFAS = C-F Bond (Forever), Persistent, Bioaccumulative, Ubiquitous, Multi-Organ Toxicity**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"SLUDGE = OP Poisoning"**</td><td>Cholinergic Crisis</td></tr><tr><td>**"Atropine + Pralidoxide = OP Antidote"**</td><td>OP Treatment</td></tr><tr><td>**"Pb = Brain, Cd = Kidney/Bone, Hg = Brain (Fetal), As = Cancer/Skin"**</td><td>Heavy Metals</td></tr><tr><td>**"Asbestos = Mesothelioma + Asbestosis"**</td><td>Asbestos</td></tr><tr><td>**"Benzene = AML"**</td><td>Benzene</td></tr><tr><td>**"TCDD = Dioxin = Chloracne + Cancer"**</td><td>Dioxin</td></tr><tr><td>**"PFAS = Forever Chemicals (C-F Bond)"**</td><td>PFAS</td></tr><tr><td>**"Radon = #2 Lung Cancer"**</td><td>Radon</td></tr><tr><td>**"IARC Group 1 = Carcinogenic to Humans"**</td><td>IARC</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Chemical Hazards &amp; Toxicology))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Heavy Metals</div>
+<div class="mm-node mm-l3">– Pb: Neurodev, Anaemia</div>
+<div class="mm-node mm-l3">– Hg: Neuro, Fetal</div>
+<div class="mm-node mm-l3">– As: Cancer, Skin, CVD</div>
+<div class="mm-node mm-l3">– Cd: Renal, Bone</div>
+<div class="mm-node mm-l3">– Mn: Parkinsonism</div>
+<div class="mm-node mm-l2">Pesticides</div>
+<div class="mm-node mm-l3">– OP: Cholinergic Crisis (Atropine + Pralidoxime)</div>
+<div class="mm-node mm-l3">– Carbamate: Reversible</div>
+<div class="mm-node mm-l3">– OC: Persistent, Endocrine</div>
+<div class="mm-node mm-l3">– Pyrethroid: Low Mammalian Tox</div>
+<div class="mm-node mm-l3">– Glyphosate: 2A Carcinogen</div>
+<div class="mm-node mm-l2">Industrial Chemicals</div>
+<div class="mm-node mm-l3">– Asbestos: Mesothelioma, Asbestosis</div>
+<div class="mm-node mm-l3">– Silica: Silicosis, Lung Ca, Autoimmune</div>
+<div class="mm-node mm-l3">– Benzene: AML</div>
+<div class="mm-node mm-l3">– Vinyl Chloride: Angiosarcoma</div>
+<div class="mm-node mm-l3">– TCE/Perc: Renal/Liver Ca</div>
+<div class="mm-node mm-l3">– Dioxins/Furans/PCBs: Chloracne, Endocrine, Cancer</div>
+<div class="mm-node mm-l2">PFAS</div>
+<div class="mm-node mm-l3">– Forever Chemicals</div>
+<div class="mm-node mm-l3">– Immune, Thyroid, Cancer, Developmental</div>
+<div class="mm-node mm-l3">– Drinking Water = Major Route</div>
+<div class="mm-node mm-l2">Radiation</div>
+<div class="mm-node mm-l3">– Ionising: Radon (#2 Lung Ca), Medical, Occupational, Nuclear</div>
+<div class="mm-node mm-l3">– Non-Ionising: UV (Skin Cancer), RF/EMF (2B)</div>
+<div class="mm-node mm-l2">Risk Assessment</div>
+<div class="mm-node mm-l3">– Hazard ID → Dose-Response → Exposure → Risk Char</div>
+<div class="mm-node mm-l2">Biomonitoring</div>
+<div class="mm-node mm-l3">– Blood (Recent), Urine (Excreted), Hair (Long-term/MeHg), Nails, Breast Milk</div>
+<div class="mm-node mm-l2">Regulation</div>
+<div class="mm-node mm-l3">– REACH, GHS, Stockholm, Rotterdam, Basel, Minamata, IARC</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**CHEMICAL HAZARDS & TOXICOLOGY – FCPS/MRCP REVISION CARD**</th></tr><tr><td>-------------------------------------------------------------</td></tr><tr><td>**Heavy Metals**: **Pb (Neurodev, Anaemia)**, **Hg (Neuro, Fetal)**, **As (Cancer, Skin, CVD)**, **Cd (Renal, Bone)**, **Mn (Parkinsonism)**</td></tr><tr><td>**Pesticides**: **OP (SLUDGE → Atropine + Pralidoxime)**, **Carbamate (Reversible)**, **OC (Persistent, Endocrine)**, **Pyrethroid (Low Mammalian)**, **Glyphosate (2A)**</td></tr><tr><td>**Industrial**: **Asbestos (Mesothelioma, Asbestosis)**, **Silica (Silicosis, Lung Ca)**, **Benzene (AML)**, **Vinyl Chloride (Angiosarcoma)**, **Dioxins/PCBs (Chloracne, Cancer, Endocrine)**</td></tr><tr><td>**PFAS**: **Forever Chemicals**, **Immune/Thyroid/Cancer/Developmental**, **Water = Main Route**</td></tr><tr><td>**Radiation**: **Radon = #2 Lung Ca**, **Medical = Largest Man-Made**, **UV = Skin Cancer**, **ALARA**</td></tr><tr><td>**Risk Assessment**: **Hazard ID → Dose-Response → Exposure → Risk Char**</td></tr><tr><td>**Biomonitoring**: **Blood (Recent), Urine (Excreted), Hair (Long-term/MeHg), Breast Milk (POPs)**</td></tr><tr><td>**Regulation**: **REACH, GHS, Stockholm, Rotterdam, Basel, Minamata, IARC**</td></tr><tr><td>**OP Poisoning**: **SLUDGE → Atropine + Pralidoxime**</td></tr><tr><td>**Carbamate**: **Reversible AChE Inhib**, **Atropine Only**</td></tr><tr><td>**Echinocandins = NO for Mucormycosis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Heavy metals (Pb, Hg, As, Cd) clinical features & biomonitoring, OP poisoning (SLUDGE + Atropine/Pralidoxime), Asbestos/Silica/Benzene diseases, PFAS "Forever Chemicals", Radiation (Radon, Medical, UV), Risk Assessment 4 Steps, Biomonitoring Matrices, Key Regulations (REACH, Stockholm, Minamata, IARC)</td></tr><tr><td>**Should Know**</td><td>Detailed pesticide classes (OP/Carb/OC/Pyrethroid/Neonicotinoid/Glyphosate), Industrial chemicals (TCE, Perc, Formaldehyde, Vinyl Chloride), Dioxins/Furans/PCBs mechanisms, PFAS specific regulations, Radiation types & protection principles, Biomonitoring interpretation (Blood vs Urine vs Hair), REACH/GHS/Stockholm/Rotterdam/Basel/Minamata conventions, IARC classification, Acute pesticide poisoning management algorithms</td></tr><tr><td>**Nice to Know**</td><td>Emerging contaminants (GenX, PFAS alternatives), Nanomaterial toxicity, Endocrine disruptor mechanisms (EDCs), Mixture toxicity / Cumulative risk assessment, Epigenetic mechanisms of toxicity, In vitro/in silico alternatives to animal testing (NAMs), Planetary boundary for chemical pollution, Environmental justice & chemical exposure inequalities, Cost of chemical-related disease, Green chemistry principles, Circular economy & chemical safety</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Heavy Metals</td><td></td><td></td></tr><tr><td>Pesticides</td><td></td><td></td></tr><tr><td>Industrial Chemicals</td><td></td><td></td></tr><tr><td>POPs (Dioxins, PCBs, PFAS)</td><td></td><td></td></tr><tr><td>Radiation Hazards</td><td></td><td></td></tr><tr><td>Risk Assessment & Biomonitoring</td><td></td><td></td></tr><tr><td>Regulatory Frameworks</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Climate Change &amp; Health]]</li><li><b>Next</b>: [[Occupational Health]]</li><li><b>Section Hub</b>: [[Environmental Medicine MOC]]</li><li><b>MOC</b>: [[Hematology MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Chemical Hazards &amp; Toxicology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

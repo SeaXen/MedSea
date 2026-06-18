@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Iron Poisoning — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Iron Poisoning</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Calculate elemental iron dose from preparation</li><li>Recognize 5 clinical stages</li><li>Apply deferoxamine indications and dosing</li><li>Interpret radiopaque pills on abdominal X-ray</li><li>Manage metabolic acidosis, shock, coagulopathy</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Iron poisoning = toxicity from elemental iron causing <b>direct GI corrosion</b> and <b>systemic metabolic toxicity</b> (mitochondrial dysfunction, vascular injury, hepatic necrosis).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Mechanism</b>:</li></ul>
+<ol><li><b>Local corrosion</b>: Fe²⁺/Fe³⁺ → GI mucosal necrosis, hemorrhage, stricture</li><li><b>Systemic</b>: free iron → <b>mitochondrial uncoupling</b> → lactic acidosis; <b>endothelial damage</b> → vasodilation, capillary leak, shock; <b>hepatic necrosis</b>; <b>coagulopathy</b></li></ol>
+<ul><li><b>Preparations &amp; Elemental Iron %</b>:</li><li>Ferrous sulfate: <b>20%</b> (60 mg tablet = 12 mg elemental)</li><li>Ferrous fumarate: <b>33%</b> (200 mg tablet = 66 mg elemental)</li><li>Ferrous gluconate: <b>12%</b> (300 mg tablet = 36 mg elemental)</li><li>Ferrous succinate: <b>35%</b></li><li>Carbonyl iron: <b>100%</b> (pure elemental)</li><li><b>Toxic dose</b>: <b>&gt; 40 mg/kg elemental iron</b> (moderate); <b>&gt; 60 mg/kg</b> (severe)</li><li><b>Absorption</b>: saturable, delayed by food/antacids; peak 2-4h (longer with enteric-coated)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features (Five Stages)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Time</th><th>Features</th></tr><tr><td>-------</td><td>------</td><td>----------</td></tr><tr><td>**I: GI**</td><td>0-6h</td><td>**Vomiting (hematemesis), abdominal pain, diarrhea, hematochezia**, GI bleeding, lethargy</td></tr><tr><td>**II: Latent**</td><td>6-24h</td><td>**Apparent improvement** (deceptive), but ongoing absorption</td></tr><tr><td>**III: Shock/Metabolic**</td><td>12-48h</td><td>**Metabolic acidosis, shock, lethargy/coma, seizures, coagulopathy, hyperglycemia, fever**</td></tr><tr><td>**IV: Hepatic**</td><td>2-4d</td><td>**Hepatic failure** (AST/ALT ↑↑, INR ↑, bilirubin ↑, hypoglycemia, encephalopathy)</td></tr><tr><td>**V: GI Scarring**</td><td>2-6 weeks</td><td>**Gastric outlet obstruction, pyloric stenosis, esophageal strictures**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Caustic ingestion</b>: oral burns, drooling, no metabolic acidosis early</li><li><b>Salicylate</b>: tinnitus, respiratory alkalosis + metabolic acidosis</li><li><b>Methanol/EG</b>: osmolar gap, specific metabolites</li><li><b>Sepsis</b>: fever, shock, but no iron pills on AXR</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Serum iron level</b> — drawn <b>4-6h post-ingestion</b> (peak absorption); <b>&gt; 300 µg/dL (53 µmol/L)</b> = significant; <b>&gt; 500 µg/dL (90 µmol/L)</b> = severe (treat)</li><li><b>TIBC</b> (total iron binding capacity) — <b>free iron = serum iron - TIBC</b> (if &gt; 0, toxic)</li><li><b>ABG/VBG</b> — metabolic acidosis, lactate</li><li><b>Electrolytes, glucose, renal, LFTs, coagulation, CK</b></li><li><b>Abdominal X-ray</b> — <b>radiopaque tablets</b> visible (iron is radiopaque) — <b>quantitate pill count</b></li><li><b>Urine color</b> — <b>"vin rosé" (pink/red)</b> = deferoxamine-iron complex (after deferoxamine)</li><li><b>Pregnancy test</b> (females)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Resuscitation (ABCDE)</div>
+<ul><li><b>Airway</b>: protect if vomiting blood, GCS &lt; 8</li><li><b>Breathing</b>: O₂, ventilation if needed</li><li><b>Circulation</b>: <b>aggressive IV fluids</b> for shock (capillary leak); vasopressors (NE) if refractory</li><li><b>Correct acidosis</b>: bicarbonate for pH &lt; 7.2</li><li><b>Correct coagulopathy</b>: FFP, platelets, vitamin K if bleeding</li></ul>
+<div class="sub-h">2. Decontamination</div>
+<ul><li><b>Whole Bowel Irrigation (WBI)</b> — <b>INDICATED</b> for iron (radiopaque, sustained-release, not adsorbed by charcoal)</li><li><b>Polyethylene glycol (PEG) 1-2 L/hr</b> via NG tube until clear effluent</li><li><b>Airway must be protected</b></li><li><b>Activated charcoal</b>: <b>NOT effective</b> (does not adsorb iron)</li><li><b>Gastric lavage</b>: <b>contraindicated</b> (corrosive, perforation risk)</li><li><b>Emesis</b>: contraindicated</li></ul>
+<div class="sub-h">3. Deferoxamine (Desferrioxamine) — **SPECIFIC ANTIDOTE**</div>
+<ul><li><b>Mechanism</b>: chelates free iron → <b>ferrioxamine</b> (water-soluble, renally excreted)</li><li><b>Indications</b> (Any One):</li><li><b>Systemic toxicity</b> (metabolic acidosis, shock, lethargy, coma, seizures)</li><li><b>Serum iron &gt; 500 µg/dL (90 µmol/L)</b></li><li><b>Vomiting/hematemesis</b> + radiopaque pills on AXR</li><li><b>Ingestion &gt; 60 mg/kg elemental iron</b></li><li><b>Dose</b>: <b>IV infusion 15 mg/kg/hr</b> (max <b>80 mg/kg/24h</b>)</li><li>Typical: 1 g in 100 mL NS/D5W at 15 mg/kg/hr</li><li><b>Do NOT bolus</b> (hypotension, anaphylaxis)</li><li><b>Duration</b>: until <b>clinical improvement + iron level falling + urine color normal</b></li><li>Usually 12-24h, may need longer</li><li><b>"Vin Rosé" Urine</b> — <b>pink/red urine</b> = ferrioxamine complex excreted — <b>confirms chelation working</b></li><li><b>Adverse</b>: hypotension (rapid infusion), ARDS (prolonged &gt; 24h high dose), Yersinia sepsis (iron-rich environment), allergic</li></ul>
+<div class="sub-h">4. Enhanced Elimination</div>
+<ul><li><b>Hemodialysis</b>: <b>NOT effective</b> for iron (ferrioxamine not well dialyzed)</li><li><b>Hemoperfusion</b>: not routinely used</li></ul>
+<div class="sub-h">5. Surgical</div>
+<ul><li><b>Endoscopy</b> (Stage I): assess GI corrosion (grade 1-3) — <b>avoid if perforation suspected</b></li><li><b>Stricture dilation/surgery</b> (Stage V): delayed (weeks-months)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>GI perforation, hemorrhage</li><li>Shock, multi-organ failure</li><li>Hepatic failure</li><li>Coagulopathy, DIC</li><li>GI strictures (late)</li><li>Yersinia sepsis (with deferoxamine)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Good if deferoxamine started early</b> (Stage I/II)</li><li><b>Mortality</b>: &lt; 1% if treated; 10-20% if Stage III shock</li><li><b>Late strictures</b> in 10-20% of significant ingestions</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Elemental iron calculation</b>: sulfate 20%, fumarate 33%, gluconate 12%</li><li><b>Toxic dose</b>: &gt; 40 mg/kg elemental (moderate); &gt; 60 mg/kg (severe)</li><li><b>5 Stages</b>: GI → Latent (deceptive!) → Shock/Metabolic → Hepatic → GI Scarring</li><li><b>Serum iron &gt; 500 µg/dL</b> = treat with deferoxamine</li><li><b>Deferoxamine 15 mg/kg/hr IV infusion</b> (max 80 mg/kg/24h) — <b>NO bolus</b></li><li><b>"Vin rosé" urine</b> = deferoxamine-iron complex (ferrioxamine)</li><li><b>Abdominal X-ray</b>: radiopaque tablets visible — count pills</li><li><b>WBI indicated</b> (PEG 1-2 L/hr) — charcoal NOT effective</li><li><b>Latent phase</b> = deceptive improvement, ongoing absorption</li><li><b>Hepatic failure</b> Stage IV (2-4d)</li><li><b>Pill count on AXR</b> correlates with severity</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Elemental iron content of common preparations</li><li>5 stages of iron poisoning</li><li>Deferoxamine indications and dosing</li><li>Vin rosé urine significance</li><li>Why WBI not charcoal?</li><li>Abdominal X-ray findings</li><li>Latent phase clinical significance</li><li>Late complications (strictures)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Charcoal for iron</b> → NO, doesn't adsorb</li><li><b>Gastric lavage</b> → NO, corrosive risk</li><li><b>Deferoxamine bolus</b> → NO, hypotension/anaphylaxis</li><li><b>Serum iron at presentation</b> → may be low (not yet absorbed) — repeat at 4-6h</li><li><b>TIBC</b> — use transferrin saturation &gt; 50% or free iron calculation</li><li><b>Latent phase</b> = NOT recovery — ongoing absorption</li><li><b>Vin rosé urine</b> = AFTER deferoxamine, not before</li><li><b>Radiopaque pills</b> = only iron and few others (Ca, heavy metals)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>IRON STAGES</b>: <b>1 G</b>I, <b>2 L</b>atent, <b>3 S</b>hock/Metabolic, <b>4 H</b>epatic, <b>5 S</b>trictures</li><li><b>ELEMENTAL IRON</b>: <b>S</b>ulfate <b>20</b>, <b>F</b>umarate <b>33</b>, <b>G</b>luconate <b>12</b></li><li><b>TOXIC DOSE</b>: <b>40 mg/kg</b> = moderate, <b>60 mg/kg</b> = severe</li><li><b>DEFEROXAMINE</b>: <b>15 mg/kg/hr IV</b>, <b>MAX 80 mg/kg/day</b>, <b>VIN ROSÉ URINE</b></li><li><b>AXR</b>: <b>RADIOPAQUE PILLS</b> visible</li><li><b>WBI</b>: <b>PEG 1-2 L/hr</b> (NO charcoal)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Iron Poisoning))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Elemental Iron %</div>
+<div class="mm-node mm-l3">– Sulfate: 20%</div>
+<div class="mm-node mm-l3">– Fumarate: 33%</div>
+<div class="mm-node mm-l3">– Gluconate: 12%</div>
+<div class="mm-node mm-l2">Toxic Dose</div>
+<div class="mm-node mm-l3">– &gt;40 mg/kg Moderate</div>
+<div class="mm-node mm-l3">– &gt;60 mg/kg Severe</div>
+<div class="mm-node mm-l2">5 Stages</div>
+<div class="mm-node mm-l3">– 1: GI (0-6h) — Vomiting, Bleeding</div>
+<div class="mm-node mm-l3">– 2: Latent (6-24h) — Deceptive Improvement</div>
+<div class="mm-node mm-l3">– 3: Shock/Metabolic (12-48h) — Acidosis, Shock</div>
+<div class="mm-node mm-l3">– 4: Hepatic (2-4d) — Liver Failure</div>
+<div class="mm-node mm-l3">– 5: GI Scarring (Weeks) — Strictures</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Serum Iron &gt;500 µg/dL</div>
+<div class="mm-node mm-l3">– AXR: Radiopaque Pills</div>
+<div class="mm-node mm-l3">– Vin Rosé Urine (Post-Desferrioxamine)</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– WBI (PEG 1-2 L/hr)</div>
+<div class="mm-node mm-l3">– Deferoxamine 15 mg/kg/hr IV</div>
+<div class="mm-node mm-l3">– NO Charcoal, NO Lavage</div>
+<div class="mm-node mm-l3">– Supportive (Fluids, Vasopressors)</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Iron Ingestion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Calculate Elemental Iron Dose\nmg/kg = (Tablets × mg elemental/tablet) / Weight</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">&gt; 40 mg/kg Elemental?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Observe 6-12h\nSerial Iron Levels\nAXR if Unknown</div>
+<div class="fc-node" data-id="E">ABCDE + AXR + Iron Level at 4-6h\nWBI if Pills Visible / Recent\nDeferoxamine if Indicated</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Deferoxamine Indicated?\nSystemic Toxicity\nLevel &gt;500 µg/dL\n&gt;60 mg/kg Ingested</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Deferoxamine 15 mg/kg/hr IV\nMax 80 mg/kg/24h\nMonitor Vin Rosé Urine</div>
+<div class="fc-node" data-id="H">WBI + Observe\nSerial Levels</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Monitor: Iron Level, ABG, LFTs, Coag\nUntil Improving</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Late: Endoscopy (Grade)\nStricture Follow-up Weeks-Months</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Elemental iron calculation card</li><li>5 stages timeline</li><li>Deferoxamine dosing card</li><li>Vin rosé urine photo</li><li>AXR with radiopaque pills</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Iron poisoning management (Toxbase)</li><li>WBI technique</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Elemental iron</b>: sulfate 20%, fumarate 33%, gluconate 12%</li><li><b>Toxic</b>: &gt; 40 mg/kg moderate, &gt; 60 mg/kg severe</li><li><b>5 Stages</b>: GI (0-6h) → Latent (6-24h, deceptive) → Shock/Metabolic (12-48h) → Hepatic (2-4d) → Strictures (weeks)</li><li><b>Serum iron &gt; 500 µg/dL</b> = treat</li><li><b>Deferoxamine</b>: 15 mg/kg/hr IV infusion (max 80 mg/kg/24h), NO bolus</li><li><b>Vin rosé urine</b> = ferrioxamine complex (working)</li><li><b>AXR</b>: radiopaque pills visible</li><li><b>WBI</b> indicated (PEG 1-2 L/hr); charcoal NO</li><li><b>Latent phase</b> = NOT recovery</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>Calculate elemental iron from 10 ferrous fumarate 200mg tablets in 15kg child</li><li>List 5 stages with timing</li><li>State deferoxamine dose and max daily</li><li>Explain vin rosé urine significance</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Elemental iron % (sulfate 20, fumarate 33, gluconate 12)</li><li>Toxic dose &gt; 40/60 mg/kg</li><li>5 stages (GI → Latent → Shock → Hepatic → Strictures)</li><li>Deferoxamine 15 mg/kg/hr IV (max 80 mg/kg/day)</li><li>Vin rosé urine</li><li>AXR radiopaque pills</li><li>WBI not charcoal</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>TIBC/free iron calculation</li><li>Deferoxamine adverse effects (ARDS, Yersinia)</li><li>Endoscopy grading (1-3)</li><li>Late stricture management</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Carbonyl iron 100% elemental</li><li>Specific deferoxamine protocols for pediatrics</li><li>Iron-chelating mechanism details</li><li>Pregnancy considerations</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Elemental iron calculation</li><li>5 stages with features</li><li>Diagnosis (level, AXR, vin rosé)</li><li>Management: WBI, deferoxamine (indications, dosing, monitoring), supportive</li><li>Complications (acute + late)</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Elemental iron table</li><li>5 stages timeline</li><li>Deferoxamine box</li><li>AXR/vin rosé</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Ferrous sulfate 20%, fumarate 33%, gluconate 12% elemental"</li><li>"Toxic: &gt;40 mg/kg moderate, &gt;60 mg/kg severe elemental"</li><li>"5 stages: GI → Latent (deceptive!) → Shock/Metabolic → Hepatic → Strictures"</li><li>"Deferoxamine: 15 mg/kg/hr IV infusion, max 80 mg/kg/day, NO bolus"</li><li>"Vin rosé urine = ferrioxamine complex (chelation working)"</li><li>"AXR: radiopaque iron pills visible — count them"</li><li>"WBI for iron (PEG 1-2 L/hr); charcoal useless"</li><li>"Latent phase = deceptive improvement, ongoing absorption"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Child ingests "iron vitamins" — calculate elemental dose, AXR, serial levels</li><li>Patient "improved" at 8h → warn about latent phase, continue monitoring</li><li>Vin rosé urine appears → continue deferoxamine until urine clears</li><li>Weeks later: gastric outlet obstruction → endoscopic dilation</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Elemental: Sulfate20, Fumarate33, Gluconate12</li><li>Dose: &gt;40/60 mg/kg</li><li>Stages: GI, Latent, Shock, Hepatic, Strictures</li><li>Desferri: 15mg/kg/hr IV, Max80/day</li><li>Vin rosé = working</li><li>AXR: radiopaque</li><li>WBI yes, Charcoal no</li><li>Latent = deceptive</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Iron poisoning = corrosive GI injury + systemic metabolic toxicity. Elemental iron: sulfate 20%, fumarate 33%, gluconate 12%. Toxic &gt; 40 mg/kg. 5 stages: GI (0-6h) → Latent (6-24h, deceptive) → Shock/Metabolic (12-48h) → Hepatic (2-4d) → GI strictures (weeks). Deferoxamine 15 mg/kg/hr IV (max 80 mg/kg/day) for systemic toxicity or level &gt; 500 µg/dL. Vin rosé urine confirms chelation. AXR shows radiopaque pills. WBI (PEG) indicated; charcoal ineffective. Latent phase = deceptive, not recovery.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Question 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Question 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Question 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Question 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Question 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Question 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Question 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Question 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Question 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Question 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Scenario 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Scenario 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Scenario 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Scenario 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Scenario 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Scenario 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Scenario 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Scenario 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Scenario 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Scenario 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Flashcard 1 question</li></ul>
+<p>A: Flashcard 1 answer</p>
+<ul><li>Q: Flashcard 2 question</li></ul>
+<p>A: Flashcard 2 answer</p>
+<ul><li>Q: Flashcard 3 question</li></ul>
+<p>A: Flashcard 3 answer</p>
+<ul><li>Q: Flashcard 4 question</li></ul>
+<p>A: Flashcard 4 answer</p>
+<ul><li>Q: Flashcard 5 question</li></ul>
+<p>A: Flashcard 5 answer</p>
+<ul><li>Q: Flashcard 6 question</li></ul>
+<p>A: Flashcard 6 answer</p>
+<ul><li>Q: Flashcard 7 question</li></ul>
+<p>A: Flashcard 7 answer</p>
+<ul><li>Q: Flashcard 8 question</li></ul>
+<p>A: Flashcard 8 answer</p>
+<ul><li>Q: Flashcard 9 question</li></ul>
+<p>A: Flashcard 9 answer</p>
+<ul><li>Q: Flashcard 10 question</li></ul>
+<p>A: Flashcard 10 answer</p>
+<ul><li>Q: Flashcard 11 question</li></ul>
+<p>A: Flashcard 11 answer</p>
+<ul><li>Q: Flashcard 12 question</li></ul>
+<p>A: Flashcard 12 answer</p>
+<ul><li>Q: Flashcard 13 question</li></ul>
+<p>A: Flashcard 13 answer</p>
+<ul><li>Q: Flashcard 14 question</li></ul>
+<p>A: Flashcard 14 answer</p>
+<ul><li>Q: Flashcard 15 question</li></ul>
+<p>A: Flashcard 15 answer</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Iron Poisoning · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

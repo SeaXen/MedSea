@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sedation, Analgesia and Neuromuscular Blockade in ICU — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Sedation, Analgesia and Neuromuscular Blockade in ICU</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Apply analgesia-first principle (BPS/NRS for pain monitoring)</li><li>Choose appropriate sedative (propofol, dexmedetomidine, midazolam, ketamine)</li><li>Use RASS/SAS for sedation monitoring</li><li>Identify indications for NMJ blockade</li><li>Monitor NMJ with TOF (train-of-four)</li><li>Prevent and recognise propofol infusion syndrome (PRIS)</li><li>Perform daily SAT + SBT</li><li>Recognise and manage withdrawal syndromes</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Principles (PADIS 2018)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Pain first</b> (analgesia-first) — if comfortable, may not need sedative</li><li><b>Light sedation</b> (RASS 0 to -1) preferred; deep only when required</li><li><b>Avoid benzodiazepines</b> (deliriogenic) — use propofol/dexmedetomidine</li><li><b>Daily SAT + SBT</b> — standard of care</li><li><b>NMJ blockade</b> only for specific indications</li><li><b>Monitor pain, sedation, delirium</b> routinely</li><li><b>Wean as soon as possible</b></li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Monitoring Tools</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pain</div>
+<ul><li><b>BPS (Behavioural Pain Scale)</b> for intubated/unconscious</li><li><b>NRS/VAS</b> for communicative</li><li><b>CPOT (Critical-Care Pain Observation Tool)</b></li><li><b>Goal</b>: BPS ≤5 or NRS ≤3</li></ul>
+<div class="sub-h">Sedation</div>
+<table class="ctable"><tr><th>RASS</th><th>SAS</th><th>Description</th></tr><tr><td>------</td><td>-----</td><td>-------------</td></tr><tr><td>+4</td><td>7</td><td>Combative, violent</td></tr><tr><td>+3</td><td>6</td><td>Very agitated, pulling lines</td></tr><tr><td>+2</td><td>5</td><td>Agitated, frequent non-purposeful movement</td></tr><tr><td>+1</td><td>4</td><td>Restless, anxious</td></tr><tr><td>**0**</td><td>**3**</td><td>**Alert and calm**</td></tr><tr><td>**-1**</td><td>**2**</td><td>**Drowsy, eyes open to voice**</td></tr><tr><td>-2</td><td>1</td><td>Light sedation, briefly awakens to voice</td></tr><tr><td>-3</td><td>-</td><td>Moderate sedation, movement to voice</td></tr><tr><td>-4</td><td>-</td><td>Deep sedation, no response to voice</td></tr><tr><td>-5</td><td>-</td><td>Unarousable</td></tr></table>
+<p><b>Target</b>: RASS 0 to -1 (most) or -2 to -3 (severe ARDS, ICP, vent asynchrony)</p>
+<div class="sub-h">Delirium</div>
+<ul><li><b>CAM-ICU</b> or <b>ICDSC</b> (see Delirium topic)</li></ul>
+<div class="sub-h">NMJ Blockade</div>
+<ul><li><b>TOF (Train-of-Four)</b>: 4 supramaximal stimuli at 2 Hz</li><li><b>4/4 twitches</b>: 100% reversal (excess dose)</li><li><b>3/4</b>: 75% (ideal deep block)</li><li><b>2/4</b>: 80% block</li><li><b>1/4</b>: 90% block</li><li><b>0/4</b>: 100% block (no reversal)</li><li><b>Adequate surgical block</b>: 1-2 twitches</li><li><b>Titrated to clinical effect</b> (e.g., 1 twitch)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Analgesics (First — Pain Control)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td></tr><tr><td>**Fentanyl**</td><td>25-100 mcg IV bolus, 25-200 mcg/h infusion</td><td>**First-line in ICU**; stable haemodynamics, no histamine release</td></tr><tr><td>**Morphine**</td><td>1-10 mg IV, 1-5 mg/h infusion</td><td>Active metabolite (M6G) accumulates in renal failure</td></tr><tr><td>**Hydromorphone**</td><td>0.2-1 mg IV</td><td>Alternative to morphine</td></tr><tr><td>**Remifentanil**</td><td>0.5-15 mcg/kg/h</td><td>Ultra-short (t½ 3-4 min); use in renal failure, neurosurgical, frequent wake-up</td></tr><tr><td>**Paracetamol**</td><td>1 g q6h IV/PO</td><td>Adjunct; reduces opioid requirement</td></tr><tr><td>**Ketamine**</td><td>0.1-0.5 mg/kg bolus, 0.1-1 mg/kg/h infusion</td><td>Analgesic + NMDA antagonist; bronchodilator; preserves airway reflexes</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Sedatives</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Propofol</div>
+<ul><li><b>Dose</b>: 1-3 mg/kg/h (induction 1-2.5 mg/kg)</li><li><b>Mechanism</b>: GABA-A agonist</li><li><b>Onset</b>: &lt;1 min; <b>t½</b>: 10-30 min (terminal 4-7 h after prolonged)</li><li><b>Advantages</b>: rapid onset/offset, easy titration, decreases ICP</li><li><b>Adverse</b>: <b>hypotension</b> (vasodilation, cardiac depression), <b>PRIS</b> (see below), hypertriglyceridaemia, pancreatitis</li><li><b>Avoid</b> in: egg/soy allergy, severe haemodynamic instability</li><li><b>Limit</b>: 4 mg/kg/h in adults; 48-72 h to reduce PRIS risk</li></ul>
+<div class="sub-h">Dexmedetomidine</div>
+<ul><li><b>Dose</b>: 0.2-1.5 mcg/kg/h IV infusion (load 1 mcg/kg over 10 min optional)</li><li><b>Mechanism</b>: α2-adrenergic agonist (centrally acting)</li><li><b>Advantages</b>: <b>light sedation</b>, <b>cooperative</b> (rousable), preserves respiration, <b>less delirium</b> (vs benzo), opioid-sparing</li><li><b>Adverse</b>: <b>bradycardia</b>, hypotension, dry mouth, rebound hypertension on abrupt stop</li><li><b>Use</b>: weaning from ventilation, hyperactive delirium, procedural sedation</li><li><b>DahLBA, MIDEX, PRODEX trials</b>: non-inferior, less delirium</li></ul>
+<div class="sub-h">Midazolam</div>
+<ul><li><b>Dose</b>: 0.02-0.1 mg/kg/h infusion (load 0.05-0.1 mg/kg)</li><li><b>Mechanism</b>: GABA-A agonist (benzodiazepine)</li><li><b>Advantages</b>: amnestic, anticonvulsant, stable haemodynamics</li><li><b>Adverse</b>: <b>deliriogenic</b>, accumulates (active metabolites, esp. renal failure), respiratory depression, withdrawal</li><li><b>Use</b>: status epilepticus, alcohol withdrawal, tetanus, severe asthma</li><li><b>Avoid</b> for routine ICU sedation (delirium risk)</li></ul>
+<div class="sub-h">Ketamine</div>
+<ul><li><b>Dose</b>: 1-2 mg/kg bolus, 1-3 mg/kg/h infusion</li><li><b>Mechanism</b>: NMDA antagonist</li><li><b>Advantages</b>: bronchodilator, opioid-sparing, preserves airway reflexes</li><li><b>Adverse</b>: emergence phenomena (nightmares, hallucinations), ↑ICP (theoretical), salivation</li><li><b>Use</b>: severe asthma, procedural sedation, refractory pain, opioid-sparing</li></ul>
+<div class="sub-h">Volatile Anaesthetics (e.g., Isoflurane)</div>
+<ul><li><b>Use</b>: occasional, via AnaConDa/Sedaconda</li><li><b>Dose</b>: 0.3-0.5 MAC</li><li><b>Advantage</b>: titratable, bronchodilator</li><li><b>Disadvantage</b>: requires scavenging, complex delivery</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Propofol Infusion Syndrome (PRIS)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Definition</b>: rare, serious, often fatal complication of prolonged high-dose propofol</li><li><b>Risk factors</b>: high dose (&gt;4 mg/kg/h), prolonged (&gt;48 h), young age, severe illness, catecholamines, steroids</li><li><b>Features</b>:</li><li><b>Cardiac</b>: bradycardia → asystole, Brugada-like ECG</li><li><b>Metabolic</b>: metabolic acidosis, hyperkalaemia, hypertriglyceridaemia</li><li><b>Renal</b>: rhabdomyolysis, AKI</li><li><b>Other</b>: fever</li><li><b>Mechanism</b>: impaired mitochondrial fatty acid oxidation</li><li><b>Management</b>: <b>STOP propofol</b>, supportive (haemofiltration for rhabdomyolysis, pacemaker for bradycardia)</li><li><b>Mortality</b>: 30-80%</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">NMJ Blockade (Neuromuscular Blocking Agents, NMBAs)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Indications</div>
+<ul><li><b>Endotracheal intubation</b> (RSI)</li><li><b>Severe early ARDS</b> (PaO₂/FiO₂ &lt;150 mmHg, ROSE criteria)</li><li><b>Raised ICP</b> (frequent coughing/asynchrony)</li><li><b>Tetanus, status epilepticus</b> (refractory)</li><li><b>Severe hypothermia</b> (shivering control)</li><li><b>Intra-operative</b></li><li><b>Abdominal compartment syndrome</b> (surgical)</li><li><b>Transport</b> (unstable)</li></ul>
+<div class="sub-h">Agents</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td></tr><tr><td>**Rocuronium**</td><td>0.6-1.2 mg/kg bolus, 8-12 mcg/kg/min infusion</td><td>**First-line**; rapid onset (60 s); reversable with sugammadex 16 mg/kg</td></tr><tr><td>**Cisatracurium**</td><td>0.15-0.2 mg/kg bolus, 0.06-0.18 mg/kg/h infusion</td><td>**Preferred in renal/hepatic failure**; organ-independent metabolism (Hofmann elimination)</td></tr><tr><td>**Atracurium**</td><td>0.4-0.5 mg/kg bolus, 0.3-0.6 mg/kg/h</td><td>Alternative; histamine release</td></tr><tr><td>**Succinylcholine (suxamethonium)**</td><td>1-1.5 mg/kg (RSI only)</td><td>Depolarising; short-acting; **contraindications**: hyperkalaemia, burns (>24 h), denervation, malignant hyperthermia, muscular dystrophy</td></tr></table>
+<div class="sub-h">Monitoring</div>
+<ul><li><b>TOF (Train-of-Four)</b> at adductor pollicis</li><li><b>Target</b>: 1-2 twitches</li><li><b>Titrated</b> to clinical effect</li><li><b>Avoid</b> prolonged deep block (ICU-acquired weakness)</li></ul>
+<div class="sub-h">Complications</div>
+<ul><li><b>ICU-acquired weakness</b> (CIP, CIM) — prolonged NMJ blockade + sepsis + immobility</li><li><b>Residual paralysis</b> post-stop</li><li><b>VTE</b>, pressure sores (immobility)</li><li><b>Awareness</b> (if paralysed without sedation)</li><li><b>Anaphylaxis</b></li></ul>
+<div class="sub-h">Reversal</div>
+<ul><li><b>Sugammadex</b> for rocuronium, vecuronium (16 mg/kg)</li><li><b>Neostigmine + glycopyrrolate</b> (older)</li><li><b>Spontaneous recovery</b> for atracurium/cisatracurium</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Daily SAT + SBT</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">SAT (Spontaneous Awakening Trial)</div>
+<ul><li><b>Stop all sedatives</b> for 4 h</li><li><b>Hold</b> if: active seizures, agitation, active withdrawal, paralysis, ↑ICP</li><li><b>Pass</b>: patient comfortable, no distress</li><li><b>Fail</b>: anxiety, agitation, distress, hypoxia, arrhythmia → restart at 50% previous dose</li></ul>
+<div class="sub-h">SBT (Spontaneous Breathing Trial)</div>
+<ul><li><b>CPAP/PS trial</b> 30-120 min</li><li><b>Pass criteria</b>: RR &lt;35, SpO₂ ≥90%, no distress, HR &lt;140, no change in mental status</li><li><b>Hold if</b>: agitation, hypoxia, ↑work of breathing</li><li><b>Extubate</b> if pass</li></ul>
+<div class="sub-h">ABCDEF Bundle (Combined)</div>
+<ul><li>A: Assess pain</li><li>B: Both SAT + SBT</li><li>C: Choice of sedation (light, avoid benzos)</li><li>D: Delirium assessment</li><li>E: Early mobility</li><li>F: Family engagement</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Sedation in Specific Situations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Severe ARDS</div>
+<ul><li><b>Deep sedation</b> (RASS -3 to -4) + NMJ blockade × 24-48 h</li><li><b>Propofol + fentanyl</b> first-line</li><li><b>Cisatracurium</b> (ROSE trial) or <b>Rocuronium</b></li><li><b>Prone positioning</b></li><li><b>Lung-protective ventilation</b></li></ul>
+<div class="sub-h">Raised ICP</div>
+<ul><li><b>Deep sedation</b> (RASS -3 to -4) + analgesia</li><li><b>Propofol</b> preferred (↓ICP)</li><li><b>NMJ blockade</b> for asynchrony/coughing</li><li><b>Avoid ketamine</b> (theoretical ↑ICP)</li></ul>
+<div class="sub-h">Status Epilepticus</div>
+<ul><li><b>Midazolam</b> or <b>propofol</b> (anaesthetic doses)</li><li><b>Levetiracetam/phenytoin</b> for seizures</li><li><b>Continuous EEG</b> monitoring</li><li><b>Intubation</b> if anaesthetic doses</li></ul>
+<div class="sub-h">Tetanus</div>
+<ul><li><b>Deep sedation</b> + <b>NMJ blockade</b></li><li><b>Magnesium</b> infusion</li><li><b>Midazolam</b> (often high dose)</li><li><b>Wound debridement</b> + immunoglobulin</li></ul>
+<div class="sub-h">Alcohol Withdrawal</div>
+<ul><li><b>Benzodiazepine</b> (diazepam/chlordiazepoxide) per CIWA</li><li><b>Avoid haloperidol monotherapy</b></li><li><b>Thiamine</b> (Pabrinex)</li><li><b>Dexmedetomidine</b> adjunct</li></ul>
+<div class="sub-h">Procedural Sedation</div>
+<ul><li><b>Ketamine</b> or <b>propofol</b> (low dose)</li><li><b>Fentanyl/morphine</b> for pain</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Withdrawal Syndromes</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Opioid withdrawal</b>: agitation, tachycardia, sweating, dilated pupils, yawning</li><li><b>Benzodiazepine withdrawal</b>: anxiety, tremor, seizures</li><li><b>Management</b>: taper gradually, convert to long-acting, symptom-triggered protocol</li><li><b>Risk</b>: prolonged high-dose ICU sedation (&gt;3-7 days)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Deep sedation</b>: ↑mortality, ↑LOS, ↑delirium, ↑long-term cognitive dysfunction</li><li><b>Light sedation</b>: ↓mortality, ↓LOS, ↓delirium, ↓PTSD</li><li><b>ICU-acquired weakness</b>: 25-50% of prolonged ICU stays</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Analgesia-first</b> (BPS, NRS for pain)</li><li><b>Light sedation</b> (RASS 0 to -1) for most patients</li><li><b>Deep sedation</b> (RASS -3 to -4) only when required (severe ARDS, ICP)</li><li><b>First-line analgesic</b>: fentanyl (ICU)</li><li><b>First-line sedative</b>: propofol OR dexmedetomidine</li><li><b>Avoid benzodiazepines</b> when possible (deliriogenic)</li><li><b>Dexmedetomidine</b>: light, cooperative, less delirium</li><li><b>Midazolam</b>: status epilepticus, alcohol withdrawal, tetanus</li><li><b>Daily SAT + SBT</b> reduce LOS, mortality</li><li><b>TOF monitoring</b> for NMJ blockade (target 1-2 twitches)</li><li><b>Rocuronium</b> first-line NMJ (rapid onset, reversible with sugammadex)</li><li><b>Cisatracurium</b> in renal/hepatic failure (Hofmann)</li><li><b>PRIS</b>: propofol &gt;4 mg/kg/h, &gt;48 h; bradycardia, metabolic acidosis, rhabdomyolysis</li><li><b>NMJ blockade for</b>: severe early ARDS, ↑ICP, tetanus, status epilepticus</li><li><b>ICU-acquired weakness</b>: prolonged NMJ + immobility + sepsis</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>PADIS guidelines principles</li><li>RASS target for most ICU patients</li><li>First-line analgesic and sedative in ICU</li><li>Propofol infusion syndrome (PRIS)</li><li>Indications for NMJ blockade</li><li>TOF interpretation</li><li>Dexmedetomidine vs propofol</li><li>Sugammadex reversal</li><li>Daily SAT + SBT</li><li>ABCDEF bundle</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Analgesia first</b> (fentanyl) before sedative</li><li><b>Benzodiazepines deliriogenic</b> (avoid unless withdrawal/seizures)</li><li><b>Propofol reduces ICP</b> (preferred for neuro-ICU)</li><li><b>Ketamine</b>: preserves airway reflexes, bronchodilator</li><li><b>Cisatracurium</b> in renal failure (Hofmann elimination)</li><li><b>Rocuronium reversed by sugammadex</b> (rapid)</li><li><b>Suxamethonium</b> contraindicated in burns (&gt;24 h), denervation, hyperkalaemia, MH</li><li><b>TOF 0-1 twitches</b>: deep block; TOF 4: excess dose</li><li><b>PRIS</b>: high dose + prolonged propofol; stop + supportive</li><li><b>Deep sedation</b> ↑mortality, ↑delirium (target light unless necessary)</li><li><b>Dexmedetomidine</b>: no respiratory depression (allows weaning)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>PADIS principles</b>: <b>P</b>ain first, <b>A</b>void benzos, <b>D</b>aily SAT/SBT, <b>I</b>ndividualise, <b>S</b>creen delirium</li><li><b>RASS target</b>: <b>0 to -1</b> (most), <b>-3 to -4</b> (severe ARDS, ICP)</li><li><b>First-line</b>: <b>Fentanyl</b> + <b>Propofol/Dex</b></li><li><b>Avoid benzos</b> unless: status epilepticus, alcohol withdrawal, tetanus</li><li><b>PRIS</b>: <b>High-dose propofol + prolonged + critically ill</b></li><li><b>NMJ indications</b>: <b>AR</b>, <b>ICP</b>, <b>T</b>etanus, <b>S</b>tatus, <b>I</b>ntubation</li><li><b>Rocuronium</b> reversed by <b>Sugammadex</b></li><li><b>Cisatracurium</b> = <b>Hofmann</b> (organ-independent)</li><li><b>TOF target</b>: 1-2 twitches</li><li><b>ABCDEF</b>: <b>A</b>ssess pain, <b>B</b>oth SAT/SBT, <b>C</b>hoice of sedation, <b>D</b>elirium, <b>E</b>arly mobility, <b>F</b>amily</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((ICU Sedation))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Principles</div>
+<div class="mm-node mm-l3">– Analgesia first</div>
+<div class="mm-node mm-l3">– Light sedation (RASS 0 to -1)</div>
+<div class="mm-node mm-l3">– Avoid benzos</div>
+<div class="mm-node mm-l3">– Daily SAT + SBT</div>
+<div class="mm-node mm-l2">Monitoring</div>
+<div class="mm-node mm-l3">– Pain: BPS, NRS</div>
+<div class="mm-node mm-l3">– Sedation: RASS, SAS</div>
+<div class="mm-node mm-l3">– Delirium: CAM-ICU</div>
+<div class="mm-node mm-l3">– NMJ: TOF</div>
+<div class="mm-node mm-l2">Analgesics</div>
+<div class="mm-node mm-l3">– Fentanyl (first-line)</div>
+<div class="mm-node mm-l3">– Morphine</div>
+<div class="mm-node mm-l3">– Remifentanil (short, renal failure)</div>
+<div class="mm-node mm-l3">– Ketamine</div>
+<div class="mm-node mm-l2">Sedatives</div>
+<div class="mm-node mm-l3">– Propofol (rapid, ICP)</div>
+<div class="mm-node mm-deep">– PRIS (high-dose prolonged)</div>
+<div class="mm-node mm-l3">– Dexmedetomidine (light, cooperative, less delirium)</div>
+<div class="mm-node mm-l3">– Midazolam (seizures, withdrawal, tetanus)</div>
+<div class="mm-node mm-l3">– Ketamine (asthma, opioid-sparing)</div>
+<div class="mm-node mm-l2">NMJ Blockade</div>
+<div class="mm-node mm-l3">– Indications</div>
+<div class="mm-node mm-deep">– Severe early ARDS</div>
+<div class="mm-node mm-deep">– Raised ICP</div>
+<div class="mm-node mm-deep">– Tetanus, status epilepticus</div>
+<div class="mm-node mm-deep">– Intubation</div>
+<div class="mm-node mm-l3">– Drugs</div>
+<div class="mm-node mm-deep">– Rocuronium (reversed by sugammadex)</div>
+<div class="mm-node mm-deep">– Cisatracurium (Hofmann, renal failure)</div>
+<div class="mm-node mm-deep">– Atracurium</div>
+<div class="mm-node mm-deep">– Suxamethonium (RSI only)</div>
+<div class="mm-node mm-l3">– Monitoring</div>
+<div class="mm-node mm-deep">– TOF 1-2 twitches</div>
+<div class="mm-node mm-l2">Withdrawal</div>
+<div class="mm-node mm-l3">– Opioid: taper, methadone</div>
+<div class="mm-node mm-l3">– Benzo: taper, long-acting</div>
+<div class="mm-node mm-l2">Bundle</div>
+<div class="mm-node mm-l3">– ABCDEF</div>
+<div class="mm-node mm-l3">– A pain</div>
+<div class="mm-node mm-l3">– B SAT/SBT</div>
+<div class="mm-node mm-l3">– C choice sedation</div>
+<div class="mm-node mm-l3">– D delirium</div>
+<div class="mm-node mm-l3">– E early mobility</div>
+<div class="mm-node mm-l3">– F family</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flowchart — ICU Sedation</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">ICU Patient</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Pain Assessment BPS/NRS</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Pain present?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Analgesia: Fentanyl first-line</div>
+<div class="fc-node" data-id="E">Sedation needed?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Reassess</div>
+<div class="fc-node" data-id="G">Propofol or Dexmedetomidine</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Deep sedation needed?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">RASS 0 to -1, daily SAT/SBT</div>
+<div class="fc-node" data-id="J">RASS -3 to -4, propofol/midazolam</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="O">Daily CAM-ICU</div>
+<div class="fc-node" data-id="K">NMJ needed?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="P">Wean as soon as possible</div>
+<div class="fc-node" data-id="L">Rocuronium/Cisatracurium, TOF monitor</div>
+<div class="fc-node" data-id="M">Continue sedation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Daily SAT + SBT</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Analgesia first</b> (fentanyl); <b>light sedation</b> (RASS 0 to -1) for most</li><li><b>First-line sedative</b>: propofol OR dexmedetomidine</li><li><b>Avoid benzodiazepines</b> (deliriogenic) except: status, withdrawal, tetanus</li><li><b>Deep sedation</b> (RASS -3 to -4) for severe ARDS, ICP</li><li><b>NMJ blockade</b> for: severe early ARDS, ICP, tetanus, status, intubation</li><li><b>Rocuronium</b> (sugammadex reversible); <b>Cisatracurium</b> in renal failure</li><li><b>TOF</b> for NMJ monitoring (target 1-2 twitches)</li><li><b>PRIS</b>: high-dose prolonged propofol → bradycardia, acidosis, rhabdomyolysis</li><li><b>Daily SAT + SBT</b> + <b>ABCDEF bundle</b></li><li><b>Dexmedetomidine</b>: light, cooperative, less delirium, facilitates extubation</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State PADIS principles</li><li>List first-line analgesic + sedative</li><li>Outline ABCDEF bundle</li><li>List NMJ indications</li><li>State PRIS risk factors and management</li><li>Describe TOF interpretation</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Analgesia-first principle</li><li>RASS target (0 to -1 most; -3 to -4 severe)</li><li>Fentanyl first-line</li><li>Propofol vs dexmedetomidine</li><li>Avoid benzodiazepines (except seizures, withdrawal)</li><li>PRIS risk factors and features</li><li>NMJ indications</li><li>TOF monitoring</li><li>Daily SAT + SBT</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>ABCDEF bundle</li><li>Sugammadex reversal</li><li>Cisatracurium in renal failure</li><li>Suxamethonium contraindications</li><li>Ketamine advantages (asthma, opioid-sparing)</li><li>ICU-acquired weakness</li><li>Withdrawal syndromes</li><li>Midazolam uses</li><li>PRIS management (stop propofol, supportive)</li><li>Volatile anaesthetics in ICU</li><li>Dexmedetomidine in hyperactive delirium</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>PADIS 2018 details</li><li>DahLBA, MIDEX, PRODEX trials</li><li>ROSE trial (early NMJ in ARDS)</li><li>AnConDa/Sedaconda</li><li>BPS scoring</li><li>ICU-acquired weakness prevention</li><li>ICU PTSD</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>PADIS principles (analgesia first, light sedation, avoid benzos, daily SAT/SBT, monitor)</li><li>Pain assessment (BPS, NRS)</li><li>Sedation assessment (RASS, SAS, target 0 to -1 most, -3 to -4 severe)</li><li>Delirium screening (CAM-ICU)</li><li>Analgesics (fentanyl first-line)</li><li>Sedatives (propofol, dexmedetomidine, midazolam, ketamine)</li><li>NMJ blockade (indications, drugs, monitoring)</li><li>PRIS (risk factors, features, management)</li><li>Daily SAT + SBT, ABCDEF bundle</li><li>Withdrawal syndromes</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>RASS scoring</li><li>PRIS risk factors and management</li><li>NMJ indications</li><li>TOF interpretation</li><li>ABCDEF bundle</li><li>PRIS vs NMS</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Analgesia first; RASS 0 to -1 for most patients"</li><li>"Fentanyl first-line analgesic"</li><li>"Propofol or dexmedetomidine first-line sedative"</li><li>"Avoid benzodiazepines unless status, withdrawal, tetanus"</li><li>"PRIS: high-dose propofol &gt;48 h; bradycardia, acidosis, rhabdo"</li><li>"NMJ indications: ARDS, ICP, tetanus, status, intubation"</li><li>"Rocuronium reversed by sugammadex; cisatracurium in renal failure"</li><li>"TOF target 1-2 twitches"</li><li>"ABCDEF bundle: pain, SAT/SBT, sedation, delirium, mobility, family"</li><li>"Daily SAT + SBT reduce mortality"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>60-year-old ventilated for ARDS, deep sedation + cisatracurium → 24 h, prone, lung-protective vent</li><li>45-year-old post-op, agitated on vent → analgesia first, then propofol or dexmedetomidine, daily SAT</li><li>70-year-old delirium in ICU → dexmedetomidine, avoid benzos, ABCDEF bundle</li><li>Tetanus: deep sedation + NMJ blockade + magnesium + wound debridement + Ig</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Analgesia first; RASS 0 to -1</li><li>Fentanyl + propofol/dex</li><li>Avoid benzos (except status, withdrawal, tetanus)</li><li>PRIS: high-dose propofol &gt;48 h</li><li>NMJ: ARDS, ICP, tetanus, status</li><li>Rocuronium = sugammadex</li><li>Cisatracurium = renal failure (Hofmann)</li><li>TOF 1-2 twitches</li><li>ABCDEF bundle</li><li>Daily SAT + SBT</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>ICU sedation principles</b> (PADIS 2018): <b>Analgesia first</b> (BPS, NRS), <b>light sedation</b> (RASS 0 to -1), avoid benzodiazepines, daily SAT + SBT, monitor pain + sedation + delirium, individualise. <b>First-line analgesic</b>: <b>Fentanyl</b> (haemodynamic stability, no histamine). <b>First-line sedatives</b>: <b>Propofol</b> (rapid onset, ↓ICP, watch for PRIS) or <b>Dexmedetomidine</b> (light, cooperative, less delirium, facilitates extubation). <b>Midazolam</b> reserved for status epilepticus, alcohol withdrawal, tetanus. <b>Deep sedation</b> (RASS -3 to -4) for severe ARDS, raised ICP. <b>NMJ blockade</b> indications: severe early ARDS (PaO₂/FiO₂ &lt;150), raised ICP, tetanus, status epilepticus, intubation, intra-op. <b>First-line NMJ</b>: <b>Rocuronium</b> (rapid, reversible with <b>sugammadex</b> 16 mg/kg); <b>Cisatracurium</b> in renal/hepatic failure (Hofmann elimination). <b>TOF monitoring</b>: target 1-2 twitches. <b>PRIS</b>: high-dose propofol (&gt;4 mg/kg/h) for &gt;48 h → bradycardia, metabolic acidosis, hyperkalaemia, rhabdomyolysis, Brugada-like ECG. <b>Stop propofol</b>, supportive (dialysis for rhabdo, pacemaker). <b>Avoid suxamethonium</b> in burns (&gt;24 h), denervation, hyperkalaemia, malignant hyperthermia. <b>ABCDEF bundle</b>: Assess pain, Both SAT/SBT, Choice of sedation, Delirium, Early mobility, Family. <b>Withdrawal syndromes</b> after prolonged sedation. <b>ICU-acquired weakness</b> from prolonged NMJ + immobility + sepsis.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>First-line ICU analgesic:</li></ol>
+<p>A. Morphine B. <b>Fentanyl</b> C. Pethidine D. Tramadol</p>
+<ol><li>RASS target for most ICU patients:</li></ol>
+<p>A. -3 to -4 B. <b>0 to -1</b> C. +1 to +2 D. -5</p>
+<ol><li>Propofol infusion syndrome (PRIS) risk factors include:</li></ol>
+<p>A. Low dose B. <b>High dose (&gt;4 mg/kg/h) for &gt;48 h</b> C. Short duration D. Healthy patient</p>
+<ol><li>First-line NMJ agent in ICU:</li></ol>
+<p>A. Suxamethonium B. Atracurium C. <b>Rocuronium</b> D. Pancuronium</p>
+<ol><li>Sugammadex reverses:</li></ol>
+<p>A. Suxamethonium B. <b>Rocuronium</b> C. Cisatracurium D. Atracurium</p>
+<ol><li>Cisatracurium advantage:</li></ol>
+<p>A. Cheaper B. <b>Hofmann elimination (organ-independent)</b> C. Faster onset D. Reversible by sugammadex</p>
+<ol><li>Suxamethonium contraindication:</li></ol>
+<p>A. Young patient B. <b>Burns (&gt;24 h), hyperkalaemia, denervation, MH</b> C. Diabetes D. Old age</p>
+<ol><li>Dexmedetomidine advantage over propofol:</li></ol>
+<p>A. Cheaper B. <b>Light sedation, less delirium, cooperative</b> C. Deeper sedation D. Reversible</p>
+<ol><li>TOF target for NMJ blockade:</li></ol>
+<p>A. 4 twitches B. <b>1-2 twitches</b> C. 0 twitches D. Pain response</p>
+<ol><li>Daily SAT + SBT benefit:</li></ol>
+<p>A. Increased LOS B. <b>Reduced mortality and LOS</b> C. Increased delirium D. No effect</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Patient on propofol 5 mg/kg/h × 3 days, bradycardic, lactate 8, K 6.5, urine myoglobin. Diagnosis:</li></ol>
+<p>A. Sepsis B. <b>PRIS</b> C. Malignant hyperthermia D. NMS</p>
+<ol><li>Severe ARDS, PaO₂/FiO₂ 100 mmHg. Next step:</li></ol>
+<p>A. Continue sedation B. <b>Deep sedation + NMJ blockade (cisatracurium) + prone ventilation</b> C. Stop sedation D. extubate</p>
+<ol><li>Post-op ventilated patient, RASS +3, agitated. First step:</li></ol>
+<p>A. Haloperidol B. <b>Assess pain + give analgesia</b> C. Dexmedetomidine D. Restraints</p>
+<ol><li>Daily SAT: hold if:</li></ol>
+<p>A. Patient comfortable B. <b>Active seizures, agitation, paralysis, ↑ICP</b> C. Morning D. Evening</p>
+<ol><li>NMJ for ARDS monitoring:</li></ol>
+<p>A. EEG B. <b>TOF (train-of-four)</b> C. BP D. SpO₂</p>
+<ol><li>24 h post-intubation, on midazolam 5 mg/h + fentanyl 100 mcg/h. RASS -2. Best action:</li></ol>
+<p>A. Increase sedation B. <b>Daily SAT trial</b> C. NMJ D. Continue</p>
+<ol><li>Tetanus patient. Best sedation:</li></ol>
+<p>A. Propofol alone B. <b>Midazolam + NMJ blockade</b> C. Dexmedetomidine D. Haloperidol</p>
+<ol><li>Sugammadex dose for rocuronium reversal:</li></ol>
+<p>A. 4 mg/kg B. 8 mg/kg C. <b>16 mg/kg</b> D. 50 mg/kg</p>
+<ol><li>ICU patient on fentanyl 200 mcg/h × 10 days, suddenly stopped. Symptoms:</li></ol>
+<p>A. Sedation B. <b>Agitation, tachycardia, sweating, dilated pupils (opioid withdrawal)</b> C. Hypotension D. Apnoea</p>
+<ol><li>RASS -2 means:</li></ol>
+<p>A. Combative B. Alert C. <b>Drowsy, eyes open to voice (light sedation)</b> D. Unarousable</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: First-line ICU analgesic</li></ul>
+<p>A: Fentanyl</p>
+<ul><li>Q: RASS target most patients</li></ul>
+<p>A: 0 to -1</p>
+<ul><li>Q: First-line ICU sedatives</li></ul>
+<p>A: Propofol or dexmedetomidine</p>
+<ul><li>Q: Avoid benzos except</li></ul>
+<p>A: Status, withdrawal, tetanus</p>
+<ul><li>Q: PRIS risk factors</li></ul>
+<p>A: High-dose propofol &gt;4 mg/kg/h × &gt;48 h</p>
+<ul><li>Q: PRIS features</li></ul>
+<p>A: Bradycardia, acidosis, hyperK, rhabdo</p>
+<ul><li>Q: First-line NMJ</li></ul>
+<p>A: Rocuronium</p>
+<ul><li>Q: Sugammadex reverses</li></ul>
+<p>A: Rocuronium</p>
+<ul><li>Q: Cisatracurium advantage</li></ul>
+<p>A: Hofmann elimination (renal safe)</p>
+<ul><li>Q: TOF target</li></ul>
+<p>A: 1-2 twitches</p>
+<ul><li>Q: NMJ indications</li></ul>
+<p>A: ARDS, ICP, tetanus, status, intubation</p>
+<ul><li>Q: Daily SAT + SBT benefit</li></ul>
+<p>A: Reduce mortality and LOS</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Fentanyl is first-line. <b>MCQ 2</b>: B — RASS 0 to -1. <b>MCQ 3</b>: B — High-dose propofol &gt;48 h. <b>MCQ 4</b>: C — Rocuronium is first-line (rapid, reversible). <b>MCQ 5</b>: B — Sugammadex reverses rocuronium. <b>MCQ 6</b>: B — Cisatracurium is Hofmann (organ-independent). <b>MCQ 7</b>: B — Suxamethonium contraindicated in burns, hyperK, denervation, MH. <b>MCQ 8</b>: B — Dexmedetomidine: light, less delirium, cooperative. <b>MCQ 9</b>: B — TOF target 1-2 twitches. <b>MCQ 10</b>: B — Daily SAT + SBT reduce mortality/LOS.</p>
+<p><b>SBA 1</b>: B — PRIS: high-dose prolonged propofol + bradycardia + acidosis + rhabdo. <b>SBA 2</b>: B — Deep sedation + NMJ + prone for severe ARDS. <b>SBA 3</b>: B — Pain first. <b>SBA 4</b>: B — SAT held for active issues. <b>SBA 5</b>: B — TOF for NMJ. <b>SBA 6</b>: B — Daily SAT trial. <b>SBA 7</b>: B — Midazolam + NMJ for tetanus. <b>SBA 8</b>: C — Sugammadex 16 mg/kg. <b>SBA 9</b>: B — Opioid withdrawal. <b>SBA 10</b>: C — RASS -2 = drowsy, light sedation.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-15</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Sedation, Analgesia and Neuromuscular Blockade in ICU · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

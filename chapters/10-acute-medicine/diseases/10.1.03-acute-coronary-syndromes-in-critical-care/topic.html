@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acute Coronary Syndromes in Critical Care — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Acute Coronary Syndromes in Critical Care</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Differentiate STEMI, NSTEMI, unstable angina using ECG and troponin</li><li>Apply reperfusion strategy (primary PCI vs fibrinolysis) with time targets</li><li>Manage antiplatelet, anticoagulant, and adjunctive therapies</li><li>Recognise and manage mechanical complications of MI</li><li>Apply risk scores (GRACE, TIMI) for NSTEMI management decisions</li><li>Implement post-cardiac arrest care (targeted temperature management)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Acute Coronary Syndrome = spectrum of acute myocardial ischaemia due to coronary atherothrombosis:</p>
+<ul><li><b>STEMI</b>: ST-elevation on ECG + troponin rise → <b>occlusive thrombosis</b></li><li><b>NSTEMI</b>: Troponin rise <b>without</b> persistent ST-elevation → <b>non-occlusive/subtotal</b></li><li><b>Unstable Angina</b>: Ischaemic symptoms <b>without</b> troponin rise</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Typical Presentation</div>
+<ul><li><b>Central chest pain</b>: heavy, pressure, squeezing, radiating to jaw/arm/back</li><li><b>Duration</b>: &gt;20 min (vs stable angina &lt;10 min)</li><li><b>Autonomic</b>: diaphoresis, nausea/vomiting, dyspnoea</li><li><b>Atypical</b>: elderly, diabetics, women → dyspnoea, syncope, epigastric pain, "indigestion"</li></ul>
+<div class="sub-h">Atypical / High-Risk Groups</div>
+<table class="ctable"><tr><th>Group</th><th>Atypical Features</th></tr><tr><td>-------</td><td>-------------------</td></tr><tr><td>**Elderly**</td><td>Confusion, falls, dyspnoea, "silent MI"</td></tr><tr><td>**Diabetics**</td><td>Autonomic neuropathy → painless MI</td></tr><tr><td>**Women**</td><td>Back/jaw pain, nausea, fatigue, dyspnoea > chest pain</td></tr><tr><td>**Post-CABG**</td><td>Atypical due to denervation</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">ECG (Immediate — within 10 min of arrival)</div>
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**ST-elevation** ≥1 mm (limb), ≥2 mm (precordial)</td><td>**STEMI** — activate cath lab</td></tr><tr><td>**ST-depression** ≥0.5 mm / T inversion</td><td>NSTEMI / ischaemia</td></tr><tr><td>**New LBBB** (Sgarbossa criteria)</td><td>Treat as STEMI</td></tr><tr><td>**Posterior MI**: ST-depression V1–V3 + R/S >1 in V2</td><td>STEMI equivalent</td></tr></table>
+<div class="sub-h">Biomarkers</div>
+<ul><li><b>High-sensitivity Troponin (hs-cTn)</b>: <b>gold standard</b></li><li><b>Rule-in</b>: &gt;99th percentile URL + <b>rise/fall</b> pattern</li><li><b>Rule-out</b>: &lt;LoD at 0h and 1–2h (0/1h or 0/2h algorithms)</li><li><b>CK-MB</b>: not routine; useful for reinfarction, peri-procedural MI</li></ul>
+<div class="sub-h">Risk Scores (NSTEMI)</div>
+<table class="ctable"><tr><th>Score</th><th>Variables</th><th>Use</th></tr><tr><td>-------</td><td>-----------</td><td>-----</td></tr><tr><td>**GRACE**</td><td>Age, HR, BP, Creatinine, Killip, Cardiac arrest, ST-deviation, Troponin</td><td>**In-hospital to 6-month mortality** — guides invasive strategy</td></tr><tr><td>**TIMI**</td><td>Age ≥65, ≥3 CAD risk factors, Known CAD, Aspirin use, ≥2 angina episodes, ST deviation, Positive troponin</td><td>**14-day adverse events** — simplifies decision-making</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">STEMI — **Reperfusion is Time-Critical**</div>
+<table class="ctable"><tr><th>Strategy</th><th>Target</th><th>Indication</th></tr><tr><td>----------</td><td>--------</td><td>------------</td></tr><tr><td>**Primary PCI**</td><td>**Door-to-balloon ≤90 min**</td><td>**Preferred** if available within 120 min of diagnosis</td></tr><tr><td>**Fibrinolysis**</td><td>**Needle-to-needle ≤30 min**</td><td>If PCI >120 min (or transfer time >120 min)</td></tr><tr><td>**Pharmacoinvasive**</td><td>PCI 3–24h post-lysis</td><td>After successful fibrinolysis</td></tr></table>
+<div class="callout"><b>Contraindications to fibrinolysis</b>: Active bleeding, recent stroke/surgery, aortic dissection, severe hypertension, intracranial pathology</div>
+<div class="sub-h">Adjunctive Pharmacotherapy for STEMI</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Timing</th></tr><tr><td>------</td><td>------</td><td>--------</td></tr><tr><td>**Aspirin**</td><td>300 mg PO (chewed)</td><td>Immediate</td></tr><tr><td>**P2Y12 inhibitor**</td><td>**Ticagrelor 180 mg** loading (then 90 mg bd) OR Prasugrel 60 mg loading (avoid if >75/stroke)</td><td>**Pre-PCI**</td></tr><tr><td>**Anticoagulant**</td><td>UFH 70–100 U/kg (max 5000) OR Enoxaparin 0.5 mg/kg IV</td><td>At PCI</td></tr><tr><td></td><td>Bivalirudin 0.75 mg/kg bolus + 1.75 µg/kg/min</td><td>Alternative</td></tr><tr><td>**Beta-blocker**</td><td>IV metoprolol 2–5 mg q5min (max 15 mg) then PO</td><td>Early if no HF/shock</td></tr><tr><td>**ACEi/ARB**</td><td>Start within 24h (if no contraindication)</td><td>Post-MI remodelling</td></tr><tr><td>**Statin**</td><td>High-intensity (atorvastatin 80 mg)</td><td>Immediately</td></tr></table>
+<div class="sub-h">NSTEMI / Unstable Angina</div>
+<ul><li><b>Early invasive (≤24h)</b>: GRACE &gt;140, dynamic ST changes, positive troponin, HF, arrhythmia</li><li><b>Invasive ≤72h</b>: Intermediate risk</li><li><b>Conservative</b>: Low risk (TIMI 0–1), medical management</li><li><b>DAPT</b>: Aspirin + ticagrelor/prasugrel (clopidogrel if &gt;75 or on OAC)</li><li><b>Anticoagulation</b>: Fondaparinux (preferred) OR Enoxaparin OR UFH</li></ul>
+<div class="sub-h">Mechanical Complications of MI (Usually Day 1–7)</div>
+<table class="ctable"><tr><th>Complication</th><th>Presentation</th><th>Management</th></tr><tr><td>--------------</td><td>--------------</td><td>------------</td></tr><tr><td>**Papillary muscle rupture** → acute MR</td><td>**New holosystolic murmur**, pulmonary oedema, cardiogenic shock</td><td>**Emergency surgery** (mitral repair/replacement) + IABP/Impella bridge</td></tr><tr><td>**Ventricular septal rupture**</td><td>**New harsh systolic murmur**, right heart failure, shock</td><td>**Emergency surgery** + IABP</td></tr><tr><td>**Free wall rupture** / Cardiac tamponade</td><td>**Sudden collapse**, PEA, electrical alternans</td><td>**Pericardiocentesis** → **emergency surgery**</td></tr><tr><td>**LV aneurysm / pseudoaneurysm**</td><td>Late, heart failure, arrhythmia, thromboembolism</td><td>Surgical repair if symptomatic</td></tr></table>
+<div class="sub-h">Post-Cardiac Arrest Care (ROSC)</div>
+<ul><li><b>Targeted Temperature Management (TTM)</b>: <b>32–36°C</b> for 24h (then controlled rewarming 0.25°C/h)</li><li><b>Avoid hyperoxia</b> (target SpO₂ 94–98%) and <b>hypoxia</b></li><li><b>Haemodynamic optimisation</b>: MAP ≥65, noradrenaline, echo-guided inotropes</li><li><b>Early coronary angiography</b> (even if comatose) — <b>STEMI equivalent</b> or shock</li><li><b>Neuroprognostication</b>: <b>≥72h</b> post-ROSC (multimodal: exam, EEG, NSE, MRI)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>STEMI = PCI ≤90 min</b> (fibrinolysis if PCI &gt;120 min)</li><li><b>NSTEMI</b>: GRACE &gt;140 → invasive ≤24h</li><li><b>DAPT</b>: Aspirin + ticagrelor/prasugrel (12 months default; 1 month if bleeding risk)</li><li><b>Fibrinolysis contraindications</b>: bleeding, stroke, surgery, dissection, HTN crisis</li><li><b>Mechanical complications</b>: new murmur + shock → surgery, IABP/Impella bridge</li><li><b>Post-arrest</b>: TTM 32–36°C, early cath (even if comatose), avoid hyperoxia</li><li><b>Sgarbossa criteria</b> for LBBB: concordant STE ≥1mm, discordant STD ≥1mm in V1–V3, excessive discordance</li><li><b>GRACE &gt;140</b> = early invasive ≤24h</li><li><b>Posterior MI</b>: STD V1–V3 + R/S &gt;1 in V2</li><li><b>LAD occlusion</b> = anterior STEMI → high risk cardiogenic shock</li><li><b>Peri-procedural MI</b>: CK-MB &gt;10× URL (PCI) or &gt;5× (CABG)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>STEMI vs NSTEMI vs unstable angina definitions</li><li>Primary PCI door-to-balloon time; fibrinolysis door-to-needle time</li><li>GRACE score interpretation and management thresholds</li><li>DAPT duration and agents (ticagrelor vs prasugrel vs clopidogrel)</li><li>Mechanical complications of MI (papillary muscle, VSD, free wall)</li><li>Post-cardiac arrest care (TTM, early cath, neuroprognostication)</li><li>Sgarbossa criteria for LBBB</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Fibrinolysis after 12h</b> → NO benefit (except ongoing ischaemia)</li><li><b>Prasugrel in &gt;75 / prior stroke</b> → CONTRAINDICATED</li><li><b>Clopidogrel + PPI (omeprazole)</b> → reduced clopidogrel activation (use pantoprazole)</li><li><b>NSAIDs + DAPT</b> → increased bleeding</li><li><b>OAC + DAPT</b> = triple therapy → minimal duration (1–4 weeks) then dual (OAC + single antiplatelet)</li><li><b>TTM = hypothermia</b> → NO, <b>targeted 32–36°C</b> (not aggressive cooling)</li><li><b>Neuroprognostication &lt;72h</b> → unreliable</li><li><b>Routine oxygen in normoxic MI</b> → NO benefit, may harm</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>STEMI REPERFUSION</b>: <b>P</b>CI ≤<b>90</b> min; <b>F</b>ibrinolysis ≤<b>30</b> min</li><li><b>DAPT</b>: <b>A</b>spirin + <b>T</b>icagrelor/<b>P</b>rasugrel (<b>C</b>lopidogrel if &gt;75/stroke/OAC)</li><li><b>GRACE</b>: <b>G</b>RACE &gt;<b>140</b> = <b>E</b>arly <b>I</b>nvasive ≤<b>24</b>h</li><li><b>MECHANICAL COMPLICATIONS</b>: <b>P</b>apillary <b>M</b>uscle = <b>M</b>R; <b>V</b>SD = <b>S</b>eptal; <b>F</b>ree <b>W</b>all = <b>T</b>amponade</li><li><b>POST-ARREST</b>: <b>T</b>TM 32–36°C, <b>C</b>ath early, <b>N</b>euro ≥<b>72</b>h</li><li><b>SGARBOSSA</b>: <b>C</b>oncordant STE, <b>D</b>iscordant STD V1–V3, <b>E</b>xcessive discordance</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((ACS in Critical Care))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definition</div>
+<div class="mm-node mm-l3">– STEMI: STE + Trop+</div>
+<div class="mm-node mm-l3">– NSTEMI: Trop+ No STE</div>
+<div class="mm-node mm-l3">– Unstable Angina: Trop-</div>
+<div class="mm-node mm-l2">STEMI</div>
+<div class="mm-node mm-l3">– Reperfusion: PCI 90min / Fibrinolysis 30min</div>
+<div class="mm-node mm-l3">– DAPT: Aspirin + Ticagrelor/Prasugrel</div>
+<div class="mm-node mm-l3">– Anticoagulation: UFH/Enoxaparin/Bivalirudin</div>
+<div class="mm-node mm-l2">NSTEMI</div>
+<div class="mm-node mm-l3">– Risk: GRACE/TIMI</div>
+<div class="mm-node mm-l3">– Early Invasive: GRACE&gt;140 ≤24h</div>
+<div class="mm-node mm-l3">– DAPT + Anticoagulation (Fondaparinux)</div>
+<div class="mm-node mm-l2">Mechanical Complications</div>
+<div class="mm-node mm-l3">– Papillary Muscle Rupture</div>
+<div class="mm-node mm-l3">– VSD Rupture</div>
+<div class="mm-node mm-l3">– Free Wall Rupture</div>
+<div class="mm-node mm-l2">Post-Cardiac Arrest</div>
+<div class="mm-node mm-l3">– TTM 32-36C</div>
+<div class="mm-node mm-l3">– Early Cath</div>
+<div class="mm-node mm-l3">– Neuroprognostication ≥72h</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Chest Pain + Trop Rise</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ST Elevation?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">STEMI</div>
+<div class="fc-node" data-id="G">NSTEMI / Unstable Angina</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">PCI Available ≤120min?</div>
+<div class="fc-node" data-id="H">GRACE / TIMI Score</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Primary PCI\nDoor-to-Balloon ≤90min</div>
+<div class="fc-node" data-id="F">Fibrinolysis\nDoor-to-Needle ≤30min\nPharmacoinvasive PCI 3-24h</div>
+<div class="fc-node" data-id="I">High Risk?\nGRACE&gt;140 / Dynamic ST / HF</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">DAPT + Anticoagulation\nMechanical Complications Screen</div>
+<div class="fc-node" data-id="J">Early Invasive ≤24h</div>
+<div class="fc-node" data-id="K">Invasive ≤72h or Conservative</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Post-MI: Beta-blocker, ACEi, Statin\nCardiac Rehab\nSecondary Prevention</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>STEMI vs NSTEMI ECG criteria</li><li>Sgarbossa criteria for LBBB</li><li>Mechanical complications timeline</li><li>Post-arrest care pathway</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>ESC/ACC STEMI/NSTEMI guidelines</li><li>Mechanical complications of MI</li><li>Post-cardiac arrest care (TTM)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>STEMI</b>: STE + trop → PCI ≤90min (lysis ≤30min if PCI &gt;120min)</li><li><b>NSTEMI</b>: Trop+ no STE → GRACE &gt;140 → invasive ≤24h</li><li><b>DAPT</b>: Aspirin + Ticagrelor/Prasugrel (12mo); Clopidogrel if &gt;75/stroke</li><li><b>Mechanical</b>: Papillary muscle (MR), VSD, Free wall (tamponade) → Surgery</li><li><b>Post-arrest</b>: TTM 32–36°C, Early cath, Neuroprognostication ≥72h</li><li><b>Sgarbossa</b>: Concordant STE, Discordant STD V1–V3, Excessive discordance</li><li><b>Posterior MI</b>: STD V1–V3 + R/S &gt;1 in V2</li><li><b>GRACE &gt;140</b> = invasive ≤24h</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State STEMI reperfusion time targets</li><li>List DAPT components and durations</li><li>Name 3 mechanical complications of MI</li><li>State TTM temperature and neuroprognostication timing</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>STEMI: PCI ≤90min, lysis ≤30min</li><li>NSTEMI: GRACE &gt;140 → invasive ≤24h</li><li>DAPT: Aspirin + Ticagrelor/Prasugrel (12mo)</li><li>Mechanical complications: MR, VSD, Tamponade</li><li>Post-arrest: TTM 32–36°C, early cath</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Sgarbossa criteria</li><li>GRACE/TIMI scoring</li><li>Fibrinolysis contraindications</li><li>Post-arrest neuroprognostication (multimodal)</li><li>OAC + DAPT = triple therapy management</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Posterior MI ECG</li><li>LAD occlusion = anterior STEMI = high shock risk</li><li>Peri-procedural MI definitions</li><li>Burr hole vs surgical VSD repair</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition: STEMI/NSTEMI/Unstable Angina</li><li>STEMI: reperfusion strategy, time targets, pharmacotherapy</li><li>NSTEMI: risk stratification (GRACE), invasive timing</li><li>Mechanical complications</li><li>Post-cardiac arrest care</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>STEMI vs NSTEMI table</li><li>DAPT box</li><li>Mechanical complications table</li><li>Post-arrest care box</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"STEMI = PCI ≤90min; Fibrinolysis ≤30min if PCI &gt;120min"</li><li>"NSTEMI: GRACE &gt;140 → invasive ≤24h"</li><li>"DAPT: Aspirin + Ticagrelor/Prasugrel 12mo"</li><li>"Mechanical: Papillary muscle = acute MR; VSD; Free wall = tamponade"</li><li>"Post-arrest: TTM 32–36°C; Early cath even if comatose; Neuro ≥72h"</li><li>"Sgarbossa: Concordant STE, Discordant STD V1-3, Excessive discordance"</li><li>"Fibrinolysis contraindications: Bleeding, Stroke, Surgery, Dissection, HTN crisis"</li><li>"Posterior MI: STD V1-3 + R/S &gt;1 in V2"</li><li>"TTM = Targeted Temperature Management 32–36°C (not hypothermia)"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>STEMI + cardiogenic shock → PCI + IABP/Impella + inotropes</li><li>NSTEMI + GRACE 160 → cath lab ≤24h + fondaparinux + ticagrelor</li><li>Post-arrest VF → PCI + TTM 32–36°C → neuroprognostication day 3</li><li>STEMI + new murmur + shock → echo → papillary rupture → IABP → surgery</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>STEMI: PCI 90, Lysis 30</li><li>NSTEMI: GRACE&gt;140 = 24h</li><li>DAPT: Asp + Tica/Prasu 12mo</li><li>Mechanical: MR, VSD, Tamponade</li><li>Post-arrest: TTM 32-36, Cath, Neuro 72h</li><li>Sgarbossa: LBBB STEMI dx</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>ACS spectrum: STEMI (STE + trop), NSTEMI (trop+ no STE), Unstable Angina (trop-). <b>STEMI</b>: primary PCI ≤90 min (fibrinolysis ≤30 min if PCI &gt;120 min). <b>NSTEMI</b>: GRACE &gt;140 → early invasive ≤24h. <b>DAPT</b>: aspirin + ticagrelor/prasugrel 12mo (clopidogrel if &gt;75/prior stroke/OAC). <b>Mechanical complications</b>: papillary muscle rupture (acute MR), VSD, free wall rupture (tamponade) → emergency surgery ± IABP/Impella. <b>Post-cardiac arrest</b>: TTM 32–36°C, early coronary angiography, neuroprognostication ≥72h multimodal. <b>Sgarbossa criteria</b> for LBBB.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>STEMI on ECG is defined as:</li></ol>
+<p>A. ST elevation in 2 contiguous leads ≥1 mm B. <b>ST elevation in 2 contiguous leads ≥1 mm (≥2 mm in V2–V3 men, ≥1.5 mm women)</b> C. New T-wave inversion D. New LBBB only</p>
+<ol><li>Primary PCI time target for STEMI (door-to-balloon):</li></ol>
+<p>A. 30 min B. <b>≤90 min (≤60 min if directly admitted)</b> C. 120 min D. 180 min</p>
+<ol><li>Fibrinolysis is preferred over PCI if:</li></ol>
+<p>A. Always B. <b>PCI cannot be performed within 120 min of first medical contact</b> C. Patient is over 75 D. Anterior STEMI</p>
+<ol><li>NSTEMI risk stratification uses:</li></ol>
+<p>A. TIMI score only B. <b>GRACE score (preferred)</b> C. Killip class D. NYHA class</p>
+<ol><li>GRACE score &gt;140 in NSTEMI indicates:</li></ol>
+<p>A. Low risk — discharge B. <b>High risk — early invasive strategy ≤24 h</b> C. Conservative management D. CABG</p>
+<ol><li>DAPT duration post-ACS in stable patient:</li></ol>
+<p>A. 1 month B. 6 months C. <b>12 months (aspirin + ticagrelor/prasugrel)</b> D. Lifelong</p>
+<ol><li>Ticagrelor loading dose:</li></ol>
+<p>A. 75 mg B. 150 mg C. <b>180 mg loading, then 90 mg BD</b> D. 300 mg</p>
+<ol><li>Papillary muscle rupture post-MI classically causes:</li></ol>
+<p>A. VSD B. <b>Acute severe mitral regurgitation</b> C. Free wall rupture D. Tamponade immediately</p>
+<ol><li>Post-MI ventricular septal defect — treatment:</li></ol>
+<p>A. Diuretics B. <b>Emergency surgical repair ± IABP bridge</b> C. Beta-blockers D. Observation</p>
+<ol><li>Sgarbossa criteria are used to diagnose MI in the presence of:</li></ol>
+<p>A. Pacemaker B. <b>LBBB</b> C. RBBB D. WPW</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 60-year-old man with crushing chest pain, anterior STEMI on ECG, PCI available in 30 min. Management:</li></ol>
+<p>A. Fibrinolysis B. <b>Primary PCI (door-to-balloon ≤90 min) + DAPT (aspirin + ticagrelor)</b> C. CT coronary angiogram D. Stress test</p>
+<ol><li>PCI not available within 2 h. Alternative:</li></ol>
+<p>A. Wait for PCI B. <b>Fibrinolysis (door-to-needle ≤30 min)</b> C. Heparin only D. Discharge</p>
+<ol><li>A 70-year-old with NSTEMI, GRACE 160. Plan:</li></ol>
+<p>A. Discharge B. <b>Early invasive coronary angiography within 24 h</b> C. CT angio D. Stress test in 6 weeks</p>
+<ol><li>Anterior MI on day 3, new loud holosystolic murmur, hypotension, pulmonary oedema. Diagnosis:</li></ol>
+<p>A. Free wall rupture B. <b>Ventricular septal defect (VSD)</b> C. Papillary muscle rupture D. Dressler syndrome</p>
+<ol><li>Inferior MI on day 5, new pansystolic murmur, pulmonary oedema. Diagnosis:</li></ol>
+<p>A. VSD B. <b>Acute severe mitral regurgitation (posteromedial papillary muscle rupture)</b> C. Free wall rupture D. LV aneurysm</p>
+<ol><li>Post-MI cardiac arrest, ROSC achieved, comatose. Best practice:</li></ol>
+<p>A. Immediate CT head B. <b>Targeted temperature management 32–36°C + early coronary angiography</b> C. Normothermia D. Mannitol</p>
+<ol><li>Sgarbossa criterion — concordant ST elevation ≥1 mm in LBBB:</li></ol>
+<p>A. Normal variant B. <b>Specific for MI in LBBB</b> C. Suggests pericarditis D. Suggests LVH</p>
+<ol><li>A patient on DAPT (aspirin + ticagrelor) needs urgent CABG. When to stop ticagrelor?</li></ol>
+<p>A. 24 h before B. <b>5 days (or 3 days for clopidogrel)</b> C. 12 h before D. No need to stop</p>
+<ol><li>Free wall rupture post-MI — clinical features:</li></ol>
+<p>A. New loud murmur B. <b>Sudden cardiovascular collapse with pulseless electrical activity ± tamponade</b> C. Slow AF D. Recurrent chest pain</p>
+<ol><li>Cardiogenic shock post-anterior STEMI. First-line mechanical support:</li></ol>
+<p>A. IABP B. <b>Noradrenaline + consider Impella/VA-ECMO; IABP no longer routine</b> C. Bandage D. None</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: STEMI definition (ECG)</li></ul>
+<p>A: ST elevation in 2 contiguous leads ≥1 mm (≥2 mm V2–V3 men, ≥1.5 mm V2–V3 women)</p>
+<ul><li>Q: STEMI reperfusion target</li></ul>
+<p>A: Primary PCI ≤90 min door-to-balloon</p>
+<ul><li>Q: Fibrinolysis time target</li></ul>
+<p>A: Door-to-needle ≤30 min</p>
+<ul><li>Q: NSTEMI risk score</li></ul>
+<p>A: GRACE</p>
+<ul><li>Q: GRACE &gt;140 = ?</li></ul>
+<p>A: High risk → early invasive ≤24 h</p>
+<ul><li>Q: DAPT duration post-ACS</li></ul>
+<p>A: 12 months (aspirin + ticagrelor/prasugrel)</p>
+<ul><li>Q: Ticagrelor loading</li></ul>
+<p>A: 180 mg, then 90 mg BD</p>
+<ul><li>Q: Papillary muscle rupture</li></ul>
+<p>A: Inferior MI → acute severe MR</p>
+<ul><li>Q: VSD post-MI timing</li></ul>
+<p>A: Day 3–5</p>
+<ul><li>Q: Free wall rupture</li></ul>
+<p>A: Sudden PEA, tamponade, usually fatal</p>
+<ul><li>Q: Sgarbossa criteria</li></ul>
+<p>A: MI diagnosis in LBBB</p>
+<ul><li>Q: TTM post-arrest</li></ul>
+<p>A: 32–36°C × 24 h</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — STEMI: ST elevation in 2 contiguous leads with sex/lead-specific thresholds.</li><li><b>B</b> — Door-to-balloon ≤90 min (≤60 min if direct admission).</li><li><b>B</b> — Fibrinolysis if PCI &gt;120 min from first medical contact.</li><li><b>B</b> — GRACE is preferred risk score for NSTEMI.</li><li><b>B</b> — GRACE &gt;140 → high risk → early invasive ≤24 h.</li><li><b>C</b> — DAPT 12 months (aspirin + ticagrelor/prasugrel).</li><li><b>C</b> — Ticagrelor 180 mg loading, 90 mg BD.</li><li><b>B</b> — Papillary muscle rupture → acute severe MR.</li><li><b>B</b> — Post-MI VSD → emergency surgical repair + IABP bridge.</li><li><b>B</b> — Sgarbossa = MI in LBBB.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — STEMI + PCI available = primary PCI + DAPT.</li><li><b>B</b> — Fibrinolysis if PCI &gt;120 min; door-to-needle ≤30 min.</li><li><b>B</b> — NSTEMI + GRACE &gt;140 = early invasive ≤24 h.</li><li><b>B</b> — Anterior MI + new murmur + shock = VSD.</li><li><b>B</b> — Inferior MI + new MR = papillary muscle rupture.</li><li><b>B</b> — Post-arrest: TTM 32–36°C + early angiography.</li><li><b>B</b> — Concordant ST elevation is specific for MI in LBBB.</li><li><b>B</b> — Stop ticagrelor 5 days before CABG (3 for clopidogrel).</li><li><b>B</b> — Free wall rupture = sudden PEA + tamponade.</li><li><b>B</b> — Noradrenaline + Impella/VA-ECMO; IABP no longer routine.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Acute Coronary Syndromes in Critical Care · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

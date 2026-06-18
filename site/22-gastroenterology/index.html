@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gastroenterology · MedSea · MedSea</title>
+<meta name="description" content="Sea Knowledge medical study library — Davidson's chapters rendered as infographics.">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --bg-2: #111827;
+  --bg-3: #1f2937;
+  --bg-4: #0f172a;
+  --border: #2d3748;
+  --border-2: #374151;
+  --text: #e5e7eb;
+  --text-dim: #9ca3af;
+  --accent: #38bdf8;
+  --code-bg: #0f172a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: linear-gradient(135deg, #0a0e1a 0%, #0f1729 100%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', system-ui, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+a { color: var(--accent); text-decoration: none; transition: color 0.15s; }
+a:hover { color: #7dd3fc; }
+
+/* ===== Header (sticky) ===== */
+header.site {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10, 14, 26, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: nowrap;
+  min-height: 48px;
+}
+header.site .logo-wrap {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 15px; font-weight: 700; letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+header.site .logo {
+  width: 26px; height: 26px;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  border-radius: 7px; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+header.site .logo-wrap a { color: inherit; }
+
+/* ===== Stats bar in header ===== */
+header.site .stats {
+  display: flex; gap: 3px; align-items: center;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+header.site .stats .stat {
+  display: inline-flex; align-items: baseline; gap: 4px;
+  padding: 3px 8px; border-radius: 5px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+}
+header.site .stats .stat .num { font-size: 12px; font-weight: 700; color: var(--accent); }
+header.site .stats .stat .label { color: var(--text-dim); font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ===== Chapter dropdown ===== */
+header.site .chapter-dropdown {
+  position: relative;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+header.site .chapter-dropdown .drop-btn {
+  padding: 6px 12px; border-radius: 7px;
+  background: var(--bg-3); border: 1px solid var(--border-2);
+  color: var(--text); font-size: 12px; font-weight: 500;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+  font-family: inherit;
+}
+header.site .chapter-dropdown .drop-btn:hover { background: var(--bg-2); border-color: var(--accent); }
+header.site .chapter-dropdown .drop-btn .arrow { font-size: 9px; opacity: 0.7; }
+header.site .chapter-dropdown .drop-btn .current-ch { color: var(--accent); font-weight: 600; }
+/* Full-height dropdown showing all 32 chapters in a 2-col grid */
+header.site .chapter-dropdown .drop-menu {
+  position: fixed; right: 16px; top: 56px;
+  width: 640px; max-height: calc(100vh - 72px); overflow-y: auto;
+  background: var(--bg-2); border: 1px solid var(--border-2);
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  padding: 8px;
+  display: none;
+  z-index: 200;
+  column-count: 2;
+  column-gap: 6px;
+}
+header.site .chapter-dropdown .drop-menu .item { break-inside: avoid; }
+header.site .chapter-dropdown.open .drop-menu { display: block; }
+header.site .chapter-dropdown .drop-menu .item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 8px; border-radius: 5px;
+  color: var(--text); font-size: 12px;
+  cursor: pointer; transition: background 0.1s;
+  text-decoration: none !important;
+}
+header.site .chapter-dropdown .drop-menu .item:hover { background: var(--bg-3); }
+header.site .chapter-dropdown .drop-menu .item.active { background: rgba(56, 189, 248, 0.15); }
+header.site .chapter-dropdown .drop-menu .item .num {
+  display: inline-block; min-width: 24px; padding: 1px 4px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  border-radius: 3px; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 9px; text-align: center; color: var(--text-dim);
+  flex-shrink: 0;
+}
+header.site .chapter-dropdown .drop-menu .item .name {
+  flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+header.site .chapter-dropdown .drop-menu .item.active .num { background: var(--accent); color: #0a0e1a; border-color: transparent; }
+/* Strong visual distinction: LIVE = accent green, SOON = dim grey + lock icon */
+header.site .chapter-dropdown .drop-menu .item.soon { color: var(--text-dim); cursor: not-allowed; opacity: 0.5; }
+header.site .chapter-dropdown .drop-menu .item.soon .num { opacity: 0.7; }
+header.site .chapter-dropdown .drop-menu .item .badge {
+  margin-left: auto; font-size: 8px; padding: 1px 5px;
+  background: var(--bg-3); border-radius: 8px;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+header.site .chapter-dropdown .drop-menu .item.soon .badge {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-dim); font-weight: 500;
+}
+header.site .chapter-dropdown .drop-menu .item:not(.soon) .badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+header.site .ext-links { display: flex; gap: 6px; flex-shrink: 0; }
+header.site .ext-links a {
+  padding: 5px 10px; border-radius: 6px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  color: var(--text-dim); font-size: 11px;
+  text-decoration: none;
+}
+header.site .ext-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ===== Landing page main ===== */
+main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+@media (max-width: 1400px) { .chapters-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1100px) { .chapters-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .chapters-grid { grid-template-columns: 1fr; } }
+.section-title {
+  font-size: 13px; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 14px; font-weight: 600;
+}
+.chapter-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 16px 14px;
+  transition: all 0.18s ease;
+  position: relative; overflow: hidden;
+  text-decoration: none !important; color: inherit !important;
+  display: flex; flex-direction: column;
+  cursor: pointer; min-height: 150px;
+}
+.chapter-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-color, var(--accent));
+}
+.chapter-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-color, var(--accent));
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.08);
+}
+.chapter-card .ch-num {
+  display: inline-block; padding: 2px 8px;
+  background: var(--accent-color, var(--accent)); color: #0a0e1a;
+  border-radius: 4px; font-size: 10px; font-weight: 700;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+.chapter-card h2 {
+  font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
+  margin-bottom: 10px; line-height: 1.25;
+  flex: 1;
+}
+.chapter-card .ch-stats {
+  display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid var(--border);
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 12px;
+}
+.chapter-card .ch-stats .cs { display: flex; flex-direction: column; }
+.chapter-card .ch-stats .num { font-size: 16px; font-weight: 700; color: var(--accent); line-height: 1; }
+.chapter-card .ch-stats .label { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+.chapter-card .ch-links {
+  display: flex; gap: 12px; margin-top: 8px;
+  font-size: 11px;
+}
+.chapter-card .ch-link-primary {
+  color: var(--accent); font-weight: 600; text-decoration: none !important;
+}
+.chapter-card .ch-link-secondary {
+  color: var(--text-dim); text-decoration: none !important;
+}
+.chapter-card .ch-link-primary:hover { color: #7dd3fc; }
+.chapter-card .ch-link-secondary:hover { color: var(--accent); }
+
+/* ===== Chapter page (SPA: sidebar + main) ===== */
+.chapter-page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  min-height: calc(100vh - 65px);
+}
+.chapter-sidebar {
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 65px);
+  position: sticky; top: 65px;
+}
+.chapter-sidebar .search {
+  width: 100%; padding: 8px 12px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text); font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.chapter-sidebar .search:focus { outline: none; border-color: var(--accent); }
+.chapter-sidebar .hub-group { margin-bottom: 14px; }
+.chapter-sidebar .hub-group h3 {
+  font-size: 11px; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 6px 8px; margin: 0 0 4px;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.06);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.chapter-sidebar .topic-item {
+  display: block; padding: 5px 10px 5px 22px;
+  border-radius: 4px;
+  color: var(--text); font-size: 12.5px; font-weight: 500;
+  cursor: pointer; transition: all 0.1s;
+  border: 1px solid transparent;
+  text-decoration: none !important;
+  position: relative;
+  line-height: 1.35;
+}
+.chapter-sidebar .topic-item:hover { background: var(--bg-3); color: #fff; }
+.chapter-sidebar .topic-item.active {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent);
+  font-weight: 600;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+.chapter-sidebar .topic-item .num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px; margin-right: 6px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+.chapter-sidebar .topic-item.active .num { color: var(--accent); font-weight: 600; }
+.chapter-sidebar .no-results {
+  color: var(--text-dim); font-size: 12px;
+  padding: 12px 8px; text-align: center;
+  display: none;
+}
+.chapter-sidebar .no-results.show { display: block; }
+
+.chapter-main {
+  padding: 16px 24px;
+  overflow-x: hidden;
+}
+.chapter-main .chapter-header {
+  padding: 8px 0 10px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
+  border-left: 3px solid var(--accent-color, var(--accent));
+  padding-left: 14px;
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+}
+.chapter-main .chapter-header h1 {
+  font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0;
+  line-height: 1.2;
+}
+.chapter-main .chapter-header .meta {
+  color: var(--text-dim); font-size: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.chapter-main .chapter-header .meta a { color: var(--accent); text-decoration: none; }
+.chapter-main .chapter-header .meta a:hover { text-decoration: underline; }
+
+.chapter-main .placeholder {
+  text-align: center; padding: 60px 20px;
+  color: var(--text-dim);
+}
+.chapter-main .placeholder .icon { font-size: 48px; margin-bottom: 12px; opacity: 0.5; }
+
+/* ===== Topic content (main pane) ===== */
+.topic-detail .crumbs {
+  color: var(--text-dim); font-size: 12px; margin-bottom: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+.topic-detail .crumbs a { color: var(--text-dim); }
+.topic-detail .crumbs a:hover { color: var(--accent); }
+.topic-detail .topic-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 20px; gap: 20px; flex-wrap: wrap;
+}
+.topic-detail .topic-header h1 {
+  font-size: 32px; font-weight: 800; letter-spacing: -0.02em;
+}
+.topic-detail .topic-header .meta { color: var(--text-dim); font-size: 13px; margin-top: 4px; }
+.topic-detail .topic-actions { display: flex; gap: 6px; }
+.topic-detail .topic-actions a, .topic-detail .topic-actions button {
+  padding: 6px 12px; border-radius: 6px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  color: var(--text); font-size: 12px;
+  font-family: inherit; cursor: pointer;
+  text-decoration: none;
+}
+.topic-detail .topic-actions a:hover, .topic-detail .topic-actions button:hover {
+  background: var(--bg); border-color: var(--accent); color: var(--accent);
+}
+.topic-detail .topic-image {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+  padding: 16px; margin-bottom: 20px;
+}
+.topic-detail .topic-image img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.topic-detail .topic-content {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px;
+}
+.topic-detail .topic-content h2, .topic-detail .topic-content h3, .topic-detail .topic-content h4 {
+  margin-top: 20px; margin-bottom: 10px; font-weight: 700;
+}
+.topic-detail .topic-content h2 { font-size: 22px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.topic-detail .topic-content h3 { font-size: 18px; color: var(--accent); }
+.topic-detail .topic-content h4 { font-size: 15px; }
+.topic-detail .topic-content p { margin-bottom: 12px; color: var(--text); }
+.topic-detail .topic-content ul, .topic-detail .topic-content ol { margin-left: 24px; margin-bottom: 12px; }
+.topic-detail .topic-content li { margin-bottom: 4px; }
+.topic-detail .topic-content li:empty { display: none; }
+.topic-detail .topic-content table {
+  border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 13px;
+}
+.topic-detail .topic-content th, .topic-detail .topic-content td {
+  border: 1px solid var(--border); padding: 8px 10px; text-align: left;
+}
+.topic-detail .topic-content th { background: var(--bg-3); font-weight: 600; }
+.topic-detail .topic-content code {
+  background: var(--code-bg); padding: 2px 6px; border-radius: 4px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 0.9em;
+}
+.topic-detail .topic-content blockquote {
+  border-left: 3px solid var(--accent); padding: 8px 14px; color: var(--text-dim);
+  margin: 12px 0; background: var(--bg-3); border-radius: 0 6px 6px 0;
+}
+.topic-detail .topic-content hr {
+  border: none; border-top: 1px solid var(--border); margin: 24px 0;
+}
+
+/* ===== Old chapter header (kept for legacy chapter pages) ===== */
+.chapter-header.legacy { padding: 32px 0; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+.chapter-header.legacy h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+.chapter-header.legacy .meta { color: var(--text-dim); font-size: 15px; }
+.hub-section {
+  margin-bottom: 40px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.hub-section h2 {
+  font-size: 22px; font-weight: 700; margin-bottom: 4px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hub-section h2 .hub-num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 12px; padding: 4px 8px; background: var(--bg-3); border-radius: 4px;
+  color: var(--text-dim);
+}
+.hub-section .hub-desc { color: var(--text-dim); font-size: 13px; margin-bottom: 16px; }
+.topic-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.topic-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.15s;
+  text-decoration: none !important;
+  color: var(--text) !important;
+}
+.topic-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.topic-card .preview {
+  width: 100%; aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--bg-3) 0%, var(--code-bg) 100%);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.topic-card .preview img { width: 100%; height: auto; min-height: 100%; }
+.topic-card .no-preview { color: var(--text-dim); font-size: 12px; padding: 12px; text-align: center; }
+.topic-card .title {
+  padding: 10px 12px;
+  font-size: 13px; font-weight: 500;
+  border-top: 1px solid var(--border);
+  line-height: 1.4;
+}
+.topic-card .num {
+  display: inline-block; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px; color: var(--text-dim); margin-right: 6px;
+}
+
+footer {
+  margin-top: 64px; padding: 32px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim); font-size: 13px;
+  text-align: center;
+}
+footer a { color: var(--text-dim); }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  header.site { gap: 12px; }
+  header.site .stats { order: 3; width: 100%; justify-content: flex-start; }
+  header.site .chapter-dropdown { margin-left: 0; }
+  .chapter-page { grid-template-columns: 1fr; }
+  .chapter-sidebar { position: static; max-height: 400px; }
+  .chapters-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="logo-wrap">
+    <span class="logo">⚕</span>
+    <a href="/">MedSea</a>
+  </div>
+  <div class="stats"><span class="stat"><span class="num">9</span><span class="label">Hubs</span></span><span class="stat"><span class="num">147</span><span class="label">Topics</span></span><span class="stat"><span class="num">147</span><span class="label">PNGs</span></span></div>
+  <div class="chapter-dropdown" id="chapterDropdown">
+    <button class="drop-btn" type="button" onclick="document.getElementById('chapterDropdown').classList.toggle('open')">
+      <span class="current-ch">Gastroenterology</span> <span class="arrow">▾</span>
+    </button>
+    <div class="drop-menu">
+      <a class="item" href="/1-clinical-decision-making/"><span class="num">1</span><span class="name">Clinical Decision-Making</span><span class="badge">●</span></a><a class="item" href="/2-clinical-therapeutics/"><span class="num">2</span><span class="name">Clinical Therapeutics & Prescribing</span><span class="badge">●</span></a><a class="item" href="/3-clinical-genetics/"><span class="num">3</span><span class="name">Clinical Genetics</span><span class="badge">●</span></a><a class="item" href="/4-clinical-immunology/"><span class="num">4</span><span class="name">Clinical Immunology</span><span class="badge">●</span></a><a class="item" href="/5-nutritional-factors/"><span class="num">5</span><span class="name">Nutritional Factors in Disease</span><span class="badge">●</span></a><a class="item" href="/6-population-health/"><span class="num">6</span><span class="name">Population Health & Epidemiology</span><span class="badge">●</span></a><a class="item" href="/7-principles-of-infection/"><span class="num">7</span><span class="name">Principles of Infection</span><span class="badge">●</span></a><a class="item" href="/8-oncology/"><span class="num">8</span><span class="name">Oncology</span><span class="badge">●</span></a><a class="item" href="/9-palliative-care/"><span class="num">9</span><span class="name">Palliative & Supportive Care</span><span class="badge">●</span></a><a class="item" href="/10-acute-medicine/"><span class="num">10</span><span class="name">Acute Medicine</span><span class="badge">●</span></a><a class="item" href="/11-poisoning/"><span class="num">11</span><span class="name">Poisoning</span><span class="badge">●</span></a><a class="item" href="/12-envenomation/"><span class="num">12</span><span class="name">Envenomation</span><span class="badge">●</span></a><a class="item" href="/13-austere-medicine/"><span class="num">13</span><span class="name">Austere Medicine</span><span class="badge">●</span></a><a class="item" href="/14-infectious-disease/"><span class="num">14</span><span class="name">Infectious Disease</span><span class="badge">●</span></a><a class="item" href="/15-sexually-transmitted-infections/"><span class="num">15</span><span class="name">Sexually Transmitted Infections</span><span class="badge">●</span></a><a class="item" href="/16-cardiology/"><span class="num">16</span><span class="name">Cardiology</span><span class="badge">●</span></a><a class="item" href="/17-respiratory-medicine/"><span class="num">17</span><span class="name">Respiratory Medicine</span><span class="badge">●</span></a><a class="item" href="/18-nephrology-urology/"><span class="num">18</span><span class="name">Nephrology & Urology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">19</span><span class="name">Clinical biochemistry and metabolic medicine</span><span class="badge">○</span></a><a class="item" href="/20-endocrinology/"><span class="num">20</span><span class="name">Endocrinology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">21</span><span class="name">Diabetes mellitus</span><span class="badge">○</span></a><a class="item active" href="/22-gastroenterology/"><span class="num">22</span><span class="name">Gastroenterology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">23</span><span class="name">Hepatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">24</span><span class="name">Haematology and transfusion medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">25</span><span class="name">Rheumatology and bone disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">26</span><span class="name">Dermatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">27</span><span class="name">Neurology and stroke medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">28</span><span class="name">Medical ophthalmology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">29</span><span class="name">Medical psychiatry</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">30</span><span class="name">Maternal medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">31</span><span class="name">Adolescence, transition and young adult medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">32</span><span class="name">Older adult medicine and frailty</span><span class="badge">○</span></a>
+    </div>
+  </div>
+  <div class="ext-links">
+    <a href="https://github.com/SeaXen/MedSea" target="_blank">GitHub ↗</a>
+  </div>
+</header>
+<main>
+
+<div class="chapter-page" style="--accent-color: #f59e0b">
+  <aside class="chapter-sidebar">
+    <input type="text" class="search" id="topicSearch" placeholder="Search topics…">
+    <div class="no-results" id="noResults">No matching topics</div>
+    <div class="hub-group" data-hub="21.1">
+  <h3>21.1 · Symptom Patterns and Diagnostic Approach</h3>
+  <a class="topic-item" data-topic="21.1.01" data-hub="21.1" href="?topic=21.1.01"><span class="num">21.1.01</span>Acute Abdominal Pain And Peritonism Red Flags</a>
+  <a class="topic-item" data-topic="21.1.02" data-hub="21.1" href="?topic=21.1.02"><span class="num">21.1.02</span>Acute Diarrhoea Initial Approach</a>
+  <a class="topic-item" data-topic="21.1.03" data-hub="21.1" href="?topic=21.1.03"><span class="num">21.1.03</span>Alarm Features In Dyspepsia And Weight Loss</a>
+  <a class="topic-item" data-topic="21.1.04" data-hub="21.1" href="?topic=21.1.04"><span class="num">21.1.04</span>Change In Bowel Habit With Colorectal Cancer Red Flags</a>
+  <a class="topic-item" data-topic="21.1.05" data-hub="21.1" href="?topic=21.1.05"><span class="num">21.1.05</span>Chronic Diarrhoea Framework</a>
+  <a class="topic-item" data-topic="21.1.06" data-hub="21.1" href="?topic=21.1.06"><span class="num">21.1.06</span>Constipation And Altered Bowel Habit</a>
+  <a class="topic-item" data-topic="21.1.07" data-hub="21.1" href="?topic=21.1.07"><span class="num">21.1.07</span>Diarrhoea Constipation And Abdominal Pain</a>
+  <a class="topic-item" data-topic="21.1.08" data-hub="21.1" href="?topic=21.1.08"><span class="num">21.1.08</span>Dyspepsia Approach</a>
+  <a class="topic-item" data-topic="21.1.09" data-hub="21.1" href="?topic=21.1.09"><span class="num">21.1.09</span>Dyspepsia Nausea And Vomiting</a>
+  <a class="topic-item" data-topic="21.1.10" data-hub="21.1" href="?topic=21.1.10"><span class="num">21.1.10</span>Dysphagia Alarm Features And Urgent Endoscopy</a>
+  <a class="topic-item" data-topic="21.1.11" data-hub="21.1" href="?topic=21.1.11"><span class="num">21.1.11</span>Dysphagia And Swallowing Complaints</a>
+  <a class="topic-item" data-topic="21.1.12" data-hub="21.1" href="?topic=21.1.12"><span class="num">21.1.12</span>Food Bolus Obstruction And Acute Impaction</a>
+  <a class="topic-item" data-topic="21.1.13" data-hub="21.1" href="?topic=21.1.13"><span class="num">21.1.13</span>Gastroparesis Clue Pattern</a>
+  <a class="topic-item" data-topic="21.1.14" data-hub="21.1" href="?topic=21.1.14"><span class="num">21.1.14</span>Iron Deficiency Anaemia As A Gi Clue</a>
+  <a class="topic-item" data-topic="21.1.15" data-hub="21.1" href="?topic=21.1.15"><span class="num">21.1.15</span>Nausea And Vomiting Differential Diagnosis</a>
+  <a class="topic-item" data-topic="21.1.16" data-hub="21.1" href="?topic=21.1.16"><span class="num">21.1.16</span>Occult Gi Bleeding And Fit Based Triage</a>
+  <a class="topic-item" data-topic="21.1.17" data-hub="21.1" href="?topic=21.1.17"><span class="num">21.1.17</span>Occult Blood Loss And Cancer Clues</a>
+  <a class="topic-item" data-topic="21.1.18" data-hub="21.1" href="?topic=21.1.18"><span class="num">21.1.18</span>Oropharyngeal Vs Oesophageal Dysphagia</a>
+  <a class="topic-item" data-topic="21.1.19" data-hub="21.1" href="?topic=21.1.19"><span class="num">21.1.19</span>Solids Vs Liquids Dysphagia Pattern</a>
+</div>
+<div class="hub-group" data-hub="21.2">
+  <h3>21.2 · Endoscopy and Gastroenterology Investigations</h3>
+  <a class="topic-item" data-topic="21.2.01" data-hub="21.2" href="?topic=21.2.01"><span class="num">21.2.01</span>Biopsy Strategy At Upper Gi Endoscopy</a>
+  <a class="topic-item" data-topic="21.2.02" data-hub="21.2" href="?topic=21.2.02"><span class="num">21.2.02</span>Ct Abdomen And Mr Enterography Selection</a>
+  <a class="topic-item" data-topic="21.2.03" data-hub="21.2" href="?topic=21.2.03"><span class="num">21.2.03</span>Capsule Endoscopy And Enteroscopy Basics</a>
+  <a class="topic-item" data-topic="21.2.04" data-hub="21.2" href="?topic=21.2.04"><span class="num">21.2.04</span>Coeliac Serology And Duodenal Biopsy</a>
+  <a class="topic-item" data-topic="21.2.05" data-hub="21.2" href="?topic=21.2.05"><span class="num">21.2.05</span>Colonoscopy Indications And Bowel Preparation</a>
+  <a class="topic-item" data-topic="21.2.06" data-hub="21.2" href="?topic=21.2.06"><span class="num">21.2.06</span>Endoscopic Therapy Basics In Gi Disease</a>
+  <a class="topic-item" data-topic="21.2.07" data-hub="21.2" href="?topic=21.2.07"><span class="num">21.2.07</span>Faecal Calprotectin And Inflammatory Marker Interpretation</a>
+  <a class="topic-item" data-topic="21.2.08" data-hub="21.2" href="?topic=21.2.08"><span class="num">21.2.08</span>Flexible Sigmoidoscopy Vs Colonoscopy Selection</a>
+  <a class="topic-item" data-topic="21.2.09" data-hub="21.2" href="?topic=21.2.09"><span class="num">21.2.09</span>Helicobacter Pylori Testing Strategy</a>
+  <a class="topic-item" data-topic="21.2.10" data-hub="21.2" href="?topic=21.2.10"><span class="num">21.2.10</span>Indications For Upper Gi Endoscopy</a>
+  <a class="topic-item" data-topic="21.2.11" data-hub="21.2" href="?topic=21.2.11"><span class="num">21.2.11</span>Laboratory And Stool Testing</a>
+  <a class="topic-item" data-topic="21.2.12" data-hub="21.2" href="?topic=21.2.12"><span class="num">21.2.12</span>Lower Gi Endoscopy</a>
+  <a class="topic-item" data-topic="21.2.13" data-hub="21.2" href="?topic=21.2.13"><span class="num">21.2.13</span>Post Polypectomy Surveillance Logic</a>
+  <a class="topic-item" data-topic="21.2.14" data-hub="21.2" href="?topic=21.2.14"><span class="num">21.2.14</span>Small Bowel And Imaging Tests</a>
+  <a class="topic-item" data-topic="21.2.15" data-hub="21.2" href="?topic=21.2.15"><span class="num">21.2.15</span>Stool Culture Ova Parasite And C Difficile Testing</a>
+  <a class="topic-item" data-topic="21.2.16" data-hub="21.2" href="?topic=21.2.16"><span class="num">21.2.16</span>Upper Gi Endoscopy</a>
+</div>
+<div class="hub-group" data-hub="21.3">
+  <h3>21.3 · Oesophageal Disorders</h3>
+  <a class="topic-item" data-topic="21.3.01" data-hub="21.3" href="?topic=21.3.01"><span class="num">21.3.01</span>Achalasia</a>
+  <a class="topic-item" data-topic="21.3.02" data-hub="21.3" href="?topic=21.3.02"><span class="num">21.3.02</span>Barrett Oesophagus And Dysplasia</a>
+  <a class="topic-item" data-topic="21.3.03" data-hub="21.3" href="?topic=21.3.03"><span class="num">21.3.03</span>Barrett Oesophagus And Oesophageal Malignancy</a>
+  <a class="topic-item" data-topic="21.3.04" data-hub="21.3" href="?topic=21.3.04"><span class="num">21.3.04</span>Diffuse Oesophageal Spasm And Motility Disorders</a>
+  <a class="topic-item" data-topic="21.3.05" data-hub="21.3" href="?topic=21.3.05"><span class="num">21.3.05</span>Eosinophilic Oesophagitis</a>
+  <a class="topic-item" data-topic="21.3.06" data-hub="21.3" href="?topic=21.3.06"><span class="num">21.3.06</span>Erosive Reflux Oesophagitis</a>
+  <a class="topic-item" data-topic="21.3.07" data-hub="21.3" href="?topic=21.3.07"><span class="num">21.3.07</span>Gastro Oesophageal Reflux Disease</a>
+  <a class="topic-item" data-topic="21.3.08" data-hub="21.3" href="?topic=21.3.08"><span class="num">21.3.08</span>Hiatus Hernia</a>
+  <a class="topic-item" data-topic="21.3.09" data-hub="21.3" href="?topic=21.3.09"><span class="num">21.3.09</span>Motility And Oesophageal Emergencies</a>
+  <a class="topic-item" data-topic="21.3.10" data-hub="21.3" href="?topic=21.3.10"><span class="num">21.3.10</span>Oesophageal Cancer</a>
+  <a class="topic-item" data-topic="21.3.11" data-hub="21.3" href="?topic=21.3.11"><span class="num">21.3.11</span>Oesophageal Perforation And Boerhaave Syndrome</a>
+  <a class="topic-item" data-topic="21.3.12" data-hub="21.3" href="?topic=21.3.12"><span class="num">21.3.12</span>Oesophageal Stricture</a>
+  <a class="topic-item" data-topic="21.3.13" data-hub="21.3" href="?topic=21.3.13"><span class="num">21.3.13</span>Pill Induced And Infectious Oesophagitis</a>
+  <a class="topic-item" data-topic="21.3.14" data-hub="21.3" href="?topic=21.3.14"><span class="num">21.3.14</span>Reflux And Oesophagitis Disorders</a>
+  <a class="topic-item" data-topic="21.3.15" data-hub="21.3" href="?topic=21.3.15"><span class="num">21.3.15</span>Schatzki Ring And Oesophageal Webs</a>
+  <a class="topic-item" data-topic="21.3.16" data-hub="21.3" href="?topic=21.3.16"><span class="num">21.3.16</span>Structural Oesophageal Disorders</a>
+</div>
+<div class="hub-group" data-hub="21.4">
+  <h3>21.4 · Stomach and Duodenal Disorders</h3>
+  <a class="topic-item" data-topic="21.4.01" data-hub="21.4" href="?topic=21.4.01"><span class="num">21.4.01</span>Acute Gastritis And Erosive Gastropathy</a>
+  <a class="topic-item" data-topic="21.4.02" data-hub="21.4" href="?topic=21.4.02"><span class="num">21.4.02</span>Duodenal Ulcer Disease</a>
+  <a class="topic-item" data-topic="21.4.03" data-hub="21.4" href="?topic=21.4.03"><span class="num">21.4.03</span>Dyspepsia Spectrum</a>
+  <a class="topic-item" data-topic="21.4.04" data-hub="21.4" href="?topic=21.4.04"><span class="num">21.4.04</span>Functional Dyspepsia</a>
+  <a class="topic-item" data-topic="21.4.05" data-hub="21.4" href="?topic=21.4.05"><span class="num">21.4.05</span>Gastric Adenocarcinoma</a>
+  <a class="topic-item" data-topic="21.4.06" data-hub="21.4" href="?topic=21.4.06"><span class="num">21.4.06</span>Gastric Lymphoma And Malt Related Disease</a>
+  <a class="topic-item" data-topic="21.4.07" data-hub="21.4" href="?topic=21.4.07"><span class="num">21.4.07</span>Gastric Malignancy</a>
+  <a class="topic-item" data-topic="21.4.08" data-hub="21.4" href="?topic=21.4.08"><span class="num">21.4.08</span>Gastric Outlet Obstruction</a>
+  <a class="topic-item" data-topic="21.4.09" data-hub="21.4" href="?topic=21.4.09"><span class="num">21.4.09</span>Gastric Ulcer Disease</a>
+  <a class="topic-item" data-topic="21.4.10" data-hub="21.4" href="?topic=21.4.10"><span class="num">21.4.10</span>Helicobacter And Ulcer Disease</a>
+  <a class="topic-item" data-topic="21.4.11" data-hub="21.4" href="?topic=21.4.11"><span class="num">21.4.11</span>Helicobacter Pylori Infection</a>
+  <a class="topic-item" data-topic="21.4.12" data-hub="21.4" href="?topic=21.4.12"><span class="num">21.4.12</span>Nsaid Associated Ulcer Disease</a>
+  <a class="topic-item" data-topic="21.4.13" data-hub="21.4" href="?topic=21.4.13"><span class="num">21.4.13</span>Penetration And Fistulation In Peptic Ulcer Disease</a>
+  <a class="topic-item" data-topic="21.4.14" data-hub="21.4" href="?topic=21.4.14"><span class="num">21.4.14</span>Peptic Ulcer Complications</a>
+  <a class="topic-item" data-topic="21.4.15" data-hub="21.4" href="?topic=21.4.15"><span class="num">21.4.15</span>Perforated Peptic Ulcer</a>
+  <a class="topic-item" data-topic="21.4.16" data-hub="21.4" href="?topic=21.4.16"><span class="num">21.4.16</span>Zollinger Ellison Syndrome</a>
+</div>
+<div class="hub-group" data-hub="21.5">
+  <h3>21.5 · Upper Gastrointestinal Bleeding</h3>
+  <a class="topic-item" data-topic="21.5.01" data-hub="21.5" href="?topic=21.5.01"><span class="num">21.5.01</span>Anticoagulant And Antiplatelet Associated Upper Gi Bleeding</a>
+  <a class="topic-item" data-topic="21.5.02" data-hub="21.5" href="?topic=21.5.02"><span class="num">21.5.02</span>Aortoenteric Fistula And Rare Catastrophic Bleeding Red Flags</a>
+  <a class="topic-item" data-topic="21.5.03" data-hub="21.5" href="?topic=21.5.03"><span class="num">21.5.03</span>Endoscopic And Post Endoscopic Care</a>
+  <a class="topic-item" data-topic="21.5.04" data-hub="21.5" href="?topic=21.5.04"><span class="num">21.5.04</span>Endoscopic Haemostasis Methods</a>
+  <a class="topic-item" data-topic="21.5.05" data-hub="21.5" href="?topic=21.5.05"><span class="num">21.5.05</span>Erosive Gastritis And Duodenitis Bleeding</a>
+  <a class="topic-item" data-topic="21.5.06" data-hub="21.5" href="?topic=21.5.06"><span class="num">21.5.06</span>Initial Assessment And Stabilization</a>
+  <a class="topic-item" data-topic="21.5.07" data-hub="21.5" href="?topic=21.5.07"><span class="num">21.5.07</span>Mallory Weiss Tear</a>
+  <a class="topic-item" data-topic="21.5.08" data-hub="21.5" href="?topic=21.5.08"><span class="num">21.5.08</span>Non Variceal Bleeding Syndromes</a>
+  <a class="topic-item" data-topic="21.5.09" data-hub="21.5" href="?topic=21.5.09"><span class="num">21.5.09</span>Pattern Recognition And Special Contexts</a>
+  <a class="topic-item" data-topic="21.5.10" data-hub="21.5" href="?topic=21.5.10"><span class="num">21.5.10</span>Peptic Ulcer Bleeding</a>
+  <a class="topic-item" data-topic="21.5.11" data-hub="21.5" href="?topic=21.5.11"><span class="num">21.5.11</span>Rebleeding Prevention And Ppi Strategy</a>
+  <a class="topic-item" data-topic="21.5.12" data-hub="21.5" href="?topic=21.5.12"><span class="num">21.5.12</span>Restrictive Transfusion And Coagulopathy Reversal</a>
+  <a class="topic-item" data-topic="21.5.13" data-hub="21.5" href="?topic=21.5.13"><span class="num">21.5.13</span>Risk Stratification Scores In Upper Gi Bleeding</a>
+  <a class="topic-item" data-topic="21.5.14" data-hub="21.5" href="?topic=21.5.14"><span class="num">21.5.14</span>Timing Of Endoscopy In Upper Gi Bleeding</a>
+  <a class="topic-item" data-topic="21.5.15" data-hub="21.5" href="?topic=21.5.15"><span class="num">21.5.15</span>Upper Gi Bleeding Resuscitation Priorities</a>
+  <a class="topic-item" data-topic="21.5.16" data-hub="21.5" href="?topic=21.5.16"><span class="num">21.5.16</span>Variceal Vs Non Variceal Bleeding Clue Pattern</a>
+</div>
+<div class="hub-group" data-hub="21.6">
+  <h3>21.6 · Small Bowel Malabsorption and Coeliac Disease</h3>
+  <a class="topic-item" data-topic="21.6.01" data-hub="21.6" href="?topic=21.6.01"><span class="num">21.6.01</span>Bile Acid Diarrhoea</a>
+  <a class="topic-item" data-topic="21.6.02" data-hub="21.6" href="?topic=21.6.02"><span class="num">21.6.02</span>Coeliac Disease Spectrum</a>
+  <a class="topic-item" data-topic="21.6.03" data-hub="21.6" href="?topic=21.6.03"><span class="num">21.6.03</span>Coeliac Disease</a>
+  <a class="topic-item" data-topic="21.6.04" data-hub="21.6" href="?topic=21.6.04"><span class="num">21.6.04</span>Dermatitis Herpetiformis As A Coeliac Clue</a>
+  <a class="topic-item" data-topic="21.6.05" data-hub="21.6" href="?topic=21.6.05"><span class="num">21.6.05</span>Diarrhoea And Malabsorption Interpretation</a>
+  <a class="topic-item" data-topic="21.6.06" data-hub="21.6" href="?topic=21.6.06"><span class="num">21.6.06</span>Lactose Intolerance And Carbohydrate Malabsorption</a>
+  <a class="topic-item" data-topic="21.6.07" data-hub="21.6" href="?topic=21.6.07"><span class="num">21.6.07</span>Micronutrient Deficiency Pattern Recognition</a>
+  <a class="topic-item" data-topic="21.6.08" data-hub="21.6" href="?topic=21.6.08"><span class="num">21.6.08</span>Non Responsive And Refractory Coeliac Disease</a>
+  <a class="topic-item" data-topic="21.6.09" data-hub="21.6" href="?topic=21.6.09"><span class="num">21.6.09</span>Other Malabsorption Disorders</a>
+  <a class="topic-item" data-topic="21.6.10" data-hub="21.6" href="?topic=21.6.10"><span class="num">21.6.10</span>Protein Losing Enteropathy</a>
+  <a class="topic-item" data-topic="21.6.11" data-hub="21.6" href="?topic=21.6.11"><span class="num">21.6.11</span>Short Bowel Syndrome And Intestinal Failure</a>
+  <a class="topic-item" data-topic="21.6.12" data-hub="21.6" href="?topic=21.6.12"><span class="num">21.6.12</span>Small Intestinal Bacterial Overgrowth</a>
+  <a class="topic-item" data-topic="21.6.13" data-hub="21.6" href="?topic=21.6.13"><span class="num">21.6.13</span>Steatorrhoea And Fat Malabsorption Clues</a>
+  <a class="topic-item" data-topic="21.6.14" data-hub="21.6" href="?topic=21.6.14"><span class="num">21.6.14</span>Tropical Sprue</a>
+  <a class="topic-item" data-topic="21.6.15" data-hub="21.6" href="?topic=21.6.15"><span class="num">21.6.15</span>Uncommon And Advanced Small Bowel Disorders</a>
+  <a class="topic-item" data-topic="21.6.16" data-hub="21.6" href="?topic=21.6.16"><span class="num">21.6.16</span>Whipple Disease</a>
+</div>
+<div class="hub-group" data-hub="21.7">
+  <h3>21.7 · Inflammatory and Functional Bowel Disorders</h3>
+  <a class="topic-item" data-topic="21.7.01" data-hub="21.7" href="?topic=21.7.01"><span class="num">21.7.01</span>Acute Severe Ulcerative Colitis</a>
+  <a class="topic-item" data-topic="21.7.02" data-hub="21.7" href="?topic=21.7.02"><span class="num">21.7.02</span>Aminosalicylates Steroids And Induction Therapy In Ibd</a>
+  <a class="topic-item" data-topic="21.7.03" data-hub="21.7" href="?topic=21.7.03"><span class="num">21.7.03</span>Cancer Surveillance And Vaccination Issues In Ibd</a>
+  <a class="topic-item" data-topic="21.7.04" data-hub="21.7" href="?topic=21.7.04"><span class="num">21.7.04</span>Crohn Disease</a>
+  <a class="topic-item" data-topic="21.7.05" data-hub="21.7" href="?topic=21.7.05"><span class="num">21.7.05</span>Functional Bloating And Gut Brain Interaction Disorders</a>
+  <a class="topic-item" data-topic="21.7.06" data-hub="21.7" href="?topic=21.7.06"><span class="num">21.7.06</span>Functional Bowel Disorders</a>
+  <a class="topic-item" data-topic="21.7.07" data-hub="21.7" href="?topic=21.7.07"><span class="num">21.7.07</span>Functional Constipation</a>
+  <a class="topic-item" data-topic="21.7.08" data-hub="21.7" href="?topic=21.7.08"><span class="num">21.7.08</span>Ibd Complications And Emergencies</a>
+  <a class="topic-item" data-topic="21.7.09" data-hub="21.7" href="?topic=21.7.09"><span class="num">21.7.09</span>Ibd Severity Assessment And Extent Classification</a>
+  <a class="topic-item" data-topic="21.7.10" data-hub="21.7" href="?topic=21.7.10"><span class="num">21.7.10</span>Ibd Treatment Principles</a>
+  <a class="topic-item" data-topic="21.7.11" data-hub="21.7" href="?topic=21.7.11"><span class="num">21.7.11</span>Immunomodulators And Biologics In Ibd</a>
+  <a class="topic-item" data-topic="21.7.12" data-hub="21.7" href="?topic=21.7.12"><span class="num">21.7.12</span>Inflammatory Bowel Disease Core</a>
+  <a class="topic-item" data-topic="21.7.13" data-hub="21.7" href="?topic=21.7.13"><span class="num">21.7.13</span>Irritable Bowel Syndrome</a>
+  <a class="topic-item" data-topic="21.7.14" data-hub="21.7" href="?topic=21.7.14"><span class="num">21.7.14</span>Perianal Crohn Disease</a>
+  <a class="topic-item" data-topic="21.7.15" data-hub="21.7" href="?topic=21.7.15"><span class="num">21.7.15</span>Toxic Megacolon</a>
+  <a class="topic-item" data-topic="21.7.16" data-hub="21.7" href="?topic=21.7.16"><span class="num">21.7.16</span>Ulcerative Colitis</a>
+</div>
+<div class="hub-group" data-hub="21.8">
+  <h3>21.8 · Lower GI Bleeding, Colorectal, and Anal Disorders</h3>
+  <a class="topic-item" data-topic="21.8.01" data-hub="21.8" href="?topic=21.8.01"><span class="num">21.8.01</span>Anal Fissure</a>
+  <a class="topic-item" data-topic="21.8.02" data-hub="21.8" href="?topic=21.8.02"><span class="num">21.8.02</span>Angiodysplasia And Vascular Ectasia</a>
+  <a class="topic-item" data-topic="21.8.03" data-hub="21.8" href="?topic=21.8.03"><span class="num">21.8.03</span>Colitis And Mimics</a>
+  <a class="topic-item" data-topic="21.8.04" data-hub="21.8" href="?topic=21.8.04"><span class="num">21.8.04</span>Colorectal Cancer</a>
+  <a class="topic-item" data-topic="21.8.05" data-hub="21.8" href="?topic=21.8.05"><span class="num">21.8.05</span>Colorectal Neoplasia</a>
+  <a class="topic-item" data-topic="21.8.06" data-hub="21.8" href="?topic=21.8.06"><span class="num">21.8.06</span>Colorectal Polyps And The Adenoma Carcinoma Sequence</a>
+  <a class="topic-item" data-topic="21.8.07" data-hub="21.8" href="?topic=21.8.07"><span class="num">21.8.07</span>Common Anorectal Disorders</a>
+  <a class="topic-item" data-topic="21.8.08" data-hub="21.8" href="?topic=21.8.08"><span class="num">21.8.08</span>Diverticular Bleeding</a>
+  <a class="topic-item" data-topic="21.8.09" data-hub="21.8" href="?topic=21.8.09"><span class="num">21.8.09</span>Fistula In Ano And Perianal Sepsis</a>
+  <a class="topic-item" data-topic="21.8.10" data-hub="21.8" href="?topic=21.8.10"><span class="num">21.8.10</span>Haemorrhoids</a>
+  <a class="topic-item" data-topic="21.8.11" data-hub="21.8" href="?topic=21.8.11"><span class="num">21.8.11</span>Hereditary Colorectal Cancer Syndromes</a>
+  <a class="topic-item" data-topic="21.8.12" data-hub="21.8" href="?topic=21.8.12"><span class="num">21.8.12</span>Infectious Colitis</a>
+  <a class="topic-item" data-topic="21.8.13" data-hub="21.8" href="?topic=21.8.13"><span class="num">21.8.13</span>Initial Approach To Lower Gi Bleeding</a>
+  <a class="topic-item" data-topic="21.8.14" data-hub="21.8" href="?topic=21.8.14"><span class="num">21.8.14</span>Ischaemic Colitis</a>
+  <a class="topic-item" data-topic="21.8.15" data-hub="21.8" href="?topic=21.8.15"><span class="num">21.8.15</span>Lower Gi Bleeding</a>
+  <a class="topic-item" data-topic="21.8.16" data-hub="21.8" href="?topic=21.8.16"><span class="num">21.8.16</span>Microscopic Colitis</a>
+</div>
+<div class="hub-group" data-hub="21.9">
+  <h3>21.9 · Pancreatic Disorders</h3>
+  <a class="topic-item" data-topic="21.9.01" data-hub="21.9" href="?topic=21.9.01"><span class="num">21.9.01</span>Acute Pancreatitis Syndromes</a>
+  <a class="topic-item" data-topic="21.9.02" data-hub="21.9" href="?topic=21.9.02"><span class="num">21.9.02</span>Acute Pancreatitis</a>
+  <a class="topic-item" data-topic="21.9.03" data-hub="21.9" href="?topic=21.9.03"><span class="num">21.9.03</span>Autoimmune Pancreatitis</a>
+  <a class="topic-item" data-topic="21.9.04" data-hub="21.9" href="?topic=21.9.04"><span class="num">21.9.04</span>Chronic Pancreatic Disease</a>
+  <a class="topic-item" data-topic="21.9.05" data-hub="21.9" href="?topic=21.9.05"><span class="num">21.9.05</span>Chronic Pancreatitis</a>
+  <a class="topic-item" data-topic="21.9.06" data-hub="21.9" href="?topic=21.9.06"><span class="num">21.9.06</span>Gallstone Pancreatitis</a>
+  <a class="topic-item" data-topic="21.9.07" data-hub="21.9" href="?topic=21.9.07"><span class="num">21.9.07</span>Hypertriglyceridaemic And Drug Induced Pancreatitis</a>
+  <a class="topic-item" data-topic="21.9.08" data-hub="21.9" href="?topic=21.9.08"><span class="num">21.9.08</span>Infected Pancreatic Necrosis And Sepsis</a>
+  <a class="topic-item" data-topic="21.9.09" data-hub="21.9" href="?topic=21.9.09"><span class="num">21.9.09</span>Necrotizing Pancreatitis</a>
+  <a class="topic-item" data-topic="21.9.10" data-hub="21.9" href="?topic=21.9.10"><span class="num">21.9.10</span>Neuroendocrine Pancreatic Tumors</a>
+  <a class="topic-item" data-topic="21.9.11" data-hub="21.9" href="?topic=21.9.11"><span class="num">21.9.11</span>Pancreatic Adenocarcinoma</a>
+  <a class="topic-item" data-topic="21.9.12" data-hub="21.9" href="?topic=21.9.12"><span class="num">21.9.12</span>Pancreatic Cystic Neoplasms And Ipmn</a>
+  <a class="topic-item" data-topic="21.9.13" data-hub="21.9" href="?topic=21.9.13"><span class="num">21.9.13</span>Pancreatic Exocrine Insufficiency</a>
+  <a class="topic-item" data-topic="21.9.14" data-hub="21.9" href="?topic=21.9.14"><span class="num">21.9.14</span>Pancreatic Neoplasia</a>
+  <a class="topic-item" data-topic="21.9.15" data-hub="21.9" href="?topic=21.9.15"><span class="num">21.9.15</span>Pancreatic Pseudocyst And Fluid Collections</a>
+  <a class="topic-item" data-topic="21.9.16" data-hub="21.9" href="?topic=21.9.16"><span class="num">21.9.16</span>Severe Pancreatitis And Local Complications</a>
+</div>
+
+  </aside>
+  <section class="chapter-main">
+    <div class="chapter-header">
+      <h1>Gastroenterology</h1>
+      <div class="meta">Davidson Ch 22 · 9 hubs · 147 topics · <a href="https://app.notion.com/p/SeaHub/Chapter-22-Gastroenterology-bbfd97790eca482eaed8d47428a642b2" target="_blank">Notion ↗</a></div>
+    </div>
+    <div id="topicContainer" class="topic-detail-placeholder">
+      <div class="placeholder">
+        <div class="icon">📖</div>
+        <p>Select a topic from the sidebar to view its content.</p>
+        <p style="font-size:12px; margin-top:8px;">Or pick a chapter from the header dropdown.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+const CHAPTER_SLUG = "22-gastroenterology";
+const MANIFEST_URL = "/22-gastroenterology/topics.json";
+let MANIFEST = null;
+let CURRENT_TOPIC = null;
+
+async function loadManifest() {
+  const res = await fetch(MANIFEST_URL);
+  MANIFEST = await res.json();
+  // Activate topic from URL hash
+  const params = new URLSearchParams(location.search);
+  const t = params.get("topic");
+  if (t) showTopic(t);
+}
+
+function navigateTopic(dir) {
+  if (!MANIFEST || !CURRENT_TOPIC) return;
+  const i = MANIFEST.topics.findIndex(x => x.local_prefix === CURRENT_TOPIC.local_prefix);
+  const ni = i + dir;
+  if (ni < 0 || ni >= MANIFEST.topics.length) return;
+  showTopic(MANIFEST.topics[ni].local_prefix);
+}
+
+function showTopic(localPrefix) {
+  const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
+  if (!t) return;
+  CURRENT_TOPIC = t;
+  // Update active in sidebar
+  document.querySelectorAll(".topic-item").forEach(el => el.classList.remove("active"));
+  const activeEl = document.querySelector(`.topic-item[data-topic="${localPrefix}"]`);
+  if (activeEl) {
+    activeEl.classList.add("active");
+    // Scroll into view
+    activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
+  // Update URL
+  const url = new URL(location.href);
+  url.searchParams.set("topic", localPrefix);
+  history.replaceState(null, "", url);
+  // Render content
+  const container = document.getElementById("topicContainer");
+  container.className = "topic-detail";
+  const imgHtml = t.png ? `<div class="topic-image"><img src="/22-gastroenterology/${t.png}" alt="${t.title}"></div>` : "";
+  container.innerHTML = `
+    <div class="crumbs"><a href="/">Home</a> · <a href="/22-gastroenterology/">Gastroenterology</a> · <span>${t.hub_num} · ${t.hub_name}</span></div>
+    <div class="topic-header">
+      <div>
+        <h1>${t.title}</h1>
+        <p class="meta">${t.hub_num} · ${t.local_prefix} · ${t.slug}</p>
+      </div>
+      <div class="topic-actions">
+        ${t.png ? `<a href="/22-gastroenterology/${t.png}" download>Download PNG</a>` : ""}
+        ${t.md ? `<a href="/22-gastroenterology/${t.md}" download>Download MD</a>` : ""}
+        <button onclick="navigateTopic(-1)">← Prev</button>
+        <button onclick="navigateTopic(1)">Next →</button>
+      </div>
+    </div>
+    <div class="topic-content">${t.html}</div>
+    ${imgHtml}
+  `;
+}
+
+// Sidebar search filter
+document.getElementById("topicSearch").addEventListener("input", function(e) {
+  const q = e.target.value.toLowerCase();
+  let visible = 0;
+  document.querySelectorAll(".topic-item").forEach(el => {
+    const text = el.textContent.toLowerCase();
+    const show = !q || text.includes(q);
+    el.style.display = show ? "" : "none";
+    if (show) visible++;
+  });
+  // Hide empty hub groups
+  document.querySelectorAll(".hub-group").forEach(g => {
+    const anyVisible = Array.from(g.querySelectorAll(".topic-item")).some(el => el.style.display !== "none");
+    g.style.display = anyVisible ? "" : "none";
+  });
+  document.getElementById("noResults").classList.toggle("show", visible === 0);
+});
+
+loadManifest();
+</script>
+</main>
+<footer>
+  <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 05:03 UTC · Davidson 25th Ed</p>
+</footer>
+<script>
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('chapterDropdown');
+  if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+});
+</script>
+</body>
+</html>

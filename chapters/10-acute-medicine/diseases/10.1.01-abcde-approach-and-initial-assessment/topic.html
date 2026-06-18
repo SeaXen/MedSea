@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ABCDE Approach and Initial Assessment — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">ABCDE Approach and Initial Assessment</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Perform a rapid, structured ABCDE assessment</li><li>Identify life-threatening problems in order of priority</li><li>Initiate immediate life-saving interventions</li><li>Know when to call for help / escalate</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">The ABCDE Sequence</span>
+  </div>
+  <div class="sec-body">
+<p><b>A – Airway</b></p>
+<ul><li>Assess patency (talking, stridor, secretions, GCS)</li><li>Interventions: head tilt-chin lift, jaw thrust, suction, airway adjuncts, intubation if needed</li></ul>
+<p><b>B – Breathing</b></p>
+<ul><li>Look, listen, feel (RR, SpO₂, effort, chest movement, breath sounds)</li><li>Interventions: high-flow O₂, bag-mask ventilation, chest drain for tension PTX</li></ul>
+<p><b>C – Circulation</b></p>
+<ul><li>Pulse, BP, capillary refill, skin colour, JVP, heart sounds, ECG</li><li>Interventions: IV access, fluid challenge, haemorrhage control, CPR if pulseless</li></ul>
+<p><b>D – Disability</b></p>
+<ul><li>AVPU or GCS, pupils, blood glucose, seizures</li><li>Interventions: glucose, benzodiazepines for seizures</li></ul>
+<p><b>E – Exposure</b></p>
+<ul><li>Full exposure while preventing hypothermia</li><li>Look for rash, wounds, drains, abdomen, legs, back</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Key Principles</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Treat problems as you find them (do not complete full assessment before acting)</li><li>Reassess after every intervention</li><li>Call for help early (MET / ICU / senior)</li><li>Use monitoring (pulse oximeter, ECG, BP) from the start</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Red Flags Requiring Immediate Escalation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Airway compromise</li><li>SpO₂ &lt;90% despite O₂</li><li>SBP &lt;90 mmHg</li><li>GCS &lt;12 or falling</li><li>Lactate &gt;4 mmol/L</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>The ABCDE approach is <b>not</b> a one-time assessment — it is repeated</li><li>Always assume cervical spine injury in trauma until proven otherwise</li><li>Hypoglycaemia is a reversible cause of altered consciousness — check glucose early</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Outline the ABCDE approach.</li><li>What are the signs of airway obstruction?</li><li>When would you perform a needle thoracocentesis?</li><li>What reversible causes of cardiac arrest are assessed in &lt;C&gt;?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>A</b>irway → <b>B</b>reathing → <b>C</b>irculation → <b>D</b>isability → <b>E</b>xposure Treat as you find problems. Reassess. Escalate early.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>ABCDE sequence and interventions for each step</li><li>Treat problems as you find them (don't complete then treat)</li><li>Reassess after every intervention</li><li>Call for help early (MET/ICU)</li><li>Hypoglycaemia = reversible cause of altered consciousness</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Cervical spine protection in trauma</li><li>Red flags for escalation (airway compromise, SpO₂&lt;90%, SBP&lt;90, GCS&lt;12, lactate&gt;4)</li><li>Monitoring from start (SpO₂, ECG, BP)</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Paediatric ABCDE differences</li><li>Obstetric ABCDE modifications</li><li>Pre-hospital vs in-hospital approach variations</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>In the ABCDE approach, which comes FIRST?</li></ol>
+<p>A. Breathing B. Circulation C. Airway D. Disability</p>
+<ol><li>A patient is talking normally. Airway assessment:</li></ol>
+<p>A. Intubate immediately B. Airway is patent C. Insert oropharyngeal airway D. Perform tracheostomy</p>
+<ol><li>During &lt;B&gt; Breathing assessment, which is NOT checked?</li></ol>
+<p>A. Respiratory rate B. SpO₂ C. Blood glucose D. Chest movement</p>
+<ol><li>Tension pneumothorax — immediate intervention during &lt;B&gt;:</li></ol>
+<p>A. Chest X-ray B. Needle thoracocentesis (2nd ICS mid-clavicular) C. Intubation D. High-flow oxygen only</p>
+<ol><li>&lt;C&gt; Circulation assessment includes all EXCEPT:</li></ol>
+<p>A. Pulse, BP, capillary refill B. Skin colour, JVP C. Blood glucose D. ECG</p>
+<ol><li>&lt;D&gt; Disability — which is assessed?</li></ol>
+<p>A. AVPU or GCS, pupils, blood glucose B. Airway patency C. Breath sounds D. Urine output</p>
+<ol><li>&lt;E&gt; Exposure — key principle:</li></ol>
+<p>A. Keep patient covered at all times B. Full exposure while preventing hypothermia C. Expose only the injured area D. No exposure needed if CT planned</p>
+<ol><li>ABCDE should be repeated:</li></ol>
+<p>A. Once only on admission B. After every intervention C. Only if patient deteriorates D. Every 24 hours</p>
+<ol><li>Hypoglycaemia as reversible cause of altered consciousness — when to check glucose?</li></ol>
+<p>A. Only if diabetic B. Early in &lt;D&gt; Disability for ALL altered consciousness C. After CT head D. Never in acute setting</p>
+<ol><li>Red flag for immediate escalation in ABCDE:</li></ol>
+<p>A. SpO₂ 94% on oxygen B. SBP 110 mmHg C. GCS 14 D. Lactate &gt;4 mmol/L</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 65-year-old man found confused at home. GCS 12 (E3V4M5), RR 28, SpO₂ 90% on air, BP 90/60, HR 110, Temp 38.5°C. Immediate priority:</li></ol>
+<p>A. CT head B. ABCDE — Airway support, high-flow O₂, IV access, fluids, glucose C. Lumbar puncture D. Antibiotics only</p>
+<ol><li>A trauma patient with stridor, unable to speak, saturating 85%. First action:</li></ol>
+<p>A. Intubate immediately (senior help) B. Nebulised adrenaline C. Chest X-ray D. Sit up and observe</p>
+<ol><li>During &lt;B&gt; assessment, absent breath sounds left side, tracheal deviation right, hypotensive. Diagnosis and action:</li></ol>
+<p>A. Pneumonia — antibiotics B. Tension pneumothorax — immediate needle decompression C. Pleural effusion — chest drain D. PE — anticoagulation</p>
+<ol><li>A septic patient, lactate 5.2, BP 80/50 after 1L fluid. ABCDE &lt;C&gt; action:</li></ol>
+<p>A. More fluids only B. Start noradrenaline (vasopressor) C. Wait for central line D. Transfuse blood</p>
+<ol><li>An unconscious diabetic patient, GCS 8. &lt;D&gt; Disability — first check:</li></ol>
+<p>A. Pupils only B. Blood glucose (reversible!) C. CT head D. Start insulin</p>
+<ol><li>ABCDE principle — "treat as you find" means:</li></ol>
+<p>A. Complete full ABCDE, then treat B. Treat life-threatening problems immediately when found at each step C. Treat only after consultant review D. Treat only in ICU</p>
+<ol><li>A patient with anaphylaxis — &lt;A&gt; Airway swelling, &lt;B&gt; wheeze, &lt;C&gt; hypotension. Adrenaline route:</li></ol>
+<p>A. IV 1mg B. IM 0.5mg anterolateral thigh C. SC 0.5mg D. Nebulised</p>
+<ol><li>Cervical spine protection in trauma ABCDE:</li></ol>
+<p>A. Only if neck pain B. Assume injury until proven otherwise — immobilise during &lt;A&gt; C. Only if neurological deficit D. Not part of ABCDE</p>
+<ol><li>Reassessment after intervention in ABCDE:</li></ol>
+<p>A. Not needed if patient stable B. Mandatory after EVERY intervention C. Only at end of ABCDE D. Only if requested by senior</p>
+<ol><li>Monitoring during ABCDE:</li></ol>
+<p>A. Apply after ABCDE complete B. From start: SpO₂, ECG, BP, RR C. Only in ICU D. Optional</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: ABCDE order</li></ul>
+<p>A: Airway → Breathing → Circulation → Disability → Exposure</p>
+<ul><li>Q: Treat as you find</li></ul>
+<p>A: Intervene immediately at each step for life-threatening problems — don't complete then treat</p>
+<ul><li>Q: Airway patent check</li></ul>
+<p>A: Talking normally = patent</p>
+<ul><li>Q: Tension pneumothorax in &lt;B&gt;</li></ul>
+<p>A: Needle decompression 2nd ICS mid-clavicular line (clinical diagnosis)</p>
+<ul><li>Q: Hypoglycaemia in &lt;D&gt;</li></ul>
+<p>A: Check glucose EARLY in all altered consciousness — reversible</p>
+<ul><li>Q: Reassess</li></ul>
+<p>A: After EVERY intervention</p>
+<ul><li>Q: Cervical spine in trauma</li></ul>
+<p>A: Assume injury until proven otherwise; immobilise during Airway</p>
+<ul><li>Q: Red flags for escalation</li></ul>
+<p>A: Airway compromise, SpO₂&lt;90%, SBP&lt;90, GCS&lt;12, lactate&gt;4</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: C — Airway always first. <b>MCQ 2</b>: B — Talking = patent airway. <b>MCQ 3</b>: C — Blood glucose is &lt;D&gt;, not &lt;B&gt;. <b>MCQ 4</b>: B — Tension PTX = clinical diagnosis, immediate needle decompression. <b>MCQ 5</b>: C — Blood glucose is &lt;D&gt;. <b>MCQ 6</b>: A — &lt;D&gt; = AVPU/GCS, pupils, glucose. <b>MCQ 7</b>: B — Full exposure + prevent hypothermia. <b>MCQ 8</b>: B — Reassess after every intervention. <b>MCQ 9</b>: B — Check glucose early in ALL altered consciousness. <b>MCQ 10</b>: D — Lactate &gt;4 = red flag.</p>
+<p><b>SBA 1</b>: B — ABCDE first: Airway (GCS 12 may need support), Breathing (O₂), Circulation (fluids/vasopressors), Disability (glucose), Exposure. <b>SBA 2</b>: A — Stridor + unable to speak + hypoxia = airway obstruction → intubate. <b>SBA 3</b>: B — Tension PTX: absent breath sounds + tracheal deviation + hypotension = immediate needle decompression. <b>SBA 4</b>: B — Lactate rising after fluid = fluid unresponsive → start noradrenaline. <b>SBA 5</b>: B — Glucose first in &lt;D&gt; — reversible cause. <b>SBA 6</b>: B — Treat as you find problems immediately. <b>SBA 7</b>: B — Anaphylaxis = IM adrenaline 0.5mg anterolateral thigh first-line. <b>SBA 8</b>: B — Assume C-spine injury in all trauma until cleared. <b>SBA 9</b>: B — Reassess after every intervention. <b>SBA 10</b>: B — Monitoring (SpO₂, ECG, BP) from start.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · ABCDE Approach and Initial Assessment · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

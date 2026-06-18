@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rhabdomyolysis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Rhabdomyolysis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define rhabdomyolysis</li><li>Identify common causes (trauma, exertional, drugs, metabolic, genetic)</li><li>Recognise clinical features (muscle pain, weakness, dark urine)</li><li>Investigate (CK, myoglobin, U&amp;E, urate, LDH, AST/ALT, urinalysis)</li><li>Manage: aggressive IV fluids, urine alkalinisation, electrolyte correction</li><li>Prevent and treat complications (AKI, compartment syndrome, hyperK, DIC)</li><li>Identify when to dialyse</li><li>Counsel on statin-induced rhabdo</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Rhabdomyolysis = skeletal muscle injury with release of intracellular contents</b> (myoglobin, CK, K⁺, phosphate, urate, LDH, AST) into systemic circulation</li><li><b>Diagnostic CK threshold</b>: <b>&gt;5× ULN (&gt;1000 U/L)</b>; some use <b>&gt;5000 U/L</b> for "significant"</li><li><b>Severe rhabdo</b>: CK &gt;5000 U/L OR CK &gt;10,000 U/L with AKI risk</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Direct muscle injury</b> (crush, trauma) → membrane disruption → myoglobin, CK, electrolytes release</li><li><b>ATP depletion</b> → Na⁺/K⁺-ATPase failure → cell swelling, Ca²⁺ influx → proteases, phospholipases → cell death</li><li><b>Myoglobin → kidney injury</b>:</li><li>Renal vasoconstriction</li><li>Tubular obstruction (cast formation)</li><li>Oxidative damage (ferryl myoglobin, lipid peroxidation)</li><li>Worsened by hypovolaemia, acidosis, low UO</li><li><b>Release of K⁺</b> → hyperkalaemia</li><li><b>Phosphate release</b> → binds Ca²⁺ → hypocalcaemia</li><li><b>Hepatic haptoglobin</b> binds free myoglobin → cleared (saturable)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Causes (Mnemonic: "CRUSH MY LEGS" or systematic)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Trauma / Compression</div>
+<ul><li><b>Crush injury</b> (RTA, building collapse, industrial)</li><li><b>Prolonged immobility</b> (stroke on floor, intoxicated, post-op)</li><li><b>Compartment syndrome</b></li><li><b>Burns, electrical injury</b></li><li><b>Severe exertion</b> (marathon, military training, seizures)</li><li><b>Physical torture, abuse</b></li></ul>
+<div class="sub-h">Exertional / Environmental</div>
+<ul><li><b>Heat stroke</b> (exertional or classic)</li><li><b>Strenuous exercise</b> (marathon, weightlifting, status epilepticus)</li><li><b>Status asthmaticus</b> (work of breathing)</li><li><b>Severe dystonia, tetanus, neuroleptic malignant syndrome</b></li><li><b>Hypothermia</b></li></ul>
+<div class="sub-h">Drugs / Toxins</div>
+<ul><li><b>Statins</b> (especially with fibrates, CYP inhibitors, hypothyroidism)</li><li><b>Antipsychotics</b> (NMS — clozapine, haloperidol)</li><li><b>Antidepressants</b> (SSRI, TCA, MAOI — serotonin syndrome)</li><li><b>Alcohol</b> (acute intoxication, chronic)</li><li><b>Illicit</b>: cocaine, amphetamines, heroin, MDMA</li><li><b>Snake/spider bite</b> (viper, brown recluse)</li><li><b>Carbon monoxide, cyanide</b></li><li><b>Salicylate, paracetamol</b></li><li><b>Colchicine</b></li><li><b>Daptomycin</b></li></ul>
+<div class="sub-h">Metabolic / Endocrine</div>
+<ul><li><b>DKA, HHS</b> (osmotic, phosphate)</li><li><b>Severe electrolyte abnormalities</b>: K⁺, Na⁺, Ca²⁺, phosphate</li><li><b>Hypothyroidism</b> (statin risk)</li><li><b>Cushing's, hyperaldosteronism</b></li><li><b>Inborn errors</b>: McArdle's (GSD V), carnitine palmitoyltransferase II def, mitochondrial</li></ul>
+<div class="sub-h">Inflammatory / Autoimmune</div>
+<ul><li><b>Polymyositis, dermatomyositis</b></li><li><b>Vasculitis</b> (polyarteritis nodosa)</li><li><b>SLE, RA</b></li></ul>
+<div class="sub-h">Infectious</div>
+<ul><li><b>Influenza, COVID-19, HIV, EBV, CMV, HSV</b></li><li><b>Staph, Strep, Clostridium</b> (gas gangrene)</li><li><b>Legionella</b></li></ul>
+<div class="sub-h">Genetic / Muscular Dystrophies</div>
+<ul><li><b>Duchenne, Becker</b></li><li><b>Limb-girdle, facioscapulohumeral</b></li><li><b>Rhabdomyolysis with metabolic stress</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classic Triad</div>
+<ul><li><b>Muscle pain</b> (myalgia) — often severe</li><li><b>Muscle weakness</b></li><li><b>Dark, tea-coloured urine</b> (myoglobinuria) — visible when &gt;100 mg/dL myoglobin</li></ul>
+<div class="sub-h">Other Features</div>
+<ul><li><b>Muscle swelling, tenderness</b></li><li><b>Stiffness, contracture</b></li><li><b>Fever</b> (inflammatory)</li><li><b>Nausea, vomiting</b> (electrolyte disturbance)</li><li><b>Confusion, agitation</b> (electrolyte, uraemia)</li><li><b>Cardiac arrhythmia</b> (hyperK)</li><li><b>Oliguria / anuria</b> (AKI)</li><li><b>Compartment syndrome signs</b> (pain out of proportion, pain on passive stretch, tense swelling, paresthesia, pulselessness late)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Lab</div>
+<table class="ctable"><tr><th>Test</th><th>Result in Rhabdo</th></tr><tr><td>------</td><td>------------------</td></tr><tr><td>**CK (creatine kinase)**</td><td>**>1000 U/L (5× ULN)**, often >10,000; peaks 24-72 h</td></tr><tr><td>**Myoglobin**</td><td>↑ in serum + urine (urine dipstick + for blood, no RBCs)</td></tr><tr><td>**U&E**</td><td>K⁺ ↑, urea ↑, Cr ↑ (AKI), phosphate ↑</td></tr><tr><td>**Calcium**</td><td>↓ early (binds phosphate), ↑ late (recovery)</td></tr><tr><td>**Urate**</td><td>↑</td></tr><tr><td>**LDH, AST, ALT**</td><td>↑ (muscle source)</td></tr><tr><td>**Aldolase**</td><td>↑</td></tr><tr><td>**DIC screen**</td><td>PT/PTT ↑, fibrinogen ↓, D-dimer ↑</td></tr><tr><td>**Urinalysis**</td><td>Blood + on dipstick (myoglobin), no RBCs on microscopy</td></tr><tr><td>**ABG**</td><td>Metabolic acidosis (high anion gap)</td></tr><tr><td>**Creatinine**</td><td>↑ in AKI (CK release cross-reacts)</td></tr></table>
+<div class="sub-h">Imaging</div>
+<ul><li><b>CT/MRI</b> of muscle (suspected compartment, deep muscle involvement)</li><li><b>Compartment pressure</b> measurement if suspected</li><li><b>ECG</b>: peaked T, wide QRS, sine wave (hyperK)</li></ul>
+<div class="sub-h">Other (Specific Causes)</div>
+<ul><li><b>Toxicology screen</b> (drugs, alcohol)</li><li><b>TSH, free T4</b> (thyroid)</li><li><b>VBG/lactate</b> (DKA, sepsis)</li><li><b>Autoimmune screen</b> (polymyositis)</li><li><b>Genetic testing</b> (recurrent)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Clinical suspicion</b> + <b>CK &gt;1000 U/L</b> (5× ULN) + features</li><li><b>Urine dipstick + for blood without RBCs</b> (myoglobin) — sensitive but non-specific</li><li><b>Exclude</b> MI (CK-MB), stroke, thyroid storm</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Mechanism</th><th>Management</th></tr><tr><td>--------------</td><td>-----------</td><td>------------</td></tr><tr><td>**AKI** (10-50%)</td><td>Myoglobin nephrotoxic, hypovolaemia</td><td>Aggressive fluids, dialysis</td></tr><tr><td>**Hyperkalaemia**</td><td>K⁺ release, AKI</td><td>Ca gluconate, insulin/dextrose, dialysis</td></tr><tr><td>**Hypocalcaemia** (early)</td><td>Phosphate binding Ca²⁺</td><td>Generally NO replacement (causes ectopic calcification)</td></tr><tr><td>**Hypercalcaemia** (recovery)</td><td>Mobilised Ca²⁺</td><td>Hydration, bisphosphonates if severe</td></tr><tr><td>**Compartment syndrome**</td><td>Muscle swelling</td><td>Fasciotomy</td></tr><tr><td>**DIC**</td><td>Tissue factor, thromboplastin release</td><td>FFP, cryoprecipitate, platelets</td></tr><tr><td>**Arrhythmia**</td><td>HyperK, electrolyte disturbance</td><td>Treat hyperK</td></tr><tr><td>**Hepatic dysfunction**</td><td>Shock, cytokines</td><td>Supportive</td></tr><tr><td>**ARDS**</td><td>SIRS</td><td>Supportive ventilation</td></tr><tr><td>**Sepsis**</td><td>Tissue necrosis, infection</td><td>Antibiotics, source control</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Initial (within 6 hours ideally)</div>
+<ol><li><b>ABC + IV access</b> (2 large-bore)</li><li><b>Aggressive IV crystalloid</b> (0.9% saline): 1-2 L bolus, then 200-500 mL/h</li></ol>
+<ul><li><b>Target UO</b>: 200-300 mL/h (adult)</li><li><b>Some centres</b>: maintain UO 3-5 mL/kg/h</li></ul>
+<ol><li><b>Treat hyperkalaemia</b>: Ca gluconate 10% 10 mL IV, insulin/dextrose</li><li><b>Monitor</b>: UO, U&amp;E, CK (6-12 h), Ca²⁺, ECG</li><li><b>Correct hypovolaemia</b> (often 10-12 L/day needed)</li><li><b>Drainage</b> if localised muscle bleed (e.g., femoral)</li></ol>
+<div class="sub-h">Ongoing</div>
+<ul><li><b>Continue IV fluids</b> until CK &lt;1000 U/L AND UO stable</li><li><b>Urine alkalinisation</b> (controversial): NaHCO₃ 100-150 mmol/L in fluid; target <b>urine pH &gt;6.5</b> (some use &gt;7.0)</li><li><b>Theoretical benefit</b>: less myoglobin precipitation</li><li><b>Concerns</b>: volume overload, hypocalcaemia, alkalosis</li><li><b>Not routinely recommended</b> (Brown 2004)</li><li><b>Mannitol</b> 0.5-1 g/kg IV (controversial; if severe, no diuresis despite fluids)</li><li><b>Reduces</b> muscle swelling, tubular obstruction</li><li><b>Use</b> if fluid overload risk with crystalloid</li><li><b>Loop diuretics</b> (furosemide) ONLY after volume repletion; not first-line</li><li><b>Dialysis</b> for refractory AKI/hyperK (not prevented by myoglobin clearance — CK is cleared)</li></ul>
+<div class="sub-h">Specific Treatments by Cause</div>
+<ul><li><b>Malignant hyperthermia</b>: dantrolene 2-2.5 mg/kg IV bolus, then 1 mg/kg q6h</li><li><b>NMS</b>: dantrolene, bromocriptine, supportive, dantrolene or amantadine</li><li><b>Serotonin syndrome</b>: cyproheptadine, cooling</li><li><b>Heat stroke</b>: cooling, dantrolene controversial</li><li><b>Statin-induced</b>: stop statin, supportive</li><li><b>Snake bite</b>: antivenom</li><li><b>Crush injury</b>: MTP if active bleed, surgical debridement</li><li><b>Compartment syndrome</b>: <b>fasciotomy</b> (urgent)</li></ul>
+<div class="sub-h">Indications for Dialysis</div>
+<ul><li><b>AEIOU</b>: Acidosis, Electrolytes (hyperK), Ingestion, Overload, Uraemia</li><li><b>Standard AKI criteria</b> (KDIGO 2-3 with complications)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Prevention</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Early IV fluids</b> at scene (crush injury)</li><li><b>Cool patient</b> (heat illness)</li><li><b>Avoid</b> nephrotoxins (NSAIDs, contrast)</li><li><b>DVT prophylaxis</b> when appropriate</li><li><b>Statin monitoring</b> (baseline CK, with symptoms)</li><li><b>Avoid prolonged immobility</b> (turn stroke patients)</li><li><b>Dantrolene</b> for MH-susceptible surgery</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Most recover</b> with supportive care</li><li><b>AKI recovery</b>: usually within 1-3 weeks</li><li><b>Mortality</b>: 5-25% in severe rhabdo (especially with multi-organ failure)</li><li><b>Long-term</b>: chronic kidney disease risk, recurrent rhabdo (genetic causes)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Rhabdo = skeletal muscle breakdown</b> with intracellular release</li><li><b>CK &gt;5× ULN (&gt;1000 U/L)</b> diagnostic; &gt;5000 severe</li><li><b>Triad</b>: muscle pain + weakness + dark urine</li><li><b>Urine dipstick + for blood, NO RBCs on microscopy</b> (myoglobin)</li><li><b>Major complications</b>: AKI (10-50%), hyperK, compartment syndrome, DIC</li><li><b>Aggressive IV fluids</b> EARLY (1-2 L/h, target UO 200-300 mL/h, 10-12 L/d)</li><li><b>Hyperkalaemia</b> is life-threatening</li><li><b>Early hypocalcaemia</b> (don't replace — causes ectopic calcification)</li><li><b>Late hypercalcaemia</b> during recovery</li><li><b>Urine alkalinisation</b> controversial (not routine)</li><li><b>Mannitol</b> in severe cases (controversial)</li><li><b>Loop diuretics</b> only after euvolaemia</li><li><b>Compartment syndrome → fasciotomy</b></li><li><b>Malignant hyperthermia → dantrolene</b></li><li><b>Statin + fibrate = rhabdo risk</b></li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Define rhabdomyolysis</li><li>List common causes</li><li>Classic triad</li><li>Investigations</li><li>Complications (AKI, hyperK)</li><li>Initial management</li><li>Aggressive IV fluids rationale</li><li>Indications for dialysis</li><li>Compartment syndrome</li><li>Statin-induced rhabdo</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CK &gt;1000</b> = diagnostic threshold (5× ULN)</li><li><b>Urine dipstick + for blood, NO RBCs</b> = myoglobin</li><li><b>DON'T replace calcium</b> early (causes ectopic calcification)</li><li><b>HyperK</b> is the immediate life threat</li><li><b>Fluids EARLY</b> (within 6 h = best outcome)</li><li><b>Urine alkalinisation</b> controversial; not routine</li><li><b>Mannitol</b> controversial</li><li><b>Loop diuretics</b> not first-line (only after euvolaemia)</li><li><b>Compartment syndrome</b> = clinical diagnosis; measure pressure if unsure</li><li><b>Dantrolene</b> for MH, NMS, heat stroke</li><li><b>Statin alone</b> rarely causes rhabdo; + fibrate, hypothyroidism ↑ risk</li><li><b>CK peaks 24-72 h</b></li><li><b>AKI mortality</b> higher in elderly, sepsis, multi-organ failure</li><li><b>Crush injury</b>: aggressive fluids at scene</li><li><b>Recurrent rhabdo</b> = genetic workup (McArdle, CPT II)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Causes</b>: <b>CRASH</b> (Crush, Rhabdomyolysis of statin/Seizures, Alcohol, Statins, Heat stroke) + <b>S</b>nake bite, <b>I</b>mmobility, <b>T</b>rauma, <b>E</b>xertion, <b>N</b>MS, <b>H</b>ypothyroidism</li><li><b>Triad</b>: <b>Pain + Weakness + Dark urine</b></li><li><b>CK threshold</b>: <b>5× ULN (&gt;1000)</b></li><li><b>Urine</b>: <b>Dipstick + for blood, NO RBCs</b></li><li><b>Initial Rx</b>: <b>Aggressive IV fluids (1-2 L/h, UO 200-300 mL/h)</b></li><li><b>DON'T</b> replace early Ca²⁺</li><li><b>Complications</b>: <b>AKI + HyperK + Compartment + DIC</b></li><li><b>Dialysis</b>: <b>AEIOU</b> (Acidosis, Electrolytes, Ingestion, Overload, Uraemia)</li><li><b>MH/NMS</b>: <b>Dantrolene</b></li><li><b>Statin + fibrate</b>: high risk</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Rhabdomyolysis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definition</div>
+<div class="mm-node mm-l3">– Skeletal muscle breakdown</div>
+<div class="mm-node mm-l3">– CK &gt;5x ULN</div>
+<div class="mm-node mm-l3">– Myoglobin release</div>
+<div class="mm-node mm-l2">Causes</div>
+<div class="mm-node mm-l3">– Trauma: crush, immobility, compartment</div>
+<div class="mm-node mm-l3">– Exertion: marathon, seizures</div>
+<div class="mm-node mm-l3">– Heat stroke</div>
+<div class="mm-node mm-l3">– Drugs: statins, alcohol, cocaine, MDMA</div>
+<div class="mm-node mm-l3">– NMS, MH, serotonin syndrome</div>
+<div class="mm-node mm-l3">– Snake/spider bite</div>
+<div class="mm-node mm-l3">– DKA, HHS, hypothyroidism</div>
+<div class="mm-node mm-l3">– Genetic: McArdle, CPT II</div>
+<div class="mm-node mm-l2">Features</div>
+<div class="mm-node mm-l3">– Triad: pain, weakness, dark urine</div>
+<div class="mm-node mm-l3">– Muscle swelling, tenderness</div>
+<div class="mm-node mm-l3">– Compartment signs</div>
+<div class="mm-node mm-l2">Investigations</div>
+<div class="mm-node mm-l3">– CK &gt;1000, &gt;5000 severe</div>
+<div class="mm-node mm-l3">– Myoglobin, K+, Cr, urate</div>
+<div class="mm-node mm-l3">– Hypocalcaemia early, hypercalcaemia late</div>
+<div class="mm-node mm-l3">– Urine: dipstick +, no RBCs</div>
+<div class="mm-node mm-l3">– ECG for hyperK</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– AKI (10-50%)</div>
+<div class="mm-node mm-l3">– HyperK</div>
+<div class="mm-node mm-l3">– Compartment syndrome</div>
+<div class="mm-node mm-l3">– DIC</div>
+<div class="mm-node mm-l3">– Hypocalcaemia</div>
+<div class="mm-node mm-l3">– Hypercalcaemia recovery</div>
+<div class="mm-node mm-l3">– Arrhythmia</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Aggressive IV fluids</div>
+<div class="mm-node mm-deep">– 1-2 L/h initially</div>
+<div class="mm-node mm-deep">– Target UO 200-300 mL/h</div>
+<div class="mm-node mm-deep">– 10-12 L/d</div>
+<div class="mm-node mm-l3">– Treat hyperK</div>
+<div class="mm-node mm-l3">– Urine alkalinisation (controversial)</div>
+<div class="mm-node mm-l3">– Mannitol (controversial)</div>
+<div class="mm-node mm-l3">– Loop diuretics (after euvolaemia)</div>
+<div class="mm-node mm-l3">– Dialysis (AEIOU)</div>
+<div class="mm-node mm-l3">– Treat cause</div>
+<div class="mm-node mm-l3">– Compartment -&gt; fasciotomy</div>
+<div class="mm-node mm-l2">Specific</div>
+<div class="mm-node mm-l3">– MH/NMS: dantrolene</div>
+<div class="mm-node mm-l3">– Statin: stop, supportive</div>
+<div class="mm-node mm-l3">– Snake bite: antivenom</div>
+<div class="mm-node mm-l3">– Heat stroke: cooling</div>
+<div class="mm-node mm-l2">Prevention</div>
+<div class="mm-node mm-l3">– Early fluids at scene</div>
+<div class="mm-node mm-l3">– Avoid immobility</div>
+<div class="mm-node mm-l3">– Statin monitoring</div>
+<div class="mm-node mm-l2">Prognosis</div>
+<div class="mm-node mm-l3">– Most recover</div>
+<div class="mm-node mm-l3">– 5-25% mortality severe</div>
+<div class="mm-node mm-l3">– AKI 1-3 weeks</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flowchart — Rhabdo Management</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Rhabdo</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">CK, UandE, urate, Ca, Mg, ECG, urinalysis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">CK &gt;1000?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Reassess</div>
+<div class="fc-node" data-id="E">Aggressive IV 0.9% Saline 1-2 L/h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Target UO 200-300 mL/h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Monitor CK 6-12h, UandE, ECG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Compartment syndrome?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Fasciotomy</div>
+<div class="fc-node" data-id="J">HyperK?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Continue fluids until CK &lt;1000</div>
+<div class="fc-node" data-id="K">Ca gluconate + insulin/dextrose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Treat cause?</div>
+<div class="fc-node" data-id="O">AKI/HyperK refractory?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Specific Rx: dantrolene for MH/NMS, antivenom, etc.</div>
+<div class="fc-node" data-id="P">Dialysis</div>
+<div class="fc-node" data-id="Q">Monitor recovery</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Rhabdo = muscle breakdown with CK &gt;5× ULN (&gt;1000 U/L)</b>; myoglobin release</li><li><b>Triad</b>: pain + weakness + dark urine</li><li><b>Causes</b>: crush, immobility, exertion, heat stroke, drugs (statins, alcohol, cocaine), NMS, MH, snake bite, DKA, genetic</li><li><b>Urine dipstick + for blood, NO RBCs</b> (myoglobin)</li><li><b>Major complications</b>: AKI (10-50%), hyperK, compartment syndrome, DIC</li><li><b>Early hypocalcaemia</b> (DON'T replace); <b>late hypercalcaemia</b> recovery</li><li><b>Aggressive IV fluids</b> EARLY: 1-2 L/h, UO 200-300 mL/h, 10-12 L/day</li><li><b>Treat hyperK</b> urgently</li><li><b>Urine alkalinisation, mannitol</b> controversial</li><li><b>Loop diuretics</b> only after euvolaemia</li><li><b>Dialysis</b> if AEIOU</li><li><b>Compartment syndrome → fasciotomy</b></li><li><b>MH/NMS → dantrolene</b></li><li><b>Statin + fibrate</b> = high risk</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>Define rhabdo and CK threshold</li><li>List common causes</li><li>Outline classic triad</li><li>Describe initial management</li><li>List major complications</li><li>State dialysis indications</li><li>Differentiate early/late Ca²⁺ changes</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Definition + CK threshold</li><li>Classic triad</li><li>Urine dipstick + for blood, no RBCs</li><li>Major complications (AKI, hyperK, compartment, DIC)</li><li>Aggressive IV fluids</li><li>Don't replace early Ca²⁺</li><li>Late hypercalcaemia</li><li>Treat hyperK</li><li>Compartment → fasciotomy</li><li>MH/NMS → dantrolene</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Causes (crush, immobility, exertional, drugs)</li><li>Statin + fibrate risk</li><li>AKI mechanism</li><li>Mannitol/urine alkalinisation controversy</li><li>Loop diuretic use</li><li>Dialysis indications (AEIOU)</li><li>Heat stroke management</li><li>Snake bite</li><li>Recurrent rhabdo → genetic</li><li>Crush injury pre-hospital fluids</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Pathophysiology of myoglobin AKI</li><li>Brown 2004 (urine alkalinisation)</li><li>McArdle disease</li><li>CPT II deficiency</li><li>Dantrolene mechanism</li><li>Statin + fibrate pharmacokinetics</li><li>DIC in rhabdo</li><li>Long-term CKD risk</li><li>Ectopic calcification</li><li>Risk factors for AKI in rhabdo</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition + CK threshold</li><li>Pathophysiology</li><li>Causes (trauma, exertional, drugs, metabolic, genetic, autoimmune, infective)</li><li>Clinical features (triad, other)</li><li>Investigations (CK, myoglobin, U&amp;E, urinalysis, ECG)</li><li>Complications (AKI, hyperK, compartment, DIC, hypo/hypercalcaemia)</li><li>Management:</li><li>Aggressive IV fluids (1-2 L/h, UO 200-300, 10-12 L/d)</li><li>Treat hyperK</li><li>Treat cause</li><li>Compartment → fasciotomy</li><li>Dialysis (AEIOU)</li><li>Specific (dantrolene for MH/NMS, antivenom)</li><li>Prevention</li><li>Prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Rhabdo triad + management</li><li>AKI mechanism</li><li>Compartment syndrome</li><li>Statin-induced rhabdo</li><li>Malignant hyperthermia</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Rhabdo = muscle breakdown with CK &gt;5× ULN"</li><li>"Triad: pain + weakness + dark urine"</li><li>"Urine dipstick + for blood, no RBCs (myoglobin)"</li><li>"Aggressive IV fluids 1-2 L/h, UO 200-300 mL/h"</li><li>"Don't replace early Ca²⁺ (causes ectopic calcification)"</li><li>"Late hypercalcaemia during recovery"</li><li>"HyperK is the immediate life threat"</li><li>"Compartment syndrome → fasciotomy"</li><li>"MH/NMS → dantrolene"</li><li>"Statin + fibrate = high rhabdo risk"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Crush injury patient, RTA, prolonged extraction → pre-hospital IV fluids, ICU</li><li>25-year-old marathon, dark urine, CK 25,000 → aggressive fluids, monitor AKI</li><li>Statin + fibrate patient, myalgia, CK 8,000 → stop both, fluids, monitor</li><li>18-year-old, NMS after haloperidol → dantrolene, cooling, supportive</li><li>Compartment syndrome in forearm after snake bite → fasciotomy</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Rhabdo = CK &gt;5× ULN</li><li>Triad: pain + weakness + dark urine</li><li>Dipstick + blood, no RBCs</li><li>Aggressive IV fluids (1-2 L/h, UO 200-300)</li><li>10-12 L/d</li><li>Don't replace early Ca²⁺</li><li>Late hypercalcaemia</li><li>Treat hyperK</li><li>Compartment → fasciotomy</li><li>MH/NMS → dantrolene</li><li>Statin + fibrate high risk</li><li>Dialysis: AEIOU</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Rhabdomyolysis</b> = skeletal muscle breakdown with release of intracellular contents (myoglobin, CK, K⁺, phosphate, urate, LDH, AST) into circulation. <b>Diagnostic</b>: <b>CK &gt;5× ULN (&gt;1000 U/L)</b>; &gt;5000 severe. <b>Triad</b>: muscle pain + weakness + dark (tea-coloured) urine. <b>Urine dipstick + for blood, NO RBCs on microscopy</b> (myoglobin). <b>Causes</b>: crush injury, prolonged immobility, compartment syndrome, severe exertion, heat stroke, <b>drugs (statins + fibrates, alcohol, cocaine, MDMA, antipsychotics)</b>, NMS, malignant hyperthermia, DKA/HHS, hypothyroidism, snake/spider bite, genetic (McArdle, CPT II), polymyositis, infections (influenza, COVID). <b>Pathophysiology</b>: ATP depletion → cell swelling, Ca²⁺ influx, cell death → myoglobin nephrotoxicity (vasoconstriction, tubular cast, oxidative damage) + AKI. <b>Complications</b>: <b>AKI (10-50%)</b>, <b>hyperK</b> (life-threatening arrhythmia), compartment syndrome, DIC, <b>early hypocalcaemia</b> (don't replace — ectopic calcification), <b>late hypercalcaemia</b> (recovery). <b>Management</b>: <b>Aggressive IV crystalloid EARLY</b> (1-2 L/h, target UO 200-300 mL/h, 10-12 L/day), continue until CK &lt;1000; <b>treat hyperK</b> (Ca gluconate, insulin/dextrose); <b>compartment → fasciotomy</b>; <b>dialysis</b> if AEIOU (Acidosis, Electrolytes, Ingestion, Overload, Uraemia). <b>Urine alkalinisation</b> (NaHCO₃, pH &gt;6.5) and <b>mannitol</b> controversial; <b>loop diuretics</b> only after euvolaemia. <b>Specific Rx</b>: dantrolene for MH/NMS, antivenom for snake bite, cooling for heat stroke. <b>Prognosis</b>: most recover, 5-25% mortality in severe (multi-organ failure), AKI recovers 1-3 weeks, long-term CKD risk.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Rhabdo diagnostic CK threshold:</li></ol>
+<p>A. &gt;500 U/L B. <b>&gt;1000 U/L (5× ULN)</b> C. &gt;300 U/L D. &gt;200 U/L</p>
+<ol><li>Classic triad of rhabdo:</li></ol>
+<p>A. <b>Muscle pain + weakness + dark urine</b> B. Fever + vomiting + abdominal pain C. Headache + photophobia + neck stiffness D. Confusion + ataxia + nystagmus</p>
+<ol><li>Urine dipstick in rhabdo:</li></ol>
+<p>A. <b>+ for blood, NO RBCs on microscopy (myoglobin)</b> B. - for blood C. RBCs present D. WBCs present</p>
+<ol><li>Most serious early complication of rhabdo:</li></ol>
+<p>A. AKI B. <b>Hyperkalaemia (life-threatening arrhythmia)</b> C. Hypocalcaemia D. DIC</p>
+<ol><li>Early hypocalcaemia in rhabdo:</li></ol>
+<p>A. Treat with calcium IV B. <b>Do NOT replace (ectopic calcification risk)</b> C. Bisphosphonates D. Vitamin D</p>
+<ol><li>Aggressive IV fluid target UO in rhabdo:</li></ol>
+<p>A. 50-100 mL/h B. 100-150 mL/h C. <b>200-300 mL/h</b> D. 500-700 mL/h</p>
+<ol><li>Compartment syndrome in rhabdo requires:</li></ol>
+<p>A. Analgesia B. <b>Fasciotomy</b> C. Mannitol D. Calcium</p>
+<ol><li>Malignant hyperthermia treated with:</li></ol>
+<p>A. Bromocriptine B. <b>Dantrolene</b> C. Cyproheptadine D. Naloxone</p>
+<ol><li>Statin + fibrate combination increases risk of:</li></ol>
+<p>A. GI bleeding B. <b>Rhabdomyolysis</b> C. Diabetes D. Hypothyroidism</p>
+<ol><li>Late recovery complication of rhabdo:</li></ol>
+<p>A. Hyperkalaemia B. Hypocalcaemia C. <b>Hypercalcaemia</b> D. Hyponatraemia</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>30-year-old, marathon, dark urine, CK 25,000. First management:</li></ol>
+<p>A. Stop B. <b>Aggressive IV 0.9% saline 1-2 L/h, monitor UO</b> C. Calcium IV D. Dialysis</p>
+<ol><li>Crush injury patient, 6 h post-extraction, CK 50,000, K 6.8. Priority:</li></ol>
+<p>A. Calcium B. <b>Treat hyperK + aggressive IV fluids</b> C. Dialysis D. Mannitol</p>
+<ol><li>Forearm swelling, pain on passive stretch, paraesthesia after snake bite. Next:</li></ol>
+<p>A. Analgesia B. <b>Fasciotomy (compartment syndrome)</b> C. Antivenom only D. Calcium</p>
+<ol><li>Recurrent rhabdo on statins, no clear cause. Workup:</li></ol>
+<p>A. <b>Genetic testing (McArdle, CPT II)</b> B. Stop all exercise C. Dialysis D. Liver biopsy</p>
+<ol><li>AKI in rhabdo not improving with fluids, K 7.0 refractory. Next:</li></ol>
+<p>A. More fluids B. <b>Dialysis (AEIOU)</b> C. Calcium only D. Bicarbonate</p>
+<ol><li>Statin + fibrate patient with myalgia, CK 8,000. Action:</li></ol>
+<p>A. Continue both B. <b>Stop both, IV fluids, monitor</b> C. Reduce statin D. Vitamin D</p>
+<ol><li>Crush syndrome at building collapse scene. Pre-hospital:</li></ol>
+<p>A. CPR B. <b>IV fluids before release of compression</b> C. Tourniquet D. Wait for rescue</p>
+<ol><li>18-year-old, MH intra-op, masseter rigidity, hyperthermia. Rx:</li></ol>
+<p>A. Stop surgery B. <b>Dantrolene 2-2.5 mg/kg IV + cooling</b> C. Cool only D. Naloxone</p>
+<ol><li>NMS after haloperidol, CK 30,000, T 39.5°C. Rx:</li></ol>
+<p>A. Haloperidol B. <b>Dantrolene/bromocriptine + supportive + cooling</b> C. Cyproheptadine D. Aspirin</p>
+<ol><li>Rhabdo + severe AKI, on fluid 12 L/d, urine pH 5.0. Add:</li></ol>
+<p>A. Calcium B. <b>NaHCO3 (urine alkalinisation, controversial)</b> C. Mannitol mandatory D. Insulin</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: CK threshold</li></ul>
+<p>A: &gt;1000 U/L (5× ULN)</p>
+<ul><li>Q: Classic triad</li></ul>
+<p>A: Pain + weakness + dark urine</p>
+<ul><li>Q: Urine dipstick</li></ul>
+<p>A: + for blood, no RBCs (myoglobin)</p>
+<ul><li>Q: Most serious early complication</li></ul>
+<p>A: Hyperkalaemia</p>
+<ul><li>Q: Don't replace early</li></ul>
+<p>A: Calcium</p>
+<ul><li>Q: Late recovery complication</li></ul>
+<p>A: Hypercalcaemia</p>
+<ul><li>Q: Target UO</li></ul>
+<p>A: 200-300 mL/h</p>
+<ul><li>Q: Initial fluid</li></ul>
+<p>A: Aggressive 0.9% saline 1-2 L/h</p>
+<ul><li>Q: Compartment syndrome Rx</li></ul>
+<p>A: Fasciotomy</p>
+<ul><li>Q: MH/NMS Rx</li></ul>
+<p>A: Dantrolene</p>
+<ul><li>Q: Statin + fibrate risk</li></ul>
+<p>A: Rhabdomyolysis</p>
+<ul><li>Q: Dialysis indications</li></ul>
+<p>A: AEIOU</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — &gt;1000 U/L (5× ULN). <b>MCQ 2</b>: A — Triad: pain + weakness + dark urine. <b>MCQ 3</b>: A — + for blood, no RBCs (myoglobin). <b>MCQ 4</b>: B — HyperK is most immediately life-threatening. <b>MCQ 5</b>: B — Don't replace early Ca²⁺ (ectopic calcification). <b>MCQ 6</b>: C — Target UO 200-300 mL/h. <b>MCQ 7</b>: B — Fasciotomy. <b>MCQ 8</b>: B — Dantrolene for MH. <b>MCQ 9</b>: B — Statin + fibrate = high rhabdo risk. <b>MCQ 10</b>: C — Late hypercalcaemia.</p>
+<p><b>SBA 1</b>: B — Aggressive fluids. <b>SBA 2</b>: B — Treat hyperK + fluids. <b>SBA 3</b>: B — Fasciotomy. <b>SBA 4</b>: A — Genetic testing. <b>SBA 5</b>: B — Dialysis (AEIOU). <b>SBA 6</b>: B — Stop both, fluids, monitor. <b>SBA 7</b>: B — IV fluids before release. <b>SBA 8</b>: B — Dantrolene. <b>SBA 9</b>: B — Dantrolene + supportive. <b>SBA 10</b>: B — NaHCO3 (controversial).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-15</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Rhabdomyolysis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

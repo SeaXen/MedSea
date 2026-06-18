@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Benzodiazepine Poisoning — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Benzodiazepine Poisoning</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognize benzodiazepine toxidrome (CNS depression, ataxia, dysarthria, nystagmus)</li><li>Differentiate pure benzo OD from mixed OD (opioid, alcohol, TCA)</li><li>Apply flumazenil indications and CONTRAINDICATIONS</li><li>Manage respiratory depression, hypotension</li><li>Determine observation duration based on half-life and active metabolites</li><li>Address withdrawal in chronic users</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Benzodiazepine poisoning = excessive GABAₐ receptor potentiation causing dose-dependent CNS depression (sedation → coma), ataxia, dysarthria, nystagmus, anterograde amnesia, with ceiling effect on respiratory depression when ingested alone.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Mechanism</b>: bind α/γ subunit interface → ↑ frequency of Cl⁻ channel opening (require GABA present)</li><li><b>Ceiling effect</b>: maximal respiratory depression ~30-40% below baseline (alone) — <b>not fatal alone</b></li><li><b>Pharmacokinetics</b>: lipophilic → rapid CNS entry; hepatic metabolism (CYP3A4, CYP2C19); <b>active metabolites</b> (diazepam → nordazepam, oxazepam, temazepam; half-life up to 100h)</li><li><b>Receptor subtypes</b>: BZ1 (α₁) = sedation, hypnosis, anterograde amnesia; BZ2 (α₂, α₃, α₅) = anxiolysis, muscle relaxant, anticonvulsant</li><li><b>Synergy</b>: additive/supra-additive with <b>opioids, alcohol, barbiturates, GHB, antidepressants</b> → fatal respiratory depression</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pure Benzodiazepine OD</div>
+<ul><li><b>CNS</b>: drowsiness → coma (GCS 8-15 typically), <b>paradoxical agitation</b> (elderly, children, high dose)</li><li><b>Motor</b>: ataxia, dysarthria, <b>nystagmus</b> (horizontal gaze), hypotonia, hyporeflexia</li><li><b>Respiratory</b>: mild depression (RR 8-12) — <b>severe only with co-ingestants</b></li><li><b>Cardiovascular</b>: mild hypotension (vasodilation), bradycardia — <b>rarely shock</b></li><li><b>Pupils</b>: normal or slightly constricted (not pinpoint)</li><li><b>GI</b>: nausea, vomiting</li></ul>
+<div class="sub-h">Mixed OD (COMMON in DSH)</div>
+<ul><li><b>Benzo + Opioid</b>: profound respiratory depression, pinpoint pupils, coma</li><li><b>Benzo + Alcohol</b>: severe CNS depression, respiratory depression, hypotension</li><li><b>Benzo + TCA</b>: QRS widening, seizures, anticholinergic features, coma</li><li><b>Benzo + Barbiturate</b>: profound coma, respiratory failure, hypotension</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Opioid</b>: pinpoint pupils, naloxone responsive</li><li><b>Barbiturate</b>: deeper coma, severe respiratory depression, hypotension, no ceiling</li><li><b>Alcohol</b>: odor, metabolic acidosis (ketoacidosis), hypoglycemia</li><li><b>GHB/GBL</b>: rapid coma → rapid arousal (2-4h), myoclonus, vomiting</li><li><b>Anticholinergic</b>: dry, hot, dilated, delirium, tachy</li><li><b>Metabolic</b>: hypoglycemia, hepatic encephalopathy, uremia</li><li><b>Structural</b>: stroke, ICH</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Glucose</b> (bedside) — mandatory</li><li><b>VBGA</b>: respiratory acidosis (if mixed), usually normal in pure</li><li><b>Paracetamol level</b> (always)</li><li><b>Ethanol level</b></li><li><b>Urine drug screen</b>: benzodiazepines (qualitative; oxazepam/nordazepam detected; <b>misses some</b>: alprazolam, clonazepam, lorazepam, midazolam — limited utility)</li><li><b>ECG</b>: usually normal; QRS widening → TCA co-ingestion</li><li><b>Specific levels</b>: not routinely available acutely</li><li><b>CXR</b>: aspiration</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Supportive Care (MAINSTAY)</div>
+<ul><li><b>Airway</b>: protect if GCS &lt; 8, loss of gag, respiratory depression — <b>intubate</b></li><li><b>Breathing</b>: high-flow O₂, NIV/ventilation if needed</li><li><b>Circulation</b>: IV fluids for hypotension (rare); vasopressors if refractory</li><li><b>Temperature</b>: warming if hypothermic</li><li><b>Thiamine 100mg IV</b> → glucose if hypoglycemic</li><li><b>Monitoring</b>: continuous SpO₂, ECG, GCS q15-30min</li></ul>
+<div class="sub-h">2. Flumazenil — **RESTRICTED INDICATIONS**</div>
+<ul><li><b>Mechanism</b>: competitive antagonist at BZD site on GABAₐ receptor</li><li><b>Indications (ONLY)</b>:</li></ul>
+<ol><li><b>Iatrogenic procedural oversedation</b> (endoscopy, ICU sedation reversal) — <b>preferred</b></li><li><b>Diagnostic uncertainty</b> in coma (exclude benzo) — controversial, some guidelines support</li><li><b>Pediatric accidental ingestion</b> — some guidelines support (risk of seizures low in naive)</li></ol>
+<ul><li><b>CONTRAINDICATIONS (ABSOLUTE — SEIZURE RISK)</b>:</li><li><b>TCA co-ingestion</b> (or unknown OD with QRS &gt; 100 ms) — unmasks TCA seizure potential</li><li><b>Known seizure disorder / epilepsy</b></li><li><b>Chronic benzodiazepine use / dependence</b> — precipitated withdrawal (seizures, delirium)</li><li><b>Head injury / raised ICP</b> — seizure risk</li><li><b>Cyclic antidepressant ingestion</b> (same as TCA)</li><li><b>Pregnancy</b> (relative — uterine stimulation)</li><li><b>Dose</b>: 0.2 mg IV over 30 sec, repeat 0.3 mg q1 min (max 1 mg, then 1 mg q1h if re-sedation). Child: 0.01 mg/kg (max 0.2 mg).</li><li><b>Onset</b>: 1-2 min. Peak: 6-10 min. <b>Duration</b>: 30-60 min (shorter than benzo) → <b>re-sedation COMMON</b> → monitor 2-4h post last dose.</li><li><b>Reversal incomplete</b> in mixed OD (opioid/alcohol component unaffected)</li></ul>
+<div class="sub-h">3. Naloxone Trial</div>
+<ul><li>If opioid co-ingestion suspected: 0.04-0.4 mg IV titrated to RR &gt; 10</li></ul>
+<div class="sub-h">4. Decontamination</div>
+<ul><li><b>Activated charcoal</b>: 1 g/kg if &lt; 1-2h, airway protected. <b>Benzo delay gastric emptying</b> → may be effective up to 4-6h post-ingestion.</li><li><b>Gastric lavage</b>: rarely indicated</li><li><b>WBI</b>: sustained-release formulations (rare), body packers</li></ul>
+<div class="sub-h">5. Enhanced Elimination</div>
+<ul><li><b>NOT effective</b>: hemodialysis, hemoperfusion, MDAC (high protein binding, large Vd)</li><li><b>Flumazenil infusion</b> NOT recommended for elimination</li></ul>
+<div class="sub-h">6. Withdrawal (Chronic User)</div>
+<ul><li><b>Onset</b>: short-acting (alprazolam, lorazepam) 6-12h; long-acting (diazepam) 24-48h</li><li><b>Features</b>: anxiety, insomnia, tremor, tachycardia, hypertension, nausea, seizures, delirium, psychosis</li><li><b>Management</b>: <b>Diazepam taper</b> (long half-life, active metabolites). Convert to diazepam equivalent, reduce 10-25% every 1-2 weeks.</li><li><b>Acute withdrawal in OD setting</b>: diazepam 10-20 mg IV/PO q6h PRN (CIWA-B adapted). Avoid flumazenil.</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Aspiration pneumonia (loss of gag, vomiting)</li><li>Rhabdomyolysis (prolonged immobilization)</li><li>Hypothermia</li><li>Anoxic brain injury (if mixed OD with respiratory depression)</li><li>Pressure ulcers, nerve compression</li><li>Withdrawal seizures, delirium (chronic users)</li><li>Paradoxical agitation (elderly, children)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Pure benzo OD</b>: excellent — supportive care, rarely fatal</li><li><b>Mixed OD</b>: mortality from co-ingestants (opioid, alcohol, TCA)</li><li><b>Chronic use</b>: withdrawal complications if not managed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Pure benzo OD rarely fatal</b> — ceiling effect on respiratory depression</li><li><b>Fatalities = mixed OD</b> (opioid, alcohol, TCA, barbiturate)</li><li><b>Flumazenil NOT for routine OD</b> — indications: procedural oversedation, diagnostic uncertainty</li><li><b>Flumazenil CONTRAINDICATIONS</b> (examinable): TCA/QRS widening, seizure disorder, chronic benzo use, head injury</li><li><b>Re-sedation common</b> post-flumazenil (duration 30-60 min &lt; benzo) → monitor 2-4h</li><li><b>Active metabolites</b>: diazepam → nordazepam/oxazepam (half-life up to 100h) → prolonged effect</li><li><b>Urine screen misses</b>: alprazolam, clonazepam, lorazepam, midazolam</li><li><b>Observation</b>: 6h minimum; longer if long-acting (diazepam, clonazepam) or active metabolites</li><li><b>Psych assessment mandatory</b> for DSH</li><li><b>Paradoxical agitation</b>: elderly, children, high dose</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Why is pure benzodiazepine overdose rarely fatal?</li><li>Flumazenil indications AND contraindications</li><li>Why is flumazenil not recommended for routine overdose reversal?</li><li>Mixed OD presentations (benzo+opioid, benzo+alcohol, benzo+TCA)</li><li>Observation duration based on half-life</li><li>Active metabolites of diazepam</li><li>Benzodiazepine withdrawal management</li><li>Urine drug screen limitations</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Flumazenil for routine benzo OD</b> → NO (no mortality benefit, re-sedation, seizure risk)</li><li><b>Flumazenil in unknown OD</b> → dangerous if TCA co-ingestion (QRS widening = NO flumazenil)</li><li><b>Flumazenil in chronic user</b> → precipitated withdrawal seizures</li><li><b>Naloxone in pure benzo OD</b> → no effect (but give if opioid possible)</li><li><b>"Awake" post-flumazenil ≠ safe</b> → re-sedation in 30-60 min</li><li><b>Urine screen negative ≠ no benzo</b> (misses alprazolam, clonazepam, lorazepam, midazolam)</li><li><b>Diazepam long half-life</b> → observe 12-24h if large ingestion</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>FLUMAZENIL NO-GO</b>: <b>T</b>CA/QRS, <b>S</b>eizure Hx, <b>C</b>hronic Benzo, <b>H</b>ead Injury, <b>P</b>regnancy (relative)</li><li><b>BENZO CEILING</b>: <b>B</b>enzo = <b>C</b>eiling effect on respiratory depression (alone)</li><li><b>MIXED OD = DEATH</b>: <b>B</b>enzo + <b>O</b>pioid/<b>A</b>lcohol/<b>T</b>CA = <b>F</b>atal</li><li><b>DIAZEPAM METABOLITES</b>: <b>N</b>ordazepam, <b>O</b>xazepam, <b>T</b>emazepam = <b>N</b>OT short (long half-lives)</li><li><b>URINE SCREEN MISSES</b>: <b>A</b>lprazolam, <b>C</b>lonazepam, <b>L</b>orazepam, <b>M</b>idazolam = <b>A</b>-<b>C</b>-<b>L</b>-<b>M</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Benzodiazepine Poisoning))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Mechanism</div>
+<div class="mm-node mm-l3">– GABA-A Freq ↑</div>
+<div class="mm-node mm-l3">– Ceiling Effect (Resp)</div>
+<div class="mm-node mm-l3">– Lipophilic, Hepatic</div>
+<div class="mm-node mm-l3">– Active Metabolites</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Pure: Sedation, Ataxia, Nystagmus, Mild Resp Dep</div>
+<div class="mm-node mm-l3">– Mixed: Fatal Resp Dep (Opioid/Alcohol/TCA)</div>
+<div class="mm-node mm-l2">DDx</div>
+<div class="mm-node mm-l3">– Opioid (Miosis, Naloxone)</div>
+<div class="mm-node mm-l3">– Barbiturate (Deeper, No Ceiling)</div>
+<div class="mm-node mm-l3">– Alcohol (Odor, Ketoacidosis)</div>
+<div class="mm-node mm-l3">– GHB (Rapid Arousal)</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Supportive (Mainstay)</div>
+<div class="mm-node mm-l3">– Flumazenil (RESTRICTED)</div>
+<div class="mm-node mm-l3">– Naloxone Trial (if Opioid)</div>
+<div class="mm-node mm-l3">– Charcoal (Longer Window)</div>
+<div class="mm-node mm-l2">Flumazenil</div>
+<div class="mm-node mm-l3">– Indications: Procedural, Diagnostic</div>
+<div class="mm-node mm-l3">– Contraindications: TCA, Seizure, Chronic, Head Injury</div>
+<div class="mm-node mm-l3">– Dose: 0.2mg IV, Re-sedation Common</div>
+<div class="mm-node mm-l2">Withdrawal</div>
+<div class="mm-node mm-l3">– Diazepam Taper</div>
+<div class="mm-node mm-l3">– Short-acting: 6-12h</div>
+<div class="mm-node mm-l3">– Long-acting: 24-48h</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Sedated, Ataxic, Nystagmus, Normal Pupils, Mild Resp Dep</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Benzodiazepine Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE: Intubate if GCS&lt;8 or RR&lt;10\nThiamine → Glucose\nParacetamol Level\nEthanol Level</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Mixed OD Suspected?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Naloxone 0.04-0.4mg IV\nTitrate to RR&gt;10</div>
+<div class="fc-node" data-id="F">Supportive\nThiamine, Electrolytes</div>
+<div class="fc-node" data-id="G">NaHCO3 for QRS\nNO FLUMAZENIL</div>
+<div class="fc-node" data-id="H">Supportive Care\nObserve 6-12h\nLonger if Diazepam/Clonazepam</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Monitor for Re-sedation\nObs 6h Post Naloxone</div>
+<div class="fc-node" data-id="J">Flumazenil Indicated?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Flumazenil 0.2mg IV\nRepeat q1min max 1mg\nMonitor 2-4h Post</div>
+<div class="fc-node" data-id="L">NO Flumazenil\nSupportive Only</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Re-sedation Expected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Obs: 6h Min\n12-24h Long-acting\nPsych Assessment if DSH</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Flumazenil contraindications poster</li><li>Diazepam metabolic pathway</li><li>Observation duration by agent</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Flumazenil debate (EM:RAP, Toxicology)</li><li>Benzodiazepine withdrawal management</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Pure benzo OD</b>: sedation, ataxia, nystagmus, mild resp dep — <b>rarely fatal</b> (ceiling effect)</li><li><b>Mixed OD = fatal</b> (opioid, alcohol, TCA)</li><li><b>Flumazenil</b>: INDICATIONS = procedural oversedation, diagnostic uncertainty ONLY</li><li><b>CONTRAINDICATIONS</b>: TCA/QRS&gt;100, seizure hx, chronic benzo, head injury</li><li><b>Dose</b>: 0.2mg IV q1min max 1mg; re-sedation common (30-60 min duration) → monitor 2-4h</li><li><b>Active metabolites</b>: diazepam → nordazepam, oxazepam (half-life up to 100h)</li><li><b>Urine screen misses</b>: alprazolam, clonazepam, lorazepam, midazolam</li><li><b>Obs</b>: 6h min; 12-24h if long-acting/active metabolites</li><li><b>Withdrawal</b>: diazepam taper; acute = diazepam PRN</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>List 5 flumazenil contraindications</li><li>Why is pure benzo OD rarely fatal?</li><li>Contrast flumazenil indications vs contraindications</li><li>State observation duration by agent type</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Pure benzo OD = ceiling effect = rarely fatal</li><li>Fatalities = mixed OD (opioid, alcohol, TCA)</li><li>Flumazenil restricted indications (procedural, diagnostic)</li><li>Flumazenil contraindications (TCA, seizure hx, chronic use, head injury)</li><li>Re-sedation post-flumazenil</li><li>Active metabolites of diazepam</li><li>Urine screen limitations</li><li>Psych assessment mandatory</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Flumazenil dose and monitoring</li><li>Mixed OD specific management</li><li>Withdrawal: diazepam taper, CIWA-B</li><li>Paradoxical agitation (elderly, kids)</li><li>Charcoal window extended</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Specific agent half-lives (alprazolam 11h, lorazepam 12h, clonazepam 30-40h, diazepam 48h+)</li><li>Flumazenil in pediatric accidental ingestion</li><li>Dexmedetomidine for withdrawal</li><li>Z-drugs vs benzo differences</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Definition + mechanism + ceiling effect</li><li>Clinical features (pure vs mixed)</li><li>DDx table</li><li>Investigations</li><li>Management: supportive → flumazenil (restricted) → naloxone trial → charcoal</li><li>Flumazenil: mechanism, dose, indications, CONTRAINDICATIONS (emphasize)</li><li>Withdrawal</li><li>Complications + prognosis</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Flumazenil contraindications</li><li>Pure vs mixed OD outcomes</li><li>Diazepam metabolites</li><li>Urine screen misses</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Pure benzo OD: ceiling on respiratory depression — rarely fatal"</li><li>"Flumazenil: ONLY for procedural oversedation or diagnostic uncertainty"</li><li>"Flumazenil NO-GO: TCA/QRS&gt;100, seizure history, chronic benzo use, head injury"</li><li>"Re-sedation post-flumazenil: duration 30-60 min, monitor 2-4h"</li><li>"Diazepam metabolites: nordazepam, oxazepam — half-life up to 100h"</li><li>"Urine screen misses: ACLM (alprazolam, clonazepam, lorazepam, midazolam)"</li><li>"Mixed benzo+opioid+alcohol = fatal respiratory depression"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Unknown coma → flumazenil decision depends on ECG (QRS) and history</li><li>Chronic benzo user found comatose → flumazenil = withdrawal seizures</li><li>"Awake" post-flumazenil → must observe 2-4h for re-sedation</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Ceiling effect = pure benzo safe</li><li>Mixed = fatal</li><li>Flumazenil: Procedural/Diagnostic ONLY</li><li>NO-GO: TCA, Seizure, Chronic, Head</li><li>Re-sedation: 30-60 min</li><li>Diazepam → Nord/Oxa (long)</li><li>Screen misses: ACLM</li><li>Obs: 6h min, 12-24h long-acting</li><li>Psych mandatory</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Benzodiazepine poisoning alone has ceiling effect on respiratory depression — rarely fatal. Fatalities from mixed OD (opioid, alcohol, TCA). Flumazenil restricted to procedural oversedation and diagnostic uncertainty; CONTRAINDICATED in TCA co-ingestion (QRS widening), seizure disorder, chronic benzo use, head injury. Re-sedation common (30-60 min duration). Active metabolites of diazepam prolong effect. Urine screen misses ACLM. Observe 6h+ (longer for long-acting). Psych assessment mandatory for DSH.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Benzodiazepine toxidrome?</li></ol>
+<p>A. Mydriasis, tachycardia, hypertension B. CNS depression, respiratory depression (mild), normal/small pupils, hypotonia C. Pinpoint pupils, severe respiratory depression D. Hyperthermia, rigidity, hyperreflexia <b>Answer: B</b> <i>Explanation: Benzo: CNS depression, mild respiratory depression (usually not severe alone), normal or small pupils (NOT pinpoint), hypotonia, ataxia. Synergy with alcohol/opioids.</i></p>
+<ol><li>Flumazenil use criteria?</li></ol>
+<p>A. All benzo overdoses B. Pure benzo overdose ONLY, no seizure risk, no TCA co-ingestion, not chronic benzo use C. Only in children D. Only with opioid co-ingestion <b>Answer: B</b> <i>Explanation: Flumazenil ONLY for: pure benzo overdose, no seizure risk, no TCA co-ingestion, not chronic benzo use. Contraindicated in TCA (unmasks seizures), seizure disorder (withdrawal seizures), chronic use (withdrawal).</i></p>
+<ol><li>Flumazenil dose?</li></ol>
+<p>A. 0.2 mg IV over 15 sec, repeat q1min to max 3 mg B. 2 mg IV once C. 10 mg IV D. 0.04 mg IV <b>Answer: A</b> <i>Explanation: Flumazenil: 0.2 mg IV over 15 sec, repeat 0.2 mg q1min to max 3 mg. Onset 1-2 min, duration 0.7-1.3h (shorter than benzos → re-sedation common).</i></p>
+<ol><li>Benzo + opioid overdose - naloxone given, patient arousable but still respiratory depression. Why?</li></ol>
+<p>A. Naloxone dose too low B. Benzo respiratory depression not reversed by naloxone C. Opioid tolerance D. Sepsis <b>Answer: B</b> <i>Explanation: Mixed OD common. Naloxone reverses ONLY opioid component. Benzo/alcohol respiratory depression persists. Supportive ventilation. Flumazenil ONLY if pure benzo criteria met.</i></p>
+<ol><li>Z-drug (zolpidem/zopiclone) overdose - management?</li></ol>
+<p>A. Flumazenil ineffective B. Flumazenil partially effective (same GABA-A site) C. Specific antidote zolpidem-reverser D. Naloxone <b>Answer: B</b> <i>Explanation: Z-drugs act on GABA-A (BZ1/ω1) subtype. Flumazenil partially reverses but less predictable. Supportive care mainstay. Respiratory depression less than benzos.</i></p>
+<ol><li>Chronic benzo use + flumazenil = ?</li></ol>
+<p>A. Safe reversal B. Withdrawal seizures risk C. No effect D. Prolonged sedation <b>Answer: B</b> <i>Explanation: Flumazenil in chronic benzo use → acute withdrawal → seizures, agitation, delirium. Contraindicated. Supportive care + slow taper for chronic use.</i></p>
+<ol><li>Benzo withdrawal syndrome (PRIME)?</li></ol>
+<p>A. Psychosis, Rebound anxiety, Insomnia, Myoclonus, Epilepsy (seizures) B. Panic, Restlessness, Irritability, Muscle aches, Exhaustion C. Paranoia, Rhabdo, Infection, Malaise, Edema D. Pain, Rigors, Incontinence, Mydriasis, Euphoria <b>Answer: A</b> <i>Explanation: PRIME: Psychosis, Rebound anxiety, Insomnia, Myoclonus, Epilepsy (seizures). Onset 6-12h (short-acting) to 2-3 days (long-acting). Treat with benzo taper.</i></p>
+<ol><li>Alprazolam overdose - specific feature?</li></ol>
+<p>A. More respiratory depression B. More seizures in withdrawal C. No difference from other benzos D. Cardiogenic shock <b>Answer: B</b> <i>Explanation: Alprazolam (short-acting, high potency) → more severe withdrawal, higher seizure risk. Also more depressive CNS effects in overdose.</i></p>
+<ol><li>Benzo overdose - primary cause of death?</li></ol>
+<p>A. Respiratory depression alone B. Mixed overdose (opioids, alcohol) → synergistic respiratory depression C. Cardiac arrhythmia D. Seizures <b>Answer: B</b> <i>Explanation: Benzo alone rarely causes fatal respiratory depression. Death usually from SYNERGISTIC respiratory depression with opioids, alcohol, other sedatives.</i></p>
+<ol><li>Flumazenil half-life vs benzo half-life?</li></ol>
+<p>A. Flumazenil longer B. Flumazenil shorter (0.7-1.3h) → re-sedation common C. Equal D. Unpredictable <b>Answer: B</b> <i>Explanation: Flumazenil t½ 0.7-1.3h &lt; most benzos → re-sedation COMMON. Monitor 2-3h post-flumazenil. Consider infusion if repeated doses needed.</i></p>
+<ol><li>Benzo overdose - activated charcoal role?</li></ol>
+<p>A. Always indicated B. Rarely indicated (poor adsorption, aspiration risk in sedated) C. Only if &lt; 1h D. Contraindicated <b>Answer: B</b> <i>Explanation: Charcoal poorly adsorbs benzos. Aspiration risk high in sedated patients. Rarely indicated. Supportive care mainstay.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Patient found drowsy with empty diazepam bottle. GCS 10, RR 12, pupils normal. Best management?</li></ol>
+<p>A. Flumazenil 0.2mg IV B. Supportive care, observe, psych assessment C. Naloxone D. Activated charcoal <b>Answer: B</b> <i>Explanation: Pure benzo overdose: supportive care. Flumazenil rarely needed (short duration, re-sedation, contraindications). Observe for respiratory depression (synergy with alcohol). Psych assessment mandatory.</i></p>
+<ol><li>Benzo + alcohol overdose. RR 8, GCS 6. Naloxone 0.4mg given, no response. Next?</li></ol>
+<p>A. More naloxone B. Intubate + supportive ventilation C. Flumazenil D. Charcoal <b>Answer: B</b> <i>Explanation: Naloxone reverses opioid only. This is benzo + alcohol (no opioid). Flumazenil contraindicated if seizure risk/unknown co-ingestion. Intubate, supportive ventilation. Most recover with support.</i></p>
+<ol><li>Chronic diazepam user given flumazenil for overdose. 30 min later, generalized seizure. Why?</li></ol>
+<p>A. Flumazenil pro-convulsant B. Acute benzo withdrawal precipitated by flumazenil C. Diazepam toxicity D. Hypoglycemia <b>Answer: B</b> <i>Explanation: Flumazenil in chronic benzo use → acute withdrawal → seizures. Contraindicated. Supportive care + benzo taper for chronic use.</i></p>
+<ol><li>Zolpidem overdose. Patient confused, ataxic, normal pupils. Flumazenil?</li></ol>
+<p>A. Not effective B. Partially effective (GABA-A BZ1 subtype) C. Contraindicated D. First line <b>Answer: B</b> <i>Explanation: Z-drugs act on GABA-A BZ1/ω1 subtype. Flumazenil partially reverses but less predictable than benzos. Supportive care mainstay. Not first-line.</i></p>
+<ol><li>Alprazolam overdose vs diazepam - difference?</li></ol>
+<p>A. Alprazolam longer half-life B. Alprazolam more severe withdrawal, higher seizure risk C. No difference D. Alprazolam less respiratory depression <b>Answer: B</b> <i>Explanation: Alprazolam: short-acting, high potency → more severe withdrawal, higher seizure risk, more depressive CNS effects. Withdrawal onset 6-12h.</i></p>
+<ol><li>Benzo overdose, GCS 8, RR 10. Intubate?</li></ol>
+<p>A. Yes, GCS &lt; 8 B. No, benzos rarely need intubation alone C. Only if flumazenil fails D. Only if opioid co-ingestion <b>Answer: A</b> <i>Explanation: GCS &lt; 8 = airway protection needed regardless of agent. Intubate. But pure benzo alone rarely causes severe resp depression - check for co-ingestion.</i></p>
+<ol><li>Flumazenil given, patient wakes, 1 hour later drowsy again. Why?</li></ol>
+<p>A. Benzo re-absorption B. Flumazenil half-life (0.7-1.3h) shorter than benzo → re-sedation C. New pill ingestion D. Flumazenil tolerance <b>Answer: B</b> <i>Explanation: Flumazenil t½ 0.7-1.3h &lt; benzo t½ → re-sedation common. Monitor 2-3h. Consider infusion if repeated boluses needed (rare).</i></p>
+<ol><li>Mixed benzo + TCA overdose. Seizures occur. Give flumazenil?</li></ol>
+<p>A. Yes, for benzo reversal B. NO - CONTRAINDICATED (unmasks TCA seizures) C. Only if seizures not controlled D. Yes, with phenytoin <b>Answer: B</b> <i>Explanation: Flumazenil CONTRAINDICATED in TCA co-ingestion → unmasks TCA seizures + lowers seizure threshold. Also contraindicated: seizure disorder, chronic benzo use.</i></p>
+<ol><li>Benzo withdrawal - when does it peak for short-acting (alprazolam)?</li></ol>
+<p>A. 6-12 hours B. 24-48 hours C. 3-5 days D. 1-2 weeks <b>Answer: A</b> <i>Explanation: Short-acting (alprazolam, lorazepam): withdrawal onset 6-12h, peak 24-48h. Long-acting (diazepam): onset 2-3 days, peak 5-7d. PRIME mnemonic.</i></p>
+<ol><li>Benzo overdose + unknown co-ingestion. Safest approach?</li></ol>
+<p>A. Flumazenil + naloxone empirically B. Supportive care + psych assessment C. Charcoal + flumazenil D. Intubate all <b>Answer: B</b> <i>Explanation: Unknown co-ingestion = flumazenil risky (TCA, seizure disorder). Supportive care (airway, ventilation) + observation + psych assessment is safest. Most recover with support.</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Benzo toxidrome?</li></ul>
+<p>A: CNS depression, mild resp depression, normal/small pupils (NOT pinpoint), hypotonia, ataxia. Synergy with alcohol/opioids.</p>
+<ul><li>Q: Flumazenil indications?</li></ul>
+<p>A: Pure benzo ONLY. No seizure risk, no TCA co-ingestion, not chronic use. Rarely needed (supportive mainstay).</p>
+<ul><li>Q: Flumazenil dose?</li></ul>
+<p>A: 0.2mg IV over 15sec, repeat q1min to max 3mg. t½ 0.7-1.3h &lt; benzo → re-sedation common.</p>
+<ul><li>Q: Flumazenil contraindications?</li></ul>
+<p>A: TCA co-ingestion (unmasks seizures), seizure disorder (withdrawal seizures), chronic benzo use (withdrawal).</p>
+<ul><li>Q: Benzo + opioid OD - naloxone effect?</li></ul>
+<p>A: Reverses ONLY opioid component. Benzo resp depression persists. Supportive ventilation.</p>
+<ul><li>Q: Z-drugs + flumazenil?</li></ul>
+<p>A: Partial reversal (GABA-A BZ1/ω1). Less predictable. Supportive care mainstay.</p>
+<ul><li>Q: Chronic benzo + flumazenil?</li></ul>
+<p>A: Acute withdrawal → seizures, agitation. CONTRAINDICATED. Slow taper for chronic use.</p>
+<ul><li>Q: Benzo withdrawal PRIME?</li></ul>
+<p>A: Psychosis, Rebound anxiety, Insomnia, Myoclonus, Epilepsy (seizures). Onset: short-acting 6-12h, long-acting 2-3d.</p>
+<ul><li>Q: Alprazolam specific?</li></ul>
+<p>A: Short-acting, high potency → more severe withdrawal, higher seizure risk, more CNS depression.</p>
+<ul><li>Q: Benzo alone - fatal resp depression?</li></ul>
+<p>A: Rare. Death from SYNERGISTIC resp depression with opioids/alcohol/other sedatives.</p>
+<ul><li>Q: Charcoal in benzo OD?</li></ul>
+<p>A: Poor adsorption. Aspiration risk in sedated. Rarely indicated. Supportive care mainstay.</p>
+<ul><li>Q: Flumazenil re-sedation?</li></ul>
+<p>A: Flumazenil t½ 0.7-1.3h &lt; benzo → re-sedation COMMON. Monitor 2-3h post-dose.</p>
+<ul><li>Q: TCA + benzo OD + seizures?</li></ul>
+<p>A: Flumazenil CONTRAINDICATED. Benzo for seizures (lorazepam). NaHCO₃ for TCA cardiotoxicity.</p>
+<ul><li>Q: Benzo OD + unknown pills?</li></ul>
+<p>A: Supportive care + observation + psych assessment. Avoid empirical flumazenil/naloxone if co-ingestion unknown.</p>
+<ul><li>Q: Benzo OD disposition?</li></ul>
+<p>A: Recover with support → psych assessment mandatory (DSH). Observe for re-sedation if flumazenil given.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> - Benzo: CNS depression, mild respiratory depression (usually not severe alone), normal or small pupils (NOT pinpoint), hypotonia, ataxia. Synergy with alcohol/opioids.</li><li><b>B</b> - Flumazenil ONLY for: pure benzo overdose, no seizure risk, no TCA co-ingestion, not chronic benzo use. Contraindicated in TCA (unmasks seizures), seizure disorder (withdrawal seizures), chronic use (withdrawal).</li><li><b>A</b> - Flumazenil: 0.2 mg IV over 15 sec, repeat 0.2 mg q1min to max 3 mg. Onset 1-2 min, duration 0.7-1.3h (shorter than benzos → re-sedation common).</li><li><b>B</b> - Mixed OD common. Naloxone reverses ONLY opioid component. Benzo/alcohol respiratory depression persists. Supportive ventilation. Flumazenil ONLY if pure benzo criteria met.</li><li><b>B</b> - Z-drugs act on GABA-A (BZ1/ω1) subtype. Flumazenil partially reverses but less predictable. Supportive care mainstay. Respiratory depression less than benzos.</li><li><b>B</b> - Flumazenil in chronic benzo use → acute withdrawal → seizures, agitation, delirium. Contraindicated. Supportive care + slow taper for chronic use.</li><li><b>A</b> - PRIME: Psychosis, Rebound anxiety, Insomnia, Myoclonus, Epilepsy (seizures). Onset 6-12h (short-acting) to 2-3 days (long-acting). Treat with benzo taper.</li><li><b>B</b> - Alprazolam (short-acting, high potency) → more severe withdrawal, higher seizure risk. Also more depressive CNS effects in overdose.</li><li><b>B</b> - Benzo alone rarely causes fatal respiratory depression. Death usually from SYNERGISTIC respiratory depression with opioids, alcohol, other sedatives.</li><li><b>B</b> - Flumazenil t½ 0.7-1.3h &lt; most benzos → re-sedation COMMON. Monitor 2-3h post-flumazenil. Consider infusion if repeated doses needed.</li><li><b>B</b> - Charcoal poorly adsorbs benzos. Aspiration risk high in sedated patients. Rarely indicated. Supportive care mainstay.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> - Pure benzo overdose: supportive care. Flumazenil rarely needed (short duration, re-sedation, contraindications). Observe for respiratory depression (synergy with alcohol). Psych assessment mandatory.</li><li><b>B</b> - Naloxone reverses opioid only. This is benzo + alcohol (no opioid). Flumazenil contraindicated if seizure risk/unknown co-ingestion. Intubate, supportive ventilation. Most recover with support.</li><li><b>B</b> - Flumazenil in chronic benzo use → acute withdrawal → seizures. Contraindicated. Supportive care + benzo taper for chronic use.</li><li><b>B</b> - Z-drugs act on GABA-A BZ1/ω1 subtype. Flumazenil partially reverses but less predictable than benzos. Supportive care mainstay. Not first-line.</li><li><b>B</b> - Alprazolam: short-acting, high potency → more severe withdrawal, higher seizure risk, more depressive CNS effects. Withdrawal onset 6-12h.</li><li><b>A</b> - GCS &lt; 8 = airway protection needed regardless of agent. Intubate. But pure benzo alone rarely causes severe resp depression - check for co-ingestion.</li><li><b>B</b> - Flumazenil t½ 0.7-1.3h &lt; benzo t½ → re-sedation common. Monitor 2-3h. Consider infusion if repeated boluses needed (rare).</li><li><b>B</b> - Flumazenil CONTRAINDICATED in TCA co-ingestion → unmasks TCA seizures + lowers seizure threshold. Also contraindicated: seizure disorder, chronic benzo use.</li><li><b>A</b> - Short-acting (alprazolam, lorazepam): withdrawal onset 6-12h, peak 24-48h. Long-acting (diazepam): onset 2-3 days, peak 5-7d. PRIME mnemonic.</li><li><b>B</b> - Unknown co-ingestion = flumazenil risky (TCA, seizure disorder). Supportive care (airway, ventilation) + observation + psych assessment is safest. Most recover with support.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Benzodiazepine Poisoning · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

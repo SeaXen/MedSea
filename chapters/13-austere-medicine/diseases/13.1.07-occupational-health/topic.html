@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Occupational Health — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">MEDICINE IN AUSTERE ENVIRONMENTS</span>
+      <div class="h1">Occupational Health</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply <b>Principles of Occupational Medicine</b>: Hierarchy of controls, risk assessment, health surveillance</li><li>[ ] Diagnose <b>Pneumoconioses</b>: Silicosis, Asbestosis, Coal Workers' Pneumoconiosis, Berylliosis, Siderosis</li><li>[ ] Diagnose <b>Occupational Asthma &amp; Airways Disease</b>: Sensitisers, Irritants, RADS, Work-exacerbated asthma</li><li>[ ] Manage <b>Occupational Dermatoses</b>: Contact dermatitis, Occupational skin cancer</li><li>[ ] Manage <b>Musculoskeletal Disorders</b>: WRULDs, Back Pain, Vibration White Finger</li><li>[ ] Manage <b>Noise-Induced Hearing Loss</b>: Audiometry, Noise Control</li><li>[ ] Recognise <b>Occupational Cancers</b>: Mesothelioma, Bladder, Nasal Sinus, Leukaemia, Skin</li><li>[ ] Apply <b>Health Surveillance</b>: Biological monitoring, Fitness for work, Return to work</li><li>[ ] Apply <b>Legislation</b>: ILO Conventions, WHO Global Plan, National OSH Laws, Workers' Compensation</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Principles of Occupational Medicine</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Hierarchy of Controls (Most to Least Effective)</div>
+<table class="ctable"><tr><th>Level</th><th>Control Measure</th><th>Examples</th></tr><tr><td>-------</td><td>----------------</td><td>----------</td></tr><tr><td>**1. Elimination**</td><td>**Remove hazard completely**</td><td>Substitute hazardous chemical, Automate process</td></tr><tr><td>**2. Substitution**</td><td>**Replace with less hazardous**</td><td>Water-based paint instead of solvent-based</td></tr><tr><td>**3. Engineering Controls**</td><td>**Isolate people from hazard**</td><td>Local exhaust ventilation, Machine guarding, Enclosure</td></tr><tr><td>**4. Administrative Controls**</td><td>**Change how people work**</td><td>Job rotation, Training, Work schedules, Signage</td></tr><tr><td>**5. PPE**</td><td>**Protect worker with equipment**</td><td>Respirators, Gloves, Goggles, Hearing protection</td></tr></table>
+<div class="callout">[!tip] <b>Hierarchy = ELIMINATE → SUBSTITUTE → ENGINEER → ADMIN → PPE</b>. <b>Higher Levels = More Effective &amp; Reliable</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Pneumoconioses (Occupational Lung Diseases)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Major Pneumoconioses</div>
+<table class="ctable"><tr><th>Disease</th><th>Agent</th><th>Pathology</th><th>Clinical / Radiology</th><th>Latency</th><th>High-Risk Occupations</th></tr><tr><td>---------</td><td>-------</td><td>-----------</td><td>---------------------</td><td>---------</td><td>----------------------</td></tr><tr><td>**Silicosis**</td><td>**Crystalline Silica (Quartz, Cristobalite, Tridymite)**</td><td>Nodular Fibrosis, **Eggshell Calcification** of Hilar Nodes, PMF</td><td>**Chronic (10-20y)**: Dyspnoea, Cough, Progressive Massive Fibrosis (PMF)<br>**Accelerated (5-10y)**<br>**Acute (Silicoproteinosis)**: <1yr, Alveolar Filling</td><td>**10-30 Years**</td><td>Mining, Quarrying, Sandblasting, Tunnelling, Stone Cutting, Foundry, Glass/Ceramic</td></tr><tr><td>**Asbestosis**</td><td>**Asbestos Fibres** (Chrysotile, Amphiboles)</td><td>**Diffuse Interstitial Fibrosis**, **Pleural Plaques**, **Pleural Thickening**, **Mesothelioma**</td><td>**Dyspnoea, Bibasal Crackles, Clubbing**, **Pleural Plaques (Calcified, Diaphragm)**, **Honeycombing (Late)**</td><td>**20-40 Years**</td><td>Insulation, Shipbuilding, Construction, Demolition, Brake Repair, Textiles</td></tr><tr><td>**Coal Workers' Pneumoconiosis (CWP)**</td><td>**Coal Dust (Carbon)**</td><td>**Simple CWP**: Small Rounded Opacities<br>**Complicated (PMF)**: Large Opacities >1cm</td><td>**Simple**: Asymptomatic / Mild Dyspnoea<br>**PMF**: Progressive Dyspnoea, Respiratory Failure, Cor Pulmonale</td><td>**20-30 Years**</td><td>**Coal Mining** (Face Workers, Cutters)</td></tr><tr><td>**Berylliosis**</td><td>**Beryllium**</td><td>**Non-Caseating Granulomas** (Like Sarcoidosis), **Hilar Lymphadenopathy**</td><td>**Cough, Dyspnoea, Fatigue**, **Skin Lesions**, **Hypercalcemia**</td><td>**Months-Years**</td><td>Aerospace, Electronics, Nuclear, Ceramics, Dental Alloys</td></tr><tr><td>**Siderosis**</td><td>**Iron Oxide (Fe₂O₃)**</td><td>**Benign**, **Fine Reticular Opacities**, **No Fibrosis**</td><td>Usually Asymptomatic</td><td>Short</td><td>Welding, Foundry, Mining</td></tr><tr><td>**Stannosis**</td><td>**Tin Oxide**</td><td>**Benign**, **Fine Nodular Opacities**</td><td>Asymptomatic</td><td>Long</td><td>Tin Smelting, Plating</td></tr><tr><td>**Byssinosis**</td><td>**Cotton Dust**</td><td>**Airway Obstruction**, **Monday Chest Tightness**</td><td>**Monday Chest Tightness**, **Chronic Airways Obstruction**</td><td>Variable</td><td>Cotton, Flax, Hemp Processing</td></tr><tr><td>**Bagassosis**</td><td>**Bagasse (Sugarcane Fibre)**</td><td>**Extrinsic Allergic Alveolitis**, **Granulomas**</td><td>**Fever, Cough, Dyspnoea**, **Recurrent**</td><td>Months-Years</td><td>Sugarcane Processing</td></tr><tr><td>**Farmer's Lung**</td><td>**Mouldy Hay (Thermophilic Actinomycetes)**</td><td>**Extrinsic Allergic Alveolitis**</td><td>**Fever, Cough, Dyspnoea 4-8h Post-Exposure**, **Recurrent**</td><td>Variable</td><td>Farming (Mouldy Hay/Straw)</td></tr></table>
+<div class="callout">[!tip] <b>Silicosis = Eggshell Calcification of Hilar Nodes + PMF</b>. <b>Asbestosis = Pleural Plaques + Basal Fibrosis + Mesothelioma Risk</b>. <b>CWP = Small Rounded Opacities → PMF</b>. <b>Berylliosis = Granulomas + HLA-DPB1 Risk</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Occupational Asthma & Airways Disease</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classification</div>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Key Features</th></tr><tr><td>------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Immunological (Sensitiser-Induced)**</td><td>**IgE-Mediated** (High MW: Flour, Enzymes, Latex, Animals) OR **Non-IgE (Low MW: Isocyanates, Acid Anhydrides, Wood Dust, Colophony)**</td><td>**Latent Period** (Months-Years), **Work-Related Symptoms** (Better on Days Off/Weekends), **Specific IgE (HMAs)**</td></tr><tr><td>**Irritant-Induced (RADS / IIA)**</td><td>**Single High-Level Exposure** → **Reactive Airways Dysfunction Syndrome (RADS)** / **Irritant-Induced Asthma (IIA)**</td><td>**No Latent Period**, **Onset ≤24h Post-Exposure**, **Persists >3 Months**</td></tr><tr><td>**Work-Exacerbated Asthma**</td><td>**Pre-Existing Asthma Worsened** by Workplace Triggers</td><td>**Pre-Existing Asthma**, **Worse at Work**, **Improves Away**</td></tr></table>
+<div class="sub-h">Common Sensitisers</div>
+<table class="ctable"><tr><th>High Molecular Weight (>5kDa)</th><th>Low Molecular Weight (<5kDa)</th></tr><tr><td>------------------------------</td><td>------------------------------</td></tr><tr><td>**Flour / Grains** (Bakers)</td><td>**Isocyanates** (Spray Painting, PU Foam)</td></tr><tr><td>**Enzymes** (Amylase, Subtilisin)</td><td>**Acid Anhydrides** (Epoxy Resins)</td></tr><tr><td>**Latex** (Healthcare)</td><td>**Wood Dust** (Carpentry)</td></tr><tr><td>**Laboratory Animals** (Urine/Dander)</td><td>**Colophony / Rosin** (Soldering)</td></tr><tr><td>**Insects / Mites**</td><td>**Platinum Salts** (Refining)</td></tr><tr><td>**Fish / Seafood** (Processing)</td><td>**Persulphates** (Hairdressing)</td></tr><tr><td>**Seafood**</td><td>**Glutaraldehyde** (Disinfection)</td></tr></table>
+<div class="callout">[!tip] <b>Occupational Asthma = Work-Related Symptoms + Objective Evidence (PEF Variability, Specific IgE, SIC)</b>. <b>Isocyanates = Most Common Cause (LMW)</b>. <b>Flour/Grains = Most Common HMW</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Occupational Dermatoses</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Common Causes</th><th>Key Features</th></tr><tr><td>------</td><td>-----------</td><td>---------------</td><td>--------------</td></tr><tr><td>**Allergic Contact Dermatitis**</td><td>**Type IV Hypersensitivity** (Sensitisation → Elicitation)</td><td>**Nickel, Chromate (Cement), Rubber Accelerators, Epoxy, Formaldehyde, Biocides, Fragrances**</td><td>**Itchy Eczema**, **Work-Related**, **Patch Test +ve**</td></tr><tr><td>**Irritant Contact Dermatitis**</td><td>**Direct Toxic Damage** (No Sensitisation)</td><td>**Water/Soap (Wet Work), Solvents, Acids/Alkalis, Cutting Oils, Fibreglass**</td><td>**Burning/Stinging**, **Immediate**, **No Sensitisation Required**</td></tr><tr><td>**Contact Urticaria**</td><td>**Type I (IgE) / Non-Immunological**</td><td>**Latex, Foods, Enzymes, Animals**</td><td>**Wheal/Flare Within Minutes**, **Systemic Risk**</td></tr><tr><td>**Occupational Skin Cancer**</td><td>**Carcinogen + UV**</td><td>**Arsenic, Coal Tar, Pitch, Creosote, Mineral Oils, UV (Outdoor)**</td><td>**SCC, BCC, Keratoacanthoma** (Sun-Exposed Sites)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📖 Musculoskeletal Disorders</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Disorder</th><th>Key Features</th><th>Risk Factors</th><th>Assessment</th></tr><tr><td>----------</td><td>--------------</td><td>--------------</td><td>------------</td></tr><tr><td>**WRULDs (Work-Related Upper Limb Disorders)**</td><td>**Neck/Shoulder/Arm/Hand Pain**, Numbness, Tingling, Weakness</td><td>**Repetition, Force, Posture, Vibration, Cold, Psychosocial**</td><td>**History, Examination, Nerve Conduction Studies**</td></tr><tr><td>**Carpal Tunnel Syndrome**</td><td>**Median Nerve Compression** → **Nocturnal Paraesthesia (Thumb-Index-Middle), Thenar Wasting**</td><td>**Repetition, Force, Vibration, Wrist Flexion/Extension**</td><td>**Phalen's, Tinel's, NCS**</td></tr><tr><td>**Back Pain (Occupational)**</td><td>**Mechanical Low Back Pain**, **Sciatica** (Disc Prolapse)</td><td>**Heavy Lifting, Awkward Posture, Vibration, Static Posture**</td><td>**History, Exam, MRI (Red Flags)**</td></tr><tr><td>**Hand-Arm Vibration Syndrome (HAVS)**</td><td>**Vibration White Finger (Raynaud's)**, **Sensorineural** (Numbness, Tingling), **Carpal Tunnel**</td><td>**Hand-Held Power Tools** (Breakers, Grinders, Chainsaws)</td><td>**Stockholm Workshop Scale**, **Cold Provocation Test**</td></tr><tr><td>**Whole-Body Vibration**</td><td>**Low Back Pain**, **Sciatica**, **Digestive**</td><td>**Heavy Machinery (Tractors, Trucks, Forklifts)**</td><td>**ISO 2631**, **MRI Spine**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📖 Noise-Induced Hearing Loss (NIHL)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Pathophysiology**</td><td>**Noise → Hair Cell Damage (Cochlea) → Permanent Threshold Shift**</td></tr><tr><td>**Audiometry**</td><td>**Notch at 4-6 kHz** (Classic), **Progressive to Speech Frequencies**</td></tr><tr><td>**Diagnosis**</td><td>**Bilateral Symmetric SNHL**, **Noise Exposure History**, **Audiogram Notch**</td></tr><tr><td>**Prevention**</td><td>**Hierarchy of Controls**: **Eliminate → Engineering (Enclosure, Silencers) → Administrative (Rotation, Time Limits) → Hearing Protection (Earplugs/Muffs)**</td></tr><tr><td>**Audiometric Monitoring**</td><td>**Baseline + Periodic (Annual/Biennial)**, **STS (Standard Threshold Shift) = 10dB Shift at 2/3/4 kHz**</td></tr><tr><td>**Regulations**</td><td>**Action Level: 80 dB(A)**, **Limit Value: 85 dB(A) (8h TWA)**, **Peak: 137 dB(C)**</td></tr></table>
+<div class="callout">[!warning] <b>NIHL = Permanent, Irreversible, Bilateral, 4-6 kHz Notch</b>. <b>Prevention = Hierarchy of Controls</b>. <b>Audiometry = Surveillance Tool</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📖 Occupational Cancers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cancer</th><th>Occupational Agent</th><th>High-Risk Occupations</th></tr><tr><td>--------</td><td>-------------------</td><td>----------------------</td></tr><tr><td>**Mesothelioma**</td><td>**Asbestos** (All Types)</td><td>Insulation, Shipbuilding, Construction, Brake Repair</td></tr><tr><td>**Lung Cancer**</td><td>**Asbestos, Arsenic, Arsenic, Chromium (VI), Nickel, Nickel, Cadmium, Beryllium, Silica, Diesel Exhaust, Radon, PAHs**</td><td>Mining, Smelting, Smelting, Foundry, Painting, Roofing, Uranium Mining</td></tr><tr><td>**Bladder Cancer**</td><td>**Aromatic Amines (Benzidine, β-Naphthylamine, 4-Aminobiphenyl), PAHs, Diesel Exhaust**</td><td>Dye/Rubber/Leather/Textile Industry, Truck Drivers</td></tr><tr><td>**Nasal Sinus Cancer**</td><td>**Wood Dust, Leather Dust, Formaldehyde, Nickel, Chromium (VI)**</td><td>Furniture, Woodworking, Boot/Shoe, Nickel Refining</td></tr><tr><td>**Leukaemia**</td><td>**Benzene, Ionising Radiation, Ethylene Oxide, 1,3-Butadiene**</td><td>Petrochemical, Rubber, Shoe, Chemical, Radiology</td></tr><tr><td>**Skin Cancer (SCC)**</td><td>**Arsenic, Coal Tar, Pitch, Creosote, Mineral Oils, UV Radiation**</td><td>Copper Smelting, Pesticide Application, Roofing, Outdoor Work</td></tr><tr><td>**Angiosarcoma (Liver)**</td><td>**Vinyl Chloride, Arsenic, Thorotrast**</td><td>PVC Production, Arsenical Pesticides, Contrast Media (Historical)</td></tr><tr><td>**Laryngeal Cancer**</td><td>**Asbestos, Sulphuric Acid, Mustard Gas, Isopropyl Alcohol**</td><td>Strong Acid Manufacture, Isopropyl Alcohol Production</td></tr></table>
+<div class="callout">[!warning] <b>Asbestos = Mesothelioma (Signature), Lung Cancer, Asbestosis, Pleural Plaques</b>. <b>Benzene = AML</b>. <b>Arsenic = Skin/Lung/Bladder Cancer + Keratosis</b>. <b>Benzidine/β-Naphthylamine = Bladder Cancer</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📖 Health Surveillance & Fitness for Work</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Health Surveillance — When Required</div>
+<table class="ctable"><tr><th>Indication</th><th>Surveillance Components</th></tr><tr><td>------------</td><td>------------------------</td></tr><tr><td>**Exposure to Hazard** (Noise, Vibration, Chemicals, Dust, Radiation, Biological Agents, Compressed Air)</td><td>**Baseline + Periodic** (History, Exam, Investigations)</td></tr><tr><td>**Specific Regulations** (Asbestos, Lead, Asbestos, Ionising Radiation, Compressed Air, Diving)</td><td>**Statutory Medicals** (Frequency Defined by Regulation)</td></tr><tr><td>**Fitness for Work**</td><td>**Pre-Placement**, **Return to Work**, **Ill-Health Retirement**</td></tr></table>
+<div class="sub-h">Biological Monitoring</div>
+<table class="ctable"><tr><th>Substance</th><th>Matrix</th><th>Frequency</th><th>Action Level</th></tr><tr><td>-----------</td><td>--------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Lead**</td><td>Blood</td><td>**3-6 Monthly**</td><td>**>20 µg/dL (Action), >50 µg/dL (Suspend)**</td></tr><tr><td>**Cadmium**</td><td>Urine (Cd), Blood</td><td>**6-12 Monthly**</td><td>**Urine Cd >5 µg/g Creatinine**</td></tr><tr><td>**Mercury**</td><td>Urine (Inorganic), Blood (MeHg)</td><td>**6 Monthly**</td><td>**Urine Hg >50 µg/g Creatinine**</td></tr><tr><td>**Cholinesterase** (OP Exposure)</td><td>Blood (RBC/Plasma)</td><td>**Pre-Employment, Periodic**</td><td>**<50% Baseline**</td></tr><tr><td>**Solvents** (Toluene, Styrene, n-Hexane)</td><td>Urine (Metabolites)</td><td>**End of Shift/Week**</td><td>**Biological Guidance Values**</td></tr><tr><td>**Isocyanates**</td><td>Urine (Diamines)</td><td>**Monthly**</td><td>**Biological Monitoring Guidance Values**</td></tr><tr><td>**Chromium (VI)**</td><td>Urine (Cr)</td><td>**End of Shift/Week**</td><td>**>10 µg/L**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📖 Fitness for Work & Return to Work</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Assessment</th><th>Purpose</th><th>Components</th></tr><tr><td>------------</td><td>---------</td><td>------------</td></tr><tr><td>**Pre-Placement**</td><td>**Match Capability to Job Demands**</td><td>History, Exam, Functional Tests, Investigations (Per Job)</td></tr><tr><td>**Periodic**</td><td>**Detect Early Disease**, **Fitness Maintenance**</td><td>**Risk-Based Frequency**</td></tr><tr><td>**Return to Work**</td><td>**Safe/Early Return After Illness/Injury**</td><td>**Functional Capacity Evaluation**, **Workplace Adjustments**, **Phased Return**</td></tr><tr><td>**Ill-Health Retirement**</td><td>**Permanent Incapacity**</td><td>**Medical Evidence**, **Pension Advice**</td></tr></table>
+<div class="sub-h">Fitness Standards (Examples)</div>
+<table class="ctable"><tr><th>Job Category</th><th>Key Requirements</th></tr><tr><td>--------------</td><td>------------------</td></tr><tr><td>**Divers / Compressed Air Workers**</td><td>**Cardiovascular, Respiratory, ENT, Neurological, Musculoskeletal, Psychological**</td></tr><tr><td>**Drivers (LGV/PCV)**</td><td>**Vision (6/7.5), CVD, Diabetes, Epilepsy, Psychiatric, Sleep Apnoea**</td></tr><tr><td>**Offshore Workers**</td><td>**Fitness for Emergency Response**, **BMI <35**, **Cardiorespiratory Fitness**</td></tr><tr><td>**Firefighters**</td><td>**Cardiorespiratory Fitness (VO₂max), Musculoskeletal, Psychological**</td></tr><tr><td>**Food Handlers**</td><td>**No Communicable Disease**, **Hand Hygiene**, **Skin Integrity**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📖 Legislation & Compensation (UK Context / General Principles)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Framework</th><th>Key Provisions</th></tr><tr><td>-----------</td><td>----------------</td></tr><tr><td>**ILO Conventions**</td><td>**C155 (OSH Framework)**, **C161 (OH Services)**, **C170 (Chemicals)**, **C184 (Agri OSH)**</td></tr><tr><td>**EU Directives**</td><td>**89/391 (Framework), 2009/104 (Work Equipment), 2003/10 (Noise), 2004/37 (Carcinogens/Mutagens), 2009/148 (Asbestos)**</td></tr><tr><td>**UK HSWA 1974**</td><td>**Employer Duty: Ensure Health, Safety, Welfare** (So Far as Reasonably Practicable)</td></tr><tr><td>**Management of HSW Regs 1999**</td><td>**Risk Assessment**, **Competent Person**, **Health Surveillance**, **Emergency Procedures**</td></tr><tr><td>**COSHH 2002**</td><td>**Assess Risk**, **Control (Hierarchy)**, **Monitor**, **Health Surveillance**, **Information/Training**</td></tr><tr><td>**RIDDOR 2013**</td><td>**Reportable: Death, Specified Injuries, >7-Day Absence, Occupational Diseases, Dangerous Occurrences**</td></tr><tr><td>**Workers' Compensation**</td><td>**No-Fault (Industrial Injuries Disable Benefit)**, **Prescribed Diseases List (PDL)**</td></tr></table>
+<div class="callout">[!tip] <b>Prescribed Diseases (UK) Include</b>: <b>Mesothelioma, Asbestosis, Silicosis, CWP, Byssinosis, Occupational Asthma, NIHL, HAVS, WRULDs, Contact Dermatitis, Occupational Cancers (Prescribed List), Infectious Diseases (Lab/Animal Workers)</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🛡️ Risk Assessment — COSHH Approach</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Identify Hazards**</td><td>**Inventory Substances**, **Review SDS**, **Walkthrough**, **Task Analysis**</td></tr><tr><td>**2. Assess Risk**</td><td>**Likelihood × Severity**, **Who is Exposed?**, **Duration/Frequency**, **Existing Controls**</td></tr><tr><td>**3. Control Measures**</td><td>**Hierarchy of Controls (Eliminate → Substitute → Engineering → Admin → PPE)**</td></tr><tr><td>**4. Implement Controls**</td><td>**Engineering (LEV, Enclosure), Admin (Rotation, Training), PPE (Fit-Tested)**</td></tr><tr><td>**5. Monitor & Review**</td><td>**Exposure Monitoring (Air, Biological), Health Surveillance, Incident Review, Annual Review**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Hierarchy of Controls**</td><td>**Eliminate → Substitute → Engineering → Admin → PPE**</td></tr><tr><td>**Silicosis**</td><td>**Silica, Eggshell Calcification, PMF**, Mining/Sandblasting</td></tr><tr><td>**Asbestosis**</td><td>**Pleural Plaques + Basal Fibrosis + Mesothelioma**, Latency 20-40y</td></tr><tr><td>**CWP**</td><td>**Simple (Nodules) → PMF**, Coal Mining</td></tr><tr><td>**Occupational Asthma**</td><td>**Sensitiser (IgE/Non-IgE) vs Irritant (RADS/IIA)**, **PEF Variability, SIC**</td></tr><tr><td>**Occupational Dermatitis**</td><td>**Allergic (Patch Test) vs Irritant**, **Nickel, Chromate, Epoxy, Wet Work**</td></tr><tr><td>**HAVS**</td><td>**Vibration White Finger + Sensorineural**, Power Tools, Stockholm Scale</td></tr><tr><td>**NIHL**</td><td>**4-6 kHz Notch**, **Audiometry Surveillance**, **Hierarchy of Controls**</td></tr><tr><td>**Occupational Cancers**</td><td>**Asbestos→Mesothelioma, Benzene→AML, Arsenic→Skin/Lung/Bladder, Wood Dust→Nasal**</td></tr><tr><td>**Health Surveillance**</td><td>**Risk-Based**, **Biological Monitoring (Pb, Cd, Hg, ChE, Solvents)**</td></tr><tr><td>**Fitness for Work**</td><td>**Pre-Placement, Periodic, RTW, Ill-Health Retirement**</td></tr><tr><td>**Hierarchy of Controls**</td><td>**Eliminate > Substitute > Engineering > Admin > PPE**</td></tr><tr><td>**COPD**</td><td>**Coal, Silica, Cd, Welding Fumes, Grain Dust, Cotton (Byssinosis)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the hierarchy of controls in occupational health?</b></li></ol>
+<ul><li><b>Eliminate → Substitute → Engineering → Administrative → PPE</b> (Most to Least Effective)</li></ul>
+<ol><li><b>What are the radiographic features of Silicosis?</b></li></ol>
+<ul><li><b>Small Rounded Opacities (Simple), Progressive Massive Fibrosis (PMF), Eggshell Calcification of Hilar Nodes</b>.</li></ul>
+<ol><li><b>How do you differentiate Occupational Asthma from Work-Exacerbated Asthma?</b></li></ol>
+<ul><li><b>OA = New Asthma Caused by Work (Latent Period, Sensitiser/Irritant)</b>; <b>WEA = Pre-existing Asthma Worsened by Work</b>.</li></ul>
+<ol><li><b>What is the classic radiographic finding in Asbestosis?</b></li></ol>
+<ul><li><b>Pleural Plaques (Calcified, Diaphragm), Basal Interstitial Fibrosis, Honeycombing (Late)</b>.</li></ul>
+<ol><li><b>What is the diagnostic criteria for Hand-Arm Vibration Syndrome (HAVS)?</b></li></ol>
+<ul><li><b>Vibration White Finger (Raynaud's) + Sensorineural Symptoms (Numbness/Tingling)</b>, <b>Stockholm Workshop Scale</b>, <b>Exposure History to Vibrating Tools</b>.</li></ul>
+<ol><li><b>What is the characteristic audiometric finding in Noise-Induced Hearing Loss?</b></li></ol>
+<ul><li><b>Bilateral Symmetric Sensorineural Hearing Loss with Notch at 4-6 kHz</b>.</li></ul>
+<ol><li><b>What is the relationship between Asbestos and Mesothelioma?</b></li></ol>
+<ul><li><b>Asbestos = Only Known Cause of Mesothelioma (Signature Cancer)</b>, All Types Carcinogenic, Latency 20-40 Years.</li></ul>
+<ol><li><b>What is the management of Hand-Arm Vibration Syndrome?</b></li></ol>
+<ul><li><b>Stop Exposure, Warmth, Smoking Cessation, Nifedipine (If Severe), Avoid Cold/Vibration</b>.</li></ul>
+<ol><li><b>What are the common causes of Occupational Contact Dermatitis?</b></li></ol>
+<ul><li><b>Allergic: Nickel, Chromate (Cement), Epoxy, Rubber Accelerators, Formaldehyde</b>; <b>Irritant: Wet Work, Solvents, Cutting Oils, Acids/Alkalis</b>.</li></ul>
+<ol><li><b>What are the criteria for diagnosing Occupational Asthma?</b></li></ol>
+<ul><li><b>Work-Related Symptoms + Objective Evidence (PEF Variability &gt;20%, Specific IgE, Specific Inhalation Challenge)</b>.</li></ul>
+<ol><li><b>What are the health surveillance requirements for Lead workers?</b></li></ol>
+<ul><li><b>Blood Lead Level 3-6 Monthly</b>, <b>Action Level &gt;20 µg/dL, Suspension &gt;50 µg/dL</b>, <b>ZPP Monitoring</b>.</li></ul>
+<ol><li><b>What is the difference between Occupational Asthma and RADS?</b></li></ol>
+<ul><li><b>OA = Latent Period, Sensitiser</b>; <b>RADS = Single High Exposure → Immediate Onset, No Latency, Persistent Asthma</b>.</li></ul>
+<ol><li><b>What are the prescribed diseases for Workers' Compensation (UK)?</b></li></ol>
+<ul><li><b>Mesothelioma, Asbestosis, Silicosis, CWP, Byssinosis, Occupational Asthma, NIHL, HAVS, WRULDs, Contact Dermatitis, Occupational Cancers, Infectious Diseases (Lab/Animal Workers)</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Silicosis vs Asbestosis**</td><td>**Silicosis = Nodules + Eggshell Calcification + PMF**; **Asbestosis = Pleural Plaques + Basal Fibrosis + Mesothelioma**</td></tr><tr><td>**Occupational Asthma vs RADS**</td><td>**OA = Latent Period + Sensitiser**; **RADS = Single High Exposure → Immediate Onset, Persistent**</td></tr><tr><td>**HAVS vs Raynaud's (Primary)**</td><td>**HAVS = Vibration Exposure History + Sensorineural + VWF**; **Primary = No Exposure, Younger Women**</td></tr><tr><td>**Occupational Asthma vs Work-Exacerbated Asthma**</td><td>**OA = New Onset Due to Work**; **WEA = Pre-existing Asthma Worsened by Work**</td></tr><tr><td>**Silicosis vs CWP**</td><td>**Silicosis = Silica, Eggshell Calcification, PMF**; **CWP = Coal Dust, Rounded Opacities, PMF**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Hierarchy: Eliminate, Substitute, Engineer, Admin, PPE"**</td><td>Control Hierarchy</td></tr><tr><td>**"Silicosis = Eggshell Hilar + PMF"**</td><td>Silicosis Radiology</td></tr><tr><td>**"Asbestos = Pleural Plaques + Mesothelioma"**</td><td>Asbestos Pathology</td></tr><tr><td>**"HAVS = White Finger + Numbness + Power Tools"**</td><td>HAVS</td></tr><tr><td>**"NIHL = 4-6 kHz Notch"**</td><td>Noise Hearing Loss</td></tr><tr><td>**"Benzene = AML, Asbestos = Mesothelioma, Arsenic = Skin/Lung/Bladder Ca"**</td><td>Occupational Cancers</td></tr><tr><td>**"HAVS = White Finger + Numbness + Power Tools"**</td><td>HAVS Features</td></tr><tr><td>**"Byssinosis = Monday Chest Tightness + Cotton Dust"**</td><td>Byssinosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Occupational Health))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Principles</div>
+<div class="mm-node mm-l3">– Hierarchy of Controls</div>
+<div class="mm-node mm-l3">– Risk Assessment (COSHH)</div>
+<div class="mm-node mm-l3">– Health Surveillance</div>
+<div class="mm-node mm-l3">– Fitness for Work</div>
+<div class="mm-node mm-l2">Respiratory</div>
+<div class="mm-node mm-l3">– Pneumoconioses</div>
+<div class="mm-node mm-deep">– Silicosis (Eggshell, PMF)</div>
+<div class="mm-node mm-deep">– Asbestosis (Pleural Plaques, Mesothelioma)</div>
+<div class="mm-node mm-deep">– CWP (PMF)</div>
+<div class="mm-node mm-deep">– Berylliosis, Siderosis, Stannosis</div>
+<div class="mm-node mm-deep">– Byssinosis, Bagassosis, Farmer's Lung</div>
+<div class="mm-node mm-l3">– Occupational Asthma</div>
+<div class="mm-node mm-deep">– Sensitiser (HMW/LMW)</div>
+<div class="mm-node mm-deep">– Irritant (RADS/IIA)</div>
+<div class="mm-node mm-deep">– Work-Exacerbated</div>
+<div class="mm-node mm-l2">Dermatoses</div>
+<div class="mm-node mm-l3">– Allergic Contact (Patch Test)</div>
+<div class="mm-node mm-l3">– Irritant Contact</div>
+<div class="mm-node mm-l3">– Contact Urticaria</div>
+<div class="mm-node mm-l3">– Skin Cancer (Arsenic, Tar, UV)</div>
+<div class="mm-node mm-l2">Musculoskeletal</div>
+<div class="mm-node mm-l3">– WRULDs, CTS, Back Pain</div>
+<div class="mm-node mm-l3">– HAVS (VWF + Sensorineural)</div>
+<div class="mm-node mm-l2">Noise</div>
+<div class="mm-node mm-l3">– NIHL (4-6 kHz Notch)</div>
+<div class="mm-node mm-l3">– Audiometry Surveillance</div>
+<div class="mm-node mm-l2">Cancers</div>
+<div class="mm-node mm-l3">– Mesothelioma (Asbestos)</div>
+<div class="mm-node mm-l3">– Lung (Asbestos, Arsenic, Cr(VI), Ni, Diesel)</div>
+<div class="mm-node mm-l3">– Bladder (Aromatic Amines)</div>
+<div class="mm-node mm-l3">– Nasal Sinus (Wood Dust, Formaldehyde)</div>
+<div class="mm-node mm-l3">– Leukaemia (Benzene, Radiation)</div>
+<div class="mm-node mm-l3">– Skin (Arsenic, Tar, UV)</div>
+<div class="mm-node mm-l2">Surveillance</div>
+<div class="mm-node mm-l3">– Biological Monitoring (Pb, Cd, Hg, ChE)</div>
+<div class="mm-node mm-l3">– Fitness for Work</div>
+<div class="mm-node mm-l3">– Pre-Placement, Periodic, RTW</div>
+<div class="mm-node mm-l2">Legislation</div>
+<div class="mm-node mm-l3">– HSWA 1974, COSHH, RIDDOR, ILO</div>
+<div class="mm-node mm-l3">– Compensation (Prescribed Diseases)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**OCCUPATIONAL HEALTH – FCPS/MRCP REVISION CARD**</th></tr><tr><td>---------------------------------------------------</td></tr><tr><td>**Hierarchy of Controls**: **Eliminate > Substitute > Engineering > Admin > PPE**</td></tr><tr><td>**Pneumoconioses**: **Silicosis (Eggshell + PMF)**, **Asbestosis (Pleural Plaques + Mesothelioma)**, **CWP (PMF)**, **Berylliosis (Granulomas)**, **Byssinosis (Monday Chest Tightness)**</td></tr><tr><td>**Occupational Asthma**: **Sensitiser (IgE/Non-IgE) vs Irritant (RADS/IIA)**, **PEF Variability, SIC**</td></tr><tr><td>**Dermatitis**: **Allergic (Patch Test+) vs Irritant**, **Nickel, Chromate, Epoxy, Wet Work**</td></tr><tr><td>**HAVS**: **Vibration White Finger + Sensorineural**, **Power Tools, Stockholm Scale**</td></tr><tr><td>**NIHL**: **4-6 kHz Notch**, **Audiometry Surveillance**, **Hierarchy of Controls**</td></tr><tr><td>**Occupational Cancers**: **Asbestos→Mesothelioma**, **Benzene→AML**, **Arsenic→Skin/Lung/Bladder**, **Wood Dust→Nasal Sinus**</td></tr><tr><td>**Health Surveillance**: **Risk-Based**, **Biological Monitoring (Pb, Cd, Hg, ChE, Solvents)**</td></tr><tr><td>**Fitness for Work**: **Pre-Placement, Periodic, RTW, Ill-Health Retirement**</td></tr><tr><td>**Hierarchy of Controls**: **Eliminate > Substitute > Engineering > Admin > PPE**</td></tr><tr><td>**Legislation**: **HSWA 1974, COSHH, RIDDOR, ILO C155/C161**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Hierarchy of controls, Major pneumoconioses (Silicosis, Asbestosis, CWP), Occupational asthma classification & diagnosis, Occupational dermatitis types, HAVS & NIHL diagnosis/prevention, Major occupational cancers, Health surveillance principles & biological monitoring, Fitness for work assessments, Hierarchy of controls, Key legislation (HSWA, COSHH, RIDDOR)</td></tr><tr><td>**Should Know**</td><td>Specific pneumoconiosis radiology (Silicosis eggshell, Asbestosis pleural plaques), Occupational asthma sensitisers (HMW vs LMW), RADS vs OA vs WEA criteria, Contact dermatitis patch testing, HAVS Stockholm scale, NIHL audiometry patterns, Occupational cancer specific agents (Asbestos, Benzene, Arsenic, Wood dust, Vinyl chloride), Biological monitoring specifics (Pb, Cd, Hg, ChE, solvents), Fitness for work standards (Divers, Drivers, Offshore), COSHH risk assessment steps, RIDDOR reporting criteria</td></tr><tr><td>**Nice to Know**</td><td>Emerging occupational risks (Nanomaterials, Novel psychoactives, Gig economy), Molecular biomarkers of exposure/effect, Genetic susceptibility (GSTM1, NAT2), Psychosocial factors in MSDs/WRULDs, Ageing workforce management, Global supply chain OSH, Climate change & occupational health, AI in exposure assessment, Occupational health in informal economy, Telemedicine in OH, Cost-effectiveness of interventions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Principles & Hierarchy of Controls</td><td></td><td></td></tr><tr><td>Pneumoconioses</td><td></td><td></td></tr><tr><td>Occupational Asthma</td><td></td><td></td></tr><tr><td>Dermatoses</td><td></td><td></td></tr><tr><td>Musculoskeletal (WRULDs, HAVS, Back Pain)</td><td></td><td></td></tr><tr><td>NIHL</td><td></td><td></td></tr><tr><td>Occupational Cancers</td><td></td><td></td></tr><tr><td>Health Surveillance & Biological Monitoring</td><td></td><td></td></tr><tr><td>Fitness for Work</td><td></td><td></td></tr><tr><td>Legislation & Compensation</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Chemical Hazards &amp; Toxicology]]</li><li><b>Next</b>: [[Environmental Health Emergencies]]</li><li><b>Section Hub</b>: [[Environmental Medicine MOC]]</li><li><b>MOC</b>: [[Hematology MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Occupational Health · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

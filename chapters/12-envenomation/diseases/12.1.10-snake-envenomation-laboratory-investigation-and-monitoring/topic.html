@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Snake Envenomation- Laboratory Investigation and Monitoring — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ENVENOMATION</span>
+      <div class="h1">Snake Envenomation- Laboratory Investigation and Monitoring</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Perform and interpret 20WBCT</li><li>[ ] Order and interpret formal coagulation studies in viperid envenomation</li><li>[ ] Monitor renal function and detect AKI/myoglobinuria</li><li>[ ] Monitor neurotoxic patients for respiratory failure</li><li>[ ] Use serial monitoring to guide AV dosing and detect late complications</li><li>[ ] Decide when to stop intensive monitoring</li><li>[ ] Apply to FCPS/MRCP clinical scenarios</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Investigations — Overview</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Phase</th><th>Tests</th><th>Purpose</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Baseline (T0)**</td><td>20WBCT, INR/aPTT, fibrinogen, D-dimer, platelets, FBC, U&E, creatinine, CK, urinalysis, urine myoglobin, ABG, ECG, blood film, blood type + save, malaria/dengue (tropics)</td><td>Establish baseline; identify early organ involvement</td></tr><tr><td>**Serial (q6h)**</td><td>20WBCT, INR/aPTT, fibrinogen, D-dimer, platelets</td><td>Detect coagulopathy progression/response to AV</td></tr><tr><td>**Renal (q12h)**</td><td>U&E, creatinine, CK, urine myoglobin, urine output</td><td>Detect AKI, myoglobinuria</td></tr><tr><td>**Neuro (q1h initially)**</td><td>Neuro exam (ptosis, EOM, bulbar, limb, RR, FVC, ABG)</td><td>Detect respiratory failure</td></tr><tr><td>**Cardiac (PRN)**</td><td>ECG, troponin</td><td>For scorpion, marine, some viperids, cardiac symptoms</td></tr><tr><td>**Stop monitoring**</td><td>When INR < 1.5, fibrinogen > 1 g/L, platelets > 50k, neuro stable, renal stable</td><td>Step down from ICU/HDU</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">20-Minute Whole Blood Clotting Test (20WBCT)</div>
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Full name**</td><td>20-Minute Whole Blood Clotting Test (also called Lee-White clotting time, modified)</td></tr><tr><td>**Technique**</td><td>2 mL fresh venous blood → clean dry glass tube → leave undisturbed 20 min at room temp → gently tilt tube to check for clot</td></tr><tr><td>**Positive (abnormal)**</td><td>**Clot fails to form OR clot forms then lyses** within 20 min → suggests hypofibrinogenaemia / consumption coagulopathy</td></tr><tr><td>**Negative (normal)**</td><td>Firm clot → coagulation intact</td></tr><tr><td>**Sensitivity**</td><td>~85% for INR > 3 / fibrinogen < 1 g/L</td></tr><tr><td>**Specificity**</td><td>High for VICC; lower for mild coagulopathy</td></tr><tr><td>**Advantages**</td><td>Bedside, no lab needed, cheap, rapid, useful in resource-limited settings</td></tr><tr><td>**Limitations**</td><td>Operator-dependent; not standardised; doesn't detect platelet defects, mild coagulopathy; not validated in pregnancy/children</td></tr><tr><td>**Indication**</td><td>All snakebites — baseline + 6-hourly (until stable)</td></tr><tr><td>**False +ve**</td><td>Heparin contamination, prolonged tourniquet, trauma to sample</td></tr><tr><td>**False -ve**</td><td>Early sample (before VICC develops), sampling from heparinised line</td></tr><tr><td>**Most useful in**</td><td>Viperid (VICC); elapid 20WBCT is typically normal (neurotoxic without coagulopathy)</td></tr></table>
+<div class="sub-h">20WBCT Procedure Step-by-Step</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Prepare**</td><td>Clean dry glass tube (no anticoagulant); stopwatch; tourniquet; syringe/needle</td></tr><tr><td>**2. Draw**</td><td>2 mL fresh venous blood (clean venepuncture, no heparin line)</td></tr><tr><td>**3. Tube**</td><td>Transfer 2 mL into glass tube; cap or leave open</td></tr><tr><td>**4. Wait**</td><td>Leave undisturbed at room temperature (20–25°C) for 20 min</td></tr><tr><td>**5. Tilt**</td><td>Gently tilt tube; observe for clot</td></tr><tr><td>**6. Interpret**</td><td>Clot present = normal (−ve); no clot/lysed = VICC (+ve)</td></tr><tr><td>**7. Document**</td><td>Time, result, site, who performed</td></tr><tr><td>**8. Repeat**</td><td>At 6 h, 12 h, 24 h, then PRN until stable</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Coagulation Studies</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Sample</th><th>Normal</th><th>VICC Pattern</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**PT/INR**</td><td>Citrated plasma</td><td>INR 0.8–1.2</td><td>**↑↑ (often > 5)**</td><td>Most reliable for viperid VICC</td></tr><tr><td>**aPTT**</td><td>Citrated plasma</td><td>25–35 s</td><td>**↑**</td><td>Less sensitive than INR for VICC</td></tr><tr><td>**Fibrinogen**</td><td>Citrated plasma</td><td>1.5–4 g/L</td><td>**↓↓ (often < 1 g/L)**</td><td>Critical threshold for bleeding</td></tr><tr><td>**D-dimer**</td><td>Citrated plasma</td><td>< 0.5 mg/L</td><td>**↑↑**</td><td>Fibrin breakdown; very sensitive</td></tr><tr><td>**Platelets**</td><td>EDTA</td><td>150–400 × 10⁹/L</td><td>**↓ (variable)**</td><td>Consumption, sequestration</td></tr><tr><td>**Fibrin degradation products (FDP)**</td><td>Citrated plasma</td><td>< 10 mg/L</td><td>**↑↑**</td><td>Fibrinolysis</td></tr><tr><td>**Thrombin time (TT)**</td><td>Citrated plasma</td><td>14–16 s</td><td>**↑**</td><td>Afibrinogenaemia</td></tr><tr><td>**Reptilase time**</td><td>Citrated plasma</td><td>18–22 s</td><td>**↑**</td><td>Differentiates from heparin</td></tr><tr><td>**VWF / Factor VIII**</td><td>Citrated plasma</td><td>Normal</td><td>**Normal (vs ↓ in DIC)**</td><td>Distinguishes VICC from DIC</td></tr><tr><td>**Mixing study**</td><td>—</td><td>Corrects</td><td>Does NOT correct (factor deficiency)</td><td>Differentiates inhibitor</td></tr><tr><td>**TEG/ROTEM**</td><td>Citrated whole blood</td><td>Normal</td><td>Hypocoagulable</td><td>Advanced; resource-rich settings</td></tr></table>
+<div class="sub-h">VICC vs DIC</div>
+<table class="ctable"><tr><th>Feature</th><th>VICC</th><th>DIC</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Mechanism**</td><td>Direct procoagulant activity</td><td>Widespread activation (sepsis, malignancy)</td></tr><tr><td>**Trigger**</td><td>Snake venom procoagulant</td><td>Sepsis, malignancy, obstetric</td></tr><tr><td>**Fibrinogen**</td><td>Very low</td><td>Low</td></tr><tr><td>**Factor VIII**</td><td>**Normal** (preserved)</td><td>**Low** (consumed)</td></tr><tr><td>**Schistocytes**</td><td>**Rare**</td><td>Common</td></tr><tr><td>**Response to AV**</td><td>**Rapid recovery**</td><td>Slow</td></tr><tr><td>**Prognosis**</td><td>Good with AV</td><td>Depends on cause</td></tr></table>
+<div class="sub-h">When to Repeat Coagulation Panel</div>
+<table class="ctable"><tr><th>Situation</th><th>Frequency</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Initial 6 h**</td><td>At presentation, 1 h, 6 h after AV</td></tr><tr><td>**Stable 6–24 h**</td><td>6-hourly</td></tr><tr><td>**After AV given**</td><td>1 h, 6 h, then 6-hourly until INR normal</td></tr><tr><td>**Stable**</td><td>12-hourly → 24-hourly</td></tr><tr><td>**Stop**</td><td>INR < 1.5, fibrinogen > 1, platelets > 50k, neuro + renal stable</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Renal Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Threshold / Target</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Urea, Creatinine**</td><td>All snakebites</td><td>Creatinine < 110 μmol/L</td></tr><tr><td>**CK**</td><td>Myotoxic, sea snake, severe local, dark urine</td><td>**> 5× ULN (> 1000 U/L)** = rhabdo risk; **> 5000** = high AKI risk</td></tr><tr><td>**Urine myoglobin**</td><td>Dark urine, rhabdo, sea snake</td><td>Positive = rhabdo</td></tr><tr><td>**Urine dipstick (blood)**</td><td>All</td><td>Blood + but no RBCs = myoglobinuria</td></tr><tr><td>**Urine output**</td><td>All severe</td><td>**> 0.5 mL/kg/h** (> 200–300 mL/h adult)</td></tr><tr><td>**Serum potassium**</td><td>All, esp. rhabdo + AKI</td><td>< 5.5 mmol/L</td></tr><tr><td>**Serum bicarbonate**</td><td>All, esp. AKI</td><td>> 22 mmol/L (no acidosis)</td></tr><tr><td>**Urate, phosphate**</td><td>AKI, rhabdo</td><td>Monitor for tumour lysis–like picture</td></tr><tr><td>**Urea:creatinine ratio**</td><td>AKI</td><td>Differentiate pre-renal vs intrinsic</td></tr><tr><td>**Renal US**</td><td>AKI (later)</td><td>Exclude obstruction</td></tr></table>
+<div class="sub-h">Myoglobinuria Detection</div>
+<table class="ctable"><tr><th>Test</th><th>Result</th><th>Interpretation</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Urine dipstick**</td><td>"Blood" + (but microscopy shows no RBCs)</td><td>**Myoglobinuria** (sensitive but not specific — also +ve in haemoglobinuria)</td></tr><tr><td>**Urine colour**</td><td>Red-brown / "cola"</td><td>Myoglobin (early) or haemoglobin</td></tr><tr><td>**Urine microscopy**</td><td>No RBCs</td><td>Differentiates from haematuria</td></tr><tr><td>**Urine myoglobin immunoassay**</td><td>Positive</td><td>Confirms myoglobinuria</td></tr><tr><td>**Serum myoglobin**</td><td>Elevated</td><td>Confirms muscle breakdown</td></tr><tr><td>**CK**</td><td>> 5× ULN</td><td>Confirms rhabdomyolysis</td></tr></table>
+<div class="sub-h">Rhabdomyolysis Protocol</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th><th>Target</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**1. AV**</td><td>Early; specific AV if available</td><td>Neutralise circulating venom</td></tr><tr><td>**2. IV fluids**</td><td>Aggressive crystalloid</td><td>1–2 L/h initially; replace losses</td></tr><tr><td>**3. Target urine output**</td><td>**> 200–300 mL/h** (some say 100–200 mL/h)</td><td>Prevent myoglobin precipitation in tubules</td></tr><tr><td>**4. Alkalinisation**</td><td>NaHCO₃ — 1–2 amps in 1 L NS</td><td>Urine pH > 6.5 (controversial)</td></tr><tr><td>**5. Mannitol**</td><td>0.5–1 g/kg IV (controversial)</td><td>Osmotic diuresis</td></tr><tr><td>**6. Monitor**</td><td>CK 6–12 hourly, creatinine, K⁺, fluid balance</td><td>Detect AKI, hyperkalaemia</td></tr><tr><td>**7. Dialysis**</td><td>Standard indications (AEIOU — Acidosis, Electrolytes, Ingestion, Overload, Uraemia)</td><td>If AKI severe</td></tr><tr><td>**8. Avoid**</td><td>NSAIDs, contrast, ACEi, nephrotoxins</td><td>Prevent further renal injury</td></tr><tr><td>**9. Tetanus**</td><td>Cover</td><td>Standard wound care</td></tr><tr><td>**10. Compartment**</td><td>Rare; check pressures if severe swelling</td><td>Fasciotomy ONLY if confirmed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Haematological Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Full Blood Count (FBC)**</td><td>All</td><td>Hb baseline, WCC, platelets, eosinophils (serum sickness)</td></tr><tr><td>**Blood film**</td><td>All severe</td><td>Schistocytes (DIC/MAHA), bite-cell, target cells</td></tr><tr><td>**Reticulocytes**</td><td>Haemolysis</td><td>↑ in haemolytic anaemia</td></tr><tr><td>**Haptoglobin**</td><td>Haemolysis</td><td>↓ in intravascular haemolysis</td></tr><tr><td>**LDH**</td><td>Haemolysis, tissue damage</td><td>↑ in haemolysis, rhabdo</td></tr><tr><td>**Bilirubin (indirect)**</td><td>Haemolysis</td><td>↑ unconjugated</td></tr><tr><td>**Coombs (DAT)**</td><td>Immune-mediated haemolysis</td><td>Negative in venom haemolysis</td></tr><tr><td>**G6PD**</td><td>Pre-treatment baseline (in some regions)</td><td>Avoid oxidative stress</td></tr><tr><td>**Blood type + antibody screen**</td><td>All severe</td><td>In case of transfusion</td></tr><tr><td>**Crossmatch**</td><td>If bleeding / need for transfusion</td><td>Standard</td></tr><tr><td>**Bone marrow**</td><td>Persistent cytopenia, suspected aplastic anaemia</td><td>Rare</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Cardiac Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**ECG**</td><td>All severe; scorpion, marine, cardiac symptoms</td><td>Rate, rhythm, ST, QT, ischemia</td></tr><tr><td>**Troponin**</td><td>Cardiac symptoms, scorpion, marine</td><td>Myocardial injury</td></tr><tr><td>**Echocardiogram**</td><td>Scorpion (myocarditis), marine (cardiomyopathy)</td><td>LV function, regional wall motion</td></tr><tr><td>**BNP / NT-proBNP**</td><td>Heart failure (scorpion, some viperids)</td><td>Volume overload</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Respiratory Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**SpO₂**</td><td>All severe</td><td>Continuous in ICU</td></tr><tr><td>**ABG**</td><td>All severe; respiratory symptoms</td><td>pH, PaO₂, PaCO₂, lactate, HCO₃</td></tr><tr><td>**FVC (Forced Vital Capacity)**</td><td>Neurotoxic — bulbar + respiratory</td><td>FVC < 1 L = intubate; serial hourly</td></tr><tr><td>**NIF (Negative Inspiratory Force)**</td><td>Neurotoxic</td><td>NIF < 20 cmH₂O = intubate</td></tr><tr><td>**CXR**</td><td>All severe, scorpion (pulmonary oedema)</td><td>Pulmonary oedema, ARDS, infection, aspiration</td></tr><tr><td>**Peak flow**</td><td>Asthmatic hymenoptera</td><td>Bronchospasm severity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Bedside / Point-of-Care Tests</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Glucometer**</td><td>All severe</td><td>Hypoglycaemia (AV delay, sepsis, adrenal, pituitary haemorrhage)</td></tr><tr><td>**Lactate**</td><td>Shock, sepsis</td><td>Marker of hypoperfusion</td></tr><tr><td>**Rotational thromboelastometry (ROTEM)**</td><td>Severe VICC, bleeding</td><td>Research; some centres</td></tr><tr><td>**Venom Detection Kit (VDK)**</td><td>Australia</td><td>Species-specific ID</td></tr><tr><td>**Bedside US (POCUS)**</td><td>Cardiac (scorpion), shock</td><td>LV function, IVC, free fluid</td></tr><tr><td>**Capnography**</td><td>Intubated, severe</td><td>Ventilation adequacy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Microbiological Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Blood cultures**</td><td>Febrile, septic</td><td>If secondary infection suspected</td></tr><tr><td>**Wound swab + culture**</td><td>Wound infection, necrosis</td><td>Aerobic + anaerobic</td></tr><tr><td>**Tetanus serology**</td><td>Severe wounds, unknown immunisation</td><td>Anti-tetanus IgG</td></tr><tr><td>**Malaria thick/thin film**</td><td>Tropics, fever</td><td>Co-endemic</td></tr><tr><td>**Dengue NS1, serology**</td><td>Tropics, fever</td><td>Co-endemic</td></tr><tr><td>**Leptospira serology**</td><td>Wet environment, AKI, jaundice</td><td>Weil disease mimic</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Specific Monitoring by Snake Type</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Snake</th><th>Key Monitoring</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Viperid (Russell's, saw-scaled, Bothrops)**</td><td>Coagulation 6-hourly; renal 12-hourly; CK if rhabdo; neuro if any suspicion; ECG</td></tr><tr><td>**Elapid (cobra, krait, taipan)**</td><td>Neuro 30–60 min (FVC, NIF, ABG); coagulation (some elapids have VICC); ECG</td></tr><tr><td>**Sea snake**</td><td>**CK 6–12 hourly**; renal 12-hourly; urine myoglobin; neuro</td></tr><tr><td>**Spitting cobra (ocular)**</td><td>Slit-lamp, fluorescein, visual acuity</td></tr><tr><td>**Mojave (Type A)**</td><td>Coagulation + neuro + renal</td></tr><tr><td>**Boomslang**</td><td>Coagulation (delayed 24–48 h); FBC</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Discontinuing Monitoring</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Threshold to Step Down / Stop</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Coagulation**</td><td>INR < 1.5, fibrinogen > 1 g/L, platelets > 50 × 10⁹/L, 20WBCT negative × 2 (6 h apart)</td></tr><tr><td>**Renal**</td><td>Creatinine at baseline or stable; urine output > 0.5 mL/kg/h; CK < 1,000 U/L</td></tr><tr><td>**Neuro**</td><td>No progression; FVC improving; intact bulbar; off ventilator</td></tr><tr><td>**Local**</td><td>Swelling not progressing; no new bullae/necrosis</td></tr><tr><td>**Haemodynamic**</td><td>Stable on ward/HDU</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Fact</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**20WBCT technique**</td><td>2 mL blood in glass tube, 20 min RT, tilt to check clot</td></tr><tr><td>**20WBCT positive**</td><td>No clot = VICC (fibrinogen < 1)</td></tr><tr><td>**20WBCT most sensitive for**</td><td>Viperid coagulopathy</td></tr><tr><td>**20WBCT normal in**</td><td>Elapid neurotoxicity, mild envenomation, dry bite</td></tr><tr><td>**Coagulation panel**</td><td>INR, aPTT, fibrinogen, D-dimer, platelets</td></tr><tr><td>**Monitoring frequency**</td><td>6-hourly until stable</td></tr><tr><td>**VICC pattern**</td><td>↑ INR, ↓ fibrinogen, ↓ platelets, ↑ D-dimer</td></tr><tr><td>**VICC vs DIC**</td><td>Factor VIII **normal** in VICC, **low** in DIC</td></tr><tr><td>**Renal panel**</td><td>U&E, creatinine, CK, urine myoglobin, urine output</td></tr><tr><td>**CK threshold for rhabdo**</td><td>> 1000 U/L; > 5000 = high AKI risk</td></tr><tr><td>**Urine myoglobin test**</td><td>Dipstick blood + (no RBCs on microscopy) = myoglobinuria</td></tr><tr><td>**Target urine output**</td><td>> 0.5 mL/kg/h; > 200–300 mL/h with rhabdo</td></tr><tr><td>**Urine alkalinisation**</td><td>NaHCO₃ to pH > 6.5 (controversial)</td></tr><tr><td>**Neuro monitoring**</td><td>FVC, NIF, ABG q1h; intubate if FVC < 1 L or NIF < 20 cmH₂O</td></tr><tr><td>**Cardiac monitoring**</td><td>ECG + troponin for scorpion, marine, some viperids</td></tr><tr><td>**Stop monitoring**</td><td>INR < 1.5, fibrinogen > 1, platelets > 50k, renal + neuro stable</td></tr><tr><td>**AV response**</td><td>Coagulopathy should improve within 6 h of adequate AV; if not, repeat AV</td></tr><tr><td>**Pregnancy**</td><td>Same monitoring; consider fetal monitoring</td></tr><tr><td>**DIC vs VICC**</td><td>VICC = factor VIII preserved; recovers with AV</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1: How do you perform a 20WBCT?</b> A: 2 mL fresh venous blood → clean dry glass tube → leave undisturbed at room temp (20–25°C) for 20 min → gently tilt to check for clot. Positive (abnormal) = no clot forms or clot lyses = consumption coagulopathy. Negative (normal) = firm clot.</p>
+<p><b>Q2: What is the sensitivity of 20WBCT for VICC?</b> A: ~85% for INR &gt; 3 and fibrinogen &lt; 1 g/L. Bedside screen; useful in resource-limited settings. <b>False negative</b> possible if sample taken early (before VICC develops) or from heparin line. <b>False positive</b> with heparin contamination or prolonged tourniquet.</p>
+<p><b>Q3: How do you differentiate VICC from DIC?</b> A: Both show ↑ INR, ↓ fibrinogen, ↓ platelets, ↑ D-dimer. <b>Factor VIII is preserved in VICC</b> (consumed in DIC). Schistocytes common in DIC, rare in VICC. VICC recovers rapidly with antivenom; DIC requires treating underlying cause.</p>
+<p><b>Q4: How often do you repeat coagulation studies in viperid envenomation?</b> A: Baseline, 1 h, 6 h post-AV, then 6-hourly until stable. Stop when INR &lt; 1.5, fibrinogen &gt; 1 g/L, platelets &gt; 50 × 10⁹/L for 2 consecutive checks 6 h apart.</p>
+<p><b>Q5: What is the CK threshold for concern of rhabdomyolysis and AKI?</b> A: CK &gt; 5× ULN (&gt; 1,000 U/L) suggests rhabdomyolysis. <b>CK &gt; 5,000 U/L = high risk of AKI.</b> Management: aggressive IV fluids, urine output target &gt; 200–300 mL/h, alkalinisation (NaHCO₃ to urine pH &gt; 6.5), mannitol (controversial), avoid nephrotoxins, dialysis if severe AKI.</p>
+<p><b>Q6: How do you confirm myoglobinuria at the bedside?</b> A: Urine dipstick + for "blood" but <b>urine microscopy shows no RBCs</b> = myoglobinuria (or haemoglobinuria). Confirm with urine myoglobin immunoassay or serum myoglobin. CK &gt; 1,000 U/L confirms muscle breakdown.</p>
+<p><b>Q7: When would you intubate a neurotoxic patient based on monitoring?</b> A: FVC &lt; 1 L (some say &lt; 20 mL/kg or 30% predicted), NIF &lt; 20 cmH₂O (less negative), RR &gt; 30, SpO₂ &lt; 94% on O₂, PaCO₂ &gt; 45 mmHg, bulbar palsy with aspiration risk, GCS &lt; 8. <b>Don't wait for respiratory arrest</b> — early intubation saves lives.</p>
+<p><b>Q8: What bedside test can detect venom in wound (Australia)?</b> A: <b>Venom Detection Kit (VDK)</b> — ELISA-based; detects specific Australian elapid venom (Brown, Tiger, Taipan, Black, Death Adder) at bite site, blood, urine. Used to identify species and select specific AV.</p>
+<p><b>Q9: How does coagulation recovery differ between VICC and DIC?</b> A: VICC: rapid recovery (12–48 h) with antivenom, as venom is neutralised. DIC: slow recovery; requires treating underlying cause (sepsis, malignancy); may need FFP, cryoprecipitate, platelets.</p>
+<p><b>Q10: What is the role of TEG/ROTEM in envenomation?</b> A: Thromboelastography/ROTEM = viscoelastic test of clot formation, strength, lysis. Detects hypocoagulability (VICC), hypercoagulability (early VICC), and fibrinolysis. Used in research and some centres; can guide blood product replacement. Not yet standard in resource-limited envenomation management.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>---</td><td>---</td></tr><tr><td>20WBCT replaces INR</td><td>NO — complementary; 20WBCT is bedside screen</td></tr><tr><td>VICC = DIC</td><td>CLOSE; factor VIII normal in VICC, low in DIC</td></tr><tr><td>Negative 20WBCT = no envenomation</td><td>NO — elapid neurotoxic, dry bite, mild cases</td></tr><tr><td>Stop monitoring after AV given</td><td>NO — continue 6-hourly until stable</td></tr><tr><td>CK normal in sea snake</td><td>NO — sea snake has CK > 50,000 typical</td></tr><tr><td>Mannitol always for rhabdo</td><td>NOT always — controversial; ensure hydration first</td></tr><tr><td>Alkalinise all rhabdo</td><td>CONTROVERSIAL — benefit uncertain; maintain volume > alkalinisation</td></tr><tr><td>Myoglobin = visible red urine</td><td>NO — may be invisible; dipstick +ve but no RBCs</td></tr><tr><td>AV works despite normal 20WBCT</td><td>MAYBE — but normal 20WBCT argues against VICC indication for AV</td></tr><tr><td>FVC < 1 L = intubate</td><td>YES (in neurotoxic); don't wait for arrest</td></tr><tr><td>Routine LFTs</td><td>NOT routine — only if hepatic involvement suspected</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>20WBCT</b>: <b>2 mL, 20 min, glass tube</b> = <b>2/20/G</b></li><li><b>VICC labs</b>: <b>I</b>NR↑, <b>F</b>ibrinogen↓, <b>P</b>latelets↓, <b>D</b>-dimer↑ = <b>IFPD</b></li><li><b>VICC vs DIC</b>: <b>V</b>ICC = <b>V</b>enom = factor <b>V</b>III preserved; <b>D</b>IC = <b>D</b>epleted factor VIII</li><li><b>Rhabdo targets</b>: <b>U</b>rine &gt; 200 mL/h, <b>p</b>H &gt; 6.5, <b>C</b>K &lt; 1000 = <b>UpC</b></li><li><b>Stop monitoring</b>: <b>I</b>NR &lt; 1.5, <b>F</b>ibrinogen &gt; 1, <b>P</b>latelets &gt; 50k, <b>N</b>euro stable, <b>R</b>enal stable = <b>IFNPR</b></li><li><b>Intubate threshold</b>: <b>F</b>VC &lt; 1 L, <b>N</b>IF &lt; 20 cmH₂O, <b>R</b>R &gt; 30, <b>S</b>pO₂ &lt; 94, <b>P</b>CO₂ &gt; 45 = <b>FNRSP</b></li><li><b>Bedside dipstick</b>: <b>D</b>ipstick <b>+</b> for blood + <b>N</b>o RBCs on microscopy = <b>D</b>N = <b>D</b>ipstick <b>N</b>o cells = myoglobinuria</li><li><b>Cardiac indications</b>: <b>S</b>corpion, <b>M</b>arine, <b>V</b>iperid (catecholamine surge), <b>C</b>ardiac symptoms = <b>SMVC</b></li><li><b>Renal panel</b>: <b>U</b>&amp;<b>E</b>, <b>C</b>reatinine, <b>C</b>K, <b>U</b>rine myoglobin, <b>O</b>utput = <b>UCCUO</b></li><li><b>Bleeding thresholds</b>: <b>F</b>ibrinogen &lt; 1 = <b>F</b>atal bleed; <b>P</b>latelets &lt; 50 = <b>P</b>erilous; <b>I</b>NR &gt; 3 = <b>I</b>ntervention = <b>FPI</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Snake Lab Monitoring))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Bedside</div>
+<div class="mm-node mm-l3">– 20WBCT</div>
+<div class="mm-node mm-deep">– Technique[2mL, 20min, glass]</div>
+<div class="mm-node mm-deep">– Positive[No clot = VICC]</div>
+<div class="mm-node mm-deep">– Sensitive_for[Viperid]</div>
+<div class="mm-node mm-l2">Coagulation</div>
+<div class="mm-node mm-l3">– VICC</div>
+<div class="mm-node mm-deep">– INR_up</div>
+<div class="mm-node mm-deep">– Fibrinogen_down</div>
+<div class="mm-node mm-deep">– Platelets_down</div>
+<div class="mm-node mm-deep">– D_dimer_up</div>
+<div class="mm-node mm-l3">– VICC_vs_DIC</div>
+<div class="mm-node mm-deep">– Factor_VIII_preserved</div>
+<div class="mm-node mm-deep">– Rapid_recovery_with_AV</div>
+<div class="mm-node mm-l2">Renal</div>
+<div class="mm-node mm-l3">– CK</div>
+<div class="mm-node mm-deep">– Rhabdo_[&gt; 1000]</div>
+<div class="mm-node mm-deep">– High_AKI_[&gt; 5000]</div>
+<div class="mm-node mm-l3">– Urine_myoglobin</div>
+<div class="mm-node mm-deep">– Dipstick_positive</div>
+<div class="mm-node mm-deep">– No_RBCs</div>
+<div class="mm-node mm-l3">– Output_[&gt; 200 mL/h]</div>
+<div class="mm-node mm-l2">Neuro</div>
+<div class="mm-node mm-l3">– FVC[NIF, serial]</div>
+<div class="mm-node mm-l3">– ABG</div>
+<div class="mm-node mm-l3">– Bulbar_exam</div>
+<div class="mm-node mm-l2">Cardiac</div>
+<div class="mm-node mm-l3">– ECG</div>
+<div class="mm-node mm-l3">– Troponin</div>
+<div class="mm-node mm-l2">Stop_Monitoring</div>
+<div class="mm-node mm-l3">– INR_&lt; 1.5</div>
+<div class="mm-node mm-l3">– Fibrinogen_&gt; 1</div>
+<div class="mm-node mm-l3">– Platelets_&gt; 50</div>
+<div class="mm-node mm-l3">– Renal_stable</div>
+<div class="mm-node mm-l3">– Neuro_stable</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>VICC Pattern</th><th>Threshold</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**20WBCT**</td><td>No clot</td><td>+ve = fibrinogen < 1</td></tr><tr><td>**INR**</td><td>↑↑</td><td>> 1.5 = VICC</td></tr><tr><td>**Fibrinogen**</td><td>↓↓</td><td>< 1 g/L = bleeding risk</td></tr><tr><td>**Platelets**</td><td>↓</td><td>< 50 × 10⁹/L = bleeding risk</td></tr><tr><td>**D-dimer**</td><td>↑↑</td><td>Sensitive</td></tr><tr><td>**Factor VIII**</td><td>**Normal**</td><td>Distinguishes from DIC</td></tr><tr><td>**CK**</td><td>↑ in rhabdo</td><td>> 5,000 = high AKI risk</td></tr><tr><td>**Urine myoglobin**</td><td>+ve in rhabdo</td><td>Dipstick + for blood, no RBCs</td></tr><tr><td>**Creatinine**</td><td>↑ in AKI</td><td>> 110 μmol/L = AKI</td></tr><tr><td>**FVC**</td><td>↓ in neurotoxic</td><td>< 1 L = intubate</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>20WBCT, VICC labs, monitoring frequency</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Rhabdo protocol, intubation thresholds, VICC vs DIC</td></tr><tr><td>**7 d**</td><td></td><td></td><td>Specific snake monitoring, advanced tests, discontinuation</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with Snake & AV topics</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>20WBCT technique & interpretation</td><td></td></tr><tr><td>VICC labs</td><td></td></tr><tr><td>VICC vs DIC</td><td></td></tr><tr><td>Monitoring frequency</td><td></td></tr><tr><td>Rhabdo protocol</td><td></td></tr><tr><td>Myoglobinuria detection</td><td></td></tr><tr><td>Neuro monitoring (FVC, NIF)</td><td></td></tr><tr><td>Cardiac monitoring indications</td><td></td></tr><tr><td>Discontinuation criteria</td><td></td></tr><tr><td>Australia VDK</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Monitoring snake envenomation"</td><td>20WBCT, coagulation, renal, neuro, cardiac, frequency, stopping</td></tr><tr><td>**Short Note**</td><td>"20WBCT"</td><td>2 mL, 20 min, glass tube, VICC, sensitivity, limitations</td></tr><tr><td>**Viva**</td><td>"VICC vs DIC"</td><td>Mechanism, factor VIII, recovery, schistocytes</td></tr><tr><td>**Ward Round**</td><td>"Viper bite 6 h ago, what now?"</td><td>20WBCT, INR, fibrinogen, CK, urine output; if persistent, repeat AV</td></tr><tr><td>**Last-Night**</td><td>"Key lab numbers"</td><td>INR > 1.5, fibrinogen < 1, platelets < 50, FVC < 1 L, CK > 5000</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>20WBCT technique:</b></li></ol>
+<p>A. 5 mL citrate tube, 20 min B. <b>2 mL venous blood in glass tube, 20 min RT</b> C. 5 mL heparin, 10 min D. 1 mL capillary, 30 min E. 2 mL EDTA, 20 min</p>
+<ol><li><b>20WBCT positive indicates:</b></li></ol>
+<p>A. Normal coagulation B. <b>Consumption coagulopathy / hypofibrinogenaemia</b> C. Platelet dysfunction D. Heparin effect E. Normal</p>
+<ol><li><b>20WBCT most sensitive for:</b></li></ol>
+<p>A. Elapidae B. <b>Viperidae coagulopathy</b> C. Colubridae D. Hydrophiinae E. All equally</p>
+<ol><li><b>Coagulation monitoring frequency in viperid:</b></li></ol>
+<p>A. Hourly B. <b>6-hourly until stable</b> C. 12-hourly D. 24-hourly E. Once</p>
+<ol><li><b>VICC vs DIC — which differs?</b></li></ol>
+<p>A. INR B. Fibrinogen C. <b>Factor VIII (preserved in VICC, low in DIC)</b> D. D-dimer E. Platelets</p>
+<ol><li><b>CK threshold for high AKI risk in rhabdo:</b></li></ol>
+<p>A. 1,000 B. <b>5,000</b> C. 10,000 D. 50,000 E. 100,000</p>
+<ol><li><b>Urine dipstick blood + but no RBCs on microscopy = :</b></li></ol>
+<p>A. Haematuria B. <b>Myoglobinuria (or haemoglobinuria)</b> C. Porphyria D. Normal E. Drug effect</p>
+<ol><li><b>Target urine output in rhabdomyolysis:</b></li></ol>
+<p>A. &gt; 0.5 mL/kg/h B. <b>&gt; 200–300 mL/h (or 1–2 L/h fluid)</b> C. &gt; 500 mL/h D. &gt; 50 mL/h E. &gt; 1 mL/h</p>
+<ol><li><b>FVC threshold for intubation in neurotoxic:</b></li></ol>
+<p>A. &lt; 2 L B. <b>&lt; 1 L (or &lt; 20 mL/kg)</b> C. &lt; 3 L D. &lt; 500 mL E. &lt; 4 L</p>
+<ol><li><b>Discontinue coagulation monitoring when:</b></li></ol>
+<p>A. After 12 h B. <b>INR &lt; 1.5, fibrinogen &gt; 1, platelets &gt; 50k, stable</b> C. After AV D. After 24 h E. Patient feels better</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Viper bite, INR 5, fibrinogen 0.3. 6 h after 10 vials AV, INR 3, fibrinogen 0.5. Next step:</b></li></ol>
+<p>A. Stop AV B. <b>Repeat AV (persistent coagulopathy = ongoing venom)</b> C. Heparin D. FFP only E. Plasma exchange</p>
+<ol><li><b>Sea snake bite, CK 60,000, dark urine. Best next step:</b></li></ol>
+<p>A. AV only B. <b>Aggressive IV fluids (1–2 L/h), urine output &gt; 200–300 mL/h, alkalinisation, AV</b> C. Dialysis immediately D. Mannitol only E. Fasciotomy</p>
+<ol><li><b>Cobra bite with descending paralysis. FVC 800 mL. Best next step:</b></li></ol>
+<p>A. Observe B. <b>Intubate and ventilate (FVC &lt; 1 L)</b> C. Neostigmine only D. AV only E. Discharge</p>
+<ol><li><b>Differentially VICC from DIC: which lab is preserved in VICC?</b></li></ol>
+<p>A. Platelets B. <b>Factor VIII (preserved in VICC, consumed in DIC)</b> C. Fibrinogen D. D-dimer E. PT</p>
+<ol><li><b>Negative 20WBCT + neurotoxic signs + no coagulopathy: most likely?</b></li></ol>
+<p>A. Viperid B. <b>Elapid envenomation (neurotoxic without VICC)</b> C. Dry bite D. Marine E. Scorpion</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Snake Envenomation: Clinical Syndromes (Elapid vs Viperid)]]</li><li>[[Snake Envenomation: Global Epidemiology and Snake Identification]]</li><li>[[Snake Envenomation: Specific Antivenom Protocols]]</li><li>[[Snake Envenomation: Specific Regional Snakes (Asia, Africa, Australia, Americas)]]</li><li>[[Antivenom: Principles, Types, and Administration]]</li><li>[[Antivenom Adverse Reactions and Management]]</li><li>[[General Principles of Envenomation]]</li><li>[[Clinical Assessment and Scoring Systems]]</li><li>[[Envenomation MOC]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Snake Envenomation- Laboratory Investigation and Monitoring · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diabetic Emergencies (DKA and HHS) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Diabetic Emergencies (DKA and HHS)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Differentiate DKA from HHS using diagnostic criteria</li><li>Apply JBDS/ADA fluid resuscitation protocol (1L in 1st hour, then calculated)</li><li>Manage fixed-rate insulin infusion (FRII) with glucose/K⁺ monitoring</li><li>Apply K⁺ replacement protocol (target 4–5.5 mmol/L)</li><li>Identify and manage cerebral oedema (DKA) and thrombosis risk (HHS)</li><li>Manage transition to subcutaneous insulin</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**DKA**</th><th>**HHS**</th></tr><tr><td>---------</td><td>---------</td><td>---------</td></tr><tr><td>**Hyperglycaemia**</td><td>>11 mmol/L (200 mg/dL)</td><td>**>30 mmol/L (600 mg/dL)**</td></tr><tr><td>**Ketonaemia**</td><td>**≥3 mmol/L** (or significant ketonuria)</td><td><3 mmol/L (absent/minimal)</td></tr><tr><td>**Acidosis**</td><td>**pH <7.3, bicarbonate <15 mmol/L**</td><td>pH >7.3, bicarbonate >15 mmol/L</td></tr><tr><td>**Osmolality**</td><td><320 mOsm/kg</td><td>**≥320 mOsm/kg**</td></tr><tr><td>**Dehydration**</td><td>Moderate (5–7 L)</td><td>**Severe (8–10+ L)**</td></tr><tr><td>**Typical patient**</td><td>Type 1 DM, younger</td><td>Type 2 DM, elderly, comorbidities</td></tr><tr><td>**Precipitants**</td><td>Infection, missed insulin, new diagnosis</td><td>Infection, steroids, diuretics, stroke, MI</td></tr><tr><td>**Mortality**</td><td>1–5%</td><td>**10–20%** (older, comorbid)</td></tr></table>
+<div class="callout"><b>Overlap</b>: ~30% have features of both ("mixed DKA/HHS") — treat as DKA.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Insulin deficiency</b> (absolute in DKA, relative in HHS) + <b>counter-regulatory hormone excess</b> (glucagon, cortisol, catecholamines, growth hormone)</li><li><b>Lipolysis</b> → FFA → hepatic ketogenesis (β-hydroxybutyrate, acetoacetate) → <b>ketonaemia + metabolic acidosis</b> (DKA)</li><li><b>Proteolysis</b> → amino acids → gluconeogenesis</li><li><b>Osmotic diuresis</b> (glucose &gt; renal threshold ~10 mmol/L) → <b>dehydration, electrolyte loss</b> (K⁺, Na⁺, PO₄, Mg²⁺)</li><li><b>HHS</b>: residual insulin suppresses lipolysis/ketogenesis but NOT gluconeogenesis → <b>extreme hyperglycaemia + hyperosmolality</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>DKA</th><th>HHS</th></tr><tr><td>---------</td><td>-----</td><td>-----</td></tr><tr><td>**Onset**</td><td>Hours</td><td>Days</td></tr><tr><td>**Polyuria/polydipsia**</td><td>Yes</td><td>Yes (often prolonged)</td></tr><tr><td>**Nausea/vomiting/abdominal pain**</td><td>Common (ketones)</td><td>Less common</td></tr><tr><td>**Kussmaul breathing**</td><td>Yes (compensatory)</td><td>No</td></tr><tr><td>**Dehydration signs**</td><td>Moderate</td><td>**Severe** (dry mucosa, poor turgor, hypotension)</td></tr><tr><td>**Neurological**</td><td>Alert → drowsy</td><td>**Confusion, coma, seizures, focal deficits**</td></tr><tr><td>**Temperature**</td><td>Normal/low (infection may cause fever)</td><td>May be hypothermic</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mandatory (Immediate)</div>
+<ul><li><b>Capillary blood glucose</b> (immediate) + <b>venous blood gas</b> (pH, bicarbonate, lactate)</li><li><b>Blood ketones</b> (β-hydroxybutyrate) — <b>preferred over urine ketones</b></li><li><b>U&amp;E</b>: Na⁺, K⁺, creatinine, urea, bicarbonate, Cl⁻</li><li><b>Calculated osmolality</b> = 2×Na + Glucose/18 + Urea/2.8 (mmol/L) + Ethanol/4.6</li><li><b>Effective osmolality</b> = 2×Na + Glucose/18</li><li><b>FBC, CRP</b> (infection screen)</li><li><b>ECG</b> (K⁺ effects, ischaemia)</li><li><b>Troponin</b> (if chest pain/cardiac risk)</li><li><b>Blood cultures</b> (if febrile)</li><li><b>CXR</b> (if respiratory symptoms)</li><li><b>Pregnancy test</b> (women childbearing age)</li></ul>
+<div class="sub-h">Calculated Values</div>
+<ul><li><b>Corrected Na⁺</b> = Measured Na⁺ + (Glucose − 5.5) × 0.016 (or +1.6 per 5.5 mmol/L glucose above 5.5)</li><li><b>Anion gap</b> = Na⁺ − (Cl⁻ + HCO₃⁻) — <b>elevated in DKA</b> (ketones, lactate)</li><li><b>ΔAG/ΔHCO₃ ratio</b> ≈ 1 in pure DKA (if &gt;1 → concurrent metabolic alkalosis; if &lt;1 → concurrent normal AG acidosis)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnostic Criteria</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">DKA (JBDS/ADA)</div>
+<table class="ctable"><tr><th>Severity</th><th>Glucose</th><th>Ketones (β-OHB)</th><th>pH</th><th>Bicarbonate</th></tr><tr><td>----------</td><td>---------</td><td>-----------------</td><td>-----</td><td>-------------</td></tr><tr><td>**Mild**</td><td>>11 mmol/L</td><td>≥3 mmol/L</td><td>7.25–7.30</td><td>15–18</td></tr><tr><td>**Moderate**</td><td>>11 mmol/L</td><td>≥3 mmol/L</td><td>7.00–7.24</td><td>10–15</td></tr><tr><td>**Severe**</td><td>>11 mmol/L</td><td>≥3 mmol/L</td><td><7.00</td><td><10</td></tr></table>
+<div class="sub-h">HHS</div>
+<ul><li>Glucose <b>&gt;30 mmol/L (600 mg/dL)</b></li><li>Effective osmolality <b>≥320 mOsm/kg</b></li><li><b>No significant ketonaemia</b> (&lt;3 mmol/L)</li><li><b>No significant acidosis</b> (pH &gt;7.3, bicarbonate &gt;15)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Initial Assessment &amp; Resuscitation (ABCDE)</div>
+<ul><li><b>Airway/Breathing</b>: Kussmaul breathing → assess work of breathing; intubate if GCS &lt;8 or failing</li><li><b>Circulation</b>: <b>2 large-bore IV access</b>, cardiac monitoring, urine catheter (hourly UOP)</li><li><b>Disability</b>: GCS, pupil size (cerebral oedema risk)</li><li><b>Exposure</b>: temperature (hypothermia risk in HHS), skin for infection</li></ul>
+<div class="sub-h">2. Fluid Resuscitation — **FIRST PRIORITY** (Before Insulin)</div>
+<table class="ctable"><tr><th>Phase</th><th>Fluid</th><th>Rate</th><th>Target</th></tr><tr><td>-------</td><td>-------</td><td>------</td><td>--------</td></tr><tr><td>**0–1h**</td><td>0.9% NaCl</td><td>**1 L**</td><td>Restore intravascular volume</td></tr><tr><td>**1–2h**</td><td>0.9% NaCl</td><td>1 L</td><td>Continue volume replacement</td></tr><tr><td>**2–4h**</td><td>0.9% NaCl</td><td>1 L</td><td></td></tr><tr><td>**4–6h**</td><td>0.9% NaCl</td><td>1 L</td><td></td></tr><tr><td>**6–12h**</td><td>0.9% NaCl → switch to 0.45% NaCl if Na⁺ rising/normal</td><td>500 mL/h</td><td>Match ongoing losses + maintenance</td></tr><tr><td>**12–24h**</td><td>0.45% NaCl / Hartmann's</td><td>250–500 mL/h</td><td>Euvolemia, urine output >0.5 mL/kg/h</td></tr></table>
+<div class="callout"><b>Cerebral oedema risk</b>: in DKA, <b>avoid rapid Na⁺ rise</b> — use 0.45% NaCl after initial resuscitation if corrected Na⁺ rising &gt;2 mmol/L/h</div>
+<div class="sub-h">3. Insulin Therapy — **Fixed-Rate Insulin Infusion (FRII)**</div>
+<ul><li><b>Dose</b>: <b>0.1 U/kg/h</b> (based on <b>actual body weight</b>)</li><li><b>Preparation</b>: 50 U Actrapid in 49.5 mL 0.9% NaCl = <b>1 U/mL</b> (run at mL/h = 0.1 × weight kg)</li><li><b>Start</b>: <b>After 1st hour of fluids</b> (or immediately if K⁺ &gt;5.5)</li><li><b>Continue FRII</b> until: <b>ketones &lt;0.6 mmol/L AND pH &gt;7.3 AND bicarbonate &gt;15</b> (DKA) OR <b>osmolality &lt;320</b> (HHS)</li><li><b>Glucose monitoring</b>: <b>hourly</b> (capillary)</li><li>If glucose &lt;14 mmol/L → add <b>5% dextrose</b> (run alongside FRII at 100–125 mL/h)</li><li><b>Do NOT reduce insulin rate</b> (maintain ketosis suppression)</li><li><b>Transition to subcutaneous</b>: when eating/drinking, ketones &lt;0.6, pH &gt;7.3</li><li><b>Restart SC insulin 1–2h BEFORE stopping FRII</b> (overlap to prevent rebound)</li><li><b>Basal + bolus</b> regimen (or pre-mixed if appropriate)</li></ul>
+<div class="sub-h">4. Potassium Replacement — **CRITICAL**</div>
+<ul><li><b>Total body K⁺ depleted</b> (3–5 mmol/kg) despite normal/high initial serum K⁺ (acidosis shifts K⁺ out of cells)</li><li><b>Insulin drives K⁺ into cells</b> → rapid hypokalaemia risk</li></ul>
+<table class="ctable"><tr><th>Serum K⁺</th><th>Replacement</th></tr><tr><td>----------</td><td>-------------</td></tr><tr><td>**>5.5 mmol/L**</td><td>**Hold K⁺**, recheck 1h; start insulin</td></tr><tr><td>**4.0–5.5 mmol/L**</td><td>**40 mmol/L** in infusion fluid (20 mmol/h at 500 mL/h)</td></tr><tr><td>**<4.0 mmol/L**</td><td>**Stop insulin**, give **40 mmol IV bolus** (20 mmol/h max), resume insulin when K⁺ >4.0</td></tr></table>
+<div class="callout"><b>Target K⁺</b>: <b>4.0–5.5 mmol/L</b> (check <b>hourly</b> × 4h, then 2-hourly)</div>
+<div class="sub-h">5. Bicarbonate Therapy — **RARELY INDICATED**</div>
+<ul><li><b>pH &lt;6.9</b> (severe acidosis impairing cardiac contractility) — <b>consider</b> 50–100 mmol NaHCO₃ in 200 mL 5% dextrose over 1h</li><li><b>Risks</b>: paradoxical CSF acidosis, hypokalaemia, tissue hypoxia, worsened cerebral oedema</li><li><b>Most DKA</b>: resolves with fluids + insulin alone</li></ul>
+<div class="sub-h">6. Phosphate Replacement</div>
+<ul><li><b>Routine replacement NOT recommended</b></li><li><b>Severe hypophosphataemia</b> (&lt;0.3 mmol/L) with rhabdo/haemolysis/respiratory failure → consider 0.5 mmol/kg IV over 6h (monitor Ca²⁺)</li></ul>
+<div class="sub-h">7. Cerebral Oedema (DKA-Specific) — **Rare but Fatal**</div>
+<ul><li><b>Risk factors</b>: children/adolescents, new-onset T1DM, severe acidosis, rapid fluid/insulin, low PaCO₂</li><li><b>Signs</b>: headache, irritability, slowed HR, rising BP, GCS drop, papilloedema, cranial nerve palsies</li><li><b>Prevention</b>: <b>avoid rapid fluid/insulin</b>, <b>avoid rapid Na⁺ rise</b>, <b>slow correction</b> of osmolality</li><li><b>Treatment</b>: <b>mannitol 0.5–1 g/kg IV</b> (or hypertonic saline 3% 2–5 mL/kg), <b>head up 30°</b>, <b>reduce fluid rate</b>, <b>intubate/hyperventilate</b> (PaCO₂ 30–35), <b>ICU</b></li></ul>
+<div class="sub-h">8. HHS-Specific Considerations</div>
+<ul><li><b>Thrombosis risk high</b>: <b>prophylactic LMWH</b> (unless contraindicated)</li><li><b>Rhabdomyolysis risk</b>: monitor CK, aggressive fluids, alkalinise urine</li><li><b>Higher mortality</b>: aggressive comorbidity management, cardiac monitoring</li><li><b>Insulin resistance</b>: may need higher FRII (0.15 U/kg/h if poor response)</li></ul>
+<div class="sub-h">9. Infection Management</div>
+<ul><li><b>Precipitant in 30–50%</b>: UTI, pneumonia, sepsis, skin/soft tissue</li><li><b>Cultures</b> (blood, urine, sputum, wound) before antibiotics</li><li><b>Empirical antibiotics</b> if septic (local guidelines)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>DKA</th><th>HHS</th><th>Prevention</th></tr><tr><td>--------------</td><td>-----</td><td>-----</td><td>------------</td></tr><tr><td>**Cerebral oedema**</td><td>Yes (0.5–1%)</td><td>Rare</td><td>Slow fluid/insulin, slow Na⁺ correction</td></tr><tr><td>**Hypokalaemia**</td><td>Common</td><td>Common</td><td>Protocol-driven K⁺ replacement</td></tr><tr><td>**Hypoglycaemia**</td><td>If insulin not reduced</td><td>Possible</td><td>Add dextrose when glucose <14</td></tr><tr><td>**Thrombosis**</td><td>Risk</td><td>**High**</td><td>LMWH prophylaxis</td></tr><tr><td>**Rhabdomyolysis**</td><td>Possible</td><td>Risk</td><td>Fluids, alkalinisation</td></tr><tr><td>**Aspiration**</td><td>If obtunded</td><td>Risk</td><td>NPO, NGT if ileus</td></tr><tr><td>**AKI**</td><td>Pre-renal → ATN</td><td>Common</td><td>Early fluid resuscitation</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>DKA</b>: mortality 1–5% (higher if cerebral oedema, elderly, comorbidities)</li><li><b>HHS</b>: mortality 10–20% (elderly, comorbidities, delayed diagnosis)</li><li><b>Recurrence</b>: address precipitant, education, outpatient follow-up</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Fluids FIRST, insulin second</b> (1L 0.9% NaCl in 1st hour)</li><li><b>FRII 0.1 U/kg/h</b> — do NOT bolus insulin</li><li><b>K⁺ replacement protocol</b>: &gt;5.5 hold, 4–5.5 = 40 mmol/L, &lt;4 = bolus + stop insulin</li><li><b>Cerebral oedema</b>: children, rapid correction → mannitol, head up 30°, ICU</li><li><b>HHS mortality higher</b> (10–20%) — elderly, comorbidities, thrombosis, rhabdo</li><li><b>Effective osmolality</b> = 2×Na + Glucose/18 ≥320 = HHS</li><li><b>Corrected Na⁺</b> rises with glucose correction — <b>avoid rapid rise</b> (cerebral oedema risk)</li><li><b>Transition to SC insulin</b>: overlap 1–2h before stopping FRII</li><li><b>Bicarbonate</b> rarely (pH &lt;6.9 only)</li><li><b>Phosphate</b>: no routine replacement</li><li><b>HHS thrombosis risk</b> → LMWH prophylaxis</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>DKA vs HHS diagnostic criteria</li><li>Fluid resuscitation protocol (JBDS)</li><li>FRII dose and monitoring</li><li>K⁺ replacement algorithm</li><li>Cerebral oedema prevention and management</li><li>Bicarbonate indication</li><li>HHS vs DKA differences</li><li>Transition to subcutaneous insulin</li><li>Cerebral oedema management</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Insulin bolus before fluids</b> → NO (worsens hypokalaemia, cerebral oedema)</li><li><b>Insulin bolus + infusion</b> → NO, FRII only (0.1 U/kg/h)</li><li><b>K⁺ &gt;5.5 = give insulin</b> → NO, hold insulin, rehydrate, recheck K⁺</li><li><b>Bicarbonate for all DKA</b> → NO, only pH &lt;6.9</li><li><b>Rapid Na⁺ correction</b> → cerebral oedema risk (DKA)</li><li><b>Stop insulin when glucose normal</b> → NO, continue FRII until ketones clear; add dextrose</li><li><b>Phosphate routine</b> → NO replacement</li><li><b>HHS = no insulin needed</b> → NO, FRII still needed (relative insulin deficiency)</li><li><b>Subcutaneous insulin immediately</b> → NO, overlap 1–2h with FRII</li><li><b>DKA only in Type 1</b> → NO, can occur in Type 2 (ketosis-prone)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>DKA vs HHS</b>: <b>D</b>KA = <b>K</b>etones + <b>A</b>cidosis; <b>H</b>HS = <b>H</b>yperglycaemia + <b>H</b>yperosmolality + <b>H</b>yperglycaemia (no ketones)</li><li><b>FLUIDS FIRST</b>: <b>1</b>L <b>0.9%</b> <b>N</b>aCl in <b>1</b>st <b>H</b>our (before insulin)</li><li><b>FRII</b>: <b>0.1 U/kg/h</b> (weight-based, no bolus)</li><li><b>K⁺ REPLACEMENT</b>: <b>&gt;5.5</b> Hold; <b>4–5.5</b> 40 mmol/L; <b>&lt;4</b> Bolus + Stop Insulin</li><li><b>CEREBRAL OEDEMA</b>: <b>M</b>annitol, <b>H</b>ead up 30°, <b>S</b>low fluids/insulin, <b>S</b>low Na⁺ correction</li><li><b>HHS TRIAD</b>: <b>H</b>yperglycaemia &gt;30, <b>H</b>yperosmolality &gt;320, <b>H</b>yperglycaemia no ketones</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Diabetic Emergencies))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">DKA</div>
+<div class="mm-node mm-l3">– Hyperglycaemia + Ketones + Acidosis</div>
+<div class="mm-node mm-l3">– Type 1 DM, Young</div>
+<div class="mm-node mm-l3">– Kussmaul, Abdominal Pain</div>
+<div class="mm-node mm-l3">– FRII 0.1 U/kg/h</div>
+<div class="mm-node mm-l3">– Fluids First (1L 0.9% NaCl)</div>
+<div class="mm-node mm-l3">– K+ Replacement Critical</div>
+<div class="mm-node mm-l3">– Cerebral Oedema Risk</div>
+<div class="mm-node mm-l2">HHS</div>
+<div class="mm-node mm-l3">– Severe Hyperglycaemia (&gt;30)</div>
+<div class="mm-node mm-l3">– Hyperosmolality (&gt;320)</div>
+<div class="mm-node mm-l3">– NO Ketones/Acidosis</div>
+<div class="mm-node mm-l3">– Type 2 DM, Elderly</div>
+<div class="mm-node mm-l3">– Severe Dehydration</div>
+<div class="mm-node mm-l3">– Thrombosis/Rhabdo Risk</div>
+<div class="mm-node mm-l3">– Higher Mortality</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Fluids First (1L 1st hr)</div>
+<div class="mm-node mm-l3">– FRII 0.1 U/kg/h</div>
+<div class="mm-node mm-l3">– K+ Protocol</div>
+<div class="mm-node mm-l3">– Glucose Monitoring (Hourly)</div>
+<div class="mm-node mm-l3">– Transition SC Insulin (Overlap)</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– Cerebral Oedema (DKA)</div>
+<div class="mm-node mm-l3">– Hypokalaemia</div>
+<div class="mm-node mm-l3">– Hypoglycaemia</div>
+<div class="mm-node mm-l3">– Thrombosis (HHS)</div>
+<div class="mm-node mm-l3">– Rhabdo (HHS)</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hyperglycaemic Emergency</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABG + Ketones</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">DKA Diagnosis</div>
+<div class="fc-node" data-id="D">HHS Diagnosis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">ABCDE + 1L 0.9% NaCl 1st Hour\nHourly UOP, Glucose, K+, ABG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">FRII 0.1 U/kg/h\nAfter 1st Hour Fluids\nHourly Glucose/K+</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">K+ Replacement</div>
+<div class="fc-node" data-id="K">Glucose &lt;14?</div>
+<div class="fc-node" data-id="L">Add 5% Dextrose Infusion\nContinue FRII</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Hold Insulin, Fluids, Recheck 1h</div>
+<div class="fc-node" data-id="I">40 mmol/L in Fluids\nTarget 4-5.5</div>
+<div class="fc-node" data-id="J">STOP Insulin, 40mmol Bolus\nRestart when &gt;4</div>
+<div class="fc-node" data-id="M">Resolution Criteria</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Transition to SC Insulin</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="O">Overlap SC Insulin 1-2h Before Stop FRII\nBasal + Bolus Regimen</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>DKA vs HHS comparison table</li><li>FRII preparation and monitoring card</li><li>K⁺ replacement algorithm card</li><li>Cerebral oedema management algorithm</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>JBDS DKA guidelines walkthrough</li><li>HHS management (ADA)</li><li>Cerebral oedema in DKA</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>DKA</b>: glucose &gt;11, ketones ≥3, pH &lt;7.3, bicarbonate &lt;15</li><li><b>HHS</b>: glucose &gt;30, osmolality &gt;320, NO ketones/acidosis</li><li><b>Fluids FIRST</b>: 1L 0.9% NaCl in 1st hour (before insulin)</li><li><b>FRII</b>: 0.1 U/kg/h (no bolus); hourly glucose/K⁺</li><li><b>K⁺ protocol</b>: &gt;5.5 hold; 4–5.5 = 40 mmol/L; &lt;4 = bolus + stop insulin</li><li><b>Cerebral oedema (DKA)</b>: children, rapid correction → mannitol, head 30°, ICU</li><li><b>HHS</b>: thrombosis risk → LMWH; higher mortality (10–20%)</li><li><b>Bicarbonate</b>: only pH &lt;6.9</li><li><b>Transition to SC</b>: overlap 1–2h before stopping FRII</li><li><b>Monitoring</b>: hourly glucose/K⁺ × 4h, then 2-hourly</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State DKA vs HHS diagnostic criteria</li><li>Recite fluid resuscitation protocol (1st 6h)</li><li>State FRII dose and K⁺ replacement protocol</li><li>List cerebral oedema prevention measures</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>DKA vs HHS diagnostic criteria</li><li>Fluids first (1L 0.9% NaCl in 1h) before insulin</li><li>FRII 0.1 U/kg/h (no bolus)</li><li>K⁺ replacement protocol (&gt;5.5 hold, 4–5.5 = 40/L, &lt;4 bolus+stop)</li><li>Cerebral oedema prevention (slow correction)</li><li>Transition overlap 1–2h</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Corrected Na⁺ calculation</li><li>Effective osmolality formula (2×Na + Glucose/18)</li><li>HHS thrombosis → LMWH</li><li>Cerebral oedema management (mannitol, head 30°)</li><li>Bicarbonate pH &lt;6.9 only</li><li>Transition overlap 1–2h</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Euglycaemic DKA (SGLT2 inhibitors)</li><li>Mixed DKA/HHS</li><li>Pregnancy DKA (lower threshold)</li><li>Paediatric DKA modifications</li><li>SGLT2 inhibitor DKA risk</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>DKA vs HHS comparison table</li><li>Pathophysiology (insulin deficiency + counter-regulatory hormones)</li><li>Diagnostic criteria</li><li>Management: fluids → FRII → K⁺/glucose monitoring → transition</li><li>Complications (cerebral oedema, thrombosis, hypokalaemia)</li><li>DKA vs HHS differences</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>DKA vs HHS table</li><li>FRII + K⁺ protocol card</li><li>Fluids timeline</li><li>Cerebral oedema algorithm</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"DKA = hyperglycaemia + ketones + acidosis; HHS = severe hyperglycaemia + hyperosmolality NO ketones"</li><li>"Fluids FIRST: 1L 0.9% NaCl in 1st hour, THEN insulin"</li><li>"FRII = 0.1 U/kg/h, no bolus, hourly glucose/K⁺"</li><li>"K⁺: &gt;5.5 hold; 4–5.5 = 40 mmol/L; &lt;4 = bolus + stop insulin"</li><li>"Cerebral oedema risk: children, rapid correction → mannitol, head 30°, ICU"</li><li>"HHS: &gt;30 glucose, &gt;320 osmolality, NO ketones, LMWH, higher mortality"</li><li>"Bicarbonate ONLY if pH &lt;6.9"</li><li>"Transition SC: overlap 1–2h before stopping FRII"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>14yo new T1DM, DKA severe → fluids 1L, FRII, K⁺ protocol, head 30°, cerebral oedema watch</li><li>75yo T2DM, HHS glucose 55, osmolality 340, K⁺ 3.2 → fluids, LMWH, K⁺ bolus, FRII</li><li>DKA resolving, glucose 8, ketones 0.4 → stop FRII? NO, add dextrose, continue FRII until ketones &lt;0.6</li><li>HHS resolved, transition to SC → basal + bolus overlap 2h before stopping FRII</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>DKA: Glu&gt;11, Ket&gt;3, pH&lt;7.3, Bic&lt;15</li><li>HHS: Glu&gt;30, Osm&gt;320, No Ket/Ac</li><li>Fluids: 1L 0.9% NaCl 1h (Before Insulin)</li><li>FRII: 0.1 U/kg/h, No Bolus</li><li>K+: &gt;5.5 Hold; 4-5.5 40/L; &lt;4 Bolus+Stop</li><li>Cerebral Oedema: Kids, Slow Correct, Mannitol</li><li>HHS: Thrombosis-&gt;LMWH, Mortality Higher</li><li>Bicarb: pH&lt;6.9 Only</li><li>Transition: Overlap 1-2h</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>DKA</b> = hyperglycaemia + ketonaemia (≥3 mmol/L) + metabolic acidosis (pH &lt;7.3, bicarbonate &lt;15). <b>HHS</b> = severe hyperglycaemia (&gt;30 mmol/L) + hyperosmolality (≥320 mOsm/kg) WITHOUT significant ketosis/acidosis. <b>Management</b>: <b>Fluids FIRST</b> (1L 0.9% NaCl in 1st hour) → <b>FRII 0.1 U/kg/h</b> (no bolus) → <b>K⁺ protocol</b> (&gt;5.5 hold, 4–5.5 = 40 mmol/L, &lt;4 bolus + stop insulin) → <b>hourly glucose/K⁺</b> until resolution → <b>transition SC insulin with 1–2h overlap</b>. <b>Cerebral oedema</b> (DKA): slow correction, mannitol, head 30°. <b>HHS</b>: higher mortality, thrombosis (LMWH), rhabdo. <b>Bicarbonate</b> only pH &lt;6.9.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>DKA diagnostic criteria include all EXCEPT:</li></ol>
+<p>A. Glucose &gt;11 mmol/L (or &gt;200 mg/dL) B. <b>pH &lt;7.0</b> C. Bicarbonate &lt;15 mmol/L D. Ketonaemia ≥3 mmol/L or ketonuria +++</p>
+<ol><li>HHS diagnostic criteria include all EXCEPT:</li></ol>
+<p>A. Glucose &gt;33 mmol/L B. pH &gt;7.3 C. Bicarbonate &gt;18 mmol/L D. <b>Significant ketonaemia</b></p>
+<ol><li>DKA initial fluid resuscitation:</li></ol>
+<p>A. 0.45% saline B. <b>0.9% saline 1 L in first hour, then adjust</b> C. 5% dextrose first D. Albumin</p>
+<ol><li>Insulin in DKA — when to start:</li></ol>
+<p>A. Immediately B. <b>After K⁺ confirmed ≥3.3 mmol/L (hold insulin if &lt;3.3)</b> C. After 4 h D. After 24 h</p>
+<ol><li>Fixed Rate Insulin Infusion (FRII) in DKA:</li></ol>
+<p>A. 0.05 U/kg/h B. <b>0.1 U/kg/h IV (FRII)</b> C. 1 U/kg/h D. Sliding scale</p>
+<ol><li>When to add 5% dextrose in DKA:</li></ol>
+<p>A. At presentation B. <b>When glucose falls below 14 mmol/L (continue insulin)</b> C. When pH normalises D. Never</p>
+<ol><li>Most important electrolyte to monitor and replace in DKA:</li></ol>
+<p>A. Sodium B. <b>Potassium (insulin drives K⁺ intracellularly)</b> C. Calcium D. Magnesium</p>
+<ol><li>HHS treatment — key difference from DKA:</li></ol>
+<p>A. Insulin dose higher B. <b>More aggressive fluid resuscitation (often 8–12 L deficit) and slower insulin onset</b> C. Bicarbonate D. Calcium</p>
+<ol><li>Cerebral oedema in DKA — risk factors include all EXCEPT:</li></ol>
+<p>A. Age &lt;5 B. New-onset diabetes C. <b>High sodium</b> D. Bicarbonate use</p>
+<ol><li>Resolution of DKA is defined as:</li></ol>
+<p>A. Glucose normal B. pH normal C. <b>Bicarbonate &gt;18 + pH &gt;7.30 + anion gap closed + patient eating</b> D. Patient feels better</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 25-year-old T1DM, vomiting, glucose 25, pH 7.10, K⁺ 4.5, ketones 5. Management:</li></ol>
+<p>A. Insulin SC B. <b>IV 0.9% saline + IV insulin infusion (FRII 0.1 U/kg/h) + K⁺ replacement</b> C. Subcutaneous insulin D. Saline only</p>
+<ol><li>DKA, K⁺ 2.8. Insulin:</li></ol>
+<p>A. Start immediately B. <b>HOLD insulin — replace K⁺ first (insulin will cause life-threatening hypokalaemia)</b> C. Reduce dose D. Give insulin + K⁺</p>
+<ol><li>DKA, glucose 14, pH 7.20, on insulin infusion. Next step:</li></ol>
+<p>A. Stop insulin B. <b>Add 5% dextrose 125 mL/h (continue insulin)</b> C. Increase insulin D. Stop fluids</p>
+<ol><li>DKA, pH 6.9. Bicarbonate:</li></ol>
+<p>A. Always give B. <b>Consider if pH &lt;7.0 (controversial; JBDS — pH &lt;6.9 → 100 mmol over 2 h)</b> C. Never D. With every insulin dose</p>
+<ol><li>Cerebral oedema in DKA — features:</li></ol>
+<p>A. Polyuria B. <b>Headache, altered consciousness, bradycardia, seizures</b> C. Sweating D. Hypertension only</p>
+<ol><li>Cerebral oedema in DKA management:</li></ol>
+<p>A. More fluids B. <b>Mannitol 0.5–1 g/kg + hypertonic saline + reduce fluid rate + intubate</b> C. Insulin SC D. Steroids</p>
+<ol><li>HHS, glucose 50, Na⁺ corrected 145, severe dehydration. Management:</li></ol>
+<p>A. D5 B. <b>Aggressive 0.9% saline (8–12 L deficit) + insulin infusion + K⁺ replacement + D5 when glucose &lt;14</b> C. SC insulin D. Bicarbonate</p>
+<ol><li>Corrected sodium in hyperglycaemia formula:</li></ol>
+<p>A. Na⁺ × 1.5 B. <b>Na⁺ + 1.6 × ((glucose − 5.5)/5.5) (or × 2.4 for glucose in mg/dL)</b> C. Na⁺ × 2 D. Na⁺ − 5</p>
+<ol><li>Euglycaemic DKA in T1DM on SGLT2 inhibitor:</li></ol>
+<p>A. Give insulin B. <b>Recognise — glucose &lt;14 + ketones; DKA protocol with 5% dextrose from start</b> C. Discharge D. Stop SGLT2 only</p>
+<ol><li>DKA patient eating, well, pH 7.32, bicarbonate 20, AG closed. Next:</li></ol>
+<p>A. Continue IV insulin 24 h B. <b>Switch to subcutaneous insulin (overlap IV for 1–2 h)</b> C. Discharge D. Stop all insulin</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: DKA criteria</li></ul>
+<p>A: Glucose &gt;11, pH &lt;7.30, HCO₃ &lt;15, ketones ≥3 or ketonuria +++</p>
+<ul><li>Q: HHS criteria</li></ul>
+<p>A: Glucose &gt;33, pH &gt;7.30, HCO₃ &gt;18, osm &gt;320, minimal ketones</p>
+<ul><li>Q: Initial fluid in DKA</li></ul>
+<p>A: 0.9% saline 1 L in first hour</p>
+<ul><li>Q: Insulin in DKA</li></ul>
+<p>A: 0.1 U/kg/h IV (FRII), only if K⁺ ≥3.3</p>
+<ul><li>Q: K⁺ in DKA</li></ul>
+<p>A: Add 20–40 mmol/h if K⁺ 3.5–5.5; hold insulin if K⁺ &lt;3.3</p>
+<ul><li>Q: When to add dextrose</li></ul>
+<p>A: When glucose &lt;14 (continue insulin)</p>
+<ul><li>Q: HHS vs DKA fluid</li></ul>
+<p>A: HHS = more aggressive (8–12 L deficit)</p>
+<ul><li>Q: Cerebral oedema risk</li></ul>
+<p>A: Age &lt;5, new T1DM, severe acidosis, high BUN, bicarbonate use</p>
+<ul><li>Q: Cerebral oedema Rx</li></ul>
+<p>A: Mannitol 0.5–1 g/kg + hypertonic saline</p>
+<ul><li>Q: Bicarbonate in DKA</li></ul>
+<p>A: Consider if pH &lt;7.0 (JBDS &lt;6.9)</p>
+<ul><li>Q: Corrected Na⁺</li></ul>
+<p>A: Na⁺ + 1.6 × ((glucose − 5.5)/5.5)</p>
+<ul><li>Q: DKA resolution</li></ul>
+<p>A: HCO₃ &gt;18 + pH &gt;7.30 + AG closed + eating</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">26</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — DKA criteria don't require pH &lt;7.0 (DKA is pH &lt;7.30).</li><li><b>D</b> — HHS: minimal/no ketones (NOT significant ketonaemia).</li><li><b>B</b> — DKA: 0.9% saline 1 L in first hour.</li><li><b>B</b> — Hold insulin if K⁺ &lt;3.3 (risk of life-threatening hypokalaemia).</li><li><b>B</b> — FRII: 0.1 U/kg/h IV insulin.</li><li><b>B</b> — Add 5% dextrose when glucose &lt;14 (continue insulin to clear ketones).</li><li><b>B</b> — K⁺ is the most important — insulin drives K⁺ intracellularly.</li><li><b>B</b> — HHS = more fluid (deficit 8–12 L) and slower insulin.</li><li><b>C</b> — High sodium is NOT a risk factor; rather, hyponatraemia.</li><li><b>C</b> — Resolution: HCO₃ &gt;18 + pH &gt;7.30 + AG closed + eating.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — DKA: IV saline + IV insulin + K⁺ replacement.</li><li><b>B</b> — Hold insulin until K⁺ ≥3.3.</li><li><b>B</b> — Add 5% dextrose at glucose 14 (continue insulin).</li><li><b>B</b> — Bicarbonate only if pH &lt;7.0 (consider &lt;6.9).</li><li><b>B</b> — Cerebral oedema: headache, altered consciousness, bradycardia, seizures.</li><li><b>B</b> — Cerebral oedema: mannitol + hypertonic saline + reduce fluid + intubate.</li><li><b>B</b> — HHS: aggressive fluids + insulin + K⁺ + D5 when glucose &lt;14.</li><li><b>B</b> — Corrected Na⁺ = Na⁺ + 1.6 × ((glucose − 5.5)/5.5).</li><li><b>B</b> — Euglycaemic DKA: DKA protocol with D5 from start.</li><li><b>B</b> — Switch to SC insulin with 1–2 h overlap.</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Diabetic Emergencies (DKA and HHS) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mpox (Monkeypox) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">Mpox (Monkeypox)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Describe <b>Mpox Virology</b> (Orthopoxvirus, Clades I/II) and <b>Transmission Dynamics</b> (2022 Clade IIb Sexual Network Spread)</li><li>[ ] Recognise <b>Clinical Features</b> (Incubation, Prodrome, Rash Evolution, Anogenital Predilection 2022)</li><li>[ ] Apply <b>Case Definitions</b> (Suspected, Probable, Confirmed) and <b>Diagnostic Algorithm</b> (PCR, Sequencing)</li><li>[ ] Apply <b>Clinical Severity Grading</b> (Mild, Moderate, Severe) and <b>Management</b> (Supportive, Tecovirimat, Vaccinia Immune Globulin)</li><li>[ ] Implement <b>Infection Prevention &amp; Control</b> (Isolation, PPE, Contact Tracing, Vaccination)</li><li>[ ] Apply <b>Vaccination Strategies</b> (Pre-Exposure PrEP, Post-Exposure PEP, Priority Groups)</li><li>[ ] Manage <b>Special Populations</b> (HIV, Pregnancy, Children, Immunocompromised)</li><li>[ ] Answer viva: "Mpox 2022 Outbreak Features" and "Tecovirimat Indications" and "Vaccination PEP/PrEP" and "Infection Control"</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">🧠 Core Concept: Mpox Virology & 2022 Outbreak</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Mpox Virus (MPXV)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Orthopoxvirus (Poxviridae)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">dsDNA Virus, Large, Brick-Shaped</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Two Genetic Clades</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D1">**Clade I (Congo Basin)**&lt;br/&gt;Historically Central Africa&lt;br/&gt;Higher Severity/CFR (1-10%)&lt;br/&gt;More Respiratory Transmission</div>
+<div class="fc-node" data-id="D2">**Clade II (West Africa)**&lt;br/&gt;Historically West Africa&lt;br/&gt;Lower Severity/CFR (&lt;1-3%)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D2a">**Clade IIa** — Endemic West Africa</div>
+<div class="fc-node" data-id="D2b">**Clade IIb (B.1 Lineage)** — **2022 Global Outbreak**&lt;br/&gt;**Predominantly Sexual Transmission (MSM Networks)**&lt;br/&gt;**Anogenital Lesion Predilection**&lt;br/&gt;**Lower CFR (~0.1-0.3%)**</div>
+</div>
+</div>
+<div class="callout"><b>Key Shift 2022</b>: <b>Clade IIb Spread via Sexual Networks (MSM)</b> → <b>Anogenital/Oral Lesions Predominant</b> → <b>Different Clinical Picture from Endemic Clade I/IIa</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1️⃣ Transmission</div>
+<table class="ctable"><tr><th>Route</th><th>Details</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Close Physical Contact**</td><td>**Skin-to-Skin (Lesions, Scabs), Mucosal Contact** — **Primary 2022 Route (Sexual)**</td></tr><tr><td>**Respiratory Droplets**</td><td>**Prolonged Face-to-Face** (Historically Significant Clade I; Less in 2022 Outbreak)</td></tr><tr><td>**Fomites**</td><td>**Contaminated Linens, Towels, Clothing, Sex Toys, Surfaces**</td></tr><tr><td>**Vertical/Perinatal**</td><td>**Placental Transfer, Peripartum Contact, Breastfeeding**</td></tr><tr><td>**Animal Contact**</td><td>**Rodents, Primates (Endemic Areas)** — **Not Significant 2022 Outbreak**</td></tr></table>
+<div class="sub-h">2022 Outbreak Risk Factors</div>
+<ul><li><b>MSM (Men Who Have Sex with Men) — ~95-98% Cases</b></li><li><b>Multiple Sexual Partners / Anonymous Sex / Sex-on-Premises Venues</b></li><li><b>HIV+ (Advanced) / Immunocompromised — ↑ Severity</b></li><li><b>Concurrent STIs (GC, CT, Syphilis, HSV, HIV) — Common Co-infections</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2️⃣ Clinical Features</div>
+<div class="sub-h">Typical Timeline</div>
+<pre class="codeblock"><code>gantt
+    title Mpox Clinical Course (Typical)
+    dateFormat  X
+    axisFormat  %d
+    section Incubation
+    Asymptomatic       :a1, 0, 21
+    section Prodrome (1-5 Days)
+    Fever, Lymphadenopathy, Myalgia, Headache :a2, 5, 5
+    section Rash Evolution (2-4 Weeks)
+    Macules → Papules  :a3, 7, 3
+    Vesicles → Pustules :a4, 10, 5
+    Crusts → Scabs      :a5, 15, 7
+    Scabs Fall Off      :a6, 22, 3
+    section Infectious Period
+    From Prodrome to All Scabs Fallen :inf, 5, 25</code></pre>
+<table class="ctable"><tr><th>Phase</th><th>Duration</th><th>Features</th></tr><tr><td>-------</td><td>----------</td><td>----------</td></tr><tr><td>**Incubation**</td><td>**5-21 Days** (Median 7-10d)</td><td>Asymptomatic</td></tr><tr><td>**Prodrome**</td><td>**1-5 Days**</td><td>**Fever, Lymphadenopathy (Generalised — Key vs VZV/Smallpox), Myalgia, Headache, Fatigue, Pharyngitis**</td></tr><tr><td>**Rash Onset**</td><td>**1-3 Days After Prodrome**</td><td>**Centrifugal (Face→Extremities) Historically**; **2022: Anogenital/Perianal/Oral Predominant (Inoculation Site)**</td></tr><tr><td>**Rash Evolution**</td><td>**2-4 Weeks**</td><td>**Macules → Papules → Vesicles → Pustules (Umbilicated) → Crusts → Scabs**</td></tr><tr><td>**Infectious Period**</td><td>**From Prodrome Until ALL Scabs Fallen + Fresh Skin**</td><td>**~3-4 Weeks Total**</td></tr></table>
+<div class="sub-h">2022 Outbreak Clinical Phenotype (Clade IIb)</div>
+<table class="ctable"><tr><th>Feature</th><th>Difference from Classic Description</th></tr><tr><td>---------</td><td>--------------------------------------</td></tr><tr><td>**Lesion Distribution**</td><td>**Anogenital (~50-70%), Perianal, Oral/Perioral, Face** — **Often Few/Solitary Lesions**</td></tr><tr><td>**Prodrome**</td><td>**Often Mild or Absent** (Afebrile Cases Common)</td></tr><tr><td>**Lymphadenopathy**</td><td>**Inguinal/Femoral Predominant (Drainage Site)**</td></tr><tr><td>**Rectal Symptoms**</td><td>**Proctitis: Pain, Bleeding, Discharge, Tenesmus (Common in MSM)**</td></tr><tr><td>**Co-infections**</td><td>**High STI Co-infection Rate (GC, CT, Syphilis, HIV, HSV)**</td></tr><tr><td>**Severity**</td><td>**Generally Mild (Self-Limited); Severe in Advanced HIV/Immunocompromised**</td></tr></table>
+<div class="sub-h">Complications</div>
+<table class="ctable"><tr><th>Complication</th><th>Population</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td><td>------------</td></tr><tr><td>**Secondary Bacterial Infection**</td><td>All</td><td>Antibiotics (Cover Staph/Strep)</td></tr><tr><td>**Proctitis / Urethritis**</td><td>Anogenital Lesions</td><td>Supportive, Stool Softeners, Topical Anaesthetics</td></tr><tr><td>**Pharyngitis / Epiglottitis**</td><td>Oral Lesions</td><td>Airway Monitoring, Steroids if Severe</td></tr><tr><td>**Encephalitis**</td><td>Rare (<1%)</td><td>Supportive, Tecovirimat (CNS Penetration Limited)</td></tr><tr><td>**Corneal Infection / Vision Loss**</td><td>Ocular Involvement</td><td>Ophthalmology Urgent, Topical Antivirals (Trifluridine)</td></tr><tr><td>**Sepsis / Multi-Organ Failure**</td><td>Advanced HIV/Immunocompromised</td><td>ICU, Tecovirimat, VIGIV</td></tr><tr><td>**Scarring / Strictures**</td><td>Genital/Anal</td><td>Long-Term Follow-Up</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3️⃣ Case Definitions &amp; Diagnosis</div>
+<div class="sub-h">WHO/CDC Case Definitions (2022 Outbreak)</div>
+<table class="ctable"><tr><th>Category</th><th>Criteria</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Suspected**</td><td>**Acute Unexplained Rash** + **≥1 Epidemiological Link (Contact, Travel, MSM Network)** OR **Prodrome + Rash**</td></tr><tr><td>**Probable**</td><td>**Suspected + Orthopoxvirus Positive (PCR) OR Electron Microscopy (Poxvirus Particles)** OR **Epidemiological Link + Compatible Clinically**</td></tr><tr><td>**Confirmed**</td><td>**MPXV DNA Detected by PCR (Specific) OR Viral Isolation / Sequencing**</td></tr></table>
+<div class="sub-h">Diagnostic Algorithm</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Clinical Suspicion&lt;br/&gt;(Rash ± Prodrome ± Epi Link)</div>
+<div class="fc-node" data-id="C">C</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Specimen Collection**</div>
+<div class="fc-node" data-id="D">Result</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B1">**Lesion Swab (Vigorous)** — Roof/Fluid from Vesicle/Pustule&lt;br/&gt;**Dry Swab Preferred (Viral Transport Media OK)**&lt;br/&gt;**Multiple Lesions/Sites Swabbed**</div>
+<div class="fc-node" data-id="B2">**Blood (EDTA)** — PCR (If Disseminated/Severe), Serology (IgM/IgG)</div>
+<div class="fc-node" data-id="B3">**Throat/NAS/Oral Swab** — If Oropharyngeal Lesions</div>
+<div class="fc-node" data-id="B4">**Rectal Swab** — If Proctitis</div>
+<div class="fc-node" data-id="E">**Confirmed Case** → Isolate, Notify, Contact Trace</div>
+<div class="fc-node" data-id="F">**Probable — Sequence/Confirm**</div>
+<div class="fc-node" data-id="G">**Consider Alternatives (VZV, HSV, Syphilis, Molluscum, Drug Eruption)**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">**Repeat Testing if High Suspicion**</div>
+</div>
+</div>
+<div class="sub-h">Differential Diagnosis</div>
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>------------------------</td></tr><tr><td>**Varicella (Chickenpox)**</td><td>**Centripetal (Trunk→Extremities), Crops at Different Stages, No Lymphadenopathy, Vesicles on Erythematous Base (Dew Drop)**</td></tr><tr><td>**HSV (Genital/Oral)**</td><td>**Painful Grouped Vesicles on Erythematous Base, Recurrent, Tzanck/PCR Positive, No Prodromal Lymphadenopathy**</td></tr><tr><td>**Syphilis (Secondary)**</td><td>**Copper-Coloured Maculopapular Rash (Palms/Soles), Condylomata Lata, Mucous Patches, RPR/TPPA Positive**</td></tr><tr><td>**Molluscum Contagiosum**</td><td>**Firm, Domed, Umbilicated Papules (2-5mm), No Systemic Symptoms, No Lymphadenopathy**</td></tr><tr><td>**Drug Eruption**</td><td>**Morbilliform/Exanthematous, Drug History, Eosinophilia, No Lesion Evolution Through Stages**</td></tr><tr><td>**Disseminated VZV (Immunocompromised)**</td><td>**Vesicles at Different Stages, Visceral Involvement, PCR Positive**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">4️⃣ Clinical Management</div>
+<div class="sub-h">Severity Grading (WHO/UKHSA)</div>
+<table class="ctable"><tr><th>Grade</th><th>Criteria</th><th>Management</th></tr><tr><td>-------</td><td>----------</td><td>------------</td></tr><tr><td>**Mild**</td><td>**<25 Lesions, No Mucosal/Genital Complications, No Systemic Illness**</td><td>**Home Isolation, Supportive Care, Symptomatic Treatment**</td></tr><tr><td>**Moderate**</td><td>**25-100 Lesions, Mucosal Involvement (Oral/Genital/Rectal), Mild Systemic Symptoms**</td><td>**Home/Hospital Isolation, Supportive, Consider Tecovirimat if Risk Factors**</td></tr><tr><td>**Severe**</td><td>**>100 Lesions, Sepsis, Encephalitis, Airway Compromise, Ocular Involvement, Immunocompromised (Low CD4)**</td><td>**Hospital/ICU, Tecovirimat IV/PO, VIGIV Consideration, Multidisciplinary**</td></tr></table>
+<div class="sub-h">Supportive Care (All Cases)</div>
+<table class="ctable"><tr><th>Symptom</th><th>Management</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Pain (Lesions, Proctitis, Pharyngitis)**</td><td>**Analgesia Ladder (Paracetamol → NSAIDs → Opioids); Topical Lidocaine/Gel; Stool Softeners (Proctitis); Oral Analgesic Rinses (Pharyngitis)**</td></tr><tr><td>**Pruritus**</td><td>**Oral Antihistamines, Topical Calamine/Emollients, Short-Course Oral Steroids if Severe**</td></tr><tr><td>**Secondary Bacterial Infection**</td><td>**Oral/IV Antibiotics (Flucloxacillin/Cefalexin ± Metronidazole if Anaerobic)**</td></tr><tr><td>**Dehydration**</td><td>**Oral/IV Fluids**</td></tr><tr><td>**Ocular Involvement**</td><td>**Urgent Ophthalmology, Lubricants, Trifluridine Drops, Avoid Steroids**</td></tr><tr><td>**Psychosocial**</td><td>**Stigma Reduction, Mental Health Support, Isolation Support (Food, Income)**</td></tr></table>
+<div class="sub-h">Antiviral Treatment</div>
+<table class="ctable"><tr><th>Agent</th><th>Indication</th><th>Dose</th><th>Duration</th><th>Notes</th></tr><tr><td>-------</td><td>------------</td><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Tecovirimat (TPOXX)**</td><td>**Severe Disease; High Risk for Severe (Advanced HIV CD4<200, Immunocompromised, Pregnancy, Children <8, Atopic Dermatitis, Complications: Encephalitis, Sepsis, Ocular)**</td><td>**PO: 600mg (3×200mg caps) BD × 14d (Weight-Based if <40kg)**<br/>**IV: 200mg BD × 14d (If Unable Oral)**</td><td>**14 Days**</td><td>**1st Line Antiviral**; **VP37 Inhibitor (Blocks Viral Egress)**; **Well Tolerated (HA, Nausea)**; **IV: Renal Adjust CrCl<30**</td></tr><tr><td>**Cidofovir**</td><td>**Refractory/Resistant (Rare)**</td><td>**5mg/kg IV Weekly × 2, Then Biweekly**</td><td>Variable</td><td>**Nephrotoxic (Probenecid + Hydration Required)**; **Off-Label**</td></tr><tr><td>**Brincidofovir**</td><td>**Alternative (Oral Prodrug of Cidofovir)**</td><td>**200mg Weekly × 2 (Loading), Then 100mg Weekly**</td><td>Variable</td><td>**GI Toxicity (Diarrhoea); Hepatotoxicity; Off-Label**</td></tr><tr><td>**Vaccinia Immune Globulin IV (VIGIV)**</td><td>**Severe/Complicated (Immunocompromised, Encephalitis, Ocular) — Adjunct**</td><td>**6,000-10,000 U/kg IV Single Dose**</td><td>Single/Repeat</td><td>**Limited Supply; Contraindicated if IgA Deficiency (Anaphylaxis Risk)**</td></tr></table>
+<div class="callout"><b>Tecovirimat Access</b>: <b>Expanded Access Protocols (CDC/EAV/UKHSA); Not Licensed for Mpox in All Jurisdictions (FDA: Smallpox Only; EMA: Mpox Approved 2022)</b></div>
+<div class="sub-h">Isolation &amp; Infection Prevention (IPAC)</div>
+<table class="ctable"><tr><th>Setting</th><th>Precautions</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Home Isolation**</td><td>**Separate Room, Dedicated Bathroom if Possible; No Visitors; Wear Mask if Shared Spaces; Cover Lesions (Long Sleeves, Bandages); No Sharing Linens/Towels/Utensils; Separate Laundry (Hot Wash 60°C+); Disinfect High-Touch Surfaces (Bleach 0.1% / EPA-Registered); Waste: Double Bag, Regular Trash (If No Municipal Guidance)**</td></tr><tr><td>**Healthcare**</td><td>**Contact + Droplet Precautions (Gown, Gloves, Eye Protection, FFP2/N95); Airborne Precautions (Negative Pressure) for Aerosol-Generating Procedures; Dedicated Equipment; Limit Staff; Waste: Category B Infectious**</td></tr><tr><td>**Duration**</td><td>**Until ALL Scabs Fallen + Fresh Intact Skin Formed (Typically 2-4 Weeks)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">5️⃣ Vaccination</div>
+<div class="sub-h">Vaccines Available</div>
+<table class="ctable"><tr><th>Vaccine</th><th>Type</th><th>Doses</th><th>Indication</th><th>Key Features</th></tr><tr><td>---------</td><td>------</td><td>-------</td><td>------------</td><td>--------------</td></tr><tr><td>**MVA-BN (JYNNEOS / IMVANEX / IMVAMUNE)**</td><td>**3rd Gen, Replication-Deficient Modified Vaccinia Ankara**</td><td>**2 Doses (0, 28 Days)**</td><td>**PrEP & PEP**</td><td>**Safe in HIV/Immunocompromised (Non-Replicating); Licensed for Mpox (FDA/EMA/UK); Intradermal (1/5 Dose) = Dose-Sparing (EUA/Off-Label)**</td></tr><tr><td>**ACAM2000 (2nd Gen, Replication-Competent Vaccinia)**</td><td>**Live Replication-Competent**</td><td>**1 Dose (Percutaneous Scarification)**</td><td>**PrEP (Military/Lab)**</td><td>**Contraindicated: HIV, Immunocompromised, Pregnancy, Atopic Dermatitis, Cardiac Risk**; **Risk of Myopericarditis, Autoinoculation, Transmission**</td></tr><tr><td>**LC16m8 (3rd Gen, Attenuated)**</td><td>**Live Attenuated**</td><td>**1 Dose**</td><td>**Japan/Asia**</td><td>**Similar Safety to MVA-BN**</td></tr></table>
+<div class="sub-h">Vaccination Strategies (2022 Outbreak Response)</div>
+<table class="ctable"><tr><th>Strategy</th><th>Target Population</th><th>Timing</th></tr><tr><td>----------</td><td>-------------------</td><td>--------</td></tr><tr><td>**Post-Exposure Prophylaxis (PEP)**</td><td>**High-Risk Contacts (Sexual, Household, Healthcare Unprotected)**</td><td>**Ideally ≤4 Days Post-Exposure (Up to 14 Days May Modify Disease)**</td></tr><tr><td>**Expanded PEP (PEP++)**</td><td>**MSM/High-Risk Groups with Presumptive Exposure (Venue/Event Attendance)**</td><td>**Broad Offer Regardless of Identified Contact**</td></tr><tr><td>**Pre-Exposure Prophylaxis (PrEP)**</td><td>**High-Risk MSM (Multiple Partners, PrEP Users, STI Clinic Attendees, Sex Workers, Lab Workers)**</td><td>**Before Exposure; 2 Doses 28 Days Apart**</td></tr><tr><td>**Occupational**</td><td>**Lab Workers (Orthopoxvirus), Healthcare (High-Risk Procedures), Response Teams**</td><td>**PrEP**</td></tr></table>
+<div class="sub-h">MVA-BN Dosing (Standard vs Dose-Sparing)</div>
+<table class="ctable"><tr><th>Route</th><th>Dose</th><th>Schedule</th><th>Efficacy/Notes</th></tr><tr><td>-------</td><td>------</td><td>----------</td><td>----------------</td></tr><tr><td>**Subcutaneous (Standard)**</td><td>**0.5 mL**</td><td>**0, 28 Days**</td><td>**Licensed; Full Dose**</td></tr><tr><td>**Intradermal (Dose-Sparing)**</td><td>**0.1 mL (1/5 Dose)**</td><td>**0, 28 Days**</td><td>**EUA/Off-Label (FDA/EMA/UK); Non-Inferior Immunogenicity; 5x More Doses**</td></tr><tr><td>**Single Dose (Outbreak)**</td><td>**0.5 mL SC / 0.1 mL ID**</td><td>**Single**</td><td>**Used for Rapid PEP/PrEP; 2nd Dose Later if Supply Allows**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">6️⃣ Special Populations</div>
+<div class="sub-h">HIV / Immunocompromised</div>
+<table class="ctable"><tr><th>Aspect</th><th>Management</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Severity**</td><td>**Advanced HIV (CD4<200) = ↑ Severe Disease, Disseminated, Atypical, Prolonged, Mortality**</td></tr><tr><td>**Diagnosis**</td><td>**Test All Mpox Suspects for HIV (Opt-Out)**</td></tr><tr><td>**Treatment**</td><td>**Tecovirimat 1st Line (Earlier Threshold); VIGIV if Severe/Refractory; ART Optimisation Critical**</td></tr><tr><td>**Vaccination**</td><td>**MVA-BN Safe (Non-Replicating); ACAM2000 Contraindicated; 2 Doses (May Have Lower Immunogenicity if CD4<200)**</td></tr><tr><td>**Drug Interactions**</td><td>**Tecovirimat: CYP3A4 Substrate (Minor); Check ART Interactions (DRV/COBI, EFV, ETV, NVP, RPV → ↓ Tecovirimat Levels)**</td></tr></table>
+<div class="sub-h">Pregnancy</div>
+<table class="ctable"><tr><th>Aspect</th><th>Management</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Severity**</td><td>**↑ Severe Disease (Historical Data); Vertical Transmission Documented (Miscarriage, Stillbirth, Neonatal Mpox)**</td></tr><tr><td>**Treatment**</td><td>**Tecovirimat — Animal Data Safe; Human Pregnancy Data Limited but Used in Outbreaks (Benefit > Risk); VIGIV if Severe**</td></tr><tr><td>**Vaccination**</td><td>**MVA-BN — Animal Data Safe; Human Data Limited; Offer if High Risk (PEP/PrEP) — Benefit > Risk**; **ACAM2000 Contraindicated**</td></tr><tr><td>**Delivery**</td><td>**C-Section if Active Genital Lesions (Prevent Neonatal Contact); Breastfeeding: Avoid if Active Lesions on Breast; Express & Discard**</td></tr></table>
+<div class="sub-h">Children</div>
+<table class="ctable"><tr><th>Aspect</th><th>Management</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Severity**</td><td>**<8 Years = ↑ Severe (Historical Clade I); 2022 Clade IIb Generally Mild**</td></tr><tr><td>**Treatment**</td><td>**Tecovirimat Weight-Based (PO Capsules Can Be Opened/Mixed); VIGIV if Severe**</td></tr><tr><td>**Vaccination**</td><td>**MVA-BN Licensed ≥18y (Some ≥12y); Off-Label <18y in Outbreaks; ACAM2000 Contraindicated <12m/Atopic**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">7️⃣ Contact Tracing &amp; Public Health</div>
+<table class="ctable"><tr><th>Action</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Contact Definition**</td><td>**Close Contact: Face-to-Face >3h, Direct Physical Contact (Sexual, Lesion Touch), Fomite Sharing (Linens, Towels), Healthcare Without PPE**</td></tr><tr><td>**Risk Stratification**</td><td>**High: Sexual Partner, Household, Unprotected Healthcare; Medium: Social/Workplace Close Contact; Low: Casual**</td></tr><tr><td>**Management**</td><td>**High/Medium: PEP (MVA-BN) ≤4 Days (Up to 14); Symptom Monitoring 21 Days; Isolate if Symptoms**</td></tr><tr><td>**Notification**</td><td>**Urgent Notifiable Disease (WHO IHR, National Law)**</td></tr><tr><td>**Cluster/Outbreak**</td><td>**≥2 Cases Linked → Enhanced Surveillance, Venue Notification, Vaccination Campaigns**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">⚡ FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Virology**</td><td>**Orthopoxvirus, dsDNA; Clade I (Congo Basin, Severe), Clade IIb (2022 Global, Sexual MSM, Milder)**</td></tr><tr><td>**Transmission**</td><td>**Close Contact (Skin/Mucosal/Fomite/Residential); 2022: Sexual Networks (MSM) Predominant**</td></tr><tr><td>**Clinical**</td><td>**Incubation 5-21d; Prodrome: Fever, Lymphadenopathy (Key), Myalgia; Rash: Macule→Papule→Vesicle→Pustule(Umbilicated)→Crust→Scab**</td></tr><tr><td>**2022 Phenotype**</td><td>**Anogenital/Oral Lesions Predominant; Often Few/Solitary; Mild/Absent Prodrome; Rectal Proctitis Common; High STI Co-infection**</td></tr><tr><td>**Diagnosis**</td><td>**PCR from Lesion Swab (Gold Standard); Case Def: Suspected/Probable/Confirmed**</td></tr><tr><td>**Differential**</td><td>**VZV (Centripetal, Crops, No Lymphadenopathy), HSV (Grouped Vesicles, Recurrent), Syphilis (Palms/Soles, RPR+), Molluscum (Firm Domed Papules)**</td></tr><tr><td>**Management**</td><td>**Mild: Supportive/Isolate; Moderate/Severe/High Risk: Tecovirimat 600mg BD PO×14d (IV if Needed); VIGIV Adjunct Severe**</td></tr><tr><td>**Isolation**</td><td>**Until All Scabs Fallen + Fresh Skin (2-4w); Contact+Droplet Precautions (Airborne for AGP)**</td></tr><tr><td>**Vaccination**</td><td>**MVA-BN (JYNNEOS) — 3rd Gen, Non-Replicating, Safe HIV; 2 Doses 0,28d (SC/ID); PEP ≤4d (Up to 14d); PrEP High-Risk MSM**</td></tr><tr><td>**Special Pops**</td><td>**HIV: Test All; Tecovirimat Early; MVA-BN Safe; ART Optimise; DRUG INTERACTIONS (CYP3A4)**; **Preg/Breastfeed: Tecovirimat/MVA-BN Benefit>Risk; C-Section if Genital Lesions**; **Children: Tecovirimat Weight-Based**</td></tr><tr><td>**Viva**</td><td>"2022 Mpox Outbreak Features", "Tecovirimat Indications", "MVA-BN Vaccination PEP/PrEP", "Infection Control", "HIV & Mpox"</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🎤 Viva Questions (Expected Answers)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>#</th><th>Question</th><th>Expected Answer</th></tr><tr><td>---</td><td>----------</td><td>-----------------</td></tr><tr><td>1</td><td>Describe the 2022 Mpox Outbreak — Clade, Transmission, Clinical Phenotype.</td><td>**Clade IIb (B.1 Lineage); Predominantly Sexual Transmission in MSM Networks; Anogenital/Perianal/Oral Lesion Predilection; Often Few/Solitary Lesions; Mild/Absent Prodrome; Rectal Proctitis Common; High STI Co-infection (GC, CT, Syphilis, HIV); Lower CFR (~0.1-0.3%)**</td></tr><tr><td>2</td><td>Mpox vs Varicella (Chickenpox) — Key Clinical Differences.</td><td>**Mpox: Centrifugal (Face→Extremities) / 2022 Anogenital Predominant; Lesions Same Stage; Lymphadenopathy (Generalised/Inguinal); Prodrome 1-5d; Pustules Umbilicated**; **VZV: Centripetal (Trunk→Extremities); Crops at Different Stages (Macule→Vesicle→Crust Simultaneously); No Lymphadenopathy; Vesicles on Erythematous Base (Dew Drop); No Prodrome**</td></tr><tr><td>3</td><td>Diagnostic Specimen of Choice for Mpox.</td><td>**Vigorous Swab of Lesion Roof/Fluid (Vesicle/Pustule) — Dry Swab Preferred or VTM; Multiple Lesions/Sites; PCR for Orthopoxvirus + MPXV Specific; Blood/Throat/Rectal if Disseminated/Proctitis/Oral**</td></tr><tr><td>4</td><td>Tecovirimat — Indications, Dose, Mechanism, Duration.</td><td>**Indications: Severe Disease; High Risk for Severe (Advanced HIV CD4<200, Immunocompromised, Pregnancy, Children <8, Atopic Dermatitis, Complications: Encephalitis, Sepsis, Ocular)**; **Dose: PO 600mg (3×200mg) BD × 14d (Weight-Based <40kg); IV 200mg BD × 14d if Unable Oral**؛ **Mechanism: VP37 Inhibitor (Blocks Viral Egress)**؛ **Duration: 14 Days**</td></tr><tr><td>5</td><td>MVA-BN (JYNNEOS) Vaccine — Type, Doses, Target Groups, PEP Window.</td><td>**3rd Gen, Replication-Deficient Modified Vaccinia Ankara; Non-Replicating = Safe in HIV/Immunocompromised**; **Standard: 2 Doses 0.5mL SC 0, 28 Days; Dose-Sparing: 0.1mL ID 0, 28 Days (EUA/Off-Label)**؛ **Target: High-Risk MSM (PrEP), Contacts (PEP), Lab/Healthcare Workers, Sex Workers**؛ **PEP Window: Ideally ≤4 Days Post-Exposure (Up to 14 Days May Modify Disease)**</td></tr><tr><td>6</td><td>Infection Control Precautions for Hospitalised Mpox.</td><td>**Contact + Droplet Precautions (Gown, Gloves, Eye Protection, FFP2/N95); Airborne Precautions (Negative Pressure) for Aerosol-Generating Procedures; Dedicated Equipment; Limit Staff; Waste: Category B Infectious; Duration: Until All Scabs Fallen + Fresh Skin**</td></tr><tr><td>7</td><td>Mpox in Advanced HIV (CD4<200) — Clinical Features & Management.</td><td>**Severe/Disseminated/Atypical/Prolonged; High Mortality**; **Test All Mpox for HIV**; **Tecovirimat Early (Low Threshold); VIGIV if Severe/Refractory; ART Optimisation Urgent**; **Drug Interactions: Tecovirimat CYP3A4 Substrate — Avoid with Strong Inducers (EFV, ETV, NVP, RPV), Caution with Boosters (DRV/COBI)**</td></tr><tr><td>8</td><td>Mpox in Pregnancy — Management & Delivery.</td><td>**↑ Severe Risk; Vertical Transmission (Miscarriage, Stillbirth, Neonatal Mpox)**؛ **Tecovirimat if Indicated (Benefit>Risk; Animal Safe)**؛ **MVA-BN PEP/PrEP if High Risk (Benefit>Risk)**؛ **C-Section if Active Genital Lesions; Breastfeeding: Avoid if Breast Lesions (Express/Discard)**</td></tr><tr><td>9</td><td>Contact Tracing Risk Stratification for Mpox.</td><td>**High Risk: Sexual Partners, Household Contacts, Unprotected Healthcare Workers — PEP (MVA-BN) ≤4d (Up to 14d) + 21-Day Monitoring**؛ **Medium: Social/Workplace Close Contact — Monitoring + PEP Consider**؛ **Low: Casual Contact — Monitoring Only**</td></tr><tr><td>10</td><td>Differential: Mpox vs Syphilis (Secondary) vs HSV vs Molluscum.</td><td>**Mpox: Umbilicated Pustules, Lymphadenopathy, Prodrome, Evolution Through Stages**؛ **Syphilis: Copper-Coloured Maculopapular (Palms/Soles), Condylomata Lata, RPR/TPPA+**؛ **HSV: Painful Grouped Vesicles on Erythematous Base, Recurrent, Tzanck/PCR+, No Prodromal Nodes**؛ **Molluscum: Firm Domed Umbilicated Papules (2-5mm), No Systemic, No Nodes**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">🧩 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**"Mpox = Monkey Disease Only"**</td><td>**NO.** **2022 Outbreak: Human-to-Human Sexual Transmission (MSM); Monkeys = Incidental Hosts; Rodents = Likely Reservoir**</td></tr><tr><td>**"Mpox = Always Severe"**</td><td>**NO.** **Clade IIb (2022) Generally Mild/Self-Limited; Severe in Advanced HIV/Immunocompromised/Children <8**</td></tr><tr><td>**"Lymphadenopathy = Not Specific"**</td><td>**KEY DIFFERENTIATOR.** **Generalised/Inguinal Lymphadenopathy = CLASSIC MPOX (vs VZV, HSV, Syphilis, Molluscum — No Significant Nodes)**</td></tr><tr><td>**"Tecovirimat = Licensed for Mpox Everywhere"**</td><td>**VARIES.** **FDA: Licensed for Smallpox Only (Expanded Access for Mpox); EMA/UK: Licensed for Mpox 2022; Check Local Regulatory Status**</td></tr><tr><td>**"MVA-BN = Live Vaccine = Unsafe in HIV"**</td><td>**FALSE.** **MVA-BN = Replication-DEFICIENT (Non-Replicating) = SAFE in HIV/Immunocompromised**; **ACAM2000 = Live Replication-Competent = CONTRAINDICATED**</td></tr><tr><td>**"PEP Window = 4 Days Only"**</td><td>**IDEAL ≤4 DAYS**; **UP TO 14 DAYS POST-EXPOSURE MAY STILL MODIFY DISEASE/SEVERITY**</td></tr><tr><td>**"Mpox = Only MSM Get It"**</td><td>**MSM = 95-98% 2022 OUTBREAK**; **CAN AFFECT ANYONE (Household, Healthcare, Children, Women) — Transmission = Close Contact**</td></tr><tr><td>**"All Scabs Fallen = No Longer Infectious"**</td><td>**YES.** **Infectious FROM PRODROME UNTIL ALL SCABS FALLEN + FRESH INTACT SKIN (Typically 2-4 Weeks)**</td></tr><tr><td>**"Intradermal MVA-BN = Lower Efficacy"**</td><td>**NON-INFERIOR IMMUNOGENICITY (Clinical Trials); DOSE-SPARING (1/5 DOSE) ALLOWS 5X MORE VACCINEES**</td></tr><tr><td>**"Tecovirimat + ART = No Interactions"**</td><td>**TECOVIRIMAT = CYP3A4 SUBSTRATE**; **STRONG INDUCERS (EFV, ETV, NVP, RPV) ↓ LEVELS**; **BOOSTERS (DRV/COBI) ↑ LEVELS; CHECK INTERACTIONS**</td></tr></table>
+<div class="callout"><b>Mnemonic: MPOX MASTER SHIELD</b> <b>M</b>PXV: <b>Orthopoxvirus, dsDNA, Clade I (Severe) / Clade IIb (2022 Global, Sexual MSM, Mild)</b> <b>P</b>rodrome: <b>Fever, Lymphadenopathy (KEY vs VZV/HSV), Myalgia, Headache; 1-5d</b> <b>O</b>utbreak 2022: <b>MSM Sexual Networks; Anogenital/Oral Lesions Predominant; Few/Solitary; Rectal Proctitis; High STI Co-inf</b> <b>X</b> Transmission: <b>Close Contact (Skin/Mucosal/Fomite/Respiratory Prolonged); Sexual Dominant 2022</b> <b>M</b>ild/Moderate/Severe: <b>&lt;25 Lesions Supportive; 25-100 Mucosal/Moderate Tecovirimat; &gt;100/Complications/Immunocomp Severe Tecovirimat+VIGIV</b> <b>A</b>ntivirals: <b>Tecovirimat 1st Line (VP37 Inhibitor, 600mg BD PO×14d); Cidofovir/Brincidofovir 2nd Line; VIGIV Adjunct Severe</b> <b>S</b>pecimen: <b>Lesion Swab (Vigorous, Dry) → PCR (Orthopox+MPXV Specific) = Gold Standard</b> <b>T</b> Differentials: <b>VZV (Centripetal, Crops, No Nodes); HSV (Grouped Vesicles, Recurrent); Syphilis (Palms/Soles, RPR+); Molluscum (Firm Domed Papules)</b> <b>E</b> Isolation: <b>Until ALL Scabs Fallen + Fresh Skin (2-4w); Contact+Droplet (Airborne AGP); Home: Separate Room/Bath, Cover Lesions, Laundry 60°C</b> <b>R</b> Vaccine: <b>MVA-BN (JYNNEOS) = 3rd Gen Non-Replicating SAFE HIV; 2 Doses 0,28d (SC 0.5mL / ID 0.1mL Dose-Sparing)</b> <b>P</b> PEP: <b>High-Risk Contacts ≤4d (Up to 14d); PrEP: High-Risk MSM/Lab/HCW</b> <b>S</b> HIV: <b>Test All; Advanced CD4&lt;200 = Severe; Tecovirimat Early; VIGIV; ART Optimise; CYP3A4 Interactions</b> <b>H</b> Pregnancy: <b>↑ Severe, Vertical Tx; Tecovirimat/MVA-BN Benefit&gt;Risk; C-Section if Genital Lesions; Breast Lesions→No Breastfeed</b> <b>I</b> Children: <b>&lt;8y ↑ Severe (Historic); Tecovirimat Weight-Based; MVA-BN Off-Label</b> <b>E</b>pidemic: <b>Notifiable; Contact Trace (High/Med/Low); Cluster→Venue Notify/Vax Campaign</b> <b>L</b> Clade I vs IIb: <b>I = Congo, Severe, Respiratory; IIb = 2022 Global, Sexual MSM, Anogenital, Mild</b> <b>D</b>rug Interactions: <b>Tecovirimat CYP3A4 Sub — Avoid Strong Inducers (EFV/ETV/NVP/RPV); Caution Boosters (DRV/COBI)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Mpox))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Virology</div>
+<div class="mm-node mm-l3">– Orthopoxvirus, dsDNA</div>
+<div class="mm-node mm-l3">– Clade I (Congo Basin, Severe)</div>
+<div class="mm-node mm-l3">– Clade IIb (2022 Global, Sexual MSM, Mild)</div>
+<div class="mm-node mm-l2">Transmission</div>
+<div class="mm-node mm-l3">– Close Contact (Skin/Mucosal/Fomite)</div>
+<div class="mm-node mm-l3">– Sexual Networks (MSM 2022)</div>
+<div class="mm-node mm-l3">– Respiratory (Prolonged)</div>
+<div class="mm-node mm-l3">– Vertical/Perinatal</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Incubation 5-21d</div>
+<div class="mm-node mm-l3">– Prodrome: Fever, Lymphadenopathy (KEY), Myalgia</div>
+<div class="mm-node mm-l3">– Rash: Macule→Papule→Vesicle→Pustule(Umbilicated)→Crust→Scab</div>
+<div class="mm-node mm-l3">– 2022: Anogenital/Oral Predominant, Few/Solitary, Rectal Proctitis</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Lesion Swab (Dry) → PCR (Orthopox+MPXV)</div>
+<div class="mm-node mm-l3">– Case Def: Suspected/Probable/Confirmed</div>
+<div class="mm-node mm-l2">Differentials</div>
+<div class="mm-node mm-l3">– VZV: Centripetal, Crops, No Nodes</div>
+<div class="mm-node mm-l3">– HSV: Grouped Vesicles, Recurrent</div>
+<div class="mm-node mm-l3">– Syphilis: Palms/Soles, RPR+</div>
+<div class="mm-node mm-l3">– Molluscum: Firm Domed Papules</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Mild: Supportive, Isolation</div>
+<div class="mm-node mm-l3">– Moderate/High Risk: Tecovirimat 600mg BD PO×14d</div>
+<div class="mm-node mm-l3">– Severe: Tecovirimat IV + VIGIV</div>
+<div class="mm-node mm-l3">– Isolation: All Scabs Fallen + Fresh Skin</div>
+<div class="mm-node mm-l2">Vaccination</div>
+<div class="mm-node mm-l3">– MVA-BN (JYNNEOS): 3rd Gen, Non-Replicating, Safe HIV</div>
+<div class="mm-node mm-l3">– 2 Doses 0,28d (SC 0.5mL / ID 0.1mL)</div>
+<div class="mm-node mm-l3">– PEP ≤4d (Up to 14d), PrEP High-Risk MSM</div>
+<div class="mm-node mm-l2">Special Pops</div>
+<div class="mm-node mm-l3">– HIV: Test All, Tecovirimat Early, MVA-BN Safe, CYP3A4 Interactions</div>
+<div class="mm-node mm-l3">– Pregnancy: ↑ Severe, Vertical, C-Section if Genital Lesions</div>
+<div class="mm-node mm-l3">– Children: &lt;8y ↑ Severe, Tecovirimat Weight-Based</div>
+<div class="mm-node mm-l2">Public Health</div>
+<div class="mm-node mm-l3">– Notifiable, Contact Trace (High/Med/Low), Cluster Investigation</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>Day 1</td><td></td><td></td><td></td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 14</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr><tr><td>Day 90</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📝 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr><tr><td>---------</td><td>-----</td><td>-------</td><td>---</td></tr><tr><td>Virology & Clades</td><td>2</td><td></td><td></td></tr><tr><td>2022 Outbreak Features</td><td>3</td><td></td><td></td></tr><tr><td>Clinical Presentation & Differential</td><td>4</td><td></td><td></td></tr><tr><td>Diagnosis & Case Definitions</td><td>3</td><td></td><td></td></tr><tr><td>Management (Supportive, Tecovirimat, VIGIV)</td><td>3</td><td></td><td></td></tr><tr><td>Infection Control & Isolation</td><td>2</td><td></td><td></td></tr><tr><td>Vaccination (MVA-BN, PEP/PrEP)</td><td>3</td><td></td><td></td></tr><tr><td>Special Populations (HIV, Pregnancy, Children)</td><td>3</td><td></td><td></td></tr><tr><td>**Total**</td><td>**20**</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💬 Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr><tr><td>--------</td><td>--------</td><td>------------</td></tr><tr><td>**Long Essay**</td><td>"Describe the virology, clinical features, diagnosis, management, and prevention of Mpox with reference to the 2022 global outbreak."</td><td>**Virology: Orthopoxvirus, dsDNA; Clade I (Congo, Severe) vs Clade IIb (2022 Global, Sexual MSM, Mild)**; **2022 Outbreak: Sexual Transmission MSM Networks; Anogenital/Oral Lesion Predilection; Few/Solitary Lesions; Mild/Absent Prodrome; Rectal Proctitis Common; High STI Co-infection; Low CFR**; **Clinical: Incubation 5-21d; Prodrome: Fever, Lymphadenopathy (Key vs VZV/HSV), Myalgia; Rash Evolution: Macule→Papule→Vesicle→Pustule(Umbilicated)→Crust→Scab; Infectious: Prodrome→All Scabs Fallen**; **Diagnosis: Lesion Swab (Dry) PCR (Orthopox+MPXV Specific) = Gold Standard; Case Def: Suspected/Probable/Confirmed**; **Differentials: VZV (Centripetal, Crops, No Nodes), HSV (Grouped Vesicles, Recurrent), Syphilis (Palms/Soles, RPR+), Molluscum (Firm Domed Papules)**; **Management: Mild Supportive/Isolate; Moderate/High Risk/Severe: Tecovirimat 600mg BD PO×14d (IV if Needed); VIGIV Adjunct Severe/Immunocomp**; **Isolation: Contact+Droplet (Airborne AGP); Until All Scabs Fallen+Fresh Skin (2-4w)**; **Vaccination: MVA-BN (JYNNEOS) 3rd Gen Non-Replicating Safe HIV; 2 Doses 0,28d (SC 0.5mL / ID 0.1mL Dose-Sparing); PEP ≤4d (Up to 14d); PrEP High-Risk MSM**; **Special: HIV Test All; Advanced CD4<200 Severe→Tecovirimat Early+VIGIV+ART Optimise; CYP3A4 Interactions**; **Pregnancy: ↑ Severe/Vertical; Tecovirimat/MVA-BN Benefit>Risk; C-Section if Genital Lesions**</td></tr><tr><td>**Short Note**</td><td>"Tecovirimat for Mpox — Indications, Dose, Mechanism, Duration."</td><td>**Indications: Severe Disease; High Risk for Severe (Advanced HIV CD4<200, Immunocompromised, Pregnancy, Children <8, Atopic Dermatitis, Complications: Encephalitis, Sepsis, Ocular)**; **Dose: PO 600mg (3×200mg Caps) BD × 14 Days (Weight-Based if <40kg); IV 200mg BD × 14 Days (If Unable Oral; Renal Adjust CrCl<30)**; **Mechanism: VP37 Inhibitor (Blocks Viral Egress from Infected Cells)**; **Duration: 14 Days**; **Safety: Generally Well Tolerated (Headache, Nausea); CYP3A4 Substrate (Check Interactions with ART: Avoid Strong Inducers EFV/ETV/NVP/RPV)**</td></tr><tr><td>**Viva**</td><td>"How does the 2022 Mpox clinical phenotype differ from classic endemic Mpox?"</td><td>**Classic Endemic (Clade I/IIa): Centrifugal Rash (Face→Extremities), Prominent Prodrome (Fever, Lymphadenopathy), More Lesions, Higher Severity/CFR**; **2022 Outbreak (Clade IIb): Anogenital/Perianal/Oral Lesion Predilection (Inoculation Site), Often Few/Solitary Lesions, Mild/Absent Prodrome (Afebrile Common), Rectal Proctitis Common (Pain, Bleeding, Tenesmus), High STI Co-infection (GC, CT, Syphilis, HIV), Lower CFR (~0.1-0.3%), Predominantly MSM Sexual Networks**</td></tr><tr><td>**Ward Round**</td><td>"HIV+ Man (CD4 150) with Mpox — 50 Lesions, Oral Ulcers, Rectal Pain. Management?"</td><td>**Severity: Moderate-Severe (High Risk due to CD4<200)**؛ **Start Tecovirimat 600mg BD PO × 14 Days Immediately (Low Threshold)**؛ **Assess Drug Interactions: Avoid if on Strong CYP3A4 Inducers (EFV, ETV, NVP, RPV); Caution with Boosters (DRV/COBI)**؛ **Supportive: Analgesia (Opioids if Needed), Topical Anaesthetics (Oral/Rectal), Stool Softeners, Hydration**؛ **Monitor for Secondary Infection, Progression (Sepsis, Encephalitis) → Escalate to IV Tecovirimat + VIGIV if Severe**؛ **ART Optimisation Urgent (If Not on ART or Failing); Adherence Counselling**؛ **Isolation: Contact+Droplet Precautions Until All Scabs Fallen**؛ **Contact Trace: Sexual/Household/Healthcare Contacts → PEP (MVA-BN) ≤4d**</td></tr><tr><td>**Last-Night**</td><td>"Mpox: Orthopox, Clade I Severe, Clade IIb 2022 Global Sexual MSM Mild. 2022: Anogenital/Oral Lesions, Few/Solitary, Mild Prodrome, Rectal Proctitis, High STI Co-inf. Incub 5-21d. Prodrome: Fever, Lymphadenopathy (Key), Myalgia. Rash: Macule→Papule→Vesicle→Pustule(Umbilicated)→Crust→Scab. Dx: Lesion Swab Dry→PCR Orthopox+MPXV. Diff: VZV Centripetal Crops No Nodes; HSV Grouped Vesicles Recurrent; Syphilis Palms/Soles RPR+; Molluscum Firm Domed. Mgmt: Mild Supportive; Mod/High Risk/Severe Tecovirimat 600mg BD PO×14d (VP37 Inhib); Severe IV+VIGIV. Isolation: Contact+Droplet (Airborne AGP) Until All Scabs Fallen. Vaccine: MVA-BN (JYNNEOS) 3rd Gen Non-Replicating Safe HIV; 2 Doses 0,28d SC/ID; PEP ≤4d(Up To 14d); PrEP High-Risk MSM. HIV: Test All, CD4<200 Severe→Tecov Early+VIGIV+ART Optim; CYP3A4 Interacts. Preg: ↑Severe/Vertical; Tecov/MVA-BN Benefit>Risk; C-Sect if Genital Lesions."</td><td>Compressed.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📌 Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Virology</b>: <b>Orthopoxvirus, dsDNA</b>; <b>Clade I (Congo Basin, Severe, CFR 1-10%)</b>; <b>Clade IIb (2022 Global Outbreak, Sexual MSM Networks, Milder, CFR ~0.1-0.3%)</b></li><li><b>Transmission</b>: <b>Close Contact (Skin/Mucosal/Fomite/Residential); 2022: Sexual Networks Predominant (MSM)</b></li><li><b>Clinical</b>: <b>Incubation 5-21 Days; Prodrome: Fever, Lymphadenopathy (Generalised/Inguinal — KEY vs VZV/HSV), Myalgia, 1-5 Days; Rash Evolution: Macules → Papules → Vesicles → Pustules (Umbilicated) → Crusts → Scabs Over 2-4 Weeks; Infectious: Prodrome Until ALL Scabs Fallen + Fresh Skin</b></li><li><b>2022 Phenotype</b>: <b>Anogenital/Perianal/Oral Lesion Predilection; Often Few/Solitary; Mild/Absent Prodrome; Rectal Proctitis Common; High STI Co-infections (GC, CT, Syphilis, HIV)</b></li><li><b>Diagnosis</b>: <b>Lesion Swab (Vigorous, Dry Preferred) → PCR (Orthopoxvirus Generic + MPXV Specific) = Gold Standard</b>; <b>Case Definitions: Suspected / Probable / Confirmed</b></li><li><b>Differentials</b>: <b>VZV (Centripetal, Crops, No Lymphadenopathy); HSV (Grouped Vesicles, Recurrent); Syphilis (Palms/Soles, Copper-Coloured, RPR+); Molluscum (Firm Domed Umbilicated Papules, No Systemic)</b></li><li><b>Management</b>: <b>Mild: Supportive + Isolation; Moderate/High Risk/Severe: Tecovirimat 600mg BD PO × 14 Days (IV if Unable Oral; VP37 Inhibitor); VIGIV Adjunct for Severe/Complicated/Immunocompromised</b></li><li><b>Infection Control</b>: <b>Contact + Droplet Precautions (Gown, Gloves, Eye Protection, FFP2/N95); Airborne (Negative Pressure) for AGPs; Isolation Until All Scabs Fallen + Fresh Skin (2-4 Weeks)</b></li><li><b>Vaccination</b>: <b>MVA-BN (JYNNEOS/IMVANEX) = 3rd Gen, Replication-Deficient, SAFE in HIV/Immunocompromised; 2 Doses 0, 28 Days (SC 0.5mL Standard / ID 0.1mL Dose-Sparing EUA); PEP: High-Risk Contacts ≤4 Days (Up to 14 Days); PrEP: High-Risk MSM, Lab/HCW, Sex Workers</b></li><li><b>Special Populations</b>: <b>HIV: Test All; Advanced (CD4&lt;200) = Severe → Tecovirimat Early, VIGIV, ART Optimisation; CYP3A4 Interactions (Avoid Strong Inducers); Pregnancy: ↑ Severe/Vertical → Tecovirimat/MVA-BN Benefit&gt;Risk, C-Section if Genital Lesions; Children &lt;8y: ↑ Severe → Tecovirimat Weight-Based</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">❓ MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Mpox Virus Classification and 2022 Outbreak Clade?</b></li></ol>
+<p>A. Parapoxvirus, Clade I  B. <b>Orthopoxvirus, Clade IIb</b>  C. Orthopoxvirus, Clade I  D. Parapoxvirus, Clade IIa <i>Answer: B. Mpox = Orthopoxvirus; 2022 Global Outbreak = Clade IIb (B.1 Lineage).</i></p>
+<ol><li><b>Key Clinical Feature Distinguishing Mpox from Varicella (Chickenpox)?</b></li></ol>
+<p>A. Centripetal Rash  B. Crops at Different Stages  C. <b>Lymphadenopathy (Generalised/Inguinal)</b>  D. Vesicles on Erythematous Base <i>Answer: C. Lymphadenopathy is Classic for Mpox; Absent in VZV.</i></p>
+<ol><li><b>2022 Mpox Outbreak — Predominant Transmission Route and Population?</b></li></ol>
+<p>A. Respiratory, General Population  B. <b>Sexual Contact, MSM Networks</b>  C. Animal Contact, Rural Africa  D. Healthcare, Nosocomial <i>Answer: B. 2022 Clade IIb Spread Predominantly via Sexual Networks in MSM.</i></p>
+<ol><li><b>Diagnostic Specimen of Choice for Mpox Confirmation?</b></li></ol>
+<p>A. Blood PCR  B. <b>Lesion Swab (Vigorous, Dry) PCR</b>  C. Urine PCR  D. Throat Swab PCR <i>Answer: B. Vigorous Swab of Lesion Roof/Fluid (Vesicle/Pustule) → PCR for MPXV DNA = Gold Standard.</i></p>
+<ol><li><b>Tecovirimat — Mechanism of Action?</b></li></ol>
+<p>A. DNA Polymerase Inhibitor  B. <b>VP37 Inhibitor (Blocks Viral Egress)</b>  C. Neuraminidase Inhibitor  D. Protease Inhibitor <i>Answer: B. Tecovirimat Targets VP37 Protein → Blocks Viral Egress from Infected Cells.</i></p>
+<ol><li><b>Tecovirimat Indication — Which Patient Qualifies for Treatment?</b></li></ol>
+<p>A. Mild, 10 Lesions, Immunocompetent  B. <b>Advanced HIV (CD4 100), 30 Lesions, Oral Ulcers</b>  C. Asymptomatic Contact  D. Past Infection, IgG Positive <i>Answer: B. High Risk for Severe (Advanced HIV CD4&lt;200) = Tecovirimat Indicated.</i></p>
+<ol><li><b>MVA-BN (JYNNEOS) Vaccine — Key Safety Feature?</b></li></ol>
+<p>A. Live Replication-Competent  B. <b>Replication-Deficient (Non-Replicating) = Safe in HIV/Immunocompromised</b>  C. Single Dose Only  D. Contraindicated in Pregnancy <i>Answer: B. MVA-BN = Modified Vaccinia Ankara, Replication-Deficient = Safe in HIV/Immunocompromised (Unlike ACAM2000).</i></p>
+<ol><li><b>Post-Exposure Prophylaxis (PEP) Window for MVA-BN?</b></li></ol>
+<p>A. ≤24 Hours Only  B. <b>Ideally ≤4 Days (Up to 14 Days May Modify Disease)</b>  C. ≤7 Days Only  D. ≤21 Days <i>Answer: B. Ideally Within 4 Days Post-Exposure; Up to 14 Days May Still Modify Disease Severity.</i></p>
+<ol><li><b>Infection Control — Duration of Isolation for Confirmed Mpox?</b></li></ol>
+<p>A. 7 Days from Rash Onset  B. 14 Days from Rash Onset  C. <b>Until All Scabs Fallen + Fresh Intact Skin Formed</b>  D. 21 Days Fixed <i>Answer: C. Infectious from Prodrome Until ALL Scabs Fallen + Fresh Skin (Typically 2-4 Weeks).</i></p>
+<ol><li><b>Mpox in Pregnancy — Delivery Recommendation if Active Genital Lesions?</b></li></ol>
+<p>A. Vaginal Delivery Encouraged  B. <b>Cesarean Section</b>  C. Induction at 37 Weeks  D. No Specific Recommendation <i>Answer: B. C-Section if Active Genital Lesions to Prevent Neonatal Contact Transmission.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">📋 SBAs (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>35-year-old MSM, HIV+ (CD4 180, on DTG/3TC), presents with 10-day history of fever, inguinal lymphadenopathy, 15 perianal umbilicated pustules, rectal pain. PCR confirms Mpox. Best Management?</b></li></ol>
+<p>A. Supportive Care Only  B. <b>Tecovirimat 600mg BD PO × 14 Days (Check DTG Interaction — None Significant)</b>  C. Cidofovir IV  D. MVA-BN Vaccine Now <i>Answer: B. Advanced HIV (CD4&lt;200) = High Risk → Tecovirimat Indicated Early; DTG (Integrase Inhibitor) = No Significant CYP3A4 Interaction with Tecovirimat.</i></p>
+<ol><li><b>Healthcare Worker, Needlestick from Mpox Patient (Vesicle Fluid). Unvaccinated. PEP Management?</b></li></ol>
+<p>A. No PEP Needed  B. <b>MVA-BN 0.5mL SC (or 0.1mL ID) Within 4 Days (Up to 14 Days) + 21-Day Monitoring</b>  C. ACAM2000  D. Tecovirimat 14 Days <i>Answer: B. High-Risk Occupational Exposure → MVA-BN PEP Ideally ≤4 Days (Up to 14 Days) + Symptom Monitoring 21 Days.</i></p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔑 Answer Keys</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>MCQs</th><th>SBAs</th></tr><tr><td>------</td><td>------</td></tr><tr><td>1-B, 2-C, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-C, 10-B</td><td>1-B, 2-B</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🔗 Cross-Links</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[3.5 Mpox.md]] — Main Detailed Mpox Note (New Format)</li><li>[[4.1-4.4 Parasitic &amp; Fungal STIs.md]] — Other Viral/Parasitic STIs</li><li>[[5.1-5.8 Syndromic Management.md]] — GUD / Urethritis Algorithms</li><li>[[6. HIV-AIDS Cross-Reference.md]] — Mpox in HIV</li><li>[[Contact Tracing and Partner Notification.md]] — PN (21-Day Lookback)</li><li>[[Sexually Transmitted Infections MOC.md]] — Master Index</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Last Updated:</b> 2026-06-15 <b>Version:</b> Full FCPS/MRCP Template Upgrade</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Mpox (Monkeypox) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

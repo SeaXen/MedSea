@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Leptospirosis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Leptospirosis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Transmission</b>: Rat urine → Contaminated water/soil → Skin/mucosal entry</li><li>[ ] Recognise <b>Clinical Spectrum</b>: Mild (Anicteric) → Severe (Weil's Disease: Jaundice, Renal Failure, Haemorrhage)</li><li>[ ] Diagnose: <b>MAT</b> (Gold Standard), <b>PCR</b> (Early), <b>IgM ELISA</b> (Early), <b>Dark Field Microscopy</b> (Urine)</li><li>[ ] Manage: <b>Doxycycline</b> (Mild), <b>IV Penicillin G / Ceftriaxone</b> (Severe), <b>RRT</b> for Renal Failure</li><li>[ ] Recognise <b>Complications</b>: Pulmonary Haemorrhage (Anaemic, High Mortality), AKI, Myocarditis, Uveitis</li><li>[ ] Apply <b>Prophylaxis</b>: Doxycycline 200mg Weekly for High-Risk Exposure</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Causative Agent**</td><td>**Leptospira interrogans** (Spirochaete); **>250 Serovars** (Icterohaemorrhagiae, Canicola, Grippotyphosa, Pomona)</td></tr><tr><td>**Reservoir**</td><td>**Rats** (Primary), Cattle, Pigs, Dogs, Wildlife; **Asymptomatic Renal Carriage** → Urine Shedding</td></tr><tr><td>**Transmission**</td><td>**Direct/Indirect Contact** with Infected Urine → **Contaminated Water/Soil** → **Broken Skin/Mucosa/Conjunctiva**</td></tr><tr><td>**Risk Factors**</td><td>**Occupational** (Farmers, Sewer Workers, Vets, Abattoir), **Recreational** (Freshwater Swimming, Rafting, Caving), **Flooding** (Outbreaks)</td></tr><tr><td>**Geography**</td><td>**Tropical/Subtropical** (SE Asia, Caribbean, Oceania, Latin America); **Temperate** (Seasonal, Occupational)</td></tr><tr><td>**Incubation**</td><td>**5-14 Days** (Range 2-30 Days)</td></tr></table>
+<div class="callout">[!tip] <b>Leptospirosis = Rat Urine + Water Exposure + Fever + Jaundice/Renal Failure</b>. <b>Weil's Disease = Severe Icteric Form</b> (5-10% of cases).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Clinical Spectrum</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Form</th><th>Features</th><th>Proportion</th></tr><tr><td>--------</td><td>----------</td><td>------------</td></tr><tr><td>**Subclinical / Mild (Anicteric)**</td><td>Fever, Myalgia (Calf **Classic**), Headache, Conjunctival Suffusion, Rash</td><td>**~90%**</td></tr><tr><td>**Severe (Weil's Disease)**</td><td>**Jaundice**, **Renal Failure**, **Haemorrhage** (Pulmonary, GI, Adrenal), **Pulmonary Haemorrhage** (ARDS), Myocarditis, Aseptic Meningitis</td><td>**5-10%**</td></tr></table>
+<div class="sub-h">Weil's Disease Triad (Classic)</div>
+<table class="ctable"><tr><th>Feature</th><th>Pathophysiology</th></tr><tr><td>---------</td><td>-----------------</td></tr><tr><td>**Jaundice**</td><td>Hepatocellular Dysfunction + Haemolysis; **Conjugated + Unconjugated Hyperbilirubinaemia**</td></tr><tr><td>**Renal Failure**</td><td>**Tubulointerstitial Nephritis** → ATN; **Non-oliguric** Common; Hypokalaemia</td></tr><tr><td>**Haemorrhage**</td><td>**Thrombocytopenia**, **Capillary Damage**, **Coagulopathy** (DIC-like); **Pulmonary Haemorrhage** → Major Cause of Death</td></tr></table>
+<div class="sub-h">Pulmonary Haemorrhage (Severe Complication)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Incidence**</td><td>**10-50% of Severe Cases**; **Mortality 50-70%**</td></tr><tr><td>**Presentation**</td><td>**Haemoptysis**, Dyspnoea, Hypoxaemia, Bilateral Consolidation on CXR</td></tr><tr><td>**Pathology**</td><td>**Alveolar Capillary Damage** → Alveolar Haemorrhage; **Immune-Mediated**</td></tr><tr><td>**Management**</td><td>**High-Dose Methylprednisolone** (1g IV Daily ×3), **Ventilatory Support**, **RRT**, **Plasma Exchange** (Refractory)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🔬 Diagnostic Workup</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Fever + Exposure History + Jaundice/Renal Failure</div>
+<div class="fc-node" data-id="D">D</div>
+<div class="fc-node" data-id="D3">**PCR (Blood/Urine)** - *Early (Day 1-5), High Sensitivity/Specificity*</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Initial: CBC, LFT, Renal, Coag, CXR**</div>
+<div class="fc-node" data-id="D1">**MAT (Gold Standard)** - *Paired Sera 2-4w Apart, 4-fold Rise*</div>
+<div class="fc-node" data-id="D2">**IgM ELISA** - *Early (Day 5-7), Sensitivity 90%*</div>
+<div class="fc-node" data-id="D4">**Dark Field Microscopy (Urine)** - *Motile Spirochaetes; Low Sensitivity*</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Key Findings**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C1">**Leukocytosis + Neutrophilia**</div>
+<div class="fc-node" data-id="C2">**Thrombocytopenia** (Common)</div>
+<div class="fc-node" data-id="C3">**↑ Bilirubin (Conj+Unconj), ↑ ALT/AST (Mild)**</div>
+<div class="fc-node" data-id="C4">**CXR: Bilateral Alveolar Infiltrates** (Pulm Haemorrhage)</div>
+</div>
+</div>
+<div class="sub-h">Key Diagnostic Tests</div>
+<table class="ctable"><tr><th>Test</th><th>Timing</th><th>Sensitivity/Specificity</th><th>Role</th></tr><tr><td>------</td><td>--------</td><td>------------------------</td><td>------</td></tr><tr><td>**MAT (Microscopic Agglutination Test)**</td><td>**Convalescent (Day 10-14)**; **Paired Sera**</td><td>**Gold Standard**; Serovar Identification</td><td>**Confirmatory**</td></tr><tr><td>**IgM ELISA**</td><td>**Day 5-7 Onwards**</td><td>**~90% Sens, 95% Spec**</td><td>**Early Diagnosis**</td></tr><tr><td>**PCR (Blood/Urine)**</td><td>**Day 1-10** (Before Antibodies)</td><td>**High Sens/Spec**</td><td>**Early / Confirmatory**</td></tr><tr><td>**Dark Field Microscopy**</td><td>**Fresh Urine**</td><td>**Low Sensitivity (40-50%)**</td><td>**Bedside / Rapid**</td></tr><tr><td>**Culture (Ellinghausen-McCullough-Johnson-Harris Medium)**</td><td>**Weeks**</td><td>**Low Sensitivity**</td><td>**Retrospective / Reference**</td></tr></table>
+<div class="callout">[!tip] <b>MAT = Gold Standard</b> but <b>Requires Paired Sera</b> (Acute + Convalescent 2-4 Weeks Apart). <b>IgM ELISA / PCR = Early Diagnosis</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">💊 Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Antibiotics</div>
+<table class="ctable"><tr><th>Severity</th><th>Regimen</th><th>Duration</th></tr><tr><td>----------</td><td>---------</td><td>----------</td></tr><tr><td>**Mild (Anicteric)**</td><td>**Doxycycline 100mg PO BD**</td><td>**7 Days**</td></tr><tr><td>**Severe (Weil's / ICU)**</td><td>**IV Penicillin G 1.5g IV Q6H** (or **Ceftriaxone 2g OD IV** / **Cefotaxime 2g Q6H**)</td><td>**7 Days**</td></tr><tr><td>**Penicillin Allergy**</td><td>**Doxycycline 100mg IV/PO BD** / **Ceftriaxone 2g OD IV**</td><td>**7 Days**</td></tr></table>
+<div class="callout">[!tip] <b>Doxycycline = First-Line for Mild/Outpatient</b>; <b>IV Penicillin/Ceftriaxone = Severe/ICU</b>. <b>Jarisch-Herxheimer Reaction</b> Common (Fever, Rigors, Hypotension 2-4h Post-First Dose) — <b>Supportive, Continue Antibiotics</b>.</div>
+<div class="sub-h">Supportive Care (Severe/Weil's)</div>
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Renal Failure**</td><td>**RRT** (Early Initiation); **K+ Management**, **Fluid Balance**</td></tr><tr><td>**Pulmonary Haemorrhage**</td><td>**High-Dose Methylprednisolone 1g IV Daily ×3-5d**; **Ventilatory Support** (Lung-Protective); **rFVIIa / Tranexamic Acid** (Refractory)</td></tr><tr><td>**Thrombocytopenia/Coagulopathy**</td><td>**Platelet Transfusion** (<20 or Bleeding); **FFP/Cryo** if DIC</td></tr><tr><td>**Myocarditis**</td><td>**Supportive**, **Inotropes** if Needed</td></tr><tr><td>**Electrolytes**</td><td>**Hypokalaemia** (Renal Tubular Dysfunction) → **Aggressive K+ Replacement**</td></tr></table>
+<div class="callout">[!warning] <b>Jarisch-Herxheimer Reaction</b>: Fever, Rigors, Hypotension, Worsening Rash <b>2-4h Post-First Dose</b> — <b>Supportive (Fluids, Vasopressors), Continue Antibiotics</b>, <b>Antipyretics</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🔬 Laboratory Findings</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Typical Findings</th></tr><tr><td>-----------</td><td>------------------</td></tr><tr><td>**CBC**</td><td>Leukocytosis + Neutrophilia, **Thrombocytopenia** (Common), **Anaemia** (Haemolysis/Blood Loss)</td></tr><tr><td>**LFT**</td><td>**↑ Bilirubin (Conj+Unconj)**, **Mild ↑ AST/ALT** (Hepatocellular), **↑ ALP** (Cholestatic)</td></tr><tr><td>**Renal**</td><td>**↑ Creatinine, ↑ Urea**, **Hyperkalaemia** (Tubular Dysfunction), **Metabolic Acidosis**</td></tr><tr><td>**Coagulation**</td><td>**Prolonged PT/APTT**, **↓ Fibrinogen**, **↑ D-dimer** (DIC-like)</td></tr><tr><td>**CPK**</td><td>**Markedly Elevated** (Myositis)</td></tr><tr><td>**CSF**</td><td>**Lymphocytic Pleocytosis**, **Normal/Raised Protein**, **Normal Glucose** (Aseptic Meningitis)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🔄 Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Differentiating Features</th></tr><tr><td>-----------</td><td>--------------------------</td></tr><tr><td>**Viral Hepatitis (A/E)**</td><td>**No Renal Failure/Pulmonary Haemorrhage**, **Marked Transaminitis** (>1000), **Anti-HAV IgM / Anti-HEV IgM**</td></tr><tr><td>**Malaria**</td><td>**Parasitaemia on Film**, **No Renal Failure** (Unless Severe), **No Pulm Haemorrhage**</td></tr><tr><td>**Septicemia (Gram -ve)**</td><td>**Blood Culture Positive**, **No Conjunctival Suffusion**, **No Myalgia (Calf)**</td></tr><tr><td>**Hantavirus (HFRS)**</td><td>**Similar Syndrome** (Renal Failure, Haemorrhage), **Hantaan/Seoul Virus**, **Exposure to Rodents**</td></tr><tr><td>**Sepsis (Other)**</td><td>**Blood Culture Positive**, **No Conjunctival Suffusion**, **No Calf Tenderness**</td></tr><tr><td>**Acute Viral Hepatitis (A/B/E)**</td><td>**ALT/AST >> Bilirubin**, **No Renal Failure**, **Serology Positive**</td></tr><tr><td>**Dengue**</td><td>**NS1 Ag+, Thrombocytopenia, Plasma Leakage**, **No Renal Failure/Pulm Haemorrhage (Usually)**</td></tr></table>
+<div class="callout">[!tip] <b>Conjunctival Suffusion (Non-Purulent Conjunctival Injection) = Highly Suggestive of Leptospirosis</b> (50-90%).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🛡️ Prevention & Prophylaxis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Strategy</th><th>Details</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Pre-Exposure Prophylaxis**</td><td>**Doxycycline 200mg PO Weekly** (Start 1-2 Days Before, Continue During Exposure) — **High-Risk Occupations/Activities**</td></tr><tr><td>**Post-Exposure**</td><td>**Doxycycline 100mg BD × 7 Days** if High-Risk Exposure Recognised</td></tr><tr><td>**Environmental**</td><td>**Rodent Control**, **Drainage**, **Protective Clothing/Footwear**, **Avoid Contaminated Water**</td></tr><tr><td>**Vaccination**</td><td>**Animal Vaccines Available** (Cattle, Dogs); **Human Vaccine** (Limited Serovar Coverage, Used in High-Risk Occupations in Some Countries)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Transmission**</td><td>**Rat Urine → Contaminated Water/Soil → Skin/Mucosa**</td></tr><tr><td>**Clinical Spectrum**</td><td>**Anicteric (90%)** → Fever, **Calf Myalgia**, **Conjunctival Suffusion** → **Weil's (10%)** = Jaundice + Renal Failure + Haemorrhage</td></tr><tr><td>**Weil's Triad**</td><td>**Jaundice + Renal Failure + Haemorrhage** (Pulmonary Haemorrhage = Major Killer)</td></tr><tr><td>**Diagnosis**</td><td>**MAT (Gold Standard, Paired Sera)**; **IgM ELISA (Early)**; **PCR (Early, Blood/Urine)**</td></tr><tr><td>**Treatment**</td><td>**Mild: Doxycycline 100mg BD PO × 7d**; **Severe: IV Penicillin G 1.5MU Q6H / Ceftriaxone 2g OD**</td></tr><tr><td>**Complications**</td><td>**Pulmonary Haemorrhage (50-70% Mortality)**, **AKI (RRT), Myocarditis, Uveitis**</td></tr><tr><td>**Jarisch-Herxheimer**</td><td>**Fever, Rigors, Hypotension 2-4h Post-First Dose** — **Supportive, Continue Antibiotics**</td></tr><tr><td>**Prophylaxis**</td><td>**Doxycycline 200mg Weekly** (High-Risk Exposure)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the classic triad of Weil's disease?</b></li></ol>
+<ul><li><b>Jaundice + Renal Failure + Haemorrhage</b> (Pulmonary Haemorrhage is Major Cause of Death).</li></ul>
+<ol><li><b>What is the most characteristic physical finding in Leptospirosis?</b></li></ol>
+<ul><li><b>Conjunctival Suffusion</b> (Non-Purulent Conjunctival Injection) — <b>Present in 50-90%</b>.</li></ul>
+<ol><li><b>What is the drug of choice for mild Leptospirosis?</b></li></ol>
+<ul><li><b>Doxycycline 100mg PO BD × 7 Days</b>.</li></ul>
+<ol><li><b>What is the drug of choice for severe Leptospirosis (Weil's Disease)?</b></li></ol>
+<ul><li><b>IV Penicillin G 1.5MU IV Q6H</b> (or <b>Ceftriaxone 2g OD IV / Cefotaxime 2g Q6H IV</b>).</li></ul>
+<ol><li><b>What is the Jarisch-Herxheimer Reaction and how is it managed?</b></li></ol>
+<ul><li><b>Fever, Rigors, Hypotension 2-4h Post-First Dose</b> → <b>Supportive (Fluids, Vasopressors), Continue Antibiotics</b>.</li></ul>
+<ol><li><b>What is the gold standard diagnostic test for Leptospirosis?</b></li></ol>
+<ul><li><b>Microscopic Agglutination Test (MAT)</b> on <b>Paired Sera (Acute + Convalescent 2-4 Weeks Apart)</b> showing <b>4-Fold Rise</b>.</li></ul>
+<ol><li><b>What is the earliest diagnostic test for Leptospirosis?</b></li></ol>
+<ul><li><b>PCR (Blood/Urine)</b> — Detects DNA <b>Day 1-10</b>, Before Antibodies Appear.</li></ul>
+<ol><li><b>How is Pulmonary Haemorrhage in Leptospirosis managed?</b></li></ol>
+<ul><li><b>High-Dose Methylprednisolone 1g IV Daily ×3-5 Days</b>, <b>Ventilatory Support</b>, <b>RRT</b>, <b>rFVIIa/Tranexamic Acid</b> if Refractory.</li></ul>
+<ol><li><b>What is the Prophylaxis for High-Risk Exposure?</b></li></ol>
+<ul><li><b>Doxycycline 200mg PO Weekly</b> (Start 1-2 Days Before Exposure, Continue During Exposure).</li></ul>
+<ol><li><b>What is the typical CSF finding in Leptospiral Meningitis?</b></li></ol>
+<ul><li><b>Lymphocytic Pleocytosis</b>, <b>Normal Glucose</b>, <b>Mildly Elevated Protein</b>.</li></ul>
+<ol><li><b>Differentiate Leptospirosis from Viral Hepatitis, Malaria, and Hantavirus.</b></li></ol>
+<ul><li><b>Lepto: Conjunctival Suffusion + Calf Myalgia + Renal Failure + Pulm Haemorrhage</b>; <b>Hepatitis: ALT/AST &gt;&gt; Bilirubin, No Renal Failure</b>; <b>Malaria: Parasitaemia, Cyclical Fever</b>; <b>Hantavirus: Similar but No Conjunctival Suffusion, Rodent Exposure, Hantaan/Seoul Serology</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Leptospirosis vs Viral Hepatitis**</td><td>**Lepto: Renal Failure + Pulm Haemorrhage + Conjunctival Suffusion**; **Hepatitis: ALT/AST >> Bilirubin, No Renal Failure**</td></tr><tr><td>**Leptospirosis vs Malaria**</td><td>**Malaria: Parasitaemia on Film, Cyclical Fever, No Conjunctival Suffusion, No Pulm Haemorrhage**</td></tr><tr><td>**Leptospirosis vs Hantavirus (HFRS)**</td><td>**Both: Renal Failure + Haemorrhage**; **Hanta: No Conjunctival Suffusion, Hantaan/Seoul Serology, Rodent Exposure**</td></tr><tr><td>**Jarisch-Herxheimer vs Allergic Reaction**</td><td>**JH: 2-4h Post-Abx, Fever/Rigors/Hypotension, Self-Limiting**; **Allergy: Immediate, Urticaria, Angioedema, Bronchospasm**</td></tr><tr><td>**Doxycycline vs Penicillin**</td><td>**Doxy: Mild/Outpatient, PO**; **Penicillin/Ceftriaxone: Severe/ICU, IV**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Lepto = Rat Urine + Water + Weil's Triad"**</td><td>Transmission + Severe Form</td></tr><tr><td>**"Weil's = Jaundice + Kidney + Blood"**</td><td>Triad</td></tr><tr><td>**"Conjunctival Suffusion = Lepto Hallmark"**</td><td>Physical Sign</td></tr><tr><td>**"Doxy for Mild, Pen for Severe"**</td><td>Treatment Algorithm</td></tr><tr><td>**"JH Reaction = Fluids + Continue Abx"**</td><td>Jarisch-Herxheimer</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Leptospirosis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Transmission</div>
+<div class="mm-node mm-l3">– Rat Urine → Water/Soil</div>
+<div class="mm-node mm-l3">– Skin/Mucosa Entry</div>
+<div class="mm-node mm-l3">– Floods/Recreation/Occupation</div>
+<div class="mm-node mm-l2">Clinical Spectrum</div>
+<div class="mm-node mm-l3">– Anicteric (90%): Fever, Myalgia (Calf), Conjunctival Suffusion</div>
+<div class="mm-node mm-l3">– Weil's (10%): Jaundice + Renal Failure + Haemorrhage</div>
+<div class="mm-node mm-l2">Weil's Triad</div>
+<div class="mm-node mm-l3">– Jaundice</div>
+<div class="mm-node mm-l3">– Renal Failure</div>
+<div class="mm-node mm-l3">– Haemorrhage (Pulmonary = Killer)</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– MAT (Gold Standard, Paired Sera)</div>
+<div class="mm-node mm-l3">– IgM ELISA (Early)</div>
+<div class="mm-node mm-l3">– PCR (Early, Blood/Urine)</div>
+<div class="mm-node mm-l3">– Dark Field Microscopy (Urine)</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Mild: Doxycycline 100mg BD PO ×7d</div>
+<div class="mm-node mm-l3">– Severe: Penicillin G IV / Ceftriaxone IV</div>
+<div class="mm-node mm-l3">– Jarisch-Herxheimer: Supportive, Continue Abx</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– Pulmonary Haemorrhage (50-70% Mortality)</div>
+<div class="mm-node mm-l3">– AKI (RRT)</div>
+<div class="mm-node mm-l3">– Myocarditis</div>
+<div class="mm-node mm-l3">– Uveitis (Late)</div>
+<div class="mm-node mm-l2">Prophylaxis</div>
+<div class="mm-node mm-l3">– Doxycycline 200mg Weekly (High-Risk Exposure)</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**LEPTOSPIROSIS – FCPS/MRCP REVISION CARD**</th></tr><tr><td>----------------------------------------------</td></tr><tr><td>**Transmission**: Rat Urine → Water/Soil → Skin/Mucosa</td></tr><tr><td>**Spectrum**: **Anicteric 90%** (Fever, Calf Myalgia, **Conjunctival Suffusion**) → **Weil's 10%** (Jaundice + Renal Failure + Haemorrhage)</td></tr><tr><td>**Weil's Triad**: **Jaundice + Renal Failure + Haemorrhage** (Pulmonary Haemorrhage = Killer)</td></tr><tr><td>**Diagnosis**: **MAT (Gold, Paired Sera)**, IgM ELISA (Early), **PCR (Early, Blood/Urine)**</td></tr><tr><td>**Conjunctival Suffusion** = Hallmark (50-90%)</td></tr><tr><td>**Treatment**: Mild = **Doxy 100mg BD PO ×7d**; Severe = **Penicillin G IV / Ceftriaxone 2g OD IV**</td></tr><tr><td>**Jarisch-Herxheimer**: 2-4h Post-Dose, Fever/Rigors/Hypotension → **Supportive, Continue Abx**</td></tr><tr><td>**Pulmonary Haemorrhage**: Methylprednisolone 1g IV ×3-5d, Ventilation, RRT</td></tr><tr><td>**Prophylaxis**: **Doxycycline 200mg Weekly** (High-Risk Exposure)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Transmission, Weil's Triad, Conjunctival Suffusion, MAT/PCR/IgM ELISA, Doxycycline vs Penicillin, Jarisch-Herxheimer, Pulmonary Haemorrhage Management, Prophylaxis</td></tr><tr><td>**Should Know**</td><td>Spirochaete Biology, Serovar Differences (Icterohaemorrhagiae vs Canicola), MAT Interpretation, Differential (Hepatitis, Malaria, Hantavirus), Pulmonary Haemorrhage Pathogenesis, RRT Indications, Ocular Manifestations (Uveitis)</td></tr><tr><td>**Nice to Know**</td><td>Genomic Diversity, Animal Vaccines, Environmental Reservoir Dynamics, Climate Change Impact, Outbreak Investigation, One Health Approach, Vaccine Development, Global Burden Estimates</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Clinical Spectrum & Weil's Disease</td><td></td><td></td></tr><tr><td>Diagnosis (MAT, PCR, IgM ELISA)</td><td></td><td></td></tr><tr><td>Treatment (Mild vs Severe)</td><td></td><td></td></tr><tr><td>Complications (Pulmonary Haemorrhage, AKI)</td><td></td><td></td></tr><tr><td>Jarisch-Herxheimer Reaction</td><td></td><td></td></tr><tr><td>Prophylaxis</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Fever in Returned Traveller &amp; FUO]]</li><li><b>Next</b>: [[Lyme Disease]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Leptospirosis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

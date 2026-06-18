@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Travel Medicine &amp; Pre-travel Advice — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Travel Medicine &amp; Pre-travel Advice</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Conduct <b>Pre-Travel Consultation</b>: Risk assessment, itinerary review, medical history, immunisation status</li><li>[ ] Apply <b>Vaccination Schedules</b>: Routine, required (Yellow Fever), recommended (Hepatitis A, Typhoid, Rabies, JE, Meningococcal)</li><li>[ ] Prescribe <b>Malaria Prophylaxis</b>: Geographic resistance patterns, drug choice (Atovaquone-Proguanil, Doxycycline, Mefloquine), duration</li><li>[ ] Manage <b>Travellers' Diarrhoea</b>: Prevention, Empirical therapy (Azithromycin, Rifaximin, Ciprofloxacin), Hydration</li><li>[ ] Advise on <b>Altitude Sickness</b>: AMS, HACE, HAPE, Acetazolamide, Gradual Ascent</li><li>[ ] Advise on <b>Special Populations</b>: Pregnancy, Children, Elderly, Immunocompromised, Chronic Disease</li><li>[ ] Document <b>Travel Insurance &amp; Medical Kit</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Pre-Travel Consultation Framework</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Consultation Timeline</div>
+<table class="ctable"><tr><th>Time Before Travel</th><th>Action</th></tr><tr><td>-------------------</td><td>--------</td></tr><tr><td>**6-8 Weeks**</td><td>**Ideal** — Vaccines (Multi-dose), Malaria Prophylaxis Start, Insurance</td></tr><tr><td>**4-6 Weeks**</td><td>**Minimum** — Most Vaccines, Malaria Prophylaxis Start</td></tr><tr><td>**2-4 Weeks**</td><td>**Accelerated** — Single-Dose Vaccines, Rapid Schedules</td></tr><tr><td>**<2 Weeks**</td><td>**Limited** — Accelerated Schedules, Standby Treatment, Risk Avoidance</td></tr></table>
+<div class="sub-h">Structured Consultation (The "5 Ws")</div>
+<table class="ctable"><tr><th>Component</th><th>Key Questions</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Who**</td><td>Age, Medical Conditions, Medications, Allergies, Pregnancy, Immunosuppression</td></tr><tr><td>**Where**</td><td>Countries, Regions, Urban/Rural, Altitude, Season</td></tr><tr><td>**When**</td><td>Dates, Duration, Season (Transmission Seasons)</td></tr><tr><td>**What**</td><td>Activities (Adventure, Water, Animal Contact, Medical Tourism, Sexual)</td></tr><tr><td>**Why**</td><td>Tourism, Business, VFR (Visiting Friends/Relatives), Medical Tourism, Humanitarian</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">💉 Vaccination — Routine, Required, Recommended</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Routine (Update Regardless of Travel)</div>
+<table class="ctable"><tr><th>Vaccine</th><th>Schedule</th><th>Notes</th></tr><tr><td>---------</td><td>----------</td><td>-------</td></tr><tr><td>**Diphtheria, Tetanus, Pertussis (DTaP/Tdap)**</td><td>**Booster Every 10 Years**</td><td>Tdap Once, Then Td</td></tr><tr><td>**Measles, Mumps, Rubella (MMR)**</td><td>**2 Doses** (If Born After 1970, No Evidence of Immunity)</td><td>Live — Contraindicated in Immunocompromised/Pregnancy</td></tr><tr><td>**Varicella**</td><td>**2 Doses** (If No History/Immunity)</td><td>Live</td></tr><tr><td>**Influenza**</td><td>**Annual**</td><td>**Strongly Recommended** for All Travellers</td></tr><tr><td>**Pneumococcal (PCV20/PPSV23)**</td><td>**Age ≥65 / Risk Groups**</td><td></td></tr><tr><td>**COVID-19**</td><td>**Per Current Guidelines**</td><td></td></tr></table>
+<div class="sub-h">Required (International Health Regulations)</div>
+<table class="ctable"><tr><th>Vaccine</th><th>Requirement</th><th>Certificate</th></tr><tr><td>---------</td><td>-------------</td><td>-------------</td></tr><tr><td>**Yellow Fever**</td><td>**Endemic Countries** (Africa, South America)</td><td>**ICVP** (International Certificate of Vaccination/Prophylaxis) — **Valid 10 Days Post-Vaccine, Lifelong**</td></tr><tr><td>**Polio (IPV)**</td><td>**Endemic Countries** (Afghanistan, Pakistan, Outbreak Areas)</td><td>**ICVP** (If Stay >4 Weeks)</td></tr><tr><td>**Meningococcal (ACWY)**</td><td>**Saudi Arabia (Hajj/Umrah)**</td><td>**ICVP** (Quadrivalent Conjugate)</td></tr></table>
+<div class="sub-h">Recommended by Destination/Activity</div>
+<table class="ctable"><tr><th>Vaccine</th><th>Indication</th><th>Schedule</th></tr><tr><td>---------</td><td>------------</td><td>----------</td></tr><tr><td>**Hepatitis A**</td><td>**All Travellers to Endemic Areas**</td><td>**2 Doses** (0, 6-12 Months) — **Single Dose Gives 1yr Protection**</td></tr><tr><td>**Typhoid**</td><td>**Endemic Areas (South Asia, Africa, Latin America)**</td><td>**Vi Polysaccharide (Single Dose, 2-3yr)** OR **Ty21a Oral (3 Doses, 5-7yr)**</td></tr><tr><td>**Hepatitis B**</td><td>**Long Stay, Medical/Dental Work, Sexual Contact, Healthcare Workers**</td><td>**3 Doses (0, 1, 6 Months)** OR **Accelerated (0, 1, 2, 12 Months)**</td></tr><tr><td>**Rabies**</td><td>**High-Risk Activities (Caving, Animal Work), Long Stay Rural, Children**</td><td>**Pre-Exposure: 3 Doses (0, 7, 21-28 Days)** → **Post-Exposure: 4 Doses (0, 3, 7, 14) + RIG**</td></tr><tr><td>**Japanese Encephalitis (JE)**</td><td>**Rural Asia (Rice Paddies, Monsoon), Long Stay >1 Month**</td><td>**IXIARO: 2 Doses (0, 28 Days)**</td></tr><tr><td>**Meningococcal (ACWY)**</td><td>**African Meningitis Belt (Dec-Jun), Hajj/Umrah**</td><td>**Conjugate ACWY Single Dose**</td></tr><tr><td>**Cholera (Oral)**</td><td>**Humanitarian Workers, Outbreak Areas**</td><td>**2 Doses (1-6 Weeks Apart)**</td></tr><tr><td>**Tick-Borne Encephalitis (TBE)**</td><td>**Endemic Europe/Asia (Forest/Hiking, Spring-Autumn)**</td><td>**3 Doses (0, 1-3 Months, 5-12 Months)**</td></tr><tr><td>**Yellow Fever**</td><td>**Endemic Africa/South America**</td><td>**Single Dose, Lifelong** (ICVP Valid 10 Days Post-Vax)</td></tr></table>
+<div class="callout">[!tip] <b>Live Vaccines (MMR, Varicella, Yellow Fever, Oral Ty21a, BCG, LAIV) Contraindicated in Immunocompromised/Pregnancy</b>. <b>Inactivated Safe</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🦟 Malaria Prophylaxis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Geographic Resistance &amp; Drug Choice</div>
+<table class="ctable"><tr><th>Region</th><th>Predominant Species</th><th>Resistance Pattern</th><th>1st Line Prophylaxis</th></tr><tr><td>--------</td><td>---------------------</td><td>-------------------</td><td>---------------------</td></tr><tr><td>**Sub-Saharan Africa**</td><td>**P. falciparum** (Dominant)</td><td>**Chloroquine Resistance Universal**; Mefloquine Resistance (Border Areas)</td><td>**Atovaquone-Proguanil** / **Doxycycline** / **Mefloquine**</td></tr><tr><td>**South Asia (India, SE Asia)**</td><td>**P. vivax > P. falciparum**</td><td>**Chloroquine Resistance (P. falciparum)**; **P. vivax Chloroquine Sensitive**</td><td>**Atovaquone-Proguanil** / **Doxycycline**</td></tr><tr><td>**South America**</td><td>**P. vivax > P. falciparum**</td><td>**Chloroquine Resistance (P. falciparum)**</td><td>**Atovaquone-Proguanil** / **Doxycycline**</td></tr><tr><td>**Central America / Caribbean**</td><td>**P. vivax**</td><td>**Chloroquine Sensitive (P. vivax)**</td><td>**Chloroquine** (If P. vivax Only) / Atovaquone-Proguanil</td></tr><tr><td>**Middle East**</td><td>**P. vivax**</td><td>**Chloroquine Sensitive**</td><td>**Chloroquine**</td></tr><tr><td>**Oceania (PNG, Solomon)**</td><td>**P. falciparum, P. vivax**</td><td>**Chloroquine Resistant (Both)**</td><td>**Atovaquone-Proguanil / Doxycycline**</td></tr></table>
+<div class="sub-h">Drug Regimens (Adults)</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose (Adult)</th><th>Schedule</th><th>Key Points</th></tr><tr><td>------</td><td>--------------</td><td>----------</td><td>------------</td></tr><tr><td>**Atovaquone-Proguanil (Malarone)**</td><td>**250/100mg OD**</td><td>**Start 1-2 Days Before → Daily During → 7 Days After Return**</td><td>**1st Line** (Well Tolerated, Short Post-Travel, Paediatric Formulation)</td></tr><tr><td>**Doxycycline**</td><td>**100mg OD**</td><td>**Start 1-2 Days Before → Daily During → 28 Days After Return**</td><td>**Cheap**, **Photosensitivity**, **Oesophagitis** (Take with Food/Water, Upright)</td></tr><tr><td>**Mefloquine (Lariam)**</td><td>**250mg Weekly**</td><td>**Start 2-3 Weeks Before → Weekly During → 4 Weeks After Return**</td><td>**Neuropsychiatric SE** (Contraindicated: Psych History, Seizures, Cardiac Conduction)</td></tr><tr><td>**Chloroquine**</td><td>**300mg Base Weekly** (5mg/kg)</td><td>**Start 1 Week Before → Weekly During → 4 Weeks After**</td><td>**Only Chloroquine-Sensitive Areas** (P. vivax/ovale)</td></tr><tr><td>**Tafenoquine (Kozenis)**</td><td>**200mg Single Dose**</td><td>**Start 3 Days Before → Single Dose After Return**</td><td>**P. vivax/ovale Radical Cure** (G6PD Test Required!)</td></tr></table>
+<div class="callout">[!warning] <b>Mefloquine Contraindicated</b>: <b>Psychiatric History, Seizures, Cardiac Conduction Defects</b>. <b>Tafenoquine: G6PD Testing Mandatory</b> (Haemolysis Risk). <b>Doxycycline: Photosensitivity, Oesophagitis</b>.</div>
+<div class="sub-h">Duration &amp; Timing</div>
+<table class="ctable"><tr><th>Phase</th><th>Duration</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Pre-Travel**</td><td>**Atovaquone-Proguanil/Doxycycline: 1-2 Days Before**; **Mefloquine: 2-3 Weeks Before**; **Chloroquine: 1 Week Before**</td></tr><tr><td>**During Travel**</td><td>**Daily (Atovaquone/Doxy) / Weekly (Mefloquine/Chloroquine)**</td></tr><tr><td>**Post-Travel**</td><td>**Atovaquone-Proguanil/Doxycycline: 7 Days**; **Mefloquine/Chloroquine: 4 Weeks**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">💩 Travellers' Diarrhoea (TD)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition &amp; Aetiology</div>
+<table class="ctable"><tr><th>Severity</th><th>Definition</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Mild**</td><td>**1-2 Loose Stools/24h**, No Distress</td></tr><tr><td>**Moderate**</td><td>**≥3 Loose Stools/24h** + **Cramps/Nausea/Fever**</td></tr><tr><td>**Severe**</td><td>**≥6 Loose Stools/24h** + **Fever/Blood/Severe Dehydration**</td></tr></table>
+<table class="ctable"><tr><th>Aetiology</th><th>Frequency</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**ETEC (Enterotoxigenic E. coli)**</td><td>**60-80%**</td></tr><tr><td>**Campylobacter**</td><td>**10-20%**</td></tr><tr><td>**Shigella**</td><td>**5-10%**</td></tr><tr><td>**Salmonella**</td><td>**5-10%**</td></tr><tr><td>**Viral (Norovirus, Rotavirus)**</td><td>**10-20%**</td></tr><tr><td>**Parasites (Giardia, Crypto, Cyclospora)**</td><td>**<5% (Usually >14 Days)**</td></tr></table>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Severity</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Mild**</td><td>**Oral Rehydration (ORS)**, **Loperamide 4mg Stat → 2mg After Each Loose Stool (Max 8mg/24h)**, **Bismuth Subsalicylate**</td></tr><tr><td>**Moderate**</td><td>**Antibiotic + Loperamide** → **Azithromycin 500mg OD × 3 Days** (1st Line) OR **Ciprofloxacin 500mg BD × 3 Days** (If Susceptible)</td></tr><tr><td>**Severe**</td><td>**IV Fluids**, **IV Antibiotics** (Ceftriaxone/Azithromycin), **Monitor Electrolytes**</td></tr></table>
+<div class="callout">[!warning] <b>Loperamide Contraindicated</b>: <b>Bloody Diarrhoea, High Fever, Suspected Shigella/Campylobacter</b> (Risk Toxic Megacolon). <b>Fluoroquinolone Resistance Rising (SE Asia) → Azithromycin Preferred</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">🏔️ Altitude Illness</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definitions &amp; Presentation</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Altitude</th><th>Features</th></tr><tr><td>----------</td><td>----------</td><td>----------</td></tr><tr><td>**AMS (Acute Mountain Sickness)**</td><td>**>2500m**</td><td>**Headache + ≥1: Anorexia, Nausea, Insomnia, Fatigue, Dizziness**</td></tr><tr><td>**HACE (High Altitude Cerebral Edema)**</td><td>**>3000m**</td><td>**AMS + Ataxia, Confusion, Altered Consciousness** → **Life-Threatening**</td></tr><tr><td>**HAPE (High Altitude Pulmonary Edema)**</td><td>**>2500m**</td><td>**Dyspnoea at Rest, Cough (Pink Frothy Sputum), Cyanosis, Tachycardia** → **Life-Threatening**</td></tr></table>
+<div class="sub-h">Prevention &amp; Treatment</div>
+<table class="ctable"><tr><th>Strategy</th><th>Details</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Gradual Ascent**</td><td>**<500m/Day Sleep Altitude Gain Above 3000m**, **Rest Day Every 3-4 Days**</td></tr><tr><td>**Acetazolamide (Prophylaxis)**</td><td>**125mg BD PO** (Start 24h Before Ascent, Continue 2 Days at Max Altitude)</td></tr><tr><td>**Acetazolamide (Treatment AMS)**</td><td>**250mg BD** (Until Symptoms Resolve)</td></tr><tr><td>**Dexamethasone (HACE)**</td><td>**8mg IV/PO Stat, Then 4mg Q6H** + **Immediate Descent**</td></tr><tr><td>**Nifedipine (HAPE)**</td><td>**30mg MR BD PO** + **Oxygen, Descent**</td></tr><tr><td>**Oxygen / Descent**</td><td>**Immediate Descent = Definitive Treatment** for HACE/HAPE</td></tr></table>
+<div class="callout">[!warning] <b>Descent = Definitive Treatment for HACE/HAPE</b>. <b>Do Not Delay</b>. <b>Acetazolamide = Prophylaxis + AMS Treatment</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">🛡️ Special Populations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Key Considerations</th></tr><tr><td>------------</td><td>---------------------</td></tr><tr><td>**Pregnancy**</td><td>**Live Vaccines Contraindicated**, **Malaria Risk ↑** (Severe), **Mefloquine 2nd/3rd Trimester Only**, **Doxycycline Contraindicated**, **TD: Azithromycin Preferred**</td></tr><tr><td>**Children**</td><td>**Weight-Based Dosing**, **Live Vaccines Contraindicated <12mo (MMR) / <6mo (Yellow Fever)**, **Mefloquine <5kg Contraindicated**, **Doxycycline <8y Contraindicated**</td></tr><tr><td>**Elderly**</td><td>**Comorbidities, Polypharmacy, ↑ Bleeding Risk (Anticoagulants), ↑ Fall Risk**, **Influenza/Pneumococcal Vaccines Critical**</td></tr><tr><td>**Immunocompromised**</td><td>**Live Vaccines Contraindicated**, **Inactivated Safe**, **Higher Infection Risk**, **Prophylaxis (PJP, Fungal, CMV)**, **Reduced Vaccine Response**</td></tr><tr><td>**Chronic Disease (Cardiac/Pulmonary/Renal/Diabetes)**</td><td>**Medication Adjustments**, **Vaccines Priority**, **High Altitude Risk Assessment**, **Insulin Adjustment at Altitude**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🧳 Travel Medical Kit Essentials</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Items</th></tr><tr><td>--------</td><td>-------</td></tr><tr><td>**First Aid**</td><td>Plasters, Dressings, Antiseptic, Steri-Strips, Safety Pins, Scissors, Tweezers</td></tr><tr><td>**Medications**</td><td>**Paracetamol/Ibuprofen**, **Loperamide**, **Oral Rehydration Salts (ORS)**, **Antihistamine**, **Antiemetic**, **Antacid**, **Antibiotic Standby (Azithromycin/Ciprofloxacin)**</td></tr><tr><td>**Travel-Specific**</td><td>**Antimalarials**, **Acetazolamide**, **Sunscreen (SPF30+)**, **Insect Repellent (DEET 30-50%)**, **Permethrin (Clothing)**, **Water Purification**</td></tr><tr><td>**Documentation**</td><td>**Vaccination Record (ICVP)**, **Prescription Copies**, **Insurance Details**, **Emergency Contacts**, **Blood Group**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Consultation Timing**</td><td>**6-8 Weeks Ideal** (Vaccines, Malaria Prophylaxis); **<2 Weeks = Limited**</td></tr><tr><td>**Vaccines**</td><td>**Routine (MMR, Tdap, Flu, Pneumo)**; **Required: Yellow Fever (ICVP), Polio, MenACWY (Hajj)**; **Recommended: Hep A/B, Typhoid, Rabies, JE, MenACWY, Cholera, TBE**</td></tr><tr><td>**Malaria Prophylaxis**</td><td>**Atovaquone-Proguanil (1st Line), Doxycycline, Mefloquine**; **Region-Specific Resistance**</td></tr><tr><td>**Travellers' Diarrhoea**</td><td>**Azithromycin 500mg OD x3d (1st Line)**, **Loperamide Adjunct**, **Avoid if Bloody/Fever**</td></tr><tr><td>**Altitude Sickness**</td><td>**Gradual Ascent**, **Acetazolamide 125mg BD Prophylaxis**, **HACE/HAPE = Immediate Descent + Dex/Nifedipine**</td></tr><tr><td>**Special Populations**</td><td>**Pregnancy: Live Vaccines No, Doxy No, Mefloquine 2nd/3rd Trimester Only**</td></tr><tr><td>**Medical Kit**</td><td>**Antimalarials, ORS, Loperamide, Azithromycin Standby, Acetazolamide, DEET, Sunscreen**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the recommended timing for a pre-travel consultation?</b></li></ol>
+<ul><li><b>Ideally 6-8 weeks before travel</b>; <b>Minimum 4-6 weeks</b> for vaccines/prophylaxis.</li></ul>
+<ol><li><b>Which vaccine is required under International Health Regulations?</b></li></ol>
+<ul><li><b>Yellow Fever</b> (Endemic Countries) — <b>ICVP Valid 10 Days Post-Vaccine, Lifelong</b>.</li></ul>
+<ol><li><b>What is the first-line malaria prophylaxis for Sub-Saharan Africa?</b></li></ol>
+<ul><li><b>Atovaquone-Proguanil (Malarone)</b> — Daily, Start 1-2 Days Before, Continue 7 Days After Return.</li></ul>
+<ol><li><b>Which antimalarial is contraindicated in psychiatric history?</b></li></ol>
+<ul><li><b>Mefloquine</b> (Risk of Neuropsychiatric Side Effects: Anxiety, Depression, Psychosis, Seizures).</li></ul>
+<ol><li><b>What is the first-line treatment for travellers' diarrhoea?</b></li></ol>
+<ul><li><b>Azithromycin 500mg OD × 3 Days</b> + <b>Loperamide</b> (Avoid if Bloody/Fever).</li></ul>
+<ol><li><b>How do you prevent altitude sickness?</b></li></ol>
+<ul><li><b>Gradual Ascent (&lt;500m/Day Sleep Altitude Gain &gt;3000m)</b>, <b>Acetazolamide 125mg BD Prophylaxis</b> (Start 24h Before Ascent).</li></ul>
+<ol><li><b>What is the treatment for HACE?</b></li></ol>
+<ul><li><b>Dexamethasone 8mg IV/PO Stat → 4mg Q6H + Immediate Descent + Oxygen</b>.</li></ul>
+<ol><li><b>What is the drug of choice for malaria prophylaxis in pregnancy?</b></li></ol>
+<ul><li><b>Mefloquine (2nd/3rd Trimester Only)</b>; <b>Doxycycline Contraindicated</b>; <b>Atovaquone-Proguanil Limited Data</b>.</li></ul>
+<ol><li><b>Which vaccine is contraindicated in immunocompromised patients?</b></li></ol>
+<ul><li><b>Live Vaccines</b> (MMR, Varicella, Yellow Fever, Oral Typhoid, BCG, LAIV).</li></ul>
+<ol><li><b>What is the schedule for Rabies Pre-Exposure Prophylaxis?</b></li></ol>
+<ul><li><b>3 Doses: Day 0, 7, 21-28</b> (Intradermal 0.1ml or IM 1ml).</li></ul>
+<ol><li><b>What is the first-line treatment for travellers' diarrhoea?</b></li></ol>
+<ul><li><b>Azithromycin 500mg OD × 3 Days + Loperamide</b>; <b>Fluoroquinolones (Ciprofloxacin) 2nd Line</b> (Resistance Rising).</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Mefloquine vs Doxycycline**</td><td>**Mefloquine = Weekly, Neuropsychiatric SE**; **Doxycycline = Daily, Photosensitivity, Oesophagitis**</td></tr><tr><td>**Atovaquone-Proguanil vs Doxycycline**</td><td>**A-P: 1-2d Before, 7d After, Expensive**; **Doxy: 1-2d Before, 28d After, Cheap, Photosensitivity**</td></tr><tr><td>**Mefloquine in Pregnancy**</td><td>**Contraindicated 1st Trimester**; **Safe 2nd/3rd Trimester**</td></tr><tr><td>**Acetazolamide Prophylaxis vs Treatment**</td><td>**Prophylaxis: 125mg BD**; **Treatment: 250mg BD**</td></tr><tr><td>**HACE vs HAPE**</td><td>**HACE = Cerebral (Ataxia, Confusion)**; **HAPE = Pulmonary (Dyspnoea, Frothy Sputum)**</td></tr><tr><td>**Live vs Inactivated Vaccines**</td><td>**Live: MMR, Varicella, Yellow Fever, Oral Ty21a, BCG, LAIV — Contra in Immunocompromised/Pregnant**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"Malaria: A-P = Daily, 7d After; Doxy = Daily, 28d After; Meflo = Weekly, 4w After"**</td><td>Prophylaxis Duration</td></tr><tr><td>**"Yellow Fever = ICVP = 10 Days Valid"**</td><td>YF Certificate</td></tr><tr><td>**"TD = Azithro + Loperamide (No Blood/Fever)"**</td><td>Travellers' Diarrhoea</td></tr><tr><td>**"HACE = Head (Brain), HAPE = Lungs"**</td><td>Altitude Illness</td></tr><tr><td>**"Gradual Ascent = <500m/Day Sleep Gain >3000m"**</td><td>Prevention</td></tr><tr><td>**"Pregnancy = No Live Vax, No Doxy, Meflo 2nd/3rd Tri Only"**</td><td>Pregnancy Restrictions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Travel Medicine))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Pre-Travel Consult</div>
+<div class="mm-node mm-l3">– 6-8 Weeks Ideal</div>
+<div class="mm-node mm-l3">– 5 Ws: Who, Where, When, What, Why</div>
+<div class="mm-node mm-l3">– Medical History, Immunisation Status</div>
+<div class="mm-node mm-l2">Vaccines</div>
+<div class="mm-node mm-l3">– Routine: MMR, Tdap, Flu, Pneumo</div>
+<div class="mm-node mm-l3">– Required: Yellow Fever (ICVP), Polio, MenACWY (Hajj)</div>
+<div class="mm-node mm-l3">– Recommended: Hep A/B, Typhoid, Rabies, JE, MenACWY, Cholera, TBE, Yellow Fever</div>
+<div class="mm-node mm-l2">Malaria Prophylaxis</div>
+<div class="mm-node mm-l3">– Atovaquone-Proguanil (1st Line)</div>
+<div class="mm-node mm-l3">– Doxycycline (Cheap, Photosensitivity)</div>
+<div class="mm-node mm-l3">– Mefloquine (Weekly, Neuropsychiatric SE)</div>
+<div class="mm-node mm-l3">– Chloroquine (Resistant Areas Only)</div>
+<div class="mm-node mm-l3">– Tafenoquine (Radical Cure P. vivax)</div>
+<div class="mm-node mm-l2">Travellers' Diarrhoea</div>
+<div class="mm-node mm-l3">– ETEC Most Common</div>
+<div class="mm-node mm-l3">– Azithromycin 500mg OD x3d (1st Line)</div>
+<div class="mm-node mm-l3">– Loperamide Adjunct</div>
+<div class="mm-node mm-l3">– Avoid if Bloody/Fever</div>
+<div class="mm-node mm-l2">Altitude Illness</div>
+<div class="mm-node mm-l3">– AMS: Headache + GI/Insomnia</div>
+<div class="mm-node mm-l3">– HACE: Ataxia, Confusion</div>
+<div class="mm-node mm-l3">– HAPE: Dyspnoea, Frothy Sputum</div>
+<div class="mm-node mm-l3">– Prevention: Gradual Ascent, Acetazolamide 125mg BD</div>
+<div class="mm-node mm-l3">– Treatment: Descent, Dex (HACE), Nifedipine (HAPE)</div>
+<div class="mm-node mm-l2">Special Populations</div>
+<div class="mm-node mm-l3">– Pregnancy: No Live Vax, No Doxy, Meflo 2nd/3rd Tri</div>
+<div class="mm-node mm-l3">– Children: Weight-Based, Live Vax Age Limits</div>
+<div class="mm-node mm-l3">– Immunocompromised: No Live Vax, Reduced Response</div>
+<div class="mm-node mm-l3">– Elderly: Comorbidities, Polypharmacy</div>
+<div class="mm-node mm-l2">Medical Kit</div>
+<div class="mm-node mm-l3">– Antimalarials, ORS, Loperamide, Azithromycin Standby</div>
+<div class="mm-node mm-l3">– Acetazolamide, DEET, Sunscreen, Insurance</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**TRAVEL MEDICINE – FCPS/MRCP REVISION CARD**</th></tr><tr><td>------------------------------------------------</td></tr><tr><td>**Consult**: **6-8 Weeks Ideal**; **5 Ws** (Who, Where, When, What, Why)</td></tr><tr><td>**Vaccines**: Routine (MMR, Tdap, Flu), **Required: YF (ICVP), Polio, MenACWY (Hajj)**, Rec: Hep A/B, Typhoid, Rabies, JE, MenACWY, Cholera</td></tr><tr><td>**Malaria**: **Atovaquone-Proguanil 1st Line** (Daily, 1-2d Start, 7d After); **Doxy 100mg OD** (1-2d Start, 28d After); **Mefloquine 250mg Weekly** (2-3w Start, 4w After, Neuropsychiatric SE)</td></tr><tr><td>**TD**: **Azithromycin 500mg OD x3d + Loperamide**; Avoid if Bloody/Fever; Fluoroquinolone 2nd Line</td></tr><tr><td>**Altitude**: **Gradual Ascent <500m/Day >3000m**; **AMS: Headache+GI**; **HACE: Ataxia/Confusion**; **HAPE: Dyspnoea/Frothy Sputum**</td></tr><tr><td>**Altitude Rx**: **Descent Definitive**; **Acetazolamide 125mg BD (Proph) / 250mg BD (Tx)**; **HACE: Dex 8mg + Descent**; **HAPE: Nifedipine + Descent**</td></tr><tr><td>**Pregnancy**: **No Live Vax, No Doxy, Meflo 2nd/3rd Tri Only**</td></tr><tr><td>**Medical Kit**: Antimalarials, ORS, Loperamide, Azithromycin Standby, Acetazolamide, DEET 30-50%, Sunscreen, Insurance</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Pre-travel timeline (6-8 weeks), Yellow Fever ICVP, Malaria prophylaxis choices by region, TD treatment (Azithromycin + Loperamide), Altitude sickness (AMS/HACE/HAPE) prevention & treatment, Pregnancy/contraindications, Travel medical kit</td></tr><tr><td>**Should Know**</td><td>Vaccine schedules (accelerated vs standard), Rabies pre-exposure (3 doses), JE/TBE indications, Malaria standby treatment, Standby antibiotics for TD, Altitude sickness pathophysiology (HIF, VEGF), Jet lag management, DVT prevention on long flights, Insurance/evacuation</td></tr><tr><td>**Nice to Know**</td><td>Travellers' diarrhoea aetiology by region, Malaria drug resistance patterns (kelch13, pfmdr1), Altitude illness genetics, Travel vaccine economics, Telemedicine for travellers, Space tourism medicine, Expedition medicine, Medical tourism risks, Climate change impact on disease distribution</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Pre-Travel Consultation</td><td></td><td></td></tr><tr><td>Vaccination Schedules</td><td></td><td></td></tr><tr><td>Malaria Prophylaxis</td><td></td><td></td></tr><tr><td>Travellers' Diarrhoea</td><td></td><td></td></tr><tr><td>Altitude Illness</td><td></td><td></td></tr><tr><td>Special Populations</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Antimicrobial Stewardship / Resistance]]</li><li><b>Next</b>: [[Infection in Immunocompromised Host]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Travel Medicine &amp; Pre-travel Advice · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Snake Envenomation- Specific Antivenom Protocols — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ENVENOMATION</span>
+      <div class="h1">Snake Envenomation- Specific Antivenom Protocols</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply region-specific antivenom protocols</li><li>[ ] Know dosing, administration, and repeat criteria for each product</li><li>[ ] Match antivenom product to regional snake species</li><li>[ ] Manage pregnancy, children, and late presenters</li><li>[ ] Apply to FCPS/MRCP scenarios (tropical medicine, travel, emergency)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">General Principles (Recap)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Principle</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Indication**</td><td>Systemic envenomation (coag, neuro, CVS, renal, severe local)</td></tr><tr><td>**Route**</td><td>IV infusion (saline), 30–60 min</td></tr><tr><td>**Dose by**</td><td>Venom load (vials), not patient weight</td></tr><tr><td>**Adult & child**</td><td>Same dose (children have higher venom load per kg)</td></tr><tr><td>**Pregnancy**</td><td>Same dose; safe; benefits > risk</td></tr><tr><td>**Skin test**</td><td>NOT recommended</td></tr><tr><td>**Premedication**</td><td>Not routine; SC adrenaline in high-risk</td></tr><tr><td>**Repeat dose**</td><td>At 6 h if no clinical/lab improvement</td></tr><tr><td>**Late presenter**</td><td>Still beneficial up to 24–72 h</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">India — Polyvalent Antivenom (ASV)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Item</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Product (examples)**</td><td>Bharat Serums Polyvalent ASV; VINS Polyvalent ASV; Premium Serums</td></tr><tr><td>**Type**</td><td>Whole IgG, equine (older); F(ab')₂ newer</td></tr><tr><td>**Coverage ("Big Four")**</td><td>**Indian cobra (Naja naja), Common krait (Bungarus caeruleus), Russell's viper (Daboia russelii), Saw-scaled viper (Echis carinatus)**</td></tr><tr><td>**NOT covered**</td><td>Hump-nosed pit viper (*Hypnale hypnale*) — major gap; King cobra (separate AV)</td></tr><tr><td>**Initial dose**</td><td>**8–10 vials** (severe) or 5 vials (moderate)</td></tr><tr><td>**Repeat dose**</td><td>5–10 vials at 6 h if coagulopathy persists (20WBCT still +ve, INR > 1.5) or neuro worsens</td></tr><tr><td>**Maximum**</td><td>No strict max; titrate to response</td></tr><tr><td>**Administration**</td><td>IV in 100 mL saline over 1 h</td></tr><tr><td>**Reactions**</td><td>Higher (5–20%) with whole IgG</td></tr><tr><td>**Pregnancy**</td><td>Same dose; safe</td></tr><tr><td>**Children**</td><td>Same as adult (10 vials)</td></tr></table>
+<div class="sub-h">Indian ASV Repeat Dosing Algorithm</div>
+<table class="ctable"><tr><th>Time</th><th>Action</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**T0**</td><td>10 vials IV over 1 h</td></tr><tr><td>**6 h**</td><td>20WBCT + INR; if +ve/INR > 1.5 → repeat 10 vials</td></tr><tr><td>**12 h**</td><td>Repeat 20WBCT + INR; if still +ve → repeat 10 vials</td></tr><tr><td>**18–24 h**</td><td>Continue; if persistently +ve → consider FFP, cryo, or AV failure</td></tr><tr><td>**Stable**</td><td>Stop when 20WBCT negative and INR < 1.5 for 2 consecutive checks 6 h apart</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Africa — Polyvalent Antivenoms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">South African Institute for Medical Research (SAIMR) Polyvalent</div>
+<table class="ctable"><tr><th>Item</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Type**</td><td>F(ab')₂, equine</td></tr><tr><td>**Coverage**</td><td>Banded cobra, snouted cobra, Cape cobra, Black mamba, Puff adder, Gaboon viper, Rinkhals, Boomslang (separate)</td></tr><tr><td>**Initial dose**</td><td>**50–100 mL** (≈ 5–10 vials)</td></tr><tr><td>**Repeat**</td><td>50 mL at 6 h if coagulopathy/bleeding/neuro persists</td></tr><tr><td>**Children**</td><td>Same as adult</td></tr><tr><td>**Pregnancy**</td><td>Same; safe</td></tr><tr><td>**Reactions**</td><td>Fewer than whole IgG (F(ab')₂)</td></tr></table>
+<div class="sub-h">African Polyvalent (VINS, Bharat, others — used in sub-Saharan Africa)</div>
+<table class="ctable"><tr><th>Item</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Coverage**</td><td>Echis, Naja (African spitting/non-spitting), Bitis, Dendroaspis, possibly B. gabonica</td></tr><tr><td>**Initial dose**</td><td>2–4 vials (depends on product)</td></tr><tr><td>**Repeat**</td><td>Per local protocol; usually at 6 h</td></tr><tr><td>**Boomslang**</td><td>**Separate monospecific** (SAVP monovalent) — only for confirmed *Dispholidus typus*</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Australia — Monovalent & Polyvalent</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Australian Strategy</div>
+<table class="ctable"><tr><th>Scenario</th><th>Approach</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Snake identified (or VDK confirms species)**</td><td>**Monovalent (species-specific)** preferred — less foreign protein, fewer reactions</td></tr><tr><td>**Snake unknown / VDK unavailable**</td><td>**Polyvalent** covers all major Australian elapids</td></tr><tr><td>**Clinical features suggest specific syndrome**</td><td>Use clinical + VDK to guide</td></tr></table>
+<div class="sub-h">Monovalent Antivenoms (CSL Australia)</div>
+<table class="ctable"><tr><th>Species</th><th>Antivenom</th><th>Initial Dose</th><th>Repeat</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Taipan (*Oxyuranus scutellatus*)**</td><td>Taipan Antivenom</td><td>**1 vial** (≈ 12,000 units)</td><td>Repeat at 1–2 h if no improvement</td></tr><tr><td>**Brown snake (*Pseudonaja*)**</td><td>Brown Snake Antivenom</td><td>**2 vials** (≈ 4,000 units each)</td><td>Repeat at 1–2 h if coagulopathy</td></tr><tr><td>**Tiger snake (*Notechis*)**</td><td>Tiger Snake Antivenom</td><td>**1 vial**</td><td>Repeat if needed</td></tr><tr><td>**Death adder (*Acanthophis*)**</td><td>Death Adder Antivenom</td><td>**1 vial**</td><td>Repeat if needed</td></tr><tr><td>**Black snake (*Pseudechis*)**</td><td>Black Snake Antivenom</td><td>**1 vial**</td><td>Repeat if needed</td></tr><tr><td>**Sea snake**</td><td>Sea Snake Antivenom</td><td>**1 vial**</td><td>Repeat if myotoxicity/neuro</td></tr></table>
+<div class="sub-h">Polyvalent Antivenom (CSL Australia)</div>
+<table class="ctable"><tr><th>Item</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Coverage**</td><td>All 5 Australian monovalent species (Taipan, Brown, Tiger, Black, Death Adder)</td></tr><tr><td>**Initial dose**</td><td>**2 vials** (when snake unknown or VDK unavailable)</td></tr><tr><td>**Repeat**</td><td>1–2 vials at 1–2 h if no improvement</td></tr><tr><td>**Note**</td><td>Use VDK (Venom Detection Kit) at bite site, blood, urine to identify species</td></tr><tr><td>**Reaction rate**</td><td>Lower (F(ab')₂ sheep)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">North America — CroFab & Anavip & NACSA</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Crotalidae (Pit Viper) Antivenoms</div>
+<table class="ctable"><tr><th>Product</th><th>Type</th><th>Coverage</th><th>Initial Dose</th><th>Maintenance</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**CroFab (Crotalidae Polyvalent Immune Fab — ovine)**</td><td>Fab, ovine</td><td>All North American pit vipers (rattlesnakes, copperheads, cottonmouths)</td><td>**4–6 vials**</td><td>**2 vials at 6, 12, 18 h** until control</td><td>Short t½ → recurrence possible; control + maintenance protocol</td></tr><tr><td>**Anavip (Crotalidae Immune F(ab')₂ — equine)**</td><td>F(ab')₂, equine</td><td>All North American pit vipers</td><td>**10 vials** initial; **4 vials PRN** for bleeding/recurrence</td><td>Lower recurrence rate (longer t½)</td><td>Newer; less recurrence</td></tr><tr><td>**Note**</td><td>NOT for coral snakes (use NACSA)</td><td></td><td></td><td></td><td></td></tr></table>
+<div class="sub-h">Coral Snake Antivenom</div>
+<table class="ctable"><tr><th>Product</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Name**</td><td>North American Coral Snake Antivenom (NACSA) — Wyeth; also Coralmyn in Mexico</td></tr><tr><td>**Coverage**</td><td>*Micrurus fulvius* (Eastern coral) and *M. tener* (Texas coral)</td></tr><tr><td>**Dose**</td><td>3–5 vials (or as per product)</td></tr><tr><td>**Indication**</td><td>Confirmed or suspected coral snake bite with neurotoxicity (ptosis, bulbar, descending paralysis)</td></tr><tr><td>**Availability**</td><td>Limited (Pfizer discontinued Wyeth AV in US in 2019; alternative Coralmyn imported)</td></tr><tr><td>**Caveat**</td><td>Coral snake envenomation may be delayed; observe 24 h even if asymptomatic</td></tr><tr><td>**DO NOT**</td><td>Use CroFab for coral snake (different family)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Latin America</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Mexico — Antivipmyn &amp; Coralmyn</div>
+<table class="ctable"><tr><th>Product</th><th>Type</th><th>Coverage</th><th>Dose</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Antivipmyn (BIOCLON)**</td><td>F(ab')₂, equine</td><td>Bothrops, Crotalus (Mexico/Central America)</td><td>2–5 vials initial; repeat PRN</td></tr><tr><td>**Coralmyn**</td><td>F(ab')₂, equine</td><td>Micrurus (coral snakes)</td><td>5–10 vials</td></tr></table>
+<div class="sub-h">Brazil / South America — Butantan &amp; BIOCLON</div>
+<table class="ctable"><tr><th>Product</th><th>Coverage</th><th>Dose</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Antibotrópico (Butantan/BIOCLON)**</td><td>Bothrops (lance-headed)</td><td>5–10 vials</td></tr><tr><td>**Anticrotálico**</td><td>Crotalus (rattlesnake)</td><td>5–10 vials</td></tr><tr><td>**Antilaquético**</td><td>Lachesis (bushmaster)</td><td>5–10 vials</td></tr><tr><td>**Antielapídico**</td><td>Micrurus (coral)</td><td>5–10 vials</td></tr><tr><td>**Soro Antibotrópico-Laquético**</td><td>Bothrops + Lachesis</td><td>10 vials</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Europe</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Region</th><th>Antivenom</th><th>Coverage</th><th>Dose</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Europe (ViperaTAb — Vipera berus)**</td><td>ViperaTAb (equine F(ab')₂)</td><td>European viper (*Vipera berus*)</td><td>8–10 mL initial; repeat PRN</td></tr><tr><td>**Polyvalent European (ViperFAV)**</td><td>Sanofi-Pasteur</td><td>Mediterranean vipers (*V. aspis*, *V. ammodytes*)</td><td>Per protocol</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Asia-Pacific</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Country</th><th>Product</th><th>Coverage</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Thailand**</td><td>Thai Red Cross Polyvalent</td><td>Monocellate cobra, Malayan krait, Russell's viper, Malayan pit viper, green pit viper</td></tr><tr><td>**Indonesia**</td><td>Bio Farma Polyvalent</td><td>Spitting cobra, Malayan krait, Russell's viper, saw-scaled viper, Asian pit vipers</td></tr><tr><td>**Japan**</td><td>Mamushi Antivenom (Kitasato)</td><td>*Gloydius blomhoffii* (mamushi)</td></tr><tr><td>**China**</td><td>Various (Shanghai, Beijing)</td><td>Chinese cobra, krait, pit viper (Gloydius)</td></tr><tr><td>**Papua New Guinea**</td><td>CSL Polyvalent</td><td>Taipan, death adder, brown</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pregnancy</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Dose**</td><td>**Same as adult (by venom load)**</td></tr><tr><td>**Safety**</td><td>**Antivenom is safe in pregnancy**</td></tr><tr><td>**Indication**</td><td>Same thresholds; benefits outweigh fetal risk</td></tr><tr><td>**Type**</td><td>F(ab')₂ preferred if available (less Fc-mediated placental transfer)</td></tr><tr><td>**Complications**</td><td>VICC → placental abruption, fetal demise; shock → fetal hypoxia</td></tr><tr><td>**Fetal monitoring**</td><td>CTG / Doppler in 2nd/3rd trimester; obstetric input</td></tr><tr><td>**Delivery**</td><td>If viable + maternal decompensation, may need emergency C-section</td></tr></table>
+<div class="sub-h">Children</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Dose**</td><td>**Same as adult (10 vials Indian ASV, 4–6 vials CroFab, 2 vials Aus monovalent)**</td></tr><tr><td>**Reason**</td><td>Venom load is the same; children have **higher venom per kg** (worse envenomation per kg)</td></tr><tr><td>**Fluid balance**</td><td>Close monitoring — small fluid shifts significant</td></tr><tr><td>**Reactions**</td><td>Higher anaphylaxis rate (more atopic); premedication not routine but consider</td></tr><tr><td>**Intubation**</td><td>Smaller ETT; experienced paediatric airway</td></tr></table>
+<div class="sub-h">Elderly</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Dose**</td><td>Same as adult</td></tr><tr><td>**Caution**</td><td>Higher comorbidities; renal/cardiac; polypharmacy (β-blockers, ACEi)</td></tr><tr><td>**Reaction risk**</td><td>Higher; slower infusion; monitor closely</td></tr><tr><td>**β-blocker + AV**</td><td>Refractory anaphylaxis; glucagon</td></tr><tr><td>**ACEi + AV**</td><td>Angioedema; icatibant/FFP</td></tr></table>
+<div class="sub-h">Late Presenters (&gt; 24 h)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Benefit**</td><td>**Still beneficial up to 24–72 h** for ongoing coagulopathy, necrosis progression, myotoxicity, neurotoxicity</td></tr><tr><td>**Rationale**</td><td>Venom depot at bite site continues release; AV neutralises circulating + released venom</td></tr><tr><td>**Coagulopathy**</td><td>May still respond at 48 h</td></tr><tr><td>**Necrosis**</td><td>Cannot reverse established; can halt progression</td></tr><tr><td>**Neuro**</td><td>May still prevent progression; established presynaptic paralysis = wait for regeneration</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Repeat Dosing — General Criteria</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Repeat Dose</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Persistent coagulopathy at 6 h** (INR > 1.5, 20WBCT +ve)</td><td>Repeat full dose</td></tr><tr><td>**Worsening neuro** (new ptosis, FVC drop)</td><td>Repeat full dose + intubate if needed</td></tr><tr><td>**Haemodynamic deterioration**</td><td>Repeat; consider vasopressors</td></tr><tr><td>**Progressive local swelling**</td><td>Repeat if early; AV may halt progression</td></tr><tr><td>**Recurrent coagulopathy** (CroFab — short t½)</td><td>Repeat Fab per protocol (6, 12, 18 h)</td></tr><tr><td>**Stable or improving**</td><td>**No repeat** — observe</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Pitfalls</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pitfall</th><th>Correction</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Half dose in child</td><td>NO — same as adult</td></tr><tr><td>Skip AV in pregnancy</td><td>NO — indicated</td></tr><tr><td>Refuse AV > 24 h</td><td>NO — still beneficial</td></tr><tr><td>Switch to FFP without AV</td><td>NO — AV first, FFP if bleeding</td></tr><tr><td>One dose cures all</td><td>NO — repeat until stable</td></tr><tr><td>Prophylactic AV for all bites</td><td>NO — only systemic or severe local</td></tr><tr><td>Antivenom for elapid dry bite</td><td>NO — observe</td></tr><tr><td>Stop AV after first dose if no response</td><td>NO — give time (1–2 h); repeat if no improvement</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Fact</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Indian ASV**</td><td>Whole IgG, covers Big 4 (Naja, Bungarus, Daboia, Echis)</td></tr><tr><td>**Indian ASV dose**</td><td>8–10 vials initial; repeat 10 vials at 6 h if coagulopathy</td></tr><tr><td>**Hump-nosed pit viper**</td><td>NOT covered by Indian ASV — major gap</td></tr><tr><td>**SAIMR**</td><td>F(ab')₂, covers African cobras, mambas, Bitis, rinkhals</td></tr><tr><td>**SAIMR dose**</td><td>50–100 mL initial</td></tr><tr><td>**Boomslang AV**</td><td>**Separate monospecific** (SAVP) — only for confirmed boomslang</td></tr><tr><td>**Australian strategy**</td><td>Monovalent if ID confirmed; polyvalent if unknown</td></tr><tr><td>**Brown snake AV**</td><td>2 vials monovalent</td></tr><tr><td>**Taipan / Tiger / Death Adder / Black AV**</td><td>1 vial monovalent</td></tr><tr><td>**Polyvalent AV (Aus)**</td><td>2 vials if snake unknown</td></tr><tr><td>**CroFab**</td><td>Ovine Fab, 4–6 vials initial, 2 vials at 6/12/18 h</td></tr><tr><td>**Anavip**</td><td>Equine F(ab')₂, 10 vials initial, 4 vials PRN — lower recurrence</td></tr><tr><td>**Coral snake AV (NACSA)**</td><td>Separate; for *Micrurus*; limited supply</td></tr><tr><td>**Antivipmyn**</td><td>Mexico; Bothrops + Crotalus; 2–5 vials</td></tr><tr><td>**Pregnancy**</td><td>Same dose; safe</td></tr><tr><td>**Children**</td><td>Same dose (venom load)</td></tr><tr><td>**Late presenter**</td><td>AV still beneficial up to 24–72 h</td></tr><tr><td>**Repeat dosing**</td><td>At 6 h if coagulopathy/neuro worsens</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1: What is the Indian "Big Four" and what is the initial dose of Indian polyvalent ASV?</b> A: Big Four = Indian cobra (<i>Naja naja</i>), common krait (<i>Bungarus caeruleus</i>), Russell's viper (<i>Daboia russelii</i>), saw-scaled viper (<i>Echis carinatus</i>). Initial dose: 8–10 vials IV over 1 h; repeat 5–10 vials at 6 h if coagulopathy persists. **Hump-nosed pit viper (<i>Hypnale</i>) is NOT covered** — major gap in South Asian AV.</p>
+<p><b>Q2: What is the Australian approach to antivenom choice?</b> A: If snake is identified (or VDK confirms species) → monovalent (species-specific, less foreign protein, fewer reactions). If snake unknown or VDK unavailable → polyvalent (covers all 5 major Australian elapids). Brown snake = 2 vials; Taipan/Tiger/Death Adder/Black = 1 vial; Polyvalent = 2 vials.</p>
+<p><b>Q3: How does CroFab dosing differ from Anavip?</b> A: CroFab (Fab, ovine) = 4–6 vials initial, then 2 vials at 6, 12, 18 h (control + maintenance protocol). Short t½ → recurrence possible. Anavip (F(ab')₂, equine) = 10 vials initial; 4 vials PRN for bleeding/recurrence. Longer t½ → lower recurrence. Both cover all North American pit vipers; <b>NOT for coral snakes</b>.</p>
+<p><b>Q4: Why is antivenom dose the same in adults and children?</b> A: Dose is by <b>venom load</b> (number of vials to neutralise average venom yield from one bite), not by patient weight. Children actually receive a <b>higher per-kg dose</b> because the venom load is the same but weight is less. Children are also more vulnerable per kg to venom effects.</p>
+<p><b>Q5: Should antivenom be given in pregnancy?</b> A: YES. Antivenom is safe in pregnancy. Indication is the same as non-pregnant (systemic envenomation). F(ab')₂ preferred if available. Maternal benefit (preventing shock, coagulopathy, AKI) outweighs fetal risk. F(ab')₂ has less Fc-mediated placental transfer. <b>Aggressive resuscitation + fetal monitoring.</b></p>
+<p><b>Q6: Is antivenom useful in late presenters (&gt; 24 h)?</b> A: YES — up to 24–72 h for ongoing coagulopathy, necrosis progression, neurotoxicity, myotoxicity. Venom depot at bite site continues release; AV neutralises circulating + released venom. Established necrosis cannot be reversed, but progression can be halted. Established presynaptic paralysis requires nerve regeneration (days–weeks).</p>
+<p><b>Q7: When should you repeat antivenom?</b> A: At 6 h if (1) coagulopathy persists (20WBCT +ve, INR &gt; 1.5, fibrinogen &lt; 1), (2) neuro worsens (new ptosis, FVC drop), (3) haemodynamic deterioration, (4) progressive local swelling. <b>Stable or improving = no repeat</b>.</p>
+<p><b>Q8: What is the role of VDK in Australia?</b> A: Venom Detection Kit (CSL) — ELISA-based test of bite site swab, blood, urine. Identifies which Australian elapid species is responsible. Used to choose monovalent vs polyvalent AV. Bedside, results in 30 min. <b>Not used in other regions.</b></p>
+<p><b>Q9: How do you manage a patient who develops anaphylaxis to antivenom but still needs AV?</b> A: Stop infusion; treat anaphylaxis (IM adrenaline, fluids, chlorphenamine, hydrocortisone). Wait 15–30 min after full control. Reassess indication. If still essential: premedicate (chlorphenamine + hydrocortisone), dilute AV 1:10, restart at 1 mL/min, titrate up over 2–4 h. Have adrenaline ready. Consider alternative product (ovine, monospecific).</p>
+<p><b>Q10: Why is the Boomslang antivenom separate?</b> A: Boomslang (<i>Dispholidus typus</i>) is a rear-fanged colubrid, not a viper or elapid. Cross-reactivity with standard antivenoms is poor. South African Vaccine Producers (SAVP) produce monospecific boomslang AV. Used only for <b>confirmed</b> boomslang bite (usually delayed presentation with severe VICC 24–48 h post-bite).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Indian ASV covers all Indian snakes</td><td>NO — hump-nosed pit viper not covered</td></tr><tr><td>Half dose in child</td><td>NO — same as adult</td></tr><tr><td>AV not in pregnancy</td><td>NO — safe and indicated</td></tr><tr><td>AV too late after 24 h</td><td>NO — still beneficial up to 72 h</td></tr><tr><td>One dose cures all</td><td>NO — repeat until stable</td></tr><tr><td>CroFab for coral snake</td><td>NO — use NACSA</td></tr><tr><td>Anavip = CroFab</td><td>NO — different type/dosing</td></tr><tr><td>All polyvalent = same</td><td>NO — regional species differ</td></tr><tr><td>FFP replaces AV</td><td>NO — AV first, FFP for bleeding</td></tr><tr><td>AV for elapid dry bite</td><td>NO — observe</td></tr><tr><td>AV is vaccine</td><td>NO — passive, short-duration</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>Indian Big Four</b>: <b>N</b>aja, <b>B</b>ungarus, <b>D</b>aboia, <b>E</b>chis = <b>NBDE</b></li><li><b>Indian dose</b>: <b>10 vials</b> initial, <b>10 vials</b> at <b>6 h</b> if persistent = <b>10-10-6</b></li><li><b>Australian brown</b>: <b>2 vials</b> = <b>2B</b> (2 for Brown)</li><li><b>Australian others</b>: <b>1 vial</b> for Taipan/Tiger/Death Adder/Black = <b>1TTDB</b></li><li><b>Polyvalent Aus</b>: <b>2 vials</b> = <b>2P</b> (2 for Polyvalent)</li><li><b>CroFab</b>: <b>4–6</b> initial, <b>2</b> at <b>6/12/18 h</b> = <b>4-6-2-6-12-18</b></li><li><b>Anavip</b>: <b>10</b> initial, <b>4</b> PRN = <b>10-4</b></li><li><b>NACSA coral</b>: <b>3–5</b> vials = <b>3-5 C</b></li><li><b>Pregnancy/children</b>: <b>S</b>ame <b>A</b>dult <b>D</b>ose = <b>SAD</b></li><li><b>Late presenter</b>: <b>72 h</b> = <b>3 days</b> still beneficial = <b>3-72</b></li><li><b>Antivenom components</b>: Whole IgG = Indian, F(ab')₂ = SAIMR/CSL/Antivipmyn, Fab = CroFab</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Antivenom Protocols))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">India</div>
+<div class="mm-node mm-l3">– ASV_Polyvalent</div>
+<div class="mm-node mm-l3">– Big_Four[Naja, Bungarus, Daboia, Echis]</div>
+<div class="mm-node mm-l3">– Dose[10 vials initial]</div>
+<div class="mm-node mm-l3">– Repeat[10 vials at 6h]</div>
+<div class="mm-node mm-l3">– Hump_nosed_NOT_covered</div>
+<div class="mm-node mm-l2">Africa</div>
+<div class="mm-node mm-l3">– SAIMR</div>
+<div class="mm-node mm-l3">– Echis_Naja_Bitis</div>
+<div class="mm-node mm-l3">– Dose[50-100mL]</div>
+<div class="mm-node mm-l3">– Boomslang_separate</div>
+<div class="mm-node mm-l2">Australia</div>
+<div class="mm-node mm-l3">– Strategy</div>
+<div class="mm-node mm-deep">– Monovalent_if_known</div>
+<div class="mm-node mm-deep">– Polyvalent_if_unknown</div>
+<div class="mm-node mm-l3">– Doses</div>
+<div class="mm-node mm-deep">– Brown_2</div>
+<div class="mm-node mm-deep">– Taipan_Tiger_Death_Black_1</div>
+<div class="mm-node mm-deep">– Polyvalent_2</div>
+<div class="mm-node mm-l2">North_America</div>
+<div class="mm-node mm-l3">– CroFab</div>
+<div class="mm-node mm-deep">– 4-6_initial</div>
+<div class="mm-node mm-deep">– 2_at_6_12_18h</div>
+<div class="mm-node mm-l3">– Anavip</div>
+<div class="mm-node mm-deep">– 10_initial</div>
+<div class="mm-node mm-deep">– 4_PRN</div>
+<div class="mm-node mm-l3">– Coral</div>
+<div class="mm-node mm-deep">– NACSA_separate</div>
+<div class="mm-node mm-l2">Latin_America</div>
+<div class="mm-node mm-l3">– Antivipmyn[Bothrops, Crotalus]</div>
+<div class="mm-node mm-l3">– Coralmyn[Micrurus]</div>
+<div class="mm-node mm-l2">Special</div>
+<div class="mm-node mm-l3">– Pregnancy[Same dose]</div>
+<div class="mm-node mm-l3">– Children[Same dose]</div>
+<div class="mm-node mm-l3">– Late_presenter[Up to 72h]</div>
+<div class="mm-node mm-l2">Repeat</div>
+<div class="mm-node mm-l3">– Coag_persistent_6h</div>
+<div class="mm-node mm-l3">– Neuro_worsening</div>
+<div class="mm-node mm-l3">– CVS_deterioration</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Region</th><th>Product</th><th>Initial Dose</th><th>Repeat</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**India**</td><td>ASV (Big 4)</td><td>8–10 vials</td><td>5–10 vials at 6 h</td></tr><tr><td>**Africa (SAIMR)**</td><td>Polyvalent F(ab')₂</td><td>50–100 mL</td><td>50 mL at 6 h</td></tr><tr><td>**Australia (monovalent)**</td><td>Brown / Taipan / Tiger / Death / Black</td><td>1–2 vials</td><td>1 vial at 1–2 h</td></tr><tr><td>**Australia (polyvalent)**</td><td>Polyvalent (5 species)</td><td>2 vials</td><td>1–2 vials at 1–2 h</td></tr><tr><td>**US (pit viper)**</td><td>CroFab</td><td>4–6 vials</td><td>2 vials at 6/12/18 h</td></tr><tr><td>**US (pit viper)**</td><td>Anavip</td><td>10 vials</td><td>4 vials PRN</td></tr><tr><td>**US (coral)**</td><td>NACSA</td><td>3–5 vials</td><td>—</td></tr><tr><td>**Mexico**</td><td>Antivipmyn</td><td>2–5 vials</td><td>PRN</td></tr><tr><td>**Pregnancy**</td><td>Any</td><td>**Same as adult**</td><td>Same</td></tr><tr><td>**Children**</td><td>Any</td><td>**Same as adult**</td><td>Same</td></tr><tr><td>**Late presenter**</td><td>Any</td><td>**Standard dose** (up to 72 h)</td><td>Standard</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>Indian ASV, Australian strategy, CroFab</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Repeat criteria, special populations, late presenters</td></tr><tr><td>**7 d**</td><td></td><td></td><td>Boomslang, NACSA, Anavip, regional products</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with Snake & Lab topics</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Indian Big 4 + dose</td><td></td></tr><tr><td>African SAIMR</td><td></td></tr><tr><td>Australian strategy</td><td></td></tr><tr><td>CroFab vs Anavip</td><td></td></tr><tr><td>Coral snake AV</td><td></td></tr><tr><td>Boomslang AV</td><td></td></tr><tr><td>Pregnancy dosing</td><td></td></tr><tr><td>Paediatric dosing</td><td></td></tr><tr><td>Late presenter</td><td></td></tr><tr><td>Repeat criteria</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Antivenom in snakebite"</td><td>Mechanisms, types, dose, route, regional protocols, repeat, special populations</td></tr><tr><td>**Short Note**</td><td>"Indian ASV"</td><td>Big 4, 10 vials initial, repeat 6 h, hump-nosed gap, whole IgG</td></tr><tr><td>**Viva**</td><td>"Australian antivenom approach"</td><td>Monovalent if known, polyvalent if unknown; VDK; doses</td></tr><tr><td>**Ward Round**</td><td>"Viper bite, AV given, INR 3 at 6 h"</td><td>Repeat AV; if persistent, FFP, cryo, platelets</td></tr><tr><td>**Last-Night**</td><td>"Key AV numbers"</td><td>10 vials Indian; 1–2 vials Aus; 4–6 vials CroFab; same dose adult + child; 72 h late benefit</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Indian polyvalent ASV covers:</b></li></ol>
+<p>A. All Indian snakes B. <b>Naja, Bungarus, Daboia, Echis (Big 4)</b> C. Hump-nosed pit viper D. King cobra E. Sea snakes</p>
+<ol><li><b>Indian ASV initial dose:</b></li></ol>
+<p>A. 1–2 vials B. 5 vials C. <b>8–10 vials</b> D. 15 vials E. 20 vials</p>
+<ol><li><b>Australian brown snake AV dose:</b></li></ol>
+<p>A. 1 vial B. <b>2 vials</b> C. 5 vials D. 10 vials E. Weight-based</p>
+<ol><li><b>Australian strategy when snake unknown:</b></li></ol>
+<p>A. No AV B. Monovalent C. <b>Polyvalent 2 vials</b> D. Monovalent 1 vial E. Monovalent 2 vials</p>
+<ol><li><b>CroFab initial dose:</b></li></ol>
+<p>A. 1–2 vials B. 2 vials C. <b>4–6 vials</b> D. 10 vials E. 20 vials</p>
+<ol><li><b>Coral snake (Micrurus) AV in US:</b></li></ol>
+<p>A. CroFab B. <b>NACSA (North American Coral Snake Antivenom)</b> C. Anavip D. Use Antivipmyn E. No AV</p>
+<ol><li><b>Antivenom in pregnancy:</b></li></ol>
+<p>A. Half dose B. <b>Same as adult (safe)</b> C. Double D. Contraindicated E. Only if life-threatening</p>
+<ol><li><b>Antivenom in children:</b></li></ol>
+<p>A. Half adult dose B. Weight-based C. <b>Same as adult (venom load)</b> D. Quarter E. Not indicated</p>
+<ol><li><b>Antivenom for late presenter (48 h) with coagulopathy:</b></li></ol>
+<p>A. Contraindicated B. <b>Still beneficial (up to 72 h)</b> C. Only if neurotoxic D. Only if bleeding E. Only if renal failure</p>
+<ol><li><b>Repeat antivenom dose indicated at 6 h if:</b></li></ol>
+<p>A. Patient complains of pain B. <b>Coagulopathy persists (INR &gt; 1.5, 20WBCT +ve)</b> C. Patient febrile D. Patient sleeping E. Always repeat</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Farmer in India, viper bite, INR 4. Indian ASV 10 vials given. 6 h later INR 3.5. Next step:</b></li></ol>
+<p>A. Observe B. <b>Repeat 10 vials (persistent coagulopathy)</b> C. FFP only D. Monospecific AV E. Stop AV</p>
+<ol><li><b>Australian brown snake (Pseudonaja) confirmed by VDK. Coagulopathy. AV choice:</b></li></ol>
+<p>A. Polyvalent 2 vials B. <b>Brown Snake monovalent 2 vials (species-specific)</b> C. Polyvalent 1 vial D. Monovalent 1 vial E. No AV</p>
+<ol><li><b>Rattlesnake in Arizona. CroFab 6 vials given. 6 h later: INR 2.5, swelling progressing. Next:</b></li></ol>
+<p>A. Observe B. <b>Repeat 2 vials CroFab at 6, 12, 18 h per protocol</b> C. FFP only D. Switch to Anavip E. Surgery</p>
+<ol><li><b>Pregnant woman, 32 weeks, Russell's viper, INR 3. AV dose:</b></li></ol>
+<p>A. Half B. <b>Standard 10 vials — same as adult, safe in pregnancy</b> C. Contraindicated D. Delay until delivery E. Half then full after delivery</p>
+<ol><li><b>Child, 8 years, saw-scaled viper, coagulopathy. AV dose:</b></li></ol>
+<p>A. Half adult B. <b>Same as adult (10 vials) — venom load not weight</b> C. 1 vial/10 kg D. Contraindicated E. Only if severe</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Snake Envenomation: Clinical Syndromes (Elapid vs Viperid)]]</li><li>[[Snake Envenomation: Laboratory Investigation and Monitoring]]</li><li>[[Snake Envenomation: Specific Regional Snakes (Asia, Africa, Australia, Americas)]]</li><li>[[Snake Envenomation: Global Epidemiology and Snake Identification]]</li><li>[[Antivenom: Principles, Types, and Administration]]</li><li>[[Antivenom Adverse Reactions and Management]]</li><li>[[General Principles of Envenomation]]</li><li>[[Envenomation MOC]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Snake Envenomation- Specific Antivenom Protocols · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

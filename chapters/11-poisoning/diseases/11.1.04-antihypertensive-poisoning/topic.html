@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antihypertensive Poisoning — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">POISONING</span>
+      <div class="h1">Antihypertensive Poisoning</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognize toxicity by antihypertensive class</li><li>Apply class-specific management (clonidine, ACEi/ARB, diuretics, vasodilators)</li><li>Differentiate clonidine from opioid poisoning</li><li>Manage electrolyte disturbances from diuretics</li><li>Identify nitroprusside cyanide/thiocyanate toxicity</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p>Antihypertensive poisoning = toxicity from blood pressure-lowering agents causing <b>hypotension, bradycardia, electrolyte disturbances, and end-organ hypoperfusion</b>.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Physiology & Toxicity by Class</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Central α₂ Agonists — **Clonidine, Guanfacine, Methyldopa**</div>
+<ul><li><b>Mechanism</b>: central α₂ agonism → ↓ sympathetic outflow → ↓ BP, ↓ HR</li><li><b>OD</b>: <b>CNS depression</b> (coma, respiratory depression), <b>bradycardia</b>, <b>hypotension</b>, <b>miosis</b>, <b>transient hypertension</b> (peripheral α₂ agonism), <b>hypothermia</b></li><li><b>Clonidine</b>: most toxic; <b>guanfacine</b> less; <b>methyldopa</b> rare OD</li><li><b>Naloxone</b>: <b>partial reversal</b> of CNS/respiratory depression (mechanism unclear)</li></ul>
+<div class="sub-h">2. ACE Inhibitors / ARBs</div>
+<ul><li><b>Mechanism</b>: ↓ angiotensin II → vasodilation, ↓ aldosterone</li><li><b>OD</b>: <b>hypotension</b> (refractory), <b>hyperkalemia</b> (↓ aldosterone), <b>AKI</b> (↓ glomerular filtration), <b>cough</b> (ACEi, bradykinin), <b>angioedema</b> (ACEi)</li><li><b>Lisinopril, enalapril, ramipril, perindopril</b> (ACEi); <b>losartan, valsartan, candesartan</b> (ARB)</li></ul>
+<div class="sub-h">3. Diuretics</div>
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Key Toxicity</th></tr><tr><td>------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Loop** (furosemide, bumetanide)</td><td>NKCC2 inhibition</td><td>**Hypokalemia**, hyponatremia, metabolic alkalosis, ototoxicity (high dose), volume depletion</td></tr><tr><td>**Thiazide** (hydrochlorothiazide, indapamide)</td><td>NCC inhibition</td><td>**Hyponatremia**, hypokalemia, metabolic alkalosis, hypercalcemia, hyperglycemia, hyperuricemia</td></tr><tr><td>**K⁺-sparing** (spironolactone, amiloride, triamterene)</td><td>ENaC/aldosterone antagonism</td><td>**Hyperkalemia** (esp. with ACEi/ARB), metabolic acidosis (type 4 RTA), gynecomastia (spironolactone)</td></tr><tr><td>**Osmotic** (mannitol)</td><td>Osmotic gradient</td><td>Volume depletion, hypernatremia, pulmonary edema (if HF)</td></tr></table>
+<div class="sub-h">4. Direct Vasodilators</div>
+<ul><li><b>Hydralazine</b>: direct arterial vasodilation → <b>reflex tachycardia, hypotension, lupus-like syndrome, headache</b></li><li><b>Minoxidil</b>: K⁺ channel opener → <b>hirsutism, pericardial effusion, fluid retention</b></li><li><b>Nitroprusside</b>: NO donor → <b>severe hypotension, cyanide toxicity (thiocyanate), methemoglobinemia</b></li><li><b>Nitrates</b> (GTN, isosorbide): venodilation &gt; arterial → <b>headache, hypotension, methemoglobinemia</b></li></ul>
+<div class="sub-h">5. Other</div>
+<ul><li><b>Alpha-1 blockers</b> (prazosin, doxazosin, terazosin): <b>first-dose hypotension</b>, reflex tachycardia, IFIS (intraoperative floppy iris syndrome)</li><li><b>Centrally acting</b> (moxonidine, rilmenidine): similar to clonidine but less toxic</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Class</th><th>Key Features</th></tr><tr><td>-------</td><td>--------------</td></tr><tr><td>**Clonidine**</td><td>Coma, miosis, bradycardia, hypotension, transient HTN, respiratory depression, hypothermia</td></tr><tr><td>**ACEi/ARB**</td><td>Hypotension, hyperkalemia, AKI, cough (ACEi), angioedema</td></tr><tr><td>**Loop/Thiazide**</td><td>Hypokalemia, hyponatremia (thiazide), metabolic alkalosis, volume depletion</td></tr><tr><td>**K⁺-sparing**</td><td>Hyperkalemia, metabolic acidosis</td></tr><tr><td>**Vasodilators**</td><td>Hypotension, reflex tachycardia, cyanide (nitroprusside)</td></tr><tr><td>**Alpha-1 blockers**</td><td>First-dose hypotension, syncope</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ECG</b>: bradycardia, QT (some agents)</li><li><b>Electrolytes</b>: <b>K⁺, Na⁺, Mg²⁺, Ca²⁺</b> (critical for diuretics)</li><li><b>Renal function</b>: creatinine, urea (AKI, hyperkalemia)</li><li><b>ABG/VBG</b>: pH, lactate (perfusion)</li><li><b>Cyanide/thiocyanate</b> (nitroprusside &gt; 48h or renal failure)</li><li><b>Methemoglobin</b> (nitrates, nitroprusside, dapsone)</li><li><b>Paracetamol level</b> (always)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. General Supportive Care</div>
+<ul><li><b>ABCDE</b>: continuous monitoring, airway protection</li><li><b>IV fluids</b>: <b>first-line for hypotension</b> (NS 500-1000 mL bolus)</li><li><b>Vasopressors</b>: <b>norepinephrine</b> (α₁ + β₁) if fluid-refractory; <b>vasopressin</b> adjunct</li><li><b>Atropine</b> 0.5-1 mg IV for symptomatic bradycardia</li></ul>
+<div class="sub-h">2. Class-Specific</div>
+<p>#### <b>Clonidine / Central α₂ Agonists</b></p>
+<ul><li><b>Naloxone</b>: <b>0.4-2 mg IV</b> (repeat q2-3 min) — <b>partial reversal</b> of CNS/respiratory depression; may need <b>infusion 0.4-1 mg/hr</b></li><li><b>Supportive</b>: ventilation if respiratory depression, fluids/vasopressors for hypotension</li><li><b>NO flumazenil</b> (not benzo)</li></ul>
+<p>#### <b>ACEi/ARB</b></p>
+<ul><li><b>Fluids + vasopressors</b> (NE) for hypotension</li><li><b>Hyperkalemia</b>: standard measures (insulin/dextrose, calcium if ECG changes, salbutamol, kayexalate, dialysis if severe)</li><li><b>AKI</b>: stop nephrotoxins, optimize volume, renal replacement if indicated</li></ul>
+<p>#### <b>Diuretics</b></p>
+<ul><li><b>Electrolyte replacement</b>: <b>K⁺, Mg²⁺, Na⁺</b> guided by levels</li><li><b>Hypokalemia</b>: KCl 20-40 mEq/hr (IV) + Mg²⁺ replacement</li><li><b>Hyponatremia</b> (thiazide): fluid restriction, hypertonic saline if severe symptomatic</li><li><b>Hyperkalemia</b> (K⁺-sparing): standard measures</li><li><b>Volume depletion</b>: NS resuscitation</li></ul>
+<p>#### <b>Nitroprusside</b></p>
+<ul><li><b>Cyanide surveillance</b>: if &gt; 2 mcg/kg/min or &gt; 48h or renal failure</li><li><b>Thiocyanate</b> level if prolonged/renal failure</li><li><b>Treatment</b>: stop infusion, hydroxocobalamin 5g IV (if cyanide suspected)</li></ul>
+<p>#### <b>Nitrates</b></p>
+<ul><li><b>Methemoglobinemia</b>: if &gt; 30% or symptomatic → <b>methylene blue 1-2 mg/kg IV</b></li></ul>
+<p>#### <b>Hydralazine/Minoxidil</b></p>
+<ul><li><b>Lupus-like</b>: stop drug, NSAIDs/steroids if severe</li><li><b>Reflex tachycardia</b>: β-blocker if needed (cautious)</li></ul>
+<p>#### <b>Alpha-1 Blockers</b></p>
+<ul><li><b>First-dose effect</b>: supine positioning, fluids, slow titration</li></ul>
+<div class="sub-h">3. Decontamination</div>
+<ul><li><b>Activated charcoal</b>: 1 g/kg if &lt; 1-2h (most antihypertensives)</li><li><b>WBI</b>: sustained-release formulations (clonidine, some ACEi/ARB, doxazosin)</li></ul>
+<div class="sub-h">4. Monitoring &amp; Disposition</div>
+<ul><li><b>Continuous ECG, BP, SpO₂, GCS</b></li><li><b>Electrolytes q4-6h</b> (diuretics)</li><li><b>Observe 12-24h</b> (longer for SR, clonidine)</li><li><b>Psych assessment</b> if DSH</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Cardiogenic shock (refractory hypotension)</li><li>Severe hyperkalemia (K⁺-sparing + ACEi/ARB, AKI)</li><li>Hyponatremia seizures (thiazide)</li><li>Cyanide toxicity (nitroprusside)</li><li>Methemoglobinemia (nitrates)</li><li>Angioedema (ACEi) — airway compromise</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Generally good</b> with supportive care</li><li><b>Clonidine</b>: full recovery typical</li><li><b>ACEi/ARB</b>: recovery with fluids/vasopressors</li><li><b>Diuretics</b>: electrolyte correction → recovery</li><li><b>Nitroprusside cyanide</b>: good if recognized early</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Clonidine</b>: miosis + coma + bradycardia + hypotension + <b>transient HTN</b> + <b>naloxone partially reverses</b></li><li><b>ACEi/ARB</b>: hypotension + <b>hyperkalemia</b> + AKI + <b>cough (ACEi)</b></li><li><b>Thiazide</b>: <b>hyponatremia</b> + hypokalemia + metabolic alkalosis</li><li><b>Loop</b>: hypokalemia + metabolic alkalosis + ototoxicity</li><li><b>K⁺-sparing</b>: <b>hyperkalemia</b> (additive with ACEi/ARB) + metabolic acidosis</li><li><b>Nitroprusside</b>: <b>cyanide → hydroxocobalamin; thiocyanate in renal failure</b></li><li><b>Nitrates</b>: methemoglobinemia → methylene blue</li><li><b>Hydralazine</b>: lupus-like syndrome, reflex tachycardia</li><li><b>Alpha-1 blockers</b>: first-dose hypotension</li><li><b>Naloxone for clonidine</b> (partial reversal) — differentiates from opioid</li><li><b>Minoxidil</b>: hirsutism, pericardial effusion</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Clonidine toxidrome and naloxone role</li><li>ACEi vs ARB overdose differences</li><li>Thiazide vs loop diuretic electrolyte patterns</li><li>Nitroprusside cyanide/thiocyanate monitoring</li><li>Methemoglobinemia management</li><li>Differentiate clonidine from opioid</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Clonidine = opioid</b> → miosis + respiratory depression BUT <b>transient HTN</b>, <b>naloxone partial</b>, <b>no pinpoint pupils persist</b></li><li><b>Naloxone fully reverses clonidine</b> → NO, <b>partial</b>, may need infusion</li><li><b>ACEi cough = ARB cough</b> → NO, <b>ARB no cough</b></li><li><b>Thiazide hypercalcemia</b> → YES (unlike loop hypocalcemia)</li><li><b>K⁺-sparing + ACEi = hyperkalemia</b> — common dangerous combo</li><li><b>Nitroprusside cyanide = all patients</b> → only &gt; 2 mcg/kg/min, &gt; 48h, renal failure</li><li><b>Methylene blue for all metHb</b> → G6PD deficiency contraindicated</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CLONIDINE</b>: <b>C</b>oma, <b>M</b>iosis, <b>B</b>radycardia, <b>H</b>ypotension, <b>T</b>ransient <b>H</b>TN, <b>N</b>aloxone <b>P</b>artial</li><li><b>ACEi/ARB</b>: <b>A</b>ngioedema, <b>C</b>ough, <b>E</b>lectrolytes (K↑), <b>R</b>enal</li><li><b>DIURETICS</b>: <b>L</b>oop = <b>K</b>↓, <b>Alk</b>alosis; <b>T</b>hiazide = <b>Na</b>↓, <b>K</b>↓, <b>Alk</b>alosis, <b>Ca</b>↑; <b>K</b>-sparing = <b>K</b>↑, <b>A</b>cidosis</li><li><b>NITROPRUSSIDE</b>: <b>C</b>yanide → <b>H</b>ydroxocobalamin; <b>T</b>hiocyanate (renal)</li><li><b>METHEMOGLOBINEMIA</b>: <b>M</b>ethylene <b>B</b>lue 1-2mg/kg (NO G6PD)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Antihypertensive Poisoning))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Central Alpha-2</div>
+<div class="mm-node mm-l3">– Clonidine: Coma, Miosis, Brady, Hypotension, Transient HTN</div>
+<div class="mm-node mm-l3">– Naloxone Partial Reversal</div>
+<div class="mm-node mm-l2">ACEi/ARB</div>
+<div class="mm-node mm-l3">– Hypotension + HyperK + AKI</div>
+<div class="mm-node mm-l3">– ACEi: Cough, Angioedema</div>
+<div class="mm-node mm-l2">Diuretics</div>
+<div class="mm-node mm-l3">– Loop: K↓, Na↓, Alk, Ototoxicity</div>
+<div class="mm-node mm-l3">– Thiazide: Na↓, K↓, Alk, Ca↑, Hyperuricemia</div>
+<div class="mm-node mm-l3">– K-Sparing: K↑, Acidosis (Type 4 RTA)</div>
+<div class="mm-node mm-l2">Vasodilators</div>
+<div class="mm-node mm-l3">– Nitroprusside: Cyanide/Thiocyanate -&gt; Hydroxocobalamin</div>
+<div class="mm-node mm-l3">– Nitrates: MetHb -&gt; Methylene Blue</div>
+<div class="mm-node mm-l3">– Hydralazine: Lupus, Reflex Tachy</div>
+<div class="mm-node mm-l3">– Minoxidil: Hirsutism, Pericardial Effusion</div>
+<div class="mm-node mm-l2">Alpha-1 Blockers</div>
+<div class="mm-node mm-l3">– First-Dose Hypotension</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hypotensive Overdose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Fluids + Vasopressors (NE)\nElectrolytes, Renal, ECG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Identify Class</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Naloxone 0.4-2mg IV\nPartial Reversal\nMay Need Infusion\nSupportive</div>
+<div class="fc-node" data-id="E">Fluids + NE\nHyperK Management\nAKI Monitoring</div>
+<div class="fc-node" data-id="F">Electrolyte Replacement\nK, Mg, Na\nVolume Resuscitation</div>
+<div class="fc-node" data-id="G">HyperK Management\nStop ACEi/ARB\nDialysis if Severe</div>
+<div class="fc-node" data-id="H">Cyanide/Thiocyanate Monitor\nHydroxocobalamin if CN</div>
+<div class="fc-node" data-id="I">MetHb Check\nMethylene Blue if &gt;30%</div>
+<div class="fc-node" data-id="J">Lupus: Stop + Steroids\nReflex Tachy: BB</div>
+<div class="fc-node" data-id="K">Fluids, Supine, Slow Titration</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Observe 12-24h\nPsych Assessment</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Antihypertensive class comparison table</li><li>Electrolyte patterns by diuretic type</li><li>Clonidine vs opioid comparison</li><li>Nitroprusside cyanide/thiocyanate timeline</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Antihypertensive overdose management (Toxbase)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Clonidine</b>: miosis, coma, brady/hypotension, transient HTN → <b>naloxone partial</b></li><li><b>ACEi/ARB</b>: hypotension, hyperK, AKI; ACEi = cough + angioedema</li><li><b>Thiazide</b>: hyponatremia, hypokalemia, metabolic alkalosis, hypercalcemia</li><li><b>Loop</b>: hypokalemia, metabolic alkalosis, ototoxicity</li><li><b>K-sparing</b>: hyperkalemia, metabolic acidosis</li><li><b>Nitroprusside</b>: cyanide/thiocyanate → hydroxocobalamin</li><li><b>Nitrates</b>: methemoglobinemia → methylene blue (NO G6PD)</li><li><b>Hydralazine</b>: lupus, reflex tachycardia</li><li><b>Alpha-1 blockers</b>: first-dose hypotension</li></ul>
+<div class="sub-h">24-Hour Recall Prompts</div>
+<ul><li>State clonidine toxidrome (5 features)</li><li>List thiazide vs loop electrolyte differences</li><li>Explain nitroprusside cyanide monitoring</li><li>Differentiate clonidine from opioid</li></ul>
+<div class="sub-h">7-Day / 15-Day / 30-Day Revision Tracker</div>
+<ul><li>[ ] Day 1 completed</li><li>[ ] 24-hour recall completed</li><li>[ ] Day 7 revision completed</li><li>[ ] Day 15 revision completed</li><li>[ ] Day 30 revision completed</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Clonidine: miosis + coma + transient HTN + naloxone partial</li><li>ACEi/ARB: hypotension + hyperK + AKI; ACEi = cough</li><li>Thiazide: hyponatremia + hypokalemia + alkalosis</li><li>Loop: hypokalemia + alkalosis</li><li>K-sparing: hyperkalemia + acidosis</li><li>Nitroprusside: cyanide/thiocyanate → hydroxocobalamin</li><li>Naloxone for clonidine (partial)</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Thiazide hypercalcemia (vs loop hypocalcemia)</li><li>Hydralazine lupus</li><li>Minoxidil hirsutism/pericardial effusion</li><li>Alpha-1 blocker first-dose effect</li><li>MetHb: methylene blue (NO G6PD)</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Methyldopa/guanfacine less toxic than clonidine</li><li>Moxonidine/rilmenidine newer central agents</li><li>Minoxidil pericardial effusion</li><li>Angioedema ACEi mechanism (bradykinin)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Understanding: /10</li><li>Recall: /10</li><li>MCQ Performance: /10</li><li>SBA Performance: /10</li><li>Viva Confidence: /10</li><li>Total: /50</li></ul>
+<div class="callout">[!tip] Interpretation: &lt;35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Exam Answer Modes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Long Answer Skeleton</div>
+<ul><li>Classification table with mechanisms</li><li>Clonidine toxidrome + naloxone</li><li>ACEi vs ARB + diuretic electrolyte table</li><li>Nitroprusside/nitrate specific toxicities</li><li>Management by class</li></ul>
+<div class="sub-h">Short Note Skeleton</div>
+<ul><li>Clonidine vs opioid table</li><li>Diuretic electrolyte comparison</li><li>Nitroprusside monitoring card</li></ul>
+<div class="sub-h">Viva One-Liners</div>
+<ul><li>"Clonidine: miosis + coma + brady/hypotension + transient HTN → naloxone partial"</li><li>"ACEi/ARB: hypotension + hyperK + AKI; ACEi cough/angioedema"</li><li>"Thiazide: hyponatremia + hypokalemia + alkalosis + hypercalcemia"</li><li>"Loop: hypokalemia + alkalosis + ototoxicity"</li><li>"K-sparing: hyperkalemia + acidosis (Type 4 RTA)"</li><li>"Nitroprusside: cyanide/thiocyanate → hydroxocobalamin"</li><li>"Nitrates: methemoglobinemia → methylene blue (NO G6PD)"</li><li>"Hydralazine: lupus + reflex tachycardia"</li><li>"Alpha-1 blockers: first-dose hypotension"</li><li>"Naloxone for clonidine = partial reversal"</li></ul>
+<div class="sub-h">Ward-Case Discussion Points</div>
+<ul><li>Elderly on thiazide + ACEi → hyponatremia + hyperkalemia</li><li>Nitroprusside infusion 72h, renal failure → thiocyanate toxicity</li><li>Clonidine patch ingestion child → naloxone + observe 24h</li></ul>
+<div class="sub-h">Last-Night-Before-Exam Sheet</div>
+<ul><li>Clonidine: Miosis, Coma, Brady, HTN transient, Naloxone Partial</li><li>ACEi: Cough, HyperK, AKI</li><li>Thiazide: Na↓, K↓, Alk, Ca↑</li><li>Loop: K↓, Alk</li><li>K-sparing: K↑, Acid</li><li>Nitroprusside: CN -&gt; Hydroxocobalamin</li><li>Nitrate: MetHb -&gt; Methylene Blue</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p>Antihypertensive poisoning: <b>Clonidine</b> (α₂) → miosis, coma, transient HTN → <b>naloxone partial</b>; <b>ACEi/ARB</b> → hypotension, hyperK, AKI (ACEi = cough); <b>Thiazide</b> → hyponatremia, hypokalemia, alkalosis, hypercalcemia; <b>Loop</b> → hypokalemia, alkalosis; <b>K-sparing</b> → hyperkalemia, acidosis; <b>Nitroprusside</b> → cyanide/thiocyanate → hydroxocobalamin; <b>Nitrates</b> → metHb → methylene blue; <b>Hydralazine</b> → lupus; <b>Alpha-1 blockers</b> → first-dose hypotension.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Question 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Question 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Question 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Question 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Question 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Question 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Question 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Question 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Question 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Question 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">23</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Scenario 1</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 1</i></p>
+<ol><li>Scenario 2</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 2</i></p>
+<ol><li>Scenario 3</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 3</i></p>
+<ol><li>Scenario 4</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 4</i></p>
+<ol><li>Scenario 5</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 5</i></p>
+<ol><li>Scenario 6</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 6</i></p>
+<ol><li>Scenario 7</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: C</b> <i>Explanation: Explanation 7</i></p>
+<ol><li>Scenario 8</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: D</b> <i>Explanation: Explanation 8</i></p>
+<ol><li>Scenario 9</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: A</b> <i>Explanation: Explanation 9</i></p>
+<ol><li>Scenario 10</li></ol>
+<p>A. Option A B. Option B C. Option C D. Option D <b>Answer: B</b> <i>Explanation: Explanation 10</i></p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">24</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Flashcard 1 question</li></ul>
+<p>A: Flashcard 1 answer</p>
+<ul><li>Q: Flashcard 2 question</li></ul>
+<p>A: Flashcard 2 answer</p>
+<ul><li>Q: Flashcard 3 question</li></ul>
+<p>A: Flashcard 3 answer</p>
+<ul><li>Q: Flashcard 4 question</li></ul>
+<p>A: Flashcard 4 answer</p>
+<ul><li>Q: Flashcard 5 question</li></ul>
+<p>A: Flashcard 5 answer</p>
+<ul><li>Q: Flashcard 6 question</li></ul>
+<p>A: Flashcard 6 answer</p>
+<ul><li>Q: Flashcard 7 question</li></ul>
+<p>A: Flashcard 7 answer</p>
+<ul><li>Q: Flashcard 8 question</li></ul>
+<p>A: Flashcard 8 answer</p>
+<ul><li>Q: Flashcard 9 question</li></ul>
+<p>A: Flashcard 9 answer</p>
+<ul><li>Q: Flashcard 10 question</li></ul>
+<p>A: Flashcard 10 answer</p>
+<ul><li>Q: Flashcard 11 question</li></ul>
+<p>A: Flashcard 11 answer</p>
+<ul><li>Q: Flashcard 12 question</li></ul>
+<p>A: Flashcard 12 answer</p>
+<ul><li>Q: Flashcard 13 question</li></ul>
+<p>A: Flashcard 13 answer</p>
+<ul><li>Q: Flashcard 14 question</li></ul>
+<p>A: Flashcard 14 answer</p>
+<ul><li>Q: Flashcard 15 question</li></ul>
+<p>A: Flashcard 15 answer</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">25</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>A</b> - Explanation 1</li><li><b>B</b> - Explanation 2</li><li><b>C</b> - Explanation 3</li><li><b>D</b> - Explanation 4</li><li><b>A</b> - Explanation 5</li><li><b>B</b> - Explanation 6</li><li><b>C</b> - Explanation 7</li><li><b>D</b> - Explanation 8</li><li><b>A</b> - Explanation 9</li><li><b>B</b> - Explanation 10</li></ol>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Antihypertensive Poisoning · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

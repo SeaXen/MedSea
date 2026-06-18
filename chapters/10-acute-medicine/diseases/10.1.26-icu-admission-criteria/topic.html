@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ICU Admission Criteria — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">ICU Admission Criteria</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Know Level 1, 2, and 3 critical care definitions</li><li>Apply physiological admission criteria</li><li>Understand factors that may alter admission decisions</li><li>Communicate effectively with ICU team</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Levels of Care (ICS / FICM)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Description</th><th>Monitoring / Support</th></tr><tr><td>-------</td><td>-------------</td><td>----------------------</td></tr><tr><td>**Level 0**</td><td>Ward care</td><td>Standard monitoring</td></tr><tr><td>**Level 1**</td><td>At risk / recently stepped down</td><td>Additional monitoring (e.g. NEWS2, NIV)</td></tr><tr><td>**Level 2**</td><td>Single organ support</td><td>HDU / Level 2 bed (CPAP, vasoactive drugs, renal)</td></tr><tr><td>**Level 3**</td><td>Multi-organ support / advanced respiratory</td><td>ICU ventilator, ≥2 organ support</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Absolute Indications for Level 2/3</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Airway</b>: Intubated, high-risk extubation, need for advanced airway management</li><li><b>Breathing</b>: Invasive ventilation, NIV failure, severe hypoxaemia/hypercapnia</li><li><b>Circulation</b>: Vasoactive infusions (noradrenaline, dobutamine, etc.), cardiac output monitoring</li><li><b>Neurology</b>: GCS &lt;8, sedation hold impossible, ICP monitoring, status epilepticus</li><li><b>Renal</b>: Renal replacement therapy (CVVH, IHD)</li><li><b>Other</b>: Complex multi-organ support, major surgery post-op</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Relative / Soft Indications</span>
+  </div>
+  <div class="sec-body">
+<ul><li>NEWS2 ≥7 or sustained ≥5</li><li>High-risk surgery (planned post-op HDU/ICU)</li><li>Sepsis with organ dysfunction not responding to ward management</li><li>Severe electrolyte/metabolic disturbances needing close monitoring</li><li>High-risk transfers / repatriation</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Factors Modifying Admission</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Ceiling of care</b> / DNACPR / patient wishes</li><li><b>Frailty</b> (CFS &gt;5) — may not benefit from invasive support</li><li><b>Prognosis</b> — irreversible underlying disease</li><li><b>Resource availability</b> — surge capacity</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Red Flags for Deterioration (Call ICU Early)</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Rising NEWS2</li><li>Increasing oxygen requirement</li><li>Falling GCS</li><li>New hypotension / lactate rise</li><li>Oliguria despite fluids</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>NEWS2 is a <b>screening tool</b>, not a mandate — clinical context matters</li><li>Level 2 = single organ support; Level 3 = multi-organ / invasive ventilation</li><li>Early discussion with ICU is always better than late referral</li><li>Document ceiling of care discussions clearly</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>What are the levels of critical care?</li><li>When would you admit a septic patient to ICU vs HDU?</li><li>How does frailty influence ICU admission decisions?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Level 1</b>: Ward + extra monitoring <b>Level 2</b>: Single organ support (HDU) <b>Level 3</b>: Multi-organ / invasive ventilation (ICU) Admit for: vasoactive drugs, invasive vent, RRT, GCS &lt;8 Use NEWS2 ≥7 as trigger, but clinical judgement &gt; score</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Level 0–3 definitions (ICS/FICM)</li><li>Absolute indications: invasive vent, vasoactives, RRT, GCS &lt;8</li><li>Level 2 = single organ; Level 3 = multi-organ/invasive vent</li><li>Early ICU discussion &gt; late referral</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>NEWS2 triggers (≥5 review, ≥7 urgent)</li><li>Ceiling of care / DNACPR / frailty (CFS) modify decisions</li><li>Soft indications: high-risk surgery, sepsis not responding</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Repatriation criteria</li><li>Surge capacity planning</li><li>Intermediate care / HDU step-down pathways</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Level 2 critical care (HDU) provides:</li></ol>
+<p>A. Ward care only B. Single organ support C. Multi-organ support D. Invasive ventilation only</p>
+<ol><li>Level 3 critical care (ICU) provides:</li></ol>
+<p>A. Ward care B. Single organ support C. Multi-organ support / invasive ventilation D. Monitoring only</p>
+<ol><li>Absolute indication for Level 3 care:</li></ol>
+<p>A. NEWS2 = 4 B. Invasive mechanical ventilation C. Oxygen via nasal cannulae D. Oral antibiotics</p>
+<ol><li>Vasoactive drug infusion (noradrenaline) requires:</li></ol>
+<p>A. Level 0 B. Level 1 C. Level 2 (minimum) D. Level 3 only</p>
+<ol><li>Renal replacement therapy (CVVH) requires:</li></ol>
+<p>A. Level 1 B. Level 2 C. Level 3 D. Either Level 2 or 3</p>
+<ol><li>GCS &lt;8 with need for airway protection:</li></ol>
+<p>A. Level 1 B. Level 2 C. Level 3 D. Ward</p>
+<ol><li>NEWS2 score ≥7 triggers:</li></ol>
+<p>A. Routine monitoring B. Ward review C. Urgent review / critical care outreach D. DNACPR</p>
+<ol><li>Frailty (CFS &gt;5) influences ICU admission by:</li></ol>
+<p>A. Mandating admission B. May not benefit from invasive support — guides ceiling of care C. No influence D. Automatic DNACPR</p>
+<ol><li>Ceiling of care discussion should:</li></ol>
+<p>A. Be avoided B. Be documented clearly C. Be left to family only D. Be done only at end of life</p>
+<ol><li>Early ICU referral:</li></ol>
+<p>A. Worsens outcomes B. Is always better than late referral C. Increases mortality D. Not necessary</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 68-year-old septic patient on ward, NEWS2 8, on 10L O₂, lactate 4.5, UO 0.2 mL/kg/hr. Best action:</li></ol>
+<p>A. Increase ward monitoring B. Urgent ICU referral (NEWS2 ≥7 + organ dysfunction) C. Wait for consultant ward round D. Start oral antibiotics only</p>
+<ol><li>A 75-year-old post-emergency laparotomy, on noradrenaline 0.1 µg/kg/min, extubated, UO adequate. Appropriate level:</li></ol>
+<p>A. Level 0 B. Level 1 C. Level 2 (vasoactive infusion = single organ support) D. Level 3</p>
+<ol><li>A 55-year-old with severe COPD exacerbation on NIV, pH 7.28, PaCO₂ 9.5, failing NIV. Next step:</li></ol>
+<p>A. Continue NIV B. Intubate → Level 3 (invasive ventilation) C. Increase O₂ D. Discharge</p>
+<ol><li>An 85-year-old with CFS 7, metastatic cancer, develops sepsis. Family want "everything." ICU referral:</li></ol>
+<p>A. Admit to ICU immediately B. Discuss ceiling of care — CFS 7 = severely frail, unlikely to benefit from invasive support C. Ignore frailty D. Admit to HDU only</p>
+<ol><li>A patient on ward with NEWS2 5 sustained for 2 hours. Action:</li></ol>
+<p>A. Do nothing B. Increase monitoring frequency, senior review C. Call ICU immediately D. Discharge</p>
+<ol><li>Renal replacement therapy (CVVH) for AKI — level of care:</li></ol>
+<p>A. Level 1 B. Level 2 C. Level 3 D. Level 2 or 3 (organ support)</p>
+<ol><li>A patient with GCS 7 after overdose, protecting airway, no other organ failure. Level:</li></ol>
+<p>A. Level 0 B. Level 1 C. Level 2 (neurological support) D. Level 3</p>
+<ol><li>High-risk elective surgery (e.g. oesophagectomy) — planned post-op:</li></ol>
+<p>A. Ward B. Level 1 C. Level 2/3 (planned HDU/ICU) D. Level 0</p>
+<ol><li>A septic patient on noradrenaline 0.5 µg/kg/min, on NIV, lactate 3. Level:</li></ol>
+<p>A. Level 1 B. Level 2 C. Level 3 (≥2 organ support: cardiovascular + respiratory) D. Ward</p>
+<ol><li>Repatriation from ICU to referring hospital — criteria:</li></ol>
+<p>A. Stable, no Level 2/3 needs, accepting team available B. Still on vasopressors C. On invasive ventilation D. Never repatriate</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Level 0/1/2/3</li></ul>
+<p>A: 0=ward, 1=at risk, 2=single organ (HDU), 3=multi-organ/invasive vent (ICU)</p>
+<ul><li>Q: Absolute ICU indications</li></ul>
+<p>A: Invasive vent, vasoactives, RRT, GCS&lt;8, ICP monitor, multi-organ</p>
+<ul><li>Q: NEWS2 triggers</li></ul>
+<p>A: ≥5 review, ≥7 urgent/critical care outreach</p>
+<ul><li>Q: Frailty (CFS) and ICU</li></ul>
+<p>A: CFS &gt;5 = may not benefit, guides ceiling of care</p>
+<ul><li>Q: Ceiling of care</li></ul>
+<p>A: Document clearly, discuss early</p>
+<ul><li>Q: Early ICU referral</li></ul>
+<p>A: Always better than late</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Level 2 = single organ support (HDU). <b>MCQ 2</b>: C — Level 3 = multi-organ / invasive ventilation (ICU). <b>MCQ 3</b>: B — Invasive ventilation = Level 3. <b>MCQ 4</b>: C — Vasoactives = Level 2 minimum. <b>MCQ 5</b>: C — RRT = organ support = Level 2/3. <b>MCQ 6</b>: C — GCS &lt;8 airway = Level 3. <b>MCQ 7</b>: C — NEWS2 ≥7 = urgent review/critical care outreach. <b>MCQ 8</b>: B — CFS &gt;5 = severely frail, guides ceiling of care. <b>MCQ 9</b>: B — Must be documented clearly. <b>MCQ 10</b>: B — Early referral better than late.</p>
+<p><b>SBA 1</b>: B — NEWS2 8 + lactate + oliguria = ICU referral. <b>SBA 2</b>: C — Vasoactive = single organ support = Level 2. <b>SBA 3</b>: B — NIV failure = intubate = Level 3. <b>SBA 4</b>: B — CFS 7 = severely frail, discuss ceiling of care. <b>SBA 5</b>: B — NEWS2 5 sustained = increase frequency + senior review. <b>SBA 6</b>: D — RRT = organ support = Level 2 or 3. <b>SBA 7</b>: C — Neuro support = Level 2 if single organ (but GCS 7 often Level 3 for airway). <b>SBA 8</b>: C — High-risk surgery = planned HDU/ICU. <b>SBA 9</b>: C — Noradrenaline + NIV = 2 organ support = Level 3. <b>SBA 10</b>: A — Stable, no organ support needs, accepting team.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · ICU Admission Criteria · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

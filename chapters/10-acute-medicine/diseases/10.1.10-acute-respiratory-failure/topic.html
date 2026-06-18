@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acute Respiratory Failure — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Acute Respiratory Failure</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify respiratory failure into Type 1 and Type 2</li><li>Recognise clinical signs of respiratory distress and fatigue</li><li>Understand when to escalate to NIV or intubation</li><li>Apply oxygen therapy safely</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>PaO₂</th><th>PaCO₂</th><th>A-a gradient</th><th>Examples</th></tr><tr><td>------</td><td>------</td><td>-------</td><td>--------------</td><td>----------</td></tr><tr><td>**Type 1 (Hypoxaemic)**</td><td>Low</td><td>Normal/low</td><td>↑</td><td>Pneumonia, PE, pulmonary oedema, ARDS</td></tr><tr><td>**Type 2 (Hypercapnic)**</td><td>Low</td><td>High</td><td>Normal</td><td>COPD exacerbation, neuromuscular disease, drug overdose</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features of Impending Respiratory Arrest</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Use of accessory muscles, paradoxical breathing</li><li>Unable to speak full sentences</li><li>Respiratory rate &gt;35 or &lt;8</li><li>GCS falling, agitation</li><li>Rising PaCO₂ with acidosis</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Management Principles</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Oxygen</b>: Target SpO₂ 94–98% (88–92% in COPD with risk of hypercapnia)</li><li><b>Position</b>: Sitting upright</li><li><b>Treat cause</b>: Bronchodilators, diuretics, antibiotics, anticoagulation</li><li><b>NIV</b>: First-line in Type 2 failure (COPD, cardiogenic pulmonary oedema)</li><li><b>Intubation</b>: When NIV fails or patient is tiring / comatose</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Red Flags</span>
+  </div>
+  <div class="sec-body">
+<ul><li>pH &lt;7.25 in Type 2 failure</li><li>Rising PaCO₂ despite NIV</li><li>Exhaustion, confusion, hypotension</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Never give uncontrolled high-flow oxygen in COPD (risk of CO₂ retention)</li><li>Rising respiratory rate is often the first sign of deterioration</li><li>ABG is essential — SpO₂ alone misses hypercapnia</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Differentiate Type 1 and Type 2 respiratory failure.</li><li>What are the indications for NIV in acute respiratory failure?</li><li>When would you intubate a patient with respiratory failure?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Type 1</b>: Hypoxaemia + normal CO₂ (lung parenchymal disease) <b>Type 2</b>: Hypoxaemia + hypercapnia (ventilatory failure) Treat cause + controlled O₂ + NIV/intubation when needed.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Type 1 vs Type 2 classification (PaO₂, PaCO₂, A-a gradient)</li><li>ABG essential — SpO₂ misses hypercapnia</li><li>O₂ targets: 94–98% (88–92% in COPD)</li><li>NIV first-line in Type 2 (COPD, cardiogenic oedema)</li><li>Intubation when NIV fails or patient tiring</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Clinical signs of respiratory fatigue (accessory muscles, paradoxical breathing, unable to speak)</li><li>pH &lt;7.25 = intubation threshold in Type 2</li><li>Controlled O₂ in COPD — never uncontrolled high-flow</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>A-a gradient calculation and interpretation</li><li>High-flow nasal oxygen (HFNO) role</li><li>ECMO criteria in refractory failure</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Type 1 respiratory failure is defined by:</li></ol>
+<p>A. Low PaO₂, high PaCO₂ B. Low PaO₂, normal/low PaCO₂ C. Normal PaO₂, high PaCO₂ D. Normal PaO₂, normal PaCO₂</p>
+<ol><li>Type 2 respiratory failure PaCO₂ is:</li></ol>
+<p>A. Normal B. Low C. High D. Variable</p>
+<ol><li>A-a gradient is INCREASED in:</li></ol>
+<p>A. Type 1 failure B. Type 2 failure C. Both D. Neither</p>
+<ol><li>Target SpO₂ in COPD patient with Type 2 respiratory failure:</li></ol>
+<p>A. 94–98% B. 88–92% C. &gt;98% D. &lt;85%</p>
+<ol><li>First-line non-invasive ventilation for COPD exacerbation with acidosis:</li></ol>
+<p>A. CPAP B. BiPAP C. High-flow nasal oxygen D. Intubation</p>
+<ol><li>Indication for intubation in respiratory failure:</li></ol>
+<p>A. pH &gt;7.30 B. pH &lt;7.25 despite NIV C. RR &lt;20 D. SpO₂ &gt;95%</p>
+<ol><li>Uncontrolled high-flow oxygen in COPD risks:</li></ol>
+<p>A. Hypoxia B. CO₂ retention and respiratory acidosis C. Pulmonary embolism D. Pneumothorax</p>
+<ol><li>Rising respiratory rate in acute illness:</li></ol>
+<p>A. Benign finding B. Often FIRST sign of deterioration C. Only significant if &gt;40 D. Not monitored in ward</p>
+<ol><li>ABG vs SpO₂ in respiratory failure:</li></ol>
+<p>A. SpO₂ sufficient, ABG not needed B. ABG essential — SpO₂ misses hypercapnia C. ABG only in ICU D. Same information</p>
+<ol><li>Paradoxical breathing indicates:</li></ol>
+<p>A. Normal breathing B. Respiratory muscle fatigue C. Anxiety D. Cardiac failure</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 68-year-old COPD patient, RR 32, SpO₂ 88% on air, drowsy. ABG: pH 7.22, PaCO₂ 9.5 kPa, PaO₂ 7 kPa. Best initial management:</li></ol>
+<p>A. Intubate immediately B. Controlled O₂ (target 88–92%) + BiPAP C. High-flow O₂ 15L via non-rebreather C. CPAP only</p>
+<ol><li>A 45-year-old with pneumonia, RR 38, SpO₂ 85% on 10L O₂. ABG: pH 7.45, PaCO₂ 3.5 kPa, PaO₂ 7 kPa. Type of respiratory failure:</li></ol>
+<p>A. Type 1 B. Type 2 C. Mixed D. Neither</p>
+<ol><li>A 30-year-old opioid overdose, RR 6, SpO₂ 82%, pinpoint pupils. ABG: pH 7.15, PaCO₂ 12 kPa. Management:</li></ol>
+<p>A. Naloxone + controlled O₂, consider NIV/intubation B. High-flow O₂ only C. CPAP D. Antibiotics</p>
+<ol><li>Cardiogenic pulmonary oedema, hypoxic, crackles. NIV mode of choice:</li></ol>
+<p>A. BiPAP B. CPAP C. High-flow nasal oxygen D. Intubation</p>
+<ol><li>A COPD patient on BiPAP for 2 hours. pH 7.18 (was 7.22), rising PaCO₂, exhausted. Next step:</li></ol>
+<p>A. Continue BiPAP B. Intubate (NIV failure) C. Increase IPAP D. Switch to CPAP</p>
+<ol><li>Why controlled O₂ in COPD (target 88–92%)?</li></ol>
+<p>A. Prevents oxygen toxicity B. Avoids CO₂ retention from loss of hypoxic drive C. Saves oxygen D. Prevents absorption atelectasis</p>
+<ol><li>A patient with acute asthma, RR 40, SpO₂ 90%, silent chest. ABG: pH 7.30, PaCO₂ 5.5 kPa. Concern:</li></ol>
+<p>A. Improving B. Impending respiratory arrest (silent chest = severe) C. Normal for asthma D. Type 1 failure only</p>
+<ol><li>High-flow nasal oxygen (HFNO) vs NIV:</li></ol>
+<p>A. HFNO delivers higher FiO₂ than NIV B. HFNO better for hypercapnic failure C. NIV first-line for Type 2 failure (COPD) D. HFNO requires intubation</p>
+<ol><li>A patient with massive PE, sudden hypoxia. Type of failure:</li></ol>
+<p>A. Type 1 (V/Q mismatch, ↑ A-a gradient) B. Type 2 C. Normal D. Metabolic only</p>
+<ol><li>Rising PaCO₂ in Type 2 failure — pH threshold for intubation:</li></ol>
+<p>A. &lt;7.30 B. &lt;7.25 C. &lt;7.20 D. &lt;7.15</p>
+<ol><li>Accessory muscle use + inability to speak full sentences =</li></ol>
+<p>A. Mild distress B. Impending respiratory arrest C. Anxiety D. Normal</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Type 1 failure</li></ul>
+<p>A: Low PaO₂, normal/low PaCO₂, ↑ A-a gradient (parenchymal disease)</p>
+<ul><li>Q: Type 2 failure</li></ul>
+<p>A: Low PaO₂, HIGH PaCO₂, normal A-a gradient (ventilatory failure)</p>
+<ul><li>Q: COPD O₂ target</li></ul>
+<p>A: 88–92% (avoid CO₂ retention)</p>
+<ul><li>Q: Non-COPD O₂ target</li></ul>
+<p>A: 94–98%</p>
+<ul><li>Q: NIV first-line for Type 2</li></ul>
+<p>A: BiPAP for COPD; CPAP for cardiogenic oedema</p>
+<ul><li>Q: Intubation threshold Type 2</li></ul>
+<p>A: pH &lt;7.25 despite NIV, exhaustion, confusion</p>
+<ul><li>Q: ABG essential because</li></ul>
+<p>A: SpO₂ misses hypercapnia</p>
+<ul><li>Q: Silent chest in asthma</li></ul>
+<p>A: Impending respiratory arrest — intubate</p>
+<ul><li>Q: Rising RR</li></ul>
+<p>A: Often FIRST sign of deterioration</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Type 1 = hypoxaemia + normocapnia. <b>MCQ 2</b>: C — Type 2 = hypercapnia. <b>MCQ 3</b>: A — A-a gradient ↑ in Type 1 (V/Q mismatch). <b>MCQ 4</b>: B — 88–92% in COPD to avoid CO₂ retention. <b>MCQ 5</b>: B — BiPAP for COPD (assists ventilation). <b>MCQ 6</b>: B — pH &lt;7.25 = intubation threshold. <b>MCQ 7</b>: B — Loss of hypoxic drive → CO₂ retention. <b>MCQ 8</b>: B — Rising RR = early deterioration marker. <b>MCQ 9</b>: B — ABG detects hypercapnia; SpO₂ doesn't. <b>MCQ 10</b>: B — Paradoxical breathing = diaphragm fatigue.</p>
+<p><b>SBA 1</b>: B — COPD + acidosis (pH 7.22) = BiPAP + controlled O₂. <b>SBA 2</b>: A — Pneumonia + low PaO₂ + low/normal PaCO₂ = Type 1. <b>SBA 3</b>: A — Opioid overdose = respiratory depression → naloxone + support. <b>SBA 4</b>: B — Cardiogenic oedema = CPAP (reduces preload/afterload). <b>SBA 5</b>: B — pH falling, rising CO₂, exhausted = NIV failure → intubate. <b>SBA 6</b>: B — Hypoxic drive loss → CO₂ retention. <b>SBA 7</b>: B — Silent chest = severe bronchospasm, minimal air entry = impending arrest. <b>SBA 8</b>: C — NIV first-line for Type 2 (COPD); HFNO for Type 1. <b>SBA 9</b>: A — PE = V/Q mismatch → Type 1, ↑ A-a gradient. <b>SBA 10</b>: B — &lt;7.25 standard threshold.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Acute Respiratory Failure · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

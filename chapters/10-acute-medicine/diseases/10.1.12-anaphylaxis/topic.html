@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anaphylaxis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Anaphylaxis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise anaphylaxis clinically</li><li>Deliver immediate adrenaline</li><li>Know when to give second doses and adjuncts</li><li>Plan safe discharge and follow-up</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Triggers</span>
+  </div>
+  <div class="sec-body">
+<p>Rapid onset of:</p>
+<ul><li>Airway compromise (swelling, stridor)</li><li>Breathing difficulty (wheeze, hypoxia)</li><li>Circulation problems (hypotension, shock)</li><li>Skin/mucosal changes (urticaria, flushing) — may be absent</li></ul>
+<p>Common triggers: foods, drugs (penicillins, NSAIDs), insect stings, latex, contrast.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Immediate Management (Resuscitation Council)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Remove trigger if possible</li><li><b>Adrenaline 0.5 mg IM</b> (anterolateral thigh) — repeat every 5 min if no improvement</li><li>High-flow oxygen</li><li>IV access + fluid challenge if hypotensive</li><li>Antihistamine (chlorphenamine 10 mg IV) + hydrocortisone 200 mg IV (after adrenaline)</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Red Flags</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Stridor or airway swelling</li><li>Hypotension + wheeze</li><li>Previous severe reaction or asthma</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Adrenaline first, every time</b> — antihistamines and steroids are adjuncts only</li><li>IM route is preferred over IV in most cases</li><li>Observe for at least 6–12 hours after resolution (biphasic reaction risk)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>What is the first-line drug in anaphylaxis and the dose/route?</li><li>When would you give a second dose of adrenaline?</li><li>What is the role of steroids and antihistamines?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Adrenaline 0.5 mg IM</b> immediately Repeat every 5 min if needed Oxygen + fluids + call for help Observe ≥6 hours, prescribe adrenaline auto-injector on discharge</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Adrenaline 0.5 mg IM anterolateral thigh = FIRST-LINE (repeat q5min)</li><li>IM preferred over IV (safer, faster absorption)</li><li>Antihistamines/steroids = ADJUNCTS only (after adrenaline)</li><li>Observe 6–12 hours (biphasic reaction risk)</li><li>Discharge with adrenaline auto-injector + allergy clinic referral</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Criteria: Airway/Breathing/Circulation/Skin involvement (rapid onset)</li><li>IV adrenaline only if IM failed + cardiovascular collapse (with monitoring)</li><li>Fluid resuscitation for hypotensive patients</li><li>Common triggers: foods, drugs, insect stings, latex, contrast</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Mast cell tryptase (timing: 1–2h post-reaction, repeat at 24h)</li><li>Idiopathic anaphylaxis</li><li>Alpha-gal syndrome (delayed red meat allergy)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>First-line treatment for anaphylaxis:</li></ol>
+<p>A. IV chlorphenamine B. IM adrenaline 0.5 mg C. IV hydrocortisone D. Nebulised salbutamol</p>
+<ol><li>Adrenaline dose and route in anaphylaxis (adult):</li></ol>
+<p>A. 0.5 mg IV B. 0.5 mg IM anterolateral thigh C. 1 mg IM D. 0.5 mg SC</p>
+<ol><li>When to repeat adrenaline in anaphylaxis:</li></ol>
+<p>A. Every 2 minutes B. Every 5 minutes if no improvement C. Every 10 minutes D. Only once</p>
+<ol><li>Antihistamines and steroids in anaphylaxis are:</li></ol>
+<p>A. First-line B. Adjuncts given AFTER adrenaline C. Contraindicated D. Only for skin symptoms</p>
+<ol><li>Observation period after anaphylaxis resolution:</li></ol>
+<p>A. 1 hour B. 2–4 hours C. 6–12 hours (biphasic reaction risk) D. 24 hours</p>
+<ol><li>IV adrenaline in anaphylaxis is used when:</li></ol>
+<p>A. Always first-line B. IM failed + cardiovascular collapse (with cardiac monitoring) C. Only in children D. Never</p>
+<ol><li>Biphasic reaction in anaphylaxis:</li></ol>
+<p>A. Immediate recurrence within 5 minutes B. Second reaction 1–72 hours after initial resolution (no re-exposure) C. Reaction to second allergen D. Reaction to adrenaline</p>
+<ol><li>Discharge prescription after anaphylaxis:</li></ol>
+<p>A. Oral antihistamine only B. Adrenaline auto-injector (2 pens) + allergy clinic referral C. Steroid taper only D. No follow-up needed</p>
+<ol><li>Stridor in anaphylaxis indicates:</li></ol>
+<p>A. Mild reaction B. Airway compromise — urgent senior/anaesthetic help C. Bronchospasm only D. Vasovagal</p>
+<ol><li>Common drug triggers for anaphylaxis:</li></ol>
+<p>A. Paracetamol, ibuprofen B. Penicillins, NSAIDs, ACE inhibitors C. Metformin, statins D. Vitamin supplements</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 25-year-old woman stung by a bee develops stridor, wheeze, hypotension (70/40), and generalised urticaria. Immediate action:</li></ol>
+<p>A. IV chlorphenamine 10 mg B. IM adrenaline 0.5 mg anterolateral thigh C. IV hydrocortisone 200 mg D. Nebulised salbutamol 5 mg</p>
+<ol><li>The same patient improves after 1 dose of IM adrenaline. When to give second dose:</li></ol>
+<p>A. Immediately B. After 5 minutes if no improvement or deterioration C. After 10 minutes regardless D. Only if cardiac arrest</p>
+<ol><li>A 40-year-old man on ramipril develops lip swelling, tongue swelling, no wheeze, BP normal. Diagnosis:</li></ol>
+<p>A. Anaphylaxis B. ACE inhibitor angioedema (bradykinin-mediated) C. Allergic reaction D. Hereditary angioedema</p>
+<ol><li>ACE inhibitor angioedema — adrenaline:</li></ol>
+<p>A. Always effective B. NOT effective (bradykinin-mediated, not histamine) C. Contraindicated D. Only if hypotensive</p>
+<ol><li>A patient with anaphylaxis improves, discharged after 8 hours. Next day returns with recurrent symptoms, no re-exposure. Phenomenon:</li></ol>
+<p>A. Treatment failure B. Biphasic reaction C. New allergen exposure D. Psychosomatic</p>
+<ol><li>Mast cell tryptase timing for anaphylaxis confirmation:</li></ol>
+<p>A. At time of reaction only B. 1–2 hours post-reaction, repeat at 24 hours (baseline) C. 24 hours only D. Not useful</p>
+<ol><li>Anaphylaxis to IV contrast — premedication for future:</li></ol>
+<p>A. Not possible B. Steroid + antihistamine regimen OR use low-osmolar/iso-osmolar contrast C. Avoid all imaging D. Adrenaline pre-treatment</p>
+<ol><li>A child with food allergy, prescribed adrenaline auto-injector. Dose:</li></ol>
+<p>A. 0.5 mg (adult) B. 0.15 mg (child &lt;25–30 kg) C. 0.3 mg (all children) D. 1 mg</p>
+<ol><li>IV vs IM adrenaline in anaphylaxis:</li></ol>
+<p>A. IV preferred always B. IM preferred — safer, faster absorption in shock, less arrhythmia risk C. Same D. IV only in hospital</p>
+<ol><li>Antihistamine in anaphylaxis — route and timing:</li></ol>
+<p>A. IV immediately before adrenaline B. IV AFTER adrenaline (chlorphenamine 10 mg) C. Oral is fine D. Not needed</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Anaphylaxis first-line</li></ul>
+<p>A: Adrenaline 0.5 mg IM anterolateral thigh</p>
+<ul><li>Q: Adrenaline repeat</li></ul>
+<p>A: Every 5 min if no improvement</p>
+<ul><li>Q: Antihistamines/steroids</li></ul>
+<p>A: ADJUNCTS only, AFTER adrenaline</p>
+<ul><li>Q: Observation</li></ul>
+<p>A: 6–12 hours (biphasic risk)</p>
+<ul><li>Q: Discharge</li></ul>
+<p>A: 2 adrenaline auto-injectors + allergy clinic referral</p>
+<ul><li>Q: IV adrenaline</li></ul>
+<p>A: Only if IM failed + cardiovascular collapse, with monitoring</p>
+<ul><li>Q: Biphasic reaction</li></ul>
+<p>A: Recurrence 1–72h post-resolution without re-exposure</p>
+<ul><li>Q: ACE inhibitor angioedema</li></ul>
+<p>A: Bradykinin-mediated — adrenaline NOT effective</p>
+<ul><li>Q: Stridor</li></ul>
+<p>A: Airway compromise — urgent anaesthetic/senior help</p>
+<ul><li>Q: Mast cell tryptase</li></ul>
+<p>A: 1–2h post-reaction, baseline at 24h</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Adrenaline IM is first-line. <b>MCQ 2</b>: B — 0.5 mg IM anterolateral thigh (adult). <b>MCQ 3</b>: B — Repeat q5min if no improvement. <b>MCQ 4</b>: B — Adjuncts only, after adrenaline. <b>MCQ 5</b>: C — 6–12 hours for biphasic reaction. <b>MCQ 6</b>: B — IV adrenaline only if IM failed + collapse. <b>MCQ 7</b>: B — Biphasic = second wave 1–72h without re-exposure. <b>MCQ 8</b>: B — 2 auto-injectors + allergy referral. <b>MCQ 9</b>: B — Stridor = airway compromise. <b>MCQ 10</b>: B — Penicillins, NSAIDs, ACEi are common triggers.</p>
+<p><b>SBA 1</b>: B — IM adrenaline first and most important. <b>SBA 2</b>: B — Repeat after 5 min if no improvement/deterioration. <b>SBA 3</b>: B — ACEi angioedema = bradykinin, no urticaria, no hypotension typically. <b>SBA 4</b>: B — Bradykinin-mediated, adrenaline not effective; stop ACEi, consider icatibant. <b>SBA 5</b>: B — Biphasic reaction (1–72h recurrence without re-exposure). <b>SBA 6</b>: B — Peak 1–2h, baseline at 24h. <b>SBA 7</b>: B — Premedication or alternative contrast. <b>SBA 8</b>: B — Child &lt;25–30kg = 0.15mg (EpiPen Jr). <b>SBA 9</b>: B — IM preferred (safer, less arrhythmia). <b>SBA 10</b>: B — Chlorphenamine 10mg IV AFTER adrenaline.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Anaphylaxis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

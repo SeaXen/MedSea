@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fundamentals of Environmental Medicine — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">MEDICINE IN AUSTERE ENVIRONMENTS</span>
+      <div class="h1">Fundamentals of Environmental Medicine</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define <b>Environmental Medicine</b>: Intersection of environment and human health</li><li>[ ] Identify <b>Environmental Determinants of Health</b>: Physical, chemical, biological, social</li><li>[ ] Apply <b>Exposure Pathways</b>: Inhalation, ingestion, dermal, transplacental</li><li>[ ] Apply <b>Risk Assessment Framework</b>: Hazard identification, dose-response, exposure assessment, risk characterization</li><li>[ ] Identify <b>Vulnerable Populations</b>: Children, elderly, pregnant, occupational groups, low-income</li><li>[ ] Apply <b>Environmental Health Assessment</b>: Monitoring, biomonitoring, HIA, environmental epidemiology</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Definition & Scope</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Definition</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Environmental Medicine**</td><td>**Branch of medicine** concerned with **interaction between environment and human health**</td></tr><tr><td>**Environmental Health**</td><td>**Aspects of human health determined by physical, chemical, biological, social, psychosocial factors in environment**</td></tr><tr><td>**Environmental Medicine Focus**</td><td>**Prevention**, **Risk Assessment**, **Surveillance**, **Policy**, **Clinical Management** of environment-related disease</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Environmental Determinants of Health</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classification</div>
+<table class="ctable"><tr><th>Determinant Category</th><th>Examples</th><th>Health Impact</th></tr><tr><td>---------------------</td><td>----------</td><td>---------------</td></tr><tr><td>**Physical**</td><td>Radiation (ionising/non-ionising), Noise, Temperature extremes, Humidity, Pressure</td><td>Radiation sickness, hearing loss, heat stroke, hypothermia, barotrauma</td></tr><tr><td>**Chemical**</td><td>Air pollutants (PM2.5, NO2, SO2, O3, CO), Heavy metals (Pb, Hg, As, Cd), Pesticides, POPs, VOCs, Endocrine disruptors</td><td>Respiratory/CV disease, cancer, neurotoxicity, endocrine disruption, developmental</td></tr><tr><td>**Biological**</td><td>Pathogens (bacteria, viruses, parasites), Allergens (pollen, mould), Vectors (mosquitoes, ticks)</td><td>Infectious disease, allergy, vector-borne disease</td></tr><tr><td>**Social/Psychosocial**</td><td>Housing, urban design, transport, noise, light, green space, socioeconomic status</td><td>Mental health, CVD, obesity, injuries, health inequalities</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Exposure Pathways</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pathway</th><th>Route</th><th>Examples</th><th>Key Factors</th></tr><tr><td>---------</td><td>-------</td><td>----------</td><td>-------------</td></tr><tr><td>**Inhalation**</td><td>Respiratory tract</td><td>Air pollutants (PM2.5, O3, NO2), allergens, occupational dusts/fumes, radon</td><td>Particle size, solubility, ventilation rate, duration</td></tr><tr><td>**Ingestion**</td><td>GI tract</td><td>Water contaminants (arsenic, lead, microbes), food contaminants (pesticides, mycotoxins, heavy metals), soil/dust ingestion (children)</td><td>Concentration, volume consumed, bioavailability, gut absorption</td></tr><tr><td>**Dermal**</td><td>Skin absorption</td><td>Pesticides, solvents, UV radiation, chemicals, allergens</td><td>Skin integrity, surface area, contact duration, lipophilicity</td></tr><tr><td>**Transplacental**</td><td>Placental transfer</td><td>Heavy metals (Pb, Hg), POPs, CO, nicotine, alcohol, drugs, infections (rubella, CMV, syphilis, Zika)</td><td>Placental transfer coefficient, gestational age, lipid solubility</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Risk Assessment Framework (WHO/IPCS)</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hazard Identification</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Dose-Response Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Exposure Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Risk Characterization</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Risk Management / Communication</div>
+</div>
+</div>
+<div class="sub-h">Four Steps</div>
+<table class="ctable"><tr><th>Step</th><th>Description</th><th>Key Methods</th></tr><tr><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>**1. Hazard Identification**</td><td>**Can the agent cause harm?**</td><td>Epidemiology, toxicology (animal/in vitro), mechanistic data, weight-of-evidence</td></tr><tr><td>**2. Dose-Response Assessment**</td><td>**What is the relationship between dose and effect?**</td><td>NOAEL/LOAEL, BMD, RfD, CSF, IUR, threshold vs non-threshold</td></tr><tr><td>**3. Exposure Assessment**</td><td>**Who is exposed, how much, how long, by what route?**</td><td>Environmental monitoring, personal monitoring, modelling, biomarkers, time-activity patterns</td></tr><tr><td>**4. Risk Characterization**</td><td>**What is the nature and magnitude of risk?**</td><td>Quantitative (risk estimate), qualitative (confidence), uncertainty analysis, sensitivity analysis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📖 Key Toxicological Concepts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Definition</th><th>Application</th></tr><tr><td>---------</td><td>------------</td><td>-------------</td></tr><tr><td>**NOAEL**</td><td>No Observed Adverse Effect Level</td><td>Basis for RfD/ADI</td></tr><tr><td>**LOAEL**</td><td>Lowest Observed Adverse Effect Level</td><td>When NOAEL unavailable</td></tr><tr><td>**BMD**</td><td>Benchmark Dose (Statistical lower confidence limit)</td><td>Preferred over NOAEL</td></tr><tr><td>**RfD / ADI**</td><td>Reference Dose / Acceptable Daily Intake</td><td>**RfD = NOAEL / (UF₁ × UF₂ × UF₃...)** for non-cancer</td></tr><tr><td>**CSF (Cancer Slope Factor)**</td><td>**Risk per unit dose** (mg/kg/day)⁻¹</td><td>**Cancer Risk = CSF × Dose**</td></tr><tr><td>**IUR (Inhalation Unit Risk)**</td><td>**Risk per µg/m³ air**</td><td>**Cancer Risk = IUR × Air Concentration**</td></tr><tr><td>**UF (Uncertainty Factors)**</td><td>**10× (Interspecies) × 10× (Intraspecies) × ...**</td><td>**Default 100×**, additional for LOAEL→NOAEL, database gaps</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📖 Vulnerable Populations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Specific Vulnerabilities</th><th>Key Environmental Risks</th></tr><tr><td>------------</td><td>-------------------------</td><td>------------------------</td></tr><tr><td>**Children**</td><td>Developing organs, higher intake/kg, hand-to-mouth, longer latency</td><td>Lead (neurodevelopment), air pollution (asthma), pesticides, endocrine disruptors</td></tr><tr><td>**Elderly**</td><td>Reduced reserve, comorbidities, polypharmacy, reduced clearance</td><td>Heat/cold extremes, air pollution (CV/respiratory), falls, medications</td></tr><tr><td>**Pregnant Women**</td><td>Fetal susceptibility, placental transfer, physiological changes</td><td>Lead, mercury, CO, solvents, pesticides, radiation, infections (rubella, CMV, toxo)</td></tr><tr><td>**Occupational Groups**</td><td>High exposure intensity, specific agents</td><td>Asbestos, silica, benzene, heavy metals, pesticides, radiation, noise</td></tr><tr><td>**Low-Income / Marginalized**</td><td>Poor housing, proximity to hazards, limited healthcare access</td><td>Lead paint, poor water/sanitation, industrial proximity, heat islands</td></tr><tr><td>**Immunocompromised**</td><td>Reduced defence, latent infection reactivation</td><td>Opportunistic infections, water/food safety, vaccine limitations</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📖 Environmental Health Assessment Tools</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Tool</th><th>Purpose</th><th>Application</th></tr><tr><td>------</td><td>---------</td><td>-------------</td></tr><tr><td>**Environmental Monitoring**</td><td>Ambient air/water/soil quality</td><td>Compliance, trends, source identification</td></tr><tr><td>**Biomonitoring**</td><td>**Internal dose** (blood, urine, hair, nails, breast milk)</td><td>Lead, mercury, cadmium, cotinine, cotinine, pesticides, POPs, phthalates, BPA</td></tr><tr><td>**Health Impact Assessment (HIA)**</td><td>**Predict health effects** of policies/projects/plans</td><td>Urban planning, transport, energy, agriculture policy</td></tr><tr><td>**Environmental Epidemiology**</td><td>**Observational studies** (cohort, case-control, time-series, ecological)</td><td>Air pollution mortality, cancer clusters, birth outcomes</td></tr><tr><td>**Biomarkers**</td><td>**Exposure** (e.g., blood lead), **Effect** (e.g., ALAD inhibition), **Susceptibility** (e.g., ALAD genotype)</td><td>Mechanistic insight, early detection, risk stratification</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📖 Environmental Health Assessment — Stepwise</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Identify Concern / Hazard</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Literature Review / Existing Data</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Hypothesis Generation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Study Design: Cohort / Case-Control / Cross-Sectional / Time-Series</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Exposure Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Health Outcome Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Statistical Analysis / Confounding Control</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Risk Characterization / Uncertainty</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Risk Communication / Policy Recommendation</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📖 Health Impact Assessment (HIA) — Steps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Description</th></tr><tr><td>------</td><td>-------------</td></tr><tr><td>**1. Screening**</td><td>Determine if HIA needed (policy/project/program likely to affect health)</td></tr><tr><td>**2. Scoping**</td><td>Define boundaries, populations, health determinants, methods, stakeholders</td></tr><tr><td>**3. Assessment**</td><td>**Baseline health profile**, **Predict health impacts** (qualitative/quantitative), **Equity analysis**</td></tr><tr><td>**4. Recommendations**</td><td>Mitigation, enhancement, alternatives, monitoring</td></tr><tr><td>**5. Reporting**</td><td>Transparent, accessible, decision-maker oriented</td></tr><tr><td>**6. Monitoring & Evaluation**</td><td>Track implementation, health outcomes, equity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Environmental Medicine**</td><td>**Environment ↔ Human Health** (Prevention, risk assessment, surveillance)</td></tr><tr><td>**Determinants**</td><td>Physical (radiation, noise), Chemical (pollutants, metals), Biological (pathogens, allergens), Social</td></tr><tr><td>**Exposure Pathways**</td><td>**Inhalation, Ingestion, Dermal, Transplacental**</td></tr><tr><td>**Risk Assessment**</td><td>**4 Steps**: Hazard ID → Dose-Response → Exposure Assessment → Risk Characterization</td></tr><tr><td>**Key Toxicology Concepts**</td><td>**NOAEL/LOAEL/BMD**, **RfD/CSF**, **UF = 100× default**, **BMD preferred**</td></tr><tr><td>**Vulnerable Groups**</td><td>**Children (neurodevelopment), Pregnant (placental transfer), Elderly, Occupational, Low-income**</td></tr><tr><td>**Assessment Tools**</td><td>**Monitoring, Biomonitoring (lead, Hg, cotinine), HIA, Epidemiology, Biomarkers**</td></tr><tr><td>**HIA Steps**</td><td>**Screening → Scoping → Assessment → Recommendations → Reporting → Monitoring**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the four steps of risk assessment?</b></li></ol>
+<ul><li><b>Hazard Identification, Dose-Response Assessment, Exposure Assessment, Risk Characterization</b></li></ul>
+<ol><li><b>What is the difference between NOAEL and LOAEL?</b></li></ol>
+<ul><li><b>NOAEL = Highest dose with NO adverse effect</b>; <b>LOAEL = Lowest dose WITH adverse effect</b></li></ul>
+<ol><li><b>What are the four main exposure pathways?</b></li></ol>
+<ul><li><b>Inhalation, Ingestion, Dermal, Transplacental</b></li></ul>
+<ol><li><b>Which populations are most vulnerable to environmental hazards?</b></li></ol>
+<ul><li><b>Children (developing organs), Pregnant women (placental transfer), Elderly (reduced reserve), Occupational groups, Low-income communities</b></li></ul>
+<ol><li><b>What is the purpose of a Health Impact Assessment (HIA)?</b></li></ol>
+<ul><li><b>Predict health effects of policies/projects/plans</b> → <b>Inform decision-making, mitigate harms, enhance benefits, promote equity</b></li></ul>
+<ol><li><b>What is the role of biomonitoring in environmental health?</b></li></ol>
+<ul><li><b>Measures internal dose</b> (blood, urine, hair) → <b>Integrates all exposure routes</b>, reflects biologically effective dose</li></ul>
+<ol><li><b>What is the difference between RfD and CSF?</b></li></ol>
+<ul><li><b>RfD = Non-cancer threshold (mg/kg/day)</b>; <b>CSF = Cancer slope factor (risk per mg/kg/day)</b></li></ul>
+<ol><li><b>What is the WHO framework for risk assessment?</b></li></ol>
+<ul><li><b>Hazard ID → Dose-Response → Exposure Assessment → Risk Characterization</b></li></ul>
+<ol><li><b>What are the main exposure pathways for lead?</b></li></ol>
+<ul><li><b>Ingestion (paint, dust, soil, water), Inhalation (dust, fumes), Transplacental (pregnancy)</b></li></ul>
+<ol><li><b>What is the role of HIA in urban planning?</b></li></ol>
+<ul><li><b>Assess health impacts of transport, housing, energy, land use policies</b> → <b>Integrate health into urban design</b></li></ul>
+<ol><li><b>How does climate change act as a risk multiplier in environmental health?</b></li></ol>
+<ul><li><b>Amplifies existing risks</b>: heat, vector-borne disease, water/food security, air quality, displacement, mental health |</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**RfD vs CSF**</td><td>**RfD = Non-cancer threshold**; **CSF = Cancer potency (risk per dose)**</td></tr><tr><td>**NOAEL vs LOAEL**</td><td>**NOAEL = No effect**; **LOAEL = Lowest with effect**</td></tr><tr><td>**Hazard vs Risk**</td><td>**Hazard = Potential to harm**; **Risk = Probability × Severity of harm given exposure**</td></tr><tr><td>**Biomonitoring vs Environmental Monitoring**</td><td>**Biomonitoring = Internal dose (integrated)**; **Env Monitoring = External concentration**</td></tr><tr><td>**HIA vs EIA**</td><td>**HIA = Health focus**; **EIA = Environmental focus (broader)**</td></tr><tr><td>**Threshold vs Non-threshold**</td><td>**Threshold = Safe dose exists (non-cancer)**; **Non-threshold = Any dose carries risk (carcinogens)**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"HI-DE-RC = Hazard ID, Dose-Response, Exposure, Risk Char"**</td><td>Risk Assessment Steps</td></tr><tr><td>**"RfD = NOAEL / 100 (UF)"**</td><td>RfD Calculation</td></tr><tr><td>**"4 Pathways = Inhale, Ingest, Dermal, Placental"**</td><td>Exposure Routes</td></tr><tr><td>**"Vulnerable = Children, Pregnant, Elderly, Workers, Poor"**</td><td>Vulnerable Groups</td></tr><tr><td>**"HIA = Health in All Policies"**</td><td>HIA Purpose</td></tr><tr><td>**"Biomonitoring = Internal Dose"**</td><td>Biomonitoring</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Environmental Medicine Fundamentals))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definition</div>
+<div class="mm-node mm-l3">– Environment ↔ Human Health</div>
+<div class="mm-node mm-l3">– Prevention focus</div>
+<div class="mm-node mm-l2">Determinants</div>
+<div class="mm-node mm-l3">– Physical (radiation, noise, temp)</div>
+<div class="mm-node mm-l3">– Chemical (pollutants, metals, POPs)</div>
+<div class="mm-node mm-l3">– Biological (pathogens, allergens, vectors)</div>
+<div class="mm-node mm-l3">– Social (housing, transport, inequality)</div>
+<div class="mm-node mm-l2">Exposure Pathways</div>
+<div class="mm-node mm-l3">– Inhalation (air)</div>
+<div class="mm-node mm-l3">– Ingestion (water, food, soil)</div>
+<div class="mm-node mm-l3">– Dermal (skin)</div>
+<div class="mm-node mm-l3">– Transplacental</div>
+<div class="mm-node mm-l2">Risk Assessment (4 Steps)</div>
+<div class="mm-node mm-l3">– Hazard ID</div>
+<div class="mm-node mm-l3">– Dose-Response</div>
+<div class="mm-node mm-l3">– Exposure Assessment</div>
+<div class="mm-node mm-l3">– Risk Characterization</div>
+<div class="mm-node mm-l2">Toxicology Concepts</div>
+<div class="mm-node mm-l3">– NOAEL, LOAEL, BMD</div>
+<div class="mm-node mm-l3">– RfD, CSF, UF</div>
+<div class="mm-node mm-l3">– Threshold vs Non-threshold</div>
+<div class="mm-node mm-l2">Vulnerable Groups</div>
+<div class="mm-node mm-l3">– Children (neurodev)</div>
+<div class="mm-node mm-l3">– Pregnant (placental)</div>
+<div class="mm-node mm-l3">– Elderly (frailty)</div>
+<div class="mm-node mm-l3">– Workers (high exposure)</div>
+<div class="mm-node mm-l3">– Poor (exposure + access)</div>
+<div class="mm-node mm-l2">Assessment Tools</div>
+<div class="mm-node mm-l3">– Monitoring (air, water, soil)</div>
+<div class="mm-node mm-l3">– Biomonitoring (blood, urine)</div>
+<div class="mm-node mm-l3">– HIA (policy/projects)</div>
+<div class="mm-node mm-l3">– Epidemiology</div>
+<div class="mm-node mm-l3">– Biomarkers</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**ENVIRONMENTAL MEDICINE FUNDAMENTALS – FCPS/MRCP REVISION CARD**</th></tr><tr><td>-------------------------------------------------------------------</td></tr><tr><td>**Definition**: **Environment ↔ Human Health** (Prevention, Risk Assessment, Surveillance)</td></tr><tr><td>**Determinants**: Physical (radiation, noise), Chemical (pollutants, metals), Biological (pathogens, allergens), Social</td></tr><tr><td>**Exposure Pathways**: **Inhalation, Ingestion, Dermal, Transplacental**</td></tr><tr><td>**Risk Assessment**: **4 Steps** — **Hazard ID → Dose-Response → Exposure Assessment → Risk Characterization**</td></tr><tr><td>**Key Toxicology**: **NOAEL/LOAEL/BMD**, **RfD (non-cancer)**, **CSF (cancer)**, **UF=100× default**</td></tr><tr><td>**Vulnerable Groups**: **Children (neurodev), Pregnant (placental transfer), Elderly, Workers, Poor**</td></tr><tr><td>**Assessment Tools**: **Monitoring (air/water/soil), Biomonitoring (blood/urine), HIA, Epidemiology, Biomarkers**</td></tr><tr><td>**HIA Steps**: **Screening → Scoping → Assessment → Recommendations → Reporting → Monitoring**</td></tr><tr><td>**Key Risk Factors**: Lead (neurodev), Air pollution (CV/respiratory), Heavy metals, POPs, Climate change</td></tr><tr><td>**Vulnerable**: Children, Pregnant, Elderly, Workers, Poor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Definition, 4 risk assessment steps, 4 exposure pathways, key toxicology concepts (NOAEL, RfD, CSF, UF), vulnerable populations, HIA steps, biomonitoring vs monitoring</td></tr><tr><td>**Should Know**</td><td>Detailed dose-response modelling (BMD, benchmark dose), specific vulnerable group susceptibilities (e.g., children lead, pregnancy mercury), HIA methodology details, environmental epidemiology study designs, biomarker types (exposure/effect/susceptibility), uncertainty analysis, precautionary principle</td></tr><tr><td>**Nice to Know**</td><td>Advanced exposure modelling (PBPK, GIS), epigenetics & environment, gene-environment interaction, emerging contaminants (PFAS, microplastics, pharmaceuticals), planetary health boundaries, environmental justice, One Health approach, circular economy health impacts, cost-benefit analysis in HIA, global burden of disease (GBD) environmental attribution</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Definitions & Scope</td><td></td><td></td></tr><tr><td>Risk Assessment Framework</td><td></td><td></td></tr><tr><td>Exposure Pathways</td><td></td><td></td></tr><tr><td>Vulnerable Populations</td><td></td><td></td></tr><tr><td>Risk Assessment Methods</td><td></td><td></td></tr><tr><td>Assessment Tools</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Infection in Pregnancy / Neonates]]</li><li><b>Next</b>: [[Air Pollution &amp; Respiratory Health]]</li><li><b>Section Hub</b>: [[Environmental Medicine MOC]]</li><li><b>MOC</b>: [[Hematology MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fundamentals of Environmental Medicine · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Healthcare-Associated Infections (CLABSI, CAUTI, SSI, VAP) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Healthcare-Associated Infections (CLABSI, CAUTI, SSI, VAP)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define HAI and classify by type (CLABSI, CAUTI, VAP, SSI, CDI)</li><li>Apply diagnostic criteria (CDC/NHSN) for each HAI type</li><li>Implement evidence-based prevention bundles (CLABSI, CAUTI, VAP, SSI)</li><li>Select appropriate empirical therapy by HAI type and local epidemiology</li><li>Implement surveillance and outbreak investigation</li><li>Apply antimicrobial stewardship principles to HAI management</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions & Surveillance</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>HAI Type</th><th>Definition</th><th>Rate Denominator</th></tr><tr><td>----------</td><td>------------</td><td>------------------</td></tr><tr><td>**CLABSI**</td><td>**Central line-associated BSI** — laboratory-confirmed BSI in patient with central line ≥48h, not secondary to another site</td><td>**1000 central line-days**</td></tr><tr><td>**CAUTI**</td><td>**Catheter-associated UTI** — symptomatic UTI with indwelling catheter ≥48h</td><td>**1000 catheter-days**</td></tr><tr><td>**VAP**</td><td>**Ventilator-associated pneumonia** — pneumonia in patient on invasive ventilation ≥48h</td><td>**1000 ventilator-days**</td></tr><tr><td>**SSI**</td><td>**Surgical site infection** — infection at surgical site within 30d (90d if implant)</td><td>**100 procedures**</td></tr><tr><td>**CDI**</td><td>**Clostridioides difficile infection** — see CDI note</td><td>**10,000 patient-days**</td></tr></table>
+<div class="callout">[!key] <b>HAI = infection ≥48h after admission (not incubating at admission).</b> <b>CLABSI/CAUTI/VAP rates per 1000 device-days; SSI per 100 procedures.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Central Line-Associated BSI (CLABSI)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Diagnosis (CDC/NHSN)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Central line**</td><td>In place ≥48h before culture (or day of device removal)</td></tr><tr><td>**Laboratory-confirmed BSI**</td><td>**≥1 blood culture** with recognised pathogen **OR** ≥2 blood cultures with common skin commensal (CoNS, Corynebacterium, Bacillus, Micrococcus) + clinical signs (fever, hypotension)</td></tr><tr><td>**Not secondary**</td><td>No other site infection explaining BSI</td></tr></table>
+<div class="sub-h">Common Pathogens</div>
+<table class="ctable"><tr><th>Pathogen</th><th>%</th><th>Key Feature</th></tr><tr><td>----------</td><td>---</td><td>-------------</td></tr><tr><td>**Coagulase-negative Staphylococci (CoNS)**</td><td>30–40%</td><td>Most common; often contamination but true CLABSI if ≥2 cultures</td></tr><tr><td>**Staphylococcus aureus**</td><td>15–20%</td><td>MSSA/MRSA; high mortality</td></tr><tr><td>**Enterococcus spp.**</td><td>10–15%</td><td>VRE increasing</td></tr><tr><td>**Candida spp.**</td><td>10–15%</td><td>C. albicans, C. glabrata, C. parapsilosis (biofilm)</td></tr><tr><td>**Gram-negative (Klebsiella, E. coli, Pseudomonas, Enterobacter)**</td><td>15–20%</td><td>ESBL/CRE concern</td></tr><tr><td>**Other**</td><td><5%</td><td>Bacillus, Corynebacterium, Stenotrophomonas</td></tr></table>
+<div class="sub-h">CLABSI Prevention Bundle (IHI/CDC)</div>
+<table class="ctable"><tr><th>Component</th><th>Action</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Hand hygiene**</td><td>Before/after line access; alcohol-based rub</td></tr><tr><td>**Maximal barrier precautions**</td><td>**Sterile gloves, gown, cap, mask, large drape** for insertion</td></tr><tr><td>**Chlorhexidine skin prep**</td><td>**2% CHG in 70% alcohol** (superior to povidone-iodine)</td></tr><tr><td>**Optimal site selection**</td><td>**Subclavian > Jugular > Femoral** (lowest infection risk)</td></tr><tr><td>**Daily review of line necessity**</td><td>**Remove as soon as no longer needed**</td></tr><tr><td>**Chlorhexidine dressings**</td><td>**CHG-impregnated sponge/dressing** for lines >7d</td></tr><tr><td>**Hub disinfection**</td><td>**Scrub hub 15s with 2% CHG/70% alcohol** before each access</td></tr><tr><td>**Avoid routine replacement**</td><td>Guidewire exchange NOT recommended for CLABSI prevention</td></tr></table>
+<div class="callout">[!tip] <b>Subclavian site = lowest CLABSI risk.</b> <b>CHG skin prep + maximal barrier = strongest evidence.</b> <b>Daily line necessity review = most impactful.</b> <b>CHG dressings for lines &gt;7d reduce CLABSI 50%.</b></div>
+<div class="sub-h">CLABSI Empirical Therapy</div>
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**No MDR risk, stable**</td><td>Ceftriaxone 2g IV 24h + Vancomycin 15–20mg/kg 6h</td></tr><tr><td>**MDR risk (prior abx, ICU, known colonisation)**</td><td>Piperacillin-tazobactam 4.5g 6h OR Meropenem 1g 8h (+ Vancomycin)</td></tr><tr><td>**Suspected Candida**</td><td>Echinocandin (caspofungin/micafungin/anidulafungin)</td></tr><tr><td>**Line removal**</td><td>**Strongly recommended** for S. aureus, Candida, Pseudomonas, Bacillus, mycobacteria; consider salvage for CoNS</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Catheter-Associated UTI (CAUTI)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Diagnosis (CDC/NHSN)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Indwelling catheter**</td><td>≥48h (or day of removal)</td></tr><tr><td>**Symptoms**</td><td>Fever (>38°C), suprapubic pain, CVA tenderness, altered mental status, rigors</td></tr><tr><td>**Microbiology**</td><td>**≥10³ CFU/mL** of ≥1 organism from catheter specimen OR **≥10⁵ CFU/mL** from voided specimen</td></tr></table>
+<div class="sub-h">Common Pathogens</div>
+<table class="ctable"><tr><th>Pathogen</th><th>%</th></tr><tr><td>----------</td><td>---</td></tr><tr><td>**E. coli**</td><td>25–30%</td></tr><tr><td>**Klebsiella**</td><td>15–20%</td></tr><tr><td>**Pseudomonas**</td><td>10–15%</td></tr><tr><td>**Enterococcus**</td><td>10–15%</td></tr><tr><td>**Candida**</td><td>5–10%</td></tr><tr><td>**Proteus, Morganella, Providencia**</td><td>10–15%</td></tr></table>
+<div class="sub-h">CAUTI Prevention Bundle</div>
+<table class="ctable"><tr><th>Component</th><th>Action</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Avoid unnecessary catheterisation**</td><td>Use alternatives (condom catheter, intermittent cath, nappies)</td></tr><tr><td>**Aseptic insertion**</td><td>Sterile technique, smallest appropriate catheter</td></tr><tr><td>**Closed drainage system**</td><td>Maintain unobstructed flow; no disconnections</td></tr><tr><td>**Catheter securement**</td><td>Prevent traction/urethral trauma</td></tr><tr><td>**Drainage bag below bladder**</td><td>Prevent reflux</td></tr><tr><td>**Daily necessity review**</td><td>**Nurse-driven protocol: remove ASAP**</td></tr><tr><td>**Periurethral cleaning**</td><td>Routine soap/water (no antiseptic benefit)</td></tr><tr><td>**Antibiotic prophylaxis at insertion**</td><td>**NOT routinely recommended**</td></tr><tr><td>**Catheter material**</td><td>Silver-alloy or hydrogel-coated if prolonged (>7d) anticipated</td></tr></table>
+<div class="callout">[!key] <b>Daily review of catheter necessity with nurse-driven removal protocol = single most effective intervention.</b> <b>Avoid unnecessary catheterisation = primary prevention.</b></div>
+<div class="sub-h">CAUTI Management</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Remove/replace catheter**</td><td>If ≥2 days old; send tip for culture if removed</td></tr><tr><td>**2. Empirical antibiotics**</td><td>As per complicated UTI (see UTI note)</td></tr><tr><td>**3. Duration**</td><td>**7 days** if catheter removed; **10–14 days** if catheter must remain</td></tr><tr><td>**4. Catheter change**</td><td>**Replace after 48–72h of antibiotics** if catheter must stay</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Ventilator-Associated Pneumonia (VAP)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Diagnosis (CDC/NHSN — Clinical + Microbiological)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Ventilation**</td><td>Invasive ventilation ≥48h</td></tr><tr><td>**Chest X-ray**</td><td>New/progressive infiltrate</td></tr><tr><td>**Clinical**</td><td>Fever/hypothermia, ↑ WBC, purulent secretions, ↑ O₂ requirement</td></tr><tr><td>**Microbiology**</td><td>**Qualitative/semi-quantitative culture** (endotracheal aspirate ≥10⁵ CFU/mL; BAL ≥10⁴ CFU/mL)</td></tr><tr><td>**Exclude**</td><td>Non-infectious causes (atelectasis, ARDS, pulmonary oedema)</td></tr></table>
+<div class="sub-h">Common Pathogens</div>
+<table class="ctable"><tr><th>Timeframe</th><th>Pathogens</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Early VAP (≤5 days)**</td><td>S. aureus (MSSA), S. pneumoniae, H. influenzae, Enterobacteriaceae</td></tr><tr><td>**Late VAP (>5 days)**</td><td>**MRSA, Pseudomonas, Acinetobacter, Stenotrophomonas, Enterobacteriaceae (ESBL/CRE)**</td></tr></table>
+<div class="sub-h">VAP Prevention Bundle (IHI/CDC)</div>
+<table class="ctable"><tr><th>Component</th><th>Action</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Head of bed elevation**</td><td>**30–45°** (unless contraindicated)</td></tr><tr><td>**Daily sedation vacation**</td><td>**Daily sedation interruption + spontaneous breathing trial**</td></tr><tr><td>**Peptic ulcer prophylaxis**</td><td>PPI/H2 blocker (balance with C. difficile risk)</td></tr><tr><td>**DVT prophylaxis**</td><td>Pharmacological (unless contraindicated)</td></tr><tr><td>**Oral care**</td><td>**Chlorhexidine 0.12–2% oral rinse q6–12h**</td></tr><tr><td>**Subglottic secretion drainage**</td><td>**Endotracheal tube with subglottic suction port**</td></tr><tr><td>**Early extubation**</td><td>Daily assessment for readiness to extubate</td></tr><tr><td>**Hand hygiene + PPE**</td><td>Standard + contact for MDRO</td></tr></table>
+<div class="callout">[!tip] <b>Head of bed 30–45° + daily sedation vacation + SBT = strongest evidence.</b> <b>Subglottic secretion drainage reduces VAP 50%.</b></div>
+<div class="sub-h">VAP Empirical Therapy</div>
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Early VAP, no MDR risk**</td><td>Ceftriaxone 2g 24h +/− Vancomycin (if MRSA risk)</td></tr><tr><td>**Late VAP / MDR risk**</td><td>Piperacillin-tazobactam 4.5g 6h OR Meropenem 1g 8h + Vancomycin 15–20mg/kg 6h</td></tr><tr><td>**MRSA risk**</td><td>Add Vancomycin (trough 15–20) OR Linezolid</td></tr><tr><td>**Pseudomonas risk**</td><td>Anti-pseudomonal β-lactam (Pip-tazo, Meropenem, Cefepime, Ceftazidime) +/− Aminoglycoside</td></tr><tr><td>**Duration**</td><td>**7 days** (short-course non-inferior to 14d); stop if culture negative</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Surgical Site Infection (SSI)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classification (CDC)</div>
+<table class="ctable"><tr><th>Type</th><th>Depth</th><th>Timeframe</th></tr><tr><td>------</td><td>-------</td><td>-----------</td></tr><tr><td>**Superficial Incisional**</td><td>Skin/subcutaneous</td><td>≤30 days</td></tr><tr><td>**Deep Incisional**</td><td>Fascia/muscle</td><td>≤30 days (90 days if implant)</td></tr><tr><td>**Organ/Space**</td><td>Organ/space manipulated</td><td>≤30 days (90 days if implant)</td></tr></table>
+<div class="sub-h">Risk Factors</div>
+<table class="ctable"><tr><th>Patient</th><th>Operative</th><th>Postoperative</th></tr><tr><td>---------</td><td>-----------</td><td>---------------</td></tr><tr><td>Diabetes, obesity, smoking, immunosuppression, malnutrition, age >60, prolonged pre-op stay</td><td>**Duration >T**, contaminated/dirty wound, emergency, implant, blood loss >1L, poor technique</td><td>Hypothermia, hyperglycaemia, hypoxaemia, haematoma, drain, transfusion</td></tr></table>
+<div class="sub-h">SSI Prevention Bundle (WHO/CDC)</div>
+<table class="ctable"><tr><th>Phase</th><th>Intervention</th></tr><tr><td>-------</td><td>--------------</td></tr><tr><td>**Pre-operative**</td><td>**Shower with CHG night before + morning**; **No hair removal** (or clippers if necessary); **Antibiotic prophylaxis within 60 min before incision** (cefazolin 2g IV; add metronidazole if colorectal); **Glycaemic control** (perioperative glucose <180); **Normothermia** (>36°C); **Oxygenation** (FiO₂ 80% intraop + 2h post)</td></tr><tr><td>**Intra-operative**</td><td>**Skin prep: CHG 2% in alcohol**; **Sterile technique**; **Minimise OR traffic**; **Maintain normothermia**; **Glycaemic control**</td></tr><tr><td>**Post-operative**</td><td>**Continue antibiotic ≤24h** (no benefit beyond); **Glycaemic control** (first 48h); **Normothermia**; **Early mobilisation**; **Wound care** (sterile dressing 48h)</td></tr></table>
+<div class="sub-h">SSI Empirical Therapy</div>
+<table class="ctable"><tr><th>Scenario</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Superficial, MSSA/Strep**</td><td>Flucloxacillin 2g IV 6h / Cephalexin 500mg 6h</td></tr><tr><td>**Deep/Organ space, no MDRO**</td><td>Ceftriaxone 2g 24h + Metronidazole 500mg 8h</td></tr><tr><td>**MRSA risk**</td><td>Vancomycin 15–20mg/kg 6h +/− Ceftriaxone/Metronidazole</td></tr><tr><td>**Gram-negative / MDRO**</td><td>Piperacillin-tazobactam 4.5g 6h OR Meropenem 1g 8h</td></tr><tr><td>**Duration**</td><td>**5–7 days** (superficial); **7–14 days** (deep/organ space); **source control critical** (drainage, debridement)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Antimicrobial Stewardship in HAI</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Intervention</th><th>Description</th></tr><tr><td>--------------</td><td>-------------</td></tr><tr><td>**Formulary restriction**</td><td>Carbapenems, newer agents (CAV, MV, IR, plazomicin) require ID approval</td></tr><tr><td>**Prospective audit & feedback**</td><td>ID pharmacist/physician reviews at 48–72h; recommends de-escalation/stop</td></tr><tr><td>**IV→oral switch**</td><td>Protocol-driven at 48–72h if clinical stability</td></tr><tr><td>**Automatic stop orders**</td><td>Default durations (e.g., VAP 7d, CAUTI 7d, SSI 5–7d) with mandatory renewal</td></tr><tr><td>**Biomarker guidance**</td><td>**PCT-guided** antibiotic discontinuation in sepsis/VAP</td></tr><tr><td>**Penicillin allergy de-labelling**</td><td>Assessment + graded challenge → ↓ vancomycin/fluoroquinolone use</td></tr><tr><td>**Diagnostic stewardship**</td><td>**Do NOT culture asymptomatic patients** (catheter tips, urine, blood without clinical signs)</td></tr><tr><td>**Device removal**</td><td>**CLABSI: remove for S. aureus, Candida, Pseudomonas, Bacillus, mycobacteria**; **CAUTI: remove if possible**; **VAP: no routine line removal**</td></tr></table>
+<p><i>...continued (truncated to 200 lines for renderer)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Healthcare-Associated Infections (CLABSI, CAUTI, SSI, VAP) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

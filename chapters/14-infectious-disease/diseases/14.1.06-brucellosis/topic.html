@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brucellosis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Brucellosis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise clinical presentations (acute, subacute, chronic, focal)</li><li>Apply diagnostic criteria (culture, serology, PCR)</li><li>Select appropriate combination therapy by disease form</li><li>Manage complications (endocarditis, neurobrucellosis, osteoarticular)</li><li>Apply prevention (pasteurisation, animal vaccination, occupational hygiene)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Epidemiology & Transmission</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Details</th></tr><tr><td>--------</td><td>---------</td></tr><tr><td>**Agents**</td><td>*Brucella* spp.: **B. melitensis** (goats/sheep — most virulent), **B. abortus** (cattle), **B. suis** (pigs), **B. canis** (dogs)</td></tr><tr><td>**Reservoirs**</td><td>Domestic livestock (sheep, goats, cattle, pigs); wildlife</td></tr><tr><td>**Transmission**</td><td>**Unpasteurised dairy** (milk, cheese, butter); **Direct contact** with infected tissues/fluids (placenta, fetus, blood); **Aerosol inhalation** (lab, abattoir); **Rare**: human-to-human (sexual, breastfeeding, transplant)</td></tr><tr><td>**Risk Groups**</td><td>Farmers, veterinarians, abattoir workers, lab workers, travellers consuming unpasteurised dairy</td></tr><tr><td>**Geography**</td><td>Mediterranean, Middle East, Central Asia, Latin America, India (endemic)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Manifestations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Form</th><th>Features</th></tr><tr><td>------</td><td>----------</td></tr><tr><td>**Acute/Subacute**</td><td>**Undulant fever** (spiking fever, remission, recurrence), **arthralgia/myalgia**, headache, sweats, fatigue, hepatosplenomegaly</td></tr><tr><td>**Focal/Complicated**</td><td>**Osteoarticular** (sacroiliitis, spondylitis, peripheral arthritis — 20–60%); **Endocarditis** (aortic valve, high mortality); **Neurobrucellosis** (meningoencephalitis, radiculopathy); **Genitourinary** (orchitis, epididymitis); **Hepatic/Splenic** (abscesses)</td></tr><tr><td>**Chronic**</td><td>Persistent fatigue, depression, arthralgia >1 year; often misdiagnosed as CFS</td></tr></table>
+<div class="callout">[!key] <b>Osteoarticular = most common focal (20–60%); sacroiliitis characteristic.</b> <b>Endocarditis = most serious (aortic valve, culture-negative).</b> <b>Neurobrucellosis = meningitic/encephalitic; CSF lymphocytic, ↑ protein, low glucose.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Sensitivity/Specificity</th><th>Timing</th><th>Notes</th></tr><tr><td>------</td><td>------------------------</td><td>--------</td><td>-------</td></tr><tr><td>**Blood Culture**</td><td>**Gold standard**; 50–70% (acute), <30% (chronic)</td><td>Weeks 1–3</td><td>**Castaneda biphasic media**; slow (3–7 days); BSL-3</td></tr><tr><td>**Bone Marrow Culture**</td><td>**90%**</td><td>Any time</td><td>Highest yield if antibiotics given</td></tr><tr><td>**Standard Agglutination Test (SAT)**</td><td>80–95% / 95%</td><td>Week 2+</td><td>**≥1:160 = positive**; ≥1:320 = active; prozone phenomenon</td></tr><tr><td>**Coombs Anti-Brucella**</td><td>Detects incomplete (IgG) antibodies</td><td>Chronic/relapse</td><td>Higher titre than SAT</td></tr><tr><td>**Brucella IgG/IgM ELISA**</td><td>High sensitivity</td><td>Week 1+</td><td>IgM = acute; IgG = past/chronic; **Lack of standardisation**</td></tr><tr><td>**Brucellacapt (Lateral Flow)**</td><td>High sensitivity/specificity</td><td>Acute/chronic</td><td>Detects IgG+IgM+IgA; quantitative</td></tr><tr><td>**PCR (Blood/Tissue)**</td><td>High sensitivity</td><td>Early</td><td>Rapid; not universally available</td></tr><tr><td>**CSF Analysis (Neuro)**</td><td>Lymphocytic, ↑ protein, low glucose</td><td>Neurobrucellosis</td><td>PCR + culture + serology</td></tr></table>
+<div class="callout">[!key] <b>Culture = gold standard but slow; SAT ≥1:160 + compatible clinical = probable; SAT ≥1:320 + clinical = confirmed.</b> <b>Bone marrow culture &gt; blood culture.</b> <b>PCR = rapid adjunct.</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Treatment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Acute/Uncomplicated Brucellosis (Adults)</div>
+<table class="ctable"><tr><th>Regimen</th><th>Dose</th><th>Duration</th><th>Notes</th></tr><tr><td>---------</td><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Doxycycline + Rifampicin**</td><td>**Doxycycline 100mg PO 12h + Rifampicin 600mg PO OD**</td><td>**6 weeks**</td><td>**1st-line (WHO)**; reload if relapse</td></tr><tr><td>**Alternative (pregnancy/children <8)**</td><td>**TMP-SMX 160/800mg 12h + Rifampicin 600mg OD**</td><td>6 weeks</td><td>Doxycycline contraindicated</td></tr></table>
+<div class="sub-h">Complicated/Focal Brucellosis</div>
+<table class="ctable"><tr><th>Syndrome</th><th>Regimen</th><th>Duration</th></tr><tr><td>----------</td><td>---------</td><td>----------</td></tr><tr><td>**Endocarditis**</td><td>**Doxycycline 100mg 12h + Rifampicin 600mg OD + Gentamicin 5mg/kg IV OD** (first 2w)</td><td>**3–6 months** (valve replacement often needed)</td></tr><tr><td>**Neurobrucellosis**</td><td>**Doxycycline 100mg 12h + Rifampicin 600mg OD + TMP-SMX DS 12h**</td><td>**3–6 months**</td></tr><tr><td>**Osteoarticular (Sacroiliitis/Spondylitis)**</td><td>**Doxycycline 100mg 12h + Rifampicin 600mg OD**</td><td>**3–6 months**</td></tr><tr><td>**CNS/Endocarditis (Doxycycline contraindicated)**</td><td>**TMP-SMX DS 12h + Rifampicin 600mg OD + Gentamicin** (2w)</td><td>3–6 months</td></tr></table>
+<div class="callout">[!key] <b>Doxycycline + Rifampicin ×6w = standard for uncomplicated.</b> <b>Endocarditis/CNS = add aminoglycoside (first 2w) + prolong to 3–6m.</b> <b>Relapse 5–15% — retreat with same or alternative regimen.</b></div>
+<div class="sub-h">Pregnancy/Children</div>
+<table class="ctable"><tr><th>Population</th><th>Regimen</th></tr><tr><td>------------</td><td>---------</td></tr><tr><td>**Pregnancy**</td><td>**TMP-SMX DS 12h + Rifampicin 600mg OD** (avoid doxycycline)</td></tr><tr><td>**Children <8 years**</td><td>**TMP-SMX 8mg/kg TMP 12h + Rifampicin 15mg/kg OD**</td></tr><tr><td>**Children ≥8 years**</td><td>**Doxycycline 2.2mg/kg 12h + Rifampicin 15mg/kg OD**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Frequency</th><th>Management</th></tr><tr><td>--------------</td><td>-----------</td><td>------------</td></tr><tr><td>**Osteoarticular**</td><td>20–60%</td><td>Doxy + Rifampicin ×3–6m; sacroiliitis → MRI; joint aspiration if septic</td></tr><tr><td>**Endocarditis**</td><td>1–2%</td><td>**Doxy + Rifampicin + Gentamicin (2w) ×3–6m**; valve replacement often needed</td></tr><tr><td>**Neurobrucellosis**</td><td><5%</td><td>**Doxy + Rifampicin + TMP-SMX ×3–6m**; steroids if meningoencephalitis</td></tr><tr><td>**Genitourinary**</td><td>2–20% (orchitis/epididymitis)</td><td>Standard regimen; scrotal support</td></tr><tr><td>**Hepatosplenic Abscess**</td><td>Rare</td><td>Drainage + prolonged antibiotics</td></tr><tr><td>**Relapse**</td><td>5–15%</td><td>Retreat with same/alternative regimen</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Prevention</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Measure</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Pasteurisation**</td><td>**Milk, cheese, dairy products** — most effective</td></tr><tr><td>**Animal Vaccination**</td><td>**RB51 (cattle), Rev-1 (sheep/goats)** — reduces animal prevalence</td></tr><tr><td>**Occupational Hygiene**</td><td>PPE (gloves, goggles, N95) for high-risk workers; lab safety (BSL-3)</td></tr><tr><td>**Food Safety**</td><td>**Avoid unpasteurised dairy** (raw milk, soft cheese); cook meat thoroughly</td></tr><tr><td>**Animal Control**</td><td>Test-and-slaughter; quarantine; movement restrictions</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Brucellosis: zoonosis from unpasteurised dairy/animal contact; B. melitensis (goats) most virulent</b></li><li><b>Undulant fever, arthralgia, hepatosplenomegaly; sacroiliitis (characteristic)</b></li><li><b>Diagnosis: Blood/bone marrow culture (gold); SAT ≥1:160; Brucella IgG/IgM ELISA</b></li><li><b>Acute treatment: Doxycycline 100mg 12h + Rifampicin 600mg OD ×6w</b></li><li><b>Endocarditis/Neuro/CNS: Doxy + Rifampicin + Gentamicin (2w) ×3–6m</b></li><li><b>Pregnancy/children &lt;8: TMP-SMX + Rifampicin (doxy contraindicated)</b></li><li><b>Relapse 5–15%; retreat with same/alternative regimen</b></li><li><b>Prevention: pasteurisation, animal vaccination (RB51, Rev-1)</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>**Most common <i>Brucella</i> species causing human disease?** <i>B. melitensis</i> (goats/sheep) — most virulent.</li><li><b>Classic clinical triad of brucellosis?</b> Undulant fever, arthralgia, hepatosplenomegaly.</li><li><b>Most common focal complication?</b> Osteoarticular (sacroiliitis, spondylitis) — 20–60%.</li><li><b>Diagnostic gold standard?</b> Blood/bone marrow culture (bone marrow &gt; blood).</li><li><b>Standard agglutination test (SAT) cut-off?</b> ≥1:160 positive; ≥1:320 active disease.</li><li><b>Treatment for uncomplicated brucellosis?</b> Doxycycline 100mg 12h + Rifampicin 600mg OD ×6w.</li><li><b>Treatment for brucellar endocarditis?</b> Doxycycline + Rifampicin + Gentamicin (first 2w) ×3–6m.</li><li><b>Treatment in pregnancy/children?</b> TMP-SMX + Rifampicin (doxycycline contraindicated).</li><li><b>Relapse rate?</b> 5–15%; retreat with same/alternative regimen.</li><li><b>Prevention?</b> Pasteurisation of dairy; animal vaccination (RB51, Rev-1).</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>SAT negative = no brucellosis</td><td>**Prozone phenomenon** (high antibody = false low); do serial dilutions / Coombs</td></tr><tr><td>Doxycycline safe in pregnancy</td><td>**CONTRAINDICATED** (bone/teeth); use TMP-SMX + Rifampicin</td></tr><tr><td>Rifampicin monotherapy</td><td>**Never** — rapid resistance; always combine</td></tr><tr><td>Doxycycline + Rifampicin = 2 weeks</td><td>**6 weeks minimum** for uncomplicated; 3–6m for focal</td></tr><tr><td>Brucella endocarditis = same as other culture-negative</td><td>**Aortic valve predominant; high mortality; needs prolonged combo + surgery**</td></tr><tr><td>SAT single titre diagnostic</td><td>**Need rising titre (4-fold) or ≥1:320 + clinical**</td></tr><tr><td>Doxycycline alone sufficient</td><td>**Monotherapy = relapse/resistance; always combine with Rifampicin**</td></tr><tr><td>Chronic fatigue = brucellosis</td><td>**Post-brucellosis fatigue syndrome = exclusion diagnosis**</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>BRUCELLOSIS</b>: <b>B</b>rucella; <b>R</b>uminants (goats/sheep/cattle); <b>U</b>npasteurised dairy; <b>C</b>attle/<b>S</b>heep/<b>G</b>oats; <b>E</b>ndocarditis; <b>L</b>ong treatment (6w+); <b>L</b>ow relapse (5-15%); <b>O</b>steoarticular (sacroiliitis); <b>S</b>erology SAT; <b>I</b>ntracellular; <b>S</b>ynergy (Doxy+Rif)</li><li><b>SAT</b>: <b>S</b>tandard <b>A</b>gglutination <b>T</b>est; <b>≥1:160</b> = positive; <b>≥1:320</b> = active; <b>P</b>rozone = false negative</li><li><b>TREATMENT</b>: <b>D</b>oxy + <b>R</b>ifampicin <b>6</b>w = <b>D</b>R<b>6</b>; <b>E</b>ndocarditis = <b>D</b>oxy + <b>R</b>if + <b>G</b>enta <b>18</b>m</li><li><b>PREGNANCY</b>: <b>D</b>oxy <b>NO</b>; <b>T</b>MP-<b>S</b>MX + <b>R</b>if = <b>T</b>SR</li><li><b>SACROILIITIS</b>: <b>S</b>acroiliitis = <b>B</b>rucellosis hallmark</li><li><b>RELAPSE</b>: <b>5-15%</b> = <b>R</b>etreat same or <b>A</b>lternative</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Brucellosis))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Epidemiology</div>
+<div class="mm-node mm-l3">– Zoonosis: B. melitensis (goats), B. abortus (cattle), B. suis (pigs)</div>
+<div class="mm-node mm-l3">– Unpasteurised dairy, animal contact, aerosol</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Undulant fever, arthralgia, hepatosplenomegaly</div>
+<div class="mm-node mm-l3">– Focal: Sacroiliitis (20-60%), Endocarditis, Neurobrucellosis</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Culture: Blood (50-70%), Bone marrow (90%)</div>
+<div class="mm-node mm-l3">– Serology: SAT ≥1:160, Coombs, ELISA, Brucellacapt</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Uncomplicated: Doxy + Rifampicin 6w</div>
+<div class="mm-node mm-l3">– Endocarditis: Doxy + Rif + Genta (2w) 18m</div>
+<div class="mm-node mm-l3">– Neuro: Doxy + Rif + TMP-SMX 3-6m</div>
+<div class="mm-node mm-l3">– Pregnancy/Kids: TMP-SMX + Rifampicin</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– Sacroiliitis, Endocarditis, Neurobrucellosis</div>
+<div class="mm-node mm-l3">– Relapse 5-15%</div>
+<div class="mm-node mm-l2">Prevention</div>
+<div class="mm-node mm-l3">– Pasteurisation, Animal vaccination (RB51, Rev-1)</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Flowchart</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Brucellosis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Blood Culture + Bone Marrow Culture + SAT</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">SAT ≥1:160 + Clinical?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Probable Brucellosis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Treatment by Syndrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Form</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Doxycycline 100mg 12h + Rifampicin 600mg OD ×6w</div>
+<div class="fc-node" data-id="H">Doxy + Rif + Genta (2w) ×18m</div>
+<div class="fc-node" data-id="I">Doxy + Rif + TMP-SMX 3-6m</div>
+<div class="fc-node" data-id="J">Doxy + Rif ×3-6m</div>
+<div class="fc-node" data-id="K">TMP-SMX + Rifampicin 6w</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Follow-up: Relapse? → Retreat</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Suggested Visuals / Image Notes</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Brucella culture (Castaneda bottle)</li><li>SAT titration curve (prozone)</li><li>Sacroiliitis MRI (sacroiliitis)</li><li>Brucellar endocarditis (vegetation on aortic valve)</li><li>Brucella organism (small coccobacilli)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Suggested Video References</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Brucellosis diagnosis and management</li><li>Sacroiliitis in brucellosis</li><li>Brucellar endocarditis</li><li>Brucellosis prevention</li></ul>
+<p><i>...continued (truncated to 200 lines for renderer)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Brucellosis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scorpion Sting Envenomation — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ENVENOMATION</span>
+      <div class="h1">Scorpion Sting Envenomation</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify high-risk scorpion species and their distribution</li><li>[ ] Understand venom mechanism (Na⁺/K⁺ channel toxins)</li><li>[ ] Recognise autonomic storm, neuromuscular, and pancreatitis syndromes</li><li>[ ] Apply SCORPION scoring</li><li>[ ] Use prazosin and other α-blockers appropriately</li><li>[ ] Decide on antivenom indication</li><li>[ ] Apply to FCPS/MRCP clinical vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Background</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Item</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Definition**</td><td>Envenomation from scorpion sting (stinger = telson, terminal segment)</td></tr><tr><td>**Global burden**</td><td>> 1.2 M stings/year, > 3,000 deaths (95% in tropical/subtropical regions)</td></tr><tr><td>**Highest burden**</td><td>North Africa, Middle East, India, Mexico, Brazil, sub-Saharan Africa</td></tr><tr><td>**High-risk regions**</td><td>Saharan Africa (Leiurus, Androctonus); Brazil (Tityus); India (Mesobuthus); Mexico (Centruroides)</td></tr><tr><td>**Most vulnerable**</td><td>**Children < 10 years** (worse per kg; > 50% of deaths)</td></tr><tr><td>**Mechanism**</td><td>Venom injected via telson; stinger punctures skin; immediate pain, then systemic effects</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology — Important Species</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Species</th><th>Common Name</th><th>Region</th><th>Severity</th><th>Key Features</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Leiurus quinquestriatus**</td><td>Deathstalker / yellow scorpion</td><td>North Africa, Middle East (Saharan)</td><td>**Highly dangerous**</td><td>α-toxin (potent); children at high risk</td></tr><tr><td>**Androctonus crassicauda**</td><td>Fat-tailed scorpion</td><td>North Africa, Middle East, Turkey</td><td>**Highly dangerous**</td><td>"Crassicauda" toxin; pulmonary oedema</td></tr><tr><td>**Androctonus australis**</td><td>Yellow fat-tailed</td><td>North Africa</td><td>Severe</td><td>α-toxin</td></tr><tr><td>**Buthus occitanus**</td><td>Common yellow scorpion</td><td>North Africa, Mediterranean</td><td>Moderate-severe</td><td>α-toxin</td></tr><tr><td>**Tityus serrulatus**</td><td>Brazilian yellow scorpion</td><td>Brazil (esp. Minas Gerais)</td><td>**Highly dangerous**</td><td>TsTX (γ-toxin); massive envenomation</td></tr><tr><td>**Tityus trinitatis**</td><td>Trinidadian scorpion</td><td>Trinidad, Caribbean</td><td>Severe</td><td>TsTX</td></tr><tr><td>**Tityus bahiensis**</td><td>Brazilian brown</td><td>Brazil, Argentina</td><td>Moderate-severe</td><td>β-toxin</td></tr><tr><td>**Centruroides exilicauda (sculpturatus)**</td><td>Arizona bark scorpion</td><td>Arizona, Sonora (Mexico)</td><td>**Severe in children**; mild in adults</td><td>Cex toxin; neurotoxic</td></tr><tr><td>**Centruroides suffusus**</td><td>Mexican bark scorpion</td><td>Mexico</td><td>Severe</td><td>Neurotoxic</td></tr><tr><td>**Mesobuthus tamulus**</td><td>Indian red scorpion</td><td>India (Maharashtra, Karnataka)</td><td>**Highly dangerous**</td><td>"Tamulus" toxin; severe myocarditis</td></tr><tr><td>**Hottentotta tamulus**</td><td>Indian red scorpion (synonym)</td><td>India</td><td>Severe</td><td>As above</td></tr><tr><td>**Heterometrus**</td><td>Asian forest scorpion</td><td>SE Asia</td><td>**Mild** (large but not very toxic)</td><td>Local only</td></tr><tr><td>**Pandinus imperator**</td><td>Emperor scorpion</td><td>Africa</td><td>**Non-venomous / mild**</td><td>Pet trade</td></tr><tr><td>**Hemiscorpius lepturus**</td><td>Iranian scorpion</td><td>Iran, Iraq</td><td>Severe (necrotic)</td><td>**Cytotoxic** (unlike others — causes necrosis)</td></tr></table>
+<p><b>Mnemonic: "LATC" of severe scorpions</b> = <b>L</b>eiurus, <b>A</b>ndroctonus, <b>T</b>ityus, <b>C</b>entruroides. Add <b>M</b>esobuthus (India).</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Venom Components</div>
+<table class="ctable"><tr><th>Toxin</th><th>Mechanism</th><th>Effect</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**α-toxins**</td><td>Bind voltage-gated Na⁺ channels → **slow inactivation** → **prolonged depolarisation**</td><td>Sustained neuronal firing, autonomic activation</td></tr><tr><td>**β-toxins**</td><td>Bind voltage-gated Na⁺ channels → **shift activation voltage** → **hyper-excitability**</td><td>Repetitive firing, autonomic activation</td></tr><tr><td>**K⁺ channel toxins**</td><td>Block K⁺ channels → prolonged action potential</td><td>Hyperexcitability</td></tr><tr><td>**Ca²⁺ channel toxins**</td><td>Modulate Ca²⁺ channels</td><td>↑ ACh release, muscle fasciculations</td></tr><tr><td>**PLA₂**</td><td>Membrane degradation</td><td>Inflammation, myotoxicity (minor)</td></tr><tr><td>**Mucopolysaccharides, hyaluronidase**</td><td>Spread venom</td><td>Local spread</td></tr></table>
+<div class="sub-h">Mechanism of Autonomic Storm</div>
+<table class="ctable"><tr><th>Step</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**1. Toxin binds Na⁺ channels**</td><td>Prolonged depolarisation</td></tr><tr><td>**2. Sustained neuronal firing**</td><td>Sympathetic and parasympathetic ganglia, adrenal medulla</td></tr><tr><td>**3. Massive catecholamine release**</td><td>Adrenaline, noradrenaline (α and β effects)</td></tr><tr><td>**4. Autonomic storm**</td><td>Hypertension, tachycardia, sweating, salivation, mydriasis, hyperthermia</td></tr><tr><td>**5. Cardiovascular**</td><td>Initially hyperdynamic; later **myocarditis, cardiogenic shock, arrhythmia**</td></tr><tr><td>**6. Pulmonary**</td><td>Pulmonary oedema (cardiogenic + capillary leak)</td></tr><tr><td>**7. GI**</td><td>Pancreatitis (hyperstimulation), hyperperistalsis, vomiting</td></tr><tr><td>**8. GU**</td><td>Priapism (α-stimulation)</td></tr><tr><td>**9. CNS**</td><td>Restlessness, agitation, seizures (children)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Local (All Species)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Pain**</td><td>**Severe, immediate, burning** (most prominent local feature)</td></tr><tr><td>**Swelling**</td><td>Usually **minimal or absent** (unlike viper/spider)</td></tr><tr><td>**Erythema**</td><td>Mild; localised to sting site</td></tr><tr><td>**Necrosis**</td><td>**NOT typical** (exception: *Hemiscorpius* — cytotoxic)</td></tr><tr><td>**Paraesthesia**</td><td>Local; sometimes radiates</td></tr><tr><td>**Tinel-like**</td><td>Hyperaesthesia to light touch</td></tr></table>
+<div class="sub-h">Systemic — Mild (Most Stings)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Constitutional**</td><td>Malaise, sweating, salivation, rhinorrhoea, lacrimation</td></tr><tr><td>**GI**</td><td>Nausea, vomiting, abdominal pain</td></tr><tr><td>**CVS**</td><td>Mild tachycardia, mild hypertension</td></tr><tr><td>**Duration**</td><td>1–6 h; resolves spontaneously</td></tr></table>
+<div class="sub-h">Systemic — Severe (Grade III/IV)</div>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Cardiovascular**</td><td>Severe hypertension, tachycardia, **myocarditis, cardiogenic shock, arrhythmia, cardiac arrest**</td></tr><tr><td>**Pulmonary**</td><td>**Pulmonary oedema** (cardiogenic + ARDS), hypoxia, ARDS</td></tr><tr><td>**GI**</td><td>**Pancreatitis** (severe epigastric pain, ↑ amylase/lipase), hyperperistalsis, vomiting, abdominal distension</td></tr><tr><td>**GU**</td><td>**Priapism** (males)</td></tr><tr><td>**Neuromuscular**</td><td>Fasciculations, myoclonus, weakness, opisthotonus, dystonia</td></tr><tr><td>**CNS**</td><td>Restlessness, agitation, confusion, seizures (esp. children)</td></tr><tr><td>**Metabolic**</td><td>Hyperglycaemia (catecholamine), hyperthermia, leukocytosis, hypokalaemia</td></tr><tr><td>**Eye**</td><td>Mydriasis, nystagmus, blurred vision</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Classification / Grading</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical Grading (Indian)</div>
+<table class="ctable"><tr><th>Grade</th><th>Features</th><th>Management</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**I (Mild)**</td><td>Local pain, mild systemic (sweating, salivation)</td><td>Observation, analgesia</td></tr><tr><td>**II (Moderate)**</td><td>Severe pain, systemic (vomiting, abdominal pain, mild HTN)</td><td>Prazosin, monitor</td></tr><tr><td>**III (Severe)**</td><td>Autonomic storm, pulmonary oedema, myocarditis, pancreatitis</td><td>**Prazosin + ICU + AV if available**</td></tr><tr><td>**IV (Very severe)**</td><td>Cardiac arrest, refractory shock, ARDS</td><td>**ICU + AV + inotropes + ventilation**</td></tr></table>
+<div class="sub-h">SCORPION Score</div>
+<table class="ctable"><tr><th>Component</th><th>Points</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Age > 10 years</td><td>1</td></tr><tr><td>Local signs (pain, swelling)</td><td>1</td></tr><tr><td>Systemic signs (vomiting, sweating, salivation)</td><td>1</td></tr><tr><td>CNS signs (agitation, confusion, seizure)</td><td>1</td></tr><tr><td>CVS signs (hypertension, tachycardia, pulmonary oedema)</td><td>2</td></tr><tr><td>Respiratory signs (wheeze, stridor, resp failure)</td><td>2</td></tr><tr><td>**Total**</td><td>**8**</td></tr></table>
+<table class="ctable"><tr><th>Score</th><th>Severity</th><th>Action</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>0–2</td><td>Mild</td><td>Observe, analgesia</td></tr><tr><td>3–5</td><td>Moderate</td><td>ICU, consider AV</td></tr><tr><td>6–8</td><td>Severe</td><td>**ICU, AV, supportive**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Diagnosis & Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Indication</th><th>Interpretation</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Clinical**</td><td>All</td><td>Sting site (tender, no swelling), autonomic features</td></tr><tr><td>**Vitals**</td><td>All</td><td>HTN, tachycardia, hyperthermia, RR</td></tr><tr><td>**ECG**</td><td>All severe</td><td>Sinus tachy, ST changes, QT, arrhythmia</td></tr><tr><td>**Troponin**</td><td>Severe</td><td>Myocardial injury (myocarditis)</td></tr><tr><td>**BNP / NT-proBNP**</td><td>Severe</td><td>Heart failure</td></tr><tr><td>**CXR**</td><td>All severe</td><td>**Pulmonary oedema, ARDS, cardiomegaly**</td></tr><tr><td>**Echocardiogram**</td><td>Severe</td><td>LV dysfunction, regional wall motion</td></tr><tr><td>**FBC**</td><td>All</td><td>Leucocytosis, eosinophilia (late)</td></tr><tr><td>**U&E, glucose**</td><td>All</td><td>Hyperglycaemia, hypokalaemia, AKI</td></tr><tr><td>**Amylase, lipase**</td><td>All severe (abdominal pain)</td><td>**Pancreatitis**</td></tr><tr><td>**ABG**</td><td>All severe</td><td>Acidosis, hypoxia, hyperlactataemia</td></tr><tr><td>**Cardiac enzymes**</td><td>Severe</td><td>Myocarditis</td></tr><tr><td>**Urine**</td><td>All</td><td>Myoglobin (rare)</td></tr><tr><td>**Scorpion identification**</td><td>If possible</td><td>Species-specific management</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Anaphylaxis (hymenoptera)**</td><td>Urticaria, angioedema, bronchospasm, no sting site neuro signs</td></tr><tr><td>**Acute MI**</td><td>Cardiac symptoms, ECG changes, no sting context</td></tr><tr><td>**Acute pancreatitis**</td><td>No sting history; need to differentiate; scorpion often has other systemic features</td></tr><tr><td>**Tetanus**</td><td>Trismus, opisthotonus, no sting history</td></tr><tr><td>**Status epilepticus**</td><td>Seizure activity, no autonomic storm</td></tr><tr><td>**Sympathomimetic toxidrome**</td><td>Drug use, hyperthermia, mydriasis</td></tr><tr><td>**Acute abdomen**</td><td>Surgical pathology</td></tr><tr><td>**Pulmonary embolism**</td><td>Pleurisy, hypoxia, no sting context</td></tr><tr><td>**Septic shock**</td><td>Fever source, hypotension late, no sting</td></tr><tr><td>**Snakebite**</td><td>Different presentation; local swelling; coagulopathy (viperid)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Action</th><th>Detail</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**1. First aid**</td><td>Reassurance, immobilise limb, transport</td><td>Cold compress for pain; avoid incision/suction</td></tr><tr><td>**2. Triage**</td><td>Vital signs, systemic features</td><td>ICU if Grade III/IV</td></tr><tr><td>**3. Analgesia**</td><td>Paracetamol, opioids</td><td>For severe pain</td></tr><tr><td>**4. Local anaesthetic**</td><td>Lidocaine 1% SC or regional block</td><td>For refractory pain</td></tr><tr><td>**5. Prazosin**</td><td>**First-line specific therapy** for autonomic storm</td><td>0.5–1 mg PO q4–6h (adults); 0.25–0.5 mg (children); titrate to BP</td></tr><tr><td>**6. IV fluids**</td><td>Cautious (risk of pulmonary oedema)</td><td>Avoid overload; NS or RL</td></tr><tr><td>**7. Antivenom**</td><td>Severe (Grade III/IV), children, prazosin unavailable</td><td>Specific AV (regional)</td></tr><tr><td>**8. ICU support**</td><td>Severe cases</td><td>Ventilation, inotropes, monitoring</td></tr><tr><td>**9. Treat complications**</td><td>Pulmonary oedema, pancreatitis, myocarditis</td><td>Specific management</td></tr><tr><td>**10. Benzodiazepines**</td><td>For agitation, seizures</td><td>Diazepam 5–10 mg IV</td></tr><tr><td>**11. Avoid**</td><td>β-blockers, morphine (worsens), opiates initially</td><td>Can worsen autonomic storm</td></tr></table>
+<div class="sub-h">Prazosin Protocol</div>
+<table class="ctable"><tr><th>Step</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Mechanism**</td><td>α1-adrenergic blocker → counters α-adrenergic storm (afterload, pulmonary oedema)</td></tr><tr><td>**Indication**</td><td>Hypertension, pulmonary oedema, autonomic storm</td></tr><tr><td>**Dose (adult)**</td><td>0.5–1 mg PO q4–6h; titrate</td></tr><tr><td>**Dose (child)**</td><td>0.25–0.5 mg PO q4–6h; titrate</td></tr><tr><td>**Onset**</td><td>30–60 min</td></tr><tr><td>**Caution**</td><td>First-dose orthostatic hypotension; recumbent when giving</td></tr><tr><td>**Avoid**</td><td>β-blockers (unopposed α-stimulation), morphine (histamine release)</td></tr><tr><td>**Duration**</td><td>Continue 24–48 h until autonomic features resolve</td></tr><tr><td>**Alternative if unavailable**</td><td>Phentolamine (IV α-blocker), nitroglycerin infusion, captopril</td></tr></table>
+<div class="sub-h">Antivenom</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Indication**</td><td>Severe (Grade III/IV), children, prazosin unavailable, refractory HTN, pulmonary oedema</td></tr><tr><td>**Products**</td><td>Regional — Scorpion Antivipmyn (Mexico, polyvalent), Indian Red Scorpion AV (Haffkine), Saudi AV, Tunisian AV, Turkish AV, Brazilian AV</td></tr><tr><td>**Dose**</td><td>Per product; usually 1–3 vials; titrate to response</td></tr><tr><td>**Effect**</td><td>Rapid reversal of autonomic features (minutes–hours)</td></tr><tr><td>**Reactions**</td><td>Similar to snake AV (early anaphylaxis, late serum sickness)</td></tr><tr><td>**Evidence**</td><td>Mixed; some studies show benefit in children and severe cases; not always available</td></tr></table>
+<div class="sub-h">Management of Complications</div>
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Pulmonary oedema**</td><td>O₂, diuretic, prazosin, NTG, CPAP, ventilation</td></tr><tr><td>**Myocarditis**</td><td>Supportive, inotropes (dobutamine), avoid digoxin (arrhythmia)</td></tr><tr><td>**Cardiogenic shock**</td><td>Inotropes, intra-aortic balloon pump (rare)</td></tr><tr><td>**Arrhythmia**</td><td>Standard ACLS; avoid class Ic; consider amiodarone</td></tr><tr><td>**Pancreatitis**</td><td>NPO, IV fluids, analgesia, monitor; usually resolves</td></tr><tr><td>**Hyperglycaemia**</td><td>Monitor; usually transient; insulin if severe</td></tr><tr><td>**Priapism**</td><td>Aspiration if needed; usually resolves</td></tr><tr><td>**Seizure**</td><td>Benzodiazepine</td></tr><tr><td>**Hyperthermia**</td><td>Cooling</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Disposition</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Setting</th><th>Duration</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>I</td><td>Ward, observation</td><td>6 h</td></tr><tr><td>II</td><td>HDU</td><td>24 h</td></tr><tr><td>III</td><td>ICU</td><td>Days</td></tr><tr><td>IV</td><td>ICU</td><td>Weeks</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Fact</th><th>Detail</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Most dangerous scorpions**</td><td>Leiurus (N Africa), Androctonus (N Africa), Tityus (Brazil), Centruroides (Arizona), Mesobuthus (India)</td></tr><tr><td>**Venom mechanism**</td><td>α/β-toxins → Na⁺/K⁺ channel modulation → catecholamine storm</td></tr><tr><td>**Local signs**</td><td>**Severe pain, minimal swelling**</td></tr><tr><td>**Systemic**</td><td>Autonomic storm: HTN, tachycardia, pulmonary oedema, myocarditis, pancreatitis, priapism</td></tr><tr><td>**Highest risk**</td><td>**Children < 10**</td></tr><tr><td>**First-line specific Rx**</td><td>**Prazosin 0.5–1 mg q4–6h (α1-blocker)**</td></tr><tr><td>**Prazosin dose children**</td><td>0.25–0.5 mg q4–6h</td></tr><tr><td>**Antivenom**</td><td>Grade III/IV, children, prazosin unavailable</td></tr><tr><td>**Avoid**</td><td>β-blockers (unopposed α), morphine</td></tr><tr><td>**Complications**</td><td>Pulmonary oedema, myocarditis, pancreatitis, ARDS, arrhythmia</td></tr><tr><td>**Leiurus region**</td><td>North Africa, Middle East</td></tr><tr><td>**Tityus region**</td><td>Brazil</td></tr><tr><td>**Centruroides region**</td><td>Arizona/Sonora</td></tr><tr><td>**Mesobuthus region**</td><td>India</td></tr><tr><td>**SCORPION score**</td><td>Age, local, systemic, CNS, CVS (2), respiratory (2); max 8</td></tr><tr><td>**Mortality**</td><td>Highest in children, especially with delay</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Viva Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<p><b>Q1: What are the most dangerous scorpion species?</b> A: Leiurus quinquestriatus (deathstalker, N Africa/Middle East), Androctonus (fat-tailed, N Africa/Middle East), Tityus (Brazilian yellow, S America), Centruroides (bark, Arizona/Sonora), Mesobuthus tamulus (Indian red, India). Mnemonic: LATC + M.</p>
+<p><b>Q2: What is the mechanism of scorpion venom?</b> A: α-toxins bind voltage-gated Na⁺ channels → slow inactivation → prolonged depolarisation. β-toxins shift activation voltage → hyper-excitability. K⁺ channel toxins prolong action potential. Net effect = sustained neuronal firing → massive catecholamine release from sympathetic ganglia and adrenal medulla → autonomic storm.</p>
+<p><b>Q3: What is the clinical syndrome of severe scorpion envenomation?</b> A: <b>Autonomic storm</b>: hypertension, tachycardia, sweating, salivation, mydriasis, hyperthermia. <b>Cardiovascular</b>: myocarditis, cardiogenic shock, arrhythmia. <b>Pulmonary</b>: pulmonary oedema (cardiogenic + ARDS). <b>GI</b>: pancreatitis, hyperperistalsis. <b>GU</b>: priapism. <b>CNS</b>: agitation, seizures. <b>Local</b>: severe pain, minimal swelling.</p>
+<p><b>Q4: Why are children more vulnerable?</b> A: Higher venom dose per kg; less physiological reserve; smaller airways; myocardium more sensitive; dehydration worsens. <b>&gt; 50% of scorpion deaths occur in children &lt; 10 years.</b> Aggressive management required.</p>
+<p><b>Q5: What is the first-line specific therapy for scorpion autonomic storm?</b> A: <b>Prazosin</b> (α1-adrenergic blocker). Dose 0.5–1 mg PO q4–6h (adults); 0.25–0.5 mg (children). Mechanism: blocks α-adrenergic effects of catecholamine storm → reduces afterload, treats pulmonary oedema, controls HTN. Avoid β-blockers (unopposed α-stimulation worsens crisis). First-dose orthostatic hypotension; recumbent.</p>
+<p><b>Q6: When is antivenom indicated for scorpion sting?</b> A: Severe (Grade III/IV) systemic envenomation, children &lt; 10, prazosin unavailable, refractory HTN, pulmonary oedema, myocarditis. Products are regional (Indian Red Scorpion AV, Scorpion Antivipmyn, etc.). Mixed evidence; some studies show benefit in children. Reactions similar to snake AV (anaphylaxis, serum sickness).</p>
+<p><b>Q7: How is scorpion pancreatitis managed?</b> A: Supportive: NPO, IV fluids, analgesia, monitor. Usually <b>transient</b> and resolves with treatment of envenomation. No surgery. Watch for pseudocyst, AKI. Lipase/amylase elevated in 30–80% of severe cases.</p>
+<p><b>Q8: What is the role of β-blockers in scorpion envenomation?</b> A: <b>AVOID</b> — unopposed α-adrenergic stimulation worsens HTN, pulmonary oedema, and cardiovascular collapse. Use prazosin or phentolamine instead.</p>
+<p><b>Q9: What is the duration of scorpion autonomic storm?</b> A: Usually 6–24 h, can last 48 h. Symptoms peak at 2–6 h, then gradually resolve. ICU monitoring required during this period. Most deaths occur in first 24 h from cardiovascular collapse.</p>
+<p><b>Q10: Why is Centruroides bark scorpion (Arizona) severe in children but mild in adults?</b> A: Children have higher venom:body weight ratio, less developed physiological reserves, and possibly more permeable blood-brain barrier for neurotoxins. Adults often have only mild systemic features (or local pain only). The Cex neurotoxin targets Na⁺ channels but adults appear to metabolise/clear it more effectively.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Scorpion = snake</td><td>NO — different presentation (catecholamine storm, not coag)</td></tr><tr><td>Local swelling always</td><td>NO — usually minimal in scorpion</td></tr><tr><td>β-blocker treats HTN</td><td>NO — worsens (unopposed α)</td></tr><tr><td>Morphine for pain</td><td>AVOID initially — histamine release; use other analgesics</td></tr><tr><td>Prazosin = antihypertensive</td><td>YES but used for catecholamine storm specifically</td></tr><tr><td>AV always needed</td><td>NO — Grade I/II = supportive only</td></tr><tr><td>All scorpions severe</td><td>NO — many are mild; LATC + M are severe</td></tr><tr><td>Scorpion = necrotic</td><td>NO — except *Hemiscorpius* (Iran) — cytotoxic</td></tr><tr><td>Pancreatitis from scorpion needs surgery</td><td>NO — supportive; transient</td></tr><tr><td>Children less affected</td><td>NO — children are highest risk</td></tr></table>
+<p><b>Mnemonics:</b></p>
+<ul><li><b>Severe scorpions</b>: <b>L</b>eiurus, <b>A</b>ndroctonus, <b>T</b>ityus, <b>C</b>entruroides = <b>LATC</b>; add <b>M</b>esobuthus (India) = <b>LATC + M</b></li><li><b>Mechanism</b>: <b>N</b>a⁺ channel toxins = <b>N</b>euro-excitation → <b>C</b>atecholamine = <b>NC</b></li><li><b>Autonomic storm features</b>: <b>H</b>TN, <b>T</b>achy, <b>P</b>ulmonary oedema, <b>M</b>yocarditis, <b>P</b>ancreatitis, <b>P</b>riapism = <b>HTPM PP</b></li><li><b>Avoid</b>: <b>β</b>-blockers, <b>M</b>orphine = <b>βM</b> = "bad medicine"</li><li><b>First-line</b>: <b>P</b>razosin = <b>P</b>razosin is <b>P</b>rimary</li><li><b>High-risk group</b>: <b>C</b>hildren = <b>C</b>hildren <b>C</b>ritical</li><li><b>Leiurus region</b>: <b>N</b>orth <b>A</b>frica = <b>NA</b> (Leiurus is North African)</li><li><b>Tityus region</b>: <b>B</b>razil = <b>B</b>razilian yellow</li><li><b>Centruroides region</b>: <b>A</b>rizona = <b>A</b>rizona bark</li><li><b>Mesobuthus region</b>: <b>I</b>ndia = <b>I</b>ndian red</li><li><b>SCORPION max</b>: <b>8 points</b> = severe</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Scorpion Envenomation)) Species LATC Leiurus Androctonus Tityus Centruroides Mesobuthus[India] Mechanism Na_K_channels Catecholamine_storm Clinical Local[Severe pain, minimal swelling] Systemic Hypertension Tachycardia Pulmonary_oedema Myocarditis Pancreatitis Priapism High_Risk Children_&lt; 10 Grading I_Mild II_Moderate III_Severe IV_Very_severe Management First_Aid[Analgesia, immobilise] Prazosin[α1-blocker] Antivenom[Grade III/IV, children] ICU[Ventilation, inotropes] Avoid[Beta-blockers, morphine] Complications Pulmonary_oedema Myocarditis Pancreatitis ARDS Arrest </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Key Point</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**Severe species**</td><td>LATC + M (Leiurus, Androctonus, Tityus, Centruroides, Mesobuthus)</td></tr><tr><td>**Venom**</td><td>α/β-toxins → Na⁺/K⁺ channels → catecholamine storm</td></tr><tr><td>**Local**</td><td>Severe pain, minimal swelling</td></tr><tr><td>**Systemic**</td><td>HTN, tachycardia, pulmonary oedema, myocarditis, pancreatitis, priapism</td></tr><tr><td>**High risk**</td><td>Children < 10</td></tr><tr><td>**First-line Rx**</td><td>**Prazosin 0.5–1 mg q4–6h** (α1-blocker)</td></tr><tr><td>**Antivenom**</td><td>Grade III/IV, children, no prazosin</td></tr><tr><td>**Avoid**</td><td>β-blockers, morphine</td></tr><tr><td>**SCORPION**</td><td>8-point score</td></tr><tr><td>**Duration**</td><td>6–24 h, can be 48 h</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Interval</th><th>Date</th><th>Score (1–5)</th><th>Notes</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**24 h**</td><td></td><td></td><td>Severe species, mechanism, prazosin, AV</td></tr><tr><td>**3 d**</td><td></td><td></td><td>Autonomic storm, complications, SCORPION, differentials</td></tr><tr><td>**7 d**</td><td></td><td></td><td>Regional species, paediatric, antivenom products</td></tr><tr><td>**14 d**</td><td></td><td></td><td>Viva, mnemonics, MCQ/SBA</td></tr><tr><td>**30 d**</td><td></td><td></td><td>Integrate with Spider, Marine, Hymenoptera</td></tr><tr><td>**90 d**</td><td></td><td></td><td>Comprehensive exam recall</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Severe species & regions</td><td></td></tr><tr><td>Venom mechanism</td><td></td></tr><tr><td>Autonomic storm features</td><td></td></tr><tr><td>SCORPION score</td><td></td></tr><tr><td>Prazosin use</td><td></td></tr><tr><td>Antivenom indications</td><td></td></tr><tr><td>Complications</td><td></td></tr><tr><td>Children vulnerability</td><td></td></tr><tr><td>Avoid (β-blockers, morphine)</td><td></td></tr><tr><td>Differential diagnosis</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Exam Answer Modes (5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Mode</th><th>Prompt</th><th>Key Points</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Long Essay**</td><td>"Scorpion envenomation"</td><td>Severe species, mechanism, autonomic storm, prazosin, AV, complications</td></tr><tr><td>**Short Note**</td><td>"Prazosin in scorpion sting"</td><td>α1-blocker, 0.5–1 mg q4–6h, counters catecholamine storm, reduces afterload, pulmonary oedema</td></tr><tr><td>**Viva**</td><td>"Why avoid β-blockers in scorpion sting?"</td><td>Unopposed α-stimulation worsens HTN, pulmonary oedema, cardiovascular collapse</td></tr><tr><td>**Ward Round**</td><td>"Child stung by scorpion, hypertensive, pulmonary oedema"</td><td>ICU, oxygen, prazosin 0.25–0.5 mg, diuretic, antivenom if available</td></tr><tr><td>**Last-Night**</td><td>"Key scorpion facts"</td><td>LATC severe; catecholamine storm; prazosin 0.5–1 mg; children highest risk; avoid β-blockers</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Most dangerous scorpion species:</b></li></ol>
+<p>A. Centruroides B. <b>Leiurus, Androctonus, Tityus, Centruroides (LATC)</b> C. Heterometrus D. Pandinus E. Scorpio maurus</p>
+<ol><li><b>Scorpion venom primary target:</b></li></ol>
+<p>A. nAChR B. <b>Voltage-gated Na⁺ and K⁺ channels (α/β-toxins)</b> C. AChE D. Ryanodine receptor E. TRP</p>
+<ol><li><b>Autonomic storm mechanism:</b></li></ol>
+<p>A. Direct myocardial depression B. <b>Massive catecholamine release (α/β adrenergic storm)</b> C. Direct pulmonary toxicity D. Anaphylaxis E. Vagal</p>
+<ol><li><b>Which is NOT typical of scorpion sting?</b></li></ol>
+<p>A. Severe local pain B. HTN, tachycardia C. Pulmonary oedema D. <b>Marked local swelling/necrosis (not typical)</b> E. Pancreatitis</p>
+<ol><li><b>SCORPION score components include all EXCEPT:</b></li></ol>
+<p>A. Age B. Local signs C. Systemic signs D. <b>Time since sting</b> E. CXR findings</p>
+<ol><li><b>Prazosin dose (adult):</b></li></ol>
+<p>A. 0.1 mg daily B. <b>0.5–1 mg q4–6h</b> C. 5 mg daily D. 10 mg q8h E. 0.05 mg/kg IV</p>
+<ol><li><b>Prazosin mechanism:</b></li></ol>
+<p>A. Antivenom adjunct B. <b>α1-blocker → counters catecholamine storm</b> C. Anticholinesterase D. Bronchodilator E. Anticonvulsant</p>
+<ol><li><b>Antivenom for scorpion sting indicated for:</b></li></ol>
+<p>A. All stings B. <b>Severe (Grade III/IV), children, prazosin unavailable</b> C. Local only D. Only if prazosin fails E. Never</p>
+<ol><li><b>Scorpion pancreatitis characteristic:</b></li></ol>
+<p>A. Rare, adult only B. <b>Common in severe envenomation, transient</b> C. Requires surgery D. Chronic E. Not associated</p>
+<ol><li><b>Highest risk group:</b></li></ol>
+<p>A. Healthy adults B. <b>Children &lt; 10 years</b> C. Elderly D. Pregnant E. Immunocompromised</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">SBA Questions (5)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>6-year-old stung by scorpion in N Africa. HTN 180/110, pulmonary oedema, agitation. Best:</b></li></ol>
+<p>A. Furosemide B. <b>Prazosin 0.5 mg PO + O₂ + ICU + consider AV</b> C. β-blocker D. Morphine E. NTG infusion</p>
+<ol><li><b>Scorpion sting, severe abdominal pain, ↑ amylase/lipase. Management:</b></li></ol>
+<p>A. Surgery B. <b>Supportive: NPO, IV fluids, analgesia, monitor (transient)</b> C. ERCP D. Octreotide E. Antibiotics</p>
+<ol><li><b>Scorpion sting, no prazosin, severe HTN, pulmonary oedema. Alternative:</b></li></ol>
+<p>A. Nifedipine B. <b>Phentolamine IV α-blocker or NTG + diuretic + O₂</b> C. β-blocker D. ACEi E. ACEi + β-blocker</p>
+<ol><li><b>Leiurus quinquestriatus (deathstalker) region:</b></li></ol>
+<p>A. South America B. <b>North Africa, Middle East</b> C. SE Asia D. Australia E. North America</p>
+<ol><li><b>Tityus serrulatus (Brazilian yellow) region:</b></li></ol>
+<p>A. North Africa B. <b>Brazil, South America</b> C. India D. Mexico E. Middle East</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[General Principles of Envenomation]]</li><li>[[Clinical Assessment and Scoring Systems]]</li><li>[[Antivenom Adverse Reactions and Management]]</li><li>[[Hymenoptera Stings (Bee, Wasp, Ant) and Anaphylaxis]]</li><li>[[Spider Bite Envenomation (Latrodectism, Loxoscelism)]]</li><li>[[Marine Envenomation (Jellyfish, Stonefish, Cone Shell, Blue-Ringed Octopus)]]</li><li>[[Envenomation MOC]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Scorpion Sting Envenomation · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

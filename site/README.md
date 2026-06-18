@@ -30,10 +30,19 @@ docker run -d --name medsea --restart unless-stopped -p 0.0.0.0:8855:8855 medsea
 vercel deploy --prod
 ```
 
-## Chapters (5 live of 32)
+## Chapters (14 live of 32)
 
 | Ch | Slug | Topics | Live |
 |---|---|---|---|
+| 1  | 1-clinical-decision-making | 6 | ✅ |
+| 2  | 2-clinical-therapeutics | 71 | ✅ |
+| 3  | 3-clinical-genetics | 6 | ✅ |
+| 4  | 4-clinical-immunology | 2 | ✅ |
+| 5  | 5-nutritional-factors | 35 | ✅ |
+| 6  | 6-population-health | 27 | ✅ |
+| 7  | 7-principles-of-infection | 26 | ✅ |
+| 8  | 8-oncology | 119 | ✅ |
+| 9  | 9-palliative-care | 51 | ✅ |
 | 15 | 15-nephrology-urology | 49 | ✅ |
 | 16 | 16-cardiology | 330 | ✅ |
 | 17 | 17-respiratory-medicine | 149 | ✅ |

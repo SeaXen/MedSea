@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bartonella Infections — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Bartonella Infections</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Bartonella species</b>: <i>B. henselae</i> (cat-scratch), <i>B. quintana</i> (trench fever, endocarditis), <i>B. bacilliformis</i> (Carrion's disease)</li><li>[ ] Recognise <b>Cat-Scratch Disease</b>: Subacute regional lymphadenopathy after cat scratch/bite</li><li>[ ] Recognise <b>Bacillary Angiomatosis/Peliosis</b>: Vascular proliferative lesions in immunocompromised (HIV)</li><li>[ ] Diagnose <b>Culture-negative endocarditis</b>: Bartonella as key cause (with Coxiella, Tropheryma, HACEK)</li><li>[ ] Manage: <b>Azithromycin</b> (cat-scratch), <b>Doxycycline + Gentamicin</b> (endocarditis), <b>Erythromycin/Doxycycline</b> (bacillary angiomatosis)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📚 Bartonella Species & Clinical Syndromes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Species</th><th>Disease</th><th>Transmission</th><th>Population</th></tr><tr><td>---------</td><td>---------</td><td>--------------</td><td>------------</td></tr><tr><td>**B. henselae**</td><td>Cat-scratch disease, bacillary angiomatosis, peliosis hepatis, endocarditis</td><td>Cat scratch/bite (fleas), cat fleas</td><td>Healthy (CSD), HIV/CD4<100 (BA)</td></tr><tr><td>**B. quintana**</td><td>Trench fever, bacillary angiomatosis, endocarditis, chronic bacteraemia</td><td>Human body louse</td><td>Homeless, alcoholics, HIV</td></tr><tr><td>**B. bacilliformis**</td><td>Carrion's disease (Oroya fever, Verruga peruana)</td><td>Sand fly (*Lutzomyia*)</td><td>Andes mountains (Peru, Ecuador, Colombia)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">🩺 Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Cat-Scratch Disease (*B. henselae*)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Incubation**</td><td>3-14 days</td></tr><tr><td>**Primary lesion**</td><td>Papule/pustule at scratch site (50-90%)</td></tr><tr><td>**Lymphadenopathy**</td><td>**Unilateral, regional**, tender, 1-5 cm (axillary, epitrochlear, cervical); suppurates in 10-30%</td></tr><tr><td>**Systemic**</td><td>Low-grade fever, malaise, anorexia</td></tr><tr><td>**Atypical**</td><td>Parinaud's oculoglandular syndrome, neuroretinitis, encephalitis, hepatitis, osteomyelitis</td></tr><tr><td>**Course**</td><td>Self-limited (2-4 months); immunocompetent</td></tr></table>
+<div class="sub-h">2. Bacillary Angiomatosis / Peliosis Hepatis (HIV, CD4&lt;100)</div>
+<table class="ctable"><tr><th>Feature</th><th>Details</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Cutaneous BA**</td><td>Red-purple papules/nodules, friable, bleed easily; mimic Kaposi sarcoma</td></tr><tr><td>**Visceral BA**</td><td>**Peliosis hepatis** (blood-filled cystic spaces in liver), spleen, nodes, bone</td></tr><tr><td>**Symptoms**</td><td>Fever, weight loss, abdominal pain, hepatosplenomegaly</td></tr><tr><td>**DDx**</td><td>Kaposi sarcoma, pyogenic granuloma, melanoma</td></tr></table>
+<div class="sub-h">3. Culture-Negative Endocarditis</div>
+<ul><li><b>B. henselae</b>, <b>B. quintana</b> → <b>Top causes</b> of culture-negative IE (with Coxiella, Tropheryma whipplei, HACEK)</li><li><b>Risk</b>: Homeless, alcoholics, cat exposure, HIV, valvular disease</li><li><b>Features</b>: Subacute, large vegetations, embolisation, negative blood cultures (standard media)</li></ul>
+<div class="sub-h">4. Trench Fever (*B. quintana*)</div>
+<ul><li><b>5-day fever</b> (quintan fever), headache, shin pain, rash, relapsing</li><li><b>Vector</b>: Body louse; associated with homelessness, poor hygiene</li></ul>
+<div class="sub-h">5. Carrion's Disease (*B. bacilliformis*)</div>
+<ul><li><b>Oroya fever</b> (acute): Severe haemolytic anaemia, fever, high mortality (40-85% untreated)</li><li><b>Verruga peruana</b> (chronic): Vascular skin nodules (angiomatous), benign</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">🔬 Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Utility</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Serology (IFA/IgG)**</td><td>**First-line**: *B. henselae/quintana*; titre ≥1:64 supportive, ≥1:256 strong evidence; cross-reactivity between species</td></tr><tr><td>**PCR** (tissue, blood, valve)</td><td>**Definitive**: High sensitivity/specificity; species differentiation</td></tr><tr><td>**Culture**</td><td>Difficult: Requires **BACTEC** or **chocolate agar + 5% CO2, 2-6 weeks**; lysis-centrifugation (Isolator) improves yield</td></tr><tr><td>**Histopathology (Warthin-Starry)**</td><td>Silver stain shows **clumps of bacilli** in vascular lesions (BA, peliosis)</td></tr><tr><td>**Echocardiography**</td><td>Valve vegetations (endocarditis)</td></tr></table>
+<div class="callout">[!tip] <b>Exam Pearl</b>: Culture-negative endocarditis + cat exposure/homeless → <b>Bartonella serology + PCR valve tissue</b>. Warthin-Starry stain for BA.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">💊 Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Regimen</th><th>Duration</th></tr><tr><td>----------</td><td>---------</td><td>----------</td></tr><tr><td>**Cat-scratch disease** (mild)</td><td>**Supportive** (analgesia, warm compresses); **Azithromycin 500mg day 1, then 250mg daily × 4d** if severe/suppurative</td><td>5 days</td></tr><tr><td>**Cat-scratch disease** (complicated: neuroretinitis, encephalitis, hepatitis)</td><td>**Doxycycline 100mg bd ± Rifampin 300mg bd**</td><td>4-6 weeks</td></tr><tr><td>**Bacillary angiomatosis** (HIV)</td><td>**Doxycycline 100mg bd** OR **Erythromycin 500mg q6h**</td><td>**3 months** (until immune reconstitution)</td></tr><tr><td>**Peliosis hepatis**</td><td>**Doxycycline 100mg bd + Rifampin 300mg bd**</td><td>4-6 months</td></tr><tr><td>**Endocarditis** (native valve)</td><td>**Doxycycline 100mg bd + Gentamicin 3mg/kg IV od**</td><td>6 weeks (gentamicin 2 weeks)</td></tr><tr><td>**Endocarditis** (prosthetic valve)</td><td>**Doxycycline 100mg bd + Gentamicin 3mg/kg IV od + Rifampin 300mg bd**</td><td>6 weeks (gentamicin 2 weeks)</td></tr><tr><td>**Trench fever**</td><td>**Doxycycline 100mg bd** OR **Azithromycin 500mg od**</td><td>7-14 days</td></tr><tr><td>**Carrion's disease (Oroya fever)**</td><td>**Ciprofloxacin 500mg bd** OR **Chloramphenicol 50mg/kg/day IV** + **blood transfusion**</td><td>7-10 days</td></tr><tr><td>**Verruga peruana**</td><td>**Azithromycin 500mg od** OR **Doxycycline 100mg bd**</td><td>7-10 days</td></tr></table>
+<div class="callout">[!warning] <b>Pregnancy</b>: Avoid doxycycline/gentamicin → use <b>Azithromycin</b> or <b>Erythromycin</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📋 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Cat-scratch disease**</td><td>Regional lymphadenopathy + cat exposure; Azithromycin short course</td></tr><tr><td>**Bacillary angiomatosis**</td><td>HIV/CD4<100; vascular skin/visceral lesions; Doxycycline × 3 months</td></tr><tr><td>**Culture-negative IE**</td><td>Bartonella (henselae/quintana) = top cause; Duke criteria + serology/PCR</td></tr><tr><td>**Diagnosis**</td><td>Serology (IFA) screening; PCR tissue/valve = definitive; Warthin-Starry for BA</td></tr><tr><td>**Vectors**</td><td>Cat flea (*Ctenocephalides felis*), body louse, sand fly</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">❓ Viva Questions (FCPS/MRCP)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the three main Bartonella species and their associated diseases?</b></li><li><b>Describe the typical presentation of cat-scratch disease. How is it diagnosed?</b></li><li><b>What is bacillary angiomatosis? In which population does it occur?</b></li><li><b>Name the top 5 causes of culture-negative endocarditis.</b></li><li><b>How do you treat Bartonella endocarditis (native vs prosthetic valve)?</b></li><li><b>What stain is used to identify Bartonella in tissue sections?</b></li><li><b>Compare Oroya fever and Verruga peruana.</b></li><li><b>A homeless alcoholic presents with culture-negative endocarditis. What organism?</b></li><li><b>How does Bartonella henselae transmission occur?</b></li><li><b>Treatment of cat-scratch disease in pregnancy?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Bartonella vs Toxoplasma lymphadenopathy**</td><td>Bartonella: cat exposure, regional nodes, suppuration; Toxoplasma: diffuse, often posterior cervical, no cat scratch history</td></tr><tr><td>**Bacillary angiomatosis vs Kaposi sarcoma**</td><td>BA: HIV/CD4<100, Bartonella PCR+, Warthin-Starry+, responds to doxycycline; KS: HHV-8, spindle cells, no antibiotic response</td></tr><tr><td>**Bartonella vs HACEK endocarditis**</td><td>Both culture-negative; Bartonella: cat/louse exposure, homeless, HIV; HACEK: dental procedures, IVDU, native valves</td></tr></table>
+<p><b>Mnemonic</b>: <b>"BARTON"</b> → <b>B</b>acillary angiomatosis (HIV), <b>A</b>ngiomatosis/peliosis, <b>R</b>egional lymphadenopathy (cat-scratch), <b>T</b>rench fever (<i>B. quintana</i>), <b>O</b>roya fever/Verruga peruana (<i>B. bacilliformis</i>), <b>N</b>egative cultures (endocarditis)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Bartonella))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Species</div>
+<div class="mm-node mm-l3">– henselae (cat)</div>
+<div class="mm-node mm-l3">– quintana (louse)</div>
+<div class="mm-node mm-l3">– bacilliformis (sand fly)</div>
+<div class="mm-node mm-l2">Syndromes</div>
+<div class="mm-node mm-l3">– Cat-scratch disease</div>
+<div class="mm-node mm-l3">– Bacillary angiomatosis</div>
+<div class="mm-node mm-l3">– Peliosis hepatis</div>
+<div class="mm-node mm-l3">– Culture-negative endocarditis</div>
+<div class="mm-node mm-l3">– Trench fever</div>
+<div class="mm-node mm-l3">– Carrion's disease</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Serology (IFA) - screen</div>
+<div class="mm-node mm-l3">– PCR - definitive</div>
+<div class="mm-node mm-l3">– Warthin-Starry stain</div>
+<div class="mm-node mm-l3">– Culture (difficult)</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– CSD: Azithro 5d</div>
+<div class="mm-node mm-l3">– BA: Doxy 3mo</div>
+<div class="mm-node mm-l3">– IE: Doxy + Gent x 6wk</div>
+<div class="mm-node mm-l3">– Oroya: Cipro/Chloramph</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📄 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Bartonella Infections**</th><th>**Key Facts**</th></tr><tr><td>---------------------------</td><td>---------------</td></tr><tr><td>**Species**</td><td>*B. henselae* (cat), *B. quintana* (louse), *B. bacilliformis* (sand fly)</td></tr><tr><td>**Cat-scratch disease**</td><td>Regional tender lymphadenopathy + cat scratch; Azithro 5d</td></tr><tr><td>**Bacillary angiomatosis**</td><td>HIV/CD4<100; vascular skin/visceral lesions; Doxy 100mg bd × 3mo</td></tr><tr><td>**Peliosis hepatis**</td><td>Blood-filled hepatic cysts; Doxy + Rifampin × 4-6mo</td></tr><tr><td>**Culture-negative IE**</td><td>Top cause (with Coxiella, Tropheryma, HACEK); Doxy + Gent × 6wk</td></tr><tr><td>**Diagnosis**</td><td>Serology (IFA) ≥1:64; **PCR tissue/valve = gold standard**; Warthin-Starry stain</td></tr><tr><td>**Trench fever**</td><td>5-day fever, shin pain, louse vector; Doxy 7-14d</td></tr><tr><td>**Carrion's disease**</td><td>Oroya fever (acute hemolysis) → Verruga peruana (skin nodules); Cipro/Chloramph</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">📊 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date</th><th>Score (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>------</td><td>-------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🧪 Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Known? (✓/✗)</th><th>Last Reviewed</th></tr><tr><td>-------</td><td>--------------</td><td>---------------</td></tr><tr><td>Three Bartonella species & diseases</td><td></td><td></td></tr><tr><td>Cat-scratch disease presentation & treatment</td><td></td><td></td></tr><tr><td>Bacillary angiomatosis vs Kaposi sarcoma</td><td></td><td></td></tr><tr><td>Culture-negative IE causes & Bartonella treatment</td><td></td><td></td></tr><tr><td>Diagnostic approach (serology vs PCR vs stain)</td><td></td><td></td></tr><tr><td>Trench fever & Carrion's disease</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🔗 Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Infectious Disease MOC]]</li><li>[[Davidson Chapter 13 - Infectious Disease Hierarchy]]</li><li>[[Infective Endocarditis]]</li><li>[[HIV Infection and AIDS]]</li><li>[[Culture-Negative Endocarditis]]</li><li>[[Cat-Scratch Disease]]</li><li>[[Immunocompromised Host Infections]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Last Updated: 2025-06-17 | Based on Davidson 24e Ch 11 | FCPS/MRCP Focused</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Bartonella Infections · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

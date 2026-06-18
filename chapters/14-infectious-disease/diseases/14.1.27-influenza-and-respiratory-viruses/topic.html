@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Influenza and Respiratory Viruses — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Influenza and Respiratory Viruses</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify influenza viruses and understand antigenic drift vs shift</li><li>Recognise clinical syndromes: uncomplicated flu, flu pneumonia, exacerbations, post-viral complications</li><li>Apply testing strategies (POC PCR, multiplex panels) and interpret results</li><li>Initiate early antiviral therapy (oseltamivir, baloxavir) in high-risk groups</li><li>Manage complications: secondary bacterial pneumonia, myocarditis, encephalitis, ARDS</li><li>Understand vaccination indications, timing, and effectiveness</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Influenza A/B/C/D</b>: Orthomyxoviridae; A and B cause human epidemics; C = mild; D = cattle</li><li><b>Influenza A subtypes</b>: Defined by HA (H1–H18) and NA (N1–N11); current seasonal = H1N1, H3N2</li><li><b>Antigenic drift</b>: Point mutations in HA/NA → seasonal epidemics</li><li><b>Antigenic shift</b>: Reassortment of gene segments → novel subtype → pandemic potential</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Core Microbiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Virus</th><th>Family</th><th>Key Features</th></tr><tr><td>-------</td><td>--------</td><td>--------------</td></tr><tr><td>**Influenza A**</td><td>Orthomyxoviridae</td><td>Pandemics, avian/swine reservoirs, H1N1/H3N2 seasonal</td></tr><tr><td>**Influenza B**</td><td>Orthomyxoviridae</td><td>No pandemics, two lineages (Victoria, Yamagata), seasonal</td></tr><tr><td>**RSV**</td><td>Pneumoviridae</td><td>Bronchiolitis in infants, severe in elderly/immunocompromised</td></tr><tr><td>**hMPV**</td><td>Pneumoviridae</td><td>RSV-like, all ages, winter/spring</td></tr><tr><td>**Parainfluenza 1–4**</td><td>Paramyxoviridae</td><td>Croup (PIV-1,2), bronchiolitis (PIV-3), year-round</td></tr><tr><td>**Adenovirus**</td><td>Adenoviridae</td><td>Pharyngoconjunctival fever, pneumonia (types 3, 4, 7, 14), military recruits</td></tr><tr><td>**Seasonal coronaviruses**</td><td>Coronaviridae</td><td>OC43, 229E, NL63, HKU1 — common cold, sometimes LRTI</td></tr><tr><td>**SARS-CoV-2**</td><td>Coronaviridae</td><td>COVID-19 — separate chapter</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Normal Values / Important Cut-offs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Threshold</th><th>Significance</th></tr><tr><td>-----------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Rapid antigen test sensitivity**</td><td>50–70%</td><td>High specificity; **negative does not rule out**</td></tr><tr><td>**RT-PCR / multiplex PCR**</td><td>Sensitivity >95%</td><td>Gold standard; detects co-infections</td></tr><tr><td>**Oseltamivir window**</td><td>**≤48h from onset**</td><td>Max benefit; still consider if severe/hospitalised >48h</td></tr><tr><td>**Baloxavir window**</td><td>≤48h</td><td>Single dose; active against oseltamivir-resistant strains</td></tr><tr><td>**Vaccine effectiveness**</td><td>40–60% (good match)</td><td>Lower in elderly; reduces severity/hospitalisation</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Syndromes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome</th><th>Features</th><th>Key Viruses</th></tr><tr><td>----------</td><td>----------</td><td>-------------</td></tr><tr><td>**Uncomplicated influenza**</td><td>Abrupt fever, myalgia, headache, dry cough, sore throat, fatigue</td><td>Influenza A/B</td></tr><tr><td>**Influenza pneumonia**</td><td>Primary viral pneumonia — dyspnoea, hypoxia, bilateral infiltrates</td><td>Influenza A (H1N1, H3N2, avian)</td></tr><tr><td>**Exacerbation of chronic disease**</td><td>COPD/asthma/heart failure decompensation</td><td>Influenza, RSV, hMPV</td></tr><tr><td>**Croup**</td><td>Barking cough, stridor, hoarseness — children</td><td>Parainfluenza 1, 2, 3</td></tr><tr><td>**Bronchiolitis**</td><td>Wheeze, crackles, respiratory distress <2y</td><td>RSV, hMPV, PIV-3</td></tr><tr><td>**Post-influenza bacterial pneumonia**</td><td>Biphasic illness: flu → improvement → fever/cough/purulent sputum</td><td>*S. pneumoniae*, *S. aureus*, *H. influenzae*</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Approach / Algorithm</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Acute respiratory illness +/- fever</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Severe? Hypoxia, haemodynamic instability, altered mental status</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE, O2, IV access, lactate, CXR, blood cultures, multiplex PCR, start oseltamivir + empirical CAP antibiotics</div>
+<div class="fc-node" data-id="D">High-risk for complications?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Admit; monitor for bacterial superinfection</div>
+<div class="fc-node" data-id="E">Multiplex PCR nose/throat swab; start oseltamivir if ≤48h or hospitalised</div>
+<div class="fc-node" data-id="F">Clinical diagnosis OK; supportive care; oseltamivir if ≤48h and wish to shorten duration</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Review PCR at 24-48h; de-escalate antibiotics if viral only</div>
+</div>
+</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Investigations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Interpretation</th></tr><tr><td>------</td><td>------------</td><td>----------------</td></tr><tr><td>**Multiplex respiratory PCR** (nose/throat swab)</td><td>Hospitalised, immunocompromised, high-risk, outbreak investigation</td><td>Detects 15–25 pathogens; co-infection 5–10%</td></tr><tr><td>**POC rapid antigen (flu/RSV/SARS-CoV-2)**</td><td>ED, primary care, triage</td><td>Fast (15 min); **low sensitivity** — negative ≠ rule out</td></tr><tr><td>**Viral culture**</td><td>Reference lab, surveillance</td><td>Slow (days); not for clinical management</td></tr><tr><td>**Serology (paired acute/convalescent)**</td><td>Retrospective diagnosis, surveillance</td><td>Not acute management</td></tr><tr><td>**CXR**</td><td>Suspected pneumonia</td><td>Influenza: bilateral interstitial/ground-glass; bacterial superinfection: lobar consolidation</td></tr><tr><td>**Procalcitonin**</td><td>Distinguish viral vs bacterial; guide antibiotics</td><td>Low (<0.25) supports viral; high (>0.5) suggests bacterial co-infection</td></tr><tr><td>**Full blood count**</td><td>All</td><td>Lymphopenia common in influenza; neutrophilia suggests bacterial</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Antiviral Therapy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Window</th><th>Key Points</th></tr><tr><td>------</td><td>------</td><td>--------</td><td>------------</td></tr><tr><td>**Oseltamivir**</td><td>75mg BD PO ×5d (adult); renal adjust</td><td>≤48h ideal; **still give if hospitalised/severe >48h**</td><td>Reduces duration 1–2d, complications, mortality in hospitalised; nausea common</td></tr><tr><td>**Baloxavir marboxil**</td><td>40mg (<80kg) or 80mg (≥80kg) single dose PO</td><td>≤48h</td><td>Cap-dependent endonuclease inhibitor; single dose; active vs oseltamivir-resistant; not in pregnancy/severe immunosuppression</td></tr><tr><td>**Zanamivir**</td><td>10mg (2 inhalations) BD ×5d</td><td>≤48h</td><td>Inhaled; avoid in asthma/COPD (bronchospasm risk)</td></tr><tr><td>**Peramivir**</td><td>600mg IV single dose</td><td>≤48h</td><td>IV option; renal adjust</td></tr></table>
+<div class="callout">[!important] <b>Oseltamivir in severe/hospitalised influenza: give regardless of time since onset</b> — observational data show mortality benefit even &gt;48h. <b>Dose: 75mg BD; consider 150mg BD in critically ill/ICU (off-label, some guidelines).</b></div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">High-Risk Groups for Antivirals (Treat Empirically)</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Age ≥65 or &lt;2 years</li><li>Pregnancy / ≤2 weeks postpartum</li><li>Chronic pulmonary (COPD, asthma), cardiac, renal, hepatic, haematological, metabolic (diabetes), neurological/neuromuscular</li><li>Immunosuppression (HIV, transplant, chemo, steroids ≥20mg prednisolone/day)</li><li>BMI ≥40</li><li>Nursing home residents</li><li><b>All hospitalised patients with suspected/confirmed influenza</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Features</th><th>Management</th></tr><tr><td>--------------</td><td>----------</td><td>------------</td></tr><tr><td>**Primary viral pneumonia**</td><td>Progressive dyspnoea, hypoxia, bilateral ground-glass — high mortality</td><td>ICU, oseltamivir, supportive; corticosteroids controversial (avoid routine)</td></tr><tr><td>**Secondary bacterial pneumonia**</td><td>Biphasic: flu → improvement → recrudescence fever/purulent sputum; **S. pneumoniae, S. aureus (MRSA), H. influenzae**</td><td>Empirical antibiotics covering above; CXR consolidation</td></tr><tr><td>**Myositis/rhabdomyolysis**</td><td>Severe calfpain, elevated CK, myoglobinuria</td><td>Hydration, monitor renal function</td></tr><tr><td>**Myocarditis/pericarditis**</td><td>Chest pain, elevated troponin, ECG changes, arrhythmia</td><td>Supportive, cardiology input</td></tr><tr><td>**Encephalitis/encephalopathy**</td><td>Altered mental status, seizures — esp. children</td><td>ICU, oseltamivir IV (if available), supportive</td></tr><tr><td>**ARDS**</td><td>Refractory hypoxia, bilateral infiltrates</td><td>Lung-protective ventilation, prone, ECMO if refractory</td></tr><tr><td>**Reye syndrome**</td><td>**Aspirin in children + viral illness** → hepatic encephalopathy</td><td>**Avoid aspirin <16y**; stavudine?</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Red Flags / Emergencies</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Hypoxia (SpO₂ &lt;92%)</b> → admit, oxygen, consider HFNC/NIV/ICU</li><li><b>Haemodynamic instability</b> → septic shock protocol</li><li><b>Altered mental status</b> → consider encephalitis, treat empirically</li><li><b>Rapid progression</b> → primary viral pneumonia or bacterial superinfection</li><li><b>Immunocompromised + respiratory symptoms</b> → low threshold for admission, multiplex PCR, early antivirals</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Distinguishing Features</th></tr><tr><td>-----------</td><td>------------------------</td></tr><tr><td>**COVID-19**</td><td>Anosmia/ageusia, longer incubation, higher thrombosis risk, multiplex PCR distinguishes</td></tr><tr><td>**CAP (bacterial)**</td><td>Lobar consolidation, high procalcitonin, neutrophilia, purulent sputum from onset</td></tr><tr><td>**Atypical pneumonia**</td><td>Mycoplasma, Legionella, Chlamydia — subacute, extrapulmonary features</td></tr><tr><td>**Pulmonary embolism**</td><td>Sudden dyspnoea, pleuritic pain, risk factors, CTI D-dimer/CTPA</td></tr><tr><td>**Heart failure**</td><td>Orthopnoea, PND, elevated BNP, fluid overload signs</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Situation</th><th>Management</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Pregnancy**</td><td>Oseltamivir 75mg BD ×5d (category C, but benefit > risk); baloxavir contraindicated; vaccinate any trimester</td></tr><tr><td>**Immunocompromised**</td><td>PCR testing mandatory; oseltamivir 75mg BD ×10d (prolonged); consider IV peramivir; monitor for prolonged shedding/resistance</td></tr><tr><td>**Renal impairment**</td><td>Oseltamivir: CrCl 10–30 → 30mg BD; CrCl <10 → 30mg OD; dialysis → 30mg post-HD</td></tr><tr><td>**Oseltamivir resistance (H275Y)**</td><td>Rare in current strains; if suspected → baloxavir or IV zanamivir/peramivir</td></tr><tr><td>**Outbreak in care home**</td><td>Treat all symptomatic + post-exposure prophylaxis for contacts (oseltamivir 75mg OD ×10d)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Influenza A vs B</b>: A = pandemics, avian reservoirs, H1N1/H3N2; B = two lineages, no pandemics</li><li><b>Antigenic drift vs shift</b>: drift = point mutations (seasonal); shift = reassortment (pandemic)</li><li><b>Oseltamivir window</b>: ≤48h for outpatients; <b>give to all hospitalised regardless of timing</b></li><li><b>High-risk groups for antivirals</b>: age extremes, pregnancy, chronic disease, immunosuppression, obesity</li><li><b>Secondary bacterial pneumonia</b>: biphasic illness — <i>S. pneumoniae</i> &gt; <i>S. aureus</i> &gt; <i>H. influenzae</i></li><li><b>Procalcitonin</b>: low = viral; high = bacterial co-infection — guides antibiotics</li><li><b>Vaccine</b>: quadrivalent (2A + 2B); annual; effectiveness 40–60%; reduces severity even if mismatch</li><li><b>Baloxavir</b>: single dose; not in pregnancy/severe immunosuppression; active vs oseltamivir-resistant</li><li><b>Reye syndrome</b>: aspirin + viral illness in children — <b>avoid aspirin &lt;16y</b></li><li><b>Multiplex PCR</b>: gold standard; detects co-infections; preferred over rapid antigen for hospitalised</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>When do you give oseltamivir &gt;48h after symptom onset?</b> Hospitalised patients, severe disease, immunocompromised — observational mortality benefit.</li><li><b>What is the typical CXR finding in primary influenza pneumonia?</b> Bilateral interstitial/ground-glass infiltrates (ARDS pattern).</li><li><b>Name three bacterial pathogens causing post-influenzal pneumonia.</b> <i>S. pneumoniae</i>, <i>S. aureus</i> (including MRSA), <i>H. influenzae</i>.</li><li><b>How does baloxavir differ from oseltamivir?</b> Single dose, cap-dependent endonuclease inhibitor, active vs oseltamivir-resistant strains, not in pregnancy.</li><li><b>What is Reye syndrome and how is it prevented?</b> Aspirin in children with viral illness → hepatic encephalopathy; avoid aspirin &lt;16y.</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Rapid antigen negative = no flu</td><td>Sensitivity 50–70% — **never rule out based on negative antigen**; PCR if high suspicion</td></tr><tr><td>Oseltamivir only if ≤48h</td><td>**Hospitalised/severe: give regardless of timing**</td></tr><tr><td>Influenza B milder than A</td><td>Can be equally severe; both cause hospitalisation/death</td></tr><tr><td>Vaccine prevents all flu</td><td>Effectiveness 40–60%; mismatch years lower; still reduces severity</td></tr><tr><td>Baloxavir for everyone</td><td>Contraindicated in pregnancy, severe immunosuppression, <5y (some regions)</td></tr><tr><td>Secondary pneumonia = same as CAP</td><td>Biphasic history key; different empiric cover (add MRSA if recent flu)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>FLU HIGH-RISK</b>: <b>F</b>lu season, <b>L</b>ungs (COPD/asthma), <b>U</b> (immunocompromised), <b>H</b>eart disease, <b>I</b>mportant (pregnancy), <b>G</b>lucose (diabetes), <b>H</b>eavy (BMI≥40), <b>R</b>enal failure, <b>I</b>nfants/elderly, <b>S</b>teroids, <b>K</b>ids in care homes</li><li><b>ANTIVIRALS</b>: <b>A</b>bilify? no — <b>A</b>gent (oseltamivir/baloxavir), <b>N</b>ephro adjust, <b>T</b>ime (≤48h ideal but hospitalised anyway), <b>I</b>CU (higher dose considered), <b>V</b>accine annually, <b>I</b>mmunocompromised (longer course), <b>R</b>esistance rare (H275Y), <b>A</b>spirin avoid &lt;16y, <b>L</b>actation OK, <b>S</b>econdary bacterial pneumonia</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Influenza &amp; Respiratory Viruses))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Influenza</div>
+<div class="mm-node mm-l3">– A (pandemics, H1N1/H3N2)</div>
+<div class="mm-node mm-l3">– B (Victoria/Yamagata)</div>
+<div class="mm-node mm-l3">– Drift vs Shift</div>
+<div class="mm-node mm-l2">Other Viruses</div>
+<div class="mm-node mm-l3">– RSV</div>
+<div class="mm-node mm-l3">– hMPV</div>
+<div class="mm-node mm-l3">– Parainfluenza</div>
+<div class="mm-node mm-l3">– Adenovirus</div>
+<div class="mm-node mm-l3">– Seasonal CoV</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Uncomplicated</div>
+<div class="mm-node mm-l3">– Viral pneumonia</div>
+<div class="mm-node mm-l3">– Exacerbations</div>
+<div class="mm-node mm-l3">– Croup/Bronchiolitis</div>
+<div class="mm-node mm-l3">– Post-viral bacterial</div>
+<div class="mm-node mm-l2">Diagnosis</div>
+<div class="mm-node mm-l3">– Multiplex PCR (gold)</div>
+<div class="mm-node mm-l3">– Rapid Ag (low sens)</div>
+<div class="mm-node mm-l3">– Procalcitonin</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Oseltamivir (BD x5d)</div>
+<div class="mm-node mm-l3">– Baloxavir (single dose)</div>
+<div class="mm-node mm-l3">– Zanamivir/Peramivir</div>
+<div class="mm-node mm-l3">– High-risk groups</div>
+<div class="mm-node mm-l2">Complications</div>
+<div class="mm-node mm-l3">– Viral pneumonia</div>
+<div class="mm-node mm-l3">– Bacterial superinfection</div>
+<div class="mm-node mm-l3">– Myocarditis/Encephalitis</div>
+<div class="mm-node mm-l3">– Reye syndrome</div>
+<div class="mm-node mm-l2">Prevention</div>
+<div class="mm-node mm-l3">– Quadrivalent vaccine</div>
+<div class="mm-node mm-l3">– Antiviral prophylaxis</div>
+</div>
+</div>
+<p><i>...continued (truncated to 200 lines for renderer)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Influenza and Respiratory Viruses · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

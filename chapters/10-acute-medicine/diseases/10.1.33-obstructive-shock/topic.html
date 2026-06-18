@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Obstructive Shock — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">ACUTE MEDICINE AND CRITICAL ILLNESS</span>
+      <div class="h1">Obstructive Shock</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise the three main causes of obstructive shock</li><li>Use bedside ultrasound for rapid diagnosis</li><li>Know the specific interventions for each cause</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Main Causes</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Massive Pulmonary Embolism</b></li><li><b>Cardiac Tamponade</b></li><li><b>Tension Pneumothorax</b></li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Differentiation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Massive PE</th><th>Tamponade</th><th>Tension PTX</th></tr><tr><td>----------------------</td><td>---------------------</td><td>---------------------</td><td>---------------------</td></tr><tr><td>JVP</td><td>Raised</td><td>Raised</td><td>Raised</td></tr><tr><td>Heart sounds</td><td>Loud P2</td><td>Muffled</td><td>Normal</td></tr><tr><td>Trachea</td><td>Central</td><td>Central</td><td>Deviated</td></tr><tr><td>Breath sounds</td><td>Normal</td><td>Normal</td><td>Reduced</td></tr><tr><td>Pulsus paradoxus</td><td>Possible</td><td>Present</td><td>Possible</td></tr><tr><td>Bedside US</td><td>RV strain</td><td>Pericardial effusion</td><td>Lung sliding absent</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<p><b>Massive PE</b></p>
+<ul><li>Thrombolysis (alteplase) if unstable</li><li>Consider ECMO or surgical embolectomy</li></ul>
+<p><b>Cardiac Tamponade</b></p>
+<ul><li>Urgent pericardiocentesis</li><li>Fluid bolus while preparing</li></ul>
+<p><b>Tension Pneumothorax</b></p>
+<ul><li>Immediate needle decompression (2nd ICS mid-clavicular line)</li><li>Followed by chest drain</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Tension pneumothorax is a <b>clinical diagnosis</b> — do not wait for CXR</li><li>Tamponade shows <b>pulsus paradoxus</b> and electrical alternans</li><li>Massive PE often has clear lungs despite severe shock</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>How do you differentiate the causes of obstructive shock?</li><li>What is the immediate management of tension pneumothorax?</li><li>When would you give thrombolysis in PE?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Obstructive = mechanical blockage</b> PE → thrombolysis Tamponade → pericardiocentesis Tension PTX → needle decompression (clinical diagnosis)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Three causes: massive PE, cardiac tamponade, tension pneumothorax</li><li>All cause raised JVP (obstructed venous return)</li><li>Tension PTX = clinical diagnosis (don't wait for CXR)</li><li>Immediate interventions: PE=thrombolysis, Tamponade=pericardiocentesis, Tension PTX=needle decompression</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Beck's triad (tamponade): hypotension, raised JVP, muffled heart sounds</li><li>Pulsus paradoxus &gt;10 mmHg in tamponade (also severe asthma, PE)</li><li>RV strain on echo = massive PE</li><li>Electrical alternans on ECG = tamponade (large effusion)</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Surgical pericardial window vs pericardiocentesis</li><li>VA-ECMO for massive PE</li><li>REBOA not for obstructive shock</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Obstructive shock is caused by:</li></ol>
+<p>A. Pump failure B. <b>Mechanical obstruction to blood flow</b> C. Vasodilatation D. Hypovolaemia</p>
+<ol><li>Three main causes of obstructive shock:</li></ol>
+<p>A. PE, Tamponade, Tension PTX B. MI, PE, Tamponade C. PE, Sepsis, Tension PTX D. MI, Sepsis, Anaphylaxis</p>
+<ol><li>Tension pneumothorax — JVP:</li></ol>
+<p>A. Low B. <b>Raised</b> (impaired venous return) C. Normal D. Not assessable</p>
+<ol><li>Tension pneumothorax — trachea:</li></ol>
+<p>A. Central B. <b>Deviated AWAY from affected side</b> C. Deviated TOWARDS affected side D. Not displaced</p>
+<ol><li>Tension pneumothorax — immediate management:</li></ol>
+<p>A. Chest X-ray first B. <b>Needle decompression 2nd ICS mid-clavicular line</b> (clinical diagnosis) C. Chest drain only C. Intubate first</p>
+<ol><li>Cardiac tamponade — Beck's triad:</li></ol>
+<p>A. Hypertension, raised JVP, loud heart sounds B. <b>Hypotension, raised JVP, muffled heart sounds</b> C. Hypotension, low JVP, muffled sounds D. Hypertension, low JVP, loud sounds</p>
+<ol><li>Pulsus paradoxus &gt;10 mmHg seen in:</li></ol>
+<p>A. Only tamponade B. <b>Tamponade, severe asthma, massive PE, obstructive airway</b> C. Only PE C. Only asthma</p>
+<ol><li>Massive PE on bedside echo:</li></ol>
+<p>A. LV dilation B. <b>RV dilation/strains (RV/LV &gt;1), McConnell's sign</b> C. Pericardial effusion D. Normal</p>
+<ol><li>Electrical alternans on ECG suggests:</li></ol>
+<p>A. Massive PE B. <b>Cardiac tamponade</b> (large effusion swinging heart) C. Tension PTX D. MI</p>
+<ol><li>Tension pneumothorax — breath sounds:</li></ol>
+<p>A. Normal B. <b>Reduced/absent on affected side</b> C. Bronchial breathing D. Wheeze only</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 25-year-old trauma, sudden hypotension, trachea deviated right, absent breath sounds left. Immediate action:</li></ol>
+<p>A. Chest X-ray B. <b>Needle decompression left 2nd ICS mid-clavicular line</b> C. Chest drain left side D. Intubate</p>
+<ol><li>A 60-year-old with metastatic cancer, dyspnoea, hypotension, raised JVP, muffled heart sounds, pulsus paradoxus 20 mmHg. Echo: large pericardial effusion. Best management:</li></ol>
+<p>A. IV fluids only B. <b>Urgent pericardiocentesis</b> C. Pericardial window surgery D. Diuretics</p>
+<ol><li>A 40-year-old sudden dyspnoea, hypotension, clear lungs, raised JVP, loud P2, RV dilation on echo. Most likely:</li></ol>
+<p>A. Tamponade B. <b>Massive PE</b> C. Tension PTX D. Cardiogenic shock</p>
+<ol><li>Massive PE with hypotension (SBP 80/50) — thrombolysis:</li></ol>
+<p>A. Contraindicated B. <b>Indicated (alteplase 100mg over 2h)</b> if no contraindication C. Only after CT D. Never</p>
+<ol><li>Tension PTX needle decompression — site:</li></ol>
+<p>A. 4th ICS mid-axillary B. <b>2nd ICS mid-clavicular line</b> C. 5th ICS mid-axillary D. Anywhere</p>
+<ol><li>A patient with hypotension, raised JVP, Kussmaul's sign, clear lungs. Echo: RV dilation, IVC dilated non-collapsing. Diagnosis:</li></ol>
+<p>A. Tamponade B. <b>Constrictive pericarditis</b> (or RV failure — but think obstructive) C. PE D. Tension PTX</p>
+<ol><li>Pericardiocentesis — approach:</li></ol>
+<p>A. Left parasternal B. <b>Subxiphoid (echo-guided preferred)</b> C. Right parasternal D. Apical</p>
+<ol><li>Massive PE — contraindication to thrombolysis:</li></ol>
+<p>A. Age &gt;70 B. <b>Active bleeding, recent stroke, surgery &lt;2 weeks</b> C. Hypertension D. Renal impairment</p>
+<ol><li>Pulsus paradoxus measurement:</li></ol>
+<p>A. SBP difference &gt;10 mmHg between inspiration/expiration B. DBP difference C. Pulse rate difference D. MAP difference</p>
+<ol><li>A patient with known pericardial effusion develops sudden hypotension, muffled sounds, electrical alternans. Next:</li></ol>
+<p>A. Observe B. <b>Emergency pericardiocentesis</b> C. Start noradrenaline D. CT chest</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Obstructive shock causes</li></ul>
+<p>A: Massive PE, Cardiac tamponade, Tension pneumothorax</p>
+<ul><li>Q: Tension PTX — clinical dx</li></ul>
+<p>A: Don't wait for CXR — needle decompress 2nd ICS mid-clavicular</p>
+<ul><li>Q: Tamponade — Beck's triad</li></ul>
+<p>A: Hypotension + raised JVP + muffled heart sounds</p>
+<ul><li>Q: Tamponade — pulsus paradoxus</li></ul>
+<p>A: &gt;10 mmHg drop SBP on inspiration</p>
+<ul><li>Q: Massive PE — echo</li></ul>
+<p>A: RV dilation (RV/LV &gt;1), McConnell's sign</p>
+<ul><li>Q: Electrical alternans</li></ul>
+<p>A: Tamponade (large effusion)</p>
+<ul><li>Q: PE thrombolysis</li></ul>
+<p>A: Alteplase 100mg over 2h if unstable</p>
+<ul><li>Q: All obstructive shock = raised JVP</li></ul>
+<p>A: Yes (venous return obstructed)</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Mechanical obstruction to flow. <b>MCQ 2</b>: A — PE, Tamponade, Tension PTX. <b>MCQ 3</b>: B — JVP raised (venous return blocked). <b>MCQ 4</b>: B — Trachea deviated AWAY from tension PTX. <b>MCQ 5</b>: B — Clinical diagnosis, immediate needle decompression. <b>MCQ 6</b>: B — Beck's: hypotension, raised JVP, muffled sounds. <b>MCQ 7</b>: B — Tamponade, severe asthma, PE, obstructive airway. <b>MCQ 8</b>: B — RV strain (RV/LV &gt;1), McConnell's sign (RV free wall akinesis with apex sparing). <b>MCQ 9</b>: B — Electrical alternans = tamponade (Swinging heart in large effusion). <b>MCQ 10</b>: B — Reduced/absent breath sounds on affected side.</p>
+<p><b>SBA 1</b>: B — Trauma + tracheal deviation + absent breath sounds = tension PTX → immediate needle decompression. <b>SBA 2</b>: B — Tamponade with pulsus paradoxus + hypotension = urgent pericardiocentesis. <b>SBA 3</b>: B — Hypotension + clear lungs + raised JVP + RV dilation = massive PE. <b>SBA 4</b>: B — Unstable massive PE = thrombolysis if no contraindication. <b>SBA 5</b>: B — 2nd ICS mid-clavicular line for needle decompression. <b>SBA 6</b>: B — Kussmaul's + RV dilation + clear lungs = constrictive or RV failure (obstructive physiology). <b>SBA 7</b>: B — Subxiphoid echo-guided preferred for pericardiocentesis. <b>SBA 8</b>: B — Active bleeding, recent stroke, recent surgery = absolute contraindications. <b>SBA 9</b>: A — SBP drop &gt;10 mmHg on inspiration. <b>SBA 9</b>: B — Electrical alternans + tamponade signs = emergency pericardiocentesis.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Obstructive Shock · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

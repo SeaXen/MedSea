@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pelvic Inflammatory Disease (PID) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">SEXUALLY TRANSMITTED INFECTIONS</span>
+      <div class="h1">Pelvic Inflammatory Disease (PID)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Apply clinical diagnostic criteria (CDC minimal vs enhanced)</li><li>Initiate empirical treatment immediately upon suspicion</li><li>Differentiate PID from mimics (appendicitis, ectopic pregnancy, ovarian torsion)</li><li>Manage severe PID (hospitalisation, IV antibiotics, surgical complications)</li><li>Implement partner management and follow-up</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition and Pathogenesis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>PID</b> = inflammation of upper female genital tract (endometrium, fallopian tubes, ovaries, pelvic peritoneum)</li><li><b>Ascending infection</b>: Cervix → Endometrium → Fallopian tubes → Peritoneum</li><li><b>Aetiology</b>: Polymicrobial — sexually transmitted (GC, CT, M. genitalium) + endogenous (anaerobes, G. vaginalis, Enterobacteriaceae, Strep)</li><li><b>Risk factors</b>: Young age, multiple partners, new partner, IUD (first 3 weeks), prior PID, STI history, douching</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Diagnostic Criteria (CDC / BASHH)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Minimal Criteria (Treat if ANY present + lower genital tract inflammation)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Description</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**Cervical motion tenderness** (chandelier sign)</td><td>Pain on moving cervix</td></tr><tr><td>**Uterine tenderness**</td><td>Adnexal/uterine tenderness on bimanual exam</td></tr><tr><td>**Adnexal tenderness**</td><td>Ovarian/tubal tenderness</td></tr></table>
+<div class="callout"><b>PLUS</b>: Evidence of lower genital tract inflammation (cervical mucopus, +ve NAAT GC/CT, raised WBC, ESR/CRP)</div>
+<div class="sub-h">Enhanced Criteria (Increase Specificity)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Threshold</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Fever**</td><td>>38.3°C</td></tr><tr><td>**Abnormal cervical/vaginal discharge**</td><td>Mucopus, NAAT +ve</td></tr><tr><td>**Raised inflammatory markers**</td><td>ESR >30, CRP >20, WBC >10</td></tr><tr><td>**Imaging**</td><td>Transvaginal US: thickened tubes >6mm, fluid in cul-de-sac, tubo-ovarian complex</td></tr><tr><td>**Laparoscopy**</td><td>Purulent material, friable tubes, adhesions (gold standard)</td></tr></table>
+<div class="callout"><b>Clinical judgment paramount</b> — "Low threshold for treatment" as delay = infertility/ectopic</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Key Differentiators</th></tr><tr><td>-----------</td><td>---------------------</td></tr><tr><td>**Acute appendicitis**</td><td>RLQ pain, migration from periumbilical, no cervical motion tenderness, no discharge</td></tr><tr><td>**Ectopic pregnancy**</td><td>+ve pregnancy test, vaginal bleeding, adnexal mass, pain lateralised</td></tr><tr><td>**Ovarian torsion**</td><td>Sudden severe unilateral pain, nausea/vomiting, no fever/discharge</td></tr><tr><td>**Endometriosis**</td><td>Chronic cyclic pain, dysmenorrhoea, dyspareunia, no acute fever</td></tr><tr><td>**Ovarian cyst rupture**</td><td>Sudden pain, often mid-cycle, no cervical tenderness</td></tr><tr><td>**Diverticulitis**</td><td>LLQ pain, bowel symptoms, no cervical tenderness</td></tr><tr><td>**IUD complication**</td><td>Actinomycosis, perforation; recent insertion?</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Empirical Treatment (Immediate — Do Not Delay for Results)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Outpatient (Mild–Moderate PID)</div>
+<table class="ctable"><tr><th>Regimen</th><th>Dose</th><th>Duration</th></tr><tr><td>---------</td><td>------</td><td>----------</td></tr><tr><td>**1st-line (BASHH/CDC)**</td><td>**Ceftriaxone 500mg IM single dose** + **Doxycycline 100mg BD PO** + **Metronidazole 400mg BD PO**</td><td>14 days</td></tr><tr><td>**Alternative (if cephalosporin allergy)**</td><td>**Gentamicin 240mg IM single dose** + **Metronidazole 400mg BD PO** + **Doxycycline 100mg BD PO**</td><td>14 days</td></tr><tr><td>**Alternative (if metronidazole intolerant)**</td><td>Ceftriaxone 500mg IM + Doxycycline 100mg BD (no metronidazole if anaerobic cover not needed)</td><td>14 days</td></tr></table>
+<div class="callout"><b>Doxycycline 14d</b> = critical for C. trachomatis + M. genitalium + anaerobes</div>
+<div class="sub-h">Inpatient (Severe PID / Tubo-Ovarian Abscess / Pregnancy / Failed Outpatient)</div>
+<table class="ctable"><tr><th>Regimen</th><th>Dose</th><th>Duration</th></tr><tr><td>---------</td><td>------</td><td>----------</td></tr><tr><td>**IV 1st-line**</td><td>**Ceftriaxone 2g IV q12h** + **Doxycycline 100mg BD PO/IV** + **Metronidazole 500mg IV q8h**</td><td>24h after clinical improvement → switch to outpatient regimen to complete 14d</td></tr><tr><td>**Alternative**</td><td>**Clindamycin 900mg IV q8h + Gentamicin 2mg/kg IV q8h** (or 5mg/kg q24h)</td><td>24h after improvement → switch</td></tr></table>
+<div class="callout"><b>Switch criteria</b>: Afebrile 24h, improving pain, tolerating oral → complete 14d total</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Specific Clinical Scenarios</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Tubo-Ovarian Abscess (TOA)</div>
+<ul><li><b>Diagnosis</b>: Ultrasound (complex adnexal mass, thick walls, septations) / CT / MRI</li><li><b>Management</b>: <b>IV antibiotics + drainage</b> (image-guided percutaneous) if &gt;5cm or failing antibiotics</li><li><b>Surgery</b>: Laparoscopic salpingo-oophorectomy if ruptured / failing medical management</li><li><b>Duration</b>: 14 days IV + possible extended course</li></ul>
+<div class="sub-h">Fitz-Hugh-Curtis Syndrome (Perihepatitis)</div>
+<ul><li><b>Features</b>: RUQ pain, pleural rub, "violin string" adhesions on laparoscopy</li><li><b>Pathogens</b>: GC, CT</li><li><b>Treatment</b>: Standard PID regimen</li></ul>
+<div class="sub-h">PID in Pregnancy</div>
+<ul><li><b>Rare</b> (cervical mucus plug protective)</li><li><b>High risk</b>: Preterm labour, sepsis, fetal loss</li><li><b>Antibiotics</b>: Ceftriaxone + Azithromycin (avoid doxycycline/metronidazole in 1st trimester)</li><li><b>Admit</b>: IV therapy, obstetric review</li></ul>
+<div class="sub-h">IUD and PID</div>
+<ul><li><b>Risk</b>: Highest in first 3 weeks post-insertion (Actinomyces, GC, CT)</li><li><b>Management</b>: <b>Do NOT routinely remove IUD</b> if mild PID; treat antibiotics, remove if no improvement 48–72h</li><li><b>Actinomyces</b>: Penicillin G IV × 2w → Amoxicillin PO × 6–12m</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Partner Management</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>All partners within 6 months</b> (GC/CT) should be notified, tested, treated empirically</li><li><b>Expedited Partner Therapy (EPT)</b>: Provide medication for partners without clinical assessment</li><li><b>Abstain</b> until both partners completed treatment + 7 days</li><li><b>Test of cure</b>: Not routine; if symptoms persist → repeat NAAT, consider reinfection/resistance</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications and Sequelae</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Frequency (Untreated)</th></tr><tr><td>--------------</td><td>----------------------</td></tr><tr><td>**Infertility** (tubal factor)</td><td>10–15% after 1 episode; ↑ with recurrences</td></tr><tr><td>**Ectopic pregnancy**</td><td>6–10x risk; tubal damage</td></tr><tr><td>**Chronic pelvic pain**</td><td>18–30%</td></tr><tr><td>**Tubo-ovarian abscess**</td><td>5–15% of hospitalised PID</td></tr><tr><td>**Fitz-Hugh-Curtis**</td><td>~5–10%</td></tr><tr><td>**Sepsis / peritonitis**</td><td>Rare with prompt treatment</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Follow-Up</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Timepoint</th><th>Action</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**48–72h**</td><td>Clinical review (outpatient); should be improving</td></tr><tr><td>**2 weeks**</td><td>End of treatment review; symptom resolution</td></tr><tr><td>**4–6 weeks**</td><td>Test of cure (NAAT GC/CT) if symptoms persist; reinfection screen</td></tr><tr><td>**6 months**</td><td>Reinfection screen (high recurrence risk)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Points</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>PID = clinical diagnosis</b> — low threshold for treatment</li><li><b>Minimal criteria</b>: Cervical motion/uterine/adnexal tenderness + inflammation</li><li><b>Empirical Rx</b>: Ceftriaxone IM + Doxycycline 14d + Metronidazole 14d</li><li><b>Inpatient</b>: IV Ceftriaxone + Doxycycline + Metronidazole</li><li><b>Doxycycline 14d essential</b> (CT, M. genitalium, anaerobes)</li><li><b>Don't remove IUD routinely</b> — treat first, remove if no improvement 48–72h</li><li><b>TOA</b>: IV antibiotics + percutaneous drainage if &gt;5cm</li><li><b>Partner notification 6 months</b>; EPT encouraged</li><li><b>Sequelae</b>: Infertility, ectopic, chronic pain ↑ with each episode</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li>What are the CDC minimal criteria for PID diagnosis?</li><li>What is the empirical outpatient treatment for PID?</li><li>When do you admit PID?</li><li>How do you manage tubo-ovarian abscess?</li><li>What are the long-term sequelae of PID?</li></ol>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Doxycycline 14 days</b> — not 7d (misses CT, M. genitalium)</li><li><b>Metronidazole</b> — covers anaerobes (often overlooked)</li><li><b>IUD removal</b> — NOT routinely; only if no improvement 48–72h</li><li><b>Severe PID</b> = IV therapy; TOA = drainage &gt;5cm</li><li><b>Fitz-Hugh-Curtis</b> = perihepatitis (RUQ pain) + PID</li><li><b>Pregnancy</b> = Ceftriaxone + Azithromycin (avoid doxy/metro)</li><li><b>Test of cure</b> not routine — reinfection common</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>PID minimal criteria</b>: <b>C</b>ervical motion + <b>U</b>terine + <b>A</b>dnexal Tenderness = <b>CUT</b></li><li><b>Outpatient PID Rx</b>: <b>C</b>eftriaxone + <b>D</b>oxycycline + <b>M</b>etronidazole = <b>CDM</b></li><li><b>Inpatient PID Rx</b>: IV <b>C</b>eftriaxone + <b>D</b>oxycycline + <b>M</b>etronidazole</li><li><b>TOA</b>: <b>T</b>ube-<b>O</b>vary <b>A</b>bscess → IV + <b>D</b>rainage</li><li><b>Fitz-Hugh-Curtis</b>: <b>F</b>HC = RUQ pain + <b>P</b>ID</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>PID = ascending infection → tubes/ovaries/peritoneum</b></p>
+<ul><li>Diagnose: <b>CUT</b> (Cervical motion + Uterine + Adnexal Tenderness) + inflammation</li><li>Outpatient: Ceftriaxone 500mg IM + Doxycycline 100mg BD 14d + Metronidazole 400mg BD 14d</li><li>Inpatient: IV Ceftriaxone 2g q12h + Doxycycline 100mg BD + Metronidazole 500mg q8h</li><li><b>Doxycycline 14d essential</b> (CT, M. genitalium, anaerobes)</li><li>TOA &gt;5cm: IV + drainage</li><li>IUD: don't remove routinely; treat first</li><li>Sequelae: infertility, ectopic, chronic pain</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Must Know</div>
+<ul><li>Minimal diagnostic criteria (CUT + inflammation)</li><li>Empirical outpatient regimen (CDM: Ceftriaxone + Doxycycline + Metronidazole)</li><li>Inpatient regimen (IV + drainage for TOA)</li><li>Doxycycline 14 days (not 7)</li><li>Don't routinely remove IUD</li><li>Partner notification 6 months, EPT</li></ul>
+<div class="sub-h">Should Know</div>
+<ul><li>Fitz-Hugh-Curtis syndrome (perihepatitis)</li><li>TOA management (IV + drainage &gt;5cm)</li><li>PID in pregnancy (azithromycin instead of doxy/metro)</li><li>Differential: appendicitis, ectopic, torsion</li><li>Test of cure not routine</li></ul>
+<div class="sub-h">Nice to Know</div>
+<ul><li>Actinomyces with IUD (penicillin G long-course)</li><li>Long-term fertility outcomes</li><li>Cost-effectiveness of screening</li><li>M. genitalium role in PID</li><li>Probiotics for metronidazole side effects</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>CDC minimal diagnostic criteria for PID require:</li></ol>
+<p>A. All three: cervical motion + uterine + adnexal tenderness B. <b>Any one of: cervical motion OR uterine OR adnexal tenderness + inflammation</b> C. Fever + abdominal pain + discharge D. Ultrasound showing TOA</p>
+<ol><li>First-line empirical outpatient treatment for PID:</li></ol>
+<p>A. Azithromycin 1g + Metronidazole B. <b>Ceftriaxone 500mg IM + Doxycycline 100mg BD 14d + Metronidazole 400mg BD 14d</b> C. Doxycycline 100mg BD 7d D. Ceftriaxone 500mg IM + Azithromycin 1g</p>
+<ol><li>Doxycycline duration in PID treatment:</li></ol>
+<p>A. 7 days B. <b>14 days</b> C. 21 days D. 28 days</p>
+<ol><li>Inpatient PID regimen:</li></ol>
+<p>A. Oral Ceftriaxone + Doxycycline B. <b>IV Ceftriaxone 2g q12h + Doxycycline 100mg BD + Metronidazole 500mg q8h</b> C. Ceftriaxone IM + Metronidazole only D. Clindamycin + Gentamicin only</p>
+<ol><li>When to remove IUD in PID:</li></ol>
+<p>A. Always immediately B. <b>If no clinical improvement after 48–72h of antibiotics</b> C. Only if Actinomyces suspected D. Never remove</p>
+<ol><li>Tubo-ovarian abscess &gt;5cm — management:</li></ol>
+<p>A. Antibiotics only B. <b>Image-guided percutaneous drainage + IV antibiotics</b> C. Immediate laparotomy D. Medical management only if &lt;10cm</p>
+<ol><li>Fitz-Hugh-Curtis syndrome is:</li></ol>
+<p>A. Tubo-ovarian abscess B. <b>Perihepatitis (RUQ pain) associated with PID</b> C. Ovarian cyst rupture C. Ectopic pregnancy</p>
+<ol><li>PID in pregnancy — antibiotic avoidance:</li></ol>
+<p>A. Ceftriaxone B. <b>Doxycycline (contraindicated) + Metronidazole (avoid 1st trimester)</b> C. Metronidazole only D. Azithromycin only</p>
+<ol><li>Partner notification period for PID (GC/CT):</li></ol>
+<p>A. 3 months B. <b>6 months</b> C. 1 year D. None</p>
+<ol><li>Long-term sequelae of PID include all EXCEPT:</li></ol>
+<p>A. Tubal infertility B. Ectopic pregnancy C. <b>Endometriosis</b> D. Chronic pelvic pain</p>
+<ol><li>Test of cure after PID treatment:</li></ol>
+<p>A. Routine at 2 weeks B. Not routine (only if symptoms persist) C. Mandatory at 4 weeks D. Mandatory at 6 months</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li>A 24-year-old woman, lower abdominal pain 3 days, fever 38°C, vaginal discharge. Exam: cervical motion tenderness, adnexal tenderness, mucopus at cervix. NAAT pending. Best immediate management:</li></ol>
+<p>A. Await NAAT results B. <b>Ceftriaxone 500mg IM + Doxycycline 100mg BD 14d + Metronidazole 400mg BD 14d</b> C. US pelvis first D. Doxycycline 100mg BD 7d only</p>
+<ol><li>Same patient returns at 72h, no improvement, temp 39°C, RUQ pain. US: complex adnexal mass 6cm with septations. Best next step:</li></ol>
+<p>A. Continue outpatient antibiotics B. <b>Admit for IV Ceftriaxone + Doxycycline + Metronidazole + percutaneous drainage (TOA &gt;5cm)</b> C. Change to IV Clindamycin + Gentamicin D. Laparoscopy immediately</p>
+<ol><li>A 28-year-old with Cu-IUD inserted 2 weeks ago, presents with PID (minimal criteria met). Best management:</li></ol>
+<p>A. Remove IUD immediately, then antibiotics B. <b>Start antibiotics; remove IUD only if no improvement at 48–72h</b> C. Antibiotics only, never remove IUD D. Remove IUD, no antibiotics needed</p>
+<ol><li>A 20-year-old pregnant at 16 weeks presents with PID (adnexal tenderness, cervical motion tenderness, mucopus). Best antibiotics:</li></ol>
+<p>A. Ceftriaxone 500mg IM + Doxycycline 100mg BD 14d + Metronidazole 400mg BD 14d B. <b>Ceftriaxone 500mg IM + Azithromycin 1g PO (avoid doxycycline/metronidazole)</b> C. Doxycycline 100mg BD 14d only C. Ceftriaxone 500mg IM + Metronidazole 400mg BD 14d</p>
+<ol><li>A 30-year-old post-PID treatment (completed 14d), asymptomatic. Test of cure:</li></ol>
+<p>A. Routine NAAT at 2 weeks B. <b>Not routine (only if symptoms persist/reinfection suspected)</b> C. NAAT at 4 weeks D. Culture at 6 weeks</p>
+<ol><li>A patient with TOA 4cm on US, stable, on IV antibiotics 48h, improving. Next step:</li></ol>
+<p>A. Continue IV antibiotics, repeat US in 1 week B. <b>Continue IV antibiotics, switch to oral at 24h afebrile, complete 14d total</b> C. Drainage now D. Laparoscopy</p>
+<ol><li>A 26-year-old with PID, partner treated 2 weeks ago for GC. Patient's NAAT: CT positive, GC negative. Patient completed doxycycline 14d. Partner management:</li></ol>
+<p>A. No further action B. <b>Partner needs CT treatment (doxycycline 14d) — expedited therapy</b> C. Partner needs GC retreatment D. Partner needs both GC + CT retreatment</p>
+<ol><li>A 22-year-old with Cu-IUD, PID. NAAT: GC negative, CT positive. Treated with antibiotics. At 72h, no improvement. Best action:</li></ol>
+<p>A. Change antibiotics B. <b>Remove IUD</b> (no improvement at 48–72h) C. Add metronidazole D. Laparoscopy</p>
+<ol><li>A patient with Fitz-Hugh-Curtis syndrome. Typical presentation:</li></ol>
+<p>A. RUQ pain, fever, no pelvic signs B. <b>RUQ pain + PID signs (cervical motion tenderness) + pleural rub</b> C. Epigastric pain, vomiting D. Jaundice, RUQ pain</p>
+<ol><li>Risk of infertility after one episode of PID:</li></ol>
+<p>A. &lt;1% B. <b>10–15%</b> C. 50% D. 100%</p>
+<ol><li>A 25-year-old with recurrent PID (3rd episode). Best prevention counselling:</li></ol>
+<p>A. Remove IUD B. <b>Condoms + regular screening + prompt treatment of STIs + partner notification</b> C. Prophylactic antibiotics D. Hysterectomy</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: PID minimal criteria</li></ul>
+<p>A: Cervical motion + Uterine + Adnexal Tenderness (any 1) + inflammation = CUT</p>
+<ul><li>Q: Outpatient PID Rx</li></ul>
+<p>A: Ceftriaxone 500mg IM + Doxycycline 100mg BD 14d + Metronidazole 400mg BD 14d (CDM)</p>
+<ul><li>Q: Inpatient PID Rx</li></ul>
+<p>A: IV Ceftriaxone 2g q12h + Doxycycline 100mg BD + Metronidazole 500mg q8h</p>
+<ul><li>Q: Doxycycline duration</li></ul>
+<p>A: 14 days (NOT 7 — covers CT, M. genitalium, anaerobes)</p>
+<ul><li>Q: TOA &gt;5cm</li></ul>
+<p>A: IV antibiotics + percutaneous drainage</p>
+<ul><li>Q: IUD in PID</li></ul>
+<p>A: Don't remove routinely; only if no improvement 48–72h</p>
+<ul><li>Q: Fitz-Hugh-Curtis</li></ul>
+<p>A: Perihepatitis + PID (RUQ pain + pleural rub)</p>
+<ul><li>Q: Partner notification</li></ul>
+<p>A: 6 months; EPT encouraged</p>
+<ul><li>Q: Pregnancy + PID</li></ul>
+<p>A: Ceftriaxone + Azithromycin (avoid doxy/metronidazole)</p>
+<ul><li>Q: Sequelae</li></ul>
+<p>A: Infertility, ectopic, chronic pain ↑ with recurrences</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<p><b>MCQ 1</b>: B — Any ONE of CUT + inflammation. <b>MCQ 2</b>: B — CDM = Ceftriaxone + Doxycycline 14d + Metronidazole 14d. <b>MCQ 3</b>: B — 14 days (covers CT, M. genitalium, anaerobes). <b>MCQ 4</b>: B — IV Ceftriaxone 2g q12h + Doxycycline + Metronidazole. <b>MCQ 5</b>: B — Remove only if no improvement at 48–72h. <b>MCQ 6</b>: B — TOA &gt;5cm = percutaneous drainage + IV antibiotics. <b>MCQ 7</b>: B — RUQ pain + PID = Fitz-Hugh-Curtis (perihepatitis). <b>MCQ 8</b>: B — Pregnancy = Ceftriaxone + Azithromycin (avoid doxy/metro). <b>MCQ 9</b>: B — 6 months for GC/CT partners. <b>MCQ 9</b>: C — Endometriosis not PID sequela. <b>MCQ 10</b>: B — Not routine; only if symptoms persist.</p>
+<p><b>SBA 1</b>: B — Minimal criteria met + signs = immediate empirical CDM. <b>SBA 2</b>: B — TOA &gt;5cm = IV antibiotics + drainage. <b>SBA 3</b>: B — IUD removal only if no improvement 48–72h. <b>SBA 4</b>: B — Pregnancy = avoid doxycycline/metronidazole → Azithromycin. <b>SBA 5</b>: B — Not routine; only if symptoms persist. <b>SBA 6</b>: B — Improving = continue oral to complete 14d total. <b>SBA 7</b>: B — CT+ partner = expedited CT treatment (doxycycline 14d). <b>SBA 8</b>: B — No improvement 72h despite correct antibiotics → remove IUD. <b>SBA 9</b>: B — RUQ + pleural rub + PID signs = Fitz-Hugh-Curtis. <b>SBA 10</b>: B — 10–15% infertility after 1 episode.</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><b>Status</b>: Full FCPS/MRCP topic note completed — 2026-06-13</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Pelvic Inflammatory Disease (PID) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

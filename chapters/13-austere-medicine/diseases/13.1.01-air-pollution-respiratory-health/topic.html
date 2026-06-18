@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Air Pollution &amp; Respiratory Health — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">MEDICINE IN AUSTERE ENVIRONMENTS</span>
+      <div class="h1">Air Pollution &amp; Respiratory Health</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify <b>Criteria Air Pollutants</b>: PM2.5, PM10, O3, NO2, SO2, CO, Lead</li><li>[ ] Apply <b>Source Apportionment</b>: Traffic, industry, power generation, biomass burning, agriculture</li><li>[ ] Recognise <b>Health Effects</b>: Respiratory (asthma, COPD, lung cancer), Cardiovascular (MI, stroke, HTN), Neurological, Developmental, Cancer</li><li>[ ] Apply <b>Air Quality Indices</b>: AQI, WHO Guidelines (2021), NAAQS, Air Quality Bands</li><li>[ ] Identify <b>Vulnerable Groups</b>: Children, elderly, pregnant, pre-existing cardiopulmonary disease, low-income</li><li>[ ] Apply <b>Prevention &amp; Control</b>: Source control, urban planning, clean energy, personal protection, policy</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Criteria Air Pollutants — Sources & Health Effects</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pollutant</th><th>Major Sources</th><th>Primary Health Effects</th><th>WHO 2021 AQG (Annual Mean)</th><th>NAAQS (US)</th></tr><tr><td>-----------</td><td>---------------</td><td>------------------------</td><td>----------------------------</td><td>------------</td></tr><tr><td>**PM2.5** (Fine Particulate Matter)</td><td>**Combustion** (traffic, industry, power plants, biomass burning, residential heating), **Secondary formation** (SO2, NOx, NH3 → sulfate, nitrate, ammonium)</td><td>**Respiratory**: Asthma exacerbation, COPD, lung cancer, reduced lung function<br>**Cardiovascular**: IHD, stroke, HTN, arrhythmia<br>**Other**: Diabetes, cognitive decline, low birth weight, mortality</td><td>**5 µg/m³ (annual)**, 15 µg/m³ (24h)</td><td>12 µg/m³ (annual), 35 µg/m³ (24h)</td></tr><tr><td>**PM10** (Coarse Particulate Matter)</td><td>**Mechanical** (road dust, construction, agriculture, sea salt), **Combustion**</td><td>**Respiratory**: Asthma, COPD, bronchitis<br>**Cardiovascular**: MI, stroke</td><td>**15 µg/m³ (annual)**, 45 µg/m³ (24h)</td><td>150 µg/m³ (24h)</td></tr><tr><td>**O3 (Ozone)**</td><td>**Photochemical** (NOx + VOCs + Sunlight)</td><td>**Respiratory**: Airway inflammation, reduced lung function, asthma exacerbation, COPD exacerbation, premature mortality</td><td>**60 µg/m³ (peak season, 8h mean)**</td><td>70 ppb (8h)</td></tr><tr><td>**NO2 (Nitrogen Dioxide)**</td><td>**Combustion** (Traffic ~50-80%, Power plants, Industry)</td><td>**Respiratory**: Airway inflammation, asthma development/exacerbation, reduced lung growth (children)<br>**Cardiovascular**: Mortality</td><td>**10 µg/m³ (annual)**, 25 µg/m³ (24h)</td><td>53 ppb (annual), 100 ppb (1h)</td></tr><tr><td>**SO2 (Sulphur Dioxide)**</td><td>**Fossil Fuel Combustion** (Coal, oil, shipping, metal smelting)</td><td>**Respiratory**: Bronchoconstriction, asthma exacerbation, bronchitis<br>**Cardiovascular**</td><td>**40 µg/m³ (24h)**</td><td>75 ppb (1h)</td></tr><tr><td>**CO (Carbon Monoxide)**</td><td>**Incomplete Combustion** (Traffic, faulty heaters, biomass)</td><td>**Tissue Hypoxia** (COHb), **Cardiac ischemia**, **Neurocognitive impairment**, **Fetal hypoxia**</td><td>**4 mg/m³ (24h)**</td><td>9 ppm (8h)</td></tr><tr><td>**Lead (Pb)**</td><td>**Leaded petrol (phased out), Industry (smelting, batteries), Paint, Aviation fuel**</td><td>**Neurodevelopmental (children IQ loss)**, **Cardiovascular**, **Renal**, **Haematological**</td><td>**0.5 µg/m³ (annual)**</td><td>0.15 µg/m³ (rolling 3-month)</td></tr></table>
+<div class="callout">[!tip] <b>PM2.5 = Most Harmful</b> (Deep lung penetration, systemic inflammation). <b>NO2 = Traffic Proxy</b>. <b>O3 = Summer/Photochemical</b>. <b>SO2 = Point Sources (Industry)</b>. <b>CO = Indoor/Traffic</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Sources — Sectoral Contribution</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Sector</th><th>Key Pollutants</th><th>Typical Contribution (Urban)</th></tr><tr><td>--------</td><td>----------------</td><td>-----------------------------</td></tr><tr><td>**Transport**</td><td>**NOx, PM2.5, CO, VOCs, BC**</td><td>**Major (40-60% NOx, 20-40% PM2.5 urban)**</td></tr><tr><td>**Industry / Power Generation**</td><td>**SO2, NOx, PM, Heavy Metals, Hg**</td><td>**Point Sources**, often regional</td></tr><tr><td>**Residential / Commercial**</td><td>**PM2.5, BC, CO, VOCs** (Biomass/Coal heating, cooking)</td><td>**Significant in Winter / Developing Countries**</td></tr><tr><td>**Agriculture**</td><td>**NH3 (→ Secondary PM2.5), CH4, N2O, Pesticides**</td><td>**Secondary PM2.5 Formation**</td></tr><tr><td>**Waste Management**</td><td>**CH4, VOCs, Dioxins, PM**</td><td>**Open Burning, Landfills**</td></tr><tr><td>**Natural**</td><td>**Dust, Sea Salt, Wildfires, Volcanic, Biogenic VOCs**</td><td>**Background / Episodic**</td></tr></table>
+<div class="callout">[!tip] <b>Traffic = #1 Urban Source</b> for NO2, PM2.5, CO, BC. <b>Industry/Power = SO2, Regional PM</b>. <b>Agriculture = NH3 → Secondary PM2.5</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 Health Effects — Mechanisms & Evidence</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Air Pollutant Exposure</div>
+<div class="fc-node" data-id="D">D</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Inhalation**</div>
+<div class="fc-node" data-id="E1">**Respiratory**: Asthma, COPD, Lung Cancer, Infection Susceptibility</div>
+<div class="fc-node" data-id="E2">**Cardio**: Atherosclerosis, MI, Stroke, HF, HTN, Arrhythmia</div>
+<div class="fc-node" data-id="E3">**Neuro**: Cognitive Decline, Dementia, Neurodev (Children), Stroke</div>
+<div class="fc-node" data-id="E4">**Reproductive**: Low Birth Weight, PTB, Stillbirth, Infertility</div>
+<div class="fc-node" data-id="E5">**Cancer**: Lung (IARC Group 1), Bladder, Breast</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C1">**Pulmonary Oxidative Stress &amp; Inflammation**</div>
+<div class="fc-node" data-id="C2">**Systemic Inflammation &amp; Oxidative Stress**</div>
+<div class="fc-node" data-id="C3">**Autonomic Nervous System Imbalance**</div>
+<div class="fc-node" data-id="C4">**Direct Translocation** (Ultrafine → Bloodstream)</div>
+</div>
+</div>
+<div class="sub-h">Respiratory Effects</div>
+<table class="ctable"><tr><th>Condition</th><th>Pollutants</th><th>Key Evidence</th></tr><tr><td>-----------</td><td>------------</td><td>--------------</td></tr><tr><td>**Asthma Exacerbation**</td><td>**PM2.5, NO2, O3, SO2**</td><td>**Strong** (↑ ED visits, hospitalisations)</td></tr><tr><td>**Asthma Incidence (Children)**</td><td>**NO2, PM2.5, TRAP**</td><td>**Causal** (Traffic-Related Air Pollution)</td></tr><tr><td>**COPD Exacerbation**</td><td>**PM2.5, NO2, O3, SO2**</td><td>**Strong**</td></tr><tr><td>**COPD Incidence**</td><td>**PM2.5, NO2, Occupational**</td><td>**Probable**</td></tr><tr><td>**Lung Cancer**</td><td>**PM2.5 (IARC Group 1), Diesel Exhaust (Group 1)**</td><td>**Causal**</td></tr><tr><td>**Pneumonia / LRTI**</td><td>**PM2.5, NO2, SO2**</td><td>**Increased Susceptibility**</td></tr><tr><td>**Lung Function (Children)**</td><td>**PM2.5, NO2, O3**</td><td>**Reduced Growth**</td></tr></table>
+<div class="sub-h">Cardiovascular Effects</div>
+<table class="ctable"><tr><th>Outcome</th><th>Key Pollutants</th><th>Mechanism</th></tr><tr><td>---------</td><td>----------------</td><td>-----------</td></tr><tr><td>**IHD / MI**</td><td>**PM2.5, NO2, BC**</td><td>Atherosclerosis, plaque rupture, thrombosis</td></tr><tr><td>**Stroke**</td><td>**PM2.5, NO2**</td><td>Vasoconstriction, thrombosis, BP ↑</td></tr><tr><td>**Heart Failure**</td><td>**PM2.5**</td><td>Remodelling, autonomic dysfunction</td></tr><tr><td>**Hypertension**</td><td>**PM2.5, NO2, Traffic Noise**</td><td>Endothelial dysfunction, SNS activation</td></tr><tr><td>**Arrhythmia**</td><td>**PM2.5, CO**</td><td>Autonomic imbalance, repolarisation</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Vulnerable Groups</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Group</th><th>Specific Susceptibility</th><th>Key Pollutants</th></tr><tr><td>-------</td><td>------------------------</td><td>----------------</td></tr><tr><td>**Children**</td><td>**Developing lungs/immune system**, higher ventilation/kg, more outdoor time</td><td>**PM2.5, NO2, O3** → Asthma incidence, reduced lung growth</td></tr><tr><td>**Elderly**</td><td>**Comorbidities, reduced reserve, reduced clearance**</td><td>PM2.5, O3, CO</td></tr><tr><td>**Pre-existing Cardiopulmonary Disease**</td><td>**Asthma, COPD, IHD, HF**</td><td>All pollutants, especially PM2.5, O3, NO2</td></tr><tr><td>**Pregnant Women**</td><td>**Fetal development, placental transfer**</td><td>PM2.5, NO2, CO, PAHs → LBW, PTB, neurodevelopment</td></tr><tr><td>**Low-Income / Deprived Communities**</td><td>**Higher exposure, less healthcare access, comorbidities**</td><td>All pollutants</td></tr><tr><td>**Occupational Groups**</td><td>**Traffic police, drivers, street vendors, industrial workers**</td><td>High cumulative exposure</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📊 Air Quality Indices & Guidelines</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">WHO 2021 Air Quality Guidelines (Key Values)</div>
+<table class="ctable"><tr><th>Pollutant</th><th>**Annual Mean**</th><th>**24-h / Peak Season**</th><th>Interim Targets (IT)</th></tr><tr><td>-----------</td><td>----------------</td><td>------------------------</td><td>---------------------</td></tr><tr><td>**PM2.5**</td><td>**5 µg/m³**</td><td>**15 µg/m³**</td><td>IT1: 35, IT2: 25, IT3: 15</td></tr><tr><td>**PM10**</td><td>**15 µg/m³**</td><td>**45 µg/m³**</td><td>IT1: 70, IT2: 50, IT3: 30</td></tr><tr><td>**O3**</td><td>—</td><td>**60 µg/m³ (peak season, 8h)**</td><td>IT1: 100, IT2: 70</td></tr><tr><td>**NO2**</td><td>**10 µg/m³**</td><td>**25 µg/m³**</td><td>IT1: 40, IT2: 25</td></tr><tr><td>**SO2**</td><td>—</td><td>**40 µg/m³ (24h)**</td><td>IT1: 125, IT2: 50</td></tr><tr><td>**CO**</td><td>—</td><td>**4 mg/m³ (24h)**</td><td>IT1: 7 mg/m³</td></tr></table>
+<div class="callout">[!tip] <b>WHO 2021 AQG = Stricter than 2005</b>. <b>PM2.5 Annual: 5 µg/m³ (was 10)</b>. <b>NO2 Annual: 10 µg/m³ (was 40)</b>.</div>
+<div class="sub-h">Air Quality Index (AQI) — Common Categories</div>
+<table class="ctable"><tr><th>AQI Range</th><th>Category</th><th>Health Advisory</th></tr><tr><td>-----------</td><td>----------</td><td>-----------------</td></tr><tr><td>**0-50**</td><td>**Good**</td><td>No risk</td></tr><tr><td>**51-100**</td><td>**Moderate**</td><td>Sensitive groups consider reducing exertion</td></tr><tr><td>**101-150**</td><td>**Unhealthy for Sensitive Groups**</td><td>Sensitive groups reduce exertion</td></tr><tr><td>**151-200**</td><td>**Unhealthy**</td><td>Everyone reduce exertion; sensitive groups avoid</td></tr><tr><td>**201-300**</td><td>**Very Unhealthy**</td><td>Everyone reduce exertion; sensitive groups avoid all outdoor</td></tr><tr><td>**301-500**</td><td>**Hazardous**</td><td>Avoid all outdoor activity</td></tr></table>
+<div class="callout">[!tip] <b>AQI based on pollutant with highest sub-index</b>. <b>PM2.5 often drives AQI</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📖 Indoor Air Pollution</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Source</th><th>Pollutants</th><th>Health Effects</th></tr><tr><td>--------</td><td>------------</td><td>----------------</td></tr><tr><td>**Biomass Fuel** (Wood, dung, crop residue)</td><td>**PM2.5, CO, PAHs, VOCs**</td><td>**ARI, COPD, Lung Cancer, Cataract, LBW** (Women/Children in LMIC)</td></tr><tr><td>**Tobacco Smoke (SHS)**</td><td>**PM2.5, Nicotine, Carcinogens (TSNAs), CO**</td><td>**Lung Cancer, IHD, Stroke, Asthma, SIDS, LBW**</td></tr><tr><td>**VOCs** (Formaldehyde, benzene, toluene)</td><td>**Building materials, furniture, cleaning products**</td><td>**Irritation, CNS effects, Cancer (benzene, formaldehyde)**</td></tr><tr><td>**Radon**</td><td>**Soil gas → Indoor accumulation**</td><td>**Lung Cancer (2nd leading cause)**</td></tr><tr><td>**Asbestos**</td><td>**Insulation, roofing,tiles**</td><td>**Mesothelioma, Lung Cancer, Asbestosis**</td></tr><tr><td>**Damp/Mould**</td><td>**Spores, mycotoxins**</td><td>**Asthma, rhinitis, hypersensitivity pneumonitis**</td></tr></table>
+<div class="callout">[!warning] <b>Household Air Pollution (HAP) = 3.2 Million Deaths/Year (WHO)</b>. <b>Women/Children in LMIC Most Affected</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">🛡️ Prevention & Control Strategies</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Source Control (Most Effective)</div>
+<table class="ctable"><tr><th>Sector</th><th>Interventions</th></tr><tr><td>--------</td><td>---------------</td></tr><tr><td>**Transport**</td><td>**EV/Public Transit/Active Travel**, **Low Emission Zones**, **Euro 6/VI Standards**, **Fuel Quality (Sulphur-free)**, **Congestion Charging**</td></tr><tr><td>**Industry/Power**</td><td>**Best Available Techniques (BAT)**, **Flue Gas Desulphurisation (FGD)**, **Selective Catalytic Reduction (SCR)**, **Electrostatic Precipitators/Baghouses**, **Fuel Switching (Gas/Renewables)**</td></tr><tr><td>**Residential**</td><td>**Clean Cooking (LPG/Electric/Improved Stoves)**, **Insulation/Ventilation**, **Ban Open Burning**</td></tr><tr><td>**Agriculture**</td><td>**Low-Nitrogen Fertilisers**, **Manure Management**, **Conservation Agriculture**, **No Open Burning**</td></tr><tr><td>**Urban Planning**</td><td>**Compact Cities**, **Green Spaces**, **Active Transport Infrastructure**, **Green Corridors**</td></tr></table>
+<div class="sub-h">Personal Protection (Least Effective Alone)</div>
+<table class="ctable"><tr><th>Measure</th><th>Effectiveness</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**N95/FFP2 Respirators**</td><td>**High (if fitted)** — Occupational / High Exposure</td></tr><tr><td>**Surgical Masks**</td><td>**Limited** (Droplets, not PM2.5)</td></tr><tr><td>**Air Purifiers (HEPA)**</td><td>**Indoor PM2.5 Reduction** (If Sized/Sealed Correctly)</td></tr><tr><td>**Avoid Outdoor Activity**</td><td>**High AQI Days** (Sensitive Groups)</td></tr><tr><td>**Dietary Antioxidants**</td><td>**Adjunct** (Vit C/E, Omega-3, B-vitamins)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**Criteria Pollutants**</td><td>**PM2.5, PM10, O3, NO2, SO2, CO, Pb**</td></tr><tr><td>**PM2.5**</td><td>**Most Harmful**, **WHO 2021: 5 µg/m³ Annual**, **Sources: Combustion (Traffic, Industry, Biomass)**</td></tr><tr><td>**NO2**</td><td>**Traffic Proxy**, **Asthma Incidence (Children), CV Mortality**, **WHO: 10 µg/m³ Annual**</td></tr><tr><td>**O3**</td><td>**Photochemical (Summer)**, **Respiratory Morbidity**, **WHO: 60 µg/m³ (8h Peak Season)**</td></tr><tr><td>**SO2**</td><td>**Industry/Coal**, **Acute Bronchoconstriction, Asthma**</td></tr><tr><td>**CO**</td><td>**Tissue Hypoxia**, **Indoor/Traffic**, **Cardiac Ischaemia**</td></tr><tr><td>**Pb**</td><td>**Neurodevelopmental (Children)**, **Phased Out Petrol, Persists in Paint/Industry**</td></tr><tr><td>**Vulnerable**</td><td>**Children, Elderly, Pregnant, Cardiopulmonary Disease, Low-Income**</td></tr><tr><td>**AQI**</td><td>**PM2.5 Often Driver**, **Categories: Good → Hazardous**</td></tr><tr><td>**WHO 2021 AQG**</td><td>**PM2.5: 5 µg/m³ Annual**, **NO2: 10 µg/m³ Annual**</td></tr><tr><td>**Control**</td><td>**Source Control > Personal Protection**, **Transport/Industry/Residential/Agri**, **Clean Energy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the six criteria air pollutants and which is considered most harmful?</b></li></ol>
+<ul><li><b>PM2.5, PM10, O3, NO2, SO2, CO, Pb</b>; <b>PM2.5 most harmful</b> (systemic effects, deep lung penetration).</li></ul>
+<ol><li><b>What are the WHO 2021 Air Quality Guideline values for PM2.5 and NO2 annual means?</b></li></ol>
+<ul><li><b>PM2.5: 5 µg/m³</b>, <b>NO2: 10 µg/m³</b>.</li></ul>
+<ol><li><b>Which pollutant is the best proxy for traffic-related air pollution?</b></li></ol>
+<ul><li><b>NO2</b> (and Black Carbon).</li></ul>
+<ol><li><b>What are the main health effects of PM2.5?</b></li></ol>
+<ul><li><b>Respiratory (asthma, COPD, lung cancer), Cardiovascular (MI, stroke, HF), Cognitive decline, Diabetes, Low birth weight, Mortality</b>.</li></ul>
+<ol><li><b>How does Ozone form and what are its health effects?</b></li></ol>
+<ul><li><b>Photochemical reaction (NOx + VOCs + sunlight)</b>; <b>Respiratory: airway inflammation, reduced lung function, asthma/COPD exacerbation, premature mortality</b>.</li></ul>
+<ol><li><b>What are the WHO 2021 AQG values for PM2.5 and NO2 and how do they differ from 2005?</b></li></ol>
+<ul><li><b>PM2.5: 5 µg/m³ (was 10); NO2: 10 µg/m³ (was 40)</b>; <b>Stricter based on new evidence</b>.</li></ul>
+<ol><li><b>Which groups are most vulnerable to air pollution?</b></li></ol>
+<ul><li><b>Children (lung development), Elderly, Pregnant women, Pre-existing cardiopulmonary disease, Low-income communities</b>.</li></ul>
+<ol><li><b>What are the main sources of PM2.5 in urban areas?</b></li></ol>
+<ul><li><b>Traffic (exhaust, non-exhaust), Industry, Residential heating (biomass/coal), Secondary formation (NOx, SO2, NH3)</b>.</li></ul>
+<ol><li><b>What is the difference between PM10 and PM2.5 health effects?</b></li></ol>
+<ul><li><b>PM10: Upper airways, coarse</b>; <b>PM2.5: Deep lung, systemic translocation, broader effects</b>.</li></ul>
+<ol><li><b>What are the main interventions to reduce air pollution at source?</b></li></ol>
+<ul><li><b>Transport (EV, public transit, LEZ, fuel standards), Industry (BAT, scrubbers, fuel switch), Residential (clean cooking, insulation), Agriculture (NH3 reduction), Urban planning (compact, green, active transport)</b>.</li></ul>
+<ol><li><b>How does air pollution affect children's lung development?</b></li></ol>
+<ul><li><b>Reduced lung function growth, increased asthma incidence</b>, <b>PM2.5, NO2, TRAP</b> implicated.</li></ul>
+<ol><li><b>What is the Air Quality Index and how is it used?</b></li></ol>
+<ul><li><b>Standardised index (0-500) based on worst pollutant sub-index</b>; <b>Categories: Good to Hazardous</b>; <b>Guides public advisories</b>.</li></ul>
+<ol><li><b>What is the health impact of indoor air pollution from biomass fuel?</b></li></ol>
+<ul><li><b>3.2M deaths/year (WHO)</b>; <b>Women/children in LMIC</b>; <b>ARI, COPD, Lung Cancer, Cataract, LBW</b>.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**PM2.5 vs PM10**</td><td>**PM2.5 = Fine, Deep Lung, Systemic**; **PM10 = Coarse, Upper Airways**</td></tr><tr><td>**Primary vs Secondary PM2.5**</td><td>**Primary = Direct Emission**; **Secondary = Atmospheric Formation (SO2→Sulfate, NOx→Nitrate, NH3→Ammonium)**</td></tr><tr><td>**O3 Summer vs Winter**</td><td>**Summer = High (Photochemical)**; **Winter = Low**</td></tr><tr><td>**NO2 vs NOx**</td><td>**NO2 = Measured Pollutant**, **NOx = NO + NO2 (Total Oxidised Nitrogen)**</td></tr><tr><td>**SO2 vs Sulphate PM**</td><td>**SO2 = Gas (Precursor)**; **Sulphate = Secondary PM2.5 Component**</td></tr><tr><td>**AQI vs Concentration**</td><td>**AQI = Standardised Index (0-500)**; **Concentration = µg/m³ (Physical)**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"PM2.5 = Killer #1"**</td><td>Most Harmful</td></tr><tr><td>**"NO2 = Traffic Proxy"**</td><td>Source Indicator</td></tr><tr><td>**"O3 = Summer Smog"**</td><td>Seasonal</td></tr><tr><td>**"SO2 = Industry"**</td><td>Point Source</td></tr><tr><td>**"CO = Hypoxia"**</td><td>Mechanism</td></tr><tr><td>**"Pb = Neurodev (Kids)"**</td><td>Lead Toxicity</td></tr><tr><td>**"AQI = Worst Pollutant Wins"**</td><td>Index Logic</td></tr><tr><td>**"WHO 2021: Stricter"**</td><td>Guidelines Updated</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Air Pollution &amp; Respiratory Health))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Criteria Pollutants</div>
+<div class="mm-node mm-l3">– PM2.5 (5 µg/m³ WHO)</div>
+<div class="mm-node mm-l3">– PM10 (15 µg/m³)</div>
+<div class="mm-node mm-l3">– O3 (60 µg/m³ peak)</div>
+<div class="mm-node mm-l3">– NO2 (10 µg/m³)</div>
+<div class="mm-node mm-l3">– SO2 (40 µg/m³ 24h)</div>
+<div class="mm-node mm-l3">– CO (4 mg/m³ 24h)</div>
+<div class="mm-node mm-l3">– Pb (0.5 µg/m³)</div>
+<div class="mm-node mm-l2">Sources</div>
+<div class="mm-node mm-l3">– Traffic (NO2, PM, CO, BC)</div>
+<div class="mm-node mm-l3">– Industry/Power (SO2, PM, Hg)</div>
+<div class="mm-node mm-l3">– Residential (Biomass heating)</div>
+<div class="mm-node mm-l3">– Agriculture (NH3 → Secondary PM)</div>
+<div class="mm-node mm-l3">– Natural (Dust, Wildfire)</div>
+<div class="mm-node mm-l2">Health Effects</div>
+<div class="mm-node mm-l3">– Respiratory: Asthma, COPD, Cancer, Infection</div>
+<div class="mm-node mm-l3">– Cardiovascular: MI, Stroke, HTN, HF</div>
+<div class="mm-node mm-l3">– Neuro: Cognitive, Dementia, Stroke</div>
+<div class="mm-node mm-l3">– Reproductive: LBW, PTB</div>
+<div class="mm-node mm-l3">– Cancer: Lung (IARC 1)</div>
+<div class="mm-node mm-l2">Vulnerable</div>
+<div class="mm-node mm-l3">– Children (Lung Growth)</div>
+<div class="mm-node mm-l3">– Elderly (Comorbidities)</div>
+<div class="mm-node mm-l3">– Pregnant (LBW, PTB)</div>
+<div class="mm-node mm-l3">– Cardio/Pulmonary Disease</div>
+<div class="mm-node mm-l3">– Low Income</div>
+<div class="mm-node mm-l2">Guidelines</div>
+<div class="mm-node mm-l3">– WHO 2021 AQG</div>
+<div class="mm-node mm-l3">– AQI Categories</div>
+<div class="mm-node mm-l3">– NAAQS</div>
+<div class="mm-node mm-l2">Control</div>
+<div class="mm-node mm-l3">– Source: Transport, Industry, Residential, Agri</div>
+<div class="mm-node mm-l3">– Urban Planning</div>
+<div class="mm-node mm-l3">– Personal Protection (Limited)</div>
+<div class="mm-node mm-l2">Monitoring</div>
+<div class="mm-node mm-l3">– AQI, Monitoring Networks</div>
+<div class="mm-node mm-l3">– Satellites, Low-Cost Sensors</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**AIR POLLUTION & RESPIRATORY HEALTH – FCPS/MRCP REVISION CARD**</th></tr><tr><td>------------------------------------------------------------------</td></tr><tr><td>**Criteria Pollutants**: **PM2.5, PM10, O3, NO2, SO2, CO, Pb**</td></tr><tr><td>**PM2.5**: **Most Harmful**, WHO **5 µg/m³ Annual**, Traffic/Industry/Biomass Sources</td></tr><tr><td>**NO2**: **Traffic Proxy**, Asthma Incidence (Kids), CV Mortality, **WHO 10 µg/m³**</td></tr><tr><td>**O3**: **Photochemical (Summer)**, Respiratory Morbidity, **WHO 60 µg/m³ Peak**</td></tr><tr><td>**SO2**: **Industry/Coal**, Bronchoconstriction, Acid Rain</td></tr><tr><td>**CO**: **Tissue Hypoxia**, Cardiac Ischaemia, Indoor/Traffic</td></tr><tr><td>**Pb**: **Neurodevelopmental (Kids)**, Phased Out Petrol</td></tr><tr><td>**Vulnerable**: **Children, Elderly, Pregnant, Cardio/Pulmonary, Poor**</td></tr><tr><td>**AQI**: PM2.5 Often Driver, **Good (0-50) → Hazardous (301-500)**</td></tr><tr><td>**WHO 2021 AQG**: **PM2.5 5 µg/m³, NO2 10 µg/m³** (Stricter than 2005)</td></tr><tr><td>**Control**: **Source Control > Personal Protection**, Clean Energy, Transport, Industry, Urban Planning</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>Criteria pollutants (PM2.5, PM10, O3, NO2, SO2, CO, Pb), WHO 2021 AQG values, PM2.5 most harmful, NO2 = traffic proxy, O3 photochemical, health effects (respiratory, CV, neuro, cancer), vulnerable groups, AQI categories, source control > personal protection</td></tr><tr><td>**Should Know**</td><td>PM2.5 composition (sulphate, nitrate, ammonium, BC, OC), secondary formation mechanisms, AQI calculation methodology, indoor air pollution (biomass, radon, SHS, VOCs, mould), WHO 2021 vs 2005 changes, AQI vs concentration, exposure assessment methods (monitoring, modelling, biomarkers), DI burden (GBD), cost-effectiveness of interventions</td></tr><tr><td>**Nice to Know**</td><td>Ultrafine particles (UFP) health effects, non-exhaust traffic emissions (brake/tyre wear), ammonia & secondary PM, black carbon climate co-benefits, satellite remote sensing for exposure, low-cost sensor networks, personal exposure monitoring, gene-environment interaction, epigenetic mechanisms, co-benefits climate/air quality, policy evaluation (LEZ, congestion charging), environmental justice</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Criteria Pollutants & Standards</td><td></td><td></td></tr><tr><td>Sources & Formation</td><td></td><td></td></tr><tr><td>Health Effects (Respiratory, CV, Neuro)</td><td></td><td></td></tr><tr><td>Vulnerable Groups</td><td></td><td></td></tr><tr><td>AQI & Guidelines</td><td></td><td></td></tr><tr><td>Prevention & Control</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Fundamentals of Environmental Medicine]]</li><li><b>Next</b>: [[Water Pollution &amp; Waterborne Diseases]]</li><li><b>Section Hub</b>: [[Environmental Medicine MOC]]</li><li><b>MOC</b>: [[Hematology MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Air Pollution &amp; Respiratory Health · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

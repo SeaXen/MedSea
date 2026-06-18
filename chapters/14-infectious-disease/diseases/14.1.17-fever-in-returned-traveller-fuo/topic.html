@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fever in Returned Traveller &amp; FUO — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">INFECTIOUS DISEASE</span>
+      <div class="h1">Fever in Returned Traveller &amp; FUO</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">🎯 Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define <b>FUO</b>: Fever &gt;38.3°C on ≥3 occasions over ≥3 weeks with uncertain diagnosis after 1 week of inpatient investigation</li><li>[ ] Apply <b>Returned Traveller Approach</b>: Geographic exposure, timeline, activities, pre-travel interventions</li><li>[ ] Apply <b>Systematic Initial Workup</b>: "First-Line" vs "Second-Line" investigations</li><li>[ ] Identify <b>Red Flags</b>: Haemodynamic instability, neurological signs, rash patterns, eosinophilia</li><li>[ ] Select <b>Empirical Therapy</b>: Geography-based, syndrome-based, resistance patterns</li><li>[ ] Recognise <b>Common Tropical Causes</b>: Malaria, Typhoid, Dengue, Typhus, Rickettsia, Enteric Fever, Viral Haemorrhagic Fevers</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">📖 Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Term</th><th>Definition</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Fever in Returned Traveller**</td><td>Fever in person returning from **tropical/subtropical region** within **6 months** (up to 12 months for some parasites)</td></tr><tr><td>**Classic FUO** (Petersdorf & Beeson)</td><td>Fever **>38.3°C** on **≥3 occasions** over **≥3 weeks** with **uncertain diagnosis after 1 week of inpatient investigation**</td></tr><tr><td>**Nosocomial FUO**</td><td>Fever in hospitalised patient **>48h after admission** with no clear cause after 3 days investigation</td></tr><tr><td>**Immunodeficient FUO**</td><td>**Neutropenia (<500/µL)** or **Immunosuppression** with fever, no cause after 3 days</td></tr><tr><td>**HIV-associated FUO**</td><td>**HIV+** with fever >4 weeks (or >3 days if CD4<200), no cause after appropriate workup</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">📖 Returned Traveller with Fever — Systematic Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Pre-Travel &amp; Travel History (The "Where, When, What")</div>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Returned Traveller with Fever</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Detailed Travel History**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B1">**Destinations** (Countries, Regions, Urban/Rural)</div>
+<div class="fc-node" data-id="B2">**Dates** (Departure, Return, Duration)</div>
+<div class="fc-node" data-id="B3">**Activities** (Swimming, Caving, Animal Contact, Sexual, Medical/Dental)</div>
+<div class="fc-node" data-id="B4">**Pre-Travel** (Vaccines, Chemoprophylaxis, Insurance)</div>
+<div class="fc-node" data-id="B5">**Illness During Travel** (Self-Treatment, Hospitalisation)</div>
+<div class="fc-node" data-id="C">**Timeline**</div>
+<div class="fc-node" data-id="D">**Red Flags** → Urgent Investigations / Admission</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C1">**Incubation Period** → Narrows Differential</div>
+<div class="fc-node" data-id="C2">**Time Since Return** → Most Acute &lt;1 Month</div>
+</div>
+</div>
+<div class="sub-h">2. Incubation Period — The Key to Differential</div>
+<table class="ctable"><tr><th>**Incubation <10 Days**</th><th>**5-21 Days**</th><th>**2-6 Weeks**</th><th>**>6 Weeks**</th></tr><tr><td>-------------------------</td><td>---------------</td><td>---------------</td><td>--------------</td></tr><tr><td>**Malaria** (Falciparum 9-14d)</td><td>**Typhoid/Paratyphoid** (7-21d)</td><td>**Acute HIV** (2-4 wks)</td><td>**TB** (Weeks-Months)</td></tr><tr><td>**Dengue** (4-7d)</td><td>**Acute HIV Seroconversion** (2-4 wks)</td><td>**TB Meningitis** (2-6 wks)</td><td>**Schistosomiasis** (2-12 wks)</td></tr><tr><td>**Dengue Haemorrhagic Fever**</td><td>**Acute Viral Hepatitis** (A: 15-50d, B: 30-180d)</td><td>**Brucellosis** (1-8 wks)</td><td>**Strongyloides** (Months-Years)</td></tr><tr><td>**Chikungunya** (2-7d)</td><td>**Leptospirosis** (5-14d)</td><td>**Q Fever** (2-3 wks)</td><td>**Strongyloides Hyperinfection** (Immunosuppressed)</td></tr><tr><td>**Zika** (3-14d)</td><td>**Rickettsial** (5-14d)</td><td>**Lyme Disease** (3-30d)</td><td>**TB Reactivation**</td></tr><tr><td>**Chikungunya/Zika**</td><td>**Relapsing Fever** (4-18d)</td><td>**Cat Scratch Disease** (3-10d)</td><td>**Chronic Q Fever**</td></tr><tr><td>**Influenza/COVID** (1-4d)</td><td>**Acute Schistosomiasis** (Katayama, 2-8 wks)</td><td>**Acute Q Fever** (2-3 wks)</td><td>**Chronic Brucellosis**</td></tr><tr><td>**Food Poisoning** (Hours-Days)</td><td>**Acute HIV**</td><td>**Acute Brucellosis**</td><td>**Chronic Hepatitis B/C**</td></tr><tr><td>**Cholera** (Hours-5d)</td><td>**Typhoid**</td><td>**Acute Q Fever**</td><td>**Chronic Strongyloides**</td></tr></table>
+<div class="callout">[!tip] <b>Malaria = Rule Out First</b> in any febrile traveller from <b>malaria-endemic area</b> within <b>3 months</b> (up to 1 year for P. vivax/ovale).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">📖 FUO — Structured Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Definition (Durack &amp; Street, 1991)</div>
+<table class="ctable"><tr><th>Criteria</th><th>Details</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Fever**</td><td>**>38.3°C** on **≥3 occasions**</td></tr><tr><td>**Duration**</td><td>**≥3 Weeks**</td></tr><tr><td>**Uncertain Diagnosis**</td><td>After **1 Week** of **Inpatient** Investigation (or 3 Outpatient Visits)</td></tr><tr><td>**Exclusions**</td><td>**Not** Immunocompromised (separate category)</td></tr></table>
+<div class="sub-h">Aetiological Categories (Classic FUO)</div>
+<table class="ctable"><tr><th>Category</th><th>% of Cases</th><th>Examples</th></tr><tr><td>----------</td><td>------------</td><td>----------</td></tr><tr><td>**Infection**</td><td>**30-40%**</td><td>TB, Endocarditis, Abscess, TB, TB, TB, Brucellosis, EBV, CMV</td></tr><tr><td>**Malignancy**</td><td>**20-25%**</td><td>Lymphoma (NHL > HL), RCC, Hepatoma, Leukaemia</td></tr><tr><td>**Inflammatory/Connective Tissue**</td><td>**15-20%**</td><td>SLE, RA, Vasculitis (GCA, PAN), AOSD, Sarcoidosis</td></tr><tr><td>**Miscellaneous**</td><td>**10-15%**</td><td>Drug Fever, Thrombosis, Factitious, Thyroiditis</td></tr><tr><td>**Undiagnosed**</td><td>**5-15%**</td><td>—</td></tr></table>
+<div class="callout">[!tip] <b>Infection Still #1 Cause</b> of FUO even in developed countries. <b>TB + Endocarditis + Occult Abscess</b> = Top 3 Infectious Causes.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">📖 Initial Workup — "First-Line" (All Patients)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Investigation</th><th>Indication</th></tr><tr><td>---------------</td><td>------------</td></tr><tr><td>**CBC + Film**</td><td>Anaemia, Leukocytosis/Leukopenia, Atypical Lymphs, Eosinophilia, Thrombocytopenia</td></tr><tr><td>**ESR / CRP**</td><td>Inflammatory Marker (CRP > ESR for Acute)</td></tr><tr><td>**LFT, Renal, Glucose, Electrolytes**</td><td>Organ Dysfunction Baseline</td></tr><tr><td>**Blood Cultures**</td><td>**3 Sets** (Aerobic/Anaerobic) **Before Antibiotics** — *Gold Standard for Endocarditis, Bacteremia*</td></tr><tr><td>**Urinalysis + Culture**</td><td>Occult UTI, Renal TB, Schistosomiasis</td></tr><tr><td>**Chest X-Ray**</td><td>TB, Malignancy, Sarcoidosis, Abscess</td></tr><tr><td>**Abdominal US / CT**</td><td>Abscess, Lymphadenopathy, Splenomegaly, Hepatomegaly</td></tr></table>
+<div class="callout">[!tip] <b>"First-Line" = Do These First</b>. If Negative → <b>Second-Line</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">📖 Second-Line Investigations (If First-Line Negative)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Investigations</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Infection**</td><td>**Blood Cultures (Repeat)**, **Echo (TEE > TTE)** for Endocarditis, **PET-CT** (Occult Abscess/Malignancy), **Serology** (Brucella, Bartonella, Coxiella, Bartonella, Viral Serology), **TB Workup** (IGRA, Sputum AFB×3, PCR, Adenosine Deaminase), **HIV/HTLV** Serology</td></tr><tr><td>**Malignancy**</td><td>**CT Chest/Abd/Pelvis**, **Bone Marrow Biopsy** (if Cytopenias), **Lymph Node Biopsy** (if Nodes), **Tumour Markers** (LDH, β2M, CA-125, PSA, AFP)</td></tr><tr><td>**Inflammatory**</td><td>**ANA, ANCA, RF, CCP, ACE, Immunoglobulins, Complement (C3/C4), Cryoglobulins**</td></tr><tr><td>**Rare**</td><td>**FDG-PET/CT** (Occult Abscess, Vasculitis, Malignancy), **Bone Marrow** (Culture, Histology), **Temporal Artery Biopsy** (GCA), **Liver Biopsy** (Granulomatous Hepatitis)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">📖 Geographic Syndromes — Common Tropical Causes</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Region</th><th>Top Differential Diagnoses</th></tr><tr><td>--------</td><td>---------------------------</td></tr><tr><td>**Sub-Saharan Africa**</td><td>**Malaria (P. falciparum)**, **Typhoid**, **Dengue**, **Rickettsial (African Tick Typhus)**, **African Trypanosomiasis**, **Schistosomiasis**, **HIV Acute**</td></tr><tr><td>**South Asia (India, SE Asia)**</td><td>**Typhoid/Paratyphoid**, **Malaria (P. vivax > falciparum)**, **Dengue**, **Chikungunya**, **Scrub Typhus**, **Leptospirosis**, **Enteric Fever**</td></tr><tr><td>**Latin America**</td><td>**Malaria (P. vivax)**, **Dengue**, **Zika**, **Chikungunya**, **Leishmaniasis**, **Typhoid**, **Typhus (Rickettsia)**</td></tr><tr><td>**Middle East**</td><td>**Brucellosis**, **MERS-CoV**, **Crimean-Congo HF**, **Leishmaniasis**, **TB**</td></tr><tr><td>**Oceania / Pacific**</td><td>**Dengue**, **Malaria**, **Leptospirosis**, **Filariasis**, **Ciguatera**</td></tr></table>
+<div class="callout">[!tip] <b>Ask: "Where exactly? Urban vs Rural? Activities? Animal Contact? Insect Bites? Sexual Contact? Medical/Dental Procedures?"</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">📖 Red Flags — Urgent Admission / Intervention</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Red Flag</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Haemodynamic Instability** (SBP<90, Lactate>4)</td><td>**ICU**, **Sepsis Bundle**, **Broad-Spectrum ABX**</td></tr><tr><td>**Altered Mental Status**</td><td>**LP** (Meningitis/Encephalitis), **CT Head**</td></tr><tr><td>**Petechiae / Purpura**</td><td>**Meningococcaemia**, **DIC Screen**, **Empirical Ceftriaxone**</td></tr><tr><td>**Jaundice + Fever**</td><td>**Malaria**, **Leptospirosis**, **Viral Hepatitis**, **Severe Sepsis**</td></tr><tr><td>**Eosinophilia (>500/µL)**</td><td>**Parasitic** (Strongyloides, Schisto, Filaria, Ascaris), **Drug Reaction**, **Eosinophilic Leukaemia**</td></tr><tr><td>**Returning from Malaria Zone + Fever**</td><td>**Urgent Malaria Screen** (RDT + Thick/Thin Film ×3)</td></tr><tr><td>**Returning from Ebola/Lassa Area + Fever**</td><td>**Isolation**, **VHF Protocol**, **Notify Public Health**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">📖 Empirical Therapy — Geography-Based</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Syndrome / Region</th><th>Likely Pathogens</th><th>Empirical Therapy (If Severe/Uncertain)</th></tr><tr><td>-------------------</td><td>------------------</td><td>----------------------------------------</td></tr><tr><td>**Fever + Traveller from Malaria Zone**</td><td>**Malaria (P. falciparum)**</td><td>**IV Artesunate 2.4mg/kg** (WHO) / IV Quinine + Doxycycline **DO NOT DELAY**</td></tr><tr><td>**Fever + Traveller from SE Asia / India**</td><td>**Typhoid (S. Typhi/Paratyphi)**, **Dengue**, **Scrub Typhus**</td><td>**Ceftriaxone 2g IV BD** + **Doxycycline 100mg BD** (Covers Typhus, Leptospira, Rickettsia)</td></tr><tr><td>**Fever + Sub-Saharan Africa**</td><td>**Malaria (P. falciparum)**, **Typhoid**, **Rickettsia**</td><td>**Artesunate + Ceftriaxone** (Cover both)</td></tr><tr><td>**Fever + Latin America**</td><td>**Dengue, Zika, Chikungunya, Malaria, Leishmania**</td><td>**Supportive** (Dengue: Fluids, No NSAIDs); **Leishmania: Liposomal Amphotericin**</td></tr><tr><td>**Fever + Middle East**</td><td>**Brucellosis, MERS-CoV, CCHF, TB**</td><td>**Doxycycline + Rifampicin** (Brucella +/-); **Isolate if VHF Suspected**</td></tr><tr><td>**FUO (No Travel)**</td><td>**TB, Endocarditis, Abscess, Lymphoma, Autoimmune**</td><td>**Hold ABx** unless Sepsis; **TTE/TEE, CT, PET-CT, Biopsy**</td></tr></table>
+<div class="callout">[!warning] <b>Malaria = Medical Emergency</b>. <b>Do Not Delay Treatment</b> for Confirmatory Tests in High Suspicion. <b>Artesunate IV Preferred Over Quinine</b>.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">📖 FUO — Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">FUO: Fever &gt;38.3°C x≥3 over ≥3wks, No Dx After 1wk Workup</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**First-Line Workup Complete?**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Complete First-Line**</div>
+<div class="fc-node" data-id="D">**Second-Line Workup**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">**Diagnosis?**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">**Treat Specific Cause**</div>
+<div class="fc-node" data-id="G">**Consider PET-CT / Bone Marrow / Biopsy**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">**Diagnosis?**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">**Therapeutic Trial** (TB / Steroids) OR **Palliative** if Terminal</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">💡 FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Point</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**FUO Definition**</td><td>**>38.3°C x≥3 over ≥3wks**, No Dx after **1 Week Inpatient Workup**</td></tr><tr><td>**Returned Traveller**</td><td>**Timeline = Incubation** → **Geography = Pathogen**</td></tr><tr><td>**Malaria**</td><td>**Rule Out First** in Endemic Area Traveler; **RDT + Thick/Thin Film ×3**; **IV Artesunate**</td></tr><tr><td>**Typhoid**</td><td>**Ceftriaxone**; **Widal Test = Low Sensitivity/Specificity**; **Blood Culture Gold Standard**</td></tr><tr><td>**Dengue**</td><td>**NS1 Ag Day 1-9**, IgM Day 3-5; **Supportive Only**; **Avoid NSAIDs**</td></tr><tr><td>**FUO Categories**</td><td>**Infection (30-40%) > Malignancy (20-25%) > Connective Tissue (15-20%)**</td></tr><tr><td>**FUO Top Infectious**</td><td>**TB, Endocarditis, Occult Abscess**</td></tr><tr><td>**Red Flags**</td><td>**Haemodynamic Instability, Neuro Signs, Petechiae, Eosinophilia, Jaundice**</td></tr><tr><td>**Returned Traveller Red Flags**</td><td>**Malaria Zone + Fever = Treat Empirically for Malaria**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">❓ Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the definition of classic FUO?</b></li></ol>
+<ul><li>Fever &gt;38.3°C on ≥3 occasions over ≥3 weeks, with no diagnosis after 1 week of inpatient investigation.</li></ul>
+<ol><li><b>What is the most common cause of FUO?</b></li></ol>
+<ul><li><b>Infection (30-40%)</b>, with TB, Endocarditis, and Occult Abscess being top infectious causes.</li></ul>
+<ol><li><b>What is the most important investigation in a returned traveller with fever?</b></li></ol>
+<ul><li><b>Malaria Screen</b> (RDT + Thick/Thin Film ×3) — <b>Rule Out First</b> if from Malaria-Endemic Area.</li></ul>
+<ol><li><b>How do you differentiate Typhoid from other causes of fever in a returned traveller?</b></li></ol>
+<ul><li><b>Blood Culture = Gold Standard</b> (Sensitivity 40-80%); <b>Widal Test = Low Sensitivity/Specificity</b>; <b>Relative Bradycardia</b>, Rose Spots (Rare), Relative Leukopenia.</li></ul>
+<ol><li><b>What is the empirical treatment for a returned traveller with fever from Southeast Asia?</b></li></ol>
+<ul><li><b>Ceftriaxone 2g IV BD + Doxycycline 100mg BD</b> (Covers Typhoid, Rickettsia, Leptospira).</li></ul>
+<ol><li><b>What is the incubation period for Falciparum Malaria?</b></li></ol>
+<ul><li><b>9-14 Days</b> (Range 7-30 Days); <b>P. vivax/ovale Can Relapse Months Later</b> (Hypnozoites).</li></ul>
+<ol><li><b>What investigations are "First-Line" for FUO?</b></li></ol>
+<ul><li><b>CBC, ESR/CRP, LFT, Renal, Blood Cultures ×3, Urinalysis, CXR, Abdominal US</b>.</li></ul>
+<ol><li><b>When do you use PET-CT in FUO?</b></li></ol>
+<ul><li><b>After Negative First-Line &amp; Second-Line</b>; Detects Occult Abscess, Malignancy, Vasculitis, Sarcoidosis.</li></ul>
+<ol><li><b>What is the most common cause of FUO in immunocompromised hosts?</b></li></ol>
+<ul><li><b>Infection</b> (Bacterial, Fungal, Viral, TB); <b>Opportunistic Infections</b> based on CD4/CD4 Count.</li></ul>
+<ol><li><b>How do you approach a febrile patient returning from Africa?</b></li></ol>
+<ul><li><b>Rule Out Malaria First</b> (RDT + Microscopy ×3), Consider <b>Typhoid, Rickettsia, Dengue, Schistosomiasis</b>; <b>Empirical Artesunate + Ceftriaxone</b> if Severe.</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">🧠 Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**FUO vs Prolonged Fever**</td><td>**FUO = Formal Criteria (Durack)**; **Prolonged Fever = Any Fever >2 Weeks**</td></tr><tr><td>**Typhoid vs Typhus**</td><td>**Typhoid = Salmonella Typhi (Enteric)**; **Typhus = Rickettsia (Vector-Borne, Rash)**</td></tr><tr><td>**Dengue vs Chikungunya**</td><td>**Dengue = NS1 Ag, Thrombocytopenia, Plasma Leakage**; **Chikungunya = Severe Arthralgia, Rare Bleeding**</td></tr><tr><td>**Malaria Relapse**</td><td>**P. vivax/ovale = Hypnozoites → Relapse (Primaquine Needed)**; **P. falciparum = No Relapse**</td></tr><tr><td>**FUO vs Nosocomial FUO**</td><td>**Nosocomial = >48h Post-Admission**; **Immunodeficient = Separate Category**</td></tr></table>
+<table class="ctable"><tr><th>Mnemonic</th><th>Meaning</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**"FUO = 3 Weeks, 3 Fevers, 1 Week Workup"**</td><td>FUO Definition</td></tr><tr><td>**"Malaria First = Test & Treat Immediately"**</td><td>Traveller Fever</td></tr><tr><td>**"Typhoid = Ceftriaxone; Typhus = Doxycycline"**</td><td>Enteric vs Rickettsial</td></tr><tr><td>**"FUO = Infection > Cancer > Autoimmune"**</td><td>Differential Order</td></tr><tr><td>**"Eosinophilia = Think Parasites / Drugs / Allergy / Haematology"**</td><td>Eosinophilia Differential</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">🗺️ Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Fever in Returned Traveller / FUO))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Returned Traveller</div>
+<div class="mm-node mm-l3">– History: Where, When, What, Vaccines, Prophylaxis</div>
+<div class="mm-node mm-l3">– Incubation Timeline</div>
+<div class="mm-node mm-l3">– Red Flags</div>
+<div class="mm-node mm-l3">– Empirical: Geography-Based</div>
+<div class="mm-node mm-l2">FUO</div>
+<div class="mm-node mm-l3">– Definition: &gt;38.3C x3 over 3wks, No Dx after 1wk</div>
+<div class="mm-node mm-l3">– Categories: Infection &gt; Malignancy &gt; Autoimmune &gt; Misc</div>
+<div class="mm-node mm-l3">– Top Infectious: TB, Endocarditis, Abscess</div>
+<div class="mm-node mm-l2">Workup</div>
+<div class="mm-node mm-l3">– First-Line: CBC, ESR/CRP, Blood Cultures x3, Urine, CXR, US</div>
+<div class="mm-node mm-l3">– Second-Line: Echo, CT/PET-CT, Serology, BM, Biopsy</div>
+<div class="mm-node mm-l2">Empirical Rx</div>
+<div class="mm-node mm-l3">– Malaria Zone: Artesunate</div>
+<div class="mm-node mm-l3">– SE Asia: Ceftriaxone + Doxy</div>
+<div class="mm-node mm-l3">– Africa: Artesunate + Ceftriaxone</div>
+<div class="mm-node mm-l3">– Latin Am: Supportive / Leishmania Rx</div>
+<div class="mm-node mm-l2">Red Flags</div>
+<div class="mm-node mm-l3">– Haemodynamic Instability</div>
+<div class="mm-node mm-l3">– Neuro Signs</div>
+<div class="mm-node mm-l3">– Petechiae/Purpura</div>
+<div class="mm-node mm-l3">– Eosinophilia</div>
+<div class="mm-node mm-l3">– Jaundice</div>
+<div class="mm-node mm-l2">Red Flags</div>
+<div class="mm-node mm-l3">– Haemodynamic Instability</div>
+<div class="mm-node mm-l3">– Neuro Signs</div>
+<div class="mm-node mm-l3">– Petechiae/Purpura</div>
+<div class="mm-node mm-l3">– Eosinophilia</div>
+<div class="mm-node mm-l3">– Jaundice</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">📋 One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**FEVER IN RETURNED TRAVELLER & FUO – FCPS/MRCP REVISION CARD**</th></tr><tr><td>------------------------------------------------------------------</td></tr><tr><td>**FUO Def**: >38.3°C x≥3 over ≥3wks, No Dx after 1wk inpatient workup</td></tr><tr><td>**Traveller Fever**: **Incubation = Diagnosis**; **Geography = Pathogen**</td></tr><tr><td>**Malaria**: **RDT + Film x3**, **Artesunate IV** (Severe), **Rule Out First**</td></tr><tr><td>**Typhoid**: Ceftriaxone; Blood Culture Gold Standard; Relative Bradycardia</td></tr><tr><td>**Dengue**: NS1 Ag Day 1-9; Supportive; **Avoid NSAIDs**; Monitor Plasma Leak</td></tr><tr><td>**FUO Categories**: Infection (30-40%) > Malignancy (20-25%) > CTD (15-20%)</td></tr><tr><td>**FUO Infectious Top 3**: TB, Endocarditis, Occult Abscess</td></tr><tr><td>**Red Flags**: Shock, Neuro, Petechiae, Eosinophilia, Jaundice</td></tr><tr><td>**Traveller Red Flag**: Malaria Zone + Fever = **Immediate Malaria Screen**</td></tr><tr><td>**Empirical**: Africa = Artesunate + Ceftriaxone; SE Asia = Ceftriaxone + Doxy; ME = Doxy/Rifampicin</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">📅 Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review</th><th>Date</th><th>Score (1-5)</th><th>Next Review</th></tr><tr><td>--------</td><td>------</td><td>-------------</td><td>-------------</td></tr><tr><td>Day 1</td><td>2025-06-17</td><td></td><td>2025-06-18</td></tr><tr><td>Day 3</td><td></td><td></td><td></td></tr><tr><td>Day 7</td><td></td><td></td><td></td></tr><tr><td>Day 15</td><td></td><td></td><td></td></tr><tr><td>Day 30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">🎯 Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Content</th></tr><tr><td>-------</td><td>---------</td></tr><tr><td>**Must Know**</td><td>FUO definition, Traveller fever approach (incubation + geography), Malaria/Typhoid/Dengue basics, FUO categories, Red flags, Empirical therapy by region, Malaria = treat empirically if suspected</td></tr><tr><td>**Should Know**</td><td>Detailed incubation periods, FUO workup algorithm (first/second line), PET-CT role, Nosocomial/Immunocompromised FUO definitions, HIV-associated FUO, Tropical disease specifics (Scrub typhus, Leptospirosis, Rickettsial, Brucellosis)</td></tr><tr><td>**Nice to Know**</td><td>Emerging pathogens (Mpox, Zika, novel coronaviruses), Molecular diagnostics (Syndromic PCR panels), FUO outcome statistics, Cost-effectiveness of PET-CT, Outbreak investigation principles, Public health notification</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">✅ Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score (0-10)</th><th>Notes</th></tr><tr><td>---------</td><td>--------------</td><td>-------</td></tr><tr><td>Definitions (FUO, Traveller Fever)</td><td></td><td></td></tr><tr><td>Approach to Returned Traveller</td><td></td><td></td></tr><tr><td>Malaria / Typhoid / Dengue</td><td></td><td></td></tr><tr><td>FUO Categories & Workup</td><td></td><td></td></tr><tr><td>Empirical Therapy by Region</td><td></td><td></td></tr><tr><td>Red Flags</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">🔗 Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Previous</b>: [[Antimicrobial Prescribing Principles]]</li><li><b>Next</b>: [[Leptospirosis]]</li><li><b>Section Hub</b>: [[Infectious Disease MOC]]</li><li><b>MOC</b>: [[Infectious Disease MOC]]</li><li><b>Template</b>: [[../Templates/Hematology Topic Template]]</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Fever in Returned Traveller &amp; FUO · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>
