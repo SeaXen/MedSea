@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endocrinology · MedSea</title>
+<meta name="description" content="Sea Knowledge medical study library — Davidson's chapters rendered as infographics.">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --bg-2: #111827;
+  --bg-3: #1f2937;
+  --border: #2d3748;
+  --text: #e5e7eb;
+  --text-dim: #9ca3af;
+  --accent: #38bdf8;
+  --code-bg: #0f172a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: linear-gradient(135deg, #0a0e1a 0%, #0f1729 100%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', system-ui, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+a { color: var(--accent); text-decoration: none; transition: color 0.15s; }
+a:hover { color: #7dd3fc; }
+header.site {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10, 14, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+header.site h1 {
+  font-size: 18px; font-weight: 700; letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 12px;
+}
+header.site h1 .logo {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+header.site nav { display: flex; gap: 20px; font-size: 14px; flex-wrap: wrap; }
+header.site nav a { color: var(--text-dim); font-weight: 500; }
+header.site nav a:hover { color: var(--accent); }
+header.site nav a.active { color: var(--accent); }
+main { padding: 32px; max-width: 1400px; margin: 0 auto; }
+.hero {
+  text-align: center; padding: 48px 0 32px;
+}
+.hero h1 {
+  font-size: 56px; font-weight: 800; letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 12px;
+}
+.hero .subtitle { color: var(--text-dim); font-size: 18px; max-width: 720px; margin: 0 auto; }
+.hero .stats {
+  display: inline-flex; gap: 32px; margin-top: 24px; padding: 16px 32px;
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+.hero .stats .stat { text-align: center; }
+.hero .stats .stat .num { font-size: 28px; font-weight: 700; color: var(--accent); display: block; }
+.hero .stats .stat .label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; }
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.chapter-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.2s ease;
+  position: relative; overflow: hidden;
+}
+.chapter-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-color, var(--accent));
+}
+.chapter-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-color, var(--accent));
+  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.1);
+}
+.chapter-card .ch-num {
+  display: inline-block; padding: 4px 10px;
+  background: var(--accent-color, var(--accent)); color: #0a0e1a;
+  border-radius: 6px; font-size: 11px; font-weight: 700;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  margin-bottom: 12px;
+}
+.chapter-card h2 {
+  font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.chapter-card .desc { color: var(--text-dim); font-size: 14px; margin-bottom: 16px; min-height: 40px; }
+.chapter-card .ch-stats {
+  display: flex; gap: 16px; padding: 12px 0; border-top: 1px solid var(--border);
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 13px;
+}
+.chapter-card .ch-stats .cs { display: flex; flex-direction: column; }
+.chapter-card .ch-stats .num { font-size: 20px; font-weight: 700; color: var(--accent); }
+.chapter-card .ch-stats .label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+.chapter-card .ch-actions { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.chapter-card .ch-actions a {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 8px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  font-size: 13px; font-weight: 500;
+}
+.chapter-card .ch-actions a:hover { background: var(--bg); }
+.chapter-card .ch-actions a.primary {
+  background: var(--accent-color, var(--accent));
+  color: #0a0e1a; border-color: transparent;
+}
+.chapter-card .ch-actions a.primary:hover { filter: brightness(1.1); color: #0a0e1a; }
+.preview-strip {
+  display: flex; gap: 8px; margin-top: 16px;
+  height: 80px;
+}
+.preview-strip .preview {
+  flex: 1; border-radius: 6px; overflow: hidden;
+  background: var(--bg-3); border: 1px solid var(--border);
+}
+.preview-strip .preview img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top;
+}
+.crumbs { color: var(--text-dim); font-size: 13px; margin-bottom: 12px; }
+.crumbs a { color: var(--text-dim); }
+.crumbs a:hover { color: var(--accent); }
+.chapter-header { padding: 32px 0; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+.chapter-header h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+.chapter-header .meta { color: var(--text-dim); font-size: 15px; }
+.hub-section {
+  margin-bottom: 40px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.hub-section h2 {
+  font-size: 22px; font-weight: 700; margin-bottom: 4px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hub-section h2 .hub-num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 12px; padding: 4px 8px; background: var(--bg-3); border-radius: 4px;
+  color: var(--text-dim);
+}
+.hub-section .hub-desc { color: var(--text-dim); font-size: 13px; margin-bottom: 16px; }
+.topic-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.topic-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.15s;
+  text-decoration: none !important;
+  color: var(--text) !important;
+}
+.topic-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.topic-card .preview {
+  width: 100%; aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--bg-3) 0%, var(--code-bg) 100%);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.topic-card .preview img { width: 100%; height: auto; min-height: 100%; }
+.topic-card .no-preview { color: var(--text-dim); font-size: 12px; padding: 12px; text-align: center; }
+.topic-card .title {
+  padding: 10px 12px;
+  font-size: 13px; font-weight: 500;
+  border-top: 1px solid var(--border);
+  line-height: 1.4;
+}
+.topic-card .num {
+  display: inline-block; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px; color: var(--text-dim); margin-right: 6px;
+}
+.topic-page { max-width: 1100px; margin: 0 auto; }
+.topic-page .topic-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 24px; gap: 24px; flex-wrap: wrap;
+}
+.topic-page .topic-header h1 {
+  font-size: 32px; font-weight: 800; letter-spacing: -0.02em;
+}
+.topic-page .topic-actions { display: flex; gap: 8px; }
+.topic-page .topic-actions a {
+  padding: 8px 14px; border-radius: 8px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  font-size: 13px;
+}
+.topic-page .topic-image {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+  padding: 16px; margin-bottom: 24px;
+}
+.topic-page .topic-image img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.topic-page .topic-content {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px;
+}
+.topic-page .topic-content h2, .topic-page .topic-content h3, .topic-page .topic-content h4 {
+  margin-top: 20px; margin-bottom: 10px; font-weight: 700;
+}
+.topic-page .topic-content h2 { font-size: 22px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.topic-page .topic-content h3 { font-size: 18px; color: var(--accent); }
+.topic-page .topic-content h4 { font-size: 15px; }
+.topic-page .topic-content p { margin-bottom: 12px; color: var(--text); }
+.topic-page .topic-content ul, .topic-page .topic-content ol { margin-left: 24px; margin-bottom: 12px; }
+.topic-page .topic-content li { margin-bottom: 4px; }
+.topic-page .topic-content li:empty { display: none; }
+.topic-page .topic-content table {
+  border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 13px;
+}
+.topic-page .topic-content th, .topic-page .topic-content td {
+  border: 1px solid var(--border); padding: 8px 10px; text-align: left;
+}
+.topic-page .topic-content th { background: var(--bg-3); font-weight: 600; }
+.topic-page .topic-content code {
+  background: var(--code-bg); padding: 2px 6px; border-radius: 4px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 0.9em;
+}
+.topic-page .topic-content blockquote {
+  border-left: 3px solid var(--accent); padding: 8px 14px; color: var(--text-dim);
+  margin: 12px 0; background: var(--bg-3); border-radius: 0 6px 6px 0;
+}
+.topic-page .topic-content hr {
+  border: none; border-top: 1px solid var(--border); margin: 24px 0;
+}
+footer {
+  margin-top: 64px; padding: 32px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim); font-size: 13px;
+  text-align: center;
+}
+footer a { color: var(--text-dim); }
+footer a:hover { color: var(--accent); }
+@media (max-width: 768px) {
+  header.site { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .hero h1 { font-size: 36px; }
+  .hero .stats { flex-wrap: wrap; gap: 16px; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <h1><span class="logo">⚕</span><a href="/" style="color:inherit">MedSea</a></h1>
+  <nav><a href="/15-nephrology-urology/" class="">Nephrology and Urology</a><a href="/16-cardiology/" class="">Cardiology</a><a href="/17-respiratory-medicine/" class="">Respiratory Medicine</a><a href="/18-endocrinology/" class="active">Endocrinology</a><a href="/21-gastroenterology/" class="">Gastroenterology</a></nav>
+</header>
+<main>
+
+<div class="crumbs"><a href="/">Home</a> · <a href="/18-endocrinology/">Endocrinology</a></div>
+<div class="chapter-header" style="border-left: 3px solid #a855f7; padding-left: 24px;">
+  <h1>Endocrinology</h1>
+  <p class="meta">Chapter 18 · Davidson 24th Ed · 10 hubs · 87 topics · <a href="https://app.notion.com/p/SeaHub/Chapter-18-Endocrinology-9db6455d6ae840f0ac29129217d6ccef" target="_blank">View on Notion ↗</a></p>
+</div>
+<section class="hub-section">
+  <h2><span class="hub-num">18.1</span> General Principles</h2>
+  <p class="hub-desc">4 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.1.01-dynamic-testing-principles.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.1.01-dynamic-testing-principles.png" alt="Dynamic Testing Principles" loading="lazy"></div>
+      <div class="title"><span class="num">18.1.01</span>Dynamic Testing Principles</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.1.02-endocrine-investigation-algorithms.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.1.02-endocrine-investigation-algorithms.png" alt="Endocrine Investigation Algorithms" loading="lazy"></div>
+      <div class="title"><span class="num">18.1.02</span>Endocrine Investigation Algorithms</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.1.03-feedback-loops.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.1.03-feedback-loops.png" alt="Feedback Loops" loading="lazy"></div>
+      <div class="title"><span class="num">18.1.03</span>Feedback Loops</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.1.04-hormone-synthesis-secretion-and-transport.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.1.04-hormone-synthesis-secretion-and-transport.png" alt="Hormone Synthesis Secretion And Transport" loading="lazy"></div>
+      <div class="title"><span class="num">18.1.04</span>Hormone Synthesis Secretion And Transport</div>
+    </a>
+  </div>
+</section>
+<section class="hub-section">
+  <h2><span class="hub-num">18.11</span> Special Topics</h2>
+  <p class="hub-desc">7 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.11.01-endocrine-complications-of-immunotherapy.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.11.01-endocrine-complications-of-immunotherapy.png" alt="Endocrine Complications Of Immunotherapy" loading="lazy"></div>
+      <div class="title"><span class="num">18.11.01</span>Endocrine Complications Of Immunotherapy</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.11.02-endocrine-in-ckd-and-dialysis.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.11.02-endocrine-in-ckd-and-dialysis.png" alt="Endocrine In Ckd And Dialysis" loading="lazy"></div>
+      <div class="title"><span class="num">18.11.02</span>Endocrine In Ckd And Dialysis</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.11.03-endocrine-in-elderly.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.11.03-endocrine-in-elderly.png" alt="Endocrine In Elderly" loading="lazy"></div>
+      <div class="title"><span class="num">18.11.03</span>Endocrine In Elderly</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.11.04-endocrine-in-pregnancy.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.11.04-endocrine-in-pregnancy.png" alt="Endocrine In Pregnancy" loading="lazy"></div>
+      <div class="title"><span class="num">18.11.04</span>Endocrine In Pregnancy</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.11.05-genetic-endocrinology.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.11.05-genetic-endocrinology.png" alt="Genetic Endocrinology" loading="lazy"></div>
+      <div class="title"><span class="num">18.11.05</span>Genetic Endocrinology</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.11.06-lipodystrophy-syndromes.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.11.06-lipodystrophy-syndromes.png" alt="Lipodystrophy Syndromes" loading="lazy"></div>
+      <div class="title"><span class="num">18.11.06</span>Lipodystrophy Syndromes</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.11.07-transgender-hormone-therapy.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.11.07-transgender-hormone-therapy.png" alt="Transgender Hormone Therapy" loading="lazy"></div>
+      <div class="title"><span class="num">18.11.07</span>Transgender Hormone Therapy</div>
+    </a>
+  </div>
+</section>
+<section class="hub-section">
+  <h2><span class="hub-num">18.2</span> Hypothalamic-Pituitary Axis</h2>
+  <p class="hub-desc">14 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.01-acth-cortisol-axis.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.01-acth-cortisol-axis.png" alt="Acth Cortisol Axis" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.01</span>Acth Cortisol Axis</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.02-anterior-pituitary-hormones-overview.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.02-anterior-pituitary-hormones-overview.png" alt="Anterior Pituitary Hormones Overview" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.02</span>Anterior Pituitary Hormones Overview</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.03-craniopharyngioma.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.03-craniopharyngioma.png" alt="Craniopharyngioma" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.03</span>Craniopharyngioma</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.04-empty-sella-syndrome.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.04-empty-sella-syndrome.png" alt="Empty Sella Syndrome" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.04</span>Empty Sella Syndrome</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.05-fsh-lh-gonadal-axis.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.05-fsh-lh-gonadal-axis.png" alt="Fsh Lh Gonadal Axis" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.05</span>Fsh Lh Gonadal Axis</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.06-gh-igf-1-axis.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.06-gh-igf-1-axis.png" alt="Gh Igf 1 Axis" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.06</span>Gh Igf 1 Axis</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.07-hypopituitarism.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.07-hypopituitarism.png" alt="Hypopituitarism" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.07</span>Hypopituitarism</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.08-pituitary-adenomas-functioning.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.08-pituitary-adenomas-functioning.png" alt="Pituitary Adenomas Functioning" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.08</span>Pituitary Adenomas Functioning</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.09-pituitary-adenomas-non-functioning.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.09-pituitary-adenomas-non-functioning.png" alt="Pituitary Adenomas Non Functioning" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.09</span>Pituitary Adenomas Non Functioning</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.10-pituitary-apoplexy.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.10-pituitary-apoplexy.png" alt="Pituitary Apoplexy" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.10</span>Pituitary Apoplexy</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.11-posterior-pituitary-adh-vasopressin.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.11-posterior-pituitary-adh-vasopressin.png" alt="Posterior Pituitary Adh Vasopressin" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.11</span>Posterior Pituitary Adh Vasopressin</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.12-posterior-pituitary-oxytocin.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.12-posterior-pituitary-oxytocin.png" alt="Posterior Pituitary Oxytocin" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.12</span>Posterior Pituitary Oxytocin</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.13-prolactin-axis.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.13-prolactin-axis.png" alt="Prolactin Axis" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.13</span>Prolactin Axis</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.2.14-tsh-thyroid-axis.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.2.14-tsh-thyroid-axis.png" alt="Tsh Thyroid Axis" loading="lazy"></div>
+      <div class="title"><span class="num">18.2.14</span>Tsh Thyroid Axis</div>
+    </a>
+  </div>
+</section>
+<section class="hub-section">
+  <h2><span class="hub-num">18.3</span> Thyroid Disorders</h2>
+  <p class="hub-desc">19 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.01-anaplastic-thyroid-cancer.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.01-anaplastic-thyroid-cancer.png" alt="Anaplastic Thyroid Cancer" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.01</span>Anaplastic Thyroid Cancer</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.02-central-hypothyroidism.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.02-central-hypothyroidism.png" alt="Central Hypothyroidism" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.02</span>Central Hypothyroidism</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.03-differentiated-thyroid-cancer-papillary-follicular.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.03-differentiated-thyroid-cancer-papillary-follicular.png" alt="Differentiated Thyroid Cancer Papillary Follicular" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.03</span>Differentiated Thyroid Cancer Papillary Follicular</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.04-drug-induced-thyroid-dysfunction.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.04-drug-induced-thyroid-dysfunction.png" alt="Drug Induced Thyroid Dysfunction" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.04</span>Drug Induced Thyroid Dysfunction</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.05-goitre-management.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.05-goitre-management.png" alt="Goitre Management" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.05</span>Goitre Management</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.06-graves-disease.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.06-graves-disease.png" alt="Graves Disease" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.06</span>Graves Disease</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.07-hyperthyroidism-overview.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.07-hyperthyroidism-overview.png" alt="Hyperthyroidism Overview" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.07</span>Hyperthyroidism Overview</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.08-hypothyroidism-overview.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.08-hypothyroidism-overview.png" alt="Hypothyroidism Overview" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.08</span>Hypothyroidism Overview</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.09-iodine-deficiency-and-excess.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.09-iodine-deficiency-and-excess.png" alt="Iodine Deficiency And Excess" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.09</span>Iodine Deficiency And Excess</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.10-medullary-thyroid-cancer.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.10-medullary-thyroid-cancer.png" alt="Medullary Thyroid Cancer" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.10</span>Medullary Thyroid Cancer</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.11-myxoedema-coma.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.11-myxoedema-coma.png" alt="Myxoedema Coma" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.11</span>Myxoedema Coma</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.12-primary-hypothyroidism-hashimoto.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.12-primary-hypothyroidism-hashimoto.png" alt="Primary Hypothyroidism Hashimoto" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.12</span>Primary Hypothyroidism Hashimoto</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.13-subclinical-thyroid-disease.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.13-subclinical-thyroid-disease.png" alt="Subclinical Thyroid Disease" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.13</span>Subclinical Thyroid Disease</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.14-thyroid-eye-disease.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.14-thyroid-eye-disease.png" alt="Thyroid Eye Disease" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.14</span>Thyroid Eye Disease</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.15-thyroid-nodule-evaluation-ti-rads.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.15-thyroid-nodule-evaluation-ti-rads.png" alt="Thyroid Nodule Evaluation Ti Rads" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.15</span>Thyroid Nodule Evaluation Ti Rads</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.16-thyroid-storm.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.16-thyroid-storm.png" alt="Thyroid Storm" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.16</span>Thyroid Storm</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.17-thyroid-in-pregnancy.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.17-thyroid-in-pregnancy.png" alt="Thyroid In Pregnancy" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.17</span>Thyroid In Pregnancy</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.18-thyroiditis-subacute-silent-postpartum.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.18-thyroiditis-subacute-silent-postpartum.png" alt="Thyroiditis Subacute Silent Postpartum" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.18</span>Thyroiditis Subacute Silent Postpartum</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.3.19-toxic-nodular-goitre-and-toxic-adenoma.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.3.19-toxic-nodular-goitre-and-toxic-adenoma.png" alt="Toxic Nodular Goitre And Toxic Adenoma" loading="lazy"></div>
+      <div class="title"><span class="num">18.3.19</span>Toxic Nodular Goitre And Toxic Adenoma</div>
+    </a>
+  </div>
+</section>
+<section class="hub-section">
+  <h2><span class="hub-num">18.4</span> Adrenal Disorders</h2>
+  <p class="hub-desc">12 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.01-adrenal-crisis.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.01-adrenal-crisis.png" alt="Adrenal Crisis" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.01</span>Adrenal Crisis</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.02-adrenal-cushing.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.02-adrenal-cushing.png" alt="Adrenal Cushing" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.02</span>Adrenal Cushing</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.03-adrenal-incidentaloma.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.03-adrenal-incidentaloma.png" alt="Adrenal Incidentaloma" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.03</span>Adrenal Incidentaloma</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.04-adrenal-insufficiency-primary-addison.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.04-adrenal-insufficiency-primary-addison.png" alt="Adrenal Insufficiency Primary Addison" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.04</span>Adrenal Insufficiency Primary Addison</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.05-adrenal-insufficiency-secondary-and-tertiary.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.05-adrenal-insufficiency-secondary-and-tertiary.png" alt="Adrenal Insufficiency Secondary And Tertiary" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.05</span>Adrenal Insufficiency Secondary And Tertiary</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.06-congenital-adrenal-hyperplasia.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.06-congenital-adrenal-hyperplasia.png" alt="Congenital Adrenal Hyperplasia" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.06</span>Congenital Adrenal Hyperplasia</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.07-cushing-disease.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.07-cushing-disease.png" alt="Cushing Disease" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.07</span>Cushing Disease</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.08-cushing-syndrome-overview.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.08-cushing-syndrome-overview.png" alt="Cushing Syndrome Overview" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.08</span>Cushing Syndrome Overview</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.09-cyclical-cushing.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.09-cyclical-cushing.png" alt="Cyclical Cushing" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.09</span>Cyclical Cushing</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.10-ectopic-acth-syndrome.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.10-ectopic-acth-syndrome.png" alt="Ectopic Acth Syndrome" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.10</span>Ectopic Acth Syndrome</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.11-phaeochromocytoma-paraganglioma.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.11-phaeochromocytoma-paraganglioma.png" alt="Phaeochromocytoma Paraganglioma" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.11</span>Phaeochromocytoma Paraganglioma</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.4.12-primary-aldosteronism-conn's-syndrome.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.4.12-primary-aldosteronism-conn's-syndrome.png" alt="Primary Aldosteronism Conn'S Syndrome" loading="lazy"></div>
+      <div class="title"><span class="num">18.4.12</span>Primary Aldosteronism Conn'S Syndrome</div>
+    </a>
+  </div>
+</section>
+<section class="hub-section">
+  <h2><span class="hub-num">18.5</span> Parathyroid and Calcium Metabolism</h2>
+  <p class="hub-desc">10 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.01-fhh-familial-hypocalciuric-hypercalcaemia.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.01-fhh-familial-hypocalciuric-hypercalcaemia.png" alt="Fhh Familial Hypocalciuric Hypercalcaemia" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.01</span>Fhh Familial Hypocalciuric Hypercalcaemia</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.02-hypercalcaemia-of-malignancy.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.02-hypercalcaemia-of-malignancy.png" alt="Hypercalcaemia Of Malignancy" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.02</span>Hypercalcaemia Of Malignancy</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.03-hypocalcaemia.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.03-hypocalcaemia.png" alt="Hypocalcaemia" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.03</span>Hypocalcaemia</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.04-hypocalcaemic-tetany.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.04-hypocalcaemic-tetany.png" alt="Hypocalcaemic Tetany" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.04</span>Hypocalcaemic Tetany</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.05-hypoparathyroidism.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.05-hypoparathyroidism.png" alt="Hypoparathyroidism" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.05</span>Hypoparathyroidism</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.06-osteoporosis-and-metabolic-bone-disease.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.06-osteoporosis-and-metabolic-bone-disease.png" alt="Osteoporosis And Metabolic Bone Disease" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.06</span>Osteoporosis And Metabolic Bone Disease</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.07-primary-hyperparathyroidism.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.07-primary-hyperparathyroidism.png" alt="Primary Hyperparathyroidism" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.07</span>Primary Hyperparathyroidism</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.08-secondary-hyperparathyroidism-ckd.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.08-secondary-hyperparathyroidism-ckd.png" alt="Secondary Hyperparathyroidism Ckd" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.08</span>Secondary Hyperparathyroidism Ckd</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.09-tertiary-hyperparathyroidism.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.09-tertiary-hyperparathyroidism.png" alt="Tertiary Hyperparathyroidism" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.09</span>Tertiary Hyperparathyroidism</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.5.10-vitamin-d-metabolism-and-deficiency.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.5.10-vitamin-d-metabolism-and-deficiency.png" alt="Vitamin D Metabolism And Deficiency" loading="lazy"></div>
+      <div class="title"><span class="num">18.5.10</span>Vitamin D Metabolism And Deficiency</div>
+    </a>
+  </div>
+</section>
+<section class="hub-section">
+  <h2><span class="hub-num">18.6</span> Pituitary Disorders</h2>
+  <p class="hub-desc">6 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.6.01-acromegaly.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.6.01-acromegaly.png" alt="Acromegaly" loading="lazy"></div>
+      <div class="title"><span class="num">18.6.01</span>Acromegaly</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.6.02-diabetes-insipidus.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.6.02-diabetes-insipidus.png" alt="Diabetes Insipidus" loading="lazy"></div>
+      <div class="title"><span class="num">18.6.02</span>Diabetes Insipidus</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.6.03-gonadotroph-adenoma.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.6.03-gonadotroph-adenoma.png" alt="Gonadotroph Adenoma" loading="lazy"></div>
+      <div class="title"><span class="num">18.6.03</span>Gonadotroph Adenoma</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.6.04-prolactinoma.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.6.04-prolactinoma.png" alt="Prolactinoma" loading="lazy"></div>
+      <div class="title"><span class="num">18.6.04</span>Prolactinoma</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.6.05-siadh.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.6.05-siadh.png" alt="Siadh" loading="lazy"></div>
+      <div class="title"><span class="num">18.6.05</span>Siadh</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.6.06-tsh-secreting-adenoma.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.6.06-tsh-secreting-adenoma.png" alt="Tsh Secreting Adenoma" loading="lazy"></div>
+      <div class="title"><span class="num">18.6.06</span>Tsh Secreting Adenoma</div>
+    </a>
+  </div>
+</section>
+<section class="hub-section">
+  <h2><span class="hub-num">18.7</span> Reproductive Endocrinology</h2>
+  <p class="hub-desc">6 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.7.01-contraception.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.7.01-contraception.png" alt="Contraception" loading="lazy"></div>
+      <div class="title"><span class="num">18.7.01</span>Contraception</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.7.02-female-hypogonadism.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.7.02-female-hypogonadism.png" alt="Female Hypogonadism" loading="lazy"></div>
+      <div class="title"><span class="num">18.7.02</span>Female Hypogonadism</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.7.03-infertility.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.7.03-infertility.png" alt="Infertility" loading="lazy"></div>
+      <div class="title"><span class="num">18.7.03</span>Infertility</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.7.04-male-hypogonadism.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.7.04-male-hypogonadism.png" alt="Male Hypogonadism" loading="lazy"></div>
+      <div class="title"><span class="num">18.7.04</span>Male Hypogonadism</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.7.05-menopause-and-hrt.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.7.05-menopause-and-hrt.png" alt="Menopause And Hrt" loading="lazy"></div>
+      <div class="title"><span class="num">18.7.05</span>Menopause And Hrt</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.7.06-pcos.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.7.06-pcos.png" alt="Pcos" loading="lazy"></div>
+      <div class="title"><span class="num">18.7.06</span>Pcos</div>
+    </a>
+  </div>
+</section>
+<section class="hub-section">
+  <h2><span class="hub-num">18.8</span> Multiple Endocrine Neoplasia</h2>
+  <p class="hub-desc">4 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.8.01-men1.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.8.01-men1.png" alt="Men1" loading="lazy"></div>
+      <div class="title"><span class="num">18.8.01</span>Men1</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.8.02-men2a.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.8.02-men2a.png" alt="Men2A" loading="lazy"></div>
+      <div class="title"><span class="num">18.8.02</span>Men2A</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.8.03-men2b.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.8.03-men2b.png" alt="Men2B" loading="lazy"></div>
+      <div class="title"><span class="num">18.8.03</span>Men2B</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.8.04-men4.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.8.04-men4.png" alt="Men4" loading="lazy"></div>
+      <div class="title"><span class="num">18.8.04</span>Men4</div>
+    </a>
+  </div>
+</section>
+<section class="hub-section">
+  <h2><span class="hub-num">18.9</span> Neuroendocrine Tumours</h2>
+  <p class="hub-desc">5 topics</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="/18-endocrinology/diseases/18.9.01-bronchial-nets.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.9.01-bronchial-nets.png" alt="Bronchial Nets" loading="lazy"></div>
+      <div class="title"><span class="num">18.9.01</span>Bronchial Nets</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.9.02-carcinoid-syndrome.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.9.02-carcinoid-syndrome.png" alt="Carcinoid Syndrome" loading="lazy"></div>
+      <div class="title"><span class="num">18.9.02</span>Carcinoid Syndrome</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.9.03-merkel-cell-carcinoma.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.9.03-merkel-cell-carcinoma.png" alt="Merkel Cell Carcinoma" loading="lazy"></div>
+      <div class="title"><span class="num">18.9.03</span>Merkel Cell Carcinoma</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.9.04-pancreatic-nets.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.9.04-pancreatic-nets.png" alt="Pancreatic Nets" loading="lazy"></div>
+      <div class="title"><span class="num">18.9.04</span>Pancreatic Nets</div>
+    </a>
+    <a class="topic-card" href="/18-endocrinology/diseases/18.9.05-who-2019-net-grading.html">
+      <div class="preview"><img src="/18-endocrinology/diseases/18.9.05-who-2019-net-grading.png" alt="Who 2019 Net Grading" loading="lazy"></div>
+      <div class="title"><span class="num">18.9.05</span>Who 2019 Net Grading</div>
+    </a>
+  </div>
+</section>
+</main>
+<footer>
+  <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-18 15:43 UTC</p>
+</footer>
+</body>
+</html>
