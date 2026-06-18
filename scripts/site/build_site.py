@@ -177,98 +177,121 @@ a:hover { color: #7dd3fc; }
 /* ===== Header (sticky) ===== */
 header.site {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(10, 14, 26, 0.92);
+  background: rgba(10, 14, 26, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 12px 24px;
-  display: flex; align-items: center; gap: 20px;
-  flex-wrap: wrap;
+  padding: 8px 16px;
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: nowrap;
+  min-height: 48px;
 }
 header.site .logo-wrap {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 17px; font-weight: 700; letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 15px; font-weight: 700; letter-spacing: -0.02em;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 header.site .logo {
-  width: 30px; height: 30px;
+  width: 26px; height: 26px;
   background: linear-gradient(135deg, #38bdf8, #a855f7);
-  border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;
-  font-size: 17px;
+  border-radius: 7px; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 14px;
 }
 header.site .logo-wrap a { color: inherit; }
 
 /* ===== Stats bar in header ===== */
 header.site .stats {
-  display: flex; gap: 4px; align-items: center;
+  display: flex; gap: 3px; align-items: center;
   font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  font-size: 12px;
-  flex-wrap: wrap;
+  font-size: 11px;
+  flex-shrink: 0;
 }
 header.site .stats .stat {
   display: inline-flex; align-items: baseline; gap: 4px;
-  padding: 4px 10px; border-radius: 6px;
+  padding: 3px 8px; border-radius: 5px;
   background: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.15);
 }
-header.site .stats .stat .num { font-size: 13px; font-weight: 700; color: var(--accent); }
-header.site .stats .stat .label { color: var(--text-dim); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+header.site .stats .stat .num { font-size: 12px; font-weight: 700; color: var(--accent); }
+header.site .stats .stat .label { color: var(--text-dim); font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* ===== Chapter dropdown ===== */
 header.site .chapter-dropdown {
   position: relative;
   margin-left: auto;
+  flex-shrink: 0;
 }
 header.site .chapter-dropdown .drop-btn {
-  padding: 7px 14px; border-radius: 8px;
+  padding: 6px 12px; border-radius: 7px;
   background: var(--bg-3); border: 1px solid var(--border-2);
-  color: var(--text); font-size: 13px; font-weight: 500;
-  cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+  color: var(--text); font-size: 12px; font-weight: 500;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
   font-family: inherit;
 }
 header.site .chapter-dropdown .drop-btn:hover { background: var(--bg-2); border-color: var(--accent); }
-header.site .chapter-dropdown .drop-btn .arrow { font-size: 10px; opacity: 0.7; }
+header.site .chapter-dropdown .drop-btn .arrow { font-size: 9px; opacity: 0.7; }
 header.site .chapter-dropdown .drop-btn .current-ch { color: var(--accent); font-weight: 600; }
+/* Full-height dropdown showing all 32 chapters in a 2-col grid */
 header.site .chapter-dropdown .drop-menu {
-  position: absolute; right: 0; top: calc(100% + 8px);
-  min-width: 360px; max-height: 70vh; overflow-y: auto;
+  position: fixed; right: 16px; top: 56px;
+  width: 640px; max-height: calc(100vh - 72px); overflow-y: auto;
   background: var(--bg-2); border: 1px solid var(--border-2);
   border-radius: 10px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-  padding: 6px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  padding: 8px;
   display: none;
   z-index: 200;
+  column-count: 2;
+  column-gap: 6px;
 }
+header.site .chapter-dropdown .drop-menu .item { break-inside: avoid; }
 header.site .chapter-dropdown.open .drop-menu { display: block; }
 header.site .chapter-dropdown .drop-menu .item {
-  display: flex; align-items: center; gap: 10px;
-  padding: 8px 10px; border-radius: 6px;
-  color: var(--text); font-size: 13px;
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 8px; border-radius: 5px;
+  color: var(--text); font-size: 12px;
   cursor: pointer; transition: background 0.1s;
+  text-decoration: none !important;
 }
 header.site .chapter-dropdown .drop-menu .item:hover { background: var(--bg-3); }
 header.site .chapter-dropdown .drop-menu .item.active { background: rgba(56, 189, 248, 0.15); }
 header.site .chapter-dropdown .drop-menu .item .num {
-  display: inline-block; min-width: 28px; padding: 2px 6px;
+  display: inline-block; min-width: 24px; padding: 1px 4px;
   background: var(--bg-3); border: 1px solid var(--border);
-  border-radius: 4px; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  font-size: 10px; text-align: center; color: var(--text-dim);
+  border-radius: 3px; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 9px; text-align: center; color: var(--text-dim);
+  flex-shrink: 0;
+}
+header.site .chapter-dropdown .drop-menu .item .name {
+  flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 header.site .chapter-dropdown .drop-menu .item.active .num { background: var(--accent); color: #0a0e1a; border-color: transparent; }
-header.site .chapter-dropdown .drop-menu .item.soon { color: var(--text-dim); cursor: not-allowed; opacity: 0.55; }
+/* Strong visual distinction: LIVE = accent green, SOON = dim grey + lock icon */
+header.site .chapter-dropdown .drop-menu .item.soon { color: var(--text-dim); cursor: not-allowed; opacity: 0.5; }
 header.site .chapter-dropdown .drop-menu .item.soon .num { opacity: 0.7; }
 header.site .chapter-dropdown .drop-menu .item .badge {
-  margin-left: auto; font-size: 9px; padding: 1px 6px;
+  margin-left: auto; font-size: 8px; padding: 1px 5px;
   background: var(--bg-3); border-radius: 8px;
   color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em;
+  font-weight: 700;
+  flex-shrink: 0;
 }
-header.site .chapter-dropdown .drop-menu .item.soon .badge { color: var(--text-dim); }
+header.site .chapter-dropdown .drop-menu .item.soon .badge {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-dim); font-weight: 500;
+}
+header.site .chapter-dropdown .drop-menu .item:not(.soon) .badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
 
-header.site .ext-links { display: flex; gap: 8px; }
+header.site .ext-links { display: flex; gap: 6px; flex-shrink: 0; }
 header.site .ext-links a {
-  padding: 6px 12px; border-radius: 6px;
+  padding: 5px 10px; border-radius: 6px;
   background: var(--bg-3); border: 1px solid var(--border);
-  color: var(--text-dim); font-size: 12px;
+  color: var(--text-dim); font-size: 11px;
+  text-decoration: none;
 }
 header.site .ext-links a:hover { color: var(--accent); border-color: var(--accent); }
 
@@ -358,30 +381,40 @@ main { padding: 32px; max-width: 1500px; margin: 0 auto; }
   margin-bottom: 12px;
 }
 .chapter-sidebar .search:focus { outline: none; border-color: var(--accent); }
-.chapter-sidebar .hub-group { margin-bottom: 18px; }
+.chapter-sidebar .hub-group { margin-bottom: 14px; }
 .chapter-sidebar .hub-group h3 {
-  font-size: 11px; color: var(--text-dim);
+  font-size: 11px; color: var(--accent);
   text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 4px 8px; margin-bottom: 4px;
-  font-weight: 600;
+  padding: 6px 8px; margin: 0 0 4px;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.06);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
 }
 .chapter-sidebar .topic-item {
-  display: block; padding: 6px 10px;
-  border-radius: 6px;
-  color: var(--text-dim); font-size: 13px;
+  display: block; padding: 5px 10px 5px 22px;
+  border-radius: 4px;
+  color: var(--text); font-size: 12.5px; font-weight: 500;
   cursor: pointer; transition: all 0.1s;
   border: 1px solid transparent;
+  text-decoration: none !important;
+  position: relative;
+  line-height: 1.35;
 }
-.chapter-sidebar .topic-item:hover { background: var(--bg-3); color: var(--text); }
+.chapter-sidebar .topic-item:hover { background: var(--bg-3); color: #fff; }
 .chapter-sidebar .topic-item.active {
   background: rgba(56, 189, 248, 0.15);
   color: var(--accent);
+  font-weight: 600;
   border-color: rgba(56, 189, 248, 0.3);
 }
 .chapter-sidebar .topic-item .num {
   font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  font-size: 10px; margin-right: 6px; opacity: 0.7;
+  font-size: 10px; margin-right: 6px;
+  color: var(--text-dim);
+  font-weight: 400;
 }
+.chapter-sidebar .topic-item.active .num { color: var(--accent); font-weight: 600; }
 .chapter-sidebar .no-results {
   color: var(--text-dim); font-size: 12px;
   padding: 12px 8px; text-align: center;
@@ -390,19 +423,26 @@ main { padding: 32px; max-width: 1500px; margin: 0 auto; }
 .chapter-sidebar .no-results.show { display: block; }
 
 .chapter-main {
-  padding: 24px 32px;
+  padding: 16px 24px;
   overflow-x: hidden;
 }
 .chapter-main .chapter-header {
-  padding: 16px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 24px;
+  padding: 8px 0 10px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
   border-left: 3px solid var(--accent-color, var(--accent));
-  padding-left: 20px;
+  padding-left: 14px;
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
 }
 .chapter-main .chapter-header h1 {
-  font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px;
+  font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0;
+  line-height: 1.2;
 }
-.chapter-main .chapter-header .meta { color: var(--text-dim); font-size: 14px; }
-.chapter-main .chapter-header .meta a { color: var(--accent); }
+.chapter-main .chapter-header .meta {
+  color: var(--text-dim); font-size: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.chapter-main .chapter-header .meta a { color: var(--accent); text-decoration: none; }
+.chapter-main .chapter-header .meta a:hover { text-decoration: underline; }
 
 .chapter-main .placeholder {
   text-align: center; padding: 60px 20px;
@@ -549,24 +589,33 @@ footer a:hover { color: var(--accent); }
 
 
 def chapter_dropdown_html(current_ch_slug=None, current_dav_num=None):
-    """Build the 32-chapter dropdown HTML."""
+    """Build the 32-chapter dropdown HTML — shows Davidson 25th Ed numbering."""
     items = []
     for dav_num, name, built_slug in DAVIDSON_25TH:
-        if built_slug and built_slug in BUILT_CHAPTERS:
+        # Show the canonical Davidson chapter number, not the MedSea slug prefix
+        display_num = str(dav_num)
+        is_live = built_slug and built_slug in BUILT_CHAPTERS
+        if is_live:
             href = f"/{built_slug}/"
-            display_num = built_slug.split("-")[0]
+            # Prefer the user-facing chapter name from BUILT_CHAPTERS for live items
             display_name = BUILT_CHAPTERS[built_slug][0]
-            badge = '<span class="badge">Live</span>'
+            badge = '<span class="badge">●</span>'
             active = "active" if built_slug == current_ch_slug else ""
             onclick = ""
+            cls = f"item {active}".strip()
         else:
             href = "#"
-            display_num = str(dav_num)
             display_name = name
-            badge = '<span class="badge">Soon</span>'
+            badge = '<span class="badge">○</span>'
             active = ""
-            onclick = " onclick=\"event.preventDefault(); alert('Coming soon — this Davidson chapter is not yet built.'); return false;\""
-        items.append(f'<a class="item {active} soon"' if not built_slug or built_slug not in BUILT_CHAPTERS else f'<a class="item {active}"' + onclick + f' href="{href}"><span class="num">{display_num}</span><span>{display_name}</span>{badge}</a>')
+            onclick = " onclick=\"event.preventDefault();\""
+            cls = "item soon"
+        items.append(
+            f'<a class="{cls}"{onclick} href="{href}">'
+            f'<span class="num">{display_num}</span>'
+            f'<span class="name">{display_name}</span>'
+            f'{badge}</a>'
+        )
     return items
 
 
@@ -915,7 +964,7 @@ def write_chapter_spa(ch_slug, ch_name, ch_url, ch_desc, ch_color, info):
   <section class="chapter-main">
     <div class="chapter-header">
       <h1>{ch_name}</h1>
-      <p class="meta">Chapter {ch_display_num} · Davidson 25th Ed · {info['n_hubs']} hubs · {info['n_topics']} topics · <a href="{ch_url}" target="_blank">Notion ↗</a></p>
+      <div class="meta">Davidson Ch {ch_display_num} · {info['n_hubs']} hubs · {info['n_topics']} topics · <a href="{ch_url}" target="_blank">Notion ↗</a></div>
     </div>
     <div id="topicContainer" class="topic-detail-placeholder">
       <div class="placeholder">
@@ -983,8 +1032,8 @@ function showTopic(localPrefix) {{
         <button onclick="navigateTopic(1)">Next →</button>
       </div>
     </div>
-    ${{imgHtml}}
     <div class="topic-content">${{t.html}}</div>
+    ${{imgHtml}}
   `;
 }}
 
