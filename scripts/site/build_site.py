@@ -933,6 +933,29 @@ def _esc(s: str) -> str:
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def _extract_label(lbl: str) -> str:
+    """Extract clean text from a Mermaid node label like '[X]', '{{X}}', '{X}'.
+    Handles malformed hexagons like '{{X} Y}' (mismatched braces) by extracting the
+    content between the first pair of balanced braces."""
+    if not lbl:
+        return lbl
+    # Try cleanest outer wrappers first
+    for opener, closer in [("{{", "}}"), ("[[", "]]"), ("[(", ")]"),
+                           ("{", "}"), ("[", "]"), ("(", ")")]:
+        if lbl.startswith(opener) and lbl.endswith(closer):
+            inner = lbl[len(opener):-len(closer)]
+            return _extract_label(inner)  # recurse in case of nested
+    # Malformed: count braces
+    if lbl.count("{") >= 1 and lbl.count("}") >= 1:
+        m = re.search(r"\{([^{}]*)\}", lbl)
+        if m:
+            return m.group(1).strip()
+    # Fallback: strip first and last char if they're brackets
+    if lbl and lbl[0] in "[({<" and lbl[-1] in "])}>":
+        return lbl[1:-1].strip()
+    return lbl.strip()
+
+
 def render_mindmap_md(text: str) -> str:
     """Convert mermaid mindmap to a styled tree (matches PNG infographic layout)."""
     lines = [l for l in text.split("\n") if l.strip()]
@@ -983,7 +1006,38 @@ def render_mindmap_md(text: str) -> str:
 def render_flowchart_md(text: str) -> str:
     """Convert mermaid flowchart/graph to a styled diagram."""
     from collections import deque
-    lines = [l for l in text.split("\n") if l.strip()]
+    # Pre-process: join multi-line edge labels and node labels
+    # Strategy: walk lines, accumulate until we find a complete edge (with proper closure)
+    raw_lines = text.split("\n")
+    lines = []
+    buf = []
+    for ln in raw_lines:
+        s = ln.strip()
+        if not s or s.lower().startswith(("flowchart", "graph")):
+            if buf:
+                lines.append(" ".join(buf))
+                buf = []
+            if s:
+                lines.append(s)
+            continue
+        # If line has `-->`, we have an edge. If buf non-empty, this is continuation
+        buf.append(s)
+        # Check if the line ends with a node closure: `]`, `}`, `)` or a node id at end
+        # Heuristic: if the line ends with a closing bracket or has a complete right side
+        # The "end of edge" is when we see a closing bracket on the right of `-->` (with optional edge label)
+        # Simpler: check if there's an unbalanced bracket
+        combined = " ".join(buf)
+        # Count brackets
+        sq_open = combined.count("[") - combined.count("]")
+        curly_open = combined.count("{") - combined.count("}")
+        paren_open = combined.count("(") - combined.count(")")
+        pipe_open = combined.count("|") - combined.count("|") if combined.count("|") % 2 == 0 else 1
+        if sq_open == 0 and curly_open == 0 and paren_open == 0 and pipe_open == 0:
+            lines.append(combined)
+            buf = []
+    if buf:
+        lines.append(" ".join(buf))
+
     direction = "TD"
     nodes = {}
     edges = []
@@ -994,35 +1048,47 @@ def render_flowchart_md(text: str) -> str:
             if len(parts) > 1:
                 direction = parts[1].upper()
             continue
-        edge_m = re.match(
-            r"^([A-Za-z0-9_]+)(\[[^\]]+\]|\([^)]+\)|\{[^}]+\}|>[^<]+<|\[\([^)]+\)\])?\s*(?:-->|---|--[->o]+)\s*(?:\|([^|]*)\|\s*)?([A-Za-z0-9_]+)(\[[^\]]+\]|\([^)]+\)|\{[^}]+\}|>[^<]+<|\[\([^)]+\)\])?",
-            s)
-        if edge_m:
-            from_id, from_label, edge_label, to_id, to_label = edge_m.groups()
-            if from_label:
-                inner = from_label[1:-1]  # strip outermost brackets
-                # If inner has matching braces, strip them
-                if inner.startswith("{") and inner.endswith("}"):
-                    inner = inner[1:-1]
-                nodes[from_id] = inner
-            else:
-                nodes.setdefault(from_id, from_id)
-            if to_label:
-                inner = to_label[1:-1]
-                if inner.startswith("{") and inner.endswith("}"):
-                    inner = inner[1:-1]
-                nodes[to_id] = inner
-            else:
-                nodes.setdefault(to_id, to_id)
+        # Edge line: capture src, dst, and any labels/edge text up to end of line
+        s_stripped = s.rstrip()
+        # Try to find a ` --> ` or ` --- ` separator
+        arrow_m = re.search(r"\s*(?:-->|---|--[->o]+)\s*", s_stripped)
+        if arrow_m:
+            left = s_stripped[:arrow_m.start()].strip()
+            right_with_label = s_stripped[arrow_m.end():].strip()
+            # Edge label like |text|
+            edge_label = None
+            edge_lbl_m = re.match(r"^\|([^|]*)\|\s*", right_with_label)
+            if edge_lbl_m:
+                edge_label = edge_lbl_m.group(1)
+                right_with_label = right_with_label[edge_lbl_m.end():]
+            # Parse left and right as `<id><label?>` where label is any non-space chars
+            def parse_node(text):
+                m = re.match(r"^([A-Za-z0-9_]+)(.*)$", text)
+                if not m:
+                    return None, None
+                return m.group(1), m.group(2)
+            from_id, from_label_raw = parse_node(left)
+            to_id, to_label_raw = parse_node(right_with_label)
+            from_label = from_label_raw.strip() if from_label_raw else None
+            to_label = to_label_raw.strip() if to_label_raw else None
+            # Skip edges with missing endpoints (e.g., multi-line labels)
+            if not from_id or not to_id:
+                continue
+            # Process labels
+            for ref, lbl in [(from_id, from_label), (to_id, to_label)]:
+                if lbl:
+                    inner = _extract_label(lbl)
+                    nodes[ref] = inner.strip() if inner else ref
+                else:
+                    nodes.setdefault(ref, ref)
             edges.append((from_id, to_id, edge_label or ""))
             continue
-        node_m = re.match(r"^([A-Za-z0-9_]+)\s*([\[\(\{].+[\]\)\}])$", s)
+        # Fallback: try original node_m pattern
+        node_m = re.match(r"^([A-Za-z0-9_]+)\s*(\[\[.+?\]\]|\[\(.+?\)\]|\{\{.*?\}\}|\[[^\]]+\]|\([^)]+\)|\{[^}]+\}|>[^<]+<)$", s)
         if node_m:
             nid, nlabel = node_m.groups()
-            inner = nlabel[1:-1]
-            if inner.startswith("{") and inner.endswith("}"):
-                inner = inner[1:-1]
-            nodes[nid] = inner
+            inner = _extract_label(nlabel)
+            nodes[nid] = inner.strip() if inner else nid
     if not nodes:
         return f'<pre class="codeblock"><code>{_esc(text)}</code></pre>'
 
@@ -1059,7 +1125,9 @@ def render_flowchart_md(text: str) -> str:
         level_nodes = by_level.get(lv, [])
         html.append('<div class="fc-level">')
         for nid in level_nodes:
-            label = nodes.get(nid, nid)
+            label = nodes.get(nid, nid) or nid
+            if not isinstance(label, str):
+                label = str(label)
             html.append(f'<div class="fc-node" data-id="{nid}">{_esc(label)}</div>')
         html.append('</div>')
         if lv < max_level:
