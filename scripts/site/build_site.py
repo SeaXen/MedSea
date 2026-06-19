@@ -59,103 +59,103 @@ DAVIDSON_25TH = [
 BUILT_CHAPTERS = {
     "1-clinical-decision-making": (
         "Clinical Decision-Making",
-        "https://app.notion.com/p/SeaHub/Chapter-1-Clinical-decision-making-8e5cd1ec34904d69aa7fb21ab056a508",
+        "https://medsea.notion.site/Chapter-1-Clinical-decision-making-8e5cd1ec34904d69aa7fb21ab056a508",
         "#64748b",
     ),
     "2-clinical-therapeutics": (
         "Clinical Therapeutics & Prescribing",
-        "https://app.notion.com/p/SeaHub/Chapter-2-Clinical-therapeutics-and-good-prescribing-5ec47a8c567148fc91af45d63691e6e6",
+        "https://medsea.notion.site/Chapter-2-Clinical-therapeutics-and-good-prescribing-5ec47a8c567148fc91af45d63691e6e6",
         "#0ea5e9",
     ),
     "3-clinical-genetics": (
         "Clinical Genetics",
-        "https://app.notion.com/p/SeaHub/Chapter-3-Clinical-genetics-0b1c71bf18984f99ab97018154d0ad71",
+        "https://medsea.notion.site/Chapter-3-Clinical-genetics-0b1c71bf18984f99ab97018154d0ad71",
         "#84cc16",
     ),
     "4-clinical-immunology": (
         "Clinical Immunology",
-        "https://app.notion.com/p/SeaHub/Chapter-4-Clinical-immunology-0b4e940adc464a56b120b1e4ba682c63",
+        "https://medsea.notion.site/Chapter-4-Clinical-immunology-0b4e940adc464a56b120b1e4ba682c63",
         "#f97316",
     ),
     "5-nutritional-factors": (
         "Nutritional Factors in Disease",
-        "https://app.notion.com/p/SeaHub/Chapter-5-Nutritional-factors-in-disease-20ae0f805c75401983af5d981bccbe72",
+        "https://medsea.notion.site/Chapter-5-Nutritional-factors-in-disease-20ae0f805c75401983af5d981bccbe72",
         "#eab308",
     ),
     "6-population-health": (
         "Population Health & Epidemiology",
-        "https://app.notion.com/p/SeaHub/Chapter-6-Population-health-and-epidemiology-83035ef3c78d462b816a3d8ad0b0e653",
+        "https://medsea.notion.site/Chapter-6-Population-health-and-epidemiology-83035ef3c78d462b816a3d8ad0b0e653",
         "#14b8a6",
     ),
     "7-principles-of-infection": (
         "Principles of Infection",
-        "https://app.notion.com/p/SeaHub/Chapter-7-Principles-of-infection-6469084f1ff046798f4f4bab9f1d0802",
+        "https://medsea.notion.site/Chapter-7-Principles-of-infection-6469084f1ff046798f4f4bab9f1d0802",
         "#dc2626",
     ),
     "8-oncology": (
         "Oncology",
-        "https://app.notion.com/p/SeaHub/Chapter-8-Oncology-8d4228ea84974d4db2e7f62a746f39d1",
+        "https://medsea.notion.site/Chapter-8-Oncology-8d4228ea84974d4db2e7f62a746f39d1",
         "#7c3aed",
     ),
     "9-palliative-care": (
         "Palliative & Supportive Care",
-        "https://app.notion.com/p/SeaHub/Chapter-9-Palliative-and-supportive-care-c65289d8222748e3a809cb07e2b70f66",
+        "https://medsea.notion.site/Chapter-9-Palliative-and-supportive-care-c65289d8222748e3a809cb07e2b70f66",
         "#be185d",
-    ),
-    "16-cardiology": (
-        "Cardiology",
-        "https://app.notion.com/p/SeaHub/Chapter-16-Cardiology-8baa010d9cc94c48826136417d383973",
-        "#ef4444",
-    ),
-    "17-respiratory-medicine": (
-        "Respiratory Medicine",
-        "https://app.notion.com/p/SeaHub/Chapter-17-Respiratory-medicine-d4fe7d456ca4481581e806ebe9e177cf",
-        "#10b981",
-    ),
-    "18-nephrology-urology": (
-        "Nephrology & Urology",
-        "https://app.notion.com/p/SeaHub/Chapter-18-Nephrology-and-Urology-d29e1888740b4d809dd1b0cab7616c05",
-        "#06b6d4",
-    ),
-    "20-endocrinology": (
-        "Endocrinology",
-        "https://app.notion.com/p/SeaHub/Chapter-20-Endocrinology-9db6455d6ae840f0ac29129217d6ccef",
-        "#a855f7",
-    ),
-    "22-gastroenterology": (
-        "Gastroenterology",
-        "https://app.notion.com/p/SeaHub/Chapter-22-Gastroenterology-bbfd97790eca482eaed8d47428a642b2",
-        "#f59e0b",
     ),
     "10-acute-medicine": (
         "Acute Medicine",
-        "https://app.notion.com/p/SeaHub/Chapter-10-Acute-medicine-and-critical-illness-3835588e846f81a1bd40fbd5d564fd2e",
+        "https://medsea.notion.site/Chapter-10-Acute-Medicine-and-Critical-Illness-3835588e846f81a1bd40fbd5d564fd2e",
         "#f43f5e",
     ),
     "11-poisoning": (
         "Poisoning",
-        "https://app.notion.com/p/SeaHub/Chapter-11-Poisoning-abc75846ef544efcb3b78f00134f50b2",
+        "https://medsea.notion.site/Chapter-11-Poisoning-abc75846ef544efcb3b78f00134f50b2",
         "#84cc16",
     ),
     "12-envenomation": (
         "Envenomation",
-        "https://app.notion.com/p/SeaHub/Chapter-12-Envenomation-fce508f973a64d58b48ad1e2d186e39d",
+        "https://medsea.notion.site/Chapter-12-Envenomation-fce508f973a64d58b48ad1e2d186e39d",
         "#22c55e",
     ),
     "13-austere-medicine": (
         "Austere Medicine",
-        "https://app.notion.com/p/SeaHub/Chapter-13-Medicine-in-austere-environments-b9b201cbbecc4eaab3c4b6c958c8ac11",
+        "https://medsea.notion.site/Chapter-13-Medicine-in-austere-environments-b9b201cbbecc4eaab3c4b6c958c8ac11",
         "#0d9488",
     ),
     "14-infectious-disease": (
         "Infectious Disease",
-        "https://app.notion.com/p/SeaHub/Chapter-14-Infectious-disease-eb9d6efbe3bb4ccc8302396a8edc57cf",
+        "https://medsea.notion.site/Chapter-14-Infectious-disease-eb9d6efbe3bb4ccc8302396a8edc57cf",
         "#0891b2",
     ),
     "15-sexually-transmitted-infections": (
         "Sexually Transmitted Infections",
-        "https://app.notion.com/p/SeaHub/Chapter-15-Sexually-transmitted-infections-19c59a0895cd4ea4bee4e69d90ce37c8",
+        "https://medsea.notion.site/Chapter-15-Sexually-transmitted-infections-19c59a0895cd4ea4bee4e69d90ce37c8",
         "#7c3aed",
+    ),
+    "16-cardiology": (
+        "Cardiology",
+        "https://medsea.notion.site/Chapter-16-Cardiology-8baa010d9cc94c48826136417d383973",
+        "#ef4444",
+    ),
+    "17-respiratory-medicine": (
+        "Respiratory Medicine",
+        "https://medsea.notion.site/Chapter-17-Respiratory-medicine-d4fe7d456ca4481581e806ebe9e177cf",
+        "#10b981",
+    ),
+    "18-nephrology-urology": (
+        "Nephrology & Urology",
+        "https://medsea.notion.site/Chapter-18-Nephrology-and-urology-710f215344c34692af7584e89e714ff0",
+        "#06b6d4",
+    ),
+    "20-endocrinology": (
+        "Endocrinology",
+        "https://medsea.notion.site/Chapter-20-Endocrinology-9db6455d6ae840f0ac29129217d6ccef",
+        "#a855f7",
+    ),
+    "22-gastroenterology": (
+        "Gastroenterology",
+        "https://medsea.notion.site/Chapter-22-Gastroenterology-bbfd97790eca482eaed8d47428a642b2",
+        "#f59e0b",
     ),
 }
 
