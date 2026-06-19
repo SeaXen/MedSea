@@ -452,19 +452,335 @@ header.site .search-box .search-empty strong { color: var(--accent); }
 }
 
 /* Mobile chapter page: stacked layout */
-/* ===== Chapter accordion layout ===== */
+/* ===== Chapter page layout (DESKTOP: sidebar + main) ===== */
 .chapter-page {
-  display: block;
-  padding: 20px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  min-height: calc(100vh - 65px);
 }
-/* ===== Chapter accordion layout ===== */
-.chapter-page {
+
+/* Desktop sidebar: hub/topic navigation */
+.chapter-sidebar {
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 65px);
+  position: sticky;
+  top: 65px;
+}
+.chapter-sidebar .search {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.chapter-sidebar .search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.chapter-sidebar .hub-group {
+  margin-bottom: 14px;
+}
+.chapter-sidebar .hub-group h3 {
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 8px;
+  margin: 0 0 4px;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.06);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.chapter-sidebar .topic-item {
   display: block;
-  padding: 20px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 5px 10px 5px 22px;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.1s;
+  border: 1px solid transparent;
+  text-decoration: none !important;
+  position: relative;
+  line-height: 1.35;
+}
+.chapter-sidebar .topic-item:hover {
+  background: var(--bg-3);
+  color: #fff;
+}
+.chapter-sidebar .topic-item.active {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent);
+  font-weight: 600;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+.chapter-sidebar .topic-item .num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px;
+  margin-right: 6px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+.chapter-sidebar .topic-item.active .num {
+  color: var(--accent);
+  font-weight: 600;
+}
+.chapter-sidebar .no-results {
+  color: var(--text-dim);
+  font-size: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  display: none;
+}
+.chapter-sidebar .no-results.show {
+  display: block;
+}
+
+/* Desktop main: clicked topic content */
+.chapter-main {
+  padding: 16px 24px;
+  overflow-x: hidden;
+}
+.chapter-main .chapter-header {
+  padding: 8px 0 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  border-left: 3px solid var(--accent-color, var(--accent));
+  padding-left: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.chapter-main .chapter-header h1 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+.chapter-main .chapter-header .meta {
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chapter-main .chapter-header .meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.chapter-main .chapter-header .meta a:hover {
+  text-decoration: underline;
+}
+.chapter-main .placeholder {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+.chapter-main .placeholder .icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+/* Topic detail (rendered in main pane) */
+.topic-detail .crumbs {
+  color: var(--text-dim);
+  font-size: 12px;
+  margin-bottom: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+.topic-detail .crumbs a {
+  color: var(--text-dim);
+}
+.topic-detail .crumbs a:hover {
+  color: var(--accent);
+}
+.topic-detail .topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.topic-detail .topic-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.topic-detail .topic-header .meta {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-top: 4px;
+}
+.topic-detail .topic-actions {
+  display: flex;
+  gap: 6px;
+}
+.topic-detail .topic-actions a,
+.topic-detail .topic-actions button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+.topic-detail .topic-actions a:hover,
+.topic-detail .topic-actions button:hover {
+  background: var(--bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.topic-detail .topic-image {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.topic-detail .topic-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+.topic-detail .topic-image-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+.topic-detail .topic-image-toggle:hover {
+  background: var(--bg-2);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.topic-detail .topic-image-toggle .toggle-icon {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+.topic-detail .topic-image-toggle.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+.topic-detail .topic-image-wrap {
+  overflow: hidden;
+}
+.topic-detail .topic-image-wrap.collapsed {
+  display: none;
+}
+.topic-detail .topic-content {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.topic-detail .topic-content h2,
+.topic-detail .topic-content h3,
+.topic-detail .topic-content h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.topic-detail .topic-content h2 {
+  font-size: 22px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+.topic-detail .topic-content h3 {
+  font-size: 18px;
+  color: var(--accent);
+}
+.topic-detail .topic-content h4 {
+  font-size: 15px;
+}
+.topic-detail .topic-content p {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.topic-detail .topic-content ul,
+.topic-detail .topic-content ol {
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+.topic-detail .topic-content li {
+  margin-bottom: 4px;
+}
+.topic-detail .topic-content li:empty {
+  display: none;
+}
+.topic-detail .topic-content table {
+  border-collapse: collapse;
+  margin: 16px 0;
+  width: 100%;
+  font-size: 13px;
+}
+.topic-detail .topic-content th,
+.topic-detail .topic-content td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+.topic-detail .topic-content th {
+  background: var(--bg-3);
+  font-weight: 600;
+}
+.topic-detail .topic-content code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+}
+.topic-detail .topic-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 8px 14px;
+  color: var(--text-dim);
+  margin: 12px 0;
+  background: var(--bg-3);
+  border-radius: 0 6px 6px 0;
+}
+.topic-detail .topic-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* ===== Layout visibility ===== */
+.d-only { display: block; }
+.chapter-mobile { display: none; }
+
+/* On mobile: hide desktop sidebar+main, show mobile accordion */
+@media (max-width: 900px) {
+  .d-only { display: none !important; }
+  .chapter-mobile { display: block !important; }
+  .chapter-page { display: block !important; grid-template-columns: 1fr !important; min-height: auto !important; }
 }
 
 .chapter-header {
@@ -1282,7 +1598,7 @@ footer a:hover { color: var(--accent); }
         <span class="logo">⚕</span>
         <a href="/">MedSea</a>
       </div>
-      <div class="stats"><span class="stat"><span class="num">17</span><span class="label">Hubs</span></span><span class="stat"><span class="num">330</span><span class="label">Topics</span></span><span class="stat"><span class="num">328</span><span class="label">PNGs</span></span></div>
+      <div class="stats"><span class="stat"><span class="num">17</span><span class="label">Hubs</span></span><span class="stat"><span class="num">332</span><span class="label">Topics</span></span><span class="stat"><span class="num">332</span><span class="label">PNGs</span></span></div>
     </div>
     <div class="search-box" id="searchBox">
       <input type="text" id="searchInput" placeholder="Search 2,957 topics…" autocomplete="off" spellcheck="false">
@@ -1567,20 +1883,421 @@ footer a:hover { color: var(--accent); }
 <main>
 
 <div class="chapter-page" style="--accent-color: #ef4444">
-  <header class="chapter-header">
-    <h1>Cardiology</h1>
-    <div class="meta">Davidson Ch 16 · 17 hubs · 330 topics · <a href="https://medsea.notion.site/Chapter-16-Cardiology-8baa010d9cc94c48826136417d383973" target="_blank">Notion ↗</a></div>
-  </header>
-  <div class="chapter-toolbar">
-    <input type="text" class="search" id="topicSearch" placeholder="🔍 Search topics…">
-    <div class="toolbar-actions">
-      <button class="btn-acc" onclick="expandAll()">Expand all</button>
-      <button class="btn-acc" onclick="collapseAll()">Collapse all</button>
-    </div>
+  <!-- DESKTOP: sidebar + main (hidden on mobile via CSS) -->
+  <aside class="chapter-sidebar d-only">
+    <input type="text" class="search" id="topicSearch" placeholder="Search topics…">
     <div class="no-results" id="noResults">No matching topics</div>
-  </div>
-  <div class="hub-accordion" id="hubAccordion">
-    <details class="hub-acc" data-hub="16.1">
+    <div class="hub-group" data-hub="16.1">
+  <h3>16.1 · Acute Coronary Syndromes</h3>
+  <a class="topic-item" data-topic="16.1.25" data-hub="16.1" href="?topic=16.1.25"><span class="num">16.1.25</span>Atherosclerosis Pathogenesis</a>
+  <a class="topic-item" data-topic="16.1.26" data-hub="16.1" href="?topic=16.1.26"><span class="num">16.1.26</span>Plaque Rupture And Thrombosis</a>
+  <a class="topic-item" data-topic="16.1.27" data-hub="16.1" href="?topic=16.1.27"><span class="num">16.1.27</span>Acs Classification Stemi Nstemi Ua</a>
+  <a class="topic-item" data-topic="16.1.28" data-hub="16.1" href="?topic=16.1.28"><span class="num">16.1.28</span>Cardiac Biomarkers Troponin Ck Mb Myoglobin</a>
+  <a class="topic-item" data-topic="16.1.29" data-hub="16.1" href="?topic=16.1.29"><span class="num">16.1.29</span>Risk Scores Grace Timi Heart</a>
+  <a class="topic-item" data-topic="16.1.30" data-hub="16.1" href="?topic=16.1.30"><span class="num">16.1.30</span>Stemi Ecg Criteria St Elevation Hyperacute T Waves Reciprocal Changes</a>
+  <a class="topic-item" data-topic="16.1.31" data-hub="16.1" href="?topic=16.1.31"><span class="num">16.1.31</span>Stemi Mimics Lvh Lbbb Pericarditis Brugada Early Repolarization</a>
+  <a class="topic-item" data-topic="16.1.32" data-hub="16.1" href="?topic=16.1.32"><span class="num">16.1.32</span>Primary Pci Protocol Door To Balloon Stent Choice Anticoagulation</a>
+  <a class="topic-item" data-topic="16.1.33" data-hub="16.1" href="?topic=16.1.33"><span class="num">16.1.33</span>Fibrinolysis Indications Contraindications Agents Rescue Pci</a>
+  <a class="topic-item" data-topic="16.1.34" data-hub="16.1" href="?topic=16.1.34"><span class="num">16.1.34</span>Stemi Complications Mechanical Arrhythmic Hf Pericarditis</a>
+  <a class="topic-item" data-topic="16.1.35" data-hub="16.1" href="?topic=16.1.35"><span class="num">16.1.35</span>Nstemi Vs Ua Differentiation</a>
+  <a class="topic-item" data-topic="16.1.36" data-hub="16.1" href="?topic=16.1.36"><span class="num">16.1.36</span>Early Invasive Vs Conservative Strategy</a>
+  <a class="topic-item" data-topic="16.1.37" data-hub="16.1" href="?topic=16.1.37"><span class="num">16.1.37</span>Medical Therapy Dual Antiplatelet Anticoagulant Beta Blocker Acei Statin</a>
+  <a class="topic-item" data-topic="16.1.38" data-hub="16.1" href="?topic=16.1.38"><span class="num">16.1.38</span>Coronary Angiography Timing</a>
+  <a class="topic-item" data-topic="16.1.39" data-hub="16.1" href="?topic=16.1.39"><span class="num">16.1.39</span>Revascularization Pci Vs Cabg</a>
+  <a class="topic-item" data-topic="16.1.40" data-hub="16.1" href="?topic=16.1.40"><span class="num">16.1.40</span>Cardiogenic Shock Iabp Impella Va Ecmo</a>
+  <a class="topic-item" data-topic="16.1.41" data-hub="16.1" href="?topic=16.1.41"><span class="num">16.1.41</span>Mechanical Complications Vsr Papillary Muscle Rupture Free Wall Rupture</a>
+  <a class="topic-item" data-topic="16.1.42" data-hub="16.1" href="?topic=16.1.42"><span class="num">16.1.42</span>Arrhythmias Af Vt Vf Heart Block</a>
+  <a class="topic-item" data-topic="16.1.43" data-hub="16.1" href="?topic=16.1.43"><span class="num">16.1.43</span>Post Mi Pericarditis Acute Dresslers</a>
+  <a class="topic-item" data-topic="16.1.44" data-hub="16.1" href="?topic=16.1.44"><span class="num">16.1.44</span>Left Ventricular Aneurysm And Thrombus</a>
+  <a class="topic-item" data-topic="16.1.45" data-hub="16.1" href="?topic=16.1.45"><span class="num">16.1.45</span>Secondary Prevention Dual Antiplatelet Duration Statin Acei Arb Beta Blocker Mra</a>
+  <a class="topic-item" data-topic="16.1.46" data-hub="16.1" href="?topic=16.1.46"><span class="num">16.1.46</span>Cardiac Rehabilitation</a>
+  <a class="topic-item" data-topic="16.1.47" data-hub="16.1" href="?topic=16.1.47"><span class="num">16.1.47</span>Post Mi Risk Stratification Lvef Nsvt Inducible Vt</a>
+  <a class="topic-item" data-topic="16.1.48" data-hub="16.1" href="?topic=16.1.48"><span class="num">16.1.48</span>Icd Indication Post Mi</a>
+  <a class="topic-item" data-topic="16.1.49" data-hub="16.1" href="?topic=16.1.49"><span class="num">16.1.49</span>Acs In Elderly</a>
+  <a class="topic-item" data-topic="16.1.50" data-hub="16.1" href="?topic=16.1.50"><span class="num">16.1.50</span>Acs In Women</a>
+  <a class="topic-item" data-topic="16.1.51" data-hub="16.1" href="?topic=16.1.51"><span class="num">16.1.51</span>Acs In Ckd Dialysis</a>
+  <a class="topic-item" data-topic="16.1.52" data-hub="16.1" href="?topic=16.1.52"><span class="num">16.1.52</span>Spontaneous Coronary Artery Dissection Scad</a>
+  <a class="topic-item" data-topic="16.1.53" data-hub="16.1" href="?topic=16.1.53"><span class="num">16.1.53</span>Takotsubo Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.1.54" data-hub="16.1" href="?topic=16.1.54"><span class="num">16.1.54</span>Myocardial Infarction With Non Obstructive Coronary Arteries Minoca</a>
+</div>
+<div class="hub-group" data-hub="16.10">
+  <h3>16.10 · Diseases of the Aorta</h3>
+  <a class="topic-item" data-topic="16.10.262" data-hub="16.10" href="?topic=16.10.262"><span class="num">16.10.262</span>Aortic Dissection Stanford A B Debakey Management</a>
+  <a class="topic-item" data-topic="16.10.263" data-hub="16.10" href="?topic=16.10.263"><span class="num">16.10.263</span>Aortic Aneurysm Thoracic Abdominal Surveillance Repair Thresholds</a>
+  <a class="topic-item" data-topic="16.10.264" data-hub="16.10" href="?topic=16.10.264"><span class="num">16.10.264</span>Aortic Intramural Hematoma Imh</a>
+  <a class="topic-item" data-topic="16.10.265" data-hub="16.10" href="?topic=16.10.265"><span class="num">16.10.265</span>Penetrating Aortic Ulcer Pau</a>
+  <a class="topic-item" data-topic="16.10.266" data-hub="16.10" href="?topic=16.10.266"><span class="num">16.10.266</span>Aortitis Takayasu Gca Infectious Igg4 Related</a>
+</div>
+<div class="hub-group" data-hub="16.11">
+  <h3>16.11 · Heart Failure</h3>
+  <a class="topic-item" data-topic="16.11.100" data-hub="16.11" href="?topic=16.11.100"><span class="num">16.11.100</span>Palliative Care In Advanced Hf</a>
+  <a class="topic-item" data-topic="16.11.101" data-hub="16.11" href="?topic=16.11.101"><span class="num">16.11.101</span>Cardiogenic Shock Classification Scai Stages</a>
+  <a class="topic-item" data-topic="16.11.102" data-hub="16.11" href="?topic=16.11.102"><span class="num">16.11.102</span>Temporary Mcs Iabp Impella Va Ecmo</a>
+  <a class="topic-item" data-topic="16.11.71" data-hub="16.11" href="?topic=16.11.71"><span class="num">16.11.71</span>Definition Lvef ≤40% Epidemiology Pathophysiology</a>
+  <a class="topic-item" data-topic="16.11.72" data-hub="16.11" href="?topic=16.11.72"><span class="num">16.11.72</span>Gdmt Quadruple Therapy Arni Acei Arb Beta Blocker Mra Sglt2I</a>
+  <a class="topic-item" data-topic="16.11.73" data-hub="16.11" href="?topic=16.11.73"><span class="num">16.11.73</span>Device Therapy Icd Crt</a>
+  <a class="topic-item" data-topic="16.11.74" data-hub="16.11" href="?topic=16.11.74"><span class="num">16.11.74</span>Advanced Hf Therapies Lvad Transplant</a>
+  <a class="topic-item" data-topic="16.11.75" data-hub="16.11" href="?topic=16.11.75"><span class="num">16.11.75</span>Definitions Hfmref 41 49% Hfpef ≥50%</a>
+  <a class="topic-item" data-topic="16.11.76" data-hub="16.11" href="?topic=16.11.76"><span class="num">16.11.76</span>Diagnosis Hfa Peff H2Fpef Scores</a>
+  <a class="topic-item" data-topic="16.11.77" data-hub="16.11" href="?topic=16.11.77"><span class="num">16.11.77</span>Management Diuretics Sglt2I Bp Control Treat Comorbidities</a>
+  <a class="topic-item" data-topic="16.11.78" data-hub="16.11" href="?topic=16.11.78"><span class="num">16.11.78</span>Common Comorbidities Af Obesity Ckd Anemia Iron Deficiency</a>
+  <a class="topic-item" data-topic="16.11.79" data-hub="16.11" href="?topic=16.11.79"><span class="num">16.11.79</span>Acute Decompensated Hf Adhf Classification</a>
+  <a class="topic-item" data-topic="16.11.80" data-hub="16.11" href="?topic=16.11.80"><span class="num">16.11.80</span>Hemodynamic Profiling Wet Dry Warm Cold</a>
+  <a class="topic-item" data-topic="16.11.81" data-hub="16.11" href="?topic=16.11.81"><span class="num">16.11.81</span>Iv Diuretics Vasodilators Inotropes Vasopressors</a>
+  <a class="topic-item" data-topic="16.11.82" data-hub="16.11" href="?topic=16.11.82"><span class="num">16.11.82</span>Mechanical Support Iabp Impella Va Ecmo</a>
+  <a class="topic-item" data-topic="16.11.83" data-hub="16.11" href="?topic=16.11.83"><span class="num">16.11.83</span>Ischemic Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.11.84" data-hub="16.11" href="?topic=16.11.84"><span class="num">16.11.84</span>Non Ischemic Dilated Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.11.85" data-hub="16.11" href="?topic=16.11.85"><span class="num">16.11.85</span>Hypertrophic Cardiomyopathy Hcm</a>
+  <a class="topic-item" data-topic="16.11.86" data-hub="16.11" href="?topic=16.11.86"><span class="num">16.11.86</span>Restrictive Infiltrative Cardiomyopathies Amyloid Sarcoid Iron</a>
+  <a class="topic-item" data-topic="16.11.87" data-hub="16.11" href="?topic=16.11.87"><span class="num">16.11.87</span>Arrhythmogenic Right Ventricular Cardiomyopathy Arvc</a>
+  <a class="topic-item" data-topic="16.11.88" data-hub="16.11" href="?topic=16.11.88"><span class="num">16.11.88</span>Takotsubo Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.11.89" data-hub="16.11" href="?topic=16.11.89"><span class="num">16.11.89</span>Peripartum Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.11.90" data-hub="16.11" href="?topic=16.11.90"><span class="num">16.11.90</span>Myocarditis</a>
+  <a class="topic-item" data-topic="16.11.91" data-hub="16.11" href="?topic=16.11.91"><span class="num">16.11.91</span>Cardiorenal Syndrome</a>
+  <a class="topic-item" data-topic="16.11.92" data-hub="16.11" href="?topic=16.11.92"><span class="num">16.11.92</span>Iron Deficiency In Hf</a>
+  <a class="topic-item" data-topic="16.11.93" data-hub="16.11" href="?topic=16.11.93"><span class="num">16.11.93</span>Anemia In Hf</a>
+  <a class="topic-item" data-topic="16.11.94" data-hub="16.11" href="?topic=16.11.94"><span class="num">16.11.94</span>Atrial Fibrillation In Hf</a>
+  <a class="topic-item" data-topic="16.11.95" data-hub="16.11" href="?topic=16.11.95"><span class="num">16.11.95</span>Sleep Apnea In Hf</a>
+  <a class="topic-item" data-topic="16.11.96" data-hub="16.11" href="?topic=16.11.96"><span class="num">16.11.96</span>Icd Indications Primary Secondary Prevention</a>
+  <a class="topic-item" data-topic="16.11.97" data-hub="16.11" href="?topic=16.11.97"><span class="num">16.11.97</span>Crt Indications Qrs Duration Morphology Lvef</a>
+  <a class="topic-item" data-topic="16.11.98" data-hub="16.11" href="?topic=16.11.98"><span class="num">16.11.98</span>Lvad Bridge To Transplant Destination Therapy</a>
+  <a class="topic-item" data-topic="16.11.99" data-hub="16.11" href="?topic=16.11.99"><span class="num">16.11.99</span>Heart Transplantation Listing Immunosuppression Rejection</a>
+</div>
+<div class="hub-group" data-hub="16.12">
+  <h3>16.12 · Hypertension and CV Risk</h3>
+  <a class="topic-item" data-topic="16.12.280" data-hub="16.12" href="?topic=16.12.280"><span class="num">16.12.280</span>Classification Acc Aha Vs Esc Esh</a>
+  <a class="topic-item" data-topic="16.12.281" data-hub="16.12" href="?topic=16.12.281"><span class="num">16.12.281</span>Workup Secondary Causes Target Organ Damage</a>
+  <a class="topic-item" data-topic="16.12.282" data-hub="16.12" href="?topic=16.12.282"><span class="num">16.12.282</span>Treatment Thresholds And Targets Acc Aha Vs Esc</a>
+  <a class="topic-item" data-topic="16.12.283" data-hub="16.12" href="?topic=16.12.283"><span class="num">16.12.283</span>Drug Classes Acei Arb Ccb Thiazide Beta Blocker Mra</a>
+  <a class="topic-item" data-topic="16.12.284" data-hub="16.12" href="?topic=16.12.284"><span class="num">16.12.284</span>Resistant Hypertension Spironolactone Renal Denervation</a>
+  <a class="topic-item" data-topic="16.12.285" data-hub="16.12" href="?topic=16.12.285"><span class="num">16.12.285</span>Hypertensive Emergencies Urgencies</a>
+  <a class="topic-item" data-topic="16.12.286" data-hub="16.12" href="?topic=16.12.286"><span class="num">16.12.286</span>Renovascular Ras Primary Aldosteronism Pheochromocytoma Cushing Coarctation Drug</a>
+  <a class="topic-item" data-topic="16.12.287" data-hub="16.12" href="?topic=16.12.287"><span class="num">16.12.287</span>Score2 Ascvd Qrisk3</a>
+  <a class="topic-item" data-topic="16.12.288" data-hub="16.12" href="?topic=16.12.288"><span class="num">16.12.288</span>Coronary Artery Calcium Cac Scoring</a>
+  <a class="topic-item" data-topic="16.12.289" data-hub="16.12" href="?topic=16.12.289"><span class="num">16.12.289</span>Lipid Management Statin Intensity Ezetimibe Pcsk9I</a>
+  <a class="topic-item" data-topic="16.12.290" data-hub="16.12" href="?topic=16.12.290"><span class="num">16.12.290</span>Diabetes And Cv Risk Sglt2I Glp 1 Ra</a>
+</div>
+<div class="hub-group" data-hub="16.13">
+  <h3>16.13 · Infective Endocarditis</h3>
+  <a class="topic-item" data-topic="16.13.133" data-hub="16.13" href="?topic=16.13.133"><span class="num">16.13.133</span>Modified Duke Criteria Definite Possible Rejected</a>
+  <a class="topic-item" data-topic="16.13.134" data-hub="16.13" href="?topic=16.13.134"><span class="num">16.13.134</span>Blood Culture Techniques Timing Volume Bottles</a>
+  <a class="topic-item" data-topic="16.13.135" data-hub="16.13" href="?topic=16.13.135"><span class="num">16.13.135</span>Common Organisms Staph Aureus Viridans Streptococci Enterococcus Hacek Fungi</a>
+  <a class="topic-item" data-topic="16.13.136" data-hub="16.13" href="?topic=16.13.136"><span class="num">16.13.136</span>Culture Negative Endocarditis</a>
+  <a class="topic-item" data-topic="16.13.137" data-hub="16.13" href="?topic=16.13.137"><span class="num">16.13.137</span>Heart Failure Valve Destruction</a>
+  <a class="topic-item" data-topic="16.13.138" data-hub="16.13" href="?topic=16.13.138"><span class="num">16.13.138</span>Embolic Phenomena Cerebral Splenic Renal Peripheral</a>
+  <a class="topic-item" data-topic="16.13.139" data-hub="16.13" href="?topic=16.13.139"><span class="num">16.13.139</span>Abscess Formation Aortic Root Mitral Aortic Intervalvular Fibrosa</a>
+  <a class="topic-item" data-topic="16.13.140" data-hub="16.13" href="?topic=16.13.140"><span class="num">16.13.140</span>Conduction Abnormalities Av Block Abscess Extension</a>
+  <a class="topic-item" data-topic="16.13.141" data-hub="16.13" href="?topic=16.13.141"><span class="num">16.13.141</span>Mycotic Aneurysms</a>
+  <a class="topic-item" data-topic="16.13.142" data-hub="16.13" href="?topic=16.13.142"><span class="num">16.13.142</span>Antibiotic Regimens Empiric Directed Duration</a>
+  <a class="topic-item" data-topic="16.13.143" data-hub="16.13" href="?topic=16.13.143"><span class="num">16.13.143</span>Surgical Indications Hf Uncontrolled Infection Abscess Emboli Fungi</a>
+  <a class="topic-item" data-topic="16.13.144" data-hub="16.13" href="?topic=16.13.144"><span class="num">16.13.144</span>Timing Of Surgery Urgent Elective</a>
+  <a class="topic-item" data-topic="16.13.145" data-hub="16.13" href="?topic=16.13.145"><span class="num">16.13.145</span>Prophylaxis Guidelines Dental Procedures</a>
+</div>
+<div class="hub-group" data-hub="16.14">
+  <h3>16.14 · Pericardial Diseases</h3>
+  <a class="topic-item" data-topic="16.14.146" data-hub="16.14" href="?topic=16.14.146"><span class="num">16.14.146</span>Etiology Viral Idiopathic Autoimmune Post Mi Dresslers Uremic Drugs Tb Neoplasti</a>
+  <a class="topic-item" data-topic="16.14.147" data-hub="16.14" href="?topic=16.14.147"><span class="num">16.14.147</span>Diagnostic Criteria Chest Pain Rub Ecg Effusion Biomarkers</a>
+  <a class="topic-item" data-topic="16.14.148" data-hub="16.14" href="?topic=16.14.148"><span class="num">16.14.148</span>Ecg Evolution 4 Stages</a>
+  <a class="topic-item" data-topic="16.14.149" data-hub="16.14" href="?topic=16.14.149"><span class="num">16.14.149</span>Treatment Nsaids Colchicine Steroids Pericardiocentesis If Tamponade</a>
+  <a class="topic-item" data-topic="16.14.150" data-hub="16.14" href="?topic=16.14.150"><span class="num">16.14.150</span>Etiology And Diagnostic Approach</a>
+  <a class="topic-item" data-topic="16.14.151" data-hub="16.14" href="?topic=16.14.151"><span class="num">16.14.151</span>Tamponade Physiology Becks Triad Pulsus Paradoxus Echocardiographic Signs</a>
+  <a class="topic-item" data-topic="16.14.152" data-hub="16.14" href="?topic=16.14.152"><span class="num">16.14.152</span>Pericardiocentesis Technique Echo Guided Complications</a>
+  <a class="topic-item" data-topic="16.14.153" data-hub="16.14" href="?topic=16.14.153"><span class="num">16.14.153</span>Pericardial Window Surgery</a>
+  <a class="topic-item" data-topic="16.14.154" data-hub="16.14" href="?topic=16.14.154"><span class="num">16.14.154</span>Etiology Tb Post Cardiac Surgery Radiation Idiopathic</a>
+  <a class="topic-item" data-topic="16.14.155" data-hub="16.14" href="?topic=16.14.155"><span class="num">16.14.155</span>Hemodynamics Dip Plateau Ventricular Interdependence</a>
+  <a class="topic-item" data-topic="16.14.156" data-hub="16.14" href="?topic=16.14.156"><span class="num">16.14.156</span>Differentiation From Restrictive Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.14.157" data-hub="16.14" href="?topic=16.14.157"><span class="num">16.14.157</span>Pericardiectomy</a>
+  <a class="topic-item" data-topic="16.14.158" data-hub="16.14" href="?topic=16.14.158"><span class="num">16.14.158</span>Effusive Constrictive Pericarditis</a>
+  <a class="topic-item" data-topic="16.14.159" data-hub="16.14" href="?topic=16.14.159"><span class="num">16.14.159</span>Post Cardiac Injury Syndromes Post Mi Post Pericardiotomy</a>
+  <a class="topic-item" data-topic="16.14.160" data-hub="16.14" href="?topic=16.14.160"><span class="num">16.14.160</span>Tb Pericarditis Diagnosis Antitubercular Therapy Steroids</a>
+  <a class="topic-item" data-topic="16.14.161" data-hub="16.14" href="?topic=16.14.161"><span class="num">16.14.161</span>Malignant Pericardial Effusion</a>
+</div>
+<div class="hub-group" data-hub="16.15">
+  <h3>16.15 · Pulmonary Hypertension</h3>
+  <a class="topic-item" data-topic="16.15.253" data-hub="16.15" href="?topic=16.15.253"><span class="num">16.15.253</span>Who Groups 1 5 Pah Ph Lhd Ph Lung Cteph Multifactorial</a>
+  <a class="topic-item" data-topic="16.15.254" data-hub="16.15" href="?topic=16.15.254"><span class="num">16.15.254</span>Diagnostic Algorithm Echo Rhc Vasoreactivity Testing</a>
+  <a class="topic-item" data-topic="16.15.255" data-hub="16.15" href="?topic=16.15.255"><span class="num">16.15.255</span>Risk Stratification Reveal 2.0 Esc Ers Risk Table</a>
+  <a class="topic-item" data-topic="16.15.256" data-hub="16.15" href="?topic=16.15.256"><span class="num">16.15.256</span>Initial Therapy Era Pde5I Prostacyclin Pathway</a>
+  <a class="topic-item" data-topic="16.15.257" data-hub="16.15" href="?topic=16.15.257"><span class="num">16.15.257</span>Combination Therapy Sequential Upfront Triple</a>
+  <a class="topic-item" data-topic="16.15.258" data-hub="16.15" href="?topic=16.15.258"><span class="num">16.15.258</span>Advanced Therapy Selexipag Sotatercept</a>
+  <a class="topic-item" data-topic="16.15.259" data-hub="16.15" href="?topic=16.15.259"><span class="num">16.15.259</span>Lung Transplant Referral</a>
+  <a class="topic-item" data-topic="16.15.260" data-hub="16.15" href="?topic=16.15.260"><span class="num">16.15.260</span>Cteph V Q Scan Ctpa Pea Surgery Riociguat</a>
+  <a class="topic-item" data-topic="16.15.261" data-hub="16.15" href="?topic=16.15.261"><span class="num">16.15.261</span>Ph Lhd Ph Lung Disease Multifactorial</a>
+</div>
+<div class="hub-group" data-hub="16.16">
+  <h3>16.16 · Systemic Diseases and Cardiac Involvement</h3>
+  <a class="topic-item" data-topic="16.16.267" data-hub="16.16" href="?topic=16.16.267"><span class="num">16.16.267</span>Sle Pericarditis Libman Sacks Endocarditis Accelerated Cad</a>
+  <a class="topic-item" data-topic="16.16.268" data-hub="16.16" href="?topic=16.16.268"><span class="num">16.16.268</span>Systemic Sclerosis Myocardial Fibrosis Pah Conduction Disease</a>
+  <a class="topic-item" data-topic="16.16.269" data-hub="16.16" href="?topic=16.16.269"><span class="num">16.16.269</span>Rheumatoid Arthritis Pericarditis Nodules Vasculitis</a>
+  <a class="topic-item" data-topic="16.16.270" data-hub="16.16" href="?topic=16.16.270"><span class="num">16.16.270</span>Sjögren Mctd Antiphospholipid Syndrome</a>
+  <a class="topic-item" data-topic="16.16.271" data-hub="16.16" href="?topic=16.16.271"><span class="num">16.16.271</span>Amyloidosis Attr Al Cardiac Amyloid</a>
+  <a class="topic-item" data-topic="16.16.272" data-hub="16.16" href="?topic=16.16.272"><span class="num">16.16.272</span>Sarcoidosis Cardiac Involvement</a>
+  <a class="topic-item" data-topic="16.16.273" data-hub="16.16" href="?topic=16.16.273"><span class="num">16.16.273</span>Hemochromatosis Iron Overload Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.16.274" data-hub="16.16" href="?topic=16.16.274"><span class="num">16.16.274</span>Fabry Disease Lvh Arrhythmia Enzyme Replacement</a>
+  <a class="topic-item" data-topic="16.16.275" data-hub="16.16" href="?topic=16.16.275"><span class="num">16.16.275</span>Thyroid Hyper Hypo Af Hf Pericardial Effusion</a>
+  <a class="topic-item" data-topic="16.16.276" data-hub="16.16" href="?topic=16.16.276"><span class="num">16.16.276</span>Acromegaly Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.16.277" data-hub="16.16" href="?topic=16.16.277"><span class="num">16.16.277</span>Cushing Syndrome</a>
+  <a class="topic-item" data-topic="16.16.278" data-hub="16.16" href="?topic=16.16.278"><span class="num">16.16.278</span>Obesity Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.16.279" data-hub="16.16" href="?topic=16.16.279"><span class="num">16.16.279</span>Nutritional Deficiencies Thiamine Beriberi Selenium Carnitine</a>
+</div>
+<div class="hub-group" data-hub="16.17">
+  <h3>16.17 · Valvular Heart Disease</h3>
+  <a class="topic-item" data-topic="16.17.103" data-hub="16.17" href="?topic=16.17.103"><span class="num">16.17.103</span>Etiology Degenerative Bicuspid Rheumatic</a>
+  <a class="topic-item" data-topic="16.17.104" data-hub="16.17" href="?topic=16.17.104"><span class="num">16.17.104</span>Hemodynamic Assessment Peak Velocity Mean Gradient Ava Dvi</a>
+  <a class="topic-item" data-topic="16.17.105" data-hub="16.17" href="?topic=16.17.105"><span class="num">16.17.105</span>Symptomatic Vs Asymptomatic Management</a>
+  <a class="topic-item" data-topic="16.17.106" data-hub="16.17" href="?topic=16.17.106"><span class="num">16.17.106</span>Tavi Vs Savr Risk Scores Heart Team</a>
+  <a class="topic-item" data-topic="16.17.107" data-hub="16.17" href="?topic=16.17.107"><span class="num">16.17.107</span>Post Procedure Complications Conduction Disturbances Ppm Leak</a>
+  <a class="topic-item" data-topic="16.17.108" data-hub="16.17" href="?topic=16.17.108"><span class="num">16.17.108</span>Acute Vs Chronic Ar</a>
+  <a class="topic-item" data-topic="16.17.109" data-hub="16.17" href="?topic=16.17.109"><span class="num">16.17.109</span>Hemodynamic Assessment Vena Contracta Pressure Half Time Regurgitant Volume</a>
+  <a class="topic-item" data-topic="16.17.110" data-hub="16.17" href="?topic=16.17.110"><span class="num">16.17.110</span>Medical Therapy Vasodilators In Chronic Ar</a>
+  <a class="topic-item" data-topic="16.17.111" data-hub="16.17" href="?topic=16.17.111"><span class="num">16.17.111</span>Surgical Indications Lvef Lv Dimensions Symptoms</a>
+  <a class="topic-item" data-topic="16.17.112" data-hub="16.17" href="?topic=16.17.112"><span class="num">16.17.112</span>Rheumatic Vs Non Rheumatic</a>
+  <a class="topic-item" data-topic="16.17.113" data-hub="16.17" href="?topic=16.17.113"><span class="num">16.17.113</span>Hemodynamic Assessment Mva Mean Gradient Pht</a>
+  <a class="topic-item" data-topic="16.17.114" data-hub="16.17" href="?topic=16.17.114"><span class="num">16.17.114</span>Percutaneous Mitral Balloon Valvuloplasty Pmbv Criteria</a>
+  <a class="topic-item" data-topic="16.17.115" data-hub="16.17" href="?topic=16.17.115"><span class="num">16.17.115</span>Surgical Options Commissurotomy Replacement</a>
+  <a class="topic-item" data-topic="16.17.116" data-hub="16.17" href="?topic=16.17.116"><span class="num">16.17.116</span>Primary Degenerative Rheumatic Vs Secondary Functional</a>
+  <a class="topic-item" data-topic="16.17.117" data-hub="16.17" href="?topic=16.17.117"><span class="num">16.17.117</span>Hemodynamic Assessment Vc Width Eroa Regurgitant Volume</a>
+  <a class="topic-item" data-topic="16.17.118" data-hub="16.17" href="?topic=16.17.118"><span class="num">16.17.118</span>P2 Flail Chordal Rupture Barlows</a>
+  <a class="topic-item" data-topic="16.17.119" data-hub="16.17" href="?topic=16.17.119"><span class="num">16.17.119</span>Transcatheter Edge To Edge Repair Teer Mitraclip</a>
+  <a class="topic-item" data-topic="16.17.120" data-hub="16.17" href="?topic=16.17.120"><span class="num">16.17.120</span>Surgical Repair Vs Replacement</a>
+  <a class="topic-item" data-topic="16.17.121" data-hub="16.17" href="?topic=16.17.121"><span class="num">16.17.121</span>Tr Primary Secondary Functional</a>
+  <a class="topic-item" data-topic="16.17.122" data-hub="16.17" href="?topic=16.17.122"><span class="num">16.17.122</span>Tricuspid Stenosis Rare</a>
+  <a class="topic-item" data-topic="16.17.123" data-hub="16.17" href="?topic=16.17.123"><span class="num">16.17.123</span>Surgical Tricuspid Intervention Timing</a>
+  <a class="topic-item" data-topic="16.17.124" data-hub="16.17" href="?topic=16.17.124"><span class="num">16.17.124</span>Pulmonary Stenosis</a>
+  <a class="topic-item" data-topic="16.17.125" data-hub="16.17" href="?topic=16.17.125"><span class="num">16.17.125</span>Pulmonary Regurgitation Post Tof Repair Pah</a>
+  <a class="topic-item" data-topic="16.17.126" data-hub="16.17" href="?topic=16.17.126"><span class="num">16.17.126</span>Transcatheter Pulmonary Valve Replacement</a>
+  <a class="topic-item" data-topic="16.17.127" data-hub="16.17" href="?topic=16.17.127"><span class="num">16.17.127</span>Combined As + Mr</a>
+  <a class="topic-item" data-topic="16.17.128" data-hub="16.17" href="?topic=16.17.128"><span class="num">16.17.128</span>Mixed Valve Disease Management Priorities</a>
+  <a class="topic-item" data-topic="16.17.129" data-hub="16.17" href="?topic=16.17.129"><span class="num">16.17.129</span>Mechanical Vs Bioprosthetic Valve Choice</a>
+  <a class="topic-item" data-topic="16.17.130" data-hub="16.17" href="?topic=16.17.130"><span class="num">16.17.130</span>Anticoagulation Targets Inr Doacs Contraindicated In Mechanical</a>
+  <a class="topic-item" data-topic="16.17.131" data-hub="16.17" href="?topic=16.17.131"><span class="num">16.17.131</span>Valve Thrombosis Diagnosis Thrombolysis Vs Surgery</a>
+  <a class="topic-item" data-topic="16.17.132" data-hub="16.17" href="?topic=16.17.132"><span class="num">16.17.132</span>Prosthetic Valve Endocarditis</a>
+</div>
+<div class="hub-group" data-hub="16.2">
+  <h3>16.2 · Adult Congenital Heart Disease</h3>
+  <a class="topic-item" data-topic="16.2.239" data-hub="16.2" href="?topic=16.2.239"><span class="num">16.2.239</span>Atrial Septal Defect Asd Types Closure Criteria Transcatheter Vs Surgical</a>
+  <a class="topic-item" data-topic="16.2.240" data-hub="16.2" href="?topic=16.2.240"><span class="num">16.2.240</span>Ventricular Septal Defect Vsd Types Closure</a>
+  <a class="topic-item" data-topic="16.2.241" data-hub="16.2" href="?topic=16.2.241"><span class="num">16.2.241</span>Patent Ductus Arteriosus Pda</a>
+  <a class="topic-item" data-topic="16.2.242" data-hub="16.2" href="?topic=16.2.242"><span class="num">16.2.242</span>Patent Foramen Ovale Pfo Closure Criteria Cryptogenic Stroke</a>
+  <a class="topic-item" data-topic="16.2.243" data-hub="16.2" href="?topic=16.2.243"><span class="num">16.2.243</span>Tetralogy Of Fallot Tof Post Repair Follow Up Pr Rv Dilation Arrhythmia</a>
+  <a class="topic-item" data-topic="16.2.244" data-hub="16.2" href="?topic=16.2.244"><span class="num">16.2.244</span>Transposition Of Great Arteries Tga Post Switch Arterial Switch</a>
+  <a class="topic-item" data-topic="16.2.245" data-hub="16.2" href="?topic=16.2.245"><span class="num">16.2.245</span>Single Ventricle Fontan Circulation Complications</a>
+  <a class="topic-item" data-topic="16.2.246" data-hub="16.2" href="?topic=16.2.246"><span class="num">16.2.246</span>Eisenmenger Syndrome</a>
+  <a class="topic-item" data-topic="16.2.247" data-hub="16.2" href="?topic=16.2.247"><span class="num">16.2.247</span>Bicuspid Aortic Valve Bav Aortopathy Surveillance</a>
+  <a class="topic-item" data-topic="16.2.248" data-hub="16.2" href="?topic=16.2.248"><span class="num">16.2.248</span>Coarctation Of Aorta Repair Recoarctation Hypertension</a>
+  <a class="topic-item" data-topic="16.2.249" data-hub="16.2" href="?topic=16.2.249"><span class="num">16.2.249</span>Pulmonary Valve Stenosis Regurgitation</a>
+  <a class="topic-item" data-topic="16.2.250" data-hub="16.2" href="?topic=16.2.250"><span class="num">16.2.250</span>Risk Assessment Mwho Classification</a>
+  <a class="topic-item" data-topic="16.2.251" data-hub="16.2" href="?topic=16.2.251"><span class="num">16.2.251</span>Anticoagulation In Pregnancy</a>
+  <a class="topic-item" data-topic="16.2.252" data-hub="16.2" href="?topic=16.2.252"><span class="num">16.2.252</span>Endocarditis Prophylaxis</a>
+</div>
+<div class="hub-group" data-hub="16.3">
+  <h3>16.3 · Arrhythmias</h3>
+  <a class="topic-item" data-topic="16.3.162" data-hub="16.3" href="?topic=16.3.162"><span class="num">16.3.162</span>Atrial Fibrillation Af Paroxysmal Persistent Long Standing Persistent Permanent</a>
+  <a class="topic-item" data-topic="16.3.163" data-hub="16.3" href="?topic=16.3.163"><span class="num">16.3.163</span>Atrial Flutter Typical Atypical</a>
+  <a class="topic-item" data-topic="16.3.164" data-hub="16.3" href="?topic=16.3.164"><span class="num">16.3.164</span>Avnrt Avrt Wpw Syndrome</a>
+  <a class="topic-item" data-topic="16.3.165" data-hub="16.3" href="?topic=16.3.165"><span class="num">16.3.165</span>Atrial Tachycardia</a>
+  <a class="topic-item" data-topic="16.3.166" data-hub="16.3" href="?topic=16.3.166"><span class="num">16.3.166</span>Multifocal Atrial Tachycardia Mat</a>
+  <a class="topic-item" data-topic="16.3.167" data-hub="16.3" href="?topic=16.3.167"><span class="num">16.3.167</span>Premature Ventricular Contractions Pvcs</a>
+  <a class="topic-item" data-topic="16.3.168" data-hub="16.3" href="?topic=16.3.168"><span class="num">16.3.168</span>Non Sustained Vt Nsvt</a>
+  <a class="topic-item" data-topic="16.3.169" data-hub="16.3" href="?topic=16.3.169"><span class="num">16.3.169</span>Sustained Vt Monomorphic Polymorphic Torsades</a>
+  <a class="topic-item" data-topic="16.3.170" data-hub="16.3" href="?topic=16.3.170"><span class="num">16.3.170</span>Ventricular Fibrillation Vf</a>
+  <a class="topic-item" data-topic="16.3.171" data-hub="16.3" href="?topic=16.3.171"><span class="num">16.3.171</span>Idiopathic Vt Rvot Lvot Fascicular</a>
+  <a class="topic-item" data-topic="16.3.172" data-hub="16.3" href="?topic=16.3.172"><span class="num">16.3.172</span>Channelopathies Long Qt Brugada Cpvt Short Qt</a>
+  <a class="topic-item" data-topic="16.3.173" data-hub="16.3" href="?topic=16.3.173"><span class="num">16.3.173</span>Sinus Node Dysfunction Sick Sinus Syndrome</a>
+  <a class="topic-item" data-topic="16.3.174" data-hub="16.3" href="?topic=16.3.174"><span class="num">16.3.174</span>Av Block 1St 2Nd Type I Ii 3Rd Degree</a>
+  <a class="topic-item" data-topic="16.3.175" data-hub="16.3" href="?topic=16.3.175"><span class="num">16.3.175</span>Bundle Branch Blocks Lbbb Rbbb Bifascicular Trifascicular</a>
+  <a class="topic-item" data-topic="16.3.176" data-hub="16.3" href="?topic=16.3.176"><span class="num">16.3.176</span>Conduction System Disease Post Tavi Valve Surgery</a>
+  <a class="topic-item" data-topic="16.3.177" data-hub="16.3" href="?topic=16.3.177"><span class="num">16.3.177</span>Scd Epidemiology And Risk Stratification</a>
+  <a class="topic-item" data-topic="16.3.178" data-hub="16.3" href="?topic=16.3.178"><span class="num">16.3.178</span>Primary Prevention Icd Hfref Hcm Arvc Channelopathies</a>
+  <a class="topic-item" data-topic="16.3.179" data-hub="16.3" href="?topic=16.3.179"><span class="num">16.3.179</span>Secondary Prevention Icd</a>
+  <a class="topic-item" data-topic="16.3.180" data-hub="16.3" href="?topic=16.3.180"><span class="num">16.3.180</span>Icd Complications And Management</a>
+  <a class="topic-item" data-topic="16.3.181" data-hub="16.3" href="?topic=16.3.181"><span class="num">16.3.181</span>Acute Af Management Rate Vs Rhythm Cardioversion</a>
+  <a class="topic-item" data-topic="16.3.182" data-hub="16.3" href="?topic=16.3.182"><span class="num">16.3.182</span>Chronic Af Management</a>
+  <a class="topic-item" data-topic="16.3.183" data-hub="16.3" href="?topic=16.3.183"><span class="num">16.3.183</span>Af Ablation Pulmonary Vein Isolation Beyond Pvi</a>
+  <a class="topic-item" data-topic="16.3.184" data-hub="16.3" href="?topic=16.3.184"><span class="num">16.3.184</span>Post Op Af Post Cardiac Surgery</a>
+  <a class="topic-item" data-topic="16.3.185" data-hub="16.3" href="?topic=16.3.185"><span class="num">16.3.185</span>Af In Special Populations Valvular Hfpef Athletes</a>
+  <a class="topic-item" data-topic="16.3.186" data-hub="16.3" href="?topic=16.3.186"><span class="num">16.3.186</span>Permanent Pacemaker Indications Sinus Node Dysfunction Av Block Bifascicular Blo</a>
+  <a class="topic-item" data-topic="16.3.187" data-hub="16.3" href="?topic=16.3.187"><span class="num">16.3.187</span>Pacemaker Modes Programming Follow Up</a>
+  <a class="topic-item" data-topic="16.3.188" data-hub="16.3" href="?topic=16.3.188"><span class="num">16.3.188</span>Crt Biventricular Pacing Optimization</a>
+  <a class="topic-item" data-topic="16.3.189" data-hub="16.3" href="?topic=16.3.189"><span class="num">16.3.189</span>Leadless Pacemakers His Bundle Pacing Lbbap</a>
+  <a class="topic-item" data-topic="16.3.190" data-hub="16.3" href="?topic=16.3.190"><span class="num">16.3.190</span>Long Qt Syndrome Types Triggers Beta Blockers Icd</a>
+  <a class="topic-item" data-topic="16.3.191" data-hub="16.3" href="?topic=16.3.191"><span class="num">16.3.191</span>Brugada Syndrome Ecg Risk Stratification Icd</a>
+  <a class="topic-item" data-topic="16.3.192" data-hub="16.3" href="?topic=16.3.192"><span class="num">16.3.192</span>Catecholaminergic Polymorphic Ventricular Tachycardia Cpvt</a>
+  <a class="topic-item" data-topic="16.3.193" data-hub="16.3" href="?topic=16.3.193"><span class="num">16.3.193</span>Short Qt Syndrome</a>
+  <a class="topic-item" data-topic="16.3.194" data-hub="16.3" href="?topic=16.3.194"><span class="num">16.3.194</span>Early Repolarization Syndrome</a>
+  <a class="topic-item" data-topic="16.3.195" data-hub="16.3" href="?topic=16.3.195"><span class="num">16.3.195</span>Arrhythmia In Pregnancy</a>
+  <a class="topic-item" data-topic="16.3.196" data-hub="16.3" href="?topic=16.3.196"><span class="num">16.3.196</span>Arrhythmia In Athletes</a>
+  <a class="topic-item" data-topic="16.3.197" data-hub="16.3" href="?topic=16.3.197"><span class="num">16.3.197</span>Arrhythmia In Congenital Heart Disease</a>
+  <a class="topic-item" data-topic="16.3.198" data-hub="16.3" href="?topic=16.3.198"><span class="num">16.3.198</span>Arrhythmia Post Cardiac Surgery</a>
+  <a class="topic-item" data-topic="16.3.199" data-hub="16.3" href="?topic=16.3.199"><span class="num">16.3.199</span>Af Ablation Techniques</a>
+  <a class="topic-item" data-topic="16.3.200" data-hub="16.3" href="?topic=16.3.200"><span class="num">16.3.200</span>Vt Ablation Ischemic Non Ischemic</a>
+  <a class="topic-item" data-topic="16.3.201" data-hub="16.3" href="?topic=16.3.201"><span class="num">16.3.201</span>Avnrt Avrt Ablation</a>
+  <a class="topic-item" data-topic="16.3.202" data-hub="16.3" href="?topic=16.3.202"><span class="num">16.3.202</span>Pvc Ablation</a>
+  <a class="topic-item" data-topic="16.3.203" data-hub="16.3" href="?topic=16.3.203"><span class="num">16.3.203</span>Cha2Ds2 Vasc Has Bled</a>
+  <a class="topic-item" data-topic="16.3.204" data-hub="16.3" href="?topic=16.3.204"><span class="num">16.3.204</span>Doacs Vs Warfarin</a>
+  <a class="topic-item" data-topic="16.3.205" data-hub="16.3" href="?topic=16.3.205"><span class="num">16.3.205</span>Av Node Ablation Pacemaker</a>
+</div>
+<div class="hub-group" data-hub="16.4">
+  <h3>16.4 · Cardiac Devices and Electrophysiology</h3>
+  <a class="topic-item" data-topic="16.4.203" data-hub="16.4" href="?topic=16.4.203"><span class="num">16.4.203</span>Indications And Modes</a>
+  <a class="topic-item" data-topic="16.4.204" data-hub="16.4" href="?topic=16.4.204"><span class="num">16.4.204</span>Dual Chamber Crt P Crt D</a>
+  <a class="topic-item" data-topic="16.4.205" data-hub="16.4" href="?topic=16.4.205"><span class="num">16.4.205</span>Leadless Pacemakers Micra Aveir</a>
+  <a class="topic-item" data-topic="16.4.206" data-hub="16.4" href="?topic=16.4.206"><span class="num">16.4.206</span>His Bundle Pacing Left Bundle Branch Area Pacing Lbbap</a>
+  <a class="topic-item" data-topic="16.4.207" data-hub="16.4" href="?topic=16.4.207"><span class="num">16.4.207</span>Primary Secondary Prevention Criteria</a>
+  <a class="topic-item" data-topic="16.4.208" data-hub="16.4" href="?topic=16.4.208"><span class="num">16.4.208</span>Programming Shock Atp Monitoring</a>
+  <a class="topic-item" data-topic="16.4.209" data-hub="16.4" href="?topic=16.4.209"><span class="num">16.4.209</span>Subcutaneous Icd S Icd</a>
+  <a class="topic-item" data-topic="16.4.210" data-hub="16.4" href="?topic=16.4.210"><span class="num">16.4.210</span>Complications Infection Inappropriate Shocks Lead Failure</a>
+  <a class="topic-item" data-topic="16.4.211" data-hub="16.4" href="?topic=16.4.211"><span class="num">16.4.211</span>Indications Catheter Types</a>
+  <a class="topic-item" data-topic="16.4.212" data-hub="16.4" href="?topic=16.4.212"><span class="num">16.4.212</span>Ablation Techniques Rf Cryo Pulsed Field</a>
+  <a class="topic-item" data-topic="16.4.213" data-hub="16.4" href="?topic=16.4.213"><span class="num">16.4.213</span>3D Mapping Systems</a>
+  <a class="topic-item" data-topic="16.4.214" data-hub="16.4" href="?topic=16.4.214"><span class="num">16.4.214</span>Remote Monitoring Benefits</a>
+  <a class="topic-item" data-topic="16.4.215" data-hub="16.4" href="?topic=16.4.215"><span class="num">16.4.215</span>Device Alerts Management</a>
+  <a class="topic-item" data-topic="16.4.216" data-hub="16.4" href="?topic=16.4.216"><span class="num">16.4.216</span>Battery Longevity Eri Eol Management</a>
+</div>
+<div class="hub-group" data-hub="16.5">
+  <h3>16.5 · Cardiac Disease in Special Populations</h3>
+  <a class="topic-item" data-topic="16.5.291" data-hub="16.5" href="?topic=16.5.291"><span class="num">16.5.291</span>Physiologic Changes In Pregnancy</a>
+  <a class="topic-item" data-topic="16.5.292" data-hub="16.5" href="?topic=16.5.292"><span class="num">16.5.292</span>High Risk Conditions Mwho Iv Eisenmenger Severe As Pf Marfan With Aortic Root >4</a>
+  <a class="topic-item" data-topic="16.5.293" data-hub="16.5" href="?topic=16.5.293"><span class="num">16.5.293</span>Anticoagulation In Pregnancy Lmwh Warfarin Teratogenicity</a>
+  <a class="topic-item" data-topic="16.5.294" data-hub="16.5" href="?topic=16.5.294"><span class="num">16.5.294</span>Peripartum Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.5.295" data-hub="16.5" href="?topic=16.5.295"><span class="num">16.5.295</span>Management Of Acs Arrhythmia Hf In Pregnancy</a>
+  <a class="topic-item" data-topic="16.5.296" data-hub="16.5" href="?topic=16.5.296"><span class="num">16.5.296</span>Frailty Assessment</a>
+  <a class="topic-item" data-topic="16.5.297" data-hub="16.5" href="?topic=16.5.297"><span class="num">16.5.297</span>Polypharmacy Deprescribing</a>
+  <a class="topic-item" data-topic="16.5.298" data-hub="16.5" href="?topic=16.5.298"><span class="num">16.5.298</span>Tavi Vs Savr Decision</a>
+  <a class="topic-item" data-topic="16.5.299" data-hub="16.5" href="?topic=16.5.299"><span class="num">16.5.299</span>Anticoagulation In Elderly Af</a>
+  <a class="topic-item" data-topic="16.5.300" data-hub="16.5" href="?topic=16.5.300"><span class="num">16.5.300</span>Uremic Pericarditis</a>
+  <a class="topic-item" data-topic="16.5.301" data-hub="16.5" href="?topic=16.5.301"><span class="num">16.5.301</span>Accelerated Atherosclerosis</a>
+  <a class="topic-item" data-topic="16.5.302" data-hub="16.5" href="?topic=16.5.302"><span class="num">16.5.302</span>Vascular Calcification</a>
+  <a class="topic-item" data-topic="16.5.303" data-hub="16.5" href="?topic=16.5.303"><span class="num">16.5.303</span>Dialysis Access Management</a>
+  <a class="topic-item" data-topic="16.5.304" data-hub="16.5" href="?topic=16.5.304"><span class="num">16.5.304</span>Anthracycline Cardiotoxicity Monitoring Dexrazoxane</a>
+  <a class="topic-item" data-topic="16.5.305" data-hub="16.5" href="?topic=16.5.305"><span class="num">16.5.305</span>Her2 Targeted Therapy Trastuzumab Cardiotoxicity</a>
+  <a class="topic-item" data-topic="16.5.306" data-hub="16.5" href="?topic=16.5.306"><span class="num">16.5.306</span>Vegf Inhibitors Hypertension</a>
+  <a class="topic-item" data-topic="16.5.307" data-hub="16.5" href="?topic=16.5.307"><span class="num">16.5.307</span>Immune Checkpoint Inhibitor Myocarditis</a>
+  <a class="topic-item" data-topic="16.5.308" data-hub="16.5" href="?topic=16.5.308"><span class="num">16.5.308</span>Radiation Heart Disease</a>
+  <a class="topic-item" data-topic="16.5.309" data-hub="16.5" href="?topic=16.5.309"><span class="num">16.5.309</span>Survivorship Care</a>
+</div>
+<div class="hub-group" data-hub="16.6">
+  <h3>16.6 · Cardiac Emergencies and Critical Care</h3>
+  <a class="topic-item" data-topic="16.6.310" data-hub="16.6" href="?topic=16.6.310"><span class="num">16.6.310</span>Stemi Primary Pci <90 Min Fibrinolysis If Pci >120 Min</a>
+  <a class="topic-item" data-topic="16.6.311" data-hub="16.6" href="?topic=16.6.311"><span class="num">16.6.311</span>Cardiogenic Shock Scai Classification Mcs</a>
+  <a class="topic-item" data-topic="16.6.312" data-hub="16.6" href="?topic=16.6.312"><span class="num">16.6.312</span>Mechanical Complications Of Mi</a>
+  <a class="topic-item" data-topic="16.6.313" data-hub="16.6" href="?topic=16.6.313"><span class="num">16.6.313</span>Adhf Management</a>
+  <a class="topic-item" data-topic="16.6.314" data-hub="16.6" href="?topic=16.6.314"><span class="num">16.6.314</span>Scai Shock Stages Mcs Escalation Iabp → Impella → Va Ecmo</a>
+  <a class="topic-item" data-topic="16.6.315" data-hub="16.6" href="?topic=16.6.315"><span class="num">16.6.315</span>Vf Pulseless Vt Acls Algorithm</a>
+  <a class="topic-item" data-topic="16.6.316" data-hub="16.6" href="?topic=16.6.316"><span class="num">16.6.316</span>Sustained Vt Hemodynamically Unstable → Cardioversion</a>
+  <a class="topic-item" data-topic="16.6.317" data-hub="16.6" href="?topic=16.6.317"><span class="num">16.6.317</span>Unstable Bradyarrhythmia Atropine Pacing Chronotropes</a>
+  <a class="topic-item" data-topic="16.6.318" data-hub="16.6" href="?topic=16.6.318"><span class="num">16.6.318</span>Torsades De Pointes Mg Pacing Isoproterenol</a>
+  <a class="topic-item" data-topic="16.6.319" data-hub="16.6" href="?topic=16.6.319"><span class="num">16.6.319</span>Aortic Dissection Stanford A Surgery B Medical</a>
+  <a class="topic-item" data-topic="16.6.320" data-hub="16.6" href="?topic=16.6.320"><span class="num">16.6.320</span>Cardiac Tamponade Emergency Pericardiocentesis</a>
+  <a class="topic-item" data-topic="16.6.321" data-hub="16.6" href="?topic=16.6.321"><span class="num">16.6.321</span>Ruptured Aortic Aneurysm</a>
+  <a class="topic-item" data-topic="16.6.322" data-hub="16.6" href="?topic=16.6.322"><span class="num">16.6.322</span>Targeted Temperature Management</a>
+  <a class="topic-item" data-topic="16.6.323" data-hub="16.6" href="?topic=16.6.323"><span class="num">16.6.323</span>Coronary Angiography Post Rosc</a>
+  <a class="topic-item" data-topic="16.6.324" data-hub="16.6" href="?topic=16.6.324"><span class="num">16.6.324</span>Neuroprognostication</a>
+  <a class="topic-item" data-topic="16.6.325" data-hub="16.6" href="?topic=16.6.325"><span class="num">16.6.325</span>Long Term Management</a>
+  <a class="topic-item" data-topic="16.6.326" data-hub="16.6" href="?topic=16.6.326"><span class="num">16.6.326</span>Moc File: Cardiology Moc.Md Root Of Mnt Tb Medicine Cardiology</a>
+  <a class="topic-item" data-topic="16.6.327" data-hub="16.6" href="?topic=16.6.327"><span class="num">16.6.327</span>Update Moc With: Section Checkboxes Progress Tracker High Yield Tables Viva Topi</a>
+  <a class="topic-item" data-topic="16.6.329" data-hub="16.6" href="?topic=16.6.329"><span class="num">16.6.329</span>**2026 06 15**: Initial Hierarchy Created Based On Davidson 24Th Edition Chapter</a>
+  <a class="topic-item" data-topic="16.6.330" data-hub="16.6" href="?topic=16.6.330"><span class="num">16.6.330</span>**Next**: Create Moc Template Directories Hubs And Scaffolds</a>
+</div>
+<div class="hub-group" data-hub="16.7">
+  <h3>16.7 · Cardiac Investigations</h3>
+  <a class="topic-item" data-topic="16.7.1" data-hub="16.7" href="?topic=16.7.1"><span class="num">16.7.1</span>Cardiovascular History Taking</a>
+  <a class="topic-item" data-topic="16.7.10" data-hub="16.7" href="?topic=16.7.10"><span class="num">16.7.10</span>Arrhythmia Diagnosis On Ecg</a>
+  <a class="topic-item" data-topic="16.7.11" data-hub="16.7" href="?topic=16.7.11"><span class="num">16.7.11</span>Electrolyte Effects On Ecg</a>
+  <a class="topic-item" data-topic="16.7.12" data-hub="16.7" href="?topic=16.7.12"><span class="num">16.7.12</span>Drug Effects On Ecg</a>
+  <a class="topic-item" data-topic="16.7.13" data-hub="16.7" href="?topic=16.7.13"><span class="num">16.7.13</span>Pacemaker Ecg Interpretation</a>
+  <a class="topic-item" data-topic="16.7.14" data-hub="16.7" href="?topic=16.7.14"><span class="num">16.7.14</span>Transthoracic Echo Tte Views And Measurements</a>
+  <a class="topic-item" data-topic="16.7.15" data-hub="16.7" href="?topic=16.7.15"><span class="num">16.7.15</span>Transesophageal Echo Toe Indications</a>
+  <a class="topic-item" data-topic="16.7.16" data-hub="16.7" href="?topic=16.7.16"><span class="num">16.7.16</span>Stress Echocardiography</a>
+  <a class="topic-item" data-topic="16.7.17" data-hub="16.7" href="?topic=16.7.17"><span class="num">16.7.17</span>Doppler Echocardiography Valvular Gradients Shunt Quantification</a>
+  <a class="topic-item" data-topic="16.7.18" data-hub="16.7" href="?topic=16.7.18"><span class="num">16.7.18</span>Strain Imaging And Speckle Tracking</a>
+  <a class="topic-item" data-topic="16.7.19" data-hub="16.7" href="?topic=16.7.19"><span class="num">16.7.19</span>3D Echocardiography</a>
+  <a class="topic-item" data-topic="16.7.2" data-hub="16.7" href="?topic=16.7.2"><span class="num">16.7.2</span>Cardiovascular Examination Inspection Palpation Auscultation</a>
+  <a class="topic-item" data-topic="16.7.20" data-hub="16.7" href="?topic=16.7.20"><span class="num">16.7.20</span>Cardiac Ct Coronary Calcium Scoring Ct Coronary Angiography</a>
+  <a class="topic-item" data-topic="16.7.21" data-hub="16.7" href="?topic=16.7.21"><span class="num">16.7.21</span>Cardiac Mri Viability Fibrosis Infiltrative Diseases</a>
+  <a class="topic-item" data-topic="16.7.22" data-hub="16.7" href="?topic=16.7.22"><span class="num">16.7.22</span>Nuclear Imaging Myocardial Perfusion Muga Pet</a>
+  <a class="topic-item" data-topic="16.7.23" data-hub="16.7" href="?topic=16.7.23"><span class="num">16.7.23</span>Cardiac Catheterization Right Left Heart Coronary Angiography</a>
+  <a class="topic-item" data-topic="16.7.24" data-hub="16.7" href="?topic=16.7.24"><span class="num">16.7.24</span>Intravascular Imaging Ivus Oct</a>
+  <a class="topic-item" data-topic="16.7.3" data-hub="16.7" href="?topic=16.7.3"><span class="num">16.7.3</span>Jugular Venous Pressure Assessment</a>
+  <a class="topic-item" data-topic="16.7.4" data-hub="16.7" href="?topic=16.7.4"><span class="num">16.7.4</span>Peripheral Arterial Pulse Examination</a>
+  <a class="topic-item" data-topic="16.7.5" data-hub="16.7" href="?topic=16.7.5"><span class="num">16.7.5</span>Normal Ecg Components And Intervals</a>
+  <a class="topic-item" data-topic="16.7.6" data-hub="16.7" href="?topic=16.7.6"><span class="num">16.7.6</span>Ecg Axis Determination</a>
+  <a class="topic-item" data-topic="16.7.7" data-hub="16.7" href="?topic=16.7.7"><span class="num">16.7.7</span>Chamber Enlargement Lae Rae Lvh Rvh</a>
+  <a class="topic-item" data-topic="16.7.8" data-hub="16.7" href="?topic=16.7.8"><span class="num">16.7.8</span>Ischaemia Injury Infarction Patterns</a>
+  <a class="topic-item" data-topic="16.7.9" data-hub="16.7" href="?topic=16.7.9"><span class="num">16.7.9</span>Conduction Abnormalities Av Blocks Bundle Branch Blocks Fascicular Blocks</a>
+</div>
+<div class="hub-group" data-hub="16.8">
+  <h3>16.8 · Cardiomyopathies</h3>
+  <a class="topic-item" data-topic="16.8.217" data-hub="16.8" href="?topic=16.8.217"><span class="num">16.8.217</span>Genetics Sarcomere Genes Prevalence</a>
+  <a class="topic-item" data-topic="16.8.218" data-hub="16.8" href="?topic=16.8.218"><span class="num">16.8.218</span>Diagnosis Ecg Echo Cmr With Lge</a>
+  <a class="topic-item" data-topic="16.8.219" data-hub="16.8" href="?topic=16.8.219"><span class="num">16.8.219</span>Risk Stratification Hcm Risk Scd Score</a>
+  <a class="topic-item" data-topic="16.8.220" data-hub="16.8" href="?topic=16.8.220"><span class="num">16.8.220</span>Medical Therapy Beta Blockers Verapamil Disopyramide Mavacamten Aficamten</a>
+  <a class="topic-item" data-topic="16.8.221" data-hub="16.8" href="?topic=16.8.221"><span class="num">16.8.221</span>Septal Reduction Therapy Myectomy Alcohol Septal Ablation</a>
+  <a class="topic-item" data-topic="16.8.222" data-hub="16.8" href="?topic=16.8.222"><span class="num">16.8.222</span>Icd For Primary Prevention</a>
+  <a class="topic-item" data-topic="16.8.223" data-hub="16.8" href="?topic=16.8.223"><span class="num">16.8.223</span>Etiologies Genetic Viral Alcohol Peripartum Autoimmune Tachycardia Induced</a>
+  <a class="topic-item" data-topic="16.8.224" data-hub="16.8" href="?topic=16.8.224"><span class="num">16.8.224</span>Genetic Testing Ttn Lmna Flnc Etc.</a>
+  <a class="topic-item" data-topic="16.8.225" data-hub="16.8" href="?topic=16.8.225"><span class="num">16.8.225</span>Gdmt + Device Therapy</a>
+  <a class="topic-item" data-topic="16.8.226" data-hub="16.8" href="?topic=16.8.226"><span class="num">16.8.226</span>Tachycardia Induced Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.8.227" data-hub="16.8" href="?topic=16.8.227"><span class="num">16.8.227</span>Cardiac Amyloidosis Attr Al Diagnosis Pyp Scan Biopsy Free Light Chains Treatmen</a>
+  <a class="topic-item" data-topic="16.8.228" data-hub="16.8" href="?topic=16.8.228"><span class="num">16.8.228</span>Sarcoidosis Diagnosis Pet Biopsy; Treatment Steroids Immunosuppression</a>
+  <a class="topic-item" data-topic="16.8.229" data-hub="16.8" href="?topic=16.8.229"><span class="num">16.8.229</span>Hemochromatosis Iron Overload Chelation</a>
+  <a class="topic-item" data-topic="16.8.230" data-hub="16.8" href="?topic=16.8.230"><span class="num">16.8.230</span>Endomyocardial Fibrosis Löffler Endocarditis</a>
+  <a class="topic-item" data-topic="16.8.231" data-hub="16.8" href="?topic=16.8.231"><span class="num">16.8.231</span>Arvc Task Force Criteria Pkp2 Mutations</a>
+  <a class="topic-item" data-topic="16.8.232" data-hub="16.8" href="?topic=16.8.232"><span class="num">16.8.232</span>Alvc Biventricular Acm</a>
+  <a class="topic-item" data-topic="16.8.233" data-hub="16.8" href="?topic=16.8.233"><span class="num">16.8.233</span>Exercise Restriction Icd Catheter Ablation</a>
+  <a class="topic-item" data-topic="16.8.234" data-hub="16.8" href="?topic=16.8.234"><span class="num">16.8.234</span>Takotsubo Stress Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.8.235" data-hub="16.8" href="?topic=16.8.235"><span class="num">16.8.235</span>Peripartum Cardiomyopathy Ppcm</a>
+  <a class="topic-item" data-topic="16.8.236" data-hub="16.8" href="?topic=16.8.236"><span class="num">16.8.236</span>Myocarditis Viral Autoimmune Giant Cell Eosinophilic</a>
+  <a class="topic-item" data-topic="16.8.237" data-hub="16.8" href="?topic=16.8.237"><span class="num">16.8.237</span>Non Compaction Cardiomyopathy</a>
+  <a class="topic-item" data-topic="16.8.238" data-hub="16.8" href="?topic=16.8.238"><span class="num">16.8.238</span>Chemotherapy Induced Anthracycline Her2 Targeted</a>
+</div>
+<div class="hub-group" data-hub="16.9">
+  <h3>16.9 · Chronic Coronary Syndromes</h3>
+  <a class="topic-item" data-topic="16.9.55" data-hub="16.9" href="?topic=16.9.55"><span class="num">16.9.55</span>Pathophysiology Demand Vs Supply Ischemia</a>
+  <a class="topic-item" data-topic="16.9.56" data-hub="16.9" href="?topic=16.9.56"><span class="num">16.9.56</span>Clinical Presentation And Canadian Cardiovascular Society Ccs Classification</a>
+  <a class="topic-item" data-topic="16.9.57" data-hub="16.9" href="?topic=16.9.57"><span class="num">16.9.57</span>Diagnostic Testing Exercise Ecg Stress Echo Nuclear Ctca Invasive Angiography</a>
+  <a class="topic-item" data-topic="16.9.58" data-hub="16.9" href="?topic=16.9.58"><span class="num">16.9.58</span>Medical Therapy Anti Anginal Anti Platelet Statin Acei</a>
+  <a class="topic-item" data-topic="16.9.59" data-hub="16.9" href="?topic=16.9.59"><span class="num">16.9.59</span>Revascularization Criteria Pci Vs Cabg Syntax Score</a>
+  <a class="topic-item" data-topic="16.9.60" data-hub="16.9" href="?topic=16.9.60"><span class="num">16.9.60</span>Variant Prinzmetal Angina</a>
+  <a class="topic-item" data-topic="16.9.61" data-hub="16.9" href="?topic=16.9.61"><span class="num">16.9.61</span>Microvascular Angina Cmd</a>
+  <a class="topic-item" data-topic="16.9.62" data-hub="16.9" href="?topic=16.9.62"><span class="num">16.9.62</span>Silent Ischemia</a>
+  <a class="topic-item" data-topic="16.9.63" data-hub="16.9" href="?topic=16.9.63"><span class="num">16.9.63</span>Coronary Artery Anomalies</a>
+  <a class="topic-item" data-topic="16.9.64" data-hub="16.9" href="?topic=16.9.64"><span class="num">16.9.64</span>Post Pci Management Dapt Duration Stent Thrombosis</a>
+  <a class="topic-item" data-topic="16.9.65" data-hub="16.9" href="?topic=16.9.65"><span class="num">16.9.65</span>Post Cabg Management Graft Surveillance Secondary Prevention</a>
+  <a class="topic-item" data-topic="16.9.66" data-hub="16.9" href="?topic=16.9.66"><span class="num">16.9.66</span>In Stent Restenosis</a>
+  <a class="topic-item" data-topic="16.9.67" data-hub="16.9" href="?topic=16.9.67"><span class="num">16.9.67</span>Bioresorbable Scaffolds</a>
+  <a class="topic-item" data-topic="16.9.68" data-hub="16.9" href="?topic=16.9.68"><span class="num">16.9.68</span>Fractional Flow Reserve Ffr Ifr Rfr</a>
+  <a class="topic-item" data-topic="16.9.69" data-hub="16.9" href="?topic=16.9.69"><span class="num">16.9.69</span>Intravascular Ultrasound Ivus Oct</a>
+  <a class="topic-item" data-topic="16.9.70" data-hub="16.9" href="?topic=16.9.70"><span class="num">16.9.70</span>Coronary Flow Reserve Cfr Index Of Microcirculatory Resistance Imr</a>
+</div>
+
+  </aside>
+  <section class="chapter-main d-only">
+    <div class="chapter-header">
+      <h1>Cardiology</h1>
+      <div class="meta">Davidson Ch 16 · 17 hubs · 332 topics · <a href="https://medsea.notion.site/Chapter-16-Cardiology-8baa010d9cc94c48826136417d383973" target="_blank">Notion ↗</a></div>
+    </div>
+    <div id="topicContainer" class="topic-detail-placeholder">
+      <div class="placeholder">
+        <div class="icon">📖</div>
+        <p>Select a topic from the sidebar to view its content.</p>
+        <p style="font-size:12px; margin-top:8px;">Or pick a chapter from the header dropdown.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE: accordion tree (hidden on desktop via CSS) -->
+  <div class="chapter-mobile m-only">
+    <div class="chapter-toolbar">
+      <input type="text" class="search" id="topicSearchMobile" placeholder="🔍 Search topics…">
+      <div class="toolbar-actions">
+        <button class="btn-acc" onclick="expandAllMobile()">Expand all</button>
+        <button class="btn-acc" onclick="collapseAllMobile()">Collapse all</button>
+      </div>
+      <div class="no-results" id="noResultsMobile">No matching topics</div>
+    </div>
+    <div class="hub-accordion" id="hubAccordionMobile">
+      <details class="hub-acc" data-hub="16.1">
   <summary class="hub-summary">
     <span class="hub-arrow">▸</span>
     <span class="hub-label"><span class="hub-num">16.1</span> Acute Coronary Syndromes</span>
@@ -16946,7 +17663,7 @@ footer a:hover { color: var(--accent); }
   <summary class="hub-summary">
     <span class="hub-arrow">▸</span>
     <span class="hub-label"><span class="hub-num">16.3</span> Arrhythmias</span>
-    <span class="hub-count">41</span>
+    <span class="hub-count">44</span>
   </summary>
   <div class="hub-body">
     <details class="topic-acc" data-topic="16.3.162" data-hub="16.3">
@@ -19896,6 +20613,351 @@ footer a:hover { color: var(--accent); }
     </div>
       </div>
     </details>
+    <details class="topic-acc" data-topic="16.3.203" data-hub="16.3">
+      <summary class="topic-summary">
+        <span class="topic-arrow">▸</span>
+        <span class="topic-num">16.3.203</span>
+        <span class="topic-title">Cha2Ds2 Vasc Has Bled</span>
+      </summary>
+      <div class="topic-body">
+        <div class="topic-content"><h2>1. Purpose</h2>
+<p>Two complementary scores for AF anticoagulation decisions.</p>
+<ul>
+<li><strong>CHA2DS2-VASc</strong>: stroke risk → who to anticoagulate</li>
+<li><strong>HAS-BLED</strong>: bleeding risk → who needs closer monitoring / modifiable risk factor correction</li>
+</ul>
+<h2>2. CHA2DS2-VASc (Stroke Risk)</h2>
+<p><strong>Maximum score: 9</strong></p>
+<table>
+<tr><th>Letter</th><th>Criterion</th><th>Points</th></tr>
+<tr><td><strong>C</strong></td><td><strong>C</strong>ongestive Heart Failure (HF or LVEF ≤40%)</td><td>1</td></tr>
+<tr><td><strong>H</strong></td><td><strong>H</strong>ypertension</td><td>1</td></tr>
+<tr><td><strong>A₂</strong></td><td><strong>A</strong>ge ≥75</td><td>2</td></tr>
+<tr><td><strong>D</strong></td><td><strong>D</strong>iabetes mellitus</td><td>1</td></tr>
+<tr><td><strong>S₂</strong></td><td>Prior <strong>S</strong>troke / TIA / systemic thromboembolism</td><td>2</td></tr>
+<tr><td><strong>V</strong></td><td><strong>V</strong>ascular disease (prior MI, PAD, aortic plaque)</td><td>1</td></tr>
+<tr><td><strong>A</strong></td><td><strong>A</strong>ge 65–74</td><td>1</td></tr>
+<tr><td><strong>Sc</strong></td><td><strong>S</strong>ex <strong>c</strong>ategory (female)</td><td>1</td></tr>
+</table>
+<h2>3. CHA2DS2-VASc → Anticoagulation Decision (ESC 2024 / ACC-AHA 2023)</h2>
+<table>
+<tr><th>Score (Male)</th><th>Score (Female)</th><th>Recommendation</th></tr>
+<tr><td>0</td><td>0</td><td>No anticoagulation</td></tr>
+<tr><td>1</td><td>1</td><td>Consider oral anticoagulation (no female sex point alone)</td></tr>
+<tr><td>≥2</td><td>≥2 (or ≥3 with sex point)</td><td>Oral anticoagulation recommended</td></tr>
+</table>
+<blockquote><strong>Note:</strong> In females, 1 point from "female sex" alone does not mandate anticoagulation; CHA2DS2-VASc score of 2 in females = same as score 1 in males (sex itself is modifiable risk factor accounting).</blockquote>
+<h2>4. HAS-BLED (Bleeding Risk)</h2>
+<p><strong>Maximum score: 9</strong> — score <strong>≥3 = HIGH bleeding risk</strong> (NOT a contraindication to anticoagulation, but flags need for closer monitoring + modifiable risk factor correction)</p>
+<table>
+<tr><th>Letter</th><th>Criterion</th><th>Points</th></tr>
+<tr><td><strong>H</strong></td><td><strong>H</strong>ypertension (uncontrolled, SBP >160)</td><td>1</td></tr>
+<tr><td><strong>A</strong></td><td><strong>A</strong>bnormal renal function (Cr >200 µmol/L or dialysis)</td><td>1</td></tr>
+<tr><td></td><td><strong>A</strong>bnormal liver function (cirrhosis, bilirubin >2×ULN)</td><td>1</td></tr>
+<tr><td><strong>S</strong></td><td>Prior <strong>S</strong>troke</td><td>1</td></tr>
+<tr><td><strong>B</strong></td><td>Prior major <strong>B</strong>leeding or predisposition</td><td>1</td></tr>
+<tr><td><strong>L</strong></td><td><strong>L</strong>abile INR (TTR <60% on warfarin)</td><td>1</td></tr>
+<tr><td><strong>E</strong></td><td><strong>E</strong>lderly (>65)</td><td>1</td></tr>
+<tr><td><strong>D</strong></td><td><strong>D</strong>rugs (antiplatelets, NSAIDs) or alcohol (≥8 drinks/wk)</td><td>1 each</td></tr>
+</table>
+<h2>5. Modifiable Bleeding Risk Factors to Address</h2>
+<ul>
+<li>Uncontrolled hypertension (target <130/80 on anticoag)</li>
+<li>Labile INR (switch to DOAC if appropriate)</li>
+<li>Concurrent antiplatelet therapy (avoid unless ACS/stent)</li>
+<li>Alcohol excess</li>
+<li>NSAIDs (avoid)</li>
+<li>Fall risk (rarely contraindicates anticoagulation — benefits usually outweigh fall risk)</li>
+</ul>
+<h2>6. Other Stroke Risk Scores (for reference)</h2>
+<ul>
+<li><strong>ABC-AF</strong> (Age, Biomarkers [NT-proBNP, troponin], Clinical history) — better than CHA2DS2-VASc in some studies</li>
+<li><strong>GARFIELD-AF</strong>, <strong>ATRIA</strong> — less commonly used in practice</li>
+<li><strong>CHA2DS2-VASc remains the standard</strong> for ESC & ACC/AHA guidelines</li>
+</ul>
+<h2>7. Anticoagulation Choice</h2>
+<p>Once decision made to anticoagulate, choose:</p>
+<ul>
+<li><strong>DOAC preferred</strong> over warfarin in non-valvular AF (RE-LY, ROCKET-AF, ARISTOTLE, ENGAGE-AF)</li>
+<li>Dabigatran (thrombin inhibitor)</li>
+<li>Rivaroxaban (FXa inhibitor)</li>
+<li>Apixaban (FXa inhibitor)</li>
+<li>Edoxaban (FXa inhibitor)</li>
+<li><strong>Warfarin</strong> if: mechanical valve, moderate–severe MS, CrCl <30 (apixaban OK), poor adherence to DOAC monitoring</li>
+</ul>
+<blockquote><strong>Pearls</strong></blockquote>
+<blockquote>- <strong>CHA2DS2-VASc ≥2 (M) / ≥3 (F) → anticoagulate.</strong></blockquote>
+<blockquote>- <strong>HAS-BLED ≥3 = high bleed risk, NOT a contraindication — correct modifiable factors.</strong></blockquote>
+<blockquote>- <strong>DOAC > warfarin</strong> in non-valvular AF for most patients.</blockquote>
+<blockquote>- <strong>Annual review</strong> of stroke + bleeding risk + anticoagulation indication.</blockquote>
+<blockquote>- <strong>Female sex alone (score 1) does not mandate anticoagulation</strong> (ESC 2024).</blockquote>
+<h2>Topic Overview</h2>
+<div class="mindmap">
+<div class="mm-root">1. Purpose</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">2. CHA2DS2-VASc (Stroke Risk)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">3. CHA2DS2-VASc → Anticoagulation Decision (ESC 2024 / ACC-AHA 2023)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">4. HAS-BLED (Bleeding Risk)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">5. Modifiable Bleeding Risk Factors to Address</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">6. Other Stroke Risk Scores (for reference)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">7. Anticoagulation Choice</div>
+</div>
+</div>
+</div></div>
+        
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/16-cardiology/diseases/16.3.203-cha2ds2-vasc-has-bled/topic.png" alt="Cha2Ds2 Vasc Has Bled" loading="lazy"></div>
+    </div>
+      </div>
+    </details>
+    <details class="topic-acc" data-topic="16.3.204" data-hub="16.3">
+      <summary class="topic-summary">
+        <span class="topic-arrow">▸</span>
+        <span class="topic-num">16.3.204</span>
+        <span class="topic-title">Doacs Vs Warfarin</span>
+      </summary>
+      <div class="topic-body">
+        <div class="topic-content"><h2>1. Overview</h2>
+<p><strong>DOACs</strong> (Direct Oral AntiCoagulants) = NOACs = target-specific oral anticoagulants.</p>
+<p>Four agents approved for non-valvular AF (NVAF):</p>
+<ul>
+<li><strong>Dabigatran</strong> — direct <strong>thrombin (IIa)</strong> inhibitor</li>
+<li><strong>Rivaroxaban</strong> — direct <strong>factor Xa</strong> inhibitor</li>
+<li><strong>Apixaban</strong> — direct <strong>factor Xa</strong> inhibitor</li>
+<li><strong>Edoxaban</strong> — direct <strong>factor Xa</strong> inhibitor</li>
+</ul>
+<p>Warfarin = vitamin K antagonist (VKA), still used in specific situations.</p>
+<h2>2. Landmark Trials (vs Warfarin in NVAF)</h2>
+<table>
+<tr><th>Trial</th><th>Drug</th><th>Dose</th><th>Stroke/SE vs Warfarin</th><th>Major Bleed vs Warfarin</th><th>Notes</th></tr>
+<tr><td>RE-LY</td><td>Dabigatran</td><td>150 mg BID</td><td>↓ 35%</td><td>similar</td><td>110 mg BID = non-inferior</td></tr>
+<tr><td>ROCKET-AF</td><td>Rivaroxaban</td><td>20 mg OD</td><td>non-inferior</td><td>similar</td><td>CrCl 30–49 → 15 mg</td></tr>
+<tr><td>ARISTOTLE</td><td>Apixaban</td><td>5 mg BID</td><td>↓ 21%</td><td>↓ 31%</td><td>Best safety profile</td></tr>
+<tr><td>ENGAGE-AF</td><td>Edoxaban</td><td>60 mg OD</td><td>non-inferior</td><td>↓ 20%</td><td>CrCl 15–50 → 30 mg</td></tr>
+</table>
+<h2>3. DOAC Dosing in Renal Impairment</h2>
+<table>
+<tr><th>Drug</th><th>Standard</th><th>CrCl 30–49</th><th>CrCl 15–29</th><th>CrCl <15 / Dialysis</th></tr>
+<tr><td>Dabigatran</td><td>150 mg BID</td><td>150 mg BID</td><td><strong>Avoid</strong> (75 mg BID in US only)</td><td>Avoid</td></tr>
+<tr><td>Rivaroxaban</td><td>20 mg OD</td><td><strong>15 mg OD</strong></td><td><strong>Avoid</strong></td><td>Avoid</td></tr>
+<tr><td>Apixaban</td><td>5 mg BID</td><td>5 mg BID</td><td><strong>2.5 mg BID</strong> if ≥2: age ≥80, weight ≤60 kg, Cr ≥1.5</td><td>2.5 mg BID (limited data)</td></tr>
+<tr><td>Edoxaban</td><td>60 mg OD</td><td><strong>30 mg OD</strong></td><td><strong>30 mg OD</strong></td><td>Avoid</td></tr>
+</table>
+<h2>4. Warfarin — When Still Preferred</h2>
+<ul>
+<li><strong>Mechanical heart valve</strong> (RE-ALIGN: dabigatran ↑ events) — DOACs <strong>contraindicated</strong></li>
+<li><strong>Moderate–severe mitral stenosis</strong> (rhythm control issue + high stroke risk)</li>
+<li><strong>CrCl <30 mL/min</strong> (apixaban may be used with caution)</li>
+<li><strong>Significant drug interactions / poor adherence</strong> to DOAC monitoring (warfarin INR check enforces compliance)</li>
+<li><strong>Pregnancy</strong> (warfarin teratogenic; LMWH preferred)</li>
+<li><strong>Cost</strong> — warfarin cheap, DOACs expensive (generic versions now available)</li>
+</ul>
+<h2>5. Practical DOAC Initiation Checklist</h2>
+<ul>
+<li><strong>Weight, age, renal function</strong> (Cockcroft-Gault, NOT eGFR)</li>
+<li><strong>Bleeding risk</strong> (HAS-BLED, prior bleed, anaemia)</li>
+<li><strong>Concomitant drugs</strong> (check P-gp/CYP3A4 interactions)</li>
+<li>Strong P-gp/CYP3A4 inhibitors (ketoconazole, ritonavir) → avoid or dose-reduce</li>
+<li>Strong CYP3A4 inducers (rifampin, carbamazepine, phenytoin, St John's Wort) → <strong>avoid all DOACs</strong></li>
+<li><strong>Adherence assessment</strong> (DOACs have short half-life; missed doses → loss of protection)</li>
+<li><strong>Baseline labs</strong>: CBC, BMP (Cr), LFTs, coagulation</li>
+<li><strong>Avoid</strong> if active bleeding, recent high-risk surgery, plt <50</li>
+</ul>
+<h2>6. Reversal Agents</h2>
+<table>
+<tr><th>Drug</th><th>Reversal Agent</th><th>Mechanism</th></tr>
+<tr><td>Dabigatran</td><td><strong>Idarucizumab</strong> (Praxbind)</td><td>monoclonal antibody fragment</td></tr>
+<tr><td>Rivaroxaban / Apixaban</td><td><strong>Andexanet alfa</strong> (Andexxa)</td><td>recombinant factor Xa decoy</td></tr>
+<tr><td>Edoxaban</td><td>Andexanet alfa (off-label)</td><td></td></tr>
+<tr><td>Warfarin</td><td><strong>Vitamin K</strong> (slow) + <strong>4-factor PCC</strong> (urgent) or FFP</td><td>replace clotting factors</td></tr>
+</table>
+<h2>7. Perioperative Management</h2>
+<ul>
+<li><strong>Low bleeding-risk procedure</strong>: stop DOAC 24 h before; resume 24 h after</li>
+<li><strong>High bleeding-risk procedure / neuraxial</strong>: stop 48 h before (CrCl normal)</li>
+<li><strong>CrCl <30</strong>: stop <strong>≥72 h</strong> before high-risk procedure</li>
+<li><strong>Bridging with LMWH</strong>: NOT needed for DOACs (short half-life); may ↑ bleeding</li>
+<li><strong>Spinal/epidural</strong>: specific timing rules — minimum 24–72 h gap depending on DOAC</li>
+</ul>
+<blockquote><strong>Pearls</strong></blockquote>
+<blockquote>- <strong>DOACs are first-line</strong> for non-valvular AF (better efficacy/safety, fixed dosing, no monitoring).</blockquote>
+<blockquote>- <strong>Apixaban</strong> has the best bleeding profile in ARISTOTLE.</blockquote>
+<blockquote>- <strong>Renal function by Cockcroft-Gault</strong>, not eGFR.</blockquote>
+<blockquote>- <strong>Idarucizumab</strong> reverses dabigatran; <strong>andexanet</strong> reverses anti-Xa DOACs.</blockquote>
+<blockquote>- <strong>Warfarin remains preferred</strong> for mechanical valves and moderate–severe MS.</blockquote>
+<blockquote>- <strong>No routine monitoring</strong> for DOACs, but check adherence + renal function <strong>annually</strong> (more often if CrCl <60).</blockquote>
+<h2>Topic Overview</h2>
+<div class="mindmap">
+<div class="mm-root">1. Overview</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">2. Landmark Trials (vs Warfarin in NVAF)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">3. DOAC Dosing in Renal Impairment</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">4. Warfarin — When Still Preferred</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">5. Practical DOAC Initiation Checklist</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">6. Reversal Agents</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">7. Perioperative Management</div>
+</div>
+</div>
+</div></div>
+        
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/16-cardiology/diseases/16.3.204-doacs-vs-warfarin/topic.png" alt="Doacs Vs Warfarin" loading="lazy"></div>
+    </div>
+      </div>
+    </details>
+    <details class="topic-acc" data-topic="16.3.205" data-hub="16.3">
+      <summary class="topic-summary">
+        <span class="topic-arrow">▸</span>
+        <span class="topic-num">16.3.205</span>
+        <span class="topic-title">Av Node Ablation Pacemaker</span>
+      </summary>
+      <div class="topic-body">
+        <div class="topic-content"><h2>1. Concept</h2>
+<p><strong>Ablate and pace</strong> = catheter ablation of the AV node + permanent pacemaker implantation. Achieves <strong>rate control</strong> when:</p>
+<ul>
+<li>Pharmacological rate control fails</li>
+<li>AF is permanent and refractory to rhythm control</li>
+<li>Patient is symptomatic, elderly, or unsuitable for complex ablation (PVI)</li>
+</ul>
+<blockquote><strong>Key point:</strong> This is <strong>rate control of last resort</strong> — patient becomes <strong>pacemaker-dependent</strong>.</blockquote>
+<h2>2. Indications</h2>
+<ul>
+<li><strong>Symptomatic permanent AF</strong> with inadequate rate control despite maximally tolerated drug therapy (β-blocker, CCB, digoxin ± amiodarone)</li>
+<li><strong>Refractory AF</strong> unsuitable for catheter ablation of AF (PVI) due to:</li>
+<li>Severely dilated LA (>55 mm)</li>
+<li>Long-standing persistent AF with extensive fibrosis</li>
+<li>Multiple prior failed ablations</li>
+<li>Severe comorbidity making repeated procedures unsafe</li>
+<li><strong>Tachycardia-induced cardiomyopathy</strong> from poorly controlled AF</li>
+<li><strong>HF with permanent AF</strong> where CRT indicated (biventricular pacing needed)</li>
+</ul>
+<h2>3. Procedure</h2>
+<h3>Step 1: AV Node Ablation</h3>
+<ul>
+<li>Catheter via femoral vein to right heart</li>
+<li>Map AV node / compact AV node region (typically slow pathway zone)</li>
+<li><strong>Radiofrequency ablation</strong> (or cryoablation) — complete heart block targeted</li>
+<li>Endpoint: complete AV block with junctional escape rhythm <40 bpm</li>
+<li>Success rate: <strong>>97%</strong> for complete AV block</li>
+<li>Complication rate: <2% (cardiac tamponade, vascular access, AV block failure)</li>
+</ul>
+<h3>Step 2: Pacemaker Implantation</h3>
+<ul>
+<li><strong>Single-chamber (VVIR)</strong> — for sedentary patients</li>
+<li><strong>Dual-chamber (DDDR)</strong> — for sinus rhythm patients (rare)</li>
+<li><strong>CRT-P / CRT-D</strong> — if HFrEF + LBBB (CRT upgrade later if needed)</li>
+<li><strong>His-bundle pacing (HBP)</strong> / <strong>Left bundle branch area pacing (LBBAP)</strong> — preserves ventricular synchrony, emerging as preferred over RV-only pacing</li>
+</ul>
+<blockquote>⚠️ <strong>Order matters:</strong> Ablate AV node FIRST → wait 4–6 weeks for ventricular remodelling → THEN implant pacemaker (reduces lead-related complications, allows RV function assessment).</blockquote>
+<h2>4. Pacemaker Choice (2023 ESC Guidelines)</h2>
+<table>
+<tr><th>Scenario</th><th>Recommended Pacemaker</th></tr>
+<tr><td>Permanent AF + preserved EF + sedentary</td><td><strong>VVIR</strong></td></tr>
+<tr><td>Permanent AF + preserved EF + active</td><td><strong>DDDR</strong> (rare)</td></tr>
+<tr><td>Permanent AF + <strong>HFrEF</strong> (LVEF ≤35%) + LBBB</td><td><strong>CRT-P / CRT-D</strong> (or HBP-CRT)</td></tr>
+<tr><td>Permanent AF + any LV dysfunction</td><td><strong>Conduction system pacing (HBP/LBBAP)</strong> if available</td></tr>
+<tr><td>Young patient (avoid long-term RV pacing)</td><td><strong>HBP or LBBAP</strong></td></tr>
+</table>
+<h2>5. Outcomes</h2>
+<ul>
+<li><strong>Highly effective rate control</strong> — exercise tolerance improves</li>
+<li><strong>Quality of life</strong>: improves significantly (AIRCARE, APAF-CRT trials)</li>
+<li><strong>EF recovery</strong> in tachycardia-induced cardiomyopathy (~50% cases)</li>
+<li><strong>No atrial kick</strong> — minor reduction in CO (15–20%), but most patients asymptomatic</li>
+<li><strong>No need for rate-control drugs</strong> post-procedure</li>
+<li><strong>Risk</strong>: lifelong pacemaker dependency, RV pacing-induced cardiomyopathy (mitigated by HBP/LBBAP)</li>
+</ul>
+<h2>6. Comparison with AF Catheter Ablation (PVI)</h2>
+<table>
+<tr><th>Aspect</th><th>AV Node Ablation + PM</th><th>AF Catheter Ablation (PVI)</th></tr>
+<tr><td>Goal</td><td>Rate control</td><td>Rhythm control (sinus rhythm)</td></tr>
+<tr><td>Maintains SR</td><td>No</td><td>Yes</td></tr>
+<tr><td>Repeat procedure</td><td>Rare</td><td>20–40% need redo over 5y</td></tr>
+<tr><td>Pacemaker dependency</td><td>100%</td><td><2%</td></tr>
+<tr><td>LV function impact</td><td>Depends on pacing site</td><td>Preserved / improved</td></tr>
+<tr><td>Suitable for</td><td>Elderly, refractory, unsuitable for PVI</td><td>First-line for symptomatic paroxysmal/persistent AF</td></tr>
+<tr><td>Long-term outcome</td><td>Stable (pace-dependent)</td><td>Variable (AF recurrence)</td></tr>
+</table>
+<h2>7. Complications & Long-term Concerns</h2>
+<ul>
+<li><strong>Pacemaker-related</strong>: lead dislodgement, infection (1–2%), battery depletion</li>
+<li><strong>RV pacing-induced cardiomyopathy</strong>: 10–20% over 5+ years (reduced by HBP/LBBAP)</li>
+<li><strong>Persistent AF-related stroke risk</strong> unchanged — anticoagulation still required per CHA2DS2-VASc</li>
+<li><strong>No escape rhythm if pacemaker fails</strong> — patient dependent; close follow-up essential</li>
+</ul>
+<blockquote><strong>Pearls</strong></blockquote>
+<blockquote>- <strong>Ablate and pace</strong> = rate control of last resort, not first-line.</blockquote>
+<blockquote>- <strong>Patient becomes 100% pacemaker-dependent</strong> — counsel thoroughly before procedure.</blockquote>
+<blockquote>- <strong>HBP / LBBAP preferred</strong> over RV pacing to preserve ventricular synchrony (avoid pacing-induced cardiomyopathy).</blockquote>
+<blockquote>- <strong>CRT indicated</strong> if HFrEF + LBBB + permanent AF.</blockquote>
+<blockquote>- <strong>Continue anticoagulation</strong> indefinitely per CHA2DS2-VASc — ablation does not eliminate stroke risk.</blockquote>
+<blockquote>- <strong>Wait 4–6 weeks between AV node ablation and pacemaker</strong> if doing staged procedure.</blockquote>
+<h2>Topic Overview</h2>
+<div class="mindmap">
+<div class="mm-root">1. Concept</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">2. Indications</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">3. Procedure</div>
+<div class="mm-node mm-l2">Step 1: AV Node Ablation</div>
+<div class="mm-node mm-l2">Step 2: Pacemaker Implantation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">4. Pacemaker Choice (2023 ESC Guidelines)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">5. Outcomes</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">6. Comparison with AF Catheter Ablation (PVI)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">7. Complications &amp; Long-term Concerns</div>
+</div>
+</div>
+</div></div>
+        
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/16-cardiology/diseases/16.3.205-av-node-ablation-pacemaker/topic.png" alt="Av Node Ablation Pacemaker" loading="lazy"></div>
+    </div>
+      </div>
+    </details>
   </div>
 </details>
 <details class="hub-acc" data-hub="16.4">
@@ -22205,7 +23267,7 @@ footer a:hover { color: var(--accent); }
   <summary class="hub-summary">
     <span class="hub-arrow">▸</span>
     <span class="hub-label"><span class="hub-num">16.6</span> Cardiac Emergencies and Critical Care</span>
-    <span class="hub-count">21</span>
+    <span class="hub-count">20</span>
   </summary>
   <div class="hub-body">
     <details class="topic-acc" data-topic="16.6.310" data-hub="16.6">
@@ -22477,88 +23539,123 @@ footer a:hover { color: var(--accent); }
       </summary>
       <div class="topic-body">
         <div class="topic-content"><h2>1. Definition</h2>
-<p><strong>Acute Decompensated Heart Failure (ADHF)</strong>: Rapid onset or worsening of HF symptoms requiring urgent therapy. Spectrum from mild pulmonary congestion to cardiogenic shock.</p>
-<h2>4 Subtypes (Stevenson):</h2>
+<p><strong>Acute Decompensated Heart Failure (ADHF)</strong>: Rapid onset or worsening of HF symptoms requiring urgent therapy.</p>
+<h2>2. Four Clinical Profiles (Stevenson)</h2>
 <ul>
-<li><strong>Warm-dry</strong> (compensated, no congestion)</li>
-<li><strong>Warm-wet</strong> (congested, perfused — most common)</li>
-<li><strong>Cold-dry</strong> (hypoperfused, no congestion)</li>
-<li><strong>Cold-wet</strong> (hypoperfused + congested — worst prognosis)</li>
+<li><strong>Warm-dry</strong>: compensated, no congestion (~25%)</li>
+<li><strong>Warm-wet</strong>: congestion, perfusion OK (~50%, most common)</li>
+<li><strong>Cold-dry</strong>: hypoperfused, no congestion (~5%)</li>
+<li><strong>Cold-wet</strong>: hypoperfused + congested (~20%, worst prognosis — cardiogenic shock)</li>
 </ul>
-<h2>2. Precipitants</h2>
+<h2>3. Initial Assessment</h2>
 <ul>
-<li><strong>Dietary/medication non-compliance</strong></li>
-<li><strong>Acute MI / ischemia</strong></li>
-<li><strong>Arrhythmia</strong> (AF with rapid VR, VT)</li>
-<li><strong>Infection</strong> (pneumonia, sepsis)</li>
-<li><strong>Thyroid dysfunction</strong> (hyper/hypo)</li>
-<li><strong>Anemia, renal failure, PE</strong></li>
-<li><strong>Drugs</strong>: NSAIDs, negative inotropes, corticosteroids</li>
+<li><strong>Vitals</strong>: BP, HR, RR, SpO2, Temp</li>
+<li><strong>JVP, peripheral oedema, lung crackles, S3, cool peripheries</strong></li>
+<li><strong>ECG</strong>: ischemia, arrhythmia, low voltage (effusion)</li>
+<li><strong>CXR</strong>: cardiomegaly, pulmonary oedema, pleural effusion</li>
+<li><strong>Labs</strong>: BNP/NT-proBNP, troponin, U&E, LFT, FBC, TSH, lactate (if shock)</li>
+<li><strong>Echo</strong> if not recent: LVEF, valves, RV, effusion, PASP</li>
 </ul>
-<h2>3. Clinical Features</h2>
+<h2>4. Management by Profile</h2>
+<h3>Warm-Wet (Most Common) — Congestion with Adequate Perfusion</h3>
 <ul>
-<li><strong>Dyspnea</strong> (orthopnea, PND, dyspnea on exertion)</li>
-<li><strong>Peripheral edema, ascites, JVP elevation</strong></li>
-<li><strong>S3 gallop</strong>, pulmonary crackles</li>
-<li><strong>Hepatojugular reflux</strong>, cool extremities</li>
-<li><strong>Chest X-ray</strong>: pulmonary edema, cardiomegaly, pleural effusion, Kerley B lines</li>
+<li><strong>IV loop diuretic</strong>: furosemide 40-80 mg IV bolus (or 2.5× home PO dose), repeat q15-30 min or continuous infusion 10-40 mg/h</li>
+<li><strong>Add thiazide</strong> (metolazone 2.5-5 mg, chlorothiazide IV) for diuretic resistance</li>
+<li><strong>Vasodilator</strong> if SBP >110: nitroglycerin or nitroprusside</li>
+<li><strong>Oxygen + NIV</strong> (CPAP/BPAP) for pulmonary oedema</li>
+<li><strong>Acetazolamide</strong> 500 mg IV (ADVOR trial, 2022) — improves decongestion</li>
 </ul>
-<h2>4. Initial Management</h2>
+<h3>Cold-Wet (Cardiogenic Shock Profile) — Worst Prognosis</h3>
 <ul>
-<li><strong>Oxygen</strong> if SpO₂ <90% (avoid hyperoxia)</li>
-<li><strong>IV access, cardiac monitoring, urine output</strong></li>
-<li><strong>IV loop diuretic</strong> (furosemide 40–80 mg bolus, repeat or continuous infusion)</li>
-<li><strong>Morphine</strong> for severe distress (use cautiously)</li>
-<li><strong>Nitroglycerin</strong> (sublingual/IV) for hypertension/pulmonary edema</li>
+<li><strong>Inotrope</strong>: dobutamine 2-20 µg/kg/min (warm hypotension); milrinone 0.375-0.75 µg/kg/min (cold + CKD)</li>
+<li><strong>Vasopressor</strong> if MAP <65: norepinephrine 0.05-0.5 µg/kg/min; consider vasopressin</li>
+<li><strong>Diuretic</strong> cautiously (avoid if hypoperfused — diuretics need renal perfusion)</li>
+<li><strong>Mechanical circulatory support</strong> if not responding:</li>
+<li><strong>IABP</strong>: modest support, afterload reduction</li>
+<li><strong>Impella</strong>: higher support, LV unloading</li>
+<li><strong>VA-ECMO</strong>: highest support, but ↑ afterload; consider Impella + ECMO (ECPELLA)</li>
+<li><strong>Revascularization</strong> if ischaemia-driven (culprit PCI)</li>
 </ul>
-<h2>5. Pharmacologic Therapy</h2>
+<h3>Cold-Dry — Hypoperfusion without Congestion</h3>
+<ul>
+<li><strong>Inotrope</strong> (dobutamine, milrinone)</li>
+<li><strong>Cautious fluids</strong> if hypovolaemic (small bolus trial)</li>
+<li><strong>Reassess</strong> if truly dry vs under-filled (consider passive leg raise)</li>
+</ul>
+<h3>Warm-Dry — Compensated</h3>
+<ul>
+<li><strong>Optimise oral GDMT</strong>, no IV therapy needed</li>
+<li><strong>Pre-discharge</strong>: ensure on 4 pillars (ARNI/ACEi, BB, MRA, SGLT2i)</li>
+</ul>
+<h2>5. SCAI Cardiogenic Shock Staging</h2>
 <table>
-<tr><th>Profile</th><th>Therapy</th></tr>
-<tr><td>Warm-wet, BP normal</td><td>IV loop diuretic ± thiazide (metolazone)</td></tr>
-<tr><td>Warm-wet, BP high</td><td>IV loop diuretic + IV nitroglycerin/nesiritide</td></tr>
-<tr><td>Cold-wet</td><td>Inotrope (dobutamine) + diuretic; consider vasodilator</td></tr>
-<tr><td>Cold-dry</td><td>Inotrope ± cautious fluids</td></tr>
-<tr><td>Severe HTN, pulmonary edema</td><td>High-dose IV nitroglycerin or nitroprusside</td></tr>
-<tr><td>Refractory</td><td>Thiazide diuretic, low-dose dopamine for renal perfusion</td></tr>
+<tr><th>Stage</th><th>Description</th><th>Management</th></tr>
+<tr><td><strong>A (At Risk)</strong></td><td>Risk factors, no symptoms</td><td>Monitor</td></tr>
+<tr><td><strong>B (Beginning)</strong></td><td>Hypotension, no hypoperfusion</td><td>Close monitoring, treat cause</td></tr>
+<tr><td><strong>C (Classic)</strong></td><td>Hypoperfusion, requiring intervention</td><td>Inotropes, vasopressors</td></tr>
+<tr><td><strong>D (Deteriorating)</strong></td><td>Worsening despite escalating support</td><td>Escalate MCS (Impella, ECMO)</td></tr>
+<tr><td><strong>E (Extremis)</strong></td><td>Cardiac arrest, refractory shock</td><td>ECMO-CPR, salvage</td></tr>
 </table>
-<h2>6. Monitoring & Escalation</h2>
+<h2>6. GDMT 4 Pillars (Pre-Discharge Initiation)</h2>
+<table>
+<tr><th>Drug Class</th><th>Examples</th><th>Key Trial</th></tr>
+<tr><td><strong>ARNI / ACEi / ARB</strong></td><td>Sacubitril-valsartan, enalapril, losartan</td><td>PARADIGM-HF, CONSENSUS</td></tr>
+<tr><td><strong>Beta-blocker</strong></td><td>Bisoprolol, carvedilol, metoprolol succinate</td><td>CIBIS-II, COPERNICUS, MERIT-HF</td></tr>
+<tr><td><strong>MRA</strong></td><td>Spironolactone, eplerenone</td><td>RALES, EMPHASIS-HF</td></tr>
+<tr><td><strong>SGLT2i</strong></td><td>Dapagliflozin, empagliflozin</td><td>DAPA-HF, EMPEROR-Reduced</td></tr>
+</table>
+<blockquote><strong>STRONG-HF (2022):</strong> Rapid up-titration within 2 weeks of discharge reduces 180-day HF readmission + mortality.</blockquote>
+<h2>7. Discharge Criteria</h2>
 <ul>
-<li>Daily weights, strict I/O, electrolytes (K⁺, Mg²⁺, Na⁺)</li>
-<li>Renal function (BUN/Cr), BNP/NT-proBNP trend</li>
-<li><strong>Refractory to diuretics</strong> → ultrafiltration, paracentesis, or MCS (IABP, Impella, ECMO)</li>
-<li><strong>Long-term</strong>: Transition to GDMT (ACEi/ARNI, beta-blocker, MRA, SGLT2i) once euvolemic</li>
+<li><strong>euvolaemia</strong> (JVP not elevated, no oedema, weight back to dry weight)</li>
+<li><strong>On GDMT</strong> or with clear titration plan</li>
+<li><strong>BNP improved</strong></li>
+<li><strong>Renal function stable</strong> (not worsening)</li>
+<li><strong>Follow-up within 7-14 days</strong></li>
 </ul>
 <blockquote><strong>Pearls</strong></blockquote>
-<blockquote>- <strong>High-dose NTG</strong>: 200+ µg/min for hypertensive pulmonary edema</blockquote>
-<blockquote>- Avoid CCBs (negative inotropic) in HFrEF</blockquote>
-<blockquote>- ACEi/ARNI held during acute hypotension, restart before discharge</blockquote>
-<blockquote>- <strong>SGLT2i (dapagliflozin, empagliflozin)</strong> initiated before discharge ↓ mortality</blockquote>
-<blockquote>- Discharge on <strong>all 4 pillars of GDMT</strong> (ARNI/ACEi + beta-blocker + MRA + SGLT2i) when stable</blockquote>
+<blockquote>- <strong>Profile first, then treat.</strong> Warm-wet → diuresis; Cold-wet → inotrope + MCS.</blockquote>
+<blockquote>- <strong>IV loop diuretic 2.5× home dose</strong> for ADHF.</blockquote>
+<blockquote>- <strong>Acetazolamide</strong> (ADVOR) boosts diuresis.</blockquote>
+<blockquote>- <strong>SCAI staging</strong> guides escalation.</blockquote>
+<blockquote>- <strong>GDMT up-titrated before discharge</strong> (STRONG-HF).</blockquote>
+<blockquote>- <strong>Cardiorenal syndrome:</strong> WRF during decongestion — usually transient, continue diuresis.</blockquote>
 <h2>Topic Overview</h2>
 <div class="mindmap">
 <div class="mm-root">1. Definition</div>
 <div class="mm-branches">
 <div class="mm-branch">
-<div class="mm-node mm-l1">4 Subtypes (Stevenson):</div>
+<div class="mm-node mm-l1">2. Four Clinical Profiles (Stevenson)</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">2. Precipitants</div>
+<div class="mm-node mm-l1">3. Initial Assessment</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">3. Clinical Features</div>
+<div class="mm-node mm-l1">4. Management by Profile</div>
+<div class="mm-node mm-l2">Warm-Wet (Most Common) — Congestion with Adequate Perfusion</div>
+<div class="mm-node mm-l2">Cold-Wet (Cardiogenic Shock Profile) — Worst Prognosis</div>
+<div class="mm-node mm-l2">Cold-Dry — Hypoperfusion without Congestion</div>
+<div class="mm-node mm-l2">Warm-Dry — Compensated</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">4. Initial Management</div>
+<div class="mm-node mm-l1">5. SCAI Cardiogenic Shock Staging</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">5. Pharmacologic Therapy</div>
+<div class="mm-node mm-l1">6. GDMT 4 Pillars (Pre-Discharge Initiation)</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">6. Monitoring &amp; Escalation</div>
+<div class="mm-node mm-l1">7. Discharge Criteria</div>
 </div>
 </div>
 </div></div>
         
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/16-cardiology/diseases/16.6.313-adhf-management/topic.png" alt="Adhf Management" loading="lazy"></div>
+    </div>
       </div>
     </details>
     <details class="topic-acc" data-topic="16.6.314" data-hub="16.6">
@@ -23986,112 +25083,6 @@ footer a:hover { color: var(--accent); }
     <div class="topic-image-wrap collapsed">
       <div class="topic-image"><img src="/16-cardiology/diseases/16.6.327-update-moc-with:-section-checkboxes-progress-tracker-high-yield-tables-viva-topi/topic.png" alt="Update Moc With: Section Checkboxes Progress Tracker High Yield Tables Viva Topi" loading="lazy"></div>
     </div>
-      </div>
-    </details>
-    <details class="topic-acc" data-topic="16.6.328" data-hub="16.6">
-      <summary class="topic-summary">
-        <span class="topic-arrow">▸</span>
-        <span class="topic-num">16.6.328</span>
-        <span class="topic-title">Cross Link: [[.. 00_Index Medicine Moc]] [[.. 00_Index Davidson Chapter Roadmap]</span>
-      </summary>
-      <div class="topic-body">
-        <div class="topic-content"><h2>1. Purpose</h2>
-<p>Cross-linking the Cardiology MOC with the <strong>Medicine MOC</strong> and <strong>Davidson Chapter Roadmap</strong> creates a navigable knowledge graph that supports both system-based and chapter-based learning.</p>
-<h2>2. Link Structure</h2>
-<ul>
-<li><strong>Cardiology MOC</strong> lives at <code>/mnt/tb/Medicine/Cardiology/Cardiology MOC.md</code></li>
-<li><strong>Medicine MOC</strong> at <code>/mnt/tb/Medicine/00_Index/Medicine MOC.md</code></li>
-<li><strong>Davidson Chapter Roadmap</strong> at <code>/mnt/tb/Medicine/00_Index/Davidson Chapter Roadmap.md</code></li>
-</ul>
-<h2>3. Linking Syntax</h2>
-<h3>Wikilink (Obsidian)</h3>
-<pre class="codeblock"><code>[[../00_Index/Medicine MOC]]
-[[../00_Index/Davidson Chapter Roadmap]]
-[[../00_Index/Medicine MOC#Cardiology]]</code></pre>
-<h3>Standard Markdown</h3>
-<pre class="codeblock"><code>[Medicine MOC](../00_Index/Medicine%20MOC.md)
-[Davidson Chapter Roadmap](../00_Index/Davidson%20Chapter%20Roadmap.md)</code></pre>
-<h2>4. Cross-Link Placement</h2>
-<p>Place cross-links in these locations:</p>
-<ul>
-<li><strong>Top of Cardiology MOC</strong> (navigation breadcrumb)</li>
-<li><strong>Top of each section</strong> (e.g., "See: Medicine MOC § Chest Pain")</li>
-<li><strong>Bottom of each disease file</strong> (related topics)</li>
-<li><strong>Topic-by-topic</strong> (e.g., pericarditis → Medicine MOC § Pericardial disease)</li>
-</ul>
-<h2>5. Davidson Chapter 16 Mapping</h2>
-<p>Davidson 24th Ed Chapter 16 = "Cardiac Emergencies"</p>
-<ul>
-<li>Maps to <code>/16_Cardiac_Emergencies/</code> folder</li>
-<li>Each Davidson subheading = one MOC topic</li>
-<li>Cross-link each cardiology file to its Davidson subheading</li>
-</ul>
-<h3>Example File Cross-links</h3>
-<pre class="codeblock"><code>## Related Davidson Content
-- [[../00_Index/Davidson Chapter Roadmap#Chapter 16 - Cardiac Emergencies]]
-- [[../00_Index/Medicine MOC#Cardiology]]
-
-## See Also
-- [[STEMI management]]
-- [[Cardiogenic shock]]
-- [[Aortic dissection]]</code></pre>
-<h2>6. Bidirectional Links</h2>
-<p>Ensure links work <strong>both ways</strong>:</p>
-<ul>
-<li>Cardiology MOC → Medicine MOC (cardiology section)</li>
-<li>Medicine MOC → Cardiology MOC (specialty section)</li>
-<li>Disease files → both MOCs</li>
-</ul>
-<h2>7. Tag System</h2>
-<p>Use tags to enable filtering:</p>
-<ul>
-<li><code>#cardiology</code></li>
-<li><code>#cardiac-emergency</code></li>
-<li><code>#high-yield</code></li>
-<li><code>#viva</code></li>
-<li><code>#davidson-chapter-16</code></li>
-<li><code>#FCPS</code> / <code>#MRCP</code></li>
-</ul>
-<blockquote><strong>Pearls</strong></blockquote>
-<blockquote>- <strong>Wikilinks</strong> make the knowledge graph navigable in Obsidian</blockquote>
-<blockquote>- <strong>Cross-linking</strong> = better recall, supports differential diagnosis</blockquote>
-<blockquote>- <strong>Davidson</strong> for textbook order; <strong>Medicine MOC</strong> for system-based</blockquote>
-<blockquote>- <strong>Tag system</strong> enables quick filtering by topic type</blockquote>
-<blockquote>- Update links whenever new files added</blockquote>
-<h2>Topic Overview</h2>
-<div class="mindmap">
-<div class="mm-root">1. Purpose</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">2. Link Structure</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">3. Linking Syntax</div>
-<div class="mm-node mm-l2">Wikilink (Obsidian)</div>
-<div class="mm-node mm-l2">Standard Markdown</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">4. Cross-Link Placement</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">5. Davidson Chapter 16 Mapping</div>
-<div class="mm-node mm-l2">Example File Cross-links</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Related Davidson Content</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">See Also</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">6. Bidirectional Links</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">7. Tag System</div>
-</div>
-</div>
-</div></div>
-        
       </div>
     </details>
     <details class="topic-acc" data-topic="16.6.329" data-hub="16.6">
@@ -30726,88 +31717,163 @@ footer a:hover { color: var(--accent); }
   </div>
 </details>
 
+    </div>
   </div>
 </div>
 <script>
 const CHAPTER_SLUG = "16-cardiology";
+const MANIFEST_URL = "/16-cardiology/topics.json";
+let MANIFEST = null;
+let CURRENT_TOPIC = null;
 
-// Inline expand/collapse helpers
+// ---- Desktop: load topics.json + sidebar nav + topic render ----
+async function loadManifest() {
+  try {
+    const res = await fetch(MANIFEST_URL);
+    MANIFEST = await res.json();
+    const params = new URLSearchParams(location.search);
+    const t = params.get("topic");
+    if (t) showTopic(t);
+  } catch(e) {
+    console.error("Failed to load topics.json", e);
+  }
+}
+
+function navigateTopic(dir) {
+  if (!MANIFEST || !CURRENT_TOPIC) return;
+  const i = MANIFEST.topics.findIndex(x => x.local_prefix === CURRENT_TOPIC.local_prefix);
+  const ni = i + dir;
+  if (ni < 0 || ni >= MANIFEST.topics.length) return;
+  showTopic(MANIFEST.topics[ni].local_prefix);
+}
+
 function toggleTopicImage(btn) {
   btn.classList.toggle("collapsed");
   const wrap = btn.nextElementSibling;
   if (wrap) {
     wrap.classList.toggle("collapsed");
-    btn.querySelector("span:last-child").textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
+    const span = btn.querySelector("span:last-child");
+    if (span) span.textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
   }
 }
 
-function expandAll() {
-  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
-  const p = new URL(location.href);
-  if (p.searchParams.get("expand") !== "all") {
-    p.searchParams.set("expand", "all");
-    history.replaceState(null, "", p);
+function showTopic(localPrefix) {
+  const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
+  if (!t) return;
+  CURRENT_TOPIC = t;
+  document.querySelectorAll(".topic-item").forEach(el => el.classList.remove("active"));
+  const activeEl = document.querySelector(`.topic-item[data-topic="${localPrefix}"]`);
+  if (activeEl) {
+    activeEl.classList.add("active");
+    activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
+  const url = new URL(location.href);
+  url.searchParams.set("topic", localPrefix);
+  history.replaceState(null, "", url);
+  const container = document.getElementById("topicContainer");
+  container.className = "topic-detail";
+  const imgHtml = t.png ? `
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:12px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/16-cardiology/${t.png}" alt="${t.title}"></div>
+    </div>` : "";
+  container.innerHTML = `
+    <div class="crumbs"><a href="/">Home</a> · <a href="/16-cardiology/">Cardiology</a> · <span>${t.hub_num} · ${t.hub_name}</span></div>
+    <div class="topic-header">
+      <div>
+        <h1>${t.title}</h1>
+        <p class="meta">${t.hub_num} · ${t.local_prefix} · ${t.slug}</p>
+      </div>
+      <div class="topic-actions">
+        ${t.png ? `<a href="/16-cardiology/${t.png}" download>Download PNG</a>` : ""}
+        ${t.md ? `<a href="/16-cardiology/${t.md}" download>Download MD</a>` : ""}
+        <button onclick="navigateTopic(-1)">← Prev</button>
+        <button onclick="navigateTopic(1)">Next →</button>
+      </div>
+    </div>
+    <div class="topic-content">${t.html}</div>
+    ${imgHtml}
+  `;
 }
 
-function collapseAll() {
-  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = false);
+document.getElementById("topicSearch").addEventListener("input", function(e) {
+  const q = e.target.value.toLowerCase();
+  let visible = 0;
+  document.querySelectorAll(".topic-item").forEach(el => {
+    const text = el.textContent.toLowerCase();
+    const show = !q || text.includes(q);
+    el.style.display = show ? "" : "none";
+    if (show) visible++;
+  });
+  document.querySelectorAll(".hub-group").forEach(g => {
+    const anyVisible = Array.from(g.querySelectorAll(".topic-item")).some(el => el.style.display !== "none");
+    g.style.display = anyVisible ? "" : "none";
+  });
+  document.getElementById("noResults").classList.toggle("show", visible === 0);
+});
+
+loadManifest();
+
+// ---- Mobile: accordion expand/collapse + search ----
+function expandAllMobile() {
+  document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = true);
+}
+function collapseAllMobile() {
+  document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = false);
   const p = new URL(location.href);
   p.searchParams.delete("topic");
   p.searchParams.delete("expand");
   history.replaceState(null, "", p);
 }
-
-// Sidebar search filter — auto-expand matching items
-document.getElementById("topicSearch").addEventListener("input", function(e) {
+document.getElementById("topicSearchMobile").addEventListener("input", function(e) {
   const q = e.target.value.trim().toLowerCase();
   let visible = 0;
-  document.querySelectorAll(".topic-acc").forEach(el => {
+  document.querySelectorAll("#hubAccordionMobile .topic-acc").forEach(el => {
     const text = el.textContent.toLowerCase();
     const show = !q || text.includes(q);
     el.style.display = show ? "" : "none";
     if (show) {
       visible++;
       if (q) {
-        // Auto-expand matching topics AND their parent hub when searching
         el.open = true;
         const hub = el.closest(".hub-acc");
         if (hub) hub.open = true;
       }
     }
   });
-  // Hide empty hubs
-  document.querySelectorAll(".hub-acc").forEach(g => {
+  document.querySelectorAll("#hubAccordionMobile .hub-acc").forEach(g => {
     const anyVisible = Array.from(g.querySelectorAll(".topic-acc")).some(el => el.style.display !== "none");
     g.style.display = anyVisible ? "" : "none";
     if (!q) g.open = false;
   });
-  document.getElementById("noResults").classList.toggle("show", visible === 0);
+  document.getElementById("noResultsMobile").classList.toggle("show", visible === 0);
 });
 
-// On load: open topic from URL ?topic=...
+// On mobile: open topic from URL ?topic=...
 (function() {
+  if (window.innerWidth > 900) return;
   const params = new URLSearchParams(location.search);
   const t = params.get("topic");
   if (t) {
-    const el = document.querySelector(`.topic-acc[data-topic="${t}"]`);
+    const el = document.querySelector(`#hubAccordionMobile .topic-acc[data-topic="${t}"]`);
     if (el) {
-      // Open topic + parent hub
       el.open = true;
       const hub = el.closest(".hub-acc");
       if (hub) hub.open = true;
-      // Scroll into view after layout
       setTimeout(() => el.scrollIntoView({ block: "start", behavior: "smooth" }), 100);
     }
   } else if (params.get("expand") === "all") {
-    document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
+    document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = true);
   }
 })();
 </script>
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 19:04 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 19:54 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside

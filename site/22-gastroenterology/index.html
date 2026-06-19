@@ -452,19 +452,335 @@ header.site .search-box .search-empty strong { color: var(--accent); }
 }
 
 /* Mobile chapter page: stacked layout */
-/* ===== Chapter accordion layout ===== */
+/* ===== Chapter page layout (DESKTOP: sidebar + main) ===== */
 .chapter-page {
-  display: block;
-  padding: 20px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  min-height: calc(100vh - 65px);
 }
-/* ===== Chapter accordion layout ===== */
-.chapter-page {
+
+/* Desktop sidebar: hub/topic navigation */
+.chapter-sidebar {
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 65px);
+  position: sticky;
+  top: 65px;
+}
+.chapter-sidebar .search {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.chapter-sidebar .search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.chapter-sidebar .hub-group {
+  margin-bottom: 14px;
+}
+.chapter-sidebar .hub-group h3 {
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 8px;
+  margin: 0 0 4px;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.06);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.chapter-sidebar .topic-item {
   display: block;
-  padding: 20px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 5px 10px 5px 22px;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.1s;
+  border: 1px solid transparent;
+  text-decoration: none !important;
+  position: relative;
+  line-height: 1.35;
+}
+.chapter-sidebar .topic-item:hover {
+  background: var(--bg-3);
+  color: #fff;
+}
+.chapter-sidebar .topic-item.active {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent);
+  font-weight: 600;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+.chapter-sidebar .topic-item .num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px;
+  margin-right: 6px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+.chapter-sidebar .topic-item.active .num {
+  color: var(--accent);
+  font-weight: 600;
+}
+.chapter-sidebar .no-results {
+  color: var(--text-dim);
+  font-size: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  display: none;
+}
+.chapter-sidebar .no-results.show {
+  display: block;
+}
+
+/* Desktop main: clicked topic content */
+.chapter-main {
+  padding: 16px 24px;
+  overflow-x: hidden;
+}
+.chapter-main .chapter-header {
+  padding: 8px 0 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  border-left: 3px solid var(--accent-color, var(--accent));
+  padding-left: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.chapter-main .chapter-header h1 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+.chapter-main .chapter-header .meta {
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chapter-main .chapter-header .meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.chapter-main .chapter-header .meta a:hover {
+  text-decoration: underline;
+}
+.chapter-main .placeholder {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+.chapter-main .placeholder .icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+/* Topic detail (rendered in main pane) */
+.topic-detail .crumbs {
+  color: var(--text-dim);
+  font-size: 12px;
+  margin-bottom: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+.topic-detail .crumbs a {
+  color: var(--text-dim);
+}
+.topic-detail .crumbs a:hover {
+  color: var(--accent);
+}
+.topic-detail .topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.topic-detail .topic-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.topic-detail .topic-header .meta {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-top: 4px;
+}
+.topic-detail .topic-actions {
+  display: flex;
+  gap: 6px;
+}
+.topic-detail .topic-actions a,
+.topic-detail .topic-actions button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+.topic-detail .topic-actions a:hover,
+.topic-detail .topic-actions button:hover {
+  background: var(--bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.topic-detail .topic-image {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.topic-detail .topic-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+.topic-detail .topic-image-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+.topic-detail .topic-image-toggle:hover {
+  background: var(--bg-2);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.topic-detail .topic-image-toggle .toggle-icon {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+.topic-detail .topic-image-toggle.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+.topic-detail .topic-image-wrap {
+  overflow: hidden;
+}
+.topic-detail .topic-image-wrap.collapsed {
+  display: none;
+}
+.topic-detail .topic-content {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.topic-detail .topic-content h2,
+.topic-detail .topic-content h3,
+.topic-detail .topic-content h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.topic-detail .topic-content h2 {
+  font-size: 22px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+.topic-detail .topic-content h3 {
+  font-size: 18px;
+  color: var(--accent);
+}
+.topic-detail .topic-content h4 {
+  font-size: 15px;
+}
+.topic-detail .topic-content p {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.topic-detail .topic-content ul,
+.topic-detail .topic-content ol {
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+.topic-detail .topic-content li {
+  margin-bottom: 4px;
+}
+.topic-detail .topic-content li:empty {
+  display: none;
+}
+.topic-detail .topic-content table {
+  border-collapse: collapse;
+  margin: 16px 0;
+  width: 100%;
+  font-size: 13px;
+}
+.topic-detail .topic-content th,
+.topic-detail .topic-content td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+.topic-detail .topic-content th {
+  background: var(--bg-3);
+  font-weight: 600;
+}
+.topic-detail .topic-content code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+}
+.topic-detail .topic-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 8px 14px;
+  color: var(--text-dim);
+  margin: 12px 0;
+  background: var(--bg-3);
+  border-radius: 0 6px 6px 0;
+}
+.topic-detail .topic-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* ===== Layout visibility ===== */
+.d-only { display: block; }
+.chapter-mobile { display: none; }
+
+/* On mobile: hide desktop sidebar+main, show mobile accordion */
+@media (max-width: 900px) {
+  .d-only { display: none !important; }
+  .chapter-mobile { display: block !important; }
+  .chapter-page { display: block !important; grid-template-columns: 1fr !important; min-height: auto !important; }
 }
 
 .chapter-header {
@@ -1567,20 +1883,212 @@ footer a:hover { color: var(--accent); }
 <main>
 
 <div class="chapter-page" style="--accent-color: #f59e0b">
-  <header class="chapter-header">
-    <h1>Gastroenterology</h1>
-    <div class="meta">Davidson Ch 22 · 9 hubs · 147 topics · <a href="https://medsea.notion.site/Chapter-22-Gastroenterology-bbfd97790eca482eaed8d47428a642b2" target="_blank">Notion ↗</a></div>
-  </header>
-  <div class="chapter-toolbar">
-    <input type="text" class="search" id="topicSearch" placeholder="🔍 Search topics…">
-    <div class="toolbar-actions">
-      <button class="btn-acc" onclick="expandAll()">Expand all</button>
-      <button class="btn-acc" onclick="collapseAll()">Collapse all</button>
-    </div>
+  <!-- DESKTOP: sidebar + main (hidden on mobile via CSS) -->
+  <aside class="chapter-sidebar d-only">
+    <input type="text" class="search" id="topicSearch" placeholder="Search topics…">
     <div class="no-results" id="noResults">No matching topics</div>
-  </div>
-  <div class="hub-accordion" id="hubAccordion">
-    <details class="hub-acc" data-hub="22.1">
+    <div class="hub-group" data-hub="22.1">
+  <h3>22.1 · 22.1</h3>
+  <a class="topic-item" data-topic="22.1.01" data-hub="22.1" href="?topic=22.1.01"><span class="num">22.1.01</span>Acute Abdominal Pain And Peritonism Red Flags</a>
+  <a class="topic-item" data-topic="22.1.02" data-hub="22.1" href="?topic=22.1.02"><span class="num">22.1.02</span>Acute Diarrhoea Initial Approach</a>
+  <a class="topic-item" data-topic="22.1.03" data-hub="22.1" href="?topic=22.1.03"><span class="num">22.1.03</span>Alarm Features In Dyspepsia And Weight Loss</a>
+  <a class="topic-item" data-topic="22.1.04" data-hub="22.1" href="?topic=22.1.04"><span class="num">22.1.04</span>Change In Bowel Habit With Colorectal Cancer Red Flags</a>
+  <a class="topic-item" data-topic="22.1.05" data-hub="22.1" href="?topic=22.1.05"><span class="num">22.1.05</span>Chronic Diarrhoea Framework</a>
+  <a class="topic-item" data-topic="22.1.06" data-hub="22.1" href="?topic=22.1.06"><span class="num">22.1.06</span>Constipation And Altered Bowel Habit</a>
+  <a class="topic-item" data-topic="22.1.07" data-hub="22.1" href="?topic=22.1.07"><span class="num">22.1.07</span>Diarrhoea Constipation And Abdominal Pain</a>
+  <a class="topic-item" data-topic="22.1.08" data-hub="22.1" href="?topic=22.1.08"><span class="num">22.1.08</span>Dyspepsia Approach</a>
+  <a class="topic-item" data-topic="22.1.09" data-hub="22.1" href="?topic=22.1.09"><span class="num">22.1.09</span>Dyspepsia Nausea And Vomiting</a>
+  <a class="topic-item" data-topic="22.1.10" data-hub="22.1" href="?topic=22.1.10"><span class="num">22.1.10</span>Dysphagia Alarm Features And Urgent Endoscopy</a>
+  <a class="topic-item" data-topic="22.1.11" data-hub="22.1" href="?topic=22.1.11"><span class="num">22.1.11</span>Dysphagia And Swallowing Complaints</a>
+  <a class="topic-item" data-topic="22.1.12" data-hub="22.1" href="?topic=22.1.12"><span class="num">22.1.12</span>Food Bolus Obstruction And Acute Impaction</a>
+  <a class="topic-item" data-topic="22.1.13" data-hub="22.1" href="?topic=22.1.13"><span class="num">22.1.13</span>Gastroparesis Clue Pattern</a>
+  <a class="topic-item" data-topic="22.1.14" data-hub="22.1" href="?topic=22.1.14"><span class="num">22.1.14</span>Iron Deficiency Anaemia As A Gi Clue</a>
+  <a class="topic-item" data-topic="22.1.15" data-hub="22.1" href="?topic=22.1.15"><span class="num">22.1.15</span>Nausea And Vomiting Differential Diagnosis</a>
+  <a class="topic-item" data-topic="22.1.16" data-hub="22.1" href="?topic=22.1.16"><span class="num">22.1.16</span>Occult Gi Bleeding And Fit Based Triage</a>
+  <a class="topic-item" data-topic="22.1.17" data-hub="22.1" href="?topic=22.1.17"><span class="num">22.1.17</span>Occult Blood Loss And Cancer Clues</a>
+  <a class="topic-item" data-topic="22.1.18" data-hub="22.1" href="?topic=22.1.18"><span class="num">22.1.18</span>Oropharyngeal Vs Oesophageal Dysphagia</a>
+  <a class="topic-item" data-topic="22.1.19" data-hub="22.1" href="?topic=22.1.19"><span class="num">22.1.19</span>Solids Vs Liquids Dysphagia Pattern</a>
+</div>
+<div class="hub-group" data-hub="22.2">
+  <h3>22.2 · 22.2</h3>
+  <a class="topic-item" data-topic="22.2.01" data-hub="22.2" href="?topic=22.2.01"><span class="num">22.2.01</span>Biopsy Strategy At Upper Gi Endoscopy</a>
+  <a class="topic-item" data-topic="22.2.02" data-hub="22.2" href="?topic=22.2.02"><span class="num">22.2.02</span>Ct Abdomen And Mr Enterography Selection</a>
+  <a class="topic-item" data-topic="22.2.03" data-hub="22.2" href="?topic=22.2.03"><span class="num">22.2.03</span>Capsule Endoscopy And Enteroscopy Basics</a>
+  <a class="topic-item" data-topic="22.2.04" data-hub="22.2" href="?topic=22.2.04"><span class="num">22.2.04</span>Coeliac Serology And Duodenal Biopsy</a>
+  <a class="topic-item" data-topic="22.2.05" data-hub="22.2" href="?topic=22.2.05"><span class="num">22.2.05</span>Colonoscopy Indications And Bowel Preparation</a>
+  <a class="topic-item" data-topic="22.2.06" data-hub="22.2" href="?topic=22.2.06"><span class="num">22.2.06</span>Endoscopic Therapy Basics In Gi Disease</a>
+  <a class="topic-item" data-topic="22.2.07" data-hub="22.2" href="?topic=22.2.07"><span class="num">22.2.07</span>Faecal Calprotectin And Inflammatory Marker Interpretation</a>
+  <a class="topic-item" data-topic="22.2.08" data-hub="22.2" href="?topic=22.2.08"><span class="num">22.2.08</span>Flexible Sigmoidoscopy Vs Colonoscopy Selection</a>
+  <a class="topic-item" data-topic="22.2.09" data-hub="22.2" href="?topic=22.2.09"><span class="num">22.2.09</span>Helicobacter Pylori Testing Strategy</a>
+  <a class="topic-item" data-topic="22.2.10" data-hub="22.2" href="?topic=22.2.10"><span class="num">22.2.10</span>Indications For Upper Gi Endoscopy</a>
+  <a class="topic-item" data-topic="22.2.11" data-hub="22.2" href="?topic=22.2.11"><span class="num">22.2.11</span>Laboratory And Stool Testing</a>
+  <a class="topic-item" data-topic="22.2.12" data-hub="22.2" href="?topic=22.2.12"><span class="num">22.2.12</span>Lower Gi Endoscopy</a>
+  <a class="topic-item" data-topic="22.2.13" data-hub="22.2" href="?topic=22.2.13"><span class="num">22.2.13</span>Post Polypectomy Surveillance Logic</a>
+  <a class="topic-item" data-topic="22.2.14" data-hub="22.2" href="?topic=22.2.14"><span class="num">22.2.14</span>Small Bowel And Imaging Tests</a>
+  <a class="topic-item" data-topic="22.2.15" data-hub="22.2" href="?topic=22.2.15"><span class="num">22.2.15</span>Stool Culture Ova Parasite And C Difficile Testing</a>
+  <a class="topic-item" data-topic="22.2.16" data-hub="22.2" href="?topic=22.2.16"><span class="num">22.2.16</span>Upper Gi Endoscopy</a>
+</div>
+<div class="hub-group" data-hub="22.3">
+  <h3>22.3 · 22.3</h3>
+  <a class="topic-item" data-topic="22.3.01" data-hub="22.3" href="?topic=22.3.01"><span class="num">22.3.01</span>Achalasia</a>
+  <a class="topic-item" data-topic="22.3.02" data-hub="22.3" href="?topic=22.3.02"><span class="num">22.3.02</span>Barrett Oesophagus And Dysplasia</a>
+  <a class="topic-item" data-topic="22.3.03" data-hub="22.3" href="?topic=22.3.03"><span class="num">22.3.03</span>Barrett Oesophagus And Oesophageal Malignancy</a>
+  <a class="topic-item" data-topic="22.3.04" data-hub="22.3" href="?topic=22.3.04"><span class="num">22.3.04</span>Diffuse Oesophageal Spasm And Motility Disorders</a>
+  <a class="topic-item" data-topic="22.3.05" data-hub="22.3" href="?topic=22.3.05"><span class="num">22.3.05</span>Eosinophilic Oesophagitis</a>
+  <a class="topic-item" data-topic="22.3.06" data-hub="22.3" href="?topic=22.3.06"><span class="num">22.3.06</span>Erosive Reflux Oesophagitis</a>
+  <a class="topic-item" data-topic="22.3.07" data-hub="22.3" href="?topic=22.3.07"><span class="num">22.3.07</span>Gastro Oesophageal Reflux Disease</a>
+  <a class="topic-item" data-topic="22.3.08" data-hub="22.3" href="?topic=22.3.08"><span class="num">22.3.08</span>Hiatus Hernia</a>
+  <a class="topic-item" data-topic="22.3.09" data-hub="22.3" href="?topic=22.3.09"><span class="num">22.3.09</span>Motility And Oesophageal Emergencies</a>
+  <a class="topic-item" data-topic="22.3.10" data-hub="22.3" href="?topic=22.3.10"><span class="num">22.3.10</span>Oesophageal Cancer</a>
+  <a class="topic-item" data-topic="22.3.11" data-hub="22.3" href="?topic=22.3.11"><span class="num">22.3.11</span>Oesophageal Perforation And Boerhaave Syndrome</a>
+  <a class="topic-item" data-topic="22.3.12" data-hub="22.3" href="?topic=22.3.12"><span class="num">22.3.12</span>Oesophageal Stricture</a>
+  <a class="topic-item" data-topic="22.3.13" data-hub="22.3" href="?topic=22.3.13"><span class="num">22.3.13</span>Pill Induced And Infectious Oesophagitis</a>
+  <a class="topic-item" data-topic="22.3.14" data-hub="22.3" href="?topic=22.3.14"><span class="num">22.3.14</span>Reflux And Oesophagitis Disorders</a>
+  <a class="topic-item" data-topic="22.3.15" data-hub="22.3" href="?topic=22.3.15"><span class="num">22.3.15</span>Schatzki Ring And Oesophageal Webs</a>
+  <a class="topic-item" data-topic="22.3.16" data-hub="22.3" href="?topic=22.3.16"><span class="num">22.3.16</span>Structural Oesophageal Disorders</a>
+</div>
+<div class="hub-group" data-hub="22.4">
+  <h3>22.4 · 22.4</h3>
+  <a class="topic-item" data-topic="22.4.01" data-hub="22.4" href="?topic=22.4.01"><span class="num">22.4.01</span>Acute Gastritis And Erosive Gastropathy</a>
+  <a class="topic-item" data-topic="22.4.02" data-hub="22.4" href="?topic=22.4.02"><span class="num">22.4.02</span>Duodenal Ulcer Disease</a>
+  <a class="topic-item" data-topic="22.4.03" data-hub="22.4" href="?topic=22.4.03"><span class="num">22.4.03</span>Dyspepsia Spectrum</a>
+  <a class="topic-item" data-topic="22.4.04" data-hub="22.4" href="?topic=22.4.04"><span class="num">22.4.04</span>Functional Dyspepsia</a>
+  <a class="topic-item" data-topic="22.4.05" data-hub="22.4" href="?topic=22.4.05"><span class="num">22.4.05</span>Gastric Adenocarcinoma</a>
+  <a class="topic-item" data-topic="22.4.06" data-hub="22.4" href="?topic=22.4.06"><span class="num">22.4.06</span>Gastric Lymphoma And Malt Related Disease</a>
+  <a class="topic-item" data-topic="22.4.07" data-hub="22.4" href="?topic=22.4.07"><span class="num">22.4.07</span>Gastric Malignancy</a>
+  <a class="topic-item" data-topic="22.4.08" data-hub="22.4" href="?topic=22.4.08"><span class="num">22.4.08</span>Gastric Outlet Obstruction</a>
+  <a class="topic-item" data-topic="22.4.09" data-hub="22.4" href="?topic=22.4.09"><span class="num">22.4.09</span>Gastric Ulcer Disease</a>
+  <a class="topic-item" data-topic="22.4.10" data-hub="22.4" href="?topic=22.4.10"><span class="num">22.4.10</span>Helicobacter And Ulcer Disease</a>
+  <a class="topic-item" data-topic="22.4.11" data-hub="22.4" href="?topic=22.4.11"><span class="num">22.4.11</span>Helicobacter Pylori Infection</a>
+  <a class="topic-item" data-topic="22.4.12" data-hub="22.4" href="?topic=22.4.12"><span class="num">22.4.12</span>Nsaid Associated Ulcer Disease</a>
+  <a class="topic-item" data-topic="22.4.13" data-hub="22.4" href="?topic=22.4.13"><span class="num">22.4.13</span>Penetration And Fistulation In Peptic Ulcer Disease</a>
+  <a class="topic-item" data-topic="22.4.14" data-hub="22.4" href="?topic=22.4.14"><span class="num">22.4.14</span>Peptic Ulcer Complications</a>
+  <a class="topic-item" data-topic="22.4.15" data-hub="22.4" href="?topic=22.4.15"><span class="num">22.4.15</span>Perforated Peptic Ulcer</a>
+  <a class="topic-item" data-topic="22.4.16" data-hub="22.4" href="?topic=22.4.16"><span class="num">22.4.16</span>Zollinger Ellison Syndrome</a>
+</div>
+<div class="hub-group" data-hub="22.5">
+  <h3>22.5 · 22.5</h3>
+  <a class="topic-item" data-topic="22.5.01" data-hub="22.5" href="?topic=22.5.01"><span class="num">22.5.01</span>Anticoagulant And Antiplatelet Associated Upper Gi Bleeding</a>
+  <a class="topic-item" data-topic="22.5.02" data-hub="22.5" href="?topic=22.5.02"><span class="num">22.5.02</span>Aortoenteric Fistula And Rare Catastrophic Bleeding Red Flags</a>
+  <a class="topic-item" data-topic="22.5.03" data-hub="22.5" href="?topic=22.5.03"><span class="num">22.5.03</span>Endoscopic And Post Endoscopic Care</a>
+  <a class="topic-item" data-topic="22.5.04" data-hub="22.5" href="?topic=22.5.04"><span class="num">22.5.04</span>Endoscopic Haemostasis Methods</a>
+  <a class="topic-item" data-topic="22.5.05" data-hub="22.5" href="?topic=22.5.05"><span class="num">22.5.05</span>Erosive Gastritis And Duodenitis Bleeding</a>
+  <a class="topic-item" data-topic="22.5.06" data-hub="22.5" href="?topic=22.5.06"><span class="num">22.5.06</span>Initial Assessment And Stabilization</a>
+  <a class="topic-item" data-topic="22.5.07" data-hub="22.5" href="?topic=22.5.07"><span class="num">22.5.07</span>Mallory Weiss Tear</a>
+  <a class="topic-item" data-topic="22.5.08" data-hub="22.5" href="?topic=22.5.08"><span class="num">22.5.08</span>Non Variceal Bleeding Syndromes</a>
+  <a class="topic-item" data-topic="22.5.09" data-hub="22.5" href="?topic=22.5.09"><span class="num">22.5.09</span>Pattern Recognition And Special Contexts</a>
+  <a class="topic-item" data-topic="22.5.10" data-hub="22.5" href="?topic=22.5.10"><span class="num">22.5.10</span>Peptic Ulcer Bleeding</a>
+  <a class="topic-item" data-topic="22.5.11" data-hub="22.5" href="?topic=22.5.11"><span class="num">22.5.11</span>Rebleeding Prevention And Ppi Strategy</a>
+  <a class="topic-item" data-topic="22.5.12" data-hub="22.5" href="?topic=22.5.12"><span class="num">22.5.12</span>Restrictive Transfusion And Coagulopathy Reversal</a>
+  <a class="topic-item" data-topic="22.5.13" data-hub="22.5" href="?topic=22.5.13"><span class="num">22.5.13</span>Risk Stratification Scores In Upper Gi Bleeding</a>
+  <a class="topic-item" data-topic="22.5.14" data-hub="22.5" href="?topic=22.5.14"><span class="num">22.5.14</span>Timing Of Endoscopy In Upper Gi Bleeding</a>
+  <a class="topic-item" data-topic="22.5.15" data-hub="22.5" href="?topic=22.5.15"><span class="num">22.5.15</span>Upper Gi Bleeding Resuscitation Priorities</a>
+  <a class="topic-item" data-topic="22.5.16" data-hub="22.5" href="?topic=22.5.16"><span class="num">22.5.16</span>Variceal Vs Non Variceal Bleeding Clue Pattern</a>
+</div>
+<div class="hub-group" data-hub="22.6">
+  <h3>22.6 · 22.6</h3>
+  <a class="topic-item" data-topic="22.6.01" data-hub="22.6" href="?topic=22.6.01"><span class="num">22.6.01</span>Bile Acid Diarrhoea</a>
+  <a class="topic-item" data-topic="22.6.02" data-hub="22.6" href="?topic=22.6.02"><span class="num">22.6.02</span>Coeliac Disease Spectrum</a>
+  <a class="topic-item" data-topic="22.6.03" data-hub="22.6" href="?topic=22.6.03"><span class="num">22.6.03</span>Coeliac Disease</a>
+  <a class="topic-item" data-topic="22.6.04" data-hub="22.6" href="?topic=22.6.04"><span class="num">22.6.04</span>Dermatitis Herpetiformis As A Coeliac Clue</a>
+  <a class="topic-item" data-topic="22.6.05" data-hub="22.6" href="?topic=22.6.05"><span class="num">22.6.05</span>Diarrhoea And Malabsorption Interpretation</a>
+  <a class="topic-item" data-topic="22.6.06" data-hub="22.6" href="?topic=22.6.06"><span class="num">22.6.06</span>Lactose Intolerance And Carbohydrate Malabsorption</a>
+  <a class="topic-item" data-topic="22.6.07" data-hub="22.6" href="?topic=22.6.07"><span class="num">22.6.07</span>Micronutrient Deficiency Pattern Recognition</a>
+  <a class="topic-item" data-topic="22.6.08" data-hub="22.6" href="?topic=22.6.08"><span class="num">22.6.08</span>Non Responsive And Refractory Coeliac Disease</a>
+  <a class="topic-item" data-topic="22.6.09" data-hub="22.6" href="?topic=22.6.09"><span class="num">22.6.09</span>Other Malabsorption Disorders</a>
+  <a class="topic-item" data-topic="22.6.10" data-hub="22.6" href="?topic=22.6.10"><span class="num">22.6.10</span>Protein Losing Enteropathy</a>
+  <a class="topic-item" data-topic="22.6.11" data-hub="22.6" href="?topic=22.6.11"><span class="num">22.6.11</span>Short Bowel Syndrome And Intestinal Failure</a>
+  <a class="topic-item" data-topic="22.6.12" data-hub="22.6" href="?topic=22.6.12"><span class="num">22.6.12</span>Small Intestinal Bacterial Overgrowth</a>
+  <a class="topic-item" data-topic="22.6.13" data-hub="22.6" href="?topic=22.6.13"><span class="num">22.6.13</span>Steatorrhoea And Fat Malabsorption Clues</a>
+  <a class="topic-item" data-topic="22.6.14" data-hub="22.6" href="?topic=22.6.14"><span class="num">22.6.14</span>Tropical Sprue</a>
+  <a class="topic-item" data-topic="22.6.15" data-hub="22.6" href="?topic=22.6.15"><span class="num">22.6.15</span>Uncommon And Advanced Small Bowel Disorders</a>
+  <a class="topic-item" data-topic="22.6.16" data-hub="22.6" href="?topic=22.6.16"><span class="num">22.6.16</span>Whipple Disease</a>
+</div>
+<div class="hub-group" data-hub="22.7">
+  <h3>22.7 · 22.7</h3>
+  <a class="topic-item" data-topic="22.7.01" data-hub="22.7" href="?topic=22.7.01"><span class="num">22.7.01</span>Acute Severe Ulcerative Colitis</a>
+  <a class="topic-item" data-topic="22.7.02" data-hub="22.7" href="?topic=22.7.02"><span class="num">22.7.02</span>Aminosalicylates Steroids And Induction Therapy In Ibd</a>
+  <a class="topic-item" data-topic="22.7.03" data-hub="22.7" href="?topic=22.7.03"><span class="num">22.7.03</span>Cancer Surveillance And Vaccination Issues In Ibd</a>
+  <a class="topic-item" data-topic="22.7.04" data-hub="22.7" href="?topic=22.7.04"><span class="num">22.7.04</span>Crohn Disease</a>
+  <a class="topic-item" data-topic="22.7.05" data-hub="22.7" href="?topic=22.7.05"><span class="num">22.7.05</span>Functional Bloating And Gut Brain Interaction Disorders</a>
+  <a class="topic-item" data-topic="22.7.06" data-hub="22.7" href="?topic=22.7.06"><span class="num">22.7.06</span>Functional Bowel Disorders</a>
+  <a class="topic-item" data-topic="22.7.07" data-hub="22.7" href="?topic=22.7.07"><span class="num">22.7.07</span>Functional Constipation</a>
+  <a class="topic-item" data-topic="22.7.08" data-hub="22.7" href="?topic=22.7.08"><span class="num">22.7.08</span>Ibd Complications And Emergencies</a>
+  <a class="topic-item" data-topic="22.7.09" data-hub="22.7" href="?topic=22.7.09"><span class="num">22.7.09</span>Ibd Severity Assessment And Extent Classification</a>
+  <a class="topic-item" data-topic="22.7.10" data-hub="22.7" href="?topic=22.7.10"><span class="num">22.7.10</span>Ibd Treatment Principles</a>
+  <a class="topic-item" data-topic="22.7.11" data-hub="22.7" href="?topic=22.7.11"><span class="num">22.7.11</span>Immunomodulators And Biologics In Ibd</a>
+  <a class="topic-item" data-topic="22.7.12" data-hub="22.7" href="?topic=22.7.12"><span class="num">22.7.12</span>Inflammatory Bowel Disease Core</a>
+  <a class="topic-item" data-topic="22.7.13" data-hub="22.7" href="?topic=22.7.13"><span class="num">22.7.13</span>Irritable Bowel Syndrome</a>
+  <a class="topic-item" data-topic="22.7.14" data-hub="22.7" href="?topic=22.7.14"><span class="num">22.7.14</span>Perianal Crohn Disease</a>
+  <a class="topic-item" data-topic="22.7.15" data-hub="22.7" href="?topic=22.7.15"><span class="num">22.7.15</span>Toxic Megacolon</a>
+  <a class="topic-item" data-topic="22.7.16" data-hub="22.7" href="?topic=22.7.16"><span class="num">22.7.16</span>Ulcerative Colitis</a>
+</div>
+<div class="hub-group" data-hub="22.8">
+  <h3>22.8 · 22.8</h3>
+  <a class="topic-item" data-topic="22.8.01" data-hub="22.8" href="?topic=22.8.01"><span class="num">22.8.01</span>Anal Fissure</a>
+  <a class="topic-item" data-topic="22.8.02" data-hub="22.8" href="?topic=22.8.02"><span class="num">22.8.02</span>Angiodysplasia And Vascular Ectasia</a>
+  <a class="topic-item" data-topic="22.8.03" data-hub="22.8" href="?topic=22.8.03"><span class="num">22.8.03</span>Colitis And Mimics</a>
+  <a class="topic-item" data-topic="22.8.04" data-hub="22.8" href="?topic=22.8.04"><span class="num">22.8.04</span>Colorectal Cancer</a>
+  <a class="topic-item" data-topic="22.8.05" data-hub="22.8" href="?topic=22.8.05"><span class="num">22.8.05</span>Colorectal Neoplasia</a>
+  <a class="topic-item" data-topic="22.8.06" data-hub="22.8" href="?topic=22.8.06"><span class="num">22.8.06</span>Colorectal Polyps And The Adenoma Carcinoma Sequence</a>
+  <a class="topic-item" data-topic="22.8.07" data-hub="22.8" href="?topic=22.8.07"><span class="num">22.8.07</span>Common Anorectal Disorders</a>
+  <a class="topic-item" data-topic="22.8.08" data-hub="22.8" href="?topic=22.8.08"><span class="num">22.8.08</span>Diverticular Bleeding</a>
+  <a class="topic-item" data-topic="22.8.09" data-hub="22.8" href="?topic=22.8.09"><span class="num">22.8.09</span>Fistula In Ano And Perianal Sepsis</a>
+  <a class="topic-item" data-topic="22.8.10" data-hub="22.8" href="?topic=22.8.10"><span class="num">22.8.10</span>Haemorrhoids</a>
+  <a class="topic-item" data-topic="22.8.11" data-hub="22.8" href="?topic=22.8.11"><span class="num">22.8.11</span>Hereditary Colorectal Cancer Syndromes</a>
+  <a class="topic-item" data-topic="22.8.12" data-hub="22.8" href="?topic=22.8.12"><span class="num">22.8.12</span>Infectious Colitis</a>
+  <a class="topic-item" data-topic="22.8.13" data-hub="22.8" href="?topic=22.8.13"><span class="num">22.8.13</span>Initial Approach To Lower Gi Bleeding</a>
+  <a class="topic-item" data-topic="22.8.14" data-hub="22.8" href="?topic=22.8.14"><span class="num">22.8.14</span>Ischaemic Colitis</a>
+  <a class="topic-item" data-topic="22.8.15" data-hub="22.8" href="?topic=22.8.15"><span class="num">22.8.15</span>Lower Gi Bleeding</a>
+  <a class="topic-item" data-topic="22.8.16" data-hub="22.8" href="?topic=22.8.16"><span class="num">22.8.16</span>Microscopic Colitis</a>
+</div>
+<div class="hub-group" data-hub="22.9">
+  <h3>22.9 · 22.9</h3>
+  <a class="topic-item" data-topic="22.9.01" data-hub="22.9" href="?topic=22.9.01"><span class="num">22.9.01</span>Acute Pancreatitis Syndromes</a>
+  <a class="topic-item" data-topic="22.9.02" data-hub="22.9" href="?topic=22.9.02"><span class="num">22.9.02</span>Acute Pancreatitis</a>
+  <a class="topic-item" data-topic="22.9.03" data-hub="22.9" href="?topic=22.9.03"><span class="num">22.9.03</span>Autoimmune Pancreatitis</a>
+  <a class="topic-item" data-topic="22.9.04" data-hub="22.9" href="?topic=22.9.04"><span class="num">22.9.04</span>Chronic Pancreatic Disease</a>
+  <a class="topic-item" data-topic="22.9.05" data-hub="22.9" href="?topic=22.9.05"><span class="num">22.9.05</span>Chronic Pancreatitis</a>
+  <a class="topic-item" data-topic="22.9.06" data-hub="22.9" href="?topic=22.9.06"><span class="num">22.9.06</span>Gallstone Pancreatitis</a>
+  <a class="topic-item" data-topic="22.9.07" data-hub="22.9" href="?topic=22.9.07"><span class="num">22.9.07</span>Hypertriglyceridaemic And Drug Induced Pancreatitis</a>
+  <a class="topic-item" data-topic="22.9.08" data-hub="22.9" href="?topic=22.9.08"><span class="num">22.9.08</span>Infected Pancreatic Necrosis And Sepsis</a>
+  <a class="topic-item" data-topic="22.9.09" data-hub="22.9" href="?topic=22.9.09"><span class="num">22.9.09</span>Necrotizing Pancreatitis</a>
+  <a class="topic-item" data-topic="22.9.10" data-hub="22.9" href="?topic=22.9.10"><span class="num">22.9.10</span>Neuroendocrine Pancreatic Tumors</a>
+  <a class="topic-item" data-topic="22.9.11" data-hub="22.9" href="?topic=22.9.11"><span class="num">22.9.11</span>Pancreatic Adenocarcinoma</a>
+  <a class="topic-item" data-topic="22.9.12" data-hub="22.9" href="?topic=22.9.12"><span class="num">22.9.12</span>Pancreatic Cystic Neoplasms And Ipmn</a>
+  <a class="topic-item" data-topic="22.9.13" data-hub="22.9" href="?topic=22.9.13"><span class="num">22.9.13</span>Pancreatic Exocrine Insufficiency</a>
+  <a class="topic-item" data-topic="22.9.14" data-hub="22.9" href="?topic=22.9.14"><span class="num">22.9.14</span>Pancreatic Neoplasia</a>
+  <a class="topic-item" data-topic="22.9.15" data-hub="22.9" href="?topic=22.9.15"><span class="num">22.9.15</span>Pancreatic Pseudocyst And Fluid Collections</a>
+  <a class="topic-item" data-topic="22.9.16" data-hub="22.9" href="?topic=22.9.16"><span class="num">22.9.16</span>Severe Pancreatitis And Local Complications</a>
+</div>
+
+  </aside>
+  <section class="chapter-main d-only">
+    <div class="chapter-header">
+      <h1>Gastroenterology</h1>
+      <div class="meta">Davidson Ch 22 · 9 hubs · 147 topics · <a href="https://medsea.notion.site/Chapter-22-Gastroenterology-bbfd97790eca482eaed8d47428a642b2" target="_blank">Notion ↗</a></div>
+    </div>
+    <div id="topicContainer" class="topic-detail-placeholder">
+      <div class="placeholder">
+        <div class="icon">📖</div>
+        <p>Select a topic from the sidebar to view its content.</p>
+        <p style="font-size:12px; margin-top:8px;">Or pick a chapter from the header dropdown.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE: accordion tree (hidden on desktop via CSS) -->
+  <div class="chapter-mobile m-only">
+    <div class="chapter-toolbar">
+      <input type="text" class="search" id="topicSearchMobile" placeholder="🔍 Search topics…">
+      <div class="toolbar-actions">
+        <button class="btn-acc" onclick="expandAllMobile()">Expand all</button>
+        <button class="btn-acc" onclick="collapseAllMobile()">Collapse all</button>
+      </div>
+      <div class="no-results" id="noResultsMobile">No matching topics</div>
+    </div>
+    <div class="hub-accordion" id="hubAccordionMobile">
+      <details class="hub-acc" data-hub="22.1">
   <summary class="hub-summary">
     <span class="hub-arrow">▸</span>
     <span class="hub-label"><span class="hub-num">22.1</span> 22.1</span>
@@ -44138,88 +44646,163 @@ footer a:hover { color: var(--accent); }
   </div>
 </details>
 
+    </div>
   </div>
 </div>
 <script>
 const CHAPTER_SLUG = "22-gastroenterology";
+const MANIFEST_URL = "/22-gastroenterology/topics.json";
+let MANIFEST = null;
+let CURRENT_TOPIC = null;
 
-// Inline expand/collapse helpers
+// ---- Desktop: load topics.json + sidebar nav + topic render ----
+async function loadManifest() {
+  try {
+    const res = await fetch(MANIFEST_URL);
+    MANIFEST = await res.json();
+    const params = new URLSearchParams(location.search);
+    const t = params.get("topic");
+    if (t) showTopic(t);
+  } catch(e) {
+    console.error("Failed to load topics.json", e);
+  }
+}
+
+function navigateTopic(dir) {
+  if (!MANIFEST || !CURRENT_TOPIC) return;
+  const i = MANIFEST.topics.findIndex(x => x.local_prefix === CURRENT_TOPIC.local_prefix);
+  const ni = i + dir;
+  if (ni < 0 || ni >= MANIFEST.topics.length) return;
+  showTopic(MANIFEST.topics[ni].local_prefix);
+}
+
 function toggleTopicImage(btn) {
   btn.classList.toggle("collapsed");
   const wrap = btn.nextElementSibling;
   if (wrap) {
     wrap.classList.toggle("collapsed");
-    btn.querySelector("span:last-child").textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
+    const span = btn.querySelector("span:last-child");
+    if (span) span.textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
   }
 }
 
-function expandAll() {
-  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
-  const p = new URL(location.href);
-  if (p.searchParams.get("expand") !== "all") {
-    p.searchParams.set("expand", "all");
-    history.replaceState(null, "", p);
+function showTopic(localPrefix) {
+  const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
+  if (!t) return;
+  CURRENT_TOPIC = t;
+  document.querySelectorAll(".topic-item").forEach(el => el.classList.remove("active"));
+  const activeEl = document.querySelector(`.topic-item[data-topic="${localPrefix}"]`);
+  if (activeEl) {
+    activeEl.classList.add("active");
+    activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
+  const url = new URL(location.href);
+  url.searchParams.set("topic", localPrefix);
+  history.replaceState(null, "", url);
+  const container = document.getElementById("topicContainer");
+  container.className = "topic-detail";
+  const imgHtml = t.png ? `
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:12px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/22-gastroenterology/${t.png}" alt="${t.title}"></div>
+    </div>` : "";
+  container.innerHTML = `
+    <div class="crumbs"><a href="/">Home</a> · <a href="/22-gastroenterology/">Gastroenterology</a> · <span>${t.hub_num} · ${t.hub_name}</span></div>
+    <div class="topic-header">
+      <div>
+        <h1>${t.title}</h1>
+        <p class="meta">${t.hub_num} · ${t.local_prefix} · ${t.slug}</p>
+      </div>
+      <div class="topic-actions">
+        ${t.png ? `<a href="/22-gastroenterology/${t.png}" download>Download PNG</a>` : ""}
+        ${t.md ? `<a href="/22-gastroenterology/${t.md}" download>Download MD</a>` : ""}
+        <button onclick="navigateTopic(-1)">← Prev</button>
+        <button onclick="navigateTopic(1)">Next →</button>
+      </div>
+    </div>
+    <div class="topic-content">${t.html}</div>
+    ${imgHtml}
+  `;
 }
 
-function collapseAll() {
-  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = false);
+document.getElementById("topicSearch").addEventListener("input", function(e) {
+  const q = e.target.value.toLowerCase();
+  let visible = 0;
+  document.querySelectorAll(".topic-item").forEach(el => {
+    const text = el.textContent.toLowerCase();
+    const show = !q || text.includes(q);
+    el.style.display = show ? "" : "none";
+    if (show) visible++;
+  });
+  document.querySelectorAll(".hub-group").forEach(g => {
+    const anyVisible = Array.from(g.querySelectorAll(".topic-item")).some(el => el.style.display !== "none");
+    g.style.display = anyVisible ? "" : "none";
+  });
+  document.getElementById("noResults").classList.toggle("show", visible === 0);
+});
+
+loadManifest();
+
+// ---- Mobile: accordion expand/collapse + search ----
+function expandAllMobile() {
+  document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = true);
+}
+function collapseAllMobile() {
+  document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = false);
   const p = new URL(location.href);
   p.searchParams.delete("topic");
   p.searchParams.delete("expand");
   history.replaceState(null, "", p);
 }
-
-// Sidebar search filter — auto-expand matching items
-document.getElementById("topicSearch").addEventListener("input", function(e) {
+document.getElementById("topicSearchMobile").addEventListener("input", function(e) {
   const q = e.target.value.trim().toLowerCase();
   let visible = 0;
-  document.querySelectorAll(".topic-acc").forEach(el => {
+  document.querySelectorAll("#hubAccordionMobile .topic-acc").forEach(el => {
     const text = el.textContent.toLowerCase();
     const show = !q || text.includes(q);
     el.style.display = show ? "" : "none";
     if (show) {
       visible++;
       if (q) {
-        // Auto-expand matching topics AND their parent hub when searching
         el.open = true;
         const hub = el.closest(".hub-acc");
         if (hub) hub.open = true;
       }
     }
   });
-  // Hide empty hubs
-  document.querySelectorAll(".hub-acc").forEach(g => {
+  document.querySelectorAll("#hubAccordionMobile .hub-acc").forEach(g => {
     const anyVisible = Array.from(g.querySelectorAll(".topic-acc")).some(el => el.style.display !== "none");
     g.style.display = anyVisible ? "" : "none";
     if (!q) g.open = false;
   });
-  document.getElementById("noResults").classList.toggle("show", visible === 0);
+  document.getElementById("noResultsMobile").classList.toggle("show", visible === 0);
 });
 
-// On load: open topic from URL ?topic=...
+// On mobile: open topic from URL ?topic=...
 (function() {
+  if (window.innerWidth > 900) return;
   const params = new URLSearchParams(location.search);
   const t = params.get("topic");
   if (t) {
-    const el = document.querySelector(`.topic-acc[data-topic="${t}"]`);
+    const el = document.querySelector(`#hubAccordionMobile .topic-acc[data-topic="${t}"]`);
     if (el) {
-      // Open topic + parent hub
       el.open = true;
       const hub = el.closest(".hub-acc");
       if (hub) hub.open = true;
-      // Scroll into view after layout
       setTimeout(() => el.scrollIntoView({ block: "start", behavior: "smooth" }), 100);
     }
   } else if (params.get("expand") === "all") {
-    document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
+    document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = true);
   }
 })();
 </script>
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 19:04 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 19:55 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside

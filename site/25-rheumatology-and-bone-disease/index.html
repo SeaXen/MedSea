@@ -452,19 +452,335 @@ header.site .search-box .search-empty strong { color: var(--accent); }
 }
 
 /* Mobile chapter page: stacked layout */
-/* ===== Chapter accordion layout ===== */
+/* ===== Chapter page layout (DESKTOP: sidebar + main) ===== */
 .chapter-page {
-  display: block;
-  padding: 20px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  min-height: calc(100vh - 65px);
 }
-/* ===== Chapter accordion layout ===== */
-.chapter-page {
+
+/* Desktop sidebar: hub/topic navigation */
+.chapter-sidebar {
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 65px);
+  position: sticky;
+  top: 65px;
+}
+.chapter-sidebar .search {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.chapter-sidebar .search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.chapter-sidebar .hub-group {
+  margin-bottom: 14px;
+}
+.chapter-sidebar .hub-group h3 {
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 8px;
+  margin: 0 0 4px;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.06);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.chapter-sidebar .topic-item {
   display: block;
-  padding: 20px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 5px 10px 5px 22px;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.1s;
+  border: 1px solid transparent;
+  text-decoration: none !important;
+  position: relative;
+  line-height: 1.35;
+}
+.chapter-sidebar .topic-item:hover {
+  background: var(--bg-3);
+  color: #fff;
+}
+.chapter-sidebar .topic-item.active {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent);
+  font-weight: 600;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+.chapter-sidebar .topic-item .num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px;
+  margin-right: 6px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+.chapter-sidebar .topic-item.active .num {
+  color: var(--accent);
+  font-weight: 600;
+}
+.chapter-sidebar .no-results {
+  color: var(--text-dim);
+  font-size: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  display: none;
+}
+.chapter-sidebar .no-results.show {
+  display: block;
+}
+
+/* Desktop main: clicked topic content */
+.chapter-main {
+  padding: 16px 24px;
+  overflow-x: hidden;
+}
+.chapter-main .chapter-header {
+  padding: 8px 0 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  border-left: 3px solid var(--accent-color, var(--accent));
+  padding-left: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.chapter-main .chapter-header h1 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+.chapter-main .chapter-header .meta {
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chapter-main .chapter-header .meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.chapter-main .chapter-header .meta a:hover {
+  text-decoration: underline;
+}
+.chapter-main .placeholder {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+.chapter-main .placeholder .icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+/* Topic detail (rendered in main pane) */
+.topic-detail .crumbs {
+  color: var(--text-dim);
+  font-size: 12px;
+  margin-bottom: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+.topic-detail .crumbs a {
+  color: var(--text-dim);
+}
+.topic-detail .crumbs a:hover {
+  color: var(--accent);
+}
+.topic-detail .topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.topic-detail .topic-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.topic-detail .topic-header .meta {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-top: 4px;
+}
+.topic-detail .topic-actions {
+  display: flex;
+  gap: 6px;
+}
+.topic-detail .topic-actions a,
+.topic-detail .topic-actions button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+.topic-detail .topic-actions a:hover,
+.topic-detail .topic-actions button:hover {
+  background: var(--bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.topic-detail .topic-image {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.topic-detail .topic-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+.topic-detail .topic-image-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+.topic-detail .topic-image-toggle:hover {
+  background: var(--bg-2);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.topic-detail .topic-image-toggle .toggle-icon {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+.topic-detail .topic-image-toggle.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+.topic-detail .topic-image-wrap {
+  overflow: hidden;
+}
+.topic-detail .topic-image-wrap.collapsed {
+  display: none;
+}
+.topic-detail .topic-content {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.topic-detail .topic-content h2,
+.topic-detail .topic-content h3,
+.topic-detail .topic-content h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.topic-detail .topic-content h2 {
+  font-size: 22px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+.topic-detail .topic-content h3 {
+  font-size: 18px;
+  color: var(--accent);
+}
+.topic-detail .topic-content h4 {
+  font-size: 15px;
+}
+.topic-detail .topic-content p {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.topic-detail .topic-content ul,
+.topic-detail .topic-content ol {
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+.topic-detail .topic-content li {
+  margin-bottom: 4px;
+}
+.topic-detail .topic-content li:empty {
+  display: none;
+}
+.topic-detail .topic-content table {
+  border-collapse: collapse;
+  margin: 16px 0;
+  width: 100%;
+  font-size: 13px;
+}
+.topic-detail .topic-content th,
+.topic-detail .topic-content td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+.topic-detail .topic-content th {
+  background: var(--bg-3);
+  font-weight: 600;
+}
+.topic-detail .topic-content code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+}
+.topic-detail .topic-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 8px 14px;
+  color: var(--text-dim);
+  margin: 12px 0;
+  background: var(--bg-3);
+  border-radius: 0 6px 6px 0;
+}
+.topic-detail .topic-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* ===== Layout visibility ===== */
+.d-only { display: block; }
+.chapter-mobile { display: none; }
+
+/* On mobile: hide desktop sidebar+main, show mobile accordion */
+@media (max-width: 900px) {
+  .d-only { display: none !important; }
+  .chapter-mobile { display: block !important; }
+  .chapter-page { display: block !important; grid-template-columns: 1fr !important; min-height: auto !important; }
 }
 
 .chapter-header {
@@ -1567,20 +1883,138 @@ footer a:hover { color: var(--accent); }
 <main>
 
 <div class="chapter-page" style="--accent-color: #7c2d12">
-  <header class="chapter-header">
-    <h1>Rheumatology & Bone Disease</h1>
-    <div class="meta">Davidson Ch 25 · 10 hubs · 70 topics · <a href="https://medsea.notion.site/Chapter-25-Rheumatology-and-bone-disease-fbf3e71640a44890849068e40a85a5a9" target="_blank">Notion ↗</a></div>
-  </header>
-  <div class="chapter-toolbar">
-    <input type="text" class="search" id="topicSearch" placeholder="🔍 Search topics…">
-    <div class="toolbar-actions">
-      <button class="btn-acc" onclick="expandAll()">Expand all</button>
-      <button class="btn-acc" onclick="collapseAll()">Collapse all</button>
-    </div>
+  <!-- DESKTOP: sidebar + main (hidden on mobile via CSS) -->
+  <aside class="chapter-sidebar d-only">
+    <input type="text" class="search" id="topicSearch" placeholder="Search topics…">
     <div class="no-results" id="noResults">No matching topics</div>
-  </div>
-  <div class="hub-accordion" id="hubAccordion">
-    <details class="hub-acc" data-hub="25.1">
+    <div class="hub-group" data-hub="25.1">
+  <h3>25.1 · Autoimmune Rheumatic Diseases</h3>
+  <a class="topic-item" data-topic="25.1.1" data-hub="25.1" href="?topic=25.1.1"><span class="num">25.1.1</span>Adult Onset Still S Disease</a>
+  <a class="topic-item" data-topic="25.1.10" data-hub="25.1" href="?topic=25.1.10"><span class="num">25.1.10</span>Systemic Lupus Erythematosus</a>
+  <a class="topic-item" data-topic="25.1.11" data-hub="25.1" href="?topic=25.1.11"><span class="num">25.1.11</span>Systemic Sclerosis Scleroderma</a>
+  <a class="topic-item" data-topic="25.1.2" data-hub="25.1" href="?topic=25.1.2"><span class="num">25.1.2</span>Antiphospholipid Syndrome</a>
+  <a class="topic-item" data-topic="25.1.3" data-hub="25.1" href="?topic=25.1.3"><span class="num">25.1.3</span>Drug Induced Lupus</a>
+  <a class="topic-item" data-topic="25.1.4" data-hub="25.1" href="?topic=25.1.4"><span class="num">25.1.4</span>Hypermobility Syndromes Eds Marfan Hsd</a>
+  <a class="topic-item" data-topic="25.1.5" data-hub="25.1" href="?topic=25.1.5"><span class="num">25.1.5</span>Mixed Connective Tissue Disease Mctd</a>
+  <a class="topic-item" data-topic="25.1.6" data-hub="25.1" href="?topic=25.1.6"><span class="num">25.1.6</span>Polymyositis And Dermatomyositis</a>
+  <a class="topic-item" data-topic="25.1.7" data-hub="25.1" href="?topic=25.1.7"><span class="num">25.1.7</span>Relapsing Polychondritis</a>
+  <a class="topic-item" data-topic="25.1.8" data-hub="25.1" href="?topic=25.1.8"><span class="num">25.1.8</span>Sapho Syndrome</a>
+  <a class="topic-item" data-topic="25.1.9" data-hub="25.1" href="?topic=25.1.9"><span class="num">25.1.9</span>Sjogren S Syndrome</a>
+</div>
+<div class="hub-group" data-hub="25.10">
+  <h3>25.10 · Vasculitis</h3>
+  <a class="topic-item" data-topic="25.10.1" data-hub="25.10" href="?topic=25.10.1"><span class="num">25.10.1</span>Anca Associated Vasculitis Overview</a>
+  <a class="topic-item" data-topic="25.10.10" data-hub="25.10" href="?topic=25.10.10"><span class="num">25.10.10</span>Kawasaki Disease</a>
+  <a class="topic-item" data-topic="25.10.11" data-hub="25.10" href="?topic=25.10.11"><span class="num">25.10.11</span>Polyarteritis Nodosa Pan</a>
+  <a class="topic-item" data-topic="25.10.12" data-hub="25.10" href="?topic=25.10.12"><span class="num">25.10.12</span>Primary Systemic Vasculitides Overview</a>
+  <a class="topic-item" data-topic="25.10.13" data-hub="25.10" href="?topic=25.10.13"><span class="num">25.10.13</span>Secondary Vasculitides</a>
+  <a class="topic-item" data-topic="25.10.14" data-hub="25.10" href="?topic=25.10.14"><span class="num">25.10.14</span>Takayasu Arteritis</a>
+  <a class="topic-item" data-topic="25.10.2" data-hub="25.10" href="?topic=25.10.2"><span class="num">25.10.2</span>Beh Et S Disease</a>
+  <a class="topic-item" data-topic="25.10.3" data-hub="25.10" href="?topic=25.10.3"><span class="num">25.10.3</span>Buerger S Disease Thromboangiitis Obliterans</a>
+  <a class="topic-item" data-topic="25.10.4" data-hub="25.10" href="?topic=25.10.4"><span class="num">25.10.4</span>Cogan S Syndrome</a>
+  <a class="topic-item" data-topic="25.10.5" data-hub="25.10" href="?topic=25.10.5"><span class="num">25.10.5</span>Cryoglobulinemic Vasculitis</a>
+  <a class="topic-item" data-topic="25.10.6" data-hub="25.10" href="?topic=25.10.6"><span class="num">25.10.6</span>Eosinophilic Granulomatosis With Polyangiitis Epa</a>
+  <a class="topic-item" data-topic="25.10.7" data-hub="25.10" href="?topic=25.10.7"><span class="num">25.10.7</span>Giant Cell Arteritis Temporal Arteritis</a>
+  <a class="topic-item" data-topic="25.10.8" data-hub="25.10" href="?topic=25.10.8"><span class="num">25.10.8</span>Granulomatosis With Polyangiitis Gpa</a>
+  <a class="topic-item" data-topic="25.10.9" data-hub="25.10" href="?topic=25.10.9"><span class="num">25.10.9</span>Iga Vasculitis Henoch Sch Nlein Purpura</a>
+</div>
+<div class="hub-group" data-hub="25.2">
+  <h3>25.2 · Bone Metabolic Diseases</h3>
+  <a class="topic-item" data-topic="25.2.1" data-hub="25.2" href="?topic=25.2.1"><span class="num">25.2.1</span>Glucocorticoid Induced Osteoporosis</a>
+  <a class="topic-item" data-topic="25.2.2" data-hub="25.2" href="?topic=25.2.2"><span class="num">25.2.2</span>Hyperparathyroidism And Bone</a>
+  <a class="topic-item" data-topic="25.2.3" data-hub="25.2" href="?topic=25.2.3"><span class="num">25.2.3</span>Osteomalacia And Rickets</a>
+  <a class="topic-item" data-topic="25.2.4" data-hub="25.2" href="?topic=25.2.4"><span class="num">25.2.4</span>Osteoporosis</a>
+  <a class="topic-item" data-topic="25.2.5" data-hub="25.2" href="?topic=25.2.5"><span class="num">25.2.5</span>Paget S Disease Of Bone</a>
+  <a class="topic-item" data-topic="25.2.6" data-hub="25.2" href="?topic=25.2.6"><span class="num">25.2.6</span>Renal Osteodystrophy</a>
+</div>
+<div class="hub-group" data-hub="25.3">
+  <h3>25.3 · Clinical Approach to Musculoskeletal Disease</h3>
+  <a class="topic-item" data-topic="25.3.1" data-hub="25.3" href="?topic=25.3.1"><span class="num">25.3.1</span>Bone Structure Remodelling</a>
+  <a class="topic-item" data-topic="25.3.2" data-hub="25.3" href="?topic=25.3.2"><span class="num">25.3.2</span>Drugs In Rheumatology</a>
+  <a class="topic-item" data-topic="25.3.3" data-hub="25.3" href="?topic=25.3.3"><span class="num">25.3.3</span>Investigations In Rheumatology</a>
+  <a class="topic-item" data-topic="25.3.4" data-hub="25.3" href="?topic=25.3.4"><span class="num">25.3.4</span>Joint Examination Gals</a>
+  <a class="topic-item" data-topic="25.3.5" data-hub="25.3" href="?topic=25.3.5"><span class="num">25.3.5</span>Musculoskeletal History Taking</a>
+</div>
+<div class="hub-group" data-hub="25.4">
+  <h3>25.4 · Crystal Arthropathies</h3>
+  <a class="topic-item" data-topic="25.4.1" data-hub="25.4" href="?topic=25.4.1"><span class="num">25.4.1</span>Basic Calcium Phosphate Crystal Deposition</a>
+  <a class="topic-item" data-topic="25.4.2" data-hub="25.4" href="?topic=25.4.2"><span class="num">25.4.2</span>Gout</a>
+  <a class="topic-item" data-topic="25.4.3" data-hub="25.4" href="?topic=25.4.3"><span class="num">25.4.3</span>Pseudogout Cppd Deposition Disease</a>
+</div>
+<div class="hub-group" data-hub="25.5">
+  <h3>25.5 · Infectious Arthritis and Bone Infections</h3>
+  <a class="topic-item" data-topic="25.5.1" data-hub="25.5" href="?topic=25.5.1"><span class="num">25.5.1</span>Lyme Disease</a>
+  <a class="topic-item" data-topic="25.5.2" data-hub="25.5" href="?topic=25.5.2"><span class="num">25.5.2</span>Osteomyelitis</a>
+  <a class="topic-item" data-topic="25.5.3" data-hub="25.5" href="?topic=25.5.3"><span class="num">25.5.3</span>Rheumatic Fever</a>
+  <a class="topic-item" data-topic="25.5.4" data-hub="25.5" href="?topic=25.5.4"><span class="num">25.5.4</span>Septic Arthritis</a>
+  <a class="topic-item" data-topic="25.5.5" data-hub="25.5" href="?topic=25.5.5"><span class="num">25.5.5</span>Tuberculous Arthritis</a>
+  <a class="topic-item" data-topic="25.5.6" data-hub="25.5" href="?topic=25.5.6"><span class="num">25.5.6</span>Viral Arthritis</a>
+</div>
+<div class="hub-group" data-hub="25.6">
+  <h3>25.6 · Inflammatory Arthritis</h3>
+  <a class="topic-item" data-topic="25.6.1" data-hub="25.6" href="?topic=25.6.1"><span class="num">25.6.1</span>Ankylosing Spondylitis</a>
+  <a class="topic-item" data-topic="25.6.2" data-hub="25.6" href="?topic=25.6.2"><span class="num">25.6.2</span>Enteropathic Arthritis</a>
+  <a class="topic-item" data-topic="25.6.3" data-hub="25.6" href="?topic=25.6.3"><span class="num">25.6.3</span>Juvenile Idiopathic Arthritis Overview</a>
+  <a class="topic-item" data-topic="25.6.4" data-hub="25.6" href="?topic=25.6.4"><span class="num">25.6.4</span>Psoriatic Arthritis</a>
+  <a class="topic-item" data-topic="25.6.5" data-hub="25.6" href="?topic=25.6.5"><span class="num">25.6.5</span>Reactive Arthritis</a>
+  <a class="topic-item" data-topic="25.6.6" data-hub="25.6" href="?topic=25.6.6"><span class="num">25.6.6</span>Rheumatoid Arthritis</a>
+  <a class="topic-item" data-topic="25.6.7" data-hub="25.6" href="?topic=25.6.7"><span class="num">25.6.7</span>Seronegative Spondyloarthritis Overview</a>
+</div>
+<div class="hub-group" data-hub="25.7">
+  <h3>25.7 · Osteoarthritis and Related Disorders</h3>
+  <a class="topic-item" data-topic="25.7.1" data-hub="25.7" href="?topic=25.7.1"><span class="num">25.7.1</span>Charcot Arthropathy</a>
+  <a class="topic-item" data-topic="25.7.2" data-hub="25.7" href="?topic=25.7.2"><span class="num">25.7.2</span>Chronic Pain Syndromes And Fibromyalgia</a>
+  <a class="topic-item" data-topic="25.7.3" data-hub="25.7" href="?topic=25.7.3"><span class="num">25.7.3</span>Common Regional Musculoskeletal Problems</a>
+  <a class="topic-item" data-topic="25.7.4" data-hub="25.7" href="?topic=25.7.4"><span class="num">25.7.4</span>Erosive Osteoarthritis</a>
+  <a class="topic-item" data-topic="25.7.5" data-hub="25.7" href="?topic=25.7.5"><span class="num">25.7.5</span>Osteoarthritis</a>
+</div>
+<div class="hub-group" data-hub="25.8">
+  <h3>25.8 · Polymyalgia Rheumatica and Related Disorders</h3>
+  <a class="topic-item" data-topic="25.8.2" data-hub="25.8" href="?topic=25.8.2"><span class="num">25.8.2</span>Igg4 Related Disease</a>
+  <a class="topic-item" data-topic="25.8.3" data-hub="25.8" href="?topic=25.8.3"><span class="num">25.8.3</span>Other Granulomatous Conditions</a>
+  <a class="topic-item" data-topic="25.8.4" data-hub="25.8" href="?topic=25.8.4"><span class="num">25.8.4</span>Polymyalgia Rheumatica</a>
+  <a class="topic-item" data-topic="25.8.5" data-hub="25.8" href="?topic=25.8.5"><span class="num">25.8.5</span>Rs3Pe Syndrome</a>
+</div>
+<div class="hub-group" data-hub="25.9">
+  <h3>25.9 · Soft Tissue Rheumatism and Chronic Pain Syndromes</h3>
+  <a class="topic-item" data-topic="25.9.1" data-hub="25.9" href="?topic=25.9.1"><span class="num">25.9.1</span>Chronic Widespread Pain</a>
+  <a class="topic-item" data-topic="25.9.2" data-hub="25.9" href="?topic=25.9.2"><span class="num">25.9.2</span>Complex Regional Pain Syndrome</a>
+  <a class="topic-item" data-topic="25.9.3" data-hub="25.9" href="?topic=25.9.3"><span class="num">25.9.3</span>Elbow Disorders</a>
+  <a class="topic-item" data-topic="25.9.4" data-hub="25.9" href="?topic=25.9.4"><span class="num">25.9.4</span>Fibromyalgia</a>
+  <a class="topic-item" data-topic="25.9.5" data-hub="25.9" href="?topic=25.9.5"><span class="num">25.9.5</span>Foot Disorders</a>
+  <a class="topic-item" data-topic="25.9.6" data-hub="25.9" href="?topic=25.9.6"><span class="num">25.9.6</span>Hip And Trochanteric Bursitis</a>
+  <a class="topic-item" data-topic="25.9.7" data-hub="25.9" href="?topic=25.9.7"><span class="num">25.9.7</span>Knee Disorders</a>
+  <a class="topic-item" data-topic="25.9.8" data-hub="25.9" href="?topic=25.9.8"><span class="num">25.9.8</span>Regional Soft Tissue Rheumatism</a>
+  <a class="topic-item" data-topic="25.9.9" data-hub="25.9" href="?topic=25.9.9"><span class="num">25.9.9</span>Shoulder Disorders</a>
+</div>
+
+  </aside>
+  <section class="chapter-main d-only">
+    <div class="chapter-header">
+      <h1>Rheumatology & Bone Disease</h1>
+      <div class="meta">Davidson Ch 25 · 10 hubs · 70 topics · <a href="https://medsea.notion.site/Chapter-25-Rheumatology-and-bone-disease-fbf3e71640a44890849068e40a85a5a9" target="_blank">Notion ↗</a></div>
+    </div>
+    <div id="topicContainer" class="topic-detail-placeholder">
+      <div class="placeholder">
+        <div class="icon">📖</div>
+        <p>Select a topic from the sidebar to view its content.</p>
+        <p style="font-size:12px; margin-top:8px;">Or pick a chapter from the header dropdown.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE: accordion tree (hidden on desktop via CSS) -->
+  <div class="chapter-mobile m-only">
+    <div class="chapter-toolbar">
+      <input type="text" class="search" id="topicSearchMobile" placeholder="🔍 Search topics…">
+      <div class="toolbar-actions">
+        <button class="btn-acc" onclick="expandAllMobile()">Expand all</button>
+        <button class="btn-acc" onclick="collapseAllMobile()">Collapse all</button>
+      </div>
+      <div class="no-results" id="noResultsMobile">No matching topics</div>
+    </div>
+    <div class="hub-accordion" id="hubAccordionMobile">
+      <details class="hub-acc" data-hub="25.1">
   <summary class="hub-summary">
     <span class="hub-arrow">▸</span>
     <span class="hub-label"><span class="hub-num">25.1</span> Autoimmune Rheumatic Diseases</span>
@@ -30760,88 +31194,163 @@ Intestine: ↑ Ca²⁺ &amp; PO₄ absorption → Mineralisation</code></pre>
   </div>
 </details>
 
+    </div>
   </div>
 </div>
 <script>
 const CHAPTER_SLUG = "25-rheumatology-and-bone-disease";
+const MANIFEST_URL = "/25-rheumatology-and-bone-disease/topics.json";
+let MANIFEST = null;
+let CURRENT_TOPIC = null;
 
-// Inline expand/collapse helpers
+// ---- Desktop: load topics.json + sidebar nav + topic render ----
+async function loadManifest() {
+  try {
+    const res = await fetch(MANIFEST_URL);
+    MANIFEST = await res.json();
+    const params = new URLSearchParams(location.search);
+    const t = params.get("topic");
+    if (t) showTopic(t);
+  } catch(e) {
+    console.error("Failed to load topics.json", e);
+  }
+}
+
+function navigateTopic(dir) {
+  if (!MANIFEST || !CURRENT_TOPIC) return;
+  const i = MANIFEST.topics.findIndex(x => x.local_prefix === CURRENT_TOPIC.local_prefix);
+  const ni = i + dir;
+  if (ni < 0 || ni >= MANIFEST.topics.length) return;
+  showTopic(MANIFEST.topics[ni].local_prefix);
+}
+
 function toggleTopicImage(btn) {
   btn.classList.toggle("collapsed");
   const wrap = btn.nextElementSibling;
   if (wrap) {
     wrap.classList.toggle("collapsed");
-    btn.querySelector("span:last-child").textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
+    const span = btn.querySelector("span:last-child");
+    if (span) span.textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
   }
 }
 
-function expandAll() {
-  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
-  const p = new URL(location.href);
-  if (p.searchParams.get("expand") !== "all") {
-    p.searchParams.set("expand", "all");
-    history.replaceState(null, "", p);
+function showTopic(localPrefix) {
+  const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
+  if (!t) return;
+  CURRENT_TOPIC = t;
+  document.querySelectorAll(".topic-item").forEach(el => el.classList.remove("active"));
+  const activeEl = document.querySelector(`.topic-item[data-topic="${localPrefix}"]`);
+  if (activeEl) {
+    activeEl.classList.add("active");
+    activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
+  const url = new URL(location.href);
+  url.searchParams.set("topic", localPrefix);
+  history.replaceState(null, "", url);
+  const container = document.getElementById("topicContainer");
+  container.className = "topic-detail";
+  const imgHtml = t.png ? `
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:12px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/25-rheumatology-and-bone-disease/${t.png}" alt="${t.title}"></div>
+    </div>` : "";
+  container.innerHTML = `
+    <div class="crumbs"><a href="/">Home</a> · <a href="/25-rheumatology-and-bone-disease/">Rheumatology & Bone Disease</a> · <span>${t.hub_num} · ${t.hub_name}</span></div>
+    <div class="topic-header">
+      <div>
+        <h1>${t.title}</h1>
+        <p class="meta">${t.hub_num} · ${t.local_prefix} · ${t.slug}</p>
+      </div>
+      <div class="topic-actions">
+        ${t.png ? `<a href="/25-rheumatology-and-bone-disease/${t.png}" download>Download PNG</a>` : ""}
+        ${t.md ? `<a href="/25-rheumatology-and-bone-disease/${t.md}" download>Download MD</a>` : ""}
+        <button onclick="navigateTopic(-1)">← Prev</button>
+        <button onclick="navigateTopic(1)">Next →</button>
+      </div>
+    </div>
+    <div class="topic-content">${t.html}</div>
+    ${imgHtml}
+  `;
 }
 
-function collapseAll() {
-  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = false);
+document.getElementById("topicSearch").addEventListener("input", function(e) {
+  const q = e.target.value.toLowerCase();
+  let visible = 0;
+  document.querySelectorAll(".topic-item").forEach(el => {
+    const text = el.textContent.toLowerCase();
+    const show = !q || text.includes(q);
+    el.style.display = show ? "" : "none";
+    if (show) visible++;
+  });
+  document.querySelectorAll(".hub-group").forEach(g => {
+    const anyVisible = Array.from(g.querySelectorAll(".topic-item")).some(el => el.style.display !== "none");
+    g.style.display = anyVisible ? "" : "none";
+  });
+  document.getElementById("noResults").classList.toggle("show", visible === 0);
+});
+
+loadManifest();
+
+// ---- Mobile: accordion expand/collapse + search ----
+function expandAllMobile() {
+  document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = true);
+}
+function collapseAllMobile() {
+  document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = false);
   const p = new URL(location.href);
   p.searchParams.delete("topic");
   p.searchParams.delete("expand");
   history.replaceState(null, "", p);
 }
-
-// Sidebar search filter — auto-expand matching items
-document.getElementById("topicSearch").addEventListener("input", function(e) {
+document.getElementById("topicSearchMobile").addEventListener("input", function(e) {
   const q = e.target.value.trim().toLowerCase();
   let visible = 0;
-  document.querySelectorAll(".topic-acc").forEach(el => {
+  document.querySelectorAll("#hubAccordionMobile .topic-acc").forEach(el => {
     const text = el.textContent.toLowerCase();
     const show = !q || text.includes(q);
     el.style.display = show ? "" : "none";
     if (show) {
       visible++;
       if (q) {
-        // Auto-expand matching topics AND their parent hub when searching
         el.open = true;
         const hub = el.closest(".hub-acc");
         if (hub) hub.open = true;
       }
     }
   });
-  // Hide empty hubs
-  document.querySelectorAll(".hub-acc").forEach(g => {
+  document.querySelectorAll("#hubAccordionMobile .hub-acc").forEach(g => {
     const anyVisible = Array.from(g.querySelectorAll(".topic-acc")).some(el => el.style.display !== "none");
     g.style.display = anyVisible ? "" : "none";
     if (!q) g.open = false;
   });
-  document.getElementById("noResults").classList.toggle("show", visible === 0);
+  document.getElementById("noResultsMobile").classList.toggle("show", visible === 0);
 });
 
-// On load: open topic from URL ?topic=...
+// On mobile: open topic from URL ?topic=...
 (function() {
+  if (window.innerWidth > 900) return;
   const params = new URLSearchParams(location.search);
   const t = params.get("topic");
   if (t) {
-    const el = document.querySelector(`.topic-acc[data-topic="${t}"]`);
+    const el = document.querySelector(`#hubAccordionMobile .topic-acc[data-topic="${t}"]`);
     if (el) {
-      // Open topic + parent hub
       el.open = true;
       const hub = el.closest(".hub-acc");
       if (hub) hub.open = true;
-      // Scroll into view after layout
       setTimeout(() => el.scrollIntoView({ block: "start", behavior: "smooth" }), 100);
     }
   } else if (params.get("expand") === "all") {
-    document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
+    document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = true);
   }
 })();
 </script>
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 19:04 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 19:55 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside

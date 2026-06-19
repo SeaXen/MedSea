@@ -452,19 +452,335 @@ header.site .search-box .search-empty strong { color: var(--accent); }
 }
 
 /* Mobile chapter page: stacked layout */
-/* ===== Chapter accordion layout ===== */
+/* ===== Chapter page layout (DESKTOP: sidebar + main) ===== */
 .chapter-page {
-  display: block;
-  padding: 20px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  min-height: calc(100vh - 65px);
 }
-/* ===== Chapter accordion layout ===== */
-.chapter-page {
+
+/* Desktop sidebar: hub/topic navigation */
+.chapter-sidebar {
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 65px);
+  position: sticky;
+  top: 65px;
+}
+.chapter-sidebar .search {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.chapter-sidebar .search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.chapter-sidebar .hub-group {
+  margin-bottom: 14px;
+}
+.chapter-sidebar .hub-group h3 {
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 8px;
+  margin: 0 0 4px;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.06);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.chapter-sidebar .topic-item {
   display: block;
-  padding: 20px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 5px 10px 5px 22px;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.1s;
+  border: 1px solid transparent;
+  text-decoration: none !important;
+  position: relative;
+  line-height: 1.35;
+}
+.chapter-sidebar .topic-item:hover {
+  background: var(--bg-3);
+  color: #fff;
+}
+.chapter-sidebar .topic-item.active {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent);
+  font-weight: 600;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+.chapter-sidebar .topic-item .num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px;
+  margin-right: 6px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+.chapter-sidebar .topic-item.active .num {
+  color: var(--accent);
+  font-weight: 600;
+}
+.chapter-sidebar .no-results {
+  color: var(--text-dim);
+  font-size: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  display: none;
+}
+.chapter-sidebar .no-results.show {
+  display: block;
+}
+
+/* Desktop main: clicked topic content */
+.chapter-main {
+  padding: 16px 24px;
+  overflow-x: hidden;
+}
+.chapter-main .chapter-header {
+  padding: 8px 0 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  border-left: 3px solid var(--accent-color, var(--accent));
+  padding-left: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.chapter-main .chapter-header h1 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+.chapter-main .chapter-header .meta {
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chapter-main .chapter-header .meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.chapter-main .chapter-header .meta a:hover {
+  text-decoration: underline;
+}
+.chapter-main .placeholder {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+.chapter-main .placeholder .icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+/* Topic detail (rendered in main pane) */
+.topic-detail .crumbs {
+  color: var(--text-dim);
+  font-size: 12px;
+  margin-bottom: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+.topic-detail .crumbs a {
+  color: var(--text-dim);
+}
+.topic-detail .crumbs a:hover {
+  color: var(--accent);
+}
+.topic-detail .topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.topic-detail .topic-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.topic-detail .topic-header .meta {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-top: 4px;
+}
+.topic-detail .topic-actions {
+  display: flex;
+  gap: 6px;
+}
+.topic-detail .topic-actions a,
+.topic-detail .topic-actions button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+.topic-detail .topic-actions a:hover,
+.topic-detail .topic-actions button:hover {
+  background: var(--bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.topic-detail .topic-image {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.topic-detail .topic-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+.topic-detail .topic-image-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+.topic-detail .topic-image-toggle:hover {
+  background: var(--bg-2);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.topic-detail .topic-image-toggle .toggle-icon {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+.topic-detail .topic-image-toggle.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+.topic-detail .topic-image-wrap {
+  overflow: hidden;
+}
+.topic-detail .topic-image-wrap.collapsed {
+  display: none;
+}
+.topic-detail .topic-content {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.topic-detail .topic-content h2,
+.topic-detail .topic-content h3,
+.topic-detail .topic-content h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.topic-detail .topic-content h2 {
+  font-size: 22px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+.topic-detail .topic-content h3 {
+  font-size: 18px;
+  color: var(--accent);
+}
+.topic-detail .topic-content h4 {
+  font-size: 15px;
+}
+.topic-detail .topic-content p {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.topic-detail .topic-content ul,
+.topic-detail .topic-content ol {
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+.topic-detail .topic-content li {
+  margin-bottom: 4px;
+}
+.topic-detail .topic-content li:empty {
+  display: none;
+}
+.topic-detail .topic-content table {
+  border-collapse: collapse;
+  margin: 16px 0;
+  width: 100%;
+  font-size: 13px;
+}
+.topic-detail .topic-content th,
+.topic-detail .topic-content td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+.topic-detail .topic-content th {
+  background: var(--bg-3);
+  font-weight: 600;
+}
+.topic-detail .topic-content code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+}
+.topic-detail .topic-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 8px 14px;
+  color: var(--text-dim);
+  margin: 12px 0;
+  background: var(--bg-3);
+  border-radius: 0 6px 6px 0;
+}
+.topic-detail .topic-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* ===== Layout visibility ===== */
+.d-only { display: block; }
+.chapter-mobile { display: none; }
+
+/* On mobile: hide desktop sidebar+main, show mobile accordion */
+@media (max-width: 900px) {
+  .d-only { display: none !important; }
+  .chapter-mobile { display: block !important; }
+  .chapter-page { display: block !important; grid-template-columns: 1fr !important; min-height: auto !important; }
 }
 
 .chapter-header {
@@ -1567,20 +1883,217 @@ footer a:hover { color: var(--accent); }
 <main>
 
 <div class="chapter-page" style="--accent-color: #10b981">
-  <header class="chapter-header">
-    <h1>Respiratory Medicine</h1>
-    <div class="meta">Davidson Ch 17 · 10 hubs · 149 topics · <a href="https://medsea.notion.site/Chapter-17-Respiratory-medicine-d4fe7d456ca4481581e806ebe9e177cf" target="_blank">Notion ↗</a></div>
-  </header>
-  <div class="chapter-toolbar">
-    <input type="text" class="search" id="topicSearch" placeholder="🔍 Search topics…">
-    <div class="toolbar-actions">
-      <button class="btn-acc" onclick="expandAll()">Expand all</button>
-      <button class="btn-acc" onclick="collapseAll()">Collapse all</button>
-    </div>
+  <!-- DESKTOP: sidebar + main (hidden on mobile via CSS) -->
+  <aside class="chapter-sidebar d-only">
+    <input type="text" class="search" id="topicSearch" placeholder="Search topics…">
     <div class="no-results" id="noResults">No matching topics</div>
-  </div>
-  <div class="hub-accordion" id="hubAccordion">
-    <details class="hub-acc" data-hub="17.1">
+    <div class="hub-group" data-hub="17.1">
+  <h3>17.1 · Functional Anatomy, Physiology, and Investigations</h3>
+  <a class="topic-item" data-topic="17.1.01" data-hub="17.1" href="?topic=17.1.01"><span class="num">17.1.01</span>A A Gradient And Oxygenation Failure</a>
+  <a class="topic-item" data-topic="17.1.02" data-hub="17.1" href="?topic=17.1.02"><span class="num">17.1.02</span>Aerosol And Inhaler Device Basics</a>
+  <a class="topic-item" data-topic="17.1.03" data-hub="17.1" href="?topic=17.1.03"><span class="num">17.1.03</span>Airflow Ventilation And Gas Exchange</a>
+  <a class="topic-item" data-topic="17.1.04" data-hub="17.1" href="?topic=17.1.04"><span class="num">17.1.04</span>Ct Chest Pattern Approach</a>
+  <a class="topic-item" data-topic="17.1.05" data-hub="17.1" href="?topic=17.1.05"><span class="num">17.1.05</span>Diffusion Limitation And Dead Space</a>
+  <a class="topic-item" data-topic="17.1.06" data-hub="17.1" href="?topic=17.1.06"><span class="num">17.1.06</span>High Flow Nasal Oxygen Basics</a>
+  <a class="topic-item" data-topic="17.1.07" data-hub="17.1" href="?topic=17.1.07"><span class="num">17.1.07</span>Indications For Invasive Ventilation In Respiratory Disease</a>
+  <a class="topic-item" data-topic="17.1.08" data-hub="17.1" href="?topic=17.1.08"><span class="num">17.1.08</span>Oxygen Delivery Devices</a>
+  <a class="topic-item" data-topic="17.1.09" data-hub="17.1" href="?topic=17.1.09"><span class="num">17.1.09</span>Pleural Fluid Interpretation</a>
+  <a class="topic-item" data-topic="17.1.10" data-hub="17.1" href="?topic=17.1.10"><span class="num">17.1.10</span>Respiratory Investigations And Interpretation</a>
+  <a class="topic-item" data-topic="17.1.11" data-hub="17.1" href="?topic=17.1.11"><span class="num">17.1.11</span>Respiratory Support Basics</a>
+  <a class="topic-item" data-topic="17.1.12" data-hub="17.1" href="?topic=17.1.12"><span class="num">17.1.12</span>Ventilation Perfusion Mismatch And Shunt</a>
+  <a class="topic-item" data-topic="17.1.13" data-hub="17.1" href="?topic=17.1.13"><span class="num">17.1.13</span>Work Of Breathing And Respiratory Muscles</a>
+  <a class="topic-item" data-topic="17.1.14" data-hub="17.1" href="?topic=17.1.14"><span class="num">17.1.14</span>Abg Interpretation</a>
+  <a class="topic-item" data-topic="17.1.15" data-hub="17.1" href="?topic=17.1.15"><span class="num">17.1.15</span>Chest X Ray Approach</a>
+  <a class="topic-item" data-topic="17.1.16" data-hub="17.1" href="?topic=17.1.16"><span class="num">17.1.16</span>Oxygen Therapy And Niv</a>
+  <a class="topic-item" data-topic="17.1.17" data-hub="17.1" href="?topic=17.1.17"><span class="num">17.1.17</span>Spirometry Interpretation</a>
+</div>
+<div class="hub-group" data-hub="17.10">
+  <h3>17.10 · Thoracic Malignancy</h3>
+  <a class="topic-item" data-topic="17.10.01" data-hub="17.10" href="?topic=17.10.01"><span class="num">17.10.01</span>Bronchial Carcinoid Tumor</a>
+  <a class="topic-item" data-topic="17.10.02" data-hub="17.10" href="?topic=17.10.02"><span class="num">17.10.02</span>Malignant Central Airway Obstruction</a>
+  <a class="topic-item" data-topic="17.10.03" data-hub="17.10" href="?topic=17.10.03"><span class="num">17.10.03</span>Mesothelioma</a>
+  <a class="topic-item" data-topic="17.10.04" data-hub="17.10" href="?topic=17.10.04"><span class="num">17.10.04</span>Pancoast Tumor And Local Invasion Syndromes</a>
+  <a class="topic-item" data-topic="17.10.05" data-hub="17.10" href="?topic=17.10.05"><span class="num">17.10.05</span>Paraneoplastic Pulmonary Syndromes</a>
+  <a class="topic-item" data-topic="17.10.06" data-hub="17.10" href="?topic=17.10.06"><span class="num">17.10.06</span>Pleural And Diffuse Thoracic Malignancy</a>
+  <a class="topic-item" data-topic="17.10.07" data-hub="17.10" href="?topic=17.10.07"><span class="num">17.10.07</span>Primary Thoracic Malignancy</a>
+  <a class="topic-item" data-topic="17.10.08" data-hub="17.10" href="?topic=17.10.08"><span class="num">17.10.08</span>Small Cell Vs Non Small Cell Lung Cancer</a>
+  <a class="topic-item" data-topic="17.10.09" data-hub="17.10" href="?topic=17.10.09"><span class="num">17.10.09</span>Solitary Pulmonary Nodule Approach</a>
+  <a class="topic-item" data-topic="17.10.10" data-hub="17.10" href="?topic=17.10.10"><span class="num">17.10.10</span>Superior Vena Cava Obstruction</a>
+  <a class="topic-item" data-topic="17.10.11" data-hub="17.10" href="?topic=17.10.11"><span class="num">17.10.11</span>Thoracic Oncologic Emergencies And Nodules</a>
+  <a class="topic-item" data-topic="17.10.12" data-hub="17.10" href="?topic=17.10.12"><span class="num">17.10.12</span>Lung Cancer</a>
+</div>
+<div class="hub-group" data-hub="17.2">
+  <h3>17.2 · Symptom Approach to Respiratory Disease</h3>
+  <a class="topic-item" data-topic="17.2.01" data-hub="17.2" href="?topic=17.2.01"><span class="num">17.2.01</span>Acute Hypoxemia Approach</a>
+  <a class="topic-item" data-topic="17.2.02" data-hub="17.2" href="?topic=17.2.02"><span class="num">17.2.02</span>Acute Respiratory Presentations</a>
+  <a class="topic-item" data-topic="17.2.03" data-hub="17.2" href="?topic=17.2.03"><span class="num">17.2.03</span>Acute Severe Breathlessness Approach</a>
+  <a class="topic-item" data-topic="17.2.04" data-hub="17.2" href="?topic=17.2.04"><span class="num">17.2.04</span>Chronic Cough And Sputum Approach</a>
+  <a class="topic-item" data-topic="17.2.05" data-hub="17.2" href="?topic=17.2.05"><span class="num">17.2.05</span>Clubbing Cyanosis And Respiratory Distress Clues</a>
+  <a class="topic-item" data-topic="17.2.06" data-hub="17.2" href="?topic=17.2.06"><span class="num">17.2.06</span>Common Respiratory Presentations</a>
+  <a class="topic-item" data-topic="17.2.07" data-hub="17.2" href="?topic=17.2.07"><span class="num">17.2.07</span>Fever With Cough And Consolidation Approach</a>
+  <a class="topic-item" data-topic="17.2.08" data-hub="17.2" href="?topic=17.2.08"><span class="num">17.2.08</span>Pleuritic Chest Pain Approach</a>
+  <a class="topic-item" data-topic="17.2.09" data-hub="17.2" href="?topic=17.2.09"><span class="num">17.2.09</span>Wheeze And Stridor Approach</a>
+  <a class="topic-item" data-topic="17.2.10" data-hub="17.2" href="?topic=17.2.10"><span class="num">17.2.10</span>Dyspnea</a>
+  <a class="topic-item" data-topic="17.2.11" data-hub="17.2" href="?topic=17.2.11"><span class="num">17.2.11</span>Hemoptysis</a>
+</div>
+<div class="hub-group" data-hub="17.3">
+  <h3>17.3 · Upper Airway and Sleep-Related Breathing Disorders</h3>
+  <a class="topic-item" data-topic="17.3.01" data-hub="17.3" href="?topic=17.3.01"><span class="num">17.3.01</span>Foreign Body Aspiration In Adults</a>
+  <a class="topic-item" data-topic="17.3.02" data-hub="17.3" href="?topic=17.3.02"><span class="num">17.3.02</span>Obesity Hypoventilation Syndrome</a>
+  <a class="topic-item" data-topic="17.3.03" data-hub="17.3" href="?topic=17.3.03"><span class="num">17.3.03</span>Obstructive Sleep Apnea</a>
+  <a class="topic-item" data-topic="17.3.04" data-hub="17.3" href="?topic=17.3.04"><span class="num">17.3.04</span>Sleep Related Breathing Disorders</a>
+  <a class="topic-item" data-topic="17.3.05" data-hub="17.3" href="?topic=17.3.05"><span class="num">17.3.05</span>Upper Airway Disorders</a>
+  <a class="topic-item" data-topic="17.3.06" data-hub="17.3" href="?topic=17.3.06"><span class="num">17.3.06</span>Upper Airway Obstruction And Stridor</a>
+  <a class="topic-item" data-topic="17.3.07" data-hub="17.3" href="?topic=17.3.07"><span class="num">17.3.07</span>Vocal Cord Dysfunction And Inducible Laryngeal Obstruction</a>
+</div>
+<div class="hub-group" data-hub="17.4">
+  <h3>17.4 · Airway Diseases</h3>
+  <a class="topic-item" data-topic="17.4.01" data-hub="17.4" href="?topic=17.4.01"><span class="num">17.4.01</span>Abpa And Bronchiectasis</a>
+  <a class="topic-item" data-topic="17.4.02" data-hub="17.4" href="?topic=17.4.02"><span class="num">17.4.02</span>Acute Exacerbation Of Copd</a>
+  <a class="topic-item" data-topic="17.4.03" data-hub="17.4" href="?topic=17.4.03"><span class="num">17.4.03</span>Acute Severe Asthma</a>
+  <a class="topic-item" data-topic="17.4.04" data-hub="17.4" href="?topic=17.4.04"><span class="num">17.4.04</span>Alpha 1 Antitrypsin Deficiency</a>
+  <a class="topic-item" data-topic="17.4.05" data-hub="17.4" href="?topic=17.4.05"><span class="num">17.4.05</span>Asthma Spectrum</a>
+  <a class="topic-item" data-topic="17.4.06" data-hub="17.4" href="?topic=17.4.06"><span class="num">17.4.06</span>Bronchiectasis And Suppurative Airway Disease</a>
+  <a class="topic-item" data-topic="17.4.07" data-hub="17.4" href="?topic=17.4.07"><span class="num">17.4.07</span>Bronchiolitis And Obliterative Bronchiolitis</a>
+  <a class="topic-item" data-topic="17.4.08" data-hub="17.4" href="?topic=17.4.08"><span class="num">17.4.08</span>Copd Spectrum</a>
+  <a class="topic-item" data-topic="17.4.09" data-hub="17.4" href="?topic=17.4.09"><span class="num">17.4.09</span>Chronic Bronchitis And Emphysema Phenotypes</a>
+  <a class="topic-item" data-topic="17.4.10" data-hub="17.4" href="?topic=17.4.10"><span class="num">17.4.10</span>Cystic Fibrosis Related Bronchiectasis</a>
+  <a class="topic-item" data-topic="17.4.11" data-hub="17.4" href="?topic=17.4.11"><span class="num">17.4.11</span>Difficult To Treat And Severe Asthma</a>
+  <a class="topic-item" data-topic="17.4.12" data-hub="17.4" href="?topic=17.4.12"><span class="num">17.4.12</span>Eosinophilic And Phenotype Guided Asthma</a>
+  <a class="topic-item" data-topic="17.4.13" data-hub="17.4" href="?topic=17.4.13"><span class="num">17.4.13</span>Life Threatening Asthma And Status Asthmaticus</a>
+  <a class="topic-item" data-topic="17.4.14" data-hub="17.4" href="?topic=17.4.14"><span class="num">17.4.14</span>Long Term Oxygen Therapy In Copd</a>
+  <a class="topic-item" data-topic="17.4.15" data-hub="17.4" href="?topic=17.4.15"><span class="num">17.4.15</span>Non Cystic Fibrosis Bronchiectasis Exacerbation</a>
+  <a class="topic-item" data-topic="17.4.16" data-hub="17.4" href="?topic=17.4.16"><span class="num">17.4.16</span>Occupational Asthma</a>
+  <a class="topic-item" data-topic="17.4.17" data-hub="17.4" href="?topic=17.4.17"><span class="num">17.4.17</span>Other Obstructive And Small Airway Disorders</a>
+  <a class="topic-item" data-topic="17.4.18" data-hub="17.4" href="?topic=17.4.18"><span class="num">17.4.18</span>Pneumothorax</a>
+  <a class="topic-item" data-topic="17.4.19" data-hub="17.4" href="?topic=17.4.19"><span class="num">17.4.19</span>Post Infectious Bronchiolitis Swyer James Macleod Syndrome</a>
+  <a class="topic-item" data-topic="17.4.20" data-hub="17.4" href="?topic=17.4.20"><span class="num">17.4.20</span>Primary Ciliary Dyskinesia</a>
+  <a class="topic-item" data-topic="17.4.21" data-hub="17.4" href="?topic=17.4.21"><span class="num">17.4.21</span>Tracheobronchomalacia</a>
+  <a class="topic-item" data-topic="17.4.22" data-hub="17.4" href="?topic=17.4.22"><span class="num">17.4.22</span>Asthma Last Night</a>
+  <a class="topic-item" data-topic="17.4.23" data-hub="17.4" href="?topic=17.4.23"><span class="num">17.4.23</span>Asthma</a>
+  <a class="topic-item" data-topic="17.4.24" data-hub="17.4" href="?topic=17.4.24"><span class="num">17.4.24</span>Bronchiectasis Last Night</a>
+  <a class="topic-item" data-topic="17.4.25" data-hub="17.4" href="?topic=17.4.25"><span class="num">17.4.25</span>Bronchiectasis</a>
+  <a class="topic-item" data-topic="17.4.26" data-hub="17.4" href="?topic=17.4.26"><span class="num">17.4.26</span>Copd Last Night</a>
+  <a class="topic-item" data-topic="17.4.27" data-hub="17.4" href="?topic=17.4.27"><span class="num">17.4.27</span>Copd</a>
+</div>
+<div class="hub-group" data-hub="17.5">
+  <h3>17.5 · Respiratory Infections</h3>
+  <a class="topic-item" data-topic="17.5.01" data-hub="17.5" href="?topic=17.5.01"><span class="num">17.5.01</span>Aspiration Pneumonia</a>
+  <a class="topic-item" data-topic="17.5.02" data-hub="17.5" href="?topic=17.5.02"><span class="num">17.5.02</span>Atypical Pneumonia</a>
+  <a class="topic-item" data-topic="17.5.03" data-hub="17.5" href="?topic=17.5.03"><span class="num">17.5.03</span>Community Acquired Pneumonia Severity Assessment</a>
+  <a class="topic-item" data-topic="17.5.04" data-hub="17.5" href="?topic=17.5.04"><span class="num">17.5.04</span>Drug Resistant Tuberculosis</a>
+  <a class="topic-item" data-topic="17.5.05" data-hub="17.5" href="?topic=17.5.05"><span class="num">17.5.05</span>Hospital Acquired And Ventilator Associated Pneumonia</a>
+  <a class="topic-item" data-topic="17.5.06" data-hub="17.5" href="?topic=17.5.06"><span class="num">17.5.06</span>Latent Tuberculosis Infection</a>
+  <a class="topic-item" data-topic="17.5.07" data-hub="17.5" href="?topic=17.5.07"><span class="num">17.5.07</span>Lung Abscess And Necrotizing Pneumonia</a>
+  <a class="topic-item" data-topic="17.5.08" data-hub="17.5" href="?topic=17.5.08"><span class="num">17.5.08</span>Non Tuberculous Mycobacterial Pulmonary Disease</a>
+  <a class="topic-item" data-topic="17.5.09" data-hub="17.5" href="?topic=17.5.09"><span class="num">17.5.09</span>Opportunistic Pulmonary Infections</a>
+  <a class="topic-item" data-topic="17.5.10" data-hub="17.5" href="?topic=17.5.10"><span class="num">17.5.10</span>Opportunistic Fungal And Viral Pulmonary Infections</a>
+  <a class="topic-item" data-topic="17.5.11" data-hub="17.5" href="?topic=17.5.11"><span class="num">17.5.11</span>Other Pulmonary Infections</a>
+  <a class="topic-item" data-topic="17.5.12" data-hub="17.5" href="?topic=17.5.12"><span class="num">17.5.12</span>Pneumocystis Jirovecii Pneumonia</a>
+  <a class="topic-item" data-topic="17.5.13" data-hub="17.5" href="?topic=17.5.13"><span class="num">17.5.13</span>Pneumonia Syndromes</a>
+  <a class="topic-item" data-topic="17.5.14" data-hub="17.5" href="?topic=17.5.14"><span class="num">17.5.14</span>Post Obstructive Pneumonia</a>
+  <a class="topic-item" data-topic="17.5.15" data-hub="17.5" href="?topic=17.5.15"><span class="num">17.5.15</span>Pulmonary Aspergillosis Syndromes</a>
+  <a class="topic-item" data-topic="17.5.16" data-hub="17.5" href="?topic=17.5.16"><span class="num">17.5.16</span>Pulmonary Tuberculosis</a>
+  <a class="topic-item" data-topic="17.5.17" data-hub="17.5" href="?topic=17.5.17"><span class="num">17.5.17</span>Suppurative And Destructive Pulmonary Infections</a>
+  <a class="topic-item" data-topic="17.5.18" data-hub="17.5" href="?topic=17.5.18"><span class="num">17.5.18</span>Tuberculosis And Mycobacterial Disease</a>
+  <a class="topic-item" data-topic="17.5.19" data-hub="17.5" href="?topic=17.5.19"><span class="num">17.5.19</span>Viral Pneumonitis And Severe Viral Pneumonia</a>
+  <a class="topic-item" data-topic="17.5.20" data-hub="17.5" href="?topic=17.5.20"><span class="num">17.5.20</span>Pneumonia Last Night</a>
+  <a class="topic-item" data-topic="17.5.21" data-hub="17.5" href="?topic=17.5.21"><span class="num">17.5.21</span>Pneumonia</a>
+  <a class="topic-item" data-topic="17.5.22" data-hub="17.5" href="?topic=17.5.22"><span class="num">17.5.22</span>Tuberculosis</a>
+</div>
+<div class="hub-group" data-hub="17.6">
+  <h3>17.6 · Pleural Diseases</h3>
+  <a class="topic-item" data-topic="17.6.01" data-hub="17.6" href="?topic=17.6.01"><span class="num">17.6.01</span>Chylothorax</a>
+  <a class="topic-item" data-topic="17.6.02" data-hub="17.6" href="?topic=17.6.02"><span class="num">17.6.02</span>Empyema And Pleural Infection</a>
+  <a class="topic-item" data-topic="17.6.03" data-hub="17.6" href="?topic=17.6.03"><span class="num">17.6.03</span>Hemothorax</a>
+  <a class="topic-item" data-topic="17.6.04" data-hub="17.6" href="?topic=17.6.04"><span class="num">17.6.04</span>Malignant Pleural Effusion</a>
+  <a class="topic-item" data-topic="17.6.05" data-hub="17.6" href="?topic=17.6.05"><span class="num">17.6.05</span>Parapneumonic Effusion</a>
+  <a class="topic-item" data-topic="17.6.06" data-hub="17.6" href="?topic=17.6.06"><span class="num">17.6.06</span>Pleural Air Disorders</a>
+  <a class="topic-item" data-topic="17.6.07" data-hub="17.6" href="?topic=17.6.07"><span class="num">17.6.07</span>Pleural Aspiration And Chest Drain Basics</a>
+  <a class="topic-item" data-topic="17.6.08" data-hub="17.6" href="?topic=17.6.08"><span class="num">17.6.08</span>Pleural Fluid Disorders</a>
+  <a class="topic-item" data-topic="17.6.09" data-hub="17.6" href="?topic=17.6.09"><span class="num">17.6.09</span>Pleural Infection And Procedures</a>
+  <a class="topic-item" data-topic="17.6.10" data-hub="17.6" href="?topic=17.6.10"><span class="num">17.6.10</span>Pneumothorax Pneumothorax</a>
+  <a class="topic-item" data-topic="17.6.11" data-hub="17.6" href="?topic=17.6.11"><span class="num">17.6.11</span>Primary Spontaneous Pneumothorax</a>
+  <a class="topic-item" data-topic="17.6.12" data-hub="17.6" href="?topic=17.6.12"><span class="num">17.6.12</span>Secondary Spontaneous Pneumothorax</a>
+  <a class="topic-item" data-topic="17.6.13" data-hub="17.6" href="?topic=17.6.13"><span class="num">17.6.13</span>Tension Pneumothorax</a>
+  <a class="topic-item" data-topic="17.6.14" data-hub="17.6" href="?topic=17.6.14"><span class="num">17.6.14</span>Transudate Vs Exudate Framework</a>
+  <a class="topic-item" data-topic="17.6.15" data-hub="17.6" href="?topic=17.6.15"><span class="num">17.6.15</span>Trapped Lung And Fibrothorax</a>
+  <a class="topic-item" data-topic="17.6.16" data-hub="17.6" href="?topic=17.6.16"><span class="num">17.6.16</span>Pleural Effusion</a>
+</div>
+<div class="hub-group" data-hub="17.7">
+  <h3>17.7 · Pulmonary Vascular Diseases</h3>
+  <a class="topic-item" data-topic="17.7.01" data-hub="17.7" href="?topic=17.7.01"><span class="num">17.7.01</span>Chronic Thromboembolic Pulmonary Hypertension</a>
+  <a class="topic-item" data-topic="17.7.02" data-hub="17.7" href="?topic=17.7.02"><span class="num">17.7.02</span>Cor Pulmonale</a>
+  <a class="topic-item" data-topic="17.7.03" data-hub="17.7" href="?topic=17.7.03"><span class="num">17.7.03</span>D Dimer Ctpa And Wells Score Framework</a>
+  <a class="topic-item" data-topic="17.7.04" data-hub="17.7" href="?topic=17.7.04"><span class="num">17.7.04</span>Massive Vs Submassive Pulmonary Embolism Risk Stratification</a>
+  <a class="topic-item" data-topic="17.7.05" data-hub="17.7" href="?topic=17.7.05"><span class="num">17.7.05</span>Pulmonary Hypertension And Cor Pulmonale</a>
+  <a class="topic-item" data-topic="17.7.06" data-hub="17.7" href="?topic=17.7.06"><span class="num">17.7.06</span>Pulmonary Hypertension</a>
+  <a class="topic-item" data-topic="17.7.07" data-hub="17.7" href="?topic=17.7.07"><span class="num">17.7.07</span>Right Heart Strain In Respiratory Disease</a>
+  <a class="topic-item" data-topic="17.7.08" data-hub="17.7" href="?topic=17.7.08"><span class="num">17.7.08</span>Subsegmental And Incidental Pulmonary Embolism</a>
+  <a class="topic-item" data-topic="17.7.09" data-hub="17.7" href="?topic=17.7.09"><span class="num">17.7.09</span>Venous Thromboembolic Disease</a>
+  <a class="topic-item" data-topic="17.7.10" data-hub="17.7" href="?topic=17.7.10"><span class="num">17.7.10</span>Pulmonary Embolism</a>
+</div>
+<div class="hub-group" data-hub="17.8">
+  <h3>17.8 · Interstitial and Diffuse Parenchymal Lung Diseases</h3>
+  <a class="topic-item" data-topic="17.8.01" data-hub="17.8" href="?topic=17.8.01"><span class="num">17.8.01</span>Asbestosis</a>
+  <a class="topic-item" data-topic="17.8.02" data-hub="17.8" href="?topic=17.8.02"><span class="num">17.8.02</span>Connective Tissue Disease Associated Ild</a>
+  <a class="topic-item" data-topic="17.8.03" data-hub="17.8" href="?topic=17.8.03"><span class="num">17.8.03</span>Cryptogenic Organizing Pneumonia</a>
+  <a class="topic-item" data-topic="17.8.04" data-hub="17.8" href="?topic=17.8.04"><span class="num">17.8.04</span>Drug Induced Interstitial Lung Disease</a>
+  <a class="topic-item" data-topic="17.8.05" data-hub="17.8" href="?topic=17.8.05"><span class="num">17.8.05</span>Eosinophilic Lung Disease</a>
+  <a class="topic-item" data-topic="17.8.06" data-hub="17.8" href="?topic=17.8.06"><span class="num">17.8.06</span>Hypersensitivity Pneumonitis</a>
+  <a class="topic-item" data-topic="17.8.07" data-hub="17.8" href="?topic=17.8.07"><span class="num">17.8.07</span>Ild Framework</a>
+  <a class="topic-item" data-topic="17.8.08" data-hub="17.8" href="?topic=17.8.08"><span class="num">17.8.08</span>Idiopathic Pulmonary Fibrosis</a>
+  <a class="topic-item" data-topic="17.8.09" data-hub="17.8" href="?topic=17.8.09"><span class="num">17.8.09</span>Occupational And Environmental Lung Disease</a>
+  <a class="topic-item" data-topic="17.8.10" data-hub="17.8" href="?topic=17.8.10"><span class="num">17.8.10</span>Pneumoconiosis</a>
+  <a class="topic-item" data-topic="17.8.11" data-hub="17.8" href="?topic=17.8.11"><span class="num">17.8.11</span>Sarcoidosis</a>
+  <a class="topic-item" data-topic="17.8.12" data-hub="17.8" href="?topic=17.8.12"><span class="num">17.8.12</span>Silicosis</a>
+  <a class="topic-item" data-topic="17.8.13" data-hub="17.8" href="?topic=17.8.13"><span class="num">17.8.13</span>Interstitial Lung Disease</a>
+</div>
+<div class="hub-group" data-hub="17.9">
+  <h3>17.9 · Respiratory Failure and Ventilatory Support</h3>
+  <a class="topic-item" data-topic="17.9.01" data-hub="17.9" href="?topic=17.9.01"><span class="num">17.9.01</span>Ards</a>
+  <a class="topic-item" data-topic="17.9.02" data-hub="17.9" href="?topic=17.9.02"><span class="num">17.9.02</span>Acute On Chronic Hypercapnic Respiratory Failure</a>
+  <a class="topic-item" data-topic="17.9.03" data-hub="17.9" href="?topic=17.9.03"><span class="num">17.9.03</span>Central Hypoventilation And Sedative Related Ventilatory Failure</a>
+  <a class="topic-item" data-topic="17.9.04" data-hub="17.9" href="?topic=17.9.04"><span class="num">17.9.04</span>Chest Wall Restriction And Kyphoscoliosis</a>
+  <a class="topic-item" data-topic="17.9.05" data-hub="17.9" href="?topic=17.9.05"><span class="num">17.9.05</span>Hypoventilation Chest Wall And Neuromuscular Respiratory Disorders</a>
+  <a class="topic-item" data-topic="17.9.06" data-hub="17.9" href="?topic=17.9.06"><span class="num">17.9.06</span>Indications For Intubation In Respiratory Disease</a>
+  <a class="topic-item" data-topic="17.9.07" data-hub="17.9" href="?topic=17.9.07"><span class="num">17.9.07</span>Niv Failure And Escalation Triggers</a>
+  <a class="topic-item" data-topic="17.9.08" data-hub="17.9" href="?topic=17.9.08"><span class="num">17.9.08</span>Neuromuscular Respiratory Weakness</a>
+  <a class="topic-item" data-topic="17.9.09" data-hub="17.9" href="?topic=17.9.09"><span class="num">17.9.09</span>Respiratory Failure Syndromes</a>
+  <a class="topic-item" data-topic="17.9.10" data-hub="17.9" href="?topic=17.9.10"><span class="num">17.9.10</span>Type 1 Respiratory Failure</a>
+  <a class="topic-item" data-topic="17.9.11" data-hub="17.9" href="?topic=17.9.11"><span class="num">17.9.11</span>Type 2 Respiratory Failure</a>
+  <a class="topic-item" data-topic="17.9.12" data-hub="17.9" href="?topic=17.9.12"><span class="num">17.9.12</span>Ventilatory Support And Escalation</a>
+  <a class="topic-item" data-topic="17.9.13" data-hub="17.9" href="?topic=17.9.13"><span class="num">17.9.13</span>Weaning And Escalation Pitfalls</a>
+  <a class="topic-item" data-topic="17.9.14" data-hub="17.9" href="?topic=17.9.14"><span class="num">17.9.14</span>Respiratory Failure</a>
+</div>
+
+  </aside>
+  <section class="chapter-main d-only">
+    <div class="chapter-header">
+      <h1>Respiratory Medicine</h1>
+      <div class="meta">Davidson Ch 17 · 10 hubs · 149 topics · <a href="https://medsea.notion.site/Chapter-17-Respiratory-medicine-d4fe7d456ca4481581e806ebe9e177cf" target="_blank">Notion ↗</a></div>
+    </div>
+    <div id="topicContainer" class="topic-detail-placeholder">
+      <div class="placeholder">
+        <div class="icon">📖</div>
+        <p>Select a topic from the sidebar to view its content.</p>
+        <p style="font-size:12px; margin-top:8px;">Or pick a chapter from the header dropdown.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE: accordion tree (hidden on desktop via CSS) -->
+  <div class="chapter-mobile m-only">
+    <div class="chapter-toolbar">
+      <input type="text" class="search" id="topicSearchMobile" placeholder="🔍 Search topics…">
+      <div class="toolbar-actions">
+        <button class="btn-acc" onclick="expandAllMobile()">Expand all</button>
+        <button class="btn-acc" onclick="collapseAllMobile()">Collapse all</button>
+      </div>
+      <div class="no-results" id="noResultsMobile">No matching topics</div>
+    </div>
+    <div class="hub-accordion" id="hubAccordionMobile">
+      <details class="hub-acc" data-hub="17.1">
   <summary class="hub-summary">
     <span class="hub-arrow">▸</span>
     <span class="hub-label"><span class="hub-num">17.1</span> Functional Anatomy, Physiology, and Investigations</span>
@@ -41360,88 +41873,163 @@ If pH &lt;7.35 + PaCO2 high + HCO3- high + BE positive
   </div>
 </details>
 
+    </div>
   </div>
 </div>
 <script>
 const CHAPTER_SLUG = "17-respiratory-medicine";
+const MANIFEST_URL = "/17-respiratory-medicine/topics.json";
+let MANIFEST = null;
+let CURRENT_TOPIC = null;
 
-// Inline expand/collapse helpers
+// ---- Desktop: load topics.json + sidebar nav + topic render ----
+async function loadManifest() {
+  try {
+    const res = await fetch(MANIFEST_URL);
+    MANIFEST = await res.json();
+    const params = new URLSearchParams(location.search);
+    const t = params.get("topic");
+    if (t) showTopic(t);
+  } catch(e) {
+    console.error("Failed to load topics.json", e);
+  }
+}
+
+function navigateTopic(dir) {
+  if (!MANIFEST || !CURRENT_TOPIC) return;
+  const i = MANIFEST.topics.findIndex(x => x.local_prefix === CURRENT_TOPIC.local_prefix);
+  const ni = i + dir;
+  if (ni < 0 || ni >= MANIFEST.topics.length) return;
+  showTopic(MANIFEST.topics[ni].local_prefix);
+}
+
 function toggleTopicImage(btn) {
   btn.classList.toggle("collapsed");
   const wrap = btn.nextElementSibling;
   if (wrap) {
     wrap.classList.toggle("collapsed");
-    btn.querySelector("span:last-child").textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
+    const span = btn.querySelector("span:last-child");
+    if (span) span.textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
   }
 }
 
-function expandAll() {
-  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
-  const p = new URL(location.href);
-  if (p.searchParams.get("expand") !== "all") {
-    p.searchParams.set("expand", "all");
-    history.replaceState(null, "", p);
+function showTopic(localPrefix) {
+  const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
+  if (!t) return;
+  CURRENT_TOPIC = t;
+  document.querySelectorAll(".topic-item").forEach(el => el.classList.remove("active"));
+  const activeEl = document.querySelector(`.topic-item[data-topic="${localPrefix}"]`);
+  if (activeEl) {
+    activeEl.classList.add("active");
+    activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
+  const url = new URL(location.href);
+  url.searchParams.set("topic", localPrefix);
+  history.replaceState(null, "", url);
+  const container = document.getElementById("topicContainer");
+  container.className = "topic-detail";
+  const imgHtml = t.png ? `
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:12px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/17-respiratory-medicine/${t.png}" alt="${t.title}"></div>
+    </div>` : "";
+  container.innerHTML = `
+    <div class="crumbs"><a href="/">Home</a> · <a href="/17-respiratory-medicine/">Respiratory Medicine</a> · <span>${t.hub_num} · ${t.hub_name}</span></div>
+    <div class="topic-header">
+      <div>
+        <h1>${t.title}</h1>
+        <p class="meta">${t.hub_num} · ${t.local_prefix} · ${t.slug}</p>
+      </div>
+      <div class="topic-actions">
+        ${t.png ? `<a href="/17-respiratory-medicine/${t.png}" download>Download PNG</a>` : ""}
+        ${t.md ? `<a href="/17-respiratory-medicine/${t.md}" download>Download MD</a>` : ""}
+        <button onclick="navigateTopic(-1)">← Prev</button>
+        <button onclick="navigateTopic(1)">Next →</button>
+      </div>
+    </div>
+    <div class="topic-content">${t.html}</div>
+    ${imgHtml}
+  `;
 }
 
-function collapseAll() {
-  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = false);
+document.getElementById("topicSearch").addEventListener("input", function(e) {
+  const q = e.target.value.toLowerCase();
+  let visible = 0;
+  document.querySelectorAll(".topic-item").forEach(el => {
+    const text = el.textContent.toLowerCase();
+    const show = !q || text.includes(q);
+    el.style.display = show ? "" : "none";
+    if (show) visible++;
+  });
+  document.querySelectorAll(".hub-group").forEach(g => {
+    const anyVisible = Array.from(g.querySelectorAll(".topic-item")).some(el => el.style.display !== "none");
+    g.style.display = anyVisible ? "" : "none";
+  });
+  document.getElementById("noResults").classList.toggle("show", visible === 0);
+});
+
+loadManifest();
+
+// ---- Mobile: accordion expand/collapse + search ----
+function expandAllMobile() {
+  document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = true);
+}
+function collapseAllMobile() {
+  document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = false);
   const p = new URL(location.href);
   p.searchParams.delete("topic");
   p.searchParams.delete("expand");
   history.replaceState(null, "", p);
 }
-
-// Sidebar search filter — auto-expand matching items
-document.getElementById("topicSearch").addEventListener("input", function(e) {
+document.getElementById("topicSearchMobile").addEventListener("input", function(e) {
   const q = e.target.value.trim().toLowerCase();
   let visible = 0;
-  document.querySelectorAll(".topic-acc").forEach(el => {
+  document.querySelectorAll("#hubAccordionMobile .topic-acc").forEach(el => {
     const text = el.textContent.toLowerCase();
     const show = !q || text.includes(q);
     el.style.display = show ? "" : "none";
     if (show) {
       visible++;
       if (q) {
-        // Auto-expand matching topics AND their parent hub when searching
         el.open = true;
         const hub = el.closest(".hub-acc");
         if (hub) hub.open = true;
       }
     }
   });
-  // Hide empty hubs
-  document.querySelectorAll(".hub-acc").forEach(g => {
+  document.querySelectorAll("#hubAccordionMobile .hub-acc").forEach(g => {
     const anyVisible = Array.from(g.querySelectorAll(".topic-acc")).some(el => el.style.display !== "none");
     g.style.display = anyVisible ? "" : "none";
     if (!q) g.open = false;
   });
-  document.getElementById("noResults").classList.toggle("show", visible === 0);
+  document.getElementById("noResultsMobile").classList.toggle("show", visible === 0);
 });
 
-// On load: open topic from URL ?topic=...
+// On mobile: open topic from URL ?topic=...
 (function() {
+  if (window.innerWidth > 900) return;
   const params = new URLSearchParams(location.search);
   const t = params.get("topic");
   if (t) {
-    const el = document.querySelector(`.topic-acc[data-topic="${t}"]`);
+    const el = document.querySelector(`#hubAccordionMobile .topic-acc[data-topic="${t}"]`);
     if (el) {
-      // Open topic + parent hub
       el.open = true;
       const hub = el.closest(".hub-acc");
       if (hub) hub.open = true;
-      // Scroll into view after layout
       setTimeout(() => el.scrollIntoView({ block: "start", behavior: "smooth" }), 100);
     }
   } else if (params.get("expand") === "all") {
-    document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
+    document.querySelectorAll("#hubAccordionMobile details").forEach(d => d.open = true);
   }
 })();
 </script>
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 19:04 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 19:55 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside
