@@ -451,6 +451,8 @@ main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
   position: relative; overflow: hidden;
   text-decoration: none !important; color: inherit !important;
   display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-start;
+  text-align: center;
   cursor: pointer; min-height: 150px;
 }
 .chapter-card::before {
@@ -468,23 +470,24 @@ main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
   border-radius: 4px; font-size: 10px; font-weight: 700;
   font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
   margin-bottom: 8px;
-  align-self: flex-start;
+  align-self: center;
 }
 .chapter-card h2 {
   font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
   margin-bottom: 10px; line-height: 1.25;
-  flex: 1;
+  flex: 1; text-align: center;
 }
 .chapter-card .ch-stats {
   display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid var(--border);
   font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 12px;
+  justify-content: center;
 }
-.chapter-card .ch-stats .cs { display: flex; flex-direction: column; }
-.chapter-card .ch-stats .num { font-size: 16px; font-weight: 700; color: var(--accent); line-height: 1; }
-.chapter-card .ch-stats .label { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+.chapter-card .ch-stats .cs { display: flex; flex-direction: column; align-items: center; }
+.chapter-card .ch-stats .num { font-size: 16px; font-weight: 700; color: var(--accent); line-height: 1; text-align: center; }
+.chapter-card .ch-stats .label { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; text-align: center; }
 .chapter-card .ch-links {
   display: flex; gap: 12px; margin-top: 8px;
-  font-size: 11px;
+  font-size: 11px; justify-content: center;
 }
 .chapter-card .ch-link-primary {
   color: var(--accent); font-weight: 600; text-decoration: none !important;
@@ -667,6 +670,76 @@ main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
 }
 .topic-detail .topic-content hr {
   border: none; border-top: 1px solid var(--border); margin: 24px 0;
+}
+
+/* ===== Mermaid mindmap & flowchart (rendered as styled HTML) ===== */
+.topic-detail .topic-content .mindmap {
+  background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+  border: 1px solid #c9a96e;
+  border-radius: 6px; padding: 10px 12px 12px; margin: 12px 0;
+  text-align: center; overflow-x: auto;
+}
+.topic-detail .topic-content .mm-root {
+  display: inline-block;
+  font-size: 14px; font-weight: 800; color: #8b3a3a;
+  background: #fff; border: 2px solid #8b3a3a; border-radius: 14px;
+  padding: 4px 16px; margin: 0 auto 8px; letter-spacing: 0.3px;
+}
+.topic-detail .topic-content .mm-branches {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  align-items: flex-start; margin-top: 6px;
+}
+.topic-detail .topic-content .mm-branch {
+  background: #fff; border: 1px solid #5a7a5a; border-radius: 6px;
+  padding: 6px 8px 8px; min-width: 120px; flex: 1 1 auto; max-width: 240px;
+}
+.topic-detail .topic-content .mm-l1 {
+  font-size: 12px; font-weight: 800; color: #8b3a3a;
+  text-align: center; border-bottom: 1px solid #d4a574;
+  padding-bottom: 4px; margin-bottom: 5px; letter-spacing: 0.3px;
+}
+.topic-detail .topic-content .mm-l2 {
+  font-size: 11px; color: #1f2937; padding: 2px 0;
+  border-left: 2px solid #5a7a5a; padding-left: 6px; margin: 2px 0;
+  text-align: left;
+}
+.topic-detail .topic-content .mm-l3, .topic-detail .topic-content .mm-deep {
+  font-size: 10px; color: #4b5563; padding-left: 10px; line-height: 1.3;
+  text-align: left;
+}
+.topic-detail .topic-content .flowchart {
+  background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+  border: 1px solid #b8a878; border-radius: 6px;
+  padding: 10px 10px 12px; margin: 12px 0; text-align: center;
+  overflow-x: auto;
+}
+.topic-detail .topic-content .fc-title {
+  font-size: 10px; font-weight: 800; color: #6b5d3f;
+  letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px;
+}
+.topic-detail .topic-content .fc-level {
+  display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  align-items: center; margin: 4px 0;
+}
+.topic-detail .topic-content .fc-node {
+  background: #fff; border: 1.5px solid #8b3a3a; color: #1f2937;
+  border-radius: 5px; padding: 4px 10px;
+  font-size: 11px; font-weight: 700; display: inline-block;
+  letter-spacing: 0.2px; line-height: 1.3; max-width: 200px;
+  text-align: center;
+}
+.topic-detail .topic-content .fc-arrows {
+  color: #8b3a3a; font-size: 14px; font-weight: 700;
+  margin: 2px 0; letter-spacing: 4px;
+}
+.topic-detail .topic-content .codeblock {
+  background: var(--code-bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 12px 14px; margin: 10px 0;
+  overflow-x: auto;
+}
+.topic-detail .topic-content .codeblock code {
+  background: transparent; padding: 0; font-size: 12px;
+  color: var(--text); font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
 }
 
 /* ===== Old chapter header (kept for legacy chapter pages) ===== */
@@ -854,6 +927,147 @@ def clean_md(text: str) -> str:
     return text
 
 
+# ----- Mermaid mindmap/flowchart helpers (ported from render_topic.py) -----
+
+def _esc(s: str) -> str:
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def render_mindmap_md(text: str) -> str:
+    """Convert mermaid mindmap to a styled tree (matches PNG infographic layout)."""
+    lines = [l for l in text.split("\n") if l.strip()]
+    items = []
+    for line in lines:
+        if line.strip().lower().startswith("mindmap"):
+            continue
+        stripped = line.lstrip()
+        raw_indent = len(line) - len(stripped)
+        indent = raw_indent // 2
+        # Treat first non-mindmap line as root regardless of indent
+        if "((" in stripped:
+            m = re.search(r"\(\((.+?)\)\)", stripped)
+            text_v = m.group(1) if m else stripped
+        else:
+            text_v = stripped
+        items.append((indent, text_v))
+    if not items:
+        return ""
+    # First item is always the root; rebadge others by depth from first
+    html = ['<div class="mindmap">']
+    html.append(f'<div class="mm-root">{_esc(items[0][1])}</div>')
+    html.append('<div class="mm-branches">')
+    current_branch = None
+    # Compute relative depth (treat first item's indent as 0 for branch structure)
+    root_indent = items[0][0]
+    for indent, text_v in items[1:]:
+        rel = max(1, indent - root_indent)
+        if rel == 1:
+            if current_branch is not None:
+                html.append('</div>')
+            html.append('<div class="mm-branch">')
+            html.append(f'<div class="mm-node mm-l1">{_esc(text_v)}</div>')
+            current_branch = rel
+        elif rel == 2:
+            html.append(f'<div class="mm-node mm-l2">{_esc(text_v)}</div>')
+        elif rel == 3:
+            html.append(f'<div class="mm-node mm-l3">– {_esc(text_v)}</div>')
+        else:
+            html.append(f'<div class="mm-node mm-deep">– {_esc(text_v)}</div>')
+    if current_branch is not None:
+        html.append('</div>')
+    html.append('</div>')
+    html.append('</div>')
+    return "\n".join(html)
+
+
+def render_flowchart_md(text: str) -> str:
+    """Convert mermaid flowchart/graph to a styled diagram."""
+    from collections import deque
+    lines = [l for l in text.split("\n") if l.strip()]
+    direction = "TD"
+    nodes = {}
+    edges = []
+    for line in lines:
+        s = line.strip()
+        if s.lower().startswith("flowchart") or s.lower().startswith("graph"):
+            parts = s.split()
+            if len(parts) > 1:
+                direction = parts[1].upper()
+            continue
+        edge_m = re.match(
+            r"^([A-Za-z0-9_]+)(\[[^\]]+\]|\([^)]+\)|\{[^}]+\}|>[^<]+<|\[\([^)]+\)\])?\s*(?:-->|---|--[->o]+)\s*(?:\|([^|]*)\|\s*)?([A-Za-z0-9_]+)(\[[^\]]+\]|\([^)]+\)|\{[^}]+\}|>[^<]+<|\[\([^)]+\)\])?",
+            s)
+        if edge_m:
+            from_id, from_label, edge_label, to_id, to_label = edge_m.groups()
+            if from_label:
+                inner = from_label[1:-1]  # strip outermost brackets
+                # If inner has matching braces, strip them
+                if inner.startswith("{") and inner.endswith("}"):
+                    inner = inner[1:-1]
+                nodes[from_id] = inner
+            else:
+                nodes.setdefault(from_id, from_id)
+            if to_label:
+                inner = to_label[1:-1]
+                if inner.startswith("{") and inner.endswith("}"):
+                    inner = inner[1:-1]
+                nodes[to_id] = inner
+            else:
+                nodes.setdefault(to_id, to_id)
+            edges.append((from_id, to_id, edge_label or ""))
+            continue
+        node_m = re.match(r"^([A-Za-z0-9_]+)\s*([\[\(\{].+[\]\)\}])$", s)
+        if node_m:
+            nid, nlabel = node_m.groups()
+            inner = nlabel[1:-1]
+            if inner.startswith("{") and inner.endswith("}"):
+                inner = inner[1:-1]
+            nodes[nid] = inner
+    if not nodes:
+        return f'<pre class="codeblock"><code>{_esc(text)}</code></pre>'
+
+    adj = {nid: [] for nid in nodes}
+    for f, t, lbl in edges:
+        adj.setdefault(f, []).append((t, lbl))
+        adj.setdefault(t, [])
+    incoming = {nid: 0 for nid in nodes}
+    for f, t, _ in edges:
+        incoming[t] = incoming.get(t, 0) + 1
+    roots = [nid for nid, cnt in incoming.items() if cnt == 0]
+    if not roots:
+        roots = [next(iter(nodes))]
+
+    levels = {}
+    queue = deque()
+    for r in roots:
+        levels[r] = 0
+        queue.append(r)
+    while queue:
+        nid = queue.popleft()
+        for t, _ in adj.get(nid, []):
+            if t not in levels:
+                levels[t] = levels[nid] + 1
+                queue.append(t)
+    max_level = max(levels.values()) if levels else 0
+    by_level = {}
+    for nid, lv in levels.items():
+        by_level.setdefault(lv, []).append(nid)
+
+    html = [f'<div class="flowchart" data-dir="{direction}">']
+    html.append('<div class="fc-title">⬇ Clinical Pathway</div>')
+    for lv in range(max_level + 1):
+        level_nodes = by_level.get(lv, [])
+        html.append('<div class="fc-level">')
+        for nid in level_nodes:
+            label = nodes.get(nid, nid)
+            html.append(f'<div class="fc-node" data-id="{nid}">{_esc(label)}</div>')
+        html.append('</div>')
+        if lv < max_level:
+            html.append('<div class="fc-arrows">↓</div>')
+    html.append('</div>')
+    return "\n".join(html)
+
+
 def render_md_to_html(md_text: str) -> str:
     md_text = clean_md(md_text)
     lines = md_text.split("\n")
@@ -861,6 +1075,10 @@ def render_md_to_html(md_text: str) -> str:
     in_ul = False
     in_ol = False
     in_table = False
+    in_code = False
+    code_buf = []
+    code_kind = None  # 'mindmap', 'flowchart', 'graph', 'code', None
+    code_fence_open = None
     table_rows = []
 
     def flush_list():
@@ -869,6 +1087,23 @@ def render_md_to_html(md_text: str) -> str:
             out.append("</ul>"); in_ul = False
         if in_ol:
             out.append("</ol>"); in_ol = False
+
+    def flush_code():
+        nonlocal in_code, code_buf, code_kind, code_fence_open
+        if not in_code:
+            return
+        body = "\n".join(code_buf)
+        if code_kind in ("mindmap",):
+            rendered = render_mindmap_md(body)
+        elif code_kind in ("flowchart", "graph"):
+            rendered = render_flowchart_md(body)
+        else:
+            rendered = f'<pre class="codeblock"><code>{_esc(body)}</code></pre>'
+        out.append(rendered)
+        in_code = False
+        code_buf = []
+        code_kind = None
+        code_fence_open = None
 
     def flush_table():
         nonlocal in_table, table_rows
@@ -890,6 +1125,50 @@ def render_md_to_html(md_text: str) -> str:
         return text
 
     for line in lines:
+        # Code fence detection (must run before other rules)
+        fence_m = re.match(r"^(\s*)(```+|~~~+)(.*)$", line)
+        if fence_m:
+            indent, fence, rest = fence_m.groups()
+            if not in_code:
+                # Opening fence — determine kind
+                in_code = True
+                code_buf = []
+                code_fence_open = fence[:3]
+                rest_s = rest.strip().lower()
+                if rest_s in ("mermaid", ""):
+                    # Defer kind decision to first content line
+                    code_kind = None
+                elif rest_s.startswith("mermaid") or rest_s.startswith("mindmap") or rest_s.startswith("flowchart") or rest_s.startswith("graph"):
+                    # Same-line declaration
+                    if rest_s.startswith("mindmap") or "mindmap" in rest_s:
+                        code_kind = "mindmap"
+                    elif rest_s.startswith("flowchart") or rest_s.startswith("graph") or "flowchart" in rest_s or "graph" in rest_s:
+                        code_kind = "flowchart"
+                    else:
+                        code_kind = None
+                else:
+                    code_kind = "code"
+                continue
+            else:
+                # Closing fence
+                if code_fence_open and fence.startswith(code_fence_open):
+                    flush_code()
+                else:
+                    code_buf.append(line)
+                continue
+        if in_code:
+            code_buf.append(line)
+            # Detect kind from first content line
+            if code_kind is None and line.strip():
+                first = line.strip().lower()
+                if first.startswith("mindmap"):
+                    code_kind = "mindmap"
+                elif first.startswith("flowchart") or first.startswith("graph "):
+                    code_kind = "flowchart"
+                else:
+                    code_kind = "code"
+            continue
+
         if re.match(r"^\s*---\s*$", line) and not in_table:
             flush_list()
             out.append("<hr>")
@@ -939,7 +1218,7 @@ def render_md_to_html(md_text: str) -> str:
         flush_list()
         out.append(f"<p>{inline_md(line)}</p>")
 
-    flush_list(); flush_table()
+    flush_list(); flush_table(); flush_code()
     return "\n".join(out)
 
 
