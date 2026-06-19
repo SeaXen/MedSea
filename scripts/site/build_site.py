@@ -468,8 +468,709 @@ header.site .search-box .search-more {
 }
 header.site .search-box .search-empty strong { color: var(--accent); }
 @media (max-width: 720px) {
+  /* Tablet: tighten search */
   header.site .search-box { max-width: 180px; margin: 0 6px; }
   header.site .search-box input { font-size: 11px; }
+}
+
+/* ===========================================================
+   MOBILE-ONLY LAYOUT — completely separate from desktop.
+   Desktop elements (header-left/right, .search-box in header)
+   are hidden here. A dedicated .mobile-bar is shown instead.
+   This block MUST NOT contain desktop styles.
+   =========================================================== */
+
+/* Mobile bar is hidden on desktop */
+.mobile-bar { display: none; }
+
+/* Mobile bar wrapper */
+.mobile-bar {
+  width: 100%;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 12px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.mobile-bar .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.mobile-bar .row.top {
+  justify-content: space-between;
+}
+
+.mobile-bar .logo-mini {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+}
+.mobile-bar .logo-mini .logo {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.mobile-bar .stats-mini {
+  display: flex;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--text-dim);
+}
+.mobile-bar .stats-mini .stat {
+  background: var(--bg-3);
+  padding: 3px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.mobile-bar .stats-mini .stat .num {
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 3px;
+}
+
+.mobile-bar .menu-btn,
+.mobile-bar .github-btn {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mobile-bar .menu-btn:hover,
+.mobile-bar .github-btn:hover {
+  background: var(--bg-4);
+  color: var(--accent);
+}
+
+.mobile-bar .current-ch-label {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mobile-bar .search-row .search-box-m {
+  position: relative;
+  flex: 1;
+}
+.mobile-bar .search-row input {
+  width: 100%;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 9px 12px 9px 32px;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+.mobile-bar .search-row input:focus {
+  border-color: var(--accent);
+}
+.mobile-bar .search-row .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  font-size: 13px;
+  pointer-events: none;
+}
+.mobile-bar .search-row .search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  max-height: 60vh;
+  overflow-y: auto;
+  display: none;
+  z-index: 300;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.mobile-bar .search-row .search-results.open {
+  display: block;
+}
+.mobile-bar .search-row .result-item {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mobile-bar .search-row .result-item:hover,
+.mobile-bar .search-row .result-item.active {
+  background: var(--bg-3);
+}
+.mobile-bar .search-row .result-item:last-child {
+  border-bottom: none;
+}
+.mobile-bar .search-row .result-item .badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  align-self: flex-start;
+}
+.mobile-bar .search-row .result-item .crumb {
+  color: var(--text-dim);
+  font-size: 10px;
+}
+.mobile-bar .search-row .result-item mark {
+  background: var(--accent);
+  color: #fff;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Mobile chapter menu drawer */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 400;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu .panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  max-width: 85vw;
+  background: var(--bg-2);
+  border-left: 1px solid var(--border);
+  padding: 16px 12px;
+  overflow-y: auto;
+  box-shadow: -4px 0 16px rgba(0,0,0,0.5);
+}
+.mobile-menu .panel h3 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+.mobile-menu .panel a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 13px;
+  border: 1px solid transparent;
+}
+.mobile-menu .panel a:hover,
+.mobile-menu .panel a.active {
+  background: var(--bg-3);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.mobile-menu .panel a.soon {
+  opacity: 0.5;
+  cursor: default;
+}
+.mobile-menu .panel a .num {
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 28px;
+  flex-shrink: 0;
+}
+.mobile-menu .panel a .name {
+  flex: 1;
+}
+.mobile-menu .panel a .badge {
+  color: var(--accent);
+  font-size: 10px;
+}
+.mobile-menu .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Mobile chapter page: stacked layout */
+/* ===== Chapter accordion layout ===== */
+.chapter-page {
+  display: block;
+  padding: 20px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* ===== Chapter accordion layout ===== */
+.chapter-page {
+  display: block;
+  padding: 20px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.chapter-header {
+  padding: 12px 0 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  border-left: 3px solid var(--accent-color, var(--accent));
+  padding-left: 14px;
+}
+.chapter-page > .chapter-header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  line-height: 1.2;
+  color: var(--text);
+}
+.chapter-page > .chapter-header .meta {
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+.chapter-page > .chapter-header .meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.chapter-page > .chapter-header .meta a:hover {
+  text-decoration: underline;
+}
+
+.chapter-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+.chapter-toolbar .search {
+  flex: 1;
+  min-width: 200px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 9px 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+.chapter-toolbar .search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.18);
+}
+.chapter-toolbar .toolbar-actions {
+  display: flex;
+  gap: 6px;
+}
+.chapter-toolbar .btn-acc {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.chapter-toolbar .btn-acc:hover {
+  background: var(--bg-4);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.chapter-toolbar .no-results {
+  flex-basis: 100%;
+  color: var(--text-dim);
+  font-size: 12px;
+  text-align: center;
+  padding: 6px;
+  display: none;
+}
+.chapter-toolbar .no-results.show {
+  display: block;
+}
+
+/* Hub accordion */
+.hub-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hub-acc {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.hub-acc[open] {
+  border-color: var(--accent-color, var(--accent));
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+.hub-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+  transition: background 0.15s;
+  background: var(--bg-2);
+}
+.hub-summary:hover {
+  background: var(--bg-3);
+}
+.hub-summary::-webkit-details-marker {
+  display: none;
+}
+.hub-arrow {
+  color: var(--accent);
+  font-size: 14px;
+  transition: transform 0.2s;
+  display: inline-block;
+  width: 14px;
+}
+.hub-acc[open] > .hub-summary .hub-arrow {
+  transform: rotate(90deg);
+}
+.hub-num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 11px;
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+.hub-label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.hub-count {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+  background: var(--bg-3);
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.hub-body {
+  padding: 4px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+/* Topic accordion */
+.topic-acc {
+  background: var(--bg-2);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-left: 14px;
+  transition: all 0.15s;
+  position: relative;
+}
+.topic-acc::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 24px;
+  width: 8px;
+  height: 1px;
+  background: var(--border);
+}
+.topic-acc:hover {
+  background: var(--bg-3);
+  border-color: var(--border);
+}
+.topic-acc[open] {
+  background: var(--bg-3);
+  border-color: var(--accent-color, var(--accent));
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+}
+.topic-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  border-radius: 8px;
+}
+.topic-summary::-webkit-details-marker {
+  display: none;
+}
+.topic-arrow {
+  color: var(--text-dim);
+  font-size: 12px;
+  transition: transform 0.2s;
+  display: inline-block;
+  width: 12px;
+}
+.topic-acc[open] > .topic-summary .topic-arrow {
+  transform: rotate(90deg);
+  color: var(--accent);
+}
+.topic-num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px;
+  color: var(--text-dim);
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  flex-shrink: 0;
+  min-width: 48px;
+  text-align: center;
+}
+.topic-acc[open] > .topic-summary .topic-num {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(56, 189, 248, 0.08);
+}
+.topic-title {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.topic-body {
+  padding: 12px 16px 18px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  margin-top: 6px;
+  border-radius: 0 0 8px 8px;
+}
+.topic-content {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+}
+.topic-content h1 { font-size: 22px; margin: 16px 0 10px; color: var(--accent); }
+.topic-content h2 { font-size: 18px; margin: 16px 0 8px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 10px; }
+.topic-content h3 { font-size: 15px; margin: 14px 0 6px; color: var(--text); }
+.topic-content p { margin: 8px 0; }
+.topic-content ul, .topic-content ol { margin: 8px 0; padding-left: 24px; }
+.topic-content li { margin: 4px 0; }
+.topic-content pre {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 12px;
+}
+.topic-content code {
+  background: var(--bg-3);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.topic-content pre code {
+  background: transparent;
+  padding: 0;
+}
+.topic-content table {
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 13px;
+  width: 100%;
+}
+.topic-content th, .topic-content td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+}
+.topic-content th {
+  background: var(--bg-3);
+  font-weight: 600;
+}
+.topic-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 8px 14px;
+  margin: 10px 0;
+  background: var(--bg-2);
+  border-radius: 0 6px 6px 0;
+  color: var(--text-dim);
+}
+.topic-content img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* Topic image toggle (collapsible) */
+.topic-image-toggle {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--accent);
+  transition: background 0.15s;
+}
+.topic-image-toggle:hover {
+  background: var(--bg-3);
+}
+.topic-image-toggle .toggle-icon {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.topic-image-toggle:not(.collapsed) .toggle-icon {
+  transform: rotate(180deg);
+}
+.topic-image-wrap {
+  margin-top: 8px;
+  overflow: hidden;
+  max-height: 5000px;
+  transition: max-height 0.4s ease;
+}
+.topic-image-wrap.collapsed {
+  max-height: 0;
+  margin-top: 0;
+}
+.topic-image {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+}
+.topic-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Old legacy classes (kept for backward compat with existing topics.json users) */
+.chapter-sidebar {
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+@media (max-width: 900px) {
+  /* On mobile: hide desktop elements, show mobile bar */
+  header.site { display: none; }
+  .mobile-bar { display: flex; }
+
+  /* Single column chapter page */
+  .chapter-page { padding: 12px 12px 60px; }
+
+  /* Accordion: tighter on mobile */
+  .hub-summary { padding: 12px 14px; }
+  .hub-label { font-size: 13px; }
+  .topic-acc { margin-left: 8px; }
+  .topic-summary { padding: 9px 12px; }
+  .topic-title { font-size: 12px; }
+  .topic-num { font-size: 9px; min-width: 42px; }
+  .topic-body { padding: 10px 12px 14px; }
+  .topic-content { font-size: 13px; line-height: 1.55; }
+  .topic-content h1 { font-size: 18px; }
+  .topic-content h2 { font-size: 16px; }
+  .topic-content h3 { font-size: 14px; }
+  .topic-content pre { font-size: 11px; padding: 8px 10px; }
+  .chapter-toolbar { position: static; }
+  .chapter-toolbar .search { font-size: 12px; padding: 8px 10px; }
+  .chapter-toolbar .btn-acc { font-size: 11px; padding: 6px 10px; }
+
+  /* Compact 2-col grid */
+  .chapters-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .ch-card { padding: 12px 6px; border-radius: 8px; }
+  .ch-card .ch-num { font-size: 20px; }
+  .ch-card .ch-title { font-size: 11px; line-height: 1.3; }
+  .ch-card .ch-meta { font-size: 9px; }
+
+  /* Index page header */
+  .index-hero h1 { font-size: 26px; }
+  .index-hero p { font-size: 14px; }
+  .index-stats { gap: 16px; flex-wrap: wrap; }
+  .stat-pill { font-size: 12px; padding: 6px 12px; }
+
+  /* Topic page */
+  .topic-page { padding: 12px; }
+  .topic-page h1 { font-size: 22px; }
+  .topic-page h2 { font-size: 18px; }
+  .topic-page h3 { font-size: 15px; }
+  .topic-page pre { font-size: 11px; padding: 10px; }
+  .topic-page table { font-size: 12px; }
+
+  /* Back-to-top button */
+  .back-top { bottom: 12px; right: 12px; padding: 8px 12px; font-size: 12px; }
+}
+
+@media (max-width: 380px) {
+  /* Tiny phones: 2-col stays but tighter */
+  .chapters-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .ch-card { padding: 10px 4px; }
+  .ch-card .ch-num { font-size: 18px; }
+  .ch-card .ch-title { font-size: 10px; }
+  .mobile-bar .stats-mini { display: none; }
 }
 
 /* ===== Chapter dropdown ===== */
@@ -566,7 +1267,7 @@ main {
 @media (max-width: 1500px) { .chapters-grid { grid-template-columns: repeat(4, 1fr); } }
 @media (max-width: 1200px) { .chapters-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 850px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 550px)  { .chapters-grid { grid-template-columns: 1fr; } }
+@media (max-width: 550px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
 .section-title {
   font-size: 13px; color: var(--text-dim);
   text-transform: uppercase; letter-spacing: 0.12em;
@@ -628,97 +1329,7 @@ main {
 .chapter-card .ch-link-primary:hover { color: #7dd3fc; }
 .chapter-card .ch-link-secondary:hover { color: var(--accent); }
 
-/* ===== Chapter page (SPA: sidebar + main) ===== */
-.chapter-page {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 0;
-  min-height: calc(100vh - 65px);
-}
-.chapter-sidebar {
-  background: var(--bg-2);
-  border-right: 1px solid var(--border);
-  padding: 20px 16px;
-  overflow-y: auto;
-  max-height: calc(100vh - 65px);
-  position: sticky; top: 65px;
-}
-.chapter-sidebar .search {
-  width: 100%; padding: 8px 12px;
-  background: var(--bg-3); border: 1px solid var(--border);
-  border-radius: 8px; color: var(--text); font-size: 13px;
-  font-family: inherit;
-  margin-bottom: 12px;
-}
-.chapter-sidebar .search:focus { outline: none; border-color: var(--accent); }
-.chapter-sidebar .hub-group { margin-bottom: 14px; }
-.chapter-sidebar .hub-group h3 {
-  font-size: 11px; color: var(--accent);
-  text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 6px 8px; margin: 0 0 4px;
-  font-weight: 700;
-  background: rgba(56, 189, 248, 0.06);
-  border-left: 2px solid var(--accent);
-  border-radius: 0 4px 4px 0;
-}
-.chapter-sidebar .topic-item {
-  display: block; padding: 5px 10px 5px 22px;
-  border-radius: 4px;
-  color: var(--text); font-size: 12.5px; font-weight: 500;
-  cursor: pointer; transition: all 0.1s;
-  border: 1px solid transparent;
-  text-decoration: none !important;
-  position: relative;
-  line-height: 1.35;
-}
-.chapter-sidebar .topic-item:hover { background: var(--bg-3); color: #fff; }
-.chapter-sidebar .topic-item.active {
-  background: rgba(56, 189, 248, 0.15);
-  color: var(--accent);
-  font-weight: 600;
-  border-color: rgba(56, 189, 248, 0.3);
-}
-.chapter-sidebar .topic-item .num {
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  font-size: 10px; margin-right: 6px;
-  color: var(--text-dim);
-  font-weight: 400;
-}
-.chapter-sidebar .topic-item.active .num { color: var(--accent); font-weight: 600; }
-.chapter-sidebar .no-results {
-  color: var(--text-dim); font-size: 12px;
-  padding: 12px 8px; text-align: center;
-  display: none;
-}
-.chapter-sidebar .no-results.show { display: block; }
-
-.chapter-main {
-  padding: 16px 24px;
-  overflow-x: hidden;
-}
-.chapter-main .chapter-header {
-  padding: 8px 0 10px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
-  border-left: 3px solid var(--accent-color, var(--accent));
-  padding-left: 14px;
-  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
-}
-.chapter-main .chapter-header h1 {
-  font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0;
-  line-height: 1.2;
-}
-.chapter-main .chapter-header .meta {
-  color: var(--text-dim); font-size: 12px;
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
-}
-.chapter-main .chapter-header .meta a { color: var(--accent); text-decoration: none; }
-.chapter-main .chapter-header .meta a:hover { text-decoration: underline; }
-
-.chapter-main .placeholder {
-  text-align: center; padding: 60px 20px;
-  color: var(--text-dim);
-}
-.chapter-main .placeholder .icon { font-size: 48px; margin-bottom: 12px; opacity: 0.5; }
+/* ===== Chapter accordion SPA (replaces old sidebar+main layout) ===== */
 
 /* ===== Topic content (main pane) ===== */
 .topic-detail .crumbs {
@@ -935,15 +1546,6 @@ footer {
 footer a { color: var(--text-dim); }
 footer a:hover { color: var(--accent); }
 
-@media (max-width: 900px) {
-  header.site { padding: 8px 16px; }
-  header.site .header-inner { flex-wrap: wrap; gap: 8px; }
-  header.site .header-left { flex: 1 1 auto; }
-  header.site .header-right { margin-left: auto; }
-  header.site .search-box { order: 3; flex: 1 1 100%; max-width: 100%; margin-top: 4px; }
-  .chapter-page { grid-template-columns: 1fr; }
-  .chapter-sidebar { position: static; max-height: 400px; }
-  .chapters-grid { grid-template-columns: 1fr; }
 }
 """
 
@@ -989,6 +1591,7 @@ def page_header(title, current_ch_slug=None, stats=None):
         stats_html += f'<span class="stat"><span class="num">{num}</span><span class="label">{label}</span></span>'
 
     # Find current chapter display
+    ch_display = ''
     if current_ch_slug and current_ch_slug in BUILT_CHAPTERS:
         ch_display = BUILT_CHAPTERS[current_ch_slug][0]
         btn_label = f'<span class="current-ch">{ch_display}</span> <span class="arrow">▾</span>'
@@ -1033,6 +1636,36 @@ def page_header(title, current_ch_slug=None, stats=None):
     </div>
   </div>
 </header>
+<!-- MOBILE-ONLY BAR — hidden on desktop via CSS, shown via @media (max-width: 900px) -->
+<div class="mobile-bar">
+  <div class="row top">
+    <div class="logo-mini">
+      <span class="logo">⚕</span>
+      <a href="/">MedSea</a>
+    </div>
+    <button class="menu-btn" type="button" onclick="document.getElementById('mobileMenu').classList.add('open')">☰ Chapters</button>
+  </div>
+  <div class="row search-row">
+    <div class="search-box-m" id="searchBoxMobile">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInputMobile" placeholder="Search topics…" autocomplete="off" spellcheck="false">
+      <div class="search-results" id="searchResultsMobile"></div>
+    </div>
+  </div>
+  <div class="row" style="justify-content: space-between; font-size: 11px; color: var(--text-dim);">
+    {('<span class="current-ch-label">'+ch_display+'</span>') if current_ch_slug else '<span></span>'}
+    <a class="github-btn" href="https://github.com/SeaXen/MedSea" target="_blank">GitHub ↗</a>
+  </div>
+</div>
+
+<!-- MOBILE-ONLY CHAPTER MENU DRAWER -->
+<div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this) this.classList.remove('open')">
+  <div class="panel">
+    <button class="close-btn" type="button" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+    <h3>Chapters</h3>
+    {''.join(dropdown_items)}
+  </div>
+</div>
 <script>
 // ===== Universal topic search =====
 (function() {{
@@ -1150,6 +1783,116 @@ def page_header(title, current_ch_slug=None, stats=None):
     }} else if (e.key === 'Enter' && activeIdx >= 0 && hits[activeIdx]) {{
       e.preventDefault();
       hits[activeIdx].click();
+    }}
+  }});
+}})();
+
+// ===== Mobile search (separate code, doesn't touch desktop) =====
+(function() {{
+  const input = document.getElementById('searchInputMobile');
+  const results = document.getElementById('searchResultsMobile');
+  const box = document.getElementById('searchBoxMobile');
+  if (!input) return;
+
+  let sharedIdx = null;
+  let debounce = null;
+  let activeIdx = -1;
+  let hits = [];
+
+  function loadIdx() {{
+    if (sharedIdx) return Promise.resolve(sharedIdx);
+    return fetch('/search_index.json').then(r => r.json()).then(d => {{ sharedIdx = d; return d; }});
+  }}
+
+  function escHtml(s) {{
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }}
+
+  function highlight(text, q) {{
+    if (!q) return escHtml(text);
+    const i = text.toLowerCase().indexOf(q.toLowerCase());
+    if (i < 0) return escHtml(text);
+    return escHtml(text.slice(0, i)) + '<mark>' + escHtml(text.slice(i, i + q.length)) + '</mark>' + escHtml(text.slice(i + q.length));
+  }}
+
+  function search(q) {{
+    loadIdx().then(data => {{
+      const ql = q.toLowerCase();
+      hits = [];
+      for (const item of data) {{
+        const t = item.title.toLowerCase();
+        const h = item.hub_name.toLowerCase();
+        const c = item.chapter_name.toLowerCase();
+        let score = 0;
+        if (t === ql) score = 100;
+        else if (t.startsWith(ql)) score = 80;
+        else if (t.includes(ql)) score = 60;
+        else if (h.includes(ql)) score = 40;
+        else if (c.includes(ql)) score = 20;
+        if (item.topic && item.topic.startsWith(ql)) score = Math.max(score, 70);
+        if (score > 0) hits.push({{ item, score }});
+      }}
+      hits.sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title));
+      const top = hits.slice(0, 30);
+      activeIdx = -1;
+      if (top.length === 0) {{
+        results.innerHTML = '<div class="result-item" style="cursor:default;color:var(--text-dim);">No topics match "<strong style="color:var(--accent)">' + escHtml(q) + '</strong>"</div>';
+      }} else {{
+        results.innerHTML = top.map(h => {{
+          const it = h.item;
+          return '<a class="result-item" href="' + it.url + '?topic=' + encodeURIComponent(it.topic) + '">' +
+            '<span class="badge">Ch ' + it.chapter_num + '</span>' +
+            '<span>' + highlight(it.title, q) + '</span>' +
+            '<span class="crumb">' + highlight(it.chapter_name, q) + ' · ' + it.topic + '</span>' +
+          '</a>';
+        }}).join('');
+      }}
+      results.classList.add('open');
+    }}).catch(err => {{
+      results.innerHTML = '<div class="result-item" style="cursor:default;color:var(--text-dim);">Search index unavailable.</div>';
+      results.classList.add('open');
+    }});
+  }}
+
+  input.addEventListener('input', function(e) {{
+    clearTimeout(debounce);
+    const q = e.target.value.trim();
+    if (q.length < 2) {{
+      results.classList.remove('open');
+      results.innerHTML = '';
+      return;
+    }}
+    debounce = setTimeout(() => search(q), 150);
+  }});
+
+  input.addEventListener('focus', function() {{
+    if (input.value.trim().length >= 2) results.classList.add('open');
+  }});
+
+  document.addEventListener('click', function(e) {{
+    if (!box.contains(e.target)) {{
+      results.classList.remove('open');
+    }}
+  }});
+
+  input.addEventListener('keydown', function(e) {{
+    const items = results.querySelectorAll('.result-item');
+    if (e.key === 'ArrowDown') {{
+      e.preventDefault();
+      activeIdx = Math.min(activeIdx + 1, items.length - 1);
+      items.forEach((it, i) => it.classList.toggle('active', i === activeIdx));
+      if (items[activeIdx]) items[activeIdx].scrollIntoView({{ block: 'nearest' }});
+    }} else if (e.key === 'ArrowUp') {{
+      e.preventDefault();
+      activeIdx = Math.max(activeIdx - 1, 0);
+      items.forEach((it, i) => it.classList.toggle('active', i === activeIdx));
+      if (items[activeIdx]) items[activeIdx].scrollIntoView({{ block: 'nearest' }});
+    }} else if (e.key === 'Enter' && activeIdx >= 0 && items[activeIdx]) {{
+      e.preventDefault();
+      items[activeIdx].click();
+    }} else if (e.key === 'Escape') {{
+      results.classList.remove('open');
+      input.blur();
     }}
   }});
 }})();
@@ -1698,7 +2441,14 @@ def write_index(site_data):
 
 
 def write_chapter_spa(ch_slug, ch_name, ch_url, ch_color, info):
-    """Build chapter SPA with sidebar (topics) | main (topic content)."""
+    """Build chapter SPA with collapsible hub accordions + expandable topic accordions.
+
+    Layout:
+    - Each hub = <details class="hub-acc"> with hub name + topic count
+    - Inside hub, each topic = <details class="topic-acc"> with topic number + title
+    - Inside topic, full content (HTML rendered from MD) appears when expanded
+    - Search filters in real-time, auto-expands matching hubs/topics
+    """
     ch_display_num = ch_slug.split("-")[0]
     stats = [
         (info["n_hubs"], "Hubs"),
@@ -1707,15 +2457,12 @@ def write_chapter_spa(ch_slug, ch_name, ch_url, ch_color, info):
     ]
     html = page_header(f"{ch_name} · MedSea", current_ch_slug=ch_slug, stats=stats)
 
-    # Build sidebar items grouped by hub
-    sidebar_html = ""
-    topics_for_manifest = []  # for topics.json
+    # First pass: collect topics per hub + render content
+    topics_for_manifest = []
+    rendered_topics = {}  # local_prefix -> (md_html, png_rel, t_data)
 
     for hub_num in sorted(info["by_hub"].keys()):
         hub_topics = sorted(info["by_hub"][hub_num], key=lambda t: t["local_prefix"])
-        hub_name = info["hub_names"].get(hub_num, hub_num)
-        sidebar_html += f'<div class="hub-group" data-hub="{hub_num}">\n'
-        sidebar_html += f'  <h3>{hub_num} · {hub_name}</h3>\n'
         for t in hub_topics:
             title = t["slug"].replace("-", " ").title()
             if t["folder"]:
@@ -1724,19 +2471,65 @@ def write_chapter_spa(ch_slug, ch_name, ch_url, ch_color, info):
             else:
                 png_rel = f"diseases/{t['local_prefix']}-{t['slug']}.png"
                 md_rel = f"diseases/{t['local_prefix']}-{t['slug']}.md"
-            sidebar_html += f'  <a class="topic-item" data-topic="{t["local_prefix"]}" data-hub="{hub_num}" href="?topic={t["local_prefix"]}"><span class="num">{t["local_prefix"]}</span>{title}</a>\n'
+            png_path = SITE / ch_slug / png_rel
+            md_path = SITE / ch_slug / md_rel
+            png_exists = png_path.exists()
+            md_exists = md_path.exists()
             topics_for_manifest.append({
                 "local_prefix": t["local_prefix"],
                 "hub_num": hub_num,
-                "hub_name": hub_name,
+                "hub_name": info["hub_names"].get(hub_num, hub_num),
                 "slug": t["slug"],
                 "title": title,
-                "png": png_rel if (SITE / ch_slug / png_rel).exists() else None,
-                "md": md_rel if (SITE / ch_slug / md_rel).exists() else None,
+                "png": png_rel if png_exists else None,
+                "md": md_rel if md_exists else None,
             })
-        sidebar_html += '</div>\n'
+            md_text = md_path.read_text(encoding="utf-8") if md_exists else ""
+            md_html = render_md_to_html(md_text) if md_text else "<p><em>No text content available for this topic.</em></p>"
+            rendered_topics[t["local_prefix"]] = (md_html, png_rel if png_exists else None, title)
 
-    # Pre-render all topic HTML and embed in topics.json for instant loading
+    # Build accordion HTML
+    accordion_html = ""
+    for hub_num in sorted(info["by_hub"].keys()):
+        hub_topics = sorted(info["by_hub"][hub_num], key=lambda t: t["local_prefix"])
+        hub_name = info["hub_names"].get(hub_num, hub_num)
+        n_topics = len(hub_topics)
+        accordion_html += f'<details class="hub-acc" data-hub="{hub_num}">\n'
+        accordion_html += f'  <summary class="hub-summary">\n'
+        accordion_html += f'    <span class="hub-arrow">▸</span>\n'
+        accordion_html += f'    <span class="hub-label"><span class="hub-num">{hub_num}</span> {hub_name}</span>\n'
+        accordion_html += f'    <span class="hub-count">{n_topics}</span>\n'
+        accordion_html += f'  </summary>\n'
+        accordion_html += f'  <div class="hub-body">\n'
+        for t in hub_topics:
+            title = t["slug"].replace("-", " ").title()
+            md_html, png_rel, _ = rendered_topics[t["local_prefix"]]
+            # Embed content inline so it works without JS fetch
+            img_html = ""
+            if png_rel:
+                img_html = f'''
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/{ch_slug}/{png_rel}" alt="{title}" loading="lazy"></div>
+    </div>'''
+            accordion_html += f'    <details class="topic-acc" data-topic="{t["local_prefix"]}" data-hub="{hub_num}">\n'
+            accordion_html += f'      <summary class="topic-summary">\n'
+            accordion_html += f'        <span class="topic-arrow">▸</span>\n'
+            accordion_html += f'        <span class="topic-num">{t["local_prefix"]}</span>\n'
+            accordion_html += f'        <span class="topic-title">{title}</span>\n'
+            accordion_html += f'      </summary>\n'
+            accordion_html += f'      <div class="topic-body">\n'
+            accordion_html += f'        <div class="topic-content">{md_html}</div>\n'
+            accordion_html += f'        {img_html}\n'
+            accordion_html += f'      </div>\n'
+            accordion_html += f'    </details>\n'
+        accordion_html += f'  </div>\n'
+        accordion_html += f'</details>\n'
+
+    # Pre-render all topic HTML and embed in topics.json for instant loading (backward compat)
     manifest = {
         "chapter": ch_slug,
         "chapter_name": ch_name,
@@ -1745,12 +2538,7 @@ def write_chapter_spa(ch_slug, ch_name, ch_url, ch_color, info):
         "topics": [],
     }
     for t in topics_for_manifest:
-        md_text = ""
-        if t["md"]:
-            md_path = SITE / ch_slug / t["md"]
-            if md_path.exists():
-                md_text = md_path.read_text(encoding="utf-8")
-        md_html = render_md_to_html(md_text) if md_text else "<p><em>No text content available for this topic.</em></p>"
+        md_html, _, _ = rendered_topics[t["local_prefix"]]
         manifest["topics"].append({**t, "html": md_html})
 
     (SITE / ch_slug / "topics.json").write_text(json.dumps(manifest, ensure_ascii=False))
@@ -1758,130 +2546,103 @@ def write_chapter_spa(ch_slug, ch_name, ch_url, ch_color, info):
     # Build the page
     html += f"""
 <div class="chapter-page" style="--accent-color: {ch_color}">
-  <aside class="chapter-sidebar">
-    <input type="text" class="search" id="topicSearch" placeholder="Search topics…">
+  <header class="chapter-header">
+    <h1>{ch_name}</h1>
+    <div class="meta">Davidson Ch {ch_display_num} · {info['n_hubs']} hubs · {info['n_topics']} topics · <a href="{ch_url}" target="_blank">Notion ↗</a></div>
+  </header>
+  <div class="chapter-toolbar">
+    <input type="text" class="search" id="topicSearch" placeholder="🔍 Search topics…">
+    <div class="toolbar-actions">
+      <button class="btn-acc" onclick="expandAll()">Expand all</button>
+      <button class="btn-acc" onclick="collapseAll()">Collapse all</button>
+    </div>
     <div class="no-results" id="noResults">No matching topics</div>
-    {sidebar_html}
-  </aside>
-  <section class="chapter-main">
-    <div class="chapter-header">
-      <h1>{ch_name}</h1>
-      <div class="meta">Davidson Ch {ch_display_num} · {info['n_hubs']} hubs · {info['n_topics']} topics · <a href="{ch_url}" target="_blank">Notion ↗</a></div>
-    </div>
-    <div id="topicContainer" class="topic-detail-placeholder">
-      <div class="placeholder">
-        <div class="icon">📖</div>
-        <p>Select a topic from the sidebar to view its content.</p>
-        <p style="font-size:12px; margin-top:8px;">Or pick a chapter from the header dropdown.</p>
-      </div>
-    </div>
-  </section>
+  </div>
+  <div class="hub-accordion" id="hubAccordion">
+    {accordion_html}
+  </div>
 </div>
 <script>
 const CHAPTER_SLUG = "{ch_slug}";
-const MANIFEST_URL = "/{ch_slug}/topics.json";
-let MANIFEST = null;
-let CURRENT_TOPIC = null;
 
-async function loadManifest() {{
-  const res = await fetch(MANIFEST_URL);
-  MANIFEST = await res.json();
-  // Activate topic from URL hash
-  const params = new URLSearchParams(location.search);
-  const t = params.get("topic");
-  if (t) showTopic(t);
-}}
-
-function navigateTopic(dir) {{
-  if (!MANIFEST || !CURRENT_TOPIC) return;
-  const i = MANIFEST.topics.findIndex(x => x.local_prefix === CURRENT_TOPIC.local_prefix);
-  const ni = i + dir;
-  if (ni < 0 || ni >= MANIFEST.topics.length) return;
-  showTopic(MANIFEST.topics[ni].local_prefix);
-}}
-
+// Inline expand/collapse helpers
 function toggleTopicImage(btn) {{
   btn.classList.toggle("collapsed");
   const wrap = btn.nextElementSibling;
-  if (wrap) wrap.classList.toggle("collapsed");
-  if (wrap && !wrap.classList.contains("collapsed")) {{
-    btn.querySelector("span:last-child").textContent = "click to collapse";
-  }} else {{
-    btn.querySelector("span:last-child").textContent = "click to expand";
+  if (wrap) {{
+    wrap.classList.toggle("collapsed");
+    btn.querySelector("span:last-child").textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
   }}
 }}
 
-function showTopic(localPrefix) {{
-  const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
-  if (!t) return;
-  CURRENT_TOPIC = t;
-  // Update active in sidebar
-  document.querySelectorAll(".topic-item").forEach(el => el.classList.remove("active"));
-  const activeEl = document.querySelector(`.topic-item[data-topic="${{localPrefix}}"]`);
-  if (activeEl) {{
-    activeEl.classList.add("active");
-    // Scroll into view
-    activeEl.scrollIntoView({{ block: "nearest", behavior: "smooth" }});
+function expandAll() {{
+  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
+  const p = new URL(location.href);
+  if (p.searchParams.get("expand") !== "all") {{
+    p.searchParams.set("expand", "all");
+    history.replaceState(null, "", p);
   }}
-  // Update URL
-  const url = new URL(location.href);
-  url.searchParams.set("topic", localPrefix);
-  history.replaceState(null, "", url);
-  // Render content
-  const container = document.getElementById("topicContainer");
-  container.className = "topic-detail";
-  const imgHtml = t.png ? `
-    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
-      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
-      <span style="font-size:12px;color:var(--text-dim)">click to expand</span>
-    </div>
-    <div class="topic-image-wrap collapsed">
-      <div class="topic-image"><img src="/{ch_slug}/${{t.png}}" alt="${{t.title}}"></div>
-    </div>` : "";
-  container.innerHTML = `
-    <div class="crumbs"><a href="/">Home</a> · <a href="/{ch_slug}/">{ch_name}</a> · <span>${{t.hub_num}} · ${{t.hub_name}}</span></div>
-    <div class="topic-header">
-      <div>
-        <h1>${{t.title}}</h1>
-        <p class="meta">${{t.hub_num}} · ${{t.local_prefix}} · ${{t.slug}}</p>
-      </div>
-      <div class="topic-actions">
-        ${{t.png ? `<a href="/{ch_slug}/${{t.png}}" download>Download PNG</a>` : ""}}
-        ${{t.md ? `<a href="/{ch_slug}/${{t.md}}" download>Download MD</a>` : ""}}
-        <button onclick="navigateTopic(-1)">← Prev</button>
-        <button onclick="navigateTopic(1)">Next →</button>
-      </div>
-    </div>
-    <div class="topic-content">${{t.html}}</div>
-    ${{imgHtml}}
-  `;
 }}
 
-// Sidebar search filter
+function collapseAll() {{
+  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = false);
+  const p = new URL(location.href);
+  p.searchParams.delete("topic");
+  p.searchParams.delete("expand");
+  history.replaceState(null, "", p);
+}}
+
+// Sidebar search filter — auto-expand matching items
 document.getElementById("topicSearch").addEventListener("input", function(e) {{
-  const q = e.target.value.toLowerCase();
+  const q = e.target.value.trim().toLowerCase();
   let visible = 0;
-  document.querySelectorAll(".topic-item").forEach(el => {{
+  document.querySelectorAll(".topic-acc").forEach(el => {{
     const text = el.textContent.toLowerCase();
     const show = !q || text.includes(q);
     el.style.display = show ? "" : "none";
-    if (show) visible++;
+    if (show) {{
+      visible++;
+      if (q) {{
+        // Auto-expand matching topics AND their parent hub when searching
+        el.open = true;
+        const hub = el.closest(".hub-acc");
+        if (hub) hub.open = true;
+      }}
+    }}
   }});
-  // Hide empty hub groups
-  document.querySelectorAll(".hub-group").forEach(g => {{
-    const anyVisible = Array.from(g.querySelectorAll(".topic-item")).some(el => el.style.display !== "none");
+  // Hide empty hubs
+  document.querySelectorAll(".hub-acc").forEach(g => {{
+    const anyVisible = Array.from(g.querySelectorAll(".topic-acc")).some(el => el.style.display !== "none");
     g.style.display = anyVisible ? "" : "none";
+    if (!q) g.open = false;
   }});
   document.getElementById("noResults").classList.toggle("show", visible === 0);
 }});
 
-loadManifest();
+// On load: open topic from URL ?topic=...
+(function() {{
+  const params = new URLSearchParams(location.search);
+  const t = params.get("topic");
+  if (t) {{
+    const el = document.querySelector(`.topic-acc[data-topic="${{t}}"]`);
+    if (el) {{
+      // Open topic + parent hub
+      el.open = true;
+      const hub = el.closest(".hub-acc");
+      if (hub) hub.open = true;
+      // Scroll into view after layout
+      setTimeout(() => el.scrollIntoView({{ block: "start", behavior: "smooth" }}), 100);
+    }}
+  }} else if (params.get("expand") === "all") {{
+    document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
+  }}
+}})();
 </script>
 """
     html += page_footer()
     out = SITE / ch_slug / "index.html"
     out.write_text(html)
-    print(f"  Wrote {ch_slug}/index.html (SPA, {len(info['by_hub'])} hubs, {info['n_topics']} topics)")
+    print(f"  Wrote {ch_slug}/index.html (accordion SPA, {len(info['by_hub'])} hubs, {info['n_topics']} topics)")
 
 
 # ------------------------ Main ------------------------

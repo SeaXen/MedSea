@@ -193,8 +193,709 @@ header.site .search-box .search-more {
 }
 header.site .search-box .search-empty strong { color: var(--accent); }
 @media (max-width: 720px) {
+  /* Tablet: tighten search */
   header.site .search-box { max-width: 180px; margin: 0 6px; }
   header.site .search-box input { font-size: 11px; }
+}
+
+/* ===========================================================
+   MOBILE-ONLY LAYOUT — completely separate from desktop.
+   Desktop elements (header-left/right, .search-box in header)
+   are hidden here. A dedicated .mobile-bar is shown instead.
+   This block MUST NOT contain desktop styles.
+   =========================================================== */
+
+/* Mobile bar is hidden on desktop */
+.mobile-bar { display: none; }
+
+/* Mobile bar wrapper */
+.mobile-bar {
+  width: 100%;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 12px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.mobile-bar .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.mobile-bar .row.top {
+  justify-content: space-between;
+}
+
+.mobile-bar .logo-mini {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+}
+.mobile-bar .logo-mini .logo {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.mobile-bar .stats-mini {
+  display: flex;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--text-dim);
+}
+.mobile-bar .stats-mini .stat {
+  background: var(--bg-3);
+  padding: 3px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.mobile-bar .stats-mini .stat .num {
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 3px;
+}
+
+.mobile-bar .menu-btn,
+.mobile-bar .github-btn {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mobile-bar .menu-btn:hover,
+.mobile-bar .github-btn:hover {
+  background: var(--bg-4);
+  color: var(--accent);
+}
+
+.mobile-bar .current-ch-label {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mobile-bar .search-row .search-box-m {
+  position: relative;
+  flex: 1;
+}
+.mobile-bar .search-row input {
+  width: 100%;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 9px 12px 9px 32px;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+.mobile-bar .search-row input:focus {
+  border-color: var(--accent);
+}
+.mobile-bar .search-row .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  font-size: 13px;
+  pointer-events: none;
+}
+.mobile-bar .search-row .search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  max-height: 60vh;
+  overflow-y: auto;
+  display: none;
+  z-index: 300;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.mobile-bar .search-row .search-results.open {
+  display: block;
+}
+.mobile-bar .search-row .result-item {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mobile-bar .search-row .result-item:hover,
+.mobile-bar .search-row .result-item.active {
+  background: var(--bg-3);
+}
+.mobile-bar .search-row .result-item:last-child {
+  border-bottom: none;
+}
+.mobile-bar .search-row .result-item .badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  align-self: flex-start;
+}
+.mobile-bar .search-row .result-item .crumb {
+  color: var(--text-dim);
+  font-size: 10px;
+}
+.mobile-bar .search-row .result-item mark {
+  background: var(--accent);
+  color: #fff;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Mobile chapter menu drawer */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 400;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu .panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  max-width: 85vw;
+  background: var(--bg-2);
+  border-left: 1px solid var(--border);
+  padding: 16px 12px;
+  overflow-y: auto;
+  box-shadow: -4px 0 16px rgba(0,0,0,0.5);
+}
+.mobile-menu .panel h3 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+.mobile-menu .panel a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 13px;
+  border: 1px solid transparent;
+}
+.mobile-menu .panel a:hover,
+.mobile-menu .panel a.active {
+  background: var(--bg-3);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.mobile-menu .panel a.soon {
+  opacity: 0.5;
+  cursor: default;
+}
+.mobile-menu .panel a .num {
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 28px;
+  flex-shrink: 0;
+}
+.mobile-menu .panel a .name {
+  flex: 1;
+}
+.mobile-menu .panel a .badge {
+  color: var(--accent);
+  font-size: 10px;
+}
+.mobile-menu .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Mobile chapter page: stacked layout */
+/* ===== Chapter accordion layout ===== */
+.chapter-page {
+  display: block;
+  padding: 20px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* ===== Chapter accordion layout ===== */
+.chapter-page {
+  display: block;
+  padding: 20px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.chapter-header {
+  padding: 12px 0 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  border-left: 3px solid var(--accent-color, var(--accent));
+  padding-left: 14px;
+}
+.chapter-page > .chapter-header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  line-height: 1.2;
+  color: var(--text);
+}
+.chapter-page > .chapter-header .meta {
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+.chapter-page > .chapter-header .meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.chapter-page > .chapter-header .meta a:hover {
+  text-decoration: underline;
+}
+
+.chapter-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+.chapter-toolbar .search {
+  flex: 1;
+  min-width: 200px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 9px 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+.chapter-toolbar .search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.18);
+}
+.chapter-toolbar .toolbar-actions {
+  display: flex;
+  gap: 6px;
+}
+.chapter-toolbar .btn-acc {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.chapter-toolbar .btn-acc:hover {
+  background: var(--bg-4);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.chapter-toolbar .no-results {
+  flex-basis: 100%;
+  color: var(--text-dim);
+  font-size: 12px;
+  text-align: center;
+  padding: 6px;
+  display: none;
+}
+.chapter-toolbar .no-results.show {
+  display: block;
+}
+
+/* Hub accordion */
+.hub-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hub-acc {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.hub-acc[open] {
+  border-color: var(--accent-color, var(--accent));
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+.hub-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+  transition: background 0.15s;
+  background: var(--bg-2);
+}
+.hub-summary:hover {
+  background: var(--bg-3);
+}
+.hub-summary::-webkit-details-marker {
+  display: none;
+}
+.hub-arrow {
+  color: var(--accent);
+  font-size: 14px;
+  transition: transform 0.2s;
+  display: inline-block;
+  width: 14px;
+}
+.hub-acc[open] > .hub-summary .hub-arrow {
+  transform: rotate(90deg);
+}
+.hub-num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 11px;
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+.hub-label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.hub-count {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+  background: var(--bg-3);
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.hub-body {
+  padding: 4px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+/* Topic accordion */
+.topic-acc {
+  background: var(--bg-2);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-left: 14px;
+  transition: all 0.15s;
+  position: relative;
+}
+.topic-acc::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 24px;
+  width: 8px;
+  height: 1px;
+  background: var(--border);
+}
+.topic-acc:hover {
+  background: var(--bg-3);
+  border-color: var(--border);
+}
+.topic-acc[open] {
+  background: var(--bg-3);
+  border-color: var(--accent-color, var(--accent));
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+}
+.topic-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  border-radius: 8px;
+}
+.topic-summary::-webkit-details-marker {
+  display: none;
+}
+.topic-arrow {
+  color: var(--text-dim);
+  font-size: 12px;
+  transition: transform 0.2s;
+  display: inline-block;
+  width: 12px;
+}
+.topic-acc[open] > .topic-summary .topic-arrow {
+  transform: rotate(90deg);
+  color: var(--accent);
+}
+.topic-num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px;
+  color: var(--text-dim);
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  flex-shrink: 0;
+  min-width: 48px;
+  text-align: center;
+}
+.topic-acc[open] > .topic-summary .topic-num {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(56, 189, 248, 0.08);
+}
+.topic-title {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.topic-body {
+  padding: 12px 16px 18px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  margin-top: 6px;
+  border-radius: 0 0 8px 8px;
+}
+.topic-content {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+}
+.topic-content h1 { font-size: 22px; margin: 16px 0 10px; color: var(--accent); }
+.topic-content h2 { font-size: 18px; margin: 16px 0 8px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 10px; }
+.topic-content h3 { font-size: 15px; margin: 14px 0 6px; color: var(--text); }
+.topic-content p { margin: 8px 0; }
+.topic-content ul, .topic-content ol { margin: 8px 0; padding-left: 24px; }
+.topic-content li { margin: 4px 0; }
+.topic-content pre {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 12px;
+}
+.topic-content code {
+  background: var(--bg-3);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.topic-content pre code {
+  background: transparent;
+  padding: 0;
+}
+.topic-content table {
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 13px;
+  width: 100%;
+}
+.topic-content th, .topic-content td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+}
+.topic-content th {
+  background: var(--bg-3);
+  font-weight: 600;
+}
+.topic-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 8px 14px;
+  margin: 10px 0;
+  background: var(--bg-2);
+  border-radius: 0 6px 6px 0;
+  color: var(--text-dim);
+}
+.topic-content img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* Topic image toggle (collapsible) */
+.topic-image-toggle {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--accent);
+  transition: background 0.15s;
+}
+.topic-image-toggle:hover {
+  background: var(--bg-3);
+}
+.topic-image-toggle .toggle-icon {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.topic-image-toggle:not(.collapsed) .toggle-icon {
+  transform: rotate(180deg);
+}
+.topic-image-wrap {
+  margin-top: 8px;
+  overflow: hidden;
+  max-height: 5000px;
+  transition: max-height 0.4s ease;
+}
+.topic-image-wrap.collapsed {
+  max-height: 0;
+  margin-top: 0;
+}
+.topic-image {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+}
+.topic-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Old legacy classes (kept for backward compat with existing topics.json users) */
+.chapter-sidebar {
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+@media (max-width: 900px) {
+  /* On mobile: hide desktop elements, show mobile bar */
+  header.site { display: none; }
+  .mobile-bar { display: flex; }
+
+  /* Single column chapter page */
+  .chapter-page { padding: 12px 12px 60px; }
+
+  /* Accordion: tighter on mobile */
+  .hub-summary { padding: 12px 14px; }
+  .hub-label { font-size: 13px; }
+  .topic-acc { margin-left: 8px; }
+  .topic-summary { padding: 9px 12px; }
+  .topic-title { font-size: 12px; }
+  .topic-num { font-size: 9px; min-width: 42px; }
+  .topic-body { padding: 10px 12px 14px; }
+  .topic-content { font-size: 13px; line-height: 1.55; }
+  .topic-content h1 { font-size: 18px; }
+  .topic-content h2 { font-size: 16px; }
+  .topic-content h3 { font-size: 14px; }
+  .topic-content pre { font-size: 11px; padding: 8px 10px; }
+  .chapter-toolbar { position: static; }
+  .chapter-toolbar .search { font-size: 12px; padding: 8px 10px; }
+  .chapter-toolbar .btn-acc { font-size: 11px; padding: 6px 10px; }
+
+  /* Compact 2-col grid */
+  .chapters-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .ch-card { padding: 12px 6px; border-radius: 8px; }
+  .ch-card .ch-num { font-size: 20px; }
+  .ch-card .ch-title { font-size: 11px; line-height: 1.3; }
+  .ch-card .ch-meta { font-size: 9px; }
+
+  /* Index page header */
+  .index-hero h1 { font-size: 26px; }
+  .index-hero p { font-size: 14px; }
+  .index-stats { gap: 16px; flex-wrap: wrap; }
+  .stat-pill { font-size: 12px; padding: 6px 12px; }
+
+  /* Topic page */
+  .topic-page { padding: 12px; }
+  .topic-page h1 { font-size: 22px; }
+  .topic-page h2 { font-size: 18px; }
+  .topic-page h3 { font-size: 15px; }
+  .topic-page pre { font-size: 11px; padding: 10px; }
+  .topic-page table { font-size: 12px; }
+
+  /* Back-to-top button */
+  .back-top { bottom: 12px; right: 12px; padding: 8px 12px; font-size: 12px; }
+}
+
+@media (max-width: 380px) {
+  /* Tiny phones: 2-col stays but tighter */
+  .chapters-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .ch-card { padding: 10px 4px; }
+  .ch-card .ch-num { font-size: 18px; }
+  .ch-card .ch-title { font-size: 10px; }
+  .mobile-bar .stats-mini { display: none; }
 }
 
 /* ===== Chapter dropdown ===== */
@@ -291,7 +992,7 @@ main {
 @media (max-width: 1500px) { .chapters-grid { grid-template-columns: repeat(4, 1fr); } }
 @media (max-width: 1200px) { .chapters-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 850px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 550px)  { .chapters-grid { grid-template-columns: 1fr; } }
+@media (max-width: 550px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
 .section-title {
   font-size: 13px; color: var(--text-dim);
   text-transform: uppercase; letter-spacing: 0.12em;
@@ -353,97 +1054,7 @@ main {
 .chapter-card .ch-link-primary:hover { color: #7dd3fc; }
 .chapter-card .ch-link-secondary:hover { color: var(--accent); }
 
-/* ===== Chapter page (SPA: sidebar + main) ===== */
-.chapter-page {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 0;
-  min-height: calc(100vh - 65px);
-}
-.chapter-sidebar {
-  background: var(--bg-2);
-  border-right: 1px solid var(--border);
-  padding: 20px 16px;
-  overflow-y: auto;
-  max-height: calc(100vh - 65px);
-  position: sticky; top: 65px;
-}
-.chapter-sidebar .search {
-  width: 100%; padding: 8px 12px;
-  background: var(--bg-3); border: 1px solid var(--border);
-  border-radius: 8px; color: var(--text); font-size: 13px;
-  font-family: inherit;
-  margin-bottom: 12px;
-}
-.chapter-sidebar .search:focus { outline: none; border-color: var(--accent); }
-.chapter-sidebar .hub-group { margin-bottom: 14px; }
-.chapter-sidebar .hub-group h3 {
-  font-size: 11px; color: var(--accent);
-  text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 6px 8px; margin: 0 0 4px;
-  font-weight: 700;
-  background: rgba(56, 189, 248, 0.06);
-  border-left: 2px solid var(--accent);
-  border-radius: 0 4px 4px 0;
-}
-.chapter-sidebar .topic-item {
-  display: block; padding: 5px 10px 5px 22px;
-  border-radius: 4px;
-  color: var(--text); font-size: 12.5px; font-weight: 500;
-  cursor: pointer; transition: all 0.1s;
-  border: 1px solid transparent;
-  text-decoration: none !important;
-  position: relative;
-  line-height: 1.35;
-}
-.chapter-sidebar .topic-item:hover { background: var(--bg-3); color: #fff; }
-.chapter-sidebar .topic-item.active {
-  background: rgba(56, 189, 248, 0.15);
-  color: var(--accent);
-  font-weight: 600;
-  border-color: rgba(56, 189, 248, 0.3);
-}
-.chapter-sidebar .topic-item .num {
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  font-size: 10px; margin-right: 6px;
-  color: var(--text-dim);
-  font-weight: 400;
-}
-.chapter-sidebar .topic-item.active .num { color: var(--accent); font-weight: 600; }
-.chapter-sidebar .no-results {
-  color: var(--text-dim); font-size: 12px;
-  padding: 12px 8px; text-align: center;
-  display: none;
-}
-.chapter-sidebar .no-results.show { display: block; }
-
-.chapter-main {
-  padding: 16px 24px;
-  overflow-x: hidden;
-}
-.chapter-main .chapter-header {
-  padding: 8px 0 10px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
-  border-left: 3px solid var(--accent-color, var(--accent));
-  padding-left: 14px;
-  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
-}
-.chapter-main .chapter-header h1 {
-  font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0;
-  line-height: 1.2;
-}
-.chapter-main .chapter-header .meta {
-  color: var(--text-dim); font-size: 12px;
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
-}
-.chapter-main .chapter-header .meta a { color: var(--accent); text-decoration: none; }
-.chapter-main .chapter-header .meta a:hover { text-decoration: underline; }
-
-.chapter-main .placeholder {
-  text-align: center; padding: 60px 20px;
-  color: var(--text-dim);
-}
-.chapter-main .placeholder .icon { font-size: 48px; margin-bottom: 12px; opacity: 0.5; }
+/* ===== Chapter accordion SPA (replaces old sidebar+main layout) ===== */
 
 /* ===== Topic content (main pane) ===== */
 .topic-detail .crumbs {
@@ -660,15 +1271,6 @@ footer {
 footer a { color: var(--text-dim); }
 footer a:hover { color: var(--accent); }
 
-@media (max-width: 900px) {
-  header.site { padding: 8px 16px; }
-  header.site .header-inner { flex-wrap: wrap; gap: 8px; }
-  header.site .header-left { flex: 1 1 auto; }
-  header.site .header-right { margin-left: auto; }
-  header.site .search-box { order: 3; flex: 1 1 100%; max-width: 100%; margin-top: 4px; }
-  .chapter-page { grid-template-columns: 1fr; }
-  .chapter-sidebar { position: static; max-height: 400px; }
-  .chapters-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -701,6 +1303,36 @@ footer a:hover { color: var(--accent); }
     </div>
   </div>
 </header>
+<!-- MOBILE-ONLY BAR — hidden on desktop via CSS, shown via @media (max-width: 900px) -->
+<div class="mobile-bar">
+  <div class="row top">
+    <div class="logo-mini">
+      <span class="logo">⚕</span>
+      <a href="/">MedSea</a>
+    </div>
+    <button class="menu-btn" type="button" onclick="document.getElementById('mobileMenu').classList.add('open')">☰ Chapters</button>
+  </div>
+  <div class="row search-row">
+    <div class="search-box-m" id="searchBoxMobile">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInputMobile" placeholder="Search topics…" autocomplete="off" spellcheck="false">
+      <div class="search-results" id="searchResultsMobile"></div>
+    </div>
+  </div>
+  <div class="row" style="justify-content: space-between; font-size: 11px; color: var(--text-dim);">
+    <span class="current-ch-label">Clinical Immunology</span>
+    <a class="github-btn" href="https://github.com/SeaXen/MedSea" target="_blank">GitHub ↗</a>
+  </div>
+</div>
+
+<!-- MOBILE-ONLY CHAPTER MENU DRAWER -->
+<div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this) this.classList.remove('open')">
+  <div class="panel">
+    <button class="close-btn" type="button" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+    <h3>Chapters</h3>
+    <a class="item" href="/1-clinical-decision-making/"><span class="num">1</span><span class="name">Clinical Decision-Making</span><span class="badge">●</span></a><a class="item" href="/2-clinical-therapeutics/"><span class="num">2</span><span class="name">Clinical Therapeutics & Prescribing</span><span class="badge">●</span></a><a class="item" href="/3-clinical-genetics/"><span class="num">3</span><span class="name">Clinical Genetics</span><span class="badge">●</span></a><a class="item active" href="/4-clinical-immunology/"><span class="num">4</span><span class="name">Clinical Immunology</span><span class="badge">●</span></a><a class="item" href="/5-nutritional-factors/"><span class="num">5</span><span class="name">Nutritional Factors in Disease</span><span class="badge">●</span></a><a class="item" href="/6-population-health/"><span class="num">6</span><span class="name">Population Health & Epidemiology</span><span class="badge">●</span></a><a class="item" href="/7-principles-of-infection/"><span class="num">7</span><span class="name">Principles of Infection</span><span class="badge">●</span></a><a class="item" href="/8-oncology/"><span class="num">8</span><span class="name">Oncology</span><span class="badge">●</span></a><a class="item" href="/9-palliative-care/"><span class="num">9</span><span class="name">Palliative & Supportive Care</span><span class="badge">●</span></a><a class="item" href="/10-acute-medicine/"><span class="num">10</span><span class="name">Acute Medicine</span><span class="badge">●</span></a><a class="item" href="/11-poisoning/"><span class="num">11</span><span class="name">Poisoning</span><span class="badge">●</span></a><a class="item" href="/12-envenomation/"><span class="num">12</span><span class="name">Envenomation</span><span class="badge">●</span></a><a class="item" href="/13-austere-medicine/"><span class="num">13</span><span class="name">Austere Medicine</span><span class="badge">●</span></a><a class="item" href="/14-infectious-disease/"><span class="num">14</span><span class="name">Infectious Disease</span><span class="badge">●</span></a><a class="item" href="/15-sexually-transmitted-infections/"><span class="num">15</span><span class="name">Sexually Transmitted Infections</span><span class="badge">●</span></a><a class="item" href="/16-cardiology/"><span class="num">16</span><span class="name">Cardiology</span><span class="badge">●</span></a><a class="item" href="/17-respiratory-medicine/"><span class="num">17</span><span class="name">Respiratory Medicine</span><span class="badge">●</span></a><a class="item" href="/18-nephrology-urology/"><span class="num">18</span><span class="name">Nephrology & Urology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">19</span><span class="name">Clinical biochemistry and metabolic medicine</span><span class="badge">○</span></a><a class="item" href="/20-endocrinology/"><span class="num">20</span><span class="name">Endocrinology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">21</span><span class="name">Diabetes mellitus</span><span class="badge">○</span></a><a class="item" href="/22-gastroenterology/"><span class="num">22</span><span class="name">Gastroenterology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">23</span><span class="name">Hepatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">24</span><span class="name">Haematology and transfusion medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">25</span><span class="name">Rheumatology and bone disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">26</span><span class="name">Dermatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">27</span><span class="name">Neurology and stroke medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">28</span><span class="name">Medical ophthalmology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">29</span><span class="name">Medical psychiatry</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">30</span><span class="name">Maternal medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">31</span><span class="name">Adolescence, transition and young adult medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">32</span><span class="name">Older adult medicine and frailty</span><span class="badge">○</span></a>
+  </div>
+</div>
 <script>
 // ===== Universal topic search =====
 (function() {
@@ -821,141 +1453,1502 @@ footer a:hover { color: var(--accent); }
     }
   });
 })();
+
+// ===== Mobile search (separate code, doesn't touch desktop) =====
+(function() {
+  const input = document.getElementById('searchInputMobile');
+  const results = document.getElementById('searchResultsMobile');
+  const box = document.getElementById('searchBoxMobile');
+  if (!input) return;
+
+  let sharedIdx = null;
+  let debounce = null;
+  let activeIdx = -1;
+  let hits = [];
+
+  function loadIdx() {
+    if (sharedIdx) return Promise.resolve(sharedIdx);
+    return fetch('/search_index.json').then(r => r.json()).then(d => { sharedIdx = d; return d; });
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function highlight(text, q) {
+    if (!q) return escHtml(text);
+    const i = text.toLowerCase().indexOf(q.toLowerCase());
+    if (i < 0) return escHtml(text);
+    return escHtml(text.slice(0, i)) + '<mark>' + escHtml(text.slice(i, i + q.length)) + '</mark>' + escHtml(text.slice(i + q.length));
+  }
+
+  function search(q) {
+    loadIdx().then(data => {
+      const ql = q.toLowerCase();
+      hits = [];
+      for (const item of data) {
+        const t = item.title.toLowerCase();
+        const h = item.hub_name.toLowerCase();
+        const c = item.chapter_name.toLowerCase();
+        let score = 0;
+        if (t === ql) score = 100;
+        else if (t.startsWith(ql)) score = 80;
+        else if (t.includes(ql)) score = 60;
+        else if (h.includes(ql)) score = 40;
+        else if (c.includes(ql)) score = 20;
+        if (item.topic && item.topic.startsWith(ql)) score = Math.max(score, 70);
+        if (score > 0) hits.push({ item, score });
+      }
+      hits.sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title));
+      const top = hits.slice(0, 30);
+      activeIdx = -1;
+      if (top.length === 0) {
+        results.innerHTML = '<div class="result-item" style="cursor:default;color:var(--text-dim);">No topics match "<strong style="color:var(--accent)">' + escHtml(q) + '</strong>"</div>';
+      } else {
+        results.innerHTML = top.map(h => {
+          const it = h.item;
+          return '<a class="result-item" href="' + it.url + '?topic=' + encodeURIComponent(it.topic) + '">' +
+            '<span class="badge">Ch ' + it.chapter_num + '</span>' +
+            '<span>' + highlight(it.title, q) + '</span>' +
+            '<span class="crumb">' + highlight(it.chapter_name, q) + ' · ' + it.topic + '</span>' +
+          '</a>';
+        }).join('');
+      }
+      results.classList.add('open');
+    }).catch(err => {
+      results.innerHTML = '<div class="result-item" style="cursor:default;color:var(--text-dim);">Search index unavailable.</div>';
+      results.classList.add('open');
+    });
+  }
+
+  input.addEventListener('input', function(e) {
+    clearTimeout(debounce);
+    const q = e.target.value.trim();
+    if (q.length < 2) {
+      results.classList.remove('open');
+      results.innerHTML = '';
+      return;
+    }
+    debounce = setTimeout(() => search(q), 150);
+  });
+
+  input.addEventListener('focus', function() {
+    if (input.value.trim().length >= 2) results.classList.add('open');
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!box.contains(e.target)) {
+      results.classList.remove('open');
+    }
+  });
+
+  input.addEventListener('keydown', function(e) {
+    const items = results.querySelectorAll('.result-item');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeIdx = Math.min(activeIdx + 1, items.length - 1);
+      items.forEach((it, i) => it.classList.toggle('active', i === activeIdx));
+      if (items[activeIdx]) items[activeIdx].scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      activeIdx = Math.max(activeIdx - 1, 0);
+      items.forEach((it, i) => it.classList.toggle('active', i === activeIdx));
+      if (items[activeIdx]) items[activeIdx].scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'Enter' && activeIdx >= 0 && items[activeIdx]) {
+      e.preventDefault();
+      items[activeIdx].click();
+    } else if (e.key === 'Escape') {
+      results.classList.remove('open');
+      input.blur();
+    }
+  });
+})();
 </script>
 <main>
 
 <div class="chapter-page" style="--accent-color: #f97316">
-  <aside class="chapter-sidebar">
-    <input type="text" class="search" id="topicSearch" placeholder="Search topics…">
+  <header class="chapter-header">
+    <h1>Clinical Immunology</h1>
+    <div class="meta">Davidson Ch 4 · 2 hubs · 2 topics · <a href="https://medsea.notion.site/Chapter-4-Clinical-immunology-0b4e940adc464a56b120b1e4ba682c63" target="_blank">Notion ↗</a></div>
+  </header>
+  <div class="chapter-toolbar">
+    <input type="text" class="search" id="topicSearch" placeholder="🔍 Search topics…">
+    <div class="toolbar-actions">
+      <button class="btn-acc" onclick="expandAll()">Expand all</button>
+      <button class="btn-acc" onclick="collapseAll()">Collapse all</button>
+    </div>
     <div class="no-results" id="noResults">No matching topics</div>
-    <div class="hub-group" data-hub="4.1">
-  <h3>4.1 · Fundamentals of Immunology</h3>
-  <a class="topic-item" data-topic="4.1.01" data-hub="4.1" href="?topic=4.1.01"><span class="num">4.1.01</span>Fundamentals Of Immunology</a>
+  </div>
+  <div class="hub-accordion" id="hubAccordion">
+    <details class="hub-acc" data-hub="4.1">
+  <summary class="hub-summary">
+    <span class="hub-arrow">▸</span>
+    <span class="hub-label"><span class="hub-num">4.1</span> Fundamentals of Immunology</span>
+    <span class="hub-count">1</span>
+  </summary>
+  <div class="hub-body">
+    <details class="topic-acc" data-topic="4.1.01" data-hub="4.1">
+      <summary class="topic-summary">
+        <span class="topic-arrow">▸</span>
+        <span class="topic-num">4.1.01</span>
+        <span class="topic-title">Fundamentals Of Immunology</span>
+      </summary>
+      <div class="topic-body">
+        <div class="topic-content"><p><strong>Parent Topic:</strong> <a href="../Clinical%20Immunology%20MOC.md">Clinical Immunology MOC</a> → <a href="../Davidson%20Chapter%204%20-%20Clinical%20Immunology%20Hierarchy.md">Chapter 4 Hierarchy</a></p>
+<p><strong>Status:</strong> <code>full-fcps-mrcp-note</code></p>
+<p><strong>Priority:</strong> ⭐⭐⭐ HIGHEST (FCPS/MRCP — Innate/Adaptive immunity, Complement, Cytokines, HLA, Immunological techniques)</p>
+<p><strong>Source:</strong> Davidson 24th Ed Ch 4; Abbas, Lichtman, Pillai; Abbas, Abbas; Janeway; FCPS/MRCP syllabus</p>
+<hr>
+<h2>1. 1. 🎯 Learning Objectives</h2>
+<ul>
+<li>[ ] Describe <strong>innate immunity</strong> components: barriers, cells, PRRs, complement, cytokines</li>
+<li>[ ] Explain <strong>adaptive immunity</strong>: B/T cell development, activation, memory, regulation</li>
+<li>[ ] Understand <strong>complement system</strong>: 3 pathways, regulation, deficiencies</li>
+<li>[ ] Apply <strong>cytokine classification</strong> and signalling (JAK-STAT)</li>
+<li>[ ] Describe <strong>HLA/MHC</strong> structure, expression, disease associations</li>
+<li>[ ] Apply <strong>immunological techniques</strong>: Flow cytometry, ELISA, HLA typing, PCR</li>
+<li>[ ] Answer viva: "Innate vs adaptive immunity" and "Complement pathways"</li>
+</ul>
+<hr>
+<h2>2. 2. 🧠 Core Concept: Immune System Overview</h2>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">HLA/MHC Class I/II, Disease associations</div>
 </div>
-<div class="hub-group" data-hub="4.2">
-  <h3>4.2 · Hypersensitivity & Allergy</h3>
-  <a class="topic-item" data-topic="4.2.01" data-hub="4.2" href="?topic=4.2.01"><span class="num">4.2.01</span>Hypersensitivity Allergy</a>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Immune System</div>
 </div>
-
-  </aside>
-  <section class="chapter-main">
-    <div class="chapter-header">
-      <h1>Clinical Immunology</h1>
-      <div class="meta">Davidson Ch 4 · 2 hubs · 2 topics · <a href="https://medsea.notion.site/Chapter-4-Clinical-immunology-0b4e940adc464a56b120b1e4ba682c63" target="_blank">Notion ↗</a></div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Innate Immunity Rapid, Non-specific, No memory</div>
+<div class="fc-node" data-id="C">Adaptive Immunity Slow, Specific, Memory</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B1">Barriers Skin, Mucosa, Microbiome</div>
+<div class="fc-node" data-id="B2">Cells Neutrophils, Macrophages, NK, DCs, ILCs</div>
+<div class="fc-node" data-id="B3">PRRs TLR, NLR, RLR, CLR</div>
+<div class="fc-node" data-id="B4">Humoral Complement, Acute phase, Cytokines</div>
+<div class="fc-node" data-id="C1">B Cells Antibodies, Plasma cells, Memory</div>
+<div class="fc-node" data-id="C2">T Cells CD4+ Th subsets, CD8+ CTL, Tregs</div>
+<div class="fc-node" data-id="C3">Antigen Presentation MHC I/II, Cross-presentation</div>
+<div class="fc-node" data-id="C4">Regulation Checkpoints, Tregs, Cytokines</div>
+</div>
+</div>
+<hr>
+<h2>3. 3. ️⃣ Innate Immunity</h2>
+<h3>1. Physical & Chemical Barriers</h3>
+<table>
+<tr><th>Barrier</th><th>Mechanism</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>Skin</strong></td><td>Keratin, low pH, antimicrobial peptides (defensins, cathelicidins)</td><td>Breach → Infection</td></tr>
+<tr><td><strong>Mucosal</strong></td><td>Mucus, ciliary clearance, IgA, lysozyme, lactoferrin</td><td>Respiratory, GI, GU defence</td></tr>
+<tr><td><strong>Microbiome</strong></td><td>Colonisation resistance, SCFA, immune training</td><td>Dysbiosis → IBD, C. diff</td></tr>
+<tr><td><strong>Chemical</strong></td><td>Low pH (stomach, vagina), surfactant, surfactants</td><td>Barrier breach → Infection</td></tr>
+</table>
+<h3>2. Cellular Components</h3>
+<table>
+<tr><th>Cell Type</th><th>Origin</th><th>Key Functions</th><th>Surface Markers</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>Neutrophils</strong></td><td>Myeloid</td><td>Phagocytosis, NETs, ROS, degranulation</td><td>CD15+, CD16+, CD66b+</td><td>Neutropenia → sepsis; CGD, LAD</td></tr>
+<tr><td><strong>Monocytes/Macrophages</strong></td><td>Myeloid</td><td>Phagocytosis, Ag presentation, cytokine production</td><td>CD14+, CD68+, HLA-DR+</td><td>Tissue-specific (Kupffer, Microglia, Alveolar)</td></tr>
+<tr><td><strong>Dendritic Cells (DCs)</strong></td><td>Myeloid/Lymphoid</td><td>Professional APC, T cell priming</td><td>CD11c+, HLA-DR+, CD80/86</td><td>Migration to LNs, Cross-presentation</td></tr>
+<tr><td><strong>Natural Killer (NK)</strong></td><td>Lymphoid</td><td>Cytotoxicity (missing self), ADCC, cytokines</td><td>CD56+, CD16+, KIRs</td><td>Missing self, ADCC, KIR mismatch</td></tr>
+<tr><td><strong>Innate Lymphoid Cells (ILCs)</strong></td><td>Lymphoid</td><td>ILC1 (IFN-γ), ILC2 (IL-5/13), ILC3 (IL-17/22)</td><td>Lineage-, CD127+</td><td>Mucosal immunity, tissue repair</td></tr>
+<tr><td><strong>Mast Cells</strong></td><td>Myeloid</td><td>IgE-mediated degranulation, histamine</td><td>FcεRI+, c-Kit+</td><td>Anaphylaxis, allergy</td></tr>
+<tr><td><strong>Basophils/Eosinophils</strong></td><td>Myeloid</td><td>Parasite defence, allergy</td><td>FcεRI+, CCR3+</td><td>Parasites, asthma, drug reactions</td></tr>
+</table>
+<h3>3. Inflammatory Response</h3>
+<table>
+<tr><th>Phase</th><th>Key Events</th><th>Mediators</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>Recognition</strong></td><td>PRR-PAMP binding, DAMP release</td><td>—</td><td>Initial detection</td></tr>
+<tr><td><strong>Vasodilation</strong></td><td>Histamine, PGD2, LTB4, NO</td><td>Mast cells, Macrophages</td><td>Heat, redness, swelling</td></tr>
+<tr><td><strong>Cellular Recruitment</strong></td><td>Chemokines (CXCL8, CCL2), Adhesion molecules</td><td>Endothelium, Neutrophils</td><td>Neutrophilia, Pus formation</td></tr>
+<tr><td><strong>Phagocytosis</strong></td><td>Opsonisation (IgG, C3b), FcγR/CR engagement</td><td>Neutrophils, Macrophages</td><td>Pathogen clearance</td></tr>
+<tr><td><strong>Resolution</strong></td><td>Lipoxins, Resolvins, Protectins, Annexin A1</td><td>Macrophages, Neutrophils</td><td>Return to homeostasis, Anti-inflammatory</td></tr>
+</table>
+<p>|### Pattern Recognition Receptors (PRRs)</p>
+<table>
+<tr><th>PRR Family</th><th>Location</th><th>Ligands</th><th>Signalling</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>TLRs</strong> (1-10)</td><td>Surface/Endosomal</td><td>PAMPs (LPS, flagellin, CpG, ssRNA, dsRNA)</td><td>MyD88/TRIF → NF-κB</td><td>Sepsis, vaccine adjuvants</td></tr>
+<tr><td><strong>NLRs</strong> (NOD1/2, NLRP3)</td><td>Cytosol</td><td>Peptidoglycan, crystals, ATP</td><td>Inflammasome (caspase-1)</td><td>CAPS (NLRP3), Crohn's (NOD2)</td></tr>
+<tr><td><strong>RLRs</strong> (RIG-I, MDA5)</td><td>Cytosol</td><td>Viral RNA (dsRNA, 5'ppp)</td><td>MAVS → IFN-α/β</td><td>Antiviral immunity</td></tr>
+<tr><td><strong>CLRs</strong> (Dectin-1, Mincle)</td><td>Surface</td><td>Fungal β-glucans, mycobacteria</td><td>Syk/CARD9</td><td>Fungal immunity, CARD9 deficiency</td></tr>
+<tr><td><strong>cGAS-STING</strong></td><td>Cytosol</td><td>Cytosolic DNA</td><td>STING → IFN-β</td><td>Autoimmune (SAVI), DNA viruses</td></tr>
+</table>
+<h3>4. Complement System</h3>
+<table>
+<tr><th>Pathway</th><th>Trigger</th><th>Key Components</th><th>Regulation</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>Classical</strong></td><td>Ab-Ag complexes (IgG/IgM)</td><td>C1q, C1r, C1s → C4, C2</td><td>C1-INH, C4BP</td><td>SLE (C1q/C4/C2), Immune complexes</td></tr>
+<tr><td><strong>Lectin</strong></td><td>MBL/Ficolins on pathogens</td><td>MASP-1/2 → C4, C2</td><td>C1-INH</td><td>MBL deficiency → infections</td></tr>
+<tr><td><strong>Alternative</strong></td><td>Spontaneous C3 hydrolysis</td><td>Factor B, D, Properdin → C3bBb</td><td>Factor H, I, CD55, CD46, CD59</td><td>aHUS (FH, FI, MCP), C3G, C3GN</td></tr>
+<tr><td><strong>Common Terminal</strong></td><td>C5 convertase</td><td>C5b-9 (MAC)</td><td>CD59, Vitronectin, Clusterin</td><td>PNH (CD55/59), aHUS, C5 inhibitors</td></tr>
+</table>
+<table>
+<tr><th>Component</th><th>Deficiency Syndrome</th><th>Key Features</th></tr>
+<tr><td><strong>C1q, C1r, C1s, C4, C2</strong></td><td>Classical pathway</td><td>SLE-like, recurrent infections</td></tr>
+<tr><td><strong>C3</strong></td><td>Central</td><td>Severe recurrent pyogenic infections</td></tr>
+<tr><td><strong>C5, C6, C7, C8, C9</strong></td><td>Terminal (MAC)</td><td><strong>Neisserial infections</strong> (meningitis)</td></tr>
+<tr><td><strong>Factor H, I, MCP (CD46)</strong></td><td>Alternative (Regulatory)</td><td>aHUS, C3G, C3GN</td></tr>
+<tr><td><strong>C1-INH</strong></td><td>C1-INH deficiency</td><td>Hereditary angioedema (HAE)</td></tr>
+<tr><td><strong>Properdin</strong></td><td>Alternative (Positive)</td><td>Neisserial infections</td></tr>
+<tr><td><strong>MBL</strong></td><td>Lectin</td><td>Recurrent infections, especially childhood</td></tr>
+</table>
+<blockquote><strong>Key:</strong> mbL (Mannose-Binding Lectin) deficiency → recurrent infections in children; C1-INH deficiency → HAE (C4 low, C1q normal)</blockquote>
+<h3>5. Acute Phase Proteins & Cytokines</h3>
+<table>
+<tr><th>Acute Phase Protein</th><th>Inducer</th><th>Function</th><th>Clinical Use</th></tr>
+<tr><td><strong>CRP</strong></td><td>IL-6</td><td>Opsonisation, complement activation</td><td>Inflammation marker</td></tr>
+<tr><td><strong>Serum Amyloid A (SAA)</strong></td><td>IL-6, TNF-α</td><td>HDL modulation, chemotaxis</td><td>Inflammation, amyloidosis</td></tr>
+<tr><td><strong>Fibrinogen</strong></td><td>IL-6</td><td>Coagulation, wound healing</td><td>ESR, thrombosis risk</td></tr>
+<tr><td><strong>Ferritin</strong></td><td>IL-1, IL-6</td><td>Iron sequestration</td><td>Inflammation, HLH, Still's</td></tr>
+<tr><td><strong>Procalcitonin</strong></td><td>Bacterial toxins</td><td>Sepsis marker</td><td>Sepsis diagnosis</td></tr>
+<tr><td><strong>Hepcidin</strong></td><td>IL-6</td><td>Iron restriction</td><td>Anaemia of chronic disease</td></tr>
+</table>
+<table>
+<tr><th>Cytokine Family</th><th>Key Members</th><th>Signalling</th><th>Key Functions</th></tr>
+<tr><td><strong>Type I IFNs</strong></td><td>IFN-α, IFN-β</td><td>JAK1/TYK2-STAT1/2</td><td>Antiviral, MHC upreg</td></tr>
+<tr><td><strong>Type II IFN</strong></td><td>IFN-γ</td><td>JAK1/2-STAT1</td><td>Macrophage activation, Th1</td></tr>
+<tr><td><strong>IL-1 Family</strong></td><td>IL-1α, IL-1β, IL-18, IL-33</td><td>MyD88 → NF-κB</td><td>Inflammation, fever, Th17</td></tr>
+<tr><td><strong>TNF Family</strong></td><td>TNF-α, LT-α, LT-β, BAFF, APRIL</td><td>TNFR → NF-κB</td><td>Inflammation, lymphoid organogenesis</td></tr>
+<tr><td><strong>IL-6 Family</strong></td><td>IL-6, IL-11, OSM, LIF</td><td>JAK-STAT3</td><td>Acute phase, B cell diff, Th17</td></tr>
+<tr><td><strong>IL-12 Family</strong></td><td>IL-12, IL-23, IL-27, IL-35</td><td>STAT3/4</td><td>Th1 (IL-12), Th17 (IL-23), Treg (IL-27)</td></tr>
+<tr><td><strong>IL-17 Family</strong></td><td>IL-17A-F</td><td>ACT1 → NF-κB</td><td>Neutrophil recruitment, mucosal immunity</td></tr>
+<tr><td><strong>Chemokines</strong></td><td>CCL, CXCL, CX3CL, XCL</td><td>GPCR</td><td>Leukocyte trafficking</td></tr>
+<tr><td><strong>Type 2</strong></td><td>IL-4, IL-5, IL-13</td><td>STAT6</td><td>Th2, allergy, helminths, IgE</td></tr>
+<tr><td><strong>Regulatory</strong></td><td>IL-10, TGF-β</td><td>STAT3, SMAD</td><td>Suppression, Treg, tolerance</td></tr>
+</table>
+<h3>6. JAK-STAT Signalling</h3>
+<table>
+<tr><th>Cytokine Receptor</th><th>JAKs</th><th>STATs</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>Type I IFN R</strong></td><td>JAK1/TYK2</td><td>STAT1/2</td><td>Antiviral, SLE (IFN signature)</td></tr>
+<tr><td><strong>IFN-γ R</strong></td><td>JAK1/2</td><td>STAT1</td><td>MSMD, TB susceptibility</td></tr>
+<tr><td><strong>IL-6 R</strong></td><td>JAK1/2</td><td>STAT3</td><td>Hyper-IgE, Castleman, tocilizumab</td></tr>
+<tr><td><strong>IL-12/23 R</strong></td><td>JAK2/TYK2</td><td>STAT3/4</td><td>Th1/Th17, ustekinumab</td></tr>
+<tr><td><strong>IL-6/GP130</strong></td><td>JAK1/2/TYK2</td><td>STAT3</td><td>Tocilizumab, sarilumab</td></tr>
+<tr><td><strong>JAK2 V617F</strong></td><td>—</td><td>Constitutive</td><td>MPN (PV, ET, MF)</td></tr>
+<tr><td><strong>JAK Inhibitors</strong></td><td>Tofacitinib (JAK1/3), Baricitinib (JAK1/2), Upadacitinib (JAK1), Filgotinib (JAK1)</td><td>RA, PsA, UC, AD, Alopecia</td></tr>
+</table>
+<hr>
+<h2>4. 4. ️⃣ Adaptive Immunity</h2>
+<h3>1. B Cell Development & Humoral Immunity</h3>
+<table>
+<tr><th>Stage</th><th>Location</th><th>Key Events</th><th>Markers</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>Pro-B</strong></td><td>Bone Marrow</td><td>D-J rearrangement</td><td>CD19+, CD43+, TdT+</td><td>Pre-BCR checkpoint</td></tr>
+<tr><td><strong>Pre-B</strong></td><td>Bone Marrow</td><td>V-DJ rearrangement, μ heavy chain</td><td>CD19+, CD20-, μ+</td><td>Pre-BCR checkpoint</td></tr>
+<tr><td><strong>Immature B</strong></td><td>Bone Marrow</td><td>IgM expression, negative selection</td><td>IgM+, IgD-</td><td>Central tolerance</td></tr>
+<tr><td><strong>Transitional</strong></td><td>Spleen</td><td>Peripheral selection</td><td>IgMhi, IgD+</td><td>BAFF-R, transitional</td></tr>
+<tr><td><strong>Mature Naive</strong></td><td>Spleen/LN</td><td>IgM+IgD+, recirculation</td><td>IgM+, IgD+, CD21+, CD23+</td><td>FO B vs MZ B</td></tr>
+<tr><td><strong>Germinal Centre</strong></td><td>Lymph Node</td><td>SHM, CSR, Affinity maturation</td><td>BCL6+, AID+, GL7+</td><td>SHM/CSR defects → Hyper-IgM</td></tr>
+<tr><td><strong>Memory B</strong></td><td>Spleen/LN/BM</td><td>Long-lived, rapid response</td><td>CD27+, IgG/IgA/IgE</td><td>Vaccine memory</td></tr>
+<tr><td><strong>Plasma Cell</strong></td><td>BM/Spleen/LN</td><td>Antibody factory</td><td>CD138+, Blimp-1+, XBP-1+</td><td>Antibody secretion</td></tr>
+</table>
+<h3>2. Immunoglobulin Structure & Function</h3>
+<table>
+<tr><th>Isotype</th><th>Heavy Chain</th><th>Structure</th><th>Half-life</th><th>Key Functions</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>IgG</strong></td><td>γ</td><td>Monomer</td><td>21-28 days</td><td>Opsonisation, complement, ADCC, placental transfer</td><td>IVIG, HDFN, subclass deficiency</td></tr>
+<tr><td><strong>IgM</strong></td><td>μ</td><td>Pentamer (J chain)</td><td>5 days</td><td>First response, complement activation</td><td>Early infection, cryoglobulins</td></tr>
+<tr><td><strong>IgA</strong></td><td>α</td><td>Dimer (secretory)</td><td>6 days</td><td>Mucosal immunity (SIgA)</td><td>Secretory IgA, IgA nephropathy</td></tr>
+<tr><td><strong>IgE</strong></td><td>ε</td><td>Monomer</td><td>2 days</td><td>Mast cell/basophil activation, parasites</td><td>Allergy, helminths, IgE myeloma</td></tr>
+<tr><td><strong>IgD</strong></td><td>δ</td><td>Monomer</td><td>3 days</td><td>BCR, unknown</td><td>IgD myeloma, hyper-IgD syndrome</td></tr>
+</table>
+<h3>3. B Cell Activation & Class Switching</h3>
+<table>
+<tr><th>Signal</th><th>Source</th><th>Molecule</th><th>Outcome</th></tr>
+<tr><td><strong>Signal 1</strong></td><td>Antigen</td><td>BCR (mIg)</td><td>Antigen internalisation</td></tr>
+<tr><td><strong>Signal 2</strong></td><td>T cell (CD4+)</td><td>CD40L-CD40</td><td>Activation, proliferation, CSR</td></tr>
+<tr><td><strong>Cytokines</strong></td><td>Tfh</td><td>IL-4, IL-21, IFN-γ, TGF-β</td><td><strong>CSR direction</strong></td></tr>
+<tr><td><strong>AID</strong></td><td>—</td><td>Activation-induced deaminase</td><td>SHM + CSR enzyme</td></tr>
+</table>
+<table>
+<tr><th>Cytokine</th><th>CSR Target</th><th>Antibody Class</th></tr>
+<tr><td><strong>IL-4, IL-13</strong></td><td>ε, γ1</td><td>IgE, IgG1</td></tr>
+<tr><td><strong>IFN-γ</strong></td><td>γ2a (γ3 human)</td><td>IgG2a (IgG3)</td></tr>
+<tr><td><strong>TGF-β + IL-4</strong></td><td>ε</td><td>IgE</td></tr>
+<tr><td><strong>TGF-β</strong></td><td>α</td><td>IgA</td></tr>
+</table>
+<h3>4. T Cell Development & Cell-Mediated Immunity</h3>
+<table>
+<tr><th>Stage</th><th>Location</th><th>Key Events</th><th>Markers</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>DN1-4</strong></td><td>Thymus (Cortex)</td><td>TCR β/α rearrangement, β-selection</td><td>CD4-, CD8-, CD44, CD25</td><td>β-selection (pre-TCR)</td></tr>
+<tr><td><strong>DP (CD4+CD8+)</strong></td><td>Thymus (Cortex)</td><td>Positive selection (MHC I/II)</td><td>CD4+CD8+, TCRlo</td><td>MHC restriction</td></tr>
+<tr><td><strong>SP (CD4+ or CD8+)</strong></td><td>Thymus (Medulla)</td><td>Negative selection (AIRE)</td><td>CD4+ or CD8+, TCRhi</td><td>Central tolerance</td></tr>
+<tr><td><strong>Naive T</strong></td><td>Periphery</td><td>Homeostasis (IL-7, TCR tonic)</td><td>CD45RA+, CCR7+, CD62L+</td><td>Recent thymic emigrants</td></tr>
+<tr><td><strong>Effector</strong></td><td>Periphery</td><td>Activation, differentiation</td><td>CD45RO+, CCR7-, Effector molecules</td><td>Th1/Th2/Th17/Tfh/Treg</td></tr>
+<tr><td><strong>Memory</strong></td><td>Periphery</td><td>Long-lived, rapid recall</td><td>CD45RO+, CCR7±, CD127+</td><td>Central (Tcm) vs Effector (Tem)</td></tr>
+</table>
+<h3>5. T Cell Subsets (CD4+ Th)</h3>
+<table>
+<tr><th>Subset</th><th>Master Transcription Factor</th><th>Signature Cytokines</th><th>Function</th><th>Key Inducers</th><th>Pathology</th></tr>
+<tr><td><strong>Th1</strong></td><td>T-bet</td><td>IFN-γ, TNF-α, IL-2</td><td>Intracellular pathogens, macrophage activation</td><td>IL-12, IFN-γ</td><td>Autoimmunity (RA, MS), TB</td></tr>
+<tr><td><strong>Th2</strong></td><td>GATA3</td><td>IL-4, IL-5, IL-13</td><td>Helminths, allergy, IgE</td><td>IL-4, TSLP</td><td>Allergy, asthma, helminths</td></tr>
+<tr><td><strong>Th17</strong></td><td>RORγt</td><td>IL-17A/F, IL-21, IL-22</td><td>Extracellular bacteria/fungi, mucosal immunity</td><td>IL-6, TGF-β, IL-23, IL-1β</td><td>Psoriasis, IBD, autoimmune</td></tr>
+<tr><td><strong>Tfh</strong></td><td>Bcl-6</td><td>IL-21, CXCL13</td><td>B cell help, GC formation</td><td>ICOS, IL-6, IL-21</td><td>Autoimmunity, GC reactions</td></tr>
+<tr><td><strong>Treg</strong></td><td>FoxP3</td><td>IL-10, TGF-β, IL-35</td><td>Suppression, tolerance</td><td>TGF-β, IL-2</td><td>IPEX (FoxP3 mut), cancer</td></tr>
+<tr><td><strong>Tr1</strong></td><td>—</td><td>IL-10</td><td>Suppression, tolerance</td><td>IL-10, IL-27</td><td>Tolerance</td></tr>
+<tr><td><strong>Th9</strong></td><td>PU.1/IRF4</td><td>IL-9</td><td>Helminths, allergy</td><td>TGF-β + IL-4</td><td>Allergy, asthma</td></tr>
+</table>
+<h3>6. CD8+ Cytotoxic T Lymphocytes (CTL)</h3>
+<table>
+<tr><th>Feature</th><th>Detail</th></tr>
+<tr><td><strong>Recognition</strong></td><td>Peptide-MHC I (endogenous antigens)</td></tr>
+<tr><td><strong>Effector</strong></td><td>Perforin, Granzymes, FasL, IFN-γ, TNF-α</td></tr>
+<tr><td><strong>Memory</strong></td><td>TEM (effector), TCM (central), TRM (tissue-resident)</td></tr>
+<tr><td><strong>Exhaustion</strong></td><td>PD-1, TIM-3, LAG-3, TIGIT, TOX (chronic infection, cancer)</td></tr>
+<tr><td><strong>Cross-presentation</strong></td><td>DCs present exogenous Ag on MHC I → CD8+ priming</td></tr>
+</table>
+<h3>7. Immunological Memory</h3>
+<table>
+<tr><th>Feature</th><th>B Cell Memory</th><th>T Cell Memory</th></tr>
+<tr><td><strong>Longevity</strong></td><td>Decades (LLPC in BM)</td><td>Years-decades</td></tr>
+<tr><td><strong>Recall</strong></td><td>Rapid Ab (days)</td><td>Rapid expansion (days)</td></tr>
+<tr><td><strong>Subsets</strong></td><td>MBC, LLPC</td><td>Tcm (CCR7+), Tem (CCR7-), Trm (tissue)</td></tr>
+<tr><td><strong>Recall Response</strong></td><td>Higher affinity, faster, more Ab</td><td>Faster proliferation, effector function</td></tr>
+<tr><td><strong>Vaccines</strong></td><td>Booster induces GC reaction</td><td>Prime-boost expands memory</td></tr>
+</table>
+<hr>
+<h2>5. 5. ️⃣ Antigen Presentation & MHC/HLA</h2>
+<h3>1. MHC Class I vs II</h3>
+<table>
+<tr><th>Feature</th><th>MHC Class I</th><th>MHC Class II</th></tr>
+<tr><td><strong>Genes</strong></td><td>HLA-A, -B, -C (Class Ia); E, F, G (Class Ib)</td><td>HLA-DP, -DQ, -DR (Class II)</td></tr>
+<tr><td><strong>Structure</strong></td><td>α chain (HLA) + β2-microglobulin</td><td>α + β chains (both polymorphic)</td></tr>
+<tr><td><strong>Expression</strong></td><td>All nucleated cells</td><td>APCs (DC, Mac, B), Thymus, Activated T</td></tr>
+<tr><td><strong>Peptide Source</strong></td><td>Endogenous (cytosolic)</td><td>Exogenous (phagocytosed)</td></tr>
+<tr><td><strong>Peptide Length</strong></td><td>8-10 aa</td><td>13-25 aa</td></tr>
+<tr><td><strong>Binding Groove</strong></td><td>Closed ends</td><td>Open ends</td></tr>
+<tr><td><strong>TCR Restriction</strong></td><td>CD8+ T cells</td><td>CD4+ T cells</td></tr>
+<tr><td><strong>Cross-presentation</strong></td><td>DCs: Exogenous → MHC I</td><td>—</td></tr>
+</table>
+<h3>2. Antigen Processing Pathways</h3>
+<table>
+<tr><th>Pathway</th><th>Source</th><th>Processing</th><th>Loading</th><th>MHC</th></tr>
+<tr><td><strong>Class I (Endogenous)</strong></td><td>Cytosolic proteins</td><td>Proteasome → TAP → ER</td><td>Chaperones (Calnexin, Tapasin)</td><td>MHC I</td></tr>
+<tr><td><strong>Class II (Exogenous)</strong></td><td>Phagocytosed/Endocytosed</td><td>Endosome/Lysosome → CLIP exchange</td><td>HLA-DM (CLIP exchange)</td><td>MHC II</td></tr>
+<tr><td><strong>Cross-presentation</strong></td><td>Exogenous (dead cells)</td><td>Phagosome → Cytosol → Proteasome → TAP → ER</td><td>Same as Class I</td><td>MHC I</td></tr>
+</table>
+<h3>3. HLA Disease Associations (High-Yield)</h3>
+<table>
+<tr><th>HLA Allele</th><th>Disease</th><th>Odds Ratio</th><th>Population</th></tr>
+<tr><td><strong>HLA-B27</strong></td><td>Ankylosing Spondylitis</td><td>>100</td><td>Strongest HLA association</td></tr>
+<tr><td></td><td>Reactive Arthritis</td><td>High</td><td></td></tr>
+<tr><td></td><td>Acute Anterior Uveitis</td><td>High</td><td></td></tr>
+<tr><td><strong>HLA-DR3 (DRB1*03)</strong></td><td>SLE, T1DM, Autoimmune Hepatitis, Coeliac (DQ2)</td><td>2-5</td><td>European</td></tr>
+<tr><td><strong>HLA-DR4 (DRB1*04)</strong></td><td>RA (SE), T1DM</td><td>3-5</td><td>SE (QKRAA)</td></tr>
+<tr><td><strong>HLA-DQ2 (DQA1<em>05:DQB1</em>02)</strong></td><td>Coeliac Disease</td><td>>10</td><td>90-95% DQ2+</td></tr>
+<tr><td><strong>HLA-DQ8 (DQA1<em>03:DQB1</em>0302)</strong></td><td>Coeliac, T1DM</td><td>High</td><td></td></tr>
+<tr><td><strong>HLA-B51</strong></td><td>Behçet's Disease</td><td>High</td><td>Mediterranean, Asian</td></tr>
+<tr><td><strong>HLA-B57:01</strong></td><td>Abacavir Hypersensitivity</td><td>>1000</td><td>Screening required</td></tr>
+<tr><td><strong>HLA-B*15:02</strong></td><td>Carbamazepine SJS/TEN</td><td>>100</td><td>Han Chinese, Thai, Malaysian</td></tr>
+<tr><td><strong>HLA-B*58:01</strong></td><td>Allopurinol SJS/TEN/DRESS</td><td>>100</td><td>Han Chinese, Korean, Thai</td></tr>
+<tr><td><strong>HLA-DR15 (DRB1*15:01)</strong></td><td>MS, Narcolepsy</td><td>3-5</td><td>European</td></tr>
+<tr><td><strong>HLA-DR2 (DRB1*15:01)</strong></td><td>MS, Goodpasture</td><td>High</td><td></td></tr>
+<tr><td><strong>HLA-DR4 (DRB1*04:01/04)</strong></td><td>RA (Shared Epitope)</td><td>3-5</td><td>SE motif QKRAA</td></tr>
+</table>
+<hr>
+<h2>6. 6. 3 Immune System Development & Ageing</h2>
+<h3>1. Primary & Secondary Lymphoid Organs</h3>
+<table>
+<tr><th>Organ</th><th>Type</th><th>Key Function</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>Bone Marrow</strong></td><td>Primary</td><td>Haematopoiesis, B cell development</td><td>Aplastic anaemia, Leukaemia, B cell PID</td></tr>
+<tr><td><strong>Thymus</strong></td><td>Primary</td><td>T cell maturation, Central tolerance</td><td>DiGeorge syndrome, Thymoma, Myasthenia gravis</td></tr>
+<tr><td><strong>Lymph Nodes</strong></td><td>Secondary</td><td>Antigen trapping, T/B cell activation</td><td>Lymphadenopathy, Lymphoma, Sentinel node biopsy</td></tr>
+<tr><td><strong>Spleen</strong></td><td>Secondary</td><td>Blood filtration, Encapsulated bacteria clearance</td><td>Splenectomy → OPSI, ITP, Hereditary spherocytosis</td></tr>
+<tr><td><strong>MALT/GALT</strong></td><td>Secondary</td><td>Mucosal immunity, IgA production</td><td>IBD, Coeliac, IgA nephropathy</td></tr>
+<tr><td><strong>Tonsils/Adenoids</strong></td><td>Secondary</td><td>Upper respiratory immune surveillance</td><td>Tonsillitis, Adenoid hypertrophy</td></tr>
+</table>
+<h3>2. Thymic Involution & Immunosenescence</h3>
+<table>
+<tr><th>Feature</th><th>Mechanism</th><th>Clinical Consequence</th></tr>
+<tr><td><strong>Thymic Involution</strong></td><td>Fatty replacement from puberty; ↓ 3% per year after puberty</td><td>↓ Naive T cell output, ↓ TCR diversity</td></tr>
+<tr><td><strong>T Cell Changes</strong></td><td>↓ CD45RA+ naive, ↑ CD45RO+ memory, ↓ CD28, ↑ Senescent (CD57+, KLRG1+), ↑ Tregs</td><td>↓ Response to novel pathogens/vaccines, ↑ Latent virus reactivation (VZV, CMV)</td></tr>
+<tr><td><strong>B Cell Changes</strong></td><td>↓ Naive B cells, ↓ Class switch recombination, ↓ SHM</td><td>↓ Vaccine response (lower affinity/avidity), ↓ New antigen response</td></tr>
+<tr><td><strong>Innate Dysfunction</strong></td><td>Neutrophil chemotaxis/phagocytosis ↓, Macrophage dysfunction, ↓ NK cytotoxicity</td><td>↑ Bacterial/fungal infections, ↓ Tumour surveillance</td></tr>
+<tr><td><strong>Inflammageing</strong></td><td>Chronic low-grade inflammation (↑ IL-6, TNF-α, CRP, IL-1β, IFN-γ)</td><td>Frailty, Sarcopenia, Atherosclerosis, Neurodegeneration, Insulin resistance, Cancer</td></tr>
+<tr><td><strong>CMV Seropositivity</strong></td><td>Accelerates immunosenescence — massive CMV-specific T cell expansions (memory inflation)</td><td>↑ Mortality, ↓ Vaccine response, ↑ Frailty</td></tr>
+</table>
+<h3>3. Neonatal Immunity</h3>
+<table>
+<tr><th>Component</th><th>Characteristic</th><th>Clinical Relevance</th></tr>
+<tr><td><strong>Passive Immunity</strong></td><td>Transplacental IgG (peaks at 40w); Breast milk IgA</td><td>Protection until 6-12 months; Wanes → PID presentation</td></tr>
+<tr><td><strong>Innate Immunity</strong></td><td>↓ Neutrophil chemotaxis/ROS; ↓ Complement (C3 30-60% adult); ↓ NK cytotoxicity</td><td>↑ Sepsis risk (GBS, E. coli, Listeria)</td></tr>
+<tr><td><strong>Adaptive Immunity</strong></td><td>↓ Naive T cells; Th2-skewed; ↓ IgG2/IgG4; ↓ Memory</td><td>↑ Intracellular infections; Poor polysaccharide vaccine response</td></tr>
+<tr><td><strong>Vaccination</strong></td><td>BCG, Hep B at birth; Delayed live vaccines if immunocompromised</td><td>Maternal antibodies interfere with measles <12m</td></tr>
+</table>
+<hr>
+<h2>7. 7. ️⃣ Immunological Techniques</h2>
+<h3>1. Flow Cytometry & Immunophenotyping</h3>
+<table>
+<tr><th>Application</th><th>Markers</th><th>Clinical Use</th></tr>
+<tr><td><strong>T/B/NK</strong></td><td>CD3, CD4, CD8, CD19, CD56, CD16</td><td>Lymphocyte subsets, PID (XLA, SCID)</td></tr>
+<tr><td><strong>Activation</strong></td><td>CD25, CD69, HLA-DR, CD38</td><td>Activation, HLH, activation syndromes</td></tr>
+<tr><td><strong>Memory</strong></td><td>CD45RA/RO, CCR7, CD27, CD28</td><td>Naive vs Memory (Tcm vs Tem)</td></tr>
+<tr><td><strong>Treg</strong></td><td>CD4+CD25hiCD127loFoxP3+</td><td>IPEX, Treg defects</td></tr>
+<tr><td><strong>B cell subsets</strong></td><td>CD19, CD20, CD27, IgD, IgM, CD38, CD24</td><td>CVID, XLA, Transitional, Memory</td></tr>
+<tr><td><strong>Plasma cells</strong></td><td>CD138, CD38, CD19-</td><td>Myeloma, Plasmablasts</td></tr>
+<tr><td><strong>Intracellular cytokines</strong></td><td>IFN-γ, IL-4, IL-17, TNF-α (PMA/Ionomycin)</td><td>Th1/Th2/Th17, TB (IGRA)</td></tr>
+</table>
+<h3>2. Serological Assays</h3>
+<table>
+<tr><th>Assay</th><th>Principle</th><th>Applications</th></tr>
+<tr><td><strong>ELISA</strong></td><td>Ag-Ab + Enzyme → Colour</td><td>Autoantibodies, Hormones, Infectious serology</td></tr>
+<tr><td><strong>ELISA (Capture/Sandwich)</strong></td><td>Capture Ab + Ag + Detection Ab</td><td>Cytokines, Hormones, Antigens</td></tr>
+<tr><td><strong>Western Blot</strong></td><td>SDS-PAGE + Transfer + Ab</td><td>HIV confirm, Lyme, Paraneoplastic</td></tr>
+<tr><td><strong>Immunofluorescence (IIF)</strong></td><td>Ab + Fluorochrome on substrate</td><td>ANA pattern, ANCA, Antibody ID</td></tr>
+<tr><td><strong>Immunoprecipitation</strong></td><td>Ab + Ag → Precipitation</td><td>IP-MS, Co-IP</td></tr>
+<tr><td><strong>Luminex (Multiplex)</strong></td><td>Beads + Ab + Reporter</td><td>Cytokine panels, HLA antibodies (SAB)</td></tr>
+</table>
+<h3>3. Molecular Techniques</h3>
+<table>
+<tr><th>Technique</th><th>Application</th><th>Clinical Use</th></tr>
+<tr><td><strong>PCR (Conventional/RT/Real-time)</strong></td><td>Gene amplification</td><td>Gene rearrangements (TCR/BCR), Viral load, Chimerism</td></tr>
+<tr><td><strong>HLA Typing</strong></td><td>SSO/SSP/NGS</td><td>Transplant matching, Disease association, Pharmacogenetics</td></tr>
+<tr><td><strong>NGS Panels/WES/WGS</strong></td><td>Gene panels, Exome, Genome</td><td>PID panels, Cancer, Rare disease</td></tr>
+<tr><td><strong>FISH</strong></td><td>Locus-specific probes</td><td>BCR::ABL1, HER2, Microdeletions, Translocations</td></tr>
+<tr><td><strong>MLPA</strong></td><td>Exon CNV, Methylation</td><td>DMD, SMN1, PMS2, MS-MLPA (PWS/AS/BWS)</td></tr>
+<tr><td><strong>Repeat-Primed PCR</strong></td><td>Repeat expansions</td><td>FXS (CGG), HD (CAG), DM1 (CTG), FRDA (GAA), C9orf72</td></tr>
+</table>
+<hr>
+<h2>8. 8. ⚡ FCPS/MRCP High-Yield Summary</h2>
+<table>
+<tr><th>Topic</th><th>Key Points</th></tr>
+<tr><td><strong>Innate Cells</strong></td><td>Neutrophil (phagocytosis, NETs), Macrophage (phagocytosis, Ag presentation), NK (missing self, ADCC), DC (professional APC), ILCs (ILC1/2/3), Mast cells (IgE, anaphylaxis)</td></tr>
+<tr><td><strong>PRRs</strong></td><td>TLRs (surface/endosomal), NLRs (inflammasome/NOD2), RLRs (viral RNA), CLRs (fungi), cGAS-STING (DNA)</td></tr>
+<tr><td><strong>Complement</strong></td><td>Classical (C1q, Ab-Ag), Lectin (MBL), Alternative (spontaneous), Terminal (MAC), Regulators (C1-INH, FH, FI, CD55/46/59)</td></tr>
+<tr><td><strong>Complement Deficiencies</strong></td><td>C1q/C4/C2 → SLE; C3 → severe infections; C5-9 → Neisseria; FH/FI/MCP → aHUS; C1-INH → HAE</td></tr>
+<tr><td><strong>Cytokines</strong></td><td>Type I IFN (antiviral), IFN-γ (Th1, macrophage), IL-12 (Th1), IL-23 (Th17), IL-4/5/13 (Th2), IL-1/6/TNF (inflammation), IL-17 (neutrophil), IL-10/TGF-β (Treg)</td></tr>
+<tr><td><strong>JAK-STAT</strong></td><td>JAK1/3 (γc cytokines), JAK1/2 (IL-6, IFN-γ), JAK2 (EPO/TPO, MPN), TYK2 (IFN-α/β, IL-12/23)</td></tr>
+<tr><td><strong>B Cells</strong></td><td>Development (BM → Spleen), CSR/SHM (AID), GC reaction (Tfh), Plasma cells (BM), Ig classes (IgG, IgM, IgA, IgE, IgD)</td></tr>
+<tr><td><strong>T Cells</strong></td><td>Thymus development (DP → SP, ± selection), Th subsets (Th1/Th2/Th17/Tfh/Treg), CTL (MHC I), Memory (Tcm/Tem/Trm)</td></tr>
+<tr><td><strong>MHC/HLA</strong></td><td>Class I (HLA-A/B/C) → CD8; Class II (HLA-DR/DP/DQ) → CD4; Disease associations (B27, DR3/4, DQ2/8, B51, B57:01, B*15:02)</td></tr>
+<tr><td><strong>Immunological Techniques</strong></td><td>Flow (CD markers), ELISA/ELISPOT, IFA (ANA/ANCA), Luminex (cytokines, HLA Ab), PCR/NGS (TCR/BCR rearrangement, HLA typing, variants)</td></tr>
+</table>
+<hr>
+<h2>9. 9. 🎤 Viva Questions (Expected Answers)</h2>
+<table>
+<tr><th>#</th><th>Question</th><th>Expected Answer</th></tr>
+<tr><td>1</td><td>Differentiate innate vs adaptive immunity</td><td>Innate: Rapid (hrs), non-specific, no memory, germline-encoded PRRs. Adaptive: Slow (days), specific, memory, somatic recombination (TCR/BCR).</td></tr>
+<tr><td>2</td><td>Describe the three complement pathways</td><td>Classical: C1q-Ab-Ag; Lectin: MBL; Alternative: Spontaneous C3 tickover. All converge at C3 → C5 → MAC.</td></tr>
+<tr><td>3</td><td>Complement deficiency → Neisserial infections</td><td>Terminal pathway (C5-C9) deficiency → Impaired MAC formation on Neisseria.</td></tr>
+<tr><td>4</td><td>C1-INH deficiency → HAE</td><td>C1-INH inhibits C1r/s, MASP-1/2, Kallikrein. Deficiency → Uncontrolled bradykinin → Angioedema. C4 low, C1q normal.</td></tr>
+<tr><td>5</td><td>IL-12 vs IL-23</td><td>IL-12 → STAT4 → Th1 (IFN-γ); IL-23 → STAT3 → Th17 (IL-17/22).</td></tr>
+<tr><td>6</td><td>Th1 vs Th2 vs Th17</td><td>Th1: T-bet, IFN-γ, intracellular; Th2: GATA3, IL-4/5/13, helminths/allergy; Th17: RORγt, IL-17/22, extracellular bacteria/fungi.</td></tr>
+<tr><td>7</td><td>Treg mechanism</td><td>FoxP3+, IL-10, TGF-β, IL-35, CTLA-4, CD39/73. Suppress via cytokines, cytolysis, metabolic disruption, DC modulation.</td></tr>
+<tr><td>8</td><td>MHC Class I vs II</td><td>Class I: HLA-A/B/C + β2m, endogenous peptides, CD8+. Class II: HLA-DR/DP/DQ, exogenous peptides, CD4+.</td></tr>
+<tr><td>9</td><td>HLA-B27 associations</td><td>Ankylosing spondylitis (>100), Reactive arthritis, Acute anterior uveitis, PsA, IBD-associated SpA.</td></tr>
+<tr><td>10</td><td>Cross-presentation</td><td>DCs phagocytose dead cells → antigens escape to cytosol → proteasome → TAP → MHC I → CD8+ T cell priming.</td></tr>
+</table>
+<hr>
+<h2>10. 10. 🧩 Confusions & Mnemonics</h2>
+<table>
+<tr><th>Confusion</th><th>Clarification</th></tr>
+<tr><td><strong>"Classical vs Lectin vs Alternative"</strong></td><td>Classical = Antibody-dependent; Lectin = MBL/Ficolin (sugar); Alternative = Spontaneous C3 tickover (always on)</td></tr>
+<tr><td><strong>"C3 deficiency vs C5-9 deficiency"</strong></td><td>C3 = Severe pyogenic infections (central); C5-9 = Neisserial infections only (MAC)</td></tr>
+<tr><td><strong>"C1-INH deficiency = C1q low"</strong></td><td><strong>NO.</strong> C1-INH deficiency → C4 low, C2 low, <strong>C1q normal</strong>.</td></tr>
+<tr><td><strong>"Th1 = IFN-γ, Th2 = IL-4, Th17 = IL-17"</strong></td><td>Also: Th1 = T-bet/IFN-γ (intracellular); Th2 = GATA3/IL-4/5/13 (helminths/allergy); Th17 = RORγt/IL-17/22 (extracellular bacteria/fungi).</td></tr>
+<tr><td><strong>"Treg = FoxP3 only"</strong></td><td><strong>NO.</strong> FoxP3 is master regulator but stability needs TSDR demethylation. Tr1 = IL-10, FoxP3-.</td></tr>
+<tr><td><strong>"MHC I = all cells, MHC II = APCs only"</strong></td><td>Mostly true. MHC II also on thymic epithelium, activated T cells (human), some endothelium.</td></tr>
+<tr><td><strong>"HLA-B27 = AS only"</strong></td><td><strong>NO.</strong> Also Reactive arthritis, Acute anterior uveitis, PsA, IBD-associated SpA.</td></tr>
+<tr><td><strong>"CD4 = Helper, CD8 = Killer only"</strong></td><td><strong>NO.</strong> CD4 can be cytotoxic (Th1, Treg). CD8 can have helper functions.</td></tr>
+<tr><td><strong>"NK cells = Adaptive immunity"</strong></td><td><strong>NO.</strong> NK = Innate (missing self, activating/inhibitory KIRs). But "memory-like" NK exists.</td></tr>
+<tr><td><strong>"TLR4 = only LPS"</strong></td><td>TLR4 also recognises RSV fusion protein, HSPs, HMGB1, viral proteins.</td></tr>
+</table>
+<blockquote><strong>Mnemonic: IMMUNOLOGY FUNDAMENTALS</strong>  </blockquote>
+<blockquote><strong>I</strong>nnate: <strong>Neutrophil (NETs), Macrophage, NK (Missing self), DC (APC), ILC1/2/3, Mast (IgE)</strong>  </blockquote>
+<blockquote><strong>M</strong>ucosal Barriers: <strong>Skin (Defensins), Gut (IgA, Microbiome), Lung (Surfactant, Cilia)</strong>  </blockquote>
+<blockquote><strong>M</strong>PRRs: <strong>TLR (LPS, Flagellin, CpG, RNA), NLR (NOD2, NLRP3), RLR (RNA), CLR (Fungi), cGAS-STING (DNA)</strong>  </blockquote>
+<blockquote><strong>U</strong>niversal Complement: <strong>Classical (Ab), Lectin (MBL), Alternative (Tickover) → C3 → C5 → MAC</strong>  </blockquote>
+<blockquote><strong>N</strong>eutrophil: <strong>Phagocytosis, NETs, ROS, Degranulation, Chemotaxis (fMLP, C5a, LTB4)</strong>  </blockquote>
+<blockquote><strong>O</strong>psonisation: <strong>IgG, C3b, MBL</strong> → FcγR, CR1, CR3  </blockquote>
+<blockquote><strong>L</strong>ymphocytes: <strong>B (Ab), T (CD4 Th, CD8 CTL, Treg)</strong>  </blockquote>
+<blockquote><strong>O</strong>ntogeny: <strong>B (BM), T (Thymus: DN→DP→SP, ± Selection)</strong>  </blockquote>
+<blockquote><strong>G</strong>erminal Centre: <strong>SHM (AID), CSR (AID + Cytokines), Tfh (Bcl6, IL-21, CD40L)</strong>  </blockquote>
+<blockquote><strong>Y</strong>-Globulins: <strong>IgG (Opson, Placenta), IgM (Pentamer, 1st), IgA (Mucosal), IgE (Mast cell, Allergy), IgD (BCR)</strong>  </blockquote>
+<blockquote><strong>T</strong> Cell Subsets: <strong>Th1 (T-bet, IFNγ, Intra), Th2 (GATA3, IL4/5/13, Allergy), Th17 (RORγt, IL17/22, Extra), Tfh (Bcl6, GC), Treg (FoxP3, IL10, TGFβ)</strong>  </blockquote>
+<blockquote><strong>C</strong>D8 CTL: <strong>MHC I, Perforin/Granzyme, FasL, Exhaustion (PD1, TIM3, LAG3, TIGIT)</strong>  </blockquote>
+<blockquote><strong>A</strong>ntigen Presentation: <strong>MHC I (Endogenous, CD8), MHC II (Exogenous, CD4), Cross-presentation (DC, Dead cells)</strong>  </blockquote>
+<blockquote><strong>A</strong>llorecognition: <strong>Direct (Donor MHC), Indirect (Recipient APC), Semi-direct (Exosomes)</strong>  </blockquote>
+<blockquote><strong>C</strong>omplement: <strong>Classical (C1q, Ab), Lectin (MBL), Alternative (Tickover) → C3 → C5 → MAC</strong>  </blockquote>
+<blockquote><strong>Y</strong>okefellow Cytokines: <strong>IL-12→Th1, IL-23→Th17, IL-4→Th2, IL-6+TGFβ→Th17, IL-6/TGFβ→Treg</strong>  </blockquote>
+<blockquote><strong>J</strong>AK-STAT: <strong>JAK1/3 (γc), JAK1/2 (IL-6, IFNγ), JAK2 (EPO/TPO/MPN), TYK2 (IFNα/β, IL-12/23)</strong>  </blockquote>
+<blockquote><strong>H</strong>LA: <strong>Class I (A,B,C→CD8), Class II (DR,DP,DQ→CD4). B27=AS, DR3/4=SLE/RA, DQ2/8=Celiac, B51=Behcet, B57:01=Abacavir, B*15:02=Carbamazepine</strong>  </blockquote>
+<blockquote><strong>T</strong>echniques: <strong>Flow (CD3/4/8/19/56), ELISA/IFA (ANA/ANCA), Luminex (Cytokines, HLA Ab), PCR/NGS (TCR/BCR, HLA, Variants)</strong>  </blockquote>
+<blockquote><strong>P</strong>athogen Recognition: <strong>TLR4=LPS, TLR3=dsRNA, TLR7/8=ssRNA, TLR9=CpG, NLRP3=Inflammasome, cGAS=DNA</strong>  </blockquote>
+<blockquote><strong>E</strong>pigenetics: <strong>AID (SHM/CSR), FoxP3 (Treg), Bcl6 (Tfh/GC), RORγt (Th17), T-bet (Th1), GATA3 (Th2)</strong>  </blockquote>
+<blockquote><strong>T</strong>umour Immunology: <strong>Immunoediting (Elimination/Equilibrium/Escape), Checkpoints (PD1/PD-L1, CTLA4, LAG3, TIGIT), CAR-T (CD19, BCMA)</strong>  </blockquote>
+<blockquote><strong>V</strong>accines: <strong>Platforms (mRNA, Viral vector, Protein, Live attenuated), Hesitancy, Schedules</strong>  </blockquote>
+<blockquote><strong>F</strong>undamental: <strong>Self vs Non-self, Central/Peripheral Tolerance, Immune Memory, Immunodeficiency</strong>  </blockquote>
+<hr>
+<h2>11. 11. 🗺️ Mind Map</h2>
+<div class="mindmap">
+<div class="mm-root">Immunology Fundamentals</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Innate Immunity</div>
+<div class="mm-node mm-l2">Barriers (Skin, Mucosa, Microbiome)</div>
+<div class="mm-node mm-l2">Cells (Neutrophil, Macrophage, NK, DC, ILC, Mast)</div>
+<div class="mm-node mm-l2">PRRs (TLR, NLR, RLR, CLR, cGAS-STING)</div>
+<div class="mm-node mm-l2">Complement (Classical, Lectin, Alternative, Terminal)</div>
+<div class="mm-node mm-l2">Acute Phase (CRP, SAA, PCT, Ferritin, Hepcidin)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Adaptive Immunity</div>
+<div class="mm-node mm-l2">B Cells</div>
+<div class="mm-node mm-l3">– Development (Pro-B → Plasma)</div>
+<div class="mm-node mm-l3">– Ig Classes (IgG, IgM, IgA, IgE, IgD)</div>
+<div class="mm-node mm-l3">– GC Reaction (SHM, CSR, Tfh)</div>
+<div class="mm-node mm-l2">T Cells</div>
+<div class="mm-node mm-l3">– Thymus (DN→DP→SP, ± Selection)</div>
+<div class="mm-node mm-l3">– Subsets (Th1, Th2, Th17, Tfh, Treg, Th9)</div>
+<div class="mm-node mm-l3">– CTL (CD8, Perforin/Granzyme/FasL)</div>
+<div class="mm-node mm-l3">– Memory (Tcm, Tem, Trm)</div>
+<div class="mm-node mm-l2">Antigen Presentation</div>
+<div class="mm-node mm-l3">– MHC I (Endogenous, CD8) vs MHC II (Exogenous, CD4)</div>
+<div class="mm-node mm-l3">– Cross-presentation</div>
+<div class="mm-node mm-l3">– HLA (Class I A/B/C, Class II DR/DP/DQ)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complement</div>
+<div class="mm-node mm-l2">Pathways (Classical, Lectin, Alternative)</div>
+<div class="mm-node mm-l2">Terminal Pathway (MAC)</div>
+<div class="mm-node mm-l2">Regulators (C1-INH, FH, FI, CD55/46/59)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Cytokines &amp; Signalling</div>
+<div class="mm-node mm-l2">Type I/II IFN, TNF, IL-1, IL-6, IL-12/23, IL-17, IL-4/5/13</div>
+<div class="mm-node mm-l2">JAK-STAT (JAK1/3, JAK1/2, JAK2, TYK2)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">HLA &amp; Disease</div>
+<div class="mm-node mm-l2">Class I (A, B, C) vs Class II (DR, DP, DQ)</div>
+<div class="mm-node mm-l2">Disease Associations (B27, DR3/4, DQ2, B51, B57:01, B*15:02)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Techniques</div>
+<div class="mm-node mm-l2">Flow, ELISA, IFA, Luminex, PCR/NGS, MLPA, FISH, HLA Typing</div>
+</div>
+</div>
+</div>
+<hr>
+<h2>12. 12. 📅 Spaced Repetition Tracker</h2>
+<table>
+<tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr>
+<tr><td>Day 1</td><td></td><td></td><td></td></tr>
+<tr><td>Day 3</td><td></td><td></td><td></td></tr>
+<tr><td>Day 7</td><td></td><td></td><td></td></tr>
+<tr><td>Day 14</td><td></td><td></td><td></td></tr>
+<tr><td>Day 30</td><td></td><td></td><td></td></tr>
+<tr><td>Day 90</td><td></td><td></td><td></td></tr>
+</table>
+<hr>
+<h2>13. 13. 📝 Self-Test Scorecard</h2>
+<table>
+<tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr>
+<tr><td>Innate Immunity (Cells, PRRs, Barriers)</td><td>3</td><td></td><td></td></tr>
+<tr><td>Complement (Pathways, Deficiencies, Regulation)</td><td>3</td><td></td><td></td></tr>
+<tr><td>Cytokines & JAK-STAT</td><td>3</td><td></td><td></td></tr>
+<tr><td>B Cell & Humoral Immunity</td><td>3</td><td></td><td></td></tr>
+<tr><td>T Cell Development & Subsets</td><td>3</td><td></td><td></td></tr>
+<tr><td>Antigen Presentation & MHC/HLA</td><td>3</td><td></td><td></td></tr>
+<tr><td>Immunological Techniques</td><td>2</td><td></td><td></td></tr>
+<tr><td>Key Associations & Clinical Application</td><td>3</td><td></td><td></td></tr>
+<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td></td><td></td></tr>
+</table>
+<hr>
+<h2>14. 14. 💬 Exam Answer Modes</h2>
+<table>
+<tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr>
+<tr><td><strong>Long Essay</strong></td><td>"Describe the innate and adaptive immune responses to a bacterial infection."</td><td>Barriers, PRRs, Neutrophil recruitment, Complement, DC migration, T cell priming, Th1/Th17, Antibody production, Memory</td></tr>
+<tr><td><strong>Short Note</strong></td><td>"Complement pathways and clinical deficiencies."</td><td>3 pathways, Convergence at C3, MAC, Deficiencies (C1q/C4/C2→SLE, C3→sepsis, C5-9→Neisseria, FH/FI→aHUS, C1-INH→HAE)</td></tr>
+<tr><td><strong>Viva</strong></td><td>"Explain the difference between MHC Class I and II antigen presentation."</td><td>MHC I: Endogenous, HLA-A/B/C+β2m, CD8+, 8-10aa, closed groove. MHC II: Exogenous, HLA-DR/DP/DQ, CD4+, 13-25aa, open groove, HLA-DM.</td></tr>
+<tr><td><strong>Ward Round</strong></td><td>"Patient with recurrent Neisseria meningitidis. Which complement deficiency?"</td><td><strong>Terminal pathway (C5-C9)</strong> deficiency. Test: CH50, AH50, Individual components (C5, C6, C7, C8, C9). Screen family.</td></tr>
+<tr><td><strong>Last-Night</strong></td><td>"Innate: Neutrophil, Mac, NK, DC, PRR (TLR/NLR/RLR/CLR/cGAS). Complement: 3 paths→C3→MAC. Def: C1q/C4/C2=SLE, C3=sepsis, C5-9=Neisseria, FH/FI=aHUS, C1-INH=HAE. Cytokines: IL12→Th1, IL23→Th17, IL4→Th2, IL6+TGFb→Th17/Treg. JAK-STAT: JAK1/3(γc), JAK1/2(IL6/IFNγ), JAK2(EPO), TYK2(IFNα/β,IL12/23). B: Pro→Pre→Imm→Trans→Mature→GC→Plasma/Mem. Ig: G(M,O,A,D), M(pentamer), A(dimer), E(mast), D(BCR). T: Thymus(DN→DP→SP), Th1(Tbet/IFNγ), Th2(GATA3/IL4), Th17(RORγt/IL17), Tfh(Bcl6/IL21), Treg(FoxP3). MHC: I(A,B,C→CD8), II(DR,DP,DQ→CD4). HLA: B27=AS, DR3/4=SLE/RA, DQ2/8=Celiac, B57=Abacavir, B*15:02=Carbamazepine. Tech: Flow, ELISA, IFA, Luminex, PCR/NGS, MLPA, FISH, HLA Typing."</td><td>Compressed.</td></tr>
+</table>
+<hr>
+<h2>15. 15. 📌 Summary</h2>
+<ul>
+<li><strong>Innate Immunity</strong>: Barriers, Neutrophils (NETs, phagocytosis), Macrophages (phagocytosis, presentation), NK (missing self, ADCC), DCs (professional APC), ILCs, Mast cells; PRRs (TLR, NLR, RLR, CLR, cGAS-STING); Complement (Classical, Lectin, Alternative → C3 → MAC), Regulators (C1-INH, FH, FI, CD55/46/59)</li>
+<li><strong>Complement Deficiencies</strong>: C1q/C4/C2 → SLE; C3 → severe pyogenic infections; C5-9 → Neisserial infections; FH/FI/MCP → aHUS; C1-INH → HAE (C4 low, C1q normal)</li>
+<li><strong>Cytokines</strong>: Type I IFN (antiviral), IFN-γ (Th1), IL-12 (Th1), IL-23 (Th17), IL-4/5/13 (Th2), IL-1/6/TNF (inflammation), IL-17 (neutrophils), IL-10/TGF-β (Treg); JAK-STAT pathways</li>
+<li><strong>B Cells</strong>: BM development → GC (SHM, CSR via AID) → Plasma cells (BM) & Memory; Ig classes (IgG, IgM, IgA, IgE, IgD)</li>
+<li><strong>T Cells</strong>: Thymus (DP→SP, ± selection); Th1 (T-bet, IFN-γ), Th2 (GATA3, IL-4/5/13), Th17 (RORγt, IL-17/22), Tfh (Bcl6, IL-21), Treg (FoxP3), CTL (CD8, perforin/granzyme)</li>
+<li><strong>MHC/HLA</strong>: Class I (HLA-A/B/C + β2m, endogenous, CD8+); Class II (HLA-DR/DP/DQ, exogenous, CD4+); Cross-presentation; Disease associations (B27, DR3/4, DQ2/8, B51, B57:01, B*15:02)</li>
+<li><strong>Techniques</strong>: Flow (immunophenotyping), ELISA/ELISPOT, IFA (ANA/ANCA), Luminex (cytokines, HLA Abs), PCR/NGS (TCR/BCR rearrangement, HLA typing), MLPA (CNV, methylation), FISH</li>
+</ul>
+<hr>
+<h2>16. 16. ❓ MCQs (10)</h2>
+<ol>
+<li><strong>Complement deficiency most associated with SLE:</strong>  </li>
+</ol>
+<p>   A. C3  B. <strong>C1q, C4, or C2</strong>  C. C5  D. Factor H  </p>
+<p>   <em>Answer: B. Classical pathway deficiencies (C1q, C4, C2) strongly associated with SLE.</em></p>
+<ol>
+<li><strong>Terminal complement pathway deficiency predisposes to:</strong>  </li>
+</ol>
+<p>   A. Staphylococcus aureus  B. <strong>Neisseria meningitidis</strong>  C. Streptococcus pneumoniae  D. Escherichia coli  </p>
+<p>   <em>Answer: B. Terminal pathway (C5-C9) deficiency → impaired MAC formation on Neisseria.</em></p>
+<ol>
+<li><strong>Which cytokine drives Th17 differentiation?</strong>  </li>
+</ol>
+<p>   A. IL-12  B. IL-4  C. <strong>IL-23 (+ IL-6, TGF-β, IL-1β)</strong>  D. IFN-γ  </p>
+<p>   <em>Answer: C. IL-23 (with IL-6, TGF-β, IL-1β) → RORγt → Th17 (IL-17A/F, IL-22).</em></p>
+<ol>
+<li><strong>Transcription factor for Th1 differentiation:</strong>  </li>
+</ol>
+<p>   A. GATA3  B. <strong>T-bet</strong>  C. RORγt  D. FoxP3  </p>
+<p>   <em>Answer: B. T-bet is master regulator for Th1 (IFN-γ).</em></p>
+<ol>
+<li><strong>MHC Class I presents peptides to:</strong>  </li>
+</ol>
+<p>   A. CD4+ T cells  B. <strong>CD8+ T cells</strong>  C. B cells  D. NK cells  </p>
+<p>   <em>Answer: B. MHC Class I (HLA-A/B/C) presents endogenous peptides to CD8+ CTLs.</em></p>
+<ol>
+<li><strong>HLA-B27 is strongly associated with:</strong>  </li>
+</ol>
+<p>   A. Rheumatoid Arthritis  B. <strong>Ankylosing Spondylitis</strong>  C. SLE  D. Type 1 Diabetes  </p>
+<p>   <em>Answer: B. HLA-B27 >100 odds ratio for Ankylosing Spondylitis.</em></p>
+<ol>
+<li><strong>Which cytokine signals via JAK1/JAK3?</strong>  </li>
+</ol>
+<p>   A. IFN-γ  B. IL-6  C. <strong>IL-2 (γc chain cytokines)</strong>  D. IFN-α  </p>
+<p>   <em>Answer: C. γc cytokines (IL-2, 4, 7, 9, 15, 21) use JAK1/JAK3.</em></p>
+<ol>
+<li><strong>AID (Activation-Induced Deaminase) function:</strong>  </li>
+</ol>
+<p>   A. IgG synthesis  B. <strong>SHM and CSR in B cells</strong>  C. T cell activation  D. Complement activation  </p>
+<p>   <em>Answer: B. AID mediates somatic hypermutation and class switch recombination in GC B cells.</em></p>
+<ol>
+<li><strong>HLA-B*57:01 screening is required before prescribing:</strong>  </li>
+</ol>
+<p>   A. Carbamazepine  B. <strong>Abacavir</strong>  C. Allopurinol  D. Phenytoin  </p>
+<p>   <em>Answer: B. HLA-B</em>57:01 strongly associated with abacavir hypersensitivity reaction.*</p>
+<ol>
+<li><strong>Treg master transcription factor:</strong>  </li>
+</ol>
+<p>    A. T-bet  B. GATA3  C. RORγt  D. <strong>FoxP3</strong>  </p>
+<p>    <em>Answer: D. FoxP3 is master regulator of Treg development and function.</em></p>
+<hr>
+<h2>17. 17. 📋 SBAs (10)</h2>
+<ol>
+<li><strong>25M with recurrent pneumococcal pneumonia. Low IgG2, normal IgG, IgA, IgM. Likely diagnosis?</strong>  </li>
+</ol>
+<p>   A. XLA  B. <strong>IgG subclass deficiency</strong>  C. CVID  D. Specific antibody deficiency  </p>
+<p>   <em>Answer: B. Selective IgG2 subclass deficiency → recurrent encapsulated bacteria.</em></p>
+<ol>
+<li><strong>Child with recurrent Staph aureus, Aspergillus. NBT test normal. DHR flow cytometry: No oxidative burst. Diagnosis?</strong>  </li>
+</ol>
+<p>   A. CGD  B. <strong>CGD (Confirmed by DHR)</strong>  C. LAD  D. CHS  </p>
+<p>   <em>Answer: B. Dihydrorhodamine (DHR) flow cytometry is gold standard for CGD (absent oxidative burst).</em></p>
+<ol>
+<li><strong>Patient with hereditary angioedema. C4 low, C1q normal. Deficiency?</strong>  </li>
+</ol>
+<p>   A. C1q  B. <strong>C1-INH</strong>  C. C4  D. C2  </p>
+<p>   <em>Answer: B. C1-INH deficiency → Uncontrolled C1r/s → Low C4, Normal C1q.</em></p>
+<ol>
+<li><strong>HLA-B*57:01 screening is mandatory before:</strong>  </li>
+</ol>
+<p>   A. Carbamazepine  B. <strong>Abacavir</strong>  C. Allopurinol  D. Phenytoin  </p>
+<p>   <em>Answer: B. Abacavir hypersensitivity strongly associated with HLA-B</em>57:01.*</p>
+<ol>
+<li><strong>Patient on azathioprine develops severe neutropenia. TPMT genotype?</strong>  </li>
+</ol>
+<p>    A. <em>1/</em>1 (Normal)  B. <strong>Homozygous variant (Poor metabolizer)</strong>  C. Heterozygous (Intermediate)  D. <em>1/</em>17 (Ultra-rapid)  </p>
+<p>    <em>Answer: B. TPMT poor metaboliser (homozygous variant) → Severe myelosuppression with azathioprine.</em></p>
+<hr>
+<h2>18. 18. 🔑 Answer Keys</h2>
+<table>
+<tr><th>MCQs</th><th>SBAs</th></tr>
+<tr><td>1-B (C1q/C4/C2), 2-B (Neisseria), 3-C (IL-23), 4-B (T-bet), 5-B (CD8+), 6-B (AS), 7-C (γc cytokines), 8-B (SHM/CSR), 8-B (Abacavir), 10-D (FoxP3)</td><td>1-B, 2-B, 3-B, 4-B, 5-B</td></tr>
+</table>
+<hr>
+<h2>19. 19. 🔗 Cross-Links</h2>
+<ul>
+<li>[[Clinical Immunology MOC]] — Master index</li>
+<li>[[2.1 Primary Immunodeficiencies]] — Complement deficiencies, Phagocytic defects</li>
+<li>[[3.2 Systemic Autoimmune Diseases]] — SLE (Complement), Complement in SLE</li>
+<li>[[3.4 Autoimmune Diagnostics]] — Complement levels (C3, C4, CH50)</li>
+<li>[[2.2 Secondary Immunodeficiencies]] — HIV complement, Splenectomy</li>
+<li>[[5.1-5.4 Transplant Immunology]] — Complement in rejection, C4d staining</li>
+<li>[[6.1-6.7 Tumour Immunology & Immunotherapy]] — Complement in tumour microenvironment</li>
+<li>[[7.1-7.6 Immune-Based Therapies]] — Eculizumab (C5 inhibitor), Ravulizumab</li>
+<li>[[8.1-8.6 Special Situations Immunology]] — Complement in sepsis, Ageing</li>
+<li>[[9. ELSI]] — Genetic testing for complement deficiencies</li>
+</ul>
+<hr>
+<p><strong>Last Updated:</strong> 2026-06-14  </p>
+<p><strong>Next:</strong> Build <code>2.1 Primary Immunodeficiencies.md</code></p></div>
+        
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
     </div>
-    <div id="topicContainer" class="topic-detail-placeholder">
-      <div class="placeholder">
-        <div class="icon">📖</div>
-        <p>Select a topic from the sidebar to view its content.</p>
-        <p style="font-size:12px; margin-top:8px;">Or pick a chapter from the header dropdown.</p>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/4-clinical-immunology/diseases/4.1.01-fundamentals-of-immunology.png" alt="Fundamentals Of Immunology" loading="lazy"></div>
+    </div>
       </div>
+    </details>
+  </div>
+</details>
+<details class="hub-acc" data-hub="4.2">
+  <summary class="hub-summary">
+    <span class="hub-arrow">▸</span>
+    <span class="hub-label"><span class="hub-num">4.2</span> Hypersensitivity & Allergy</span>
+    <span class="hub-count">1</span>
+  </summary>
+  <div class="hub-body">
+    <details class="topic-acc" data-topic="4.2.01" data-hub="4.2">
+      <summary class="topic-summary">
+        <span class="topic-arrow">▸</span>
+        <span class="topic-num">4.2.01</span>
+        <span class="topic-title">Hypersensitivity Allergy</span>
+      </summary>
+      <div class="topic-body">
+        <div class="topic-content"><p><strong>Parent Topic:</strong> <a href="../Clinical%20Immunology%20MOC.md">Clinical Immunology MOC</a> → <a href="../Davidson%20Chapter%204%20-%20Clinical%20Immunology%20Hierarchy.md">Chapter 4 Hierarchy</a>  </p>
+<p><strong>Status:</strong> <code>full-fcps-mrcp-note</code>  </p>
+<p><strong>Priority:</strong> ⭐⭐⭐ HIGHEST (FCPS/MRCP — Gell & Coombs Classification, Anaphylaxis, Asthma, Drug Allergy, Allergy Testing)  </p>
+<p><strong>Source:</strong> Davidson 24th Ed Ch 4; BSACI/WAO Guidelines; NICE/BSR; FCPS/MRCP/MRCPCH Syllabus</p>
+<hr>
+<h2>1. 1. 🎯 Learning Objectives</h2>
+<ul>
+<li>[ ] Apply <strong>Gell & Coombs Classification</strong> — Type I-IV (and V) Hypersensitivity mechanisms, Examples</li>
+<li>[ ] Manage <strong>Anaphylaxis</strong> — Algorithm (Adrenaline IM, IV Fluids, Oxygen, Adjuncts), Biphasic, Tryptase</li>
+<li>[ ] Diagnose & Manage <strong>Asthma</strong> — Phenotypes/Endotypes, Stepwise Management (BTS/SIGN), Biologics</li>
+<li>[ ] Manage <strong>Allergic Rhinitis/Conjunctivitis</strong> — ARIA Guidelines, Immunotherapy (SCIT/SLIT)</li>
+<li>[ ] Diagnose <strong>Food Allergy</strong> — IgE vs Non-IgE, Component-Resolved Diagnostics, Oral Food Challenge</li>
+<li>[ ] Manage <strong>Drug Hypersensitivity</strong> — SJS/TEN/DRESS/AGEP, HLA Associations, Cross-Reactivity, Desensitisation</li>
+<li>[ ] Apply <strong>Allergy Diagnostics</strong> — SPT, sIgE, Component-Resolved Diagnostics, BAT, Patch Testing, Oral Food Challenge</li>
+<li>[ ] Answer viva: "Anaphylaxis Algorithm" and "SJS vs TEN vs DRESS" and "Component-Resolved Diagnostics"</li>
+</ul>
+<hr>
+<h2>2. 2. 🧠 Core Concept: Gell & Coombs Classification</h2>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hypersensitivity Reactions</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Type I: IgE-Mediated (Immediate)</div>
+<div class="fc-node" data-id="C">Type II: Antibody-Mediated (Cytotoxic)</div>
+<div class="fc-node" data-id="D">Type III: Immune Complex-Mediated</div>
+<div class="fc-node" data-id="E">Type IV: T-Cell Mediated (Delayed)</div>
+<div class="fc-node" data-id="F">Type V: Stimulatory (Autoantibody)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B1">Anaphylaxis, Asthma, Allergic Rhinitis, Food Allergy, Atopic Dermatitis</div>
+<div class="fc-node" data-id="C1">AIHA, ITP, Goodpasture, Graves, Myasthenia Gravis, Drug-Induced</div>
+<div class="fc-node" data-id="D1">SLE, Serum Sickness, Vasculitis, Arthus, Farmer's Lung</div>
+<div class="fc-node" data-id="E1">Contact Dermatitis, TB Test, Drug Hypersensitivity (SJS/TEN/DRESS), TB, Granulomas</div>
+<div class="fc-node" data-id="F1">Graves (TSHR Stimulating), MG (AChR Block), Pemphigus (AChR Modulating)</div>
+</div>
+</div>
+<hr>
+<h2>3. 3. ️⃣ Type I Hypersensitivity (IgE-Mediated / Immediate)</h2>
+<h3>1. Pathophysiology</h3>
+<table>
+<tr><th>Phase</th><th>Mechanism</th></tr>
+<tr><td><strong>Sensitisation</strong></td><td>Allergen → DC → Th2 → IL-4/IL-13 → B cell class switch → <strong>IgE</strong> → Binds <strong>FcεRI</strong> on Mast cells/Basophils</td></tr>
+<tr><td><strong>Effector</strong></td><td>Re-exposure → Allergen cross-links <strong>IgE-FcεRI</strong> → <strong>Degranulation</strong> (Histamine, Tryptase, PGD2, LTC4, PAF) + <strong>Cytokines</strong> (IL-4, IL-5, IL-13)</td></tr>
+<tr><td><strong>Late Phase</strong> (4-12h)</td><td><strong>Eosinophils, Th2 cells, Basophils</strong> → Tissue damage, Remodelling</td></tr>
+</table>
+<h3>2. Key Mediators</h3>
+<table>
+<tr><th>Mediator</th><th>Source</th><th>Effects</th></tr>
+<tr><td><strong>Histamine</strong></td><td>Mast cells, Basophils</td><td>Vasodilation, ↑ Vascular permeability, Bronchoconstriction, Pruritus</td></tr>
+<tr><td><strong>Tryptase</strong></td><td>Mast cells</td><td><strong>Biomarker</strong> (Peak 1-2h, Half-life 2h), Fibrosis, Airway remodelling</td></tr>
+<tr><td><strong>PGD2</strong></td><td>Mast cells</td><td>Bronchoconstriction, Vasodilation, Flushing</td></tr>
+<tr><td><strong>LTC4, LTD4, LTE4</strong> (CysLTs)</td><td>Mast cells, Eosinophils</td><td><strong>Potent bronchoconstriction</strong>, Mucus, Vascular permeability</td></tr>
+<tr><td><strong>PAF</strong></td><td>Mast cells, Basophils, Platelets</td><td>Platelet activation, Vascular permeability, Bronchoconstriction</td></tr>
+<tr><td><strong>IL-4, IL-5, IL-13</strong></td><td>Th2, ILC2, Mast cells</td><td><strong>IL-5 → Eosinophilia</strong>, <strong>IL-13 → IgE, Airway remodelling</strong>, <strong>IL-4 → IgE switching</strong></td></tr>
+</table>
+<hr>
+<h2>4. 4. ️⃣ Anaphylaxis</h2>
+<h3>1. Diagnostic Criteria (WAO/RS)</h3>
+<p><strong>Anaphylaxis HIGHLY LIKELY if ANY 1 of 3:</strong></p>
+<ol>
+<li><strong>Acute onset</strong> (mins-hours) <strong>+ Skin/Mucosal</strong> (Urticaria, Angioedema, Flushing) <strong>+ Respiratory</strong> (Wheeze, Stridor, Dyspnoea) <strong>OR</strong> <strong>Cardiovascular</strong> (Hypotension, Syncope, Tachycardia)</li>
+<li><strong>Acute onset</strong> <strong>+ 2+ Systems</strong>: Skin + Respiratory + Cardiovascular + GI</li>
+<li><strong>Acute hypotension</strong> after known allergen exposure</li>
+</ol>
+<h3>2. Emergency Algorithm (RCUK/WAO/RCUK 2021)</h3>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Recognise Anaphylaxis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Call for Help / Code Blue</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**ADRENALINE IM 0.5mg (1:1000) Anterolateral Thigh**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Response?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">**Repeat Adrenaline IM q5min** Max 3 doses</div>
+<div class="fc-node" data-id="F">Position: Supine + Legs Raised (If Breathless: Semi-recumbent)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">**O2 High Flow** (15L/min)</div>
+<div class="fc-node" data-id="H">**IV Fluid Challenge** 500-1000ml Crystalloid Bolus</div>
+<div class="fc-node" data-id="I">**Chlorphenamine 10mg IV** (Adjunct)</div>
+<div class="fc-node" data-id="J">**Hydrocortisone 200mg IV** (Adjunct — Late effect)</div>
+<div class="fc-node" data-id="K">**Salbutamol Neb** (If Bronchospasm)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Continuous Monitoring ECG, SpO2, BP, RR, Peak Flow</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Observe 6-12h (Biphasic Reaction Risk 20%)</div>
+</div>
+</div>
+<h3>3. Adrenaline Dosing</h3>
+<table>
+<tr><th>Age/Weight</th><th>IM Dose (1:1000)</th></tr>
+<tr><td><strong>Adult</strong></td><td><strong>0.5 mg (0.5 mL)</strong></td></tr>
+<tr><td><strong>Child >12y / >50kg</strong></td><td>0.5 mg (0.5 mL)</td></tr>
+<tr><td><strong>Child 6-12y / 25-50kg</strong></td><td>0.3 mg (0.3 mL)</td></tr>
+<tr><td><strong>Child 6m-6y / 7.5-25kg</strong></td><td>0.15 mg (0.15 mL)</td></tr>
+<tr><td><strong>Infant <6m / <7.5kg</strong></td><td>0.1 mg (0.1 mL)</td></tr>
+</table>
+<blockquote><strong>Key</strong>: <strong>Adrenaline IM is FIRST-LINE and LIFE-SAVING</strong> — No contraindication in anaphylaxis. Repeat q5min if no improvement.</blockquote>
+<h3>4. Biphasic Reaction</h3>
+<table>
+<tr><th>Feature</th><th>Detail</th></tr>
+<tr><td><strong>Incidence</strong></td><td>1-20% (Higher if delayed adrenaline)</td></tr>
+<tr><td><strong>Timing</strong></td><td>1-72h after initial resolution (Peak 3-10h)</td></tr>
+<tr><td><strong>Risk Factors</strong></td><td>Delayed adrenaline, Severe initial reaction, Inadequate initial dose, No observation</td></tr>
+<tr><td><strong>Management</strong></td><td><strong>Observe 6-12h</strong> post-resolution; <strong>Adrenaline available</strong></td></tr>
+</table>
+<h3>5. Serum Tryptase</h3>
+<table>
+<tr><th>Timing</th><th>Interpretation</th></tr>
+<tr><td><strong>Baseline</strong></td><td>Pre-reaction (if known)</td></tr>
+<tr><td><strong>Peak (1-2h post-onset)</strong></td><td><strong>>11.4 ng/mL OR >2x Baseline + 1.2x</strong> = Supports anaphylaxis</td></tr>
+<tr><td><strong>24h</strong></td><td>Returns to baseline (Half-life ~2h)</td></tr>
+<tr><td><strong>Elevated Baseline</strong></td><td><strong>Mastocytosis</strong>, <strong>Clonal mast cell disease</strong></td></tr>
+</table>
+<hr>
+<h2>5. 5. ️⃣ Bronchial Asthma</h2>
+<h3>1. Phenotypes & Endotypes</h3>
+<table>
+<tr><th>Phenotype</th><th>Key Features</th><th>Endotype</th><th>Key Biomarkers</th></tr>
+<tr><td><strong>Allergic (Early-onset)</strong></td><td>Atopy, Childhood onset, RH</td><td><strong>Type 2 High</strong></td><td><strong>FeNO >25 ppb</strong>, Eos >150/μL, IgE↑, Periostin</td></tr>
+<tr><td><strong>Non-Allergic (Late-onset)</strong></td><td>Non-atopic, Adult onset, Obesity</td><td><strong>Type 2 Low / Non-Type 2</strong></td><td>Neutrophilia, Low FeNO, Obesity</td></tr>
+<tr><td><strong>Eosinophilic</strong></td><td>Sputum Eos >3%</td><td><strong>Type 2 High</strong></td><td>Blood Eos >300/μL, FeNO >50 ppb</td></tr>
+<tr><td><strong>Neutrophilic</strong></td><td>Sputum Neut >60%</td><td><strong>Non-Type 2 / Th17</strong></td><td>Neutrophilia, IL-17, IL-8</td></tr>
+<tr><td><strong>Aspirin-Exacerbated Respiratory Disease (AERD)</strong></td><td>Asthma + Nasal Polyps + NSAID Sensitivity</td><td><strong>CysLT Overproduction</strong></td><td>High CysLTs, Eosinophilia</td></tr>
+<tr><td><strong>Obese Asthma</strong></td><td>BMI >30, Late-onset, Poor control</td><td><strong>Mixed / Non-Type 2</strong></td><td>Low FeNO, Low Eos, Metabolic syndrome</td></tr>
+</table>
+<h3>2. BTS/SIGN 2024 Stepwise Management (Adults)</h3>
+<table>
+<tr><th>Step</th><th>Treatment</th><th>Dose/Details</th></tr>
+<tr><td><strong>Step 1</strong></td><td><strong>SABA PRN</strong> (Salbutamol 100-200mcg)</td><td>As needed</td></tr>
+<tr><td><strong>Step 2</strong></td><td><strong>Low-dose ICS</strong> (Beclomethasone 200-400mcg/d) + SABA PRN</td><td><strong>Regular ICS</strong> — Start if symptoms >2/wk or night waking</td></tr>
+<tr><td><strong>Step 3</strong></td><td><strong>Low-dose ICS + LABA</strong> (Fixed combination)</td><td>Add LABA if not controlled on ICS alone</td></tr>
+<tr><td><strong>Step 4</strong></td><td><strong>Medium-dose ICS + LABA</strong></td><td>Increase ICS to medium dose (Beclo 800mcg/d)</td></tr>
+<tr><td><strong>Step 5</strong></td><td><strong>High-dose ICS + LABA</strong> + <strong>Add-on</strong></td><td><strong>LAMA (Tiotropium)</strong>, <strong>LTRA (Montelukast)</strong>, <strong>Theophylline</strong></td></tr>
+<tr><td><strong>Step 6</strong></td><td><strong>High-dose ICS + LABA + Biologic</strong></td><td><strong>Anti-IL5 (Mepolizumab/Reslizumab/Benralizumab)</strong>, <strong>Anti-IL4Rα (Dupilumab)</strong>, <strong>Anti-TSLP (Tezepelumab)</strong>, <strong>Anti-IgE (Omalizumab)</strong></td></tr>
+</table>
+<blockquote><strong>Step Down</strong>: Review q3m, Step down if controlled 3m</blockquote>
+<blockquote><strong>SMART/MART</strong>: <strong>Single Maintenance and Reliever Therapy</strong> (Budesonide/Formoterol, Beclo/Formoterol) — Preferred for Steps 3-5</blockquote>
+<h3>3. Severe Asthma Biologics (GINA 2024 / NICE)</h3>
+<table>
+<tr><th>Biologic</th><th>Target</th><th>Indication</th><th>Dose</th></tr>
+<tr><td><strong>Omalizumab</strong></td><td>Anti-IgE</td><td><strong>Severe Allergic Asthma</strong> (IgE 30-1500 IU/mL, Sensitisation)</td><td>75-600mg SC q2-4w</td></tr>
+<tr><td><strong>Mepolizumab / Reslizumab</strong></td><td>Anti-IL-5</td><td><strong>Severe Eosinophilic Asthma</strong> (Blood Eos ≥150-300/μL)</td><td>100mg SC q4w / 3mg/kg IV q4w</td></tr>
+<tr><td><strong>Benralizumab</strong></td><td>Anti-IL-5Rα</td><td><strong>Severe Eosinophilic Asthma</strong> (Eos ≥300/μL)</td><td>30mg SC q4w ×3, then q8w</td></tr>
+<tr><td><strong>Dupilumab</strong></td><td>Anti-IL-4Rα</td><td><strong>Severe Type 2 High</strong> (Eos ≥150; FeNO ≥25)</td><td>600mg SC loading → 300mg q2w</td></tr>
+<tr><td><strong>Tezepelumab</strong></td><td>Anti-TSLP</td><td><strong>Severe Asthma</strong> (Broad Type 2)</td><td>210mg SC q4w</td></tr>
+</table>
+<h3>4. Acute Severe Asthma (Life-Threatening)</h3>
+<table>
+<tr><th>Feature</th><th>Threshold</th></tr>
+<tr><td><strong>PEF</strong></td><td><33% Best/Predicted</td></tr>
+<tr><td><strong>SpO₂</strong></td><td><92% on Air</td></tr>
+<tr><td><strong>PaCO₂</strong></td><td>Normal/Raised (Normal = Impending Respiratory Failure)</td></tr>
+<tr><td><strong>Silent Chest</strong></td><td>—</td></tr>
+<tr><td><strong>Cyanosis / Exhaustion / Confusion</strong></td><td>—</td></tr>
+</table>
+<table>
+<tr><th>Treatment</th><th>Dose</th></tr>
+<tr><td><strong>O₂</strong> (Target SpO₂ 94-98%)</td><td>High Flow (15L)</td></tr>
+<tr><td><strong>Salbutamol Neb</strong></td><td>5mg q15-30min (Continuous if severe)</td></tr>
+<tr><td><strong>Ipratropium Neb</strong></td><td>500mcg q20-30min (Add to Salbutamol)</td></tr>
+<tr><td><strong>IV Magnesium Sulphate</strong></td><td><strong>2g IV over 20min</strong> (Single dose)</td></tr>
+<tr><td><strong>IV Hydrocortisone</strong></td><td>100mg (or Pred 40-50mg PO)</td></tr>
+<tr><td><strong>IV Aminophylline</strong></td><td><strong>Only if Life-Threatening</strong> (5mg/kg loading, 0.5-0.7mg/kg/h)</td></tr>
+<tr><td><strong>Escalation</strong></td><td><strong>ICU, IV Salbutamol Infusion, NIV/Intubation, ECMO</strong></td></tr>
+</table>
+<hr>
+<h2>6. 6. ️⃣ Allergic Rhinitis & Conjunctivitis (ARIA Guidelines)</h2>
+<h3>1. Classification</h3>
+<table>
+<tr><th>Duration</th><th>Intermittent</th><th>Persistent</th></tr>
+<tr><td><strong>Severity</strong></td><td><strong>Mild</strong> (Normal sleep, No impairment)</td><td><strong>Mild</strong></td></tr>
+<tr><td></td><td><strong>Moderate-Severe</strong> (≥1: Sleep disturbance, Impairment, Troublesome)</td><td><strong>Moderate-Severe</strong></td></tr>
+</table>
+<h3>2. Management (ARIA 2020)</h3>
+<table>
+<tr><th>Step</th><th>Intermittent</th><th>Persistent</th></tr>
+<tr><td><strong>Mild</strong></td><td><strong>Oral/Intranasal H1-Antihistamine</strong> PRN</td><td><strong>Intranasal Corticosteroid (INCS)</strong> + H1-Antihistamine PRN</td></tr>
+<tr><td><strong>Moderate-Severe</strong></td><td><strong>INCS + H1-Antihistamine</strong> (Regular)</td><td><strong>INCS + H1-Antihistamine</strong> (Regular) + <strong>LTRA (Montelukast)</strong> if ASTHMA</td></tr>
+<tr><td><strong>Refractory</strong></td><td><strong>INCS + H1 + LTRA</strong> OR <strong>Short Oral Steroid</strong></td><td><strong>INCS + H1 + LTRA</strong> OR <strong>Immunotherapy</strong></td></tr>
+</table>
+<h3>3. Allergen Immunotherapy (AIT)</h3>
+<table>
+<tr><th>Type</th><th>Indication</th><th>Protocol</th></tr>
+<tr><td><strong>SCIT</strong> (Subcutaneous)</td><td><strong>Perennial/Seasonal IgE-mediated</strong></td><td>Build-up (Weekly × 3-6m) → Maintenance (Monthly × 3-5y)</td></tr>
+<tr><td><strong>SLIT</strong> (Sublingual)</td><td><strong>Perennial/Seasonal</strong></td><td>Daily drops/tablet (3-5y)</td></tr>
+<tr><td><strong>Indications</strong></td><td><strong>IgE-mediated</strong>, Mod-Severe, Pharmacotherapy failure, Allergen avoidance impossible</td><td></td></tr>
+<tr><td><strong>Contraindications</strong></td><td><strong>Uncontrolled Asthma</strong>, Severe CVD, Immunodeficiency, β-blockers, Pregnancy (Initiation)</td><td></td></tr>
+</table>
+<hr>
+<h2>7. 7. ️⃣ Food Allergy</h2>
+<h3>1. Classification</h3>
+<table>
+<tr><th>Type</th><th>Mechanism</th><th>Onset</th><th>Examples</th></tr>
+<tr><td><strong>IgE-Mediated</strong></td><td><strong>Type I</strong></td><td>Minutes-2h</td><td>Peanut, Egg, Milk, Fish, Shellfish, Tree nuts, Soy, Wheat</td></tr>
+<tr><td><strong>Non-IgE Mediated</strong></td><td><strong>Type IV (T-cell)</strong></td><td>Hours-Days</td><td><strong>FPIES</strong> (Food Protein-Induced Enterocolitis), <strong>FPIAP</strong> (Proctocolitis), <strong>EoE</strong> (Eosinophilic Oesophagitis)</td></tr>
+<tr><td><strong>Mixed</strong></td><td>IgE + Non-IgE</td><td>Variable</td><td>EoE, Some Atopic Dermatitis</td></tr>
+</table>
+<h3>2. Diagnosis</h3>
+<table>
+<tr><th>Test</th><th>Utility</th></tr>
+<tr><td><strong>History</strong></td><td><strong>Cornerstone</strong> — Timing, Reproducibility, Co-factors (Exercise, Alcohol, NSAIDs)</td></tr>
+<tr><td><strong>SPT</strong></td><td><strong>Sensitivity 90%</strong>, PPV ~50% (Wheal ≥3mm)</td></tr>
+<tr><td><strong>sIgE</strong></td><td><strong>Sensitivity 90%</strong>, Component-resolved useful</td></tr>
+<tr><td><strong>Component-Resolved Diagnostics (CRD)</strong></td><td><strong>Identifies specific proteins</strong> (Ara h 2 for Peanut, Ara h 8 for Cross-reactivity)</td></tr>
+<tr><td><strong>Basophil Activation Test (BAT)</strong></td><td><strong>Functional</strong>, High specificity, Research/Refractory</td></tr>
+<tr><td><strong>Oral Food Challenge (OFC)</strong></td><td><strong>Gold Standard</strong> — Double-blind, Placebo-controlled (DBPCFC)</td></tr>
+</table>
+<h3>3. Component-Resolved Diagnostics (CRD) — Peanut Example</h3>
+<table>
+<tr><th>Component</th><th>Clinical Significance</th></tr>
+<tr><td><strong>Ara h 1, 2, 3</strong></td><td><strong>Primary Sensitisers</strong> — High risk systemic reaction</td></tr>
+<tr><td><strong>Ara h 8</strong></td><td><strong>PR-10 (Bet v 1 Homolog)</strong> — <strong>Cross-reactivity</strong> (Birch pollen), Usually mild</td></tr>
+<tr><td><strong>Ara h 9</strong></td><td><strong>LTP</strong> — <strong>Severe reactions</strong>, Heat stable, Mediterranean</td></tr>
+</table>
+<h3>4. Management</h3>
+<table>
+<tr><th>Step</th><th>Action</th></tr>
+<tr><td><strong>Avoidance</strong></td><td>Strict allergen avoidance, Label reading, <strong>Adrenaline Auto-Injector (AAI)</strong> — <strong>2 devices at all times</strong></td></tr>
+<tr><td><strong>Acute Reaction</strong></td><td><strong>Adrenaline IM</strong> (Anaphylaxis) → <strong>Antihistamine</strong> (If mild)</td></tr>
+<tr><td><strong>Immunotherapy</strong></td><td><strong>OIT (Oral Immunotherapy)</strong> — Palforzia (Peanut), <strong>EPIT</strong> (Epicutaneous — Viaskin)</td></tr>
+<tr><td><strong>Prevention</strong></td><td><strong>Early Introduction</strong> (LEAP Study: Peanut 4-11m → ↓ Allergy 80%)</td></tr>
+</table>
+<hr>
+<h2>8. 8. ️⃣ Drug Hypersensitivity</h2>
+<h3>1. Classification (Pichler)</h3>
+<table>
+<tr><th>Type</th><th>Mechanism</th><th>Timing</th><th>Examples</th></tr>
+<tr><td><strong>Type I (IgE)</strong></td><td>Immediate</td><td><1h</td><td>Penicillins, NMBA, Latex</td></tr>
+<tr><td><strong>Type II (Cytotoxic)</strong></td><td>Antibody-dependent</td><td>5-10d</td><td>Penicillin-induced AIHA, Heparin-Induced Thrombocytopenia (HIT)</td></tr>
+<tr><td><strong>Type III</strong></td><td>Immune Complex</td><td>1-3w</td><td>Serum Sickness, Serum Sickness-Like Reaction (SSR)</td></tr>
+<tr><td><strong>Type IVa (Th1)</strong></td><td>Macrophage activation</td><td>2-6w</td><td><strong>DRESS, AGEP, TB Test</strong></td></tr>
+<tr><td><strong>Type IVb (Th2)</strong></td><td>Eosinophil recruitment</td><td>2-6w</td><td><strong>DRESS, SJS/TEN, AGEP, Maculopapular Exanthema (MPE)</strong></td></tr>
+<tr><td><strong>Type IVc (CTL)</strong></td><td>Cytotoxic T cells</td><td>2-6w</td><td><strong>SJS/TEN</strong>, <strong>DRESS</strong>, Fixed Drug Eruption</td></tr>
+<tr><td><strong>Type IVd (Th17)</strong></td><td>Neutrophil recruitment</td><td>2-6w</td><td><strong>AGEP</strong>, Pustular Psoriasis</td></tr>
+</table>
+<h3>2. Severe Cutaneous Adverse Reactions (SCARs)</h3>
+<table>
+<tr><th>Syndrome</th><th>Time to Onset</th><th>Key Features</th><th>Mortality</th><th>Management</th></tr>
+<tr><td><strong>SJS</strong> (Stevens-Johnson Syndrome)</td><td>7-21d</td><td><strong><10% BSA Detachment</strong>, <strong>Mucosal ≥2 sites</strong>, Target lesions, Fever</td><td>~5%</td><td><strong>Stop Drug</strong>, <strong>IVIG 2-3g/kg</strong> or <strong>Plasma Exchange</strong>, Supportive</td></tr>
+<tr><td><strong>TEN</strong> (Toxic Epidermal Necrolysis)</td><td>7-21d</td><td><strong>>30% BSA Detachment</strong>, <strong>Mucosal ≥2 sites</strong>, Nikolsky+, Sepsis Risk</td><td>25-30%</td><td><strong>Immediate ICU</strong>, <strong>Supportive</strong>, <strong>IVIG 2-3g/kg</strong> / <strong>PLEX</strong>, Ciclosporin, Etanercept</td></tr>
+<tr><td><strong>SJS/TEN Overlap</strong></td><td>7-21d</td><td><strong>10-30% BSA Detachment</strong></td><td>10-15%</td><td>Same as TEN</td></tr>
+<tr><td><strong>DRESS</strong></td><td>2-8w</td><td><strong>Fever, Rash, Eosinophilia, Lymphadenopathy, Visceral (Liver > Kidney), HHV-6 Reactivation</strong></td><td>10%</td><td><strong>Stop Drug</strong>, <strong>Steroid (Pred 1mg/kg)</strong>, <strong>IVIG</strong> if severe</td></tr>
+<tr><td><strong>AGEP</strong></td><td>1-5d</td><td><strong>Acute Febrile Neutrophilic Pustulosis</strong>, Neutrophilia, Fever, <strong>No Mucosal</strong></td><td><5%</td><td><strong>Stop Drug</strong>, <strong>Topical Steroids</strong>, Self-limiting</td></tr>
+</table>
+<h3>3. SCORTEN (TEN Severity Score)</h3>
+<table>
+<tr><th>Parameter</th><th>Score 1 Point</th></tr>
+<tr><td>Age >40y</td><td></td></tr>
+<tr><td>Malignancy</td><td></td></tr>
+<tr><td>Heart Rate >120</td><td></td></tr>
+<tr><td>BSA Detached >10%</td><td></td></tr>
+<tr><td>Serum Urea >10mmol/L</td><td></td></tr>
+<tr><td>Serum Bicarbonate <20mmol/L</td><td></td></tr>
+<tr><td>Glucose >14mmol/L</td><td></td></tr>
+</table>
+<table>
+<tr><th>Score</th><th>Mortality</th></tr>
+<tr><td>0-1</td><td>3.2%</td></tr>
+<tr><td>2</td><td>12.1%</td></tr>
+<tr><td>3</td><td>35.3%</td></tr>
+<tr><td>4</td><td>58.3%</td></tr>
+<tr><td>≥5</td><td>90%</td></tr>
+</table>
+<h3>4. Drug Cross-Reactivity (Key)</h3>
+<table>
+<tr><th>Drug Class</th><th>Cross-Reactivity</th></tr>
+<tr><td><strong>Penicillins</strong></td><td><strong>Carbapenems (1%)</strong>, Cephalosporins (1-2% 1st/2nd gen, <1% 3rd/4th gen)</td></tr>
+<tr><td><strong>Sulfonamides</strong></td><td><strong>Sulfonamide cross-reactivity</strong> (Sulfamethoxazole, Sulfasalazine, Dapsone)</td></tr>
+<tr><td><strong>NSAIDs</strong></td><td><strong>Cross-reactivity within class</strong> (Aspirin → Ibuprofen/Naproxen)</td></tr>
+<tr><td><strong>ARBs/ACEi</strong></td><td>Low cross-reactivity</td></tr>
+<tr><td><strong>Statins</strong></td><td>Low cross-reactivity</td></tr>
+</table>
+<h3>5. Desensitisation</h3>
+<table>
+<tr><th>Scenario</th><th>Protocol</th></tr>
+<tr><td><strong>Penicillin (IgE)</strong></td><td><strong>Rapid (4-6h)</strong> or <strong>Slow (Days)</strong> — Incremental doses under monitoring</td></tr>
+<tr><td><strong>Aspirin (AERD)</strong></td><td><strong>Incremental Oral Aspirin</strong> (Start 20mg, Double q1-2h → 650mg)</td></tr>
+<tr><td><strong>Carboplatin/Oxaliplatin</strong></td><td><strong>12-step Protocol</strong> (Pre-med: Dexamethasone, Antihistamine, H2-blocker)</td></tr>
+<tr><td><strong>Allopurinol</strong></td><td><strong>Not Recommended</strong> (High failure) — Avoid, Switch to Febuxostat</td></tr>
+</table>
+<h3>6. HLA-Drug Hypersensitivity Associations (High-Yield)</h3>
+<table>
+<tr><th>HLA Allele</th><th>Drug</th><th>Reaction</th><th>Population</th><th>Screening</th></tr>
+<tr><td><strong>HLA-B*57:01</strong></td><td><strong>Abacavir</strong></td><td>Hypersensitivity (fever, rash, GI, respiratory)</td><td>All (NPV >98%)</td><td><strong>Mandatory pre-prescription</strong></td></tr>
+<tr><td><strong>HLA-B*15:02</strong></td><td><strong>Carbamazepine</strong></td><td>SJS/TEN</td><td>Han Chinese, Thai, Malaysian, Indian</td><td><strong>Mandatory pre-prescription</strong> (Asian ancestry)</td></tr>
+<tr><td><strong>HLA-B*58:01</strong></td><td><strong>Allopurinol</strong></td><td>SJS/TEN/DRESS</td><td>Han Chinese, Korean, Thai, European</td><td><strong>Strongly recommended</strong> (all ancestries)</td></tr>
+<tr><td><strong>HLA-A*31:01</strong></td><td><strong>Carbamazepine</strong></td><td>SJS/TEN/DRESS/Maculopapular</td><td>European, Japanese</td><td>Recommended</td></tr>
+<tr><td><strong>HLA-DRB1*07:01</strong></td><td><strong>Flucloxacillin</strong></td><td>DILI (Drug-induced liver injury)</td><td>European</td><td>Consider</td></tr>
+<tr><td><strong>HLA-B*57:01</strong></td><td><strong>Flucloxacillin</strong></td><td>DILI</td><td>European</td><td>Consider</td></tr>
+</table>
+<hr>
+<h2>9. 9. ️⃣ Allergy Testing</h2>
+<h3>1. Skin Prick Testing (SPT)</h3>
+<table>
+<tr><th>Feature</th><th>Detail</th></tr>
+<tr><td><strong>Principle</strong></td><td>Allergen → Mast cell degranulation → Wheal/Flare</td></tr>
+<tr><td><strong>Positive</strong></td><td><strong>Wheal ≥3mm</strong> (vs Negative Control)</td></tr>
+<tr><td><strong>Controls</strong></td><td><strong>Positive</strong>: Histamine 10mg/mL; <strong>Negative</strong>: Saline/Glycerol</td></tr>
+<tr><td><strong>Contraindications</strong></td><td>Severe anaphylaxis risk, Severe uncontrolled asthma, <strong>Antihistamines (Stop 48-72h)</strong>, Tricyclics, <strong>Severe Dermographism</strong></td></tr>
+<tr><td><strong>Sensitivity/Specificity</strong></td><td><strong>90%/90%</strong> (Aeroallergens), <strong>Food: Sens 90%, PPV 50%</strong></td></tr>
+</table>
+<h3>2. Intradermal Testing (IDT)</h3>
+<table>
+<tr><th>Feature</th><th>Detail</th></tr>
+<tr><td><strong>Principle</strong></td><td>Allergen injected <strong>intradermally</strong> (0.02-0.05 mL) → Wheal/Flare</td></tr>
+<tr><td><strong>Indications</strong></td><td><strong>Drug allergy</strong> (Penicillin, Venom), <strong>Aeroallergens</strong> when SPT negative but high suspicion</td></tr>
+<tr><td><strong>Positive</strong></td><td><strong>Wheal ≥5mm</strong> (erythema) at 15-20 min</td></tr>
+<tr><td><strong>Sensitivity</strong></td><td><strong>Higher than SPT</strong> (esp. drug/venom), but ↓ specificity</td></tr>
+<tr><td><strong>Risk</strong></td><td><strong>Higher anaphylaxis risk</strong> than SPT — Resuscitation equipment required</td></tr>
+<tr><td><strong>Concentrations</strong></td><td>1:100 to 1:1000 of SPT concentration</td></tr>
+</table>
+<h3>3. Patch Testing (Type IV)</h3>
+<table>
+<tr><th>Feature</th><th>Detail</th></tr>
+<tr><td><strong>Sensitivity</strong></td><td>90% (Aeroallergens)</td></tr>
+<tr><td><strong>Specificity</strong></td><td>90% (Depends on allergen)</td></tr>
+<tr><td><strong>ISAC (ImmunoCAP ISAC)</strong></td><td><strong>112 Components</strong> on microarray — Component-resolved</td></tr>
+<tr><td><strong>Advantages</strong></td><td>No antihistamine stop, Quantitative, Component-resolved</td></tr>
+</table>
+<h3>4. Component-Resolved Diagnostics (CRD)</h3>
+<table>
+<tr><th>Application</th><th>Benefit</th></tr>
+<tr><td><strong>Peanut (Ara h 1/2/3 vs Ara h 8/9)</strong></td><td><strong>Ara h 1/2/3 = Primary = High Risk</strong>; <strong>Ara h 8/9 = Cross-reactivity (Bet v 1, LTP) = Lower Risk</strong></td></tr>
+<tr><td><strong>Hazelnut (Cor a 1 vs 9/14)</strong></td><td><strong>Cor a 1 = PR-10 (Birch)</strong>, <strong>Cor a 9/14 = Storage (High Risk)</strong></td></tr>
+<tr><td><strong>Apple (Mal d 1 vs 3)</strong></td><td><strong>Mal d 1 = PR-10 (Birch) = Mild</strong>; <strong>Mal d 3 = LTP = Severe</strong></td></tr>
+<tr><td><strong>Wheat (Tri a 19/ω-5 Gliadin)</strong></td><td><strong>ω-5 Gliadin = Severe (WDEIA)</strong></td></tr>
+</table>
+<h3>5. Basophil Activation Test (BAT)</h3>
+<table>
+<tr><th>Feature</th><th>Detail</th></tr>
+<tr><td><strong>Principle</strong></td><td>Allergen → Basophil CD63/CD203c upregulation (Flow Cytometry)</td></tr>
+<tr><td><strong>Sensitivity/Specificity</strong></td><td><strong>90-95% / 90-95%</strong> (Superior to sIgE for some foods/drugs)</td></tr>
+<tr><td><strong>Indications</strong></td><td><strong>Food/Drug Allergy</strong> (sIgE/SPT discordant), <strong>Venom</strong>, <strong>CRD Equivocal</strong></td></tr>
+</table>
+<h3>6. Patch Testing (Type IV)</h3>
+<table>
+<tr><th>Feature</th><th>Detail</th></tr>
+<tr><td><strong>Allergens</strong></td><td><strong>Baseline Series</strong> (Fragrance, Nickel, Cobalt, Potassium Dichromate, Balsam of Peru, Parabens, Formaldehyde, etc.)</td></tr>
+<tr><td><strong>Reading</strong></td><td><strong>Day 2 (48h) + Day 3-4 (72-96h)</strong></td></tr>
+<tr><td><strong>Grading (ICDRG)</strong></td><td><strong>+</strong> (Erythema), <strong>++</strong> (Papules/Infiltration), <strong>+++</strong> (Vesicles)</td></tr>
+<tr><td><strong>Irritant vs Allergic</strong></td><td>Irritant: Fades by Day 3; Allergic: Persists/Increases</td></tr>
+</table>
+<h3>7. Oral Food Challenge (OFC)</h3>
+<table>
+<tr><th>Type</th><th>Protocol</th></tr>
+<tr><td><strong>Open</strong></td><td>Knows allergen — Clinical practice</td></tr>
+<tr><td><strong>Single-Blind</strong></td><td>Patient blinded</td></tr>
+<tr><td><strong>Double-Blind, Placebo-Controlled (DBPCFC)</strong></td><td><strong>Gold Standard</strong> — Research, Diagnostic uncertainty</td></tr>
+</table>
+<hr>
+<h2>10. 10. ⚡ FCPS/MRCP High-Yield Summary</h2>
+<table>
+<tr><th>Topic</th><th>Key Points</th></tr>
+<tr><td><strong>Hypersensitivity Types</strong></td><td><strong>Type I</strong>: IgE, Mast cells, Anaphylaxis/Asthma; <strong>Type II</strong>: Antibody-mediated (AIHA, ITP); <strong>Type III</strong>: Immune complexes (SLE, Serum Sickness); <strong>Type IV</strong>: T-cell (Contact, TB, Drug); <strong>Type V</strong>: Stimulatory (Graves)</td></tr>
+<tr><td><strong>Anaphylaxis</strong></td><td><strong>Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh</strong> — Repeat q5min; <strong>Obs 6-12h</strong> (Biphasic); <strong>Tryptase</strong> 1-2h peak</td></tr>
+<tr><td><strong>Asthma</strong></td><td><strong>BTS/SIGN Steps 1-6</strong>; <strong>SMART/MART</strong> (Buda/Form, Beclo/Form); <strong>Biologics</strong>: Anti-IgE, Anti-IL5/5R, Anti-IL4Rα, Anti-TSLP</td></tr>
+<tr><td><strong>Allergic Rhinitis</strong></td><td>ARIA: Intermittent/Persistent × Mild/Mod-Severe → <strong>INCS ± H1 ± LTRA</strong>; <strong>AIT (SCIT/SLIT)</strong> 3-5y</td></tr>
+<tr><td><strong>Food Allergy</strong></td><td>IgE (Minutes-2h) vs Non-IgE (Hours-Days); <strong>CRD</strong> (Ara h 1/2/3 = Risk, Ara h 8/9 = Cross-reactivity); <strong>OFC = Gold Standard</strong></td></tr>
+<tr><td><strong>Drug Hypersensitivity</strong></td><td><strong>SJS/TEN/DRESS/AGEP</strong> — <strong>SCORTEN</strong> (TEN); <strong>Stop Drug → ICU/Supportive/IVIG/PLEX</strong>; <strong>Desensitisation</strong> (Penicillin, Aspirin, Carboplatin)</td></tr>
+<tr><td><strong>Allergy Testing</strong></td><td><strong>SPT</strong> (Wheal ≥3mm); <strong>sIgE</strong> (ImmunoCAP); <strong>CRD</strong> (Ara h 1/2/3 = Risk, 8/9 = Cross-reactivity); <strong>BAT</strong> (CD63/CD203c); <strong>Patch</strong> (Type IV); <strong>OFC = Gold Standard</strong></td></tr>
+<tr><td><strong>Anaphylaxis</strong></td><td><strong>Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh</strong> — q5min; <strong>Observation 6-12h</strong>; <strong>Tryptase 1-2h peak</strong></td></tr>
+</table>
+<hr>
+<h2>11. 11. 🎤 Viva Questions (Expected Answers)</h2>
+<table>
+<tr><th>#</th><th>Question</th><th>Expected Answer</th></tr>
+<tr><td>1</td><td>Anaphylaxis — first-line treatment?</td><td><strong>Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh</strong> — Repeat q5min if no improvement; <strong>No contraindication</strong></td></tr>
+<tr><td>2</td><td>Anaphylaxis — biphasic reaction risk factors?</td><td>Delayed adrenaline, Severe initial reaction, Inadequate initial dose, No observation period</td></tr>
+<tr><td>3.</td><td>Asthma — stepwise management?</td><td>BTS/SIGN 1-6: SABA → Low ICS → Low ICS+LABA → Med ICS+LABA → High ICS+LABA+Add-on → Biologics (Anti-IgE, IL-5, IL-4R, TSLP)</td></tr>
+<tr><td>4.</td><td>SJS vs TEN — difference?</td><td><strong>SJS: <10% BSA detachment</strong>; <strong>TEN: >30% BSA detachment</strong>; <strong>Overlap 10-30%</strong>; <strong>SCORTEN</strong> for prognosis</td></tr>
+<tr><td>5.</td><td>DRESS vs SJS/TEN — key differences?</td><td><strong>DRESS: 2-8w onset, Fever, Rash, Eosinophilia, Lymphadenopathy, Visceral (Liver), HHV-6</strong>; <strong>SJS/TEN: 7-21d, Mucosal ≥2 sites, BSA Detachment, Nikolsky+</strong></td></tr>
+<tr><td>5.</td><td>Anaphylaxis — adrenaline dose?</td><td><strong>0.5mg IM (1:1000) anterolateral thigh</strong>; Repeat q5min</td></tr>
+<tr><td>6.</td><td>Biphasic anaphylaxis — observation period?</td><td><strong>6-12 hours</strong> post-resolution</td></tr>
+<tr><td>6.</td><td>Serum tryptase — timing?</td><td><strong>Peak 1-2h post-onset</strong>; >11.4 ng/mL or >2x baseline + 1.2x supports anaphylaxis</td></tr>
+<tr><td>7.</td><td>Asthma biologics — anti-IL5 indication?</td><td><strong>Severe Eosinophilic Asthma</strong> (Blood Eos ≥150-300/μL)</td></tr>
+<tr><td>8.</td><td>Food allergy — component-resolved diagnostics?</td><td><strong>Ara h 1/2/3 = Primary sensitisation (High risk)</strong>; <strong>Ara h 8/9 = Cross-reactivity (Bet v 1/LTP)</strong></td></tr>
+<tr><td>8.</td><td>SJS vs TEN — BSA detachment?</td><td><strong>SJS <10%</strong>, <strong>SJS/TEN 10-30%</strong>, <strong>TEN >30%</strong></td></tr>
+<tr><td>9.</td><td>SJS vs DRESS — key difference?</td><td><strong>DRESS: 2-8w onset, Fever, Eosinophilia, Visceral (Liver), HHV-6</strong>; <strong>SJS/TEN: 7-21d, Mucosal ≥2, Nikolsky+</strong></td></tr>
+<tr><td>10.</td><td>Penicillin allergy — desensitisation protocol?</td><td><strong>Rapid (4-6h) or Slow (Days)</strong> — Incremental doses under monitoring; Not for SJS/TEN history</td></tr>
+</table>
+<hr>
+<h2>12. 12. 🧩 Confusions & Mnemonics</h2>
+<table>
+<tr><th>Confusion</th><th>Clarification</th></tr>
+<tr><td><strong>"Anaphylaxis = Only with hives"</strong></td><td><strong>NO.</strong> Can present <strong>WITHOUT Skin</strong> (Cardiovascular/Respiratory only) — Still anaphylaxis!</td></tr>
+<tr><td><strong>"Adrenaline = Contraindicated in Heart Disease"</strong></td><td><strong>NO.</strong> <strong>NO Absolute Contraindication</strong> in Anaphylaxis — Life-saving!</td></tr>
+<tr><td><strong>"SPT = Diagnostic for Food Allergy"</strong></td><td><strong>NO.</strong> <strong>SPT/sIgE = Sensitisation</strong>, Not Allergy; <strong>OFC = Gold Standard</strong> for diagnosis</td></tr>
+<tr><td><strong>"SJS = Mild, TEN = Severe"</strong></td><td><strong>NO.</strong> <strong>Spectrum</strong>: SJS (<10% BSA), SJS/TEN Overlap (10-30%), TEN (>30%); <strong>Mortality</strong>: SJS 5%, SJS/TEN 10%, TEN 25-30%</td></tr>
+<tr><td><strong>"DRESS = Just Rash"</strong></td><td><strong>NO.</strong> <strong>Multisystem</strong>: Fever, Rash, Eosinophilia, Lymphadenopathy, <strong>Hepatitis (ALT↑), Nephritis, HHV-6 Reactivation</strong></td></tr>
+<tr><td><strong>"All Drug Rashes = Allergy"</strong></td><td><strong>NO.</strong> <strong>Morbilliform (MPE)</strong> = Most common, Benign; <strong>SCARs (SJS/TEN/DRESS/AGEP)</strong> = Severe</td></tr>
+<tr><td><strong>"AGEP = Pustular Psoriasis"</strong></td><td><strong>NO.</strong> <strong>AGEP</strong>: Acute Febrile Neutrophilic Pustulosis, Drug-induced, <strong>Neutrophilia</strong>, Self-limiting</td></tr>
+<tr><td><strong>"SPT Positive = Allergy"</strong></td><td><strong>NO.</strong> <strong>Sensitisation ≠ Clinical Allergy</strong>; Need History + <strong>OFC (Gold Standard)</strong></td></tr>
+<tr><td><strong>"All Penicillin Allergic = Avoid All β-lactams"</strong></td><td><strong>NO.</strong> <strong>Cross-reactivity Low</strong> (Carbapenems 1%, 3rd/4th Gen Cephalosporins <1%); Assess individually</td></tr>
+<tr><td><strong>"Adrenaline IV = Better than IM"</strong></td><td><strong>NO.</strong> <strong>IM Preferred</strong> (Rapid absorption, Safer); IV only in <strong>Cardiac Arrest</strong> or <strong>Refractory Shock</strong> with monitoring</td></tr>
+</table>
+<blockquote><strong>Mnemonic: HYPERSENSITIVITY ALLERGY ESSENTIALS</strong>  </blockquote>
+<blockquote><strong>H</strong>ypersensitivity Types: <strong>I (IgE/Immediate), II (Ab-Mediated), III (IC-Mediated), IV (T-Cell), V (Stimulatory)</strong>  </blockquote>
+<blockquote><strong>Y</strong> (Anaphylaxis): <strong>Adrenaline IM 0.5mg 1:1000 → q5min; O2, IV Fluids, Chlorphenamine, Hydrocortisone, Salbutamol; Observe 6-12h (Biphasic)</strong>  </blockquote>
+<blockquote><strong>P</strong> (Types): <strong>I (IgE/Anaphylaxis/Asthma), II (Ab-Med/AIHA/ITP), III (IC/SLE/Serum Sickness), IV (T-Cell/Contact/TB/Drug), V (Stimulatory/Graves)</strong>  </blockquote>
+<blockquote><strong>E</strong>ndotypes Asthma: <strong>T2-High (Eos, FeNO, IgE)</strong> vs <strong>T2-Low (Neutrophilic, Obese)</strong> — <strong>Biologics Target T2</strong>  </blockquote>
+<blockquote><strong>R</strong> (Rhinitis): <strong>ARIA: Intermittent/Persistent × Mild/Mod-Sev → INCS ± H1 ± LTRA → AIT (SCIT/SLIT 3-5y)</strong>  </blockquote>
+<blockquote><strong>S</strong> (Skin Tests): <strong>SPT (Wheal ≥3mm, Stop Antihist 48-72h), sIgE (ImmunoCAP), CRD (Ara h 1/2/3=Risk, 8/9=Cross), BAT (CD63/CD203c), Patch (Type IV, Day 48/72h), OFC=Gold Standard</strong>  </blockquote>
+<blockquote><strong>H</strong>ypersensitivity Types: <strong>I (IgE), II (Ab-Med Cytotoxic), III (IC-Med), IV (T-Cell), V (Stimulatory)</strong>  </blockquote>
+<blockquote><strong>S</strong>CARs: <strong>SJS (<10% BSA), SJS/TEN (10-30%), TEN (>30%)</strong>; <strong>SCORTEN (Age>40, Malig, HR>120, BSA>10%, Urea>10, Bicarb<20, Gluc>14)</strong>  </blockquote>
+<blockquote><strong>E</strong> DRESS: <strong>2-8w, Fever, Rash, Eos, Lymphadeno, Viscera (Liver), HHV-6</strong>  </blockquote>
+<blockquote><strong>N</strong> AGEP: <strong>1-5d, Neutrophilic Pustules, Neutrophilia, Self-Limiting</strong>  </blockquote>
+<blockquote><strong>S</strong>tudies: <strong>OFC=Gold Standard</strong>, <strong>SPT (Wheal≥3mm, Stop AntiH 48-72h), sIgE (ImmunoCAP), CRD (Ara h 1/2/3=Risk, 8/9=Cross), BAT (CD63/CD203c), Patch (Day 48/72h)</strong>  </blockquote>
+<blockquote><strong>I</strong>mmune: <strong>Type I (IgE), II (Ab), III (IC), IV (T-Cell)</strong>  </blockquote>
+<blockquote><strong>T</strong>reatment: <strong>Anaphylaxis = Adrenaline IM 0.5mg 1:1000</strong>, Asthma (BTS/SIGN Steps), Rhinitis (ARIA), Drug Desens (Penicillin, Aspirin)  </blockquote>
+<blockquote><strong>I</strong>gE: <strong>High Affinity FcεRI on Mast/Baso</strong>, Degranulation (Histamine, Tryptase, PGD2, CysLTs)  </blockquote>
+<blockquote><strong>V</strong> (Viva): <strong>Anaphylaxis=Adrenaline; Asthma=BTS Steps; SJS/TEN=BSA%; DRESS=Liver/HHV-6; CRD=Ara h 2/3 Risk</strong>  </blockquote>
+<blockquote><strong>V</strong> (Viva): <strong>SJS<10%, SJS/TEN 10-30%, TEN>30%; SCORTEN; DRESS=Liver/HHV-6; CRD=Ara h 1/2/3=Risk</strong>  </blockquote>
+<blockquote><strong>E</strong>xam: <strong>Anaphylaxis=Adrenaline IM; Asthma=BTS Steps; SJS/TEN=BSA%; DRESS=Liver; CRD=Ara h 1/2/3</strong>  </blockquote>
+<hr>
+<h2>13. 13. 🗺️ Mind Map</h2>
+<div class="mindmap">
+<div class="mm-root">Hypersensitivity &amp; Allergy</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Gell &amp; Coombs</div>
+<div class="mm-node mm-l2">Type I: IgE, Mast Cell, Anaphylaxis, Asthma, Rhinitis, Food</div>
+<div class="mm-node mm-l2">Type II: Antibody, AIHA, ITP, Goodpasture, Graves, MG, Drug</div>
+<div class="mm-node mm-l2">Type III: IC, SLE, Serum Sickness, Arthus, Vasculitis</div>
+<div class="mm-node mm-l2">Type IV: T-Cell, Contact, TB, Drug (SJS/TEN/DRESS), TB Test</div>
+<div class="mm-node mm-l2">Type V: Stimulatory, Graves, MG</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Anaphylaxis</div>
+<div class="mm-node mm-l2">Adrenaline IM 0.5mg 1:1000</div>
+<div class="mm-node mm-l2">O2, IV Fluids, Chlorphenamine, Hydrocortisone</div>
+<div class="mm-node mm-l2">Biphasic: Observe 6-12h</div>
+<div class="mm-node mm-l2">Tryptase Peak 1-2h</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Asthma</div>
+<div class="mm-node mm-l2">BTS/SIGN Steps 1-6</div>
+<div class="mm-node mm-l2">SMART/MART (Buda/Form, Beclo/Form)</div>
+<div class="mm-node mm-l2">Biologics: Omalizumab, Mepolizumab, Benralizumab, Dupilumab, Tezepelumab</div>
+<div class="mm-node mm-l2">Acute Severe: MgSO4, IV Hydrocortisone, Aminophylline</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Rhinitis</div>
+<div class="mm-node mm-l2">ARIA: Intermittent/Persistent × Mild/Mod-Sev</div>
+<div class="mm-node mm-l2">INCS ± H1 ± LTRA</div>
+<div class="mm-node mm-l2">AIT: SCIT/SLIT (3-5y)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Food Allergy</div>
+<div class="mm-node mm-l2">IgE (Min-2h) vs Non-IgE (Hrs-Days)</div>
+<div class="mm-node mm-l2">CRD: Ara h 1/2/3=Risk, 8/9=Cross</div>
+<div class="mm-node mm-l2">OFC = Gold Standard</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Drug Hypersensitivity</div>
+<div class="mm-node mm-l2">SJS/TEN/DRESS/AGEP</div>
+<div class="mm-node mm-l2">SCORTEN (TEN), RegiSCAR</div>
+<div class="mm-node mm-l2">Desensitisation: Penicillin, Aspirin, Carboplatin</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Allergy Testing</div>
+<div class="mm-node mm-l2">SPT (Wheal≥3mm, Stop AntiH 48-72h)</div>
+<div class="mm-node mm-l2">sIgE (ImmunoCAP), CRD (Ara h 1/2/3=Risk, 8/9=Cross)</div>
+<div class="mm-node mm-l2">BAT (CD63/CD203c), Patch (Day 48/72h), OFC=Gold Standard</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Drug Hypersensitivity</div>
+<div class="mm-node mm-l2">SJS/TEN/DRESS/AGEP</div>
+<div class="mm-node mm-l2">SCORTEN, RegiSCAR</div>
+<div class="mm-node mm-l2">Desensitisation (Penicillin, Aspirin, Carboplatin)</div>
+<div class="mm-node mm-l2">Cross-Reactivity (Penicillins, Sulfonamides, NSAIDs)</div>
+</div>
+</div>
+</div>
+<hr>
+<h2>14. 14. 📅 Spaced Repetition Tracker</h2>
+<table>
+<tr><th>Review</th><th>Date</th><th>Score (0–5)</th><th>Notes</th></tr>
+<tr><td>Day 1</td><td></td><td></td><td></td></tr>
+<tr><td>Day 3</td><td></td><td></td><td></td></tr>
+<tr><td>Day 7</td><td></td><td></td><td></td></tr>
+<tr><td>Day 14</td><td></td><td></td><td></td></tr>
+<tr><td>Day 30</td><td></td><td></td><td></td></tr>
+<tr><td>Day 90</td><td></td><td></td><td></td></tr>
+</table>
+<hr>
+<h2>15. 15. 📝 Self-Test Scorecard</h2>
+<table>
+<tr><th>Section</th><th>Max</th><th>Score</th><th>%</th></tr>
+<tr><td>Gell & Coombs Classification</td><td>2</td><td></td><td></td></tr>
+<tr><td>Anaphylaxis Algorithm</td><td>3</td><td></td><td></td></tr>
+<tr><td>Asthma Management</td><td>3</td><td></td><td></td></tr>
+<tr><td>Allergic Rhinitis/Conjunctivitis</td><td>2</td><td></td><td></td></tr>
+<tr><td>Food Allergy & CRD</td><td>3</td><td></td><td></td></tr>
+<tr><td>Drug Hypersensitivity (SCARs)</td><td>3</td><td></td><td></td></tr>
+<tr><td>Allergy Testing Methods</td><td>2</td><td></td><td></td></tr>
+<tr><td>Anaphylaxis Management</td><td>2</td><td></td><td></td></tr>
+<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td></td><td></td></tr>
+</table>
+<hr>
+<h2>16. 16. 💬 Exam Answer Modes</h2>
+<table>
+<tr><th>Format</th><th>Prompt</th><th>Key Points</th></tr>
+<tr><td><strong>Long Essay</strong></td><td>"Describe the classification, clinical features, and management of anaphylaxis."</td><td>Gell & Coombs Type I, WAO Criteria, Adrenaline IM Algorithm, Biphasic, Tryptase, Adjuncts, Observation</td></tr>
+<tr><td><strong>Short Note</strong></td><td>"SJS vs TEN vs DRESS — differentiation."</td><td>BSA Detachment thresholds, Onset timing, Mucosal involvement, Systemic features, SCORTEN, Management</td></tr>
+<tr><td><strong>Viva</strong></td><td>"Patient on allopurinol develops fever, rash, eosinophilia, hepatitis. Diagnosis and management?"</td><td><strong>DRESS</strong> (Drug Reaction with Eosinophilia and Systemic Symptoms) — Stop drug, Steroids, IVIG if severe, HHV-6 reactivation, RegiSCAR</td></tr>
+<tr><td><strong>Ward Round</strong></td><td>"Patient with peanut allergy given peanut butter. Develops wheeze, lip swelling, hypotension. Immediate management?"</td><td><strong>Anaphylaxis</strong> — <strong>Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh</strong>, Oxygen, IV Fluids, Chlorphenamine, Hydrocortisone, Observe 6-12h</td></tr>
+<tr><td><strong>Last-Night</strong></td><td>"Types: I(IgE/Anaphylaxis), II(Ab/AIHA/ITP), III(IC/SLE/Serum Sickness), IV(T-Cell/Contact/TB/Drug), V(Stimulatory/Graves). Anaphylaxis: Adrenaline IM 0.5mg 1:1000 anterolateral thigh q5min → O2/IV Fluids/Chlorphenamine/Hydrocortisone → Observe 6-12h Biphasic → Tryptase 1-2h peak. Asthma: BTS Steps 1-6 → SMART/MART → Biologics (Anti-IgE/IL5/IL-4R/TSLP). SJS/TEN/DRESS: BSA<10%/10-30%/>30%, DRESS=Liver/HHV-6/2-8w, SCORTEN. Allergy: SPT/sIgE/CRD/BAT/OFC. Desensitisation: Penicillin/Aspirin/Carboplatin."</td><td>Compressed.</td></tr>
+</table>
+<hr>
+<h2>17. 17. 📌 Summary</h2>
+<ul>
+<li><strong>Gell & Coombs</strong>: Type I (IgE/Anaphylaxis), Type II (Ab-mediated), Type III (IC/SLE), Type IV (T-cell/Contact/Drug), Type V (Stimulatory/Graves)</li>
+<li><strong>Anaphylaxis</strong>: <strong>Adrenaline IM 0.5mg (1:1000) Anterolateral Thigh</strong> — <strong>FIRST-LINE, NO CONTRAINDICATION</strong>; Repeat q5min; <strong>Observe 6-12h</strong> (Biphasic); <strong>Tryptase 1-2h peak</strong></li>
+<li><strong>Asthma</strong>: <strong>BTS/SIGN Steps 1-6</strong>, <strong>SMART/MART</strong> (Buda/Form, Beclo/Form), <strong>Biologics</strong> (Anti-IgE, Anti-IL5, Anti-IL4R, Anti-TSLP)</li>
+<li><strong>Allergic Rhinitis</strong>: <strong>ARIA</strong> (Intermittent/Persistent × Mild/Mod-Sev); <strong>INCS ± H1 ± LTRA</strong>; <strong>AIT (SCIT/SLIT 3-5y)</strong></li>
+<li><strong>Food Allergy</strong>: <strong>IgE (Min-2h) vs Non-IgE (Hrs-Days)</strong>; <strong>CRD</strong> (Ara h 1/2/3 = Risk, 8/9 = Cross); <strong>OFC = Gold Standard</strong></li>
+<li><strong>Drug Hypersensitivity</strong>: <strong>SCARs</strong> — <strong>SJS/TEN/DRESS/AGEP</strong>; <strong>SCORTEN (TEN), RegiSCAR (DRESS)</strong>; <strong>Desensitisation</strong> (Penicillin, Aspirin, Carboplatin)</li>
+<li><strong>Allergy Testing</strong>: <strong>SPT</strong> (Wheal ≥3mm, Stop AntiH 48-72h); <strong>sIgE (ImmunoCAP)</strong>; <strong>CRD</strong> (Ara h 1/2/3 = Risk, 8/9 = Cross); <strong>BAT (CD63/CD203c)</strong>; <strong>Patch (Day 48/72h)</strong>; <strong>OFC = Gold Standard</strong></li>
+<li><strong>Drug Desensitisation</strong>: Penicillin (Rapid/Slow), Aspirin (AERD), Carboplatin (12-step), Allopurinol (Avoid)</li>
+</ul>
+<hr>
+<h2>18. 18. ❓ MCQs (10)</h2>
+<ol>
+<li><strong>First-line treatment for anaphylaxis:</strong>  </li>
+</ol>
+<p>   A. IV Hydrocortisone  B. <strong>Adrenaline IM 0.5mg (1:1000)</strong>  C. Chlorphenamine  D. Salbutamol Nebuliser  </p>
+<p>   <em>Answer: B. Adrenaline IM 0.5mg (1:1000) anterolateral thigh — FIRST-LINE, NO contraindication.</em></p>
+<ol>
+<li><strong>Biphasic anaphylaxis — observation period?</strong>  </li>
+</ol>
+<p>   A. 1 hour  B. <strong>6-12 hours</strong>  C. 24 hours  D. 48 hours  </p>
+<p>   <em>Answer: B. Observe 6-12 hours post-resolution (Biphasic peak 3-10h).</em></p>
+<ol>
+<li><strong>Serum tryptase — optimal timing for anaphylaxis confirmation?</strong>  </li>
+</ol>
+<p>   A. Immediately  B. <strong>1-2 hours post-onset</strong>  C. 6 hours  D. 24 hours  </p>
+<p>   <em>Answer: B. Peak at 1-2 hours; half-life ~2h; >11.4 ng/mL or >2x baseline supports diagnosis.</em></p>
+<ol>
+<li><strong>SJS vs TEN — key differentiator?</strong>  </li>
+</ol>
+<p>   A. Mucosal involvement  B. <strong>BSA Detachment (<10% SJS, >30% TEN)</strong>  C. Fever  D. Drug cause  </p>
+<p>   <em>Answer: B. BSA Detachment: SJS <10%, SJS/TEN 10-30%, TEN >30%.</em></p>
+<ol>
+<li><strong>DRESS vs SJS/TEN — key distinguishing feature?</strong>  </li>
+</ol>
+<p>   A. Mucosal involvement  B. <strong>Fever, Eosinophilia, Visceral (Liver), HHV-6 Reactivation</strong>  C. Nikolsky sign  D. Drug cause  </p>
+<p>   <em>Answer: B. DRESS = Fever, Eosinophilia, Lymphadenopathy, Visceral (Liver), HHV-6 Reactivation (2-8w onset).</em></p>
+<ol>
+<li><strong>Asthma biologics — Anti-IL5 (Mepolizumab) indication?</strong>  </li>
+</ol>
+<p>   A. All severe asthma  B. <strong>Severe Eosinophilic Asthma (Blood Eos ≥150-300/μL)</strong>  C. Allergic asthma only  D. Exercise-induced asthma  </p>
+<p>   <em>Answer: B. Severe Eosinophilic Asthma (Blood Eos ≥150-300/μL).</em></p>
+<ol>
+<li><strong>Food allergy — Component-Resolved Diagnostics for Peanut:</strong>  </li>
+</ol>
+<p>   A. Ara h 8 = High risk  B. <strong>Ara h 1/2/3 = Primary sensitisers (High Risk); Ara h 8/9 = Cross-reactivity</strong>  C. Ara h 9 = Primary  D. All equal  </p>
+<p>   <em>Answer: B. Ara h 1/2/3 = Primary sensitisation (High risk); Ara h 8/9 = Cross-reactivity (Bet v 1/LTP).</em></p>
+<ol>
+<li><strong>Penicillin allergy — desensitisation approach?</strong>  </li>
+</ol>
+<p>   A. Not possible  B. <strong>Rapid (4-6h) or Slow (Days) — Incremental doses under monitoring</strong>  C. Single dose challenge  D. Only with antihistamine cover  </p>
+<p>   <em>Answer: B. Rapid (4-6h) or Slow (Days) — Incremental doses under monitoring.</em></p>
+<ol>
+<li><strong>Skin Prick Test — positive criteria?</strong>  </li>
+</ol>
+<p>   A. Wheal ≥2mm  B. <strong>Wheal ≥3mm (vs Negative Control)</strong>  C. Flare ≥10mm  D. Any wheal  </p>
+<p>   <em>Answer: B. Wheal ≥3mm larger than negative control.</em></p>
+<ol>
+<li><strong>Oral Food Challenge — gold standard for?</strong>  </li>
+</ol>
+<p>   A. Aeroallergy  B. <strong>Food Allergy Diagnosis</strong>  C. Drug Allergy  D. Contact Dermatitis  </p>
+<p>   <em>Answer: B. Double-Blind Placebo-Controlled Food Challenge (DBPCFC) = Gold Standard for Food Allergy.</em></p>
+<ol>
+<li><strong>Drug desensitisation — when indicated?</strong>  </li>
+</ol>
+<p>    A. All drug allergies  B. <strong>No Alternative Drug Available (e.g., Penicillin in Syphilis, Aspirin in AERD, Carboplatin in Ovarian Cancer)</strong>  C. Only for IgE-mediated  D. Never  </p>
+<p>    <em>Answer: B. When no safe alternative exists (Penicillin in Syphilis, Aspirin in AERD, Carboplatin in Ovarian Cancer).</em></p>
+<hr>
+<h2>19. 19. 📋 SBAs (10)</h2>
+<ol>
+<li><strong>25F with anaphylaxis to peanut. Adrenaline IM 0.5mg given. Still wheezy, BP 80/50 after 5min. Next step?</strong>  </li>
+</ol>
+<p>   A. <strong>Repeat Adrenaline IM 0.5mg</strong>  B. IV Hydrocortisone  C. IV Chlorphenamine  D. Salbutamol Neb  </p>
+<p>   <em>Answer: A. Repeat Adrenaline IM 0.5mg q5min if no improvement.</em></p>
+<ol>
+<li><strong>Patient on carbamazepine develops fever, rash, eosinophilia 3.5x10⁹/L, ALT 300, HHV-6 PCR+. Diagnosis?</strong>  </li>
+</ol>
+<p>   A. SJS  B. TEN  C. <strong>DRESS</strong>  D. AGEP  </p>
+<p>   <em>Answer: C. DRESS (Drug Reaction with Eosinophilia and Systemic Symptoms) — Fever, Rash, Eosinophilia, Hepatitis, HHV-6 reactivation.</em></p>
+<ol>
+<li><strong>Asthma patient on Step 4 (Medium-dose ICS/LABA) still uncontrolled. Blood Eos 400/μL, FeNO 45ppb. Add-on?</strong>  </li>
+</ol>
+<p>   A. Tiotropium  B. Montelukast  C. <strong>Mepolizumab (Anti-IL5)</strong>  D. Omalizumab  </p>
+<p>   <em>Answer: C. Anti-IL5 (Mepolizumab/Reslizumab/Benralizumab) for Severe Eosinophilic Asthma (Eos ≥150-300/μL).</em></p>
+<ol>
+<li><strong>Child with peanut allergy — Ara h 2 positive, Ara h 8 negative. Risk?</strong>  </li>
+</ol>
+<p>   A. Low (Cross-reactivity)  B. <strong>High (Primary Sensitisation)</strong>  C. Moderate  D. None  </p>
+<p>   <em>Answer: B. Ara h 2 = Primary Sensitiser = High Risk for Systemic Reaction.</em></p>
+<ol>
+<li><strong>Patient on allopurinol develops fever, rash, eosinophilia 2x10⁹/L, pustules. Onset Day 3. Diagnosis?</strong>  </li>
+</ol>
+<p>   A. SJS  B. DRESS  C. <strong>AGEP</strong> (Acute Generalised Exanthematous Pustulosis)  D. TEN  </p>
+<p>   <em>Answer: C. AGEP — Acute onset (1-5d), Neutrophilic Pustules, Neutrophilia, Self-limiting.</em></p>
+<hr>
+<h2>20. 20. 🔑 Answer Keys</h2>
+<table>
+<tr><th>MCQs</th><th>SBAs</th></tr>
+<tr><td>1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B</td><td>1-B, 2-C, 3-C, 4-B, 5-C</td></tr>
+</table>
+<hr>
+<h2>21. 21. 🔗 Cross-Links</h2>
+<ul>
+<li>[[3.1 Mechanisms of Autoimmunity]] — Type II/III/IV hypersensitivity in autoimmunity</li>
+<li>[[3.2 Systemic Autoimmune Diseases]] — SLE, Vasculitis, Drug-induced autoimmunity</li>
+<li>[[3.3 Organ-Specific Autoimmune Diseases]] — MG, MS, Thyroid, Coeliac hypersensitivity</li>
+<li>[[4.3 X-Linked Disorders]] — G6PD deficiency (Drug-induced haemolysis)</li>
+<li>[[5.1-5.4 Genetic Testing Technologies]] — HLA typing for drug hypersensitivity (HLA-B<em>15:02, HLA-B</em>57:01, HLA-B*58:01)</li>
+<li>[[5.4 Prenatal & Preimplantation Testing]] — Allergy prevention in pregnancy</li>
+<li>[[5.5 Genetic Counselling]] — Allergy risk counselling, Family history</li>
+<li>[[6.1 Hereditary Cancer Syndromes]] — Paraneoplastic syndromes (Autoimmune)</li>
+<li>[[6.2-6.3 Tumour Immunology & Immunotherapy]] — irAEs (Checkpoint inhibitor colitis, thyroiditis, pneumonitis)</li>
+<li>[[7.1-7.6 Immune-Based Therapies]] — Biologics used for allergy/asthma (Omalizumab, Mepolizumab, Dupilumab)</li>
+<li>[[8.1-8.6 Special Situations Immunology]] — Pregnancy (Allergy), Ageing (Immunosenescence)</li>
+<li>[[9. ELSI]] — Genetic discrimination in allergy, DTC testing</li>
+<li>[[10. System-Based Clinical Genetics]] — Allergy genetics (IL4, IL13, FLG, TSLP)</li>
+</ul>
+<hr>
+<p><strong>Last Updated:</strong> 2026-06-15  </p>
+<p><strong>Next:</strong> Build <code>5.1-5.4 Transplant Immunology.md</code></p></div>
+        
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
     </div>
-  </section>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/4-clinical-immunology/diseases/4.2.01-hypersensitivity-allergy.png" alt="Hypersensitivity Allergy" loading="lazy"></div>
+    </div>
+      </div>
+    </details>
+  </div>
+</details>
+
+  </div>
 </div>
 <script>
 const CHAPTER_SLUG = "4-clinical-immunology";
-const MANIFEST_URL = "/4-clinical-immunology/topics.json";
-let MANIFEST = null;
-let CURRENT_TOPIC = null;
 
-async function loadManifest() {
-  const res = await fetch(MANIFEST_URL);
-  MANIFEST = await res.json();
-  // Activate topic from URL hash
-  const params = new URLSearchParams(location.search);
-  const t = params.get("topic");
-  if (t) showTopic(t);
-}
-
-function navigateTopic(dir) {
-  if (!MANIFEST || !CURRENT_TOPIC) return;
-  const i = MANIFEST.topics.findIndex(x => x.local_prefix === CURRENT_TOPIC.local_prefix);
-  const ni = i + dir;
-  if (ni < 0 || ni >= MANIFEST.topics.length) return;
-  showTopic(MANIFEST.topics[ni].local_prefix);
-}
-
+// Inline expand/collapse helpers
 function toggleTopicImage(btn) {
   btn.classList.toggle("collapsed");
   const wrap = btn.nextElementSibling;
-  if (wrap) wrap.classList.toggle("collapsed");
-  if (wrap && !wrap.classList.contains("collapsed")) {
-    btn.querySelector("span:last-child").textContent = "click to collapse";
-  } else {
-    btn.querySelector("span:last-child").textContent = "click to expand";
+  if (wrap) {
+    wrap.classList.toggle("collapsed");
+    btn.querySelector("span:last-child").textContent = wrap.classList.contains("collapsed") ? "click to expand" : "click to collapse";
   }
 }
 
-function showTopic(localPrefix) {
-  const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
-  if (!t) return;
-  CURRENT_TOPIC = t;
-  // Update active in sidebar
-  document.querySelectorAll(".topic-item").forEach(el => el.classList.remove("active"));
-  const activeEl = document.querySelector(`.topic-item[data-topic="${localPrefix}"]`);
-  if (activeEl) {
-    activeEl.classList.add("active");
-    // Scroll into view
-    activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
+function expandAll() {
+  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
+  const p = new URL(location.href);
+  if (p.searchParams.get("expand") !== "all") {
+    p.searchParams.set("expand", "all");
+    history.replaceState(null, "", p);
   }
-  // Update URL
-  const url = new URL(location.href);
-  url.searchParams.set("topic", localPrefix);
-  history.replaceState(null, "", url);
-  // Render content
-  const container = document.getElementById("topicContainer");
-  container.className = "topic-detail";
-  const imgHtml = t.png ? `
-    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
-      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
-      <span style="font-size:12px;color:var(--text-dim)">click to expand</span>
-    </div>
-    <div class="topic-image-wrap collapsed">
-      <div class="topic-image"><img src="/4-clinical-immunology/${t.png}" alt="${t.title}"></div>
-    </div>` : "";
-  container.innerHTML = `
-    <div class="crumbs"><a href="/">Home</a> · <a href="/4-clinical-immunology/">Clinical Immunology</a> · <span>${t.hub_num} · ${t.hub_name}</span></div>
-    <div class="topic-header">
-      <div>
-        <h1>${t.title}</h1>
-        <p class="meta">${t.hub_num} · ${t.local_prefix} · ${t.slug}</p>
-      </div>
-      <div class="topic-actions">
-        ${t.png ? `<a href="/4-clinical-immunology/${t.png}" download>Download PNG</a>` : ""}
-        ${t.md ? `<a href="/4-clinical-immunology/${t.md}" download>Download MD</a>` : ""}
-        <button onclick="navigateTopic(-1)">← Prev</button>
-        <button onclick="navigateTopic(1)">Next →</button>
-      </div>
-    </div>
-    <div class="topic-content">${t.html}</div>
-    ${imgHtml}
-  `;
 }
 
-// Sidebar search filter
+function collapseAll() {
+  document.querySelectorAll("#hubAccordion details").forEach(d => d.open = false);
+  const p = new URL(location.href);
+  p.searchParams.delete("topic");
+  p.searchParams.delete("expand");
+  history.replaceState(null, "", p);
+}
+
+// Sidebar search filter — auto-expand matching items
 document.getElementById("topicSearch").addEventListener("input", function(e) {
-  const q = e.target.value.toLowerCase();
+  const q = e.target.value.trim().toLowerCase();
   let visible = 0;
-  document.querySelectorAll(".topic-item").forEach(el => {
+  document.querySelectorAll(".topic-acc").forEach(el => {
     const text = el.textContent.toLowerCase();
     const show = !q || text.includes(q);
     el.style.display = show ? "" : "none";
-    if (show) visible++;
+    if (show) {
+      visible++;
+      if (q) {
+        // Auto-expand matching topics AND their parent hub when searching
+        el.open = true;
+        const hub = el.closest(".hub-acc");
+        if (hub) hub.open = true;
+      }
+    }
   });
-  // Hide empty hub groups
-  document.querySelectorAll(".hub-group").forEach(g => {
-    const anyVisible = Array.from(g.querySelectorAll(".topic-item")).some(el => el.style.display !== "none");
+  // Hide empty hubs
+  document.querySelectorAll(".hub-acc").forEach(g => {
+    const anyVisible = Array.from(g.querySelectorAll(".topic-acc")).some(el => el.style.display !== "none");
     g.style.display = anyVisible ? "" : "none";
+    if (!q) g.open = false;
   });
   document.getElementById("noResults").classList.toggle("show", visible === 0);
 });
 
-loadManifest();
+// On load: open topic from URL ?topic=...
+(function() {
+  const params = new URLSearchParams(location.search);
+  const t = params.get("topic");
+  if (t) {
+    const el = document.querySelector(`.topic-acc[data-topic="${t}"]`);
+    if (el) {
+      // Open topic + parent hub
+      el.open = true;
+      const hub = el.closest(".hub-acc");
+      if (hub) hub.open = true;
+      // Scroll into view after layout
+      setTimeout(() => el.scrollIntoView({ block: "start", behavior: "smooth" }), 100);
+    }
+  } else if (params.get("expand") === "all") {
+    document.querySelectorAll("#hubAccordion details").forEach(d => d.open = true);
+  }
+})();
 </script>
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 18:07 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 19:03 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside
