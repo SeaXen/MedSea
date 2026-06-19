@@ -346,6 +346,122 @@ header.site .stats .stat {
 header.site .stats .stat .num { font-size: 12px; font-weight: 700; color: var(--accent); }
 header.site .stats .stat .label { color: var(--text-dim); font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; }
 
+/* ===== Universal search ===== */
+header.site .search-box {
+  position: relative;
+  flex: 1 1 auto;
+  max-width: 360px;
+  margin: 0 12px;
+}
+header.site .search-box input {
+  width: 100%;
+  padding: 6px 12px 6px 32px;
+  font-size: 12px;
+  font-family: inherit;
+  background: var(--bg-3) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2394a3b8'><path d='M11.5 11.5 14 14M7 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z' stroke='%2394a3b8' stroke-width='1.4' fill='none' stroke-linecap='round'/></svg>") no-repeat 9px center;
+  background-size: 14px 14px;
+  border: 1px solid var(--border-2);
+  border-radius: 7px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+header.site .search-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.18);
+}
+header.site .search-box input::placeholder { color: var(--text-dim); }
+header.site .search-box .search-results {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  top: 56px;
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--bg-2);
+  border: 1px solid var(--border-2);
+  border-radius: 9px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  max-height: calc(100vh - 72px);
+  overflow-y: auto;
+  z-index: 999;
+  display: none;
+}
+header.site .search-box.open .search-results { display: block; }
+header.site .search-box .search-hit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  text-decoration: none !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+header.site .search-box .search-hit:last-child { border-bottom: none; }
+header.site .search-box .search-hit:hover,
+header.site .search-box .search-hit.active {
+  background: var(--bg-3);
+}
+header.site .search-box .search-hit .hit-ch {
+  flex-shrink: 0;
+  min-width: 30px;
+  padding: 2px 5px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 9px;
+  text-align: center;
+  color: var(--accent);
+  font-weight: 600;
+}
+header.site .search-box .search-hit .hit-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+header.site .search-box .search-hit .hit-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+header.site .search-box .search-hit .hit-title mark,
+header.site .search-box .search-hit .hit-meta mark {
+  background: rgba(56, 189, 248, 0.25);
+  color: var(--accent);
+  padding: 0 1px;
+  border-radius: 2px;
+}
+header.site .search-box .search-hit .hit-meta {
+  font-size: 10px;
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+header.site .search-box .search-hit .hit-arrow {
+  color: var(--text-dim);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+header.site .search-box .search-empty,
+header.site .search-box .search-more {
+  padding: 14px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+header.site .search-box .search-empty strong { color: var(--accent); }
+@media (max-width: 720px) {
+  header.site .search-box { max-width: 180px; margin: 0 6px; }
+  header.site .search-box input { font-size: 11px; }
+}
+
 /* ===== Chapter dropdown ===== */
 header.site .chapter-dropdown {
   position: relative;
@@ -878,6 +994,10 @@ def page_header(title, current_ch_slug=None, stats=None):
     <span class="logo">⚕</span>
     <a href="/">MedSea</a>
   </div>
+  <div class="search-box" id="searchBox">
+    <input type="text" id="searchInput" placeholder="Search 2,957 topics…" autocomplete="off" spellcheck="false">
+    <div class="search-results" id="searchResults"></div>
+  </div>
   <div class="stats">{stats_html}</div>
   <div class="chapter-dropdown" id="chapterDropdown">
     <button class="drop-btn" type="button" onclick="document.getElementById('chapterDropdown').classList.toggle('open')">
@@ -891,7 +1011,127 @@ def page_header(title, current_ch_slug=None, stats=None):
     <a href="https://github.com/SeaXen/MedSea" target="_blank">GitHub ↗</a>
   </div>
 </header>
-<main>
+<script>
+// ===== Universal topic search =====
+(function() {{
+  let idx = null;
+  let debounce = null;
+  const input = document.getElementById('searchInput');
+  const results = document.getElementById('searchResults');
+  const box = document.getElementById('searchBox');
+
+  function loadIdx() {{
+    if (idx) return Promise.resolve(idx);
+    return fetch('/search_index.json').then(r => r.json()).then(d => {{ idx = d; return d; }});
+  }}
+
+  function escHtml(s) {{
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }}
+
+  function highlight(text, q) {{
+    if (!q) return escHtml(text);
+    const i = text.toLowerCase().indexOf(q.toLowerCase());
+    if (i < 0) return escHtml(text);
+    return escHtml(text.slice(0, i)) + '<mark>' + escHtml(text.slice(i, i + q.length)) + '</mark>' + escHtml(text.slice(i + q.length));
+  }}
+
+  function search(q) {{
+    loadIdx().then(data => {{
+      const ql = q.toLowerCase();
+      const hits = [];
+      // Score: title-prefix > title-contains > hub > chapter
+      for (const item of data) {{
+        const t = item.title.toLowerCase();
+        const h = item.hub_name.toLowerCase();
+        const c = item.chapter_name.toLowerCase();
+        let score = 0;
+        if (t === ql) score = 100;
+        else if (t.startsWith(ql)) score = 80;
+        else if (t.includes(ql)) score = 60;
+        else if (h.includes(ql)) score = 40;
+        else if (c.includes(ql)) score = 20;
+        if (item.topic && item.topic.startsWith(ql)) score = Math.max(score, 70);
+        if (score > 0) hits.push({{ item, score }});
+      }}
+      hits.sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title));
+      const top = hits.slice(0, 20);
+      if (top.length === 0) {{
+        results.innerHTML = '<div class="search-empty">No topics match "<strong>' + escHtml(q) + '</strong>"</div>';
+      }} else {{
+        results.innerHTML = top.map(h => {{
+          const it = h.item;
+          return '<a class="search-hit" href="' + it.url + '?topic=' + encodeURIComponent(it.topic) + '">' +
+            '<span class="hit-ch">' + it.chapter_num + '</span>' +
+            '<span class="hit-body">' +
+              '<span class="hit-title">' + highlight(it.title, q) + '</span>' +
+              '<span class="hit-meta">' + highlight(it.chapter_name, q) + ' · ' + highlight(it.hub_name, q) + ' · ' + it.topic + '</span>' +
+            '</span>' +
+            '<span class="hit-arrow">→</span>' +
+          '</a>';
+        }}).join('');
+        if (hits.length > 20) {{
+          results.innerHTML += '<div class="search-more">+' + (hits.length - 20) + ' more matches…</div>';
+        }}
+      }}
+      box.classList.add('open');
+    }}).catch(err => {{
+      results.innerHTML = '<div class="search-empty">Search index unavailable.</div>';
+      box.classList.add('open');
+    }});
+  }}
+
+  input.addEventListener('input', function(e) {{
+    clearTimeout(debounce);
+    const q = e.target.value.trim();
+    if (q.length < 2) {{
+      results.innerHTML = '';
+      box.classList.remove('open');
+      return;
+    }}
+    debounce = setTimeout(() => search(q), 120);
+  }});
+
+  input.addEventListener('focus', function(e) {{
+    if (e.target.value.trim().length >= 2) box.classList.add('open');
+  }});
+
+  // Close on outside click
+  document.addEventListener('click', function(e) {{
+    if (!box.contains(e.target)) box.classList.remove('open');
+  }});
+
+  // Close on Escape
+  input.addEventListener('keydown', function(e) {{
+    if (e.key === 'Escape') {{
+      input.value = '';
+      results.innerHTML = '';
+      box.classList.remove('open');
+      input.blur();
+    }}
+  }});
+
+  // Keyboard nav: ArrowDown/Up, Enter
+  let activeIdx = -1;
+  input.addEventListener('keydown', function(e) {{
+    const hits = results.querySelectorAll('.search-hit');
+    if (e.key === 'ArrowDown') {{
+      e.preventDefault();
+      activeIdx = Math.min(activeIdx + 1, hits.length - 1);
+      hits.forEach((h, i) => h.classList.toggle('active', i === activeIdx));
+      if (hits[activeIdx]) hits[activeIdx].scrollIntoView({{ block: 'nearest' }});
+    }} else if (e.key === 'ArrowUp') {{
+      e.preventDefault();
+      activeIdx = Math.max(activeIdx - 1, 0);
+      hits.forEach((h, i) => h.classList.toggle('active', i === activeIdx));
+      if (hits[activeIdx]) hits[activeIdx].scrollIntoView({{ block: 'nearest' }});
+    }} else if (e.key === 'Enter' && activeIdx >= 0 && hits[activeIdx]) {{
+      e.preventDefault();
+      hits[activeIdx].click();
+    }}
+  }});
+}})();
+</script>
 """
 
 
@@ -1136,6 +1376,50 @@ def render_flowchart_md(text: str) -> str:
     return "\n".join(html)
 
 
+def _synthesize_mindmap_from_headings(md_text: str) -> str:
+    """If MD has no mermaid/mindmap/flowchart block, build a mindmap from H1/H2/H3.
+
+    Returns empty string if no usable structure is found.
+    """
+    headings = []  # (level, text)
+    for line in md_text.split("\n"):
+        m = re.match(r"^(#{1,6})\s+(.+?)\s*$", line)
+        if m:
+            level = len(m.group(1))
+            text = m.group(2).strip()
+            # Strip markdown emphasis and emoji-only decorations
+            text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
+            text = re.sub(r"\*(.+?)\*", r"\1", text)
+            text = re.sub(r"`(.+?)`", r"\1", text)
+            # Cap heading length
+            if len(text) > 80:
+                text = text[:77] + "..."
+            headings.append((level, text))
+    if len(headings) < 2:
+        return ""
+    # Build mermaid mindmap text. Root is the first H1; H2/H3 become branches.
+    root = ""
+    items = []  # (level, text)
+    for lvl, txt in headings[:40]:  # cap to first 40
+        if lvl == 1 and not root:
+            root = txt
+            continue
+        # Only include H2/H3 for branches
+        if lvl in (2, 3):
+            items.append((lvl, txt))
+    if not root and items:
+        root = items.pop(0)[1]
+    if not root:
+        return ""
+    # Build mermaid text
+    lines = ["mindmap", f"  root(({root}))"]
+    for lvl, txt in items[:30]:  # cap branches
+        indent = "    " if lvl == 2 else "      "
+        lines.append(f"{indent}{txt}")
+    body = "\n".join(lines)
+    return render_mindmap_md(body)
+
+
 def render_md_to_html(md_text: str) -> str:
     md_text = clean_md(md_text)
     lines = md_text.split("\n")
@@ -1148,6 +1432,7 @@ def render_md_to_html(md_text: str) -> str:
     code_kind = None  # 'mindmap', 'flowchart', 'graph', 'code', None
     code_fence_open = None
     table_rows = []
+    found_mermaid = False  # Track whether any mermaid block was rendered
 
     def flush_list():
         nonlocal in_ul, in_ol
@@ -1157,14 +1442,16 @@ def render_md_to_html(md_text: str) -> str:
             out.append("</ol>"); in_ol = False
 
     def flush_code():
-        nonlocal in_code, code_buf, code_kind, code_fence_open
+        nonlocal in_code, code_buf, code_kind, code_fence_open, found_mermaid
         if not in_code:
             return
         body = "\n".join(code_buf)
         if code_kind in ("mindmap",):
             rendered = render_mindmap_md(body)
+            found_mermaid = True
         elif code_kind in ("flowchart", "graph"):
             rendered = render_flowchart_md(body)
+            found_mermaid = True
         else:
             rendered = f'<pre class="codeblock"><code>{_esc(body)}</code></pre>'
         out.append(rendered)
@@ -1287,6 +1574,15 @@ def render_md_to_html(md_text: str) -> str:
         out.append(f"<p>{inline_md(line)}</p>")
 
     flush_list(); flush_table(); flush_code()
+
+    # If no explicit mermaid/mindmap/flowchart block was rendered, synthesize
+    # a mindmap from the MD's heading structure so every topic gets a visual.
+    if not found_mermaid:
+        synth = _synthesize_mindmap_from_headings(md_text)
+        if synth:
+            out.append('<h2>Topic Overview</h2>')
+            out.append(synth)
+
     return "\n".join(out)
 
 
@@ -1644,9 +1940,39 @@ def main():
         write_chapter_spa(ch_slug, ch_name, ch_url, ch_color, info)
 
     write_index(site_data)
+    write_search_index(site_data)
 
     total_size = sum(p.stat().st_size for p in SITE.rglob("*") if p.is_file())
     print(f"\n✓ Site generated at {SITE}  ({total_size / 1024 / 1024:.1f} MB total)")
+
+
+def write_search_index(site_data):
+    """Build a flat search index across all 2957 topics for the header search box."""
+    items = []
+    for ch_slug, (ch_name, _ch_url, _ch_color) in BUILT_CHAPTERS.items():
+        info = site_data.get(ch_slug)
+        if not info or info["n_topics"] == 0:
+            continue
+        ch_num = ch_slug.split("-")[0]
+        for hub_num in sorted(info["by_hub"].keys()):
+            hub_topics = sorted(info["by_hub"][hub_num], key=lambda t: t["local_prefix"])
+            hub_name = info["hub_names"].get(hub_num, hub_num)
+            for t in hub_topics:
+                title = t["slug"].replace("-", " ").title()
+                items.append({
+                    "chapter_num": ch_num,
+                    "chapter_name": ch_name,
+                    "chapter_slug": ch_slug,
+                    "hub_num": hub_num,
+                    "hub_name": hub_name,
+                    "topic": t["local_prefix"],
+                    "title": title,
+                    "url": f"/{ch_slug}/",
+                })
+    (SITE / "search_index.json").write_text(
+        json.dumps(items, ensure_ascii=False, separators=(",", ":"))
+    )
+    print(f"  Wrote search_index.json ({len(items)} topics)")
 
 
 if __name__ == "__main__":
