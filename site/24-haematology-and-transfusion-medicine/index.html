@@ -1160,40 +1160,49 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   header.site { display: none; }
   .mobile-bar { display: flex; }
 
-  /* === MOBILE BAR: compact single-row, ~50px tall === */
+  /* === MOBILE BAR: compact 2-row; full-width search is visible === */
   .mobile-bar {
     padding: 6px 8px;
-    gap: 4px;
-    flex-direction: row;
-    align-items: center;
+    gap: 6px;
+    flex-direction: column;
+    align-items: stretch;
   }
   .mobile-bar .row.top {
-    display: contents;   /* flatten so all children of .mobile-bar share one row */
+    display: flex;
+    justify-content: space-between;
+    min-width: 0;
   }
   .mobile-bar .row.search-row {
-    display: contents;
+    display: flex;
+    width: 100%;
+    min-width: 0;
   }
-  /* Re-order: menu | logo | search | spacer | current-ch | github */
   .mobile-bar .logo-mini {
     font-size: 13px;
-    flex: 0 0 auto;
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .mobile-bar .logo-mini .logo { font-size: 16px; }
-  .mobile-bar .logo-mini a { font-size: 13px; }
+  .mobile-bar .logo-mini a {
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .mobile-bar .menu-btn {
     padding: 6px 8px;
     font-size: 12px;
-  }
-  .mobile-bar .search-row {
-    flex: 1;
-    min-width: 0;
+    flex: 0 0 auto;
   }
   .mobile-bar .search-row .search-box-m {
-    flex: 1;
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
   }
   .mobile-bar .search-row input {
-    padding: 6px 10px 6px 28px;
-    font-size: 12px;
+    width: 100%;
+    padding: 7px 10px 7px 28px;
+    font-size: 13px;
   }
   .mobile-bar .search-row .search-icon {
     left: 8px;
@@ -1207,6 +1216,7 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   .mobile-bar .github-btn {
     padding: 6px 8px;
     font-size: 11px;
+    flex: 0 0 auto;
   }
   .mobile-bar .stats-mini { display: none; }
 
@@ -1216,13 +1226,20 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   }
 
   /* === EDGE-TO-EDGE CHAPTER PAGE (no wasted horizontal space) === */
+  main {
+    padding: 0 0 60px !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
   .chapter-page {
-    padding: 4px 0 60px !important;
+    padding: 0 0 60px !important;
     min-height: auto !important;
+    width: 100% !important;
   }
   .chapter-mobile {
     padding: 0 !important;
     margin: 0 !important;
+    width: 100% !important;
   }
   .hub-accordion {
     gap: 4px !important;
@@ -30569,8 +30586,13 @@ async function loadManifest() {
     const res = await fetch(MANIFEST_URL);
     MANIFEST = await res.json();
     const params = new URLSearchParams(location.search);
-    const t = params.get("topic");
-    if (t) showTopic(t);
+    let t = params.get("topic");
+    if (t) {
+      // URL may have full local_prefix-slug or just local_prefix
+      const found = MANIFEST.topics.find(x => x.local_prefix === t || x.local_prefix === t.split("-")[0]);
+      if (found) showTopic(found.local_prefix);
+      else console.warn("Topic not found in manifest:", t);
+    }
   } catch(e) {
     console.error("Failed to load topics.json", e);
   }
@@ -30718,7 +30740,7 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 03:50 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 04:27 UTC · Davidson 25th Ed</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
