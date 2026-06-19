@@ -2143,59 +2143,33 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>2. 2. 🧠 Core Concept: The Diagnostic Process</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Patient Presentation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">History Taking Focused, hypothesis-driven</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Physical Examination Targeted to hypotheses</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Clinical Hypothesis Generation Pattern recognition Type 1 Analytical reasoning Type 2</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Pre-test Probability Epidemiology + Clinical gestalt</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Test Selection</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">&amp; H</div>
-<div class="fc-node" data-id="H">High Specificity Test SpPin</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Likelihood Ratio LR+ = Sens/(1-Spec) LR- = (1-Sens)/Spec</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">Post-test Probability Fagan Nomogram / Bayes</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Compare to Thresholds</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">No further testing Watchful waiting</div>
-<div class="fc-node" data-id="M">Treat empirically</div>
-<div class="fc-node" data-id="N">Further testing / Referral</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="O">Iterate until diagnosis or certainty threshold met</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Patient Presentation] --&gt; B[History Taking
+Focused, hypothesis-driven]
+    B --&gt; C[Physical Examination
+Targeted to hypotheses]
+    C --&gt; D[Clinical Hypothesis Generation
+Pattern recognition Type 1
+Analytical reasoning Type 2]
+    D --&gt; E[Pre-test Probability
+Epidemiology + Clinical gestalt]
+    E --&gt; F{Test Selection}
+    F --&gt;|Rule-out| G[High Sensitivity Test
+SnNout]
+    F --&gt;|Rule-in| H[High Specificity Test
+SpPin]
+    G &amp; H --&gt; I[Likelihood Ratio
+LR+ = Sens/(1-Spec)
+LR- = (1-Sens)/Spec]
+    I --&gt; J[Post-test Probability
+Fagan Nomogram / Bayes]
+    J --&gt; K{Compare to Thresholds}
+    K --&gt;|Below Test Threshold| L[No further testing
+Watchful waiting]
+    K --&gt;|Above Treatment Threshold| M[Treat empirically]
+    K --&gt;|Between| N[Further testing / Referral]
+    N --&gt; O[Iterate until diagnosis
+or certainty threshold met]</pre>
 <blockquote><strong>Key Principle:</strong> <em>Diagnosis is a <strong>probabilistic, iterative process</strong> — not a binary event. The goal is to reduce uncertainty to cross a <strong>decision threshold</strong>.</em></blockquote>
 <hr>
 <h2>3. 3. ️⃣ Clinical Reasoning Models</h2>
@@ -2256,20 +2230,12 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 <li>LR 0.1 → -45% probability</li>
 </ul>
 <h3>5. Threshold Model (Pauker & Kassirer)</h3>
-<div class="flowchart" data-dir="LR">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Test Threshold Below: Don't test, Don't treat</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Testing Zone Test to refine probability</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Treatment Threshold Above: Treat without testing</div>
-</div>
-</div>
+<pre class="mermaid">flowchart LR
+    A[Test Threshold
+Below: Don't test, Don't treat] --&gt; B[Testing Zone
+Test to refine probability]
+    B --&gt; C[Treatment Threshold
+Above: Treat without testing]</pre>
 <table>
 <tr><th>Threshold</th><th>Formula</th><th>Clinical Meaning</th></tr>
 <tr><td><strong>Test Threshold</strong></td><td><code>Harm of test / (Harm of test + Benefit of treatment)</code></td><td>Below: Risk of test > Benefit of knowing</td></tr>
@@ -2380,46 +2346,27 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 </table>
 <hr>
 <h2>9. 9. ️⃣ Practical Algorithm: Diagnostic Approach</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Patient Encounter</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Focused History + Exam</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Iterate with Updated Prob</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Estimate Pre-test Prob for Leading Hypothesis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Pre-test Prob</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Consider No Testing Reassurance / Safety-net</div>
-<div class="fc-node" data-id="G">Treat Empirically Confirm if Needed</div>
-<div class="fc-node" data-id="H">Select Test by LR Rule-out: High Sens/LR- Rule-in: High Spec/LR+</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Calculate Post-test Prob Bayes / Fagan</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">Post-test vs Thresholds</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Further Testing / Referral</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Patient Encounter] --&gt; B[Focused History + Exam]
+    B --&gt; C[Generate 3-5 Hypotheses
+Rank by Probability]
+    C --&gt; D[Estimate Pre-test Prob
+for Leading Hypothesis]
+    D --&gt; E{Pre-test Prob}
+    E --&gt;|Very Low| F[Consider No Testing
+Reassurance / Safety-net]
+    E --&gt;|Very High| G[Treat Empirically
+Confirm if Needed]
+    E --&gt;|Intermediate| H[Select Test by LR
+Rule-out: High Sens/LR-
+Rule-in: High Spec/LR+]
+    H --&gt; I[Calculate Post-test Prob
+Bayes / Fagan]
+    I --&gt; J{Post-test vs Thresholds}
+    J --&gt;|Below Test| F
+    J --&gt;|Above Treat| G
+    J --&gt;|Between| K[Further Testing / Referral]
+    K --&gt; C[Iterate with Updated Prob]</pre>
 <hr>
 <h2>10. 10. ⚡ FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -2481,50 +2428,35 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 <blockquote><strong>G</strong>estalt: <strong>Clinical intuition</strong> calibrated by probabilistic reasoning, not replaced</blockquote>
 <hr>
 <h2>13. 13. 🗺️ Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Clinical Reasoning</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Dual Process</div>
-<div class="mm-node mm-l2">Type 1: Fast, Pattern recognition</div>
-<div class="mm-node mm-l2">Type 2: Slow, Analytical</div>
-<div class="mm-node mm-l2">Switch for uncertainty</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Diagnostic Process</div>
-<div class="mm-node mm-l2">History/Exam → Hypotheses</div>
-<div class="mm-node mm-l2">Pre-test probability</div>
-<div class="mm-node mm-l2">Test selection (LR)</div>
-<div class="mm-node mm-l2">Post-test probability</div>
-<div class="mm-node mm-l2">Thresholds (Test/Treat)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Probabilistic Reasoning</div>
-<div class="mm-node mm-l2">Bayes / Fagan Normogram</div>
-<div class="mm-node mm-l2">LR+ = Sens/(1-Spec)</div>
-<div class="mm-node mm-l2">LR- = (1-Sens)/Spec</div>
-<div class="mm-node mm-l2">SnNout / SpPin</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Clinical Decision Rules</div>
-<div class="mm-node mm-l2">Derivation → Ext Val → Impact</div>
-<div class="mm-node mm-l2">Wells, PERC, Centor, Ottawa</div>
-<div class="mm-node mm-l2">CURB-65, qSOFA</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Cognitive Biases</div>
-<div class="mm-node mm-l2">Anchoring, Availability, Confirmation</div>
-<div class="mm-node mm-l2">Premature closure, Overconfidence</div>
-<div class="mm-node mm-l2">Debiasing: Checklists, Time-outs</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Diagnostic Error</div>
-<div class="mm-node mm-l2">No-fault, System, Cognitive</div>
-<div class="mm-node mm-l2">Missed, Delayed, Wrong</div>
-<div class="mm-node mm-l2">RCA: 5 Whys, Fishbone</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Clinical Reasoning))
+    Dual Process
+      Type 1: Fast, Pattern recognition
+      Type 2: Slow, Analytical
+      Switch for uncertainty
+    Diagnostic Process
+      History/Exam → Hypotheses
+      Pre-test probability
+      Test selection (LR)
+      Post-test probability
+      Thresholds (Test/Treat)
+    Probabilistic Reasoning
+      Bayes / Fagan Normogram
+      LR+ = Sens/(1-Spec)
+      LR- = (1-Sens)/Spec
+      SnNout / SpPin
+    Clinical Decision Rules
+      Derivation → Ext Val → Impact
+      Wells, PERC, Centor, Ottawa
+      CURB-65, qSOFA
+    Cognitive Biases
+      Anchoring, Availability, Confirmation
+      Premature closure, Overconfidence
+      Debiasing: Checklists, Time-outs
+    Diagnostic Error
+      No-fault, System, Cognitive
+      Missed, Delayed, Wrong
+      RCA: 5 Whys, Fishbone</pre>
 <hr>
 <h2>14. 14. 📅 Spaced Repetition Tracker</h2>
 <table>
@@ -2711,28 +2643,17 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 </ul>
 <hr>
 <h2>2. 2. 🧠 Core Concept: EBM Framework</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">New Questions</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Search for Evidence Systematic → Databases</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Critical Appraisal Validity, Results, Applicability</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Apply to Patient Shared Decision-Making</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Evaluate Performance Audit, Feedback</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Clinical Question
+PICO] --&gt; B[Search for Evidence
+Systematic → Databases]
+    B --&gt; C[Critical Appraisal
+Validity, Results, Applicability]
+    C --&gt; D[Apply to Patient
+Shared Decision-Making]
+    D --&gt; E[Evaluate Performance
+Audit, Feedback]
+    E --&gt; A[New Questions]</pre>
 <blockquote><strong>EBM = Best Evidence + Clinical Expertise + Patient Values/Preferences</strong> (Sackett 1996)</blockquote>
 <hr>
 <h2>3. 3. ️⃣ Hierarchy of Evidence (Oxford CEBM 2011)</h2>
@@ -2959,24 +2880,13 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 <hr>
 <h2>9. 9. ️⃣ Shared Decision-Making (SDM)</h2>
 <h3>1. SDM Model (Elwyn et al.)</h3>
-<div class="flowchart" data-dir="LR">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Choice Talk Options exist</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Option Talk Compare options</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Decision Talk Elicit preferences</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Decision / Defer</div>
-</div>
-</div>
+<pre class="mermaid">flowchart LR
+    A[Choice Talk
+Options exist] --&gt; B[Option Talk
+Compare options]
+    B --&gt; C[Decision Talk
+Elicit preferences]
+    C --&gt; D[Decision / Defer]</pre>
 <h3>2. Key Components</h3>
 <table>
 <tr><th>Component</th><th>Tools</th></tr>
@@ -3092,56 +3002,39 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 <blockquote><strong>L</strong>iving guidelines: <strong>Update as evidence changes</strong> (continuous surveillance)</blockquote>
 <hr>
 <h2>14. 14. 🗺️ Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Evidence-Based Medicine</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Hierarchy</div>
-<div class="mm-node mm-l2">SR/MA &gt; RCT &gt; Cohort &gt; Case-control</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Study Designs</div>
-<div class="mm-node mm-l2">RCT: Randomised, Blinded, ITT</div>
-<div class="mm-node mm-l2">Cohort: Prognosis, Harm</div>
-<div class="mm-node mm-l2">Case-control: Rare harm</div>
-<div class="mm-node mm-l2">Cross-sectional: Prevalence</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Critical Appraisal</div>
-<div class="mm-node mm-l2">Therapy: RCT validity, Results, Applicability</div>
-<div class="mm-node mm-l2">Diagnosis: Spectrum, Blinded, Gold standard, LR</div>
-<div class="mm-node mm-l2">Prognosis: Inception cohort, Cox, KM</div>
-<div class="mm-node mm-l2">Harm: Case-control (OR), Cohort (RR)</div>
-<div class="mm-node mm-l2">SR/MA: RoB, I², Fixed/Random, Pub bias</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Statistics</div>
-<div class="mm-node mm-l2">NNT = 1/ARR</div>
-<div class="mm-node mm-l2">RR/OR/HR</div>
-<div class="mm-node mm-l2">I² heterogeneity</div>
-<div class="mm-node mm-l2">Fragility Index</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">GRADE</div>
-<div class="mm-node mm-l2">High/Mod/Low/Very Low</div>
-<div class="mm-node mm-l2">Downgrade 5 factors</div>
-<div class="mm-node mm-l2">Upgrade 3 factors</div>
-<div class="mm-node mm-l2">Strong vs Conditional</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Guidelines</div>
-<div class="mm-node mm-l2">AGREE II (6 domains)</div>
-<div class="mm-node mm-l2">WHO Handbooks</div>
-<div class="mm-node mm-l2">NICE Process</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Shared Decision-Making</div>
-<div class="mm-node mm-l2">3-Talk Model</div>
-<div class="mm-node mm-l2">Decision Aids</div>
-<div class="mm-node mm-l2">Risk Communication</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Evidence-Based Medicine))
+    Hierarchy
+      SR/MA &gt; RCT &gt; Cohort &gt; Case-control
+    Study Designs
+      RCT: Randomised, Blinded, ITT
+      Cohort: Prognosis, Harm
+      Case-control: Rare harm
+      Cross-sectional: Prevalence
+    Critical Appraisal
+      Therapy: RCT validity, Results, Applicability
+      Diagnosis: Spectrum, Blinded, Gold standard, LR
+      Prognosis: Inception cohort, Cox, KM
+      Harm: Case-control (OR), Cohort (RR)
+      SR/MA: RoB, I², Fixed/Random, Pub bias
+    Statistics
+      NNT = 1/ARR
+      RR/OR/HR
+      I² heterogeneity
+      Fragility Index
+    GRADE
+      High/Mod/Low/Very Low
+      Downgrade 5 factors
+      Upgrade 3 factors
+      Strong vs Conditional
+    Guidelines
+      AGREE II (6 domains)
+      WHO Handbooks
+      NICE Process
+    Shared Decision-Making
+      3-Talk Model
+      Decision Aids
+      Risk Communication</pre>
 <hr>
 <h2>15. 15. 📅 Spaced Repetition Tracker</h2>
 <table>
@@ -3327,20 +3220,17 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 </ul>
 <hr>
 <h2>2. 2. 🧠 Core Concept: Communication as Clinical Skill</h2>
-<div class="flowchart" data-dir="LR">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Patient-Centred Communication</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Consultation Models Structure &amp; Process</div>
-<div class="fc-node" data-id="C">Core Microskills Observable Behaviours</div>
-<div class="fc-node" data-id="D">Special Situations SPIKES, Capacity, Conflict</div>
-<div class="fc-node" data-id="E">Shared Decision-Making Partnership &amp; Autonomy</div>
-<div class="fc-node" data-id="F">Documentation &amp; Handover Continuity &amp; Safety</div>
-</div>
-</div>
+<pre class="mermaid">flowchart LR
+    A[Patient-Centred Communication] --&gt; B[Consultation Models
+Structure &amp; Process]
+    A --&gt; C[Core Microskills
+Observable Behaviours]
+    A --&gt; D[Special Situations
+SPIKES, Capacity, Conflict]
+    A --&gt; E[Shared Decision-Making
+Partnership &amp; Autonomy]
+    A --&gt; F[Documentation &amp; Handover
+Continuity &amp; Safety]</pre>
 <blockquote><strong>Key Principle:</strong> <em>Communication is not "soft skill" — it's a <strong>core clinical competency</strong> with measurable impact on outcomes (adherence, satisfaction, safety, litigation).</em></blockquote>
 <hr>
 <h2>3. 3. ️⃣ Consultation Models</h2>
@@ -3462,25 +3352,21 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 </table>
 <blockquote><strong>Pre-Montgomery (Bolam/Bolitho):</strong> "Responsible body of medical opinion" standard. <strong>Post-Montgomery:</strong> "Reasonable patient" standard.</blockquote>
 <h3>3. Mental Capacity Act 2005 (England & Wales) — 2-Stage Test</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Decision Required</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Stage 1: Impairment?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Capacity Presumed</div>
-<div class="fc-node" data-id="D">Stage 2: Functional Test</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Urgent?</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Decision Required] --&gt; B{Stage 1: Impairment?}
+    B --&gt;|No| C[Capacity Presumed]
+    B --&gt;|Yes| D{Stage 2: Functional Test}
+    D --&gt;|Can a) Understand?| E[All 4 = Capacity]
+    D --&gt;|Can b) Retain?| E
+    D --&gt;|Can c) Use/Weigh?| E
+    D --&gt;|Can d) Communicate?| E
+    D --&gt;|Any NO| F[Lacks Capacity for THIS Decision]
+    F --&gt; G[Best Interests Decision]
+    G --&gt; H{Urgent?}
+    H --&gt;|Yes| I[Act Immediately]
+    H --&gt;|No| J[Best Interests Checklist
+IMCA if no family/friends
+DoLS if deprivation of liberty]</pre>
 <table>
 <tr><th>Functional Ability</th><th>Assessment</th></tr>
 <tr><td><strong>a) Understand</strong></td><td>Can grasp relevant information (nature, purpose, consequences of decision)</td></tr>
@@ -3557,42 +3443,20 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 <hr>
 <h2>10. 10. ️⃣ Practical Algorithms</h2>
 <h3>1. Capacity Assessment Flow</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Decision Needed</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Presume Capacity?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Assess 4 Abilities Understand, Retain, Weigh, Communicate</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">All 4 Present?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Capacity → Valid Consent/Refusal</div>
-<div class="fc-node" data-id="F">Lacks Capacity for THIS Decision</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Best Interests Process</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Urgent Life-Sustaining?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Treat Immediately Least Restrictive</div>
-<div class="fc-node" data-id="J">Best Interests Checklist IMCA if no consultee DoLS if Deprivation</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Decision Needed] --&gt; B{Presume Capacity?}
+    B --&gt;|Yes| C[Assess 4 Abilities
+Understand, Retain, Weigh, Communicate]
+    C --&gt; D{All 4 Present?}
+    D --&gt;|Yes| E[Capacity → Valid Consent/Refusal]
+    D --&gt;|No| F[Lacks Capacity for THIS Decision]
+    F --&gt; G[Best Interests Process]
+    G --&gt; H{Urgent Life-Sustaining?}
+    H --&gt;|Yes| I[Treat Immediately
+Least Restrictive]
+    H --&gt;|No| J[Best Interests Checklist
+IMCA if no consultee
+DoLS if Deprivation]</pre>
 <h3>2. Consent Conversation Checklist</h3>
 <ul>
 <li>[ ] Diagnosis & Prognosis explained</li>
@@ -3669,58 +3533,41 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 <blockquote><strong>S</strong>trategy: <strong>Shared Plan, Written Info, Follow-up, Team</strong></blockquote>
 <hr>
 <h2>14. 14. 🗺️ Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Communication Skills</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Consultation Models</div>
-<div class="mm-node mm-l2">Calgary-Cambridge: 5 Stages</div>
-<div class="mm-node mm-l2">Neighbour: 5 Checkpoints</div>
-<div class="mm-node mm-l2">Pendleton: 7 Steps (Feedback)</div>
-<div class="mm-node mm-l2">Four Habits: Invest/Elicit/Empathise/End</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Core Skills</div>
-<div class="mm-node mm-l2">Active Listening</div>
-<div class="mm-node mm-l2">Facilitation / Open Qs</div>
-<div class="mm-node mm-l2">Summarising / Signposting</div>
-<div class="mm-node mm-l2">Chunk &amp; Check / Teach-back</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">SPIKES</div>
-<div class="mm-node mm-l2">Setting / Perception / Invitation</div>
-<div class="mm-node mm-l2">Knowledge (Warning→Chunk→Check)</div>
-<div class="mm-node mm-l2">Emotions (Name, Validate)</div>
-<div class="mm-node mm-l2">Strategy/Summary</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Shared Decision-Making</div>
-<div class="mm-node mm-l2">3-Talk: Choice/Option/Decision</div>
-<div class="mm-node mm-l2">Absolute Risks (NNT, Icons)</div>
-<div class="mm-node mm-l2">Decision Aids (IPDAS)</div>
-<div class="mm-node mm-l2">Values Clarification</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Consent &amp; Capacity</div>
-<div class="mm-node mm-l2">Montgomery (Material Risk)</div>
-<div class="mm-node mm-l2">MCA 2-Stage (Impairment → Functional)</div>
-<div class="mm-node mm-l2">Best Interests / IMCA / DoLS</div>
-<div class="mm-node mm-l2">Advance Decision vs Statement</div>
-<div class="mm-node mm-l2">LPA Health &amp; Welfare</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Difficult Conversations</div>
-<div class="mm-node mm-l2">Angry Patient / Denial / Cultural</div>
-<div class="mm-node mm-l2">Complaints / End-of-life</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Documentation &amp; Handover</div>
-<div class="mm-node mm-l2">Medical Records (GMC)</div>
-<div class="mm-node mm-l2">ISBAR Handover</div>
-<div class="mm-node mm-l2">Discharge Summaries</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Communication Skills))
+    Consultation Models
+      Calgary-Cambridge: 5 Stages
+      Neighbour: 5 Checkpoints
+      Pendleton: 7 Steps (Feedback)
+      Four Habits: Invest/Elicit/Empathise/End
+    Core Skills
+      Active Listening
+      Facilitation / Open Qs
+      Summarising / Signposting
+      Chunk &amp; Check / Teach-back
+    SPIKES
+      Setting / Perception / Invitation
+      Knowledge (Warning→Chunk→Check)
+      Emotions (Name, Validate)
+      Strategy/Summary
+    Shared Decision-Making
+      3-Talk: Choice/Option/Decision
+      Absolute Risks (NNT, Icons)
+      Decision Aids (IPDAS)
+      Values Clarification
+    Consent &amp; Capacity
+      Montgomery (Material Risk)
+      MCA 2-Stage (Impairment → Functional)
+      Best Interests / IMCA / DoLS
+      Advance Decision vs Statement
+      LPA Health &amp; Welfare
+    Difficult Conversations
+      Angry Patient / Denial / Cultural
+      Complaints / End-of-life
+    Documentation &amp; Handover
+      Medical Records (GMC)
+      ISBAR Handover
+      Discharge Summaries</pre>
 <hr>
 <h2>15. 15. 📅 Spaced Repetition Tracker</h2>
 <table>
@@ -3909,29 +3756,29 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 </ul>
 <hr>
 <h2>2. 2. 🧠 Core Concept: Ethics & Law in Clinical Practice</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Clinical Decision</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Ethical Analysis</div>
-<div class="fc-node" data-id="E">Legal Framework</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">&amp; D &amp; F &amp; G &amp; H</div>
-<div class="fc-node" data-id="D">4 Quadrants Medical Indications, Patient Preferences, Quality of Life, Contextual Features</div>
-<div class="fc-node" data-id="F">Statute Law MCA 2005, HRA 1998, Data Protection 2018</div>
-<div class="fc-node" data-id="G">Case Law Montgomery, Bolam, Bolitho, Re A, Gillick</div>
-<div class="fc-node" data-id="H">Regulatory GMC Good Medical Practice, Fitness to Practise</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Resolution: Ethically Justified &amp; Legally Defensible</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Clinical Decision] --&gt; B{Ethical Analysis}
+    B --&gt; C[4 Principles
+Autonomy, Beneficence,
+Non-maleficence, Justice]
+    B --&gt; D[4 Quadrants
+Medical Indications,
+Patient Preferences,
+Quality of Life,
+Contextual Features]
+    A --&gt; E{Legal Framework}
+    E --&gt; F[Statute Law
+MCA 2005, HRA 1998,
+Data Protection 2018]
+    E --&gt; G[Case Law
+Montgomery, Bolam,
+Bolitho, Re A, Gillick]
+    E --&gt; H[Regulatory
+GMC Good Medical Practice,
+Fitness to Practise]
+    C &amp; D &amp; F &amp; G &amp; H --&gt; I[Resolution:
+Ethically Justified &amp;
+Legally Defensible]</pre>
 <blockquote><strong>Key:</strong> <em>Ethics asks "What </em>should<em> we do?" Law asks "What </em>must<em> we do?" Good practice aligns both.</em></blockquote>
 <hr>
 <h2>3. 3. ️⃣ Ethical Frameworks</h2>
@@ -3973,34 +3820,18 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 <tr><td><strong>Euthanasia / Assisted Dying</strong></td><td><strong>Illegal in UK</strong> (Suicide Act 1961, Murder Act). Distinct from withdrawing treatment. Double effect doctrine: palliative sedation with intent to relieve suffering.</td></tr>
 </table>
 <h3>2. End-of-Life Decision Framework (ReSPECT / GMC)</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Patient with Deteriorating Condition</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Capacity?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">&amp; D</div>
-<div class="fc-node" data-id="D">Best Interests Decision</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Agreement?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">&amp; G</div>
-<div class="fc-node" data-id="G">Second Opinion / Mediation Ethics Committee / Court</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Regular Review Escalate if Change</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Patient with Deteriorating Condition] --&gt; B{Capacity?}
+    B --&gt;|Yes| C[Discuss Goals of Care
+DNAR? Treatments? Ceiling?]
+    B --&gt;|No| D[Best Interests Decision]
+    C &amp; D --&gt; E{Agreement?}
+    E --&gt;|Yes| F[Document ReSPECT/DNAR
+Share with Team/Family]
+    E --&gt;|Disagreement| G[Second Opinion / Mediation
+Ethics Committee / Court]
+    F &amp; G --&gt; H[Regular Review
+Escalate if Change]</pre>
 <h3>3. Resource Allocation (Distributive Justice)</h3>
 <table>
 <tr><th>Principle</th><th>Application</th></tr>
@@ -4138,40 +3969,22 @@ Post-test Probability = Post-test Odds / (1 + Post-test Odds)</code></pre>
 <hr>
 <h2>8. 8. ️⃣ Practical Decision Frameworks</h2>
 <h3>1. Ethical Decision-Making (4-Quadrant Checklist)</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Clinical Dilemma</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">1. Medical Indications Diagnosis, Prognosis, Options, Goals</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">2. Patient Preferences Informed? Capacity? Consent? Values? Advance Directives?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">3. Quality of Life Current/Future? Patient's View? Bias?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">4. Contextual Features Family, Resources, Legal, Institutional, Cultural</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Identify Conflicts Autonomy vs Beneficence? Justice?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Resolve: Proportionality, Necessity, Subsidiarity</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Document Reasoning Consult Ethics Committee if Needed Implement with Communication</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Clinical Dilemma] --&gt; B[1. Medical Indications
+Diagnosis, Prognosis, Options, Goals]
+    B --&gt; C[2. Patient Preferences
+Informed? Capacity? Consent? Values? Advance Directives?]
+    C --&gt; D[3. Quality of Life
+Current/Future? Patient's View? Bias?]
+    D --&gt; E[4. Contextual Features
+Family, Resources, Legal, Institutional, Cultural]
+    E --&gt; F[Identify Conflicts
+Autonomy vs Beneficence? Justice?]
+    F --&gt; G{Resolve: Proportionality,
+Necessity, Subsidiarity}
+    G --&gt; H[Document Reasoning
+Consult Ethics Committee if Needed
+Implement with Communication]</pre>
 <h3>2. Consent Conversation Checklist (Montgomery-Compliant)</h3>
 <ul>
 <li>[ ] Diagnosis & Prognosis (plain language)</li>
@@ -4263,54 +4076,37 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 <blockquote><strong>S</strong>ocial Justice: <strong>NICE ICER £20-30k/QALY</strong> — Explicit Rationing — Equity vs Utility  </blockquote>
 <hr>
 <h2>12. 12. 🗺️ Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Ethics &amp; Law</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Ethical Frameworks</div>
-<div class="mm-node mm-l2">4 Principles</div>
-<div class="mm-node mm-l2">4 Quadrants</div>
-<div class="mm-node mm-l2">Consequentialism vs Deontology</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Consent</div>
-<div class="mm-node mm-l2">Montgomery (Material Risk)</div>
-<div class="mm-node mm-l2">Bolam / Bolitho</div>
-<div class="mm-node mm-l2">Capacity (MCA 2-Stage)</div>
-<div class="mm-node mm-l2">Advance Decisions</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">End-of-Life</div>
-<div class="mm-node mm-l2">DNAR / ReSPECT</div>
-<div class="mm-node mm-l2">Withhold = Withdraw (Airedale)</div>
-<div class="mm-node mm-l2">Double Effect</div>
-<div class="mm-node mm-l2">Euthanasia Illegal</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Confidentiality</div>
-<div class="mm-node mm-l2">Exceptions (Consent, Law, Public Interest, Child)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Paediatric</div>
-<div class="mm-node mm-l2">Gillick / Fraser</div>
-<div class="mm-node mm-l2">Parental Responsibility</div>
-<div class="mm-node mm-l2">Refusal Override</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Professional Regulation</div>
-<div class="mm-node mm-l2">GMC 4 Domains</div>
-<div class="mm-node mm-l2">Fitness to Practise</div>
-<div class="mm-node mm-l2">Duty of Candour</div>
-<div class="mm-node mm-l2">Raising Concerns</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Key Cases</div>
-<div class="mm-node mm-l2">Bolam / Bolitho / Montgomery</div>
-<div class="mm-node mm-l2">Airedale / Gillick / Re A</div>
-<div class="mm-node mm-l2">Montgomery / Chester v Afshar</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Ethics &amp; Law))
+    Ethical Frameworks
+      4 Principles
+      4 Quadrants
+      Consequentialism vs Deontology
+    Consent
+      Montgomery (Material Risk)
+      Bolam / Bolitho
+      Capacity (MCA 2-Stage)
+      Advance Decisions
+    End-of-Life
+      DNAR / ReSPECT
+      Withhold = Withdraw (Airedale)
+      Double Effect
+      Euthanasia Illegal
+    Confidentiality
+      Exceptions (Consent, Law, Public Interest, Child)
+    Paediatric
+      Gillick / Fraser
+      Parental Responsibility
+      Refusal Override
+    Professional Regulation
+      GMC 4 Domains
+      Fitness to Practise
+      Duty of Candour
+      Raising Concerns
+    Key Cases
+      Bolam / Bolitho / Montgomery
+      Airedale / Gillick / Re A
+      Montgomery / Chester v Afshar</pre>
 <hr>
 <h2>13. 13. 📅 Spaced Repetition Tracker</h2>
 <table>
@@ -4501,36 +4297,19 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 </ul>
 <hr>
 <h2>2. 2. 🧠 Core Concept: Quality Improvement = System Science</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Problem Identified</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Understand System Process Mapping, Data</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">New PDSA Cycle</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Test Changes Small Scale → Scale Up</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Measure Impact Run Charts, SPC</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Sustain &amp; Spread</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Embed in Pathways Policy, EHR, Training</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Problem Identified] --&gt; B[Understand System
+Process Mapping, Data]
+    B --&gt; C[Model for Improvement
+3 Questions + PDSA]
+    C --&gt; D[Test Changes
+Small Scale → Scale Up]
+    D --&gt; E[Measure Impact
+Run Charts, SPC]
+    E --&gt; F{Sustain &amp; Spread}
+    F --&gt;|Standardise| G[Embed in Pathways
+Policy, EHR, Training]
+    F --&gt;|Adapt| C[New PDSA Cycle]</pre>
 <blockquote><strong>Key:</strong> <em>QI is not "audit" — it's <strong>iterative testing of changes</strong> to improve systems. Safety is a <strong>system property</strong>, not individual vigilance.</em></blockquote>
 <hr>
 <h2>3. 3. ️⃣ QI Methodology — Model for Improvement (IHI)</h2>
@@ -4550,30 +4329,20 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 </table>
 <blockquote><strong>Key:</strong> <em>Multiple rapid PDSAs > One big implementation. Test → Learn → Scale.</em></blockquote>
 <h3>3. Driver Diagram — Linking Aim to Changes</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Aim Reduce sepsis mortality by 20% in 12 months</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Primary Drivers</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B1">Early Recognition NEWS2, Screening</div>
-<div class="fc-node" data-id="B2">Timely Treatment Sepsis 6 Bundle</div>
-<div class="fc-node" data-id="B3">Reliable Processes Pathways, Education</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C1">Secondary: NEWS2 on all wards</div>
-<div class="fc-node" data-id="C2">Secondary: Sepsis Screening Tool</div>
-<div class="fc-node" data-id="C3">Secondary: IV Abx &lt;1h Protocol</div>
-<div class="fc-node" data-id="C4">Secondary: Lactate &lt;1h</div>
-<div class="fc-node" data-id="C5">Secondary: Sepsis Champion/Team</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Aim
+Reduce sepsis mortality by 20% in 12 months] --&gt; B[Primary Drivers]
+    B --&gt; B1[Early Recognition
+NEWS2, Screening]
+    B --&gt; B2[Timely Treatment
+Sepsis 6 Bundle]
+    B --&gt; B3[Reliable Processes
+Pathways, Education]
+    B1 --&gt; C1[Secondary: NEWS2 on all wards]
+    B1 --&gt; C2[Secondary: Sepsis Screening Tool]
+    B2 --&gt; C3[Secondary: IV Abx &lt;1h Protocol]
+    B2 --&gt; C4[Secondary: Lactate &lt;1h]
+    B3 --&gt; C5[Secondary: Sepsis Champion/Team]</pre>
 <hr>
 <h2>4. 4. ️⃣ Measurement for Improvement</h2>
 <h3>1. Types of Measures</h3>
@@ -4609,44 +4378,20 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 <hr>
 <h2>5. 5. ️⃣ Root Cause Analysis (RCA) — Tools & Process</h2>
 <h3>1. RCA Process (NHS / NPSA)</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Incident Identified</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Immediate Safety Actions</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Team Formation Multidisciplinary, Independent</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Data Collection Timeline, Interviews, Records</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Analysis Fishbone, 5 Whys, Swiss Cheese</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Root Causes &amp; Contributing Factors</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Action Plan SMART: Strong/Intermediate/Weak</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Implementation &amp; Monitoring</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Review &amp; Close</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Incident Identified] --&gt; B[Immediate Safety Actions]
+    B --&gt; C[Team Formation
+Multidisciplinary, Independent]
+    C --&gt; D[Data Collection
+Timeline, Interviews, Records]
+    D --&gt; E[Analysis
+Fishbone, 5 Whys, Swiss Cheese]
+    E --&gt; F[Root Causes
+&amp; Contributing Factors]
+    F --&gt; G[Action Plan
+SMART: Strong/Intermediate/Weak]
+    G --&gt; H[Implementation &amp; Monitoring]
+    H --&gt; I[Review &amp; Close]</pre>
 <h3>2. RCA Tools</h3>
 <table>
 <tr><th>Tool</th><th>Purpose</th><th>Application</th></tr>
@@ -4723,32 +4468,18 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 <tr><td><strong>7. Information & IT</strong></td><td>Clinical coding, EHR, Information governance, Data quality</td></tr>
 </table>
 <h3>1. Clinical Audit Cycle</h3>
-<div class="flowchart" data-dir="LR">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Select Topic High risk, High volume, Evidence gap</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Set Standards Evidence-based, Measurable</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Collect Data Retrospective/Prospective</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Compare Actual vs Standard</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Implement Change PDSA if Needed</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Re-audit Sustain Improvement</div>
-</div>
-</div>
+<pre class="mermaid">flowchart LR
+    A[Select Topic
+High risk, High volume, Evidence gap] --&gt; B[Set Standards
+Evidence-based, Measurable]
+    B --&gt; C[Collect Data
+Retrospective/Prospective]
+    C --&gt; D[Compare
+Actual vs Standard]
+    D --&gt; E[Implement Change
+PDSA if Needed]
+    E --&gt; F[Re-audit
+Sustain Improvement]</pre>
 <blockquote><strong>Audit ≠ Research.</strong> Audit = "Are we doing what we should?" Research = "What should we do?"</blockquote>
 <h3>2. Revalidation (GMC) — 5-Year Cycle</h3>
 <ol>
@@ -4795,40 +4526,25 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 </table>
 <hr>
 <h2>9. 9. ️⃣ Practical QI Project Template</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">1. Identify Problem Data, Stakeholder Voice</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">2. Form Team Multidisciplinary, Sponsor</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">3. Aim Statement SMART: Who, What, By When, How Much</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">4. Driver Diagram Primary/Secondary Drivers</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">5. Measurement Plan Outcome/Process/Balancing Run Chart / SPC</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">6. PDSA Cycles Test Small → Learn → Scale</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">7. Sustain Embed in Policy/EHR Standard Work</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">8. Spread Other Wards/Trusts Share Learning</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[1. Identify Problem
+Data, Stakeholder Voice] --&gt; B[2. Form Team
+Multidisciplinary, Sponsor]
+    B --&gt; C[3. Aim Statement
+SMART: Who, What, By When, How Much]
+    C --&gt; D[4. Driver Diagram
+Primary/Secondary Drivers]
+    D --&gt; E[5. Measurement Plan
+Outcome/Process/Balancing
+Run Chart / SPC]
+    E --&gt; F[6. PDSA Cycles
+Test Small → Learn → Scale]
+    F --&gt; G[7. Sustain
+Embed in Policy/EHR
+Standard Work]
+    G --&gt; H[8. Spread
+Other Wards/Trusts
+Share Learning]</pre>
 <hr>
 <h2>10. 10. ⚡ FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -4900,64 +4616,43 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 <blockquote><strong>Y</strong> (Why?): <strong>Root Cause → 5 Whys → System Fix, Not Blame</strong>  </blockquote>
 <hr>
 <h2>13. 13. 🗺️ Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">root((Quality Improvement</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">&amp; Patient Safety))</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Model for Improvement</div>
-<div class="mm-node mm-l2">3 Questions: Aim, Measures, Changes</div>
-<div class="mm-node mm-l2">PDSA: Plan, Do, Study, Act</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Measurement</div>
-<div class="mm-node mm-l2">Outcome / Process / Balancing</div>
-<div class="mm-node mm-l2">Run Charts (Median, Shift/Trend)</div>
-<div class="mm-node mm-l2">SPC Charts (Mean±3σ, Special Cause)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">QI Methodology</div>
-<div class="mm-node mm-l2">Driver Diagram</div>
-<div class="mm-node mm-l2">PDSA Cycles (Test Small → Scale)</div>
-<div class="mm-node mm-l2">Action Hierarchy (Forcing &gt; Education)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Root Cause Analysis</div>
-<div class="mm-node mm-l2">Fishbone (6Ms)</div>
-<div class="mm-node mm-l2">5 Whys</div>
-<div class="mm-node mm-l2">Swiss Cheese</div>
-<div class="mm-node mm-l2">SEIPS / Timeline</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Patient Safety</div>
-<div class="mm-node mm-l2">Never Events (Wrong Site, KCl, Insulin U, etc.)</div>
-<div class="mm-node mm-l2">Duty of Candour (Statutory)</div>
-<div class="mm-node mm-l2">Incident Reporting (NRLS, SIRI, HSIB)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Human Factors</div>
-<div class="mm-node mm-l2">SEIPS / TeamSTEPPS</div>
-<div class="mm-node mm-l2">Checklists / Time-outs</div>
-<div class="mm-node mm-l2">NOTSS / ANTS</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Clinical Governance</div>
-<div class="mm-node mm-l2">7 Pillars</div>
-<div class="mm-node mm-l2">Audit Cycle (Standard→Measure→Compare→Act→Re-audit)</div>
-<div class="mm-node mm-l2">Revalidation (5-year)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Safety Interventions</div>
-<div class="mm-node mm-l2">WHO Checklist</div>
-<div class="mm-node mm-l2">Central Line Bundle</div>
-<div class="mm-node mm-l2">Sepsis 6</div>
-<div class="mm-node mm-l2">Medication Reconciliation</div>
-<div class="mm-node mm-l2">VTE Prophylaxis</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Quality Improvement
+&amp; Patient Safety))
+    Model for Improvement
+      3 Questions: Aim, Measures, Changes
+      PDSA: Plan, Do, Study, Act
+    Measurement
+      Outcome / Process / Balancing
+      Run Charts (Median, Shift/Trend)
+      SPC Charts (Mean±3σ, Special Cause)
+    QI Methodology
+      Driver Diagram
+      PDSA Cycles (Test Small → Scale)
+      Action Hierarchy (Forcing &gt; Education)
+    Root Cause Analysis
+      Fishbone (6Ms)
+      5 Whys
+      Swiss Cheese
+      SEIPS / Timeline
+    Patient Safety
+      Never Events (Wrong Site, KCl, Insulin U, etc.)
+      Duty of Candour (Statutory)
+      Incident Reporting (NRLS, SIRI, HSIB)
+    Human Factors
+      SEIPS / TeamSTEPPS
+      Checklists / Time-outs
+      NOTSS / ANTS
+    Clinical Governance
+      7 Pillars
+      Audit Cycle (Standard→Measure→Compare→Act→Re-audit)
+      Revalidation (5-year)
+    Safety Interventions
+      WHO Checklist
+      Central Line Bundle
+      Sepsis 6
+      Medication Reconciliation
+      VTE Prophylaxis</pre>
 <hr>
 <h2>14. 14. 📅 Spaced Repetition Tracker</h2>
 <table>
@@ -5152,40 +4847,23 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 </ul>
 <hr>
 <h2>2. 2. 🧠 Core Concept: From Evidence to Practice</h2>
-<div class="flowchart" data-dir="LR">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">New Evidence</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Guideline Development GRADE, AGREE II</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Clinical Guideline Recommendations</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Clinical Pathway Integrated Care Map</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Clinical Protocol Standardised Procedure</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Implementation CFIR, RE-AIM, Barriers</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Clinical Practice Audit, Feedback, QI</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Outcomes Patient, System, Cost</div>
-</div>
-</div>
+<pre class="mermaid">flowchart LR
+    A[Evidence
+SR/MA, RCT] --&gt; B[Guideline Development
+GRADE, AGREE II]
+    B --&gt; C[Clinical Guideline
+Recommendations]
+    C --&gt; D[Clinical Pathway
+Integrated Care Map]
+    D --&gt; E[Clinical Protocol
+Standardised Procedure]
+    E --&gt; F[Implementation
+CFIR, RE-AIM, Barriers]
+    F --&gt; G[Clinical Practice
+Audit, Feedback, QI]
+    G --&gt; H[Outcomes
+Patient, System, Cost]
+    H --&gt; A[New Evidence]</pre>
 <blockquote><strong>Hierarchy:</strong> <em>Guideline (What) → Pathway (When/Who/Where) → Protocol (How) → Implementation (Fidelity) → Audit (Compliance) → Outcomes</em></blockquote>
 <hr>
 <h2>3. 3. ️⃣ Guideline Appraisal — AGREE II (Gold Standard)</h2>
@@ -5219,48 +4897,25 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 <hr>
 <h2>4. 4. ️⃣ Guideline Development Process</h2>
 <h3>1. WHO Guideline Development (WHO Handbook)</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">1. Scope &amp; Prioritisation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">2. Group Composition GDG, Methodologists, Stakeholders</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">3. PICO Questions Population, Intervention, Comparator, Outcomes</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">4. Evidence Retrieval Systematic Reviews, GRADE</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">5. Evidence Appraisal Risk of Bias, Certainty</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">6. Evidence-to-Decision EtD Frameworks: Benefits, Harms, Values, Resources, Equity, Acceptability, Feasibility</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">7. Recommendation Formulation Strong vs Conditional</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">8. Drafting Guideline Peer Review, Public Consultation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">9. Dissemination &amp; Implementation Tools, Training, Adaptation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">10. Evaluation &amp; Update Surveillance, Living Guidelines</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[1. Scope &amp; Prioritisation] --&gt; B[2. Group Composition
+GDG, Methodologists, Stakeholders]
+    B --&gt; C[3. PICO Questions
+Population, Intervention, Comparator, Outcomes]
+    C --&gt; D[4. Evidence Retrieval
+Systematic Reviews, GRADE]
+    D --&gt; E[5. Evidence Appraisal
+Risk of Bias, Certainty]
+    E --&gt; F[6. Evidence-to-Decision
+EtD Frameworks: Benefits, Harms, Values, Resources, Equity, Acceptability, Feasibility]
+    F --&gt; G[7. Recommendation Formulation
+Strong vs Conditional]
+    G --&gt; H[8. Drafting Guideline
+Peer Review, Public Consultation]
+    H --&gt; I[9. Dissemination &amp; Implementation
+Tools, Training, Adaptation]
+    I --&gt; J[10. Evaluation &amp; Update
+Surveillance, Living Guidelines]</pre>
 <h3>2. NICE Guideline Process (UK)</h3>
 <ol>
 <li><strong>Topic Selection</strong> (DHSC referral, Stakeholder nomination)</li>
@@ -5499,64 +5154,41 @@ If any NO → Lacks capacity for THIS decision → Best Interests."</code></pre>
 <blockquote><strong>S</strong>ustainability: <strong>Leadership, Embedded (EHR), Measurement, Champions, Adaptability, Engagement</strong>  </blockquote>
 <hr>
 <h2>14. 14. 🗺️ Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Guidelines, Pathways &amp; Protocols</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Appraisal</div>
-<div class="mm-node mm-l2">AGREE II (6 Domains)</div>
-<div class="mm-node mm-l2">Rigour = Key</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Development</div>
-<div class="mm-node mm-l2">WHO 10 Steps</div>
-<div class="mm-node mm-l2">NICE Process</div>
-<div class="mm-node mm-l2">GRADE + EtD</div>
-<div class="mm-node mm-l2">Living Guidelines</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Types</div>
-<div class="mm-node mm-l2">Guideline: Recommendations</div>
-<div class="mm-node mm-l2">Pathway: Timeline + Variance</div>
-<div class="mm-node mm-l2">Protocol: Step-by-Step SOP</div>
-<div class="mm-node mm-l2">Bundle: 3-5 All-or-None</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Implementation Science</div>
-<div class="mm-node mm-l2">CFIR (5 Domains)</div>
-<div class="mm-node mm-l2">RE-AIM (Evaluation)</div>
-<div class="mm-node mm-l2">TDF (14 Domains)</div>
-<div class="mm-node mm-l2">NPT / EPOC Taxonomy</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Barriers &amp; Strategies</div>
-<div class="mm-node mm-l2">Guideline / Professional / Organisational</div>
-<div class="mm-node mm-l2">Education / Audit-Feedback / CDSS / Pathways</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">NICE Ecosystem</div>
-<div class="mm-node mm-l2">TA (Mandatory, ICER)</div>
-<div class="mm-node mm-l2">CG / QS / Pathways / IPG / DG</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Protocol Development</div>
-<div class="mm-node mm-l2">MDT, Evidence, Steps, Safety, Version Control</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Evaluation</div>
-<div class="mm-node mm-l2">Process (Fidelity) / Outcome / Economic</div>
-<div class="mm-node mm-l2">RE-AIM / CFIR</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Sustainability</div>
-<div class="mm-node mm-l2">Leadership, EHR, Champions, Measurement</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">NICE Products</div>
-<div class="mm-node mm-l2">TA (Mandatory), CG, QS, IPG, DG, MTG</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Guidelines, Pathways &amp; Protocols))
+    Appraisal
+      AGREE II (6 Domains)
+      Rigour = Key
+    Development
+      WHO 10 Steps
+      NICE Process
+      GRADE + EtD
+      Living Guidelines
+    Types
+      Guideline: Recommendations
+      Pathway: Timeline + Variance
+      Protocol: Step-by-Step SOP
+      Bundle: 3-5 All-or-None
+    Implementation Science
+      CFIR (5 Domains)
+      RE-AIM (Evaluation)
+      TDF (14 Domains)
+      NPT / EPOC Taxonomy
+    Barriers &amp; Strategies
+      Guideline / Professional / Organisational
+      Education / Audit-Feedback / CDSS / Pathways
+    NICE Ecosystem
+      TA (Mandatory, ICER)
+      CG / QS / Pathways / IPG / DG
+    Protocol Development
+      MDT, Evidence, Steps, Safety, Version Control
+    Evaluation
+      Process (Fidelity) / Outcome / Economic
+      RE-AIM / CFIR
+    Sustainability
+      Leadership, EHR, Champions, Measurement
+    NICE Products
+      TA (Mandatory), CG, QS, IPG, DG, MTG</pre>
 <hr>
 <h2>15. 15. 📅 Spaced Repetition Tracker</h2>
 <table>
@@ -5797,6 +5429,13 @@ function showTopic(localPrefix) {
     <div class="topic-content">${t.html}</div>
     ${imgHtml}
   `;
+  // Re-render mermaid diagrams in the newly inserted content
+  if (typeof window.renderMermaidIn === 'function') {
+    setTimeout(() => window.renderMermaidIn(container), 50);
+  }
+  // Scroll to top of topic content
+  container.scrollTop = 0;
+  document.querySelector('.chapter-main').scrollTop = 0;
 }
 
 document.getElementById("topicSearch").addEventListener("input", function(e) {
@@ -5870,12 +5509,62 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
   }
 })();
 </script>
+
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 01:41 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 03:50 UTC · Davidson 25th Ed</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
+// Initialize mermaid with dark-theme-friendly defaults
+if (typeof mermaid !== 'undefined') {
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#1f2937',
+      primaryTextColor: '#e5e7eb',
+      primaryBorderColor: '#38bdf8',
+      lineColor: '#9ca3af',
+      secondaryColor: '#111827',
+      tertiaryColor: '#0f172a',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    },
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    mindmap: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+}
+
+// Re-render mermaid blocks when content is dynamically loaded (desktop sidebar clicks)
+window.renderMermaidIn = function(container) {
+  if (typeof mermaid === 'undefined') return;
+  const blocks = (container || document).querySelectorAll('pre.mermaid:not([data-rendered])');
+  blocks.forEach((block, i) => {
+    block.setAttribute('data-rendered', 'true');
+    const id = 'mm-' + Date.now() + '-' + i;
+    try {
+      mermaid.render(id, block.textContent).then(({ svg }) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'mermaid-diagram';
+        wrapper.innerHTML = svg;
+        block.replaceWith(wrapper);
+      }).catch(err => {
+        console.warn('mermaid render failed:', err);
+        block.style.color = '#f87171';
+      });
+    } catch (e) {
+      console.warn('mermaid error:', e);
+    }
+  });
+};
+
+// Run on initial load (for accordion-view topics that are already in DOM)
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => window.renderMermaidIn(document), 100);
+});
+
 // Close dropdown when clicking outside
 document.addEventListener('click', function(e) {
   const dd = document.getElementById('chapterDropdown');

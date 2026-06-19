@@ -1772,7 +1772,7 @@ footer a:hover { color: var(--accent); }
         <span class="logo">⚕</span>
         <a href="/">MedSea</a>
       </div>
-      <div class="stats"><span class="stat"><span class="num">32</span><span class="label">Chapters</span></span><span class="stat"><span class="num">304</span><span class="label">Hubs</span></span><span class="stat"><span class="num">2962</span><span class="label">Topics</span></span><span class="stat"><span class="num">2962</span><span class="label">PNGs</span></span><span class="stat"><span class="num">32</span><span class="label">Total (25th)</span></span></div>
+      <div class="stats"><span class="stat"><span class="num">32</span><span class="label">Chapters</span></span><span class="stat"><span class="num">304</span><span class="label">Hubs</span></span><span class="stat"><span class="num">3526</span><span class="label">Topics</span></span><span class="stat"><span class="num">2627</span><span class="label">PNGs</span></span><span class="stat"><span class="num">32</span><span class="label">Total (25th)</span></span></div>
     </div>
     <div class="search-box" id="searchBox">
       <input type="text" id="searchInput" placeholder="Search 2,957 topics…" autocomplete="off" spellcheck="false">
@@ -2258,7 +2258,7 @@ footer a:hover { color: var(--accent); }
   <h2>Cardiology</h2>
   <div class="ch-stats">
     <div class="cs"><span class="num">17</span><span class="label">Hubs</span></div>
-    <div class="cs"><span class="num">335</span><span class="label">Topics</span></div>
+    <div class="cs"><span class="num">899</span><span class="label">Topics</span></div>
   </div>
   <div class="ch-links">
     <a href="/16-cardiology/" class="ch-link-primary">Browse →</a>
@@ -2473,12 +2473,62 @@ footer a:hover { color: var(--accent); }
     <a href="https://medsea.notion.site/Chapter-32-Older-adult-medicine-and-frailty-ed39c5f1c1714a779458a32c3e8f7a2c" target="_blank" onclick="event.stopPropagation()" class="ch-link-secondary">Notion ↗</a>
   </div>
 </article>
-</div></main>
+</div>
+</main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 01:42 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 03:51 UTC · Davidson 25th Ed</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
+// Initialize mermaid with dark-theme-friendly defaults
+if (typeof mermaid !== 'undefined') {
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#1f2937',
+      primaryTextColor: '#e5e7eb',
+      primaryBorderColor: '#38bdf8',
+      lineColor: '#9ca3af',
+      secondaryColor: '#111827',
+      tertiaryColor: '#0f172a',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    },
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    mindmap: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+}
+
+// Re-render mermaid blocks when content is dynamically loaded (desktop sidebar clicks)
+window.renderMermaidIn = function(container) {
+  if (typeof mermaid === 'undefined') return;
+  const blocks = (container || document).querySelectorAll('pre.mermaid:not([data-rendered])');
+  blocks.forEach((block, i) => {
+    block.setAttribute('data-rendered', 'true');
+    const id = 'mm-' + Date.now() + '-' + i;
+    try {
+      mermaid.render(id, block.textContent).then(({ svg }) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'mermaid-diagram';
+        wrapper.innerHTML = svg;
+        block.replaceWith(wrapper);
+      }).catch(err => {
+        console.warn('mermaid render failed:', err);
+        block.style.color = '#f87171';
+      });
+    } catch (e) {
+      console.warn('mermaid error:', e);
+    }
+  });
+};
+
+// Run on initial load (for accordion-view topics that are already in DOM)
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => window.renderMermaidIn(document), 100);
+});
+
 // Close dropdown when clicking outside
 document.addEventListener('click', function(e) {
   const dd = document.getElementById('chapterDropdown');

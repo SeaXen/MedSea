@@ -1,63 +1,67 @@
-# **Next**: Create MOC, Template, directories, hubs, and scaffolds
+# **2026-06-15**: Initial hierarchy created based on Davidson 24th Edition Chapter 16 structure
 
-## 1. Project Plan
-Build the complete knowledge base structure for the Cardiac Emergencies section (Davidson Chapter 16).
+## 1. Change Log Entry
+**Date**: 2026-06-15
+**Action**: Initial hierarchy created
+**Source**: Davidson's Principles and Practice of Medicine, 24th Edition, Chapter 16 — "Cardiac emergencies"
 
-## 2. Phase 1: Foundations
-- [x] **Folder creation**: `/16_Cardiac_Emergencies/`
-- [x] **Template file**: `_template.md` (Hub, Leaf, MOC, Viva)
-- [x] **Section MOC**: `Cardiac Emergencies MOC.md`
-- [x] **Index file**: Track all files in section
+## 2. Davidson Chapter 16 Structure
+The initial folder hierarchy mirrors Davidson 24e Chapter 16:
 
-## 3. Phase 2: Hub Files
-- [x] `STEMI Hub.md` — primary PCI, fibrinolysis
-- [x] `Cardiogenic Shock Hub.md` — SCAI, MCS
-- [x] `Arrhythmia Emergencies Hub.md` — VF, VT, TdP, bradycardia
-- [x] `Aortic & Pericardial Emergencies Hub.md` — dissection, tamponade, AAA
-- [x] `Post-Cardiac Arrest Care Hub.md` — TTM, prognostication
+### Subheadings Used as Hubs
+1. **Acute Coronary Syndrome Emergencies**
+   - STEMI
+   - NSTEMI/UA
+   - Cardiogenic shock
+   - Mechanical complications of MI
+2. **Acute Heart Failure & Cardiogenic Shock**
+   - ADHF
+   - SCAI shock stages
+3. **Life-Threatening Arrhythmias**
+   - VF/pulseless VT
+   - Sustained VT
+   - Unstable bradyarrhythmia
+   - Torsades de pointes
+4. **Aortic & Pericardial Emergencies**
+   - Aortic dissection
+   - Cardiac tamponade
+   - Ruptured aortic aneurysm
+5. **Post-Cardiac Arrest Care**
+   - TTM
+   - Coronary angiography post-ROSC
+   - Neuroprognostication
+   - Long-term management
 
-## 4. Phase 3: Leaf Files
-- [x] 16 leaf files (subtopics)
-- [x] Differential tables
-- [x] Diagnostic algorithms
-- [x] Management protocols
+## 3. Initial Hubs Created
+- `STEMI (primary PCI).md` (Hub)
+- `Cardiogenic shock (SCAI classification, MCS).md` (Hub)
+- `Arrhythmia Emergencies (VF, VT, TdP).md` (Hub)
+- `Aortic Emergencies (dissection, aneurysm).md` (Hub)
+- `Post-Arrest Care (TTM, neuroprognostication).md` (Hub)
 
-## 5. Phase 4: Enhancement
-- [x] Update MOC with checkboxes
-- [x] Add high-yield tables
-- [x] Add viva topics
-- [x] Cross-link to Medicine MOC, Davidson Roadmap
-- [ ] Add Mermaid diagrams (anatomy, flow)
-- [ ] Add image placeholders (ECG strips, CXR)
-- [ ] Add reference citations (ESC/AHA guidelines)
+## 4. Files Created
+- 5 hub files
+- 16 leaf files
+- 1 MOC file
+- Total: 22 files in `/16_Cardiac_Emergencies/`
 
-## 6. Phase 5: Review & Quality
-- [ ] Spell check
-- [ ] Cross-link verification
-- [ ] Tag consistency
-- [ ] Peer review (study group)
-- [ ] Spaced repetition schedule
+## 5. Cross-References
+- Each file tagged `#davidson-chapter-16`
+- Linked to Medicine MOC § Cardiology
+- Linked to Davidson Chapter Roadmap § Chapter 16
 
-## 7. Estimated Timeline
-| Phase | Tasks | Time |
-|-------|-------|------|
-| 1: Foundations | Folders, template, MOC | 2 h |
-| 2: Hubs | 5 hub files | 4 h |
-| 3: Leaves | 16 leaf files | 8 h |
-| 4: Enhancement | Tables, viva, links | 4 h |
-| 5: Review | QC, refs | 2 h |
-| **Total** | | **~20 h** |
-
-## 8. Quality Standards
-- **Every leaf file**: Definition, Etiology, Pathophysiology, Clinical Features, Diagnosis, Management, Complications, Pearls
-- **Every hub file**: Overview, links to leaves, clinical algorithms
-- **Tables**: At least 1 differential or classification
-- **Tags**: At least 3 tags per file
-- **Cross-links**: At least 2 per file
+## 6. Next Steps (Logged)
+- [x] Create initial folder structure
+- [x] Generate hub files
+- [x] Generate leaf files
+- [ ] Update MOC with checkboxes
+- [ ] Add high-yield tables
+- [ ] Add viva topics
+- [ ] Add cross-links
+- [ ] Schedule review
 
 > **Pearls**
-> - **Templates** ensure consistency
-> - **Hub-and-spoke** model aids retrieval
-> - **Spaced repetition** = long-term retention
-> - **Viva topics** = active learning
-> - **Cross-linking** = knowledge graph
+> - **Davidson-aligned hierarchy** = familiar to UK/SA students
+> - Hub-and-spoke model = easier navigation
+> - Date-stamped changelog = tracks evolution
+> - Cross-reference checklist = completion tracking

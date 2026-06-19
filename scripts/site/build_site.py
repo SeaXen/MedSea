@@ -2390,14 +2390,63 @@ def page_header(title, current_ch_slug=None, stats=None):
 <main>
 """
 
-
 def page_footer():
-    return f"""</main>
+    return f"""
+</main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
   <p style="margin-top:8px;opacity:0.6">Generated {datetime.now().strftime("%Y-%m-%d %H:%M UTC")} · Davidson 25th Ed</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
+// Initialize mermaid with dark-theme-friendly defaults
+if (typeof mermaid !== 'undefined') {{
+  mermaid.initialize({{
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {{
+      primaryColor: '#1f2937',
+      primaryTextColor: '#e5e7eb',
+      primaryBorderColor: '#38bdf8',
+      lineColor: '#9ca3af',
+      secondaryColor: '#111827',
+      tertiaryColor: '#0f172a',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    }},
+    flowchart: {{ useMaxWidth: true, htmlLabels: true, curve: 'basis' }},
+    mindmap: {{ useMaxWidth: true }},
+    securityLevel: 'loose'
+  }});
+}}
+
+// Re-render mermaid blocks when content is dynamically loaded (desktop sidebar clicks)
+window.renderMermaidIn = function(container) {{
+  if (typeof mermaid === 'undefined') return;
+  const blocks = (container || document).querySelectorAll('pre.mermaid:not([data-rendered])');
+  blocks.forEach((block, i) => {{
+    block.setAttribute('data-rendered', 'true');
+    const id = 'mm-' + Date.now() + '-' + i;
+    try {{
+      mermaid.render(id, block.textContent).then(({{ svg }}) => {{
+        const wrapper = document.createElement('div');
+        wrapper.className = 'mermaid-diagram';
+        wrapper.innerHTML = svg;
+        block.replaceWith(wrapper);
+      }}).catch(err => {{
+        console.warn('mermaid render failed:', err);
+        block.style.color = '#f87171';
+      }});
+    }} catch (e) {{
+      console.warn('mermaid error:', e);
+    }}
+  }});
+}};
+
+// Run on initial load (for accordion-view topics that are already in DOM)
+document.addEventListener('DOMContentLoaded', () => {{
+  setTimeout(() => window.renderMermaidIn(document), 100);
+}});
+
 // Close dropdown when clicking outside
 document.addEventListener('click', function(e) {{
   const dd = document.getElementById('chapterDropdown');
@@ -2702,12 +2751,18 @@ def render_md_to_html(md_text: str) -> str:
         if not in_code:
             return
         body = "\n".join(code_buf)
-        if code_kind in ("mindmap",):
-            rendered = render_mindmap_md(body)
+        if code_kind in ("mindmap", "flowchart", "graph"):
+            # Real mermaid.js renders these client-side from <pre class="mermaid">
+            rendered = f'<pre class="mermaid">{_esc(body)}</pre>'
             found_mermaid = True
-        elif code_kind in ("flowchart", "graph"):
-            rendered = render_flowchart_md(body)
-            found_mermaid = True
+        elif code_kind is None:
+            # Could be mermaid/mindmap/flowchart declared inline
+            stripped_body = body.strip()
+            if stripped_body.startswith(("mindmap", "flowchart", "graph ", "graph\n", "graph\t")):
+                rendered = f'<pre class="mermaid">{_esc(body)}</pre>'
+                found_mermaid = True
+            else:
+                rendered = f'<pre class="codeblock"><code>{_esc(body)}</code></pre>'
         else:
             rendered = f'<pre class="codeblock"><code>{_esc(body)}</code></pre>'
         out.append(rendered)
@@ -3150,6 +3205,13 @@ function showTopic(localPrefix) {{
     <div class="topic-content">${{t.html}}</div>
     ${{imgHtml}}
   `;
+  // Re-render mermaid diagrams in the newly inserted content
+  if (typeof window.renderMermaidIn === 'function') {{
+    setTimeout(() => window.renderMermaidIn(container), 50);
+  }}
+  // Scroll to top of topic content
+  container.scrollTop = 0;
+  document.querySelector('.chapter-main').scrollTop = 0;
 }}
 
 document.getElementById("topicSearch").addEventListener("input", function(e) {{

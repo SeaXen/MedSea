@@ -2887,78 +2887,45 @@ footer a:hover { color: var(--accent); }
 <li><strong>SGARBOSSA</strong>: <strong>C</strong>oncordant STE, <strong>D</strong>iscordant STD V1–V3, <strong>E</strong>xcessive discordance</li>
 </ul>
 <h2>10. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">ACS in Critical Care</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Definition</div>
-<div class="mm-node mm-l2">STEMI: STE + Trop+</div>
-<div class="mm-node mm-l2">NSTEMI: Trop+ No STE</div>
-<div class="mm-node mm-l2">Unstable Angina: Trop-</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">STEMI</div>
-<div class="mm-node mm-l2">Reperfusion: PCI 90min / Fibrinolysis 30min</div>
-<div class="mm-node mm-l2">DAPT: Aspirin + Ticagrelor/Prasugrel</div>
-<div class="mm-node mm-l2">Anticoagulation: UFH/Enoxaparin/Bivalirudin</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">NSTEMI</div>
-<div class="mm-node mm-l2">Risk: GRACE/TIMI</div>
-<div class="mm-node mm-l2">Early Invasive: GRACE&gt;140 ≤24h</div>
-<div class="mm-node mm-l2">DAPT + Anticoagulation (Fondaparinux)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Mechanical Complications</div>
-<div class="mm-node mm-l2">Papillary Muscle Rupture</div>
-<div class="mm-node mm-l2">VSD Rupture</div>
-<div class="mm-node mm-l2">Free Wall Rupture</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Post-Cardiac Arrest</div>
-<div class="mm-node mm-l2">TTM 32-36C</div>
-<div class="mm-node mm-l2">Early Cath</div>
-<div class="mm-node mm-l2">Neuroprognostication ≥72h</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((ACS in Critical Care))
+    Definition
+      STEMI: STE + Trop+
+      NSTEMI: Trop+ No STE
+      Unstable Angina: Trop-
+    STEMI
+      Reperfusion: PCI 90min / Fibrinolysis 30min
+      DAPT: Aspirin + Ticagrelor/Prasugrel
+      Anticoagulation: UFH/Enoxaparin/Bivalirudin
+    NSTEMI
+      Risk: GRACE/TIMI
+      Early Invasive: GRACE&gt;140 ≤24h
+      DAPT + Anticoagulation (Fondaparinux)
+    Mechanical Complications
+      Papillary Muscle Rupture
+      VSD Rupture
+      Free Wall Rupture
+    Post-Cardiac Arrest
+      TTM 32-36C
+      Early Cath
+      Neuroprognostication ≥72h</pre>
 <h2>11. Flowchart</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Chest Pain + Trop Rise</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">ST Elevation?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">STEMI</div>
-<div class="fc-node" data-id="G">NSTEMI / Unstable Angina</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">PCI Available ≤120min?</div>
-<div class="fc-node" data-id="H">GRACE / TIMI Score</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Primary PCI\nDoor-to-Balloon ≤90min</div>
-<div class="fc-node" data-id="F">Fibrinolysis\nDoor-to-Needle ≤30min\nPharmacoinvasive PCI 3-24h</div>
-<div class="fc-node" data-id="I">High Risk?\nGRACE&gt;140 / Dynamic ST / HF</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">DAPT + Anticoagulation\nMechanical Complications Screen</div>
-<div class="fc-node" data-id="J">Early Invasive ≤24h</div>
-<div class="fc-node" data-id="K">Invasive ≤72h or Conservative</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="M">Post-MI: Beta-blocker, ACEi, Statin\nCardiac Rehab\nSecondary Prevention</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Chest Pain + Trop Rise] --&gt; B{ST Elevation?}
+  B --&gt;|Yes| C[STEMI]
+  C --&gt; D{PCI Available ≤120min?}
+  D --&gt;|Yes| E[Primary PCI\nDoor-to-Balloon ≤90min]
+  D --&gt;|No| F[Fibrinolysis\nDoor-to-Needle ≤30min\nPharmacoinvasive PCI 3-24h]
+  B --&gt;|No| G[NSTEMI / Unstable Angina]
+  G --&gt; H[GRACE / TIMI Score]
+  H --&gt; I{High Risk?\nGRACE&gt;140 / Dynamic ST / HF}
+  I --&gt;|Yes| J[Early Invasive ≤24h]
+  I --&gt;|No| K[Invasive ≤72h or Conservative]
+  E --&gt; L[DAPT + Anticoagulation\nMechanical Complications Screen]
+  F --&gt; L
+  J --&gt; L
+  K --&gt; L
+  L --&gt; M[Post-MI: Beta-blocker, ACEi, Statin\nCardiac Rehab\nSecondary Prevention]</pre>
 <h2>12. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>STEMI vs NSTEMI ECG criteria</li>
@@ -3484,97 +3451,49 @@ footer a:hover { color: var(--accent); }
 <li><strong>RRT DIALYSABLE TOXINS</strong>: <strong>M</strong>ethanol, <strong>E</strong>thylene glycol, <strong>L</strong>ithium, <strong>S</strong>alicylate, <strong>M</strong>etformin</li>
 </ul>
 <h2>15. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">AKI in Critical Illness</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Diagnosis</div>
-<div class="mm-node mm-l2">KDIGO: Cr + UO</div>
-<div class="mm-node mm-l2">Stages 1-3</div>
-<div class="mm-node mm-l2">Baseline Cr Essential</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Classification</div>
-<div class="mm-node mm-l2">Pre-renal (70%)</div>
-<div class="mm-node mm-l2">Intrinsic: ATN (most), AIN, GN</div>
-<div class="mm-node mm-l2">Post-renal (5%)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Investigations</div>
-<div class="mm-node mm-l2">Cr trend, UO, FENa, Urinalysis</div>
-<div class="mm-node mm-l2">US: Hydronephrosis</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management</div>
-<div class="mm-node mm-l2">Stop Nephrotoxins</div>
-<div class="mm-node mm-l2">Haemodynamic Optimisation</div>
-<div class="mm-node mm-l2">Fluid Balance</div>
-<div class="mm-node mm-l2">Drug Dosing</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">CIN Prevention</div>
-<div class="mm-node mm-l2">Hydration (Saline/Bicarb)</div>
-<div class="mm-node mm-l2">Low-Osmolar Contrast</div>
-<div class="mm-node mm-l2">Hold Metformin</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">RRT</div>
-<div class="mm-node mm-l2">Indications: AEIOU</div>
-<div class="mm-node mm-l2">CRRT vs IHD vs SLED</div>
-<div class="mm-node mm-l2">Timing: Early Better</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Complications</div>
-<div class="mm-node mm-l2">HyperK, Acidosis, Fluid Overload, Uraemia</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((AKI in Critical Illness))
+    Diagnosis
+      KDIGO: Cr + UO
+      Stages 1-3
+      Baseline Cr Essential
+    Classification
+      Pre-renal (70%)
+      Intrinsic: ATN (most), AIN, GN
+      Post-renal (5%)
+    Investigations
+      Cr trend, UO, FENa, Urinalysis
+      US: Hydronephrosis
+    Management
+      Stop Nephrotoxins
+      Haemodynamic Optimisation
+      Fluid Balance
+      Drug Dosing
+    CIN Prevention
+      Hydration (Saline/Bicarb)
+      Low-Osmolar Contrast
+      Hold Metformin
+    RRT
+      Indications: AEIOU
+      CRRT vs IHD vs SLED
+      Timing: Early Better
+    Complications
+      HyperK, Acidosis, Fluid Overload, Uraemia</pre>
 <h2>16. Flowchart</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Olive Urine Output / Rising Creatinine</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">KDIGO Criteria Met?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Stage AKI 1/2/3</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Exclude Post-Renal\nUS Kidneys</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Relieve Obstruction\nCatheter/Nephrostomy</div>
-<div class="fc-node" data-id="F">Pre-renal vs Intrinsic</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">FENa &lt;1%\nUrine Osm &gt;500\nBland Sediment</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Pre-renal: Volume Resuscitation\nOptimise Haemodynamics\nStop Diuretics/ACEi/NSAIDs</div>
-<div class="fc-node" data-id="I">Intrinsic: ATN Most Likely\nStop Nephrotoxins\nSupportive Care\nMonitor for RRT Indications</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">Monitor Response\nCr, UO, Fluid Balance\nElectrolytes Daily</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">RRT Indications?\nAEIOU</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">CRRT if Unstable\nIHD/SLED if Stable</div>
-<div class="fc-node" data-id="M">Continue Supportive\nDrug Dose Adjustment\nAvoid Fluid Overload</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Olive Urine Output / Rising Creatinine] --&gt; B[KDIGO Criteria Met?]
+  B --&gt;|Yes| C[Stage AKI 1/2/3]
+  C --&gt; D{Exclude Post-Renal\nUS Kidneys}
+  D --&gt;|Hydronephrosis| E[Relieve Obstruction\nCatheter/Nephrostomy]
+  D --&gt;|No Obstruction| F[Pre-renal vs Intrinsic]
+  F --&gt; G{FENa &lt;1%\nUrine Osm &gt;500\nBland Sediment}
+  G --&gt;|Yes| H[Pre-renal: Volume Resuscitation\nOptimise Haemodynamics\nStop Diuretics/ACEi/NSAIDs]
+  G --&gt;|No| I[Intrinsic: ATN Most Likely\nStop Nephrotoxins\nSupportive Care\nMonitor for RRT Indications]
+  H --&gt; J[Monitor Response\nCr, UO, Fluid Balance\nElectrolytes Daily]
+  I --&gt; J
+  J --&gt; K{RRT Indications?\nAEIOU}
+  K --&gt;|Yes| L[CRRT if Unstable\nIHD/SLED if Stable]
+  K --&gt;|No| M[Continue Supportive\nDrug Dose Adjustment\nAvoid Fluid Overload]</pre>
 <h2>17. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>KDIGO staging table</li>
@@ -4153,84 +4072,53 @@ footer a:hover { color: var(--accent); }
 <li><strong>AMMONIA</strong>: <strong>L</strong>actulose + <strong>R</strong>ifaximin; <strong>A</strong>mmonia >100–150 = oedema risk</li>
 </ul>
 <h2>14. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Acute Liver Failure</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Definition</div>
-<div class="mm-node mm-l2">INR &gt;=1.5 + Encephalopathy</div>
-<div class="mm-node mm-l2">&lt;26 weeks, No Prior Liver Disease</div>
-<div class="mm-node mm-l2">Hyperacute/Acute/Subacute</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Aetiology</div>
-<div class="mm-node mm-l2">Paracetamol (Commonest)</div>
-<div class="mm-node mm-l2">Viral: HAV, HEV, HBV</div>
-<div class="mm-node mm-l2">Drug: INH, Valproate, Amanita</div>
-<div class="mm-node mm-l2">Autoimmune, Wilson's, AFLP, Budd-Chiari</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">King's College</div>
-<div class="mm-node mm-l2">Paracetamol: pH&lt;7.3 OR (INR&gt;6.5+Cr+Enceph)</div>
-<div class="mm-node mm-l2">Non-Paracetamol: INR&gt;6.5 OR 3 of 5</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management</div>
-<div class="mm-node mm-l2">ICU, NAC, Cerebral Oedema, Coagulopathy</div>
-<div class="mm-node mm-l2">Specific: NAC, Silibinin, Steroids, Delivery</div>
-<div class="mm-node mm-l2">Transplant Referral Early</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Cerebral Oedema</div>
-<div class="mm-node mm-l2">30° Head, PaCO2 30-35</div>
-<div class="mm-node mm-l2">Mannitol / 3% Saline</div>
-<div class="mm-node mm-l2">ICP Monitor (Grade 4)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Coagulopathy</div>
-<div class="mm-node mm-l2">INR = Severity Marker</div>
-<div class="mm-node mm-l2">NO Routine Correction</div>
-<div class="mm-node mm-l2">FFP: Bleeding/Procedure</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Acute Liver Failure))
+    Definition
+      INR &gt;=1.5 + Encephalopathy
+      &lt;26 weeks, No Prior Liver Disease
+      Hyperacute/Acute/Subacute
+    Aetiology
+      Paracetamol (Commonest)
+      Viral: HAV, HEV, HBV
+      Drug: INH, Valproate, Amanita
+      Autoimmune, Wilson's, AFLP, Budd-Chiari
+    King's College
+      Paracetamol: pH&lt;7.3 OR (INR&gt;6.5+Cr+Enceph)
+      Non-Paracetamol: INR&gt;6.5 OR 3 of 5
+    Management
+      ICU, NAC, Cerebral Oedema, Coagulopathy
+      Specific: NAC, Silibinin, Steroids, Delivery
+      Transplant Referral Early
+    Cerebral Oedema
+      30° Head, PaCO2 30-35
+      Mannitol / 3% Saline
+      ICP Monitor (Grade 4)
+    Coagulopathy
+      INR = Severity Marker
+      NO Routine Correction
+      FFP: Bleeding/Procedure</pre>
 <h2>15. Flowchart</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Jaundice + Encephalopathy + INR&gt;=1.5\nNo Prior Liver Disease\n&lt;26 Weeks</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">ALF Diagnosis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">ICU Admission\nGrade &gt;=2 Encephalopathy</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">NAC Infusion\n(Start Immediately\nParacetamol + Non-Paracetamol)</div>
-<div class="fc-node" data-id="E">Grade Encephalopathy\nWest Haven Scale</div>
-<div class="fc-node" data-id="G">King's College Criteria\nParacetamol vs Non-Paracetamol</div>
-<div class="fc-node" data-id="J">Specific Aetiology Workup\nParacetamol Level, Viral, Autoimmune, Wilson's</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Cerebral Oedema Protocol\n30° Head, PaCO2 30-35\nMannitol/3% Saline</div>
-<div class="fc-node" data-id="H">Transplant Referral\nImmediate</div>
-<div class="fc-node" data-id="I">Continue Supportive\nDaily King's Reassessment</div>
-<div class="fc-node" data-id="K">Specific Therapy?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">Continue NAC Full Course</div>
-<div class="fc-node" data-id="M">Silibinin + Penicillin G + NAC</div>
-<div class="fc-node" data-id="N">Prednisolone 40-60mg</div>
-<div class="fc-node" data-id="O">Immediate Delivery</div>
-<div class="fc-node" data-id="P">Penicillamine + Transplant</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Jaundice + Encephalopathy + INR&gt;=1.5\nNo Prior Liver Disease\n&lt;26 Weeks] --&gt; B[ALF Diagnosis]
+  B --&gt; C[ICU Admission\nGrade &gt;=2 Encephalopathy]
+  C --&gt; D[NAC Infusion\n(Start Immediately\nParacetamol + Non-Paracetamol)]
+  C --&gt; E[Grade Encephalopathy\nWest Haven Scale]
+  E --&gt;|Grade 3-4| F[Cerebral Oedema Protocol\n30° Head, PaCO2 30-35\nMannitol/3% Saline]
+  C --&gt; G[King's College Criteria\nParacetamol vs Non-Paracetamol]
+  G --&gt;|Met| H[Transplant Referral\nImmediate]
+  G --&gt;|Not Met| I[Continue Supportive\nDaily King's Reassessment]
+  C --&gt; J[Specific Aetiology Workup\nParacetamol Level, Viral, Autoimmune, Wilson's]
+  J --&gt; K{Specific Therapy?}
+  K --&gt;|Paracetamol| L[Continue NAC Full Course]
+  K --&gt;|Amanita| M[Silibinin + Penicillin G + NAC]
+  K --&gt;|AIH| N[Prednisolone 40-60mg]
+  K --&gt;|AFLP| O[Immediate Delivery]
+  K --&gt;|Wilson's| P[Penicillamine + Transplant]
+  L --&gt; P
+  M --&gt; P
+  N --&gt; P
+  O --&gt; P</pre>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>King's College Criteria comparison table (paracetamol vs non-paracetamol)</li>
@@ -5681,144 +5569,86 @@ footer a:hover { color: var(--accent); }
 <li><strong>Provoked</strong>: <strong>3 months</strong>; <strong>Unprovoked</strong>: <strong>≥3 months, often extended</strong></li>
 </ul>
 <h2>16. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Acute PE</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Risk Factors</div>
-<div class="mm-node mm-l2">Stasis (immobility, pregnancy, HF)</div>
-<div class="mm-node mm-l2">Endothelial injury (surgery, trauma)</div>
-<div class="mm-node mm-l2">Hypercoagulability (Factor V Leiden, cancer, OCP)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Wells Score</div>
-<div class="mm-node mm-l2">DVT signs (3)</div>
-<div class="mm-node mm-l2">PE most likely (3)</div>
-<div class="mm-node mm-l2">HR&gt;100 (1.5)</div>
-<div class="mm-node mm-l2">Immobile/surgery (1.5)</div>
-<div class="mm-node mm-l2">Previous DVT/PE (1.5)</div>
-<div class="mm-node mm-l2">Haemoptysis (1)</div>
-<div class="mm-node mm-l2">Cancer (1)</div>
-<div class="mm-node mm-l2">&gt;4 likely / &lt;=4 unlikely</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">PERC</div>
-<div class="mm-node mm-l2">8 criteria</div>
-<div class="mm-node mm-l2">All absent -&gt; exclude</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Investigations</div>
-<div class="mm-node mm-l2">D-dimer (sensitive)</div>
-<div class="mm-node mm-l2">CTPA gold standard</div>
-<div class="mm-node mm-l2">V/Q (pregnancy, contrast contra)</div>
-<div class="mm-node mm-l2">Echo (RV dysfunction)</div>
-<div class="mm-node mm-l2">Troponin, BNP</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Severity</div>
-<div class="mm-node mm-l2">Massive (SBP&lt;90): thrombolysis</div>
-<div class="mm-node mm-l2">Sub-massive (RV dysfn): anticoag, monitor</div>
-<div class="mm-node mm-l2">Low-risk: anticoag, early discharge</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management</div>
-<div class="mm-node mm-l2">Anticoagulation</div>
-<div class="mm-node mm-l3">– LMWH (enoxaparin 1mg/kg BD)</div>
-<div class="mm-node mm-l3">– Apixaban, Rivaroxaban, Dabigatran</div>
-<div class="mm-node mm-l3">– Fondaparinux, UFH</div>
-<div class="mm-node mm-l2">Thrombolysis</div>
-<div class="mm-node mm-l3">– Alteplase 100mg/2h</div>
-<div class="mm-node mm-l3">– Tenecteplase bolus</div>
-<div class="mm-node mm-l2">Embolectomy</div>
-<div class="mm-node mm-l3">– Surgical / Catheter</div>
-<div class="mm-node mm-l3">– ECMO bridge</div>
-<div class="mm-node mm-l2">IVC Filter</div>
-<div class="mm-node mm-l3">– Anticoag contraindicated</div>
-<div class="mm-node mm-l3">– Recurrent on anticoag</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Duration</div>
-<div class="mm-node mm-l2">Provoked: 3 months</div>
-<div class="mm-node mm-l2">Unprovoked: extended</div>
-<div class="mm-node mm-l2">Cancer: indefinite</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Special</div>
-<div class="mm-node mm-l2">Pregnancy: LMWH, V/Q, avoid DOAC</div>
-<div class="mm-node mm-l2">CTEPH: V/Q, endarterectomy</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Acute PE))
+    Risk Factors
+      Stasis (immobility, pregnancy, HF)
+      Endothelial injury (surgery, trauma)
+      Hypercoagulability (Factor V Leiden, cancer, OCP)
+    Wells Score
+      DVT signs (3)
+      PE most likely (3)
+      HR&gt;100 (1.5)
+      Immobile/surgery (1.5)
+      Previous DVT/PE (1.5)
+      Haemoptysis (1)
+      Cancer (1)
+      &gt;4 likely / &lt;=4 unlikely
+    PERC
+      8 criteria
+      All absent -&gt; exclude
+    Investigations
+      D-dimer (sensitive)
+      CTPA gold standard
+      V/Q (pregnancy, contrast contra)
+      Echo (RV dysfunction)
+      Troponin, BNP
+    Severity
+      Massive (SBP&lt;90): thrombolysis
+      Sub-massive (RV dysfn): anticoag, monitor
+      Low-risk: anticoag, early discharge
+    Management
+      Anticoagulation
+        LMWH (enoxaparin 1mg/kg BD)
+        Apixaban, Rivaroxaban, Dabigatran
+        Fondaparinux, UFH
+      Thrombolysis
+        Alteplase 100mg/2h
+        Tenecteplase bolus
+      Embolectomy
+        Surgical / Catheter
+        ECMO bridge
+      IVC Filter
+        Anticoag contraindicated
+        Recurrent on anticoag
+    Duration
+      Provoked: 3 months
+      Unprovoked: extended
+      Cancer: indefinite
+    Special
+      Pregnancy: LMWH, V/Q, avoid DOAC
+      CTEPH: V/Q, endarterectomy</pre>
 <h2>17. Flowchart — PE Diagnosis</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected PE</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Wells Score</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">CTPA</div>
-<div class="fc-node" data-id="D">PERC positive?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Risk Stratify</div>
-<div class="fc-node" data-id="E">PE Excluded</div>
-<div class="fc-node" data-id="F">Age-adjusted D-dimer</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Thrombolysis</div>
-<div class="fc-node" data-id="I">Anticoag + Monitor</div>
-<div class="fc-node" data-id="J">Anticoag + Discharge</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Surgical/catheter embolectomy if contra</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Suspected PE] --&gt; B[Wells Score]
+  B --&gt;|Likely &gt;4| C[CTPA]
+  B --&gt;|Unlikely &lt;=4| D{PERC positive?}
+  D --&gt;|All 8 absent| E[PE Excluded]
+  D --&gt;|Any positive| F[Age-adjusted D-dimer]
+  F --&gt;|Negative| E
+  F --&gt;|Positive| C
+  C --&gt;|Confirmed| G[Risk Stratify]
+  G --&gt;|Massive SBP&lt;90| H[Thrombolysis]
+  G --&gt;|Sub-massive RV+| I[Anticoag + Monitor]
+  G --&gt;|Low risk| J[Anticoag + Discharge]
+  H --&gt; K[Surgical/catheter embolectomy if contra]</pre>
 <h2>18. Flowchart — PE Management</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">PE Confirmed</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Haemodynamic Status</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Massive PE</div>
-<div class="fc-node" data-id="D">RV dysfunction?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Thrombolysis + UFH</div>
-<div class="fc-node" data-id="H">Sub-massive PE</div>
-<div class="fc-node" data-id="I">Low-risk PE</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Contraindication?</div>
-<div class="fc-node" data-id="J">Anticoag + ICU monitoring</div>
-<div class="fc-node" data-id="K">Anticoag + Early Discharge</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Embolectomy / ECMO</div>
-<div class="fc-node" data-id="L">Deteriorating?</div>
-<div class="fc-node" data-id="N">Duration: Provoked 3mo / Unprovoked extended</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="M">Thrombolysis / CDT</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[PE Confirmed] --&gt; B{Haemodynamic Status}
+  B --&gt;|SBP&lt;90/shock| C[Massive PE]
+  B --&gt;|Stable| D{RV dysfunction?}
+  C --&gt; E[Thrombolysis + UFH]
+  E --&gt; F{Contraindication?}
+  F --&gt;|Yes| G[Embolectomy / ECMO]
+  F --&gt;|No| E
+  D --&gt;|Yes| H[Sub-massive PE]
+  D --&gt;|No| I[Low-risk PE]
+  H --&gt; J[Anticoag + ICU monitoring]
+  I --&gt; K[Anticoag + Early Discharge]
+  J --&gt; L{Deteriorating?}
+  L --&gt;|Yes| M[Thrombolysis / CDT]
+  L --&gt;|No| J
+  K --&gt; N[Duration: Provoked 3mo / Unprovoked extended]</pre>
 <h2>19. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Wells >4 = likely; PERC → D-dimer</strong> (age-adjusted in >50)</li>
@@ -6374,84 +6204,56 @@ footer a:hover { color: var(--accent); }
 <li><strong>VILI</strong>: <strong>B</strong>arotrauma, <strong>V</strong>olutrauma, <strong>A</strong>telectrauma, <strong>B</strong>iotrauma</li>
 </ul>
 <h2>15. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">ARDS</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Berlin Criteria</div>
-<div class="mm-node mm-l2">Within 1 week</div>
-<div class="mm-node mm-l2">Bilateral infiltrates</div>
-<div class="mm-node mm-l2">Non-cardiogenic (PCWP&lt;18)</div>
-<div class="mm-node mm-l2">P/F &lt;=300 + PEEP &gt;=5</div>
-<div class="mm-node mm-l2">Severity: Mild 200-300 / Mod 100-200 / Severe &lt;100</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Causes</div>
-<div class="mm-node mm-l2">Pulmonary: Pneumonia, Aspiration, Inhalational</div>
-<div class="mm-node mm-l2">Extrapulmonary: Sepsis (40%), Trauma, Pancreatitis, TRALI</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Pathophysiology</div>
-<div class="mm-node mm-l2">Exudative (1-7d) -&gt; Proliferative (1-3w) -&gt; Fibrotic (&gt;3w)</div>
-<div class="mm-node mm-l2">Capillary leak, hyaline membranes</div>
-<div class="mm-node mm-l2">Decreased compliance, shunting</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management</div>
-<div class="mm-node mm-l2">Lung-Protective Ventilation</div>
-<div class="mm-node mm-l3">– TV 6mL/kg PBW</div>
-<div class="mm-node mm-l3">– Pplat &lt;=30</div>
-<div class="mm-node mm-l3">– PEEP titration (ARDSnet)</div>
-<div class="mm-node mm-l3">– Permissive hypercapnia pH&gt;7.20</div>
-<div class="mm-node mm-l2">Adjuncts (P/F&lt;150)</div>
-<div class="mm-node mm-l3">– Prone &gt;12h/day (PROSEVA)</div>
-<div class="mm-node mm-l3">– NMJ blockade 48h (ACURASYS)</div>
-<div class="mm-node mm-l3">– Conservative fluids (FACTT)</div>
-<div class="mm-node mm-l2">Rescue</div>
-<div class="mm-node mm-l3">– iNO, Prone, HFOV (not routine)</div>
-<div class="mm-node mm-l3">– VV-ECMO (P/F&lt;80)</div>
-<div class="mm-node mm-l2">Supportive</div>
-<div class="mm-node mm-l3">– DVT/PUD prophylaxis</div>
-<div class="mm-node mm-l3">– Early enteral nutrition</div>
-<div class="mm-node mm-l3">– Restrictive transfusion (Hb&lt;70)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Complications</div>
-<div class="mm-node mm-l2">Barotrauma (PTX)</div>
-<div class="mm-node mm-l2">VAP</div>
-<div class="mm-node mm-l2">VILI</div>
-<div class="mm-node mm-l2">Multi-organ failure</div>
-<div class="mm-node mm-l2">Pulmonary fibrosis</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((ARDS))
+    Berlin Criteria
+      Within 1 week
+      Bilateral infiltrates
+      Non-cardiogenic (PCWP&lt;18)
+      P/F &lt;=300 + PEEP &gt;=5
+      Severity: Mild 200-300 / Mod 100-200 / Severe &lt;100
+    Causes
+      Pulmonary: Pneumonia, Aspiration, Inhalational
+      Extrapulmonary: Sepsis (40%), Trauma, Pancreatitis, TRALI
+    Pathophysiology
+      Exudative (1-7d) -&gt; Proliferative (1-3w) -&gt; Fibrotic (&gt;3w)
+      Capillary leak, hyaline membranes
+      Decreased compliance, shunting
+    Management
+      Lung-Protective Ventilation
+        TV 6mL/kg PBW
+        Pplat &lt;=30
+        PEEP titration (ARDSnet)
+        Permissive hypercapnia pH&gt;7.20
+      Adjuncts (P/F&lt;150)
+        Prone &gt;12h/day (PROSEVA)
+        NMJ blockade 48h (ACURASYS)
+        Conservative fluids (FACTT)
+      Rescue
+        iNO, Prone, HFOV (not routine)
+        VV-ECMO (P/F&lt;80)
+      Supportive
+        DVT/PUD prophylaxis
+        Early enteral nutrition
+        Restrictive transfusion (Hb&lt;70)
+    Complications
+      Barotrauma (PTX)
+      VAP
+      VILI
+      Multi-organ failure
+      Pulmonary fibrosis</pre>
 <h2>16. Flowchart — ARDS Management</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">ARDS - P/F &lt;=300</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Severity</div>
-<div class="fc-node" data-id="I">Conservative Fluids + Sedation + VAP prophylaxis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">TV 6mL/kg PBW + PEEP 5-10</div>
-<div class="fc-node" data-id="D">TV 6mL/kg + High PEEP + Prone &gt;12h + Consider NMJ Blockade</div>
-<div class="fc-node" data-id="E">All above + Paralysis 48h + ECMO Referral</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Reassess 24h</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Rescue: iNO, HFOV, ECMO</div>
-<div class="fc-node" data-id="H">Wean PEEP, then TV, then extubate</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[ARDS - P/F &lt;=300] --&gt; B{Severity}
+  B --&gt;|Mild 200-300| C[TV 6mL/kg PBW + PEEP 5-10]
+  B --&gt;|Mod 100-200| D[TV 6mL/kg + High PEEP + Prone &gt;12h + Consider NMJ Blockade]
+  B --&gt;|Severe &lt;100| E[All above + Paralysis 48h + ECMO Referral]
+  C --&gt; F{Reassess 24h}
+  D --&gt; F
+  E --&gt; F
+  F --&gt;|Worsening P/F| G[Rescue: iNO, HFOV, ECMO]
+  F --&gt;|Improving| H[Wean PEEP, then TV, then extubate]
+  A --&gt; I[Conservative Fluids + Sedation + VAP prophylaxis]</pre>
 <h2>17. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Berlin 2012</strong>: 1 week, bilateral infiltrates, non-cardiogenic, P/F ≤300 + PEEP ≥5</li>
@@ -7392,108 +7194,61 @@ footer a:hover { color: var(--accent); }
 <li><strong>Relative AI in sepsis</strong>: hydrocortisone <strong>50 mg IV q6h</strong> (vasopressor refractory)</li>
 </ul>
 <h2>16. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Adrenal Crisis</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Causes</div>
-<div class="mm-node mm-l2">Primary Addison</div>
-<div class="mm-node mm-l3">– Autoimmune (developed world)</div>
-<div class="mm-node mm-l3">– TB (developing world)</div>
-<div class="mm-node mm-l3">– Mets, haemorrhage</div>
-<div class="mm-node mm-l3">– Waterhouse-Friderichsen</div>
-<div class="mm-node mm-l2">Secondary</div>
-<div class="mm-node mm-l3">– Chronic steroids (most common)</div>
-<div class="mm-node mm-l3">– Pituitary disease</div>
-<div class="mm-node mm-l3">– Sheehan, hypopituitarism</div>
-<div class="mm-node mm-l2">Tertiary</div>
-<div class="mm-node mm-l3">– Hypothalamic</div>
-<div class="mm-node mm-l3">– Chronic steroids</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Features</div>
-<div class="mm-node mm-l2">Hypotension (postural)</div>
-<div class="mm-node mm-l2">Hyponatraemia</div>
-<div class="mm-node mm-l2">Hyperkalaemia (primary)</div>
-<div class="mm-node mm-l2">Hypoglycaemia (secondary)</div>
-<div class="mm-node mm-l2">Hyperpigmentation (primary)</div>
-<div class="mm-node mm-l2">Weakness, fatigue, weight loss</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Investigations</div>
-<div class="mm-node mm-l2">Random cortisol &lt;300 in illness</div>
-<div class="mm-node mm-l2">ACTH, UandE, glucose</div>
-<div class="mm-node mm-l2">Short Synacthen test</div>
-<div class="mm-node mm-l2">Adrenal antibodies</div>
-<div class="mm-node mm-l2">CT adrenals</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management Acute</div>
-<div class="mm-node mm-l2">Hydrocortisone 100mg IV bolus</div>
-<div class="mm-node mm-l2">1L 0.9% saline</div>
-<div class="mm-node mm-l2">Hydrocortisone 50mg q6h</div>
-<div class="mm-node mm-l2">Treat precipitant</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Long-term</div>
-<div class="mm-node mm-l2">Hydrocortisone 15-25mg/day</div>
-<div class="mm-node mm-l2">Fludrocortisone 50-200mcg</div>
-<div class="mm-node mm-l2">Sick-day rules</div>
-<div class="mm-node mm-l2">Emergency IM kit</div>
-<div class="mm-node mm-l2">Medical alert bracelet</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Special</div>
-<div class="mm-node mm-l2">Stress-dose for surgery</div>
-<div class="mm-node mm-l2">Relative AI in sepsis</div>
-<div class="mm-node mm-l2">Vasopressor refractory shock</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Adrenal Crisis))
+    Causes
+      Primary Addison
+        Autoimmune (developed world)
+        TB (developing world)
+        Mets, haemorrhage
+        Waterhouse-Friderichsen
+      Secondary
+        Chronic steroids (most common)
+        Pituitary disease
+        Sheehan, hypopituitarism
+      Tertiary
+        Hypothalamic
+        Chronic steroids
+    Features
+      Hypotension (postural)
+      Hyponatraemia
+      Hyperkalaemia (primary)
+      Hypoglycaemia (secondary)
+      Hyperpigmentation (primary)
+      Weakness, fatigue, weight loss
+    Investigations
+      Random cortisol &lt;300 in illness
+      ACTH, UandE, glucose
+      Short Synacthen test
+      Adrenal antibodies
+      CT adrenals
+    Management Acute
+      Hydrocortisone 100mg IV bolus
+      1L 0.9% saline
+      Hydrocortisone 50mg q6h
+      Treat precipitant
+    Long-term
+      Hydrocortisone 15-25mg/day
+      Fludrocortisone 50-200mcg
+      Sick-day rules
+      Emergency IM kit
+      Medical alert bracelet
+    Special
+      Stress-dose for surgery
+      Relative AI in sepsis
+      Vasopressor refractory shock</pre>
 <h2>17. Flowchart — Adrenal Crisis Management</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected Adrenal Crisis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">IV access x2, bloods</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Hydrocortisone 100mg IV bolus</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">1L 0.9% saline rapid</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Hydrocortisone 50mg IV q6h or 200mg/24h infusion</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Reassess: BP, UO, electrolytes</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Stable?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">More fluids, vasopressors</div>
-<div class="fc-node" data-id="I">Continue q6h, switch to oral, taper</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">Synacthen test after 24h</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Long-term: Hydro + Fludro, sick-day rules</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Suspected Adrenal Crisis] --&gt; B[IV access x2, bloods]
+  B --&gt; C[Hydrocortisone 100mg IV bolus]
+  C --&gt; D[1L 0.9% saline rapid]
+  D --&gt; E[Hydrocortisone 50mg IV q6h or 200mg/24h infusion]
+  E --&gt; F[Reassess: BP, UO, electrolytes]
+  F --&gt; G{Stable?}
+  G --&gt;|No| H[More fluids, vasopressors]
+  G --&gt;|Yes| I[Continue q6h, switch to oral, taper]
+  I --&gt; J[Synacthen test after 24h]
+  J --&gt; K[Long-term: Hydro + Fludro, sick-day rules]</pre>
 <h2>18. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Adrenal crisis</strong>: severe hypotension + AI features + responds to IV hydrocortisone</li>
@@ -8502,149 +8257,86 @@ footer a:hover { color: var(--accent); }
 <li><strong>Opt-out</strong> still requires family discussion</li>
 </ul>
 <h2>19. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Brainstem Death</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Definition</div>
-<div class="mm-node mm-l2">Irreversible cessation of all brainstem function</div>
-<div class="mm-node mm-l2">Known irreversible cause</div>
-<div class="mm-node mm-l2">UK legal death</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Prerequisites</div>
-<div class="mm-node mm-l2">Cause known</div>
-<div class="mm-node mm-l2">No confounders (drugs, hypothermia, metabolic, endocrine, hypotension)</div>
-<div class="mm-node mm-l2">Coma</div>
-<div class="mm-node mm-l2">Apnoea + MV</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Examination</div>
-<div class="mm-node mm-l2">2 doctors &gt;=5 years</div>
-<div class="mm-node mm-l2">1 consultant</div>
-<div class="mm-node mm-l2">Reflexes</div>
-<div class="mm-node mm-l3">– Pupillary</div>
-<div class="mm-node mm-l3">– Corneal</div>
-<div class="mm-node mm-l3">– Oculo-vestibular</div>
-<div class="mm-node mm-l3">– Oculo-cephalic</div>
-<div class="mm-node mm-l3">– Gag</div>
-<div class="mm-node mm-l3">– Cough</div>
-<div class="mm-node mm-l2">Apnoea test</div>
-<div class="mm-node mm-l3">– PaCO2 &gt;6.0 kPa</div>
-<div class="mm-node mm-l3">– No respiratory effort</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Confounders</div>
-<div class="mm-node mm-l2">Sedatives/opioids</div>
-<div class="mm-node mm-l2">NMJ blockade</div>
-<div class="mm-node mm-l2">Hypothermia &lt;35-36C</div>
-<div class="mm-node mm-l2">Severe metabolic</div>
-<div class="mm-node mm-l2">Hypotension</div>
-<div class="mm-node mm-l2">Endocrine</div>
-<div class="mm-node mm-l2">High cervical cord</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Ancillary Tests</div>
-<div class="mm-node mm-l2">EEG (isoelectric)</div>
-<div class="mm-node mm-l2">TCD (absent flow)</div>
-<div class="mm-node mm-l2">CT angio</div>
-<div class="mm-node mm-l2">Nuclear scan</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Documentation</div>
-<div class="mm-node mm-l2">UK Form 1, 2</div>
-<div class="mm-node mm-l2">Death certificate</div>
-<div class="mm-node mm-l2">Time of death = apnoea test</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Legal/Ethical</div>
-<div class="mm-node mm-l2">Death Act 2010 (Eng/Wal)</div>
-<div class="mm-node mm-l2">Opt-out (Eng 2020, Wal 2015)</div>
-<div class="mm-node mm-l2">SNOD involvement</div>
-<div class="mm-node mm-l2">Family consent</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Donation Pathways</div>
-<div class="mm-node mm-l2">DBD (brainstem death)</div>
-<div class="mm-node mm-l2">DCD (circulatory death)</div>
-<div class="mm-node mm-l3">– Maastricht I-V</div>
-<div class="mm-node mm-l3">– 5-min no-touch</div>
-<div class="mm-node mm-l3">– WLST then asystole</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Donor Management</div>
-<div class="mm-node mm-l2">MAP 60-80</div>
-<div class="mm-node mm-l2">Hormonal resuscitation</div>
-<div class="mm-node mm-l3">– T3, vasopressin, hydrocortisone</div>
-<div class="mm-node mm-l2">Desmopressin for DI</div>
-<div class="mm-node mm-l2">Temperature 36-37.5</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Organs</div>
-<div class="mm-node mm-l2">Heart, lungs, liver, kidneys, pancreas</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Contraindications</div>
-<div class="mm-node mm-l2">Active malignancy</div>
-<div class="mm-node mm-l2">Active infection (TB, prion)</div>
-<div class="mm-node mm-l2">Multi-organ failure</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Brainstem Death))
+    Definition
+      Irreversible cessation of all brainstem function
+      Known irreversible cause
+      UK legal death
+    Prerequisites
+      Cause known
+      No confounders (drugs, hypothermia, metabolic, endocrine, hypotension)
+      Coma
+      Apnoea + MV
+    Examination
+      2 doctors &gt;=5 years
+      1 consultant
+      Reflexes
+        Pupillary
+        Corneal
+        Oculo-vestibular
+        Oculo-cephalic
+        Gag
+        Cough
+      Apnoea test
+        PaCO2 &gt;6.0 kPa
+        No respiratory effort
+    Confounders
+      Sedatives/opioids
+      NMJ blockade
+      Hypothermia &lt;35-36C
+      Severe metabolic
+      Hypotension
+      Endocrine
+      High cervical cord
+    Ancillary Tests
+      EEG (isoelectric)
+      TCD (absent flow)
+      CT angio
+      Nuclear scan
+    Documentation
+      UK Form 1, 2
+      Death certificate
+      Time of death = apnoea test
+    Legal/Ethical
+      Death Act 2010 (Eng/Wal)
+      Opt-out (Eng 2020, Wal 2015)
+      SNOD involvement
+      Family consent
+    Donation Pathways
+      DBD (brainstem death)
+      DCD (circulatory death)
+        Maastricht I-V
+        5-min no-touch
+        WLST then asystole
+    Donor Management
+      MAP 60-80
+      Hormonal resuscitation
+        T3, vasopressin, hydrocortisone
+      Desmopressin for DI
+      Temperature 36-37.5
+    Organs
+      Heart, lungs, liver, kidneys, pancreas
+    Contraindications
+      Active malignancy
+      Active infection (TB, prion)
+      Multi-organ failure</pre>
 <h2>20. Flowchart — Brainstem Death Testing</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected Brainstem Death</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Prerequisites met?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Address: drugs, hypothermia, metabolic, hypotension, endocrine</div>
-<div class="fc-node" data-id="D">Clinical Examination</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Coma</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Brainstem Reflexes Absent</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Apnoea Test</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">PaCO2 &gt;6.0 kPa, no effort?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">BRAINSTEM DEATH CONFIRMED</div>
-<div class="fc-node" data-id="J">Continue support, repeat later</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Document Form 1, 2</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">Time of death</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="M">Family discussion, organ donation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="N">DBD pathway</div>
-<div class="fc-node" data-id="O">DCD pathway if not BSD</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Suspected Brainstem Death] --&gt; B{Prerequisites met?}
+  B --&gt;|No| C[Address: drugs, hypothermia, metabolic, hypotension, endocrine]
+  B --&gt;|Yes| D[Clinical Examination]
+  D --&gt; E[Coma]
+  E --&gt; F[Brainstem Reflexes Absent]
+  F --&gt; G[Apnoea Test]
+  G --&gt; H{PaCO2 &gt;6.0 kPa, no effort?}
+  H --&gt;|Yes| I[BRAINSTEM DEATH CONFIRMED]
+  H --&gt;|No| J[Continue support, repeat later]
+  I --&gt; K[Document Form 1, 2]
+  K --&gt; L[Time of death]
+  L --&gt; M[Family discussion, organ donation]
+  M --&gt; N[DBD pathway]
+  M --&gt; O[DCD pathway if not BSD]</pre>
 <h2>21. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Brainstem death = UK legal death</strong> (irreversible cessation of brainstem function, known cause)</li>
@@ -9253,104 +8945,62 @@ footer a:hover { color: var(--accent); }
 <li><strong>Anaphylaxis arrest</strong>: <strong>0.5 mg IM</strong>, NOT 1 mg IV</li>
 </ul>
 <h2>17. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Cardiac Arrest</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">BLS</div>
-<div class="mm-node mm-l2">Check response + breathing + pulse</div>
-<div class="mm-node mm-l2">30:2 (compressions:breaths)</div>
-<div class="mm-node mm-l2">5-6 cm depth, 100-120/min</div>
-<div class="mm-node mm-l2">AED, minimise interruptions</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">ALS</div>
-<div class="mm-node mm-l2">Shockable VF/pVT</div>
-<div class="mm-node mm-l3">– Shock, shock, shock</div>
-<div class="mm-node mm-l3">– Adrenaline after 2nd shock</div>
-<div class="mm-node mm-l3">– Amiodarone 300mg after 3rd shock</div>
-<div class="mm-node mm-l2">Non-shockable PEA/Asystole</div>
-<div class="mm-node mm-l3">– CPR 2 min</div>
-<div class="mm-node mm-l3">– Adrenaline immediately</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">4H 4T</div>
-<div class="mm-node mm-l2">H: Hypoxia, Hypovolaemia, HypoK, Hypothermia</div>
-<div class="mm-node mm-l2">T: Tension PTX, Tamponade, Toxins, Thrombosis (PE)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Drugs</div>
-<div class="mm-node mm-l2">Adrenaline 1mg IV/IO q3-5min</div>
-<div class="mm-node mm-l2">Amiodarone 300mg after 3rd shock</div>
-<div class="mm-node mm-l2">Ca gluconate (hyperK, CCB)</div>
-<div class="mm-node mm-l2">NaHCO3 (TCA, hyperK)</div>
-<div class="mm-node mm-l2">MgSO4 2g (Torsades)</div>
-<div class="mm-node mm-l2">Thrombolysis (PE)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Post-ROSC</div>
-<div class="mm-node mm-l2">TTM 32-36C x 24h (comatose)</div>
-<div class="mm-node mm-l2">SpO2 94-98%</div>
-<div class="mm-node mm-l2">PaCO2 35-45 mmHg</div>
-<div class="mm-node mm-l2">MAP &gt;=65</div>
-<div class="mm-node mm-l2">STEMI -&gt; PCI</div>
-<div class="mm-node mm-l2">Glucose 6-10</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Neuroprognostication</div>
-<div class="mm-node mm-l2">&gt;=72h multimodal</div>
-<div class="mm-node mm-l2">SSEP bilateral absent N20</div>
-<div class="mm-node mm-l2">EEG, CT/MRI, NSE</div>
-<div class="mm-node mm-l2">No single test</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Special</div>
-<div class="mm-node mm-l2">Pregnancy: 15-30 deg left tilt, perimortem CS in 5min</div>
-<div class="mm-node mm-l2">Anaphylaxis: 0.5mg IM adrenaline</div>
-<div class="mm-node mm-l2">Hypothermia: continue CPR until 32C</div>
-<div class="mm-node mm-l2">Torsades: MgSO4 2g</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Cardiac Arrest))
+    BLS
+      Check response + breathing + pulse
+      30:2 (compressions:breaths)
+      5-6 cm depth, 100-120/min
+      AED, minimise interruptions
+    ALS
+      Shockable VF/pVT
+        Shock, shock, shock
+        Adrenaline after 2nd shock
+        Amiodarone 300mg after 3rd shock
+      Non-shockable PEA/Asystole
+        CPR 2 min
+        Adrenaline immediately
+    4H 4T
+      H: Hypoxia, Hypovolaemia, HypoK, Hypothermia
+      T: Tension PTX, Tamponade, Toxins, Thrombosis (PE)
+    Drugs
+      Adrenaline 1mg IV/IO q3-5min
+      Amiodarone 300mg after 3rd shock
+      Ca gluconate (hyperK, CCB)
+      NaHCO3 (TCA, hyperK)
+      MgSO4 2g (Torsades)
+      Thrombolysis (PE)
+    Post-ROSC
+      TTM 32-36C x 24h (comatose)
+      SpO2 94-98%
+      PaCO2 35-45 mmHg
+      MAP &gt;=65
+      STEMI -&gt; PCI
+      Glucose 6-10
+    Neuroprognostication
+      &gt;=72h multimodal
+      SSEP bilateral absent N20
+      EEG, CT/MRI, NSE
+      No single test
+    Special
+      Pregnancy: 15-30 deg left tilt, perimortem CS in 5min
+      Anaphylaxis: 0.5mg IM adrenaline
+      Hypothermia: continue CPR until 32C
+      Torsades: MgSO4 2g</pre>
 <h2>18. Flowchart — Adult ALS</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Cardiac Arrest</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Attach Monitor/Defibrillator</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Shockable Rhythm?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Shock 150-200J + CPR 2 min</div>
-<div class="fc-node" data-id="H">CPR 2 min + Adrenaline 1mg immediately</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Reassess Rhythm</div>
-<div class="fc-node" data-id="I">Continue cycles, 4H4T</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Shock + CPR + Adrenaline 1mg + Amiodarone 300mg</div>
-<div class="fc-node" data-id="J">ROSC</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Continue cycles, 4H4T</div>
-<div class="fc-node" data-id="K">Post-ROSC Care: TTM, PaCO2 35-45, SpO2 94-98, MAP &gt;=65, ECG/PCI, sedation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">Neuroprognostication &gt;=72h</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Cardiac Arrest] --&gt; B[Attach Monitor/Defibrillator]
+  B --&gt; C{Shockable Rhythm?}
+  C --&gt;|VF/pVT| D[Shock 150-200J + CPR 2 min]
+  D --&gt; E[Reassess Rhythm]
+  E --&gt;|Still VF| F[Shock + CPR + Adrenaline 1mg + Amiodarone 300mg]
+  F --&gt; G[Continue cycles, 4H4T]
+  C --&gt;|PEA/Asystole| H[CPR 2 min + Adrenaline 1mg immediately]
+  H --&gt; I[Continue cycles, 4H4T]
+  G --&gt; J[ROSC]
+  I --&gt; J
+  J --&gt; K[Post-ROSC Care: TTM, PaCO2 35-45, SpO2 94-98, MAP &gt;=65, ECG/PCI, sedation]
+  K --&gt; L[Neuroprognostication &gt;=72h]</pre>
 <h2>19. One-Page Revision Summary</h2>
 <ul>
 <li><strong>BLS</strong>: 5–6 cm depth, 100–120/min, 30:2 ratio, minimise interruptions</li>
@@ -11073,126 +10723,79 @@ footer a:hover { color: var(--accent); }
 <li><strong>Thiamine before glucose</strong> (Wernicke's)</li>
 </ul>
 <h2>17. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">ICU Delirium</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Definition</div>
-<div class="mm-node mm-l2">Acute fluctuating</div>
-<div class="mm-node mm-l2">Attention + awareness</div>
-<div class="mm-node mm-l2">Underlying cause</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Subtypes</div>
-<div class="mm-node mm-l2">Hyperactive (agitation)</div>
-<div class="mm-node mm-l2">Hypoactive (lethargy) - WORST</div>
-<div class="mm-node mm-l2">Mixed (most common)</div>
-<div class="mm-node mm-l2">Subsyndromal</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Risk Factors</div>
-<div class="mm-node mm-l2">Predisposing</div>
-<div class="mm-node mm-l3">– Dementia</div>
-<div class="mm-node mm-l3">– Age &gt;65</div>
-<div class="mm-node mm-l3">– Frailty</div>
-<div class="mm-node mm-l3">– Polypharmacy</div>
-<div class="mm-node mm-l2">Precipitating</div>
-<div class="mm-node mm-l3">– Sepsis</div>
-<div class="mm-node mm-l3">– Benzodiazepines</div>
-<div class="mm-node mm-l3">– Sedation depth</div>
-<div class="mm-node mm-l3">– Metabolic</div>
-<div class="mm-node mm-l3">– Hypoxia</div>
-<div class="mm-node mm-l3">– Pain</div>
-<div class="mm-node mm-l3">– Withdrawal</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Diagnosis</div>
-<div class="mm-node mm-l2">CAM-ICU (1+2+3/4)</div>
-<div class="mm-node mm-l2">ICDSC &gt;=4</div>
-<div class="mm-node mm-l2">RASS 0 to -1</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Investigations</div>
-<div class="mm-node mm-l2">FBC, UE, Ca, Mg</div>
-<div class="mm-node mm-l2">Glucose, ABG</div>
-<div class="mm-node mm-l2">CRP, cultures</div>
-<div class="mm-node mm-l2">CT head, EEG, LP</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management</div>
-<div class="mm-node mm-l2">Non-pharmacological</div>
-<div class="mm-node mm-l3">– Reorientation</div>
-<div class="mm-node mm-l3">– Sleep-wake</div>
-<div class="mm-node mm-l3">– Early mobility</div>
-<div class="mm-node mm-l3">– Family</div>
-<div class="mm-node mm-l3">– Avoid restraints</div>
-<div class="mm-node mm-l2">Pharmacological</div>
-<div class="mm-node mm-l3">– Haloperidol (distressing)</div>
-<div class="mm-node mm-l3">– Atypical antipsychotics</div>
-<div class="mm-node mm-l3">– Dexmedetomidine</div>
-<div class="mm-node mm-l2">Treat cause</div>
-<div class="mm-node mm-l3">– Sepsis, metabolic</div>
-<div class="mm-node mm-l3">– Withdrawal</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">ABCDEF Bundle</div>
-<div class="mm-node mm-l2">Assess pain</div>
-<div class="mm-node mm-l2">Both SAT/SBT</div>
-<div class="mm-node mm-l2">Choice of sedation</div>
-<div class="mm-node mm-l2">Delirium</div>
-<div class="mm-node mm-l2">Early mobility</div>
-<div class="mm-node mm-l2">Family</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Special</div>
-<div class="mm-node mm-l2">DT: chlordiazepoxide + thiamine</div>
-<div class="mm-node mm-l2">Terminal: haloperidol, levomepromazine</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Prognosis</div>
-<div class="mm-node mm-l2">Mortality 25-30%</div>
-<div class="mm-node mm-l2">Long-term cognitive impairment</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((ICU Delirium))
+    Definition
+      Acute fluctuating
+      Attention + awareness
+      Underlying cause
+    Subtypes
+      Hyperactive (agitation)
+      Hypoactive (lethargy) - WORST
+      Mixed (most common)
+      Subsyndromal
+    Risk Factors
+      Predisposing
+        Dementia
+        Age &gt;65
+        Frailty
+        Polypharmacy
+      Precipitating
+        Sepsis
+        Benzodiazepines
+        Sedation depth
+        Metabolic
+        Hypoxia
+        Pain
+        Withdrawal
+    Diagnosis
+      CAM-ICU (1+2+3/4)
+      ICDSC &gt;=4
+      RASS 0 to -1
+    Investigations
+      FBC, UE, Ca, Mg
+      Glucose, ABG
+      CRP, cultures
+      CT head, EEG, LP
+    Management
+      Non-pharmacological
+        Reorientation
+        Sleep-wake
+        Early mobility
+        Family
+        Avoid restraints
+      Pharmacological
+        Haloperidol (distressing)
+        Atypical antipsychotics
+        Dexmedetomidine
+      Treat cause
+        Sepsis, metabolic
+        Withdrawal
+    ABCDEF Bundle
+      Assess pain
+      Both SAT/SBT
+      Choice of sedation
+      Delirium
+      Early mobility
+      Family
+    Special
+      DT: chlordiazepoxide + thiamine
+      Terminal: haloperidol, levomepromazine
+    Prognosis
+      Mortality 25-30%
+      Long-term cognitive impairment</pre>
 <h2>18. Flowchart — Delirium Management</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Screen CAM-ICU/ICDSC</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Positive?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Continue monitoring</div>
-<div class="fc-node" data-id="D">Look for cause: bloods, ABG, cultures, imaging</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Treat underlying cause</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Non-pharmacological: reorient, sleep, mobilise, family, avoid restraints</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Distressing/agitated?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Reassess</div>
-<div class="fc-node" data-id="I">Haloperidol 0.5-2 mg or atypical antipsychotic</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Daily CAM-ICU, ABCDEF bundle</div>
-<div class="fc-node" data-id="J">Refractory: dexmedetomidine</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Screen CAM-ICU/ICDSC] --&gt; B{Positive?}
+  B --&gt;|No| C[Continue monitoring]
+  B --&gt;|Yes| D[Look for cause: bloods, ABG, cultures, imaging]
+  D --&gt; E[Treat underlying cause]
+  E --&gt; F[Non-pharmacological: reorient, sleep, mobilise, family, avoid restraints]
+  F --&gt; G{Distressing/agitated?}
+  G --&gt;|No| H[Reassess]
+  G --&gt;|Yes| I[Haloperidol 0.5-2 mg or atypical antipsychotic]
+  I --&gt; J[Refractory: dexmedetomidine]
+  H --&gt; K[Daily CAM-ICU, ABCDEF bundle]</pre>
 <h2>19. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Delirium = acute, fluctuating disturbance of attention + awareness + cognition</strong></li>
@@ -11797,92 +11400,58 @@ footer a:hover { color: var(--accent); }
 <li><strong>HHS TRIAD</strong>: <strong>H</strong>yperglycaemia >30, <strong>H</strong>yperosmolality >320, <strong>H</strong>yperglycaemia no ketones</li>
 </ul>
 <h2>14. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Diabetic Emergencies</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">DKA</div>
-<div class="mm-node mm-l2">Hyperglycaemia + Ketones + Acidosis</div>
-<div class="mm-node mm-l2">Type 1 DM, Young</div>
-<div class="mm-node mm-l2">Kussmaul, Abdominal Pain</div>
-<div class="mm-node mm-l2">FRII 0.1 U/kg/h</div>
-<div class="mm-node mm-l2">Fluids First (1L 0.9% NaCl)</div>
-<div class="mm-node mm-l2">K+ Replacement Critical</div>
-<div class="mm-node mm-l2">Cerebral Oedema Risk</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">HHS</div>
-<div class="mm-node mm-l2">Severe Hyperglycaemia (&gt;30)</div>
-<div class="mm-node mm-l2">Hyperosmolality (&gt;320)</div>
-<div class="mm-node mm-l2">NO Ketones/Acidosis</div>
-<div class="mm-node mm-l2">Type 2 DM, Elderly</div>
-<div class="mm-node mm-l2">Severe Dehydration</div>
-<div class="mm-node mm-l2">Thrombosis/Rhabdo Risk</div>
-<div class="mm-node mm-l2">Higher Mortality</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management</div>
-<div class="mm-node mm-l2">Fluids First (1L 1st hr)</div>
-<div class="mm-node mm-l2">FRII 0.1 U/kg/h</div>
-<div class="mm-node mm-l2">K+ Protocol</div>
-<div class="mm-node mm-l2">Glucose Monitoring (Hourly)</div>
-<div class="mm-node mm-l2">Transition SC Insulin (Overlap)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Complications</div>
-<div class="mm-node mm-l2">Cerebral Oedema (DKA)</div>
-<div class="mm-node mm-l2">Hypokalaemia</div>
-<div class="mm-node mm-l2">Hypoglycaemia</div>
-<div class="mm-node mm-l2">Thrombosis (HHS)</div>
-<div class="mm-node mm-l2">Rhabdo (HHS)</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Diabetic Emergencies))
+    DKA
+      Hyperglycaemia + Ketones + Acidosis
+      Type 1 DM, Young
+      Kussmaul, Abdominal Pain
+      FRII 0.1 U/kg/h
+      Fluids First (1L 0.9% NaCl)
+      K+ Replacement Critical
+      Cerebral Oedema Risk
+    HHS
+      Severe Hyperglycaemia (&gt;30)
+      Hyperosmolality (&gt;320)
+      NO Ketones/Acidosis
+      Type 2 DM, Elderly
+      Severe Dehydration
+      Thrombosis/Rhabdo Risk
+      Higher Mortality
+    Management
+      Fluids First (1L 1st hr)
+      FRII 0.1 U/kg/h
+      K+ Protocol
+      Glucose Monitoring (Hourly)
+      Transition SC Insulin (Overlap)
+    Complications
+      Cerebral Oedema (DKA)
+      Hypokalaemia
+      Hypoglycaemia
+      Thrombosis (HHS)
+      Rhabdo (HHS)</pre>
 <h2>15. Flowchart</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Hyperglycaemic Emergency</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">ABG + Ketones</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">DKA Diagnosis</div>
-<div class="fc-node" data-id="D">HHS Diagnosis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">ABCDE + 1L 0.9% NaCl 1st Hour\nHourly UOP, Glucose, K+, ABG</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">FRII 0.1 U/kg/h\nAfter 1st Hour Fluids\nHourly Glucose/K+</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">K+ Replacement</div>
-<div class="fc-node" data-id="K">Glucose &lt;14?</div>
-<div class="fc-node" data-id="L">Add 5% Dextrose Infusion\nContinue FRII</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Hold Insulin, Fluids, Recheck 1h</div>
-<div class="fc-node" data-id="I">40 mmol/L in Fluids\nTarget 4-5.5</div>
-<div class="fc-node" data-id="J">STOP Insulin, 40mmol Bolus\nRestart when &gt;4</div>
-<div class="fc-node" data-id="M">Resolution Criteria</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="N">Transition to SC Insulin</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="O">Overlap SC Insulin 1-2h Before Stop FRII\nBasal + Bolus Regimen</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Hyperglycaemic Emergency] --&gt; B{ABG + Ketones}
+  B --&gt;|pH&lt;7.3, Bicarb&lt;15, Ketones&gt;3| C[DKA Diagnosis]
+  B --&gt;|pH&gt;7.3, Bicarb&gt;15, Glucose&gt;30, Osm&gt;320, Ketones&lt;3| D[HHS Diagnosis]
+  C --&gt; E[ABCDE + 1L 0.9% NaCl 1st Hour\nHourly UOP, Glucose, K+, ABG]
+  D --&gt; E
+  E --&gt; F[FRII 0.1 U/kg/h\nAfter 1st Hour Fluids\nHourly Glucose/K+]
+  F --&gt; G{K+ Replacement}
+  G --&gt;|K+&gt;5.5| H[Hold Insulin, Fluids, Recheck 1h]
+  G --&gt;|4-5.5| I[40 mmol/L in Fluids\nTarget 4-5.5]
+  G --&gt;|&lt;4| J[STOP Insulin, 40mmol Bolus\nRestart when &gt;4]
+  F --&gt; K{Glucose &lt;14?}
+  K --&gt;|Yes| L[Add 5% Dextrose Infusion\nContinue FRII]
+  F --&gt; L
+  H --&gt; L
+  I --&gt; L
+  J --&gt; L
+  L --&gt; M[Resolution Criteria]
+  M --&gt;|DKA: Ketones&lt;0.6, pH&gt;7.3, Bic&gt;15| N[Transition to SC Insulin]
+  M --&gt;|HHS: Osmolality&lt;320| N
+  N --&gt; O[Overlap SC Insulin 1-2h Before Stop FRII\nBasal + Bolus Regimen]</pre>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>DKA vs HHS comparison table</li>
@@ -14001,132 +13570,95 @@ footer a:hover { color: var(--accent); }
 <li><strong>Nitroprusside</strong>: <strong>monitor cyanide</strong></li>
 </ul>
 <h2>18. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Hypertensive Emergencies</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Definitions</div>
-<div class="mm-node mm-l2">Emergency: SBP&gt;180 + TOD</div>
-<div class="mm-node mm-l2">Urgency: SBP&gt;180 no TOD</div>
-<div class="mm-node mm-l2">Malignant: papilloedema + retinopathy</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Causes</div>
-<div class="mm-node mm-l2">Essential</div>
-<div class="mm-node mm-l2">Renal (RAS, GN)</div>
-<div class="mm-node mm-l2">Endocrine (phaeo, Cushing)</div>
-<div class="mm-node mm-l2">Drugs (cocaine, MAOI)</div>
-<div class="mm-node mm-l2">Pregnancy (eclampsia)</div>
-<div class="mm-node mm-l2">Aortic dissection</div>
-<div class="mm-node mm-l2">Withdrawal</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Features</div>
-<div class="mm-node mm-l2">TOD</div>
-<div class="mm-node mm-l3">– Encephalopathy</div>
-<div class="mm-node mm-l3">– Stroke</div>
-<div class="mm-node mm-l3">– ACS</div>
-<div class="mm-node mm-l3">– LVF</div>
-<div class="mm-node mm-l3">– Dissection</div>
-<div class="mm-node mm-l3">– AKI</div>
-<div class="mm-node mm-l3">– Retinopathy</div>
-<div class="mm-node mm-l3">– MAHA</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Investigations</div>
-<div class="mm-node mm-l2">FBC, UandE, glucose</div>
-<div class="mm-node mm-l2">Urinalysis</div>
-<div class="mm-node mm-l2">ECG, troponin</div>
-<div class="mm-node mm-l2">CXR</div>
-<div class="mm-node mm-l2">CT head</div>
-<div class="mm-node mm-l2">CT aortogram (dissection)</div>
-<div class="mm-node mm-l2">Echo</div>
-<div class="mm-node mm-l2">Plasma metanephrines</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Targets</div>
-<div class="mm-node mm-l2">20-25% in 1h</div>
-<div class="mm-node mm-l2">&lt;160/100 in 6h</div>
-<div class="mm-node mm-l2">&lt;140/90 in 24-48h</div>
-<div class="mm-node mm-l2">Dissection: 100-120</div>
-<div class="mm-node mm-l2">Eclampsia: &lt;160/110</div>
-<div class="mm-node mm-l2">Stroke tPA: &lt;185</div>
-<div class="mm-node mm-l2">Stroke haem: &lt;140</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Drugs</div>
-<div class="mm-node mm-l2">Labetalol (most)</div>
-<div class="mm-node mm-l2">Nicardipine</div>
-<div class="mm-node mm-l2">Nitroprusside (cyanide)</div>
-<div class="mm-node mm-l2">GTN (ACS/LVF)</div>
-<div class="mm-node mm-l2">Esmolol (dissection)</div>
-<div class="mm-node mm-l2">Phentolamine (phaeo)</div>
-<div class="mm-node mm-l2">Hydralazine (pregnancy)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Specific</div>
-<div class="mm-node mm-l2">Dissection: SBP 100-120, HR &lt;60</div>
-<div class="mm-node mm-l2">Eclampsia: labetalol + MgSO4 + delivery</div>
-<div class="mm-node mm-l2">Stroke isch (tPA): SBP &lt;185</div>
-<div class="mm-node mm-l2">Stroke haem: SBP &lt;140</div>
-<div class="mm-node mm-l2">ACS: GTN + beta-blocker</div>
-<div class="mm-node mm-l2">LVF: GTN + diuretic</div>
-<div class="mm-node mm-l2">Catecholamine: alpha first (phentolamine)</div>
-<div class="mm-node mm-l2">Cocaine: benzos, no beta</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Pitfalls</div>
-<div class="mm-node mm-l2">Avoid rapid drop</div>
-<div class="mm-node mm-l2">Sublingual nifedipine (NO)</div>
-<div class="mm-node mm-l2">Beta alone in phaeo (NO)</div>
-<div class="mm-node mm-l2">Nitroprusside in renal failure (NO)</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Hypertensive Emergencies))
+    Definitions
+      Emergency: SBP&gt;180 + TOD
+      Urgency: SBP&gt;180 no TOD
+      Malignant: papilloedema + retinopathy
+    Causes
+      Essential
+      Renal (RAS, GN)
+      Endocrine (phaeo, Cushing)
+      Drugs (cocaine, MAOI)
+      Pregnancy (eclampsia)
+      Aortic dissection
+      Withdrawal
+    Features
+      TOD
+        Encephalopathy
+        Stroke
+        ACS
+        LVF
+        Dissection
+        AKI
+        Retinopathy
+        MAHA
+    Investigations
+      FBC, UandE, glucose
+      Urinalysis
+      ECG, troponin
+      CXR
+      CT head
+      CT aortogram (dissection)
+      Echo
+      Plasma metanephrines
+    Targets
+      20-25% in 1h
+      &lt;160/100 in 6h
+      &lt;140/90 in 24-48h
+      Dissection: 100-120
+      Eclampsia: &lt;160/110
+      Stroke tPA: &lt;185
+      Stroke haem: &lt;140
+    Drugs
+      Labetalol (most)
+      Nicardipine
+      Nitroprusside (cyanide)
+      GTN (ACS/LVF)
+      Esmolol (dissection)
+      Phentolamine (phaeo)
+      Hydralazine (pregnancy)
+    Specific
+      Dissection: SBP 100-120, HR &lt;60
+      Eclampsia: labetalol + MgSO4 + delivery
+      Stroke isch (tPA): SBP &lt;185
+      Stroke haem: SBP &lt;140
+      ACS: GTN + beta-blocker
+      LVF: GTN + diuretic
+      Catecholamine: alpha first (phentolamine)
+      Cocaine: benzos, no beta
+    Pitfalls
+      Avoid rapid drop
+      Sublingual nifedipine (NO)
+      Beta alone in phaeo (NO)
+      Nitroprusside in renal failure (NO)</pre>
 <h2>19. Flowchart — Hypertensive Emergency</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">BP &gt;180</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">TOD present?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Urgency: oral, gradual, outpatient</div>
-<div class="fc-node" data-id="D">Monitored bed, arterial line</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Scenario?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Esmolol/labetalol FIRST, then vasodilator, SBP 100-120</div>
-<div class="fc-node" data-id="G">GTN + diuretic</div>
-<div class="fc-node" data-id="H">Labetalol + MgSO4 + delivery</div>
-<div class="fc-node" data-id="I">SBP &lt;140 within 1h</div>
-<div class="fc-node" data-id="J">SBP &lt;185</div>
-<div class="fc-node" data-id="K">Phentolamine alpha first</div>
-<div class="fc-node" data-id="L">Benzos, NO beta</div>
-<div class="fc-node" data-id="M">Labetalol/nicardipine</div>
-<div class="fc-node" data-id="N">Labetalol/nicardipine</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="O">20-25% reduction in 1h</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="P">Target &lt;160/100 in 6h</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="Q">Target &lt;140/90 in 24-48h</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[BP &gt;180] --&gt; B{TOD present?}
+  B --&gt;|No| C[Urgency: oral, gradual, outpatient]
+  B --&gt;|Yes| D[Monitored bed, arterial line]
+  D --&gt; E{Scenario?}
+  E --&gt;|Dissection| F[Esmolol/labetalol FIRST, then vasodilator, SBP 100-120]
+  E --&gt;|ACS/LVF| G[GTN + diuretic]
+  E --&gt;|Eclampsia| H[Labetalol + MgSO4 + delivery]
+  E --&gt;|Stroke haem| I[SBP &lt;140 within 1h]
+  E --&gt;|Stroke isch tPA| J[SBP &lt;185]
+  E --&gt;|Catecholamine crisis| K[Phentolamine alpha first]
+  E --&gt;|Cocaine| L[Benzos, NO beta]
+  E --&gt;|Encephalopathy| M[Labetalol/nicardipine]
+  E --&gt;|Other| N[Labetalol/nicardipine]
+  F --&gt; O[20-25% reduction in 1h]
+  G --&gt; O
+  H --&gt; O
+  I --&gt; O
+  J --&gt; O
+  K --&gt; O
+  L --&gt; O
+  M --&gt; O
+  N --&gt; O
+  O --&gt; P[Target &lt;160/100 in 6h]
+  P --&gt; Q[Target &lt;140/90 in 24-48h]</pre>
 <h2>20. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Emergency = SBP >180 + TOD</strong>; <strong>urgency = no TOD</strong> (oral Rx)</li>
@@ -16183,124 +15715,65 @@ footer a:hover { color: var(--accent); }
 <li><strong>Permissive hypotension</strong>: <strong>SBP 80-90</strong> (TBI excluded)</li>
 </ul>
 <h2>19. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Major Haemorrhage / MTP</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Definitions</div>
-<div class="mm-node mm-l2">Major haemorrhage: 4 units/h or SBP&lt;90+HR&gt;110</div>
-<div class="mm-node mm-l2">MTP: 10 units in 24h</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Aetiology</div>
-<div class="mm-node mm-l2">Trauma, surgical, GI, obstetric, vascular</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">MTP Bundle</div>
-<div class="mm-node mm-l2">1:1:1 (RBC:FFP:Platelets)</div>
-<div class="mm-node mm-l2">TXA 1g IV &lt;3h</div>
-<div class="mm-node mm-l2">Calcium 10mL/4 units</div>
-<div class="mm-node mm-l2">Fibrinogen &gt;1.5</div>
-<div class="mm-node mm-l2">Warm patient</div>
-<div class="mm-node mm-l2">Permissive hypotension</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Drugs</div>
-<div class="mm-node mm-l2">TXA (CRASH-2)</div>
-<div class="mm-node mm-l2">Calcium gluconate</div>
-<div class="mm-node mm-l2">Fibrinogen / cryo</div>
-<div class="mm-node mm-l2">Vitamin K, PCC</div>
-<div class="mm-node mm-l2">Idarucizumab (dabigatran)</div>
-<div class="mm-node mm-l2">Andexanet (apixaban/riva)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Reversal</div>
-<div class="mm-node mm-l2">Warfarin: Vit K + PCC</div>
-<div class="mm-node mm-l2">DOAC: Idarucizumab/Andexanet</div>
-<div class="mm-node mm-l2">Heparin: Protamine</div>
-<div class="mm-node mm-l2">LMWH: Protamine partial</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Viscoelastic</div>
-<div class="mm-node mm-l2">ROTEM</div>
-<div class="mm-node mm-l2">TEG</div>
-<div class="mm-node mm-l2">Targets: FIBTEM MCF &gt;7mm</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Permissive Hypotension</div>
-<div class="mm-node mm-l2">SBP 80-90</div>
-<div class="mm-node mm-l2">Except TBI MAP &gt;=80</div>
-<div class="mm-node mm-l2">Pregnancy SBP 100-110</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Complications</div>
-<div class="mm-node mm-l2">Lethal triad</div>
-<div class="mm-node mm-l2">Hypocalcaemia</div>
-<div class="mm-node mm-l2">Hyperkalaemia</div>
-<div class="mm-node mm-l2">TRALI, TACO</div>
-<div class="mm-node mm-l2">DIC, ARDS</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">PPH</div>
-<div class="mm-node mm-l2">4 Ts Tone Trauma Tissue Thrombin</div>
-<div class="mm-node mm-l2">Oxytocin, ergometrine, carboprost, misoprostol</div>
-<div class="mm-node mm-l2">TXA</div>
-<div class="mm-node mm-l2">Surgical: B-Lynch, hysterectomy</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Major Haemorrhage / MTP))
+    Definitions
+      Major haemorrhage: 4 units/h or SBP&lt;90+HR&gt;110
+      MTP: 10 units in 24h
+    Aetiology
+      Trauma, surgical, GI, obstetric, vascular
+    MTP Bundle
+      1:1:1 (RBC:FFP:Platelets)
+      TXA 1g IV &lt;3h
+      Calcium 10mL/4 units
+      Fibrinogen &gt;1.5
+      Warm patient
+      Permissive hypotension
+    Drugs
+      TXA (CRASH-2)
+      Calcium gluconate
+      Fibrinogen / cryo
+      Vitamin K, PCC
+      Idarucizumab (dabigatran)
+      Andexanet (apixaban/riva)
+    Reversal
+      Warfarin: Vit K + PCC
+      DOAC: Idarucizumab/Andexanet
+      Heparin: Protamine
+      LMWH: Protamine partial
+    Viscoelastic
+      ROTEM
+      TEG
+      Targets: FIBTEM MCF &gt;7mm
+    Permissive Hypotension
+      SBP 80-90
+      Except TBI MAP &gt;=80
+      Pregnancy SBP 100-110
+    Complications
+      Lethal triad
+      Hypocalcaemia
+      Hyperkalaemia
+      TRALI, TACO
+      DIC, ARDS
+    PPH
+      4 Ts Tone Trauma Tissue Thrombin
+      Oxytocin, ergometrine, carboprost, misoprostol
+      TXA
+      Surgical: B-Lynch, hysterectomy</pre>
 <h2>20. Flowchart — MTP Activation</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Major Haemorrhage</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">MTP Activated by Senior</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">2x Large-bore IVs, Group O-neg until cross</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">MTP Pack 1: 4 RBC + 4 FFP + 1 Platelets</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Repeat Pack</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Calcium 10mL/4 units</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">TXA 1g IV within 3h</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Viscoelastic testing: ROTEM/TEG</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Fibrinogen &lt;1.5: Cryoprecipitate 2 pools</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">Anticoagulant reversal if needed</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Surgical Control?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">Continue MTP, surgical/radiology</div>
-<div class="fc-node" data-id="M">Stop MTP, monitor</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Major Haemorrhage] --&gt; B[MTP Activated by Senior]
+  B --&gt; C[2x Large-bore IVs, Group O-neg until cross]
+  C --&gt; D[MTP Pack 1: 4 RBC + 4 FFP + 1 Platelets]
+  D --&gt; E[Repeat Pack]
+  E --&gt; F[Calcium 10mL/4 units]
+  F --&gt; G[TXA 1g IV within 3h]
+  G --&gt; H[Viscoelastic testing: ROTEM/TEG]
+  H --&gt; I[Fibrinogen &lt;1.5: Cryoprecipitate 2 pools]
+  I --&gt; J[Anticoagulant reversal if needed]
+  J --&gt; K{Surgical Control?}
+  K --&gt;|No| L[Continue MTP, surgical/radiology]
+  K --&gt;|Yes| M[Stop MTP, monitor]</pre>
 <h2>21. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Major haemorrhage</strong>: ≥4 units/h, SBP <90, HR >110, ongoing bleeding</li>
@@ -18335,108 +17808,62 @@ footer a:hover { color: var(--accent); }
 <li><strong>Avoid</strong>: hypotonic fluids, hypoxia, hyperthermia, hyponatraemia, hypoglycaemia</li>
 </ul>
 <h2>17. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Raised ICP</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Definition</div>
-<div class="mm-node mm-l2">Normal 5-15 mmHg</div>
-<div class="mm-node mm-l2">Treat &gt;20-22 mmHg</div>
-<div class="mm-node mm-l2">CPP = MAP - ICP (target 60-70)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Monro-Kellie</div>
-<div class="mm-node mm-l2">Skull fixed volume</div>
-<div class="mm-node mm-l2">Brain 80%, Blood 10%, CSF 10%</div>
-<div class="mm-node mm-l2">Compensation by displacement</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Causes</div>
-<div class="mm-node mm-l2">Mass: Haematoma, Tumour, Abscess</div>
-<div class="mm-node mm-l2">Diffuse: TBI, Encephalitis, FHF, DKA</div>
-<div class="mm-node mm-l2">CSF: Hydrocephalus</div>
-<div class="mm-node mm-l2">Venous: CVST</div>
-<div class="mm-node mm-l2">Extracranial: Hyponatraemia, Hypoxia, Hypercapnia</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Clinical Features</div>
-<div class="mm-node mm-l2">Symptoms: Headache, Vomiting, Visual</div>
-<div class="mm-node mm-l2">Signs: Papilloedema (chronic)</div>
-<div class="mm-node mm-l2">Cushing's Triad: HT + Brady + Irregular RR</div>
-<div class="mm-node mm-l2">Pupils: Uncal (CN III)</div>
-<div class="mm-node mm-l2">Posturing: Decorticate, Decerebrate</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Herniation</div>
-<div class="mm-node mm-l2">Uncal: CN III + contralateral hemiparesis</div>
-<div class="mm-node mm-l2">Central: Downward pressure</div>
-<div class="mm-node mm-l2">Tonsillar: Sudden death</div>
-<div class="mm-node mm-l2">Subfalcine: Contralateral leg</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management</div>
-<div class="mm-node mm-l2">ABCDE + Position (30deg)</div>
-<div class="mm-node mm-l2">Sedation + Analgesia</div>
-<div class="mm-node mm-l2">Osmotherapy</div>
-<div class="mm-node mm-l3">– Mannitol 0.5-1g/kg</div>
-<div class="mm-node mm-l3">– Hypertonic saline 3% 150-250ml</div>
-<div class="mm-node mm-l2">PaCO2 35-38 mmHg</div>
-<div class="mm-node mm-l2">Treat underlying cause</div>
-<div class="mm-node mm-l2">EVD for hydrocephalus</div>
-<div class="mm-node mm-l2">Rescue: Hyperventilate, Barbiturates, Decompressive craniectomy</div>
-<div class="mm-node mm-l2">Supportive: DVT, Seizure Ppx, Temp control</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Avoid</div>
-<div class="mm-node mm-l2">LP without imaging</div>
-<div class="mm-node mm-l2">Hypotonic fluids</div>
-<div class="mm-node mm-l2">Steroids in TBI</div>
-<div class="mm-node mm-l2">PaCO2 &lt;30 mmHg</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Raised ICP))
+    Definition
+      Normal 5-15 mmHg
+      Treat &gt;20-22 mmHg
+      CPP = MAP - ICP (target 60-70)
+    Monro-Kellie
+      Skull fixed volume
+      Brain 80%, Blood 10%, CSF 10%
+      Compensation by displacement
+    Causes
+      Mass: Haematoma, Tumour, Abscess
+      Diffuse: TBI, Encephalitis, FHF, DKA
+      CSF: Hydrocephalus
+      Venous: CVST
+      Extracranial: Hyponatraemia, Hypoxia, Hypercapnia
+    Clinical Features
+      Symptoms: Headache, Vomiting, Visual
+      Signs: Papilloedema (chronic)
+      Cushing's Triad: HT + Brady + Irregular RR
+      Pupils: Uncal (CN III)
+      Posturing: Decorticate, Decerebrate
+    Herniation
+      Uncal: CN III + contralateral hemiparesis
+      Central: Downward pressure
+      Tonsillar: Sudden death
+      Subfalcine: Contralateral leg
+    Management
+      ABCDE + Position (30deg)
+      Sedation + Analgesia
+      Osmotherapy
+        Mannitol 0.5-1g/kg
+        Hypertonic saline 3% 150-250ml
+      PaCO2 35-38 mmHg
+      Treat underlying cause
+      EVD for hydrocephalus
+      Rescue: Hyperventilate, Barbiturates, Decompressive craniectomy
+      Supportive: DVT, Seizure Ppx, Temp control
+    Avoid
+      LP without imaging
+      Hypotonic fluids
+      Steroids in TBI
+      PaCO2 &lt;30 mmHg</pre>
 <h2>18. Flowchart — Raised ICP Management</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Raised ICP Suspected</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">ABCDE + Head-up 30 deg + Head midline</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Intubate if GCS &lt;=8 + PaCO2 35-38 mmHg</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Sedation + Analgesia Propofol + Fentanyl</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Osmotherapy: Mannitol 0.5-1g/kg OR 3% Saline 150-250ml</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">CT Head: Identify Cause</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Neurosurgical Referral + Decompression</div>
-<div class="fc-node" data-id="H">EVD Insertion</div>
-<div class="fc-node" data-id="I">Continue medical management</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">ICP Still &gt;25?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Rescue: Brief Hyperventilation + Paralysis</div>
-<div class="fc-node" data-id="L">Barbiturate coma OR Decompressive craniectomy</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Raised ICP Suspected] --&gt; B[ABCDE + Head-up 30 deg + Head midline]
+  B --&gt; C[Intubate if GCS &lt;=8 + PaCO2 35-38 mmHg]
+  C --&gt; D[Sedation + Analgesia Propofol + Fentanyl]
+  D --&gt; E[Osmotherapy: Mannitol 0.5-1g/kg OR 3% Saline 150-250ml]
+  E --&gt; F[CT Head: Identify Cause]
+  F --&gt;|Mass| G[Neurosurgical Referral + Decompression]
+  F --&gt;|Hydrocephalus| H[EVD Insertion]
+  F --&gt;|Diffuse swelling| I[Continue medical management]
+  I --&gt; J{ICP Still &gt;25?}
+  J --&gt;|Yes| K[Rescue: Brief Hyperventilation + Paralysis]
+  J --&gt;|Refractory| L[Barbiturate coma OR Decompressive craniectomy]</pre>
 <h2>19. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Normal ICP</strong>: 5–15 mmHg; treat >20–22 mmHg</li>
@@ -19078,138 +18505,86 @@ footer a:hover { color: var(--accent); }
 <li><strong>Statin + fibrate</strong>: high risk</li>
 </ul>
 <h2>16. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Rhabdomyolysis</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Definition</div>
-<div class="mm-node mm-l2">Skeletal muscle breakdown</div>
-<div class="mm-node mm-l2">CK &gt;5x ULN</div>
-<div class="mm-node mm-l2">Myoglobin release</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Causes</div>
-<div class="mm-node mm-l2">Trauma: crush, immobility, compartment</div>
-<div class="mm-node mm-l2">Exertion: marathon, seizures</div>
-<div class="mm-node mm-l2">Heat stroke</div>
-<div class="mm-node mm-l2">Drugs: statins, alcohol, cocaine, MDMA</div>
-<div class="mm-node mm-l2">NMS, MH, serotonin syndrome</div>
-<div class="mm-node mm-l2">Snake/spider bite</div>
-<div class="mm-node mm-l2">DKA, HHS, hypothyroidism</div>
-<div class="mm-node mm-l2">Genetic: McArdle, CPT II</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Features</div>
-<div class="mm-node mm-l2">Triad: pain, weakness, dark urine</div>
-<div class="mm-node mm-l2">Muscle swelling, tenderness</div>
-<div class="mm-node mm-l2">Compartment signs</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Investigations</div>
-<div class="mm-node mm-l2">CK &gt;1000, &gt;5000 severe</div>
-<div class="mm-node mm-l2">Myoglobin, K+, Cr, urate</div>
-<div class="mm-node mm-l2">Hypocalcaemia early, hypercalcaemia late</div>
-<div class="mm-node mm-l2">Urine: dipstick +, no RBCs</div>
-<div class="mm-node mm-l2">ECG for hyperK</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Complications</div>
-<div class="mm-node mm-l2">AKI (10-50%)</div>
-<div class="mm-node mm-l2">HyperK</div>
-<div class="mm-node mm-l2">Compartment syndrome</div>
-<div class="mm-node mm-l2">DIC</div>
-<div class="mm-node mm-l2">Hypocalcaemia</div>
-<div class="mm-node mm-l2">Hypercalcaemia recovery</div>
-<div class="mm-node mm-l2">Arrhythmia</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management</div>
-<div class="mm-node mm-l2">Aggressive IV fluids</div>
-<div class="mm-node mm-l3">– 1-2 L/h initially</div>
-<div class="mm-node mm-l3">– Target UO 200-300 mL/h</div>
-<div class="mm-node mm-l3">– 10-12 L/d</div>
-<div class="mm-node mm-l2">Treat hyperK</div>
-<div class="mm-node mm-l2">Urine alkalinisation (controversial)</div>
-<div class="mm-node mm-l2">Mannitol (controversial)</div>
-<div class="mm-node mm-l2">Loop diuretics (after euvolaemia)</div>
-<div class="mm-node mm-l2">Dialysis (AEIOU)</div>
-<div class="mm-node mm-l2">Treat cause</div>
-<div class="mm-node mm-l2">Compartment -&gt; fasciotomy</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Specific</div>
-<div class="mm-node mm-l2">MH/NMS: dantrolene</div>
-<div class="mm-node mm-l2">Statin: stop, supportive</div>
-<div class="mm-node mm-l2">Snake bite: antivenom</div>
-<div class="mm-node mm-l2">Heat stroke: cooling</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Prevention</div>
-<div class="mm-node mm-l2">Early fluids at scene</div>
-<div class="mm-node mm-l2">Avoid immobility</div>
-<div class="mm-node mm-l2">Statin monitoring</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Prognosis</div>
-<div class="mm-node mm-l2">Most recover</div>
-<div class="mm-node mm-l2">5-25% mortality severe</div>
-<div class="mm-node mm-l2">AKI 1-3 weeks</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Rhabdomyolysis))
+    Definition
+      Skeletal muscle breakdown
+      CK &gt;5x ULN
+      Myoglobin release
+    Causes
+      Trauma: crush, immobility, compartment
+      Exertion: marathon, seizures
+      Heat stroke
+      Drugs: statins, alcohol, cocaine, MDMA
+      NMS, MH, serotonin syndrome
+      Snake/spider bite
+      DKA, HHS, hypothyroidism
+      Genetic: McArdle, CPT II
+    Features
+      Triad: pain, weakness, dark urine
+      Muscle swelling, tenderness
+      Compartment signs
+    Investigations
+      CK &gt;1000, &gt;5000 severe
+      Myoglobin, K+, Cr, urate
+      Hypocalcaemia early, hypercalcaemia late
+      Urine: dipstick +, no RBCs
+      ECG for hyperK
+    Complications
+      AKI (10-50%)
+      HyperK
+      Compartment syndrome
+      DIC
+      Hypocalcaemia
+      Hypercalcaemia recovery
+      Arrhythmia
+    Management
+      Aggressive IV fluids
+        1-2 L/h initially
+        Target UO 200-300 mL/h
+        10-12 L/d
+      Treat hyperK
+      Urine alkalinisation (controversial)
+      Mannitol (controversial)
+      Loop diuretics (after euvolaemia)
+      Dialysis (AEIOU)
+      Treat cause
+      Compartment -&gt; fasciotomy
+    Specific
+      MH/NMS: dantrolene
+      Statin: stop, supportive
+      Snake bite: antivenom
+      Heat stroke: cooling
+    Prevention
+      Early fluids at scene
+      Avoid immobility
+      Statin monitoring
+    Prognosis
+      Most recover
+      5-25% mortality severe
+      AKI 1-3 weeks</pre>
 <h2>17. Flowchart — Rhabdo Management</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected Rhabdo</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">CK, UandE, urate, Ca, Mg, ECG, urinalysis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">CK &gt;1000?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Reassess</div>
-<div class="fc-node" data-id="E">Aggressive IV 0.9% Saline 1-2 L/h</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Target UO 200-300 mL/h</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Monitor CK 6-12h, UandE, ECG</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Compartment syndrome?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Fasciotomy</div>
-<div class="fc-node" data-id="J">HyperK?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">Continue fluids until CK &lt;1000</div>
-<div class="fc-node" data-id="K">Ca gluconate + insulin/dextrose</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="M">Treat cause?</div>
-<div class="fc-node" data-id="O">AKI/HyperK refractory?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="N">Specific Rx: dantrolene for MH/NMS, antivenom, etc.</div>
-<div class="fc-node" data-id="P">Dialysis</div>
-<div class="fc-node" data-id="Q">Monitor recovery</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Suspected Rhabdo] --&gt; B[CK, UandE, urate, Ca, Mg, ECG, urinalysis]
+  B --&gt; C{CK &gt;1000?}
+  C --&gt;|No| D[Reassess]
+  C --&gt;|Yes| E[Aggressive IV 0.9% Saline 1-2 L/h]
+  E --&gt; F[Target UO 200-300 mL/h]
+  F --&gt; G[Monitor CK 6-12h, UandE, ECG]
+  G --&gt; H{Compartment syndrome?}
+  H --&gt;|Yes| I[Fasciotomy]
+  H --&gt;|No| J{HyperK?}
+  J --&gt;|Yes| K[Ca gluconate + insulin/dextrose]
+  J --&gt;|No| L[Continue fluids until CK &lt;1000]
+  L --&gt; M{Treat cause?}
+  M --&gt;|Yes| N[Specific Rx: dantrolene for MH/NMS, antivenom, etc.]
+  M --&gt;|No| L
+  K --&gt; L
+  I --&gt; L
+  N --&gt; L
+  L --&gt; O{AKI/HyperK refractory?}
+  O --&gt;|Yes| P[Dialysis]
+  O --&gt;|No| Q[Monitor recovery]</pre>
 <h2>18. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Rhabdo = muscle breakdown with CK >5× ULN (>1000 U/L)</strong>; myoglobin release</li>
@@ -19900,119 +19275,72 @@ footer a:hover { color: var(--accent); }
 <li><strong>ABCDEF</strong>: <strong>A</strong>ssess pain, <strong>B</strong>oth SAT/SBT, <strong>C</strong>hoice of sedation, <strong>D</strong>elirium, <strong>E</strong>arly mobility, <strong>F</strong>amily</li>
 </ul>
 <h2>16. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">ICU Sedation</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Principles</div>
-<div class="mm-node mm-l2">Analgesia first</div>
-<div class="mm-node mm-l2">Light sedation (RASS 0 to -1)</div>
-<div class="mm-node mm-l2">Avoid benzos</div>
-<div class="mm-node mm-l2">Daily SAT + SBT</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Monitoring</div>
-<div class="mm-node mm-l2">Pain: BPS, NRS</div>
-<div class="mm-node mm-l2">Sedation: RASS, SAS</div>
-<div class="mm-node mm-l2">Delirium: CAM-ICU</div>
-<div class="mm-node mm-l2">NMJ: TOF</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Analgesics</div>
-<div class="mm-node mm-l2">Fentanyl (first-line)</div>
-<div class="mm-node mm-l2">Morphine</div>
-<div class="mm-node mm-l2">Remifentanil (short, renal failure)</div>
-<div class="mm-node mm-l2">Ketamine</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Sedatives</div>
-<div class="mm-node mm-l2">Propofol (rapid, ICP)</div>
-<div class="mm-node mm-l3">– PRIS (high-dose prolonged)</div>
-<div class="mm-node mm-l2">Dexmedetomidine (light, cooperative, less delirium)</div>
-<div class="mm-node mm-l2">Midazolam (seizures, withdrawal, tetanus)</div>
-<div class="mm-node mm-l2">Ketamine (asthma, opioid-sparing)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">NMJ Blockade</div>
-<div class="mm-node mm-l2">Indications</div>
-<div class="mm-node mm-l3">– Severe early ARDS</div>
-<div class="mm-node mm-l3">– Raised ICP</div>
-<div class="mm-node mm-l3">– Tetanus, status epilepticus</div>
-<div class="mm-node mm-l3">– Intubation</div>
-<div class="mm-node mm-l2">Drugs</div>
-<div class="mm-node mm-l3">– Rocuronium (reversed by sugammadex)</div>
-<div class="mm-node mm-l3">– Cisatracurium (Hofmann, renal failure)</div>
-<div class="mm-node mm-l3">– Atracurium</div>
-<div class="mm-node mm-l3">– Suxamethonium (RSI only)</div>
-<div class="mm-node mm-l2">Monitoring</div>
-<div class="mm-node mm-l3">– TOF 1-2 twitches</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Withdrawal</div>
-<div class="mm-node mm-l2">Opioid: taper, methadone</div>
-<div class="mm-node mm-l2">Benzo: taper, long-acting</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Bundle</div>
-<div class="mm-node mm-l2">ABCDEF</div>
-<div class="mm-node mm-l2">A pain</div>
-<div class="mm-node mm-l2">B SAT/SBT</div>
-<div class="mm-node mm-l2">C choice sedation</div>
-<div class="mm-node mm-l2">D delirium</div>
-<div class="mm-node mm-l2">E early mobility</div>
-<div class="mm-node mm-l2">F family</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((ICU Sedation))
+    Principles
+      Analgesia first
+      Light sedation (RASS 0 to -1)
+      Avoid benzos
+      Daily SAT + SBT
+    Monitoring
+      Pain: BPS, NRS
+      Sedation: RASS, SAS
+      Delirium: CAM-ICU
+      NMJ: TOF
+    Analgesics
+      Fentanyl (first-line)
+      Morphine
+      Remifentanil (short, renal failure)
+      Ketamine
+    Sedatives
+      Propofol (rapid, ICP)
+        PRIS (high-dose prolonged)
+      Dexmedetomidine (light, cooperative, less delirium)
+      Midazolam (seizures, withdrawal, tetanus)
+      Ketamine (asthma, opioid-sparing)
+    NMJ Blockade
+      Indications
+        Severe early ARDS
+        Raised ICP
+        Tetanus, status epilepticus
+        Intubation
+      Drugs
+        Rocuronium (reversed by sugammadex)
+        Cisatracurium (Hofmann, renal failure)
+        Atracurium
+        Suxamethonium (RSI only)
+      Monitoring
+        TOF 1-2 twitches
+    Withdrawal
+      Opioid: taper, methadone
+      Benzo: taper, long-acting
+    Bundle
+      ABCDEF
+      A pain
+      B SAT/SBT
+      C choice sedation
+      D delirium
+      E early mobility
+      F family</pre>
 <h2>17. Flowchart — ICU Sedation</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">ICU Patient</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Pain Assessment BPS/NRS</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Pain present?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Analgesia: Fentanyl first-line</div>
-<div class="fc-node" data-id="E">Sedation needed?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Reassess</div>
-<div class="fc-node" data-id="G">Propofol or Dexmedetomidine</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Deep sedation needed?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">RASS 0 to -1, daily SAT/SBT</div>
-<div class="fc-node" data-id="J">RASS -3 to -4, propofol/midazolam</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="O">Daily CAM-ICU</div>
-<div class="fc-node" data-id="K">NMJ needed?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="P">Wean as soon as possible</div>
-<div class="fc-node" data-id="L">Rocuronium/Cisatracurium, TOF monitor</div>
-<div class="fc-node" data-id="M">Continue sedation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="N">Daily SAT + SBT</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[ICU Patient] --&gt; B[Pain Assessment BPS/NRS]
+  B --&gt; C{Pain present?}
+  C --&gt;|Yes| D[Analgesia: Fentanyl first-line]
+  C --&gt;|No| E{Sedation needed?}
+  E --&gt;|No| F[Reassess]
+  E --&gt;|Yes| G[Propofol or Dexmedetomidine]
+  G --&gt; H{Deep sedation needed?}
+  H --&gt;|No| I[RASS 0 to -1, daily SAT/SBT]
+  H --&gt;|Yes| J[RASS -3 to -4, propofol/midazolam]
+  J --&gt; K{NMJ needed?}
+  K --&gt;|Yes| L[Rocuronium/Cisatracurium, TOF monitor]
+  K --&gt;|No| M[Continue sedation]
+  L --&gt; N[Daily SAT + SBT]
+  M --&gt; N
+  I --&gt; O[Daily CAM-ICU]
+  N --&gt; O
+  O --&gt; P[Wean as soon as possible]</pre>
 <h2>18. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Analgesia first</strong> (fentanyl); <strong>light sedation</strong> (RASS 0 to -1) for most</li>
@@ -22750,183 +22078,94 @@ footer a:hover { color: var(--accent); }
 <li><strong>FONA</strong>: scalpel-bougie-tube</li>
 </ul>
 <h2>21. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Tracheal Intubation / RSI</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">DAS 2015</div>
-<div class="mm-node mm-l2">Plan A: Tracheal</div>
-<div class="mm-node mm-l2">Plan B: Supraglottic</div>
-<div class="mm-node mm-l2">Plan C: Face mask</div>
-<div class="mm-node mm-l2">Plan D: FONA</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Airway Assessment</div>
-<div class="mm-node mm-l2">3-3-2 rule</div>
-<div class="mm-node mm-l2">Mallampati</div>
-<div class="mm-node mm-l2">Difficult predictors</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Pre-intubation</div>
-<div class="mm-node mm-l2">Preoxygenate (3-5 min, 100% O2)</div>
-<div class="mm-node mm-l2">IV x2</div>
-<div class="mm-node mm-l2">Fluid 500mL</div>
-<div class="mm-node mm-l2">NG tube</div>
-<div class="mm-node mm-l2">Vasopressor ready</div>
-<div class="mm-node mm-l2">Ramping (obese)</div>
-<div class="mm-node mm-l2">Team brief</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">RSI Drugs</div>
-<div class="mm-node mm-l2">Induction</div>
-<div class="mm-node mm-l3">– Ketamine 1-2 mg/kg (preferred shock, asthma, sepsis)</div>
-<div class="mm-node mm-l3">– Propofol 0.5-1.5 mg/kg (avoid shock)</div>
-<div class="mm-node mm-l3">– Etomidate 0.3 mg/kg (avoid sepsis)</div>
-<div class="mm-node mm-l3">– Midazolam 0.15-0.3 mg/kg</div>
-<div class="mm-node mm-l2">NMJ</div>
-<div class="mm-node mm-l3">– Suxamethonium 1-1.5 mg/kg (rapid, contraindicated)</div>
-<div class="mm-node mm-l3">– Rocuronium 1.2 mg/kg (reversed by sugammadex)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Procedure</div>
-<div class="mm-node mm-l2">Preoxygenate</div>
-<div class="mm-node mm-l2">Induction</div>
-<div class="mm-node mm-l2">NMJ</div>
-<div class="mm-node mm-l2">Wait 45-90 s</div>
-<div class="mm-node mm-l2">Laryngoscopy</div>
-<div class="mm-node mm-l2">BURP not cricoid</div>
-<div class="mm-node mm-l2">Confirm capnography</div>
-<div class="mm-node mm-l2">Secure ETT</div>
-<div class="mm-node mm-l2">Post-intubation sedation</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Difficult Airway</div>
-<div class="mm-node mm-l2">Plan B LMA 2nd gen</div>
-<div class="mm-node mm-l2">Plan C face mask</div>
-<div class="mm-node mm-l2">Plan D FONA (scalpel-bougie-tube)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Sux Contraindications</div>
-<div class="mm-node mm-l2">Burns &gt;24h</div>
-<div class="mm-node mm-l2">Denervation</div>
-<div class="mm-node mm-l2">Hyperkalaemia</div>
-<div class="mm-node mm-l2">Malignant hyperthermia</div>
-<div class="mm-node mm-l2">Muscular dystrophy</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Post-Intubation</div>
-<div class="mm-node mm-l2">Sedation</div>
-<div class="mm-node mm-l2">Lung-protective vent</div>
-<div class="mm-node mm-l2">Vasopressor if needed</div>
-<div class="mm-node mm-l2">CXR for position</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Special</div>
-<div class="mm-node mm-l2">Pregnancy: left tilt, ramping, small ETT</div>
-<div class="mm-node mm-l2">Sepsis: ketamine, avoid etomidate</div>
-<div class="mm-node mm-l2">Asthma: ketamine, deep sedation</div>
-<div class="mm-node mm-l2">Obesity: ramping, HFNO/NIV</div>
-<div class="mm-node mm-l2">Trauma: C-spine, surgical airway</div>
-<div class="mm-node mm-l2">Paeds: age/4+4, atropine</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Tracheal Intubation / RSI))
+    DAS 2015
+      Plan A: Tracheal
+      Plan B: Supraglottic
+      Plan C: Face mask
+      Plan D: FONA
+    Airway Assessment
+      3-3-2 rule
+      Mallampati
+      Difficult predictors
+    Pre-intubation
+      Preoxygenate (3-5 min, 100% O2)
+      IV x2
+      Fluid 500mL
+      NG tube
+      Vasopressor ready
+      Ramping (obese)
+      Team brief
+    RSI Drugs
+      Induction
+        Ketamine 1-2 mg/kg (preferred shock, asthma, sepsis)
+        Propofol 0.5-1.5 mg/kg (avoid shock)
+        Etomidate 0.3 mg/kg (avoid sepsis)
+        Midazolam 0.15-0.3 mg/kg
+      NMJ
+        Suxamethonium 1-1.5 mg/kg (rapid, contraindicated)
+        Rocuronium 1.2 mg/kg (reversed by sugammadex)
+    Procedure
+      Preoxygenate
+      Induction
+      NMJ
+      Wait 45-90 s
+      Laryngoscopy
+      BURP not cricoid
+      Confirm capnography
+      Secure ETT
+      Post-intubation sedation
+    Difficult Airway
+      Plan B LMA 2nd gen
+      Plan C face mask
+      Plan D FONA (scalpel-bougie-tube)
+    Sux Contraindications
+      Burns &gt;24h
+      Denervation
+      Hyperkalaemia
+      Malignant hyperthermia
+      Muscular dystrophy
+    Post-Intubation
+      Sedation
+      Lung-protective vent
+      Vasopressor if needed
+      CXR for position
+    Special
+      Pregnancy: left tilt, ramping, small ETT
+      Sepsis: ketamine, avoid etomidate
+      Asthma: ketamine, deep sedation
+      Obesity: ramping, HFNO/NIV
+      Trauma: C-spine, surgical airway
+      Paeds: age/4+4, atropine</pre>
 <h2>22. Flowchart — DAS 2015</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Pre-intubation Assessment</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Difficult predictors?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Plan awake fibreoptic / senior help</div>
-<div class="fc-node" data-id="D">RSI: Preoxygenate + Induction + NMJ</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Plan A: Laryngoscopy 3 attempts max</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Confirm capnography, secure ETT</div>
-<div class="fc-node" data-id="G">Plan B: 2nd gen LMA</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Plan C: 2-person face mask</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Plan D: FONA cricothyroidotomy</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">Surgical airway</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Pre-intubation Assessment] --&gt; B[Difficult predictors?]
+  B --&gt;|Yes| C[Plan awake fibreoptic / senior help]
+  B --&gt;|No| D[RSI: Preoxygenate + Induction + NMJ]
+  D --&gt; E[Plan A: Laryngoscopy 3 attempts max]
+  E --&gt;|Success| F[Confirm capnography, secure ETT]
+  E --&gt;|Fail| G[Plan B: 2nd gen LMA]
+  G --&gt;|Success| F
+  G --&gt;|Fail| H[Plan C: 2-person face mask]
+  H --&gt;|Success| F
+  H --&gt;|Fail| I[Plan D: FONA cricothyroidotomy]
+  I --&gt; J[Surgical airway]</pre>
 <h2>23. Flowchart — Pre-Intubation Optimisation</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Critically Ill Patient Needs Intubation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Preoxygenate 100% O2 x 3-5 min</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">IV x2, fluid 500 mL</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">NG decompression</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Position: ramping if obese, head-up 30 deg</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Vasopressor ready</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Suction working</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Team brief: Plan A-D</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">RSI: Ketamine or Propofol + Sux or Roc</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">Wait 45-90 s</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Laryngoscopy, BURP</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">Capnography confirms</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="M">Post-intubation sedation, lung-protective vent</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="N">CXR for position</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Critically Ill Patient Needs Intubation] --&gt; B[Preoxygenate 100% O2 x 3-5 min]
+  B --&gt; C[IV x2, fluid 500 mL]
+  C --&gt; D[NG decompression]
+  D --&gt; E[Position: ramping if obese, head-up 30 deg]
+  E --&gt; F[Vasopressor ready]
+  F --&gt; G[Suction working]
+  G --&gt; H[Team brief: Plan A-D]
+  H --&gt; I[RSI: Ketamine or Propofol + Sux or Roc]
+  I --&gt; J[Wait 45-90 s]
+  J --&gt; K[Laryngoscopy, BURP]
+  K --&gt; L[Capnography confirms]
+  L --&gt; M[Post-intubation sedation, lung-protective vent]
+  M --&gt; N[CXR for position]</pre>
 <h2>24. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Critically ill intubation = high risk</strong> (10-20% complications)</li>
@@ -23627,149 +22866,86 @@ footer a:hover { color: var(--accent); }
 <li><strong>Cuff leak</strong> if prolonged MV, large ETT, female, asthma</li>
 </ul>
 <h2>18. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Weaning MV</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Definitions</div>
-<div class="mm-node mm-l2">Simple (1st SBT)</div>
-<div class="mm-node mm-l2">Difficult (3 SBT, &lt;7d)</div>
-<div class="mm-node mm-l2">Prolonged (&gt;=3 SBT, &gt;7d)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Daily Screening</div>
-<div class="mm-node mm-l2">Disease resolving</div>
-<div class="mm-node mm-l2">PaO2/FiO2 &gt;200</div>
-<div class="mm-node mm-l2">PEEP &lt;=5</div>
-<div class="mm-node mm-l2">Haemodynamic stable</div>
-<div class="mm-node mm-l2">Mental adequate</div>
-<div class="mm-node mm-l2">Cough, secretions</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">SBT</div>
-<div class="mm-node mm-l2">T-piece 30-120 min</div>
-<div class="mm-node mm-l2">PS 5-8 + PEEP 5</div>
-<div class="mm-node mm-l2">CPAP 5</div>
-<div class="mm-node mm-l2">Pass: RR&lt;35, SpO2&gt;90, HR&lt;140, SBP&lt;180</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Predictors</div>
-<div class="mm-node mm-l2">RSBI &lt;105 (f/Vt)</div>
-<div class="mm-node mm-l2">MIP &lt;=-30</div>
-<div class="mm-node mm-l2">P0.1 &lt;4</div>
-<div class="mm-node mm-l2">Cough strong</div>
-<div class="mm-node mm-l2">No paradox</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Extubation</div>
-<div class="mm-node mm-l2">Cuff leak test (&gt;110 mL)</div>
-<div class="mm-node mm-l2">Cough adequate</div>
-<div class="mm-node mm-l2">Secretions manageable</div>
-<div class="mm-node mm-l2">Aspiration risk</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Stridor</div>
-<div class="mm-node mm-l2">Racemic adrenaline</div>
-<div class="mm-node mm-l2">Dexamethasone</div>
-<div class="mm-node mm-l2">Heliox</div>
-<div class="mm-node mm-l2">Re-intubate</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Failure</div>
-<div class="mm-node mm-l2">Re-intubation 48-72h</div>
-<div class="mm-node mm-l2">10-20%</div>
-<div class="mm-node mm-l2">Risk: age, CHF, COPD, prolonged MV</div>
-<div class="mm-node mm-l2">NIV rescue in COPD</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Tracheostomy</div>
-<div class="mm-node mm-l2">Prolonged MV (&gt;7-14d)</div>
-<div class="mm-node mm-l2">Failed extubation</div>
-<div class="mm-node mm-l2">Upper airway obstruction</div>
-<div class="mm-node mm-l2">Bulbar dysfunction</div>
-<div class="mm-node mm-l2">Early vs late (TTM trial: no benefit)</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Decannulation</div>
-<div class="mm-node mm-l2">Cuff leak, swallow</div>
-<div class="mm-node mm-l2">Downsize, cork</div>
-<div class="mm-node mm-l2">24-48h tolerated</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Populations</div>
-<div class="mm-node mm-l2">COPD: slower, NIV</div>
-<div class="mm-node mm-l2">Cardiac: LV failure, diuretics</div>
-<div class="mm-node mm-l2">Neuro: GCS, delirium, airway</div>
-<div class="mm-node mm-l2">PMV: tracheostomy, LWU</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Weaning MV))
+    Definitions
+      Simple (1st SBT)
+      Difficult (3 SBT, &lt;7d)
+      Prolonged (&gt;=3 SBT, &gt;7d)
+    Daily Screening
+      Disease resolving
+      PaO2/FiO2 &gt;200
+      PEEP &lt;=5
+      Haemodynamic stable
+      Mental adequate
+      Cough, secretions
+    SBT
+      T-piece 30-120 min
+      PS 5-8 + PEEP 5
+      CPAP 5
+      Pass: RR&lt;35, SpO2&gt;90, HR&lt;140, SBP&lt;180
+    Predictors
+      RSBI &lt;105 (f/Vt)
+      MIP &lt;=-30
+      P0.1 &lt;4
+      Cough strong
+      No paradox
+    Extubation
+      Cuff leak test (&gt;110 mL)
+      Cough adequate
+      Secretions manageable
+      Aspiration risk
+    Stridor
+      Racemic adrenaline
+      Dexamethasone
+      Heliox
+      Re-intubate
+    Failure
+      Re-intubation 48-72h
+      10-20%
+      Risk: age, CHF, COPD, prolonged MV
+      NIV rescue in COPD
+    Tracheostomy
+      Prolonged MV (&gt;7-14d)
+      Failed extubation
+      Upper airway obstruction
+      Bulbar dysfunction
+      Early vs late (TTM trial: no benefit)
+    Decannulation
+      Cuff leak, swallow
+      Downsize, cork
+      24-48h tolerated
+    Populations
+      COPD: slower, NIV
+      Cardiac: LV failure, diuretics
+      Neuro: GCS, delirium, airway
+      PMV: tracheostomy, LWU</pre>
 <h2>19. Flowchart — Weaning</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Ventilated Patient</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Daily Screening: Resolution + Oxygenation + Haemodynamics + Mental + Cough</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Calculate RSBI</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">SBT T-piece or PS 30-120 min</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Cuff Leak Test</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Extubate</div>
-<div class="fc-node" data-id="G">Steroids 24h, re-test</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Monitor for stridor, distress</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Racemic Epi + Dexa + Heliox + Re-intubate</div>
-<div class="fc-node" data-id="J">Continue weaning</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Re-intubate</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Ventilated Patient] --&gt; B[Daily Screening: Resolution + Oxygenation + Haemodynamics + Mental + Cough]
+  B --&gt;|Pass| C[Calculate RSBI]
+  B --&gt;|Fail| A
+  C --&gt;|RSBI &lt;105| D[SBT T-piece or PS 30-120 min]
+  C --&gt;|RSBI &gt;105| A
+  D --&gt;|Pass 30-120 min| E[Cuff Leak Test]
+  D --&gt;|Fail| A
+  E --&gt;|&gt;110 mL leak| F[Extubate]
+  E --&gt;|Poor leak| G[Steroids 24h, re-test]
+  F --&gt; H[Monitor for stridor, distress]
+  H --&gt;|Stridor| I[Racemic Epi + Dexa + Heliox + Re-intubate]
+  H --&gt;|Stable| J[Continue weaning]
+  I --&gt;|Severe| K[Re-intubate]
+  G --&gt; F</pre>
 <h2>20. Flowchart — Post-Extubation</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Extubated</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Monitor RR, SpO2, distress</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Continue monitoring</div>
-<div class="fc-node" data-id="D">High Risk COPD?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">NIV Trial 1-2h</div>
-<div class="fc-node" data-id="F">Re-intubate if severe</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Identify cause, treat, re-extubate later</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Extubated] --&gt; B[Monitor RR, SpO2, distress]
+  B --&gt;|Stable| C[Continue monitoring]
+  B --&gt;|Respiratory failure| D{High Risk COPD?}
+  D --&gt;|Yes| E[NIV Trial 1-2h]
+  D --&gt;|No| F[Re-intubate if severe]
+  E --&gt;|Improves| C
+  E --&gt;|Fails| F
+  F --&gt; G[Identify cause, treat, re-extubate later]</pre>
 <h2>21. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Daily screening</strong>: Disease resolving + PaO₂/FiO₂ >200 + PEEP ≤5 + haemodynamic + mental</li>
@@ -24209,6 +23385,13 @@ function showTopic(localPrefix) {
     <div class="topic-content">${t.html}</div>
     ${imgHtml}
   `;
+  // Re-render mermaid diagrams in the newly inserted content
+  if (typeof window.renderMermaidIn === 'function') {
+    setTimeout(() => window.renderMermaidIn(container), 50);
+  }
+  // Scroll to top of topic content
+  container.scrollTop = 0;
+  document.querySelector('.chapter-main').scrollTop = 0;
 }
 
 document.getElementById("topicSearch").addEventListener("input", function(e) {
@@ -24282,12 +23465,62 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
   }
 })();
 </script>
+
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 01:41 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 03:50 UTC · Davidson 25th Ed</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
+// Initialize mermaid with dark-theme-friendly defaults
+if (typeof mermaid !== 'undefined') {
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#1f2937',
+      primaryTextColor: '#e5e7eb',
+      primaryBorderColor: '#38bdf8',
+      lineColor: '#9ca3af',
+      secondaryColor: '#111827',
+      tertiaryColor: '#0f172a',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    },
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    mindmap: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+}
+
+// Re-render mermaid blocks when content is dynamically loaded (desktop sidebar clicks)
+window.renderMermaidIn = function(container) {
+  if (typeof mermaid === 'undefined') return;
+  const blocks = (container || document).querySelectorAll('pre.mermaid:not([data-rendered])');
+  blocks.forEach((block, i) => {
+    block.setAttribute('data-rendered', 'true');
+    const id = 'mm-' + Date.now() + '-' + i;
+    try {
+      mermaid.render(id, block.textContent).then(({ svg }) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'mermaid-diagram';
+        wrapper.innerHTML = svg;
+        block.replaceWith(wrapper);
+      }).catch(err => {
+        console.warn('mermaid render failed:', err);
+        block.style.color = '#f87171';
+      });
+    } catch (e) {
+      console.warn('mermaid error:', e);
+    }
+  });
+};
+
+// Run on initial load (for accordion-view topics that are already in DOM)
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => window.renderMermaidIn(document), 100);
+});
+
 // Close dropdown when clicking outside
 document.addEventListener('click', function(e) {
   const dd = document.getElementById('chapterDropdown');

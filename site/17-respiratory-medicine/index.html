@@ -3294,35 +3294,23 @@ footer a:hover { color: var(--accent); }
 <li><strong>Random</strong>: miliary TB, metastases, fungal, sarcoidosis</li>
 </ul>
 <h2>4. HRCT Pattern Recognition Algorithm</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">HRCT Chest</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Ground-Glass vs Reticular</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Honeycombing?</div>
-<div class="fc-node" data-id="D">NSIP, HP, DIP, etc.</div>
-<div class="fc-node" data-id="G">COP, eosinophilic, infection</div>
-<div class="fc-node" data-id="H">LAM, LCH, LIP, BHD</div>
-<div class="fc-node" data-id="I">Small airway disease</div>
-<div class="fc-node" data-id="J">Distribution → cause</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">UIP pattern</div>
-<div class="fc-node" data-id="F">NSIP or fibrotic NSIP</div>
-<div class="fc-node" data-id="K">CTD-ILD serology + MDD</div>
-<div class="fc-node" data-id="L">Biopsy: COP vs eos vs malig</div>
-<div class="fc-node" data-id="M">Family hx, smoking, dermatologic</div>
-<div class="fc-node" data-id="N">HP, sarcoidosis, bronchiolitis</div>
-<div class="fc-node" data-id="O">Perilymphatic → sarcoid/silicosis</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[HRCT Chest] --&gt; B{Ground-Glass vs Reticular}
+    B --&gt;|Reticular predominant| C{Honeycombing?}
+    B --&gt;|GGO predominant| D[NSIP, HP, DIP, etc.]
+    C --&gt;|Yes| E[UIP pattern]
+    C --&gt;|No| F[NSIP or fibrotic NSIP]
+    B --&gt;|Consolidation| G[COP, eosinophilic, infection]
+    B --&gt;|Cysts| H[LAM, LCH, LIP, BHD]
+    B --&gt;|Mosaic| I[Small airway disease]
+    B --&gt;|Nodules| J[Distribution → cause]
+    E --&gt; K[CTD-ILD serology + MDD]
+    F --&gt; K
+    D --&gt; K
+    G --&gt; L[Biopsy: COP vs eos vs malig]
+    H --&gt; M[Family hx, smoking, dermatologic]
+    I --&gt; N[HP, sarcoidosis, bronchiolitis]
+    J --&gt; O[Perilymphatic → sarcoid/silicosis]</pre>
 <h2>5. Disease-Specific HRCT Findings</h2>
 <table>
 <tr><th>Disease</th><th>HRCT pattern</th></tr>
@@ -10525,49 +10513,17 @@ footer a:hover { color: var(--accent); }
 </table>
 <h2>8. Management</h2>
 <h3>1. IMMEDIATE (First 30–60 Minutes)</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected SVCO\nFacial swelling, distended JVP, dyspnoea</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">ABCDE Assessment</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Urgent CT Venography / MR Venography</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">**DEXAMETHASONE 16mg IV/PO STAT**\n(then 8mg q6h or 16mg daily)</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Head of bed ELEVATED (30–45°)</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Oxygen if hypoxaemic\nTarget SpO2 94–98%</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">**AVOID IV FLUIDS**\n(↑ venous pressure → worsens oedema)</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">**URGENT ONCOLOGY / INTERVENTIONAL RADIOLOGY REFERRAL**</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">-- Grade 1-2</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">ICU + INTUBATION if airway threatened\nEMERGENT STENTING / RADIOTHERAPY</div>
-<div class="fc-node" data-id="K">STENTING within 24–48h\nor RADIOTHERAPY if stent not feasible</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Suspected SVCO\nFacial swelling, distended JVP, dyspnoea] --&gt; B[ABCDE Assessment]
+    B --&gt; C[Urgent CT Venography / MR Venography]
+    C --&gt; D[**DEXAMETHASONE 16mg IV/PO STAT**\n(then 8mg q6h or 16mg daily)]
+    D --&gt; E[Head of bed ELEVATED (30–45°)]
+    E --&gt; F[Oxygen if hypoxaemic\nTarget SpO2 94–98%]
+    F --&gt; G[**AVOID IV FLUIDS**\n(↑ venous pressure → worsens oedema)]
+    G --&gt; H[**URGENT ONCOLOGY / INTERVENTIONAL RADIOLOGY REFERRAL**]
+    H --&gt; I{Severity}
+    I -- Grade 3-4 (Stridor, cerebral oedema) --&gt; J[ICU + INTUBATION if airway threatened\nEMERGENT STENTING / RADIOTHERAPY]
+    I -- Grade 1-2 --&gt; K[STENTING within 24–48h\nor RADIOTHERAPY if stent not feasible]</pre>
 <h3>2. Dexamethasone (Immediate, Anti-oedema)</h3>
 <ul>
 <li><strong>Dose</strong>: <strong>16 mg IV/PO stat</strong>, then <strong>8 mg q6h</strong> or <strong>16 mg daily</strong></li>
@@ -10785,36 +10741,13 @@ footer a:hover { color: var(--accent); }
 </ul>
 <h2>9. Pathophysiology</h2>
 <h3>Molecular pathogenesis of NSCLC</h3>
-<div class="flowchart" data-dir="LR">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Carcinogen: benzo a pyrene, NNK, asbestos, radon</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">DNA damage in bronchial epithelium</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Driver mutations accumulate</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">EGFR / KRAS / ALK / ROS1 / BRAF / MET / RET / HER2 / NTRK</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Uncontrolled proliferation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Tumor angiogenesis VEGF</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Local invasion + metastasis</div>
-</div>
-</div>
+<pre class="mermaid">flowchart LR
+    A[Carcinogen: benzo a pyrene, NNK, asbestos, radon] --&gt; B[DNA damage in bronchial epithelium]
+    B --&gt; C[Driver mutations accumulate]
+    C --&gt; D[EGFR / KRAS / ALK / ROS1 / BRAF / MET / RET / HER2 / NTRK]
+    D --&gt; E[Uncontrolled proliferation]
+    E --&gt; F[Tumor angiogenesis VEGF]
+    F --&gt; G[Local invasion + metastasis]</pre>
 <h3>Hallmarks of SCLC</h3>
 <ul>
 <li><strong>Neuroendocrine differentiation</strong> (chromogranin, synaptophysin, CD56 positive)</li>
@@ -10856,31 +10789,18 @@ footer a:hover { color: var(--accent); }
 <blockquote>[!critical] <strong>SVC syndrome is an oncologic emergency</strong> — urgent imaging, IV steroids, consider SVC stent, radiotherapy/chemo depending on histology.</blockquote>
 <h2>11. Approach / Algorithm</h2>
 <h3>Diagnostic algorithm</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspicious CXR or 2WW symptoms</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Contrast CT chest + upper abdomen</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Staging: PET-CT ± MRI brain</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Tissue diagnosis: biopsy</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D1">Bronchoscopy ± EBUS-TBNA</div>
-<div class="fc-node" data-id="D2">Transthoracic CT-guided biopsy</div>
-<div class="fc-node" data-id="D3">Pleural fluid cytology / pleural biopsy</div>
-<div class="fc-node" data-id="D4">Mediastinoscopy / surgical biopsy</div>
-</div>
-</div></div>
+<pre class="mermaid">flowchart TD
+    A[Suspicious CXR or 2WW symptoms] --&gt; B[Contrast CT chest + upper abdomen]
+    B --&gt; C[Staging: PET-CT ± MRI brain]
+    C --&gt; D[Tissue diagnosis: biopsy]
+    D --&gt; D1[Bronchoscopy ± EBUS-TBNA]
+    D --&gt; D2[Transthoracic CT-guided biopsy]
+    D --&gt; D3[Pleural fluid cytology / pleural biopsy]
+    D --&gt; D4[Mediastinoscopy / surgical biopsy]
+
+
+*[Content truncated for rendering — see lung-cancer.md for full content]*
+</pre></div>
         
     <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
       <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
@@ -11452,33 +11372,19 @@ footer a:hover { color: var(--accent); }
 <tr><td><strong>FBC, U&E, CRP, troponin, BNP, D-dimer</strong></td><td>As indicated</td></tr>
 </table>
 <h3>Algorithm</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Acute severe breathlessness</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">ABC + SpO2 + ABG + ECG + CXR</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Unilateral hyperresonance + ↓BS?</div>
-<div class="fc-node" data-id="E">Sudden + pleuritic + tachycardia?</div>
-<div class="fc-node" data-id="G">Bilateral crackles + cardiomegaly?</div>
-<div class="fc-node" data-id="I">Silent chest + exhaustion?</div>
-<div class="fc-node" data-id="K">Stridor + anaphylaxis?</div>
-<div class="fc-node" data-id="M">Otherwise: pneumonia, AECOPD, asthma, effusion, etc.</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Tension PTX → needle decompression + drain</div>
-<div class="fc-node" data-id="F">PE suspected → CTPA + Wells/D-dimer</div>
-<div class="fc-node" data-id="H">Acute pulmonary oedema → diuretics + O2 + NIV</div>
-<div class="fc-node" data-id="J">Severe asthma → intubation consideration</div>
-<div class="fc-node" data-id="L">IM adrenaline + airway</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Acute severe breathlessness] --&gt; B[ABC + SpO2 + ABG + ECG + CXR]
+    B --&gt; C{Unilateral hyperresonance + ↓BS?}
+    C --&gt;|Yes| D[Tension PTX → needle decompression + drain]
+    B --&gt; E{Sudden + pleuritic + tachycardia?}
+    E --&gt;|Yes| F[PE suspected → CTPA + Wells/D-dimer]
+    B --&gt; G{Bilateral crackles + cardiomegaly?}
+    G --&gt;|Yes| H[Acute pulmonary oedema → diuretics + O2 + NIV]
+    B --&gt; I{Silent chest + exhaustion?}
+    I --&gt;|Yes| J[Severe asthma → intubation consideration]
+    B --&gt; K{Stridor + anaphylaxis?}
+    K --&gt;|Yes| L[IM adrenaline + airway]
+    B --&gt; M[Otherwise: pneumonia, AECOPD, asthma, effusion, etc.]</pre>
 <h2>6. Management</h2>
 <h3>General</h3>
 <ul>
@@ -13308,35 +13214,21 @@ footer a:hover { color: var(--accent); }
 <tr><td><strong>CT chest</strong></td><td>Lung cancer, mesothelioma, PE</td></tr>
 </table>
 <h3>Algorithm</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Pleuritic chest pain</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Examination + CXR + ECG</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Unilateral hyperresonance + ↓BS?</div>
-<div class="fc-node" data-id="E">Consolidation + fever?</div>
-<div class="fc-node" data-id="G">Dullness + ↓BS?</div>
-<div class="fc-node" data-id="I">Tachycardia + dyspnoea + normal CXR?</div>
-<div class="fc-node" data-id="K">Pericardial rub + diffuse ST elevation?</div>
-<div class="fc-node" data-id="M">Rib tenderness + trauma?</div>
-<div class="fc-node" data-id="O">Musculoskeletal, shingles, etc.</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Pneumothorax → chest drain</div>
-<div class="fc-node" data-id="F">Pneumonia → antibiotics</div>
-<div class="fc-node" data-id="H">Pleural effusion → tap + Light's</div>
-<div class="fc-node" data-id="J">PE → Wells + D-dimer → CTPA</div>
-<div class="fc-node" data-id="L">Pericarditis → ECG + echo + Rx</div>
-<div class="fc-node" data-id="N">Rib fracture → CXR + analgesia</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Pleuritic chest pain] --&gt; B[Examination + CXR + ECG]
+    B --&gt; C{Unilateral hyperresonance + ↓BS?}
+    C --&gt;|Yes| D[Pneumothorax → chest drain]
+    B --&gt; E{Consolidation + fever?}
+    E --&gt;|Yes| F[Pneumonia → antibiotics]
+    B --&gt; G{Dullness + ↓BS?}
+    G --&gt;|Yes| H[Pleural effusion → tap + Light's]
+    B --&gt; I{Tachycardia + dyspnoea + normal CXR?}
+    I --&gt;|Yes| J[PE → Wells + D-dimer → CTPA]
+    B --&gt; K{Pericardial rub + diffuse ST elevation?}
+    K --&gt;|Yes| L[Pericarditis → ECG + echo + Rx]
+    B --&gt; M{Rib tenderness + trauma?}
+    M --&gt;|Yes| N[Rib fracture → CXR + analgesia]
+    B --&gt; O[Musculoskeletal, shingles, etc.]</pre>
 <h2>6. Management</h2>
 <h3>General</h3>
 <ul>
@@ -14233,47 +14125,30 @@ footer a:hover { color: var(--accent); }
 <li><strong>Lactate</strong> — sepsis, tissue hypoxia</li>
 </ul>
 <h2>6. Diagnosis — structured approach</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Dyspnoea</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Acute vs chronic?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">ABG, CXR, ECG, SpO2, D-dimer</div>
-<div class="fc-node" data-id="P">Full history + CXR + spirometry + ABG + ECG + FBC + BNP</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Pneumothorax?</div>
-<div class="fc-node" data-id="F">PE suspected?</div>
-<div class="fc-node" data-id="H">Pneumonia/oedema?</div>
-<div class="fc-node" data-id="J">Asthma/COPD?</div>
-<div class="fc-node" data-id="L">Cardiac?</div>
-<div class="fc-node" data-id="N">Metabolic?</div>
-<div class="fc-node" data-id="Q">Obstructive spirometry?</div>
-<div class="fc-node" data-id="S">Restrictive spirometry?</div>
-<div class="fc-node" data-id="U">Normal spirometry, low SpO2?</div>
-<div class="fc-node" data-id="W">Cardiac cause?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Chest drain</div>
-<div class="fc-node" data-id="G">Wells/D-dimer/CTPA → treat</div>
-<div class="fc-node" data-id="I">Treat infection/diuretics</div>
-<div class="fc-node" data-id="K">Bronchodilators, steroids</div>
-<div class="fc-node" data-id="M">ECG, troponin, echo, treat</div>
-<div class="fc-node" data-id="O">ABG, lactate, treat cause</div>
-<div class="fc-node" data-id="R">COPD/asthma workup</div>
-<div class="fc-node" data-id="T">HRCT → ILD vs NM vs chest wall</div>
-<div class="fc-node" data-id="V">CTPA, echo, anaemia, NM</div>
-<div class="fc-node" data-id="X">Echo, BNP → treat HF</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Dyspnoea] --&gt; B[Acute vs chronic?]
+    B --&gt;|Acute| C[ABG, CXR, ECG, SpO2, D-dimer]
+    C --&gt; D{Pneumothorax?}
+    D --&gt;|Yes| E[Chest drain]
+    C --&gt; F{PE suspected?}
+    F --&gt;|Yes| G[Wells/D-dimer/CTPA → treat]
+    C --&gt; H{Pneumonia/oedema?}
+    H --&gt;|Yes| I[Treat infection/diuretics]
+    C --&gt; J{Asthma/COPD?}
+    J --&gt;|Yes| K[Bronchodilators, steroids]
+    C --&gt; L{Cardiac?}
+    L --&gt;|Yes| M[ECG, troponin, echo, treat]
+    C --&gt; N{Metabolic?}
+    N --&gt;|Yes| O[ABG, lactate, treat cause]
+    B --&gt;|Chronic| P[Full history + CXR + spirometry + ABG + ECG + FBC + BNP]
+    P --&gt; Q{Obstructive spirometry?}
+    Q --&gt;|Yes| R[COPD/asthma workup]
+    P --&gt; S{Restrictive spirometry?}
+    S --&gt;|Yes| T[HRCT → ILD vs NM vs chest wall]
+    P --&gt; U{Normal spirometry, low SpO2?}
+    U --&gt;|Yes| V[CTPA, echo, anaemia, NM]
+    P --&gt; W{Cardiac cause?}
+    W --&gt;|Yes| X[Echo, BNP → treat HF]</pre>
 <h2>7. Management</h2>
 <h3>General</h3>
 <ul>
@@ -14689,42 +14564,19 @@ footer a:hover { color: var(--accent); }
 <li><strong>Coagulation</strong> — coagulation profile, mixing studies</li>
 </ul>
 <h2>6. Diagnosis — algorithm</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">True haemoptysis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Volume?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">ITU/anaesthesia; protect airway, isolate bleeding lung, bronchoscopy + embolisation</div>
-<div class="fc-node" data-id="D">CXR + CT chest with contrast + labs</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">CXR/CT findings</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Bronchoscopy + biopsy</div>
-<div class="fc-node" data-id="G">Sputum AFB/fungal, aspergilloma, tumour</div>
-<div class="fc-node" data-id="H">Treat infection, consider embolisation</div>
-<div class="fc-node" data-id="I">Antibiotics, treat pneumonia</div>
-<div class="fc-node" data-id="J">CTPA, bronchoscopy, ENT exam, vasculitis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Dx confirmed?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">Treat cause</div>
-<div class="fc-node" data-id="M">Angiography, observe</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[True haemoptysis] --&gt; B{Volume?}
+    B --&gt;|Massive| C[ITU/anaesthesia; protect airway, isolate bleeding lung, bronchoscopy + embolisation]
+    B --&gt;|Non-massive| D[CXR + CT chest with contrast + labs]
+    D --&gt; E{CXR/CT findings}
+    E --&gt;|Mass/nodule| F[Bronchoscopy + biopsy]
+    E --&gt;|Cavitation| G[Sputum AFB/fungal, aspergilloma, tumour]
+    E --&gt;|Bronchiectasis| H[Treat infection, consider embolisation]
+    E --&gt;|Consolidation| I[Antibiotics, treat pneumonia]
+    E --&gt;|Normal CXR| J[CTPA, bronchoscopy, ENT exam, vasculitis]
+    J --&gt; K{Dx confirmed?}
+    K --&gt;|Yes| L[Treat cause]
+    K --&gt;|No| M[Angiography, observe]</pre>
 <h2>7. Management</h2>
 <h3>Massive haemoptysis — emergency</h3>
 <ol>
@@ -19349,33 +19201,16 @@ footer a:hover { color: var(--accent); }
 </table>
 <blockquote><strong>FCPS/MRCP tip</strong>: <strong>Blood eosinophils</strong> = primary biologic selector: <strong>≥300 → benralizumab/mepolizumab/dupilumab/tezepelumab</strong>; <strong>IgE 30-1500</strong> → <strong>omalizumab</strong>; <strong>CRSwNP + eosinophilic</strong> → <strong>dupilumab</strong>; <strong>broad T2</strong> → <strong>tezepelumab</strong>.</blockquote>
 <h2>7. Biologic Selection Algorithm (Simplified)</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Severe T2-High Asthma\nUncontrolled on High-Dose ICS/LABA</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">IgE 30-1500 + Allergic?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Omalizumab</div>
-<div class="fc-node" data-id="D">Blood Eosinophils</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">CRSwNP?</div>
-<div class="fc-node" data-id="H">FeNO ≥25?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Dupilumab</div>
-<div class="fc-node" data-id="G">Benralizumab / Mepolizumab</div>
-<div class="fc-node" data-id="I">Dupilumab / Tezepelumab</div>
-<div class="fc-node" data-id="J">Consider Tezepelumab / Reassess Phenotype</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+  A[Severe T2-High Asthma\nUncontrolled on High-Dose ICS/LABA] --&gt; B{IgE 30-1500 + Allergic?}
+  B --&gt;|Yes| C[Omalizumab]
+  B --&gt;|No| D{Blood Eosinophils}
+  D --&gt;|≥300| E{CRSwNP?}
+  E --&gt;|Yes| F[Dupilumab]
+  E --&gt;|No| G[Benralizumab / Mepolizumab]
+  D --&gt;|150-300| H{FeNO ≥25?}
+  H --&gt;|Yes| I[Dupilumab / Tezepelumab]
+  H --&gt;|No| J[Consider Tezepelumab / Reassess Phenotype]</pre>
 <blockquote><strong>Tezepelumab</strong> = upstream (TSLP), broadest T2 coverage, approved for broad severe asthma regardless of specific biomarker threshold.</blockquote>
 <h2>8. Phenotype-Guided Non-Biologic Therapy</h2>
 <table>
@@ -19613,18 +19448,14 @@ footer a:hover { color: var(--accent); }
 <li><strong>MAGNESIUM</strong>: <strong>2g IV 20min</strong> standard adjunct</li>
 </ul>
 <h2>15. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Life-threatening Asthma / Status Asthmaticus</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Criteria</div>
-<div class="mm-node mm-l2">PEF &lt;33%, SpO2&lt;92%, PaCO2≥4.6kPa</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">*[Content truncated for rendering — see life-threatening-asthma-and-status-asthmaticus.md for full content]*</div>
-</div>
-</div>
-</div></div>
+<pre class="mermaid">mindmap
+  root((Life-threatening Asthma / Status Asthmaticus))
+    Criteria
+      PEF &lt;33%, SpO2&lt;92%, PaCO2≥4.6kPa
+
+
+*[Content truncated for rendering — see life-threatening-asthma-and-status-asthmaticus.md for full content]*
+</pre></div>
         
     <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
       <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
@@ -21254,42 +21085,17 @@ footer a:hover { color: var(--accent); }
 <li><strong>Inspiratory capacity (IC) drops</strong> — useful bedside severity marker</li>
 </ul>
 <h3>Asthma pathophysiology</h3>
-<div class="flowchart" data-dir="LR">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Allergen/Trigger/Virus</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Epithelial activation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Th2 cytokine release: IL-4, IL-5, IL-13</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Eosinophil recruitment</div>
-<div class="fc-node" data-id="E">Mast cell degranulation</div>
-<div class="fc-node" data-id="F">IgE class switching by B cells</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Mucosal inflammation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Bronchoconstriction, edema, mucus</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Variable airflow obstruction</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">Symptoms + AHR</div>
-</div>
-</div>
+<pre class="mermaid">flowchart LR
+    A[Allergen/Trigger/Virus] --&gt; B[Epithelial activation]
+    B --&gt; C[Th2 cytokine release: IL-4, IL-5, IL-13]
+    C --&gt; D[Eosinophil recruitment]
+    C --&gt; E[Mast cell degranulation]
+    C --&gt; F[IgE class switching by B cells]
+    D --&gt; G[Mucosal inflammation]
+    E --&gt; G
+    G --&gt; H[Bronchoconstriction, edema, mucus]
+    H --&gt; I[Variable airflow obstruction]
+    I --&gt; J[Symptoms + AHR]</pre>
 <h3>Gas exchange in acute severe asthma</h3>
 <ul>
 <li><strong>Early/mild</strong>: hyperventilation → ↓PaCO₂, normal/↑PaO₂</li>
@@ -21382,46 +21188,19 @@ footer a:hover { color: var(--accent); }
 <h3>Severity of acute asthma — see [[Airway Diseases/Acute severe asthma|Acute severe asthma]]</h3>
 <h2>9. Approach / Algorithm</h2>
 <h3>Diagnostic algorithm</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected asthma: variable symptoms</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Focused history + exam</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Spirometry with bronchodilator reversibility</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">FEV1/FVC &lt; LLN AND post-BD rise ≥12% &amp; ≥200 mL?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Asthma confirmed</div>
-<div class="fc-node" data-id="F">PEF variability over 1-2 weeks</div>
-<div class="fc-node" data-id="G">FeNO ≥40 ppb supports eosinophilic asthma</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">&gt;20% variability?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Bronchial challenge methacholine/histamine</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">PC20 &lt;8 mg/mL?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Consider alternative diagnosis</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Suspected asthma: variable symptoms] --&gt; B[Focused history + exam]
+    B --&gt; C[Spirometry with bronchodilator reversibility]
+    C --&gt; D{FEV1/FVC &lt; LLN AND post-BD rise ≥12% &amp; ≥200 mL?}
+    D --&gt;|Yes| E[Asthma confirmed]
+    D --&gt;|No| F[PEF variability over 1-2 weeks]
+    D --&gt;|No| G[FeNO ≥40 ppb supports eosinophilic asthma]
+    F --&gt; H{&gt;20% variability?}
+    H --&gt;|Yes| E
+    H --&gt;|No| I[Bronchial challenge methacholine/histamine]
+    I --&gt; J{PC20 &lt;8 mg/mL?}
+    J --&gt;|Yes| E
+    J --&gt;|No| K[Consider alternative diagnosis]</pre>
 <h3>Differential diagnosis (FCPS/MRCP pearl: not all wheeze is asthma)</h3>
 <table>
 <tr><th>Condition</th><th>Distinguishing feature</th></tr>
@@ -27944,28 +27723,15 @@ Negative → BAL PCR (gold standard)
 <tr><td><strong>Pericardial</strong></td><td>Subacute pericardial effusion → constrictive pericarditis (high ADA in fluid)</td></tr>
 </table>
 <h2>11. Approach / Algorithm</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected TB: cough &gt;3 wks, fever, weight loss, haemoptysis, CXR changes</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Risk assessment: HIV, DM, contact, immigrant</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Isolate patient in side room; give surgical mask</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Send 3 sputum samples for AFB smear, GeneXpert MTB/RIF Ultra, MGIT culture + DST</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Chest X-ray: apical/posterior upper lobe infiltrates, cavities, miliary, effusion</div>
-</div>
-</div></div>
+<pre class="mermaid">flowchart TD
+    A[Suspected TB: cough &gt;3 wks, fever, weight loss, haemoptysis, CXR changes] --&gt; B[Risk assessment: HIV, DM, contact, immigrant]
+    B --&gt; C[Isolate patient in side room; give surgical mask]
+    C --&gt; D[Send 3 sputum samples for AFB smear, GeneXpert MTB/RIF Ultra, MGIT culture + DST]
+    D --&gt; E[Chest X-ray: apical/posterior upper lobe infiltrates, cavities, miliary, effusion]
+
+
+*[Content truncated for rendering — see tuberculosis.md for full content]*
+</pre></div>
         
     <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
       <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
@@ -29758,41 +29524,16 @@ Negative → BAL PCR (gold standard)
 </table>
 <h2>6. Procedures</h2>
 <h3>1. US-Guided Diagnostic Aspiration</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Patient sitting, leaning forward on pillow</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">US: Identify fluid, measure depth, mark skin\nAvoid lung, diaphragm, heart, vessels</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Prep: Chlorhexidine, drape, sterile gloves</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Anaesthetise: 1% lidocaine\nSkin → muscle → parietal pleura\nAspirate air/fluid = confirms depth</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Insert needle under US guidance\nAspirate fluid</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">-- NO (Therapeutic)</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Send samples: pH (ABG syringe, anaerobic!), protein, LDH, glucose, cell count, Gram, culture (blood bottles), cytology</div>
-<div class="fc-node" data-id="H">Attach 3-way tap + 50mL syringe\nAspirate up to 1.5L\nStop if pain/cough/resistance</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Post-procedure CXR if &gt;1L removed or symptoms</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Patient sitting, leaning forward on pillow] --&gt; B[US: Identify fluid, measure depth, mark skin\nAvoid lung, diaphragm, heart, vessels]
+    B --&gt; C[Prep: Chlorhexidine, drape, sterile gloves]
+    C --&gt; D[Anaesthetise: 1% lidocaine\nSkin → muscle → parietal pleura\nAspirate air/fluid = confirms depth]
+    D --&gt; E[Insert needle under US guidance\nAspirate fluid]
+    E --&gt; F{Diagnostic only?}
+    F -- YES --&gt; G[Send samples: pH (ABG syringe, anaerobic!), protein, LDH, glucose, cell count, Gram, culture (blood bottles), cytology]
+    F -- NO (Therapeutic) --&gt; H[Attach 3-way tap + 50mL syringe\nAspirate up to 1.5L\nStop if pain/cough/resistance]
+    G --&gt; I[Post-procedure CXR if &gt;1L removed or symptoms]
+    H --&gt; I</pre>
 <p><strong>Key Technical Points:</strong></p>
 <ul>
 <li><strong>pH sample</strong>: <strong>Heparinised blood gas syringe</strong>, <strong>anaerobic</strong> (no air bubbles), <strong>on ice</strong>, <strong>analyse <1 hour</strong></li>
@@ -29801,75 +29542,23 @@ Negative → BAL PCR (gold standard)
 <li><strong>Limit</strong>: <strong>1–1.5 L per session</strong> (prevent re-expansion pulmonary oedema)</li>
 </ul>
 <h3>2. Chest Drain — Seldinger Pigtail (US-Guided)</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">US: Confirm fluid/air, choose largest pocket,\nmark skin at 4th-5th ICS safe triangle</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Prep: Chlorhexidine, drape, local anaesthetic\nSkin → parietal pleura (aspirate confirms)</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">18G introducer needle under US\nAspirate fluid/air = pleural entry</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Guidewire (J-tip) advance 15-20 cm\nConfirm smooth passage</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Dilator over wire (single for ≤14F)</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Pigtail catheter (10-14F) over wire\nCurl tip in pleural space</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Remove wire, connect to underwater seal\nSecure with suture/statlock, dressing</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Post-procedure CXR: position, re-expansion</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[US: Confirm fluid/air, choose largest pocket,\nmark skin at 4th-5th ICS safe triangle] --&gt; B[Prep: Chlorhexidine, drape, local anaesthetic\nSkin → parietal pleura (aspirate confirms)]
+    B --&gt; C[18G introducer needle under US\nAspirate fluid/air = pleural entry]
+    C --&gt; D[Guidewire (J-tip) advance 15-20 cm\nConfirm smooth passage]
+    D --&gt; E[Dilator over wire (single for ≤14F)]
+    E --&gt; F[Pigtail catheter (10-14F) over wire\nCurl tip in pleural space]
+    F --&gt; G[Remove wire, connect to underwater seal\nSecure with suture/statlock, dressing]
+    G --&gt; H[Post-procedure CXR: position, re-expansion]</pre>
 <h3>3. Chest Drain — Surgical (Blunt Dissection) — Empyema/Thick Pus</h3>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Site: 4th-5th ICS safe triangle\nMark, prep, anaesthetise deeply</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Incision: 2 cm horizontal over 5th rib\n(along superior border of 6th rib)</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Blunt dissection: Artery forceps through\nmuscle layers → puncture parietal pleura</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Finger sweep: confirm pleural entry,\nclear adhesions, direct posteriorly/superiorly</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Insert tube (24-28F) with clamp/forceps\nDirect posteriorly and superiorly</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Confirm: Fogging, swing, air/fluid return</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Suture: Purse-string + mattress\nConnect to underwater seal, secure</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Post-procedure CXR</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Site: 4th-5th ICS safe triangle\nMark, prep, anaesthetise deeply] --&gt; B[Incision: 2 cm horizontal over 5th rib\n(along superior border of 6th rib)]
+    B --&gt; C[Blunt dissection: Artery forceps through\nmuscle layers → puncture parietal pleura]
+    C --&gt; D[Finger sweep: confirm pleural entry,\nclear adhesions, direct posteriorly/superiorly]
+    D --&gt; E[Insert tube (24-28F) with clamp/forceps\nDirect posteriorly and superiorly]
+    E --&gt; F[Confirm: Fogging, swing, air/fluid return]
+    F --&gt; G[Suture: Purse-string + mattress\nConnect to underwater seal, secure]
+    G --&gt; H[Post-procedure CXR]</pre>
 <h2>7. Post-Procedure Drain Management</h2>
 <h3>Underwater Seal System</h3>
 <table>
@@ -30336,48 +30025,19 @@ Negative → BAL PCR (gold standard)
 </table>
 <blockquote><strong>FCPS/MRCP tip</strong>: <strong>Tracheal deviation and JVP distension = TENSION pneumothorax</strong>, not simple PSP.</blockquote>
 <h2>11. Approach / Management Algorithm (BTS 2023)</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected PSP</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Confirm on CXR: measure rim at hilum</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">-- NO (Rim ≥2 cm\nLARGE)</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">-- NO (symptomatic)</div>
-<div class="fc-node" data-id="G">ASPIRATION first-line\n16-18G catheter, 3-way tap\nTarget: rim &lt;2 cm + symptomatic improvement</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Discharge with advice\nReview 2-4 weeks\nAvoid flight/diving</div>
-<div class="fc-node" data-id="F">Consider aspiration\nor observe with analgesia</div>
-<div class="fc-node" data-id="H">-- NO</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Observe 1-2h\nDischarge if stable\nFollow-up CXR 2-4 weeks</div>
-<div class="fc-node" data-id="J">CHEST DRAIN\n5th ICS AAL/MAL\nUnderwater seal</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Admit, monitor\nSuction only if persistent leak</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">Drain removal: air leak stopped 24h\nCXR confirm</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="M">Follow-up 2-4 weeks\nVATS referral if recurrent</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Suspected PSP] --&gt; B[Confirm on CXR: measure rim at hilum]
+    B --&gt; C{Rim &lt;2 cm?\nSMALL}
+    C -- YES --&gt; D[Asymptomatic?]
+    D -- YES --&gt; E[Discharge with advice\nReview 2-4 weeks\nAvoid flight/diving]
+    D -- NO (symptomatic) --&gt; F[Consider aspiration\nor observe with analgesia]
+    C -- NO (Rim ≥2 cm\nLARGE) --&gt; G[ASPIRATION first-line\n16-18G catheter, 3-way tap\nTarget: rim &lt;2 cm + symptomatic improvement]
+    G --&gt; H{Success?}
+    H -- YES --&gt; I[Observe 1-2h\nDischarge if stable\nFollow-up CXR 2-4 weeks]
+    H -- NO --&gt; J[CHEST DRAIN\n5th ICS AAL/MAL\nUnderwater seal]
+    J --&gt; K[Admit, monitor\nSuction only if persistent leak]
+    K --&gt; L[Drain removal: air leak stopped 24h\nCXR confirm]
+    L --&gt; M[Follow-up 2-4 weeks\nVATS referral if recurrent]</pre>
 <h2>12. Investigations</h2>
 <h3>Essential</h3>
 <ul>
@@ -30633,44 +30293,19 @@ Negative → BAL PCR (gold standard)
 <li><strong>NIV may worsen pneumothorax</strong> (positive pressure → air leak)</li>
 </ul>
 <h2>11. Approach / Management Algorithm (BTS for SSP)</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">SSP diagnosed: underlying lung disease + pneumothorax</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">ADMIT ALL\nAssess severity, ABG, CXR size</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">-- NO (Rim ≥2cm\nLARGE)</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">-- NO (symptomatic)</div>
-<div class="fc-node" data-id="G">ASPIRATION first-line\n16-18G, up to 2.5L</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Observe 24h\nHigh-flow O2 (caution COPD)\nAnalgesia\nRepeat CXR</div>
-<div class="fc-node" data-id="F">ASPIRATION\n16-18G\nLower success than PSP</div>
-<div class="fc-node" data-id="H">-- NO</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Obmit 24h\nRepeat CXR\nIf stable → plan discharge</div>
-<div class="fc-node" data-id="J">CHEST DRAIN\n10-14F pigtail\n5th ICS safe triangle\nUnderwater seal</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Admit, monitor\nSuction if leak&gt;48h\nTreat underlying disease</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="L">VATS referral: earlier than PSP\n1st recurrence often</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[SSP diagnosed: underlying lung disease + pneumothorax] --&gt; B[ADMIT ALL\nAssess severity, ABG, CXR size]
+    B --&gt; C{Rim &lt;2cm?\nSMALL}
+    C -- YES --&gt; D[Asymptomatic?]
+    D -- YES --&gt; E[Observe 24h\nHigh-flow O2 (caution COPD)\nAnalgesia\nRepeat CXR]
+    D -- NO (symptomatic) --&gt; F[ASPIRATION\n16-18G\nLower success than PSP]
+    C -- NO (Rim ≥2cm\nLARGE) --&gt; G[ASPIRATION first-line\n16-18G, up to 2.5L]
+    G --&gt; H{Success?}
+    H -- YES --&gt; I[Obmit 24h\nRepeat CXR\nIf stable → plan discharge]
+    H -- NO --&gt; J[CHEST DRAIN\n10-14F pigtail\n5th ICS safe triangle\nUnderwater seal]
+    F --&gt; H
+    J --&gt; K[Admit, monitor\nSuction if leak&gt;48h\nTreat underlying disease]
+    K --&gt; L[VATS referral: earlier than PSP\n1st recurrence often]</pre>
 <h2>12. Investigations</h2>
 <h3>Essential</h3>
 <ul>
@@ -30876,41 +30511,16 @@ Negative → BAL PCR (gold standard)
 <li>High index of suspicion needed</li>
 </ul>
 <h2>11. Approach / Emergency Algorithm (ATLS / BTS)</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected tension pneumothorax</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">-- NO, stable</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">IMMEDIATE needle decompression\n2nd ICS MCL 14-16G catheter</div>
-<div class="fc-node" data-id="I">CXR first if diagnosis uncertain\nBut LOW threshold for decompression</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Hiss of air = confirmation\nClinical improvement expected</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Follow IMMEDIATELY with chest drain\n5th ICS AAL/MAL in safe triangle</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Connect to underwater seal\nRe-expand lung</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">CXR to confirm position and re-expansion</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">Admit, monitor, treat underlying cause</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Suspected tension pneumothorax] --&gt; B{Patient crashing?\nHypotension + desat + absent breath sounds}
+    B -- YES --&gt; C[IMMEDIATE needle decompression\n2nd ICS MCL 14-16G catheter]
+    B -- Ventilated: Sudden high pressures + hypotension --&gt; C
+    C --&gt; D[Hiss of air = confirmation\nClinical improvement expected]
+    D --&gt; E[Follow IMMEDIATELY with chest drain\n5th ICS AAL/MAL in safe triangle]
+    E --&gt; F[Connect to underwater seal\nRe-expand lung]
+    F --&gt; G[CXR to confirm position and re-expansion]
+    G --&gt; H[Admit, monitor, treat underlying cause]
+    B -- NO, stable --&gt; I[CXR first if diagnosis uncertain\nBut LOW threshold for decompression]</pre>
 <blockquote><strong>FCPS/MRCP tip</strong>: <strong>Decompress first, image later</strong>. In exams: "A 25M post-stabbing, hypotensive, tracheal deviated, absent breath sounds left — immediate management?" → <strong>Needle decompression 2nd ICS MCL left</strong>.</blockquote>
 <h2>12. Investigations</h2>
 <h3>CXR (if stable enough / post-decompression)</h3>
@@ -31617,29 +31227,19 @@ Negative → BAL PCR (gold standard)
 <li><strong>Lymphatic stomata</strong> on parietal pleura reabsorb filtered fluid → capacity 0.2 mL/kg/h (≈ 0.7 L/day).</li>
 <li>Effusion forms when <strong>formation > lymphatic capacity</strong> OR <strong>lymphatics are obstructed</strong>.</li>
 </ul>
-<div class="flowchart" data-dir="LR">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Systemic capillaries parietal pleura</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Pleural space</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Intercostal &amp; mediastinal LNs</div>
-<div class="fc-node" data-id="D">Normal: 10-20 mL</div>
-<div class="fc-node" data-id="E">Pathological effusion</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">↑ hydrostatic pressure</div>
-<div class="fc-node" data-id="G">↓ oncotic pressure</div>
-<div class="fc-node" data-id="H">↑ capillary permeability</div>
-<div class="fc-node" data-id="I">Lymphatic obstruction</div>
-</div>
-</div>
+<pre class="mermaid">flowchart LR
+    A[Systemic capillaries
+parietal pleura] --&gt;|Filtration| B(Pleural space)
+    B --&gt;|Lymphatic stomata| C[Intercostal &amp;
+mediastinal LNs]
+    B -.-&gt;|Visceral pleural
+capillaries| A2[Pulmonary veins]
+    B --&gt; D[Normal: 10-20 mL]
+    B --&gt; E[Pathological effusion]
+    E --&gt;|↑ formation| F[↑ hydrostatic pressure]
+    E --&gt;|↑ formation| G[↓ oncotic pressure]
+    E --&gt;|↑ formation| H[↑ capillary permeability]
+    E --&gt;|↓ drainage| I[Lymphatic obstruction]</pre>
 <h3>Oxygen & CO2 handling</h3>
 <ul>
 <li>Visceral pleura is <strong>very thin (≤30 µm)</strong> and offers little diffusion barrier to gases.</li>
@@ -32773,38 +32373,19 @@ Negative → BAL PCR (gold standard)
 <li><strong>Low probability</strong>: PE unlikely (but cannot exclude in high pre-test)</li>
 </ul>
 <h2>7. Diagnostic Algorithm</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected PE</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Clinical assessment + Wells</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">Wells &gt;4?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">CTPA</div>
-<div class="fc-node" data-id="E">PERC all negative?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">CTPA positive?</div>
-<div class="fc-node" data-id="F">PE excluded</div>
-<div class="fc-node" data-id="G">D-dimer</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Risk stratify + treat</div>
-<div class="fc-node" data-id="L">Consider V/Q + leg Doppler</div>
-<div class="fc-node" data-id="H">PE excluded</div>
-<div class="fc-node" data-id="I">CTPA</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Suspected PE] --&gt; B[Clinical assessment + Wells]
+    B --&gt; C{Wells &gt;4?}
+    C --&gt;|Yes| D[CTPA]
+    C --&gt;|No| E[PERC all negative?]
+    E --&gt;|Yes| F[PE excluded]
+    E --&gt;|No| G{D-dimer}
+    G --&gt;|&lt;500 (or age-adjusted)| H[PE excluded]
+    G --&gt;|Above threshold| I[CTPA]
+    D --&gt; J{CTPA positive?}
+    I --&gt; J
+    J --&gt;|Yes| K[Risk stratify + treat]
+    J --&gt;|No| L[Consider V/Q + leg Doppler]</pre>
 <h2>8. Special Populations</h2>
 <h3>Pregnancy</h3>
 <ul>
@@ -34876,41 +34457,19 @@ Negative → BAL PCR (gold standard)
 <li><strong>RV/LV ratio ≥1.0</strong> on CT — sign of severe PE</li>
 </ul>
 <h2>10. Diagnosis — diagnostic algorithm</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected PE</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Assess haemodynamic stability</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">CTPA / bedside echo / start anticoag</div>
-<div class="fc-node" data-id="D">Calculate Wells score</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">PE likely &gt;4?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">PERC + D-dimer</div>
-<div class="fc-node" data-id="I">CTPA</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">D-dimer negative?</div>
-<div class="fc-node" data-id="J">CTPA positive?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">PE excluded</div>
-<div class="fc-node" data-id="K">Confirm PE → risk stratify → treat</div>
-<div class="fc-node" data-id="L">Consider V/Q scan / leg Doppler / repeat</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Suspected PE] --&gt; B[Assess haemodynamic stability]
+    B --&gt;|Unstable/shock| C[CTPA / bedside echo / start anticoag]
+    B --&gt;|Stable| D[Calculate Wells score]
+    D --&gt; E{PE likely &gt;4?}
+    E --&gt;|No| F[PERC + D-dimer]
+    F --&gt; G{D-dimer negative?}
+    G --&gt;|Yes| H[PE excluded]
+    G --&gt;|No| I[CTPA]
+    E --&gt;|Yes| I[CTPA]
+    I --&gt; J{CTPA positive?}
+    J --&gt;|Yes| K[Confirm PE → risk stratify → treat]
+    J --&gt;|No| L[Consider V/Q scan / leg Doppler / repeat]</pre>
 <h2>11. Differential Diagnosis</h2>
 <table>
 <tr><th>Condition</th><th>Distinguishing feature</th></tr>
@@ -37427,53 +36986,25 @@ HRCT: Centrilobular nodules + GGO + mosaic attenuation?
 <tr><td><strong>Hilar/mediastinal lymphadenopathy</strong></td><td>Bilateral, symmetrical</td><td>Sarcoidosis, lymphoma, TB</td></tr>
 </table>
 <h2>7. Diagnostic Approach (MDD)</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Suspected ILD: dyspnoea + crackles + restrictive spirometry</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">Detailed history: drugs, occupation, exposures, CTD symptoms, smoking, family</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">HRCT chest + spirometry + DLCO</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Identify HRCT pattern</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">CTD features?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Serology → CTD-ILD pathway</div>
-<div class="fc-node" data-id="G">Exclude drugs/occupational triggers</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">HRCT pattern</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">MDD: IPF vs CTD-UIP vs chronic HP</div>
-<div class="fc-node" data-id="J">Serology for CTD; consider drug/HP</div>
-<div class="fc-node" data-id="K">BAL ± biopsy: HP, NSIP, DIP, PCP, PAP</div>
-<div class="fc-node" data-id="L">Biopsy: COP, eosinophilic, malignancy</div>
-<div class="fc-node" data-id="M">HP vs sarcoidosis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="N">MDD diagnosis</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="O">Treat underlying cause; consider antifibrotic / immunosuppression / supportive</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Suspected ILD: dyspnoea + crackles + restrictive spirometry] --&gt; B[Detailed history: drugs, occupation, exposures, CTD symptoms, smoking, family]
+    B --&gt; C[HRCT chest + spirometry + DLCO]
+    C --&gt; D[Identify HRCT pattern]
+    D --&gt; E{CTD features?}
+    E --&gt;|Yes| F[Serology → CTD-ILD pathway]
+    E --&gt;|No| G[Exclude drugs/occupational triggers]
+    G --&gt; H{HRCT pattern}
+    H --&gt;|UIP| I[MDD: IPF vs CTD-UIP vs chronic HP]
+    H --&gt;|NSIP| J[Serology for CTD; consider drug/HP]
+    H --&gt;|Ground-glass| K[BAL ± biopsy: HP, NSIP, DIP, PCP, PAP]
+    H --&gt;|Consolidation| L[Biopsy: COP, eosinophilic, malignancy]
+    H --&gt;|Mosaic/nodules| M[HP vs sarcoidosis]
+    I --&gt; N[MDD diagnosis]
+    J --&gt; N
+    K --&gt; N
+    L --&gt; N
+    M --&gt; N
+    N --&gt; O[Treat underlying cause; consider antifibrotic / immunosuppression / supportive]</pre>
 <h2>8. Differential Diagnosis by HRCT</h2>
 <table>
 <tr><th>HRCT pattern</th><th>Most common causes</th></tr>
@@ -37774,29 +37305,16 @@ HRCT: Centrilobular nodules + GGO + mosaic attenuation?
 <tr><td><strong>Compliance</strong></td><td>Markedly reduced</td><td>Less reduced</td></tr>
 </table>
 <h2>11. Approach / Emergency Algorithm</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Acute hypoxaemic respiratory failure</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">ABCDE assessment</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">High-flow O2 / NIV trial if appropriate</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">-- No</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">ARDS diagnosed: Classify severity by PF ratio</div>
-<div class="fc-node" data-id="F">Alternative: cardiogenic, pneumonia, PE, DAH, AEP</div>
-</div>
-</div></div>
+<pre class="mermaid">flowchart TD
+    A[Acute hypoxaemic respiratory failure] --&gt; B[ABCDE assessment]
+    B --&gt; C[High-flow O2 / NIV trial if appropriate]
+    C --&gt; D{Bilateral opacities + PF≤300 on PEEP≥5 + no cardiac cause?}
+    D -- Yes --&gt; E[ARDS diagnosed: Classify severity by PF ratio]
+    D -- No --&gt; F[Alternative: cardiogenic, pneumonia, PE, DAH, AEP]
+
+
+*[Content truncated for rendering — see ards.md for full content]*
+</pre></div>
         
     <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
       <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
@@ -39685,50 +39203,19 @@ If pH &lt;7.35 + PaCO2 high + HCO3- high + BE positive
 <li>Palliative care</li>
 </ul>
 <h2>5. Management algorithm</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Start NIV</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">1 h ABG</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">pH &gt;7.25 + ↓PaCO₂?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">Continue NIV, recheck at 4 h</div>
-<div class="fc-node" data-id="E">Check mask + pressures + secretions</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="F">Increase IPAP if tolerated</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="G">Recheck ABG at 4 h</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="H">pH &gt;7.25 + improving?</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="I">Consider intubation</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="J">NIV failure</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="K">Intubate + ITU</div>
-<div class="fc-node" data-id="L">DNI discussion</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Start NIV] --&gt; B[1 h ABG]
+    B --&gt; C{pH &gt;7.25 + ↓PaCO₂?}
+    C --&gt;|Yes| D[Continue NIV, recheck at 4 h]
+    C --&gt;|No| E[Check mask + pressures + secretions]
+    E --&gt; F[Increase IPAP if tolerated]
+    F --&gt; G[Recheck ABG at 4 h]
+    G --&gt; H{pH &gt;7.25 + improving?}
+    H --&gt;|Yes| D
+    H --&gt;|No| I[Consider intubation]
+    I --&gt; J{NIV failure}
+    J --&gt;|Yes| K[Intubate + ITU]
+    J --&gt;|No| L[DNI discussion]</pre>
 <h2>6. NIV success vs failure</h2>
 <h3>Predictors of success</h3>
 <ul>
@@ -41662,91 +41149,57 @@ If pH &lt;7.35 + PaCO2 high + HCO3- high + BE positive
 <p><strong>Tracheal intubation indications</strong> — <strong>"GCS 8, intubate"</strong></p>
 <p><strong>PEEP</strong> = positive end-expiratory pressure; ↑ oxygenation by recruiting alveoli (ARDS)</p>
 <h2>16. Mind Map</h2>
-<div class="mindmap">
-<div class="mm-root">Respiratory Failure</div>
-<div class="mm-branches">
-<div class="mm-branch">
-<div class="mm-node mm-l1">Type 1</div>
-<div class="mm-node mm-l2">Hypoxaemic</div>
-<div class="mm-node mm-l2">Pneumonia</div>
-<div class="mm-node mm-l2">ARDS</div>
-<div class="mm-node mm-l2">PE</div>
-<div class="mm-node mm-l2">Oedema</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Type 2</div>
-<div class="mm-node mm-l2">Hypercapnic</div>
-<div class="mm-node mm-l2">COPD</div>
-<div class="mm-node mm-l2">NM</div>
-<div class="mm-node mm-l2">OHS</div>
-<div class="mm-node mm-l2">Drugs</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Causes</div>
-<div class="mm-node mm-l2">Drive</div>
-<div class="mm-node mm-l2">NM</div>
-<div class="mm-node mm-l2">Chest wall</div>
-<div class="mm-node mm-l2">Airway</div>
-<div class="mm-node mm-l2">Parenchymal</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Clinical</div>
-<div class="mm-node mm-l2">Dyspnoea</div>
-<div class="mm-node mm-l2">Cyanosis</div>
-<div class="mm-node mm-l2">Confusion</div>
-<div class="mm-node mm-l2">Coma</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Diagnosis</div>
-<div class="mm-node mm-l2">ABG</div>
-<div class="mm-node mm-l2">CXR</div>
-<div class="mm-node mm-l2">ECG</div>
-<div class="mm-node mm-l2">SpO2</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Management</div>
-<div class="mm-node mm-l2">O2 target</div>
-<div class="mm-node mm-l2">Controlled O2</div>
-<div class="mm-node mm-l2">NIV</div>
-<div class="mm-node mm-l2">Intubate</div>
-<div class="mm-node mm-l2">Treat cause</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">Complications</div>
-<div class="mm-node mm-l2">Arrest</div>
-<div class="mm-node mm-l2">VAP</div>
-<div class="mm-node mm-l2">Barotrauma</div>
-<div class="mm-node mm-l2">Multi-organ</div>
-</div>
-</div>
-</div>
+<pre class="mermaid">mindmap
+  root((Respiratory Failure))
+    Type 1
+      Hypoxaemic
+      Pneumonia
+      ARDS
+      PE
+      Oedema
+    Type 2
+      Hypercapnic
+      COPD
+      NM
+      OHS
+      Drugs
+    Causes
+      Drive
+      NM
+      Chest wall
+      Airway
+      Parenchymal
+    Clinical
+      Dyspnoea
+      Cyanosis
+      Confusion
+      Coma
+    Diagnosis
+      ABG
+      CXR
+      ECG
+      SpO2
+    Management
+      O2 target
+      Controlled O2
+      NIV
+      Intubate
+      Treat cause
+    Complications
+      Arrest
+      VAP
+      Barotrauma
+      Multi-organ</pre>
 <h2>17. Flowchart — Management</h2>
-<div class="flowchart" data-dir="TD">
-<div class="fc-title">⬇ Clinical Pathway</div>
-<div class="fc-level">
-<div class="fc-node" data-id="A">Respiratory failure suspected</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="B">ABG + CXR + clinical assessment</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="C">O2 to target SpO2</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="D">ABG and clinical response</div>
-</div>
-<div class="fc-arrows">↓</div>
-<div class="fc-level">
-<div class="fc-node" data-id="E">Continue O2, treat cause, monitor</div>
-<div class="fc-node" data-id="F">Consider CPAP, ITU review, intubate</div>
-<div class="fc-node" data-id="G">Controlled O2 + medical Rx + NIV trial</div>
-<div class="fc-node" data-id="H">Urgent NIV; if fails intubate</div>
-<div class="fc-node" data-id="I">Intubate + ITU</div>
-</div>
-</div>
+<pre class="mermaid">flowchart TD
+    A[Respiratory failure suspected] --&gt; B[ABG + CXR + clinical assessment]
+    B --&gt; C[O2 to target SpO2]
+    C --&gt; D{ABG and clinical response}
+    D --&gt;|Type 1, improving| E[Continue O2, treat cause, monitor]
+    D --&gt;|Type 1, worsening| F[Consider CPAP, ITU review, intubate]
+    D --&gt;|Type 2, pH &gt;7.25| G[Controlled O2 + medical Rx + NIV trial]
+    D --&gt;|Type 2, pH &lt;7.25| H[Urgent NIV; if fails intubate]
+    D --&gt;|Any arrest/exhaustion| I[Intubate + ITU]</pre>
 <h2>18. One-Page Revision Summary</h2>
 <ul>
 <li><strong>Respiratory failure</strong> = PaO₂ <8.0 ± PaCO₂ >6.0 kPa</li>
@@ -42127,6 +41580,13 @@ function showTopic(localPrefix) {
     <div class="topic-content">${t.html}</div>
     ${imgHtml}
   `;
+  // Re-render mermaid diagrams in the newly inserted content
+  if (typeof window.renderMermaidIn === 'function') {
+    setTimeout(() => window.renderMermaidIn(container), 50);
+  }
+  // Scroll to top of topic content
+  container.scrollTop = 0;
+  document.querySelector('.chapter-main').scrollTop = 0;
 }
 
 document.getElementById("topicSearch").addEventListener("input", function(e) {
@@ -42200,12 +41660,62 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
   }
 })();
 </script>
+
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 01:41 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 03:50 UTC · Davidson 25th Ed</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
+// Initialize mermaid with dark-theme-friendly defaults
+if (typeof mermaid !== 'undefined') {
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#1f2937',
+      primaryTextColor: '#e5e7eb',
+      primaryBorderColor: '#38bdf8',
+      lineColor: '#9ca3af',
+      secondaryColor: '#111827',
+      tertiaryColor: '#0f172a',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    },
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    mindmap: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+}
+
+// Re-render mermaid blocks when content is dynamically loaded (desktop sidebar clicks)
+window.renderMermaidIn = function(container) {
+  if (typeof mermaid === 'undefined') return;
+  const blocks = (container || document).querySelectorAll('pre.mermaid:not([data-rendered])');
+  blocks.forEach((block, i) => {
+    block.setAttribute('data-rendered', 'true');
+    const id = 'mm-' + Date.now() + '-' + i;
+    try {
+      mermaid.render(id, block.textContent).then(({ svg }) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'mermaid-diagram';
+        wrapper.innerHTML = svg;
+        block.replaceWith(wrapper);
+      }).catch(err => {
+        console.warn('mermaid render failed:', err);
+        block.style.color = '#f87171';
+      });
+    } catch (e) {
+      console.warn('mermaid error:', e);
+    }
+  });
+};
+
+// Run on initial load (for accordion-view topics that are already in DOM)
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => window.renderMermaidIn(document), 100);
+});
+
 // Close dropdown when clicking outside
 document.addEventListener('click', function(e) {
   const dd = document.getElementById('chapterDropdown');
