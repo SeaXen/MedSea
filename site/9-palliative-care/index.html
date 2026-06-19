@@ -1160,27 +1160,200 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   header.site { display: none; }
   .mobile-bar { display: flex; }
 
-  /* Single column chapter page */
-  .chapter-page { padding: 12px 12px 60px; }
+  /* === MOBILE BAR: compact single-row, ~50px tall === */
+  .mobile-bar {
+    padding: 6px 8px;
+    gap: 4px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .mobile-bar .row.top {
+    display: contents;   /* flatten so all children of .mobile-bar share one row */
+  }
+  .mobile-bar .row.search-row {
+    display: contents;
+  }
+  /* Re-order: menu | logo | search | spacer | current-ch | github */
+  .mobile-bar .logo-mini {
+    font-size: 13px;
+    flex: 0 0 auto;
+  }
+  .mobile-bar .logo-mini .logo { font-size: 16px; }
+  .mobile-bar .logo-mini a { font-size: 13px; }
+  .mobile-bar .menu-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  .mobile-bar .search-row {
+    flex: 1;
+    min-width: 0;
+  }
+  .mobile-bar .search-row .search-box-m {
+    flex: 1;
+  }
+  .mobile-bar .search-row input {
+    padding: 6px 10px 6px 28px;
+    font-size: 12px;
+  }
+  .mobile-bar .search-row .search-icon {
+    left: 8px;
+    font-size: 11px;
+  }
+  .mobile-bar .current-ch-label {
+    font-size: 10px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .mobile-bar .github-btn {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+  .mobile-bar .stats-mini { display: none; }
 
-  /* Accordion: tighter on mobile */
-  .hub-summary { padding: 12px 14px; }
-  .hub-label { font-size: 13px; }
-  .topic-acc { margin-left: 8px; }
-  .topic-summary { padding: 9px 12px; }
-  .topic-title { font-size: 12px; }
-  .topic-num { font-size: 9px; min-width: 42px; }
-  .topic-body { padding: 10px 12px 14px; }
-  .topic-content { font-size: 13px; line-height: 1.55; }
-  .topic-content h1 { font-size: 18px; }
-  .topic-content h2 { font-size: 16px; }
-  .topic-content h3 { font-size: 14px; }
-  .topic-content pre { font-size: 11px; padding: 8px 10px; }
-  .chapter-toolbar { position: static; }
-  .chapter-toolbar .search { font-size: 12px; padding: 8px 10px; }
-  .chapter-toolbar .btn-acc { font-size: 11px; padding: 6px 10px; }
+  /* === HIDE DUPLICATE MOBILE TOOLBAR SEARCH (mobile-bar already has search) === */
+  .chapter-mobile .chapter-toolbar {
+    display: none !important;
+  }
 
-  /* Compact 2-col grid */
+  /* === EDGE-TO-EDGE CHAPTER PAGE (no wasted horizontal space) === */
+  .chapter-page {
+    padding: 4px 0 60px !important;
+    min-height: auto !important;
+  }
+  .chapter-mobile {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .hub-accordion {
+    gap: 4px !important;
+  }
+  .hub-acc {
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+  .hub-acc[open] {
+    border-radius: 0 !important;
+  }
+  .hub-summary {
+    padding: 12px 12px !important;
+    border-radius: 0 !important;
+  }
+  .hub-summary .hub-label { font-size: 13px; }
+  .hub-num {
+    font-size: 10px !important;
+    padding: 1px 5px !important;
+  }
+  .hub-count {
+    font-size: 10px !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Topic items: full width */
+  .topic-acc {
+    margin-left: 0 !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  .topic-summary {
+    padding: 10px 12px !important;
+    border-radius: 0 !important;
+  }
+  .topic-title {
+    font-size: 13px !important;
+  }
+  .topic-num {
+    font-size: 10px !important;
+    min-width: 50px !important;
+  }
+
+  /* === TOPIC CONTENT: edge-to-edge, minimal padding === */
+  .hub-body {
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  .topic-body {
+    padding: 12px 14px 18px !important;
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+  }
+  .topic-content {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  .topic-content h1 {
+    font-size: 19px !important;
+    margin: 12px 0 8px !important;
+  }
+  .topic-content h2 {
+    font-size: 17px !important;
+    margin: 14px 0 8px !important;
+    padding-left: 8px !important;
+  }
+  .topic-content h3 {
+    font-size: 15px !important;
+    margin: 12px 0 6px !important;
+  }
+  .topic-content h4 {
+    font-size: 14px !important;
+  }
+  .topic-content p {
+    margin: 8px 0 !important;
+  }
+  .topic-content ul,
+  .topic-content ol {
+    margin: 8px 0 !important;
+    padding-left: 20px !important;
+  }
+  .topic-content pre {
+    font-size: 11px !important;
+    padding: 10px !important;
+    margin: 8px -14px !important;  /* extend to edges for code blocks */
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  .topic-content blockquote {
+    padding: 8px 12px !important;
+    margin: 10px -14px !important;  /* full bleed for quotes */
+    border-radius: 0 !important;
+  }
+  .topic-content table {
+    font-size: 12px !important;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .topic-content th,
+  .topic-content td {
+    padding: 6px 8px !important;
+    white-space: nowrap;
+  }
+  .topic-content img {
+    margin: 8px -14px !important;  /* full-bleed images */
+    max-width: calc(100% + 28px) !important;
+    border-radius: 0 !important;
+  }
+  .topic-content .mm-root {
+    font-size: 13px !important;
+  }
+  .topic-content .mm-branch {
+    font-size: 11px !important;
+  }
+  .topic-content .mm-leaf {
+    font-size: 10px !important;
+  }
+
+  /* Topic image toggle (collapse infographic) */
+  .topic-image-toggle {
+    margin: 10px -14px !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding: 10px 14px !important;
+  }
+
+  /* Compact 2-col grid for index */
   .chapters-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .ch-card { padding: 12px 6px; border-radius: 8px; }
   .ch-card .ch-num { font-size: 20px; }
@@ -1193,8 +1366,8 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   .index-stats { gap: 16px; flex-wrap: wrap; }
   .stat-pill { font-size: 12px; padding: 6px 12px; }
 
-  /* Topic page */
-  .topic-page { padding: 12px; }
+  /* Topic page (standalone pages) */
+  .topic-page { padding: 8px 12px !important; }
   .topic-page h1 { font-size: 22px; }
   .topic-page h2 { font-size: 18px; }
   .topic-page h3 { font-size: 15px; }
@@ -1211,7 +1384,8 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   .ch-card { padding: 10px 4px; }
   .ch-card .ch-num { font-size: 18px; }
   .ch-card .ch-title { font-size: 10px; }
-  .mobile-bar .stats-mini { display: none; }
+  .mobile-bar .logo-mini a { display: none; }   /* only show ⚕ logo on tiny screens */
+  .mobile-bar .current-ch-label { display: none; }  /* hide chapter label */
 }
 
 /* ===== Chapter dropdown ===== */
@@ -15190,7 +15364,7 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 20:00 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 01:41 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside

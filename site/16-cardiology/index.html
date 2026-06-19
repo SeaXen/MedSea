@@ -1160,27 +1160,200 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   header.site { display: none; }
   .mobile-bar { display: flex; }
 
-  /* Single column chapter page */
-  .chapter-page { padding: 12px 12px 60px; }
+  /* === MOBILE BAR: compact single-row, ~50px tall === */
+  .mobile-bar {
+    padding: 6px 8px;
+    gap: 4px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .mobile-bar .row.top {
+    display: contents;   /* flatten so all children of .mobile-bar share one row */
+  }
+  .mobile-bar .row.search-row {
+    display: contents;
+  }
+  /* Re-order: menu | logo | search | spacer | current-ch | github */
+  .mobile-bar .logo-mini {
+    font-size: 13px;
+    flex: 0 0 auto;
+  }
+  .mobile-bar .logo-mini .logo { font-size: 16px; }
+  .mobile-bar .logo-mini a { font-size: 13px; }
+  .mobile-bar .menu-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  .mobile-bar .search-row {
+    flex: 1;
+    min-width: 0;
+  }
+  .mobile-bar .search-row .search-box-m {
+    flex: 1;
+  }
+  .mobile-bar .search-row input {
+    padding: 6px 10px 6px 28px;
+    font-size: 12px;
+  }
+  .mobile-bar .search-row .search-icon {
+    left: 8px;
+    font-size: 11px;
+  }
+  .mobile-bar .current-ch-label {
+    font-size: 10px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .mobile-bar .github-btn {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+  .mobile-bar .stats-mini { display: none; }
 
-  /* Accordion: tighter on mobile */
-  .hub-summary { padding: 12px 14px; }
-  .hub-label { font-size: 13px; }
-  .topic-acc { margin-left: 8px; }
-  .topic-summary { padding: 9px 12px; }
-  .topic-title { font-size: 12px; }
-  .topic-num { font-size: 9px; min-width: 42px; }
-  .topic-body { padding: 10px 12px 14px; }
-  .topic-content { font-size: 13px; line-height: 1.55; }
-  .topic-content h1 { font-size: 18px; }
-  .topic-content h2 { font-size: 16px; }
-  .topic-content h3 { font-size: 14px; }
-  .topic-content pre { font-size: 11px; padding: 8px 10px; }
-  .chapter-toolbar { position: static; }
-  .chapter-toolbar .search { font-size: 12px; padding: 8px 10px; }
-  .chapter-toolbar .btn-acc { font-size: 11px; padding: 6px 10px; }
+  /* === HIDE DUPLICATE MOBILE TOOLBAR SEARCH (mobile-bar already has search) === */
+  .chapter-mobile .chapter-toolbar {
+    display: none !important;
+  }
 
-  /* Compact 2-col grid */
+  /* === EDGE-TO-EDGE CHAPTER PAGE (no wasted horizontal space) === */
+  .chapter-page {
+    padding: 4px 0 60px !important;
+    min-height: auto !important;
+  }
+  .chapter-mobile {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .hub-accordion {
+    gap: 4px !important;
+  }
+  .hub-acc {
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+  .hub-acc[open] {
+    border-radius: 0 !important;
+  }
+  .hub-summary {
+    padding: 12px 12px !important;
+    border-radius: 0 !important;
+  }
+  .hub-summary .hub-label { font-size: 13px; }
+  .hub-num {
+    font-size: 10px !important;
+    padding: 1px 5px !important;
+  }
+  .hub-count {
+    font-size: 10px !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Topic items: full width */
+  .topic-acc {
+    margin-left: 0 !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  .topic-summary {
+    padding: 10px 12px !important;
+    border-radius: 0 !important;
+  }
+  .topic-title {
+    font-size: 13px !important;
+  }
+  .topic-num {
+    font-size: 10px !important;
+    min-width: 50px !important;
+  }
+
+  /* === TOPIC CONTENT: edge-to-edge, minimal padding === */
+  .hub-body {
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  .topic-body {
+    padding: 12px 14px 18px !important;
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+  }
+  .topic-content {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  .topic-content h1 {
+    font-size: 19px !important;
+    margin: 12px 0 8px !important;
+  }
+  .topic-content h2 {
+    font-size: 17px !important;
+    margin: 14px 0 8px !important;
+    padding-left: 8px !important;
+  }
+  .topic-content h3 {
+    font-size: 15px !important;
+    margin: 12px 0 6px !important;
+  }
+  .topic-content h4 {
+    font-size: 14px !important;
+  }
+  .topic-content p {
+    margin: 8px 0 !important;
+  }
+  .topic-content ul,
+  .topic-content ol {
+    margin: 8px 0 !important;
+    padding-left: 20px !important;
+  }
+  .topic-content pre {
+    font-size: 11px !important;
+    padding: 10px !important;
+    margin: 8px -14px !important;  /* extend to edges for code blocks */
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  .topic-content blockquote {
+    padding: 8px 12px !important;
+    margin: 10px -14px !important;  /* full bleed for quotes */
+    border-radius: 0 !important;
+  }
+  .topic-content table {
+    font-size: 12px !important;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .topic-content th,
+  .topic-content td {
+    padding: 6px 8px !important;
+    white-space: nowrap;
+  }
+  .topic-content img {
+    margin: 8px -14px !important;  /* full-bleed images */
+    max-width: calc(100% + 28px) !important;
+    border-radius: 0 !important;
+  }
+  .topic-content .mm-root {
+    font-size: 13px !important;
+  }
+  .topic-content .mm-branch {
+    font-size: 11px !important;
+  }
+  .topic-content .mm-leaf {
+    font-size: 10px !important;
+  }
+
+  /* Topic image toggle (collapse infographic) */
+  .topic-image-toggle {
+    margin: 10px -14px !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding: 10px 14px !important;
+  }
+
+  /* Compact 2-col grid for index */
   .chapters-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .ch-card { padding: 12px 6px; border-radius: 8px; }
   .ch-card .ch-num { font-size: 20px; }
@@ -1193,8 +1366,8 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   .index-stats { gap: 16px; flex-wrap: wrap; }
   .stat-pill { font-size: 12px; padding: 6px 12px; }
 
-  /* Topic page */
-  .topic-page { padding: 12px; }
+  /* Topic page (standalone pages) */
+  .topic-page { padding: 8px 12px !important; }
   .topic-page h1 { font-size: 22px; }
   .topic-page h2 { font-size: 18px; }
   .topic-page h3 { font-size: 15px; }
@@ -1211,7 +1384,8 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   .ch-card { padding: 10px 4px; }
   .ch-card .ch-num { font-size: 18px; }
   .ch-card .ch-title { font-size: 10px; }
-  .mobile-bar .stats-mini { display: none; }
+  .mobile-bar .logo-mini a { display: none; }   /* only show ⚕ logo on tiny screens */
+  .mobile-bar .current-ch-label { display: none; }  /* hide chapter label */
 }
 
 /* ===== Chapter dropdown ===== */
@@ -1598,7 +1772,7 @@ footer a:hover { color: var(--accent); }
         <span class="logo">⚕</span>
         <a href="/">MedSea</a>
       </div>
-      <div class="stats"><span class="stat"><span class="num">17</span><span class="label">Hubs</span></span><span class="stat"><span class="num">332</span><span class="label">Topics</span></span><span class="stat"><span class="num">332</span><span class="label">PNGs</span></span></div>
+      <div class="stats"><span class="stat"><span class="num">17</span><span class="label">Hubs</span></span><span class="stat"><span class="num">335</span><span class="label">Topics</span></span><span class="stat"><span class="num">335</span><span class="label">PNGs</span></span></div>
     </div>
     <div class="search-box" id="searchBox">
       <input type="text" id="searchInput" placeholder="Search 2,957 topics…" autocomplete="off" spellcheck="false">
@@ -2133,8 +2307,11 @@ footer a:hover { color: var(--accent); }
   <a class="topic-item" data-topic="16.3.200" data-hub="16.3" href="?topic=16.3.200"><span class="num">16.3.200</span>Vt Ablation Ischemic Non Ischemic</a>
   <a class="topic-item" data-topic="16.3.201" data-hub="16.3" href="?topic=16.3.201"><span class="num">16.3.201</span>Avnrt Avrt Ablation</a>
   <a class="topic-item" data-topic="16.3.202" data-hub="16.3" href="?topic=16.3.202"><span class="num">16.3.202</span>Pvc Ablation</a>
+  <a class="topic-item" data-topic="16.3.203" data-hub="16.3" href="?topic=16.3.203"><span class="num">16.3.203</span>Cha2Ds2 Vasc & Has Bled Scores</a>
   <a class="topic-item" data-topic="16.3.203" data-hub="16.3" href="?topic=16.3.203"><span class="num">16.3.203</span>Cha2Ds2 Vasc Has Bled</a>
   <a class="topic-item" data-topic="16.3.204" data-hub="16.3" href="?topic=16.3.204"><span class="num">16.3.204</span>Doacs Vs Warfarin</a>
+  <a class="topic-item" data-topic="16.3.204" data-hub="16.3" href="?topic=16.3.204"><span class="num">16.3.204</span>Doacs Vs Warfarin In Af</a>
+  <a class="topic-item" data-topic="16.3.205" data-hub="16.3" href="?topic=16.3.205"><span class="num">16.3.205</span>Av Node Ablation + Pacemaker</a>
   <a class="topic-item" data-topic="16.3.205" data-hub="16.3" href="?topic=16.3.205"><span class="num">16.3.205</span>Av Node Ablation Pacemaker</a>
 </div>
 <div class="hub-group" data-hub="16.4">
@@ -2275,7 +2452,7 @@ footer a:hover { color: var(--accent); }
   <section class="chapter-main d-only">
     <div class="chapter-header">
       <h1>Cardiology</h1>
-      <div class="meta">Davidson Ch 16 · 17 hubs · 332 topics · <a href="https://medsea.notion.site/Chapter-16-Cardiology-8baa010d9cc94c48826136417d383973" target="_blank">Notion ↗</a></div>
+      <div class="meta">Davidson Ch 16 · 17 hubs · 335 topics · <a href="https://medsea.notion.site/Chapter-16-Cardiology-8baa010d9cc94c48826136417d383973" target="_blank">Notion ↗</a></div>
     </div>
     <div id="topicContainer" class="topic-detail-placeholder">
       <div class="placeholder">
@@ -17663,7 +17840,7 @@ footer a:hover { color: var(--accent); }
   <summary class="hub-summary">
     <span class="hub-arrow">▸</span>
     <span class="hub-label"><span class="hub-num">16.3</span> Arrhythmias</span>
-    <span class="hub-count">44</span>
+    <span class="hub-count">47</span>
   </summary>
   <div class="hub-body">
     <details class="topic-acc" data-topic="16.3.162" data-hub="16.3">
@@ -20617,6 +20794,118 @@ footer a:hover { color: var(--accent); }
       <summary class="topic-summary">
         <span class="topic-arrow">▸</span>
         <span class="topic-num">16.3.203</span>
+        <span class="topic-title">Cha2Ds2 Vasc & Has Bled Scores</span>
+      </summary>
+      <div class="topic-body">
+        <div class="topic-content"><h2>1. Purpose</h2>
+<p>Two complementary scores for AF anticoagulation decisions.</p>
+<ul>
+<li><strong>CHA2DS2-VASc</strong>: stroke risk → who to anticoagulate</li>
+<li><strong>HAS-BLED</strong>: bleeding risk → who needs closer monitoring / modifiable risk factor correction</li>
+</ul>
+<h2>2. CHA2DS2-VASc (Stroke Risk)</h2>
+<p><strong>Maximum score: 9</strong></p>
+<table>
+<tr><th>Letter</th><th>Criterion</th><th>Points</th></tr>
+<tr><td><strong>C</strong></td><td><strong>C</strong>ongestive Heart Failure (HF or LVEF ≤40%)</td><td>1</td></tr>
+<tr><td><strong>H</strong></td><td><strong>H</strong>ypertension</td><td>1</td></tr>
+<tr><td><strong>A₂</strong></td><td><strong>A</strong>ge ≥75</td><td>2</td></tr>
+<tr><td><strong>D</strong></td><td><strong>D</strong>iabetes mellitus</td><td>1</td></tr>
+<tr><td><strong>S₂</strong></td><td>Prior <strong>S</strong>troke / TIA / systemic thromboembolism</td><td>2</td></tr>
+<tr><td><strong>V</strong></td><td><strong>V</strong>ascular disease (prior MI, PAD, aortic plaque)</td><td>1</td></tr>
+<tr><td><strong>A</strong></td><td><strong>A</strong>ge 65–74</td><td>1</td></tr>
+<tr><td><strong>Sc</strong></td><td><strong>S</strong>ex <strong>c</strong>ategory (female)</td><td>1</td></tr>
+</table>
+<h2>3. CHA2DS2-VASc → Anticoagulation Decision (ESC 2024 / ACC-AHA 2023)</h2>
+<table>
+<tr><th>Score (Male)</th><th>Score (Female)</th><th>Recommendation</th></tr>
+<tr><td>0</td><td>0</td><td>No anticoagulation</td></tr>
+<tr><td>1</td><td>1</td><td>Consider oral anticoagulation (no female sex point alone)</td></tr>
+<tr><td>≥2</td><td>≥2 (or ≥3 with sex point)</td><td>Oral anticoagulation recommended</td></tr>
+</table>
+<blockquote><strong>Note:</strong> In females, 1 point from "female sex" alone does not mandate anticoagulation; CHA2DS2-VASc score of 2 in females = same as score 1 in males (sex itself is modifiable risk factor accounting).</blockquote>
+<h2>4. HAS-BLED (Bleeding Risk)</h2>
+<p><strong>Maximum score: 9</strong> — score <strong>≥3 = HIGH bleeding risk</strong> (NOT a contraindication to anticoagulation, but flags need for closer monitoring + modifiable risk factor correction)</p>
+<table>
+<tr><th>Letter</th><th>Criterion</th><th>Points</th></tr>
+<tr><td><strong>H</strong></td><td><strong>H</strong>ypertension (uncontrolled, SBP >160)</td><td>1</td></tr>
+<tr><td><strong>A</strong></td><td><strong>A</strong>bnormal renal function (Cr >200 µmol/L or dialysis)</td><td>1</td></tr>
+<tr><td></td><td><strong>A</strong>bnormal liver function (cirrhosis, bilirubin >2×ULN)</td><td>1</td></tr>
+<tr><td><strong>S</strong></td><td>Prior <strong>S</strong>troke</td><td>1</td></tr>
+<tr><td><strong>B</strong></td><td>Prior major <strong>B</strong>leeding or predisposition</td><td>1</td></tr>
+<tr><td><strong>L</strong></td><td><strong>L</strong>abile INR (TTR <60% on warfarin)</td><td>1</td></tr>
+<tr><td><strong>E</strong></td><td><strong>E</strong>lderly (>65)</td><td>1</td></tr>
+<tr><td><strong>D</strong></td><td><strong>D</strong>rugs (antiplatelets, NSAIDs) or alcohol (≥8 drinks/wk)</td><td>1 each</td></tr>
+</table>
+<h2>5. Modifiable Bleeding Risk Factors to Address</h2>
+<ul>
+<li>Uncontrolled hypertension (target <130/80 on anticoag)</li>
+<li>Labile INR (switch to DOAC if appropriate)</li>
+<li>Concurrent antiplatelet therapy (avoid unless ACS/stent)</li>
+<li>Alcohol excess</li>
+<li>NSAIDs (avoid)</li>
+<li>Fall risk (rarely contraindicates anticoagulation — benefits usually outweigh fall risk)</li>
+</ul>
+<h2>6. Other Stroke Risk Scores (for reference)</h2>
+<ul>
+<li><strong>ABC-AF</strong> (Age, Biomarkers [NT-proBNP, troponin], Clinical history) — better than CHA2DS2-VASc in some studies</li>
+<li><strong>GARFIELD-AF</strong>, <strong>ATRIA</strong> — less commonly used in practice</li>
+<li><strong>CHA2DS2-VASc remains the standard</strong> for ESC & ACC/AHA guidelines</li>
+</ul>
+<h2>7. Anticoagulation Choice</h2>
+<p>Once decision made to anticoagulate, choose:</p>
+<ul>
+<li><strong>DOAC preferred</strong> over warfarin in non-valvular AF (RE-LY, ROCKET-AF, ARISTOTLE, ENGAGE-AF)</li>
+<li>Dabigatran (thrombin inhibitor)</li>
+<li>Rivaroxaban (FXa inhibitor)</li>
+<li>Apixaban (FXa inhibitor)</li>
+<li>Edoxaban (FXa inhibitor)</li>
+<li><strong>Warfarin</strong> if: mechanical valve, moderate–severe MS, CrCl <30 (apixaban OK), poor adherence to DOAC monitoring</li>
+</ul>
+<blockquote><strong>Pearls</strong></blockquote>
+<blockquote>- <strong>CHA2DS2-VASc ≥2 (M) / ≥3 (F) → anticoagulate.</strong></blockquote>
+<blockquote>- <strong>HAS-BLED ≥3 = high bleed risk, NOT a contraindication — correct modifiable factors.</strong></blockquote>
+<blockquote>- <strong>DOAC > warfarin</strong> in non-valvular AF for most patients.</blockquote>
+<blockquote>- <strong>Annual review</strong> of stroke + bleeding risk + anticoagulation indication.</blockquote>
+<blockquote>- <strong>Female sex alone (score 1) does not mandate anticoagulation</strong> (ESC 2024).</blockquote>
+<h2>Topic Overview</h2>
+<div class="mindmap">
+<div class="mm-root">1. Purpose</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">2. CHA2DS2-VASc (Stroke Risk)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">3. CHA2DS2-VASc → Anticoagulation Decision (ESC 2024 / ACC-AHA 2023)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">4. HAS-BLED (Bleeding Risk)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">5. Modifiable Bleeding Risk Factors to Address</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">6. Other Stroke Risk Scores (for reference)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">7. Anticoagulation Choice</div>
+</div>
+</div>
+</div></div>
+        
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/16-cardiology/diseases/16.3.203-cha2ds2-vasc-&-has-bled-scores/topic.png" alt="Cha2Ds2 Vasc & Has Bled Scores" loading="lazy"></div>
+    </div>
+      </div>
+    </details>
+    <details class="topic-acc" data-topic="16.3.203" data-hub="16.3">
+      <summary class="topic-summary">
+        <span class="topic-arrow">▸</span>
+        <span class="topic-num">16.3.203</span>
         <span class="topic-title">Cha2Ds2 Vasc Has Bled</span>
       </summary>
       <div class="topic-body">
@@ -20832,6 +21121,239 @@ footer a:hover { color: var(--accent); }
     </div>
     <div class="topic-image-wrap collapsed">
       <div class="topic-image"><img src="/16-cardiology/diseases/16.3.204-doacs-vs-warfarin/topic.png" alt="Doacs Vs Warfarin" loading="lazy"></div>
+    </div>
+      </div>
+    </details>
+    <details class="topic-acc" data-topic="16.3.204" data-hub="16.3">
+      <summary class="topic-summary">
+        <span class="topic-arrow">▸</span>
+        <span class="topic-num">16.3.204</span>
+        <span class="topic-title">Doacs Vs Warfarin In Af</span>
+      </summary>
+      <div class="topic-body">
+        <div class="topic-content"><h2>1. Overview</h2>
+<p><strong>DOACs</strong> (Direct Oral AntiCoagulants) = NOACs = target-specific oral anticoagulants.</p>
+<p>Four agents approved for non-valvular AF (NVAF):</p>
+<ul>
+<li><strong>Dabigatran</strong> — direct <strong>thrombin (IIa)</strong> inhibitor</li>
+<li><strong>Rivaroxaban</strong> — direct <strong>factor Xa</strong> inhibitor</li>
+<li><strong>Apixaban</strong> — direct <strong>factor Xa</strong> inhibitor</li>
+<li><strong>Edoxaban</strong> — direct <strong>factor Xa</strong> inhibitor</li>
+</ul>
+<p>Warfarin = vitamin K antagonist (VKA), still used in specific situations.</p>
+<h2>2. Landmark Trials (vs Warfarin in NVAF)</h2>
+<table>
+<tr><th>Trial</th><th>Drug</th><th>Dose</th><th>Stroke/SE vs Warfarin</th><th>Major Bleed vs Warfarin</th><th>Notes</th></tr>
+<tr><td>RE-LY</td><td>Dabigatran</td><td>150 mg BID</td><td>↓ 35%</td><td>similar</td><td>110 mg BID = non-inferior</td></tr>
+<tr><td>ROCKET-AF</td><td>Rivaroxaban</td><td>20 mg OD</td><td>non-inferior</td><td>similar</td><td>CrCl 30–49 → 15 mg</td></tr>
+<tr><td>ARISTOTLE</td><td>Apixaban</td><td>5 mg BID</td><td>↓ 21%</td><td>↓ 31%</td><td>Best safety profile</td></tr>
+<tr><td>ENGAGE-AF</td><td>Edoxaban</td><td>60 mg OD</td><td>non-inferior</td><td>↓ 20%</td><td>CrCl 15–50 → 30 mg</td></tr>
+</table>
+<h2>3. DOAC Dosing in Renal Impairment</h2>
+<table>
+<tr><th>Drug</th><th>Standard</th><th>CrCl 30–49</th><th>CrCl 15–29</th><th>CrCl <15 / Dialysis</th></tr>
+<tr><td>Dabigatran</td><td>150 mg BID</td><td>150 mg BID</td><td><strong>Avoid</strong> (75 mg BID in US only)</td><td>Avoid</td></tr>
+<tr><td>Rivaroxaban</td><td>20 mg OD</td><td><strong>15 mg OD</strong></td><td><strong>Avoid</strong></td><td>Avoid</td></tr>
+<tr><td>Apixaban</td><td>5 mg BID</td><td>5 mg BID</td><td><strong>2.5 mg BID</strong> if ≥2: age ≥80, weight ≤60 kg, Cr ≥1.5</td><td>2.5 mg BID (limited data)</td></tr>
+<tr><td>Edoxaban</td><td>60 mg OD</td><td><strong>30 mg OD</strong></td><td><strong>30 mg OD</strong></td><td>Avoid</td></tr>
+</table>
+<h2>4. Warfarin — When Still Preferred</h2>
+<ul>
+<li><strong>Mechanical heart valve</strong> (RE-ALIGN: dabigatran ↑ events) — DOACs <strong>contraindicated</strong></li>
+<li><strong>Moderate–severe mitral stenosis</strong> (rhythm control issue + high stroke risk)</li>
+<li><strong>CrCl <30 mL/min</strong> (apixaban may be used with caution)</li>
+<li><strong>Significant drug interactions / poor adherence</strong> to DOAC monitoring (warfarin INR check enforces compliance)</li>
+<li><strong>Pregnancy</strong> (warfarin teratogenic; LMWH preferred)</li>
+<li><strong>Cost</strong> — warfarin cheap, DOACs expensive (generic versions now available)</li>
+</ul>
+<h2>5. Practical DOAC Initiation Checklist</h2>
+<ul>
+<li><strong>Weight, age, renal function</strong> (Cockcroft-Gault, NOT eGFR)</li>
+<li><strong>Bleeding risk</strong> (HAS-BLED, prior bleed, anaemia)</li>
+<li><strong>Concomitant drugs</strong> (check P-gp/CYP3A4 interactions)</li>
+<li>Strong P-gp/CYP3A4 inhibitors (ketoconazole, ritonavir) → avoid or dose-reduce</li>
+<li>Strong CYP3A4 inducers (rifampin, carbamazepine, phenytoin, St John's Wort) → <strong>avoid all DOACs</strong></li>
+<li><strong>Adherence assessment</strong> (DOACs have short half-life; missed doses → loss of protection)</li>
+<li><strong>Baseline labs</strong>: CBC, BMP (Cr), LFTs, coagulation</li>
+<li><strong>Avoid</strong> if active bleeding, recent high-risk surgery, plt <50</li>
+</ul>
+<h2>6. Reversal Agents</h2>
+<table>
+<tr><th>Drug</th><th>Reversal Agent</th><th>Mechanism</th></tr>
+<tr><td>Dabigatran</td><td><strong>Idarucizumab</strong> (Praxbind)</td><td>monoclonal antibody fragment</td></tr>
+<tr><td>Rivaroxaban / Apixaban</td><td><strong>Andexanet alfa</strong> (Andexxa)</td><td>recombinant factor Xa decoy</td></tr>
+<tr><td>Edoxaban</td><td>Andexanet alfa (off-label)</td><td></td></tr>
+<tr><td>Warfarin</td><td><strong>Vitamin K</strong> (slow) + <strong>4-factor PCC</strong> (urgent) or FFP</td><td>replace clotting factors</td></tr>
+</table>
+<h2>7. Perioperative Management</h2>
+<ul>
+<li><strong>Low bleeding-risk procedure</strong>: stop DOAC 24 h before; resume 24 h after</li>
+<li><strong>High bleeding-risk procedure / neuraxial</strong>: stop 48 h before (CrCl normal)</li>
+<li><strong>CrCl <30</strong>: stop <strong>≥72 h</strong> before high-risk procedure</li>
+<li><strong>Bridging with LMWH</strong>: NOT needed for DOACs (short half-life); may ↑ bleeding</li>
+<li><strong>Spinal/epidural</strong>: specific timing rules — minimum 24–72 h gap depending on DOAC</li>
+</ul>
+<blockquote><strong>Pearls</strong></blockquote>
+<blockquote>- <strong>DOACs are first-line</strong> for non-valvular AF (better efficacy/safety, fixed dosing, no monitoring).</blockquote>
+<blockquote>- <strong>Apixaban</strong> has the best bleeding profile in ARISTOTLE.</blockquote>
+<blockquote>- <strong>Renal function by Cockcroft-Gault</strong>, not eGFR.</blockquote>
+<blockquote>- <strong>Idarucizumab</strong> reverses dabigatran; <strong>andexanet</strong> reverses anti-Xa DOACs.</blockquote>
+<blockquote>- <strong>Warfarin remains preferred</strong> for mechanical valves and moderate–severe MS.</blockquote>
+<blockquote>- <strong>No routine monitoring</strong> for DOACs, but check adherence + renal function <strong>annually</strong> (more often if CrCl <60).</blockquote>
+<h2>Topic Overview</h2>
+<div class="mindmap">
+<div class="mm-root">1. Overview</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">2. Landmark Trials (vs Warfarin in NVAF)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">3. DOAC Dosing in Renal Impairment</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">4. Warfarin — When Still Preferred</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">5. Practical DOAC Initiation Checklist</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">6. Reversal Agents</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">7. Perioperative Management</div>
+</div>
+</div>
+</div></div>
+        
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/16-cardiology/diseases/16.3.204-doacs-vs-warfarin-in-af/topic.png" alt="Doacs Vs Warfarin In Af" loading="lazy"></div>
+    </div>
+      </div>
+    </details>
+    <details class="topic-acc" data-topic="16.3.205" data-hub="16.3">
+      <summary class="topic-summary">
+        <span class="topic-arrow">▸</span>
+        <span class="topic-num">16.3.205</span>
+        <span class="topic-title">Av Node Ablation + Pacemaker</span>
+      </summary>
+      <div class="topic-body">
+        <div class="topic-content"><h2>1. Concept</h2>
+<p><strong>Ablate and pace</strong> = catheter ablation of the AV node + permanent pacemaker implantation. Achieves <strong>rate control</strong> when:</p>
+<ul>
+<li>Pharmacological rate control fails</li>
+<li>AF is permanent and refractory to rhythm control</li>
+<li>Patient is symptomatic, elderly, or unsuitable for complex ablation (PVI)</li>
+</ul>
+<blockquote><strong>Key point:</strong> This is <strong>rate control of last resort</strong> — patient becomes <strong>pacemaker-dependent</strong>.</blockquote>
+<h2>2. Indications</h2>
+<ul>
+<li><strong>Symptomatic permanent AF</strong> with inadequate rate control despite maximally tolerated drug therapy (β-blocker, CCB, digoxin ± amiodarone)</li>
+<li><strong>Refractory AF</strong> unsuitable for catheter ablation of AF (PVI) due to:</li>
+<li>Severely dilated LA (>55 mm)</li>
+<li>Long-standing persistent AF with extensive fibrosis</li>
+<li>Multiple prior failed ablations</li>
+<li>Severe comorbidity making repeated procedures unsafe</li>
+<li><strong>Tachycardia-induced cardiomyopathy</strong> from poorly controlled AF</li>
+<li><strong>HF with permanent AF</strong> where CRT indicated (biventricular pacing needed)</li>
+</ul>
+<h2>3. Procedure</h2>
+<h3>Step 1: AV Node Ablation</h3>
+<ul>
+<li>Catheter via femoral vein to right heart</li>
+<li>Map AV node / compact AV node region (typically slow pathway zone)</li>
+<li><strong>Radiofrequency ablation</strong> (or cryoablation) — complete heart block targeted</li>
+<li>Endpoint: complete AV block with junctional escape rhythm <40 bpm</li>
+<li>Success rate: <strong>>97%</strong> for complete AV block</li>
+<li>Complication rate: <2% (cardiac tamponade, vascular access, AV block failure)</li>
+</ul>
+<h3>Step 2: Pacemaker Implantation</h3>
+<ul>
+<li><strong>Single-chamber (VVIR)</strong> — for sedentary patients</li>
+<li><strong>Dual-chamber (DDDR)</strong> — for sinus rhythm patients (rare)</li>
+<li><strong>CRT-P / CRT-D</strong> — if HFrEF + LBBB (CRT upgrade later if needed)</li>
+<li><strong>His-bundle pacing (HBP)</strong> / <strong>Left bundle branch area pacing (LBBAP)</strong> — preserves ventricular synchrony, emerging as preferred over RV-only pacing</li>
+</ul>
+<blockquote>⚠️ <strong>Order matters:</strong> Ablate AV node FIRST → wait 4–6 weeks for ventricular remodelling → THEN implant pacemaker (reduces lead-related complications, allows RV function assessment).</blockquote>
+<h2>4. Pacemaker Choice (2023 ESC Guidelines)</h2>
+<table>
+<tr><th>Scenario</th><th>Recommended Pacemaker</th></tr>
+<tr><td>Permanent AF + preserved EF + sedentary</td><td><strong>VVIR</strong></td></tr>
+<tr><td>Permanent AF + preserved EF + active</td><td><strong>DDDR</strong> (rare)</td></tr>
+<tr><td>Permanent AF + <strong>HFrEF</strong> (LVEF ≤35%) + LBBB</td><td><strong>CRT-P / CRT-D</strong> (or HBP-CRT)</td></tr>
+<tr><td>Permanent AF + any LV dysfunction</td><td><strong>Conduction system pacing (HBP/LBBAP)</strong> if available</td></tr>
+<tr><td>Young patient (avoid long-term RV pacing)</td><td><strong>HBP or LBBAP</strong></td></tr>
+</table>
+<h2>5. Outcomes</h2>
+<ul>
+<li><strong>Highly effective rate control</strong> — exercise tolerance improves</li>
+<li><strong>Quality of life</strong>: improves significantly (AIRCARE, APAF-CRT trials)</li>
+<li><strong>EF recovery</strong> in tachycardia-induced cardiomyopathy (~50% cases)</li>
+<li><strong>No atrial kick</strong> — minor reduction in CO (15–20%), but most patients asymptomatic</li>
+<li><strong>No need for rate-control drugs</strong> post-procedure</li>
+<li><strong>Risk</strong>: lifelong pacemaker dependency, RV pacing-induced cardiomyopathy (mitigated by HBP/LBBAP)</li>
+</ul>
+<h2>6. Comparison with AF Catheter Ablation (PVI)</h2>
+<table>
+<tr><th>Aspect</th><th>AV Node Ablation + PM</th><th>AF Catheter Ablation (PVI)</th></tr>
+<tr><td>Goal</td><td>Rate control</td><td>Rhythm control (sinus rhythm)</td></tr>
+<tr><td>Maintains SR</td><td>No</td><td>Yes</td></tr>
+<tr><td>Repeat procedure</td><td>Rare</td><td>20–40% need redo over 5y</td></tr>
+<tr><td>Pacemaker dependency</td><td>100%</td><td><2%</td></tr>
+<tr><td>LV function impact</td><td>Depends on pacing site</td><td>Preserved / improved</td></tr>
+<tr><td>Suitable for</td><td>Elderly, refractory, unsuitable for PVI</td><td>First-line for symptomatic paroxysmal/persistent AF</td></tr>
+<tr><td>Long-term outcome</td><td>Stable (pace-dependent)</td><td>Variable (AF recurrence)</td></tr>
+</table>
+<h2>7. Complications & Long-term Concerns</h2>
+<ul>
+<li><strong>Pacemaker-related</strong>: lead dislodgement, infection (1–2%), battery depletion</li>
+<li><strong>RV pacing-induced cardiomyopathy</strong>: 10–20% over 5+ years (reduced by HBP/LBBAP)</li>
+<li><strong>Persistent AF-related stroke risk</strong> unchanged — anticoagulation still required per CHA2DS2-VASc</li>
+<li><strong>No escape rhythm if pacemaker fails</strong> — patient dependent; close follow-up essential</li>
+</ul>
+<blockquote><strong>Pearls</strong></blockquote>
+<blockquote>- <strong>Ablate and pace</strong> = rate control of last resort, not first-line.</blockquote>
+<blockquote>- <strong>Patient becomes 100% pacemaker-dependent</strong> — counsel thoroughly before procedure.</blockquote>
+<blockquote>- <strong>HBP / LBBAP preferred</strong> over RV pacing to preserve ventricular synchrony (avoid pacing-induced cardiomyopathy).</blockquote>
+<blockquote>- <strong>CRT indicated</strong> if HFrEF + LBBB + permanent AF.</blockquote>
+<blockquote>- <strong>Continue anticoagulation</strong> indefinitely per CHA2DS2-VASc — ablation does not eliminate stroke risk.</blockquote>
+<blockquote>- <strong>Wait 4–6 weeks between AV node ablation and pacemaker</strong> if doing staged procedure.</blockquote>
+<h2>Topic Overview</h2>
+<div class="mindmap">
+<div class="mm-root">1. Concept</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">2. Indications</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">3. Procedure</div>
+<div class="mm-node mm-l2">Step 1: AV Node Ablation</div>
+<div class="mm-node mm-l2">Step 2: Pacemaker Implantation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">4. Pacemaker Choice (2023 ESC Guidelines)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">5. Outcomes</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">6. Comparison with AF Catheter Ablation (PVI)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">7. Complications &amp; Long-term Concerns</div>
+</div>
+</div>
+</div></div>
+        
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:11px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/16-cardiology/diseases/16.3.205-av-node-ablation-+-pacemaker/topic.png" alt="Av Node Ablation + Pacemaker" loading="lazy"></div>
     </div>
       </div>
     </details>
@@ -23539,112 +24061,84 @@ footer a:hover { color: var(--accent); }
       </summary>
       <div class="topic-body">
         <div class="topic-content"><h2>1. Definition</h2>
-<p><strong>Acute Decompensated Heart Failure (ADHF)</strong>: Rapid onset or worsening of HF symptoms requiring urgent therapy.</p>
-<h2>2. Four Clinical Profiles (Stevenson)</h2>
+<p><strong>Acute Decompensated Heart Failure (ADHF)</strong>: Rapid onset or worsening of HF symptoms requiring urgent therapy. Spectrum from mild pulmonary congestion to cardiogenic shock.</p>
+<h2>4 Subtypes (Stevenson):</h2>
 <ul>
-<li><strong>Warm-dry</strong>: compensated, no congestion (~25%)</li>
-<li><strong>Warm-wet</strong>: congestion, perfusion OK (~50%, most common)</li>
-<li><strong>Cold-dry</strong>: hypoperfused, no congestion (~5%)</li>
-<li><strong>Cold-wet</strong>: hypoperfused + congested (~20%, worst prognosis — cardiogenic shock)</li>
+<li><strong>Warm-dry</strong> (compensated, no congestion)</li>
+<li><strong>Warm-wet</strong> (congested, perfused — most common)</li>
+<li><strong>Cold-dry</strong> (hypoperfused, no congestion)</li>
+<li><strong>Cold-wet</strong> (hypoperfused + congested — worst prognosis)</li>
 </ul>
-<h2>3. Initial Assessment</h2>
+<h2>2. Precipitants</h2>
 <ul>
-<li><strong>Vitals</strong>: BP, HR, RR, SpO2, Temp</li>
-<li><strong>JVP, peripheral oedema, lung crackles, S3, cool peripheries</strong></li>
-<li><strong>ECG</strong>: ischemia, arrhythmia, low voltage (effusion)</li>
-<li><strong>CXR</strong>: cardiomegaly, pulmonary oedema, pleural effusion</li>
-<li><strong>Labs</strong>: BNP/NT-proBNP, troponin, U&E, LFT, FBC, TSH, lactate (if shock)</li>
-<li><strong>Echo</strong> if not recent: LVEF, valves, RV, effusion, PASP</li>
+<li><strong>Dietary/medication non-compliance</strong></li>
+<li><strong>Acute MI / ischemia</strong></li>
+<li><strong>Arrhythmia</strong> (AF with rapid VR, VT)</li>
+<li><strong>Infection</strong> (pneumonia, sepsis)</li>
+<li><strong>Thyroid dysfunction</strong> (hyper/hypo)</li>
+<li><strong>Anemia, renal failure, PE</strong></li>
+<li><strong>Drugs</strong>: NSAIDs, negative inotropes, corticosteroids</li>
 </ul>
-<h2>4. Management by Profile</h2>
-<h3>Warm-Wet (Most Common) — Congestion with Adequate Perfusion</h3>
+<h2>3. Clinical Features</h2>
 <ul>
-<li><strong>IV loop diuretic</strong>: furosemide 40-80 mg IV bolus (or 2.5× home PO dose), repeat q15-30 min or continuous infusion 10-40 mg/h</li>
-<li><strong>Add thiazide</strong> (metolazone 2.5-5 mg, chlorothiazide IV) for diuretic resistance</li>
-<li><strong>Vasodilator</strong> if SBP >110: nitroglycerin or nitroprusside</li>
-<li><strong>Oxygen + NIV</strong> (CPAP/BPAP) for pulmonary oedema</li>
-<li><strong>Acetazolamide</strong> 500 mg IV (ADVOR trial, 2022) — improves decongestion</li>
+<li><strong>Dyspnea</strong> (orthopnea, PND, dyspnea on exertion)</li>
+<li><strong>Peripheral edema, ascites, JVP elevation</strong></li>
+<li><strong>S3 gallop</strong>, pulmonary crackles</li>
+<li><strong>Hepatojugular reflux</strong>, cool extremities</li>
+<li><strong>Chest X-ray</strong>: pulmonary edema, cardiomegaly, pleural effusion, Kerley B lines</li>
 </ul>
-<h3>Cold-Wet (Cardiogenic Shock Profile) — Worst Prognosis</h3>
+<h2>4. Initial Management</h2>
 <ul>
-<li><strong>Inotrope</strong>: dobutamine 2-20 µg/kg/min (warm hypotension); milrinone 0.375-0.75 µg/kg/min (cold + CKD)</li>
-<li><strong>Vasopressor</strong> if MAP <65: norepinephrine 0.05-0.5 µg/kg/min; consider vasopressin</li>
-<li><strong>Diuretic</strong> cautiously (avoid if hypoperfused — diuretics need renal perfusion)</li>
-<li><strong>Mechanical circulatory support</strong> if not responding:</li>
-<li><strong>IABP</strong>: modest support, afterload reduction</li>
-<li><strong>Impella</strong>: higher support, LV unloading</li>
-<li><strong>VA-ECMO</strong>: highest support, but ↑ afterload; consider Impella + ECMO (ECPELLA)</li>
-<li><strong>Revascularization</strong> if ischaemia-driven (culprit PCI)</li>
+<li><strong>Oxygen</strong> if SpO₂ <90% (avoid hyperoxia)</li>
+<li><strong>IV access, cardiac monitoring, urine output</strong></li>
+<li><strong>IV loop diuretic</strong> (furosemide 40–80 mg bolus, repeat or continuous infusion)</li>
+<li><strong>Morphine</strong> for severe distress (use cautiously)</li>
+<li><strong>Nitroglycerin</strong> (sublingual/IV) for hypertension/pulmonary edema</li>
 </ul>
-<h3>Cold-Dry — Hypoperfusion without Congestion</h3>
-<ul>
-<li><strong>Inotrope</strong> (dobutamine, milrinone)</li>
-<li><strong>Cautious fluids</strong> if hypovolaemic (small bolus trial)</li>
-<li><strong>Reassess</strong> if truly dry vs under-filled (consider passive leg raise)</li>
-</ul>
-<h3>Warm-Dry — Compensated</h3>
-<ul>
-<li><strong>Optimise oral GDMT</strong>, no IV therapy needed</li>
-<li><strong>Pre-discharge</strong>: ensure on 4 pillars (ARNI/ACEi, BB, MRA, SGLT2i)</li>
-</ul>
-<h2>5. SCAI Cardiogenic Shock Staging</h2>
+<h2>5. Pharmacologic Therapy</h2>
 <table>
-<tr><th>Stage</th><th>Description</th><th>Management</th></tr>
-<tr><td><strong>A (At Risk)</strong></td><td>Risk factors, no symptoms</td><td>Monitor</td></tr>
-<tr><td><strong>B (Beginning)</strong></td><td>Hypotension, no hypoperfusion</td><td>Close monitoring, treat cause</td></tr>
-<tr><td><strong>C (Classic)</strong></td><td>Hypoperfusion, requiring intervention</td><td>Inotropes, vasopressors</td></tr>
-<tr><td><strong>D (Deteriorating)</strong></td><td>Worsening despite escalating support</td><td>Escalate MCS (Impella, ECMO)</td></tr>
-<tr><td><strong>E (Extremis)</strong></td><td>Cardiac arrest, refractory shock</td><td>ECMO-CPR, salvage</td></tr>
+<tr><th>Profile</th><th>Therapy</th></tr>
+<tr><td>Warm-wet, BP normal</td><td>IV loop diuretic ± thiazide (metolazone)</td></tr>
+<tr><td>Warm-wet, BP high</td><td>IV loop diuretic + IV nitroglycerin/nesiritide</td></tr>
+<tr><td>Cold-wet</td><td>Inotrope (dobutamine) + diuretic; consider vasodilator</td></tr>
+<tr><td>Cold-dry</td><td>Inotrope ± cautious fluids</td></tr>
+<tr><td>Severe HTN, pulmonary edema</td><td>High-dose IV nitroglycerin or nitroprusside</td></tr>
+<tr><td>Refractory</td><td>Thiazide diuretic, low-dose dopamine for renal perfusion</td></tr>
 </table>
-<h2>6. GDMT 4 Pillars (Pre-Discharge Initiation)</h2>
-<table>
-<tr><th>Drug Class</th><th>Examples</th><th>Key Trial</th></tr>
-<tr><td><strong>ARNI / ACEi / ARB</strong></td><td>Sacubitril-valsartan, enalapril, losartan</td><td>PARADIGM-HF, CONSENSUS</td></tr>
-<tr><td><strong>Beta-blocker</strong></td><td>Bisoprolol, carvedilol, metoprolol succinate</td><td>CIBIS-II, COPERNICUS, MERIT-HF</td></tr>
-<tr><td><strong>MRA</strong></td><td>Spironolactone, eplerenone</td><td>RALES, EMPHASIS-HF</td></tr>
-<tr><td><strong>SGLT2i</strong></td><td>Dapagliflozin, empagliflozin</td><td>DAPA-HF, EMPEROR-Reduced</td></tr>
-</table>
-<blockquote><strong>STRONG-HF (2022):</strong> Rapid up-titration within 2 weeks of discharge reduces 180-day HF readmission + mortality.</blockquote>
-<h2>7. Discharge Criteria</h2>
+<h2>6. Monitoring & Escalation</h2>
 <ul>
-<li><strong>euvolaemia</strong> (JVP not elevated, no oedema, weight back to dry weight)</li>
-<li><strong>On GDMT</strong> or with clear titration plan</li>
-<li><strong>BNP improved</strong></li>
-<li><strong>Renal function stable</strong> (not worsening)</li>
-<li><strong>Follow-up within 7-14 days</strong></li>
+<li>Daily weights, strict I/O, electrolytes (K⁺, Mg²⁺, Na⁺)</li>
+<li>Renal function (BUN/Cr), BNP/NT-proBNP trend</li>
+<li><strong>Refractory to diuretics</strong> → ultrafiltration, paracentesis, or MCS (IABP, Impella, ECMO)</li>
+<li><strong>Long-term</strong>: Transition to GDMT (ACEi/ARNI, beta-blocker, MRA, SGLT2i) once euvolemic</li>
 </ul>
 <blockquote><strong>Pearls</strong></blockquote>
-<blockquote>- <strong>Profile first, then treat.</strong> Warm-wet → diuresis; Cold-wet → inotrope + MCS.</blockquote>
-<blockquote>- <strong>IV loop diuretic 2.5× home dose</strong> for ADHF.</blockquote>
-<blockquote>- <strong>Acetazolamide</strong> (ADVOR) boosts diuresis.</blockquote>
-<blockquote>- <strong>SCAI staging</strong> guides escalation.</blockquote>
-<blockquote>- <strong>GDMT up-titrated before discharge</strong> (STRONG-HF).</blockquote>
-<blockquote>- <strong>Cardiorenal syndrome:</strong> WRF during decongestion — usually transient, continue diuresis.</blockquote>
+<blockquote>- <strong>High-dose NTG</strong>: 200+ µg/min for hypertensive pulmonary edema</blockquote>
+<blockquote>- Avoid CCBs (negative inotropic) in HFrEF</blockquote>
+<blockquote>- ACEi/ARNI held during acute hypotension, restart before discharge</blockquote>
+<blockquote>- <strong>SGLT2i (dapagliflozin, empagliflozin)</strong> initiated before discharge ↓ mortality</blockquote>
+<blockquote>- Discharge on <strong>all 4 pillars of GDMT</strong> (ARNI/ACEi + beta-blocker + MRA + SGLT2i) when stable</blockquote>
 <h2>Topic Overview</h2>
 <div class="mindmap">
 <div class="mm-root">1. Definition</div>
 <div class="mm-branches">
 <div class="mm-branch">
-<div class="mm-node mm-l1">2. Four Clinical Profiles (Stevenson)</div>
+<div class="mm-node mm-l1">4 Subtypes (Stevenson):</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">3. Initial Assessment</div>
+<div class="mm-node mm-l1">2. Precipitants</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">4. Management by Profile</div>
-<div class="mm-node mm-l2">Warm-Wet (Most Common) — Congestion with Adequate Perfusion</div>
-<div class="mm-node mm-l2">Cold-Wet (Cardiogenic Shock Profile) — Worst Prognosis</div>
-<div class="mm-node mm-l2">Cold-Dry — Hypoperfusion without Congestion</div>
-<div class="mm-node mm-l2">Warm-Dry — Compensated</div>
+<div class="mm-node mm-l1">3. Clinical Features</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">5. SCAI Cardiogenic Shock Staging</div>
+<div class="mm-node mm-l1">4. Initial Management</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">6. GDMT 4 Pillars (Pre-Discharge Initiation)</div>
+<div class="mm-node mm-l1">5. Pharmacologic Therapy</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">7. Discharge Criteria</div>
+<div class="mm-node mm-l1">6. Monitoring &amp; Escalation</div>
 </div>
 </div>
 </div></div>
@@ -25217,96 +25711,111 @@ footer a:hover { color: var(--accent); }
         <span class="topic-title">**Next**: Create Moc Template Directories Hubs And Scaffolds</span>
       </summary>
       <div class="topic-body">
-        <div class="topic-content"><h2>1. Project Plan</h2>
-<p>Build the complete knowledge base structure for the Cardiac Emergencies section (Davidson Chapter 16).</p>
-<h2>2. Phase 1: Foundations</h2>
+        <div class="topic-content"><h2>1. Change Log Entry</h2>
+<p><strong>Date</strong>: 2026-06-15</p>
+<p><strong>Action</strong>: Initial hierarchy created</p>
+<p><strong>Source</strong>: Davidson's Principles and Practice of Medicine, 24th Edition, Chapter 16 — "Cardiac emergencies"</p>
+<h2>2. Davidson Chapter 16 Structure</h2>
+<p>The initial folder hierarchy mirrors Davidson 24e Chapter 16:</p>
+<h3>Subheadings Used as Hubs</h3>
+<ol>
+<li><strong>Acute Coronary Syndrome Emergencies</strong></li>
+</ol>
 <ul>
-<li>[x] <strong>Folder creation</strong>: <code>/16_Cardiac_Emergencies/</code></li>
-<li>[x] <strong>Template file</strong>: <code>_template.md</code> (Hub, Leaf, MOC, Viva)</li>
-<li>[x] <strong>Section MOC</strong>: <code>Cardiac Emergencies MOC.md</code></li>
-<li>[x] <strong>Index file</strong>: Track all files in section</li>
+<li>STEMI</li>
+<li>NSTEMI/UA</li>
+<li>Cardiogenic shock</li>
+<li>Mechanical complications of MI</li>
 </ul>
-<h2>3. Phase 2: Hub Files</h2>
+<ol>
+<li><strong>Acute Heart Failure & Cardiogenic Shock</strong></li>
+</ol>
 <ul>
-<li>[x] <code>STEMI Hub.md</code> — primary PCI, fibrinolysis</li>
-<li>[x] <code>Cardiogenic Shock Hub.md</code> — SCAI, MCS</li>
-<li>[x] <code>Arrhythmia Emergencies Hub.md</code> — VF, VT, TdP, bradycardia</li>
-<li>[x] <code>Aortic & Pericardial Emergencies Hub.md</code> — dissection, tamponade, AAA</li>
-<li>[x] <code>Post-Cardiac Arrest Care Hub.md</code> — TTM, prognostication</li>
+<li>ADHF</li>
+<li>SCAI shock stages</li>
 </ul>
-<h2>4. Phase 3: Leaf Files</h2>
+<ol>
+<li><strong>Life-Threatening Arrhythmias</strong></li>
+</ol>
 <ul>
-<li>[x] 16 leaf files (subtopics)</li>
-<li>[x] Differential tables</li>
-<li>[x] Diagnostic algorithms</li>
-<li>[x] Management protocols</li>
+<li>VF/pulseless VT</li>
+<li>Sustained VT</li>
+<li>Unstable bradyarrhythmia</li>
+<li>Torsades de pointes</li>
 </ul>
-<h2>5. Phase 4: Enhancement</h2>
+<ol>
+<li><strong>Aortic & Pericardial Emergencies</strong></li>
+</ol>
 <ul>
-<li>[x] Update MOC with checkboxes</li>
-<li>[x] Add high-yield tables</li>
-<li>[x] Add viva topics</li>
-<li>[x] Cross-link to Medicine MOC, Davidson Roadmap</li>
-<li>[ ] Add Mermaid diagrams (anatomy, flow)</li>
-<li>[ ] Add image placeholders (ECG strips, CXR)</li>
-<li>[ ] Add reference citations (ESC/AHA guidelines)</li>
+<li>Aortic dissection</li>
+<li>Cardiac tamponade</li>
+<li>Ruptured aortic aneurysm</li>
 </ul>
-<h2>6. Phase 5: Review & Quality</h2>
+<ol>
+<li><strong>Post-Cardiac Arrest Care</strong></li>
+</ol>
 <ul>
-<li>[ ] Spell check</li>
-<li>[ ] Cross-link verification</li>
-<li>[ ] Tag consistency</li>
-<li>[ ] Peer review (study group)</li>
-<li>[ ] Spaced repetition schedule</li>
+<li>TTM</li>
+<li>Coronary angiography post-ROSC</li>
+<li>Neuroprognostication</li>
+<li>Long-term management</li>
 </ul>
-<h2>7. Estimated Timeline</h2>
-<table>
-<tr><th>Phase</th><th>Tasks</th><th>Time</th></tr>
-<tr><td>1: Foundations</td><td>Folders, template, MOC</td><td>2 h</td></tr>
-<tr><td>2: Hubs</td><td>5 hub files</td><td>4 h</td></tr>
-<tr><td>3: Leaves</td><td>16 leaf files</td><td>8 h</td></tr>
-<tr><td>4: Enhancement</td><td>Tables, viva, links</td><td>4 h</td></tr>
-<tr><td>5: Review</td><td>QC, refs</td><td>2 h</td></tr>
-<tr><td><strong>Total</strong></td><td></td><td><strong>~20 h</strong></td></tr>
-</table>
-<h2>8. Quality Standards</h2>
+<h2>3. Initial Hubs Created</h2>
 <ul>
-<li><strong>Every leaf file</strong>: Definition, Etiology, Pathophysiology, Clinical Features, Diagnosis, Management, Complications, Pearls</li>
-<li><strong>Every hub file</strong>: Overview, links to leaves, clinical algorithms</li>
-<li><strong>Tables</strong>: At least 1 differential or classification</li>
-<li><strong>Tags</strong>: At least 3 tags per file</li>
-<li><strong>Cross-links</strong>: At least 2 per file</li>
+<li><code>STEMI (primary PCI).md</code> (Hub)</li>
+<li><code>Cardiogenic shock (SCAI classification, MCS).md</code> (Hub)</li>
+<li><code>Arrhythmia Emergencies (VF, VT, TdP).md</code> (Hub)</li>
+<li><code>Aortic Emergencies (dissection, aneurysm).md</code> (Hub)</li>
+<li><code>Post-Arrest Care (TTM, neuroprognostication).md</code> (Hub)</li>
+</ul>
+<h2>4. Files Created</h2>
+<ul>
+<li>5 hub files</li>
+<li>16 leaf files</li>
+<li>1 MOC file</li>
+<li>Total: 22 files in <code>/16_Cardiac_Emergencies/</code></li>
+</ul>
+<h2>5. Cross-References</h2>
+<ul>
+<li>Each file tagged <code>#davidson-chapter-16</code></li>
+<li>Linked to Medicine MOC § Cardiology</li>
+<li>Linked to Davidson Chapter Roadmap § Chapter 16</li>
+</ul>
+<h2>6. Next Steps (Logged)</h2>
+<ul>
+<li>[x] Create initial folder structure</li>
+<li>[x] Generate hub files</li>
+<li>[x] Generate leaf files</li>
+<li>[ ] Update MOC with checkboxes</li>
+<li>[ ] Add high-yield tables</li>
+<li>[ ] Add viva topics</li>
+<li>[ ] Add cross-links</li>
+<li>[ ] Schedule review</li>
 </ul>
 <blockquote><strong>Pearls</strong></blockquote>
-<blockquote>- <strong>Templates</strong> ensure consistency</blockquote>
-<blockquote>- <strong>Hub-and-spoke</strong> model aids retrieval</blockquote>
-<blockquote>- <strong>Spaced repetition</strong> = long-term retention</blockquote>
-<blockquote>- <strong>Viva topics</strong> = active learning</blockquote>
-<blockquote>- <strong>Cross-linking</strong> = knowledge graph</blockquote>
+<blockquote>- <strong>Davidson-aligned hierarchy</strong> = familiar to UK/SA students</blockquote>
+<blockquote>- Hub-and-spoke model = easier navigation</blockquote>
+<blockquote>- Date-stamped changelog = tracks evolution</blockquote>
+<blockquote>- Cross-reference checklist = completion tracking</blockquote>
 <h2>Topic Overview</h2>
 <div class="mindmap">
-<div class="mm-root">1. Project Plan</div>
+<div class="mm-root">1. Change Log Entry</div>
 <div class="mm-branches">
 <div class="mm-branch">
-<div class="mm-node mm-l1">2. Phase 1: Foundations</div>
+<div class="mm-node mm-l1">2. Davidson Chapter 16 Structure</div>
+<div class="mm-node mm-l2">Subheadings Used as Hubs</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">3. Phase 2: Hub Files</div>
+<div class="mm-node mm-l1">3. Initial Hubs Created</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">4. Phase 3: Leaf Files</div>
+<div class="mm-node mm-l1">4. Files Created</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">5. Phase 4: Enhancement</div>
+<div class="mm-node mm-l1">5. Cross-References</div>
 </div>
 <div class="mm-branch">
-<div class="mm-node mm-l1">6. Phase 5: Review &amp; Quality</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">7. Estimated Timeline</div>
-</div>
-<div class="mm-branch">
-<div class="mm-node mm-l1">8. Quality Standards</div>
+<div class="mm-node mm-l1">6. Next Steps (Logged)</div>
 </div>
 </div>
 </div></div>
@@ -31873,7 +32382,7 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 20:01 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 01:41 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside
