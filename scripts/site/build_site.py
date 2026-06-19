@@ -311,11 +311,21 @@ header.site {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 8px 16px;
-  display: flex; align-items: center; gap: 12px;
+  padding: 8px 24px;
+  display: flex; align-items: center;
   flex-wrap: nowrap;
   min-height: 48px;
 }
+header.site .header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  max-width: 1600px; width: 100%;
+  margin: 0 auto;
+}
+header.site .header-left { display: flex; align-items: center; gap: 16px; justify-self: start; }
+header.site .header-right { display: flex; align-items: center; gap: 12px; justify-self: end; }
 header.site .logo-wrap {
   display: flex; align-items: center; gap: 8px;
   font-size: 15px; font-weight: 700; letter-spacing: -0.02em;
@@ -350,8 +360,8 @@ header.site .stats .stat .label { color: var(--text-dim); font-size: 9px; text-t
 header.site .search-box {
   position: relative;
   flex: 1 1 auto;
-  max-width: 360px;
-  margin: 0 12px;
+  max-width: 480px;
+  margin: 0 auto;
 }
 header.site .search-box input {
   width: 100%;
@@ -542,17 +552,21 @@ header.site .ext-links a {
 header.site .ext-links a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ===== Landing page main ===== */
-main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
+main {
+  padding: 28px 24px 64px;
+  max-width: 1640px;
+  margin: 0 auto;
+}
 .chapters-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
+  gap: 12px;
   margin-top: 8px;
 }
-@media (max-width: 1400px) { .chapters-grid { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 1100px) { .chapters-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 800px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 500px)  { .chapters-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1500px) { .chapters-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1200px) { .chapters-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 850px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 550px)  { .chapters-grid { grid-template-columns: 1fr; } }
 .section-title {
   font-size: 13px; color: var(--text-dim);
   text-transform: uppercase; letter-spacing: 0.12em;
@@ -922,9 +936,11 @@ footer a { color: var(--text-dim); }
 footer a:hover { color: var(--accent); }
 
 @media (max-width: 900px) {
-  header.site { gap: 12px; }
-  header.site .stats { order: 3; width: 100%; justify-content: flex-start; }
-  header.site .chapter-dropdown { margin-left: 0; }
+  header.site { padding: 8px 16px; }
+  header.site .header-inner { flex-wrap: wrap; gap: 8px; }
+  header.site .header-left { flex: 1 1 auto; }
+  header.site .header-right { margin-left: auto; }
+  header.site .search-box { order: 3; flex: 1 1 100%; max-width: 100%; margin-top: 4px; }
   .chapter-page { grid-template-columns: 1fr; }
   .chapter-sidebar { position: static; max-height: 400px; }
   .chapters-grid { grid-template-columns: 1fr; }
@@ -990,25 +1006,31 @@ def page_header(title, current_ch_slug=None, stats=None):
 </head>
 <body>
 <header class="site">
-  <div class="logo-wrap">
-    <span class="logo">⚕</span>
-    <a href="/">MedSea</a>
-  </div>
-  <div class="search-box" id="searchBox">
-    <input type="text" id="searchInput" placeholder="Search 2,957 topics…" autocomplete="off" spellcheck="false">
-    <div class="search-results" id="searchResults"></div>
-  </div>
-  <div class="stats">{stats_html}</div>
-  <div class="chapter-dropdown" id="chapterDropdown">
-    <button class="drop-btn" type="button" onclick="document.getElementById('chapterDropdown').classList.toggle('open')">
-      {btn_label}
-    </button>
-    <div class="drop-menu">
-      {''.join(dropdown_items)}
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="logo-wrap">
+        <span class="logo">⚕</span>
+        <a href="/">MedSea</a>
+      </div>
+      <div class="stats">{stats_html}</div>
     </div>
-  </div>
-  <div class="ext-links">
-    <a href="https://github.com/SeaXen/MedSea" target="_blank">GitHub ↗</a>
+    <div class="search-box" id="searchBox">
+      <input type="text" id="searchInput" placeholder="Search 2,957 topics…" autocomplete="off" spellcheck="false">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+    <div class="header-right">
+      <div class="chapter-dropdown" id="chapterDropdown">
+        <button class="drop-btn" type="button" onclick="document.getElementById('chapterDropdown').classList.toggle('open')">
+          {btn_label}
+        </button>
+        <div class="drop-menu">
+          {''.join(dropdown_items)}
+        </div>
+      </div>
+      <div class="ext-links">
+        <a href="https://github.com/SeaXen/MedSea" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
   </div>
 </header>
 <script>
@@ -1132,6 +1154,7 @@ def page_header(title, current_ch_slug=None, stats=None):
   }});
 }})();
 </script>
+<main>
 """
 
 
