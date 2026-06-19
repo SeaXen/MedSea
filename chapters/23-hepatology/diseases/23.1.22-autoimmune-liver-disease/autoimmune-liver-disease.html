@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Autoimmune Liver Disease — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Autoimmune Liver Disease</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>IAIHG simplified criteria</b> for AIH diagnosis (autoantibodies, IgG, histology, exclusion)</li><li>[ ] Distinguish <b>AIH Type 1 vs Type 2</b> and manage with steroids ± azathioprine</li><li>[ ] Diagnose <b>PBC</b> (AMA, ALP, histology) and apply <b>treatment response criteria</b> (Paris, Toronto, Barcelona)</li><li>[ ] Diagnose <b>PSC</b> (MRCP beading, IBD association) and manage surveillance (cholangiocarcinoma)</li><li>[ ] Identify <b>Overlap Syndromes</b> (AIH-PBC, AIH-PSC, PBC-PSC) using Paris criteria</li><li>[ ] Recognise <b>IgG4-related sclerosing cholangitis</b> (response to steroids)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Autoimmune Hepatitis (AIH)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Simplified IAIHG Diagnostic Criteria (Score ≥6 = Probable, ≥7 = Definite)</div>
+<table class="ctable"><tr><th>Parameter</th><th>Cut-off</th><th>Points</th></tr><tr><td>-----------</td><td>---------</td><td>--------</td></tr><tr><td>**ANA or SMA**</td><td>≥1:40</td><td>1</td></tr><tr><td></td><td>≥1:80</td><td>2</td></tr><tr><td>**LKM-1**</td><td>≥1:40</td><td>2</td></tr><tr><td>**IgG**</td><td>>ULN</td><td>1</td></tr><tr><td></td><td>>1.1×ULN</td><td>2</td></tr><tr><td>**Histology (Interface hepatitis)**</td><td>Compatible</td><td>1</td></tr><tr><td></td><td>Typical</td><td>2</td></tr><tr><td>**Exclusion of Viral Hepatitis**</td><td>Yes</td><td>2</td></tr></table>
+<table class="ctable"><tr><th>Score</th><th>Diagnosis</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**≥7**</td><td>**Definite AIH**</td></tr><tr><td>**6**</td><td>**Probable AIH**</td></tr><tr><td><6</td><td>Not AIH</td></tr></table>
+<div class="sub-h">AIH Type 1 vs Type 2</div>
+<table class="ctable"><tr><th>Feature</th><th>Type 1 (Classic)</th><th>Type 2</th></tr><tr><td>---------</td><td>------------------</td><td>--------</td></tr><tr><td>**Autoantibodies**</td><td>**ANA and/or SMA** (≥1:40)</td><td>**LKM-1** (anti-LKM1)</td></tr><tr><td>**Age/Peak**</td><td>Any age (bimodal: young women, elderly)</td><td>Children/young adults</td></tr><tr><td>**Associated Autoimmunity**</td><td>Thyroid, coeliac, RA, Sjogren's</td><td>Coeliac, T1DM, vitiligo</td></tr><tr><td>**HLA Association**</td><td>DR3, DR4</td><td>DR7, DR3</td></tr><tr><td>**Course**</td><td>Chronic, relapsing</td><td>More severe, rapid cirrhosis</td></tr><tr><td>**Treatment Response**</td><td>Excellent (steroids)</td><td>Good but higher relapse</td></tr></table>
+<div class="sub-h">Treatment</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Duration</th><th>Monitoring</th></tr><tr><td>------</td><td>------</td><td>----------</td><td>------------</td></tr><tr><td>**Prednisolone**</td><td>**30-40mg/day** (or **Budesonide 3mg TDS** if mild/non-cirrhotic)</td><td>**Induction**: until ALT/AST normal + IgG normal</td><td>FBC, glucose, BP, bone density, eyes</td></tr><tr><td>**Azathioprine**</td><td>**1-2 mg/kg/day** (1.5 mg/kg typical)</td><td>**Maintenance** (add at induction or after 2-4 weeks)</td><td>TPMT genotype, FBC, LFT q1-3mo</td></tr><tr><td>**Alternative**</td><td>**Mycophenolate (1g BD)**, **Tacrolimus (0.1mg/kg/day)**, **Ciclosporin**</td><td>2nd-line</td><td>FBC, LFT, renal, levels</td></tr></table>
+<div class="callout"><b>Remission</b>: Normal ALT/AST, IgG, no autoantibodies → <b>maintain azathioprine ≥2 years</b> before taper. <b>Relapse</b>: Re-induce with steroids + restart azathioprine → lifelong maintenance if &gt;2 relapses.</div>
+<div class="sub-h">AIH in Pregnancy</div>
+<table class="ctable"><tr><th>Drug</th><th>Safety</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Prednisolone**</td><td>Safe (low placental transfer)</td></tr><tr><td>**Azathioprine**</td><td>**Safe** (low placental transfer); continue throughout</td></tr><tr><td>**MMF/Tacrolimus/Ciclosporin**</td><td>**Contraindicated**</td></tr><tr><td>**Ursodeoxycholic acid**</td><td>Safe (if cholestatic component)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Primary Biliary Cholangitis (PBC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Diagnostic Criteria (All 2 of 3 Required)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Finding</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**1. Biochemistry**</td><td>**ALP >1.5× ULN** (persistent >6 months)</td></tr><tr><td>**2. Autoantibody**</td><td>**AMA positive** (M2 subtype, ≥1:40)</td></tr><tr><td>**3. Histology** (if needed)</td><td>**Florid duct lesion** (non-suppurative destructive cholangitis)</td></tr></table>
+<div class="callout"><b>AMA-negative PBC</b> = AMA-negative but ALP&gt;1.5×ULN + compatible histology + ANA (sp100/gp210) + IgM ↑</div>
+<div class="sub-h">Treatment</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Indication</th><th>Duration</th></tr><tr><td>------</td><td>------</td><td>------------</td><td>----------</td></tr><tr><td>**Ursodeoxycholic Acid (UDCA)**</td><td>**13-15 mg/kg/day** (divided doses)</td><td>**All PBC** (first-line)</td><td>**Lifelong**</td></tr><tr><td>**Obeticholic Acid (OCA)**</td><td>**5mg OD → 10mg OD** (max 10mg)</td><td>**UDCA inadequate response** (after 12 months) OR intolerance</td><td>Lifelong</td></tr></table>
+<div class="sub-h">Response Criteria (Assess at 12 Months)</div>
+<table class="ctable"><tr><th>Criteria</th><th>ALP Target</th><th>Bilirubin Target</th><th>Transaminases</th></tr><tr><td>----------</td><td>------------</td><td>------------------</td><td>---------------</td></tr><tr><td>**Paris I**</td><td><3×ULN</td><td>≤1×ULN</td><td><2×ULN</td></tr><tr><td>**Paris II**</td><td><1.5×ULN</td><td>≤1×ULN</td><td>Normal</td></tr><tr><td>**Toronto**</td><td><1.67×ULN</td><td>≤1×ULN</td><td>—</td></tr><tr><td>**Barcelona**</td><td>Normal</td><td>Normal</td><td>Normal</td></tr></table>
+<div class="callout"><b>Inadequate Response</b> → Add <b>Obeticholic Acid 5mg OD</b> (titrate to 10mg if ALP still &gt;1.67×ULN at 3 months, tolerability permitting).</div>
+<div class="sub-h">PBC Complications &amp; Surveillance</div>
+<table class="ctable"><tr><th>Complication</th><th>Surveillance</th></tr><tr><td>--------------</td><td>--------------</td></tr><tr><td>**Osteoporosis**</td><td>**DEXA scan at diagnosis**, then q2-3yrs; Calcium 1g + Vit D 800-1000IU daily</td></tr><tr><td>**Fat-soluble vitamin deficiency**</td><td>Check A, D, E, K annually; supplement if deficient</td></tr><tr><td>**HCC Surveillance**</td><td>**If cirrhosis**: 6-monthly US ± AFP</td></tr><tr><td>**Portal Hypertension**</td><td>Screen for varices if cirrhosis; SBP risk if ascites</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Primary Sclerosing Cholangitis (PSC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Diagnostic Criteria</div>
+<table class="ctable"><tr><th>Modality</th><th>Finding</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**MRCP (Diagnostic)**</td><td>**Multifocal strictures + dilatations** ("beading") of intra/extrahepatic bile ducts</td></tr><tr><td>**ERCP**</td><td>**Gold standard** (if MRCP equivocal / therapeutic intervention needed)</td></tr><tr><td>**Histology** (if needed)</td><td>**Periductal "onion-skin" fibrosis**</td></tr><tr><td>**Autoantibodies**</td><td>**p-ANCA (60-80%)**, ANA, SMA; **AMA negative**</td></tr><tr><td>**IBD Association**</td><td>**70-80% UC**; 5-10% Crohn's; **PSC may precede IBD diagnosis**</td></tr></table>
+<div class="callout"><b>Small-duct PSC</b> = Normal MRCP/ERCP + histology only; better prognosis.</div>
+<div class="sub-h">PSC &amp; IBD</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**IBD Type**</td><td>**Ulcerative Colitis (80-90%)**, Crohn's (5-10%)</td></tr><tr><td>**PSC ↑ Risk of**</td><td>**Colorectal Cancer** (if UC extent >left colon)</td></tr><tr><td>**Surveillance**</td><td>**Colonoscopy q1-2yrs** (chromoendoscopy + targeted biopsies)</td></tr><tr><td>**Liver Disease**</td><td>PSC may **precede IBD diagnosis** by years</td></tr></table>
+<div class="sub-h">PSC Management &amp; Surveillance</div>
+<table class="ctable"><tr><th>Aspect</th><th>Recommendation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**UDCA**</td><td>**High-dose (28-30mg/kg)** — **No mortality benefit** (may worsen outcomes in some studies); **not routinely recommended**</td></tr><tr><td>**ERCP**</td><td>**Dominant stricture dilation/stenting** (symptomatic, cholangitis, abnormal LFTs)</td></tr><tr><td>**Cholangiocarcinoma (CCA) Surveillance**</td><td>**Annual MRI/MRCP + CA19-9** (sensitivity limited); **ERCP + brush cytology** if dominant stricture</td></tr><tr><td>**Liver Transplant**</td><td>**Only curative option**; 5-yr survival ~85%; **Recurrence ~20-30%**</td></tr><tr><td>**IBD Surveillance**</td><td>**Colonoscopy q1-2yr chromoendoscopy** if UC >left colon</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Overlap Syndromes</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Paris Criteria (AIH-PBC)</div>
+<p><i>...continued (truncated for renderer performance)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Autoimmune Liver Disease · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

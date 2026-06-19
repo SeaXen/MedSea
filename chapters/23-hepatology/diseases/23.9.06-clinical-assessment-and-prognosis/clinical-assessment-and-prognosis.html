@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clinical assessment and prognosis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Clinical assessment and prognosis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Perform structured clinical assessment of ALF patient</li><li>[ ] Apply monitoring protocols for ICU management</li><li>[ ] Apply prognostic scores (King's College, CLIF-C, MELD, APACHE)</li><li>[ ] Determine transplant referral timing</li><li>[ ] Identify FCPS/MRCP high-yield monitoring parameters</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Initial Clinical Assessment</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Patient with Suspected ALF] --&gt; B[History]
+    B --&gt; C[Drug History: Paracetamol, Herbal, Anti-TB, Antibiotics, Alcohol]
+    B --&gt; D[Risk Factors: Travel, Sexual, IVDU, Transfusion, Autoimmune]
+    B --&gt; E[Timeline: Jaundice Onset → Encephalopathy]
+    B --&gt; F[Past Liver Disease?]
+    F --&gt;|Yes| G[Consider ACLF Not ALF]
+    F --&gt;|No| H[Proceed ALF Workup]
+    H --&gt; I[Physical Exam]
+    I --&gt; J[Encephalopathy Grade (West Haven)]
+    I --&gt; K[Signs: Jaundice, Ascites, Hepatomegaly, Stigmata CLD]
+    I --&gt; L[Signs: Asterixis, Fetor Hepaticus, Collateral Veins]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Encephalopathy Grading (West Haven)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Consciousness</th><th>Intellectual</th><th>Behaviour</th><th>Neurological</th></tr><tr><td>-------</td><td>---------------</td><td>--------------</td><td>-----------</td><td>--------------</td></tr><tr><td>**0**</td><td>Normal</td><td>Normal</td><td>Normal</td><td>Normal</td></tr><tr><td>**1**</td><td>Trivial lack of awareness</td><td>Short attention, Impaired arithmetic</td><td>Euphoria/Anxiety, Irritability</td><td>**Asterixis ABSENT**</td></tr><tr><td>**2**</td><td>**Lethargy**</td><td>Disorientation (Time), Personality change</td><td>Inappropriate</td><td>**Asterixis PRESENT**</td></tr><tr><td>**3**</td><td>**Somnolent but Rousable**</td><td>Confusion (Place), Gross disorientation</td><td>Bizarre</td><td>Asterixis, Hyperreflexia, Rigidity</td></tr><tr><td>**4**</td><td>**Coma (Unrousable)**</td><td>No response</td><td>No response</td><td>Decerebrate, Seizures</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Covert</b> = MHE/G1 (No asterixis); <b>Overt</b> = G2-4 (Asterixis present)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Essential Monitoring Parameters (ICU)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Frequency</th><th>Target / Action Threshold</th></tr><tr><td>-----------</td><td>-----------</td><td>---------------------------</td></tr><tr><td>**Encephalopathy Grade**</td><td>**Hourly (G3-4), 2-4h (G1-2)**</td><td>G3-4 → Intubation Consideration</td></tr><tr><td>**Arterial pH / Lactate**</td><td>**Hourly (Unstable), 2-4h**</td><td>pH <7.3 → KCC Met; Lactate >4 → Resuscitate</td></tr><tr><td>**Blood Glucose**</td><td>**Hourly**</td><td>**<3.5 mmol/L → IV Dextrose** (Hypoglycaemia common)</td></tr><tr><td>**INR / PT**</td><td>**2-4 Hourly**</td><td>Rising → KCC Assessment; FFP if Bleeding/Procedure</td></tr><tr><td>**Renal Function (Cr, Urea, K, Na, Mg, Phos)**</td><td>**2-4 Hourly**</td><td>Cr Rise → HRS Assessment; K/Mg/Phos Replace</td></tr><tr><td>**Fluid Balance**</td><td>**Hourly**</td><td>Target Euvolaemia; Avoid Overload (Cerebral Oedema)</td></tr><tr><td>**ABG / Electrolytes**</td><td>**2-4 Hourly**</td><td>Correct Acidosis, Hypokalaemia, Hypophosphataemia</td></tr><tr><td>**Cardiovascular (HR, BP, CVP, Vasopressors)**</td><td>**Continuous**</td><td>MAP ≥65; Norepinephrine First-Line</td></tr><tr><td>**Temperature**</td><td>**4 Hourly**</td><td>>38.3 → Cultures + Antibiotics</td></tr><tr><td>**ICP (if Monitored)**</td><td>**Continuous**</td><td>**>20 mmHg → Mannitol/Hypertonic Saline**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Laboratory Monitoring Schedule</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Frequency</th><th>Critical Values</th></tr><tr><td>------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**ABG (pH, Lactate, Glucose)**</td><td>Hourly initially</td><td>pH <7.3, Lactate >4, Glucose <3.5</td></tr><tr><td>**FBC**</td><td>6-12 Hourly</td><td>Hb Drop (Bleeding), WBC (Infection)</td></tr><tr><td>**Coagulation (PT/INR, APTT, Fibrinogen)**</td><td>4-6 Hourly</td><td>INR Rise → KCC; Fibrinogen <1.5 → Cryoprecipitate</td></tr><tr><td>**LFTs (ALT, AST, Bilirubin, ALP, GGT)**</td><td>6-12 Hourly</td><td>Trend (Not prognostic alone)</td></tr><tr><td>**Renal (U&E, Cr, Urea, Mg, Phos)**</td><td>6-12 Hourly</td><td>Cr Rise → HRS; Phos <0.5 Replace</td></tr><tr><td>**Ammonia**</td><td>6-12 Hourly</td><td>Correlates Poorly; Supportive Only</td></tr><tr><td>**Blood Gas (Venous/Arterial)**</td><td>Hourly (Unstable)</td><td>pH, Lactate, Base Excess</td></tr><tr><td>**Blood/urine cultures**</td><td>On Admission + If Fever</td><td>Guide Antibiotics</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Encephalopathy Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Airway</th><th>Lactulose</th><th>Rifaximin</th><th>ICP Monitor</th><th>Antibiotics</th></tr><tr><td>-------</td><td>--------</td><td>-----------</td><td>-----------</td><td>-------------</td><td>-------------</td></tr><tr><td>**1-2**</td><td>Ward, Monitor</td><td>15-30ml BD → 2-3 soft stools</td><td>Not Routine</td><td>No</td><td>If Infection Suspected</td></tr><tr><td>**3-4**</td><td>**ICU, Intubate (GCS<8)**</td><td>PR 300ml/700ml q4-6h</td><td>**550mg BD NG**</td><td>**Consider**</td><td>Prophylactic (Some Units)</td></tr></table>
+<div class="callout"><b>Cerebral Oedema</b>: Main risk in G3-4; Target ICP &lt;20 mmHg; CPP &gt;60 mmHg; Head Up 30°</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Prognostic Scores in ALF</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. King's College Criteria (KCC)</div>
+<table class="ctable"><tr><th>Population</th><th>Criteria</th><th>Action if Met</th></tr><tr><td>------------</td><td>----------</td><td>---------------</td></tr><tr><td>**Paracetamol**</td><td>**pH <7.30** (post-resuscitation) **OR** (PT >100s + Cr >300 μmol/L + HE Grade III/IV)</td><td>Urgent Transplant Referral</td></tr><tr><td>**Non-Paracetamol**</td><td>**PT >100s (INR >6.5)** **OR** Any 3 of: Age <10 or >40, Non-A/Non-B/Drug/Indeterminate, Jaundice→HE >7d, PT >50s, Bilirubin >300 μmol/L</td><td>Urgent Transplant Referral</td></tr></table>
+<div class="sub-h">2. Clichy Criteria (Paracetamol Alternative)</div>
+<table class="ctable"><tr><th>Criterion</th><th>Threshold</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**Factor V**</td><td>**<20%** (if <30y) **or <30%** (if ≥30y)</td></tr><tr><td>**AND**</td><td>**HE Grade III/IV**</td></tr></table>
+<div class="sub-h">3. MELD Score (General)</div>
+<p>``<code> MELD = 3.78×ln(Bilirubin) + 11.2×ln(INR) + 9.57×ln(Creatinine) + 6.43 </code>``</p>
+<ul><li><b>MELD ≥30</b>: High Mortality; Consider Transplant</li></ul>
+<div class="sub-h">4. APACHE II / SOFA</div>
+<ul><li><b>APACHE II ≥15</b> or <b>SOFA ≥8</b>: High ICU Mortality</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Transplant Referral Criteria</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[ALF Diagnosis] --&gt; B[KCC Assessment Daily]
+    B --&gt; C{KCC Met?}
+    C --&gt;|Yes| D[URGENT Transplant Referral]
+    C --&gt;|No| E[Clinical Deterioration?]
+    E --&gt;|Yes| D
+    E --&gt;|No| F[KCC Daily Reassessment]
+    D --&gt; G[Contact Transplant Centre]
+    D --&gt; H[Continue NAC (if PCM)]
+    D --&gt; I[ICU Optimisation]</code></pre>
+<div class="sub-h">Indications for Urgent Transplant Referral</div>
+<table class="ctable"><tr><th>Indication</th><th>Detail</th></tr><tr><td>------------</td><td>--------</td></tr><tr><td>**KCC Met**</td><td>Primary Indication</td></tr><tr><td>**Clichy Criteria Met**</td><td>Factor V <20/30% + HE III/IV</td></tr><tr><td>**MELD ≥30**</td><td>Alternative Threshold</td></tr><tr><td>**Clinical Deterioration**</td><td>Despite Max Medical Therapy</td></tr><tr><td>**Uncontrollable ICP**</td><td>>25 mmHg Despite Therapy</td></tr><tr><td>**Multi-organ Failure**</td><td>Progressive Despite Support</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Encephalopathy Grading**</td><td>G1-2: No asterixis; G3-4: Asterixis present</td></tr><tr><td>**Monitoring**</td><td>Hourly: Glucose, pH, Lactate, Encephalopathy; 2-4h: INR, Renal</td></tr><tr><td>**Hypoglycaemia**</td><td>**Common** — Hourly Glucose, IV Dextrose</td></tr><tr><td>**KCC Paracetamol**</td><td>pH<7.3 OR (PT>100s + Cr>300 + HE III/IV)</td></tr><tr><td>**KCC Non-PCM**</td><td>PT>100s OR 3 of 5 Minor Criteria</td></tr><tr><td>**Clichy Criteria**</td><td>Factor V <20% (<30y) / <30% (≥30y) + HE III/IV</td></tr><tr><td>**Transplant Referral**</td><td>KCC Met → Urgent Super-Urgent Listing</td></tr><tr><td>**Cerebral Oedema**</td><td>G3-4 Risk; ICP >20 → Mannitol/3% Saline</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the monitoring parameters in ALF ICU?</b></li><li><b>How do you grade hepatic encephalopathy (West Haven)?</b></li><li><b>What are the King's College Criteria for paracetamol ALF?</b></li><li><b>What are the King's College Criteria for non-paracetamol ALF?</b></li><li><b>What is the difference between King's College and Clichy criteria?</b></li><li><b>When do you refer ALF for transplant?</b></li><li><b>How do you manage Grade 3-4 encephalopathy?</b></li><li><b>What is the role of lactate monitoring in ALF?</b></li><li><b>What is Factor V in Clichy criteria?</b></li><li><b>How often do you reassess KCC?</b></li><li><b>What is the management of hypoglycaemia in ALF?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Grade 1 vs 2 Asterixis</td><td>**G1: Absent; G2: Present**</td></tr><tr><td>KCC PCM vs Non-PCM</td><td>PCM: pH<7.3 OR (PT>100+Cr>300+HE III/IV); Non-PCM: PT>100 OR 3 of 5 Minor</td></tr><tr><td>Minor Criteria Non-PCM</td><td>AAIII: Age <10/>40, Aetiology, Interval>7d, INR>3.5, Icterus (Bil>300)</td></tr><tr><td>Factor V Clichy</td><td><20% if <30y; <30% if ≥30y + HE III/IV</td></tr><tr><td>ICP Monitoring</td><td>G3-4 if Available; Target <20 mmHg; CPP >60</td></tr><tr><td>Hypoglycaemia in ALF</td><td>**Hourly Glucose** — Gluconeogenesis Impaired; IV Dextrose</td></tr><tr><td>NAC in Non-PCM ALF</td><td>**Beneficial in Early HE (G1-2)** — ALFSG Trial</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((ALF Clinical Assessment))
+    History
+      Drug (PCM, Herbal, Anti-TB)
+      Timeline (Jaundice → HE)
+      Risk Factors
+    Exam
+      HE Grade (West Haven)
+      Asterixis (G2+)
+      Jaundice, Ascites, CLD Signs
+    Monitoring (ICU)
+      Hourly: Glucose, pH, Lactate, HE
+      2-4h: INR, Renal, ABG, Fluid Balance
+      Continuous: CVS, ICP (if G3-4)
+    HE Grades
+      G1: Trivial Awareness, No Asterixis
+      G2: Lethargy, Asterixis+
+      G3: Somnolent, Asterixis+
+      G4: Coma
+    Prognostic Scores
+      King's College (PCM/Non-PCM)
+      Clichy (Factor V + HE)
+      MELD, APACHE II
+    Transplant Referral
+      KCC Met → Urgent
+      Clichy Met → Urgent
+      MELD ≥30 → Consider
+      Clinical Deterioration → Urgent
+    G3-4 Management
+      Intubate (GCS&lt;8)
+      Lactulose PR
+      Rifaximin
+      ICP Monitor
+      Mannitol/3% Saline</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Monitoring (ICU)**</th><th>**Frequency**</th></tr><tr><td>----------------------</td><td>---------------</td></tr><tr><td>Glucose</td><td>**Hourly**</td></tr><tr><td>pH / Lactate</td><td>**Hourly**</td></tr><tr><td>Encephalopathy</td><td>**Hourly**</td></tr><tr><td>INR / Coagulation</td><td>2-4 Hourly</td></tr><tr><td>Renal Function</td><td>2-4 Hourly</td></tr><tr><td>Fluid Balance</td><td>Hourly</td></tr></table>
+<table class="ctable"><tr><th>**West Haven Grades**</th><th>**Features**</th><th>**Asterixis**</th></tr><tr><td>-----------------------</td><td>--------------</td><td>---------------</td></tr><tr><td>1</td><td>Trivial Awareness, Impaired Maths</td><td>**Absent**</td></tr><tr><td>2</td><td>Lethargy, Disorientation (Time)</td><td>**Present**</td></tr><tr><td>3</td><td>Somnolent, Confusion (Place)</td><td>Present</td></tr><tr><td>4</td><td>Coma</td><td>Untestable</td></tr></table>
+<table class="ctable"><tr><th>**KCC Paracetamol**</th><th>**Threshold**</th></tr><tr><td>---------------------</td><td>---------------</td></tr><tr><td>Arterial pH</td><td>**<7.30** (Post-Resus)</td></tr><tr><td>**OR** PT >100s + Cr >300 + HE III/IV</td><td>**All 3 Required**</td></tr></table>
+<table class="ctable"><tr><th>**KCC Non-Paracetamol**</th><th></th></tr><tr><td>-------------------------</td><td>--</td></tr><tr><td>PT >100s (INR>6.5)</td><td>**OR**</td></tr><tr><td>Any 3 of 5 Minor</td><td>**AAIII**</td></tr></table>
+<table class="ctable"><tr><th>**Transplant Referral**</th><th></th></tr><tr><td>-------------------------</td><td>--</td></tr><tr><td>KCC Met</td><td>**Urgent Super-Urgent Listing**</td></tr><tr><td>Clichy Met</td><td>**Urgent**</td></tr><tr><td>MELD ≥30</td><td>Consider</td></tr></table>
+<table class="ctable"><tr><th>**Cerebral Oedema**</th><th>**G3-4**: ICP >20 → Mannitol/3% Saline</th></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>Monitoring Parameters</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>HE Grades + Asterixis</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>KCC Paracetamol</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>KCC Non-Paracetamol</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Transplant Referral Criteria</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>Hourly Monitoring in ALF</td><td></td><td></td></tr><tr><td>HE Grade 1 vs 2 Asterixis</td><td></td><td></td></tr><tr><td>KCC PCM pH Threshold</td><td></td><td></td></tr><tr><td>KCC Non-PCM Minor Criteria</td><td></td><td></td></tr><tr><td>Transplant Referral Indications</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Acute Liver Failure/Definition and Aetiology|ALF Definition]]</li><li>[[Acute Liver Failure/King's College Criteria|King's College Criteria]]</li><li>[[Acute Liver Failure/CLIF-C ACLF and ACLF grades|CLIF-C ACLF]]</li><li>[[Acute Liver Failure/N-acetylcysteine therapy|NAC Therapy]]</li><li>[[Acute Liver Failure/Liver transplant referral and timing|Transplant Referral]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Clinical assessment and prognosis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

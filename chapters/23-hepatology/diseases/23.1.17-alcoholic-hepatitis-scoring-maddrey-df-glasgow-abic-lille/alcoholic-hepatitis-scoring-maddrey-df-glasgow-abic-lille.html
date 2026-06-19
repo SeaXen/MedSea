@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alcoholic hepatitis scoring (Maddrey DF, Glasgow, ABIC, Lille) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Alcoholic hepatitis scoring (Maddrey DF, Glasgow, ABIC, Lille)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Calculate Maddrey Discriminant Function (DF)</li><li>[ ] Calculate Glasgow Alcoholic Hepatitis Score (GAHS)</li><li>[ ] Calculate ABIC Score</li><li>[ ] Apply Lille Score for steroid response at Day 7</li><li>[ ] Know FCPS/MRCP high-yield cut-offs and clinical decisions</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Overview: Why Score Alcoholic Hepatitis?</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Score</th><th>Purpose</th><th>Key Use</th></tr><tr><td>-------</td><td>---------</td><td>---------</td></tr><tr><td>**Maddrey DF**</td><td>**Severity** (original)</td><td>**>32 = Severe → Consider steroids**</td></tr><tr><td>**Glasgow (GAHS)**</td><td>**Prognosis** (simpler)</td><td>**≥9 = Poor prognosis (28-day mortality >50%)**</td></tr><tr><td>**ABIC**</td><td>**Prognosis** (age, bilirubin, INR, creatinine)</td><td>**>9 = 90-day mortality >50%**</td></tr><tr><td>**Lille**</td><td>**Steroid response** at Day 7</td><td>**>0.45 = Non-response → Stop steroids**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Maddrey Discriminant Function (DF)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Formula</div>
+<p>``<code> Maddrey DF = 4.6 × (PT_patient - PT_control) + Bilirubin (mg/dL) </code>``</p>
+<ul><li><b>PT in seconds</b> (patient - control)</li><li><b>Bilirubin in mg/dL</b> (not μmol/L)</li></ul>
+<div class="sub-h">Risk Stratification</div>
+<table class="ctable"><tr><th>DF Score</th><th>Severity</th><th>30-Day Mortality</th><th>Action</th></tr><tr><td>----------</td><td>----------</td><td>------------------</td><td>--------</td></tr><tr><td>**<32**</td><td>Mild/Moderate</td><td><20%</td><td>**No steroids** (supportive care)</td></tr><tr><td>**≥32**</td><td>**Severe**</td><td>>35%</td><td>**Consider steroids** (if no contraindication)</td></tr><tr><td>**>54**</td><td>Very Severe</td><td>>50%</td><td>Steroids + ICU; consider transplant eval</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>DF &gt;32 = Severe alcoholic hepatitis = Steroid candidate</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Glasgow Alcoholic Hepatitis Score (GAHS)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Parameters (5 Variables)</div>
+<table class="ctable"><tr><th>Variable</th><th>Points</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Age ≥50**</td><td>1</td></tr><tr><td>**WBC ≥15 ×10⁹/L**</td><td>1</td></tr><tr><td>**Urea ≥5 mmol/L** (or BUN ≥14 mg/dL)</td><td>1</td></tr><tr><td>**Bilirubin ≥12.5 mg/dL** (214 μmol/L)</td><td>1</td></tr><tr><td>**PT ratio ≥1.5** (or INR ≥1.5)</td><td>1</td></tr></table>
+<div class="sub-h">Scoring</div>
+<table class="ctable"><tr><th>GAHS Score</th><th>Risk</th><th>28-Day Mortality</th><th>84-Day Mortality</th></tr><tr><td>------------</td><td>------</td><td>------------------</td><td>------------------</td></tr><tr><td>**≤8**</td><td>Low</td><td><15%</td><td><25%</td></tr><tr><td>**≥9**</td><td>**High**</td><td>**>50%**</td><td>**>60%**</td></tr></table>
+<div class="callout"><b>GAHS ≥9 = Poor prognosis</b> — similar to Maddrey &gt;32 but easier to calculate</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">ABIC Score (Age, Bilirubin, INR, Creatinine)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Formula</div>
+<p>``<code> ABIC = Age × 0.01 + logₑ(Bilirubin μmol/L) × 0.58 + INR × 0.89 + logₑ(Creatinine μmol/L) × 0.69 </code>``</p>
+<ul><li><b>Bilirubin in μmol/L</b></li><li><b>Creatinine in μmol/L</b></li></ul>
+<div class="sub-h">Risk Stratification</div>
+<table class="ctable"><tr><th>ABIC Score</th><th>Risk</th><th>90-Day Mortality</th></tr><tr><td>------------</td><td>------</td><td>------------------</td></tr><tr><td>**<5.58**</td><td>Low</td><td><10%</td></tr><tr><td>**5.58-9.0**</td><td>Intermediate</td><td>10-40%</td></tr><tr><td>**>9.0**</td><td>**High**</td><td>**>50%**</td></tr></table>
+<div class="callout"><b>ABIC &gt;9 = 90-day mortality &gt;50%</b> — most accurate for intermediate-term prognosis</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Lille Score (Steroid Response at Day 7)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Formula (Simplified)</div>
+<p>``<code> Lille = 3.19 - 0.101 × Age + 0.147 × Renal_Insufficiency + 0.0165 × Baseline_Bilirubin - 0.206 × Day7_Bilirubin - 1.99 × Prothrombin_Time_Ratio_Day7 </code>``</p>
+<ul><li><b>Renal_Insufficiency</b>: 1 if Cr &gt;133 μmol/L (1.5 mg/dL) at baseline, else 0</li><li><b>Bilirubin in μmol/L</b></li><li><b>PT Ratio</b>: Patient PT / Control PT</li></ul>
+<div class="sub-h">Interpretation</div>
+<table class="ctable"><tr><th>Lille Score</th><th>Response</th><th>Action</th></tr><tr><td>-------------</td><td>----------</td><td>--------</td></tr><tr><td>**<0.16**</td><td>**Complete responder**</td><td>Continue steroids 28 days total</td></tr><tr><td>**0.16-0.45**</td><td>**Partial responder**</td><td>Continue steroids 28 days total</td></tr><tr><td>**>0.45**</td><td>**Non-responder**</td><td>**STOP steroids** (futility; increased infection risk)</td></tr><tr><td>**>0.56**</td><td>**Null responder**</td><td>**STOP steroids**; worse prognosis</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Lille &gt;0.45 at Day 7 = Stop steroids</b> — high-yield exam fact</div>
+<div class="sub-h">Practical Lille Calculation (Bedside Approximation)</div>
+<ul><li><b>Complete response</b>: Bilirubin <b>decreasing</b> at Day 7</li><li><b>Non-response</b>: Bilirubin <b>not decreasing</b> at Day 7</li><li><b>Key</b>: Day 7 bilirubin vs baseline trajectory</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Comparison Table</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Score</th><th>Variables</th><th>Primary Use</th><th>Key Cut-off</th><th>Mortality Prediction</th></tr><tr><td>-------</td><td>-----------</td><td>-------------</td><td>-------------</td><td>---------------------</td></tr><tr><td>**Maddrey DF**</td><td>PT, Bilirubin</td><td>**Severity → Steroid decision**</td><td>**>32 = Severe**</td><td>30-day</td></tr><tr><td>**GAHS**</td><td>Age, WBC, Urea, Bilirubin, PT</td><td>Prognosis</td><td>**≥9 = High risk**</td><td>28/84-day</td></tr><tr><td>**ABIC**</td><td>Age, Bilirubin, INR, Creatinine</td><td>Prognosis</td><td>**>9 = High risk**</td><td>90-day</td></tr><tr><td>**Lille**</td><td>Age, Renal, Baseline Bil, Day 7 Bil, Day 7 PT</td><td>**Steroid response at Day 7**</td><td>**>0.45 = Stop steroids**</td><td>6-month</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Algorithm</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Diagnose Alcoholic Hepatitis: Jaundice, Heavy Alcohol, AST:ALT&gt;2, &lt;300</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Calculate Maddrey DF</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">DF &gt;=32?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Supportive Care: Nutrition, Abstinence, Vitamins, Monitoring</div>
+<div class="fc-node" data-id="E">Contraindication to Steroids?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Start Prednisolone 40mg/day</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Day 7: Calculate Lille Score</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Lille &gt;0.45?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">STOP Steroids; Supportive Care; Transplant Eval if eligible</div>
+<div class="fc-node" data-id="J">Continue Steroids 28 days total + Taper</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Monitor for Relapse Prevention</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Steroid Contraindications (Absolute)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Active infection</b> (SBP, pneumonia, sepsis)</li><li><b>Gastrointestinal bleeding</b> (active)</li><li><b>Acute pancreatitis</b></li><li><b>Renal failure</b> (Cr &gt;250 μmol/L or on RRT) — relative in some guidelines</li><li><b>Uncontrolled diabetes</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Score</th><th>Formula Components</th><th>Key Cut-off</th><th>Clinical Decision</th></tr><tr><td>-------</td><td>-------------------</td><td>-------------</td><td>-------------------</td></tr><tr><td>**Maddrey DF**</td><td>4.6×(PTpt-PTc) + Bil (mg/dL)</td><td>**>32 = Severe**</td><td>**Start steroids if no contraindication**</td></tr><tr><td>**GAHS**</td><td>Age≥50, WBC≥15, Urea≥5, Bil≥12.5, PT≥1.5</td><td>**≥9 = High risk**</td><td>Poor prognosis; consider transplant eval</td></tr><tr><td>**ABIC**</td><td>Age, log(Bil), INR, log(Cr)</td><td>**>9 = High risk**</td><td>90-day mortality >50%</td></tr><tr><td>**Lille**</td><td>Age, Renal, Bas Bil, Day7 Bil, Day7 PT</td><td>**>0.45 = Non-responder**</td><td>**STOP steroids at Day 7**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Calculate Maddrey DF: PT 25s (control 12s), Bilirubin 15 mg/dL.</b></li><li><b>What is the Maddrey DF cut-off for steroid consideration?</b></li><li><b>List the 5 components of GAHS.</b></li><li><b>What does GAHS ≥9 indicate?</b></li><li><b>How does ABIC differ from GAHS?</b></li><li><b>What is the Lille score used for?</b></li><li><b>What Lille score means stop steroids?</b></li><li><b>Day 7 bilirubin not falling — what is Lille likely?</b></li><li><b>Contraindications to steroids in alcoholic hepatitis?</b></li><li><b>Why is ABIC more accurate for 90-day mortality?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Maddrey DF vs GAHS</td><td>Maddrey = severity → steroid decision; GAHS = prognosis (mortality)</td></tr><tr><td>GAHS vs ABIC</td><td>Both prognosis; ABIC more accurate for 90-day; GAHS simpler (integer scoring)</td></tr><tr><td>Lille >0.45</td><td>**STOP STEROIDS** — non-response; continuing increases infection without benefit</td></tr><tr><td>PT in Maddrey</td><td>**Seconds** (patient - control), NOT INR</td></tr><tr><td>Bilirubin in Maddrey</td><td>**mg/dL** (not μmol/L)</td></tr><tr><td>ABIC units</td><td>Bilirubin and Creatinine in **μmol/L**</td></tr><tr><td>Steroid duration</td><td>**28 days total** if Lille ≤0.45; taper over 2-4 weeks after</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Alcoholic Hepatitis Scoring))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Maddrey DF</div>
+<div class="mm-node mm-l3">– 4.6 x (PT_pt - PT_control) + Bilirubin (mg/dL)</div>
+<div class="mm-node mm-l3">– &gt;32 = Severe -&gt; Steroids</div>
+<div class="mm-node mm-l3">– &lt;32 = Mild -&gt; Supportive</div>
+<div class="mm-node mm-l2">GAHS (5 variables, max 5)</div>
+<div class="mm-node mm-l3">– Age &gt;=50</div>
+<div class="mm-node mm-l3">– WBC &gt;=15</div>
+<div class="mm-node mm-l3">– Urea &gt;=5</div>
+<div class="mm-node mm-l3">– Bilirubin &gt;=12.5</div>
+<div class="mm-node mm-l3">– PT &gt;=1.5</div>
+<div class="mm-node mm-l3">– &gt;=9 = High mortality</div>
+<div class="mm-node mm-l2">ABIC</div>
+<div class="mm-node mm-l3">– Age x0.01 + ln(Bil) x0.58 + INR x0.89 + ln(Cr) x0.69</div>
+<div class="mm-node mm-l3">– &gt;9 = 90-day mortality &gt;50%</div>
+<div class="mm-node mm-l2">Lille (Day 7)</div>
+<div class="mm-node mm-l3">– Age, Renal insuff, Baseline Bil, Day7 Bil, Day7 PT</div>
+<div class="mm-node mm-l3">– &gt;0.45 = STOP STEROIDS</div>
+<div class="mm-node mm-l3">– &lt;0.16 = Complete responder</div>
+<div class="mm-node mm-l2">Clinical Flow</div>
+<div class="mm-node mm-l3">– Diagnose -&gt; Maddrey -&gt; &gt;32 -&gt; No CI -&gt; Steroids -&gt; Day7 Lille -&gt; &gt;0.45 Stop</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Score**</th><th>**Key Cut-off**</th><th>**Action**</th></tr><tr><td>-----------</td><td>-----------------</td><td>------------</td></tr><tr><td>**Maddrey DF**</td><td>**>32**</td><td>**Start Prednisolone 40mg if no CI**</td></tr><tr><td>**GAHS**</td><td>**≥9**</td><td>High mortality; transplant eval</td></tr><tr><td>**ABIC**</td><td>**>9**</td><td>90-day mortality >50%</td></tr><tr><td>**Lille (Day 7)**</td><td>**>0.45**</td><td>**STOP STEROIDS**</td></tr></table>
+<table class="ctable"><tr><th>**Steroid Contraindications**</th><th></th></tr><tr><td>-------------------------------</td><td>--</td></tr><tr><td>Active infection</td><td></td></tr><tr><td>GI bleeding</td><td></td></tr><tr><td>Pancreatitis</td><td></td></tr><tr><td>Renal failure (relative)</td><td></td></tr></table>
+<table class="ctable"><tr><th>**Steroid Regimen**</th><th></th></tr><tr><td>---------------------</td><td>--</td></tr><tr><td>Prednisolone 40mg/day × 28 days</td><td>Taper last 2-4 weeks</td></tr><tr><td>Assess Day 7 with Lille</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>Maddrey DF formula</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Maddrey >32 = steroids</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>GAHS 5 variables</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Lille >0.45 = stop</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>ABIC >9 = 90d mort >50%</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>Maddrey DF formula</td><td></td><td></td></tr><tr><td>DF >32 meaning</td><td></td><td></td></tr><tr><td>GAHS components</td><td></td><td></td></tr><tr><td>Lille >0.45 action</td><td></td><td></td></tr><tr><td>ABIC vs GAHS</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Alcoholic Liver Disease/Alcoholic Liver Disease|Alcoholic Liver Disease Overview]]</li><li>[[Alcoholic Liver Disease/Corticosteroid therapy (prednisolone)|Corticosteroid Therapy]]</li><li>[[Alcoholic Liver Disease/Abstinence and nutritional support|Abstinence &amp; Nutrition]]</li><li>[[Acute Liver Failure/Definition and Aetiology|ALF Aetiology]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Alcoholic hepatitis scoring (Maddrey DF, Glasgow, ABIC, Lille) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

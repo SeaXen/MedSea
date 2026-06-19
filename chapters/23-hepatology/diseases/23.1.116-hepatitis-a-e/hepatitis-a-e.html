@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatitis A &amp; E — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Hepatitis A &amp; E</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Diagnose <b>Hepatitis A</b>: IgM anti-HAV, self-limiting, faecal-oral</li><li>[ ] Diagnose <b>Hepatitis E</b>: IgM anti-HEV, high mortality in pregnancy, chronic in immunosuppressed</li><li>[ ] Manage <b>acute HAV/HEV</b>: supportive, avoid hepatotoxins</li><li>[ ] Recognise <b>HEV in pregnancy</b> (high mortality) and <b>chronic HEV in immunosuppressed</b></li><li>[ ] Apply <b>prevention</b>: HAV vaccine, hygiene, ribavirin for chronic HEV</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Hepatitis A (HAV)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Epidemiology &amp; Transmission</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Transmission**</td><td>**Faecal-oral** (contaminated food/water, person-to-person)</td></tr><tr><td>**Incubation**</td><td>**15-50 days** (average 28 days)</td></tr><tr><td>**Endemicity**</td><td>High in developing countries; travel-related in developed</td></tr><tr><td>**Vaccine**</td><td>**Inactivated HAV vaccine** — 2 doses (0, 6-12 months); **>95% efficacy**</td></tr></table>
+<div class="sub-h">Clinical Course</div>
+<table class="ctable"><tr><th>Phase</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Incubation**</td><td>Asymptomatic</td></tr><tr><td>**Prodromal**</td><td>Fatigue, nausea, anorexia, low-grade fever, RUQ discomfort</td></tr><tr><td>**Icteric**</td><td>**Jaundice**, dark urine, pale stools, hepatomegaly, **ALT/AST ↑↑ (1000-3000)**</td></tr><tr><td>**Convalescent**</td><td>Gradual resolution over **4-8 weeks**</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Finding</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**IgM anti-HAV**</td><td>**Diagnostic** (appears early, persists 3-6 months)</td></tr><tr><td>**IgG anti-HAV**</td><td>**Past infection/immunity** (persists lifelong)</td></tr><tr><td>**LFTs**</td><td>**ALT/AST ↑↑ (1000-3000)**, bilirubin ↑, ALP normal/mildly ↑</td></tr></table>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Aspect</th><th>Recommendation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Treatment**</td><td>**Supportive only** — rest, hydration, avoid hepatotoxins (alcohol, paracetamol)</td></tr><tr><td>**Isolation**</td><td>**Enteric precautions** 1 week after jaundice onset</td></tr><tr><td>**Post-Exposure Prophylaxis**</td><td>**HAV vaccine + IgG (if >40 or immunocompromised)** within 2 weeks</td></tr><tr><td>**Vaccination**</td><td>**2 doses (0, 6-12mo)** — pre-travel, high-risk groups, chronic liver disease</td></tr></table>
+<div class="sub-h">Complications (Rare)</div>
+<ul><li><b>Acute Liver Failure</b> (&lt;0.5%, higher in &gt;50, pre-existing liver disease)</li><li><b>Relapsing Hepatitis A</b> (3-10%, typically 1-3 months later)</li><li><b>Cholestatic Hepatitis A</b> (prolonged jaundice, pruritus)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Hepatitis E (HEV)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Epidemiology &amp; Transmission</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Transmission**</td><td>**Faecal-oral** (contaminated water, undercooked pork/game), zoonotic (genotype 3/4)</td></tr><tr><td>**Genotypes**</td><td>**1 & 2**: Human only, faecal-oral waterborne (Asia, Africa); **3 & 4**: Zoonotic (pigs, deer), foodborne (developed countries)</td></tr><tr><td>**Incubation**</td><td>**15-60 days** (average 40 days)</td></tr></table>
+<div class="sub-h">Clinical Features by Genotype</div>
+<table class="ctable"><tr><th>Genotype</th><th>Population</th><th>Course</th><th>Key Features</th></tr><tr><td>----------</td><td>------------</td><td>--------</td><td>--------------</td></tr><tr><td>**1 & 2**</td><td>Endemic areas (Asia, Africa)</td><td>**Acute self-limiting**</td><td>Large outbreaks, waterborne</td></tr><tr><td>**3 & 4**</td><td>Developed countries</td><td>**Acute** (usually) **or Chronic** (immunosuppressed)</td><td>Foodborne (pork, game), autochthonous</td></tr></table>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Phase</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Acute HEV**</td><td>Similar to HAV — jaundice, fatigue, nausea, RUQ pain, **ALT/AST ↑↑**</td></tr><tr><td>**Pregnancy (Genotype 1)**</td><td>**Severe** — **fulminant hepatic failure in 3rd trimester**, **mortality 15-25%**</td></tr><tr><td>**Chronic HEV**</td><td>**Immunosuppressed** (transplant, HIV, chemo) — **persistent viraemia >3 months** → cirrhosis</td></tr></table>
+<div class="sub-h">Diagnosis</div>
+<table class="ctable"><tr><th>Test</th><th>Finding</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**IgM anti-HEV**</td><td>**Acute infection** (appears early, persists 3-6 months)</td></tr><tr><td>**IgG anti-HEV**</td><td>Past infection</td></tr><tr><td>**HEV RNA (PCR)**</td><td>**Confirmatory**, quantitative (viral load), essential for chronic HEV diagnosis</td></tr><tr><td>**LFTs**</td><td>**ALT/AST ↑↑** (similar to HAV)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">HEV in Pregnancy (Genotype 1)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Timing**</td><td>**3rd trimester** (highest risk)</td></tr><tr><td>**Severity**</td><td>**Fulminant hepatic failure** in 10-25%</td></tr><tr><td>**Mortality**</td><td>**15-25%** (vs <1% in non-pregnant)</td></tr><tr><td>**Mechanism**</td><td>Hormonal/immune modulation → ↑ viral replication</td></tr><tr><td>**Vertical Transmission**</td><td>**~30-50%** — high risk of preterm labour, neonatal HEV</td></tr><tr><td>**Treatment**</td><td>**Supportive only** — **Ribavirin CONTRAINDICATED** (teratogenic)</td></tr></table>
+<div class="sub-h">Chronic HEV in Immunosuppressed</div>
+<table class="ctable"><tr><th>Population</th><th>Management</th></tr><tr><td>------------</td><td>------------</td></tr><tr><td>**Transplant recipients**</td><td>**Reduce immunosuppression** (if possible) → **Ribavirin 600-800mg/day ×3 months**</td></tr><tr><td>**HIV (CD4<200)**</td><td>**Ribavirin** (adjust for renal function)</td></tr><tr><td>**Haematologic malignancy**</td><td>**Ribavirin** (dose adjust for Hb)</td></tr><tr><td>**Duration**</td><td>**3 months** (extend if persistent viraemia)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**HAV Transmission**</td><td>**Faecal-oral** (food, water, person-to-person)</td></tr><tr><td>**HAV Diagnosis**</td><td>**IgM anti-HAV** (diagnostic), IgG = immunity</td></tr><tr><td>**HAV Course**</td><td>**Self-limiting** (4-8 weeks), **no chronicity**, vaccine preventable</td></tr><tr><td>**HAV ALF**</td><td><0.5% (higher in >50, pre-existing liver disease)</td></tr><tr><td>**HEV Genotypes**</td><td>**1&2**: Human, waterborne, endemic; **3&4**: Zoonotic (pork), foodborne</td></tr><tr><td>**HEV in Pregnancy**</td><td>**Genotype 1, 3rd trimester** → **Fulminant failure, mortality 15-25%**; **Ribavirin CONTRAINDICATED**</td></tr><tr><td>**HEV Chronic**</td><td>**Immunosuppressed** (transplant, HIV) → **Ribavirin 600-800mg ×3mo**</td></tr><tr><td>**HEV Diagnosis**</td><td>**IgM anti-HEV** (acute); **HEV RNA** (chronic, quantitative)</td></tr><tr><td>**Prevention HAV**</td><td>**Vaccine 2 doses (0, 6-12mo)** — pre-travel, chronic liver disease</td></tr><tr><td>**Ribavirin in HEV**</td><td>**Chronic HEV only** (600-800mg/day ×3mo); **CONTRAINDICATED in pregnancy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**HAV Diagnosis — Serology?**</td><td>**IgM anti-HAV = acute**; **IgG anti-HAV = immunity**; HAV RNA not routinely needed.</td></tr><tr><td>**HEV in Pregnancy — Genotype, Mortality, Treatment?**</td><td>**Genotype 1, 3rd trimester**; **mortality 15-25%**; **Ribavirin CONTRAINDICATED** (teratogenic); supportive only.</td></tr><tr><td>**HEV Chronic — Who, Treatment?**</td><td>**Immunosuppressed (transplant, HIV, chemo)**; **Ribavirin 600-800mg/day ×3 months** (dose adjust for renal/Hb).</td></tr><tr><td>**HAV vs HEV — Transmission, Chronicity?**</td><td>**Both faecal-oral**; **HAV: never chronic, vaccine available**; **HEV: genotypes 3/4 can be chronic in immunosuppressed, no vaccine (UK)**.</td></tr><tr><td>**HEV Genotypes — 1/2 vs 3/4?**</td><td>**1&2**: Human, waterborne, endemic (Asia/Africa); **3&4**: Zoonotic (pork/game), foodborne, autochthonous.</td></tr><tr><td>**HAV Vaccine — Schedule, Target Groups?**</td><td>**2 doses (0, 6-12 months)**; **pre-travel, chronic liver disease, MSM, PWID, sewage workers**.</td></tr><tr><td>**HEV in Immunosuppressed — Diagnosis, Treatment?**</td><td>**HEV RNA PCR (quantitative) >3 months = chronic**; **Ribavirin 600-800mg/day ×3mo** (reduce immunosuppression if possible).</td></tr><tr><td>**HEV Ribavirin — Contraindication?**</td><td>**Pregnancy** — **Category X (teratogenic)**; use only in non-pregnant chronic HEV.</td></tr><tr><td>**HEV vs HAV — Vaccine?**</td><td>**HAV: Vaccine available (2 doses)**; **HEV: No licensed vaccine in UK** (China has vaccine).</td></tr><tr><td>**Acute Viral Hepatitis — HAV vs HEV vs HBV vs HCV — Key Serology?**</td><td>**HAV**: IgM anti-HAV; **HEV**: IgM anti-HEV; **HBV**: HBsAg, IgM anti-HBc; **HCV**: HCV RNA, anti-HCV.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**HAV vs HEV — Chronicity**</td><td>**HAV: Never chronic**; **HEV: Genotype 3/4 can be chronic in immunosuppressed**</td></tr><tr><td>**HEV in Pregnancy**</td><td>**Genotype 1, 3rd trimester**; **mortality 15-25%**; **Ribavirin CONTRAINDICATED**</td></tr><tr><td>**HEV Chronic**</td><td>**Only in immunosuppressed** (transplant, HIV, chemo); **not in immunocompetent**</td></tr><tr><td>**Ribavirin in HEV**</td><td>**Chronic HEV only**: 600-800mg/day ×3mo; **Contraindicated in pregnancy** (Category X)</td></tr><tr><td>**HAV Vaccine**</td><td>**2 doses (0, 6-12mo)**; **HEV: No licensed vaccine in UK** (China has vaccine)</td></tr><tr><td>**HEV in Pregnancy — Why Severe?**</td><td>Hormonal/immune modulation → ↑ viral replication; **Genotype 1 most virulent**</td></tr><tr><td>**HEV Genotype 1 vs 3**</td><td>**Genotype 1**: Human, waterborne, severe in pregnancy; **Genotype 3**: Zoonotic (pork), foodborne, chronic in immunosuppressed</td></tr></table>
+<p><b>Mnemonic: HEPATITIS-A-E</b></p>
+<ul><li><b>H</b>epatitis <b>A</b>: <b>Faecal-oral, IgM anti-HAV, Self-limiting, Vaccine (2 doses), No chronicity</b></li><li><b>E</b>ntéric Transmission: <b>Both faecal-oral (water, food, person-to-person)</b></li><li><b>P</b>regnancy HEV: <b>Genotype 1, 3rd Trimester, Mortality 15-25%, NO Ribavirin</b></li><li><b>A</b>cute Only HAV: <b>Never Chronic</b> (HEV 3/4 can be chronic in immunosuppressed)</li><li><b>T</b>arget Groups HAV Vaccine: <b>Travellers, Chronic Liver Disease, MSM, PWID, Sewage Workers</b></li><li><b>I</b>mmunosuppressed HEV: <b>Chronic HEV → Ribavirin 600-800mg ×3mo (Adjust Renal/Hb)</b></li><li><b>T</b>ravel: <b>HAV Vaccine Pre-Travel (Endemic Areas)</b></li><li><b>I</b>mmunoglobulin: <b>HAV Post-Exposure: IgG + Vaccine if &gt;40/Immunocompromised</b></li><li><b>S</b>elf-Limiting: <b>HAV 4-8 weeks, HEV Acute 4-8wks (Except Chronic in IS)</b></li><li><b>E</b>V Genotypes: <b>1&amp;2 Human (Waterborne, Endemic); 3&amp;4 Zoonotic (Pork, Foodborne)</b></li><li><b>H</b>yperacute HEV in Pregnancy: <b>3rd Trimester, Genotype 1, 15-25% Mortality</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Hepatitis A &amp; E))
+    HAV
+      Transmission: Faecal-Oral
+      IgM anti-HAV = Acute
+      Self-Limiting (4-8 wks)
+      Vaccine: 2 doses (0, 6-12mo)
+      No Chronicity
+      ALF: &lt;0.5%
+    HEV
+      Genotypes: 1&amp;2 (Human), 3&amp;4 (Zoonotic)
+      Transmission: Faecal-Oral (Water/Food)
+      IgM anti-HEV = Acute
+      HEV RNA: Chronic (&gt;3mo)
+      Pregnancy: Genotype 1, 3rd Tri, 15-25% Mortality
+      Immunosuppressed: Chronic → Ribavirin 600-800mg ×3mo
+      Ribavirin CONTRAINDICATED in Pregnancy
+    Prevention
+      HAV Vaccine: 2 Doses (0, 6-12mo)
+      Hygiene, Safe Water, Food
+      HAV Post-Exposure: Vaccine + IgG</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Hepatitis A</th><th>Hepatitis E</th></tr><tr><td>--------</td><td>-------------</td><td>-------------</td></tr><tr><td>**Transmission**</td><td>Faecal-oral</td><td>Faecal-oral (water, pork)</td></tr><tr><td>**Diagnosis**</td><td>IgM anti-HAV</td><td>IgM anti-HEV / HEV RNA</td></tr><tr><td>**Course**</td><td>Self-limiting (4-8wks)</td><td>Acute self-limiting; chronic if immunosuppressed</td></tr><tr><td>**Chronicity**</td><td>**Never**</td><td>Genotype 3/4 → chronic in immunosuppressed</td></tr><tr><td>**Pregnancy**</td><td>No increased severity</td><td>**Genotype 1, 3rd tri: 15-25% mortality**</td></tr><tr><td>**Treatment**</td><td>Supportive</td><td>Acute: supportive; Chronic: Ribavirin 600-800mg ×3mo</td></tr><tr><td>**Vaccine**</td><td>**Yes (2 doses)**</td><td>**No (UK)**; China has vaccine</td></tr><tr><td>**Ribavirin**</td><td>Not used</td><td>**Chronic HEV only**; **Contraindicated in pregnancy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>HAV Diagnosis & Course</td><td></td><td></td></tr><tr><td>HEV Genotypes & Transmission</td><td></td><td></td></tr><tr><td>HEV in Pregnancy</td><td></td><td></td></tr><tr><td>Chronic HEV Management</td><td></td><td></td></tr><tr><td>HAV vs HEV Differences</td><td></td><td></td></tr><tr><td>Vaccination & Prevention</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Hepatology|Hepatology]]</li><li>**Chapter Map": [[../Davidson Chapter 24 - Hepatology Hierarchy|Hepatology Hierarchy]]</li><li>**Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Viral Hepatitis]], [[Acute Liver Failure]], [[Hepatology in Special Situations]], [[Acute Liver Failure]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatitis A &amp; E · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatorenal Syndrome — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Hepatorenal Syndrome</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply ICA 2015 diagnostic criteria for HRS-AKI</li><li>[ ] Differentiate HRS-AKI from other causes of AKI in cirrhosis</li><li>[ ] Know terlipressin + albumin regimen and alternatives</li><li>[ ] Understand TIPS and transplant role</li><li>[ ] Identify FCPS/MRCP high-yield management steps</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Classification (ICA 2015)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">HRS-AKI (Acute Kidney Injury) — Replaces "Type 1 HRS"</div>
+<div class="callout"><b>AKI in cirrhosis meeting ICA criteria + no response to volume expansion + no other cause</b></div>
+<div class="sub-h">HRS-CKD (Chronic Kidney Disease) — Replaces "Type 2 HRS"</div>
+<div class="callout"><b>Chronic kidney damage (eGFR &lt;60) in cirrhosis with HRS pathophysiology</b></div>
+<table class="ctable"><tr><th>Feature</th><th>HRS-AKI</th><th>HRS-CKD</th></tr><tr><td>---------</td><td>---------</td><td>---------</td></tr><tr><td>**Onset**</td><td>Acute (hours-days)</td><td>Chronic (months)</td></tr><tr><td>**Creatinine rise**</td><td>≥0.3 mg/dL in 48h OR ≥1.5× baseline</td><td>Persistent elevation</td></tr><tr><td>**Urine output**</td><td>Often oliguric (<500 mL/day)</td><td>Variable</td></tr><tr><td>**Prognosis**</td><td>**Median survival <2 weeks untreated**</td><td>Months</td></tr><tr><td>**Reversibility**</td><td>Potentially reversible</td><td>Less reversible</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">ICA 2015 Diagnostic Criteria for HRS-AKI (ALL Required)</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Cirrhosis + AKI (KDIGO)] --&gt; B{Criteria 1: Cirrhosis + Ascites}
+    B --&gt; C{Criteria 2: ICA-AKI Diagnosis}
+    C --&gt;|Scr ↑0.3mg/dL/48h OR ↑1.5x baseline| D{Criteria 3: No Response to Volume}
+    D --&gt;|Albumin 1g/kg x2 days, NO diuretics| E{Criteria 4: No Shock}
+    E --&gt; F{Criteria 5: No Nephrotoxins}
+    F --&gt; G{Criteria 6: No Parenchymal Renal Disease}
+    G --&gt;|Proteinuria &lt;500mg/d, No hematuria, Normal US| H[Diagnose HRS-AKI]</code></pre>
+<table class="ctable"><tr><th>#</th><th>Criterion</th><th>Detail</th></tr><tr><td>---</td><td>-----------</td><td>--------</td></tr><tr><td>**1**</td><td>Cirrhosis + Ascites</td><td>Clinical/radiological</td></tr><tr><td>**2**</td><td>ICA-AKI</td><td>Scr ↑≥0.3 mg/dL/48h OR ≥1.5× baseline (within 7d)</td></tr><tr><td>**3**</td><td>No response to volume expansion</td><td>Albumin 1 g/kg/day × 48h (max 100g/day) + diuretic withdrawal</td></tr><tr><td>**4**</td><td>No shock</td><td>No septic, cardiogenic, hemorrhagic shock</td></tr><tr><td>**5**</td><td>No nephrotoxins</td><td>NSAIDs, aminoglycosides, contrast (within 1 week)</td></tr><tr><td>**6**</td><td>No structural kidney disease</td><td>Proteinuria <500 mg/d, no hematuria, normal renal US</td></tr></table>
+<div class="callout"><b>Urine indices (supportive, not diagnostic)</b></div>
+<ul><li><b>Urine Na &lt;10 mmol/L</b> (usually &lt;5)</li><li><b>Urine osmolality &gt; plasma osmolality</b></li><li><b>FENa &lt; 0.1%</b> (often &lt;0.01%)</li><li><b>Urine sediment</b>: benign (no active sediment)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Pathophysiology: Splanchnic Vasodilation → Renal Vasoconstriction</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart LR
+    A[Portal Hypertension] --&gt; B[Splanchnic Arterial Vasodilation&lt;br/&gt;(NO, prostaglandins)]
+    B --&gt; C[Effective Arterial Hypovolemia]
+    C --&gt; D[Neurohormonal Activation&lt;br/&gt;RAAS, SNS, ADH]
+    D --&gt; E[Renal Vasoconstriction&lt;br/&gt;(Endothelin, Angiotensin II)]
+    E --&gt; F[Reduced RPF &amp; GFR → HRS]
+    F --&gt; G[Worsens Ascites, Hyponatremia]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Differential Diagnosis: AKI in Cirrhosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cause</th><th>Key Features</th><th>Differentiator</th></tr><tr><td>-------</td><td>--------------</td><td>----------------</td></tr><tr><td>**HRS-AKI**</td><td>Criteria met, urine Na <10, FENa<0.1%, benign sediment</td><td>**Diagnosis of exclusion**</td></tr><tr><td>**Pre-renal (Volume depletion)**</td><td>Responds to albumin, urine Na <10</td><td>**Responds to volume**</td></tr><tr><td>**Acute Tubular Necrosis (ATN)**</td><td>Nephrotoxins, sepsis, hypotension, muddy brown casts, urine Na >40, FENa >1%</td><td>**Urinary indices + sediment**</td></tr><tr><td>**Obstructive**</td><td>Hydronephrosis on US</td><td>**US**</td></tr><tr><td>**Glomerulonephritis**</td><td>Proteinuria >500mg, hematuria, RBC casts</td><td>**Proteinuria + active sediment**</td></tr><tr><td>**Drug-induced**</td><td>Temporal relationship, eosinophilia, eosinophiluria</td><td>**History + eosinophilia**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Diagnose HRS-AKI] --&gt; B[ICU Admission]
+    B --&gt; C[Albumin 20-40g/day continuous]
+    C --&gt; D{First-Line Vasoconstrictor}
+    D --&gt;|Terlipressin| E[Terlipressin 2mg IV q4-6h]
+    D --&gt;|Noradrenaline| F[Noradrenaline 0.5-3 mg/h IV]
+    D --&gt;|Midodrine+Octreotide| G[Midodrine 7.5mg TID PO + Octreotide 100mcg TID SC]
+    E --&gt; H{Response at Day 3-7?}
+    F --&gt; H
+    G --&gt; H
+    H --&gt;|Scr ↓25% from peak| I[Continue 14 days or to discharge]
+    H --&gt;|No response| J[Stop vasoconstrictor; Consider TIPS]
+    I --&gt; K[Discharge: Albumin 40g 2x/week x 4w?]
+    J --&gt; L[TIPS if Child A/B, no severe HE, no cardiopulmonary disease]
+    L --&gt; M[Transplant Evaluation]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Vasoconstrictor Regimens</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Regimen</th><th>Advantages</th><th>Disadvantages</th></tr><tr><td>------</td><td>---------</td><td>------------</td><td>---------------</td></tr><tr><td>**Terlipressin** (Preferred)</td><td>2 mg IV q4-6h (1 mg if <60kg) ± albumin 20-40g/day</td><td>**Best evidence (RCTs)**, IV, predictable</td><td>Ischemia risk (digital, gut, cardiac); not in UK/USA (approval varies)</td></tr><tr><td>**Noradrenaline**</td><td>0.5-3 mg/h IV titration (MAP ↑10-15 mmHg)</td><td>ICU available, cheap, short half-life</td><td>Requires central line, ICU monitoring</td></tr><tr><td>**Midodrine + Octreotide**</td><td>Midodrine 7.5mg TID PO + Octreotide 100mcg TID SC</td><td>Oral/SC, no ICU needed</td><td>**Less effective** (mainly US where terlipressin unavailable)</td></tr></table>
+<div class="callout"><b>Albumin</b>: 20-40g/day continuous during vasoconstrictor therapy (total 1-2g/kg over course)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Response Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Response Type</th><th>Criteria</th></tr><tr><td>---------------</td><td>----------</td></tr><tr><td>**Complete**</td><td>Scr ≤1.5 mg/dL (133 μmol/L)</td></tr><tr><td>**Partial**</td><td>Scr decrease ≥25% from peak but >1.5 mg/dL</td></tr><tr><td>**Non-response**</td><td>Scr decrease <25% from peak at Day 7</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">TIPS in HRS</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>Criteria</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**Refractory HRS-AKI**</td><td>Failed vasoconstrictor therapy</td></tr><tr><td>**Child-Pugh**</td><td>A or B (Child C: high mortality)</td></tr><tr><td>**Exclusions**</td><td>Severe HE (G3-4), cardiopulmonary disease, sepsis, HCC beyond criteria</td></tr><tr><td>**Outcome**</td><td>Improves renal function in 50-70%; bridge to transplant</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">HRS-CKD Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Intervention</th><th>Role</th></tr><tr><td>--------------</td><td>------</td></tr><tr><td>**Albumin**</td><td>40g IV 2x/week long-term (ATLANTIC trial: survival benefit)</td></tr><tr><td>**TIPS**</td><td>Selected Child A/B, preserved liver function</td></tr><tr><td>**Transplant**</td><td>**Definitive** — combined liver-kidney if eGFR <30 for >8 weeks</td></tr><tr><td>**Midodrine/Octreotide**</td><td>Symptomatic (no survival benefit)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Diagnosis**</td><td>ICA 2015: Cirrhosis + AKI + no volume response + no shock + no nephrotoxins + no parenchymal disease</td></tr><tr><td>**Urine indices**</td><td>Na <10, FENa <0.1%, osmolality > plasma, benign sediment</td></tr><tr><td>**First-line**</td><td>**Terlipressin 2mg IV q4-6h + Alb 20-40g/day**</td></tr><tr><td>**Alternatives**</td><td>Noradrenaline (ICU), Midodrine+Octreotide (less effective)</td></tr><tr><td>**Response**</td><td>Scr ↓25% at Day 3-7; Continue 14 days</td></tr><tr><td>**Non-response**</td><td>TIPS (Child A/B) → Transplant evaluation</td></tr><tr><td>**HRS-CKD**</td><td>Albumin long-term; TIPS/Transplant</td></tr><tr><td>**Prognosis**</td><td>Untreated HRS-AKI: median survival <2 weeks</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>List the 6 ICA criteria for HRS-AKI diagnosis.</b></li><li><b>Differentiate HRS-AKI from ATN in cirrhosis.</b></li><li><b>What is the terlipressin dose? Albumin dose?</b></li><li><b>What defines response to terlipressin?</b></li><li><b>When do you consider TIPS for HRS?</b></li><li><b>How does HRS-AKI differ from HRS-CKD?</b></li><li><b>What is the pathophysiology of HRS?</b></li><li><b>Why is albumin given long-term in HRS-CKD?</b></li><li><b>Contraindications to terlipressin?</b></li><li><b>Midodrine+Octreotide vs Terlipressin efficacy?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>HRS-AKI vs Pre-renal</td><td>Both have low urine Na/FENa; **HRS = NO response to albumin volume expansion**</td></tr><tr><td>HRS-AKI vs ATN</td><td>ATN: high urine Na, FENa>1%, muddy casts, nephrotoxin/sepsis history</td></tr><tr><td>Type 1 vs Type 2 (old)</td><td>Type 1 = HRS-AKI (acute, severe); Type 2 = HRS-CKD (chronic, refractory ascites)</td></tr><tr><td>Terlipressin availability</td><td>Not approved in USA/UK; Noradrenaline used instead in ICU</td></tr><tr><td>Albumin dose in HRS-AKI</td><td>20-40g/day (not 1g/kg/day — that's for DIAGNOSIS volume challenge)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Hepatorenal Syndrome))
+    Classification
+      HRS-AKI (ex-Type 1): Acute, Scr↑0.3mg/dL/48h, mortal&lt;2wk
+      HRS-CKD (ex-Type 2): Chronic, eGFR&lt;60, refractory ascites
+    Diagnosis (ICA 2015)
+      Cirrhosis + Ascites
+      AKI (KDIGO)
+      No response to Alb 1g/kg x2d
+      No shock
+      No nephrotoxins
+      No parenchymal disease
+      Urine Na&lt;10, FENa&lt;0.1%
+    Pathophysiology
+      Portal HTN → Splanchnic vasodilation
+      Effective hypovolemia → RAAS/SNS/ADH
+      Renal vasoconstriction → ↓RPF, ↓GFR
+    Management HRS-AKI
+      Terlipressin 2mg IV q4-6h + Alb 20-40g/d
+      Response: Scr↓25% at Day 3-7
+      Continue 14 days
+      Fail: TIPS (Child A/B) → Transplant
+    Management HRS-CKD
+      Alb 40g 2x/week long-term
+      TIPS selected
+      Transplant (combined LK if eGFR&lt;30 &gt;8wk)</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**HRS-AKI**</th><th>**Details**</th></tr><tr><td>-------------</td><td>-------------</td></tr><tr><td>**ICA Criteria**</td><td>Cirrhosis+Ascites, AKI, No vol response, No shock, No nephrotoxins, No parenchymal dz</td></tr><tr><td>**Urine**</td><td>Na<10, FENa<0.1%, Osm>plasma, Benign sediment</td></tr><tr><td>**First-Line**</td><td>Terlipressin 2mg IV q4-6h + Alb 20-40g/day</td></tr><tr><td>**Response**</td><td>Scr↓25% at Day 3-7; Continue 14d</td></tr><tr><td>**Failure**</td><td>TIPS (Child A/B) → Transplant</td></tr><tr><td>**Mortality untreated**</td><td><2 weeks median</td></tr></table>
+<table class="ctable"><tr><th>**HRS-CKD**</th><th>**Details**</th></tr><tr><td>-------------</td><td>-------------</td></tr><tr><td>**Definition**</td><td>Chronic kidney damage in cirrhosis (eGFR<60)</td></tr><tr><td>**Management**</td><td>Alb 40g 2x/week; TIPS; Transplant</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>6 ICA criteria</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>HRS-AKI vs ATN</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Terlipressin regimen</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>TIPS indications</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>ICA 6 criteria</td><td></td><td></td></tr><tr><td>Terlipressin dose + albumin</td><td></td><td></td></tr><tr><td>Response definition</td><td></td><td></td></tr><tr><td>HRS-AKI vs HRS-CKD</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS Overview]]</li><li>[[Portal Hypertension and Complications/HRS management (terlipressin, albumin, TIPS)|HRS Management]]</li><li>[[Portal Hypertension and Complications/Ascites|Ascites]]</li><li>[[Portal Hypertension and Complications/Spontaneous bacterial peritonitis (SBP)|SBP]]</li><li>[[Acute Liver Failure/CLIF-C ACLF and ACLF grades|ACLF]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatorenal Syndrome · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

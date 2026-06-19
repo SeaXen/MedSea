@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dubin-Johnson vs Rotor Syndrome — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Dubin-Johnson vs Rotor Syndrome</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Differentiate Dubin-Johnson from Rotor syndrome</li><li>[ ] Understand pathophysiology (MRP2 vs OATP1B1/1B3 defects)</li><li>[ ] Apply diagnostic criteria (liver colour, urinary coproporphyrins, HIDA scan)</li><li>[ ] Know both are benign with normal life expectancy</li><li>[ ] Identify FCPS/MRCP high-yield comparison points</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Quick Comparison</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Dubin-Johnson Syndrome</th><th>Rotor Syndrome</th></tr><tr><td>---------</td><td>------------------------</td><td>----------------</td></tr><tr><td>**Inheritance**</td><td>**Autosomal recessive**</td><td>**Autosomal recessive**</td></tr><tr><td>**Gene**</td><td>**ABCC2 (MRP2)**</td><td>**SLCO1B1 & SLCO1B3 (OATP1B1/1B3)**</td></tr><tr><td>**Defect**</td><td>**Impaired biliary excretion** of conjugated bilirubin</td><td>**Impaired hepatic uptake** + impaired storage of conjugated bilirubin</td></tr><tr><td>**Bilirubin**</td><td>**Conjugated** (predominant)</td><td>**Conjugated** (predominant)</td></tr><tr><td>**Liver Appearance**</td><td>**BLACK** (melanin-like pigment)</td><td>**Normal colour**</td></tr><tr><td>**Urinary Coproporphyrin I**</td><td>**↑↑ (80% of total)**</td><td>**↑↑ (65% of total)**</td></tr><tr><td>**Total Urinary Coproporphyrins**</td><td>Normal or slightly ↑</td><td>**Markedly ↑ (2.5-5x normal)**</td></tr><tr><td>**HIDA Scan**</td><td>**No visualization at 24h** (delayed/excretory failure)</td><td>**Rapid uptake, rapid clearance** (no storage)</td></tr><tr><td>**Bromosulfophthalein (BSP) Test**</td><td>**Secondary rise at 90 min**</td><td>Normal initial clearance, no secondary rise</td></tr><tr><td>**Prognosis**</td><td>**Benign, normal life expectancy**</td><td>**Benign, normal life expectancy**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Dubin-Johnson Syndrome</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pathophysiology</div>
+<ul><li><b>ABCC2</b> encodes <b>MRP2</b> (Multidrug Resistance Protein 2) — canalicular transporter for conjugated bilirubin and other anions</li><li><b>Defect</b> → <b>Impaired biliary excretion</b> of conjugated bilirubin → reflux into plasma</li></ul>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Presentation**</td><td>Adolescence/early adulthood; intermittent jaundice</td></tr><tr><td>**Triggers**</td><td>Pregnancy, OCP, alcohol, intercurrent illness</td></tr><tr><td>**Bilirubin**</td><td>**Conjugated > Unconjugated** (usually 2-5 mg/dL; can be higher)</td></tr><tr><td>**LFTs**</td><td>**Normal** (AST, ALT, ALP, GGT, Albumin, PT)</td></tr><tr><td>**Liver**</td><td>**BLACK** on gross inspection (polymerized epinephrine metabolites)</td></tr><tr><td>**Symptoms**</td><td>Usually asymptomatic; mild fatigue, abdominal discomfort</td></tr></table>
+<div class="sub-h">Diagnostic Hallmarks</div>
+<ol><li><b>Black liver</b> (autopsy/surgery)</li><li><b>Urinary coproporphyrin I &gt;80% of total</b> (total normal/slightly ↑)</li><li><b>HIDA scan: No visualization at 24h</b> (excretory block)</li><li><b>BSP test: Secondary rise at 90 min</b> (reflux from hepatocyte)</li></ol>
+<div class="sub-h">Genetics</div>
+<ul><li><b>ABCC2 (MRP2)</b> mutations — autosomal recessive</li><li>Multiple mutations described (common in Iranian Jews, Japanese)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Rotor Syndrome</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pathophysiology</div>
+<ul><li><b>SLCO1B1 &amp; SLCO1B3</b> encode <b>OATP1B1 &amp; OATP1B3</b> — sinusoidal uptake transporters for bilirubin and other anions</li><li><b>Defect</b> → <b>Impaired hepatic uptake</b> of bilirubin + <b>impaired intracellular storage</b> → reflux into plasma</li></ul>
+<div class="sub-h">Clinical Features</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Presentation**</td><td>Similar to Dubin-Johnson; intermittent conjugated hyperbilirubinaemia</td></tr><tr><td>**Bilirubin**</td><td>**Conjugated > Unconjugated** (usually lower than Dubin-Johnson)</td></tr><tr><td>**LFTs**</td><td>**Normal**</td></tr><tr><td>**Liver**</td><td>**Normal colour** (no pigment)</td></tr><tr><td>**Urinary Coproporphyrins**</td><td>**Total markedly ↑ (2.5-5x)**; **Coproporphyrin I ~65%**</td></tr></table>
+<div class="sub-h">Diagnostic Hallmarks</div>
+<ol><li><b>Normal liver colour</b></li><li><b>Total urinary coproporphyrins ↑↑ (2.5-5x normal); Copro I ~65%</b></li><li><b>HIDA scan: Rapid uptake, rapid clearance</b> (no storage capacity)</li><li><b>BSP test: Normal initial clearance, no secondary rise</b></li></ol>
+<div class="sub-h">Genetics</div>
+<ul><li><b>SLCO1B1 &amp; SLCO1B3</b> (OATP1B1/1B3) mutations — <b>both genes must be mutated</b> (autosomal recessive)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Differential: Conjugated Hyperbilirubinaemia</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Isolated Conjugated Hyperbilirubinaemia] --&gt; B{Liver Colour / Urinary Coproporphyrins}
+    B --&gt;|Black Liver, Copro I &gt;80%| C[Dubin-Johnson]
+    B --&gt;|Normal Liver, Total Copro ↑↑, Copro I 65%| D[Rotor Syndrome]
+    B --&gt;|Neither| E[Think: Drugs, Sepsis, Early Obstruction, TPN Cholestasis]
+    C --&gt; F[Benign, No Treatment]
+    D --&gt; F
+    E --&gt; G[Investigate Further]</code></pre>
+<table class="ctable"><tr><th>Condition</th><th>Bilirubin Type</th><th>Liver</th><th>Key Test</th></tr><tr><td>-----------</td><td>----------------</td><td>-------</td><td>----------</td></tr><tr><td>**Dubin-Johnson**</td><td>Conjugated</td><td>**Black**</td><td>Copro I >80%</td></tr><tr><td>**Rotor**</td><td>Conjugated</td><td>**Normal**</td><td>Total Copro ↑↑, Copro I 65%</td></tr><tr><td>**Obstruction**</td><td>Conjugated</td><td>Normal/Enlarged</td><td>Dilated ducts on US</td></tr><tr><td>**Drug-induced**</td><td>Mixed/Conjugated</td><td>Variable</td><td>Temporal relation</td></tr><tr><td>**Sepsis/TPN**</td><td>Mixed/Conjugated</td><td>Variable</td><td>Clinical context</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Both Syndromes</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Prognosis**</td><td>**Benign, normal life expectancy**</td></tr><tr><td>**Treatment**</td><td>**None required**</td></tr><tr><td>**Reassurance**</td><td>Explain benign nature</td></tr><tr><td>**Precautions**</td><td>Avoid hepatotoxins; caution with drugs excreted by MRP2/OATP</td></tr><tr><td>**Pregnancy**</td><td>May exacerbate jaundice (especially Dubin-Johnson); monitor</td></tr><tr><td>**OCP**</td><td>May worsen jaundice; consider alternative</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Both**</td><td>Autosomal recessive, **benign**, normal life expectancy, **conjugated hyperbilirubinaemia**</td></tr><tr><td>**Dubin-Johnson**</td><td>**ABCC2 (MRP2)** defect → excretory block; **BLACK liver**; Copro I >80%; HIDA no visualization</td></tr><tr><td>**Rotor**</td><td>**SLCO1B1/1B3 (OATP1B1/1B3)** defect → uptake/storage defect; **Normal liver**; Total copro ↑↑, Copro I 65%</td></tr><tr><td>**Key Differentiator**</td><td>**Liver colour (Black vs Normal); Urinary coproporphyrin pattern**</td></tr><tr><td>**Treatment**</td><td>**None** — reassurance</td></tr><tr><td>**Pregnancy/OCP**</td><td>May exacerbate jaundice</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the main difference between Dubin-Johnson and Rotor syndrome?</b></li><li><b>Which gene is mutated in Dubin-Johnson? In Rotor?</b></li><li><b>Why is the liver black in Dubin-Johnson?</b></li><li><b>What is the urinary coproporphyrin pattern in each?</b></li><li><b>What does HIDA scan show in Dubin-Johnson vs Rotor?</b></li><li><b>What is the BSP test finding in Dubin-Johnson?</b></li><li><b>Are these conditions benign?</b></li><li><b>How do they present clinically?</b></li><li><b>Do they need treatment?</b></li><li><b>Can they cause liver failure?</b></li><li><b>Effect of pregnancy/OCP?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Dubin-Johnson vs Rotor</td><td>**Dubin = Dark (Black) liver, Copro I >80%**; **Rotor = Right (Normal) liver, Total Copro ↑↑**</td></tr><tr><td>MRP2 vs OATP</td><td>**MRP2 apical (canalicular) → excretion**; **OATP basolateral (sinusoidal) → uptake**</td></tr><tr><td>BSP test</td><td>**Dubin-Johnson: Secondary rise at 90 min** (reflux); **Rotor: No secondary rise**</td></tr><tr><td>HIDA scan</td><td>**Dubin-Johnson: No visualization at 24h** (excretory failure); **Rotor: Rapid uptake/clearance**</td></tr><tr><td>Conjugated vs Unconjugated</td><td>**Both = Conjugated predominant** (defect in handling conjugated bilirubin)</td></tr><tr><td>Prognosis</td><td>**Both BENIGN** — normal life expectancy, no treatment</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Dubin-Johnson vs Rotor))
+    Dubin-Johnson
+      Gene: ABCC2 (MRP2)
+      Defect: Canalicular excretion
+      Liver: BLACK
+      Coproporphyrin I: &gt;80%
+      HIDA: No visualization 24h
+      BSP: Secondary rise 90min
+    Rotor
+      Genes: SLCO1B1 + SLCO1B3 (OATP1B1/1B3)
+      Defect: Sinusoidal uptake + storage
+      Liver: NORMAL
+      Total Coproporphyrins: 2.5-5x normal
+      Copro I: 65%
+      HIDA: Rapid uptake/clearance
+      BSP: Normal clearance
+    Common
+      Autosomal Recessive
+      Conjugated Hyperbilirubinaemia
+      Benign, Normal Life Expectancy
+      NO Treatment
+      Pregnancy/OCP may worsen</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Feature**</th><th>**Dubin-Johnson**</th><th>**Rotor**</th></tr><tr><td>-------------</td><td>------------------</td><td>-----------</td></tr><tr><td>**Gene**</td><td>ABCC2 (MRP2)</td><td>SLCO1B1 + SLCO1B3 (OATP1B1/1B3)</td></tr><tr><td>**Defect**</td><td>Canalicular excretion</td><td>Sinusoidal uptake + storage</td></tr><tr><td>**Liver Colour**</td><td>**BLACK**</td><td>**Normal**</td></tr><tr><td>**Coproporphyrin I**</td><td>**>80%**</td><td>**65%**</td></tr><tr><td>**Total Coproporphyrins**</td><td>Normal/slight ↑</td><td>**↑↑ (2.5-5x)**</td></tr><tr><td>**HIDA Scan**</td><td>No visualization 24h</td><td>Rapid uptake/clearance</td></tr><tr><td>**BSP Test**</td><td>Secondary rise 90min</td><td>Normal</td></tr><tr><td>**Prognosis**</td><td>Benign</td><td>Benign</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>Dubin vs Rotor liver colour</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Coproporphyrin patterns</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Gene defects</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>HIDA/BSP findings</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Benign course</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>Liver colour difference</td><td></td><td></td></tr><tr><td>Coproporphyrin I %</td><td></td><td></td></tr><tr><td>Gene defects</td><td></td><td></td></tr><tr><td>BSP test Dubin-Johnson</td><td></td><td></td></tr><tr><td>Treatment needed?</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Inherited and Metabolic Liver Disease/Gilbert Syndrome|Gilbert Syndrome]]</li><li>[[Inherited and Metabolic Liver Disease/Crigler-Najjar Syndrome|Crigler-Najjar]]</li><li>[[Jaundice and LFT Interpretation/Isolated hyperbilirubinaemia|Isolated Hyperbilirubinaemia]]</li><li>[[Jaundice and LFT Interpretation/Post-hepatic (obstructive) jaundice|Obstructive Jaundice]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Dubin-Johnson vs Rotor Syndrome · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

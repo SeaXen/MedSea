@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Porphyrias — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Porphyrias</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify porphyrias (hepatic vs erythropoietic; acute vs cutaneous)</li><li>[ ] Recognize acute porphyria presentation (neurovisceral)</li><li>[ ] Apply diagnostic testing (PBG, ALA, porphyrins in urine/feces)</li><li>[ ] Manage acute attacks (haemin, glucose, avoid precipitants)</li><li>[ ] Identify FCPS/MRCP high-yield features (drug precipitation, hygiene hypothesis)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Porphyrias: Defects in Haem Biosynthesis] --&gt; B{Hepatic (Liver)}
+    A --&gt; C{Erythropoietic (Bone Marrow)}
+    B --&gt; D[Acute Hepatic Porphyrias]
+    D --&gt; D1[Acute Intermittent Porphyria (AIP)]
+    D --&gt; D2[Variegate Porphyria (VP)]
+    D --&gt; D3[Hereditary Coproporphyria (HCP)]
+    D --&gt; D4[ALAD Porphyria (ADP) - Ultra rare]
+    B --&gt; E[Cutaneous Hepatic Porphyrias]
+    E --&gt; E1[Porphyria Cutanea Tarda (PCT)]
+    E --&gt; E2[Hepatoerythropoietic Porphyria (HEP)]
+    C --&gt; F[Cutaneous Erythropoietic Porphyrias]
+    F --&gt; F1[Erythropoietic Protoporphyria (EPP)]
+    F --&gt; F2[Congenital Erythropoietic Porphyria (CEP)]
+    F --&gt; F3[X-Linked Protoporphyria (XLP)]</code></pre>
+<table class="ctable"><tr><th>Category</th><th>Types</th><th>Main Features</th></tr><tr><td>----------</td><td>-------</td><td>---------------</td></tr><tr><td>**Acute Hepatic**</td><td>AIP, VP, HCP, ADP</td><td>**Neurovisceral attacks** (abdominal pain, neuropathy, psychiatric); **No photosensitivity** (except VP, HCP)</td></tr><tr><td>**Cutaneous Hepatic**</td><td>PCT, HEP</td><td>**Photosensitivity** (blistering, fragility); **No acute attacks**</td></tr><tr><td>**Cutaneous Erythropoietic**</td><td>EPP, CEP, XLP</td><td>**Photosensitivity** (pain, swelling); **Onset in childhood**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Haem Biosynthesis Pathway (Key Enzymes)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Enzyme</th><th>Gene</th><th>Porphyria</th><th>Accumulates</th></tr><tr><td>--------</td><td>------</td><td>-----------</td><td>-------------</td></tr><tr><td>**ALAS1**</td><td>ALAS1</td><td>—</td><td>(Rate-limiting, induced in acute)</td></tr><tr><td>**ALAD**</td><td>ALAD</td><td>ADP</td><td>ALA</td></tr><tr><td>**PBGD (HMBS)**</td><td>HMBS</td><td>**AIP**</td><td>**PBG, ALA**</td></tr><tr><td>**UROS**</td><td>UROS</td><td>CEP</td><td>Uroporphyrin I</td></tr><tr><td>**UROD**</td><td>UROD</td><td>**PCT, HEP**</td><td>**Uroporphyrin, Heptacarboxyl**</td></tr><tr><td>**CPOX**</td><td>CPOX</td><td>**HCP**</td><td>**Coproporphyrin**</td></tr><tr><td>**PPOX**</td><td>PPOX</td><td>**VP**</td><td>**Protoporphyrin, Coproporphyrin**</td></tr><tr><td>**FECH**</td><td>FECH</td><td>**EPP, XLP**</td><td>**Protoporphyrin**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Acute Porphyrias (AIP, VP, HCP)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical Presentation: Acute Neurovisceral Attack</div>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Abdominal**</td><td>**Severe, diffuse pain** (often out of proportion to exam), nausea, vomiting, constipation, ileus</td></tr><tr><td>**Neurological**</td><td>**Motor neuropathy** (proximal weakness → quadriparesis, respiratory failure), sensory changes, autonomic instability (HTN, tachycardia, hyponatraemia)</td></tr><tr><td>**Psychiatric**</td><td>Anxiety, agitation, confusion, hallucinations, seizures</td></tr><tr><td>**Cutaneous**</td><td>**VP, HCP only**: Photosensitivity (blistering, scarring)</td></tr></table>
+<div class="sub-h">Precipitating Factors (Induce ALAS1)</div>
+<table class="ctable"><tr><th>Category</th><th>Examples</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Drugs**</td><td>Barbiturates, sulfonamides, rifampicin, phenytoin, carbamazepine, valproate, OCP, metoclopramide</td></tr><tr><td>**Hormonal**</td><td>Menstrual cycle (progesterone), pregnancy</td></tr><tr><td>**Metabolic**</td><td>**Fasting, low-carb diet**, alcohol, stress, infection</td></tr><tr><td>**Other**</td><td>Surgery, heavy metals</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Drugs + Fasting + Hormones = Classic precipitants</b> — always ask about drugs in acute abdominal pain + neuropathy</div>
+<div class="sub-h">Biochemical Diagnosis (During Attack)</div>
+<table class="ctable"><tr><th>Test</th><th>AIP</th><th>VP</th><th>HCP</th></tr><tr><td>------</td><td>-----</td><td>----</td><td>-----</td></tr><tr><td>**Urinary PBG**</td><td>**↑↑↑** (hallmark)</td><td>↑↑</td><td>↑↑</td></tr><tr><td>**Urinary ALA**</td><td>**↑↑**</td><td>↑↑</td><td>↑↑</td></tr><tr><td>**Urinary Porphyrins**</td><td>↑ (uroporphyrin, heptacarboxyl)</td><td>↑↑ (coproporphyrin)</td><td>↑↑ (coproporphyrin)</td></tr><tr><td>**Fecal Porphyrins**</td><td>Normal</td><td>**↑ Protoporphyrin, Coproporphyrin**</td><td>**↑ Coproporphyrin III**</td></tr><tr><td>**Plasma Fluorometry**</td><td>Normal</td><td>**Peak at 626 nm**</td><td>Normal/slight ↑</td></tr><tr><td>**Erythrocyte PBGD**</td><td>**Low**</td><td>Normal</td><td>Normal</td></tr></table>
+<p><b>Key</b>: <b>Urinary PBG = SCREENING TEST</b> for acute porphyria (highly sensitive/specific during attack)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Cutaneous Porphyrias</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Porphyria Cutanea Tarda (PCT) — Most Common</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Enzyme**</td><td>**UROD** (acquired inhibition ± genetic)</td></tr><tr><td>**Inheritance**</td><td>**Sporadic (80%)** — acquired (alcohol, HCV, HIV, estrogen, iron); **Familial (20%)** — autosomal dominant</td></tr><tr><td>**Presentation**</td><td>**Photosensitivity**: Blistering on sun-exposed areas (hands, face), skin fragility, hypertrichosis, hyperpigmentation</td></tr><tr><td>**Biochemistry**</td><td>**Urinary uroporphyrin ↑↑, heptacarboxyl ↑↑**; Fecal isocoproporphyrin ↑</td></tr><tr><td>**Associations**</td><td>**HCV (50%), Alcohol, Estrogen, HFE mutations (iron overload), HIV**</td></tr><tr><td>**Treatment**</td><td>**Venesection** (target ferritin 50-100) **OR Low-dose chloroquine/hydroxychloroquine**</td></tr></table>
+<div class="sub-h">Erythropoietic Protoporphyria (EPP)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Enzyme**</td><td>**FECH** (Ferrochelatase)</td></tr><tr><td>**Inheritance**</td><td>Autosomal recessive (FECH) or X-linked (ALAS2)</td></tr><tr><td>**Presentation**</td><td>**Childhood onset**: Acute **pain, burning, swelling** on sun exposure (minutes-hours); **No blisters**</td></tr><tr><td>**Biochemistry**</td><td>**Erythrocyte protoporphyrin ↑↑**; Plasma protoporphyrin ↑; Fecal protoporphyrin ↑</td></tr><tr><td>**Complications**</td><td>**Liver disease** (protoporphyrin hepatotoxicity) → cirrhosis, liver failure</td></tr><tr><td>**Treatment**</td><td>**Afamelanotide (SC implant)** — increases melanin; Beta-carotene; Avoid sun</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnostic Algorithm</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Suspect Porphyria] --&gt; B{Clinical Picture}
+    B --&gt;|Acute Neurovisceral: Abdo pain + Neuropathy + Psychiatric| C[Urinary PBG + ALA + Porphyrins]
+    C --&gt; D{PBG ↑↑?}
+    D --&gt;|Yes| E[Acute Porphyria: AIP, VP, HCP]
+    D --&gt;|No| F[Unlikely Acute Porphyria]
+    E --&gt; G[Fecal Porphyrins + Plasma Fluorometry + Erythrocyte Enzymes]
+    G --&gt; H{AIP: PBGD Low, Fecal Normal}
+    G --&gt; I{VP: Plasma Peak 626nm, Fecal Proto+Copro}
+    G --&gt; J{HCP: Fecal Copro III ↑}
+    B --&gt;|Cutaneous Photosensitivity| K[Urinary/Fecal Porphyrins + Plasma]
+    K --&gt; L{PCT: Urinary Uro↑, Hepato↑, Fecal Isocopro↑}
+    K --&gt; M{EPP: RBC Proto↑↑, Plasma Proto↑}
+    K --&gt; N{CEP: Urinary Uro I↑↑, RBC Uro↑}</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management of Acute Attack</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Immediate (Life-Saving)</div>
+<table class="ctable"><tr><th>Intervention</th><th>Details</th></tr><tr><td>--------------</td><td>---------</td></tr><tr><td>**Stop precipitating drugs**</td><td>**Immediately** — review all medications</td></tr><tr><td>**IV Glucose**</td><td>**10% dextrose 3-4 L/day** (high carbohydrate → suppresses ALAS1)</td></tr><tr><td>**Haemin (Heme Arginate)**</td><td>**3-4 mg/kg IV daily × 4 days** — **represses ALAS1**; first-line specific therapy</td></tr><tr><td>**Supportive**</td><td>Pain control (opioids OK), antiemetics, hyponatraemia correction, seizure prophylaxis, respiratory support if neuropathy progresses</td></tr></table>
+<div class="sub-h">Precautions</div>
+<ul><li><b>Avoid barbiturates, sulfonamides, rifampicin, phenytoin, valproate, OCP</b></li><li><b>Safe drugs</b>: List available (e.g., porphyria drug databases)</li><li><b>Wear medical alert bracelet</b></li></ul>
+<div class="sub-h">Long-Term</div>
+<ul><li><b>Avoid precipitants</b> (drugs, fasting, alcohol, smoking)</li><li><b>High-carbohydrate diet</b></li><li><b>Genetic counseling</b> (autosomal dominant for AIP, VP, HCP)</li><li><b>Screen family</b> (biochemical + genetic)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Acute Porphyrias**</td><td>AIP, VP, HCP — **Neurovisceral attacks** (abdo pain, neuropathy, psychiatric)</td></tr><tr><td>**Cutaneous Porphyrias**</td><td>PCT, EPP, CEP — **Photosensitivity**</td></tr><tr><td>**Screening Test**</td><td>**Urinary PBG** (↑↑ in acute attack)</td></tr><tr><td>**AIP**</td><td>PBGD low; Urinary PBG/ALA ↑; Fecal normal</td></tr><tr><td>**VP**</td><td>Plasma fluorescence 626 nm; Fecal proto + copro ↑; Photosensitivity</td></tr><tr><td>**HCP**</td><td>Fecal coproporphyrin III ↑; Photosensitivity</td></tr><tr><td>**PCT**</td><td>Most common; Urinary uroporphyrin ↑; **Venesection or chloroquine**; HCV, alcohol, iron</td></tr><tr><td>**EPP**</td><td>Childhood pain on sun exposure; RBC protoporphyrin ↑; Afamelanotide</td></tr><tr><td>**Acute Attack Rx**</td><td>**Stop drugs, IV Glucose, Haemin 3-4 mg/kg ×4d**</td></tr><tr><td>**Precipitants**</td><td>Drugs (barbiturates, rifampicin, phenytoin, OCP), Fasting, Alcohol, Hormones</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Classify porphyrias into acute vs cutaneous, hepatic vs erythropoietic.</b></li><li><b>What is the screening test for acute porphyria?</b></li><li><b>Differentiate AIP, VP, HCP by biochemistry.</b></li><li><b>What are the clinical features of an acute porphyria attack?</b></li><li><b>How do you treat an acute porphyria attack?</b></li><li><b>What is the role of haemin?</b></li><li><b>Differentiate VP from HCP.</b></li><li><b>What is the most common porphyria? How is PCT treated?</b></li><li><b>What is EPP? How does it present?</b></li><li><b>List common drug precipitants for acute porphyria.</b></li><li><b>What is the role of glucose in acute porphyria attack?</b></li><li><b>What is the role of haemin in acute porphyria?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>AIP vs VP vs HCP</td><td>**AIP**: PBGD low, no photosensitivity, fecal normal; **VP**: Plasma peak 626nm, photosensitivity; **HCP**: Fecal copro III ↑, photosensitivity</td></tr><tr><td>Acute vs Cutaneous</td><td>Acute = neurovisceral (pain, neuropathy); Cutaneous = photosensitivity (blisters/pain)</td></tr><tr><td>PCT treatment</td><td>**Venesection (target ferritin 50-100) OR Low-dose chloroquine**</td></tr><tr><td>EPP vs PCT</td><td>**EPP**: Childhood, pain/burning (min-hrs), no blisters, RBC proto ↑; **PCT**: Adult, blisters/fragility, urinary uro ↑</td></tr><tr><td>Urinary PBG</td><td>**SCREENING for acute porphyria** — highly sensitive/specific during attack</td></tr><tr><td>Haemin mechanism</td><td>**Represses ALAS1** (rate-limiting enzyme) — stops overproduction of precursors</td></tr><tr><td>Drug precipitants</td><td>**Barbiturates, Sulfonamides, Rifampicin, Phenytoin, Valproate, OCP** — induce ALAS1</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Porphyrias))
+    Acute Hepatic
+      AIP: PBGD low, PBG/ALA up, fecal normal
+      VP: Plasma 626nm, fecal proto+copro, PHOTOSENSITIVITY
+      HCP: Fecal copro III up, PHOTOSENSITIVITY
+      ADP: ALAD defect, ultra rare
+    Cutaneous Hepatic
+      PCT: Most common, UROD, Uro up, Venesection/Chloroquine, HCV/Alcohol/Iron
+      HEP: UROD homozygous, severe
+    Cutaneous Erythropoietic
+      EPP: FECH, Childhood pain, RBC proto up, Afamelanotide
+      CEP: UROS, Severe, Uro I up
+      XLP: ALAS2, X-linked
+    Acute Attack Management
+      STOP DRUGS
+      IV Glucose (suppress ALAS1)
+      Haemin 3-4mg/kg x4d (repress ALAS1)
+      Supportive
+    Acute Attack Management
+      STOP DRUGS
+      IV Glucose (suppress ALAS1)
+      Haemin 3-4mg/kg x4d (repress ALAS1)
+      Supportive</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Porphyria**</th><th>**Enzyme/Defect**</th><th>**Key Biochemistry**</th><th>**Clinical**</th><th>**Treatment**</th></tr><tr><td>---------------</td><td>-------------------</td><td>----------------------</td><td>--------------</td><td>---------------</td></tr><tr><td>**AIP**</td><td>PBGD (HMBS)</td><td>Urinary PBG↑↑, ALA↑; PBGD low; Fecal normal</td><td>Acute attacks only</td><td>Haemin, Glucose</td></tr><tr><td>**VP**</td><td>PPOX</td><td>Plasma 626nm; Fecal Proto+Copro↑</td><td>Acute + Photosensitivity</td><td>Haemin, Glucose</td></tr><tr><td>**HCP**</td><td>CPOX</td><td>Fecal Copro III↑</td><td>Acute + Photosensitivity</td><td>Haemin, Glucose</td></tr><tr><td>**PCT**</td><td>UROD (acquired/genetic)</td><td>Urinary Uro↑, Hepato↑; Fecal Isocopro↑</td><td>Photosensitivity (blisters)</td><td>Venesection / Chloroquine</td></tr><tr><td>**EPP**</td><td>FECH</td><td>RBC Proto↑↑</td><td>Childhood pain on sun</td><td>Afamelanotide, Beta-carotene</td></tr></table>
+<table class="ctable"><tr><th>**Acute Attack**</th><th>**Management**</th></tr><tr><td>------------------</td><td>----------------</td></tr><tr><td>1.</td><td>**STOP PRECIPITATING DRUGS**</td></tr><tr><td>2.</td><td>**IV Glucose** (10% dextrose 3-4L/d)</td></tr><tr><td>3.</td><td>**Haemin 3-4 mg/kg IV × 4 days**</td></tr><tr><td>4.</td><td>Supportive (pain, nausea, hyponatraemia, respiratory)</td></tr></table>
+<table class="ctable"><tr><th>**Precipitants**</th><th></th></tr><tr><td>------------------</td><td>--</td></tr><tr><td>Drugs</td><td>Barbiturates, Sulfonamides, Rifampicin, Phenytoin, Valproate, OCP</td></tr><tr><td>Metabolic</td><td>Fasting, Alcohol</td></tr><tr><td>Hormonal</td><td>Progesterone, Menstruation</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>AIP vs VP vs HCP biochem</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Acute attack management</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>PBG screening test</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>PCT treatment</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Drug precipitants list</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>AIP vs VP vs HCP differentiation</td><td></td><td></td></tr><tr><td>Acute attack drugs 1-2-3</td><td></td><td></td></tr><tr><td>Haemin mechanism</td><td></td><td></td></tr><tr><td>PCT treatment options</td><td></td><td></td></tr><tr><td>EPP vs PCT features</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Inherited and Metabolic Liver Disease/Wilson Disease|Wilson Disease]]</li><li>[[Inherited and Metabolic Liver Disease/Haemochromatosis|Haemochromatosis]]</li><li>[[Inherited and Metabolic Liver Disease/Alpha-1 Antitrypsin Deficiency|Alpha-1 AT]]</li><li>[[Acute Liver Failure/Definition and Aetiology|ALF Aetiology]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Porphyrias · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CLIF-C ACLF and ACLF grades — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">CLIF-C ACLF and ACLF grades</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define ACLF per EASL-CLIF (CANONIC criteria)</li><li>[ ] Calculate CLIF-SOFA / CLIF-C ACLF score</li><li>[ ] Grade ACLF (ACLF-1, -2, -3)</li><li>[ ] Know 28-day and 90-day mortality by grade</li><li>[ ] Identify precipitants and management priorities</li><li>[ ] Apply FCPS/MRCP high-yield associations</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">ACLF Definition (EASL-CLIF)</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Acute decompensation of cirrhosis + organ failure(s) + high 28-day mortality</b></div>
+<div class="sub-h">Diagnostic Criteria (ALL Required)</div>
+<ol><li><b>Cirrhosis</b> (previously diagnosed or diagnosed at presentation)</li><li><b>Acute decompensation</b>: Ascites, GI bleed, HE, bacterial infection</li><li><b>Organ failure(s)</b> per CLIF-SOFA</li><li><b>No chronic liver disease without cirrhosis</b> (chronic hepatitis ≠ ACLF)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">CLIF-SOFA: Organ Failure Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Organ System</th><th>Variable</th><th>Cut-off for Failure</th></tr><tr><td>--------------</td><td>----------</td><td>---------------------</td></tr><tr><td>**Liver**</td><td>Bilirubin</td><td>**≥12 mg/dL (≥204 μmol/L)**</td></tr><tr><td>**Kidney**</td><td>Creatinine</td><td>**≥2.0 mg/dL (≥177 μmol/L)** OR **RRT**</td></tr><tr><td>**Brain**</td><td>HE Grade</td><td>**Grade III-IV**</td></tr><tr><td>**Coagulation**</td><td>INR</td><td>**≥2.5**</td></tr><tr><td>**Circulation**</td><td>MAP / Vasopressors</td><td>**MAP <70 mmHg** OR **vasopressors**</td></tr><tr><td>**Respiration**</td><td>PaO₂/FiO₂ or SpO₂/FiO₂</td><td>**PaO₂/FiO₂ ≤200** OR **SpO₂/FiO₂ ≤214** OR **mechanical ventilation**</td></tr></table>
+<div class="callout"><b>Organ Failure = 1 point each</b> (max 6 points)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">ACLF Grading</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Definition</th><th>Organ Failures</th><th>28-Day Mortality</th><th>90-Day Mortality</th></tr><tr><td>-------</td><td>------------</td><td>----------------</td><td>------------------</td><td>------------------</td></tr><tr><td>**ACLF-1**</td><td>Single kidney failure OR Single non-kidney failure + Cr 1.5-1.9 or HE Grade I-II</td><td>1 (or kidney + mild other)</td><td>**22%**</td><td>**32%**</td></tr><tr><td>**ACLF-2**</td><td>Two organ failures</td><td>2</td><td>**32%**</td><td>**47%**</td></tr><tr><td>**ACLF-3**</td><td>Three or more organ failures</td><td>≥3</td><td>**77%**</td><td>**85%**</td></tr><tr><td>**No ACLF**</td><td>Acute decompensation without organ failure</td><td>0</td><td>**3%**</td><td>**10%**</td></tr></table>
+<pre class="codeblock"><code>flowchart TD
+    A[Acute Decompensation of Cirrhosis] --&gt; B{CLIF-SOFA Organ Failures}
+    B --&gt;|0| C[No ACLF: 28d mort 3%]
+    B --&gt;|1 Kidney OR 1 non-kidney + mild renal/HE| D[ACLF-1: 28d mort 22%]
+    B --&gt;|2| E[ACLF-2: 28d mort 32%]
+    B --&gt;|&gt;=3| F[ACLF-3: 28d mort 77%]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">CLIF-C ACLF Score (Prognostic, Not Diagnostic)</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Calculated at diagnosis (Days 3-5) for prognosis</b></div>
+<div class="sub-h">Variables (9 total)</div>
+<table class="ctable"><tr><th>Variable</th><th>Weight</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>Age</td><td>Continuous</td></tr><tr><td>WBC count</td><td>Continuous</td></tr><tr><td>Creatinine</td><td>Continuous</td></tr><tr><td>INR</td><td>Continuous</td></tr><tr><td>Bilirubin</td><td>Continuous</td></tr><tr><td>Lactate</td><td>Continuous</td></tr><tr><td>HE grade</td><td>Ordinal</td></tr><tr><td>ACLF grade</td><td>Categorical</td></tr><tr><td>**Number of organ failures**</td><td>**Strongest predictor**</td></tr></table>
+<div class="sub-h">Formula (Simplified for Exams)</div>
+<p>``<code> CLIF-C ACLF = 10 × [0.33 × logₑ(bilirubin) + 0.04 × age + 0.63 × logₑ(creatinine) + 0.58 × logₑ(WBC) + 0.46 × logₑ(INR) + 0.59 × logₑ(lactate) + 0.83 × (HE grade 3-4) + 0.27 × (ACLF grade 2) + 0.76 × (ACLF grade 3)] </code>``</p>
+<p><b>Score Range</b>: 0-100 (higher = worse)</p>
+<div class="sub-h">Mortality by CLIF-C ACLF Score</div>
+<table class="ctable"><tr><th>Score Range</th><th>28-Day Mortality</th><th>90-Day Mortality</th></tr><tr><td>-------------</td><td>------------------</td><td>------------------</td></tr><tr><td>**<40**</td><td><10%</td><td><20%</td></tr><tr><td>**40-50**</td><td>20-30%</td><td>30-40%</td></tr><tr><td>**50-60**</td><td>40-50%</td><td>50-60%</td></tr><tr><td>**>60**</td><td>>70%</td><td>>80%</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: Don't memorize formula — know <b>components</b>, <b>grading</b>, and <b>mortality by grade</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Precipitants of ACLF</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Precipitant</th><th>Frequency</th><th>Mortality Impact</th></tr><tr><td>-------------</td><td>-----------</td><td>------------------</td></tr><tr><td>**Bacterial infection**</td><td>30-40%</td><td>SBP, pneumonia, UTI, bacteremia</td></tr><tr><td>**Alcohol binge**</td><td>20-30%</td><td>Active alcohol use in cirrhotic</td></tr><tr><td>**GI bleed**</td><td>15-20%</td><td>Variceal/non-variceal</td></tr><tr><td>**Drug-induced**</td><td>10-15%</td><td>NSAIDs, antibiotics, herbal</td></tr><tr><td>**Viral reactivation**</td><td>5-10%</td><td>HBV reactivation</td></tr><tr><td>**No identifiable precipitant**</td><td>20-30%</td><td>"Idiopathic" ACLF</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">ACLF vs ALF vs Acute Decompensation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>ALF</th><th>Acute Decompensation</th><th>ACLF</th></tr><tr><td>---------</td><td>-----</td><td>---------------------</td><td>------</td></tr><tr><td>**Pre-existing liver disease**</td><td>NO</td><td>YES (cirrhosis)</td><td>YES (cirrhosis)</td></tr><tr><td>**Encephalopathy**</td><td>Required</td><td>May be present</td><td>Required (Grade III-IV for OF)</td></tr><tr><td>**Coagulopathy**</td><td>INR ≥1.5</td><td>Variable</td><td>INR ≥2.5 for OF</td></tr><tr><td>**Organ failures**</td><td>Liver only (initially)</td><td>None</td><td>**Multi-organ (CLIF-SOFA)**</td></tr><tr><td>**Clinical course**</td><td>Days-weeks</td><td>Weeks-months</td><td>Days-weeks</td></tr><tr><td>**28-day mortality**</td><td>30-50%</td><td>3-10%</td><td>**Grade-dependent (22-77%)**</td></tr><tr><td>**Prognostic score**</td><td>King's College</td><td>MELD, Child-Pugh</td><td>**CLIF-C ACLF**</td></tr><tr><td>**Transplant urgency**</td><td>Super-urgent</td><td>Elective/Urgent</td><td>**Urgent (ACLF-2/3)**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management Priorities in ACLF</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[ACLF Diagnosis] --&gt; B[ICU Admission]
+    B --&gt; C[Identify &amp; Treat Precipitant]
+    C --&gt; D[Organ Support]
+    D --&gt; E[Liver: N-acetylcysteine? Transplant eval]
+    D --&gt; F[Kidney: RRT if indicated]
+    D --&gt; G[Brain: Lactulose, rifaximin, ICP monitor if G3-4]
+    D --&gt; H[Coagulation: FFP if bleeding/invasive proc]
+    D --&gt; I[Circulation: Vasopressors, fluids]
+    D --&gt; J[Respiration: NIV/Intubation]
+    C --&gt; K[Infection: Empirical antibiotics + cultures]
+    C --&gt; L[Alcohol: Thiamine, benzos, Baclofen?]
+    C --&gt; M[Bleed: Vasoactives + Endoscopy + Antibiotics]
+    E --&gt; N{CLIF-C ACLF Grade 2-3 OR MELD&gt;25?}
+    N --&gt;|Yes| O[URGENT Transplant Evaluation]
+    N --&gt;|No| P[Supportive care; Reassess daily]</code></pre>
+<div class="sub-h">Key Management Points</div>
+<table class="ctable"><tr><th>Intervention</th><th>Indication</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Empirical antibiotics**</td><td>All ACLF (high infection risk); Ceftriaxone 2g IV daily</td></tr><tr><td>**N-acetylcysteine**</td><td>Consider in ACLF (some evidence for transplant-free survival)</td></tr><tr><td>**Renal replacement therapy**</td><td>Cr ≥2.0 + oliguria/acidosis/fluid overload</td></tr><tr><td>**Lactulose + Rifaximin**</td><td>HE Grade II-IV</td></tr><tr><td>**Transplant evaluation**</td><td>ACLF-2/3, MELD >25, CLIF-C >50, failed organ support</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**ACLF Definition**</td><td>Cirrhosis + acute decompensation + organ failure(s)</td></tr><tr><td>**Organ Failure (CLIF-SOFA)**</td><td>Liver: Bil ≥12; Kidney: Cr ≥2 or RRT; Brain: HE G3-4; Coag: INR ≥2.5; Circ: Vasopressors; Resp: PaO₂/FiO₂ ≤200</td></tr><tr><td>**Grades**</td><td>ACLF-1: 1 OF (22% 28d mort); ACLF-2: 2 OF (32%); ACLF-3: ≥3 OF (77%)</td></tr><tr><td>**Precipitants**</td><td>Infection #1, Alcohol #2, Bleed #3</td></tr><tr><td>**Prognostic Score**</td><td>CLIF-C ACLF (Days 3-5); >60 = >70% 28d mort</td></tr><tr><td>**Management**</td><td>ICU, treat precipitant, organ support, early transplant eval for Grade 2-3</td></tr><tr><td>**Antibiotics**</td><td>Empirical ceftriaxone for ALL ACLF</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define ACLF per EASL-CLIF.</b></li><li><b>What are the 6 organ systems in CLIF-SOFA? Give failure cut-offs.</b></li><li><b>How is ACLF graded? What is 28-day mortality for each grade?</b></li><li><b>Differentiate ACLF from ALF and acute decompensation.</b></li><li><b>What is CLIF-C ACLF score? When is it calculated?</b></li><li><b>List top 3 precipitants of ACLF.</b></li><li><b>What is the first-line empirical antibiotic for ACLF?</b></li><li><b>When do you refer ACLF for transplant evaluation?</b></li><li><b>How does renal failure definition differ in CLIF-SOFA vs standard AKI?</b></li><li><b>What is the role of NAC in ACLF?</b></li><li><b>ACLF-1 vs no ACLF: what's the difference?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>ALF vs ACLF</td><td>ALF: NO prior liver disease; ACLF: cirrhosis + acute decompensation + organ failure</td></tr><tr><td>ACLF-1 vs No ACLF</td><td>ACLF-1 = 1 organ failure (or kidney + mild renal/HE); No ACLF = 0 organ failures</td></tr><tr><td>CLIF-SOFA vs SOFA</td><td>CLIF-SOFA: liver (bilirubin) replaces platelets; bilirubin ≥12 mg/dL = liver failure</td></tr><tr><td>CHOLESTATIC vs hepatic bilirubin</td><td>CLIF-SOFA uses TOTAL bilirubin ≥12 mg/dL for liver failure</td></tr><tr><td>CLIF-C ACLF vs MELD</td><td>CLIF-C ACLF: ACLF-specific, includes WBC, lactate, HE, ACLF grade; MELD: general cirrhosis prognosis</td></tr><tr><td>Kidney failure in CLIF-SOFA</td><td>Cr ≥2.0 OR RRT — lower threshold than KDIGO AKI Stage 3 (Cr ≥3× baseline or ≥4.0)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((CLIF-C ACLF))
+    Definition
+      Cirrhosis + Acute Decompensation + Organ Failure
+      CANONIC criteria
+    CLIF-SOFA (6 Organ Systems)
+      Liver: Bil &gt;=12 mg/dL
+      Kidney: Cr &gt;=2 or RRT
+      Brain: HE Grade III-IV
+      Coagulation: INR &gt;=2.5
+      Circulation: Vasopressors
+      Respiration: PaO2/FiO2 &lt;=200
+    ACLF Grading
+      ACLF-1: 1 OF (22% 28d mort)
+      ACLF-2: 2 OF (32% 28d mort)
+      ACLF-3: &gt;=3 OF (77% 28d mort)
+      No ACLF: 0 OF (3% 28d mort)
+    Precipitants
+      Infection #1
+      Alcohol #2
+      GI Bleed #3
+      Drugs
+      Viral reactivation
+      Idiopathic
+    CLIF-C ACLF Score
+      Days 3-5
+      Variables: Age, WBC, Cr, INR, Bil, Lactate, HE, ACLF grade, #OF
+      &gt;60 = &gt;70% 28d mort
+    Management
+      ICU
+      Treat precipitant
+      Organ support
+      Empirical antibiotics
+      Transplant eval: ACLF-2/3, MELD&gt;25, CLIF-C&gt;50</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**CLIF-SOFA Organ Failure**</th><th>**Cut-off**</th></tr><tr><td>----------------------------</td><td>-------------</td></tr><tr><td>Liver</td><td>Bilirubin ≥12 mg/dL</td></tr><tr><td>Kidney</td><td>Creatinine ≥2.0 mg/dL OR RRT</td></tr><tr><td>Brain</td><td>HE Grade III-IV</td></tr><tr><td>Coagulation</td><td>INR ≥2.5</td></tr><tr><td>Circulation</td><td>Vasopressors required</td></tr><tr><td>Respiration</td><td>PaO₂/FiO₂ ≤200 OR MV</td></tr></table>
+<table class="ctable"><tr><th>**ACLF Grade**</th><th>**Organ Failures**</th><th>**28-Day Mortality**</th></tr><tr><td>----------------</td><td>-------------------</td><td>---------------------</td></tr><tr><td>No ACLF</td><td>0</td><td>3%</td></tr><tr><td>ACLF-1</td><td>1 (or kidney + mild other)</td><td>22%</td></tr><tr><td>ACLF-2</td><td>2</td><td>32%</td></tr><tr><td>ACLF-3</td><td>≥3</td><td>77%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>CLIF-SOFA 6 organ cut-offs</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>ACLF grades + mortality</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>ACLF vs ALF vs decompensation</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Precipitants</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Transplant indications</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>6 CLIF-SOFA organ failures</td><td></td><td></td></tr><tr><td>ACLF-1 vs ACLF-2 vs ACLF-3</td><td></td><td></td></tr><tr><td>CLIF-C ACLF vs MELD</td><td></td><td></td></tr><tr><td>Top 3 precipitants</td><td></td><td></td></tr><tr><td>Transplant criteria</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Acute Liver Failure/Definition and Aetiology|ALF Definition]]</li><li>[[Acute Liver Failure/ALF vs ACLF|ALF vs ACLF]]</li><li>[[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS]]</li><li>[[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]</li><li>[[Portal Hypertension and Complications/Acute variceal bleeding management|Variceal Bleed]]</li><li>[[Acute Liver Failure/King's College Criteria|King's College Criteria]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · CLIF-C ACLF and ACLF grades · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

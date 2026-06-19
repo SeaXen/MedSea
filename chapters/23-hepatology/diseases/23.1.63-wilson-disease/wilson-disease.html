@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wilson Disease — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Wilson Disease</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply diagnostic criteria (ceruloplasmin, urinary copper, KF rings, genetics)</li><li>[ ] Calculate Leipzig score</li><li>[ ] Differentiate hepatic vs neurological presentations</li><li>[ ] Initiate chelation therapy (penicillamine, trientine) and zinc</li><li>[ ] Identify FCPS/MRCP high-yield features (Kayser-Fleischer rings, Coombs-negative haemolysis)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Pathogenesis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Wilson Disease</th></tr><tr><td>---------</td><td>----------------</td></tr><tr><td>**Genetics**</td><td>**Autosomal recessive**: **ATP7B** gene (chromosome 13)</td></tr><tr><td>**Protein**</td><td>ATP7B = Copper-transporting ATPase (biliary excretion)</td></tr><tr><td>**Defect**</td><td>Impaired biliary copper excretion → hepatic copper accumulation → oxidative damage</td></tr><tr><td>**Prevalence**</td><td>1:30,000; carrier frequency 1:90</td></tr><tr><td>**Age of onset**</td><td>**5-35 years** (hepatic); **10-50 years** (neurological)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Presentations</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Wilson Disease] --&gt; B[Hepatic Presentation]
+    B --&gt; C[Asymptomatic / Elevated LFTs]
+    B --&gt; D[Chronic Hepatitis]
+    B --&gt; E[Cirrhosis]
+    B --&gt; F[**Acute Liver Failure** (5-10% of young ALF)]
+    A --&gt; G[Neurological Presentation]
+    G --&gt; H[Tremor (wing-beating)]
+    G --&gt; I[Dystonia, rigidity, dysarthria]
+    G --&gt; J[Psychiatric: depression, psychosis, personality change]
+    A --&gt; K[Other]
+    K --&gt; L[Kayser-Fleischer Rings]
+    K --&gt; M[Renal: Fanconi syndrome, nephrolithiasis]
+    K --&gt; N[Cardiac: cardiomyopathy]
+    K --&gt; O[Bone: osteoporosis, arthritis]
+    K --&gt; P[Haematologic: Coombs-neg haemolytic anaemia]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Diagnostic Criteria (Leipzig Score)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Score</th></tr><tr><td>---------</td><td>-------</td></tr><tr><td>**Kayser-Fleischer rings**</td><td>Present: +2; Absent: 0</td></tr><tr><td>**Neurological symptoms**</td><td>Severe: +2; Mild: +1; None: 0</td></tr><tr><td>**Ceruloplasmin (mg/dL)**</td><td><10: +2; 10-20: +1; >20: 0</td></tr><tr><td>**Coombs-negative haemolytic anaemia**</td><td>Present: +1; Absent: 0</td></tr><tr><td>**Liver copper (μg/g dry weight)**</td><td>>250: +2; 50-250: +1; <50: -1</td></tr><tr><td>**Urinary copper (μg/24h)**</td><td>>100: +2; 40-100: +1; <40: 0</td></tr><tr><td>**Mutation analysis**</td><td>2 mutations: +4; 1 mutation: +1; 0: 0</td></tr></table>
+<table class="ctable"><tr><th>Total Score</th><th>Interpretation</th></tr><tr><td>-------------</td><td>----------------</td></tr><tr><td>**≥4**</td><td>**Wilson disease confirmed**</td></tr><tr><td>**3**</td><td>Probable — needs more testing</td></tr><tr><td>**≤2**</td><td>Unlikely</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Key Diagnostic Tests</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Ceruloplasmin</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Normal**</td><td>20-40 mg/dL</td></tr><tr><td>**Wilson**</td><td>**Low (<20 mg/dL)** in 85-90%</td></tr><tr><td>**Pitfalls**</td><td>**Acute phase reactant** → may be NORMAL in ALF, inflammation, pregnancy, estrogen</td></tr><tr><td>**Specificity**</td><td>Not specific (low in malnutrition, nephrotic syndrome, Menkes disease)</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Low ceruloplasmin + clinical picture = Wilson until proven otherwise</b></div>
+<div class="sub-h">2. Urinary Copper (24-hour)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Normal**</td><td><40 μg/24h</td></tr><tr><td>**Wilson**</td><td>**>100 μg/24h** (often >500 in symptomatic)</td></tr><tr><td>**Post-penicillamine challenge**</td><td>Not routinely needed</td></tr></table>
+<div class="sub-h">3. Kayser-Fleischer (KF) Rings</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Cause**</td><td>Copper deposition in Descemet's membrane</td></tr><tr><td>**Detection**</td><td>**Slit-lamp examination** (essential — not visible to naked eye usually)</td></tr><tr><td>**Sensitivity**</td><td>Neurological: **95-100%**; Hepatic: **50-60%**; ALF: often absent</td></tr><tr><td>**Specificity**</td><td>**High** (also in chronic cholestasis: PBC, PSC — but rare)</td></tr></table>
+<div class="sub-h">4. Liver Copper (Biopsy)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Normal**</td><td><50 μg/g dry weight</td></tr><tr><td>**Wilson**</td><td>**>250 μg/g** (diagnostic)</td></tr><tr><td>**Caveat**</td><td>Sampling error in cirrhosis; **cholestatic diseases also high**</td></tr></table>
+<div class="sub-h">5. Genetic Testing (ATP7B)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Diagnostic**</td><td>**2 pathogenic mutations = definite**</td></tr><tr><td>**Carrier**</td><td>1 mutation</td></tr><tr><td>**Limitations**</td><td>>500 mutations described; not all detected by panels</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Wilson Disease Presenting as ALF (High-Yield)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Wilson ALF</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**ALP : Bilirubin ratio**</td><td>**<2** (ALP disproportionately low)</td></tr><tr><td>**AST : ALT ratio**</td><td>**>2.2**</td></tr><tr><td>**Haemolysis**</td><td>**Coombs-negative (90%)**</td></tr><tr><td>**Ceruloplasmin**</td><td>Low (but acute phase may ↑ it)</td></tr><tr><td>**Urinary copper**</td><td>>500 μg/24h typical</td></tr><tr><td>**KF rings**</td><td>Often **ABSENT** (acute)</td></tr><tr><td>**Survival without transplant**</td><td>**<20%**</td></tr></table>
+<div class="callout"><b>Any young person &lt;40 with ALF of unknown cause = Wilson until proven otherwise</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Treatment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Chelation Therapy</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Mechanism</th><th>Monitoring</th></tr><tr><td>------</td><td>------</td><td>-----------</td><td>------------</td></tr><tr><td>**Penicillamine**</td><td>250-500 mg QID (500-1500 mg/day)</td><td>Chelates copper → urinary excretion</td><td>CBC, U&E, LFTs, urine protein q1-3mo; **pyridoxine 25mg daily**</td></tr><tr><td>**Trientine**</td><td>500-750 mg QID (1000-2000 mg/day)</td><td>Chelates copper (less side effects)</td><td>Similar; preferred if penicillamine intolerant</td></tr><tr><td>**Tetrathiomolybdate**</td><td>Experimental</td><td>Inhibits copper absorption + chelates</td><td>Pulmonary fibrosis risk</td></tr></table>
+<div class="callout"><b>First-line</b>: Penicillamine OR Trientine (trientine preferred for neuro/less side effects)</div>
+<div class="sub-h">2. Zinc Acetate (Maintenance / Initial if Mild)</div>
+<table class="ctable"><tr><th>Dose</th><th>50 mg TID (elemental zinc)</th></tr><tr><td>------</td><td>----------------------------</td></tr><tr><td>**Mechanism**</td><td>Induces intestinal metallothionein → blocks copper absorption</td></tr><tr><td>**Use**</td><td>Maintenance after decoppering; Initial for presymptomatic/mild</td></tr><tr><td>**Monitoring**</td><td>Urinary copper <100 μg/24h; Zinc levels</td></tr></table>
+<div class="sub-h">3. Treatment Algorithm</div>
+<pre class="codeblock"><code>flowchart TD
+    A[Diagnose Wilson Disease] --&gt; B{Presentation}
+    B --&gt;|ALF| C[URGENT: Penicillamine/Trientine + Zinc + Transplant Evaluation]
+    B --&gt;|Neurological / Hepatic (Symptomatic)| D[Penicillamine 750-1500mg/d OR Trientine 1000-2000mg/d + Zinc 50mg TID]
+    B --&gt;|Presymptomatic / Mild| E[Zinc 50mg TID alone (or + low-dose chelator)]
+
+*...continued (truncated for renderer performance)*</code></pre>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Wilson Disease · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

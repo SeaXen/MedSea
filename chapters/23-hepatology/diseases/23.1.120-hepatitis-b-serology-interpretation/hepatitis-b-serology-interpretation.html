@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatitis B serology interpretation — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Hepatitis B serology interpretation</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Interpret all 8 HBV serology scenarios</li><li>[ ] Understand window period and its diagnosis</li><li>[ ] Diagnose occult HBV infection</li><li>[ ] Apply serology to clinical decision-making (treatment, vaccination, prophylaxis)</li><li>[ ] Identify FCPS/MRCP high-yield patterns and pitfalls</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">HBV Serological Markers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Marker</th><th>Full Name</th><th>Significance</th></tr><tr><td>--------</td><td>-----------</td><td>--------------</td></tr><tr><td>**HBsAg**</td><td>Hepatitis B Surface Antigen</td><td>**Active infection** (acute or chronic)</td></tr><tr><td>**Anti-HBs**</td><td>Antibody to HBsAg</td><td>**Immunity** (vaccination or past resolved infection)</td></tr><tr><td>**Anti-HBc Total**</td><td>Antibody to HBcAg (IgG + IgM)</td><td>**Past or current infection** (never in vaccine-only)</td></tr><tr><td>**Anti-HBc IgM**</td><td>IgM Antibody to HBcAg</td><td>**Acute infection** (within 6 months)</td></tr><tr><td>**HBeAg**</td><td>Hepatitis B e Antigen</td><td>**High infectivity**, active replication</td></tr><tr><td>**Anti-HBe**</td><td>Antibody to HBeAg</td><td>**Lower infectivity**, immune control</td></tr><tr><td>**HBV DNA**</td><td>Viral Load</td><td>**Quantifies replication**; guides treatment</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">The 8 Serology Scenarios</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[HBsAg] --&gt; B{Positive?}
+    B --&gt;|Yes| C{Anti-HBc IgM?}
+    C --&gt;|+ve| D[1. ACUTE HBV]
+    C --&gt;|-ve| E{Anti-HBc IgG?}
+    E --&gt;|+ve| F[2. CHRONIC HBV]
+    E --&gt;|-ve| G[Impossible - Check Assay]
+    B --&gt;|No| H{Anti-HBs?}
+    H --&gt;|+ve| I{Anti-HBc?}
+    I --&gt;|+ve| J[3. RESOLVED / PAST INFECTION]
+    I --&gt;|-ve| K[4. VACCINATED]
+    H --&gt;|No| L{Anti-HBc IgM?}
+    L --&gt;|+ve| M[5. WINDOW PERIOD]
+    L --&gt;|-ve| N{Anti-HBc IgG?}
+    N --&gt;|+ve| O[6. OCCULT HBV]
+    N --&gt;|-ve| P[7. SUSCEPTIBLE]
+    O --&gt; Q[HBV DNA +ve in Liver]</code></pre>
+<div class="sub-h">Detailed Table</div>
+<table class="ctable"><tr><th>#</th><th>Scenario</th><th>HBsAg</th><th>Anti-HBs</th><th>Anti-HBc Total</th><th>Anti-HBc IgM</th><th>HBeAg</th><th>Anti-HBe</th><th>HBV DNA</th><th>Clinical Meaning</th></tr><tr><td>---</td><td>----------</td><td>-------</td><td>----------</td><td>----------------</td><td>--------------</td><td>-------</td><td>----------</td><td>---------</td><td>------------------</td></tr><tr><td>**1**</td><td>**Acute HBV**</td><td>+</td><td>-</td><td>+</td><td>**+**</td><td>+</td><td>-</td><td>High</td><td>Acute infection</td></tr><tr><td>**2**</td><td>**Chronic HBV**</td><td>+</td><td>-</td><td>+</td><td>-</td><td>±</td><td>±</td><td>Variable</td><td>Chronic infection</td></tr><tr><td>**3**</td><td>**Resolved/Past**</td><td>-</td><td>**+**</td><td>**+**</td><td>-</td><td>-</td><td>+</td><td>-</td><td>Immune (natural)</td></tr><tr><td>**4**</td><td>**Vaccinated**</td><td>-</td><td>**+**</td><td>**-**</td><td>-</td><td>-</td><td>-</td><td>-</td><td>Immune (vaccine)</td></tr><tr><td>**5**</td><td>**Window Period**</td><td>-</td><td>-</td><td>**+**</td><td>**+**</td><td>-</td><td>-</td><td>+</td><td>Acute resolving (HBsAg cleared, Anti-HBs not yet)</td></tr><tr><td>**6**</td><td>**Occult HBV**</td><td>-</td><td>±</td><td>**+**</td><td>-</td><td>-</td><td>-</td><td>**+ (Liver)**</td><td>HBsAg -, DNA + in liver; Reactivation risk</td></tr><tr><td>**7**</td><td>**Susceptible**</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>No immunity, no infection</td></tr><tr><td>**8**</td><td>**Immune Escape Mutant**</td><td>+</td><td>-</td><td>+</td><td>-</td><td>-</td><td>+</td><td>High</td><td>S-gene mutant, HBsAg detection may fail</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Key Interpretations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Acute vs Chronic HBV</div>
+<table class="ctable"><tr><th>Feature</th><th>Acute</th><th>Chronic</th></tr><tr><td>---------</td><td>-------</td><td>---------</td></tr><tr><td>**Anti-HBc IgM**</td><td>**Positive**</td><td>Negative</td></tr><tr><td>**Anti-HBc IgG**</td><td>Negative/Early</td><td>Positive</td></tr><tr><td>**HBsAg**</td><td>Positive (clears in 6mo)</td><td>**Persistently Positive**</td></tr><tr><td>**Clinical**</td><td>Self-limited (90% adults)</td><td>Persists >6 months</td></tr></table>
+<div class="sub-h">Window Period</div>
+<ul><li><b>Definition</b>: HBsAg cleared, Anti-HBs not yet appeared</li><li><b>Serology</b>: <b>HBsAg -, Anti-HBc IgM +, Anti-HBs -</b></li><li><b>Duration</b>: 2-8 weeks</li><li><b>Diagnosis</b>: <b>Anti-HBc IgM is the ONLY positive marker</b></li><li><b>Clinical</b>: Patient recovering from acute HBV</li></ul>
+<div class="sub-h">Occult HBV Infection</div>
+<ul><li><b>Definition</b>: <b>HBsAg negative, HBV DNA detectable in liver</b> (and sometimes serum)</li><li><b>Serology</b>: Anti-HBc + (usually), Anti-HBs ±, HBsAg -, HBV DNA +</li><li><b>Causes</b>: S-gene mutations, Low-level replication, Immune control</li><li><b>Reactivation Risk</b>: <b>High</b> with immunosuppression (rituximab, chemo, transplant)</li><li><b>Screening</b>: <b>Anti-HBc + before immunosuppression</b> → Check HBV DNA</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">HBsAg Mutants (Diagnostic Pitfall)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Detection Issue</th></tr><tr><td>------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**S-Gene Mutant**</td><td>Mutation in "a" determinant of HBsAg</td><td>**Standard HBsAg assay false negative**</td></tr><tr><td>**Clinical Clue**</td><td>Patient with HBV symptoms, PCR +, HBsAg -</td><td>Use **HBV DNA PCR**; Next-gen assays detect mutants</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Serology-Guided Clinical Decisions</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[HBV Serology Result] --&gt; B{Scenario}
+    B --&gt;|Acute HBV| C[Supportive; No NUC Unless ALF; Monitor for Chronicity]
+    B --&gt;|Chronic HBV| D[Assess Phase: Immune Tolerant, Active, Inactive, Reactivation]
+    D --&gt; E{Phase}
+    E --&gt;|Immune Active / Reactivation + Fibrosis| F[Treat: ETV/TDF/TAF]
+    E --&gt;|Inactive Carrier| G[Monitor q6-12mo: ALT, HBV DNA, HBeAg]
+    B --&gt;|Resolved| H[No Treatment; Monitor if Immunosuppression Planned]
+    B --&gt;|Window Period| I[Repeat in 4-8w; Expect Anti-HBs Seroconversion]
+    B --&gt;|Occult HBV| J[HBV DNA PCR; If Immunosuppression → Prophylactic NUC]
+    B --&gt;|Vaccinated| K[Protected; Booster if Anti-HBs &lt;10]
+    B --&gt;|Susceptible| L[Vaccinate: 0, 1, 6 months]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Quantitative HBsAg (qHBsAg)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Use</th><th>Interpretation</th></tr><tr><td>-----</td><td>----------------</td></tr><tr><td>**Predicts HBeAg Seroconversion**</td><td>qHBsAg <100 IU/mL + HBV DNA <2000 → High chance</td></tr><tr><td>**Predicts HBsAg Loss (Functional Cure)**</td><td>qHBsAg <100 IU/mL (genotype A), <1000 (genotype D)</td></tr><tr><td>**Monitoring on NUCs**</td><td>Declining qHBsAg → Good predictor of HBsAg loss</td></tr><tr><td>**Genotype Differences**</td><td>Genotype A: Higher qHBsAg; Genotype D: Lower</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**8 Scenarios**</td><td>Acute, Chronic, Resolved, Vaccinated, Window, Occult, Susceptible, Immune Escape</td></tr><tr><td>**Acute vs Chronic**</td><td>**Anti-HBc IgM + = Acute**; Anti-HBc IgM - + HBsAg + = Chronic</td></tr><tr><td>**Resolved vs Vaccinated**</td><td>**Anti-HBc + = Resolved**; Anti-HBc - = Vaccinated</td></tr><tr><td>**Window Period**</td><td>**HBsAg -, Anti-HBc IgM +, Anti-HBs -**; Only IgM positive</td></tr><tr><td>**Occult HBV**</td><td>**HBsAg -, Anti-HBc +, HBV DNA + (liver)**; Reactivation risk with immunosuppression</td></tr><tr><td>**Immune Escape**</td><td>HBsAg false negative due to S-gene mutation; Check HBV DNA</td></tr><tr><td>**Reactivation Prophylaxis**</td><td>Anti-HBc + (resolved/occult) + Immunosuppression → Prophylactic NUC</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Interpret: HBsAg +, Anti-HBc IgM +, Anti-HBs -</b></li><li><b>Interpret: HBsAg -, Anti-HBs +, Anti-HBc +</b></li><li><b>Interpret: HBsAg -, Anti-HBs -, Anti-HBc IgM +</b></li><li><b>Interpret: HBsAg -, Anti-HBs -, Anti-HBc +, HBV DNA + (liver)</b></li><li><b>What is the window period? Serology?</b></li><li><b>What is occult HBV? When do you suspect it?</b></li><li><b>How do you differentiate resolved from vaccinated?</b></li><li><b>What is the serology of HBeAg-negative chronic HBV?</b></li><li><b>What HBsAg mutant causes false negative?</b></li><li><b>Prophylaxis for occult HBV before rituximab?</b></li><li><b>Quantitative HBsAg: what does low level predict?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Resolved vs Vaccinated</td><td>**Anti-HBc distinguishes**: Resolved = Anti-HBc +; Vaccinated = Anti-HBc -</td></tr><tr><td>Window Period vs Occult</td><td>Window: Anti-HBc IgM +, DNA +; Occult: Anti-HBc IgG +, DNA + (liver), HBsAg -</td></tr><tr><td>Chronic vs Acute</td><td>**Anti-HBc IgM**: + = Acute, - = Chronic (if HBsAg +)</td></tr><tr><td>Occult HBV Reactivation</td><td>**High risk with Rituximab, Stem Cell Transplant, Anti-TNF** → Prophylactic NUC</td></tr><tr><td>Immune Escape Mutant</td><td>**HBsAg false negative** — PCR confirms; New assays detect most mutants</td></tr><tr><td>Anti-HBc in Vaccinated</td><td>**Never positive** in vaccine-only (vaccine contains only HBsAg)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((HBV Serology))
+    8 Scenarios
+      1. Acute: HBsAg+, IgM+, HBsAb-
+      2. Chronic: HBsAg+, IgM-, HBcAb+
+      3. Resolved: HBsAg-, HBsAb+, HBcAb+
+      4. Vaccinated: HBsAg-, HBsAb+, HBcAb-
+      5. Window: HBsAg-, IgM+, HBsAb-
+      6. Occult: HBsAg-, HBcAb+, DNA+
+      7. Susceptible: All Negative
+      8. Mutant: HBsAg- (false neg), DNA+
+    Key Differentiators
+      Acute vs Chronic: Anti-HBc IgM
+      Resolved vs Vaccinated: Anti-HBc
+      Window: Only IgM+
+      Occult: HBsAg-, DNA+ in liver
+    Clinical Actions
+      Acute: Monitor
+      Chronic: Phase → Treat if Active
+      Resolved: Monitor if Immunosuppression
+      Window: Repeat 4-8w
+      Occult: DNA PCR → Prophylaxis if Immunosuppression</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Scenario**</th><th>**HBsAg**</th><th>**Anti-HBs**</th><th>**Anti-HBc**</th><th>**Anti-HBc IgM**</th><th>**HBV DNA**</th></tr><tr><td>--------------</td><td>-----------</td><td>--------------</td><td>--------------</td><td>------------------</td><td>-------------</td></tr><tr><td>**1. Acute**</td><td>+</td><td>-</td><td>+</td><td>**+**</td><td>High</td></tr><tr><td>**2. Chronic**</td><td>+</td><td>-</td><td>+</td><td>-</td><td>Variable</td></tr><tr><td>**3. Resolved**</td><td>-</td><td>**+**</td><td>**+**</td><td>-</td><td>-</td></tr><tr><td>**4. Vaccinated**</td><td>-</td><td>**+**</td><td>**-**</td><td>-</td><td>-</td></tr><tr><td>**5. Window**</td><td>-</td><td>-</td><td>**+**</td><td>**+**</td><td>+</td></tr><tr><td>**6. Occult**</td><td>-</td><td>±</td><td>**+**</td><td>-</td><td>**+ (Liver)**</td></tr><tr><td>**7. Susceptible**</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr></table>
+<table class="ctable"><tr><th>**Key Rule**</th><th>**Interpretation**</th></tr><tr><td>--------------</td><td>-------------------</td></tr><tr><td>Anti-HBc IgM +</td><td>**Acute HBV**</td></tr><tr><td>HBsAg +, IgM -</td><td>**Chronic HBV**</td></tr><tr><td>Anti-HBs +, Anti-HBc +</td><td>**Resolved**</td></tr><tr><td>Anti-HBs +, Anti-HBc -</td><td>**Vaccinated**</td></tr><tr><td>HBsAg -, IgM +</td><td>**Window Period**</td></tr><tr><td>HBsAg -, Anti-HBc +, DNA +</td><td>**Occult HBV**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>8 Scenarios table</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Window period</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Occult HBV</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Resolved vs Vaccinated</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Reactivation prophylaxis</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>Window period serology</td><td></td><td></td></tr><tr><td>Occult HBV definition</td><td></td><td></td></tr><tr><td>Resolved vs Vaccinated</td><td></td><td></td></tr><tr><td>Acute vs Chronic</td><td></td><td></td></tr><tr><td>Reactivation prophylaxis</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Viral Hepatitis/Hepatitis B|HBV Overview]]</li><li>[[Viral Hepatitis/Hepatitis B phases of chronic infection|HBV Phases]]</li><li>[[Viral Hepatitis/Hepatitis B treatment indications|HBV Treatment]]</li><li>[[Viral Hepatitis/Hepatitis B reactivation|HBV Reactivation]]</li><li>[[Viral Hepatitis/Hepatitis B pregnancy and vertical transmission|HBV Pregnancy]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatitis B serology interpretation · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

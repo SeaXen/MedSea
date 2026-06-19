@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Isolated alkaline phosphatase elevation — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Isolated alkaline phosphatase elevation</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define isolated ALP elevation and its differential diagnosis</li><li>[ ] Distinguish hepatic from bone origin using GGT/5'-nucleotidase</li><li>[ ] Identify hepatic causes (cholestasis, infiltrative, drugs)</li><li>[ ] Identify bone causes (Paget's, osteomalacia, metastases, growth)</li><li>[ ] Apply diagnostic algorithm and know FCPS/MRCP high-yield associations</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Isolated ALP Elevation</b> = <b>ALP ↑</b> with <b>normal AST, ALT, GGT, Bilirubin, Albumin, PT</b></div>
+<pre class="codeblock"><code>flowchart TD
+    A[Isolated ALP ↑] --&gt; B{GGT / 5'-Nucleotidase}
+    B --&gt;|Normal| C[Bone Origin]
+    B --&gt;|Elevated| D[Hepatic Origin]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Hepatic vs Bone Origin</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Hepatic Origin</th><th>Bone Origin</th></tr><tr><td>------</td><td>----------------</td><td>-------------</td></tr><tr><td>**ALP**</td><td>↑</td><td>↑</td></tr><tr><td>**GGT**</td><td>**↑**</td><td>**Normal**</td></tr><tr><td>**5'-Nucleotidase**</td><td>**↑**</td><td>**Normal**</td></tr><tr><td>**Bone ALP Isoenzyme**</td><td>Normal</td><td>**↑**</td></tr><tr><td>**Clinical Context**</td><td>Liver disease, drugs, cholestasis</td><td>Bone disease, growth, pregnancy</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>GGT is the standard confirmatory test</b> — if GGT normal, think bone; if GGT ↑, think liver</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Hepatic Causes of Isolated ALP Elevation</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Hepatic Isolated ALP ↑ (GGT ↑)] --&gt; B{Clinical Context}
+    B --&gt;|Early Cholestasis| C[Early PBC / PSC / Obstruction]
+    B --&gt;|Drug-Induced| D[Amox-Clav, Flucloxacillin, OCP, Carbamazepine, Allopurinol, Atorvastatin]
+    B --&gt;|Infiltrative| E[Sarcoidosis, TB, Amyloid, Lymphoma, Secondaries]
+    B --&gt;|Fatty Liver| F[NAFLD / Alcoholic - usually ALT also ↑]
+    B --&gt;|Post-Transplant| G[Biliary stricture, Rejection]
+    B --&gt;|Physiological| H[Pregnancy (3rd trimester), Growing Children]</code></pre>
+<div class="sub-h">Key Hepatic Causes</div>
+<table class="ctable"><tr><th>Cause</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Early PBC**</td><td>Middle-aged women, **ALP ↑↑, GGT ↑**, AMA+, pruritus may be absent initially</td></tr><tr><td>**Early PSC**</td><td>Young men, IBD, **ALP ↑, GGT ↑**, MRCP beading (may be normal early)</td></tr><tr><td>**Drug-induced**</td><td>**Amox-Clav, Flucloxacillin, OCP, Carbamazepine, Allopurinol, Statins**; latency 1-4 weeks</td></tr><tr><td>**Infiltrative**</td><td>Sarcoidosis (ACE ↑, hilar lymphadenopathy), TB, Lymphoma, Amyloid, Metastases</td></tr><tr><td>**Post-Transplant**</td><td>Biliary stricture (anastomotic/ischaemic), Rejection, Recurrent PBC/PSC</td></tr><tr><td>**Pregnancy**</td><td>**3rd trimester** (placental ALP), resolves postpartum; also ICP (see AFLP note)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Bone Causes of Isolated ALP Elevation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cause</th><th>Features</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**Paget's Disease**</td><td>**ALP markedly ↑↑** (often >1000), bone pain, deformities, skull enlargement, "cotton wool" skull on X-ray</td></tr><tr><td>**Osteomalacia / Rickets**</td><td>Low Vitamin D, Low Calcium/Low Phosphate, **ALP ↑**, Looser's zones, pseudofractures</td></tr><tr><td>**Bone Metastases**</td><td>Prostate (blastic → ALP ↑↑), Breast, Lung, Thyroid; **PSA** for prostate</td></tr><tr><td>**Primary Bone Tumours**</td><td>Osteosarcoma (ALP ↑), Ewing's sarcoma</td></tr><tr><td>**Hyperparathyroidism**</td><td>Primary/Secondary/Renal; **High turnover → ALP ↑**; Calcium ↑, PTH ↑</td></tr><tr><td>**Renal Osteodystrophy**</td><td>CKD, Secondary hyperparathyroidism, ALP ↑ (bone-specific)</td></tr><tr><td>**Fracture Healing**</td><td>Transient ALP ↑ during callus formation</td></tr><tr><td>**Growth / Children**</td><td>**Physiological** — high bone turnover</td></tr><tr><td>**Pregnancy**</td><td>Placental ALP (but usually hepatic fraction also ↑)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnostic Algorithm</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Isolated ALP ↑] --&gt; B[Check GGT]
+    B --&gt;|GGT Normal| C[Bone Origin]
+    C --&gt; D{Age / Context}
+    D --&gt;|Child / Adolescent| E[Growth - Physiological]
+    D --&gt;|Pregnancy| F[Placental ALP]
+    D --&gt;|Adult - Bone Pain| G[Paget's, Osteomalacia, Metastases]
+    D --&gt;|CKD| H[Renal Osteodystrophy]
+    D --&gt;|Hypercalcaemia| I[Hyperparathyroidism]
+    C --&gt; J[Bone ALP Isoenzyme if Uncertain]
+    B --&gt;|GGT ↑| K[Hepatic Origin]
+    K --&gt; L{Drug History}
+    L --&gt;|Yes| M[Drug-Induced: Stop/Review]
+    L --&gt;|No| N[US Abdomen + LFTs]
+    N --&gt; O{Dilated Ducts?}
+    O --&gt;|Yes| P[Obstruction: Stones, Stricture, Tumour]
+    O --&gt;|No| Q[Early PBC/PSC, Infiltrative, Fatty Liver]
+    Q --&gt; R[AMA, IgG4, MRCP, Liver Biopsy if Needed]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Special Scenarios</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pregnancy</div>
+<ul><li><b>3rd Trimester</b>: Physiological ALP ↑ (placental origin) — <b>Normal GGT</b></li><li><b>Intrahepatic Cholestasis of Pregnancy (ICP)</b>: Pruritus, <b>ALP ↑, GGT ↑</b>, Bile acids ↑ &gt;40 μmol/L, risk of stillbirth</li><li><b>AFLP/HELLP</b>: Usually have <b>ALT/AST ↑</b> as well (not isolated ALP)</li></ul>
+<div class="sub-h">Children</div>
+<ul><li><b>Growth Spurt</b>: Physiological ALP ↑ (bone origin), <b>Normal GGT</b></li><li><b>Rickets</b>: Nutritional/Vitamin D deficiency, ALP ↑↑, Low Ca/PO4, GGT normal</li></ul>
+<div class="sub-h">Post-Liver Transplant</div>
+<ul><li><b>Biliary Stricture</b>: Isolated ALP ↑, GGT ↑, US/MRCP for anastomotic stricture</li><li><b>Rejection</b>: Usually ALT ↑ also, but can be ALP predominant</li><li><b>Recurrent PBC/PSC</b>: AMA/IgG4, MRCP</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Isolated ALP**</td><td>ALP ↑, **Normal AST, ALT, Bilirubin, GGT** (if bone)</td></tr><tr><td>**Hepatic vs Bone**</td><td>**GGT ↑ = Hepatic**; **GGT Normal = Bone** (confirm with 5'-nucleotidase)</td></tr><tr><td>**Hepatic Causes**</td><td>Early PBC/PSC, Drugs (Amox-clav, Fluclox, OCP, Statins), Infiltrative, Post-transplant</td></tr><tr><td>**Bone Causes**</td><td>**Paget's** (markedly ↑), Osteomalacia, Metastases (Prostate), Hyperparathyroidism, Renal osteodystrophy, Fracture, Growth</td></tr><tr><td>**Pregnancy**</td><td>**3rd trimester = Placental ALP (Normal GGT)**; **ICP = Pruritus + ALP↑ + GGT↑ + Bile acids↑**</td></tr><tr><td>**Children**</td><td>Physiological growth = Normal GGT; Rickets = Low Vit D + ALP↑</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>How do you differentiate hepatic from bone origin of isolated ALP elevation?</b></li><li><b>What are the hepatic causes of isolated ALP elevation?</b></li><li><b>What are the bone causes of isolated ALP elevation?</b></li><li><b>Why is ALP elevated in Paget's disease?</b></li><li><b>What is the ALP pattern in pregnancy?</b></li><li><b>How does ICP differ from physiological pregnancy ALP elevation?</b></li><li><b>Which drugs cause isolated ALP elevation?</b></li><li><b>What is the workup for isolated ALP elevation with normal GGT?</b></li><li><b>What causes markedly elevated ALP (&gt;1000)?</b></li><li><b>ALP in renal osteodystrophy?</b></li><li><b>How do you confirm bone origin if GGT is equivocal?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>GGT normal = Bone</td><td>**Standard teaching**: GGT is hepatocyte-specific; bone ALP doesn't raise GGT</td></tr><tr><td>Physiological pregnancy ALP</td><td>**3rd trimester, Normal GGT** — placental origin</td></tr><tr><td>ICP vs Pregnancy ALP</td><td>**ICP: Pruritus + GGT ↑ + Bile acids ↑**; Pregnancy: Asymptomatic, GGT normal</td></tr><tr><td>Paget's ALP</td><td>**Markedly elevated** (often >1000), bone pain, deformities</td></tr><tr><td>Drug-induced ALP</td><td>Amox-clav, Flucloxacillin, OCP, Carbamazepine, Allopurinol, Statins</td></tr><tr><td>ALP in Prostate Cancer</td><td>**Blastic metastases → ALP ↑↑**; PSA correlates</td></tr><tr><td>5'-Nucleotidase</td><td>More specific than GGT for hepatic origin; used if GGT equivocal</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Isolated ALP Elevation))
+    GGT Normal = Bone Origin
+      Paget's: Markedly ↑, Bone pain
+      Osteomalacia: Low Vit D, Low Ca/PO4
+      Metastases: Prostate (blastic), Breast
+      Hyperparathyroidism: High Ca, High PTH
+      Renal Osteodystrophy: CKD, Sec HPTH
+      Fracture Healing: Transient
+      Growth (Children): Physiological
+      Pregnancy (Placental): 3rd Trimester
+    GGT ↑ = Hepatic Origin
+      Early PBC/PSC
+      Drug-Induced: Amox-Clav, Fluclox, OCP, Statins
+      Infiltrative: Sarcoid, TB, Lymphoma, Mets
+      Post-Transplant: Stricture, Rejection
+      Fatty Liver (usually ALT also)
+      Pregnancy ICP: Pruritus, Bile Acids ↑</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Isolated ALP**</th><th>**Algorithm**</th></tr><tr><td>------------------</td><td>---------------</td></tr><tr><td>1. Check GGT</td><td></td></tr><tr><td>**GGT Normal** → **Bone Origin**</td><td>**GGT ↑** → **Hepatic Origin**</td></tr><tr><td>Bone Causes:</td><td>Hepatic Causes:</td></tr><tr><td>Paget's (↑↑↑)</td><td>Early PBC/PSC (AMA/MRCP)</td></tr><tr><td>Osteomalacia (Low Vit D)</td><td>Drugs (Amox-Clav, Fluclox, OCP, Statins)</td></tr><tr><td>Metastases (Prostate PSA)</td><td>Infiltrative (Sarcoid, TB, Lymphoma)</td></tr><tr><td>Hyperparathyroidism (High Ca, PTH)</td><td>Post-Transplant Stricture</td></tr><tr><td>Renal Osteodystrophy (CKD)</td><td>Pregnancy ICP (Pruritus, Bile Acids)</td></tr><tr><td>Fracture Healing</td><td></td></tr><tr><td>Growth (Children)</td><td></td></tr><tr><td>Pregnancy (Placental, 3rd Tri)</td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>GGT differentiates hepatic vs bone</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Bone causes list</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Hepatic causes list</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Pregnancy ALP vs ICP</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Drug causes</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>GGT in bone vs hepatic</td><td></td><td></td></tr><tr><td>5 bone causes</td><td></td><td></td></tr><tr><td>5 hepatic causes</td><td></td><td></td></tr><tr><td>Pregnancy physiological vs ICP</td><td></td><td></td></tr><tr><td>Drug causes ALP</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Jaundice and LFT Interpretation/Hepatocellular vs Cholestatic Pattern|LFT Patterns]]</li><li>[[Jaundice and LFT Interpretation/Post-hepatic (obstructive) jaundice|Obstructive Jaundice]]</li><li>[[Inherited and Metabolic Liver Disease/Paget's Disease|Paget's (if applicable)]]</li><li>[[Portal Hypertension and Complications/Ascites|Ascites]]</li><li>[[Hepatology in Special Situations/ICP|ICP]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Isolated alkaline phosphatase elevation · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

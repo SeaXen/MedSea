@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NAFLD HCC Risk and Surveillance — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">NAFLD HCC Risk and Surveillance</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply HCC surveillance criteria in NAFLD/NASH patients</li><li>[ ] Understand HCC risk in non-cirrhotic NAFLD</li><li>[ ] Identify risk factors for HCC development in NAFLD</li><li>[ ] Apply surveillance protocols based on fibrosis stage</li><li>[ ] Identify FCPS/MRCP high-yield emerging concepts</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">NAFLD-Related HCC: Key Concepts</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[NAFLD] --&gt; B{Fibrosis Stage}
+    B --&gt;|F0-F2 (No/Minimal Fibrosis)| C[Very Low HCC Risk]
+    B --&gt;|F3 (Advanced Fibrosis)| D[Moderate HCC Risk]
+    B --&gt;|F4 (Cirrhosis)| E[High HCC Risk]
+    B --&gt;|Non-Cirrhotic NASH F3| F[**Significant Risk**]</code></pre>
+<div class="callout"><b>FCPS/MRCP</b>: <b>NAFLD is now a leading cause of HCC</b> — <b>F3-F4 = Surveillance; F3 Non-Cirrhotic = Emerging Surveillance Indication</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">HCC Risk by Fibrosis Stage</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Fibrosis Stage</th><th>Annual HCC Incidence</th><th>Surveillance Recommendation</th></tr><tr><td>----------------</td><td>----------------------</td><td>----------------------------</td></tr><tr><td>**F0-F1 (No/Minimal Fibrosis)**</td><td>**<0.1%/year**</td><td>**No Routine Surveillance**</td></tr><tr><td>**F2 (Significant Fibrosis)**</td><td>**0.1-0.3%/year**</td><td>**Consider** (Guideline Variation)</td></tr><tr><td>**F3 (Advanced Fibrosis)**</td><td>**0.5-1.5%/year**</td><td>**Yes — 6-Monthly US ± AFP** (Many Guidelines)</td></tr><tr><td>**F4 (Cirrhosis)**</td><td>**1-3%/year**</td><td>**MANDATORY — Lifelong 6-Monthly US ± AFP**</td></tr></table>
+<div class="callout"><b>Key Point</b>: <b>NAFLD-related HCC can occur in NON-CIRRHOTIC patients (F3)</b> — Unique to NAFLD</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Non-Cirrhotic HCC in NAFLD: Emerging Concept</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart LR
+    A[NAFLD] --&gt; B[Non-Cirrhotic HCC]
+    B --&gt; C[Risk Factors]
+    C --&gt; C1[Advanced Fibrosis F3]
+    C --&gt; C2[Diabetes Mellitus]
+    C --&gt; C3[Obesity (BMI &gt;30)]
+    C --&gt; C4[Age &gt;60]
+    C --&gt; C5[Male Sex]
+    C --&gt; C6[PNPLA3 I148M]
+    C --&gt; C7[Metabolic Syndrome Components]</code></pre>
+<table class="ctable"><tr><th>Feature</th><th>Cirrhotic HCC</th><th>Non-Cirrhotic NAFLD HCC</th></tr><tr><td>---------</td><td>---------------</td><td>-------------------------</td></tr><tr><td>**Fibrosis Stage**</td><td>F4 (Cirrhosis)</td><td>**F2-F3 (No Cirrhosis)**</td></tr><tr><td>**Proportion**</td><td>~70% of NAFLD HCC</td><td>**~30% of NAFLD HCC**</td></tr><tr><td>**Surveillance**</td><td>Standard (6m US±AFP)</td><td>**Controversial/Not Universal**</td></tr><tr><td>**Risk Factors**</td><td>Cirrhosis Itself</td><td>**F3, DM, Obesity, Age, Male, PNPLA3**</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>~30% of NAFLD HCC occurs in NON-CIRRHOTIC patients</b> — F3 Fibrosis + Metabolic Risk Factors</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">HCC Risk Factors in NAFLD (Independent)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Risk Factor</th><th>Relative Risk</th><th>Population Attributable Risk</th></tr><tr><td>-------------</td><td>---------------</td><td>-------------------------------</td></tr><tr><td>**Cirrhosis (F4)**</td><td>**10-20x**</td><td>Highest</td></tr><tr><td>**Advanced Fibrosis (F3)**</td><td>**5-10x**</td><td>High</td></tr><tr><td>**Type 2 Diabetes**</td><td>**2-4x**</td><td>High</td></tr><tr><td>**Obesity (BMI ≥30)**</td><td>**2-3x**</td><td>Moderate</td></tr><tr><td>**Age >60**</td><td>**2-3x**</td><td>Moderate</td></tr><tr><td>**Male Sex**</td><td>**2x**</td><td>Moderate</td></tr><tr><td>**PNPLA3 I148M (Homozygous)**</td><td>**3-5x**</td><td>High in Genetically Predisposed</td></tr><tr><td>**Metabolic Syndrome (≥3 Components)**</td><td>**2-3x**</td><td>Moderate</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Surveillance Protocols by Guidelines</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Guideline</th><th>Cirrhosis (F4)</th><th>Advanced Fibrosis (F3)</th><th>F2</th><th>F0-F1</th></tr><tr><td>-----------</td><td>----------------</td><td>------------------------</td><td>-----</td><td>-------</td></tr><tr><td>**AASLD 2023**</td><td>**6m US ± AFP**</td><td>**Consider 6m US ± AFP**</td><td>No Routine</td><td>No Routine</td></tr><tr><td>**EASL 2024**</td><td>**6m US ± AFP**</td><td>**6m US ± AFP**</td><td>Consider</td><td>No Routine</td></tr><tr><td>**APASL 2022**</td><td>**6m US ± AFP**</td><td>**6m US ± AFP**</td><td>No Routine</td><td>No Routine</td></tr><tr><td>**NICE 2023**</td><td>**6m US ± AFP**</td><td>**Consider**</td><td>No Routine</td><td>No Routine</td></tr></table>
+<div class="callout"><b>Consensus</b>: <b>F4 = Mandatory Surveillance</b>; <b>F3 = Increasingly Recommended</b> (EASL Strongest); <b>F0-F2 = No Routine Surveillance</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Surveillance Modality & Technique</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Modality</th><th>Interval</th><th>Sensitivity</th><th>Notes</th></tr><tr><td>----------</td><td>----------</td><td>-------------</td><td>-------</td></tr><tr><td>**Ultrasound (US)**</td><td>**6-Monthly**</td><td>60-80% (Operator Dependent)</td><td>First-Line</td></tr><tr><td>**US + AFP**</td><td>6-Monthly</td><td>US 60-80% + AFP 10-20%</td><td>Standard</td></tr><tr><td>**CT/MRI**</td><td>If US Inadequate</td><td>>90%</td><td>Obesity, Nodular Liver, Ascites</td></tr></table>
+<div class="sub-h">AFP in NAFLD Surveillance</div>
+<table class="ctable"><tr><th>AFP Level</th><th>Significance</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**<20 ng/mL**</td><td>Normal</td></tr><tr><td>**20-200 ng/mL**</td><td>Indeterminate (HCC, Active Hepatitis, Regeneration)</td></tr><tr><td>**>200 ng/mL**</td><td>**Highly Suggestive of HCC** (with Typical Imaging)</td></tr><tr><td>**>400 ng/mL**</td><td>Very High Specificity for HCC</td></tr></table>
+<div class="callout"><b>AFP &gt;200 + Typical Imaging = HCC Diagnosis</b> (in Cirrhosis/High Risk)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">HCC Surveillance Algorithm (NAFLD)</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[NAFLD Patient] --&gt; B{Fibrosis Stage}
+    B --&gt;|F4 Cirrhosis| C[6-Monthly US ± AFP — LIFELONG]
+    B --&gt;|F3 Advanced Fibrosis| D[6-Monthly US ± AFP — CONSIDER]
+    B --&gt;|F2| E[No Routine Surveillance — Risk Stratify]
+    B --&gt;|F0-F1| F[No Surveillance]
+    C --&gt; G[If US Inadequate → CT/MRI]
+    D --&gt; G
+    G --&gt; H[If Lesion Found → LI-RADS Assessment]
+    H --&gt; I[LR-1/2: Continue Surveillance]
+    H --&gt; J[LR-3: 3-6mo FU]
+    H --&gt; K[LR-4: MDT → Treat as HCC]
+    H --&gt; L[LR-5: Treat as HCC]
+    H --&gt; M[LR-M: Biopsy / MDT]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Post-SVR HCV with NAFLD Background</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pre-Treatment Fibrosis</th><th>HCC Risk Post-SVR</th><th>Surveillance</th></tr><tr><td>------------------------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**F4 (Cirrhosis)**</td><td>**Significant (1-3%/yr)**</td><td>**Lifelong 6m US ± AFP**</td></tr><tr><td>**F3**</td><td>Reduced but Persistent</td><td>**Consider 6m US ± AFP**</td></tr><tr><td>**F2**</td><td>Low</td><td>Consider (Guideline Variation)</td></tr><tr><td>**F0-F1**</td><td>Near Zero</td><td>No Routine Surveillance</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Risk Scores for HCC in NAFLD</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Score</th><th>Components</th><th>Use</th></tr><tr><td>-------</td><td>------------</td><td>-----</td></tr><tr><td>**aMAP**</td><td>Age, Sex, Albumin, Bilirubin, Platelets</td><td>Cirrhosis HCC Risk</td></tr><tr><td>**HCC-NAFLD Score**</td><td>Age, Sex, Diabetes, BMI, PNPLA3, Fibrosis Stage</td><td>NAFLD-Specific</td></tr><tr><td>**REACH-B**</td><td>Age, Sex, HBV DNA, ALT, HBeAg</td><td>HBV-HCC (Not NAFLD)</td></tr></table>
+<div class="callout"><b>aMAP Score</b> used for cirrhosis HCC risk stratification in NAFLD too</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**NAFLD = Leading HCC Cause**</td><td>Now #1/#2 Indication for Transplant in West</td></tr><tr><td>**F4 (Cirrhosis)**</td><td>**Mandatory 6m US ± AFP** (Lifelong)</td></tr><tr><td>**F3 (Advanced Fibrosis)**</td><td>**Consider 6m US ± AFP** (EASL Strongest)</td></tr><tr><td>**Non-Cirrhotic HCC**</td><td>**~30% of NAFLD HCC** in F2-F3 (Diabetes, Obesity, Male, PNPLA3)</td></tr><tr><td>**F2 and Below**</td><td>No Routine Surveillance (Unless High Risk Factors)</td></tr><tr><td>**Key Risk Factors**</td><td>Cirrhosis, F3, T2DM, Obesity, Male, Age>60, PNPLA3</td></tr><tr><td>**Surveillance Modality**</td><td>**6m US ± AFP**; CT/MRI if US Inadequate</td></tr><tr><td>**AFP >200 + Imaging**</td><td>= HCC Diagnosis (High Risk)</td></tr><tr><td>**Post-SVR HCV + NAFLD**</td><td>**F4 = Lifelong Surveillance**; F3 Consider</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the HCC incidence in NAFLD cirrhosis (F4)?</b></li><li><b>What proportion of NAFLD HCC occurs in non-cirrhotic patients?</b></li><li><b>Which guideline recommends surveillance for F3 fibrosis?</b></li><li><b>What are independent risk factors for HCC in NAFLD?</b></li><li><b>What is the surveillance interval and modality for NAFLD cirrhosis?</b></li><li><b>Does SVR eliminate HCC risk in cirrhosis?</b></li><li><b>What is the non-cirrhotic HCC risk in NAFLD F3?</b></li><li><b>What is the role of AFP in NAFLD HCC surveillance?</b></li><li><b>How does HCC risk differ between cirrhotic and non-cirrhotic NAFLD?</b></li><li><b>What is the recommended surveillance for F2 fibrosis?</b></li><li><b>Which guideline is most aggressive for F3 surveillance?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>F3 Surveillance</td><td>**EASL: Yes**; AASLD: Consider; NICE: Consider — **EASL Most Aggressive**</td></tr><tr><td>Non-Cirrhotic HCC</td><td>**~30% of NAFLD HCC** occurs in F2-F3; Driven by DM, Obesity, PNPLA3</td></tr><tr><td>HCC Incidence F4</td><td>**1-3%/year** — Same as Other Cirrhosis Aetiologies</td></tr><tr><td>AFP Utility</td><td>**>200 ng/mL + Imaging = HCC**; Adds 10-20% Sensitivity to US</td></tr><tr><td>Post-SVR HCC Risk</td><td>**Persists if F4** (1-3%/yr); F3 Reduced but Present; F0-F2 Near Zero</td></tr><tr><td>F2 Surveillance</td><td>**No Routine** Unless High Risk (Diabetes + Obesity + Age + PNPLA3)</td></tr><tr><td>PNPLA3 Risk</td><td>**Homozygous I148M = 3-5x HCC Risk** (Both Cirrhotic & Non-Cirrhotic)</td></tr><tr><td>US Inadequacy</td><td>Obesity, Nodular Liver, Ascites → **Switch to CT/MRI**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((NAFLD HCC Surveillance))
+    Risk by Fibrosis
+      F0-F1: &lt;0.1%/yr → No Surveillance
+      F2: 0.1-0.3%/yr → No Routine
+      F3: 0.5-1.5%/yr → EASL: 6m US±AFP
+      F4: 1-3%/yr → MANDATORY 6m US±AFP
+    Non-Cirrhotic HCC
+      ~30% of NAFLD HCC
+      F2-F3 + DM + Obesity + Male + PNPLA3
+    Risk Factors
+      Cirrhosis (10-20x)
+      F3 (5-10x)
+      DM (2-4x)
+      Obesity (2-3x)
+      Male (2x)
+      PNPLA3 I148M (3-5x)
+    Surveillance
+      Modality: 6m US ± AFP
+      Inadequate US → CT/MRI
+      AFP &gt;200 + Imaging = HCC
+    Guidelines
+      EASL: F3+F4 Surveillance
+      AASLD: F4 Only, F3 Consider
+      NICE: F4 Only, F3 Consider
+    Post-SVR
+      F4: Lifelong
+      F3: Consider</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Fibrosis Stage**</th><th>**HCC Incidence**</th><th>**Surveillance**</th></tr><tr><td>--------------------</td><td>-------------------</td><td>------------------</td></tr><tr><td>**F0-F1**</td><td><0.1%/yr</td><td>None</td></tr><tr><td>**F2**</td><td>0.1-0.3%/yr</td><td>No Routine</td></tr><tr><td>**F3**</td><td>0.5-1.5%/yr</td><td>**EASL: 6m US±AFP**</td></tr><tr><td>**F4 (Cirrhosis)**</td><td>**1-3%/yr**</td><td>**MANDATORY 6m US±AFP (Lifelong)**</td></tr></table>
+<table class="ctable"><tr><th>**Non-Cirrhotic HCC**</th><th>**Details**</th></tr><tr><td>-----------------------</td><td>-------------</td></tr><tr><td>**Proportion**</td><td>**~30%** of NAFLD HCC</td></tr><tr><td>**Stage**</td><td>F2-F3 (No Cirrhosis)</td></tr><tr><td>**Risk Factors**</td><td>DM, Obesity, Male, Age>60, PNPLA3</td></tr></table>
+<table class="ctable"><tr><th>**Surveillance Protocol**</th><th></th></tr><tr><td>--------------------------</td><td>--</td></tr><tr><td>**Modality**</td><td>**US ± AFP**</td></tr><tr><td>**Interval**</td><td>**6-Monthly**</td></tr><tr><td>**Inadequate US**</td><td>**CT/MRI**</td></tr><tr><td>**AFP >200 + Imaging**</td><td>**= HCC**</td></tr></table>
+<table class="ctable"><tr><th>**Guidelines**</th><th>**F3 Surveillance**</th></tr><tr><td>----------------</td><td>---------------------</td></tr><tr><td>**EASL 2024**</td><td>**Yes (6m US±AFP)**</td></tr><tr><td>**AASLD 2023**</td><td>Consider</td></tr><tr><td>**NICE 2023**</td><td>Consider</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>HCC Incidence by Stage</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>F3 vs F4 Surveillance</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Non-Cirrhotic HCC %</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Guideline Differences</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Key Risk Factors</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>F4 HCC Annual Incidence</td><td></td><td></td></tr><tr><td>Non-Cirrhotic HCC Proportion</td><td></td><td></td></tr><tr><td>EASL F3 Surveillance</td><td></td><td></td></tr><tr><td>Independent Risk Factors</td><td></td><td></td></tr><tr><td>Surveillance Modality</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Non-Alcoholic Fatty Liver Disease/NAFLD Spectrum (NAFL vs NASH)|NAFLD Spectrum]]</li><li>[[Non-Alcoholic Fatty Liver Disease/NAFLD Risk Factors and Pathophysiology|NAFLD Risk Factors]]</li><li>[[Non-Alcoholic Fatty Liver Disease/NAFLD Diagnosis (FIB-4, NFS, ELF, FibroScan)|NAFLD Diagnosis]]</li><li>[[Non-Alcoholic Fatty Liver Disease/NAFLD Management (Lifestyle, Pharmacotherapy, Bariatric Surgery)|NAFLD Management]]</li><li>[[Liver Tumours/HCC (Hepatocellular Carcinoma)|HCC Full Topic]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · NAFLD HCC Risk and Surveillance · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

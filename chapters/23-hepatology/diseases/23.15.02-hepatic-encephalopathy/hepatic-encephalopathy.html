@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatic Encephalopathy — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Hepatic Encephalopathy</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply West Haven criteria for HE grading</li><li>[ ] Identify and treat precipitating factors</li><li>[ ] Implement stepwise management (lactulose, rifaximin, albumin)</li><li>[ ] Know ICU management for Grade III-IV</li><li>[ ] Recognize FCPS/MRCP high-yield scenarios</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">West Haven Grading (Clinical)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Consciousness</th><th>Intellectual</th><th>Behavior</th><th>Neurological</th></tr><tr><td>-------</td><td>---------------</td><td>--------------</td><td>----------</td><td>--------------</td></tr><tr><td>**Covert: Minimal (MHE)**</td><td>Normal</td><td>**Psychometric tests abnormal**</td><td>Normal</td><td>Normal</td></tr><tr><td>**Covert: Grade 1**</td><td>**Trivial lack of awareness**</td><td>Short attention, impaired arithmetic</td><td>Euphoria/anxiety, irritability</td><td>**Asterixis absent**</td></tr><tr><td>**Overt: Grade 2**</td><td>**Lethargy**</td><td>Disorientation (time), obvious personality change</td><td>Inappropriate behavior</td><td>**Asterixis PRESENT**</td></tr><tr><td>**Overt: Grade 3**</td><td>**Somnolent but rousable**</td><td>Confusion (place), gross disorientation</td><td>Bizarre behavior</td><td>Asterixis, hyperreflexia, rigidity</td></tr><tr><td>**Overt: Grade 4**</td><td>**Coma (unrousable)**</td><td>No response</td><td>No response</td><td>Decerebrate posturing, seizures</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: Covert (MHE + Grade 1) = no asterixis; Overt (Grade 2-4) = asterixis present</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Precipitating Factors (REVERSIBLE - Treat First!)</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[New/Worsening HE] --&gt; B[Identify &amp; Treat Precipitants]
+    B --&gt; C[Infection: SBP, UTI, Pneumonia, Bacteremia]
+    B --&gt; D[GI Bleed: Variceal, Portal hypertensive gastropathy]
+    B --&gt; E[Electrolytes: Hypokalaemia, Hyponatraemia, Alkalosis]
+    B --&gt; F[Drugs: Sedatives, Opioids, Diuretics, PPI]
+    B --&gt; G[Constipation/Faecal loading]
+    B --&gt; H[Renal Failure]
+    B --&gt; I[Hypoxia]
+    B --&gt; J[Surgery/Procedures]
+    B --&gt; K[Alcohol binge]
+    B --&gt; L[TIPS dysfunction]</code></pre>
+<div class="sub-h">Common Precipitants Frequency</div>
+<table class="ctable"><tr><th>Precipitant</th><th>Frequency</th></tr><tr><td>-------------</td><td>-----------</td></tr><tr><td>Infection (esp. SBP)</td><td>30-50%</td></tr><tr><td>GI Bleed</td><td>20-30%</td></tr><tr><td>Diuretic-induced electrolytes</td><td>15-20%</td></tr><tr><td>Constipation</td><td>10-15%</td></tr><tr><td>Sedatives/opioids</td><td>10%</td></tr><tr><td>Renal failure</td><td>10%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Diagnostic Workup</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Purpose</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Clinical grading**</td><td>West Haven (essential)</td></tr><tr><td>**Ammonia**</td><td>Supportive (not diagnostic); arterial > venous</td></tr><tr><td>**CT/MRI Brain**</td><td>Exclude structural (ICH, stroke) if atypical</td></tr><tr><td>**EEG**</td><td>Triphasic waves (non-specific)</td></tr><tr><td>**Psychometric tests**</td><td>Number connection test, digit symbol (for MHE)</td></tr></table>
+<div class="callout"><b>Ammonia</b>: Correlates poorly with grade; useful if diagnostic doubt; arterial preferred</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Diagnose HE + Grade] --&gt; B[Treat Precipitants]
+    B --&gt; C{Grade 1-2?}
+    C --&gt;|Yes| D[Lactulose 15-30ml BD PO/PR]
+    D --&gt; E[Target: 2-3 soft stools/day]
+    E --&gt; F{Response?}
+    F --&gt;|Yes| G[Continue; Add Rifaximin if recurrent]
+    F --&gt;|No| H[Increase lactulose; Add Rifaximin; Check adherence]
+    C --&gt;|Grade 3-4| I[ICU Admission]
+    I --&gt; J[Airway protection: Intubate if GCS&lt;8]
+    I --&gt; K[Lactulose PR 300ml in 700ml water/NS q4-6h]
+    I --&gt; L[Rifaximin 550mg BD NG/PO if swallowing]
+    I --&gt; M[Albumin 20-40g/day if Cirrhosis + AKI/HE]
+    I --&gt; N[Treat precipitants aggressively]
+    I --&gt; O[Consider L-ornithine L-aspartate (LOLA)]
+    I --&gt; P[EEG if non-convulsive seizures suspected]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Pharmacotherapy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Lactulose (First-Line)</div>
+<table class="ctable"><tr><th>Route</th><th>Dose</th><th>Target</th></tr><tr><td>-------</td><td>------</td><td>--------</td></tr><tr><td>**Oral**</td><td>15-30 mL BD (10-20g)</td><td>**2-3 soft stools/day**</td></tr><tr><td>**Rectal (Grade 3-4)**</td><td>300 mL in 700 mL water/NS</td><td>Retain 30-60 min; q4-6h</td></tr></table>
+<p><b>Mechanism</b>: Acidifies colon → NH₄⁺ trapped → ↓ absorption; laxation → ↓ colonic bacteria</p>
+<div class="sub-h">2. Rifaximin (Add-On for Recurrent/Refractory)</div>
+<table class="ctable"><tr><th>Indication</th><th>Dose</th><th>Evidence</th></tr><tr><td>------------</td><td>------</td><td>----------</td></tr><tr><td>**Recurrent HE (≥2 episodes)**</td><td>550 mg BD</td><td>**Reduces recurrence 50%** (RCT)</td></tr><tr><td>**Refractory to lactulose**</td><td>550 mg BD</td><td>Add to lactulose</td></tr></table>
+<p><b>Mechanism</b>: Non-absorbable antibiotic → ↓ ammonia-producing bacteria</p>
+<div class="sub-h">3. Other/Adjunctive</div>
+<table class="ctable"><tr><th>Agent</th><th>Role</th><th>Evidence</th></tr><tr><td>-------</td><td>------</td><td>----------</td></tr><tr><td>**L-ornithine L-aspartate (LOLA)**</td><td>IV/PO; enhances urea cycle</td><td>Modest benefit; adjunct</td></tr><tr><td>**Albumin**</td><td>20-40g/day in cirrhosis + AKI/HE</td><td>Binds toxins; improves hemodynamics</td></tr><tr><td>**Probiotics**</td><td>VSL#3, others</td><td>Limited evidence; not standard</td></tr><tr><td>**Zinc**</td><td>If deficient</td><td>Adjunct only</td></tr><tr><td>**Branched-chain amino acids (BCAA)**</td><td>Malnutrition + HE</td><td>Not routine</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Grade-Specific Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Covert HE (MHE + Grade 1)</div>
+<ul><li><b>Lactulose</b> if symptomatic/impairs driving/work</li><li><b>Rifaximin</b> if recurrent</li><li><b>Assess fitness to drive</b> (legal requirement in many countries)</li><li><b>Psychometric testing</b> for diagnosis</li></ul>
+<div class="sub-h">Overt HE Grade 2</div>
+<ul><li><b>Ward management</b></li><li>Lactulose PO/PR to target stools</li><li>Identify/treat precipitants</li><li>Rifaximin add-on if recurrent</li></ul>
+<div class="sub-h">Overt HE Grade 3-4 (ICU)</div>
+<table class="ctable"><tr><th>Intervention</th><th>Detail</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**Airway**</td><td>Intubate if GCS ≤8 (protect from aspiration)</td></tr><tr><td>**Lactulose PR**</td><td>300mL in 700mL q4-6h (retain 30-60 min)</td></tr><tr><td>**Rifaximin**</td><td>550mg BD NG/PO</td></tr><tr><td>**Albumin**</td><td>20-40g/day if cirrhosis</td></tr><tr><td>**Precipitants**</td><td>Antibiotics, correct electrolytes, stop sedatives</td></tr><tr><td>**Monitoring**</td><td>q1-2h neuro checks, ICP if indicated</td></tr><tr><td>**EEG**</td><td>If non-convulsive status epilepticus suspected</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Driving & Legal (FCPS/MRCP High-Yield)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Grade</th><th>Driving Advice</th></tr><tr><td>-------</td><td>----------------</td></tr><tr><td>**MHE**</td><td>Assess with psychometric tests; restrict if impaired</td></tr><tr><td>**Grade 1**</td><td>**Do not drive** until resolved + specialist clearance</td></tr><tr><td>**Grade 2-4**</td><td>**Absolute prohibition**</td></tr></table>
+<div class="callout"><b>UK DVLA</b>: Must not drive with overt HE; may resume 3 months after last episode if controlled</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**West Haven**</td><td>Covert (MHE, G1): no asterixis; Overt (G2-4): asterixis present</td></tr><tr><td>**Precipitants**</td><td>Infection #1, Bleed #2, Electrolytes #3, Drugs #4, Constipation #5</td></tr><tr><td>**Lactulose**</td><td>15-30ml BD → 2-3 soft stools/day; PR for Grade 3-4</td></tr><tr><td>**Rifaximin**</td><td>550mg BD add-on for recurrent/refractory (not monotherapy)</td></tr><tr><td>**Grade 3-4**</td><td>ICU, intubate if GCS<8, lactulose PR, albumin, treat precipitants</td></tr><tr><td>**Ammonia**</td><td>Supportive only; poor correlation with grade</td></tr><tr><td>**Driving**</td><td>No driving with overt HE</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Describe West Haven grades. How to distinguish covert vs overt?</b></li><li><b>List 5 precipitating factors for HE.</b></li><li><b>What is the lactulose dose and target?</b></li><li><b>When do you add rifaximin? Dose?</b></li><li><b>Management of Grade 3-4 HE in ICU?</b></li><li><b>Role of ammonia in diagnosis?</b></li><li><b>Driving restrictions for HE grades?</b></li><li><b>Differentiate HE from other causes of confusion in cirrhosis.</b></li><li><b>What is minimal HE? How to diagnose?</b></li><li><b>Albumin in HE: indications and dose?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Covert vs Overt</td><td>Covert (MHE, G1): NO asterixis; Overt (G2-4): asterixis PRESENT</td></tr><tr><td>Lactulose PR vs PO</td><td>PR for Grade 3-4 (unconscious); PO for Grade 1-2</td></tr><tr><td>Rifaximin monotherapy</td><td>**Not recommended** — always add to lactulose</td></tr><tr><td>Ammonia level</td><td>**Not diagnostic** — correlates poorly; use for support only</td></tr><tr><td>MHE diagnosis</td><td>Psychometric tests (number connection, digit symbol) — not clinical</td></tr><tr><td>Grade 1 asterixis</td><td>**Absent** — asterixis starts at Grade 2</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Hepatic Encephalopathy))
+    West Haven Grading
+      Covert: MHE (psychometric only)
+      Covert: Grade 1 (trivial awareness, no asterixis)
+      Overt: Grade 2 (lethargy, asterixis+)
+      Overt: Grade 3 (somnolent, asterixis+)
+      Overt: Grade 4 (coma)
+    Precipitants
+      Infection (SBP #1)
+      GI Bleed
+      Electrolytes (K, Na, alkalosis)
+      Drugs (sedatives, opioids, diuretics)
+      Constipation
+      Renal failure
+      Hypoxia
+    Management
+      Lactulose 15-30ml BD -&gt; 2-3 soft stools
+      Rifaximin 550mg BD add-on recurrent
+      Grade 3-4: ICU, Intubate GCS&lt;8, Lactulose PR, Albumin
+    Driving
+      No overt HE
+      MHE: test fitness</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Grade**</th><th>**Features**</th><th>**Asterixis**</th><th>**Management**</th></tr><tr><td>-----------</td><td>--------------</td><td>---------------</td><td>----------------</td></tr><tr><td>MHE</td><td>Psychometric abnormal only</td><td>-</td><td>Lactulose if symptomatic</td></tr><tr><td>1</td><td>Trivial awareness, irritability</td><td>**Absent**</td><td>Lactulose PO</td></tr><tr><td>2</td><td>Lethargy, disorientation(time), asterixis</td><td>**Present**</td><td>Lactulose PO/PR</td></tr><tr><td>3</td><td>Somnolent, confusion(place)</td><td>Present</td><td>ICU, Lactulose PR, Rifaximin</td></tr><tr><td>4</td><td>Coma</td><td>Present/untestable</td><td>ICU, Intubate, Lactulose PR, Albumin</td></tr></table>
+<table class="ctable"><tr><th>**Drug**</th><th>**Dose**</th><th>**Target/Indication**</th></tr><tr><td>----------</td><td>----------</td><td>----------------------</td></tr><tr><td>Lactulose PO</td><td>15-30ml BD</td><td>2-3 soft stools/day</td></tr><tr><td>Lactulose PR</td><td>300ml/700ml q4-6h</td><td>Grade 3-4</td></tr><tr><td>Rifaximin</td><td>550mg BD</td><td>Add-on recurrent/refractory</td></tr><tr><td>Albumin</td><td>20-40g/day</td><td>Cirrhosis + AKI/HE</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>West Haven grades</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Precipitants list</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Lactulose dose/target</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Rifaximin indication</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Grade 3-4 ICU management</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>Grade 1 vs Grade 2 asterixis</td><td></td><td></td></tr><tr><td>5 precipitants</td><td></td><td></td></tr><tr><td>Lactulose target stools</td><td></td><td></td></tr><tr><td>Rifaximin dose</td><td></td><td></td></tr><tr><td>Grade 4 management</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Portal Hypertension and Complications/Precipitating factors|HE Precipitants]]</li><li>[[Portal Hypertension and Complications/Management (lactulose, rifaximin)|HE Management]]</li><li>[[Acute Liver Failure/Definition and Aetiology|ALF]]</li><li>[[Acute Liver Failure/CLIF-C ACLF and ACLF grades|ACLF]]</li><li>[[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatic Encephalopathy · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

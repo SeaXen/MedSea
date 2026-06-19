@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Child-Pugh and MELD scores — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Child-Pugh and MELD scores</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Calculate Child-Pugh score from clinical parameters</li><li>[ ] Calculate MELD and MELD-Na scores</li><li>[ ] Interpret scores for prognosis and transplant referral</li><li>[ ] Compare and contrast the two systems</li><li>[ ] Identify FCPS/MRCP high-yield calculation details and thresholds</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Child-Pugh Score (Child-Turcotte-Pugh)</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Original</b>: 1964 (Child), Modified 1973 (Pugh) — Replaced Nutritional Status with INR</div>
+<div class="sub-h">Parameters &amp; Scoring</div>
+<table class="ctable"><tr><th>Parameter</th><th>1 Point</th><th>2 Points</th><th>3 Points</th></tr><tr><td>-----------</td><td>---------</td><td>----------</td><td>----------</td></tr><tr><td>**Total Bilirubin (μmol/L)**</td><td><34</td><td>34-50</td><td>>50</td></tr><tr><td>**Serum Albumin (g/L)**</td><td>>35</td><td>28-35</td><td><28</td></tr><tr><td>**INR**</td><td><1.7</td><td>1.7-2.3</td><td>>2.3</td></tr><tr><td>**Ascites**</td><td>None</td><td>Mild (Controlled with Diuretics)</td><td>Refractory (Tense, Diuretic-Resistant)</td></tr><tr><td>**Hepatic Encephalopathy**</td><td>None</td><td>Grade 1-2 (Mild/Moderate)</td><td>Grade 3-4 (Severe/Coma)</td></tr></table>
+<div class="callout"><b>Note</b>: Original used <b>Nutritional Status</b> instead of INR; <b>Prothrombin Time</b> in seconds was original, now INR standard</div>
+<div class="sub-h">Classification &amp; Prognosis</div>
+<table class="ctable"><tr><th>Class</th><th>Score</th><th>1-Year Survival</th><th>2-Year Survival</th><th>Clinical Status</th></tr><tr><td>-------</td><td>-------</td><td>-----------------</td><td>-----------------</td><td>-----------------</td></tr><tr><td>**A**</td><td>5-6</td><td>100%</td><td>85%</td><td>Well-Compensated</td></tr><tr><td>**B**</td><td>7-9</td><td>80%</td><td>60%</td><td>Moderate / Decompensated</td></tr><tr><td>**C**</td><td>10-15</td><td>45%</td><td>35%</td><td>Decompensated / High Mortality</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Child A = Compensated</b>, <b>Child B = Early Decompensated</b>, <b>Child C = Advanced Decompensated</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">MELD Score (Model for End-Stage Liver Disease)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Original MELD Formula (2002)</div>
+<p>``<code> MELD = 3.78 × ln(Serum Bilirubin mg/dL) + 11.2 × ln(INR) + 9.57 × ln(Serum Creatinine mg/dL) + 6.43 </code>``</p>
+<div class="sub-h">Adjustments &amp; Caps</div>
+<table class="ctable"><tr><th>Variable</th><th>Minimum</th><th>Maximum</th></tr><tr><td>----------</td><td>---------</td><td>---------</td></tr><tr><td>**Bilirubin**</td><td>1.0 mg/dL</td><td>4.0 mg/dL</td></tr><tr><td>**INR**</td><td>1.0</td><td>4.0</td></tr><tr><td>**Creatinine**</td><td>1.0 mg/dL</td><td>**4.0 mg/dL** (Dialysis = 4.0)</td></tr></table>
+<div class="callout"><b>If on Dialysis</b>: Creatinine <b>Automatically Set to 4.0</b></div>
+<div class="sub-h">MELD Score Interpretation</div>
+<table class="ctable"><tr><th>MELD Score</th><th>3-Month Mortality</th><th>Transplant Priority</th></tr><tr><td>------------</td><td>-------------------</td><td>---------------------</td></tr><tr><td>**6-9**</td><td><5%</td><td>Low</td></tr><tr><td>**10-19**</td><td>5-15%</td><td>Moderate</td></tr><tr><td>**20-29**</td><td>20-50%</td><td>High</td></tr><tr><td>**30-39**</td><td>50-75%</td><td>Very High</td></tr><tr><td>**40**</td><td>>75%</td><td>Highest (Status 1A)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">MELD-Na (Current Standard Since 2016)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Formula</div>
+<p>``<code> MELD-Na = MELD + 1.32 × (137 - Na) - [0.033 × MELD × (137 - Na)] </code>``</p>
+<div class="sub-h">Sodium Adjustment</div>
+<table class="ctable"><tr><th>Sodium (mmol/L)</th><th>Used in Formula</th></tr><tr><td>-----------------</td><td>-----------------</td></tr><tr><td>**<125**</td><td>Capped at 125</td></tr><tr><td>**125-137**</td><td>Actual Value</td></tr><tr><td>**>137**</td><td>Capped at 137</td></tr></table>
+<div class="callout"><b>Why MELD-Na?</b>: Hyponatraemia = Poor Prognosis (Dilutional, High ADH) → Adds Prognostic Value</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Comparison: Child-Pugh vs MELD</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Child-Pugh</th><th>MELD / MELD-Na</th></tr><tr><td>-------</td><td>------------</td><td>----------------</td></tr><tr><td>**Type**</td><td>Semi-Quantitative (Clinical + Labs)</td><td>Fully Quantitative (Lab-Based)</td></tr><tr><td>**Parameters**</td><td>5 (Bil, Alb, INR, Ascites, HE)</td><td>3 (Bil, INR, Cr) + Na (MELD-Na)</td></tr><tr><td>**Subjectivity**</td><td>Ascites/HE = Clinical Judgement</td><td>Fully Objective</td></tr><tr><td>**Scale**</td><td>5-15 (Categorical A/B/C)</td><td>6-40 (Continuous)</td></tr><tr><td>**Primary Use**</td><td>Clinical Prognosis, Clinical Trials</td><td>**Organ Allocation (Transplant)**</td></tr><tr><td>**Sensitivity**</td><td>Less (Plateaus at Extremes)</td><td>High Across Range</td></tr><tr><td>**Reproducibility**</td><td>Moderate (Interobserver Variation)</td><td>High (Lab-Based)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Transplant Referral Thresholds</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Threshold</th><th>Action</th></tr><tr><td>-------</td><td>-----------</td><td>--------</td></tr><tr><td>**MELD / MELD-Na**</td><td>**≥15**</td><td>Refer for Transplant Assessment</td></tr><tr><td>**MELD / MELD-Na**</td><td>**≥20**</td><td>High Priority Listing</td></tr><tr><td>**Child-Pugh**</td><td>**B (7-9) or C (10-15)**</td><td>Consider Referral</td></tr><tr><td>**Child-Pugh C**</td><td>**10-15**</td><td>**Urgent Referral**</td></tr></table>
+<div class="callout"><b>UK/Europe</b>: <b>MELD-Na ≥15</b> → Transplant Assessment <b>US (UNOS)</b>: <b>MELD-Na ≥15</b> → Listing; <b>Status 1A</b> for ALF</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">MELD Exceptions (Standardised Exception Points)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>MELD Exception Points</th></tr><tr><td>-----------</td><td>----------------------</td></tr><tr><td>**HCC (Within Milan)**</td><td>**22-28** (Region-Dependent)</td></tr><tr><td>**Hepatopulmonary Syndrome (PaO₂ <60)**</td><td>**22**</td></tr><tr><td>**Portopulmonary Hypertension**</td><td>**22** (If mPAP >35, PVR >240)</td></tr><tr><td>**Familial Amyloid Polyneuropathy**</td><td>**24**</td></tr><tr><td>**Primary Hyperoxaluria**</td><td>**28**</td></tr><tr><td>**Recurrent Cholangitis (PSC)**</td><td>Case-by-Case</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">MELD vs Child-Pugh: When to Use Which?</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Clinical Scenario</th><th>Preferred Score</th></tr><tr><td>-------------------</td><td>-----------------</td></tr><tr><td>**Transplant Listing/Allocation**</td><td>**MELD-Na** (Gold Standard)</td></tr><tr><td>**Clinical Prognostication (Bedside)**</td><td>Child-Pugh (Faster, Clinical)</td></tr><tr><td>**Clinical Trial Stratification**</td><td>Child-Pugh (Historical Standard)</td></tr><tr><td>**Surgical Risk Assessment**</td><td>Child-Pugh (Traditional)</td></tr><tr><td>**Clinical Trials (Modern)**</td><td>MELD-Na (Increasingly Used)</td></tr><tr><td>**ACLF Prognosis**</td><td>CLIF-C ACLF (Not MELD/Child-Pugh)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Quick Calculation Reference</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Child-Pugh (Mental Math)</div>
+<table class="ctable"><tr><th>Parameter</th><th>1 Pt</th><th>2 Pts</th><th>3 Pts</th></tr><tr><td>-----------</td><td>------</td><td>-------</td><td>-------</td></tr><tr><td>Bilirubin (μmol/L)</td><td><34</td><td>34-50</td><td>>50</td></tr><tr><td>Albumin (g/L)</td><td>>35</td><td>28-35</td><td><28</td></tr><tr><td>INR</td><td><1.7</td><td>1.7-2.3</td><td>>2.3</td></tr><tr><td>Ascites</td><td>None</td><td>Controlled</td><td>Refractory</td></tr><tr><td>HE</td><td>None</td><td>G1-2</td><td>G3-4</td></tr></table>
+<p><i>...continued (truncated for renderer performance)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Child-Pugh and MELD scores · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

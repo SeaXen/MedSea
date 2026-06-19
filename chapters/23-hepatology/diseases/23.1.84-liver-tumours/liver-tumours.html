@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Liver Tumours — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Liver Tumours</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>HCC surveillance</b> criteria (US±AFP q6mo in cirrhosis)</li><li>[ ] Interpret <b>LI-RADS categories</b> (LR-1 to LR-5, LR-M, LR-TIV)</li><li>[ ] Apply <b>BCLC Staging</b> and select appropriate treatment</li><li>[ ] Select treatment: <b>ablation, resection, transplant, TACE, systemic therapy</b></li><li>[ ] Workup <b>liver metastases</b> (primary unknown → IHC panel)</li><li>[ ] Distinguish <b>benign liver tumours</b> (haemangioma, FNH, adenoma)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Hepatocellular Carcinoma (HCC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Surveillance (Who &amp; How Often)</div>
+<table class="ctable"><tr><th>Population</th><th>Interval</th><th>Modality</th></tr><tr><td>------------</td><td>----------</td><td>----------</td></tr><tr><td>**Cirrhosis (all aetiologies)**</td><td>**6-monthly**</td><td>**US ± AFP**</td></tr><tr><td>**Chronic HBV (Asian M>40, F>50; African >20; Family history)**</td><td>**6-monthly**</td><td>US ± AFP</td></tr><tr><td>**NASH F3 Fibrosis**</td><td>**12-monthly**</td><td>US ± AFP</td></tr><tr><td>**Post-SVR HCV with cirrhosis**</td><td>**6-monthly**</td><td>US ± AFP</td></tr></table>
+<div class="callout"><b>AFP cut-off</b>: <b>&gt;20 ng/mL</b> raises suspicion; <b>&gt;200 ng/mL + mass = HCC diagnosis</b> (with imaging)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">LI-RADS (Liver Imaging Reporting and Data System)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Definition</th><th>HCC Probability</th><th>Management</th></tr><tr><td>----------</td><td>------------</td><td>-----------------</td><td>------------</td></tr><tr><td>**LR-1**</td><td>Definitely benign</td><td><1%</td><td>Routine surveillance</td></tr><tr><td>**LR-2**</td><td>Probably benign</td><td><10%</td><td>Routine surveillance</td></tr><tr><td>**LR-3**</td><td>Intermediate</td><td>10-50%</td><td>Short-interval follow-up (3-6mo)</td></tr><tr><td>**LR-4**</td><td>Probably HCC</td><td>>50%</td><td>Diagnostic; consider biopsy if uncertainty</td></tr><tr><td>**LR-5**</td><td>**Definitely HCC**</td><td>>95%</td><td>**Non-invasive diagnosis** (treat)</td></tr><tr><td>**LR-M**</td><td>Probably malignant, not HCC specific</td><td>—</td><td>Biopsy / MDT</td></tr><tr><td>**LR-TIV**</td><td>Tumour in vein</td><td>—</td><td>Stage IV (BCLC D)</td></tr></table>
+<div class="sub-h">Major LI-RADS Features (for LR-4/LR-5)</div>
+<table class="ctable"><tr><th>Feature</th><th>LR-5 (Definite HCC)</th><th>LR-4 (Probable HCC)</th></tr><tr><td>---------</td><td>---------------------</td><td>---------------------</td></tr><tr><td>**Arterial Phase Hyperenhancement (APHE)**</td><td>Present</td><td>Present</td></tr><tr><td>**Washout (Portal Venous/Delayed)**</td><td>Present</td><td>Present or absent</td></tr><tr><td>**Capsule**</td><td>Present</td><td>Present or absent</td></tr><tr><td>**Threshold Growth**</td><td>≥50% size increase in ≤6mo</td><td>May be present</td></tr><tr><td>**Size**</td><td>**≥10mm**</td><td>**10-19mm** (if APHE only = LR-4)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">BCLC Staging & Treatment Algorithm</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>BCLC Stage</th><th>Criteria</th><th>Treatment Options</th><th>Median Survival</th></tr><tr><td>------------</td><td>----------</td><td>-------------------</td><td>-----------------</td></tr><tr><td>**0 (Very Early)**</td><td>Single <2cm, Child-Pugh A, PS 0</td><td>**Ablation** (RFA/MWA) > Resection > Transplant</td><td>>5 years (>70%)</td></tr><tr><td>**A (Early)**</td><td>Single ≤5cm or ≤3 nodules ≤3cm, Child-Pugh A-B, PS 0</td><td>**Resection** (if preserved liver function) / **Transplant** (Milan criteria) / **Ablation**</td><td>>5 years (50-70%)</td></tr><tr><td>**B (Intermediate)**</td><td>Multinodular, Child-Pugh A-B, PS 0</td><td>**TACE** (cTACE/DEB-TACE)</td><td>20-30 months</td></tr><tr><td>**C (Advanced)**</td><td>Vascular invasion / Extrahepatic spread / PS 1-2</td><td>**Systemic Therapy** (Atezolizumab+Bevacizumab 1L; Sorafenib/Lenvatinib 2L)</td><td>10-15 months</td></tr><tr><td>**D (Terminal)**</td><td>Child-Pugh C, PS 3-4</td><td>**Best Supportive Care**</td><td><3 months</td></tr></table>
+<div class="sub-h">Milan Criteria (Transplant Eligibility)</div>
+<ul><li><b>Single tumour ≤5cm</b> OR <b>≤3 nodules each ≤3cm</b></li><li><b>No vascular invasion / extrahepatic spread</b></li><li><b>Child-Pugh A/B, PS 0</b></li></ul>
+<div class="sub-h">Up-to-Seven Criteria (Extended Transplant Criteria)</div>
+<ul><li><b>Number of tumours + largest tumour diameter (cm) ≤7</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Treatment Modalities</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Modality</th><th>Indication</th><th>Key Details</th></tr><tr><td>----------</td><td>------------</td><td>-------------</td></tr><tr><td>**Resection**</td><td>Single tumour, Child-Pugh A, normal bilirubin, no portal hypertension (HVPG <10)</td><td>5-yr OS 50-70%; recurrence 70% at 5yr</td></tr><tr><td>**Ablation (RFA/MWA)**</td><td>**BCLC 0/A** (≤3cm, ≤3 nodules), not resectable</td><td>RFA <3cm; MWA larger; 5-yr OS 40-60%</td></tr><tr><td>**Liver Transplant**</td><td>**Milan Criteria** (or Up-to-Seven)</td><td>5-yr OS 70-80%; recurrence <15%</td></tr><tr><td>**TACE (cTACE/DEB-TACE)**</td><td>**BCLC B** (multinodular, preserved liver)</td><td>Repeat q4-12wks; median OS 20-30mo</td></tr><tr><td>**TARE (SIRT/Y-90)**</td><td>BCLC B/C, bridge to transplant, portal vein thrombosis</td><td>Alternative to TACE</td></tr><tr><td>**Systemic Therapy (BCLC C)**</td><td>**1L: Atezolizumab + Bevacizumab** (IMbrave150); **2L: Sorafenib / Lenvatinib**</td><td>Atezolizumab/Bevacizumab: median OS 19.2mo</td></tr><tr><td>**Sorafenib**</td><td>400mg BD</td><td>First TKI; median OS 10.7mo</td></tr><tr><td>**Lenvatinib**</td><td>12mg (BW≥60kg) / 8mg (BW<60kg)</td><td>Non-inferior to sorafenib; median OS 13.6mo</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Metastatic Liver Disease</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Workup for Unknown Primary</div>
+<table class="ctable"><tr><th>Step</th><th>Investigation</th></tr><tr><td>------</td><td>---------------</td></tr><tr><td>**1. Imaging**</td><td>CT Chest/Abdomen/Pelvis + MRI Liver</td></tr><tr><td>**2. Endoscopy**</td><td>Gastroscopy + Colonoscopy</td></tr><tr><td>**3. Tumour Markers**</td><td>CEA, CA19-9, CA125, AFP, PSA, CA15-3</td></tr><tr><td>**4. Biopsy + IHC Panel**</td><td>**CK7, CK20, CDX2, TTF-1, Napsin A, GATA3, ER, PR, HER2, PAX8, CDX2, SATB2**</td></tr><tr><td>**5. Genetic**</td><td>NGS panel if CUP (Cancer of Unknown Primary)</td></tr></table>
+<div class="sub-h">Common Primary → Liver Mets Patterns</div>
+<table class="ctable"><tr><th>Primary</th><th>Pattern</th><th>Key IHC</th></tr><tr><td>---------</td><td>---------</td><td>---------</td></tr><tr><td>**Colorectal**</td><td>Multiple, peripheral</td><td>CK20+, CDX2+, SATB2+, CK7-</td></tr><tr><td>**Pancreatic/Biliary**</td><td>Multiple, central/hilar</td><td>CK7+, CK20+/-, CA19-9+</td></tr><tr><td>**Breast**</td><td>Multiple, subcapsular</td><td>ER+, PR+, GATA3+, HER2 variable</td></tr><tr><td>**Lung (Adenocarcinoma)**</td><td>Multiple, random</td><td>TTF-1+, Napsin A+, CK7+</td></tr><tr><td>**Neuroendocrine**</td><td>Multiple, hypervascular</td><td>Chromogranin A, Synaptophysin, Ki-67</td></tr><tr><td>**Melanoma**</td><td>Variable, often pigmented</td><td>S100, HMB45, Melan-A, SOX10</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Benign Liver Tumours</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Tumour</th><th>Features</th><th>Diagnosis</th><th>Management</th></tr><tr><td>--------</td><td>----------</td><td>-----------</td><td>------------</td></tr><tr><td>**Haemangioma**</td><td>Most common; **T2 hyperintense, flash fill** on MRI; peripheral nodular enhancement</td><td>MRI (T2 bright, centripetal fill)</td><td>**Observe** (asymptomatic); resect if giant >10cm + symptomatic</td></tr><tr><td>**FNH (Focal Nodular Hyperplasia)**</td><td>**Central scar, spoke-wheel arterial enhancement**, isointense on T1/T2; **Gadoxetate uptake** (hepatobiliary phase retention)</td><td>MRI (central scar, hepatocyte-specific uptake)</td><td>**Observe** (benign); resect if diagnostic uncertainty</td></tr><tr><td>**Hepatic Adenoma**</td><td>**Oral contraceptive association**; **Risk: haemorrhage, malignant transformation** (β-catenin mut); HNF1α, inflammatory, β-catenin subtypes</td><td>MRI (fat content, arterial enhancement); biopsy if uncertain</td><td>**Stop OCP**; **resect if >5cm, male, β-catenin mut, symptomatic**; surveillance if <5cm female</td></tr><tr><td>**Regenerative Nodules**</td><td>Cirrhosis background; low T1, high T2</td><td>MRI (low T1, high T2)</td><td>Part of cirrhosis; not true tumour</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**HCC Surveillance**</td><td>**Cirrhosis q6mo US±AFP**; HBV high-risk groups (Asian M>40/F>50, African>20, family hx); AFP >200 + mass = HCC</td></tr><tr><td>**LI-RADS**</td><td>**LR-5 = Definite HCC (treat)**; LR-4 probable; LR-3 follow-up; LR-M = malignant non-HCC; LR-TIV = tumour in vein</td></tr><tr><td>**BCLC Staging**</td><td>**0/A: Curative** (ablate/resect/transplant); **B: TACE**; **C: Systemic (Atezo/Bev)**; **D: BSC**</td></tr><tr><td>**Milan Criteria**</td><td>Single ≤5cm OR ≤3 nodules ≤3cm; no vascular invasion; transplant eligible</td></tr><tr><td>**BCLC 0/A Treatment**</td><td>**Ablation** (RFA/MWA <3cm) > **Resection** (Child A, no PH) > **Transplant** (Milan)</td></tr><tr><td>**BCLC B**</td><td>**TACE** (cTACE/DEB-TACE) q4-12wks</td></tr><tr><td>**BCLC C**</td><td>**Atezolizumab+Bevacizumab 1L**; Sorafenib/Lenvatinib 2L</td></tr><tr><td>**Metastases Workup**</td><td>CT CAP, Endoscopy, IHC Panel (CK7/20, CDX2, TTF-1, etc.)</td></tr><tr><td>**Haemangioma**</td><td>T2 bright, flash fill, observe</td></tr><tr><td>**FNH**</td><td>Central scar, spoke-wheel enhancement, hepatobiliary retention, observe</td></tr><tr><td>**Adenoma**</td><td>OCP association, haemorrhage risk, β-catenin = HCC risk; stop OCP, resect if >5cm/β-catenin mut</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**HCC Surveillance — Who, How Often, Modality?**</td><td>**Cirrhosis q6mo US±AFP**; HBV high-risk (Asian M>40/F>50, African>20, family hx) q6mo.</td></tr><tr><td>**LI-RADS LR-5 vs LR-4 — Differences?**</td><td>**LR-5**: APHE + Washout + Capsule + Size≥10mm = **Definite HCC**; **LR-4**: APHE + (Washout or Capsule) + Size 10-19mm = **Probable HCC**.</td></tr><tr><td>**BCLC Staging — Treatment per Stage?**</td><td>**0/A: Ablation/Resection/Transplant (Curative); B: TACE; C: Systemic (Atezo/Bev); D: BSC**.</td></tr><tr><td>**Milan Criteria — Transplant Eligibility?**</td><td>**Single ≤5cm OR ≤3 nodules ≤3cm, no vascular invasion, no extrahepatic spread**.</td></tr><tr><td>**BCLC B — Treatment?**</td><td>**TACE** (cTACE/DEB-TACE) — repeat q4-12wks; median OS 20-30mo.</td></tr><tr><td>**BCLC C — 1L Systemic Therapy?**</td><td>**Atezolizumab + Bevacizumab** (IMbrave150); **Sorafenib/Lenvatinib 2L**.</td></tr><tr><td>**Metastases — Workup for Unknown Primary?**</td><td>**CT CAP + MRI Liver + Endoscopy + IHC Panel (CK7/20, CDX2, TTF-1, etc.)**.</td></tr><tr><td>**Haemangioma — MRI Features, Management?**</td><td>**T2 hyperintense (light bulb), flash fill, peripheral nodular enhancement**; **Observe if asymptomatic**.</td></tr><tr><td>**FNH — MRI Features, Central Scar?**</td><td>**Central scar, spoke-wheel arterial enhancement, hepatobiliary retention (Gadoxetate)**; **Observe**.</td></tr><tr><td>**Hepatic Adenoma — Risk Factors, Subtypes, Management?**</td><td>**OCP use**, **β-catenin mut = HCC risk**, **inflammatory, HNF1α**; **Stop OCP, resect if >5cm, male, β-catenin mut**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**LI-RADS LR-4 vs LR-5**</td><td>**LR-5**: APHE + Washout + Capsule (≥10mm); **LR-4**: APHE + (Washout or Capsule) 10-19mm; **LR-3**: APHE only or indeterminate</td></tr><tr><td>**BCLC A vs B**</td><td>A: Single ≤5cm or ≤3 nodules ≤3cm (curative intent); B: Multinodular beyond Milan (TACE)</td></tr><tr><td>**TACE vs TARE**</td><td>**TACE**: Embolisation + chemo (cTACE/DEB); **TARE**: Y-90 radioembolisation (SIRT); TARE for PVT, bridge to transplant</td></tr><tr><td>**Ablation vs Resection**</td><td>**Ablation**: <3cm, not surgical candidate; **Resection**: Child A, no portal hypertension, preserved liver function</td></tr><tr><td>**Adenoma Subtypes**</td><td>**HNF1α**: steatotic, low HCC risk; **Inflammatory**: CRP↑, serum amyloid A; **β-catenin**: **High HCC risk** (resect); **Unclassified**</td></tr><tr><td>**LI-RADS LR-M**</td><td>**Malignant but not HCC** (cholangiocarcinoma, metastases); **LR-TIV**: Tumour in vein (portal/hepatic vein)</td></tr><tr><td>**AFP in HCC**</td><td>>20 = suspicious; >200 + mass = diagnostic (with imaging); not sensitive enough alone for screening</td></tr><tr><td>**Up-to-Seven vs Milan**</td><td>Milan: single ≤5cm or ≤3 nodules ≤3cm; Up-to-7: size + number ≤7 (expanded transplant criteria)</td></tr></table>
+<p><b>Mnemonic: HCC-LI-RADS-BCLC</b></p>
+<ul><li><b>H</b>CC Surveillance: <b>Cirrhosis q6mo US±AFP</b></li><li><b>C</b>CR: <b>Ablation/Resection/Transplant</b></li><li><b>L</b>I-RADS: <b>LR-5 Definite HCC, LR-4 Probable, LR-3 Follow-up, LR-M Non-HCC Malignant</b></li><li><b>I</b>maging: <b>APHE + Washout + Capsule = LR-5</b></li><li><b>B</b>CLC: <b>0/A Curative, B TACE, C Systemic (Atezo/Bev), D BSC</b></li><li><b>C</b>urative: <b>Ablation &lt;3cm, Resection Child A, Transplant Milan</b></li><li><b>L</b>iver Mets: <b>CT CAP + Endoscopy + IHC (CK7/20, CDX2, TTF-1)</b></li><li><b>B</b>enign: <b>Haemangioma (T2 Bright), FNH (Central Scar + Retention), Adenoma (OCP, β-catenin = HCC Risk)</b></li><li><b>A</b>FP: <b>&gt;200 + Mass = HCC Diagnosis</b></li><li><b>T</b>ACE: <b>BCLC B Multinodular</b></li><li><b>S</b>ystemic: <b>Atezo+Bev 1L, Sora/Lenv 2L</b></li><li><b>R</b>esection: <b>Child A, No PH, HVPG&lt;10</b></li><li><b>A</b>blation: <b>RFA/MWA &lt;3cm</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Liver Tumours))
+    HCC
+      Surveillance: Cirrhosis q6mo US±AFP
+      LI-RADS: LR-5=Definite HCC (APHE+Washout+Capsule)
+      BCLC: 0/A Curative, B TACE, C Systemic, D BSC
+      Milan: Single≤5cm or ≤3cm×3
+      Treatment: Ablation&lt;Resection&lt;Transplant (A); TACE (B); Atezo/Bev (C)
+    Metastases
+      Workup: CT CAP, Endoscopy, IHC Panel
+      Common: CRC, Pancreas, Breast, Lung, NET, Melanoma
+    Benign
+      Haemangioma: T2 Bright, Flash Fill, Observe
+      FNH: Central Scar, Spoke-wheel, Retention, Observe
+      Adenoma: OCP, β-catenin=HCC Risk, Resect &gt;5cm/β-cat/ male</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**HCC Surveillance**</td><td>Cirrhosis q6mo US±AFP; AFP >200 + mass = HCC</td></tr><tr><td>**LI-RADS**</td><td>LR-5 = Definite HCC (APHE+Washout+Capsule); LR-4 Probable; LR-M Non-HCC Malignant</td></tr><tr><td>**BCLC**</td><td>0/A: Ablation/Resection/Transplant; B: TACE; C: Atezo+Bev; D: BSC</td></tr><tr><td>**Milan**</td><td>Single ≤5cm or ≤3 nodules ≤3cm</td></tr><tr><td>**Treatment**</td><td>A: Ablation>Resection>Transplant; B: TACE; C: Atezo+Bev</td></tr><tr><td>**Metastases**</td><td>CT CAP + Endoscopy + IHC (CK7/20, CDX2, TTF-1)</td></tr><tr><td>**Haemangioma**</td><td>T2 Bright, Flash Fill, Observe</td></tr><tr><td>**FNH**</td><td>Central Scar, Spoke-wheel, Hepatobiliary Retention, Observe</td></tr><tr><td>**Adenoma**</td><td>OCP, β-catenin=HCC Risk, Resect >5cm/β-cat/male</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>HCC Surveillance</td><td></td><td></td></tr><tr><td>LI-RADS Categories</td><td></td><td></td></tr><tr><td>BCLC Staging & Treatment</td><td></td><td></td></tr><tr><td>Milan Criteria</td><td></td><td></td></tr><tr><td>Metastases Workup</td><td></td><td></td></tr><tr><td>Benign Tumours</td><td></td><td></td></tr><tr><td>Ablation vs Resection vs Transplant</td><td></td><td></td></tr><tr><td>Systemic Therapy Options</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Hepatology|Hepatology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 24 - Hepatology Hierarchy|Hepatology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Hepatology MOC|Hepatology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Cirrhosis and Portal Hypertension]], [[Viral Hepatitis]], [[Alcoholic Liver Disease]], [[NAFLD]], [[Liver Transplantation]], [[Inherited and Metabolic Liver Disease]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Liver Tumours · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Compensated vs decompensated cirrhosis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Compensated vs decompensated cirrhosis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply clinical criteria distinguishing compensated vs decompensated cirrhosis</li><li>[ ] Identify the 4 decompensation events</li><li>[ ] Understand prognostic implications and management differences</li><li>[ ] Apply scoring systems (Child-Pugh, MELD) in both states</li><li>[ ] Identify FCPS/MRCP high-yield transition points and management</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>State</th><th>Definition</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Compensated Cirrhosis**</td><td>Cirrhosis **without** history of: Ascites, Variceal Bleed, Hepatic Encephalopathy, or Jaundice (Bilirubin >2-3 mg/dL)</td></tr><tr><td>**Decompensated Cirrhosis**</td><td>Cirrhosis **with** current or past: **Ascites, Variceal Bleed, Hepatic Encephalopathy, or Jaundice** (Bilirubin >2-3 mg/dL)</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>First Decompensation Event</b> = Transition from Compensated → Decompensated — <b>Major Prognostic Threshold</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">The 4 Decompensation Events</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Compensated Cirrhosis] --&gt; B{Decompensation Event}
+    B --&gt;|Ascites| C[Decompensated]
+    B --&gt;|Variceal Bleed| C
+    B --&gt;|Hepatic Encephalopathy| C
+    B --&gt;|Jaundice (Bil &gt;2-3 mg/dL)| C
+    C --&gt; D[Decompensated Cirrhosis]</code></pre>
+<table class="ctable"><tr><th>Decompensation Event</th><th>Definition</th><th>Typical Presentation</th></tr><tr><td>----------------------</td><td>------------</td><td>---------------------</td></tr><tr><td>**1. Ascites**</td><td>New-onset peritoneal fluid accumulation</td><td>Abdominal distension, shifting dullness, flank dullness</td></tr><tr><td>**2. Variceal Bleed**</td><td>Haematemesis/Malaena from portal hypertensive varices</td><td>Haematemesis, melaena, hypotension, tachycardia</td></tr><tr><td>**3. Hepatic Encephalopathy**</td><td>Neuropsychiatric dysfunction from liver failure</td><td>Asterixis, confusion, personality change, coma</td></tr><tr><td>**4. Jaundice**</td><td>Serum Bilirubin >2-3 mg/dL (>34-50 μmol/L)</td><td>Yellow sclera/skin, dark urine, pale stools</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Any ONE</b> of these = Decompensated Cirrhosis — <b>Prognosis Changes Dramatically</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Features Comparison</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Compensated Cirrhosis</th><th>Decompensated Cirrhosis</th></tr><tr><td>-------</td><td>----------------------</td><td>-------------------------</td></tr><tr><td>**Ascites**</td><td>Absent</td><td>**Present** (or h/o)</td></tr><tr><td>**Variceal Bleed**</td><td>Never</td><td>**History/Current**</td></tr><tr><td>**Hepatic Encephalopathy**</td><td>Never</td><td>**History/Current**</td></tr><tr><td>**Jaundice**</td><td>Absent (Bil <2 mg/dL)</td><td>**Present** (Bil >2-3 mg/dL)</td></tr><tr><td>**Synthetic Function**</td><td>Preserved (INR Normal, Albumin >35)</td><td>**Impaired** (INR >1.5, Albumin <35)</td></tr><tr><td>**Portal Pressure (HVPG)**</td><td>≥10 mmHg (CSPH)</td><td>≥12 mmHg (Variceal Risk)</td></tr><tr><td>**Platelet Count**</td><td>Often >100</td><td>Often <100 (Hypersplenism)</td></tr><tr><td>**Median Survival**</td><td>**12+ Years**</td><td>**2-5 Years** (Without Transplant)</td></tr><tr><td>**Transplant Urgency**</td><td>Elective (MELD <15)</td><td>**Urgent** (MELD ≥15)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Transition Points: The Compensated → Decompensated Shift</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart LR
+    A[Compensated Cirrhosis] --&gt;|First Decompensation Event| B[Decompensated Cirrhosis]
+    B --&gt; C[Prognosis Drops: 12+ yr → 2-5 yr]
+    B --&gt; D[Transplant Urgency: Elective → Urgent]
+    B --&gt; E[HCC Surveillance: 6m US ± AFP]
+    B --&gt; F[Screening: Varices, HCC, Osteoporosis]
+    B --&gt; G[Complication Surveillance: Ascites, Bleed, HE, HRS, HPS]</code></pre>
+<div class="sub-h">Key Implications of Decompensation</div>
+<table class="ctable"><tr><th>Domain</th><th>Compensated</th><th>Decompensated</th></tr><tr><td>--------</td><td>-------------</td><td>---------------</td></tr><tr><td>**Survival**</td><td>12+ Years</td><td>2-5 Years (No Tx)</td></tr><tr><td>**Transplant Referral**</td><td>MELD <15 (Elective)</td><td>**MELD ≥15 → Urgent**</td></tr><tr><td>**HCC Surveillance**</td><td>6m US ± AFP</td><td>6m US ± AFP (Same)</td></tr><tr><td>**Variceal Screening**</td><td>Endoscopy at Diagnosis</td><td>Already Done / Surveillance</td></tr><tr><td>**Ascites Management**</td><td>N/A</td><td>Diuretics, LVP, TIPS</td></tr><tr><td>**HE Prophylaxis**</td><td>Not Needed</td><td>Lactulose if Recurrent</td></tr><tr><td>**Infection Risk**</td><td>Baseline</td><td>↑↑ (SBP, Sepsis)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Aetiology of Decompensation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Precipitant</th><th>Common Decompensation Type</th></tr><tr><td>-------------</td><td>----------------------------</td></tr><tr><td>**Infection (SBP, Pneumonia)**</td><td>Ascites, HE, AKI/HRS</td></tr><tr><td>**GI Bleed**</td><td>Hypovolaemia → HRS, Bleed → HE</td></tr><tr><td>**Alcohol Binge**</td><td>Alcoholic Hepatitis → Jaundice, Ascites, HE</td></tr><tr><td>**Drugs (NSAIDs, Sedatives)**</td><td>AKI/HRS, HE</td></tr><tr><td>**Electrolyte Imbalance**</td><td>Hyponatraemia, Hypokalaemia → HE, HRS</td></tr><tr><td>**Non-Adherence (Diuretics, Lactulose)**</td><td>Ascites Recurrence, HE Relapse</td></tr><tr><td>**TIPS Dysfunction**</td><td>Recurrent Ascites, Variceal Bleed</td></tr><tr><td>**HCC Development**</td><td>Jaundice, Ascites, Pain</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Scoring Systems in Both States</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scoring System</th><th>Compensated</th><th>Decompensated</th></tr><tr><td>----------------</td><td>-------------</td><td>---------------</td></tr><tr><td>**Child-Pugh**</td><td>Usually A (5-6)</td><td>B (7-9) or C (10-15)</td></tr><tr><td>**MELD/MELD-Na**</td><td>Low (<10-12)</td><td>Often ≥15 (Transplant Threshold)</td></tr><tr><td>**HVPG**</td><td>≥10 (CSPH)</td><td>≥12 (Varices/Bleeding Risk)</td></tr><tr><td>**Platelet Count**</td><td>Often >100-150</td><td>Often <100-150</td></tr><tr><td>**Albumin**</td><td>>35 g/L</td><td><35 g/L (Often <30)</td></tr><tr><td>**Bilirubin**</td><td><2 mg/dL</td><td>>2-3 mg/dL</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management Implications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Compensated</th><th>Decompensated</th></tr><tr><td>--------</td><td>-------------</td><td>---------------</td></tr><tr><td>**Transplant Referral**</td><td>MELD ≥15 / Child B/C (Elective)</td><td>**Urgent** (MELD ≥15, Complications)</td></tr><tr><td>**HCC Surveillance**</td><td>6m US ± AFP</td><td>6m US ± AFP (Same)</td></tr><tr><td>**Variceal Screening**</td><td>Endoscopy at Diagnosis</td><td>Endoscopy Done / Surveillance</td></tr><tr><td>**Ascites**</td><td>N/A</td><td>Diuretics → LVP → TIPS</td></tr><tr><td>**Varices**</td><td>Primary Prophylaxis (NSBB/EVL)</td><td>Secondary Prophylaxis (NSBB+EVL)</td></tr><tr><td>**HE Prophylaxis**</td><td>Not Needed</td><td>Lactulose if Recurrent</td></tr><tr><td>**SBP Prophylaxis**</td><td>Not Routine</td><td>Primary (If High Risk) / Secondary (Post-SBP)</td></tr><tr><td>**Vaccination**</td><td>Hep A/B, Pneumococcal, Flu</td><td>Hep A/B, Pneumococcal, Flu</td></tr><tr><td>**Nutrition**</td><td>Normal</td><td>High Protein (1.2-1.5 g/kg), Low Salt</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Re-compensation: Can Decompensated Become Compensated?</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Possible?</th></tr><tr><td>----------</td><td>-----------</td></tr><tr><td>**Alcoholic Hepatitis Treated**</td><td>Yes — If Abstinent, May Re-compensate</td></tr><tr><td>**Viral Hepatitis Treated (HBV NUC, HCV DAA)**</td><td>Yes — SVR/Cure → Histological Regression Possible</td></tr><tr><td>**Autoimmune Hepatitis Treated**</td><td>Yes — Steroids → Remission → Re-compensation</td></tr><tr><td>**NAFLD with Weight Loss**</td><td>Yes — 10% Weight Loss → Fibrosis Regression</td></tr><tr><td>**TIPS for Refractory Ascites**</td><td>May Improve Haemodynamics but **Not True Re-compensation**</td></tr></table>
+<div class="callout"><b>True Re-compensation</b> = Resolution of ALL Decompensation Events + Normalisation of Synthetic Function</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Compensated**</td><td>No Ascites, Bleed, HE, Jaundice — Survival 12+ yr</td></tr><tr><td>**Decompensated**</td><td>**Any 1**: Ascites, Bleed, HE, Jaundice — Survival 2-5 yr</td></tr><tr><td>**First Decompensation**</td><td>Major Prognostic Threshold</td></tr><tr><td>**Survival Drop**</td><td>12+ yr → 2-5 yr</td></tr><tr><td>**Transplant Urgency**</td><td>Compensated: Elective; Decompensated: Urgent (MELD≥15)</td></tr><tr><td>**4 Decompensation Events**</td><td>Ascites, Variceal Bleed, HE, Jaundice</td></tr><tr><td>**Re-compensation Possible**</td><td>If Aetiology Treated (Alcohol, Viral, AIH, NAFLD)</td></tr><tr><td>**Scoring**</td><td>Compensated: Child A/MELD Low; Decompensated: Child B/C, MELD≥15</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define compensated vs decompensated cirrhosis.</b></li><li><b>What are the 4 decompensation events?</b></li><li><b>How does prognosis change with decompensation?</b></li><li><b>What survival difference between compensated and decompensated?</b></li><li><b>What is the transplant urgency for each?</b></li><li><b>Can decompensated cirrhosis become compensated again?</b></li><li><b>What scoring systems distinguish the two states?</b></li><li><b>What are the management differences?</b></li><li><b>What is the most common precipitant of decompensation?</b></li><li><b>How does prognostic scoring differ between the two?</b></li><li><b>What is the key factor determining transplant urgency?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Decompensation Definition</td><td>**Any ONE** of 4 events = Decompensated (Not All Required)</td></tr><tr><td>Bilirubin Threshold</td><td>**>2-3 mg/dL** (34-50 μmol/L) for Jaundice Definition</td></tr><tr><td>Survival Numbers</td><td>Compensated: **12+ yrs**; Decompensated: **2-5 yrs** (No Tx)</td></tr><tr><td>MELD Threshold</td><td>**≥15** = Transplant Referral (Decompensated Usually Exceeds)</td></tr><tr><td>Child-Pugh Classes</td><td>Compensated = Usually A; Decompensated = B or C</td></tr><tr><td>Re-compensation</td><td>**Possible** if Aetiology Treated (Alcohol, HBV, HCV, AIH, NAFLD)</td></tr><tr><td>TIPS</td><td>Does NOT Re-compensate — Palliation/Bridge to Transplant</td></tr><tr><td>First Decompensation</td><td>**Major Prognostic Event** — Survival Drops Drastically</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Compensated vs Decompensated Cirrhosis))
+    Compensated
+      No Ascites / Bleed / HE / Jaundice
+      Survival 12+ Years
+      Child A, MELD Low
+      Elective Transplant
+    Decompensated
+      ANY 1: Ascites, Bleed, HE, Jaundice
+      Survival 2-5 Years (No Tx)
+      Child B/C, MELD &gt;=15
+      Urgent Transplant
+    4 Decompensation Events
+      Ascites
+      Variceal Bleed
+      Hepatic Encephalopathy
+      Jaundice (Bil&gt;2-3mg/dL)
+    Transition
+      First Event = Major Prognostic Shift
+      Survival Drops 12+ → 2-5 Years
+      Transplant: Elective → Urgent
+    Re-compensation
+      Possible if Aetiology Treated
+      Alcohol Abstinence
+      HBV/HCV Cure
+      AIH Remission
+      NAFLD Weight Loss
+    Management Differences
+      Ascites/HE/Varices Management
+      SBP Prophylaxis
+      Transplant Urgency</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**State**</th><th>**Criteria**</th><th>**Survival**</th><th>**Transplant**</th></tr><tr><td>-----------</td><td>--------------</td><td>--------------</td><td>----------------</td></tr><tr><td>**Compensated**</td><td>No Ascites, Bleed, HE, Jaundice</td><td>**12+ Years**</td><td>Elective (MELD<15)</td></tr><tr><td>**Decompensated**</td><td>**ANY 1**: Ascites, Bleed, HE, Jaundice</td><td>**2-5 Years**</td><td>**Urgent (MELD≥15)**</td></tr></table>
+<table class="ctable"><tr><th>**Decompensation Event**</th><th>**Key Feature**</th></tr><tr><td>--------------------------</td><td>-----------------</td></tr><tr><td>Ascites</td><td>New Fluid, Shifting Dullness</td></tr><tr><td>Variceal Bleed</td><td>Haematemesis/Malaena</td></tr><tr><td>HE</td><td>Asterixis, Confusion, Coma</td></tr><tr><td>Jaundice</td><td>Bilirubin >2-3 mg/dL</td></tr></table>
+<table class="ctable"><tr><th>**Survival**</th><th>**Compensated**</th><th>**Decompensated**</th></tr><tr><td>--------------</td><td>-----------------</td><td>-------------------</td></tr><tr><td>Median (No Tx)</td><td>12+ Years</td><td>2-5 Years</td></tr><tr><td>1-Year</td><td>>95%</td><td>60-80%</td></tr></table>
+<table class="ctable"><tr><th>**Scoring**</th><th>**Compensated**</th><th>**Decompensated**</th></tr><tr><td>-------------</td><td>-----------------</td><td>-------------------</td></tr><tr><td>Child-Pugh</td><td>A (5-6)</td><td>B/C (7-15)</td></tr><tr><td>MELD</td><td><10-12</td><td>≥15 (Tx Threshold)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>4 Decompensation Events</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Survival Difference</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Transplant Urgency</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Key Lab Differences</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>4 Decompensation Events</td><td></td><td></td></tr><tr><td>Survival Difference</td><td></td><td></td></tr><tr><td>Transplant Urgency</td><td></td><td></td></tr><tr><td>Definition of Decompensated</td><td></td><td></td></tr><tr><td>Precipitants of Decompensation</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Chronic Liver Disease and Cirrhosis/Definition and classification|Definition &amp; Classification]]</li><li>[[Chronic Liver Disease and Cirrhosis/Child-Pugh and MELD scores|Child-Pugh &amp; MELD]]</li><li>[[Portal Hypertension and Complications/Ascites|Ascites]]</li><li>[[Portal Hypertension and Complications/Varices|Varices]]</li><li>[[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]</li><li>[[Portal Hypertension and Complications/Acute variceal bleeding management|Variceal Bleed]]</li><li>[[Liver Transplantation/Liver Transplantation|Liver Transplant]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Compensated vs decompensated cirrhosis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

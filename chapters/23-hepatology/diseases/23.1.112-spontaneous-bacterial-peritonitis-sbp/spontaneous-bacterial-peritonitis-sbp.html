@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Spontaneous bacterial peritonitis (SBP) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Spontaneous bacterial peritonitis (SBP)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply diagnostic criteria (PMN count ≥250 cells/mm³)</li><li>[ ] Differentiate SBP variants (culture-negative, bacterascites, secondary peritonitis)</li><li>[ ] Initiate empirical antibiotics (ceftriaxone/cefotaxime) + albumin</li><li>[ ] Know secondary prophylaxis indications</li><li>[ ] Identify FCPS/MRCP high-yield management steps</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>SBP</th></tr><tr><td>---------</td><td>-----</td></tr><tr><td>**Definition**</td><td>Infection of ascitic fluid **without** surgically treatable intra-abdominal source</td></tr><tr><td>**Incidence**</td><td>10-30% of hospitalized cirrhotics with ascites</td></tr><tr><td>**Mortality**</td><td>20-40% in-hospital (improved with albumin)</td></tr><tr><td>**Common organisms**</td><td>E. coli (40%), Klebsiella (20%), Strep pneumoniae (10%), Enterococci (10%)</td></tr><tr><td>**Culture-negative**</td><td>40-60% (despite PMN ≥250) — "Culture-negative neutrocytic ascites"</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Diagnostic Criteria</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Clinical Suspicion: Fever, Abdo Pain, Worsening HE, Unexplained Deterioration] --&gt; B[Diagnostic Paracentesis]
+    B --&gt; C[Ascitic Fluid Analysis]
+    C --&gt; D{PMN Count}
+    D --&gt;|≥250 cells/mm³| E[DIAGNOSE SBP]
+    D --&gt;|&lt;250| F{Clinical suspicion HIGH?}
+    F --&gt;|Yes| G[Culture + Repeat in 48h]
+    F --&gt;|No| H[No SBP]
+    E --&gt; I[Send Culture (Blood culture bottles at bedside!)]
+    E --&gt; J[Start Empirical Antibiotics IMMEDIATELY]
+    E --&gt; K[Albumin 1.5g/kg Day 1 + 1g/kg Day 3]</code></pre>
+<div class="sub-h">Ascitic Fluid Analysis: Key Values</div>
+<table class="ctable"><tr><th>Parameter</th><th>SBP</th><th>Secondary Peritonitis</th><th>Notes</th></tr><tr><td>-----------</td><td>-----</td><td>----------------------</td><td>-------</td></tr><tr><td>**PMN count**</td><td>**≥250/mm³**</td><td>≥250/mm³</td><td>Main diagnostic criterion</td></tr><tr><td>**Culture**</td><td>Often negative</td><td>Usually positive</td><td>Inoculate at bedside</td></tr><tr><td>**Total protein**</td><td>Low (<1 g/dL)</td><td>High (>1 g/dL)</td><td>Low protein = risk factor</td></tr><tr><td>**Glucose**</td><td>Normal</td><td>**Low (<50 mg/dL)**</td><td>Low glucose = secondary</td></tr><tr><td>**LDH**</td><td>Normal</td><td>**High (>upper limit serum)**</td><td>High LDH = secondary</td></tr><tr><td>**Multiple organisms**</td><td>Rare</td><td>**Common**</td><td>Polymicrobial = secondary</td></tr></table>
+<div class="sub-h">Runyon's Criteria for Secondary Peritonitis (Any 2 of 3)</div>
+<ol><li>Ascitic fluid <b>total protein &gt;1 g/dL</b></li><li>Ascitic fluid <b>glucose &lt;50 mg/dL</b></li><li>Ascitic fluid <b>LDH &gt;upper limit of normal serum</b></li></ol>
+<div class="callout"><b>If secondary peritonitis suspected</b>: Urgent surgical consultation + CT abdomen</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Variants of SBP</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Variant</th><th>Definition</th><th>Management</th></tr><tr><td>---------</td><td>------------</td><td>------------</td></tr><tr><td>**Classic SBP**</td><td>PMN ≥250 + positive culture</td><td>Antibiotics + Albumin</td></tr><tr><td>**Culture-negative neutrocytic ascites (CNNA)**</td><td>PMN ≥250 + negative culture</td><td>**Same as SBP** (treat empirically)</td></tr><tr><td>**Bacterascites**</td><td>PMN <250 + positive culture</td><td>If symptomatic → treat as SBP; If asymptomatic → repeat paracentesis, treat if PMN rises</td></tr><tr><td>**Monicrobial non-neutrocytic bacterascites**</td><td>Single organism, PMN <250</td><td>Usually transient; monitor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Empirical Antibiotic Therapy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Duration</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>----------</td><td>-------</td></tr><tr><td>**Ceftriaxone** (Preferred)</td><td>2 g IV daily</td><td>**5-7 days**</td><td>Once daily; good Gram-neg coverage; no renal adjust</td></tr><tr><td>**Cefotaxime**</td><td>2 g IV q6-8h</td><td>5-7 days</td><td>Traditional; q6h dosing</td></tr><tr><td>**Alternative (allergy)**</td><td>Ciprofloxacin 400mg IV q12h</td><td>5-7 days</td><td>If local resistance low</td></tr><tr><td>**Nosocomial/Recurrent**</td><td>Piperacillin-tazobactam 4.5g q6h OR Meropenem 1g q8h</td><td>7-10 days</td><td>Cover ESBL, Enterococcus</td></tr></table>
+<div class="callout"><b>Start antibiotics BEFORE culture results</b> — delay increases mortality</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Albumin Adjunct Therapy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Dose</th><th>Timing</th><th>Evidence</th></tr><tr><td>------</td><td>--------</td><td>----------</td></tr><tr><td>**1.5 g/kg** (max 100g)</td><td>**Day 1** (at diagnosis)</td><td>**Reduces HRS & mortality** (RCT: Sort et al.)</td></tr><tr><td>**1 g/kg** (max 100g)</td><td>**Day 3**</td><td>Completes course</td></tr></table>
+<p><b>Indication</b>: All SBP (especially if Cr &gt;1, BUN &gt;30, bilirubin &gt;4) <b>Mechanism</b>: Volume expansion → prevents renal vasoconstriction → prevents HRS</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management Algorithm</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Suspect SBP] --&gt; B[Diagnostic Paracentesis: PMN, Culture, Protein, Glucose, LDH]
+    B --&gt; C{PMN &gt;=250?}
+    C --&gt;|Yes| D[DIAGNOSE SBP]
+    D --&gt; E[START Ceftriaxone 2g IV daily]
+    D --&gt; F[Albumin 1.5g/kg Day 1 + 1g/kg Day 3]
+    D --&gt; G[Blood cultures x2]
+    D --&gt; H[Urinalysis, CXR, other cultures]
+    E --&gt; I{Clinical Improvement at 48h?}
+    I --&gt;|Yes| J[Continue 5-7 days total]
+    I --&gt;|No| K[Repeat paracentesis: PMN should ↓]
+    K --&gt; L{PMN ↓25%?}
+    L --&gt;|Yes| M[Continue current antibiotics]
+    L --&gt;|No| N[Escalate antibiotics: Consider resistance, secondary peritonitis]
+    C --&gt;|No| O{High suspicion?}
+    O --&gt;|Yes| P[Blood culture bottles at bedside + Repeat paracentesis 48h]
+    O --&gt;|No| Q[No SBP; Look for other cause]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Secondary Prophylaxis (After SBP Episode)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>Regimen</th><th>Duration</th></tr><tr><td>------------</td><td>---------</td><td>----------</td></tr><tr><td>**All survivors of SBP**</td><td>**Norfloxacin 400 mg PO daily**</td><td>**Long-term** (until transplant/death)</td></tr><tr><td>**Alternative**</td><td>Ciprofloxacin 500 mg PO daily</td><td>Long-term</td></tr><tr><td>**Alternative**</td><td>TMP-SMX 1 DS daily</td><td>Long-term</td></tr></table>
+<p><b>Rationale</b>: Recurrence rate 40-70% at 1 year without prophylaxis</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Primary Prophylaxis (High-Risk Without Prior SBP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>Regimen</th></tr><tr><td>------------</td><td>---------</td></tr><tr><td>**Ascitic fluid protein <1.5 g/dL** + **Child-Pugh ≥9** OR **Renal impairment (Cr≥1.5, BUN≥25, Na≤130)**</td><td>Norfloxacin 400 mg PO daily</td></tr><tr><td>**Acute variceal bleed**</td><td>Ceftriaxone 1g IV daily × 7 days (already covered)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Diagnosis**</td><td>PMN ≥250 cells/mm³ ( cultura-negative = still SBP)</td></tr><tr><td>**Culture**</td><td>Inoculate **at bedside** into blood culture bottles</td></tr><tr><td>**Empirical antibiotics**</td><td>**Ceftriaxone 2g IV daily** × 5-7 days</td></tr><tr><td>**Albumin**</td><td>1.5g/kg Day 1 + 1g/kg Day 3 — prevents HRS/mortality</td></tr><tr><td>**Secondary peritonitis**</td><td>Suspect if: protein >1, glucose <50, LDH high, polymicrobial</td></tr><tr><td>**Secondary prophylaxis**</td><td>Norfloxacin 400mg daily lifelong after SBP</td></tr><tr><td>**Primary prophylaxis**</td><td>Ascitic protein <1.5 + (Child≥9 or renal impairment)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the diagnostic criterion for SBP?</b></li><li><b>What is culture-negative neutrocytic ascites? How to manage?</b></li><li><b>What antibiotics for empirical SBP treatment? Dose? Duration?</b></li><li><b>When do you give albumin in SBP? Dose?</b></li><li><b>Differentiate SBP from secondary peritonitis.</b></li><li><b>What is bacterascites? Management?</b></li><li><b>Secondary prophylaxis after SBP: drug, dose, duration?</b></li><li><b>Primary prophylaxis indications?</b></li><li><b>Why inoculate culture at bedside?</b></li><li><b>SBP recurrence rate without prophylaxis?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>PMN vs total WCC</td><td>**PMN (polymorphonuclear) ≥250** — not total white count</td></tr><tr><td>Culture-negative SBP</td><td>**Still treat as SBP** — 40-60% culture-negative despite PMN≥250</td></tr><tr><td>SBP vs Secondary peritonitis</td><td>Secondary: high protein, low glucose, high LDH, polymicrobial — needs surgery</td></tr><tr><td>Albumin timing</td><td>**Day 1 (1.5g/kg) + Day 3 (1g/kg)** — not single dose</td></tr><tr><td>Ceftriaxone vs Cefotaxime</td><td>Ceftriaxone preferred: once daily, no renal adjust, same efficacy</td></tr><tr><td>Primary vs Secondary prophylaxis</td><td>Primary: high-risk NO prior SBP; Secondary: ALL SBP survivors</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Spontaneous Bacterial Peritonitis))
+    Diagnosis
+      PMN &gt;=250 cells/mm3
+      Culture at bedside
+      Culture-negative = still SBP
+    Variants
+      Classic SBP
+      Culture-negative neutrocytic ascites
+      Bacterascites (PMN&lt;250 + culture+)
+    Treatment
+      Ceftriaxone 2g IV daily 5-7d
+      Albumin 1.5g/kg D1 + 1g/kg D3
+      Repeat paracentesis 48h if no improvement
+    Secondary Peritonitis
+      Protein &gt;1, Glucose &lt;50, LDH high
+      Polymicrobial
+      Surgical emergency
+    Prophylaxis
+      Secondary: Norfloxacin 400mg daily lifelong
+      Primary: Ascitic protein&lt;1.5 + Child&gt;=9 or renal impairment</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**SBP**</th><th>**Details**</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>**Diagnosis**</td><td>PMN ≥250/mm³ (culture-negative = still SBP)</td></tr><tr><td>**Culture**</td><td>Bedside inoculation in blood culture bottles</td></tr><tr><td>**Empirical Abx**</td><td>Ceftriaxone 2g IV daily × 5-7d (preferred)</td></tr><tr><td>**Albumin**</td><td>1.5g/kg Day 1 + 1g/kg Day 3</td></tr><tr><td>**Secondary Peritonitis**</td><td>Protein>1, Glucose<50, LDH high, polymicrobial → Surgery</td></tr><tr><td>**Secondary Prophylaxis**</td><td>Norfloxacin 400mg PO daily lifelong</td></tr><tr><td>**Primary Prophylaxis**</td><td>Ascitic protein<1.5 + (Child≥9 or Cr≥1.5/Na≤130)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>PMN criterion</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Ceftriaxone dose</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Albumin doses</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>SBP vs secondary peritonitis</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Prophylaxis indications</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>PMN cutoff</td><td></td><td></td></tr><tr><td>Ceftriaxone regimen</td><td></td><td></td></tr><tr><td>Albumin Day 1 + Day 3</td><td></td><td></td></tr><tr><td>Runyon's criteria</td><td></td><td></td></tr><tr><td>Secondary prophylaxis</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Portal Hypertension and Complications/Ascites|Ascites Overview]]</li><li>[[Portal Hypertension and Complications/Ascites diagnosis and SAAG|Ascites Diagnosis]]</li><li>[[Portal Hypertension and Complications/Ascites management|Ascites Management]]</li><li>[[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]</li><li>[[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS]]</li><li>[[Acute Liver Failure/CLIF-C ACLF and ACLF grades|ACLF]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Spontaneous bacterial peritonitis (SBP) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

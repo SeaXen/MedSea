@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Variceal Bleeding — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Variceal Bleeding</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Apply <b>TG18 acute variceal bleed protocol</b>: vasoactive + antibiotic + endoscopy ≤12h</li><li>[ ] Perform <b>EVL</b> for oesophageal varices, <b>glue injection</b> for gastric varices</li><li>[ ] Apply <b>primary prophylaxis</b>: NSBB or EVL for medium/large varices</li><li>[ ] Apply <b>secondary prophylaxis</b>: <b>NSBB + EVL combined</b></li><li>[ ] Indicate <b>TIPS</b> for refractory bleeding (early TIPS for Child B/C, HVPG&gt;20)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Acute Variceal Bleed Protocol (TG18)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Immediate Management (0-6 hours)</div>
+<pre class="codeblock"><code>flowchart TD
+    A[Suspected Variceal Bleed] --&gt; B[**Resuscitation**: Airway, 2 large-bore IV, Bloods, Crossmatch 4-6 units]
+    B --&gt; C[**Vasoactive Drug ASAP**: **Terlipressin 2mg IV q4h** OR **Octreotide 50mcg bolus + 50mcg/h infusion**]
+    C --&gt; D[**Antibiotic Prophylaxis**: **Ceftriaxone 1g IV OD ×7 days**]
+    D --&gt; E[**Endoscopy within 12h** (ideally &lt;6h if active bleed)]
+    E --&gt; F{Endoscopic Findings}
+    F --&gt;|Oesophageal Varices| G[**EVL (Band Ligation) ± Sclerotherapy**]
+    F --&gt;|Gastric Varices| H[**Cyanoacrylate Glue Injection**]
+    F --&gt;|No Varices| I[Manage accordingly]</code></pre>
+<div class="sub-h">Vasoactive Drugs</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Advantage</th></tr><tr><td>------</td><td>------</td><td>-----------</td></tr><tr><td>**Terlipressin**</td><td>2mg IV q4h</td><td>**First-line**; reduces portal pressure, splanchnic vasoconstriction</td></tr><tr><td>**Octreotide**</td><td>50mcg bolus + 50mcg/h infusion</td><td>Alternative (less ischaemic side effects)</td></tr><tr><td>**Somatostatin**</td><td>250mcg bolus + 250mcg/h</td><td>Alternative</td></tr></table>
+<div class="sub-h">Antibiotic Prophylaxis</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Duration</th></tr><tr><td>------</td><td>------</td><td>----------</td></tr><tr><td>**Ceftriaxone**</td><td>1g IV OD</td><td>**7 days** (reduces infection, rebleeding, mortality)</td></tr><tr><td>**Alternative**</td><td>Norfloxacin 400mg BD PO</td><td>If ceftriaxone contraindicated</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Endoscopic Therapy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Oesophageal Varices</div>
+<table class="ctable"><tr><th>Procedure</th><th>Details</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**EVL (Band Ligation)**</td><td>**Gold standard** — place bands on varices, repeat q2-4wks until eradication</td></tr><tr><td>**Sclerotherapy**</td><td>Sodium tetradecyl sulfate / ethanolamine — **if EVL not feasible**</td></tr></table>
+<div class="sub-h">Gastric Varices (GOV1, GOV2, IGV1, IGV2)</div>
+<table class="ctable"><tr><th>Type</th><th>Preferred Treatment</th></tr><tr><td>------</td><td>---------------------</td></tr><tr><td>**GOV1** (continuation of oesophageal)</td><td>**EVL** (similar to oesophageal)</td></tr><tr><td>**GOV2** (fundal, extending along greater curvature)</td><td>**Cyanoacrylate glue injection** (N-butyl-2-cyanoacrylate + lipiodol)</td></tr><tr><td>**IGV1** (isolated fundal)</td><td>**Glue injection**</td></tr><tr><td>**IGV2** (isolated elsewhere)</td><td>**Glue injection**</td></tr></table>
+<div class="callout"><b>Glue injection</b>: N-butyl-2-cyanoacrylate + lipiodol (1:1 to 1:3) — <b>risk of systemic embolisation</b> (embolise via gastric veins)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Primary Prophylaxis (No Prior Bleed)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Patient</th><th>Recommendation</th><th>Evidence</th></tr><tr><td>---------</td><td>----------------</td><td>----------</td></tr><tr><td>**Medium/Large varices (F2/F3)**</td><td>**NSBB (propranolol/nadolol) titrated to HR 55-60 bpm or ↓25%** OR **EVL q2wks**</td><td>NSBB = EVL for bleed prevention; NSBB also ↓ ascites/HE</td></tr><tr><td>**Small varices (F1) + red wale signs / Child C**</td><td>**NSBB**</td><td>High-risk small varices</td></tr><tr><td>**Small varices, no red signs, Child A/B**</td><td>**Surveillance endoscopy q2-3yrs**</td><td>Low bleed risk</td></tr></table>
+<div class="sub-h">NSBB Dosing &amp; Titration</div>
+<table class="ctable"><tr><th>Drug</th><th>Starting Dose</th><th>Target</th><th>Contraindications</th></tr><tr><td>------</td><td>---------------</td><td>--------</td><td>-------------------</td></tr><tr><td>**Propranolol**</td><td>20mg BD → titrate</td><td>**HR 55-60 bpm** or **↓25% from baseline**</td><td>Asthma, severe COPD, HR<50, SBP<90, AV block</td></tr><tr><td>**Nadolol**</td><td>20mg OD → titrate</td><td>**HR 55-60 bpm**</td><td>Same as propranolol</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Secondary Prophylaxis (Post-Bleed)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Strategy</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Combined (Preferred)**</td><td>**NSBB + EVL q2-4wks until eradication**</td></tr><tr><td>**Alternative**</td><td>**EVL alone** (if NSBB contraindicated)</td></tr><tr><td>**HVPG-guided** (if available)</td><td>Target **HVPG <12 mmHg** or **≥20% reduction** from baseline</td></tr></table>
+<div class="callout"><b>NSBB + EVL combined</b> superior to either alone for preventing rebleeding and improving survival.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Refractory Bleeding & TIPS</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Early TIPS Indications (within 72h)</div>
+<table class="ctable"><tr><th>Criteria</th><th>Details</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Child-Pugh B/C** (Child B with active bleed, Child C <14)</td><td>**Early TIPS within 72h** (reduces rebleeding, mortality)</td></tr><tr><td>**HVPG >20 mmHg** (if measured)</td><td>**Early TIPS**</td></tr><tr><td>**Failure of endoscopic/medical therapy**</td><td>**Rescue TIPS**</td></tr></table>
+<div class="sub-h">TIPS Complications</div>
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**New/worsening HE**</td><td>Lactulose, rifaximin; consider TIPS revision/reduction</td></tr><tr><td>**Stent stenosis/occlusion**</td><td>Surveillance Doppler US q3-6mo; re-intervention</td></tr><tr><td>**Renal dysfunction**</td><td>Monitor creatinine; adjust diuretics</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Primary vs Secondary Prophylaxis Comparison</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Primary Prophylaxis</th><th>Secondary Prophylaxis</th></tr><tr><td>--------</td><td>---------------------</td><td>----------------------</td></tr><tr><td>**Indication**</td><td>No prior bleed, medium/large varices</td><td>Post-variceal bleed</td></tr><tr><td>**Preferred**</td><td>**NSBB or EVL** (either)</td><td>**NSBB + EVL combined**</td></tr><tr><td>**NSBB Target**</td><td>HR 55-60 bpm / ↓25%</td><td>Same</td></tr><tr><td>**EVL Schedule**</td><td>q2-4wks until eradication</td><td>q2-4wks until eradication</td></tr><tr><td>**Duration**</td><td>Indefinite</td><td>Lifelong</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Acute Variceal Bleed Protocol**</td><td>**Terlipressin 2mg q4h + Ceftriaxone 1g OD + Endoscopy ≤12h → EVL**</td></tr><tr><td>**Vasoactive Drug**</td><td>**Terlipressin 2mg IV q4h** (first-line) or Octreotide 50mcg bolus + 50mcg/h</td></tr><tr><td>**Antibiotic**</td><td>**Ceftriaxone 1g IV OD ×7 days** (reduces infection, rebleeding, mortality)</td></tr><tr><td>**Endoscopy Timing**</td><td>**≤12h** (ideally <6h for active bleed)</td></tr><tr><td>**Oesophageal Varices**</td><td>**EVL (band ligation)** — gold standard; repeat q2-4wks</td></tr><tr><td>**Gastric Varices**</td><td>**Cyanoacrylate glue injection** (N-butyl-2-cyanoacrylate + lipiodol)</td></tr><tr><td>**Primary Prophylaxis**</td><td>**Medium/large varices**: **NSBB (HR 55-60) OR EVL**; Small varices + red signs/Child C → NSBB</td></tr><tr><td>**Secondary Prophylaxis**</td><td>**NSBB + EVL combined** (gold standard) — lifelong</td></tr><tr><td>**Rescue TIPS**</td><td>**Child B/C, HVPG>20, refractory bleed** → Early TIPS within 72h</td></tr><tr><td>**HVPG Target**</td><td>**<12 mmHg** or **≥20% reduction** from baseline</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Acute Variceal Bleed — Immediate Management (TG18)?**</td><td>**1. Resuscitation**, **2. Terlipressin 2mg IV q4h (or Octreotide)**, **3. Ceftriaxone 1g IV OD**, **4. Endoscopy ≤12h → EVL**.</td></tr><tr><td>**Terlipressin vs Octreotide?**</td><td>**Terlipressin**: First-line, reduces portal pressure via V1 receptors; **Octreotide**: Alternative, fewer ischaemic side effects, shorter half-life.</td></tr><tr><td>**Ceftriaxone in Variceal Bleed — Dose, Duration, Why?**</td><td>**1g IV OD ×7 days**; reduces bacterial infections, rebleeding, mortality (RCT evidence).</td></tr><tr><td>**Oesophageal vs Gastric Varices — Endoscopic Treatment?**</td><td>**Oesophageal: EVL (band ligation)**; **Gastric: Cyanoacrylate glue injection** (GOV2/IGV1/IGV2).</td></tr><tr><td>**Primary Prophylaxis — NSBB vs EVL?**</td><td>**Equal efficacy for bleed prevention**; **NSBB** also reduces ascites/HE; **EVL** if NSBB contraindicated/intolerant.</td></tr><tr><td>**Secondary Prophylaxis — Gold Standard?**</td><td>**NSBB + EVL combined** (superior to either alone for rebleeding prevention and survival).</td></tr><tr><td>**Early TIPS — Indications, Timing?**</td><td>**Child B (active bleed) / Child C (<14)**, **HVPG >20 mmHg**, **Refractory bleed** → **TIPS within 72h**.</td></tr><tr><td>**HVPG — Target for Secondary Prophylaxis?**</td><td>**<12 mmHg** or **≥20% reduction** from baseline.</td></tr><tr><td>**Gastric Varices — GOV1 vs GOV2 Treatment?**</td><td>**GOV1**: EVL (like oesophageal); **GOV2/IGV1/IGV2**: Cyanoacrylate glue injection.</td></tr><tr><td>**NSBB Dosing — Target, Contraindications?**</td><td>**Propranolol/Nadolol titrate to HR 55-60 bpm or ↓25%**; **Contraindicated**: Asthma, severe COPD, HR<50, SBP<90, AV block.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Primary vs Secondary Prophylaxis**</td><td>**Primary**: No prior bleed, medium/large varices → NSBB OR EVL; **Secondary**: Post-bleed → **NSBB + EVL combined**</td></tr><tr><td>**NSBB vs EVL (Primary)**</td><td>**Equivalent** for bleed prevention; **NSBB** also ↓ ascites/HE; **EVL** if NSBB contraindicated</td></tr><tr><td>**EVL vs Sclerotherapy**</td><td>**EVL superior**: fewer complications, less pain, faster eradication; Sclerotherapy = backup</td></tr><tr><td>**Terlipressin vs Octreotide**</td><td>**Terlipressin**: First-line, potent splanchnic vasoconstriction; **Octreotide**: Alternative, fewer side effects</td></tr><tr><td>**Early vs Rescue TIPS**</td><td>**Early TIPS**: Planned within 72h for Child B/C, HVPG>20; **Rescue TIPS**: Failed endoscopy/medical therapy</td></tr><tr><td>**Cyanoacrylate Glue — Risks**</td><td>**Systemic embolisation** (via gastric veins → pulmonary, cerebral); use lipiodol mixture, small volumes</td></tr></table>
+<p><b>Mnemonic: VARICEAL-BLEED</b></p>
+<ul><li><b>V</b>asoactives: <b>Terlipressin 2mg q4h</b> (1st line), Octreotide alternative</li><li><b>A</b>ntibiotics: <b>Ceftriaxone 1g OD ×7d</b> (reduces infection/rebleed/mortality)</li><li><b>R</b>escue TIPS: <b>Child B/C, HVPG&gt;20, Refractory → Early TIPS ≤72h</b></li><li><b>I</b>ntravenous: <b>Terlipressin 2mg q4h</b> (or Octreotide 50mcg bolus+50/h)</li><li><b>C</b>ombo Prophylaxis: <b>Secondary = NSBB + EVL</b> (Gold Standard)</li><li><b>E</b>ndoscopy: <b>≤12h (Ideally &lt;6h)</b> — EVL (Oesophageal), Glue (Gastric GOV2/IGV)</li><li><b>A</b>lvarado? No — <b>ABCD2</b> not for varices; <b>Child-Pugh</b> for TIPS</li><li><b>L</b>igation: <b>EVL q2-4wks until eradication</b> (Primary/Secondary)</li><li><b>B</b>leeding Control: <b>Terlipressin + Ceftriaxone + Endoscopy ≤12h</b></li><li><b>E</b>arly TIPS: <b>Child B/C, HVPG&gt;20, ≤72h</b></li><li><b>E</b>VL vs Sclerotherapy: <b>EVL superior</b> (fewer complications, faster eradication)</li><li><b>A</b>lternative Vasoactive: <b>Octreotide 50mcg bolus + 50mcg/h</b></li><li><b>D</b>APT not for varices: <b>Antiplatelet not used</b> (NSBB for portal hypertension)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Variceal Bleeding))
+    Acute Management (TG18)
+      Resuscitation
+      Terlipressin 2mg q4h
+      Ceftriaxone 1g OD ×7d
+      Endoscopy ≤12h
+      EVL (Oesophageal) / Glue (Gastric)
+    Gastric Varices
+      GOV1: EVL
+      GOV2/IGV: Cyanoacrylate Glue
+    Primary Prophylaxis
+      Medium/Large: NSBB or EVL
+      Small + Red Signs/Child C: NSBB
+    Secondary Prophylaxis
+      NSBB + EVL Combined (Gold Standard)
+      Lifelong
+    TIPS
+      Early (≤72h): Child B/C, HVPG&gt;20
+      HVPG Target: &lt;12 or ↓20%
+    Medications
+      Terlipressin 2mg q4h
+      NSBB: Propranolol/Nadolol (HR 55-60)
+      Ceftriaxone 1g OD ×7d</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Acute Bleed**</td><td>Terlipressin 2mg q4h + Ceftriaxone 1g OD + Endoscopy ≤12h → EVL/Glue</td></tr><tr><td>**Oesophageal**</td><td>EVL (q2-4wks to eradication)</td></tr><tr><td>**Gastric**</td><td>GOV1: EVL; GOV2/IGV: Cyanoacrylate glue</td></tr><tr><td>**Primary Prophylaxis**</td><td>Medium/Large: NSBB (HR 55-60) or EVL</td></tr><tr><td>**Secondary Prophylaxis**</td><td>**NSBB + EVL Combined** (Lifelong)</td></tr><tr><td>**Early TIPS**</td><td>Child B/C, HVPG>20, ≤72h</td></tr><tr><td>**HVPG Target**</td><td><12 mmHg or ↓20%</td></tr><tr><td>**Glue Risk**</td><td>Systemic embolisation (use lipiodol, small volumes)</td></tr><tr><td>**NSBB Target**</td><td>HR 55-60 bpm or ↓25% from baseline</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Acute Bleed Protocol (TG18)</td><td></td><td></td></tr><tr><td>EVL vs Glue Indications</td><td></td><td></td></tr><tr><td>Primary vs Secondary Prophylaxis</td><td></td><td></td></tr><tr><td>NSBB Dosing & Targets</td><td></td><td></td></tr><tr><td>Early TIPS Indications</td><td></td><td></td></tr><tr><td>HVPG Targets</td><td></td><td></td></tr><tr><td>Gastric Varices Management</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Hepatology|Hepatology]]</li><li>**Chapter Map": [[../Davidson Chapter 24 - Hepatology Hierarchy|Hepatology Hierarchy]]</li><li>**Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Portal Hypertension and Complications]], [[Ascites]], [[Hepatic Encephalopathy]], [[TIPS]], [[Liver Transplantation]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Variceal Bleeding · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

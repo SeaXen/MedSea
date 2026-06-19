@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DILI patterns — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">DILI patterns</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Classify DILI patterns (hepatocellular, cholestatic, mixed)</li><li>[ ] Apply RUCAM for causality assessment</li><li>[ ] Identify common culprit drugs by pattern</li><li>[ ] Differentiate DILI from viral, autoimmune, alcoholic, ischaemic</li><li>[ ] Identify FCPS/MRCP high-yield drug associations</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">DILI Patterns in Jaundice</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Suspected DILI in Jaundiced Patient] --&gt; B{Calculate R Ratio}
+    B --&gt;|R &gt; 5| C[Hepatocellular Pattern]
+    B --&gt;|R &lt; 2| D[Cholestatic Pattern]
+    B --&gt;|R 2-5| E[Mixed Pattern]</code></pre>
+<div class="callout"><b>R Ratio</b> = (ALT/ULN_ALT) ÷ (ALP/ULN_ALP) — <b>Use ULN-corrected values</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">DILI Pattern Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pattern</th><th>R Ratio</th><th>ALT/AST</th><th>ALP</th><th>Common Culprits</th></tr><tr><td>---------</td><td>---------</td><td>---------</td><td>-----</td><td>-----------------</td></tr><tr><td>**Hepatocellular**</td><td>**>5**</td><td>**↑↑↑** (often >10×ULN)</td><td>Normal/Mild ↑</td><td>Paracetamol, Anti-TB (INH), Phenytoin, Valproate, AIH-mimics</td></tr><tr><td>**Cholestatic**</td><td>**<2**</td><td>Normal/Mild ↑</td><td>**↑↑** (>3×ULN)</td><td>Amox-Clav, Flucloxacillin, OCP, Chlorpromazine, Sulfonamides</td></tr><tr><td>**Mixed**</td><td>**2-5**</td><td>↑↑</td><td>↑↑</td><td>Anti-TB (Rifampicin), Flucloxacillin, Cotrimoxazole, Tricyclics</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Paracetamol = Hepatocellular (ALT&gt;5000)</b>; <b>Amox-Clav = Cholestatic (Male&gt;55); Flucloxacillin = Cholestatic (&gt;55, &gt;14d)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Hepatocellular Pattern DILI</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Pattern</th><th>Latency</th><th>Key Features</th></tr><tr><td>------</td><td>---------</td><td>---------</td><td>--------------</td></tr><tr><td>**Paracetamol**</td><td>Hepatocellular</td><td>Hours-Days</td><td>**ALT >5000**, Centrilobular necrosis, NAC</td></tr><tr><td>**Isoniazid**</td><td>Hepatocellular</td><td>2-12 weeks</td><td>Most common DILI-ALF in TB areas; NAT2 slow acetylators</td></tr><tr><td>**Phenytoin/Carbamazepine**</td><td>Hepatocellular</td><td>2-8 weeks</td><td>Aromatic anticonvulsants; HLA association</td></tr><tr><td>**Valproate**</td><td>Hepatocellular</td><td>2-8 weeks</td><td>Children <3y, Polytherapy, **POLG mutation (Alpers)**</td></tr><tr><td>**Diclofenac**</td><td>Hepatocellular/Mixed</td><td>1-4 weeks</td><td>Higher risk than other NSAIDs</td></tr><tr><td>**Herbal (Green tea, Kava)**</td><td>Variable</td><td>Variable</td><td>Ask specifically — patients don't volunteer</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Cholestatic Pattern DILI</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Pattern</th><th>Latency</th><th>Key Features</th></tr><tr><td>------</td><td>---------</td><td>---------</td><td>--------------</td></tr><tr><td>**Amoxicillin-Clavulanate**</td><td>**Cholestatic**</td><td>1-6 weeks</td><td>**Male >55y**, Can occur **after stopping**, Prolonged</td></tr><tr><td>**Flucloxacillin**</td><td>Cholestatic</td><td>2-4 weeks</td><td>**>55y, Male, >14 days use**</td></tr><tr><td>**OCP**</td><td>Cholestatic</td><td>Months</td><td>Women, Reversible on stopping</td></tr><tr><td>**Chlorpromazine**</td><td>Cholestatic</td><td>2-4 weeks</td><td>Fever, Eosinophilia, Rash</td></tr><tr><td>**Sulfonamides**</td><td>Cholestatic/Mixed</td><td>1-3 weeks</td><td>Hypersensitivity features</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Mixed Pattern DILI</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Pattern</th><th>Key Features</th></tr><tr><td>------</td><td>---------</td><td>--------------</td></tr><tr><td>**Rifampicin**</td><td>Cholestatic-Mixed</td><td>With INH often; Orange secretions</td></tr><tr><td>**Cotrimoxazole**</td><td>Mixed</td><td>HIV patients, Hypersensitivity</td></tr><tr><td>**Allopurinol**</td><td>Hypersensitivity/Mixed</td><td>**DRESS**: Rash, Eosinophilia, Fever, Renal</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">RUCAM (Causality Assessment)</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Time to Onset] --&gt; B{5-90 days from drug start?}
+    B --&gt;|Yes| C[+2]
+    B --&gt;|No| D[+1]
+    A --&gt; E{Dechallenge}
+    E --&gt;|ALT ↓50% in 8 days| F[+3]
+    E --&gt;|ALT ↓50% in 30 days| G[+2]
+    E --&gt;|No info| H[0]
+    E --&gt;|No decrease| I[-2]
+    A --&gt; J{Risk Factors}
+    J --&gt;|Alcohol/Age&gt;55| K[+1]
+    J --&gt;|No| L[0]
+    A --&gt; M{Concomitant Drugs}
+    M --&gt;|None| N[0]
+    M --&gt;|Possible| O[-1]
+    M --&gt;|Probable| P[-2]
+    A --&gt; Q{Exclusion of Other Causes}
+    Q --&gt;|All ruled out| R[+2]
+    Q --&gt;|5/6 ruled out| S[+1]
+    Q --&gt;|&lt;5 ruled out| T[-1]
+    Q --&gt;|Alternative probable| U[-3]
+    A --&gt; V{Rechallenge}
+    V --&gt;|ALT doubles| W[+3]
+    V --&gt;|Clinical only| X[+1]
+    V --&gt;|Negative| Y[-2]
+    V --&gt;|Not done| Z[0]</code></pre>
+<div class="sub-h">RUCAM Score Interpretation</div>
+<table class="ctable"><tr><th>Score</th><th>Causality</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**≥9**</td><td>Highly Probable</td></tr><tr><td>**6-8**</td><td>Probable</td></tr><tr><td>**3-5**</td><td>Possible</td></tr><tr><td>**1-2**</td><td>Unlikely</td></tr><tr><td>**≤0**</td><td>Excluded</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Top DILI Causing ALF (Non-Paracetamol)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Frequency</th><th>Key Association</th></tr><tr><td>------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**Anti-TB (Isoniazid)**</td><td>High in TB endemic</td><td>NAT2 slow acetylator</td></tr><tr><td>**Anti-TB (Rifampicin)**</td><td>Often with INH</td><td>Cholestatic, Orange fluids</td></tr><tr><td>**Amoxicillin-Clavulanate**</td><td>Commonest antibiotic DILI-ALF in West</td><td>Male >55y, Post-course</td></tr><tr><td>**Flucloxacillin**</td><td>Cholestatic ALF</td><td>>55y, Male, >14d</td></tr><tr><td>**Anticonvulsants**</td><td>Phenytoin, Valproate, Carbamazepine</td><td>HLA associations</td></tr><tr><td>**NSAIDs (Diclofenac)**</td><td>Hepatocellular</td><td>Higher risk than other NSAIDs</td></tr><tr><td>**Herbal/Alternative**</td><td>Variable</td><td>Green tea, Kava, Ayurvedic</td></tr><tr><td>**ICI (Ipilimumab)**</td><td>Hepatocellular</td><td>Colitis co-exists, Anti-CTLA4>PD1</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Hepatocellular**</td><td>R>5, ALT↑↑↑ — Paracetamol, INH, Anticonvulsants</td></tr><tr><td>**Cholestatic**</td><td>R<2, ALP↑↑ — Amox-Clav, Flucloxacillin, OCP, Chlorpromazine</td></tr><tr><td>**Mixed**</td><td>R 2-5 — Rifampicin, Cotrimoxazole, Tricyclics</td></tr><tr><td>**Paracetamol**</td><td>ALT >5000, NAC within 8h</td></tr><tr><td>**Amox-Clav**</td><td>Cholestatic, Male >55, Post-course onset</td></tr><tr><td>**Flucloxacillin**</td><td>Cholestatic, >55y, >14d use</td></tr><tr><td>**RUCAM**</td><td>≥9 Definite, 6-8 Probable, 3-5 Possible</td></tr><tr><td>**Latency**</td><td>Paracetamol: hours; Others: weeks-months</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Classify DILI patterns with R ratio thresholds.</b></li><li><b>Which drug causes hepatocellular DILI with ALT &gt;5000?</b></li><li><b>Describe Amoxicillin-Clavulanate DILI: demographic, pattern, latency.</b></li><li><b>What is RUCAM? Key components?</b></li><li><b>Differentiate DILI from AIH in jaundiced patient.</b></li><li><b>List 3 drugs causing cholestatic DILI.</b></li><li><b>What is the latency for Amox-Clav vs Flucloxacillin DILI?</b></li><li><b>Which anti-TB drug causes hepatocellular vs cholestatic DILI?</b></li><li><b>How can herbal DILI be identified?</b></li><li><b>What is DRESS syndrome and which drugs cause it?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>DILI vs AIH</td><td>AIH: IgG↑, AutoAbs+, Responds to steroids; DILI: Temporal drug relation, RUCAM, No AutoAbs</td></tr><tr><td>DILI vs Viral</td><td>Viral: Serology+, No drug temporal relation; DILI: Drug temporal relation</td></tr><tr><td>Amox-Clav vs Flucloxacillin</td><td>Both cholestatic; Amox-Clav: Male>55, Post-course; Fluclox: >55, >14d use</td></tr><tr><td>INH vs Rifampicin</td><td>INH = Hepatocellular; Rifampicin = Cholestatic</td></tr><tr><td>RUCAM scoring</td><td>Time onset, Dechallenge, Risk factors, Concomitant drugs, Exclusion, Rechallenge</td></tr><tr><td>Paracetamol vs Other DILI</td><td>Paracetamol: ALT>5000, NAC urgent; Others: Variable ALT, Stop drug first</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((DILI Patterns in Jaundice))
+    R Ratio Classification
+      Hepatocellular R&gt;5
+      Cholestatic R&lt;2
+      Mixed R2-5
+    Hepatocellular
+      Paracetamol: ALT&gt;5000
+      INH: NAT2 slow acetylator
+      Anticonvulsants: Phenytoin, Valproate, CBZ
+      Diclofenac: NSAID
+    Cholestatic
+      Amox-Clav: Male&gt;55, Post-course
+      Flucloxacillin: &gt;55y, &gt;14d
+      OCP, Chlorpromazine, Sulfonamides
+    Mixed
+      Rifampicin, Cotrimoxazole, Tricyclics
+    RUCAM
+      Time onset, Dechallenge, Risk factors, Concomitant, Exclusion, Rechallenge
+      ≥9 Definite, 6-8 Probable
+    Top ALF DILI
+      INH, Rifampicin, Amox-Clav, Fluclox, Anticonvulsants, Herbal</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Pattern**</th><th>**R Ratio**</th><th>**Typical Drugs**</th><th>**Key Feature**</th></tr><tr><td>-------------</td><td>-------------</td><td>-------------------</td><td>-----------------</td></tr><tr><td>**Hepatocellular**</td><td>>5</td><td>Paracetamol, INH, Phenytoin, Valproate</td><td>ALT↑↑↑</td></tr><tr><td>**Cholestatic**</td><td><2</td><td>**Amox-Clav, Flucloxacillin, OCP, Chlorpromazine**</td><td>ALP↑↑</td></tr><tr><td>**Mixed**</td><td>2-5</td><td>Rifampicin, Cotrimoxazole, Tricyclics</td><td>Both ↑</td></tr></table>
+<table class="ctable"><tr><th>**Drug**</th><th>**Pattern**</th><th>**Key Feature**</th></tr><tr><td>----------</td><td>-------------</td><td>-----------------</td></tr><tr><td>Paracetamol</td><td>Hepatocellular</td><td>ALT>5000, NAC</td></tr><tr><td>INH</td><td>Hepatocellular</td><td>NAT2 slow acetylator</td></tr><tr><td>Amox-Clav</td><td>Cholestatic</td><td>Male>55, Post-course</td></tr><tr><td>Flucloxacillin</td><td>Cholestatic</td><td>>55y, >14d use</td></tr><tr><td>Rifampicin</td><td>Mixed</td><td>Orange fluids, With INH</td></tr></table>
+<table class="ctable"><tr><th>**RUCAM**</th><th>**Score**</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>Definite</td><td>≥9</td></tr><tr><td>Probable</td><td>6-8</td></tr><tr><td>Possible</td><td>3-5</td></tr><tr><td>Unlikely</td><td>1-2</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>R Ratio thresholds</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Pattern drug associations</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>RUCAM components</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Amox-Clav vs Fluclox</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>DILI vs AIH</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>R ratio thresholds</td><td></td><td></td></tr><tr><td>Hepatocellular drugs (3)</td><td></td><td></td></tr><tr><td>Cholestatic drugs (3)</td><td></td><td></td></tr><tr><td>RUCAM ≥9 = ?</td><td></td><td></td></tr><tr><td>Amox-Clav vs Fluclox</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Drug-Induced Liver Injury/Classification and patterns|DILI Classification]]</li><li>[[Drug-Induced Liver Injury/Common culprit drugs|DILI Culprit Drugs]]</li><li>[[Acute Liver Failure/Non-paracetamol drug-induced liver injury|Non-PCM DILI ALF]]</li><li>[[Jaundice and LFT Interpretation/Hepatocellular vs Cholestatic Pattern|LFT Patterns]]</li><li>[[Acute Liver Failure/Paracetamol-induced hepatotoxicity|Paracetamol ALF]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · DILI patterns · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

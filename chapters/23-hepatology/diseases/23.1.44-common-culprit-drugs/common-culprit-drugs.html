@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Common culprit drugs — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Common culprit drugs</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Identify top drugs causing DILI by pattern and frequency</li><li>[ ] Know specific risk factors for each high-risk drug</li><li>[ ] Apply clinical pearls for each drug class</li><li>[ ] Identify FCPS/MRCP high-yield drug associations</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Top Drugs by DILI Frequency & Severity</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Common Culprit Drugs] --&gt; B[Paracetamol (ALF #1 West)]
+    A --&gt; C[Anti-TB: Isoniazid, Rifampicin]
+    A --&gt; D[Antibiotics: Amox-Clav, Flucloxacillin]
+    A --&gt; E[Anticonvulsants: Phenytoin, Valproate, Carbamazepine]
+    A --&gt; F[NSAIDs: Diclofenac]
+    A --&gt; G[Herbal/Alternative]
+    A --&gt; H[ICI: Ipilimumab, Nivolumab]
+    A --&gt; I[Statin]
+    A --&gt; J[Allopurinol]
+    A --&gt; K[Anti-retrovirals]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Paracetamol (Acetaminophen)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Pattern**</td><td>**Hepatocellular** (Intrinsic)</td></tr><tr><td>**ALF Rank**</td><td>**#1 Cause of ALF in UK/USA** (50-70%)</td></tr><tr><td>**Mechanism**</td><td>NAPQI Accumulation → Glutathione Depletion → Centrilobular Necrosis</td></tr><tr><td>**Risk Factors**</td><td>**Fasting/Malnutrition**, Chronic Alcohol, CYP2E1 Inducers (Carbamazepine, Phenytoin, Rifampicin), HIV/AIDS</td></tr><tr><td>**ALT**</td><td>**>5000 U/L** (Often >10,000)</td></tr><tr><td>**Antidote**</td><td>**N-Acetylcysteine (NAC)** — Within 8h Optimal, Beneficial up to 24-48h</td></tr><tr><td>**Nomogram**</td><td>Rumack-Matthew (Single Acute OD Only) — Treat Line 150 mg/L at 4h</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Paracetamol = #1 ALF Cause (West)</b>; <b>NAC Within 8h</b>; <b>Staggered OD = Empiric NAC</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Anti-TB Drugs</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Isoniazid (INH)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Pattern**</td><td>**Hepatocellular**</td></tr><tr><td>**Rank**</td><td>**#1 DILI-ALF in TB Endemic Areas**</td></tr><tr><td>**Incidence**</td><td>5-30% Asymptomatic ALT Rise; 1-5% Symptomatic; <1% ALF</td></tr><tr><td>**Risk Factors**</td><td>**NAT2 Slow Acetylator**, Alcohol, Age >35, Malnutrition, HIV</td></tr><tr><td>**Latency**</td><td>2-12 Weeks (Peak 4-8w)</td></tr><tr><td>**Monitoring**</td><td>LFTs Baseline, Monthly ×2, Then 3-Monthly</td></tr><tr><td>**ALT >5×ULN or >3×ULN + Symptoms**</td><td>**STOP All Anti-TB**</td></tr></table>
+<div class="sub-h">Rifampicin</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Pattern**</td><td>**Cholestatic / Mixed**</td></tr><tr><td>**Latency**</td><td>2-8 Weeks</td></tr><tr><td>**Key Feature**</td><td>**Orange/Red Body Fluids** (Tears, Urine, Sweat)</td></tr><tr><td>**Interaction**</td><td>Potent CYP3A4 Inducer → ↓ Levels of ART, OCP, Warfarin, DOACs</td></tr><tr><td>**With INH**</td><td>Synergistic Hepatotoxicity</td></tr></table>
+<div class="sub-h">Pyrazinamide (PZA)</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Historical**</td><td>Most Hepatotoxic (High-Dose Regimens)</td></tr><tr><td>**Current**</td><td>Low-Dose (25 mg/kg) → Lower Hepatotoxicity</td></tr></table>
+<div class="sub-h">Anti-TB DILI Management Algorithm</div>
+<pre class="codeblock"><code>flowchart TD
+    A[Anti-TB DILI: ALT &gt;5xULN or &gt;3xULN + Symptoms] --&gt; B[STOP All Anti-TB]
+    B --&gt; C[Monitor LFTs 2-3x/Week]
+    C --&gt; D{ALT &lt;2xULN?}
+    D --&gt;|Yes| E[Reintroduce: Rifampicin → INH → Ethambutol → PZA]
+    D --&gt;|No| F[Wait; 2-Drug Regimen: Rifampicin + Ethambutol]
+    E --&gt; G[LFTs Weekly x2, Then Monthly]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Antibiotics</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Amoxicillin-Clavulanate</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Pattern**</td><td>**Cholestatic**</td></tr><tr><td>**Rank**</td><td>**Commonest Antibiotic DILI-ALF in West**</td></tr><tr><td>**Demographic**</td><td>**Male >55 Years**</td></tr><tr><td>**Latency**</td><td>**1-6 Weeks** (Can Occur **After Stopping**)</td></tr><tr><td>**Duration**</td><td>Prolonged (Months), 10% Chronicity</td></tr><tr><td>**Key**</td><td>**Male >55, Cholestatic, Can Occur Post-Course**</td></tr></table>
+<div class="sub-h">Flucloxacillin</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Pattern**</td><td>Cholestatic</td></tr><tr><td>**Risk Factors**</td><td>**>55 Years**, **Male**, **>14 Days Use**</td></tr><tr><td>**Latency**</td><td>2-4 Weeks</td></tr><tr><td>**Key**</td><td>**>55y, Male, >14 Days Use**</td></tr></table>
+<div class="sub-h">Other Antibiotics</div>
+<table class="ctable"><tr><th>Antibiotic</th><th>Pattern</th><th>Key Features</th></tr><tr><td>-----------</td><td>---------</td><td>--------------</td></tr><tr><td>**Cotrimoxazole**</td><td>Mixed</td><td>HIV Patients, Hypersensitivity (Rash, Eosinophilia)</td></tr><tr><td>**Erythromycin**</td><td>Cholestatic</td><td>Estolate Form > Base</td></tr><tr><td>**Tetracyclines**</td><td>Hepatocellular</td><td>High Dose IV → Microvesicular Steatosis</td></tr><tr><td>**Isoniazid**</td><td>Hepatocellular</td><td>NAT2 Slow Acetylators</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Anticonvulsants</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Pattern</th><th>Key Risk Factors</th></tr><tr><td>------</td><td>---------</td><td>------------------</td></tr><tr><td>**Phenytoin**</td><td>Hepatocellular</td><td>**Aromatic**, HLA-B*15:02 (Asian), Aromatic AA Cross-Reactivity</td></tr><tr><td>**Carbamazepine**</td><td>Hepatocellular</td><td>**Aromatic**, HLA-B*15:02, HLA-A*31:01, Cross-Reactivity with Phenytoin</td></tr><tr><td>**Valproate**</td><td>Hepatocellular</td><td>**Children <3y**, Polytherapy, **POLG Mutation (Alpers)**</td></tr><tr><td>**Lamotrigine**</td><td>Hypersensitivity/Mixed</td><td>Rash (Stevens-Johnson), Titration Reduces Risk</td></tr><tr><td>**Phenobarbital**</td><td>Hepatocellular/Enzyme Induction</td><td>Enzyme Induction (↓ Other Drug Levels)</td></tr></table>
+<div class="callout"><b>Valproate in Children</b>: <b>&lt;3y + Polytherapy + POLG</b> = High Risk (Alpers Syndrome)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">NSAIDs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Pattern</th><th>Key Feature</th></tr><tr><td>------</td><td>---------</td><td>--------------</td></tr><tr><td>**Diclofenac**</td><td>Hepatocellular/Mixed</td><td>**Highest Risk Among NSAIDs** (Rare ALF)</td></tr><tr><td>**Ibuprofen/Naproxen**</td><td>Hepatocellular</td><td>Rare, Dose-Related</td></tr><tr><td>**Aspirin**</td><td>Hepatocellular</td><td>Reye's Syndrome (Children + Viral Illness)</td></tr><tr><td>**Celecoxib**</td><td>Hepatocellular</td><td>Lower GI Risk, Similar Hepatic Risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Herbal & Alternative Medicines</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Herb/Supplement</th><th>Pattern</th><th>Key Risk</th></tr><tr><td>----------------</td><td>---------</td><td>----------</td></tr><tr><td>**Green Tea Extract**</td><td>Hepatocellular</td><td>Catechins (EGCG), Weight Loss Supplements</td></tr><tr><td>**Kava**</td><td>Hepatocellular</td><td>Banned in Some Countries, Liver Failure Reports</td></tr><tr><td>**Herbalife**</td><td>Hepatocellular/Cholestatic</td><td>Multiple Ingredients, Case Reports</td></tr><tr><td>**Ayurvedic/TCM**</td><td>Variable</td><td>Heavy Metals (Lead, Mercury, Arsenic), Adulterants</td></tr><tr><td>**Black Cohosh**</td><td>Hepatocellular</td><td>Menopausal Symptoms, Autoimmune Features</td></tr><tr><td>**Germander (Teucrium)**</td><td>Hepatocellular</td><td>Weight Loss, Hepatotoxic Diterpenes</td></tr><tr><td>**Vitamin A**</td><td>Hepatocellular</td><td>Chronic Hypervitaminosis A (>25,000 IU/day)</td></tr><tr><td>**Niacin**</td><td>Hepatocellular</td><td>High Dose (>2g/day), Time-Release Formulations</td></tr></table>
+<p><i>...continued (truncated for renderer performance)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Common culprit drugs · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

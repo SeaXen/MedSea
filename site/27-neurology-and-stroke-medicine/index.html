@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neurology & Stroke Medicine · MedSea · MedSea</title>
+<meta name="description" content="Sea Knowledge medical study library — Davidson's chapters rendered as infographics.">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --bg-2: #111827;
+  --bg-3: #1f2937;
+  --bg-4: #0f172a;
+  --border: #2d3748;
+  --border-2: #374151;
+  --text: #e5e7eb;
+  --text-dim: #9ca3af;
+  --accent: #38bdf8;
+  --code-bg: #0f172a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: linear-gradient(135deg, #0a0e1a 0%, #0f1729 100%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', system-ui, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+a { color: var(--accent); text-decoration: none; transition: color 0.15s; }
+a:hover { color: #7dd3fc; }
+
+/* ===== Header (sticky) ===== */
+header.site {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10, 14, 26, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: nowrap;
+  min-height: 48px;
+}
+header.site .logo-wrap {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 15px; font-weight: 700; letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+header.site .logo {
+  width: 26px; height: 26px;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  border-radius: 7px; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+header.site .logo-wrap a { color: inherit; }
+
+/* ===== Stats bar in header ===== */
+header.site .stats {
+  display: flex; gap: 3px; align-items: center;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+header.site .stats .stat {
+  display: inline-flex; align-items: baseline; gap: 4px;
+  padding: 3px 8px; border-radius: 5px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+}
+header.site .stats .stat .num { font-size: 12px; font-weight: 700; color: var(--accent); }
+header.site .stats .stat .label { color: var(--text-dim); font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ===== Chapter dropdown ===== */
+header.site .chapter-dropdown {
+  position: relative;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+header.site .chapter-dropdown .drop-btn {
+  padding: 6px 12px; border-radius: 7px;
+  background: var(--bg-3); border: 1px solid var(--border-2);
+  color: var(--text); font-size: 12px; font-weight: 500;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+  font-family: inherit;
+}
+header.site .chapter-dropdown .drop-btn:hover { background: var(--bg-2); border-color: var(--accent); }
+header.site .chapter-dropdown .drop-btn .arrow { font-size: 9px; opacity: 0.7; }
+header.site .chapter-dropdown .drop-btn .current-ch { color: var(--accent); font-weight: 600; }
+/* Full-height dropdown showing all 32 chapters in a 2-col grid */
+header.site .chapter-dropdown .drop-menu {
+  position: fixed; right: 16px; top: 56px;
+  width: 640px; max-height: calc(100vh - 72px); overflow-y: auto;
+  background: var(--bg-2); border: 1px solid var(--border-2);
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  padding: 8px;
+  display: none;
+  z-index: 200;
+  column-count: 2;
+  column-gap: 6px;
+}
+header.site .chapter-dropdown .drop-menu .item { break-inside: avoid; }
+header.site .chapter-dropdown.open .drop-menu { display: block; }
+header.site .chapter-dropdown .drop-menu .item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 8px; border-radius: 5px;
+  color: var(--text); font-size: 12px;
+  cursor: pointer; transition: background 0.1s;
+  text-decoration: none !important;
+}
+header.site .chapter-dropdown .drop-menu .item:hover { background: var(--bg-3); }
+header.site .chapter-dropdown .drop-menu .item.active { background: rgba(56, 189, 248, 0.15); }
+header.site .chapter-dropdown .drop-menu .item .num {
+  display: inline-block; min-width: 24px; padding: 1px 4px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  border-radius: 3px; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 9px; text-align: center; color: var(--text-dim);
+  flex-shrink: 0;
+}
+header.site .chapter-dropdown .drop-menu .item .name {
+  flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+header.site .chapter-dropdown .drop-menu .item.active .num { background: var(--accent); color: #0a0e1a; border-color: transparent; }
+/* Strong visual distinction: LIVE = accent green, SOON = dim grey + lock icon */
+header.site .chapter-dropdown .drop-menu .item.soon { color: var(--text-dim); cursor: not-allowed; opacity: 0.5; }
+header.site .chapter-dropdown .drop-menu .item.soon .num { opacity: 0.7; }
+header.site .chapter-dropdown .drop-menu .item .badge {
+  margin-left: auto; font-size: 8px; padding: 1px 5px;
+  background: var(--bg-3); border-radius: 8px;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+header.site .chapter-dropdown .drop-menu .item.soon .badge {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-dim); font-weight: 500;
+}
+header.site .chapter-dropdown .drop-menu .item:not(.soon) .badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+header.site .ext-links { display: flex; gap: 6px; flex-shrink: 0; }
+header.site .ext-links a {
+  padding: 5px 10px; border-radius: 6px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  color: var(--text-dim); font-size: 11px;
+  text-decoration: none;
+}
+header.site .ext-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ===== Landing page main ===== */
+main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+@media (max-width: 1400px) { .chapters-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1100px) { .chapters-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px)  { .chapters-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .chapters-grid { grid-template-columns: 1fr; } }
+.section-title {
+  font-size: 13px; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 14px; font-weight: 600;
+}
+.chapter-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 16px 14px;
+  transition: all 0.18s ease;
+  position: relative; overflow: hidden;
+  text-decoration: none !important; color: inherit !important;
+  display: flex; flex-direction: column;
+  cursor: pointer; min-height: 150px;
+}
+.chapter-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-color, var(--accent));
+}
+.chapter-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-color, var(--accent));
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.08);
+}
+.chapter-card .ch-num {
+  display: inline-block; padding: 2px 8px;
+  background: var(--accent-color, var(--accent)); color: #0a0e1a;
+  border-radius: 4px; font-size: 10px; font-weight: 700;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+.chapter-card h2 {
+  font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
+  margin-bottom: 10px; line-height: 1.25;
+  flex: 1;
+}
+.chapter-card .ch-stats {
+  display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid var(--border);
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 12px;
+}
+.chapter-card .ch-stats .cs { display: flex; flex-direction: column; }
+.chapter-card .ch-stats .num { font-size: 16px; font-weight: 700; color: var(--accent); line-height: 1; }
+.chapter-card .ch-stats .label { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+.chapter-card .ch-links {
+  display: flex; gap: 12px; margin-top: 8px;
+  font-size: 11px;
+}
+.chapter-card .ch-link-primary {
+  color: var(--accent); font-weight: 600; text-decoration: none !important;
+}
+.chapter-card .ch-link-secondary {
+  color: var(--text-dim); text-decoration: none !important;
+}
+.chapter-card .ch-link-primary:hover { color: #7dd3fc; }
+.chapter-card .ch-link-secondary:hover { color: var(--accent); }
+
+/* ===== Chapter page (SPA: sidebar + main) ===== */
+.chapter-page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  min-height: calc(100vh - 65px);
+}
+.chapter-sidebar {
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 65px);
+  position: sticky; top: 65px;
+}
+.chapter-sidebar .search {
+  width: 100%; padding: 8px 12px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text); font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.chapter-sidebar .search:focus { outline: none; border-color: var(--accent); }
+.chapter-sidebar .hub-group { margin-bottom: 14px; }
+.chapter-sidebar .hub-group h3 {
+  font-size: 11px; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 6px 8px; margin: 0 0 4px;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.06);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.chapter-sidebar .topic-item {
+  display: block; padding: 5px 10px 5px 22px;
+  border-radius: 4px;
+  color: var(--text); font-size: 12.5px; font-weight: 500;
+  cursor: pointer; transition: all 0.1s;
+  border: 1px solid transparent;
+  text-decoration: none !important;
+  position: relative;
+  line-height: 1.35;
+}
+.chapter-sidebar .topic-item:hover { background: var(--bg-3); color: #fff; }
+.chapter-sidebar .topic-item.active {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent);
+  font-weight: 600;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+.chapter-sidebar .topic-item .num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px; margin-right: 6px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+.chapter-sidebar .topic-item.active .num { color: var(--accent); font-weight: 600; }
+.chapter-sidebar .no-results {
+  color: var(--text-dim); font-size: 12px;
+  padding: 12px 8px; text-align: center;
+  display: none;
+}
+.chapter-sidebar .no-results.show { display: block; }
+
+.chapter-main {
+  padding: 16px 24px;
+  overflow-x: hidden;
+}
+.chapter-main .chapter-header {
+  padding: 8px 0 10px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
+  border-left: 3px solid var(--accent-color, var(--accent));
+  padding-left: 14px;
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+}
+.chapter-main .chapter-header h1 {
+  font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0;
+  line-height: 1.2;
+}
+.chapter-main .chapter-header .meta {
+  color: var(--text-dim); font-size: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.chapter-main .chapter-header .meta a { color: var(--accent); text-decoration: none; }
+.chapter-main .chapter-header .meta a:hover { text-decoration: underline; }
+
+.chapter-main .placeholder {
+  text-align: center; padding: 60px 20px;
+  color: var(--text-dim);
+}
+.chapter-main .placeholder .icon { font-size: 48px; margin-bottom: 12px; opacity: 0.5; }
+
+/* ===== Topic content (main pane) ===== */
+.topic-detail .crumbs {
+  color: var(--text-dim); font-size: 12px; margin-bottom: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+.topic-detail .crumbs a { color: var(--text-dim); }
+.topic-detail .crumbs a:hover { color: var(--accent); }
+.topic-detail .topic-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 20px; gap: 20px; flex-wrap: wrap;
+}
+.topic-detail .topic-header h1 {
+  font-size: 32px; font-weight: 800; letter-spacing: -0.02em;
+}
+.topic-detail .topic-header .meta { color: var(--text-dim); font-size: 13px; margin-top: 4px; }
+.topic-detail .topic-actions { display: flex; gap: 6px; }
+.topic-detail .topic-actions a, .topic-detail .topic-actions button {
+  padding: 6px 12px; border-radius: 6px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  color: var(--text); font-size: 12px;
+  font-family: inherit; cursor: pointer;
+  text-decoration: none;
+}
+.topic-detail .topic-actions a:hover, .topic-detail .topic-actions button:hover {
+  background: var(--bg); border-color: var(--accent); color: var(--accent);
+}
+.topic-detail .topic-image {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+  padding: 16px; margin-bottom: 20px;
+}
+.topic-detail .topic-image img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.topic-detail .topic-image-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px;
+  padding: 10px 16px; margin-bottom: 16px; cursor: pointer;
+  color: var(--text-dim); font-size: 14px; font-weight: 600;
+  transition: all 0.15s ease;
+}
+.topic-detail .topic-image-toggle:hover {
+  background: var(--bg-2); border-color: var(--accent); color: var(--accent);
+}
+.topic-detail .topic-image-toggle .toggle-icon {
+  font-size: 16px; transition: transform 0.2s ease;
+}
+.topic-detail .topic-image-toggle.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+.topic-detail .topic-image-wrap { overflow: hidden; }
+.topic-detail .topic-image-wrap.collapsed { display: none; }
+.topic-detail .topic-content {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+  padding: 24px;
+}
+.topic-detail .topic-content h2, .topic-detail .topic-content h3, .topic-detail .topic-content h4 {
+  margin-top: 20px; margin-bottom: 10px; font-weight: 700;
+}
+.topic-detail .topic-content h2 { font-size: 22px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.topic-detail .topic-content h3 { font-size: 18px; color: var(--accent); }
+.topic-detail .topic-content h4 { font-size: 15px; }
+.topic-detail .topic-content p { margin-bottom: 12px; color: var(--text); }
+.topic-detail .topic-content ul, .topic-detail .topic-content ol { margin-left: 24px; margin-bottom: 12px; }
+.topic-detail .topic-content li { margin-bottom: 4px; }
+.topic-detail .topic-content li:empty { display: none; }
+.topic-detail .topic-content table {
+  border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 13px;
+}
+.topic-detail .topic-content th, .topic-detail .topic-content td {
+  border: 1px solid var(--border); padding: 8px 10px; text-align: left;
+}
+.topic-detail .topic-content th { background: var(--bg-3); font-weight: 600; }
+.topic-detail .topic-content code {
+  background: var(--code-bg); padding: 2px 6px; border-radius: 4px;
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 0.9em;
+}
+.topic-detail .topic-content blockquote {
+  border-left: 3px solid var(--accent); padding: 8px 14px; color: var(--text-dim);
+  margin: 12px 0; background: var(--bg-3); border-radius: 0 6px 6px 0;
+}
+.topic-detail .topic-content hr {
+  border: none; border-top: 1px solid var(--border); margin: 24px 0;
+}
+
+/* ===== Old chapter header (kept for legacy chapter pages) ===== */
+.chapter-header.legacy { padding: 32px 0; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+.chapter-header.legacy h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+.chapter-header.legacy .meta { color: var(--text-dim); font-size: 15px; }
+.hub-section {
+  margin-bottom: 40px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.hub-section h2 {
+  font-size: 22px; font-weight: 700; margin-bottom: 4px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hub-section h2 .hub-num {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 12px; padding: 4px 8px; background: var(--bg-3); border-radius: 4px;
+  color: var(--text-dim);
+}
+.hub-section .hub-desc { color: var(--text-dim); font-size: 13px; margin-bottom: 16px; }
+.topic-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.topic-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.15s;
+  text-decoration: none !important;
+  color: var(--text) !important;
+}
+.topic-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.topic-card .preview {
+  width: 100%; aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--bg-3) 0%, var(--code-bg) 100%);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.topic-card .preview img { width: 100%; height: auto; min-height: 100%; }
+.topic-card .no-preview { color: var(--text-dim); font-size: 12px; padding: 12px; text-align: center; }
+.topic-card .title {
+  padding: 10px 12px;
+  font-size: 13px; font-weight: 500;
+  border-top: 1px solid var(--border);
+  line-height: 1.4;
+}
+.topic-card .num {
+  display: inline-block; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 10px; color: var(--text-dim); margin-right: 6px;
+}
+
+footer {
+  margin-top: 64px; padding: 32px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim); font-size: 13px;
+  text-align: center;
+}
+footer a { color: var(--text-dim); }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  header.site { gap: 12px; }
+  header.site .stats { order: 3; width: 100%; justify-content: flex-start; }
+  header.site .chapter-dropdown { margin-left: 0; }
+  .chapter-page { grid-template-columns: 1fr; }
+  .chapter-sidebar { position: static; max-height: 400px; }
+  .chapters-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="logo-wrap">
+    <span class="logo">⚕</span>
+    <a href="/">MedSea</a>
+  </div>
+  <div class="stats"><span class="stat"><span class="num">34</span><span class="label">Hubs</span></span><span class="stat"><span class="num">360</span><span class="label">Topics</span></span><span class="stat"><span class="num">360</span><span class="label">PNGs</span></span></div>
+  <div class="chapter-dropdown" id="chapterDropdown">
+    <button class="drop-btn" type="button" onclick="document.getElementById('chapterDropdown').classList.toggle('open')">
+      <span class="current-ch">Neurology & Stroke Medicine</span> <span class="arrow">▾</span>
+    </button>
+    <div class="drop-menu">
+      <a class="item" href="/1-clinical-decision-making/"><span class="num">1</span><span class="name">Clinical Decision-Making</span><span class="badge">●</span></a><a class="item" href="/2-clinical-therapeutics/"><span class="num">2</span><span class="name">Clinical Therapeutics & Prescribing</span><span class="badge">●</span></a><a class="item" href="/3-clinical-genetics/"><span class="num">3</span><span class="name">Clinical Genetics</span><span class="badge">●</span></a><a class="item" href="/4-clinical-immunology/"><span class="num">4</span><span class="name">Clinical Immunology</span><span class="badge">●</span></a><a class="item" href="/5-nutritional-factors/"><span class="num">5</span><span class="name">Nutritional Factors in Disease</span><span class="badge">●</span></a><a class="item" href="/6-population-health/"><span class="num">6</span><span class="name">Population Health & Epidemiology</span><span class="badge">●</span></a><a class="item" href="/7-principles-of-infection/"><span class="num">7</span><span class="name">Principles of Infection</span><span class="badge">●</span></a><a class="item" href="/8-oncology/"><span class="num">8</span><span class="name">Oncology</span><span class="badge">●</span></a><a class="item" href="/9-palliative-care/"><span class="num">9</span><span class="name">Palliative & Supportive Care</span><span class="badge">●</span></a><a class="item" href="/10-acute-medicine/"><span class="num">10</span><span class="name">Acute Medicine</span><span class="badge">●</span></a><a class="item" href="/11-poisoning/"><span class="num">11</span><span class="name">Poisoning</span><span class="badge">●</span></a><a class="item" href="/12-envenomation/"><span class="num">12</span><span class="name">Envenomation</span><span class="badge">●</span></a><a class="item" href="/13-austere-medicine/"><span class="num">13</span><span class="name">Austere Medicine</span><span class="badge">●</span></a><a class="item" href="/14-infectious-disease/"><span class="num">14</span><span class="name">Infectious Disease</span><span class="badge">●</span></a><a class="item" href="/15-sexually-transmitted-infections/"><span class="num">15</span><span class="name">Sexually Transmitted Infections</span><span class="badge">●</span></a><a class="item" href="/16-cardiology/"><span class="num">16</span><span class="name">Cardiology</span><span class="badge">●</span></a><a class="item" href="/17-respiratory-medicine/"><span class="num">17</span><span class="name">Respiratory Medicine</span><span class="badge">●</span></a><a class="item" href="/18-nephrology-urology/"><span class="num">18</span><span class="name">Nephrology & Urology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">19</span><span class="name">Clinical biochemistry and metabolic medicine</span><span class="badge">○</span></a><a class="item" href="/20-endocrinology/"><span class="num">20</span><span class="name">Endocrinology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">21</span><span class="name">Diabetes mellitus</span><span class="badge">○</span></a><a class="item" href="/22-gastroenterology/"><span class="num">22</span><span class="name">Gastroenterology</span><span class="badge">●</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">23</span><span class="name">Hepatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">24</span><span class="name">Haematology and transfusion medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">25</span><span class="name">Rheumatology and bone disease</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">26</span><span class="name">Dermatology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">27</span><span class="name">Neurology and stroke medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">28</span><span class="name">Medical ophthalmology</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">29</span><span class="name">Medical psychiatry</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">30</span><span class="name">Maternal medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">31</span><span class="name">Adolescence, transition and young adult medicine</span><span class="badge">○</span></a><a class="item soon" onclick="event.preventDefault();" href="#"><span class="num">32</span><span class="name">Older adult medicine and frailty</span><span class="badge">○</span></a>
+    </div>
+  </div>
+  <div class="ext-links">
+    <a href="https://github.com/SeaXen/MedSea" target="_blank">GitHub ↗</a>
+  </div>
+</header>
+<main>
+
+<div class="chapter-page" style="--accent-color: #8b5cf6">
+  <aside class="chapter-sidebar">
+    <input type="text" class="search" id="topicSearch" placeholder="Search topics…">
+    <div class="no-results" id="noResults">No matching topics</div>
+    <div class="hub-group" data-hub="27.1">
+  <h3>27.1 · 00_Index</h3>
+  <a class="topic-item" data-topic="27.1.1" data-hub="27.1" href="?topic=27.1.1"><span class="num">27.1.1</span>Neurology Drug Reference</a>
+</div>
+<div class="hub-group" data-hub="27.10">
+  <h3>27.10 · 09_Neuromuscular_Junction_Disorders</h3>
+  <a class="topic-item" data-topic="27.10.1" data-hub="27.10" href="?topic=27.10.1"><span class="num">27.10.1</span>Acquired Neuromyotonia</a>
+  <a class="topic-item" data-topic="27.10.2" data-hub="27.10" href="?topic=27.10.2"><span class="num">27.10.2</span>Botulism</a>
+  <a class="topic-item" data-topic="27.10.3" data-hub="27.10" href="?topic=27.10.3"><span class="num">27.10.3</span>Congenital Myasthenic Syndromes</a>
+  <a class="topic-item" data-topic="27.10.4" data-hub="27.10" href="?topic=27.10.4"><span class="num">27.10.4</span>Drugs Affecting Nmj</a>
+  <a class="topic-item" data-topic="27.10.6" data-hub="27.10" href="?topic=27.10.6"><span class="num">27.10.6</span>Myasthenia Gravis</a>
+  <a class="topic-item" data-topic="27.10.8" data-hub="27.10" href="?topic=27.10.8"><span class="num">27.10.8</span>Thymoma Associated Disorders</a>
+</div>
+<div class="hub-group" data-hub="27.11">
+  <h3>27.11 · 10_Muscle_Disorders</h3>
+  <a class="topic-item" data-topic="27.11.1" data-hub="27.11" href="?topic=27.11.1"><span class="num">27.11.1</span>Channelopathies</a>
+  <a class="topic-item" data-topic="27.11.10" data-hub="27.11" href="?topic=27.11.10"><span class="num">27.11.10</span>Muscular Dystrophies</a>
+  <a class="topic-item" data-topic="27.11.11" data-hub="27.11" href="?topic=27.11.11"><span class="num">27.11.11</span>Polymyositis</a>
+  <a class="topic-item" data-topic="27.11.12" data-hub="27.11" href="?topic=27.11.12"><span class="num">27.11.12</span>Rhabdomyolysis</a>
+  <a class="topic-item" data-topic="27.11.2" data-hub="27.11" href="?topic=27.11.2"><span class="num">27.11.2</span>Congenital Myopathies</a>
+  <a class="topic-item" data-topic="27.11.3" data-hub="27.11" href="?topic=27.11.3"><span class="num">27.11.3</span>Critical Illness Myopathy Neuropathy</a>
+  <a class="topic-item" data-topic="27.11.4" data-hub="27.11" href="?topic=27.11.4"><span class="num">27.11.4</span>Dermatomyositis</a>
+  <a class="topic-item" data-topic="27.11.5" data-hub="27.11" href="?topic=27.11.5"><span class="num">27.11.5</span>Drug Toxic Myopathies</a>
+  <a class="topic-item" data-topic="27.11.6" data-hub="27.11" href="?topic=27.11.6"><span class="num">27.11.6</span>Immune Mediated Necrotising Myopathy</a>
+  <a class="topic-item" data-topic="27.11.7" data-hub="27.11" href="?topic=27.11.7"><span class="num">27.11.7</span>Inclusion Body Myositis</a>
+  <a class="topic-item" data-topic="27.11.8" data-hub="27.11" href="?topic=27.11.8"><span class="num">27.11.8</span>Metabolic Myopathies</a>
+  <a class="topic-item" data-topic="27.11.9" data-hub="27.11" href="?topic=27.11.9"><span class="num">27.11.9</span>Mitochondrial Myopathies</a>
+</div>
+<div class="hub-group" data-hub="27.12">
+  <h3>27.12 · 11_Spinal_Cord_Disorders</h3>
+  <a class="topic-item" data-topic="27.12.1" data-hub="27.12" href="?topic=27.12.1"><span class="num">27.12.1</span>Degenerative Cervical Myelopathy</a>
+  <a class="topic-item" data-topic="27.12.10" data-hub="27.12" href="?topic=27.12.10"><span class="num">27.12.10</span>Syringomyelia Chiari Malformation</a>
+  <a class="topic-item" data-topic="27.12.11" data-hub="27.12" href="?topic=27.12.11"><span class="num">27.12.11</span>Tethered Cord Syndrome</a>
+  <a class="topic-item" data-topic="27.12.12" data-hub="27.12" href="?topic=27.12.12"><span class="num">27.12.12</span>Transverse Myelitis</a>
+  <a class="topic-item" data-topic="27.12.13" data-hub="27.12" href="?topic=27.12.13"><span class="num">27.12.13</span>Transverse Myyelitis</a>
+  <a class="topic-item" data-topic="27.12.2" data-hub="27.12" href="?topic=27.12.2"><span class="num">27.12.2</span>Htlv 1 Associated Myelopathy</a>
+  <a class="topic-item" data-topic="27.12.3" data-hub="27.12" href="?topic=27.12.3"><span class="num">27.12.3</span>Infectious Myelitis</a>
+  <a class="topic-item" data-topic="27.12.4" data-hub="27.12" href="?topic=27.12.4"><span class="num">27.12.4</span>Neurosarcoidosis</a>
+  <a class="topic-item" data-topic="27.12.5" data-hub="27.12" href="?topic=27.12.5"><span class="num">27.12.5</span>Radiation Myelopathy</a>
+  <a class="topic-item" data-topic="27.12.6" data-hub="27.12" href="?topic=27.12.6"><span class="num">27.12.6</span>Spinal Cord Compression</a>
+  <a class="topic-item" data-topic="27.12.7" data-hub="27.12" href="?topic=27.12.7"><span class="num">27.12.7</span>Spinal Cord Tumours</a>
+  <a class="topic-item" data-topic="27.12.8" data-hub="27.12" href="?topic=27.12.8"><span class="num">27.12.8</span>Spinal Cord Vascular Syndromes</a>
+  <a class="topic-item" data-topic="27.12.9" data-hub="27.12" href="?topic=27.12.9"><span class="num">27.12.9</span>Subacute Combined Degeneration</a>
+</div>
+<div class="hub-group" data-hub="27.13">
+  <h3>27.13 · 12_CNS_Infections</h3>
+  <a class="topic-item" data-topic="27.13.1" data-hub="27.13" href="?topic=27.13.1"><span class="num">27.13.1</span>Acute Bacterial Meningitis</a>
+  <a class="topic-item" data-topic="27.13.10" data-hub="27.13" href="?topic=27.13.10"><span class="num">27.13.10</span>Post Infectious Adem</a>
+  <a class="topic-item" data-topic="27.13.11" data-hub="27.13" href="?topic=27.13.11"><span class="num">27.13.11</span>Prion Disease</a>
+  <a class="topic-item" data-topic="27.13.12" data-hub="27.13" href="?topic=27.13.12"><span class="num">27.13.12</span>Subdural Empyema</a>
+  <a class="topic-item" data-topic="27.13.13" data-hub="27.13" href="?topic=27.13.13"><span class="num">27.13.13</span>Tuberculous Meningitis</a>
+  <a class="topic-item" data-topic="27.13.14" data-hub="27.13" href="?topic=27.13.14"><span class="num">27.13.14</span>Vzv Encephalitis</a>
+  <a class="topic-item" data-topic="27.13.15" data-hub="27.13" href="?topic=27.13.15"><span class="num">27.13.15</span>Viral Meningitis</a>
+  <a class="topic-item" data-topic="27.13.2" data-hub="27.13" href="?topic=27.13.2"><span class="num">27.13.2</span>Autoimmune Encephalitis</a>
+  <a class="topic-item" data-topic="27.13.3" data-hub="27.13" href="?topic=27.13.3"><span class="num">27.13.3</span>Brain Abscess</a>
+  <a class="topic-item" data-topic="27.13.4" data-hub="27.13" href="?topic=27.13.4"><span class="num">27.13.4</span>Chronic Meningitis</a>
+  <a class="topic-item" data-topic="27.13.5" data-hub="27.13" href="?topic=27.13.5"><span class="num">27.13.5</span>Fungal Meningitis</a>
+  <a class="topic-item" data-topic="27.13.6" data-hub="27.13" href="?topic=27.13.6"><span class="num">27.13.6</span>Hiv Cns Complications</a>
+  <a class="topic-item" data-topic="27.13.7" data-hub="27.13" href="?topic=27.13.7"><span class="num">27.13.7</span>Hsv Encephalitis</a>
+  <a class="topic-item" data-topic="27.13.8" data-hub="27.13" href="?topic=27.13.8"><span class="num">27.13.8</span>Neurocysticercosis</a>
+  <a class="topic-item" data-topic="27.13.9" data-hub="27.13" href="?topic=27.13.9"><span class="num">27.13.9</span>Partially Treated Meningitis</a>
+</div>
+<div class="hub-group" data-hub="27.14">
+  <h3>27.14 · 13_Brain_Tumours</h3>
+  <a class="topic-item" data-topic="27.14.1" data-hub="27.14" href="?topic=27.14.1"><span class="num">27.14.1</span>Astrocytoma</a>
+  <a class="topic-item" data-topic="27.14.2" data-hub="27.14" href="?topic=27.14.2"><span class="num">27.14.2</span>Ependymoma</a>
+  <a class="topic-item" data-topic="27.14.3" data-hub="27.14" href="?topic=27.14.3"><span class="num">27.14.3</span>Glioblastoma</a>
+  <a class="topic-item" data-topic="27.14.4" data-hub="27.14" href="?topic=27.14.4"><span class="num">27.14.4</span>Gliomatosis Cerebri</a>
+  <a class="topic-item" data-topic="27.14.5" data-hub="27.14" href="?topic=27.14.5"><span class="num">27.14.5</span>Medulloblastoma</a>
+  <a class="topic-item" data-topic="27.14.6" data-hub="27.14" href="?topic=27.14.6"><span class="num">27.14.6</span>Meningioma</a>
+  <a class="topic-item" data-topic="27.14.7" data-hub="27.14" href="?topic=27.14.7"><span class="num">27.14.7</span>Metastatic Brain Tumours</a>
+  <a class="topic-item" data-topic="27.14.8" data-hub="27.14" href="?topic=27.14.8"><span class="num">27.14.8</span>Pineal Region Tumours</a>
+  <a class="topic-item" data-topic="27.14.9" data-hub="27.14" href="?topic=27.14.9"><span class="num">27.14.9</span>Primary Cns Lymphoma</a>
+</div>
+<div class="hub-group" data-hub="27.15">
+  <h3>27.15 · 14_Coma_Disorders_Consciousness</h3>
+  <a class="topic-item" data-topic="27.15.1" data-hub="27.15" href="?topic=27.15.1"><span class="num">27.15.1</span>Brainstem Death Criteria</a>
+  <a class="topic-item" data-topic="27.15.2" data-hub="27.15" href="?topic=27.15.2"><span class="num">27.15.2</span>Coma Assessment</a>
+  <a class="topic-item" data-topic="27.15.4" data-hub="27.15" href="?topic=27.15.4"><span class="num">27.15.4</span>Minimally Conscious State</a>
+  <a class="topic-item" data-topic="27.15.5" data-hub="27.15" href="?topic=27.15.5"><span class="num">27.15.5</span>Non Convulsive Status Epilepticus</a>
+  <a class="topic-item" data-topic="27.15.6" data-hub="27.15" href="?topic=27.15.6"><span class="num">27.15.6</span>Post Cardiac Arrest Encephalopathy</a>
+  <a class="topic-item" data-topic="27.15.7" data-hub="27.15" href="?topic=27.15.7"><span class="num">27.15.7</span>Structural Vs Metabolic Coma</a>
+  <a class="topic-item" data-topic="27.15.8" data-hub="27.15" href="?topic=27.15.8"><span class="num">27.15.8</span>Vegetative State Unresponsive Wakefulness Syndrome</a>
+</div>
+<div class="hub-group" data-hub="27.16">
+  <h3>27.16 · 15_Functional_Neurological_Disorders</h3>
+  <a class="topic-item" data-topic="27.16.1" data-hub="27.16" href="?topic=27.16.1"><span class="num">27.16.1</span>Fnd Management</a>
+  <a class="topic-item" data-topic="27.16.2" data-hub="27.16" href="?topic=27.16.2"><span class="num">27.16.2</span>Factitious Disorder Malingering</a>
+  <a class="topic-item" data-topic="27.16.3" data-hub="27.16" href="?topic=27.16.3"><span class="num">27.16.3</span>Functional Cognitive Disorders</a>
+  <a class="topic-item" data-topic="27.16.4" data-hub="27.16" href="?topic=27.16.4"><span class="num">27.16.4</span>Functional Movement Disorders</a>
+  <a class="topic-item" data-topic="27.16.5" data-hub="27.16" href="?topic=27.16.5"><span class="num">27.16.5</span>Functional Seizures Pnes</a>
+  <a class="topic-item" data-topic="27.16.6" data-hub="27.16" href="?topic=27.16.6"><span class="num">27.16.6</span>Functional Visual Symptoms</a>
+  <a class="topic-item" data-topic="27.16.7" data-hub="27.16" href="?topic=27.16.7"><span class="num">27.16.7</span>Functional Weakness Sensory Symptoms</a>
+  <a class="topic-item" data-topic="27.16.8" data-hub="27.16" href="?topic=27.16.8"><span class="num">27.16.8</span>Persistent Postural Perceptual Dizziness</a>
+</div>
+<div class="hub-group" data-hub="27.17">
+  <h3>27.17 · 16_Sleep_Disorders</h3>
+  <a class="topic-item" data-topic="27.17.1" data-hub="27.17" href="?topic=27.17.1"><span class="num">27.17.1</span>Central Sleep Apnoea</a>
+  <a class="topic-item" data-topic="27.17.10" data-hub="27.17" href="?topic=27.17.10"><span class="num">27.17.10</span>Restless Legs Syndrome Plmd</a>
+  <a class="topic-item" data-topic="27.17.2" data-hub="27.17" href="?topic=27.17.2"><span class="num">27.17.2</span>Idiopathic Hypersomnia</a>
+  <a class="topic-item" data-topic="27.17.3" data-hub="27.17" href="?topic=27.17.3"><span class="num">27.17.3</span>Insomnia Disorder</a>
+  <a class="topic-item" data-topic="27.17.4" data-hub="27.17" href="?topic=27.17.4"><span class="num">27.17.4</span>Kleine Levin Syndrome</a>
+  <a class="topic-item" data-topic="27.17.5" data-hub="27.17" href="?topic=27.17.5"><span class="num">27.17.5</span>Nrem Parasomnias</a>
+  <a class="topic-item" data-topic="27.17.6" data-hub="27.17" href="?topic=27.17.6"><span class="num">27.17.6</span>Narcolepsy Type 1</a>
+  <a class="topic-item" data-topic="27.17.7" data-hub="27.17" href="?topic=27.17.7"><span class="num">27.17.7</span>Narcolepsy Type 2</a>
+  <a class="topic-item" data-topic="27.17.8" data-hub="27.17" href="?topic=27.17.8"><span class="num">27.17.8</span>Obstructive Sleep Apnoea</a>
+  <a class="topic-item" data-topic="27.17.9" data-hub="27.17" href="?topic=27.17.9"><span class="num">27.17.9</span>Rem Sleep Behaviour Disorder</a>
+</div>
+<div class="hub-group" data-hub="27.18">
+  <h3>27.18 · 17_Neuroophthalmology</h3>
+  <a class="topic-item" data-topic="27.18.1" data-hub="27.18" href="?topic=27.18.1"><span class="num">27.18.1</span>Compressive Optic Neuropathy</a>
+  <a class="topic-item" data-topic="27.18.10" data-hub="27.18" href="?topic=27.18.10"><span class="num">27.18.10</span>Pupillary Disorders</a>
+  <a class="topic-item" data-topic="27.18.11" data-hub="27.18" href="?topic=27.18.11"><span class="num">27.18.11</span>Visual Field Defects</a>
+  <a class="topic-item" data-topic="27.18.2" data-hub="27.18" href="?topic=27.18.2"><span class="num">27.18.2</span>Cranial Nerve Iii Palsy</a>
+  <a class="topic-item" data-topic="27.18.3" data-hub="27.18" href="?topic=27.18.3"><span class="num">27.18.3</span>Cranial Nerve Iv Palsy</a>
+  <a class="topic-item" data-topic="27.18.4" data-hub="27.18" href="?topic=27.18.4"><span class="num">27.18.4</span>Cranial Nerve Vi Palsy</a>
+  <a class="topic-item" data-topic="27.18.5" data-hub="27.18" href="?topic=27.18.5"><span class="num">27.18.5</span>Hereditary Optic Neuropathies</a>
+  <a class="topic-item" data-topic="27.18.6" data-hub="27.18" href="?topic=27.18.6"><span class="num">27.18.6</span>Idiopathic Intracranial Hypertension</a>
+  <a class="topic-item" data-topic="27.18.7" data-hub="27.18" href="?topic=27.18.7"><span class="num">27.18.7</span>Ischaemic Optic Neuropathy</a>
+  <a class="topic-item" data-topic="27.18.8" data-hub="27.18" href="?topic=27.18.8"><span class="num">27.18.8</span>Nystagmus</a>
+  <a class="topic-item" data-topic="27.18.9" data-hub="27.18" href="?topic=27.18.9"><span class="num">27.18.9</span>Optic Neuritis</a>
+</div>
+<div class="hub-group" data-hub="27.19">
+  <h3>27.19 · 18_Genetic_Neurological_Disorders</h3>
+  <a class="topic-item" data-topic="27.19.1" data-hub="27.19" href="?topic=27.19.1"><span class="num">27.19.1</span>Ataxia Telangiectasia</a>
+  <a class="topic-item" data-topic="27.19.10" data-hub="27.19" href="?topic=27.19.10"><span class="num">27.19.10</span>Sturge Weber Syndrome</a>
+  <a class="topic-item" data-topic="27.19.11" data-hub="27.19" href="?topic=27.19.11"><span class="num">27.19.11</span>Tuberous Sclerosis Complex</a>
+  <a class="topic-item" data-topic="27.19.12" data-hub="27.19" href="?topic=27.19.12"><span class="num">27.19.12</span>Von Hippel Lindau</a>
+  <a class="topic-item" data-topic="27.19.2" data-hub="27.19" href="?topic=27.19.2"><span class="num">27.19.2</span>Friedreichs Ataxia</a>
+  <a class="topic-item" data-topic="27.19.3" data-hub="27.19" href="?topic=27.19.3"><span class="num">27.19.3</span>Hereditary Spastic Paraplegia</a>
+  <a class="topic-item" data-topic="27.19.4" data-hub="27.19" href="?topic=27.19.4"><span class="num">27.19.4</span>Huntingtons Disease</a>
+  <a class="topic-item" data-topic="27.19.5" data-hub="27.19" href="?topic=27.19.5"><span class="num">27.19.5</span>Incontinentia Pigmenti</a>
+  <a class="topic-item" data-topic="27.19.6" data-hub="27.19" href="?topic=27.19.6"><span class="num">27.19.6</span>Leukodystrophies</a>
+  <a class="topic-item" data-topic="27.19.7" data-hub="27.19" href="?topic=27.19.7"><span class="num">27.19.7</span>Mitochondrial Disorders</a>
+  <a class="topic-item" data-topic="27.19.8" data-hub="27.19" href="?topic=27.19.8"><span class="num">27.19.8</span>Neurofibromatosis Type 1 2</a>
+  <a class="topic-item" data-topic="27.19.9" data-hub="27.19" href="?topic=27.19.9"><span class="num">27.19.9</span>Spinocerebellar Ataxias</a>
+</div>
+<div class="hub-group" data-hub="27.2">
+  <h3>27.2 · 01_Fundamentals_Examination</h3>
+  <a class="topic-item" data-topic="27.2.1" data-hub="27.2" href="?topic=27.2.1"><span class="num">27.2.1</span>Acute Visual Loss</a>
+  <a class="topic-item" data-topic="27.2.10" data-hub="27.2" href="?topic=27.2.10"><span class="num">27.2.10</span>Cranial Nerve Examination</a>
+  <a class="topic-item" data-topic="27.2.11" data-hub="27.2" href="?topic=27.2.11"><span class="num">27.2.11</span>Eeg Epileptiform Disorders</a>
+  <a class="topic-item" data-topic="27.2.12" data-hub="27.2" href="?topic=27.2.12"><span class="num">27.2.12</span>Evoked Potentials</a>
+  <a class="topic-item" data-topic="27.2.13" data-hub="27.2" href="?topic=27.2.13"><span class="num">27.2.13</span>Higher Cortical Function Assessment</a>
+  <a class="topic-item" data-topic="27.2.14" data-hub="27.2" href="?topic=27.2.14"><span class="num">27.2.14</span>Motor System Examination</a>
+  <a class="topic-item" data-topic="27.2.15" data-hub="27.2" href="?topic=27.2.15"><span class="num">27.2.15</span>Ncs Emg Neuromuscular Disorders</a>
+  <a class="topic-item" data-topic="27.2.16" data-hub="27.2" href="?topic=27.2.16"><span class="num">27.2.16</span>Neurogenetic Testing</a>
+  <a class="topic-item" data-topic="27.2.17" data-hub="27.2" href="?topic=27.2.17"><span class="num">27.2.17</span>Neuroinvestigations Overview</a>
+  <a class="topic-item" data-topic="27.2.18" data-hub="27.2" href="?topic=27.2.18"><span class="num">27.2.18</span>Neurological Emergencies Approach</a>
+  <a class="topic-item" data-topic="27.2.19" data-hub="27.2" href="?topic=27.2.19"><span class="num">27.2.19</span>Neurological Examination</a>
+  <a class="topic-item" data-topic="27.2.2" data-hub="27.2" href="?topic=27.2.2"><span class="num">27.2.2</span>Acute Weakness Guillain Barre</a>
+  <a class="topic-item" data-topic="27.2.20" data-hub="27.2" href="?topic=27.2.20"><span class="num">27.2.20</span>Neurological History Taking</a>
+  <a class="topic-item" data-topic="27.2.21" data-hub="27.2" href="?topic=27.2.21"><span class="num">27.2.21</span>Sensory System Examination</a>
+  <a class="topic-item" data-topic="27.2.24" data-hub="27.2" href="?topic=27.2.24"><span class="num">27.2.24</span>Thunderclap Headache Sah</a>
+  <a class="topic-item" data-topic="27.2.3" data-hub="27.2" href="?topic=27.2.3"><span class="num">27.2.3</span>Anatomical Localisation Principles</a>
+  <a class="topic-item" data-topic="27.2.4" data-hub="27.2" href="?topic=27.2.4"><span class="num">27.2.4</span>Autonomic Function Testing</a>
+  <a class="topic-item" data-topic="27.2.5" data-hub="27.2" href="?topic=27.2.5"><span class="num">27.2.5</span>Autonomic Nervous System Assessment</a>
+  <a class="topic-item" data-topic="27.2.6" data-hub="27.2" href="?topic=27.2.6"><span class="num">27.2.6</span>Csf Analysis Interpretation</a>
+  <a class="topic-item" data-topic="27.2.7" data-hub="27.2" href="?topic=27.2.7"><span class="num">27.2.7</span>Cauda Equina Conus Medullaris Syndromes</a>
+  <a class="topic-item" data-topic="27.2.8" data-hub="27.2" href="?topic=27.2.8"><span class="num">27.2.8</span>Coma Assessment Management</a>
+  <a class="topic-item" data-topic="27.2.9" data-hub="27.2" href="?topic=27.2.9"><span class="num">27.2.9</span>Coordination Gait Examination</a>
+</div>
+<div class="hub-group" data-hub="27.20">
+  <h3>27.20 · 19_Paraneoplastic_Neurological_Syndromes</h3>
+  <a class="topic-item" data-topic="27.20.1" data-hub="27.20" href="?topic=27.20.1"><span class="num">27.20.1</span>Cancer Screening In Pns</a>
+  <a class="topic-item" data-topic="27.20.2" data-hub="27.20" href="?topic=27.20.2"><span class="num">27.20.2</span>Lambert Eaton Myasthenic Syndrome</a>
+  <a class="topic-item" data-topic="27.20.3" data-hub="27.20" href="?topic=27.20.3"><span class="num">27.20.3</span>Neuromyotonia Isaacs Syndrome</a>
+  <a class="topic-item" data-topic="27.20.4" data-hub="27.20" href="?topic=27.20.4"><span class="num">27.20.4</span>Opsoclonus Myoclonus Syndrome</a>
+  <a class="topic-item" data-topic="27.20.5" data-hub="27.20" href="?topic=27.20.5"><span class="num">27.20.5</span>Paraneoplastic Cerebellar Degeneration</a>
+  <a class="topic-item" data-topic="27.20.6" data-hub="27.20" href="?topic=27.20.6"><span class="num">27.20.6</span>Paraneoplastic Encephalitis</a>
+  <a class="topic-item" data-topic="27.20.7" data-hub="27.20" href="?topic=27.20.7"><span class="num">27.20.7</span>Paraneoplastic Neuropathy</a>
+  <a class="topic-item" data-topic="27.20.8" data-hub="27.20" href="?topic=27.20.8"><span class="num">27.20.8</span>Stiff Person Syndrome</a>
+</div>
+<div class="hub-group" data-hub="27.21">
+  <h3>27.21 · 20_Stroke_Medicine</h3>
+  <a class="topic-item" data-topic="27.21.1" data-hub="27.21" href="?topic=27.21.1"><span class="num">27.21.1</span>Acute Ischaemic Stroke</a>
+  <a class="topic-item" data-topic="27.21.10" data-hub="27.21" href="?topic=27.21.10"><span class="num">27.21.10</span>Persistent Dysphagia And Nutrition Planning</a>
+  <a class="topic-item" data-topic="27.21.11" data-hub="27.21" href="?topic=27.21.11"><span class="num">27.21.11</span>Post Stroke Depression And Emotional Change</a>
+  <a class="topic-item" data-topic="27.21.12" data-hub="27.21" href="?topic=27.21.12"><span class="num">27.21.12</span>Spasticity Contracture And Shoulder Pain Preventio</a>
+  <a class="topic-item" data-topic="27.21.13" data-hub="27.21" href="?topic=27.21.13"><span class="num">27.21.13</span>Stroke Unit Rehabilitation Principles</a>
+  <a class="topic-item" data-topic="27.21.14" data-hub="27.21" href="?topic=27.21.14"><span class="num">27.21.14</span>Bridging Therapy Concept</a>
+  <a class="topic-item" data-topic="27.21.15" data-hub="27.21" href="?topic=27.21.15"><span class="num">27.21.15</span>Intravenous Alteplase Eligibility</a>
+  <a class="topic-item" data-topic="27.21.16" data-hub="27.21" href="?topic=27.21.16"><span class="num">27.21.16</span>Large Vessel Occlusion Transfer Pathway</a>
+  <a class="topic-item" data-topic="27.21.17" data-hub="27.21" href="?topic=27.21.17"><span class="num">27.21.17</span>Mechanical Thrombectomy Eligibility</a>
+  <a class="topic-item" data-topic="27.21.18" data-hub="27.21" href="?topic=27.21.18"><span class="num">27.21.18</span>Post Thrombolysis Monitoring And Bp Targets</a>
+  <a class="topic-item" data-topic="27.21.19" data-hub="27.21" href="?topic=27.21.19"><span class="num">27.21.19</span>Reperfusion Failure And Rescue Planning Concepts</a>
+  <a class="topic-item" data-topic="27.21.2" data-hub="27.21" href="?topic=27.21.2"><span class="num">27.21.2</span>Davidson Chapter 29 Stroke Medicine Hierarchy</a>
+  <a class="topic-item" data-topic="27.21.20" data-hub="27.21" href="?topic=27.21.20"><span class="num">27.21.20</span>Symptomatic Intracranial Haemorrhage After Reperfu</a>
+  <a class="topic-item" data-topic="27.21.21" data-hub="27.21" href="?topic=27.21.21"><span class="num">27.21.21</span>Tenecteplase Vs Alteplase Practical Points</a>
+  <a class="topic-item" data-topic="27.21.22" data-hub="27.21" href="?topic=27.21.22"><span class="num">27.21.22</span>Thrombolysis Contraindications And Bleeding Risk C</a>
+  <a class="topic-item" data-topic="27.21.23" data-hub="27.21" href="?topic=27.21.23"><span class="num">27.21.23</span>Anticoagulation Timing After Cardioembolic Stroke</a>
+  <a class="topic-item" data-topic="27.21.24" data-hub="27.21" href="?topic=27.21.24"><span class="num">27.21.24</span>Antiplatelet Therapy After Ischaemic Stroke</a>
+  <a class="topic-item" data-topic="27.21.25" data-hub="27.21" href="?topic=27.21.25"><span class="num">27.21.25</span>Atrial Fibrillation Related Stroke Prevention</a>
+  <a class="topic-item" data-topic="27.21.26" data-hub="27.21" href="?topic=27.21.26"><span class="num">27.21.26</span>Carotid Stenosis And Carotid Endarterectomy Indica</a>
+  <a class="topic-item" data-topic="27.21.27" data-hub="27.21" href="?topic=27.21.27"><span class="num">27.21.27</span>Diabetes Smoking And Lifestyle Modification In Str</a>
+  <a class="topic-item" data-topic="27.21.28" data-hub="27.21" href="?topic=27.21.28"><span class="num">27.21.28</span>Dual Antiplatelet Therapy After Minor Stroke Or Ti</a>
+  <a class="topic-item" data-topic="27.21.29" data-hub="27.21" href="?topic=27.21.29"><span class="num">27.21.29</span>Hypertension Management For Secondary Stroke Preve</a>
+  <a class="topic-item" data-topic="27.21.3" data-hub="27.21" href="?topic=27.21.3"><span class="num">27.21.3</span>Intracerebral Haemorrhage</a>
+  <a class="topic-item" data-topic="27.21.30" data-hub="27.21" href="?topic=27.21.30"><span class="num">27.21.30</span>Lipid Lowering After Stroke</a>
+  <a class="topic-item" data-topic="27.21.31" data-hub="27.21" href="?topic=27.21.31"><span class="num">27.21.31</span>Patent Foramen Ovale And Selected Young Stroke Pre</a>
+  <a class="topic-item" data-topic="27.21.32" data-hub="27.21" href="?topic=27.21.32"><span class="num">27.21.32</span>Basilar Artery Occlusion</a>
+  <a class="topic-item" data-topic="27.21.33" data-hub="27.21" href="?topic=27.21.33"><span class="num">27.21.33</span>Cerebral Venous Sinus Thrombosis</a>
+  <a class="topic-item" data-topic="27.21.34" data-hub="27.21" href="?topic=27.21.34"><span class="num">27.21.34</span>Cervical Artery Dissection</a>
+  <a class="topic-item" data-topic="27.21.35" data-hub="27.21" href="?topic=27.21.35"><span class="num">27.21.35</span>Lateral Medullary Syndrome</a>
+  <a class="topic-item" data-topic="27.21.36" data-hub="27.21" href="?topic=27.21.36"><span class="num">27.21.36</span>Locked In Syndrome</a>
+  <a class="topic-item" data-topic="27.21.37" data-hub="27.21" href="?topic=27.21.37"><span class="num">27.21.37</span>Perioperative And In Hospital Stroke Recognition</a>
+  <a class="topic-item" data-topic="27.21.38" data-hub="27.21" href="?topic=27.21.38"><span class="num">27.21.38</span>Pregnancy Related Stroke</a>
+  <a class="topic-item" data-topic="27.21.39" data-hub="27.21" href="?topic=27.21.39"><span class="num">27.21.39</span>Stroke In The Young Approach</a>
+  <a class="topic-item" data-topic="27.21.4" data-hub="27.21" href="?topic=27.21.4"><span class="num">27.21.4</span>When To Search For Stroke Mimics And Alternative D</a>
+  <a class="topic-item" data-topic="27.21.40" data-hub="27.21" href="?topic=27.21.40"><span class="num">27.21.40</span>Stroke With Infective Endocarditis Or Other Emboli</a>
+  <a class="topic-item" data-topic="27.21.41" data-hub="27.21" href="?topic=27.21.41"><span class="num">27.21.41</span>Stroke Medicine Moc</a>
+  <a class="topic-item" data-topic="27.21.42" data-hub="27.21" href="?topic=27.21.42"><span class="num">27.21.42</span>Airway Breathing Circulation Glucose And Temperatu</a>
+  <a class="topic-item" data-topic="27.21.43" data-hub="27.21" href="?topic=27.21.43"><span class="num">27.21.43</span>Anterior Vs Posterior Circulation Stroke Clues</a>
+  <a class="topic-item" data-topic="27.21.44" data-hub="27.21" href="?topic=27.21.44"><span class="num">27.21.44</span>Cortical Vs Subcortical Stroke Patterns</a>
+  <a class="topic-item" data-topic="27.21.45" data-hub="27.21" href="?topic=27.21.45"><span class="num">27.21.45</span>Dysphagia Screening And Aspiration Risk</a>
+  <a class="topic-item" data-topic="27.21.46" data-hub="27.21" href="?topic=27.21.46"><span class="num">27.21.46</span>Lacunar Syndromes</a>
+  <a class="topic-item" data-topic="27.21.47" data-hub="27.21" href="?topic=27.21.47"><span class="num">27.21.47</span>Nihss Overview And Practical Use</a>
+  <a class="topic-item" data-topic="27.21.48" data-hub="27.21" href="?topic=27.21.48"><span class="num">27.21.48</span>Be Fast Use</a>
+  <a class="topic-item" data-topic="27.21.49" data-hub="27.21" href="?topic=27.21.49"><span class="num">27.21.49</span>Stroke Mimics And Common Pitfalls</a>
+  <a class="topic-item" data-topic="27.21.5" data-hub="27.21" href="?topic=27.21.5"><span class="num">27.21.5</span>Aphasia After Stroke</a>
+  <a class="topic-item" data-topic="27.21.50" data-hub="27.21" href="?topic=27.21.50"><span class="num">27.21.50</span>Stroke Recognition And First Approach</a>
+  <a class="topic-item" data-topic="27.21.51" data-hub="27.21" href="?topic=27.21.51"><span class="num">27.21.51</span>Sudden Focal Neurological Deficit Recognition</a>
+  <a class="topic-item" data-topic="27.21.52" data-hub="27.21" href="?topic=27.21.52"><span class="num">27.21.52</span>Aspiration Pneumonia After Stroke</a>
+  <a class="topic-item" data-topic="27.21.53" data-hub="27.21" href="?topic=27.21.53"><span class="num">27.21.53</span>Blood Pressure Management In Acute Ischaemic Strok</a>
+  <a class="topic-item" data-topic="27.21.54" data-hub="27.21" href="?topic=27.21.54"><span class="num">27.21.54</span>Blood Pressure Management In Intracerebral Haemorr</a>
+  <a class="topic-item" data-topic="27.21.55" data-hub="27.21" href="?topic=27.21.55"><span class="num">27.21.55</span>Cerebral Oedema And Raised Intracranial Pressure I</a>
+  <a class="topic-item" data-topic="27.21.56" data-hub="27.21" href="?topic=27.21.56"><span class="num">27.21.56</span>Deep Vein Thrombosis Prevention After Stroke</a>
+  <a class="topic-item" data-topic="27.21.57" data-hub="27.21" href="?topic=27.21.57"><span class="num">27.21.57</span>Early Neurological Deterioration After Stroke</a>
+  <a class="topic-item" data-topic="27.21.58" data-hub="27.21" href="?topic=27.21.58"><span class="num">27.21.58</span>Glucose Oxygen And Temperature Control In Stroke</a>
+  <a class="topic-item" data-topic="27.21.59" data-hub="27.21" href="?topic=27.21.59"><span class="num">27.21.59</span>Hemorrhagic Transformation Warning Signs</a>
+  <a class="topic-item" data-topic="27.21.6" data-hub="27.21" href="?topic=27.21.6"><span class="num">27.21.6</span>Driving Work And Recurrence Counseling After Strok</a>
+  <a class="topic-item" data-topic="27.21.60" data-hub="27.21" href="?topic=27.21.60"><span class="num">27.21.60</span>Malignant Middle Cerebral Artery Infarction</a>
+  <a class="topic-item" data-topic="27.21.61" data-hub="27.21" href="?topic=27.21.61"><span class="num">27.21.61</span>Acute Medical Management Of Sah</a>
+  <a class="topic-item" data-topic="27.21.62" data-hub="27.21" href="?topic=27.21.62"><span class="num">27.21.62</span>Aneurysmal Subarachnoid Haemorrhage</a>
+  <a class="topic-item" data-topic="27.21.63" data-hub="27.21" href="?topic=27.21.63"><span class="num">27.21.63</span>Clinical Features And Presentation Of Sah</a>
+  <a class="topic-item" data-topic="27.21.64" data-hub="27.21" href="?topic=27.21.64"><span class="num">27.21.64</span>Delayed Cerebral Ischaemia And Vasospasm</a>
+  <a class="topic-item" data-topic="27.21.65" data-hub="27.21" href="?topic=27.21.65"><span class="num">27.21.65</span>Hydrocephalus After Sah</a>
+  <a class="topic-item" data-topic="27.21.66" data-hub="27.21" href="?topic=27.21.66"><span class="num">27.21.66</span>Investigation And Diagnosis Of Sah</a>
+  <a class="topic-item" data-topic="27.21.67" data-hub="27.21" href="?topic=27.21.67"><span class="num">27.21.67</span>Other Complications Of Sah</a>
+  <a class="topic-item" data-topic="27.21.68" data-hub="27.21" href="?topic=27.21.68"><span class="num">27.21.68</span>Securing The Aneurysm Clipping Vs Coiling</a>
+  <a class="topic-item" data-topic="27.21.69" data-hub="27.21" href="?topic=27.21.69"><span class="num">27.21.69</span>Subarachnoid Haemorrhage</a>
+  <a class="topic-item" data-topic="27.21.7" data-hub="27.21" href="?topic=27.21.7"><span class="num">27.21.7</span>Early Mobilization And Multidisciplinary Recovery </a>
+  <a class="topic-item" data-topic="27.21.70" data-hub="27.21" href="?topic=27.21.70"><span class="num">27.21.70</span>Abcd2 Score And Its Limitations</a>
+  <a class="topic-item" data-topic="27.21.71" data-hub="27.21" href="?topic=27.21.71"><span class="num">27.21.71</span>High Risk Tia Features And Early Recurrence Risk</a>
+  <a class="topic-item" data-topic="27.21.72" data-hub="27.21" href="?topic=27.21.72"><span class="num">27.21.72</span>Immediate Antiplatelet Strategy After Tia</a>
+  <a class="topic-item" data-topic="27.21.73" data-hub="27.21" href="?topic=27.21.73"><span class="num">27.21.73</span>Tia Vs Mimic Differentiation</a>
+  <a class="topic-item" data-topic="27.21.74" data-hub="27.21" href="?topic=27.21.74"><span class="num">27.21.74</span>Transient Ischaemic Attack</a>
+  <a class="topic-item" data-topic="27.21.75" data-hub="27.21" href="?topic=27.21.75"><span class="num">27.21.75</span>Urgent Imaging And Vascular Assessment In Tia</a>
+  <a class="topic-item" data-topic="27.21.8" data-hub="27.21" href="?topic=27.21.8"><span class="num">27.21.8</span>Functional Outcome Prediction After Stroke</a>
+  <a class="topic-item" data-topic="27.21.9" data-hub="27.21" href="?topic=27.21.9"><span class="num">27.21.9</span>Neglect And Cognitive Impairment After Stroke</a>
+</div>
+<div class="hub-group" data-hub="27.22">
+  <h3>27.22 · Clinical Examination of the Nervous System</h3>
+  <a class="topic-item" data-topic="27.22.1" data-hub="27.22" href="?topic=27.22.1"><span class="num">27.22.1</span>Cortical Vs Brainstem Vs Spinal Vs Peripheral Patt</a>
+  <a class="topic-item" data-topic="27.22.2" data-hub="27.22" href="?topic=27.22.2"><span class="num">27.22.2</span>Functional Vs Structural Clue Pattern</a>
+  <a class="topic-item" data-topic="27.22.3" data-hub="27.22" href="?topic=27.22.3"><span class="num">27.22.3</span>Umn Vs Lmn Pattern</a>
+</div>
+<div class="hub-group" data-hub="27.23">
+  <h3>27.23 · Davidson Chapter 25 - Neurology Hierarchy.md</h3>
+  <a class="topic-item" data-topic="27.23.1" data-hub="27.23" href="?topic=27.23.1"><span class="num">27.23.1</span>Davidson Chapter 25 Neurology Hierarchy</a>
+</div>
+<div class="hub-group" data-hub="27.24">
+  <h3>27.24 · Epilepsy</h3>
+  <a class="topic-item" data-topic="27.24.1" data-hub="27.24" href="?topic=27.24.1"><span class="num">27.24.1</span>Benzodiazepine First Line Treatment</a>
+  <a class="topic-item" data-topic="27.24.2" data-hub="27.24" href="?topic=27.24.2"><span class="num">27.24.2</span>Epilepsy Syndromes And Long Term Management</a>
+  <a class="topic-item" data-topic="27.24.3" data-hub="27.24" href="?topic=27.24.3"><span class="num">27.24.3</span>History Witness Account Labs Ecg Neuroimaging And </a>
+  <a class="topic-item" data-topic="27.24.4" data-hub="27.24" href="?topic=27.24.4"><span class="num">27.24.4</span>Important Differentials Syncope Fnd And Metabolic </a>
+  <a class="topic-item" data-topic="27.24.5" data-hub="27.24" href="?topic=27.24.5"><span class="num">27.24.5</span>Provoked Vs Unprovoked Seizure</a>
+  <a class="topic-item" data-topic="27.24.6" data-hub="27.24" href="?topic=27.24.6"><span class="num">27.24.6</span>Recognition And Emergency Sequence</a>
+  <a class="topic-item" data-topic="27.24.7" data-hub="27.24" href="?topic=27.24.7"><span class="num">27.24.7</span>Second Line Escalation And Precipitant Search</a>
+  <a class="topic-item" data-topic="27.24.8" data-hub="27.24" href="?topic=27.24.8"><span class="num">27.24.8</span>Status Epilepticus</a>
+</div>
+<div class="hub-group" data-hub="27.25">
+  <h3>27.25 · Functional Neurological Disorder</h3>
+  <a class="topic-item" data-topic="27.25.1" data-hub="27.25" href="?topic=27.25.1"><span class="num">27.25.1</span>Common Mimics To Avoid Missing</a>
+  <a class="topic-item" data-topic="27.25.2" data-hub="27.25" href="?topic=27.25.2"><span class="num">27.25.2</span>Dissociative And Non Epileptic Attacks</a>
+  <a class="topic-item" data-topic="27.25.3" data-hub="27.25" href="?topic=27.25.3"><span class="num">27.25.3</span>Functional Sensory Symptoms</a>
+  <a class="topic-item" data-topic="27.25.4" data-hub="27.25" href="?topic=27.25.4"><span class="num">27.25.4</span>Functional Weakness</a>
+  <a class="topic-item" data-topic="27.25.5" data-hub="27.25" href="?topic=27.25.5"><span class="num">27.25.5</span>Gait Speech Visual And Movement Presentations</a>
+  <a class="topic-item" data-topic="27.25.6" data-hub="27.25" href="?topic=27.25.6"><span class="num">27.25.6</span>Positive Clinical Signs Supporting Fnd</a>
+  <a class="topic-item" data-topic="27.25.7" data-hub="27.25" href="?topic=27.25.7"><span class="num">27.25.7</span>Why Fnd Is Not Purely A Diagnosis Of Exclusion</a>
+</div>
+<div class="hub-group" data-hub="27.26">
+  <h3>27.26 · Headache Syndromes</h3>
+  <a class="topic-item" data-topic="27.26.1" data-hub="27.26" href="?topic=27.26.1"><span class="num">27.26.1</span>Medication Overuse Headache</a>
+  <a class="topic-item" data-topic="27.26.2" data-hub="27.26" href="?topic=27.26.2"><span class="num">27.26.2</span>Meningitis And Encephalitis Clues</a>
+  <a class="topic-item" data-topic="27.26.3" data-hub="27.26" href="?topic=27.26.3"><span class="num">27.26.3</span>Migraine With And Without Aura</a>
+  <a class="topic-item" data-topic="27.26.4" data-hub="27.26" href="?topic=27.26.4"><span class="num">27.26.4</span>Raised Intracranial Pressure And Mass Lesion Clues</a>
+  <a class="topic-item" data-topic="27.26.5" data-hub="27.26" href="?topic=27.26.5"><span class="num">27.26.5</span>Subarachnoid Hemorrhage And Thunderclap Headache</a>
+  <a class="topic-item" data-topic="27.26.6" data-hub="27.26" href="?topic=27.26.6"><span class="num">27.26.6</span>Temporal Arteritis And Other Systemic Red Flags</a>
+  <a class="topic-item" data-topic="27.26.7" data-hub="27.26" href="?topic=27.26.7"><span class="num">27.26.7</span>Tension Type Headache</a>
+  <a class="topic-item" data-topic="27.26.8" data-hub="27.26" href="?topic=27.26.8"><span class="num">27.26.8</span>Trigeminal Autonomic Cephalalgias And Cluster Head</a>
+</div>
+<div class="hub-group" data-hub="27.27">
+  <h3>27.27 · Meningitis</h3>
+  <a class="topic-item" data-topic="27.27.1" data-hub="27.27" href="?topic=27.27.1"><span class="num">27.27.1</span>Bacterial Meningitis</a>
+  <a class="topic-item" data-topic="27.27.2" data-hub="27.27" href="?topic=27.27.2"><span class="num">27.27.2</span>Csf Pattern Interpretation In Meningitis</a>
+  <a class="topic-item" data-topic="27.27.3" data-hub="27.27" href="?topic=27.27.3"><span class="num">27.27.3</span>Lumbar Puncture Indications And Contraindications</a>
+</div>
+<div class="hub-group" data-hub="27.28">
+  <h3>27.28 · Movement Disorders</h3>
+  <a class="topic-item" data-topic="27.28.1" data-hub="27.28" href="?topic=27.28.1"><span class="num">27.28.1</span>Idiopathic Parkinson Disease</a>
+</div>
+<div class="hub-group" data-hub="27.29">
+  <h3>27.29 · Neuro-inflammatory Diseases</h3>
+  <a class="topic-item" data-topic="27.29.1" data-hub="27.29" href="?topic=27.29.1"><span class="num">27.29.1</span>Relapsing Remitting And Progressive Multiple Scler</a>
+</div>
+<div class="hub-group" data-hub="27.3">
+  <h3>27.3 · 02_Headache_Facial_Pain</h3>
+  <a class="topic-item" data-topic="27.3.1" data-hub="27.3" href="?topic=27.3.1"><span class="num">27.3.1</span>Chronic Migraine</a>
+  <a class="topic-item" data-topic="27.3.10" data-hub="27.3" href="?topic=27.3.10"><span class="num">27.3.10</span>Paroxysmal Hemicrania</a>
+  <a class="topic-item" data-topic="27.3.11" data-hub="27.3" href="?topic=27.3.11"><span class="num">27.3.11</span>Sunct Suna</a>
+  <a class="topic-item" data-topic="27.3.13" data-hub="27.3" href="?topic=27.3.13"><span class="num">27.3.13</span>Thunderclap Headache</a>
+  <a class="topic-item" data-topic="27.3.14" data-hub="27.3" href="?topic=27.3.14"><span class="num">27.3.14</span>Trigeminal Autonomic Cephalalgias Overview</a>
+  <a class="topic-item" data-topic="27.3.15" data-hub="27.3" href="?topic=27.3.15"><span class="num">27.3.15</span>Trigeminal Neuralgia</a>
+  <a class="topic-item" data-topic="27.3.2" data-hub="27.3" href="?topic=27.3.2"><span class="num">27.3.2</span>Cluster Headache</a>
+  <a class="topic-item" data-topic="27.3.3" data-hub="27.3" href="?topic=27.3.3"><span class="num">27.3.3</span>Giant Cell Arteritis</a>
+  <a class="topic-item" data-topic="27.3.6" data-hub="27.3" href="?topic=27.3.6"><span class="num">27.3.6</span>Migraine Variants And Chronic Migraine</a>
+  <a class="topic-item" data-topic="27.3.7" data-hub="27.3" href="?topic=27.3.7"><span class="num">27.3.7</span>Migraine With Aura</a>
+  <a class="topic-item" data-topic="27.3.8" data-hub="27.3" href="?topic=27.3.8"><span class="num">27.3.8</span>Migraine Without Aura</a>
+  <a class="topic-item" data-topic="27.3.9" data-hub="27.3" href="?topic=27.3.9"><span class="num">27.3.9</span>Other Facial Pain</a>
+</div>
+<div class="hub-group" data-hub="27.30">
+  <h3>27.30 · Neurodegenerative Diseases</h3>
+  <a class="topic-item" data-topic="27.30.1" data-hub="27.30" href="?topic=27.30.1"><span class="num">27.30.1</span>Amyotrophic Lateral Sclerosis And Motor Neuron Dis</a>
+</div>
+<div class="hub-group" data-hub="27.31">
+  <h3>27.31 · Neuroimaging</h3>
+  <a class="topic-item" data-topic="27.31.1" data-hub="27.31" href="?topic=27.31.1"><span class="num">27.31.1</span>Blood Mass Effect Hydrocephalus And Midline Shift </a>
+  <a class="topic-item" data-topic="27.31.2" data-hub="27.31" href="?topic=27.31.2"><span class="num">27.31.2</span>Demyelination Vs Tumor Vs Infection Pattern Clues</a>
+  <a class="topic-item" data-topic="27.31.3" data-hub="27.31" href="?topic=27.31.3"><span class="num">27.31.3</span>Mri Brain Sequences Basics</a>
+  <a class="topic-item" data-topic="27.31.4" data-hub="27.31" href="?topic=27.31.4"><span class="num">27.31.4</span>Mri Spine Indications</a>
+  <a class="topic-item" data-topic="27.31.5" data-hub="27.31" href="?topic=27.31.5"><span class="num">27.31.5</span>Non Contrast Ct Head Basics</a>
+  <a class="topic-item" data-topic="27.31.6" data-hub="27.31" href="?topic=27.31.6"><span class="num">27.31.6</span>When Ct Is First Line In Emergency Neurology</a>
+</div>
+<div class="hub-group" data-hub="27.32">
+  <h3>27.32 · Neurophysiological Testing</h3>
+  <a class="topic-item" data-topic="27.32.1" data-hub="27.32" href="?topic=27.32.1"><span class="num">27.32.1</span>Demyelinating Vs Axonal Pattern Basics</a>
+  <a class="topic-item" data-topic="27.32.2" data-hub="27.32" href="?topic=27.32.2"><span class="num">27.32.2</span>Epileptiform Activity Basics</a>
+  <a class="topic-item" data-topic="27.32.3" data-hub="27.32" href="?topic=27.32.3"><span class="num">27.32.3</span>How Neurophysiology Complements Imaging</a>
+  <a class="topic-item" data-topic="27.32.4" data-hub="27.32" href="?topic=27.32.4"><span class="num">27.32.4</span>Limitations Of A Normal Eeg</a>
+  <a class="topic-item" data-topic="27.32.5" data-hub="27.32" href="?topic=27.32.5"><span class="num">27.32.5</span>Neuropathy Vs Myopathy Vs Nmj Distinction</a>
+  <a class="topic-item" data-topic="27.32.6" data-hub="27.32" href="?topic=27.32.6"><span class="num">27.32.6</span>Somatosensory And Brainstem Evoked Potentials</a>
+  <a class="topic-item" data-topic="27.32.7" data-hub="27.32" href="?topic=27.32.7"><span class="num">27.32.7</span>Visual Evoked Potentials</a>
+  <a class="topic-item" data-topic="27.32.8" data-hub="27.32" href="?topic=27.32.8"><span class="num">27.32.8</span>When To Request Eeg</a>
+</div>
+<div class="hub-group" data-hub="27.33">
+  <h3>27.33 · Parenchymal Viral Infections</h3>
+  <a class="topic-item" data-topic="27.33.1" data-hub="27.33" href="?topic=27.33.1"><span class="num">27.33.1</span>Herpes Simplex Encephalitis</a>
+</div>
+<div class="hub-group" data-hub="27.34">
+  <h3>27.34 · Vestibular Disorders</h3>
+  <a class="topic-item" data-topic="27.34.1" data-hub="27.34" href="?topic=27.34.1"><span class="num">27.34.1</span>Benign Paroxysmal Positional Vertigo</a>
+  <a class="topic-item" data-topic="27.34.2" data-hub="27.34" href="?topic=27.34.2"><span class="num">27.34.2</span>Central Vertigo Clue Pattern</a>
+  <a class="topic-item" data-topic="27.34.3" data-hub="27.34" href="?topic=27.34.3"><span class="num">27.34.3</span>M Ni Re Disease</a>
+  <a class="topic-item" data-topic="27.34.4" data-hub="27.34" href="?topic=27.34.4"><span class="num">27.34.4</span>Nystagmus Pattern Basics</a>
+  <a class="topic-item" data-topic="27.34.5" data-hub="27.34" href="?topic=27.34.5"><span class="num">27.34.5</span>Timing Triggers Framework</a>
+  <a class="topic-item" data-topic="27.34.6" data-hub="27.34" href="?topic=27.34.6"><span class="num">27.34.6</span>Vestibular Neuritis And Labyrinthitis</a>
+  <a class="topic-item" data-topic="27.34.7" data-hub="27.34" href="?topic=27.34.7"><span class="num">27.34.7</span>When Imaging Is Needed In Vertigo</a>
+</div>
+<div class="hub-group" data-hub="27.4">
+  <h3>27.4 · 03_Epilepsy_Seizure_Disorders</h3>
+  <a class="topic-item" data-topic="27.4.1" data-hub="27.4" href="?topic=27.4.1"><span class="num">27.4.1</span>Asm Mechanisms Classification</a>
+  <a class="topic-item" data-topic="27.4.10" data-hub="27.4" href="?topic=27.4.10"><span class="num">27.4.10</span>First Seizure Management</a>
+  <a class="topic-item" data-topic="27.4.11" data-hub="27.4" href="?topic=27.4.11"><span class="num">27.4.11</span>First Line Asms By Seizure Type</a>
+  <a class="topic-item" data-topic="27.4.12" data-hub="27.4" href="?topic=27.4.12"><span class="num">27.4.12</span>Focal Epilepsy Syndromes</a>
+  <a class="topic-item" data-topic="27.4.13" data-hub="27.4" href="?topic=27.4.13"><span class="num">27.4.13</span>Focal Seizures</a>
+  <a class="topic-item" data-topic="27.4.14" data-hub="27.4" href="?topic=27.4.14"><span class="num">27.4.14</span>Generalized Epilepsy Syndromes</a>
+  <a class="topic-item" data-topic="27.4.15" data-hub="27.4" href="?topic=27.4.15"><span class="num">27.4.15</span>Generalized Seizures</a>
+  <a class="topic-item" data-topic="27.4.16" data-hub="27.4" href="?topic=27.4.16"><span class="num">27.4.16</span>Ilae 2017 Seizure Classification</a>
+  <a class="topic-item" data-topic="27.4.17" data-hub="27.4" href="?topic=27.4.17"><span class="num">27.4.17</span>Second Line Newer Asms</a>
+  <a class="topic-item" data-topic="27.4.18" data-hub="27.4" href="?topic=27.4.18"><span class="num">27.4.18</span>Status Epilepticus Management</a>
+  <a class="topic-item" data-topic="27.4.2" data-hub="27.4" href="?topic=27.4.2"><span class="num">27.4.2</span>Asm Monitoring</a>
+  <a class="topic-item" data-topic="27.4.3" data-hub="27.4" href="?topic=27.4.3"><span class="num">27.4.3</span>Acute Symptomatic Seizures Vs Epilepsy</a>
+  <a class="topic-item" data-topic="27.4.4" data-hub="27.4" href="?topic=27.4.4"><span class="num">27.4.4</span>Developmental Epileptic Encephalopathies</a>
+  <a class="topic-item" data-topic="27.4.5" data-hub="27.4" href="?topic=27.4.5"><span class="num">27.4.5</span>Discontinuation Withdrawal Strategies</a>
+  <a class="topic-item" data-topic="27.4.6" data-hub="27.4" href="?topic=27.4.6"><span class="num">27.4.6</span>Drug Resistant Epilepsy Surgical Evaluation</a>
+  <a class="topic-item" data-topic="27.4.7" data-hub="27.4" href="?topic=27.4.7"><span class="num">27.4.7</span>Epilepsy Syndromes</a>
+  <a class="topic-item" data-topic="27.4.8" data-hub="27.4" href="?topic=27.4.8"><span class="num">27.4.8</span>Epilepsy In Elderly</a>
+  <a class="topic-item" data-topic="27.4.9" data-hub="27.4" href="?topic=27.4.9"><span class="num">27.4.9</span>Epilepsy In Pregnancy</a>
+</div>
+<div class="hub-group" data-hub="27.5">
+  <h3>27.5 · 04_Demyelinating_Diseases</h3>
+  <a class="topic-item" data-topic="27.5.1" data-hub="27.5" href="?topic=27.5.1"><span class="num">27.5.1</span>Acute Disseminated Encephalomyelitis</a>
+  <a class="topic-item" data-topic="27.5.10" data-hub="27.5" href="?topic=27.5.10"><span class="num">27.5.10</span>Multiple Sclerosis</a>
+  <a class="topic-item" data-topic="27.5.11" data-hub="27.5" href="?topic=27.5.11"><span class="num">27.5.11</span>Neuromyelitis Optica Spectrum Disorder</a>
+  <a class="topic-item" data-topic="27.5.13" data-hub="27.5" href="?topic=27.5.13"><span class="num">27.5.13</span>Primary Progressive Ms</a>
+  <a class="topic-item" data-topic="27.5.14" data-hub="27.5" href="?topic=27.5.14"><span class="num">27.5.14</span>Radiologically Isolated Syndrome</a>
+  <a class="topic-item" data-topic="27.5.15" data-hub="27.5" href="?topic=27.5.15"><span class="num">27.5.15</span>Relapsing Remitting Ms</a>
+  <a class="topic-item" data-topic="27.5.16" data-hub="27.5" href="?topic=27.5.16"><span class="num">27.5.16</span>Secondary Progressive Ms</a>
+  <a class="topic-item" data-topic="27.5.2" data-hub="27.5" href="?topic=27.5.2"><span class="num">27.5.2</span>Acute Transverse Myelitis</a>
+  <a class="topic-item" data-topic="27.5.3" data-hub="27.5" href="?topic=27.5.3"><span class="num">27.5.3</span>Clinically Isolated Syndrome</a>
+  <a class="topic-item" data-topic="27.5.4" data-hub="27.5" href="?topic=27.5.4"><span class="num">27.5.4</span>Disease Modifying Therapies</a>
+  <a class="topic-item" data-topic="27.5.5" data-hub="27.5" href="?topic=27.5.5"><span class="num">27.5.5</span>Mog Antibody Associated Disease</a>
+  <a class="topic-item" data-topic="27.5.6" data-hub="27.5" href="?topic=27.5.6"><span class="num">27.5.6</span>Ms Fatigue</a>
+  <a class="topic-item" data-topic="27.5.7" data-hub="27.5" href="?topic=27.5.7"><span class="num">27.5.7</span>Ms Variants</a>
+  <a class="topic-item" data-topic="27.5.8" data-hub="27.5" href="?topic=27.5.8"><span class="num">27.5.8</span>Mcdonald Criteria 2017</a>
+  <a class="topic-item" data-topic="27.5.9" data-hub="27.5" href="?topic=27.5.9"><span class="num">27.5.9</span>Multiple Sclerosis Mcdonald Dmts</a>
+</div>
+<div class="hub-group" data-hub="27.6">
+  <h3>27.6 · 05_Movement_Disorders</h3>
+  <a class="topic-item" data-topic="27.6.1" data-hub="27.6" href="?topic=27.6.1"><span class="num">27.6.1</span>Cerebellar Ataxia</a>
+  <a class="topic-item" data-topic="27.6.10" data-hub="27.6" href="?topic=27.6.10"><span class="num">27.6.10</span>Myoclonus</a>
+  <a class="topic-item" data-topic="27.6.11" data-hub="27.6" href="?topic=27.6.11"><span class="num">27.6.11</span>Parkinsons Disease</a>
+  <a class="topic-item" data-topic="27.6.12" data-hub="27.6" href="?topic=27.6.12"><span class="num">27.6.12</span>Progressive Supranuclear Palsy</a>
+  <a class="topic-item" data-topic="27.6.13" data-hub="27.6" href="?topic=27.6.13"><span class="num">27.6.13</span>Sensory Ataxia</a>
+  <a class="topic-item" data-topic="27.6.14" data-hub="27.6" href="?topic=27.6.14"><span class="num">27.6.14</span>Tics Tourette Syndrome</a>
+  <a class="topic-item" data-topic="27.6.15" data-hub="27.6" href="?topic=27.6.15"><span class="num">27.6.15</span>Vascular Parkinsonism</a>
+  <a class="topic-item" data-topic="27.6.16" data-hub="27.6" href="?topic=27.6.16"><span class="num">27.6.16</span>Wilsons Disease</a>
+  <a class="topic-item" data-topic="27.6.2" data-hub="27.6" href="?topic=27.6.2"><span class="num">27.6.2</span>Chorea</a>
+  <a class="topic-item" data-topic="27.6.3" data-hub="27.6" href="?topic=27.6.3"><span class="num">27.6.3</span>Corticobasal Degeneration</a>
+  <a class="topic-item" data-topic="27.6.5" data-hub="27.6" href="?topic=27.6.5"><span class="num">27.6.5</span>Drug Induced Parkinsonism</a>
+  <a class="topic-item" data-topic="27.6.6" data-hub="27.6" href="?topic=27.6.6"><span class="num">27.6.6</span>Dystonia</a>
+  <a class="topic-item" data-topic="27.6.7" data-hub="27.6" href="?topic=27.6.7"><span class="num">27.6.7</span>Essential Tremor</a>
+  <a class="topic-item" data-topic="27.6.9" data-hub="27.6" href="?topic=27.6.9"><span class="num">27.6.9</span>Multiple System Atrophy</a>
+</div>
+<div class="hub-group" data-hub="27.7">
+  <h3>27.7 · 06_Dementia_Cognitive_Disorders</h3>
+  <a class="topic-item" data-topic="27.7.1" data-hub="27.7" href="?topic=27.7.1"><span class="num">27.7.1</span>Alcohol Related Brain Damage</a>
+  <a class="topic-item" data-topic="27.7.10" data-hub="27.7" href="?topic=27.7.10"><span class="num">27.7.10</span>Normal Pressure Hydrocephalus</a>
+  <a class="topic-item" data-topic="27.7.11" data-hub="27.7" href="?topic=27.7.11"><span class="num">27.7.11</span>Posterior Cortical Atrophy</a>
+  <a class="topic-item" data-topic="27.7.12" data-hub="27.7" href="?topic=27.7.12"><span class="num">27.7.12</span>Rapidly Progressive Dementia</a>
+  <a class="topic-item" data-topic="27.7.13" data-hub="27.7" href="?topic=27.7.13"><span class="num">27.7.13</span>Traumatic Brain Injury Cte</a>
+  <a class="topic-item" data-topic="27.7.14" data-hub="27.7" href="?topic=27.7.14"><span class="num">27.7.14</span>Vascular Dementia</a>
+  <a class="topic-item" data-topic="27.7.2" data-hub="27.7" href="?topic=27.7.2"><span class="num">27.7.2</span>Alzheimers Disease</a>
+  <a class="topic-item" data-topic="27.7.3" data-hub="27.7" href="?topic=27.7.3"><span class="num">27.7.3</span>Cognitive Screening</a>
+  <a class="topic-item" data-topic="27.7.4" data-hub="27.7" href="?topic=27.7.4"><span class="num">27.7.4</span>Delirium Vs Dementia</a>
+  <a class="topic-item" data-topic="27.7.5" data-hub="27.7" href="?topic=27.7.5"><span class="num">27.7.5</span>Dementia With Lewy Bodies</a>
+  <a class="topic-item" data-topic="27.7.6" data-hub="27.7" href="?topic=27.7.6"><span class="num">27.7.6</span>Frontotemporal Dementia</a>
+  <a class="topic-item" data-topic="27.7.7" data-hub="27.7" href="?topic=27.7.7"><span class="num">27.7.7</span>Hiv Associated Neurocognitive Disorder</a>
+  <a class="topic-item" data-topic="27.7.8" data-hub="27.7" href="?topic=27.7.8"><span class="num">27.7.8</span>Mild Cognitive Impairment</a>
+  <a class="topic-item" data-topic="27.7.9" data-hub="27.7" href="?topic=27.7.9"><span class="num">27.7.9</span>Mixed Dementia</a>
+</div>
+<div class="hub-group" data-hub="27.8">
+  <h3>27.8 · 07_Motor_Neurone_Disease</h3>
+  <a class="topic-item" data-topic="27.8.1" data-hub="27.8" href="?topic=27.8.1"><span class="num">27.8.1</span>Als Mimics Differential Diagnosis</a>
+  <a class="topic-item" data-topic="27.8.2" data-hub="27.8" href="?topic=27.8.2"><span class="num">27.8.2</span>Amyotrophic Lateral Sclerosis</a>
+  <a class="topic-item" data-topic="27.8.3" data-hub="27.8" href="?topic=27.8.3"><span class="num">27.8.3</span>Flail Arm Flail Leg Variants</a>
+  <a class="topic-item" data-topic="27.8.4" data-hub="27.8" href="?topic=27.8.4"><span class="num">27.8.4</span>Kennedys Disease</a>
+  <a class="topic-item" data-topic="27.8.5" data-hub="27.8" href="?topic=27.8.5"><span class="num">27.8.5</span>Primary Lateral Sclerosis</a>
+  <a class="topic-item" data-topic="27.8.6" data-hub="27.8" href="?topic=27.8.6"><span class="num">27.8.6</span>Progressive Bulbar Palsy</a>
+  <a class="topic-item" data-topic="27.8.7" data-hub="27.8" href="?topic=27.8.7"><span class="num">27.8.7</span>Progressive Muscular Atrophy</a>
+  <a class="topic-item" data-topic="27.8.8" data-hub="27.8" href="?topic=27.8.8"><span class="num">27.8.8</span>Spinal Muscular Atrophy</a>
+</div>
+<div class="hub-group" data-hub="27.9">
+  <h3>27.9 · 08_Peripheral_Neuropathy</h3>
+  <a class="topic-item" data-topic="27.9.1" data-hub="27.9" href="?topic=27.9.1"><span class="num">27.9.1</span>Acute Inflammatory Neuropathies Overview</a>
+  <a class="topic-item" data-topic="27.9.10" data-hub="27.9" href="?topic=27.9.10"><span class="num">27.9.10</span>Mononeuritis Multiplex</a>
+  <a class="topic-item" data-topic="27.9.11" data-hub="27.9" href="?topic=27.9.11"><span class="num">27.9.11</span>Multifocal Motor Neuropathy</a>
+  <a class="topic-item" data-topic="27.9.12" data-hub="27.9" href="?topic=27.9.12"><span class="num">27.9.12</span>Poems Syndrome</a>
+  <a class="topic-item" data-topic="27.9.14" data-hub="27.9" href="?topic=27.9.14"><span class="num">27.9.14</span>Plexopathies</a>
+  <a class="topic-item" data-topic="27.9.15" data-hub="27.9" href="?topic=27.9.15"><span class="num">27.9.15</span>Toxic Metabolic Nutritional Neuropathy</a>
+  <a class="topic-item" data-topic="27.9.16" data-hub="27.9" href="?topic=27.9.16"><span class="num">27.9.16</span>Vasculitic Neuropathy</a>
+  <a class="topic-item" data-topic="27.9.2" data-hub="27.9" href="?topic=27.9.2"><span class="num">27.9.2</span>Amyloid Neuropathy</a>
+  <a class="topic-item" data-topic="27.9.3" data-hub="27.9" href="?topic=27.9.3"><span class="num">27.9.3</span>Approach To Peripheral Neuropathy</a>
+  <a class="topic-item" data-topic="27.9.4" data-hub="27.9" href="?topic=27.9.4"><span class="num">27.9.4</span>Chronic Inflammatory Demyelinating Polyneuropathy</a>
+  <a class="topic-item" data-topic="27.9.5" data-hub="27.9" href="?topic=27.9.5"><span class="num">27.9.5</span>Common Entrapment Neuropathies</a>
+  <a class="topic-item" data-topic="27.9.6" data-hub="27.9" href="?topic=27.9.6"><span class="num">27.9.6</span>Cranial Neuropathies</a>
+  <a class="topic-item" data-topic="27.9.7" data-hub="27.9" href="?topic=27.9.7"><span class="num">27.9.7</span>Diabetic Neuropathy</a>
+  <a class="topic-item" data-topic="27.9.8" data-hub="27.9" href="?topic=27.9.8"><span class="num">27.9.8</span>Guillain Barre Syndrome</a>
+  <a class="topic-item" data-topic="27.9.9" data-hub="27.9" href="?topic=27.9.9"><span class="num">27.9.9</span>Hereditary Neuropathies</a>
+</div>
+
+  </aside>
+  <section class="chapter-main">
+    <div class="chapter-header">
+      <h1>Neurology & Stroke Medicine</h1>
+      <div class="meta">Davidson Ch 27 · 34 hubs · 360 topics · <a href="https://medsea.notion.site/" target="_blank">Notion ↗</a></div>
+    </div>
+    <div id="topicContainer" class="topic-detail-placeholder">
+      <div class="placeholder">
+        <div class="icon">📖</div>
+        <p>Select a topic from the sidebar to view its content.</p>
+        <p style="font-size:12px; margin-top:8px;">Or pick a chapter from the header dropdown.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+const CHAPTER_SLUG = "27-neurology-and-stroke-medicine";
+const MANIFEST_URL = "/27-neurology-and-stroke-medicine/topics.json";
+let MANIFEST = null;
+let CURRENT_TOPIC = null;
+
+async function loadManifest() {
+  const res = await fetch(MANIFEST_URL);
+  MANIFEST = await res.json();
+  // Activate topic from URL hash
+  const params = new URLSearchParams(location.search);
+  const t = params.get("topic");
+  if (t) showTopic(t);
+}
+
+function navigateTopic(dir) {
+  if (!MANIFEST || !CURRENT_TOPIC) return;
+  const i = MANIFEST.topics.findIndex(x => x.local_prefix === CURRENT_TOPIC.local_prefix);
+  const ni = i + dir;
+  if (ni < 0 || ni >= MANIFEST.topics.length) return;
+  showTopic(MANIFEST.topics[ni].local_prefix);
+}
+
+function toggleTopicImage(btn) {
+  btn.classList.toggle("collapsed");
+  const wrap = btn.nextElementSibling;
+  if (wrap) wrap.classList.toggle("collapsed");
+  if (wrap && !wrap.classList.contains("collapsed")) {
+    btn.querySelector("span:last-child").textContent = "click to collapse";
+  } else {
+    btn.querySelector("span:last-child").textContent = "click to expand";
+  }
+}
+
+function showTopic(localPrefix) {
+  const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
+  if (!t) return;
+  CURRENT_TOPIC = t;
+  // Update active in sidebar
+  document.querySelectorAll(".topic-item").forEach(el => el.classList.remove("active"));
+  const activeEl = document.querySelector(`.topic-item[data-topic="${localPrefix}"]`);
+  if (activeEl) {
+    activeEl.classList.add("active");
+    // Scroll into view
+    activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
+  // Update URL
+  const url = new URL(location.href);
+  url.searchParams.set("topic", localPrefix);
+  history.replaceState(null, "", url);
+  // Render content
+  const container = document.getElementById("topicContainer");
+  container.className = "topic-detail";
+  const imgHtml = t.png ? `
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:12px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/27-neurology-and-stroke-medicine/${t.png}" alt="${t.title}"></div>
+    </div>` : "";
+  container.innerHTML = `
+    <div class="crumbs"><a href="/">Home</a> · <a href="/27-neurology-and-stroke-medicine/">Neurology & Stroke Medicine</a> · <span>${t.hub_num} · ${t.hub_name}</span></div>
+    <div class="topic-header">
+      <div>
+        <h1>${t.title}</h1>
+        <p class="meta">${t.hub_num} · ${t.local_prefix} · ${t.slug}</p>
+      </div>
+      <div class="topic-actions">
+        ${t.png ? `<a href="/27-neurology-and-stroke-medicine/${t.png}" download>Download PNG</a>` : ""}
+        ${t.md ? `<a href="/27-neurology-and-stroke-medicine/${t.md}" download>Download MD</a>` : ""}
+        <button onclick="navigateTopic(-1)">← Prev</button>
+        <button onclick="navigateTopic(1)">Next →</button>
+      </div>
+    </div>
+    <div class="topic-content">${t.html}</div>
+    ${imgHtml}
+  `;
+}
+
+// Sidebar search filter
+document.getElementById("topicSearch").addEventListener("input", function(e) {
+  const q = e.target.value.toLowerCase();
+  let visible = 0;
+  document.querySelectorAll(".topic-item").forEach(el => {
+    const text = el.textContent.toLowerCase();
+    const show = !q || text.includes(q);
+    el.style.display = show ? "" : "none";
+    if (show) visible++;
+  });
+  // Hide empty hub groups
+  document.querySelectorAll(".hub-group").forEach(g => {
+    const anyVisible = Array.from(g.querySelectorAll(".topic-item")).some(el => el.style.display !== "none");
+    g.style.display = anyVisible ? "" : "none";
+  });
+  document.getElementById("noResults").classList.toggle("show", visible === 0);
+});
+
+loadManifest();
+</script>
+</main>
+<footer>
+  <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 14:27 UTC · Davidson 25th Ed</p>
+</footer>
+<script>
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('chapterDropdown');
+  if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+});
+</script>
+</body>
+</html>

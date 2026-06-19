@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatitis C treatment endpoints — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Hepatitis C treatment endpoints</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define SVR12, SVR24 and their clinical significance</li><li>[ ] Differentiate relapse, breakthrough, and non-response</li><li>[ ] Apply monitoring schedule during and after DAA therapy</li><li>[ ] Manage treatment failure and retreatment</li><li>[ ] Identify FCPS/MRCP high-yield endpoints and definitions</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Treatment Endpoints Definitions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Endpoint</th><th>Definition</th><th>Clinical Significance</th></tr><tr><td>----------</td><td>------------</td><td>----------------------</td></tr><tr><td>**SVR12**</td><td>**HCV RNA undetectable 12 weeks post-treatment**</td><td>**CURE** (>99% durability); Primary endpoint in modern trials</td></tr><tr><td>**SVR24**</td><td>HCV RNA undetectable 24 weeks post-treatment</td><td>Historical gold standard; Now equivalent to SVR12</td></tr><tr><td>**RVR (Rapid Virologic Response)**</td><td>HCV RNA undetectable at Week 4 on-treatment</td><td>Predictive of SVR; Not used for stopping decisions</td></tr><tr><td>**EVR (Early Virologic Response)**</td><td>HCV RNA ↓>2 log or undetectable at Week 12 (IFN era)</td><td>Historical; Not applicable to DAAs</td></tr><tr><td>**EOT (End of Treatment) Response**</td><td>HCV RNA undetectable at treatment completion</td><td>Expected with DAAs; Does NOT equal cure</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>SVR12 = CURE</b>; No need for SVR24 in DAA era</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">SVR12 vs SVR24: Why SVR12 Sufficient</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>SVR12</th><th>SVR24</th></tr><tr><td>--------</td><td>-------</td><td>-------</td></tr><tr><td>**Definition**</td><td>RNA negative at 12w post-treatment</td><td>RNA negative at 24w post-treatment</td></tr><tr><td>**Durability**</td><td>>99%</td><td>>99%</td></tr><tr><td>**Concordance**</td><td>99.5-99.9% with SVR24</td><td>Reference</td></tr><tr><td>**Regulatory**</td><td>FDA/EMA accept SVR12 as primary endpoint</td><td>Historical</td></tr><tr><td>**Clinical Practice**</td><td>Standard of care</td><td>Rarely used</td></tr></table>
+<div class="callout"><b>Key Evidence</b>: Multiple trials (ION, ASTRAL, SURVEYOR, POLARIS) showed SVR12 predicts SVR24 with &gt;99% accuracy</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Virologic Failure Definitions</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[On DAA Therapy] --&gt; B{HCV RNA Detectable?}
+    B --&gt;|At Week 4| C[Not Failure - Monitor]
+    B --&gt;|At EOT| D[EOT Failure]
+    B --&gt;|Post-Treatment| E{When?}
+    E --&gt;|&lt;12w post| F[Relapse]
+    E --&gt;|≥12w post| G[Late Relapse / Reinfection]
+    D --&gt; H[Non-Response or Breakthrough]</code></pre>
+<div class="sub-h">Types of Failure</div>
+<table class="ctable"><tr><th>Failure Type</th><th>Timing</th><th>Definition</th><th>Mechanism</th></tr><tr><td>--------------</td><td>--------</td><td>------------</td><td>-----------</td></tr><tr><td>**Non-Response (Null)**</td><td>**On-treatment** (any time)</td><td>HCV RNA **never becomes undetectable**</td><td>Primary resistance, Poor adherence, Drug interactions</td></tr><tr><td>**Breakthrough**</td><td>**On-treatment** (after initial suppression)</td><td>HCV RNA **reappears** after being undetectable</td><td>Resistance emergence, Adherence lapse</td></tr><tr><td>**Relapse**</td><td>**Post-treatment** (after EOT, before SVR12)</td><td>HCV RNA **reappears** after EOT negativity</td><td>Resistant variants, Inadequate duration</td></tr><tr><td>**Late Relapse**</td><td>**After SVR12** (rare)</td><td>RNA + after documented SVR12</td><td>Reinfection OR true late relapse (<1%)</td></tr><tr><td>**Reinfection**</td><td>After SVR12</td><td>New exposure in high-risk groups (PWID, MSM, Dialysis)</td><td>New infection, Different genotype/quasispecies</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Monitoring Schedule (DAA Era)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Timepoint</th><th>Assessment</th><th>Action</th></tr><tr><td>-----------</td><td>------------</td><td>--------</td></tr><tr><td>**Baseline**</td><td>HCV RNA (quantitative), Genotype, LFTs, CBC, Renal, HIV/HBV coinfection, Fibrosis (TE/FIB-4/APRI), Drug interactions</td><td>Regimen selection</td></tr><tr><td>**Week 4**</td><td>HCV RNA (qualitative/quantitative), LFTs, CBC, Adherence, Side effects</td><td>If detectable → Check adherence; Rarely stop</td></tr><tr><td>**EOT**</td><td>HCV RNA (qualitative), LFTs, CBC</td><td>Confirm negativity</td></tr><tr><td>**SVR12 (Post-tx Week 12)**</td><td>**HCV RNA (Quantitative) — PRIMARY ENDPOINT**</td><td>If negative = **CURE**; If positive = Failure</td></tr><tr><td>**Post-SVR (if Cirrhosis)**</td><td>LFTs 6-monthly, US ± AFP 6-monthly (HCC surveillance)</td><td>Lifelong HCC surveillance</td></tr></table>
+<div class="callout"><b>No RNA testing needed at Week 12 for treatment decisions</b> — DAAs have high barrier, Week 4 RNA rarely used for futility</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management of Treatment Failure</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Non-Response / Breakthrough (On-Treatment)</div>
+<ul><li><b>Rare with modern DAAs</b> (&lt;1-2%)</li><li><b>Causes</b>: Resistance-associated substitutions (RAS), Poor adherence, Drug interactions, Impaired absorption</li><li><b>Action</b>: <b>Stop current regimen</b>; Assess adherence/interactions; <b>Retreat with different class</b></li></ul>
+<div class="sub-h">2. Relapse (Post-Treatment, Before SVR12)</div>
+<ul><li><b>Rate</b>: 1-3% with modern pan-genotypic regimens</li><li><b>Most common</b>: NS5A inhibitor failure (resistance)</li><li><b>Retreatment</b>: <b>SOF/VEL/VOX 12 weeks</b> (preferred for NS5A failures)</li></ul>
+<div class="sub-h">3. Late Relapse / Reinfection (After SVR12)</div>
+<ul><li><b>Distinguish</b>: <b>Reinfection</b> = New exposure, often different genotype/subtype; <b>Late Relapse</b> = Same strain</li><li><b>Reinfection Risk Groups</b>: PWID, MSM, Haemodialysis, Prison</li><li><b>Management</b>: Retreat as new infection (same regimens effective)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Retreatment Algorithms</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Prior DAA Failure → Retreatment</div>
+<table class="ctable"><tr><th>Prior Failed Regimen</th><th>Recommended Retreatment</th><th>Duration</th></tr><tr><td>---------------------</td><td>------------------------</td><td>----------</td></tr><tr><td>**SOF/VEL** (or SOF/VEL/VOX)</td><td>**SOF/VEL/VOX**</td><td>12 weeks</td></tr><tr><td>**GLE/PIB**</td><td>**SOF/VEL/VOX**</td><td>12 weeks</td></tr><tr><td>**ELB/GZR**</td><td>**SOF/VEL/VOX**</td><td>12 weeks</td></tr><tr><td>**SOF/VEL/VOX** (Failed)</td><td>**SOF/VEL + RBV 24w** OR **GLE/PIB + RBV 16-24w**</td><td>Specialist</td></tr><tr><td>**PR + SOF** (IFN-era)</td><td>Pan-genotypic per genotype/cirrhosis</td><td>Per above</td></tr></table>
+<div class="callout"><b>SOF/VEL/VOX = Universal retreatment for most DAA failures</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Resistance-Associated Substitutions (RAS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug Class</th><th>Key RAS</th><th>Clinical Impact</th></tr><tr><td>------------</td><td>---------</td><td>-----------------</td></tr><tr><td>**NS5A Inhibitors** (Velpatasvir, Ledipasvir, Daclatasvir, Pibrentasvir)</td><td>**Y93H, L31M/V, Q30R/H** (GT1a); **Y93H, L31V** (GT3)</td><td>**High barrier to resistance** but cross-resistance within class</td></tr><tr><td>**NS5B Inhibitors** (Sofosbuvir - Nucleotide)</td><td>**S282T**</td><td>**Very rare**; High barrier; No cross-resistance with NS5A</td></tr><tr><td>**NS3/4A Protease Inhibitors** (Grazoprevir, Voxilaprevir, Glecaprevir)</td><td>**D168, A156, V170**</td><td>Moderate barrier; Cross-resistance within class</td></tr></table>
+<div class="callout"><b>Routine RAS testing NOT recommended</b> before treatment — pan-genotypic regimens cover most RAS; Test only in retreatment failur</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**SVR12**</td><td>**HCV RNA undetectable 12w post-treatment = CURE**</td></tr><tr><td>**SVR24**</td><td>Historical; SVR12 sufficient (>99% concordance)</td></tr><tr><td>**Failure Types**</td><td>Non-response (never neg), Breakthrough (reappears on-tx), Relapse (reappears post-tx)</td></tr><tr><td>**Monitoring**</td><td>Baseline RNA, Week 4 (optional), EOT RNA, **SVR12 RNA (Primary Endpoint)**</td></tr><tr><td>**Relapse Rate**</td><td>1-3% with modern pan-genotypic DAAs</td></tr><tr><td>**Retreatment**</td><td>**SOF/VEL/VOX 12w** for most DAA failures</td></tr><tr><td>**RAS Testing**</td><td>Not routine; Only for retreatment failures</td></tr><tr><td>**Late Relapse vs Reinfection**</td><td>Reinfection = New exposure (PWID, Dialysis); Late Relapse = Same strain (<1%)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define SVR12. Why is SVR24 no longer required?</b></li><li><b>Differentiate non-response, breakthrough, and relapse.</b></li><li><b>What is the monitoring schedule during DAA therapy?</b></li><li><b>What is the primary endpoint of DAA therapy?</b></li><li><b>How do you manage a patient who relapses after SOF/VEL?</b></li><li><b>What is the retreatment regimen after GLE/PIB failure?</b></li><li><b>When do you test for RAS?</b></li><li><b>Differentiate late relapse from reinfection.</b></li><li><b>What is the SVR12 durability?</b></li><li><b>What are the key NS5A RAS for GT1a and GT3?</b></li><li><b>What is the breakthrough definition?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>SVR12 vs SVR24</td><td>**SVR12 = Cure**; SVR24 historical; 99.5% concordance</td></tr><tr><td>Breakthrough vs Relapse</td><td>Breakthrough = **On-treatment** (after suppression); Relapse = **Post-treatment** (after EOT)</td></tr><tr><td>Non-response vs Breakthrough</td><td>Non-response = **Never undetectable**; Breakthrough = **Was undetectable, then reappears**</td></tr><tr><td>Reinfection vs Late Relapse</td><td>Reinfection = New exposure, **different genotype/quasispecies**; Late relapse = Same strain, **very rare (<1%)**</td></tr><tr><td>RAS Testing</td><td>**Not routine** — pan-genotypic cover most; Only for retreatment failures</td></tr><tr><td>SOF/VEL/VOX Retreatment</td><td>**Universal** for NS5A/NS5B failures; 12 weeks</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((HCV Treatment Endpoints))
+    Definitions
+      SVR12: RNA neg 12w post = CURE
+      SVR24: Historical
+      RVR: Week 4 neg (predictive only)
+    Failure Types
+      Non-Response: Never neg on-tx
+      Breakthrough: Reappears on-tx
+      Relapse: Reappears post-tx (&lt;SVR12)
+      Late Relapse: After SVR12 (rare)
+      Reinfection: New exposure (&gt;SVR12)
+    Monitoring
+      Baseline: RNA, GT, LFTs, Fibrosis, HIV/HBV
+      Week 4: RNA optional
+      EOT: RNA
+      SVR12: RNA quantitative = PRIMARY ENDPOINT
+    Retreatment
+      SOF/VEL/VOX 12w = Universal
+      Post-VOX failure: Specialist
+    RAS
+      NS5A: Y93H, L31M, Q30 (GT1a/3)
+      NS5B: S282T (rare)
+      NS3: D168, A156
+      Testing: Not routine</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Endpoint**</th><th>**Definition**</th><th>**Significance**</th></tr><tr><td>--------------</td><td>----------------</td><td>------------------</td></tr><tr><td>**SVR12**</td><td>RNA neg 12w post-tx</td><td>**CURE** (>99% durable)</td></tr><tr><td>**SVR24**</td><td>RNA neg 24w post-tx</td><td>Historical; Not needed</td></tr><tr><td>**RVR**</td><td>RNA neg Week 4</td><td>Predictive only</td></tr><tr><td>**EOT**</td><td>RNA neg at end</td><td>Expected; Not cure</td></tr></table>
+<table class="ctable"><tr><th>**Failure**</th><th>**Timing**</th><th>**Definition**</th></tr><tr><td>-------------</td><td>------------</td><td>----------------</td></tr><tr><td>Non-Response</td><td>On-tx</td><td>Never undetectable</td></tr><tr><td>Breakthrough</td><td>On-tx</td><td>Reappears after suppression</td></tr><tr><td>Relapse</td><td>Post-tx (<12w)</td><td>Reappears after EOT neg</td></tr><tr><td>Late Relapse</td><td>>12w post</td><td>Same strain (rare)</td></tr><tr><td>Reinfection</td><td>>12w post</td><td>New exposure, different strain</td></tr></table>
+<table class="ctable"><tr><th>**Monitoring**</th><th>**When**</th><th>**Primary Endpoint**</th></tr><tr><td>----------------</td><td>----------</td><td>---------------------</td></tr><tr><td>Baseline</td><td>Pre-tx</td><td>Regimen selection</td></tr><tr><td>Week 4</td><td>Optional</td><td>Adherence check</td></tr><tr><td>EOT</td><td>End of treatment</td><td>Confirm neg</td></tr><tr><td>**SVR12**</td><td>**12w post**</td><td>**CURE**</td></tr></table>
+<table class="ctable"><tr><th>**Retreatment**</th><th>**Regimen**</th><th>**Duration**</th></tr><tr><td>-----------------</td><td>-------------</td><td>--------------</td></tr><tr><td>Prior SOF/VEL</td><td>SOF/VEL/VOX</td><td>12w</td></tr><tr><td>Prior GLE/PIB</td><td>SOF/VEL/VOX</td><td>12w</td></tr><tr><td>Prior VOX</td><td>SOF/VEL+RBV 24w / GLE/PIB+RBV</td><td>Specialist</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>SVR12 definition</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Failure types</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Monitoring schedule</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Retreatment algorithm</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>RAS testing</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>SVR12 definition</td><td></td><td></td></tr><tr><td>Relapse vs Breakthrough</td><td></td><td></td></tr><tr><td>SVR12 vs SVR24</td><td></td><td></td></tr><tr><td>Retreatment SOF/VEL fail</td><td></td><td></td></tr><tr><td>RAS testing indication</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Viral Hepatitis/Hepatitis C|HCV Overview]]</li><li>[[Viral Hepatitis/Hepatitis C genotype-based treatment|HCV Genotype Treatment]]</li><li>[[Viral Hepatitis/HCV DAA Regimens by Genotype &amp; Cirrhosis|HCV DAA Regimens]]</li><li>[[Viral Hepatitis/Hepatitis C decompensated cirrhosis management|HCV Decompensated]]</li><li>[[Viral Hepatitis/Hepatitis C renal impairment|HCV Renal]]</li><li>[[Viral Hepatitis/Hepatitis C post-SVR follow-up|Post-SVR]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatitis C treatment endpoints · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -157,6 +157,66 @@ BUILT_CHAPTERS = {
         "https://medsea.notion.site/Chapter-22-Gastroenterology-bbfd97790eca482eaed8d47428a642b2",
         "#f59e0b",
     ),
+    "19-clinical-biochemistry-and-metabolic-medi": (
+        "Clinical Biochemistry & Metabolic Medicine",
+        "https://medsea.notion.site/",
+        "#06b6d4",
+    ),
+    "21-diabetes-mellitus": (
+        "Diabetes Mellitus",
+        "https://medsea.notion.site/",
+        "#dc2626",
+    ),
+    "23-hepatology": (
+        "Hepatology",
+        "https://medsea.notion.site/",
+        "#a16207",
+    ),
+    "24-haematology-and-transfusion-medicine": (
+        "Haematology & Transfusion Medicine",
+        "https://medsea.notion.site/",
+        "#be123c",
+    ),
+    "25-rheumatology-and-bone-disease": (
+        "Rheumatology & Bone Disease",
+        "https://medsea.notion.site/",
+        "#7c2d12",
+    ),
+    "26-dermatology": (
+        "Dermatology",
+        "https://medsea.notion.site/",
+        "#ec4899",
+    ),
+    "27-neurology-and-stroke-medicine": (
+        "Neurology & Stroke Medicine",
+        "https://medsea.notion.site/",
+        "#8b5cf6",
+    ),
+    "28-medical-ophthalmology": (
+        "Medical Ophthalmology",
+        "https://medsea.notion.site/",
+        "#0ea5e9",
+    ),
+    "29-medical-psychiatry": (
+        "Medical Psychiatry",
+        "https://medsea.notion.site/",
+        "#6366f1",
+    ),
+    "30-maternal-medicine": (
+        "Maternal Medicine",
+        "https://medsea.notion.site/",
+        "#d946ef",
+    ),
+    "31-adolescence-transition-and-young-adult-m": (
+        "Adolescence Transition & Young Adult Medicine",
+        "https://medsea.notion.site/",
+        "#f97316",
+    ),
+    "32-older-adult-medicine-and-frailty": (
+        "Older Adult Medicine & Frailty",
+        "https://medsea.notion.site/",
+        "#64748b",
+    ),
 }
 
 
@@ -558,6 +618,24 @@ main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
   padding: 16px; margin-bottom: 20px;
 }
 .topic-detail .topic-image img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.topic-detail .topic-image-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px;
+  padding: 10px 16px; margin-bottom: 16px; cursor: pointer;
+  color: var(--text-dim); font-size: 14px; font-weight: 600;
+  transition: all 0.15s ease;
+}
+.topic-detail .topic-image-toggle:hover {
+  background: var(--bg-2); border-color: var(--accent); color: var(--accent);
+}
+.topic-detail .topic-image-toggle .toggle-icon {
+  font-size: 16px; transition: transform 0.2s ease;
+}
+.topic-detail .topic-image-toggle.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+.topic-detail .topic-image-wrap { overflow: hidden; }
+.topic-detail .topic-image-wrap.collapsed { display: none; }
 .topic-detail .topic-content {
   background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
   padding: 24px;
@@ -1056,6 +1134,17 @@ function navigateTopic(dir) {{
   showTopic(MANIFEST.topics[ni].local_prefix);
 }}
 
+function toggleTopicImage(btn) {{
+  btn.classList.toggle("collapsed");
+  const wrap = btn.nextElementSibling;
+  if (wrap) wrap.classList.toggle("collapsed");
+  if (wrap && !wrap.classList.contains("collapsed")) {{
+    btn.querySelector("span:last-child").textContent = "click to collapse";
+  }} else {{
+    btn.querySelector("span:last-child").textContent = "click to expand";
+  }}
+}}
+
 function showTopic(localPrefix) {{
   const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
   if (!t) return;
@@ -1075,7 +1164,14 @@ function showTopic(localPrefix) {{
   // Render content
   const container = document.getElementById("topicContainer");
   container.className = "topic-detail";
-  const imgHtml = t.png ? `<div class="topic-image"><img src="/{ch_slug}/${{t.png}}" alt="${{t.title}}"></div>` : "";
+  const imgHtml = t.png ? `
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:12px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/{ch_slug}/${{t.png}}" alt="${{t.title}}"></div>
+    </div>` : "";
   container.innerHTML = `
     <div class="crumbs"><a href="/">Home</a> · <a href="/{ch_slug}/">{ch_name}</a> · <span>${{t.hub_num}} · ${{t.hub_name}}</span></div>
     <div class="topic-header">

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acute Viral Hepatitis Patterns — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Acute Viral Hepatitis Patterns</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Recognize LFT patterns in acute HAV, HBV, HCV, HEV</li><li>[ ] Interpret serology for each virus</li><li>[ ] Know incubation periods and transmission</li><li>[ ] Differentiate acute vs chronic infection</li><li>[ ] Identify FCPS/MRCP high-yield associations</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Overview: LFT Patterns by Virus</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Virus</th><th>Incubation</th><th>Transmission</th><th>ALT Peak</th><th>Key Serology</th><th>Chronic Risk</th></tr><tr><td>-------</td><td>------------</td><td>--------------</td><td>----------</td><td>--------------</td><td>--------------</td></tr><tr><td>**HAV**</td><td>15-50 days</td><td>Faecal-oral</td><td>500-5000</td><td>IgM anti-HAV</td><td>None (self-limited)</td></tr><tr><td>**HBV**</td><td>60-150 days</td><td>Blood/sexual/vertical</td><td>500-5000</td><td>HBsAg, IgM anti-HBc</td><td>5-10% adults, 90% neonates</td></tr><tr><td>**HCV**</td><td>14-180 days</td><td>Blood</td><td>200-3000</td><td>Anti-HCV, HCV RNA</td><td>75-85%</td></tr><tr><td>**HEV**</td><td>15-60 days</td><td>Faecal-oral</td><td>500-5000</td><td>IgM anti-HEV</td><td>Rare (except immunosuppressed)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Hepatitis A (HAV)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">LFT Pattern</div>
+<ul><li><b>Acute hepatocellular</b>: ALT 1000-5000, AST slightly lower</li><li><b>Bilirubin</b>: Often ↑↑ (cholestatic features common)</li><li><b>ALP</b>: Mild ↑ (2-3× ULN)</li><li><b>Duration</b>: 4-8 weeks to normalize</li></ul>
+<div class="sub-h">Serology</div>
+<table class="ctable"><tr><th>Phase</th><th>Anti-HAV IgM</th><th>Anti-HAV IgG</th></tr><tr><td>-------</td><td>--------------</td><td>--------------</td></tr><tr><td>Acute</td><td>+</td><td>-</td></tr><tr><td>Convalescent</td><td>+</td><td>+</td></tr><tr><td>Past/Immune</td><td>-</td><td>+</td></tr></table>
+<div class="sub-h">FCPS/MRCP Keys</div>
+<ul><li>Relapsing HAV: 10-15% (prolonged cholestasis) — NOT chronic</li><li>Vaccination: Inactivated vaccine, 2 doses 6-12 months apart</li><li>Post-exposure: IgG (HNIG) within 2 weeks</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Hepatitis B (HBV) — Acute vs Chronic</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Acute HBV LFT Pattern</div>
+<ul><li><b>ALT</b>: 1000-5000 (can be &gt;10,000 in fulminant)</li><li><b>AST</b>: Slightly lower than ALT</li><li><b>Bilirubin</b>: Variable</li><li><b>HBsAg</b>: +ve during acute phase</li><li><b>IgM anti-HBc</b>: <b>Hallmark of acute infection</b></li></ul>
+<div class="sub-h">Serology Interpretation (8 Scenarios)</div>
+<pre class="codeblock"><code>flowchart TD
+    A[HBsAg] --&gt; B{+ve?}
+    B --&gt;|Yes| C{Anti-HBc IgM?}
+    C --&gt;|+ve| D[Acute HBV]
+    C --&gt;|-ve| E{Anti-HBc IgG?}
+    E --&gt;|+ve| F[Chronic HBV]
+    E --&gt;|-ve| G[Impossible - check assay]
+    B --&gt;|No| H{Anti-HBs?}
+    H --&gt;|+ve| I{Anti-HBc?}
+    I --&gt;|+ve| J[Resolved/Past infection]
+    I --&gt;|-ve| K[Vaccinated]
+    H --&gt;|-ve| L{Anti-HBc IgM?}
+    L --&gt;|+ve| M[Window period - acute resolving]
+    L --&gt;|-ve| N[Susceptible]</code></pre>
+<div class="sub-h">Phases of Chronic HBV</div>
+<table class="ctable"><tr><th>Phase</th><th>HBsAg</th><th>HBeAg</th><th>HBV DNA</th><th>ALT</th><th>Infectivity</th></tr><tr><td>-------</td><td>-------</td><td>-------</td><td>---------</td><td>-----</td><td>-------------</td></tr><tr><td>**Immune Tolerant**</td><td>+</td><td>+</td><td>>10⁷</td><td>Normal</td><td>High</td></tr><tr><td>**Immune Active**</td><td>+</td><td>±</td><td>>2×10³</td><td>↑</td><td>High</td></tr><tr><td>**Inactive Carrier**</td><td>+</td><td>-</td><td><2×10³</td><td>Normal</td><td>Low</td></tr><tr><td>**HBeAg-Negative Reactivation**</td><td>+</td><td>-</td><td>>2×10³</td><td>↑</td><td>High</td></tr></table>
+<div class="sub-h">FCPS/MRCP Keys</div>
+<ul><li><b>Window period</b>: HBsAg -, anti-HBc IgM + (only marker)</li><li><b>Occult HBV</b>: HBsAg -, anti-HBc +, HBV DNA + (liver)</li><li><b>Treatment indication</b>: Immune active phase + fibrosis (F≥2)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Hepatitis C (HCV) — Acute</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">LFT Pattern</div>
+<ul><li><b>ALT</b>: Often lower than HAV/HBV (500-3000)</li><li><b>Fluctuating ALT</b> — may normalize intermittently</li><li><b>Anti-HCV</b>: Appears 8-12 weeks post-exposure</li><li><b>HCV RNA</b>: Detectable 1-2 weeks post-exposure</li></ul>
+<div class="sub-h">Acute HCV → Chronic</div>
+<ul><li>75-85% become chronic</li><li>Spontaneous clearance: 15-25% (associated with IFNL3 genotype)</li></ul>
+<div class="sub-h">FCPS/MRCP Keys</div>
+<ul><li><b>No vaccine for HCV</b></li><li><b>DAA treatment</b>: Wait 6 months for spontaneous clearance OR treat acute if high risk</li><li><b>SVR12</b>: Undetectable HCV RNA 12 weeks post-treatment</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Hepatitis E (HEV)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">LFT Pattern</div>
+<ul><li>Similar to HAV: ALT 1000-5000, cholestatic features common</li><li><b>Pregnancy (3rd trimester)</b>: 20% mortality, fulminant hepatic failure</li></ul>
+<div class="sub-h">Genotypes</div>
+<table class="ctable"><tr><th>Genotype</th><th>Region</th><th>Transmission</th><th>Chronic?</th></tr><tr><td>----------</td><td>--------</td><td>--------------</td><td>----------</td></tr><tr><td>1, 2</td><td>Asia/Africa</td><td>Waterborne</td><td>No</td></tr><tr><td>3, 4</td><td>Europe/USA</td><td>Zoonotic (pork)</td><td>**Yes in immunosuppressed**</td></tr></table>
+<div class="sub-h">FCPS/MRCP Keys</div>
+<ul><li><b>Chronic HEV</b>: Only in immunosuppressed (transplant, HIV)</li><li><b>Ribavirin</b>: 600-800mg/day × 3 months for chronic HEV</li><li><b>Severe acute HEV in pregnancy</b>: Consider early delivery + supportive care</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Comparative Table: Acute Viral Hepatitis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>HAV</th><th>HBV Acute</th><th>HCV Acute</th><th>HEV</th></tr><tr><td>---------</td><td>-----</td><td>-----------</td><td>-----------</td><td>-----</td></tr><tr><td>**Incubation**</td><td>2-7 weeks</td><td>2-5 months</td><td>2-26 weeks</td><td>2-8 weeks</td></tr><tr><td>**ALT peak**</td><td>1000-5000</td><td>1000-5000</td><td>500-3000</td><td>1000-5000</td></tr><tr><td>**Cholestasis**</td><td>Common</td><td>Uncommon</td><td>Rare</td><td>Common</td></tr><tr><td>**Chronic**</td><td>No</td><td>5-10%</td><td>75-85%</td><td>Rare (genotype 3/4)</td></tr><tr><td>**Vaccine**</td><td>Yes</td><td>Yes</td><td>No</td><td>Yes (China only)</td></tr><tr><td>**Fulminant risk**</td><td><1%</td><td>1%</td><td><1%</td><td>1-2% (20% pregnant)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Interpret: HBsAg +, anti-HBc IgM +, anti-HBs -</b></li><li><b>Interpret: HBsAg -, anti-HBc IgM +, anti-HBs -</b></li><li><b>Interpret: HBsAg +, anti-HBc IgG +, HBeAg +, HBV DNA 10⁸</b></li><li><b>What is the window period in HBV?</b></li><li><b>How do you diagnose acute HCV?</b></li><li><b>When does anti-HCV appear after exposure?</b></li><li><b>Which HEV genotypes cause chronic infection?</b></li><li><b>Management of acute HEV in 3rd trimester pregnancy?</b></li><li><b>Differentiate relapsing HAV from chronic hepatitis.</b></li><li><b>What is occult HBV?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Acute vs chronic HBV</td><td>IgM anti-HBc = acute; IgG anti-HBc + HBsAg = chronic</td></tr><tr><td>Window period vs occult</td><td>Window: anti-HBc IgM + only; Occult: HBsAg -, anti-HBc +, HBV DNA + (liver)</td></tr><tr><td>HAV chronicity</td><td>HAV NEVER causes chronic hepatitis — relapsing ≠ chronic</td></tr><tr><td>HCV spontaneous clearance</td><td>15-25% clear spontaneously — wait 6 months before DAA unless high risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Acute Viral Hepatitis))
+    HAV
+      Faecal-oral
+      IgM anti-HAV
+      Self-limited
+      Vaccine available
+    HBV
+      Blood/Sexual/Vertical
+      IgM anti-HBc = Acute
+      5-10% chronic
+      Phases: Tolerant → Active → Inactive → Reactivation
+    HCV
+      Blood
+      Anti-HCV appears 8-12 wks
+      75-85% chronic
+      No vaccine
+      DAA cure
+    HEV
+      Faecal-oral (gen 1,2) / Zoonotic (3,4)
+      Pregnancy = High mortality
+      Gen 3/4 chronic in immunosuppressed
+      Ribavirin for chronic</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Virus</th><th>Transmission</th><th>Key Acute Marker</th><th>Chronic?</th><th>Vaccine</th></tr><tr><td>-------</td><td>--------------</td><td>------------------</td><td>----------</td><td>---------</td></tr><tr><td>HAV</td><td>Faecal-oral</td><td>IgM anti-HAV</td><td>No</td><td>Yes</td></tr><tr><td>HBV</td><td>Blood/sexual/vertical</td><td>IgM anti-HBc</td><td>5-10% adults</td><td>Yes</td></tr><tr><td>HCV</td><td>Blood</td><td>HCV RNA (early) / Anti-HCV (late)</td><td>75-85%</td><td>No</td></tr><tr><td>HEV</td><td>Faecal-oral / Zoonotic</td><td>IgM anti-HEV</td><td>Rare (gen 3/4 in immunosuppressed)</td><td>China only</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>Serology table (8 scenarios)</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Chronic HBV phases</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>HCV timeline</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>HEV genotypes</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>HBV window period serology</td><td></td><td></td></tr><tr><td>4 phases chronic HBV</td><td></td><td></td></tr><tr><td>HCV acute vs chronic cutoff</td><td></td><td></td></tr><tr><td>HEV in pregnancy</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Viral Hepatitis/Hepatitis A|Hepatitis A]]</li><li>[[Viral Hepatitis/Hepatitis B|Hepatitis B]]</li><li>[[Viral Hepatitis/Hepatitis C|Hepatitis C]]</li><li>[[Viral Hepatitis/Hepatitis E|Hepatitis E]]</li><li>[[Viral Hepatitis/Hepatitis B Serology Interpretation|HBV Serology]]</li><li>[[Acute Liver Failure/Acute viral hepatitis|ALF: Viral Hepatitis]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Acute Viral Hepatitis Patterns · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

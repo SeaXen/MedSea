@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ascites management — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Ascites management</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply stepwise diuretic therapy (spironolactone + furosemide)</li><li>[ ] Know maximum doses and monitoring parameters</li><li>[ ] Manage complications (hyponatremia, AKI, HE, hyperkalemia)</li><li>[ ] Identify indications for LVP and TIPS</li><li>[ ] Recognize FCPS/MRCP high-yield management steps</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">General Measures</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Measure</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Salt restriction**</td><td>**88 mmol/day (2g NaCl = 5g salt)** — strict, no added salt</td></tr><tr><td>**Fluid restriction**</td><td>Only if **Na <125 mmol/L** (severe hyponatremia)</td></tr><tr><td>**Daily weights**</td><td>Target loss: **0.5 kg/day (no edema), 1 kg/day (with edema)**</td></tr><tr><td>**Alcohol cessation**</td><td>Mandatory</td></tr><tr><td>**Medication review**</td><td>Stop NSAIDs, reduce/stop ACEi/ARB, avoid sedatives</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Diuretic Therapy: Stepwise Approach</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">First-Line: Spironolactone (Aldosterone Antagonist)</div>
+<ul><li><b>Mechanism</b>: Blocks aldosterone in collecting duct → Na⁺ excretion, K⁺ retention</li><li><b>Starting dose</b>: 100 mg daily</li><li><b>Titration</b>: Increase by 100 mg every 3-5 days</li><li><b>Maximum dose</b>: <b>400 mg daily</b></li></ul>
+<div class="sub-h">Add-On: Furosemide (Loop Diuretic)</div>
+<ul><li><b>Mechanism</b>: Blocks NKCC2 in thick ascending limb → Na⁺ excretion</li><li><b>Ratio</b>: <b>Spironolactone : Furosemide = 100 : 40</b> (e.g., 100mg spiro + 40mg furo)</li><li><b>Starting dose</b>: 40 mg daily (when spiro reaches 100mg)</li><li><b>Maximum dose</b>: <b>160 mg daily</b></li></ul>
+<div class="sub-h">Dose Escalation Table</div>
+<table class="ctable"><tr><th>Step</th><th>Spironolactone</th><th>Furosemide</th><th>Ratio</th></tr><tr><td>------</td><td>----------------</td><td>------------</td><td>-------</td></tr><tr><td>1</td><td>100 mg</td><td>—</td><td>—</td></tr><tr><td>2</td><td>200 mg</td><td>40 mg</td><td>100:40</td></tr><tr><td>3</td><td>300 mg</td><td>80 mg</td><td>100:40</td></tr><tr><td>4 (MAX)</td><td>**400 mg**</td><td>**160 mg**</td><td>**100:40**</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: Fixed ratio 100:40 prevents hyponatremia (furo) and hyperkalemia (spiro)</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Monitoring on Diuretics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Frequency</th><th>Action if Abnormal</th></tr><tr><td>-----------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Weight**</td><td>Daily</td><td>>1 kg/day loss → reduce diuretics</td></tr><tr><td>**Electrolytes (Na, K, Cr, Urea)**</td><td>Baseline, 3-5 days, then weekly</td><td>K >5.5 → hold spiro; Na <125 → hold furo; Cr ↑>50% → hold both</td></tr><tr><td>**Renal function**</td><td>Same as electrolytes</td><td>AKI → hold diuretics</td></tr><tr><td>**Urine output**</td><td>Daily</td><td><500 mL/day → assess volume status</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Complications & Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Threshold</th><th>Management</th></tr><tr><td>--------------</td><td>-----------</td><td>------------</td></tr><tr><td>**Hyponatremia**</td><td>Na <130 mmol/L</td><td>Fluid restrict 1L/day; **reduce/stop furosemide**; consider vaptans (tolvaptan) if severe</td></tr><tr><td>**Hyperkalemia**</td><td>K >5.5 mmol/L</td><td>**Hold spironolactone**; dietary K restriction; kayexalate if >6.0</td></tr><tr><td>**AKI / Renal impairment**</td><td>Cr ↑50% from baseline or >1.5 mg/dL</td><td>**Hold BOTH diuretics**; volume assess; albumin if HRS suspected</td></tr><tr><td>**Hepatic Encephalopathy**</td><td>New/worsening</td><td>Treat precipitants; lactulose; **reduce diuretics if volume depleted**</td></tr><tr><td>**Metabolic alkalosis**</td><td>HCO₃ >30</td><td>Usually from furo; reduce furo; KCl replacement</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Therapeutic Paracentesis (LVP)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>Technique</th></tr><tr><td>------------</td><td>-----------</td></tr><tr><td>**Tense ascites** (resp compromise, pain, renal impairment)</td><td>Remove **all** ascites (large-volume)</td></tr><tr><td>**Refractory ascites**</td><td>Serial LVP every 2-4 weeks</td></tr><tr><td>**Albumin replacement**</td><td>**8 g per liter removed if >5L** (e.g., 8L → 64g = 200mL 20% or 400mL 5%)</td></tr><tr><td>**No albumin needed**</td><td>If ≤5L removed</td></tr></table>
+<div class="sub-h">LVP Complications</div>
+<ul><li><b>PICD (Paracentesis-induced circulatory dysfunction)</b>: Albumin prevents</li><li><b>Bleeding</b>: Correct coagulopathy if INR&gt;2.5 or plt&lt;50 (low risk)</li><li><b>Infection</b>: Sterile technique</li><li><b>Bowel injury</b>: Ultrasound-guided</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Refractory Ascites (ICA Definition)</span>
+  </div>
+  <div class="sec-body">
+<div class="callout"><b>Failure to mobilize ascites despite:</b> <b>1. Salt restriction 88 mmol/day</b> <b>2. Maximum diuretics (Spironolactone 400mg + Furosemide 160mg) OR</b> <b>3. Diuretic-intractable (complications: AKI, hyponatremia, HE, hyperkalemia)</b></div>
+<div class="sub-h">Management Algorithm</div>
+<pre class="codeblock"><code>flowchart TD
+    A[Refractory Ascites] --&gt; B[Serial LVP + Albumin 8g/L]
+    B --&gt; C{Good Candidate for TIPS?}
+    C --&gt;|Child A/B, No severe HE, Age&lt;70, No cardiopulmonary dz| D[TIPS]
+    C --&gt;|No| E[Continue LVP]
+    D --&gt; F[Monitor: HE, Shunt dysfunction, Liver function]
+    F --&gt; G{HE or Shunt Failure?}
+    G --&gt;|Yes| H[Reduce shunt / TIPS revision / Transplant]
+    G --&gt;|No| I[Continue surveillance]
+    E --&gt; J[Transplant Evaluation - DEFINITIVE]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">TIPS for Refractory Ascites</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>Contraindications</th></tr><tr><td>------------</td><td>------------------</td></tr><tr><td>**Child-Pugh A/B**</td><td>**Child-Pugh C (esp >12)**</td></tr><tr><td>**Age <70**</td><td>**Severe HE (recurrent, Grade 3-4)**</td></tr><tr><td>**No cardiopulmonary disease**</td><td>**Severe pulmonary hypertension**</td></tr><tr><td>**No active infection**</td><td>**Active sepsis**</td></tr><tr><td>**No HCC beyond Milan**</td><td>**Uncontrolled biliary sepsis**</td></tr><tr><td>**Failed/Intolerant to LVP**</td><td>**Portal vein thrombosis (complete)**</td></tr></table>
+<div class="sub-h">Post-TIPS Monitoring</div>
+<ul><li><b>HE risk</b>: 20-30% new/worsening HE</li><li><b>Shunt dysfunction</b>: US Doppler q3-6mo (PSV &lt;60 cm/s or &gt;250 cm/s in stent)</li><li><b>Liver function</b>: Monitor for deterioration</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Salt restriction**</td><td>88 mmol/day (2g NaCl)</td></tr><tr><td>**Diuretic ratio**</td><td>**Spironolactone : Furosemide = 100 : 40**</td></tr><tr><td>**Max doses**</td><td>Spiro 400mg, Furo 160mg</td></tr><tr><td>**Weight loss target**</td><td>0.5 kg/day (no edema), 1 kg/day (with edema)</td></tr><tr><td>**Monitoring**</td><td>Na, K, Cr, Urea weekly initially</td></tr><tr><td>**Hyponatremia**</td><td>Na<130 → fluid restrict, reduce/stop furo</td></tr><tr><td>**Hyperkalemia**</td><td>K>5.5 → hold spiro</td></tr><tr><td>**AKI**</td><td>Cr↑50% → hold both</td></tr><tr><td>**LVP albumin**</td><td>8g/L if >5L removed</td></tr><tr><td>**Refractory ascites**</td><td>Failed max diuretics + salt restriction</td></tr><tr><td>**TIPS criteria**</td><td>Child A/B, no severe HE, age<70</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What is the spironolactone:furosemide ratio and why?</b></li><li><b>Maximum doses of spironolactone and furosemide?</b></li><li><b>Target weight loss per day with/without edema?</b></li><li><b>How do you manage hyponatremia on diuretics?</b></li><li><b>How do you manage hyperkalemia on spironolactone?</b></li><li><b>When do you give albumin after LVP? How much?</b></li><li><b>Define refractory ascites (ICA criteria).</b></li><li><b>What are TIPS indications/contraindications for refractory ascites?</b></li><li><b>Why fixed 100:40 ratio prevents complications?</b></li><li><b>Diuretic-intractable vs diuretic-resistant?</b></li><li><b>What is the role of alfapump?</b></li><li><b>When is transplant indicated for refractory ascites?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Spiro:Furo ratio</td><td>**100:40** — spiro retains K, furo loses K + Na; ratio balances</td></tr><tr><td>Weight loss target</td><td>**No edema: 0.5 kg/day**; **With edema: 1 kg/day** (edema mobilizes faster)</td></tr><tr><td>Albumin after LVP</td><td>**Only if >5L removed**; 8g per liter removed</td></tr><tr><td>Refractory = failed max diuretics</td><td>Must have TRIED spiro 400 + furo 160 + salt restriction</td></tr><tr><td>TIPS contraindications</td><td>Child C, severe HE, pulmonary HTN, age>70, active infection</td></tr><tr><td>Hyponatremia management</td><td>**Fluid restrict + reduce/stop furo** — NOT increase spiro</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Ascites Management))
+    General
+      Salt 88 mmol/day
+      Fluid restrict if Na&lt;125
+      Daily weights
+      Alcohol cessation
+      Stop NSAIDs
+    Diuretics
+      Spironolactone 100-400mg
+      Furosemide 40-160mg
+      RATIO 100:40
+      Max: Spiro 400, Furo 160
+    Monitoring
+      Weight daily
+      Na, K, Cr, Urea weekly
+      Target loss 0.5-1 kg/day
+    Complications
+      Hyponatremia: Fluid restrict, stop furo
+      Hyperkalemia: Hold spiro
+      AKI: Hold both
+      HE: Reduce diuretics
+    LVP
+      Tense ascites
+      &gt;5L = Albumin 8g/L
+    Refractory
+      Failed max diuretics + salt
+      LVP serial -&gt; TIPS -&gt; Transplant
+    TIPS
+      Child A/B, no HE, age&lt;70
+      HE risk 20-30%</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Diuretic**</th><th>**Start**</th><th>**Max**</th><th>**Ratio**</th><th>**Monitor**</th></tr><tr><td>--------------</td><td>-----------</td><td>---------</td><td>-----------</td><td>-------------</td></tr><tr><td>Spironolactone</td><td>100 mg</td><td>400 mg</td><td>100</td><td>K⁺, Cr</td></tr><tr><td>Furosemide</td><td>40 mg</td><td>160 mg</td><td>40</td><td>Na⁺, Cr</td></tr></table>
+<table class="ctable"><tr><th>**Complication**</th><th>**Threshold**</th><th>**Action**</th></tr><tr><td>------------------</td><td>---------------</td><td>------------</td></tr><tr><td>Hyponatremia</td><td>Na <130</td><td>Fluid restrict 1L, ↓/stop furo</td></tr><tr><td>Hyperkalemia</td><td>K >5.5</td><td>Hold spiro</td></tr><tr><td>AKI</td><td>Cr ↑50%</td><td>Hold both</td></tr><tr><td>HE</td><td>New/worsening</td><td>Treat precipitants, ↓ diuretics</td></tr></table>
+<table class="ctable"><tr><th>**LVP**</th><th>**Albumin**</th></tr><tr><td>---------</td><td>-------------</td></tr><tr><td>≤5L removed</td><td>None</td></tr><tr><td>>5L removed</td><td>8g per liter removed</td></tr></table>
+<table class="ctable"><tr><th>**Refractory Ascites**</th><th>**TIPS Criteria**</th></tr><tr><td>------------------------</td><td>-------------------</td></tr><tr><td>Failed Spiro 400 + Furo 160 + Salt 88mmol</td><td>Child A/B, No severe HE, Age<70</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>Spiro:Furo ratio & max doses</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Weight loss targets</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Complication thresholds</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>LVP albumin rule</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Refractory definition</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>Spiro:Furo ratio</td><td></td><td></td></tr><tr><td>Max doses</td><td></td><td></td></tr><tr><td>Hyponatremia management</td><td></td><td></td></tr><tr><td>Refractory ascites criteria</td><td></td><td></td></tr><tr><td>TIPS contraindications</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Portal Hypertension and Complications/Ascites diagnosis and SAAG|Ascites Diagnosis]]</li><li>[[Portal Hypertension and Complications/Refractory ascites|Refractory Ascites]]</li><li>[[Portal Hypertension and Complications/Spontaneous bacterial peritonitis (SBP)|SBP]]</li><li>[[Portal Hypertension and Complications/Hepatorenal Syndrome|HRS]]</li><li>[[Portal Hypertension and Complications/Hepatic Encephalopathy|HE]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Ascites management · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

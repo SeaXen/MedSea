@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Definition and classification — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Definition and classification</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define chronic liver disease and cirrhosis</li><li>[ ] Differentiate compensated vs decompensated cirrhosis</li><li>[ ] Apply Child-Pugh and MELD scoring systems</li><li>[ ] Identify aetiological classification</li><li>[ ] Identify FCPS/MRCP high-yield definitions and thresholds</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Chronic Liver Disease (CLD)</div>
+<div class="callout"><b>Histological Definition</b>: <b>Fibrosis</b> (any stage) with or without cirrhosis, persisting &gt;6 months <b>Clinical Definition</b>: Persistent hepatic injury (biochemical, radiological, or histological) &gt;6 months</div>
+<div class="sub-h">Cirrhosis</div>
+<div class="callout"><b>Histological Definition</b>: <b>Diffuse fibrosis</b> with <b>nodular regeneration</b> distorting hepatic architecture <b>Key Features</b>: - <b>Bridging Fibrosis</b> connecting portal tracts - <b>Regenerative Nodules</b> (surrounded by fibrosis) - <b>Architectural Distortion</b> (vascular, biliary) - <b>Irreversible</b> (though regression possible with treatment of cause)</div>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Cirrhosis = End-stage of Chronic Liver Disease</b> — Not all CLD progresses to cirrhosis</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiological Classification</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Cirrhosis Aetiology] --&gt; B[Alcohol]
+    A --&gt; C[Viral: HBV, HCV]
+    A --&gt; D[Metabolic: NAFLD/NASH]
+    A --&gt; E[Autoimmune: AIH, PBC, PSC]
+    A --&gt; F[Genetic: Wilson, Haemochromatosis, Alpha-1 AT]
+    A --&gt; G[Drug-Induced]
+    A --&gt; H[Cardiac: Chronic CHF, Budd-Chiari]
+    A --&gt; I[Cryptogenic: No Identifiable Cause]</code></pre>
+<table class="ctable"><tr><th>Aetiology</th><th>Global Prevalence</th><th>Regional Variation</th></tr><tr><td>-----------</td><td>-------------------</td><td>--------------------</td></tr><tr><td>**Alcohol**</td><td>~25-30%</td><td>High in Europe, West</td></tr><tr><td>**HCV**</td><td>~20-25%</td><td>High in Egypt, Pakistan</td></tr><tr><td>**HBV**</td><td>~15-20%</td><td>High in Asia, Africa</td></tr><tr><td>**NAFLD/NASH**</td><td>**Rapidly Rising** (15-20%)</td><td>West, Urban Asia</td></tr><tr><td>**AIH/PBC/PSC**</td><td>5-10%</td><td>Women (AIH/PBC), Men (PSC)</td></tr><tr><td>**Genetic**</td><td>1-5%</td><td>Wilson (Young), Haemochromatosis (Celtic)</td></tr><tr><td>**Cryptogenic**</td><td>10-15%</td><td>Now Often Reclassified as NASH</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Compensated vs Decompensated Cirrhosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**Compensated**</th><th>**Decompensated**</th></tr><tr><td>---------</td><td>-----------------</td><td>-------------------</td></tr><tr><td>**Ascites**</td><td>Absent</td><td>**Present**</td></tr><tr><td>**Variceal Bleed**</td><td>Never</td><td>**Occurred**</td></tr><tr><td>**Hepatic Encephalopathy**</td><td>Never</td><td>**Occurred**</td></tr><tr><td>**Jaundice**</td><td>Absent/Mild</td><td>**Present (Bilirubin >2-3 mg/dL)**</td></tr><tr><td>**Synthetic Function**</td><td>Preserved (INR Normal)</td><td>**Impaired (INR >1.5, Low Albumin)**</td></tr><tr><td>**Portal Pressure (HVPG)**</td><td>**≥10 mmHg** (CSPH)</td><td>**≥12 mmHg** (Variceal Risk)</td></tr><tr><td>**Median Survival**</td><td>**12+ Years**</td><td>**2-5 Years** (Without Transplant)</td></tr><tr><td>**Transplant Indication**</td><td>Not Urgent</td><td>**Urgent (MELD ≥15)**</td></tr></table>
+<div class="callout"><b>Key Transition</b>: <b>First Decompensation Event</b> (Ascites/Bleed/HE/Jaundice) = Shift to Decompensated</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Child-Pugh Score</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>1 Point</th><th>2 Points</th><th>3 Points</th></tr><tr><td>-----------</td><td>---------</td><td>----------</td><td>----------</td></tr><tr><td>**Bilirubin (μmol/L)**</td><td><34</td><td>34-50</td><td>>50</td></tr><tr><td>**Albumin (g/L)**</td><td>>35</td><td>28-35</td><td><28</td></tr><tr><td>**INR**</td><td><1.7</td><td>1.7-2.3</td><td>>2.3</td></tr><tr><td>**Ascites**</td><td>None</td><td>Mild/Controlled</td><td>Refractory</td></tr><tr><td>**Encephalopathy**</td><td>None</td><td>Grade 1-2</td><td>Grade 3-4</td></tr></table>
+<table class="ctable"><tr><th>Class</th><th>Score</th><th>1-Year Survival</th><th>2-Year Survival</th></tr><tr><td>-------</td><td>-------</td><td>-----------------</td><td>-----------------</td></tr><tr><td>**A**</td><td>5-6</td><td>100%</td><td>85%</td></tr><tr><td>**B**</td><td>7-9</td><td>80%</td><td>60%</td></tr><tr><td>**C**</td><td>10-15</td><td>45%</td><td>35%</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Child A</b> = Well-Compensated; <b>Child B</b> = Moderate; <b>Child C</b> = Decompensated/High Risk</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">MELD Score</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Original MELD</div>
+<p>``<code> MELD = 3.78 × ln(Bilirubin mg/dL) + 11.2 × ln(INR) + 9.57 × ln(Creatinine mg/dL) + 6.43 </code>``</p>
+<ul><li><b>Bilirubin, INR, Creatinine</b>: Capped at 4.0 (Min 1.0)</li><li><b>Dialysis</b>: Creatinine = 4.0</li></ul>
+<div class="sub-h">MELD-Na (Current Standard)</div>
+<p>``<code> MELD-Na = MELD + 1.32 × (137 - Na) - [0.033 × MELD × (137 - Na)] </code>``</p>
+<ul><li><b>Na Capped</b>: 125-137 mmol/L</li><li><b>Range</b>: 6-40 (Higher = Sicker)</li></ul>
+<table class="ctable"><tr><th>MELD Range</th><th>3-Month Mortality</th><th>Transplant Priority</th></tr><tr><td>------------</td><td>-------------------</td><td>---------------------</td></tr><tr><td>**6-9**</td><td><5%</td><td>Low</td></tr><tr><td>**10-19**</td><td>5-15%</td><td>Moderate</td></tr><tr><td>**20-29**</td><td>20-50%</td><td>High</td></tr><tr><td>**30-39**</td><td>50-75%</td><td>Very High</td></tr><tr><td>**40**</td><td>>75%</td><td>Highest</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>MELD ≥15</b> = Transplant Referral Threshold; <b>MELD-Na</b> Replaced Original MELD</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">BCLC Staging for HCC in Cirrhosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Tumour</th><th>Liver Function</th><th>PS</th><th>Treatment</th></tr><tr><td>-------</td><td>--------</td><td>----------------</td><td>----</td><td>-----------</td></tr><tr><td>**0**</td><td>Single <2cm</td><td>Child A</td><td>0</td><td>Ablation/Resection</td></tr><tr><td>**A**</td><td>Single or ≤3 ≤3cm</td><td>Child A/B</td><td>0</td><td>Resection/Ablation/Transplant</td></tr><tr><td>**B**</td><td>Multinodular</td><td>Child A/B</td><td>0</td><td>TACE</td></tr><tr><td>**C**</td><td>Vascular Invasion/Extrahepatic</td><td>Child A/B</td><td>1-2</td><td>Systemic (Sorafenib/Lenvatinib/Atezo-Bev)</td></tr><tr><td>**D**</td><td>Any</td><td>**Child C**</td><td>3-4</td><td>Best Supportive Care</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Aetiology-Specific Cirrhosis Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aetiology</th><th>Typical Features</th></tr><tr><td>-----------</td><td>------------------</td></tr><tr><td>**Alcohol**</td><td>AST:ALT >2, Macrocytosis, GGT↑, Pancreatitis</td></tr><tr><td>**HCV**</td><td>Cryoglobulinaemia, Lymphoproliferative, HCC High Risk</td></tr><tr><td>**HBV**</td><td>HBeAg Status, Reactivation Risk, HCC (Even Non-Cirrhotic)</td></tr><tr><td>**NAFLD**</td><td>Metabolic Syndrome, T2DM, Obesity, HCC (Even Non-Cirrhotic)</td></tr><tr><td>**AIH**</td><td>High IgG, Autoantibodies, Steroid Responsive</td></tr><tr><td>**PBC**</td><td>AMA+, Cholestatic (ALP↑), Pruritus, Osteoporosis</td></tr><tr><td>**PSC**</td><td>IBD (UC>Crohn), MRCP Beading, CCA Risk</td></tr><tr><td>**Wilson**</td><td>Young, Neuro/Psych, Low Ceruloplasmin, KF Rings</td></tr><tr><td>**Haemochromatosis**</td><td>Ferritin↑, TSAT>45%, C282Y, Diabetes, Cardiomyopathy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Cirrhosis Definition**</td><td>Diffuse Fibrosis + Nodules + Architectural Distortion</td></tr><tr><td>**Compensated vs Decompensated**</td><td>Decompensated = Ascites/Bleed/HE/Jaundice</td></tr><tr><td>**Child-Pugh**</td><td>5 Parameters (Bil, Alb, INR, Ascites, HE); A:5-6, B:7-9, C:10-15</td></tr><tr><td>**MELD**</td><td>Bil, INR, Cr (+ Na for MELD-Na); Range 6-40</td></tr><tr><td>**Transplant Threshold**</td><td>MELD ≥15 (or Child B/C with Complications)</td></tr><tr><td>**1-Year Survival**</td><td>Child A: 100%, B: 80%, C: 45%</td></tr><tr><td>**Decompensation Events**</td><td>Ascites, Variceal Bleed, HE, Jaundice</td></tr><tr><td>**HCC Surveillance**</td><td>Cirrhosis: 6m US ± AFP (All Aetiologies)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define cirrhosis histologically.</b></li><li><b>Differentiate compensated vs decompensated cirrhosis.</b></li><li><b>What are the components of Child-Pugh score?</b></li><li><b>What is MELD score? How is MELD-Na different?</b></li><li><b>What is the transplant referral threshold for MELD?</b></li><li><b>Differentiate Child A, B, C by survival.</b></li><li><b>What are the 4 decompensation events?</b></li><li><b>How does MELD-Na differ from original MELD?</b></li><li><b>What is the Child-Pugh score for albumin &lt;28 g/L?</b></li><li><b>What is the MELD score if patient on dialysis?</b></li><li><b>How does decompensation affect transplant urgency?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Compensated vs Decompensated</td><td>**Decompensated = Ascites/Bleed/HE/Jaundice** (Any One)</td></tr><tr><td>Child-Pugh vs MELD</td><td>Child-Pugh: Clinical, Categorical; MELD: Objective, Continuous, Allocation</td></tr><tr><td>MELD vs MELD-Na</td><td>MELD-Na Adds Sodium (Better Prognostication, Especially Low Na)</td></tr><tr><td>Child C vs Decompensated</td><td>**All Child C = Decompensated**; But **Decompensated Can Be Child B** (Early)</td></tr><tr><td>MELD in Dialysis</td><td>Creatinine Set to 4.0 (Maximum)</td></tr><tr><td>Decompensation Survival</td><td>**Median 2-5 Years** Without Transplant</td></tr><tr><td>HCC Surveillance</td><td>**ALL Cirrhosis** = 6m US ± AFP (Regardless of Aetiology)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Chronic Liver Disease &amp; Cirrhosis))
+    Definitions
+      CLD: &gt;6 Months Injury
+      Cirrhosis: Fibrosis + Nodules + Distortion
+    Compensated vs Decompensated
+      Compensated: No Ascites/Bleed/HE/Jaundice
+      Decompensated: Any 1 of Above
+      Events: Ascites, Bleed, HE, Jaundice
+    Scoring
+      Child-Pugh: Bil, Alb, INR, Ascites, HE (5-15)
+      MELD: Bil, INR, Cr, Na (6-40)
+      MELD-Na: Current Standard
+    Classes
+      Child A: 5-6 (Survival 100% 1yr)
+      Child B: 7-9 (Survival 80% 1yr)
+      Child C: 10-15 (Survival 45% 1yr)
+    Transplant
+      MELD &gt;=15 = Referral
+      Decompensated = Urgent
+    Survival
+      Compensated: 12+ Years
+      Decompensated: 2-5 Years (No Tx)</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Cirrhosis**</th><th>**Definition**</th></tr><tr><td>---------------</td><td>----------------</td></tr><tr><td>Histological</td><td>Diffuse Fibrosis + Regenerative Nodules + Architectural Distortion</td></tr><tr><td>Clinical</td><td>End-Stage CLD with/without Decompensation</td></tr></table>
+<table class="ctable"><tr><th>**Compensated**</th><th>**Decompensated**</th></tr><tr><td>-----------------</td><td>-------------------</td></tr><tr><td>No Ascites</td><td>Ascites</td></tr><tr><td>No Variceal Bleed</td><td>Variceal Bleed</td></tr><tr><td>No HE</td><td>Hepatic Encephalopathy</td></tr><tr><td>No Jaundice</td><td>Jaundice</td></tr><tr><td>Survival 12+ Years</td><td>Survival 2-5 Years (No Tx)</td></tr></table>
+<table class="ctable"><tr><th>**Child-Pugh**</th><th>**1 Pt**</th><th>**2 Pts**</th><th>**3 Pts**</th></tr><tr><td>----------------</td><td>----------</td><td>-----------</td><td>-----------</td></tr><tr><td>Bilirubin</td><td><34</td><td>34-50</td><td>>50</td></tr><tr><td>Albumin</td><td>>35</td><td>28-35</td><td><28</td></tr><tr><td>INR</td><td><1.7</td><td>1.7-2.3</td><td>>2.3</td></tr><tr><td>Ascites</td><td>None</td><td>Mild</td><td>Refractory</td></tr><tr><td>HE</td><td>None</td><td>G1-2</td><td>G3-4</td></tr></table>
+<table class="ctable"><tr><th>**Class**</th><th>**Score**</th><th>**1-Yr Survival**</th></tr><tr><td>-----------</td><td>-----------</td><td>-------------------</td></tr><tr><td>A</td><td>5-6</td><td>100%</td></tr><tr><td>B</td><td>7-9</td><td>80%</td></tr><tr><td>C</td><td>10-15</td><td>45%</td></tr></table>
+<table class="ctable"><tr><th>**MELD**</th><th>**Formula**</th><th>**Range**</th><th>**Tx Threshold**</th></tr><tr><td>----------</td><td>-------------</td><td>-----------</td><td>------------------</td></tr><tr><td>Original</td><td>3.78ln(Bil)+11.2ln(INR)+9.57ln(Cr)+6.43</td><td>6-40</td><td>≥15</td></tr><tr><td>MELD-Na</td><td>MELD + 1.32(137-Na) - 0.033×MELD×(137-Na)</td><td>6-40</td><td>≥15</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>Cirrhosis Definition</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Compensated vs Decompensated</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Child-Pugh Components</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>MELD Formula</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Tx Threshold MELD≥15</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>Cirrhosis Histology</td><td></td><td></td></tr><tr><td>Compensated vs Decompensated</td><td></td><td></td></tr><tr><td>Child-Pugh 5 Components</td><td></td><td></td></tr><tr><td>MELD Formula</td><td></td><td></td></tr><tr><td>Tx Threshold</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Chronic Liver Disease and Cirrhosis/Compensated vs decompensated cirrhosis|Compensated vs Decompensated]]</li><li>[[Chronic Liver Disease and Cirrhosis/Child-Pugh and MELD scores|Child-Pugh &amp; MELD]]</li><li>[[Portal Hypertension and Complications/Ascites|Ascites]]</li><li>[[Portal Hypertension and Complications/Varices|Varices]]</li><li>[[Liver Transplantation/Liver Transplantation|Liver Transplant]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Definition and classification · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

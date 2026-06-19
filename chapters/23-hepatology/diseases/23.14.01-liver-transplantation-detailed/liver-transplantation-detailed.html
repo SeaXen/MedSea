@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Liver Transplantation Detailed — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Liver Transplantation Detailed</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] List <b>indications for liver transplant</b> (MELD ≥15, ALF, HCC Milan, metabolic)</li><li>[ ] Apply <b>absolute and relative contraindications</b></li><li>[ ] Understand <b>MELD-based allocation</b> and <b>exception points</b> (HCC, HPS, PoPH)</li><li>[ ] Perform <b>pre-transplant assessment</b> (cardiac, pulmonary, renal, malignancy, psychosocial)</li><li>[ ] Manage <b>post-transplant complications</b>: vascular, biliary, rejection, infection, recurrence</li><li>[ ] Select <b>immunosuppression regimen</b> (CNI-based, mTOR, steroid-free)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Indications for Liver Transplant</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MELD-Based (Chronic Liver Disease)</div>
+<table class="ctable"><tr><th>Indication</th><th>Criteria</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**Decompensated Cirrhosis**</td><td>**MELD ≥15** (or MELD-Na ≥15)</td></tr><tr><td>**Recurrent Decompensation**</td><td>≥2 episodes of ascites/variceal bleed/HE in 6 months</td></tr><tr><td>**Refractory Ascites**</td><td>Requiring LVP ≥q2weeks despite diuretics</td></tr><tr><td>**Recurrent SBP**</td><td>≥2 episodes despite prophylaxis</td></tr><tr><td>**Hepatorenal Syndrome**</td><td>HRS-AKI unresponsive to terlipressin</td></tr><tr><td>**Hepatic Encephalopathy**</td><td>Recurrent Grade II-IV despite maximal therapy</td></tr><tr><td>**Portal Hypertensive Complication**</td><td>Gastric variceal bleed, portal hypertensive gastropathy bleed</td></tr></table>
+<div class="sub-h">Acute Liver Failure (Super-Urgent)</div>
+<table class="ctable"><tr><th>Indication</th><th>Criteria</th></tr><tr><td>------------</td><td>----------</td></tr><tr><td>**King's College Criteria**</td><td>Met (pH <7.3 or PT>100s + Cr>300 + Grade III/IV HE)</td></tr><tr><td>**CLIF-C ACLF Grade 3**</td><td>≥3 organ failures</td></tr><tr><td>**Lactic Acidosis**</td><td>Lactate >3.5 mmol/L post-resuscitation</td></tr><tr><td>**Aetiology-specific**: Wilson disease, AFLP, AIH presenting as ALF</td><td>Any</td></tr></table>
+<div class="sub-h">HCC (Milan / Up-to-Seven Criteria)</div>
+<table class="ctable"><tr><th>Criteria</th><th>Eligible</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**Milan**</td><td>Single ≤5cm **OR** ≤3 nodules ≤3cm, **no vascular invasion**, **no extrahepatic spread**</td></tr><tr><td>**Up-to-Seven**</td><td>**Number of tumours + largest diameter (cm) ≤7** (expanded in some centres)</td></tr></table>
+<div class="callout"><b>Exception Points</b>: HCC within Milan = <b>MELD 22</b> (UK); increases every 3 months</div>
+<div class="sub-h">Cholestatic / Metabolic / Genetic</div>
+<table class="ctable"><tr><th>Indication</th><th>Specific Criteria</th></tr><tr><td>------------</td><td>-------------------</td></tr><tr><td>**PBC / PSC**</td><td>UDCA failure (PBC), recurrent cholangitis/unresectable CCA (PSC), MELD ≥15</td></tr><tr><td>**Autoimmune Hepatitis**</td><td>Steroid/azathioprine failure, decompensation, or cirrhosis</td></tr><tr><td>**Wilson Disease**</td><td>**ALF** OR **decompensated cirrhosis** (neuro deterioration despite chelation)</td></tr><tr><td>**Alpha-1 Antitrypsin Deficiency**</td><td>Decompensated cirrhosis</td></tr><tr><td>**Haemochromatosis**</td><td>Decompensated cirrhosis</td></tr><tr><td>**Cystic Fibrosis**</td><td>Decompensated cirrhosis + severe lung disease (combined transplant)</td></tr><tr><td>**Familial Amyloid Polyneuropathy**</td><td>Standard indication</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Contraindications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Contraindication</th></tr><tr><td>------</td><td>------------------</td></tr><tr><td>**Absolute**</td><td>**Active untreated sepsis**, **Extrahepatic malignancy** (except cured >5yr), **Active substance abuse** (alcohol <6mo abstinence), **Severe cardiopulmonary disease** (not correctable), **Uncontrolled sepsis**, **HIV with AIDS-defining illness**, **Anatomic anomaly** (precluding transplant), **Non-compliance** (documented)</td></tr><tr><td>**Relative**</td><td>**Age >70** (individualised), **Portal vein thrombosis** (grade determines feasibility), **HIV (controlled, CD4>200)**, **Obesity BMI>40**, **Severe malnutrition**, **Active smoking**, **Psychiatric instability**, **Limited social support**, **Age >65** (for some centres)</td></tr></table>
+<div class="callout"><b>Alcohol-related liver disease</b>: <b>6-month abstinence rule</b> (UK) + addiction psychiatry assessment + social work</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">MELD-Based Allocation (UK)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MELD Score Calculation</div>
+<p><b>MELD = 3.78 × ln(bilirubin mg/dL) + 11.2 × ln(INR) + 9.57 × ln(creatinine mg/dL) + 6.43</b></p>
+<p><b>MELD-Na = MELD + 1.32 × (137 - Na) - [0.033 × MELD × (137 - Na)]</b> (Na 125-137)</p>
+<table class="ctable"><tr><th>Parameter</th><th>Cap</th></tr><tr><td>-----------</td><td>-----</td></tr><tr><td>**Bilirubin**</td><td>No cap</td></tr><tr><td>**INR**</td><td>No cap</td></tr><tr><td>**Creatinine**</td><td>**Capped at 4.0 mg/dL** (if on dialysis = 4.0)</td></tr><tr><td>**Sodium**</td><td>Capped 125-137 mmol/L</td></tr></table>
+<div class="sub-h">Exception Points (UK)</div>
+<table class="ctable"><tr><th>Condition</th><th>Exception MELD</th></tr><tr><td>-----------</td><td>----------------</td></tr><tr><td>**HCC within Milan**</td><td>**22** (increases by 3 points every 3 months)</td></tr><tr><td>**HPS (PaO₂ <60mmHg)**</td><td>**22**</td></tr><tr><td>**PoPH (mPAP >35 on RHC)**</td><td>**22**</td></tr><tr><td>**Familial Amyloid Polyneuropathy**</td><td>22</td></tr><tr><td>**Primary Oxaluria**</td><td>22</td></tr><tr><td>**Recurrent Cholangitis (PSC)**</td><td>Case-by-case</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Pre-Transplant Assessment</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Assessment</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Cardiac**</td><td>**Echocardiography** (EF, wall motion), **Stress test/Dobutamine echo** if >50 or risk factors, **Coronary angiography** if positive stress test / high risk</td></tr><tr><td>**Pulmonary**</td><td>**Chest X-ray**, **Spirometry**, **ABG**, **CT Chest** (if suspicion), **Right Heart Catheter** if PoPH suspected</td></tr><tr><td>**Renal**</td><td>**eGFR**, **Urine protein**, **Ultrasound** (native kidneys); consider **Combined liver-kidney** if eGFR<30 or dialysis >8 weeks</td></tr><tr><td>**Malignancy**</td><td>**CT CAP**, **Colonoscopy** (if >50 or risk factors), **Mammography** (women), **PSA** (men), **Dermatology review** (PSC)</td></tr><tr><td>**Infection**</td><td>**HBV/HIV/HCV/CMV/EBV/VZV/HSV serology**, **TB screening** (Quantiferon/TST), **Strongyloides** (if endemic travel)</td></tr><tr><td>**Bone Health**</td><td>**DEXA scan**, Calcium/Vit D if osteoporotic</td></tr><tr><td>**Nutritional**</td><td>**SGA/MUST**, **Sarcopenia assessment** (CT L3 psoas index)</td></tr><tr><td>**Psychosocial**</td><td>**Psychiatry review** (alcohol, mental health), **Social work** (support, housing, finances), **Compliance history**</td></tr><tr><td>**Vaccinations**</td><td>**Seasonal flu, Pneumococcal (PCV23), Hepatitis A/B** (pre-transplant); **Live vaccines CONTRAINDICATED post-transplant**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Post-Transplant Complications</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Timeline</div>
+<table class="ctable"><tr><th>Period</th><th>Complications</th></tr><tr><td>--------</td><td>---------------</td></tr><tr><td>**Early (0-30 days)**</td><td>Primary non-function, **Hepatic artery thrombosis (HAT)**, **Portal vein thrombosis**, **Biliary leak/stricture**, **Rejection (acute cellular)**, **Infection** (bacterial, fungal, CMV), **Renal dysfunction**</td></tr><tr><td>**Intermediate (1-12 months)**</td><td>**Acute cellular rejection**, **Chronic rejection**, **CMV/EBV infection**, **Biliary strictures**, **Recurrent disease** (HCV, HBV, AIH, PBC, PSC), **De novo malignancy** (PTLD, skin)</td></tr><tr><td>**Late (>1 year)**</td><td>**Chronic rejection**, **Metabolic syndrome** (diabetes, HTN, dyslipidaemia), **Renal failure** (CNI nephrotoxicity), **Cardiovascular disease**, **De novo malignancy** (skin, PTLD, solid tumours), **Recurrent disease**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Key Complications Detail</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Hepatic Artery Thrombosis (HAT) — **Most Devastating Early Complication**</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>**3-8%** (higher in living donor/paediatric)</td></tr><tr><td>**Presentation**</td><td>**Sudden ALT/AST rise >1000**, biliary leak/stricture (liver infarcts), sepsis, fever</td></tr><tr><td>**Diagnosis**</td><td>**Doppler US (absent HA flow)**, **CTA/MR angiography**</td></tr><tr><td>**Management**</td><td>**Emergent re-exploration / thrombectomy** (if <24h); **Retransplant** if failed/liver infarct</td></tr></table>
+<div class="sub-h">Biliary Complications</div>
+<table class="ctable"><tr><th>Type</th><th>Incidence</th><th>Management</th></tr><tr><td>------</td><td>-----------</td><td>------------</td></tr><tr><td>**Biliary Leak**</td><td>**10-20%** (early)</td><td>**ERCP + stent** (primary); surgery if failed</td></tr><tr><td>**Anastomotic Stricture**</td><td>**5-15%** (late)</td><td>**ERCP + dilation/stenting** (balloon); surgical revision if failed</td></tr><tr><td>**Non-anastomotic (Ischemic)**</td><td>**5-10%** (HAT-related, ABO-incompatible)</td><td>**Multiple strictures**; ERCP dilation/stenting; **Retransplant** if diffuse</td></tr></table>
+<div class="sub-h">Rejection</div>
+<table class="ctable"><tr><th>Type</th><th>Timing</th><th>Histology</th><th>Treatment</th></tr><tr><td>------</td><td>--------</td><td>-----------</td><td>-----------</td></tr><tr><td>**Acute Cellular Rejection (ACR)**</td><td>**1-12 months** (peak 2-8wks)</td><td>Portal inflammation, bile duct damage, endothelialitis</td><td>**Methylprednisolone 500mg-1g IV ×3d** → oral taper; **Optimize CNI**</td></tr><tr><td>**Chronic Rejection**</td><td>**>1 year**</td><td>**Ductopenia**, arteriopathy, fibrosis</td><td>**Optimize CNI**, **Switch to mTOR**, **Retransplant** if ductopenia >50%</td></tr></table>
+<div class="sub-h">Recurrent Disease</div>
+<table class="ctable"><tr><th>Disease</th><th>Recurrence Rate</th><th>Surveillance</th><th>Treatment</th></tr></table>
+<p><i>...continued (truncated for renderer performance)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Liver Transplantation Detailed · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

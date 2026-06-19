@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portal Hypertension and Complications — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Portal Hypertension and Complications</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify cirrhosis (compensated vs decompensated) and apply <b>Child-Pugh</b> and <b>MELD/MELD-Na</b> scores</li><li>[ ] Diagnose and manage <b>ascites</b> (SAAG, SBP prophylaxis/treatment, refractory ascites, TIPS)</li><li>[ ] Apply <b>variceal bleed protocol</b>: vasoactives → antibiotics → endoscopy → TIPS</li><li>[ ] Grade <b>hepatic encephalopathy</b> (West Haven) and manage (lactulose, rifaximin)</li><li>[ ] Diagnose and manage <b>HRS-AKI vs HRS-CKD</b> (terlipressin + albumin, TIPS)</li><li>[ ] Recognise <b>HPS</b> and <b>portopulmonary hypertension</b></li><li>[ ] Apply <b>primary/secondary prophylaxis</b> for varices (NSBB vs EVL)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Definition & Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Definition</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Compensated Cirrhosis**</td><td>No history of ascites, variceal bleed, hepatic encephalopathy, jaundice</td></tr><tr><td>**Decompensated Cirrhosis**</td><td>**Ascites** OR **variceal bleed** OR **hepatic encephalopathy** OR **jaundice** (bilirubin >35 µmol/L)</td></tr></table>
+<div class="sub-h">Child-Pugh Score</div>
+<table class="ctable"><tr><th>Parameter</th><th>1 Point</th><th>2 Points</th><th>3 Points</th></tr><tr><td>-----------</td><td>---------</td><td>----------</td><td>----------</td></tr><tr><td>**Bilirubin (µmol/L)**</td><td><34</td><td>34-50</td><td>>50</td></tr><tr><td>**Albumin (g/L)**</td><td>>35</td><td>28-35</td><td><28</td></tr><tr><td>**INR**</td><td><1.7</td><td>1.7-2.3</td><td>>2.3</td></tr><tr><td>**Ascites**</td><td>None</td><td>Mild/controlled</td><td>Tense/refractory</td></tr><tr><td>**Hepatic Encephalopathy**</td><td>None</td><td>Grade I-II</td><td>Grade III-IV</td></tr></table>
+<table class="ctable"><tr><th>Class</th><th>Score</th><th>1-Year Survival</th><th>2-Year Survival</th></tr><tr><td>-------</td><td>-------</td><td>-----------------</td><td>-----------------</td></tr><tr><td>**A**</td><td>5-6</td><td>100%</td><td>85%</td></tr><tr><td>**B**</td><td>7-9</td><td>80%</td><td>60%</td></tr><tr><td>**C**</td><td>10-15</td><td>45%</td><td>35%</td></tr></table>
+<div class="sub-h">MELD / MELD-Na Score</div>
+<p><b>MELD = 3.78 × ln(bilirubin mg/dL) + 11.2 × ln(INR) + 9.57 × ln(creatinine mg/dL) + 6.43</b></p>
+<p><b>MELD-Na = MELD + 1.32 × (137 - Na) - [0.033 × MELD × (137 - Na)]</b> (Na capped 125-137)</p>
+<table class="ctable"><tr><th>MELD Score</th><th>3-Month Mortality</th><th>Transplant Priority</th></tr><tr><td>------------</td><td>-------------------</td><td>-------------------</td></tr><tr><td><10</td><td><5%</td><td>Low</td></tr><tr><td>10-19</td><td>6-20%</td><td>Moderate</td></tr><tr><td>20-29</td><td>20-50%</td><td>High</td></tr><tr><td>30-39</td><td>50-75%</td><td>Very high</td></tr><tr><td>≥40</td><td>>75%</td><td>Urgent</td></tr></table>
+<div class="callout"><b>Key</b>: MELD-Na used for transplant allocation (UK); creatinine capped at 4.0; dialysis = 4.0</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Ascites</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Diagnosis &amp; SAAG</div>
+<table class="ctable"><tr><th>Test</th><th>Value</th><th>Interpretation</th></tr><tr><td>------</td><td>-------</td><td>----------------</td></tr><tr><td>**SAAG** (Serum-Ascites Albumin Gradient)</td><td>**≥11 g/L**</td><td>**Portal hypertension** (cirrhosis, cardiac, Budd-Chiari)</td></tr><tr><td></td><td>**<11 g/L**</td><td>**Non-portal hypertension** (peritoneal carcinomatosis, TB, pancreatitis, nephrotic)</td></tr><tr><td>**Ascitic Protein**</td><td>**>25 g/L**</td><td>Exudate (in SBP context: <15 g/L = high SBP risk)</td></tr><tr><td>**Polymorphs (PMNs)**</td><td>**≥250 cells/mm³**</td><td>**SBP diagnosis**</td></tr></table>
+<div class="sub-h">Ascites Management Algorithm</div>
+<pre class="codeblock"><code>flowchart TD
+    A[New Ascites] --&gt; B{SAAG}
+    B --&gt;|≥11 g/L| C[Portal HTN Ascites]
+    B --&gt;|&lt;11 g/L| D[Non-portal: Malignancy, TB, Pancreatitis, Nephrotic]
+    C --&gt; E[Diagnostic Paracentesis: Cell count, culture, protein]
+    E --&gt; F{PMNs ≥250?}
+    F --&gt;|Yes| G[SBP: IV Ceftriaxone 2g OD + Albumin 1.5g/kg D1 + 1g/kg D3]
+    F --&gt;|No| H[Therapeutic Paracentesis if tense + Diuretics]
+    H --&gt; I[Diuretics: Spironolactone 100mg + Furosemide 40mg OD → titrate]
+    I --&gt; J{Response}
+    J --&gt;|Yes| K[Maintenance diuretics + 6-monthly surveillance]
+    J --&gt;|No/Refractory| L[Large-volume paracentesis + Albumin 8g/L removed]
+    L --&gt; M[Consider TIPS / Transplant referral]</code></pre>
+<div class="sub-h">Diuretic Regimen (Standard)</div>
+<table class="ctable"><tr><th>Drug</th><th>Starting Dose</th><th>Max Dose</th><th>Ratio</th><th>Monitoring</th></tr><tr><td>------</td><td>---------------</td><td>----------</td><td>-------</td><td>------------</td></tr><tr><td>**Spironolactone**</td><td>100 mg OD</td><td>400 mg OD</td><td>**100:40** (Spironolactone:Furosemide)</td><td>K+, Cr, Na, weight, urine output</td></tr><tr><td>**Furosemide**</td><td>40 mg OD</td><td>160 mg OD</td><td></td><td>K+, Cr, Na, weight</td></tr></table>
+<div class="callout"><b>Refractory Ascites</b> = No response to 400mg spironolactone + 160mg furosemide OR early recurrence after paracentesis OR diuretic-induced complications</div>
+<div class="sub-h">SBP Prophylaxis</div>
+<table class="ctable"><tr><th>Indication</th><th>Regimen</th></tr><tr><td>------------</td><td>---------</td></tr><tr><td>**Prior SBP**</td><td>**Norfloxacin 400mg OD** lifelong</td></tr><tr><td>**Ascitic protein <15 g/L + Child-Pugh ≥9 or renal impairment**</td><td>**Norfloxacin 400mg OD** (primary prophylaxis)</td></tr><tr><td>**Active GI bleed**</td><td>**Ceftriaxone 1g IV OD** (7 days)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Variceal Bleeding</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Acute Variceal Bleed Protocol</div>
+<pre class="codeblock"><code>flowchart TD
+    A[Acute Variceal Bleed Suspected] --&gt; B[Resuscitation: Airway, IV access, bloods, crossmatch]
+    B --&gt; C[**Vasoactive Drug ASAP**: Terlipressin 2mg IV q4h OR Octreotide 50mcg bolus + 50mcg/h]
+    C --&gt; D[**Antibiotic Prophylaxis**: Ceftriaxone 1g IV OD ×7 days]
+    D --&gt; E[**Endoscopy within 12h** (ideally &lt;12h)]
+    E --&gt; F{Endoscopy Findings}
+    F --&gt;|Oesophageal Varices| G[**EVL (band ligation)** ± Sclerotherapy]
+    F --&gt;|Gastric Varices| H[**Cyanoacrylate glue injection**]
+    F --&gt;|No varices / Other source| I[Manage accordingly]
+    G --&gt; J{Bleeding Controlled?}
+    J --&gt;|Yes| K[**Secondary Prophylaxis**: NSBB + EVL]
+    J --&gt;|No/Rebleed| L[**Rescue TIPS** (early within 72h if Child B/C or HVPG &gt;20)]</code></pre>
+<div class="sub-h">Primary Prophylaxis (No prior bleed)</div>
+<table class="ctable"><tr><th>Patient</th><th>Recommended</th><th>Evidence</th></tr><tr><td>---------</td><td>-------------</td><td>----------</td></tr><tr><td>**Medium/Large varices** (F2/F3)</td><td>**NSBB (propranolol/ nadolol) to reduce HR by 25% or to 55-60 bpm** OR **EVL q2wks**</td><td>NSBB = EVL for bleed prevention; NSBB also reduces ascites/HE</td></tr><tr><td>**Small varices (F1) + red wale signs / Child C**</td><td>**NSBB**</td><td></td></tr><tr><td>**Small varices, no red signs, Child A/B**</td><td>**Surveillance endoscopy q2-3yrs**</td><td></td></tr></table>
+<div class="sub-h">Secondary Prophylaxis (Post-bleed)</div>
+<table class="ctable"><tr><th>Strategy</th><th>Regimen</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Combined (Preferred)**</td><td>**NSBB (propranolol/nadolol) + EVL q2-4wks until eradication**</td></tr><tr><td>**Alternative**</td><td>**EVL alone** (if NSBB contraindicated)</td></tr><tr><td>**HVPG-guided** (if available)</td><td>Target **HVPG <12 mmHg** or **≥20% reduction** from baseline</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Hepatic Encephalopathy (HE)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">West Haven Grading</div>
+<table class="ctable"><tr><th>Grade</th><th>Clinical Features</th></tr><tr><td>-------</td><td>-------------------</td></tr><tr><td>**Covert (Minimal)**</td><td>No overt symptoms; psychometric testing abnormal</td></tr></table>
+<p><i>...continued (truncated for renderer performance)</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Portal Hypertension and Complications · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

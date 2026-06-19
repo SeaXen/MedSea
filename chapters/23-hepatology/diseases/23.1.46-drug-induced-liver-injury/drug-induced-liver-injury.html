@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Drug-Induced Liver Injury — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Drug-Induced Liver Injury</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Classify <b>DILI</b>: <b>Intrinsic (dose-dependent, predictable)</b> vs <b>Idiosyncratic (unpredictable, immune-mediated)</b></li><li>[ ] Identify <b>injury patterns</b>: <b>Hepatocellular, Cholestatic, Mixed</b> (R-value)</li><li>[ ] Recognize <b>common culprit drugs</b> by pattern</li><li>[ ] Apply <b>RUCAM scoring</b> for causality assessment</li><li>[ ] Manage <b>paracetamol toxicity</b> (NAC regimen)</li><li>[ ] Apply <b>rechallenge principles</b> (when safe vs contraindicated)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Features</th><th>Examples</th></tr><tr><td>------</td><td>-----------</td><td>----------</td><td>----------</td></tr><tr><td>**Intrinsic (Type A)**</td><td>**Dose-dependent, predictable**, direct toxin/metabolite</td><td>**Reproducible**, short latency, dose-related</td><td>**Paracetamol**, Carbon tetrachloride, Amanita phalloides, Niacin (high dose)</td></tr><tr><td>**Idiosyncratic (Type B)**</td><td>**Unpredictable, immune-mediated** (hapten, P-i concept)</td><td>**Unpredictable**, variable latency (days-months), **not dose-related**, host factors (HLA, genetics)</td><td>**Anti-TB (isoniazid, rifampicin, pyrazinamide), antibiotics (co-amoxiclav, flucloxacillin), NSAIDs, ART, ICI**, herbals</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Injury Patterns (R-Value = ALT/ULN ÷ ALP/ULN)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Pattern</th><th>R-Value</th><th>ALT/ALP</th><th>Typical Drugs</th></tr><tr><td>---------</td><td>---------</td><td>---------</td><td>---------------</td></tr><tr><td>**Hepatocellular**</td><td>**R ≥5**</td><td>ALT ↑↑ > ALP</td><td>**Paracetamol**, Isoniazid, Valproate, Methotrexate, NIACIN, Halothane</td></tr><tr><td>**Cholestatic**</td><td>**R ≤2**</td><td>ALP ↑↑ > ALT</td><td>**Co-amoxiclav**, Flucloxacillin, **Erythromycin**, Chlorpromazine, **Azathioprine**, **Oral contraceptives**, Anabolic steroids</td></tr><tr><td>**Mixed**</td><td>**2 < R < 5**</td><td>Both ↑</td><td>**Anti-TB (rifampicin/pyrazinamide)**, **Amoxicillin-clavulanate**, **Carbamazepine**, **Phenytoin**, **Trimethoprim-sulfamethoxazole**, **Terfenadine**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Common Culprit Drugs by Pattern</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Hepatocellular (R ≥5)</div>
+<table class="ctable"><tr><th>Drug</th><th>Key Features</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**Paracetamol**</td><td>**Dose-dependent**; CYP2E1 → NAPQI → glutathione depletion → centrilobular necrosis; **NAC antidote**</td></tr><tr><td>**Isoniazid (INH)**</td><td>**Dose-independent idiosyncratic** but dose-related risk; latency 1-6 months; slow acetylator risk</td></tr><tr><td>**Valproate**</td><td>**Dose-related** (children <3y polytherapy); mitochondrial toxicity; **hyperammonaemic encephalopathy**</td></tr><tr><td>**Methotrexate**</td><td>**Dose-dependent** (cumulative); fibrosis/cirrhosis; monitor LFTs, FBC, albumin</td></tr><tr><td>**Niacin (High dose)**</td><td>**Sustained-release** > time-release; hepatotoxicity</td></tr></table>
+<div class="sub-h">Cholestatic (R ≤2)</div>
+<table class="ctable"><tr><th>Drug</th><th>Key Features</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**Co-amoxiclav**</td><td>**Most common cause** of antibiotic DILI; **latency 1-3 weeks**; typically cholestatic; **re-exposure = rapid recurrence**</td></tr><tr><td>**Flucloxacillin**</td><td>**Latency 2-4 weeks**; cholestatic; **elderly >50y** at higher risk; **re-exposure = rapid**</td></tr><tr><td>**Erythromycin (estolate)**</td><td>**Children/young adults**; cholestatic; **hypersensitivity**</td></tr><tr><td>**Chlorpromazine**</td><td>**Phenothiazine**; typically 2-4 weeks; **cholestatic + eosinophilia**; cross-reactivity with other phenothiazines</td></tr><tr><td>**Azathioprine/6-MP**</td><td>**Cholestatic**; rare; **NUDT15/TPMT** variants</td></tr><tr><td>**Oral Contraceptives**</td><td>**Oestrogen component**; benign cholestasis; **disappear after stopping**</td></tr></table>
+<div class="sub-h">Mixed (2 &lt; R &lt; 5)</div>
+<table class="ctable"><tr><th>Drug</th><th>Key Features</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**Anti-TB** (Rifampicin, Pyrazinamide, INH)</td><td>**Pyrazinamide** = most hepatotoxic; **Rifampicin** = cholestatic + enzyme inducer; **INH** = hepatocellular; monitor LFTs q2wks ×2mo then monthly</td></tr><tr><td>**Co-amoxiclav**</td><td>Often mixed; latency 1-3 weeks</td></tr><tr><td>**Carbamazepine**</td><td>**Hypersensitivity (DRESS)**; latency 2-8 weeks; **HLA-B*15:02** (Asians)</td></tr><tr><td>**Phenytoin**</td><td>**Hypersensitivity**; latency 2-8 weeks; **HLA-B*15:02**</td></tr><tr><td>**Trimethoprim-Sulfamethoxazole**</td><td>**Idiosyncratic**, latency 1-3 weeks; mixed/cholestatic</td></tr><tr><td>**Allopurinol**</td><td>**DRESS/Stevens-Johnson**; **HLA-B*58:01** (Asians); allopurinol hypersensitivity syndrome</td></tr></table>
+<div class="sub-h">Special Categories</div>
+<table class="ctable"><tr><th>Category</th><th>Key Drugs</th><th>Features</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>**Anti-TB**</td><td>Isoniazid, Rifampicin, Pyrazinamide, Ethambutol</td><td>Pyrazinamide most hepatotoxic; monitor LFTs baseline, q2wks×2mo, then monthly</td></tr><tr><td>**ART (HIV)**</td><td>NRTIs (steatosis, lactic acidosis), NNRTIs (nevirapine hypersensitivity), PIs (cholestatic)</td><td>**Nevirapine**: CD4>250 (women)/>400 (men) → avoid; **Efavirenz** preferred</td></tr><tr><td>**Immune Checkpoint Inhibitors (ICI)**</td><td>Anti-CTLA-4 (ipilimumab), Anti-PD-1 (pembrolizumab/nivolumab)</td><td>**Immune-mediated hepatitis**; **Grade 2 (ALT 3-5x): hold ICI + pred 0.5-1mg/kg**; **Grade 3-4 (ALT>5x): high-dose pred 1-2mg/kg + hold ICI**</td></tr><tr><td>**Herbal/Traditional**</td><td>**Germander, Chaparral, Kava, Skullcap, Pyrrolizidine alkaloids**</td><td>Often hepatocellular; under-reported</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">RUCAM (Roussel Uclaf Causality Assessment Method)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Score</th></tr><tr><td>--------</td><td>-------</td></tr><tr><td>**Time to onset**</td><td>+2 (5-90d), +1 (<5d or >90d hepatocellular; <5d or >90d cholestatic), -2 (incompatible)</td></tr><tr><td>**Course after cessation**</td><td>+3 (decrease ≥50% in 8d hepatocellular; 30d cholestatic), +1 (decrease ≥50% in 30d hepatocellular; 60d cholestatic), 0 (no info), -2 (increase)</td></tr><tr><td>**Risk factors**</td><td>+1 (Age ≥55), +1 (Alcohol), +1 (Pregnancy)</td></tr><tr><td>**Concomitant drugs**</td><td>-1 (none), 0 (incompatible timing), -2 (compatible timing, plausible)</td></tr><tr><td>**Non-drug causes excluded**</td><td>+2 (all excluded), +1 (6 main excluded), 0 (incomplete), -2 (not done)</td></tr><tr><td>**Previous info on drug**</td><td>+3 (well-known), +2 (limited), 0 (unknown), -1 (no hepatotoxicity)</td></tr><tr><td>**Rechallenge**</td><td>+3 (ALT ↑↑ on re-exposure), +2 (ALT ↑ only), 0 (no info), -2 (negative)</td></tr></table>
+<table class="ctable"><tr><th>Total Score</th><th>Causality</th></tr><tr><td>-------------</td><td>-----------</td></tr><tr><td>**≥8**</td><td>**Highly probable**</td></tr><tr><td>**6-7**</td><td>**Probable**</td></tr><tr><td>**3-5**</td><td>**Possible**</td></tr><tr><td>**1-2**</td><td>**Unlikely**</td></tr><tr><td>**≤0**</td><td>**Excluded**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Paracetamol Toxicity (Specific Management)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Toxic Dose</div>
+<table class="ctable"><tr><th>Population</th><th>Toxic Dose (single)</th></tr><tr><td>------------</td><td>---------------------</td></tr><tr><td>**Adult**</td><td>**>150 mg/kg** or **>7.5g**</td></tr><tr><td>**Child**</td><td>**>150 mg/kg**</td></tr><tr><td>**High-risk** (alcohol, fasting, CYP inducers)</td><td>**>75 mg/kg**</td></tr></table>
+<div class="sub-h">NAC Regimen (IV)</div>
+<table class="ctable"><tr><th>Phase</th><th>Dose</th><th>Volume</th><th>Duration</th></tr><tr><td>-------</td><td>------</td><td>--------</td><td>----------</td></tr><tr><td>**Loading**</td><td>**150 mg/kg**</td><td>200ml 5% glucose</td><td>1 hour</td></tr><tr><td>**Phase 2**</td><td>**50 mg/kg**</td><td>500ml 5% glucose</td><td>4 hours</td></tr><tr><td>**Phase 3**</td><td>**100 mg/kg**</td><td>1000ml 5% glucose</td><td>16 hours</td></tr><tr><td>**Total**</td><td>**300 mg/kg**</td><td></td><td>21 hours</td></tr></table>
+<div class="callout"><b>Continue NAC</b> if: INR &gt;1.3, ALT rising, encephalopathy, renal failure, or &lt;8h post-ingestion with nomogram above line.</div>
+<div class="sub-h">Paracetamol Nomogram (UK)</div>
+<ul><li><b>Treatment line</b>: 100 mg/L at 4h → 15 mg/L at 15h (log-linear)</li><li><b>High-risk line</b> (alcohol, fasting, inducers): <b>half treatment line</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Management Principles</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">General Approach</div>
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**1. Suspect DILI**</td><td>New LFT abnormality + drug exposure (prescribed/OTC/herbal)</td></tr><tr><td>**2. Exclude other causes**</td><td>Viral (A,B,C,E), autoimmune (AIH), biliary, ischaemic, alcohol, Wilson, malignancy</td></tr><tr><td>**3. Calculate R-value**</td><td>**R = (ALT/ULN) ÷ (ALP/ULN)** → Hepatocellular / Cholestatic / Mixed</td></tr><tr><td>**4. Apply RUCAM**</td><td>Score causality</td></tr><tr><td>**5. Stop suspected drug**</td><td>**Immediate withdrawal** (most important step)</td></tr><tr><td>**6. Supportive care**</td><td>Monitor LFTs, INR, bilirubin, glucose, signs of ALF</td></tr><tr><td>**7. Specific therapy**</td><td>**Paracetamol → NAC**; **ICI hepatitis** → steroids; **DRESS** → stop drug + prednisolone 1mg/kg</td></tr></table>
+<div class="sub-h">Rechallenge Principles</div>
+<table class="ctable"><tr><th>Scenario</th><th>Recommendation</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**Definite/Probable DILI (RUCAM ≥6)**</td><td>**NEVER** rechallenge (risk of fatal recurrence)</td></tr><tr><td>**Possible DILI (RUCAM 3-5)**</td><td>**Avoid if possible**; if essential, different drug class; monitor LFTs weekly</td></tr><tr><td>**Different drug, same class**</td><td>**Cross-reactivity possible** (e.g., co-amoxiclav → other penicillins; sulfonamides → other sulfonamides); **avoid**</td></tr><tr><td>**Essential drug, no alternative**</td><td>**Risk-benefit discussion**, specialist hepatology input, close LFT monitoring (weekly ×4wks, then monthly)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**DILI Classification**</td><td>**Intrinsic** (dose-dependent, e.g. paracetamol) vs **Idiosyncratic** (unpredictable, immune, e.g. co-amoxiclav, INH)</td></tr><tr><td>**R-Value Patterns**</td><td>**Hepatocellular (R≥5)**: Paracetamol, INH, valproate; **Cholestatic (R≤2)**: Co-amoxiclav, flucloxacillin, OCP; **Mixed (2<R<5)**: Anti-TB, carbamazepine</td></tr><tr><td>**RUCAM**</td><td>**≥8 Highly probable, 6-7 Probable, 3-5 Possible**</td></tr><tr><td>**Paracetamol**</td><td>**>150mg/kg (7.5g) toxic**; **NAC 150mg/kg/1h → 50mg/kg/4h → 100mg/kg/16h** (total 300mg/kg/21h)</td></tr><tr><td>**Co-amoxiclav/Flucloxacillin**</td><td>**Latency 1-3wks / 2-4wks**, cholestatic; **re-exposure = rapid recurrence**</td></tr><tr><td>**Anti-TB**</td><td>**Pyrazinamide most hepatotoxic**; monitor LFTs monthly ×2mo; **INH hepatocellular**, **Rifampicin cholestatic**</td></tr><tr><td>**ICI Hepatitis**</td><td>**Grade 2 (ALT 3-5x): Hold ICI + pred 0.5-1mg/kg**; **Grade 3-4 (ALT>5x): Pred 1-2mg/kg + hold ICI**</td></tr><tr><td>**Anti-TB Monitoring**</td><td>Baseline LFTs → q2wks ×2mo → monthly; stop if ALT >3xULN (symptomatic) or >5xULN (asymptomatic)</td></tr><tr><td>**VALPROATE**</td><td>Children <3y + polytherapy; **hyperammonaemic encephalopathy**</td></tr><tr><td>**Rechallenge**</td><td>**Definite/Probable DILI: NEVER**; Possible: avoid or different class</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Intrinsic vs Idiosyncratic DILI — Differences?**</td><td>**Intrinsic**: Dose-dependent, predictable, short latency (e.g., paracetamol); **Idiosyncratic**: Unpredictable, immune-mediated, variable latency, host factors (e.g., co-amoxiclav, INH).</td></tr><tr><td>**R-Value — Formula, Patterns, Cut-offs?**</td><td>**R = (ALT/ULN) ÷ (ALP/ULN)**; **Hepatocellular ≥5** (Paracetamol, INH); **Cholestatic ≤2** (Co-amoxiclav, Flucloxacillin); **Mixed 2-5** (Anti-TB, Carbamazepine).</td></tr><tr><td>**RUCAM — Components, Highly Probable Score?**</td><td>**Time to onset, Course after cessation, Risk factors, Concomitant drugs, Exclusion of other causes, Drug reputation, Rechallenge**; **≥8 = Highly Probable**.</td></tr><tr><td>**Paracetamol Toxicity — Toxic Dose, NAC Regimen?**</td><td>**>150mg/kg (7.5g adult)**; **NAC 150mg/kg/1h → 50mg/kg/4h → 100mg/kg/16h (300mg/kg/21h)**.</td></tr><tr><td>**Anti-TB Monitoring — When, What, When to Stop?**</td><td>**Baseline → q2wks ×2mo → monthly**; Stop if **ALT >3xULN (symptomatic) or >5xULN (asymptomatic)**.</td></tr><tr><td>**Co-amoxiclav vs Flucloxacillin DILI — Latency, Pattern?**</td><td>**Co-amoxiclav**: 1-3 wks, mixed/cholestatic; **Flucloxacillin**: 2-4 wks, cholestatic; **Re-exposure = rapid recurrence**.</td></tr><tr><td>**ICI Hepatitis — Grade 2 vs Grade 3-4 Management?**</td><td>**Grade 2 (ALT 3-5xULN): Hold ICI + Pred 0.5-1mg/kg**; **Grade 3-4 (ALT>5x): Pred 1-2mg/kg + Hold ICI**.</td></tr><tr><td>**VALPROATE — High-Risk Group, Complication?**</td><td>**Children <3y on polytherapy**; **Hyperammonaemic encephalopathy** (check ammonia).</td></tr><tr><td>**VALPROATE — High-Risk Group, Complication?**</td><td>**Children <3y on polytherapy**; **Hyperammonaemic encephalopathy**.</td></tr><tr><td>**DRESS Syndrome — Drugs, Features?**</td><td>**Carbamazepine, Phenytoin, Allopurinol, Sulfonamides, Dapsone**; **Fever, Rash, Eosinophilia, Lymphadenopathy, Hepatitis**; **HLA-B*15:02 (CBZ/PHT), HLA-B*58:01 (Allopurinol)**.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Intrinsic vs Idiosyncratic**</td><td>**Intrinsic**: Dose-dependent, predictable (Paracetamol); **Idiosyncratic**: Unpredictable, host-dependent, immune (Co-amoxiclav, INH)</td></tr><tr><td>**R-Value Calculation**</td><td>**R = (ALT/ULN) ÷ (ALP/ULN)**; use **ULN of YOUR LAB**</td></tr><tr><td>**Hepatocellular vs Cholestatic**</td><td>**Hepatocellular**: ALT dominant (>5x ALP); **Cholestatic**: ALP dominant (<2x ALT); **Mixed**: 2-5</td></tr><tr><td>**Paracetamol Nomogram**</td><td>**UK treatment line**: 100mg/L at 4h → 15mg/L at 15h; **High-risk (alcohol/fasting) = half line**</td></tr><tr><td>**Co-amoxiclav vs Flucloxacillin**</td><td>**Co-amoxiclav**: 1-3 wks, mixed/cholestatic; **Flucloxacillin**: 2-4 wks, cholestatic; **Both: re-exposure = rapid recurrence**</td></tr><tr><td>**RUCAM Rechallenge**</td><td>**Positive rechallenge = +3**; **Definite/Probable DILI = NEVER rechallenge**</td></tr><tr><td>**Anti-TB Hepatotoxicity**</td><td>**Pyrazinamide > Rifampicin > INH**; Monitor monthly ×2mo; **Stop if ALT>3xULN (symptomatic) or >5xULN (asymptomatic)**</td></tr><tr><td>**ICI Hepatitis Grading**</td><td>**Grade 1 (<3x): Continue ICI + monitor**; **Grade 2 (3-5x): Hold + Pred 0.5-1mg/kg**; **Grade 3-4 (>5x): Pred 1-2mg/kg + Hold ICI**</td></tr><tr><td>**VALPROATE Toxicity**</td><td>**Children <3y + polytherapy = High risk**; **Hyperammonaemic encephalopathy** (treat with carnitine)</td></tr><tr><td>**Allopurinol DRESS**</td><td>**HLA-B*58:01 (Asians)**; **Allopurinol hypersensitivity syndrome** → stop immediately</td></tr></table>
+<p><b>Mnemonic: DILI-CHAMPION</b></p>
+<ul><li><b>D</b>ILI Types: <b>Intrinsic (Paracetamol) vs Idiosyncratic (Co-amoxiclav, INH, ICI)</b></li><li><b>I</b>ntrinsic: <b>Dose-dependent, Predictable, Paracetamol</b></li><li><b>L</b>iver Patterns: <b>Hepatocellular (R≥5: Paracetamol, INH), Cholestatic (R≤2: Co-amoxiclav), Mixed (2-5: Anti-TB)</b></li><li><b>I</b>diosyncratic: <b>Unpredictable, Immune, Co-amoxiclav, Flucloxacillin, INH, ICI</b></li><li><b>C</b>o-amoxiclav: <b>#1 Antibiotic DILI, Latency 1-3wk, Mixed/Cholestatic</b></li><li><b>H</b>ALO: <b>Flucloxacillin (Cholestatic, 2-4wks, Re-exposure Rapid)</b></li><li><b>A</b>nti-TB: <b>Pyrazinamide &gt; Rifampicin &gt; INH; Monitor Monthly</b></li><li><b>M</b>onitoring: <b>Baseline → q2wks×2mo → Monthly; Stop ALT&gt;3xULN(Sx) / &gt;5xULN(Asx)</b></li><li><b>P</b>aracetamol: <b>&gt;150mg/kg → NAC 150→50→100 mg/kg/1h/4h/16h</b></li><li><b>I</b>CI Hepatitis: <b>G2 Hold+Pred0.5-1; G3/4 Pred1-2+Hold</b></li><li><b>O</b>ther: <b>Valproate (&lt;3y polytherapy → Hyperammonaemia), CBZ/PHT/Allopurinol DRESS (HLA)</b></li><li><b>N</b>ever Rechallenge: <b>RUCAM ≥6 = NEVER; Possible = Avoid/Monitor</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Drug-Induced Liver Injury))
+    Classification
+      Intrinsic (Dose-dependent): Paracetamol
+      Idiosyncratic (Immune): Co-amoxiclav, INH, ICI, Anti-TB
+    Patterns
+      Hepatocellular (R≥5): Paracetamol, INH, Valproate
+      Cholestatic (R≤2): Co-amoxiclav, Flucloxacillin, OCP, Azathioprine
+      Mixed (2-5): Anti-TB, Carbamazepine, Phenytoin, TMP-SMX
+    RUCAM
+      Time to Onset, Course, Risk Factors, Concomitant, Exclusion, Reputation, Rechallenge
+      ≥8 Highly Probable, 6-7 Probable
+    Paracetamol
+      &gt;150mg/kg toxic
+      NAC: 150→50→100 mg/kg (21h, 300mg/kg total)
+    Anti-TB
+      PZA &gt; RIF &gt; INH
+      Monitor: Baseline → q2wk×2mo → Monthly
+    ICI Hepatitis
+      G2 (3-5x): Hold + Pred 0.5-1mg/kg
+      G3-4 (&gt;5x): Pred 1-2mg/kg + Hold
+    Special
+      Valproate: &lt;3y polytherapy → Hyperammonaemia
+      Allopurinol: HLA-B*58:01 DRESS
+      CBZ/PHT: HLA-B*15:02 DRESS
+    Rechallenge
+      RUCAM ≥6 = NEVER
+      Possible = Avoid</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Types**</td><td>Intrinsic (Paracetamol) vs Idiosyncratic (Co-amoxiclav, INH, ICI)</td></tr><tr><td>**Patterns**</td><td>R≥5 Hepatocellular (Paracetamol, INH); R≤2 Cholestatic (Co-amoxiclav); 2-5 Mixed (Anti-TB)</td></tr><tr><td>**RUCAM**</td><td>≥8 Highly Probable; 6-7 Probable; Rechallenge +3</td></tr><tr><td>**Paracetamol**</td><td>>150mg/kg toxic; NAC 150→50→100 mg/kg (300mg/kg/21h)</td></tr><tr><td>**Co-amoxiclav/Flucloxacillin**</td><td>Latency 1-3wk/2-4wk; Re-exposure=Rapid recurrence</td></tr><tr><td>**Anti-TB**</td><td>PZA>RIF>INH; Monitor Baseline→q2wk×2mo→Monthly; Stop ALT>3x(Sx)/>5xULN(Asx)</td></tr><tr><td>**ICI Hepatitis**</td><td>G2(3-5x): Hold+Pred0.5-1; G3-4(>5x): Pred1-2+Hold</td></tr><tr><td>**VALPROATE**</td><td><3y + Polytherapy → Hyperammonaemia</td></tr><tr><td>**Allopurinol**</td><td>HLA-B*58:01 → DRESS</td></tr><tr><td>**Rechallenge**</td><td>RUCAM≥6 = NEVER; Possible = Avoid/Monitor</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>DILI Classification</td><td></td><td></td></tr><tr><td>R-Value Patterns</td><td></td><td></td></tr><tr><td>RUCAM Scoring</td><td></td><td></td></tr><tr><td>Paracetamol NAC Protocol</td><td></td><td></td></tr><tr><td>Anti-TB Monitoring</td><td></td><td></td></tr><tr><td>ICI Hepatitis Grading</td><td></td><td></td></tr><tr><td>Co-amoxiclav/Flucloxacillin</td><td></td><td></td></tr><tr><td>Rechallenge Principles</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Hepatology|Hepatology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 24 - Hepatology Hierarchy|Hepatology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Hepatology MOC|Hepatology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Acute Liver Failure]], [[Alcoholic Liver Disease]], [[Autoimmune Liver Disease]], [[Viral Hepatitis]], [[Cirrhosis and Portal Hypertension]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Drug-Induced Liver Injury · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

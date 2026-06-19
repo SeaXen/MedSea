@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gilbert Syndrome — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Gilbert Syndrome</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe <b>genetics and pathophysiology</b> of Gilbert syndrome</li><li>[ ] Recognise <b>clinical features</b> and <b>precipitating factors</b></li><li>[ ] Interpret <b>LFT pattern</b> (isolated unconjugated hyperbilirubinaemia)</li><li>[ ] Distinguish from <b>Crigler-Najjar Type I/II</b>, <b>Dubin-Johnson</b>, <b>Rotor</b></li><li>[ ] Counsel patients on <b>benign nature</b> and <b>no treatment needed</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Benign unconjugated hyperbilirubinaemia** due to reduced UDP-glucuronosyltransferase (UGT1A1) activity</td></tr><tr><td>**Inheritance**</td><td>**Autosomal recessive** (but heterozygotes may have mild elevation) — **UGT1A1*28** promoter polymorphism (TA repeat expansion)</td></tr><tr><td>**Prevalence**</td><td>**5-10%** of population (higher in males, usually diagnosed 2nd-3rd decade)</td></tr><tr><td>**Sex Ratio**</td><td>M > F (2:1)</td></tr><tr><td>**Bilirubin Levels**</td><td>Typically **<80 µmol/L** (usually 20-50 µmol/L), **fluctuates**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Genetics & Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Gene</th><th>Mutation</th><th>Effect</th></tr><tr><td>------</td><td>----------</td><td>--------</td></tr><tr><td>**UGT1A1**</td><td>**Promoter TA repeat (TA)₇ instead of (TA)₆** → **UGT1A1*28 allele**</td><td>**Reduced transcription** → ~30% normal enzyme activity</td></tr></table>
+<div class="callout"><b>Mechanism</b>: Reduced bilirubin <b>conjugation</b> → impaired excretion → <b>unconjugated hyperbilirubinaemia</b> <b>Penetrance</b>: Incomplete — homozygotes (TA)₇/(TA)₇ have phenotype; heterozygotes may have mild elevation</div>
+<div class="sub-h">Bilirubin Metabolism in Gilbert Syndrome</div>
+<pre class="codeblock"><code>flowchart LR
+    A[Unconjugated Bilirubin] --&gt; B[Hepatic Uptake: Normal]
+    B --&gt; C[Conjugation: UGT1A1 ↓30%]
+    C --&gt; D[Conjugated Bilirubin ↓]
+    D --&gt; E[Biliary Excretion ↓]
+    E --&gt; F[Unconjugated Bilirubin ↑ in Plasma]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Asymptomatic**</td><td>Most cases — **incidental finding** on routine LFTs</td></tr><tr><td>**Jaundice**</td><td>**Mild, intermittent** — scleral icterus only, worse with stress</td></tr><tr><td>**Precipitating Factors**</td><td>**Fasting (48-72h)**, **Stress**, **Illness**, **Surgery**, **Alcohol**, **Menstruation**</td></tr><tr><td>**No Pruritus**</td><td>**Unconjugated bilirubin** not excreted in bile → no bile salts in skin</td></tr><tr><td>**No Hepatosplenomegaly**</td><td>No liver disease</td></tr><tr><td>**Normal LFTs Otherwise**</td><td>ALT, AST, ALP, GGT, Albumin, PT **all normal**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Diagnostic Criteria</div>
+<table class="ctable"><tr><th>Criterion</th><th>Finding</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**Bilirubin**</td><td>**Unconjugated hyperbilirubinaemia** (indirect >80% of total)</td></tr><tr><td>**Bilirubin Level**</td><td>Usually <80 µmol/L (rarely >100 µmol/L)</td></tr><tr><td>**Other LFTs**</td><td>**ALT, AST, ALP, GGT, Albumin, PT — All Normal**</td></tr><tr><td>**Haemolysis Screen**</td><td>Normal Hb, Reticulocytes, LDH, Haptoglobin — **exclude haemolysis**</td></tr><tr><td>**Genetic Testing**</td><td>**UGT1A1*28 homozygosity** (TA)₇/(TA)₇ — confirmatory if needed</td></tr></table>
+<div class="sub-h">Exclusion Criteria (Rule Out)</div>
+<table class="ctable"><tr><th>Condition</th><th>Key Distinction</th></tr><tr><td>-----------</td><td>-----------------</td></tr><tr><td>**Haemolysis**</td><td>↑ LDH, ↓ Haptoglobin, ↑ Reticulocytes, ↑ urobilinogen</td></tr><tr><td>**Crigler-Najjar Type I**</td><td>Bilirubin >300 µmol/L, **no enzyme activity**, kernicterus risk</td></tr><tr><td>**Crigler-Najjar Type II**</td><td>Bilirubin 100-300 µmol/L, **phenobarbital responsive**</td></tr><tr><td>**Dubin-Johnson/Rotor**</td><td>**Conjugated** hyperbilirubinaemia</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Recommendation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Treatment**</td><td>**None required** — **benign condition**, normal life expectancy</td></tr><tr><td>**Counselling**</td><td>**Reassurance** — benign, no liver damage, no treatment needed</td></tr><tr><td>**Precautions**</td><td>Avoid prolonged fasting, maintain hydration, inform anaesthetists</td></tr><tr><td>**Drugs**</td><td>**No drug restrictions** (unlike Crigler-Najjar); paracetamol safe at normal doses</td></tr><tr><td>**Monitoring**</td><td>**None required** — no follow-up LFTs needed if asymptomatic</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Inheritance**</td><td>**Autosomal recessive** — UGT1A1*28 (TA)₇ promoter polymorphism</td></tr><tr><td>**Bilirubin**</td><td>**Unconjugated**, usually <80 µmol/L, **fluctuates**</td></tr><tr><td>**Precipitants**</td><td>**Fasting, stress, illness, alcohol, menstruation**</td></tr><tr><td>**LFTs**</td><td>**Isolated unconjugated hyperbilirubinaemia** — all else normal</td></tr><tr><td>**No Haemolysis**</td><td>Normal Hb, retics, LDH, haptoglobin</td></tr><tr><td>**Genetics**</td><td>**UGT1A1*28** (TA)₇/(TA)₇ homozygosity</td></tr><tr><td>**Treatment**</td><td>**None** — benign, reassure patient</td></tr><tr><td>**Prognosis**</td><td>**Normal life expectancy**, no liver disease</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Gilbert Syndrome — Inheritance, Gene, Bilirubin Type?**</td><td>**Autosomal recessive**, **UGT1A1*28** promoter polymorphism, **unconjugated hyperbilirubinaemia** (<80 µmol/L).</td></tr><tr><td>**Gilbert vs Crigler-Najjar — Key Differences?**</td><td>**Gilbert**: Benign, bilirubin <80, UGT1A1 30%, no treatment; **CN-I**: 0% enzyme, fatal, phototherapy/transplant; **CN-II**: 10% enzyme, phenobarbital responsive.</td></tr><tr><td>**Gilbert — Precipitating Factors?**</td><td>**Fasting (48-72h), stress, illness, alcohol, menstruation, surgery**.</td></tr><tr><td>**Gilbert — LFT Pattern?**</td><td>**Isolated unconjugated hyperbilirubinaemia** (indirect >80%), all other LFTs normal.</td></tr><tr><td>**Gilbert — Treatment?**</td><td>**None** — benign, reassure patient, avoid fasting.</td></tr><tr><td>**Gilbert vs Haemolysis — How to Distinguish?**</td><td>**Gilbert**: Normal Hb, retics, LDH, haptoglobin; **Haemolysis**: ↓Hb, ↑retics, ↑LDH, ↓haptoglobin, ↑urobilinogen.</td></tr><tr><td>**UGT1A1*28 Polymorphism — What Is It?**</td><td>**TA repeat expansion** in promoter (TA)₇ instead of (TA)₆ → reduced transcription → 30% enzyme activity.</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Gilbert vs Crigler-Najjar II**</td><td>**Gilbert**: UGT1A1 30%, benign, no phenobarbital response; **CN-II**: 10% UGT, phenobarbital responsive</td></tr><tr><td>**Gilbert vs Dubin-Johnson/Rotor**</td><td>**Gilbert**: Unconjugated bilirubin; **Dub-John/Rotor**: Conjugated bilirubin</td></tr><tr><td>**Gilbert vs Haemolysis**</td><td>**Gilbert**: Normal Hb/retics/LDH/haptoglobin; **Haemolysis**: Abnormal all</td></tr><tr><td>**Gilbert — Drug Restrictions**</td><td>**None** (unlike CN-I/II); paracetamol safe at normal doses</td></tr></table>
+<p><b>Mnemonic: GILBERT-BENIGN</b></p>
+<ul><li><b>G</b>enetics: **UGT1A1*28 (TA)₇ promoter polymorphism, AR**</li><li><b>I</b>solated: <b>Unconjugated bilirubin only</b></li><li><b>L</b>ow Bilirubin: <b>&lt;80 µmol/L, fluctuates</b></li><li><b>B</b>enign: <b>No treatment, normal life expectancy</b></li><li><b>E</b>xacerbating: <b>Fasting, Stress, Illness, Alcohol, Menstruation</b></li><li><b>R</b>eassurance: <b>No treatment needed, normal lifespan</b></li><li><b>T</b>reatment: <b>None — just reassurance</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Gilbert Syndrome))
+    Genetics
+      UGT1A1*28 (TA)7/TA)7
+      AR inheritance
+      30% enzyme activity
+    Clinical
+      Asymptomatic or mild jaundice
+      Precipitants: Fasting, Stress, Illness
+      No pruritus, no hepatosplenomegaly
+    Labs
+      Unconjugated bilirubin &lt;80
+      All other LFTs normal
+      No haemolysis
+    Diagnosis
+      Exclude haemolysis
+      UGT1A1*28 testing if needed
+    Management
+      No treatment
+      Reassurance
+      Avoid fasting</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Gene**</td><td>UGTA1A*28 (TA)₇ promoter polymorphism, AR</td></tr><tr><td>**Bilirubin**</td><td>Unconjugated, <80 µmol/L, fluctuates</td></tr><tr><td>**Precipitants**</td><td>Fasting, stress, illness, alcohol, menstruation</td></tr><tr><td>**LFTs**</td><td>Isolated unconjugated hyperbilirubinaemia; all else normal</td></tr><tr><td>**Haemolysis**</td><td>Excluded (normal Hb, retics, LDH, haptoglobin)</td></tr><tr><td>**Genetics**</td><td>UGT1A1*28 homozygosity (TA)₇/(TA)₇</td></tr><tr><td>**Treatment**</td><td>**None** — benign, reassure</td></tr><tr><td>**Prognosis**</td><td>Normal life expectancy, no liver disease</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>Genetics & Pathophysiology</td><td></td><td></td></tr><tr><td>Clinical Features & Precipitants</td><td></td><td></td></tr><tr><td>LFT Pattern & Diagnosis</td><td></td><td></td></tr><tr><td>Differential (CN-I/II, Haemolysis)</td><td></td><td></td></tr><tr><td>Management & Counselling</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Hepatology|Hepatology]]</li><li><b>Chapter Map</b>: [[../Davidson Chapter 24 - Hepatology Hierarchy|Hepatology Hierarchy]]</li><li><b>Chapter MOC</b>: [[../Hepatology MOC|Hepatology MOC]]</li><li><b>Drug Reference</b>: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li><b>Related</b>: [[Crigler-Najjar Syndrome]], [[Dubin-Johnson Syndrome]], [[Rotor Syndrome]], [[Inherited and Metabolic Liver Disease]], [[Jaundice and LFT Interpretation]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Gilbert Syndrome · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alcoholic Liver Disease — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Alcoholic Liver Disease</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<p>By the end of this note you should be able to:</p>
+<ul><li>[ ] Describe the <b>spectrum of ALD</b>: Steatosis → Alcoholic Hepatitis → Cirrhosis</li><li>[ ] Recognise <b>clinical features</b> and <b>AST:ALT ratio &gt;2:1</b></li><li>[ ] Apply <b>scoring systems</b>: Maddrey DF, GAHS, ABIC, Lille</li><li>[ ] Prescribe <b>corticosteroid therapy</b> for severe AH (Prednisolone 40mg/day ×28d)</li><li>[ ] Manage <b>alcohol withdrawal</b> and <b>relapse prevention</b> (Acamprosate, Baclofen, Naltrexone)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Definition & Spectrum</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Histology</th><th>Clinical</th><th>Reversibility</th></tr><tr><td>-------</td><td>-----------</td><td>----------</td><td>---------------</td></tr><tr><td>**Steatosis (Fatty Liver)**</td><td>Macrovesicular fat >5% hepatocytes</td><td>Often asymptomatic, hepatomegaly</td><td>**Fully reversible** with abstinence (2-4 weeks)</td></tr><tr><td>**Alcoholic Hepatitis (AH)**</td><td>Ballooning, Mallory bodies, neutrophilic infiltrate, cholestasis</td><td>Jaundice, fever, hepatomegaly, ascites, encephalopathy</td><td>**Partially reversible** with abstinence + treatment</td></tr><tr><td>**Alcoholic Cirrhosis**</td><td>Bridging fibrosis, regenerative nodules</td><td>Decompensation (ascites, varices, HE)</td><td>**Irreversible** (abstinence improves survival)</td></tr></table>
+<div class="sub-h">AST:ALT Ratio</div>
+<table class="ctable"><tr><th>Ratio</th><th>Interpretation</th></tr><tr><td>-------</td><td>----------------</td></tr><tr><td>**>2:1**</td><td>**Classic for ALD** (mitochondrial AST release + pyridoxine deficiency)</td></tr><tr><td>**1:1 to 2:1**</td><td>Consistent with ALD</td></tr><tr><td>**<1:1**</td><td>Suggests viral, autoimmune, NAFLD</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Clinical Features & Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Alcoholic Hepatitis</th><th>Alcoholic Cirrhosis</th></tr><tr><td>---------</td><td>----------------------</td><td>----------------------</td></tr><tr><td>**Presentation**</td><td>Jaundice, fever, hepatomegaly, ascites, encephalopathy</td><td>Decompensation (ascites, varices, HE)</td></tr><tr><td>**Labs**</td><td>ALT/AST ↑↑ (AST>ALT), Bilirubin ↑↑, INR ↑, WBC ↑</td><td>Synthetic failure (INR↑, Alb↓), thrombocytopenia</td></tr><tr><td>**Maddrey DF**</td><td>**≥32 = Severe**</td><td>Not typically used</td></tr><tr><td>**Imaging**</td><td>Hepatomegaly, fatty infiltration</td><td>Nodular liver, splenomegaly, portal HTN signs</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Scoring Systems for Alcoholic Hepatitis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Maddrey Discriminant Function (DF)</div>
+<p><b>DF = 4.6 × (PT - control PT in seconds) + Bilirubin (mg/dL)</b></p>
+<table class="ctable"><tr><th>DF Score</th><th>Severity</th><th>30-Day Mortality</th><th>Treatment</th></tr><tr><td>----------</td><td>----------</td><td>------------------</td><td>-----------</td></tr><tr><td>**<32**</td><td>Mild/Moderate</td><td><10%</td><td>Supportive only</td></tr><tr><td>**≥32**</td><td>**Severe**</td><td>30-50%</td><td>**Consider corticosteroids**</td></tr></table>
+<div class="sub-h">Glasgow Alcoholic Hepatitis Score (GAHS)</div>
+<table class="ctable"><tr><th>Parameter</th><th>Score</th></tr><tr><td>-----------</td><td>-------</td></tr><tr><td>Age >50</td><td>1</td></tr><tr><td>WBC >15 ×10⁹/L</td><td>1</td></tr><tr><td>Urea >5 mmol/L</td><td>1</td></tr><tr><td>PT ratio >1.5</td><td>1</td></tr><tr><td>Bilirubin >125 µmol/L</td><td>1</td></tr></table>
+<table class="ctable"><tr><th>GAHS</th><th>28-Day Mortality</th><th>Steroid Indication</th></tr><tr><td>------</td><td>------------------</td><td>-------------------</td></tr><tr><td>**≥9**</td><td>~45%</td><td>**Consider steroids**</td></tr></table>
+<div class="sub-h">ABIC Score</div>
+<p><b>ABIC = Age×0.0039 + Bilirubin(mg/dL)×0.031 + INR×0.58 + Creatinine(mg/dL)×0.47</b></p>
+<table class="ctable"><tr><th>ABIC</th><th>90-Day Mortality</th><th>Steroid Indication</th></tr><tr><td>------</td><td>------------------</td><td>-------------------</td></tr><tr><td>**<6.71**</td><td>Low (<10%)</td><td>Supportive</td></tr><tr><td>**6.71-8.99**</td><td>Intermediate (30%)</td><td>Consider steroids</td></tr><tr><td>**≥9.0**</td><td>High (>50%)</td><td>Strongly consider steroids</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Corticosteroid Therapy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Duration</th><th>Indication</th></tr><tr><td>------</td><td>------</td><td>----------</td><td>------------</td></tr><tr><td>**Prednisolone**</td><td>**40 mg/day**</td><td>**28 days**</td><td>**Maddrey DF ≥32** (or GAHS ≥9) + no contraindications</td></tr></table>
+<table class="ctable"><tr><th>Contraindication</th><th>Action</th></tr><tr><td>------------------</td><td>--------</td></tr><tr><td>Active infection (SBP, pneumonia)</td><td>Contraindicated</td></tr><tr><td>Active GI bleed</td><td>Contraindicated</td></tr><tr><td>Renal failure (Cr >200)</td><td>Contraindicated</td></tr><tr><td>Pancreatitis</td><td>Contraindicated</td></tr><tr><td>Uncontrolled DM</td><td>Contraindicated</td></tr></table>
+<div class="sub-h">Infection Prophylaxis on Steroids</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th></tr><tr><td>------</td><td>------</td></tr><tr><td>**Ciprofloxacin**</td><td>**500mg OD** (SBP prophylaxis)</td></tr></table>
+<div class="sub-h">Lille Score (Day 7)</div>
+<table class="ctable"><tr><th>Lille Score</th><th>Response</th><th>Action</th></tr><tr><td>-------------</td><td>----------</td><td>--------</td></tr><tr><td>**<0.45**</td><td>Complete/Partial responder</td><td>**Continue steroids** ×28 days</td></tr><tr><td>**0.45-0.56**</td><td>Partial responder</td><td>Individualise</td></tr><tr><td>**>0.56**</td><td>Null responder</td><td>**Stop steroids**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management Principles</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Recommendation</th></tr><tr><td>--------</td><td>----------------</td></tr><tr><td>**Abstinence**</td><td>**Cornerstone** — complete cessation</td></tr><tr><td>**Nutrition**</td><td>35-40 kcal/kg/day, Protein 1.5g/kg/day, **Thiamine 100mg IV TDS**, Zinc 220mg BD</td></tr><tr><td>**Withdrawal**</td><td>**Thiamine 100mg IV TDS ×3-5d (BEFORE glucose)**, Chlordiazepoxide CIWA-Ar</td></tr><tr><td>**Relapse Prevention**</td><td>**Acamprosate 666mg TDS** (renal adjust), **Baclofen 10mg TDS** (safe in cirrhosis), **Naltrexone 50mg OD** (avoid decompensated)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Topic</th><th>Key Points</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**ALD Spectrum**</td><td>Steatosis (Rev) → AH (Partial) → Cirrhosis (Irrev)</td></tr><tr><td>**AST:ALT**</td><td>**>2:1** = ALD</td></tr><tr><td>**Maddrey DF**</td><td>**≥32 = Severe** → Steroids (DF = 4.6×(PT-ctrl) + Bil mg/dL)</td></tr><tr><td>**GAHS**</td><td>**≥9** Supports Steroids</td></tr><tr><td>**ABIC**</td><td>**≥6.71** Supports, **≥9** High Mortality</td></tr><tr><td>**Steroids**</td><td>**Pred 40mg ×28d** if DF≥32; **Ciprofloxacin 500mg** prophylaxis</td></tr><tr><td>**Lille Day 7**</td><td>**<0.45 Continue, >0.56 Stop**</td></tr><tr><td>**Contraindications**</td><td>Infection, Bleed, Renal, Pancreatitis, DM</td></tr><tr><td>**Withdrawal**</td><td>**Thiamine IV before Glucose**; Chlordiazepoxide CIWA-Ar</td></tr><tr><td>**Relapse Prevention**</td><td>Acamprosate (Renal), Naltrexone (No Decomp), Baclofen (Safe)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Viva Questions (MRCP PACES / FCPS)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>Expected Answer</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Maddrey DF — Formula, cut-off, action?**</td><td>**4.6×(PT-ctrl) + Bil (mg/dL)**; **≥32 = Severe** → consider steroids if no contraindications.</td></tr><tr><td>**GAHS — Components, steroid cut-off?**</td><td>**Age>50, WBC>15, Urea>5, PT>1.5, Bil>125**; **≥9** supports steroids.</td></tr><tr><td>**ABIC Score — Formula, cut-offs?**</td><td>**Age×0.0039 + Bil×0.031 + INR×0.58 + Cr×0.47**; **≥6.71** supports steroids, **≥9.0** high mortality.</td></tr><tr><td>**Steroid Indication — Maddrey ≥32 + no contraindications?**</td><td>**Prednisolone 40mg/day ×28 days**; taper 2 weeks; **Ciprofloxacin 500mg OD prophylaxis**.</td></tr><tr><td>**Lille Score — Day 7, interpretation?**</td><td>**<0.45 = Continue steroids**; **0.45-0.56 = Individualise**; **>0.56 = Stop** (null responder).</td></tr><tr><td>**Steroid Contraindications?**</td><td>Active infection (SBP, pneumonia), GI bleed, renal failure (Cr>200), pancreatitis, uncontrolled DM.</td></tr><tr><td>**Alcohol Withdrawal — Thiamine, CIWA-Ar, Drug?**</td><td>**Thiamine 100mg IV TDS ×3-5d (before glucose)**; **Chlordiazepoxide** symptom-triggered per CIWA-Ar.</td></tr><tr><td>**Relapse Prevention — Acamprosate vs Naltrexone vs Baclofen?**</td><td>**Acamprosate 666mg TDS** (renal adjust); **Naltrexone 50mg OD** (avoid decompensated); **Baclofen 10mg TDS** (safe in cirrhosis).</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>**Maddrey vs GAHS vs ABIC**</td><td>**Maddrey** = primary trigger (DF≥32); **GAHS/ABIC** = supportive; ABIC adds age/creatinine for 90-day mortality</td></tr><tr><td>**Lille Score — When to calculate?**</td><td>**Day 7** of steroid therapy; **<0.45 = Continue**, **>0.56 = Stop**</td></tr><tr><td>**Steroids in ALD vs Autoimmune Hepatitis**</td><td>**ALD**: Short course (28d), Maddrey ≥32; **AIH**: Prolonged (months-years), IAIHG criteria</td></tr><tr><td>**Thiamine Before Glucose**</td><td>**MANDATORY** — Glucose metabolism consumes thiamine → precipitates Wernicke's</td></tr><tr><td>**Baclofen vs Naltrexone in Cirrhosis**</td><td>**Baclofen safe** (renal adjust); **Naltrexone hepatotoxic** — avoid decompensated</td></tr><tr><td>**Disulfiram in Cirrhosis**</td><td>**Avoid** (hepatotoxicity risk); use acamprosate/baclofen instead</td></tr></table>
+<p><b>Mnemonic: ALD-SCORE</b></p>
+<ul><li><b>A</b>ST:ALT <b>&gt;2:1</b> = ALD</li><li><b>L</b>ille Day 7: <b>&lt;0.45 Continue, &gt;0.56 Stop</b></li><li><b>D</b>F Maddrey: <b>≥32 = Steroids</b></li><li><b>S</b>teroid: <b>Pred 40mg ×28d + Ciprofloxacin</b></li><li><b>C</b>orticosteroid Contraindications: <b>Infection, Bleed, Renal, Pancreatitis, DM</b></li><li><b>O</b>rgan Failure: <b>Lille &gt;0.56 = Stop Steroids</b></li><li><b>R</b>elapse Prevention: <b>Acamprosate (renal), Naltrexone (avoid decomp), Baclofen (safe cirrhosis)</b></li><li><b>E</b>nable Thiamine: <b>100mg IV TDS before glucose</b></li><li><b>M</b>addrey DF: <b>4.6×(PT-ctrl) + Bil mg/dL ≥32 = Steroids</b></li><li><b>G</b>AHS ≥9: Supports steroids</li><li><b>A</b>BIC ≥6.71: Supports steroids</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((Alcoholic Liver Disease))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Spectrum</div>
+<div class="mm-node mm-l3">– Steatosis (Reversible)</div>
+<div class="mm-node mm-l3">– Alcoholic Hepatitis (Partial)</div>
+<div class="mm-node mm-l3">– Cirrhosis (Irreversible)</div>
+<div class="mm-node mm-l2">Scores</div>
+<div class="mm-node mm-l3">– Maddrey DF ≥32 (Steroids)</div>
+<div class="mm-node mm-l3">– GAHS ≥9 (Support)</div>
+<div class="mm-node mm-l3">– ABIC ≥6.71 (Support)</div>
+<div class="mm-node mm-l3">– Lille &lt;0.45 Continue</div>
+<div class="mm-node mm-l2">Steroids</div>
+<div class="mm-node mm-l3">– Pred 40mg ×28d</div>
+<div class="mm-node mm-l3">– Contraindications</div>
+<div class="mm-node mm-l3">– Ciprofloxacin Prophylaxis</div>
+<div class="mm-node mm-l2">Lille Score</div>
+<div class="mm-node mm-l3">– Day 7</div>
+<div class="mm-node mm-l3">– &lt;0.45 Continue</div>
+<div class="mm-node mm-l3">– &gt;0.56 Stop</div>
+<div class="mm-node mm-l2">Withdrawal</div>
+<div class="mm-node mm-l3">– Thiamine IV (Before Glucose!)</div>
+<div class="mm-node mm-l3">– Chlordiazepoxide CIWA-Ar</div>
+<div class="mm-node mm-l2">Relapse Prevention</div>
+<div class="mm-node mm-l3">– Acamprosate (Renal)</div>
+<div class="mm-node mm-l3">– Naltrexone (No Decomp)</div>
+<div class="mm-node mm-l3">– Baclofen (Safe Cirrhosis)</div>
+<div class="mm-node mm-l2">Nutrition</div>
+<div class="mm-node mm-l3">– 35-40 kcal/kg</div>
+<div class="mm-node mm-l3">– Protein 1.5g/kg</div>
+<div class="mm-node mm-l3">– Thiamine, Zinc, Vit D</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Domain</th><th>Key Points</th></tr><tr><td>--------</td><td>------------</td></tr><tr><td>**Spectrum**</td><td>Steatosis (Rev) → AH (Partial) → Cirrhosis (Irrev)</td></tr><tr><td>**AST:ALT**</td><td>**>2:1** = ALD</td></tr><tr><td>**Maddrey DF**</td><td>**4.6×(PT-ctrl)+Bil ≥32 → Steroids**</td></tr><tr><td>**GAHS**</td><td>**≥9 Supports Steroids**</td></tr><tr><td>**ABIC**</td><td>**≥6.71 Supports, ≥9 High Mortality**</td></tr><tr><td>**Steroids**</td><td>**Pred 40mg ×28d** if DF≥32; **Ciprofloxacin 500mg** prophylaxis</td></tr><tr><td>**Lille Day 7**</td><td>**<0.45 Continue, >0.56 Stop**</td></tr><tr><td>**Contraindications**</td><td>Infection, Bleed, Renal, Pancreatitis, DM</td></tr><tr><td>**Withdrawal**</td><td>**Thiamine IV before Glucose**; Chlordiazepoxide CIWA-Ar</td></tr><tr><td>**Relapse**</td><td>Acamprosate (Renal), Naltrexone (No Decomp), Baclofen (Safe)</td></tr><tr><td>**Nutrition**</td><td>35-40 kcal/kg, Protein 1.5g/kg, Thiamine, Zinc</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Spaced Repetition Trackers</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Review Interval</th><th>Date Completed</th><th>Confidence (1-5)</th><th>Notes</th></tr><tr><td>-----------------</td><td>----------------</td><td>------------------</td><td>-------</td></tr><tr><td>24 hours</td><td></td><td></td><td></td></tr><tr><td>7 days</td><td></td><td></td><td></td></tr><tr><td>15 days</td><td></td><td></td><td></td></tr><tr><td>30 days</td><td></td><td></td><td></td></tr><tr><td>90 days</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Section</th><th>Score /5</th><th>Last Attempt</th></tr><tr><td>---------</td><td>----------</td><td>--------------</td></tr><tr><td>ALD Spectrum & AST:ALT</td><td></td><td></td></tr><tr><td>Maddrey DF / GAHS / ABIC</td><td></td><td></td></tr><tr><td>Steroid Indications & Contraindications</td><td></td><td></td></tr><tr><td>Lille Score Interpretation</td><td></td><td></td></tr><tr><td>Prednisolone Regimen</td><td></td><td></td></tr><tr><td>Withdrawal / Thiamine</td><td></td><td></td></tr><tr><td>Relapse Prevention Drugs</td><td></td><td></td></tr><tr><td>Viva Questions</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Parent Heading</b>: [[../Hepatology|Hepatology]]</li><li>**Chapter Map": [[../Davidson Chapter 24 - Hepatology Hierarchy|Hepatology Hierarchy]]</li><li>**Chapter MOC": [[../Hepatology MOC|Hepatology MOC]]</li><li>**Drug Reference": [[../../Clinical Therapeutics and Good Prescribing|Drugs]]</li><li>**Related": [[Cirrhosis and Portal Hypertension]], [[Acute Liver Failure]], [[NAFLD]], [[Hepatology in Special Situations]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Alcoholic Liver Disease · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

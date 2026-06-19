@@ -1,0 +1,214 @@
+---
+tags: [medicine, dermatology, davidson, fcps, mrcp, disease]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 29: Dermatology
+heading: Urticaria Erythema and Purpura
+topic: Mycoplasma-induced SJS
+status: full-fcps-mrcp-note
+priority: high
+created: 2026-06-16
+modified: 2026-06-16
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2, PACES]
+---
+
+# Mycoplasma-induced SJS
+
+Related: [[../../../Dermatology MOC]], [[../../../Davidson Chapter 29 - Dermatology Hierarchy]]
+
+> [!info] Davidson alignment: **Chapter 29: Dermatology** (24th Edition, Ibbotson) — Urticaria Erythema and Purpura
+
+## Definition
+
+Mycoplasma pneumoniae is a common cause of SJS (especially in children and young adults) and is associated with a distinct clinical pattern: prominent mucositis (especially ocular and oral), less skin involvement, and younger age compared to drug-induced SJS. Sometimes called 'Mycoplasma-induced rash and mucositis' (MIRM). Treatment: macrolide antibiotics, supportive care, IVIG.
+
+## Clinical Features and Presentation
+
+Mycoplasma-induced SJS presents with characteristic features as defined in Davidson 24e Ch 29. The key clinical features are summarised below. The disease is recognised by its morphology, distribution pattern, and course. Severity may be assessed using disease-specific scoring systems where applicable. Always consider the full differential when assessing a patient.
+
+## Investigation and Management Summary
+
+### Investigations
+- Clinical diagnosis based on morphology, distribution, and history
+- Skin biopsy (H&E) for histological confirmation in atypical or refractory cases
+- Disease-specific tests as clinically indicated (autoantibodies, DIF for autoimmune bullous, culture for infection, KOH for fungal)
+- Baseline bloods (FBC, LFT, renal) and pre-biologic screening (TB IGRA, hepatitis B/C, HIV) before systemic therapy
+
+### Management
+- **First-line:** General measures (emollients, soap substitutes, trigger avoidance) and topical therapy (corticosteroids, calcineurin inhibitors, vitamin D analogues, antifungals as appropriate)
+- **Second-line:** Phototherapy (NB-UVB) or conventional systemic agents (methotrexate, ciclosporin, acitretin, azathioprine) for moderate-to-severe disease
+- **Third-line:** Biologics or targeted small molecules (anti-TNF, anti-IL17/23, anti-IL4/13, JAK inhibitors) for refractory disease
+- **Supportive:** Patient education, psychological support, quality-of-life assessment
+
+## FCPS/MRCP High-Yield Summary
+
+| Category | Key Points |
+|----------|------------|
+| Cause | Mycoplasma pneumoniae |
+| Population | Children, young adults |
+| Mucositis | Prominent (oral, ocular, urethral) |
+| Skin | Less prominent than drug-induced SJS |
+| MIRM | Mycoplasma-induced rash and mucositis (newer terminology) |
+| Investigations | Mycoplasma IgM, PCR (respiratory swab) |
+| Treatment | Macrolide (azithromycin); supportive; IVIG |
+| Vs drug SJS | Younger, more mucosal, less skin |
+| Sequelae | Ocular (especially) |
+| Prognosis | Better than drug-induced SJS |
+
+## Differential Diagnosis
+
+| Differential | Distinguishing Feature |
+|--------------|------------------------|
+| Drug-induced SJS | Drug trigger, more skin involvement |
+
+## Viva Questions
+
+1. **Q:** Define Mycoplasma-induced SJS and outline its classification.
+   **A:** Mycoplasma pneumoniae is a common cause of SJS (especially in children and young adults) and is associated with a distinct clinical pattern: prominent mucositis (especially ocular and oral), less skin
+
+2. **Q:** What are the key clinical features of Mycoplasma-induced SJS?
+   **A:** See the high-yield table above.
+
+3. **Q:** Describe the stepwise management of Mycoplasma-induced SJS.
+   **A:** Topical → phototherapy → conventional systemic → biologic.
+
+4. **Q:** What scoring system is used for severity assessment?
+   **A:** Disease-specific (see high-yield table).
+
+5. **Q:** What are the key complications to monitor?
+   **A:** Secondary infection, treatment toxicity, disease-specific complications.
+
+## Confusions and Mnemonics
+
+1. **Mycoplasma SJS** = Young + mucositis-dominant + macrolide treatment
+
+## Special Situations
+
+
+| Situation | Consideration |
+|-----------|---------------|
+| **Pregnancy** | Avoid teratogens (retinoids, MTX, MMF) |
+| **Paediatric** | Dosing adjustments; growth monitoring |
+| **Elderly** | Polypharmacy caution |
+
+
+## One-Page Revision Card
+
+| **Topic** | **Mycoplasma-induced SJS** |
+|-----------|-----------|
+| **Definition** | Mycoplasma pneumoniae is a common cause of SJS (especially in children and young adults) and is asso |
+| **Key Features** | Mycoplasma pneumoniae |
+| **Investigation** | Clinical ± biopsy + disease-specific tests |
+| **Management** | Topical → phototherapy → systemic → biologic |
+| **Red Flags** | Secondary infection, systemic involvement |
+| **Viva Pearl** | See viva section |
+
+## Spaced Repetition Trackers
+
+- [ ] Day 1, 3, 7, 15, 30, 90
+
+## Self-Test Scorecard
+
+| Section | Score /5 |
+|---------|----------|
+| Understanding | /5 |
+| Recall | /5 |
+| MCQ Performance | /5 |
+| SBA Performance | /5 |
+| Viva Confidence | /5 |
+| Total | /25 |
+
+> <35 = weak, 35-44 = acceptable, 45+ = strong
+
+## MCQs (5)
+1. **Q:** Which of the following is a key feature of Mycoplasma-induced SJS?
+   A. Mycoplasma pneumoniae
+   B. Always self-limiting
+   C. Caused by bacterial infection only
+   D. Restricted to palms and soles only
+   E. No investigation needed
+   **Answer: A**  *Cause: Mycoplasma pneumoniae*
+2. **Q:** What is the first-line treatment for Mycoplasma-induced SJS?
+   A. Topical therapy + general measures
+   B. Surgical excision
+   C. IVIG
+   D. No treatment
+   E. Antibiotics
+   **Answer: A**  *Topical therapy first-line*
+3. **Q:** Which pre-treatment screening is essential before systemic therapy for Mycoplasma-induced SJS?
+   A. TB IGRA, hepatitis B/C, HIV, pregnancy test
+   B. Pregnancy test only
+   C. ECG only
+   D. No screening
+   E. Eye exam only
+   **Answer: A**  *Pre-biologic screening standard*
+4. **Q:** What is the most important complication of Mycoplasma-induced SJS?
+   A. Secondary infection and disease-specific complications
+   B. Malignancy transformation
+   C. Renal failure
+   D. Cardiac arrest
+   E. No complications
+   **Answer: A**
+5. **Q:** What is the key histological/serological feature of Mycoplasma-induced SJS?
+   A. Better than drug-induced SJS
+   B. Always normal histology
+   C. Non-specific findings
+   D. Only positive in late disease
+   E. No test exists
+   **Answer: A**
+
+## SBA Questions (5)
+1. **Scenario:** Patient with Mycoplasma-induced SJS; first-line investigation?
+   A. Clinical diagnosis ± biopsy if atypical  B. Antibiotics  C. CT  D. None  E. Steroids only
+   **Answer: A**
+2. **Scenario:** Mycoplasma-induced SJS failed topical therapy; next step?
+   A. Phototherapy or systemic  B. More topical  C. Observation  D. Surgery  E. Antifungals
+   **Answer: A**
+3. **Scenario:** Complication of Mycoplasma-induced SJS?
+   A. Secondary infection and complications  B. Malignancy  C. Renal failure  D. Cardiac arrest  E. None
+   **Answer: A**
+4. **Scenario:** Pre-treatment screening before systemic therapy for Mycoplasma-induced SJS?
+   A. TB, hep B/C, HIV  B. Pregnancy  C. ECG  D. None  E. Eye exam
+   **Answer: A**
+5. **Scenario:** Most characteristic histological finding in Mycoplasma-induced SJS?
+   A. Better than drug-induced SJS
+   B. Non-specific  C. Always normal  D. Only late  E. No test
+   **Answer: A**
+
+## Flashcards
+
+- **Q:** Key fact about Mycoplasma-induced SJS?
+  **A:** Mycoplasma pneumoniae
+- **Q:** Another key point?
+  **A:** Children, young adults
+- **Q:** Most important complication?
+  **A:** Prominent (oral, ocular, urethral)
+- **Q:** First-line treatment?
+  **A:** Less prominent than drug-induced SJS
+- **Q:** Key histological/serological feature?
+  **A:** Mycoplasma-induced rash and mucositis (newer terminology)
+
+## Answer Key with Explanations
+
+### MCQs
+1. **A** — Cause: Mycoplasma pneumoniae
+2. **A** — Topical first-line
+3. **A** — Pre-biologic screening
+4. **A** — Secondary infection most common
+5. **A** — Prognosis: Better than drug-induced SJS
+
+### SBAs
+1. **A** — Clinical + biopsy if atypical
+2. **A** — Phototherapy/systemic for moderate-severe
+3. **A** — Secondary infection most common
+4. **A** — Pre-biologic screening
+5. **A** — Better than drug-induced SJS
+
+## Local Navigation
+
+**Parent Heading Hub:** [[../../Urticaria Erythema and Purpura Hub]]
+**Chapter Hierarchy:** [[../../../Davidson Chapter 29 - Dermatology Hierarchy]]
+**Chapter MOC:** [[../../../Dermatology MOC]]
+
+---
+
+> [!tip] **Exam focus:** Know definition, key clinical features, first-line management, and the most important complication. Always compare with the main differential.

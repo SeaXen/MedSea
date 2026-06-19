@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Definition and Aetiology — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Definition and Aetiology</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define ALF and ACLF with precise criteria</li><li>[ ] Classify ALF by aetiology and hyperacute/acute/subacute</li><li>[ ] Know UK vs Asian aetiology differences</li><li>[ ] List precipitating factors for ACLF</li><li>[ ] Apply diagnostic criteria (King's College, CLIF-C)</li><li>[ ] Recognize FCPS/MRCP high-yield associations</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Acute Liver Failure (ALF)</div>
+<div class="callout"><b>Coagulopathy (INR ≥1.5) + Encephalopathy (any grade) in a patient WITHOUT pre-existing liver disease AND illness duration &lt;26 weeks</b></div>
+<table class="ctable"><tr><th>Subtype</th><th>Onset to Encephalopathy</th><th>Prognosis</th></tr><tr><td>---------</td><td>------------------------</td><td>-----------</td></tr><tr><td>**Hyperacute**</td><td><7 days</td><td>Best (spontaneous recovery 40-50%)</td></tr><tr><td>**Acute**</td><td>8-28 days</td><td>Intermediate</td></tr><tr><td>**Subacute**</td><td>29 days - 26 weeks</td><td>Worst (less regeneration time)</td></tr></table>
+<div class="sub-h">Acute-on-Chronic Liver Failure (ACLF)</div>
+<div class="callout"><b>Acute deterioration in a patient WITH chronic liver disease (cirrhosis or chronic hepatitis) associated with organ failure(s) and high 28-day mortality</b></div>
+<p><b>EASL-CLIF Definition (CANONIC study):</b></p>
+<ul><li>Cirrhosis + acute decompensation + <b>organ failure(s)</b> (liver, kidney, brain, coagulation, circulation, respiration)</li><li>Graded ACLF-1, ACLF-2, ACLF-3 by number of organ failures</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiology of ALF</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Geographic Variation</div>
+<pre class="codeblock"><code>pie title ALF Aetiology: UK/West vs Asia
+    "Paracetamol" : 50
+    "Indeterminate" : 15
+    "Drug-induced (non-paracetamol)" : 12
+    "Autoimmune" : 8
+    "Viral (HAV, HBV, HEV, HSV, EBV)" : 10
+    "Wilson Disease" : 3
+    "Other (Budd-Chiari, AFLP, etc.)" : 2</code></pre>
+<table class="ctable"><tr><th>Region</th><th>Commonest Cause</th><th>Other Major Causes</th></tr><tr><td>--------</td><td>-----------------</td><td>---------------------</td></tr><tr><td>**UK/USA/Europe**</td><td>Paracetamol (50-70%)</td><td>Indeterminate, Non-paracetamol DILI, AIH, Viral</td></tr><tr><td>**India/Asia/Africa**</td><td>**Viral (HAV, HEV, HBV)**</td><td>Paracetamol rising, Wilson, Unknown</td></tr><tr><td>**Latin America**</td><td>Viral, DILI</td><td>Paracetamol</td></tr></table>
+<div class="sub-h">Detailed Aetiology List</div>
+<table class="ctable"><tr><th>Category</th><th>Specific Causes</th><th>FCPS/MRCP Clues</th></tr><tr><td>----------</td><td>-----------------</td><td>-----------------</td></tr><tr><td>**Paracetamol**</td><td>Intentional OD, therapeutic excess, alcohol + paracetamol</td><td>ALT >5000, high lactate, metabolic acidosis</td></tr><tr><td>**Non-paracetamol DILI**</td><td>Anti-TB (isoniazid/rifampicin), Antibiotics (amox-clav, flucloxacillin), Anticonvulsants, Herbal, ICI</td><td>Latency 1-8 weeks, RUCAM scoring</td></tr><tr><td>**Viral**</td><td>HAV, HBV (acute), HEV, HSV, EBV, CMV, VZV</td><td>HAV/HEV in young; HBV reactivation in immunosuppressed</td></tr><tr><td>**Autoimmune**</td><td>AIH (type 1, 2), CHAID</td><td>Young women, hypergammaglobulinaemia, ANA/SMA/LKM+</td></tr><tr><td>**Metabolic**</td><td>**Wilson disease** (5-10% of young ALF), Acute fatty liver of pregnancy</td><td>Wilson: low ceruloplasmin, Coombs-neg haemolysis, Kayser-Fleischer</td></tr><tr><td>**Vascular**</td><td>Budd-Chiari syndrome, Ischaemic hepatitis (shock liver), Veno-occlusive disease (SOS)</td><td>Abdominal pain + hepatomegaly + ascites</td></tr><tr><td>**Infiltrative**</td><td>Malignant infiltration, Lymphoma, TB</td><td>Weight loss, hepatomegaly</td></tr><tr><td>**Indeterminate**</td><td>No cause found after full workup</td><td>15-20% in West; lower in Asia</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">ALF vs ACLF: Key Distinctions</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>ALF</th><th>ACLF</th></tr><tr><td>---------</td><td>-----</td><td>------</td></tr><tr><td>**Pre-existing liver disease**</td><td>NO</td><td>YES (cirrhosis or chronic hepatitis)</td></tr><tr><td>**Encephalopathy**</td><td>Required</td><td>Required (grade-dependent)</td></tr><tr><td>**Coagulopathy**</td><td>INR ≥1.5</td><td>INR ≥1.5</td></tr><tr><td>**Organ failures**</td><td>Liver only initially</td><td>Multi-organ (CLIF-SOFA)</td></tr><tr><td>**Duration**</td><td><26 weeks</td><td>Acute on chronic</td></tr><tr><td>**Precipitant**</td><td>Direct hepatotoxin</td><td>Infection, alcohol, GI bleed, drugs</td></tr><tr><td>**Mortality (28-day)**</td><td>30-50%</td><td>ACLF-1: 22%, ACLF-2: 32%, ACLF-3: 77%</td></tr><tr><td>**Transplant urgency**</td><td>King's College Criteria</td><td>MELD + CLIF-C ACLF score</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnostic Workup for ALF</span>
+  </div>
+  <div class="sec-body">
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspect ALF: Jaundice + Coagulopathy + Encephalopathy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Exclude Chronic Liver Disease</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">History: Drugs, Alcohol, Travel, Risk factors</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Core Labs</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">LFTs, Clotting, Glucose, U&amp;E, Lactate, ABG, FBC, CRP</div>
+<div class="fc-node" data-id="F">Viral Serology: HAV IgM, HBsAg, anti-HBc IgM, HCV Ab, HEV IgM, HSV, EBV, CMV</div>
+<div class="fc-node" data-id="G">Immunology: ANA, SMA, LKM-1, IgG, AMA</div>
+<div class="fc-node" data-id="H">Metabolic: Ceruloplasmin, Urinary Cu, Alpha-1 AT, TSH</div>
+<div class="fc-node" data-id="I">Imaging: US Doppler liver (vascular), CXR</div>
+<div class="fc-node" data-id="J">Screen: Paracetamol level, Drug screen, Ethanol</div>
+<div class="fc-node" data-id="K">Aetiology-specific: Wilson, AFLP, Budd-Chiari</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Likely Aetiology</th><th>Immediate Action</th></tr><tr><td>----------</td><td>------------------</td><td>------------------</td></tr><tr><td>Young woman, OD, metabolic acidosis</td><td>Paracetamol</td><td>NAC immediately</td></tr><tr><td>Young man, recent travel to India, fever</td><td>HAV/HEV</td><td>IgM serology, supportive</td></tr><tr><td>Woman on anti-TB, 4 weeks, jaundice</td><td>Isoniazid DILI</td><td>Stop all anti-TB, RUCAM</td></tr><tr><td>Young woman, high IgG, ANA+</td><td>Autoimmune hepatitis</td><td>Steroids (if no contraindication)</td></tr><tr><td>Teenager, neuro features, low ceruloplasmin</td><td>Wilson disease</td><td>Penicillamine/trientine, transplant eval</td></tr><tr><td>Pregnant 3rd trimester, nausea, hepatic failure</td><td>AFLP / HEV</td><td>Delivery + supportive</td></tr><tr><td>Post-chemo, painful hepatomegaly, ascites</td><td>SOS/VOD</td><td>Defibrotide</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define ALF. How does it differ from ACLF?</b></li><li><b>Classify ALF by time to encephalopathy. Which has best prognosis?</b></li><li><b>What is the commonest cause of ALF in UK vs India?</b></li><li><b>List 5 causes of non-paracetamol DILI causing ALF.</b></li><li><b>How do you diagnose Wilson disease presenting as ALF?</b></li><li><b>What are the King's College Criteria for paracetamol vs non-paracetamol ALF?</b></li><li><b>Define ACLF per EASL-CLIF. How is it graded?</b></li><li><b>What is the 28-day mortality for ACLF-1, -2, -3?</b></li><li><b>List precipitants for ACLF.</b></li><li><b>What is indeterminate ALF? What % in West?</b></li><li><b>What is the ALF definition?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>ALF vs severe acute hepatitis</td><td>ALF = INR ≥1.5 + encephalopathy; Severe hepatitis = INR ≥1.5 NO encephalopathy</td></tr><tr><td>ALF vs ACLF</td><td>ALF: NO prior liver disease; ACLF: chronic liver disease present</td></tr><tr><td>Hyperacute vs acute vs subacute</td><td>Time to encephalopathy: <7d, 8-28d, 29d-26w. Hyperacute = best prognosis</td></tr><tr><td>Indeterminate ALF</td><td>Diagnosis of exclusion — no cause found after complete workup</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<div class="mindmap">
+<div class="mm-root">root((ALF Definition &amp; Aetiology))</div>
+<div class="mm-branches">
+<div class="mm-node mm-l2">Definition</div>
+<div class="mm-node mm-l3">– INR&gt;=1.5 + Encephalopathy</div>
+<div class="mm-node mm-l3">– No prior liver disease</div>
+<div class="mm-node mm-l3">– &lt;26 weeks</div>
+<div class="mm-node mm-l2">Subtypes</div>
+<div class="mm-node mm-l3">– Hyperacute &lt;7d Best</div>
+<div class="mm-node mm-l3">– Acute 8-28d Intermediate</div>
+<div class="mm-node mm-l3">– Subacute 29d-26w Worst</div>
+<div class="mm-node mm-l2">Aetiology West</div>
+<div class="mm-node mm-l3">– Paracetamol 50-70%</div>
+<div class="mm-node mm-l3">– Indeterminate 15%</div>
+<div class="mm-node mm-l3">– Non-PCM DILI 12%</div>
+<div class="mm-node mm-l3">– AIH 8%</div>
+<div class="mm-node mm-l3">– Viral 10%</div>
+<div class="mm-node mm-l2">Aetiology Asia</div>
+<div class="mm-node mm-l3">– Viral HAV HEV HBV</div>
+<div class="mm-node mm-l3">– Paracetamol rising</div>
+<div class="mm-node mm-l3">– Wilson</div>
+<div class="mm-node mm-l3">– Indeterminate</div>
+<div class="mm-node mm-l2">ALF_vs_ACLF</div>
+<div class="mm-node mm-l3">– ALF no prior disease</div>
+<div class="mm-node mm-l3">– ACLF chronic liver disease</div>
+<div class="mm-node mm-l3">– ACLF multi-organ failure</div>
+<div class="mm-node mm-l3">– ACLF grades 1-3</div>
+</div>
+</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Feature**</th><th>**ALF**</th><th>**ACLF**</th></tr><tr><td>-------------</td><td>---------</td><td>----------</td></tr><tr><td>Pre-existing disease</td><td>NO</td><td>YES</td></tr><tr><td>Encephalopathy</td><td>Required</td><td>Required</td></tr><tr><td>INR</td><td>≥1.5</td><td>≥1.5</td></tr><tr><td>Organ failure</td><td>Liver</td><td>Multi-organ (CLIF-SOFA)</td></tr><tr><td>Time course</td><td><26 weeks</td><td>Acute on chronic</td></tr><tr><td>Aetiology (West)</td><td>Paracetamol #1</td><td>Infection, Alcohol, Bleed, Drugs</td></tr><tr><td>Aetiology (Asia)</td><td>Viral (HAV/HEV/HBV)</td><td>Infection, Alcohol, Bleed</td></tr><tr><td>Prognostic score</td><td>King's College</td><td>CLIF-C ACLF</td></tr><tr><td>28-day mortality</td><td>30-50%</td><td>ACLF-1 22%, -2 32%, -3 77%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>ALF definition & subtypes</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>ALF vs ACLF table</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Aetiology West vs Asia</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>King's College vs CLIF-C</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>ALF definition</td><td></td><td></td></tr><tr><td>3 ALF subtypes</td><td></td><td></td></tr><tr><td>ALF aetiology West</td><td></td><td></td></tr><tr><td>ACLF definition</td><td></td><td></td></tr><tr><td>Precipitants ACLF</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Acute Liver Failure/ALF vs ACLF|ALF vs ACLF]]</li><li>[[Acute Liver Failure/King's College Criteria|King's College Criteria]]</li><li>[[Acute Liver Failure/Paracetamol-induced hepatotoxicity|Paracetamol ALF]]</li><li>[[Acute Liver Failure/Non-paracetamol drug-induced liver injury|Non-PCM DILI ALF]]</li><li>[[Acute Liver Failure/Wilson disease presenting as ALF|Wilson ALF]]</li><li>[[Acute Liver Failure/Autoimmune hepatitis presenting as ALF|AIH ALF]]</li><li>[[Acute Liver Failure/Acute fatty liver of pregnancy|AFLP]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Definition and Aetiology · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -343,6 +343,24 @@ main { padding: 24px 20px; max-width: 1600px; margin: 0 auto; }
   padding: 16px; margin-bottom: 20px;
 }
 .topic-detail .topic-image img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.topic-detail .topic-image-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px;
+  padding: 10px 16px; margin-bottom: 16px; cursor: pointer;
+  color: var(--text-dim); font-size: 14px; font-weight: 600;
+  transition: all 0.15s ease;
+}
+.topic-detail .topic-image-toggle:hover {
+  background: var(--bg-2); border-color: var(--accent); color: var(--accent);
+}
+.topic-detail .topic-image-toggle .toggle-icon {
+  font-size: 16px; transition: transform 0.2s ease;
+}
+.topic-detail .topic-image-toggle.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+.topic-detail .topic-image-wrap { overflow: hidden; }
+.topic-detail .topic-image-wrap.collapsed { display: none; }
 .topic-detail .topic-content {
   background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
   padding: 24px;
@@ -553,6 +571,17 @@ function navigateTopic(dir) {
   showTopic(MANIFEST.topics[ni].local_prefix);
 }
 
+function toggleTopicImage(btn) {
+  btn.classList.toggle("collapsed");
+  const wrap = btn.nextElementSibling;
+  if (wrap) wrap.classList.toggle("collapsed");
+  if (wrap && !wrap.classList.contains("collapsed")) {
+    btn.querySelector("span:last-child").textContent = "click to collapse";
+  } else {
+    btn.querySelector("span:last-child").textContent = "click to expand";
+  }
+}
+
 function showTopic(localPrefix) {
   const t = MANIFEST.topics.find(x => x.local_prefix === localPrefix);
   if (!t) return;
@@ -572,7 +601,14 @@ function showTopic(localPrefix) {
   // Render content
   const container = document.getElementById("topicContainer");
   container.className = "topic-detail";
-  const imgHtml = t.png ? `<div class="topic-image"><img src="/11-poisoning/${t.png}" alt="${t.title}"></div>` : "";
+  const imgHtml = t.png ? `
+    <div class="topic-image-toggle collapsed" onclick="toggleTopicImage(this)">
+      <span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>
+      <span style="font-size:12px;color:var(--text-dim)">click to expand</span>
+    </div>
+    <div class="topic-image-wrap collapsed">
+      <div class="topic-image"><img src="/11-poisoning/${t.png}" alt="${t.title}"></div>
+    </div>` : "";
   container.innerHTML = `
     <div class="crumbs"><a href="/">Home</a> · <a href="/11-poisoning/">Poisoning</a> · <span>${t.hub_num} · ${t.hub_name}</span></div>
     <div class="topic-header">
@@ -615,7 +651,7 @@ loadManifest();
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 11:49 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-19 14:27 UTC · Davidson 25th Ed</p>
 </footer>
 <script>
 // Close dropdown when clicking outside

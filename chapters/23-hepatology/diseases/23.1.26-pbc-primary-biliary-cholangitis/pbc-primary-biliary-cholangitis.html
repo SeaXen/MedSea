@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PBC (Primary Biliary Cholangitis) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">PBC (Primary Biliary Cholangitis)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Apply diagnostic criteria (ALP, AMA, histology)</li><li>[ ] Stage disease (histological and biochemical)</li><li>[ ] Initiate UDCA and assess response (Paris, Toronto, Barcelona criteria)</li><li>[ ] Manage incomplete responders (obeticholic acid, fibrates)</li><li>[ ] Manage complications (pruritus, osteoporosis, fat-soluble vitamin deficiency, HCC)</li><li>[ ] Identify FCPS/MRCP high-yield details</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Epidemiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>PBC</th></tr><tr><td>-------</td><td>-----</td></tr><tr><td>**Definition**</td><td>Chronic autoimmune cholestatic liver disease targeting **small intrahepatic bile ducts**</td></tr><tr><td>**Demographics**</td><td>**Women 90%**, age 40-60 at diagnosis</td></tr><tr><td>**Autoantibody**</td><td>**AMA positive in 95%**</td></tr><tr><td>**Associated conditions**</td><td>Thyroiditis (20%), Sjögren's (30%), CREST, RA, Celiac</td></tr><tr><td>**Progression**</td><td>Variable: years to decades; without treatment → cirrhosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Diagnostic Criteria (All 3)</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Suspect PBC: Middle-aged woman, fatigue, pruritus, ↑ALP] --&gt; B{Criteria 1: ALP &gt;1.5x ULN}
+    B --&gt;|Yes| C{Criteria 2: AMA ≥1:40}
+    C --&gt;|Yes| D[Diagnose PBC - No Biopsy Needed]
+    C --&gt;|No| E{Criteria 3: Histology compatible}
+    E --&gt;|Yes| D
+    E --&gt;|No| F[Consider AMA-negative PBC / IgG4 / PSC / AIH overlap]</code></pre>
+<table class="ctable"><tr><th>Criterion</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**1. Biochemical**</td><td>**ALP >1.5 × ULN** (cholestatic pattern)</td></tr><tr><td>**2. Serological**</td><td>**AMA ≥1:40** (highly specific 95-98%)</td></tr><tr><td>**3. Histological**</td><td>**Florid duct lesion**: Granulomatous destruction of interlobular bile ducts</td></tr></table>
+<div class="callout"><b>AMA-negative PBC</b>: 5% — diagnosis requires Criteria 1 + 3 + exclusion of other causes</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">AMA Subtypes & Significance</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Subtype</th><th>Antigen</th><th>Frequency</th><th>Significance</th></tr><tr><td>---------</td><td>---------</td><td>-----------</td><td>--------------</td></tr><tr><td>**M2**</td><td>PDC-E2 (pyruvate dehydrogenase complex)</td><td>**95% of AMA+**</td><td>**Diagnostic for PBC**</td></tr><tr><td>M4</td><td>BCOADC-E2</td><td><5%</td><td>Less specific</td></tr><tr><td>M8</td><td>Sulfite oxidase</td><td>Rare</td><td>—</td></tr><tr><td>M9</td><td>enolase</td><td>Rare</td><td>—</td></tr></table>
+<div class="callout"><b>Only M2 is diagnostic</b>; others may be seen in other conditions</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Staging</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Histological (Ludwig/Scheuer)</div>
+<table class="ctable"><tr><th>Stage</th><th>Description</th></tr><tr><td>-------</td><td>-------------</td></tr><tr><td>**1**</td><td>Florid duct lesion, portal inflammation</td></tr><tr><td>**2**</td><td>Periportal fibrosis</td></tr><tr><td>**3**</td><td>Bridging fibrosis</td></tr><tr><td>**4**</td><td>**Cirrhosis**</td></tr></table>
+<div class="sub-h">Biochemical (Global PBC Score / UK-PBC Risk Score)</div>
+<table class="ctable"><tr><th>Variable</th><th>Points</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>Bilirubin</td><td>Continuous</td></tr><tr><td>ALP</td><td>Continuous</td></tr><tr><td>Albumin</td><td>Continuous</td></tr><tr><td>Platelets</td><td>Continuous</td></tr><tr><td>Age</td><td>Continuous</td></tr></table>
+<p><b>Risk calculators</b>: UK-PBC (transplant-free survival), GLOBE score</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Treatment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Ursodeoxycholic Acid (UDCA) — First-Line</div>
+<table class="ctable"><tr><th>Parameter</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Dose**</td><td>**13-15 mg/kg/day** (typically 500-750 mg BD or TDS)</td></tr><tr><td>**Mechanism**</td><td>Hydrophilic bile acid → stabilizes hepatocyte membranes, stimulates bile flow, immunomodulation</td></tr><tr><td>**Target**</td><td>**Normalize ALP** (or <1.5×ULN), normalize bilirubin</td></tr><tr><td>**Duration**</td><td>**Lifelong**</td></tr></table>
+<div class="sub-h">2. Response Criteria (Assess at 12 Months)</div>
+<table class="ctable"><tr><th>Criteria</th><th>Definition</th><th>Transplant-Free Survival</th></tr><tr><td>----------</td><td>------------</td><td>--------------------------</td></tr><tr><td>**Paris I**</td><td>ALP ≤3×ULN + AST ≤2×ULN + **Bilirubin ≤1 mg/dL**</td><td>Excellent</td></tr><tr><td>**Paris II** (Early disease)</td><td>ALP ≤1.5×ULN + AST ≤1.5×ULN + **Bilirubin normal**</td><td>Better</td></tr><tr><td>**Toronto**</td><td>ALP ≤1.67×ULN at **2 years**</td><td>Good</td></tr><tr><td>**Barcelona**</td><td>ALP ↓40% from baseline or **ALP normal** at 1 year</td><td>Good</td></tr><tr><td>**UK-PBC / GLOBE**</td><td>Risk scores using baseline + 12mo values</td><td>Individualized</td></tr></table>
+<div class="callout"><b>FCPS/MRCP</b>: <b>Paris I/II most commonly tested</b> — know bilirubin ≤1 mg/dL requirement</div>
+<div class="sub-h">3. Incomplete Responders — Second-Line</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose</th><th>Indication</th><th>Monitoring</th></tr><tr><td>------</td><td>------</td><td>------------</td><td>------------</td></tr><tr><td>**Obeticholic Acid (OCA)**</td><td>5 mg daily → titrate to 10 mg</td><td>**Incomplete UDCA response** (Paris I/II fail)</td><td>**Pruritus** (common), ALP, bilirubin, lipids</td></tr><tr><td>**Fibrates (Bezafibrate)**</td><td>400 mg daily</td><td>Incomplete response (off-label, EU approved)</td><td>Cr, CK, GI side effects</td></tr><tr><td>**Budesonide**</td><td>3-6 mg daily</td><td>Early non-cirrhotic (caution: portal hypertension)</td><td>Cortisol, bone density</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management of Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Pruritus**</td><td>Cholestyramine 4g QID (1st line) → Rifampicin 150mg BD → Naltrexone 50mg → Sertraline → OCA (dose-reduce/stop)</td></tr><tr><td>**Fatigue**</td><td>Exclude anaemia, thyroid, depression; Modafinil (off-label)</td></tr><tr><td>**Osteoporosis**</td><td>**DEXA at diagnosis**; Calcium 1g + Vit D 800-1000 IU; Bisphosphonate if T-score <-2.5 or fracture</td></tr><tr><td>**Fat-soluble vitamin deficiency**</td><td>Check A, D, E, K annually; Replace if low</td></tr><tr><td>**Hyperlipidaemia**</td><td>Usually no treatment needed (high HDL); Statins safe if indicated</td></tr><tr><td>**HCC surveillance**</td><td>**Cirrhosis: 6-monthly US ± AFP**; Non-cirrhotic: consider if high risk (male, older)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Disease Progression & Prognosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Factor</th><th>Better Prognosis</th><th>Worse Prognosis</th></tr><tr><td>--------</td><td>------------------</td><td>-----------------</td></tr><tr><td>**UDCA Response**</td><td>Paris I/II met</td><td>Incomplete</td></tr><tr><td>**Bilirubin**</td><td>Normal</td><td>Elevated</td></tr><tr><td>**Albumin**</td><td>Normal</td><td>Low</td></tr><tr><td>**Platelets**</td><td>Normal</td><td>Low (splenomegaly)</td></tr><tr><td>**ALP**</td><td>Normalized</td><td>Persistently high</td></tr></table>
+<p><b>Median survival without treatment</b>: ~10-15 years <b>With UDCA (responders)</b>: Near-normal life expectancy</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Demographics**</td><td>Women 90%, age 40-60</td></tr><tr><td>**Diagnosis**</td><td>ALP >1.5×ULN + AMA ≥1:40 (+/- biopsy)</td></tr><tr><td>**AMA**</td><td>M2 subtype = diagnostic</td></tr><tr><td>**1st line**</td><td>**UDCA 13-15 mg/kg/day lifelong**</td></tr><tr><td>**Response criteria**</td><td>**Paris I**: ALP ≤3×ULN, AST ≤2×ULN, Bil ≤1 mg/dL at 12mo</td></tr><tr><td>**2nd line**</td><td>**Obeticholic acid 5-10mg** if incomplete response</td></tr><tr><td>**Pruritus**</td><td>Cholestyramine → Rifampicin → Naltrexone</td></tr><tr><td>**Osteoporosis**</td><td>DEXA at diagnosis; Bisphosphonate if T<-2.5</td></tr><tr><td>**HCC surveillance**</td><td>Cirrhosis: 6m US ± AFP</td></tr><tr><td>**Fat-soluble vitamins**</td><td>Check A, D, E, K annually</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>What are the 3 diagnostic criteria for PBC?</b></li><li><b>What AMA subtype is diagnostic?</b></li><li><b>What is the UDCA dose? Mechanism?</b></li><li><b>What are Paris I/II criteria for UDCA response?</b></li><li><b>When do you start obeticholic acid? Dose?</b></li><li><b>How do you manage pruritus in PBC? Stepwise?</b></li><li><b>Why DEXA scan at diagnosis?</b></li><li><b>What fat-soluble vitamins to monitor?</b></li><li><b>HCC surveillance in PBC?</b></li><li><b>Differentiate PBC from PSC and AIH.</b></li><li><b>What is the M2 AMA subtype?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>PBC vs PSC</td><td>PBC: Women, AMA+, small ducts, ALP↑; PSC: Men, IBD, MRCP beading, large+small ducts</td></tr><tr><td>PBC vs AIH</td><td>PBC: ALP predominant, AMA+; AIH: ALT predominant, ANA/SMA+, IgG↑</td></tr><tr><td>Paris I vs II</td><td>Paris I: ALP≤3×, AST≤2×, Bil≤1 mg/dL (standard); Paris II: ALP≤1.5×, AST≤1.5×, Bil normal (early disease)</td></tr><tr><td>OCA pruritus</td><td>**Common** — manage with cholestyramine, dose-reduce, or stop</td></tr><tr><td>UDCA dose</td><td>**13-15 mg/kg/day** — not fixed mg; weight-based</td></tr><tr><td>AMA-negative PBC</td><td>5% — needs histology + exclusion</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((PBC))
+    Demographics
+      Women 90%, 40-60yo
+      Fatigue, Pruritus
+    Diagnosis
+      ALP &gt;1.5x ULN
+      AMA &gt;=1:40 (M2 diagnostic)
+      Histology: Florid duct lesion
+    Treatment
+      UDCA 13-15 mg/kg/day lifelong
+      Response: Paris I/II at 12mo
+      Incomplete: OCA 5-10mg
+    Complications
+      Pruritus: Cholestyramine -&gt; Rifampicin -&gt; Naltrexone
+      Osteoporosis: DEXA, Bisphosphonate
+      Fat-soluble vitamins: A, D, E, K
+      HCC: Cirrhosis -&gt; 6m US
+    Prognosis
+      Responders: Near-normal life expectancy
+      Non-responders: OCA, Transplant</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Diagnosis**</th><th>**Criteria**</th></tr><tr><td>---------------</td><td>--------------</td></tr><tr><td>1. Biochemical</td><td>ALP >1.5×ULN</td></tr><tr><td>2. Serological</td><td>**AMA ≥1:40 (M2)**</td></tr><tr><td>3. Histological</td><td>Florid duct lesion</td></tr></table>
+<table class="ctable"><tr><th>**Treatment**</th><th>**Details**</th></tr><tr><td>---------------</td><td>-------------</td></tr><tr><td>UDCA</td><td>13-15 mg/kg/day lifelong</td></tr><tr><td>Response (Paris I)</td><td>ALP≤3×ULN, AST≤2×ULN, **Bil≤1 mg/dL** at 12mo</td></tr><tr><td>Incomplete response</td><td>**Obeticholic acid 5-10mg**</td></tr></table>
+<table class="ctable"><tr><th>**Complications**</th><th>**Management**</th></tr><tr><td>-------------------</td><td>----------------</td></tr><tr><td>Pruritus</td><td>Cholestyramine → Rifampicin → Naltrexone</td></tr><tr><td>Osteoporosis</td><td>DEXA at diagnosis; Bisphosphonate if T<-2.5</td></tr><tr><td>Vitamins</td><td>Check A, D, E, K annually</td></tr><tr><td>HCC</td><td>Cirrhosis: 6m US ± AFP</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>3 diagnostic criteria</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>UDCA dose</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Paris I criteria</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>OCA indication/dose</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Pruritus ladder</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>PBC diagnostic triad</td><td></td><td></td></tr><tr><td>UDCA dose mechanism</td><td></td><td></td></tr><tr><td>Paris I vs II</td><td></td><td></td></tr><tr><td>Pruritus management steps</td><td></td><td></td></tr><tr><td>Fat-soluble vitamins</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Autoimmune Liver Disease/Primary sclerosing cholangitis (PSC)|PSC]]</li><li>[[Autoimmune Liver Disease/Autoimmune hepatitis (AIH)|AIH]]</li><li>[[Autoimmune Liver Disease/Overlap syndromes|Overlap Syndromes]]</li><li>[[Autoimmune Liver Disease/IgG4-related sclerosing cholangitis|IgG4-SC]]</li><li>[[Autoimmune Liver Disease/AIH diagnostic criteria (IAIHG simplified)|AIH Criteria]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · PBC (Primary Biliary Cholangitis) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

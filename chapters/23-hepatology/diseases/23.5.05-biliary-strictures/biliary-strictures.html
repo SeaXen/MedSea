@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Biliary strictures — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Biliary strictures</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Differentiate benign from malignant biliary strictures</li><li>[ ] Apply diagnostic algorithm (US → MRCP/ERCP/EUS)</li><li>[ ] Manage benign strictures (dilatation, stenting, surgery)</li><li>[ ] Manage malignant strictures (stenting, neoadjuvant therapy, surgery)</li><li>[ ] Identify FCPS/MRCP high-yield decision points</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Biliary Stricture] --&gt; B{Malignant?}
+    B --&gt;|Yes| C[Malignant Stricture]
+    B --&gt;|No| D[Benign Stricture]
+    C --&gt; C1[Cholangiocarcinoma]
+    C --&gt; C2[Gallbladder Cancer]
+    C --&gt; C3[Pancreatic Cancer]
+    C --&gt; C4[Ampullary Carcinoma]
+    C --&gt; C5[Metastatic Lymph Nodes]
+    D --&gt; D1[Post-Surgical / Post-ERCP]
+    D --&gt; D2[Post-Liver Transplant]
+    D --&gt; D3[Chronic Pancreatitis]
+    D --&gt; D4[Primary Sclerosing Cholangitis]
+    D --&gt; D5[IgG4-SC]
+    D --&gt; D6[Mirizzi Syndrome]
+    D --&gt; D6[Radiation / Chemotherapy]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Benign Biliary Strictures</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Aetiology</div>
+<table class="ctable"><tr><th>Cause</th><th>Mechanism</th><th>Timing</th></tr><tr><td>-------</td><td>-----------</td><td>--------</td></tr><tr><td>**Iatrogenic (Post-Surgical)**</td><td>Bile Duct Injury (Cholecystectomy)</td><td>Immediate to Years</td></tr><tr><td>**Post-ERCP**</td><td>Trauma from Instrumentation</td><td>Days-Weeks</td></tr><tr><td>**Post-Liver Transplant**</td><td>Anastomotic Stricture / Ischemic</td><td>3-12 Months</td></tr><tr><td>**Chronic Pancreatitis**</td><td>Fibrosis of Pancreatic Head</td><td>Years</td></tr><tr><td>**PSC**</td><td>Autoimmune Fibrosis</td><td>Years</td></tr><tr><td>**IgG4-SC**</td><td>Autoimmune Fibrosis</td><td>Months-Years</td></tr><tr><td>**Mirizzi Syndrome**</td><td>Cystic Duct Stone Compression</td><td>Acute-Chronic</td></tr><tr><td>**Radiation**</td><td>Radiation-Induced Fibrosis</td><td>Years Post-RT</td></tr><tr><td>**Infections**</td><td>TB, Parasites (Ascariasis)</td><td>Variable</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Malignant Biliary Strictures</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Aetiology</div>
+<table class="ctable"><tr><th>Cancer</th><th>Location</th><th>Key Features</th></tr><tr><td>--------</td><td>----------</td><td>--------------</td></tr><tr><td>**Cholangiocarcinoma**</td><td>Intra/Extrahepatic Bile Ducts</td><td>**MRCP Beading**, CA19-9↑</td></tr><tr><td>**Pancreatic Head Cancer**</td><td>Pancreas Head</td><td>**Double Duct Sign**, Weight Loss</td></tr><tr><td>**Gallbladder Cancer**</td><td>GB Fossa/Neck</td><td>**Porcelain GB**, Direct Liver Invasion</td></tr><tr><td>**Ampullary Carcinoma**</td><td>Ampulla of Vater</td><td>**Intermittent Jaundice**, Endoscopically Visible</td></tr><tr><td>**Metastatic Nodes**</td><td>Porta Hepatis</td><td>Known Primary (GI, Breast, Lung)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Presentation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Benign</th><th>Malignant</th></tr><tr><td>---------</td><td>--------</td><td>-----------</td></tr><tr><td>**Jaundice**</td><td>Intermittent (Post-Prandial)</td><td>**Progressive, Constant**</td></tr><tr><td>**Pain**</td><td>Often Absent/Mild</td><td>**Present (Weight Loss, Anorexia)**</td></tr><tr><td>**Weight Loss**</td><td>Rare</td><td>**Common**</td></tr><tr><td>**Pruritus**</td><td>Variable</td><td>**Common**</td></tr><tr><td>**Fever**</td><td>If Cholangitis</td><td>If Cholangitis</td></tr><tr><td>**CA19-9**</td><td>Normal/Mildly ↑</td><td>**Markedly ↑**</td></tr></table>
+<div class="callout"><b>Key</b>: <b>Progressive Painless Jaundice + Weight Loss = Malignancy Until Proven Otherwise</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnostic Algorithm</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Suspect Biliary Stricture: Obstructive Jaundice] --&gt; B[Transabdominal US]
+    B --&gt; C{CBD Dilated?}
+    C --&gt;|No| D[Medical Jaundice / Intrahepatic Cause]
+    C --&gt;|Yes| E[MRCP (Non-Invasive Diagnostic)]
+    E --&gt; F{Stricture Seen?}
+    F --&gt;|Yes| G{Lesion/Mass Seen?}
+    G --&gt;|Yes| H[Malignant Suspected → CT + CA19-9]
+    G --&gt;|No| I[EUS for Tissue Diagnosis]
+    F --&gt;|No| J[Consider Functional / Intermittent]
+    E --&gt;|Equivocal| K[EUS / ERCP]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">ERCP in Stricture Evaluation</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[ERCP Indicated] --&gt; B[Diagnostic Cholangiography]
+    B --&gt; C{Stricture Type}
+    C --&gt;|Benign| D[Dilatation ± Short-Term Stent]
+    C --&gt;|Malignant| E[Tissue Diagnosis: Brushing + Biopsy + FISH]
+    E --&gt; F[Palliative Stenting (SEMS Preferred)]
+    E --&gt; G[Neoadjuvant Therapy if Resectable]</code></pre>
+<div class="sub-h">ERCP Stricture Assessment</div>
+<table class="ctable"><tr><th>Feature</th><th>Benign</th><th>Malignant</th></tr><tr><td>---------</td><td>--------</td><td>-----------</td></tr><tr><td>**Appearance**</td><td>Smooth, Concentric, Short</td><td>Irregular, Shouldered, Long</td></tr><tr><td>**Brushing Cytology**</td><td>Negative</td><td>**Positive (Sensitivity 30-50%)**</td></tr><tr><td>**FISH**</td><td>Negative</td><td>**Positive (Higher Sensitivity)**</td></tr><tr><td>**Stricture Length**</td><td>Usually <2cm</td><td>Often >2cm</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Benign Strictures</div>
+<table class="ctable"><tr><th>Approach</th><th>Indication</th><th>Details</th></tr><tr><td>----------</td><td>------------</td><td>---------</td></tr><tr><td>**Endoscopic Dilatation + Stenting**</td><td>**First-Line**</td><td>Balloon Dilatation → Multiple Plastic Stents (6-12mo)</td></tr><tr><td>**Surgical Hepaticojejunostomy**</td><td>Failed Endoscopic / Complex</td><td>Roux-en-Y; Success >90%</td></tr><tr><td>**Post-Transplant**</td><td>Anastomotic Stricture</td><td>ERCP Dilatation/Stent → Surgery if Failed</td></tr></table>
+<div class="sub-h">Malignant Strictures</div>
+<table class="ctable"><tr><th>Situation</th><th>Management</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Resectable**</td><td>**Neoadjuvant Therapy → Surgery** (Whipple, Hepatectomy)</td></tr><tr><td>**Unresectable / Metastatic**</td><td>**Palliative Stenting (SEMS)** + Chemotherapy</td></tr><tr><td>**Palliative Stent**</td><td>**SEMS (8-12mo Patency) > Plastic (3-4mo)**</td></tr><tr><td>**Hilar (Klatskin)**</td><td>**Bismuth Type** Determines Resectability; Biliary Drainage Pre-Op</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Post-Liver Transplant Strictures</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Timing</th><th>Management</th></tr><tr><td>------</td><td>--------</td><td>------------</td></tr><tr><td>**Anastomotic**</td><td>3-12 Months</td><td>**ERCP Dilatation + Stent** (Primary); Surgery if Failed</td></tr><tr><td>**Non-Anastomotic (Ischemic)**</td><td>>1 Year</td><td>**ERCP Dilatation/Stent**; Higher Recurrence; Surgery (Hepaticojejunostomy)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mirizzi Syndrome</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Description</th><th>Management</th></tr><tr><td>------</td><td>-------------</td><td>------------</td></tr><tr><td>**Type I**</td><td>Cystic Duct Stone Compressing CHD</td><td>Cholecystectomy + CBD Exploration/ERCP</td></tr><tr><td>**Type II**</td><td>Cholecystocholedochal Fistula (<1/3 CBD)</td><td>Cholecystectomy + Fistula Closure + CBD Repair</td></tr><tr><td>**Type III**</td><td>Fistula 1/3-2/3 CBD</td><td>Complex Reconstruction</td></tr><tr><td>**Type IV**</td><td>Fistula >2/3 CBD</td><td>Hepaticojejunostomy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Concept</th><th>Key Points</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**Benign Aetiology**</td><td>Iatrogenic (Post-Cholecystectomy), PSC, Chronic Pancreatitis, IgG4-SC, Mirizzi</td></tr><tr><td>**Malignant Aetiology**</td><td>CCA, Pancreatic Ca, GB Ca, Ampullary Ca, Metastatic Nodes</td></tr><tr><td>**Differentiation**</td><td>**Progressive Painless Jaundice + Weight Loss = Malignant**</td></tr><tr><td>**Diagnosis**</td><td>US → MRCP → EUS/ERCP</td></tr><tr><td>**Benign Management**</td><td>**ERCP Dilatation + Multiple Plastic Stents** (6-12mo)</td></tr><tr><td>**Malignant Management**</td><td>**Resectable: Surgery; Unresectable: SEMS + Chemo**</td></tr><tr><td>**Post-Transplant**</td><td>Anastomotic: ERCP; Non-Anastomotic: Harder, Surgery Often</td></tr><tr><td>**Mirizzi**</td><td>Cystic Duct Stone → CHD Compression → Type I-IV</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Differentiate benign from malignant biliary strictures clinically.</b></li><li><b>What are the common causes of benign biliary strictures?</b></li><li><b>How do you diagnose a biliary stricture?</b></li><li><b>What is the management of a benign anastomotic stricture post-transplant?</b></li><li><b>How do you manage a malignant hilar stricture (Klatskin tumour)?</b></li><li><b>What is the role of ERCP in biliary strictures?</b></li><li><b>What is Mirizzi syndrome? Classification?</b></li><li><b>How do you differentiate benign from malignant on ERCP?</b></li><li><b>What is the role of SEMS vs plastic stents in malignant strictures?</b></li><li><b>What are the causes of post-transplant biliary strictures?</b></li><li><b>What is the algorithm for a new biliary stricture?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th></tr><tr><td>-----------</td><td>---------------</td></tr><tr><td>Benign vs Malignant Stricture</td><td>Benign: Intermittent Jaundice, No Weight Loss; Malignant: Progressive Jaundice, Weight Loss</td></tr><tr><td>ERCP vs PTC</td><td>ERCP = First-Line (Internal Drainage); PTC = Failed ERCP / Proximal Obstruction</td></tr><tr><td>SEMS vs Plastic</td><td>**SEMS for Malignant** (8-12mo Patency); **Plastic for Benign** (Multiple, 6-12mo)</td></tr><tr><td>Post-Tx Anastomotic vs Non-Anastomotic</td><td>Anastomotic = Technical (ERCP Fixable); Non-Anastomotic = Ischemic (Harder, Recurrent)</td></tr><tr><td>Klatskin Tumour</td><td>**Perihilar CCA** (Bismuth I-IV); Resectability Depends on Type</td></tr><tr><td>Dominant Stricture in PSC</td><td>Balloon Dilatation ± Short Stent; Avoid Long-Term Stents</td></tr><tr><td>Malignant Stricture Cytology</td><td>**Sensitivity 30-50%** — Repeat ×3, FISH Increases Sensitivity</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((Biliary Strictures))
+    Benign
+      Iatrogenic (Post-Cholecystectomy, ERCP)
+      PSC
+      Chronic Pancreatitis
+      IgG4-SC
+      Mirizzi
+      Post-Transplant (Anastomotic/Non-Anastomotic)
+    Malignant
+      Cholangiocarcinoma
+      Pancreatic Head Cancer
+      Gallbladder Cancer
+      Ampullary Carcinoma
+      Metastatic Nodes
+    Diagnosis
+      US → MRCP → EUS/ERCP
+      ERCP: Cytology, Brushing, FISH
+    Management
+      Benign: ERCP Dilatation + Plastic Stents
+      Malignant: SEMS + Chemo OR Surgery (If Resectable)
+    Post-Transplant
+      Anastomotic: ERCP Stent
+      Non-Anastomotic: Surgery
+    Mirizzi
+      Type I-IV
+      Cystic Duct Stone → CHD Compression</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Benign Stricture**</th><th>**Malignant Stricture**</th></tr><tr><td>----------------------</td><td>-------------------------</td></tr><tr><td>**Aetiology**</td><td>Iatrogenic, PSC, Chronic Pancreatitis, IgG4-SC, Mirizzi</td><td>CCA, Pancreatic Ca, GB Ca, Ampullary Ca, Mets</td></tr><tr><td>**Clinical**</td><td>Intermittent Jaundice, No Weight Loss</td><td>**Progressive Jaundice, Weight Loss, Anorexia**</td></tr><tr><td>**CA19-9**</td><td>Normal/Mild ↑</td><td>**Markedly ↑**</td></tr><tr><td>**ERCP**</td><td>Smooth, Short, Concentric</td><td>Irregular, Shouldered, Long</td></tr><tr><td>**Management**</td><td>**ERCP Dilatation + Multiple Plastic Stents (6-12mo)**</td><td>**Resectable: Surgery; Unresectable: SEMS + Chemo**</td></tr><tr><td>**Stent Choice**</td><td>Multiple Plastic (6-12mo)</td><td>**SEMS (8-12mo Patency)**</td></tr></table>
+<table class="ctable"><tr><th>**Post-Transplant**</th><th></th></tr><tr><td>---------------------</td><td>--</td></tr><tr><td>Anastomotic</td><td>ERCP Dilatation + Stent (Primary)</td></tr><tr><td>Non-Anastomotic (Ischemic)</td><td>ERCP → Surgery (Hepaticojejunostomy)</td></tr></table>
+<table class="ctable"><tr><th>**Mirizzi Syndrome**</th><th></th></tr><tr><td>----------------------</td><td>--</td></tr><tr><td>Type I</td><td>Cystic Duct Stone Compressing CHD</td></tr><tr><td>Type II-IV</td><td>Fistula with CBD Involvement (Increasing Severity)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>Benign vs Malignant Causes</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Clinical Differentiation</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>ERCP Benign Management</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Malignant Stenting</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Post-Tx Strictures</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>Benign Causes (5)</td><td></td><td></td></tr><tr><td>Malignant Causes (5)</td><td></td><td></td></tr><tr><td>Clinical Differentiation</td><td></td><td></td></tr><tr><td>Benign ERCP Management</td><td></td><td></td></tr><tr><td>Malignant SEMS vs Plastic</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Biliary Tract Disease/Choledocholithiasis|Choledocholithiasis]]</li><li>[[Biliary Tract Disease/Acute cholangitis|Acute Cholangitis]]</li><li>[[Biliary Tract Disease/Biliary tract tumours|Biliary Tumours]]</li><li>[[Liver Transplantation/Liver Transplant Complications|Post-Tx Biliary Complications]]</li><li>[[Autoimmune Liver Disease/Primary sclerosing cholangitis (PSC) Detailed|PSC]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Biliary strictures · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

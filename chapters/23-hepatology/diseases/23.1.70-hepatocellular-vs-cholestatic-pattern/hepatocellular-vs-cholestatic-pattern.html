@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hepatocellular vs Cholestatic Pattern — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  /* ===== Mermaid mindmap & flowchart rendering ===== */
+  .mindmap {
+    background: linear-gradient(135deg, #fff8e7 0%, #fdf3e0 100%);
+    border: 1px solid var(--cream-deep);
+    border-radius: 4px;
+    padding: 5px 6px 6px;
+    margin: 3px 0;
+    font-family: "Georgia", serif;
+  }
+  .mm-root {
+    text-align: center;
+    font-size: 10.5px; font-weight: 800;
+    color: var(--rose-deep);
+    background: #fff;
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 14px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 0 auto 4px;
+    letter-spacing: 0.5px;
+  }
+  .mindmap { text-align: center; }
+  .mm-branches {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: flex-start;
+    margin-top: 3px;
+  }
+  .mm-branch {
+    background: #fff;
+    border: 1px solid var(--sage-deep);
+    border-radius: 4px;
+    padding: 3px 4px 4px;
+    min-width: 80px;
+    flex: 1 1 auto;
+    max-width: 170px;
+  }
+  .mm-l1 {
+    font-size: 8.5px; font-weight: 800; color: var(--rose-deep);
+    text-align: center; border-bottom: 1px solid var(--rose-soft);
+    padding-bottom: 2px; margin-bottom: 3px;
+    letter-spacing: 0.4px;
+  }
+  .mm-l2 {
+    font-size: 7.5px; color: var(--ink);
+    padding: 1px 0; text-align: left;
+    border-left: 2px solid var(--sage);
+    padding-left: 4px; margin: 1px 0;
+  }
+  .mm-l3, .mm-deep {
+    font-size: 7px; color: var(--ink-soft);
+    padding-left: 8px; line-height: 1.25;
+  }
+  .flowchart {
+    background: linear-gradient(135deg, #f5f0e2 0%, #ece1c8 100%);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 4px 5px;
+    margin: 3px 0;
+    text-align: center;
+  }
+  .fc-title {
+    font-size: 7.5px; font-weight: 800;
+    color: var(--ink-soft); letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .fc-level {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    justify-content: center; align-items: center;
+    margin: 2px 0;
+  }
+  .fc-node {
+    background: #fff;
+    border: 1.2px solid var(--rose-deep);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 7.5px; font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+    max-width: 180px;
+  }
+  .fc-arrows {
+    color: var(--coral-deep);
+    font-size: 11px; font-weight: 800;
+    line-height: 0.8;
+    margin: 0;
+  }
+  .codeblock {
+    background: #2d2520;
+    color: #f5e9d4;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 7px; line-height: 1.3;
+    font-family: "SF Mono", Menlo, monospace;
+    overflow-x: auto;
+    margin: 2px 0;
+  }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">HEPATOLOGY</span>
+      <div class="h1">Hepatocellular vs Cholestatic Pattern</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[ ] Define hepatocellular vs cholestatic vs mixed LFT patterns</li><li>[ ] Apply R ratio (ALT/ALP) for classification</li><li>[ ] Interpret isolated hyperbilirubinaemia and isolated ALP elevation</li><li>[ ] Recognize diagnostic clues for each pattern</li><li>[ ] Know FCPS/MRCP high-yield associations</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Classification (R Ratio)</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Abnormal LFTs] --&gt; B{Calculate R Ratio}
+    B --&gt;|R = ALT/ALP| C{R &gt; 5}
+    C --&gt; D[Hepatocellular Pattern]
+    B --&gt; E{R &lt; 2}
+    E --&gt; F[Cholestatic Pattern]
+    B --&gt; G{R 2-5}
+    G --&gt; H[Mixed Pattern]</code></pre>
+<p><b>R Ratio Formula</b>: <code>R = (ALT / ULN_ALT) ÷ (ALP / ULN_ALP)</code></p>
+<ul><li><b>R &gt; 5</b>: Hepatocellular (ALT dominant)</li><li><b>R &lt; 2</b>: Cholestatic (ALP dominant)</li><li><b>R 2–5</b>: Mixed</li></ul>
+<div class="callout"><b>FCPS/MRCP Pearl</b>: Always use ULN-corrected ratio, NOT raw ALT/ALP. ULN: ALT ~40, ALP ~120</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Hepatocellular Pattern (R > 5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Typical Findings</th></tr><tr><td>---------</td><td>------------------</td></tr><tr><td>**ALT/AST**</td><td>↑↑↑ (often 10–100× ULN)</td></tr><tr><td>**ALP**</td><td>Normal or mildly ↑ (<3× ULN)</td></tr><tr><td>**Bilirubin**</td><td>Variable</td></tr><tr><td>**GGT**</td><td>Normal or mildly ↑</td></tr></table>
+<div class="sub-h">Major Causes</div>
+<table class="ctable"><tr><th>Category</th><th>Key Examples</th><th>FCPS/MRCP Clues</th></tr><tr><td>----------</td><td>--------------</td><td>-----------------</td></tr><tr><td>**Viral Hepatitis**</td><td>HAV, HBV, HCV, HEV</td><td>Acute: ALT >1000; Chronic: ALT 2-5× ULN</td></tr><tr><td>**Drug-Induced (DILI)**</td><td>Paracetamol, anti-TB, antibiotics</td><td>Paracetamol: ALT >5000; Others: variable</td></tr><tr><td>**Alcoholic Hepatitis**</td><td>AST:ALT >2:1, usually <300</td><td>AST rarely >300; GGT ↑↑</td></tr><tr><td>**Autoimmune Hepatitis**</td><td>ALT/AST ↑↑, IgG ↑, autoantibodies</td><td>Young women; ANA/SMA/LKM-1 +</td></tr><tr><td>**Ischaemic Hepatitis**</td><td>Shock liver; ALT/AST >1000</td><td>Post-hypotension; rapid fall</td></tr><tr><td>**Wilson Disease**</td><td>Young, neuro/psych, low ceruloplasmin</td><td>Coombs-negative haemolysis + ALF</td></tr></table>
+<div class="sub-h">Diagnostic Algorithm</div>
+<pre class="codeblock"><code>flowchart TD
+    A[Hepatocellular Pattern R&gt;5] --&gt; B{ALT &gt;1000?}
+    B --&gt;|Yes| C[Acute Viral / Paracetamol / Ischaemic / Autoimmune]
+    B --&gt;|No| D{AST:ALT &gt;2?}
+    D --&gt;|Yes| E[Alcoholic Hepatitis / Cirrhosis / NASH]
+    D --&gt;|No| F{Young + Neuro?}
+    F --&gt;|Yes| G[Wilson Disease]
+    F --&gt;|No| H[Chronic Viral / NAFLD / AIH / DILI]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Cholestatic Pattern (R < 2)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Typical Findings</th></tr><tr><td>---------</td><td>------------------</td></tr><tr><td>**ALP**</td><td>↑↑ (>3× ULN)</td></tr><tr><td>**ALT/AST**</td><td>Normal or mildly ↑ (<5× ULN)</td></tr><tr><td>**GGT**</td><td>↑↑ (confirms hepatic origin)</td></tr><tr><td>**Bilirubin**</td><td>↑↑ (conjugated)</td></tr></table>
+<div class="sub-h">Intrahepatic vs Extrahepatic</div>
+<pre class="codeblock"><code>flowchart TD
+    A[Cholestatic Pattern R&lt;2] --&gt; B{GGT ↑?}
+    B --&gt;|No| C[Bone disease / Pregnancy / Growing child]
+    B --&gt;|Yes| D{Hepatomegaly?}
+    D --&gt;|Yes + Pain| E[Extrahepatic: Stones / Stricture / Tumour]
+    D --&gt;|No Pain| F[Malignancy / PSC / Sclerosing]
+    D --&gt;|Diffuse| G[Intrahepatic: PBC / Drugs / Sepsis / Infiltration]</code></pre>
+<div class="sub-h">Major Causes</div>
+<table class="ctable"><tr><th>Category</th><th>Examples</th><th>Key Features</th></tr><tr><td>----------</td><td>----------</td><td>--------------</td></tr><tr><td>**Extrahepatic Obstruction**</td><td>Choledocholithiasis, Pancreatic Ca, Cholangiocarcinoma</td><td>Pain (stones), Painless (malignancy), Dilated ducts on US</td></tr><tr><td>**Primary Biliary Cholangitis**</td><td>Middle-aged women, AMA+, ALP ↑↑</td><td>Pruritus, fatigue, osteopenia</td></tr><tr><td>**Primary Sclerosing Cholangitis**</td><td>Young men, IBD, beading on MRCP</td><td>Dominant strictures, cholangiocarcinoma risk</td></tr><tr><td>**Drug-Induced**</td><td>Amoxicillin-clavulanate, Flucloxacillin, OCP</td><td>Latency 1-4 weeks; resolves on withdrawal</td></tr><tr><td>**Infiltrative**</td><td>Sarcoidosis, TB, Amyloid, Lymphoma</td><td>Hepatosplenomegaly, systemic symptoms</td></tr><tr><td>**Sepsis/Cholangitis**</td><td>Fever, RUQ pain, Charcot's triad</td><td>Urgent ERCP if obstructed</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Mixed Pattern (R 2–5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Typical Causes</th><th>Notes</th></tr><tr><td>----------------</td><td>-------</td></tr><tr><td>**Alcoholic hepatitis**</td><td>Often mixed early</td></tr><tr><td>**Viral hepatitis (recovery)**</td><td>Transitioning pattern</td></tr><tr><td>**Drug-induced (mixed)**</td><td>Many antibiotics</td></tr><tr><td>**Early obstruction**</td><td>Before pure cholestatic</td></tr><tr><td>**NASH with fibrosis**</td><td>Overlap features</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Isolated Hyperbilirubinaemia</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Pattern</th><th>Causes</th></tr><tr><td>------</td><td>---------</td><td>--------</td></tr><tr><td>**Unconjugated**</td><td>↑ Indirect bilirubin, normal ALT/ALP</td><td>Gilbert (benign), Haemolysis, Crigler-Najjar</td></tr><tr><td>**Conjugated**</td><td>↑ Direct bilirubin, normal ALT/ALP</td><td>Dubin-Johnson, Rotor, Early obstruction</td></tr></table>
+<p><b>Gilbert Syndrome</b>:</p>
+<ul><li>Benign, 5-10% population</li><li>Unconjugated bilirubin &lt;80 μmol/L (rises with fasting/stress)</li><li><b>No treatment needed</b> — key MRCP distinction</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Isolated ALP Elevation</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>flowchart TD
+    A[Isolated ALP ↑] --&gt; B{GGT ↑?}
+    B --&gt;|No| C[Bone origin: Paget's, Osteomalacia, Fracture, Metastases, Growing child, Pregnancy]
+    B --&gt;|Yes| D[Hepatic origin: Early PBC, Infiltrative, Drugs, Fatty liver, Cholestasis]</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">FCPS/MRCP High-Yield Summary Table</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Most Likely Pattern</th><th>Key Discriminator</th></tr><tr><td>----------</td><td>---------------------</td><td>-------------------</td></tr><tr><td>Young woman, fatigue, pruritus, ALP ↑↑</td><td>Cholestatic (PBC)</td><td>AMA +ve, IgM ↑</td></tr><tr><td>Young man, IBD, ALP ↑↑</td><td>Cholestatic (PSC)</td><td>MRCP beading, p-ANCA +ve</td></tr><tr><td>Paracetamol OD, ALT 5000</td><td>Hepatocellular</td><td>NAC urgent</td></tr><tr><td>Alcoholic, AST:ALT 2:1, <300</td><td>Hepatocellular</td><td>Maddrey DF >32 → steroids</td></tr><tr><td>Painless jaundice, ALP ↑↑, US: dilated ducts</td><td>Extrahepatic obstruction</td><td>Pancreatic Ca vs Cholangiocarcinoma</td></tr><tr><td>Shock + ALT/AST >2000</td><td>Hepatocellular (Ischaemic)</td><td>Rapid normalization</td></tr><tr><td>Neonatal cholestasis</td><td>Cholestatic</td><td>Biliary atresia (surgical emergency)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Viva Questions</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Define R ratio and classify LFT patterns.</b></li><li><b>How do you distinguish intrahepatic from extrahepatic cholestasis?</b></li><li><b>What is the significance of AST:ALT &gt;2?</b></li><li><b>List 5 causes of isolated unconjugated hyperbilirubinaemia.</b></li><li><b>How do you confirm ALP is of hepatic origin?</b></li><li><b>Differentiate PBC vs PSC.</b></li><li><b>What is the LFT pattern in Gilbert syndrome?</b></li><li><b>Name 3 drugs causing cholestatic DILI.</b></li><li><b>How does ischaemic hepatitis LFT pattern evolve?</b></li><li><b>What is the R ratio in alcoholic hepatitis?</b></li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Confusions & Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Confusion</th><th>Clarification</th><th>Mnemonic</th></tr><tr><td>-----------</td><td>---------------</td><td>----------</td></tr><tr><td>AST:ALT in alcoholic vs viral</td><td>Alcoholic >2 (AST>ALT); Viral <1 (ALT>AST)</td><td>**"ALcohol = AST > ALT"**</td></tr><tr><td>PBC vs PSC</td><td>PBC: female, AMA+, intrahepatic; PSC: male, IBD, MRCP beading</td><td>**"PBC = Primarily Biliary Cholangitis (AMA)"**</td></tr><tr><td>Gilbert vs Crigler-Najjar</td><td>Gilbert benign, intermittent; CN fatal, kernicterus</td><td>**"Gilbert = Gentle"**</td></tr><tr><td>Dubin-Johnson vs Rotor</td><td>DJ: black liver, conjugated; Rotor: normal liver, conjugated</td><td>**"Dubin = Dark liver"**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<pre class="codeblock"><code>mindmap
+  root((LFT Patterns))
+    Hepatocellular R&gt;5
+      Viral HAV HBV HCV HEV
+      DILI Paracetamol AntiTB
+      Alcohol AST:ALT&gt;2
+      Autoimmune AIH IgG↑
+      Ischaemic Shock liver
+      Wilson Young+Neuro
+    Cholestatic R&lt;2
+      Extrahepatic Stones Cancer Stricture
+      Intrahepatic PBC PSC Drugs Sepsis
+    Mixed R2-5
+      Alcohol early
+      Viral recovery
+      NASH
+    Isolated Bilirubin
+      Unconjugated Gilbert Haemolysis
+      Conjugated Dubin-Johnson Rotor
+    Isolated ALP
+      Bone Paget's Osteomalacia
+      Hepatic Early PBC Infiltration</code></pre>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">One-Page Revision Card</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>**Pattern**</th><th>**R Ratio**</th><th>**ALT/AST**</th><th>**ALP**</th><th>**Top Causes**</th></tr><tr><td>-------------</td><td>-------------</td><td>-------------</td><td>---------</td><td>----------------</td></tr><tr><td>Hepatocellular</td><td>>5</td><td>↑↑↑ (10-100×)</td><td>Normal/mild</td><td>Viral, DILI, Alcohol, AIH, Ischaemic</td></tr><tr><td>Cholestatic</td><td><2</td><td>Normal/mild</td><td>↑↑ (>3×)</td><td>Obstruction, PBC, PSC, Drugs, Infiltration</td></tr><tr><td>Mixed</td><td>2-5</td><td>↑↑</td><td>↑↑</td><td>Alcoholic hepatitis, NASH, early obstruction</td></tr><tr><td>Isolated unconj. bilirubin</td><td>-</td><td>Normal</td><td>Normal</td><td>Gilbert, Haemolysis</td></tr><tr><td>Isolated ALP (GGT normal)</td><td>-</td><td>Normal</td><td>↑</td><td>Bone disease, Pregnancy</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Spaced Repetition Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>1</th><th>3</th><th>7</th><th>15</th><th>30</th></tr><tr><td>-----</td><td>---</td><td>---</td><td>---</td><td>----</td><td>----</td></tr><tr><td>R ratio classification</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Intra vs extrahepatic cholestasis</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>PBC vs PSC</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr><tr><td>Isolated bilirubin causes</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Self-Test Scorecard</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Question</th><th>My Answer</th><th>Correct?</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td></tr><tr><td>R ratio formula</td><td></td><td></td></tr><tr><td>5 hepatocellular causes</td><td></td><td></td></tr><tr><td>PBC vs PSC table</td><td></td><td></td></tr><tr><td>Gilbert vs Crigler-Najjar</td><td></td><td></td></tr><tr><td>Isolated ALP differential</td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Local Navigation</span>
+  </div>
+  <div class="sec-body">
+<ul><li>[[Jaundice and LFT Interpretation/Detailed|Jaundice &amp; LFT Detailed]]</li><li>[[Drug-Induced Liver Injury|DILI]]</li><li>[[Autoimmune Liver Disease/PBC|PBC]]</li><li>[[Autoimmune Liver Disease/PSC|PSC]]</li><li>[[Biliary Tract Disease/Choledocholithiasis|Choledocholithiasis]]</li><li>[[Inherited and Metabolic Liver Disease/Gilbert Syndrome|Gilbert Syndrome]]</li><li>[[Inherited and Metabolic Liver Disease/Dubin-Johnson vs Rotor Syndrome|Dubin-Johnson vs Rotor]]</li></ul>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hepatocellular vs Cholestatic Pattern · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>
