@@ -129,33 +129,33 @@ BUILT_CHAPTERS = {
     ),
     "10-acute-medicine": (
         "Acute Medicine",
-        "https://app.notion.com/p/SeaHub/Chapter-10-Acute-medicine-and-critical-illness",
+        "https://app.notion.com/p/SeaHub/Chapter-10-Acute-medicine-and-critical-illness-3835588e846f81a1bd40fbd5d564fd2e",
         "#f43f5e",
     ),
     "11-poisoning": (
         "Poisoning",
-        "https://app.notion.com/p/SeaHub/Chapter-11-Poisoning",
+        "https://app.notion.com/p/SeaHub/Chapter-11-Poisoning-abc75846ef544efcb3b78f00134f50b2",
         "#84cc16",
     ),
     "12-envenomation": (
         "Envenomation",
-        "https://app.notion.com/p/SeaHub/Chapter-12-Envenomation",
+        "https://app.notion.com/p/SeaHub/Chapter-12-Envenomation-fce508f973a64d58b48ad1e2d186e39d",
         "#22c55e",
     ),
     "13-austere-medicine": (
         "Austere Medicine",
-        "https://app.notion.com/p/SeaHub/Chapter-13-Medicine-in-austere-environments",
+        "https://app.notion.com/p/SeaHub/Chapter-13-Medicine-in-austere-environments-b9b201cbbecc4eaab3c4b6c958c8ac11",
         "#0d9488",
     ),
     "14-infectious-disease": (
         "Infectious Disease",
-        "https://app.notion.com/p/SeaHub/Chapter-14-Infectious-disease",
+        "https://app.notion.com/p/SeaHub/Chapter-14-Infectious-disease-eb9d6efbe3bb4ccc8302396a8edc57cf",
         "#0891b2",
     ),
     "15-sexually-transmitted-infections": (
         "Sexually Transmitted Infections",
-        "https://app.notion.com/p/SeaHub/Chapter-15-Sexually-transmitted-infections",
-        "#db2777",
+        "https://app.notion.com/p/SeaHub/Chapter-15-Sexually-transmitted-infections-19c59a0895cd4ea4bee4e69d90ce37c8",
+        "#7c3aed",
     ),
 }
 
