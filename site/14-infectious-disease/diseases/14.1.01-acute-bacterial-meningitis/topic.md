@@ -1,9 +1,32 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.01"
+topic: "Acute Bacterial Meningitis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Acute Bacterial Meningitis.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, infectious-disease, davidson, chapter13, meningitis, bacterial, fcps, mrcp]
+davidson_chapter: Chapter 13: Infectious disease
+topic_category: CNS Infections Domain
+status: full-fcps-mrcp-topic-note
+---
+
+# Acute Bacterial Meningitis
+
 Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], [[Sepsis and Septic Shock]], [[Fever and Septic Syndrome Approach]], [[Cerebral Malaria]]
 
 > [!important]
 > **Acute bacterial meningitis = medical emergency.** **Suspect → blood cultures → LP → antibiotics WITHIN 1 HOUR (do NOT delay for CT/LP).** **Dexamethasone 0.15mg/kg 6h ×4d with/ before 1st antibiotic dose (if pneumococcal suspected).** **Empirical: Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h + Dexamethasone ± Amoxicillin (if Listeria risk).** **Mortality 15–30%; sequelae 20–30%.**
 
-## 1. Learning Objectives
+## Learning Objectives
 - Recognise classic triad (fever, neck stiffness, altered mental status) — only in 44–66%
 - Perform LP safely: contraindications, CSF interpretation (opening pressure, cells, protein, glucose, Gram stain, culture, PCR)
 - Select empirical antibiotics by age, risk factors, and local resistance
@@ -12,7 +35,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 - Recognise specific pathogen clues (petechial rash = meningococcal, rhombencephalitis = Listeria)
 - Initiate public health measures (chemoprophylaxis, notification)
 
-## 2. Aetiology by Age / Risk Group
+## Aetiology by Age / Risk Group
 | Group | Common Pathogens |
 |-------|------------------|
 | **Neonates (<1 month)** | Group B Strep, *E. coli*, *Listeria monocytogenes*, *Klebsiella* |
@@ -25,7 +48,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 > [!tip]
 > **Listeria risk: >50y, immunocompromised, pregnancy, alcoholics, steroids.** **Add Ampicillin/Amoxicillin to empirical regimen.** **Cephalosporins DO NOT cover Listeria.**
 
-## 3. Clinical Features
+## Clinical Features
 ### Classic Triad (Present in 44–66%)
 1. **Fever** (≥38°C)
 2. **Neck stiffness** (nuchal rigidity)
@@ -45,7 +68,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 > [!warning]
 > **Elderly/immunocompromised: ATYPICAL presentation — may lack fever, neck stiffness, or meningeal signs.** **Altered mental status may be the ONLY sign.**
 
-## 4. Contraindications to Immediate LP
+## Contraindications to Immediate LP
 **CT Brain BEFORE LP if ANY of:**
 - **Immunocompromised** (HIV, steroids, transplant, chemo)
 - **History of CNS disease** (mass lesion, stroke, shunt)
@@ -58,7 +81,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 > [!critical]
 > **If CT indicated → Blood cultures → START antibiotics + dexamethasone IMMEDIATELY → CT → LP.** **Do NOT wait for CT/LP to give antibiotics.** **Delay >1h = ↑ mortality.**
 
-## 5. CSF Interpretation
+## CSF Interpretation
 | Parameter | Bacterial Meningitis | Viral Meningitis | TB Meningitis | Normal |
 |-----------|---------------------|------------------|---------------|--------|
 | **Opening pressure** | **High (>20 cmH₂O)** | Normal/slightly ↑ | **High** | 10–20 cmH₂O |
@@ -74,7 +97,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 > [!tip]
 > **CSF:Serum glucose ratio <0.4 = bacterial/TB/fungal.** **CSF lactate >3.5 supports bacterial.** **Prior antibiotics ↓ culture yield but NOT PCR/GLucose/Protein/WCC pattern.**
 
-## 6. Empirical Antibiotic Therapy (START WITHIN 1 HOUR)
+## Empirical Antibiotic Therapy (START WITHIN 1 HOUR)
 | Population | Regimen | Doses |
 |------------|---------|-------|
 | **Adults (standard)** | **Ceftriaxone 2g IV 12h + Vancomycin 15–20mg/kg IV 6h** | Ceftriaxone covers pneumococcus, meningococcus, Hib; Vancomycin covers penicillin-resistant pneumococcus |
@@ -84,7 +107,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 | **Children >1 month** | Ceftriaxone 50mg/kg 12h (max 2g) + Vancomycin 15mg/kg 6h | Add Ampicillin if <3m or Listeria risk |
 | **Neonates** | Ampicillin 50mg/kg 6–8h + Cefotaxime 50mg/kg 6–8h (or Gentamicin) | No ceftriaxone (bilirubin displacement) |
 
-## 7. Dexamethasone — Adjunctive Therapy
+## Dexamethasone — Adjunctive Therapy
 | Indication | **Suspected pneumococcal meningitis** (strongest evidence) |
 |------------|------------------------------------------------------------|
 | **Dose** | **0.15mg/kg IV 6h ×4 days** |
@@ -96,7 +119,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 > [!key]
 > **Dexamethasone reduces mortality and neurological sequelae in pneumococcal meningitis (NNT ~10). Must be given WITH/BEFORE first antibiotic dose.**
 
-## 8. Targeted Therapy (After Culture/Sensitivity)
+## Targeted Therapy (After Culture/Sensitivity)
 | Pathogen | Regimen | Duration |
 |----------|---------|----------|
 | **S. pneumoniae (penicillin-susceptible)** | Penicillin G 24MU/day IV ÷4–6h OR Ceftriaxone 2g 12h | 10–14 days |
@@ -108,7 +131,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 | **S. aureus (MRSA)** | Vancomycin 15–20mg/kg 6h (trough 15–20) | 14–21 days |
 | **Gram-negative (E. coli, Klebsiella, Pseudomonas)** | Ceftriaxone/Cefepime/Meropenem per susceptibility | 21 days |
 
-## 9. Complications & Management
+## Complications & Management
 | Complication | Features | Management |
 |--------------|----------|------------|
 | **Raised ICP** | Headache, vomiting, papilloedema, Cushing's triad, herniation | **Head up 30°, normocapnia (PaCO₂ 4.5–5), mannitol 0.5–1g/kg / hypertonic saline, consider ICP monitor, ventriculostomy** |
@@ -121,7 +144,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 | **DIC** | Purpura, bleeding, low fibrinogen, high D-dimer | Supportive, platelets, FFP, cryo; treat underlying sepsis |
 | **Hearing loss** | Sensorineural (pneumococcal) | Audiology at discharge, cochlear implant if profound |
 
-## 10. Public Health Measures
+## Public Health Measures
 | Pathogen | Chemoprophylaxis (Close Contacts) | Notification |
 |----------|-----------------------------------|--------------|
 | **N. meningitidis** | **Ciprofloxacin 500mg PO single dose** (preferred) OR Rifampicin 600mg BD ×2d OR Ceftriaxone 250mg IM single dose | **Urgent (within 24h)** |
@@ -132,7 +155,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 > [!tip]
 > **Close contacts = household, kissing, overnight stay, healthcare workers with unprotected respiratory secretion exposure.**
 
-## 11. Special Situations
+## Special Situations
 | Situation | Adjustment |
 |-----------|------------|
 | **Pregnancy** | Ceftriaxone + Vancomycin + **Amoxicillin** (Listeria risk); avoid fluoroquinolones; dexamethasone safe |
@@ -142,7 +165,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 | **Post-neurosurgery** | Vancomycin + Meropenem; device removal if shunt infection |
 | **Traveller** | Consider *N. meningitidis* serogroups A, C, W, Y, X; *S. pneumoniae* common |
 
-## 12. FCPS/MRCP High-Yield Points
+## FCPS/MRCP High-Yield Points
 - **Meningitis = medical emergency; antibiotics WITHIN 1 HOUR of suspicion**
 - **CT before LP if: immunocompromised, CNS disease, seizure, papilloedema, focal deficit, GCS<12, age>60**
 - **If CT needed → blood cultures → antibiotics + dexamethasone → CT → LP**
@@ -155,7 +178,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 - **Complications: raised ICP, seizures, SIADH, hydrocephalus, hearing loss, DIC**
 - **Hearing loss: screen at discharge (pneumococcal most common)**
 
-## 13. Common Viva Questions
+## Common Viva Questions
 1. **What is the classic triad of bacterial meningitis?** Fever, neck stiffness, altered mental status (only 44–66% have all three).
 2. **When do you do CT before LP?** Immunocompromised, CNS disease, new seizure, papilloedema, focal deficit, GCS<12, age>60.
 3. **What is the empirical antibiotic regimen for an adult with suspected bacterial meningitis?** Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h.
@@ -167,7 +190,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 9. **Complications of bacterial meningitis?** Raised ICP, seizures, SIADH, hydrocephalus, cranial nerve palsies, hearing loss, DIC, venous thrombosis.
 10. **What is the treatment duration for pneumococcal meningitis?** 10–14 days; meningococcal 5–7 days; Listeria 21 days.
 
-## 14. Common Confusions / Exam Traps
+## Common Confusions / Exam Traps
 | Confusion | Clarification |
 |-----------|---------------|
 | Wait for CT/LP before antibiotics | **Antibiotics WITHIN 1 HOUR — never delay for CT/LP** |
@@ -181,7 +204,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 | Viral = low protein | **Viral: protein mildly elevated (0.4–1), glucose NORMAL** |
 | Hearing loss only in children | **Adults also — screen at discharge** |
 
-## 15. Mnemonics
+## Mnemonics
 - **MENINGITIS TRIAD**: **F**ever, **N**eck stiffness, **A**ltered mental status
 - **CT BEFORE LP**: **I**mmunocompromised, **C**NS disease, **S**eizure, **P**apilloedema, **F**ocal deficit, **G**CS<12, **A**ge>60
 - **EMPIRICAL ADULT**: **C**eftriaxone + **V**ancomycin (+ **A**moxicillin if Listeria risk)
@@ -190,7 +213,7 @@ Related: [[Tuberculous Meningitis]], [[Viral Encephalitis]], [[Brain Abscess]], 
 - **LISTERIA RISK**: **>50, Immunocompromised, Pregnancy, Alcohol, Steroids**
 - **MENINGOCOCCAL PROPHYLAXIS**: **C**iprofloxacin 500mg single dose
 
-## 16. Mind Map
+## Mind Map
 ```mermaid
 mindmap
   root((Acute Bacterial Meningitis))
@@ -198,5 +221,373 @@ mindmap
       Abx within 1h
       CT before LP if indicated
       Blood cultures first
+    Clinical
+      Triad: Fever, Neck stiffness, AMS (44-66%)
+      Petechial rash = meningococcal
+      Listeria: >50, immunocompromised, rhombencephalitis
+    CT Indications
+      Immunocompromised, CNS dz, Seizure
+      Papilloedema, Focal deficit
+      GCS<12, Age>60
+    CSF
+      Neutrophils, High protein, Low glucose (<0.4 ratio)
+      High opening pressure, Gram stain +ve 60-90%
+      PCR rapid, high sensitivity
+    Empirical Rx
+      Adult: Ceftriaxone + Vancomycin
+      Listeria risk: + Amoxicillin
+      Post-neuro: Vancomycin + Meropenem
+    Dexamethasone
+      0.15mg/kg 6h x4d
+      WITH/BEFORE 1st abx dose
+      Pneumococcal evidence strongest
+    Targeted Rx
+      Pneumococcal: Ceph/Vancomycin 10-14d
+      Meningococcal: Ceph 5-7d
+      Listeria: Amoxi + Genta 21d
+    Complications
+      Raised ICP, Seizures, SIADH
+      Hydrocephalus, Hearing loss
+      Venous thrombosis, DIC
+    Public Health
+      Meningococcal: Cipro 500mg single dose
+      Hib: Rifampicin x4d (unvaccinated)
+```
 
-*...continued (truncated to 200 lines for renderer)*
+## Flowchart
+```mermaid
+flowchart TD
+  A[Suspected Bacterial Meningitis] --> B[Blood Cultures ×2-3]
+  B --> C{CT Indicated?}
+  C -->|Yes: Immunocompromised, CNS dz, Seizure, Papilloedema, Focal deficit, GCS<12, Age>60| D[START Ceftriaxone + Vancomycin (+Amoxicillin if Listeria risk) + Dexamethasone NOW]
+  D --> E[CT Brain]
+  E --> F[LP if CT safe]
+  C -->|No| F
+  F --> G[CSF Analysis: Cells, Protein, Glucose, Gram stain, Culture, PCR]
+  G --> H[Continue/Adjust Abx based on results]
+  H --> I[Monitor Complications: ICP, Seizures, SIADH, Hydrocephalus, Hearing]
+  I --> J[Public Health: Meningococcal contact prophylaxis]
+```
+
+## Suggested Visuals / Image Notes
+- Classic triad diagram
+- CSF findings comparison table (bacterial vs viral vs TB)
+- LP technique and contraindications
+- Dexamethasone timing diagram
+- Meningococcal rash images
+- Complication algorithm
+
+## Suggested Video References
+- Bacterial meningitis guidelines (IDSA, ESCMID)
+- LP technique and interpretation
+- Dexamethasone in meningitis (CRASH, MRC trials)
+- Meningococcal disease management
+- Listeria meningitis
+
+## One-Page Revision Summary
+| Topic | Key Points |
+|-------|------------|
+| **Emergency** | Abx within 1h; blood cultures first; CT before LP if indicated |
+| **Triad** | Fever, neck stiffness, AMS (only 44-66%) |
+| **CT Indications** | Immunocompromised, CNS dz, seizure, papilloedema, focal deficit, GCS<12, age>60 |
+| **CSF Bacterial** | Neutrophils, high protein, low glucose (<0.4), high pressure, Gram+ 60-90% |
+| **Empirical Adult** | Ceftriaxone 2g 12h + Vancomycin 15-20mg/kg 6h |
+| **Listeria Risk** | >50, immunocompromised, pregnancy, alcohol → add Amoxicillin 2g 4h |
+| **Dexamethasone** | 0.15mg/kg 6h ×4d WITH/BEFORE 1st abx (pneumococcal) |
+| **Meningococcal** | Petechial rash; contacts: Cipro 500mg single dose |
+| **Listeria** | Rhombencephalitis; Amoxi + Genta ×21d |
+| **Complications** | ICP, seizures, SIADH, hydrocephalus, hearing loss, DIC, venous thrombosis |
+
+## 24-Hour Recall Prompts
+- Classic triad and its sensitivity.
+- CT before LP indications (7).
+- Empirical regimen for adult (+ Listeria addition).
+- Dexamethasone dose, timing, duration.
+- CSF findings in bacterial vs viral vs TB.
+- Meningococcal chemoprophylaxis.
+- Listeria treatment duration.
+- Complications list.
+
+## 7-Day / 15-Day / 30-Day Revision Tracker
+- [ ] Day 1 completed
+- [ ] 24-hour recall completed
+- [ ] Day 7 revision completed
+- [ ] Day 15 revision completed
+- [ ] Day 30 revision completed
+
+## Must Know / Should Know / Nice to Know
+### Must Know
+- Antibiotics within 1 hour — never delay
+- CT before LP indications
+- Empirical: Ceftriaxone + Vancomycin (+ Amoxicillin for Listeria risk)
+- Dexamethasone 0.15mg/kg 6h ×4d WITH/BEFORE 1st abx
+- CSF: neutrophils, high protein, low glucose, high pressure
+- Meningococcal: petechial rash, ciprofloxacin prophylaxis
+- Listeria: >50/immunocompromised, rhombencephalitis, 21d treatment
+
+### Should Know
+- Post-neurosurgery regimen (Vancomycin + Meropenem)
+- Targeted durations by pathogen
+- Complications management (ICP, seizures, SIADH, hydrocephalus)
+- Viral CSF: lymphocytes, normal glucose, mildly elevated protein
+- Hearing loss screening at discharge
+- Cerebral venous thrombosis: anticoagulate even with haemorrhage
+
+### Nice to Know
+- Specific PCR panels (biofire, etc.)
+- Neonatal meningitis differs (no ceftriaxone)
+- Fungal meningitis (cryptococcal) in HIV
+- Long-term sequelae and rehabilitation
+- Vaccine prevention (MenACWY, MenB, PCV, Hib)
+
+## My Weak Points
+- [ ] Exact dexamethasone trial data (European vs US)
+- [ ] Post-neurosurgery specific organisms
+- [ ] Cerebral venous thrombosis diagnostic criteria
+- [ ] Hearing loss pathophysiology (cochlear ossification timing)
+
+## Self-Test Scorecard
+- Understanding: /10
+- Recall: /10
+- MCQ Performance: /10
+- SBA Performance: /10
+- Viva Confidence: /10
+- Total: /50
+
+> [!tip]
+> Interpretation: <35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.
+
+## Exam Answer Modes
+### Long Answer Skeleton
+1. Definition, aetiology by age/risk group
+2. Clinical features (triad, meningeal signs, specific pathogen clues)
+3. CT before LP indications
+4. CSF interpretation (bacterial vs viral vs TB vs normal)
+5. Empirical antibiotic regimens by population
+6. Dexamethasone: dose, timing, duration, evidence
+7. Targeted therapy by pathogen (doses, durations)
+8. Complications and management
+9. Public health measures (chemoprophylaxis, notification)
+10. Special populations (pregnancy, HIV, immunocompromised, post-neuro)
+
+### Short Note Skeleton
+- Emergency: abx 1h, blood cx first, CT before LP if indicated
+- Triad: fever, neck stiffness, AMS (44-66%)
+- CT indications: immunocompromised, CNS dz, seizure, papilloedema, focal deficit, GCS<12, age>60
+- CSF bacterial: neutrophils, high protein, low glucose (<0.4), high pressure
+- Empirical: Ceftriaxone + Vancomycin; Listeria risk → + Amoxicillin
+- Dexamethasone: 0.15mg/kg 6h ×4d WITH/BEFORE 1st abx
+- Meningococcal: petechial rash, Cipro 500mg contacts
+- Listeria: Amoxi + Genta ×21d
+- Complications: ICP, seizures, SIADH, hydrocephalus, hearing loss
+
+### Viva One-Liners
+- Abx within 1 hour — never delay for CT/LP
+- CT before LP: immunocompromised, CNS dz, seizure, papilloedema, focal deficit, GCS<12, age>60
+- Ceftriaxone + Vancomycin empirical; add Amoxicillin if >50/immunocompromised/pregnant
+- Dexamethasone 0.15mg/kg 6h ×4d WITH/BEFORE 1st abx
+- CSF: neutrophils, high protein, low glucose, high pressure
+- Meningococcal: petechial rash, Cipro 500mg single dose contacts
+- Listeria: rhombencephalitis, Amoxi+Genta 21d
+
+### Ward-Case Discussion Points
+- 25M, fever, headache, confusion, petechial rash → blood cx, ceftriaxone+vanco+dex, LP, meningococcal PCR, ciprofloxacin contacts
+- 65F on steroids, fever, lethargy, no neck stiffness → blood cx, ceftriaxone+vanco+amoxi+dex, CT (immunocompromised), LP, Listeria PCR
+- 40M post-craniotomy, fever, wound discharge → blood cx, vancomycin+meropenem, CT, LP, device removal likely
+
+### Last-Night-Before-Exam Sheet
+**MENINGITIS:** Abx 1h. Blood cx first. **CT before LP if: immunocompromised, CNS dz, seizure, papilloedema, focal deficit, GCS<12, age>60.** CSF bacterial: neutrophils, high protein, low glucose (<0.4), high pressure. **Empirical: Ceftriaxone + Vancomycin.** Listeria risk (>50, immunocompromised, pregnant, alcohol): **+ Amoxicillin.** **Dexamethasone 0.15mg/kg 6h ×4d WITH/BEFORE 1st abx.** Meningococcal: petechial rash, contacts **Cipro 500mg single dose.** Listeria: rhombencephalitis, **Amoxi+Genta 21d.** Complications: ICP, seizures, SIADH, hydrocephalus, hearing loss.
+
+## Summary
+**Acute bacterial meningitis = medical emergency.** **Antibiotics within 1 HOUR of suspicion — never delay for CT/LP.** **Classic triad (fever, neck stiffness, AMS) only in 44–66%.** **CT BEFORE LP if: immunocompromised, CNS disease, new seizure, papilloedema, focal deficit, GCS<12, age>60.** If CT indicated → **blood cultures → START antibiotics + dexamethasone NOW → CT → LP.** **CSF bacterial:** high opening pressure, **neutrophilic pleocytosis, high protein, low glucose (CSF:serum <0.4), Gram stain +ve 60–90%.** **Empirical adult: Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h.** **Add Amoxicillin 2g 4h if Listeria risk (>50, immunocompromised, pregnancy, alcohol).** **Dexamethasone 0.15mg/kg IV 6h ×4 days — MUST give WITH or BEFORE 1st antibiotic dose (no benefit if >4h after).** **Meningococcal: petechial/purpuric rash; chemoprophylaxis for close contacts = Ciprofloxacin 500mg PO single dose.** **Listeria: rhombencephalitis/brainstem signs; treatment = Amoxicillin + Gentamicin ×21 days.** **Complications:** raised ICP, seizures, SIADH, hydrocephalus, cranial nerve palsies, hearing loss (screen at discharge), cerebral venous thrombosis (anticoagulate), DIC.
+
+## MCQs (10)
+1. **What is the maximum acceptable time from suspicion to antibiotic administration in acute bacterial meningitis?**
+   A. 30 minutes
+   B. **1 hour**
+   C. 2 hours
+   D. 4 hours
+   E. 6 hours
+
+2. **Which of the following is an INDICATION for CT brain BEFORE lumbar puncture?**
+   A. Fever >39°C
+   B. **New-onset seizure within 1 week**
+   C. Petechial rash
+   D. Neck stiffness
+   E. Age 30 years
+
+3. **Empirical antibiotic regimen for a 30-year-old immunocompetent adult with suspected bacterial meningitis:**
+   A. Ceftriaxone alone
+   B. **Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h**
+   C. Penicillin G + Chloramphenicol
+   D. Vancomycin + Meropenem
+   E. Ceftriaxone + Amoxicillin
+
+4. **A 65-year-old man on prednisolone for polymyalgia rheumatica presents with suspected meningitis. Which additional antibiotic should be added to cover Listeria?**
+   A. Gentamicin
+   B. **Amoxicillin 2g IV 4h**
+   C. Ampicillin
+   D. Doxycycline
+   E. Trimethoprim-sulfamethoxazole
+
+5. **Dexamethasone in bacterial meningitis: correct dose and timing?**
+   A. 0.15mg/kg IV 6h ×4d, after antibiotics
+   B. **0.15mg/kg IV 6h ×4d, WITH or BEFORE 1st antibiotic dose**
+   C. 0.15mg/kg IV 6h ×7d, with antibiotics
+   D. 10mg IV 6h ×4d, before antibiotics
+   E. 4mg IV 6h ×4d, after antibiotics
+
+6. **CSF findings in bacterial meningitis:**
+   A. Lymphocytes, normal protein, normal glucose
+   B. **Neutrophils, high protein, low glucose (CSF:serum <0.4)**
+   C. Lymphocytes, high protein, low glucose
+   D. Neutrophils, normal protein, normal glucose
+   E. Eosinophils, high protein, normal glucose
+
+7. **Chemoprophylaxis for close contacts of a patient with meningococcal meningitis:**
+   A. Rifampicin 600mg BD ×4d
+   B. **Ciprofloxacin 500mg PO single dose**
+   C. Ceftriaxone 1g IM single dose
+   D. Azithromycin 500mg single dose
+   E. No prophylaxis needed
+
+8. **Treatment duration for Listeria monocytogenes meningitis:**
+   A. 7–10 days
+   B. 10–14 days
+   C. **21 days**
+   D. 28 days
+   E. 6 weeks
+
+9. **Which complication of bacterial meningitis requires anticoagulation even if haemorrhage is present?**
+   A. Subdural empyema
+   B. **Cerebral venous thrombosis**
+   C. Hydrocephalus
+   D. Brain abscess
+   D. DIC
+
+10. **A 40-year-old man with pneumococcal meningitis develops sensorineural hearing loss. When should audiology be performed?**
+    A. At diagnosis
+    B. **At discharge / follow-up**
+    C. 6 months later
+    D. Only if symptoms persist
+    E. Not routinely required
+
+## SBA Questions (10)
+1. **A 28-year-old woman presents with fever, headache, photophobia, and neck stiffness. GCS 15, no focal signs, no papilloedema, not immunocompromised. Blood cultures taken. Next step?**
+   A. CT brain then LP
+   B. **LP immediately**
+   C. Start antibiotics, wait for CT
+   D. Start antibiotics, no LP needed
+   E. MRI brain
+
+2. **A 70-year-old man with diabetes presents with confusion and fever. No neck stiffness. GCS 13. Fundoscopy not done. Empirical antibiotics?**
+   A. Ceftriaxone + Vancomycin
+   B. **Ceftriaxone + Vancomycin + Amoxicillin + Dexamethasone**
+   C. Ceftriaxone + Vancomycin + Dexamethasone
+   D. Meropenem + Vancomycin
+   E. Amoxicillin + Gentamicin
+
+3. **A patient with suspected meningitis has a CT showing mild cerebral oedema but no mass effect. LP shows: WCC 2000 (90% neutrophils), protein 2.5 g/L, glucose 1.2 mmol/L (serum 6.0), Gram stain positive for Gram-positive cocci in pairs. Most likely organism?**
+   A. *N. meningitidis*
+   B. **S. pneumoniae**
+   C. *H. influenzae*
+   D. *L. monocytogenes*
+   E. *S. aureus*
+
+4. **A 55-year-old woman develops acute bacterial meningitis. She has a history of anaphylaxis to penicillin. Empirical regimen?**
+   A. Ceftriaxone + Vancomycin
+   B. **Vancomycin + Meropenem** (or Moxifloxacin)
+   C. Ceftriaxone + Amoxicillin
+   D. Chloramphenicol + Vancomycin
+   E. Aztreonam + Vancomycin
+
+5. **A child with Hib meningitis. Unvaccinated 2-year-old sibling at home. Prophylaxis?**
+   A. Ciprofloxacin 500mg single dose
+   B. **Rifampicin 20mg/kg OD ×4 days**
+   C. Ceftriaxone 250mg IM single dose
+   D. No prophylaxis needed
+   E. Azithromycin
+
+6. **A patient with bacterial meningitis develops hyponatraemia (Na 125) on day 3. Euvolaemic, urine osmolality 450, serum osmolality 260. Management?**
+   A. Normal saline bolus
+   B. **Fluid restriction + hypertonic saline if symptomatic**
+   C. Demeclocycline
+   D. Fludrocortisone
+   E. Tolvaptan
+
+7. **A 30-year-old man with meningococcal meningitis develops DIC (platelets 40, fibrinogen 1.0, D-dimer high, bleeding). Management?**
+   A. Platelets only
+   B. **Platelets if <50 + bleeding, FFP, cryoprecipitate if fibrinogen <1.5; treat underlying sepsis**
+   C. Heparin infusion
+   D. Tranexamic acid
+   E. Vitamin K
+
+8. **Which pathogen is associated with rhombencephalitis (brainstem encephalitis) in meningitis?**
+   A. *S. pneumoniae*
+   B. *N. meningitidis*
+   C. **Listeria monocytogenes**
+   D. *H. influenzae*
+   E. *S. aureus*
+
+9. **Dexamethasone has the STRONGEST evidence for reducing mortality in which type of bacterial meningitis?**
+   A. Meningococcal
+   B. **Pneumococcal**
+   C. Listeria
+   D. H. influenzae
+   E. All equally
+
+10. **A patient with bacterial meningitis has raised ICP (papilloedema, GCS dropping). Immediate measures?**
+    A. Mannitol 1g/kg, hyperventilate to PaCO₂ 3.5
+    B. **Head up 30°, normocapnia (PaCO₂ 4.5–5), mannitol 0.5–1g/kg or hypertonic saline, avoid hyperventilation**
+    C. Lumbar drain immediately
+    D. Dexamethasone 10mg IV
+    E. Hyperventilation to PaCO₂ 3.0
+
+## Flashcards
+- Q: Meningitis emergency rule
+  A: Antibiotics within 1 hour — never delay for CT/LP
+- Q: CT before LP indications
+  A: Immunocompromised, CNS dz, seizure, papilloedema, focal deficit, GCS<12, age>60
+- Q: Empirical adult regimen
+  A: Ceftriaxone + Vancomycin
+- Q: Listeria risk groups
+  A: >50, immunocompromised, pregnancy, alcohol → add Amoxicillin
+- Q: Dexamethasone
+  A: 0.15mg/kg 6h ×4d WITH/BEFORE 1st abx
+- Q: CSF bacterial
+  A: Neutrophils, high protein, low glucose (<0.4), high pressure
+- Q: Meningococcal prophylaxis
+  A: Ciprofloxacin 500mg single dose (contacts)
+- Q: Listeria treatment
+  A: Amoxicillin + Gentamicin ×21 days
+- Q: Complications
+  A: ICP, seizures, SIADH, hydrocephalus, hearing loss, venous thrombosis, DIC
+- Q: Viral CSF
+  A: Lymphocytes, normal glucose, mildly elevated protein
+
+## Answer Key with Explanations
+### MCQs
+1. **B** — Antibiotics must be given within 1 hour of suspicion of bacterial meningitis. Every hour of delay increases mortality.
+2. **B** — New-onset seizure within 1 week is an indication for CT before LP. Others: immunocompromised, CNS disease, papilloedema, focal deficit, GCS<12, age>60.
+3. **B** — Standard empirical regimen for immunocompetent adults: Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h.
+4. **B** — Listeria risk (>50, immunocompromised, pregnancy, alcohol) → add Amoxicillin 2g IV 4h (cephalosporins ineffective against Listeria).
+5. **B** — Dexamethasone 0.15mg/kg IV 6h ×4 days, given WITH or BEFORE the first antibiotic dose. No benefit if given >4h after antibiotics.
+6. **B** — Bacterial meningitis CSF: neutrophilic pleocytosis, high protein, low glucose (CSF:serum ratio <0.4), high opening pressure.
+7. **B** — Meningococcal contact chemoprophylaxis: Ciprofloxacin 500mg PO single dose (preferred). Alternatives: Rifampicin 600mg BD ×2d, Ceftriaxone 250mg IM single dose.
+8. **C** — Listeria meningitis requires 21 days of treatment (Amoxicillin + Gentamicin) due to brainstem involvement (rhombencephalitis).
+9. **B** — Cerebral venous thrombosis: anticoagulate with LMWH even if haemorrhagic infarction present (unlike arterial stroke).
+10. **B** — Audiology screening at discharge/follow-up for sensorineural hearing loss (most common with pneumococcal meningitis).
+
+### SBAs
+1. **B** — No CT indications (immunocompetent, GCS 15, no focal signs, no seizure, no papilloedema) → proceed directly to LP.
+2. **B** — Age 70 + diabetes + steroids = Listeria risk (age>50, immunocompromised) → add Amoxicillin. Also dexamethasone indicated (pneumococcal cover).
+3. **B** — Gram-positive cocci in pairs (lancet-shaped diplococci) = *S. pneumoniae*. *N. meningitidis* = Gram-negative diplococci. *Listeria* = Gram-positive rods. *H. influenzae* = Gram-negative coccobacilli.
+4. **B** — Penicillin anaphylaxis: avoid all β-lactams (including cephalosporins due to small cross-reactivity risk in anaphylaxis). Use Vancomycin + Meropenem (or Moxifloxacin).
+5. **B** — Hib contacts: Rifampicin 20mg/kg OD ×4d for unvaccinated/under-vaccinated contacts <4y. Ciprofloxacin is for meningococcal.
+6. **B** — SIADH: euvolaemic hyponatraemia with high urine osmolality → fluid restriction first; hypertonic saline if severe symptomatic (<120 or seizures).
+7. **B** — DIC management: supportive (treat sepsis), platelets if <50×10⁹/L + bleeding, FFP for coagulopathy, cryoprecipitate if fibrinogen <1.5g/L.
+8. **C** — Listeria monocytogenes has tropism for brainstem → rhombencephalitis (cerebellar signs, cranial nerve palsies, respiratory failure).
+9. **B** — Dexamethasone evidence strongest for pneumococcal meningitis (European and US trials). Marginal/uncertain for meningococcal, Listeria, Hib.
+10. **B** — Raised ICP: head up 30°, normocapnia (PaCO₂ 4.5–5 kPa), mannitol 0.5–1g/kg or hypertonic saline. Avoid aggressive hyperventilation (↓ cerebral perfusion).
+
+---

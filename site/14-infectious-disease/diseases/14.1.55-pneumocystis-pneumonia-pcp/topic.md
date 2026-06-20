@@ -1,220 +1,210 @@
-Related: [[HIV Infection and AIDS]], [[Fungal Pneumonias]], [[Infection in Immunocompromised Host (Transplant, Biologics)]], [[Cryptococcal Meningitis]], [[Toxoplasmosis]], [[Antimicrobial Prescribing Principles]]
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.55"
+topic: "Pneumocystis Pneumonia (PCP)"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Pneumocystis Pneumonia (PCP).md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
 
-> [!important]
-> **Pneumocystis jirovecii pneumonia (PCP/PJP)** = AIDS-defining OI in HIV+ with **CD4<200**. **Subacute dyspnoea + dry cough + fever** with **hypoxia disproportionate to CXR findings** is the diagnostic signature. **TMP-SMX 15-20 mg TMP/kg/day × 21 days** is first-line treatment. **Add adjunctive prednisolone** if **PaO2<70 mmHg** or **A-a gradient>35 mmHg** (start within 72h). **β-D-glucan** elevated; **BAL IF/PCR** is gold standard (organism cannot be cultured). **Prophylaxis: TMP-SMX DS daily when CD4<200**.
+---
+tags: [medicine, infectious-disease, davidson, chapter13, pneumocystis, pcp, hiv, fcps, mrcp]
+davidson_chapter: Chapter 13: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: AIDS-defining illness, CD4<200, ground-glass CXR, TMP-SMX | MRCP: Hypoxia disproportionate to CXR, β-D-glucan"
+see_also: "[[HIV Infection and AIDS]], [[Fungal Pneumonias]], [[Immunocompromised Host]], [[Cryptococcal Meningitis]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
 
-## 1. Learning Objectives
-- Recognise *Pneumocystis jirovecii* (atypical fungus, cannot be cultured) and its risk groups (HIV CD4<200, transplant, high-dose steroids, biologics, malignancy)
-- Identify the clinical signature: subacute dyspnoea, dry cough, fever with **hypoxia disproportionate to CXR**
-- Apply diagnostic algorithm: CXR (bilateral perihilar ground-glass), HRCT, β-D-glucan, induced sputum, BAL with IF/PCR
-- Treat with **TMP-SMX 15-20 mg TMP/kg/day × 21 days** (PO mild, IV severe) and add **prednisolone** if PaO2<70 mmHg or A-a>35 mmHg
-- Manage prophylaxis: **TMP-SMX DS daily** when CD4<200; stop when CD4>200 ×3 months on ART with suppressed VL
-- Recognise alternative therapies (pentamidine, clindamycin+primaquine, atovaquone, dapsone+TMP) for TMP-SMX allergy
-- Apply special situation adjustments (pregnancy, G6PD, renal failure)
+# Pneumocystis Pneumonia (PCP / PJP)
 
-## 2. Microbiology
+> [!info] **Davidson Ch 11/14 Alignment**: Infectious Disease → Fungi → Pneumocystis jirovecii (formerly *P. carinii*)
+> **FCPS/MRCP Focus**: AIDS-defining OI, CD4<200, subacute dyspnoea, ground-glass CXR, β-D-glucan, **TMP-SMX first-line**
+
+---
+
+## 🎯 Learning Objectives
+
+- [ ] Recognise **Pneumocystis jirovecii** (fungus, atypical, can't be cultured)
+- [ ] Identify **Risk groups**: HIV CD4<200, transplant, high-dose steroids, biologics, malignancy
+- [ ] Recognise **Clinical features**: Subacute dyspnoea, dry cough, fever, **hypoxia disproportionate to CXR**
+- [ ] Diagnose: **CXR** (bilateral perihilar ground-glass), **HRCT** (ground-glass), **β-D-glucan ↑**, **PCP PCR/IF on BAL/sputum**, induced sputum
+- [ ] Treat: **TMP-SMX first-line** (15-20mg TMP/kg/day, 21 days) + **Prednisolone if PaO2<70mmHg**
+- [ ] Prophylaxis: **TMP-SMX** when CD4<200; alternatives (Dapsone, Atovaquone, Pentamidine)
+
+---
+
+## 📚 Microbiology
+
 | Feature | Details |
 |---------|---------|
-| **Classification** | **Atypical fungus** (lacks ergosterol in membrane) |
-| **Former name** | *Pneumocystis carinii* (zoonotic misnomer) → *P. jirovecii* for human pathogen |
-| **Source** | Ubiquitous; airborne; person-to-person nosocomial; reacquisition/reactivation |
-| **Culture** | **Cannot be cultured** in vitro |
-| **Diagnosis** | Microscopy (GMS, Giemsa, toluidine blue), direct IF, PCR; antigen (β-D-glucan) |
-| **Stains** | **Gomori methenamine silver (GMS)** — cysts black; **Giemsa/toluidine blue** — intracystic bodies; **Direct IF (DFA)** — most sensitive microscopy |
+| **Classification** | **Fungus** (atypical; lacks ergosterol in membrane) |
+| **Former name** | *Pneumocystis carinii* (zoonotic misnomer → now *P. jirovecii* for human) |
+| **Source** | **Ubiquitous**; airborne; reacquisition/reactivation; person-to-person nosocomial |
+| **Culture** | **Cannot be cultured** (in vitro); diagnosis by microscopy, antigen, PCR |
+| **Stains** | **Gomori methenamine silver (GMS)** - cysts (black); **Giemsa/toluidine blue** - intracystic bodies; **Direct IF** (DFA) - most sensitive |
 
-## 3. Risk Groups
-| Group | Threshold / Risk | Notes |
-|-------|------------------|-------|
-| **HIV/AIDS** | **CD4<200 cells/μL** | Peak risk CD4<100; AIDS-defining; oropharyngeal candidiasis, prior PCP |
-| **Solid organ transplant** | 1-6 months post (peak immunosuppression) | Lung/kidney highest risk |
+---
+
+## 👥 Risk Groups
+
+| Group | CD4 / Risk | Notes |
+|-------|------------|-------|
+| **HIV/AIDS** | **CD4<200** (oropharyngeal candidiasis, prior PCP) | Most common OI; peak risk CD4<100 |
+| **Solid organ transplant** | 1-6 months post (peak immunosuppression) | Lung/kidney high risk |
 | **HSCT** | Day 30-100 (engraftment), GVHD treatment | High mortality |
 | **Malignancy** | Acute leukaemia, lymphoma, chemotherapy | Prolonged neutropenia |
-| **Autoimmune** | SLE, vasculitis, IBD on high-dose steroids | ≥20 mg pred >4 weeks |
-| **Biologics** | Rituximab, TNF-α inhibitors, JAK inhibitors | Add to steroids |
-| **Primary immunodeficiency** | CGD, SCID, X-linked agammaglobulinaemia | Children |
+| **Autoimmune** | SLE, vasculitis, IBD on high-dose steroids (≥20mg pred >4 weeks) | Biologics (rituximab, TNF-α) |
+| **CGD, SCID** | Primary immunodeficiencies | Children |
 
-> [!warning]
-> **High-risk combination**: HIV CD4<200 + oropharyngeal candidiasis + prior PCP episode = start prophylaxis immediately. Do not wait for repeat CD4.
+---
 
-## 4. Clinical Features
+## 🩺 Clinical Features
+
 | Feature | Details |
 |---------|---------|
-| **Onset** | **Subacute** (1-2 weeks) in HIV; acute (days) in non-HIV (transplant, steroids) |
-| **Symptoms** | Progressive **dyspnoea** (~90%), **dry/non-productive cough** (~90%), **fever** (~80%), malaise, weight loss |
+| **Onset** | **Subacute** (1-2 weeks) in HIV; acute (days) in non-HIV |
+| **Symptoms** | Progressive **dyspnoea** (90%), **dry/non-productive cough** (90%), **fever** (80%), malaise, weight loss |
 | **Examination** | Tachypnoea, tachycardia, **cyanosis**, **fine inspiratory crackles** (often minimal) |
-| **Hallmark sign** | **Hypoxia disproportionate to CXR findings** (PaO2<70 mmHg, A-a gradient>35, SpO2<95% on exertion) |
-| **Extrapulmonary** (rare) | Lymphadenopathy, hepatosplenomegaly, choroiditis, thyroiditis, bone marrow |
+| **Key Sign** | **Hypoxia disproportionate to physical findings/CXR** (PaO2<70mmHg, A-a gradient ↑, SpO2<95% on exertion) |
+| **Extrapulmonary** (rare) | Lymph nodes, spleen, liver, bone marrow, choroid, thyroid |
 
-> [!tip]
-> **Exam Pearl**: "**Pneumocystis = hypoxia without CXR signs**" — HIV+ patient with severe dyspnoea + minimal CXR findings = PCP until proven otherwise.
+> [!warning] **Exam Pearl**: **"Pneumocystis = hypoxia without CXR signs"** — a young HIV+ patient with sudden severe dyspnoea + minimal CXR findings = PCP until proven otherwise.
 
-## 5. Investigations
+---
+
+## 🔬 Investigations
+
 | Test | Findings | Notes |
 |------|----------|-------|
-| **ABG** | **PaO2<70 mmHg** (room air); A-a gradient **>35 mmHg**; often hypocapnia (respiratory alkalosis) | **Triggers steroids** |
-| **CXR** | **Bilateral perihilar/diffuse interstitial/reticulonodular** ("bat-wing"); **ground-glass opacities (GGO)**; pneumatoceles, pneumothorax (~10%); **normal in ~10%** | Classic "bat-wing" pattern |
-| **HRCT chest** | **Bilateral GGO** (sensitive); mosaic attenuation; cysts | More sensitive than CXR |
-| **LDH** | **Markedly elevated** (>500 U/L); non-specific | Severity/prognosis marker |
-| **β-D-glucan (BDG)** | **Elevated** (≥80 pg/mL); pan-fungal marker | Negative in Mucorales, Cryptococcus |
-| **Sputum (induced)** | IF/DFA (cysts), GMS, PCR | Sensitivity 50-90% with induction |
+| **ABG** | **PaO2 <70 mmHg** (room air); A-a gradient **>35 mmHg**; often **hypocapnia** (respiratory alkalosis) | **Triggers steroids** |
+| **CXR** | **Bilateral perihilar/diffuse interstitial/reticulonodular** ("bat-wing"); **ground-glass opacities** (GGO); pneumatoceles, pneumothorax (10%); **normal in 10%** | "Bat-wing" pattern |
+| **HRCT chest** | **Bilateral GGO** (sensitive); mosaic attenuation; cysts | Better than CXR |
+| **LDH** | **Markedly elevated** (>500 U/L); non-specific (also in lymphoma, haemolysis) | Severity/prognosis marker |
+| **β-D-glucan (BDG)** | **Elevated** (≥80 pg/mL); pan-fungal marker (Aspergillus, Candida, PJP) | **Negative Mucorales/Cryptococcus** |
+| **Sputum (induced)** | **IF/DFA** (cysts), **GMS**, **PCR** | Sensitivity 50-90% with induction |
 | **BAL (bronchoalveolar lavage)** | **Gold standard**; IF/DFA, GMS, Giemsa, **PCR** | Sensitivity >90% |
-| **PCP PCR (nasopharyngeal/BAL)** | High sensitivity; specificity lower (colonisation) | Quantitative threshold helps |
-| **Exercise test** | SpO2 ↓≥4% on 6-min walk | Old but specific |
+| **PCP PCR (nasopharyngeal, BAL)** | High sensitivity; specificity lower (colonisation) | Quantitative threshold helps |
+| **Exercise test** | SpO2 ↓ ≥4% on 6-min walk | Old but specific |
 
-> [!tip]
-> **Exam Pearl**: **TMP-SMX prophylaxis reduces yield** of all tests (including PCR). Do not withhold empirical therapy if clinical suspicion is high.
+> [!tip] **Exam Pearl**: **TMP-SMX prophylaxis reduces yield** of all tests (including PCR). Don't stop empirically if clinical suspicion high.
 
-## 6. Diagnostic Algorithm
-```
-HIV+ with subacute dyspnoea + dry cough + fever
-    ↓
-ABG + CXR + β-D-glucan
-    ↓
-PaO2<70 OR A-a>35 → start TMP-SMX + steroids (do not wait for confirmation)
-    ↓
-Sputum induction OR BAL → IF/PCR/cytology
-    ↓
-PCP confirmed → continue 21-day course
-PCP excluded → broaden differential (bacterial, viral, fungal, TB, atypical)
-```
+---
 
-## 7. Management
+## 💊 Management
 
-### 7.1 First-line Therapy: TMP-SMX
+### First-line Therapy
+
 | Severity | Regimen | Duration | Adjuncts |
 |----------|---------|----------|----------|
-| **Mild-Moderate** (PaO2 ≥70 mmHg) | **TMP-SMX 15-20 mg TMP/kg/day PO** in 3-4 divided doses | **21 days** | - |
-| **Severe** (PaO2<70 or A-a>35) | **TMP-SMX 15-20 mg TMP/kg/day IV** in 3-4 divided doses | **21 days** | **Prednisolone** |
+| **Mild-Moderate** (PaO2 ≥70) | **TMP-SMX (15-20 mg TMP/kg/day) PO** in 3-4 divided doses | **21 days** | - |
+| **Severe** (PaO2 <70 or A-a >35) | **TMP-SMX (15-20 mg TMP/kg/day) IV** in 3-4 divided doses | **21 days** | **Prednisolone** (see below) |
 
-> **Key FCPS/MRCP**: Same mg/kg dose for both PO and IV. **Trimethoprim component** is the dosing reference (15-20 mg/kg/day). One DS tablet = 160/800 mg (TMP/SMX). Average adult ~70 kg → 2-3 DS tabs q6h ≈ 6-9 DS tabs/day.
-
-### 7.2 Adjunctive Corticosteroids (Severe Disease)
-**Indication**: **PaO2<70 mmHg** on room air OR **A-a gradient>35 mmHg**
-
+### Adjunctive Corticosteroids (Severe Disease)
+**Indication**: **PaO2 <70 mmHg** on room air OR **A-a gradient >35 mmHg**
 | Drug | Dose | Duration |
 |------|------|----------|
-| **Prednisolone** | 40 mg BD × 5 days → 40 mg OD × 5 days → 20 mg OD × 11 days | **21 days total** (taper) |
-| **Methylprednisolone IV** | 75% of prednisolone dose (if unable to take oral) | Same |
+| **Prednisolone** | 40 mg bd × 5 days → 40 mg od × 5 days → 20 mg od × 11 days | **21 days** (taper) |
+| **Methylprednisolone IV** (if unable oral) | 75% of prednisolone dose | Same |
 
-> [!critical]
-> **Start steroids EARLY (within 72h of starting TMP-SMX)** — reduces mortality ~50% in moderate-severe PCP. **Do not taper too quickly** (3-week regimen essential).
+> [!critical] **Start steroids EARLY (within 72h of treatment)** — reduces mortality by ~50% in moderate-severe PCP.
 
-### 7.3 Alternative Therapies (TMP-SMX Intolerance/Allergy)
+### Alternative Therapies (TMP-SMX Intolerance/Allergy)
+
 | Drug | Dose | Notes |
 |------|------|-------|
-| **Pentamidine IV** | 4 mg/kg/day IV (max 300-600 mg) | Severe toxicities: nephrotoxicity, pancreatitis, hypo-/hyperglycaemia, QT prolongation, neutropenia |
-| **Clindamycin + Primaquine** | Clindamycin 600 mg IV/PO q6h + Primaquine 30 mg base PO OD | Check **G6PD first**; haemolysis risk; synergistic |
-| **Atovaquone** (mild-moderate only) | 750 mg PO BD (with fatty meal) | GI upset, rash; **avoid if diarrhoea** |
-| **Dapsone + Trimethoprim** | Dapsone 100 mg PO OD + TMP 5 mg/kg PO q6h | Check **G6PD first**; haemolysis, methaemoglobinaemia |
+| **Pentamidine IV** | 4 mg/kg/day IV (max 300-600 mg) | Severe: nephrotoxicity, pancreatitis, hypoglycaemia/hyperglycaemia, QT prolongation |
+| **Clindamycin + Primaquine** | Clindamycin 600 mg IV/PO q6h + Primaquine 30 mg base PO od | Check G6PD; haemolysis risk |
+| **Atovaquone** (mild-moderate only) | 750 mg PO bd (with fatty meal) | GI upset, rash; avoid in diarrhoea |
+| **Dapsone + Trimethoprim** | Dapsone 100 mg PO od + TMP 5 mg/kg PO q6h | Check G6PD; haemolysis, methaemoglobinaemia |
 
-### 7.4 Supportive Care
-- **Oxygen** to maintain SpO2>92% (high-flow / CPAP often required)
-- **IV fluids** cautiously (avoid overload → ARDS risk)
-- **Avoid unnecessary nebulisation** (aerosolisation risk to HCWs)
-- **DVT prophylaxis**
-- **Monitor** for pneumothorax, ARDS, superinfection
+---
 
-## 8. Prophylaxis
+## 🛡️ Prophylaxis
 
-### 8.1 Indications
+### Indications
 | Indication | Threshold |
 |------------|-----------|
-| **HIV** | **CD4<200 cells/μL** (or oropharyngeal candidiasis, prior PCP, AIDS-defining illness) |
+| **HIV** | **CD4 <200 cells/μL** (or oropharyngeal candidiasis, prior PCP, AIDS-defining illness) |
 | **Transplant** | Per protocol (lung/kidney high risk) |
 | **High-dose steroids** | ≥20 mg prednisolone/day >4 weeks (controversial) |
 | **HSCT** | Allogeneic recipients; seropositive recipients |
-| **Biologics** | Per protocol (rituximab + high-dose steroids) |
 
-### 8.2 Regimens
+### Regimens
+
 | Drug | Dose | Notes |
 |------|------|-------|
-| **TMP-SMX (FIRST-LINE)** | **160/800 mg PO daily (DS)** OR 80/400 mg daily (SS) | **Also covers Toxo** (CD4<100 + Toxo IgG+) |
+| **TMP-SMX (FIRST-LINE)** | **160/800 mg PO daily** (DS) OR 80/400 mg daily (SS) | Also covers Toxo (CD4<100) |
 | **Dapsone** | 100 mg PO daily (or 200 mg weekly) | Check **G6PD first**; haemolysis risk |
-| **Atovaquone** | 750 mg PO BD (with fatty meal) | Mild-moderate only; expensive |
-| **Pentamidine (inhaled)** | 300 mg monthly via Respigard II nebuliser | **No systemic / no Toxo coverage**; pneumothorax risk |
+| **Atovaquone** | 750 mg PO bd (with fatty meal) | Mild-moderate only; expensive |
+| **Pentamidine (inhaled)** | 300 mg monthly via Respigard II nebuliser | No systemic protection (no Toxo); pneumothorax risk |
 
-### 8.3 Discontinuation
-- **HIV**: When **CD4>200 for ≥3 months** on ART with suppressed viral load
-- Restart prophylaxis if CD4 falls<200
-- Continue during acute PCP treatment (secondary prophylaxis) until CD4 criteria met
+### Discontinuation
+- **HIV**: When **CD4 >200 for ≥3 months** on ART (and VL suppressed)
+- Restart if CD4 falls <200
 
-## 9. Complications
-| Complication | Notes |
-|--------------|-------|
-| **Respiratory failure / ARDS** | Most common; may require intubation + ICU |
-| **Pneumothorax** | ~10%; pneumatocele rupture; worse prognosis |
-| **Superinfection** | Bacterial, CMV co-infection; worsen prognosis |
-| **IRIS (Immune Reconstitution)** | Within weeks of ART initiation; paradoxical worsening |
-| **Drug toxicity** | TMP-SMX (rash, neutropenia, AKI, hyperkalaemia); pentamidine (pancreatitis, hypo/hyperglycaemia) |
+---
 
-## 10. Special Situations
-| Situation | Adjustment |
-|-----------|-----------|
-| **Pregnancy** | TMP-SMX safe (avoid in 1st trimester if possible); prednisolone safe; **pentamidine = foetal toxicity** (avoid); avoid atovaquone (limited data) |
-| **G6PD deficiency** | **Avoid dapsone, primaquine** (haemolysis) → atovaquone or pentamidine |
-| **Renal failure (CrCl<30)** | Reduce TMP-SMX dose by 50%; pentamidine dose reduce |
-| **Liver failure** | TMP-SMX caution (hepatotoxic); atovaquone safe |
-| **Sulfa allergy** | Desensitisation to TMP-SMX preferred; otherwise pentamidine / atovaquone |
-| **Transplant** | Reduce immunosuppression; drug interactions with TMP-SMX + tacrolimus (↑ levels) |
+## 📋 FCPS/MRCP High-Yield Summary
 
-## 11. Prognosis
-- **Mortality** ~10-30% in HIV-associated PCP (higher if intubated, >40%)
-- **Risk factors for poor outcome**: high A-a gradient, low CD4, late presentation, no steroids, concurrent infection
-- **Recovery**: clinical improvement in 4-7 days; CXR improvement in 2-3 weeks; full resolution in 4-6 weeks
+| Topic | Key Point |
+|-------|-----------|
+| **Pathogen** | *Pneumocystis jirovecii* (fungus, can't be cultured) |
+| **Risk** | **HIV CD4<200**; transplant, steroids, biologics |
+| **Clinical** | Subacute dyspnoea, dry cough, fever; **hypoxia disproportionate to CXR** |
+| **CXR** | Bilateral perihilar GGO, "bat-wing"; can be normal (10%) |
+| **Diagnosis** | **BAL IF/PCR** (gold); induced sputum; **β-D-glucan elevated** |
+| **Treatment** | **TMP-SMX 15-20 mg TMP/kg/day × 21 days** (PO/IV by severity) |
+| **Steroids** | **Prednisolone** if **PaO2<70mmHg** or **A-a>35** (start within 72h) |
+| **Prophylaxis** | **TMP-SMX DS daily** when CD4<200; stop when CD4>200 ×3 months on ART |
+| **LDH** | Elevated (severity marker) |
 
-## 12. FCPS/MRCP High-Yield Points
-1. **Pneumocystis jirovecii = atypical fungus; cannot be cultured** (use microscopy, antigen, PCR)
-2. **HIV CD4<200** = main risk group; also transplant, high-dose steroids, biologics
-3. **Clinical signature**: subacute dyspnoea + dry cough + fever + **hypoxia disproportionate to CXR**
-4. **CXR**: bilateral perihilar ground-glass ("bat-wing"); normal in ~10%
-5. **β-D-glucan elevated** (pan-fungal marker; negative in Mucorales, Cryptococcus)
-6. **BAL IF/PCR = gold standard** for diagnosis
-7. **Treatment**: **TMP-SMX 15-20 mg TMP/kg/day × 21 days** (PO mild, IV severe)
-8. **Steroids**: **Prednisolone 21-day taper** if **PaO2<70 mmHg** OR **A-a>35 mmHg** (start within 72h)
-9. **Prophylaxis**: **TMP-SMX DS daily** when CD4<200; stop when CD4>200 ×3 months on ART with suppressed VL
-10. **TMP-SMX covers both PCP (CD4<200) and Toxo (CD4<100 + IgG+)** — same drug
-11. **Pentamidine IV** for severe disease; **inhaled pentamidine = prophylaxis only** (no systemic, no Toxo)
-12. **LDH elevated** = severity/prognosis marker
-13. **Always check G6PD** before dapsone or primaquine (haemolysis risk)
-14. **TMP-SMX prophylaxis reduces yield** of all diagnostic tests; do not stop empirical treatment if clinical suspicion high
-15. **PCP + ART = IRIS risk**; monitor for paradoxical worsening in first weeks
+---
 
-## 13. Common Viva Questions
-1. What is Pneumocystis jirovecii? Why can't it be cultured?
-2. HIV+ patient with CD4 150, dyspnoea, SpO2 88%, near-normal CXR. Diagnosis and next step?
-3. When do you add steroids in PCP? What dose and duration?
-4. Compare first-line and second-line PCP treatment options.
-5. Why is dapsone contraindicated without G6PD testing?
-6. Renal transplant patient on tacrolimus develops fever, dry cough, bilateral infiltrates. Differential and approach?
-7. What is the role of β-D-glucan in PCP diagnosis?
-8. Differentiate inhaled vs IV pentamidine.
-9. When do you start PCP prophylaxis in HIV? When do you stop?
-10. Sensitivity of induced sputum vs BAL for PCP diagnosis?
+## ❓ Viva Questions (FCPS/MRCP)
 
-## 14. Common Confusions / Exam Traps
+1. **What is Pneumocystis jirovecii? Why can't it be cultured?**
+2. **A HIV+ patient with CD4 150 presents with dyspnoea and SpO2 88% on room air. CXR is near-normal. Diagnosis and next step?**
+3. **When do you add steroids in PCP? What dose and duration?**
+4. **Compare first-line and second-line PCP treatment options.**
+5. **Why is dapsone contraindicated without G6PD testing?**
+6. **A renal transplant patient on tacrolimus develops fever, dry cough, and bilateral infiltrates. Differential and approach?**
+7. **What is the role of β-D-glucan in PCP diagnosis?**
+8. **Differentiate inhaled vs IV pentamidine.**
+9. **When do you start PCP prophylaxis in HIV? When do you stop?**
+10. **What is the sensitivity of induced sputum vs BAL for PCP diagnosis?**
+
+---
+
+## 🧠 Confusions & Mnemonics
+
 | Confusion | Clarification |
 |-----------|---------------|
-| **PCP prophylaxis also covers Toxo** | **Yes — TMP-SMX covers both PCP (CD4<200) and Toxo (CD4<100 + IgG+)** |
+| **PCP prophylaxis for Toxoplasma** | **TMP-SMX covers both PCP (CD4<200) and Toxo (CD4<100+IgG+)**; same drug |
 | **PCP PCR vs colonisation** | PCR very sensitive; quantitative cutoffs distinguish colonisation vs active disease; clinical correlation essential |
 | **Pentamidine IV vs inhaled** | **IV**: severe systemic PCP; **inhaled**: prophylaxis only (no Toxo coverage) |
-| **PCP vs bacterial pneumonia in HIV** | PCP: subacute, dry cough, **hypoxia >> CXR**, GGO, ↑LDH, ↑BDG. Bacterial: acute, purulent sputum, consolidation, leucocytosis |
-| **Steroid timing in PCP** | **Start within 72h of treatment**; not after 7 days; do NOT taper quickly (3-week regimen) |
-| **Stop prophylaxis when CD4>200** | **CD4>200 for ≥3 months ON ART with suppressed VL** |
-| **TMP-SMX dose in PCP** | Dosed by **trimethoprim component** (15-20 mg TMP/kg/day), not SMX |
-| **Pentamidine in pregnancy** | **Avoid** (foetal toxicity); use TMP-SMX or atovaquone |
+| **PCP vs bacterial pneumonia in HIV** | PCP: subacute, dry cough, hypoxia>>CXR, GGO, ↑LDH, ↑BDG; Bacterial: acute, purulent sputum, consolidation, leucocytosis |
+| **Steroid timing in PCP** | **Start WITHIN 72h of treatment**; not after 7 days; do NOT taper too quickly (3-week regimen) |
+| **Stop prophylaxis when CD4>200** | **CD4>200 for ≥3 months ON ART** with suppressed VL |
 
-## 15. Mnemonics
-- **PCP Risk**: **"CD4 200"** — HIV<200, **T**ransplant, **S**teroids (>20 mg pred >4w), **B**iologics
-- **Steroid Trigger**: **"70-35-21"** — PaO2<70 mmHg OR A-a>35 mmHg → Prednisolone **21-day taper** (40 BD→40 OD→20 OD)
-- **TMP-SMX Dual Cover**: **"PCP + Toxo"** — same drug (CD4<200 for PCP, CD4<100 + IgG+ for Toxo)
-- **Hypoxia Disproportionate**: **"Few signs, few CXR findings, BIG hypoxia"** = PCP
-- **Pentamidine Routes**: **"IV = I want it systemic (treatment); Inhaled = I only want lungs (prophylaxis)"**
-- **β-D-Glucan**: **Pan-fungal except PC** (Pneumocystis yes, Cryptococcus no) — actually PJP IS detected; exception is **Cryptococcus and Mucorales**
+**Mnemonic**: **"PCP"** → **P**neumocystis jirovecii (fungus), **C**D4<200 (HIV), **P**roteinaceous alveoli (foamy exudate), **G**round-glass CXR, **T**MP-SMX 21 days + **S**teroids if **PaO2<70**, **P**rophylaxis when CD4<200, **β-D-glucan ↑**
 
-## 16. Mind Map
+**Mnemonic - Steroids**: **"70-35-21"** → PaO2<70 mmHg OR A-a>35 mmHg → Prednisolone 21 days (40 bd→40 od→20 od taper)
+
+---
+
+## 🗺️ Mind Map
+
 ```mermaid
 mindmap
-  root((Pneumocystis jirovecii PCP))
+  root((Pneumocystis jirovecii))
     Risk Groups
       HIV CD4<200
       Transplant (lung, kidney)
@@ -233,9 +223,9 @@ mindmap
       BAL IF/PCR (gold)
       Induced sputum
     Treatment
-      TMP-SMX 15-20mg TMP/kg/d × 21d
-      Steroids (PaO2<70 or A-a>35)
-        Prednisolone 40bd→40od→20od × 21d
+      TMP-SMX 15-20mg/kg/d × 21d
+      Steroids (PaO2<70)
+        Prednisolone 40bd→40od→20od
       Alternatives
         Pentamidine IV
         Clindamycin + Primaquine
@@ -249,38 +239,61 @@ mindmap
       Stop when CD4>200 ×3mo
 ```
 
-## 17. One-Page Revision Card
+---
+
+## 📄 One-Page Revision Card
+
 | **Pneumocystis Pneumonia (PCP)** | **Key Facts** |
 |----------------------------------|---------------|
-| **Organism** | *P. jirovecii* (atypical fungus; cannot be cultured) |
+| **Organism** | *P. jirovecii* (fungus; cannot be cultured) |
 | **Risk** | **HIV CD4<200**; transplant, steroids, biologics |
 | **Clinical** | Subacute dyspnoea, dry cough, fever; **hypoxia disproportionate to CXR** |
-| **CXR** | **Bilateral perihilar GGO** ("bat-wing"); normal in ~10% |
+| **CXR** | **Bilateral GGO** ("bat-wing"); normal in 10% |
 | **LDH / BDG** | LDH ↑; **β-D-glucan elevated** |
 | **Diagnosis** | **BAL IF/PCR** (gold); induced sputum |
 | **Treatment** | **TMP-SMX 15-20 mg TMP/kg/day × 21 days** (PO mild / IV severe) |
-| **Steroids** | **Prednisolone 21-day taper** if **PaO2<70** or **A-a>35** (start<72h) |
+| **Steroids** | **Prednisolone 21-day taper** if **PaO2<70** or **A-a>35** (start <72h) |
 | **Prophylaxis** | **TMP-SMX DS daily** when CD4<200; stop when CD4>200 ×3 months on ART |
-| **TMP-SMX** | Also covers Toxo (CD4<100 + IgG+) |
-| **Dapsone / Primaquine** | Check G6PD first (haemolysis) |
-| **Pentamidine IV** | Treatment of severe disease; pentamidine inhaled = prophylaxis only |
-| **Mortality** | 10-30% (HIV); >40% if intubated |
 
-## 18. Self-Test Scorecard
-| Topic | Score (1-5) | Notes |
-|-------|-------------|-------|
+---
+
+## 📊 Spaced Repetition Tracker
+
+| Review Interval | Date | Score (1-5) | Notes |
+|-----------------|------|-------------|-------|
+| 24 hours | | | |
+| 7 days | | | |
+| 15 days | | | |
+| 30 days | | | |
+| 90 days | | | |
+
+---
+
+## 🧪 Self-Test Scorecard
+
+| Topic | Known? (✓/✗) | Last Reviewed |
+|-------|--------------|---------------|
 | Risk groups & CD4 threshold | | |
 | Clinical features (hypoxia vs CXR) | | |
-| Diagnostic approach (BAL, β-D-glucan) | | |
+| Diagnostic approach (BAL, BDG) | | |
 | First-line treatment (TMP-SMX, 21 days) | | |
 | Steroid indications & dosing | | |
 | Alternative therapies (Pentamidine, Clinda+Primaquine) | | |
 | Prophylaxis (indications, agents, discontinuation) | | |
-| G6PD testing before dapsone/primaquine | | |
-| TMP-SMX dual cover (PCP + Toxo) | | |
-| Pentamidine IV vs inhaled | | |
 
 ---
 
-**Status**: Full FCPS/MRCP topic note — Davidson Ch 14 Infectious Disease
-**Last Updated**: 2026-06-20 | **Source**: Davidson 24e Ch 11 / 25e Ch 14 | **FCPS/MRCP Focused**
+## 🔗 Navigation
+
+- [[HIV Infection and AIDS]]
+- [[Fungal Pneumonias]]
+- [[Immunocompromised Host Infections]]
+- [[Cryptococcal Meningitis]]
+- [[Toxoplasmosis]]
+- [[CMV Disease]]
+- [[Infectious Disease MOC]]
+- [[Davidson Chapter 13 - Infectious Disease Hierarchy]]
+
+---
+
+*Last Updated: 2025-06-17 | Based on Davidson 24e Ch 11 | FCPS/MRCP Focused*

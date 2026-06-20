@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.03"
+topic: "Antimicrobial Stewardship & Resistance"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Antimicrobial Stewardship & Resistance.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, antimicrobial-stewardship, resistance, amr, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: Essential | MRCP: Core | Stewardship core interventions, resistance mechanisms, MDROs, surveillance, de-escalation, rapid diagnostics, global action"
+see_also: "[[Antimicrobial Prescribing Principles]], [[Hospital-Acquired Infections (CLABSI, CAUTI, SSI)]], [[MDS Classification & Management]], [[Infection in Immunocompromised Host]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Antimicrobial Stewardship & Resistance
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Antimicrobial Stewardship & Resistance
 > **FCPS/MRCP Focus**: Core stewardship interventions, resistance mechanisms, MDRO definitions, surveillance, de-escalation, rapid diagnostics, global action plan
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Define **Antimicrobial Stewardship (AMS)**: Coordinated interventions to improve antibiotic use
 - [ ] Implement **Core AMS Interventions**: Prospective audit, formulary restriction, IV→PO, auto-stop, de-escalation
@@ -15,7 +42,7 @@
 
 ---
 
-## 2. 📖 Antimicrobial Stewardship (AMS) — Core Interventions
+## 📖 Antimicrobial Stewardship (AMS) — Core Interventions
 
 ### The "5 Core" AMS Interventions (CDC/WHO)
 
@@ -40,7 +67,7 @@
 
 ---
 
-## 3. 🦠 Resistance Mechanisms — Key Classes
+## 🦠 Resistance Mechanisms — Key Classes
 
 ### 1. β-Lactamases
 
@@ -63,7 +90,7 @@
 
 ---
 
-## 4. 🦠 Key MDROs — Definitions & Management
+## 🦠 Key MDROs — Definitions & Management
 
 ### Major MDROs
 
@@ -81,7 +108,7 @@
 
 ---
 
-## 5. 🔬 Surveillance & Metrics
+## 🔬 Surveillance & Metrics
 
 ### Key Surveillance Systems
 
@@ -104,7 +131,7 @@
 
 ---
 
-## 6. 🎯 De-escalation & IV→PO Switch — Practical Protocols
+## 🎯 De-escalation & IV→PO Switch — Practical Protocols
 
 ### De-escalation Algorithm (48-72h)
 
@@ -133,7 +160,7 @@ flowchart TD
 
 ---
 
-## 7. 🛡️ Infection Prevention & Control (IPC) for MDROs
+## 🛡️ Infection Prevention & Control (IPC) for MDROs
 
 | Measure | Application |
 |---------|-------------|
@@ -146,7 +173,7 @@ flowchart TD
 
 ---
 
-## 8. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -162,7 +189,7 @@ flowchart TD
 
 ---
 
-## 9. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What are the 5 core antimicrobial stewardship interventions?**
    - **Prospective Audit & Feedback, Formulary Restriction, IV→PO Switch, Automatic Stop Orders, De-escalation Protocol**.
@@ -205,7 +232,7 @@ flowchart TD
 
 ---
 
-## 10. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -227,7 +254,7 @@ flowchart TD
 
 ---
 
-## 11. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -273,7 +300,7 @@ mindmap
 
 ---
 
-## 12. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **ANTIMICROBIAL STEWARDSHIP & RESISTANCE – FCPS/MRCP REVISION CARD** |
 |-----------------------------------------------------------------------|
@@ -290,7 +317,7 @@ mindmap
 
 ---
 
-## 13. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -302,7 +329,7 @@ mindmap
 
 ---
 
-## 14. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -312,7 +339,7 @@ mindmap
 
 ---
 
-## 15. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -327,7 +354,7 @@ mindmap
 
 ---
 
-## 16. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Hospital-Acquired Infections (CLABSI, CAUTI, SSI)]]
 - **Next**: [[Travel Medicine / Pre-travel Advice]]

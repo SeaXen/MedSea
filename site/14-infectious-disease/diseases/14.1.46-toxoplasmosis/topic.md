@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.46"
+topic: "Toxoplasmosis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Toxoplasmosis.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, infectious-disease, davidson, chapter13, toxoplasma, hiv, fcps, mrcp]
+davidson_chapter: Chapter 13: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: AIDS-defining OI, CD4<100, ring-enhancing lesions | MRCP: Pyrimethamine + sulfadiazine + leucovorin, congenital toxo"
+see_also: "[[HIV Infection and AIDS]], [[Pneumocystis Pneumonia]], [[Brain Abscess]], [[CNS Lymphoma]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Toxoplasmosis
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Parasites → Toxoplasma gondii
 > **FCPS/MRCP Focus**: AIDS-defining OI (CD4<100), ring-enhancing brain lesions, congenital toxoplasmosis, **Pyrimethamine + Sulfadiazine + Leucovorin**
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Identify **Toxoplasma gondii**: obligate intracellular protozoan; definitive host = cat
 - [ ] Recognise **Acute toxoplasmosis** (immunocompetent): Asymptomatic (80%) or mononucleosis-like (lymphadenopathy, fever)
@@ -16,7 +43,7 @@
 
 ---
 
-## 2. 📚 Microbiology
+## 📚 Microbiology
 
 | Feature | Details |
 |---------|---------|
@@ -28,7 +55,7 @@
 
 ---
 
-## 3. 🩺 Clinical Syndromes
+## 🩺 Clinical Syndromes
 
 ### 1. Immunocompetent Primary Infection
 | Feature | Details |
@@ -69,7 +96,7 @@
 
 ---
 
-## 4. 🔬 Diagnosis
+## 🔬 Diagnosis
 
 | Test | Sensitivity/Specificity | Notes |
 |------|------------------------|-------|
@@ -87,7 +114,7 @@
 
 ---
 
-## 5. 💊 Management
+## 💊 Management
 
 ### Cerebral Toxoplasmosis (HIV)
 
@@ -118,7 +145,7 @@
 
 ---
 
-## 6. 🛡️ Prophylaxis
+## 🛡️ Prophylaxis
 
 | Indication | Regimen | Notes |
 |------------|---------|-------|
@@ -128,7 +155,7 @@
 
 ---
 
-## 7. 📋 FCPS/MRCP High-Yield Summary
+## 📋 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -145,7 +172,7 @@
 
 ---
 
-## 8. ❓ Viva Questions (FCPS/MRCP)
+## ❓ Viva Questions (FCPS/MRCP)
 
 1. **What is the definitive host for *Toxoplasma gondii*?**
 2. **A HIV+ patient with CD4 80 presents with hemiparesis and seizures. CT shows multiple ring-enhancing lesions. Next steps?**
@@ -160,7 +187,7 @@
 
 ---
 
-## 9. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -178,7 +205,7 @@
 
 ---
 
-## 10. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -219,7 +246,7 @@ mindmap
 
 ---
 
-## 11. 📄 One-Page Revision Card
+## 📄 One-Page Revision Card
 
 | **Toxoplasmosis** | **Key Facts** |
 |-------------------|---------------|
@@ -235,7 +262,7 @@ mindmap
 
 ---
 
-## 12. 📊 Spaced Repetition Tracker
+## 📊 Spaced Repetition Tracker
 
 | Review Interval | Date | Score (1-5) | Notes |
 |-----------------|------|-------------|-------|
@@ -247,7 +274,7 @@ mindmap
 
 ---
 
-## 13. 🧪 Self-Test Scorecard
+## 🧪 Self-Test Scorecard
 
 | Topic | Known? (✓/✗) | Last Reviewed |
 |-------|--------------|---------------|
@@ -262,7 +289,7 @@ mindmap
 
 ---
 
-## 14. 🔗 Navigation
+## 🔗 Navigation
 
 - [[HIV Infection and AIDS]]
 - [[Pneumocystis Pneumonia]]

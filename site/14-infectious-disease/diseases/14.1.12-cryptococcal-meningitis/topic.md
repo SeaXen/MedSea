@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.12"
+topic: "Cryptococcal Meningitis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Cryptococcal Meningitis.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, cryptococcus, meningitis, cryptococcosis, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: Essential | MRCP: Core | Cryptococcal meningitis, HIV/AIDS, induction/consolidation/maintenance, amphotericin B + flucytosine, fluconazole, ICP management, IRIS"
+see_also: "[[HIV Infection and AIDS]], [[Fungal Pneumonias]], [[Invasive Candidiasis & Candidaemia]], [[Viral Encephalitis and Meningitis]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Cryptococcal Meningitis
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Fungi → Cryptococcus
 > **FCPS/MRCP Focus**: HIV/AIDS association, induction/consolidation/maintenance phases, amphotericin B + flucytosine, fluconazole, raised ICP management, IRIS
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Recognise **Clinical Presentation**: Subacute Meningitis (Weeks), Headache, Fever, Confusion, Cranial Nerve Palsies, Visual Loss
 - [ ] Identify **Risk Factors**: **HIV/AIDS (CD4<100)**, Immunosuppression, Transplant, Steroids, Sarcoidosis
@@ -15,7 +42,7 @@
 
 ---
 
-## 2. 📖 Definition & Epidemiology
+## 📖 Definition & Epidemiology
 
 | Feature | Details |
 |---------|---------|
@@ -30,7 +57,7 @@
 
 ---
 
-## 3. 📖 Clinical Presentation
+## 📖 Clinical Presentation
 
 ### Typical Presentation (Subacute Meningitis)
 
@@ -59,7 +86,7 @@
 
 ---
 
-## 4. 🔬 Diagnostic Workup
+## 🔬 Diagnostic Workup
 
 ```mermaid
 flowchart TD
@@ -90,7 +117,7 @@ flowchart TD
 
 ---
 
-## 5. 💊 Management — 3-Phase Therapy (WHO/IDSA Guidelines)
+## 💊 Management — 3-Phase Therapy (WHO/IDSA Guidelines)
 
 ### Phase 1: Induction (Weeks 1-2)
 
@@ -122,7 +149,7 @@ flowchart TD
 
 ---
 
-## 6. 🩺 Raised ICP Management (Critical)
+## 🩺 Raised ICP Management (Critical)
 
 | Intervention | Indication / Details |
 |-----------|----------------------|
@@ -136,7 +163,7 @@ flowchart TD
 
 ---
 
-## 7. 🔄 HIV-Associated Specifics
+## 🔄 HIV-Associated Specifics
 
 ### ART Timing (IRIS Risk)
 
@@ -158,7 +185,7 @@ flowchart TD
 
 ---
 
-## 8. 🔬 Laboratory Findings
+## 🔬 Laboratory Findings
 
 | Test | Findings |
 |-----------|----------|
@@ -173,7 +200,7 @@ flowchart TD
 
 ---
 
-## 9. 🔄 Differential Diagnosis
+## 🔄 Differential Diagnosis
 
 | Condition | Differentiating Features |
 |----------|--------------------------|
@@ -186,7 +213,7 @@ flowchart TD
 
 ---
 
-## 10. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -203,7 +230,7 @@ flowchart TD
 
 ---
 
-## 11. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the most common cause of fungal meningitis in HIV/AIDS?**
    - **Cryptococcus neoformans** (Cryptococcal Meningitis).
@@ -243,7 +270,7 @@ flowchart TD
 
 ---
 
-## 12. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -264,7 +291,7 @@ flowchart TD
 
 ---
 
-## 13. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -306,7 +333,7 @@ mindmap
 
 ---
 
-## 14. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **CRYPTOCOCCAL MENINGITIS – FCPS/MRCP REVISION CARD** |
 |--------------------------------------------------------|
@@ -324,7 +351,7 @@ mindmap
 
 ---
 
-## 15. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -336,7 +363,7 @@ mindmap
 
 ---
 
-## 16. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -346,7 +373,7 @@ mindmap
 
 ---
 
-## 17. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -361,7 +388,7 @@ mindmap
 
 ---
 
-## 18. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Invasive Candidiasis & Candidaemia]]
 - **Next**: [[Mucormycosis]]

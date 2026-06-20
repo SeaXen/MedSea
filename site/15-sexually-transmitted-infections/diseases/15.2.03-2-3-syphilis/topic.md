@@ -1,3 +1,19 @@
+---
+davidson_chapter: "Chapter 15: Sexually Transmitted Infections"
+davidson_topic_id: "15.2.03"
+topic: "2.3 Syphilis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Sexually Transmitted Infections/2.3 Syphilis.md"
+tags: [medicine, sti, davidson, fcps, mrcp]
+---
+
+# 2.3 Syphilis (Treponema pallidum)
+
 **Parent Topic:** [STI MOC](../Sexually%20Transmitted%20Infections%20MOC.md) → [STI Hierarchy](../Davidson%20Chapter%2013%20-%20STI%20Hierarchy.md)  
 **Status:** `full-fcps-mrcp-note`  
 **Priority:** ⭐⭐⭐ HIGHEST (FCPS/MRCP — Complex Staging, Serology, Neurosyphilis, Congenital, Penicillin Allergy)  
@@ -5,7 +21,7 @@
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 - [ ] Master **syphilis staging** (Primary, Secondary, Early/Late Latent, Tertiary, Neurosyphilis, Congenital)
 - [ ] Interpret **syphilis serology** (Non-Treponemal: RPR/VDRL; Treponemal: TPPA/FTA-ABS) and apply **Reverse vs Traditional Algorithm**
 - [ ] Apply **stage-specific penicillin treatment** (Dose, Route, Duration) and manage **Penicillin Allergy** (Desensitisation)
@@ -17,7 +33,7 @@
 
 ---
 
-## 2. 🧠 Core Concept: Syphilis Natural History & Staging
+## 🧠 Core Concept: Syphilis Natural History & Staging
 
 ```mermaid
 flowchart TD
@@ -357,7 +373,7 @@ flowchart TD
 
 ---
 
-## 3. ⚡ FCPS/MRCP High-Yield Summary
+## ⚡ FCPS/MRCP High-Yield Summary
 
 | Topic | Key Points |
 |-------|------------|
@@ -374,7 +390,7 @@ flowchart TD
 
 ---
 
-## 4. 🎤 Viva Questions (Expected Answers)
+## 🎤 Viva Questions (Expected Answers)
 
 | # | Question | Expected Answer |
 |---|----------|-----------------|
@@ -391,7 +407,7 @@ flowchart TD
 
 ---
 
-## 5. 🧩 Confusions & Mnemonics
+## 🧩 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -426,7 +442,7 @@ flowchart TD
 
 ---
 
-## 6. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -466,7 +482,7 @@ mindmap
 
 ---
 
-## 7. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (0–5) | Notes |
 |--------|------|-------------|-------|
@@ -479,7 +495,7 @@ mindmap
 
 ---
 
-## 8. 📝 Self-Test Scorecard
+## 📝 Self-Test Scorecard
 
 | Section | Max | Score | % |
 |---------|-----|-------|---|
@@ -493,7 +509,7 @@ mindmap
 
 ---
 
-## 9. 💬 Exam Answer Modes
+## 💬 Exam Answer Modes
 
 | Format | Prompt | Key Points |
 |--------|--------|------------|
@@ -505,7 +521,7 @@ mindmap
 
 ---
 
-## 10. 📌 Summary
+## 📌 Summary
 - **Staging**: **1° Chancre (Painless, Indurated)**, **2° Rash (Palms/Soles), Condylomata Lata, Mucous Patches**, **Early Latent (<1y)**, **Late Latent (>1y)**, **Tertiary (Gumma, Aortitis, Neurosyphilis)**
 - **Serology**: **NTT (RPR/VDRL) = Quantitative, Activity**; **TT (TPPA/FTA-ABS) = Qualitative, Lifelong** — **Reverse Algorithm (TT→NTT) Preferred**
 - **Interpretation**: **1°: NTT Negative→Positive**; **2°: High Titre NTT**; **Latent: Low/Declining NTT**; **Tertiary: NTT Often Negative**
@@ -519,7 +535,7 @@ mindmap
 
 ---
 
-## 11. ❓ MCQs (10)
+## ❓ MCQs (10)
 
 1. **Primary syphilis — characteristic chancre features?**  
    A. Painful, Purulent, Multiple  B. **Painless, Indurated, Clean Base, Non-Tender Lymphadenopathy**  C. Painful, Soft, Undermined Edges  D. Multiple, Tender, Suppurative  
@@ -567,7 +583,7 @@ mindmap
 
 ---
 
-## 12. 📋 SBAs (10)
+## 📋 SBAs (10)
 
 1. **25M with painless genital ulcer, RPR 1:128, TPPA+. Stage & treatment?**  
    A. Secondary, Ceftriaxone  B. **Primary, Benzathine Penicillin G 2.4MU IM Single Dose**  C. Early Latent, Doxycycline  D. Secondary, BPC × 3 Weekly  
@@ -591,14 +607,14 @@ mindmap
 
 ---
 
-## 13. 🔑 Answer Keys
+## 🔑 Answer Keys
 | MCQs | SBAs |
 |------|------|
 | 1-B, 2-C, 3-B, 4-C, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B | 1-B, 2-B, 3-B, 4-B, 5-B |
 
 ---
 
-## 14. 🔗 Cross-Links
+## 🔗 Cross-Links
 - [[2.1 Chlamydia.md]] — Differential (Genital Ulcer), Co-infection
 - [[2.2 Gonorrhoea.md]] — Differential (GUD), Co-infection
 - [[2.4-2.6 Other Bacterial STIs.md]] — Differential (GUD: Chancroid)

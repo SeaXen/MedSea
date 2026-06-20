@@ -1,9 +1,32 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.28"
+topic: "Intestinal Protozoa (Amoebiasis, Giardiasis)"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Intestinal Protozoa (Amoebiasis, Giardiasis).md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, infectious-disease, davidson, chapter13, parasites, amoebiasis, giardiasis, fcps, mrcp]
+davidson_chapter: Chapter 13: Infectious disease
+topic_category: Parasitic Infections Domain
+status: full-fcps-mrcp-topic-note
+---
+
+# Intestinal Protozoa — Amoebiasis & Giardiasis
+
 Related: [[Fever in Returned Traveller and FUO]], [[Infective Diarrhoea and Food Poisoning]], [[HIV-Associated Opportunistic Infections]], [[Infection in Immunocompromised Host (Transplant, Biologics)]], [[Travel Medicine and Pre-Travel Advice]]
 
 > [!important]
 > **Amoebiasis = *Entamoeba histolytica*; faecal-oral; dysentery + liver abscess.** **Giardiasis = *Giardia lamblia*; faecal-oral; malabsorption + steatorrhoea.** **Both: cysts in stool = diagnosis; metronidazole = treatment.** **Amoebic liver abscess = metronidazole + luminal agent.**
 
-## 1. Learning Objectives
+## Learning Objectives
 - Differentiate pathogenic *E. histolytica* from non-pathogenic *E. dispar*
 - Recognise clinical syndromes: amoebic dysentery, amoebic liver abscess, giardiasis
 - Select appropriate diagnostics (antigen, PCR, microscopy)
@@ -12,7 +35,7 @@ Related: [[Fever in Returned Traveller and FUO]], [[Infective Diarrhoea and Food
 
 ---
 
-## 2. Entamoeba histolytica (Amoebiasis)
+## Entamoeba histolytica (Amoebiasis)
 
 ### Epidemiology & Transmission
 | Aspect | Details |
@@ -73,7 +96,7 @@ Related: [[Fever in Returned Traveller and FUO]], [[Infective Diarrhoea and Food
 
 ---
 
-## 3. Giardia lamblia (Giardiasis)
+## Giardia lamblia (Giardiasis)
 ### Epidemiology & Transmission
 | Aspect | Details |
 |--------|---------|
@@ -121,7 +144,7 @@ Related: [[Fever in Returned Traveller and FUO]], [[Infective Diarrhoea and Food
 
 ---
 
-## 4. Differential Diagnosis
+## Differential Diagnosis
 | Feature | Amoebiasis | Giardiasis | Bacterial Dysentery |
 |---------|------------|------------|---------------------|
 | **Stool** | Bloody, mucoid | Watery, fatty, **no blood** | Bloody, mucoid |
@@ -133,7 +156,7 @@ Related: [[Fever in Returned Traveller and FUO]], [[Infective Diarrhoea and Food
 
 ---
 
-## 5. Prevention
+## Prevention
 | Measure | Amoebiasis | Giardiasis |
 |---------|------------|------------|
 | **Water** | Boil/filter/iodine/chlorine (cysts resistant to chlorine) | Same; **cysts resistant to chlorine** |
@@ -144,7 +167,7 @@ Related: [[Fever in Returned Traveller and FUO]], [[Infective Diarrhoea and Food
 
 ---
 
-## 6. FCPS/MRCP High-Yield Points
+## FCPS/MRCP High-Yield Points
 - **Amoebiasis**: *E. histolytica*; dysentery (bloody mucoid stool) + **liver abscess (ALA)**; **metronidazole + luminal agent (paromomycin/diloxanide)**; ALA = metronidazole + aspiration if >5cm/imminent rupture
 - **Giardiasis**: *G. lamblia*; watery diarrhoea, **steatorrhoea, bloating, no blood**; **tinidazole 2g single dose** (preferred) or metronidazole 5–7d
 - **Diagnosis**: **Antigen/PCR** for both (microscopy insufficient for *E. histolytica* vs *E. dispar*); **stool antigen 1st-line**
@@ -153,7 +176,7 @@ Related: [[Fever in Returned Traveller and FUO]], [[Infective Diarrhoea and Food
 - **Luminal agent mandatory after metronidazole** (paromomycin, diloxanide, iodoquinol) to eradicate cysts
 - **Amoebic liver abscess aspiration**: >5cm, left lobe, imminent rupture, no response 5–7d
 
-## 7. Common Viva Questions
+## Common Viva Questions
 1. **Difference between *E. histolytica* and *E. dispar*?** *E. histolytica* = pathogenic (ingested RBCs in trophozoites, causes dysentery/ALA); *E. dispar* = non-pathogenic commensal.
 2. **Why luminal agent after metronidazole for amoebiasis?** Metronidazole kills trophozoites (tissue) but not cysts (lumen); luminal agent eradicates cysts → prevents relapse.
 3. **Diagnosis of amoebic liver abscess?** RUQ pain, fever, hepatomegaly; US/CT: hypoechoic lesion right lobe; serology positive; "anchovy sauce" pus on aspiration.
@@ -163,7 +186,7 @@ Related: [[Fever in Returned Traveller and FUO]], [[Infective Diarrhoea and Food
 7. **Amoebic liver abscess aspiration indications?** >5cm, left lobe, imminent rupture, no clinical response 5–7 days, diagnostic uncertainty.
 8. **Giardia cyst vs trophozoite?** Cyst: oval, 4 nuclei, resistant; Trophozoite: pear-shaped, 2 nuclei, 4 flagella, "falling leaf" motility.
 
-## 8. Common Confusions / Exam Traps
+## Common Confusions / Exam Traps
 | Confusion | Clarification |
 |-----------|---------------|
 | Metronidazole alone cures amoebiasis | **Luminal agent (paromomycin/diloxanide) MANDATORY after metronidazole** to eradicate cysts |
@@ -174,14 +197,14 @@ Related: [[Fever in Returned Traveller and FUO]], [[Infective Diarrhoea and Food
 | Tinidazole single dose ineffective | **2g single dose = preferred for giardiasis (high cure, compliance)** |
 | Amoebic liver abscess = pyogenic | **ALA: "anchovy sauce" pus, serology +ve, single right lobe; Pyogenic: multiple, polymicrobial, septic** |
 
-## 9. Mnemonics
+## Mnemonics
 - **AMOEBIASIS**: **A**moebic **L**iver **A**bscess = **M**etronidazole + **P**aromomycin; **D**ysentery = **M**etronidazole + **L**uminal
 - **E. HISTOLYTICA**: **E**ntamoeba **H**istolytica = **E**rythrophagia (ingests RBCs); **E**ndemic tropics; **F**lask ulcers
 - **GIARDIASIS**: **G**iardia = **S**teatorrhoea + **B**loating; **T**inidazole **2g** single; **M**etronidazole 5-7d
 - **ALA**: **A**nchovy **S**auce pus; **R**ight lobe; **M**etronidazole + **P**aromomycin; **A**spiration if >5cm
 - **LUMINAL AGENT**: **P**aromomycin / **D**iloxanide / **I**odoquinol = **P**ost-**M**etronidazole **E**ssential
 
-## 10. Mind Map
+## Mind Map
 ```mermaid
 mindmap
   root((Intestinal Protozoa))
@@ -198,5 +221,335 @@ mindmap
       Diagnosis: Antigen/PCR (1st line); Microscopy (cysts/trophozoites)
       Treatment: Tinidazole 2g single (preferred) OR Metronidazole 5-7d
       Chronic: Hypogammaglobulinaemia, post-infectious IBS
+    Differential
+      Amoebic dysentery: Blood, tenesmus, ALA risk
+      Giardiasis: Watery, steatorrhoea, NO blood
+      Bacillary: High fever, neutrophils, culture
+    Prevention
+      Water: Boil/filter (cysts chlorine-resistant)
+      Hygiene: Handwashing, safe faecal disposal
+```
 
-*...continued (truncated to 200 lines for renderer)*
+## Flowchart
+```mermaid
+flowchart TD
+  A[Diarrhoea + Travel/Endemic] --> B{Blood in Stool?}
+  B -->|Yes| C[Dysentery]
+  C --> D[Stool Antigen/PCR]
+  D --> E{E. histolytica?}
+  E -->|Yes| F[Amoebiasis]
+  F --> G{ALA?}
+  G -->|Yes| H[Metronidazole + Paromomycin + US/CT + Aspiration if indicated]
+  G -->|No| I[Metronidazole 7-10d + Paromomycin 10d]
+  E -->|No/PCR| J[Consider Shigella/Salmonella/Campylobacter]
+  B -->|No| K[Watery Diarrhoea]
+  K --> L[Stool Antigen/PCR for Giardia]
+  L --> M{G. lamblia?}
+  M -->|Yes| N[Tinidazole 2g single OR Metronidazole 5-7d]
+  M -->|No| O[Consider viral, other parasites, functional]
+```
+
+## Suggested Visuals / Image Notes
+- *E. histolytica* trophozoite with ingested RBCs
+- *E. histolytica* cyst (4 nuclei)
+- *G. lamblia* trophozoite (pear-shaped, falling leaf)
+- *G. lamblia* cyst (4 nuclei)
+- Amoebic liver abscess US/CT
+- Flask-shaped ulcer colonoscopy
+- Stool antigen test strips
+
+## Suggested Video References
+- Amoebiasis diagnosis and management
+- Giardiasis diagnosis and treatment
+- Amoebic liver abscess aspiration technique
+- Stool microscopy for parasites
+
+## One-Page Revision Summary
+| Feature | Amoebiasis | Giardiasis |
+|---------|------------|------------|
+| **Agent** | *Entamoeba histolytica* | *Giardia lamblia* |
+| **Transmission** | Faecal-oral (cysts) | Faecal-oral (cysts) |
+| **Key Symptom** | **Bloody mucoid dysentery** | **Watery diarrhoea, steatorrhoea** |
+| **Liver Abscess** | **Common (ALA)** | No |
+| **Diagnosis** | **Antigen/PCR** (E. histolytica specific) | **Antigen/PCR** (G. lamblia specific) |
+| **Microscopy** | Trophozoite + **ingested RBCs** | Trophozoite (pear-shaped), cyst (4 nuclei) |
+| **Treatment** | **Metronidazole 7-10d + Luminal agent (10d)** | **Tinidazole 2g single** (preferred) or Metronidazole 5-7d |
+| **ALA** | RUQ pain, fever, hepatomegaly; US/CT; **Metronidazole + Paromomycin**; Aspiration if >5cm/rupture risk | N/A |
+| **Luminal Agent** | **MANDATORY** (Paromomycin/Diloxanide/Iodoquinol 10d) | Not needed |
+| **Pregnancy** | Paromomycin 1st tri; Metronidazole 2nd/3rd | Paromomycin 1st tri; Metronidazole/Tinidazole 2nd/3rd |
+
+## 24-Hour Recall Prompts
+- Amoebiasis vs giardiasis stool features.
+- *E. histolytica* vs *E. dispar* distinction.
+- ALA features and management.
+- Metronidazole + luminal agent rationale.
+- Tinidazole vs metronidazole for giardiasis.
+- ALA aspiration indications.
+- Diagnosis methods (antigen/PCR vs microscopy).
+- Pregnancy treatment adjustments.
+
+## 7-Day / 15-Day / 30-Day Revision Tracker
+- [ ] Day 1 completed
+- [ ] 24-hour recall completed
+- [ ] Day 7 revision completed
+- [ ] Day 15 revision completed
+- [ ] Day 30 revision completed
+
+## Must Know / Should Know / Nice to Know
+### Must Know
+- Amoebiasis: bloody dysentery + ALA; metronidazole + luminal agent
+- Giardiasis: watery diarrhoea, steatorrhoea; tinidazole 2g single dose
+- *E. histolytica* vs *E. dispar*: antigen/PCR distinguishes
+- ALA: metronidazole + paromomycin; aspirate if >5cm/rupture risk
+- Luminal agent MANDATORY after metronidazole for amoebiasis
+
+### Should Know
+- Fulminant amoebic colitis management
+- Giardiasis chronic/refractory causes
+- Amoeboma vs carcinoma
+- Pregnancy treatment adjustments
+- Non-pathogenic *Entamoeba* species
+
+### Nice to Know
+- Amoebic pericarditis/peritonitis
+- Giardia in hypogammaglobulinaemia
+- New diagnostics (POC PCR, loop-mediated isothermal amplification)
+- Amoebic brain abscess
+- Drug resistance in Giardia
+
+## Self-Test Scorecard
+- Understanding: /10
+- Recall: /10
+- MCQ Performance: /10
+- SBA Performance: /10
+- Viva Confidence: /10
+- Total: /50
+
+> [!tip]
+> Interpretation: <35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.
+
+## Exam Answer Modes
+### Long Answer Skeleton
+1. *E. histolytica* vs *E. dispar* differentiation
+2. Amoebic dysentery (clinical, diagnosis, treatment)
+3. Amoebic liver abscess (clinical, diagnosis, management, aspiration)
+4. *E. histolytica* vs *E. dispar* differentiation
+5. *E. histolytica* pathogenesis
+6. *E. histolytica* vs *E. dispar* differentiation
+
+### Short Note Skeleton
+- Amoebiasis: *E. histolytica*; dysentery (bloody) + ALA; Ag/PCR dx; Metronidazole+Luminal
+- ALA: RUQ pain, fever, US/CT; Metronidazole+Paromomycin; Aspirate >5cm
+- Giardiasis: *G. lamblia*; watery, steatorrhoea; Ag/PCR; Tinidazole 2g single
+- Dysentery: Amoebic (blood, tenesmus) vs Bacillary (high fever, neutrophils)
+- Luminal agent mandatory post-metronidazole for amoebiasis
+
+### Viva One-Liners
+- Amoebiasis: *E. histolytica*; bloody dysentery + ALA
+- *E. histolytica* vs *dispar*: Ag/PCR distinguishes
+- ALA: Metronidazole + Paromomycin; Aspirate >5cm
+- Giardiasis: *G. lamblia*; watery + steatorrhoea; Tinidazole 2g single
+- Dysentery: Amoebic = bloody + tenesmus; Bacillary = high fever + neutrophils
+
+### Ward-Case Discussion Points
+- 30M, returned from India, bloody diarrhoea 10/d, tenesmus → stool antigen E. histolytica + → metronidazole 800mg 8h ×10d + paromomycin 500mg 8h ×10d
+- 40F, returned from Bangladesh, RUQ pain, fever, hepatomegaly, US: 6cm right lobe lesion → ALA → metronidazole 800mg 8h ×10d + paromomycin 500mg 8h ×10d; aspirate (size >5cm)
+- 25M, hiker, watery diarrhoea, bloating, steatorrhoea, no blood → stool Ag Giardia + → tinidazole 2g single dose
+- 30F pregnant 12w, giardiasis → paromomycin 500mg 8h ×7d (1st trimester safe)
+
+### Last-Night-Before-Exam Sheet
+**AMOEBIASIS:** *E. histolytica*; **Dysentery:** bloody mucoid, tenesmus; **ALA:** RUQ pain, fever, hepatomegaly, anchovy sauce pus. **Dx:** Ag/PCR (E. histolytica vs dispar); serology for ALA. **Rx:** Metronidazole 800mg 8h ×7-10d + **Luminal agent (Paromomycin 10d) MANDATORY**. **ALA:** US/CT right lobe; Metronidazole + Paromomycin; Aspirate >5cm/rupture risk. **GIARDIASIS:** *G. lamblia*; watery, steatorrhoea, NO blood; **Tinidazole 2g single dose** (preferred) or Metronidazole 5-7d. **Dx:** Ag/PCR. **DYSENTERY:** Amoebic = blood + tenesmus; Bacillary = high fever + neutrophils. **Luminal agent POST-metronidazole essential for amoebiasis.**
+
+## Summary
+**Amoebiasis** (*Entamoeba histolytica*) and **Giardiasis** (*Giardia lamblia*) are the two most common pathogenic intestinal protozoa. **Transmission:** faecal-oral (cysts in contaminated food/water, person-to-person, sexual). **Amoebiasis** = **Amoebic dysentery** (bloody mucoid diarrhoea, tenesmus, weight loss) + **Amoebic liver abscess (ALA)** (RUQ pain, fever, hepatomegaly, "anchovy sauce" pus; right lobe 80%). **Giardiasis** = **watery diarrhoea, steatorrhoea, bloating, flatulence, NO blood**; malabsorption, weight loss. **Diagnosis:** **Stool antigen/PCR** (1st-line, species-specific); **Microscopy**: *E. histolytica* trophozoites with **ingested RBCs** (pathogenic); *G. lamblia* trophozoites (pear-shaped, "falling leaf" motility), cysts (4 nuclei). **Serology** for ALA. **Treatment — Amoebiasis:** **Metronidazole 800mg 8h ×7–10d** + **luminal agent (Paromomycin 500mg 8h ×10d OR Diloxanide furoate 500mg 8h ×10d OR Iodoquinol 650mg 8h ×10d) — MANDATORY to eradicate cysts**. **ALA:** Metronidazole 800mg 8h ×7–10d + Paromomycin 500mg 8h ×10d; **Aspiration** if >5cm, left lobe, imminent rupture, no response 5–7d. **Giardiasis:** **Tinidazole 2g PO single dose** (preferred) **OR Metronidazole 400mg 8h ×5–7d**; chronic/refractory → screen for hypogammaglobulinaemia, retreatment with alternative (nitazoxanide, albendazole, paromomycin). **Pregnancy:** Amoebiasis — paromomycin 1st trimester; Giardiasis — paromomycin 1st trimester. **Prevention:** boil/filter water (cysts chlorine-resistant), hygiene, safe food.
+
+## MCQs (10)
+1. **Pathognomonic finding in *Entamoeba histolytica* trophozoite:**
+   A. Four nuclei
+   B. **Ingested red blood cells**
+   C. Flagella
+   D. Chromatoid bars
+   E. Glycogen vacuole
+
+2. **Amoebic liver abscess — most common site:**
+   A. Left lobe
+   B. **Right lobe (80%)**
+   C. Caudate lobe
+   D. Both lobes equally
+   E. Diffuse hepatic involvement
+
+3. **Treatment of choice for amoebic liver abscess:**
+   A. Metronidazole alone
+   B. **Metronidazole + Paromomycin (luminal agent)**
+   C. Tinidazole alone
+   C. Diloxanide furoate alone
+   E. Chloroquine
+
+4. **Giardiasis — stool characteristically:**
+   A. Bloody, mucoid
+   B. **Watery, frothy, foul-smelling, steatorrhoea**
+   C. Mucoid with tenesmus
+   D. Bloody with pus
+   E. Rice-water
+
+5. **Diagnosis of choice for *Giardia lamblia*:**
+   A. Stool microscopy (single sample)
+   B. **Stool antigen detection (EIA) / PCR**
+   C. Serology
+   D. String test
+   E. Colonoscopy with biopsy
+
+6. **Treatment of choice for giardiasis (non-pregnant adult):**
+   A. Metronidazole 400mg 8h ×7d
+   B. **Tinidazole 2g PO single dose**
+   C. Albendazole 400mg 12h ×5d
+   D. Paromomycin 500mg 8h ×10d
+   E. Nitazoxanide 500mg 12h ×3d
+
+7. **Amoebiasis — why is a luminal agent MANDATORY after metronidazole?**
+   A. Metronidazole causes resistance
+   B. **Metronidazole kills trophozoites but NOT cysts (luminal); luminal agent eradicates cysts**
+   C. Prevents metronidazole side effects
+   D. Enhances metronidazole absorption
+   D. Reduces treatment duration
+
+8. **Amoebic liver abscess — indication for percutaneous aspiration:**
+   A. All cases
+   B. **Size >5cm, left lobe, imminent rupture, no clinical response 5–7 days**
+   C. Only if >10cm
+   D. Only if bacterial superinfection suspected
+   E. Never indicated
+
+9. **Giardiasis — treatment of choice in non-pregnant adult:**
+   A. Metronidazole 400mg 8h ×7d
+   B. **Tinidazole 2g PO single dose**
+   C. Albendazole 400mg 12h ×5d
+   D. Paromomycin 500mg 8h ×10d
+   E. Nitazoxanide 500mg 12h ×3d
+
+10. **Amoebic liver abscess — "anchovy sauce" pus refers to:**
+    A. Thick yellow pus
+    B. **Brownish-red, mucoid material (haemolysed blood + necrotic tissue)**
+    C. Greenish purulent material
+    D. Clear serous fluid
+    E. White creamy pus
+
+## SBA Questions (10)
+1. **A 35-year-old man returns from India with 5 days of bloody diarrhoea, tenesmus, low-grade fever. Stool antigen: *E. histolytica* positive. Best treatment?**
+   A. Metronidazole 800mg 8h ×7d alone
+   B. **Metronidazole 800mg 8h ×10d + Paromomycin 500mg 8h ×10d**
+   C. Tinidazole 2g single dose
+   D. Diloxanide furoate 500mg 8h ×10d alone
+   E. Ciprofloxacin 500mg 12h ×5d
+
+2. **A 40-year-old woman returns from Bangladesh with 2 weeks of RUQ pain, fever 39°C, hepatomegaly. US: 8cm right lobe liver lesion, "anchovy sauce" pus on aspiration. Serology positive. Best management?**
+   A. Metronidazole 800mg 8h ×7d alone
+   B. Ceftriaxone + Metronidazole ×14d
+   C. **Metronidazole 800mg 8h ×10d + Paromomycin 500mg 8h ×10d; Percutaneous aspiration (size >5cm)**
+   D. Albendazole 400mg 12h ×28d
+   E. Surgical open drainage
+
+3. **A 28-year-old hiker returns from Nepal with 2 weeks of watery diarrhoea, bloating, foul-smelling stools, weight loss. Stool antigen: *Giardia* positive. Best treatment?**
+   A. Metronidazole 400mg 8h ×7d
+   B. **Tinidazole 2g PO single dose**
+   C. Albendazole 400mg 12h ×5d
+   D. Paromomycin 500mg 8h ×10d
+   E. Nitazoxanide 500mg 12h ×3d
+
+4. **A 30-year-old pregnant woman (10 weeks) diagnosed with giardiasis. Best treatment?**
+   A. Metronidazole 400mg 8h ×5d
+   B. Tinidazole 2g single dose
+   C. **Paromomycin 500mg 8h ×7d** (safe 1st trimester)
+   D. Nitazoxanide
+   E. No treatment until 2nd trimester
+
+5. **A 45-year-old man presents with RUQ pain, fever 39°C, hepatomegaly. US: 6cm right lobe liver lesion with peripheral enhancement. Serum amoebic serology positive. Blood cultures negative. Best next step?**
+   A. Immediate surgical drainage
+   B. **Percutaneous needle aspiration + Metronidazole + Paromomycin**
+   C. Metronidazole alone ×14d
+   C. Ceftriaxone + Metronidazole ×14d
+   E. Albendazole ×28d
+
+6. **A 30-year-old woman with chronic giardiasis (recurrent after 2 courses of metronidazole). Stool antigen positive. IgG low. Best next step?**
+   A. Repeat metronidazole longer course
+   B. **Tinidazole 2g single dose** (if not tried) OR Nitazoxanide/Albendazole
+   C. IVIG replacement
+   D. Paromomycin ×21d
+   E. Colonoscopy
+
+7. **Amoebiasis — which stool finding distinguishes *E. histolytica* from *E. dispar*?**
+   A. Cysts with 4 nuclei
+   B. **Trophozoites with ingested RBCs**
+   C. Cysts with chromatoid bars
+   D. Trophozoites with glycogen vacuole
+   E. Cysts with 1 nucleus
+
+8. **A 60-year-old man with amoebic liver abscess (7cm right lobe) fails to improve after 7 days of metronidazole + paromomycin. Temperature 39.5°C, worsening pain. Best next step?**
+   A. Continue metronidazole + add ceftriaxone
+   B. **Percutaneous aspiration + continue metronidazole/paromomycin**
+   C. Switch to tinidazole
+   D. Surgical open drainage
+   E. Add chloroquine
+
+9. **A 25-year-old pregnant woman (14 weeks) diagnosed with amoebiasis (dysentery). Best treatment?**
+   A. Metronidazole 800mg 8h ×10d
+   B. **Paromomycin 500mg 8h ×10d** (1st trimester safe; metronidazole 2nd/3rd tri)
+   C. Diloxanide furoate 500mg 8h ×10d
+   D. Tinidazole 2g single dose
+   E. Chloroquine
+
+10. **A 40-year-old man with giardiasis fails tinidazole 2g single dose. Stool antigen still positive. IgG normal. Best next step?**
+    A. Repeat tinidazole
+    B. **Metronidazole 400mg 8h ×7d** (alternative class)
+    C. Albendazole 400mg 12h ×10d
+    D. Paromomycin 500mg 8h ×10d
+    E. Nitazoxanide 500mg 12h ×3d
+
+## Flashcards
+- Q: Amoebic liver abscess Rx
+  A: Metronidazole + Paromomycin (luminal agent essential); Aspirate >5cm/rupture risk
+- Q: Amoebiasis dysentery Rx
+  A: Metronidazole 7-10d + Luminal agent 10d (MANDATORY)
+- Q: E. histolytica vs dispar
+  A: Antigen/PCR distinguishes; trophozoite with RBCs = histolytica
+- Q: ALA Rx
+  A: Metronidazole + Paromomycin; Aspirate >5cm/rupture/left lobe/no response
+- Q: Giardiasis 1st line
+  A: Tinidazole 2g single dose
+- Q: Giardia Dx
+  A: Stool Ag/PCR
+- Q: Luminal agent amoebiasis
+  A: Paromomycin/Diloxanide/Iodoquinol 10d POST-metronidazole
+- Q: Pregnancy giardiasis
+  A: Paromomycin 1st tri; Metronidazole/Tinidazole 2nd/3rd
+- Q: ALA aspiration
+  A: >5cm, left lobe, rupture risk, no response 5-7d
+- Q: Amoebic vs bacillary dysentery
+  A: Amoebic: blood, tenesmus, no high fever; Bacillary: high fever, neutrophils
+
+## Answer Key with Explanations
+### MCQs
+1. **B** — Ingested RBCs in trophozoite = pathognomonic for *E. histolytica* (vs non-pathogenic *E. dispar*).
+2. **B** — ALA predominantly affects right lobe of liver (80%).
+3. **B** — Metronidazole (tissue-active) + Paromomycin (luminal agent) = standard for ALA; luminal agent mandatory to eradicate cysts.
+4. **B** — Giardiasis: watery, frothy, foul-smelling, steatorrhoea (fat malabsorption); no blood.
+5. **B** — Stool antigen EIA or PCR = 1st-line for Giardia (high sensitivity/specificity).
+6. **B** — Tinidazole 2g single dose = preferred for giardiasis (high cure, compliance, single dose).
+7. **B** — Metronidazole kills trophozoites (tissue) but NOT cysts in lumen; luminal agent eradicates cysts to prevent relapse.
+8. **B** — ALA aspiration indications: size >5cm, left lobe, imminent rupture, no clinical response after 5–7 days medical therapy.
+9. **B** — Tinidazole 2g PO single dose = preferred for giardiasis (single dose, high cure).
+10. **B** — "Anchovy sauce" = brownish-red, mucoid material from haemolysed blood + necrotic liver tissue.
+
+### SBAs
+1. **B** — Intestinal amoebiasis: Metronidazole 800mg 8h ×10d + Paromomycin 500mg 8h ×10d (luminal agent mandatory).
+2. **C** — ALA >5cm with imminent rupture risk: aspiration + metronidazole + paromomycin.
+3. **B** — Tinidazole 2g single dose = preferred for giardiasis (high cure, compliance).
+4. **C** — 1st trimester pregnancy: paromomycin safe; metronidazole/tinidazole avoided.
+5. **B** — ALA 6cm + serology +ve: percutaneous aspiration + metronidazole + paromomycin.
+6. **B** — Refractory giardiasis: try alternative class (tinidazole if metronidazole failed, or nitazoxanide/albendazole).
+7. **B** — Ingested RBCs in trophozoite = specific for *E. histolytica* (pathogenic).
+8. **B** — ALA no response 7d + size 7cm = aspiration indicated; continue medical therapy.
+9. **B** — 1st trimester pregnancy: paromomycin safe; metronidazole contraindicated 1st tri.
+10. **B** — Failed tinidazole → switch to metronidazole (alternative class) or nitazoxanide/albendazole.
+
+---

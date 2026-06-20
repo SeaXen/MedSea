@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.04"
+topic: "Bartonella Infections"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Bartonella Infections.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, bartonella, cat-scratch-disease, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: medium
+exam_relevance: "FCPS: Cat-scratch disease, bacillary angiomatosis | MRCP: Culture-negative endocarditis, immunocompromised hosts"
+see_also: "[[Infective Endocarditis]], [[Immunocompromised Host Infections]], [[Lymphadenopathy]], [[HIV Infection and AIDS]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Bartonella Infections
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Gram-Negative Bacilli → Bartonella
 > **FCPS/MRCP Focus**: Cat-scratch disease, bacillary angiomatosis/peliosis, culture-negative endocarditis, trench fever, Carrion's disease
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Identify **Bartonella species**: *B. henselae* (cat-scratch), *B. quintana* (trench fever, endocarditis), *B. bacilliformis* (Carrion's disease)
 - [ ] Recognise **Cat-Scratch Disease**: Subacute regional lymphadenopathy after cat scratch/bite
@@ -13,7 +40,7 @@
 
 ---
 
-## 2. 📚 Bartonella Species & Clinical Syndromes
+## 📚 Bartonella Species & Clinical Syndromes
 
 | Species | Disease | Transmission | Population |
 |---------|---------|--------------|------------|
@@ -23,7 +50,7 @@
 
 ---
 
-## 3. 🩺 Clinical Features
+## 🩺 Clinical Features
 
 ### 1. Cat-Scratch Disease (*B. henselae*)
 | Feature | Details |
@@ -58,7 +85,7 @@
 
 ---
 
-## 4. 🔬 Diagnosis
+## 🔬 Diagnosis
 
 | Test | Utility |
 |------|---------|
@@ -72,7 +99,7 @@
 
 ---
 
-## 5. 💊 Management
+## 💊 Management
 
 | Syndrome | Regimen | Duration |
 |----------|---------|----------|
@@ -90,7 +117,7 @@
 
 ---
 
-## 6. 📋 FCPS/MRCP High-Yield Summary
+## 📋 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -102,7 +129,7 @@
 
 ---
 
-## 7. ❓ Viva Questions (FCPS/MRCP)
+## ❓ Viva Questions (FCPS/MRCP)
 
 1. **What are the three main Bartonella species and their associated diseases?**
 2. **Describe the typical presentation of cat-scratch disease. How is it diagnosed?**
@@ -117,7 +144,7 @@
 
 ---
 
-## 8. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -129,7 +156,7 @@
 
 ---
 
-## 9. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -159,7 +186,7 @@ mindmap
 
 ---
 
-## 10. 📄 One-Page Revision Card
+## 📄 One-Page Revision Card
 
 | **Bartonella Infections** | **Key Facts** |
 |---------------------------|---------------|
@@ -174,7 +201,7 @@ mindmap
 
 ---
 
-## 11. 📊 Spaced Repetition Tracker
+## 📊 Spaced Repetition Tracker
 
 | Review Interval | Date | Score (1-5) | Notes |
 |-----------------|------|-------------|-------|
@@ -186,7 +213,7 @@ mindmap
 
 ---
 
-## 12. 🧪 Self-Test Scorecard
+## 🧪 Self-Test Scorecard
 
 | Topic | Known? (✓/✗) | Last Reviewed |
 |-------|--------------|---------------|
@@ -199,7 +226,7 @@ mindmap
 
 ---
 
-## 13. 🔗 Navigation
+## 🔗 Navigation
 
 - [[Infectious Disease MOC]]
 - [[Davidson Chapter 13 - Infectious Disease Hierarchy]]

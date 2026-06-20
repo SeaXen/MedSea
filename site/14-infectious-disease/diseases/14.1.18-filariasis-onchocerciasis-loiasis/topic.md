@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.18"
+topic: "Filariasis Onchocerciasis Loiasis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Filariasis Onchocerciasis Loiasis.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, filariasis, onchocerciasis, loiasis, lymphatic-filariasis, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: Endemic areas, elephantiasis, microfilariae | MRCP: Travel medicine, eosinophilia, river blindness, Calabar swelling"
+see_also: "[[Parasitic Infections]], [[Travel Medicine & Pre-travel Advice]], [[Eosinophilia]], [[Tropical Medicine]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Filariasis, Onchocerciasis & Loiasis
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Parasites → Helminths → Filarial Nematodes
 > **FCPS/MRCP Focus**: Lymphatic filariasis (elephantiasis), onchocerciasis (river blindness), loiasis (African eye worm), eosinophilia, DEC/ivermectin
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Classify **filarial parasites** by niche: lymphatic (*W. bancrofti, B. malayi, B. timori*), subcutaneous (*O. volvulus, L. loa, M. perstans, M. ozzardi*), body cavity (*M. perstans*)
 - [ ] Recognise **Lymphatic filariasis**: Asymptomatic microfilaraemia → acute adenolymphangitis → chronic lymphoedema/elephantiasis/hydrocele
@@ -14,7 +41,7 @@
 
 ---
 
-## 2. 📚 Filarial Nematodes Classification
+## 📚 Filarial Nematodes Classification
 
 | Group | Species | Vector | Geographic Distribution | Niche in Human |
 |-------|---------|--------|------------------------|----------------|
@@ -28,7 +55,7 @@
 
 ---
 
-## 3. 🩺 1. Lymphatic Filariasis (*W. bancrofti, B. malayi, B. timori*)
+## 🩺 1. Lymphatic Filariasis (*W. bancrofti, B. malayi, B. timori*)
 
 ### Pathogenesis
 - Adult worms in lymphatics → **lymphatic dilation, inflammation, fibrosis** → obstruction
@@ -50,7 +77,7 @@
 
 ---
 
-## 4. 🩺 2. Onchocerciasis — *Onchocerca volvulus* (River Blindness)
+## 🩺 2. Onchocerciasis — *Onchocerca volvulus* (River Blindness)
 
 ### Transmission
 - **Black fly** (*Simulium*) breeds in **fast-flowing rivers** → "river blindness"
@@ -71,7 +98,7 @@
 
 ---
 
-## 5. 🩺 3. Loiasis — *Loa loa* (African Eye Worm)
+## 🩺 3. Loiasis — *Loa loa* (African Eye Worm)
 
 ### Transmission
 - **Deer fly / Mango fly** (*Chrysops*) bites during day in rainforest
@@ -90,7 +117,7 @@
 
 ---
 
-## 6. 🔬 Diagnosis
+## 🔬 Diagnosis
 
 | Test | Lymphatic Filariasis | Onchocerciasis | Loiasis |
 |------|---------------------|----------------|---------|
@@ -106,7 +133,7 @@
 
 ---
 
-## 7. 💊 Management
+## 💊 Management
 
 ### Lymphatic Filariasis
 | Scenario | Regimen |
@@ -134,7 +161,7 @@
 
 ---
 
-## 8. 📋 FCPS/MRCP High-Yield Summary
+## 📋 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -149,7 +176,7 @@
 
 ---
 
-## 9. ❓ Viva Questions (FCPS/MRCP)
+## ❓ Viva Questions (FCPS/MRCP)
 
 1. **Classify filarial nematodes by anatomic niche with examples.**
 2. **Describe the life cycle and periodicity of *Wuchereria bancrofti*.**
@@ -164,7 +191,7 @@
 
 ---
 
-## 10. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -181,7 +208,7 @@
 
 ---
 
-## 11. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -216,7 +243,7 @@ mindmap
 
 ---
 
-## 12. 📄 One-Page Revision Card
+## 📄 One-Page Revision Card
 
 | **Lymphatic Filariasis** | **Onchocerciasis** | **Loiasis** |
 |--------------------------|-------------------|-------------|
@@ -229,7 +256,7 @@ mindmap
 
 ---
 
-## 13. 📊 Spaced Repetition Tracker
+## 📊 Spaced Repetition Tracker
 
 | Review Interval | Date | Score (1-5) | Notes |
 |-----------------|------|-------------|-------|
@@ -241,7 +268,7 @@ mindmap
 
 ---
 
-## 14. 🧪 Self-Test Scorecard
+## 🧪 Self-Test Scorecard
 
 | Topic | Known? (✓/✗) | Last Reviewed |
 |-------|--------------|---------------|
@@ -255,7 +282,7 @@ mindmap
 
 ---
 
-## 15. 🔗 Navigation
+## 🔗 Navigation
 
 - [[Infectious Disease MOC]]
 - [[Davidson Chapter 13 - Infectious Disease Hierarchy]]

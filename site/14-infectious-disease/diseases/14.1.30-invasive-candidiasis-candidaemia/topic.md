@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.30"
+topic: "Invasive Candidiasis & Candidaemia"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Invasive Candidiasis & Candidaemia.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, candidiasis, candidaemia, invasive-candidiasis, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | Candidaemia, invasive candidiasis, echinocandins, azoles, source control, CVC removal, TEE, ophthalmology, prophylaxis"
+see_also: "[[Fungal Pneumonias]], [[Infection in Immunocompromised Host]], [[Sepsis and Septic Shock]], [[Antimicrobial Prescribing Principles]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Invasive Candidiasis & Candidaemia
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Fungi → Candida
 > **FCPS/MRCP Focus**: Candidaemia, invasive candidiasis, echinocandins (1st line), azoles, source control (CVC removal), TEE, ophthalmology, prophylaxis in ICU
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Define **Candidaemia**: Candida in Blood Culture; **Invasive Candidiasis**: Deep-seated Infection (Candidemia, Deep-Seated Candidiasis, Chronic Disseminated)
 - [ ] Identify **Risk Factors**: ICU, CVC, Broad-Spectrum ABX, TPN, Surgery, Neutropenia, Diabetes, Corticosteroids
@@ -14,7 +41,7 @@
 
 ---
 
-## 2. 📖 Definition & Epidemiology
+## 📖 Definition & Epidemiology
 
 | Term | Definition |
 |------|------------|
@@ -28,7 +55,7 @@
 
 ---
 
-## 3. 📖 Risk Factors
+## 📖 Risk Factors
 
 | Major Risk Factors | Population |
 |--------------------|------------|
@@ -46,7 +73,7 @@
 
 ---
 
-## 4. 📖 Candida Species — Resistance Profiles
+## 📖 Candida Species — Resistance Profiles
 
 | Species | Frequency | Fluconazole | Voriconazole | Echinocandins | Key Features |
 |---------|-----------|------------|--------------|---------------|--------------|
@@ -61,7 +88,7 @@
 
 ---
 
-## 5. 🔬 Diagnostic Workup
+## 🔬 Diagnostic Workup
 
 ```mermaid
 flowchart TD
@@ -91,7 +118,7 @@ flowchart TD
 
 ---
 
-## 6. 💊 Management
+## 💊 Management
 
 ### 1. Initial Antifungal Therapy (Empirical / Directed)
 
@@ -118,7 +145,7 @@ flowchart TD
 
 ---
 
-## 7. 🩺 Complications & Organ-Specific Management
+## 🩺 Complications & Organ-Specific Management
 
 | Complication | Management |
 |--------------|------------|
@@ -130,7 +157,7 @@ flowchart TD
 
 ---
 
-## 8. 🛡️ Prophylaxis
+## 🛡️ Prophylaxis
 
 | Population | Agent | Duration | Evidence |
 |------------|-------|----------|----------|
@@ -144,7 +171,7 @@ flowchart TD
 
 ---
 
-## 9. 🔄 Differential Diagnosis
+## 🔄 Differential Diagnosis
 
 | Condition | Differentiating Features |
 |-----------|--------------------------|
@@ -156,7 +183,7 @@ flowchart TD
 
 ---
 
-## 10. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -172,7 +199,7 @@ flowchart TD
 
 ---
 
-## 11. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the first-line treatment for candidaemia?**
    - **Echinocandin** (Caspofungin 70mg LD → 50mg OD / Micafungin 100mg OD / Anidulafungin 200mg LD → 100mg OD).
@@ -212,7 +239,7 @@ flowchart TD
 
 ---
 
-## 12. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -233,7 +260,7 @@ flowchart TD
 
 ---
 
-## 13. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -276,7 +303,7 @@ mindmap
 
 ---
 
-## 14. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **INVASIVE CANDIDIASIS – FCPS/MRCP REVISION CARD** |
 |------------------------------------------------------|
@@ -294,7 +321,7 @@ mindmap
 
 ---
 
-## 15. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -306,7 +333,7 @@ mindmap
 
 ---
 
-## 16. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -316,7 +343,7 @@ mindmap
 
 ---
 
-## 17. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -330,7 +357,7 @@ mindmap
 
 ---
 
-## 18. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Chlamydial Pneumonia & Psittacosis]]
 - **Next**: [[Cryptococcal Meningitis]]

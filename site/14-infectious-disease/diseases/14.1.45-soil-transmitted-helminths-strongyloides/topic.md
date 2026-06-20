@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.45"
+topic: "Soil-Transmitted Helminths & Strongyloides"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Soil-Transmitted Helminths & Strongyloides.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, helminths, strongyloides, ascariasis, hookworm, trichuriasis, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | Ascariasis, hookworm, trichuriasis, strongyloidiasis, whipworm, eosinophilia, albendazole/mebendazole, ivermectin, autoinfection, hyperinfection"
+see_also: "[[Infective Diarrhoea and Food Poisoning]], [[Fever in Returned Traveller & FUO]], [[Eosinophilia]], [[Immunocompromised Host]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Soil-Transmitted Helminths (STH) & Strongyloidiasis
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Parasites (Helminths) → Soil-Transmitted Helminths
 > **FCPS/MRCP Focus**: Ascariasis, Hookworm, Trichuriasis, Strongyloidiasis, albendazole/mebendazole, ivermectin, hyperinfection syndrome, eosinophilia, mass drug administration
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Identify **Four Main STH**: *Ascaris lumbricoides*, *Necator americanus/Ancylostoma duodenale* (Hookworm), *Trichuris trichiura* (Whipworm), *Strongyloides stercoralis*
 - [ ] Recognise **Clinical Presentations**: Intestinal (Obstruction, Malnutrition), Pulmonary (Löffler's Syndrome), Cutaneous (Larva Migrans), Hyperinfection (Strongyloides)
@@ -14,7 +41,7 @@
 
 ---
 
-## 2. 📖 Overview of Soil-Transmitted Helminths (STH)
+## 📖 Overview of Soil-Transmitted Helminths (STH)
 
 | Parasite | Common Name | Size (Adult) | Location | Egg/Cyst in Stool |
 |----------|-------------|--------------|----------|-------------------|
@@ -33,7 +60,7 @@
 
 ---
 
-## 3. 📖 Ascariasis (Ascaris lumbricoides)
+## 📖 Ascariasis (Ascaris lumbricoides)
 
 ### Life Cycle & Pathogenesis
 
@@ -73,7 +100,7 @@ flowchart TD
 
 ---
 
-## 4. 📖 Hookworm Infection (Ancylostomiasis/Necatoriasis)
+## 📖 Hookworm Infection (Ancylostomiasis/Necatoriasis)
 
 ### Pathogenesis
 
@@ -112,7 +139,7 @@ flowchart TD
 
 ---
 
-## 5. 📖 Trichuriasis (Whipworm)
+## 📖 Trichuriasis (Whipworm)
 
 ### Clinical Features
 
@@ -138,7 +165,7 @@ flowchart TD
 
 ---
 
-## 6. 📖 Strongyloidiasis (Strongyloides stercoralis) — **Unique: Autoinfection**
+## 📖 Strongyloidiasis (Strongyloides stercoralis) — **Unique: Autoinfection**
 
 ### Unique Features
 
@@ -160,7 +187,7 @@ flowchart TD
 
 ---
 
-## 7. 🔬 Diagnosis — Strongyloides
+## 🔬 Diagnosis — Strongyloides
 
 ```mermaid
 flowchart TD
@@ -186,7 +213,7 @@ flowchart TD
 
 ---
 
-## 8. 💊 Treatment — Strongyloides
+## 💊 Treatment — Strongyloides
 
 | Scenario | 1st Line | Alternative | Duration |
 |----------|----------|-------------|----------|
@@ -201,7 +228,7 @@ flowchart TD
 
 ---
 
-## 9. 🛡️ Mass Drug Administration (MDA) — WHO Strategy
+## 🛡️ Mass Drug Administration (MDA) — WHO Strategy
 
 | Target Population | Drug | Dose | Frequency |
 |-------------------|------|------|-----------|
@@ -214,7 +241,7 @@ flowchart TD
 
 ---
 
-## 10. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -229,7 +256,7 @@ flowchart TD
 
 ---
 
-## 11. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the drug of choice for Strongyloides stercoralis?**
    - **Ivermectin 200µg/kg PO Single Dose** (Repeat Day 14).
@@ -269,7 +296,7 @@ flowchart TD
 
 ---
 
-## 12. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -290,7 +317,7 @@ flowchart TD
 
 ---
 
-## 13. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -321,7 +348,7 @@ mindmap
 
 ---
 
-## 14. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **SOIL-TRANSMITTED HELMINTHS – FCPS/MRCP REVISION CARD** |
 |-----------------------------------------------------------|
@@ -337,7 +364,7 @@ mindmap
 
 ---
 
-## 15. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -349,7 +376,7 @@ mindmap
 
 ---
 
-## 16. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -359,7 +386,7 @@ mindmap
 
 ---
 
-## 17. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -374,7 +401,7 @@ mindmap
 
 ---
 
-## 18. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Amoebiasis / Giardiasis]]
 - **Next**: [[Schistosomiasis]]

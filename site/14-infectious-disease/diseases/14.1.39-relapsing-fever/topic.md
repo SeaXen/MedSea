@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.39"
+topic: "Relapsing Fever"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Relapsing Fever.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, relapsing-fever, borrelia, spirochaetes, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: medium
+exam_relevance: "FCPS: Endemic areas | MRCP: Travel medicine, differential of recurrent fever"
+see_also: "[[Lyme Disease]], [[Typhoid and Paratyphoid Fever]], [[Fever in Returned Traveller & FUO]], [[Rickettsial Infections]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Relapsing Fever
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Spirochaetes → Relapsing Fever
 > **FCPS/MRCP Focus**: Recurrent fever, Borrelia species, louse-borne vs tick-borne, Jarisch-Herxheimer reaction
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Distinguish **Louse-borne** (*B. recurrentis*) vs **Tick-borne** (*B. duttonii, B. hermsii*) relapsing fever
 - [ ] Recognise clinical pattern: **Recurrent febrile episodes** (3-5 days) separated by afebrile periods
@@ -13,7 +40,7 @@
 
 ---
 
-## 2. 📚 Epidemiology & Transmission
+## 📚 Epidemiology & Transmission
 
 | Feature | Louse-borne (Epidemic) | Tick-borne (Endemic) |
 |---------|------------------------|----------------------|
@@ -26,7 +53,7 @@
 
 ---
 
-## 3. 🦠 Pathophysiology
+## 🦠 Pathophysiology
 
 - **Antigenic variation**: Borrelia changes surface protein (Vmp - variable major protein) → immune evasion → recurrent bacteraemia
 - **Cycles**: Each febrile episode corresponds to a new antigenic variant
@@ -35,7 +62,7 @@
 
 ---
 
-## 4. 🩺 Clinical Features
+## 🩺 Clinical Features
 
 ### Typical Episode
 | Phase | Features |
@@ -53,7 +80,7 @@
 
 ---
 
-## 5. 🔬 Diagnosis
+## 🔬 Diagnosis
 
 | Test | Findings | Notes |
 |------|----------|-------|
@@ -67,7 +94,7 @@
 
 ---
 
-## 6. 💊 Management
+## 💊 Management
 
 ### First-line
 | Scenario | Regimen |
@@ -84,7 +111,7 @@
 
 ---
 
-## 7. 📋 FCPS/MRCP High-Yield Summary
+## 📋 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -97,7 +124,7 @@
 
 ---
 
-## 8. ❓ Viva Questions (FCPS/MRCP)
+## ❓ Viva Questions (FCPS/MRCP)
 
 1. **How do you distinguish louse-borne from tick-borne relapsing fever clinically?**
 2. **What is the diagnostic test of choice and when should it be performed?**
@@ -112,7 +139,7 @@
 
 ---
 
-## 9. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -124,7 +151,7 @@
 
 ---
 
-## 10. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -158,7 +185,7 @@ mindmap
 
 ---
 
-## 11. 📄 One-Page Revision Card
+## 📄 One-Page Revision Card
 
 | **Relapsing Fever** | **Key Facts** |
 |---------------------|---------------|
@@ -173,7 +200,7 @@ mindmap
 
 ---
 
-## 12. 📊 Spaced Repetition Tracker
+## 📊 Spaced Repetition Tracker
 
 | Review Interval | Date | Score (1-5) | Notes |
 |-----------------|------|-------------|-------|
@@ -185,7 +212,7 @@ mindmap
 
 ---
 
-## 13. 🧪 Self-Test Scorecard
+## 🧪 Self-Test Scorecard
 
 | Topic | Known? (✓/✗) | Last Reviewed |
 |-------|--------------|---------------|
@@ -198,7 +225,7 @@ mindmap
 
 ---
 
-## 14. 🔗 Navigation
+## 🔗 Navigation
 
 - [[Infectious Disease MOC]]
 - [[Davidson Chapter 13 - Infectious Disease Hierarchy]]

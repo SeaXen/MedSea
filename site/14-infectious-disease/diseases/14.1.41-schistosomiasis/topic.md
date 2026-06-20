@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.41"
+topic: "Schistosomiasis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Schistosomiasis.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, schistosomiasis, bilharzia, parasites, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | Schistosoma haematobium/mansoni/japonicum, acute (Katayama), chronic (hepatic/intestinal/urinary), praziquantel, egg detection, hepatosplenic disease"
+see_also: "[[Soil-Transmitted Helminths & Strongyloides]], [[Liver Disease & Alcohol Macrocytosis]], [[Fever in Returned Traveller & FUO]], [[Hepatology]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Schistosomiasis (Bilharzia)
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Parasites (Helminths) → Schistosomiasis
 > **FCPS/MRCP Focus**: S. haematobium (Urinary), S. mansoni/japonicum (Intestinal/Hepatic), acute Katayama fever, chronic hepatic/intestinal/urinary, praziquantel, egg detection, hepatosplenic disease
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Identify **Schistosome Species**: *S. haematobium* (Urinary), *S. mansoni* (Intestinal/Hepatic), *S. japonicum* (Intestinal/Hepatic, Zoonotic), *S. intercalatum*, *S. mekongi*
 - [ ] Understand **Life Cycle**: Snail Intermediate Host → Cercariae → Skin Penetration → Schistosomula → Portal Venous System → Adult Worms → Egg Migration
@@ -16,7 +43,7 @@
 
 ---
 
-## 2. 📖 Life Cycle & Transmission
+## 📖 Life Cycle & Transmission
 
 ```mermaid
 flowchart TD
@@ -41,7 +68,7 @@ flowchart TD
 
 ---
 
-## 3. 📖 Clinical Syndromes
+## 📖 Clinical Syndromes
 
 ### 1. Acute Schistosomiasis (Katayama Fever)
 
@@ -71,7 +98,7 @@ flowchart TD
 
 ---
 
-## 4. 🔬 Diagnosis
+## 🔬 Diagnosis
 
 ```mermaid
 flowchart TD
@@ -102,7 +129,7 @@ flowchart TD
 
 ---
 
-## 5. 💊 Management
+## 💊 Management
 
 ### Praziquantel — **Drug of Choice for ALL Species**
 
@@ -132,7 +159,7 @@ flowchart TD
 
 ---
 
-## 6. 🔬 Diagnostic Summary Table
+## 🔬 Diagnostic Summary Table
 
 | Species | Egg Morphology | Sample | Key Feature |
 |---------|----------------|--------|-------------|
@@ -146,7 +173,7 @@ flowchart TD
 
 ---
 
-## 7. 🩺 Morbidity Assessment (WHO Ultrasound Grading)
+## 🩺 Morbidity Assessment (WHO Ultrasound Grading)
 
 | Organ | Findings |
 |-------|----------|
@@ -157,7 +184,7 @@ flowchart TD
 
 ---
 
-## 8. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -175,7 +202,7 @@ flowchart TD
 
 ---
 
-## 9. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the drug of choice for all Schistosome species?**
    - **Praziquantel 40mg/kg Single Dose** (60mg/kg for S. japonicum).
@@ -215,7 +242,7 @@ flowchart TD
 
 ---
 
-## 10. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -236,7 +263,7 @@ flowchart TD
 
 ---
 
-## 11. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -275,7 +302,7 @@ mindmap
 
 ---
 
-## 12. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **SCHISTOSOMIASIS – FCPS/MRCP REVISION CARD** |
 |-------------------------------------------------|
@@ -293,7 +320,7 @@ mindmap
 
 ---
 
-## 13. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -305,7 +332,7 @@ mindmap
 
 ---
 
-## 14. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -315,7 +342,7 @@ mindmap
 
 ---
 
-## 15. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -328,7 +355,7 @@ mindmap
 
 ---
 
-## 16. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Soil-Transmitted Helminths & Strongyloides]]
 - **Next**: [[Hospital-Acquired Infections (CLABSI, CAUTI, SSI)]]

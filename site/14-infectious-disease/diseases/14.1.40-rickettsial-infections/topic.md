@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.40"
+topic: "Rickettsial Infections"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Rickettsial Infections.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, rickettsial, spotted-fever, typhus, scrub-typhus, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | Rocky Mountain Spotted Fever, Mediterranean Spotted Fever, Scrub Typhus, Epidemic Typhus, doxycycline, Weil-Felix, IFA, ESR"
+see_also: "[[Fever in Returned Traveller & FUO]], [[Leptospirosis]], [[Lyme Disease]], [[Viral Haemorrhagic Fevers]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Rickettsial Infections
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Rickettsiae, Orientia, Anaplasma, Ehrlichia
 > **FCPS/MRCP Focus**: Spotted Fever Group (RMSF, MSF), Typhus Group (Epidemic, Murine), Scrub Typhus (Orientia), doxycycline, IFA/PCR, eschar
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Classify **Rickettsial Diseases**: **Spotted Fever Group** (RMSF, Mediterranean Spotted Fever, African Tick Typhus) vs **Typhus Group** (Epidemic, Murine) vs **Scrub Typhus** (Orientia tsutsugamushi)
 - [ ] Recognise **Clinical Presentation**: Fever, Headache, Rash, **Eschar (Tache Noire)** — Pathognomonic for Spotted Fever/Scrub Typhus
@@ -14,7 +41,7 @@
 
 ---
 
-## 2. 📖 Classification & Key Species
+## 📖 Classification & Key Species
 
 | Group | Representative Species | Disease | Vector | Geography |
 |-------|----------------------|---------|--------|-----------|
@@ -34,7 +61,7 @@
 
 ---
 
-## 3. 📖 Clinical Syndromes
+## 📖 Clinical Syndromes
 
 ### Spotted Fever Group (SFG)
 
@@ -63,7 +90,7 @@
 
 ---
 
-## 4. 🔬 Diagnostic Workup
+## 🔬 Diagnostic Workup
 
 ```mermaid
 flowchart TD
@@ -101,7 +128,7 @@ flowchart TD
 
 ---
 
-## 5. 💊 Management
+## 💊 Management
 
 ### Antibiotic Therapy
 
@@ -116,7 +143,7 @@ flowchart TD
 
 ---
 
-## 6. 🩺 Clinical Syndromes & Complications
+## 🩺 Clinical Syndromes & Complications
 
 | Syndrome | Key Features | Complications |
 |----------|--------------|-------------|
@@ -129,7 +156,7 @@ flowchart TD
 
 ---
 
-## 7. 🔬 Laboratory Findings
+## 🔬 Laboratory Findings
 
 | Test | Typical Findings |
 |------|-----------------|
@@ -142,7 +169,7 @@ flowchart TD
 
 ---
 
-## 8. 💊 Treatment Summary
+## 💊 Treatment Summary
 
 | Scenario | Regimen |
 |---------|---------|
@@ -155,7 +182,7 @@ flowchart TD
 
 ---
 
-## 9. 🔄 Differential Diagnosis
+## 🔄 Differential Diagnosis
 
 | Condition | Differentiating Features |
 |---------|--------------------------|
@@ -168,7 +195,7 @@ flowchart TD
 
 ---
 
-## 10. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -185,7 +212,7 @@ flowchart TD
 
 ---
 
-## 11. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the unifying treatment for all Rickettsial infections?**
    - **Doxycycline 100mg BD PO/IV** — 1st Line for ALL Rickettsial diseases.
@@ -225,7 +252,7 @@ flowchart TD
 
 ---
 
-## 12. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -246,7 +273,7 @@ flowchart TD
 
 ---
 
-## 13. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -279,7 +306,7 @@ mindmap
 
 ---
 
-## 14. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **RICKETTSIAL INFECTIONS – FCPS/MRCP REVISION CARD** |
 |-------------------------------------------------------|
@@ -301,7 +328,7 @@ mindmap
 
 ---
 
-## 15. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -313,7 +340,7 @@ mindmap
 
 ---
 
-## 16. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -323,7 +350,7 @@ mindmap
 
 ---
 
-## 17. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -337,7 +364,7 @@ mindmap
 
 ---
 
-## 18. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Lyme Disease]]
 - **Next**: [[Chlamydial Pneumonia / Psittacosis]]

@@ -1,3 +1,19 @@
+---
+davidson_chapter: "Chapter 15: Sexually Transmitted Infections"
+davidson_topic_id: "15.2.02"
+topic: "2.2 Gonorrhoea"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Sexually Transmitted Infections/2.2 Gonorrhoea.md"
+tags: [medicine, sti, davidson, fcps, mrcp]
+---
+
+# 2.2 Gonorrhoea (Neisseria gonorrhoeae)
+
 **Parent Topic:** [STI MOC](../Sexually%20Transmitted%20Infections%20MOC.md) → [STI Hierarchy](../Davidson%20Chapter%2013%20-%20STI%20Hierarchy.md)  
 **Status:** `full-fcps-mrcp-note`  
 **Priority:** ⭐⭐⭐ HIGHEST (FCPS/MRCP — AMR Crisis, Dual Therapy, Pharyngeal/Rectal, DGI, Neonatal)  
@@ -5,7 +21,7 @@
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 - [ ] Recognise **N. gonorrhoeae** clinical manifestations (Urethritis, Cervicitis, PID, DGI, Pharyngeal, Rectal, Conjunctival)
 - [ ] Apply **antimicrobial resistance (AMR) knowledge** — Ceftriaxone resistance, dual therapy, alternative regimens
 - [ ] Apply **evidence-based treatment** algorithms for all sites (Genital, Pharyngeal, Rectal, DGI, Neonatal)
@@ -17,7 +33,7 @@
 
 ---
 
-## 2. 🧠 Core Concept: Neisseria gonorrhoeae Biology & AMR
+## 🧠 Core Concept: Neisseria gonorrhoeae Biology & AMR
 
 ```mermaid
 flowchart TD
@@ -312,7 +328,7 @@ flowchart TD
 
 ---
 
-## 3. ⚡ FCPS/MRCP High-Yield Summary
+## ⚡ FCPS/MRCP High-Yield Summary
 
 | Topic | Key Points |
 |-------|------------|
@@ -330,7 +346,7 @@ flowchart TD
 
 ---
 
-## 4. 🎤 Viva Questions (Expected Answers)
+## 🎤 Viva Questions (Expected Answers)
 
 | # | Question | Expected Answer |
 |---|----------|-----------------|
@@ -347,7 +363,7 @@ flowchart TD
 
 ---
 
-## 5. 🧩 Confusions & Mnemonics
+## 🧩 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -388,7 +404,7 @@ flowchart TD
 
 ---
 
-## 6. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -436,7 +452,7 @@ mindmap
 
 ---
 
-## 7. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (0–5) | Notes |
 |--------|------|-------------|-------|
@@ -449,7 +465,7 @@ mindmap
 
 ---
 
-## 8. 📝 Self-Test Scorecard
+## 📝 Self-Test Scorecard
 
 | Section | Max | Score | % |
 |---------|-----|-------|---|
@@ -463,7 +479,7 @@ mindmap
 
 ---
 
-## 9. 💬 Exam Answer Modes
+## 💬 Exam Answer Modes
 
 | Format | Prompt | Key Points |
 |--------|--------|------------|
@@ -475,7 +491,7 @@ mindmap
 
 ---
 
-## 10. 📌 Summary
+## 📌 Summary
 - **Epidemiology**: 82M/Year, Peak 15-24y, Asymptomatic 50-80% (F), >90% Pharyngeal/Rectal
 - **Clinical**: Urethritis (M), Cervicitis/PID (F), Pharyngeal/Rectal (Asymptomatic), **DGI** (Arthritis-Dermatitis, Septic Arthritis), Neonatal Ophthalmia (Day 2-5)
 - **Diagnosis**: **Male Urethral: Gram Stain (Intracellular Gram-Neg Diplococci) = Presumptive**; **All Sites: NAAT 1st Line**; **Culture+AST Mandatory** for Resistance Surveillance
@@ -489,7 +505,7 @@ mindmap
 
 ---
 
-## 11. ❓ MCQs (10)
+## ❓ MCQs (10)
 
 1. **Current first-line treatment for uncomplicated genital gonorrhoea?**  
    A. Ciprofloxacin 500mg BD × 7d  B. **Ceftriaxone 500mg IM Stat + Azithromycin 1g PO Stat**  C. Azithromycin 1g Stat  D. Ceftriaxone 500mg IM Stat  
@@ -533,7 +549,7 @@ mindmap
 
 ---
 
-## 12. 📋 SBAs (10)
+## 📋 SBAs (10)
 
 1. **25M, purulent urethral discharge, Gram stain: intracellular Gram-negative diplococci. Treatment?**  
    A. Azithromycin 1g  B. **Ceftriaxone 500mg IM + Azithromycin 1g PO**  C. Ciprofloxacin 500mg BD  D. Ceftriaxone 500mg IM Alone  
@@ -557,14 +573,14 @@ mindmap
 
 ---
 
-## 13. 🔑 Answer Keys
+## 🔑 Answer Keys
 | MCQs | SBAs |
 |------|------|
 | 1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B | 1-B, 2-B, 3-B, 4-B, 5-B |
 
 ---
 
-## 14. 🔗 Cross-Links
+## 🔗 Cross-Links
 - [[2.1 Chlamydia.md]] — Differential (Urethral Discharge), Co-infection, Dual Therapy
 - [[2.3 Syphilis.md]] — Differential (GUD), Co-infection
 - [[5.1-5.8 Syndromic Management.md]] — Urethral Discharge, Vaginal Discharge, PID, DGI Algorithms

@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.36"
+topic: "Mucormycosis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Mucormycosis.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, mucormycosis, zygomycosis, fungal, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | Rhino-orbital-cerebral, pulmonary, cutaneous, disseminated, amphotericin B, surgical debridement, diabetes/DKA, iron overload, deferoxamine"
+see_also: "[[Invasive Candidiasis & Candidaemia]], [[Cryptococcal Meningitis]], [[Infection in Immunocompromised Host]], [[Fungal Pneumonias]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Mucormycosis (Zygomycosis)
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Fungi → Mucorales (Mucormycosis)
 > **FCPS/MRCP Focus**: Rhino-orbital-cerebral (ROCM), pulmonary, cutaneous, disseminated, diabetic ketoacidosis, iron overload, deferoxamine, amphotericin B, surgical debridement, mortality
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Identify **Aetiology**: **Mucorales** (Rhizopus, Mucor, Rhizomucor, Lichtheimia, Cunninghamella) — **Angioinvasion**, **Tissue Necrosis**
 - [ ] Recognise **Risk Factors**: **Diabetes (DKA)**, **Iron Overload / Deferoxamine**, **Neutropenia**, **Transplant**, **Corticosteroids**, **Malignancy**, **Burns**, **Trauma**
@@ -15,7 +42,7 @@
 
 ---
 
-## 2. 📖 Definition & Epidemiology
+## 📖 Definition & Epidemiology
 
 | Feature | Details |
 |---------|---------|
@@ -30,7 +57,7 @@
 
 ---
 
-## 3. 📖 Clinical Forms
+## 📖 Clinical Forms
 
 | Form | Frequency | Key Features |
 |------|-----------|--------------|
@@ -42,7 +69,7 @@
 
 ---
 
-## 4. 📖 Risk Factors — The "Classic" Triad
+## 📖 Risk Factors — The "Classic" Triad
 
 | Risk Factor | Mechanism |
 |-------------|-----------|
@@ -54,7 +81,7 @@
 
 ---
 
-## 5. 📖 Clinical Presentations
+## 📖 Clinical Presentations
 
 ### Rhino-Orbital-Cerebral (ROCM) — Most Common
 
@@ -82,7 +109,7 @@
 
 ---
 
-## 6. 🔬 Diagnostic Workup
+## 🔬 Diagnostic Workup
 
 ```mermaid
 flowchart TD
@@ -110,7 +137,7 @@ flowchart TD
 
 ---
 
-## 7. 💊 Management — The "Iron Triangle": Antifungal + Surgical + Metabolic Control
+## 💊 Management — The "Iron Triangle": Antifungal + Surgical + Metabolic Control
 
 ### 1. Antifungal Therapy
 
@@ -146,7 +173,7 @@ flowchart TD
 
 ---
 
-## 8. 🩺 Clinical Forms & Complications
+## 🩺 Clinical Forms & Complications
 
 | Form | Key Features | Mortality |
 |------|-------------|-----------|
@@ -166,7 +193,7 @@ flowchart TD
 
 ---
 
-## 9. 🔬 Diagnosis Summary
+## 🔬 Diagnosis Summary
 
 | Test | Sensitivity/Specificity | Role |
 |------|------------------------|------|
@@ -178,7 +205,7 @@ flowchart TD
 
 ---
 
-## 10. 💊 Management Algorithm
+## 💊 Management Algorithm
 
 ```mermaid
 flowchart TD
@@ -195,7 +222,7 @@ flowchart TD
 
 ---
 
-## 11. 💊 Antifungal Regimens
+## 💊 Antifungal Regimens
 
 | Agent | Dose | Indication |
 |-------|------|-----------|
@@ -209,7 +236,7 @@ flowchart TD
 
 ---
 
-## 12. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -226,7 +253,7 @@ flowchart TD
 
 ---
 
-## 13. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the hallmark histopathological feature of Mucormycosis?**
    - **Broad (10-20µm), Aseptate (Coenocytic), Right-Angle (90°) Branching Hyphae** with **Angioinvasion**.
@@ -266,7 +293,7 @@ flowchart TD
 
 ---
 
-## 14. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -287,7 +314,7 @@ flowchart TD
 
 ---
 
-## 15. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -332,7 +359,7 @@ mindmap
 
 ---
 
-## 16. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **MUCORMYCOSIS – FCPS/MRCP REVISION CARD** |
 |---------------------------------------------|
@@ -349,7 +376,7 @@ mindmap
 
 ---
 
-## 17. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -361,7 +388,7 @@ mindmap
 
 ---
 
-## 18. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -371,7 +398,7 @@ mindmap
 
 ---
 
-## 19. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -385,7 +412,7 @@ mindmap
 
 ---
 
-## 20. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Cryptococcal Meningitis]]
 - **Next**: [[Endemic Mycoses]]

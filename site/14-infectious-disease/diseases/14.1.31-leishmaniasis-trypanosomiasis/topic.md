@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.31"
+topic: "Leishmaniasis & Trypanosomiasis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Leishmaniasis & Trypanosomiasis.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, leishmaniasis, trypanosomiasis, sleeping-sickness, chagas, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | Visceral leishmaniasis (Kala-azar), cutaneous/mucocutaneous leishmaniasis, African trypanosomiasis (sleeping sickness), Chagas disease, diagnosis, treatment"
+see_also: "[[Fever in Returned Traveller & FUO]], [[HIV Infection and AIDS]], [[Antimicrobial Prescribing Principles]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Leishmaniasis & Trypanosomiasis
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Parasites (Protozoa) → Leishmania & Trypanosoma
 > **FCPS/MRCP Focus**: Visceral leishmaniasis (Kala-azar), cutaneous/mucocutaneous leishmaniasis, African trypanosomiasis (sleeping sickness), Chagas disease, diagnosis, treatment
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Classify **Leishmania Species**: *L. donovani/infantum* (Visceral), *L. tropica/major/ethiopica* (Cutaneous), *L. braziliensis* (Mucocutaneous)
 - [ ] Recognise **Visceral Leishmaniasis (VL/Kala-azar)**: Fever, Splenomegaly, Pancytopenia, Weight Loss, Hypergammaglobulinaemia
@@ -17,7 +44,7 @@
 
 ---
 
-## 2. 📖 Leishmaniasis
+## 📖 Leishmaniasis
 
 ### Classification & Geography
 
@@ -32,7 +59,7 @@
 
 ---
 
-## 3. 📖 Visceral Leishmaniasis (VL / Kala-azar)
+## 📖 Visceral Leishmaniasis (VL / Kala-azar)
 
 ### Clinical Features
 
@@ -65,7 +92,7 @@
 
 ---
 
-## 4. 📖 Cutaneous Leishmaniasis (CL) & Mucocutaneous (ML)
+## 📖 Cutaneous Leishmaniasis (CL) & Mucocutaneous (ML)
 
 ### Cutaneous Leishmaniasis (CL)
 
@@ -96,7 +123,7 @@
 
 ---
 
-## 5. 📖 Trypanosomiasis
+## 📖 Trypanosomiasis
 
 ### African Trypanosomiasis (Sleeping Sickness)
 
@@ -130,7 +157,7 @@
 
 ---
 
-## 6. 📖 Chagas Disease (American Trypanosomiasis)
+## 📖 Chagas Disease (American Trypanosomiasis)
 
 ### Clinical Phases
 
@@ -159,7 +186,7 @@
 
 ---
 
-## 7. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -176,7 +203,7 @@
 
 ---
 
-## 8. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the classic presentation of Visceral Leishmaniasis (Kala-azar)?**
    - **Fever + Massive Splenomegaly + Pancytopenia + Hypergammaglobulinaemia**.
@@ -216,7 +243,7 @@
 
 ---
 
-## 9. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -241,7 +268,7 @@
 
 ---
 
-## 10. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -280,7 +307,7 @@ mindmap
 
 ---
 
-## 11. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **LEISHMANIASIS & TRYPANOSOMIASIS – FCPS/MRCP REVISION CARD** |
 |---------------------------------------------------------------|
@@ -298,7 +325,7 @@ mindmap
 
 ---
 
-## 12. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -310,7 +337,7 @@ mindmap
 
 ---
 
-## 13. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -320,7 +347,7 @@ mindmap
 
 ---
 
-## 14. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -333,7 +360,7 @@ mindmap
 
 ---
 
-## 15. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Toxoplasmosis]]
 - **Next**: [[Soil-Transmitted Helminths / Strongyloides]]
