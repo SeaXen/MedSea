@@ -1,90 +1,204 @@
-# Atrial Fibrillation (AF)
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.3.162"
+topic: "Atrial_Fibrillation_AF___paroxysmal_persistent_long_standing_persistent_permanent"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/08_Arrhythmias/Atrial_Fibrillation_AF___paroxysmal_persistent_long_standing_persistent_permanent.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
+# Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent
 
-## 1. Definition & Background
-
-
-| Aspect | Key Points |
-
-|--------|------------|
+> [!info] **Topic Classification**
+> **Section:** 08_Arrhythmias | **Category:** Cardiology
 
 ---
 
-## 2. Etiology & Pathophysiology
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
+
+Atrial fibrillation (AF): most common sustained arrhythmia, irregular atrial activation (350-600 bpm), irregularly irregular ventricular response. Loss of atrial kick → 20% drop in CO. Risk of LA appendage thrombus → stroke. **Classification**: paroxysmal (<7d, self-terminating), persistent (>7d, requires intervention), long-standing persistent (>1y), permanent (accepted).
 
 
-### Etiology & Risk Factors
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
+
+Focal triggers (PVs in 90%, SVC, coronary sinus, ligament of Marshall) + substrate (atrial remodelling — electrical, structural, contractile; fibrosis from age, HTN, HF, valvular disease). **Three pillars**: triggers (PVs), substrate (fibrosis), perpetuators (rotors, multiple wavelets). **Risk factors**: age, HTN, HF, valvular disease, DM, obesity, OSA, alcohol, hyperthyroidism, surgery, inflammation, genetic.
 
 
-### 2.1 Etiological Classification
+## 3. CLINICAL FEATURES
+
+**Symptoms**: palpitations (irregular), dyspnoea, fatigue, exercise intolerance, chest pain, syncope/pre-syncope, polyuria (ANP release). **Asymptomatic** in 25-40% (lone AF, paroxysmal, elderly, diabetic). **Examination**: irregularly irregular pulse, pulse deficit (apex > radial), absent a waves in JVP, variable S1. **Complications**: HF, thromboembolism (5x stroke risk, 20% of all strokes, 50% cardioembolic), tachycardia-mediated cardiomyopathy, reduced QoL, cognitive decline.
 
 
-| Category | Causes | Mechanism | Frequency |
-|----------|--------|-----------|-----------|
-| **Cardiac** | HTN, CAD, VHD, HF, cardiomyopathy, pericarditis | Atrial stretch, fibrosis, ischemia | 60-70% |
-| **Non-cardiac** | Thyroid (hyper), alcohol, obesity, OSA, COPD, sepsis, post-op | Metabolic stress, inflammation, autonomic | 20-30% |
-| **Genetic** | Familial AF (10-15%), channelopathies | Ion channel mutations (KCNQ1, SCN5A) | 5-10% |
-| **Lo
+## 4. DIAGNOSTIC APPROACH
 
-### 2.2 Pathophysiology Flowchart
+**12-lead ECG** (gold standard): irregularly irregular RR, no discernible P waves, fibrillatory waves (f-waves, best in V1), QRS narrow (unless BBB/aberrancy), ventricular rate variable. **Confirm** with rhythm strip or Holter if paroxysmal. **Differential**: multifocal AT (≥3 P morphologies, irregular), atrial flutter with variable block (sawtooth F waves), frequent PACs (irregular, premature beats).
 
 
-```mermaid
-flowchart TD
-    A[Triggers: PV Ectopy, Stress, Inflammation] --> B[Substrate: Atrial Fibrosis, Dilation, Remodeling]
-    B --> C[Multiple Re-entrant Wavelets]
-    C --> D[Chaotic Atrial Activation: 300-600 bpm]
-    D --> E[Irregular Ventricular Response]
-    E --> F[Loss of Atrial Kick → ↓CO 10-20%]
-    F --> G[Stasis → Thrombus (LAA) → Stroke]
-    E --> H[Tachycardia-Induced Cardiomyopathy]
-    style A fill:#ffebee
-    style C f
----
-### Clinical Features
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
 
-### 3.1 AF Classification (Memorize)
+**CHA2DS2-VASc** (stroke risk): CHF (1), HTN (1), Age ≥75 (2), DM (1), Stroke/TIA/TE (2), Vascular disease (1), Age 65-74 (1), Sex female (1). **Score 0 (M) / 1 (F)**: no anticoag. **Score 1 (M) / 2 (F)**: consider. **Score ≥2 (M) / ≥3 (F)**: anticoag. **HAS-BLED** (bleeding): HTN, Abnormal renal/liver, Stroke, Bleeding, Labile INR, Elderly (>65), Drugs/alcohol. **EHRA** symptom class: I-IV.
 
-| Type | Duration | Spontaneous Termination | Management Implication |
-|------|----------|------------------------|------------------------|
-| **Paroxysmal** | <7 days (usually <48h) | Yes | Early rhythm control, pill-in-pocket |
-| **Persistent** | >7 days | No (needs cardioversion) | Cardioversion ± AAD, consider ablation |
-| **Long-standing Persistent** | >1 year | No | Ablation less successful, rate control often preferred |
-| **Permanent** | 
-### 3.2 Symptoms & Signs
 
-| Symptom | Mechanism | Specific Features |
-|---------|-----------|-------------------|
-| **Palpitations** | Irregular rapid ventricular rate | "Fluttering", "racing heart" |
-| **Dyspnea** | Loss of atrial kick, tachycardia, HF | Exertional, orthopnea if HF |
-| **Fatigue/Exercise Intolerance** | Reduced CO, irregular rhythm | Non-specific |
-| **Syncope/Presyncope** | Rapid ventricular rate, pauses | Check for tachy-brady syndrome |
-| **Asymptomat
----
-### Diagnostic Approach
+## 6. MANAGEMENT ALGORITHM
 
-### 4.1 Diagnostic Criteria
+**Rate control** (AFFIRM): beta-blocker (1st line, especially in HF: bisoprolol, carvedilol; avoid in HF decompensation), non-dihydropyridine CCB (diltiazem, verapamil, avoid in HFrEF), digoxin (HF, sedentary, paroxysmal, last line). **Rhythm control**: flecainide (lone AF, no structural disease — avoid in CAD/LVH/HF), propafenone, sotalol, amiodarone, dofetilide, ibutilide. **Cardioversion**: electrical (DCCV, >200J biphasic, anticoagulated ≥3 weeks or TOE-guided if <48h, <12h if no TE risk factors), pharmacological (flecainide, amiodarone). **Ablation**: PVI (paroxysmal — class IA EARLY-AF; persistent — class IIa). **Anticoagulation**: DOAC preferred over warfarin (dabigatran 150mg BD, rivaroxaban 20mg OD, apixaban 5mg BD, edoxaban 60mg OD). **LAAO**: Watchman (if long-term OAC contraindicated).
 
-```mermaid
-flowchart TD
-    A[Symptoms OR Incidental Finding] --> B[12-Lead ECG]
-    B --> C{Irregularly Irregular + No P Waves + f-Waves?}
-    C -->|Yes| D[AF Confirmed]
-    C -->|No| E[Consider AFL, MAT, Frequent Ectopy]
-    D --> F[Assess Type: Paroxysmal/Persistent/LS-Pers/Perm]
-    F --> G[CHA2DS2-VASc & HAS-BLED]
-    G --> H[Echo: LA size, LVEF, VHD]
-    H --> I[Treat per Algorithm]
-    style D fill:#c8e6c9
-```
-**ECG Criteria for AF:**
-1. **Irregularly irregular** R-R intervals
-2. **Absent P waves**
-3. **Fibrillatory (f) waves** (best seen in V1, coarse vs fine)
-4. **Variable ventricular rate** (typically 100-180 bpm if untreated)
-### 4.2 Investigations - Tiered
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+**Stroke** (5x risk, 20% of all strokes, often severe, cardioembolic). **Heart failure** (tachycardia-mediated, AF in HF — CASTLE-AF). **Thromboembolism** (systemic). **Cognitive decline/dementia** (silent emboli). **Reduced QoL**. **Mortality** (1.5-2x risk). **Bleeding** from anticoag. **Post-ablation**: tamponade (1%), stroke (0.5%), PV stenosis (rare), phrenic palsy, oesophageal injury (RF).
+
+
+## 8. SPECIAL POPULATIONS
+
+Elderly: more AF, more bleeding, careful anticoagulation, fall risk. Women: more symptomatic, more bleeding, female adds 1 to CHA2DS2-VASc. Pregnancy: rate control (beta-1 selective, digoxin), avoid warfarin 1st trimester, LMWH 2nd-3rd. Athletes: vagal AF, higher vagal tone, prolonged monitoring. HCM: more AF, high stroke risk, amiodarone preferred. AF + HF: CASTLE-AF — ablation reduces mortality. AF + PCI: AUGUSTUS, ENTRUST-AF PCI, AFIRE — 1 week triple, then DOAC + P2Y12.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+ESC 2020 AF (EHJ): AF-CARE pathway (Comorbidity/risk factor, Avoid stroke, Rate control, Early rhythm control). ACC/AHA/HRS 2024. NICE NG196 (2021): DOAC 1st line. EHRA 2020: periprocedural. EAST-AFNET 4 (2020): early rhythm control. EARLY-AF (2021): ablation 1st line. CASTLE-AF (2018): AF ablation in HF (LVEF<35%) reduces mortality. AUGUSTUS, ENTRUST-AF PCI, AFIRE: triple therapy — minimise duration.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+Don't anticoagulate paroxysmal AF less than persistent (same stroke risk). Don't use flecainide in structural heart disease (CAD, LVH, HF) — proarrhythmic, CASTLE trial. Don't use CCB in HFrEF for rate control. Don't give adenosine to AF (no benefit, may cause AF → VF if WPW). Don't miss AF in stroke patients (24h Holter). Don't use amiodarone long-term without monitoring (thyroid, lung, liver, eye, skin).
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**CHA2DS2-VASc**: CHF, HTN, Age ≥75 (2), DM, Stroke (2), Vascular, Age 65-74, Sex female. **HAS-BLED**: HTN, Abnormal renal/liver, Stroke, Bleeding, Labile INR, Elderly, Drugs/alcohol. **EAST-AFNET 4**: early rhythm. **EARLY-AF**: ablation 1st line. **CASTLE-AF**: ablation in HF. **ABC pathway**: A (Anticoag/Avoid stroke), B (Better symptom), C (CV risk/comorbidity). **PVI**: Pulmonary Vein Isolation. **LAAO**: Left Atrial Appendage Occlusion.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+Multifocal AT (≥3 P morphologies, irregular but P waves), atrial flutter with variable block (sawtooth F waves, especially inferior leads), AVNRT/AVRT (regular, narrow), atrial tachycardia with variable block, sinus rhythm with frequent PACs (premature), atrial bigeminy. Non-cardiac: hyperthyroidism, anaemia, electrolyte, drugs, pulmonary disease, anxiety.
+
+
+## 13. INVESTIGATIONS
+
+**ECG** (12-lead, rhythm strip). **Holter** (24-48h) for paroxysmal. **Event recorder/ILR** for infrequent. **Echo** (LA size, LV function, valves, PASP). **Bloods**: FBC, U&E, LFT, **TFT (always — hyperthyroidism)**, coagulation, BNP, troponin. **CXR** (pulmonary oedema, cardiomegaly). **TOE** if cardioversion or ablation (exclude LA thrombus).
+
 
 ---
-### Risk Stratification - Memorize Scores
 
-### 5.
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent
+2. Discuss the pathophysiology of Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent
+3. What are the diagnostic criteria for Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent?
+4. Outline the management approach to Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent
+5. What are the complications and prognosis of Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent?
+6. What are the latest guidelines for Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent?
+7. How is Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent managed in special populations?
+8. Compare Atrial Fibrillation AF   paroxysmal persistent long standing persistent permanent with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Atrial_Fibrillation_AF_paroxysmal_persistent_long_standing_persistent_permanent.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

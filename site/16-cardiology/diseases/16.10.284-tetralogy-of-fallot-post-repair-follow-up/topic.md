@@ -1,192 +1,374 @@
-<!-- Source: /mnt/tb/Medicine/Cardiology/10_Adult_Congenital_Heart_Disease/Tetralogy_of_Fallot_(TOF)_-_post-repair_follow-up_(PR,_RV_dilation,_arrhythmia).md | section: 16.10 | hub: adult-congenital-heart-disease -->
-
-# Tetralogy of Fallot  - post-repair follow-up
-
-> [!info] **Topic Classification**
-> **Section:** 10_Adult_Congenital_Heart_Disease | **Category:** Cardiology
-
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.10.284"
+topic: "Tetralogy of Fallot in adults"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/Adult Congenital Heart Disease and Cardiac Shunts/Tetralogy of Fallot in adults.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
 ---
 
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Tetralogy of Fallot  - post-repair follow-up** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (10 Adult Congenital Heart Disease). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-The pathophysiology of Tetralogy of Fallot  - post-repair follow-up involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
-
-
-## 3. CLINICAL FEATURES
-
-Clinical presentation of Tetralogy of Fallot  - post-repair follow-up varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
-
-
-## 4. DIAGNOSTIC APPROACH
-
-Diagnostic approach to Tetralogy of Fallot  - post-repair follow-up includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-Management of Tetralogy of Fallot  - post-repair follow-up: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-Complications of Tetralogy of Fallot  - post-repair follow-up: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
-
-
-## 8. SPECIAL POPULATIONS
-
-**Special populations in Tetralogy of Fallot  - post-repair follow-up**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**Latest guidelines relevant to Tetralogy of Fallot  - post-repair follow-up**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Common pitfalls in Tetralogy of Fallot  - post-repair follow-up**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Key mnemonics for Tetralogy of Fallot  - post-repair follow-up**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-**Differential diagnosis of Tetralogy of Fallot  - post-repair follow-up** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
-
-
-## 13. INVESTIGATIONS
-
-**Investigations for Tetralogy of Fallot  - post-repair follow-up**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Tetralogy of Fallot  - post-repair follow-up?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Tetralogy of Fallot  - post-repair follow-up:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Tetralogy of Fallot  - post-repair follow-up:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Tetralogy of Fallot  - post-repair follow-up?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Tetralogy of Fallot  - post-repair follow-up is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Tetralogy of Fallot  - post-repair follow-up. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Tetralogy of Fallot  - post-repair follow-up on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Tetralogy of Fallot  - post-repair follow-up
-2. Discuss the pathophysiology of Tetralogy of Fallot  - post-repair follow-up
-3. What are the diagnostic criteria for Tetralogy of Fallot  - post-repair follow-up?
-4. Outline the management approach to Tetralogy of Fallot  - post-repair follow-up
-5. What are the complications and prognosis of Tetralogy of Fallot  - post-repair follow-up?
-6. What are the latest guidelines for Tetralogy of Fallot  - post-repair follow-up?
-7. How is Tetralogy of Fallot  - post-repair follow-up managed in special populations?
-8. Compare Tetralogy of Fallot  - post-repair follow-up with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Tetralogy_of_Fallot_-_post-repair_follow-up.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+# Tetralogy of Fallot in Adults
+
+Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Davidson Chapter 16 - Cardiology Hierarchy|Cardiology Hierarchy]] · [[../Adult Congenital Heart Disease and Cardiac Shunts|Adult Congenital Heart Disease and Cardiac Shunts]] · [[Cyanotic and complex adult congenital heart disease]] · [[../Eisenmenger syndrome|Eisenmenger syndrome]] · [[../Pulmonary hypertension in congenital heart disease|PH in CHD]] · [[../../Valvular Heart Disease and Murmur Syndromes/Pulmonary stenosis|Pulmonary stenosis]] · [[../../Arrhythmias and Cardiac Conduction Disorders/Ventricular tachycardia and VF|VT/VF]] · [[../../Heart Failure and Acute Cardiac Decompensation/Right-sided heart failure|RHF]]
+
+> [!important]
+> **TOF is the most common cyanotic CHD surviving to adulthood**. FCPS/MRCP exams test: **anatomy (VSD + RVOT obstruction + overriding aorta + RVH)**, **post-repair sequelae** (PR, RV dilation, RVOT obstruction, arrhythmias, aortic root dilation), **timing of PVR**, **sudden cardiac death risk**, **pregnancy**, and **lifelong surveillance**. **Adults with repaired TOF need lifelong cardiology follow-up** — residual haemodynamic lesions drive morbidity/mortality.
+
+## Learning Objectives
+- Describe classic TOF anatomy and pathophysiology
+- Identify post-repair residua: **pulmonary regurgitation (PR)**, RVOT obstruction, RV dilation, aortic root dilation, VSD patch leak
+- Apply surveillance protocol: echo, CMR, ECG, Holter, exercise test
+- Recognise indications for **pulmonary valve replacement (PVR)** — CMR-based thresholds
+- Stratify SCD risk: QRS duration, VT/VF history, LV dysfunction, syncope
+- Manage pregnancy: pre-conception assessment, delivery planning
+- Understand lifelong multisystem issues: endocarditis, RV failure, atrial arrhythmias
+
+## Anatomy (Classic Tetrad)
+
+| Component | Description |
+|-----------|-------------|
+| **1. VSD** | Large, malalignment, perimembranous, non-restrictive |
+| **2. RVOT obstruction** | Dynamic (infundibular) + fixed (valvular, supravalvular, branch PA stenosis) |
+| **3. Overriding aorta** | Aorta rides VSD (> 50% from RV) |
+| **4. RV hypertrophy** | Secondary to RV pressure overload |
+
+> **Pathophysiology**: RVOT obstruction ↑ RV pressure → R→L shunt across VSD → **cyanosis** severity depends on degree of RVOT obstruction vs SVR.
+
+## Surgical History & Evolution
+
+| Era | Procedure | Residual Issues |
+|-----|-----------|-----------------|
+| **Pre-1960** | Blalock-Taussig shunt (palliative) | Cyanosis, polycythaemia, no correction |
+| **1960s–1980s** | **Total correction**: VSD patch + transannular patch (RVOT) | **Severe PR**, RV dilation, RVOT aneurysm, late arrhythmias |
+| **1990s–present** | **Valve-sparing** (RVOT resection, limited patch), **RV-PA conduit** (homograft, Contegra, Melody) | Less PR; conduit stenosis/regurgitation, reintervention |
+
+> [!critical]
+> **Transannular patch era (1970s–90s) = most adults with severe PR today**. **Valve-sparing repair = better long-term RV function**.
+
+## Post-Repair Residual Lesions (The "Big 3")
+
+| Lesion | Prevalence | Mechanism | Consequences |
+|--------|------------|-----------|--------------|
+| **1. Pulmonary Regurgitation (PR)** | **> 90%** (if transannular patch) | Incompetent valve / patch | **RV volume overload → dilation → dysfunction**, QRS prolongation, VT, tricuspid regurgitation, RHF |
+| **2. RVOT Obstruction** | 20–30% | Residual infundibular stenosis, conduit stenosis, branch PA stenosis | **RV pressure overload → hypertrophy**, additive to PR volume load |
+| **3. Aortic Root Dilation** | 30–50% | Aortic override + histological abnormality | **Aortic regurgitation**, dissection risk (rare but real) |
+
+### Additional Residua
+- **Residual VSD** (patch leak) — usually small, haemodynamically insignificant
+- **Tricuspid regurgitation** — secondary to RV dilation (annular dilatation)
+- **Atrial arrhythmias** (AF, IART) — atrial dilation, surgical scars
+- **LV dysfunction** — late, usually after prolonged RV failure
+- **Coronary anomalies** (LAD from RCA) — surgical risk, ischaemia
+
+## Clinical Presentation in Adults
+
+| Scenario | Features |
+|----------|----------|
+| **Asymptomatic** | Most; detected on surveillance |
+| **Exertional dyspnoea** | RV failure, PR, RVOT obstruction |
+| **Palpitations** | VT (RV scar), IART/AF (atrial scar) |
+| **Syncope** | VT, severe RVOT obstruction, arrhythmia |
+| **Cyanosis** | Residual R→L shunt (residual VSD, collaterals), Eisenmenger (rare post-repair) |
+| **Infective endocarditis** | Fever, new murmur, embolism |
+| **Pregnancy** | Volume load → RV dilation, arrhythmias |
+
+## Surveillance Protocol (ESC/ACC ACHD Guidelines)
+
+| Modality | Frequency | Key Metrics |
+|----------|-----------|-------------|
+| **Clinical review** | **Annually** (Class I) | NYHA, exercise capacity, cyanosis, syncope, palpitations |
+| **ECG** | **Annually** | **QRS duration** (> 180 ms = risk), rhythm, RBBB morphology |
+| **Echo** | **Annually** (mild), **6-monthly** (moderate/severe) | RV size/function (TAPSE, FAC, S'), PR grade, RVOT gradient, TR, aortic root, LV function |
+| **CMR** | **Baseline at transition; then 2–3 yearly** if abnormal | **RV EDVI/ESVI**, **RVEF**, **PR fraction**, **LGE** (RV insertion points, LV), aortic root |
+| **Holter (24–48h)** | **Annually** or if palpitations/syncope | VT, IART, AF, ectopy burden |
+| **Exercise test (CPET/6MWT)** | 1–2 yearly | VO₂ max, O₂ pulse, SpO₂, arrhythmia provocation, BP response |
+| **Cardiac CT** | If CMR contraindicated / pre-PVR anatomy | Branch PA stenosis, conduit anatomy, coronary anomalies |
+
+> [!tip]
+> **CMR is gold standard for PVR timing** — RV volumes, RVEF, PR fraction quantifiable. **Echo for surveillance between CMRs**.
+
+## Indications for Pulmonary Valve Replacement (PVR)
+
+### Class I (Strong)
+| Criterion | Threshold (CMR) |
+|-----------|-----------------|
+| **Symptomatic** (NYHA II–IV) + **severe PR** | RV EDVI ≥ 150–160 mL/m² **or** RV ESVI ≥ 80 mL/m² **or** RVEF < 47% |
+| **Asymptomatic** + **severe PR** | **RV EDVI ≥ 160 mL/m²** **or** **RV ESVI ≥ 82 mL/m²** **or** **RVEF < 47%** |
+| **Sustained VT / resuscitated SCD** | Any severe PR (PVR may prevent further scar) |
+| **Severe RVOT obstruction** (peak gradient > 50–60 mmHg) | Unresponsive to balloon dilation |
+
+### Class IIa
+- RV EDVI 150–160 mL/m² + asymptomatic
+- Moderate PR + RV dilation + exercise intolerance
+- Aortic root dilation > 45 mm (concurrent repair)
+
+> [!tip]
+> **Earlier PVR (before severe RV dilation) = better RV recovery**. **RVEF improvement post-PVR** if pre-op RVEF > 35% and no extensive LGE.
+
+### PVR Options
+| Valve Type | Durability | Indication |
+|------------|------------|------------|
+| **Surgical bioprosthesis** (Carpentier-Edwards, Mosaic) | 10–20 years | Standard; concomitant surgery (aortic, RVOT) |
+| **Transcatheter (TPVR)** — Melody, Sapien, Harmony, Venus P-valve | 5–10 years | **Preferred if anatomy suitable** (conduit, RVOT size); avoids sternotomy |
+| **Ross procedure** (rare) | — | Young women desiring pregnancy (living valve) |
+
+## Arrhythmias & Sudden Cardiac Death (SCD)
+
+### Ventricular Tachycardia (VT)
+| Risk Factor | Significance |
+|-------------|--------------|
+| **QRS duration > 180 ms** | **Strongest predictor** (RV scar substrate) |
+| **Prior sustained VT / resuscitated VF** | **Highest risk** (secondary prevention) |
+| **RVEF < 35%** | Major risk |
+| **Extensive LGE on CMR** (RV insertion points, LV) | Substrate marker |
+| **NSVT on Holter** | Risk modifier |
+| **Syncope (unexplained)** | High suspicion for VT |
+
+### SCD Risk Stratification (Multifactorial)
+| Risk Score | 5-Year SCD Risk | Action |
+|------------|-----------------|--------|
+| **Low** (QRS < 180, no VT, RVEF > 40%, no syncope) | < 1% | Surveillance |
+| **Intermediate** (1–2 risk factors) | 1–3% | Holter annually; consider EPS if inducible → ICD |
+| **High** (≥ 3 factors or prior VT/VF) | > 3% | **ICD indicated** (Class I for secondary prevention) |
+
+> [!warning]
+> **EPS for risk stratification** in intermediate risk: inducible sustained VT → ICD. **QRS > 180 ms alone not Class I for ICD** without other factors.
+
+### Atrial Arrhythmias (IART / AF)
+- **Mechanism**: Atrial dilation + surgical scars (atrial incisions) → macro-reentrant atrial tachycardia (IART) typical
+- **Management**: Rate control, anticoagulation (CHA₂DS₂-VASc not validated; most adult TOF anticoagulated if AF), **catheter ablation** (high success for IART), cardioversion if unstable
+- **Stroke risk**: Higher than general population (RV dysfunction, stasis)
+
+## Pregnancy in Repaired TOF
+| Risk Level | Criteria | Management |
+|------------|----------|------------|
+| **Low (WHO I–II)** | Asymptomatic, mild PR, good RVEF, no arrhythmias | Standard obstetric + cardiology follow-up |
+| **Moderate (WHO II–III)** | Moderate PR/RV dilation, prior VT (controlled), mild RVOT obstruction | Specialist ACHD centre; planned delivery; epidural preferred |
+| **High (WHO III–IV)** | Severe PR/RV dilation, RVEF < 40%, prior sustained VT/syncope, Eisenmenger | **Contraindicated** or high-risk multidisciplinary |
+| **Pre-conception** | **Mandatory**: Echo, CMR, Holter, exercise test, ECG, aortic root | Risk counselling; medication review (ACEi/ARB/ERA/PDE5i contraindicated in pregnancy) |
+
+> [!tip]
+> **Most repaired TOF women tolerate pregnancy well** if RV function preserved. **Volume load** at 20–30 weeks → monitor for decompensation.
+
+## Endocarditis Prophylaxis
+- **High-risk CHD** (repaired with prosthetic material ≤ 6 months, residual shunt, prior IE) → **antibiotic prophylaxis** for dental procedures
+- **Amoxicillin 2g PO/IV 30 min pre-procedure** (clindamycin if allergic)
+- **Lifelong dental hygiene** emphasis
+
+## Non-Cardiac Surgery / Air Travel
+- **Non-cardiac surgery**: Specialist anaesthesia; avoid air in lines (paradoxical embolism via residual shunt); continue beta-blockers; preoperative echo
+- **Air travel**: Usually tolerated; cyanotic patients may need supplemental O₂; pre-flight hypoxic challenge if SpO₂ < 92%
+
+## Drug Interactions / Contraindications / Comorbidity Cautions
+
+| Drug | Caution |
+|------|---------|
+| **Beta-blockers** | First-line for VT prophylaxis; **avoid if severe RVOT obstruction** (unopposed α) |
+| **Amiodarone** | VT suppression; **thyroid, lung, liver toxicity** — monitor; **dronedarone contraindicated** if LV dysfunction |
+| **Sotalol** | VT/AF; **QT prolongation** — monitor K⁺, Mg²⁺, CrCl |
+| **Flecainide/Propafenone** | **Avoid** if structural HD (RV scar) — proarrhythmic |
+| **ACEi/ARB/ARNI** | Benefit in LV dysfunction; **contraindicated in pregnancy** |
+| **PDE5i (sildenafil)** | **Contraindicated with nitrates**; may help RV afterload in PH |
+| **Anticoagulation** | DOAC/warfarin if AF; **INR 2–3**; balance with procedural bleeding |
+
+## Procedures / Indications / Contraindications
+
+### Pulmonary Valve Replacement (PVR)
+- **Indication**: See thresholds above (symptomatic + severe PR + RV dilation; asymptomatic + RV EDVI ≥ 160 mL/m²)
+- **Timing**: Earlier better; **before irreversible RV dysfunction**
+- **TPVR preferred** if anatomy suitable (conduit, no branch PA stenosis, no RVOT aneurysm)
+- **Surgical** if conduit replacement needed, aortic surgery, RVOT resection
+
+### ICD Implantation
+- **Secondary prevention**: Prior sustained VT/VF, resuscitated SCD → **Class I**
+- **Primary prevention**: Multifactorial risk (QRS > 180, RVEF < 35%, syncope, LGE, NSVT) → EPS guided
+
+### Catheter Ablation
+- **IART**: **Class I** if symptomatic; high success (~90%)
+- **VT**: Complex (RV scar epicardial); **substrate-based ablation** in experienced centres
+- **AF**: Standard pulmonary vein isolation + posterior wall ± cavotricuspid isthmus
+
+## Complications of Mismanagement
+- **Delaying PVR** until severe RV dilation → incomplete RV recovery, persistent RHF, higher SCD risk
+- **Missing VT** (attributing palpitations to anxiety) → SCD
+- **Pregnancy in high-risk TOF** → maternal RV failure, death
+- **Flecainide in structural HD** → proarrhythmia, death
+- **Ignoring aortic root dilation** → dissection (rare but fatal)
+- **Non-cardiac surgery without specialist input** → air embolism, RV failure
+
+## Red Flags / Emergencies
+- **Sustained VT / VF** → cardioversion/defibrillation → ICD
+- **Syncope** → presume VT until proven otherwise
+- **Acute RV failure** (post-PVR, pregnancy, non-cardiac surgery) → inotropes (dobutamine/milrinone), RV afterload reduction
+- **Massive haemoptysis** (rare, bronchial artery) → embolisation
+- **Aortic dissection** (chest/back pain, new AR) → emergency surgery
+
+## Prognosis
+| Era / Factor | Survival |
+|--------------|----------|
+| **Overall (repaired)** | **85–90% at 20 years**; 75% at 35 years |
+| **Early repair (< 1 year)** | Best outcomes |
+| **Transannular patch (severe PR)** | Higher late reintervention, SCD risk |
+| **Valve-sparing / conduit** | Lower PR, better RV function |
+| **PVR at appropriate time** | **RV reverse remodelling** in 70–80%; RVEF ↑, QRS ↓ |
+| **Late PVR (RV ESVI > 100)** | Incomplete recovery, persistent RHF |
+| **SCD** | 0.5–1%/year; **QRS > 180 + VT = highest risk** |
+
+## Topic Correlation
+- [[../Eisenmenger syndrome|Eisenmenger syndrome]] — differential for cyanosis
+- [[../Pulmonary hypertension in congenital heart disease|PH in CHD]] — RVOT obstruction → RVH
+- [[../../Arrhythmias and Cardiac Conduction Disorders/Ventricular tachycardia and VF|VT/VF]] — mechanism, management
+- [[../../Heart Failure and Acute Cardiac Decompensation/Right-sided heart failure|RHF]] — RV failure management
+- [[../../Valvular Heart Disease and Murmur Syndromes/Pulmonary stenosis|PS]] — RVOT obstruction component
+
+## Special Situations
+
+### Unrepaired TOF (Rare in Adults)
+- **Cyanotic, polycythaemic, clubbed**
+- **Risk**: Cerebral abscess, stroke, syncope, RV failure
+- **Management**: Palliative (shunt) or corrective if operable (PVR < 6 WU)
+
+### TOF with Absent Pulmonary Valve Syndrome
+- **Severe PR + massive PA dilation** → bronchial compression → respiratory symptoms
+- **Early repair** often needed; high reintervention rate
+
+### Major Aortopulmonary Collaterals (MAPCAs)
+- **TOF with pulmonary atresia** (extreme spectrum)
+- **Unifocalisation** surgery; complex long-term PAH risk
+
+## FCPS/MRCP High-Yield Points
+- **TOF = most common cyanotic CHD in adults** (VSD + RVOT obstruction + overriding aorta + RVH)
+- **Post-repair residua**: **PR (90%)**, RVOT obstruction, aortic root dilation, RV dilation, arrhythmias
+- **Surveillance**: Annual echo/ECG/Holter; CMR 2–3 yearly (RV volumes, RVEF, PR fraction, LGE)
+- **PVR indications**: Symptomatic + severe PR + **RV EDVI ≥ 160 mL/m²** or **ESVI ≥ 82** or **RVEF < 47%**
+- **SCD risk**: **QRS > 180 ms**, prior VT/VF, RVEF < 35%, LGE, syncope
+- **VT = IART** common; ablation effective for IART; ICD for secondary prevention + high-risk primary
+- **Pregnancy**: Most tolerate if RV preserved; pre-conception CMR mandatory; WHO classification
+- **Endocarditis prophylaxis** if prosthetic material/residual shunt
+
+## Common Viva Questions
+- List the 4 components of TOF.
+- What are the long-term sequelae of TOF repair?
+- When do you replace the pulmonary valve in repaired TOF? (CMR thresholds)
+- What are the SCD risk factors in adult TOF?
+- How do you manage VT in TOF?
+- What is the pregnancy risk in repaired TOF?
+- How does transannular patch repair differ from valve-sparing?
+
+## Common Confusions / Exam Traps
+- Thinking PVR is only for symptoms (asymptomatic with RV dilation = Class I)
+- Using QRS > 180 ms alone for ICD (needs multifactorial risk)
+- Missing aortic root dilation surveillance
+- Allowing pregnancy without pre-conception CMR
+- Using flecainide for VT in structural HD (proarrhythmic)
+- Attributing palpitations to anxiety (VT common)
+- Not doing CMR (echo underestimates RV volumes)
+
+## Mnemonics
+- **TOF Tetrad**: **V**SD, **R**VOT obstruction, **O**verriding **A**orta, **R**VH — **VROAR**
+- **Post-repair Big 3**: **P**R, **R**VOT **O**bstruction, **A**ortic root dilation — **PROA**
+- **PVR thresholds**: **E**DVI **1**60, **E**SVI **8**2, **E**F **47** — **1-8-47**
+- **SCD risk**: **Q**RS > 180, **V**T, **R**VEF < 35, **L**GE, **S**yncope — **QVRLS**
+- **IART**: **I**ntra**A**trial **R**eentrant **T**achycardia (TOF atrial scar)
+
+## Mind Map
+- TOF in Adults
+  - Anatomy: VSD + RVOT obs + Overriding Ao + RVH
+  - Repair history: BT shunt → Transannular patch → Valve-sparing/conduit
+  - Residua (Big 3)
+    - PR (90%) → RV dilation → dysfunction → VT → RHF
+    - RVOT obstruction (pressure + volume overload)
+    - Aortic root dilation → AR, dissection risk
+  - Surveillance
+    - Annual echo/ECG/Holter
+    - CMR 2–3y (RV volumes, RVEF, PR fraction, LGE)
+    - Exercise test
+  - PVR Indications
+    - Sympt + severe PR + RV EDVI ≥ 160 / ESVI ≥ 82 / RVEF < 47%
+    - Asympt + same thresholds
+  - Arrhythmias
+    - VT (RV scar) → ICD if sustained
+    - IART/AF (atrial scar) → ablation, anticoagulation
+  - Pregnancy: Pre-conception CMR; WHO classification
+
+## Suggested Visuals / Image Notes
+- TOF anatomy diagram (VSD, RVOT, overriding Ao)
+- Post-repair CMR: RV dilation, PR jet, LGE at RV insertion points
+- PVR timing algorithm (CMR-based)
+- SCD risk stratification flowchart
+- TPVR valve types (Melody, Sapien, Harmony, Venus)
+
+## Suggested Video References
+- Search for: "tetralogy of Fallot adults pulmonary valve replacement CMR"
+- Search for: "TOF arrhythmias VT IART ablation ICD"
+- Search for: "repaired TOF pregnancy management"
+- Search for: "transcatheter pulmonary valve replacement TPVR"
+
+## One-Page Revision Summary
+- **TOF**: VSD + RVOT obstruction + overriding aorta + RVH
+- **Post-repair**: PR (90%), RVOT obstruction, aortic root dilation, RV dilation, VT/IART
+- **Surveillance**: Annual echo/ECG/Holter; CMR (RV EDVI, ESVI, RVEF, PR fraction, LGE)
+- **PVR**: **RV EDVI ≥ 160** or **ESVI ≥ 82** or **RVEF < 47%** (CMR)
+- **SCD**: QRS > 180, VT, RVEF < 35%, LGE, syncope → ICD if high risk
+- **VT**: RV scar substrate; **IART**: atrial scar → ablation effective
+- **Pregnancy**: Pre-conception CMR; most low-risk tolerate well
+- **Endocarditis prophylaxis** if prosthetic material/residual shunt
+
+## 24-Hour Recall Prompts
+- List TOF tetrad
+- State 3 main post-repair residua
+- Give CMR thresholds for PVR
+- List 5 SCD risk factors in TOF
+- Pregnancy: pre-conception workup?
+
+## 7-Day / 15-Day / 30-Day Revision Tracker
+- **Day 1**: Read note + MCQs/SBAs
+- **Day 7**: Draw TOF anatomy; state PVR CMR thresholds
+- **Day 15**: Practice 3 vignettes (PVR timing, VT management, pregnancy counselling)
+- **Day 30**: Rapid revision + SCD risk + TPVR options
+
+## Must Know / Should Know / Nice to Know
+### Must Know
+- TOF tetrad
+- Big 3 residua (PR, RVOT obstruction, aortic root)
+- PVR CMR thresholds (EDVI 160, ESVI 82, RVEF 47)
+- SCD risk factors (QRS > 180, VT, RVEF)
+- Pregnancy pre-conception CMR
+
+### Should Know
+- TPVR vs surgical PVR indications
+- IART ablation success
+- QRS duration as VT marker
+- Aortic root surveillance
+
+### Nice to Know
+- Conduit type outcomes (homograft vs bioprosthesis vs Melody)
+- Genetic associations (22q11, JAG1)
+- Long-term liver/kidney outcomes
+- Psychosocial aspects (QOL, insurance, employment)
+
+## My Weak Points
+- [ ] I state PVR CMR thresholds precisely
+- [ ] I list SCD risk factors without hesitation
+- [ ] I differentiate VT vs IART management
+- [ ] I recall pregnancy pre-conception requirements
+- [ ] I know TPVR valve options
+
+## Self-Test Scorecard
+- Understanding /10
+- Recall /10
+- Vignette interpretation /10
+- MCQ performance /10
+- Viva confidence /10
+
+**Interpretation**
+- **<35/50** = weak topic, needs re-study
+- **35–44/50** = acceptable but not secure
+- **45+/50** = strong exam-ready topic
+
+## Exam Answer Modes

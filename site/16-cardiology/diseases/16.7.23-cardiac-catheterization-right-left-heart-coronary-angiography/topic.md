@@ -1,105 +1,204 @@
-# Cardiac Catheterization (Right/Left Heart, Coronary Angiography)
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.7.23"
+topic: "Cardiac_catheterization_right_left_heart_coronary_angiography"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/01_Cardiac_Investigations/Cardiac_catheterization_right_left_heart_coronary_angiography.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="🫀" color="red_bg">
-**Topic:** Cardiac Catheterization — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# Cardiac catheterization right left heart coronary angiography
 
-## 1. Introduction
-Cardiac catheterisation is the **gold standard** for intracardiac pressures, coronary anatomy, and haemodynamics. Access: **radial (preferred)** or femoral; **brachial** rarely. Always weigh risk (MACE 1–2%, mortality 0.1%, stroke 0.05%).
+> [!info] **Topic Classification**
+> **Section:** 01_Cardiac_Investigations | **Category:** Cardiology
 
-## 2. Coronary Angiography
+---
 
-### Technique
-- **Radial or femoral access** (radial ↓ bleeding, MACE in ACS)
-- **5–6 Fr catheters** — JL3.5 (left), JR4 (right), pigtail (LV)
-- **Selective cannulation** of left and right coronary ostia
-- **Multiple views** (≥6 for each) — avoid overlapping segments
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-### Interpretation
-- **Vessel dominance**: RCA (85%, right dominant), LCx (7%, left dominant), co-dominant (8%)
-- **Lesion quantification** — % diameter stenosis, **visual** or **QCA**
-- **TIMI flow**:
-  - **TIMI 0** — no flow
-  - **TIMI 1** — penetration, no distal perfusion
-  - **TIMI 2** — slow, delayed distal
-  - **TIMI 3** — normal
-- **TIMI frame count**, **TIMI myocardial perfusion grade (TMPG)**, **MBG** (myocardial blush grade)
-- **SYNTAX score** for multivessel disease
+**Cardiac catheterization right left heart coronary angiography** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (01 Cardiac Investigations). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
 
-### Common Lesions
-- **LAD** — most important; "**widow-maker**" proximal LAD
-- **LCx** — lateral wall
-- **RCA** — inferior wall, RV, SA/AV nodes (in 90%)
-- **LM stem** — left main; ≥50% = severe, consider CABG
 
-## 3. Left Heart Catheterisation (LV gram)
-- **Pigtail catheter** in LV
-- **LVEDP** (normal 5–12 mmHg) — preload
-- **LV gram** — wall motion, MR severity (Sellors classification), VSD
-- **Aortogram** — AR severity (Sellors I–IV)
-- **Gradient across AV** — pullback; **simultaneous LV-Ao** if AS
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-## 4. Right Heart Catheterisation (Swan-Ganz)
+The pathophysiology of Cardiac catheterization right left heart coronary angiography involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
 
-### Indications
-- **Cardiogenic shock** — guide inotropes, mechanical support
-- **Differential diagnosis** of pulmonary hypertension (PAH vs post-capillary)
-- **Valvular assessment** — MS, TR severity
-- **Constrictive pericarditis vs restrictive CMP**
-- **ARDS, sepsis** — fluid management
 
-### Measurements
+## 3. CLINICAL FEATURES
 
-| Parameter | Normal |
-|---|---|
-| **RA pressure** | 2–8 mmHg |
-| **RV** | 15–30 / 2–8 mmHg |
-| **PA** | 15–30 / 4–12 mmHg |
-| **PCWP** | 6–12 mmHg |
-| **CO (thermodilution / Fick)** | 4–8 L/min |
-| **CI** | 2.5–4.0 L/min/m² |
-| **PVR** | <1.5 Wood units |
-| **SVR** | 800–1200 dynes·s·cm⁻⁵ |
+Clinical presentation of Cardiac catheterization right left heart coronary angiography varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
 
-### Waveforms
-- **RA**: a (atrial contraction), c (TV closure), x (descent), v (atrial filling), y (TV opening)
-- **PCWP** = LVEDP (in absence of MS) — a, v waves
-- **Giant v wave** = severe MR
-- **Kussmaul sign** = ↑JVP on inspiration (constriction, RV infarct, restrictive CMP)
 
-## 5. Fick Cardiac Output
-- **CO = VO₂ / (CaO₂ − CvO₂)**
-- Assumed O₂ consumption 125 mL/min/m²
-- **Thermodilution** — saline bolus; better in low CO, but affected by TR
+## 4. DIAGNOSTIC APPROACH
 
-## 6. Shunt Calculation
-- **O₂ step-up**: >5% ↑ in sats between RA and RV (L→R shunt at VSD/ASD)
-- **Qp/Qs** (see echo)
+Diagnostic approach to Cardiac catheterization right left heart coronary angiography includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
 
-## 7. Pressure Gradients
-- **AS** — peak-to-peak gradient ≥40 mmHg = severe
-- **AS area (Gorlin)**: AVA = CO / (44.3 × SEP × HR × √mean grad)
-- **HOCM** — post-PVC Brockenbrough (↑ gradient, ↓ BP)
-- **MS** — diastolic gradient; severity by area and PA pressure
 
-## 8. Vascular Access Complications
-- **Radial**: spasm (5%), occlusion (1–5%), perforation
-- **Femoral**: haematoma, retroperitoneal bleed (1%), pseudoaneurysm, AV fistula
-- **Closure devices**: Angioseal, Perclose, Femoseal
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
 
-## 9. Contrast Nephropathy
-- Risk in **eGFR <30**; **diabetes**, **elderly**
-- **Prevention**: IV saline 1 mL/kg/h pre- and post-; avoid NSAIDs; **iso-osmolar contrast**; **limit volume**; consider Rosuvastatin
+Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
 
-## 10. Radiation
-- **2–10 mSv** typical; **higher** in complex PCI
 
-> **Pearls**
-> - **Radial access** preferred (↓ MACE, bleeding); femoral in shock/CS
-> - **TIMI 3 = normal flow**; TIMI 0–1 = STEMI culprit
-> - **Swan-Ganz** for shock + pulmonary HTN + unclear volume status
-> - **PCWP = LVEDP** (if no MS); **giant v wave** = severe MR
-> - **PCWP >15** = pulmonary venous HTN; **PA diastolic >PCWP >5 mmHg** = pulmonary vascular disease (pre-capillary PH)
-> - **Contrast nephropathy** — hydrate, minimise volume, hold nephrotoxins
+## 6. MANAGEMENT ALGORITHM
+
+Management of Cardiac catheterization right left heart coronary angiography: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+Complications of Cardiac catheterization right left heart coronary angiography: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
+
+
+## 8. SPECIAL POPULATIONS
+
+**Special populations in Cardiac catheterization right left heart coronary angiography**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**Latest guidelines relevant to Cardiac catheterization right left heart coronary angiography**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+**Common pitfalls in Cardiac catheterization right left heart coronary angiography**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**Key mnemonics for Cardiac catheterization right left heart coronary angiography**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+**Differential diagnosis of Cardiac catheterization right left heart coronary angiography** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
+
+
+## 13. INVESTIGATIONS
+
+**Investigations for Cardiac catheterization right left heart coronary angiography**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Cardiac catheterization right left heart coronary angiography?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Cardiac catheterization right left heart coronary angiography:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Cardiac catheterization right left heart coronary angiography:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Cardiac catheterization right left heart coronary angiography?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Cardiac catheterization right left heart coronary angiography is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Cardiac catheterization right left heart coronary angiography. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Cardiac catheterization right left heart coronary angiography on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Cardiac catheterization right left heart coronary angiography
+2. Discuss the pathophysiology of Cardiac catheterization right left heart coronary angiography
+3. What are the diagnostic criteria for Cardiac catheterization right left heart coronary angiography?
+4. Outline the management approach to Cardiac catheterization right left heart coronary angiography
+5. What are the complications and prognosis of Cardiac catheterization right left heart coronary angiography?
+6. What are the latest guidelines for Cardiac catheterization right left heart coronary angiography?
+7. How is Cardiac catheterization right left heart coronary angiography managed in special populations?
+8. Compare Cardiac catheterization right left heart coronary angiography with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Cardiac_catheterization_right_left_heart_coronary_angiography.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

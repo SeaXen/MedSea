@@ -1,192 +1,463 @@
-<!-- Source: /mnt/tb/Medicine/Cardiology/08_Arrhythmias/Sinus_node_dysfunction_(sick_sinus_syndrome).md | section: 16.8 | hub: arrhythmias -->
-
-# Sinus node dysfunction
-
-> [!info] **Topic Classification**
-> **Section:** 08_Arrhythmias | **Category:** Cardiology
-
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.8.305"
+topic: "Sinus node dysfunction"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/Arrhythmias and Cardiac Conduction Disorders/Sinus node dysfunction.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
 ---
 
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Sinus node dysfunction** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (08 Arrhythmias). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-The pathophysiology of Sinus node dysfunction involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
-
-
-## 3. CLINICAL FEATURES
-
-Clinical presentation of Sinus node dysfunction varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
-
-
-## 4. DIAGNOSTIC APPROACH
-
-Diagnostic approach to Sinus node dysfunction includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-Management of Sinus node dysfunction: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-Complications of Sinus node dysfunction: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
-
-
-## 8. SPECIAL POPULATIONS
-
-**Special populations in Sinus node dysfunction**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**Latest guidelines relevant to Sinus node dysfunction**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Common pitfalls in Sinus node dysfunction**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Key mnemonics for Sinus node dysfunction**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-**Differential diagnosis of Sinus node dysfunction** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
-
-
-## 13. INVESTIGATIONS
-
-**Investigations for Sinus node dysfunction**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Sinus node dysfunction?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Sinus node dysfunction:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Sinus node dysfunction:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Sinus node dysfunction?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Sinus node dysfunction is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Sinus node dysfunction. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Sinus node dysfunction on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Sinus node dysfunction
-2. Discuss the pathophysiology of Sinus node dysfunction
-3. What are the diagnostic criteria for Sinus node dysfunction?
-4. Outline the management approach to Sinus node dysfunction
-5. What are the complications and prognosis of Sinus node dysfunction?
-6. What are the latest guidelines for Sinus node dysfunction?
-7. How is Sinus node dysfunction managed in special populations?
-8. Compare Sinus node dysfunction with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Sinus_node_dysfunction.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+# Sinus Node Dysfunction (Sick Sinus Syndrome)
+
+Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Davidson Chapter 16 - Cardiology Hierarchy|Cardiology Hierarchy]] · [[../Arrhythmias and Cardiac Conduction Disorders|Arrhythmias and Cardiac Conduction Disorders]] · [[Ventricular arrhythmias and bradyarrhythmias]] · [[Atrioventricular block]] · [[Complete heart block]] · [[Pacemaker indications]] · [[Syncope]]
+
+> [!important]
+> Sinus node dysfunction (SND) = failure of sinus node to generate/propagate impulses appropriately. FCPS/MRCP exams test: **bradycardia-tachycardia syndrome**, **diagnostic criteria** (symptom-rhythm correlation), **reversible causes** (drugs, electrolytes), and **permanent pacing indications** (Class I: symptomatic bradycardia). **Asymptomatic sinus bradycardia ≠ SND.**
+
+## Learning Objectives
+- Define sinus node dysfunction and its electrophysiologic mechanisms
+- Recognize clinical presentations: sinus bradycardia, sinus arrest, SA block, chronotropic incompetence, brady-tachy syndrome
+- Correlate symptoms with arrhythmia (symptom-rhythm correlation essential for diagnosis)
+- Identify reversible causes: drugs (BB, CCB, digoxin), electrolytes, hypothyroidism, infiltration
+- Apply permanent pacemaker indications (Class I: symptomatic bradycardia; Class IIa: chronotropic incompetence)
+- Differentiate from physiologic sinus bradycardia (athletes, sleep) and AV block
+
+## Definition
+**Sinus node dysfunction (SND)** = inability of the sinus node to generate impulses at a rate appropriate for metabolic demand, or to conduct impulses to the atria.
+- **Sick sinus syndrome** = clinical syndrome of SND + symptoms (syncope, fatigue, dyspnea, confusion)
+- **Not** = asymptomatic sinus bradycardia (athletes, sleep, beta-blocker on board)
+
+## Classification (Electrophysiologic)
+
+| Type | Mechanism | ECG Finding |
+|------|-----------|-------------|
+| **Sinus bradycardia** | ↓ automaticity | HR <50 bpm (awake), normal P morphology |
+| **Sinus arrest/pause** | Failure of impulse formation | Pause >3s, no P wave, no relationship to basic cycle |
+| **SA exit block** | Failure of impulse propagation | **Type I (Wenckebak)**: progressive PP shortening then pause; **Type II**: pause = multiple of PP |
+| **Chronotropic incompetence** | Inadequate HR response to exercise | HR fails to reach 85% predicted max (220-age) |
+| **Bradycardia-tachycardia syndrome** | Alternating brady + tachy (AF/AT/AFL) | Most common clinical presentation; AF termination → long pause |
+
+## Causes
+
+| Reversible | Irreversible |
+|------------|--------------|
+| **Drugs**: Beta-blockers, CCB (non-DHP), digoxin, amiodarone, lithium, sympatholytics | **Idiopathic fibrosis** (age-related) |
+| **Electrolytes**: Hyperkalemia, hypercalcemia | **Post-cardiac surgery** (AV node ablation, valve surgery, congenital repair) |
+| **Endocrine**: Hypothyroidism, hypothermia | **Infiltrative**: Amyloid, sarcoidosis, hemochromatosis |
+| **Autonomic**: Vasovagal, carotid sinus hypersensitivity | **Inflammatory**: Lyme, Chagas, rheumatic |
+| **Ischemia**: Inferior MI (RCA → sinus node artery) | **Neoplastic** |
+| **Sleep apnea** | **Congenital** (rare) |
+
+## Clinical Features
+
+| Symptom | Mechanism |
+|---------|-----------|
+| **Syncope/presyncope** | Bradycardia/pause → cerebral hypoperfusion |
+| **Fatigue, exercise intolerance** | Chronotropic incompetence |
+| **Dyspnea, HF symptoms** | Low CO, tachycardia-induced CM |
+| **Palpitations** | Tachycardia phase (AF/AFL/AT) in brady-tachy |
+| **Confusion, memory decline** | Cerebral hypoperfusion (elderly) |
+| **Asymptomatic** | Incidental finding |
+
+> [!tip]
+> **Brady-tachy syndrome** = AF terminates → prolonged sinus pause (>3s) → syncope. **Most common presentation for permanent pacing.**
+
+## Diagnostic Criteria (ESC 2018)
+
+**Definitive SND** = Symptom-rhythm correlation:
+- Symptomatic bradycardia (<40 bpm or pauses >3s) **with symptoms**
+- Chronotropic incompetence (HR <85% predicted max + symptoms)
+- Brady-tachy syndrome (documented)
+
+**Probable SND** = Asymptomatic ECG findings + no reversible cause:
+- Sinus bradycardia <40 bpm awake
+- Sinus pause >3s
+- SA block on ECG/Holter
+- After excluding drugs/electrolytes/hypothyroidism
+
+## Diagnostic Workup
+
+| Test | Yield |
+|------|-------|
+| **ECG** | Baseline brady, SA block, AF |
+| **48h Holter / 7-14d patch** | Document brady/pauses, correlate symptoms, detect tachy |
+| **Exercise stress test** | Chronotropic incompetence (HR <85% max) |
+| **ILR (implantable loop recorder)** | Infrequent symptoms, symptom-rhythm correlation |
+| **EPS** | Not routine; SN recovery time >525ms, corrected SNRT >1500ms |
+| **TFT, electrolytes, drug review** | **Mandatory first steps** |
+
+## Management Algorithm
+
+```mermaid
+flowchart TD
+A[Suspected SND] --> B{Reversible cause?}
+B -->|Yes| C[Stop offending drugs / Correct electrolytes / Treat hypothyroidism]
+B -->|No| D[Symptom-rhythm correlation?]
+D -->|Yes (Symptomatic)| E[Permanent Pacemaker — Class I]
+D -->|No (Asymptomatic)| F{Pause >3s or HR<40 awake?}
+F -->|Yes| G[PPM Class IIa (consider)]
+F -->|No| H[Observe, no pacing]
+E --> I[DDDR Mode — rate-responsive]
+```
+
+## Permanent Pacemaker Indications (ESC/ACC)
+
+### Class I (Definite)
+| Indication | Details |
+|------------|---------|
+| **Symptomatic bradycardia** (syncope, fatigue, dyspnea) **with** documented bradycardia/pause | HR <40 bpm awake, pauses >3s, SA block, sinus arrest |
+| **Brady-tachy syndrome** | Symptomatic bradycardia during/after tachyarrhythmia (AF/AFL) |
+| **Chronotropic incompetence** | Symptomatic + HR <85% predicted max on stress test |
+
+### Class IIa (Recommended)
+| Indication | Details |
+|------------|---------|
+| **Asymptomatic** sinus pauses >3s or HR <40 bpm awake | After excluding reversible causes |
+| **SA block** (type II) with pauses >3s | |
+
+### Class III (Not Indicated)
+- Asymptomatic sinus bradycardia >40 bpm
+- Drug-induced bradycardia (reversible)
+- Sleep-related bradycardia
+
+## Pacemaker Mode Selection
+
+| Clinical Scenario | Mode | Rationale |
+|-------------------|------|-----------|
+| **SND with intact AV** | **DDDR** (or AAIR if young/no AV disease) | AV synchrony + rate response |
+| **SND + AV block** | **DDDR** | Both sinus and AV disease |
+| **Chronotropic incompetence** | **DDDR** (rate response essential) | Exercise-induced symptoms |
+| **Permanent AF** | **VVIR** | No atrial tracking needed |
+
+> [!tip]
+> **DDDR preferred over AAIR** — preserves AV synchrony, allows future AV block detection, rate response for chronotropic incompetence.
+
+## Bradycardia-Tachycardia Syndrome (Specific Management)
+
+| Phase | Management |
+|-------|------------|
+| **Bradicardia** | Permanent pacemaker FIRST (prevents pause post-cardioversion/ablation) |
+| **Tachycardia** | AF: rate control (BB/CCB/digoxin) or rhythm control (ablation); Anticoagulation per CHA2DS2-VASc |
+| **Sequence** | **PPM → then tachy management** (avoids bradycardia from antiarrhythmics/cardioversion) |
+
+## Medical Therapy (If Pacing Deferred/Contraindicated)
+| Drug | Use | Caution |
+|------|-----|---------|
+| **Theophylline** | Mild ↑ HR (adenosine antagonist) | Limited evidence; seizures, arrhythmias |
+| **Cilostazol** | ↑ HR via PDE3 inhibition | Off-label; not first-line |
+| **Discontinue offending drugs** | **First step always** | BB, CCB, digoxin, amiodarone |
+
+## Complications
+- **Pacemaker syndrome** (VVI pacing) → upgrade to DDDR
+- **Tachycardia-induced CM** (if tachy uncontrolled)
+- **Thromboembolism** (AF in brady-tachy) → anticoagulation
+- **Lead complications** (dislodgement, fracture, infection)
+
+## Prognosis
+- **With PPM**: Normal life expectancy; symptoms resolve in 80-90%
+- **Without PPM (symptomatic)**: Recurrent syncope, falls, tachycardia-induced CM, reduced QoL
+- **Mortality**: Driven by comorbidities (age, HF, vascular disease), not SND itself
+
+## Red Flags / Exam Traps
+- **Pacing asymptomatic bradycardia** (athlete, sleep, on BB) → not indicated
+- **Missing reversible causes** (drugs, hypothyroidism, electrolytes) before PPM
+- **Treating tachy first in brady-tachy** → antiarrhythmics worsen brady → syncope; **PPM first**
+- **VVI mode in SND** → pacemaker syndrome; use **DDDR**
+- **Chronotropic incompetence** = exercise symptoms + HR <85% max; PPM Class I if symptomatic
+
+## FCPS/MRCP High-Yield Points
+- **SND = symptomatic bradycardia/pauses/chronotropic incompetence** (not asymptomatic brady)
+- **Reversible causes FIRST**: drugs (BB, CCB, digoxin), hypothyroidism, electrolytes
+- **Brady-tachy syndrome** = most common clinical presentation; **PPM first**, then tachy management
+- **DDDR preferred** (AV synchrony + rate response)
+- **Class I PPM**: symptomatic brady <40/pause>3s, brady-tachy, chronotropic incompetence
+- **Symptom-rhythm correlation ESSENTIAL** for diagnosis
+
+## Common Viva Questions
+1. What is sick sinus syndrome?
+2. How do you diagnose sinus node dysfunction?
+3. What is bradycardia-tachycardia syndrome and its management?
+4. Permanent pacemaker indications for SND?
+5. Why DDDR mode preferred in SND?
+6. Differentiate sinus bradycardia from SND?
+
+## Common Confusions / Exam Traps
+- Asymptomatic sinus bradycardia = SND (NO — SND requires symptoms)
+- Athlete's bradycardia = SND (NO — physiologic)
+- Treating tachy before PPM in brady-tachy (WRONG — PPM first)
+- VVI for SND (NO — pacemaker syndrome; DDDR)
+- Not checking drugs/thyroid/electrolytes before PPM
+
+## Mind Map
+```mermaid
+mindmap
+  root((Sinus Node Dysfunction))
+    Types
+      Sinus brady / arrest / SA block
+      Chronotropic incompetence
+      Brady-tachy syndrome
+    Causes
+      Reversible: Drugs, Electrolytes, Thyroid, Ischemia
+      Irreversible: Fibrosis, Post-surgery, Infiltrative
+    Diagnosis
+      Symptom-rhythm correlation (ESSENTIAL)
+      Holter / ILR / Stress test
+      Exclude reversible
+    PPM Indications
+      Class I: Symptomatic brady/tachy-brady/chrono incomp
+      Class IIa: Asymptomatic pause>3s/HR<40
+    Mode
+      DDDR (rate response + AV sync)
+    Brady-Tachy
+      PPM FIRST → then AF management
+```
+
+## One-Page Revision Summary
+- **SND** = symptomatic bradycardia/pauses/chronotropic incompetence (not asymptomatic)
+- **Reversible FIRST**: drugs (BB, CCB, digoxin), hypothyroidism, electrolytes
+- **Brady-tachy syndrome**: AF + pauses → syncope; **PPM first**, then tachy Rx
+- **PPM Class I**: symptomatic (syncope/fatigue/dyspnea) + brady<40/pause>3s/chrono incomp/brady-tachy
+- **DDDR** mode (rate response + AV synchrony)
+- **Chronotropic incompetence** = exercise symptoms + HR <85% (220-age)
+
+## 24-Hour Recall Prompts
+- List 6 reversible causes of SND
+- Define brady-tachy syndrome management sequence
+- State Class I PPM indications for SND
+- Explain why DDDR not VVI
+- Differentiate physiologic brady from SND
+
+## 7-Day / 15-Day / 30-Day Revision Tracker
+- [ ] Day 1 completed
+- [ ] 24-hour recall completed
+- [ ] Day 7 revision completed
+- [ ] Day 15 revision completed
+- [ ] Day 30 revision completed
+
+## Must Know / Should Know / Nice to Know
+### Must Know
+- SND = symptomatic bradycardia/pauses/chrono incomp
+- Reversible causes: drugs, thyroid, electrolytes
+- Brady-tachy = PPM first
+- PPM Class I: symptomatic brady, brady-tachy, chrono incomp
+- DDDR mode
+
+### Should Know
+- SA block types (Wenckebach vs Type II)
+- SNRT/Corr SNRT in EPS
+- Theophylline/cilostazol as bridge
+- Pacemaker syndrome with VVI
+
+### Nice to Know
+- Sinus node re-entry tachycardia (rare)
+- Genetic SND (SCN5A, HCN4)
+- Leadless PPM (Micra) for SND
+
+## Self-Test Scorecard
+- Understanding /10
+- Recall /10
+- Diagnosis /10
+- MCQ performance /10
+- Viva confidence /10
+- **Total /50**
+
+> [!tip]
+> **Interpretation**: <35 = weak topic; 35-44 = acceptable but insecure; 45+ = strong exam-ready topic.
+
+## Exam Answer Modes
+### Long Answer Skeleton
+1. Definition + classification (brady, arrest, SA block, chrono incomp, brady-tachy)
+2. Reversible causes table
+3. Diagnostic criteria (symptom-rhythm correlation essential)
+4. Brady-tachy syndrome (mechanism, management sequence)
+5. PPM indications (Class I, IIa) + mode selection (DDDR)
+6. Medical therapy alternatives
+
+### Short Note Skeleton
+- SND = symptomatic brady/pauses/chrono incomp
+- Reversible: drugs, thyroid, electrolytes
+- Brady-tachy = PPM first, then AF Rx
+- PPM Class I: symptomatic brady<40/pause>3s, brady-tachy, chrono incomp
+- DDDR preferred
+- Symptom-rhythm correlation essential
+
+### Viva One-Liners
+- "SND = symptomatic bradycardia, not asymptomatic"
+- "Brady-tachy = PPM FIRST, then AF management"
+- "DDDR for SND — rate response + AV sync"
+- "Reversible causes: BB, CCB, digoxin, thyroid, K+"
+- "Class I PPM: symptomatic brady, brady-tachy, chrono incomp"
+
+### Ward-Case Discussion Points
+- "75F on metoprolol/diltiazem, syncope, HR 38, pauses 4s" → "Drug-induced. Stop drugs, observe 48h. If persists → DDDR."
+- "70M, AF with syncope, Holter: pause 5s post-cardioversion" → "Brady-tachy. DDDR first. Then anticoagulation + rate/rhythm control for AF."
+- "65F, exertional dyspnea, HR 50 at rest, 85% max predicted on stress" → "Chronotropic incompetence. Symptomatic → DDDR Class I."
+
+### Last-Night-Before-Exam Sheet
+- SND = symptomatic brady/pauses/chrono incomp
+- Reversible: drugs, thyroid, K+, Ca2+
+- Brady-tachy: PPM FIRST
+- PPM Class I: symptomatic brady, brady-tachy, chrono incomp
+- DDDR mode
+- Symptom-rhythm correlation essential
+
+## Summary
+**Sinus node dysfunction (SND)** = **symptomatic** failure of sinus node automaticity/conduction — **not** asymptomatic bradycardia. **Types**: sinus bradycardia (<40 awake), sinus arrest/pause (>3s), SA exit block (Wenckebach Type I or Type II), **chronotropic incompetence** (inadequate HR response to exercise), **bradycardia-tachycardia syndrome** (alternating brady + AF/AFL). **Reversible causes FIRST**: drugs (beta-blockers, non-DHP CCB, digoxin, amiodarone), hypothyroidism, electrolytes (hyperK, hyperCa), inferior MI, sleep apnea. **Diagnosis requires symptom-rhythm correlation** (Holter, ILR, stress test). **Brady-tachy syndrome** = most common presentation; **permanent pacemaker FIRST**, then tachyarrhythmia management. **PPM Class I**: symptomatic bradycardia/pause, brady-tachy, chronotropic incompetence. **Mode: DDDR** (rate response + AV synchrony). **Chronotropic incompetence** = exercise symptoms + HR <85% predicted max.
+
+## MCQs (10)
+1. Sick sinus syndrome requires which essential diagnostic criterion?
+   A. Sinus bradycardia <60 bpm
+   B. **Symptom-rhythm correlation**
+   C. SA block on ECG
+   D. Age >65
+2. Most common clinical presentation of SND:
+   A. Sinus bradycardia
+   B. **Bradycardia-tachycardia syndrome**
+   C. Sinus arrest
+   D. Chronotropic incompetence
+3. Reversible cause of SND — which is NOT reversible?
+   A. Beta-blocker
+   B. Hypothyroidism
+   C. Hyperkalemia
+   D. **Idiopathic fibrosis**
+4. Bradycardia-tachycardia syndrome — correct management sequence:
+   A. Ablate AF first, then PPM
+   B. **PPM first, then manage tachyarrhythmia**
+   C. Antiarrhythmic first, then PPM
+   D. Rate control only
+5. Preferred pacemaker mode for SND with intact AV conduction:
+   A. VVI
+   B. AAI
+   C. **DDDR**
+   D. VDD
+6. Chronotropic incompetence definition:
+   A. HR <60 at rest
+   B. **Failure to reach 85% predicted max HR (220-age) with symptoms**
+   C. HR <40 at rest
+   D. Sinus pause >3s
+7. Class I PPM indication for SND:
+   A. Asymptomatic pause 2.5s
+   B. **Symptomatic bradycardia with documented brady/pause**
+   C. Asymptomatic HR 45 bpm
+   D. Drug-induced bradycardia
+8. SA exit block Type I (Wenckebach) ECG:
+   A. Fixed PP, then sudden pause
+   B. **Progressive PP shortening, then pause <2x PP**
+   C. Pause = exact multiple of PP
+   D. Irregular PP
+9. Drug FIRST to review in elderly with new SND:
+   A. ACE inhibitor
+   B. **Beta-blocker / CCB / Digoxin**
+   C. Statin
+   D. Diuretic
+10. SA block Type II ECG:
+    A. Progressive PP shortening
+    B. **Pause = exact multiple of basic PP interval**
+    C. Irregular PP
+    D. No pause
+
+## SBA Questions (10)
+1. 78F on metoprolol/diltiazem, syncope, HR 38, pauses 4s on Holter. Next:
+   A. Permanent DDDR
+   B. **Stop metoprolol/diltiazem, observe 48h**
+   C. Atropine infusion
+   D. Isoproterenol
+2. 72M, recurrent syncope, Holter: AF 120 → converts to sinus → pause 6s → syncope. Best:
+   A. Amiodarone for AF
+   B. **DDDR first, then AF management**
+   C. AV node ablation + PPM
+   D. Beta-blocker for AF
+3. 60F, exertional dyspnea, HR 55 at rest, achieves 75% max HR on stress. No syncope. Next:
+   A. DDDR
+   B. **Observe — asymptomatic chronotropic incompetence not Class I**
+   C. Theophylline
+   C. Stress test repeat
+4. 80M, permanent AF, HR 40, pauses 4s, syncope. Pacemaker mode:
+   A. DDDR
+   B. **VVIR**
+   C. AAIR
+   D. VVI
+5. SA block Type II — pause duration:
+   A. <2x PP
+   B. **Exact multiple of PP**
+   C. >3s always
+   D. Variable
+6. Which drug can be tried if PPM contraindicated in SND?
+   A. Digoxin
+   B. **Theophylline (adenosine antagonist)**
+   C. Amiodarone
+   D. Verapamil
+7. Brady-tachy syndrome — anticoagulation:
+   A. Not needed (tachy terminates)
+   B. **Per CHA2DS2-VASc (AF present)**
+   C. Only if EF<40%
+   D. Only if prior stroke
+8. Symptom-rhythm correlation for SND — best test for infrequent symptoms:
+   A. 24h Holter
+   B. **ILR (implantable loop recorder)**
+   C. 12-lead ECG
+   D. Exercise test
+9. Young athlete, HR 42, asymptomatic, normal echo. Management:
+   A. DDDR
+   B. **Reassure — physiologic bradycardia**
+   C. Stop exercise
+   D. Theophylline
+10. Post-cardiac surgery (AVR) day 3, HR 38, asymptomatic, on amiodarone. Best:
+    A. Permanent PPM
+    B. **Stop amiodarone, observe — often transient**
+    C. Temporary pacing
+    D. Theophylline
+
+## Flashcards
+- Q: SND definition?
+  A: Symptomatic brady/pauses/chrono incomp (not asymptomatic)
+- Q: Brady-tachy mgmt?
+  A: PPM FIRST → then tachy Rx
+- Q: PPM Class I?
+  A: Symptomatic brady<40/pause>3s, brady-tachy, chrono incomp
+- Q: Mode for SND?
+  A: DDDR (rate response + AV sync)
+- Q: Reversible causes?
+  A: Drugs (BB, CCB, dig), thyroid, electrolytes, MI
+- Q: Chronotropic incompetence?
+  A: Exercise symptoms + HR<85% max
+- Q: Brady-tachy anticoag?
+  A: Per CHA2DS2-VASc (AF present)
+- Q: SA block Type I?
+  A: Progressive PP shortening, pause <2x PP
+- Q: SA block Type II?
+  A: Pause = multiple of PP
+- Q: Athlete HR 42?
+  A: Physiologic, reassure
+
+## Answer Key with Explanations
+### MCQs
+1. **B** — SND diagnosis requires symptoms correlated with bradyarrhythmia (Holter/ILR).
+2. **B** — Brady-tachy syndrome is the most common symptomatic presentation.
+3. **D** — Idiopathic fibrosis is irreversible; drugs/thyroid/electrolytes reversible.
+4. **B** — PPM first prevents bradycardia from antiarrhythmics/cardioversion.
+5. **C** — DDDR provides rate response + AV synchrony; VVI causes pacemaker syndrome.
+6. **B** — Chronotropic incompetence = symptomatic + HR <85% (220-age) on stress test.
+7. **B** — Class I requires symptoms + documented brady/pause.
+8. **B** — SA block Type I = progressive PP shortening, pause <2x PP (Wenckebach).
+9. **B** — Beta-blockers, CCB, digoxin are top reversible offenders.
+10. **B** — Type II = fixed PR equivalent for SA node; pause = exact multiple of PP.
+
+### SBAs
+1. **B** — Drug-induced bradycardia: stop offending drugs first, observe recovery.
+2. **B** — Brady-tachy: PPM first (DDDR), then anticoagulation + rate/rhythm control for AF.
+3. **B** — Asymptomatic chronotropic incompetence = not Class I PPM; observe.
+4. **B** — Permanent AF = VVIR (no atrial tracking needed).
+5. **B** — Type II SA block: pause = exact multiple of basic PP interval.
+6. **B** — Theophylline (adenosine antagonist) has modest chronotropic effect.
+7. **B** — AF in brady-tachy: anticoagulate per CHA2DS2-VASc.
+8. **B** — ILR for infrequent symptoms (<1/week); Holter for frequent (>1/week).
+9. **B** — Athlete with asymptomatic bradycardia = physiologic, reassure.
+10. **B** — Post-op amiodarone bradycardia often transient; stop amiodarone, observe.
 
 ---

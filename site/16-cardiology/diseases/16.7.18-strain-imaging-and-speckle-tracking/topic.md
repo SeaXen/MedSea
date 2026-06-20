@@ -1,85 +1,204 @@
-# Strain Imaging and Speckle Tracking
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.7.18"
+topic: "Strain_imaging_and_speckle_tracking"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/01_Cardiac_Investigations/Strain_imaging_and_speckle_tracking.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="🫀" color="red_bg">
-**Topic:** Strain Imaging & Speckle Tracking — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# Strain imaging and speckle tracking
 
-## 1. Introduction
-**Strain** = fractional change in length of myocardium (deformation). **Strain rate** = rate of deformation. Detects **subclinical myocardial dysfunction** before EF drops. Convention: **negative values = shortening** (LV longitudinal); reported as absolute value or with minus sign.
+> [!info] **Topic Classification**
+> **Section:** 01_Cardiac_Investigations | **Category:** Cardiology
 
-## 2. Types of Strain
+---
 
-| Type | Direction | Reference | Clinical Use |
-|---|---|---|---|
-| **Longitudinal (GLS)** | Base → apex | A4C, A2C, A3C | **GLS <−18%** normal; HFpEF, cardiotoxicity, amyloidosis |
-| **Circumferential** | Circumferential rotation | PSAX | Ischaemia, mid-wall fibrosis |
-| **Radial** | Endocardium → epicardium | PSAX | Less reproducible |
-| **Rotational** | Twist / torsion | PSAX base + apex | HCM, hypertensive heart disease |
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-## 3. Speckle Tracking Echocardiography (STE)
+**Strain imaging and speckle tracking**: chronic coronary syndrome (previously stable angina) — chest pain or discomfort due to myocardial ischaemia, typically precipitated by exertion, emotional stress, or cold, relieved by rest or nitrates. **CCSAP** (chronic coronary syndromes, ESC 2019): 6 scenarios — (1) suspected CAD with stable angina symptoms + dyspnoea, (2) new-onset CCS or recent destabilisation, (3) symptomatic despite treatment, (4) asymptomatic post-revascularisation, (5) asymptomatic 1y post-ACS or recent revascularisation, (6) asymptomatic with detected ischaemia. **Prevalence**: 5-7% in men >45y, 5-7% in women >55y.
 
-- Tracks **natural acoustic speckles** frame-by-frame (not Doppler-dependent, **angle-independent**)
-- Requires **good image quality, frame rate 40–80 fps**
-- Software: **EchoPAC, TomTec, Image Arena**
-- Segmental strain curves (17-segment bullseye plot)
-- **Global Longitudinal Strain (GLS)** = average of segmental peak systolic strain
-- **Normal GLS**: >−18% (vendor-specific: −19.7% EchoPAC, −18.5% GE, etc.)
 
-## 4. Abnormal Strain Patterns
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-| Pattern | Condition |
-|---|---|
-| **Reduced GLS, normal EF** | Subclinical dysfunction (pre-HFpEF, cardiotoxicity) |
-| **Reduced GLS + reduced EF** | HFrEF |
-| **Apical sparing** ("cherry on top" / **bull's-eye pattern with apical preservation**) | **Cardiac amyloidosis** — pathognomonic |
-| **Reduced GLS, basal sparing** | HCM, AS |
-| **Reduced longitudinal, preserved radial/circumferential** | Early anthracycline toxicity |
-| **Reduced GLS in vascular territory** | Ischaemia / infarct |
-| **Septal flash, apical rocking** | **LBBB**, response to CRT |
+**Atherosclerotic narrowing** of epicardial coronary arteries (≥70% stenosis, or ≥50% left main) → **fixed supply limitation**. **Demand-supply mismatch**: exertion (↑HR, ↑BP, ↑contractility) → ↑O2 demand → ischaemia (subendocardium first). **Mechanisms**: (1) **Fixed stenosis** (most common, ≥70%), (2) **Vasospasm** (Prinzmetal, focal or diffuse), (3) **Microvascular** (syndrome X, normal angio, INOCA), (4) **Recurrent ischaemia** post-revascularisation, (5) **Myocardial bridge** (systolic compression). **Triggers**: exertion, emotion, cold, post-prandial, tachyarrhythmia, anaemia, hyperthyroidism, drugs (cocaine, triptans, ergot). **Ischaemia cascade**: perfusion heterogeneity → diastolic dysfunction → ECG changes → pain.
 
-## 5. Clinical Applications
 
-### Cardio-Oncology
-- **GLS <15% relative drop** → hold anthracycline / trastuzumab (ASE/EACVI guidelines)
-- More sensitive than EF for early toxicity
+## 3. CLINICAL FEATURES
 
-### Heart Failure
-- **HFpEF**: GLS <16% strongly suggests cardiac origin of dyspnoea
-- **HFrEF**: GLS predicts response to CRT, prognosis
+**Typical angina** (3): (1) substernal chest discomfort (pressure, heaviness, squeezing, tightness), (2) precipitated by exertion or emotional stress, (3) relieved by rest or nitrates within minutes. **Atypical** (2 of 3, or non-cardiac — women, elderly, diabetics). **Examination**: usually normal. May have: S4, MR murmur (papillary dysfunction), signs of LV dysfunction, peripheral vascular disease, dyslipidaemia (xanthelasma, corneal arcus, tendon xanthomas). **Risk factors**: age, sex, family, HTN, DM, dyslipidaemia, smoking, obesity, sedentary. **Symptoms equivalents**: dyspnoea, fatigue, nausea, back/jaw pain (women, elderly, diabetics).
 
-### Valvular Disease
-- **AS**: ↓ GLS predicts outcomes (symptom onset, post-AVR recovery)
-- **MR**: GLS <−18% pre-surgery = better LV recovery post-op
 
-### Hypertensive Heart Disease / HCM
-- GLS detects **subclinical dysfunction** despite preserved EF
-- Differentiates **athlete's heart** (normal GLS) from **HCM** (reduced GLS)
+## 4. DIAGNOSTIC APPROACH
 
-### Amyloidosis
-- **Apical sparing** = **sensitivity 93%, specificity 82%** for cardiac amyloidosis
-- Combined with **LV wall thickness ≥12 mm** → high specificity
+**Resting ECG**: usually normal (50%), may show Q waves (old MI), LVH, BBB, ST-T changes. **Stress testing**: (1) **Exercise ECG** (≥1mm STD, ≥80ms from J point, in ≥2 contiguous leads, at low workload/high risk — Duke Treadmill Score high-risk <−11), (2) **Stress echo** (RWMA, more sensitive/specific), (3) **Stress CMR** (perfusion, scar, viability), (4) **Stress nuclear** (perfusion, MUGA), (5) **CTCA** (low-intermediate probability, anatomical). **First-line test** depends on pre-test probability: **Low** (<15%): no test, or CAC scoring. **Intermediate** (15-50%): stress imaging (echo, nuclear, CMR) or CTCA. **High** (>50%): invasive angio or functional test. **Invasive coronary angiography** (definitive). **FFR/iFR** (functional assessment, intermediate lesions 50-90%). **CMR** (scar, viability, microvascular obstruction).
 
-### Ischaemia
-- Reduced strain in territory during stress echo = ischaemia
-- More sensitive than wall-motion analysis
 
-## 6. Tissue Doppler Imaging (TDI) Derived Strain
-- **Strain rate** from TDI (SRI) — high temporal resolution
-- **s' wave** (systolic) — RV function ≥9.5 cm/s
-- **e' wave** — diastolic; **E/e' ratio** for filling pressures
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
 
-## 7. Limitations
-- **Vendor-specific** algorithms → cannot directly compare
-- Image quality dependent
-- Loading-condition dependent
-- Software version matters
-- **3D GLS** more reproducible, less vendor variation
+**CCS class** (Canadian Cardiovascular Society): I (ordinary activity, no angina), II (slight limitation, angina with vigorous/rapid), III (marked limitation, angina with ordinary activity), IV (inability to perform any activity, angina at rest). **Duke Treadmill Score**: high-risk <−11, moderate −10 to +4, low ≥+5. **Number of vessels**: 1, 2, 3, left main (>50%). **LV function** (LVEF, regional WMA). **Stress test parameters**: time, workload, HR recovery, BP response, ischaemia threshold (HR×BP product).
 
-> **Pearls**
-> - **GLS >−18%** = normal longitudinal function (vendor-specific cutoffs)
-> - **Apical sparing pattern** = cardiac amyloidosis (95% sensitive)
-> - **Relative GLS drop ≥15%** = hold chemotherapy (cardio-oncology)
-> - **3D GLS** overcomes vendor variability and out-of-plane motion
-> - **Strain > EF** for early cardiotoxicity, amyloidosis, HFpEF
+
+## 6. MANAGEMENT ALGORITHM
+
+**Risk factor modification** (ESC 2019): smoking cessation, BP <130/80, LDL-C <1.4 mmol/L (very high risk) or <1.8 (high), HbA1c <7%, weight (BMI <25), exercise ≥150 min/week, Mediterranean diet, alcohol <14 units/week. **Anti-anginal** (symptom control): (1) **Beta-blocker** (1st line, e.g. bisoprolol, atenolol, metoprolol), (2) **CCB** (dihydropyridine — amlodipine, nifedipine — add or alternative to BB, vasodilator; non-dihydro — verapamil, diltiazem — alternative to BB, avoid with BB), (3) **Long-acting nitrates** (isosorbide mononitrate, add-on, nitrate-free interval 8-12h), (4) **Nicorandil** (K-ATP channel opener, vasodilator), (5) **Ranolazine** (late Na+ current inhibitor, add-on, QT prolongation), (6) **Ivabradine** (HR reduction, sinus rhythm only, if HR≥70), (7) **Trimetazidine** (metabolic, anti-anginal). **Anti-thrombotic**: aspirin 75-100mg daily (or clopidogrel 75mg if aspirin-intolerant). **Lipid-lowering**: high-intensity statin (atorvastatin 40-80mg, rosuvastatin 20-40mg), ezetimibe if not at LDL target, PCSK9i if very high risk. **ACEi/ARB** if HTN, DM, CKD, LV dysfunction. **Revascularisation** (PCI vs CABG): consider if (1) refractory symptoms despite GDMT, (2) high-risk anatomy (left main, 3-vessel, proximal LAD, SYNTAX score), (3) LV dysfunction with viable myocardium. **PCI** vs **CABG**: SYNTAX score, anatomical complexity, surgical risk, patient preference. **ISCHEMIA (2020)**: routine invasive + optimal medical vs optimal medical alone — no overall difference in death/MI, but invasive better in left main, multivessel with LV dysfunction. **Lifestyle**: exercise-based cardiac rehab, Mediterranean diet, weight, smoking, alcohol, sleep.
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+**ACS** (progression of plaque). **MI**. **Heart failure** (ischaemic cardiomyopathy). **Arrhythmia** (VT, AF, brady). **Death** (5-yr 5% with treatment, 15% without). **Repeated hospitalisation** (angina, revascularisation).
+
+
+## 8. SPECIAL POPULATIONS
+
+**Elderly**: more comorbidities, less invasive, more GDMT, careful dosing. **Women**: atypical symptoms, more microvascular (INOCA), more abnormal stress test with normal angio, less revascularisation. **Diabetes**: more multivessel, smaller vessels, more diffuse, higher risk, SGLT2i benefit. **CKD**: more bleeding, more CV risk, dose adjust, more GDMT. **Pregnancy**: avoid statins, ACEi/ARB, warfarin; beta-blocker (atenolol) safe; consider PCI only if refractory.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**ESC 2019 CCSAP (EHJ)**: chronic coronary syndromes, replaces stable angina. **2021 ACC/AHA ACS/CAD**: chronic coronary disease (CCD). **NICE NG95 (2016)**: chest pain of recent onset, updated 2023. **NICE CG126 (2011)**: stable angina (older). **ISCHEMIA (2020)**: routine invasive vs OM. **COURAGE (2007)**: PCI + OM vs OM (no difference in death/MI, OM less invasive). **ORBITA (2018)**: sham-controlled, no significant improvement. **FAME 2 (2012)**: FFR-guided PCI better than OM. **SYNTAX (2009), SYNTAX II**: PCI vs CABG, anatomy, score.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+**Atypical** in women, elderly, diabetics (more common). **Microvascular** (INOCA, syndrome X) — normal angio, abnormal stress. **Vasospasm** (Prinzmetal) — transient STE, normal angio, hyperventilation test. **SCAD** in young women. **Don't delay** GDMT. **Statin + ACEi** for all. **Revascularisation** for refractory symptoms, high-risk anatomy (left main, 3-vessel, proximal LAD), LV dysfunction with viability. **Lifestyle** critical. **Anxiety/depression** common. **Differential** non-cardiac chest pain (oesophageal, MSK, anxiety).
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**Typical angina** (3): substernal, exertion, relieved by rest/nitrates. **Atypical** (2 of 3, or non-cardiac). **CCSAP** (ESC 2019): 6 scenarios. **CCS class** I-IV. **Duke Treadmill**: high-risk <−11. **SYNTAX**: PCI vs CABG, anatomy. **ISCHEMIA (2020)**: no overall death/MI difference (except left main, 3-vessel with LV dysfunction). **Anti-anginal ladder**: BB → CCB (dihydro) → long-acting nitrates → nicorandil → ranolazine → ivabradine (sinus) → trimetazidine. **Microvascular** (INOCA, syndrome X): female, abnormal stress, normal angio, treat with BB, CCB, ranolazine. **Vasospasm** (Prinzmetal): transient STE, normal angio, CCB, nitrates, avoid triptans, ergot.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+Oesophageal spasm, GERD, peptic ulcer, cholecystitis, MSK chest pain (costochondritis, Tietze), cervical radiculopathy, herpes zoster, anxiety, panic, PE, aortic dissection, pericarditis, myocarditis, Takotsubo, MS, AS, HCM, microvascular (INOCA), vasospasm, SCAD.
+
+
+## 13. INVESTIGATIONS
+
+Resting ECG, stress testing (exercise ECG, stress echo, stress CMR, stress nuclear), CTCA (low-intermediate), invasive coronary angiography (± FFR/iFR), echo (LV function, MR, structural), CMR (scar, viability), Holter (arrhythmia), CXR, bloods (FBC, U&E, LFT, TFT, lipid profile, hs-CRP, Lp(a), HbA1c), BP, BMI.
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Strain imaging and speckle tracking?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Strain imaging and speckle tracking:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Strain imaging and speckle tracking:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Strain imaging and speckle tracking?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Strain imaging and speckle tracking is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Strain imaging and speckle tracking. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Strain imaging and speckle tracking on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Strain imaging and speckle tracking
+2. Discuss the pathophysiology of Strain imaging and speckle tracking
+3. What are the diagnostic criteria for Strain imaging and speckle tracking?
+4. Outline the management approach to Strain imaging and speckle tracking
+5. What are the complications and prognosis of Strain imaging and speckle tracking?
+6. What are the latest guidelines for Strain imaging and speckle tracking?
+7. How is Strain imaging and speckle tracking managed in special populations?
+8. Compare Strain imaging and speckle tracking with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Strain_imaging_and_speckle_tracking.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

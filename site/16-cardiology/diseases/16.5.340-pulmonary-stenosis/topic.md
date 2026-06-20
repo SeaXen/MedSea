@@ -1,192 +1,312 @@
-<!-- Source: /mnt/tb/Medicine/Cardiology/05_Valvular_Heart_Disease/Pulmonary_stenosis.md | section: 16.5 | hub: valvular-heart-disease -->
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.5.340"
+topic: "Pulmonary stenosis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/Valvular Heart Disease and Murmur Syndromes/Pulmonary stenosis.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
 # Pulmonary stenosis
 
-> [!info] **Topic Classification**
-> **Section:** 05_Valvular_Heart_Disease | **Category:** Cardiology
-
----
-
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Pulmonary stenosis** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (05 Valvular Heart Disease). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-The pathophysiology of Pulmonary stenosis involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
-
-
-## 3. CLINICAL FEATURES
-
-Clinical presentation of Pulmonary stenosis varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
-
-
-## 4. DIAGNOSTIC APPROACH
-
-Diagnostic approach to Pulmonary stenosis includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-Management of Pulmonary stenosis: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-Complications of Pulmonary stenosis: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
-
-
-## 8. SPECIAL POPULATIONS
-
-**Special populations in Pulmonary stenosis**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**Latest guidelines relevant to Pulmonary stenosis**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Common pitfalls in Pulmonary stenosis**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Key mnemonics for Pulmonary stenosis**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-**Differential diagnosis of Pulmonary stenosis** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
-
-
-## 13. INVESTIGATIONS
-
-**Investigations for Pulmonary stenosis**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Pulmonary stenosis?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Pulmonary stenosis:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Pulmonary stenosis:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Pulmonary stenosis?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Pulmonary stenosis is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Pulmonary stenosis. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Pulmonary stenosis on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Pulmonary stenosis
-2. Discuss the pathophysiology of Pulmonary stenosis
-3. What are the diagnostic criteria for Pulmonary stenosis?
-4. Outline the management approach to Pulmonary stenosis
-5. What are the complications and prognosis of Pulmonary stenosis?
-6. What are the latest guidelines for Pulmonary stenosis?
-7. How is Pulmonary stenosis managed in special populations?
-8. Compare Pulmonary stenosis with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Pulmonary_stenosis.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Valvular Heart Disease and Murmur Syndromes|Valvular Heart Disease and Murmur Syndromes]] · [[Right-sided and mixed valvular disease]] · [[Congenital Heart Disease in Adults]]
+
+## Definition
+Pulmonary stenosis (PS) is obstruction to right ventricular outflow at the pulmonary valve, subvalvular region, or supravalvular pulmonary artery. In adult cardiology and FCPS/MRCP settings, the commonest clinically important form is **congenital valvular pulmonary stenosis** persisting into adulthood.
+
+## Anatomy
+- Pulmonary valve lies between RV outflow tract and main pulmonary artery.
+- It normally has three cusps.
+- Obstruction may be:
+  - valvular (most common)
+  - subvalvular/infundibular
+  - supravalvular
+- Long-standing obstruction causes RV hypertrophy and post-stenotic pulmonary artery dilatation in some cases.
+
+## Physiology
+- RV must generate higher systolic pressure to eject across the obstructed outflow.
+- This causes **pressure overload** of the RV.
+- Mild PS may be asymptomatic.
+- Severe PS reduces forward pulmonary blood flow, limits exercise capacity, and may eventually cause right-sided failure.
+
+## Classification
+### By anatomical level
+- Valvular PS
+- Subvalvular (infundibular) PS
+- Supravalvular PS
+
+### By severity
+- Mild, moderate, severe based on Doppler peak velocity/gradient and RV pressure burden on echocardiography.
+- Severe PS is suggested by significant RV pressure overload, symptoms, and high Doppler gradients.
+
+## Etiology / risk factors
+- Congenital valvular pulmonary stenosis - commonest
+- Noonan syndrome or other congenital syndromes
+- Post-surgical or complex congenital heart disease contexts
+- Rare acquired causes: carcinoid, rheumatic disease, tumor compression
+
+## Pathophysiology
+1. RV outflow obstruction increases RV systolic pressure.
+2. RV hypertrophy develops.
+3. Severe obstruction limits pulmonary blood flow and cardiac output during exertion.
+4. Advanced disease leads to right-sided congestion, arrhythmia, and RV dysfunction.
+
+## Clinical features
+### Symptoms
+- Often asymptomatic if mild
+- Exertional dyspnea
+- Fatigue
+- Presyncope/syncope on exertion in severe disease
+- Right-sided failure symptoms in advanced disease
+
+### Signs
+- Ejection systolic murmur at upper left sternal edge
+- Murmur radiates toward left shoulder/back
+- Ejection click may be present and may soften/disappear with severe calcification
+- Wide splitting of S2; soft/delayed P2 in severe PS
+- RV heave
+- Signs of right-sided failure if advanced
+
+## Investigations
+- **Echocardiography**: key test; defines level of obstruction, valve morphology, gradient, RV hypertrophy/function
+- **ECG**: RV hypertrophy, right axis deviation in moderate-severe disease
+- **Chest X-ray**: post-stenotic dilatation of pulmonary artery, RV enlargement in severe disease
+- **Cardiac MRI/catheterization** in selected congenital/interventional planning cases
+
+## Interpretation frameworks
+### Murmur / valve clues
+- Upper left sternal ejection systolic murmur points to RV outflow lesion.
+- Soft or delayed P2 suggests more severe obstruction.
+- Distinguish from ASD flow murmur by RV heave, click, gradient, and echo anatomy.
+
+### Hemodynamic profile
+- PS = **pressure-loaded RV**, unlike TR/TS which mainly produce venous congestion patterns.
+- Severe PS may cause low-output exertional symptoms and later systemic venous congestion.
+
+### ECG relevance
+- RVH and right axis deviation support significant pressure overload.
+- Arrhythmias may appear in advanced congenital disease or after intervention.
+
+### ACS / troponin logic
+- PS is not an ACS syndrome.
+- Syncope or chest discomfort in PS should not be mislabeled as ischemia without ECG/troponin/clinical correlation.
+- Troponin belongs to ischemic assessment, not PS severity grading.
+
+## Diagnosis
+Diagnosis is made by clinical suspicion plus echocardiographic confirmation of the level and severity of RV outflow obstruction.
+
+## Differential diagnosis
+- Atrial septal defect with pulmonary flow murmur
+- Tetralogy of Fallot spectrum lesions
+- Hypertrophic cardiomyopathy with RVOT involvement (rare)
+- Pulmonary flow murmur of high output states
+- Aortic stenosis mistaken by murmur location/radiation confusion
+
+## Management
+### General
+- Mild asymptomatic PS may need follow-up only.
+- Assess severity and RV response carefully.
+
+### Definitive treatment
+- **Balloon valvuloplasty** is preferred for suitable valvular PS
+- Surgery for subvalvular/supravalvular lesions or unsuitable valves/complex anatomy
+
+### Medical treatment
+- Limited role except symptom management and treatment of right-sided failure when present
+- Arrhythmia management as required
+
+### Cautions
+- Do not confuse PS with innocent pulmonary flow murmurs.
+- In adults, always think congenital context.
+- Severe exertional syncope is a red-flag severity clue.
+
+## Complications
+- RV hypertrophy and dysfunction
+- Right-sided heart failure
+- Arrhythmias
+- Exercise limitation
+- Rare sudden deterioration in severe untreated disease
+
+## Red flags / emergencies
+- Exertional syncope in severe PS
+- Progressive RV failure
+- Severe gradient with symptoms
+- Cyanotic/complex congenital context needing specialist review
+
+## One-Page Revision Summary
+- PS = RV outflow obstruction, usually congenital valvular.
+- Core hemodynamic effect: **RV pressure overload**.
+- Classic murmur: ejection systolic at upper left sternal edge.
+- Severe PS gives soft/delayed P2, RV heave, exertional syncope.
+- Echo defines severity.
+- Balloon valvuloplasty is often the treatment of choice for valvular PS.
+
+## Common Viva Questions
+- How do PS and TR differ hemodynamically?
+- What bedside clues suggest severe PS?
+- Why is congenital disease the usual cause in adults?
+- When is balloon valvuloplasty preferred?
+- How do you distinguish PS murmur from other systolic murmurs?
+
+## MCQs
+1. The most common clinically important cause of PS in adults is:
+   A. Congenital valvular PS
+   B. Acute rheumatic fever only
+   C. Coronary artery disease
+   D. Essential hypertension
+2. The main hemodynamic burden in PS is:
+   A. LV volume overload
+   B. RV pressure overload
+   C. LA pressure overload
+   D. Aortic regurgitation
+3. The murmur of PS is usually heard best at the:
+   A. Apex
+   B. Upper left sternal edge
+   C. Lower right sternal edge
+   D. Carotids only
+4. Severe PS may produce which heart sound change?
+   A. Loud early P2 always
+   B. Soft or delayed P2
+   C. Opening snap
+   D. Pericardial knock
+5. The key investigation for PS is:
+   A. Echo
+   B. EEG
+   C. Colonoscopy
+   D. D-dimer
+6. Preferred definitive treatment for suitable valvular PS is:
+   A. Balloon valvuloplasty
+   B. CABG
+   C. Thrombolysis
+   D. Dialysis
+7. ECG in significant PS may show:
+   A. RV hypertrophy
+   B. Left bundle branch block only
+   C. P mitrale only
+   D. Inferior STEMI always
+8. A red-flag symptom in severe PS is:
+   A. Exertional syncope
+   B. Hematemesis
+   C. Dysuria
+   D. Diarrhea
+9. Post-stenotic dilatation may be seen in the:
+   A. Pulmonary artery
+   B. Ascending aorta only
+   C. Coronary sinus
+   D. Left atrium
+10. PS is most likely to be confused clinically with:
+   A. Other outflow or flow systolic murmurs
+   B. Nephrotic syndrome
+   C. Acute abdomen
+   D. Mitral stenosis only
+
+## SBA Questions
+1. A 24-year-old man has an upper left sternal ejection systolic murmur, RV heave, and exertional presyncope. Most likely diagnosis:
+   A. Pulmonary stenosis
+   B. Mitral regurgitation
+   C. Tricuspid stenosis
+   D. Aortic regurgitation
+2. The best first-line test to confirm severity of PS is:
+   A. Echocardiography
+   B. CT brain
+   C. LFT
+   D. Sleep study
+3. A patient with severe PS is most likely to develop which ventricular change?
+   A. RV hypertrophy
+   B. LV aneurysm
+   C. LA myxoma
+   D. Mitral commissural fusion
+4. Which treatment is preferred for suitable congenital valvular PS?
+   A. Balloon valvuloplasty
+   B. Valve thrombectomy
+   C. Thrombolysis
+   D. ACE inhibitor alone
+5. Which bedside clue suggests severe PS rather than a trivial murmur?
+   A. RV heave and soft P2
+   B. Water-hammer pulse
+   C. Opening snap
+   D. Bounding carotids
+6. In PS, troponin should be ordered:
+   A. Only when ischemia is suspected clinically
+   B. To grade PS severity directly
+   C. In all congenital murmurs routinely
+   D. Instead of echo
+7. A patient with PS has syncope during exertion. Best interpretation:
+   A. This is a potential severity marker
+   B. It proves ACS
+   C. It excludes congenital disease
+   D. It means TS only
+8. A common radiographic clue in PS is:
+   A. Post-stenotic pulmonary artery dilatation
+   B. Mitral calcification only
+   C. Pleural effusion always
+   D. Left atrial appendage enlargement only
+9. Which feature best distinguishes PS from TR?
+   A. PS causes RV pressure overload and ejection systolic murmur
+   B. PS causes only ascites
+   C. PS gives apical diastolic murmur
+   D. PS is mainly a venous congestion syndrome from onset
+10. If anatomy is not suitable for valvuloplasty, next option is often:
+   A. Surgical repair/intervention
+   B. No follow-up
+   C. Antibiotics only forever
+   D. Hemodialysis
+
+
+
+## Common Viva Questions
+1. What are the echocardiographic criteria for grading pulmonary stenosis severity?
+2. When is balloon pulmonary valvotomy indicated?
+3. What are the long-term complications of pulmonary stenosis after valvotomy?
+4. How does pulmonary stenosis present in adults vs children?
+5. What is the association of pulmonary stenosis with Noonan syndrome and other conditions?
+6. What is the role of surgical valvotomy vs percutaneous in modern practice?
+7. How does pulmonic regurgitation develop after pulmonary stenosis intervention?
+8. When is pulmonary valve replacement indicated for post-stenotic PR?
+## Flashcards
+- Q: Commonest adult cause of PS?
+  A: Congenital valvular pulmonary stenosis.
+- Q: Main hemodynamic burden of PS?
+  A: RV pressure overload.
+- Q: Classic murmur location in PS?
+  A: Upper left sternal edge.
+- Q: Severe PS may cause what P2 change?
+  A: Soft or delayed P2.
+- Q: Best test for PS severity?
+  A: Echocardiography.
+- Q: Preferred treatment for suitable valvular PS?
+  A: Balloon valvuloplasty.
+- Q: Important severity symptom?
+  A: Exertional syncope.
+- Q: Typical ECG change in significant PS?
+  A: RV hypertrophy.
+
+## Answer key with explanations
+### MCQs
+1. **A** - Congenital valvular disease is the usual important adult cause.
+2. **B** - RV pressure overload is the hallmark.
+3. **B** - The murmur is best heard at the upper left sternal border.
+4. **B** - A soft/delayed P2 points toward severe obstruction.
+5. **A** - Echo defines anatomy, gradient, and RV effect.
+6. **A** - Balloon valvuloplasty is the standard preferred treatment for suitable valvular PS.
+7. **A** - RVH and right axis deviation are typical when significant.
+8. **A** - Exertional syncope is a red-flag symptom.
+9. **A** - Post-stenotic pulmonary artery dilatation is classic.
+10. **A** - PS is mainly distinguished among systolic outflow murmurs.
+
+### SBAs
+1. **A** - The clinical picture fits PS.
+2. **A** - Echo is first-line and confirmatory.
+3. **A** - Pressure overload produces RV hypertrophy.
+4. **A** - Balloon valvuloplasty is preferred in suitable valvular disease.
+5. **A** - RV heave with soft P2 supports severe PS.
+6. **A** - Troponin is used only when ischemia is suspected.
+7. **A** - Exertional syncope is a severity clue needing specialist evaluation.
+8. **A** - Post-stenotic pulmonary artery enlargement is a classic clue.
+9. **A** - PS is a pressure-overload outflow lesion, unlike TR.
+10. **A** - Surgery is used when valvuloplasty is unsuitable.

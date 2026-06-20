@@ -1,128 +1,204 @@
-# Risk Scores (GRACE, TIMI, HEART)
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.1.29"
+topic: "Risk_scores_GRACE_TIMI_HEART"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/02_Acute_Coronary_Syndromes/Risk_scores_GRACE_TIMI_HEART.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="🚑" color="red_bg">
-**Topic:** ACS Risk Scores — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# Risk scores GRACE TIMI HEART
 
-## 1. Introduction
-Risk scores in ACS **stratify prognosis** and **guide management** (early invasive vs conservative, ICU admission, length of stay, secondary prevention). Most used: **GRACE, TIMI, HEART**.
+> [!info] **Topic Classification**
+> **Section:** 02_Acute_Coronary_Syndromes | **Category:** Cardiology
 
-## 2. GRACE Score (Global Registry of Acute Coronary Events)
+---
 
-### Variables (8)
-- **Age** (years)
-- **HR** (bpm)
-- **SBP** (mmHg)
-- **Creatinine** (mg/dL or μmol/L)
-- **Killip class** (I–IV)
-- **Cardiac arrest** at admission (yes/no)
-- **ST deviation** (yes/no)
-- **Elevated cardiac biomarkers** (yes/no)
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-### Outcomes Predicted
-- **In-hospital mortality**
-- **6-month mortality**
-- **1-year mortality**
-- **3-year mortality** (GRACE 2.0)
+**ACS risk scores** quantify prognosis, guide management. **GRACE** (Global Registry of Acute Coronary Events): in-hospital and 6-month mortality, ESC-recommended. **TIMI** (Thrombolysis In Myocardial Infarction): 14-day MACE for UA/NSTEMI, 30-day mortality for STEMI. **HEART** (History, ECG, Age, Risk factors, Troponin): ED chest pain triage. **CRUSADE** for bleeding risk.
 
-### Risk Categories (In-hospital mortality)
-- **Low**: GRACE <109 → mortality <1%
-- **Intermediate**: 109–140 → 1–3%
-- **High**: >140 → >3%
 
-### Use
-- **Best validated** for ACS prognosis
-- **Class I** recommendation (ESC, AHA/ACC) for risk stratification
-- **Guides timing** of invasive strategy (NSTEMI)
-  - **GRACE >140** → early invasive <24 h
-  - **GRACE 109–140** → invasive <72 h
-  - **GRACE <109** → ischaemia-guided
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-## 3. TIMI Score (Thrombolysis in Myocardial Infarction)
+Statistical models from large ACS registries. GRACE: multinational >100,000 patients. TIMI: TIMI-11B, ESSENCE trials. HEART: ED chest pain populations. Variables weighted by independent prognostic value.
 
-### For NSTEMI/UA (7 variables, 0–7 points)
-- **Age ≥65** (1)
-- **≥3 CAD risk factors** (FH, HTN, DM, smoking, dyslipidaemia) (1)
-- **Known CAD (≥50% stenosis)** (1)
-- **Aspirin use in last 7 days** (1)
-- **Severe angina (≥2 episodes in 24 h)** (1)
-- **ST deviation ≥0.5 mm** (1)
-- **Elevated cardiac biomarkers** (1)
 
-### Interpretation
-- 0–1: 4.7% MACE at 14 days
-- 2: 8.3%
-- 3: 13.2%
-- 4: 19.9%
-- 5–7: ≥26.2%
+## 3. CLINICAL FEATURES
 
-### STEMI TIMI Score (0–14)
-- Age, DM, HTN, exam, weight, SBP, HR, Killip, anterior MI, time to Rx
+**GRACE**: Age, HR, SBP, Cr, Killip class, cardiac arrest, ST-deviation, biomarkers. **TIMI UA/NSTEMI** (0-7): age ≥65, ≥3 RF, CAD, ST-dev ≥0.5mm, severe angina, ASA, +markers. **TIMI STEMI**: age ≥75, ≥3 RF, prior CABG/MI, ST-dev, DM, SBP<100, HR≥100. **HEART** (0-10): History (0-2), ECG (0-2), Age (0-2), Risk factors (0-2), Troponin (0-2).
 
-### Use
-- Simple, bedside
-- Less accurate than GRACE
 
-## 4. HEART Score (History, ECG, Age, Risk factors, Troponin)
+## 4. DIAGNOSTIC APPROACH
 
-### Variables (0–10)
-- **History**: 0 (slightly suspicious) / 1 (moderately) / 2 (highly suspicious) (3 pts)
-- **ECG**: 0 (normal) / 1 (non-specific, LBBB, LVH, repol changes) / 2 (significant ST deviation not due to LVH/LBBB) (2 pts)
-- **Age**: <45 (0), 45–64 (1), ≥65 (2)
-- **Risk factors** (HTN, DM, dyslipidaemia, obesity, smoking, FH, atherosclerosis): 0 (none) / 1 (1–2) / 2 (≥3 or hx of atherosclerosis)
-- **Troponin**: 0 (≤normal) / 1 (1–3× normal) / 2 (>3× normal)
+Calculate at admission, repeat if clinical change. **GRACE** preferred in NSTEMI/UA. **TIMI** for quick bedside. **HEART** for ED chest pain.
 
-### Interpretation
-- **0–3** — low risk (MACE 1.7%) — **discharge**
-- **4–6** — moderate risk (MACE ~16%) — observe/admit, stress test
-- **7–10** — high risk (MACE 50–65%) — early invasive
 
-### Use
-- **ED triage** of undifferentiated chest pain
-- Validated, widely used in EDs
-- Modified HEART (incorporates hs-cTn)
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
 
-## 5. PURSUIT, PREDICT, AMIS, ZWOLLE Scores
-- Less commonly used
-- PURSUIT — NSTEMI/UA, similar to GRACE
-- Zwolle — primary PCI mortality in STEMI
+GRACE in-hospital mortality: low <108 (0.4-1.4%), intermediate 108-140 (1.4-3.9%), high >140 (3.9-50%). TIMI 0/1: 4.7% MACE; 6/7: 40.9%. HEART low: 1.7% MACE 6 weeks; high: 50-65%.
 
-## 6. Comparison
 
-| Score | Best For | Strength | Weakness |
-|---|---|---|---|
-| **GRACE** | NSTEMI/UA, STEMI | Best validated, accurate | Needs bloods, more variables |
-| **TIMI** | NSTEMI/UA, STEMI | Simple | Less accurate |
-| **HEART** | ED chest pain triage | Easy, incorporates troponin | Less granular |
-| **PURSUIT** | NSTEMI/UA | Older | Supplanted by GRACE |
+## 6. MANAGEMENT ALGORITHM
 
-## 7. Bleeding Risk Scores
-- **CRUSADE** — NSTEMI bleeding risk (in-hospital major bleeding)
-- **ACUITY / HORIZONS** — for NSTEMI PCI
-- Used to balance **ischaemic vs bleeding risk** (e.g., DAPT duration, access site)
+GRACE >140: early invasive <24h. GRACE 108-140: <72h. GRACE <108: non-invasive. HEART 0-3: discharge. HEART 4-6: admit, serial troponin. HEART ≥7: aggressive. **DAPT score** guides DAPT duration.
 
-## 8. Other Risk Markers
-- **LVEF** — strongest single predictor of long-term mortality
-- **hs-CRP** — inflammation (CANTOS)
-- **BNP / NT-proBNP** — HF, prognosis
-- **Renal function** (eGFR) — strong predictor
-- **Time to reperfusion** (STEMI) — door-to-balloon <90 min
-- **Cumulative risk factors** — DM, CKD, age, prior MI
 
-## 9. Risk-Based Management
-- **NSTEMI**:
-  - **GRACE >140** → early invasive <24 h
-  - **GRACE 109–140** → invasive <72 h
-  - **GRACE <109** → ischaemia-guided
-- **STEMI** — primary PCI regardless of score
-- **Discharge** — HEART ≤3, low TIMI/GRACE
+## 7. COMPLICATIONS & PROGNOSIS
 
-> **Pearls**
-> - **GRACE >140** = high-risk NSTEMI → invasive <24 h
-> - **HEART ≤3** = low risk → safe to discharge from ED
-> - **TIMI 5–7** = high-risk NSTEMI → early invasive
-> - **GRACE** best validated; **HEART** best for ED triage
-> - **LVEF** is the strongest single long-term predictor
-> - Use **bleeding risk** (CRUSADE) and **ischaemic risk** to balance DAPT
+High scores predict death, MI, stroke, recurrent ischaemia, shock, bleeding. Need closer monitoring, more aggressive antithrombotic, advanced therapies.
+
+
+## 8. SPECIAL POPULATIONS
+
+CKD: GRACE may underestimate. Elderly: high-risk but high bleeding (use CRUSADE). Diabetes: higher risk. Women: tend to score lower but higher in-hospital mortality.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+ESC 2023: GRACE class IA. ACC/AHA 2023: TIMI or GRACE. NICE NG185: GRACE. CRUSADE for bleeding.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+Don't use single score in isolation. GRACE underestimates bleeding (use CRUSADE). TIMI simpler but less accurate. HEART for ED triage. Statistical — clinical judgment always.
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+GRACE, TIMI, HEART (History, ECG, Age, Risk, Troponin), CRUSADE, DAPT score (≥2 long, <2 short), PURSUIT.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+High score = established CAD, multiple RF, advanced age, haemodynamic instability, renal dysfunction.
+
+
+## 13. INVESTIGATIONS
+
+Calculate at admission, repeat if clinical change. Combine with ECG, troponin, echo, biomarkers. Document for MDT, discharge.
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Risk scores GRACE TIMI HEART?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Risk scores GRACE TIMI HEART:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Risk scores GRACE TIMI HEART:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Risk scores GRACE TIMI HEART?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Risk scores GRACE TIMI HEART is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Risk scores GRACE TIMI HEART. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Risk scores GRACE TIMI HEART on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Risk scores GRACE TIMI HEART
+2. Discuss the pathophysiology of Risk scores GRACE TIMI HEART
+3. What are the diagnostic criteria for Risk scores GRACE TIMI HEART?
+4. Outline the management approach to Risk scores GRACE TIMI HEART
+5. What are the complications and prognosis of Risk scores GRACE TIMI HEART?
+6. What are the latest guidelines for Risk scores GRACE TIMI HEART?
+7. How is Risk scores GRACE TIMI HEART managed in special populations?
+8. Compare Risk scores GRACE TIMI HEART with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Risk_scores_GRACE_TIMI_HEART.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

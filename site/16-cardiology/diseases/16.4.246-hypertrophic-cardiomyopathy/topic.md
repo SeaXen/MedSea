@@ -1,192 +1,322 @@
-<!-- Source: /mnt/tb/Medicine/Cardiology/04_Heart_Failure/Hypertrophic_cardiomyopathy_(HCM).md | section: 16.4 | hub: heart-failure -->
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.4.246"
+topic: "Hypertrophic cardiomyopathy"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/Cardiomyopathies and Myocardial Disease/Hypertrophic cardiomyopathy.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
 # Hypertrophic cardiomyopathy
 
-> [!info] **Topic Classification**
-> **Section:** 04_Heart_Failure | **Category:** Cardiology
-
----
-
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Hypertrophic cardiomyopathy** (Hypertrophic Cardiomyopathy, HCM): defined by LV wall thickness ≥15mm (or ≥13mm with family Hx) unexplained by abnormal loading conditions. **Sarcomeric disease** in 60% (autosomal dominant, MYH7, MYBPC3 most common, others). **Prevalence**: 1:500. **Most common genetic CV disease**. **Apical HCM** (Yamaguchi syndrome, especially Asian). **Obstructive HCM (HOCM)**: ~70%, LVOT gradient ≥30 mmHg at rest or with provocation (Valsalva, exercise). **Non-obstructive (HNOCM)**: 30%.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-**Sarcomere mutations**: MYH7 (β-myosin heavy chain, 30-40%), MYBPC3 (myosin-binding protein C, 30-40%, often later onset), others (TNNT2, TNNI3, ACTC1, MYL2, MYL3, α-tropomyosin). **Mechanism**: ↑Ca2+ sensitivity, altered contraction, energy depletion, hypertrophy, fibrosis, disarray. **Histology**: myocyte hypertrophy, disarray, interstitial fibrosis, small vessel disease. **Dynamic obstruction**: SAM (systolic anterior motion) of MV, septal hypertrophy, drag forces, LVOT gradient. **Diastolic dysfunction** (stiff, hypertrophied). **Ischaemia** (small vessel, capillary rarefaction, mismatch). **Arrhythmia** (atrial — AF 20-30%, ventricular — VT/VF, NSVT, SCD risk). **Apical HCM**: giant negative T waves, spade-like LV.
-
-
-## 3. CLINICAL FEATURES
-
-**Asymptomatic** (most). **Symptoms**: dyspnoea (diastolic dysfunction, MR, LVOT), chest pain (ischaemia, microvascular), syncope (LVOT obstruction, arrhythmia, exertional), presyncope, palpitations (AF, VT), HF, SCD (often first presentation, young athletes). **Examination**: **jerky pulse** (spike-and-dome, bifid), **double apex beat** (atrial contraction into stiff LV), **harsh systolic ejection murmur at LLSB** (LVOT, **↑Valsalva, standing, post-PVC, post-extrasystolic accentuation**), **MR murmur** (apex, pan-systolic, posterior leaflet SAM), S4. **SCD risk**: history of VF/sustained VT, family Hx SCD, unexplained syncope, massive LVH ≥30mm, NSVT on Holter, abnormal BP response to exercise (young <40y), apical aneurysm, fibrosis (LGE on CMR ≥15%). **HCM Risk-SCD calculator** (ESC 2022, 5-year SCD risk).
-
-
-## 4. DIAGNOSTIC APPROACH
-
-**ECG**: LVH with deep T inversion (apical HCM — giant TWI precordial), ST depression, Q waves (septal), deep S V1-V2, abnormal Q. **Echocardiography** (essential): LV wall thickness ≥15mm, distribution (asymmetric septal, concentric, apical, mid-ventricular, RV), LVOT gradient (rest, Valsalva, exercise — peak instantaneous gradient ≥30 mmHg = obstruction), SAM, MR (posterior leaflet), LVEF (usually preserved, hyperdynamic), diastolic function, LA size. **CMR** (gold standard, especially for apical, RV, atypical): tissue characterisation, fibrosis (LGE, often at RV insertion points and septum), apical aneurysm, fatty infiltration. **Holter** (24-48h) for NSVT. **Exercise test** (BP response, gradient, capacity). **Cardiopulmonary exercise test** (VO2 max). **Family screening** (1st degree, ECG + echo every 1-5y, age 12-18). **Genetic testing** (sarcomere, panel). **Differential**: amyloidosis (LVH + low voltage, screen with bone scintigraphy — ATTR), hypertensive heart disease (LVH + HTN), athlete's heart (eccentric, <15mm, regression with detraining), aortic stenosis, Fabry, Danon, PRKAG2, Friedreich ataxia.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-**HCM Risk-SCD calculator (ESC 2022)**: 5-year SCD risk. Variables: age, LV max wall thickness, LA diameter, LVOT gradient, NSVT, unexplained syncope, family Hx SCD. **Low** <4%, **intermediate** 4-6%, **high** ≥6% (consider ICD). **Apical aneurysm**: SCD risk 5%/y. **LV EF <50%** (end-stage, burned-out): 1-2%/y. **Massive LVH ≥30mm**: SCD risk. **NSVT** on Holter.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-**Asymptomatic, no SCD risk**: monitor (echo every 1-2y), family screening, education, exercise (low-intensity, avoid competitive sports — ESC 2020). **Symptomatic obstructive (HOCM)**: (1) **Beta-blocker** (first-line, nadolol, propranolol, bisoprolol, metoprolol), (2) **Non-dihydro CCB** (verapamil, diltiazem — caution if severe gradient or hypotension), (3) **Disopyramide** (if persistent symptoms, add-on, prolongs QT, monitor — class IA antiarrhythmic, negative inotrope, can be used in structural HD unlike flecainide), (4) **Septal reduction therapy**: **alcohol septal ablation (ASA)** or **surgical myectomy** (for severe symptoms, gradient ≥50 mmHg at rest or with Valsalva, refractory to medical, NYHA III-IV, class IA). **Symptomatic non-obstructive (HNOCM)**: beta-blocker, verapamil, diuretics (cautious), avoid afterload reduction (worsens gradient — but no gradient here). **Apical HCM**: usually medical. **End-stage (EF<50%)**: standard HF GDMT, transplant evaluation. **AF**: rate or rhythm, anticoagulation (DOAC, also high stroke risk even without typical CHADS-VASc). **SCD prevention**: ICD (primary if Risk-SCD ≥6% over 5y, secondary if survived SCD, sustained VT). **Pregnancy**: usually well-tolerated, beta-blocker (atenolol, metoprolol), avoid disopyramide, ICD if high risk. **Avoid**: inotropes, afterload reduction (worsens gradient), diuretics (cautious, may worsen gradient), digitalis, ACEi/ARB (no benefit, may worsen). **Exercise restriction**: avoid competitive sports (ESC 2020), moderate recreational OK.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-**SCD** (1-2%/y overall, 5-10% in high-risk). **HF** (5-10% end-stage, burned-out). **AF** (20-30%, ↑stroke). **LVOT obstruction** (symptoms, syncope). **Apical aneurysm** (ischaemia, arrhythmia, thrombus). **IE** (rare, MV involvement). **Death** (5-yr 95% overall with treatment, 5% per year in untreated high-risk).
-
-
-## 8. SPECIAL POPULATIONS
-
-**Apical HCM** (Yamaguchi, Asian): giant TWI V3-V4, spade-like LV. **Elderly**: more hypertrophy, more aortic stenosis (senile). **Pregnancy**: usually well-tolerated, beta-blocker, avoid disopyramide. **Athletes**: differentiate from athletic heart (septal <15mm, normal diastolic function, regression with 3-6m detraining). **Children**: family screening, exercise restriction, ICD if high risk. **End-stage (burned-out)**: LVEF<50%, transplant, ICD.
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**ESC 2022 HCM (EHJ)**: full guideline update, HCM Risk-SCD calculator. **2020 ACC/AHA HCM**: similar, 5-year SCD risk. **2020 ESC sports cardiology**: avoid competitive in HCM. **NICE NG101 (2015)**: HCM. **2017 AHA/ACC/HRS**: VT/SCD prevention.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Differentiate** from amyloidosis (HFpEF + thick walls + low voltage + carpal tunnel — bone scintigraphy, ATTR), hypertensive heart disease (LVH + HTN), athletic heart (eccentric, <15mm, regression with detraining), Fabry, Danon, PRKAG2. **HCM Risk-SCD** ≥6% over 5y → ICD. **Avoid** inotropes, afterload reduction, diuretics in HOCM (worsens gradient). **Disopyramide** prolongs QT (monitor), class IA in structural HD. **Apical HCM** — easily missed on TTE, use CMR. **End-stage** — HCM with EF<50%, transplant. **AF** — high stroke risk, anticoagulate regardless of CHADS-VASc. **Pregnancy** — usually well-tolerated. **Septal reduction** — for refractory symptoms with gradient ≥50 mmHg.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**HCM**: LV wall ≥15mm, unexplained, sarcomere. **MYH7, MYBPC3**: 60-70%. **Apical HCM** (Yamaguchi): giant TWI V3-V4, spade-like. **HOCM**: gradient ≥30 mmHg, SAM, MR, harsh systolic murmur ↑Valsalva. **HCM Risk-SCD** (ESC 2022): age, wall thickness, LA, LVOT gradient, NSVT, syncope, family Hx. **SAM**: Systolic Anterior Motion. **Disopyramide** class IA — safe in structural HD (unlike flecainide). **ICD if SCD risk ≥6%**. **Apical aneurysm**: 5%/y SCD. **End-stage**: EF<50%, transplant. **Avoid**: inotropes, afterload reduction, diuretics, ACEi/ARB in HOCM. **Amyloid**: screen with bone scintigraphy (DPD/PYP, ATTR). **Fabry**: alpha-galactosidase A, X-linked. **Danon**: LAMP2, X-linked. **PRKAG2**: glycogen storage. **Friedreich**: ataxia, frataxin.
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-Hypertensive heart disease (LVH + HTN), amyloidosis (HFpEF + thick walls + low voltage + carpal tunnel), athletic heart (eccentric, <15mm, regression), Fabry (X-linked, alpha-gal A), Danon (LAMP2, X-linked, WPW), PRKAG2 (glycogen, WPW), Friedreich ataxia (FA gene, ataxia, HCM), Noonan (short stature, pulmonary stenosis), LEOPARD, aortic stenosis (AS, post-stenotic dilation), cardiac tumour (early systolic murmur).
-
-
-## 13. INVESTIGATIONS
-
-ECG (LVH, TWI, Q, apical giant TWI), echo (essential, 2D + Doppler, Valsalva, exercise), CMR (gold standard, apical, RV, fibrosis — LGE ≥15%, apical aneurysm), Holter (NSVT), exercise test (BP, gradient, capacity), CPET, genetic testing, family screening, BNP, troponin, α-gal A (Fabry), LAMP2 (Danon), 24h urine metanephrines (Pheo).
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Hypertrophic cardiomyopathy?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Hypertrophic cardiomyopathy:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Hypertrophic cardiomyopathy:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Hypertrophic cardiomyopathy?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Hypertrophic cardiomyopathy is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Hypertrophic cardiomyopathy. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Hypertrophic cardiomyopathy on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Hypertrophic cardiomyopathy
-2. Discuss the pathophysiology of Hypertrophic cardiomyopathy
-3. What are the diagnostic criteria for Hypertrophic cardiomyopathy?
-4. Outline the management approach to Hypertrophic cardiomyopathy
-5. What are the complications and prognosis of Hypertrophic cardiomyopathy?
-6. What are the latest guidelines for Hypertrophic cardiomyopathy?
-7. How is Hypertrophic cardiomyopathy managed in special populations?
-8. Compare Hypertrophic cardiomyopathy with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Hypertrophic_cardiomyopathy.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Cardiomyopathies and Myocardial Disease|Cardiomyopathies and Myocardial Disease]] · [[Primary cardiomyopathies]] · [[Heart Failure]] · [[Syncope]] · [[Arrhythmias]]
+
+## Definition
+Hypertrophic cardiomyopathy (HCM) is a usually inherited myocardial disorder characterized by unexplained left ventricular hypertrophy, myocyte disarray, and diastolic dysfunction, with or without dynamic left ventricular outflow tract obstruction (LVOTO). It is a high-yield cause of exertional syncope, sudden cardiac death, and murmur confusion in young or middle-aged patients.
+
+## Anatomy
+- Most common pattern is **asymmetric septal hypertrophy**.
+- Other patterns include concentric, apical, or focal hypertrophy.
+- Mitral valve anterior leaflet may move anteriorly during systole (**SAM**) and worsen LVOTO.
+- Histology shows myocyte disarray and fibrosis.
+
+## Physiology
+- The stiff hypertrophied LV has impaired diastolic relaxation and filling.
+- Dynamic LVOTO may worsen with reduced preload, reduced afterload, or increased contractility.
+- Myocardial oxygen demand rises while microvascular perfusion may be impaired, causing chest pain.
+- LV systolic function may appear preserved or hyperdynamic, but diastolic dysfunction is central.
+
+## Classification
+### By obstruction
+- Obstructive HCM
+- Non-obstructive HCM
+
+### By morphology
+- Asymmetric septal HCM
+- Apical HCM
+- Concentric or other focal variants
+
+### By risk context
+- Low-risk stable HCM
+- Symptomatic HCM with LVOTO
+- HCM with arrhythmic/sudden-death risk features
+
+## Etiology / risk factors
+- Autosomal dominant sarcomeric gene mutations
+- Positive family history of HCM or sudden cardiac death
+- Occasionally phenocopies: Fabry disease, amyloid, glycogen storage disorders (distinguish carefully)
+
+## Pathophysiology
+1. Genetic sarcomeric abnormality leads to hypertrophy and myocyte disarray.
+2. Diastolic dysfunction raises filling pressures and causes dyspnea.
+3. Dynamic LVOTO may develop, especially with SAM.
+4. Myocardial ischemia can occur without epicardial CAD.
+5. Arrhythmia and fibrosis increase sudden death risk.
+
+## Clinical features
+### Symptoms
+- Exertional dyspnea
+- Angina-like chest pain
+- Presyncope/syncope
+- Palpitations
+- Exercise intolerance
+- Sometimes sudden death is first presentation
+
+### Signs
+- Double or jerky pulse may occur
+- Forceful apex beat
+- Ejection systolic murmur at left sternal edge/apex from dynamic LVOTO
+- Murmur becomes louder with standing/Valsalva and softer with squatting/handgrip
+- S4 may be present
+
+## Investigations
+- **Echocardiography**: key test; defines hypertrophy pattern, SAM, LVOTO gradient, MR, diastolic function
+- **ECG**: LVH, deep T-wave inversion, repolarization abnormality, atrial/ventricular arrhythmia
+- **Holter monitoring**: ventricular arrhythmia detection
+- **Cardiac MRI**: fibrosis burden, morphology clarification, apical variants
+- **Family screening** where appropriate
+- **Exercise testing** in selected patients for symptoms, BP response, provoked gradient
+
+## Interpretation frameworks
+### Murmur / dynamic clues
+- HCM murmur is **dynamic**.
+- Louder with **Valsalva or standing** (reduced preload)
+- Softer with **squatting or handgrip** compared with typical fixed AS physiology
+- This is a classic FCPS/MRCP murmur trap
+
+### Hemodynamic profile
+- Diastolic dysfunction + possible dynamic LVOTO
+- Low preload states worsen obstruction and syncope risk
+- Avoid thinking of this purely as systolic pump failure; filling and obstruction are central
+
+### ECG relevance
+- ECG is often abnormal and can support hypertrophy or arrhythmia risk.
+- HCM is an important differential in young patients with abnormal ECG and syncope.
+
+### ACS / troponin logic
+- HCM can cause angina-like chest pain without obstructive CAD.
+- Troponin should still follow standard ACS reasoning, especially in older patients or clear ischemic presentations.
+- Do not overcall ACS solely because of chest pain in known HCM, but do not miss ACS either.
+
+## Diagnosis
+Diagnosis is made by imaging evidence of unexplained LV hypertrophy in the appropriate clinical context, after excluding other causes such as uncontrolled hypertension or severe aortic stenosis.
+
+## Differential diagnosis
+- Hypertensive heart disease
+- Aortic stenosis
+- Athlete's heart
+- Infiltrative cardiomyopathy
+- Fabry disease / storage disease phenocopies
+
+## Management
+### General
+- Activity advice and specialist follow-up
+- Family history and family screening matter
+- Assess sudden-death risk systematically
+
+### Medical treatment
+- **Beta-blockers** are first-line for symptom relief
+- Verapamil/diltiazem in selected patients
+- Disopyramide may be used for obstructive physiology in specialist care
+- Manage AF promptly and anticoagulate when indicated
+
+### Things to avoid / cautions
+- Avoid dehydration and excessive preload reduction
+- Use vasodilators/diuretics cautiously in obstructive HCM because they may worsen LVOTO
+- Nitrates can aggravate obstruction in some patients
+
+### Advanced therapy
+- ICD for selected high-risk patients
+- Septal reduction therapy (surgical myectomy or alcohol septal ablation) in severe symptomatic obstructive HCM despite medical therapy
+
+## Complications
+- Sudden cardiac death
+- Ventricular arrhythmias
+- Atrial fibrillation and embolic stroke
+- Heart failure symptoms from diastolic dysfunction
+- Mitral regurgitation from SAM
+
+## Red flags / emergencies
+- Exertional syncope
+- Family history of sudden death
+- Sustained ventricular arrhythmia
+- Severe symptomatic LVOTO
+- New AF with hemodynamic deterioration
+
+## One-Page Revision Summary
+- HCM = unexplained LV hypertrophy, usually inherited.
+- Key physiology: **diastolic dysfunction ± dynamic LVOTO**.
+- Murmur is dynamic: louder with Valsalva/standing, softer with squatting.
+- Major exam traps: mistaken for AS or benign athlete’s heart.
+- Red flags: exertional syncope, family history of sudden death, ventricular arrhythmia.
+- Beta-blockers are first-line; high-risk patients may need ICD; severe obstructive cases may need septal reduction.
+
+## Common Viva Questions
+- How do you distinguish HCM murmur from AS murmur?
+- Why does dehydration worsen HCM symptoms?
+- What is systolic anterior motion (SAM)?
+- Which features raise sudden-death risk?
+- Why can HCM mimic ACS or stable angina?
+
+## MCQs
+1. HCM is most commonly characterized by:
+   A. Unexplained LV hypertrophy
+   B. Dilated right ventricle only
+   C. Pure pulmonary regurgitation
+   D. Mitral stenosis only
+2. The classic morphology of HCM is:
+   A. Asymmetric septal hypertrophy
+   B. RA aneurysm
+   C. Pericardial calcification
+   D. Aortic coarctation
+3. The murmur of obstructive HCM becomes louder with:
+   A. Squatting
+   B. Standing/Valsalva
+   C. Handgrip always
+   D. Leg raise only
+4. First-line symptomatic therapy for HCM is often:
+   A. Beta-blocker
+   B. Thrombolysis
+   C. Insulin
+   D. Dialysis
+5. A major red-flag symptom in HCM is:
+   A. Exertional syncope
+   B. Dysuria
+   C. Diarrhea
+   D. Hematemesis
+6. A key physiological problem in HCM is:
+   A. Diastolic dysfunction
+   B. Fixed severe aortic regurgitation always
+   C. Pure RA obstruction
+   D. Complete AV block in all cases
+7. A dangerous complication of HCM is:
+   A. Sudden cardiac death
+   B. Appendicitis
+   C. Peptic ulcer
+   D. Renal colic
+8. SAM refers to:
+   A. Systolic anterior motion of mitral leaflet
+   B. Septic aortic murmur
+   C. Sinus arrhythmia marker
+   D. Subacute myocardial necrosis
+9. Cardiac MRI in HCM is useful for:
+   A. Fibrosis/morphology assessment
+   B. Replacing all echo permanently
+   C. Diagnosing asthma
+   D. Treating AF directly
+10. In obstructive HCM, aggressive dehydration may:
+   A. Worsen LVOTO
+   B. Cure symptoms
+   C. Reduce murmur permanently
+   D. Prevent syncope
+
+## SBA Questions
+1. A 20-year-old athlete has exertional syncope and a systolic murmur that becomes louder with Valsalva. Most likely diagnosis:
+   A. HCM
+   B. Fixed aortic stenosis
+   C. Mitral stenosis
+   D. Pericarditis
+2. Which investigation best confirms HCM anatomy and LVOTO?
+   A. Echocardiography
+   B. CXR only
+   C. EEG
+   D. D-dimer
+3. A patient with HCM reports chest pain but has no clear ischemic ECG change. Best interpretation:
+   A. HCM can cause angina-like pain without obstructive CAD
+   B. ACS is guaranteed
+   C. Chest pain is never cardiac
+   D. Echo is irrelevant
+4. Why does standing intensify the murmur of obstructive HCM?
+   A. Reduced preload worsens dynamic obstruction
+   B. Increased preload relieves obstruction
+   C. It causes aortic regurgitation
+   D. It cures SAM
+5. Which feature is especially important for sudden-death risk assessment?
+   A. Family history of sudden cardiac death
+   B. Mild acne
+   C. Rhinitis
+   D. Normal appendix
+6. In symptomatic obstructive HCM, which drug class is preferred first?
+   A. Beta-blockers
+   B. Potent nitrates as first choice
+   C. Loop diuretics aggressively in all cases
+   D. Thrombolytics
+7. Which condition is a key differential of HCM?
+   A. Aortic stenosis
+   B. Appendicitis
+   C. GERD only
+   D. Coeliac disease
+8. A patient with severe symptomatic LVOTO despite medication may need:
+   A. Septal reduction therapy
+   B. No further action
+   C. Antibiotics only
+   D. Bronchodilator only
+9. AF in HCM is important because it:
+   A. Can worsen symptoms and embolic risk
+   B. Always improves filling
+   C. Eliminates obstruction
+   D. Is unrelated to prognosis
+10. Troponin in HCM-related chest pain should be used:
+   A. With standard ACS context and serial interpretation
+   B. To diagnose LVOTO directly
+   C. As a substitute for echo
+   D. Never at all
+
+
+
+## Common Viva Questions
+1. What is the commonest morphological pattern of HCM?
+2. Why does the murmur of obstructive HCM intensify with Valsalva or standing?
+3. What is systolic anterior motion (SAM) of the mitral valve?
+4. Which features raise sudden cardiac death risk in HCM?
+5. How do you distinguish HCM from hypertensive LVH and athlete's heart?
+6. When is ICD implantation indicated in HCM?
+7. What is the role of septal reduction therapy?
+8. Why are vasodilators and excessive diuresis cautioned in obstructive HCM?
+## Flashcards
+- Q: Core diagnosis in HCM?
+  A: Unexplained LV hypertrophy, usually inherited.
+- Q: Common morphology?
+  A: Asymmetric septal hypertrophy.
+- Q: Murmur becomes louder with what?
+  A: Valsalva or standing.
+- Q: Murmur becomes softer with what?
+  A: Squatting.
+- Q: Key first-line drug?
+  A: Beta-blocker.
+- Q: Main physiology?
+  A: Diastolic dysfunction ± dynamic LVOTO.
+- Q: Dangerous complication?
+  A: Sudden cardiac death.
+- Q: What is SAM?
+  A: Systolic anterior motion of the mitral leaflet.
+
+## Answer key with explanations
+### MCQs
+1. **A** - Unexplained LV hypertrophy is the hallmark.
+2. **A** - Asymmetric septal hypertrophy is the classic pattern.
+3. **B** - Reduced preload intensifies dynamic LVOTO.
+4. **A** - Beta-blockers are first-line symptom control.
+5. **A** - Exertional syncope is a major red flag.
+6. **A** - Diastolic dysfunction is central even when EF seems preserved.
+7. **A** - Sudden death is a major feared complication.
+8. **A** - SAM means systolic anterior motion of the mitral leaflet.
+9. **A** - MRI helps assess fibrosis and anatomy.
+10. **A** - Low preload worsens obstruction.
+
+### SBAs
+1. **A** - The dynamic murmur and exertional syncope strongly suggest HCM.
+2. **A** - Echo is the key first-line diagnostic test.
+3. **A** - HCM can cause ischemia-like chest pain without epicardial CAD.
+4. **A** - Standing reduces preload, worsening obstruction.
+5. **A** - Family history of sudden death is crucial risk information.
+6. **A** - Beta-blockers are preferred first-line therapy.
+7. **A** - AS is a major murmur differential and exam trap.
+8. **A** - Septal reduction is considered for severe symptomatic obstructive disease refractory to medication.
+9. **A** - AF worsens hemodynamics and embolic risk.
+10. **A** - Troponin still follows standard ACS assessment principles.

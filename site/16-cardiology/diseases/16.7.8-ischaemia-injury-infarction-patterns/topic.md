@@ -1,79 +1,204 @@
-# Ischaemia, Injury, Infarction Patterns
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.7.8"
+topic: "Ischaemia_injury_infarction_patterns"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/01_Cardiac_Investigations/Ischaemia_injury_infarction_patterns.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="📈" color="red_bg">
-**Topic:** Ischaemia, Injury, Infarction Patterns — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# Ischaemia injury infarction patterns
 
-## 1. Introduction
-The classic ECG progression of acute coronary occlusion follows a **temporal sequence** of ischaemia → injury → infarction, and a **spatial pattern** corresponding to the culprit artery territory.
+> [!info] **Topic Classification**
+> **Section:** 01_Cardiac_Investigations | **Category:** Cardiology
 
-## 2. The Three Zones (Subendocardial → Subepicardial)
-| Zone | Pathology | ECG |
-|---|---|---|
-| **Ischaemia** (reversible) | Subendocardial ischaemia first | T-wave inversion, peaked T, ST depression |
-| **Injury** (acute) | Transmural ischaemia | ST elevation (or reciprocal ST depression) |
-| **Infarction** (irreversible) | Myocyte necrosis | Pathological Q waves → loss of R, TWI |
+---
 
-## 3. Hyperacute T Waves
-- **Tall, broad, peaked, symmetric** ("hyperacute")
-- Earliest sign of acute transmural ischaemia (minutes)
-- Often subtle, easiest to spot in V2–V3
-- **Differential:** hyperkalaemia (peaked but narrow), early repolarisation, LVH
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-## 4. ST Elevation (STEMI Criteria)
-- **≥1 mm** in ≥2 contiguous limb leads (≥2 mm in V2–V3 ♂, ≥1.5 mm V2–V3 ♀)
-- **≥0.5 mm in V7–V9** (posterior)
-- **≥1 mm in V3R, V4R** (RV infarction)
-- **Concave-up ("saddle") vs convex ("tombstone")** — convex more specific for STEMI
+**Ischaemia injury infarction patterns**: chronic coronary syndrome (previously stable angina) — chest pain or discomfort due to myocardial ischaemia, typically precipitated by exertion, emotional stress, or cold, relieved by rest or nitrates. **CCSAP** (chronic coronary syndromes, ESC 2019): 6 scenarios — (1) suspected CAD with stable angina symptoms + dyspnoea, (2) new-onset CCS or recent destabilisation, (3) symptomatic despite treatment, (4) asymptomatic post-revascularisation, (5) asymptomatic 1y post-ACS or recent revascularisation, (6) asymptomatic with detected ischaemia. **Prevalence**: 5-7% in men >45y, 5-7% in women >55y.
 
-## 5. Reciprocal ST Depression
-- ST depression in leads **opposite** to ST elevation
-- Confirms true STEMI vs mimics
-- **Inferior STEMI** → reciprocal in I, aVL
-- **Anterior STEMI** → reciprocal in II, III, aVF
-- **Lateral STEMI** → reciprocal in V1–V3
 
-## 6. Pathological Q Waves
-- **>40 ms (1 small square) wide** OR **>2 mm deep** OR **>25% of QRS height**
-- Develops 6–24 h post-MI, persists for years
-- Loss of R wave (poor R wave progression)
-- **Anterior MI** = V1–V4
-- **Inferior MI** = II, III, aVF
-- **Lateral MI** = I, aVL, V5–V6
-- Old Q waves in V1–V3 may normalise over time
-- **Differential:** HCM, LVH (septal Qs in I, aVL, V5–V6), LBBB, lead reversal, WPW
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-## 7. Coronary Territory Localisation
-| Wall | Leads | Culprit Artery |
-|---|---|---|
-| Septal | V1, V2 | LAD (septal branches) |
-| Anterior | V3, V4 | LAD |
-| Anteroseptal | V1–V4 | LAD |
-| Lateral | I, aVL, V5, V6 | LCx (RCA in L-dominant) |
-| High lateral | I, aVL | LCx (1st diagonal of LAD) |
-| Inferior | II, III, aVF | RCA (LCx in L-dominant) |
-| Right ventricular | V1, V4R | Proximal RCA |
-| Posterior | V7–V9, mirror V1–V3 | RCA / LCx |
+**Atherosclerotic narrowing** of epicardial coronary arteries (≥70% stenosis, or ≥50% left main) → **fixed supply limitation**. **Demand-supply mismatch**: exertion (↑HR, ↑BP, ↑contractility) → ↑O2 demand → ischaemia (subendocardium first). **Mechanisms**: (1) **Fixed stenosis** (most common, ≥70%), (2) **Vasospasm** (Prinzmetal, focal or diffuse), (3) **Microvascular** (syndrome X, normal angio, INOCA), (4) **Recurrent ischaemia** post-revascularisation, (5) **Myocardial bridge** (systolic compression). **Triggers**: exertion, emotion, cold, post-prandial, tachyarrhythmia, anaemia, hyperthyroidism, drugs (cocaine, triptans, ergot). **Ischaemia cascade**: perfusion heterogeneity → diastolic dysfunction → ECG changes → pain.
 
-## 8. STEMI Equivalents (Don't Miss!)
-- **Posterior MI** — ST depression V1–V3, upright T, tall R in V1–V2 → take V7–V9
-- **de Winter T waves** — upsloping ST depression at J point in V1–V6, tall symmetrical T = proximal LAD occlusion
-- **Wellens syndrome** — deep symmetric T inversion V2–V3, biphasic = critical proximal LAD
-- **Hyperacute T waves only** — early STEMI
-- **aVR ST elevation + diffuse ST depression** — left main, triple vessel disease
-- **New LBBB** with Sgarbossa criteria — Sgarbossa ≥3 = STEMI
-- **Sgarbossa criteria:** concordant STE ≥1 mm (5 pts), concordant STD V1–V3 (3 pts), discordant STE ≥5 mm (2 pts) — score ≥3 = STEMI in LBBB
 
-## 9. Subendocardial Ischaemia
-- **ST depression ≥0.5 mm** in ≥2 contiguous leads
-- T wave inversion
-- **Wellens pattern** — critical LAD
-- Differential: demand ischaemia, anaemia, digoxin effect (scooped), LVH strain, posterior MI
+## 3. CLINICAL FEATURES
 
-> **Pearls**
-> - **Time is muscle** — STEMI is a clinical + ECG diagnosis; do not wait for troponin.
-> - **Convex ST elevation** ("tombstone") = more extensive, worse prognosis.
-> - **Q waves develop within hours** — by 24 h present in most transmural infarcts.
-> - **Normalisation of ST elevation** with persistent T wave inversion after reperfusion = **reperfusion T waves** (good sign).
+**Typical angina** (3): (1) substernal chest discomfort (pressure, heaviness, squeezing, tightness), (2) precipitated by exertion or emotional stress, (3) relieved by rest or nitrates within minutes. **Atypical** (2 of 3, or non-cardiac — women, elderly, diabetics). **Examination**: usually normal. May have: S4, MR murmur (papillary dysfunction), signs of LV dysfunction, peripheral vascular disease, dyslipidaemia (xanthelasma, corneal arcus, tendon xanthomas). **Risk factors**: age, sex, family, HTN, DM, dyslipidaemia, smoking, obesity, sedentary. **Symptoms equivalents**: dyspnoea, fatigue, nausea, back/jaw pain (women, elderly, diabetics).
+
+
+## 4. DIAGNOSTIC APPROACH
+
+**Resting ECG**: usually normal (50%), may show Q waves (old MI), LVH, BBB, ST-T changes. **Stress testing**: (1) **Exercise ECG** (≥1mm STD, ≥80ms from J point, in ≥2 contiguous leads, at low workload/high risk — Duke Treadmill Score high-risk <−11), (2) **Stress echo** (RWMA, more sensitive/specific), (3) **Stress CMR** (perfusion, scar, viability), (4) **Stress nuclear** (perfusion, MUGA), (5) **CTCA** (low-intermediate probability, anatomical). **First-line test** depends on pre-test probability: **Low** (<15%): no test, or CAC scoring. **Intermediate** (15-50%): stress imaging (echo, nuclear, CMR) or CTCA. **High** (>50%): invasive angio or functional test. **Invasive coronary angiography** (definitive). **FFR/iFR** (functional assessment, intermediate lesions 50-90%). **CMR** (scar, viability, microvascular obstruction).
+
+
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
+
+**CCS class** (Canadian Cardiovascular Society): I (ordinary activity, no angina), II (slight limitation, angina with vigorous/rapid), III (marked limitation, angina with ordinary activity), IV (inability to perform any activity, angina at rest). **Duke Treadmill Score**: high-risk <−11, moderate −10 to +4, low ≥+5. **Number of vessels**: 1, 2, 3, left main (>50%). **LV function** (LVEF, regional WMA). **Stress test parameters**: time, workload, HR recovery, BP response, ischaemia threshold (HR×BP product).
+
+
+## 6. MANAGEMENT ALGORITHM
+
+**Risk factor modification** (ESC 2019): smoking cessation, BP <130/80, LDL-C <1.4 mmol/L (very high risk) or <1.8 (high), HbA1c <7%, weight (BMI <25), exercise ≥150 min/week, Mediterranean diet, alcohol <14 units/week. **Anti-anginal** (symptom control): (1) **Beta-blocker** (1st line, e.g. bisoprolol, atenolol, metoprolol), (2) **CCB** (dihydropyridine — amlodipine, nifedipine — add or alternative to BB, vasodilator; non-dihydro — verapamil, diltiazem — alternative to BB, avoid with BB), (3) **Long-acting nitrates** (isosorbide mononitrate, add-on, nitrate-free interval 8-12h), (4) **Nicorandil** (K-ATP channel opener, vasodilator), (5) **Ranolazine** (late Na+ current inhibitor, add-on, QT prolongation), (6) **Ivabradine** (HR reduction, sinus rhythm only, if HR≥70), (7) **Trimetazidine** (metabolic, anti-anginal). **Anti-thrombotic**: aspirin 75-100mg daily (or clopidogrel 75mg if aspirin-intolerant). **Lipid-lowering**: high-intensity statin (atorvastatin 40-80mg, rosuvastatin 20-40mg), ezetimibe if not at LDL target, PCSK9i if very high risk. **ACEi/ARB** if HTN, DM, CKD, LV dysfunction. **Revascularisation** (PCI vs CABG): consider if (1) refractory symptoms despite GDMT, (2) high-risk anatomy (left main, 3-vessel, proximal LAD, SYNTAX score), (3) LV dysfunction with viable myocardium. **PCI** vs **CABG**: SYNTAX score, anatomical complexity, surgical risk, patient preference. **ISCHEMIA (2020)**: routine invasive + optimal medical vs optimal medical alone — no overall difference in death/MI, but invasive better in left main, multivessel with LV dysfunction. **Lifestyle**: exercise-based cardiac rehab, Mediterranean diet, weight, smoking, alcohol, sleep.
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+**ACS** (progression of plaque). **MI**. **Heart failure** (ischaemic cardiomyopathy). **Arrhythmia** (VT, AF, brady). **Death** (5-yr 5% with treatment, 15% without). **Repeated hospitalisation** (angina, revascularisation).
+
+
+## 8. SPECIAL POPULATIONS
+
+**Elderly**: more comorbidities, less invasive, more GDMT, careful dosing. **Women**: atypical symptoms, more microvascular (INOCA), more abnormal stress test with normal angio, less revascularisation. **Diabetes**: more multivessel, smaller vessels, more diffuse, higher risk, SGLT2i benefit. **CKD**: more bleeding, more CV risk, dose adjust, more GDMT. **Pregnancy**: avoid statins, ACEi/ARB, warfarin; beta-blocker (atenolol) safe; consider PCI only if refractory.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**ESC 2019 CCSAP (EHJ)**: chronic coronary syndromes, replaces stable angina. **2021 ACC/AHA ACS/CAD**: chronic coronary disease (CCD). **NICE NG95 (2016)**: chest pain of recent onset, updated 2023. **NICE CG126 (2011)**: stable angina (older). **ISCHEMIA (2020)**: routine invasive vs OM. **COURAGE (2007)**: PCI + OM vs OM (no difference in death/MI, OM less invasive). **ORBITA (2018)**: sham-controlled, no significant improvement. **FAME 2 (2012)**: FFR-guided PCI better than OM. **SYNTAX (2009), SYNTAX II**: PCI vs CABG, anatomy, score.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+**Atypical** in women, elderly, diabetics (more common). **Microvascular** (INOCA, syndrome X) — normal angio, abnormal stress. **Vasospasm** (Prinzmetal) — transient STE, normal angio, hyperventilation test. **SCAD** in young women. **Don't delay** GDMT. **Statin + ACEi** for all. **Revascularisation** for refractory symptoms, high-risk anatomy (left main, 3-vessel, proximal LAD), LV dysfunction with viability. **Lifestyle** critical. **Anxiety/depression** common. **Differential** non-cardiac chest pain (oesophageal, MSK, anxiety).
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**Typical angina** (3): substernal, exertion, relieved by rest/nitrates. **Atypical** (2 of 3, or non-cardiac). **CCSAP** (ESC 2019): 6 scenarios. **CCS class** I-IV. **Duke Treadmill**: high-risk <−11. **SYNTAX**: PCI vs CABG, anatomy. **ISCHEMIA (2020)**: no overall death/MI difference (except left main, 3-vessel with LV dysfunction). **Anti-anginal ladder**: BB → CCB (dihydro) → long-acting nitrates → nicorandil → ranolazine → ivabradine (sinus) → trimetazidine. **Microvascular** (INOCA, syndrome X): female, abnormal stress, normal angio, treat with BB, CCB, ranolazine. **Vasospasm** (Prinzmetal): transient STE, normal angio, CCB, nitrates, avoid triptans, ergot.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+Oesophageal spasm, GERD, peptic ulcer, cholecystitis, MSK chest pain (costochondritis, Tietze), cervical radiculopathy, herpes zoster, anxiety, panic, PE, aortic dissection, pericarditis, myocarditis, Takotsubo, MS, AS, HCM, microvascular (INOCA), vasospasm, SCAD.
+
+
+## 13. INVESTIGATIONS
+
+Resting ECG, stress testing (exercise ECG, stress echo, stress CMR, stress nuclear), CTCA (low-intermediate), invasive coronary angiography (± FFR/iFR), echo (LV function, MR, structural), CMR (scar, viability), Holter (arrhythmia), CXR, bloods (FBC, U&E, LFT, TFT, lipid profile, hs-CRP, Lp(a), HbA1c), BP, BMI.
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Ischaemia injury infarction patterns?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Ischaemia injury infarction patterns:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Ischaemia injury infarction patterns:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Ischaemia injury infarction patterns?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Ischaemia injury infarction patterns is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Ischaemia injury infarction patterns. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Ischaemia injury infarction patterns on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Ischaemia injury infarction patterns
+2. Discuss the pathophysiology of Ischaemia injury infarction patterns
+3. What are the diagnostic criteria for Ischaemia injury infarction patterns?
+4. Outline the management approach to Ischaemia injury infarction patterns
+5. What are the complications and prognosis of Ischaemia injury infarction patterns?
+6. What are the latest guidelines for Ischaemia injury infarction patterns?
+7. How is Ischaemia injury infarction patterns managed in special populations?
+8. Compare Ischaemia injury infarction patterns with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Ischaemia_injury_infarction_patterns.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

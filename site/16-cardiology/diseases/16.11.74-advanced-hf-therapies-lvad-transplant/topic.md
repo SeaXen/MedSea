@@ -1,93 +1,204 @@
-# Advanced HF Therapies: LVAD and Transplant
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.11.74"
+topic: "Advanced_HF_therapies_LVAD_transplant"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/04_Heart_Failure/Advanced_HF_therapies_LVAD_transplant.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="🏥" color="red_bg">
-**Topic:** LVAD & Heart Transplantation — Cardiology
-**Style:** Sea Knowledge study note
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# Advanced HF therapies LVAD transplant
 
-## 1. Advanced HF — INTERMACS Profiles
-| Profile | Description | Time to Intervention |
-|---|---|---|
-| **1** | Critical cardiogenic shock | Hours |
-| **2** | Progressive decline | Days |
-| **3** | Stable but inotrope-dependent | Weeks |
-| **4** | Resting symptoms, frequent admissions | Months |
-| **5** | Exertion intolerant, comfortable at rest | Variable |
-| **6** | Advanced NYHA III | Variable |
-| **7** | NYHA III, no recent decompensation | — |
+> [!info] **Topic Classification**
+> **Section:** 04_Heart_Failure | **Category:** Cardiology
 
-## 2. LVAD (Left Ventricular Assist Device)
-Mechanical pump that offloads the LV and returns blood to the aorta. **Continuous-flow** devices (HeartMate 3, HeartWare) are now standard.
+---
 
-### Strategies
-- **BTT** — Bridge to Transplant
-- **DT** — Destination Therapy (inotrope-ineligible or transplant-ineligible)
-- **BTC** — Bridge to Candidacy / Bridge to Decision
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-### Indications
-- **NYHA IV** despite optimal GDMT
-- LVEF ≤25%, CI <2.0 L/min/m²
-- On inotropes, or **INTERMACS 1–4**
-- Suitable candidate: age, no irreversible end-organ failure, psychosocial
+HFrEF (Heart Failure with reduced Ejection Fraction): LVEF ≤40%, with symptoms/signs of HF. ~50% of HF. Etiology: ischaemic (most common, 60-70%), dilated cardiomyopathy (DCM, idiopathic, genetic, toxic — alcohol, chemo), valvular (late), tachycardia-mediated, myocarditis, peripartum, infiltrative, congenital.
 
-### Key Outcomes
-- **HeartMate 3** (MOMENTUM 3): 2-year survival **~80%**, near-elimination of pump thrombosis with fully magnetically levitated design
-- Improves functional capacity, 6MWD, QoL
-- Improves renal and hepatic function in selected patients
 
-### Complications
-- **Pump thrombosis** (reduced with HeartMate 3, ~1%/y)
-- **Stroke** (ischaemic and haemorrhagic, ~10%/y)
-- **Driveline infection** (most common, ~15–20%)
-- **GI bleeding** from arteriovenous malformations (angiodysplasia)
-- **Right HF** — LVAD can worsen RV failure
-- **Aortic insufficiency** — develop over time, may need valve repair
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-## 3. Heart Transplantation
-**Gold standard** for end-stage refractory HF. ~4,000/year worldwide, ~3,500/year in US.
+**Initial insult** (MI, infection, toxin) → myocyte loss → neurohormonal activation (RAAS, SNS, AVP, BNP, endothelin) → vasoconstriction, sodium/water retention, adverse remodelling (eccentric hypertrophy, dilation, fibrosis, mitral annular dilation → functional MR) → progressive pump failure. **Vicious cycle**: ↓CO → RAAS/SNS → vasoconstriction, retention → ↑preload, afterload → further ↓CO.
 
-### Indications
-- End-stage HF (NYHA IV, ACC/AHA stage D) despite GDMT, devices, surgery
-- **Peak VO₂ <12 mL/kg/min** (or <14 if on beta-blocker)
-- Refractory angina, recurrent VT, congenital heart disease not amenable to repair
-- Age typically <70 (relative)
 
-### Contraindications
-- **Active malignancy** (within 5 y, except some skin cancers)
-- Active infection, HIV with uncontrolled viraemia
-- Severe irreversible **PVR >5 Wood units** (or >2.5 with vasodilator challenge)
-- Severe renal/hepatic disease (consider combined transplant)
-- Substance misuse, severe psychosocial instability
-- BMI >35, severe peripheral/cerebrovascular disease
+## 3. CLINICAL FEATURES
 
-### Immunosuppression
-- **Induction** — basiliximab, ATG (high-risk)
-- **Maintenance triple** — calcineurin inhibitor (**tacrolimus** > cyclosporine), **mycophenolate mofetil**, **prednisolone** (often weaned)
-- **mTOR inhibitors** (sirolimus, everolimus) for CNI-sparing or CAV
+Dyspnoea (exertional, orthopnoea, PND, bendopnoea), fatigue, exercise intolerance, peripheral/sacral oedema, nocturia, anorexia, cachexia, cool peripheries, narrow pulse pressure. Examination: displaced apex, S3, JVP, TR, hepatomegaly, ascites, peripheral oedema, crepitations, Cheyne-Stokes, pulsus alternans (severe).
 
-### Rejection Surveillance
-- **Endomyocardial biopsy** — ISHLT grade (ACR 0–3R, AMR 0–3)
-- **Surveillance schedule** — weekly for 1 mo, 2-weekly 2–3 mo, monthly to 6 mo, then 3–6 monthly
-- **Acute cellular rejection** — high-dose methylpred, ATG
-- **AMR** — plasmapheresis, IVIG, rituximab, bortezomib
 
-### Long-Term Complications
-- **Cardiac allograft vasculopathy (CAV)** — leading cause of graft loss; surveillance with IVUS/angiography
-- **Malignancy** — skin cancers, PTLD (EBV-driven lymphoma)
-- **Infection** — CMV, fungal, opportunistic
-- **Chronic kidney disease** — CNI toxicity
-- **Hypertension, diabetes, dyslipidaemia** — from CNIs and steroids
+## 4. DIAGNOSTIC APPROACH
 
-> **Pearls**
-> - **HeartMate 3** is the current LVAD of choice (magnetic levitation, low thrombosis)
-> - **LVAD** improves survival in advanced HF but complications remain significant
-> - **Transplant survival** — 1 y 90%, 5 y 75%, 10 y 60%
-> - **PVR >5 Wood units** is a contraindication (RV will fail)
-> - **CAV** is the leading cause of late graft loss
-> - **PTLD** (post-transplant lymphoproliferative disorder) is EBV-associated — reduce immunosuppression
-> - **Induction** basiliximab or ATG; **maintenance** tacrolimus + MMF + prednisolone
+**ECG**: LVH, Q waves (ischaemic), LBBB, AF. **CXR**: cardiomegaly, pulmonary oedema, Kerley B, pleural effusion. **BNP/NT-proBNP** elevated. **Echo** (essential): LVEF ≤40%, LV dilation, RWMA (ischaemic), MR (functional), RV function, PASP. **CMR**: gold standard for volumes, scar, viability, infiltrative, myocarditis. **Coronary angiography**: ischaemic aetiology. **Genetic testing** (DCM, lamin A/C, etc.).
 
-<callout icon="🎯" color="rose_bg">
-**CLINICAL SIGNIFICANCE —** Both LVAD and transplant are reserved for **INTERMACS 1–4** patients refractory to GDMT. HeartMate 3 (MOMENTUM 3) and modern immunosuppression have transformed outcomes. **Timing of referral** is crucial — late referrals have worse outcomes.
-</callout>
+
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
+
+**NYHA** I-IV (functional). **ACC/AHA stages** A (at risk), B (pre-HF, structural, no symptoms), C (structural + symptoms), D (advanced, refractory). **INTERMACS** 1-7. **MAGGIC score** (3-year mortality, Meta-Analysis Global Group in Chronic Heart Failure). **Seattle Heart Failure Model**. **LVEF severity**: mild 35-40%, moderate 30-35%, severe <30%.
+
+
+## 6. MANAGEMENT ALGORITHM
+
+**4 pillars of GDMT (all HFrEF unless contraindicated)**: (1) **RAAS inhibitor**: ARNI (sacubitril/valsartan, Entresto) preferred over ACEi (PARADIGM-HF — 20% mortality reduction), ARB if ACEi-intolerant. Start low, up-titrate. (2) **Beta-blocker**: bisoprolol, carvedilol, metoprolol succinate (CIBIS-II, COPERNICUS, MERIT-HF). (3) **MRA**: spironolactone (RALES), eplerenone (EPHESUS, EMPHASIS-HF). (4) **SGLT2i**: dapagliflozin (DAPA-HF), empagliflozin (EMPEROR-Reduced) — reduce mortality and hospitalisation. **Additional**: diuretics (loop, thiazide for resistance), ivabradine (HR ≥70, sinus rhythm, max tolerated beta-blocker — SHIFT), digoxin (symptomatic despite GDMT, in sinus rhythm — DIG trial; reduce hospitalisation not mortality), hydralazine+ISDN (especially in Black patients — A-HeFT), vericiguat (recently hospitalised, worsening HF — VICTORIA), ferric carboxymaltose (HF, iron deficiency, EF ≤40% — AFFIRM-AHF, FAIR-HFpEF). **Devices**: ICD (primary prevention, LVEF ≤35% on GDMT 3m, NYHA II-III, life expectancy >1y — MADIT-II, SCD-HeFT), CRT (LBBB with QRS >150ms, LVEF ≤35%, NYHA II-IV — COMPANION, CARE-HF, MADIT-CRT).
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+**Pump failure** (progressive, cardiogenic shock). **Arrhythmia** (VT/VF, AF). **Thromboembolism** (LV thrombus, stroke). **Sudden cardiac death** (VT/VF, bradyarrhythmia). **Cachexia** (cardiac, advanced). **Renal dysfunction** (cardiorenal, diuretic resistance). **Hepatic congestion** (cardiohepatic). **Resistant oedema**. **Death**: 5-year mortality 50% overall, worse with advanced disease.
+
+
+## 8. SPECIAL POPULATIONS
+
+Elderly: more frail, less tolerance. Women: more HFpEF, less referred. CKD: avoid ACEi/ARB if bilateral RAS, dose adjust, monitor K+. Diabetes: SGLT2i benefits (cardio-renal-metabolic). Pregnancy: avoid ACEi/ARB, MRA, ARNI; beta-blocker safe; hydralazine, nitrates safe. African-American: hydralazine+ISDN (A-HeFT). Post-MI: early ACEi/ARB, beta-blocker, MRA, SGLT2i.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**ESC 2021 HF (EHJ)**: 4 pillars (ARNI, BB, MRA, SGLT2i), class IA for HFrEF. **2022 ACC/AHA/HFSA HF**: same. **NICE NG106 (2018)**: chronic HF. **2016 ESC/HFSA/HRS CRT**: LBBB QRS >150ms class IA. **2015 ESC/HFA ICD**: primary prevention. **STRONG-HF (2022)**: rapid up-titration of GDMT within 2 weeks post-discharge reduces HF readmission and mortality. **TRANSFORM-HF (2022)**: torsemide vs furosemide — no difference. **2023 ESC/HFA**: ferric carboxymaltose for iron deficiency. **VICTORIA (2020)**: vericiguat.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+Don't delay GDMT initiation. Don't forget 4 pillars (ARNI, BB, MRA, SGLT2i). Don't miss iron deficiency. Don't miss ICD/CRT indication. Don't use CCB in HFrEF. Don't use class IC antiarrhythmics in structural HD. Monitor K+ with ACEi/ARB + MRA (hyperkalaemia, ~5-10%). Hydralazine+ISDN for Black patients. SGLT2i benefit independent of DM.
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**4 pillars**: ARNI/ACEi/ARB, Beta-blocker, MRA, SGLT2i. **GDMT**: Guideline-Directed Medical Therapy. **NYHA** I-IV. **INTERMACS** 1-7. **STRONG-HF**: rapid up-titration. **AFFIRM-AHF**: ferric carboxymaltose. **VICTORIA**: vericiguat. **ICD primary prevention**: LVEF ≤35% on GDMT 3m, NYHA II-III. **CRT**: LBBB QRS >150ms, LVEF ≤35%, NYHA II-IV. **ICD for primary prevention: MADIT-II, SCD-HeFT**. **ICD for secondary prevention: AVID, CIDS, CASH**.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+HFpEF (LVEF ≥50%), HFmrEF (41-49%), lung disease (COPD, asthma, PE), renal disease (fluid overload), cirrhosis (ascites, oedema), thyroid (hyper/hypo), anaemia, obesity (fluid retention, deconditioning).
+
+
+## 13. INVESTIGATIONS
+
+**Echo** (essential, multiple times). **ECG** (LVH, Q waves, LBBB, AF, low voltage in amyloid). **BNP/NT-proBNP** (diagnosis, severity, prognosis). **CXR** (cardiomegaly, pulmonary oedema, effusions, Kerley B). **Bloods**: FBC (anaemia), U&E (renal, K+), LFT (hepatic congestion), TFT, HbA1c, lipid profile, troponin, ferritin, transferrin saturation. **CMR** (gold standard, viability, infiltrative, myocarditis, scar). **Coronary angio** (ischaemic aetiology). **RHC** (advanced HF, transplant, PH). **CPET** (advanced HF, transplant, peak VO2).
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Advanced HF therapies LVAD transplant?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Advanced HF therapies LVAD transplant:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Advanced HF therapies LVAD transplant:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Advanced HF therapies LVAD transplant?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Advanced HF therapies LVAD transplant is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Advanced HF therapies LVAD transplant. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Advanced HF therapies LVAD transplant on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Advanced HF therapies LVAD transplant
+2. Discuss the pathophysiology of Advanced HF therapies LVAD transplant
+3. What are the diagnostic criteria for Advanced HF therapies LVAD transplant?
+4. Outline the management approach to Advanced HF therapies LVAD transplant
+5. What are the complications and prognosis of Advanced HF therapies LVAD transplant?
+6. What are the latest guidelines for Advanced HF therapies LVAD transplant?
+7. How is Advanced HF therapies LVAD transplant managed in special populations?
+8. Compare Advanced HF therapies LVAD transplant with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Advanced_HF_therapies_LVAD_transplant.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

@@ -1,192 +1,204 @@
-# Valvular Heart Disease (VHD)
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.3.197"
+topic: "Arrhythmia_in_congenital_heart_disease"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/08_Arrhythmias/Arrhythmia_in_congenital_heart_disease.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="❤️‍🩹" color="red_bg">
-**Topic:** Valvular Heart Disease — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# Arrhythmia in congenital heart disease
 
-## 1. Introduction
-VHD is **structural disease of any of the four cardiac valves** (AS, AR, MS, MR, TR, PS, PR), causing stenosis or regurgitation. The two most common lesions worldwide are **mitral regurgitation** and **aortic stenosis**. Severity is graded by echo; **intervention thresholds** are well-defined by ESC 2021 / ACC/AHA 2020.
-
-### Spectrum
-- **Stenosis** — fixed obstruction to forward flow (AS, MS, PS, TS)
-- **Regurgitation** — retrograde flow (AR, MR, TR, PR)
-- **Acute** (rapid onset, surgical emergency) vs **Chronic** (compensated)
-- **Primary** (valve pathology) vs **Secondary / Functional** (chamber / annulus)
+> [!info] **Topic Classification**
+> **Section:** 08_Arrhythmias | **Category:** Cardiology
 
 ---
 
-## 2. Pathophysiology
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-### Stenosis
-↑Afterload (AS, PS) or ↑LA pressure (MS) → chamber hypertrophy → diastolic dysfunction → symptoms.
+**Arrhythmia in congenital heart disease** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (08 Arrhythmias). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
 
-### Regurgitation
-Volume overload → eccentric hypertrophy → chamber dilation → progressive dysfunction → symptoms.
 
-### Key Pathophysiology Mnemonics
-- **AS → LV pressure overload → concentric LVH → angina · syncope · HF**
-- **AR → LV volume overload → eccentric LVH → wide pulse pressure**
-- **MS → ↑LA pressure → LA enlargement → AF · pulmonary congestion · haemoptysis**
-- **MR → LV + LA volume overload → eccentric LVH → pulmonary HTN · AF · HF**
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
----
+The pathophysiology of Arrhythmia in congenital heart disease involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
 
-## 3. Classification & Severity
-| Lesion | Severe Criteria | Intervention Threshold |
-|---|---|---|
-| **AS** | Vmax >4 m/s, mean grad >40 mmHg, AVA <1.0 cm², DVI <0.25 | Symptomatic or LVEF <50% or very severe asymptomatic with abnormal stress |
-| **AR** | VC >0.6 cm, EROA >0.3 cm², RV >60 mL, PHT <200 ms | Symptomatic or LVEF <50% or LVESD >50 mm |
-| **MS** | MVA <1.5 cm², PHT >220 ms, mean grad >10 | Symptomatic NYHA III/IV or MVA <1.5 with PH |
-| **MR primary** | VC >0.7 cm, EROA >0.4 cm², RV >60 mL | Symptoms or LVEF ≤60% or LVESD ≥40 mm |
-| **MR secondary** | Same echo, but LV dysfunction cause | GDMT + CRT (if LBBB) → TEER if suitable |
-| **TR** | VC >0.7, RV >45 mL, hepatic vein systolic reversal | Severe + symptomatic despite Rx |
-| **PS** | Vmax >3 m/s, mean grad >35 | Symptomatic or Vmax >3 m/s |
-| **PR** | PR Vmax >2.2 m/s, severe RV dilation | PVR if symptomatic / RV dilation |
 
----
+## 3. CLINICAL FEATURES
 
-## 4. Clinical Features
+Clinical presentation of Arrhythmia in congenital heart disease varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
 
-### Aortic Stenosis (AS) — Classic Triad
-- **Angina** (↑O₂ demand from LVH)
-- **Syncope** (exertional, fixed output)
-- **Dyspnoea / HF**
-- **Pulsus parvus et tardus**, **ejection systolic murmur** (crescendo–decrescendo, R 2nd ICS, radiates to carotids), **S4**
 
-### Mitral Stenosis (MS)
-- **Dyspnoea**, orthopnoea, PND, haemoptysis
-- **Loud S1**, **opening snap**, **diastolic rumble** (apex, L lateral)
-- **AF** (LA enlargement), signs of PH
-- **Malar flush**, hoarse voice (Ortner syndrome)
+## 4. DIAGNOSTIC APPROACH
 
-### Mitral Regurgitation (MR)
-- **Acute** — pulmonary oedema, shock (papillary rupture, endocarditis)
-- **Chronic** — dyspnoea, fatigue, AF
-- **Apical pansystolic murmur** radiates to axilla, **S3**, displaced hyperdynamic apex
+Diagnostic approach to Arrhythmia in congenital heart disease includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
 
-### Aortic Regurgitation (AR)
-- **Chronic** — wide pulse pressure, water-hammer pulse, de Musset, Quincke, Corrigan, Müller, Duroziez
-- **Early diastolic decrescendo murmur** at L sternal border
-- **Austin-Flint murmur** = mid-diastolic rumble at apex (severe AR jet hitting MV)
 
----
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
 
-## 5. Investigations
-- **ECG** — LVH, RVH, LAE (P mitrale), RAE (P pulmonale), AF
-- **CXR** — valve calcification (AS), LA enlargement (MS, MR), pulmonary congestion
-- **TTE** — first-line for **all** valves; severity grading
-- **TOE** — pre-repair, prosthetic, IE, LAA thrombus
-- **Stress echo** — asymptomatic severe AS / MR with low-flow/low-gradient
-- **CMR** — accurate RV volumes, regurgitant fraction when echo suboptimal
-- **Cardiac CT** — aortic root / annular sizing for TAVI planning
-- **BNP** — prognostic in chronic valve disease
-- **Invasive** — rarely for valve alone; angio pre-CABG
+Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
+
+
+## 6. MANAGEMENT ALGORITHM
+
+Management of Arrhythmia in congenital heart disease: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+Complications of Arrhythmia in congenital heart disease: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
+
+
+## 8. SPECIAL POPULATIONS
+
+**Special populations in Arrhythmia in congenital heart disease**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**Latest guidelines relevant to Arrhythmia in congenital heart disease**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+**Common pitfalls in Arrhythmia in congenital heart disease**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**Key mnemonics for Arrhythmia in congenital heart disease**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+**Differential diagnosis of Arrhythmia in congenital heart disease** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
+
+
+## 13. INVESTIGATIONS
+
+**Investigations for Arrhythmia in congenital heart disease**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
+
 
 ---
 
-## 6. Differential Diagnosis of Murmurs
-| Murmur | Differential |
-|---|---|
-| **Ejection systolic** | AS · HCM · PS · AR (high-flow) · VSD · MR (mitral prolapse late) |
-| **Pansystolic** | MR · TR · VSD |
-| **Early diastolic** | AR · PR · Austin-Flint |
-| **Mid-diastolic** | MS · TS · atrial myxoma · Carey Coombs · flow (high-output) |
-| **Continuous** | PDA · AV fistula · venous hum · ruptured sinus of Valsalva |
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Arrhythmia in congenital heart disease?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Arrhythmia in congenital heart disease:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Arrhythmia in congenital heart disease:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Arrhythmia in congenital heart disease?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Arrhythmia in congenital heart disease is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Arrhythmia in congenital heart disease. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Arrhythmia in congenital heart disease on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Arrhythmia in congenital heart disease
+2. Discuss the pathophysiology of Arrhythmia in congenital heart disease
+3. What are the diagnostic criteria for Arrhythmia in congenital heart disease?
+4. Outline the management approach to Arrhythmia in congenital heart disease
+5. What are the complications and prognosis of Arrhythmia in congenital heart disease?
+6. What are the latest guidelines for Arrhythmia in congenital heart disease?
+7. How is Arrhythmia in congenital heart disease managed in special populations?
+8. Compare Arrhythmia in congenital heart disease with related conditions
 
 ---
 
-## 7. Complications
-- **Atrial fibrillation** (LA enlargement in MS, MR)
-- **Heart failure** (any severe valve)
-- **Pulmonary hypertension** (MS, MR, AS)
-- **Systemic emboli** (AF, endocarditis, prosthetic)
-- **Sudden cardiac death** (severe AS, severe HCM)
-| **Aortic aneurysm / dissection** (bicuspid AS aortopathy)
-- **Haemolysis** (prosthetic, severe AS — macroangiopathic)
-- **Endocarditis**
-- **Cardiac cachexia** (advanced)
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
 
 ---
 
-## 8. Management
-### General Principles
-- **Asymptomatic severe + preserved LV** → surveillance (echo q6–12 mo)
-- **Symptomatic severe OR LV dysfunction / dilation** → intervene
-- **Endocarditis prophylaxis** (NICE 2008) — only for: prosthetic valve, previous IE, unrepaired cyanotic CHD / repaired with prosthetic material <6 mo / residual defect, surgically constructed shunts
+## 16. CROSS-REFERENCES & NAVIGATION
 
-### Medical Therapy
-| Lesion | Role of Medical Therapy |
-|---|---|
-| **AS** | No medical therapy slows progression; treat HTN, hold off on vasodilators in severe |
-| **AR (chronic)** | Vasodilators (ACEi / ARB / nifedipine) if HTN or severe pre-surgery |
-| **MR (secondary)** | GDMT (BB, ACEi/ARNI, MRA, SGLT2i) + CRT if LBBB |
-| **MS** | Rate control (BB, digoxin) for AF, diuretics for congestion, anticoagulation for AF |
-| **TR (functional)** | Diuretics, treat cause (PH, LV dysfunction) |
-| **Prophylaxis** | Rheumatic fever (benzathine Pen G), endocarditis |
-
-### Interventional / Surgical Options
-| Procedure | Indication |
-|---|---|
-| **SAVR (surgical AVR)** | Age <75, low surgical risk, bicuspid, unsuitable for TAVI |
-| **TAVI** | Age >75, high surgical risk, suitable anatomy (PARTNER, CoreValve, Evolut) |
-| **Mitral repair** | Primary MR, **repair > replacement** (degenerative, flail, prolapse) |
-| **Mitral replacement** | Calcified, rheumatic, failed repair |
-| **TEER (MitraClip)** | Secondary MR + HF, high surgical risk (COAPT) |
-| **PMBV (balloon valvuloplasty)** | MS, Wilkins echo score <8, pliable, no MR, no LA thrombus |
-| **Commissurotomy (open / closed)** | MS unsuitable for PMBV |
-| **TV repair / replacement** | Severe TR + surgery for other valve |
-| **Pulmonary valvuloplasty** | PS, valvar |
-| **TAVI in failed bioprosthetic** | Valve-in-valve (VIV) |
-
-### TAVI vs SAVR (Heart Team)
-- **TAVI preferred** — age >75, high STS / EuroSCORE II, prior CABG, frailty, suitable anatomy
-- **SAVR preferred** — age <75, low risk, bicuspid, severe aortic regurgitation, unsuitable femoral access, young patient (durability)
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
 
 ---
 
-## 9. Prosthetic Valves & Anticoagulation
-| Prosthesis | Anticoagulation |
-|---|---|
-| **Mechanical (aortic)** | Warfarin INR **2.5** (target 2.0–3.0) **lifelong** |
-| **Mechanical (mitral)** | Warfarin INR **3.0** (target 2.5–3.5) **lifelong** |
-| **Bioprosthetic (aortic, low risk)** | Aspirin 75–100 mg lifelong; warfarin 3 mo optional |
-| **Bioprosthetic (mitral)** | Warfarin 3 mo then aspirin; consider lifelong if AF |
-| **Mechanical + AF / LA thrombus** | Warfarin + aspirin |
-| **DOACs** | **Contraindicated** in mechanical valves (RE-ALIGN trial) |
+## 17. METADATA & TRACKING
 
-### Prosthetic Valve Thrombosis
-- **TOE** for diagnosis (look at leaflets, gradients)
-- **Treatment** — IV UFH bridge; **fibrinolysis** (Alteplase) if critically ill / high surgical risk; **surgery** if large thrombus, recurrent, or failed lysis
-
-### Endocarditis Prophylaxis
-- **Only highest risk:** prosthetic valve, previous IE, unrepaired cyanotic CHD, repaired CHD with prosthetic material <6 mo or residual defect, cardiac transplant with valvulopathy
-- **Procedure:** dental involving gingival manipulation / oral mucosa perforation
-- **Antibiotic:** Amoxicillin 2 g (or Clindamycin 600 mg if allergic) 30–60 min before
+**File:** Arrhythmia_in_congenital_heart_disease.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
 
 ---
-
-## 10. Exam Pearls & High-Yield
-<callout icon="⭐" color="purple_bg">
-**12 high-yield points** every FCPS / MRCP candidate must master.
-</callout>
-
-- **AS severity** = Vmax >4 m/s, mean grad >40 mmHg, AVA <1.0 cm² (**"4-40-1"**).
-- **Severe AS** with symptoms = **intervene** (TAVI or SAVR).
-- **Severe AR** with LVEF <50% or LVESD >50 mm = surgery.
-- **Severe MS** (MVA <1.5) with symptoms = **PMBV** (Wilkins <8) or surgery.
-- **Primary MR**: surgical **repair > replacement**; **secondary MR**: GDMT + TEER (MitraClip).
-- **TAVI** for age >75 / high surgical risk; **SAVR** for age <75 / low risk / bicuspid.
-- **Mechanical valve** → warfarin lifelong; **DOAC contraindicated** (RE-ALIGN).
-- **Aortic mechanical → INR 2.5; Mitral mechanical → INR 3.0.**
-- **Endocarditis prophylaxis** only for highest-risk patients and dental / oral procedures.
-- **Bicuspid aortic valve** — associated with aortopathy (aneurysm / dissection) — screen with imaging.
-- **Mitral stenosis + AF** → anticoagulate (warfarin, INR 2.5) — rate control.
-- **Loud S1 + opening snap + diastolic rumble** = classic MS.
-
-<callout icon="🎯" color="rose_bg">
-**CLINICAL SIGNIFICANCE —** Valvular heart disease is increasingly **degenerative / calcific** in the ageing population. **Echo defines severity**; **symptoms and LV response** define the timing of intervention. **TAVI** has transformed AS care. **PMBV** is the procedure of choice in pliable MS. **Mechanical valves** are durable but require lifelong anticoagulation (warfarin, never DOAC). **Repair > replacement** for primary MR. Always involve the **Heart Team** for complex decisions.
-</callout>
-
-*Sea Knowledge · Cardiology · Valvular Heart Disease · v1.0 · For FCPS / MRCP exam prep*

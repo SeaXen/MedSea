@@ -1,81 +1,204 @@
-# Acute Decompensated HF (ADHF) — Classification
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.11.79"
+topic: "Acute_decompensated_HF_(ADHF)_classification"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/04_Heart_Failure/Acute_decompensated_HF_(ADHF)_classification.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="🚨" color="red_bg">
-**Topic:** ADHF — Cardiology
-**Style:** Sea Knowledge study note
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# Acute decompensated HF  classification
 
-## 1. Definition
-**ADHF** = rapid or gradual onset of HF symptoms/signs requiring urgent therapy. Most common cause of unplanned hospital admission in patients >65 y.
+> [!info] **Topic Classification**
+> **Section:** 04_Heart_Failure | **Category:** Cardiology
 
-## 2. Clinical Presentation
-- **Dyspnoea at rest** (90%), orthopnoea, PND
-- Pulmonary congestion / oedema (crackles, CXR)
-- **Peripheral oedema, ascites, hepatomegaly** (right-sided)
-- Fatigue, ↓exercise tolerance
-- Cool peripheries, oliguria (low output)
-- Tachycardia, hypotension or hypertension
+---
 
-## 3. Classification by Clinical Profile
-| Type | Features | % |
-|---|---|---|
-| **Decompensated HF** | Gradual worsening, mild-moderate | ~50% |
-| **Acute pulmonary oedema** | Sudden severe dyspnoea, pink frothy sputum | ~10–15% |
-| **Cardiogenic shock** | Hypotension, hypoperfusion, oliguria | ~5% |
-| **Hypertensive HF** | Severe HTN, preserved EF, pulmonary oedema | ~10–15% |
-| **High-output HF** | Warm, vasodilated, low SVR (rare) | <5% |
-| **Right HF** | Predominant venous congestion | ~5% |
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-## 4. Precipitants of ADHF
-**Mnemonic — "FAILURE"**
-- **F**orgetting medications / non-adherence
-- **A**rrhythmia (AF with rapid VR, VT)
-- **I**nfarction (ACS) / ischaemia
-- **L**ifestyle (salt loading, fluid)
-- **U**ncontrolled hypertension
-- **R**espiratory infection / sepsis
-- **E**mbolism (PE)
+Acute decompensated HF (ADHF): rapid onset/worsening of HF signs/symptoms requiring urgent therapy. Distinct from acute HF (de novo) vs worsening chronic HF. **Clinical profiles (ESC 2021)**: (1) **Warm-dry** (compensated, ~25%); (2) **Warm-wet** (congested, perfusion OK, ~50%, most common); (3) **Cold-dry** (hypoperfused, no congestion, ~5%); (4) **Cold-wet** (cardiogenic shock + congestion, ~20%, worst prognosis). Forrester classification (haemodynamic) similar.
 
-> Other: anaemia, thyrotoxicosis, pregnancy, drugs (NSAIDs, steroids, CCB), renal failure.
 
-## 5. Severity — Killip & Forrester (post-MI)
-**Killip classification:**
-- **I** — no HF
-- **II** — bibasal crackles, S3
-- **III** — frank pulmonary oedema
-- **IV** — cardiogenic shock
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-**Forrester classification** (haemodynamic):
-- **I** — normal CI, normal PCWP
-- **II** — ↓CI, normal PCWP
-- **III** — normal CI, ↑PCWP
-- **IV** — ↓CI, ↑PCWP
+**Neurohormonal activation** (RAAS, SNS, AVP, BNP) → sodium/water retention, vasoconstriction, myocardial remodelling. **Triggers**: dietary indiscretion, medication non-compliance, ischaemia (ACS), arrhythmia (AF, VT), infection (pneumonia, sepsis, urinary), anaemia, thyrotoxicosis, drugs (NSAIDs, steroids, calcium channel blockers, chemotherapy), pregnancy, surgery, renal dysfunction.
 
-## 6. Initial Assessment
-- **Vitals**, posture, JVP, lung bases, peripheral perfusion
-- **ECG** — ischaemia, arrhythmia
-- **CXR** — pulmonary oedema, effusion, cardiomegaly
-- **Bloods** — U&E (renal), FBC (anaemia), troponin, BNP, ABG
-- **Point-of-care echo** — EF, fluid status, valves
-- **Urinary catheter** — fluid balance
 
-## 7. Management — Overview
-| Profile | Treatment |
-|---|---|
-| **Warm & Wet** (most) | IV diuretic ± vasodilator |
-| **Cold & Dry** | Caution — fluid challenge, consider inotrope |
-| **Cold & Wet** | Inotrope + diuretic ± vasopressor |
-| **Warm & Dry** | Reassess, optimise oral therapy |
+## 3. CLINICAL FEATURES
 
-> **Pearls**
-> - **Decompensated HF = warm & wet** → diuretic
-> - **Cardiogenic shock = cold & wet** → inotrope + vasopressor + mechanical support
-> - **ADHF admission trigger** — non-adherence in 30% of cases
-> - **"Failure to cross the membrane"** — diuretic resistance — switch to bumetanide/torsemide, add thiazide
-> - **Pulmonary oedema + HTN** — IV nitroglycerin (GTN)
-> - **Kussmaul** sign → constrictive pericarditis, not ADHF
+Dyspnoea (rest, orthopnoea, PND, bendopnoea — inability to bend forward), fatigue, peripheral/sacral oedema, JVP elevation, S3, hepatomegaly, ascites, crepitations, cool peripheries (low CO), hypotension, oliguria, altered mental status. **Profiles**: warm/wet (pulmonary congestion, peripheral oedema), cold (hypoperfusion, narrow pulse pressure, cool), warm-dry (compensated, no congestion), cold-wet (shock + congestion).
 
-<callout icon="🎯" color="rose_bg">
-**CLINICAL SIGNIFICANCE —** ADHF is the most common admission diagnosis in elderly. **Treat the profile** (warm/cold × wet/dry) — it's the fastest way to choose therapy. **Always look for the trigger** — non-adherence, AF, ACS, sepsis. ESC 2021 recommends **early initiation of GDMT** (SGLT2i in particular) during admission — STRONG-HF showed benefit of early up-titration.
-</callout>
+
+## 4. DIAGNOSTIC APPROACH
+
+Clinical profile. **BNP/NT-proBNP** ↑↑ (rule out if <100 pg/mL BNP or <300 pg/mL NT-proBNP, but lower thresholds in obese). **ECG** (ischaemia, LVH, arrhythmia, low voltage in pericardial effusion). **CXR** (cardiomegaly, pulmonary oedema, Kerley B, pleural effusion, vascular redistribution). **Echo** (LVEF, valve, RV, PA pressure, effusion). **Labs**: renal, LFT, troponin, lactate if shock. **Urgent**: rule out MI (troponin, ECG), PE (D-dimer, CTPA), tamponade (echo).
+
+
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
+
+**In-hospital mortality**: warm-wet 2-4%, cold-dry 5-10%, cold-wet 20-40% (especially if shock). **ADHERE**: BUN, Cr, SBP predict outcomes. **EHMRG** (Emergency Heart Failure Mortality Risk Grade). **STRATIFY**. **Killip class** (post-MI). **SCAI shock** A-E.
+
+
+## 6. MANAGEMENT ALGORITHM
+
+**Warm-wet** (congestion, perfusion OK): IV loop diuretic (furosemide 40-80mg IV, 2.5x home dose, or continuous infusion 10-40mg/h), consider thiazide (metolazone 2.5-5mg, chlorothiazide) for diuretic resistance, vasodilator (nitroglycerin, nitroprusside) if SBP>110, oxygen, NIV (CPAP/BPAP) for pulmonary oedema. **Cold-dry**: inotrope (dobutamine) or vasodilator. **Cold-wet**: inotrope + diuretic + vasopressor (norepinephrine, vasopressin) if needed, mechanical circulatory support (IABP, Impella, VA-ECMO), consider transplant evaluation. **Pre-discharge**: optimise GDMT (4 pillars — ARNI/ACEi, beta-blocker, MRA, SGLT2i), education, follow-up within 7-14 days. **STRONG-HF (2022)**: rapid up-titration of GDMT within 2 weeks post-discharge reduces HF readmission and mortality.
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+Cardiogenic shock, ARDS, AKI, hepatic congestion, bowel ischaemia, arrhythmia, death. **In-hospital mortality** 4-10% (cold-wet up to 30-40%). **Rehospitalisation** 25-30% at 30-90 days. Worsening renal function during decongestion (WRF) — may need temporary diuretic reduction but not stop. **Hepatorenal**.
+
+
+## 8. SPECIAL POPULATIONS
+
+Elderly: more frail, less tolerance, more complications. CKD: diuretic resistance, more electrolyte issues, WRF. Pregnancy: rare, peripartum cardiomyopathy is more HFrEF. Diabetes: more severe. **Cardiorenal syndrome**: WRF, diuretic resistance. **Diuretic resistance**: combination (loop + thiazide/metolazone), increase dose, consider ultrafiltration (caution, evidence equivocal — CARRESS-HF, AVOID-HF).
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+ESC 2021 HF: ADHF management, clinical profile, pre-discharge optimisation. ACC/AHA 2022 HF: similar. ESC 2022 CS: cardiogenic shock. **STRONG-HF (2022)**: rapid up-titration within 2 weeks. **ADHERE registry**: BUN, Cr, SBP. **CARRESS-HF (2012)**: ultrafiltration not superior. **ADVOR (2022)**: acetazolamide + loop diuretic improves decongestion (rapidly, less rehospitalisation).
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+Don't over-diurese (AKI, electrolyte loss). Preload/afterload reduction before inotropes in cold-wet. Avoid inotropes if possible (worsen prognosis). Optimise GDMT before discharge (REDUCE-AHF, PIONEER-HF — early in-hospital initiation of ARNI reduces NT-proBNP). Follow-up within 7-14 days. Diuretic resistance: combine thiazide, increase loop dose, acetazolamide (ADVOR), consider ultrafiltration (caution).
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**Warm-wet** (most common): congestion, perfusion OK. **Cold-wet** (worst): shock + congestion. **ADHF**: acute decompensated HF. **ESC clinical profile**: warm-dry, warm-wet, cold-dry, cold-wet. **SCAI shock** A-E. **STRONG-HF**: rapid up-titration. **ADVOR**: acetazolamide. **GDMT 4 pillars**: ARNI/ACEi, BB, MRA, SGLT2i. **WRF**: worsening renal function.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+PE, ACS, aortic dissection, pericardial tamponade, tension pneumothorax, severe AS, MR, myocarditis, Takotsubo, sepsis with HF, non-cardiogenic pulmonary oedema (ARDS, transfusion, neurogenic).
+
+
+## 13. INVESTIGATIONS
+
+BNP/NT-proBNP, ECG (serial), CXR, echo, FBC, U&E, LFT, troponin, lactate (if shock), ABG, blood cultures (if infection suspected), CXR, RHC (cardiogenic shock, advanced HF), targeted tests based on trigger (D-dimer, TSH, etc.).
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Acute decompensated HF  classification?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Acute decompensated HF  classification:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Acute decompensated HF  classification:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Acute decompensated HF  classification?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Acute decompensated HF  classification is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Acute decompensated HF  classification. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Acute decompensated HF  classification on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Acute decompensated HF  classification
+2. Discuss the pathophysiology of Acute decompensated HF  classification
+3. What are the diagnostic criteria for Acute decompensated HF  classification?
+4. Outline the management approach to Acute decompensated HF  classification
+5. What are the complications and prognosis of Acute decompensated HF  classification?
+6. What are the latest guidelines for Acute decompensated HF  classification?
+7. How is Acute decompensated HF  classification managed in special populations?
+8. Compare Acute decompensated HF  classification with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Acute_decompensated_HF_classification.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

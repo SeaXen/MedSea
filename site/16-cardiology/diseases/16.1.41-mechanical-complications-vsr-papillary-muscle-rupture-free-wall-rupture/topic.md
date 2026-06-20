@@ -1,94 +1,204 @@
-# Mechanical Complications (VSR, Papillary Muscle Rupture, Free Wall Rupture)
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.1.41"
+topic: "Mechanical_complications_(VSR,_papillary_muscle_rupture,_free_wall_rupture)"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/02_Acute_Coronary_Syndromes/Mechanical_complications_(VSR,_papillary_muscle_rupture,_free_wall_rupture).md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="⚠️" color="red_bg">
-**Topic:** Mechanical Complications of MI — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# Mechanical complications
 
-## 1. Overview
-Mechanical complications of MI occur in **0.5–5%** of patients, typically **3–7 days** post-infarct (when macrophage-mediated collagen degradation peaks). They are **surgical emergencies** with high mortality (50–90%).
+> [!info] **Topic Classification**
+> **Section:** 02_Acute_Coronary_Syndromes | **Category:** Cardiology
 
-## 2. Free Wall Rupture
-- **Incidence**: 1–3% of MIs (decreasing with reperfusion)
-- **Timing**: 3–14 days (often 5–7 days)
-- **Site**: Anterior (LAD) — LV free wall
-- **Risk factors**: Advanced age, female, hypertension, late presentation, no reperfusion
-- **Clinical**: Sudden collapse, PEA, pulselessness; **hemopericardium + tamponade**
-- **Diagnosis**: Echo (pericardial effusion with tamponade)
-- **Treatment**: **Emergent pericardiocentesis** + **surgical repair** (mortality >90%)
+---
 
-## 3. Ventricular Septal Rupture (VSR)
-- **Incidence**: 0.2–0.5% (decreasing with PCI)
-- **Timing**: 3–5 days
-- **Site**: Anteroseptal (LAD) or posteroseptal (RCA/LCx)
-- **Clinical**: New harsh **holosystolic murmur** at LLSB, palpable thrill, biventricular failure
-- **Diagnosis**:
-  - **Echo with colour Doppler** (jet from LV → RV)
-  - **PA catheter**: step-up in O2 sat (RA → RV) >5%
-  - **Left-to-right shunt** Qp/Qs >1.5
-- **Management**:
-  - **Stabilise**: IABP, diuretics, vasodilators, inotropes
-  - **Urgent surgical repair** (within 24–48 h if haemodynamically unstable)
-  - **Percutaneous VSD closure** in selected cases
-- **Mortality**: 40–80% (higher with cardiogenic shock)
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-## 4. Papillary Muscle Rupture
-- **Incidence**: 0.5% of MIs
-- **Timing**: 3–5 days
-- **Site**: **Posteromedial papillary muscle** (single blood supply from PDA → RCA in 90%); anterolateral is dual supply (LAD + LCx)
-- **Clinical**: Acute severe **mitral regurgitation**, pulmonary oedema, hypotension
-- **Auscultation**: New **apical pan-systolic murmur** (may be soft due to rapid equalisation of pressures)
-- **Diagnosis**: Echo (TEE) — flail leaflet, severe MR
-- **Management**:
-  - **Stabilise**: IV diuretics, vasodilators (nitroprusside), IABP
-  - **Emergency surgery**: mitral valve repair or replacement
-- **Mortality**: 30–50%
+**Mechanical complications** refers to **mechanical complications of MI** (3-7 days post-MI) — papillary muscle rupture, ventricular septal rupture (VSR), free wall rupture, LV aneurysm, LV thrombus, Dressler syndrome, peri-infarction pericarditis. Modern reperfusion (PCI) reduced incidence to <1%, but mortality remains 30-90%. **Risk factors**: late presentation, large anterior MI, advanced age, female, HTN, prior MI.
 
-## 5. Differences Between VSR and Papillary Rupture
 
-| Feature | VSR | Papillary Rupture |
-|---|---|---|
-| **Murmur** | Harsh holosystolic at LLSB | Apical pan-systolic (often soft) |
-| **Step-up in O2 sat** | RA → RV (L→R shunt) | None |
-| **Echo** | Shunt LV → RV | Severe MR, flail leaflet |
-| **Echocardiographic clue** | Colour jet across septum | Colour jet in LA |
-| **Surgical** | Patch closure | MV repair/replace |
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-## 6. Right Ventricular Rupture
-- Rare; usually fatal
-- Occurs in posteroseptal infarction
-- Presents as tamponade + shock
+**Papillary muscle rupture** (inferior MI, RCA, posteromedial papillary — single blood supply, 1-3%): severe acute MR, pulmonary oedema, shock. **VSR** (anterior MI, LAD, 1-2%): single perforation with L→R shunt, biventricular failure. **Free wall rupture** (5-14d, 90% mortality, LAD): haemopericardium, tamponade, sudden death. **LV aneurysm** (late, 10-30% pre-PCI): dyskinetic thin-walled, mural thrombus, HF, arrhythmia. **LV thrombus** (anterior MI, 10-30% pre-PCI, 5-10% post-PCI): systemic emboli. **Dressler** (weeks-months, autoimmune): pericarditis, fever, pleuritis.
 
-## 7. LV Pseudoaneurysm
-- **Incomplete rupture** contained by pericardium/adhesions
-- Neck is **narrower than the body** (true aneurysm has wider neck)
-- **High rupture risk** → surgical repair even if asymptomatic
-- Echo and MRI for diagnosis
 
-## 8. LV True Aneurysm
-- Outpouching of scarred myocardium (LAD territory — apex)
-- **Persistent ST elevation** post-MI ("South African flag sign")
-- Complications: HF, thrombus, arrhythmia, rarely rupture
-- Treatment: medical (HF, anticoagulation); surgical repair if symptomatic/large
+## 3. CLINICAL FEATURES
 
-## 9. Pre-Operative Stabilisation
-- **IABP** — first-line bridge (reduces afterload, augments perfusion)
-- **Inotropes** (dobutamine, norepinephrine)
-- **Diuretics** for pulmonary oedema
-- **Avoid vasodilators** if hypotensive
+**Papillary rupture**: sudden dyspnoea, pulmonary oedema, new holosystolic murmur (may be soft/absent if severe acute MR), shock 2-7d post-MI. **VSR**: new harsh holosystolic murmur + thrill at LLSB, biventricular failure, shock 3-5d. **Free wall rupture**: sudden loss of output, PEA, pulseless electrical activity, tamponade, sudden death 5-14d. **LV aneurysm**: persistent ST elevation, HF, mural thrombus, arrhythmia, recurrent ischaemia. **LV thrombus**: stroke, systemic emboli, often incidental. **Dressler**: fever, pleuritic chest pain, pericardial rub, pericardial effusion, weeks-months post-MI.
 
-## 10. Outcomes
-- **Free wall rupture**: 90% mortality (often pre-hospital)
-- **VSR**: 30–50% surgical mortality
-- **Papillary rupture**: 20–30% surgical mortality
-- All have **better outcomes with early surgical repair**
 
-> **Pearls**
-> - **Mechanical complications** occur **3–7 days** post-MI (macrophage digestion)
-> - **Free wall rupture** = tamponade + PEA → pericardiocentesis + surgery
-> - **VSR** = harsh holosystolic murmur at LLSB + step-up O2 sat (RA → RV)
-> - **Papillary rupture** = posteromedial (RCA) = severe MR + pulmonary oedema
-> - **Posteromedial papillary muscle** = single blood supply (PDA) — more vulnerable
-> - **IABP** as bridge; **urgent surgery** is definitive
-> - **Pseudoaneurysm** = narrow neck; **true aneurysm** = wide neck
+## 4. DIAGNOSTIC APPROACH
+
+**Bedside echo** (essential): LV function, RWMA, valvular function, VSD (colour flow, agitated saline), LV thrombus, pericardial effusion, RV function, mechanical complications. **TOE** if echo limited (papillary rupture, VSD size, suitability for closure). **Coronary angiography** before surgery. **Cardiac MRI**: gold standard for tissue characterisation, viability, aneurysm, thrombus. **Lactate, BNP, troponin**. **CT** for aneurysm size, free wall integrity. **ECG**: persistent STE (aneurysm), low voltage (effusion).
+
+
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
+
+**In-hospital mortality**: papillary rupture 75% (75% without surgery), VSR 90% without surgery, free wall rupture 90%, LV aneurysm variable, LV thrombus embolic risk 10-15%, Dressler benign. **Time to surgery**: papillary <24-48h, VSR 24-48h (after stabilisation), free wall emergent.
+
+
+## 6. MANAGEMENT ALGORITHM
+
+**Papillary rupture**: emergency surgery (mitral valve repair/replacement), MCS bridge (IABP, Impella, VA-ECMO), IV diuretics, afterload reduction, inotropes. **VSR**: emergency surgery (patch closure), percutaneous closure (small, residual, post-op leaks), MCS bridge. **Free wall rupture**: pericardiocentesis, emergency surgery, ECMO bridge. **LV aneurysm**: medical (GDMT, anticoag if thrombus), surgical if large, refractory HF, arrhythmia. **LV thrombus**: anticoagulation (warfarin, DOAC — recent data), 3-6 months, repeat imaging. **Dressler**: NSAIDs, colchicine, corticosteroids if refractory. **Post-MI pericarditis**: aspirin high-dose, avoid NSAIDs (impaired healing, may precipitate VSR — CIRT, REDUCE-MVI).
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+Surgical mortality 20-50%. Recurrent MI, VSR, recurrent papillary rupture, stroke, heart block, residual shunt, ARDS, AKI, infection, death. **Long-term**: HF, chronic MR, residual VSD, aneurysm, recurrent emboli.
+
+
+## 8. SPECIAL POPULATIONS
+
+Elderly: very high mortality, often no surgery. Women: more complications. Late presentation: more complications. CKD: more bleeding, contrast risk. **Cocaine-induced MI**: similar complications, avoid beta-blockers.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**2017 ESC STEMI**: mechanical complications. **2013 ACC/AHA STEMI**: similar. **2023 ACC/AHA ACS**: post-MI complications. **2018 ESC pericardial**: Dressler, post-MI pericarditis. **CIRT (2017)**: NSAIDs + colchicine post-MI — no benefit, may harm. **REDUCE-MVI (ongoing)**: similar.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+**Miss diagnosis** (VSR, papillary rupture) — sudden clinical deterioration, do echo immediately. **Dressler vs peri-infarction pericarditis**: timing (1-3d vs weeks-months), mechanism (transmural inflammation vs autoimmune). **LV thrombus**: high risk in anterior MI, image 1-2 weeks post-MI, anticoagulate. **NSAIDs post-MI**: avoid in early phase (CIRT trial — increased risk, may precipitate VSR).
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**Mechanical complications**: VSR (anterior, LAD, 3-5d), papillary (inferior, RCA, 2-7d), free wall (5-14d, LAD). **Dressler**: weeks-months, autoimmune. **Peri-infarction pericarditis**: 1-3d. **LV aneurysm**: persistent STE. **LV thrombus**: anterior MI, anticoagulate 3-6m. **CIRT**: NSAIDs post-MI harmful. **Aneurysm**: anterior, persistent STE, mural thrombus.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+Differential for post-MI clinical deterioration: reinfarction, recurrent ischaemia, arrhythmia, PE, tamponade (free wall rupture, Dressler), mechanical complications, shock, bleeding (anticoag), sepsis, drug toxicity.
+
+
+## 13. INVESTIGATIONS
+
+ECG (serial), troponin, BNP, echo (first-line), TOE (suspicion), cardiac MRI, coronary angio, lactate, SvO2, FBC, U&E, LFT, ABG, RHC (if MCS).
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Mechanical complications?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Mechanical complications:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Mechanical complications:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Mechanical complications?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Mechanical complications is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Mechanical complications. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Mechanical complications on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Mechanical complications
+2. Discuss the pathophysiology of Mechanical complications
+3. What are the diagnostic criteria for Mechanical complications?
+4. Outline the management approach to Mechanical complications
+5. What are the complications and prognosis of Mechanical complications?
+6. What are the latest guidelines for Mechanical complications?
+7. How is Mechanical complications managed in special populations?
+8. Compare Mechanical complications with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Mechanical_complications.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---
