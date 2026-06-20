@@ -1,192 +1,478 @@
-<!-- Source: /mnt/tb/Medicine/Cardiology/04_Heart_Failure/Mechanical_support_(IABP,_Impella,_VA-ECMO).md | section: 16.4 | hub: heart-failure -->
-
-# Mechanical support
-
-> [!info] **Topic Classification**
-> **Section:** 04_Heart_Failure | **Category:** Cardiology
-
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.4.257"
+topic: "Mechanical complications of myocardial infarction"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/Ischaemic Heart Disease and Acute Coronary Syndromes/Mechanical complications of myocardial infarction.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
 ---
 
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Mechanical support** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (04 Heart Failure). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-The pathophysiology of Mechanical support involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
-
-
-## 3. CLINICAL FEATURES
-
-Clinical presentation of Mechanical support varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
-
-
-## 4. DIAGNOSTIC APPROACH
-
-Diagnostic approach to Mechanical support includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-Management of Mechanical support: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-Complications of Mechanical support: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
-
-
-## 8. SPECIAL POPULATIONS
-
-**Special populations in Mechanical support**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**Latest guidelines relevant to Mechanical support**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Common pitfalls in Mechanical support**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Key mnemonics for Mechanical support**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-**Differential diagnosis of Mechanical support** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
-
-
-## 13. INVESTIGATIONS
-
-**Investigations for Mechanical support**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Mechanical support?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Mechanical support:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Mechanical support:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Mechanical support?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Mechanical support is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Mechanical support. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Mechanical support on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Mechanical support
-2. Discuss the pathophysiology of Mechanical support
-3. What are the diagnostic criteria for Mechanical support?
-4. Outline the management approach to Mechanical support
-5. What are the complications and prognosis of Mechanical support?
-6. What are the latest guidelines for Mechanical support?
-7. How is Mechanical support managed in special populations?
-8. Compare Mechanical support with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Mechanical_support.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+# Mechanical Complications of Myocardial Infarction
+
+Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Davidson Chapter 16 - Cardiology Hierarchy|Cardiology Hierarchy]] · [[../Ischaemic Heart Disease and Acute Coronary Syndromes|Ischaemic Heart Disease and Acute Coronary Syndromes]] · [[STEMI]] · [[Reperfusion strategy in STEMI]] · [[Cardiogenic shock]] · [[Acute Coronary Syndrome]] · [[Heart Failure]]
+
+> [!important]
+> Mechanical complications are **high-mortality emergencies** occurring typically **3-7 days** post-MI due to necrotic tissue rupture. FCPS/MRCP exams test timing, clinical presentation, echo findings, and urgent management. **VSD, papillary muscle rupture (acute MR), free wall rupture (tamponade), LV pseudoaneurysm.**
+
+## Learning Objectives
+- Identify the four major mechanical complications: VSD, papillary muscle rupture, free wall rupture, LV pseudoaneurysm
+- Recognize typical timing (3-7 days post-MI) and clinical presentations
+- Interpret bedside echo findings for each complication
+- Apply emergency stabilization and definitive surgical management
+- Differentiate from other post-MI shock etiologies (arrhythmic, pump failure)
+
+## Definition
+Mechanical complications result from **rupture of infarcted myocardium** during the necrotic/inflammatory phase (days 3-7), before mature scar formation.
+
+## Timing and Pathophysiology
+| Phase | Days | Pathology | Risk |
+|-------|------|-----------|------|
+| **Necrotic** | 1-3 | Coagulative necrosis, neutrophil infiltration | Early rupture rare |
+| **Inflammatory** | **3-7** | Macrophages, collagenases → tissue weakening | **PEAK rupture risk** |
+| **Proliferative** | 7-14 | Granulation tissue, early collagen | Rupture risk declining |
+| **Maturation** | >14 | Dense collagen scar | Rupture very rare |
+
+> [!warning]
+> **Peak incidence: Day 3-7** post-MI. Early reperfusion (PCI/lysis) reduces but doesn't eliminate risk. Inferior MI favors RV free wall rupture; Anterior MI favors VSD and papillary muscle rupture.
+
+## Clinical Comparison Table
+
+| Complication | Anatomy | Timing | Key Presentation | Echo Finding | Management |
+|--------------|---------|--------|------------------|--------------|------------|
+| **VSD** | Interventricular septum (inferior > anterior) | Day 1-7 (peak 3-5) | New harsh holosystolic murmur LLSB, RV heave, shock | Color Doppler: LV→RV shunt, RV pressure step-up | Emergency surgery (delayed if stable) |
+| **Papillary Muscle Rupture** | Posteromedial (LCx/RCA) > anterolateral (LAD) | Day 2-7 (peak 3-7) | Acute severe MR, flash pulmonary edema, soft murmur | Flail leaflet, large eccentric MR jet, large V-wave | Urgent mitral valve repair/replacement |
+| **Free Wall Rupture** | LV free wall (anterior > inferior) | Day 3-7 (peak 5-7) | Sudden death, PEA, tamponade, electromechanical dissociation | Pericardial effusion, tamponade physiology, systolic collapse RV | Pericardiocentesis → emergency surgery (often fatal) |
+| **LV Pseudoaneurysm** | Contained free wall rupture | Weeks-months | Late heart failure, thromboembolism, rupture risk | Narrow neck, sealed by pericardium/adjacent structures | Surgical repair (elective) |
+
+## Ventricular Septal Defect (VSD)
+
+### Pathophysiology
+- Septal necrosis → rupture → left-to-right shunt
+- Inferior MI (RCA/LCx) → basal/inferior septum (85%)
+- Anterior MI (LAD) → apical septum (15%)
+- Shunt magnitude depends on defect size and PVR/SVR ratio
+
+### Clinical Features
+- **New harsh holosystolic murmur** at LLSB (Grade 3-6/6), often with **thrill**
+- **RV heave** (right ventricular volume/pressure overload)
+- **Shock** if large shunt (pulmonary overcirculation + LV failure)
+- **Hypoxemia** if Eisenmenger physiology develops (late)
+
+### Diagnosis
+| Modality | Finding |
+|----------|---------|
+| **TTE/TEE** | Defect visualization, color Doppler LV→RV shunt |
+| **RHC (Swan-Ganz)** | **Step-up O2 saturation** in RV vs RA (>7%) — **gold standard** |
+| **ECG** | Often new Q waves inferior/anterior; not diagnostic |
+| **CXR** | Pulmonary venous congestion, enlarged PA |
+
+### Management
+1. **Stabilize**: diuretics, inotropes (dobutamine), avoid excessive afterload reduction (worsens shunt)
+2. **IABP**: controversial — may ↑ shunt by reducing afterload
+3. **Surgery**: **Definitive treatment** — infarct exclusion + patch closure
+   - **Timing**: Delay 2-4 weeks if hemodynamically stable (allows scar maturation)
+   - **Emergent**: if refractory shock, failed medical management
+4. **Percutaneous closure**: Amplatzer device — selected high-surgical-risk patients
+
+## Papillary Muscle Rupture (Acute Severe MR)
+
+### Pathophysiology
+- **Posteromedial papillary muscle** (single blood supply: PDA from RCA/LCx) → higher rupture risk
+- Anterolateral (dual supply: LAD + LCx) → less common
+- Rupture → flail mitral leaflet → acute severe regurgitation → LA pressure ↑ → pulmonary edema
+
+### Clinical Features
+- **Flash pulmonary edema**, dyspnea at rest, hypoxemia
+- **Murmur**: soft, early systolic or holosystolic at apex (radiates to axilla) — **NOT harsh** (low pressure gradient LA-LV)
+- **S3 gallop**, wide pulse pressure
+- **Hypotension**, cool extremities (low forward output)
+- **Large V-wave** on PCWP trace
+
+### Diagnosis
+| Modality | Finding |
+|----------|---------|
+| **TTE/TEE** | **Flail leaflet** (posterior > anterior), eccentric MR jet, hyperdynamic LV |
+| **RHC** | Large V-wave on PCWP, elevated PA pressures |
+| **CXR** | Acute pulmonary edema, normal heart size (acute) |
+
+### Management
+1. **Vasodilators** (nitroprusside): ↓ afterload → ↑ forward flow (avoid excessive hypotension)
+2. **IABP**: ↓ afterload, ↑ coronary perfusion — **bridge to surgery**
+3. **DOBUTAMINE**: inotropic support
+4. **Urgent surgery**: **Mitral valve repair (preferred) or replacement** — mortality 20-30%
+   - Timing: **ASAP** — medical stabilization only as bridge
+
+## Free Wall Rupture (Cardiac Tamponade)
+
+### Pathophysiology
+- Transmural necrosis → full-thickness rupture → hemopericardium → tamponade
+- **Anterior MI** (LAD) → anterior/lateral wall
+- **Inferior MI** (RCA) → inferior/posterior wall (may track to RV)
+- **Most lethal** — 50% die before hospital, 90% within 24h of presentation
+
+### Clinical Features
+- **Sudden hemodynamic collapse**: hypotension, PEA, electromechanical dissociation
+- **Beck's triad**: hypotension, JVD, muffled heart sounds
+- **Pulsus paradoxus** >10 mmHg
+- **Kussmaul's sign** (JVD ↑ inspiration) if RV involved
+- **ECG**: Low voltage, electrical alternans (if effusion large)
+
+### Diagnosis
+| Modality | Finding |
+|----------|---------|
+| **Bedside Echo** | **Pericardial effusion**, diastolic RV collapse, systolic RA collapse, IVC plethora |
+| **ECG** | Electrical alternans, low voltage |
+
+### Management
+1. **Immediate pericardiocentesis** (echo-guided): temporizing, 20-30% survive to surgery
+2. **Volume resuscitation** (preload for tamponade)
+3. **Emergency surgery**: pericardial window + infarct exclusion + patch repair
+4. **Outcome**: Mortality >90% even with surgery
+
+## LV Pseudoaneurysm
+
+### Pathophysiology
+- **Contained rupture**: free wall rupture sealed by pericardium/adhesions
+- **Narrow neck** (<50% diameter of cavity) — distinguishes from true aneurysm
+- High rupture risk → elective repair indicated
+- May present weeks to months post-MI
+
+### Clinical Features
+- Heart failure symptoms, thromboembolism (stroke, peripheral), rupture risk
+- May be asymptomatic, found on follow-up echo
+
+### Diagnosis
+| Modality | Finding |
+|----------|---------|
+| **Echo** | Outpouching with **narrow neck**, bidirectional flow at neck |
+| **CT/MRI** | Defines anatomy, relationship to coronaries, extent of adhesions |
+| **Angio** | Contrast extravasation with contained cavity |
+
+### Management
+- **Surgical repair**: infarct exclusion + patch closure
+- **Elective** but don't delay (rupture risk high)
+
+## Differential Diagnosis of Post-MI Shock
+
+| Etiology | Key Features | Echo |
+|----------|--------------|------|
+| **Pump failure** | Gradual, large MI, LV dilation, low EF | Global hypokinesis, low EF |
+| **Mechanical (VSD/MR/rupture)** | **Sudden**, new murmur, specific echo findings | See above |
+| **Arrhythmic** | VT/VF, bradyarrhythmia | Normal/prior MI |
+| **RV infarction** | Inferior MI, hypotension, clear lungs, JVD | RV dilation, hypokinesis, IVC plethora |
+| **Tamponade (non-mechanical)** | Post-PCI, anticoagulation | Effusion, tamponade physiology |
+
+## Prognosis and Mortality
+| Complication | In-Hospital Mortality (Modern Era) |
+|--------------|-----------------------------------|
+| VSD | 20-40% (surgical era) |
+| Papillary Muscle Rupture | 20-30% (with urgent surgery) |
+| Free Wall Rupture | >90% (rarely survive to surgery) |
+| LV Pseudoaneurysm | 10-20% (elective repair) |
+
+> [!tip]
+> **Risk factors for mechanical complications**: older age, female, hypertension, anterior MI, delayed/no reperfusion, NSAID/steroid use, prior MI.
+
+## FCPS/MRCP High-Yield Points
+- **Timing**: Day 3-7 post-MI (inflammatory phase)
+- **VSD**: harsh holosystolic LLSB murmur + thrill + RV heave → RV O2 step-up on Swan-Ganz
+- **Papillary muscle rupture**: flash pulmonary edema + soft apical MR murmur → flail leaflet on echo
+- **Free wall rupture**: sudden death/PEA + tamponade → echo effusion + RV diastolic collapse → pericardiocentesis bridge to surgery
+- **Pseudoaneurysm**: contained rupture, narrow neck, high rupture risk → elective surgery
+- **IABP**: helps MR (↓ afterload), may worsen VSD (↑ shunt)
+
+## Common Viva Questions
+1. When do mechanical complications peak post-MI? (Day 3-7)
+2. Which papillary muscle ruptures more often? (Posteromedial - single blood supply)
+3. What murmur character distinguishes VSD from acute MR? (VSD = harsh + thrill; MR = soft)
+4. RHC finding diagnostic for VSD? (O2 step-up in RV >7%)
+5. Echo findings for tamponade? (RV diastolic collapse, RA systolic collapse, IVC plethora)
+6. Why avoid excessive afterload reduction in VSD? (↑ left-to-right shunt)
+7. Pseudoaneurysm vs true aneurysm? (Narrow neck, contained rupture)
+8. Management of free wall rupture? (Pericardiocentesis → emergency surgery)
+
+## Common Confusions / Exam Traps
+- Confusing acute MR murmur (soft) with chronic MR (holosystolic, radiates to axilla)
+- Missing VSD because murmur is not loud (small defect)
+- Using IABP in VSD (increases shunt)
+- Thinking free wall rupture always has murmur (usually no time for murmur)
+- Forgetting posteromedial papillary muscle = single blood supply = higher rupture risk
+
+## Mind Map
+```mermaid
+mindmap
+  root((Mechanical Complications))
+    Timing
+      Day 3-7 peak
+      Inflammatory phase
+    VSD
+      Inferior MI > Anterior
+      Harsh murmur LLSB + thrill
+      RV O2 step-up
+      Surgery (delay if stable)
+    Papillary Muscle Rupture
+      Posteromedial > Anterolateral
+      Flash pulmonary edema
+      Flail leaflet on echo
+      Urgent MV surgery
+    Free Wall Rupture
+      Anterior > Inferior
+      Sudden death / PEA / Tamponade
+      Echo: RV diastolic collapse
+      Pericardiocentesis → Surgery
+    Pseudoaneurysm
+      Contained rupture
+      Narrow neck
+      Elective surgery
+```
+
+## One-Page Revision Summary
+- **Day 3-7** = peak mechanical complication window
+- **VSD**: harsh systolic LLSB + thrill + RV heave → RV O2 step-up → surgery (delayed if stable)
+- **Papillary muscle rupture**: posteromedial > anterolateral → flash pulmonary edema + soft MR murmur → flail leaflet on echo → **urgent MV surgery**
+- **Free wall rupture**: sudden collapse, tamponade → echo effusion + RV diastolic collapse → pericardiocentesis → emergency surgery (mortality >90%)
+- **Pseudoaneurysm**: contained rupture, narrow neck → elective surgical repair
+- **IABP**: good for MR, avoid in VSD (↑ shunt)
+- **Risk factors**: elderly, female, HTN, anterior MI, no reperfusion
+
+## 24-Hour Recall Prompts
+- State the 4 mechanical complications with timing
+- Draw VSD vs acute MR comparison table
+- List echo findings for tamponade
+- Explain why IABP contraindicated in VSD
+- Describe posteromedial vs anterolateral papillary muscle blood supply
+
+## 7-Day / 15-Day / 30-Day Revision Tracker
+- [ ] Day 1 completed
+- [ ] 24-hour recall completed
+- [ ] Day 7 revision completed
+- [ ] Day 15 revision completed
+- [ ] Day 30 revision completed
+
+## Must Know / Should Know / Nice to Know
+### Must Know
+- Timing: Day 3-7 post-MI
+- VSD: harsh murmur, RV step-up, surgery
+- Papillary muscle: flash edema, flail leaflet, urgent MV surgery
+- Free wall: tamponade, pericardiocentesis, >90% mortality
+- Posteromedial single supply
+
+### Should Know
+- Pseudoaneurysm: narrow neck, elective repair
+- RV infarction differential
+- IABP effects on VSD vs MR
+- Percutaneous VSD closure options
+
+### Nice to Know
+- Surgical techniques (infarct exclusion vs direct closure)
+- MRI criteria for pseudoaneurysm
+- Long-term outcomes post-repair
+
+## Self-Test Scorecard
+- Understanding /10
+- Recall /10
+- Echo pattern recognition /10
+- MCQ performance /10
+- Viva confidence /10
+- **Total /50**
+
+> [!tip]
+> **Interpretation**: <35 = weak topic; 35-44 = acceptable but insecure; 45+ = strong exam-ready topic.
+
+## Exam Answer Modes
+### Long Answer Skeleton
+1. Timing and pathophysiology (inflammatory phase Day 3-7)
+2. VSD: anatomy, presentation, diagnosis (RV step-up), management
+3. Papillary muscle rupture: posteromedial predilection, flash edema, flail leaflet, urgent surgery
+3. Free wall rupture: tamponade, echo findings, pericardiocentesis bridge to surgery
+4. Pseudoaneurysm: contained rupture, narrow neck, elective repair
+5. Differential diagnosis of post-MI shock table
+6. Risk factors and prognosis
+
+### Short Note Skeleton
+- Day 3-7 post-MI
+- VSD: harsh systolic, RV step-up
+- Papillary rupture: flash edema, flail, urgent surgery
+- Free wall: tamponade, >90% mortality
+- Pseudoaneurysm: narrow neck
+
+### Viva One-Liners
+- "Day 3-7 = mechanical complications peak"
+- "VSD = harsh LLSB + RV O2 step-up"
+- "Papillary muscle rupture = flash edema + flail leaflet"
+- "Free wall rupture = tamponade = pericardiocentesis → surgery"
+- "Posteromedial PM = single supply (PDA) = rupture risk"
+
+### Ward-Case Discussion Points
+- "Day 4 post-inferior MI, new harsh murmur LLSB, thrill, shock" → "VSD. Echo for shunt, Swan-Ganz for step-up. Surgery delayed if stable."
+- "Day 5 post-anterolateral MI, sudden flash pulmonary edema, soft apical murmur" → "Papillary muscle rupture. Echo for flail leaflet. Urgent MV surgery."
+- "Day 6 post-anterior MI, sudden PEA, JVD, muffled sounds" → "Free wall rupture → tamponade. Bedside echo. Pericardiocentesis. Emergency surgery."
+
+### Last-Night-Before-Exam Sheet
+- Timing: Day 3-7
+- VSD: harsh murmur, RV step-up → surgery
+- Papillary muscle: posteromedial, flash edema, flail leaflet → urgent surgery
+- Free wall: tamponade → pericardiocentesis → surgery (>90% die)
+- Pseudoaneurysm: narrow neck → elective repair
+- IABP: helps MR, worsens VSD
+
+## Summary
+Mechanical complications of MI result from **myocardial rupture during the inflammatory phase (Days 3-7)**. The four major entities are **VSD** (harsh murmur, RV O2 step-up), **papillary muscle rupture** (flash pulmonary edema, flail leaflet, **posteromedial > anterolateral** due to single PDA blood supply), **free wall rupture** (tamponade, sudden death/PEA, pericardiocentesis bridge to surgery, >90% mortality), and **LV pseudoaneurysm** (contained rupture, narrow neck, elective repair). VSD surgery often delayed for scar maturation; papillary muscle rupture requires **urgent mitral valve surgery**; free wall rupture is mostly fatal despite intervention. **IABP reduces afterload → helps MR, worsens VSD shunt**.
+
+## MCQs (10)
+1. Mechanical complications of MI peak during which post-MI phase?
+   A. Necrotic (Day 1-3)
+   B. **Inflammatory (Day 3-7)**
+   C. Proliferative (Day 7-14)
+   D. Maturation (Day >14)
+2. Which papillary muscle is more prone to rupture and why?
+   A. Anterolateral - dual blood supply
+   B. **Posteromedial - single blood supply (PDA)**
+   C. Both equally
+   D. Posteromedial - dual blood supply
+3. Characteristic murmur of post-MI VSD:
+   A. Soft early systolic at apex
+   B. **Harsh holosystolic at LLSB with thrill**
+   C. Diastolic rumble at apex
+   D. Continuous at base
+4. Swan-Ganz finding diagnostic for VSD:
+   A. Elevated PCWP
+   B. **Oxygen saturation step-up in RV (>7% vs RA)**
+   C. Reduced cardiac index
+   D. Elevated PA diastolic pressure
+5. Free wall rupture most commonly presents as:
+   A. New murmur
+   B. Gradual heart failure
+   C. **Sudden death / PEA / tamponade**
+   D. Atrial fibrillation
+6. Bedside echo finding most specific for cardiac tamponade:
+   A. Pericardial effusion alone
+   B. **Diastolic RV collapse + systolic RA collapse + IVC plethora**
+   C. LV hypokinesis
+   D. Dilated IVC alone
+7. LV pseudoaneurysm is distinguished from true aneurysm by:
+   A. Wide neck
+   B. **Narrow neck with contained rupture**
+   C. Fibrous wall
+   D. Thrombus formation
+8. IABP effect on VSD vs acute MR:
+   A. Beneficial for both
+   B. Harmful for both
+   C. **Worsens VSD (↑ shunt), improves MR (↓ afterload)**
+   D. Improves VSD, worsens MR
+9. Typical timing of papillary muscle rupture post-MI:
+   A. Day 1-2
+   B. **Day 3-7 (peak 5-7)**
+   C. Day 10-14
+   D. Day >21
+10. Most common anatomic location for post-MI VSD:
+    A. Apical septum (anterior MI)
+    B. **Basal/inferior septum (inferior MI)**
+    C. Mid septum
+    D. Membranous septum
+
+## SBA Questions (10)
+1. Day 4 post-inferior STEMI, new harsh holosystolic murmur LLSB with thrill, BP 85/50, JVD. Echo shows RV dilation. Next diagnostic step:
+   A. Coronary angiography
+   B. **Right heart catheterization for O2 step-up**
+   C. Cardiac MRI
+   D. CT angiography
+2. Day 5 post-anterolateral STEMI, flash pulmonary edema, soft apical systolic murmur, hypotension. TTE shows flail posterior leaflet. Best management:
+   A. IV nitroglycerin + furosemide
+   B. IABP + delayed surgery
+   C. **IABP + urgent mitral valve surgery**
+   D. Percutaneous MitraClip
+3. Day 6 post-anterior STEMI, sudden PEA arrest, distended neck veins, muffled heart sounds, BP unmeasurable. Bedside echo: large pericardial effusion, RV diastolic collapse. Immediate step:
+   A. IV adrenaline 1 mg
+   B. **Echo-guided pericardiocentesis**
+   C. Urgent sternotomy in ED
+   D. IV fluids + norepinephrine
+4. Mechanism of increased left-to-right shunt with IABP in VSD:
+   A. ↑ LV contractility
+   B. **↓ SVR → ↓ systemic afterload → ↑ LV→RV gradient**
+   C. ↑ RV afterload
+   D. ↓ heart rate
+5. Posteromedial papillary muscle blood supply:
+   A. LAD + LCx
+   B. **PDA (RCA/LCx) — single supply**
+   C. LAD only
+   D. PDA + LAD
+6. Electrocardiographic sign of large pericardial effusion/tamponade:
+   A. ST elevation
+   B. **Electrical alternans + low voltage**
+   C. Pathological Q waves
+   D. Right bundle branch block
+7. Pseudoaneurysm management:
+   A. Anticoagulation only
+   B. **Elective surgical repair**
+   C. Percutaneous closure
+   D. Observation
+8. Day 3 post-inferior MI, hypotension, clear lungs, JVD at 45°, RV dilation on echo. Most likely:
+   A. Papillary muscle rupture
+   B. **RV infarction**
+   C. Free wall rupture
+   D. VSD
+9. Mortality of free wall rupture with modern management:
+   A. <10%
+   B. 20-30%
+   C. 40-50%
+   D. **>90%**
+10. VSD surgical timing in hemodynamically stable patient:
+    A. Immediate (<24h)
+    B. **2-4 weeks (scar maturation)**
+    C. 3-6 months
+    D. Never (medical management only)
+
+## Flashcards
+- Q: Mechanical complications peak timing?
+  A: Day 3-7 (inflammatory phase)
+- Q: VSD murmur + diagnostic?
+  A: Harsh holosystolic LLSB + thrill; RV O2 step-up on Swan-Ganz
+- Q: Papillary muscle rupture: which + why + presentation?
+  A: Posteromedial (single PDA supply), flash pulmonary edema, flail leaflet on echo
+- Q: Free wall rupture: presentation + echo + management?
+  A: Sudden death/PEA/tamponade; RV diastolic collapse; pericardiocentesis → surgery
+- Q: Pseudoaneurysm vs true aneurysm?
+  A: Narrow neck, contained rupture, high rupture risk
+- Q: IABP in VSD vs MR?
+  A: Worsens VSD (↓ SVR → ↑ shunt), improves MR (↓ afterload)
+- Q: Posteromedial papillary muscle supply?
+  A: PDA (RCA/LCx) — single supply
+- Q: Tamponade echo triad?
+  A: RV diastolic collapse, RA systolic collapse, IVC plethora
+- Q: VSD surgery timing if stable?
+  A: Delay 2-4 weeks for scar maturation
+- Q: Free wall rupture mortality?
+  A: >90%
+
+## Answer Key with Explanations
+### MCQs
+1. **B** — Inflammatory phase (Day 3-7) with macrophage collagenase activity peaks rupture risk.
+2. **B** — Posteromedial papillary muscle supplied only by PDA (RCA/LCx); anterolateral has dual supply (LAD + LCx).
+3. **B** — VSD: harsh holosystolic murmur at LLSB, often with palpable thrill (high-pressure LV→RV shunt).
+4. **B** — O2 saturation step-up in RV >7% above RA = left-to-right shunt (gold standard).
+5. **C** — Free wall rupture: sudden hemodynamic collapse, PEA, tamponade; most lethal.
+6. **B** — Tamponade echo: diastolic RV collapse (earliest), systolic RA collapse, IVC plethora with minimal respiratory variation.
+7. **B** — Pseudoaneurysm = contained rupture sealed by pericardium with narrow neck (<50% cavity diameter); true aneurysm = wide neck, fibrous wall.
+8. **C** — IABP ↓ SVR → ↓ systemic afterload → ↑ LV→RV pressure gradient → ↑ shunt in VSD; in MR, ↓ afterload → ↑ forward flow.
+9. **B** — Papillary muscle rupture peaks Day 5-7 (slightly later than VSD).
+10. **B** — Inferior MI (RCA/LCx) → basal/inferior septum accounts for 85% of VSDs.
+
+### SBAs
+1. **B** — Clinical presentation classic for VSD; RHC O2 step-up confirms.
+2. **C** — Acute severe MR from papillary muscle rupture: IABP bridge, urgent MV surgery (repair > replacement).
+3. **B** — Tamponade from free wall rupture: immediate pericardiocentesis is life-saving bridge to surgery.
+4. **B** — IABP reduces SVR → ↑ shunt gradient in VSD.
+5. **B** — Posteromedial = PDA only; anterolateral = LAD + LCx (dual).
+6. **B** — Electrical alternans (swinging heart) + low voltage = large effusion/tamponade.
+7. **B** — Pseudoaneurysm = high rupture risk → elective surgical repair.
+8. **B** — RV infarction: inferior MI + hypotension + clear lungs + JVD + RV dilation.
+9. **D** — Free wall rupture mortality >90% despite modern care.
+10. **B** — Stable VSD: delay surgery 2-4 weeks for infarct scar maturation; emergent if unstable.
 
 ---

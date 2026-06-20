@@ -1,105 +1,204 @@
-# Cardiogenic Shock (IABP, Impella, VA-ECMO)
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.1.40"
+topic: "Cardiogenic_shock_(IABP,_Impella,_VA-ECMO)"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/02_Acute_Coronary_Syndromes/Cardiogenic_shock_(IABP,_Impella,_VA-ECMO).md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="🚨" color="red_bg">
-**Topic:** Cardiogenic Shock — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# Cardiogenic shock
 
-## 1. Definition
-**Cardiogenic shock (CS)** = **inadequate tissue perfusion** from primary cardiac pump failure. Hallmark: **SBP <90 mmHg** (or vasopressors needed), **signs of hypoperfusion** (cold, clammy, oliguria, altered mental status, ↑lactate), and **elevated filling pressures** (PCWP >15 mmHg, low cardiac index <2.2 L/min/m²).
+> [!info] **Topic Classification**
+> **Section:** 02_Acute_Coronary_Syndromes | **Category:** Cardiology
 
-## 2. Aetiology
-- **Acute MI** (most common — ~80%)
-- **Mechanical complications** (VSR, papillary rupture, free wall rupture)
-- **Acute decompensated heart failure** (chronic HF, fulminant myocarditis)
-- **Tako-tsubo with apical rupture**
-- **Pericardial tamponade**
-- **Arrhythmias** (VT storm, bradycardia, high-degree AV block)
-- **Post-cardiotomy**
-- **PE with RV failure**
+---
 
-## 3. SCAI Classification (Stages A → E)
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-| Stage | Description | Findings |
-|---|---|---|
-| **A — At risk** | Large MI, no shock | Normal BP, well perfused |
-| **B — Beginning** | Hypotension, no hypoperfusion | SBP <90, HR >100 |
-| **C — Classic** | Hypotension + hypoperfusion | Cold, oliguria, lactate >2 |
-| **D — Deteriorating** | Failing to respond | Escalating vasopressors |
-| **E — Extremis** | Cardiac arrest, CPR | Refractory |
+Acute decompensated HF (ADHF): rapid onset/worsening of HF signs/symptoms requiring urgent therapy. Distinct from acute HF (de novo) vs worsening chronic HF. **Clinical profiles (ESC 2021)**: (1) **Warm-dry** (compensated, ~25%); (2) **Warm-wet** (congested, perfusion OK, ~50%, most common); (3) **Cold-dry** (hypoperfused, no congestion, ~5%); (4) **Cold-wet** (cardiogenic shock + congestion, ~20%, worst prognosis). Forrester classification (haemodynamic) similar.
 
-## 4. Hemodynamic Profile
-- **CI <2.2 L/min/m²**
-- **PCWP >15 mmHg** (LV failure) or **elevated RA pressure** (RV failure)
-- **SVR normal or high** (vs septic shock where SVR low)
-- **Mixed venous O2 sat <60%**
 
-## 5. Initial Management
-- **Oxygen + ventilation** (intubate if needed)
-- **IV access** + arterial line
-- **Foley catheter** (urine output)
-- **Fluid challenge** (small bolus 250 mL) if not in pulmonary oedema
-- **Norepinephrine** first-line (less arrhythmia than dopamine — SOAP II)
-- **Dobutamine** for inotropy if SBP adequate
-- **Revascularisation** if ACS (urgent PCI/CABG)
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-## 6. Mechanical Circulatory Support (MCS)
+**Neurohormonal activation** (RAAS, SNS, AVP, BNP) → sodium/water retention, vasoconstriction, myocardial remodelling. **Triggers**: dietary indiscretion, medication non-compliance, ischaemia (ACS), arrhythmia (AF, VT), infection (pneumonia, sepsis, urinary), anaemia, thyrotoxicosis, drugs (NSAIDs, steroids, calcium channel blockers, chemotherapy), pregnancy, surgery, renal dysfunction.
 
-| Device | Mechanism | Support | Use |
-|---|---|---|---|
-| **IABP** (Intra-aortic balloon pump) | Counterpulsation (augments diastole, ↓afterload) | ~0.5–1 L/min | Class III (no mortality benefit — IABP-SHOCK II); bail-out for bridge |
-| **Impella (2.5, CP, 5.0, RP)** | Continuous axial flow pump (LV→aorta or RA→PA) | 2.5–5 L/min | LV unloading; cardiogenic shock, high-risk PCI, VT storm |
-| **VA-ECMO** (veno-arterial) | Cardiopulmonary bypass; oxygenation + flow | 4–6 L/min | Cardiac arrest, biventricular failure, severe CS |
-| **TandemHeart** | LA→femoral artery bypass | 4–5 L/min | Centres with experience |
 
-## 7. IABP Details
-- Inflates in diastole (augments coronary perfusion), deflates in systole (↓afterload)
-- Requires stable rhythm, no severe AR, no aortic dissection
-- **IABP-SHOCK II**: no mortality benefit in CS; not routinely recommended (Class III)
-- Useful in: mechanical complications, bridge to surgery, high-risk PCI (controversial)
+## 3. CLINICAL FEATURES
 
-## 8. Impella Details
-- **Impella 2.5 / CP** — percutaneous, femoral
-- **Impella 5.0** — surgical cut-down, full LV support
-- **Impella RP** — right ventricular support
-- **Unloads LV** (reduces wall stress, oxygen demand)
-- Used in: high-risk PCI, cardiogenic shock, VT ablation, bridge to recovery/transplant
-- Complications: limb ischaemia, haemolysis, bleeding
+Dyspnoea (rest, orthopnoea, PND, bendopnoea — inability to bend forward), fatigue, peripheral/sacral oedema, JVP elevation, S3, hepatomegaly, ascites, crepitations, cool peripheries (low CO), hypotension, oliguria, altered mental status. **Profiles**: warm/wet (pulmonary congestion, peripheral oedema), cold (hypoperfusion, narrow pulse pressure, cool), warm-dry (compensated, no congestion), cold-wet (shock + congestion).
 
-## 9. VA-ECMO Details
-- **Femoral vein → femoral artery** (or central)
-- Provides oxygenation + circulation
-- **Complications**: limb ischaemia, bleeding, LV distension (use Impella to unload), stroke
-- **Contraindications**: severe aortic regurgitation, irreversible CNS injury, advanced age/frailty
-- **E-CPR**: ECMO during cardiac arrest (improves outcomes in selected patients)
 
-## 10. Choosing MCS Device
+## 4. DIAGNOSTIC APPROACH
 
-| Scenario | Device |
-|---|---|
-| **Isolated LV failure** | Impella |
-| **Biventricular / pulmonary oedema + hypoxia** | VA-ECMO + LV venting |
-| **RV failure (RCA MI)** | Impella RP, VA-ECMO |
-| **Bridge to recovery** | Impella, VA-ECMO |
-| **High-risk PCI** | Impella, IABP |
-| **Cardiac arrest** | VA-ECMO (E-CPR) |
+Clinical profile. **BNP/NT-proBNP** ↑↑ (rule out if <100 pg/mL BNP or <300 pg/mL NT-proBNP, but lower thresholds in obese). **ECG** (ischaemia, LVH, arrhythmia, low voltage in pericardial effusion). **CXR** (cardiomegaly, pulmonary oedema, Kerley B, pleural effusion, vascular redistribution). **Echo** (LVEF, valve, RV, PA pressure, effusion). **Labs**: renal, LFT, troponin, lactate if shock. **Urgent**: rule out MI (troponin, ECG), PE (D-dimer, CTPA), tamponade (echo).
 
-## 11. Culprit-Only PCI in Shock
-- **CULPRIT-SHOCK trial**: PCI of **culprit lesion only** at index procedure
-- **Staged** non-culprit PCI improves survival vs immediate multivessel PCI
 
-## 12. Escalation Pathway
-1. **Vasopressors/inotropes** (norepi ± dobutamine)
-2. **Refractory → MCS** (Impella or VA-ECMO)
-3. **Wean as tolerated** or **bridge to durable VAD / transplant**
-4. **Palliative care** if no recovery and not a candidate
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
 
-> **Pearls**
-> - **SCAI staging A–E** (at risk → extremis)
-> - **Norepinephrine** first-line vasopressor
-> - **IABP** no longer routine in CS (Class III in ESC)
-> - **Impella / VA-ECMO** for refractory CS
-> - **VA-ECMO** can cause LV distension → add Impella to vent
-> - **Culprit-only PCI** in shock (CULPRIT-SHOCK)
-> - **Lactate, mixed venous O2 sat, urine output** = perfusion markers
+**In-hospital mortality**: warm-wet 2-4%, cold-dry 5-10%, cold-wet 20-40% (especially if shock). **ADHERE**: BUN, Cr, SBP predict outcomes. **EHMRG** (Emergency Heart Failure Mortality Risk Grade). **STRATIFY**. **Killip class** (post-MI). **SCAI shock** A-E.
+
+
+## 6. MANAGEMENT ALGORITHM
+
+**Warm-wet** (congestion, perfusion OK): IV loop diuretic (furosemide 40-80mg IV, 2.5x home dose, or continuous infusion 10-40mg/h), consider thiazide (metolazone 2.5-5mg, chlorothiazide) for diuretic resistance, vasodilator (nitroglycerin, nitroprusside) if SBP>110, oxygen, NIV (CPAP/BPAP) for pulmonary oedema. **Cold-dry**: inotrope (dobutamine) or vasodilator. **Cold-wet**: inotrope + diuretic + vasopressor (norepinephrine, vasopressin) if needed, mechanical circulatory support (IABP, Impella, VA-ECMO), consider transplant evaluation. **Pre-discharge**: optimise GDMT (4 pillars — ARNI/ACEi, beta-blocker, MRA, SGLT2i), education, follow-up within 7-14 days. **STRONG-HF (2022)**: rapid up-titration of GDMT within 2 weeks post-discharge reduces HF readmission and mortality.
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+Cardiogenic shock, ARDS, AKI, hepatic congestion, bowel ischaemia, arrhythmia, death. **In-hospital mortality** 4-10% (cold-wet up to 30-40%). **Rehospitalisation** 25-30% at 30-90 days. Worsening renal function during decongestion (WRF) — may need temporary diuretic reduction but not stop. **Hepatorenal**.
+
+
+## 8. SPECIAL POPULATIONS
+
+Elderly: more frail, less tolerance, more complications. CKD: diuretic resistance, more electrolyte issues, WRF. Pregnancy: rare, peripartum cardiomyopathy is more HFrEF. Diabetes: more severe. **Cardiorenal syndrome**: WRF, diuretic resistance. **Diuretic resistance**: combination (loop + thiazide/metolazone), increase dose, consider ultrafiltration (caution, evidence equivocal — CARRESS-HF, AVOID-HF).
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+ESC 2021 HF: ADHF management, clinical profile, pre-discharge optimisation. ACC/AHA 2022 HF: similar. ESC 2022 CS: cardiogenic shock. **STRONG-HF (2022)**: rapid up-titration within 2 weeks. **ADHERE registry**: BUN, Cr, SBP. **CARRESS-HF (2012)**: ultrafiltration not superior. **ADVOR (2022)**: acetazolamide + loop diuretic improves decongestion (rapidly, less rehospitalisation).
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+Don't over-diurese (AKI, electrolyte loss). Preload/afterload reduction before inotropes in cold-wet. Avoid inotropes if possible (worsen prognosis). Optimise GDMT before discharge (REDUCE-AHF, PIONEER-HF — early in-hospital initiation of ARNI reduces NT-proBNP). Follow-up within 7-14 days. Diuretic resistance: combine thiazide, increase loop dose, acetazolamide (ADVOR), consider ultrafiltration (caution).
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**Warm-wet** (most common): congestion, perfusion OK. **Cold-wet** (worst): shock + congestion. **ADHF**: acute decompensated HF. **ESC clinical profile**: warm-dry, warm-wet, cold-dry, cold-wet. **SCAI shock** A-E. **STRONG-HF**: rapid up-titration. **ADVOR**: acetazolamide. **GDMT 4 pillars**: ARNI/ACEi, BB, MRA, SGLT2i. **WRF**: worsening renal function.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+PE, ACS, aortic dissection, pericardial tamponade, tension pneumothorax, severe AS, MR, myocarditis, Takotsubo, sepsis with HF, non-cardiogenic pulmonary oedema (ARDS, transfusion, neurogenic).
+
+
+## 13. INVESTIGATIONS
+
+BNP/NT-proBNP, ECG (serial), CXR, echo, FBC, U&E, LFT, troponin, lactate (if shock), ABG, blood cultures (if infection suspected), CXR, RHC (cardiogenic shock, advanced HF), targeted tests based on trigger (D-dimer, TSH, etc.).
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Cardiogenic shock?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Cardiogenic shock:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Cardiogenic shock:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Cardiogenic shock?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Cardiogenic shock is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Cardiogenic shock. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Cardiogenic shock on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Cardiogenic shock
+2. Discuss the pathophysiology of Cardiogenic shock
+3. What are the diagnostic criteria for Cardiogenic shock?
+4. Outline the management approach to Cardiogenic shock
+5. What are the complications and prognosis of Cardiogenic shock?
+6. What are the latest guidelines for Cardiogenic shock?
+7. How is Cardiogenic shock managed in special populations?
+8. Compare Cardiogenic shock with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Cardiogenic_shock.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

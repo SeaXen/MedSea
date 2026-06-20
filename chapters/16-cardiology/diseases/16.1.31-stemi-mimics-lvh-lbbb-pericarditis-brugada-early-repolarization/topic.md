@@ -1,102 +1,204 @@
-# STEMI Mimics (LVH, LBBB, Pericarditis, Brugada, Early Repolarization)
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.1.31"
+topic: "STEMI_mimics_(LVH,_LBBB,_pericarditis,_Brugada,_early_repolarization)"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/02_Acute_Coronary_Syndromes/STEMI_mimics_(LVH,_LBBB,_pericarditis,_Brugada,_early_repolarization).md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="🚑" color="red_bg">
-**Topic:** STEMI Mimics — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# STEMI mimics
 
-## 1. Introduction
-Many conditions cause **ST elevation** without acute coronary occlusion. Accurate differentiation prevents **unnecessary thrombolysis or PCI**. Always combine ECG with **history, troponin, echo** (WMA in vascular territory).
+> [!info] **Topic Classification**
+> **Section:** 02_Acute_Coronary_Syndromes | **Category:** Cardiology
 
-## 2. Common Mimics
+---
 
-### Left Ventricular Hypertrophy (LVH)
-- **High QRS voltage** + ST elevation in V1–V3
-- ST elevation in V1–V3 is **discordant** to deep S wave
-- **Discordant ST elevation >5 mm** or **concordant** = abnormal (STEMI in LVH — "Sgarbossa-equivalent")
-- Strain pattern: ST depression with TWI in lateral leads
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-### Left Bundle Branch Block (LBBB)
-- **Wide QRS ≥120 ms**, monomorphic V1 (rS or QS), broad R in I, aVL, V6
-- ST elevation in V1–V3 is **expected** (discordant to negative QRS)
-- Use **Sgarbossa** (or modified) to diagnose STEMI in LBBB
-- **Modified Sgarbossa** — ST/S ratio ≤−0.25 — more sensitive
+**STEMI mimics** refers to ST-Elevation Myocardial Infarction (STEMI) — transmural myocardial necrosis from acute complete coronary occlusion (TIMI 0-1), characterised by persistent ST-segment elevation (≥1mm in two contiguous leads, ≥2mm in V2-V3) on ECG. Diagnosis requires rise/fall of cardiac troponin (≥1 value >99th percentile) + clinical ischaemia + new LBBB or pathological Q waves. **Fourth Universal Definition of MI 2018**. Door-to-balloon <90 min (or <120 if transfer).
 
-### Pericarditis
-- **Diffuse concave-up ST elevation** (most leads, except aVR, V1)
-- **PR depression** (highly specific)
-- **PR elevation in aVR** (knuckle sign)
-- **No reciprocal changes** (vs STEMI)
-- Spodick sign — downsloping TP segment
-- Stage progression: ST↑ → TWI → normalisation (vs Q in STEMI)
 
-### Brugada Syndrome
-- **Type 1** (coved): ST elevation V1–V2 ≥2 mm with negative T ("Brugada sign") — diagnostic
-- **Type 2** (saddleback): ST ≥0.5 mm with positive/biphasic T
-- More common in **♂, Asian, family history SCD**
-- Sodium channel blockers (ajmaline, flecainide) unmask
-- Risk of VF → ICD if symptomatic
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-### Early Repolarisation
-- **J-point notching/slurring** in lateral/inferior leads
-- **Concave-up ST elevation** with tall T waves
-- Common in **young, healthy, ♂, athletes, Black**
-- Generally benign — but inferior early repol linked to idiopathic VF
-- Distinguish from STEMI by absence of dynamic change, symptoms, troponin
+**Plaque rupture** (60-70%) or **erosion** (25-30%) → lipid core exposure → platelet adhesion (GPIb-vWF) → activation (TxA2, ADP, thrombin) → aggregation (GPIIb/IIIa) → fibrin → occlusive thrombus. **Transmural** ischaemia within 20-30 min → necrosis (subendocardial first, wavefront from endo to epi over 4-6h). STEMI usually = **complete occlusion** (TIMI 0-1). Infarct-related artery: LAD 40-50% (anterior), RCA 30-40% (inferior), LCx 15-20% (lateral).
 
-### Benign Early Repolarisation vs STEMI
 
-| Feature | BER | STEMI |
-|---|---|---|
-| ST morphology | Concave | Convex (tombstone) |
-| Reciprocal change | No | Yes |
-| Dynamic change | No | Yes |
-| Troponin | Normal | Elevated |
-| Pain | No | Yes |
-| T wave | Tall, asymmetric | Hyperacute/tented |
+## 3. CLINICAL FEATURES
 
-### Hyperkalaemia
-- **Peaked T waves**, **wide QRS**, **sine wave** (severe)
-- ST elevation uncommon but can occur
+Severe crushing central chest pain >20 min at rest, diaphoresis, dyspnoea, nausea, radiation to jaw/left arm, **painless in 20-30%** (diabetics, elderly, women, post-CABG). Examination: tachycardia, S3/S4, new MR murmur (papillary dysfunction), hypotension in shock, signs of HF. Atypical: confusion, syncope, fatigue, abdominal pain.
 
-### Takotsubo (Apical Ballooning)
-- **ST elevation** in precordial leads (often anterior)
-- **Anterior WMA on echo** (apical ballooning) — but **non-vascular distribution**
-- **Coronary angiography normal**
-- ↑ troponin (mild); **BNP disproportionately high**
-- Trigger: emotional/physical stress, ♀ postmenopausal
 
-### Other Mimics
-- **LV aneurysm** — persistent ST elevation (after MI), Q waves, no dynamic change, echo confirms
-- **Takotsubo** — see above
-- **Cardiac contusion, myocarditis, PE** (especially anterior with RV strain)
-- **Hypothermia** — Osborn (J) wave
-- **Hypercalcaemia** — short QT
-- **Paced rhythm, WPW** — abnormal depolarisation → ST/T changes
+## 4. DIAGNOSTIC APPROACH
 
-## 3. How to Differentiate
-1. **Clinical context** — chest pain, risk factors, duration
-2. **Serial ECG** — dynamic change favours STEMI
-3. **Compare to old ECG** — if old ST elevation, may be chronic
-4. **Troponin** — rise/fall favours MI
-5. **Echocardiogram** — WMA in vascular territory = MI; global = myopericarditis
-6. **Sgarbossa / modified** in LBBB
-7. **Coronary angiography** — gold standard (when needed)
+**ECG within 10 min**: persistent STE ≥1mm (≥2mm in V2-V3 men, ≥1.5mm in women) in two contiguous leads, OR new LBBB (Sgarbossa criteria ≥3), OR de Winter T-waves (upsloping STD V1-V6 with tall T), OR posterior MI (STD V1-V4, take V7-V9 with STE ≥0.5mm). **hs-cTn 0/1h** algorithm. **Echo**: RWMA, LVEF, mechanical complications. **Coronary angiography** definitive.
 
-## 4. Red Flags (Concerning for True STEMI)
-- **Convex** ST elevation ("tombstone")
-- **Reciprocal** ST depression
-- **Dynamic** ST change on serial ECG
-- **Concordant** ST elevation in LBBB (Sgarbossa)
-- New Q wave
-- **Elevated troponin**
-- WMA in coronary territory on echo
 
-> **Pearls**
-> - **Diffuse ST elevation + PR depression** = pericarditis (not STEMI)
-> - **Sgarbossa ≥3** = STEMI in LBBB; **modified ST/S ratio** better
-> - **BER** = concave ST elevation, tall T, no reciprocal change, no pain
-> - **Brugada Type 1** = coved ST in V1–V2 with negative T (diagnostic)
-> - **LV aneurysm** = persistent ST elevation post-MI, no dynamic change
-> - When in doubt, **echo** (WMA in vascular territory) or **coronary angio**
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
+
+**GRACE** (in-hospital mortality): low <108 (<1%), intermediate 108-140 (1-3%), high >140 (>3-50%). **TIMI STEMI**. **Killip class** I-IV (I 6%, IV 81%). **SCAI shock stages** A-E.
+
+
+## 6. MANAGEMENT ALGORITHM
+
+**Primary PCI <90 min** with DES preferred (or <120 min if transfer). **Fibrinolysis** (tenecteplase weight-adjusted single bolus) if PCI >120 min. **DAPT**: aspirin 300mg loading + ticagrelor 180mg (PLATO) or prasugrel 60mg (TRITON), or clopidogrel 600mg. **Anticoagulation**: UFH 70U/kg (or 50U/kg with GP IIb/IIIa), bivalirudin, or enoxaparin. **GP IIb/IIIa** (abciximab, eptifibatide, tirofiban) bailout. **Statin** (high-intensity, target LDL <1.4-1.8), **beta-blocker** within 24h, **ACEi** if LVEF≤40% or anterior MI, **MRA** if LVEF≤40%+HF/DM. **Radial** access preferred (MATRIX trial). Complete revascularisation in multivessel STEMI (COMPLETE trial).
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+**Arrhythmic** (24-48h): VF/VT 5-10% (most common cause of early death), bradyarrhythmias/AV block (inferior MI, RCA), AF 10-20%. **Mechanical** (3-7d): VSR (anterior 1-2%, LAD), papillary rupture (inferior 1-3%, posteromedial papillary), free wall rupture (5-14d, 90% mortality). **Inflammatory**: peri-infarction pericarditis (1-3d, 10-20%), Dressler (weeks-months, autoimmune). **Pump failure**: cardiogenic shock 5-10% STEMI. **LV aneurysm** (late). **LV thrombus** → systemic emboli, **stent thrombosis** (acute <24h, subacute 1-30d, late 1-12m, very late >1y).
+
+
+## 8. SPECIAL POPULATIONS
+
+Elderly: atypical presentation, more complications, higher mortality. Women: less typical pain, more mechanical complications. Diabetes: multivessel, smaller vessels, more HF, more bleeding. CKD: avoid enoxaparin if CrCl<20, use UFH, radial access. Pregnancy: SCAD common, primary PCI preferred, radiation minimisation. Posterior MI: STD V1-V4, take V7-V9. LBBB: Sgarbossa criteria. **Cocaine**: avoid beta-blockers, use benzos + nitrates.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**ESC 2023 ACS (EHJ)**: 0/1h hs-cTn algorithm, cangrelor in PCI, ticagrelor/prasugrel > clopidogrel, complete revascularisation in STEMI with multivessel disease (COMPLETE). **ACC/AHA 2023 STEMI/NSTEMI**: DAPT 12mo for ACS, 6mo for stable CAD, high-intensity statin, beta-blocker within 24h. **NICE NG185**: ticagrelor 1st line P2Y12. **2018 ESC DAPT**: shorter (3-6mo) if HBR (PRECISE-DAPT >25), longer (>12mo) if HIR (DAPT score ≥2). **Fourth Universal Definition of MI 2018**: rise/fall cTn ≥1 value >99th percentile + clinical ischaemia.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+Don't delay cath lab for troponin in STEMI. **Posterior MI** = STD V1-V4 + take V7-V9 to confirm. **de Winter T-waves** = STEMI equivalent. **Wellens** = pre-infarction. **aVR elevation >1mm with diffuse STD** = LM/3-vessel. **LBBB with Sgarbossa criteria ≥3** = STEMI. **SCAD** (young women, peripartum) often missed. **Cocaine**: avoid beta-blockers, use benzos + nitrates. **Stent thrombosis**: distinguish from restenosis (sudden/catastrophic vs gradual). **DAPT interruption for surgery**: 5d ticagrelor/clopidogrel, 7d prasugrel.
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**STEMI**: ST-Elevation MI (transmural). **NSTEMI**: non-STEMI (subendocardial). **GRACE**: Global Registry of Acute Coronary Events. **TIMI**: Thrombolysis In MI. **SCAI**: A (at risk) → B (beginning) → C (classic) → D (deteriorating) → E (extremis). **DAPT**: Dual Anti-Platelet Therapy. **DES**: Drug-Eluting Stent. **GP IIb/IIIa**: final common pathway. **Sgarbossa 5-3-2**: concordant STE 5, concordant STD V1-V3 3, discordant STE >25% S 2. **de Winter**: upsloping STD V1-V6 with tall T. **Wellens**: biphasic T V2-V3 (A), deep TWI V2-V3 (B). **TCFA**: Thin-Cap FibroAtheroma.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+Aortic dissection (tearing, BP differential, wide mediastinum — beta-blocker first, NOT antiplatelets). Pericarditis (diffuse concave STE, PR dep). PE (S1Q3T3, RV strain). Takotsubo (apical ballooning, no culprit). Oesophageal spasm. MSK pain. Myocarditis (viral prodrome, diffuse ECG changes).
+
+
+## 13. INVESTIGATIONS
+
+**ECG** (immediate, serial, right-sided for inferior MI, V7-V9 for posterior MI); **hs-cTn 0/1h or 0/3h**; FBC, U&E, LFT, TFT, lipids, HbA1c, coagulation; CXR; bedside echo (RWMA, LVEF, valves, effusion); formal echo within 24h; **coronary angiography** for definitive diagnosis/intervention; consider CTCA if low-intermediate probability; **cardiac MRI** if MINOCA suspected; CT aortogram if dissection suspected.
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of STEMI mimics?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for STEMI mimics:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for STEMI mimics:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in STEMI mimics?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of STEMI mimics is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of STEMI mimics. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with STEMI mimics on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify STEMI mimics
+2. Discuss the pathophysiology of STEMI mimics
+3. What are the diagnostic criteria for STEMI mimics?
+4. Outline the management approach to STEMI mimics
+5. What are the complications and prognosis of STEMI mimics?
+6. What are the latest guidelines for STEMI mimics?
+7. How is STEMI mimics managed in special populations?
+8. Compare STEMI mimics with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** STEMI_mimics.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

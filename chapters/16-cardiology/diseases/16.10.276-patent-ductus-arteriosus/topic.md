@@ -1,192 +1,321 @@
-<!-- Source: /mnt/tb/Medicine/Cardiology/10_Adult_Congenital_Heart_Disease/Patent_Ductus_Arteriosus_(PDA).md | section: 16.10 | hub: adult-congenital-heart-disease -->
-
-# Patent Ductus Arteriosus
-
-> [!info] **Topic Classification**
-> **Section:** 10_Adult_Congenital_Heart_Disease | **Category:** Cardiology
-
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.10.276"
+topic: "Patent ductus arteriosus"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/Adult Congenital Heart Disease and Cardiac Shunts/Patent ductus arteriosus.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
 ---
 
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Patent Ductus Arteriosus** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (10 Adult Congenital Heart Disease). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-The pathophysiology of Patent Ductus Arteriosus involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
-
-
-## 3. CLINICAL FEATURES
-
-Clinical presentation of Patent Ductus Arteriosus varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
-
-
-## 4. DIAGNOSTIC APPROACH
-
-Diagnostic approach to Patent Ductus Arteriosus includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-Management of Patent Ductus Arteriosus: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-Complications of Patent Ductus Arteriosus: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
-
-
-## 8. SPECIAL POPULATIONS
-
-**Special populations in Patent Ductus Arteriosus**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**Latest guidelines relevant to Patent Ductus Arteriosus**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Common pitfalls in Patent Ductus Arteriosus**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Key mnemonics for Patent Ductus Arteriosus**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-**Differential diagnosis of Patent Ductus Arteriosus** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
-
-
-## 13. INVESTIGATIONS
-
-**Investigations for Patent Ductus Arteriosus**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Patent Ductus Arteriosus?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Patent Ductus Arteriosus:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Patent Ductus Arteriosus:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Patent Ductus Arteriosus?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Patent Ductus Arteriosus is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Patent Ductus Arteriosus. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Patent Ductus Arteriosus on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Patent Ductus Arteriosus
-2. Discuss the pathophysiology of Patent Ductus Arteriosus
-3. What are the diagnostic criteria for Patent Ductus Arteriosus?
-4. Outline the management approach to Patent Ductus Arteriosus
-5. What are the complications and prognosis of Patent Ductus Arteriosus?
-6. What are the latest guidelines for Patent Ductus Arteriosus?
-7. How is Patent Ductus Arteriosus managed in special populations?
-8. Compare Patent Ductus Arteriosus with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Patent_Ductus_Arteriosus.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+# Patent ductus arteriosus
+
+Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Davidson Chapter 16 - Cardiology Hierarchy|Cardiology Hierarchy]] · [[../Adult Congenital Heart Disease and Cardiac Shunts|Adult Congenital Heart Disease and Cardiac Shunts]] · [[Left-to-right shunts and common adult lesions]] · [[../Congenital Heart Disease in Adults]]
+
+> [!important]
+> Patent ductus arteriosus (PDA) is a classic left-to-right shunt causing continuous "machinery" murmur. It is a high-yield FCPS/MRCP topic because it must be distinguished from other continuous murmurs and managed appropriately in adults.
+
+## Learning Objectives
+- Define PDA and explain its embryology
+- Recognize the classic clinical and auscultatory features
+- Differentiate PDA from other continuous murmurs
+- Apply appropriate investigations and management strategies
+- Identify complications and when to refer for closure
+
+## Definition
+Patent ductus arteriosus is failure of the ductus arteriosus to close after birth, resulting in persistent communication between the descending aorta and the left pulmonary artery, typically causing a left-to-right shunt.
+
+## Anatomy & Embryology
+- The ductus arteriosus connects the pulmonary artery to the aorta in fetal life
+- Normally closes functionally within 24–48 hours and anatomically by 2–3 weeks
+- Persistent patency allows aortic blood to flow into the pulmonary artery throughout the cardiac cycle
+- In adults, the ductus is typically a fibrous remnant (ligamentum arteriosum)
+
+## Physiology
+- Left-to-right shunt: aorta → pulmonary artery (systolic > diastolic gradient)
+- Volume overload of left atrium and left ventricle
+- Pulmonary overcirculation can lead to pulmonary hypertension
+- With chronic large shunt, Eisenmenger physiology may develop (pulmonary vascular disease → shunt reversal)
+
+## Classification
+### By hemodynamics
+- Small PDA: minimal shunt, normal pulmonary pressures
+- Moderate PDA: significant left-to-right shunt, LV volume overload
+- Large PDA: massive shunt, pulmonary hypertension, risk of Eisenmenger
+
+### By age at presentation
+- Infancy/childhood: most common
+- Adulthood: incidental finding or symptomatic
+
+## Clinical Features
+### Symptoms
+- Often asymptomatic if small
+- Exertional dyspnea with moderate/large shunt
+- Failure to thrive in infants
+- Infective endocarditis as presenting feature
+- Palpitations (atrial arrhythmias from LA dilation)
+
+### Signs
+- **Continuous "machinery" murmur**: Loudest at left upper sternal border / infraclavicular, radiates to back
+- Wide pulse pressure (bounding pulses) in moderate/large PDA
+- Hyperdynamic apex beat
+- Loud P2 if pulmonary hypertension
+- Diastolic rumble at apex (relative mitral stenosis from high flow)
+
+## Investigations
+### Essential
+- **Echo**: Doppler confirms flow from aorta to pulmonary artery; assesses LV size/function, pulmonary pressures
+- **ECG**: LVH, LA enlargement; may be normal in small PDA
+- **CXR**: Prominent pulmonary arteries, LA/LV enlargement
+
+### Advanced
+- **CT/MRI**: Anatomical detail; collateral vessels
+- **Cardiac catheterization**: If pulmonary pressures uncertain pre-closure
+
+## Differential Diagnosis (Continuous Murmurs)
+| Condition | Murmur Character | Key Differentiator |
+|-----------|------------------|-------------------|
+| **PDA** | Machinery, continuous, infraclavicular | Wide pulse pressure, LV volume overload |
+| PDA (Eisenmenger) | Systolic only | Cyanosis, clubbing, RV heave |
+| Aortic fistula | Continuous, thrill | Trauma/surgery history, to IVC/RA |
+| Coronary AV fistula | Continuous, parasternal | No LV volume overload typically |
+| Ruptured sinus of Valsalva | Continuous, aortic area | Sudden onset, aortic regurgitation |
+| Peripheral AV fistula | Localized, compressible | Trauma, dialysis access |
+| Venous hum | Diastolic > systolic, neck | Disappears with jugular compression |
+
+## Management
+### Asymptomatic small PDA
+- Regular surveillance
+- Infective endocarditis prophylaxis if dental/urogenital procedures
+- No closure needed if truly small and hemodynamically insignificant
+
+### Symptomatic or hemodynamically significant PDA
+- **Percutaneous device closure** (Amplatzer duct occluder): first-line in suitable anatomy
+- **Surgical ligation**: if anatomy unsuitable for device, or failed device closure
+
+### Eisenmenger PDA
+- Closure **contraindicated** (right-to-left shunt maintains systemic output)
+- Manage as pulmonary arterial hypertension
+- Phlebotomy for severe polycythemia
+- Anticoagulation controversy
+- Heart-lung transplant in end-stage
+
+## Complications
+- Infective endocarditis (classic high-yield PDA complication)
+- Pulmonary hypertension → Eisenmenger syndrome
+- Left heart failure (volume overload)
+- Aortic aneurysm (ductal wall weakness)
+- Atrial arrhythmias (LA dilation)
+- Rupture (rare, high mortality)
+
+## Red Flags / Emergencies
+- Cyanosis + clubbing in PDA = Eisenmenger (do not close)
+- Acute infective endocarditis = urgent antibiotics ± surgery
+- Acute pulmonary edema from large shunt
+- Ductal aneurysm rupture → hemodynamic collapse
+
+## One-Page Revision Summary
+- PDA = persistent aorta-to-PA connection → continuous machinery murmur
+- Echo is diagnostic: shows flow from descending aorta to LPA
+- Wide pulse pressure + hyperdynamic apex = moderate/large shunt
+- Closure indicated if symptomatic or significant LV volume overload
+- **Contraindication**: Eisenmenger physiology (right-to-left shunt)
+- IE prophylaxis in unclosed PDA
+
+## Common Viva Questions
+1. What is the classic murmur of PDA and where is it best heard?
+2. Why does PDA cause wide pulse pressure?
+3. What is the shunt direction in isolated PDA?
+4. When is PDA closure contraindicated?
+5. What is Eisenmenger physiology and how does it change PDA management?
+6. What is the first-line closure method?
+7. What are the complications of PDA?
+8. When is IE prophylaxis recommended in PDA?
+
+## MCQs
+1. The classic murmur of PDA is:
+   - A. Early diastolic decrescendo at left sternal edge
+   - B. Continuous "machinery" murmur at left upper sternal border
+   - C. Pansystolic murmur at apex radiating to axilla
+   - D. Ejection systolic murmur to carotids
+   **Answer: B**
+
+2. In PDA, the shunt direction is:
+   - A. Left atrium → right atrium
+   - B. Aorta → pulmonary artery
+   - C. Pulmonary artery → aorta
+   - D. Right ventricle → left ventricle
+   **Answer: B** — Left-to-right in isolated PDA without pulmonary hypertension.
+
+3. Wide pulse pressure in PDA is due to:
+   - A. Diastolic runoff into pulmonary artery
+   - B. Increased stroke volume only
+   - C. Decreased peripheral resistance only
+   - D. None of the above
+   **Answer: A** — Diastolic steal into low-resistance pulmonary circuit.
+
+4. Eisenmenger PDA is characterized by:
+   - A. Left-to-right shunt with normal pulmonary pressures
+   - B. Reversed right-to-left shunt with cyanosis
+   - C. Spontaneous closure
+   - D. Small ductus only
+   **Answer: B** — Pulmonary vascular disease reverses shunt.
+
+5. Closure is CONTRAINDICATED in:
+   - A. Small asymptomatic PDA
+   - B. Moderate PDA with LV dilation
+   - C. Eisenmenger physiology (PVRI > 8 Wood units)
+   - D. PDA with infective endocarditis
+   **Answer: C** — Closure removes the right-to-left "pop-off" and causes acute right heart failure.
+
+6. First-line closure method for suitable anatomy:
+   - A. Surgical ligation
+   - B. Percutaneous device closure
+   - C. Medical therapy alone
+   - D. Observation
+   **Answer: B**
+
+7. Which continuous murmur is typically diastolic-dominant and disappears with jugular compression?
+   - A. PDA
+   - B. Aortic fistula
+   - C. Venous hum
+   - D. Coronary AV fistula
+   **Answer: C**
+
+8. A 25-year-old with PDA develops fever and new murmur. Most likely complication:
+   - A. Ductal rupture
+   - B. Infective endocarditis
+   - C. Myocardial infarction
+   - D. Pulmonary embolism
+   **Answer: B**
+
+9. PDA in premature infants often closes with:
+   - A. Indomethacin/ibuprofen (prostaglandin inhibitors)
+   - B. Beta-blockers
+   - C. ACE inhibitors
+   - D. Digoxin
+   **Answer: A** — Pharmacological closure in preterms.
+
+10. In adults with small PDA, IE prophylaxis is recommended for:
+    - A. All dental procedures
+    - B. High-risk dental/urogenital procedures
+    - C. No procedures
+    - D. Only cardiac surgery
+    **Answer: B**
+
+## SBA Questions
+1. A 19-year-old asymptomatic woman has a continuous machinery murmur at left infraclavicular area, wide pulse pressure, and echo shows small PDA with normal pulmonary pressures. Best management:
+   - A. Immediate percutaneous closure
+   - B. Surgical ligation
+   - C. Observation + IE prophylaxis
+   - D. Anticoagulation
+   **Answer: C** — Small hemodynamically insignificant PDA: surveillance and prophylaxis.
+
+2. A 35-year-old man with known large PDA develops progressive dyspnea, cyanosis, and clubbing. Echo shows reversed shunt. Next step:
+   - A. Urgent device closure
+   - B. Pulmonary vasodilator therapy (PDE5i, ERA, prostanoid)
+   - C. Surgical ligation
+   - D. Diuretics only
+   **Answer: B** — Eisenmenger PDA: closure contraindicated, manage as PAH.
+
+3. A patient with PDA presents with fever, new-onset murmur, and positive blood cultures for Staph aureus. Most appropriate:
+   - A. Continue antibiotics, close PDA percutaneously now
+   - B. IV antibiotics per IE protocol, surgical closure likely needed
+   - C. Oral antibiotics only
+   - D. Anticoagulation + antibiotics
+   **Answer: B** — IE on PDA often requires surgical excision of infected ductus.
+
+4. Continuous murmur at left upper sternal border with wide pulse pressure but NO diastolic component in a cyanotic adult suggests:
+   - A. Venous hum
+   - B. PDA with Eisenmenger physiology
+   - C. Coronary AV fistula
+   - D. Ruptured sinus of Valsalva
+   **Answer: B** — In Eisenmenger, diastolic flow stops due to equalized pressures.
+
+5. A premature infant has PDA with respiratory distress unresponsive to diuretics. Pharmacological closure:
+   - A. Indomethacin or ibuprofen
+   - B. Gentamicin
+   - C. Prostaglandin E1
+   - D. Digoxin
+   **Answer: A** — COX inhibitors close PDA; PGE1 keeps it open.
+
+6. In PDA, the CXR finding of "prominent pulmonary artery segment" is due to:
+   - A. Pulmonary hypertension
+   - B. Increased pulmonary blood flow
+   - C. Right ventricle enlargement
+   - D. Left ventricle failure
+   **Answer: B** — Overcirculation dilates central pulmonary arteries.
+
+7. Ductal aneurysm is a rare complication of PDA best detected by:
+   - A. ECG
+   - B. CT or MRI
+   - C. CXR
+   - D. Auscultation alone
+   **Answer: B**
+
+8. A 40-year-old with repaired PDA (device closure) presents with new fever and positive blood cultures 3 months post-procedure. Concern:
+   - A. Device infection
+   - B. Recurrent PDA
+   - C. Unrelated bacteremia
+   - D. Ductal rupture
+   **Answer: A** — Device endocarditis, though rare, is a delayed complication.
+
+9. In PDA with pulmonary hypertension but still net left-to-right shunt, the murmur:
+   - A. Disappears completely
+   - B. Becomes systolic-only
+   - C. Remains continuous
+   - D. Becomes diastolic-only
+   **Answer: C** — Continuous as long as forward shunt predominates.
+
+10. Best single test to confirm PDA anatomy and shunt in adults:
+    - A. ECG
+    - B. Transthoracic echo with Doppler
+    - C. CXR
+    - D. Cardiac MRI
+    **Answer: B** — Echo is first-line; MRI/CT for complex anatomy.
+
+## Flashcards
+- Q: Classic PDA murmur?
+  A: Continuous "machinery" murmur at left infraclavicular area.
+- Q: Shunt direction in isolated PDA?
+  A: Aorta → pulmonary artery (left-to-right).
+- Q: Why wide pulse pressure?
+  A: Diastolic runoff into low-resistance pulmonary circuit.
+- Q: When is PDA closure contraindicated?
+  A: Eisenmenger physiology (reversed shunt, PVRI > 8).
+- Q: First-line closure method?
+  A: Percutaneous device closure (Amplatzer).
+- Q: Complication of PDA?
+  A: Infective endocarditis, pulmonary hypertension, LV failure.
+
+## Answer Key with Explanations
+### MCQs
+1. **B** — Continuous machinery murmur is pathognomonic.
+2. **B** — Aorta to PA is the ductal path.
+3. **A** — Diastolic steal causes low diastolic pressure.
+4. **B** — Eisenmenger = shunt reversal.
+5. **C** — Closure in Eisenmenger causes acute RV failure.
+6. **B** — Device closure is first-line if anatomy permits.
+7. **C** — Venous hum is diastolic-dominant, compressible.
+8. **B** — PDA is classic IE risk.
+9. **A** — Prostaglandin inhibitors close PDA in preterms.
+10. **B** — High-risk procedures need prophylaxis per guidelines.
+
+### SBAs
+1. **C** — Small PDA with normal PAPs: watch + prophylaxis.
+2. **B** — Eisenmenger: PAH therapy, no closure.
+3. **B** — IE on PDA often needs ductal excision.
+4. **B** — Reversed shunt = systolic-only murmur.
+5. **A** — Indomethacin/ibuprofen for preterm PDA closure.
+6. **B** — Overcirculation, not pressure, dilates PA.
+7. **B** — CT/MRI for ductal aneurysm.
+8. **A** — Device endocarditis rare but possible.
+9. **C** — Continuous while forward gradient exists.
+10. **B** — Echo is first-line; MRI for complex cases.
+
+**Status**: Full FCPS/MRCP note completed
+**Date completed**: 2026-06-09

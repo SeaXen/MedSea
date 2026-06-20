@@ -1,81 +1,204 @@
-# IV Diuretics, Vasodilators, Inotropes & Vasopressors
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.11.81"
+topic: "IV_diuretics,_vasodilators,_inotropes,_vasopressors"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/04_Heart_Failure/IV_diuretics,_vasodilators,_inotropes,_vasopressors.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="💉" color="red_bg">
-**Topic:** Acute HF Drug Therapy — Cardiology
-**Style:** Sea Knowledge study note
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# IV diuretics, vasodilators, inotropes, vasopressors
 
-## 1. IV Loop Diuretics
-**First-line** for congestion (warm & wet profile).
+> [!info] **Topic Classification**
+> **Section:** 04_Heart_Failure | **Category:** Cardiology
 
-| Drug | Dose | Notes |
-|---|---|---|
-| **Furosemide** | 20–40 mg IV bolus, repeat or infusion 10–20 mg/h | Most common |
-| **Bumetanide** | 1–2 mg IV | Predictable absorption, gut oedema-resistant |
-| **Torsemide** | 10–20 mg IV | Once-daily, oral bioavailability >80% (TRANSFORM-HF neutral) |
+---
 
-- **DOSE trial** — high-dose vs low-dose: high-dose improved symptom relief with transient renal impairment (no long-term harm)
-- **Bolus vs continuous infusion** — equivalent; continuous may be smoother
-- **Diuretic resistance** — add thiazide (metolazone, chlorothiazide), acetazolamide (ADVOR), or switch to combination
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-> **ADVOR (2022)** — acetazolamide IV in ADHF accelerates decongestion (no mortality benefit).
+HFrEF (Heart Failure with reduced Ejection Fraction): LVEF ≤40%, with symptoms/signs of HF. ~50% of HF. Etiology: ischaemic (most common, 60-70%), dilated cardiomyopathy (DCM, idiopathic, genetic, toxic — alcohol, chemo), valvular (late), tachycardia-mediated, myocarditis, peripartum, infiltrative, congenital.
 
-## 2. Vasodilators
-For hypertensive ADHF (high PCWP, SBP >100) — venodilators ↓preload; mixed venodilator/arterial dilators ↓preload + afterload.
 
-| Drug | Dose | Notes |
-|---|---|---|
-| **Nitroglycerin (GTN)** | 10–200 μg/min IV | First-line for hypertensive pulmonary oedema, titratable |
-| **Isosorbide dinitrate (ISDN)** | 1–10 mg/h IV | Alternative to GTN |
-| **Nitroprusside** | 0.3–5 μg/kg/min | Arterial + venous; for afterload reduction; **cyanide toxicity** risk |
-| **Nesiritide** (BNP) | 0.01 μg/kg/min | Not widely used; modest symptom benefit, no mortality |
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-> **Avoid in SBP <100 mmHg** — vasodilators worsen hypotension.
+**Initial insult** (MI, infection, toxin) → myocyte loss → neurohormonal activation (RAAS, SNS, AVP, BNP, endothelin) → vasoconstriction, sodium/water retention, adverse remodelling (eccentric hypertrophy, dilation, fibrosis, mitral annular dilation → functional MR) → progressive pump failure. **Vicious cycle**: ↓CO → RAAS/SNS → vasoconstriction, retention → ↑preload, afterload → further ↓CO.
 
-## 3. Inotropes
-**Indicated in Cold & Wet / cardiogenic shock** (low CO, congestion). **Short-term bridge only** — increased arrhythmia and mortality with prolonged use.
 
-| Drug | Class | Dose | Notes |
-|---|---|---|---|
-| **Dobutamine** | β1-agonist | 2–20 μg/kg/min | ↑CO, ↓PCWP; tachyphylaxis, ↑HR |
-| **Milrinone** | PDE-3 inhibitor | 0.375–0.75 μg/kg/min | Inotrope + vasodilator (inodilator); avoid in renal failure (accumulation) |
-| **Levosimendan** | Ca²⁺ sensitiser, K-ATP opener | 0.05–0.2 μg/kg/min | Inodilator; no ↑in O₂ demand; not available in many countries |
-| **Dopamine** | Dose-dependent | 2–20 μg/kg/min | Low dose (renal) obsolete; mid (β1), high (α); more arrhythmias |
-| **Digoxin IV** | Cardiac glycoside | 0.25–0.5 mg loading | Slow onset (hours), narrow therapeutic index |
+## 3. CLINICAL FEATURES
 
-## 4. Vasopressors
-**Indicated for hypotension (SBP <80–90)** with end-organ hypoperfusion.
+Dyspnoea (exertional, orthopnoea, PND, bendopnoea), fatigue, exercise intolerance, peripheral/sacral oedema, nocturia, anorexia, cachexia, cool peripheries, narrow pulse pressure. Examination: displaced apex, S3, JVP, TR, hepatomegaly, ascites, peripheral oedema, crepitations, Cheyne-Stokes, pulsus alternans (severe).
 
-| Drug | Receptor | Dose | Notes |
-|---|---|---|---|
-| **Noradrenaline** | α1 >> β1 | 0.05–0.5 μg/kg/min | First-line shock (cardiogenic, septic) |
-| **Adrenaline** | α + β | 0.05–0.5 μg/kg/min | Refractory shock, anaphylaxis |
-| **Vasopressin** | V1 | 0.03–0.04 U/min | Septic shock add-on |
-| **Dopamine** | α/β | 5–20 μg/kg/min | More arrhythmias than noradrenaline (SOAP II) |
 
-> **SOAP II** — noradrenaline superior to dopamine in cardiogenic shock (less arrhythmia).
+## 4. DIAGNOSTIC APPROACH
 
-## 5. Vasoactive Strategy
-- **Cold & Wet (SBP >90)** → dobutamine or milrinone
-- **Cold & Wet (SBP <80)** → noradrenaline ± dobutamine
-- **Refractory** → mechanical circulatory support (IABP, Impella, VA-ECMO)
+**ECG**: LVH, Q waves (ischaemic), LBBB, AF. **CXR**: cardiomegaly, pulmonary oedema, Kerley B, pleural effusion. **BNP/NT-proBNP** elevated. **Echo** (essential): LVEF ≤40%, LV dilation, RWMA (ischaemic), MR (functional), RV function, PASP. **CMR**: gold standard for volumes, scar, viability, infiltrative, myocarditis. **Coronary angiography**: ischaemic aetiology. **Genetic testing** (DCM, lamin A/C, etc.).
 
-## 6. Adjuncts
-- **O₂** only if SpO₂ <90% (avoid hyperoxia)
-- **NIV (CPAP / BiPAP)** for pulmonary oedema with respiratory distress (↓intubation, mortality)
-- **Morphine** — controversial; ↑mortality (ADHERE registry) — use sparingly
-- **Thromboprophylaxis** — LMWH (enoxaparin 40 mg sc daily) — all hospitalised HF
 
-> **Pearls**
-> - **IV furosemide** — first-line for congestion
-> - **GTN** — first-line for hypertensive pulmonary oedema
-> - **Dobutamine / milrinone** — Cold & Wet
-> - **Noradrenaline** — Cold & Wet with SBP <80
-> - **Inotropes ↑arrhythmia + mortality** with prolonged use — bridge, not destination
-> - **DOSE trial** — high-dose IV diuretic OK; transient renal dysfunction acceptable
-> - **Acetazolamide (ADVOR 2022)** — adjunct to loop for faster decongestion
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
 
-<callout icon="🎯" color="rose_bg">
-**CLINICAL SIGNIFICANCE —** Tailor IV therapy to **profile + BP**: Warm & Wet → furosemide ± GTN; Cold & Wet → inotrope + diuretic + consider MCS. Inotropes are a **bridge to recovery, transplant, or LVAD** — not destination therapy. ESC 2021 recommends **early SGLT2i** during admission.
-</callout>
+**NYHA** I-IV (functional). **ACC/AHA stages** A (at risk), B (pre-HF, structural, no symptoms), C (structural + symptoms), D (advanced, refractory). **INTERMACS** 1-7. **MAGGIC score** (3-year mortality, Meta-Analysis Global Group in Chronic Heart Failure). **Seattle Heart Failure Model**. **LVEF severity**: mild 35-40%, moderate 30-35%, severe <30%.
+
+
+## 6. MANAGEMENT ALGORITHM
+
+**4 pillars of GDMT (all HFrEF unless contraindicated)**: (1) **RAAS inhibitor**: ARNI (sacubitril/valsartan, Entresto) preferred over ACEi (PARADIGM-HF — 20% mortality reduction), ARB if ACEi-intolerant. Start low, up-titrate. (2) **Beta-blocker**: bisoprolol, carvedilol, metoprolol succinate (CIBIS-II, COPERNICUS, MERIT-HF). (3) **MRA**: spironolactone (RALES), eplerenone (EPHESUS, EMPHASIS-HF). (4) **SGLT2i**: dapagliflozin (DAPA-HF), empagliflozin (EMPEROR-Reduced) — reduce mortality and hospitalisation. **Additional**: diuretics (loop, thiazide for resistance), ivabradine (HR ≥70, sinus rhythm, max tolerated beta-blocker — SHIFT), digoxin (symptomatic despite GDMT, in sinus rhythm — DIG trial; reduce hospitalisation not mortality), hydralazine+ISDN (especially in Black patients — A-HeFT), vericiguat (recently hospitalised, worsening HF — VICTORIA), ferric carboxymaltose (HF, iron deficiency, EF ≤40% — AFFIRM-AHF, FAIR-HFpEF). **Devices**: ICD (primary prevention, LVEF ≤35% on GDMT 3m, NYHA II-III, life expectancy >1y — MADIT-II, SCD-HeFT), CRT (LBBB with QRS >150ms, LVEF ≤35%, NYHA II-IV — COMPANION, CARE-HF, MADIT-CRT).
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+**Pump failure** (progressive, cardiogenic shock). **Arrhythmia** (VT/VF, AF). **Thromboembolism** (LV thrombus, stroke). **Sudden cardiac death** (VT/VF, bradyarrhythmia). **Cachexia** (cardiac, advanced). **Renal dysfunction** (cardiorenal, diuretic resistance). **Hepatic congestion** (cardiohepatic). **Resistant oedema**. **Death**: 5-year mortality 50% overall, worse with advanced disease.
+
+
+## 8. SPECIAL POPULATIONS
+
+Elderly: more frail, less tolerance. Women: more HFpEF, less referred. CKD: avoid ACEi/ARB if bilateral RAS, dose adjust, monitor K+. Diabetes: SGLT2i benefits (cardio-renal-metabolic). Pregnancy: avoid ACEi/ARB, MRA, ARNI; beta-blocker safe; hydralazine, nitrates safe. African-American: hydralazine+ISDN (A-HeFT). Post-MI: early ACEi/ARB, beta-blocker, MRA, SGLT2i.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**ESC 2021 HF (EHJ)**: 4 pillars (ARNI, BB, MRA, SGLT2i), class IA for HFrEF. **2022 ACC/AHA/HFSA HF**: same. **NICE NG106 (2018)**: chronic HF. **2016 ESC/HFSA/HRS CRT**: LBBB QRS >150ms class IA. **2015 ESC/HFA ICD**: primary prevention. **STRONG-HF (2022)**: rapid up-titration of GDMT within 2 weeks post-discharge reduces HF readmission and mortality. **TRANSFORM-HF (2022)**: torsemide vs furosemide — no difference. **2023 ESC/HFA**: ferric carboxymaltose for iron deficiency. **VICTORIA (2020)**: vericiguat.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+Don't delay GDMT initiation. Don't forget 4 pillars (ARNI, BB, MRA, SGLT2i). Don't miss iron deficiency. Don't miss ICD/CRT indication. Don't use CCB in HFrEF. Don't use class IC antiarrhythmics in structural HD. Monitor K+ with ACEi/ARB + MRA (hyperkalaemia, ~5-10%). Hydralazine+ISDN for Black patients. SGLT2i benefit independent of DM.
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**4 pillars**: ARNI/ACEi/ARB, Beta-blocker, MRA, SGLT2i. **GDMT**: Guideline-Directed Medical Therapy. **NYHA** I-IV. **INTERMACS** 1-7. **STRONG-HF**: rapid up-titration. **AFFIRM-AHF**: ferric carboxymaltose. **VICTORIA**: vericiguat. **ICD primary prevention**: LVEF ≤35% on GDMT 3m, NYHA II-III. **CRT**: LBBB QRS >150ms, LVEF ≤35%, NYHA II-IV. **ICD for primary prevention: MADIT-II, SCD-HeFT**. **ICD for secondary prevention: AVID, CIDS, CASH**.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+HFpEF (LVEF ≥50%), HFmrEF (41-49%), lung disease (COPD, asthma, PE), renal disease (fluid overload), cirrhosis (ascites, oedema), thyroid (hyper/hypo), anaemia, obesity (fluid retention, deconditioning).
+
+
+## 13. INVESTIGATIONS
+
+**Echo** (essential, multiple times). **ECG** (LVH, Q waves, LBBB, AF, low voltage in amyloid). **BNP/NT-proBNP** (diagnosis, severity, prognosis). **CXR** (cardiomegaly, pulmonary oedema, effusions, Kerley B). **Bloods**: FBC (anaemia), U&E (renal, K+), LFT (hepatic congestion), TFT, HbA1c, lipid profile, troponin, ferritin, transferrin saturation. **CMR** (gold standard, viability, infiltrative, myocarditis, scar). **Coronary angio** (ischaemic aetiology). **RHC** (advanced HF, transplant, PH). **CPET** (advanced HF, transplant, peak VO2).
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of IV diuretics, vasodilators, inotropes, vasopressors?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for IV diuretics, vasodilators, inotropes, vasopressors:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for IV diuretics, vasodilators, inotropes, vasopressors:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in IV diuretics, vasodilators, inotropes, vasopressors?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of IV diuretics, vasodilators, inotropes, vasopressors is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of IV diuretics, vasodilators, inotropes, vasopressors. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with IV diuretics, vasodilators, inotropes, vasopressors on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify IV diuretics, vasodilators, inotropes, vasopressors
+2. Discuss the pathophysiology of IV diuretics, vasodilators, inotropes, vasopressors
+3. What are the diagnostic criteria for IV diuretics, vasodilators, inotropes, vasopressors?
+4. Outline the management approach to IV diuretics, vasodilators, inotropes, vasopressors
+5. What are the complications and prognosis of IV diuretics, vasodilators, inotropes, vasopressors?
+6. What are the latest guidelines for IV diuretics, vasodilators, inotropes, vasopressors?
+7. How is IV diuretics, vasodilators, inotropes, vasopressors managed in special populations?
+8. Compare IV diuretics, vasodilators, inotropes, vasopressors with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** IV_diuretics,_vasodilators,_inotropes,_vasopressors.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

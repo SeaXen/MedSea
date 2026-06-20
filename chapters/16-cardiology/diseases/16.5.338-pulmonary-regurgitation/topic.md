@@ -1,192 +1,447 @@
-<!-- Source: /mnt/tb/Medicine/Cardiology/05_Valvular_Heart_Disease/Pulmonary_regurgitation_(post-TOF_repair,_PAH).md | section: 16.5 | hub: valvular-heart-disease -->
-
-# Pulmonary regurgitation
-
-> [!info] **Topic Classification**
-> **Section:** 05_Valvular_Heart_Disease | **Category:** Cardiology
-
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.5.338"
+topic: "Acute pulmonary edema"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/Heart Failure and Acute Cardiac Decompensation/Acute pulmonary edema.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
 ---
 
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Pulmonary regurgitation** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (05 Valvular Heart Disease). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-The pathophysiology of Pulmonary regurgitation involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
-
-
-## 3. CLINICAL FEATURES
-
-Clinical presentation of Pulmonary regurgitation varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
-
-
-## 4. DIAGNOSTIC APPROACH
-
-Diagnostic approach to Pulmonary regurgitation includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-Management of Pulmonary regurgitation: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-Complications of Pulmonary regurgitation: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
-
-
-## 8. SPECIAL POPULATIONS
-
-**Special populations in Pulmonary regurgitation**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**Latest guidelines relevant to Pulmonary regurgitation**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Common pitfalls in Pulmonary regurgitation**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Key mnemonics for Pulmonary regurgitation**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-**Differential diagnosis of Pulmonary regurgitation** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
-
-
-## 13. INVESTIGATIONS
-
-**Investigations for Pulmonary regurgitation**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Pulmonary regurgitation?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Pulmonary regurgitation:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Pulmonary regurgitation:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Pulmonary regurgitation?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Pulmonary regurgitation is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Pulmonary regurgitation. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Pulmonary regurgitation on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Pulmonary regurgitation
-2. Discuss the pathophysiology of Pulmonary regurgitation
-3. What are the diagnostic criteria for Pulmonary regurgitation?
-4. Outline the management approach to Pulmonary regurgitation
-5. What are the complications and prognosis of Pulmonary regurgitation?
-6. What are the latest guidelines for Pulmonary regurgitation?
-7. How is Pulmonary regurgitation managed in special populations?
-8. Compare Pulmonary regurgitation with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Pulmonary_regurgitation.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+# Acute Pulmonary Edema (Flash Pulmonary Edema)
+
+Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Davidson Chapter 16 - Cardiology Hierarchy|Cardiology Hierarchy]] · [[../Heart Failure and Acute Cardiac Decompensation|Heart Failure and Acute Cardiac Decompensation]] · [[Acute decompensated heart failure]] · [[Cardiogenic shock]] · [[Hypertensive emergency]] · [[Acute Coronary Syndrome]] · [[Mitral regurgitation]] · [[Acute Respiratory Distress Syndrome]]
+
+> [!important]
+> Acute pulmonary edema is a **life-threatening cardiogenic emergency** — "flash" onset dyspnea, hypoxia, frothy sputum. FCPS/MRCP exams test: **immediate ABC management** (sit up, high-flow O2, NIV/intubation), **vasodilators + diuretics** (nitrates first-line, furosemide), **treat the trigger** (ACS, arrhythmia, HTN emergency, MR), and **differentiate from non-cardiogenic** (ARDS, altitude, opioid, neurogenic).
+
+## Learning Objectives
+- Recognize acute pulmonary edema: sudden dyspnea, orthopnea, hypoxia, pink frothy sputum, bilateral crackles
+- Initiate immediate life-saving management: positioning, O2, NIV, IV diuretics, vasodilators
+- Identify and treat precipitating causes: ACS, arrhythmia, hypertensive emergency, acute MR, medication non-adherence
+- Differentiate cardiogenic from non-cardiogenic pulmonary edema (ARDS, high-altitude, neurogenic, opioid)
+- Determine escalation criteria: NIV failure → intubation, refractory shock → mechanical support
+- Understand pathophysiology: ↑ LA pressure → ↑ pulmonary capillary pressure → alveolar flooding
+
+## Definition
+**Acute pulmonary edema** = rapid accumulation of fluid in pulmonary alveoli and interstitium due to **acutely elevated left atrial pressure** (>25 mmHg).
+- **Flash pulmonary edema**: onset minutes-hours, severe dyspnea at rest, "drowning" sensation
+- **Cardiogenic** (this topic) vs **non-cardiogenic** (ARDS, high-altitude, neurogenic, opioid, toxin)
+- **Precipitants**: ACS, arrhythmia (AF RVR), hypertensive emergency, acute MR (papillary rupture), volume overload, medication non-adherence
+
+## Pathophysiology
+```
+↑ LVEDP → ↑ LA pressure → ↑ Pulmonary venous pressure → ↑ Pulmonary capillary pressure (>25 mmHg)
+     → Fluid transudation into interstitium → Alveolar flooding → Impaired gas exchange → Hypoxemia
+```
+- **Starling forces**: capillary hydrostatic pressure > oncotic pressure → filtration
+- **Lymphatic drainage** overwhelmed (>20 mL/hr)
+- **Surfactant washout** → atelectasis → V/Q mismatch → hypoxemia
+
+## Clinical Features
+
+| Feature | Finding |
+|---------|---------|
+| **Dyspnea** | Sudden, severe, at rest, "air hunger" |
+| **Orthopnea** | Cannot lie flat; sits upright, tripod position |
+| **Cough** | **Pink frothy sputum** (classic) |
+| **Vitals** | Tachycardia, **hypertension** (early), hypotension (late/shock), tachypnea >30, SpO2 <90% |
+| **JVP** | Elevated (if RV failure/tricuspid regurg) |
+| **Lungs** | **Bilateral basal crackles** → diffuse; wheeze ("cardiac asthma") |
+| **Heart** | S3 gallop, tachycardia, new MR (functional), displaced apex |
+| **Extremities** | Cool, diaphoresis (sympathetic surge) |
+| **Mental** | Anxiety, confusion (hypoxia/hypercapnia) |
+
+## Immediate Management (First 15 Minutes) — ABC
+
+```mermaid
+flowchart TD
+A[Acute Pulmonary Edema] --> B[SIT UP — legs dependent]
+B --> C[HIGH-FLOW O2 — 15L via reservoir mask; target SpO2 ≥94%]
+C --> D{Hypoxic despite O2?}
+D -->|Yes| E[NIV: CPAP 5-10 / BiPAP 10-15/5 — FIRST-LINE]
+D -->|No| F[Monitor]
+E --> G{Improving?}
+G -->|No/ Deteriorating| H[INTUBATE — mechanical ventilation]
+G -->|Yes| I[Continue NIV + pharmacotherapy]
+F --> I
+I --> J[PHARMACOTHERAPY]
+J --> K1[Nitrates: GTN SL/IV — FIRST-LINE vasodilator]
+J --> K2[Furosemide: 40-80 mg IV — diuresis/venodilation]
+J --> K3[Morphine: 2-5 mg IV — anxiolysis/venodilation — USE CAUTION]
+J --> K4[Treat trigger: ACS/Arrhythmia/HTN/MR]
+```
+
+### 1. Positioning
+- **Sit upright, legs dangling** — ↓ venous return, ↓ LV preload
+
+### 2. Oxygen & Ventilation
+| Modality | Indication | Settings |
+|----------|------------|----------|
+| **High-flow O2** | All patients | 15L reservoir mask, SpO2 ≥94% |
+| **NIV (CPAP/BiPAP)** | **First-line for respiratory failure** (pH<7.35, RR>25, SpO2<90% on O2) | CPAP 5-10 cmH2O or BiPAP 10-15/5 cmH2O |
+| **Intubation** | NIV failure, GCS<8, hemodynamic collapse, cardiac arrest | Lung-protective ventilation |
+
+> [!tip]
+> **3CPO / REVIVE trials**: NIV (CPAP/BiPAP) ↓ intubation rate, ↓ mortality in cardiogenic pulmonary edema. **Start early.**
+
+### 3. Pharmacotherapy
+
+| Drug | Dose | Mechanism | Notes |
+|------|------|-----------|-------|
+| **IV Nitrates (GTN)** | **SL 0.5 mg → IV 5-20 μg/min titrate** | Venodilation → ↓ preload; arteriodilation → ↓ afterload | **First-line**; avoid if SBP<90, RV infarct, recent PDE5i |
+| **IV Furosemide** | **40-80 mg IV bolus** (200 mg if on chronic diuretic) | Loop diuretic + **acute venodilation** (prostaglandins) | Give **after** nitrates; monitor K+, renal |
+| **Morphine** | 2-5 mg IV | Venodilation, anxiolysis, ↓ sympathetic drive | **Caution**: respiratory depression, hypotension; less favored now |
+| **Inotropes** (dobutamine) | 2.5-20 μg/kg/min | ↑ contractility, ↓ afterload | Only if **SBP<90 + signs of hypoperfusion** |
+| **Vasopressors** (norepinephrine) | 0.05-0.5 μg/kg/min | ↑ SVR | Only if **cardiogenic shock** (SBP<90) |
+
+> [!warning]
+> **Morphine contraindicated** if SBP<90, respiratory depression risk, elderly. **NICE/ESC**: nitrates + diuretics first.
+
+### 4. Treat the Trigger (Essential)
+
+| Trigger | Specific Management |
+|---------|---------------------|
+| **ACS** (STEMI/NSTEMI) | Urgent coronary angiography ± PCI |
+| **Arrhythmia** (AF RVR, VT) | Rate control (BB/CCB/digoxin) or cardioversion if unstable |
+| **Hypertensive emergency** | IV labetalol/nitroprusside/clevidipine — target MAP ↓25% in 1h |
+| **Acute MR** (papillary rupture) | Vasodilators (↓ afterload), IABP, **urgent surgery** |
+| **Volume overload** (non-adherence, renal failure) | Aggressive diuresis ± ultrafiltration/dialysis |
+| **Infection/sepsis** | Antibiotics, fluids cautious, source control |
+
+## Differentiation: Cardiogenic vs Non-Cardiogenic
+
+| Feature | Cardiogenic Pulmonary Edema | Non-Cardiogenic (ARDS) |
+|---------|----------------------------|------------------------|
+| **Onset** | Acute (minutes-hours) | Subacute (hours-days) |
+| **BP** | **Hypertension** common | Normal/hypotension |
+| **JVP** | Elevated | Normal/low |
+| **PCWP** | **>18 mmHg** | <18 mmHg |
+| **Cardiac echo** | LV dysfunction, high E/e' | Normal LV, normal E/e' |
+| **CXR** | Cardiomegaly, cephalization, Kerley B, pleural effusions | Normal heart, diffuse bilateral infiltrates |
+| **BNP/NT-proBNP** | **Markedly elevated** | Normal/mildly elevated |
+| **PaO2/FiO2** | Variable | **<300** (ARDS criteria) |
+
+## Complications
+- **Respiratory failure** → intubation, VAP, barotrauma
+- **Cardiogenic shock** → end-organ hypoperfusion
+- **Arrhythmias** (AF, VT) from hypoxemia/stretch
+- **Acute kidney injury** (cardiorenal syndrome)
+- **Pneumonia** (aspiration, VAP post-intubation)
+
+## Prognosis
+- **In-hospital mortality**: 7-15% (lower with early NIV)
+- **Predictors of death**: age >75, SBP<90, renal failure, acidosis (pH<7.25), cardiac arrest
+- **Recurrence**: high if trigger not addressed (medication adherence, BP control, HF optimization)
+
+## Red Flags / Exam Traps
+- **NIV contraindicated**: GCS<8, hemodynamic instability, facial trauma, inability to protect airway
+- **Morphine in hypotensive/elderly** — respiratory depression, hypotension
+- **Furosemide before nitrates** — less effective, more ototoxicity
+- **Beta-blockers in acute setting** — can worsen HF/shock; hold until stable
+- **Missing ischemic trigger** — ECG/troponin mandatory in all new-onset flash pulmonary edema
+- **Non-cardiogenic mimic** (ARDS, altitude, opioid, neurogenic) — different management
+
+## FCPS/MRCP High-Yield Points
+- **Sit up + O2 + NIV** = immediate life-saving steps
+- **Nitrates (GTN) FIRST** — venodilation ↓ preload, arteriodilation ↓ afterload
+- **Furosemide 40-80mg IV** — after nitrates; venodilator effect in minutes
+- **NIV (CPAP/BiPAP)** ↓ intubation, ↓ mortality — start early
+- **Treat trigger**: ACS, AF RVR, HTN emergency, acute MR
+- **Differentiate from ARDS**: HTN + JVP + high BNP + cardiomegaly = cardiogenic
+- **Morphine caution**: avoid if hypotensive, respiratory depression risk
+
+## Common Viva Questions
+1. Immediate management of acute pulmonary edema?
+2. Why NIV in cardiogenic pulmonary edema?
+3. Nitrates vs furosemide — which first and why?
+4. How to differentiate cardiogenic from non-cardiogenic pulmonary edema?
+5. When to intubate acute pulmonary edema?
+6. Precipitating causes to look for?
+
+## Common Confusions / Exam Traps
+- Giving furosemide before nitrates (nitrates work faster, less renal risk)
+- Starting beta-blocker in acute decompensation (hold until euvolemic/stable)
+- Using morphine routinely (NICE: avoid; ESC: caution)
+- Missing non-cardiogenic causes (ARDS, opioid, altitude, neurogenic)
+- Delaying NIV → worse outcomes
+
+## Mind Map
+```mermaid
+mindmap
+  root((Acute Pulmonary Edema))
+    Immediate ABC
+      Sit up, legs down
+      High-flow O2
+      NIV (CPAP/BiPAP) early
+    Pharmacotherapy
+      Nitrates FIRST (GTN SL/IV)
+      Furosemide IV after nitrates
+      Morphine caution
+      Inotropes if shock
+    Triggers
+      ACS / Arrhythmia / HTN emergency
+      Acute MR / Volume overload
+      Non-adherence / Infection
+    Differentiation
+      Cardiogenic: HTN, JVP, high BNP, cardiomegaly
+      Non-cardiogenic: normal BP/JVP, low BNP, normal heart
+    Escalation
+      NIV fail → Intubate
+      Shock → Inotropes/vasopressors
+      Refractory → Mechanical support
+```
+
+## One-Page Revision Summary
+- **Flash pulmonary edema** = sudden severe dyspnea, pink frothy sputum, bilateral crackles
+- **Immediate**: Sit up → O2 → NIV (CPAP/BiPAP) → **GTN SL/IV first** → Furosemide IV → Treat trigger
+- **NIV** ↓ intubation & mortality — early!
+- **Triggers**: ACS, AF RVR, HTN emergency, acute MR, volume overload
+- **Cardiogenic vs ARDS**: HTN + JVP + high BNP + cardiomegaly = cardiogenic
+- **Morphine caution**: avoid if hypotensive/elderly
+- **Hold BB** until stable
+
+## 24-Hour Recall Prompts
+- State immediate ABC management in order
+- Why GTN before furosemide?
+- List 5 precipitating causes
+- Draw cardiogenic vs non-cardiogenic comparison table
+- NIV criteria and settings for pulmonary edema
+
+## 7-Day / 15-Day / 30-Day Revision Tracker
+- [ ] Day 1 completed
+- [ ] 24-hour recall completed
+- [ ] Day 7 revision completed
+- [ ] Day 15 revision completed
+- [ ] Day 30 revision completed
+
+## Must Know / Should Know / Nice to Know
+### Must Know
+- Sit up, O2, NIV, GTN, Furosemide
+- NIV early ↓ intubation/mortality
+- GTN first, then furosemide
+- Triggers: ACS, AF, HTN, MR
+- Cardiogenic vs ARDS differentiation
+
+### Should Know
+- NIV settings (CPAP 5-10, BiPAP 10-15/5)
+- Morphine caution
+- Inotropes/vasopressors for shock
+- Acute MR = urgent surgery
+
+### Nice to Know
+- Ultrafiltration for diuretic resistance
+- Mechanical support (IABP, Impella) in refractory
+- Long-term HD optimization post-discharge
+
+## Self-Test Scorecard
+- Understanding /10
+- Recall /10
+- Management algorithm /10
+- MCQ performance /10
+- Viva confidence /10
+- **Total /50**
+
+> [!tip]
+> **Interpretation**: <35 = weak topic; 35-44 = acceptable but insecure; 45+ = strong exam-ready topic.
+
+## Exam Answer Modes
+### Long Answer Skeleton
+1. Definition + pathophysiology (Starling forces, LA pressure >25 mmHg)
+2. Clinical presentation (dyspnea, frothy sputum, crackles, hypoxia)
+3. Immediate management (ABC: sit up, O2, NIV, pharmacotherapy)
+4. Pharmacotherapy algorithm (GTN → furosemide → treat trigger)
+5. Precipitating causes table
+6. Cardiogenic vs non-cardiogenic differentiation
+7. Escalation: NIV failure → intubation; shock → inotropes
+8. Prognosis and recurrence prevention
+
+### Short Note Skeleton
+- Flash pulmonary edema: dyspnea, frothy sputum, crackles, hypoxia
+- ABC: sit up, O2, NIV
+- GTN first (venodilation), then furosemide
+- NIV early = ↓ intubation, ↓ death
+- Triggers: ACS, AF, HTN, MR
+- Cardiogenic: HTN, JVP, high BNP, big heart
+- ARDS: normal BP/JVP, normal BNP, normal heart
+
+### Viva One-Liners
+- "Sit up, O2, NIV, GTN, Furosemide = first 15 minutes"
+- "GTN before furosemide — faster venodilation, renal sparing"
+- "NIV in cardiogenic edema ↓ intubation AND mortality"
+- "Pink frothy sputum = flash pulmonary edema"
+- "Cardiogenic: hypertensive, high BNP; ARDS: normotensive, normal BNP"
+
+### Ward-Case Discussion Points
+- "65M, HTN, sudden dyspnea, pink frothy sputum, BP 180/100, bilateral crackles" → "Flash pulmonary edema. Sit up, O2, CPAP 8, GTN 10 μg/min, furosemide 80mg IV. CT angio if ACS suspected."
+- "75F, AF RVR 140, acute dyspnea, crackles, BP 110/70" → "AF-triggered pulmonary edema. Rate control (digoxin/amiodarone if hypotensive). NIV. GTN + furosemide."
+- "50M, post-MI day 3, acute dyspnea, new MR, pink sputum, hypotension" → "Papillary muscle rupture. Echo for flail leaflet. Nitroprusside, IABP, URGENT MV surgery."
+
+### Last-Night-Before-Exam Sheet
+- Sit up → O2 → NIV → GTN → Furosemide
+- GTN first (venodilation fast)
+- NIV: CPAP 5-10 / BiPAP 10-15/5
+- Triggers: ACS, AF, HTN, MR
+- Cardiogenic = HTN + JVP + high BNP
+- Morphine caution
+- No BB in acute
+
+## Summary
+**Acute pulmonary edema** is a **cardiogenic emergency** caused by **acute left atrial pressure elevation** (>25 mmHg) leading to alveolar flooding. **Immediate management (first 15 min)**: **Sit upright** → **high-flow O2** → **NIV (CPAP/BiPAP) early** (↓ intubation & mortality) → **IV nitrates FIRST** (GTN SL/IV — rapid venodilation ↓ preload, arteriodilation ↓ afterload) → **IV furosemide** (40-80 mg) → **treat the trigger** (ACS → angiography; AF RVR → rate control; HTN emergency → IV antihypertensives; acute MR → vasodilators + urgent surgery). **Differentiate from ARDS/non-cardiogenic**: cardiogenic = hypertension, elevated JVP, high BNP, cardiomegaly, cephalization; non-cardiogenic = normal BP/JVP, normal BNP, normal heart size. **NIV is first-line for respiratory failure** (↓ intubation, ↓ mortality). **Morphine caution** (hypotension, respiratory depression). **Hold beta-blockers** until euvolemic and stable.
+
+## MCQs (10)
+1. First-line vasodilator in acute pulmonary edema:
+   A. Furosemide
+   B. **IV nitrates (GTN)**
+   C. Nitroprusside
+   D. Hydralazine
+2. Optimal sequence of initial drugs:
+   A. Furosemide → Nitrates
+   B. **Nitrates → Furosemide**
+   C. Morphine → Nitrates
+   D. Furosemide → Morphine
+3. NIV in acute cardiogenic pulmonary edema — evidence:
+   A. Increases intubation rate
+   B. **Reduces intubation rate AND mortality** (3CPO, REVIVE)
+   C. No benefit
+   D. Only BiPAP works, not CPAP
+4. Key feature distinguishing cardiogenic from non-cardiogenic (ARDS) pulmonary edema:
+   A. Bilateral infiltrates
+   B. **Hypertension + elevated JVP + high BNP**
+   C. Hypoxemia
+   D. Crackles on auscultation
+5. Contraindication to NIV in pulmonary edema:
+   A. Age >80
+   B. **GCS <8 / hemodynamic instability / inability to protect airway**
+   C. COPD history
+   D. Atrial fibrillation
+6. Morphine in acute pulmonary edema — current recommendation:
+   A. First-line for all
+   B. **Use with caution; avoid if hypotensive, elderly, respiratory depression risk**
+   C. Contraindicated in all
+   D. Only if pain
+7. Most common precipitant of acute pulmonary edema in hypertensive patients:
+   A. ACS
+   B. **Hypertensive emergency (afterload mismatch)**
+   C. Arrhythmia
+   D. Acute MR
+8. Acute pulmonary edema with new harsh holosystolic murmur at apex radiating to axilla — cause:
+   A. Functional MR
+   B. **Acute severe MR (papillary muscle rupture / chordal rupture)**
+   C. Aortic stenosis
+   D. VSD
+9. BiPAP settings for acute pulmonary edema:
+   A. EPAP 5, IPAP 10
+   B. **EPAP 5-10, IPAP 10-15 (PS 5-10)**
+   C. EPAP 10, IPAP 20
+   D. EPAP 3, IPAP 8
+10. When to intubate acute pulmonary edema on NIV:
+    A. pH <7.30
+    B. **NIV failure: worsening hypoxia, fatigue, GCS<8, hemodynamic instability**
+    C. SpO2 <95%
+    D. Always after 1 hour
+
+## SBA Questions (10)
+1. 68M, sudden dyspnea, pink frothy sputum, BP 190/110, bilateral crackles, SpO2 85% on 15L O2. Best next step:
+   A. Furosemide 80 mg IV
+   B. **GTN SL + CPAP 8 cmH2O**
+   C. Morphine 5 mg IV
+   D. Intubation
+2. 72F, acute pulmonary edema, BP 85/50, cool peripheries, confusion. Management:
+   A. GTN IV + furosemide
+   B. **Norepinephrine + dobutamine + consider mechanical support**
+   C. Morphine + furosemide
+   D. High-dose nitrates
+3. 55M, acute dyspnea, pink frothy sputum, BP 90/60, HR 120 irregular (AF RVR). Best rate control:
+   A. Metoprolol IV
+   B. **Digoxin IV load or amiodarone if hemodynamically unstable**
+   C. Verapamil IV
+   D. Diltiazem IV
+4. 45F, acute dyspnea, bilateral crackles, pink sputum, BP 100/60, normal JVP, normal heart size on CXR, BNP 80 pg/mL. Most likely:
+   A. Cardiogenic pulmonary edema
+   B. **Non-cardiogenic (ARDS/other)**
+   C. Hypertensive emergency
+   D. Acute MR
+5. Patient on NIV for pulmonary edema — indication for intubation:
+   A. SpO2 92% on FiO2 0.6
+   B. **Exhaustion, GCS drop, worsening acidosis (pH<7.25), hemodynamic collapse**
+   C. RR 25
+   D. 2 hours on NIV
+6. Acute pulmonary edema post-MI day 3, new loud apical pansystolic murmur radiating to axilla, flash edema, hypotension. Diagnosis:
+   A. Functional MR
+   B. **Papillary muscle rupture**
+   C. VSD
+   D. Free wall rupture
+7. Why GTN before furosemide?
+   A. More potent diuretic
+   B. **Rapid venodilation (minutes), preload reduction; furosemide venodilation slower, renal risk**
+   C. Cheaper
+   D. Lower hypotension risk
+8. Acute pulmonary edema — contraindicated drug in RV infarction component:
+   A. Furosemide
+   B. **Nitrates**
+   C. Oxygen
+   D. Morphine
+9. CPAP vs BiPAP in cardiogenic pulmonary edema:
+   A. BiPAP superior mortality benefit
+   B. **Equivalent; CPAP simpler, BiPAP if hypercapnic**
+   C. CPAP contraindicated
+   D. BiPAP only
+10. Acute pulmonary edema with SBP 80 mmHg — priority:
+    A. High-dose nitrates
+    B. **Inotropes (dobutamine) + consider mechanical support**
+    C. Aggressive diuresis
+    D. Morphine
+
+## Flashcards
+- Q: First drug in flash pulmonary edema?
+  A: GTN (SL/IV) — rapid venodilation
+- Q: NIV settings?
+  A: CPAP 5-10; BiPAP EPAP 5-10, IPAP 10-15 (PS 5-10)
+- Q: Drug sequence?
+  A: GTN → Furosemide → Treat trigger
+- Q: Cardiogenic vs ARDS?
+  A: Cardiogenic = HTN + JVP + high BNP + big heart
+- Q: Morphine?
+  A: Caution — avoid if hypotensive/elderly
+- Q: Acute MR murmur?
+  A: Apical pansystolic, radiates axilla = papillary rupture
+- Q: Triggers?
+  A: ACS, AF RVR, HTN emergency, MR, volume overload
+- Q: Intubation criteria on NIV?
+  A: Exhaustion, GCS drop, worsening acidosis, hemodynamic collapse
+- Q: HTN emergency pulmonary edema?
+  A: Afterload mismatch → nitroprusside/labetalol + GTN
+- Q: IV furosemide dose?
+  A: 40-80mg (200mg if chronic diuretic)
+
+## Answer Key with Explanations
+### MCQs
+1. **B** — GTN provides rapid venodilation (minutes) and arteriodilation; first-line.
+2. **B** — Nitrates act faster (venodilation in 2-3 min), furosemide follows.
+3. **B** — 3CPO/REVIVE: NIV ↓ intubation 50-60%, ↓ mortality.
+4. **B** — Cardiogenic: HTN, JVD, high BNP, cardiomegaly; ARDS: normal BP/JVP, low BNP, normal heart.
+5. **B** — NIV contraindicated if GCS<8, hemodynamic instability, facial trauma, unable to protect airway.
+6. **B** — Morphine: caution — respiratory depression, hypotension; not first-line (NICE/ESC).
+7. **B** — Hypertensive emergency → afterload mismatch → flash edema; half of cases.
+8. **B** — New apical pansystolic radiating to axilla = papillary muscle rupture (posteromedial).
+9. **B** — Equivalent outcomes; CPAP simpler; BiPAP if hypercapnic (PaCO2>45).
+10. **B** — Cardiogenic shock: inotropes + mechanical support; nitrates/diuretics contraindicated.
+
+### SBAs
+1. **B** — Hypertensive flash edema: immediate CPAP + GTN (venodilation + afterload reduction).
+2. **B** — Cardiogenic shock (SBP<90, hypoperfusion): inotropes/vasopressors ± mechanical support; nitrates/diuretics worsen.
+3. **B** — AF RVR with hypotension: digoxin (safe, slow) or amiodarone; BB/CCB contraindicated.
+4. **B** — Normal JVP, normal heart, low BNP = non-cardiogenic (ARDS likely).
+5. **B** — NIV failure = exhaustion, GCS drop, pH<7.25, hemodynamic collapse.
+6. **B** — Post-MI day 3 + flash edema + new apical pansystolic/axilla = papillary rupture.
+7. **B** — GTN venodilation in 2-3 min; furosemide renal excretion delay, less acute preload reduction.
+8. **B** — RV infarct = preload dependent; nitrates cause profound hypotension.
+9. **B** — 3CPO: CPAP/BiPAP equivalent mortality; CPAP simpler.
+10. **B** — SBP<90 = cardiogenic shock; inotropes (dobutamine) ± IABP/Impella; no nitrates.
 
 ---

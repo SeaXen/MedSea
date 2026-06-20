@@ -1,192 +1,317 @@
-<!-- Source: /mnt/tb/Medicine/Cardiology/05_Valvular_Heart_Disease/Tricuspid_stenosis_(rare).md | section: 16.5 | hub: valvular-heart-disease -->
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.5.356"
+topic: "Tricuspid stenosis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/Valvular Heart Disease and Murmur Syndromes/Tricuspid stenosis.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
 # Tricuspid stenosis
 
-> [!info] **Topic Classification**
-> **Section:** 05_Valvular_Heart_Disease | **Category:** Cardiology
-
----
-
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Tricuspid stenosis** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (05 Valvular Heart Disease). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-The pathophysiology of Tricuspid stenosis involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
-
-
-## 3. CLINICAL FEATURES
-
-Clinical presentation of Tricuspid stenosis varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
-
-
-## 4. DIAGNOSTIC APPROACH
-
-Diagnostic approach to Tricuspid stenosis includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-Management of Tricuspid stenosis: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-Complications of Tricuspid stenosis: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
-
-
-## 8. SPECIAL POPULATIONS
-
-**Special populations in Tricuspid stenosis**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**Latest guidelines relevant to Tricuspid stenosis**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Common pitfalls in Tricuspid stenosis**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**Key mnemonics for Tricuspid stenosis**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-**Differential diagnosis of Tricuspid stenosis** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
-
-
-## 13. INVESTIGATIONS
-
-**Investigations for Tricuspid stenosis**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Tricuspid stenosis?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Tricuspid stenosis:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Tricuspid stenosis:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Tricuspid stenosis?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Tricuspid stenosis is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Tricuspid stenosis. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Tricuspid stenosis on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Tricuspid stenosis
-2. Discuss the pathophysiology of Tricuspid stenosis
-3. What are the diagnostic criteria for Tricuspid stenosis?
-4. Outline the management approach to Tricuspid stenosis
-5. What are the complications and prognosis of Tricuspid stenosis?
-6. What are the latest guidelines for Tricuspid stenosis?
-7. How is Tricuspid stenosis managed in special populations?
-8. Compare Tricuspid stenosis with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Tricuspid_stenosis.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Valvular Heart Disease and Murmur Syndromes|Valvular Heart Disease and Murmur Syndromes]] · [[Right-sided and mixed valvular disease]] · [[Tricuspid regurgitation]] · [[Heart Failure]]
+
+## Definition
+Tricuspid stenosis (TS) is obstruction to blood flow from the right atrium to the right ventricle at the tricuspid valve, producing a diastolic gradient and systemic venous congestion. It is uncommon and often coexists with other rheumatic valvular lesions, especially mitral valve disease.
+
+## Anatomy
+- Tricuspid valve has anterior, posterior, and septal leaflets.
+- It lies between right atrium (RA) and right ventricle (RV).
+- Rheumatic TS causes leaflet thickening, commissural fusion, and chordal fusion.
+- RA enlargement is common; RV is often relatively underfilled rather than pressure overloaded.
+
+## Physiology
+- Normal tricuspid valve area is about 7–9 cm².
+- Significant TS reduces RV filling and raises RA pressure.
+- Systemic venous pressure rises, causing neck-vein distension, hepatomegaly, ascites, and edema.
+- Because RV preload falls, pulmonary congestion is usually absent unless left-sided disease coexists.
+
+## Classification
+### By etiology
+- Rheumatic TS - commonest
+- Congenital tricuspid valve abnormality
+- Carcinoid heart disease
+- Prosthetic/iatrogenic or pacer-related obstruction
+- Rarely tumors/thrombus causing functional inflow obstruction
+
+### By severity
+- Mild, moderate, severe based on valve area and mean diastolic gradient on echo.
+- Severe disease is suggested by marked venous congestion with significant diastolic gradient.
+
+## Etiology / risk factors
+- Rheumatic heart disease
+- Carcinoid syndrome
+- Congenital valve anomaly
+- Prior tricuspid valve surgery/device-related lesion
+- Coexistent left-sided rheumatic valve disease
+
+## Pathophysiology
+1. Tricuspid narrowing impairs diastolic RV filling.
+2. RA pressure rises.
+3. Systemic venous congestion develops.
+4. Forward RV output falls, causing fatigue and reduced exercise capacity.
+5. AF may worsen flow and venous congestion.
+
+## Clinical features
+### Symptoms
+- Fatigue
+- Abdominal fullness/discomfort
+- Peripheral edema
+- Ascites
+- Reduced exercise tolerance
+- Symptoms of associated mitral/aortic disease may dominate in combined lesions
+
+### Signs
+- Raised JVP with prominent **a wave** and slow y descent
+- Diastolic murmur at lower left sternal edge / xiphisternum
+- Murmur may increase with inspiration
+- Giant RA may cause AF
+- Hepatomegaly, ascites, peripheral edema
+- Usually no major pulmonary edema unless other valve lesions coexist
+
+## Investigations
+- **Echocardiography**: key test; confirms valve morphology, gradient, associated TR or left-sided lesions
+- **ECG**: right atrial enlargement, AF
+- **Chest X-ray**: RA enlargement; pulmonary vasculature may reflect coexisting left-sided disease
+- **LFTs / renal function**: assess systemic congestion effects
+- **Cardiac catheterization** only if noninvasive data are unclear or intervention planning requires it
+
+## Interpretation frameworks
+### Murmur / valve clues
+- TS gives a diastolic murmur at the lower sternal area rather than apical MS murmur.
+- Think TS when there is **venous congestion out of proportion to pulmonary symptoms**.
+- Inspiration may accentuate the murmur, supporting right-sided origin.
+
+### Hemodynamic profile
+- High RA pressure
+- Low RV filling and low forward output
+- Systemic venous congestion predominates
+- Pulmonary edema suggests additional left-sided pathology rather than isolated TS
+
+### ECG relevance
+- RA enlargement and AF are supportive, not diagnostic.
+- No ACS-specific ECG pattern belongs to TS.
+
+### ACS / troponin logic
+- TS is not an ACS syndrome.
+- Troponin should be interpreted only in ischemic clinical context.
+- Venous congestion and hepatomegaly should not be mistaken for ischemic pump failure without corroborating evidence.
+
+## Diagnosis
+Diagnosis is based on clinical signs of right-sided inflow obstruction plus echocardiographic evidence of tricuspid valve narrowing and a diastolic gradient.
+
+## Differential diagnosis
+- Tricuspid regurgitation
+- Constrictive pericarditis
+- Right-heart failure from pulmonary hypertension
+- Hepatic disease with ascites/edema
+- Superior vena cava obstruction
+
+## Management
+### General
+- Treat congestion
+- Manage associated valve lesions and AF
+- Evaluate for rheumatic multivalve disease
+
+### Medical
+- Salt restriction and diuretics for congestion
+- Rate control / anticoagulation if AF is present and indicated
+- Treat underlying rheumatic or carcinoid context where relevant
+
+### Definitive intervention
+- Balloon valvotomy or surgery in selected severe symptomatic cases
+- Surgery is common when TS coexists with other surgically important valve lesions
+
+### Cautions
+- Diuretics improve symptoms but can excessively reduce preload and worsen fatigue/low output if overused.
+- Always search for coexisting mitral valve disease.
+
+## Complications
+- Severe systemic venous congestion
+- Atrial fibrillation
+- Cardiac cirrhosis / congestive hepatopathy
+- Low cardiac output symptoms
+- Coexisting multivalve hemodynamic compromise
+
+## Red flags / emergencies
+- Refractory ascites/edema with severe venous hypertension
+- AF with marked hemodynamic deterioration
+- Severe combined valvular disease needing urgent specialist review
+
+## One-Page Revision Summary
+- TS is rare and usually rheumatic.
+- Core problem: **obstructed RA → RV flow**.
+- Main syndrome: **systemic venous congestion**.
+- Think of TS when edema, hepatomegaly, and raised JVP occur without major pulmonary edema.
+- Echo is the key test.
+- Severe symptomatic disease may need valvotomy or surgery, often alongside other valve procedures.
+
+## Common Viva Questions
+- How do TS and TR differ at the bedside?
+- Why is pulmonary edema less prominent in isolated TS?
+- What JVP feature suggests TS?
+- Why should TS prompt a search for other rheumatic lesions?
+- What is the hemodynamic effect of over-diuresis in TS?
+
+## MCQs
+1. The most common cause of tricuspid stenosis is:
+   A. Rheumatic heart disease
+   B. Atherosclerosis
+   C. Acute MI
+   D. Hypertension
+2. The main hemodynamic consequence of TS is:
+   A. Pulmonary edema only
+   B. Systemic venous congestion
+   C. LV outflow obstruction
+   D. Aortic regurgitation
+3. Which chamber is typically enlarged in TS?
+   A. Left ventricle
+   B. Left atrium
+   C. Right atrium
+   D. Aortic root
+4. The key investigation for TS is:
+   A. CT brain
+   B. Echocardiography
+   C. Spirometry
+   D. D-dimer
+5. The murmur of TS is best described as:
+   A. Diastolic murmur near lower sternal edge
+   B. Early diastolic murmur at left sternal border
+   C. Ejection systolic murmur to carotids
+   D. Continuous machinery murmur
+6. Isolated TS usually causes:
+   A. Severe pulmonary edema
+   B. Predominantly venous congestion
+   C. Wide pulse pressure
+   D. Water-hammer pulse
+7. TS commonly coexists with:
+   A. Mitral valve disease
+   B. Coarctation only
+   C. Pheochromocytoma
+   D. Complete heart block
+8. A prominent JVP finding in TS is:
+   A. Giant a wave
+   B. Cannon a waves from VT only
+   C. Absent venous pulse
+   D. Waterfall y descent only
+9. Overuse of diuretics in TS may worsen:
+   A. RV preload and fatigue
+   B. Coronary aneurysm
+   C. Aortic dissection
+   D. LV aneurysm
+10. Severe symptomatic TS may require:
+   A. Valve intervention
+   B. CABG in all cases
+   C. Dialysis
+   D. Thrombolysis
+
+## SBA Questions
+1. A 42-year-old woman with rheumatic valvular disease has edema, hepatomegaly, raised JVP, and a diastolic murmur near the lower sternum. Most likely lesion:
+   A. Tricuspid stenosis
+   B. Pulmonary stenosis
+   C. Aortic regurgitation
+   D. HCM
+2. A patient with suspected TS should undergo which first-line confirmatory test?
+   A. Echocardiography
+   B. Colonoscopy
+   C. EEG
+   D. CT renal angiogram
+3. Which feature best supports isolated TS over left-sided failure?
+   A. Dominant systemic venous congestion with little pulmonary edema
+   B. Basal crackles only
+   C. Pink frothy sputum
+   D. Displaced apex only
+4. A patient with TS becomes more fatigued after heavy diuresis. Best explanation:
+   A. Excess preload reduction
+   B. Hyperthyroidism
+   C. Aortic stenosis
+   D. Stroke
+5. In TS, AF matters because it:
+   A. Improves RA emptying
+   B. Can worsen forward flow and congestion
+   C. Cures rheumatic disease
+   D. Prevents edema
+6. Which lesion commonly accompanies rheumatic TS?
+   A. Mitral stenosis
+   B. Coarctation
+   C. ASD secundum
+   D. WPW
+7. The dominant venous consequence of chronic TS is:
+   A. Hepatic congestion and ascites
+   B. Pulmonary hemorrhage only
+   C. LV aneurysm
+   D. Coronary occlusion
+8. Troponin in TS should be used:
+   A. For ischemic suspicion only
+   B. To confirm TS severity directly
+   C. In all murmurs automatically
+   D. Instead of echo
+9. Severe TS with other major valve lesions often leads to:
+   A. Combined surgical assessment
+   B. Asthma inhalers only
+   C. No further evaluation
+   D. Appendectomy
+10. Which JVP change is most classically associated with TS?
+   A. Prominent a wave
+   B. Absent venous pulse
+   C. Corrigan pulse
+   D. Bisferiens pulse
+
+
+
+## Common Viva Questions
+1. What is the most common cause of tricuspid stenosis in adults?
+2. How does the hemodynamics of tricuspid stenosis differ from mitral stenosis?
+3. What are the echocardiographic criteria for tricuspid stenosis severity?
+4. What is the typical clinical presentation of tricuspid stenosis?
+5. When is balloon tricuspid valvotomy or surgical intervention indicated?
+6. How does tricuspid stenosis complicate right heart catheterization interpretation?
+7. What is the association of tricuspid stenosis with carcinoid syndrome?
+8. How does tricuspid stenosis coexist with tricuspid regurgitation?
+## Flashcards
+- Q: Commonest cause of TS?
+  A: Rheumatic heart disease.
+- Q: Main syndrome in TS?
+  A: Systemic venous congestion.
+- Q: Key chamber enlarged in TS?
+  A: Right atrium.
+- Q: Best diagnostic test for TS?
+  A: Echocardiography.
+- Q: Why little pulmonary edema in isolated TS?
+  A: The obstruction is right-sided inflow, not left-sided congestion.
+- Q: Common coexisting lesion?
+  A: Mitral valve disease.
+- Q: Important JVP clue?
+  A: Prominent a wave.
+- Q: Severe symptomatic TS may need what?
+  A: Valvotomy or surgery.
+
+## Answer key with explanations
+### MCQs
+1. **A** - Rheumatic disease is the classic commonest cause.
+2. **B** - Venous congestion dominates the presentation.
+3. **C** - RA enlargement is typical.
+4. **B** - Echo defines morphology and gradient.
+5. **A** - TS causes a right-sided diastolic murmur.
+6. **B** - Systemic venous congestion predominates.
+7. **A** - TS often travels with rheumatic mitral disease.
+8. **A** - Prominent a wave supports RA outflow resistance.
+9. **A** - Over-diuresis can reduce already limited RV preload.
+10. **A** - Severe symptomatic TS may need intervention.
+
+### SBAs
+1. **A** - The bedside pattern is classic for TS.
+2. **A** - Echo is first-line and confirmatory.
+3. **A** - Isolated TS is a venous congestion syndrome.
+4. **A** - Preload can fall too much with aggressive diuresis.
+5. **B** - Loss of atrial contribution worsens filling/flow.
+6. **A** - Rheumatic multivalve disease is common.
+7. **A** - Hepatic and abdominal venous congestion are typical.
+8. **A** - Troponin belongs to ACS logic, not direct TS severity grading.
+9. **A** - Combined lesions often need surgical planning together.
+10. **A** - Prominent a wave is classic.

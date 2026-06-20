@@ -1,192 +1,337 @@
-<!-- Source: /mnt/tb/Medicine/Cardiology/04_Heart_Failure/Arrhythmogenic_right_ventricular_cardiomyopathy_(ARVC).md | section: 16.4 | hub: heart-failure -->
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.4.222"
+topic: "Arrhythmogenic right ventricular cardiomyopathy"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/Cardiomyopathies and Myocardial Disease/Arrhythmogenic right ventricular cardiomyopathy.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
 # Arrhythmogenic right ventricular cardiomyopathy
 
-> [!info] **Topic Classification**
-> **Section:** 04_Heart_Failure | **Category:** Cardiology
-
----
-
-## 1. HIGH-YIELD SUMMARY (30-Second Review)
-
-**Arrhythmogenic right ventricular cardiomyopathy** (Hypertrophic Cardiomyopathy, HCM): defined by LV wall thickness ≥15mm (or ≥13mm with family Hx) unexplained by abnormal loading conditions. **Sarcomeric disease** in 60% (autosomal dominant, MYH7, MYBPC3 most common, others). **Prevalence**: 1:500. **Most common genetic CV disease**. **Apical HCM** (Yamaguchi syndrome, especially Asian). **Obstructive HCM (HOCM)**: ~70%, LVOT gradient ≥30 mmHg at rest or with provocation (Valsalva, exercise). **Non-obstructive (HNOCM)**: 30%.
-
-
-## 2. ETIOLOGY & PATHOPHYSIOLOGY
-
-**Sarcomere mutations**: MYH7 (β-myosin heavy chain, 30-40%), MYBPC3 (myosin-binding protein C, 30-40%, often later onset), others (TNNT2, TNNI3, ACTC1, MYL2, MYL3, α-tropomyosin). **Mechanism**: ↑Ca2+ sensitivity, altered contraction, energy depletion, hypertrophy, fibrosis, disarray. **Histology**: myocyte hypertrophy, disarray, interstitial fibrosis, small vessel disease. **Dynamic obstruction**: SAM (systolic anterior motion) of MV, septal hypertrophy, drag forces, LVOT gradient. **Diastolic dysfunction** (stiff, hypertrophied). **Ischaemia** (small vessel, capillary rarefaction, mismatch). **Arrhythmia** (atrial — AF 20-30%, ventricular — VT/VF, NSVT, SCD risk). **Apical HCM**: giant negative T waves, spade-like LV.
-
-
-## 3. CLINICAL FEATURES
-
-**Asymptomatic** (most). **Symptoms**: dyspnoea (diastolic dysfunction, MR, LVOT), chest pain (ischaemia, microvascular), syncope (LVOT obstruction, arrhythmia, exertional), presyncope, palpitations (AF, VT), HF, SCD (often first presentation, young athletes). **Examination**: **jerky pulse** (spike-and-dome, bifid), **double apex beat** (atrial contraction into stiff LV), **harsh systolic ejection murmur at LLSB** (LVOT, **↑Valsalva, standing, post-PVC, post-extrasystolic accentuation**), **MR murmur** (apex, pan-systolic, posterior leaflet SAM), S4. **SCD risk**: history of VF/sustained VT, family Hx SCD, unexplained syncope, massive LVH ≥30mm, NSVT on Holter, abnormal BP response to exercise (young <40y), apical aneurysm, fibrosis (LGE on CMR ≥15%). **HCM Risk-SCD calculator** (ESC 2022, 5-year SCD risk).
-
-
-## 4. DIAGNOSTIC APPROACH
-
-**ECG**: LVH with deep T inversion (apical HCM — giant TWI precordial), ST depression, Q waves (septal), deep S V1-V2, abnormal Q. **Echocardiography** (essential): LV wall thickness ≥15mm, distribution (asymmetric septal, concentric, apical, mid-ventricular, RV), LVOT gradient (rest, Valsalva, exercise — peak instantaneous gradient ≥30 mmHg = obstruction), SAM, MR (posterior leaflet), LVEF (usually preserved, hyperdynamic), diastolic function, LA size. **CMR** (gold standard, especially for apical, RV, atypical): tissue characterisation, fibrosis (LGE, often at RV insertion points and septum), apical aneurysm, fatty infiltration. **Holter** (24-48h) for NSVT. **Exercise test** (BP response, gradient, capacity). **Cardiopulmonary exercise test** (VO2 max). **Family screening** (1st degree, ECG + echo every 1-5y, age 12-18). **Genetic testing** (sarcomere, panel). **Differential**: amyloidosis (LVH + low voltage, screen with bone scintigraphy — ATTR), hypertensive heart disease (LVH + HTN), athlete's heart (eccentric, <15mm, regression with detraining), aortic stenosis, Fabry, Danon, PRKAG2, Friedreich ataxia.
-
-
-## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
-
-**HCM Risk-SCD calculator (ESC 2022)**: 5-year SCD risk. Variables: age, LV max wall thickness, LA diameter, LVOT gradient, NSVT, unexplained syncope, family Hx SCD. **Low** <4%, **intermediate** 4-6%, **high** ≥6% (consider ICD). **Apical aneurysm**: SCD risk 5%/y. **LV EF <50%** (end-stage, burned-out): 1-2%/y. **Massive LVH ≥30mm**: SCD risk. **NSVT** on Holter.
-
-
-## 6. MANAGEMENT ALGORITHM
-
-**Asymptomatic, no SCD risk**: monitor (echo every 1-2y), family screening, education, exercise (low-intensity, avoid competitive sports — ESC 2020). **Symptomatic obstructive (HOCM)**: (1) **Beta-blocker** (first-line, nadolol, propranolol, bisoprolol, metoprolol), (2) **Non-dihydro CCB** (verapamil, diltiazem — caution if severe gradient or hypotension), (3) **Disopyramide** (if persistent symptoms, add-on, prolongs QT, monitor — class IA antiarrhythmic, negative inotrope, can be used in structural HD unlike flecainide), (4) **Septal reduction therapy**: **alcohol septal ablation (ASA)** or **surgical myectomy** (for severe symptoms, gradient ≥50 mmHg at rest or with Valsalva, refractory to medical, NYHA III-IV, class IA). **Symptomatic non-obstructive (HNOCM)**: beta-blocker, verapamil, diuretics (cautious), avoid afterload reduction (worsens gradient — but no gradient here). **Apical HCM**: usually medical. **End-stage (EF<50%)**: standard HF GDMT, transplant evaluation. **AF**: rate or rhythm, anticoagulation (DOAC, also high stroke risk even without typical CHADS-VASc). **SCD prevention**: ICD (primary if Risk-SCD ≥6% over 5y, secondary if survived SCD, sustained VT). **Pregnancy**: usually well-tolerated, beta-blocker (atenolol, metoprolol), avoid disopyramide, ICD if high risk. **Avoid**: inotropes, afterload reduction (worsens gradient), diuretics (cautious, may worsen gradient), digitalis, ACEi/ARB (no benefit, may worsen). **Exercise restriction**: avoid competitive sports (ESC 2020), moderate recreational OK.
-
-
-## 7. COMPLICATIONS & PROGNOSIS
-
-**SCD** (1-2%/y overall, 5-10% in high-risk). **HF** (5-10% end-stage, burned-out). **AF** (20-30%, ↑stroke). **LVOT obstruction** (symptoms, syncope). **Apical aneurysm** (ischaemia, arrhythmia, thrombus). **IE** (rare, MV involvement). **Death** (5-yr 95% overall with treatment, 5% per year in untreated high-risk).
-
-
-## 8. SPECIAL POPULATIONS
-
-**Apical HCM** (Yamaguchi, Asian): giant TWI V3-V4, spade-like LV. **Elderly**: more hypertrophy, more aortic stenosis (senile). **Pregnancy**: usually well-tolerated, beta-blocker, avoid disopyramide. **Athletes**: differentiate from athletic heart (septal <15mm, normal diastolic function, regression with 3-6m detraining). **Children**: family screening, exercise restriction, ICD if high risk. **End-stage (burned-out)**: LVEF<50%, transplant, ICD.
-
-
-## 9. LATEST GUIDELINES & EVIDENCE
-
-**ESC 2022 HCM (EHJ)**: full guideline update, HCM Risk-SCD calculator. **2020 ACC/AHA HCM**: similar, 5-year SCD risk. **2020 ESC sports cardiology**: avoid competitive in HCM. **NICE NG101 (2015)**: HCM. **2017 AHA/ACC/HRS**: VT/SCD prevention.
-
-
-## 10. CONFUSIONS & COMMON PITFALLS
-
-**Differentiate** from amyloidosis (HFpEF + thick walls + low voltage + carpal tunnel — bone scintigraphy, ATTR), hypertensive heart disease (LVH + HTN), athletic heart (eccentric, <15mm, regression with detraining), Fabry, Danon, PRKAG2. **HCM Risk-SCD** ≥6% over 5y → ICD. **Avoid** inotropes, afterload reduction, diuretics in HOCM (worsens gradient). **Disopyramide** prolongs QT (monitor), class IA in structural HD. **Apical HCM** — easily missed on TTE, use CMR. **End-stage** — HCM with EF<50%, transplant. **AF** — high stroke risk, anticoagulate regardless of CHADS-VASc. **Pregnancy** — usually well-tolerated. **Septal reduction** — for refractory symptoms with gradient ≥50 mmHg.
-
-
-## 11. MNEMONICS & MEMORY AIDS
-
-**HCM**: LV wall ≥15mm, unexplained, sarcomere. **MYH7, MYBPC3**: 60-70%. **Apical HCM** (Yamaguchi): giant TWI V3-V4, spade-like. **HOCM**: gradient ≥30 mmHg, SAM, MR, harsh systolic murmur ↑Valsalva. **HCM Risk-SCD** (ESC 2022): age, wall thickness, LA, LVOT gradient, NSVT, syncope, family Hx. **SAM**: Systolic Anterior Motion. **Disopyramide** class IA — safe in structural HD (unlike flecainide). **ICD if SCD risk ≥6%**. **Apical aneurysm**: 5%/y SCD. **End-stage**: EF<50%, transplant. **Avoid**: inotropes, afterload reduction, diuretics, ACEi/ARB in HOCM. **Amyloid**: screen with bone scintigraphy (DPD/PYP, ATTR). **Fabry**: alpha-galactosidase A, X-linked. **Danon**: LAMP2, X-linked. **PRKAG2**: glycogen storage. **Friedreich**: ataxia, frataxin.
-
-
-## 12. DIFFERENTIAL DIAGNOSIS
-
-Hypertensive heart disease (LVH + HTN), amyloidosis (HFpEF + thick walls + low voltage + carpal tunnel), athletic heart (eccentric, <15mm, regression), Fabry (X-linked, alpha-gal A), Danon (LAMP2, X-linked, WPW), PRKAG2 (glycogen, WPW), Friedreich ataxia (FA gene, ataxia, HCM), Noonan (short stature, pulmonary stenosis), LEOPARD, aortic stenosis (AS, post-stenotic dilation), cardiac tumour (early systolic murmur).
-
-
-## 13. INVESTIGATIONS
-
-ECG (LVH, TWI, Q, apical giant TWI), echo (essential, 2D + Doppler, Valsalva, exercise), CMR (gold standard, apical, RV, fibrosis — LGE ≥15%, apical aneurysm), Holter (NSVT), exercise test (BP, gradient, capacity), CPET, genetic testing, family screening, BNP, troponin, α-gal A (Fabry), LAMP2 (Danon), 24h urine metanephrines (Pheo).
-
-
----
-
-## 14. EXAM DRILLS
-
-### 14.1 MCQs
-
-**Q1.** What is the most common aetiology of Arrhythmogenic right ventricular cardiomyopathy?
-A. Genetic predisposition
-B. Acquired disease
-C. Mixed aetiology
-D. Idiopathic
-E. Familial
-
-> **Answer:** B
-> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
-
-**Q2.** First-line investigation for Arrhythmogenic right ventricular cardiomyopathy:
-A. ECG
-B. Echocardiography
-C. Cardiac MRI
-D. Coronary angiography
-E. Cardiac biomarkers
-
-> **Answer:** B
-> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
-
-**Q3.** Most appropriate first-line therapy for Arrhythmogenic right ventricular cardiomyopathy:
-A. Lifestyle modification
-B. Pharmacological therapy
-C. Device therapy
-D. Surgical intervention
-E. Multidisciplinary care
-
-> **Answer:** B
-> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
-
-**Q4.** Which is a contraindication to therapy in Arrhythmogenic right ventricular cardiomyopathy?
-A. Renal dysfunction
-B. Hepatic dysfunction
-C. Drug interactions
-D. Patient preference
-E. All of the above
-
-> **Answer:** E
-> **Explanation:** All must be considered. Individualise therapy.
-
-**Q5.** The most common complication of Arrhythmogenic right ventricular cardiomyopathy is:
-A. Heart failure
-B. Arrhythmia
-C. Thromboembolism
-D. Death
-E. Quality of life reduction
-
-> **Answer:** B
-> **Explanation:** Arrhythmia common; severity determines outcome.
-
-### 14.2 SBAs
-
-**SBA1.** A 55-year-old presents with features of Arrhythmogenic right ventricular cardiomyopathy. Most appropriate next step?
-A. Discharge
-B. Outpatient follow-up
-C. Investigation
-D. Empirical treatment
-E. Multidisciplinary referral
-
-> **Answer:** C
-> **Rationale:** Confirm diagnosis before treatment.
-
-**SBA2.** Patient with Arrhythmogenic right ventricular cardiomyopathy on optimal therapy develops new symptoms. What is the next step?
-A. Add another medication
-B. Refer for invasive assessment
-C. Reassess diagnosis
-D. Multidisciplinary team discussion
-E. All of the above
-
-> **Answer:** E
-> **Rationale:** Comprehensive reassessment with MDT input.
-
-### 14.3 Viva Questions
-
-1. Define and classify Arrhythmogenic right ventricular cardiomyopathy
-2. Discuss the pathophysiology of Arrhythmogenic right ventricular cardiomyopathy
-3. What are the diagnostic criteria for Arrhythmogenic right ventricular cardiomyopathy?
-4. Outline the management approach to Arrhythmogenic right ventricular cardiomyopathy
-5. What are the complications and prognosis of Arrhythmogenic right ventricular cardiomyopathy?
-6. What are the latest guidelines for Arrhythmogenic right ventricular cardiomyopathy?
-7. How is Arrhythmogenic right ventricular cardiomyopathy managed in special populations?
-8. Compare Arrhythmogenic right ventricular cardiomyopathy with related conditions
-
----
-
-## 15. SPACED REPETITION TRACKER
-
-| Date | Recall Quality | Notes |
-|------|----------------|-------|
-| Day 1 | ☐ | New - Initial reading |
-| Day 3 | ☐ | Active recall |
-| Day 7 | ☐ | Anki + mind map |
-| Day 15 | ☐ | Algorithm + MCQ |
-| Day 30 | ☐ | Full viva practice |
-| Day 90 | ☐ | Mock exam topic |
-
----
-
-## 16. CROSS-REFERENCES & NAVIGATION
-
-- [[../Cardiology MOC]]
-- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
-
----
-
-## 17. METADATA & TRACKING
-
-**File:** Arrhythmogenic_right_ventricular_cardiomyopathy.md
-**Status:** full-fcps-mrcp-note
-**Tags:** #medicine #cardiology #davidson #fcps #mrcp
-
----
+Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Cardiomyopathies and Myocardial Disease|Cardiomyopathies and Myocardial Disease]] · [[Primary cardiomyopathies]] · [[../Arrhythmias]] · [[Syncope]]
+
+## Definition
+Arrhythmogenic right ventricular cardiomyopathy (ARVC) is an inherited cardiomyopathy characterized by **fibrofatty replacement of right ventricular myocardium**, ventricular arrhythmia, syncope, and risk of sudden cardiac death. Although RV-predominant, biventricular or LV involvement can occur.
+
+## Anatomy
+- Predominant involvement of the **right ventricle**, especially inflow tract, outflow tract, and apex.
+- RV wall becomes thinned, aneurysmal, or scarred.
+- Fibrofatty myocardial replacement is the histologic hallmark.
+- LV may also be involved in advanced or variant disease.
+
+## Physiology
+- Diseased myocardium creates **electrical instability** more than early pump failure.
+- RV systolic dysfunction may develop progressively.
+- Exercise can worsen disease expression and arrhythmic risk.
+- Sudden death may occur before overt heart failure becomes obvious.
+
+## Classification
+### By extent
+- Right-dominant ARVC
+- Biventricular arrhythmogenic cardiomyopathy
+- Left-dominant arrhythmogenic phenotype
+
+### By clinical presentation
+- Asymptomatic familial screening case
+- Palpitations / ventricular tachycardia presentation
+- Syncope / aborted sudden death
+- Advanced ventricular dysfunction with heart failure
+
+## Etiology / risk factors
+- Desmosomal gene mutations (classically plakophilin and related genes)
+- Positive family history of ARVC or sudden death
+- Young athletic individuals may declare disease earlier
+- Competitive/high-intensity exercise increases arrhythmic risk and progression
+
+## Pathophysiology
+1. Genetic desmosomal abnormality weakens cell adhesion.
+2. Myocyte loss and repair produce fibrofatty replacement.
+3. Scarred myocardium forms re-entry substrate for VT.
+4. RV function gradually deteriorates.
+5. Some patients develop LV involvement and heart failure.
+
+## Clinical features
+### Symptoms
+- Palpitations
+- Exertional or unexplained syncope
+- Presyncope
+- Atypical chest discomfort
+- Exercise-triggered symptoms
+- Sudden cardiac arrest may be first presentation
+
+### Signs
+- Examination may be normal early
+- Signs of RV failure in advanced disease: raised JVP, edema, hepatomegaly
+- Tachyarrhythmia may be present during episodes
+
+## Investigations
+- **ECG**: T-wave inversion in V1–V3, epsilon wave, prolonged S-wave upstroke, ventricular ectopy
+- **Holter / ambulatory monitoring**: PVC burden, nonsustained or sustained VT
+- **Echo**: RV dilatation, regional akinesia/dyskinesia, reduced RV function
+- **Cardiac MRI**: RV structure/function, scar pattern, aneurysm detection
+- **Signal-averaged ECG** in selected settings
+- **Exercise testing** and **genetic testing** in specialist evaluation
+- **Family screening** is important
+
+## Interpretation frameworks
+### ECG clues
+- T-wave inversion in right precordial leads beyond expected age pattern
+- Epsilon wave = small terminal deflection in V1–V3, highly suggestive but not always present
+- VT with **LBBB morphology** suggests RV origin
+
+### Syncope / sudden-death logic
+- Unexplained syncope in a young patient with ventricular ectopy is high-risk until proven otherwise
+- Family history of sudden death materially raises concern
+- Do not dismiss exertional syncope as benign in suspected ARVC
+
+### Heart-failure / hemodynamic profile
+- Early disease is often **electrical** rather than congestive
+- Later disease can become right-sided or biventricular failure
+
+### Troponin / ACS logic
+- ARVC is not an ACS syndrome
+- Mild biomarker changes after tachyarrhythmia can mislead; use symptom/ECG/rise-fall context
+
+## Diagnosis
+Diagnosis is based on a combination of:
+- structural RV abnormalities,
+- repolarization/depolarization ECG abnormalities,
+- ventricular arrhythmia pattern,
+- histology/genetics,
+- and family history.
+
+No single minor clue is enough; diagnosis is **composite and specialist-driven**.
+
+## Differential diagnosis
+- Idiopathic RV outflow tract VT
+- Myocarditis
+- Dilated cardiomyopathy with arrhythmia
+- Sarcoid cardiomyopathy
+- Brugada syndrome / channelopathy syndromes
+- Acute coronary syndrome causing VT
+
+## Management
+### General principles
+- Restrict high-intensity competitive sports
+- Reduce sudden-death risk
+- Control ventricular arrhythmia
+- Screen family members
+
+### Medical treatment
+- Beta-blockers commonly used
+- Antiarrhythmic drugs in selected patients
+- Standard heart-failure therapy if ventricular dysfunction develops
+
+### Procedures / devices
+- **ICD** for survivors of cardiac arrest, sustained VT, or high-risk patients
+- Catheter ablation may reduce recurrent VT burden but is not always curative
+
+## Drug interactions / contraindications / comorbidity cautions
+- Antiarrhythmics can have proarrhythmic and conduction-slowing effects.
+- Exercise advice is not cosmetic; continued intense sport worsens prognosis.
+- AV nodal blockers alone do not solve malignant VT risk.
+
+## Complications
+- Sustained VT
+- Ventricular fibrillation
+- Sudden cardiac death
+- Progressive RV or biventricular failure
+- Recurrent ICD shocks / arrhythmia burden
+
+## Red flags / emergencies
+- Syncope during exertion
+- Sustained broad-complex tachycardia
+- Family history of sudden unexplained death
+- Aborted cardiac arrest
+- New RV failure with malignant ventricular ectopy
+
+## One-Page Revision Summary
+- ARVC = inherited **fibrofatty RV cardiomyopathy** with ventricular arrhythmia and sudden-death risk.
+- Think in young patients with palpitations, syncope, exercise-triggered VT, or family history.
+- ECG: T inversion V1–V3, epsilon wave, VT with LBBB morphology.
+- MRI/echo define RV structure and dysfunction.
+- Core management: **exercise restriction, arrhythmia control, family screening, ICD when high risk**.
+
+## Common Viva Questions
+- Why does VT in ARVC often show LBBB morphology?
+- What is an epsilon wave?
+- Why is exercise restriction important?
+- How does ARVC differ from idiopathic RVOT VT?
+- Which patients need ICD consideration?
+
+## MCQs
+1. ARVC primarily affects which chamber early?
+   - A. Left atrium
+   - B. Right ventricle
+   - C. Both atria only
+   - D. Aortic root
+   - E. Coronary sinus
+   - **Answer: B**
+2. The histologic hallmark is:
+   - A. Pure calcification
+   - B. Fibrofatty myocardial replacement
+   - C. Vegetation formation
+   - D. Granulomatous pericarditis only
+   - E. Endocardial thrombus alone
+   - **Answer: B**
+3. VT arising from the RV commonly shows:
+   - A. RBBB morphology
+   - B. LBBB morphology
+   - C. Narrow QRS only
+   - D. Delta wave only
+   - E. Complete heart block always
+   - **Answer: B**
+4. A classic ECG clue in ARVC is:
+   - A. Osborn wave
+   - B. Epsilon wave
+   - C. Electrical alternans
+   - D. PR depression only
+   - E. Tall peaked T waves only
+   - **Answer: B**
+5. An important modifiable factor worsening disease progression is:
+   - A. Mild walking
+   - B. High-intensity competitive exercise
+   - C. Salt restriction
+   - D. Vaccination
+   - E. Reading stress only
+   - **Answer: B**
+6. Sudden death risk in ARVC is mainly related to:
+   - A. Severe mitral stenosis
+   - B. Ventricular arrhythmia
+   - C. Pulmonary embolism in all cases
+   - D. Pericardial tamponade
+   - E. Aortic rupture
+   - **Answer: B**
+7. A patient with ARVC and prior cardiac arrest most strongly needs:
+   - A. Aspirin only
+   - B. ICD consideration
+   - C. Isolated diuretic therapy
+   - D. Pleural aspiration
+   - E. Warfarin only
+   - **Answer: B**
+8. Family screening matters because ARVC is often:
+   - A. Infective
+   - B. Inherited
+   - C. Nutritional only
+   - D. Autoimmune only
+   - E. Drug induced only
+   - **Answer: B**
+9. Which symptom is especially concerning in a young athlete?
+   - A. Isolated dyspepsia
+   - B. Exertional syncope
+   - C. Mild coryza
+   - D. Local rash
+   - E. Constipation
+   - **Answer: B**
+10. Early ARVC may present more as:
+   - A. Pure valvular disease
+   - B. Electrical disease than pump failure
+   - C. Isolated pericarditis
+   - D. Systemic hypertension only
+   - E. Chronic cyanosis
+   - **Answer: B**
+
+## SBA Questions
+1. A 23-year-old footballer has exertional syncope and VT with LBBB morphology. Most likely diagnosis?
+   - A. Aortic regurgitation
+   - B. ARVC
+   - C. ASD
+   - D. Acute pericarditis
+   - E. Mitral stenosis
+   - **Answer: B**
+2. The most important lifestyle instruction in confirmed ARVC is:
+   - A. Increase competitive endurance training
+   - B. Avoid high-intensity competitive sports
+   - C. Liberal alcohol challenge
+   - D. Unlimited caffeine loading
+   - E. Stop all medications immediately
+   - **Answer: B**
+3. An epsilon wave is best described as:
+   - A. A delta wave due to pre-excitation
+   - B. A terminal deflection in right precordial leads suggesting delayed RV activation
+   - C. PR segment depression
+   - D. U wave in hypokalemia
+   - E. ST elevation from pericarditis
+   - **Answer: B**
+4. A survivor of sudden cardiac arrest with ARVC should usually be evaluated for:
+   - A. ICD implantation
+   - B. Tonsillectomy
+   - C. Pericardiocentesis
+   - D. CABG in all cases
+   - E. Carotid stenting
+   - **Answer: A**
+5. Which finding best separates ARVC from benign palpitations?
+   - A. Young age alone
+   - B. Family history of sudden death plus ventricular arrhythmia
+   - C. Female sex only
+   - D. Normal pulse between episodes
+   - E. Mild anxiety
+   - **Answer: B**
+6. Which imaging modality is especially useful for RV structural assessment?
+   - A. Abdominal ultrasound
+   - B. Cardiac MRI
+   - C. Colonoscopy
+   - D. Skull X-ray
+   - E. IV urography
+   - **Answer: B**
+7. Why can ARVC be missed on examination?
+   - A. It never causes symptoms
+   - B. Early disease may have a near-normal physical exam
+   - C. It only appears during fever
+   - D. Murmur is always loud
+   - E. Cyanosis is universal
+   - **Answer: B**
+8. The principal arrhythmia mechanism in ARVC is usually:
+   - A. AV nodal re-entry from normal tissue only
+   - B. Re-entry around scarred fibrofatty myocardium
+   - C. Sinus tachycardia from anxiety
+   - D. Complete AV dissociation from hyperkalemia only
+   - E. Atrial standstill
+   - **Answer: B**
+9. Which is the best next step after diagnosing ARVC in one patient?
+   - A. Ignore relatives
+   - B. Consider family screening
+   - C. Stop all follow-up
+   - D. Assume disease is non-genetic
+   - E. Give antibiotics only
+   - **Answer: B**
+10. In ARVC, heart failure typically appears:
+   - A. Before any arrhythmia always
+   - B. Only after aortic surgery
+   - C. Later than arrhythmic manifestations in many patients
+   - D. Never
+   - E. Only in childhood
+   - **Answer: C**
+
+
+
+## Common Viva Questions
+1. What is the core pathophysiology of ARVC?
+2. What are the Task Force criteria for ARVC diagnosis?
+3. In which leads are T-wave inversions typically seen in ARVC?
+4. What is epsilon wave and its significance?
+5. How does ARVC differ from RV outflow tract VT?
+6. What is the exercise restriction advice in ARVC?
+7. When is ICD indicated in ARVC?
+8. What genetic mutations are associated with ARVC?
+## Flashcards
+- Q: Hallmark pathology of ARVC?
+  A: Fibrofatty replacement of RV myocardium.
+- Q: Typical VT morphology from RV origin?
+  A: LBBB morphology.
+- Q: Classic ECG clue?
+  A: Epsilon wave with right precordial repolarization abnormalities.
+- Q: Major symptom triad?
+  A: Palpitations, syncope, sudden-death risk.
+- Q: Key lifestyle advice?
+  A: Avoid high-intensity competitive exercise.
+- Q: Definitive anti-sudden-death device?
+  A: ICD in appropriate high-risk patients.
+- Q: Why screen family?
+  A: ARVC is often inherited.

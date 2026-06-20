@@ -1,84 +1,204 @@
-# NSTEMI vs UA Differentiation
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.1.35"
+topic: "NSTEMI_vs_UA_differentiation"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/02_Acute_Coronary_Syndromes/NSTEMI_vs_UA_differentiation.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="🔍" color="orange_bg">
-**Topic:** NSTEMI vs UA — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# NSTEMI vs UA differentiation
 
-## 1. Definitions
-**Acute Coronary Syndromes (ACS)** encompass:
-- **STEMI** — ST elevation, transmural ischaemia, complete occlusion
-- **NSTEMI** — non-ST elevation MI (subendocardial), partial occlusion, **troponin elevation**
-- **Unstable angina (UA)** — ischaemia without troponin rise
+> [!info] **Topic Classification**
+> **Section:** 02_Acute_Coronary_Syndromes | **Category:** Cardiology
 
-**UA vs NSTEMI = presence or absence of myocardial necrosis** (determined by troponin).
+---
 
-## 2. Pathophysiology Differences
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-| Feature | UA | NSTEMI |
-|---|---|---|
-| **Mechanism** | Plaque rupture + incomplete thrombus | Plaque rupture + transient complete thrombus / microembolisation |
-| **Necrosis** | None | Subendocardial necrosis present |
-| **Troponin** | **Normal** | **Elevated** (above 99th percentile) |
-| **ECG** | ST depression, T inversion, or normal | ST depression, T inversion (similar to UA) |
-| **Cardiac enzymes** | Normal | Elevated (troponin I/T) |
-| **Time course** | Symptoms may resolve | Symptoms often more prolonged |
+**NSTEMI vs UA differentiation** refers to ST-Elevation Myocardial Infarction (STEMI) — transmural myocardial necrosis from acute complete coronary occlusion (TIMI 0-1), characterised by persistent ST-segment elevation (≥1mm in two contiguous leads, ≥2mm in V2-V3) on ECG. Diagnosis requires rise/fall of cardiac troponin (≥1 value >99th percentile) + clinical ischaemia + new LBBB or pathological Q waves. **Fourth Universal Definition of MI 2018**. Door-to-balloon <90 min (or <120 if transfer).
 
-## 3. Diagnosis — Troponin (Universal Definition)
-- **>99th percentile upper reference limit** = MI
-- **High-sensitivity troponin (hs-cTn)**: rule-out algorithm at **0 h and 1 h** or **0 h and 3 h**
-- **Delta change** (rise and/or fall pattern) differentiates acute from chronic elevation
-- **Sex-specific cutoffs** for hs-cTn (women lower)
 
-## 4. ECG Patterns
-- **ST depression** ≥0.5 mm in ≥2 contiguous leads (most specific)
-- **T wave inversion** (deep, symmetric) — especially in V1–V4 (anterior ischaemia) or inferior
-- **Transient ST elevation** (<20 min) — NSTEMI (not sustained STEMI)
-- **Wellens' syndrome** — deep symmetric TWI V2–V3 = critical proximal LAD
-- **de Winter T** — upsloping ST depression V1–V6 + tall T (proximal LAD, treat as STEMI)
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-## 5. Biomarker Profile
-- **hs-cTn** rise within 1–3 h of symptom onset
-- **CK-MB** rises later (4–9 h, peaks 24 h, normalises 48–72 h) — useful for **reinfarction** diagnosis
-- **Persistent elevation** of troponin beyond expected peak → differential (chronic troponin elevation in CKD, myocarditis, Tako-tsubo, PE)
+**Plaque rupture** (60-70%) or **erosion** (25-30%) → lipid core exposure → platelet adhesion (GPIb-vWF) → activation (TxA2, ADP, thrombin) → aggregation (GPIIb/IIIa) → fibrin → occlusive thrombus. **Transmural** ischaemia within 20-30 min → necrosis (subendocardial first, wavefront from endo to epi over 4-6h). STEMI usually = **complete occlusion** (TIMI 0-1). Infarct-related artery: LAD 40-50% (anterior), RCA 30-40% (inferior), LCx 15-20% (lateral).
 
-## 6. Clinical Presentation (Both NSTEMI & UA)
-- **Rest angina** (>20 min, new onset)
-- **Crescendo angina** (more frequent/severe)
-- **Post-MI angina**
-- **New-onset severe angina** (CCS III/IV)
-- Atypical: dyspnoea, fatigue, epigastric pain (esp. women, elderly, diabetics)
 
-## 7. Risk Stratification (GRACE Score)
-- **In-hospital mortality** predictors: age, HR, SBP, Killip class, creatinine, cardiac arrest, ST deviation, troponin
-- **GRACE >140** = high risk → early invasive (<24 h)
-- **GRACE 109–140** = intermediate → invasive (<72 h)
-- **GRACE <109** = low risk → selective invasive
+## 3. CLINICAL FEATURES
 
-## 8. TIMI Score (Alternative)
-- Age ≥65, ≥3 risk factors, prior CAD, ST deviation, severe angina, ASA use, ↑cardiac markers
-- **TIMI 0–2** = low; **3–4** = intermediate; **5–7** = high risk
+Severe crushing central chest pain >20 min at rest, diaphoresis, dyspnoea, nausea, radiation to jaw/left arm, **painless in 20-30%** (diabetics, elderly, women, post-CABG). Examination: tachycardia, S3/S4, new MR murmur (papillary dysfunction), hypotension in shock, signs of HF. Atypical: confusion, syncope, fatigue, abdominal pain.
 
-## 9. Why Differentiate?
-- **UA**: managed medically; invasive strategy not always needed
-- **NSTEMI**: usually requires invasive (especially high-risk features)
-- **Diagnosis may be revised** as troponin evolves (initial UA → NSTEMI)
 
-## 10. Mimics of NSTEMI / UA
-- **Aortic dissection**
-- **Pulmonary embolism**
-- **Pericarditis / myocarditis**
-- **Tako-tsubo cardiomyopathy**
-- **MINOCA**
-- **Oesophageal spasm / reflux**
-- **Musculoskeletal chest pain**
+## 4. DIAGNOSTIC APPROACH
 
-> **Pearls**
-> - **Troponin is the discriminator** between UA (normal) and NSTEMI (elevated)
-> - **hs-cTn** — 0/1 h or 0/3 h algorithm; rise/fall pattern = acute injury
-> - **GRACE score** guides timing of invasive strategy
-> - **Sex-specific troponin cutoffs** for hs-cTn (women lower)
-> - **ST depression ≥0.5 mm in 2 contiguous leads** = hallmark of NSTEMI/UA
-> - **de Winter T waves** = STEMI-equivalent (urgent angiography)
-> - **Wellens' syndrome** = critical proximal LAD; admission + angiography
+**ECG within 10 min**: persistent STE ≥1mm (≥2mm in V2-V3 men, ≥1.5mm in women) in two contiguous leads, OR new LBBB (Sgarbossa criteria ≥3), OR de Winter T-waves (upsloping STD V1-V6 with tall T), OR posterior MI (STD V1-V4, take V7-V9 with STE ≥0.5mm). **hs-cTn 0/1h** algorithm. **Echo**: RWMA, LVEF, mechanical complications. **Coronary angiography** definitive.
+
+
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
+
+**GRACE** (in-hospital mortality): low <108 (<1%), intermediate 108-140 (1-3%), high >140 (>3-50%). **TIMI STEMI**. **Killip class** I-IV (I 6%, IV 81%). **SCAI shock stages** A-E.
+
+
+## 6. MANAGEMENT ALGORITHM
+
+**Primary PCI <90 min** with DES preferred (or <120 min if transfer). **Fibrinolysis** (tenecteplase weight-adjusted single bolus) if PCI >120 min. **DAPT**: aspirin 300mg loading + ticagrelor 180mg (PLATO) or prasugrel 60mg (TRITON), or clopidogrel 600mg. **Anticoagulation**: UFH 70U/kg (or 50U/kg with GP IIb/IIIa), bivalirudin, or enoxaparin. **GP IIb/IIIa** (abciximab, eptifibatide, tirofiban) bailout. **Statin** (high-intensity, target LDL <1.4-1.8), **beta-blocker** within 24h, **ACEi** if LVEF≤40% or anterior MI, **MRA** if LVEF≤40%+HF/DM. **Radial** access preferred (MATRIX trial). Complete revascularisation in multivessel STEMI (COMPLETE trial).
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+**Arrhythmic** (24-48h): VF/VT 5-10% (most common cause of early death), bradyarrhythmias/AV block (inferior MI, RCA), AF 10-20%. **Mechanical** (3-7d): VSR (anterior 1-2%, LAD), papillary rupture (inferior 1-3%, posteromedial papillary), free wall rupture (5-14d, 90% mortality). **Inflammatory**: peri-infarction pericarditis (1-3d, 10-20%), Dressler (weeks-months, autoimmune). **Pump failure**: cardiogenic shock 5-10% STEMI. **LV aneurysm** (late). **LV thrombus** → systemic emboli, **stent thrombosis** (acute <24h, subacute 1-30d, late 1-12m, very late >1y).
+
+
+## 8. SPECIAL POPULATIONS
+
+Elderly: atypical presentation, more complications, higher mortality. Women: less typical pain, more mechanical complications. Diabetes: multivessel, smaller vessels, more HF, more bleeding. CKD: avoid enoxaparin if CrCl<20, use UFH, radial access. Pregnancy: SCAD common, primary PCI preferred, radiation minimisation. Posterior MI: STD V1-V4, take V7-V9. LBBB: Sgarbossa criteria. **Cocaine**: avoid beta-blockers, use benzos + nitrates.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**ESC 2023 ACS (EHJ)**: 0/1h hs-cTn algorithm, cangrelor in PCI, ticagrelor/prasugrel > clopidogrel, complete revascularisation in STEMI with multivessel disease (COMPLETE). **ACC/AHA 2023 STEMI/NSTEMI**: DAPT 12mo for ACS, 6mo for stable CAD, high-intensity statin, beta-blocker within 24h. **NICE NG185**: ticagrelor 1st line P2Y12. **2018 ESC DAPT**: shorter (3-6mo) if HBR (PRECISE-DAPT >25), longer (>12mo) if HIR (DAPT score ≥2). **Fourth Universal Definition of MI 2018**: rise/fall cTn ≥1 value >99th percentile + clinical ischaemia.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+Don't delay cath lab for troponin in STEMI. **Posterior MI** = STD V1-V4 + take V7-V9 to confirm. **de Winter T-waves** = STEMI equivalent. **Wellens** = pre-infarction. **aVR elevation >1mm with diffuse STD** = LM/3-vessel. **LBBB with Sgarbossa criteria ≥3** = STEMI. **SCAD** (young women, peripartum) often missed. **Cocaine**: avoid beta-blockers, use benzos + nitrates. **Stent thrombosis**: distinguish from restenosis (sudden/catastrophic vs gradual). **DAPT interruption for surgery**: 5d ticagrelor/clopidogrel, 7d prasugrel.
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**STEMI**: ST-Elevation MI (transmural). **NSTEMI**: non-STEMI (subendocardial). **GRACE**: Global Registry of Acute Coronary Events. **TIMI**: Thrombolysis In MI. **SCAI**: A (at risk) → B (beginning) → C (classic) → D (deteriorating) → E (extremis). **DAPT**: Dual Anti-Platelet Therapy. **DES**: Drug-Eluting Stent. **GP IIb/IIIa**: final common pathway. **Sgarbossa 5-3-2**: concordant STE 5, concordant STD V1-V3 3, discordant STE >25% S 2. **de Winter**: upsloping STD V1-V6 with tall T. **Wellens**: biphasic T V2-V3 (A), deep TWI V2-V3 (B). **TCFA**: Thin-Cap FibroAtheroma.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+Aortic dissection (tearing, BP differential, wide mediastinum — beta-blocker first, NOT antiplatelets). Pericarditis (diffuse concave STE, PR dep). PE (S1Q3T3, RV strain). Takotsubo (apical ballooning, no culprit). Oesophageal spasm. MSK pain. Myocarditis (viral prodrome, diffuse ECG changes).
+
+
+## 13. INVESTIGATIONS
+
+**ECG** (immediate, serial, right-sided for inferior MI, V7-V9 for posterior MI); **hs-cTn 0/1h or 0/3h**; FBC, U&E, LFT, TFT, lipids, HbA1c, coagulation; CXR; bedside echo (RWMA, LVEF, valves, effusion); formal echo within 24h; **coronary angiography** for definitive diagnosis/intervention; consider CTCA if low-intermediate probability; **cardiac MRI** if MINOCA suspected; CT aortogram if dissection suspected.
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of NSTEMI vs UA differentiation?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for NSTEMI vs UA differentiation:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for NSTEMI vs UA differentiation:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in NSTEMI vs UA differentiation?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of NSTEMI vs UA differentiation is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of NSTEMI vs UA differentiation. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with NSTEMI vs UA differentiation on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify NSTEMI vs UA differentiation
+2. Discuss the pathophysiology of NSTEMI vs UA differentiation
+3. What are the diagnostic criteria for NSTEMI vs UA differentiation?
+4. Outline the management approach to NSTEMI vs UA differentiation
+5. What are the complications and prognosis of NSTEMI vs UA differentiation?
+6. What are the latest guidelines for NSTEMI vs UA differentiation?
+7. How is NSTEMI vs UA differentiation managed in special populations?
+8. Compare NSTEMI vs UA differentiation with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** NSTEMI_vs_UA_differentiation.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

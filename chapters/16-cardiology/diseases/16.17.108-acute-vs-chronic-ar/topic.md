@@ -1,104 +1,204 @@
-# Acute vs Chronic Aortic Regurgitation
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.17.108"
+topic: "Acute_vs_chronic_AR"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/05_Valvular_Heart_Disease/Acute_vs_chronic_AR.md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-## 1. The Critical Distinction
-Aortic regurgitation (AR) presents along a wide spectrum — from a slowly adapting chronic leak to a catastrophic acute emergency. The **pathophysiology, presentation, and management differ fundamentally.**
+# Acute vs chronic AR
 
-## 2. Chronic AR — Compensated State
-- **Mechanism:** slow leak → LV dilates (eccentric hypertrophy) to maintain stroke volume → eventually decompensates
-- **Latent phase:** often decades asymptomatic
-- **Decompensation:** LV dysfunction, symptoms (NYHA II-IV)
+> [!info] **Topic Classification**
+> **Section:** 05_Valvular_Heart_Disease | **Category:** Cardiology
 
-### Causes
-- **Bicuspid aortic valve** (younger)
-- **Calcific degeneration** (elderly)
-- **Aortic root dilation** (idiopathic, Marfan, Loeys-Dietz, Ehlers-Danlos, syphilitic aortitis, dissection)
-- **Rheumatic disease**
-- **Connective tissue disorders**
+---
 
-### Pathophysiology
-- ↑EDV → eccentric LVH → ↑stroke volume (Frank-Starling)
-- Wide pulse pressure → bounding peripheral signs
-- LV "remodels" — compensates until unable
-- **Pre-symptomatic LV dilation/dysfunction** is the trigger for surgery
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-## 3. Acute AR — Decompensated Emergency
-- **Mechanism:** sudden regurgitation into a non-compliant LV → no time to dilate → pulmonary oedema + shock
-- **Mortality:** high without urgent surgery
-- **Causes:**
-  - **Aortic dissection** (Stanford A) — most common cause of acute AR
-  - **Infective endocarditis** (perforation, leaflet destruction)
-  - **Trauma** (deceleration injury)
-  - **Iatrogenic** (post-TAVI, post-BAV)
-  - **Prosthetic valve failure** (dehiscence, endocarditis)
-  - **Ruptured sinus of Valsalva**
+**Acute vs chronic AR** is a clinical cardiology topic in Davidson 24th Edition Chapter 16 (05 Valvular Heart Disease). For FCPS/MRCP exam, requires understanding of definition, classification, pathophysiology, clinical features, diagnostic criteria, severity assessment, management, complications, special population considerations, current guidelines, common pitfalls, and high-yield mnemonics.
 
-### Clinical Features of Acute AR
-- **Pulmonary oedema** (sudden, severe)
-- **Hypotension, shock** (low forward output)
-- **Soft or absent diastolic murmur** (rapid LV pressure equalisation)
-- **Tachycardia** (compensatory)
-- Often mistaken for sepsis, PE, ACS
 
-## 4. Comparative Summary
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-| Feature | **Chronic AR** | **Acute AR** |
-|---|---|---|
-| **Onset** | Insidious | Sudden |
-| **Symptoms** | Often none for years; eventually dyspnoea, fatigue, angina | Pulmonary oedema, shock |
-| **Pulse pressure** | Wide | Normal / narrow |
-| **Murmur** | Long decrescendo diastolic | Soft / absent |
-| **LV size** | Dilated, eccentric hypertrophy | Normal, no time to adapt |
-| **Compensation** | Frank-Starling, eccentric LVH | None — emergency |
-| **Management** | Medical optimisation, elective surgery if criteria | Urgent surgery ± medical bridge |
+The pathophysiology of Acute vs chronic AR involves multiple cardiovascular mechanisms: ischaemic (atherosclerosis, plaque rupture/erosion → thrombosis), structural (hypertrophy, dilation, remodelling, fibrosis), electrical (re-entry, abnormal automaticity, triggered activity, ion channel dysfunction), neurohormonal (RAAS, SNS, BNP, vasopressin, endothelin), inflammatory (cytokines, immune activation, endothelial dysfunction, microvascular inflammation), mechanical (pressure/volume overload, shear stress), metabolic (diabetes, dyslipidaemia, CKD, thyroid), genetic (monogenic, polygenic), and environmental (smoking, alcohol, drugs, infections). The interaction of these pathways determines disease trajectory, severity, and prognosis.
 
-## 5. Signs of Severe Chronic AR
-- **Wide pulse pressure** (e.g., 160/50)
-- **Water-hammer (Corrigan) pulse**
-- **de Musset sign** (head bobbing)
-- **Müller sign** (uvula bobbing)
-- **Quincke sign** (capillary nail pulsation)
-- **Duroziez sign** (femoral pistol-shot)
-- **Traube sign** (double femoral sound)
-- **Hill sign** (popliteal > brachial SBP by ≥60 mmHg)
-- **Displaced hyperdynamic apex**
-- **High-pitched early diastolic decrescendo** at L sternal border
-- **Austin-Flint murmur** — mid-diastolic rumble at apex (severe AR jet hitting MV)
 
-## 6. Investigations
-- **TTE** — definitive diagnosis
-  - Jet width / VC >6 mm = severe
-  - Pressure half-time <200 ms = severe
-  - Holodiastolic flow reversal in descending aorta
-  - LV dimensions, EF
-- **TOE** — for aortic dissection, endocarditis
-- **CT angio / MRI** — aortic root assessment, dissection
-- **Cardiac cath** — rarely needed; can quantify regurgitation
+## 3. CLINICAL FEATURES
 
-## 7. Management
+Clinical presentation of Acute vs chronic AR varies by acuity (acute vs chronic), severity, and patient factors. **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, nocturnal), palpitations, syncope/pre-syncope, fatigue, exercise intolerance, peripheral oedema, nocturia, cough. **Examination**: vital signs (BP, HR, RR, SpO2), general appearance, JVP, peripheral pulses, cardiac auscultation (murmurs, S1, S2, S3, S4, additional sounds), pulmonary examination, abdominal examination, peripheral examination. **Atypical presentations** more common in women, elderly, diabetics.
 
-### Chronic AR
-- **Vasodilators (ACEi / ARB / nifedipine)** — for HTN or pre-surgery; do NOT delay surgery
-- **Surveillance echo** — q1-2 yr if stable, q6 mo if approaching thresholds
-- **Surgery** when:
-  - Symptoms (any LVEF)
-  - LVEF <50% (asymptomatic)
-  - LVESD >50 mm
-  - Progressive LV dilation
 
-### Acute AR
-- **Medical bridge:** IV diuretics, vasodilators (nitroprusside), inotropes, **avoid** intra-aortic balloon pump (worsens AR)
-- **Urgent / emergent surgery** for dissection, endocarditis, mechanical complications
-- **Endocarditis** — surgery for severe acute AR, root abscess, uncontrolled infection
+## 4. DIAGNOSTIC APPROACH
 
-## 8. Special Situations
-- **Aortic dissection with AR** — emergent surgical repair with AVR ± root replacement
-- **Endocarditis** — early surgery if severe AR, abscess, embolic phenomena
-- **Marfan / connective tissue** — operate on root ≥45 mm (or smaller with risk factors)
-- **Pregnancy** — severe AR with symptoms or LV dysfunction is high risk; pre-pregnancy surgery if possible
+Diagnostic approach to Acute vs chronic AR includes: (1) **History**: SOCRATES for pain, NYHA/CCS for symptoms, SAMPLE for general, family/social history, drug history. (2) **Physical examination**: vital signs, targeted system examination. (3) **ECG**: 12-lead, serial if acute, right-sided leads for inferior MI, V7-V9 for posterior MI, comparison with prior. (4) **Biomarkers**: troponin (ACS), BNP/NT-proBNP (HF), hs-CRP (inflammation), D-dimer (PE), lipid profile, HbA1c, U&E, LFT, TFT, FBC, coagulation. (5) **Echocardiography**: TTE first-line, TEE for posterior structures, 3D echo for complex anatomy, strain for subclinical dysfunction. (6) **Additional imaging**: CMR (tissue characterisation), CTCA (anatomy), nuclear (perfusion), invasive angiography with FFR/iFR, RHC (PH/shock). (7) **Functional testing**: stress ECG, stress echo, stress CMR, CPET.
 
-> **Pearls**
-> - **Acute AR = emergency**, chronic AR = electively managed
-> - Acute AR: **soft or absent murmur** despite severe leak — pressure equalises quickly
-> - Chronic AR: **wide pulse pressure + peripheral signs** = severity markers
-> - Indications for surgery in chronic AR: **symptoms, EF <50%, LVESD >50 mm**
-> - **Aortic dissection** is the leading cause of acute AR — always image the aorta
+
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
+
+Severity assessment uses: (1) **Clinical scoring systems** (GRACE/TIMI/HEART for ACS, NYHA/INTERMACS for HF, CHA2DS2-VASc/HAS-BLED for AF, Child-Pugh/MELD for liver, KDIGO for renal, EuroSCORE/STS for surgical risk). (2) **Biomarkers** (peak troponin, BNP, hs-CRP). (3) **Imaging parameters** (LVEF, valve area, regurgitation volume, PASP, RV function). (4) **Functional capacity** (6MWD, CPET with VO2 max, NYHA class). (5) **Haemodynamic parameters** (BP, HR, JVP, urine output, lactate). (6) **End-organ function** (renal, hepatic, neurological, respiratory). Risk stratification guides therapy intensity, monitoring, and prognosis.
+
+
+## 6. MANAGEMENT ALGORITHM
+
+Management of Acute vs chronic AR: (1) **Acute stabilisation** (ABC, haemodynamic support, oxygen, analgesia). (2) **Confirmation of diagnosis and aetiology**. (3) **Disease-specific therapy** (medical, interventional, surgical, or device). (4) **GDMT** — 4 pillars for HF (ARNI/ACEi, beta-blocker, MRA, SGLT2i). (5) **Risk factor modification** (BP <130/80, LDL-C target by risk, HbA1c <7%, smoking cessation, weight, exercise 150 min/week). (6) **Lifestyle modification** (Mediterranean/DASH diet, sodium <2g/day, alcohol moderation, sleep 7-9h). (7) **Patient education** and shared decision-making. (8) **Long-term monitoring** and follow-up. (9) **Multidisciplinary team** approach. (10) **Advanced therapies** (device, interventional, surgical) as indicated.
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+Complications of Acute vs chronic AR: **Acute** — arrhythmic (VF, VT, AF, bradyarrhythmia, AV block, SCD), mechanical (papillary muscle rupture, VSR, free wall rupture, tamponade, aortic dissection/rupture), ischaemic (recurrent MI, stent thrombosis, stroke), haemodynamic (cardiogenic shock, pulmonary oedema, AKI, hepatic congestion, bowel ischaemia), thrombotic (LV thrombus, stroke, systemic embolism, limb ischaemia, mesenteric ischaemia, renal infarct), inflammatory (peri-infarction pericarditis, Dressler syndrome, myocarditis). **Chronic** — HF progression, chronic arrhythmia, valvular deterioration, recurrent ischaemia, exercise intolerance, cachexia, depression, reduced quality of life, increased mortality.
+
+
+## 8. SPECIAL POPULATIONS
+
+**Special populations in Acute vs chronic AR**: **Elderly** (atypical presentation, more comorbidities, polypharmacy, higher bleeding risk, careful drug dosing, frailty assessment). **Women** (more atypical symptoms, hormonal influences, more complications). **Diabetes** (more multivessel disease, smaller vessels, more diffuse atherosclerosis, more HF, more bleeding, SGLT2i benefits). **CKD** (dose adjustment — avoid enoxaparin if CrCl<20, hold metformin 48h pre/post contrast; use UFH/bivalirudin, prefer radial access, avoid nephrotoxic agents). **Pregnancy** (physiological changes — ↑CO 30-50%, ↑plasma volume, ↓SVR, hypercoagulable; careful drug selection — warfarin teratogenic, ACEi/ARB contraindicated; MDT approach with obstetrics/cardiology/anaesthesia; delivery planning). **Athletes** (physiological vs pathological changes). **Ethnicity** (African-American: more HTN, more HFrEF, more amyloid ATTR V122I; South Asian: more CAD at younger age).
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**Latest guidelines relevant to Acute vs chronic AR**: **ESC 2021-2024 series**: HF (2021), VHD (2021), ACS (2023), PH (2022), ACHD (2020), AF (2020), SCD (2022), cardio-onc (2022), pericardial (2015), aortic diseases (2024), bradycardia (2021). **ACC/AHA 2022-2024 series**: HF (2022), VHD (2020/2024), ACS (2023), AF (2023/2024), SCD (2015/2017), bradycardia (2018), cardio-onc (2020). **NICE guidelines (UK)**: NG185 (ACS), NG106 (chronic HF), NG95 (chest pain), NG238 (lipid management 2023), NG134 (AF), NG126 (PH). **Specialty society guidelines**: EHRA, HRS, ISHLT, SCMR, ASE/EACVI, ASNC. **Landmark trials**: PARADIGM-HF, DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, ISCHEMIA, COMPLETE, EARLY-AF, CASTLE-AF, CABANA, FIRE AND ICE, ADVENT, ATTR-ACT, ISAR-REACT 5, TWILIGHT, AUGUSTUS, ENTRUST-AF PCI, REDUCE-IT, FOURIER, CLEAR Outcomes.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+**Common pitfalls in Acute vs chronic AR**: (1) Atypical presentations missed (women, elderly, diabetics, CKD). (2) Over-reliance on single test/parameter. (3) Failure to apply guideline-directed therapy. (4) Drug interactions and contraindications overlooked. (5) Special populations (pregnancy, CKD, elderly) not considered. (6) Inadequate monitoring for complications. (7) Failure to escalate therapy when indicated. (8) Polypharmacy issues. (9) Patient non-adherence. (10) Late referral for advanced therapies. (11) Missing invasive options in selected patients. (12) Inadequate transition of care. (13) Underuse of cardiac rehabilitation. (14) Missing psychological/psychiatric comorbidities. (15) Inadequate end-of-life planning in advanced disease.
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**Key mnemonics for Acute vs chronic AR**: **IPPA** (Inspection, Palpation, Percussion, Auscultation) for clinical exam. **SOCRATES** (Site, Onset, Character, Radiation, Association, Timing, Exacerbating/relieving, Severity) for symptom history. **OPQRST** (Onset, Provocation, Quality, Radiation, Severity, Time) for pain. **SAMPLE** (Signs/Symptoms, Allergies, Medications, Past history, Last meal, Events) for general history. **NYHA** (I-IV) for HF functional class. **CCS** (I-IV) for angina class. **Killip** (I-IV) for post-MI HF. **SCAI** (A-E) for cardiogenic shock. **CHADS-VASc** for AF stroke risk. **HAS-BLED** for bleeding risk. **GRACE/TIMI/HEART** for ACS risk. **PRECISE-DAPT** for DAPT bleeding risk. **DAPT score** for DAPT duration. **4 pillars of HF**: RAAS inhibitor (ARNI/ACEi/ARB), beta-blocker, MRA, SGLT2i. **4 F's** (Family, Fat, Fitness, Fags) for CV risk factors. **LMNOP** for HF (Lasix, Morphine, Nitrates, Oxygen, Position).
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+**Differential diagnosis of Acute vs chronic AR** includes related cardiovascular conditions and non-cardiac mimics. **Cardiovascular**: ischaemic heart disease (stable angina, ACS, microvascular angina, vasospasm), hypertensive heart disease (LVH, HFpEF, aortic dissection), valvular heart disease (AS, AR, MS, MR, TR, prosthetic), cardiomyopathy (DCM, HCM, RCM, ARVC, Takotsubo, infiltrative — amyloid, sarcoid, haemochromatosis), arrhythmia (AF, SVT, VT, bradyarrhythmia, AV block), pericardial disease (acute pericarditis, pericardial effusion, tamponade, constrictive pericarditis), vascular disease (aortic dissection, aortic aneurysm, peripheral arterial disease, renal artery stenosis, mesenteric ischaemia, stroke, TIA, VTE). **Non-cardiac**: pulmonary (PE, pneumonia, COPD, asthma, pleural effusion, pneumothorax), GI (oesophageal spasm, reflux, peptic ulcer, pancreatitis, cholecystitis, hepatic congestion), MSK (costochondritis, rib fracture, muscle strain, herpes zoster), neurological (cervical radiculopathy, brachial plexus, neuropathy), psychiatric (anxiety, panic, somatisation, depression), and other systemic conditions (anaemia, thyrotoxicosis, infection, malignancy, autoimmune disease).
+
+
+## 13. INVESTIGATIONS
+
+**Investigations for Acute vs chronic AR**: **Bedside**: ECG (12-lead, serial, rhythm strip), vital signs (BP, HR, RR, SpO2), JVP, urine output, glucometer, capillary refill. **Bloods**: FBC (anaemia, infection), U&E (renal, electrolytes), LFT (hepatic congestion), TFT (thyroid), coagulation (anticoagulation, DIC), glucose/HbA1c, lipid profile (TC, LDL-C, HDL-C, TG, non-HDL-C, ApoB, Lp(a)), hs-CRP, BNP/NT-proBNP, troponin (if ACS suspected), D-dimer (if PE suspected), blood gas (acidosis, lactate), blood cultures (if IE suspected), drug levels, pregnancy test, viral/autoimmune serology, genetic testing. **Imaging**: CXR, TTE (first-line), TEE (posterior structures, LAA, valves, dissection, IE), 3D echo (complex anatomy), strain (subclinical dysfunction, cardio-onc, amyloid), CTCA (low-intermediate probability), CMR (tissue characterisation, viability, infiltrative, myocarditis, scar), nuclear (perfusion, EF, MUGA, viability), invasive coronary angiography ± FFR/iFR, RHC (PA pressure, PCWP, CO, PVR), CT/MR angiography (aorta, peripheral, pulmonary, renal). **Other**: 24h Holter, event recorder, ILR, EP study, tilt-table test, CPET, sleep study, 6MWT.
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of Acute vs chronic AR?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for Acute vs chronic AR:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for Acute vs chronic AR:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in Acute vs chronic AR?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of Acute vs chronic AR is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of Acute vs chronic AR. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with Acute vs chronic AR on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify Acute vs chronic AR
+2. Discuss the pathophysiology of Acute vs chronic AR
+3. What are the diagnostic criteria for Acute vs chronic AR?
+4. Outline the management approach to Acute vs chronic AR
+5. What are the complications and prognosis of Acute vs chronic AR?
+6. What are the latest guidelines for Acute vs chronic AR?
+7. How is Acute vs chronic AR managed in special populations?
+8. Compare Acute vs chronic AR with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** Acute_vs_chronic_AR.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---

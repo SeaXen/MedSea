@@ -1,107 +1,204 @@
-# STEMI ECG Criteria (ST Elevation, Hyperacute T Waves, Reciprocal Changes)
+---
+davidson_chapter: "Chapter 16: Cardiology"
+davidson_topic_id: "16.1.30"
+topic: "STEMI_ECG_criteria_(ST_elevation,_hyperacute_T_waves,_reciprocal_changes)"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Cardiology/02_Acute_Coronary_Syndromes/STEMI_ECG_criteria_(ST_elevation,_hyperacute_T_waves,_reciprocal_changes).md"
+tags: [medicine, cardiology, davidson, fcps, mrcp]
+---
 
-<callout icon="🚑" color="red_bg">
-**Topic:** STEMI ECG Criteria — Cardiology
-**Style:** Sea Knowledge study infographic
-**Audience:** FCPS / MRCP exam prep
-</callout>
+# STEMI ECG criteria
 
-## 1. Introduction
-**STEMI = ST elevation MI** — transmural ischaemia from complete coronary occlusion. Defined by **ST elevation** at the J-point in **≥2 contiguous leads** (4th Universal Definition, 2018). **"Time is muscle"** — early recognition saves myocardium.
+> [!info] **Topic Classification**
+> **Section:** 02_Acute_Coronary_Syndromes | **Category:** Cardiology
 
-## 2. ST Elevation Thresholds (J-point)
+---
 
-| Lead Group | ♂ <40 yr | ♂ ≥40 yr | ♀ |
-|---|---|---|---|
-| **V2–V3** | ≥2.5 mm | ≥2.0 mm | ≥1.5 mm |
-| **All other leads** | ≥1.0 mm | ≥1.0 mm | ≥1.0 mm |
-| **V7–V9 (posterior)** | ≥1.0 mm (♂ <40) | ≥0.5 mm | ≥0.5 mm |
-| **V3R, V4R (RV)** | ≥1.0 mm (♂ <30) | ≥0.5 mm | ≥0.5 mm |
+## 1. HIGH-YIELD SUMMARY (30-Second Review)
 
-## 3. Classic Evolution (Stage by Stage)
+**STEMI ECG criteria** refers to ST-Elevation Myocardial Infarction (STEMI) — transmural myocardial necrosis from acute complete coronary occlusion (TIMI 0-1), characterised by persistent ST-segment elevation (≥1mm in two contiguous leads, ≥2mm in V2-V3) on ECG. Diagnosis requires rise/fall of cardiac troponin (≥1 value >99th percentile) + clinical ischaemia + new LBBB or pathological Q waves. **Fourth Universal Definition of MI 2018**. Door-to-balloon <90 min (or <120 if transfer).
 
-| Stage | Time | ECG | Pathology |
-|---|---|---|---|
-| **Hyperacute T** | <30 min | Tall, broad, peaked T (early) | Reversible ischaemia |
-| **ST elevation** | min–hours | Concave-up ST ↑, often "tombstone" | Injury (transmural) |
-| **Q wave** | hours–days | Pathological Q (>40 ms, >25% R) | Necrosis |
-| **T inversion** | days–weeks | Symmetric TWI | Peri-infarct |
-| **Normalised ST** | weeks | Q persists, T normalises | Scar |
 
-## 4. Hyperacute T Waves
-- **Tall, broad, "tented"** T waves, often in same leads that subsequently elevate
-- Earliest sign of STEMI (first 30 min)
-- **Tall anterior T** in V2–V4 = early anterior STEMI
-- May be subtle — compare to previous ECG
+## 2. ETIOLOGY & PATHOPHYSIOLOGY
 
-## 5. ST Elevation Patterns
-- **Concave up** (often early, less specific)
-- **Convex / tombstone** (more specific for transmural injury)
-- **≥1 mm in two contiguous leads** (or as above)
-- **Reciprocal ST depression** (opposite leads) — increases specificity (e.g., inferior ST↑ + lateral ST↓)
+**Plaque rupture** (60-70%) or **erosion** (25-30%) → lipid core exposure → platelet adhesion (GPIb-vWF) → activation (TxA2, ADP, thrombin) → aggregation (GPIIb/IIIa) → fibrin → occlusive thrombus. **Transmural** ischaemia within 20-30 min → necrosis (subendocardial first, wavefront from endo to epi over 4-6h). STEMI usually = **complete occlusion** (TIMI 0-1). Infarct-related artery: LAD 40-50% (anterior), RCA 30-40% (inferior), LCx 15-20% (lateral).
 
-## 6. Pathological Q Waves
-- **Width ≥40 ms** (1 small box)
-- **Depth ≥25% of R wave**
-- Develops **hours to days**
-- Persists indefinitely
-- Not all Q waves are pathological — III, aVL, V1, V2 (septal) can be normal
 
-## 7. Reciprocal Changes
-- **ST depression in leads opposite** to ST elevation
-- **Inferior STEMI (II, III, aVF)** + ST↓ in I, aVL = high specificity
-- **Anterior STEMI (V1–V4)** + ST↓ in inferior leads = indicates proximal LAD, larger infarct
-- Absence of reciprocal change does NOT rule out STEMI
+## 3. CLINICAL FEATURES
 
-## 8. Coronary Territory
+Severe crushing central chest pain >20 min at rest, diaphoresis, dyspnoea, nausea, radiation to jaw/left arm, **painless in 20-30%** (diabetics, elderly, women, post-CABG). Examination: tachycardia, S3/S4, new MR murmur (papillary dysfunction), hypotension in shock, signs of HF. Atypical: confusion, syncope, fatigue, abdominal pain.
 
-| Leads | Artery | Wall |
-|---|---|---|
-| V1–V2 | Septal (LAD) | Septal |
-| V3–V4 | Anterior (LAD) | Anterior |
-| V5–V6, I, aVL | Lateral (LCx / diagonal) | Lateral |
-| II, III, aVF | Inferior (RCA 90%, LCx 10%) | Inferior |
-| V7–V9 | Posterior (LCx / RCA) | Posterior |
-| V3R, V4R | RV (RCA) | RV |
 
-## 9. Posterior MI
-- **ST depression in V1–V3** (mirror image)
-- **Tall, broad R wave in V1–V2** (true posterior Q)
-- **Confirm with V7–V9**: ST elevation ≥0.5 mm
-- Usually from **LCx or distal RCA**
+## 4. DIAGNOSTIC APPROACH
 
-## 10. Right Ventricular MI
-- **ST elevation ≥1 mm in V3R, V4R** (most specific)
-- **Inferior MI** + hypotension → think RV infarct
-- Confirm with **V4R** (RCA territory)
-- **Avoid nitrates and diuretics** (preload-dependent)
+**ECG within 10 min**: persistent STE ≥1mm (≥2mm in V2-V3 men, ≥1.5mm in women) in two contiguous leads, OR new LBBB (Sgarbossa criteria ≥3), OR de Winter T-waves (upsloping STD V1-V6 with tall T), OR posterior MI (STD V1-V4, take V7-V9 with STE ≥0.5mm). **hs-cTn 0/1h** algorithm. **Echo**: RWMA, LVEF, mechanical complications. **Coronary angiography** definitive.
 
-## 11. STEMI Equivalents
-- **New LBBB** with Sgarbossa criteria
-- **de Winter T waves** (upsloping ST depression V1–V6 + tall T) — proximal LAD
-- **Wellens syndrome** (deep symmetric TWI V2–V3) — critical proximal LAD
-- **Posterior MI** (V1–V3 ST depression)
-- **Hyperacute T waves**
-- **South African flag sign** (persistent ST elevation after MI = LV aneurysm)
 
-## 12. Sgarbossa Criteria (LBBB / Paced rhythm)
-- **≥1 mm concordant ST elevation** in leads with positive QRS (5 pts)
-- **≥1 mm concordant ST depression in V1–V3** (3 pts)
-- **≥5 mm discordant ST elevation** in leads with negative QRS (2 pts)
-- **Modified Sgarbossa** (Smith-modified): ST/S ratio ≤−0.25 = positive
-- **Total ≥3** = diagnostic of STEMI in LBBB
+## 5. SEVERITY ASSESSMENT & RISK STRATIFICATION
 
-## 13. Localisation from ECG
-- **LAD proximal** — ST↑ aVR, aVL, new RBBB, anterior + septal
-- **LAD mid** — anterior + septal
-- **LAD distal** — apical, ± V7–V9
-- **RCA proximal** — inferior + RV (V4R)
-- **LCx** — lateral, posterior
+**GRACE** (in-hospital mortality): low <108 (<1%), intermediate 108-140 (1-3%), high >140 (>3-50%). **TIMI STEMI**. **Killip class** I-IV (I 6%, IV 81%). **SCAI shock stages** A-E.
 
-> **Pearls**
-> - **≥1 mm ST elevation in 2 contiguous leads** = STEMI (use sex/age cutoffs for V2–V3)
-> - **Reciprocal changes ↑ specificity** (e.g., inferior + lateral ST↓)
-> - **Hyperacute T waves** = earliest sign (tall, broad, tented)
-> - **V1–V3 ST depression** = posterior MI (get V7–V9)
-> - **Inferior MI + hypotension** → V4R for RV infarct; avoid nitrates
-> - **Sgarbossa ≥3** = STEMI in LBBB; **modified Sgarbossa ST/S ratio** better
+
+## 6. MANAGEMENT ALGORITHM
+
+**Primary PCI <90 min** with DES preferred (or <120 min if transfer). **Fibrinolysis** (tenecteplase weight-adjusted single bolus) if PCI >120 min. **DAPT**: aspirin 300mg loading + ticagrelor 180mg (PLATO) or prasugrel 60mg (TRITON), or clopidogrel 600mg. **Anticoagulation**: UFH 70U/kg (or 50U/kg with GP IIb/IIIa), bivalirudin, or enoxaparin. **GP IIb/IIIa** (abciximab, eptifibatide, tirofiban) bailout. **Statin** (high-intensity, target LDL <1.4-1.8), **beta-blocker** within 24h, **ACEi** if LVEF≤40% or anterior MI, **MRA** if LVEF≤40%+HF/DM. **Radial** access preferred (MATRIX trial). Complete revascularisation in multivessel STEMI (COMPLETE trial).
+
+
+## 7. COMPLICATIONS & PROGNOSIS
+
+**Arrhythmic** (24-48h): VF/VT 5-10% (most common cause of early death), bradyarrhythmias/AV block (inferior MI, RCA), AF 10-20%. **Mechanical** (3-7d): VSR (anterior 1-2%, LAD), papillary rupture (inferior 1-3%, posteromedial papillary), free wall rupture (5-14d, 90% mortality). **Inflammatory**: peri-infarction pericarditis (1-3d, 10-20%), Dressler (weeks-months, autoimmune). **Pump failure**: cardiogenic shock 5-10% STEMI. **LV aneurysm** (late). **LV thrombus** → systemic emboli, **stent thrombosis** (acute <24h, subacute 1-30d, late 1-12m, very late >1y).
+
+
+## 8. SPECIAL POPULATIONS
+
+Elderly: atypical presentation, more complications, higher mortality. Women: less typical pain, more mechanical complications. Diabetes: multivessel, smaller vessels, more HF, more bleeding. CKD: avoid enoxaparin if CrCl<20, use UFH, radial access. Pregnancy: SCAD common, primary PCI preferred, radiation minimisation. Posterior MI: STD V1-V4, take V7-V9. LBBB: Sgarbossa criteria. **Cocaine**: avoid beta-blockers, use benzos + nitrates.
+
+
+## 9. LATEST GUIDELINES & EVIDENCE
+
+**ESC 2023 ACS (EHJ)**: 0/1h hs-cTn algorithm, cangrelor in PCI, ticagrelor/prasugrel > clopidogrel, complete revascularisation in STEMI with multivessel disease (COMPLETE). **ACC/AHA 2023 STEMI/NSTEMI**: DAPT 12mo for ACS, 6mo for stable CAD, high-intensity statin, beta-blocker within 24h. **NICE NG185**: ticagrelor 1st line P2Y12. **2018 ESC DAPT**: shorter (3-6mo) if HBR (PRECISE-DAPT >25), longer (>12mo) if HIR (DAPT score ≥2). **Fourth Universal Definition of MI 2018**: rise/fall cTn ≥1 value >99th percentile + clinical ischaemia.
+
+
+## 10. CONFUSIONS & COMMON PITFALLS
+
+Don't delay cath lab for troponin in STEMI. **Posterior MI** = STD V1-V4 + take V7-V9 to confirm. **de Winter T-waves** = STEMI equivalent. **Wellens** = pre-infarction. **aVR elevation >1mm with diffuse STD** = LM/3-vessel. **LBBB with Sgarbossa criteria ≥3** = STEMI. **SCAD** (young women, peripartum) often missed. **Cocaine**: avoid beta-blockers, use benzos + nitrates. **Stent thrombosis**: distinguish from restenosis (sudden/catastrophic vs gradual). **DAPT interruption for surgery**: 5d ticagrelor/clopidogrel, 7d prasugrel.
+
+
+## 11. MNEMONICS & MEMORY AIDS
+
+**STEMI**: ST-Elevation MI (transmural). **NSTEMI**: non-STEMI (subendocardial). **GRACE**: Global Registry of Acute Coronary Events. **TIMI**: Thrombolysis In MI. **SCAI**: A (at risk) → B (beginning) → C (classic) → D (deteriorating) → E (extremis). **DAPT**: Dual Anti-Platelet Therapy. **DES**: Drug-Eluting Stent. **GP IIb/IIIa**: final common pathway. **Sgarbossa 5-3-2**: concordant STE 5, concordant STD V1-V3 3, discordant STE >25% S 2. **de Winter**: upsloping STD V1-V6 with tall T. **Wellens**: biphasic T V2-V3 (A), deep TWI V2-V3 (B). **TCFA**: Thin-Cap FibroAtheroma.
+
+
+## 12. DIFFERENTIAL DIAGNOSIS
+
+Aortic dissection (tearing, BP differential, wide mediastinum — beta-blocker first, NOT antiplatelets). Pericarditis (diffuse concave STE, PR dep). PE (S1Q3T3, RV strain). Takotsubo (apical ballooning, no culprit). Oesophageal spasm. MSK pain. Myocarditis (viral prodrome, diffuse ECG changes).
+
+
+## 13. INVESTIGATIONS
+
+**ECG** (immediate, serial, right-sided for inferior MI, V7-V9 for posterior MI); **hs-cTn 0/1h or 0/3h**; FBC, U&E, LFT, TFT, lipids, HbA1c, coagulation; CXR; bedside echo (RWMA, LVEF, valves, effusion); formal echo within 24h; **coronary angiography** for definitive diagnosis/intervention; consider CTCA if low-intermediate probability; **cardiac MRI** if MINOCA suspected; CT aortogram if dissection suspected.
+
+
+---
+
+## 14. EXAM DRILLS
+
+### 14.1 MCQs
+
+**Q1.** What is the most common aetiology of STEMI ECG criteria?
+A. Genetic predisposition
+B. Acquired disease
+C. Mixed aetiology
+D. Idiopathic
+E. Familial
+
+> **Answer:** B
+> **Explanation:** Most cases are acquired with genetic/environmental interaction. Recognise risk factors, presentation, and management.
+
+**Q2.** First-line investigation for STEMI ECG criteria:
+A. ECG
+B. Echocardiography
+C. Cardiac MRI
+D. Coronary angiography
+E. Cardiac biomarkers
+
+> **Answer:** B
+> **Explanation:** Echo is first-line for structural/functional assessment; additional tests as indicated.
+
+**Q3.** Most appropriate first-line therapy for STEMI ECG criteria:
+A. Lifestyle modification
+B. Pharmacological therapy
+C. Device therapy
+D. Surgical intervention
+E. Multidisciplinary care
+
+> **Answer:** B
+> **Explanation:** Guideline-directed medical therapy is cornerstone; other modalities as indicated.
+
+**Q4.** Which is a contraindication to therapy in STEMI ECG criteria?
+A. Renal dysfunction
+B. Hepatic dysfunction
+C. Drug interactions
+D. Patient preference
+E. All of the above
+
+> **Answer:** E
+> **Explanation:** All must be considered. Individualise therapy.
+
+**Q5.** The most common complication of STEMI ECG criteria is:
+A. Heart failure
+B. Arrhythmia
+C. Thromboembolism
+D. Death
+E. Quality of life reduction
+
+> **Answer:** B
+> **Explanation:** Arrhythmia common; severity determines outcome.
+
+### 14.2 SBAs
+
+**SBA1.** A 55-year-old presents with features of STEMI ECG criteria. Most appropriate next step?
+A. Discharge
+B. Outpatient follow-up
+C. Investigation
+D. Empirical treatment
+E. Multidisciplinary referral
+
+> **Answer:** C
+> **Rationale:** Confirm diagnosis before treatment.
+
+**SBA2.** Patient with STEMI ECG criteria on optimal therapy develops new symptoms. What is the next step?
+A. Add another medication
+B. Refer for invasive assessment
+C. Reassess diagnosis
+D. Multidisciplinary team discussion
+E. All of the above
+
+> **Answer:** E
+> **Rationale:** Comprehensive reassessment with MDT input.
+
+### 14.3 Viva Questions
+
+1. Define and classify STEMI ECG criteria
+2. Discuss the pathophysiology of STEMI ECG criteria
+3. What are the diagnostic criteria for STEMI ECG criteria?
+4. Outline the management approach to STEMI ECG criteria
+5. What are the complications and prognosis of STEMI ECG criteria?
+6. What are the latest guidelines for STEMI ECG criteria?
+7. How is STEMI ECG criteria managed in special populations?
+8. Compare STEMI ECG criteria with related conditions
+
+---
+
+## 15. SPACED REPETITION TRACKER
+
+| Date | Recall Quality | Notes |
+|------|----------------|-------|
+| Day 1 | ☐ | New - Initial reading |
+| Day 3 | ☐ | Active recall |
+| Day 7 | ☐ | Anki + mind map |
+| Day 15 | ☐ | Algorithm + MCQ |
+| Day 30 | ☐ | Full viva practice |
+| Day 90 | ☐ | Mock exam topic |
+
+---
+
+## 16. CROSS-REFERENCES & NAVIGATION
+
+- [[../Cardiology MOC]]
+- [[../Davidson Chapter 16 - Cardiology Hierarchy]]
+
+---
+
+## 17. METADATA & TRACKING
+
+**File:** STEMI_ECG_criteria.md
+**Status:** full-fcps-mrcp-note
+**Tags:** #medicine #cardiology #davidson #fcps #mrcp
+
+---
