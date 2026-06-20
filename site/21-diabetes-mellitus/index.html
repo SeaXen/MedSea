@@ -1160,39 +1160,39 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   header.site { display: none; }
   .mobile-bar { display: flex; }
 
-  /* === MOBILE BAR: compact 2-row; full-width search is visible === */
+  /* === MOBILE BAR: strict single-line header === */
   .mobile-bar {
     padding: 6px 8px;
     gap: 6px;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
-  .mobile-bar .row.top {
-    display: flex;
-    justify-content: space-between;
-    min-width: 0;
-  }
+  .mobile-bar .row.top,
   .mobile-bar .row.search-row {
-    display: flex;
-    width: 100%;
-    min-width: 0;
+    display: contents;
   }
   .mobile-bar .logo-mini {
-    font-size: 13px;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
+    gap: 0;
   }
   .mobile-bar .logo-mini .logo { font-size: 16px; }
-  .mobile-bar .logo-mini a {
-    font-size: 13px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .mobile-bar .logo-mini a,
+  .mobile-bar .current-ch-label,
+  .mobile-bar .github-btn,
+  .mobile-bar .stats-mini {
+    display: none !important;
   }
   .mobile-bar .menu-btn {
     padding: 6px 8px;
     font-size: 12px;
     flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .mobile-bar .search-row {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .mobile-bar .search-row .search-box-m {
     flex: 1 1 auto;
@@ -1208,17 +1208,6 @@ header.site .search-box .search-empty strong { color: var(--accent); }
     left: 8px;
     font-size: 11px;
   }
-  .mobile-bar .current-ch-label {
-    font-size: 10px;
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-  .mobile-bar .github-btn {
-    padding: 6px 8px;
-    font-size: 11px;
-    flex: 0 0 auto;
-  }
-  .mobile-bar .stats-mini { display: none; }
 
   /* === HIDE DUPLICATE MOBILE TOOLBAR SEARCH (mobile-bar already has search) === */
   .chapter-mobile .chapter-toolbar {
@@ -2269,15 +2258,31 @@ footer a:hover { color: var(--accent); }
 <tr><td><strong>Autoantibodies (GAD65, IA-2, ZnT8, IAA)</strong></td><td>Aetiological classification</td><td>≥1 positive = autoimmune (Type 1/LADA).</td></tr>
 <tr><td><strong>C-peptide</strong></td><td>Residual β-cell function</td><td>Low/undetectable = Type 1; preserved = Type 2/MODY.</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[Clinical Suspicion / Screening] --&gt; B{Asymptomatic?}
-    B --&gt;|Yes| C[FPG ≥7.0 OR HbA1c ≥48]
-    C --&gt; D{Confirmatory test same/different day}
-    D --&gt;|Abnormal| E[Diagnosis: Diabetes]
-    D --&gt;|Normal| F[Repeat in 3-6 months]
-    B --&gt;|No (symptomatic)| G[Random glucose ≥11.1 + symptoms]
-    G --&gt; E
-    E --&gt; H[Aetiological classification: autoantibodies, C-peptide, clinical context]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Clinical Suspicion / Screening</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Asymptomatic?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">FPG ≥7.0 OR HbA1c ≥48</div>
+<div class="fc-node" data-id="G">Random glucose ≥11.1 + symptoms</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Confirmatory test same/different day</div>
+<div class="fc-node" data-id="E">Diagnosis: Diabetes</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Repeat in 3-6 months</div>
+<div class="fc-node" data-id="H">Aetiological classification: autoantibodies, C-peptide, clinical context</div>
+</div>
+</div>
 <hr>
 <h2>6. Differential Diagnosis</h2>
 <table>
@@ -2352,28 +2357,43 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Fasting Plasma Glucose))
-    Definition
-      FPG ≥7.0 mmol/L = DM
-      IFG 6.1–6.9
-    Classification
-      Normal / Prediabetes / DM
-      Aetiology: T1/T2/LADA/MODY/Secondary/GDM
-    Clinical
-      Asymptomatic 50%
-      Osmotic symptoms
-      DKA/HHS at presentation
-    Diagnosis
-      FPG / HbA1c / OGTT / Random+symptoms
-      Confirmatory rule (2 tests if asymptomatic)
-      Pre-analytical: fluoride tube, fast, process fast
-    DDx
-      Stress / Steroid / Type 3c / MODY / GDM
-    Management
-      Lifestyle + metformin (IFG)
-      Type-specific Rx
-      Screening</pre>
+<div class="mindmap">
+<div class="mm-root">Fasting Plasma Glucose</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Definition</div>
+<div class="mm-node mm-l2">FPG ≥7.0 mmol/L = DM</div>
+<div class="mm-node mm-l2">IFG 6.1–6.9</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Classification</div>
+<div class="mm-node mm-l2">Normal / Prediabetes / DM</div>
+<div class="mm-node mm-l2">Aetiology: T1/T2/LADA/MODY/Secondary/GDM</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Asymptomatic 50%</div>
+<div class="mm-node mm-l2">Osmotic symptoms</div>
+<div class="mm-node mm-l2">DKA/HHS at presentation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">FPG / HbA1c / OGTT / Random+symptoms</div>
+<div class="mm-node mm-l2">Confirmatory rule (2 tests if asymptomatic)</div>
+<div class="mm-node mm-l2">Pre-analytical: fluoride tube, fast, process fast</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">DDx</div>
+<div class="mm-node mm-l2">Stress / Steroid / Type 3c / MODY / GDM</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Lifestyle + metformin (IFG)</div>
+<div class="mm-node mm-l2">Type-specific Rx</div>
+<div class="mm-node mm-l2">Screening</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -3619,17 +3639,35 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </table>
 <h2>7. Management</h2>
 <h3>Insulin Management on Dialysis</h3>
-<pre class="mermaid">flowchart TD
-    A[Diabetes on Dialysis] --&gt; B{Modality?}
-    B --&gt;|HD| C[Insulin variable; ↓ post-HD]
-    B --&gt;|PD| D[Insulin higher; glucose absorption from dialysate]
-    C --&gt; E[Pre-HD: correction if &gt;10]
-    C --&gt; F[Post-HD: ↓ basal 25-50%; monitor 1-2h post]
-    D --&gt; G[Consistent higher dose; glucose absorption]
-    E --&gt; H[Monitor pre-HD, 1h post, bedtime]
-    F --&gt; H
-    G --&gt; H
-    H --&gt; I[GA/Fructosamine q3mo; CGM if available]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Diabetes on Dialysis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Modality?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Insulin variable; ↓ post-HD</div>
+<div class="fc-node" data-id="D">Insulin higher; glucose absorption from dialysate</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Pre-HD: correction if &gt;10</div>
+<div class="fc-node" data-id="F">Post-HD: ↓ basal 25-50%; monitor 1-2h post</div>
+<div class="fc-node" data-id="G">Consistent higher dose; glucose absorption</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Monitor pre-HD, 1h post, bedtime</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">GA/Fructosamine q3mo; CGM if available</div>
+</div>
+</div>
 <h3>Insulin Dosing Principles</h3>
 <table>
 <tr><th>Principle</th><th>HD</th><th>PD</th></tr>
@@ -3809,16 +3847,45 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </table>
 <h2>7. Management</h2>
 <h3>Prevention Strategies</h3>
-<pre class="mermaid">flowchart TD
-    A[Elderly DM] --&gt; B[Assess hypo risk factors]
-    B --&gt; C{On SU/insulin?}
-    C --&gt;|Yes| D[Review doses; STOP SU; reduce insulin]
-    C --&gt;|No| E[Review other meds (beta-blockers, ACEi)]
-    D --&gt; F[Simplify regimen: once-daily basal; stop SU]
-    F --&gt; G[Individualised HbA1c target per frailty]
-    G --&gt; H[CGM with predictive alerts]
-    H --&gt; I[Carer education: hypo recognition, glucagon]
-    I --&gt; J[Regular review: 3-monthly HbA1c; CGM review]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Elderly DM</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Assess hypo risk factors</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">On SU/insulin?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Review doses; STOP SU; reduce insulin</div>
+<div class="fc-node" data-id="E">Review other meds (beta-blockers, ACEi)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Simplify regimen: once-daily basal; stop SU</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Individualised HbA1c target per frailty</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">CGM with predictive alerts</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Carer education: hypo recognition, glucagon</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Regular review: 3-monthly HbA1c; CGM review</div>
+</div>
+</div>
 <h3>Prevention Strategies by Domain</h3>
 <table>
 <tr><th>Domain</th><th>Intervention</th></tr>
@@ -4061,33 +4128,48 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Gestational Diabetes Mellitus))
-    Diagnosis
-      IADPSG: universal 75g OGTT
-      FBG&gt;=5.1, 1h&gt;=10.0, 2h&gt;=8.5
-      NICE: risk-based
-    Targets
-      FBG &lt;5.3
-      1h &lt;7.8
-      2h &lt;6.4
-      SMBG 4x/day
-    Management
-      Diet (MNT)
-      Metformin 1st line oral
-      Insulin (basal-bolus)
-    Pre-existing DM
-      Pre-conception HbA1c&lt;48
-      Folic 5mg OD
-      Stop teratogens
-    Postpartum
-      OGTT 6-13wk
-      Annual HbA1c
-      T2DM risk 50%
-    Contraindicated
-      SGLT2i, GLP-1, DPP-4i
-      SU (except glibenclamide)
-      ACEi/ARB, statins</pre>
+<div class="mindmap">
+<div class="mm-root">Gestational Diabetes Mellitus</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">IADPSG: universal 75g OGTT</div>
+<div class="mm-node mm-l2">FBG&gt;=5.1, 1h&gt;=10.0, 2h&gt;=8.5</div>
+<div class="mm-node mm-l2">NICE: risk-based</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Targets</div>
+<div class="mm-node mm-l2">FBG &lt;5.3</div>
+<div class="mm-node mm-l2">1h &lt;7.8</div>
+<div class="mm-node mm-l2">2h &lt;6.4</div>
+<div class="mm-node mm-l2">SMBG 4x/day</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Diet (MNT)</div>
+<div class="mm-node mm-l2">Metformin 1st line oral</div>
+<div class="mm-node mm-l2">Insulin (basal-bolus)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Pre-existing DM</div>
+<div class="mm-node mm-l2">Pre-conception HbA1c&lt;48</div>
+<div class="mm-node mm-l2">Folic 5mg OD</div>
+<div class="mm-node mm-l2">Stop teratogens</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Postpartum</div>
+<div class="mm-node mm-l2">OGTT 6-13wk</div>
+<div class="mm-node mm-l2">Annual HbA1c</div>
+<div class="mm-node mm-l2">T2DM risk 50%</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Contraindicated</div>
+<div class="mm-node mm-l2">SGLT2i, GLP-1, DPP-4i</div>
+<div class="mm-node mm-l2">SU (except glibenclamide)</div>
+<div class="mm-node mm-l2">ACEi/ARB, statins</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -4254,15 +4336,34 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <p>(N/A)</p>
 <h2>7. Management</h2>
 <h3>Key Principles</h3>
-<pre class="mermaid">flowchart TD
-    A[New DM drug in CKD] --&gt; B{Check eGFR}
-    B --&gt; C{Contraindicated?}
-    C --&gt;|Yes| D[Choose alternative]
-    C --&gt;|No| E{Dose adjust needed?}
-    E --&gt;|Yes| F[Adjust per eGFR table]
-    E --&gt;|No| G[Standard dose]
-    F --&gt; G
-    G --&gt; H[Monitor: glucose, eGFR 3-6mo, K+, HbA1c]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">New DM drug in CKD</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Check eGFR</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Contraindicated?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Choose alternative</div>
+<div class="fc-node" data-id="E">Dose adjust needed?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Adjust per eGFR table</div>
+<div class="fc-node" data-id="G">Standard dose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Monitor: glucose, eGFR 3-6mo, K+, HbA1c</div>
+</div>
+</div>
 <h3>Insulin Dose Reduction in CKD</h3>
 <table>
 <tr><th>eGFR</th><th>Reduction</th><th>Notes</th></tr>
@@ -4439,14 +4540,31 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Continuous Glucose Monitoring</strong></td><td>Real-time</td><td>Direct glucose measurement</td><td>Cost; calibration; not universally available</td></tr>
 </table>
 <h3>HbA1c Interpretation Algorithm</h3>
-<pre class="mermaid">flowchart TD
-    A[Diabetes + CKD] --&gt; B{eGFR &gt;= 45?}
-    B --&gt;|Yes| C[HbA1c reliable; target per guidelines]
-    B --&gt;|No| D{eGFR 30-44?}
-    D --&gt;|Yes| E[HbA1c + Fructosamine; interpret with caution]
-    D --&gt;|No| F[Fructosamine/GA essential; HbA1c unreliable]
-    F --&gt; G[Target GA: &lt;17-18% (equiv HbA1c ~53)]
-    F --&gt; H[Target Fructosamine: ~230-280 umol/L]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Diabetes + CKD</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">eGFR &gt;= 45?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">HbA1c reliable; target per guidelines</div>
+<div class="fc-node" data-id="D">eGFR 30-44?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">HbA1c + Fructosamine; interpret with caution</div>
+<div class="fc-node" data-id="F">Fructosamine/GA essential; HbA1c unreliable</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Target GA: &lt;17-18% (equiv HbA1c ~53)</div>
+<div class="fc-node" data-id="H">Target Fructosamine: ~230-280 umol/L</div>
+</div>
+</div>
 <h2>6. Differential Diagnosis</h2>
 <table>
 <tr><th>Condition</th><th>Distinguishing Features</th></tr>
@@ -4644,16 +4762,36 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </table>
 <h2>7. Management</h2>
 <h3>ART Optimisation</h3>
-<pre class="mermaid">flowchart TD
-    A[ART Metabolic Syndrome] --&gt; B{Identify culprit drug}
-    B --&gt; C{PI-based?}
-    C --&gt;|Yes| D[Switch to INSTI (DTG/BIC) if viral suppression]
-    C --&gt;|No| E{INSTI with weight gain?}
-    E --&gt;|Yes| F[Consider switch (RPV/DOR) if suppressed]
-    E --&gt;|No| G[Add metabolic Rx]
-    G --&gt; H[Statin + fibrate if TG high]
-    G --&gt; I[Metformin for IR/diabetes]
-    G --&gt; J[GLP-1 RA/SGLT2i if T2DM]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">ART Metabolic Syndrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Identify culprit drug</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">PI-based?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Switch to INSTI (DTG/BIC) if viral suppression</div>
+<div class="fc-node" data-id="E">INSTI with weight gain?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Consider switch (RPV/DOR) if suppressed</div>
+<div class="fc-node" data-id="G">Add metabolic Rx</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Statin + fibrate if TG high</div>
+<div class="fc-node" data-id="I">Metformin for IR/diabetes</div>
+<div class="fc-node" data-id="J">GLP-1 RA/SGLT2i if T2DM</div>
+</div>
+</div>
 <h3>Metabolic Management</h3>
 <table>
 <tr><th>Issue</th><th>1st Line</th><th>2nd Line</th></tr>
@@ -4835,18 +4973,37 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </table>
 <h2>7. Management</h2>
 <h3>HIV-Specific IR Management</h3>
-<pre class="mermaid">flowchart TD
-    A[HIV + Insulin Resistance] --&gt; B[Screen: HOMA-IR, lipids, HCV, visceral fat]
-    B --&gt; C{On ART?}
-    C --&gt;|Yes| D[ART review: PI -&gt; INSTI if suppressed]
-    C --&gt;|No| E[Start ART (DTG/BIC preferred; minimise weight gain)]
-    D --&gt; F[Metabolic Rx]
-    E --&gt; F
-    F --&gt; G[Metformin 1st line IR]
-    F --&gt; H[GLP-1 RA/SGLT2i if T2DM]
-    F --&gt; I[Statin + fibrate if dyslipidaemia]
-    F --&gt; J[Weight loss if obese]
-    F --&gt; K[HCV treatment if co-infected]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">HIV + Insulin Resistance</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Screen: HOMA-IR, lipids, HCV, visceral fat</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">On ART?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">ART review: PI -&gt; INSTI if suppressed</div>
+<div class="fc-node" data-id="E">Start ART (DTG/BIC preferred; minimise weight gain)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Metabolic Rx</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Metformin 1st line IR</div>
+<div class="fc-node" data-id="H">GLP-1 RA/SGLT2i if T2DM</div>
+<div class="fc-node" data-id="I">Statin + fibrate if dyslipidaemia</div>
+<div class="fc-node" data-id="J">Weight loss if obese</div>
+<div class="fc-node" data-id="K">HCV treatment if co-infected</div>
+</div>
+</div>
 <h3>Management Strategies</h3>
 <table>
 <tr><th>Domain</th><th>Intervention</th></tr>
@@ -5029,14 +5186,40 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Contraception</strong></td><td>Discuss pre-delivery; LARC preferred</td></tr>
 <tr><td><strong>Follow-up</strong></td><td>6-13 week review; annual HbA1c; retinal/renal screen</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[Pre-existing DM] --&gt; B[Pre-conception: HbA1c&lt;48, Folic 5mg, Stop teratogens]
-    B --&gt; C[Pregnancy confirmed]
-    C --&gt; D[Switch to insulin (basal-bolus/CSII)]
-    D --&gt; E[Targets: FBG&lt;5.3, 1h&lt;7.8, 2h&lt;6.4]
-    E --&gt; F[Monthly MDT review]
-    F --&gt; G[Delivery 38-39wk: IV insulin target 4-7]
-    G --&gt; H[Postpartum: reduce insulin; OGTT if T2DM; annual screen]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Pre-existing DM</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Pre-conception: HbA1c&lt;48, Folic 5mg, Stop teratogens</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Pregnancy confirmed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Switch to insulin (basal-bolus/CSII)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Targets: FBG&lt;5.3, 1h&lt;7.8, 2h&lt;6.4</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Monthly MDT review</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Delivery 38-39wk: IV insulin target 4-7</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Postpartum: reduce insulin; OGTT if T2DM; annual screen</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -5204,14 +5387,40 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <p>(N/A)</p>
 <h2>7. Management</h2>
 <h3>Care Plan Components</h3>
-<pre class="mermaid">flowchart TD
-    A[New Care Home Resident with DM] --&gt; B[Individualised Care Plan (GP + DSN + Care Home)]
-    B --&gt; C[HbA1c Target per frailty/dependency]
-    C --&gt; D[Insulin Regimen: Basal + CHO-matched bolus]
-    D --&gt; E[Avoid Sliding Scale]
-    E --&gt; F[Hypoglycaemia Protocol (glucagon, IV access, 111/999)]
-    F --&gt; G[Staff Training: hypo recognition, glucagon, glucose gel]
-    G --&gt; H[Regular Review: 6-monthly HbA1c; annual specialist review]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">New Care Home Resident with DM</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Individualised Care Plan (GP + DSN + Care Home)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">HbA1c Target per frailty/dependency</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Insulin Regimen: Basal + CHO-matched bolus</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Avoid Sliding Scale</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Hypoglycaemia Protocol (glucagon, IV access, 111/999)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Staff Training: hypo recognition, glucagon, glucose gel</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Regular Review: 6-monthly HbA1c; annual specialist review</div>
+</div>
+</div>
 <h3>Insulin Regimen (Avoid Sliding Scale)</h3>
 <table>
 <tr><th>Approach</th><th>Detail</th></tr>
@@ -5374,19 +5583,47 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <p>(N/A)</p>
 <h2>7. Management</h2>
 <h3>Deprescribing Algorithm</h3>
-<pre class="mermaid">flowchart TD
-    A[Elderly DM on multiple agents] --&gt; B{Assess: Frailty (Rockwood), HbA1c, Hypo history, Cognitive function}
-    B --&gt; C{HbA1c &lt; target for frailty?}
-    C --&gt;|Yes (too tight)| D[Deintensify]
-    C --&gt;|No| E[Optimise current; consider intensification if fit]
-    D --&gt; F[STOP Sulfonylureas 1st]
-    F --&gt; G{Hypo resolved / HbA1c safe?}
-    G --&gt;|No| H[Reduce/stop bolus insulin; simplify basal]
-    G --&gt;|Yes| I[Monitor 3-monthly]
-    H --&gt; J{Hypo resolved?}
-    J --&gt;|No| K[Reduce basal insulin; consider once-daily]
-    J --&gt;|Yes| I
-    I --&gt; L[Monitor 3-monthly; CGM if available]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Elderly DM on multiple agents</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Assess: Frailty (Rockwood), HbA1c, Hypo history, Cognitive function</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">HbA1c &lt; target for frailty?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Deintensify</div>
+<div class="fc-node" data-id="E">Optimise current; consider intensification if fit</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">STOP Sulfonylureas 1st</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Hypo resolved / HbA1c safe?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Reduce/stop bolus insulin; simplify basal</div>
+<div class="fc-node" data-id="I">Monitor 3-monthly</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Hypo resolved?</div>
+<div class="fc-node" data-id="L">Monitor 3-monthly; CGM if available</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Reduce basal insulin; consider once-daily</div>
+</div>
+</div>
 <h3>Stepwise Deintensification</h3>
 <table>
 <tr><th>Step</th><th>Action</th><th>Monitoring</th></tr>
@@ -5643,33 +5880,44 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>10. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((DKA Complications))
-    Cerebral Oedema
-      Incidence: Children 0.5-1%, Adults &lt;0.1%
-      Mortality: 20-25%
-      Risk: Children, new-onset, severe acidosis, rapid correction, bicarbonate
-      Early signs: Headache, irritability, vomiting, bradycardia
-      Late: ↓GCS, Cushing's triad, fixed pupils, posturing
-      Treatment: Mannitol 0.5-1g/kg OR 3% saline 2.5-5mL/kg
-      Prevention: Slow glucose fall, isotonic fluids, no bicarbonate
-    Hypokalaemia
-      Initial K+ NORMAL/HIGH (acidosis)
-      Insulin + pH correction → K+ shift IN
-      Protocol: &gt;5.5 hold; 3.5-5.5: 40mmol/L; &lt;3.5 hold insulin + 40mmol/h
-      Monitor: q1-2h first 6h
-      Complications: Arrhythmias, ileus, rhabdo, cardiac arrest
-    Other Complications
-      AKI (hypovolaemia, rhabdo)
-      Rhabdomyolysis
-      Thrombosis (DVT/PE, cerebral venous)
-      Hypophosphataemia, hypomagnesaemia
-      Aspiration pneumonia
-      Line sepsis
-    Bicarbonate
-      Not routine
-      Only pH &lt;6.9
-      Risks: CSF acidosis, cerebral oedema, hypokalaemia</pre>
+<div class="mindmap">
+<div class="mm-root">DKA Complications</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Cerebral Oedema</div>
+<div class="mm-node mm-l2">Incidence: Children 0.5-1%, Adults &lt;0.1%</div>
+<div class="mm-node mm-l2">Mortality: 20-25%</div>
+<div class="mm-node mm-l2">Risk: Children, new-onset, severe acidosis, rapid correction, bicarbonate</div>
+<div class="mm-node mm-l2">Early signs: Headache, irritability, vomiting, bradycardia</div>
+<div class="mm-node mm-l2">Late: ↓GCS, Cushing's triad, fixed pupils, posturing</div>
+<div class="mm-node mm-l2">Treatment: Mannitol 0.5-1g/kg OR 3% saline 2.5-5mL/kg</div>
+<div class="mm-node mm-l2">Prevention: Slow glucose fall, isotonic fluids, no bicarbonate</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Hypokalaemia</div>
+<div class="mm-node mm-l2">Initial K+ NORMAL/HIGH (acidosis)</div>
+<div class="mm-node mm-l2">Insulin + pH correction → K+ shift IN</div>
+<div class="mm-node mm-l2">Protocol: &gt;5.5 hold; 3.5-5.5: 40mmol/L; &lt;3.5 hold insulin + 40mmol/h</div>
+<div class="mm-node mm-l2">Monitor: q1-2h first 6h</div>
+<div class="mm-node mm-l2">Complications: Arrhythmias, ileus, rhabdo, cardiac arrest</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Other Complications</div>
+<div class="mm-node mm-l2">AKI (hypovolaemia, rhabdo)</div>
+<div class="mm-node mm-l2">Rhabdomyolysis</div>
+<div class="mm-node mm-l2">Thrombosis (DVT/PE, cerebral venous)</div>
+<div class="mm-node mm-l2">Hypophosphataemia, hypomagnesaemia</div>
+<div class="mm-node mm-l2">Aspiration pneumonia</div>
+<div class="mm-node mm-l2">Line sepsis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Bicarbonate</div>
+<div class="mm-node mm-l2">Not routine</div>
+<div class="mm-node mm-l2">Only pH &lt;6.9</div>
+<div class="mm-node mm-l2">Risks: CSF acidosis, cerebral oedema, hypokalaemia</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>11. One-Page Revision Card</h2>
 <table>
@@ -5788,20 +6036,40 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Sliding scale</strong></td><td><strong>Avoid standalone</strong> — use basal-bolus with correction doses; if sliding scale → add basal</td></tr>
 </table>
 <h3>Acute Management in Hospital</h3>
-<pre class="mermaid">flowchart TD
-    A[Hospital Hypo &lt;3.9] --&gt; B{Patient conscious?}
-    B --&gt;|Yes| C[15-20g fast carbs (oral/NG)]
-    B --&gt;|No| D[IV access?]
-    D --&gt;|Yes| E[75-80ml 20% dextrose IV → 10% infusion]
-    D --&gt;|No| F[Glucagon 1mg IM/SC]
-    C --&gt; G[Recheck 15min]
-    E --&gt; G
-    F --&gt; G
-    G --&gt; H{Glucose &gt;3.9?}
-    H --&gt;|No| I[Repeat carbs/dextrose]
-    H --&gt;|Yes| J[Complex carbs + insulin review]
-    I --&gt; G
-    J --&gt; K[Root cause analysis within 24h]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hospital Hypo &lt;3.9</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Patient conscious?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">15-20g fast carbs (oral/NG)</div>
+<div class="fc-node" data-id="D">IV access?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Recheck 15min</div>
+<div class="fc-node" data-id="E">75-80ml 20% dextrose IV → 10% infusion</div>
+<div class="fc-node" data-id="F">Glucagon 1mg IM/SC</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Glucose &gt;3.9?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Repeat carbs/dextrose</div>
+<div class="fc-node" data-id="J">Complex carbs + insulin review</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Root cause analysis within 24h</div>
+</div>
+</div>
 <h3>Root Cause Analysis (Required for Level 2/3)</h3>
 <table>
 <tr><th>Step</th><th>Action</th></tr>
@@ -5946,16 +6214,41 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td>4</td><td><strong>Bicarbonate</strong></td><td>ONLY if pH <7.0 (severe): 100mmol in 400ml water + 20mmol KCl over 2h</td></tr>
 <tr><td>5</td><td><strong>Monitoring</strong></td><td>Glucose q1h, ketones q2–4h, VBG q2–4h, K+ q1–2h, fluid balance, neurology (cerebral oedema in children)</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[DKA Suspected] --&gt; B[IV Access, Labs: Glucose, Ketones, VBG, U&amp;E, FBC]
-    B --&gt; C{pH &lt;7.0?}
-    C --&gt;|Yes| D[Severe: ICU, Bicarb, Cardiac monitor]
-    C --&gt;|No| E[FRII 0.1U/kg/hr + 0.9% NaCl]
-    E --&gt; F[K+ replacement per level]
-    F --&gt; G[Monitor: glucose q1h, ketones q2-4h, VBG q4h]
-    G --&gt; H{Ketones &lt;0.6 AND pH &gt;7.3?}
-    H --&gt;|No| G
-    H --&gt;|Yes| I[Switch to SC insulin, stop FRII 30-60min after 1st SC dose]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">DKA Suspected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">IV Access, Labs: Glucose, Ketones, VBG, U&amp;E, FBC</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">pH &lt;7.0?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Severe: ICU, Bicarb, Cardiac monitor</div>
+<div class="fc-node" data-id="E">FRII 0.1U/kg/hr + 0.9% NaCl</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">K+ replacement per level</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Monitor: glucose q1h, ketones q2-4h, VBG q4h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Ketones &lt;0.6 AND pH &gt;7.3?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Switch to SC insulin, stop FRII 30-60min after 1st SC dose</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -6101,21 +6394,43 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Hypophosphataemia</strong></td><td>If <0.3 mmol/L: IV phosphate (risk of hypocalcaemia)</td></tr>
 <tr><td><strong>Hyperchloraemic acidosis</strong></td><td>From 0.9% NaCl; switch to 0.45% NaCl if Na+ rising rapidly</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[DKA Confirmed] --&gt; B{Severity?}
-    B --&gt;|Mild| C[Ward: FRII 0.1U/kg/hr + 0.9% NaCl protocol]
-    B --&gt;|Moderate| D[HDU: FRII + closer monitoring]
-    B --&gt;|Severe| E[ICU: FRII + arterial line + CVP + inotropes if shock]
-    C --&gt; F[K+ replacement per level]
-    D --&gt; F
-    E --&gt; F
-    F --&gt; G{Glucose &lt;14?}
-    G --&gt;|Yes| H[Add 5% dextrose]
-    G --&gt;|No| I[Continue 0.9% NaCl]
-    H --&gt; J{Ketones &lt;0.6 AND pH &gt;7.3?}
-    I --&gt; J
-    J --&gt;|No| F
-    J --&gt;|Yes| K[1st SC insulin dose → wait 30-60min → stop FRII]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">DKA Confirmed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Severity?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Ward: FRII 0.1U/kg/hr + 0.9% NaCl protocol</div>
+<div class="fc-node" data-id="D">HDU: FRII + closer monitoring</div>
+<div class="fc-node" data-id="E">ICU: FRII + arterial line + CVP + inotropes if shock</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">K+ replacement per level</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Glucose &lt;14?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Add 5% dextrose</div>
+<div class="fc-node" data-id="I">Continue 0.9% NaCl</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Ketones &lt;0.6 AND pH &gt;7.3?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">1st SC insulin dose → wait 30-60min → stop FRII</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -6278,17 +6593,49 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Neurology (GCS)</strong></td><td>Hourly</td><td>Improvement expected</td></tr>
 <tr><td><strong>Fluid balance</strong></td><td>Hourly</td><td>Positive then neutral</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[HHS Suspected] --&gt; B[Labs: Glucose, Osmolality, VBG, Ketones, U&amp;E]
-    B --&gt; C{pH &gt;7.3 AND Osmolality &gt;320?}
-    C --&gt;|Yes| D[HHS Diagnosis]
-    C --&gt;|pH&lt;7.3| E[DKA or Mixed]
-    D --&gt; F[0.9% NaCl 1L/hr ×1-2h]
-    F --&gt; G[Delay insulin 1-2h]
-    G --&gt; H[FRII 0.05U/kg/hr]
-    H --&gt; I[Monitor osmolality decline &lt;3 mOsm/kg/hr]
-    I --&gt; J{K+ management per DKA protocol}
-    J --&gt; K[Glucose 10-15 → switch to SC insulin]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">HHS Suspected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Labs: Glucose, Osmolality, VBG, Ketones, U&amp;E</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">pH &gt;7.3 AND Osmolality &gt;320?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">HHS Diagnosis</div>
+<div class="fc-node" data-id="E">DKA or Mixed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">0.9% NaCl 1L/hr ×1-2h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Delay insulin 1-2h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">FRII 0.05U/kg/hr</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Monitor osmolality decline &lt;3 mOsm/kg/hr</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">K+ management per DKA protocol</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Glucose 10-15 → switch to SC insulin</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -6429,17 +6776,49 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Neurology (GCS)</strong></td><td>Hourly</td><td>Improvement expected</td></tr>
 <tr><td><strong>Fluid balance</strong></td><td>Hourly</td><td>Positive then neutral</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[HHS Suspected] --&gt; B[Labs: Glucose, Osmolality, VBG, Ketones, U&amp;E]
-    B --&gt; C{pH &gt;7.3 AND Osmolality &gt;320?}
-    C --&gt;|Yes| D[HHS Diagnosis]
-    C --&gt;|pH&lt;7.3| E[DKA or Mixed]
-    D --&gt; F[0.9% NaCl 1L/hr x1-2h]
-    F --&gt; G[Delay insulin 1-2h]
-    G --&gt; H[FRII 0.05U/kg/hr]
-    H --&gt; I[Monitor osmolality decline &lt;3 mOsm/kg/hr]
-    I --&gt; J{K+ management per DKA protocol}
-    J --&gt; K[Glucose 10-15 -&gt; switch to SC insulin]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">HHS Suspected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Labs: Glucose, Osmolality, VBG, Ketones, U&amp;E</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">pH &gt;7.3 AND Osmolality &gt;320?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">HHS Diagnosis</div>
+<div class="fc-node" data-id="E">DKA or Mixed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">0.9% NaCl 1L/hr x1-2h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Delay insulin 1-2h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">FRII 0.05U/kg/hr</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Monitor osmolality decline &lt;3 mOsm/kg/hr</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">K+ management per DKA protocol</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Glucose 10-15 -&gt; switch to SC insulin</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -6487,25 +6866,36 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((HHS Management))
-    Fluids
-      1L/hr x1-2h
-      500-1000ml/hr
-      Deficit 8-12L
-      Correct over 24-48h
-    Insulin
-      HALF dose: 0.05 U/kg/hr
-      Delayed 1-2h after fluids
-      Stop at glucose 10-15
-    Monitoring
-      Osmolality &lt;3 mOsm/kg/hr decline
-      Glucose 2-4 mmol/L/hr decline
-      K+ 1-2 hourly
-      Neuro hourly
-    Mortality
-      10-20%
-      Age&gt;70, coma, hypotension</pre>
+<div class="mindmap">
+<div class="mm-root">HHS Management</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Fluids</div>
+<div class="mm-node mm-l2">1L/hr x1-2h</div>
+<div class="mm-node mm-l2">500-1000ml/hr</div>
+<div class="mm-node mm-l2">Deficit 8-12L</div>
+<div class="mm-node mm-l2">Correct over 24-48h</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Insulin</div>
+<div class="mm-node mm-l2">HALF dose: 0.05 U/kg/hr</div>
+<div class="mm-node mm-l2">Delayed 1-2h after fluids</div>
+<div class="mm-node mm-l2">Stop at glucose 10-15</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Monitoring</div>
+<div class="mm-node mm-l2">Osmolality &lt;3 mOsm/kg/hr decline</div>
+<div class="mm-node mm-l2">Glucose 2-4 mmol/L/hr decline</div>
+<div class="mm-node mm-l2">K+ 1-2 hourly</div>
+<div class="mm-node mm-l2">Neuro hourly</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mortality</div>
+<div class="mm-node mm-l2">10-20%</div>
+<div class="mm-node mm-l2">Age&gt;70, coma, hypotension</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -6627,16 +7017,38 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <hr>
 <h2>7. Management</h2>
 <h3>Acute Administration Protocol</h3>
-<pre class="mermaid">flowchart TD
-    A[Severe Hypoglycaemia] --&gt; B{IV Access?}
-    B --&gt;|Yes| C[IV Dextrose 75-80ml 20% (or 150ml 10%) bolus -&gt; 10% infusion]
-    B --&gt;|No| D{Conscious?}
-    D --&gt;|No/Unsafe to swallow| E[Glucagon 1mg IM/SC (adult) or Nasal 3mg (Baqsimi)]
-    D --&gt;|Yes but unable to swallow| E
-    E --&gt; F[Recheck glucose 15min]
-    F --&gt; G{Glucose &gt;3.9?}
-    G --&gt;|No| H[IV access? -&gt; dextrose; or 2nd glucagon NOT recommended]
-    G --&gt;|Yes| I[Complex carb snack if meal &gt;1h]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Severe Hypoglycaemia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">IV Access?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">IV Dextrose 75-80ml 20% (or 150ml 10%) bolus -&gt; 10% infusion</div>
+<div class="fc-node" data-id="D">Conscious?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Glucagon 1mg IM/SC (adult) or Nasal 3mg (Baqsimi)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Recheck glucose 15min</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Glucose &gt;3.9?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">IV access? -&gt; dextrose; or 2nd glucagon NOT recommended</div>
+<div class="fc-node" data-id="I">Complex carb snack if meal &gt;1h</div>
+</div>
+</div>
 <h3>Key Administration Points</h3>
 <table>
 <tr><th>Step</th><th>Action</th></tr>
@@ -6704,28 +7116,41 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Glucagon))
-    Indications
-      Severe hypo
-      No IV access
-      Unconscious/seizure
-    Formulations
-      GlucaGen 1mg IM/SC
-      Baqsimi 3mg IN
-      Gvoke 1mg Auto
-      Zegalogue 0.6mg
-    Dosing
-      Adult: 1mg
-      &lt;25kg: 0.5mg
-    Contraindicated
-      Starvation
-      Alcohol
-      Adrenal insufficiency
-    Failure
-      No response 15min
-      -&gt; IV dextrose
-      NO repeat glucagon</pre>
+<div class="mindmap">
+<div class="mm-root">Glucagon</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Indications</div>
+<div class="mm-node mm-l2">Severe hypo</div>
+<div class="mm-node mm-l2">No IV access</div>
+<div class="mm-node mm-l2">Unconscious/seizure</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Formulations</div>
+<div class="mm-node mm-l2">GlucaGen 1mg IM/SC</div>
+<div class="mm-node mm-l2">Baqsimi 3mg IN</div>
+<div class="mm-node mm-l2">Gvoke 1mg Auto</div>
+<div class="mm-node mm-l2">Zegalogue 0.6mg</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Dosing</div>
+<div class="mm-node mm-l2">Adult: 1mg</div>
+<div class="mm-node mm-l2">&lt;25kg: 0.5mg</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Contraindicated</div>
+<div class="mm-node mm-l2">Starvation</div>
+<div class="mm-node mm-l2">Alcohol</div>
+<div class="mm-node mm-l2">Adrenal insufficiency</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Failure</div>
+<div class="mm-node mm-l2">No response 15min</div>
+<div class="mm-node mm-l2">-&gt; IV dextrose</div>
+<div class="mm-node mm-l2">NO repeat glucagon</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -6868,19 +7293,37 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Education</strong></td><td>Carb counting, sick day rules, alcohol + food, exercise adjustments</td></tr>
 <tr><td><strong>Technology</strong></td><td>CGM with predictive alerts; AID systems (reduce hypo by 30–50%)</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[Hypoglycaemia Suspected] --&gt; B{Glucose &lt;3.9?}
-    B --&gt;|No| C[Not hypoglycaemia]
-    B --&gt;|Yes| D{Conscious &amp; able to swallow?}
-    D --&gt;|Yes| E[15-20g fast carbs → recheck 15min]
-    D --&gt;|No| F{IV access?}
-    F --&gt;|Yes| G[75-80ml 20% dextrose IV → 10% dextrose infusion]
-    F --&gt;|No| H[Glucagon 1mg IM/SC or Nasal 3mg]
-    E --&gt; I{Glucose &gt;3.9 at 15min?}
-    I --&gt;|No| E
-    I --&gt;|Yes| J[Complex carb snack if next meal &gt;1h]
-    G --&gt; K[Monitor glucose q15-30min]
-    H --&gt; K</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hypoglycaemia Suspected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Glucose &lt;3.9?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Not hypoglycaemia</div>
+<div class="fc-node" data-id="D">Conscious &amp; able to swallow?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">15-20g fast carbs → recheck 15min</div>
+<div class="fc-node" data-id="F">IV access?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Glucose &gt;3.9 at 15min?</div>
+<div class="fc-node" data-id="G">75-80ml 20% dextrose IV → 10% dextrose infusion</div>
+<div class="fc-node" data-id="H">Glucagon 1mg IM/SC or Nasal 3mg</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Complex carb snack if next meal &gt;1h</div>
+<div class="fc-node" data-id="K">Monitor glucose q15-30min</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -7624,14 +8067,28 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Atonic (retention)</strong></td><td>Clean intermittent catheterisation (CIC); bethanechol 10–25mg TDS</td></tr>
 <tr><td><strong>Spastic (urgency)</strong></td><td>Anticholinergics (oxybutynin, tolterodine); botulinum toxin A; sacral neuromodulation</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[Autonomic Neuropathy] --&gt; B{System}
-    B --&gt;|CV| C[Orthostatic HTN: fludrocortisone/midodrine]
-    C --&gt; D[Silent MI: risk factor control]
-    B --&gt;|GI| E[Gastroparesis: diet → metoclopramide/domperidone/erythromycin]
-    B --&gt;|GU| F[ED: PDE5i → vacuum → alprostadil → prosthesis]
-    F --&gt; G[Bladder: CIC (atonic) / anticholinergics (spastic)]
-    B --&gt;|Sudomotor| H[Anhidrosis: avoid heat; gustatory sweating: reassure]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Autonomic Neuropathy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">System</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Orthostatic HTN: fludrocortisone/midodrine</div>
+<div class="fc-node" data-id="E">Gastroparesis: diet → metoclopramide/domperidone/erythromycin</div>
+<div class="fc-node" data-id="F">ED: PDE5i → vacuum → alprostadil → prosthesis</div>
+<div class="fc-node" data-id="H">Anhidrosis: avoid heat; gustatory sweating: reassure</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Silent MI: risk factor control</div>
+<div class="fc-node" data-id="G">Bladder: CIC (atonic) / anticholinergics (spastic)</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -7796,18 +8253,43 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>15–29</strong></td><td>25–150mg/day</td><td>200–700mg/day</td></tr>
 <tr><td><strong><15</strong></td><td>25–75mg/day</td><td>100–350mg/day</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[DSPN Diagnosed] --&gt; B{Painful?}
-    B --&gt;|No| C[Reassure + foot care + glycaemic control]
-    B --&gt;|Yes| D[1st line: Duloxetine/Pregabalin/Gabapentin/Amitriptyline]
-    D --&gt; E{Renal impairment?}
-    E --&gt;|Yes| F[Renal dose adjust pregabalin/gabapentin]
-    E --&gt;|No| G[Standard titration]
-    F --&gt; H[Review 4-6 weeks]
-    G --&gt; H
-    H --&gt; I{Adequate relief?}
-    I --&gt;|No| J[Switch 1st line agent OR add 2nd line]
-    I --&gt;|Yes| K[Continue + monitor 3-monthly]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">DSPN Diagnosed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Painful?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Reassure + foot care + glycaemic control</div>
+<div class="fc-node" data-id="D">1st line: Duloxetine/Pregabalin/Gabapentin/Amitriptyline</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Renal impairment?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Renal dose adjust pregabalin/gabapentin</div>
+<div class="fc-node" data-id="G">Standard titration</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Review 4-6 weeks</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Adequate relief?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Switch 1st line agent OR add 2nd line</div>
+<div class="fc-node" data-id="K">Continue + monitor 3-monthly</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -7938,19 +8420,49 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </table>
 <h2>7. Management</h2>
 <h3>Stepwise Pharmacological Algorithm (NICE / NeuPSIG / ADA)</h3>
-<pre class="mermaid">flowchart TD
-    A[Painful DSPN] --&gt; B[1st Line: Duloxetine / Pregabalin / Gabapentin / Amitriptyline]
-    B --&gt; C{4-6 week trial at max tolerated dose}
-    C --&gt;|Effective| D[Continue + review 3-monthly]
-    C --&gt;|Ineffective/Intolerant| E[Switch to different 1st line agent]
-    E --&gt; F{Effective?}
-    F --&gt;|Yes| D
-    F --&gt;|No| G[Combination 1st line agents]
-    G --&gt; H{Effective?}
-    H --&gt;|Yes| D
-    H --&gt;|No| I[2nd Line: Tramadol/Tapentadol PRN + specialist referral]
-    I --&gt; J{Effective?}
-    J --&gt;|No| K[3rd Line: Capsaicin 8% patch / Lidocaine 5% plaster / Spinal cord stimulation]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Painful DSPN</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">1st Line: Duloxetine / Pregabalin / Gabapentin / Amitriptyline</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">4-6 week trial at max tolerated dose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Continue + review 3-monthly</div>
+<div class="fc-node" data-id="E">Switch to different 1st line agent</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Effective?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Combination 1st line agents</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Effective?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">2nd Line: Tramadol/Tapentadol PRN + specialist referral</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Effective?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">3rd Line: Capsaicin 8% patch / Lidocaine 5% plaster / Spinal cord stimulation</div>
+</div>
+</div>
 <h3>1st Line Agents (Monotherapy)</h3>
 <table>
 <tr><th>Agent</th><th>Starting Dose</th><th>Titration</th><th>Max Dose</th><th>Key SE</th></tr>
@@ -8165,19 +8677,36 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>HbA1c <53mmol/mol (7.0%)</strong></td><td>DCCT: ↓DSPN 60%, autonomic 45% in T1DM; UKPDS: ↓microvascular in T2DM</td></tr>
 <tr><td><strong>Avoid glucose variability</strong></td><td>CGM: CV <36%; glycaemic variability linked to neuropathy</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[Diabetic Neuropathy Suspected] --&gt; B{Type?}
-    B --&gt;|DSPN| C[Screen: 10g monofilament + vibration + ANNS]
-    B --&gt;|Autonomic CV| D[Orthostatic BP, HRV, resting HR]
-    B --&gt;|Autonomic GI| E[Gastric emptying study]
-    B --&gt;|Autonomic GU| F[Urodynamics, IIEF]
-    B --&gt;|Mononeuropathy| G[NCS - confirm localisation]
-    C --&gt; H{LOPS?}
-    H --&gt;|Yes| I[Refer podiatry/foot clinic]
-    H --&gt;|No| J[Annual rescreen]
-    C --&gt; K{Painful?}
-    K --&gt;|Yes| L[1st line: Duloxetine/Pregabalin/Gabapentin/Amitriptyline]
-    K --&gt;|No| M[Reassure + foot care education]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Diabetic Neuropathy Suspected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Type?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Screen: 10g monofilament + vibration + ANNS</div>
+<div class="fc-node" data-id="D">Orthostatic BP, HRV, resting HR</div>
+<div class="fc-node" data-id="E">Gastric emptying study</div>
+<div class="fc-node" data-id="F">Urodynamics, IIEF</div>
+<div class="fc-node" data-id="G">NCS - confirm localisation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">LOPS?</div>
+<div class="fc-node" data-id="K">Painful?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Refer podiatry/foot clinic</div>
+<div class="fc-node" data-id="J">Annual rescreen</div>
+<div class="fc-node" data-id="L">1st line: Duloxetine/Pregabalin/Gabapentin/Amitriptyline</div>
+<div class="fc-node" data-id="M">Reassure + foot care education</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -8228,32 +8757,47 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Diabetic Neuropathy))
-    DSPN
-      Stocking-glove
-      Absent ankle reflex
-      Painful 10-20%
-    Autonomic
-      CV: Orthostatic HTN, silent MI, HRV
-      GI: Gastroparesis
-      GU: ED, bladder
-      Sudomotor
-    Mononeuropathy
-      CN III (pupil sparing)
-      Median (CTS)
-      Peroneal (foot drop)
-    Radiculoplexus
-      Lumbosacral amyotrophy
-    Screening
-      10g monofilament
-      Tuning fork 128Hz
-      ANNS
-    Pain Rx
-      Duloxetine
-      Pregabalin
-      Gabapentin
-      Amitriptyline</pre>
+<div class="mindmap">
+<div class="mm-root">Diabetic Neuropathy</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">DSPN</div>
+<div class="mm-node mm-l2">Stocking-glove</div>
+<div class="mm-node mm-l2">Absent ankle reflex</div>
+<div class="mm-node mm-l2">Painful 10-20%</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Autonomic</div>
+<div class="mm-node mm-l2">CV: Orthostatic HTN, silent MI, HRV</div>
+<div class="mm-node mm-l2">GI: Gastroparesis</div>
+<div class="mm-node mm-l2">GU: ED, bladder</div>
+<div class="mm-node mm-l2">Sudomotor</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mononeuropathy</div>
+<div class="mm-node mm-l2">CN III (pupil sparing)</div>
+<div class="mm-node mm-l2">Median (CTS)</div>
+<div class="mm-node mm-l2">Peroneal (foot drop)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Radiculoplexus</div>
+<div class="mm-node mm-l2">Lumbosacral amyotrophy</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Screening</div>
+<div class="mm-node mm-l2">10g monofilament</div>
+<div class="mm-node mm-l2">Tuning fork 128Hz</div>
+<div class="mm-node mm-l2">ANNS</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Pain Rx</div>
+<div class="mm-node mm-l2">Duloxetine</div>
+<div class="mm-node mm-l2">Pregabalin</div>
+<div class="mm-node mm-l2">Gabapentin</div>
+<div class="mm-node mm-l2">Amitriptyline</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -8632,19 +9176,46 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>BP <130/80</strong></td><td>UKPDS: tight BP ↓DR/DMO</td></tr>
 <tr><td><strong>Fenofibrate</strong></td><td>FIELD/ACCORD-Eye: ↓DMO progression</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[DMO Detected] --&gt; B{CI-DMO (CST &gt;300µm, ≤1DD)?}
-    B --&gt;|Yes| C[Anti-VEGF 1st line]
-    B --&gt;|No| D[Laser if threatening centre]
-    C --&gt; E[Loading: 3 monthly]
-    E --&gt; F{Treat-and-extend or PRN?}
-    F --&gt;|T&amp;E| G[Extend 2-4wk if dry]
-    F --&gt;|PRN| H[Re-treat if CST↑&gt;50µm or vision↓&gt;5 letters]
-    G --&gt; I[Review 4-8wk]
-    H --&gt; I
-    I --&gt; J{Inadequate response 6+ inj?}
-    J --&gt;|Yes| K[Dexamethasone implant (Ozurdex)]
-    J --&gt;|No| I</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">DMO Detected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">CI-DMO (CST &gt;300µm, ≤1DD)?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Anti-VEGF 1st line</div>
+<div class="fc-node" data-id="D">Laser if threatening centre</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Loading: 3 monthly</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Treat-and-extend or PRN?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Extend 2-4wk if dry</div>
+<div class="fc-node" data-id="H">Re-treat if CST↑&gt;50µm or vision↓&gt;5 letters</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Review 4-8wk</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Inadequate response 6+ inj?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Dexamethasone implant (Ozurdex)</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -8809,18 +9380,31 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Tractional RD</strong></td><td><strong>Vitrectomy</strong></td><td>—</td><td>Urgent if macula threatened</td></tr>
 </table>
 <blockquote><strong>Anti-VEGF agents</strong>: Ranibizumab (Lucentis, licensed), Aflibercept (Eylea, licensed), Bevacizumab (Avastin, off-label, cost-effective)</blockquote>
-<pre class="mermaid">flowchart TD
-    A[Screening Photo] --&gt; B{ETDRS Grade}
-    B --&gt;|No DR (10-12)| C[2-yearly screen]
-    B --&gt;|Mild NPDR (20-35)| D[Annual screen]
-    B --&gt;|Mod NPDR (35-43)| E[6-12 month screen]
-    B --&gt;|Severe NPDR (43-53)| F[Urgent referral 2-4 weeks]
-    B --&gt;|PDR (61+)| G[Urgent referral 1-2 weeks]
-    B --&gt;|DMO (M1)| H[Urgent referral 2-4 weeks]
-    F --&gt; I[Ophthalmology: consider PRP if high-risk]
-    G --&gt; J[PRP + Anti-VEGF for NV]
-    H --&gt; K[Anti-VEGF 1st line (CI-DMO)]
-    J --&gt; K</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Screening Photo</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ETDRS Grade</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">2-yearly screen</div>
+<div class="fc-node" data-id="D">Annual screen</div>
+<div class="fc-node" data-id="E">6-12 month screen</div>
+<div class="fc-node" data-id="F">Urgent referral 2-4 weeks</div>
+<div class="fc-node" data-id="G">Urgent referral 1-2 weeks</div>
+<div class="fc-node" data-id="H">Urgent referral 2-4 weeks</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Ophthalmology: consider PRP if high-risk</div>
+<div class="fc-node" data-id="J">PRP + Anti-VEGF for NV</div>
+<div class="fc-node" data-id="K">Anti-VEGF 1st line (CI-DMO)</div>
+</div>
+</div>
 <h3>Systemic Risk Factor Control</h3>
 <table>
 <tr><th>Target</th><th>Evidence</th></tr>
@@ -8880,31 +9464,44 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Diabetic Retinopathy))
-    Pathophysiology
-      Pericyte loss
-      Capillary occlusion
-      VEGF → leakage + NV
-    Classification (ETDRS)
-      No DR (10-12)
-      Mild/mod NPDR (20-35)
-      Severe NPDR (43-53) 4:2:1
-      PDR (61+) NVD/NVE
-      DMO (M1)
-    Screening
-      Digital photography
-      Intervals by stage
-    Treatment
-      CI-DMO: Anti-VEGF
-      Non-CI DMO: Laser
-      PDR: PRP
-      VH: Observe → Vitrectomy
-      TRD: Vitrectomy
-    Systemic
-      HbA1c &lt;53
-      BP &lt;130/80
-      Fenofibrate</pre>
+<div class="mindmap">
+<div class="mm-root">Diabetic Retinopathy</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Pathophysiology</div>
+<div class="mm-node mm-l2">Pericyte loss</div>
+<div class="mm-node mm-l2">Capillary occlusion</div>
+<div class="mm-node mm-l2">VEGF → leakage + NV</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Classification (ETDRS)</div>
+<div class="mm-node mm-l2">No DR (10-12)</div>
+<div class="mm-node mm-l2">Mild/mod NPDR (20-35)</div>
+<div class="mm-node mm-l2">Severe NPDR (43-53) 4:2:1</div>
+<div class="mm-node mm-l2">PDR (61+) NVD/NVE</div>
+<div class="mm-node mm-l2">DMO (M1)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Screening</div>
+<div class="mm-node mm-l2">Digital photography</div>
+<div class="mm-node mm-l2">Intervals by stage</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">CI-DMO: Anti-VEGF</div>
+<div class="mm-node mm-l2">Non-CI DMO: Laser</div>
+<div class="mm-node mm-l2">PDR: PRP</div>
+<div class="mm-node mm-l2">VH: Observe → Vitrectomy</div>
+<div class="mm-node mm-l2">TRD: Vitrectomy</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Systemic</div>
+<div class="mm-node mm-l2">HbA1c &lt;53</div>
+<div class="mm-node mm-l2">BP &lt;130/80</div>
+<div class="mm-node mm-l2">Fenofibrate</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -9063,21 +9660,52 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Rocker-bottom with ulcer risk</strong></td><td>Exostectomy + osteotomy</td></tr>
 <tr><td><strong>Failed conservative</strong></td><td>Realignment arthrodesis</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[Hot Swollen Foot] --&gt; B{Preserved Pulses?}
-    B --&gt;|Yes| C[Charcot Likely]
-    B --&gt;|No| D[Consider Ischaemia/Osteomyelitis]
-    C --&gt; E{X-ray/MRI}
-    E --&gt; F{Stage}
-    F --&gt;|0-1| G[TCC Non-WB 8-12wk]
-    F --&gt;|2| H[TCC WB 4-8wk]
-    F --&gt;|3| I[Custom footwear/orthoses]
-    G --&gt; J[Monitor: temp, X-ray q4-6wk]
-    H --&gt; J
-    J --&gt; K{Quiescent?}
-    K --&gt;|Yes| L[Transition to footwear]
-    K --&gt;|No| M[Continue immobilisation]
-    L --&gt; N[Stage 3: Custom footwear indefinitely]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hot Swollen Foot</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Preserved Pulses?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Charcot Likely</div>
+<div class="fc-node" data-id="D">Consider Ischaemia/Osteomyelitis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">X-ray/MRI</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Stage</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">TCC Non-WB 8-12wk</div>
+<div class="fc-node" data-id="H">TCC WB 4-8wk</div>
+<div class="fc-node" data-id="I">Custom footwear/orthoses</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Monitor: temp, X-ray q4-6wk</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Quiescent?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Transition to footwear</div>
+<div class="fc-node" data-id="M">Continue immobilisation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Stage 3: Custom footwear indefinitely</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -9236,22 +9864,48 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Nurse specialist</strong></td><td>Wound dressing, patient education, coordination</td></tr>
 </table>
 <blockquote><strong>MDT Outcome</strong>: Major amputations reduced 50-80%; healing rates increased; cost-effective</blockquote>
-<pre class="mermaid">flowchart TD
-    A[New DFU] --&gt; B[Assess: IWGDF risk, Wagner/UT, PEDIS, ABI]
-    B --&gt; C{PEDIS Grade?}
-    C --&gt;|1 (Uninfected)| D[TCC offloading + sharp debridement + dressings]
-    C --&gt;|2 (Mild)| E[TCC + oral abx + debridement]
-    C --&gt;|3 (Moderate)| F[TCC + IV abx + debridement +/- vascular]
-    C --&gt;|4 (Severe)| G[ICU + IV abx + URGENT surgical debridement +/- amputation]
-    D --&gt; H{Healing at 4wk?}
-    E --&gt; H
-    F --&gt; H
-    G --&gt; H
-    H --&gt;|No| I[Review: infection? ischaemia? offloading adherence?]
-    H --&gt;|Yes| J[Continue -&gt; preventive footwear]
-    I --&gt; K[MDT discussion: vascular imaging, MRI, surgical options]
-    K --&gt; L[Revascularisation if PAD]
-    L --&gt; M[Continue offloading + wound care]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">New DFU</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Assess: IWGDF risk, Wagner/UT, PEDIS, ABI</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">PEDIS Grade?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">TCC offloading + sharp debridement + dressings</div>
+<div class="fc-node" data-id="E">TCC + oral abx + debridement</div>
+<div class="fc-node" data-id="F">TCC + IV abx + debridement +/- vascular</div>
+<div class="fc-node" data-id="G">ICU + IV abx + URGENT surgical debridement +/- amputation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Healing at 4wk?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Review: infection? ischaemia? offloading adherence?</div>
+<div class="fc-node" data-id="J">Continue -&gt; preventive footwear</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">MDT discussion: vascular imaging, MRI, surgical options</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Revascularisation if PAD</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Continue offloading + wound care</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -9410,25 +10064,54 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>3</strong></td><td>Moderate (deep, >2cm, abscess)</td><td>IV antibiotics</td></tr>
 <tr><td><strong>4</strong></td><td>Severe (sepsis/SIRS)</td><td>IV abx + ICU + urgent surgical</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[DFU Identified] --&gt; B[Assess Depth]
-    B --&gt; C{Probe-to-bone?}
-    C --&gt;|Yes| D[Wagner 3 / UT Grade 3]
-    C --&gt;|No| E{Depth to tendon/capsule?}
-    E --&gt;|Yes| F[Wagner 2 / UT Grade 2]
-    E --&gt;|No| G[Wagner 1 / UT Grade 1]
-    D --&gt; H[Assess Infection]
-    F --&gt; H
-    G --&gt; H
-    H --&gt; I{Purulence/erythema&gt;2cm?}
-    I --&gt;|Yes| J[UT Stage B/D + PEDIS 2-3]
-    I --&gt;|No| K[UT Stage A/C]
-    J --&gt; L[Antibiotics: oral (2) / IV (3)]
-    K --&gt; M[Assess Ischaemia]
-    L --&gt; M
-    M --&gt; N{Absent pulses / ABI&lt;0.9?}
-    N --&gt;|Yes| O[UT Stage C/D -&gt; Vascular referral]
-    N --&gt;|No| P[UT Stage A/B]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">DFU Identified</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Assess Depth</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Probe-to-bone?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Wagner 3 / UT Grade 3</div>
+<div class="fc-node" data-id="E">Depth to tendon/capsule?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Assess Infection</div>
+<div class="fc-node" data-id="F">Wagner 2 / UT Grade 2</div>
+<div class="fc-node" data-id="G">Wagner 1 / UT Grade 1</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Purulence/erythema&gt;2cm?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">UT Stage B/D + PEDIS 2-3</div>
+<div class="fc-node" data-id="K">UT Stage A/C</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Antibiotics: oral (2) / IV (3)</div>
+<div class="fc-node" data-id="M">Assess Ischaemia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Absent pulses / ABI&lt;0.9?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="O">UT Stage C/D -&gt; Vascular referral</div>
+<div class="fc-node" data-id="P">UT Stage A/B</div>
+</div>
+</div>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
 <tr><th>Topic</th><th>Key Points</th></tr>
@@ -9632,22 +10315,48 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Orthopaedic surgeon</strong></td><td>Debridement, amputation, Charcot reconstruction</td></tr>
 <tr><td><strong>Nurse specialist</strong></td><td>Wound dressing, patient education, coordination</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[New DFU] --&gt; B[Assess: IWGDF risk, Wagner/UT, PEDIS, ABI]
-    B --&gt; C{PEDIS Grade?}
-    C --&gt;|1 (Uninfected)| D[Offloading (TCC) + debridement + dressings]
-    C --&gt;|2 (Mild)| E[TCC + oral abx + debridement]
-    C --&gt;|3 (Moderate)| F[TCC + IV abx + debridement ± vascular]
-    C --&gt;|4 (Severe)| G[ICU + IV abx + URGENT surgical debridement ± amputation]
-    D --&gt; H{Healing at 4wk?}
-    E --&gt; H
-    F --&gt; H
-    G --&gt; H
-    H --&gt;|No| I[Review: infection? ischaemia? offloading adherence?]
-    H --&gt;|Yes| J[Continue → preventive footwear]
-    I --&gt; K[MDT discussion: vascular imaging, MRI, surgical options]
-    K --&gt; L[Revascularisation if PAD]
-    L --&gt; M[Continue offloading + wound care]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">New DFU</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Assess: IWGDF risk, Wagner/UT, PEDIS, ABI</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">PEDIS Grade?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Offloading (TCC) + debridement + dressings</div>
+<div class="fc-node" data-id="E">TCC + oral abx + debridement</div>
+<div class="fc-node" data-id="F">TCC + IV abx + debridement ± vascular</div>
+<div class="fc-node" data-id="G">ICU + IV abx + URGENT surgical debridement ± amputation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Healing at 4wk?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Review: infection? ischaemia? offloading adherence?</div>
+<div class="fc-node" data-id="J">Continue → preventive footwear</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">MDT discussion: vascular imaging, MRI, surgical options</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Revascularisation if PAD</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Continue offloading + wound care</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -9700,29 +10409,44 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Diabetic Foot Disease))
-    Risk Classification
-      IWGDF 0-3
-      Screening intervals
-    Ulcer Classification
-      Wagner 0-5 (depth)
-      UT Grade 0-3 × Stage A-D
-    Infection
-      PEDIS 1-4
-      Antibiotics per grade
-    Offloading
-      TCC (gold standard)
-      RCW, felted foam
-    Charcot
-      Eichenholtz 0-3
-      Hot swollen + pulses
-      TCC immobilisation
-    MDT
-      Diabetologist, podiatrist
-      Vascular, orthotist
-      Micro, ortho
-      Amputation ↓50-80%</pre>
+<div class="mindmap">
+<div class="mm-root">Diabetic Foot Disease</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Risk Classification</div>
+<div class="mm-node mm-l2">IWGDF 0-3</div>
+<div class="mm-node mm-l2">Screening intervals</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Ulcer Classification</div>
+<div class="mm-node mm-l2">Wagner 0-5 (depth)</div>
+<div class="mm-node mm-l2">UT Grade 0-3 × Stage A-D</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Infection</div>
+<div class="mm-node mm-l2">PEDIS 1-4</div>
+<div class="mm-node mm-l2">Antibiotics per grade</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Offloading</div>
+<div class="mm-node mm-l2">TCC (gold standard)</div>
+<div class="mm-node mm-l2">RCW, felted foam</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Charcot</div>
+<div class="mm-node mm-l2">Eichenholtz 0-3</div>
+<div class="mm-node mm-l2">Hot swollen + pulses</div>
+<div class="mm-node mm-l2">TCC immobilisation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">MDT</div>
+<div class="mm-node mm-l2">Diabetologist, podiatrist</div>
+<div class="mm-node mm-l2">Vascular, orthotist</div>
+<div class="mm-node mm-l2">Micro, ortho</div>
+<div class="mm-node mm-l2">Amputation ↓50-80%</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -9900,20 +10624,51 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Moderate (Yellow)</strong></td><td>6-monthly</td><td>6-monthly</td><td>3–6 monthly</td><td>Primary care ± specialist</td></tr>
 <tr><td><strong>High/Very High (Orange/Red)</strong></td><td>3–6 monthly</td><td>3–6 monthly</td><td>1–3 monthly</td><td>Nephrology + MDT</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[DKD Diagnosed] --&gt; B[ACEi/ARB max tolerated]
-    B --&gt; C{ACR ≥30 or eGFR&lt;60?}
-    C --&gt;|Yes| D[Add SGLT2i (eGFR≥20)]
-    C --&gt;|No| E[Monitor 6-12 monthly]
-    D --&gt; F{ACR≥30 on ACEi+SGLT2i?}
-    F --&gt;|Yes| G[Add Finerenone (eGFR≥25, K+≤4.8)]
-    F --&gt;|No| H[Monitor 3-6 monthly]
-    G --&gt; I[Add GLP-1 RA if CVD/obesity]
-    H --&gt; I
-    I --&gt; J[BP&lt;130/80 + Statin + Lifestyle]
-    J --&gt; K{Progress to G4/G5?}
-    K --&gt;|Yes| L[Nephrology MDT + Transplant/Dialysis prep]
-    K --&gt;|No| M[Continue monitoring]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">DKD Diagnosed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ACEi/ARB max tolerated</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ACR ≥30 or eGFR&lt;60?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Add SGLT2i (eGFR≥20)</div>
+<div class="fc-node" data-id="E">Monitor 6-12 monthly</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">ACR≥30 on ACEi+SGLT2i?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Add Finerenone (eGFR≥25, K+≤4.8)</div>
+<div class="fc-node" data-id="H">Monitor 3-6 monthly</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Add GLP-1 RA if CVD/obesity</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">BP&lt;130/80 + Statin + Lifestyle</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Progress to G4/G5?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Nephrology MDT + Transplant/Dialysis prep</div>
+<div class="fc-node" data-id="M">Continue monitoring</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -9969,32 +10724,47 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Diabetic Kidney Disease))
-    Diagnosis
-      ACR ≥3 (2/3 in 3-6mo)
-      DM 10y or retinopathy
-    Staging (KDIGO)
-      G1-5 (eGFR)
-      A1-3 (ACR)
-      Heat map
-    Management
-      ACEi/ARB max
-      SGLT2i (≥20)
-      Finerenone (≥25, K+≤4.8)
-      GLP-1 RA
-      BP &lt;130/80
-      Statin
-    Targets
-      ACR ↓30%
-      ACR &lt;3 ideal
-    Monitoring
-      eGFR + ACR 3-12mo
-      By KDIGO category
-    Referral
-      G4-5
-      Rapid decline
-      Active sediment</pre>
+<div class="mindmap">
+<div class="mm-root">Diabetic Kidney Disease</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">ACR ≥3 (2/3 in 3-6mo)</div>
+<div class="mm-node mm-l2">DM 10y or retinopathy</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Staging (KDIGO)</div>
+<div class="mm-node mm-l2">G1-5 (eGFR)</div>
+<div class="mm-node mm-l2">A1-3 (ACR)</div>
+<div class="mm-node mm-l2">Heat map</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">ACEi/ARB max</div>
+<div class="mm-node mm-l2">SGLT2i (≥20)</div>
+<div class="mm-node mm-l2">Finerenone (≥25, K+≤4.8)</div>
+<div class="mm-node mm-l2">GLP-1 RA</div>
+<div class="mm-node mm-l2">BP &lt;130/80</div>
+<div class="mm-node mm-l2">Statin</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Targets</div>
+<div class="mm-node mm-l2">ACR ↓30%</div>
+<div class="mm-node mm-l2">ACR &lt;3 ideal</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Monitoring</div>
+<div class="mm-node mm-l2">eGFR + ACR 3-12mo</div>
+<div class="mm-node mm-l2">By KDIGO category</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Referral</div>
+<div class="mm-node mm-l2">G4-5</div>
+<div class="mm-node mm-l2">Rapid decline</div>
+<div class="mm-node mm-l2">Active sediment</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -10189,25 +10959,36 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Beta-cell Dysfunction))
-    Timeline
-      Compensation -&gt; Decompensation -&gt; Failure -&gt; Exhaustion
-      ~4%/year decline
-    Mechanisms
-      Glucolipotoxicity
-      IAPP amyloid
-      ER stress
-      Dedifferentiation
-    Markers
-      Proinsulin/Insulin ratio
-      C-peptide
-      First-phase insulin
-      HOMA-B
-    Treatment
-      Early intensive control
-      GLP-1 RA, SGLT2i
-      Early insulin (rest)</pre>
+<div class="mindmap">
+<div class="mm-root">Beta-cell Dysfunction</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Timeline</div>
+<div class="mm-node mm-l2">Compensation -&gt; Decompensation -&gt; Failure -&gt; Exhaustion</div>
+<div class="mm-node mm-l2">~4%/year decline</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanisms</div>
+<div class="mm-node mm-l2">Glucolipotoxicity</div>
+<div class="mm-node mm-l2">IAPP amyloid</div>
+<div class="mm-node mm-l2">ER stress</div>
+<div class="mm-node mm-l2">Dedifferentiation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Markers</div>
+<div class="mm-node mm-l2">Proinsulin/Insulin ratio</div>
+<div class="mm-node mm-l2">C-peptide</div>
+<div class="mm-node mm-l2">First-phase insulin</div>
+<div class="mm-node mm-l2">HOMA-B</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">Early intensive control</div>
+<div class="mm-node mm-l2">GLP-1 RA, SGLT2i</div>
+<div class="mm-node mm-l2">Early insulin (rest)</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -10386,27 +11167,40 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Insulin Resistance))
-    Mechanisms
-      Receptor: normal
-      Post-receptor: PI3K-Akt blocked
-      IRS-1 serine phosphorylation
-    Mediators
-      Ceramides/DAG -&gt; PKC/JNK
-      TNF-alpha, IL-6, MCP-1
-      Adiponectin down
-    Tissues
-      Liver: HGP up
-      Muscle: glucose disposal down
-      Adipose: FFA up, lipolysis up
-    Indices
-      HOMA-IR = (Ins x Glc)/22.5
-      QUICKI, Matsuda
-    Treatment
-      Weight loss, exercise
-      Metformin, TZDs
-      SGLT2i, GLP-1 RA</pre>
+<div class="mindmap">
+<div class="mm-root">Insulin Resistance</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanisms</div>
+<div class="mm-node mm-l2">Receptor: normal</div>
+<div class="mm-node mm-l2">Post-receptor: PI3K-Akt blocked</div>
+<div class="mm-node mm-l2">IRS-1 serine phosphorylation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mediators</div>
+<div class="mm-node mm-l2">Ceramides/DAG -&gt; PKC/JNK</div>
+<div class="mm-node mm-l2">TNF-alpha, IL-6, MCP-1</div>
+<div class="mm-node mm-l2">Adiponectin down</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Tissues</div>
+<div class="mm-node mm-l2">Liver: HGP up</div>
+<div class="mm-node mm-l2">Muscle: glucose disposal down</div>
+<div class="mm-node mm-l2">Adipose: FFA up, lipolysis up</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Indices</div>
+<div class="mm-node mm-l2">HOMA-IR = (Ins x Glc)/22.5</div>
+<div class="mm-node mm-l2">QUICKI, Matsuda</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">Weight loss, exercise</div>
+<div class="mm-node mm-l2">Metformin, TZDs</div>
+<div class="mm-node mm-l2">SGLT2i, GLP-1 RA</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -10535,16 +11329,41 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>CXR / Urine culture</strong></td><td>Precipitant identification</td><td>Pneumonia, UTI common</td></tr>
 <tr><td><strong>Pregnancy test</strong></td><td>Women of childbearing age</td><td>Euglycaemic DKA risk</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[DKA Suspected] --&gt; B[IV Access, Labs: Glucose, Ketones, VBG, U&amp;E, FBC]
-    B --&gt; C{pH &lt;7.0?}
-    C --&gt;|Yes| D[Severe: ICU, Bicarb, Cardiac monitor]
-    C --&gt;|No| E[FRII 0.1U/kg/hr + 0.9% NaCl]
-    E --&gt; F[K+ replacement per level]
-    F --&gt; G[Monitor: glucose q1h, ketones q2-4h, VBG q2-4h]
-    G --&gt; H{Ketones &lt;0.6 AND pH &gt;7.3?}
-    H --&gt;|No| F
-    H --&gt;|Yes| I[Switch to SC insulin, stop FRII 30-60min after 1st SC dose]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">DKA Suspected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">IV Access, Labs: Glucose, Ketones, VBG, U&amp;E, FBC</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">pH &lt;7.0?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Severe: ICU, Bicarb, Cardiac monitor</div>
+<div class="fc-node" data-id="E">FRII 0.1U/kg/hr + 0.9% NaCl</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">K+ replacement per level</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Monitor: glucose q1h, ketones q2-4h, VBG q2-4h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Ketones &lt;0.6 AND pH &gt;7.3?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Switch to SC insulin, stop FRII 30-60min after 1st SC dose</div>
+</div>
+</div>
 <hr>
 <h2>6. Differential Diagnosis</h2>
 <table>
@@ -10652,40 +11471,59 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((DKA))
-    Definition
-      Glucose &gt;11.1
-      Ketones &gt;3
-      pH &lt;7.3
-    Severity
-      Mild 7.25-7.30
-      Mod 7.0-7.24
-      Sev &lt;7.0
-    Fluids
-      1L -&gt; 500 -&gt; 250 ml/hr
-      0.9% NaCl
-      5-7L total
-    Insulin
-      FRII 0.1U/kg/hr
-      NO bolus
-      Continue til ketones&lt;0.6
-    K+
-      &lt;3.0: 60-80, hold insulin
-      3-3.5: 60
-      3.5-5.5: 40
-      &gt;5.5: hold
-    Bicarb
-      ONLY pH&lt;7.0
-      100mmol/2h
-    Complications
-      Cerebral oedema (kids)
-      Hypokalaemia
-      Hypoglycaemia
-    Euglycaemic
-      Glucose &lt;13.9
-      SGLT2i
-      STOP SGLT2i</pre>
+<div class="mindmap">
+<div class="mm-root">DKA</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Definition</div>
+<div class="mm-node mm-l2">Glucose &gt;11.1</div>
+<div class="mm-node mm-l2">Ketones &gt;3</div>
+<div class="mm-node mm-l2">pH &lt;7.3</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Severity</div>
+<div class="mm-node mm-l2">Mild 7.25-7.30</div>
+<div class="mm-node mm-l2">Mod 7.0-7.24</div>
+<div class="mm-node mm-l2">Sev &lt;7.0</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Fluids</div>
+<div class="mm-node mm-l2">1L -&gt; 500 -&gt; 250 ml/hr</div>
+<div class="mm-node mm-l2">0.9% NaCl</div>
+<div class="mm-node mm-l2">5-7L total</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Insulin</div>
+<div class="mm-node mm-l2">FRII 0.1U/kg/hr</div>
+<div class="mm-node mm-l2">NO bolus</div>
+<div class="mm-node mm-l2">Continue til ketones&lt;0.6</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">K+</div>
+<div class="mm-node mm-l2">&lt;3.0: 60-80, hold insulin</div>
+<div class="mm-node mm-l2">3-3.5: 60</div>
+<div class="mm-node mm-l2">3.5-5.5: 40</div>
+<div class="mm-node mm-l2">&gt;5.5: hold</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Bicarb</div>
+<div class="mm-node mm-l2">ONLY pH&lt;7.0</div>
+<div class="mm-node mm-l2">100mmol/2h</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complications</div>
+<div class="mm-node mm-l2">Cerebral oedema (kids)</div>
+<div class="mm-node mm-l2">Hypokalaemia</div>
+<div class="mm-node mm-l2">Hypoglycaemia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Euglycaemic</div>
+<div class="mm-node mm-l2">Glucose &lt;13.9</div>
+<div class="mm-node mm-l2">SGLT2i</div>
+<div class="mm-node mm-l2">STOP SGLT2i</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -10885,28 +11723,41 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Hypoglycaemia))
-    Classification
-      Level 1 &lt;3.9
-      Level 2 &lt;3.0
-      Level 3 severe
-    Clinical
-      Autonomic: sweat, tremor, palpitations
-      Neuroglycopenic: confusion, seizure
-    Treatment
-      Conscious: 15-20g carbs
-      Unconscious + IV: 20% dextrose 75ml
-      Unconscious no IV: Glucagon 1mg IM/IN
-    Glucagon
-      1mg IM/SC adult
-      0.5mg &lt;25kg
-      Nasal 3mg
-      Fails if no glycogen
-    Unawareness
-      Avoid &lt;3.9 x2-3 weeks
-      CGM alerts
-      Higher targets</pre>
+<div class="mindmap">
+<div class="mm-root">Hypoglycaemia</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Classification</div>
+<div class="mm-node mm-l2">Level 1 &lt;3.9</div>
+<div class="mm-node mm-l2">Level 2 &lt;3.0</div>
+<div class="mm-node mm-l2">Level 3 severe</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Autonomic: sweat, tremor, palpitations</div>
+<div class="mm-node mm-l2">Neuroglycopenic: confusion, seizure</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">Conscious: 15-20g carbs</div>
+<div class="mm-node mm-l2">Unconscious + IV: 20% dextrose 75ml</div>
+<div class="mm-node mm-l2">Unconscious no IV: Glucagon 1mg IM/IN</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Glucagon</div>
+<div class="mm-node mm-l2">1mg IM/SC adult</div>
+<div class="mm-node mm-l2">0.5mg &lt;25kg</div>
+<div class="mm-node mm-l2">Nasal 3mg</div>
+<div class="mm-node mm-l2">Fails if no glycogen</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Unawareness</div>
+<div class="mm-node mm-l2">Avoid &lt;3.9 x2-3 weeks</div>
+<div class="mm-node mm-l2">CGM alerts</div>
+<div class="mm-node mm-l2">Higher targets</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -11096,26 +11947,39 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((T1DM Classic Presentation))
-    Symptoms
-      Polyuria
-      Polydipsia
-      Weight loss (polyphagia)
-      Fatigue
-    DKA at Dx
-      25-30% children
-      &lt;5y highest
-      Medical emergency
-    Age
-      Bimodal: 4-7, 10-14
-    vs T2DM
-      Acute vs insidious
-      Lean vs obese
-      Ketosis vs none
-    vs LADA
-      Acute vs subacute
-      Child vs adult</pre>
+<div class="mindmap">
+<div class="mm-root">T1DM Classic Presentation</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Symptoms</div>
+<div class="mm-node mm-l2">Polyuria</div>
+<div class="mm-node mm-l2">Polydipsia</div>
+<div class="mm-node mm-l2">Weight loss (polyphagia)</div>
+<div class="mm-node mm-l2">Fatigue</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">DKA at Dx</div>
+<div class="mm-node mm-l2">25-30% children</div>
+<div class="mm-node mm-l2">&lt;5y highest</div>
+<div class="mm-node mm-l2">Medical emergency</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Age</div>
+<div class="mm-node mm-l2">Bimodal: 4-7, 10-14</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">vs T2DM</div>
+<div class="mm-node mm-l2">Acute vs insidious</div>
+<div class="mm-node mm-l2">Lean vs obese</div>
+<div class="mm-node mm-l2">Ketosis vs none</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">vs LADA</div>
+<div class="mm-node mm-l2">Acute vs subacute</div>
+<div class="mm-node mm-l2">Child vs adult</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -11326,33 +12190,48 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((LADA))
-    Definition
-      Adult-onset autoimmune
-      &gt;30 years
-      Slow progression
-    Diagnosis
-      Age &gt;=30
-      1+ Ab (GAD65 90%)
-      Insulin-free &gt;=6mo
-    Features
-      GAD65+ (90%)
-      Single Ab often
-      Non-obese
-      C-peptide low-normal
-    vs T1DM
-      Adult vs child
-      Slow vs acute
-      Single Ab vs 2+
-    vs T2DM
-      Autoimmune vs metabolic
-      Non-obese vs obese
-      C-peptide low-normal
-    Management
-      Initial: Met/DPP-4i/GLP-1
-      Avoid SU
-      Insulin when C-peptide low</pre>
+<div class="mindmap">
+<div class="mm-root">LADA</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Definition</div>
+<div class="mm-node mm-l2">Adult-onset autoimmune</div>
+<div class="mm-node mm-l2">&gt;30 years</div>
+<div class="mm-node mm-l2">Slow progression</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">Age &gt;=30</div>
+<div class="mm-node mm-l2">1+ Ab (GAD65 90%)</div>
+<div class="mm-node mm-l2">Insulin-free &gt;=6mo</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Features</div>
+<div class="mm-node mm-l2">GAD65+ (90%)</div>
+<div class="mm-node mm-l2">Single Ab often</div>
+<div class="mm-node mm-l2">Non-obese</div>
+<div class="mm-node mm-l2">C-peptide low-normal</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">vs T1DM</div>
+<div class="mm-node mm-l2">Adult vs child</div>
+<div class="mm-node mm-l2">Slow vs acute</div>
+<div class="mm-node mm-l2">Single Ab vs 2+</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">vs T2DM</div>
+<div class="mm-node mm-l2">Autoimmune vs metabolic</div>
+<div class="mm-node mm-l2">Non-obese vs obese</div>
+<div class="mm-node mm-l2">C-peptide low-normal</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Initial: Met/DPP-4i/GLP-1</div>
+<div class="mm-node mm-l2">Avoid SU</div>
+<div class="mm-node mm-l2">Insulin when C-peptide low</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -11538,35 +12417,50 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Insulin Pump Therapy))
-    Regimens
-      Basal-bolus (MDI)
-      Basal only
-      Pre-mixed BD
-      CSII (Pump)
-    Analogues
-      Rapid: Lispro, Aspart, Glulisine
-      Ultra-rapid: Fiasp, Lyumjev
-      Long: Glargine U-100, Detemir
-      Ultra-long: Glargine U-300, Degludec
-      Concentrated: U-200, U-300, U-500
-    Calculations
-      TDD: 0.3-0.7 U/kg
-      Basal:Bolus 40:60
-      ICR = 500/TDD
-      ISF = 100/TDD
-    T1DM
-      MDI or CSII
-      Carb counting
-    T2DM
-      Basal 1st
-      Stop SU
-      Concentrated if &gt;200U
-    CSII
-      Programmable basal
-      Bolus calculator
-      SAP / HCL</pre>
+<div class="mindmap">
+<div class="mm-root">Insulin Pump Therapy</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Regimens</div>
+<div class="mm-node mm-l2">Basal-bolus (MDI)</div>
+<div class="mm-node mm-l2">Basal only</div>
+<div class="mm-node mm-l2">Pre-mixed BD</div>
+<div class="mm-node mm-l2">CSII (Pump)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Analogues</div>
+<div class="mm-node mm-l2">Rapid: Lispro, Aspart, Glulisine</div>
+<div class="mm-node mm-l2">Ultra-rapid: Fiasp, Lyumjev</div>
+<div class="mm-node mm-l2">Long: Glargine U-100, Detemir</div>
+<div class="mm-node mm-l2">Ultra-long: Glargine U-300, Degludec</div>
+<div class="mm-node mm-l2">Concentrated: U-200, U-300, U-500</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Calculations</div>
+<div class="mm-node mm-l2">TDD: 0.3-0.7 U/kg</div>
+<div class="mm-node mm-l2">Basal:Bolus 40:60</div>
+<div class="mm-node mm-l2">ICR = 500/TDD</div>
+<div class="mm-node mm-l2">ISF = 100/TDD</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">T1DM</div>
+<div class="mm-node mm-l2">MDI or CSII</div>
+<div class="mm-node mm-l2">Carb counting</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">T2DM</div>
+<div class="mm-node mm-l2">Basal 1st</div>
+<div class="mm-node mm-l2">Stop SU</div>
+<div class="mm-node mm-l2">Concentrated if &gt;200U</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">CSII</div>
+<div class="mm-node mm-l2">Programmable basal</div>
+<div class="mm-node mm-l2">Bolus calculator</div>
+<div class="mm-node mm-l2">SAP / HCL</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -11743,21 +12637,44 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Pregnancy</strong></td><td>Basal-bolus; tight targets (FPG <5.3, 1h <7.8, 2h <6.4); stop SGLT2i/GLP-1 RA/SU/TZD</td></tr>
 <tr><td><strong>CKD G4–5</strong></td><td>Basal insulin ↓dose (25–50%); avoid SGLT2i if eGFR<20; monitor hypoglycaemia</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[Insulin Indicated] --&gt; B{Type?}
-    B --&gt;|T1DM| C[Basal-bolus MDI OR CSII]
-    B --&gt;|T2DM| D{Trigger}
-    D --&gt;|HbA1c&gt;58 on orals| E[Basal insulin 0.1-0.2U/kg OD]
-    D --&gt;|Symptomatic| F[Basal-bolus 0.3-0.5U/kg]
-    D --&gt;|Pregnancy| G[Basal-bolus + tight targets]
-    D --&gt;|CKD G4-5| H[Basal ↓dose 25-50%]
-    C --&gt; I[Basal 40-50% (glargine/degludec)]
-    C --&gt; J[Bolus 50-60% (rapid/ultra-rapid)]
-    C --&gt; K[ICR = 500/TDD, ISF = 100/TDD]
-    E --&gt; L[Titrate to FPG 4-7]
-    L --&gt; M{Target met?}
-    M --&gt;|No| N[Add bolus → basal-bolus]
-    M --&gt;|Yes| O[Continue + monitor 3-monthly]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Insulin Indicated</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Type?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Basal-bolus MDI OR CSII</div>
+<div class="fc-node" data-id="D">Trigger</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Basal 40-50% (glargine/degludec)</div>
+<div class="fc-node" data-id="J">Bolus 50-60% (rapid/ultra-rapid)</div>
+<div class="fc-node" data-id="K">ICR = 500/TDD, ISF = 100/TDD</div>
+<div class="fc-node" data-id="E">Basal insulin 0.1-0.2U/kg OD</div>
+<div class="fc-node" data-id="F">Basal-bolus 0.3-0.5U/kg</div>
+<div class="fc-node" data-id="G">Basal-bolus + tight targets</div>
+<div class="fc-node" data-id="H">Basal ↓dose 25-50%</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Titrate to FPG 4-7</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Target met?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Add bolus → basal-bolus</div>
+<div class="fc-node" data-id="O">Continue + monitor 3-monthly</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -11815,35 +12732,50 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Insulin Therapy))
-    Regimens
-      Basal-bolus (MDI)
-      Basal only
-      Pre-mixed BD
-      CSII (Pump)
-    Analogues
-      Rapid: Lispro, Aspart, Glulisine
-      Ultra-rapid: Fiasp, Lyumjev
-      Long: Glargine U-100, Detemir
-      Ultra-long: Glargine U-300, Degludec
-      Concentrated: U-200, U-300, U-500
-    Calculations
-      TDD: 0.3-0.7 U/kg
-      Basal:Bolus 40:60
-      ICR = 500/TDD
-      ISF = 100/TDD
-    T1DM
-      MDI or CSII
-      Carb counting
-    T2DM
-      Basal 1st
-      Stop SU
-      Concentrated if &gt;200U
-    CSII
-      Programmable basal
-      Bolus calculator
-      SAP / HCL</pre>
+<div class="mindmap">
+<div class="mm-root">Insulin Therapy</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Regimens</div>
+<div class="mm-node mm-l2">Basal-bolus (MDI)</div>
+<div class="mm-node mm-l2">Basal only</div>
+<div class="mm-node mm-l2">Pre-mixed BD</div>
+<div class="mm-node mm-l2">CSII (Pump)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Analogues</div>
+<div class="mm-node mm-l2">Rapid: Lispro, Aspart, Glulisine</div>
+<div class="mm-node mm-l2">Ultra-rapid: Fiasp, Lyumjev</div>
+<div class="mm-node mm-l2">Long: Glargine U-100, Detemir</div>
+<div class="mm-node mm-l2">Ultra-long: Glargine U-300, Degludec</div>
+<div class="mm-node mm-l2">Concentrated: U-200, U-300, U-500</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Calculations</div>
+<div class="mm-node mm-l2">TDD: 0.3-0.7 U/kg</div>
+<div class="mm-node mm-l2">Basal:Bolus 40:60</div>
+<div class="mm-node mm-l2">ICR = 500/TDD</div>
+<div class="mm-node mm-l2">ISF = 100/TDD</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">T1DM</div>
+<div class="mm-node mm-l2">MDI or CSII</div>
+<div class="mm-node mm-l2">Carb counting</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">T2DM</div>
+<div class="mm-node mm-l2">Basal 1st</div>
+<div class="mm-node mm-l2">Stop SU</div>
+<div class="mm-node mm-l2">Concentrated if &gt;200U</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">CSII</div>
+<div class="mm-node mm-l2">Programmable basal</div>
+<div class="mm-node mm-l2">Bolus calculator</div>
+<div class="mm-node mm-l2">SAP / HCL</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -12028,25 +12960,38 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((T2DM Asymptomatic Screening))
-    ADA
-      Age&gt;=35 or BMI&gt;=25+1 RF
-      HbA1c/FPG/OGTT
-      3-yearly if normal
-    NICE
-      Risk score first
-      If high -&gt; HbA1c/FPG
-    USPSTF
-      35-70, BMI&gt;=25
-      3-yearly if normal
-    Confirmatory
-      Asymptomatic: 2 tests
-      Symptomatic: 1 test
-    Special
-      Children: BMI 85th% + 2 RF
-      HIV: annual on ART
-      Antipsychotics: baseline, 12wk, annual</pre>
+<div class="mindmap">
+<div class="mm-root">T2DM Asymptomatic Screening</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">ADA</div>
+<div class="mm-node mm-l2">Age&gt;=35 or BMI&gt;=25+1 RF</div>
+<div class="mm-node mm-l2">HbA1c/FPG/OGTT</div>
+<div class="mm-node mm-l2">3-yearly if normal</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">NICE</div>
+<div class="mm-node mm-l2">Risk score first</div>
+<div class="mm-node mm-l2">If high -&gt; HbA1c/FPG</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">USPSTF</div>
+<div class="mm-node mm-l2">35-70, BMI&gt;=25</div>
+<div class="mm-node mm-l2">3-yearly if normal</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Confirmatory</div>
+<div class="mm-node mm-l2">Asymptomatic: 2 tests</div>
+<div class="mm-node mm-l2">Symptomatic: 1 test</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Special</div>
+<div class="mm-node mm-l2">Children: BMI 85th% + 2 RF</div>
+<div class="mm-node mm-l2">HIV: annual on ART</div>
+<div class="mm-node mm-l2">Antipsychotics: baseline, 12wk, annual</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -12199,20 +13144,38 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Starting insulin</strong></td><td><strong>STOP SU</strong> (↓hypo risk); continue metformin ± SGLT2i/GLP-1 RA</td></tr>
 <tr><td><strong>Frailty/elderly</strong></td><td>Deintensify: stop SU, relax HbA1c target, simplify regimens</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[Sulfonylurea Indicated] --&gt; B{Agent Selection}
-    B --&gt;|1st choice| C[Gliclazide MR 30mg OD]
-    B --&gt;|Short-acting needed| D[Glipizide 2.5mg BD]
-    B --&gt;|Once daily alternative| E[Glimepiride 1mg OD - caution elderly/CKD]
-    B --&gt;|AVOID| F[Glibenclamide - prolonged hypo]
-    C --&gt; G[Titrate q2-4wk to max]
-    D --&gt; G
-    E --&gt; G
-    G --&gt; H{Recurrent hypo?}
-    H --&gt;|Yes| I[↓Dose or STOP; switch to DPP-4i/SGLT2i/GLP-1 RA]
-    H --&gt;|No| J[Continue + monitor HbA1c 6-monthly]
-    G --&gt; K{Starting insulin?}
-    K --&gt;|Yes| L[STOP SU; continue Met ± SGLT2i/GLP-1 RA]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Sulfonylurea Indicated</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Agent Selection</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Gliclazide MR 30mg OD</div>
+<div class="fc-node" data-id="D">Glipizide 2.5mg BD</div>
+<div class="fc-node" data-id="E">Glimepiride 1mg OD - caution elderly/CKD</div>
+<div class="fc-node" data-id="F">Glibenclamide - prolonged hypo</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Titrate q2-4wk to max</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Recurrent hypo?</div>
+<div class="fc-node" data-id="K">Starting insulin?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">↓Dose or STOP; switch to DPP-4i/SGLT2i/GLP-1 RA</div>
+<div class="fc-node" data-id="J">Continue + monitor HbA1c 6-monthly</div>
+<div class="fc-node" data-id="L">STOP SU; continue Met ± SGLT2i/GLP-1 RA</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -12262,35 +13225,50 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Sulfonylureas))
-    Mechanism
-      SUR1 binding
-      KATP closure
-      Ca2+ influx
-      Insulin secretion
-    Agents
-      Gliclazide MR (1st choice)
-      Gliclazide
-      Glimepiride
-      Glipizide
-      Glibenclamide (AVOID)
-    Effects
-      HbA1c ↓1-1.5%
-      Weight ↑2-4kg
-      Hypoglycaemia risk
-    CAROLINA
-      Glimepiride vs Linagliptin
-      MACE non-inferior
-      Hypo 3.8x higher
-    Renal
-      Glic MR safe
-      Glipizide safe
-      Glimepiride caution
-      Glibenclamide CONTRAINDICATED
-    With Insulin
-      STOP SU
-      Continue Met ± SGLT2i/GLP-1</pre>
+<div class="mindmap">
+<div class="mm-root">Sulfonylureas</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">SUR1 binding</div>
+<div class="mm-node mm-l2">KATP closure</div>
+<div class="mm-node mm-l2">Ca2+ influx</div>
+<div class="mm-node mm-l2">Insulin secretion</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Agents</div>
+<div class="mm-node mm-l2">Gliclazide MR (1st choice)</div>
+<div class="mm-node mm-l2">Gliclazide</div>
+<div class="mm-node mm-l2">Glimepiride</div>
+<div class="mm-node mm-l2">Glipizide</div>
+<div class="mm-node mm-l2">Glibenclamide (AVOID)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Effects</div>
+<div class="mm-node mm-l2">HbA1c ↓1-1.5%</div>
+<div class="mm-node mm-l2">Weight ↑2-4kg</div>
+<div class="mm-node mm-l2">Hypoglycaemia risk</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">CAROLINA</div>
+<div class="mm-node mm-l2">Glimepiride vs Linagliptin</div>
+<div class="mm-node mm-l2">MACE non-inferior</div>
+<div class="mm-node mm-l2">Hypo 3.8x higher</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Renal</div>
+<div class="mm-node mm-l2">Glic MR safe</div>
+<div class="mm-node mm-l2">Glipizide safe</div>
+<div class="mm-node mm-l2">Glimepiride caution</div>
+<div class="mm-node mm-l2">Glibenclamide CONTRAINDICATED</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">With Insulin</div>
+<div class="mm-node mm-l2">STOP SU</div>
+<div class="mm-node mm-l2">Continue Met ± SGLT2i/GLP-1</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -12415,25 +13393,49 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <hr>
 <h2>7. Management</h2>
 <h3>Stepwise Algorithm (ADA/EASD 2023)</h3>
-<pre class="mermaid">flowchart TD
-    A[T2DM Diagnosed] --&gt; B[Lifestyle + Metformin]
-    B --&gt; C{Comorbidities?}
-    C --&gt;|ASCVD| D[GLP-1 RA or SGLT2i with MACE benefit]
-    C --&gt;|HF| E[SGLT2i preferred]
-    C --&gt;|CKD eGFR&gt;=20| F[SGLT2i preferred]
-    C --&gt;|Obesity| G[GLP-1 RA or Tirzepatide]
-    C --&gt;|None| H[SGLT2i/GLP-1 RA/DPP-4i/TZD + cost/access]
-    D --&gt; I[Target not met?]
-    E --&gt; I
-    F --&gt; I
-    G --&gt; I
-    H --&gt; I
-    I --&gt;|Yes| J[Add 3rd agent: complementary mechanism]
-    J --&gt; K[Target not met?]
-    K --&gt;|Yes| L[Basal insulin OR GLP-1 RA if not used]
-    L --&gt; M[Intensify to basal-bolus if needed]
-    K --&gt;|No| N[Maintain + monitor]
-    I --&gt;|No| N</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">T2DM Diagnosed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Lifestyle + Metformin</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Comorbidities?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">GLP-1 RA or SGLT2i with MACE benefit</div>
+<div class="fc-node" data-id="E">SGLT2i preferred</div>
+<div class="fc-node" data-id="F">SGLT2i preferred</div>
+<div class="fc-node" data-id="G">GLP-1 RA or Tirzepatide</div>
+<div class="fc-node" data-id="H">SGLT2i/GLP-1 RA/DPP-4i/TZD + cost/access</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Target not met?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Add 3rd agent: complementary mechanism</div>
+<div class="fc-node" data-id="N">Maintain + monitor</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Target not met?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Basal insulin OR GLP-1 RA if not used</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Intensify to basal-bolus if needed</div>
+</div>
+</div>
 <h3>Dual Therapy Options (after Metformin)</h3>
 <table>
 <tr><th>If on Metformin +</th><th>Add</th><th>Rationale</th></tr>
@@ -13020,28 +14022,41 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((T2DM Symptomatic Presentation))
-    Asymptomatic
-      50% at diagnosis
-      Screening/incidental
-    Symptoms
-      Polyuria, polydipsia
-      Fatigue
-      Recurrent infections
-      Weight loss (if severe)
-      Blurred vision
-    Signs
-      Acanthosis nigricans (30-50%)
-      Peripheral neuropathy
-    vs T1DM
-      Insidious vs acute
-      Obese vs lean
-      Negative Abs vs 2+
-    vs LADA
-      Obese vs normal BMI
-      Negative Abs vs GAD65+
-      IR vs autoimmunity</pre>
+<div class="mindmap">
+<div class="mm-root">T2DM Symptomatic Presentation</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Asymptomatic</div>
+<div class="mm-node mm-l2">50% at diagnosis</div>
+<div class="mm-node mm-l2">Screening/incidental</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Symptoms</div>
+<div class="mm-node mm-l2">Polyuria, polydipsia</div>
+<div class="mm-node mm-l2">Fatigue</div>
+<div class="mm-node mm-l2">Recurrent infections</div>
+<div class="mm-node mm-l2">Weight loss (if severe)</div>
+<div class="mm-node mm-l2">Blurred vision</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Signs</div>
+<div class="mm-node mm-l2">Acanthosis nigricans (30-50%)</div>
+<div class="mm-node mm-l2">Peripheral neuropathy</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">vs T1DM</div>
+<div class="mm-node mm-l2">Insidious vs acute</div>
+<div class="mm-node mm-l2">Obese vs lean</div>
+<div class="mm-node mm-l2">Negative Abs vs 2+</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">vs LADA</div>
+<div class="mm-node mm-l2">Obese vs normal BMI</div>
+<div class="mm-node mm-l2">Negative Abs vs GAD65+</div>
+<div class="mm-node mm-l2">IR vs autoimmunity</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -13202,16 +14217,39 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>With insulin</strong></td><td>[down]Insulin dose 20-30% to avoid hypo; monitor</td></tr>
 <tr><td><strong>Sick-day rules</strong></td><td>Hold if unwell, unable to eat, vomiting</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[Tirzepatide Candidate] --&gt; B{Contraindications?}
-    B --&gt;|MTC/MEN2/Pancreatitis| C[Contraindicated]
-    B --&gt;|Pregnancy| D[Contraindicated]
-    B --&gt;|None| E[Start 2.5mg weekly]
-    E --&gt; F[Titrate q4wk: 2.5-&gt;5-&gt;7.5-&gt;10-&gt;12.5-&gt;15mg]
-    F --&gt; G{GI intolerant?}
-    G --&gt;|Yes| H[Slow titration / anti-emetics / stay at tolerated dose]
-    G --&gt;|No| I[Continue to max tolerated dose]
-    I --&gt; J[Monitor HbA1c/weight 3-monthly]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Tirzepatide Candidate</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Contraindications?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Contraindicated</div>
+<div class="fc-node" data-id="D">Contraindicated</div>
+<div class="fc-node" data-id="E">Start 2.5mg weekly</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Titrate q4wk: 2.5-&gt;5-&gt;7.5-&gt;10-&gt;12.5-&gt;15mg</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">GI intolerant?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Slow titration / anti-emetics / stay at tolerated dose</div>
+<div class="fc-node" data-id="I">Continue to max tolerated dose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Monitor HbA1c/weight 3-monthly</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -13264,34 +14302,51 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Tirzepatide))
-    Mechanism
-      Dual GIP/GLP-1 agonist
-      GIP: insulin synergy, adipocyte lipid storage
-      GLP-1: insulin, glucagon, gastric emptying, satiety
-    Doses
-      2.5 -&gt; 5 -&gt; 7.5 -&gt; 10 -&gt; 12.5 -&gt; 15 mg weekly
-      Titrate q4wk
-    Trials
-      SURPASS-1: monotherapy
-      SURPASS-2: beat semaglutide
-      SURPASS-3/4: vs insulin
-      SURPASS-5: + SGLT2i
-      SURMOUNT: obesity 20% weight loss
-    CVOT
-      SURPASS-CVOT ongoing
-      SURPASS-4: CV safety high risk
-    Adverse
-      GI nausea 20-30%
-      Pancreatitis (rare)
-      MTC/MEN2 contraindicated
-    Contraindications
-      MTC/MEN2
-      Pancreatitis history
-      Pregnancy
-    Renal
-      No dose adjust (all stages)</pre>
+<div class="mindmap">
+<div class="mm-root">Tirzepatide</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Dual GIP/GLP-1 agonist</div>
+<div class="mm-node mm-l2">GIP: insulin synergy, adipocyte lipid storage</div>
+<div class="mm-node mm-l2">GLP-1: insulin, glucagon, gastric emptying, satiety</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Doses</div>
+<div class="mm-node mm-l2">2.5 -&gt; 5 -&gt; 7.5 -&gt; 10 -&gt; 12.5 -&gt; 15 mg weekly</div>
+<div class="mm-node mm-l2">Titrate q4wk</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Trials</div>
+<div class="mm-node mm-l2">SURPASS-1: monotherapy</div>
+<div class="mm-node mm-l2">SURPASS-2: beat semaglutide</div>
+<div class="mm-node mm-l2">SURPASS-3/4: vs insulin</div>
+<div class="mm-node mm-l2">SURPASS-5: + SGLT2i</div>
+<div class="mm-node mm-l2">SURMOUNT: obesity 20% weight loss</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">CVOT</div>
+<div class="mm-node mm-l2">SURPASS-CVOT ongoing</div>
+<div class="mm-node mm-l2">SURPASS-4: CV safety high risk</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Adverse</div>
+<div class="mm-node mm-l2">GI nausea 20-30%</div>
+<div class="mm-node mm-l2">Pancreatitis (rare)</div>
+<div class="mm-node mm-l2">MTC/MEN2 contraindicated</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Contraindications</div>
+<div class="mm-node mm-l2">MTC/MEN2</div>
+<div class="mm-node mm-l2">Pancreatitis history</div>
+<div class="mm-node mm-l2">Pregnancy</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Renal</div>
+<div class="mm-node mm-l2">No dose adjust (all stages)</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -13455,19 +14510,44 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>With insulin</strong></td><td>[down]Insulin dose 20-30% to avoid hypo; monitor</td></tr>
 <tr><td><strong>Sick-day rules</strong></td><td>Hold if unwell, unable to eat, vomiting</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[GLP-1 RA Candidate] --&gt; B{Contraindications?}
-    B --&gt;|MTC/MEN2/Pancreatitis| C[Contraindicated]
-    B --&gt;|Pregnancy| D[Contraindicated]
-    B --&gt;|None| E[Select agent by comorbidity]
-    E --&gt; F{ASCVD/Obesity?}
-    F --&gt;|Yes| G[Semaglutide SC or Liraglutide]
-    F --&gt;|No| H[Consider dulaglutide, patient preference]
-    G --&gt; I[Titration schedule mandatory]
-    H --&gt; I
-    I --&gt; J{GI intolerant?}
-    J --&gt;|Yes| K[Slow titration / anti-emetics / switch]
-    J --&gt;|No| L[Continue + monitor HbA1c/weight 3-monthly]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">GLP-1 RA Candidate</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Contraindications?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Contraindicated</div>
+<div class="fc-node" data-id="D">Contraindicated</div>
+<div class="fc-node" data-id="E">Select agent by comorbidity</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">ASCVD/Obesity?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Semaglutide SC or Liraglutide</div>
+<div class="fc-node" data-id="H">Consider dulaglutide, patient preference</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Titration schedule mandatory</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">GI intolerant?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Slow titration / anti-emetics / switch</div>
+<div class="fc-node" data-id="L">Continue + monitor HbA1c/weight 3-monthly</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -13524,39 +14604,54 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((GLP-1 Receptor Agonists))
-    Mechanism
-      GLP-1R agonism
-      Glucose-dependent insulin
-      [down]Glucagon, [down]gastric emptying
-      [up]Satiety
-    Agents
-      Semaglutide SC 1mg/wk
-      Semaglutide oral 14mg/d
-      Liraglutide 1.8mg/d
-      Dulaglutide 1.5mg/wk
-      Exenatide XR 2mg/wk
-      Lixisenatide 20mcg/d
-    CVOT Evidence
-      SUSTAIN-6 (Sema) [check]
-      LEADER (Lira) [check]
-      REWIND (Dula) [check]
-      PIONEER-6 (Oral Sema) [check]
-      EXSCEL (Exenatide) neutral
-      ELIXA (Lixi) neutral
-    Indications
-      ASCVD
-      Obesity (Sema 2.4mg, Lira 3mg)
-      CKD (FLOW, REWIND renal)
-    Side Effects
-      GI: nausea 20-30%
-      Pancreatitis (rare)
-      Retinopathy (Sema transient)
-    Contraindications
-      MTC/MEN2
-      Pancreatitis history
-      Pregnancy</pre>
+<div class="mindmap">
+<div class="mm-root">GLP-1 Receptor Agonists</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">GLP-1R agonism</div>
+<div class="mm-node mm-l2">Glucose-dependent insulin</div>
+<div class="mm-node mm-l2">[down]Glucagon, [down]gastric emptying</div>
+<div class="mm-node mm-l2">[up]Satiety</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Agents</div>
+<div class="mm-node mm-l2">Semaglutide SC 1mg/wk</div>
+<div class="mm-node mm-l2">Semaglutide oral 14mg/d</div>
+<div class="mm-node mm-l2">Liraglutide 1.8mg/d</div>
+<div class="mm-node mm-l2">Dulaglutide 1.5mg/wk</div>
+<div class="mm-node mm-l2">Exenatide XR 2mg/wk</div>
+<div class="mm-node mm-l2">Lixisenatide 20mcg/d</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">CVOT Evidence</div>
+<div class="mm-node mm-l2">SUSTAIN-6 (Sema) [check]</div>
+<div class="mm-node mm-l2">LEADER (Lira) [check]</div>
+<div class="mm-node mm-l2">REWIND (Dula) [check]</div>
+<div class="mm-node mm-l2">PIONEER-6 (Oral Sema) [check]</div>
+<div class="mm-node mm-l2">EXSCEL (Exenatide) neutral</div>
+<div class="mm-node mm-l2">ELIXA (Lixi) neutral</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Indications</div>
+<div class="mm-node mm-l2">ASCVD</div>
+<div class="mm-node mm-l2">Obesity (Sema 2.4mg, Lira 3mg)</div>
+<div class="mm-node mm-l2">CKD (FLOW, REWIND renal)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Side Effects</div>
+<div class="mm-node mm-l2">GI: nausea 20-30%</div>
+<div class="mm-node mm-l2">Pancreatitis (rare)</div>
+<div class="mm-node mm-l2">Retinopathy (Sema transient)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Contraindications</div>
+<div class="mm-node mm-l2">MTC/MEN2</div>
+<div class="mm-node mm-l2">Pancreatitis history</div>
+<div class="mm-node mm-l2">Pregnancy</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -14070,21 +15165,38 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>With insulin</strong></td><td>Safe; ↓insulin dose if hypoglycaemia</td></tr>
 <tr><td><strong>Pregnancy</strong></td><td>Not recommended (Category B but limited data); insulin preferred</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[DPP-4i Candidate] --&gt; B{Select Agent}
-    B --&gt;|1st choice (CKD safe)| C[Linagliptin 5mg OD]
-    B --&gt;|eGFR≥30| D[Sitagliptin 100mg OD]
-    B --&gt;|HF present| E[AVOID saxagliptin]
-    B --&gt;|eGFR&lt;30| F[Linagliptin or dose-reduced others]
-    C --&gt; G[Add to metformin]
-    D --&gt; G
-    E --&gt; G
-    F --&gt; G
-    G --&gt; H{Adverse effects?}
-    H --&gt;|Bullous pemphigoid| I[STOP, dermatology]
-    H --&gt;|Arthralgia| J[STOP, switch class]
-    H --&gt;|Pancreatitis| K[STOP, avoid rechallenge]
-    H --&gt;|None| L[Continue + HbA1c 6-monthly]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">DPP-4i Candidate</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Select Agent</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Linagliptin 5mg OD</div>
+<div class="fc-node" data-id="D">Sitagliptin 100mg OD</div>
+<div class="fc-node" data-id="E">AVOID saxagliptin</div>
+<div class="fc-node" data-id="F">Linagliptin or dose-reduced others</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Add to metformin</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Adverse effects?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">STOP, dermatology</div>
+<div class="fc-node" data-id="J">STOP, switch class</div>
+<div class="fc-node" data-id="K">STOP, avoid rechallenge</div>
+<div class="fc-node" data-id="L">Continue + HbA1c 6-monthly</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -14445,19 +15557,47 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 <tr><td><strong>Euglycaemic DKA</strong></td><td><strong>STOP SGLT2i immediately</strong>; standard DKA protocol (fluids, insulin, K+); glucose may be normal — <strong>don't delay insulin</strong></td></tr>
 <tr><td><strong>Fournier's gangrene</strong></td><td><strong>STOP SGLT2i</strong>; emergency surgical debridement; broad-spectrum IV antibiotics; ICU</td></tr>
 </table>
-<pre class="mermaid">flowchart TD
-    A[SGLT2i Candidate] --&gt; B{eGFR Check}
-    B --&gt;|≥45 T2DM| C[Start standard dose]
-    B --&gt;|≥20-25 HF/CKD| D[Start per HF/CKD indication]
-    B --&gt;|&lt;threshold| E[Do NOT initiate]
-    C --&gt; F[Counsel sick-day rules: STOP if ill/fasting/surgery]
-    D --&gt; F
-    F --&gt; G[Monitor eGFR 2-4 weeks]
-    G --&gt; H{Unwell?}
-    H --&gt;|Yes| I[STOP SGLT2i, check ketones]
-    I --&gt; J{Ketones &gt;3?}
-    J --&gt;|Yes| K[Euglycaemic DKA protocol]
-    J --&gt;|No| L[Restart when well]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">SGLT2i Candidate</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">eGFR Check</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Start standard dose</div>
+<div class="fc-node" data-id="D">Start per HF/CKD indication</div>
+<div class="fc-node" data-id="E">Do NOT initiate</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Counsel sick-day rules: STOP if ill/fasting/surgery</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Monitor eGFR 2-4 weeks</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Unwell?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">STOP SGLT2i, check ketones</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Ketones &gt;3?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Euglycaemic DKA protocol</div>
+<div class="fc-node" data-id="L">Restart when well</div>
+</div>
+</div>
 <hr>
 <h2>8. FCPS/MRCP High-Yield Summary</h2>
 <table>
@@ -14514,35 +15654,52 @@ Complications / hypoglycaemia fear → More distress</code></pre>
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((SGLT2 Inhibitors))
-    Mechanism
-      SGLT2 inhibition
-      Glucosuria 70-90g/day
-    Agents
-      Empagliflozin 10/25
-      Dapagliflozin 10
-      Canagliflozin 100/300
-      Ertugliflozin 5/15
-    eGFR Thresholds
-      T2DM: ≥45
-      HF/CKD: ≥20-25
-    Indications
-      ASCVD
-      HF (HFrEF/HFpEF)
-      CKD
-      T2DM
-    Benefits
-      CV death↓
-      HF hosp↓
-      CKD progression↓
-    Adverse Effects
-      Euglycaemic DKA
-      Genital mycosis
-      Fournier's gangrene
-      Amputation (cana)
-    Sick-Day Rules
-      STOP if ill/fasting/surgery</pre>
+<div class="mindmap">
+<div class="mm-root">SGLT2 Inhibitors</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">SGLT2 inhibition</div>
+<div class="mm-node mm-l2">Glucosuria 70-90g/day</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Agents</div>
+<div class="mm-node mm-l2">Empagliflozin 10/25</div>
+<div class="mm-node mm-l2">Dapagliflozin 10</div>
+<div class="mm-node mm-l2">Canagliflozin 100/300</div>
+<div class="mm-node mm-l2">Ertugliflozin 5/15</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">eGFR Thresholds</div>
+<div class="mm-node mm-l2">T2DM: ≥45</div>
+<div class="mm-node mm-l2">HF/CKD: ≥20-25</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Indications</div>
+<div class="mm-node mm-l2">ASCVD</div>
+<div class="mm-node mm-l2">HF (HFrEF/HFpEF)</div>
+<div class="mm-node mm-l2">CKD</div>
+<div class="mm-node mm-l2">T2DM</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Benefits</div>
+<div class="mm-node mm-l2">CV death↓</div>
+<div class="mm-node mm-l2">HF hosp↓</div>
+<div class="mm-node mm-l2">CKD progression↓</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Adverse Effects</div>
+<div class="mm-node mm-l2">Euglycaemic DKA</div>
+<div class="mm-node mm-l2">Genital mycosis</div>
+<div class="mm-node mm-l2">Fournier's gangrene</div>
+<div class="mm-node mm-l2">Amputation (cana)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Sick-Day Rules</div>
+<div class="mm-node mm-l2">STOP if ill/fasting/surgery</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -14774,7 +15931,7 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 04:27 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 09:37 UTC · Davidson 25th Ed</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>

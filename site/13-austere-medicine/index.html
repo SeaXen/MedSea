@@ -1160,39 +1160,39 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   header.site { display: none; }
   .mobile-bar { display: flex; }
 
-  /* === MOBILE BAR: compact 2-row; full-width search is visible === */
+  /* === MOBILE BAR: strict single-line header === */
   .mobile-bar {
     padding: 6px 8px;
     gap: 6px;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
-  .mobile-bar .row.top {
-    display: flex;
-    justify-content: space-between;
-    min-width: 0;
-  }
+  .mobile-bar .row.top,
   .mobile-bar .row.search-row {
-    display: flex;
-    width: 100%;
-    min-width: 0;
+    display: contents;
   }
   .mobile-bar .logo-mini {
-    font-size: 13px;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
+    gap: 0;
   }
   .mobile-bar .logo-mini .logo { font-size: 16px; }
-  .mobile-bar .logo-mini a {
-    font-size: 13px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .mobile-bar .logo-mini a,
+  .mobile-bar .current-ch-label,
+  .mobile-bar .github-btn,
+  .mobile-bar .stats-mini {
+    display: none !important;
   }
   .mobile-bar .menu-btn {
     padding: 6px 8px;
     font-size: 12px;
     flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .mobile-bar .search-row {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .mobile-bar .search-row .search-box-m {
     flex: 1 1 auto;
@@ -1208,17 +1208,6 @@ header.site .search-box .search-empty strong { color: var(--accent); }
     left: 8px;
     font-size: 11px;
   }
-  .mobile-bar .current-ch-label {
-    font-size: 10px;
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-  .mobile-bar .github-btn {
-    padding: 6px 8px;
-    font-size: 11px;
-    flex: 0 0 auto;
-  }
-  .mobile-bar .stats-mini { display: none; }
 
   /* === HIDE DUPLICATE MOBILE TOOLBAR SEARCH (mobile-bar already has search) === */
   .chapter-mobile .chapter-toolbar {
@@ -2179,19 +2168,35 @@ footer a:hover { color: var(--accent); }
 <blockquote>[!tip] <strong>Traffic = #1 Urban Source</strong> for NO2, PM2.5, CO, BC. <strong>Industry/Power = SO2, Regional PM</strong>. <strong>Agriculture = NH3 → Secondary PM2.5</strong>.</blockquote>
 <hr>
 <h2>4. 📖 Health Effects — Mechanisms & Evidence</h2>
-<pre class="mermaid">flowchart TD
-    A[Air Pollutant Exposure] --&gt; B[**Inhalation**]
-    B --&gt; C1[**Pulmonary Oxidative Stress &amp; Inflammation**]
-    B --&gt; C2[**Systemic Inflammation &amp; Oxidative Stress**]
-    B --&gt; C3[**Autonomic Nervous System Imbalance**]
-    B --&gt; C4[**Direct Translocation** (Ultrafine → Bloodstream)]
-    C1 &amp; C2 &amp; C3 &amp; C4 --&gt; D[**Multi-System Health Effects**]
-    D --&gt; E1[**Respiratory**: Asthma, COPD, Lung Cancer, Infection Susceptibility]
-    D --&gt; E2[**Cardio**: Atherosclerosis, MI, Stroke, HF, HTN, Arrhythmia]
-    D --&gt; E3[**Neuro**: Cognitive Decline, Dementia, Neurodev (Children), Stroke]
-    D --&gt; E4[**Metabolic**: Diabetes, Obesity, NAFLD]
-    D --&gt; E4[**Reproductive**: Low Birth Weight, PTB, Stillbirth, Infertility]
-    D --&gt; E5[**Cancer**: Lung (IARC Group 1), Bladder, Breast]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Air Pollutant Exposure</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Inhalation**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C1">&amp; C2 &amp; C3 &amp; C4</div>
+<div class="fc-node" data-id="C2">**Systemic Inflammation &amp; Oxidative Stress**</div>
+<div class="fc-node" data-id="C3">**Autonomic Nervous System Imbalance**</div>
+<div class="fc-node" data-id="C4">**Direct Translocation** (Ultrafine → Bloodstream)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">**Multi-System Health Effects**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E1">**Respiratory**: Asthma, COPD, Lung Cancer, Infection Susceptibility</div>
+<div class="fc-node" data-id="E2">**Cardio**: Atherosclerosis, MI, Stroke, HF, HTN, Arrhythmia</div>
+<div class="fc-node" data-id="E3">**Neuro**: Cognitive Decline, Dementia, Neurodev (Children), Stroke</div>
+<div class="fc-node" data-id="E4">**Reproductive**: Low Birth Weight, PTB, Stillbirth, Infertility</div>
+<div class="fc-node" data-id="E5">**Cancer**: Lung (IARC Group 1), Bladder, Breast</div>
+</div>
+</div>
 <h3>Respiratory Effects</h3>
 <table>
 <tr><th>Condition</th><th>Pollutants</th><th>Key Evidence</th></tr>
@@ -2399,45 +2404,62 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>12. 🗺️ Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Air Pollution &amp; Respiratory Health))
-    Criteria Pollutants
-      PM2.5 (5 µg/m³ WHO)
-      PM10 (15 µg/m³)
-      O3 (60 µg/m³ peak)
-      NO2 (10 µg/m³)
-      SO2 (40 µg/m³ 24h)
-      CO (4 mg/m³ 24h)
-      Pb (0.5 µg/m³)
-    Sources
-      Traffic (NO2, PM, CO, BC)
-      Industry/Power (SO2, PM, Hg)
-      Residential (Biomass heating)
-      Agriculture (NH3 → Secondary PM)
-      Natural (Dust, Wildfire)
-    Health Effects
-      Respiratory: Asthma, COPD, Cancer, Infection
-      Cardiovascular: MI, Stroke, HTN, HF
-      Neuro: Cognitive, Dementia, Stroke
-      Reproductive: LBW, PTB
-      Cancer: Lung (IARC 1)
-    Vulnerable
-      Children (Lung Growth)
-      Elderly (Comorbidities)
-      Pregnant (LBW, PTB)
-      Cardio/Pulmonary Disease
-      Low Income
-    Guidelines
-      WHO 2021 AQG
-      AQI Categories
-      NAAQS
-    Control
-      Source: Transport, Industry, Residential, Agri
-      Urban Planning
-      Personal Protection (Limited)
-    Monitoring
-      AQI, Monitoring Networks
-      Satellites, Low-Cost Sensors</pre>
+<div class="mindmap">
+<div class="mm-root">Air Pollution &amp; Respiratory Health</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Criteria Pollutants</div>
+<div class="mm-node mm-l2">PM2.5 (5 µg/m³ WHO)</div>
+<div class="mm-node mm-l2">PM10 (15 µg/m³)</div>
+<div class="mm-node mm-l2">O3 (60 µg/m³ peak)</div>
+<div class="mm-node mm-l2">NO2 (10 µg/m³)</div>
+<div class="mm-node mm-l2">SO2 (40 µg/m³ 24h)</div>
+<div class="mm-node mm-l2">CO (4 mg/m³ 24h)</div>
+<div class="mm-node mm-l2">Pb (0.5 µg/m³)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Sources</div>
+<div class="mm-node mm-l2">Traffic (NO2, PM, CO, BC)</div>
+<div class="mm-node mm-l2">Industry/Power (SO2, PM, Hg)</div>
+<div class="mm-node mm-l2">Residential (Biomass heating)</div>
+<div class="mm-node mm-l2">Agriculture (NH3 → Secondary PM)</div>
+<div class="mm-node mm-l2">Natural (Dust, Wildfire)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Health Effects</div>
+<div class="mm-node mm-l2">Respiratory: Asthma, COPD, Cancer, Infection</div>
+<div class="mm-node mm-l2">Cardiovascular: MI, Stroke, HTN, HF</div>
+<div class="mm-node mm-l2">Neuro: Cognitive, Dementia, Stroke</div>
+<div class="mm-node mm-l2">Reproductive: LBW, PTB</div>
+<div class="mm-node mm-l2">Cancer: Lung (IARC 1)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Vulnerable</div>
+<div class="mm-node mm-l2">Children (Lung Growth)</div>
+<div class="mm-node mm-l2">Elderly (Comorbidities)</div>
+<div class="mm-node mm-l2">Pregnant (LBW, PTB)</div>
+<div class="mm-node mm-l2">Cardio/Pulmonary Disease</div>
+<div class="mm-node mm-l2">Low Income</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Guidelines</div>
+<div class="mm-node mm-l2">WHO 2021 AQG</div>
+<div class="mm-node mm-l2">AQI Categories</div>
+<div class="mm-node mm-l2">NAAQS</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Control</div>
+<div class="mm-node mm-l2">Source: Transport, Industry, Residential, Agri</div>
+<div class="mm-node mm-l2">Urban Planning</div>
+<div class="mm-node mm-l2">Personal Protection (Limited)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Monitoring</div>
+<div class="mm-node mm-l2">AQI, Monitoring Networks</div>
+<div class="mm-node mm-l2">Satellites, Low-Cost Sensors</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>13. 📋 One-Page Revision Card</h2>
 <table>
@@ -2743,40 +2765,59 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>13. 🗺️ Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Chemical Hazards &amp; Toxicology))
-    Heavy Metals
-      Pb: Neurodev, Anaemia
-      Hg: Neuro, Fetal
-      As: Cancer, Skin, CVD
-      Cd: Renal, Bone
-      Mn: Parkinsonism
-    Pesticides
-      OP: Cholinergic Crisis (Atropine + Pralidoxime)
-      Carbamate: Reversible
-      OC: Persistent, Endocrine
-      Pyrethroid: Low Mammalian Tox
-      Glyphosate: 2A Carcinogen
-    Industrial Chemicals
-      Asbestos: Mesothelioma, Asbestosis
-      Silica: Silicosis, Lung Ca, Autoimmune
-      Benzene: AML
-      Vinyl Chloride: Angiosarcoma
-      TCE/Perc: Renal/Liver Ca
-      Dioxins/Furans/PCBs: Chloracne, Endocrine, Cancer
-    PFAS
-      Forever Chemicals
-      Immune, Thyroid, Cancer, Developmental
-      Drinking Water = Major Route
-    Radiation
-      Ionising: Radon (#2 Lung Ca), Medical, Occupational, Nuclear
-      Non-Ionising: UV (Skin Cancer), RF/EMF (2B)
-    Risk Assessment
-      Hazard ID → Dose-Response → Exposure → Risk Char
-    Biomonitoring
-      Blood (Recent), Urine (Excreted), Hair (Long-term/MeHg), Nails, Breast Milk
-    Regulation
-      REACH, GHS, Stockholm, Rotterdam, Basel, Minamata, IARC</pre>
+<div class="mindmap">
+<div class="mm-root">Chemical Hazards &amp; Toxicology</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Heavy Metals</div>
+<div class="mm-node mm-l2">Pb: Neurodev, Anaemia</div>
+<div class="mm-node mm-l2">Hg: Neuro, Fetal</div>
+<div class="mm-node mm-l2">As: Cancer, Skin, CVD</div>
+<div class="mm-node mm-l2">Cd: Renal, Bone</div>
+<div class="mm-node mm-l2">Mn: Parkinsonism</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Pesticides</div>
+<div class="mm-node mm-l2">OP: Cholinergic Crisis (Atropine + Pralidoxime)</div>
+<div class="mm-node mm-l2">Carbamate: Reversible</div>
+<div class="mm-node mm-l2">OC: Persistent, Endocrine</div>
+<div class="mm-node mm-l2">Pyrethroid: Low Mammalian Tox</div>
+<div class="mm-node mm-l2">Glyphosate: 2A Carcinogen</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Industrial Chemicals</div>
+<div class="mm-node mm-l2">Asbestos: Mesothelioma, Asbestosis</div>
+<div class="mm-node mm-l2">Silica: Silicosis, Lung Ca, Autoimmune</div>
+<div class="mm-node mm-l2">Benzene: AML</div>
+<div class="mm-node mm-l2">Vinyl Chloride: Angiosarcoma</div>
+<div class="mm-node mm-l2">TCE/Perc: Renal/Liver Ca</div>
+<div class="mm-node mm-l2">Dioxins/Furans/PCBs: Chloracne, Endocrine, Cancer</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">PFAS</div>
+<div class="mm-node mm-l2">Forever Chemicals</div>
+<div class="mm-node mm-l2">Immune, Thyroid, Cancer, Developmental</div>
+<div class="mm-node mm-l2">Drinking Water = Major Route</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Radiation</div>
+<div class="mm-node mm-l2">Ionising: Radon (#2 Lung Ca), Medical, Occupational, Nuclear</div>
+<div class="mm-node mm-l2">Non-Ionising: UV (Skin Cancer), RF/EMF (2B)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Risk Assessment</div>
+<div class="mm-node mm-l2">Hazard ID → Dose-Response → Exposure → Risk Char</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Biomonitoring</div>
+<div class="mm-node mm-l2">Blood (Recent), Urine (Excreted), Hair (Long-term/MeHg), Nails, Breast Milk</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Regulation</div>
+<div class="mm-node mm-l2">REACH, GHS, Stockholm, Rotterdam, Basel, Minamata, IARC</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>14. 📋 One-Page Revision Card</h2>
 <table>
@@ -3093,47 +3134,62 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>10. 🗺️ Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Climate Change &amp; Health))
-    Direct Impacts
-      Heat: Stroke, Exhaustion, CVD, Renal
-      Extreme Weather: Floods, Cyclones, Fires, Droughts
-      UV: Skin Cancer, Cataracts, Immune Suppression
-    Indirect Impacts
-      Vector-Borne
-        Malaria, Dengue, Zika, Chikungunya
-        Lyme, TBE, Leishmania
-        Expansion: Latitude/Altitude/Season
-      Water/Food-Borne
-        Cholera, Vibrio, Typhoid
-        Floods/Droughts
-        Mycotoxins, Vibrio
-      Air Quality
-        O3 + Heat, Wildfire PM2.5, Pollen
-      Food Security
-        Yields ↓, Nutrients ↓, Fisheries ↓
-      Mental Health
-        PTSD, Eco-anxiety, Heat Suicide, Displacement
-    Vulnerable Populations
-      Children, Elderly, Pregnant
-      Chronic Disease
-      Poor, Coastal, Arctic, Urban, Indigenous
-    Mitigation (Co-Benefits)
-      Energy: Coal→Renewables = Clean Air
-      Transport: Active Travel = Physical Activity
-      Food: Plant-Based = Health + Planet
-      Buildings: Efficiency = Comfort + Health
-    Adaptation
-      Heat Plans + Early Warning
-      Flood Defences + WASH
-      Surveillance + Vaccines
-      Climate-Smart Ag + Food Safety
-      Health System Resilience
-    Planetary Health
-      9 Boundaries: Climate, Biodiversity, N/P, Land, Ocean, Water, Ozone, Aerosol, Novel Entities
-      One Health: Human + Animal + Environment
-      SDGs: 3, 13, 2, 6, 7, 11, 15, 17
-      Just Transition</pre>
+<div class="mindmap">
+<div class="mm-root">Climate Change &amp; Health</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Direct Impacts</div>
+<div class="mm-node mm-l2">Heat: Stroke, Exhaustion, CVD, Renal</div>
+<div class="mm-node mm-l2">Extreme Weather: Floods, Cyclones, Fires, Droughts</div>
+<div class="mm-node mm-l2">UV: Skin Cancer, Cataracts, Immune Suppression</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Indirect Impacts</div>
+<div class="mm-node mm-l2">Vector-Borne</div>
+<div class="mm-node mm-l3">– Malaria, Dengue, Zika, Chikungunya</div>
+<div class="mm-node mm-l3">– Lyme, TBE, Leishmania</div>
+<div class="mm-node mm-l3">– Expansion: Latitude/Altitude/Season</div>
+<div class="mm-node mm-l2">Water/Food-Borne</div>
+<div class="mm-node mm-l3">– Cholera, Vibrio, Typhoid</div>
+<div class="mm-node mm-l3">– Floods/Droughts</div>
+<div class="mm-node mm-l3">– Mycotoxins, Vibrio</div>
+<div class="mm-node mm-l2">Air Quality</div>
+<div class="mm-node mm-l3">– O3 + Heat, Wildfire PM2.5, Pollen</div>
+<div class="mm-node mm-l2">Food Security</div>
+<div class="mm-node mm-l3">– Yields ↓, Nutrients ↓, Fisheries ↓</div>
+<div class="mm-node mm-l2">Mental Health</div>
+<div class="mm-node mm-l3">– PTSD, Eco-anxiety, Heat Suicide, Displacement</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Vulnerable Populations</div>
+<div class="mm-node mm-l2">Children, Elderly, Pregnant</div>
+<div class="mm-node mm-l2">Chronic Disease</div>
+<div class="mm-node mm-l2">Poor, Coastal, Arctic, Urban, Indigenous</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mitigation (Co-Benefits)</div>
+<div class="mm-node mm-l2">Energy: Coal→Renewables = Clean Air</div>
+<div class="mm-node mm-l2">Transport: Active Travel = Physical Activity</div>
+<div class="mm-node mm-l2">Food: Plant-Based = Health + Planet</div>
+<div class="mm-node mm-l2">Buildings: Efficiency = Comfort + Health</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Adaptation</div>
+<div class="mm-node mm-l2">Heat Plans + Early Warning</div>
+<div class="mm-node mm-l2">Flood Defences + WASH</div>
+<div class="mm-node mm-l2">Surveillance + Vaccines</div>
+<div class="mm-node mm-l2">Climate-Smart Ag + Food Safety</div>
+<div class="mm-node mm-l2">Health System Resilience</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Planetary Health</div>
+<div class="mm-node mm-l2">9 Boundaries: Climate, Biodiversity, N/P, Land, Ocean, Water, Ozone, Aerosol, Novel Entities</div>
+<div class="mm-node mm-l2">One Health: Human + Animal + Environment</div>
+<div class="mm-node mm-l2">SDGs: 3, 13, 2, 6, 7, 11, 15, 17</div>
+<div class="mm-node mm-l2">Just Transition</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>11. 📋 One-Page Revision Card</h2>
 <table>
@@ -3307,11 +3363,24 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>5. 📖 Disaster Health Management Cycle</h2>
-<pre class="mermaid">flowchart LR
-    A[**Mitigation**] --&gt; B[**Preparedness**]
-    B --&gt; C[**Response**]
-    C --&gt; D[**Recovery**]
-    D --&gt; A</pre>
+<div class="flowchart" data-dir="LR">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">**Mitigation**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Preparedness**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**Response**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">**Recovery**</div>
+</div>
+</div>
 <h3>1. Mitigation (Pre-Disaster)</h3>
 <table>
 <tr><th>Action</th><th>Examples</th></tr>
@@ -3537,40 +3606,59 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>13. 🗺️ Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Environmental Health Emergencies))
-    Natural Disasters
-      Floods: Drowning, Waterborne, Vector, Mental
-      Cyclones: Surge, Wind, Post-Flood Risks
-      Earthquakes: Trauma, Crush Syndrome, Building Collapse
-      Tsunami: Drowning, Saltwater Wounds
-      Volcanic: Ash (Resp), Pyroclastic (Burns), Gases, Lahars
-    Man-Made
-      Chemical: Cl2, NH3, CN, Phosgene, Vesicants, Nerve Agents
-      Radiation: KI, ARS Stages, Decontamination
-      Industrial: Explosion, Collapse, Transport
-    Disaster Cycle
-      Mitigation: Structural/Non-Structural
-      Preparedness: EWS, Surge Capacity, Training, Stockpiles
-      Response: SAR, Triage, WASH, Surveillance, Vaccines, Coordination (ICS)
-      Recovery: Health System, Mental Health, Infrastructure, Livelihoods
-    Public Health Response
-      WASH: 15L/d, Cl Residual, Latrines, Hygiene
-      Surveillance: EWARS, Syndromic, Lab, Outbreak Response
-      Vaccines: Measles, Cholera OCV, Meningitis, Hep A
-      Nutrition, MHPSS (PFA, Community, Specialised)
-    Health System
-      Surge Capacity (Conventional/Contingency/Crisis)
-      Mass Casualty Plans, Decontamination, Supply Chain
-      Triage (START/SALT), Mass Casualty Plans
-    Mental Health
-      PFA, Community MHPSS, PTSD/Depression/Anxiety
-    Preparedness
-      EWS: Risk Knowledge, Monitoring, Dissemination, Response Capability
-      Surge Capacity: Conventional/Contingency/Crisis
-      Community Resilience: Social Capital, Local Knowledge, Equity
-    One Health
-      Zoonotic Spillover, Climate Change, Ecosystem Health</pre>
+<div class="mindmap">
+<div class="mm-root">Environmental Health Emergencies</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Natural Disasters</div>
+<div class="mm-node mm-l2">Floods: Drowning, Waterborne, Vector, Mental</div>
+<div class="mm-node mm-l2">Cyclones: Surge, Wind, Post-Flood Risks</div>
+<div class="mm-node mm-l2">Earthquakes: Trauma, Crush Syndrome, Building Collapse</div>
+<div class="mm-node mm-l2">Tsunami: Drowning, Saltwater Wounds</div>
+<div class="mm-node mm-l2">Volcanic: Ash (Resp), Pyroclastic (Burns), Gases, Lahars</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Man-Made</div>
+<div class="mm-node mm-l2">Chemical: Cl2, NH3, CN, Phosgene, Vesicants, Nerve Agents</div>
+<div class="mm-node mm-l2">Radiation: KI, ARS Stages, Decontamination</div>
+<div class="mm-node mm-l2">Industrial: Explosion, Collapse, Transport</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Disaster Cycle</div>
+<div class="mm-node mm-l2">Mitigation: Structural/Non-Structural</div>
+<div class="mm-node mm-l2">Preparedness: EWS, Surge Capacity, Training, Stockpiles</div>
+<div class="mm-node mm-l2">Response: SAR, Triage, WASH, Surveillance, Vaccines, Coordination (ICS)</div>
+<div class="mm-node mm-l2">Recovery: Health System, Mental Health, Infrastructure, Livelihoods</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Public Health Response</div>
+<div class="mm-node mm-l2">WASH: 15L/d, Cl Residual, Latrines, Hygiene</div>
+<div class="mm-node mm-l2">Surveillance: EWARS, Syndromic, Lab, Outbreak Response</div>
+<div class="mm-node mm-l2">Vaccines: Measles, Cholera OCV, Meningitis, Hep A</div>
+<div class="mm-node mm-l2">Nutrition, MHPSS (PFA, Community, Specialised)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Health System</div>
+<div class="mm-node mm-l2">Surge Capacity (Conventional/Contingency/Crisis)</div>
+<div class="mm-node mm-l2">Mass Casualty Plans, Decontamination, Supply Chain</div>
+<div class="mm-node mm-l2">Triage (START/SALT), Mass Casualty Plans</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mental Health</div>
+<div class="mm-node mm-l2">PFA, Community MHPSS, PTSD/Depression/Anxiety</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Preparedness</div>
+<div class="mm-node mm-l2">EWS: Risk Knowledge, Monitoring, Dissemination, Response Capability</div>
+<div class="mm-node mm-l2">Surge Capacity: Conventional/Contingency/Crisis</div>
+<div class="mm-node mm-l2">Community Resilience: Social Capital, Local Knowledge, Equity</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">One Health</div>
+<div class="mm-node mm-l2">Zoonotic Spillover, Climate Change, Ecosystem Health</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>14. 📋 One-Page Revision Card</h2>
 <table>
@@ -3845,11 +3933,28 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>5. 📖 Risk Assessment Framework (WHO/IPCS)</h2>
-<pre class="mermaid">flowchart TD
-    A[Hazard Identification] --&gt; B[Dose-Response Assessment]
-    B --&gt; C[Exposure Assessment]
-    C --&gt; D[Risk Characterization]
-    D --&gt; E[Risk Management / Communication]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hazard Identification</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Dose-Response Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Exposure Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Risk Characterization</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Risk Management / Communication</div>
+</div>
+</div>
 <h3>Four Steps</h3>
 <table>
 <tr><th>Step</th><th>Description</th><th>Key Methods</th></tr>
@@ -3893,15 +3998,44 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>9. 📖 Environmental Health Assessment — Stepwise</h2>
-<pre class="mermaid">flowchart TD
-    A[Identify Concern / Hazard] --&gt; B[Literature Review / Existing Data]
-    B --&gt; C{Hypothesis Generation}
-    C --&gt; D[Study Design: Cohort / Case-Control / Cross-Sectional / Time-Series]
-    D --&gt; E[Exposure Assessment]
-    E --&gt; F[Health Outcome Assessment]
-    F --&gt; G[Statistical Analysis / Confounding Control]
-    G --&gt; H[Risk Characterization / Uncertainty]
-    H --&gt; I[Risk Communication / Policy Recommendation]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Identify Concern / Hazard</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Literature Review / Existing Data</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Hypothesis Generation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Study Design: Cohort / Case-Control / Cross-Sectional / Time-Series</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Exposure Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Health Outcome Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Statistical Analysis / Confounding Control</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Risk Characterization / Uncertainty</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Risk Communication / Policy Recommendation</div>
+</div>
+</div>
 <hr>
 <h2>10. 📖 Health Impact Assessment (HIA) — Steps</h2>
 <table>
@@ -4016,42 +4150,59 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>14. 🗺️ Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Environmental Medicine Fundamentals))
-    Definition
-      Environment ↔ Human Health
-      Prevention focus
-    Determinants
-      Physical (radiation, noise, temp)
-      Chemical (pollutants, metals, POPs)
-      Biological (pathogens, allergens, vectors)
-      Social (housing, transport, inequality)
-    Exposure Pathways
-      Inhalation (air)
-      Ingestion (water, food, soil)
-      Dermal (skin)
-      Transplacental
-    Risk Assessment (4 Steps)
-      Hazard ID
-      Dose-Response
-      Exposure Assessment
-      Risk Characterization
-    Toxicology Concepts
-      NOAEL, LOAEL, BMD
-      RfD, CSF, UF
-      Threshold vs Non-threshold
-    Vulnerable Groups
-      Children (neurodev)
-      Pregnant (placental)
-      Elderly (frailty)
-      Workers (high exposure)
-      Poor (exposure + access)
-    Assessment Tools
-      Monitoring (air, water, soil)
-      Biomonitoring (blood, urine)
-      HIA (policy/projects)
-      Epidemiology
-      Biomarkers</pre>
+<div class="mindmap">
+<div class="mm-root">Environmental Medicine Fundamentals</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Definition</div>
+<div class="mm-node mm-l2">Environment ↔ Human Health</div>
+<div class="mm-node mm-l2">Prevention focus</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Determinants</div>
+<div class="mm-node mm-l2">Physical (radiation, noise, temp)</div>
+<div class="mm-node mm-l2">Chemical (pollutants, metals, POPs)</div>
+<div class="mm-node mm-l2">Biological (pathogens, allergens, vectors)</div>
+<div class="mm-node mm-l2">Social (housing, transport, inequality)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Exposure Pathways</div>
+<div class="mm-node mm-l2">Inhalation (air)</div>
+<div class="mm-node mm-l2">Ingestion (water, food, soil)</div>
+<div class="mm-node mm-l2">Dermal (skin)</div>
+<div class="mm-node mm-l2">Transplacental</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Risk Assessment (4 Steps)</div>
+<div class="mm-node mm-l2">Hazard ID</div>
+<div class="mm-node mm-l2">Dose-Response</div>
+<div class="mm-node mm-l2">Exposure Assessment</div>
+<div class="mm-node mm-l2">Risk Characterization</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Toxicology Concepts</div>
+<div class="mm-node mm-l2">NOAEL, LOAEL, BMD</div>
+<div class="mm-node mm-l2">RfD, CSF, UF</div>
+<div class="mm-node mm-l2">Threshold vs Non-threshold</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Vulnerable Groups</div>
+<div class="mm-node mm-l2">Children (neurodev)</div>
+<div class="mm-node mm-l2">Pregnant (placental)</div>
+<div class="mm-node mm-l2">Elderly (frailty)</div>
+<div class="mm-node mm-l2">Workers (high exposure)</div>
+<div class="mm-node mm-l2">Poor (exposure + access)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Assessment Tools</div>
+<div class="mm-node mm-l2">Monitoring (air, water, soil)</div>
+<div class="mm-node mm-l2">Biomonitoring (blood, urine)</div>
+<div class="mm-node mm-l2">HIA (policy/projects)</div>
+<div class="mm-node mm-l2">Epidemiology</div>
+<div class="mm-node mm-l2">Biomarkers</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>15. 📋 One-Page Revision Card</h2>
 <table>
@@ -4424,49 +4575,68 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>16. 🗺️ Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Occupational Health))
-    Principles
-      Hierarchy of Controls
-      Risk Assessment (COSHH)
-      Health Surveillance
-      Fitness for Work
-    Respiratory
-      Pneumoconioses
-        Silicosis (Eggshell, PMF)
-        Asbestosis (Pleural Plaques, Mesothelioma)
-        CWP (PMF)
-        Berylliosis, Siderosis, Stannosis
-        Byssinosis, Bagassosis, Farmer's Lung
-      Occupational Asthma
-        Sensitiser (HMW/LMW)
-        Irritant (RADS/IIA)
-        Work-Exacerbated
-    Dermatoses
-      Allergic Contact (Patch Test)
-      Irritant Contact
-      Contact Urticaria
-      Skin Cancer (Arsenic, Tar, UV)
-    Musculoskeletal
-      WRULDs, CTS, Back Pain
-      HAVS (VWF + Sensorineural)
-    Noise
-      NIHL (4-6 kHz Notch)
-      Audiometry Surveillance
-    Cancers
-      Mesothelioma (Asbestos)
-      Lung (Asbestos, Arsenic, Cr(VI), Ni, Diesel)
-      Bladder (Aromatic Amines)
-      Nasal Sinus (Wood Dust, Formaldehyde)
-      Leukaemia (Benzene, Radiation)
-      Skin (Arsenic, Tar, UV)
-    Surveillance
-      Biological Monitoring (Pb, Cd, Hg, ChE)
-      Fitness for Work
-      Pre-Placement, Periodic, RTW
-    Legislation
-      HSWA 1974, COSHH, RIDDOR, ILO
-      Compensation (Prescribed Diseases)</pre>
+<div class="mindmap">
+<div class="mm-root">Occupational Health</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Principles</div>
+<div class="mm-node mm-l2">Hierarchy of Controls</div>
+<div class="mm-node mm-l2">Risk Assessment (COSHH)</div>
+<div class="mm-node mm-l2">Health Surveillance</div>
+<div class="mm-node mm-l2">Fitness for Work</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Respiratory</div>
+<div class="mm-node mm-l2">Pneumoconioses</div>
+<div class="mm-node mm-l3">– Silicosis (Eggshell, PMF)</div>
+<div class="mm-node mm-l3">– Asbestosis (Pleural Plaques, Mesothelioma)</div>
+<div class="mm-node mm-l3">– CWP (PMF)</div>
+<div class="mm-node mm-l3">– Berylliosis, Siderosis, Stannosis</div>
+<div class="mm-node mm-l3">– Byssinosis, Bagassosis, Farmer's Lung</div>
+<div class="mm-node mm-l2">Occupational Asthma</div>
+<div class="mm-node mm-l3">– Sensitiser (HMW/LMW)</div>
+<div class="mm-node mm-l3">– Irritant (RADS/IIA)</div>
+<div class="mm-node mm-l3">– Work-Exacerbated</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Dermatoses</div>
+<div class="mm-node mm-l2">Allergic Contact (Patch Test)</div>
+<div class="mm-node mm-l2">Irritant Contact</div>
+<div class="mm-node mm-l2">Contact Urticaria</div>
+<div class="mm-node mm-l2">Skin Cancer (Arsenic, Tar, UV)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Musculoskeletal</div>
+<div class="mm-node mm-l2">WRULDs, CTS, Back Pain</div>
+<div class="mm-node mm-l2">HAVS (VWF + Sensorineural)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Noise</div>
+<div class="mm-node mm-l2">NIHL (4-6 kHz Notch)</div>
+<div class="mm-node mm-l2">Audiometry Surveillance</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Cancers</div>
+<div class="mm-node mm-l2">Mesothelioma (Asbestos)</div>
+<div class="mm-node mm-l2">Lung (Asbestos, Arsenic, Cr(VI), Ni, Diesel)</div>
+<div class="mm-node mm-l2">Bladder (Aromatic Amines)</div>
+<div class="mm-node mm-l2">Nasal Sinus (Wood Dust, Formaldehyde)</div>
+<div class="mm-node mm-l2">Leukaemia (Benzene, Radiation)</div>
+<div class="mm-node mm-l2">Skin (Arsenic, Tar, UV)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Surveillance</div>
+<div class="mm-node mm-l2">Biological Monitoring (Pb, Cd, Hg, ChE)</div>
+<div class="mm-node mm-l2">Fitness for Work</div>
+<div class="mm-node mm-l2">Pre-Placement, Periodic, RTW</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Legislation</div>
+<div class="mm-node mm-l2">HSWA 1974, COSHH, RIDDOR, ILO</div>
+<div class="mm-node mm-l2">Compensation (Prescribed Diseases)</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>17. 📋 One-Page Revision Card</h2>
 <table>
@@ -4795,35 +4965,48 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>12. 🗺️ Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Soil &amp; Food Contamination))
-    Soil Contamination
-      Heavy Metals: Pb, Cd, Hg, As
-      POPs: Dioxins, PCBs, OCPs
-      Radionuclides
-      Urban Gardening Risks
-      Mitigation: Test, Raised Beds, pH, Wash
-    Foodborne Pathogens
-      Salmonella, Campylobacter, Listeria
-      EHEC, Norovirus, Hep A
-      Botulism, Staph aureus
-      Bacillus cereus
-      Vibrio, Clostridium perfringens
-    Chemical Contaminants
-      Mycotoxins: Aflatoxin, Ochratoxin, Fumonisin, DON, ZEN
-      Heavy Metals: Pb, Cd, Hg, As
-      Pesticides: OP, Carbamate, OC, Pyrethroid, Glyphosate
-      Vet Drugs: Abx, Hormones, Beta-agonists
-      Additives: Preservatives, Colours, Sweeteners
-      Adulterants: Melamine, Sudan dyes
-    Food Safety Systems
-      HACCP (7 Principles)
-      Codex Alimentarius (MRLs, MLs, ADIs)
-      Outbreak Investigation
-    Climate Change
-      ↑ Mycotoxins, Vibrio, Aflatoxin
-      ↓ Crop Nutrients
-      ↑ Pests/Pesticides</pre>
+<div class="mindmap">
+<div class="mm-root">Soil &amp; Food Contamination</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Soil Contamination</div>
+<div class="mm-node mm-l2">Heavy Metals: Pb, Cd, Hg, As</div>
+<div class="mm-node mm-l2">POPs: Dioxins, PCBs, OCPs</div>
+<div class="mm-node mm-l2">Radionuclides</div>
+<div class="mm-node mm-l2">Urban Gardening Risks</div>
+<div class="mm-node mm-l2">Mitigation: Test, Raised Beds, pH, Wash</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Foodborne Pathogens</div>
+<div class="mm-node mm-l2">Salmonella, Campylobacter, Listeria</div>
+<div class="mm-node mm-l2">EHEC, Norovirus, Hep A</div>
+<div class="mm-node mm-l2">Botulism, Staph aureus</div>
+<div class="mm-node mm-l2">Bacillus cereus</div>
+<div class="mm-node mm-l2">Vibrio, Clostridium perfringens</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Chemical Contaminants</div>
+<div class="mm-node mm-l2">Mycotoxins: Aflatoxin, Ochratoxin, Fumonisin, DON, ZEN</div>
+<div class="mm-node mm-l2">Heavy Metals: Pb, Cd, Hg, As</div>
+<div class="mm-node mm-l2">Pesticides: OP, Carbamate, OC, Pyrethroid, Glyphosate</div>
+<div class="mm-node mm-l2">Vet Drugs: Abx, Hormones, Beta-agonists</div>
+<div class="mm-node mm-l2">Additives: Preservatives, Colours, Sweeteners</div>
+<div class="mm-node mm-l2">Adulterants: Melamine, Sudan dyes</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Food Safety Systems</div>
+<div class="mm-node mm-l2">HACCP (7 Principles)</div>
+<div class="mm-node mm-l2">Codex Alimentarius (MRLs, MLs, ADIs)</div>
+<div class="mm-node mm-l2">Outbreak Investigation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Climate Change</div>
+<div class="mm-node mm-l2">↑ Mycotoxins, Vibrio, Aflatoxin</div>
+<div class="mm-node mm-l2">↓ Crop Nutrients</div>
+<div class="mm-node mm-l2">↑ Pests/Pesticides</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>13. 📋 One-Page Revision Card</h2>
 <table>
@@ -5032,16 +5215,48 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>8. 📖 Water Safety Plans (WSP) — WHO Framework</h2>
-<pre class="mermaid">flowchart TD
-    A[**WSP Development**] --&gt; B[**Team Assembly** (Multi-disciplinary)]
-    B --&gt; C[**System Description** (Source → Consumer)]
-    C --&gt; D[**Hazard Identification &amp; Risk Assessment**]
-    D --&gt; E[**Critical Control Points (CCPs)**]
-    E --&gt; F[**Operational Monitoring** (CCP Parameters)]
-    F --&gt; G[**Corrective Actions** (Deviation Response)]
-    G --&gt; H[**Verification** (Audit, Water Quality Monitoring)]
-    H --&gt; I[**Documentation &amp; Communication**]
-    I --&gt; J[**Review &amp; Improvement** (Periodic, Incident-Triggered)]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">**WSP Development**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">**Team Assembly** (Multi-disciplinary)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">**System Description** (Source → Consumer)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">**Hazard Identification &amp; Risk Assessment**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">**Critical Control Points (CCPs)**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">**Operational Monitoring** (CCP Parameters)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">**Corrective Actions** (Deviation Response)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">**Verification** (Audit, Water Quality Monitoring)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">**Documentation &amp; Communication**</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">**Review &amp; Improvement** (Periodic, Incident-Triggered)</div>
+</div>
+</div>
 <h3>Key Components</h3>
 <table>
 <tr><th>Component</th><th>Description</th></tr>
@@ -5186,30 +5401,43 @@ footer a:hover { color: var(--accent); }
 </table>
 <hr>
 <h2>13. 🗺️ Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Water Pollution &amp; Waterborne Diseases))
-    Contaminants
-      Microbiological: E. coli, Enterococci, Pathogens
-      Chemical: As, Pb, Hg, F, NO3, Pesticides, PFAS, DBPs
-      Radiological: Radon, U
-      Physical: Turbidity, Colour, pH
-    Diseases
-      Cholera: Rice-Water Stool, ORS, Doxy, OCV
-      Typhoid: Step-Ladder Fever, Rose Spots, Ceftriaxone
-      Hep A/E: Faecal-Oral, Hep A Vaccine, Hep E Pregnancy Risk
-      Protozoa: Giardia (Steatorrhoea), Crypto (Cl-Resistant), Cyclospora
-    Treatment
-      Multi-Barrier: Screen → Coag/Floc/Sed → Filt → Disinfect
-      Disinfection: Chlorine (Residual), UV/Ozone (Crypto), ClO2
-      CT Value = Conc × Time
-      POU: Boil, Chlorine Tabs, SODIS, Ceramic, Sachets
-    WSP
-      System → Hazard ID → CCP → Monitor → Correct → Verify
-      CCP: Disinfection CT, Filter Turbidity, pH
-    Recreational
-      E. coli / Enterococci Limits
-      Cyanobacteria Alerts
-      pH 6.5-8.5</pre>
+<div class="mindmap">
+<div class="mm-root">Water Pollution &amp; Waterborne Diseases</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Contaminants</div>
+<div class="mm-node mm-l2">Microbiological: E. coli, Enterococci, Pathogens</div>
+<div class="mm-node mm-l2">Chemical: As, Pb, Hg, F, NO3, Pesticides, PFAS, DBPs</div>
+<div class="mm-node mm-l2">Radiological: Radon, U</div>
+<div class="mm-node mm-l2">Physical: Turbidity, Colour, pH</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diseases</div>
+<div class="mm-node mm-l2">Cholera: Rice-Water Stool, ORS, Doxy, OCV</div>
+<div class="mm-node mm-l2">Typhoid: Step-Ladder Fever, Rose Spots, Ceftriaxone</div>
+<div class="mm-node mm-l2">Hep A/E: Faecal-Oral, Hep A Vaccine, Hep E Pregnancy Risk</div>
+<div class="mm-node mm-l2">Protozoa: Giardia (Steatorrhoea), Crypto (Cl-Resistant), Cyclospora</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">Multi-Barrier: Screen → Coag/Floc/Sed → Filt → Disinfect</div>
+<div class="mm-node mm-l2">Disinfection: Chlorine (Residual), UV/Ozone (Crypto), ClO2</div>
+<div class="mm-node mm-l2">CT Value = Conc × Time</div>
+<div class="mm-node mm-l2">POU: Boil, Chlorine Tabs, SODIS, Ceramic, Sachets</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">WSP</div>
+<div class="mm-node mm-l2">System → Hazard ID → CCP → Monitor → Correct → Verify</div>
+<div class="mm-node mm-l2">CCP: Disinfection CT, Filter Turbidity, pH</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Recreational</div>
+<div class="mm-node mm-l2">E. coli / Enterococci Limits</div>
+<div class="mm-node mm-l2">Cyanobacteria Alerts</div>
+<div class="mm-node mm-l2">pH 6.5-8.5</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>14. 📋 One-Page Revision Card</h2>
 <table>
@@ -5448,7 +5676,7 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 04:27 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 09:37 UTC · Davidson 25th Ed</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>

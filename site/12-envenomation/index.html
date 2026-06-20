@@ -1160,39 +1160,39 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   header.site { display: none; }
   .mobile-bar { display: flex; }
 
-  /* === MOBILE BAR: compact 2-row; full-width search is visible === */
+  /* === MOBILE BAR: strict single-line header === */
   .mobile-bar {
     padding: 6px 8px;
     gap: 6px;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
-  .mobile-bar .row.top {
-    display: flex;
-    justify-content: space-between;
-    min-width: 0;
-  }
+  .mobile-bar .row.top,
   .mobile-bar .row.search-row {
-    display: flex;
-    width: 100%;
-    min-width: 0;
+    display: contents;
   }
   .mobile-bar .logo-mini {
-    font-size: 13px;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
+    gap: 0;
   }
   .mobile-bar .logo-mini .logo { font-size: 16px; }
-  .mobile-bar .logo-mini a {
-    font-size: 13px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .mobile-bar .logo-mini a,
+  .mobile-bar .current-ch-label,
+  .mobile-bar .github-btn,
+  .mobile-bar .stats-mini {
+    display: none !important;
   }
   .mobile-bar .menu-btn {
     padding: 6px 8px;
     font-size: 12px;
     flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .mobile-bar .search-row {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .mobile-bar .search-row .search-box-m {
     flex: 1 1 auto;
@@ -1208,17 +1208,6 @@ header.site .search-box .search-empty strong { color: var(--accent); }
     left: 8px;
     font-size: 11px;
   }
-  .mobile-bar .current-ch-label {
-    font-size: 10px;
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-  .mobile-bar .github-btn {
-    padding: 6px 8px;
-    font-size: 11px;
-    flex: 0 0 auto;
-  }
-  .mobile-bar .stats-mini { display: none; }
 
   /* === HIDE DUPLICATE MOBILE TOOLBAR SEARCH (mobile-bar already has search) === */
   .chapter-mobile .chapter-toolbar {
@@ -2413,49 +2402,66 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Antivenom Reactions))
-    Early_Anaphylactic
-      Timing[Minutes to &lt;1h]
-      Type_I_or_complement
-      Features[Urticaria, hypotension, bronchospasm]
-      Management
-        STOP_infusion
-        Adrenaline_IM_0.5mg
-        IV_fluids
-        Antihistamine
-        Steroid
-        Observe_4-6h
-    Pyrogenic
-      Timing[30-60 min]
-      Cause[Endotoxin, cytokines]
-      Features[Fever, rigors, no urticaria]
-      Management
-        Slow_infusion
-        Paracetamol
-        Meperidine_rigors
-    Late_Serum_Sickness
-      Timing[5-14 days]
-      Type_III
-      Features[Fever, rash, arthralgia, proteinuria, lymphadenopathy]
-      Management
-        Prednisolone_1mg/kg_5-7d
-        NSAIDs
-    Biphasic
-      Timing[4-12 h post initial]
-      Observe_4-6h
-    Premedication
-      Not_routine
-      SC_adrenaline_high_risk
-    Restart
-      Premedicate
-      Dilute_1_10
-      Slow_1mL/min
-      Titrate
-    Special
-      Beta_blocker[Glucagon]
-      ACEi[Icatibant, FFP]
-      Pregnancy[Same management]</pre>
+<div class="mindmap">
+<div class="mm-root">Antivenom Reactions</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Early_Anaphylactic</div>
+<div class="mm-node mm-l2">Timing[Minutes to &lt;1h]</div>
+<div class="mm-node mm-l2">Type_I_or_complement</div>
+<div class="mm-node mm-l2">Features[Urticaria, hypotension, bronchospasm]</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– STOP_infusion</div>
+<div class="mm-node mm-l3">– Adrenaline_IM_0.5mg</div>
+<div class="mm-node mm-l3">– IV_fluids</div>
+<div class="mm-node mm-l3">– Antihistamine</div>
+<div class="mm-node mm-l3">– Steroid</div>
+<div class="mm-node mm-l3">– Observe_4-6h</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Pyrogenic</div>
+<div class="mm-node mm-l2">Timing[30-60 min]</div>
+<div class="mm-node mm-l2">Cause[Endotoxin, cytokines]</div>
+<div class="mm-node mm-l2">Features[Fever, rigors, no urticaria]</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Slow_infusion</div>
+<div class="mm-node mm-l3">– Paracetamol</div>
+<div class="mm-node mm-l3">– Meperidine_rigors</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Late_Serum_Sickness</div>
+<div class="mm-node mm-l2">Timing[5-14 days]</div>
+<div class="mm-node mm-l2">Type_III</div>
+<div class="mm-node mm-l2">Features[Fever, rash, arthralgia, proteinuria, lymphadenopathy]</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Prednisolone_1mg/kg_5-7d</div>
+<div class="mm-node mm-l3">– NSAIDs</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Biphasic</div>
+<div class="mm-node mm-l2">Timing[4-12 h post initial]</div>
+<div class="mm-node mm-l2">Observe_4-6h</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Premedication</div>
+<div class="mm-node mm-l2">Not_routine</div>
+<div class="mm-node mm-l2">SC_adrenaline_high_risk</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Restart</div>
+<div class="mm-node mm-l2">Premedicate</div>
+<div class="mm-node mm-l2">Dilute_1_10</div>
+<div class="mm-node mm-l2">Slow_1mL/min</div>
+<div class="mm-node mm-l2">Titrate</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Special</div>
+<div class="mm-node mm-l2">Beta_blocker[Glucagon]</div>
+<div class="mm-node mm-l2">ACEi[Icatibant, FFP]</div>
+<div class="mm-node mm-l2">Pregnancy[Same management]</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>15. One-Page Revision Card</h2>
 <table>
@@ -2904,53 +2910,76 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Antivenom))
-    Mechanism
-      Antibody_Fragments
-      Binds_Venom
-      Neutralisation
-      Clearance[RES, renal]
-    Types
-      IgG[Whole, long t½, more reactions]
-      Fab2[F(ab')₂, intermediate, fewer]
-      Fab[Smallest, short t½, repeat dose]
-    Specificity
-      Monospecific[Single species]
-      Polyvalent[Multiple species]
-    Indications
-      Neurotoxic
-      Coagulopathy
-      CVS_instability
-      AKI
-      Severe_local
-    Dosing
-      Venom_load
-      Not_weight
-      Vials
-      Repeat_6h
-    Administration
-      IV_preferred
-      Slow_start
-      30-60_min_total
-      IM_last_resort
-    Skin_test
-      Not_recommended
-      Poor_PPV
-      Delays
-    Premedication
-      Not_routine
-      SC_adrenaline_high_risk
-    Monitoring
-      Vitals
-      Coagulation
-      Renal
-      Neuro
-      Late_serum_sickness
-    Limits
-      No_necrosis_reversal
-      No_established_paralysis
-      Short_duration</pre>
+<div class="mindmap">
+<div class="mm-root">Antivenom</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Antibody_Fragments</div>
+<div class="mm-node mm-l2">Binds_Venom</div>
+<div class="mm-node mm-l2">Neutralisation</div>
+<div class="mm-node mm-l2">Clearance[RES, renal]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Types</div>
+<div class="mm-node mm-l2">IgG[Whole, long t½, more reactions]</div>
+<div class="mm-node mm-l2">Fab2[F(ab')₂, intermediate, fewer]</div>
+<div class="mm-node mm-l2">Fab[Smallest, short t½, repeat dose]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Specificity</div>
+<div class="mm-node mm-l2">Monospecific[Single species]</div>
+<div class="mm-node mm-l2">Polyvalent[Multiple species]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Indications</div>
+<div class="mm-node mm-l2">Neurotoxic</div>
+<div class="mm-node mm-l2">Coagulopathy</div>
+<div class="mm-node mm-l2">CVS_instability</div>
+<div class="mm-node mm-l2">AKI</div>
+<div class="mm-node mm-l2">Severe_local</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Dosing</div>
+<div class="mm-node mm-l2">Venom_load</div>
+<div class="mm-node mm-l2">Not_weight</div>
+<div class="mm-node mm-l2">Vials</div>
+<div class="mm-node mm-l2">Repeat_6h</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Administration</div>
+<div class="mm-node mm-l2">IV_preferred</div>
+<div class="mm-node mm-l2">Slow_start</div>
+<div class="mm-node mm-l2">30-60_min_total</div>
+<div class="mm-node mm-l2">IM_last_resort</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Skin_test</div>
+<div class="mm-node mm-l2">Not_recommended</div>
+<div class="mm-node mm-l2">Poor_PPV</div>
+<div class="mm-node mm-l2">Delays</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Premedication</div>
+<div class="mm-node mm-l2">Not_routine</div>
+<div class="mm-node mm-l2">SC_adrenaline_high_risk</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Monitoring</div>
+<div class="mm-node mm-l2">Vitals</div>
+<div class="mm-node mm-l2">Coagulation</div>
+<div class="mm-node mm-l2">Renal</div>
+<div class="mm-node mm-l2">Neuro</div>
+<div class="mm-node mm-l2">Late_serum_sickness</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Limits</div>
+<div class="mm-node mm-l2">No_necrosis_reversal</div>
+<div class="mm-node mm-l2">No_established_paralysis</div>
+<div class="mm-node mm-l2">Short_duration</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>15. One-Page Revision Card</h2>
 <table>
@@ -3313,28 +3342,54 @@ footer a:hover { color: var(--accent); }
 <tr><td><strong>Venom detection kit (VDK)</strong></td><td>Australia only</td><td>When available</td><td>Species-specific identification</td></tr>
 </table>
 <h3>Diagnostic Algorithm</h3>
-<pre class="mermaid">flowchart TD
-    A[Suspected Envenomation] --&gt; B[Triage ABCDE]
-    B --&gt; C[History + Examination]
-    C --&gt; D[Identify Animal]
-    D --&gt; E{Type?}
-    E --&gt;|Snake| F[Snake Protocol]
-    E --&gt;|Scorpion| G[Scorpion Protocol]
-    E --&gt;|Spider| H[Spider Protocol]
-    E --&gt;|Marine| I[Marine Protocol]
-    E --&gt;|Hymenoptera| J[Anaphylaxis Protocol]
-    F --&gt; K[Baseline Labs + 20WBCT]
-    G --&gt; L[Vitals + ECG + CXR]
-    H --&gt; M[Pain Score + Neuro Exam]
-    I --&gt; N[Marine Labs + ECG]
-    J --&gt; O[Anaphylaxis Workup]
-    K --&gt; P{Severity Score}
-    L --&gt; P
-    M --&gt; P
-    N --&gt; P
-    P --&gt;|Mild| Q[Observe]
-    P --&gt;|Moderate| R[Admit + Consider AV]
-    P --&gt;|Severe| S[ICU + AV + Monitoring]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Envenomation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Triage ABCDE</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">History + Examination</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Identify Animal</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Type?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Snake Protocol</div>
+<div class="fc-node" data-id="G">Scorpion Protocol</div>
+<div class="fc-node" data-id="H">Spider Protocol</div>
+<div class="fc-node" data-id="I">Marine Protocol</div>
+<div class="fc-node" data-id="J">Anaphylaxis Protocol</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Baseline Labs + 20WBCT</div>
+<div class="fc-node" data-id="L">Vitals + ECG + CXR</div>
+<div class="fc-node" data-id="M">Pain Score + Neuro Exam</div>
+<div class="fc-node" data-id="N">Marine Labs + ECG</div>
+<div class="fc-node" data-id="O">Anaphylaxis Workup</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="P">Severity Score</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="Q">Observe</div>
+<div class="fc-node" data-id="R">Admit + Consider AV</div>
+<div class="fc-node" data-id="S">ICU + AV + Monitoring</div>
+</div>
+</div>
 <hr>
 <h2>7. Differential Diagnosis</h2>
 <table>
@@ -3435,36 +3490,51 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>12. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Clinical Assessment &amp; Scoring))
-    History
-      AMPLE
-      Snake_description
-      First_aid
-      Symptoms_onset
-    Examination
-      Local[Fang marks, swelling, necrosis]
-      Systemic[Neuro, Coag, CVS, Renal]
-      ABCDE
-    Scoring_Systems
-      WHO_Grading[0-4]
-      SSS[Snakebite Severity Score 0-22]
-      SCORPION[0-8]
-      RADS[Redback 0-6]
-    Investigations
-      Bedside[20WBCT, ECG]
-      Coagulation[INR, aPTT, fibrinogen, platelets, D-dimer]
-      Renal[U&amp;E, CK, myoglobin]
-      Other[FBC, LFTs, ABG, CXR, VDK]
-    Management
-      Mild[Observe, ward]
-      Moderate[HDU, consider AV]
-      Severe[ICU, AV, monitoring]
-    Reassessment
-      Vitals_q15min
-      Coag_q6h
-      Neuro_q30-60min
-      Bite_hourly</pre>
+<div class="mindmap">
+<div class="mm-root">Clinical Assessment &amp; Scoring</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">History</div>
+<div class="mm-node mm-l2">AMPLE</div>
+<div class="mm-node mm-l2">Snake_description</div>
+<div class="mm-node mm-l2">First_aid</div>
+<div class="mm-node mm-l2">Symptoms_onset</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Examination</div>
+<div class="mm-node mm-l2">Local[Fang marks, swelling, necrosis]</div>
+<div class="mm-node mm-l2">Systemic[Neuro, Coag, CVS, Renal]</div>
+<div class="mm-node mm-l2">ABCDE</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Scoring_Systems</div>
+<div class="mm-node mm-l2">WHO_Grading[0-4]</div>
+<div class="mm-node mm-l2">SSS[Snakebite Severity Score 0-22]</div>
+<div class="mm-node mm-l2">SCORPION[0-8]</div>
+<div class="mm-node mm-l2">RADS[Redback 0-6]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Investigations</div>
+<div class="mm-node mm-l2">Bedside[20WBCT, ECG]</div>
+<div class="mm-node mm-l2">Coagulation[INR, aPTT, fibrinogen, platelets, D-dimer]</div>
+<div class="mm-node mm-l2">Renal[U&amp;E, CK, myoglobin]</div>
+<div class="mm-node mm-l2">Other[FBC, LFTs, ABG, CXR, VDK]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Mild[Observe, ward]</div>
+<div class="mm-node mm-l2">Moderate[HDU, consider AV]</div>
+<div class="mm-node mm-l2">Severe[ICU, AV, monitoring]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Reassessment</div>
+<div class="mm-node mm-l2">Vitals_q15min</div>
+<div class="mm-node mm-l2">Coag_q6h</div>
+<div class="mm-node mm-l2">Neuro_q30-60min</div>
+<div class="mm-node mm-l2">Bite_hourly</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>13. One-Page Revision Card</h2>
 <table>
@@ -3860,51 +3930,98 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>15. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((General Envenomation Principles))
-    Classification
-      Snakes[Elapid, Viperid, Colubrid]
-      Scorpions
-      Spiders
-      Marine[Jellyfish, Fish, Octopus]
-      Hymenoptera[Bee, Wasp, Ant]
-    Venom_Classes
-      Neurotoxic[Postsynaptic, Presynaptic, Ion channel]
-      Haemotoxic[Procoagulant, Anticoagulant, Platelet]
-      Cytotoxic[PLA2, Cytolysins, Proteases]
-      Cardiotoxic
-      Allergenic
-    First_Aid
-      DO[PIB, Immobilise, Hot water, Vinegar]
-      DONT[Tourniquet, Incision, Ice, Shock, Elevation]
-    Assessment
-      ABCDE[Airway, Breathing, Circulation, Disability, Exposure]
-      Scoring[WHO grading, Snakebite severity, SCORPION]
-    Antivenom
-      Principles[Mechanism, Types, Timing, Dosing]
-      Reactions[Early anaphylaxis, Pyrogenic, Late serum sickness]
-      Monitoring[Coag, Renal, Neuro, Vitals]
-    Disposition
-      Dry_bite[Observe 12-24h]
-      Mild[Observe 24h]
-      Moderate-Severe[ICU, Antivenom, Serial labs]</pre>
+<div class="mindmap">
+<div class="mm-root">General Envenomation Principles</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Classification</div>
+<div class="mm-node mm-l2">Snakes[Elapid, Viperid, Colubrid]</div>
+<div class="mm-node mm-l2">Scorpions</div>
+<div class="mm-node mm-l2">Spiders</div>
+<div class="mm-node mm-l2">Marine[Jellyfish, Fish, Octopus]</div>
+<div class="mm-node mm-l2">Hymenoptera[Bee, Wasp, Ant]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Venom_Classes</div>
+<div class="mm-node mm-l2">Neurotoxic[Postsynaptic, Presynaptic, Ion channel]</div>
+<div class="mm-node mm-l2">Haemotoxic[Procoagulant, Anticoagulant, Platelet]</div>
+<div class="mm-node mm-l2">Cytotoxic[PLA2, Cytolysins, Proteases]</div>
+<div class="mm-node mm-l2">Cardiotoxic</div>
+<div class="mm-node mm-l2">Allergenic</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">First_Aid</div>
+<div class="mm-node mm-l2">DO[PIB, Immobilise, Hot water, Vinegar]</div>
+<div class="mm-node mm-l2">DONT[Tourniquet, Incision, Ice, Shock, Elevation]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Assessment</div>
+<div class="mm-node mm-l2">ABCDE[Airway, Breathing, Circulation, Disability, Exposure]</div>
+<div class="mm-node mm-l2">Scoring[WHO grading, Snakebite severity, SCORPION]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Antivenom</div>
+<div class="mm-node mm-l2">Principles[Mechanism, Types, Timing, Dosing]</div>
+<div class="mm-node mm-l2">Reactions[Early anaphylaxis, Pyrogenic, Late serum sickness]</div>
+<div class="mm-node mm-l2">Monitoring[Coag, Renal, Neuro, Vitals]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Disposition</div>
+<div class="mm-node mm-l2">Dry_bite[Observe 12-24h]</div>
+<div class="mm-node mm-l2">Mild[Observe 24h]</div>
+<div class="mm-node mm-l2">Moderate-Severe[ICU, Antivenom, Serial labs]</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>16. Flowchart: Initial Envenomation Management</h2>
-<pre class="mermaid">flowchart TD
-    A[Suspected Envenomation] --&gt; B[ABCDE Stabilisation]
-    B --&gt; C{Identify Agent}
-    C --&gt;|Snake| D[Snake Protocol]
-    C --&gt;|Scorpion| E[Scorpion Protocol]
-    C --&gt;|Spider| F[Spider Protocol]
-    C --&gt;|Marine| G[Marine Protocol]
-    C --&gt;|Hymenoptera| H[Anaphylaxis Protocol]
-    D --&gt; I[Apply PIB if Elapid / Local Pressure if Viperid]
-    I --&gt; J[Immobilise, IV Access, Labs]
-    J --&gt; K{Systemic Envenomation?}
-    K --&gt;|Yes| L[Antivenom Protocol]
-    K --&gt;|No| M[Observe 12-24h]
-    L --&gt; N[Monitor: Coag, Renal, Neuro, Vitals]
-    N --&gt; O[Disposition]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Envenomation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE Stabilisation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Identify Agent</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Snake Protocol</div>
+<div class="fc-node" data-id="E">Scorpion Protocol</div>
+<div class="fc-node" data-id="F">Spider Protocol</div>
+<div class="fc-node" data-id="G">Marine Protocol</div>
+<div class="fc-node" data-id="H">Anaphylaxis Protocol</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Apply PIB if Elapid / Local Pressure if Viperid</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Immobilise, IV Access, Labs</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Systemic Envenomation?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Antivenom Protocol</div>
+<div class="fc-node" data-id="M">Observe 12-24h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Monitor: Coag, Renal, Neuro, Vitals</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="O">Disposition</div>
+</div>
+</div>
 <hr>
 <h2>24-Hour Recall Prompts</h2>
 <ol>
@@ -4202,51 +4319,98 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>23. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((General Envenomation Principles))
-    Classification
-      Snakes[Elapid, Viperid, Colubrid]
-      Scorpions
-      Spiders
-      Marine[Jellyfish, Fish, Octopus]
-      Hymenoptera[Bee, Wasp, Ant]
-    Venom_Classes
-      Neurotoxic[Postsynaptic, Presynaptic, Ion channel]
-      Haemotoxic[Procoagulant, Anticoagulant, Platelet]
-      Cytotoxic[PLA2, Cytolysins, Proteases]
-      Cardiotoxic
-      Allergenic
-    First_Aid
-      DO[PIB, Immobilise, Hot water, Vinegar]
-      DONT[Tourniquet, Incision, Ice, Shock, Elevation]
-    Assessment
-      ABCDE[Airway, Breathing, Circulation, Disability, Exposure]
-      Scoring[WHO grading, Snakebite severity, SCORPION]
-    Antivenom
-      Principles[Mechanism, Types, Timing, Dosing]
-      Reactions[Early anaphylaxis, Pyrogenic, Late serum sickness]
-      Monitoring[Coag, Renal, Neuro, Vitals]
-    Disposition
-      Dry_bite[Observe 12-24h]
-      Mild[Observe 24h]
-      Moderate-Severe[ICU, Antivenom, Serial labs]</pre>
+<div class="mindmap">
+<div class="mm-root">General Envenomation Principles</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Classification</div>
+<div class="mm-node mm-l2">Snakes[Elapid, Viperid, Colubrid]</div>
+<div class="mm-node mm-l2">Scorpions</div>
+<div class="mm-node mm-l2">Spiders</div>
+<div class="mm-node mm-l2">Marine[Jellyfish, Fish, Octopus]</div>
+<div class="mm-node mm-l2">Hymenoptera[Bee, Wasp, Ant]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Venom_Classes</div>
+<div class="mm-node mm-l2">Neurotoxic[Postsynaptic, Presynaptic, Ion channel]</div>
+<div class="mm-node mm-l2">Haemotoxic[Procoagulant, Anticoagulant, Platelet]</div>
+<div class="mm-node mm-l2">Cytotoxic[PLA2, Cytolysins, Proteases]</div>
+<div class="mm-node mm-l2">Cardiotoxic</div>
+<div class="mm-node mm-l2">Allergenic</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">First_Aid</div>
+<div class="mm-node mm-l2">DO[PIB, Immobilise, Hot water, Vinegar]</div>
+<div class="mm-node mm-l2">DONT[Tourniquet, Incision, Ice, Shock, Elevation]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Assessment</div>
+<div class="mm-node mm-l2">ABCDE[Airway, Breathing, Circulation, Disability, Exposure]</div>
+<div class="mm-node mm-l2">Scoring[WHO grading, Snakebite severity, SCORPION]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Antivenom</div>
+<div class="mm-node mm-l2">Principles[Mechanism, Types, Timing, Dosing]</div>
+<div class="mm-node mm-l2">Reactions[Early anaphylaxis, Pyrogenic, Late serum sickness]</div>
+<div class="mm-node mm-l2">Monitoring[Coag, Renal, Neuro, Vitals]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Disposition</div>
+<div class="mm-node mm-l2">Dry_bite[Observe 12-24h]</div>
+<div class="mm-node mm-l2">Mild[Observe 24h]</div>
+<div class="mm-node mm-l2">Moderate-Severe[ICU, Antivenom, Serial labs]</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>24. Flowchart: Initial Envenomation Management</h2>
-<pre class="mermaid">flowchart TD
-    A[Suspected Envenomation] --&gt; B[ABCDE Stabilisation]
-    B --&gt; C{Identify Agent}
-    C --&gt;|Snake| D[Snake Protocol]
-    C --&gt;|Scorpion| E[Scorpion Protocol]
-    C --&gt;|Spider| F[Spider Protocol]
-    C --&gt;|Marine| G[Marine Protocol]
-    C --&gt;|Hymenoptera| H[Anaphylaxis Protocol]
-    D --&gt; I[Apply PIB if Elapid / Local Pressure if Viperid]
-    I --&gt; J[Immobilise, IV Access, Labs]
-    J --&gt; K{Systemic Envenomation?}
-    K --&gt;|Yes| L[Antivenom Protocol]
-    K --&gt;|No| M[Observe 12-24h]
-    L --&gt; N[Monitor: Coag, Renal, Neuro, Vitals]
-    N --&gt; O[Disposition]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Envenomation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE Stabilisation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Identify Agent</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Snake Protocol</div>
+<div class="fc-node" data-id="E">Scorpion Protocol</div>
+<div class="fc-node" data-id="F">Spider Protocol</div>
+<div class="fc-node" data-id="G">Marine Protocol</div>
+<div class="fc-node" data-id="H">Anaphylaxis Protocol</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Apply PIB if Elapid / Local Pressure if Viperid</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Immobilise, IV Access, Labs</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Systemic Envenomation?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Antivenom Protocol</div>
+<div class="fc-node" data-id="M">Observe 12-24h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Monitor: Coag, Renal, Neuro, Vitals</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="O">Disposition</div>
+</div>
+</div>
 <hr>
 <h2>25. One-Page Revision Card</h2>
 <table>
@@ -4868,60 +5032,107 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Hymenoptera Stings))
-    Bee[*Apis mellifera*]
-      Stinger[Barbed - single sting]
-      Venom[Melittin, PLA2 (Api m 1), Hyaluronidase (Api m 2)]
-      First_Aid[Scrape stinger]
-    Wasp[*Vespula, Polistes*]
-      Stinger[Smooth - multiple stings]
-      Venom[PLA1 (Ves v 1), Antigen 5 (Ves v 5)]
-    Ant[Formicidae]
-      Fire_Ant[Solenopsis]
-        Venom[Solenopsin (alkaloid)]
-        Pustule[24h sterile pustule]
-      Jack_Jumper[Myrmecia]
-        Protein_Venom[Major anaphylaxis AUS]
-        VIT[Available]
-    Anaphylaxis
-      Criteria[Acute + Skin + (Resp/Circ)]
-      First_Line[IM Adrenaline 0.5mg]
-      Adjuncts[Fluids, O2, Antihistamine, Steroid]
-      Biphasic[4-12h, observe 6-12h]
-      Refractory[Glucagon if beta-blocker]
-    Large_Local_Reaction
-      Features[&gt;10cm, 24-48h peak, NO systemic]
-      Rx[Antihistamine, Steroid, Cold]
-    VIT
-      Indication[Recurrent anaphylaxis + positive test]
-      Build_Up[12-16 wks / rush]
-      Maintenance[3-5 years, 100µg q4-8wk]
-      Efficacy[95-98% protection]
-      Omalizumab[Adjunct for reactions]
-    Mastocytosis
-      Tryptase[&gt;20 µg/L]
-      VIT[Higher dose, longer]
-      Omalizumab[Strong adjunct]</pre>
+<div class="mindmap">
+<div class="mm-root">Hymenoptera Stings</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Bee[*Apis mellifera*]</div>
+<div class="mm-node mm-l2">Stinger[Barbed - single sting]</div>
+<div class="mm-node mm-l2">Venom[Melittin, PLA2 (Api m 1), Hyaluronidase (Api m 2)]</div>
+<div class="mm-node mm-l2">First_Aid[Scrape stinger]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Wasp[*Vespula, Polistes*]</div>
+<div class="mm-node mm-l2">Stinger[Smooth - multiple stings]</div>
+<div class="mm-node mm-l2">Venom[PLA1 (Ves v 1), Antigen 5 (Ves v 5)]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Ant[Formicidae]</div>
+<div class="mm-node mm-l2">Fire_Ant[Solenopsis]</div>
+<div class="mm-node mm-l3">– Venom[Solenopsin (alkaloid)]</div>
+<div class="mm-node mm-l3">– Pustule[24h sterile pustule]</div>
+<div class="mm-node mm-l2">Jack_Jumper[Myrmecia]</div>
+<div class="mm-node mm-l3">– Protein_Venom[Major anaphylaxis AUS]</div>
+<div class="mm-node mm-l3">– VIT[Available]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Anaphylaxis</div>
+<div class="mm-node mm-l2">Criteria[Acute + Skin + (Resp/Circ)]</div>
+<div class="mm-node mm-l2">First_Line[IM Adrenaline 0.5mg]</div>
+<div class="mm-node mm-l2">Adjuncts[Fluids, O2, Antihistamine, Steroid]</div>
+<div class="mm-node mm-l2">Biphasic[4-12h, observe 6-12h]</div>
+<div class="mm-node mm-l2">Refractory[Glucagon if beta-blocker]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Large_Local_Reaction</div>
+<div class="mm-node mm-l2">Features[&gt;10cm, 24-48h peak, NO systemic]</div>
+<div class="mm-node mm-l2">Rx[Antihistamine, Steroid, Cold]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">VIT</div>
+<div class="mm-node mm-l2">Indication[Recurrent anaphylaxis + positive test]</div>
+<div class="mm-node mm-l2">Build_Up[12-16 wks / rush]</div>
+<div class="mm-node mm-l2">Maintenance[3-5 years, 100µg q4-8wk]</div>
+<div class="mm-node mm-l2">Efficacy[95-98% protection]</div>
+<div class="mm-node mm-l2">Omalizumab[Adjunct for reactions]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mastocytosis</div>
+<div class="mm-node mm-l2">Tryptase[&gt;20 µg/L]</div>
+<div class="mm-node mm-l2">VIT[Higher dose, longer]</div>
+<div class="mm-node mm-l2">Omalizumab[Strong adjunct]</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>15. Flowchart: Hymenoptera Sting Management</h2>
-<pre class="mermaid">flowchart TD
-    A[Hymenoptera Sting] --&gt; B{Stinger Present?}
-    B --&gt;|Yes (Bee)| C[SCRAPE stinger - don't squeeze]
-    B --&gt;|No (Wasp/Ant)| D[Assess Reaction]
-    C --&gt; D
-    D --&gt; E{Systemic Features?}
-    E --&gt;|Urticaria + Wheeze/Hypotension| F[ANAPHYLAXIS]
-    F --&gt; G[IM Adrenaline 0.5mg 1:1000 IMMEDIATELY]
-    G --&gt; H[Supine, O2, IV Access, Fluids]
-    H --&gt; I[Repeat Adrenaline q5-15min PRN]
-    I --&gt; J[Adjuncts: Chlorphenamine 10mg IV, Hydrocortisone 200mg IV]
-    J --&gt; K[Observe 6-12h for Biphasic]
-    E --&gt;|Local Swelling &gt;10cm, NO Systemic| L[LARGE LOCAL REACTION]
-    L --&gt; M[Antihistamine + Oral Steroid + Cold Compress]
-    E --&gt;|Mild Local Only| N[Simple Analgesia, Cold Compress]
-    K --&gt; O[Allergy Referral for VIT if Recurrent Anaphylaxis]
-    M --&gt; O</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hymenoptera Sting</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Stinger Present?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">SCRAPE stinger - don't squeeze</div>
+<div class="fc-node" data-id="D">Assess Reaction</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Systemic Features?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">ANAPHYLAXIS</div>
+<div class="fc-node" data-id="L">LARGE LOCAL REACTION</div>
+<div class="fc-node" data-id="N">Simple Analgesia, Cold Compress</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">IM Adrenaline 0.5mg 1:1000 IMMEDIATELY</div>
+<div class="fc-node" data-id="M">Antihistamine + Oral Steroid + Cold Compress</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Supine, O2, IV Access, Fluids</div>
+<div class="fc-node" data-id="O">Allergy Referral for VIT if Recurrent Anaphylaxis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Repeat Adrenaline q5-15min PRN</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Adjuncts: Chlorphenamine 10mg IV, Hydrocortisone 200mg IV</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Observe 6-12h for Biphasic</div>
+</div>
+</div>
 <hr>
 <h2>16. One-Page Revision Card</h2>
 <table>
@@ -5260,60 +5471,107 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>26. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Hymenoptera Stings))
-    Bee[*Apis mellifera*]
-      Stinger[Barbed - single sting]
-      Venom[Melittin, PLA2 (Api m 1), Hyaluronidase (Api m 2)]
-      First_Aid[Scrape stinger]
-    Wasp[*Vespula, Polistes*]
-      Stinger[Smooth - multiple stings]
-      Venom[PLA1 (Ves v 1), Antigen 5 (Ves v 5)]
-    Ant[Formicidae]
-      Fire_Ant[Solenopsis]
-        Venom[Solenopsin (alkaloid)]
-        Pustule[24h sterile pustule]
-      Jack_Jumper[Myrmecia]
-        Protein_Venom[Major anaphylaxis AUS]
-        VIT[Available]
-    Anaphylaxis
-      Criteria[Acute + Skin + (Resp/Circ)]
-      First_Line[IM Adrenaline 0.5mg]
-      Adjuncts[Fluids, O2, Antihistamine, Steroid]
-      Biphasic[4-12h, observe 6-12h]
-      Refractory[Glucagon if beta-blocker]
-    Large_Local_Reaction
-      Features[&gt;10cm, 24-48h peak, NO systemic]
-      Rx[Antihistamine, Steroid, Cold]
-    VIT
-      Indication[Recurrent anaphylaxis + positive test]
-      Build_Up[12-16 wks / rush]
-      Maintenance[3-5 years, 100µg q4-8wk]
-      Efficacy[95-98% protection]
-      Omalizumab[Adjunct for reactions]
-    Mastocytosis
-      Tryptase[&gt;20 µg/L]
-      VIT[Higher dose, longer]
-      Omalizumab[Strong adjunct]</pre>
+<div class="mindmap">
+<div class="mm-root">Hymenoptera Stings</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Bee[*Apis mellifera*]</div>
+<div class="mm-node mm-l2">Stinger[Barbed - single sting]</div>
+<div class="mm-node mm-l2">Venom[Melittin, PLA2 (Api m 1), Hyaluronidase (Api m 2)]</div>
+<div class="mm-node mm-l2">First_Aid[Scrape stinger]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Wasp[*Vespula, Polistes*]</div>
+<div class="mm-node mm-l2">Stinger[Smooth - multiple stings]</div>
+<div class="mm-node mm-l2">Venom[PLA1 (Ves v 1), Antigen 5 (Ves v 5)]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Ant[Formicidae]</div>
+<div class="mm-node mm-l2">Fire_Ant[Solenopsis]</div>
+<div class="mm-node mm-l3">– Venom[Solenopsin (alkaloid)]</div>
+<div class="mm-node mm-l3">– Pustule[24h sterile pustule]</div>
+<div class="mm-node mm-l2">Jack_Jumper[Myrmecia]</div>
+<div class="mm-node mm-l3">– Protein_Venom[Major anaphylaxis AUS]</div>
+<div class="mm-node mm-l3">– VIT[Available]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Anaphylaxis</div>
+<div class="mm-node mm-l2">Criteria[Acute + Skin + (Resp/Circ)]</div>
+<div class="mm-node mm-l2">First_Line[IM Adrenaline 0.5mg]</div>
+<div class="mm-node mm-l2">Adjuncts[Fluids, O2, Antihistamine, Steroid]</div>
+<div class="mm-node mm-l2">Biphasic[4-12h, observe 6-12h]</div>
+<div class="mm-node mm-l2">Refractory[Glucagon if beta-blocker]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Large_Local_Reaction</div>
+<div class="mm-node mm-l2">Features[&gt;10cm, 24-48h peak, NO systemic]</div>
+<div class="mm-node mm-l2">Rx[Antihistamine, Steroid, Cold]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">VIT</div>
+<div class="mm-node mm-l2">Indication[Recurrent anaphylaxis + positive test]</div>
+<div class="mm-node mm-l2">Build_Up[12-16 wks / rush]</div>
+<div class="mm-node mm-l2">Maintenance[3-5 years, 100µg q4-8wk]</div>
+<div class="mm-node mm-l2">Efficacy[95-98% protection]</div>
+<div class="mm-node mm-l2">Omalizumab[Adjunct for reactions]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mastocytosis</div>
+<div class="mm-node mm-l2">Tryptase[&gt;20 µg/L]</div>
+<div class="mm-node mm-l2">VIT[Higher dose, longer]</div>
+<div class="mm-node mm-l2">Omalizumab[Strong adjunct]</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>27. Flowchart: Hymenoptera Sting Management</h2>
-<pre class="mermaid">flowchart TD
-    A[Hymenoptera Sting] --&gt; B{Stinger Present?}
-    B --&gt;|Yes (Bee)| C[SCRAPE stinger - don't squeeze]
-    B --&gt;|No (Wasp/Ant)| D[Assess Reaction]
-    C --&gt; D
-    D --&gt; E{Systemic Features?}
-    E --&gt;|Urticaria + Wheeze/Hypotension| F[ANAPHYLAXIS]
-    F --&gt; G[IM Adrenaline 0.5mg 1:1000 IMMEDIATELY]
-    G --&gt; H[Supine, O2, IV Access, Fluids]
-    H --&gt; I[Repeat Adrenaline q5-15min PRN]
-    I --&gt; J[Adjuncts: Chlorphenamine 10mg IV, Hydrocortisone 200mg IV]
-    J --&gt; K[Observe 6-12h for Biphasic]
-    E --&gt;|Local Swelling &gt;10cm, NO Systemic| L[LARGE LOCAL REACTION]
-    L --&gt; M[Antihistamine + Oral Steroid + Cold Compress]
-    E --&gt;|Mild Local Only| N[Simple Analgesia, Cold Compress]
-    K --&gt; O[Allergy Referral for VIT if Recurrent Anaphylaxis]
-    M --&gt; O</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hymenoptera Sting</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Stinger Present?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">SCRAPE stinger - don't squeeze</div>
+<div class="fc-node" data-id="D">Assess Reaction</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Systemic Features?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">ANAPHYLAXIS</div>
+<div class="fc-node" data-id="L">LARGE LOCAL REACTION</div>
+<div class="fc-node" data-id="N">Simple Analgesia, Cold Compress</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">IM Adrenaline 0.5mg 1:1000 IMMEDIATELY</div>
+<div class="fc-node" data-id="M">Antihistamine + Oral Steroid + Cold Compress</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Supine, O2, IV Access, Fluids</div>
+<div class="fc-node" data-id="O">Allergy Referral for VIT if Recurrent Anaphylaxis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Repeat Adrenaline q5-15min PRN</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Adjuncts: Chlorphenamine 10mg IV, Hydrocortisone 200mg IV</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Observe 6-12h for Biphasic</div>
+</div>
+</div>
 <hr>
 <h2>28. One-Page Revision Card</h2>
 <table>
@@ -5918,64 +6176,93 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Marine Envenomation))
-    Cnidaria
-      Box_Jellyfish[Chironex fleckeri]
-        First_Aid[Vinegar]
-        Antivenom[CSL AV IV]
-        Cardiotoxic[Cardiac arrest risk]
-      Irukandji[Carukia, Malo]
-        Delayed[5-40 min]
-        Catecholamine_Storm[HTN, Pulm Oedema]
-        Magnesium[20mmol bolus + infusion]
-        No_AV[None]
-      Portuguese_Man_O_War[Physalia]
-        Vinegar[May worsen - hot water instead]
-    Fish
-      Stonefish[Synanceia]
-        Hot_Water[45°C 20 min]
-        Antivenom[CSL 2000 units]
-        Thermolabile_Venom
-      Stingray
-        Hot_Water[45°C 30-90 min]
-        Barb_Removal
-      Lionfish
-        Hot_Water[45°C]
-    Molluscs
-      Cone_Shell[Conus]
-        Conotoxins[Channel blockade]
-        Paralysis[Respiratory failure]
-        No_AV[Ventilation only]
-      Blue_Ringed_Octopus[Hapalochlaena]
-        Tetrodotoxin[Na+ channel block]
-        Flaccid_Paralysis[Preserved consciousness]
-        No_AV[Ventilation hours-days]
-      Sea_Urchin
-        Spine_Removal
-        Hot_Water</pre>
+<div class="mindmap">
+<div class="mm-root">Marine Envenomation</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Cnidaria</div>
+<div class="mm-node mm-l2">Box_Jellyfish[Chironex fleckeri]</div>
+<div class="mm-node mm-l3">– First_Aid[Vinegar]</div>
+<div class="mm-node mm-l3">– Antivenom[CSL AV IV]</div>
+<div class="mm-node mm-l3">– Cardiotoxic[Cardiac arrest risk]</div>
+<div class="mm-node mm-l2">Irukandji[Carukia, Malo]</div>
+<div class="mm-node mm-l3">– Delayed[5-40 min]</div>
+<div class="mm-node mm-l3">– Catecholamine_Storm[HTN, Pulm Oedema]</div>
+<div class="mm-node mm-l3">– Magnesium[20mmol bolus + infusion]</div>
+<div class="mm-node mm-l3">– No_AV[None]</div>
+<div class="mm-node mm-l2">Portuguese_Man_O_War[Physalia]</div>
+<div class="mm-node mm-l3">– Vinegar[May worsen - hot water instead]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Fish</div>
+<div class="mm-node mm-l2">Stonefish[Synanceia]</div>
+<div class="mm-node mm-l3">– Hot_Water[45°C 20 min]</div>
+<div class="mm-node mm-l3">– Antivenom[CSL 2000 units]</div>
+<div class="mm-node mm-l3">– Thermolabile_Venom</div>
+<div class="mm-node mm-l2">Stingray</div>
+<div class="mm-node mm-l3">– Hot_Water[45°C 30-90 min]</div>
+<div class="mm-node mm-l3">– Barb_Removal</div>
+<div class="mm-node mm-l2">Lionfish</div>
+<div class="mm-node mm-l3">– Hot_Water[45°C]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Molluscs</div>
+<div class="mm-node mm-l2">Cone_Shell[Conus]</div>
+<div class="mm-node mm-l3">– Conotoxins[Channel blockade]</div>
+<div class="mm-node mm-l3">– Paralysis[Respiratory failure]</div>
+<div class="mm-node mm-l3">– No_AV[Ventilation only]</div>
+<div class="mm-node mm-l2">Blue_Ringed_Octopus[Hapalochlaena]</div>
+<div class="mm-node mm-l3">– Tetrodotoxin[Na+ channel block]</div>
+<div class="mm-node mm-l3">– Flaccid_Paralysis[Preserved consciousness]</div>
+<div class="mm-node mm-l3">– No_AV[Ventilation hours-days]</div>
+<div class="mm-node mm-l2">Sea_Urchin</div>
+<div class="mm-node mm-l3">– Spine_Removal</div>
+<div class="mm-node mm-l3">– Hot_Water</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. Flowchart: Marine Envenomation First Aid</h2>
-<pre class="mermaid">flowchart TD
-    A[Marine Envenomation] --&gt; B{Identify Agent}
-    B --&gt;|Box Jellyfish (Chironex)| C[VINEGAR 4-5%]
-    C --&gt; D[Remove Tentacles]
-    D --&gt; E{Cardiotoxic Signs?}
-    E --&gt;|Yes| F[CSL Box Jellyfish AV IV + ALS]
-    E --&gt;|No| G[Analgesia, Observe 6h]
-    B --&gt;|Irukandji| H[Vinegar if Tentacles]
-    H --&gt; I[Magnesium Infusion 20mmol + 5-10mmol/h]
-    I --&gt; J[Analgesia, Antihypertensives]
-    B --&gt;|Stonefish| K[HOT WATER 45°C × 20 min]
-    K --&gt; L{Systemic Signs?}
-    L --&gt;|Yes| M[CSL Stonefish AV 2000 units IM/IV]
-    L --&gt;|No| N[Analgesia, Observe]
-    B --&gt;|Cone Shell / Blue-ringed Octopus| O[PIB + Immobilise]
-    O --&gt; P{Respiratory Failure?}
-    P --&gt;|Yes| Q[INTUBATE + VENTILATE]
-    P --&gt;|No| R[Monitor, Observe]
-    B --&gt;|Stingray / Urchin / Lionfish| S[HOT WATER 45°C]
-    S --&gt; T[Remove Barb/Spines, Wound Care]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Marine Envenomation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Identify Agent</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">VINEGAR 4-5%</div>
+<div class="fc-node" data-id="H">Vinegar if Tentacles</div>
+<div class="fc-node" data-id="K">HOT WATER 45°C × 20 min</div>
+<div class="fc-node" data-id="O">PIB + Immobilise</div>
+<div class="fc-node" data-id="S">HOT WATER 45°C</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Remove Tentacles</div>
+<div class="fc-node" data-id="I">Magnesium Infusion 20mmol + 5-10mmol/h</div>
+<div class="fc-node" data-id="L">Systemic Signs?</div>
+<div class="fc-node" data-id="P">Respiratory Failure?</div>
+<div class="fc-node" data-id="T">Remove Barb/Spines, Wound Care</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Cardiotoxic Signs?</div>
+<div class="fc-node" data-id="J">Analgesia, Antihypertensives</div>
+<div class="fc-node" data-id="M">CSL Stonefish AV 2000 units IM/IV</div>
+<div class="fc-node" data-id="N">Analgesia, Observe</div>
+<div class="fc-node" data-id="Q">INTUBATE + VENTILATE</div>
+<div class="fc-node" data-id="R">Monitor, Observe</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">CSL Box Jellyfish AV IV + ALS</div>
+<div class="fc-node" data-id="G">Analgesia, Observe 6h</div>
+</div>
+</div>
 <hr>
 <h2>13. One-Page Revision Card</h2>
 <table>
@@ -6306,64 +6593,93 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>23. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Marine Envenomation))
-    Cnidaria
-      Box_Jellyfish[Chironex fleckeri]
-        First_Aid[Vinegar]
-        Antivenom[CSL AV IV]
-        Cardiotoxic[Cardiac arrest risk]
-      Irukandji[Carukia, Malo]
-        Delayed[5-40 min]
-        Catecholamine_Storm[HTN, Pulm Oedema]
-        Magnesium[20mmol bolus + infusion]
-        No_AV[None]
-      Portuguese_Man_O_War[Physalia]
-        Vinegar[May worsen - hot water instead]
-    Fish
-      Stonefish[Synanceia]
-        Hot_Water[45°C 20 min]
-        Antivenom[CSL 2000 units]
-        Thermolabile_Venom
-      Stingray
-        Hot_Water[45°C 30-90 min]
-        Barb_Removal
-      Lionfish
-        Hot_Water[45°C]
-    Molluscs
-      Cone_Shell[Conus]
-        Conotoxins[Channel blockade]
-        Paralysis[Respiratory failure]
-        No_AV[Ventilation only]
-      Blue_Ringed_Octopus[Hapalochlaena]
-        Tetrodotoxin[Na+ channel block]
-        Flaccid_Paralysis[Preserved consciousness]
-        No_AV[Ventilation hours-days]
-      Sea_Urchin
-        Spine_Removal
-        Hot_Water</pre>
+<div class="mindmap">
+<div class="mm-root">Marine Envenomation</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Cnidaria</div>
+<div class="mm-node mm-l2">Box_Jellyfish[Chironex fleckeri]</div>
+<div class="mm-node mm-l3">– First_Aid[Vinegar]</div>
+<div class="mm-node mm-l3">– Antivenom[CSL AV IV]</div>
+<div class="mm-node mm-l3">– Cardiotoxic[Cardiac arrest risk]</div>
+<div class="mm-node mm-l2">Irukandji[Carukia, Malo]</div>
+<div class="mm-node mm-l3">– Delayed[5-40 min]</div>
+<div class="mm-node mm-l3">– Catecholamine_Storm[HTN, Pulm Oedema]</div>
+<div class="mm-node mm-l3">– Magnesium[20mmol bolus + infusion]</div>
+<div class="mm-node mm-l3">– No_AV[None]</div>
+<div class="mm-node mm-l2">Portuguese_Man_O_War[Physalia]</div>
+<div class="mm-node mm-l3">– Vinegar[May worsen - hot water instead]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Fish</div>
+<div class="mm-node mm-l2">Stonefish[Synanceia]</div>
+<div class="mm-node mm-l3">– Hot_Water[45°C 20 min]</div>
+<div class="mm-node mm-l3">– Antivenom[CSL 2000 units]</div>
+<div class="mm-node mm-l3">– Thermolabile_Venom</div>
+<div class="mm-node mm-l2">Stingray</div>
+<div class="mm-node mm-l3">– Hot_Water[45°C 30-90 min]</div>
+<div class="mm-node mm-l3">– Barb_Removal</div>
+<div class="mm-node mm-l2">Lionfish</div>
+<div class="mm-node mm-l3">– Hot_Water[45°C]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Molluscs</div>
+<div class="mm-node mm-l2">Cone_Shell[Conus]</div>
+<div class="mm-node mm-l3">– Conotoxins[Channel blockade]</div>
+<div class="mm-node mm-l3">– Paralysis[Respiratory failure]</div>
+<div class="mm-node mm-l3">– No_AV[Ventilation only]</div>
+<div class="mm-node mm-l2">Blue_Ringed_Octopus[Hapalochlaena]</div>
+<div class="mm-node mm-l3">– Tetrodotoxin[Na+ channel block]</div>
+<div class="mm-node mm-l3">– Flaccid_Paralysis[Preserved consciousness]</div>
+<div class="mm-node mm-l3">– No_AV[Ventilation hours-days]</div>
+<div class="mm-node mm-l2">Sea_Urchin</div>
+<div class="mm-node mm-l3">– Spine_Removal</div>
+<div class="mm-node mm-l3">– Hot_Water</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>24. Flowchart: Marine Envenomation First Aid</h2>
-<pre class="mermaid">flowchart TD
-    A[Marine Envenomation] --&gt; B{Identify Agent}
-    B --&gt;|Box Jellyfish (Chironex)| C[VINEGAR 4-5%]
-    C --&gt; D[Remove Tentacles]
-    D --&gt; E{Cardiotoxic Signs?}
-    E --&gt;|Yes| F[CSL Box Jellyfish AV IV + ALS]
-    E --&gt;|No| G[Analgesia, Observe 6h]
-    B --&gt;|Irukandji| H[Vinegar if Tentacles]
-    H --&gt; I[Magnesium Infusion 20mmol + 5-10mmol/h]
-    I --&gt; J[Analgesia, Antihypertensives]
-    B --&gt;|Stonefish| K[HOT WATER 45°C × 20 min]
-    K --&gt; L{Systemic Signs?}
-    L --&gt;|Yes| M[CSL Stonefish AV 2000 units IM/IV]
-    L --&gt;|No| N[Analgesia, Observe]
-    B --&gt;|Cone Shell / Blue-ringed Octopus| O[PIB + Immobilise]
-    O --&gt; P{Respiratory Failure?}
-    P --&gt;|Yes| Q[INTUBATE + VENTILATE]
-    P --&gt;|No| R[Monitor, Observe]
-    B --&gt;|Stingray / Urchin / Lionfish| S[HOT WATER 45°C]
-    S --&gt; T[Remove Barb/Spines, Wound Care]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Marine Envenomation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Identify Agent</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">VINEGAR 4-5%</div>
+<div class="fc-node" data-id="H">Vinegar if Tentacles</div>
+<div class="fc-node" data-id="K">HOT WATER 45°C × 20 min</div>
+<div class="fc-node" data-id="O">PIB + Immobilise</div>
+<div class="fc-node" data-id="S">HOT WATER 45°C</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Remove Tentacles</div>
+<div class="fc-node" data-id="I">Magnesium Infusion 20mmol + 5-10mmol/h</div>
+<div class="fc-node" data-id="L">Systemic Signs?</div>
+<div class="fc-node" data-id="P">Respiratory Failure?</div>
+<div class="fc-node" data-id="T">Remove Barb/Spines, Wound Care</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Cardiotoxic Signs?</div>
+<div class="fc-node" data-id="J">Analgesia, Antihypertensives</div>
+<div class="fc-node" data-id="M">CSL Stonefish AV 2000 units IM/IV</div>
+<div class="fc-node" data-id="N">Analgesia, Observe</div>
+<div class="fc-node" data-id="Q">INTUBATE + VENTILATE</div>
+<div class="fc-node" data-id="R">Monitor, Observe</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">CSL Box Jellyfish AV IV + ALS</div>
+<div class="fc-node" data-id="G">Analgesia, Observe 6h</div>
+</div>
+</div>
 <hr>
 <h2>25. One-Page Revision Card</h2>
 <table>
@@ -6994,46 +7310,63 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Scorpion Envenomation))
-    Species
-      LATC
-        Leiurus
-        Androctonus
-        Tityus
-        Centruroides
-      Mesobuthus[India]
-    Mechanism
-      Na_K_channels
-      Catecholamine_storm
-    Clinical
-      Local[Severe pain, minimal swelling]
-      Systemic
-        Hypertension
-        Tachycardia
-        Pulmonary_oedema
-        Myocarditis
-        Pancreatitis
-        Priapism
-    High_Risk
-      Children_&lt; 10
-    Grading
-      I_Mild
-      II_Moderate
-      III_Severe
-      IV_Very_severe
-    Management
-      First_Aid[Analgesia, immobilise]
-      Prazosin[α1-blocker]
-      Antivenom[Grade III/IV, children]
-      ICU[Ventilation, inotropes]
-      Avoid[Beta-blockers, morphine]
-    Complications
-      Pulmonary_oedema
-      Myocarditis
-      Pancreatitis
-      ARDS
-      Arrest</pre>
+<div class="mindmap">
+<div class="mm-root">Scorpion Envenomation</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Species</div>
+<div class="mm-node mm-l2">LATC</div>
+<div class="mm-node mm-l3">– Leiurus</div>
+<div class="mm-node mm-l3">– Androctonus</div>
+<div class="mm-node mm-l3">– Tityus</div>
+<div class="mm-node mm-l3">– Centruroides</div>
+<div class="mm-node mm-l2">Mesobuthus[India]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Na_K_channels</div>
+<div class="mm-node mm-l2">Catecholamine_storm</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Local[Severe pain, minimal swelling]</div>
+<div class="mm-node mm-l2">Systemic</div>
+<div class="mm-node mm-l3">– Hypertension</div>
+<div class="mm-node mm-l3">– Tachycardia</div>
+<div class="mm-node mm-l3">– Pulmonary_oedema</div>
+<div class="mm-node mm-l3">– Myocarditis</div>
+<div class="mm-node mm-l3">– Pancreatitis</div>
+<div class="mm-node mm-l3">– Priapism</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">High_Risk</div>
+<div class="mm-node mm-l2">Children_&lt; 10</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Grading</div>
+<div class="mm-node mm-l2">I_Mild</div>
+<div class="mm-node mm-l2">II_Moderate</div>
+<div class="mm-node mm-l2">III_Severe</div>
+<div class="mm-node mm-l2">IV_Very_severe</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">First_Aid[Analgesia, immobilise]</div>
+<div class="mm-node mm-l2">Prazosin[α1-blocker]</div>
+<div class="mm-node mm-l2">Antivenom[Grade III/IV, children]</div>
+<div class="mm-node mm-l2">ICU[Ventilation, inotropes]</div>
+<div class="mm-node mm-l2">Avoid[Beta-blockers, morphine]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complications</div>
+<div class="mm-node mm-l2">Pulmonary_oedema</div>
+<div class="mm-node mm-l2">Myocarditis</div>
+<div class="mm-node mm-l2">Pancreatitis</div>
+<div class="mm-node mm-l2">ARDS</div>
+<div class="mm-node mm-l2">Arrest</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>15. One-Page Revision Card</h2>
 <table>
@@ -7522,51 +7855,66 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>12. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Snake Clinical Syndromes))
-    Elapid
-      Neurotoxic
-      Postsynaptic[Cobra, coral, mamba]
-      Presynaptic[Krait, taipan, sea snake]
-      Pattern
-        Ptosis
-        Ophthalmoplegia
-        Bulbar
-        Limbs
-        Respiratory
-      Treatment
-        Antivenom
-        Neostigmine[Postsynaptic only]
-        Intubation
-    Viperid
-      Haemotoxic
-      VICC[INR↑, fibrinogen↓, platelets↓]
-      Examples[Russell's, saw-scaled, Bothrops]
-      Cytotoxic
-        Swelling
-        Necrosis
-        Compartment
-      Renal
-        AKI
-        Dialysis
-    Mixed
-      Mojave_Type_A
-      Sea_snake[Neuro + myotoxic]
-      Spitting_cobra[Neuro + cytotoxic + ocular]
-    Complications
-      Respiratory_failure
-      VICC_bleeding
-      AKI
-      Compartment_syndrome
-      Myotoxicity
-    Neostigmine
-      Atropine_premed
-      Postsynaptic_only
-      Adjunct_to_AV
-    Fasciotomy
-      AV_first
-      Pressure_&gt;_30
-      Confirmed_only</pre>
+<div class="mindmap">
+<div class="mm-root">Snake Clinical Syndromes</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Elapid</div>
+<div class="mm-node mm-l2">Neurotoxic</div>
+<div class="mm-node mm-l2">Postsynaptic[Cobra, coral, mamba]</div>
+<div class="mm-node mm-l2">Presynaptic[Krait, taipan, sea snake]</div>
+<div class="mm-node mm-l2">Pattern</div>
+<div class="mm-node mm-l3">– Ptosis</div>
+<div class="mm-node mm-l3">– Ophthalmoplegia</div>
+<div class="mm-node mm-l3">– Bulbar</div>
+<div class="mm-node mm-l3">– Limbs</div>
+<div class="mm-node mm-l3">– Respiratory</div>
+<div class="mm-node mm-l2">Treatment</div>
+<div class="mm-node mm-l3">– Antivenom</div>
+<div class="mm-node mm-l3">– Neostigmine[Postsynaptic only]</div>
+<div class="mm-node mm-l3">– Intubation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Viperid</div>
+<div class="mm-node mm-l2">Haemotoxic</div>
+<div class="mm-node mm-l2">VICC[INR↑, fibrinogen↓, platelets↓]</div>
+<div class="mm-node mm-l2">Examples[Russell's, saw-scaled, Bothrops]</div>
+<div class="mm-node mm-l2">Cytotoxic</div>
+<div class="mm-node mm-l3">– Swelling</div>
+<div class="mm-node mm-l3">– Necrosis</div>
+<div class="mm-node mm-l3">– Compartment</div>
+<div class="mm-node mm-l2">Renal</div>
+<div class="mm-node mm-l3">– AKI</div>
+<div class="mm-node mm-l3">– Dialysis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mixed</div>
+<div class="mm-node mm-l2">Mojave_Type_A</div>
+<div class="mm-node mm-l2">Sea_snake[Neuro + myotoxic]</div>
+<div class="mm-node mm-l2">Spitting_cobra[Neuro + cytotoxic + ocular]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complications</div>
+<div class="mm-node mm-l2">Respiratory_failure</div>
+<div class="mm-node mm-l2">VICC_bleeding</div>
+<div class="mm-node mm-l2">AKI</div>
+<div class="mm-node mm-l2">Compartment_syndrome</div>
+<div class="mm-node mm-l2">Myotoxicity</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Neostigmine</div>
+<div class="mm-node mm-l2">Atropine_premed</div>
+<div class="mm-node mm-l2">Postsynaptic_only</div>
+<div class="mm-node mm-l2">Adjunct_to_AV</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Fasciotomy</div>
+<div class="mm-node mm-l2">AV_first</div>
+<div class="mm-node mm-l2">Pressure_&gt;_30</div>
+<div class="mm-node mm-l2">Confirmed_only</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>13. One-Page Revision Card</h2>
 <table>
@@ -7999,43 +8347,54 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Snakebite Epidemiology &amp; ID))
-    Global_Burden
-      5.4M_bites
-      2M_envenomations
-      100K_deaths
-      400K_disabilities
-      South_Asia_worst
-      WHO_NTD
-    Families
-      Elapidae
-        Fixed_front_fangs
-        Neurotoxic
-        Cobra_krait_mamba_taipan
-        Sea_snake
-      Viperidae
-        Hinged_fangs
-        Viperinae[True vipers]
-        Crotalinae[Pit vipers]
-        VICC_haemotoxic
-        Russell_saw-scaled_puff_rattlesnake
-      Colubridae
-        Rear_fangs
-        Boomslang
-        Delayed_coagulopathy
-    Identification
-      Fang_type
-      Scale_pattern
-      Head_shape
-      Geography
-      Behaviour
-      VDK_Australia
-    Prevention
-      Footwear
-      Sleeping
-      Lighting
-      Awareness</pre>
+<div class="mindmap">
+<div class="mm-root">Snakebite Epidemiology &amp; ID</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Global_Burden</div>
+<div class="mm-node mm-l2">5.4M_bites</div>
+<div class="mm-node mm-l2">2M_envenomations</div>
+<div class="mm-node mm-l2">100K_deaths</div>
+<div class="mm-node mm-l2">400K_disabilities</div>
+<div class="mm-node mm-l2">South_Asia_worst</div>
+<div class="mm-node mm-l2">WHO_NTD</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Families</div>
+<div class="mm-node mm-l2">Elapidae</div>
+<div class="mm-node mm-l3">– Fixed_front_fangs</div>
+<div class="mm-node mm-l3">– Neurotoxic</div>
+<div class="mm-node mm-l3">– Cobra_krait_mamba_taipan</div>
+<div class="mm-node mm-l3">– Sea_snake</div>
+<div class="mm-node mm-l2">Viperidae</div>
+<div class="mm-node mm-l3">– Hinged_fangs</div>
+<div class="mm-node mm-l3">– Viperinae[True vipers]</div>
+<div class="mm-node mm-l3">– Crotalinae[Pit vipers]</div>
+<div class="mm-node mm-l3">– VICC_haemotoxic</div>
+<div class="mm-node mm-l3">– Russell_saw-scaled_puff_rattlesnake</div>
+<div class="mm-node mm-l2">Colubridae</div>
+<div class="mm-node mm-l3">– Rear_fangs</div>
+<div class="mm-node mm-l3">– Boomslang</div>
+<div class="mm-node mm-l3">– Delayed_coagulopathy</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Identification</div>
+<div class="mm-node mm-l2">Fang_type</div>
+<div class="mm-node mm-l2">Scale_pattern</div>
+<div class="mm-node mm-l2">Head_shape</div>
+<div class="mm-node mm-l2">Geography</div>
+<div class="mm-node mm-l2">Behaviour</div>
+<div class="mm-node mm-l2">VDK_Australia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Prevention</div>
+<div class="mm-node mm-l2">Footwear</div>
+<div class="mm-node mm-l2">Sleeping</div>
+<div class="mm-node mm-l2">Lighting</div>
+<div class="mm-node mm-l2">Awareness</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. One-Page Revision Card</h2>
 <table>
@@ -8530,43 +8889,58 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>15. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Snake Lab Monitoring))
-    Bedside
-      20WBCT
-        Technique[2mL, 20min, glass]
-        Positive[No clot = VICC]
-        Sensitive_for[Viperid]
-    Coagulation
-      VICC
-        INR_up
-        Fibrinogen_down
-        Platelets_down
-        D_dimer_up
-      VICC_vs_DIC
-        Factor_VIII_preserved
-        Rapid_recovery_with_AV
-    Renal
-      CK
-        Rhabdo_[&gt; 1000]
-        High_AKI_[&gt; 5000]
-      Urine_myoglobin
-        Dipstick_positive
-        No_RBCs
-      Output_[&gt; 200 mL/h]
-    Neuro
-      FVC[NIF, serial]
-      ABG
-      Bulbar_exam
-    Cardiac
-      ECG
-      Troponin
-    Stop_Monitoring
-      INR_&lt; 1.5
-      Fibrinogen_&gt; 1
-      Platelets_&gt; 50
-      Renal_stable
-      Neuro_stable</pre>
+<div class="mindmap">
+<div class="mm-root">Snake Lab Monitoring</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Bedside</div>
+<div class="mm-node mm-l2">20WBCT</div>
+<div class="mm-node mm-l3">– Technique[2mL, 20min, glass]</div>
+<div class="mm-node mm-l3">– Positive[No clot = VICC]</div>
+<div class="mm-node mm-l3">– Sensitive_for[Viperid]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Coagulation</div>
+<div class="mm-node mm-l2">VICC</div>
+<div class="mm-node mm-l3">– INR_up</div>
+<div class="mm-node mm-l3">– Fibrinogen_down</div>
+<div class="mm-node mm-l3">– Platelets_down</div>
+<div class="mm-node mm-l3">– D_dimer_up</div>
+<div class="mm-node mm-l2">VICC_vs_DIC</div>
+<div class="mm-node mm-l3">– Factor_VIII_preserved</div>
+<div class="mm-node mm-l3">– Rapid_recovery_with_AV</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Renal</div>
+<div class="mm-node mm-l2">CK</div>
+<div class="mm-node mm-l3">– Rhabdo_[&gt; 1000]</div>
+<div class="mm-node mm-l3">– High_AKI_[&gt; 5000]</div>
+<div class="mm-node mm-l2">Urine_myoglobin</div>
+<div class="mm-node mm-l3">– Dipstick_positive</div>
+<div class="mm-node mm-l3">– No_RBCs</div>
+<div class="mm-node mm-l2">Output_[&gt; 200 mL/h]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Neuro</div>
+<div class="mm-node mm-l2">FVC[NIF, serial]</div>
+<div class="mm-node mm-l2">ABG</div>
+<div class="mm-node mm-l2">Bulbar_exam</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Cardiac</div>
+<div class="mm-node mm-l2">ECG</div>
+<div class="mm-node mm-l2">Troponin</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Stop_Monitoring</div>
+<div class="mm-node mm-l2">INR_&lt; 1.5</div>
+<div class="mm-node mm-l2">Fibrinogen_&gt; 1</div>
+<div class="mm-node mm-l2">Platelets_&gt; 50</div>
+<div class="mm-node mm-l2">Renal_stable</div>
+<div class="mm-node mm-l2">Neuro_stable</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>16. One-Page Revision Card</h2>
 <table>
@@ -9067,47 +9441,64 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>16. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Antivenom Protocols))
-    India
-      ASV_Polyvalent
-      Big_Four[Naja, Bungarus, Daboia, Echis]
-      Dose[10 vials initial]
-      Repeat[10 vials at 6h]
-      Hump_nosed_NOT_covered
-    Africa
-      SAIMR
-      Echis_Naja_Bitis
-      Dose[50-100mL]
-      Boomslang_separate
-    Australia
-      Strategy
-        Monovalent_if_known
-        Polyvalent_if_unknown
-      Doses
-        Brown_2
-        Taipan_Tiger_Death_Black_1
-        Polyvalent_2
-    North_America
-      CroFab
-        4-6_initial
-        2_at_6_12_18h
-      Anavip
-        10_initial
-        4_PRN
-      Coral
-        NACSA_separate
-    Latin_America
-      Antivipmyn[Bothrops, Crotalus]
-      Coralmyn[Micrurus]
-    Special
-      Pregnancy[Same dose]
-      Children[Same dose]
-      Late_presenter[Up to 72h]
-    Repeat
-      Coag_persistent_6h
-      Neuro_worsening
-      CVS_deterioration</pre>
+<div class="mindmap">
+<div class="mm-root">Antivenom Protocols</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">India</div>
+<div class="mm-node mm-l2">ASV_Polyvalent</div>
+<div class="mm-node mm-l2">Big_Four[Naja, Bungarus, Daboia, Echis]</div>
+<div class="mm-node mm-l2">Dose[10 vials initial]</div>
+<div class="mm-node mm-l2">Repeat[10 vials at 6h]</div>
+<div class="mm-node mm-l2">Hump_nosed_NOT_covered</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Africa</div>
+<div class="mm-node mm-l2">SAIMR</div>
+<div class="mm-node mm-l2">Echis_Naja_Bitis</div>
+<div class="mm-node mm-l2">Dose[50-100mL]</div>
+<div class="mm-node mm-l2">Boomslang_separate</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Australia</div>
+<div class="mm-node mm-l2">Strategy</div>
+<div class="mm-node mm-l3">– Monovalent_if_known</div>
+<div class="mm-node mm-l3">– Polyvalent_if_unknown</div>
+<div class="mm-node mm-l2">Doses</div>
+<div class="mm-node mm-l3">– Brown_2</div>
+<div class="mm-node mm-l3">– Taipan_Tiger_Death_Black_1</div>
+<div class="mm-node mm-l3">– Polyvalent_2</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">North_America</div>
+<div class="mm-node mm-l2">CroFab</div>
+<div class="mm-node mm-l3">– 4-6_initial</div>
+<div class="mm-node mm-l3">– 2_at_6_12_18h</div>
+<div class="mm-node mm-l2">Anavip</div>
+<div class="mm-node mm-l3">– 10_initial</div>
+<div class="mm-node mm-l3">– 4_PRN</div>
+<div class="mm-node mm-l2">Coral</div>
+<div class="mm-node mm-l3">– NACSA_separate</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Latin_America</div>
+<div class="mm-node mm-l2">Antivipmyn[Bothrops, Crotalus]</div>
+<div class="mm-node mm-l2">Coralmyn[Micrurus]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Special</div>
+<div class="mm-node mm-l2">Pregnancy[Same dose]</div>
+<div class="mm-node mm-l2">Children[Same dose]</div>
+<div class="mm-node mm-l2">Late_presenter[Up to 72h]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Repeat</div>
+<div class="mm-node mm-l2">Coag_persistent_6h</div>
+<div class="mm-node mm-l2">Neuro_worsening</div>
+<div class="mm-node mm-l2">CVS_deterioration</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>17. One-Page Revision Card</h2>
 <table>
@@ -9547,42 +9938,57 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>15. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Regional Snakes))
-    South_Asia
-      Big_Four[Naja, Bungarus, Daboia, Echis]
-      Hump_nosed_Gap[Hypnale not in ASV]
-      Russell
-        VICC
-        AKI
-        Pituitary
-      Krait
-        Painless
-        Nocturnal
-        Delayed
-    SE_Asia
-      Monocellate
-      Malayan_krait
-      Malayan_pit_viper
-    Africa
-      Echis_ocellatus
-      Bitis[Puff, Gaboon]
-      Dendroaspis[Black mamba]
-      Boomslang[Delayed coag]
-    Australia
-      Taipan
-      Brown
-      Tiger
-      Death_adder
-      Sea_snake
-    Americas
-      Crotalus
-      Mojave_Type_A
-      Coral[NACSA]
-      Fer_de_lance
-    Europe
-      Vipera_berus
-      Vipera_ammodytes</pre>
+<div class="mindmap">
+<div class="mm-root">Regional Snakes</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">South_Asia</div>
+<div class="mm-node mm-l2">Big_Four[Naja, Bungarus, Daboia, Echis]</div>
+<div class="mm-node mm-l2">Hump_nosed_Gap[Hypnale not in ASV]</div>
+<div class="mm-node mm-l2">Russell</div>
+<div class="mm-node mm-l3">– VICC</div>
+<div class="mm-node mm-l3">– AKI</div>
+<div class="mm-node mm-l3">– Pituitary</div>
+<div class="mm-node mm-l2">Krait</div>
+<div class="mm-node mm-l3">– Painless</div>
+<div class="mm-node mm-l3">– Nocturnal</div>
+<div class="mm-node mm-l3">– Delayed</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">SE_Asia</div>
+<div class="mm-node mm-l2">Monocellate</div>
+<div class="mm-node mm-l2">Malayan_krait</div>
+<div class="mm-node mm-l2">Malayan_pit_viper</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Africa</div>
+<div class="mm-node mm-l2">Echis_ocellatus</div>
+<div class="mm-node mm-l2">Bitis[Puff, Gaboon]</div>
+<div class="mm-node mm-l2">Dendroaspis[Black mamba]</div>
+<div class="mm-node mm-l2">Boomslang[Delayed coag]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Australia</div>
+<div class="mm-node mm-l2">Taipan</div>
+<div class="mm-node mm-l2">Brown</div>
+<div class="mm-node mm-l2">Tiger</div>
+<div class="mm-node mm-l2">Death_adder</div>
+<div class="mm-node mm-l2">Sea_snake</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Americas</div>
+<div class="mm-node mm-l2">Crotalus</div>
+<div class="mm-node mm-l2">Mojave_Type_A</div>
+<div class="mm-node mm-l2">Coral[NACSA]</div>
+<div class="mm-node mm-l2">Fer_de_lance</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Europe</div>
+<div class="mm-node mm-l2">Vipera_berus</div>
+<div class="mm-node mm-l2">Vipera_ammodytes</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>16. One-Page Revision Card</h2>
 <table>
@@ -9975,57 +10381,88 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>11. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Spider Bite Envenomation))
-    Latrodectism[*Latrodectus*]
-      Species[Black widow, Redback, Katipo]
-      Mechanism[Latrotoxin → NT release]
-      Clinical
-        Pain[Pinprick → radiating]
-        Autonomic[Diaphoresis, HTN, Tachy]
-        Neuromuscular[Rigidity, fasciculations]
-        Abdomen[Rigidity mimics surgical]
-      RADS_Score[Pain, Sweating, Neuro, HTN]
-      Management
-        Analgesia[Opioids]
-        Calcium_Gluconate[Rigidity]
-        Antivenom[Redback AV 2 vials IV]
-    Loxoscelism[*Loxosceles*]
-      Species[Brown recluse, Chilean recluse]
-      Mechanism[Sphingomyelinase D → complement]
-      Clinical
-        Local[Painless → RWB → necrosis]
-        Systemic[Haemolysis, DIC, AKI]
-      Management
-        Supportive[Wound care, analgesia]
-        Dapsone[CONTROVERSIAL - NOT recommended]
-        Excision[NOT recommended]
-    Tarantula[Theraphosidae]
-      Hairs[Urticating - mechanical]
-      Management[Tape removal, antihistamine]
-    Funnel_Web[*Atrax/Hadronyche*]
-      Emergency[PIB + Antivenom + ICU]</pre>
+<div class="mindmap">
+<div class="mm-root">Spider Bite Envenomation</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Latrodectism[*Latrodectus*]</div>
+<div class="mm-node mm-l2">Species[Black widow, Redback, Katipo]</div>
+<div class="mm-node mm-l2">Mechanism[Latrotoxin → NT release]</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Pain[Pinprick → radiating]</div>
+<div class="mm-node mm-l3">– Autonomic[Diaphoresis, HTN, Tachy]</div>
+<div class="mm-node mm-l3">– Neuromuscular[Rigidity, fasciculations]</div>
+<div class="mm-node mm-l3">– Abdomen[Rigidity mimics surgical]</div>
+<div class="mm-node mm-l2">RADS_Score[Pain, Sweating, Neuro, HTN]</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Analgesia[Opioids]</div>
+<div class="mm-node mm-l3">– Calcium_Gluconate[Rigidity]</div>
+<div class="mm-node mm-l3">– Antivenom[Redback AV 2 vials IV]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Loxoscelism[*Loxosceles*]</div>
+<div class="mm-node mm-l2">Species[Brown recluse, Chilean recluse]</div>
+<div class="mm-node mm-l2">Mechanism[Sphingomyelinase D → complement]</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Local[Painless → RWB → necrosis]</div>
+<div class="mm-node mm-l3">– Systemic[Haemolysis, DIC, AKI]</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Supportive[Wound care, analgesia]</div>
+<div class="mm-node mm-l3">– Dapsone[CONTROVERSIAL - NOT recommended]</div>
+<div class="mm-node mm-l3">– Excision[NOT recommended]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Tarantula[Theraphosidae]</div>
+<div class="mm-node mm-l2">Hairs[Urticating - mechanical]</div>
+<div class="mm-node mm-l2">Management[Tape removal, antihistamine]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Funnel_Web[*Atrax/Hadronyche*]</div>
+<div class="mm-node mm-l2">Emergency[PIB + Antivenom + ICU]</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>12. Flowchart: Spider Bite Management</h2>
-<pre class="mermaid">flowchart TD
-    A[Spider Bite] --&gt; B{Identify Spider}
-    B --&gt;|Latrodectus (widow)| C[Latrodectism Protocol]
-    B --&gt;|Loxosceles (recluse)| D[Loxoscelism Protocol]
-    B --&gt;|Atrax/Hadronyche (funnel-web)| E[FUNNEL-WEB EMERGENCY]
-    B --&gt;|Tarantula| F[Urticating Hairs Protocol]
-    B --&gt;|Unknown/Other| G[Supportive, Observe]
-    C --&gt; H[Pain, Diaphoresis, HTN, Rigidity]
-    H --&gt; I{RADS Score}
-    I --&gt;|≥2| J[Consider Antivenom]
-    I --&gt;|≥4| K[GIVE Antivenom IV]
-    I --&gt;|0-1| L[Analgesia, Observe 12h]
-    C --&gt; M[IV Calcium Gluconate for Rigidity]
-    D --&gt; N[Painless Bite → RWB Lesion]
-    N --&gt; O{Systemic Features?}
-    O --&gt;|Yes (Haemolysis, DIC)| P[Admit ICU, Transfusion, Steroids]
-    O --&gt;|No| Q[Wound Care, Follow-up]
-    E --&gt; R[PIB + Funnel-web AV + ICU]
-    F --&gt; S[Remove Hairs (Tape), Antihistamine]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Spider Bite</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Identify Spider</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Latrodectism Protocol</div>
+<div class="fc-node" data-id="D">Loxoscelism Protocol</div>
+<div class="fc-node" data-id="E">FUNNEL-WEB EMERGENCY</div>
+<div class="fc-node" data-id="F">Urticating Hairs Protocol</div>
+<div class="fc-node" data-id="G">Supportive, Observe</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Pain, Diaphoresis, HTN, Rigidity</div>
+<div class="fc-node" data-id="M">IV Calcium Gluconate for Rigidity</div>
+<div class="fc-node" data-id="N">Painless Bite → RWB Lesion</div>
+<div class="fc-node" data-id="R">PIB + Funnel-web AV + ICU</div>
+<div class="fc-node" data-id="S">Remove Hairs (Tape), Antihistamine</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">RADS Score</div>
+<div class="fc-node" data-id="O">Systemic Features?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Consider Antivenom</div>
+<div class="fc-node" data-id="K">GIVE Antivenom IV</div>
+<div class="fc-node" data-id="L">Analgesia, Observe 12h</div>
+<div class="fc-node" data-id="P">Admit ICU, Transfusion, Steroids</div>
+<div class="fc-node" data-id="Q">Wound Care, Follow-up</div>
+</div>
+</div>
 <hr>
 <h2>13. One-Page Revision Card</h2>
 <table>
@@ -10349,57 +10786,88 @@ footer a:hover { color: var(--accent); }
 </ul>
 <hr>
 <h2>23. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Spider Bite Envenomation))
-    Latrodectism[*Latrodectus*]
-      Species[Black widow, Redback, Katipo]
-      Mechanism[Latrotoxin → NT release]
-      Clinical
-        Pain[Pinprick → radiating]
-        Autonomic[Diaphoresis, HTN, Tachy]
-        Neuromuscular[Rigidity, fasciculations]
-        Abdomen[Rigidity mimics surgical]
-      RADS_Score[Pain, Sweating, Neuro, HTN]
-      Management
-        Analgesia[Opioids]
-        Calcium_Gluconate[Rigidity]
-        Antivenom[Redback AV 2 vials IV]
-    Loxoscelism[*Loxosceles*]
-      Species[Brown recluse, Chilean recluse]
-      Mechanism[Sphingomyelinase D → complement]
-      Clinical
-        Local[Painless → RWB → necrosis]
-        Systemic[Haemolysis, DIC, AKI]
-      Management
-        Supportive[Wound care, analgesia]
-        Dapsone[CONTROVERSIAL - NOT recommended]
-        Excision[NOT recommended]
-    Tarantula[Theraphosidae]
-      Hairs[Urticating - mechanical]
-      Management[Tape removal, antihistamine]
-    Funnel_Web[*Atrax/Hadronyche*]
-      Emergency[PIB + Antivenom + ICU]</pre>
+<div class="mindmap">
+<div class="mm-root">Spider Bite Envenomation</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Latrodectism[*Latrodectus*]</div>
+<div class="mm-node mm-l2">Species[Black widow, Redback, Katipo]</div>
+<div class="mm-node mm-l2">Mechanism[Latrotoxin → NT release]</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Pain[Pinprick → radiating]</div>
+<div class="mm-node mm-l3">– Autonomic[Diaphoresis, HTN, Tachy]</div>
+<div class="mm-node mm-l3">– Neuromuscular[Rigidity, fasciculations]</div>
+<div class="mm-node mm-l3">– Abdomen[Rigidity mimics surgical]</div>
+<div class="mm-node mm-l2">RADS_Score[Pain, Sweating, Neuro, HTN]</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Analgesia[Opioids]</div>
+<div class="mm-node mm-l3">– Calcium_Gluconate[Rigidity]</div>
+<div class="mm-node mm-l3">– Antivenom[Redback AV 2 vials IV]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Loxoscelism[*Loxosceles*]</div>
+<div class="mm-node mm-l2">Species[Brown recluse, Chilean recluse]</div>
+<div class="mm-node mm-l2">Mechanism[Sphingomyelinase D → complement]</div>
+<div class="mm-node mm-l2">Clinical</div>
+<div class="mm-node mm-l3">– Local[Painless → RWB → necrosis]</div>
+<div class="mm-node mm-l3">– Systemic[Haemolysis, DIC, AKI]</div>
+<div class="mm-node mm-l2">Management</div>
+<div class="mm-node mm-l3">– Supportive[Wound care, analgesia]</div>
+<div class="mm-node mm-l3">– Dapsone[CONTROVERSIAL - NOT recommended]</div>
+<div class="mm-node mm-l3">– Excision[NOT recommended]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Tarantula[Theraphosidae]</div>
+<div class="mm-node mm-l2">Hairs[Urticating - mechanical]</div>
+<div class="mm-node mm-l2">Management[Tape removal, antihistamine]</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Funnel_Web[*Atrax/Hadronyche*]</div>
+<div class="mm-node mm-l2">Emergency[PIB + Antivenom + ICU]</div>
+</div>
+</div>
+</div>
 <hr>
 <h2>24. Flowchart: Spider Bite Management</h2>
-<pre class="mermaid">flowchart TD
-    A[Spider Bite] --&gt; B{Identify Spider}
-    B --&gt;|Latrodectus (widow)| C[Latrodectism Protocol]
-    B --&gt;|Loxosceles (recluse)| D[Loxoscelism Protocol]
-    B --&gt;|Atrax/Hadronyche (funnel-web)| E[FUNNEL-WEB EMERGENCY]
-    B --&gt;|Tarantula| F[Urticating Hairs Protocol]
-    B --&gt;|Unknown/Other| G[Supportive, Observe]
-    C --&gt; H[Pain, Diaphoresis, HTN, Rigidity]
-    H --&gt; I{RADS Score}
-    I --&gt;|≥2| J[Consider Antivenom]
-    I --&gt;|≥4| K[GIVE Antivenom IV]
-    I --&gt;|0-1| L[Analgesia, Observe 12h]
-    C --&gt; M[IV Calcium Gluconate for Rigidity]
-    D --&gt; N[Painless Bite → RWB Lesion]
-    N --&gt; O{Systemic Features?}
-    O --&gt;|Yes (Haemolysis, DIC)| P[Admit ICU, Transfusion, Steroids]
-    O --&gt;|No| Q[Wound Care, Follow-up]
-    E --&gt; R[PIB + Funnel-web AV + ICU]
-    F --&gt; S[Remove Hairs (Tape), Antihistamine]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Spider Bite</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Identify Spider</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Latrodectism Protocol</div>
+<div class="fc-node" data-id="D">Loxoscelism Protocol</div>
+<div class="fc-node" data-id="E">FUNNEL-WEB EMERGENCY</div>
+<div class="fc-node" data-id="F">Urticating Hairs Protocol</div>
+<div class="fc-node" data-id="G">Supportive, Observe</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Pain, Diaphoresis, HTN, Rigidity</div>
+<div class="fc-node" data-id="M">IV Calcium Gluconate for Rigidity</div>
+<div class="fc-node" data-id="N">Painless Bite → RWB Lesion</div>
+<div class="fc-node" data-id="R">PIB + Funnel-web AV + ICU</div>
+<div class="fc-node" data-id="S">Remove Hairs (Tape), Antihistamine</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">RADS Score</div>
+<div class="fc-node" data-id="O">Systemic Features?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Consider Antivenom</div>
+<div class="fc-node" data-id="K">GIVE Antivenom IV</div>
+<div class="fc-node" data-id="L">Analgesia, Observe 12h</div>
+<div class="fc-node" data-id="P">Admit ICU, Transfusion, Steroids</div>
+<div class="fc-node" data-id="Q">Wound Care, Follow-up</div>
+</div>
+</div>
 <hr>
 <h2>25. One-Page Revision Card</h2>
 <table>
@@ -10891,7 +11359,7 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 04:27 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 09:37 UTC · Davidson 25th Ed</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>

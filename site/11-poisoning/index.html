@@ -1160,39 +1160,39 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   header.site { display: none; }
   .mobile-bar { display: flex; }
 
-  /* === MOBILE BAR: compact 2-row; full-width search is visible === */
+  /* === MOBILE BAR: strict single-line header === */
   .mobile-bar {
     padding: 6px 8px;
     gap: 6px;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
-  .mobile-bar .row.top {
-    display: flex;
-    justify-content: space-between;
-    min-width: 0;
-  }
+  .mobile-bar .row.top,
   .mobile-bar .row.search-row {
-    display: flex;
-    width: 100%;
-    min-width: 0;
+    display: contents;
   }
   .mobile-bar .logo-mini {
-    font-size: 13px;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
+    gap: 0;
   }
   .mobile-bar .logo-mini .logo { font-size: 16px; }
-  .mobile-bar .logo-mini a {
-    font-size: 13px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .mobile-bar .logo-mini a,
+  .mobile-bar .current-ch-label,
+  .mobile-bar .github-btn,
+  .mobile-bar .stats-mini {
+    display: none !important;
   }
   .mobile-bar .menu-btn {
     padding: 6px 8px;
     font-size: 12px;
     flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .mobile-bar .search-row {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .mobile-bar .search-row .search-box-m {
     flex: 1 1 auto;
@@ -1208,17 +1208,6 @@ header.site .search-box .search-empty strong { color: var(--accent); }
     left: 8px;
     font-size: 11px;
   }
-  .mobile-bar .current-ch-label {
-    font-size: 10px;
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-  .mobile-bar .github-btn {
-    padding: 6px 8px;
-    font-size: 11px;
-    flex: 0 0 auto;
-  }
-  .mobile-bar .stats-mini { display: none; }
 
   /* === HIDE DUPLICATE MOBILE TOOLBAR SEARCH (mobile-bar already has search) === */
   .chapter-mobile .chapter-toolbar {
@@ -2340,44 +2329,62 @@ footer a:hover { color: var(--accent); }
 <li><strong>TORSADES</strong>: <strong>Mg</strong>SO₄ 2g IV + <strong>P</strong>acing (overdrive)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Antiarrhythmic Poisoning))
-    Vaughan Williams
-      Ia: Quinidine, Procainamide, Disopyramide
-        QRS↑, QT↑, Torsades, Cinchonism
-      Ib: Lidocaine, Mexiletine, Phenytoin
-        CNS Seizures, Less QRS
-      Ic: Flecainide, Propafenone
-        Marked QRS↑, Shock, Seizures
-      II: Beta-Blockers (see BB)
-      III: Amiodarone, Sotalol, Dronedarone
-        QT↑, Torsades, Pulmonary (Amio), Thyroid
-      IV: CCB (see CCB)
-    Management
-      Ia/Ic: NaHCO3 (pH 7.50-7.55)
-      III Torsades: MgSO4 + Pacing
-      Ib: Benzos
-      Amiodarone: Stop + Steroids (Pulmonary)</pre>
+<div class="mindmap">
+<div class="mm-root">Antiarrhythmic Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Vaughan Williams</div>
+<div class="mm-node mm-l2">Ia: Quinidine, Procainamide, Disopyramide</div>
+<div class="mm-node mm-l3">– QRS↑, QT↑, Torsades, Cinchonism</div>
+<div class="mm-node mm-l2">Ib: Lidocaine, Mexiletine, Phenytoin</div>
+<div class="mm-node mm-l3">– CNS Seizures, Less QRS</div>
+<div class="mm-node mm-l2">Ic: Flecainide, Propafenone</div>
+<div class="mm-node mm-l3">– Marked QRS↑, Shock, Seizures</div>
+<div class="mm-node mm-l2">II: Beta-Blockers (see BB)</div>
+<div class="mm-node mm-l2">III: Amiodarone, Sotalol, Dronedarone</div>
+<div class="mm-node mm-l3">– QT↑, Torsades, Pulmonary (Amio), Thyroid</div>
+<div class="mm-node mm-l2">IV: CCB (see CCB)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Ia/Ic: NaHCO3 (pH 7.50-7.55)</div>
+<div class="mm-node mm-l2">III Torsades: MgSO4 + Pacing</div>
+<div class="mm-node mm-l2">Ib: Benzos</div>
+<div class="mm-node mm-l2">Amiodarone: Stop + Steroids (Pulmonary)</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Antiarrhythmic Overdose] --&gt; B[ABCDE + Continuous ECG\nElectrolytes (K, Mg, Ca)\nDrug Level if Available]
-  B --&gt; C{Vaughan Williams Class}
-  C --&gt;|Ia/Ic (Na Channel)| D[QRS &gt; 100ms?]
-  D --&gt;|Yes| E[NaHCO3 1-2 mEq/kg IV\nTarget pH 7.50-7.55, QRS&lt;100\nInfusion to Maintain]
-  D --&gt;|No| F[Monitor]
-  C --&gt;|Ib (Lidocaine/Mexiletine)| G[Seizures: Benzos\nHypotension: Fluids/Vaso\nNO NaHCO3 Needed]
-  C --&gt;|III (Amiodarone/Sotalol)| H{QT Prolonged/Torsades?}
-  H --&gt;|Yes| I[MgSO4 2g IV\nOverdrive Pacing 90-110bpm\nCorrect K&gt;4, Mg&gt;1]
-  H --&gt;|No| J[Monitor QT\nAmiodarone: Stop if Pulmonary/Thyroid]
-  C --&gt;|II (Beta-Blocker)| K[See BB Poisoning]
-  C --&gt;|IV (CCB)| L[See CCB Poisoning]
-  E --&gt; M[Monitor ECG, pH, Electrolytes]
-  I --&gt; M
-  F --&gt; M
-  G --&gt; M
-  J --&gt; M
-  K --&gt; M
-  L --&gt; M</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Antiarrhythmic Overdose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Continuous ECG\nElectrolytes (K, Mg, Ca)\nDrug Level if Available</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Vaughan Williams Class</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">QRS &gt; 100ms?</div>
+<div class="fc-node" data-id="G">Seizures: Benzos\nHypotension: Fluids/Vaso\nNO NaHCO3 Needed</div>
+<div class="fc-node" data-id="H">QT Prolonged/Torsades?</div>
+<div class="fc-node" data-id="K">See BB Poisoning</div>
+<div class="fc-node" data-id="L">See CCB Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">NaHCO3 1-2 mEq/kg IV\nTarget pH 7.50-7.55, QRS&lt;100\nInfusion to Maintain</div>
+<div class="fc-node" data-id="F">Monitor</div>
+<div class="fc-node" data-id="M">Monitor ECG, pH, Electrolytes</div>
+<div class="fc-node" data-id="I">MgSO4 2g IV\nOverdrive Pacing 90-110bpm\nCorrect K&gt;4, Mg&gt;1</div>
+<div class="fc-node" data-id="J">Monitor QT\nAmiodarone: Stop if Pulmonary/Thyroid</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Vaughan Williams classification with toxicity table</li>
@@ -2943,51 +2950,86 @@ footer a:hover { color: var(--accent); }
 <li><strong>MEANT</strong> (anticholinergic agents): <strong>M</strong>uscarinic antagonists (atropine), <strong>E</strong>lderly meds (anticholinergic burden), <strong>A</strong>ntihistamines (1st gen), <strong>N</strong>euroleptics (low potency), <strong>T</strong>ricyclics, <strong>T</strong>oxic plants (Datura)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Anticholinergic Toxidrome))
-    Mechanism
-      Muscarinic Blockade
-      Central + Peripheral
-    Clinical
-      Hot/Dry/Red Skin
-      Mydriasis
-      Tachycardia
-      Urinary Retention
-      Ileus
-      Delirium/Agitation
-      Seizures
-      Hyperthermia
-    Agents
-      Pure: Atropine, Scopolamine, Benztropine
-      Mixed: TCA, Antihistamines, Antipsychotics, Plants
-    DDx
-      Sympathomimetic (Wet, Hyperreflexia)
-      Serotonin (CLONUS, Hyperreflexia, Wet)
-      NMS (Rigidity, Bradykinesia, Days)
-      Cholinergic (Opposite)
-    Management
-      Supportive (Cooling, Benzo, Fluids)
-      Physostigmine (Restricted)
-      Charcoal (Longer Window)
-    Physostigmine
-      Indications: Severe refractory
-      Contraindications: QRS, Brady, Asthma, Obstruction
-      Dose: 0.5-1mg IV</pre>
+<div class="mindmap">
+<div class="mm-root">Anticholinergic Toxidrome</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Muscarinic Blockade</div>
+<div class="mm-node mm-l2">Central + Peripheral</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Hot/Dry/Red Skin</div>
+<div class="mm-node mm-l2">Mydriasis</div>
+<div class="mm-node mm-l2">Tachycardia</div>
+<div class="mm-node mm-l2">Urinary Retention</div>
+<div class="mm-node mm-l2">Ileus</div>
+<div class="mm-node mm-l2">Delirium/Agitation</div>
+<div class="mm-node mm-l2">Seizures</div>
+<div class="mm-node mm-l2">Hyperthermia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Agents</div>
+<div class="mm-node mm-l2">Pure: Atropine, Scopolamine, Benztropine</div>
+<div class="mm-node mm-l2">Mixed: TCA, Antihistamines, Antipsychotics, Plants</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">DDx</div>
+<div class="mm-node mm-l2">Sympathomimetic (Wet, Hyperreflexia)</div>
+<div class="mm-node mm-l2">Serotonin (CLONUS, Hyperreflexia, Wet)</div>
+<div class="mm-node mm-l2">NMS (Rigidity, Bradykinesia, Days)</div>
+<div class="mm-node mm-l2">Cholinergic (Opposite)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Supportive (Cooling, Benzo, Fluids)</div>
+<div class="mm-node mm-l2">Physostigmine (Restricted)</div>
+<div class="mm-node mm-l2">Charcoal (Longer Window)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Physostigmine</div>
+<div class="mm-node mm-l2">Indications: Severe refractory</div>
+<div class="mm-node mm-l2">Contraindications: QRS, Brady, Asthma, Obstruction</div>
+<div class="mm-node mm-l2">Dose: 0.5-1mg IV</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Hot, Dry, Delirious, Tachycardic, Mydriasis, Urinary Retention] --&gt; B[Anticholinergic Toxidrome]
-  B --&gt; C[ABCDE + Cooling + Benzodiazepines]
-  C --&gt; D{Severe Refractory
-Agitation/Hyperthermia/Seizures?}
-  D --&gt;|No| E[Observation 6h
-Psych Assessment]
-  D --&gt;|Yes| F{Contraindications?\nQRS&gt;100, Brady, Asthma,\nBowel/Urinary Obstruction}
-  F --&gt;|Yes| G[DO NOT GIVE PHYSOSTIGMINE\nContinue Supportive\nICU Admission]
-  F --&gt;|No| H[Physostigmine 0.5-1mg IV\nOver 2-5 min\nMonitor ECG]
-  H --&gt; I[Repeat if needed q20-30min\nMax 2mg/hr]
-  G --&gt; J[ICU: Cooling, Benzo,\nFoley, Monitor]
-  I --&gt; J
-  E --&gt; K[Discharge if Resolved\n+ Psych Safe]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hot, Dry, Delirious, Tachycardic, Mydriasis, Urinary Retention</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Anticholinergic Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE + Cooling + Benzodiazepines</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Severe Refractory Agitation/Hyperthermia/Seizures?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Observation 6h Psych Assessment</div>
+<div class="fc-node" data-id="F">Contraindications?\nQRS&gt;100, Brady, Asthma,\nBowel/Urinary Obstruction</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Discharge if Resolved\n+ Psych Safe</div>
+<div class="fc-node" data-id="G">DO NOT GIVE PHYSOSTIGMINE\nContinue Supportive\nICU Admission</div>
+<div class="fc-node" data-id="H">Physostigmine 0.5-1mg IV\nOver 2-5 min\nMonitor ECG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">ICU: Cooling, Benzo,\nFoley, Monitor</div>
+<div class="fc-node" data-id="I">Repeat if needed q20-30min\nMax 2mg/hr</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Comparison table: anticholinergic vs sympathomimetic vs serotonin vs NMS</li>
@@ -3476,15 +3518,34 @@ Psych Assessment]
 <tr><td><strong>Methylene blue</strong></td><td>G6PD deficiency (high dose)</td></tr>
 </table>
 <h2>6. Antidote Decision Flowchart (General)</h2>
-<pre class="mermaid">flowchart TD
-  A[Identify Poison/Toxidrome] --&gt; B{Antidote Available?}
-  B --&gt;|Yes| C[Give Antidote per Protocol\nCheck Contraindications First]
-  B --&gt;|No| D[Supportive Care + Enhanced Elimination\n+ Toxicology Consult]
-  C --&gt; E[Monitor for Response\nand Adverse Effects]
-  D --&gt; E
-  E --&gt; F{Clinical Improvement?}
-  F --&gt;|Yes| G[Continue/Observe\nPsych Assessment]
-  F --&gt;|No| H[Reassess Diagnosis\nConsider Additional Antidotes\nECMO/Rescue]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Identify Poison/Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Antidote Available?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Give Antidote per Protocol\nCheck Contraindications First</div>
+<div class="fc-node" data-id="D">Supportive Care + Enhanced Elimination\n+ Toxicology Consult</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Monitor for Response\nand Adverse Effects</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Clinical Improvement?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Continue/Observe\nPsych Assessment</div>
+<div class="fc-node" data-id="H">Reassess Diagnosis\nConsider Additional Antidotes\nECMO/Rescue</div>
+</div>
+</div>
 <h2>7. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Antidote stocking list poster for ED</li>
@@ -4095,45 +4156,68 @@ Psych Assessment]
 <li><strong>METHEMOGLOBINEMIA</strong>: <strong>M</strong>ethylene <strong>B</strong>lue 1-2mg/kg (NO G6PD)</li>
 </ul>
 <h2>13. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Antihypertensive Poisoning))
-    Central Alpha-2
-      Clonidine: Coma, Miosis, Brady, Hypotension, Transient HTN
-      Naloxone Partial Reversal
-    ACEi/ARB
-      Hypotension + HyperK + AKI
-      ACEi: Cough, Angioedema
-    Diuretics
-      Loop: K↓, Na↓, Alk, Ototoxicity
-      Thiazide: Na↓, K↓, Alk, Ca↑, Hyperuricemia
-      K-Sparing: K↑, Acidosis (Type 4 RTA)
-    Vasodilators
-      Nitroprusside: Cyanide/Thiocyanate -&gt; Hydroxocobalamin
-      Nitrates: MetHb -&gt; Methylene Blue
-      Hydralazine: Lupus, Reflex Tachy
-      Minoxidil: Hirsutism, Pericardial Effusion
-    Alpha-1 Blockers
-      First-Dose Hypotension</pre>
+<div class="mindmap">
+<div class="mm-root">Antihypertensive Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Central Alpha-2</div>
+<div class="mm-node mm-l2">Clonidine: Coma, Miosis, Brady, Hypotension, Transient HTN</div>
+<div class="mm-node mm-l2">Naloxone Partial Reversal</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">ACEi/ARB</div>
+<div class="mm-node mm-l2">Hypotension + HyperK + AKI</div>
+<div class="mm-node mm-l2">ACEi: Cough, Angioedema</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diuretics</div>
+<div class="mm-node mm-l2">Loop: K↓, Na↓, Alk, Ototoxicity</div>
+<div class="mm-node mm-l2">Thiazide: Na↓, K↓, Alk, Ca↑, Hyperuricemia</div>
+<div class="mm-node mm-l2">K-Sparing: K↑, Acidosis (Type 4 RTA)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Vasodilators</div>
+<div class="mm-node mm-l2">Nitroprusside: Cyanide/Thiocyanate -&gt; Hydroxocobalamin</div>
+<div class="mm-node mm-l2">Nitrates: MetHb -&gt; Methylene Blue</div>
+<div class="mm-node mm-l2">Hydralazine: Lupus, Reflex Tachy</div>
+<div class="mm-node mm-l2">Minoxidil: Hirsutism, Pericardial Effusion</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Alpha-1 Blockers</div>
+<div class="mm-node mm-l2">First-Dose Hypotension</div>
+</div>
+</div>
+</div>
 <h2>14. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Hypotensive Overdose] --&gt; B[ABCDE + Fluids + Vasopressors (NE)\nElectrolytes, Renal, ECG]
-  B --&gt; C{Identify Class}
-  C --&gt;|Clonidine| D[Naloxone 0.4-2mg IV\nPartial Reversal\nMay Need Infusion\nSupportive]
-  C --&gt;|ACEi/ARB| E[Fluids + NE\nHyperK Management\nAKI Monitoring]
-  C --&gt;|Loop/Thiazide| F[Electrolyte Replacement\nK, Mg, Na\nVolume Resuscitation]
-  C --&gt;|K-Sparing| G[HyperK Management\nStop ACEi/ARB\nDialysis if Severe]
-  C --&gt;|Nitroprusside| H[Cyanide/Thiocyanate Monitor\nHydroxocobalamin if CN]
-  C --&gt;|Nitrates| I[MetHb Check\nMethylene Blue if &gt;30%]
-  C --&gt;|Hydralazine| J[Lupus: Stop + Steroids\nReflex Tachy: BB]
-  C --&gt;|Alpha-1 Blocker| K[Fluids, Supine, Slow Titration]
-  D --&gt; L[Observe 12-24h\nPsych Assessment]
-  E --&gt; L
-  F --&gt; L
-  G --&gt; L
-  H --&gt; L
-  I --&gt; L
-  J --&gt; L
-  K --&gt; L</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hypotensive Overdose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Fluids + Vasopressors (NE)\nElectrolytes, Renal, ECG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Identify Class</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Naloxone 0.4-2mg IV\nPartial Reversal\nMay Need Infusion\nSupportive</div>
+<div class="fc-node" data-id="E">Fluids + NE\nHyperK Management\nAKI Monitoring</div>
+<div class="fc-node" data-id="F">Electrolyte Replacement\nK, Mg, Na\nVolume Resuscitation</div>
+<div class="fc-node" data-id="G">HyperK Management\nStop ACEi/ARB\nDialysis if Severe</div>
+<div class="fc-node" data-id="H">Cyanide/Thiocyanate Monitor\nHydroxocobalamin if CN</div>
+<div class="fc-node" data-id="I">MetHb Check\nMethylene Blue if &gt;30%</div>
+<div class="fc-node" data-id="J">Lupus: Stop + Steroids\nReflex Tachy: BB</div>
+<div class="fc-node" data-id="K">Fluids, Supine, Slow Titration</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Observe 12-24h\nPsych Assessment</div>
+</div>
+</div>
 <h2>15. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Antihypertensive class comparison table</li>
@@ -4717,44 +4801,75 @@ Psych Assessment]
 <li><strong>BROMOCRIPTINE</strong>: <strong>2.5 mg PO q6h</strong>, <strong>Titrate to 10-30 mg/day</strong></li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Antipsychotic Poisoning / NMS))
-    NMS
-      Mechanism: D2 Blockade
-      FEVER: Fever, Encephalopathy, Vitals, Enzymes(CK), Rigidity
-      Onset: Days
-      Rigidity: Lead-pipe
-      CK: Markedly Elevated
-      DDx: Serotonin (Clonus, Hours), MH (Anesthetic)
-    Antipsychotic OD
-      Typical: EPS, QT, Hypotension
-      Atypical: Sedation, Hypotension, Seizures (Clozapine/Olanzapine), Anticholinergic
-      Depot: Prolonged
-    Treatment NMS
-      Stop Drug
-      Cooling
-      Dantrolene 2.5mg/kg IV q6h
-      Bromocriptine 2.5mg PO q6h
-      Fluids + Alkalinization
-    Antipsychotic OD
-      Charcoal
-      QT: Mg, K
-      Seizures: Benzo
-      Hypotension: Fluids -&gt; NE</pre>
+<div class="mindmap">
+<div class="mm-root">Antipsychotic Poisoning / NMS</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">NMS</div>
+<div class="mm-node mm-l2">Mechanism: D2 Blockade</div>
+<div class="mm-node mm-l2">FEVER: Fever, Encephalopathy, Vitals, Enzymes(CK), Rigidity</div>
+<div class="mm-node mm-l2">Onset: Days</div>
+<div class="mm-node mm-l2">Rigidity: Lead-pipe</div>
+<div class="mm-node mm-l2">CK: Markedly Elevated</div>
+<div class="mm-node mm-l2">DDx: Serotonin (Clonus, Hours), MH (Anesthetic)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Antipsychotic OD</div>
+<div class="mm-node mm-l2">Typical: EPS, QT, Hypotension</div>
+<div class="mm-node mm-l2">Atypical: Sedation, Hypotension, Seizures (Clozapine/Olanzapine), Anticholinergic</div>
+<div class="mm-node mm-l2">Depot: Prolonged</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment NMS</div>
+<div class="mm-node mm-l2">Stop Drug</div>
+<div class="mm-node mm-l2">Cooling</div>
+<div class="mm-node mm-l2">Dantrolene 2.5mg/kg IV q6h</div>
+<div class="mm-node mm-l2">Bromocriptine 2.5mg PO q6h</div>
+<div class="mm-node mm-l2">Fluids + Alkalinization</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Antipsychotic OD</div>
+<div class="mm-node mm-l2">Charcoal</div>
+<div class="mm-node mm-l2">QT: Mg, K</div>
+<div class="mm-node mm-l2">Seizures: Benzo</div>
+<div class="mm-node mm-l2">Hypotension: Fluids -&gt; NE</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[On Antipsychotic + Fever + Rigidity + Altered Mental Status] --&gt; B[NMS Suspected\nFEVER Criteria]
-  B --&gt; C[STOP Antipsychotic\nStop All Dopamine Antagonists]
-  C --&gt; D[ABCDE + Aggressive Cooling\nIV Fluids + Alkalinization\nMonitor CK, Renal, Electrolytes]
-  D --&gt; E{Dantrolene Indicated?\nSevere Rigidity/Hyperthermia}
-  E --&gt;|Yes| F[Dantrolene 2.5mg/kg IV q6h\nMax 10mg/kg/day\nMonitor LFTs]
-  E --&gt;|No| G
-  D --&gt; H{Bromocriptine?\nPersistent Symptoms}
-  H --&gt;|Yes| I[Bromocriptine 2.5mg PO q6h\nTitrate 10-30mg/day]
-  H --&gt;|No| G
-  F --&gt; G[Monitor: Temp, CK q12-24h\nRenal, Electrolytes, Fluid Balance\nUntil Resolution]
-  I --&gt; G
-  G --&gt; J[Resolution: 1-2 Weeks\nWait 2 Weeks Before Restart\nLow Potency Atypical]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">On Antipsychotic + Fever + Rigidity + Altered Mental Status</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">NMS Suspected\nFEVER Criteria</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">STOP Antipsychotic\nStop All Dopamine Antagonists</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">ABCDE + Aggressive Cooling\nIV Fluids + Alkalinization\nMonitor CK, Renal, Electrolytes</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Dantrolene Indicated?\nSevere Rigidity/Hyperthermia</div>
+<div class="fc-node" data-id="H">Bromocriptine?\nPersistent Symptoms</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Dantrolene 2.5mg/kg IV q6h\nMax 10mg/kg/day\nMonitor LFTs</div>
+<div class="fc-node" data-id="G">Monitor: Temp, CK q12-24h\nRenal, Electrolytes, Fluid Balance\nUntil Resolution</div>
+<div class="fc-node" data-id="I">Bromocriptine 2.5mg PO q6h\nTitrate 10-30mg/day</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Resolution: 1-2 Weeks\nWait 2 Weeks Before Restart\nLow Potency Atypical</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>FEVER mnemonic card</li>
@@ -5307,46 +5422,84 @@ Psych Assessment]
 <li><strong>BENZO VS BARB</strong>: <strong>B</strong>enzo = <strong>C</strong>eiling (safer); <strong>B</strong>arb = <strong>B</strong>ad (no ceiling)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Barbiturate Poisoning))
-    Mechanism
-      GABA-A Duration ↑ (Mimics GABA)
-      NO Ceiling Effect
-    Clinical
-      Deep Coma (GCS 3)
-      Absent Reflexes
-      Severe Resp Depression
-      Hypotension
-      Hypothermia
-      Bullous Lesions
-      Non-Cardiogenic Pulm Edema
-      DIC
-    Phenobarbital Specific
-      Long Half-life (60-120h)
-      Weak Acid (pKa 7.2)
-      Enhanced Elimination
-    Enhanced Elimination
-      MDAC 1g/kg q4-6h
-      Urinary Alkalinization pH 7.5-8.0
-      Hemodialysis
-    Complications
-      Aspiration
-      Rhabdo → AKI
-      Bullous Lesions
-      DIC
-      Hypoxic Brain Injury</pre>
+<div class="mindmap">
+<div class="mm-root">Barbiturate Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">GABA-A Duration ↑ (Mimics GABA)</div>
+<div class="mm-node mm-l2">NO Ceiling Effect</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Deep Coma (GCS 3)</div>
+<div class="mm-node mm-l2">Absent Reflexes</div>
+<div class="mm-node mm-l2">Severe Resp Depression</div>
+<div class="mm-node mm-l2">Hypotension</div>
+<div class="mm-node mm-l2">Hypothermia</div>
+<div class="mm-node mm-l2">Bullous Lesions</div>
+<div class="mm-node mm-l2">Non-Cardiogenic Pulm Edema</div>
+<div class="mm-node mm-l2">DIC</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Phenobarbital Specific</div>
+<div class="mm-node mm-l2">Long Half-life (60-120h)</div>
+<div class="mm-node mm-l2">Weak Acid (pKa 7.2)</div>
+<div class="mm-node mm-l2">Enhanced Elimination</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Enhanced Elimination</div>
+<div class="mm-node mm-l2">MDAC 1g/kg q4-6h</div>
+<div class="mm-node mm-l2">Urinary Alkalinization pH 7.5-8.0</div>
+<div class="mm-node mm-l2">Hemodialysis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complications</div>
+<div class="mm-node mm-l2">Aspiration</div>
+<div class="mm-node mm-l2">Rhabdo → AKI</div>
+<div class="mm-node mm-l2">Bullous Lesions</div>
+<div class="mm-node mm-l2">DIC</div>
+<div class="mm-node mm-l2">Hypoxic Brain Injury</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Deep Coma, Severe Resp Depression,\nHypotension, Hypothermia] --&gt; B[Barbiturate Poisoning]
-  B --&gt; C[ABCDE: Intubate Early\nMechanical Ventilation\nFluids + Vasopressors\nActive Warming]
-  C --&gt; D{Phenobarbital?}
-  D --&gt;|Yes| E[MDAC 1g/kg q4-6h\nUrinary Alkalinization\npH 7.5-8.0 + KCl\nHemodialysis if Severe]
-  D --&gt;|No| F[Supportive Care Only\nMDAC if Recent/Large Dose]
-  E --&gt; G[Monitor: CK, Coagulation,\nRenal, Electrolytes,\nSkin for Bullae]
-  F --&gt; G
-  G --&gt; H{Prolonged Ventilation?}
-  H --&gt;|Yes| I[Tracheostomy Consideration\nDVT/Stress Ulcer Prophylaxis\nPressure Area Care]
-  H --&gt;|No| J[Wean Ventilation\nObserve 24h Post-Extubation]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Deep Coma, Severe Resp Depression,\nHypotension, Hypothermia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Barbiturate Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE: Intubate Early\nMechanical Ventilation\nFluids + Vasopressors\nActive Warming</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Phenobarbital?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">MDAC 1g/kg q4-6h\nUrinary Alkalinization\npH 7.5-8.0 + KCl\nHemodialysis if Severe</div>
+<div class="fc-node" data-id="F">Supportive Care Only\nMDAC if Recent/Large Dose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Monitor: CK, Coagulation,\nRenal, Electrolytes,\nSkin for Bullae</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Prolonged Ventilation?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Tracheostomy Consideration\nDVT/Stress Ulcer Prophylaxis\nPressure Area Care</div>
+<div class="fc-node" data-id="J">Wean Ventilation\nObserve 24h Post-Extubation</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Barbiturate vs benzodiazepine comparison table</li>
@@ -5921,52 +6074,93 @@ Psych Assessment]
 <li><strong>URINE SCREEN MISSES</strong>: <strong>A</strong>lprazolam, <strong>C</strong>lonazepam, <strong>L</strong>orazepam, <strong>M</strong>idazolam = <strong>A</strong>-<strong>C</strong>-<strong>L</strong>-<strong>M</strong></li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Benzodiazepine Poisoning))
-    Mechanism
-      GABA-A Freq ↑
-      Ceiling Effect (Resp)
-      Lipophilic, Hepatic
-      Active Metabolites
-    Clinical
-      Pure: Sedation, Ataxia, Nystagmus, Mild Resp Dep
-      Mixed: Fatal Resp Dep (Opioid/Alcohol/TCA)
-    DDx
-      Opioid (Miosis, Naloxone)
-      Barbiturate (Deeper, No Ceiling)
-      Alcohol (Odor, Ketoacidosis)
-      GHB (Rapid Arousal)
-    Management
-      Supportive (Mainstay)
-      Flumazenil (RESTRICTED)
-      Naloxone Trial (if Opioid)
-      Charcoal (Longer Window)
-    Flumazenil
-      Indications: Procedural, Diagnostic
-      Contraindications: TCA, Seizure, Chronic, Head Injury
-      Dose: 0.2mg IV, Re-sedation Common
-    Withdrawal
-      Diazepam Taper
-      Short-acting: 6-12h
-      Long-acting: 24-48h</pre>
+<div class="mindmap">
+<div class="mm-root">Benzodiazepine Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">GABA-A Freq ↑</div>
+<div class="mm-node mm-l2">Ceiling Effect (Resp)</div>
+<div class="mm-node mm-l2">Lipophilic, Hepatic</div>
+<div class="mm-node mm-l2">Active Metabolites</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Pure: Sedation, Ataxia, Nystagmus, Mild Resp Dep</div>
+<div class="mm-node mm-l2">Mixed: Fatal Resp Dep (Opioid/Alcohol/TCA)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">DDx</div>
+<div class="mm-node mm-l2">Opioid (Miosis, Naloxone)</div>
+<div class="mm-node mm-l2">Barbiturate (Deeper, No Ceiling)</div>
+<div class="mm-node mm-l2">Alcohol (Odor, Ketoacidosis)</div>
+<div class="mm-node mm-l2">GHB (Rapid Arousal)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Supportive (Mainstay)</div>
+<div class="mm-node mm-l2">Flumazenil (RESTRICTED)</div>
+<div class="mm-node mm-l2">Naloxone Trial (if Opioid)</div>
+<div class="mm-node mm-l2">Charcoal (Longer Window)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Flumazenil</div>
+<div class="mm-node mm-l2">Indications: Procedural, Diagnostic</div>
+<div class="mm-node mm-l2">Contraindications: TCA, Seizure, Chronic, Head Injury</div>
+<div class="mm-node mm-l2">Dose: 0.2mg IV, Re-sedation Common</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Withdrawal</div>
+<div class="mm-node mm-l2">Diazepam Taper</div>
+<div class="mm-node mm-l2">Short-acting: 6-12h</div>
+<div class="mm-node mm-l2">Long-acting: 24-48h</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Sedated, Ataxic, Nystagmus, Normal Pupils, Mild Resp Dep] --&gt; B[Benzodiazepine Toxidrome]
-  B --&gt; C[ABCDE: Intubate if GCS&lt;8 or RR&lt;10\nThiamine → Glucose\nParacetamol Level\nEthanol Level]
-  C --&gt; D{Mixed OD Suspected?}
-  D --&gt;|Opioid Co-ingestion| E[Naloxone 0.04-0.4mg IV\nTitrate to RR&gt;10]
-  D --&gt;|Alcohol| F[Supportive\nThiamine, Electrolytes]
-  D --&gt;|TCA (QRS&gt;100)| G[NaHCO3 for QRS\nNO FLUMAZENIL]
-  D --&gt;|Pure/Unknown| H[Supportive Care\nObserve 6-12h\nLonger if Diazepam/Clonazepam]
-  E --&gt; I[Monitor for Re-sedation\nObs 6h Post Naloxone]
-  F --&gt; H
-  G --&gt; H
-  H --&gt; J{Flumazenil Indicated?}
-  J --&gt;|Procedural/Diagnostic\nNO Contraindications| K[Flumazenil 0.2mg IV\nRepeat q1min max 1mg\nMonitor 2-4h Post]
-  J --&gt;|Contraindications\nor Routine OD| L[NO Flumazenil\nSupportive Only]
-  K --&gt; M[Re-sedation Expected]
-  L --&gt; M
-  M --&gt; N[Obs: 6h Min\n12-24h Long-acting\nPsych Assessment if DSH]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Sedated, Ataxic, Nystagmus, Normal Pupils, Mild Resp Dep</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Benzodiazepine Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE: Intubate if GCS&lt;8 or RR&lt;10\nThiamine → Glucose\nParacetamol Level\nEthanol Level</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Mixed OD Suspected?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Naloxone 0.04-0.4mg IV\nTitrate to RR&gt;10</div>
+<div class="fc-node" data-id="F">Supportive\nThiamine, Electrolytes</div>
+<div class="fc-node" data-id="G">NaHCO3 for QRS\nNO FLUMAZENIL</div>
+<div class="fc-node" data-id="H">Supportive Care\nObserve 6-12h\nLonger if Diazepam/Clonazepam</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Monitor for Re-sedation\nObs 6h Post Naloxone</div>
+<div class="fc-node" data-id="J">Flumazenil Indicated?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Flumazenil 0.2mg IV\nRepeat q1min max 1mg\nMonitor 2-4h Post</div>
+<div class="fc-node" data-id="L">NO Flumazenil\nSupportive Only</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Re-sedation Expected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">Obs: 6h Min\n12-24h Long-acting\nPsych Assessment if DSH</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Flumazenil contraindications poster</li>
@@ -6589,43 +6783,84 @@ Psych Assessment]
 <li><strong>SOTALOL</strong>: <strong>Q</strong>T prolongation → <strong>T</strong>orsades → <strong>M</strong>gSO4</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Beta-Blocker Poisoning))
-    Mechanism
-      Beta-1: Brady, Hypotension, Low Contractility
-      Beta-2: Hypoglycemia, Bronchospasm, HyperK
-      Lipophilic (Propranolol): CNS, Na Channel
-    Clinical
-      Bradycardia + Hypotension + Hypoglycemia
-      Bronchospasm (Non-selective)
-      Seizures/Coma (Propranolol)
-      QT/Torsades (Sotalol)
-    Management
-      Glucagon (1st Line Specific)
-      HIET (Refractory Shock)
-      Vasopressors (NE, Epi)
-      Pacing (Often Fails)
-      ILE (Rescue)
-      ECMO (Bridge)
-    Specific Agents
-      Propranolol: Na Channel, CNS
-      Sotalol: QT, Torsades
-      Carvedilol/Labetalol: Alpha + Beta</pre>
+<div class="mindmap">
+<div class="mm-root">Beta-Blocker Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Beta-1: Brady, Hypotension, Low Contractility</div>
+<div class="mm-node mm-l2">Beta-2: Hypoglycemia, Bronchospasm, HyperK</div>
+<div class="mm-node mm-l2">Lipophilic (Propranolol): CNS, Na Channel</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Bradycardia + Hypotension + Hypoglycemia</div>
+<div class="mm-node mm-l2">Bronchospasm (Non-selective)</div>
+<div class="mm-node mm-l2">Seizures/Coma (Propranolol)</div>
+<div class="mm-node mm-l2">QT/Torsades (Sotalol)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Glucagon (1st Line Specific)</div>
+<div class="mm-node mm-l2">HIET (Refractory Shock)</div>
+<div class="mm-node mm-l2">Vasopressors (NE, Epi)</div>
+<div class="mm-node mm-l2">Pacing (Often Fails)</div>
+<div class="mm-node mm-l2">ILE (Rescue)</div>
+<div class="mm-node mm-l2">ECMO (Bridge)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Specific Agents</div>
+<div class="mm-node mm-l2">Propranolol: Na Channel, CNS</div>
+<div class="mm-node mm-l2">Sotalol: QT, Torsades</div>
+<div class="mm-node mm-l2">Carvedilol/Labetalol: Alpha + Beta</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Bradycardia + Hypotension + Hypoglycemia] --&gt; B[Beta-Blocker Poisoning]
-  B --&gt; C[ABCDE: Atropine 0.5mg IV\nGlucose Monitor q15min\nBronchodilators if Wheeze]
-  C --&gt; D[Glucagon 5-10mg IV Bolus\n+ Antiemetic\nInfusion 5-15mg/hr]
-  D --&gt; E{Hemodynamic Response?}
-  E --&gt;|No / Transient| F[HIET: Insulin 1U/kg Bolus\n+ D50W 25g\nInfusion Insulin 1-10U/kg/hr\n+ Dextrose to Glucose 150-250\nK+ Replacement &gt;2.8]
-  E --&gt;|Yes| G[Monitor\nWean Glucagon]
-  F --&gt; H{Vasopressors Needed?}
-  H --&gt;|Yes| I[Norepinephrine First\nAdd Epinephrine if Needed\nAvoid Phenylephrine]
-  H --&gt;|No| G
-  I --&gt; J{Refractory Collapse?}
-  J --&gt;|Yes| K[ILE 1.5mL/kg Bolus\n+ 0.25mL/kg/min Infusion\nECMO Evaluation]
-  J --&gt;|No| G
-  G --&gt; L[Observe 24h Post-Normalization\nPsych Assessment]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Bradycardia + Hypotension + Hypoglycemia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Beta-Blocker Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE: Atropine 0.5mg IV\nGlucose Monitor q15min\nBronchodilators if Wheeze</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Glucagon 5-10mg IV Bolus\n+ Antiemetic\nInfusion 5-15mg/hr</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hemodynamic Response?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">HIET: Insulin 1U/kg Bolus\n+ D50W 25g\nInfusion Insulin 1-10U/kg/hr\n+ Dextrose to Glucose 150-250\nK+ Replacement &gt;2.8</div>
+<div class="fc-node" data-id="G">Monitor\nWean Glucagon</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Vasopressors Needed?</div>
+<div class="fc-node" data-id="L">Observe 24h Post-Normalization\nPsych Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Norepinephrine First\nAdd Epinephrine if Needed\nAvoid Phenylephrine</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Refractory Collapse?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">ILE 1.5mL/kg Bolus\n+ 0.25mL/kg/min Infusion\nECMO Evaluation</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>HIET protocol card</li>
@@ -7221,43 +7456,86 @@ Psych Assessment]
 <li><strong>VERAPAMIL/DILTIAZEM</strong>: <strong>C</strong>ardiac <strong>D</strong>epression <strong>></strong> Vascular; <strong>N</strong>CPE</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((CCB Poisoning))
-    Mechanism
-      L-Type Ca Channel Block
-      Vascular: Vasodilation
-      Cardiac: Neg Ino/Chrono/Dromo
-      Pancreas: Hyperglycemia
-    Classes
-      Non-DHP: Verapamil, Diltiazem (Cardiac &gt; Vascular)
-      DHP: Amlodipine, Nifedipine (Vascular &gt; Cardiac)
-    Clinical
-      Hypotension + Brady/Heart Block + Hyperglycemia
-      NCPE (Verapamil/Diltiazem)
-    Management
-      Calcium (1st Line Specific)
-      HIET (Refractory)
-      Vasopressors (NE, Epi)
-      WBI (SR Formulations)
-      ILE/ECMO (Rescue)
-    Differentiation
-      BB: Hypoglycemia, Bronchospasm
-      CCB: Hyperglycemia, Calcium Works</pre>
+<div class="mindmap">
+<div class="mm-root">CCB Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">L-Type Ca Channel Block</div>
+<div class="mm-node mm-l2">Vascular: Vasodilation</div>
+<div class="mm-node mm-l2">Cardiac: Neg Ino/Chrono/Dromo</div>
+<div class="mm-node mm-l2">Pancreas: Hyperglycemia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Classes</div>
+<div class="mm-node mm-l2">Non-DHP: Verapamil, Diltiazem (Cardiac &gt; Vascular)</div>
+<div class="mm-node mm-l2">DHP: Amlodipine, Nifedipine (Vascular &gt; Cardiac)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Hypotension + Brady/Heart Block + Hyperglycemia</div>
+<div class="mm-node mm-l2">NCPE (Verapamil/Diltiazem)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Calcium (1st Line Specific)</div>
+<div class="mm-node mm-l2">HIET (Refractory)</div>
+<div class="mm-node mm-l2">Vasopressors (NE, Epi)</div>
+<div class="mm-node mm-l2">WBI (SR Formulations)</div>
+<div class="mm-node mm-l2">ILE/ECMO (Rescue)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Differentiation</div>
+<div class="mm-node mm-l2">BB: Hypoglycemia, Bronchospasm</div>
+<div class="mm-node mm-l2">CCB: Hyperglycemia, Calcium Works</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Hypotension + Brady/Heart Block + Hyperglycemia] --&gt; B[CCB Poisoning]
-  B --&gt; C[ABCDE: Atropine Trial\nGlucose Monitor q1-2h\nCXR for NCPE]
-  C --&gt; D[Calcium Chloride 1g IV\n(Central Line Preferred)\nq10-20min PRN]
-  D --&gt; E{Hemodynamic Response?}
-  E --&gt;|No / Transient| F[HIET: Insulin 1U/kg Bolus\n+ D50W 25g\nInfusion 1-10U/kg/hr\n+ Dextrose Glu 150-250\nK+ &gt; 2.8]
-  E --&gt;|Yes| G[Calcium Infusion\nMonitor Ionized Ca q1-2h]
-  F --&gt; H{Vasopressors Needed?}
-  H --&gt;|Yes| I[Norepinephrine First\nAdd Epinephrine\nAvoid Phenylephrine]
-  H --&gt;|No| G
-  I --&gt; J{Refractory Collapse?}
-  J --&gt;|Yes| K[ILE 1.5mL/kg Bolus\n+ 0.25mL/kg/min Infusion\nECMO Evaluation]
-  J --&gt;|No| G
-  G --&gt; L[WBI if SR Formulation\nObserve 24-48h+ (Amlodipine)\nPsych Assessment]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hypotension + Brady/Heart Block + Hyperglycemia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">CCB Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE: Atropine Trial\nGlucose Monitor q1-2h\nCXR for NCPE</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Calcium Chloride 1g IV\n(Central Line Preferred)\nq10-20min PRN</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hemodynamic Response?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">HIET: Insulin 1U/kg Bolus\n+ D50W 25g\nInfusion 1-10U/kg/hr\n+ Dextrose Glu 150-250\nK+ &gt; 2.8</div>
+<div class="fc-node" data-id="G">Calcium Infusion\nMonitor Ionized Ca q1-2h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Vasopressors Needed?</div>
+<div class="fc-node" data-id="L">WBI if SR Formulation\nObserve 24-48h+ (Amlodipine)\nPsych Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Norepinephrine First\nAdd Epinephrine\nAvoid Phenylephrine</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Refractory Collapse?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">ILE 1.5mL/kg Bolus\n+ 0.25mL/kg/min Infusion\nECMO Evaluation</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Calcium chloride vs gluconate comparison</li>
@@ -7804,38 +8082,68 @@ Psych Assessment]
 <li><strong>CB1 AGONIST</strong>: <strong>C</strong>annabis = <strong>P</strong>artial (safer); <strong>S</strong>ynthetic = <strong>F</strong>ull (deadly)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Cannabinoid Poisoning))
-    Natural Cannabis
-      Partial CB1 Agonist
-      Mild: Euphoria, Anxiety, Tachycardia, Red Eyes
-      Self-Limiting (4-6h Obs)
-      Hyperemesis Syndrome (Chronic)
-    Synthetic Cannabinoids
-      Full CB1 Agonist (10-100x Potency)
-      Severe: Seizures, Hyperthermia, Rhabdo, AKI, Cardiac Ischemia, Psychosis
-      Screen Misses
-      No Antidote
-      ICU Management
-    Management
-      Natural: Supportive, Benzo PRN
-      Synthetic: ICU, Benzo 1st Line, Cooling, Fluids, Avoid Antipsychotics</pre>
+<div class="mindmap">
+<div class="mm-root">Cannabinoid Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Natural Cannabis</div>
+<div class="mm-node mm-l2">Partial CB1 Agonist</div>
+<div class="mm-node mm-l2">Mild: Euphoria, Anxiety, Tachycardia, Red Eyes</div>
+<div class="mm-node mm-l2">Self-Limiting (4-6h Obs)</div>
+<div class="mm-node mm-l2">Hyperemesis Syndrome (Chronic)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Synthetic Cannabinoids</div>
+<div class="mm-node mm-l2">Full CB1 Agonist (10-100x Potency)</div>
+<div class="mm-node mm-l2">Severe: Seizures, Hyperthermia, Rhabdo, AKI, Cardiac Ischemia, Psychosis</div>
+<div class="mm-node mm-l2">Screen Misses</div>
+<div class="mm-node mm-l2">No Antidote</div>
+<div class="mm-node mm-l2">ICU Management</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Natural: Supportive, Benzo PRN</div>
+<div class="mm-node mm-l2">Synthetic: ICU, Benzo 1st Line, Cooling, Fluids, Avoid Antipsychotics</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Cannabinoid Exposure] --&gt; B{Natural or Synthetic?}
-  B --&gt;|Natural| C[Supportive: Reassurance\nBenzo if Anxious\nAntiemetic\nObs 4-6h\nDischarge if Asymptomatic]
-  B --&gt;|Synthetic / Unknown Severe| D[ABCDE: Intubate if Coma/Seizures\nContinuous ECG\nCK, Renal, Electrolytes]
-  D --&gt; E[Benzo 1st Line:\nSeizures: Lorazepam/Diazepam\nAgitation: Lorazepam\nAVOID Antipsychotics]
-  E --&gt; F{Hyperthermia &gt; 39°C?}
-  F --&gt;|Yes| G[Aggressive Cooling\nParalyze if Refractory]
-  F --&gt;|No| H
-  E --&gt; I{Rhabdo?\nCK &gt; 5000}
-  I --&gt;|Yes| J[Fluids 1-2L/hr\nAlkalinize Urine\nTarget UOP 2-3 mL/kg/hr]
-  I --&gt;|No| H
-  E --&gt; K{AKI / Cardiac Ischemia?}
-  K --&gt;|Yes| L[Renal Replacement\nTrop, Cardiology\nICU]
-  K --&gt;|No| H
-  H --&gt; M[ICU Until Stable\nPsych Assessment\nDischarge When Safe]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Cannabinoid Exposure</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Natural or Synthetic?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Supportive: Reassurance\nBenzo if Anxious\nAntiemetic\nObs 4-6h\nDischarge if Asymptomatic</div>
+<div class="fc-node" data-id="D">ABCDE: Intubate if Coma/Seizures\nContinuous ECG\nCK, Renal, Electrolytes</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Benzo 1st Line:\nSeizures: Lorazepam/Diazepam\nAgitation: Lorazepam\nAVOID Antipsychotics</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Hyperthermia &gt; 39°C?</div>
+<div class="fc-node" data-id="I">Rhabdo?\nCK &gt; 5000</div>
+<div class="fc-node" data-id="K">AKI / Cardiac Ischemia?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Aggressive Cooling\nParalyze if Refractory</div>
+<div class="fc-node" data-id="H">H</div>
+<div class="fc-node" data-id="J">Fluids 1-2L/hr\nAlkalinize Urine\nTarget UOP 2-3 mL/kg/hr</div>
+<div class="fc-node" data-id="L">Renal Replacement\nTrop, Cardiology\nICU</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">ICU Until Stable\nPsych Assessment\nDischarge When Safe</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Natural vs synthetic comparison table</li>
@@ -8417,40 +8725,72 @@ Psych Assessment]
 <li><strong>DNS</strong>: <strong>D</strong>elayed <strong>N</strong>eurological <strong>S</strong>equelae: <strong>2-40 days</strong>, <strong>P</strong>arkinsonism, <strong>C</strong>ognitive</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Carbon Monoxide Poisoning))
-    Mechanism
-      CO-Hb 200-250x Affinity
-      Left Shift O2-Hb Curve
-      Cytochrome Oxidase Inhibition
-      Myoglobin Binding
-    Clinical
-      Acute: Headache, Nausea, Confusion, Chest Pain
-      Cherry Red Skin: RARE
-      DNS: 2-40 Days (Parkinsonism, Cognitive)
-    Diagnosis
-      COHb (Co-oximetry)
-      SpO2 FALSELY NORMAL
-      ABG (Lactate)
-      ECG/Trop
-    Treatment
-      100% O2 NRB (1st Line)
-      HBO (Indications)
-      Supportive
-      Pregnancy: Lower HBO Threshold
-    Complications
-      MI, Arrhythmias
-      DNS (10-30%)
-      Fetal Loss</pre>
+<div class="mindmap">
+<div class="mm-root">Carbon Monoxide Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">CO-Hb 200-250x Affinity</div>
+<div class="mm-node mm-l2">Left Shift O2-Hb Curve</div>
+<div class="mm-node mm-l2">Cytochrome Oxidase Inhibition</div>
+<div class="mm-node mm-l2">Myoglobin Binding</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Acute: Headache, Nausea, Confusion, Chest Pain</div>
+<div class="mm-node mm-l2">Cherry Red Skin: RARE</div>
+<div class="mm-node mm-l2">DNS: 2-40 Days (Parkinsonism, Cognitive)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">COHb (Co-oximetry)</div>
+<div class="mm-node mm-l2">SpO2 FALSELY NORMAL</div>
+<div class="mm-node mm-l2">ABG (Lactate)</div>
+<div class="mm-node mm-l2">ECG/Trop</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">100% O2 NRB (1st Line)</div>
+<div class="mm-node mm-l2">HBO (Indications)</div>
+<div class="mm-node mm-l2">Supportive</div>
+<div class="mm-node mm-l2">Pregnancy: Lower HBO Threshold</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complications</div>
+<div class="mm-node mm-l2">MI, Arrhythmias</div>
+<div class="mm-node mm-l2">DNS (10-30%)</div>
+<div class="mm-node mm-l2">Fetal Loss</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Suspected CO Poisoning] --&gt; B[Immediate 100% O2 NRB 15L/min\nDo NOT Wait for COHb]
-  B --&gt; C[COHb Level + ABG + ECG + Trop\nPregnancy Test]
-  C --&gt; D{HBO Indicated?}
-  D --&gt;|COHb&gt;25%, LOC, Cardiac,\nPregnancy&gt;15%, Neuro,\nAcidosis| E[Hyperbaric Oxygen\n2.5-3.0 ATA 90-120min\n1-3 Sessions]
-  D --&gt;|No| F[Continue 100% O2\nUntil Asymptomatic\nCOHb&lt;5-10%]
-  E --&gt; F
-  F --&gt; G[Monitor Cardiac, Neuro\nDNS Follow-up 4-6 Weeks\nMRI if Symptoms]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected CO Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Immediate 100% O2 NRB 15L/min\nDo NOT Wait for COHb</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">COHb Level + ABG + ECG + Trop\nPregnancy Test</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">HBO Indicated?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hyperbaric Oxygen\n2.5-3.0 ATA 90-120min\n1-3 Sessions</div>
+<div class="fc-node" data-id="F">Continue 100% O2\nUntil Asymptomatic\nCOHb&lt;5-10%</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Monitor Cardiac, Neuro\nDNS Follow-up 4-6 Weeks\nMRI if Symptoms</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>O₂-Hb dissociation curve left shift</li>
@@ -8933,23 +9273,37 @@ Psych Assessment]
 <li><strong>Paracetamol level</strong> (always)</li>
 </ul>
 <h2>8. Management Algorithm</h2>
-<pre class="mermaid">flowchart TD
-  A[Suspected OP/Carbamate] --&gt; B[ABCDE + Decontaminate
-PPE for staff!]
-  B --&gt; C[Atropine IV 1-2 mg
-Repeat q5-10 min
-Target: HR &gt; 80, dry secretions, no bronchospasm]
-  C --&gt; D{Pralidoxime Indicated?}
-  D --&gt;|OP severe
-nicotinic signs
-within 24-48h| E[Pralidoxime 1-2 g IV over 30 min
-then infusion 0.5-1 g/hr
-24-48h]
-  D --&gt;|Carbamate Only| F[Atropine Alone Usually Sufficient]
-  E --&gt; G[Monitor for IMS (Day 1-4)
-OPIDN (Weeks)]
-  G --&gt; H[ICU: Ventilation, Atropine Infusion,
-Seizure Control (Benzo)]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected OP/Carbamate</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Decontaminate PPE for staff!</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Atropine IV 1-2 mg Repeat q5-10 min Target: HR &gt; 80, dry secretions, no bronchospasm</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Pralidoxime Indicated?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Pralidoxime 1-2 g IV over 30 min then infusion 0.5-1 g/hr 24-48h</div>
+<div class="fc-node" data-id="F">Atropine Alone Usually Sufficient</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Monitor for IMS (Day 1-4) OPIDN (Weeks)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">ICU: Ventilation, Atropine Infusion, Seizure Control (Benzo)</div>
+</div>
+</div>
 <h2>9. Management</h2>
 <h3>1. Decontamination & Staff Protection</h3>
 <ul>
@@ -9060,52 +9414,79 @@ Seizure Control (Benzo)]</pre>
 <li><strong>OPIDN</strong>: Organophosphate-Induced Delayed Neuropathy (weeks, distal, NTE)</li>
 </ul>
 <h2>16. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Cholinergic Toxidrome))
-    Agents
-      Organophosphate
-        Irreversible
-        CNS penetration
-        Aging
-      Carbamate
-        Reversible
-        Minimal CNS
-    Muscarinic
-      SLUDGE
-      DUMBELLS
-      Miosis
-      Bronchorrhea
-      Bradycardia
-    Nicotinic
-      Nm: Fasciculations, Weakness, Resp Failure
-      Nn: HTN/Tachy (early)
-    Central
-      Seizures
-      Coma
-      Resp Depression
-    Management
-      Atropine (Titration)
-      Pralidoxime (OP only)
-      Benzodiazepines
-      Ventilation
-    Complications
-      IMS (Day 1-4)
-      OPIDN (Weeks)
-      Aspiration
-      Rhabdo</pre>
+<div class="mindmap">
+<div class="mm-root">Cholinergic Toxidrome</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Agents</div>
+<div class="mm-node mm-l2">Organophosphate</div>
+<div class="mm-node mm-l3">– Irreversible</div>
+<div class="mm-node mm-l3">– CNS penetration</div>
+<div class="mm-node mm-l3">– Aging</div>
+<div class="mm-node mm-l2">Carbamate</div>
+<div class="mm-node mm-l3">– Reversible</div>
+<div class="mm-node mm-l3">– Minimal CNS</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Muscarinic</div>
+<div class="mm-node mm-l2">SLUDGE</div>
+<div class="mm-node mm-l2">DUMBELLS</div>
+<div class="mm-node mm-l2">Miosis</div>
+<div class="mm-node mm-l2">Bronchorrhea</div>
+<div class="mm-node mm-l2">Bradycardia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Nicotinic</div>
+<div class="mm-node mm-l2">Nm: Fasciculations, Weakness, Resp Failure</div>
+<div class="mm-node mm-l2">Nn: HTN/Tachy (early)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Central</div>
+<div class="mm-node mm-l2">Seizures</div>
+<div class="mm-node mm-l2">Coma</div>
+<div class="mm-node mm-l2">Resp Depression</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Atropine (Titration)</div>
+<div class="mm-node mm-l2">Pralidoxime (OP only)</div>
+<div class="mm-node mm-l2">Benzodiazepines</div>
+<div class="mm-node mm-l2">Ventilation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complications</div>
+<div class="mm-node mm-l2">IMS (Day 1-4)</div>
+<div class="mm-node mm-l2">OPIDN (Weeks)</div>
+<div class="mm-node mm-l2">Aspiration</div>
+<div class="mm-node mm-l2">Rhabdo</div>
+</div>
+</div>
+</div>
 <h2>17. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Cholinergic Features] --&gt; B{AChE Inhibitor?}
-  B --&gt;|Organophosphate| C[Atropine Titration
-+ Pralidoxime
-+ Diazepam
-+ ICU/Ventilation]
-  B --&gt;|Carbamate| D[Atropine PRN
-Usually No Pralidoxime
-Shorter Observation]
-  C --&gt; E[Monitor for IMS (Day 1-4)]
-  E --&gt; F[Monitor for OPIDN (2-3 Weeks)]
-  D --&gt; G[Rapid Recovery Expected]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Cholinergic Features</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">AChE Inhibitor?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Atropine Titration + Pralidoxime + Diazepam + ICU/Ventilation</div>
+<div class="fc-node" data-id="D">Atropine PRN Usually No Pralidoxime Shorter Observation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Monitor for IMS (Day 1-4)</div>
+<div class="fc-node" data-id="G">Rapid Recovery Expected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Monitor for OPIDN (2-3 Weeks)</div>
+</div>
+</div>
 <h2>18. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Atropine titration flowchart</li>
@@ -9693,43 +10074,71 @@ Shorter Observation]
 <li><strong>MDMA TRIAD</strong>: <strong>H</strong>yperthermia, <strong>H</strong>yponatremia, <strong>S</strong>erotonin syndrome</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Cocaine/Amphetamine Poisoning))
-    Mechanism
-      Release (Amphetamine, MDMA)
-      Reuptake Block (Cocaine, Bupropion)
-      Na Channel Block (Cocaine)
-    Clinical
-      CV: HTN, Tachy, Chest Pain, Arrhythmia
-      Neuro: Agitation, Psychosis, Seizures, Hyperreflexia
-      Autonomic: Diaphoresis (WET), Mydriasis, Hyperthermia
-      Metabolic: Hyperglycemia, Hypokalemia, Acidosis
-    Specific Agents
-      Cocaine: Na Channel, Short, Vasospasm
-      Amphetamine: Long, More CNS
-      MDMA: Serotonin + Hyponatremia + Hyperthermia
-    Management
-      Benzos (Universal 1st Line)
-      Vasodilators (NO Beta-Blockers)
-      Cooling (Hyperthermia)
-      Fluids + Alkalinization (Rhabdo)</pre>
+<div class="mindmap">
+<div class="mm-root">Cocaine/Amphetamine Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Release (Amphetamine, MDMA)</div>
+<div class="mm-node mm-l2">Reuptake Block (Cocaine, Bupropion)</div>
+<div class="mm-node mm-l2">Na Channel Block (Cocaine)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">CV: HTN, Tachy, Chest Pain, Arrhythmia</div>
+<div class="mm-node mm-l2">Neuro: Agitation, Psychosis, Seizures, Hyperreflexia</div>
+<div class="mm-node mm-l2">Autonomic: Diaphoresis (WET), Mydriasis, Hyperthermia</div>
+<div class="mm-node mm-l2">Metabolic: Hyperglycemia, Hypokalemia, Acidosis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Specific Agents</div>
+<div class="mm-node mm-l2">Cocaine: Na Channel, Short, Vasospasm</div>
+<div class="mm-node mm-l2">Amphetamine: Long, More CNS</div>
+<div class="mm-node mm-l2">MDMA: Serotonin + Hyponatremia + Hyperthermia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Benzos (Universal 1st Line)</div>
+<div class="mm-node mm-l2">Vasodilators (NO Beta-Blockers)</div>
+<div class="mm-node mm-l2">Cooling (Hyperthermia)</div>
+<div class="mm-node mm-l2">Fluids + Alkalinization (Rhabdo)</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Agitated, Hypertensive, Tachycardic, Diaphoretic, Hyperthermic] --&gt; B[Sympathomimetic Toxidrome]
-  B --&gt; C[ABCDE + Benzodiazepines\nLorazepam 2-4mg IV q5-10min\nTarget: Sedation RASS -1 to 0]
-  C --&gt; D{HTN Persists\nAfter Adequate Benzo?}
-  D --&gt;|Yes| E[Vasodilators:\nNicardipine / Phentolamine /\nNitroprusside / Nitroglycerin\nNO BETA-BLOCKERS]
-  D --&gt;|No| F[Monitor]
-  C --&gt; G{Temp &gt; 39°C?}
-  G --&gt;|Yes| H[Aggressive Cooling\nEvaporative, Ice, Cold Fluids\nParalyze if Refractory]
-  G --&gt;|No| F
-  C --&gt; I{Seizures?}
-  I --&gt;|Yes| J[Benzo → Phenobarbital/Propofol\nNO Phenytoin]
-  I --&gt;|No| F
-  C --&gt; K{Rhabdo?\nCK &gt; 5000}
-  K --&gt;|Yes| L[Fluids 1-2L/hr\nAlkalinize Urine\nTarget UOP 2-3 mL/kg/hr]
-  K --&gt;|No| F
-  F --&gt; M[Disposition:\nICU if Severe/Intubated\nObs 6-12h if Mild\nPsych Assessment]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Agitated, Hypertensive, Tachycardic, Diaphoretic, Hyperthermic</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Sympathomimetic Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE + Benzodiazepines\nLorazepam 2-4mg IV q5-10min\nTarget: Sedation RASS -1 to 0</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">HTN Persists\nAfter Adequate Benzo?</div>
+<div class="fc-node" data-id="G">Temp &gt; 39°C?</div>
+<div class="fc-node" data-id="I">Seizures?</div>
+<div class="fc-node" data-id="K">Rhabdo?\nCK &gt; 5000</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Vasodilators:\nNicardipine / Phentolamine /\nNitroprusside / Nitroglycerin\nNO BETA-BLOCKERS</div>
+<div class="fc-node" data-id="F">Monitor</div>
+<div class="fc-node" data-id="H">Aggressive Cooling\nEvaporative, Ice, Cold Fluids\nParalyze if Refractory</div>
+<div class="fc-node" data-id="J">Benzo → Phenobarbital/Propofol\nNO Phenytoin</div>
+<div class="fc-node" data-id="L">Fluids 1-2L/hr\nAlkalinize Urine\nTarget UOP 2-3 mL/kg/hr</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Disposition:\nICU if Severe/Intubated\nObs 6-12h if Mild\nPsych Assessment</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Toxidrome comparison table (4 columns)</li>
@@ -10290,57 +10699,91 @@ Shorter Observation]
 <li><strong>AIRWAY</strong>: <strong>S</strong>tridor = <strong>I</strong>ntubate <strong>E</strong>arly (Fiberoptic)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Corrosive Ingestion))
-    Acid
-      Coagulation Necrosis
-      Eschar Formation
-      Stomach &gt; Esophagus
-      Gastric Outlet Obstruction
-    Alkali
-      Liquefaction Necrosis
-      Deep Penetration
-      Esophagus &gt; Stomach
-      Strictures
-    NEVER
-      No Emesis
-      No Lavage
-      No Charcoal
-      No Neutralization
-      No Oils/Milk
-    Zargar Grades
-      0: Normal
-      1: Erythema
-      2a: Superficial Ulcers
-      2b: Deep/Circumferential (Stricture Risk)
-      3a: Necrosis
-      3b: Perforation
-    Management
-      No Emesis/Lavage/Charcoal/Neutralization
-      Airway: Early Intubation (Fiberoptic)
-      Endoscopy 12-48h (Zargar Grade)
-      PPI, IV Fluids, Nutrition
-      Grade 2b+: Serial Dilation
-      3b: Surgery</pre>
+<div class="mindmap">
+<div class="mm-root">Corrosive Ingestion</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Acid</div>
+<div class="mm-node mm-l2">Coagulation Necrosis</div>
+<div class="mm-node mm-l2">Eschar Formation</div>
+<div class="mm-node mm-l2">Stomach &gt; Esophagus</div>
+<div class="mm-node mm-l2">Gastric Outlet Obstruction</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Alkali</div>
+<div class="mm-node mm-l2">Liquefaction Necrosis</div>
+<div class="mm-node mm-l2">Deep Penetration</div>
+<div class="mm-node mm-l2">Esophagus &gt; Stomach</div>
+<div class="mm-node mm-l2">Strictures</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">NEVER</div>
+<div class="mm-node mm-l2">No Emesis</div>
+<div class="mm-node mm-l2">No Lavage</div>
+<div class="mm-node mm-l2">No Charcoal</div>
+<div class="mm-node mm-l2">No Neutralization</div>
+<div class="mm-node mm-l2">No Oils/Milk</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Zargar Grades</div>
+<div class="mm-node mm-l2">0: Normal</div>
+<div class="mm-node mm-l2">1: Erythema</div>
+<div class="mm-node mm-l2">2a: Superficial Ulcers</div>
+<div class="mm-node mm-l2">2b: Deep/Circumferential (Stricture Risk)</div>
+<div class="mm-node mm-l2">3a: Necrosis</div>
+<div class="mm-node mm-l2">3b: Perforation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">No Emesis/Lavage/Charcoal/Neutralization</div>
+<div class="mm-node mm-l2">Airway: Early Intubation (Fiberoptic)</div>
+<div class="mm-node mm-l2">Endoscopy 12-48h (Zargar Grade)</div>
+<div class="mm-node mm-l2">PPI, IV Fluids, Nutrition</div>
+<div class="mm-node mm-l2">Grade 2b+: Serial Dilation</div>
+<div class="mm-node mm-l2">3b: Surgery</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Corrosive Ingestion] --&gt; B[ABCDE: Airway Assessment\nStridor/Drooling/Resp Distress?]
-  B --&gt;|Yes| C[Early Fiberoptic Intubation\nTracheostomy if Failed]
-  B --&gt;|No| D[Observe Airway 24h]
-  C --&gt; E[IV Fluids + PPI\nNPO\nBroad ABx if Severe]
-  D --&gt; E
-  E --&gt; F[Endoscopy 12-48h\nZargar Grade]
-  F --&gt; G{Grade}
-  G --&gt;|0-1| H[Discharge if Tolerating Oral]
-  G --&gt;|2a| I[Admit, IV Fluids, PPI\nRepeat Scope if Needed]
-  G --&gt;|2b| J[Admit, Nutrition Support\nSerial Dilation 2-4 Weeks]
-  G --&gt;|3a| K[ICU, Broad ABx\nSurgical Consult\nNutrition]
-  G --&gt;|3b| L[Emergency Surgery\nEsophagectomy/Gastrectomy\nFeeding Jejunostomy]
-  H --&gt; M[Follow-up 2-3 Weeks\nStricture Surveillance]
-  I --&gt; M
-  J --&gt; M
-  K --&gt; M
-  L --&gt; M</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Corrosive Ingestion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE: Airway Assessment\nStridor/Drooling/Resp Distress?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Early Fiberoptic Intubation\nTracheostomy if Failed</div>
+<div class="fc-node" data-id="D">Observe Airway 24h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">IV Fluids + PPI\nNPO\nBroad ABx if Severe</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Endoscopy 12-48h\nZargar Grade</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Grade</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Discharge if Tolerating Oral</div>
+<div class="fc-node" data-id="I">Admit, IV Fluids, PPI\nRepeat Scope if Needed</div>
+<div class="fc-node" data-id="J">Admit, Nutrition Support\nSerial Dilation 2-4 Weeks</div>
+<div class="fc-node" data-id="K">ICU, Broad ABx\nSurgical Consult\nNutrition</div>
+<div class="fc-node" data-id="L">Emergency Surgery\nEsophagectomy/Gastrectomy\nFeeding Jejunostomy</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Follow-up 2-3 Weeks\nStricture Surveillance</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Zargar grading endoscopic images</li>
@@ -10909,40 +11352,68 @@ Shorter Observation]
 <li><strong>NITROPRESSIDE</strong>: <strong>Thiocyanate</strong> → <strong>Hydroxocobalamin + Dialysis</strong></li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Cyanide Poisoning))
-    Mechanism
-      Cytochrome Oxidase Inhibition
-      Histotoxic Hypoxia
-      ATP Depletion → Lactic Acidosis
-    Labs
-      High Anion Gap Acidosis
-      High Venous O2 (Bright Red)
-      Lactate &gt; 10
-      Normal COHb (unless Fire)
-    Antidotes
-      Hydroxocobalamin 5g IV (Preferred)
-      Nitrite + Thiosulfate (If No Hydroxocobalamin)
-      NO Nitrites in Fire/CO
-    Fire Victim
-      CO + CN Co-exposure
-      100% O2 + Hydroxocobalamin
-      NO Nitrites
-    Special
-      Nitroprusside → Thiocyanate
-      Bitter Almond Smell (40%)
-      Hydroxocobalamin Red Urine</pre>
+<div class="mindmap">
+<div class="mm-root">Cyanide Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Cytochrome Oxidase Inhibition</div>
+<div class="mm-node mm-l2">Histotoxic Hypoxia</div>
+<div class="mm-node mm-l2">ATP Depletion → Lactic Acidosis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Labs</div>
+<div class="mm-node mm-l2">High Anion Gap Acidosis</div>
+<div class="mm-node mm-l2">High Venous O2 (Bright Red)</div>
+<div class="mm-node mm-l2">Lactate &gt; 10</div>
+<div class="mm-node mm-l2">Normal COHb (unless Fire)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Antidotes</div>
+<div class="mm-node mm-l2">Hydroxocobalamin 5g IV (Preferred)</div>
+<div class="mm-node mm-l2">Nitrite + Thiosulfate (If No Hydroxocobalamin)</div>
+<div class="mm-node mm-l2">NO Nitrites in Fire/CO</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Fire Victim</div>
+<div class="mm-node mm-l2">CO + CN Co-exposure</div>
+<div class="mm-node mm-l2">100% O2 + Hydroxocobalamin</div>
+<div class="mm-node mm-l2">NO Nitrites</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Special</div>
+<div class="mm-node mm-l2">Nitroprusside → Thiocyanate</div>
+<div class="mm-node mm-l2">Bitter Almond Smell (40%)</div>
+<div class="mm-node mm-l2">Hydroxocobalamin Red Urine</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Suspected CN: Acidosis + High Venous O2 + Lactate&gt;10\nFire Victim / Industrial / Ingestion] --&gt; B[Immediate 100% O2 NRB\nIntubate if Needed]
-  B --&gt; C{Hydroxocobalamin Available?}
-  C --&gt;|Yes| D[Hydroxocobalamin 5g IV\nOver 15 min\nRepeat 5g if Needed\nMax 10g]
-  C --&gt;|No| E[Fire Victim / CO Exposure?]
-  E --&gt;|Yes| F[NO NITRITES\nSupportive Only\nConsider Dicobalt Edetate if Available]
-  E --&gt;|No| G[Nitrite 300mg IV\nThiosulfate 12.5g IV\nMonitor MetHb 10-20%]
-  D --&gt; H[Supportive: Vasopressors,\nBicarbonate pH&lt;7.2,\nSeizure Control,\nMonitor Labs (Colorimetric Interference)]
-  F --&gt; H
-  G --&gt; H</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected CN: Acidosis + High Venous O2 + Lactate&gt;10\nFire Victim / Industrial / Ingestion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Immediate 100% O2 NRB\nIntubate if Needed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Hydroxocobalamin Available?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Hydroxocobalamin 5g IV\nOver 15 min\nRepeat 5g if Needed\nMax 10g</div>
+<div class="fc-node" data-id="E">Fire Victim / CO Exposure?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Supportive: Vasopressors,\nBicarbonate pH&lt;7.2,\nSeizure Control,\nMonitor Labs (Colorimetric Interference)</div>
+<div class="fc-node" data-id="F">NO NITRITES\nSupportive Only\nConsider Dicobalt Edetate if Available</div>
+<div class="fc-node" data-id="G">Nitrite 300mg IV\nThiosulfate 12.5g IV\nMonitor MetHb 10-20%</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>CN mechanism diagram (cytochrome oxidase)</li>
@@ -11538,45 +12009,81 @@ Shorter Observation]
 <li><strong>AVOID</strong>: <strong>C</strong>alcium, <strong>A</strong>miodarone, <strong>A</strong>tropine (poor), <strong>P</strong>acing (poor)</li>
 </ul>
 <h2>13. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Digoxin Poisoning))
-    Mechanism
-      Na/K-ATPase Inhibition
-      Intracellular Ca++ ↑
-      Delayed Afterdepolarizations
-      Increased Vagal Tone
-    Clinical
-      GI: Nausea, Vomiting (Early)
-      Cardiac: Any Arrhythmia (BRADY + TACHY)
-      Visual: Xanthopsia (Yellow-Green)
-      Neuro: Confusion
-    Acute vs Chronic
-      Acute: High Level, HyperK, Fab 10-20 vials
-      Chronic: Low Level, Normal K, Fab 5-10 vials
-    Antidote
-      Digoxin-Specific Fab
-      Indications: Arrhythmia, K&gt;5.5, Level&gt;10/6, Ingestion&gt;10mg
-      Dose: Empirical 10-20 vials OR Level×Wt/100
-    HyperK
-      Acute: FAB FIRST (NO Ca, NO Insulin)
-      Chronic: Less Prominent
-    Arrhythmias
-      Brady: Fab, Atropine (Poor), Pacing (Poor), NO Ca
-      Tachy: Fab, MgSO4, Phenytoin/Lidocaine, NO Amiodarone
-      Cardioversion: Low Energy if Unstable</pre>
+<div class="mindmap">
+<div class="mm-root">Digoxin Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Na/K-ATPase Inhibition</div>
+<div class="mm-node mm-l2">Intracellular Ca++ ↑</div>
+<div class="mm-node mm-l2">Delayed Afterdepolarizations</div>
+<div class="mm-node mm-l2">Increased Vagal Tone</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">GI: Nausea, Vomiting (Early)</div>
+<div class="mm-node mm-l2">Cardiac: Any Arrhythmia (BRADY + TACHY)</div>
+<div class="mm-node mm-l2">Visual: Xanthopsia (Yellow-Green)</div>
+<div class="mm-node mm-l2">Neuro: Confusion</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Acute vs Chronic</div>
+<div class="mm-node mm-l2">Acute: High Level, HyperK, Fab 10-20 vials</div>
+<div class="mm-node mm-l2">Chronic: Low Level, Normal K, Fab 5-10 vials</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Antidote</div>
+<div class="mm-node mm-l2">Digoxin-Specific Fab</div>
+<div class="mm-node mm-l2">Indications: Arrhythmia, K&gt;5.5, Level&gt;10/6, Ingestion&gt;10mg</div>
+<div class="mm-node mm-l2">Dose: Empirical 10-20 vials OR Level×Wt/100</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">HyperK</div>
+<div class="mm-node mm-l2">Acute: FAB FIRST (NO Ca, NO Insulin)</div>
+<div class="mm-node mm-l2">Chronic: Less Prominent</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Arrhythmias</div>
+<div class="mm-node mm-l2">Brady: Fab, Atropine (Poor), Pacing (Poor), NO Ca</div>
+<div class="mm-node mm-l2">Tachy: Fab, MgSO4, Phenytoin/Lidocaine, NO Amiodarone</div>
+<div class="mm-node mm-l2">Cardioversion: Low Energy if Unstable</div>
+</div>
+</div>
+</div>
 <h2>14. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Digoxin Toxicity Suspected] --&gt; B[ABCDE + ECG + Digoxin Level\n+ K+, Mg2+, Ca2+, Renal Function]
-  B --&gt; C{Indications for Fab?}
-  C --&gt;|Life-Threatening Arrhythmia\nK+ &gt; 5.5\nLevel &gt; 10 (Acute) / &gt; 6 (Chronic)\nIngestion &gt; 10mg| D[Digoxin Fab: Empirical 10-20 Vials\nOR Calculated: Level×Wt/100\nIV over 30 min]
-  C --&gt;|No Indications| E[Monitor\nCorrect K+/Mg2+\nHold Digoxin]
-  D --&gt; F[Monitor K+ q1-2h\nRebound Hypokalemia Expected\nECG Continuous]
-  F --&gt; G{Arrhythmias?}
-  G --&gt;|Bradydysrhythmia| H[Fab Primary\nAtropine (Often Fails)\nPacing (Often Fails)\nNO CALCIUM - Stone Heart]
-  G --&gt;|Tachydysrhythmia| I[Fab Primary\nMgSO4 2g IV\nPhenytoin/Lidocaine\nNO Amiodarone\nCardioversion: Low Energy if Unstable]
-  G --&gt;|Resolved| J[Observe 24h Post-Fab\nPsych Assessment]
-  H --&gt; J
-  I --&gt; J</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Digoxin Toxicity Suspected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + ECG + Digoxin Level\n+ K+, Mg2+, Ca2+, Renal Function</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Indications for Fab?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Digoxin Fab: Empirical 10-20 Vials\nOR Calculated: Level×Wt/100\nIV over 30 min</div>
+<div class="fc-node" data-id="E">Monitor\nCorrect K+/Mg2+\nHold Digoxin</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Monitor K+ q1-2h\nRebound Hypokalemia Expected\nECG Continuous</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Arrhythmias?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Fab Primary\nAtropine (Often Fails)\nPacing (Often Fails)\nNO CALCIUM - Stone Heart</div>
+<div class="fc-node" data-id="I">Fab Primary\nMgSO4 2g IV\nPhenytoin/Lidocaine\nNO Amiodarone\nCardioversion: Low Energy if Unstable</div>
+<div class="fc-node" data-id="J">Observe 24h Post-Fab\nPsych Assessment</div>
+</div>
+</div>
 <h2>15. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Bidirectional VT ECG</li>
@@ -12224,18 +12731,41 @@ Shorter Observation]
 <li><strong>Highly protein-bound, large Vd</strong> toxins where dialysis ineffective</li>
 </ul>
 <h2>10. Decision Algorithm for Enhanced Elimination</h2>
-<pre class="mermaid">flowchart TD
-  A[Poisoned Patient] --&gt; B{Life-Threatening Toxicity\nDespite Antidotes/Supportive?}
-  B --&gt;|No| C[Observe / MDAC if Indicated\nAlkalinization if Indicated]
-  B --&gt;|Yes| D{Toxin Dialyzable?\n&lt;500 Da, &lt;80% Protein Bind,\n&lt;1 L/kg Vd, Water Soluble}
-  D --&gt;|Yes| E[Hemodialysis / CRRT\nPer Toxin-Specific Criteria]
-  D --&gt;|No| F{Lipophilic Cardiotoxic?\nBB, CCB, TCA, Local Anesthetic}
-  F --&gt;|Yes| G[Intralipid Emulsion Rescue\n1.5mL/kg Bolus + 0.25mL/kg/min]
-  F --&gt;|No| H{Enterohepatic Recirculation?\nCarbamazepine, Phenobarbital,\nTheophylline, Quinine, Dapsone}
-  H --&gt;|Yes| I[MDAC 1g/kg q4-6h]
-  H --&gt;|No| J{Weak Acid?\nSalicylate, Phenobarbital}
-  J --&gt;|Yes| K[Urinary Alkalinization\nUrine pH 7.5-8.0]
-  J --&gt;|No| L[Supportive Care\nConsider PLEX if Protein-Bound\nToxicology Consult]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Poisoned Patient</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Life-Threatening Toxicity\nDespite Antidotes/Supportive?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Observe / MDAC if Indicated\nAlkalinization if Indicated</div>
+<div class="fc-node" data-id="D">Toxin Dialyzable?\n&lt;500 Da, &lt;80% Protein Bind,\n&lt;1 L/kg Vd, Water Soluble</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hemodialysis / CRRT\nPer Toxin-Specific Criteria</div>
+<div class="fc-node" data-id="F">Lipophilic Cardiotoxic?\nBB, CCB, TCA, Local Anesthetic</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Intralipid Emulsion Rescue\n1.5mL/kg Bolus + 0.25mL/kg/min</div>
+<div class="fc-node" data-id="H">Enterohepatic Recirculation?\nCarbamazepine, Phenobarbital,\nTheophylline, Quinine, Dapsone</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">MDAC 1g/kg q4-6h</div>
+<div class="fc-node" data-id="J">Weak Acid?\nSalicylate, Phenobarbital</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Urinary Alkalinization\nUrine pH 7.5-8.0</div>
+<div class="fc-node" data-id="L">Supportive Care\nConsider PLEX if Protein-Bound\nToxicology Consult</div>
+</div>
+</div>
 <h2>11. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Dialyzability criteria card</li>
@@ -12820,40 +13350,72 @@ Shorter Observation]
 <li><strong>DIALYSIS</strong>: <strong>pH < 7.3</strong>, <strong>R</strong>enal failure, <strong>L</strong>evel > 50</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Ethylene Glycol Poisoning))
-    Metabolism
-      ADH → Glycoaldehyde → Glycolic Acid (Acidosis)
-      → Glyoxylic Acid → Oxalic Acid (Crystals, Renal)
-      Alternative: Thiamine → α-Hydroxy-β-ketoadipate
-      Alternative: Pyridoxine → Glycine
-    Clinical Stages
-      1: 0-12h CNS (Drunk, Osmolar Gap)
-      2: 12-24h Acidosis, Pulmonary, Crystalluria, HypoCa
-      3: 24-72h Renal Failure
-    Diagnosis
-      Osmolar Gap Early
-      Anion Gap Acidosis Late
-      Calcium Oxalate Crystals (Hallmark)
-      Hypocalcemia
-    Treatment
-      Fomepizole (15 load, 10 q12h)
-      Thiamine 100mg q6h + Pyridoxine 50mg q6h
-      Bicarbonate pH&lt;7.3
-      Calcium if Symptomatic HypoCa
-      Dialysis (pH&lt;7.3, Renal, Level&gt;50)</pre>
+<div class="mindmap">
+<div class="mm-root">Ethylene Glycol Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Metabolism</div>
+<div class="mm-node mm-l2">ADH → Glycoaldehyde → Glycolic Acid (Acidosis)</div>
+<div class="mm-node mm-l2">→ Glyoxylic Acid → Oxalic Acid (Crystals, Renal)</div>
+<div class="mm-node mm-l2">Alternative: Thiamine → α-Hydroxy-β-ketoadipate</div>
+<div class="mm-node mm-l2">Alternative: Pyridoxine → Glycine</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical Stages</div>
+<div class="mm-node mm-l2">1: 0-12h CNS (Drunk, Osmolar Gap)</div>
+<div class="mm-node mm-l2">2: 12-24h Acidosis, Pulmonary, Crystalluria, HypoCa</div>
+<div class="mm-node mm-l2">3: 24-72h Renal Failure</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">Osmolar Gap Early</div>
+<div class="mm-node mm-l2">Anion Gap Acidosis Late</div>
+<div class="mm-node mm-l2">Calcium Oxalate Crystals (Hallmark)</div>
+<div class="mm-node mm-l2">Hypocalcemia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">Fomepizole (15 load, 10 q12h)</div>
+<div class="mm-node mm-l2">Thiamine 100mg q6h + Pyridoxine 50mg q6h</div>
+<div class="mm-node mm-l2">Bicarbonate pH&lt;7.3</div>
+<div class="mm-node mm-l2">Calcium if Symptomatic HypoCa</div>
+<div class="mm-node mm-l2">Dialysis (pH&lt;7.3, Renal, Level&gt;50)</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Suspected EG] --&gt; B[ABCDE + Osmolality + ABG + Urinalysis\n+ EG Level + Calcium + Renal]
-  B --&gt; C{Fomepizole Available?}
-  C --&gt;|Yes| D[Fomepizole 15mg/kg Load\n10mg/kg q12h\nThiamine 100mg q6h\nPyridoxine 50mg q6h]
-  C --&gt;|No| E[Ethanol 10% Central\nTarget 100-150 mg/dL\nThiamine + Pyridoxine]
-  D --&gt; F[Bicarbonate if pH &lt; 7.3\nCalcium if Symptomatic HypoCa]
-  E --&gt; F
-  F --&gt; G{Dialysis Indicated?\npH&lt;7.3, Renal Failure,\nLevel&gt;50 mmol/L}
-  G --&gt;|Yes| H[Hemodialysis\nFomepizole 1mg/kg/hr during]
-  G --&gt;|No| I[Monitor q4-6h\nUntil EG&lt;20, pH Normal,\nRenal Recovering]
-  H --&gt; I</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected EG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Osmolality + ABG + Urinalysis\n+ EG Level + Calcium + Renal</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Fomepizole Available?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Fomepizole 15mg/kg Load\n10mg/kg q12h\nThiamine 100mg q6h\nPyridoxine 50mg q6h</div>
+<div class="fc-node" data-id="E">Ethanol 10% Central\nTarget 100-150 mg/dL\nThiamine + Pyridoxine</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Bicarbonate if pH &lt; 7.3\nCalcium if Symptomatic HypoCa</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Dialysis Indicated?\npH&lt;7.3, Renal Failure,\nLevel&gt;50 mmol/L</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Hemodialysis\nFomepizole 1mg/kg/hr during</div>
+<div class="fc-node" data-id="I">Monitor q4-6h\nUntil EG&lt;20, pH Normal,\nRenal Recovering</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>EG metabolic pathway</li>
@@ -13420,21 +13982,45 @@ Shorter Observation]
 <li><strong>NOT for</strong>: other toxins (may increase absorption rate)</li>
 </ul>
 <h2>9. Decontamination Decision Algorithm</h2>
-<pre class="mermaid">flowchart TD
-  A[Poisoned Patient] --&gt; B{Time Since Ingestion?}
-  B --&gt;|&lt; 1-2h| C{Toxin Adsorbed by Charcoal?}
-  B --&gt;|&gt; 2h| D{Delayed Absorption?\nAnticholinergic, SR, Opioid,\nBezoar, Large Volume}
-  D --&gt;|Yes| C
-  D --&gt;|No| E[No Decontamination\nSupportive Care]
-  C --&gt; F{Airway Protected?}
-  F --&gt;|No| G[Intubate First\nThen Charcoal if Indicated]
-  F --&gt;|Yes| H{Contraindications?\nCorrosive, Hydrocarbon,\nPerforation, Obstruction}
-  H --&gt;|Yes| I[No Charcoal\nConsider WBI if Indicated]
-  H --&gt;|No| J[Activated Charcoal 1g/kg\n1:10 Ratio\nWater Vehicle]
-  J --&gt; K{Sustained-Release /\nBody Packer /\nIron /\nLithium?}
-  K --&gt;|Yes| L[Whole Bowel Irrigation\nPEG 1-2 L/hr\nUntil Clear Effluent]
-  K --&gt;|No| M[Monitor\nSerial Levels if Available]
-  I --&gt; L</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Poisoned Patient</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Time Since Ingestion?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Toxin Adsorbed by Charcoal?</div>
+<div class="fc-node" data-id="D">Delayed Absorption?\nAnticholinergic, SR, Opioid,\nBezoar, Large Volume</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Airway Protected?</div>
+<div class="fc-node" data-id="E">No Decontamination\nSupportive Care</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Intubate First\nThen Charcoal if Indicated</div>
+<div class="fc-node" data-id="H">Contraindications?\nCorrosive, Hydrocarbon,\nPerforation, Obstruction</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">No Charcoal\nConsider WBI if Indicated</div>
+<div class="fc-node" data-id="J">Activated Charcoal 1g/kg\n1:10 Ratio\nWater Vehicle</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Whole Bowel Irrigation\nPEG 1-2 L/hr\nUntil Clear Effluent</div>
+<div class="fc-node" data-id="K">Sustained-Release /\nBody Packer /\nIron /\nLithium?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Monitor\nSerial Levels if Available</div>
+</div>
+</div>
 <h2>10. Specific Poison Decontamination Quick Reference</h2>
 <table>
 <tr><th>Poison</th><th>Charcoal</th><th>WBI</th><th>Lavage</th></tr>
@@ -13983,22 +14569,42 @@ Shorter Observation]
 <li><strong>Co-ingestion</strong> — always assume multiple agents</li>
 </ol>
 <h2>13. Management Algorithm</h2>
-<pre class="mermaid">flowchart TD
-  A[Poisoned Patient] --&gt; B[ABCDE Stabilization]
-  B --&gt; C[Risk Assessment]
-  C --&gt; D{Life Threat?}
-  D --&gt;|Yes| E[ICU/HDU Admission
-Specific Antidotes
-Enhanced Elimination]
-  D --&gt;|No| F[Observation Unit
-Decontamination if indicated
-Psychiatric Assessment]
-  E --&gt; G[Disposition]
-  F --&gt; G
-  G --&gt; H{Medically Fit
-+ Psych Safe?}
-  H --&gt;|Yes| I[Discharge + Follow-up]
-  H --&gt;|No| J[Admit/Transfer]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Poisoned Patient</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE Stabilization</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Risk Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Life Threat?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">ICU/HDU Admission Specific Antidotes Enhanced Elimination</div>
+<div class="fc-node" data-id="F">Observation Unit Decontamination if indicated Psychiatric Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Disposition</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Medically Fit + Psych Safe?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Discharge + Follow-up</div>
+<div class="fc-node" data-id="J">Admit/Transfer</div>
+</div>
+</div>
 <h2>14. Management</h2>
 <h3>1. Resuscitation (ABCDE)</h3>
 <ul>
@@ -14132,62 +14738,93 @@ Psychiatric Assessment]
 <li><strong>PRIME</strong> (benzodiazepine withdrawal): Psychosis, Rebound anxiety, Insomnia, Myoclonus, Epilepsy (seizures)</li>
 </ul>
 <h2>21. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((General Poisoning Management))
-    ABCDE
-      Airway
-      Breathing
-      Circulation
-      Disability
-      Exposure
-    Risk Assessment
-      Agent
-      Dose
-      Time
-      Co-ingestants
-      Comorbidities
-    Decontamination
-      Activated Charcoal
-      Gastric Lavage
-      WBI
-      Ocular/Dermal
-    Antidotes
-      Specific
-      Stocking List
-    Enhanced Elimination
-      MDAC
-      Urinary Alkalinization
-      Hemodialysis
-      Hemoperfusion
-    Disposition
-      Medical Stability
-      Psychiatric Safety
-    Psych Assessment
-      Mandatory for DSH
-      Mental Health Act</pre>
+<div class="mindmap">
+<div class="mm-root">General Poisoning Management</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">ABCDE</div>
+<div class="mm-node mm-l2">Airway</div>
+<div class="mm-node mm-l2">Breathing</div>
+<div class="mm-node mm-l2">Circulation</div>
+<div class="mm-node mm-l2">Disability</div>
+<div class="mm-node mm-l2">Exposure</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Risk Assessment</div>
+<div class="mm-node mm-l2">Agent</div>
+<div class="mm-node mm-l2">Dose</div>
+<div class="mm-node mm-l2">Time</div>
+<div class="mm-node mm-l2">Co-ingestants</div>
+<div class="mm-node mm-l2">Comorbidities</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Decontamination</div>
+<div class="mm-node mm-l2">Activated Charcoal</div>
+<div class="mm-node mm-l2">Gastric Lavage</div>
+<div class="mm-node mm-l2">WBI</div>
+<div class="mm-node mm-l2">Ocular/Dermal</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Antidotes</div>
+<div class="mm-node mm-l2">Specific</div>
+<div class="mm-node mm-l2">Stocking List</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Enhanced Elimination</div>
+<div class="mm-node mm-l2">MDAC</div>
+<div class="mm-node mm-l2">Urinary Alkalinization</div>
+<div class="mm-node mm-l2">Hemodialysis</div>
+<div class="mm-node mm-l2">Hemoperfusion</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Disposition</div>
+<div class="mm-node mm-l2">Medical Stability</div>
+<div class="mm-node mm-l2">Psychiatric Safety</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Psych Assessment</div>
+<div class="mm-node mm-l2">Mandatory for DSH</div>
+<div class="mm-node mm-l2">Mental Health Act</div>
+</div>
+</div>
+</div>
 <h2>22. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Patient Presents With Possible Poisoning] --&gt; B[Immediate ABCDE Assessment]
-  B --&gt; C{Life-Threatening Features?}
-  C --&gt;|Yes| D[Resuscitate + ICU
-Specific Antidotes
-Enhanced Elimination]
-  C --&gt;|No| E[Risk Assessment
-History + Exam + Targeted Tests]
-  E --&gt; F[Paracetamol Level + ECG + ABG + Glucose]
-  F --&gt; G{Significant Ingestion?}
-  G --&gt;|Yes| H[Decontamination if &lt; 1-2h
-Antidote if Indicated
-Observation/Admission]
-  G --&gt;|No| I[Discharge if Low Risk
-+ Psych Assessment if DSH]
-  H --&gt; J[Psychiatric Assessment
-(Mandatory for DSH)]
-  D --&gt; J
-  I --&gt; J
-  J --&gt; K{Medically Fit &amp;\nPsych Safe?}
-  K --&gt;|Yes| L[Discharge + Follow-up]
-  K --&gt;|No| M[Admit/Transfer]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Patient Presents With Possible Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Immediate ABCDE Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Life-Threatening Features?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Resuscitate + ICU Specific Antidotes Enhanced Elimination</div>
+<div class="fc-node" data-id="E">Risk Assessment History + Exam + Targeted Tests</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Psychiatric Assessment (Mandatory for DSH)</div>
+<div class="fc-node" data-id="F">Paracetamol Level + ECG + ABG + Glucose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Medically Fit &amp;\nPsych Safe?</div>
+<div class="fc-node" data-id="G">Significant Ingestion?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Discharge + Follow-up</div>
+<div class="fc-node" data-id="M">Admit/Transfer</div>
+<div class="fc-node" data-id="H">Decontamination if &lt; 1-2h Antidote if Indicated Observation/Admission</div>
+<div class="fc-node" data-id="I">Discharge if Low Risk + Psych Assessment if DSH</div>
+</div>
+</div>
 <h2>23. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Rumack-Matthew nomogram</li>
@@ -14763,56 +15400,82 @@ Observation/Admission]
 <li><strong>CHELATION</strong>: <strong>E</strong>DTA (lead IV), <strong>D</strong>MSA (lead/As oral), <strong>B</strong>AL (IM, peanut oil), <strong>P</strong>russian blue (Tl oral)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Heavy Metal Poisoning))
-    Lead
-      Basophilic Stippling
-      Wrist/Foot Drop
-      Burton Lines
-      Encephalopathy (Kids)
-      Chelation: EDTA + DMSA + BAL
-    Arsenic
-      Garlic Breath
-      Rice-Water Stool
-      Mees Lines
-      Hyperkeratosis
-      Neuropathy
-      Chelation: DMSA, DMPS, BAL
-    Mercury
-      Elemental: Erethism, Tremor, Acrodynia
-      Inorganic: Corrosive, AKI
-      Organic: Minamata, Ataxia
-      Chelation: DMSA/DMPS (inorganic)
-    Thallium
-      Alopecia (Day 10-14)
-      Mees Lines
-      Severe Neuropathy
-      Radiopaque on AXR
-      Prussian Blue
-    Chelators
-      EDTA (Lead IV)
-      DMSA (Lead/As Oral)
-      BAL (IM, Peanut Oil)
-      DMPS (As/Hg IV)
-      Prussian Blue (Tl Oral)</pre>
+<div class="mindmap">
+<div class="mm-root">Heavy Metal Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Lead</div>
+<div class="mm-node mm-l2">Basophilic Stippling</div>
+<div class="mm-node mm-l2">Wrist/Foot Drop</div>
+<div class="mm-node mm-l2">Burton Lines</div>
+<div class="mm-node mm-l2">Encephalopathy (Kids)</div>
+<div class="mm-node mm-l2">Chelation: EDTA + DMSA + BAL</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Arsenic</div>
+<div class="mm-node mm-l2">Garlic Breath</div>
+<div class="mm-node mm-l2">Rice-Water Stool</div>
+<div class="mm-node mm-l2">Mees Lines</div>
+<div class="mm-node mm-l2">Hyperkeratosis</div>
+<div class="mm-node mm-l2">Neuropathy</div>
+<div class="mm-node mm-l2">Chelation: DMSA, DMPS, BAL</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mercury</div>
+<div class="mm-node mm-l2">Elemental: Erethism, Tremor, Acrodynia</div>
+<div class="mm-node mm-l2">Inorganic: Corrosive, AKI</div>
+<div class="mm-node mm-l2">Organic: Minamata, Ataxia</div>
+<div class="mm-node mm-l2">Chelation: DMSA/DMPS (inorganic)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Thallium</div>
+<div class="mm-node mm-l2">Alopecia (Day 10-14)</div>
+<div class="mm-node mm-l2">Mees Lines</div>
+<div class="mm-node mm-l2">Severe Neuropathy</div>
+<div class="mm-node mm-l2">Radiopaque on AXR</div>
+<div class="mm-node mm-l2">Prussian Blue</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Chelators</div>
+<div class="mm-node mm-l2">EDTA (Lead IV)</div>
+<div class="mm-node mm-l2">DMSA (Lead/As Oral)</div>
+<div class="mm-node mm-l2">BAL (IM, Peanut Oil)</div>
+<div class="mm-node mm-l2">DMPS (As/Hg IV)</div>
+<div class="mm-node mm-l2">Prussian Blue (Tl Oral)</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Heavy Metal Exposure] --&gt; B{Suspected Metal}
-  B --&gt;|Lead| C[BLL, Basophilic Stippling, AXR\nAnemia, Renal]
-  B --&gt;|Arsenic| D[24h Urine As (No Seafood 48h)\nMees Lines, Garlic Breath]
-  B --&gt;|Mercury| E[Blood/Ur Hg, Erethism, Tremor\nAcrodynia (Kids)]
-  B --&gt;|Thallium| F[24h Urine Tl, Alopecia Day 10-14\nMees Lines, AXR Radiopaque]
-  C --&gt; G[Chelation:\nEncephalopathy: EDTA + BAL\nNon-Encephalopathic: DMSA]
-  D --&gt; H[Chelation: DMSA/DMPS\nBAL if Unavailable]
-  E --&gt; I{Form}
-  I --&gt;|Inorganic| J[DMSA/DMPS]
-  I --&gt;|Elemental/Organic| K[Supportive, Selenium]
-  F --&gt; L[Prussian Blue 250mg/kg/day PO\nUntil Urine Tl &lt; 0.5mg/L]
-  G --&gt; M[Monitor Renal, Lead Levels\nCorrect Iron Deficiency]
-  H --&gt; M
-  J --&gt; M
-  K --&gt; M
-  L --&gt; M</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Heavy Metal Exposure</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Suspected Metal</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">BLL, Basophilic Stippling, AXR\nAnemia, Renal</div>
+<div class="fc-node" data-id="D">24h Urine As (No Seafood 48h)\nMees Lines, Garlic Breath</div>
+<div class="fc-node" data-id="E">Blood/Ur Hg, Erethism, Tremor\nAcrodynia (Kids)</div>
+<div class="fc-node" data-id="F">24h Urine Tl, Alopecia Day 10-14\nMees Lines, AXR Radiopaque</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Chelation:\nEncephalopathy: EDTA + BAL\nNon-Encephalopathic: DMSA</div>
+<div class="fc-node" data-id="H">Chelation: DMSA/DMPS\nBAL if Unavailable</div>
+<div class="fc-node" data-id="I">Form</div>
+<div class="fc-node" data-id="L">Prussian Blue 250mg/kg/day PO\nUntil Urine Tl &lt; 0.5mg/L</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Monitor Renal, Lead Levels\nCorrect Iron Deficiency</div>
+<div class="fc-node" data-id="J">DMSA/DMPS</div>
+<div class="fc-node" data-id="K">Supportive, Selenium</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Basophilic stippling blood film</li>
@@ -15371,44 +16034,86 @@ Observation/Admission]
 <li><strong>VF IN HYDROCARBON</strong>: <strong>N</strong>o <strong>C</strong>atecholamines, <strong>L</strong>idocaine/<strong>A</strong>miodarone</li>
 </ul>
 <h2>15. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Hydrocarbon Poisoning))
-    Main Danger
-      Aspiration Pneumonitis
-      Chemical Injury → Surfactant Loss → Hypoxia
-    Contraindications
-      No Emesis
-      No Lavage
-      No Charcoal
-    Observation
-      CXR at 6h (Lags 2-6h)
-      Asymptomatic + Normal CXR = Discharge
-    Specific Types
-      Aliphatic: Kerosene, Gasoline → Aspiration Main
-      Halogenated: CCl₄ → Hepatic, Cardiac Sensitization
-      Aromatic: Benzene → Aplastic Anemia; Toluene → Renal, Neuropathy
-    Complications
-      ARDS
-      Secondary Pneumonia (Abx if Proven)
-      VF (Cardiac Sensitization)
-    Cardiac Sensitization
-      Avoid Catecholamines
-      Lidocaine/Amiodarone</pre>
+<div class="mindmap">
+<div class="mm-root">Hydrocarbon Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Main Danger</div>
+<div class="mm-node mm-l2">Aspiration Pneumonitis</div>
+<div class="mm-node mm-l2">Chemical Injury → Surfactant Loss → Hypoxia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Contraindications</div>
+<div class="mm-node mm-l2">No Emesis</div>
+<div class="mm-node mm-l2">No Lavage</div>
+<div class="mm-node mm-l2">No Charcoal</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Observation</div>
+<div class="mm-node mm-l2">CXR at 6h (Lags 2-6h)</div>
+<div class="mm-node mm-l2">Asymptomatic + Normal CXR = Discharge</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Specific Types</div>
+<div class="mm-node mm-l2">Aliphatic: Kerosene, Gasoline → Aspiration Main</div>
+<div class="mm-node mm-l2">Halogenated: CCl₄ → Hepatic, Cardiac Sensitization</div>
+<div class="mm-node mm-l2">Aromatic: Benzene → Aplastic Anemia; Toluene → Renal, Neuropathy</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complications</div>
+<div class="mm-node mm-l2">ARDS</div>
+<div class="mm-node mm-l2">Secondary Pneumonia (Abx if Proven)</div>
+<div class="mm-node mm-l2">VF (Cardiac Sensitization)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Cardiac Sensitization</div>
+<div class="mm-node mm-l2">Avoid Catecholamines</div>
+<div class="mm-node mm-l2">Lidocaine/Amiodarone</div>
+</div>
+</div>
+</div>
 <h2>16. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Hydrocarbon Ingestion] --&gt; B[ABCDE: Assess Aspiration\nCoughing/Choking/Hypoxia?]
-  B --&gt;|Yes| C[Airway Protection\nO2, CPAP/NIV, Intubate if Severe\nHead Elevated 30°]
-  B --&gt;|No| D[Observe]
-  C --&gt; E[CXR at 6h Mandatory\n(Even if Asymptomatic Initially)]
-  D --&gt; E
-  E --&gt; F{CXR Abnormal or\nSymptomatic at 6h?}
-  F --&gt;|Yes| G[Admit\nSupportive: O2, Ventilation if Needed\nFluids, Monitor\nAbx ONLY if Secondary Infection]
-  F --&gt;|No| H[Discharge with Return Precautions]
-  G --&gt; I{Halogenated/Aromatic?}
-  I --&gt;|Yes| J[Monitor ECG for Arrhythmias\nAvoid Catecholamines\nLidocaine/Amiodarone for VF\nLFTs, Renal Function]
-  I --&gt;|No| K[Continue Supportive]
-  J --&gt; K
-  K --&gt; L[Discharge When Stable\nCXR Clearing\nNo Respiratory Distress]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Hydrocarbon Ingestion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE: Assess Aspiration\nCoughing/Choking/Hypoxia?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Airway Protection\nO2, CPAP/NIV, Intubate if Severe\nHead Elevated 30°</div>
+<div class="fc-node" data-id="D">Observe</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">CXR at 6h Mandatory\n(Even if Asymptomatic Initially)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">CXR Abnormal or\nSymptomatic at 6h?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Admit\nSupportive: O2, Ventilation if Needed\nFluids, Monitor\nAbx ONLY if Secondary Infection</div>
+<div class="fc-node" data-id="H">Discharge with Return Precautions</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Halogenated/Aromatic?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Monitor ECG for Arrhythmias\nAvoid Catecholamines\nLidocaine/Amiodarone for VF\nLFTs, Renal Function</div>
+<div class="fc-node" data-id="K">Continue Supportive</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="L">Discharge When Stable\nCXR Clearing\nNo Respiratory Distress</div>
+</div>
+</div>
 <h2>17. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Hydrocarbon aspiration CXR progression (0h, 2h, 6h, 24h)</li>
@@ -15968,43 +16673,82 @@ Observation/Admission]
 <li><strong>DNS</strong>: <strong>D</strong>elayed <strong>N</strong>eurological <strong>S</strong>equelae (Memory, Parkinsonism)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Hydrogen Sulfide Poisoning))
-    Mechanism
-      Cytochrome Oxidase Inhibition (Fe3+)
-      Histotoxic Hypoxia (Like Cyanide)
-    Source
-      Confined Spaces (Sewers, Manure, Oil Wells)
-      Heavier Than Air
-    Olfactory Fatigue
-      Low Conc: Rotten Egg Smell
-      High Conc: No Smell = DANGER
-    Clinical
-      Knockdown (Instant Collapse)
-      Resp Arrest, Seizures
-      Conjunctivitis/Keratitis
-      DNS (Memory, Parkinsonism)
-    Antidotes
-      Nitrite 300mg IV (MetHb 10-20%)
-      Hydroxocobalamin 5g IV (Preferred)
-      Thiosulfate 12.5g IV
-    Rescue
-      SCBA Mandatory
-      Ventilate First</pre>
+<div class="mindmap">
+<div class="mm-root">Hydrogen Sulfide Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Cytochrome Oxidase Inhibition (Fe3+)</div>
+<div class="mm-node mm-l2">Histotoxic Hypoxia (Like Cyanide)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Source</div>
+<div class="mm-node mm-l2">Confined Spaces (Sewers, Manure, Oil Wells)</div>
+<div class="mm-node mm-l2">Heavier Than Air</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Olfactory Fatigue</div>
+<div class="mm-node mm-l2">Low Conc: Rotten Egg Smell</div>
+<div class="mm-node mm-l2">High Conc: No Smell = DANGER</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Knockdown (Instant Collapse)</div>
+<div class="mm-node mm-l2">Resp Arrest, Seizures</div>
+<div class="mm-node mm-l2">Conjunctivitis/Keratitis</div>
+<div class="mm-node mm-l2">DNS (Memory, Parkinsonism)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Antidotes</div>
+<div class="mm-node mm-l2">Nitrite 300mg IV (MetHb 10-20%)</div>
+<div class="mm-node mm-l2">Hydroxocobalamin 5g IV (Preferred)</div>
+<div class="mm-node mm-l2">Thiosulfate 12.5g IV</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Rescue</div>
+<div class="mm-node mm-l2">SCBA Mandatory</div>
+<div class="mm-node mm-l2">Ventilate First</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Confined Space + Collapse +\nRotten Egg Smell (or NO smell)] --&gt; B[H2S Poisoning]
-  B --&gt; C[RESCUE: SCBA Mandatory\nDO NOT ENTER WITHOUT SCBA\nVentilate If Possible]
-  C --&gt; D[Remove to Fresh Air\nABCDE: Intubate, 100% O2\nFluids + Vasopressors]
-  D --&gt; E{Hydroxocobalamin Available?}
-  E --&gt;|Yes| F[Hydroxocobalamin 5g IV\nOver 15 min\n+ Thiosulfate 12.5g IV]
-  E --&gt;|No| G{Nitrite Indicated?\nNo Anemia/G6PD/CO/CV Disease}
-  G --&gt;|Yes| H[Nitrite 300mg IV\nTarget MetHb 10-20%\n+ Thiosulfate 12.5g IV]
-  G --&gt;|No| I[Supportive Only\n100% O2, Ventilation]
-  F --&gt; J[Monitor: MetHb (if nitrite),\nECG, Neurological\nOphthalmology for Eyes]
-  H --&gt; J
-  I --&gt; J
-  J --&gt; K[DNS Follow-up 4-6 Weeks\nMemory, Parkinsonism Screen]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Confined Space + Collapse +\nRotten Egg Smell (or NO smell)</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">H2S Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">RESCUE: SCBA Mandatory\nDO NOT ENTER WITHOUT SCBA\nVentilate If Possible</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Remove to Fresh Air\nABCDE: Intubate, 100% O2\nFluids + Vasopressors</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hydroxocobalamin Available?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Hydroxocobalamin 5g IV\nOver 15 min\n+ Thiosulfate 12.5g IV</div>
+<div class="fc-node" data-id="G">Nitrite Indicated?\nNo Anemia/G6PD/CO/CV Disease</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Monitor: MetHb (if nitrite),\nECG, Neurological\nOphthalmology for Eyes</div>
+<div class="fc-node" data-id="H">Nitrite 300mg IV\nTarget MetHb 10-20%\n+ Thiosulfate 12.5g IV</div>
+<div class="fc-node" data-id="I">Supportive Only\n100% O2, Ventilation</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">DNS Follow-up 4-6 Weeks\nMemory, Parkinsonism Screen</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Olfactory fatigue curve (conc vs smell)</li>
@@ -16577,42 +17321,80 @@ Observation/Admission]
 <li><strong>WBI</strong>: <strong>PEG 1-2 L/hr</strong> (NO charcoal)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Iron Poisoning))
-    Elemental Iron %
-      Sulfate: 20%
-      Fumarate: 33%
-      Gluconate: 12%
-    Toxic Dose
-      &gt;40 mg/kg Moderate
-      &gt;60 mg/kg Severe
-    5 Stages
-      1: GI (0-6h) — Vomiting, Bleeding
-      2: Latent (6-24h) — Deceptive Improvement
-      3: Shock/Metabolic (12-48h) — Acidosis, Shock
-      4: Hepatic (2-4d) — Liver Failure
-      5: GI Scarring (Weeks) — Strictures
-    Diagnosis
-      Serum Iron &gt;500 µg/dL
-      AXR: Radiopaque Pills
-      Vin Rosé Urine (Post-Desferrioxamine)
-    Treatment
-      WBI (PEG 1-2 L/hr)
-      Deferoxamine 15 mg/kg/hr IV
-      NO Charcoal, NO Lavage
-      Supportive (Fluids, Vasopressors)</pre>
+<div class="mindmap">
+<div class="mm-root">Iron Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Elemental Iron %</div>
+<div class="mm-node mm-l2">Sulfate: 20%</div>
+<div class="mm-node mm-l2">Fumarate: 33%</div>
+<div class="mm-node mm-l2">Gluconate: 12%</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Toxic Dose</div>
+<div class="mm-node mm-l2">&gt;40 mg/kg Moderate</div>
+<div class="mm-node mm-l2">&gt;60 mg/kg Severe</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">5 Stages</div>
+<div class="mm-node mm-l2">1: GI (0-6h) — Vomiting, Bleeding</div>
+<div class="mm-node mm-l2">2: Latent (6-24h) — Deceptive Improvement</div>
+<div class="mm-node mm-l2">3: Shock/Metabolic (12-48h) — Acidosis, Shock</div>
+<div class="mm-node mm-l2">4: Hepatic (2-4d) — Liver Failure</div>
+<div class="mm-node mm-l2">5: GI Scarring (Weeks) — Strictures</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">Serum Iron &gt;500 µg/dL</div>
+<div class="mm-node mm-l2">AXR: Radiopaque Pills</div>
+<div class="mm-node mm-l2">Vin Rosé Urine (Post-Desferrioxamine)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">WBI (PEG 1-2 L/hr)</div>
+<div class="mm-node mm-l2">Deferoxamine 15 mg/kg/hr IV</div>
+<div class="mm-node mm-l2">NO Charcoal, NO Lavage</div>
+<div class="mm-node mm-l2">Supportive (Fluids, Vasopressors)</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Iron Ingestion] --&gt; B[Calculate Elemental Iron Dose\nmg/kg = (Tablets × mg elemental/tablet) / Weight]
-  B --&gt; C{&gt; 40 mg/kg Elemental?}
-  C --&gt;|No| D[Observe 6-12h\nSerial Iron Levels\nAXR if Unknown]
-  C --&gt;|Yes| E[ABCDE + AXR + Iron Level at 4-6h\nWBI if Pills Visible / Recent\nDeferoxamine if Indicated]
-  E --&gt; F{Deferoxamine Indicated?\nSystemic Toxicity\nLevel &gt;500 µg/dL\n&gt;60 mg/kg Ingested}
-  F --&gt;|Yes| G[Deferoxamine 15 mg/kg/hr IV\nMax 80 mg/kg/24h\nMonitor Vin Rosé Urine]
-  F --&gt;|No| H[WBI + Observe\nSerial Levels]
-  G --&gt; I[Monitor: Iron Level, ABG, LFTs, Coag\nUntil Improving]
-  H --&gt; I
-  I --&gt; J[Late: Endoscopy (Grade)\nStricture Follow-up Weeks-Months]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Iron Ingestion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Calculate Elemental Iron Dose\nmg/kg = (Tablets × mg elemental/tablet) / Weight</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">&gt; 40 mg/kg Elemental?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Observe 6-12h\nSerial Iron Levels\nAXR if Unknown</div>
+<div class="fc-node" data-id="E">ABCDE + AXR + Iron Level at 4-6h\nWBI if Pills Visible / Recent\nDeferoxamine if Indicated</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Deferoxamine Indicated?\nSystemic Toxicity\nLevel &gt;500 µg/dL\n&gt;60 mg/kg Ingested</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Deferoxamine 15 mg/kg/hr IV\nMax 80 mg/kg/24h\nMonitor Vin Rosé Urine</div>
+<div class="fc-node" data-id="H">WBI + Observe\nSerial Levels</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Monitor: Iron Level, ABG, LFTs, Coag\nUntil Improving</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Late: Endoscopy (Grade)\nStricture Follow-up Weeks-Months</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Elemental iron calculation card</li>
@@ -17165,43 +17947,77 @@ Observation/Admission]
 <li><strong>HALF-LIFE</strong>: IPA 2-3h, Acetone 7-10h (short)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Isopropyl Alcohol Poisoning))
-    Metabolism
-      ADH → Acetone (Ketone, NOT Acid)
-      No Toxic Acid Metabolite
-    Clinical
-      CNS Depression (Potent)
-      Ketosis WITHOUT Acidosis
-      Hemorrhagic Gastritis
-      Acetone Breath
-    Labs
-      Ketones POSITIVE
-      Anion Gap Acidosis ABSENT
-      Osmolar Gap ELEVATED
-      Normal Glucose
-    Management
-      SUPPORTIVE ONLY
-      NO Fomepizole
-      NO Dialysis
-      NO Charcoal
-      PPI for Gastritis
-    Differentiation
-      Methanol: Acidosis + Vision
-      EG: Acidosis + Renal + Crystals
-      IPA: Ketosis + Gastritis + NO Acidosis</pre>
+<div class="mindmap">
+<div class="mm-root">Isopropyl Alcohol Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Metabolism</div>
+<div class="mm-node mm-l2">ADH → Acetone (Ketone, NOT Acid)</div>
+<div class="mm-node mm-l2">No Toxic Acid Metabolite</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">CNS Depression (Potent)</div>
+<div class="mm-node mm-l2">Ketosis WITHOUT Acidosis</div>
+<div class="mm-node mm-l2">Hemorrhagic Gastritis</div>
+<div class="mm-node mm-l2">Acetone Breath</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Labs</div>
+<div class="mm-node mm-l2">Ketones POSITIVE</div>
+<div class="mm-node mm-l2">Anion Gap Acidosis ABSENT</div>
+<div class="mm-node mm-l2">Osmolar Gap ELEVATED</div>
+<div class="mm-node mm-l2">Normal Glucose</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">SUPPORTIVE ONLY</div>
+<div class="mm-node mm-l2">NO Fomepizole</div>
+<div class="mm-node mm-l2">NO Dialysis</div>
+<div class="mm-node mm-l2">NO Charcoal</div>
+<div class="mm-node mm-l2">PPI for Gastritis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Differentiation</div>
+<div class="mm-node mm-l2">Methanol: Acidosis + Vision</div>
+<div class="mm-node mm-l2">EG: Acidosis + Renal + Crystals</div>
+<div class="mm-node mm-l2">IPA: Ketosis + Gastritis + NO Acidosis</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Intoxicated + Ketones + No Acidosis\n+ Hematemesis + Acetone Breath] --&gt; B[Isopropyl Alcohol Poisoning]
-  B --&gt; C[ABCDE: Airway Protection\nFluids for Hypotension\nPPI for Gastritis]
-  C --&gt; D[Monitor: Glucose, Electrolytes,\nGCS, Renal Function\nSerial Ketones/ABG]
-  D --&gt; E{Complications?}
-  E --&gt;|Aspiration| F[Antibiotics, Respiratory Support]
-  E --&gt;|Significant GI Bleed| G[Transfusion, Endoscopy if Needed]
-  E --&gt;|Prolonged Coma| H[Supportive, Observe 12-24h]
-  F --&gt; I[Discharge When Awake,\nStable, Psych Assessment]
-  G --&gt; I
-  H --&gt; I</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Intoxicated + Ketones + No Acidosis\n+ Hematemesis + Acetone Breath</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Isopropyl Alcohol Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE: Airway Protection\nFluids for Hypotension\nPPI for Gastritis</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Monitor: Glucose, Electrolytes,\nGCS, Renal Function\nSerial Ketones/ABG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Complications?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Antibiotics, Respiratory Support</div>
+<div class="fc-node" data-id="G">Transfusion, Endoscopy if Needed</div>
+<div class="fc-node" data-id="H">Supportive, Observe 12-24h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Discharge When Awake,\nStable, Psych Assessment</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Toxic alcohol comparison table (3 columns)</li>
@@ -17764,47 +18580,75 @@ Observation/Admission]
 <li><strong>PRECIPITANTS</strong>: <strong>A</strong>CEi/ARB, <strong>D</strong>iuretics (thiazide), <strong>N</strong>SAIDs</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Lithium Poisoning))
-    Forms
-      Acute: OD, GI Prominent, Level&gt;4 Dialysis
-      Chronic: Accumulation, DI+Neuro, Level&gt;2.5+Features Dialysis
-    Clinical
-      GI: N/V/D (Acute)
-      Neuro: Tremor, Confusion, Seizures, SILENT (Chronic)
-      Renal: Nephrogenic DI (Polyuria, HyperNa)
-      Thyroid: Hypothyroidism
-      CV: T-wave flattening
-    Diagnosis
-      Level Timing: &gt;=12h Post-Dose
-      Renal, Thyroid, Electrolytes
-    Treatment
-      Hydration: NS (Na+ competes)
-      WBI (SR)
-      Dialysis (Thresholds)
-      No Antidote
-      No Charcoal
-    Complications
-      SILENT (Permanent)
-      Permanent DI
-      CKD</pre>
+<div class="mindmap">
+<div class="mm-root">Lithium Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Forms</div>
+<div class="mm-node mm-l2">Acute: OD, GI Prominent, Level&gt;4 Dialysis</div>
+<div class="mm-node mm-l2">Chronic: Accumulation, DI+Neuro, Level&gt;2.5+Features Dialysis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">GI: N/V/D (Acute)</div>
+<div class="mm-node mm-l2">Neuro: Tremor, Confusion, Seizures, SILENT (Chronic)</div>
+<div class="mm-node mm-l2">Renal: Nephrogenic DI (Polyuria, HyperNa)</div>
+<div class="mm-node mm-l2">Thyroid: Hypothyroidism</div>
+<div class="mm-node mm-l2">CV: T-wave flattening</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">Level Timing: &gt;=12h Post-Dose</div>
+<div class="mm-node mm-l2">Renal, Thyroid, Electrolytes</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">Hydration: NS (Na+ competes)</div>
+<div class="mm-node mm-l2">WBI (SR)</div>
+<div class="mm-node mm-l2">Dialysis (Thresholds)</div>
+<div class="mm-node mm-l2">No Antidote</div>
+<div class="mm-node mm-l2">No Charcoal</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complications</div>
+<div class="mm-node mm-l2">SILENT (Permanent)</div>
+<div class="mm-node mm-l2">Permanent DI</div>
+<div class="mm-node mm-l2">CKD</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Suspected Lithium Toxicity] --&gt; B[ABCDE + Li Level (&gt;=12h post-dose)\n+ Renal, Thyroid, Na+, CK, ECG]
-  B --&gt; C{Acute OD or Chronic?}
-  C --&gt;|Acute| D[Level &gt; 4.0 mmol/L?]
-  D --&gt;|Yes| E[Hemodialysis]
-  D --&gt;|No| F[Severe Neuro/Cardiac?]
-  F --&gt;|Yes| E
-  F --&gt;|No| G[NS Hydration 1-2L Bolus\nThen 150-200mL/hr\nWBI if SR]
-  C --&gt;|Chronic| H[Level &gt; 2.5 mmol/L?]
-  H --&gt;|Yes| I{Neuro Symptoms\nor Renal Impairment\nor Elderly?}
-  I --&gt;|Yes| E
-  I --&gt;|No| G
-  H --&gt;|No| G
-  G --&gt; J[Monitor Level q6-12h\nNeuro q2-4h\nFluid Balance\nElectrolytes q4-6h]
-  E --&gt; K[Daily HD Until Level\nAcute &lt;1.5 / Chronic &lt;1.0\nExpect 20-30% Rebound]
-  K --&gt; J</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Lithium Toxicity</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Li Level (&gt;=12h post-dose)\n+ Renal, Thyroid, Na+, CK, ECG</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Acute OD or Chronic?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Level &gt; 4.0 mmol/L?</div>
+<div class="fc-node" data-id="H">Level &gt; 2.5 mmol/L?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Hemodialysis</div>
+<div class="fc-node" data-id="F">Severe Neuro/Cardiac?</div>
+<div class="fc-node" data-id="I">Neuro Symptoms\nor Renal Impairment\nor Elderly?</div>
+<div class="fc-node" data-id="G">NS Hydration 1-2L Bolus\nThen 150-200mL/hr\nWBI if SR</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Daily HD Until Level\nAcute &lt;1.5 / Chronic &lt;1.0\nExpect 20-30% Rebound</div>
+<div class="fc-node" data-id="J">Monitor Level q6-12h\nNeuro q2-4h\nFluid Balance\nElectrolytes q4-6h</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Acute vs chronic comparison table</li>
@@ -18386,38 +19230,70 @@ Observation/Admission]
 <li><strong>TOXIC ALCOHOLS</strong>: <strong>M</strong>ethanol = <strong>M</strong>etabolic acidosis + <strong>V</strong>ision loss; <strong>E</strong>G = <strong>R</strong>enal + <strong>O</strong>xalate; <strong>I</strong>PA = <strong>K</strong>etosis <strong>N</strong>o <strong>A</strong>cidosis</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Methanol Poisoning))
-    Metabolism
-      ADH → Formaldehyde
-      ALDH → Formic Acid (TOXIC)
-      Formic Acid: Cytochrome C Oxidase Inhibit + Optic Nerve
-    Timeline
-      Early: Osmolar Gap, Inebriation
-      Late: Anion Gap Acidosis, Visual Loss, Basal Ganglia
-    Diagnosis
-      Methanol Level
-      Osmolar Gap &gt; 10
-      Anion Gap Acidosis
-      Visual Exam
-    Treatment
-      Fomepizole (15 load, 10 q12h)
-      Ethanol (100-150 mg/dL)
-      Folinic Acid 50mg q6h
-      Bicarbonate pH&lt;7.3
-      Dialysis (pH&lt;7.3, Renal, Visual, Level&gt;50)</pre>
+<div class="mindmap">
+<div class="mm-root">Methanol Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Metabolism</div>
+<div class="mm-node mm-l2">ADH → Formaldehyde</div>
+<div class="mm-node mm-l2">ALDH → Formic Acid (TOXIC)</div>
+<div class="mm-node mm-l2">Formic Acid: Cytochrome C Oxidase Inhibit + Optic Nerve</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Timeline</div>
+<div class="mm-node mm-l2">Early: Osmolar Gap, Inebriation</div>
+<div class="mm-node mm-l2">Late: Anion Gap Acidosis, Visual Loss, Basal Ganglia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">Methanol Level</div>
+<div class="mm-node mm-l2">Osmolar Gap &gt; 10</div>
+<div class="mm-node mm-l2">Anion Gap Acidosis</div>
+<div class="mm-node mm-l2">Visual Exam</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">Fomepizole (15 load, 10 q12h)</div>
+<div class="mm-node mm-l2">Ethanol (100-150 mg/dL)</div>
+<div class="mm-node mm-l2">Folinic Acid 50mg q6h</div>
+<div class="mm-node mm-l2">Bicarbonate pH&lt;7.3</div>
+<div class="mm-node mm-l2">Dialysis (pH&lt;7.3, Renal, Visual, Level&gt;50)</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Suspected Methanol] --&gt; B[ABCDE + Osmolality + ABG + Methanol Level\nOphthalmology Review]
-  B --&gt; C{Fomepizole Available?}
-  C --&gt;|Yes| D[Fomepizole 15mg/kg IV Load\nThen 10mg/kg q12h\nFolinic Acid 50mg IV q6h]
-  C --&gt;|No| E[Ethanol 10% Central Line\nTarget 100-150 mg/dL\nFolinic Acid 50mg IV q6h]
-  D --&gt; F[Bicarbonate if pH &lt; 7.3]
-  E --&gt; F
-  F --&gt; G{Dialysis Indicated?\npH&lt;7.3, Renal, Visual,\nLevel&gt;50 mmol/L}
-  G --&gt;|Yes| H[Hemodialysis\nFomepizole 1mg/kg/hr during]
-  G --&gt;|No| I[Monitor q4-6h: pH, Level, Visual\nUntil Level&lt;20, Asymptomatic, pH Normal]
-  H --&gt; I</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Suspected Methanol</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Osmolality + ABG + Methanol Level\nOphthalmology Review</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Fomepizole Available?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Fomepizole 15mg/kg IV Load\nThen 10mg/kg q12h\nFolinic Acid 50mg IV q6h</div>
+<div class="fc-node" data-id="E">Ethanol 10% Central Line\nTarget 100-150 mg/dL\nFolinic Acid 50mg IV q6h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Bicarbonate if pH &lt; 7.3</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Dialysis Indicated?\npH&lt;7.3, Renal, Visual,\nLevel&gt;50 mmol/L</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Hemodialysis\nFomepizole 1mg/kg/hr during</div>
+<div class="fc-node" data-id="I">Monitor q4-6h: pH, Level, Visual\nUntil Level&lt;20, Asymptomatic, pH Normal</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Methanol metabolism pathway</li>
@@ -19013,46 +19889,76 @@ Observation/Admission]
 <li><strong>TRANSPLANT</strong>: <strong>pH<7.3</strong> OR <strong>INR>6.5+Cr>300+Enceph</strong> + <strong>Lactate>3.5</strong></li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Mushroom Poisoning))
-    Classification
-      Early (&lt;6h): GI Irritants (Mild)
-      Delayed (&gt;6h):
-        Hepatic: Amanita (Amatoxins)
-        Renal: Cortinarius (Orellanine)
-        Neuro+Hepatic: Gyromitra (MMH)
-        Muscarinic: Inocybe/Clitocybe
-        Hallucinogenic: Psilocybin
-    Amanita phalloides
-      Amatoxins: RNA Pol II Inhibit
-      Phases: Latent → GI → False Recovery → Liver Failure
-      Silibinin 5mg/kg + 20mg/kg/day IV
-      Penicillin G 300-400K units/kg/day
-      NAC + Transplant Criteria
-    Gyromitra
-      MMH → GABA Inhibit
-      Seizures (Pyridoxine)
-      Hepatic
-    Cortinarius
-      Orellanine → Renal Failure (3-14d)
-    Muscarinic / Psilocybin
-      SLUDGE / Hallucinations
-      Self-Limiting</pre>
+<div class="mindmap">
+<div class="mm-root">Mushroom Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Classification</div>
+<div class="mm-node mm-l2">Early (&lt;6h): GI Irritants (Mild)</div>
+<div class="mm-node mm-l2">Delayed (&gt;6h):</div>
+<div class="mm-node mm-l3">– Hepatic: Amanita (Amatoxins)</div>
+<div class="mm-node mm-l3">– Renal: Cortinarius (Orellanine)</div>
+<div class="mm-node mm-l3">– Neuro+Hepatic: Gyromitra (MMH)</div>
+<div class="mm-node mm-l3">– Muscarinic: Inocybe/Clitocybe</div>
+<div class="mm-node mm-l3">– Hallucinogenic: Psilocybin</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Amanita phalloides</div>
+<div class="mm-node mm-l2">Amatoxins: RNA Pol II Inhibit</div>
+<div class="mm-node mm-l2">Phases: Latent → GI → False Recovery → Liver Failure</div>
+<div class="mm-node mm-l2">Silibinin 5mg/kg + 20mg/kg/day IV</div>
+<div class="mm-node mm-l2">Penicillin G 300-400K units/kg/day</div>
+<div class="mm-node mm-l2">NAC + Transplant Criteria</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Gyromitra</div>
+<div class="mm-node mm-l2">MMH → GABA Inhibit</div>
+<div class="mm-node mm-l2">Seizures (Pyridoxine)</div>
+<div class="mm-node mm-l2">Hepatic</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Cortinarius</div>
+<div class="mm-node mm-l2">Orellanine → Renal Failure (3-14d)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Muscarinic / Psilocybin</div>
+<div class="mm-node mm-l2">SLUDGE / Hallucinations</div>
+<div class="mm-node mm-l2">Self-Limiting</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Mushroom Ingestion] --&gt; B{Time to Onset}
-  B --&gt;|&lt; 6h| C[GI Irritant Syndrome\nSupportive, Fluids, Antiemetics\nDischarge if Improving]
-  B --&gt;|&gt; 6h| D{Clinical Syndrome}
-  D --&gt;|Severe GI + False Recovery → Liver Failure| E[Amanita phalloides]
-  D --&gt;|Seizures + GI| F[Gyromitra]
-  D --&gt;|Delayed Renal Failure (3-14d)| G[Cortinarius]
-  D --&gt;|SLUDGE, Miosis| H[Muscarinic]
-  D --&gt;|Hallucinations, Tachycardia| I[Psilocybin]
-  E --&gt; J[Activated Charcoal (up to 12h)\nSilibinin 5mg/kg load + 20mg/kg/day IV\nPenicillin G 300-400K U/kg/day IV\nNAC Protocol\nMonitor LFTs, INR, Glucose q6-12h\nTransplant Criteria: King's College + Lactate&gt;3.5\nPlasma Exchange Consider]
-  F --&gt; K[Pyridoxine 25mg/kg IV for Seizures\nBenzodiazepines\nNAC for Hepatic Protection]
-  G --&gt; L[Hydration, Electrolytes\nRenal Replacement for AKI\nNo Specific Antidote]
-  H --&gt; M[Atropine 0.5-1mg IV to Dry Secretions/HR&gt;80\nSelf-Limiting]
-  I --&gt; N[Quiet Environment\nBenzo for Anxiety\nSelf-Limiting 4-6h]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Mushroom Ingestion</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Time to Onset</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">GI Irritant Syndrome\nSupportive, Fluids, Antiemetics\nDischarge if Improving</div>
+<div class="fc-node" data-id="D">Clinical Syndrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Amanita phalloides</div>
+<div class="fc-node" data-id="F">Gyromitra</div>
+<div class="fc-node" data-id="G">Cortinarius</div>
+<div class="fc-node" data-id="H">Muscarinic</div>
+<div class="fc-node" data-id="I">Psilocybin</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Activated Charcoal (up to 12h)\nSilibinin 5mg/kg load + 20mg/kg/day IV\nPenicillin G 300-400K U/kg/day IV\nNAC Protocol\nMonitor LFTs, INR, Glucose q6-12h\nTransplant Criteria: King's College + Lactate&gt;3.5\nPlasma Exchange Consider</div>
+<div class="fc-node" data-id="K">Pyridoxine 25mg/kg IV for Seizures\nBenzodiazepines\nNAC for Hepatic Protection</div>
+<div class="fc-node" data-id="L">Hydration, Electrolytes\nRenal Replacement for AKI\nNo Specific Antidote</div>
+<div class="fc-node" data-id="M">Atropine 0.5-1mg IV to Dry Secretions/HR&gt;80\nSelf-Limiting</div>
+<div class="fc-node" data-id="N">Quiet Environment\nBenzo for Anxiety\nSelf-Limiting 4-6h</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Amanita phalloides phases timeline</li>
@@ -19571,42 +20477,73 @@ Observation/Admission]
 <li><strong>MEFENAMIC</strong> = <strong>S</strong>eizures</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((NSAID Poisoning))
-    Mechanism
-      COX Inhibition
-      COX-1: GI, Renal, Platelets
-      COX-2: Inflammation
-    Clinical
-      GI: Nausea, Bleeding
-      Renal: AKI
-      CNS: Drowsiness, Seizures (Mefenamic)
-    High Risk Agents
-      Mefenamic Acid
-      Phenylbutazone
-    Management
-      Supportive
-      PPI for GI
-      Fluids for Renal
-      Benzo for Seizures
-      Charcoal if Large/Recent
-    No Antidote
-    No Dialysis</pre>
+<div class="mindmap">
+<div class="mm-root">NSAID Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">COX Inhibition</div>
+<div class="mm-node mm-l2">COX-1: GI, Renal, Platelets</div>
+<div class="mm-node mm-l2">COX-2: Inflammation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">GI: Nausea, Bleeding</div>
+<div class="mm-node mm-l2">Renal: AKI</div>
+<div class="mm-node mm-l2">CNS: Drowsiness, Seizures (Mefenamic)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">High Risk Agents</div>
+<div class="mm-node mm-l2">Mefenamic Acid</div>
+<div class="mm-node mm-l2">Phenylbutazone</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Supportive</div>
+<div class="mm-node mm-l2">PPI for GI</div>
+<div class="mm-node mm-l2">Fluids for Renal</div>
+<div class="mm-node mm-l2">Benzo for Seizures</div>
+<div class="mm-node mm-l2">Charcoal if Large/Recent</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">No Antidote</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">No Dialysis</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[NSAID Overdose] --&gt; B[ABCDE + Renal Function + GI Assessment]
-  B --&gt; C{Large Ingestion\n&gt;100mg/kg or\nMefenamic Acid?}
-  C --&gt;|Yes| D[Activated Charcoal 1g/kg\nif &lt;1-2h]
-  C --&gt;|No| E[Observation + Supportive]
-  D --&gt; E
-  E --&gt; F{Complications?}
-  F --&gt;|GI Bleed| G[PPI + Fluids + Transfusion if Needed]
-  F --&gt;|AKI| H[IV Fluids, Avoid Nephrotoxins\nMonitor Renal Function]
-  F --&gt;|Seizures| I[Benzodiazepines]
-  F --&gt;|None| J[Discharge if Asymptomatic 6h\nPsych Assessment if DSH]
-  G --&gt; J
-  H --&gt; J
-  I --&gt; J</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">NSAID Overdose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Renal Function + GI Assessment</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Large Ingestion\n&gt;100mg/kg or\nMefenamic Acid?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Activated Charcoal 1g/kg\nif &lt;1-2h</div>
+<div class="fc-node" data-id="E">Observation + Supportive</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Complications?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">PPI + Fluids + Transfusion if Needed</div>
+<div class="fc-node" data-id="H">IV Fluids, Avoid Nephrotoxins\nMonitor Renal Function</div>
+<div class="fc-node" data-id="I">Benzodiazepines</div>
+<div class="fc-node" data-id="J">Discharge if Asymptomatic 6h\nPsych Assessment if DSH</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>NSAID vs salicylate comparison table</li>
@@ -20204,56 +21141,95 @@ Observation/Admission]
 <li><strong>BUPRENORPHINE</strong>: <strong>B</strong>uprenorphine = <strong>B</strong>uprenorphine <strong>P</strong>artial agonist, <strong>U</strong>nresponsive to naloxone (high dose needed), <strong>P</strong>recipitated withdrawal</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Opioid Toxidrome))
-    Mechanism
-      Mu Agonism
-      Respiratory Centers
-      Miosis (Edinger-Westphal)
-    Classic Triad
-      Miosis (Pinpoint)
-      Respiratory Depression
-      Coma
-    Agents
-      Heroin (Short)
-      Morphine (Histamine)
-      Fentanyl (Rigidity)
-      Methadone (QT, Long)
-      Buprenorphine (Partial, High Affinity)
-      Tramadol (Seizure, SNRI)
-      Codeine (CYP2D6)
-    Management
-      Naloxone (Titrated! 0.04mg start)
-      Observation (4-6h vs 12-24h)
-      NCPE (PEEP/CPAP)
-      Infusion if Re-sedation
-    Complications
-      Anoxic Brain Injury
-      Aspiration
-      NCPE
-      Rhabdo
-      Withdrawal (Precipitated)</pre>
+<div class="mindmap">
+<div class="mm-root">Opioid Toxidrome</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Mu Agonism</div>
+<div class="mm-node mm-l2">Respiratory Centers</div>
+<div class="mm-node mm-l2">Miosis (Edinger-Westphal)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Classic Triad</div>
+<div class="mm-node mm-l2">Miosis (Pinpoint)</div>
+<div class="mm-node mm-l2">Respiratory Depression</div>
+<div class="mm-node mm-l2">Coma</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Agents</div>
+<div class="mm-node mm-l2">Heroin (Short)</div>
+<div class="mm-node mm-l2">Morphine (Histamine)</div>
+<div class="mm-node mm-l2">Fentanyl (Rigidity)</div>
+<div class="mm-node mm-l2">Methadone (QT, Long)</div>
+<div class="mm-node mm-l2">Buprenorphine (Partial, High Affinity)</div>
+<div class="mm-node mm-l2">Tramadol (Seizure, SNRI)</div>
+<div class="mm-node mm-l2">Codeine (CYP2D6)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Naloxone (Titrated! 0.04mg start)</div>
+<div class="mm-node mm-l2">Observation (4-6h vs 12-24h)</div>
+<div class="mm-node mm-l2">NCPE (PEEP/CPAP)</div>
+<div class="mm-node mm-l2">Infusion if Re-sedation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Complications</div>
+<div class="mm-node mm-l2">Anoxic Brain Injury</div>
+<div class="mm-node mm-l2">Aspiration</div>
+<div class="mm-node mm-l2">NCPE</div>
+<div class="mm-node mm-l2">Rhabdo</div>
+<div class="mm-node mm-l2">Withdrawal (Precipitated)</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Pinpoint Pupils + Respiratory Depression + Coma] --&gt; B[Opioid Toxidrome]
-  B --&gt; C[ABCDE: High-Flow O2, BVM if Needed\nGlucose, Paracetamol Level]
-  C --&gt; D[Naloxone 0.04-0.1mg IV\nGoal: RR &gt; 10-12\nNOT Full Arousal]
-  D --&gt; E{Response?}
-  E --&gt;|No| F[Reconsider Diagnosis\nMax 10mg Total]
-  E --&gt;|Yes| G[Monitor RR, GCS, SpO2\nRe-sedation Expected]
-  G --&gt; H{Opioid Type?}
-  H --&gt;|Heroin, Morphine, IR| I[Observe 4-6h Post Last Naloxone]
-  H --&gt;|Methadone, SR/ER, Fentanyl Patch| J[Observe 12-24h\nECG for Methadone QT]
-  H --&gt;|Buprenorphine| K[Observe 6-12h\nHigh-Dose Naloxone May Need]
-  H --&gt;|Tramadol| L[Observe 6-8h\nBenzo for Seizures]
-  I --&gt; M[Discharge Criteria:\nGCS 15, RR&gt;12, SpO2&gt;94% RA\nNo Naloxone x 4h (6h Methadone)\nNo NCPE, Psych Safe]
-  J --&gt; M
-  K --&gt; M
-  L --&gt; M
-  G --&gt; N{Complications?}
-  N --&gt;|NCPE| O[CPAP/BiPAP → Intubate + PEEP\nNo Fluids]
-  N --&gt;|Fentanyl Rigidity| P[Paralyze + Intubate + Naloxone]
-  N --&gt;|Precipitated Withdrawal| Q[Supportive, Clonidine\nNo Re-dose Opioid]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Pinpoint Pupils + Respiratory Depression + Coma</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Opioid Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE: High-Flow O2, BVM if Needed\nGlucose, Paracetamol Level</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Naloxone 0.04-0.1mg IV\nGoal: RR &gt; 10-12\nNOT Full Arousal</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Response?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Reconsider Diagnosis\nMax 10mg Total</div>
+<div class="fc-node" data-id="G">Monitor RR, GCS, SpO2\nRe-sedation Expected</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Opioid Type?</div>
+<div class="fc-node" data-id="N">Complications?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Observe 4-6h Post Last Naloxone</div>
+<div class="fc-node" data-id="J">Observe 12-24h\nECG for Methadone QT</div>
+<div class="fc-node" data-id="K">Observe 6-12h\nHigh-Dose Naloxone May Need</div>
+<div class="fc-node" data-id="L">Observe 6-8h\nBenzo for Seizures</div>
+<div class="fc-node" data-id="O">CPAP/BiPAP → Intubate + PEEP\nNo Fluids</div>
+<div class="fc-node" data-id="P">Paralyze + Intubate + Naloxone</div>
+<div class="fc-node" data-id="Q">Supportive, Clonidine\nNo Re-dose Opioid</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Discharge Criteria:\nGCS 15, RR&gt;12, SpO2&gt;94% RA\nNo Naloxone x 4h (6h Methadone)\nNo NCPE, Psych Safe</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Naloxone titration algorithm</li>
@@ -20888,52 +21864,94 @@ Observation/Admission]
 <li><strong>INR</strong>: <strong>I</strong>nternational <strong>N</strong>ormalized <strong>R</strong>atio — <strong>MONITOR, DON'T CORRECT</strong></li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Paracetamol Poisoning))
-    Mechanism
-      Saturation Glucuronidation/Sulfation
-      CYP2E1 → NAPQI
-      Glutathione Depletion
-      Centrilobular Necrosis
-    Timeline
-      Phase I: 0-24h (GI/Asymptomatic)
-      Phase II: 24-72h (ALT↑, RUQ Pain)
-      Phase III: 72-96h (ALF, Encephalopathy)
-      Phase IV: 5-14d (Recovery)
-    Diagnosis
-      Paracetamol Level (MANDATORY ALL OD)
-      Nomogram (4-24h, Single, Known Time)
-      Staggered/Uncertain/&gt;24h/SR → Empiric NAC
-    Treatment
-      NAC (Antidote)
-      SNAP 2-Bag: 200mg/kg/4h + 100mg/kg/16h
-      3-Bag: 150/50/100 mg/kg
-      Oral: 72h Protocol
-      Late &gt;24h: Full Course if ALT↑ or Level+
-    ALF
-      King's College Criteria
-      pH&lt;7.3 OR INR&gt;6.5+Cr&gt;300+Encephalopathy
-      Transplant Referral
-    Monitoring
-      LFTs, INR, Glucose, VBG, Renal
-      INR = Severity Marker (No Prophylactic Correction)</pre>
+<div class="mindmap">
+<div class="mm-root">Paracetamol Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Saturation Glucuronidation/Sulfation</div>
+<div class="mm-node mm-l2">CYP2E1 → NAPQI</div>
+<div class="mm-node mm-l2">Glutathione Depletion</div>
+<div class="mm-node mm-l2">Centrilobular Necrosis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Timeline</div>
+<div class="mm-node mm-l2">Phase I: 0-24h (GI/Asymptomatic)</div>
+<div class="mm-node mm-l2">Phase II: 24-72h (ALT↑, RUQ Pain)</div>
+<div class="mm-node mm-l2">Phase III: 72-96h (ALF, Encephalopathy)</div>
+<div class="mm-node mm-l2">Phase IV: 5-14d (Recovery)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Diagnosis</div>
+<div class="mm-node mm-l2">Paracetamol Level (MANDATORY ALL OD)</div>
+<div class="mm-node mm-l2">Nomogram (4-24h, Single, Known Time)</div>
+<div class="mm-node mm-l2">Staggered/Uncertain/&gt;24h/SR → Empiric NAC</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Treatment</div>
+<div class="mm-node mm-l2">NAC (Antidote)</div>
+<div class="mm-node mm-l2">SNAP 2-Bag: 200mg/kg/4h + 100mg/kg/16h</div>
+<div class="mm-node mm-l2">3-Bag: 150/50/100 mg/kg</div>
+<div class="mm-node mm-l2">Oral: 72h Protocol</div>
+<div class="mm-node mm-l2">Late &gt;24h: Full Course if ALT↑ or Level+</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">ALF</div>
+<div class="mm-node mm-l2">King's College Criteria</div>
+<div class="mm-node mm-l2">pH&lt;7.3 OR INR&gt;6.5+Cr&gt;300+Encephalopathy</div>
+<div class="mm-node mm-l2">Transplant Referral</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Monitoring</div>
+<div class="mm-node mm-l2">LFTs, INR, Glucose, VBG, Renal</div>
+<div class="mm-node mm-l2">INR = Severity Marker (No Prophylactic Correction)</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Paracetamol Overdose] --&gt; B[ABCDE + Paracetamol Level\n+ LFTs, INR, Glucose, VBG\n+ Charcoal if &lt;1-2h]
-  B --&gt; C{Time Known?\nSingle Acute?\nLevel at 4-24h?}
-  C --&gt;|Yes| D[Plot on Rumack-Matthew\nNomogram]
-  D --&gt; E{Above Treatment Line?}
-  E --&gt;|Yes| F[NAC: SNAP 2-Bag\n200mg/kg/4h + 100mg/kg/16h]
-  E --&gt;|No| G[No NAC Needed\nObserve 24h\nPsych Assessment]
-  C --&gt;|No: Staggered/Uncertain/&gt;24h/SR| H[EMPIRIC NAC\nFull 20h Course]
-  F --&gt; I[Monitor LFTs, INR, Glucose q4-6h\nAt 20-24h: Normal?]
-  H --&gt; I
-  I --&gt; J{LFTs/INR Normal?}
-  J --&gt;|Yes| K[Discharge + Psych Assessment]
-  J --&gt;|No| L[Continue NAC Until Improving\nAdmit]
-  L --&gt; M{ALF Signs?\nINR&gt;2, Encephalopathy, pH&lt;7.3}
-  M --&gt;|Yes| N[ICU + King's College\nTransplant Referral\nContinue NAC Beyond 20h]
-  M --&gt;|No| L</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Paracetamol Overdose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Paracetamol Level\n+ LFTs, INR, Glucose, VBG\n+ Charcoal if &lt;1-2h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Time Known?\nSingle Acute?\nLevel at 4-24h?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Plot on Rumack-Matthew\nNomogram</div>
+<div class="fc-node" data-id="H">EMPIRIC NAC\nFull 20h Course</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Above Treatment Line?</div>
+<div class="fc-node" data-id="I">Monitor LFTs, INR, Glucose q4-6h\nAt 20-24h: Normal?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">NAC: SNAP 2-Bag\n200mg/kg/4h + 100mg/kg/16h</div>
+<div class="fc-node" data-id="G">No NAC Needed\nObserve 24h\nPsych Assessment</div>
+<div class="fc-node" data-id="J">LFTs/INR Normal?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Discharge + Psych Assessment</div>
+<div class="fc-node" data-id="L">Continue NAC Until Improving\nAdmit</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">ALF Signs?\nINR&gt;2, Encephalopathy, pH&lt;7.3</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="N">ICU + King's College\nTransplant Referral\nContinue NAC Beyond 20h</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Rumack-Matthew nomogram (treatment line, high-risk line)</li>
@@ -21508,43 +22526,80 @@ Observation/Admission]
 <li><strong>NO DANTROLENE</strong> in serotonin syndrome</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((SSRI/SNRI Poisoning &amp; Serotonin Syndrome))
-    Agents
-      SSRIs (Fluoxetine, Sertraline, Citalopram)
-      SNRIs (Venlafaxine, Duloxetine)
-      MAOIs, Tramadol, Linezolid, Fentanyl
-    Serotonin Syndrome
-      Hunter Criteria (Clonus-based)
-      Triad: Neuromuscular + Autonomic + Mental
-      Onset: Hours
-    DDx
-      NMS (Days, Rigidity, No Clonus)
-      Sympathomimetic (No Clonus)
-      Anticholinergic (Dry)
-    Management
-      Stop Serotonergics
-      Benzos (1st Line)
-      Cyproheptadine 12mg PO
-      Cooling &gt;41°C
-      Paralysis if Refractory
-    High Risk Combinations
-      SSRI + MAOI (14d washout)
-      SSRI + Tramadol/Linezolid/Fentanyl</pre>
+<div class="mindmap">
+<div class="mm-root">SSRI/SNRI Poisoning &amp; Serotonin Syndrome</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Agents</div>
+<div class="mm-node mm-l2">SSRIs (Fluoxetine, Sertraline, Citalopram)</div>
+<div class="mm-node mm-l2">SNRIs (Venlafaxine, Duloxetine)</div>
+<div class="mm-node mm-l2">MAOIs, Tramadol, Linezolid, Fentanyl</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Serotonin Syndrome</div>
+<div class="mm-node mm-l2">Hunter Criteria (Clonus-based)</div>
+<div class="mm-node mm-l2">Triad: Neuromuscular + Autonomic + Mental</div>
+<div class="mm-node mm-l2">Onset: Hours</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">DDx</div>
+<div class="mm-node mm-l2">NMS (Days, Rigidity, No Clonus)</div>
+<div class="mm-node mm-l2">Sympathomimetic (No Clonus)</div>
+<div class="mm-node mm-l2">Anticholinergic (Dry)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Stop Serotonergics</div>
+<div class="mm-node mm-l2">Benzos (1st Line)</div>
+<div class="mm-node mm-l2">Cyproheptadine 12mg PO</div>
+<div class="mm-node mm-l2">Cooling &gt;41°C</div>
+<div class="mm-node mm-l2">Paralysis if Refractory</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">High Risk Combinations</div>
+<div class="mm-node mm-l2">SSRI + MAOI (14d washout)</div>
+<div class="mm-node mm-l2">SSRI + Tramadol/Linezolid/Fentanyl</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[On Serotonergic + Clonus/Hyperreflexia/\nAgitation/Hyperthermia] --&gt; B[Serotonin Syndrome\nHunter Criteria]
-  B --&gt; C[STOP All Serotonergic Drugs\nABCDE]
-  C --&gt; D[Benzodiazepines\nLorazepam 2-4mg IV q5-10min]
-  D --&gt; E{Temp &gt; 41°C?}
-  E --&gt;|Yes| F[Aggressive Cooling\nEvaporative, Ice, Cold Fluids\nParalyze + Ventilate if Refractory]
-  E --&gt;|No| G
-  D --&gt; G[Cyproheptadine 12mg PO/NG\n2mg q1h x6, then 8mg q6h]
-  F --&gt; G
-  G --&gt; H[Monitor: Clonus Resolution\nTemp, HR, BP, CK, Renal]
-  H --&gt; I{Improving?}
-  I --&gt;|Yes| J[Continue Supportive\nObserve 24h Post-Resolution]
-  I --&gt;|No| K[Paralyze + Ventilate\nICU]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">On Serotonergic + Clonus/Hyperreflexia/\nAgitation/Hyperthermia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Serotonin Syndrome\nHunter Criteria</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">STOP All Serotonergic Drugs\nABCDE</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Benzodiazepines\nLorazepam 2-4mg IV q5-10min</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Temp &gt; 41°C?</div>
+<div class="fc-node" data-id="G">Cyproheptadine 12mg PO/NG\n2mg q1h x6, then 8mg q6h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Aggressive Cooling\nEvaporative, Ice, Cold Fluids\nParalyze + Ventilate if Refractory</div>
+<div class="fc-node" data-id="H">Monitor: Clonus Resolution\nTemp, HR, BP, CK, Renal</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Improving?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="J">Continue Supportive\nObserve 24h Post-Resolution</div>
+<div class="fc-node" data-id="K">Paralyze + Ventilate\nICU</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Hunter Criteria flowchart</li>
@@ -22145,47 +23200,83 @@ Observation/Admission]
 <li><strong>URINE ALKALINIZATION</strong>: <strong>U</strong>rine pH <strong>7.5-8.0</strong>, <strong>K</strong>⁺ replace, <strong>O</strong>utput >2 mL/kg/hr, <strong>M</strong>onitor q1-2h</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Salicylate Poisoning))
-    Mechanism
-      Uncoupled OxPhos
-      Medullary Stimulation
-      Krebs Inhibition
-      Renal pH Dependent
-    Acid-Base
-      Early: Resp Alkalosis
-      Mixed: Resp Alk + Met Acid
-      Late: Metabolic Acidosis
-    Clinical
-      Tinnitus (Hallmark)
-      Hyperventilation
-      Neuro: Confusion, Seizures, Cerebral Edema
-      NCPE
-      Hyperthermia
-      Hypoglycemia
-    Acute vs Chronic
-      Acute: Higher Levels, GI Prominent
-      Chronic: Elderly, Lower Levels, Neuro/Cognitive
-    Management
-      Alkalinization (Urine pH 7.5-8.0)
-      Dialysis (pH&lt;7.2, Renal, CNS, Level)
-      Fluids Restrictive (NCPE Risk)
-      Glucose Monitor
-    Methyl Salicylate
-      Oil of Wintergreen
-      1 tsp = 7g Aspirin</pre>
+<div class="mindmap">
+<div class="mm-root">Salicylate Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Uncoupled OxPhos</div>
+<div class="mm-node mm-l2">Medullary Stimulation</div>
+<div class="mm-node mm-l2">Krebs Inhibition</div>
+<div class="mm-node mm-l2">Renal pH Dependent</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Acid-Base</div>
+<div class="mm-node mm-l2">Early: Resp Alkalosis</div>
+<div class="mm-node mm-l2">Mixed: Resp Alk + Met Acid</div>
+<div class="mm-node mm-l2">Late: Metabolic Acidosis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Tinnitus (Hallmark)</div>
+<div class="mm-node mm-l2">Hyperventilation</div>
+<div class="mm-node mm-l2">Neuro: Confusion, Seizures, Cerebral Edema</div>
+<div class="mm-node mm-l2">NCPE</div>
+<div class="mm-node mm-l2">Hyperthermia</div>
+<div class="mm-node mm-l2">Hypoglycemia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Acute vs Chronic</div>
+<div class="mm-node mm-l2">Acute: Higher Levels, GI Prominent</div>
+<div class="mm-node mm-l2">Chronic: Elderly, Lower Levels, Neuro/Cognitive</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Alkalinization (Urine pH 7.5-8.0)</div>
+<div class="mm-node mm-l2">Dialysis (pH&lt;7.2, Renal, CNS, Level)</div>
+<div class="mm-node mm-l2">Fluids Restrictive (NCPE Risk)</div>
+<div class="mm-node mm-l2">Glucose Monitor</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Methyl Salicylate</div>
+<div class="mm-node mm-l2">Oil of Wintergreen</div>
+<div class="mm-node mm-l2">1 tsp = 7g Aspirin</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Salicylate Overdose] --&gt; B[ABCDE + Level + VBG + Glucose\nCharcoal if &lt;1-2h]
-  B --&gt; C{Acute or Chronic?}
-  C --&gt;|Acute| D[Level &gt; 500 mg/L Moderate\n&gt; 700 mg/L Severe]
-  C --&gt;|Chronic| E[Level &gt; 300 mg/L Moderate\n&gt; 400 mg/L Severe\nLower Threshold]
-  D --&gt; F[Urinary Alkalinization\nUrine pH 7.5-8.0\nK+ Replacement\nMDAC]
-  E --&gt; F
-  F --&gt; G{Dialysis Indicated?}
-  G --&gt;|pH&lt;7.2, Renal Fail,\nCNS Toxicity, Level&gt;700/400| H[Hemodialysis]
-  G --&gt;|No| I[Continue Alkalinization\nMonitor q2-4h Level\nFalling + Asymptomatic → D/C]
-  H --&gt; I</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Salicylate Overdose</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">ABCDE + Level + VBG + Glucose\nCharcoal if &lt;1-2h</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">Acute or Chronic?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Level &gt; 500 mg/L Moderate\n&gt; 700 mg/L Severe</div>
+<div class="fc-node" data-id="E">Level &gt; 300 mg/L Moderate\n&gt; 400 mg/L Severe\nLower Threshold</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="F">Urinary Alkalinization\nUrine pH 7.5-8.0\nK+ Replacement\nMDAC</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="G">Dialysis Indicated?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="H">Hemodialysis</div>
+<div class="fc-node" data-id="I">Continue Alkalinization\nMonitor q2-4h Level\nFalling + Asymptomatic → D/C</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Acid-base timeline diagram</li>
@@ -22770,56 +23861,91 @@ Observation/Admission]
 <li><strong>SEDATIVE SYNERGY</strong>: <strong>B</strong>enzo + <strong>O</strong>pioid + <strong>A</strong>lcohol = <strong>B</strong>ig <strong>O</strong>pportunity for <strong>A</strong>pnea</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Sedative-Hypnotic Toxidrome))
-    Mechanism
-      GABA-A Potentiation
-      Benzo: Freq ↑ (Ceiling)
-      Barbiturate: Duration ↑ (NO Ceiling)
-      Z-drugs: BZ1 Selective
-      GHB: GHB Receptor + GABA-B
-      Ethanol: Multi-target
-    Clinical
-      Sedation → Coma
-      Respiratory Depression
-      Hypotension
-      Hypothermia
-      Miosis/Normal Pupils
-    Agents
-      Benzo (Flumazenil Restricted)
-      Barbiturate (MDAC, Alkalinization, Dialysis)
-      Z-drugs (Shorter, Sleep Behaviors)
-      GHB/GBL (Rapid Arousal)
-      Ethanol (Withdrawal, Hypoglycemia)
-    DDx
-      Opioid (Miosis, Naloxone)
-      Metabolic/Structural/Infection
-    Management
-      Supportive (ABCDE, Intubate)
-      Flumazenil (Procedural/Diagnostic ONLY)
-      Naloxone (if Opioid Possible)
-      Thiamine → Glucose
-    Withdrawal
-      Benzo: Diazepam Taper
-      Alcohol: CIWA-Ar, Benzo, Thiamine
-      GHB: High-dose Benzo/Phenobarbital</pre>
+<div class="mindmap">
+<div class="mm-root">Sedative-Hypnotic Toxidrome</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">GABA-A Potentiation</div>
+<div class="mm-node mm-l2">Benzo: Freq ↑ (Ceiling)</div>
+<div class="mm-node mm-l2">Barbiturate: Duration ↑ (NO Ceiling)</div>
+<div class="mm-node mm-l2">Z-drugs: BZ1 Selective</div>
+<div class="mm-node mm-l2">GHB: GHB Receptor + GABA-B</div>
+<div class="mm-node mm-l2">Ethanol: Multi-target</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Sedation → Coma</div>
+<div class="mm-node mm-l2">Respiratory Depression</div>
+<div class="mm-node mm-l2">Hypotension</div>
+<div class="mm-node mm-l2">Hypothermia</div>
+<div class="mm-node mm-l2">Miosis/Normal Pupils</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Agents</div>
+<div class="mm-node mm-l2">Benzo (Flumazenil Restricted)</div>
+<div class="mm-node mm-l2">Barbiturate (MDAC, Alkalinization, Dialysis)</div>
+<div class="mm-node mm-l2">Z-drugs (Shorter, Sleep Behaviors)</div>
+<div class="mm-node mm-l2">GHB/GBL (Rapid Arousal)</div>
+<div class="mm-node mm-l2">Ethanol (Withdrawal, Hypoglycemia)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">DDx</div>
+<div class="mm-node mm-l2">Opioid (Miosis, Naloxone)</div>
+<div class="mm-node mm-l2">Metabolic/Structural/Infection</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Supportive (ABCDE, Intubate)</div>
+<div class="mm-node mm-l2">Flumazenil (Procedural/Diagnostic ONLY)</div>
+<div class="mm-node mm-l2">Naloxone (if Opioid Possible)</div>
+<div class="mm-node mm-l2">Thiamine → Glucose</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Withdrawal</div>
+<div class="mm-node mm-l2">Benzo: Diazepam Taper</div>
+<div class="mm-node mm-l2">Alcohol: CIWA-Ar, Benzo, Thiamine</div>
+<div class="mm-node mm-l2">GHB: High-dose Benzo/Phenobarbital</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Comatose, Respiratory Depression, Hypotension, Hypothermia] --&gt; B[Sedative-Hypnotic Toxidrome]
-  B --&gt; C[ABCDE: Intubate if GCS&lt;8 or RR&lt;10\nThiamine 100mg IV → Glucose\nParacetamol Level]
-  C --&gt; D{Agent Known?}
-  D --&gt;|Benzodiazepine| E[Supportive Care\nFlumazenil ONLY if:\n- Procedural oversedation\n- Diagnostic uncertainty\nNO if TCA, Seizure Hx, Chronic Use]
-  D --&gt;|Barbiturate| F[Supportive Care\nVasopressors for HTN\nMDAC + Urinary Alkalinization\nDialysis if Severe/Refractory]
-  D --&gt;|Z-Drugs| G[Supportive Care\nShorter Observation (4-6h)]
-  D --&gt;|GHB/GBL| H[Supportive Care\nObserve 4-6h Post-Arousal\nMyoclonus/Vomiting Expected\nWatch for Withdrawal]
-  D --&gt;|Ethanol| I[Supportive Care\nThiamine, Glucose, Electrolytes\nMonitor Withdrawal (CIWA-Ar)]
-  D --&gt;|Unknown/Mixed| J[Supportive Care\nNaloxone Trial 0.04-0.4mg\nFlumazenil ONLY if No Contraindications\nIntubate if Needed]
-  E --&gt; K[Monitor 2-4h Post-Flumazenil\nRe-sedation Common]
-  F --&gt; L[ICU Admission]
-  G --&gt; M[Obs 6h]
-  H --&gt; N[Obs 6h Post-Arousal]
-  I --&gt; O[Admit if Withdrawal Risk]
-  J --&gt; P[ICU/HDU]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Comatose, Respiratory Depression, Hypotension, Hypothermia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Sedative-Hypnotic Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE: Intubate if GCS&lt;8 or RR&lt;10\nThiamine 100mg IV → Glucose\nParacetamol Level</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Agent Known?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Supportive Care\nFlumazenil ONLY if:\n- Procedural oversedation\n- Diagnostic uncertainty\nNO if TCA, Seizure Hx, Chronic Use</div>
+<div class="fc-node" data-id="F">Supportive Care\nVasopressors for HTN\nMDAC + Urinary Alkalinization\nDialysis if Severe/Refractory</div>
+<div class="fc-node" data-id="G">Supportive Care\nShorter Observation (4-6h)</div>
+<div class="fc-node" data-id="H">Supportive Care\nObserve 4-6h Post-Arousal\nMyoclonus/Vomiting Expected\nWatch for Withdrawal</div>
+<div class="fc-node" data-id="I">Supportive Care\nThiamine, Glucose, Electrolytes\nMonitor Withdrawal (CIWA-Ar)</div>
+<div class="fc-node" data-id="J">Supportive Care\nNaloxone Trial 0.04-0.4mg\nFlumazenil ONLY if No Contraindications\nIntubate if Needed</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Monitor 2-4h Post-Flumazenil\nRe-sedation Common</div>
+<div class="fc-node" data-id="L">ICU Admission</div>
+<div class="fc-node" data-id="M">Obs 6h</div>
+<div class="fc-node" data-id="N">Obs 6h Post-Arousal</div>
+<div class="fc-node" data-id="O">Admit if Withdrawal Risk</div>
+<div class="fc-node" data-id="P">ICU/HDU</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Flumazenil contraindications poster</li>
@@ -23433,49 +24559,78 @@ Observation/Admission]
 <li><strong>MDMA TRIAD</strong>: <strong>H</strong>yperthermia, <strong>H</strong>yponatremia, <strong>S</strong>erotonin syndrome</li>
 </ul>
 <h2>15. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Sympathomimetic Toxidrome))
-    Mechanism
-      Release (Amphetamine, MDMA)
-      Reuptake Block (Cocaine, Bupropion)
-      Direct Agonist (Epinephrine)
-    Clinical
-      CV: HTN, Tachy, Chest Pain, Arrhythmia
-      Neuro: Agitation, Psychosis, Seizures, Hyperreflexia
-      Autonomic: Diaphoresis (WET), Mydriasis, Hyperthermia
-      Metabolic: Hyperglycemia, Hypokalemia, Acidosis
-    DDx
-      Anticholinergic (DRY)
-      Serotonin (CLONUS)
-      NMS (Rigidity, Days)
-    Management
-      Benzos (Universal 1st Line)
-      Vasodilators (NO Beta-Blockers)
-      Cooling (Hyperthermia)
-      Fluids + Alkalinization (Rhabdo)
-    Cocaine Specific
-      Na Channel Block (QRS)
-      No Beta-Blockers
-      Phentolamine/Nicardipine
-      Avoid Phenytoin</pre>
+<div class="mindmap">
+<div class="mm-root">Sympathomimetic Toxidrome</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Release (Amphetamine, MDMA)</div>
+<div class="mm-node mm-l2">Reuptake Block (Cocaine, Bupropion)</div>
+<div class="mm-node mm-l2">Direct Agonist (Epinephrine)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">CV: HTN, Tachy, Chest Pain, Arrhythmia</div>
+<div class="mm-node mm-l2">Neuro: Agitation, Psychosis, Seizures, Hyperreflexia</div>
+<div class="mm-node mm-l2">Autonomic: Diaphoresis (WET), Mydriasis, Hyperthermia</div>
+<div class="mm-node mm-l2">Metabolic: Hyperglycemia, Hypokalemia, Acidosis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">DDx</div>
+<div class="mm-node mm-l2">Anticholinergic (DRY)</div>
+<div class="mm-node mm-l2">Serotonin (CLONUS)</div>
+<div class="mm-node mm-l2">NMS (Rigidity, Days)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">Benzos (Universal 1st Line)</div>
+<div class="mm-node mm-l2">Vasodilators (NO Beta-Blockers)</div>
+<div class="mm-node mm-l2">Cooling (Hyperthermia)</div>
+<div class="mm-node mm-l2">Fluids + Alkalinization (Rhabdo)</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Cocaine Specific</div>
+<div class="mm-node mm-l2">Na Channel Block (QRS)</div>
+<div class="mm-node mm-l2">No Beta-Blockers</div>
+<div class="mm-node mm-l2">Phentolamine/Nicardipine</div>
+<div class="mm-node mm-l2">Avoid Phenytoin</div>
+</div>
+</div>
+</div>
 <h2>16. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Agitated, Hypertensive, Tachycardic, Diaphoretic, Hyperthermic] --&gt; B[Sympathomimetic Toxidrome]
-  B --&gt; C[ABCDE + Benzodiazepines
-Lorazepam 2-4mg IV q5-10min\nTarget: Sedation RASS -1 to 0]
-  C --&gt; D{HTN Persists\nAfter Adequate Benzo?}
-  D --&gt;|Yes| E[Vasodilators:\nNicardipine / Phentolamine /\nNitroprusside / Nitroglycerin\nNO BETA-BLOCKERS]
-  D --&gt;|No| F[Monitor]
-  C --&gt; G{Temp &gt; 39°C?}
-  G --&gt;|Yes| H[Aggressive Cooling\nEvaporative, Ice, Cold Fluids\nParalyze if Refractory]
-  G --&gt;|No| F
-  C --&gt; I{Seizures?}
-  I --&gt;|Yes| J[Benzo → Phenobarbital/Propofol\nNO Phenytoin]
-  I --&gt;|No| F
-  C --&gt; K{Rhabdo?\nCK &gt; 5000}
-  K --&gt;|Yes| L[Fluids 1-2L/hr\nAlkalinize Urine\nTarget UOP 2-3 mL/kg/hr]
-  K --&gt;|No| F
-  F --&gt; M[Disposition:\nICU if Severe/Intubated\nObs 6-12h if Mild\nPsych Assessment]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Agitated, Hypertensive, Tachycardic, Diaphoretic, Hyperthermic</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Sympathomimetic Toxidrome</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE + Benzodiazepines Lorazepam 2-4mg IV q5-10min\nTarget: Sedation RASS -1 to 0</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">HTN Persists\nAfter Adequate Benzo?</div>
+<div class="fc-node" data-id="G">Temp &gt; 39°C?</div>
+<div class="fc-node" data-id="I">Seizures?</div>
+<div class="fc-node" data-id="K">Rhabdo?\nCK &gt; 5000</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Vasodilators:\nNicardipine / Phentolamine /\nNitroprusside / Nitroglycerin\nNO BETA-BLOCKERS</div>
+<div class="fc-node" data-id="F">Monitor</div>
+<div class="fc-node" data-id="H">Aggressive Cooling\nEvaporative, Ice, Cold Fluids\nParalyze if Refractory</div>
+<div class="fc-node" data-id="J">Benzo → Phenobarbital/Propofol\nNO Phenytoin</div>
+<div class="fc-node" data-id="L">Fluids 1-2L/hr\nAlkalinize Urine\nTarget UOP 2-3 mL/kg/hr</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="M">Disposition:\nICU if Severe/Intubated\nObs 6-12h if Mild\nPsych Assessment</div>
+</div>
+</div>
 <h2>17. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Toxidrome comparison table (4 columns)</li>
@@ -24076,45 +25231,75 @@ Lorazepam 2-4mg IV q5-10min\nTarget: Sedation RASS -1 to 0]
 <li><strong>TCA CARDIOTOXICITY</strong>: <strong>S</strong>odium channel <strong>B</strong>lockade = <strong>Q</strong>RS widening + <strong>T</strong>erminal R aVR</li>
 </ul>
 <h2>15. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((TCA Poisoning))
-    Mechanism
-      Na Channel Blockade (Class Ia)
-      Anticholinergic
-      Alpha-1 Blockade
-      CNS: Seizures, Coma
-    Clinical
-      Cardiac: QRS&gt;100, R aVR&gt;3mm, VT/VF, Hypotension
-      Anticholinergic: Dry, Mydriasis, Tachy
-      CNS: Seizures, Coma
-    ECG
-      QRS Duration Severity
-      Terminal R aVR
-      QT Prolongation
-    Management
-      NaHCO3 (QRS&gt;100)
-      Benzo Seizures
-      NE Hypotension
-      Avoid: Phenytoin, Flumazenil, Class Ia/Ic
-    Monitoring
-      Continuous ECG
-      ABG pH 7.50-7.55
-      24h Post-Normalization</pre>
+<div class="mindmap">
+<div class="mm-root">TCA Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">Na Channel Blockade (Class Ia)</div>
+<div class="mm-node mm-l2">Anticholinergic</div>
+<div class="mm-node mm-l2">Alpha-1 Blockade</div>
+<div class="mm-node mm-l2">CNS: Seizures, Coma</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Clinical</div>
+<div class="mm-node mm-l2">Cardiac: QRS&gt;100, R aVR&gt;3mm, VT/VF, Hypotension</div>
+<div class="mm-node mm-l2">Anticholinergic: Dry, Mydriasis, Tachy</div>
+<div class="mm-node mm-l2">CNS: Seizures, Coma</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">ECG</div>
+<div class="mm-node mm-l2">QRS Duration Severity</div>
+<div class="mm-node mm-l2">Terminal R aVR</div>
+<div class="mm-node mm-l2">QT Prolongation</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Management</div>
+<div class="mm-node mm-l2">NaHCO3 (QRS&gt;100)</div>
+<div class="mm-node mm-l2">Benzo Seizures</div>
+<div class="mm-node mm-l2">NE Hypotension</div>
+<div class="mm-node mm-l2">Avoid: Phenytoin, Flumazenil, Class Ia/Ic</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Monitoring</div>
+<div class="mm-node mm-l2">Continuous ECG</div>
+<div class="mm-node mm-l2">ABG pH 7.50-7.55</div>
+<div class="mm-node mm-l2">24h Post-Normalization</div>
+</div>
+</div>
+</div>
 <h2>16. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Overdose + QRS Widening + Anticholinergic + Seizures] --&gt; B[TCA Poisoning]
-  B --&gt; C[ABCDE + Continuous ECG\nHyperventilate to pH 7.50-7.55 if Intubated]
-  C --&gt; D{QRS &gt; 100 ms\nor R aVR &gt; 3mm\nor VT/VF\nor Refractory Hypotension?}
-  D --&gt;|Yes| E[NaHCO3 1-2 mEq/kg IV Bolus\nRepeat to pH 7.50-7.55, QRS&lt;100\nInfusion to Maintain]
-  D --&gt;|No| F[Monitor ECG, ABG q30min]
-  C --&gt; G{Seizures?}
-  G --&gt;|Yes| H[Lorazepam/Diazepam IV\nPhenobarbital/Propofol 2nd Line\nNO PHENYTOIN]
-  G --&gt;|No| F
-  C --&gt; I{Hypotension?}
-  I --&gt;|Yes| J[Fluids → Norepinephrine\nNO Beta-Blockers]
-  I --&gt;|No| F
-  F --&gt; K[Observe 24h Post-QRS Normalization\nPsych Assessment]
-  E --&gt; K</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Overdose + QRS Widening + Anticholinergic + Seizures</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">TCA Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE + Continuous ECG\nHyperventilate to pH 7.50-7.55 if Intubated</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">QRS &gt; 100 ms\nor R aVR &gt; 3mm\nor VT/VF\nor Refractory Hypotension?</div>
+<div class="fc-node" data-id="G">Seizures?</div>
+<div class="fc-node" data-id="I">Hypotension?</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">NaHCO3 1-2 mEq/kg IV Bolus\nRepeat to pH 7.50-7.55, QRS&lt;100\nInfusion to Maintain</div>
+<div class="fc-node" data-id="F">Monitor ECG, ABG q30min</div>
+<div class="fc-node" data-id="H">Lorazepam/Diazepam IV\nPhenobarbital/Propofol 2nd Line\nNO PHENYTOIN</div>
+<div class="fc-node" data-id="J">Fluids → Norepinephrine\nNO Beta-Blockers</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="K">Observe 24h Post-QRS Normalization\nPsych Assessment</div>
+</div>
+</div>
 <h2>17. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>ECG progression (QRS widening → sine wave)</li>
@@ -24641,36 +25826,68 @@ Lorazepam 2-4mg IV q5-10min\nTarget: Sedation RASS -1 to 0]
 <li><strong>Z-EFFECTS</strong>: <strong>Z</strong> (sleep behaviors), <strong>D</strong> (hallucinations), <strong>R</strong> (respiratory depression mild), <strong>U</strong> (ultra-short zaleplon), <strong>G</strong> (GABA BZ1 selective), <strong>S</strong> (shorter than benzo)</li>
 </ul>
 <h2>14. Mind Map</h2>
-<pre class="mermaid">mindmap
-  root((Z-Drug Poisoning))
-    Mechanism
-      BZ1 (Alpha-1) Selective
-      Sedation &gt; Anxiolysis
-    Agents
-      Zolpidem: 2-3h
-      Zopiclone: 5-6h
-      Zaleplon: 1h
-    Unique Effects
-      Complex Sleep Behaviors
-      Hallucinations
-      Amnesia
-    Flumazenil
-      Reverses
-      Same Contraindications as Benzo
-    Monitoring
-      Short Obs (4-8h)
-      Screen May Miss</pre>
+<div class="mindmap">
+<div class="mm-root">Z-Drug Poisoning</div>
+<div class="mm-branches">
+<div class="mm-branch">
+<div class="mm-node mm-l1">Mechanism</div>
+<div class="mm-node mm-l2">BZ1 (Alpha-1) Selective</div>
+<div class="mm-node mm-l2">Sedation &gt; Anxiolysis</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Agents</div>
+<div class="mm-node mm-l2">Zolpidem: 2-3h</div>
+<div class="mm-node mm-l2">Zopiclone: 5-6h</div>
+<div class="mm-node mm-l2">Zaleplon: 1h</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Unique Effects</div>
+<div class="mm-node mm-l2">Complex Sleep Behaviors</div>
+<div class="mm-node mm-l2">Hallucinations</div>
+<div class="mm-node mm-l2">Amnesia</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Flumazenil</div>
+<div class="mm-node mm-l2">Reverses</div>
+<div class="mm-node mm-l2">Same Contraindications as Benzo</div>
+</div>
+<div class="mm-branch">
+<div class="mm-node mm-l1">Monitoring</div>
+<div class="mm-node mm-l2">Short Obs (4-8h)</div>
+<div class="mm-node mm-l2">Screen May Miss</div>
+</div>
+</div>
+</div>
 <h2>15. Flowchart</h2>
-<pre class="mermaid">flowchart TD
-  A[Sedation, Ataxia, Sleepwalking,\nHallucinations, Amnesia] --&gt; B[Z-Drug Poisoning]
-  B --&gt; C[ABCDE + Supportive Care\nGlucose, Paracetamol Level]
-  C --&gt; D{Respiratory Depression\nor GCS &lt; 8?}
-  D --&gt;|Yes| E[Intubate + Ventilate]
-  D --&gt;|No| F[Monitor 4-6h (Zolpidem/Zaleplon)\n6-8h (Zopiclone)]
-  C --&gt; G{Flumazenil Indicated?\nProcedural/Diagnostic\nNO Contraindications}
-  G --&gt;|Yes| H[Flumazenil 0.2mg IV\nSame as Benzo Protocol]
-  G --&gt;|No| F
-  F --&gt; I[Discharge When Awake\nSafety Counseling\n(Sleep Behaviors, Driving)]</pre>
+<div class="flowchart" data-dir="TD">
+<div class="fc-title">⬇ Clinical Pathway</div>
+<div class="fc-level">
+<div class="fc-node" data-id="A">Sedation, Ataxia, Sleepwalking,\nHallucinations, Amnesia</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="B">Z-Drug Poisoning</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="C">ABCDE + Supportive Care\nGlucose, Paracetamol Level</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="D">Respiratory Depression\nor GCS &lt; 8?</div>
+<div class="fc-node" data-id="G">Flumazenil Indicated?\nProcedural/Diagnostic\nNO Contraindications</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="E">Intubate + Ventilate</div>
+<div class="fc-node" data-id="F">Monitor 4-6h (Zolpidem/Zaleplon)\n6-8h (Zopiclone)</div>
+<div class="fc-node" data-id="H">Flumazenil 0.2mg IV\nSame as Benzo Protocol</div>
+</div>
+<div class="fc-arrows">↓</div>
+<div class="fc-level">
+<div class="fc-node" data-id="I">Discharge When Awake\nSafety Counseling\n(Sleep Behaviors, Driving)</div>
+</div>
+</div>
 <h2>16. Suggested Visuals / Image Notes</h2>
 <ul>
 <li>Z-drug half-life comparison</li>
@@ -25229,7 +26446,7 @@ document.getElementById("topicSearchMobile").addEventListener("input", function(
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 04:27 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 09:37 UTC · Davidson 25th Ed</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>

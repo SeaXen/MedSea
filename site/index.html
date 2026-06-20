@@ -1160,39 +1160,39 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   header.site { display: none; }
   .mobile-bar { display: flex; }
 
-  /* === MOBILE BAR: compact 2-row; full-width search is visible === */
+  /* === MOBILE BAR: strict single-line header === */
   .mobile-bar {
     padding: 6px 8px;
     gap: 6px;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
-  .mobile-bar .row.top {
-    display: flex;
-    justify-content: space-between;
-    min-width: 0;
-  }
+  .mobile-bar .row.top,
   .mobile-bar .row.search-row {
-    display: flex;
-    width: 100%;
-    min-width: 0;
+    display: contents;
   }
   .mobile-bar .logo-mini {
-    font-size: 13px;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
+    gap: 0;
   }
   .mobile-bar .logo-mini .logo { font-size: 16px; }
-  .mobile-bar .logo-mini a {
-    font-size: 13px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .mobile-bar .logo-mini a,
+  .mobile-bar .current-ch-label,
+  .mobile-bar .github-btn,
+  .mobile-bar .stats-mini {
+    display: none !important;
   }
   .mobile-bar .menu-btn {
     padding: 6px 8px;
     font-size: 12px;
     flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .mobile-bar .search-row {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .mobile-bar .search-row .search-box-m {
     flex: 1 1 auto;
@@ -1208,17 +1208,6 @@ header.site .search-box .search-empty strong { color: var(--accent); }
     left: 8px;
     font-size: 11px;
   }
-  .mobile-bar .current-ch-label {
-    font-size: 10px;
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-  .mobile-bar .github-btn {
-    padding: 6px 8px;
-    font-size: 11px;
-    flex: 0 0 auto;
-  }
-  .mobile-bar .stats-mini { display: none; }
 
   /* === HIDE DUPLICATE MOBILE TOOLBAR SEARCH (mobile-bar already has search) === */
   .chapter-mobile .chapter-toolbar {
@@ -1789,7 +1778,7 @@ footer a:hover { color: var(--accent); }
         <span class="logo">⚕</span>
         <a href="/">MedSea</a>
       </div>
-      <div class="stats"><span class="stat"><span class="num">32</span><span class="label">Chapters</span></span><span class="stat"><span class="num">304</span><span class="label">Hubs</span></span><span class="stat"><span class="num">3526</span><span class="label">Topics</span></span><span class="stat"><span class="num">2627</span><span class="label">PNGs</span></span><span class="stat"><span class="num">32</span><span class="label">Total (25th)</span></span></div>
+      <div class="stats"><span class="stat"><span class="num">32</span><span class="label">Chapters</span></span><span class="stat"><span class="num">316</span><span class="label">Hubs</span></span><span class="stat"><span class="num">3599</span><span class="label">Topics</span></span><span class="stat"><span class="num">2677</span><span class="label">PNGs</span></span><span class="stat"><span class="num">32</span><span class="label">Total (25th)</span></span></div>
     </div>
     <div class="search-box" id="searchBox">
       <input type="text" id="searchInput" placeholder="Search 2,957 topics…" autocomplete="off" spellcheck="false">
@@ -2105,8 +2094,8 @@ footer a:hover { color: var(--accent); }
   <span class="ch-num">Ch 3</span>
   <h2>Clinical Genetics</h2>
   <div class="ch-stats">
-    <div class="cs"><span class="num">6</span><span class="label">Hubs</span></div>
-    <div class="cs"><span class="num">6</span><span class="label">Topics</span></div>
+    <div class="cs"><span class="num">7</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">18</span><span class="label">Topics</span></div>
   </div>
   <div class="ch-links">
     <a href="/3-clinical-genetics/" class="ch-link-primary">Browse →</a>
@@ -2118,8 +2107,8 @@ footer a:hover { color: var(--accent); }
   <span class="ch-num">Ch 4</span>
   <h2>Clinical Immunology</h2>
   <div class="ch-stats">
-    <div class="cs"><span class="num">2</span><span class="label">Hubs</span></div>
-    <div class="cs"><span class="num">2</span><span class="label">Topics</span></div>
+    <div class="cs"><span class="num">8</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">13</span><span class="label">Topics</span></div>
   </div>
   <div class="ch-links">
     <a href="/4-clinical-immunology/" class="ch-link-primary">Browse →</a>
@@ -2183,8 +2172,8 @@ footer a:hover { color: var(--accent); }
   <span class="ch-num">Ch 9</span>
   <h2>Palliative & Supportive Care</h2>
   <div class="ch-stats">
-    <div class="cs"><span class="num">6</span><span class="label">Hubs</span></div>
-    <div class="cs"><span class="num">51</span><span class="label">Topics</span></div>
+    <div class="cs"><span class="num">11</span><span class="label">Hubs</span></div>
+    <div class="cs"><span class="num">101</span><span class="label">Topics</span></div>
   </div>
   <div class="ch-links">
     <a href="/9-palliative-care/" class="ch-link-primary">Browse →</a>
@@ -2494,7 +2483,7 @@ footer a:hover { color: var(--accent); }
 </main>
 <footer>
   <p>MedSea · Sea Knowledge Medical Library · <a href="https://github.com/SeaXen/MedSea" target="_blank">github.com/SeaXen/MedSea</a></p>
-  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 04:28 UTC · Davidson 25th Ed</p>
+  <p style="margin-top:8px;opacity:0.6">Generated 2026-06-20 09:38 UTC · Davidson 25th Ed</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
