@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.33"
+topic: "Lyme Disease"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Lyme Disease.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, lyme-disease, borrelia, tick-borne, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | Erythema migrans, stages, serology, CSF, doxycycline/ceftriaxone, post-treatment Lyme syndrome"
+see_also: "[[Leptospirosis]], [[Rickettsial Infections]], [[Fever in Returned Traveller & FUO]], [[Viral Encephalitis and Meningitis]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Lyme Disease (Lyme Borreliosis)
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Spirochaetes → Borrelia burgdorferi sensu lato
 > **FCPS/MRCP Focus**: Erythema migrans, stages, two-tier serology, CSF analysis, doxycycline/ceftriaxone, post-treatment Lyme syndrome, Lyme carditis/neuroborreliosis
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Identify **Transmission**: *Ixodes* Tick Bite (Nymph → Larva → Adult), *B. burgdorferi* sensu lato (B. burgdorferi s.s., *B. afzelii*, *B. garinii*, *B. bavariensis*)
 - [ ] Recognise **Stage 1 (Early Localised)**: **Erythema Migrans (EM)** — Expanding Annular Rash, "Bull's Eye"
@@ -14,7 +41,7 @@
 
 ---
 
-## 2. 📖 Definition & Epidemiology
+## 📖 Definition & Epidemiology
 
 | Feature | Details |
 |---------|---------|
@@ -30,7 +57,7 @@
 
 ---
 
-## 3. 📖 Clinical Stages
+## 📖 Clinical Stages
 
 ### Stage 1: Early Localised (Days-Weeks)
 
@@ -64,7 +91,7 @@
 
 ---
 
-## 4. 🔬 Diagnostic Workup
+## 🔬 Diagnostic Workup
 
 ```mermaid
 flowchart TD
@@ -105,7 +132,7 @@ flowchart TD
 
 ---
 
-## 5. 💊 Management
+## 💊 Management
 
 ### Antibiotic Regimens (Adults)
 
@@ -124,7 +151,7 @@ flowchart TD
 
 ---
 
-## 6. 🔬 Diagnostic Algorithms
+## 🔬 Diagnostic Algorithms
 
 ### Erythema Migrans → **Clinical Diagnosis** → **Treat Empirically** (No Serology)
 
@@ -138,7 +165,7 @@ flowchart TD
 
 ---
 
-## 7. 🔬 Laboratory Findings
+## 🔬 Laboratory Findings
 
 | Test | Findings |
 |-----------|----------|
@@ -152,7 +179,7 @@ flowchart TD
 
 ---
 
-## 8. 🔄 Differential Diagnosis
+## 🔄 Differential Diagnosis
 
 | Condition | Differentiating Features |
 |-----------|--------------------------|
@@ -166,7 +193,7 @@ flowchart TD
 
 ---
 
-## 9. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -183,7 +210,7 @@ flowchart TD
 
 ---
 
-## 10. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the typical appearance of Erythema Migrans?**
    - **Expanding Annular Erythematous Rash** (≥5cm), **Central Clearing ("Bull's Eye") in 20-30%**, **Expands 1-2cm/Day**, Non-Pruritic/Non-Painful.
@@ -217,7 +244,7 @@ flowchart TD
 
 ---
 
-## 11. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -238,7 +265,7 @@ flowchart TD
 
 ---
 
-## 12. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -275,7 +302,7 @@ mindmap
 
 ---
 
-## 13. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **LYME DISEASE – FCPS/MRCP REVISION CARD** |
 |---------------------------------------------|
@@ -292,7 +319,7 @@ mindmap
 
 ---
 
-## 14. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -304,7 +331,7 @@ mindmap
 
 ---
 
-## 15. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -314,7 +341,7 @@ mindmap
 
 ---
 
-## 16. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -330,7 +357,7 @@ mindmap
 
 ---
 
-## 17. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Leptospirosis]]
 - **Next**: [[Rickettsial Infections]]

@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.32"
+topic: "Leptospirosis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Leptospirosis.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, leptospirosis, spirochaete, weils-disease, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | Weil's disease, pulmonary haemorrhage, renal failure, doxycycline/penicillin, MAT, PCR"
+see_also: "[[Fever in Returned Traveller & FUO]], [[Rickettsial Infections]], [[Infective Endocarditis]], [[Acute Kidney Injury]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Leptospirosis (Weil's Disease)
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Spirochaetes → Leptospira
 > **FCPS/MRCP Focus**: Weil's disease triad, pulmonary haemorrhage, MAT/PCR, doxycycline/penicillin, Jarisch-Herxheimer
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Identify **Transmission**: Rat urine → Contaminated water/soil → Skin/mucosal entry
 - [ ] Recognise **Clinical Spectrum**: Mild (Anicteric) → Severe (Weil's Disease: Jaundice, Renal Failure, Haemorrhage)
@@ -14,7 +41,7 @@
 
 ---
 
-## 2. 📖 Definition & Epidemiology
+## 📖 Definition & Epidemiology
 
 | Feature | Details |
 |---------|---------|
@@ -29,7 +56,7 @@
 
 ---
 
-## 3. 📖 Clinical Spectrum
+## 📖 Clinical Spectrum
 
 | Form | Features | Proportion |
 |--------|----------|------------|
@@ -55,7 +82,7 @@
 
 ---
 
-## 4. 🔬 Diagnostic Workup
+## 🔬 Diagnostic Workup
 
 ```mermaid
 flowchart TD
@@ -87,7 +114,7 @@ flowchart TD
 
 ---
 
-## 5. 💊 Management
+## 💊 Management
 
 ### Antibiotics
 
@@ -113,7 +140,7 @@ flowchart TD
 
 ---
 
-## 6. 🔬 Laboratory Findings
+## 🔬 Laboratory Findings
 
 | Parameter | Typical Findings |
 |-----------|------------------|
@@ -126,7 +153,7 @@ flowchart TD
 
 ---
 
-## 7. 🔄 Differential Diagnosis
+## 🔄 Differential Diagnosis
 
 | Condition | Differentiating Features |
 |-----------|--------------------------|
@@ -142,7 +169,7 @@ flowchart TD
 
 ---
 
-## 8. 🛡️ Prevention & Prophylaxis
+## 🛡️ Prevention & Prophylaxis
 
 | Strategy | Details |
 |----------|---------|
@@ -153,7 +180,7 @@ flowchart TD
 
 ---
 
-## 9. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -168,7 +195,7 @@ flowchart TD
 
 ---
 
-## 10. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the classic triad of Weil's disease?**
    - **Jaundice + Renal Failure + Haemorrhage** (Pulmonary Haemorrhage is Major Cause of Death).
@@ -205,7 +232,7 @@ flowchart TD
 
 ---
 
-## 11. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -225,7 +252,7 @@ flowchart TD
 
 ---
 
-## 12. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -261,7 +288,7 @@ mindmap
 
 ---
 
-## 13. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **LEPTOSPIROSIS – FCPS/MRCP REVISION CARD** |
 |----------------------------------------------|
@@ -277,7 +304,7 @@ mindmap
 
 ---
 
-## 14. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -289,7 +316,7 @@ mindmap
 
 ---
 
-## 15. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -299,7 +326,7 @@ mindmap
 
 ---
 
-## 16. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -313,7 +340,7 @@ mindmap
 
 ---
 
-## 17. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Fever in Returned Traveller & FUO]]
 - **Next**: [[Lyme Disease]]

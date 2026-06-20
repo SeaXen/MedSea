@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.37"
+topic: "Nocardia and Actinomyces Infections"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Nocardia and Actinomyces Infections.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, nocardia, actinomyces, actinomycosis, nocardiosis, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: medium
+exam_relevance: "FCPS: Pulmonary nocardiosis, actinomycosis | MRCP: Immunocompromised hosts, brain abscess, sulphur granules"
+see_also: "[[Brain Abscess]], [[Immunocompromised Host Infections]], [[Pulmonary Infections]], [[Dental Infections]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Nocardia & Actinomyces Infections
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Aerobic Actinomycetes (Nocardia) & Anaerobic Actinomycetes (Actinomyces)
 > **FCPS/MRCP Focus**: Pulmonary nocardiosis (immunocompromised), cervicofacial actinomycosis, brain abscess, sulphur granules, penicillin vs TMP-SMX
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Distinguish **Nocardia** (aerobic, acid-fast, immunocompromised) vs **Actinomyces** (anaerobic, endogenous, mucosal breach)
 - [ ] Recognise **Pulmonary nocardiosis**: Subacute pneumonia, cavitation, dissemination to brain/skin
@@ -13,7 +40,7 @@
 
 ---
 
-## 2. 📚 Comparison: Nocardia vs Actinomyces
+## 📚 Comparison: Nocardia vs Actinomyces
 
 | Feature | **Nocardia** | **Actinomyces** |
 |---------|--------------|-----------------|
@@ -27,7 +54,7 @@
 
 ---
 
-## 3. 🩺 Nocardiosis
+## 🩺 Nocardiosis
 
 ### Clinical Syndromes
 | Syndrome | Features |
@@ -43,7 +70,7 @@
 
 ---
 
-## 4. 🩺 Actinomycosis
+## 🩺 Actinomycosis
 
 ### Clinical Syndromes (by Site)
 | Syndrome | Features |
@@ -59,7 +86,7 @@
 
 ---
 
-## 5. 🔬 Diagnosis
+## 🔬 Diagnosis
 
 | Test | Nocardia | Actinomyces |
 |------|----------|-------------|
@@ -74,7 +101,7 @@
 
 ---
 
-## 6. 💊 Management
+## 💊 Management
 
 ### Nocardiosis
 | Scenario | Regimen | Duration |
@@ -96,7 +123,7 @@
 
 ---
 
-## 7. 📋 FCPS/MRCP High-Yield Summary
+## 📋 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -108,7 +135,7 @@
 
 ---
 
-## 8. ❓ Viva Questions (FCPS/MRCP)
+## ❓ Viva Questions (FCPS/MRCP)
 
 1. **How do you differentiate Nocardia from Actinomyces on microscopy?**
 2. **A renal transplant patient presents with cavitary pneumonia and multiple brain lesions. Diagnosis?**
@@ -123,7 +150,7 @@
 
 ---
 
-## 9. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -138,7 +165,7 @@
 
 ---
 
-## 10. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -161,7 +188,7 @@ mindmap
 
 ---
 
-## 11. 📄 One-Page Revision Card
+## 📄 One-Page Revision Card
 
 | **Nocardia** | **Actinomyces** |
 |--------------|-----------------|
@@ -175,7 +202,7 @@ mindmap
 
 ---
 
-## 12. 📊 Spaced Repetition Tracker
+## 📊 Spaced Repetition Tracker
 
 | Review Interval | Date | Score (1-5) | Notes |
 |-----------------|------|-------------|-------|
@@ -187,7 +214,7 @@ mindmap
 
 ---
 
-## 13. 🧪 Self-Test Scorecard
+## 🧪 Self-Test Scorecard
 
 | Topic | Known? (✓/✗) | Last Reviewed |
 |-------|--------------|---------------|
@@ -200,7 +227,7 @@ mindmap
 
 ---
 
-## 14. 🔗 Navigation
+## 🔗 Navigation
 
 - [[Infectious Disease MOC]]
 - [[Davidson Chapter 13 - Infectious Disease Hierarchy]]

@@ -1,3 +1,19 @@
+---
+davidson_chapter: "Chapter 15: Sexually Transmitted Infections"
+davidson_topic_id: "15.2.01"
+topic: "2.1 Chlamydia"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Sexually Transmitted Infections/2.1 Chlamydia.md"
+tags: [medicine, sti, davidson, fcps, mrcp]
+---
+
+# 2.1 Chlamydia trachomatis
+
 **Parent Topic:** [STI MOC](../Sexually%20Transmitted%20Infections%20MOC.md) → [STI Hierarchy](../Davidson%20Chapter%2013%20-%20STI%20Hierarchy.md)  
 **Status:** `full-fcps-mrcp-note`  
 **Priority:** ⭐⭐⭐ HIGHEST (FCPS/MRCP — Most Common Bacterial STI, LGV, Neonatal, Screening)  
@@ -5,7 +21,7 @@
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 - [ ] Recognise **Chlamydia trachomatis** clinical manifestations (Genital, LGV, Extra-genital, Neonatal)
 - [ ] Apply **diagnostic algorithms** (NAAT, Culture, POC) and interpret results
 - [ ] Apply **evidence-based treatment** (Doxycycline, Azithromycin, Amoxicillin in Pregnancy)
@@ -16,7 +32,7 @@
 
 ---
 
-## 2. 🧠 Core Concept: Chlamydia trachomatis Biology
+## 🧠 Core Concept: Chlamydia trachomatis Biology
 
 ```mermaid
 flowchart TD
@@ -285,7 +301,7 @@ flowchart TD
 
 ---
 
-## 3. ⚡ FCPS/MRCP High-Yield Summary
+## ⚡ FCPS/MRCP High-Yield Summary
 
 | Topic | Key Points |
 |-------|------------|
@@ -304,7 +320,7 @@ flowchart TD
 
 ---
 
-## 4. 🎤 Viva Questions (Expected Answers)
+## 🎤 Viva Questions (Expected Answers)
 
 | # | Question | Expected Answer |
 |---|----------|-----------------|
@@ -321,7 +337,7 @@ flowchart TD
 
 ---
 
-## 5. 🧩 Confusions & Mnemonics
+## 🧩 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -359,7 +375,7 @@ flowchart TD
 
 ---
 
-## 6. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -399,7 +415,7 @@ mindmap
 
 ---
 
-## 7. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (0–5) | Notes |
 |--------|------|-------------|-------|
@@ -412,7 +428,7 @@ mindmap
 
 ---
 
-## 8. 📝 Self-Test Scorecard
+## 📝 Self-Test Scorecard
 
 | Section | Max | Score | % |
 |---------|-----|-------|---|
@@ -428,7 +444,7 @@ mindmap
 
 ---
 
-## 9. 💬 Exam Answer Modes
+## 💬 Exam Answer Modes
 
 | Format | Prompt | Key Points |
 |--------|--------|------------|
@@ -440,7 +456,7 @@ mindmap
 
 ---
 
-## 10. 📌 Summary
+## 📌 Summary
 - **Chlamydia trachomatis**: Most Common Bacterial STI (129M/Year), **70-80% Women Asymptomatic**, Peak 15-24y
 - **Clinical**: Urethritis/Cervicitis/PID, Rectal/Pharyngeal (MSM), **LGV (L1-L3)** — Invasive, Buboes, Proctitis
 - **Diagnosis**: **NAAT 1st Line** (Urine/Swab, >95% Sens/Spec), Culture for AST
@@ -454,7 +470,7 @@ mindmap
 
 ---
 
-## 11. ❓ MCQs (10)
+## ❓ MCQs (10)
 
 1. **Most common clinical presentation of Chlamydia in women?**  
    A. Pelvic Inflammatory Disease  B. **Asymptomatic (70-80%)**  C. Cervicitis  D. Urethritis  
@@ -498,7 +514,7 @@ mindmap
 
 ---
 
-## 12. 📋 SBAs (10)
+## 📋 SBAs (10)
 
 1. **25-year-old pregnant woman at 12 weeks tests positive for Chlamydia on NAAT. Best treatment?**  
    A. Doxycycline 100mg BD × 7 Days  B. **Azithromycin 1g Stat**  C. Erythromycin 500mg QID × 14 Days  D. Ceftriaxone 500mg IM  
@@ -522,14 +538,14 @@ mindmap
 
 ---
 
-## 13. 🔑 Answer Keys
+## 🔑 Answer Keys
 | MCQs | SBAs |
 |------|------|
 | 1-B, 2-B, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B | 1-B, 2-B, 3-B, 4-B, 5-B |
 
 ---
 
-## 14. 🔗 Cross-Links
+## 🔗 Cross-Links
 - [[2.2 Gonorrhoea.md]] — Differential Diagnosis (Urethral Discharge), Co-infection
 - [[2.3 Syphilis.md]] — Differential (GUD), Co-infection, Congenital
 - [[5.1-5.8 Syndromic Management.md]] — Urethral Discharge, Vaginal Discharge, PID Algorithms

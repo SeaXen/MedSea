@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.02"
+topic: "Antimicrobial Prescribing Principles"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Antimicrobial Prescribing Principles.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, antimicrobial, prescribing, stewardship, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: Essential | MRCP: Core | Empirical therapy, culture-guided therapy, PK/PD principles, resistance patterns, stewardship, allergy management"
+see_also: "[[Sepsis and Septic Shock]], [[Community-Acquired Pneumonia (CAP)]], [[Healthcare-Associated Infections]], [[Antimicrobial Stewardship / Resistance]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Antimicrobial Prescribing Principles
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Principles of Infectious Disease → Antimicrobial Chemotherapy
 > **FCPS/MRCP Focus**: Empirical vs directed therapy, PK/PD principles, spectrum of activity, resistance mechanisms, stewardship, allergy cross-reactivity
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Apply **empirical therapy** principles: severity assessment, likely pathogens, local epidemiology
 - [ ] Interpret **culture & susceptibility** results: MIC, breakpoints, S/I/R categories
@@ -15,7 +42,7 @@
 
 ---
 
-## 2. 📖 Principles of Antimicrobial Therapy
+## 📖 Principles of Antimicrobial Therapy
 
 ```mermaid
 flowchart TD
@@ -32,7 +59,7 @@ flowchart TD
 
 ---
 
-## 3. 📖 Empirical Therapy Principles
+## 📖 Empirical Therapy Principles
 
 ### Stepwise Approach
 
@@ -50,7 +77,7 @@ flowchart TD
 
 ---
 
-## 4. 📖 Common Empirical Regimens (Adults)
+## 📖 Common Empirical Regimens (Adults)
 
 ### Community-Acquired Infections
 
@@ -79,7 +106,7 @@ flowchart TD
 
 ---
 
-## 5. 📖 PK/PD Principles
+## 📖 PK/PD Principles
 
 | Drug Class | PK/PD Index | Dosing Strategy | Examples |
 |------------|-------------|-----------------|----------|
@@ -94,7 +121,7 @@ flowchart TD
 
 ---
 
-## 6. 📖 Spectrum of Activity Quick Reference
+## 📖 Spectrum of Activity Quick Reference
 
 | Class | Gram +ve Cocci | Gram -ve Bacilli | Atypicals | Anaerobes | Key Exceptions |
 |-------|----------------|------------------|-----------|-----------|----------------|
@@ -114,7 +141,7 @@ flowchart TD
 
 ---
 
-## 7. 📖 Renal & Hepatic Dose Adjustment
+## 📖 Renal & Hepatic Dose Adjustment
 
 | Drug | CrCl 30-50 | CrCl 15-30 | CrCl <15 / HD | Hepatic Impairment |
 |------|------------|------------|---------------|-------------------|
@@ -130,7 +157,7 @@ flowchart TD
 
 ---
 
-## 8. 📖 IV-to-Oral Switch Criteria
+## 📖 IV-to-Oral Switch Criteria
 
 | Criteria | Examples |
 |----------|----------|
@@ -144,7 +171,7 @@ flowchart TD
 
 ---
 
-## 9. 📖 Duration of Therapy (Evidence-Based)
+## 📖 Duration of Therapy (Evidence-Based)
 
 | Infection | Recommended Duration | Evidence |
 |-----------|---------------------|----------|
@@ -166,7 +193,7 @@ flowchart TD
 
 ---
 
-## 10. 📖 Allergy & Cross-Reactivity
+## 📖 Allergy & Cross-Reactivity
 
 | Allergy | Cross-Reactivity Risk | Alternative |
 |---------|----------------------|-------------|
@@ -180,7 +207,7 @@ flowchart TD
 
 ---
 
-## 11. 📖 Antimicrobial Stewardship Core Interventions
+## 📖 Antimicrobial Stewardship Core Interventions
 
 | Intervention | Description | Impact |
 |--------------|-------------|--------|
@@ -194,7 +221,7 @@ flowchart TD
 
 ---
 
-## 12. 📖 Common Clinical Scenarios - Quick Reference
+## 📖 Common Clinical Scenarios - Quick Reference
 
 | Scenario | Key Action |
 |----------|------------|
@@ -209,7 +236,7 @@ flowchart TD
 
 ---
 
-## 13. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -226,7 +253,7 @@ flowchart TD
 
 ---
 
-## 14. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What are the PK/PD indices for β-Lactams, Aminoglycosides, Fluoroquinolones, Vancomycin?**
    - **β-Lactams**: %fT>MIC (Time-dependent); **Aminoglycosides**: Cmax/MIC (Concentration-dependent); **Fluoroquinolones**: AUC/MIC; **Vancomycin**: AUC/MIC (Target 400-600)
@@ -263,7 +290,7 @@ flowchart TD
 
 ---
 
-## 15. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -283,7 +310,7 @@ flowchart TD
 
 ---
 
-## 16. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -322,7 +349,7 @@ mindmap
 
 ---
 
-## 17. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **ANTIMICROBIAL PRESCRIBING – FCPS/MRCP REVISION CARD** |
 |----------------------------------------------------------|
@@ -337,7 +364,7 @@ mindmap
 
 ---
 
-## 18. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -349,7 +376,7 @@ mindmap
 
 ---
 
-## 19. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -359,7 +386,7 @@ mindmap
 
 ---
 
-## 20. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -375,7 +402,7 @@ mindmap
 
 ---
 
-## 21. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Sepsis and Septic Shock]]
 - **Next**: [[Fever in Returned Traveller / FUO]]

@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.14"
+topic: "Endemic Mycoses"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Endemic Mycoses.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, endemic-mycosis, histoplasma, coccidioides, blastomyces, paracoccidioides, talaromyces, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | Histoplasmosis, Coccidioidomycosis, Blastomycosis, Paracoccidioidomycosis, Talaromycosis, dimorphic fungi, endemic geography, diagnosis, treatment"
+see_also: "[[Invasive Candidiasis & Candidaemia]], [[Cryptococcal Meningitis]], [[Mucormycosis]], [[HIV Infection and AIDS]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Endemic Mycoses (Dimorphic Fungi)
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Fungi → Endemic Mycoses (Dimorphic Fungi)
 > **FCPS/MRCP Focus**: Histoplasmosis, Coccidioidomycosis, Blastomycosis, Paracoccidioidomycosis, Talaromycosis, endemic geography, diagnosis, treatment
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Identify **Dimorphic Fungi**: **Mould at 25°C / Yeast at 37°C** — *Histoplasma, Coccidioides, Blastomyces, Paracoccidioides, Talaromyces (Penicillium)*
 - [ ] Recognise **Endemic Geography**: **Histoplasma** (Ohio/Mississippi River Valleys), **Coccidioides** (SW USA, N Mexico), **Blastomyces** (Great Lakes, SE USA), **Paracoccidioides** (Latin America), **Talaromyces** (SE Asia)
@@ -13,7 +40,7 @@
 
 ---
 
-## 2. 📖 General Features of Dimorphic Fungi
+## 📖 General Features of Dimorphic Fungi
 
 | Feature | Details |
 |---------|---------|
@@ -35,7 +62,7 @@
 
 ---
 
-## 3. 📖 Specific Endemic Mycoses
+## 📖 Specific Endemic Mycoses
 
 ### 1. Histoplasmosis (*Histoplasma capsulatum*)
 
@@ -154,7 +181,7 @@
 
 ---
 
-## 4. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -170,7 +197,7 @@
 
 ---
 
-## 5. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the endemic region for Histoplasmosis?**
    - **Ohio and Mississippi River Valleys** (USA), also Central/South America, Africa, SE Asia.
@@ -213,7 +240,7 @@
 
 ---
 
-## 6. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -234,7 +261,7 @@
 
 ---
 
-## 7. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -276,7 +303,7 @@ mindmap
 
 ---
 
-## 8. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **ENDEMIC MYCOSES – FCPS/MRCP REVISION CARD** |
 |-------------------------------------------------|
@@ -291,7 +318,7 @@ mindmap
 
 ---
 
-## 9. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -303,7 +330,7 @@ mindmap
 
 ---
 
-## 10. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -313,7 +340,7 @@ mindmap
 
 ---
 
-## 11. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -327,7 +354,7 @@ mindmap
 
 ---
 
-## 12. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Mucormycosis]]
 - **Next**: [[Amoebiasis / Giardiasis]]

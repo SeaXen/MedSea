@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.08"
+topic: "Cestode and Trematode Infections"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Cestode and Trematode Infections.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, cestodes, trematodes, taeniasis, cysticercosis, echinococcosis, schistosomiasis, clonorchis, fasciola, paragonimus, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: Neurocysticercosis, hydatid disease, schistosomiasis | MRCP: Food-borne trematodes, liver flukes, lung fluke, praziquantel/albendazole"
+see_also: "[[Neurocysticercosis]], [[Hydatid Disease]], [[Schistosomiasis]], [[Liver Fluke Infections]], [[Lung Fluke]], [[Travel Medicine]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Cestode & Trematode Infections
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Parasites → Helminths → Cestodes (Tapeworms) & Trematodes (Flukes)
 > **FCPS/MRCP Focus**: Neurocysticercosis (*T. solium*), hydatid disease (*E. granulosus*), schistosomiasis, liver flukes (*Clonorchis, Fasciola*), lung fluke (*Paragonimus*), praziquantel/albendazole
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Classify **cestodes** (tapeworms): *Taenia* (intestinal), *Echinococcus* (hydatid), *Hymenolepis*, *Diphyllobothrium*
 - [ ] Classify **trematodes** (flukes): Blood (*Schistosoma*), Liver (*Clonorchis, Opisthorchis, Fasciola*), Lung (*Paragonimus*), Intestinal (*Fasciolopsis, Heterophyes*)
@@ -15,7 +42,7 @@
 
 ---
 
-## 2. 📚 Cestodes (Tapeworms)
+## 📚 Cestodes (Tapeworms)
 
 | Species | Disease | Transmission | Key Features |
 |---------|---------|--------------|--------------|
@@ -30,7 +57,7 @@
 
 ---
 
-## 3. 📚 Trematodes (Flukes)
+## 📚 Trematodes (Flukes)
 
 ### Blood Flukes — *Schistosoma*
 | Species | Location | Distribution | Key Features |
@@ -61,7 +88,7 @@
 
 ---
 
-## 4. 🩺 Key Clinical Syndromes
+## 🩺 Key Clinical Syndromes
 
 ### 1. Neurocysticercosis (*T. solium* larval cysts in CNS)
 | Stage | Imaging | Clinical |
@@ -96,7 +123,7 @@
 
 ---
 
-## 5. 🔬 Diagnosis
+## 🔬 Diagnosis
 
 | Parasite | Diagnostic Tests |
 |----------|------------------|
@@ -111,7 +138,7 @@
 
 ---
 
-## 6. 💊 Management
+## 💊 Management
 
 ### Cestodes
 | Infection | Drug | Dose | Duration |
@@ -143,7 +170,7 @@
 
 ---
 
-## 7. 📋 FCPS/MRCP High-Yield Summary
+## 📋 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -158,7 +185,7 @@
 
 ---
 
-## 8. ❓ Viva Questions (FCPS/MRCP)
+## ❓ Viva Questions (FCPS/MRCP)
 
 1. **Differentiate *Taenia solium* taeniasis from cysticercosis. How does human cysticercosis occur?**
 2. **What are the Del Bruto criteria for neurocysticercosis?**
@@ -173,7 +200,7 @@
 
 ---
 
-## 9. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -191,7 +218,7 @@
 
 ---
 
-## 10. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -220,7 +247,7 @@ mindmap
 
 ---
 
-## 11. 📄 One-Page Revision Card
+## 📄 One-Page Revision Card
 
 | **Cestodes** | **Drug** | **Trematodes** | **Drug** |
 |--------------|----------|----------------|----------|
@@ -233,7 +260,7 @@ mindmap
 
 ---
 
-## 12. 📊 Spaced Repetition Tracker
+## 📊 Spaced Repetition Tracker
 
 | Review Interval | Date | Score (1-5) | Notes |
 |-----------------|------|-------------|-------|
@@ -245,7 +272,7 @@ mindmap
 
 ---
 
-## 13. 🧪 Self-Test Scorecard
+## 🧪 Self-Test Scorecard
 
 | Topic | Known? (✓/✗) | Last Reviewed |
 |-------|--------------|---------------|
@@ -259,7 +286,7 @@ mindmap
 
 ---
 
-## 14. 🔗 Navigation
+## 🔗 Navigation
 
 - [[Infectious Disease MOC]]
 - [[Davidson Chapter 13 - Infectious Disease Hierarchy]]

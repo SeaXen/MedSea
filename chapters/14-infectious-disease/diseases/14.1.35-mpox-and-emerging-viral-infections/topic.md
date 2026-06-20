@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.35"
+topic: "Mpox and Emerging Viral Infections"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Mpox and Emerging Viral Infections.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, mpox, monkeypox, emerging-infections, nipah, hendra, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: 2022 global outbreak, vaccination | MRCP: Poxvirus, zoonotic, WHO PHEIC, vaccine (MVA-BN)"
+see_also: "[[Smallpox]], [[Vaccinia]], [[Emerging Infections]], [[Travel Medicine]], [[Viral Exanthems]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Mpox (Monkeypox) & Emerging Viral Infections
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Viruses → Emerging and Re-emerging Infections
 > **FCPS/MRCP Focus**: 2022 global outbreak (Clade IIb), clinical features, transmission, vaccination (MVA-BN), IPC, differential from chickenpox/smallpox
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Describe **Mpox virology**: Orthopoxvirus, Clade I (Central Africa, severe) vs Clade II (West Africa, milder); Clade IIb = 2022 outbreak
 - [ ] Recognise **clinical features**: Prodrome (fever, lymphadenopathy) → **centrifugal rash** (face, extremities, palms/soles, genital/perianal)
@@ -14,7 +41,7 @@
 
 ---
 
-## 2. 📚 Mpox (Monkeypox)
+## 📚 Mpox (Monkeypox)
 
 ### Virology & Clades
 | Clade | Former Name | Region | Severity | CFR |
@@ -48,7 +75,7 @@
 
 ---
 
-## 3. 🔬 Diagnosis
+## 🔬 Diagnosis
 
 | Test | Details |
 |------|---------|
@@ -62,7 +89,7 @@
 
 ---
 
-## 4. 💊 Management
+## 💊 Management
 
 ### Supportive Care (Most Cases)
 - Analgesia, antipyretics, hydration, wound care (antiseptic, prevent secondary infection)
@@ -91,7 +118,7 @@
 
 ---
 
-## 5. 📋 FCPS/MRCP High-Yield Summary
+## 📋 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -104,7 +131,7 @@
 
 ---
 
-## 6. 🦠 Other Emerging Viral Infections (High-Yield)
+## 🦠 Other Emerging Viral Infections (High-Yield)
 
 ### Nipah Virus (Henipavirus)
 | Feature | Details |
@@ -140,7 +167,7 @@
 
 ---
 
-## 7. ❓ Viva Questions (FCPS/MRCP)
+## ❓ Viva Questions (FCPS/MRCP)
 
 1. **Differentiate Mpox from chickenpox and smallpox.**
 2. **What are the clades of Mpox? Which caused the 2022 outbreak?**
@@ -155,7 +182,7 @@
 
 ---
 
-## 8. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -170,7 +197,7 @@
 
 ---
 
-## 9. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -205,7 +232,7 @@ mindmap
 
 ---
 
-## 10. 📄 One-Page Revision Card
+## 📄 One-Page Revision Card
 
 | **Mpox** | **Key Facts** |
 |----------|---------------|
@@ -227,7 +254,7 @@ mindmap
 
 ---
 
-## 11. 📊 Spaced Repetition Tracker
+## 📊 Spaced Repetition Tracker
 
 | Review Interval | Date | Score (1-5) | Notes |
 |-----------------|------|-------------|-------|
@@ -239,7 +266,7 @@ mindmap
 
 ---
 
-## 12. 🧪 Self-Test Scorecard
+## 🧪 Self-Test Scorecard
 
 | Topic | Known? (✓/✗) | Last Reviewed |
 |-------|--------------|---------------|
@@ -252,7 +279,7 @@ mindmap
 
 ---
 
-## 13. 🔗 Navigation
+## 🔗 Navigation
 
 - [[Infectious Disease MOC]]
 - [[Davidson Chapter 13 - Infectious Disease Hierarchy]]

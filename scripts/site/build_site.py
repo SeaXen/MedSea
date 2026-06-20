@@ -1435,39 +1435,39 @@ header.site .search-box .search-empty strong { color: var(--accent); }
   header.site { display: none; }
   .mobile-bar { display: flex; }
 
-  /* === MOBILE BAR: compact 2-row; full-width search is visible === */
+  /* === MOBILE BAR: strict single-line header === */
   .mobile-bar {
     padding: 6px 8px;
     gap: 6px;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
-  .mobile-bar .row.top {
-    display: flex;
-    justify-content: space-between;
-    min-width: 0;
-  }
+  .mobile-bar .row.top,
   .mobile-bar .row.search-row {
-    display: flex;
-    width: 100%;
-    min-width: 0;
+    display: contents;
   }
   .mobile-bar .logo-mini {
-    font-size: 13px;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
+    gap: 0;
   }
   .mobile-bar .logo-mini .logo { font-size: 16px; }
-  .mobile-bar .logo-mini a {
-    font-size: 13px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .mobile-bar .logo-mini a,
+  .mobile-bar .current-ch-label,
+  .mobile-bar .github-btn,
+  .mobile-bar .stats-mini {
+    display: none !important;
   }
   .mobile-bar .menu-btn {
     padding: 6px 8px;
     font-size: 12px;
     flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .mobile-bar .search-row {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .mobile-bar .search-row .search-box-m {
     flex: 1 1 auto;
@@ -1483,17 +1483,6 @@ header.site .search-box .search-empty strong { color: var(--accent); }
     left: 8px;
     font-size: 11px;
   }
-  .mobile-bar .current-ch-label {
-    font-size: 10px;
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-  .mobile-bar .github-btn {
-    padding: 6px 8px;
-    font-size: 11px;
-    flex: 0 0 auto;
-  }
-  .mobile-bar .stats-mini { display: none; }
 
   /* === HIDE DUPLICATE MOBILE TOOLBAR SEARCH (mobile-bar already has search) === */
   .chapter-mobile .chapter-toolbar {
@@ -2138,6 +2127,8 @@ def page_header(title, current_ch_slug=None, stats=None):
         </div>
       </div>
       <div class="ext-links">
+        <a href="/exam/">Exam</a>
+        <a href="/flashcards/">Flashcards</a>
         <a href="https://github.com/SeaXen/MedSea" target="_blank">GitHub ↗</a>
       </div>
     </div>
@@ -2169,6 +2160,9 @@ def page_header(title, current_ch_slug=None, stats=None):
 <div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this) this.classList.remove('open')">
   <div class="panel">
     <button class="close-btn" type="button" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+    <h3>Study Tools</h3>
+    <a href="/exam/"><span class="num">📝</span><span class="name">Exam</span><span class="badge">Tool</span></a>
+    <a href="/flashcards/"><span class="num">🗂</span><span class="name">Flashcards</span><span class="badge">Tool</span></a>
     <h3>Chapters</h3>
     {''.join(dropdown_items)}
   </div>
@@ -2769,14 +2763,21 @@ def render_md_to_html(md_text: str) -> str:
             return
         body = "\n".join(code_buf)
         if code_kind in ("mindmap", "flowchart", "graph"):
-            # Real mermaid.js renders these client-side from <pre class="mermaid">
-            rendered = f'<pre class="mermaid">{_esc(body)}</pre>'
+            # Render Mermaid-like blocks server-side into safe static HTML.
+            stripped_body = body.strip()
+            if code_kind == "mindmap":
+                rendered = render_mindmap_md(stripped_body)
+            else:
+                rendered = render_flowchart_md(stripped_body)
             found_mermaid = True
         elif code_kind is None:
             # Could be mermaid/mindmap/flowchart declared inline
             stripped_body = body.strip()
-            if stripped_body.startswith(("mindmap", "flowchart", "graph ", "graph\n", "graph\t")):
-                rendered = f'<pre class="mermaid">{_esc(body)}</pre>'
+            if stripped_body.startswith("mindmap"):
+                rendered = render_mindmap_md(stripped_body)
+                found_mermaid = True
+            elif stripped_body.startswith(("flowchart", "graph ", "graph\n", "graph\t")):
+                rendered = render_flowchart_md(stripped_body)
                 found_mermaid = True
             else:
                 rendered = f'<pre class="codeblock"><code>{_esc(body)}</code></pre>'

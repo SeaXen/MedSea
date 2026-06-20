@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.47"
+topic: "Travel Medicine & Pre-travel Advice"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Travel Medicine & Pre-travel Advice.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, travel-medicine, pre-travel, vaccination, prophylaxis, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: Essential | MRCP: Core | Pre-travel consultation, risk assessment, vaccination schedule, malaria prophylaxis, travellers' diarrhoea, altitude sickness, jet lag, insurance"
+see_also: "[[Fever in Returned Traveller & FUO]], [[Malaria]], [[Vaccination]], [[Antimicrobial Prescribing Principles]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Travel Medicine & Pre-Travel Advice
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Travel Medicine
 > **FCPS/MRCP Focus**: Pre-travel consultation, risk assessment, vaccination schedules, malaria prophylaxis, travellers' diarrhoea, altitude sickness, special populations
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Conduct **Pre-Travel Consultation**: Risk assessment, itinerary review, medical history, immunisation status
 - [ ] Apply **Vaccination Schedules**: Routine, required (Yellow Fever), recommended (Hepatitis A, Typhoid, Rabies, JE, Meningococcal)
@@ -15,7 +42,7 @@
 
 ---
 
-## 2. 📖 Pre-Travel Consultation Framework
+## 📖 Pre-Travel Consultation Framework
 
 ### Consultation Timeline
 
@@ -38,7 +65,7 @@
 
 ---
 
-## 3. 💉 Vaccination — Routine, Required, Recommended
+## 💉 Vaccination — Routine, Required, Recommended
 
 ### Routine (Update Regardless of Travel)
 
@@ -77,7 +104,7 @@
 
 ---
 
-## 4. 🦟 Malaria Prophylaxis
+## 🦟 Malaria Prophylaxis
 
 ### Geographic Resistance & Drug Choice
 
@@ -112,7 +139,7 @@
 
 ---
 
-## 5. 💩 Travellers' Diarrhoea (TD)
+## 💩 Travellers' Diarrhoea (TD)
 
 ### Definition & Aetiology
 
@@ -143,7 +170,7 @@
 
 ---
 
-## 6. 🏔️ Altitude Illness
+## 🏔️ Altitude Illness
 
 ### Definitions & Presentation
 
@@ -168,7 +195,7 @@
 
 ---
 
-## 7. 🛡️ Special Populations
+## 🛡️ Special Populations
 
 | Population | Key Considerations |
 |------------|---------------------|
@@ -180,7 +207,7 @@
 
 ---
 
-## 8. 🧳 Travel Medical Kit Essentials
+## 🧳 Travel Medical Kit Essentials
 
 | Category | Items |
 |--------|-------|
@@ -191,7 +218,7 @@
 
 ---
 
-## 9. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -205,7 +232,7 @@
 
 ---
 
-## 10. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the recommended timing for a pre-travel consultation?**
    - **Ideally 6-8 weeks before travel**; **Minimum 4-6 weeks** for vaccines/prophylaxis.
@@ -242,7 +269,7 @@
 
 ---
 
-## 11. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -264,7 +291,7 @@
 
 ---
 
-## 12. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -306,7 +333,7 @@ mindmap
 
 ---
 
-## 13. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **TRAVEL MEDICINE – FCPS/MRCP REVISION CARD** |
 |------------------------------------------------|
@@ -321,7 +348,7 @@ mindmap
 
 ---
 
-## 14. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -333,7 +360,7 @@ mindmap
 
 ---
 
-## 15. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -343,7 +370,7 @@ mindmap
 
 ---
 
-## 16. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -357,7 +384,7 @@ mindmap
 
 ---
 
-## 17. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Antimicrobial Stewardship / Resistance]]
 - **Next**: [[Infection in Immunocompromised Host]]

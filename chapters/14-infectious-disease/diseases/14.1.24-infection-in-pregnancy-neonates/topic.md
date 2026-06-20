@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.24"
+topic: "Infection in Pregnancy & Neonates"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Infection in Pregnancy & Neonates.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, pregnancy, neonates, congenital, vertical, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: Essential | MRCP: Core | TORCH infections, syphilis, HIV, hepatitis B/C, GBS, Listeria, CMV, HSV, rubella, Zika, malaria in pregnancy, neonatal sepsis, breastfeeding"
+see_also: "[[Toxoplasmosis]], [[Syphilis]], [[HIV Infection and AIDS]], [[Hepatitis B & C]], [[Group B Streptococcus]], [[CMV]], [[Zika Virus]], [[Neonatal Sepsis]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Infection in Pregnancy & Neonates
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Infection in Special Hosts → Pregnancy & Neonates
 > **FCPS/MRCP Focus**: TORCH infections, syphilis in pregnancy, HIV/hepatitis vertical transmission, GBS prevention, neonatal sepsis, congenital infections, breastfeeding with infections
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Apply **TORCH Screen**: Toxoplasmosis, Other (Syphilis, Varicella, Parvovirus B19, Zika), Rubella, CMV, Herpes Simplex
 - [ ] Manage **Syphilis in Pregnancy**: Penicillin, Partner Treatment, Neonatal Evaluation
@@ -16,7 +43,7 @@
 
 ---
 
-## 2. 📖 TORCH Infections — Congenital Infections Overview
+## 📖 TORCH Infections — Congenital Infections Overview
 
 | Pathogen | Transmission | Classic Triad / Key Features | Diagnosis | Treatment |
 |----------|--------------|-----------------------------|-----------|-----------|
@@ -36,7 +63,7 @@
 
 ---
 
-## 3. 📖 Maternal Infections in Pregnancy — Key Management
+## 📖 Maternal Infections in Pregnancy — Key Management
 
 ### Syphilis in Pregnancy
 
@@ -90,7 +117,7 @@
 
 ---
 
-## 4. 👶 Neonatal Sepsis
+## 👶 Neonatal Sepsis
 
 ### Classification
 
@@ -120,7 +147,7 @@
 
 ---
 
-## 5. 📖 Congenital Infections — Specific Management
+## 📖 Congenital Infections — Specific Management
 
 ### Congenital CMV (cCMV)
 
@@ -153,7 +180,7 @@
 
 ---
 
-## 6. 🤱 Breastfeeding with Maternal Infections
+## 🤱 Breastfeeding with Maternal Infections
 
 | Infection | Breastfeeding Recommendation |
 |-----------|------------------------------|
@@ -168,7 +195,7 @@
 
 ---
 
-## 7. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -186,7 +213,7 @@
 
 ---
 
-## 8. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the most common congenital infection?**
    - **Cytomegalovirus (CMV)**.
@@ -229,7 +256,7 @@
 
 ---
 
-## 9. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -253,7 +280,7 @@
 
 ---
 
-## 10. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -290,7 +317,7 @@ mindmap
 
 ---
 
-## 11. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **INFECTION IN PREGNANCY & NEONATES – FCPS/MRCP REVISION CARD** |
 |------------------------------------------------------------------|
@@ -309,7 +336,7 @@ mindmap
 
 ---
 
-## 12. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -321,7 +348,7 @@ mindmap
 
 ---
 
-## 13. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -331,7 +358,7 @@ mindmap
 
 ---
 
-## 14. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -344,7 +371,7 @@ mindmap
 
 ---
 
-## 15. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Infection in Immunocompromised Host]]
 - **Next**: [[Fundamentals of Environmental Medicine]]

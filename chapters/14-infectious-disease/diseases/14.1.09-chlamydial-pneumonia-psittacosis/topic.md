@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.09"
+topic: "Chlamydial Pneumonia & Psittacosis"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Chlamydial Pneumonia & Psittacosis.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, chlamydia, psittacosis, pneumonia, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: High-yield | MRCP: Core | C. pneumoniae (CAP), C. psittaci (Psittacosis), C. trachomatis (LGV/STI - Ch 15), serology, PCR, doxycycline/azithromycin"
+see_also: "[[Community-Acquired Pneumonia (CAP)]], [[Fever in Returned Traveller & FUO]], [[Rickettsial Infections]], [[Viral Pneumonias]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Chlamydial Pneumonia & Psittacosis
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Specific Organism Groups → Chlamydiae
 > **FCPS/MRCP Focus**: C. pneumoniae (Atypical CAP), C. psittaci (Psittacosis — Bird Exposure), C. trachomatis (LGV/STI — Ch 15), Serology/PCR, Doxycycline/Azithromycin
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Distinguish **Chlamydia Species**: *C. pneumoniae* (Respiratory), *C. psittaci* (Psittacosis — Birds), *C. trachomatis* (LGV/STI — Ch 15)
 - [ ] Recognise **Clinical Syndromes**: *C. pneumoniae* = Atypical CAP (Young Adults, Persistent Cough), *C. psittaci* = Psittacosis (Bird Exposure, Severe Pneumonia, Horder Nodes)
@@ -13,7 +40,7 @@
 
 ---
 
-## 2. 📖 Chlamydia Species Overview
+## 📖 Chlamydia Species Overview
 
 | Species | Primary Disease | Transmission | Key Features |
 |---------|----------------|--------------|--------------|
@@ -25,7 +52,7 @@
 
 ---
 
-## 3. 📖 C. pneumoniae — "Walking Pneumonia" Agent
+## 📖 C. pneumoniae — "Walking Pneumonia" Agent
 
 ### Epidemiology
 
@@ -50,7 +77,7 @@
 
 ---
 
-## 4. 📖 Psittacosis (Ornithosis) — C. psittaci
+## 📖 Psittacosis (Ornithosis) — C. psittaci
 
 ### Epidemiology
 
@@ -77,7 +104,7 @@
 
 ---
 
-## 5. 🔬 Diagnostic Workup
+## 🔬 Diagnostic Workup
 
 ```mermaid
 flowchart TD
@@ -107,7 +134,7 @@ flowchart TD
 
 ---
 
-## 6. 💊 Management
+## 💊 Management
 
 ### Antibiotic Therapy
 
@@ -124,7 +151,7 @@ flowchart TD
 
 ---
 
-## 7. 🔬 Laboratory Findings
+## 🔬 Laboratory Findings
 
 | Test | C. pneumoniae | C. psittaci |
 |------|---------------|-------------|
@@ -138,7 +165,7 @@ flowchart TD
 
 ---
 
-## 8. 💊 Treatment Summary
+## 💊 Treatment Summary
 
 | Infection | 1st Line | Duration | Notes |
 |-----------|----------|----------|-------|
@@ -149,7 +176,7 @@ flowchart TD
 
 ---
 
-## 9. 🔄 Differential Diagnosis
+## 🔄 Differential Diagnosis
 
 | Condition | C. pneumoniae | C. psittaci |
 |-----------|---------------|-------------|
@@ -161,7 +188,7 @@ flowchart TD
 
 ---
 
-## 10. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -175,7 +202,7 @@ flowchart TD
 
 ---
 
-## 11. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the typical clinical presentation of C. pneumoniae pneumonia?**
    - **Young Adult**, **Insidious Onset**, **Persistent Dry Cough >3 Weeks**, **Hoarseness/Laryngitis**, **Low-Grade Fever**, **Patchy CXR**.
@@ -215,7 +242,7 @@ flowchart TD
 
 ---
 
-## 12. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -236,7 +263,7 @@ flowchart TD
 
 ---
 
-## 13. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -280,7 +307,7 @@ mindmap
 
 ---
 
-## 14. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **CHLAMYDIAL PNEUMONIA & PSITTACOSIS – FCPS/MRCP REVISION CARD** |
 |--------------------------------------------------------------------|
@@ -295,7 +322,7 @@ mindmap
 
 ---
 
-## 15. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -307,7 +334,7 @@ mindmap
 
 ---
 
-## 16. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -317,7 +344,7 @@ mindmap
 
 ---
 
-## 17. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -330,7 +357,7 @@ mindmap
 
 ---
 
-## 18. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Rickettsial Infections]]
 - **Next**: [[Invasive Candidiasis / Candidaemia]]

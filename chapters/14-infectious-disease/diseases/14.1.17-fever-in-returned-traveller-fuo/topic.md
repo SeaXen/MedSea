@@ -1,9 +1,36 @@
+---
+davidson_chapter: "Chapter 14: Infectious Disease"
+davidson_topic_id: "14.1.17"
+topic: "Fever in Returned Traveller & FUO"
+status: full-fcps-mrcp-note
+priority: critical
+cards: 20-25
+created: 2026-06-20
+modified: 2026-06-20
+exam_relevance: [FCPS, MRCP Part 1, MRCP Part 2]
+source: "/mnt/tb/Medicine/Infectious Disease/Fever in Returned Traveller & FUO.md"
+tags: [medicine, infectious-disease, davidson, fcps, mrcp]
+---
+
+---
+tags: [medicine, davidson, infectious-disease, fever, FUO, returned-traveller, malaria, typhoid, fcps, mrcp]
+davidson_chapter: Chapter 11: Infectious disease
+status: full-fcps-mrcp-note
+priority: high
+exam_relevance: "FCPS: Essential | MRCP: Core | Systematic approach, geographic stratification, red flags, initial investigations, empirical therapy"
+see_also: "[[Malaria]], [[Typhoid and Paratyphoid Fever]], [[Fever and Septic Syndrome Approach]], [[Travel Medicine]]"
+created: 2025-06-17
+modified: 2025-06-17
+---
+
+# Fever in Returned Traveller & Fever of Unknown Origin (FUO)
+
 > [!info] **Davidson Ch 11 Alignment**: Infectious Disease → Clinical Syndromes → Fever in Returned Traveller & FUO
 > **FCPS/MRCP Focus**: Systematic approach, geographic exposure, timeline, red flags, initial workup, empirical therapy
 
 ---
 
-## 1. 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 - [ ] Define **FUO**: Fever >38.3°C on ≥3 occasions over ≥3 weeks with uncertain diagnosis after 1 week of inpatient investigation
 - [ ] Apply **Returned Traveller Approach**: Geographic exposure, timeline, activities, pre-travel interventions
@@ -14,7 +41,7 @@
 
 ---
 
-## 2. 📖 Definitions
+## 📖 Definitions
 
 | Term | Definition |
 |------|------------|
@@ -26,7 +53,7 @@
 
 ---
 
-## 3. 📖 Returned Traveller with Fever — Systematic Approach
+## 📖 Returned Traveller with Fever — Systematic Approach
 
 ### 1. Pre-Travel & Travel History (The "Where, When, What")
 
@@ -62,7 +89,7 @@ flowchart TD
 
 ---
 
-## 4. 📖 FUO — Structured Approach
+## 📖 FUO — Structured Approach
 
 ### Definition (Durack & Street, 1991)
 
@@ -87,7 +114,7 @@ flowchart TD
 
 ---
 
-## 5. 📖 Initial Workup — "First-Line" (All Patients)
+## 📖 Initial Workup — "First-Line" (All Patients)
 
 | Investigation | Indication |
 |---------------|------------|
@@ -103,7 +130,7 @@ flowchart TD
 
 ---
 
-## 6. 📖 Second-Line Investigations (If First-Line Negative)
+## 📖 Second-Line Investigations (If First-Line Negative)
 
 | System | Investigations |
 |--------|----------------|
@@ -114,7 +141,7 @@ flowchart TD
 
 ---
 
-## 7. 📖 Geographic Syndromes — Common Tropical Causes
+## 📖 Geographic Syndromes — Common Tropical Causes
 
 | Region | Top Differential Diagnoses |
 |--------|---------------------------|
@@ -128,7 +155,7 @@ flowchart TD
 
 ---
 
-## 8. 📖 Red Flags — Urgent Admission / Intervention
+## 📖 Red Flags — Urgent Admission / Intervention
 
 | Red Flag | Action |
 |----------|--------|
@@ -142,7 +169,7 @@ flowchart TD
 
 ---
 
-## 9. 📖 Empirical Therapy — Geography-Based
+## 📖 Empirical Therapy — Geography-Based
 
 | Syndrome / Region | Likely Pathogens | Empirical Therapy (If Severe/Uncertain) |
 |-------------------|------------------|----------------------------------------|
@@ -157,7 +184,7 @@ flowchart TD
 
 ---
 
-## 10. 📖 FUO — Management Algorithm
+## 📖 FUO — Management Algorithm
 
 ```mermaid
 flowchart TD
@@ -175,7 +202,7 @@ flowchart TD
 
 ---
 
-## 11. 💡 FCPS/MRCP High-Yield Summary
+## 💡 FCPS/MRCP High-Yield Summary
 
 | Topic | Key Point |
 |-------|-----------|
@@ -191,7 +218,7 @@ flowchart TD
 
 ---
 
-## 12. ❓ Viva Questions
+## ❓ Viva Questions
 
 1. **What is the definition of classic FUO?**
    - Fever >38.3°C on ≥3 occasions over ≥3 weeks, with no diagnosis after 1 week of inpatient investigation.
@@ -225,7 +252,7 @@ flowchart TD
 
 ---
 
-## 13. 🧠 Confusions & Mnemonics
+## 🧠 Confusions & Mnemonics
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -245,7 +272,7 @@ flowchart TD
 
 ---
 
-## 14. 🗺️ Mind Map
+## 🗺️ Mind Map
 
 ```mermaid
 mindmap
@@ -283,7 +310,7 @@ mindmap
 
 ---
 
-## 15. 📋 One-Page Revision Card
+## 📋 One-Page Revision Card
 
 | **FEVER IN RETURNED TRAVELLER & FUO – FCPS/MRCP REVISION CARD** |
 |------------------------------------------------------------------|
@@ -300,7 +327,7 @@ mindmap
 
 ---
 
-## 16. 📅 Spaced Repetition Tracker
+## 📅 Spaced Repetition Tracker
 
 | Review | Date | Score (1-5) | Next Review |
 |--------|------|-------------|-------------|
@@ -312,7 +339,7 @@ mindmap
 
 ---
 
-## 17. 🎯 Must Know / Should Know / Nice to Know
+## 🎯 Must Know / Should Know / Nice to Know
 
 | Level | Content |
 |-------|---------|
@@ -322,7 +349,7 @@ mindmap
 
 ---
 
-## 18. ✅ Self-Test Scorecard
+## ✅ Self-Test Scorecard
 
 | Section | Score (0-10) | Notes |
 |---------|--------------|-------|
@@ -336,7 +363,7 @@ mindmap
 
 ---
 
-## 19. 🔗 Local Navigation
+## 🔗 Local Navigation
 
 - **Previous**: [[Antimicrobial Prescribing Principles]]
 - **Next**: [[Leptospirosis]]
