@@ -46,29 +46,104 @@
     });
   }
 
-  /* ---------- DB loader (cache) ---------- */
+  /* ---------- DB loader (lazy + chunked) ----------
+     Backed by /assets/site-db.js which splits the old monolithic 17 MB
+     questions.json into four files:
+       questions-index.json      (5 KB)    - chapter meta + totals
+       questions-mcq.json        (~10 MB)  - MCQs
+       questions-sba.json        (~800 KB) - SBAs
+       questions-flashcard.json  (~5.5 MB) - Flashcards
+     This loader fetches ONLY the chunks needed for the current exam mode.
+  */
   var DB = {
-    _data: null,
-    _loadPromise: null,
-    load: function () {
-      if (DB._data) return Promise.resolve(DB._data);
-      if (DB._loadPromise) return DB._loadPromise;
-      DB._loadPromise = fetch('/assets/questions.json', { cache: 'no-cache' })
-        .then(function (r) {
-          if (!r.ok) throw new Error('Failed to load questions DB: HTTP ' + r.status);
-          return r.json();
-        })
-        .then(function (j) {
-          DB._data = j;
-          return j;
-        })
-        .catch(function (err) {
-          DB._loadPromise = null;
-          throw err;
-        });
-      return DB._loadPromise;
+    _index: null,      // Promise<index> — cached
+    _chapters: null,   // array (resolved from index)
+    _mcq: null,        // Promise<Array<q>>
+    _sba: null,        // Promise<Array<q>>
+    _flash: null,      // Promise<Array<card>>
+    _loadIndex: function () {
+      if (DB._index) return DB._index;
+      var src = (window.MedSeaDB && window.MedSeaDB.loadIndex)
+        ? window.MedSeaDB.loadIndex()
+        : fetch('/assets/questions-index.json').then(function (r) { return r.json(); });
+      DB._index = src.then(function (idx) {
+        DB._chapters = idx.chapters || [];
+        return idx;
+      });
+      return DB._index;
     },
-    get: function () { return DB._data; }
+    /** Fetch the question chunks needed for a given mode.
+        mode: 'mcq' | 'sba' | 'mixed' | 'flashcard' */
+    _loadChunks: function (mode) {
+      var need = [];
+      if (mode === 'mcq' || mode === 'mixed') need.push('mcq');
+      if (mode === 'sba' || mode === 'mixed') need.push('sba');
+      if (mode === 'flashcard') need.push('flashcard');
+      var src = (window.MedSeaDB && window.MedSeaDB.loadChunks)
+        ? window.MedSeaDB.loadChunks(need)
+        : Promise.all(need.map(function (k) {
+            return fetch('/assets/questions-' + k + '.json').then(function (r) { return r.json(); }).then(function (d) {
+              var o = {}; o[k] = d; return o;
+            });
+          })).then(function (arr) {
+            return arr.reduce(function (acc, o) { Object.keys(o).forEach(function (k) { acc[k] = o[k]; }); return acc; }, {});
+          });
+      var p = src.then(function (chunks) {
+        if (chunks.mcq !== undefined) DB._mcq = Promise.resolve(chunks.mcq);
+        if (chunks.sba !== undefined) DB._sba = Promise.resolve(chunks.sba);
+        if (chunks.flashcard !== undefined) DB._flash = Promise.resolve(chunks.flashcard);
+        return chunks;
+      });
+      // Reuse cached promises if already loaded
+      if (mode === 'mcq' && DB._mcq) return DB._mcq.then(function (mcq) { return { mcq: mcq }; });
+      if (mode === 'sba' && DB._sba) return DB._sba.then(function (sba) { return { sba: sba }; });
+      if (mode === 'flashcard' && DB._flash) return DB._flash.then(function (flashcard) { return { flashcard: flashcard }; });
+      return p;
+    },
+    /** Public: warm the cache for a mode without returning data. */
+    prefetch: function (mode) {
+      DB._loadIndex(); // index needed everywhere
+      if (window.MedSeaDB && window.MedSeaDB.prefetch) {
+        if (mode === 'mcq' || mode === 'mixed') window.MedSeaDB.prefetch('mcq');
+        if (mode === 'sba' || mode === 'mixed') window.MedSeaDB.prefetch('sba');
+        if (mode === 'flashcard') window.MedSeaDB.prefetch('flashcard');
+      } else {
+        DB._loadChunks(mode).catch(function () {});
+      }
+    },
+    /** Public: load everything for a mode. Returns Promise<{chapters, mcq?, sba?, flashcard?}> */
+    load: function (mode) {
+      return Promise.all([DB._loadIndex(), DB._loadChunks(mode || 'mixed')]).then(function (parts) {
+        var idx = parts[0], chunks = parts[1];
+        return {
+          chapters: idx.chapters,
+          totals: idx.totals,
+          mcq: chunks.mcq || DB._cached(DB._mcq) || [],
+          sba: chunks.sba || DB._cached(DB._sba) || [],
+          flashcard: chunks.flashcard || DB._cached(DB._flash) || [],
+        };
+      });
+    },
+    _cached: function (p) {
+      if (!p) return null;
+      var v = null, done = false;
+      p.then(function (x) { v = x; done = true; });
+      return done ? v : null;
+    },
+    /** Public: sync getter (only valid after load() resolved) */
+    get: function () {
+      return {
+        chapters: DB._chapters || [],
+        get mcq() { return DB._cached(DB._mcq) || []; },
+        get sba() { return DB._cached(DB._sba) || []; },
+        get flashcard() { return DB._cached(DB._flash) || []; }
+      };
+    },
+    /** Public: get just the flashcards array (for flashcards app) */
+    flashcards: function () {
+      if (DB._flash) return DB._flash;
+      return DB._loadChunks('flashcard').then(function (c) { return c.flashcard || []; });
+    }
   };
 
   /* ---------- history store (localStorage) ---------- */

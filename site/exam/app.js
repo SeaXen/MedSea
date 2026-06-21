@@ -15,7 +15,10 @@
     chapters: [],         // array of chapter_num
   };
 
-  var DB_DATA = null;
+  var DB_INDEX = null;       // {chapters, totals}
+  var DB_LOADED = null;      // promise resolving when needed chunks are loaded
+  var DB_MCQ = null;
+  var DB_SBA = null;
   var CURRENT_EXAM = null;
 
   /* ---------- tab switching ---------- */
@@ -41,16 +44,41 @@
     toastT = setTimeout(function () { t.classList.remove('show'); }, 2200);
   }
 
-  /* ---------- DB load ---------- */
-  MedSea.DB.load()
-    .then(function (data) {
-      DB_DATA = data;
-      renderChapterChips(data.chapters);
+  /* ---------- DB load (lazy chunks) ----------
+     On startup: load only the 5 KB questions-index.json (chapter meta).
+     On Start: lazy-load the MCQ + SBA chunks actually needed for the mode.
+     This keeps the page initial-load fast — no 17 MB JSON, no main-thread parse. */
+  function loadIndexOnly() {
+    if (DB_INDEX) return Promise.resolve(DB_INDEX);
+    return MedSea.DB._loadIndex().then(function (idx) {
+      DB_INDEX = { chapters: idx.chapters, totals: idx.totals };
+      return DB_INDEX;
+    });
+  }
+  function loadModeChunks(mode) {
+    // mode: 'mcq' | 'sba' | 'both'
+    if (DB_LOADED && DB_LOADED._mode === mode) return DB_LOADED.p;
+    var need = [];
+    if (mode === 'mcq' || mode === 'both') need.push('mcq');
+    if (mode === 'sba' || mode === 'both') need.push('sba');
+    var p = MedSea.DB._loadChunks(mode === 'both' ? 'mixed' : mode)
+      .then(function (chunks) {
+        if (chunks.mcq) DB_MCQ = chunks.mcq;
+        if (chunks.sba) DB_SBA = chunks.sba;
+        return chunks;
+      });
+    DB_LOADED = { _mode: mode, p: p };
+    return p;
+  }
+
+  loadIndexOnly()
+    .then(function (idx) {
+      renderChapterChips(idx.chapters);
       updateAvailable();
     })
     .catch(function (err) {
       console.error(err);
-      $('#ch-chips').innerHTML = '<span style="color:var(--bad);font-size:12px;padding:6px;">Failed to load question DB: ' + err.message + '</span>';
+      $('#ch-chips').innerHTML = '<span style="color:var(--bad);font-size:12px;padding:6px;">Failed to load index: ' + err.message + '</span>';
     });
 
   /* ---------- chapter chips ---------- */
@@ -77,7 +105,7 @@
   }
 
   $('#ch-all').addEventListener('click', function () {
-    SETUP.chapters = DB_DATA.chapters.map(function (c) { return c.num; });
+    SETUP.chapters = DB_INDEX.chapters.map(function (c) { return c.num; });
     $$('#ch-chips .chip').forEach(function (c) { c.classList.add('selected'); });
     updateAvailable();
   });
@@ -88,12 +116,12 @@
   });
   $('#ch-clinical').addEventListener('click', function () {
     // clinical = chapters 1-15 (parts 1-2)
-    SETUP.chapters = DB_DATA.chapters.filter(function (c) { return c.num >= 1 && c.num <= 15; }).map(function (c) { return c.num; });
+    SETUP.chapters = DB_INDEX.chapters.filter(function (c) { return c.num >= 1 && c.num <= 15; }).map(function (c) { return c.num; });
     refreshChips();
   });
   $('#ch-system').addEventListener('click', function () {
     // system-based = chapters 16+
-    SETUP.chapters = DB_DATA.chapters.filter(function (c) { return c.num >= 16; }).map(function (c) { return c.num; });
+    SETUP.chapters = DB_INDEX.chapters.filter(function (c) { return c.num >= 16; }).map(function (c) { return c.num; });
     refreshChips();
   });
   function refreshChips() {
@@ -126,26 +154,56 @@
     SETUP.minutes = parseInt($('#q-time').value, 10) || 0;
   });
 
-  function buildPool() {
-    if (!DB_DATA) return [];
-    var pool = [];
-    if (SETUP.mode === 'mcq' || SETUP.mode === 'both') {
-      pool = pool.concat(DB_DATA.mcq.filter(function (q) {
-        return SETUP.chapters.length === 0 || SETUP.chapters.indexOf(q.chapter_num) !== -1;
-      }));
+  /* ---------- available-count: read from index (no chunk load needed) ----------
+     Returns the count of MCQ + SBA matching current chapter filter, using the
+     chapter-level counts in the index. Falls back to scanning the loaded
+     chunks once they arrive (more accurate when chunks are already in memory).
+  */
+  function availableCount() {
+    if (!DB_INDEX) return 0;
+    if (SETUP.mode === 'mcq' || SETUP.mode === 'sba' || SETUP.mode === 'both') {
+      // Use chapter counts from index — no chunk load required
+      var sum = 0;
+      var wantMcq = (SETUP.mode === 'mcq' || SETUP.mode === 'both');
+      var wantSba = (SETUP.mode === 'sba' || SETUP.mode === 'both');
+      DB_INDEX.chapters.forEach(function (c) {
+        if (SETUP.chapters.length === 0 || SETUP.chapters.indexOf(c.num) !== -1) {
+          if (wantMcq) sum += (c.mcq_count || 0);
+          if (wantSba) sum += (c.sba_count || 0);
+        }
+      });
+      return sum;
     }
-    if (SETUP.mode === 'sba' || SETUP.mode === 'both') {
-      pool = pool.concat(DB_DATA.sba.filter(function (q) {
-        return SETUP.chapters.length === 0 || SETUP.chapters.indexOf(q.chapter_num) !== -1;
-      }));
-    }
-    return pool;
+    return 0;
   }
+
+  /* ---------- buildPool: returns actual filtered questions (after lazy load) ----------
+     Returns Promise<Array<q>>. The Start button awaits this.
+  */
+  function buildPool() {
+    return loadModeChunks(SETUP.mode === 'both' ? 'mixed' : SETUP.mode).then(function () {
+      var pool = [];
+      if (SETUP.mode === 'mcq' || SETUP.mode === 'both') {
+        var mcq = DB_MCQ || [];
+        for (var i = 0; i < mcq.length; i++) {
+          if (SETUP.chapters.length === 0 || SETUP.chapters.indexOf(mcq[i].chapter_num) !== -1) pool.push(mcq[i]);
+        }
+      }
+      if (SETUP.mode === 'sba' || SETUP.mode === 'both') {
+        var sba = DB_SBA || [];
+        for (var i = 0; i < sba.length; i++) {
+          if (SETUP.chapters.length === 0 || SETUP.chapters.indexOf(sba[i].chapter_num) !== -1) pool.push(sba[i]);
+        }
+      }
+      return pool;
+    });
+  }
+
   function updateAvailable() {
-    if (!DB_DATA) return;
-    var pool = buildPool();
-    $('#avail-count').textContent = pool.length + ' matching';
-    if (pool.length === 0) {
+    if (!DB_INDEX) return;
+    var n = availableCount();
+    $('#avail-count').textContent = n + ' matching';
+    if (n === 0) {
       $('#btn-start').disabled = true;
       $('#setup-summary').textContent = 'No questions match — pick at least one chapter.';
       return;
@@ -153,42 +211,55 @@
     $('#btn-start').disabled = false;
     $('#setup-summary').textContent =
       SETUP.chapters.length === 0
-        ? 'All chapters · ' + pool.length + ' available'
-        : SETUP.chapters.length + ' chapter' + (SETUP.chapters.length === 1 ? '' : 's') + ' · ' + pool.length + ' available';
+        ? 'All chapters · ' + n + ' available'
+        : SETUP.chapters.length + ' chapter' + (SETUP.chapters.length === 1 ? '' : 's') + ' · ' + n + ' available';
   }
 
-  /* ---------- start exam ---------- */
+  /* ---------- start exam (awaits lazy chunk load + shows progress) ---------- */
   $('#btn-start').addEventListener('click', function () {
-    if (!DB_DATA) return;
-    var pool = buildPool();
-    if (pool.length === 0) { toast('Pick at least one chapter.'); return; }
-    var chosen;
-    if (SETUP.shuffle) chosen = MedSea.Pool.pick(pool, SETUP.count);
-    else chosen = pool.slice(0, SETUP.count);
+    if (!DB_INDEX) return;
+    var btn = $('#btn-start');
+    var prevText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Loading questions…';
 
-    var dur = SETUP.minutes > 0 ? SETUP.minutes * 60 : null;
-    var chapterLabel = SETUP.chapters.length === 0
-      ? 'All chapters'
-      : (SETUP.chapters.length <= 3
-          ? SETUP.chapters.map(function (n) { return 'Ch ' + n; }).join(', ')
-          : SETUP.chapters.length + ' chapters');
-    var title = SETUP.mode.toUpperCase() + ' · ' + chapterLabel + ' · ' + chosen.length + 'Q';
-    var chaptersUsed = chosen.map(function (q) { return q.chapter_num; })
-      .filter(function (v, i, a) { return a.indexOf(v) === i; });
+    buildPool().then(function (pool) {
+      if (pool.length === 0) { toast('Pick at least one chapter.'); btn.disabled = false; btn.textContent = prevText; return; }
+      var chosen;
+      if (SETUP.shuffle) chosen = MedSea.Pool.pick(pool, SETUP.count);
+      else chosen = pool.slice(0, SETUP.count);
 
-    CURRENT_EXAM = MedSea.Engine.startExam({
-      questions: chosen,
-      duration_sec: dur,
-      title: title,
-      chapters: chaptersUsed,
-      mode: SETUP.mode,
-      question_types: SETUP.mode === 'both' ? ['mcq', 'sba'] : [SETUP.mode],
+      var dur = SETUP.minutes > 0 ? SETUP.minutes * 60 : null;
+      var chapterLabel = SETUP.chapters.length === 0
+        ? 'All chapters'
+        : (SETUP.chapters.length <= 3
+            ? SETUP.chapters.map(function (n) { return 'Ch ' + n; }).join(', ')
+            : SETUP.chapters.length + ' chapters');
+      var title = SETUP.mode.toUpperCase() + ' · ' + chapterLabel + ' · ' + chosen.length + 'Q';
+      var chaptersUsed = chosen.map(function (q) { return q.chapter_num; })
+        .filter(function (v, i, a) { return a.indexOf(v) === i; });
+
+      CURRENT_EXAM = MedSea.Engine.startExam({
+        questions: chosen,
+        duration_sec: dur,
+        title: title,
+        chapters: chaptersUsed,
+        mode: SETUP.mode,
+        question_types: SETUP.mode === 'both' ? ['mcq', 'sba'] : [SETUP.mode],
+      });
+      CURRENT_EXAM.showAfter = SETUP.showAfter;
+      CURRENT_EXAM.onChange(renderRunner);
+      renderRunner();
+      switchTab('runner');
+      CURRENT_EXAM.startTimer(renderRunnerTimer);
+      btn.disabled = false;
+      btn.textContent = prevText;
+    }).catch(function (err) {
+      console.error(err);
+      toast('Failed to load questions: ' + err.message);
+      btn.disabled = false;
+      btn.textContent = prevText;
     });
-    CURRENT_EXAM.showAfter = SETUP.showAfter;
-    CURRENT_EXAM.onChange(renderRunner);
-    renderRunner();
-    switchTab('runner');
-    CURRENT_EXAM.startTimer(renderRunnerTimer);
   });
 
   function switchTab(name) {
@@ -390,25 +461,28 @@
   function replayExam(rid) {
     var r = MedSea.History.exams().find(function (x) { return x.id === rid; });
     if (!r) return;
-    var lookup = {};
-    (DB_DATA.mcq.concat(DB_DATA.sba)).forEach(function (q) { lookup[q.id] = q; });
-    var questions = (r.breakdown || []).map(function (b) { return lookup[b.id]; }).filter(Boolean);
-    if (questions.length === 0) { toast('Could not reconstruct this exam.'); return; }
-    CURRENT_EXAM = MedSea.Engine.startExam({
-      questions: questions,
-      duration_sec: null,
-      title: 'Replay · ' + r.title,
-      chapters: r.chapters || [],
-      mode: r.mode,
-      question_types: r.question_types || ['mcq', 'sba'],
+    // Make sure chunks are loaded (replay needs to look up questions by id)
+    loadModeChunks('mixed').then(function () {
+      var lookup = {};
+      (DB_MCQ.concat(DB_SBA)).forEach(function (q) { lookup[q.id] = q; });
+      var questions = (r.breakdown || []).map(function (b) { return lookup[b.id]; }).filter(Boolean);
+      if (questions.length === 0) { toast('Could not reconstruct this exam.'); return; }
+      CURRENT_EXAM = MedSea.Engine.startExam({
+        questions: questions,
+        duration_sec: null,
+        title: 'Replay · ' + r.title,
+        chapters: r.chapters || [],
+        mode: r.mode,
+        question_types: r.question_types || ['mcq', 'sba'],
+      });
+      CURRENT_EXAM.showAfter = 'end';
+      CURRENT_EXAM.onChange(renderRunner);
+      (r.breakdown || []).forEach(function (b) {
+        if (b.picked) CURRENT_EXAM.answers[b.id] = b.picked;
+      });
+      renderRunner();
+      switchTab('runner');
     });
-    CURRENT_EXAM.showAfter = 'end';
-    CURRENT_EXAM.onChange(renderRunner);
-    (r.breakdown || []).forEach(function (b) {
-      if (b.picked) CURRENT_EXAM.answers[b.id] = b.picked;
-    });
-    renderRunner();
-    switchTab('runner');
   }
 
   $('#btn-clear-hist').addEventListener('click', function () {
@@ -462,7 +536,7 @@
       var bhtml = '';
       keys.forEach(function (k) {
         var data = byCh[k];
-        var name = (DB_DATA.chapters.find(function (c) { return c.num === k; }) || { name: 'Ch ' + k }).name;
+        var name = (DB_INDEX.chapters.find(function (c) { return c.num === k; }) || { name: 'Ch ' + k }).name;
         var cls = data.accuracy >= 75 ? 'good' : data.accuracy >= 50 ? 'warn' : 'bad';
         bhtml += '<div class="bm-row">' +
           '<span class="bm-label">Ch ' + k + '</span>' +

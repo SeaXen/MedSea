@@ -1,5 +1,8 @@
 /* MedSea shared site header — loads on /, /exam/, /flashcards/
-   Provides: chapter dropdown, universal topic search, dynamic stats
+   Provides: chapter dropdown, universal topic search, dynamic stats.
+   Loads ONLY the 5 KB questions-index.json for header data (NOT the
+   17 MB questions.json). Heavy question data is lazy-loaded by the
+   exam/flashcard apps via /assets/site-db.js.
 */
 (function () {
   'use strict';
@@ -11,14 +14,19 @@
     var dd = $('#chapterDropdown');
     if (!dd) return;
     if (dd.contains(e.target)) {
-      // Toggle if click was on the drop-btn
       if (e.target.closest('.drop-btn')) dd.classList.toggle('open');
     } else {
       dd.classList.remove('open');
     }
   });
 
-  /* ---------- Search ---------- */
+  /* ---------- Skip shared search/init if page already self-handles it ----------
+     Main /index.html has its own inline search/dropdown JS. Avoid double-binding. */
+  if (window.MEDSEA_PAGE_HANDLES_HEADER) {
+    return; // exit early — page's own inline JS will do the work
+  }
+
+  /* ---------- Search (loads /search_index.json, ~1 MB) ---------- */
   var idx = null;
   var debounce = null;
   var input = $('#searchInput');
@@ -26,64 +34,49 @@
   var box = $('#searchBox');
 
   function escHtml(s) {
-    return String(s == null ? '' : s)
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+    });
   }
-  function highlight(text, q) {
-    if (!q) return escHtml(text);
-    var i = text.toLowerCase().indexOf(q.toLowerCase());
-    if (i < 0) return escHtml(text);
-    return escHtml(text.slice(0, i)) + '<mark>' + escHtml(text.slice(i, i + q.length)) + '</mark>' + escHtml(text.slice(i + q.length));
+  function highlight(t, q) {
+    if (!q) return escHtml(t);
+    var i = t.toLowerCase().indexOf(q.toLowerCase());
+    if (i < 0) return escHtml(t);
+    return escHtml(t.slice(0, i)) + '<mark>' + escHtml(t.slice(i, i + q.length)) + '</mark>' + escHtml(t.slice(i + q.length));
   }
   function loadIdx() {
     if (idx) return Promise.resolve(idx);
-    return fetch('/search_index.json', { cache: 'no-cache' })
-      .then(function (r) { return r.json(); })
-      .then(function (d) { idx = d; return d; });
+    return fetch('/search_index.json').then(function (r) { return r.json(); }).then(function (j) {
+      idx = j;
+      return j;
+    });
   }
   function search(q) {
-    if (!results) return;
-    if (!q || q.length < 2) { box.classList.remove('open'); results.innerHTML = ''; return; }
+    if (!q || q.length < 2) { if (box) box.classList.remove('open'); return; }
     loadIdx().then(function (data) {
       var ql = q.toLowerCase();
-      var hits = [];
-      for (var i = 0; i < data.length; i++) {
-        var item = data[i];
-        var t = (item.title || '').toLowerCase();
-        var h = (item.hub_name || '').toLowerCase();
-        var c = (item.chapter_name || '').toLowerCase();
-        var score = 0;
-        if (t === ql) score = 100;
-        else if (t.startsWith(ql)) score = 80;
-        else if (t.indexOf(ql) !== -1) score = 60;
-        else if (h.indexOf(ql) !== -1) score = 40;
-        else if (c.indexOf(ql) !== -1) score = 20;
-        if (item.topic && item.topic.startsWith(ql)) score = Math.max(score, 70);
-        if (score > 0) hits.push({ item: item, score: score });
-      }
-      hits.sort(function (a, b) { return b.score - a.score || a.item.title.localeCompare(b.item.title); });
-      var top = hits.slice(0, 12);
-      if (top.length === 0) {
+      var hits = data.filter(function (it) {
+        return (it.title && it.title.toLowerCase().indexOf(ql) >= 0) ||
+               (it.chapter_name && it.chapter_name.toLowerCase().indexOf(ql) >= 0) ||
+               (it.hub_name && it.hub_name.toLowerCase().indexOf(ql) >= 0) ||
+               (it.topic && it.topic.toLowerCase().indexOf(ql) >= 0);
+      }).slice(0, 50);
+      if (!results) return;
+      if (!hits.length) {
         results.innerHTML = '<div class="search-empty">No topics match "<strong>' + escHtml(q) + '</strong>"</div>';
       } else {
-        results.innerHTML = top.map(function (h) {
-          var it = h.item;
+        results.innerHTML = hits.slice(0, 12).map(function (it) {
           return '<a class="search-hit" href="' + it.url + '?topic=' + encodeURIComponent(it.topic) + '">' +
-            '<span class="hit-ch">' + it.chapter_num + '</span>' +
-            '<span class="hit-body">' +
-              '<span class="hit-title">' + highlight(it.title, q) + '</span>' +
-              '<span class="hit-meta">' + highlight(it.chapter_name, q) + ' · ' + highlight(it.hub_name, q) + ' · ' + (it.topic || '') + '</span>' +
-            '</span>' +
-            '<span class="hit-arrow">→</span>' +
-          '</a>';
+            '<span class="hit-title">' + highlight(it.title || '', q) + '</span>' +
+            '<span class="hit-meta">' + escHtml(it.chapter_name || '') + ' · ' + escHtml(it.hub_name || '') + ' · <code>' + escHtml(it.topic || '') + '</code></span>' +
+            '</a>';
         }).join('');
         if (hits.length > 12) {
           results.innerHTML += '<div class="search-more">+' + (hits.length - 12) + ' more matches…</div>';
         }
       }
-      box.classList.add('open');
-    });
+      if (box) box.classList.add('open');
+    }).catch(function () {});
   }
   if (input) {
     input.addEventListener('input', function (e) {
@@ -91,86 +84,66 @@
       debounce = setTimeout(function () { search(e.target.value.trim()); }, 150);
     });
     input.addEventListener('focus', function (e) { if (e.target.value.trim().length >= 2) search(e.target.value.trim()); });
-    input.addEventListener('blur', function () { setTimeout(function () { box.classList.remove('open'); }, 200); });
+    input.addEventListener('blur', function () { setTimeout(function () { if (box) box.classList.remove('open'); }, 200); });
     input.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') { box.classList.remove('open'); input.blur(); }
+      if (e.key === 'Escape') { if (box) box.classList.remove('open'); input.blur(); }
     });
   }
 
-  /* ---------- Populate chapter menu from questions.json (only if menu is empty) ---------- */
-  function buildChapterMenu() {
+  /* ---------- Chapter menu + stats — load ONLY the 5 KB index ---------- */
+  function applyIndex(d) {
     var dd = $('#chapterDropdown');
     if (!dd) return;
     var menu = $('#chapterMenu') || dd.querySelector('.drop-menu');
     if (!menu) return;
-    // If the menu already has hardcoded items (e.g. /index.html), update badges only — don't overwrite
+
+    // Stats: lightweight; reads only totals + per-chapter counts
+    var chEl = document.getElementById('stat-chapters');
+    var mcqEl = document.getElementById('stat-mcq');
+    var flashEl = document.getElementById('stat-flash');
+    var hubsEl = document.getElementById('stat-hubs');
+    var topicsEl = document.getElementById('stat-topics');
+    if (chEl) chEl.textContent = d.totals.chapters;
+    if (mcqEl) mcqEl.textContent = (d.totals.mcq + d.totals.sba).toLocaleString();
+    if (flashEl) flashEl.textContent = d.totals.flashcard.toLocaleString();
+    if (hubsEl) hubsEl.textContent = d.chapters.reduce(function (s, c) { return s + (c.hubs || 0); }, 0);
+    if (topicsEl) topicsEl.textContent = d.chapters.reduce(function (s, c) { return s + (c.topic_count || 0); }, 0).toLocaleString();
+
+    // Chapter menu: if hardcoded items exist, update badges; else build
     if (menu.children.length > 0) {
-      // Map existing items by chapter num, then enable/update badges based on questions.json
-      fetch('/assets/questions.json', { cache: 'no-cache' })
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          var map = {};
-          d.chapters.forEach(function (c) { map[c.num] = c; });
-          Array.from(menu.querySelectorAll('.item')).forEach(function (it) {
-            var numEl = it.querySelector('.num');
-            if (!numEl) return;
-            var n = parseInt(numEl.textContent, 10);
-            var data = map[n];
-            if (data && data.slug) {
-              it.classList.remove('soon');
-              it.removeAttribute('onclick');
-              it.setAttribute('href', '/' + data.slug + '/');
-              var badge = it.querySelector('.badge');
-              if (badge) badge.textContent = '●';
-            }
-          });
-        });
+      var map = {};
+      d.chapters.forEach(function (c) { map[c.num] = c; });
+      Array.from(menu.querySelectorAll('.item')).forEach(function (it) {
+        var numEl = it.querySelector('.num');
+        if (!numEl) return;
+        var n = parseInt(numEl.textContent, 10);
+        var data = map[n];
+        if (data && data.slug) {
+          it.classList.remove('soon');
+          it.removeAttribute('onclick');
+          it.setAttribute('href', '/' + data.slug + '/');
+          var badge = it.querySelector('.badge');
+          if (badge) badge.textContent = '●';
+        }
+      });
       return;
     }
-    fetch('/assets/questions.json', { cache: 'no-cache' })
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        menu.innerHTML = d.chapters.map(function (c) {
-          var num = c.num;
-          var slug = c.slug;
-          var name = c.name;
-          var ready = true;
-          var cls = ready ? 'item' : 'item soon';
-          var badge = ready ? '●' : '○';
-          var href = ready ? ('/' + slug + '/') : '#';
-          var onclick = ready ? '' : 'onclick="event.preventDefault();"';
-          var topicCount = c.topic_count || 0;
-          return '<a class="' + cls + '" ' + onclick + ' href="' + href + '">' +
-            '<span class="num">' + num + '</span>' +
-            '<span class="name">' + escHtml(name) + ' <span style="color:var(--text-dim);font-size:10px;">·' + topicCount + '</span></span>' +
-            '<span class="badge">' + badge + '</span>' +
-            '</a>';
-        }).join('');
-      })
-      .catch(function () {});
+    menu.innerHTML = d.chapters.map(function (c) {
+      var topicCount = c.topic_count || 0;
+      return '<a class="item" href="/' + c.slug + '/">' +
+        '<span class="num">' + c.num + '</span>' +
+        '<span class="name">' + escHtml(c.name) + ' <span style="color:var(--text-dim);font-size:10px;">·' + topicCount + '</span></span>' +
+        '<span class="badge">●</span>' +
+        '</a>';
+    }).join('');
   }
-  buildChapterMenu();
 
-  /* ---------- Dynamic stats (override on all pages for consistency) ---------- */
-  function loadStats() {
-    fetch('/assets/questions.json', { cache: 'no-cache' })
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        var chEl = document.getElementById('stat-chapters');
-        var mcqEl = document.getElementById('stat-mcq');
-        var flashEl = document.getElementById('stat-flash');
-        var hubsEl = document.getElementById('stat-hubs');
-        var topicsEl = document.getElementById('stat-topics');
-        if (chEl) chEl.textContent = d.totals.chapters;
-        if (mcqEl) mcqEl.textContent = (d.totals.mcq + d.totals.sba).toLocaleString();
-        if (flashEl) flashEl.textContent = d.totals.flashcard.toLocaleString();
-        // On pages that include hubs + topics slots, populate them too
-        if (hubsEl) hubsEl.textContent = d.chapters.reduce(function (s, c) { return s + (c.hubs || 0); }, 0);
-        if (topicsEl) topicsEl.textContent = d.chapters.reduce(function (s, c) { return s + (c.topic_count || 0); }, 0).toLocaleString();
-      })
-      .catch(function () {});
+  if (window.MedSeaDB && window.MedSeaDB.loadIndex) {
+    window.MedSeaDB.loadIndex().then(applyIndex).catch(function () {});
+  } else {
+    // Fallback for pages where site-db.js didn't load
+    fetch('/assets/questions-index.json').then(function (r) { return r.json(); }).then(applyIndex).catch(function () {});
   }
-  loadStats();
 
   /* ---------- Active link highlight ---------- */
   var path = location.pathname;

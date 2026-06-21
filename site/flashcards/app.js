@@ -15,7 +15,7 @@
     chapters: [],
   };
 
-  var DB_DATA = null;
+  var DB_INDEX = null;       // {chapters, totals}
   var CURRENT = null;
   var AUTOFLIP_HANDLE = null;
 
@@ -40,16 +40,36 @@
     toastT = setTimeout(function () { t.classList.remove('show'); }, 2200);
   }
 
-  /* ---------- DB load ---------- */
-  MedSea.DB.load()
-    .then(function (data) {
-      DB_DATA = data;
-      renderChapterChips(data.chapters);
+  /* ---------- DB load (lazy chunks) ----------
+     On startup: load only the 5 KB questions-index.json (chapter meta).
+     On Start: lazy-load the 5.5 MB flashcard chunk. */
+  var DB_LOADED = null;      // promise resolving when flashcard chunk is loaded
+  var DB_CARDS = null;
+
+  function loadIndexOnly() {
+    if (DB_INDEX) return Promise.resolve(DB_INDEX);
+    return MedSea.DB._loadIndex().then(function (idx) {
+      DB_INDEX = { chapters: idx.chapters, totals: idx.totals };
+      return DB_INDEX;
+    });
+  }
+  function loadCards() {
+    if (DB_LOADED) return DB_LOADED;
+    DB_LOADED = MedSea.DB._loadChunks('flashcard').then(function (chunks) {
+      DB_CARDS = chunks.flashcard || [];
+      return DB_CARDS;
+    });
+    return DB_LOADED;
+  }
+
+  loadIndexOnly()
+    .then(function (idx) {
+      renderChapterChips(idx.chapters);
       updateAvailable();
     })
     .catch(function (err) {
       console.error(err);
-      $('#ch-chips').innerHTML = '<span style="color:var(--bad);font-size:12px;padding:6px;">Failed to load DB: ' + err.message + '</span>';
+      $('#ch-chips').innerHTML = '<span style="color:var(--bad);font-size:12px;padding:6px;">Failed to load index: ' + err.message + '</span>';
     });
 
   /* ---------- chapters ---------- */
@@ -74,18 +94,18 @@
     });
   }
   $('#ch-all').addEventListener('click', function () {
-    SETUP.chapters = DB_DATA.chapters.map(function (c) { return c.num; });
+    SETUP.chapters = DB_INDEX.chapters.map(function (c) { return c.num; });
     refreshChips();
   });
   $('#ch-none').addEventListener('click', function () {
     SETUP.chapters = []; refreshChips();
   });
   $('#ch-clinical').addEventListener('click', function () {
-    SETUP.chapters = DB_DATA.chapters.filter(function (c) { return c.num >= 1 && c.num <= 15; }).map(function (c) { return c.num; });
+    SETUP.chapters = DB_INDEX.chapters.filter(function (c) { return c.num >= 1 && c.num <= 15; }).map(function (c) { return c.num; });
     refreshChips();
   });
   $('#ch-system').addEventListener('click', function () {
-    SETUP.chapters = DB_DATA.chapters.filter(function (c) { return c.num >= 16; }).map(function (c) { return c.num; });
+    SETUP.chapters = DB_INDEX.chapters.filter(function (c) { return c.num >= 16; }).map(function (c) { return c.num; });
     refreshChips();
   });
   function refreshChips() {
@@ -114,17 +134,30 @@
   $('#c-count').addEventListener('input', function () { SETUP.count = parseInt($('#c-count').value, 10) || 1; });
   $('#c-time').addEventListener('input', function () { SETUP.minutes = parseInt($('#c-time').value, 10) || 0; });
 
+  function availableCount() {
+    if (!DB_INDEX) return 0;
+    var sum = 0;
+    DB_INDEX.chapters.forEach(function (c) {
+      if (SETUP.chapters.length === 0 || SETUP.chapters.indexOf(c.num) !== -1) {
+        sum += (c.flashcard_count || 0);
+      }
+    });
+    return sum;
+  }
   function buildPool() {
-    if (!DB_DATA) return [];
-    return DB_DATA.flashcard.filter(function (q) {
-      return SETUP.chapters.length === 0 || SETUP.chapters.indexOf(q.chapter_num) !== -1;
+    return loadCards().then(function () {
+      var pool = [];
+      for (var i = 0; i < DB_CARDS.length; i++) {
+        if (SETUP.chapters.length === 0 || SETUP.chapters.indexOf(DB_CARDS[i].chapter_num) !== -1) pool.push(DB_CARDS[i]);
+      }
+      return pool;
     });
   }
   function updateAvailable() {
-    if (!DB_DATA) return;
-    var pool = buildPool();
-    $('#avail-count').textContent = pool.length + ' matching';
-    if (pool.length === 0) {
+    if (!DB_INDEX) return;
+    var n = availableCount();
+    $('#avail-count').textContent = n + ' matching';
+    if (n === 0) {
       $('#btn-start').disabled = true;
       $('#setup-summary').textContent = 'No flashcards — pick at least one chapter.';
       return;
@@ -132,40 +165,53 @@
     $('#btn-start').disabled = false;
     $('#setup-summary').textContent =
       SETUP.chapters.length === 0
-        ? 'All chapters · ' + pool.length + ' cards available'
-        : SETUP.chapters.length + ' chapter' + (SETUP.chapters.length === 1 ? '' : 's') + ' · ' + pool.length + ' cards available';
+        ? 'All chapters · ' + n + ' cards available'
+        : SETUP.chapters.length + ' chapter' + (SETUP.chapters.length === 1 ? '' : 's') + ' · ' + n + ' cards available';
   }
 
-  /* ---------- start ---------- */
+  /* ---------- start (awaits lazy chunk load + shows progress) ---------- */
   $('#btn-start').addEventListener('click', function () {
-    if (!DB_DATA) return;
-    var pool = buildPool();
-    if (pool.length === 0) { toast('Pick at least one chapter.'); return; }
-    var chosen;
-    if (SETUP.order === 'random') chosen = MedSea.Pool.pick(pool, SETUP.count);
-    else chosen = pool.slice(0, SETUP.count);
+    if (!DB_INDEX) return;
+    var btn = $('#btn-start');
+    var prevText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Loading flashcards…';
 
-    var dur = SETUP.minutes > 0 ? SETUP.minutes * 60 : null;
-    var chapterLabel = SETUP.chapters.length === 0
-      ? 'All chapters'
-      : (SETUP.chapters.length <= 3
-          ? SETUP.chapters.map(function (n) { return 'Ch ' + n; }).join(', ')
-          : SETUP.chapters.length + ' chapters');
-    var title = SETUP.order === 'random' ? 'Random' : 'Sequential' + ' · ' + chapterLabel + ' · ' + chosen.length + ' cards';
-    var chaptersUsed = chosen.map(function (q) { return q.chapter_num; })
-      .filter(function (v, i, a) { return a.indexOf(v) === i; });
+    buildPool().then(function (pool) {
+      if (pool.length === 0) { toast('Pick at least one chapter.'); btn.disabled = false; btn.textContent = prevText; return; }
+      var chosen;
+      if (SETUP.order === 'random') chosen = MedSea.Pool.pick(pool, SETUP.count);
+      else chosen = pool.slice(0, SETUP.count);
 
-    CURRENT = MedSea.Engine.startFlashcards({
-      cards: chosen,
-      duration_sec: dur,
-      title: title,
-      chapters: chaptersUsed,
+      var dur = SETUP.minutes > 0 ? SETUP.minutes * 60 : null;
+      var chapterLabel = SETUP.chapters.length === 0
+        ? 'All chapters'
+        : (SETUP.chapters.length <= 3
+            ? SETUP.chapters.map(function (n) { return 'Ch ' + n; }).join(', ')
+            : SETUP.chapters.length + ' chapters');
+      var title = SETUP.order === 'random' ? 'Random' : 'Sequential' + ' · ' + chapterLabel + ' · ' + chosen.length + ' cards';
+      var chaptersUsed = chosen.map(function (q) { return q.chapter_num; })
+        .filter(function (v, i, a) { return a.indexOf(v) === i; });
+
+      CURRENT = MedSea.Engine.startFlashcards({
+        cards: chosen,
+        duration_sec: dur,
+        title: title,
+        chapters: chaptersUsed,
+      });
+      CURRENT.onChange(renderRunner);
+      renderRunner();
+      switchTab('runner');
+      CURRENT.startTimer(renderRunnerTimer);
+      if (SETUP.autoFlipSec > 0 && SETUP.mode === 'flip') startAutoFlip();
+      btn.disabled = false;
+      btn.textContent = prevText;
+    }).catch(function (err) {
+      console.error(err);
+      toast('Failed to load flashcards: ' + err.message);
+      btn.disabled = false;
+      btn.textContent = prevText;
     });
-    CURRENT.onChange(renderRunner);
-    renderRunner();
-    switchTab('runner');
-    CURRENT.startTimer(renderRunnerTimer);
-    if (SETUP.autoFlipSec > 0 && SETUP.mode === 'flip') startAutoFlip();
   });
 
   function switchTab(name) {
@@ -469,7 +515,7 @@
       keys.forEach(function (k) {
         var data = map[k];
         var acc = data.total ? Math.round((data.known / data.total) * 100) : 0;
-        var name = (DB_DATA.chapters.find(function (c) { return c.num === k; }) || { name: 'Ch ' + k }).name;
+        var name = (DB_INDEX.chapters.find(function (c) { return c.num === k; }) || { name: 'Ch ' + k }).name;
         var cls = acc >= 75 ? 'good' : acc >= 50 ? 'warn' : 'bad';
         bh += '<div class="bm-row"><span class="bm-label">Ch ' + k + '</span><span class="bm-bar"><span class="bm-fill ' + cls + '" style="width:' + acc + '%;"></span></span><span class="bm-val"><strong>' + acc + '%</strong> · ' + data.known + '/' + data.total + '</span></div>';
       });
