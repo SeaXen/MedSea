@@ -179,6 +179,17 @@
     history.replaceState(null, '', url);
     const container = document.getElementById('topicContainer');
     container.className = 'topic-detail';
+    const imgBase = t.png ? t.png.replace(/\.png$/i, '') : '';
+    const webpBase = '/' + CHAPTER_SLUG + '/' + imgBase + '.webp';
+    const pngBase = '/' + CHAPTER_SLUG + '/' + t.png;
+    // Build srcset with responsive variants (480w mobile, 960w desktop, full retina)
+    // Always include original .webp as fallback - browser picks best match
+    const srcsetWebp = [
+      webpBase + ' 1x',  // original (typically 1280w)
+      webpBase.replace('.webp', '-960w.webp') + ' 960w',
+      webpBase.replace('.webp', '-480w.webp') + ' 480w'
+    ].join(', ');
+    const srcsetPng = pngBase + ' 1x';
     const imgHtml = t.png ? (
       '<div class="topic-image-toggle collapsed" onclick="window.medseaToggleImage(this)">' +
         '<span><span class="toggle-icon">▼</span> &nbsp;Show infographic image</span>' +
@@ -187,8 +198,8 @@
       '<div class="topic-image-wrap collapsed">' +
         '<div class="topic-image">' +
           '<picture>' +
-            '<source srcset="/' + CHAPTER_SLUG + '/' + t.png.replace(/\.png$/i, '.webp') + '" type="image/webp">' +
-            '<img src="/' + CHAPTER_SLUG + '/' + t.png + '" alt="' + escHtml(t.title) + '" loading="lazy" decoding="async" width="1280">' +
+            '<source srcset="' + srcsetWebp + '" sizes="(max-width: 768px) 480px, (max-width: 1280px) 960px, 1280px" type="image/webp">' +
+            '<img src="' + pngBase + '" srcset="' + srcsetPng + '" sizes="(max-width: 768px) 480px, (max-width: 1280px) 960px, 1280px" alt="' + escHtml(t.title) + '" loading="lazy" decoding="async" width="1280">' +
           '</picture>' +
         '</div>' +
       '</div>'
