@@ -1853,7 +1853,25 @@ footer a:hover { color: var(--accent); }
 
   function loadIdx() {
     if (idx) return Promise.resolve(idx);
-    return fetch('/search_index.json').then(r => r.json()).then(d => { idx = d; return d; });
+    // Step 1: tiny 3KB manifest only
+    return fetch('/assets/search-index.json').then(r => r.json()).then(m => {
+      manifest = m;
+      return m;
+    });
+  }
+  function loadChapterIdx(slug) {
+    if (idx && idx[slug]) return Promise.resolve(idx[slug]);
+    if (!idx) idx = Object.create(null);
+    const url = (manifest.files || {})[slug] || ('/assets/search/' + slug + '.json');
+    return fetch(url).then(r => r.json()).then(arr => { idx[slug] = arr; return arr; }).catch(() => []);
+  }
+  function chaptersMatching(q, m) {
+    const ql = q.toLowerCase();
+    const out = [];
+    for (let i = 0; i < m.chapters.length && out.length < 3; i++) {
+      if (m.chapters[i].indexOf(ql) >= 0) out.push(m.chapters[i]);
+    }
+    return out;
   }
 
   function escHtml(s) {
@@ -1868,7 +1886,11 @@ footer a:hover { color: var(--accent); }
   }
 
   function search(q) {
-    loadIdx().then(data => {
+    loadIdx().then(m => {
+      let slugs = chaptersMatching(q, m);
+      if (!slugs.length) slugs = m.chapters.slice(0, 5);
+      return Promise.all(slugs.map(s => loadChapterIdx(s))).then(arrs => [].concat.apply([], arrs));
+    }).then(data => {
       const ql = q.toLowerCase();
       const hits = [];
       // Score: title-prefix > title-contains > hub > chapter
@@ -1887,6 +1909,66 @@ footer a:hover { color: var(--accent); }
       }
       hits.sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title));
       const top = hits.slice(0, 20);
+      // Auto-expand: if < 3 hits and there are unloaded chapters, fetch them
+      if (top.length < 3) {
+        const loaded = new Set(manifest.chapters.slice(0, 5));
+        const rest = manifest.chapters.filter(s => !loaded.has(s));
+        Promise.all(rest.map(s => loadChapterIdx(s))).then(arrs => {
+          const more = [].concat.apply([], arrs).filter(it => (it.title || '').toLowerCase().includes(ql) || (it.chapter_name || '').toLowerCase().includes(ql) || (it.hub_name || '').toLowerCase().includes(ql) || (it.topic || '').toLowerCase().includes(ql));
+          if (more.length > top.length) {
+            const merged = top.concat(more);
+            // Re-score and sort
+            const scored = merged.map(item => {
+              const t = (item.title || '').toLowerCase();
+              const h = (item.hub_name || '').toLowerCase();
+              const c = (item.chapter_name || '').toLowerCase();
+              let s = 0;
+              if (t === ql) s = 100; else if (t.startsWith(ql)) s = 80; else if (t.includes(ql)) s = 60; else if (h.includes(ql)) s = 40; else if (c.includes(ql)) s = 20;
+              if (item.topic && item.topic.startsWith(ql)) s = Math.max(s, 70);
+              return { item, score: s };
+            });
+            scored.sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title));
+            const newTop = scored.slice(0, 20);
+            // Re-render
+            if (!newTop.length) {
+              results.innerHTML = '<div class="search-empty">No topics match "<strong>' + escHtml(q) + '</strong>"</div>';
+            } else {
+              results.innerHTML = newTop.map(h => '<a class="search-hit" href="' + h.item.url + '?topic=' + encodeURIComponent(h.item.topic) + '"><span class="hit-title">' + (h.item.title || '').replace(new RegExp('(' + q + ')', 'gi'), '<mark>$1</mark>') + '</span><span class="hit-meta">' + escHtml(h.item.chapter_name || '') + ' · ' + escHtml(h.item.hub_name || '') + ' · <code>' + escHtml(h.item.topic || '') + '</code></span></a>').join('');
+            }
+            box.classList.add('open');
+          }
+        });
+      }
+      // Auto-expand: if < 3 hits and there are unloaded chapters, fetch them
+      if (top.length < 3) {
+        const loaded = new Set(manifest.chapters.slice(0, 5));
+        const rest = manifest.chapters.filter(s => !loaded.has(s));
+        Promise.all(rest.map(s => loadChapterIdx(s))).then(arrs => {
+          const more = [].concat.apply([], arrs).filter(it => (it.title || '').toLowerCase().includes(ql) || (it.chapter_name || '').toLowerCase().includes(ql) || (it.hub_name || '').toLowerCase().includes(ql) || (it.topic || '').toLowerCase().includes(ql));
+          if (more.length > top.length) {
+            const merged = top.concat(more);
+            // Re-score and sort
+            const scored = merged.map(item => {
+              const t = (item.title || '').toLowerCase();
+              const h = (item.hub_name || '').toLowerCase();
+              const c = (item.chapter_name || '').toLowerCase();
+              let s = 0;
+              if (t === ql) s = 100; else if (t.startsWith(ql)) s = 80; else if (t.includes(ql)) s = 60; else if (h.includes(ql)) s = 40; else if (c.includes(ql)) s = 20;
+              if (item.topic && item.topic.startsWith(ql)) s = Math.max(s, 70);
+              return { item, score: s };
+            });
+            scored.sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title));
+            const newTop = scored.slice(0, 20);
+            // Re-render
+            if (!newTop.length) {
+              results.innerHTML = '<div class="search-empty">No topics match "<strong>' + escHtml(q) + '</strong>"</div>';
+            } else {
+              results.innerHTML = newTop.map(h => '<a class="search-hit" href="' + h.item.url + '?topic=' + encodeURIComponent(h.item.topic) + '"><span class="hit-title">' + (h.item.title || '').replace(new RegExp('(' + q + ')', 'gi'), '<mark>$1</mark>') + '</span><span class="hit-meta">' + escHtml(h.item.chapter_name || '') + ' · ' + escHtml(h.item.hub_name || '') + ' · <code>' + escHtml(h.item.topic || '') + '</code></span></a>').join('');
+            }
+            box.classList.add('open');
+          }
+        });
+      }
       if (top.length === 0) {
         results.innerHTML = '<div class="search-empty">No topics match "<strong>' + escHtml(q) + '</strong>"</div>';
       } else {
@@ -1977,7 +2059,25 @@ footer a:hover { color: var(--accent); }
 
   function loadIdx() {
     if (sharedIdx) return Promise.resolve(sharedIdx);
-    return fetch('/search_index.json').then(r => r.json()).then(d => { sharedIdx = d; return d; });
+    // Step 1: tiny 3KB manifest only
+    return fetch('/assets/search-index.json').then(r => r.json()).then(m => {
+      manifest = m;
+      return m;
+    });
+  }
+  function loadChapterIdx(slug) {
+    if (sharedIdx && sharedIdx[slug]) return Promise.resolve(sharedIdx[slug]);
+    if (!sharedIdx) sharedIdx = Object.create(null);
+    const url = (manifest.files || {})[slug] || ('/assets/search/' + slug + '.json');
+    return fetch(url).then(r => r.json()).then(arr => { sharedIdx[slug] = arr; return arr; }).catch(() => []);
+  }
+  function chaptersMatching(q, m) {
+    const ql = q.toLowerCase();
+    const out = [];
+    for (let i = 0; i < m.chapters.length && out.length < 3; i++) {
+      if (m.chapters[i].indexOf(ql) >= 0) out.push(m.chapters[i]);
+    }
+    return out;
   }
 
   function escHtml(s) {
@@ -1992,7 +2092,11 @@ footer a:hover { color: var(--accent); }
   }
 
   function search(q) {
-    loadIdx().then(data => {
+    loadIdx().then(m => {
+      let slugs = chaptersMatching(q, m);
+      if (!slugs.length) slugs = m.chapters.slice(0, 5);
+      return Promise.all(slugs.map(s => loadChapterIdx(s))).then(arrs => [].concat.apply([], arrs));
+    }).then(data => {
       const ql = q.toLowerCase();
       hits = [];
       for (const item of data) {

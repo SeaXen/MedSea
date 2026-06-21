@@ -20,7 +20,8 @@
   // ============================================================
   // 1. Universal topic search
   // ============================================================
-  let searchIdx = null;
+  let searchIdx = Object.create(null);  // cache map: slug → array
+  let searchManifest = null;
   let searchDebounce = null;
 
   function escHtml(s) {
@@ -36,14 +37,48 @@
 
   function loadSearchIdx() {
     if (searchIdx) return Promise.resolve(searchIdx);
-    return fetch('/search_index.json').then(function (r) { return r.json(); }).then(function (d) {
-      searchIdx = d;
-      return d;
+    // Tiny 3KB manifest of chapter → file paths
+    return fetch('/assets/search-index.json').then(function (r) { return r.json(); }).then(function (m) {
+      searchManifest = m;
+      return m;
     });
   }
 
+  // Load a single chapter's search data on demand; cache in searchIdx by chapter
+  function loadChapterIdx(slug, manifest) {
+    if (searchIdx[slug]) return Promise.resolve(searchIdx[slug]);
+    const url = (manifest.files || {})[slug] || ('/assets/search/' + slug + '.json');
+    return fetch(url).then(function (r) { return r.json(); }).then(function (arr) {
+      searchIdx[slug] = arr;
+      return arr;
+    }).catch(function () { return []; });
+  }
+
+  // Find which chapters match the query by name (fast, no per-chapter fetch)
+  function chaptersMatching(q, manifest) {
+    const ql = q.toLowerCase();
+    const matches = [];
+    for (const slug of manifest.chapters) {
+      // Match by chapter number prefix or by name (e.g. "cardio" → 16-cardiology)
+      if (slug.startsWith(ql) || slug.includes(ql)) {
+        matches.push(slug);
+        if (matches.length >= 3) break;
+      }
+    }
+    return matches;
+  }
+
   function doSearch(q) {
-    loadSearchIdx().then(function (data) {
+    loadSearchIdx().then(function (manifest) {
+      // Find candidate chapters first (instant, no fetches)
+      let candidateSlugs = chaptersMatching(q, manifest);
+      // If no chapter-name match, search ALL chapters but lazy-load
+      if (candidateSlugs.length === 0) candidateSlugs = manifest.chapters.slice(0, 5); // top 5 by index
+      // Fetch only the candidate chapters in parallel
+      return Promise.all(candidateSlugs.map(function (s) { return loadChapterIdx(s, manifest); })).then(function (arrays) {
+        return [].concat.apply([], arrays);
+      });
+    }).then(function (data) {
       const ql = q.toLowerCase();
       const hits = [];
       for (let i = 0; i < data.length && hits.length < 20; i++) {
@@ -150,7 +185,12 @@
         '<span style="font-size:12px;color:var(--text-dim)">click to expand</span>' +
       '</div>' +
       '<div class="topic-image-wrap collapsed">' +
-        '<div class="topic-image"><img src="/' + CHAPTER_SLUG + '/' + t.png + '" alt="' + escHtml(t.title) + '" loading="lazy" decoding="async"></div>' +
+        '<div class="topic-image">' +
+          '<picture>' +
+            '<source srcset="/' + CHAPTER_SLUG + '/' + t.png.replace(/\.png$/i, '.webp') + '" type="image/webp">' +
+            '<img src="/' + CHAPTER_SLUG + '/' + t.png + '" alt="' + escHtml(t.title) + '" loading="lazy" decoding="async" width="1280">' +
+          '</picture>' +
+        '</div>' +
       '</div>'
     ) : '';
     container.innerHTML =

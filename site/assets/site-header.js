@@ -26,8 +26,9 @@
     return; // exit early — page's own inline JS will do the work
   }
 
-  /* ---------- Search (loads /search_index.json, ~1 MB) ---------- */
-  var idx = null;
+  /* ---------- Search (loads split index: 3KB manifest + 32 chapter files in parallel) ---------- */
+  var idx = Object.create(null);  // per-chapter cache map (slug → array)
+  var searchManifest = null;
   var debounce = null;
   var input = $('#searchInput');
   var results = $('#searchResults');
@@ -46,14 +47,42 @@
   }
   function loadIdx() {
     if (idx) return Promise.resolve(idx);
-    return fetch('/search_index.json').then(function (r) { return r.json(); }).then(function (j) {
-      idx = j;
-      return j;
+    // Step 1: tiny 3KB manifest pointing to per-chapter files
+    return fetch('/assets/search-index.json').then(function (r) { return r.json(); }).then(function (m) {
+      searchManifest = m;
+      return m;
     });
+  }
+  // Per-chapter cache map
+  function loadChapterIdx(slug, m) {
+    if (idx && idx[slug]) return Promise.resolve(idx[slug]);
+    if (!idx) idx = Object.create(null);
+    var url = (m.files || {})[slug] || ('/assets/search/' + slug + '.json');
+    return fetch(url).then(function (r) { return r.json(); }).then(function (arr) {
+      idx[slug] = arr;
+      return arr;
+    }).catch(function () { return []; });
+  }
+  // Find chapters that match the query by name (no fetches needed)
+  function chaptersMatching(q, m) {
+    var ql = q.toLowerCase();
+    var out = [];
+    for (var i = 0; i < m.chapters.length && out.length < 3; i++) {
+      var s = m.chapters[i];
+      if (s.indexOf(ql) >= 0) out.push(s);
+    }
+    return out;
   }
   function search(q) {
     if (!q || q.length < 2) { if (box) box.classList.remove('open'); return; }
-    loadIdx().then(function (data) {
+    loadIdx().then(function (m) {
+      // Find candidate chapters (instant, no fetches)
+      var slugs = chaptersMatching(q, m);
+      if (slugs.length === 0) slugs = m.chapters.slice(0, 5);
+      return Promise.all(slugs.map(function (s) { return loadChapterIdx(s, m); })).then(function (arrs) {
+        return [].concat.apply([], arrs);
+      });
+    }).then(function (data) {
       var ql = q.toLowerCase();
       var hits = data.filter(function (it) {
         return (it.title && it.title.toLowerCase().indexOf(ql) >= 0) ||
@@ -61,21 +90,40 @@
                (it.hub_name && it.hub_name.toLowerCase().indexOf(ql) >= 0) ||
                (it.topic && it.topic.toLowerCase().indexOf(ql) >= 0);
       }).slice(0, 50);
-      if (!results) return;
-      if (!hits.length) {
-        results.innerHTML = '<div class="search-empty">No topics match "<strong>' + escHtml(q) + '</strong>"</div>';
-      } else {
-        results.innerHTML = hits.slice(0, 12).map(function (it) {
-          return '<a class="search-hit" href="' + it.url + '?topic=' + encodeURIComponent(it.topic) + '">' +
-            '<span class="hit-title">' + highlight(it.title || '', q) + '</span>' +
-            '<span class="hit-meta">' + escHtml(it.chapter_name || '') + ' · ' + escHtml(it.hub_name || '') + ' · <code>' + escHtml(it.topic || '') + '</code></span>' +
-            '</a>';
-        }).join('');
-        if (hits.length > 12) {
-          results.innerHTML += '<div class="search-more">+' + (hits.length - 12) + ' more matches…</div>';
-        }
+      // If < 3 hits, lazy-load more chapters in background
+      if (hits.length < 3) {
+        var remaining = searchManifest.chapters.filter(function (s) { return slugs.indexOf(s) < 0; });
+        Promise.all(remaining.map(function (s) { return loadChapterIdx(s, searchManifest); })).then(function (arrs) {
+          var more = [].concat.apply([], arrs).filter(function (it) {
+            return (it.title && it.title.toLowerCase().indexOf(ql) >= 0) ||
+                   (it.chapter_name && it.chapter_name.toLowerCase().indexOf(ql) >= 0) ||
+                   (it.hub_name && it.hub_name.toLowerCase().indexOf(ql) >= 0) ||
+                   (it.topic && it.topic.toLowerCase().indexOf(ql) >= 0);
+          });
+          if (more.length > hits.length) {
+            hits = hits.concat(more).slice(0, 50);
+            renderHits();
+          }
+        });
       }
-      if (box) box.classList.add('open');
+      function renderHits() {
+        if (!results) return;
+        if (!hits.length) {
+          results.innerHTML = '<div class="search-empty">No topics match "<strong>' + escHtml(q) + '</strong>"</div>';
+        } else {
+          results.innerHTML = hits.slice(0, 12).map(function (it) {
+            return '<a class="search-hit" href="' + it.url + '?topic=' + encodeURIComponent(it.topic) + '">' +
+              '<span class="hit-title">' + highlight(it.title || '', q) + '</span>' +
+              '<span class="hit-meta">' + escHtml(it.chapter_name || '') + ' · ' + escHtml(it.hub_name || '') + ' · <code>' + escHtml(it.topic || '') + '</code></span>' +
+              '</a>';
+          }).join('');
+          if (hits.length > 12) {
+            results.innerHTML += '<div class="search-more">+' + (hits.length - 12) + ' more matches…</div>';
+          }
+        }
+        if (box) box.classList.add('open');
+      }
+      renderHits();
     }).catch(function () {});
   }
   if (input) {
