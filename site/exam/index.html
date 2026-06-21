@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Exam · MedSea</title>
 <meta name="description" content="MedSea FCPS/MRCP Exam Trainer — SBA/MCQ quizzes across all Davidson chapters with timer, history, analytics.">
+<link rel="stylesheet" href="/assets/site-header.css">
 <style>
 :root {
   --bg: #0a0e1a; --bg-2: #111827; --bg-3: #1f2937; --bg-4: #0f172a;
@@ -346,18 +347,35 @@ main { max-width: 1100px; margin: 0 auto; padding: 22px 24px 80px; }
 <header class="site">
   <div class="header-inner">
     <div class="header-left">
-      <span class="logo-wrap">
-        <span class="logo">M</span>
+      <div class="logo-wrap">
+        <span class="logo">⚕</span>
         <a href="/">MedSea</a>
-      </span>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/exam/" class="active">Exam</a>
-        <a href="/flashcards/">Flashcards</a>
-      </nav>
+      </div>
+      <div class="stats">
+        <span class="stat"><span class="num" id="stat-chapters">32</span><span class="label">Chapters</span></span>
+        <span class="stat"><span class="num" id="stat-hubs">—</span><span class="label">Hubs</span></span>
+        <span class="stat"><span class="num" id="stat-topics">—</span><span class="label">Topics</span></span>
+        <span class="stat"><span class="num" id="stat-mcq">—</span><span class="label">MCQs</span></span>
+        <span class="stat"><span class="num" id="stat-flash">—</span><span class="label">Cards</span></span>
+      </div>
+    </div>
+    <div class="search-box" id="searchBox">
+      <input type="text" id="searchInput" placeholder="Search 4,000+ topics…" autocomplete="off" spellcheck="false">
+      <div class="search-results" id="searchResults"></div>
     </div>
     <div class="header-right">
-      <span style="font-size:12px;color:var(--text-dim);" id="hdr-stats">Loading…</span>
+      <div class="chapter-dropdown" id="chapterDropdown">
+        <button class="drop-btn" type="button">
+          <span>Chapters</span> <span class="arrow">▾</span>
+        </button>
+        <div class="drop-menu" id="chapterMenu"></div>
+      </div>
+      <div class="ext-links">
+        <a href="/">Home</a>
+        <a href="/exam/">Exam</a>
+        <a href="/flashcards/">Flashcards</a>
+        <a href="https://github.com/SeaXen/MedSea" target="_blank">GitHub ↗</a>
+      </div>
     </div>
   </div>
 </header>
@@ -490,6 +508,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 22px 24px 80px; }
 
 <div class="toast" id="toast"></div>
 
+<script src="/assets/site-header.js"></script>
 <script src="/assets/exam-engine.js"></script>
 <script src="/exam/app.js"></script>
 </body>

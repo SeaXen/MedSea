@@ -46,10 +46,6 @@
       DB_DATA = data;
       renderChapterChips(data.chapters);
       updateAvailable();
-      $('#hdr-stats').textContent =
-        data.totals.chapters + ' chapters · ' +
-        data.totals.flashcard + ' flashcards · ' +
-        (data.totals.mcq + data.totals.sba) + ' questions';
     })
     .catch(function (err) {
       console.error(err);
