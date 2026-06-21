@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards · MedSea</title>
+<meta name="description" content="MedSea FCPS/MRCP Flashcards — spaced repetition across all Davidson chapters with timer, history, and analytics.">
+<style>
+:root {
+  --bg: #0a0e1a; --bg-2: #111827; --bg-3: #1f2937; --bg-4: #0f172a;
+  --border: #2d3748; --border-2: #374151; --text: #e5e7eb; --text-dim: #9ca3af;
+  --accent: #38bdf8; --good: #10b981; --bad: #ef4444; --warn: #f59e0b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: linear-gradient(135deg, #0a0e1a 0%, #0f1729 100%);
+  color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6; min-height: 100vh;
+}
+a { color: var(--accent); text-decoration: none; }
+header.site {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10, 14, 26, 0.94); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border); padding: 8px 24px;
+  display: flex; align-items: center; min-height: 48px;
+}
+.header-inner {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; gap: 16px; max-width: 1600px; width: 100%; margin: 0 auto;
+}
+.header-left { display: flex; align-items: center; gap: 16px; justify-self: start; }
+.header-right { display: flex; align-items: center; gap: 12px; justify-self: end; }
+.logo-wrap { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; }
+.logo { width: 26px; height: 26px; background: linear-gradient(135deg, #38bdf8, #a855f7);
+  border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
+.nav-links { display: flex; gap: 14px; font-size: 13px; }
+.nav-links a { padding: 4px 8px; border-radius: 5px; }
+.nav-links a.active { background: rgba(56, 189, 248, 0.1); }
+
+main { max-width: 1100px; margin: 0 auto; padding: 22px 24px 80px; }
+.page-title {
+  font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px;
+  background: linear-gradient(90deg, #38bdf8, #a855f7);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.page-sub { color: var(--text-dim); font-size: 13px; margin-bottom: 22px; }
+
+.tabs {
+  display: flex; gap: 4px; margin-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+.tabs .tab {
+  padding: 9px 16px; cursor: pointer; color: var(--text-dim); font-size: 13px;
+  border-bottom: 2px solid transparent; background: transparent;
+  border-top: none; border-left: none; border-right: none;
+  font-family: inherit; font-weight: 500;
+}
+.tabs .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tabs .tab:hover { color: var(--text); }
+.panel { display: none; }
+.panel.active { display: block; }
+
+.setup-card {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px; margin-bottom: 14px;
+}
+.setup-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;
+}
+.setup-row.full { grid-template-columns: 1fr; }
+.setup-row.three { grid-template-columns: 1fr 1fr 1fr; }
+.field label {
+  display: block; font-size: 11px; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-weight: 600;
+}
+.field select, .field input[type=number] {
+  width: 100%; background: var(--bg-3); border: 1px solid var(--border);
+  color: var(--text); padding: 9px 11px; border-radius: 7px;
+  font-size: 13px; font-family: inherit; outline: none;
+}
+.field select:focus, .field input:focus {
+  border-color: var(--accent); box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.18);
+}
+.field .hint { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+
+.chip-row {
+  display: flex; flex-wrap: wrap; gap: 6px; max-height: 180px; overflow-y: auto;
+  padding: 8px; background: var(--bg-3); border: 1px solid var(--border); border-radius: 7px;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px;
+  background: var(--bg-2); border: 1px solid var(--border-2); color: var(--text);
+  font-size: 11px; border-radius: 12px; cursor: pointer; transition: all 0.12s;
+  user-select: none; font-weight: 500;
+}
+.chip:hover { border-color: var(--accent); }
+.chip.selected { background: rgba(56, 189, 248, 0.15); border-color: var(--accent); color: var(--accent); }
+.chip .num { font-family: 'JetBrains Mono', monospace; color: var(--text-dim); font-size: 10px; }
+.chip.selected .num { color: var(--accent); }
+.chip-actions { display: flex; gap: 6px; margin-top: 6px; }
+.chip-btn {
+  padding: 4px 10px; background: var(--bg-3); border: 1px solid var(--border);
+  color: var(--text-dim); font-size: 11px; border-radius: 5px; cursor: pointer; font-family: inherit;
+}
+.chip-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+.toggle-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.toggle {
+  flex: 1; min-width: 100px; padding: 10px 14px;
+  background: var(--bg-3); border: 1px solid var(--border); color: var(--text);
+  border-radius: 7px; cursor: pointer; transition: all 0.12s; font-size: 13px;
+  text-align: center; font-family: inherit; font-weight: 500;
+}
+.toggle:hover { border-color: var(--accent); }
+.toggle.active { background: rgba(56, 189, 248, 0.12); border-color: var(--accent); color: var(--accent); }
+
+.btn {
+  padding: 11px 22px; background: var(--accent); border: none;
+  color: #0a0e1a; font-size: 14px; font-weight: 700; border-radius: 8px;
+  cursor: pointer; transition: all 0.15s; font-family: inherit;
+}
+.btn:hover { background: #7dd3fc; transform: translateY(-1px); }
+.btn:disabled { background: var(--bg-3); color: var(--text-dim); cursor: not-allowed; transform: none; }
+.btn-secondary { background: var(--bg-3); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--bg-4); border-color: var(--accent); color: var(--accent); }
+.btn-danger { background: rgba(239, 68, 68, 0.15); color: var(--bad); border: 1px solid rgba(239, 68, 68, 0.3); }
+.btn-danger:hover { background: rgba(239, 68, 68, 0.25); }
+
+.start-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+.summary-line { font-size: 12px; color: var(--text-dim); }
+
+/* ===== Card runner ===== */
+.runner-bar {
+  position: sticky; top: 56px; z-index: 50;
+  background: rgba(10, 14, 26, 0.95); backdrop-filter: blur(12px);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 12px 16px; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.runner-bar .progress { flex: 1; min-width: 200px; }
+.runner-bar .progress .bar {
+  height: 6px; background: var(--bg-3); border-radius: 3px; overflow: hidden; margin-top: 4px;
+}
+.runner-bar .progress .bar .fill {
+  height: 100%; background: linear-gradient(90deg, #38bdf8, #a855f7);
+  border-radius: 3px; transition: width 0.2s;
+}
+.runner-bar .label { font-size: 12px; color: var(--text-dim); }
+.runner-bar .timer {
+  font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700;
+  color: var(--accent); padding: 4px 12px; background: var(--bg-3);
+  border: 1px solid var(--border); border-radius: 6px;
+}
+.runner-bar .timer.warn { color: var(--warn); border-color: var(--warn); }
+.runner-bar .timer.danger { color: var(--bad); border-color: var(--bad); animation: pulse 1s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+.card-stage {
+  perspective: 1200px; margin-bottom: 14px;
+}
+.card-flip {
+  position: relative; transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0.0, 0.2, 1);
+  min-height: 320px;
+}
+.card-flip.flipped { transform: rotateY(180deg); }
+.card-face {
+  position: absolute; inset: 0; backface-visibility: hidden;
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px;
+  padding: 32px; display: flex; flex-direction: column; justify-content: center;
+  text-align: center; min-height: 320px;
+}
+.card-face.back { transform: rotateY(180deg); background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(168, 85, 247, 0.06)); border-color: rgba(56, 189, 248, 0.3); }
+.card-meta {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent);
+  background: rgba(56, 189, 248, 0.1); padding: 3px 8px; border-radius: 4px;
+  display: inline-block; margin: 0 auto 14px; font-weight: 600;
+}
+.card-meta-bottom {
+  font-size: 11px; color: var(--text-dim); margin-top: 18px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.card-question { font-size: 22px; line-height: 1.45; font-weight: 500; color: var(--text); }
+.card-answer { font-size: 18px; line-height: 1.55; color: var(--text); }
+.card-hint {
+  position: absolute; bottom: 14px; right: 18px; font-size: 10px; color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+}
+.card-side-tag {
+  position: absolute; top: 14px; left: 18px; font-size: 10px; color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.05em;
+}
+
+.rate-row { display: flex; gap: 8px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+.rate-btn {
+  flex: 1; min-width: 130px; padding: 12px 16px;
+  border-radius: 9px; font-size: 13px; font-weight: 600; cursor: pointer;
+  font-family: inherit; transition: all 0.15s; border: 1px solid;
+}
+.rate-btn.skip { background: var(--bg-3); color: var(--text-dim); border-color: var(--border); }
+.rate-btn.skip:hover { background: var(--bg-4); color: var(--text); border-color: var(--accent); }
+.rate-btn.again { background: rgba(239, 68, 68, 0.12); color: var(--bad); border-color: rgba(239, 68, 68, 0.3); }
+.rate-btn.again:hover { background: rgba(239, 68, 68, 0.22); }
+.rate-btn.hard { background: rgba(245, 158, 11, 0.12); color: var(--warn); border-color: rgba(245, 158, 11, 0.3); }
+.rate-btn.hard:hover { background: rgba(245, 158, 11, 0.22); }
+.rate-btn.good { background: rgba(16, 185, 129, 0.12); color: var(--good); border-color: rgba(16, 185, 129, 0.3); }
+.rate-btn.good:hover { background: rgba(16, 185, 129, 0.22); }
+
+.nav-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.card-palette { display: flex; gap: 4px; flex-wrap: wrap; max-width: 100%; }
+.cp-item {
+  width: 28px; height: 28px; border-radius: 6px; font-size: 10px;
+  font-family: 'JetBrains Mono', monospace; font-weight: 600;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--bg-3); border: 1px solid var(--border); cursor: pointer;
+  color: var(--text-dim);
+}
+.cp-item.known { background: rgba(16, 185, 129, 0.2); color: var(--good); border-color: rgba(16, 185, 129, 0.4); }
+.cp-item.unknown { background: rgba(239, 68, 68, 0.2); color: var(--bad); border-color: rgba(239, 68, 68, 0.4); }
+.cp-item.hard { background: rgba(245, 158, 11, 0.2); color: var(--warn); border-color: rgba(245, 158, 11, 0.4); }
+.cp-item.current { background: var(--accent); color: #0a0e1a; border-color: var(--accent); }
+.cp-item:hover { transform: translateY(-1px); }
+
+/* ===== Result ===== */
+.result-hero {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(56, 189, 248, 0.08));
+  border: 1px solid var(--border); border-radius: 14px; padding: 28px;
+  text-align: center; margin-bottom: 18px;
+}
+.result-score {
+  font-size: 56px; font-weight: 800; line-height: 1;
+  background: linear-gradient(90deg, #10b981, #38bdf8);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 4px;
+}
+.result-line { font-size: 14px; color: var(--text-dim); margin-bottom: 4px; }
+.result-grade { font-size: 18px; font-weight: 700; margin-top: 8px; }
+
+.result-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px; margin-bottom: 18px;
+}
+.stat-card {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 16px;
+}
+.stat-card .label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+.stat-card .value { font-size: 22px; font-weight: 700; color: var(--text); margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
+.stat-card.good .value { color: var(--good); }
+.stat-card.bad .value { color: var(--bad); }
+.stat-card.warn .value { color: var(--warn); }
+
+/* ===== History ===== */
+.history-list { display: flex; flex-direction: column; gap: 10px; }
+.hist-item {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px 16px;
+}
+.hist-item .hi-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.hist-item .hi-title { font-weight: 600; font-size: 14px; }
+.hist-item .hi-when { font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+.hist-item .hi-meta {
+  display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; font-size: 12px;
+  color: var(--text-dim);
+}
+.hist-item .hi-meta .stat { font-family: 'JetBrains Mono', monospace; }
+.hist-item .hi-meta .stat strong { color: var(--text); font-weight: 700; }
+.hist-item .hi-meta .stat.good strong { color: var(--good); }
+.hist-item .hi-meta .stat.bad strong { color: var(--bad); }
+
+/* ===== Analytics ===== */
+.analytics-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px; margin-bottom: 18px;
+}
+.analytics-card {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px;
+}
+.analytics-card h3 { font-size: 13px; color: var(--text); margin-bottom: 12px; font-weight: 600; }
+.bm-row {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 11px;
+}
+.bm-label { width: 80px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; flex-shrink: 0; }
+.bm-bar {
+  flex: 1; height: 8px; background: var(--bg-3); border-radius: 4px; overflow: hidden;
+  border: 1px solid var(--border);
+}
+.bm-fill { height: 100%; background: linear-gradient(90deg, var(--accent), #a855f7); border-radius: 4px; }
+.bm-fill.good { background: var(--good); }
+.bm-fill.warn { background: var(--warn); }
+.bm-fill.bad { background: var(--bad); }
+.bm-val { width: 70px; text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); flex-shrink: 0; }
+
+.empty-state {
+  text-align: center; padding: 50px 20px; color: var(--text-dim);
+}
+.empty-state .icon { font-size: 40px; margin-bottom: 10px; }
+.empty-state p { font-size: 13px; max-width: 400px; margin: 0 auto; }
+
+.confirm-bar {
+  display: flex; gap: 10px; justify-content: center; margin-top: 16px;
+}
+
+.toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: var(--bg-2); border: 1px solid var(--border); padding: 10px 18px;
+  border-radius: 8px; font-size: 13px; z-index: 9999; opacity: 0; transition: opacity 0.2s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; }
+
+.kbd {
+  display: inline-block; padding: 1px 6px; font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: var(--text-dim); background: var(--bg-3);
+  border: 1px solid var(--border); border-radius: 3px; margin-left: 4px;
+}
+
+@media (max-width: 720px) {
+  .setup-row, .setup-row.three { grid-template-columns: 1fr; }
+  .runner-bar { flex-direction: column; align-items: stretch; }
+  .result-score { font-size: 42px; }
+  main { padding: 16px; }
+  .card-question, .card-answer { font-size: 18px; }
+  .card-face { padding: 22px; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="header-inner">
+    <div class="header-left">
+      <span class="logo-wrap">
+        <span class="logo">M</span>
+        <a href="/">MedSea</a>
+      </span>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/exam/">Exam</a>
+        <a href="/flashcards/" class="active">Flashcards</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <span style="font-size:12px;color:var(--text-dim);" id="hdr-stats">Loading…</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1 class="page-title">FCPS / MRCP Flashcards</h1>
+  <p class="page-sub">High-yield cards from all 32 Davidson chapters — flip, rate, retain.</p>
+
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="setup">Setup</button>
+    <button class="tab" data-tab="runner">Cards</button>
+    <button class="tab" data-tab="result">Result</button>
+    <button class="tab" data-tab="history">History</button>
+    <button class="tab" data-tab="analytics">Analytics</button>
+  </div>
+
+  <!-- SETUP -->
+  <section class="panel active" id="panel-setup">
+    <div class="setup-card">
+      <div class="setup-row">
+        <div class="field">
+          <label>Order</label>
+          <div class="toggle-row">
+            <button class="toggle active" data-order="random">Random</button>
+            <button class="toggle" data-order="sequential">Sequential</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Number of Cards</label>
+          <input type="number" id="c-count" min="1" max="500" value="20">
+          <div class="hint">Available: <span id="avail-count">—</span></div>
+        </div>
+      </div>
+
+      <div class="setup-row three">
+        <div class="field">
+          <label>Time (minutes, optional)</label>
+          <input type="number" id="c-time" min="0" max="600" value="0" placeholder="0 = unlimited">
+          <div class="hint">Set 0 for untimed</div>
+        </div>
+        <div class="field">
+          <label>Mode</label>
+          <div class="toggle-row">
+            <button class="toggle active" data-mode="flip">Flip & Rate</button>
+            <button class="toggle" data-mode="quick">Quick Read</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Auto-flip</label>
+          <div class="toggle-row">
+            <button class="toggle" data-autoflip="0">Off</button>
+            <button class="toggle active" data-autoflip="5">5s</button>
+            <button class="toggle" data-autoflip="10">10s</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-row full">
+        <div class="field">
+          <label>Chapters</label>
+          <div class="chip-row" id="ch-chips"><span style="color:var(--text-dim);font-size:12px;padding:6px;">Loading…</span></div>
+          <div class="chip-actions">
+            <button class="chip-btn" id="ch-all">All 32 chapters</button>
+            <button class="chip-btn" id="ch-clinical">Clinical only</button>
+            <button class="chip-btn" id="ch-system">System-based only</button>
+            <button class="chip-btn" id="ch-none">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="start-bar">
+        <div class="summary-line" id="setup-summary">Select chapters to begin.</div>
+        <button class="btn" id="btn-start">Start Flashcards →</button>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--text-dim);padding:0 8px;">
+      <strong style="color:var(--text);">Keyboard:</strong>
+      <span class="kbd">Space</span> flip ·
+      <span class="kbd">1</span> again ·
+      <span class="kbd">2</span> hard ·
+      <span class="kbd">3</span> good ·
+      <span class="kbd">→</span> next ·
+      <span class="kbd">←</span> prev
+    </div>
+  </section>
+
+  <!-- RUNNER -->
+  <section class="panel" id="panel-runner">
+    <div class="runner-bar">
+      <div class="progress">
+        <div class="label">Card <span id="r-cnum">1</span> of <span id="r-ctotal">20</span> · Known <span id="r-known">0</span> · Hard <span id="r-hard">0</span></div>
+        <div class="bar"><div class="fill" id="r-bar" style="width:5%;"></div></div>
+      </div>
+      <div class="timer" id="r-timer">--:--</div>
+      <button class="btn btn-secondary" id="btn-quit">Quit</button>
+      <button class="btn" id="btn-finish">Finish</button>
+    </div>
+
+    <div class="card-stage">
+      <div class="card-flip" id="card-flip">
+        <div class="card-face">
+          <span class="card-side-tag">Question</span>
+          <div class="card-meta" id="c-meta-q">—</div>
+          <div class="card-question" id="c-q">—</div>
+          <span class="card-hint">Space to flip</span>
+        </div>
+        <div class="card-face back">
+          <span class="card-side-tag">Answer</span>
+          <div class="card-meta" id="c-meta-a">—</div>
+          <div class="card-answer" id="c-a">—</div>
+          <div class="card-meta-bottom" id="c-source">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rate-row">
+      <button class="rate-btn again" data-rate="unknown">👎 Again <span class="kbd">1</span></button>
+      <button class="rate-btn hard" data-rate="hard">🤔 Hard <span class="kbd">2</span></button>
+      <button class="rate-btn good" data-rate="known">👍 Got it <span class="kbd">3</span></button>
+      <button class="rate-btn skip" data-rate="skip">⏭ Skip</button>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn btn-secondary" id="btn-prev">← Prev</button>
+      <div class="card-palette" id="r-palette"></div>
+      <button class="btn btn-secondary" id="btn-next">Next →</button>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="panel" id="panel-result">
+    <div class="result-hero" id="r-hero"></div>
+    <div class="result-grid" id="r-stats"></div>
+    <div class="analytics-card" id="weak-cards-wrap">
+      <h3>Cards you struggled with</h3>
+      <div id="weak-cards"></div>
+    </div>
+    <div class="confirm-bar">
+      <button class="btn btn-secondary" id="btn-result-history">View History</button>
+      <button class="btn" id="btn-result-new">New Session</button>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="panel" id="panel-history">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <h3 style="font-size:14px;">Past Sessions</h3>
+      <button class="btn btn-danger" id="btn-clear-hist">Clear All</button>
+    </div>
+    <div class="history-list" id="hist-list"></div>
+  </section>
+
+  <!-- ANALYTICS -->
+  <section class="panel" id="panel-analytics">
+    <div class="analytics-grid" id="analytics-cards"></div>
+    <div class="analytics-card">
+      <h3>Chapter-wise Retention</h3>
+      <div id="ch-bars"></div>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="/assets/exam-engine.js"></script>
+<script src="/flashcards/app.js"></script>
+</body>
+</html>
