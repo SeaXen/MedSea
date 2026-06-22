@@ -467,4 +467,20 @@ mindmap
 **Heading Hub:** [[../Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[../00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Neurosarcoidosis*
+
+**Q1.** Which of the following features is most specific or characteristic of Neurosarcoidosis?
+
+  - **A.** Neurosarcoidosis — "GRANULAR"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Neurosarcoidosis — "GRANULAR"
+  >
+  > *Source:* **Neurosarcoidosis — "GRANULAR"** — **G**ranulomas non-caseating (epithelioid + giant cells); **R**espiratory (BHL bilateral hilar lymphadenopathy); **A**CE elevated (serum, 60% sensitive, non-specifi
+

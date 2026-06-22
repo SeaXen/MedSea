@@ -75,3 +75,61 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #heading-hub #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Type 1 diabetes mellitus*
+
+**Q1.** Which of the following features is most specific or characteristic of Type 1 diabetes mellitus?
+
+  - **A.** ICA
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ICA
+  >
+  > *Source:* |
+| **ZnT8** | Zinc transporter 8 | 60–80% | High | Improves sensitivity in GAD65/IA-2 negative |
+| **ICA** (Islet cell) | Cytoplasmic | 70–80% | Moderate | Older assay; largely replaced by specific A
+---
+
+> Auto-generated study sections for "Diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Diabetes?
+  A: Heading hub for Type 1 Diabetes Mellitus — covers 18 disease-level topic(s) per Davidson Ch25.
+- Q: What are the clinical features of Diabetes?
+  A: Polyuria, polydipsia, weight loss, fatigue → DKA in 25-30% at diagnosis
+- Q: What is LADA of Diabetes?
+  A: Age >30, non-obese, GAD65+, slow progression, initial non-insulin response
+- Q: What is Autoantibodies of Diabetes?
+  A: GAD65 (70-80%), IA-2 (50-70%), ZnT8 (60-80%), IAA (children >adults) · ≥2 = high risk
+- Q: What is Basal-bolus of Diabetes?
+  A: Basal 40-50% TDD (glargine U-100/U-300, degludec) · Bolus 50-60% TDD (rapid analogues)
+- Q: What is CSII of Diabetes?
+  A: Indications: HbA1c >58 on MDI, severe hypoglycaemia, Dawn phenomenon, lifestyle
+- Q: What is CGM metrics of Diabetes?
+  A: TIR 70-180mg/dL >70% · TBR <54mg/dL <4% · TAR >180mg/dL <25% · CV <36%
+- Q: What is DKA of Diabetes?
+  A: See Diabetic Emergencies hub
+- Q: What is Hypoglycaemia unawareness of Diabetes?
+  A: Impaired counter-regulation → avoid <3.9 for 2-3 weeks to restore awareness
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes?**
+   A. **Heading hub for Type 1 Diabetes Mellitus — covers 18 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetes
+   C. A complication seen late in the disease course of Diabetes
+   D. A condition that mimics Diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes presents with: Q1. Which of the following features is most specific or characteristic of Type 1 diabetes mellitus?; B. A feature common to many acute inflammatory conditions; C. A non-specific sign that does not localise the diagnosis. What is the most likely diagnosis?
+   A. **Diabetes**
+   B. A condition that mimics Diabetes but is not the same entity
+   C. A complication of Diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes
+

@@ -471,3 +471,19 @@ mindmap
    C. A complication seen late in the disease course of Clinical Approach to Musculoskeletal Disease
    D. A condition that mimics Clinical Approach to Musculoskeletal Disease but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Investigations in rheumatology*
+
+**Q1.** Which of the following features is most specific or characteristic of Investigations in rheumatology?
+
+  - **A.** ANCA positive but no vasculitis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ANCA positive but no vasculitis
+  >
+  > *Source:* |
+| **ANCA positive but no vasculitis** | Infections (TB, endocarditis), drugs (hydralazine, PTU, minocycline), IBD (atypical p-ANCA), RA, elderly
+

@@ -549,3 +549,19 @@ Beta-blocker poisoning = β₁/β₂ blockade → bradycardia, hypotension, hypo
 8. **C** - Calcium: FIRST LINE for CCB overdose. For BB: adjunct for refractory hypotension (less effective). CCB: calcium directly competes at L-type channel.
 9. **B** - BB seizures (esp propranolol, carvedilol - lipophilic, CNS): benzos 1st line. Avoid phenytoin (Na channel effects). Phenobarbital/propofol 2nd line.
 10. **C** - Propranolol: lipophilic → CNS (seizures, coma), membrane stabilizing (Na channel block → QRS widening). Most cardiotoxic. Sotalol = QT prolongation.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Beta-Blocker Poisoning*
+
+**Q1.** What is the most appropriate first-line therapy for Beta-Blocker Poisoning?
+
+  - **A.** Adverse + nausea/vomiting
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Adverse + nausea/vomiting
+  >
+  > *Source:* **Adverse**: **nausea/vomiting** (very common — give antiemetic ondansetron 4 mg IV prophylactically), hyperglycemia, hypokalemia
+

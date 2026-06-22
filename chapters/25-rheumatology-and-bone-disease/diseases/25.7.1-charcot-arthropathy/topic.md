@@ -429,3 +429,31 @@ mindmap
    C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Charcot arthropathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Charcot arthropathy?
+
+  - **A.** Bone Scan
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Bone Scan
+  >
+  > *Source:* Gold standard early** — **bone marrow oedema** (Stage 0), soft tissue oedema, joint destruction |
+| **Bone Scan** | Increased uptake (all stages) — sensitive not specific |
+| **Inflammatory Markers** 
+
+**Q2.** What is the most appropriate first-line therapy for Charcot arthropathy?
+
+  - **A.** Bisphosphonates + Controversial
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Bisphosphonates + Controversial
+  >
+  > *Source:* **Bisphosphonates**   **Controversial** — may reduce bone turnover; short course (3-6mo) in acute phase
+

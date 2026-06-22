@@ -266,3 +266,21 @@ mindmap
    C. A complication of Biliary Tract Disease rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Biliary Tract Disease
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Acute Cholecystitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Acute Cholecystitis?
+
+  - **A.** ellow Skin:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ellow Skin:
+  >
+  > *Source:* ery: **Grade I/II → Cholecystectomy ≤72h**
+- **C**FID: **Clinical + Lab + Imaging = Definite**
+- **Y**ellow Skin: **Not typical for simple cholecystitis (suggests cholangitis)**
+- **S**TG18 Grades: **
+

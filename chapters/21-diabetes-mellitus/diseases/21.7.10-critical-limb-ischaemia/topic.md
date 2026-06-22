@@ -167,3 +167,113 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[PAD screening (ABI)]], [[Diabetic foot disease/Amputation prevention]], [[Peripheral neuropathy], [[Diabetes in CKD and dialysis]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Critical limb ischaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Critical limb ischaemia?
+
+  - **A.** Symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Symptoms
+  >
+  > *Source:* **Symptoms**: Rest pain **>2 weeks** (typically nocturnal, dorsal foot, relieved by dependency) **OR** tissue loss (ulcer/gangrene)
+2
+
+**Q2.** What is the most appropriate first-line therapy for Critical limb ischaemia?
+
+  - **A.** Revascularisation = primary therapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Revascularisation = primary therapy
+  >
+  > *Source:* **Revascularisation = primary therapy** (endovascular first for most)
+---
+
+> Auto-generated study sections for "Peripheral arterial disease (PAD)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (30 generated)
+
+- Q: What is Non-reconstructable disease (no target vessel) of Peripheral arterial disease (PAD)?
+  A: Most distal viable level
+- Q: What is Life-threatening sepsis (wet gangrene, necrotising) of Peripheral arterial disease (PAD)?
+  A: Guillotine (emergency) → definitive later
+- Q: What is Failed revascularisation (persistent rest pain/tissue loss) of Peripheral arterial disease (PAD)?
+  A: Definitive level per perfusion
+- Q: What is Non-ambulatory / non-reconstructable of Peripheral arterial disease (PAD)?
+  A: AKA (if popliteal disease) / BKA (if tibial disease)
+- Q: What is the definition of Peripheral arterial disease (PAD)?
+  A: Rest pain >2w + tissue loss + haemodynamic evidence (ABI <0.4/0.5 in DM)
+- Q: What is Rutherford CLI of Peripheral arterial disease (PAD)?
+  A: 4 (rest pain), 5 (minor tissue loss), 6 (major tissue loss)
+- Q: What is Fontaine CLI of Peripheral arterial disease (PAD)?
+  A: III (rest pain), IV (ulcer/gangrene)
+- Q: What is WIfI of Peripheral arterial disease (PAD)?
+  A: Wound + Ischaemia + foot Infection → amputation risk (Stage 1–4)
+- Q: What is Diabetes ABI threshold of Peripheral arterial disease (PAD)?
+  A: <0.50 (vs 0.40 non-diabetes) due to calcification
+- Q: What is Toe pressure of Peripheral arterial disease (PAD)?
+  A: <30–40 mmHg diagnostic
+- Q: What is Revascularisation of Peripheral arterial disease (PAD)?
+  A: Endovascular first (TASC A/B); modern data supports endo for C/D too
+- Q: What is DAPT post-endo of Peripheral arterial disease (PAD)?
+  A: Aspirin + clopidogrel (1–3 months)
+- Q: What is Rivaroxaban 2.5mg BD + aspirin of Peripheral arterial disease (PAD)?
+  A: VOYAGER PAD: post-revascularisation CLI
+- Q: What is BKA vs AKA of Peripheral arterial disease (PAD)?
+  A: BKA preferred if popliteal flow adequate
+- Q: What is 1-year amputation CLI of Peripheral arterial disease (PAD)?
+  A: 25–40% without revascularisation
+- Q: What is Non-reconstructable disease (no target vessel) of Peripheral arterial disease (PAD)?
+  A: Most distal viable level
+- Q: What is Life-threatening sepsis (wet gangrene, necrotising) of Peripheral arterial disease (PAD)?
+  A: Guillotine (emergency) → definitive later
+- Q: What is Failed revascularisation (persistent rest pain/tissue loss) of Peripheral arterial disease (PAD)?
+  A: Definitive level per perfusion
+- Q: What is Non-ambulatory / non-reconstructable of Peripheral arterial disease (PAD)?
+  A: AKA (if popliteal disease) / BKA (if tibial disease)
+- Q: What is the definition of Peripheral arterial disease (PAD)?
+  A: Rest pain >2w + tissue loss + haemodynamic evidence (ABI <0.4/0.5 in DM)
+- Q: What is Rutherford CLI of Peripheral arterial disease (PAD)?
+  A: 4 (rest pain), 5 (minor tissue loss), 6 (major tissue loss)
+- Q: What is Fontaine CLI of Peripheral arterial disease (PAD)?
+  A: III (rest pain), IV (ulcer/gangrene)
+- Q: What is WIfI of Peripheral arterial disease (PAD)?
+  A: Wound + Ischaemia + foot Infection → amputation risk (Stage 1–4)
+- Q: What is Diabetes ABI threshold of Peripheral arterial disease (PAD)?
+  A: <0.50 (vs 0.40 non-diabetes) due to calcification
+- Q: What is Toe pressure of Peripheral arterial disease (PAD)?
+  A: <30–40 mmHg diagnostic
+- Q: What is Revascularisation of Peripheral arterial disease (PAD)?
+  A: Endovascular first (TASC A/B); modern data supports endo for C/D too
+- Q: What is DAPT post-endo of Peripheral arterial disease (PAD)?
+  A: Aspirin + clopidogrel (1–3 months)
+- Q: What is Rivaroxaban 2.5mg BD + aspirin of Peripheral arterial disease (PAD)?
+  A: VOYAGER PAD: post-revascularisation CLI
+- Q: What is BKA vs AKA of Peripheral arterial disease (PAD)?
+  A: BKA preferred if popliteal flow adequate
+- Q: What is 1-year amputation CLI of Peripheral arterial disease (PAD)?
+  A: 25–40% without revascularisation
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Peripheral arterial disease (PAD)?**
+   A. **CLI = rest pain >2 weeks + tissue loss (ulcer/gangrene) + objective arterial disease; Rutherford 4–6 / Fontaine III–IV; amputation risk 25–40% at 1 year revascularisation; urgent vascular MDT; WIfI cl**
+   B. An unrelated condition not matching the clinical picture of Peripheral arterial disease (PAD)
+   C. A complication seen late in the disease course of Peripheral arterial disease (PAD)
+   D. A condition that mimics Peripheral arterial disease (PAD) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Peripheral arterial disease (PAD) presents with: Category — Clinical Picture; 1 — Mild claudication; 2 — Moderate claudication. What is the most likely diagnosis?
+   A. **Peripheral arterial disease (PAD)**
+   B. A condition that mimics Peripheral arterial disease (PAD) but is not the same entity
+   C. A complication of Peripheral arterial disease (PAD) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Peripheral arterial disease (PAD)
+

@@ -535,3 +535,31 @@ mindmap
 **Heading Hub:** [[04_Demyelinating_Diseases/Demyelinating Hub]]
 **Topic-Group Hub:** [[04_Demyelinating_Diseases/Demyelinating MOC]]
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Multiple Sclerosis (McDonald, DMTs)*
+
+**Q1.** Which of the following features is most specific or characteristic of Multiple Sclerosis (McDonald, DMTs)?
+
+  - **A.** CSF
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CSF
+  >
+  > *Source:* uspected MS | Ovoid periventricular, juxtacortical, infratentorial, cord T2 lesions; Gd+ active |
+| **CSF (oligoclonal bands)** | Atypical presentation, PPMS, exclude mimics | OCB unmatched in CSF (95
+
+**Q2.** What is the most appropriate first-line therapy for Multiple Sclerosis (McDonald, DMTs)?
+
+  - **A.** Modern trend: + Early high-efficacy therapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Modern trend: + Early high-efficacy therapy
+  >
+  > *Source:* **Modern trend:** **Early high-efficacy therapy** (reduces long-term disability; supported by DELIVER-MS, TREAT-MS)
+

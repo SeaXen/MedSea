@@ -378,3 +378,21 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 13: Austere Medicine — Water Pollution & Waterborne Diseases*
+
+**Q1.** Which of the following features is most specific or characteristic of Water Pollution & Waterborne Diseases?
+
+  - **A.** Pesticides
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Pesticides
+  >
+  > *Source:* mg/L (NO2-)** |
+| **Fluoride** | Geogenic, Fluoridation | Dental/Skeletal Fluorosis | 1.5 mg/L |
+| **Pesticides** (Organophosphates, Organochlorines, Carbamates, Pyrethroids) | Agriculture, Vector Con
+

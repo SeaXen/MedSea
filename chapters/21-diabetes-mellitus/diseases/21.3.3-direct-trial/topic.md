@@ -128,3 +128,58 @@ By the end of this note you should be able to:
 - **A**dherence: key predictor
 - **L**ifestyle: maintenance phase crucial
 - **W**eight loss: ≥15kg -> 86% remission**</think>
+---
+
+> Auto-generated study sections for "Type 2 diabetes remission" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (16 generated)
+
+- Q: What is Design of Type 2 diabetes remission?
+  A: Cluster RCT; 306 participants; 24 general practices (Scotland/Tyneside)
+- Q: What is Population of Type 2 diabetes remission?
+  A: T2DM <6 years, age 20-65, BMI 27-45, not on insulin
+- Q: What is Intervention of Type 2 diabetes remission?
+  A: Low-calorie diet (825-853 kcal/day) 12-20 weeks -> food reintroduction -> maintenance
+- Q: What is Design of Type 2 diabetes remission?
+  A: Cluster RCT; 306 participants; 24 general practices (Scotland/Tyneside)
+- Q: What is Population of Type 2 diabetes remission?
+  A: T2DM <6 years, age 20-65, BMI 27-45, not on insulin
+- Q: What is Intervention of Type 2 diabetes remission?
+  A: Low-calorie diet (825-853 kcal/day) 12-20 weeks -> food reintroduction -> maintenance
+- Q: What is HbA1c of Type 2 diabetes remission?
+  A: <48 mmol/mol (6.5%)
+- Q: What is Medications of Type 2 diabetes remission?
+  A: Off ALL glucose-lowering meds ≥3 months
+- Q: What is Sustained of Type 2 diabetes remission?
+  A: At 12 and 24 months
+- Q: What is HbA1c of Type 2 diabetes remission?
+  A: <48 mmol/mol (6.5%)
+- Q: What is Medications of Type 2 diabetes remission?
+  A: Off ALL glucose-lowering meds ≥3 months
+- Q: What is Remission rate of Type 2 diabetes remission?
+  A: 46% at 12mo; 36% at 24mo; 23% at 5y
+- Q: What is the definition of Type 2 diabetes remission?
+  A: HbA1c <48mmol/mol off meds ≥3 months
+- Q: What is Weight loss of Type 2 diabetes remission?
+  A: ≥15kg -> 86% remission; ≥10kg -> 57%
+- Q: What is Duration of Type 2 diabetes remission?
+  A: T2DM <6 years; BMI 27-45; not on insulin
+- Q: What is Intervention of Type 2 diabetes remission?
+  A: LCD 825-853 kcal 12-20wk -> reintroduction -> maintenance
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes remission?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes remission
+   C. A complication seen late in the disease course of Type 2 diabetes remission
+   D. A condition that mimics Type 2 diabetes remission but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes remission presents with: Design — Cluster RCT; 306 participants; 24 general practices (Scotland/Tyneside); Population — T2DM <6 years, age 20-65, BMI 27-45, not on insulin; Intervention — Low-calorie diet (825-853 kcal/day) 12-20 weeks -> food reintroduction -> maintenance. What is the most likely diagnosis?
+   A. **Type 2 diabetes remission**
+   B. A condition that mimics Type 2 diabetes remission but is not the same entity
+   C. A complication of Type 2 diabetes remission rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes remission
+

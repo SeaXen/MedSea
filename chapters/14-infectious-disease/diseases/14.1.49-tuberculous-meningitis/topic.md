@@ -569,3 +569,33 @@ flowchart TD
 10. **B** — Rifampicin 10mg/kg (high dose) used in TBM to compensate for poor CSF penetration.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Tuberculous Meningitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Tuberculous Meningitis?
+
+  - **A.** CSF GeneXpert MTB/RIF Ultra
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CSF GeneXpert MTB/RIF Ultra
+  >
+  > *Source:* (MCA territory, basal ganglia), **SIADH**, hyponatraemia |
+| Test | Utility |
+|------|---------|
+| **CSF GeneXpert MTB/RIF Ultra** | **Rapid (2h), sensitivity 50–80%, specificity >98%**; detects RIF r
+
+**Q2.** What is the most appropriate first-line therapy for Tuberculous Meningitis?
+
+  - **A.** Ethambutol essential
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Ethambutol essential
+  >
+  > *Source:* **Ethambutol essential** in intensive phase (good CSF penetration).
+

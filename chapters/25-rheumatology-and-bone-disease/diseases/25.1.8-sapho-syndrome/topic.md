@@ -569,3 +569,18 @@ mindmap
    C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — SAPHO syndrome*
+
+**Q1.** What is the most appropriate first-line therapy for SAPHO syndrome?
+
+  - **A.** NSAIDs + active in
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — NSAIDs + active in
+  >
+  > *Source:* **NSAIDs**   First-line; high dose; **active in 60-70%** initially
+

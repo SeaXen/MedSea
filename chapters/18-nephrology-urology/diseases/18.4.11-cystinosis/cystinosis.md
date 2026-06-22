@@ -456,3 +456,46 @@ mindmap
 **Transplant**: Curative for ESRD; **continue cysteamine** for extra-renal protection. No recurrence.  
 **Extra-renal**: Hypothyroidism, diabetes, myopathy, CNS, male infertility — monitor annually.  
 **Exam focus**: Infantile triad, leukocyte cystine assay, slit-lamp, cysteamine (oral + eye drops), three forms, transplant + continue cysteamine, extra-renal monitoring.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — Cystinosis*
+
+**Q1.** Which of the following is characterised by the clinical triad: Fanconi, rickets, photophobia?
+
+  - **A.** Cystinosis
+  - **B.** A related condition in the same clinical area
+  - **C.** A common mimicker with overlapping features
+  - **D.** A complication rather than the underlying disease
+
+  > **Answer: A** — Cystinosis
+  >
+  > *Source:* Classic infantile triad (Fanconi, rickets, photophobia)
+4
+
+**Q2.** Which of the following features is most specific or characteristic of Cystinosis?
+
+  - **A.** Leukocyte cystine = urinary cystine
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Leukocyte cystine = urinary cystine
+  >
+  > *Source:* bry** |
+| **Cystinosis = only children** | Late-onset presents in teens/adults with proteinuria |
+| **Leukocyte cystine = urinary cystine** | **Leukocyte cystine** = diagnostic; urinary cystine = scre
+
+**Q3.** What is the most appropriate first-line therapy for Cystinosis?
+
+  - **A.** Ophthalmic drops + Dissolves corneal crystals + Cysteamine
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Ophthalmic drops + Dissolves corneal crystals + Cysteamine
+  >
+  > *Source:* **Ophthalmic drops (0.55% / 0.1%)**   q1h waking hours   **Dissolves corneal crystals**, prevents photophobia  
+
+> **Cysteamine** enters lysosome → reacts with cystine → forms cysteine + cysteine-cyst
+

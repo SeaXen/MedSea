@@ -407,4 +407,33 @@ flowchart TD
 **Topic-Group Hub:** [[Demyelinating Diseases Hub]] / [[Multiple Sclerosis Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Relapsing-Remitting MS*
+
+**Q1.** Which of the following features is most specific or characteristic of Relapsing-Remitting MS?
+
+  - **A.** CSF
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CSF
+  >
+  > *Source:* l T2, +Gd)** | All suspected; myelopathy | Short-segment (<3 segments) T2 lesions; partial cord |
+| **CSF (OCB, IgG index)** | Atypical, PPMS workup | OCB unmatched in CSF (95%) |
+| **VEP** | Subclini
+
+**Q2.** What is the most appropriate first-line therapy for Relapsing-Remitting MS?
+
+  - **A.** Escalation:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Escalation:
+  >
+  > *Source:* **Escalation:** Start platform → switch to HE on breakthrough
+

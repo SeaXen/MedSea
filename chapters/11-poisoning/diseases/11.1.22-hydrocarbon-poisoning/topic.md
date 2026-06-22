@@ -514,3 +514,21 @@ Hydrocarbon poisoning = **aspiration pneumonitis** (main danger). **NEVER emesis
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Hydrocarbon Poisoning*
+
+**Q1.** What is the most appropriate first-line therapy for Hydrocarbon Poisoning?
+
+  - **A.** Airway + intubate if respiratory failure + Breathing
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Airway + intubate if respiratory failure + Breathing
+  >
+  > *Source:* Supportive Care (Mainstay)
+- **Airway**: protect if coughing, choking, altered mental status — **intubate if respiratory failure**
+- **Breathing**: **O₂**, **NIV/CPAP** for hypoxia, **mechanical venti
+

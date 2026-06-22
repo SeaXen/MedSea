@@ -160,3 +160,42 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Meglitinides]], [[Alpha-glucosidase inhibitors]], [[Heart failure in diabetes]], [[Frailty and individualised HbA1c targets]]
+---
+
+> Auto-generated study sections for "Oral glucose lowering agents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Oral glucose lowering agents?
+  A: Pioglitazone = PPAR-γ agonist; ↑ insulin sensitivity in adipose, muscle, liver; ↓ HbA1c 0.5–1.0%; weight gain 2–4kg, fluid retention, HF contraindicated, fracture risk (women), bladder cancer signal; renal safe (no dose adjustment); add-on if metformin/SU contraindicated; avoid HF, active bladder cancer, high fracture risk.
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: PPAR-γ agonist → ↑ insulin sensitivity (adipose, muscle, liver)
+- Q: What is HbA1c reduction of Oral glucose lowering agents?
+  A: −0.5 to −1.0%
+- Q: What is Weight gain of Oral glucose lowering agents?
+  A: +2 to +4kg (adipose + fluid)
+- Q: What is Fluid retention of Oral glucose lowering agents?
+  A: 3–5%; ankle oedema
+- Q: What is Oral glucose lowering agents indicated for?
+  A: ABSOLUTE — NYHA I–IV; ↑ HF hosp 2–3x
+- Q: What is Fracture risk of Oral glucose lowering agents?
+  A: ↑ 2x (women, distal limbs) — DEXA monitor
+- Q: What is Bladder cancer of Oral glucose lowering agents?
+  A: Signal (HR 1.2–1.5); avoid active/prior
+- Q: What is Renal of Oral glucose lowering agents?
+  A: No dose adjustment (hepatic metabolism)
+- Q: What is Durability of Oral glucose lowering agents?
+  A: Longest of oral agents (ADOPT: 4–5y)
+- Q: What is NICE position of Oral glucose lowering agents?
+  A: Add-on if SU contraindicated; avoid HF/fracture/bladder cancer
+- Q: What is Rosiglitazone of Oral glucose lowering agents?
+  A: Withdrawn EU/UK (CV risk)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Oral glucose lowering agents?**
+   A. **Pioglitazone = PPAR-γ agonist; ↑ insulin sensitivity in adipose, muscle, liver; ↓ HbA1c 0.5–1.0%; weight gain 2–4kg, fluid retention, HF contraindicated, fracture risk (women), bladder cancer signal; **
+   B. An unrelated condition not matching the clinical picture of Oral glucose lowering agents
+   C. A complication seen late in the disease course of Oral glucose lowering agents
+   D. A condition that mimics Oral glucose lowering agents but has a different underlying cause
+

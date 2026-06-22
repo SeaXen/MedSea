@@ -335,3 +335,21 @@ mindmap
    C. A complication of Hepatology in Special Situations rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hepatology in Special Situations
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Acute Fatty Liver of Pregnancy*
+
+**Q1.** Which of the following features is most specific or characteristic of Acute Fatty Liver of Pregnancy?
+
+  - **A.** Glucose
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Glucose
+  >
+  > *Source:* Parameter | Typical Finding | Significance |
+|----------|----------------|--------------|
+| **Glucose** | **<4 mmol/L** (hypoglycaemia) | **Hallmark** — impaired gluconeogenesis |
+| **Uric Acid** | **
+

@@ -100,3 +100,41 @@ Many conditions cause **ST elevation** without acute coronary occlusion. Accurat
 > - **Brugada Type 1** = coved ST in V1–V2 with negative T (diagnostic)
 > - **LV aneurysm** = persistent ST elevation post-MI, no dynamic change
 > - When in doubt, **echo** (WMA in vascular territory) or **coronary angio**
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — STEMI mimics LVH LBBB pericarditis Brugada early r*
+
+**Q1.** Which of the following is characterised by the clinical triad: hypotension, JVP, muffled heart sounds?
+
+  - **A.** STEMI mimics LVH LBBB pericarditis Brugada early r
+  - **B.** Stable angina
+  - **C.** Aortic dissection
+  - **D.** Pericarditis
+
+  > **Answer: A** — STEMI mimics LVH LBBB pericarditis Brugada early r
+  >
+  > *Source:* **Tamponade**: Beck's triad (hypotension, JVP, muffled heart sounds), pulsus paradoxus (>10 mmHg drop in SBP with inspiration), electrical alternans
+
+**Q2.** Which of the following features is most specific or characteristic of STEMI mimics LVH LBBB pericarditis Brugada early r?
+
+  - **A.** Pericarditis pain
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Pericarditis pain
+  >
+  > *Source:* **Pericarditis pain**: pleuritic, ↑lying, ↓leaning forward, **trapezius ridge radiation** (specific for pericardial)
+
+**Q3.** What is the most appropriate first-line therapy for STEMI mimics LVH LBBB pericarditis Brugada early r?
+
+  - **A.** NSAIDs + colchicine
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — NSAIDs + colchicine
+  >
+  > *Source:* **NSAIDs** (ibuprofen 600-800mg TDS, aspirin 750-1000mg TDS, indomethacin) + **colchicine 0.5mg BD** (1-3 months) for first episode and recurrence.
+

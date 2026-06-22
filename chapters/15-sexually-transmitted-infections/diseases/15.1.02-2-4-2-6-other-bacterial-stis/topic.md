@@ -424,3 +424,20 @@ mindmap
 
 **Last Updated:** 2026-06-15  
 **Next:** Build `3.2 HSV.md`, `3.3 HPV.md`, `3.4 Hepatitis B & C.md`, `3.5 Mpox.md`, `3.6 Other Viral STIs.md`
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 15b: STI — 2.4-2.6 Other Bacterial STIs*
+
+**Q1.** Which of the following features is most specific or characteristic of 2.4-2.6 Other Bacterial STIs?
+
+  - **A.** "M. genitalium = Just Another Ureaplasma"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "M. genitalium = Just Another Ureaplasma"
+  >
+  > *Source:* ainful Ulcers, Tender Lymphadenopathy, Recurrent**; **Chancroid = Single/Phase, No Recurrence** |
+| **"M. genitalium = Just Another Ureaplasma"** | **NO.** **Distinct Pathogen**; **Proven NGU Cause**;
+

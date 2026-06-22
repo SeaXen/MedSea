@@ -381,3 +381,37 @@ mindmap
    C. A complication seen late in the disease course of Hematology
    D. A condition that mimics Hematology but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — DOAC Management*
+
+**Q1.** Which of the following features is most specific or characteristic of DOAC Management?
+
+  - **A.** "Idarucizumab = Dabi ONLY"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "Idarucizumab = Dabi ONLY"
+  >
+  > *Source:* px = BD, Dabi = BD, Edo = OD"** | Dosing Frequency |
+| **"Apx = Safest in CKD"** | Renal Safety |
+| **"Idarucizumab = Dabi ONLY"** | Reversal Specificity |
+| **"Andexanet = Xa Inhibitors (Riva/Apx/Edo
+
+**Q2.** Which landmark clinical trial provided evidence relevant to the management of DOAC Management (specifically: excess thromboembolic events with dabigatran)
+
+6)?
+
+  - **A.** RE-ALIGN trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — RE-ALIGN trial
+  >
+  > *Source:* **Can DOACs be used in mechanical heart valves?**
+   - **NO - CONTRAINDICATED** (RE-ALIGN trial showed excess thromboembolic events with dabigatran)
+
+6
+

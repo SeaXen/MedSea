@@ -279,3 +279,22 @@ A: Muscle relaxant; reduces hyperthermia/rigidity
 - [[Acute behavioural disturbance and rapid tranquilisation]]
 - [[Serotonin syndrome and catatonia]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Neuroleptic malignant syndrome (NMS)*
+
+**Q1.** Which of the following features is most specific or characteristic of Neuroleptic malignant syndrome (NMS)?
+
+  - **A.** Mnemonic for Neuroleptic malignant syndrome
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Neuroleptic malignant syndrome
+  >
+  > *Source:* **Mnemonic for Neuroleptic malignant syndrome (NMS)** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'ABCDEFGHI'** — MSE componen
+

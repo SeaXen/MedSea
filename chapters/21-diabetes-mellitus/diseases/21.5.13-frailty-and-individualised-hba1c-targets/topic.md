@@ -158,3 +158,96 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Hypoglycaemia risk in elderly]], [[Deintensification and deprescribing]], [[Care home diabetes management]], [[HbA1c targets (individualised)]]
+---
+
+> Auto-generated study sections for "Diabetes in the elderly" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (35 generated)
+
+- Q: What is the definition of Diabetes in the elderly?
+  A: # Frailty and Individualised HbA1c Targets in the Elderly
+- Q: What is Sulfonylureas of Diabetes in the elderly?
+  A: First to stop — high hypo risk, no CV benefit; taper over 2–4 weeks
+- Q: What is Insulin (basal) of Diabetes in the elderly?
+  A: Reduce by 10–20% weekly; switch to once-daily if BD; consider stopping if HbA1c <58
+- Q: What is Insulin (bolus) of Diabetes in the elderly?
+  A: Stop first; retain basal if needed
+- Q: What is Metformin of Diabetes in the elderly?
+  A: Continue if eGFR ≥30; reduce dose if eGFR 30–45; stop if <30
+- Q: What is DPP-4 inhibitors of Diabetes in the elderly?
+  A: Low hypo risk — can continue; reduce dose if eGFR <50
+- Q: What is SGLT2 inhibitors of Diabetes in the elderly?
+  A: Continue if eGFR ≥20 (CV/renal benefit); monitor volume status
+- Q: What is GLP-1 RA of Diabetes in the elderly?
+  A: Continue if tolerated; reduce if weight loss excessive
+- Q: What is Frailty categorisation of Diabetes in the elderly?
+  A: CFS 1–3 fit, 4 vulnerable, 5–7 frail, 8–9 severe/end-of-life
+- Q: What is HbA1c targets by frailty of Diabetes in the elderly?
+  A: Fit <53; Vulnerable <58; Frail <64; End-of-life <75 mmol/mol
+- Q: What is Avoid HbA1c <48 in frail of Diabetes in the elderly?
+  A: ↑ Mortality, falls, cognitive decline
+- Q: What is Deintensify first of Diabetes in the elderly?
+  A: Sulfonylureas (highest hypo risk, no CV benefit)
+- Q: What is Insulin reduction of Diabetes in the elderly?
+  A: 10–20% weekly; stop bolus first
+- Q: What is Cognitive impairment of Diabetes in the elderly?
+  A: Simplify regimen; avoid bolus insulin; CGM with carer alerts
+- Q: What is Care homes of Diabetes in the elderly?
+  A: Individual targets; avoid sliding scale; 6-monthly med review
+- Q: What is End-of-life of Diabetes in the elderly?
+  A: Comfort targets 8–15 mmol/L; basal insulin only if needed
+- Q: What is Steroids + diabetes of Diabetes in the elderly?
+  A: Basal insulin + QDS correction; anticipate hyperglycaemia
+- Q: What is SGLT2i/GLP-1 RA in elderly of Diabetes in the elderly?
+  A: Continue if eGFR allows — CV/renal benefit outweighs risk
+- Q: What is Sulfonylureas of Diabetes in the elderly?
+  A: First to stop — high hypo risk, no CV benefit; taper over 2–4 weeks
+- Q: What is Insulin (basal) of Diabetes in the elderly?
+  A: Reduce by 10–20% weekly; switch to once-daily if BD; consider stopping if HbA1c <58
+- Q: What is Insulin (bolus) of Diabetes in the elderly?
+  A: Stop first; retain basal if needed
+- Q: What is Metformin of Diabetes in the elderly?
+  A: Continue if eGFR ≥30; reduce dose if eGFR 30–45; stop if <30
+- Q: What is DPP-4 inhibitors of Diabetes in the elderly?
+  A: Low hypo risk — can continue; reduce dose if eGFR <50
+- Q: What is SGLT2 inhibitors of Diabetes in the elderly?
+  A: Continue if eGFR ≥20 (CV/renal benefit); monitor volume status
+- Q: What is GLP-1 RA of Diabetes in the elderly?
+  A: Continue if tolerated; reduce if weight loss excessive
+- Q: What is Frailty categorisation of Diabetes in the elderly?
+  A: CFS 1–3 fit, 4 vulnerable, 5–7 frail, 8–9 severe/end-of-life
+- Q: What is HbA1c targets by frailty of Diabetes in the elderly?
+  A: Fit <53; Vulnerable <58; Frail <64; End-of-life <75 mmol/mol
+- Q: What is Avoid HbA1c <48 in frail of Diabetes in the elderly?
+  A: ↑ Mortality, falls, cognitive decline
+- Q: What is Deintensify first of Diabetes in the elderly?
+  A: Sulfonylureas (highest hypo risk, no CV benefit)
+- Q: What is Insulin reduction of Diabetes in the elderly?
+  A: 10–20% weekly; stop bolus first
+- Q: What is Cognitive impairment of Diabetes in the elderly?
+  A: Simplify regimen; avoid bolus insulin; CGM with carer alerts
+- Q: What is Care homes of Diabetes in the elderly?
+  A: Individual targets; avoid sliding scale; 6-monthly med review
+- Q: What is End-of-life of Diabetes in the elderly?
+  A: Comfort targets 8–15 mmol/L; basal insulin only if needed
+- Q: What is Steroids + diabetes of Diabetes in the elderly?
+  A: Basal insulin + QDS correction; anticipate hyperglycaemia
+- Q: What is SGLT2i/GLP-1 RA in elderly of Diabetes in the elderly?
+  A: Continue if eGFR allows — CV/renal benefit outweighs risk
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in the elderly?**
+   A. **# Frailty and Individualised HbA1c Targets in the Elderly**
+   B. An unrelated condition not matching the clinical picture of Diabetes in the elderly
+   C. A complication seen late in the disease course of Diabetes in the elderly
+   D. A condition that mimics Diabetes in the elderly but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in the elderly presents with: Category — CFS Score; Vulnerable / Mild frailty — 4; Frail / Moderate-severe — 5–7. What is the most likely diagnosis?
+   A. **Diabetes in the elderly**
+   B. A condition that mimics Diabetes in the elderly but is not the same entity
+   C. A complication of Diabetes in the elderly rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in the elderly
+

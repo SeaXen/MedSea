@@ -344,6 +344,18 @@ F --> G[Evaluate underlying cause]
 
 ## 24. Answer Key with Explanations
 
+## PasTest Scenario SBAs (Clinical Vignettes)
 
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 22: Gastroenterology — Food bolus obstruction and acute impaction*
 
+**Q1.** What is the most appropriate first-line therapy for Food bolus obstruction and acute impaction?
+
+  - **A.** Do not give oral intake to “test” passage in complete obstruction
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Do not give oral intake to “test” passage in complete obstruction
+  >
+  > *Source:* Do not give oral intake to “test” passage in complete obstruction.
 

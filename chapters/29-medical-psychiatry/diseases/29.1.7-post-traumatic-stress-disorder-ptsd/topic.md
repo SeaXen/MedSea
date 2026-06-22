@@ -278,3 +278,20 @@ A: For trauma-related nightmares (off-label)
 
 - [[../Anxiety and Stress-Related Disorders|Anxiety and Stress-Related Disorders]] (heading hub)
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Post-traumatic stress disorder (PTSD)*
+
+**Q1.** Which of the following features is most specific or characteristic of Post-traumatic stress disorder (PTSD)?
+
+  - **A.** Mnemonic for Post-traumatic stress disorder
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Post-traumatic stress disorder
+  >
+  > *Source:* **Mnemonic for Post-traumatic stress disorder (PTSD)** — see key points in Core Clinical Content
+- **'SIG E CAPS'** for depression criteria: Sleep, Interest, Guilt, Energy, Concentration, Appetite, Ps
+

@@ -883,3 +883,45 @@ Bullous pemphigoid is the most common autoimmune subepidermal blistering disease
 **Chapter MOC:** [[Dermatology MOC]]  
 **Drug Reference:** [[../00_Index/Dermatology Drug Reference]]  
 **Related Topics:** [[Pemphigus Vulgaris]], [[Linear IgA Disease]], [[Epidermolysis Bullosa Acquisita]], [[Mucous Membrane Pemphigoid]], [[Drug-Induced Bullous Disorders]], [[Dermatitis Herpetiformis]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 26: Dermatology — Bullous Pemphigoid*
+
+**Q1.** Which of the following features is most specific or characteristic of Bullous Pemphigoid?
+
+  - **A.** Age:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Age:
+  >
+  > *Source:* ---
+### History
+- **Pruritus:** Often precedes bullae by weeks-months (prodromal phase)
+- **Age:** >70 years typical
+- **Drug history:** Review for DPP-4 inhibitors, furosemide, penicillamine, biologi
+
+**Q2.** Which landmark clinical trial provided evidence relevant to the management of Bullous Pemphigoid (specifically: doxycycline non-inferior to prednisolone with fewer severe AEs)?
+
+  - **A.** BLISTER trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — BLISTER trial
+  >
+  > *Source:* BLISTER trial showed doxycycline non-inferior to prednisolone with fewer severe AEs
+
+**Q3.** What is the most appropriate first-line therapy for Bullous Pemphigoid?
+
+  - **A.** Potent/Superpotent TCS
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Potent/Superpotent TCS
+  >
+  > *Source:* **Potent/Superpotent TCS** (Clobetasol 0.05%, Betamethasone dipropionate 0.05%)   Whole body daily (up to 30-40g/day)   4-8 weeks, then taper   Skin atrophy, HPA axis (rare with short-term)
+

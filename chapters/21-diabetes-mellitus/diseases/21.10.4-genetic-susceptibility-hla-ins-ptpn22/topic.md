@@ -206,3 +206,44 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Type 1 diabetes pathogenesis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Type 1 diabetes pathogenesis?
+  A: By the end of this note you should be able to:
+- Q: What is Heritability of Type 1 diabetes pathogenesis?
+  A: 40-50% (concordance: MZ twins 30-50%, DZ twins 6-10%)
+- Q: What is HLA Contribution of Type 1 diabetes pathogenesis?
+  A: ~40% of familial risk
+- Q: What is Non-HLA Loci of Type 1 diabetes pathogenesis?
+  A: 50+ identified (GWAS); each small effect (OR 1.1-1.3)
+- Q: What is HLA of Type 1 diabetes pathogenesis?
+  A: DR3/DR4-DQ2/DQ8 = 40-50% risk; DR3/DR4 het = highest; DR15-DQ6 = protective
+- Q: What is Non-HLA of Type 1 diabetes pathogenesis?
+  A: INS VNTR, PTPN22, CTLA4, IL2RA, IFIH1; 50+ loci total
+- Q: What is Heritability of Type 1 diabetes pathogenesis?
+  A: 40-50%; MZ twin concordance 30-50%
+- Q: What is Recurrence risk of Type 1 diabetes pathogenesis?
+  A: Sibling 5%; Offspring: father 3%, mother 1%
+- Q: What is PRS of Type 1 diabetes pathogenesis?
+  A: Research only; not clinical
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 1 diabetes pathogenesis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 1 diabetes pathogenesis
+   C. A complication seen late in the disease course of Type 1 diabetes pathogenesis
+   D. A condition that mimics Type 1 diabetes pathogenesis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 1 diabetes pathogenesis presents with: Heritability — 40-50% (concordance: MZ twins 30-50%, DZ twins 6-10%); HLA Contribution — ~40% of familial risk; Non-HLA Loci — 50+ identified (GWAS); each small effect (OR 1.1-1.3). What is the most likely diagnosis?
+   A. **Type 1 diabetes pathogenesis**
+   B. A condition that mimics Type 1 diabetes pathogenesis but is not the same entity
+   C. A complication of Type 1 diabetes pathogenesis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 1 diabetes pathogenesis
+

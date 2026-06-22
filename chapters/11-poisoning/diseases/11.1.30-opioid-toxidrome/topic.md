@@ -578,3 +578,48 @@ Opioid toxidrome = µ agonism → miosis + respiratory depression + coma. Naloxo
 8. **B** - Max naloxone 10mg. If no response → RECONSIDER DIAGNOSIS. Not opioid, or mixed overdose with dominant non-opioid component.
 9. **B** - Precipitated withdrawal: agitation, tachycardia, hypertension, GI symptoms, piloerection. Supportive + clonidine. Do NOT re-dose opioid. Prevention: titrated low-dose naloxone.
 10. **B** - Mixed OD common. Naloxone reverses ONLY opioid component. Benzo/alcohol respiratory depression persists. Supportive ventilation, consider flumazenil ONLY if pure benzo (no TCA, seizure risk).
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Opioid Toxidrome*
+
+**Q1.** Which of the following is characterised by the clinical triad: miosis, resp depression, coma?
+
+  - **A.** Opioid Toxidrome
+  - **B.** A related condition in the same clinical area
+  - **C.** A common mimicker with overlapping features
+  - **D.** A complication rather than the underlying disease
+
+  > **Answer: A** — Opioid Toxidrome
+  >
+  > *Source:* completed
+- [ ] Day 30 revision completed
+## Must Know / Should Know / Nice to Know
+### Must Know
+- Classic triad (miosis, resp depression, coma)
+- Naloxone titration (0.04mg start, RR>10 target)
+- Ob
+
+**Q2.** Which of the following features is most specific or characteristic of Opioid Toxidrome?
+
+  - **A.** Miosis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Miosis
+  >
+  > *Source:* **Miosis** (pinpoint pupils) — **hallmark**, bilateral (except meperidine, diphenoxylate, massive overdose with hypoxic brain injury → fixed dilated)
+2
+
+**Q3.** What is the most appropriate first-line therapy for Opioid Toxidrome?
+
+  - **A.** Dose + Start LOW, go SLOW
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Dose + Start LOW, go SLOW
+  >
+  > *Source:* **Dose**: **Start LOW, go SLOW**
+

@@ -1066,3 +1066,19 @@ E. Bell palsy
 
 ## Key Take-Home Message
 Idiopathic Parkinson disease is a **clinical diagnosis** based on **bradykinesia with rest tremor/rigidity**, usually beginning **asymmetrically**, caused by **nigrostriatal dopamine loss** with **Lewy body pathology**, and managed using **exercise/MDT care plus dopaminergic therapy**, while always watching for **fluctuations, dyskinesias, psychosis, falls, dysphagia, autonomic dysfunction, and red flags suggesting atypical parkinsonism**.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Idiopathic Parkinson disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Idiopathic Parkinson disease?
+
+  - **A.** , and managed using
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — , and managed using
+  >
+  > *Source:* y beginning **asymmetrically**, caused by **nigrostriatal dopamine loss** with **Lewy body pathology**, and managed using **exercise/MDT care plus dopaminergic therapy**, while always watching for **f
+

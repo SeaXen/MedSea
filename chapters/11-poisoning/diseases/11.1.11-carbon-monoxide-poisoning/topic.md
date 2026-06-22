@@ -535,3 +535,33 @@ CO poisoning = COHb (200x affinity) + cytochrome oxidase inhibition → tissue h
 8. **B** - If HBO unavailable: 100% O₂ NRB for minimum 6-12h (or until COHb < 10% + asymptomatic). Monitor for DNS. 100% O₂ still effective (t½ 30-90min).
 9. **B** - Nitrites (for CN⁻) oxidize Hb → methemoglobinemia. Monitor metHb if using nitrite/thiosulfate. Hydroxocobalamin preferred (no metHb). 100% O₂ and HBO do not cause metHb.
 10. **B** - Discharge: COHb < 10% AND asymptomatic AND neuro intact AND no cardiac ischemia AND psych safe (if DSH). Warn re: DNS (2-40 days). Follow-up neuro.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Carbon Monoxide Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Carbon Monoxide Poisoning?
+
+  - **A.** HBO for all CO poisoning
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — HBO for all CO poisoning
+  >
+  > *Source:* * → FALSE (reads COHb as oxyHb)
+- **COHb normal on O₂ = no poisoning** → FALSE (half-life 30 min)
+- **HBO for all CO poisoning** → NO, specific indications only
+- **COHb > 25% = mandatory HBO** → guid
+
+**Q2.** What is the most appropriate first-line therapy for Carbon Monoxide Poisoning?
+
+  - **A.** Treat seizures
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat seizures
+  >
+  > *Source:* **Treat seizures** (benzodiazepines)
+

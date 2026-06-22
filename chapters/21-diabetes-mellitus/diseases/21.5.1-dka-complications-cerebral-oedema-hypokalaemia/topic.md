@@ -271,3 +271,47 @@ mindmap
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetic ketoacidosis (DKA)]], [[Euglycaemic DKA (SGLT2 inhibitor associated)]], [[Hyperosmolar hyperglycaemic state (HHS)]], [[Severe hypoglycaemia]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — dka-complications-cerebral-oedema,-hypokalaemia*
+
+**Q1.** What is the most appropriate first-line therapy for dka-complications-cerebral-oedema,-hypokalaemia?
+
+  - **A.** Prevention
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Prevention
+  >
+  > *Source:* Hypertonic saline**   3% NaCl 5ml/kg if mannitol contraindicated  
+
+> **Prevention**: Osmolar decline <3 mOsm/kg/hr; avoid bicarbonate unless pH<7.0; careful fluid rate in children
+
+### Hypokalaemia
+---
+
+> Auto-generated study sections for "Diabetic ketoacidosis (DKA)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Diabetic ketoacidosis (DKA)?
+  A: Cerebral oedema = rare (0.5–1%) but devastating (20–25% mortality, neurological sequelae); children > adults, new-onset, severe acidosis, rapid fluid/insulin correction; hypokalaemia = lethal arrhythmia risk — intensive K+ replacement essential.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic ketoacidosis (DKA)?**
+   A. **Cerebral oedema = rare (0.5–1%) but devastating (20–25% mortality, neurological sequelae); children > adults, new-onset, severe acidosis, rapid fluid/insulin correction; hypokalaemia = lethal arrhythm**
+   B. An unrelated condition not matching the clinical picture of Diabetic ketoacidosis (DKA)
+   C. A complication seen late in the disease course of Diabetic ketoacidosis (DKA)
+   D. A condition that mimics Diabetic ketoacidosis (DKA) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic ketoacidosis (DKA) presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — dka-complications-cerebral-oedema,-hypokalaemia; Q1. What is the most appropriate first-line therapy for dka-complications-cerebral-oedema,-hypokalaemia?; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Diabetic ketoacidosis (DKA)**
+   B. A condition that mimics Diabetic ketoacidosis (DKA) but is not the same entity
+   C. A complication of Diabetic ketoacidosis (DKA) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic ketoacidosis (DKA)
+

@@ -216,3 +216,46 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Clinical presentation and screening" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Clinical presentation and screening?
+  A: By the end of this note you should be able to:
+- Q: What is Purpose of Clinical presentation and screening?
+  A: Detect asymptomatic T2DM and prediabetes for early intervention
+- Q: What is Undiagnosed T2DM of Clinical presentation and screening?
+  A: ~1M in UK; ~8.5M in US; screening reduces complications
+- Q: What is Cost-effectiveness of Clinical presentation and screening?
+  A: Screening high-risk adults cost-effective; universal screening debated
+- Q: What is ADA of Clinical presentation and screening?
+  A: Age >=35 OR BMI>=25+1 RF; HbA1c/FPG/OGTT; repeat 3y if normal
+- Q: What is NICE of Clinical presentation and screening?
+  A: Risk score -> if high risk: HbA1c (preferred) or FPG
+- Q: What is USPSTF of Clinical presentation and screening?
+  A: Age 35-70, BMI>=25; HbA1c/FPG/OGTT; repeat 3y
+- Q: What is Confirmatory rule of Clinical presentation and screening?
+  A: Asymptomatic: 2 abnormal tests (same test different day, or 2 different tests); Symptomatic + random>=11.1 = single test
+- Q: What is Children of Clinical presentation and screening?
+  A: BMI>=85th %ile + 2 RF; age>=10 or puberty
+- Q: What is HIV of Clinical presentation and screening?
+  A: Annual on ART
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Clinical presentation and screening?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Clinical presentation and screening
+   C. A complication seen late in the disease course of Clinical presentation and screening
+   D. A condition that mimics Clinical presentation and screening but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Clinical presentation and screening presents with: Purpose — Detect asymptomatic T2DM and prediabetes for early intervention; Undiagnosed T2DM — ~1M in UK; ~8.5M in US; screening reduces complications; Cost-effectiveness — Screening high-risk adults cost-effective; universal screening debated. What is the most likely diagnosis?
+   A. **Clinical presentation and screening**
+   B. A condition that mimics Clinical presentation and screening but is not the same entity
+   C. A complication of Clinical presentation and screening rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Clinical presentation and screening
+

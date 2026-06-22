@@ -288,3 +288,20 @@ A: Definitive treatment; mode based on cervical favourability and severity
 - [[../Hypertensive Disorders of Pregnancy|Hypertensive Disorders of Pregnancy]] (heading hub)
 - [[../Maternal Medicine MOC|Maternal Medicine MOC]]
 - [[../Davidson Chapter 32 - Maternal Medicine Hierarchy|Davidson Chapter 32 - Maternal Medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 30: Maternal Medicine — HELLP syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of HELLP syndrome?
+
+  - **A.** Mnemonic for HELLP syndrome
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for HELLP syndrome
+  >
+  > *Source:* **Mnemonic for HELLP syndrome** — see key points in Core Clinical Content
+- **'PRE-ECLAMPSIA' risk factors** — Previous PE, Renal disease, Extremes of age, Chronic HTN, Ethnicity, Antiphospholipid, nu
+

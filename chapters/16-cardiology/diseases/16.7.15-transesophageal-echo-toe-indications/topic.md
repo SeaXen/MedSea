@@ -65,3 +65,30 @@ TOE places the probe in the **oesophagus** (posterior to LA), giving high-resolu
 > - **TOE > TTE** for: LAA thrombus, prosthetic valve endocarditis, mitral valve repair planning, aortic dissection, PFO/ASD
 > - **LAA thrombus** view at 0° and 90°; **flow ≤0.4 m/s** predicts thrombus
 > - **AF cardioversion**: TOE-guided OR 3 weeks therapeutic anticoagulation before cardioversion
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Transesophageal echo TOE indications*
+
+**Q1.** Which of the following features is most specific or characteristic of Transesophageal echo TOE indications?
+
+  - **A.** Typical angina
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Typical angina
+  >
+  > *Source:* *Typical angina** (3): (1) substernal chest discomfort (pressure, heaviness, squeezing, tightness), (2) precipitated by exertion or emotional stress, (3) relieved by rest or nitrates within minutes. *
+
+**Q2.** What is the most appropriate first-line therapy for Transesophageal echo TOE indications?
+
+  - **A.** Revascularisation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Revascularisation
+  >
+  > *Source:* **Revascularisation** (PCI vs CABG): consider if (1) refractory symptoms despite GDMT, (2) high-risk anatomy (left main, 3-vessel, proximal LAD, SYNTAX score), (3) LV dysfunction with viable myocardiu
+

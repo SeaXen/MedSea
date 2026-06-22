@@ -156,3 +156,64 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Hybrid closed-loop (670G, 780G, CamAPS, Loop)]], [[Pump types (tethered, patch, closed-loop)]], [[Insulin analogues (rapid, long-acting, ultra-long)]], [[CGM-guided insulin adjustment]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Automated insulin delivery (AID) systems*
+
+**Q1.** Which of the following features is most specific or characteristic of Automated insulin delivery (AID) systems?
+
+  - **A.** Carb estimation error
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Carb estimation error
+  >
+  > *Source:* **Carb estimation error**: ±20–30% typical → incorrect bolus
+3
+---
+
+> Auto-generated study sections for "Insulin pump therapy (CSII)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Insulin pump therapy (CSII)?
+  A: # Automated Insulin Delivery (AID) Systems — Beyond Hybrid Closed-Loop
+- Q: What is HCL vs AHCL of Insulin pump therapy (CSII)?
+  A: HCL = basal only; AHCL = basal + auto-correction bolus
+- Q: What is Full closed-loop barrier of Insulin pump therapy (CSII)?
+  A: Insulin too slow (peak 60–90 min vs meal 30–60 min)
+- Q: What is Faster insulins of Insulin pump therapy (CSII)?
+  A: Fiasp / Lyumjev — onset 5–10 min, peak 30–45 min
+- Q: What is Bihormonal of Insulin pump therapy (CSII)?
+  A: Insulin + glucagon; glucagon stability main challenge (24–48h aqueous)
+- Q: What is iLet (Beta Bionics) of Insulin pump therapy (CSII)?
+  A: Dual-chamber pump; FDA approved insulin-only 2023; bihormonal in trials
+- Q: What is Dasiglucagon of Insulin pump therapy (CSII)?
+  A: Stable aqueous glucagon (Zealand) — Phase 3 for pump use
+- Q: What is IP insulin of Insulin pump therapy (CSII)?
+  A: Intraperitoneal → portal → hepatic first pass; physiological; research
+- Q: What is AID levels of Insulin pump therapy (CSII)?
+  A: 0=SMBG → 3=HCL → 4=AHCL → 5=Full CL → 6=Bihormonal
+- Q: What is CamAPS FX unique of Insulin pump therapy (CSII)?
+  A: App-based, works on multiple pumps, adaptive MPC
+- Q: What is DIY systems of Insulin pump therapy (CSII)?
+  A: Loop, AndroidAPS, OpenAPS — support safety, document off-label
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin pump therapy (CSII)?**
+   A. **# Automated Insulin Delivery (AID) Systems — Beyond Hybrid Closed-Loop**
+   B. An unrelated condition not matching the clinical picture of Insulin pump therapy (CSII)
+   C. A complication seen late in the disease course of Insulin pump therapy (CSII)
+   D. A condition that mimics Insulin pump therapy (CSII) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Insulin pump therapy (CSII) presents with: Patient — Current Best AID Option; T1DM, wants tubed pump, best automation — Medtronic 780G (auto-correction + meal detection); T1DM, wants predictive algorithm, Dexcom user — Tandem Control-IQ or Omnipod 5. What is the most likely diagnosis?
+   A. **Insulin pump therapy (CSII)**
+   B. A condition that mimics Insulin pump therapy (CSII) but is not the same entity
+   C. A complication of Insulin pump therapy (CSII) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Insulin pump therapy (CSII)
+

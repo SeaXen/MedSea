@@ -307,3 +307,33 @@ mindmap
    C. A complication of Inflammatory Arthritis rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Inflammatory Arthritis
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Undifferentiated spondyloarthritis*
+
+**Q1.** Which of the following features is most specific or characteristic of Undifferentiated spondyloarthritis?
+
+  - **A.** Extraskeletal
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Extraskeletal
+  >
+  > *Source:* tis, enthesitis | **Insufficient for PsA** (no psoriasis/nail/dactylitis), **ReA** (no trigger) |
+| **Extraskeletal** | Acute anterior uveitis, IBD features (subclinical), psoriasis (minimal) | **Insu
+
+**Q2.** What is the most appropriate first-line therapy for Undifferentiated spondyloarthritis?
+
+  - **A.** IBD Features + Anti-TNF if joint + gut + Treat-to-Target in USpA
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — IBD Features + Anti-TNF if joint + gut + Treat-to-Target in USpA
+  >
+  > *Source:* **IBD Features**   Gastroenterology referral; **Anti-TNF if joint + gut**  
+
+> [!important] **Treat-to-Target in USpA**
+> - **Target**: ASDAS <2.1 (low) or <1.3 (inactive) for axial; DAPSA/PASDAS for 
+

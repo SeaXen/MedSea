@@ -66,3 +66,20 @@ Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - 
    C. A complication seen late in the disease course of Rheumatology
    D. A condition that mimics Rheumatology but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Autoimmune Rheumatic Diseases*
+
+**Q1.** Which of the following features is most specific or characteristic of Autoimmune Rheumatic Diseases?
+
+  - **A.** SLE
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — SLE
+  >
+  > *Source:* lupus|Drug-induced lupus]] — full FCPS/MRCP note (added 2026-06-16)
+## FCPS/MRCP High-Yield Focus
+- **SLE**: 2019 EULAR/ACR criteria (ANA entry + weighted domains), anti-dsDNA/anti-Sm specific, lupus 
+

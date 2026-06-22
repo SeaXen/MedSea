@@ -360,3 +360,30 @@ mindmap
    C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Hepatopulmonary Syndrome & Portopulmonary Hypertension*
+
+**Q1.** Which of the following features is most specific or characteristic of Hepatopulmonary Syndrome & Portopulmonary Hypertension?
+
+  - **A.** Orthodeoxia vs Platypnoea
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Orthodeoxia vs Platypnoea
+  >
+  > *Source:* | **TIPS Contraindicated in BOTH**; HPS: worsens shunting; PoPH: worsens pulmonary hypertension |
+| **Orthodeoxia vs Platypnoea** | **Platypnoea**: Dyspnoea worse upright; **Orthodeoxia**: PaO₂ drops 
+
+**Q2.** What is the most appropriate first-line therapy for Hepatopulmonary Syndrome & Portopulmonary Hypertension?
+
+  - **A.** Liver Transplantation + Only curative treatment
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Liver Transplantation + Only curative treatment
+  >
+  > *Source:* **Liver Transplantation**   **Only curative treatment** — resolution of HPS in 80-90%
+

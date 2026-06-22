@@ -49,3 +49,19 @@ ECG (QRS, BBB, LVH), echo (LVEF, structural), coronary angio (if ischaemic), BNP
 ### Complications & Prognosis
 
 **Infection** (1-3%, endocarditis, generator pocket, lead infection — antibiotics, extraction, replacement). **Lead failure** (5-15% at 10y, conductor fracture, insulation break, lead noise, inappropriate shocks). **Generator depletion** (5-9y, replacement). **Inappropriate shocks** (5-20%, AF with rapid response, SVT, T-wave oversensing, lead fracture — painful, anxiety, ↑mortality — MADIT-RIT, Hinkle).
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Subcutaneous ICD S ICD*
+
+**Q1.** What is the most appropriate first-line therapy for Subcutaneous ICD S ICD?
+
+  - **A.** Implant technique
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Implant technique
+  >
+  > *Source:* **Implant technique**: left pre-pectoral, subclavian or axillary vein access, RV lead to apex or septum, atrial lead to RA appendage, CS lead for LV (CRT-D).
+

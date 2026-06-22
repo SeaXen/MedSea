@@ -157,3 +157,56 @@ By the end of this note you should be able to:
 - **O**nly insulin for CFRD
 - **M**alabsorption: enzymes + vitamins
 - **Y**es: insulin only for CFRD**</think>
+---
+
+> Auto-generated study sections for "Pancreatic diabetes (type 3c)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Pancreatic diabetes (type 3c)?
+  A: By the end of this note you should be able to:
+- Q: What is Age of Pancreatic diabetes (type 3c)?
+  A: Increases with age; 20% adolescents, 50% adults
+- Q: What is Screening of Pancreatic diabetes (type 3c)?
+  A: Annual OGTT from age 10
+- Q: What is the investigation of choice for Pancreatic diabetes (type 3c)?
+  A: OGTT (FBG>=7.0, 2h>=11.1) or HbA1c>=48 (controversial)
+- Q: What is Insulin of Pancreatic diabetes (type 3c)?
+  A: Only treatment (no oral agents)
+- Q: What is Age of Pancreatic diabetes (type 3c)?
+  A: Increases with age; 20% adolescents, 50% adults
+- Q: What is Screening of Pancreatic diabetes (type 3c)?
+  A: Annual OGTT from age 10
+- Q: What is the investigation of choice for Pancreatic diabetes (type 3c)?
+  A: OGTT (FBG>=7.0, 2h>=11.1) or HbA1c>=48 (controversial)
+- Q: What is Insulin of Pancreatic diabetes (type 3c)?
+  A: Only treatment (no oral agents)
+- Q: What is Exocrine insuf. of Pancreatic diabetes (type 3c)?
+  A: ~85% (pancreatic insufficiency)
+- Q: What is Total pancreatectomy of Pancreatic diabetes (type 3c)?
+  A: 100% DM; no glucagon = brittle; CSII essential
+- Q: What is CFRD of Pancreatic diabetes (type 3c)?
+  A: Annual OGTT from age 10; insulin only; enzymes essential
+- Q: What is Glucagon of Pancreatic diabetes (type 3c)?
+  A: Absent (total pancreatectomy); low (CFRD)
+- Q: What is Hypoglycaemia of Pancreatic diabetes (type 3c)?
+  A: Severe in total pancreatectomy (no glucagon)
+- Q: What is CFRD screening of Pancreatic diabetes (type 3c)?
+  A: Annual OGTT from age 10
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Pancreatic diabetes (type 3c)?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Pancreatic diabetes (type 3c)
+   C. A complication seen late in the disease course of Pancreatic diabetes (type 3c)
+   D. A condition that mimics Pancreatic diabetes (type 3c) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Pancreatic diabetes (type 3c) presents with: Feature — Post-pancreatectomy DM; Definition — Diabetes after pancreatectomy (total/partial); Incidence — Total pancreatectomy: 100%; Partial: 10-30%. What is the most likely diagnosis?
+   A. **Pancreatic diabetes (type 3c)**
+   B. A condition that mimics Pancreatic diabetes (type 3c) but is not the same entity
+   C. A complication of Pancreatic diabetes (type 3c) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Pancreatic diabetes (type 3c)
+

@@ -259,3 +259,22 @@ Mechanical support if refractory
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-13
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — Cardiogenic Shock*
+
+**Q1.** What is the most appropriate first-line therapy for Cardiogenic Shock?
+
+  - **A.** Avoid excess fluid + Inotropes + Vasopressors
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Avoid excess fluid + Inotropes + Vasopressors
+  >
+  > *Source:* - **Avoid excess fluid** — cautious 250 mL boluses only if clear hypovolaemia
+- **Inotropes**: Dobutamine or milrinone (if low output)
+- **Vasopressors**: Noradrenaline if hypotensive
+- **Revascularis
+

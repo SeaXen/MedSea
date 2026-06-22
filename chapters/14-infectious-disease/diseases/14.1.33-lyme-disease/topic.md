@@ -368,3 +368,34 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Lyme Disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Lyme Disease?
+
+  - **A.** IgM vs IgG Western Blot
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — IgM vs IgG Western Blot
+  >
+  > *Source:* burgdorferi, Self-Limited** |
+| **EM vs Cellulitis** | **EM = Expanding, Central Clearing, Non-Tender, No Heat/Purulence**; **Cellulitis = Spreading, Hot, Tender, Purulent** |
+| **IgM vs IgG Western B
+
+**Q2.** What is the most appropriate first-line therapy for Lyme Disease?
+
+  - **A.** Acrodermatitis Chronica Atrophicans + Doxycycline + Amoxicillin
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Acrodermatitis Chronica Atrophicans + Doxycycline + Amoxicillin
+  >
+  > *Source:* **Acrodermatitis Chronica Atrophicans**   **Doxycycline 100mg BD PO** / **Amoxicillin 500mg TDS**   **Ceftriaxone 2g IV OD**   **21-28 Days**  
+
+> [!warning] **Doxycycline Contraindicated**: **Pregnan
+

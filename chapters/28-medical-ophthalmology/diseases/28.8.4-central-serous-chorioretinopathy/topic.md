@@ -665,3 +665,29 @@ D. Optic neuritis
    C. A complication of 08_Retina_and_Vitreous rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as 08_Retina_and_Vitreous
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Central Serous Chorioretinopathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Central Serous Chorioretinopathy?
+
+  - **A.** "CSCR = Central Scotoma, Central Scotoma, Central Scotoma"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "CSCR = Central Scotoma, Central Scotoma, Central Scotoma"
+  >
+  > *Source:* **"CSCR = Central Scotoma, Central Scotoma, Central Scotoma"** (or "Smokestack on FFA, SRF on OCT, RPE leak, Resolve spontaneously") — key features
+
+**Q2.** What is the most appropriate first-line therapy for Central Serous Chorioretinopathy?
+
+  - **A.** Photodynamic therapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Photodynamic therapy
+  >
+  > *Source:* **Photodynamic therapy (PDT)** with verteporfin (half-fluence) — preferred for chronic CSCR with persistent SRF; reduces choroidal hyperpermeability
+

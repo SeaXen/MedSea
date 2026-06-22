@@ -125,3 +125,46 @@ By the end of this note you should be able to:
 - **R**ange: TIR/TBR/TAR/CV/GMI
 - **E**vidence: ATTD 2019/2023
 - **T**IR vs HbA1c: complementary, not replacement**</think>
+---
+
+> Auto-generated study sections for "Glycaemic targets" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Glycaemic targets?
+  A: By the end of this note you should be able to:
+- Q: What is TIR of Glycaemic targets?
+  A: Time in Range (70-180 mg/dL / 3.9-10.0 mmol/L)
+- Q: What is TBR of Glycaemic targets?
+  A: Time Below Range (<70 mg/dL / <3.9 mmol/L)
+- Q: What is TAR of Glycaemic targets?
+  A: Time Above Range (>180 mg/dL / >10.0 mmol/L)
+- Q: What is GMI of Glycaemic targets?
+  A: Glucose Management Indicator (estimates HbA1c from CGM mean)
+- Q: What is CGM (rtCGM/isCGM) of Glycaemic targets?
+  A: Primary TIR measurement (14-day wear minimum)
+- Q: What is AGP Report of Glycaemic targets?
+  A: Standardised visualisation (median, IQR, TIR, TBR, TAR, GMI, CV)
+- Q: What is CGM (rtCGM/isCGM) of Glycaemic targets?
+  A: Primary TIR measurement (14-day wear minimum)
+- Q: What is AGP Report of Glycaemic targets?
+  A: Standardised visualisation (median, IQR, TIR, TBR, TAR, GMI, CV)
+- Q: What is HbA1c of Glycaemic targets?
+  A: Complementary; GMI ≈ HbA1c
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Glycaemic targets?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Glycaemic targets
+   C. A complication seen late in the disease course of Glycaemic targets
+   D. A condition that mimics Glycaemic targets but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Glycaemic targets presents with: TIR — Time in Range (70-180 mg/dL / 3.9-10.0 mmol/L); TBR — Time Below Range (<70 mg/dL / <3.9 mmol/L); TAR — Time Above Range (>180 mg/dL / >10.0 mmol/L). What is the most likely diagnosis?
+   A. **Glycaemic targets**
+   B. A condition that mimics Glycaemic targets but is not the same entity
+   C. A complication of Glycaemic targets rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Glycaemic targets
+

@@ -554,3 +554,44 @@ mindmap
 **Heading Hub:** [[05_Movement_Disorders/Movement Disorders Hub]]
 **Topic-Group Hub:** [[05_Movement_Disorders/Movement Disorders MOC]]
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Parkinsons Disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Parkinsons Disease?
+
+  - **A.** DaTscan
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — DaTscan
+  >
+  > *Source:* e vascular, NPH, tumour, MSA (hot cross bun, putaminal atrophy in MSA-C) | Usually normal in PD |
+| **DaTscan (FP-CIT SPECT)** | Diagnostic uncertainty (tremor, young-onset, vs ET) | **↓ presynaptic d
+
+**Q2.** In the management of Parkinsons Disease, which of the following should be avoided or is contraindicated?
+
+  - **A.** MAOIs (avoid in selegiline)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — MAOIs (avoid in selegiline)
+  >
+  > *Source:* (more effective, requires WBC monitoring) |
+| **Depression** | **SSRIs (sertraline, citalopram)**; avoid MAOIs with selegiline; avoid TCAs (anticholinergic) |
+| **Constipation** | Macrogol, lactulose;
+
+**Q3.** What is the most appropriate first-line therapy for Parkinsons Disease?
+
+  - **A.** disease-modifying
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — disease-modifying
+  >
+  > *Source:* Use: early monotherapy or adjunct; mild symptomatic effect; possibly **disease-modifying** (?MAOB trial)
+

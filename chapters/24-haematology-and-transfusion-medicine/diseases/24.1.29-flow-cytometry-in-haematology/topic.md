@@ -406,3 +406,20 @@ mindmap
    C. A complication seen late in the disease course of Hematology
    D. A condition that mimics Hematology but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Flow Cytometry in Haematology*
+
+**Q1.** Which of the following features is most specific or characteristic of Flow Cytometry in Haematology?
+
+  - **A.** Dead Cells
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Dead Cells
+  >
+  > *Source:* uorescence** | High in monocytes, eosinophils | **Use BV fluorochromes**, **Longer wavelength** |
+| **Dead Cells** | Non-specific binding | **Viability Dye (7-AAD/PI/DAPI)** gate |
+| **Doublets** | Ce
+

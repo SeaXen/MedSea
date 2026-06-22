@@ -303,3 +303,26 @@ mindmap
 ---
 
 *Last Updated: 2025-06-17 | Based on Davidson 24e Ch 11 | FCPS/MRCP Focused*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 14: Infectious Disease / Toxoplasmosis**
+
+**Q1.** A patient is being evaluated for Toxoplasmosis. Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+
+**Q2.** A patient is diagnosed with Toxoplasmosis. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+

@@ -137,3 +137,89 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Distal symmetric polyneuropathy (DSPN)]], [[Autonomic neuropathy]], [[Neuropathic pain management]], [[Neuropathy screening (10g monofilament, vibration, ANNS)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Mononeuropathies and radiculoplexus neuropathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Mononeuropathies and radiculoplexus neuropathy?
+
+  - **A.** 4. Glycaemic control
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — 4. Glycaemic control
+  >
+  > *Source:* Physiotherapy** | **Quadriceps strengthening**, gait training, falls prevention |
+| **4. Glycaemic control** | Optimise HbA1c; no specific evidence for immunotherapy benefit, but standard |
+| **5
+---
+
+> Auto-generated study sections for "Diabetic neuropathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (23 generated)
+
+- Q: What is Other names of Diabetic neuropathy?
+  A: Proximal diabetic neuropathy, lumbosacral radiculoplexus neuropathy
+- Q: What is Demographics of Diabetic neuropathy?
+  A: Older T2DM (mean 60y); often recent diagnosis or poor control; weight loss
+- Q: What is Onset of Diabetic neuropathy?
+  A: Severe, asymmetric pain (hip, thigh, buttock) → weakness + wasting (quadriceps, glutei)
+- Q: What is Progression of Diabetic neuropathy?
+  A: Pain peaks at 4–12 weeks → weakness plateau → slow recovery (6–24 months)
+- Q: What is Signs of Diabetic neuropathy?
+  A: Quadriceps wasting, knee jerk reduced/absent, hip flexion weak, sensory loss anteromedial thigh
+- Q: What is CSF of Diabetic neuropathy?
+  A: Raised protein (often >1g/L), normal cells (albuminocytological dissociation)
+- Q: What is MRI of Diabetic neuropathy?
+  A: STIR/T2 hyperintensity in lumbosacral plexus; nerve root enhancement
+- Q: What is NCS/EMG of Diabetic neuropathy?
+  A: Active denervation (fibrillations) in L2–L4 myotomes; reduced recruitment
+- Q: What is the definition of Diabetic neuropathy?
+  A: ≥2 non-contiguous nerves affected sequentially or simultaneously
+- Q: What is In diabetes of Diabetic neuropathy?
+  A: Think systemic vasculitis (PAN, ANCA, cryoglobulinaemia, rheumatoid)
+- Q: What is Workup of Diabetic neuropathy?
+  A: ESR, CRP, ANCA, ANA, cryoglobulins, complement, hepatitis B/C, HIV, SPEP, urine Bence Jones
+- Q: What is Nerve biopsy of Diabetic neuropathy?
+  A: Vasculitic changes (necrotising inflammation, vessel wall destruction)
+- Q: How is Diabetic neuropathy managed?
+  A: Immunosuppression (steroids + cyclophosphamide/rituximab/azathioprine) per vasculitis protocol
+- Q: What is CN III palsy in diabetes of Diabetic neuropathy?
+  A: Pupil-sparing = microvascular ischaemia; pupil-involving = compressive (aneurysm)
+- Q: What is CN VI palsy of Diabetic neuropathy?
+  A: Horizontal diplopia, esotropia, no ptosis
+- Q: What is Carpal tunnel of Diabetic neuropathy?
+  A: Nocturnal paraesthesia thumb/index/middle; Phalen's +ve, Tinel's wrist
+- Q: What is Diabetic amyotrophy of Diabetic neuropathy?
+  A: Severe hip/thigh pain → quadriceps wasting/weakness; older T2DM; CSF protein ↑
+- Q: What is Amyotrophy CSF of Diabetic neuropathy?
+  A: Albuminocytological dissociation (protein >1g/L)
+- Q: How is Diabetic neuropathy managed?
+  A: Pain control + IVIG/steroids/PLEX (early); physio
+- Q: What is Mononeuropathy multiplex of Diabetic neuropathy?
+  A: Vasculitis until proven otherwise — full vasculitis screen
+- Q: What is Recovery CN III of Diabetic neuropathy?
+  A: 8–12 weeks; if persistent → re-image
+- Q: What is Femoral neuropathy of Diabetic neuropathy?
+  A: Quadriceps wasting, knee buckling; overlaps with amyotrophy
+- Q: What is Meralgia paresthetica of Diabetic neuropathy?
+  A: Lateral cutaneous nerve thigh; burning anterolateral thigh
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic neuropathy?**
+   A. **Mononeuropathy = single nerve injury (compression/ischaemia); Cranial III palsy (pupil-sparing) classic; Diabetic amyotrophy (radiculoplexus) = severe pain → weakness/wasting; Mononeuropathy multiplex**
+   B. An unrelated condition not matching the clinical picture of Diabetic neuropathy
+   C. A complication seen late in the disease course of Diabetic neuropathy
+   D. A condition that mimics Diabetic neuropathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic neuropathy presents with: Q1. Which of the following features is most specific or characteristic of Mononeuropathies and radiculoplexus neuropathy?; A. 4. Glycaemic control; B. A feature common to many acute inflammatory conditions. What is the most likely diagnosis?
+   A. **Diabetic neuropathy**
+   B. A condition that mimics Diabetic neuropathy but is not the same entity
+   C. A complication of Diabetic neuropathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic neuropathy
+

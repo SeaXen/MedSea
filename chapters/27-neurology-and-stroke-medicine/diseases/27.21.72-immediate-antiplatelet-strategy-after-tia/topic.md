@@ -609,3 +609,30 @@ A: Bleeding, allergy, severe asthma
 - [[Immediate antiplatelet strategy after TIA]]
 - [[ABCD2 score and its limitations]]
 - [[../Stroke Medicine MOC|Stroke Medicine MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Immediate antiplatelet strategy after TIA*
+
+**Q1.** Which landmark clinical trial provided evidence relevant to the management of Immediate antiplatelet strategy after TIA (specifically: clopidogrel slightly better than aspirin for secondary prevention)?
+
+  - **A.** CAPRIE trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — CAPRIE trial
+  >
+  > *Source:* CAPRIE trial showed clopidogrel slightly better than aspirin for secondary prevention
+
+**Q2.** What is the most appropriate first-line therapy for Immediate antiplatelet strategy after TIA?
+
+  - **A.** The generic exam answer is: give antiplatelet early after haemorrhage is excluded
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — The generic exam answer is: give antiplatelet early after haemorrhage is excluded
+  >
+  > *Source:* The generic exam answer is: **give antiplatelet early after haemorrhage is excluded**.
+

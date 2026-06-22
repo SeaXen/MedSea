@@ -520,3 +520,19 @@ Anticholinergic toxidrome = muscarinic blockade → hot/dry/red/blind/mad/full. 
 7. **C** - Anticholinergic hyperthermia: anhidrosis + central dysregulation. Antipyretics INEFFECTIVE (not prostaglandin-mediated). Active cooling: evaporative, ice packs, cold IV fluids. Dantrolene for NMS/MH.
 8. **D** - Benztropine: anticholinergic, minimal Na channel effect. Seizures: benzos 1st line. Physostigmine only if severe agitation/hyperthermia AND no contraindications. Not first line for seizures.
 9. **B** - Anticholinergic: blocks muscarinic → ↓ GI motility → ileus (absent bowel sounds), constipation, urinary retention. 'Full as a flask' = urinary retention.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Anticholinergic Toxidrome*
+
+**Q1.** What is the most appropriate first-line therapy for Anticholinergic Toxidrome?
+
+  - **A.** Consult toxicology
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Consult toxicology
+  >
+  > *Source:* **Consult toxicology** before use.
+

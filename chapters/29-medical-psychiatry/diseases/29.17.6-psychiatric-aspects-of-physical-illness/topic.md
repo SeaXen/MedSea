@@ -280,3 +280,22 @@ A: Hypothyroidism, hyperthyroidism, Cushing's, Addison's — all can present wit
 - [[Child and adolescent psychiatry overview]]
 - [[Old age psychiatry and dementia syndromes]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Psychiatric aspects of physical illness*
+
+**Q1.** Which of the following features is most specific or characteristic of Psychiatric aspects of physical illness?
+
+  - **A.** Mnemonic for Psychiatric aspects of physical illness
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Psychiatric aspects of physical illness
+  >
+  > *Source:* **Mnemonic for Psychiatric aspects of physical illness** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'ABCDEFGHI'** — MSE compo
+

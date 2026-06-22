@@ -706,3 +706,31 @@ flowchart TD
 10. **B** — EPT: patient-delivered therapy for chlamydia (azithromycin) and gonorrhoea (ceftriaxone + azithromycin) where authorised.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Sexually Transmitted Infections (STIs)*
+
+**Q1.** Which of the following features is most specific or characteristic of Sexually Transmitted Infections (STIs)?
+
+  - **A.** Diagnosis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Diagnosis
+  >
+  > *Source:* , systemic symptoms (fever, malaise); **Recurrent**: milder, shorter, prodrome (tingling, pain) |
+| **Diagnosis** | **NAAT (swab from vesicle/ulcer)** — gold standard; Tzanck smear (multinucleated gia
+
+**Q2.** What is the most appropriate first-line therapy for Sexually Transmitted Infections (STIs)?
+
+  - **A.** Ocular/Otic Syphilis
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Ocular/Otic Syphilis
+  >
+  > *Source:* **Ocular/Otic Syphilis**   Uveitis, optic neuritis, hearing loss   Treat as neurosyphilis (IV penicillin ×14d)
+

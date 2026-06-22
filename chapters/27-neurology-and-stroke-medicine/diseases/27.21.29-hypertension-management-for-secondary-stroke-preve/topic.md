@@ -528,3 +528,19 @@ Hypertension management after stroke is one of the highest-yield secondary preve
 8. **A** — Beta-blockers may be useful when compelling cardiac indications coexist.
 9. **A** — Combination therapy is common in real practice.
 10. **A** — Secondary prevention BP care is a chronic, individualized process.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Hypertension management for secondary stroke prevention*
+
+**Q1.** What is the most appropriate first-line therapy for Hypertension management for secondary stroke prevention?
+
+  - **A.** Start or restart antihypertensive treatment once clinically stable and swallowing/route issues are addressed
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Start or restart antihypertensive treatment once clinically stable and swallowing/route issues are addressed
+  >
+  > *Source:* Start or restart antihypertensive treatment once clinically stable and swallowing/route issues are addressed.
+

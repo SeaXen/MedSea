@@ -144,3 +144,155 @@ Patient with HF + T2DM/Obesity
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[HFrEF and HFpEF in diabetes]], [[SGLT2 inhibitors in HF (DAPA-HF, EMPEROR, DELIVER)]], [[DKD management (ACEi/ARB, SGLT2i, finerenone, GLP-1 RA)]], [[GLP-1 receptor agonists]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — glp-1-ra-in-hf-fight-step-hfpef*
+
+**Q1.** What is the most appropriate first-line therapy for glp-1-ra-in-hf-fight-step-hfpef?
+
+  - **A.** Semaglutide
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Semaglutide
+  >
+  > *Source:* D --> Yes (BMI>=30)  E[**Semaglutide 2.4mg** (STEP-HFpEF benefit)]
+---
+
+> Auto-generated study sections for "Heart failure in diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (57 generated)
+
+- Q: What is the definition of Heart failure in diabetes?
+  A: # GLP-1 Receptor Agonists in Heart Failure (FIGHT, STEP-HFpEF)
+- Q: What is Population of Heart failure in diabetes?
+  A: 300 patients, HFrEF (EF ≤40%), advanced (recent hospitalisation), ±T2DM (mostly non-diabetic)
+- Q: What is Intervention of Heart failure in diabetes?
+  A: Liraglutide 1.8mg daily vs placebo (180 days)
+- Q: What is the prognosis of Heart failure in diabetes?
+  A: Hierarchical clinical outcome (death, HF hosp, time to event)
+- Q: What is Result of Heart failure in diabetes?
+  A: Neutral (HR 1.00, p=0.50); no benefit in any subgroup
+- Q: What is Safety of Heart failure in diabetes?
+  A: More serious AEs (GI); no increase in CV mortality
+- Q: What is Population of Heart failure in diabetes?
+  A: 529 patients, HFpEF (EF ≥45%), BMI ≥30, NYHA II–III, ±T2DM (mostly non-diabetic)
+- Q: What is Intervention of Heart failure in diabetes?
+  A: Semaglutide 2.4mg weekly (max dose) vs placebo (52 weeks)
+- Q: What is the prognosis of Heart failure in diabetes?
+  A: 1) Change in KCCQ-CSS (symptom score) 2) Change in 6-minute walk distance
+- Q: What is Results of Heart failure in diabetes?
+  A: KCCQ-CSS: +7.8 points (p<0.001); 6MWD: +21.5m (p<0.001); Weight: −13.3%; NT-proBNP: −42%
+- Q: What is Safety of Heart failure in diabetes?
+  A: GI side effects (nausea); no increase in serious AEs
+- Q: What is Population of Heart failure in diabetes?
+  A: Post-MI with EF ≤40% and/or diabetes, high-risk
+- Q: What is Result of Heart failure in diabetes?
+  A: Neutral for CV death/HF hosp; weight loss, HbA1c improvement
+- Q: What is Implication of Heart failure in diabetes?
+  A: No HF benefit post-MI
+- Q: What is Weight loss of Heart failure in diabetes?
+  A: ↓ Preload, ↓ afterload, ↓ cardiac workload (major in STEP-HFpEF)
+- Q: What is Direct cardiac effects of Heart failure in diabetes?
+  A: ↑ Myocardial glucose uptake, ↓ lipotoxicity, ↓ oxidative stress (preclinical)
+- Q: What is Haemodynamic of Heart failure in diabetes?
+  A: ↓ BP (2–4 mmHg), ↓ HR (2–3 bpm) — modest
+- Q: What is Anti-inflammatory of Heart failure in diabetes?
+  A: ↓ CRP, IL-6, TNF-α
+- Q: What is Renal of Heart failure in diabetes?
+  A: ↓ Albuminuria, stable eGFR
+- Q: What is FIGHT trial of Heart failure in diabetes?
+  A: Liraglutide in HFrEF → neutral (no benefit)
+- Q: What is STEP-HFpEF of Heart failure in diabetes?
+  A: Semaglutide 2.4mg in HFpEF + BMI ≥30 → ↑ KCCQ, ↑ 6MWD, −13% weight, −42% NT-proBNP
+- Q: What is LIVE trial of Heart failure in diabetes?
+  A: Liraglutide post-MI → neutral
+- Q: What is SGLT2i vs GLP-1 RA of Heart failure in diabetes?
+  A: SGLT2i = first-line for HF (all EF); GLP-1 RA = obesity-driven benefit in HFpEF
+- Q: What is HFrEF + GLP-1 RA of Heart failure in diabetes?
+  A: Not recommended (FIGHT neutral)
+- Q: What is HFpEF + obesity of Heart failure in diabetes?
+  A: Semaglutide 2.4mg (STEP-HFpEF)
+- Q: What is Weight loss of Heart failure in diabetes?
+  A: Primary mechanism in STEP-HFpEF (13% loss)
+- Q: What is NT-proBNP of Heart failure in diabetes?
+  A: −42% with semaglutide in STEP-HFpEF
+- Q: What is Positioning of Heart failure in diabetes?
+  A: SGLT2i first; GLP-1 RA add-on for glucose/weight/obesity-HFpEF
+- Q: What is the dose of Heart failure in diabetes?
+  A: 2.4mg weekly (max dose, not 1mg) for HFpEF
+- Q: What is Population of Heart failure in diabetes?
+  A: 300 patients, HFrEF (EF ≤40%), advanced (recent hospitalisation), ±T2DM (mostly non-diabetic)
+- Q: What is Intervention of Heart failure in diabetes?
+  A: Liraglutide 1.8mg daily vs placebo (180 days)
+- Q: What is the prognosis of Heart failure in diabetes?
+  A: Hierarchical clinical outcome (death, HF hosp, time to event)
+- Q: What is Result of Heart failure in diabetes?
+  A: Neutral (HR 1.00, p=0.50); no benefit in any subgroup
+- Q: What is Safety of Heart failure in diabetes?
+  A: More serious AEs (GI); no increase in CV mortality
+- Q: What is Population of Heart failure in diabetes?
+  A: 529 patients, HFpEF (EF ≥45%), BMI ≥30, NYHA II–III, ±T2DM (mostly non-diabetic)
+- Q: What is Intervention of Heart failure in diabetes?
+  A: Semaglutide 2.4mg weekly (max dose) vs placebo (52 weeks)
+- Q: What is the prognosis of Heart failure in diabetes?
+  A: 1) Change in KCCQ-CSS (symptom score) 2) Change in 6-minute walk distance
+- Q: What is Results of Heart failure in diabetes?
+  A: KCCQ-CSS: +7.8 points (p<0.001); 6MWD: +21.5m (p<0.001); Weight: −13.3%; NT-proBNP: −42%
+- Q: What is Safety of Heart failure in diabetes?
+  A: GI side effects (nausea); no increase in serious AEs
+- Q: What is Population of Heart failure in diabetes?
+  A: Post-MI with EF ≤40% and/or diabetes, high-risk
+- Q: What is Result of Heart failure in diabetes?
+  A: Neutral for CV death/HF hosp; weight loss, HbA1c improvement
+- Q: What is Implication of Heart failure in diabetes?
+  A: No HF benefit post-MI
+- Q: What is Weight loss of Heart failure in diabetes?
+  A: ↓ Preload, ↓ afterload, ↓ cardiac workload (major in STEP-HFpEF)
+- Q: What is Direct cardiac effects of Heart failure in diabetes?
+  A: ↑ Myocardial glucose uptake, ↓ lipotoxicity, ↓ oxidative stress (preclinical)
+- Q: What is Haemodynamic of Heart failure in diabetes?
+  A: ↓ BP (2–4 mmHg), ↓ HR (2–3 bpm) — modest
+- Q: What is Anti-inflammatory of Heart failure in diabetes?
+  A: ↓ CRP, IL-6, TNF-α
+- Q: What is Renal of Heart failure in diabetes?
+  A: ↓ Albuminuria, stable eGFR
+- Q: What is FIGHT trial of Heart failure in diabetes?
+  A: Liraglutide in HFrEF → neutral (no benefit)
+- Q: What is STEP-HFpEF of Heart failure in diabetes?
+  A: Semaglutide 2.4mg in HFpEF + BMI ≥30 → ↑ KCCQ, ↑ 6MWD, −13% weight, −42% NT-proBNP
+- Q: What is LIVE trial of Heart failure in diabetes?
+  A: Liraglutide post-MI → neutral
+- Q: What is SGLT2i vs GLP-1 RA of Heart failure in diabetes?
+  A: SGLT2i = first-line for HF (all EF); GLP-1 RA = obesity-driven benefit in HFpEF
+- Q: What is HFrEF + GLP-1 RA of Heart failure in diabetes?
+  A: Not recommended (FIGHT neutral)
+- Q: What is HFpEF + obesity of Heart failure in diabetes?
+  A: Semaglutide 2.4mg (STEP-HFpEF)
+- Q: What is Weight loss of Heart failure in diabetes?
+  A: Primary mechanism in STEP-HFpEF (13% loss)
+- Q: What is NT-proBNP of Heart failure in diabetes?
+  A: −42% with semaglutide in STEP-HFpEF
+- Q: What is Positioning of Heart failure in diabetes?
+  A: SGLT2i first; GLP-1 RA add-on for glucose/weight/obesity-HFpEF
+- Q: What is the dose of Heart failure in diabetes?
+  A: 2.4mg weekly (max dose, not 1mg) for HFpEF
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Heart failure in diabetes?**
+   A. **# GLP-1 Receptor Agonists in Heart Failure (FIGHT, STEP-HFpEF)**
+   B. An unrelated condition not matching the clinical picture of Heart failure in diabetes
+   C. A complication seen late in the disease course of Heart failure in diabetes
+   D. A condition that mimics Heart failure in diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Heart failure in diabetes presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — glp-1-ra-in-hf-fight-step-hfpef; Q1. What is the most appropriate first-line therapy for glp-1-ra-in-hf-fight-step-hfpef?; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Heart failure in diabetes**
+   B. A condition that mimics Heart failure in diabetes but is not the same entity
+   C. A complication of Heart failure in diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Heart failure in diabetes
+

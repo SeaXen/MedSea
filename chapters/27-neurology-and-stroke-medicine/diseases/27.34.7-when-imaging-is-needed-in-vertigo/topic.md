@@ -635,3 +635,19 @@ In vertigo, imaging should be used selectively and intelligently. The main task 
 8. **B** — atypical persistent positional symptoms should prompt central reconsideration.
 9. **A** — this is the balanced and practical answer.
 10. **A** — selective imaging guided by red flags and localization is the key principle.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — When imaging is needed in vertigo*
+
+**Q1.** What is the most appropriate first-line therapy for When imaging is needed in vertigo?
+
+  - **A.** use CT for immediate triage if unstable or MRI unavailable
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — use CT for immediate triage if unstable or MRI unavailable
+  >
+  > *Source:* use CT for immediate triage if unstable or MRI unavailable
+

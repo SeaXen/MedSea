@@ -574,3 +574,19 @@ Aspiration pneumonia is a common, serious, and largely preventable stroke compli
 8. **B** — Reflux, secretions, and poor airway protection still permit aspiration.
 9. **A** — This is the main rationale for oral care.
 10. **A** — That statement best captures cause, prevention, and significance.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Aspiration pneumonia after stroke*
+
+**Q1.** What is the most appropriate first-line therapy for Aspiration pneumonia after stroke?
+
+  - **A.** Use texture modification and supervised feeding where advised
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Use texture modification and supervised feeding where advised
+  >
+  > *Source:* Use texture modification and supervised feeding where advised.
+

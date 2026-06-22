@@ -559,3 +559,19 @@ Hypertensive retinopathy is classified by Keith-Wagener-Barker (KWB). Grade I: a
 
 ## Tags
 #medicine #davidson #ophthalmology #HTN-retinopathy #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Hypertensive Retinopathy*
+
+**Q1.** What is the most appropriate first-line therapy for Hypertensive Retinopathy?
+
+  - **A.** Treat BP
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat BP
+  >
+  > *Source:* **Treat BP** (target <140/90 mmHg, or <130/80 in DM/CKD)
+

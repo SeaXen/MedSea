@@ -542,3 +542,22 @@ A: Cerebellar > 3 cm
 
 - [[../Stroke Medicine MOC|Stroke Medicine MOC]]
 - [[../Davidson Chapter 29 - Stroke Medicine Hierarchy|Davidson Chapter 29 - Stroke Medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Intracerebral haemorrhage*
+
+**Q1.** Which of the following is characterised by the clinical triad: HTN, bradycardia, irregular breathing?
+
+  - **A.** Intracerebral haemorrhage
+  - **B.** Stroke
+  - **C.** TIA
+  - **D.** Migraine
+
+  > **Answer: A** — Intracerebral haemorrhage
+  >
+  > *Source:* s** | Hemiparesis, aphasia, gaze deviation, gaze palsy |
+| **Signs of ↑ ICP** | Headache, vomiting, Cushing's triad (HTN, bradycardia, irregular breathing) |
+
+> **FCPS/MRCP**: **Sudden onset + headach
+

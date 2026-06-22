@@ -398,3 +398,19 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Non-immune Haemolytic Anaemia*
+
+**Q1.** Which of the following is characterised by the clinical triad: haemolysis, thrombosis, BM failure?
+
+  - **A.** Non-immune Haemolytic Anaemia
+  - **B.** Iron deficiency
+  - **C.** B12 deficiency
+  - **D.** Folate deficiency
+
+  > **Answer: A** — Non-immune Haemolytic Anaemia
+  >
+  > *Source:* rosthetic valve/March |
+| **Should Know** | MAHA differential (TTP vs HUS vs DIC vs Malignant HTN), PNH triad (haemolysis, thrombosis, BM failure), PNH diagnostics (granulocytes > RBCs for CD55/CD59),
+

@@ -440,3 +440,23 @@ Intermediate uveitis is vitreal inflammation, often with snowballs and snowbank.
 
 ## Tags
 #medicine #davidson #ophthalmology #intermediate #uveitis #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Intermediate Uveitis*
+
+**Q1.** What is the most appropriate first-line therapy for Intermediate Uveitis?
+
+  - **A.** Observation + Systemic steroid + Immunosuppression
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Observation + Systemic steroid + Immunosuppression
+  >
+  > *Source:* - **Observation** (mild, asymptomatic)
+- **Topical / sub-Tenon's / intravitreal steroid**
+- **Systemic steroid** for severe
+- **Immunosuppression** (MTX, MMF, biologics — adalimumab for refractory)
+- 
+

@@ -213,3 +213,19 @@ Erythema multiforme presents with characteristic features as defined in Davidson
 ---
 
 > [!tip] **Exam focus:** Know definition, key clinical features, first-line management, and the most important complication. Always compare with the main differential.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 26: Dermatology — Erythema multiforme (minor, major) full*
+
+**Q1.** What is the most appropriate first-line therapy for Erythema multiforme (minor, major) full?
+
+  - **A.** First-line:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — First-line:
+  >
+  > *Source:* **First-line:** General measures (emollients, soap substitutes, trigger avoidance) and topical therapy appropriate to the condition (corticosteroids, calcineurin inhibitors, vitamin D analogues, or an
+

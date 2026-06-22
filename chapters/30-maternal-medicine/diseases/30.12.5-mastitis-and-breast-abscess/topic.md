@@ -288,3 +288,20 @@ A: Flucloxacillin 500 mg QDS 10-14 days; erythromycin or clarithromycin if aller
 - [[../Labour, Delivery and Postpartum|Labour, Delivery and Postpartum]] (heading hub)
 - [[../Maternal Medicine MOC|Maternal Medicine MOC]]
 - [[../Davidson Chapter 32 - Maternal Medicine Hierarchy|Davidson Chapter 32 - Maternal Medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 30: Maternal Medicine — Mastitis and breast abscess*
+
+**Q1.** Which of the following features is most specific or characteristic of Mastitis and breast abscess?
+
+  - **A.** Mnemonic for Mastitis and breast abscess
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Mastitis and breast abscess
+  >
+  > *Source:* **Mnemonic for Mastitis and breast abscess** — see key points in Core Clinical Content
+- **'PRE-ECLAMPSIA' risk factors** — Previous PE, Renal disease, Extremes of age, Chronic HTN, Ethnicity, Antipho
+

@@ -441,3 +441,25 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Iron Deficiency Anaemia*
+
+**Q1.** Which of the following is characterised by the clinical triad: Ferritin, TSAT, RDW?
+
+  - **A.** Iron Deficiency Anaemia
+  - **B.** Iron deficiency anaemia
+  - **C.** B12 deficiency
+  - **D.** Anaemia of chronic disease
+
+  > **Answer: A** — Iron Deficiency Anaemia
+  >
+  > *Source:* ths |
+
+---
+## Spaced Repetition Tracker
+| Day | 1 | 3 | 7 | 15 | 30 |
+|-----|---|---|---|---|---|
+| Diagnostic Triad (Ferritin, TSAT, RDW) | ☐ | ☐ | ☐ | ☐ | ☐ |
+| Mentzer Index Cut-off | ☐ | ☐ | ☐ | ☐
+

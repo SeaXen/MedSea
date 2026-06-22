@@ -570,3 +570,33 @@ mindmap
 - [[Spider Bite Envenomation (Latrodectism, Loxoscelism)]]
 - [[Marine Envenomation (Jellyfish, Stonefish, Cone Shell, Blue-Ringed Octopus)]]
 - [[Envenomation MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 12: Envenomation — Scorpion Sting Envenomation*
+
+**Q1.** Which of the following features is most specific or characteristic of Scorpion Sting Envenomation?
+
+  - **A.** Necrosis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Necrosis
+  >
+  > *Source:* ly **minimal or absent** (unlike viper/spider) |
+| **Erythema** | Mild; localised to sting site |
+| **Necrosis** | **NOT typical** (exception: *Hemiscorpius* — cytotoxic) |
+| **Paraesthesia** | Local;
+
+**Q2.** What is the most appropriate first-line therapy for Scorpion Sting Envenomation?
+
+  - **A.** Prazosin   First-line specific therapy for autonomic storm   0
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Prazosin   First-line specific therapy for autonomic storm   0
+  >
+  > *Source:* Prazosin**   **First-line specific therapy** for autonomic storm   0.5–1 mg PO q4–6h (adults); 0.25–0.5 mg (children); titrate to BP
+

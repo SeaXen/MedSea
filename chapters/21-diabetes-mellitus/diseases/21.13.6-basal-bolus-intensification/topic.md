@@ -164,3 +164,92 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Basal insulin initiation]], [[Pre-mixed insulin]], [[Concentrated insulins (U-200, U-300, U-500)]], [[Treatment algorithms/NICE NG28 pathway]]
+---
+
+> Auto-generated study sections for "Insulin therapy in type 2 diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (37 generated)
+
+- Q: What is the definition of Insulin therapy in type 2 diabetes?
+  A: Basal-bolus = basal insulin + rapid-acting bolus at meals; escalate when basal optimised (fbst 4–7) but HbA1c >58; carb counting essential; ICR ~1u/10g, ISF ~2mmol/L per 2u; pre-bolus 15min; QDS regimen; avoid fixed-dose regimens unless carb counting not possible.
+- Q: What is Basal optimised of Insulin therapy in type 2 diabetes?
+  A: Fasting glucose 4–7 mmol/L consistently
+- Q: What is HbA1c above target of Insulin therapy in type 2 diabetes?
+  A: >58 mmol/mol (7.5%) despite basal + orals
+- Q: What is Post-prandial hyperglycaemia of Insulin therapy in type 2 diabetes?
+  A: 2h PP >8.5 mmol/L consistently
+- Q: What is Variable eating pattern of Insulin therapy in type 2 diabetes?
+  A: Irregular meals, shift work, carb variability
+- Q: What is High insulin requirement of Insulin therapy in type 2 diabetes?
+  A: Basal >0.5u/kg or >50u/day
+- Q: What is Steroid-induced hyperglycaemia of Insulin therapy in type 2 diabetes?
+  A: High post-prandial excursions
+- Q: What is Bolus (if 2h PP >8.5) of Insulin therapy in type 2 diabetes?
+  A: ↑ 1 unit per meal (or tighten ICR: 1u per 8g)
+- Q: What is Bolus (if 2h PP <4.0) of Insulin therapy in type 2 diabetes?
+  A: ↓ 1 unit (or widen ICR: 1u per 12g)
+- Q: What is Basal (if fasting >7) of Insulin therapy in type 2 diabetes?
+  A: ↑ 2–4u weekly
+- Q: What is Basal (if fasting <4) of Insulin therapy in type 2 diabetes?
+  A: ↓ 2–4u weekly
+- Q: What is Correction (if CBG >10) of Insulin therapy in type 2 diabetes?
+  A: Add ISF dose (e.g., 2u per 2mmol/L >10)
+- Q: What is Insulin therapy in type 2 diabetes indicated for?
+  A: Basal optimised + HbA1c >58 + PP >8.5
+- Q: What is ICR starting of Insulin therapy in type 2 diabetes?
+  A: 1 unit per 10g carb (Rule of 500: 500/TDD)
+- Q: What is ISF starting of Insulin therapy in type 2 diabetes?
+  A: 2 mmol/L per 2 units (Rule of 100: 100/TDD)
+- Q: What is Pre-bolus timing of Insulin therapy in type 2 diabetes?
+  A: 15–20 minutes before meal
+- Q: What is Rapid insulin choice of Insulin therapy in type 2 diabetes?
+  A: Fiasp/Lyumjev for best PP control
+- Q: What is Pre-mixed of Insulin therapy in type 2 diabetes?
+  A: Only if carb counting not possible + regular meals
+- Q: What is Avoid stacking of Insulin therapy in type 2 diabetes?
+  A: Wait 3–4h between corrections
+- Q: What is Titration of Insulin therapy in type 2 diabetes?
+  A: Bolus: adjust by 1u per meal; Basal: 2–4u weekly
+- Q: What is Bedtime basal of Insulin therapy in type 2 diabetes?
+  A: Once daily (glargine/detemir/degludec)
+- Q: What is Education of Insulin therapy in type 2 diabetes?
+  A: Refer for carb counting (DAFNE)
+- Q: What is Bolus (if 2h PP >8.5) of Insulin therapy in type 2 diabetes?
+  A: ↑ 1 unit per meal (or tighten ICR: 1u per 8g)
+- Q: What is Bolus (if 2h PP <4.0) of Insulin therapy in type 2 diabetes?
+  A: ↓ 1 unit (or widen ICR: 1u per 12g)
+- Q: What is Basal (if fasting >7) of Insulin therapy in type 2 diabetes?
+  A: ↑ 2–4u weekly
+- Q: What is Basal (if fasting <4) of Insulin therapy in type 2 diabetes?
+  A: ↓ 2–4u weekly
+- Q: What is Correction (if CBG >10) of Insulin therapy in type 2 diabetes?
+  A: Add ISF dose (e.g., 2u per 2mmol/L >10)
+- Q: What is Insulin therapy in type 2 diabetes indicated for?
+  A: Basal optimised + HbA1c >58 + PP >8.5
+- Q: What is ICR starting of Insulin therapy in type 2 diabetes?
+  A: 1 unit per 10g carb (Rule of 500: 500/TDD)
+- Q: What is ISF starting of Insulin therapy in type 2 diabetes?
+  A: 2 mmol/L per 2 units (Rule of 100: 100/TDD)
+- Q: What is Pre-bolus timing of Insulin therapy in type 2 diabetes?
+  A: 15–20 minutes before meal
+- Q: What is Rapid insulin choice of Insulin therapy in type 2 diabetes?
+  A: Fiasp/Lyumjev for best PP control
+- Q: What is Pre-mixed of Insulin therapy in type 2 diabetes?
+  A: Only if carb counting not possible + regular meals
+- Q: What is Avoid stacking of Insulin therapy in type 2 diabetes?
+  A: Wait 3–4h between corrections
+- Q: What is Titration of Insulin therapy in type 2 diabetes?
+  A: Bolus: adjust by 1u per meal; Basal: 2–4u weekly
+- Q: What is Bedtime basal of Insulin therapy in type 2 diabetes?
+  A: Once daily (glargine/detemir/degludec)
+- Q: What is Education of Insulin therapy in type 2 diabetes?
+  A: Refer for carb counting (DAFNE)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin therapy in type 2 diabetes?**
+   A. **Basal-bolus = basal insulin + rapid-acting bolus at meals; escalate when basal optimised (fbst 4–7) but HbA1c >58; carb counting essential; ICR ~1u/10g, ISF ~2mmol/L per 2u; pre-bolus 15min; QDS regim**
+   B. An unrelated condition not matching the clinical picture of Insulin therapy in type 2 diabetes
+   C. A complication seen late in the disease course of Insulin therapy in type 2 diabetes
+   D. A condition that mimics Insulin therapy in type 2 diabetes but has a different underlying cause
+

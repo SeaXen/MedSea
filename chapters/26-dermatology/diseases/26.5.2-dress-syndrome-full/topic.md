@@ -499,3 +499,36 @@ A severe, potentially fatal **Type IVb/IVd delay*
 ---
 
 > [!tip] **Exam focus:** Know definition, key clinical features, first-line management, and the most important complication. Always compare with the main differential.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 26: Dermatology — DRESS Syndrome full*
+
+**Q1.** Which of the following features is most specific or characteristic of DRESS Syndrome full?
+
+  - **A.** FBC + diff
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — FBC + diff
+  >
+  > *Source:* weeks = DRESS**
+
+---
+| Test | Purpose | Typical Findings |
+|------|---------|------------------|
+| **FBC + diff** | Eosinophilia | **≥1.5×10⁹/L or >20%**; atypical lymphs |
+| **LFT** | Liver involveme
+
+**Q2.** What is the most appropriate first-line therapy for DRESS Syndrome full?
+
+  - **A.** Maintenance
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Maintenance
+  >
+  > *Source:* **Maintenance**   5-10 mg pred for 3-6 months post-remission
+

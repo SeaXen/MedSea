@@ -526,3 +526,30 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Non-Hodgkin Lymphoma Subtypes*
+
+**Q1.** Which of the following features is most specific or characteristic of Non-Hodgkin Lymphoma Subtypes?
+
+  - **A.** CAR-T vs Bispecifics
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CAR-T vs Bispecifics
+  >
+  > *Source:* A-EPOCH-R vs R-CHOP** | **DA-EPOCH-R = Dose-adjusted EPOCH-R (infusional)**; For DH/TH lymphoma |
+| **CAR-T vs Bispecifics** | **CAR-T = Autologous, manufacturing time, hospitalisation**; **Bispecific
+
+**Q2.** What is the most appropriate first-line therapy for Non-Hodgkin Lymphoma Subtypes?
+
+  - **A.** Relapsed + BTKi + Tazemetostat
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Relapsed + BTKi + Tazemetostat
+  >
+  > *Source:* **Relapsed**   **BTKi (Zanubrutinib)** + Obinutuzumab, **Tazemetostat (EZH2mut)**, **CAR-T (Axi/Liso)**, **Bispecifics (Mosunetuzumab, Epcoritamab)**, **Radioimmunotherapy (Ibritumomab)**   **EZH2mut 
+

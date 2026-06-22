@@ -152,3 +152,20 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Sulfonylureas]], [[Alpha-glucosidase inhibitors]], [[Thiazolidinediones (pioglitazone)]], [[Basal insulin initiation]]
+---
+
+> Auto-generated study sections for "Oral glucose lowering agents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Oral glucose lowering agents?
+  A: Meglitinides (Repaglinide, Nateglinide) = rapid-acting insulin secretagogues; pre-meal dosing (15min before); short duration (4–6h); ↓ post-prandial glucose; hypoglycaemia risk; weight gain; renal adjustment; alternative to sulfonylurea for irregular meal patterns; rarely used UK (cost, dosing frequency).
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Oral glucose lowering agents?**
+   A. **Meglitinides (Repaglinide, Nateglinide) = rapid-acting insulin secretagogues; pre-meal dosing (15min before); short duration (4–6h); ↓ post-prandial glucose; hypoglycaemia risk; weight gain; renal adj**
+   B. An unrelated condition not matching the clinical picture of Oral glucose lowering agents
+   C. A complication seen late in the disease course of Oral glucose lowering agents
+   D. A condition that mimics Oral glucose lowering agents but has a different underlying cause
+

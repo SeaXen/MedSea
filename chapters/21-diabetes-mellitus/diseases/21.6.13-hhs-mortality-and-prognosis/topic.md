@@ -156,3 +156,43 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Hyperosmolar hyperglycaemic state (HHS)], [[HHS vs DKA differentiation]], [[Diabetic ketoacidosis (DKA)]], [[Diabetes in the elderly]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — hhs-mortality-and-prognosis*
+
+**Q1.** What is the most appropriate first-line therapy for hhs-mortality-and-prognosis?
+
+  - **A.** Precipitant management
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Precipitant management
+  >
+  > *Source:* **Precipitant management**   Treat infection, optimise cardiac/renal meds, review diabetes regimen
+---
+
+> Auto-generated study sections for "Hyperosmolar hyperglycaemic state (HHS)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Hyperosmolar hyperglycaemic state (HHS)?
+  A: HHS mortality 10–20% (vs DKA 1–2%); older, comorbid, delayed presentation; independent predictors: age >60, coma (GCS <14), hypotension, pH <7.2, Na+ >160, K+ >6, renal failure (Cr >200), Osm >350; early recognition + aggressive fluids + treat precipitant key to survival.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hyperosmolar hyperglycaemic state (HHS)?**
+   A. **HHS mortality 10–20% (vs DKA 1–2%); older, comorbid, delayed presentation; independent predictors: age >60, coma (GCS <14), hypotension, pH <7.2, Na+ >160, K+ >6, renal failure (Cr >200), Osm >350; ea**
+   B. An unrelated condition not matching the clinical picture of Hyperosmolar hyperglycaemic state (HHS)
+   C. A complication seen late in the disease course of Hyperosmolar hyperglycaemic state (HHS)
+   D. A condition that mimics Hyperosmolar hyperglycaemic state (HHS) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hyperosmolar hyperglycaemic state (HHS) presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — hhs-mortality-and-prognosis; Q1. What is the most appropriate first-line therapy for hhs-mortality-and-prognosis?; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Hyperosmolar hyperglycaemic state (HHS)**
+   B. A condition that mimics Hyperosmolar hyperglycaemic state (HHS) but is not the same entity
+   C. A complication of Hyperosmolar hyperglycaemic state (HHS) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hyperosmolar hyperglycaemic state (HHS)
+

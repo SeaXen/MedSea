@@ -169,3 +169,71 @@ flowchart TD
 - **M**etformin: half dose if eGFR 30-45
 - **I**nsulin: reduce not stop (basal still needed)
 - **Z**ero bolus: stop prandial insulin first**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Deintensification and deprescribing*
+
+**Q1.** What is the most appropriate first-line therapy for Deintensification and deprescribing?
+
+  - **A.** 1   Stop sulfonylureas (gliclazide, glimepiride, glibenclamide)   SMBG 4x/day x 2 weeks; watch for hypo resolution
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — 1   Stop sulfonylureas (gliclazide, glimepiride, glibenclamide)   SMBG 4x/day x 2 weeks; watch for hypo resolution
+  >
+  > *Source:* **1**   **Stop sulfonylureas** (gliclazide, glimepiride, glibenclamide)   SMBG 4x/day x 2 weeks; watch for hypo resolution
+---
+
+> Auto-generated study sections for "Diabetes in the elderly" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Diabetes in the elderly?
+  A: By the end of this note you should be able to:
+- Q: What is Polypharmacy of Diabetes in the elderly?
+  A: >=5 medications; common in elderly DM
+- Q: What is Deprescribing of Diabetes in the elderly?
+  A: Planned reduction/stopping of inappropriate medications
+- Q: What is Polypharmacy of Diabetes in the elderly?
+  A: >=5 medications; common in elderly DM
+- Q: What is Deprescribing of Diabetes in the elderly?
+  A: Planned reduction/stopping of inappropriate medications
+- Q: What is STOP FIRST of Diabetes in the elderly?
+  A: Sulfonylureas (highest hypo risk)
+- Q: What is Then of Diabetes in the elderly?
+  A: Bolus insulin -> reduce basal insulin -> simplify regimen
+- Q: What is Keep of Diabetes in the elderly?
+  A: Metformin (eGFR>=30), SGLT2i (eGFR>=20), DPP-4i, ACEi/ARB, Statin
+- Q: What is Simplify of Diabetes in the elderly?
+  A: Once-daily basal; prefilled pens; carer administration; CGM alerts
+- Q: How is Diabetes in the elderly monitored?
+  A: SMBG/CGM 2 weeks post-change; target frailty-appropriate HbA1c
+- Q: What is STOP FIRST of Diabetes in the elderly?
+  A: Sulfonylureas (highest hypo risk)
+- Q: What is Then of Diabetes in the elderly?
+  A: Bolus insulin -> reduce basal insulin -> simplify regimen
+- Q: What is Keep of Diabetes in the elderly?
+  A: Metformin (eGFR>=30), SGLT2i (eGFR>=20), DPP-4i, ACEi/ARB, Statin
+- Q: What is Simplify of Diabetes in the elderly?
+  A: Once-daily basal; prefilled pens; carer administration; CGM alerts
+- Q: How is Diabetes in the elderly monitored?
+  A: SMBG/CGM 2 weeks post-change; target frailty-appropriate HbA1c
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in the elderly?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in the elderly
+   C. A complication seen late in the disease course of Diabetes in the elderly
+   D. A condition that mimics Diabetes in the elderly but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in the elderly presents with: Polypharmacy — >=5 medications; common in elderly DM; Deprescribing — Planned reduction/stopping of inappropriate medications; Goal — Reduce hypoglycaemia, falls, hospitalisation; improve QoL. What is the most likely diagnosis?
+   A. **Diabetes in the elderly**
+   B. A condition that mimics Diabetes in the elderly but is not the same entity
+   C. A complication of Diabetes in the elderly rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in the elderly
+

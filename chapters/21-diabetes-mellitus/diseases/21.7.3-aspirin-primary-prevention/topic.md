@@ -157,3 +157,60 @@ Patient with diabetes, NO prior CVD
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[ASCVD risk calculators (QRISK3, ASCVD Pooled Cohort)]], [[Statin therapy in diabetes (intensity, targets)]], [[BP targets in diabetes (NICE, ADA, ESC)]], [[Diabetes as cardiovascular risk equivalent]]
+---
+
+> Auto-generated study sections for "Atherosclerotic cardiovascular disease (ASCVD)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ASCEND trial (2018): Aspirin 100mg ↓ serious vascular events 12% (HR 0.88) but ↑ major bleeding 29% (HR 1.29) → net clinical benefit marginal; NICE: do not offer routinely; ADA: consider if high CVD risk + low bleeding risk.
+- Q: What is ASCEND trial of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: T2DM primary prevention: 12% CV reduction, 29% major bleed increase
+- Q: What is NICE primary prevention of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Do not offer aspirin routinely in diabetes
+- Q: What is ADA primary prevention of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Consider if ≥10% 10-year risk + low bleeding risk
+- Q: What is ASPREE trial of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: >70y: harm > benefit — no aspirin primary prevention
+- Q: What is HAS-BLED ≥3 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: High bleeding risk — avoid aspirin
+- Q: What is Primary vs secondary of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Prior CVD = secondary = aspirin mandatory
+- Q: What is T1DM of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: No specific trial data; extrapolate from T2DM
+- Q: What is CKD of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ↑ Bleeding risk (platelet dysfunction) — HAS-BLED captures
+- Q: What is Anticoagulant + aspirin of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Avoid dual therapy for primary prevention
+- Q: What is Shared decision-making of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Document: benefit ~1/100–200, harm ~1/100–200, patient preference
+- Q: What is ASCEND trial of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: T2DM primary prevention: 12% CV reduction, 29% major bleed increase
+- Q: What is NICE primary prevention of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Do not offer aspirin routinely in diabetes
+- Q: What is ADA primary prevention of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Consider if ≥10% 10-year risk + low bleeding risk
+- Q: What is ASPREE trial of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: >70y: harm > benefit — no aspirin primary prevention
+- Q: What is HAS-BLED ≥3 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: High bleeding risk — avoid aspirin
+- Q: What is Primary vs secondary of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Prior CVD = secondary = aspirin mandatory
+- Q: What is T1DM of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: No specific trial data; extrapolate from T2DM
+- Q: What is CKD of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ↑ Bleeding risk (platelet dysfunction) — HAS-BLED captures
+- Q: What is Anticoagulant + aspirin of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Avoid dual therapy for primary prevention
+- Q: What is Shared decision-making of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Document: benefit ~1/100–200, harm ~1/100–200, patient preference
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Atherosclerotic cardiovascular disease (ASCVD)?**
+   A. **ASCEND trial (2018): Aspirin 100mg ↓ serious vascular events 12% (HR 0.88) but ↑ major bleeding 29% (HR 1.29) → net clinical benefit marginal; NICE: do not offer routinely; ADA: consider if high CVD r**
+   B. An unrelated condition not matching the clinical picture of Atherosclerotic cardiovascular disease (ASCVD)
+   C. A complication seen late in the disease course of Atherosclerotic cardiovascular disease (ASCVD)
+   D. A condition that mimics Atherosclerotic cardiovascular disease (ASCVD) but has a different underlying cause
+

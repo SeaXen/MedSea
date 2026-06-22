@@ -159,3 +159,60 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetes education and structured education]], [[Glycaemic targets]], [[Psychosocial aspects]], [[Foot risk classification (IWGDF/Scottish)]], [[Retinopathy screening and grading (ETDRS)]]
+---
+
+> Auto-generated study sections for "Diabetes Monitoring and Quality of Care" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Diabetes Monitoring and Quality of Care?
+  A: NICE 9 Care Processes = core annual review; achieves QOF indicators; optimal diabetes care = all 9 completed; care plan agreed; structured education offered; complications screened.
+- Q: What is 9 Care Processes of Diabetes Monitoring and Quality of Care?
+  A: HbA1c, BP, Lipids, UACR, eGFR, BMI, Smoking, Foot exam, Retinal screen
+- Q: What is All 9 completed of Diabetes Monitoring and Quality of Care?
+  A: Quality marker; NICE QS6
+- Q: What is Foot risk of Diabetes Monitoring and Quality of Care?
+  A: IWGDF 1 (low) = annual; 2 (moderate) = 3–6m podiatry; 3 (high) = 1–3m MDT
+- Q: What is Retinopathy grades of Diabetes Monitoring and Quality of Care?
+  A: R0/R1 = annual; R2 = 6–12w referral; R3 = urgent 2–4w; M1 = 4–8w
+- Q: What is UACR frequency of Diabetes Monitoring and Quality of Care?
+  A: Annual; 6m if A2/A3
+- Q: What is eGFR frequency of Diabetes Monitoring and Quality of Care?
+  A: Annual; 6m if <60
+- Q: What is QOF HbA1c targets of Diabetes Monitoring and Quality of Care?
+  A: ≤58 (7.5%) for points; ≤48 (6.5%) additional points
+- Q: What is Care plan of Diabetes Monitoring and Quality of Care?
+  A: Shared decision-making; individualised targets; copy to patient
+- Q: What is Psychosocial of Diabetes Monitoring and Quality of Care?
+  A: Screen annually (PHQ-9, PAID/DDS)
+- Q: What is Vaccinations of Diabetes Monitoring and Quality of Care?
+  A: Flu annual, PPV23, COVID, Hep B
+- Q: What is 9 Care Processes of Diabetes Monitoring and Quality of Care?
+  A: HbA1c, BP, Lipids, UACR, eGFR, BMI, Smoking, Foot exam, Retinal screen
+- Q: What is All 9 completed of Diabetes Monitoring and Quality of Care?
+  A: Quality marker; NICE QS6
+- Q: What is Foot risk of Diabetes Monitoring and Quality of Care?
+  A: IWGDF 1 (low) = annual; 2 (moderate) = 3–6m podiatry; 3 (high) = 1–3m MDT
+- Q: What is Retinopathy grades of Diabetes Monitoring and Quality of Care?
+  A: R0/R1 = annual; R2 = 6–12w referral; R3 = urgent 2–4w; M1 = 4–8w
+- Q: What is UACR frequency of Diabetes Monitoring and Quality of Care?
+  A: Annual; 6m if A2/A3
+- Q: What is eGFR frequency of Diabetes Monitoring and Quality of Care?
+  A: Annual; 6m if <60
+- Q: What is QOF HbA1c targets of Diabetes Monitoring and Quality of Care?
+  A: ≤58 (7.5%) for points; ≤48 (6.5%) additional points
+- Q: What is Care plan of Diabetes Monitoring and Quality of Care?
+  A: Shared decision-making; individualised targets; copy to patient
+- Q: What is Psychosocial of Diabetes Monitoring and Quality of Care?
+  A: Screen annually (PHQ-9, PAID/DDS)
+- Q: What is Vaccinations of Diabetes Monitoring and Quality of Care?
+  A: Flu annual, PPV23, COVID, Hep B
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes Monitoring and Quality of Care?**
+   A. **NICE 9 Care Processes = core annual review; achieves QOF indicators; optimal diabetes care = all 9 completed; care plan agreed; structured education offered; complications screened.**
+   B. An unrelated condition not matching the clinical picture of Diabetes Monitoring and Quality of Care
+   C. A complication seen late in the disease course of Diabetes Monitoring and Quality of Care
+   D. A condition that mimics Diabetes Monitoring and Quality of Care but has a different underlying cause
+

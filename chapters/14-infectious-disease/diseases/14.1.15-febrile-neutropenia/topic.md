@@ -619,3 +619,22 @@ flowchart TD
 10. **B** — Cefepime associated with higher mortality in severe sepsis/septic shock meta-analyses; avoid in shock. Pip-tazo or Meropenem preferred.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Febrile Neutropenia*
+
+**Q1.** What is the most appropriate first-line therapy for Febrile Neutropenia?
+
+  - **A.** Gram-positive bacteremia before ID + Vancomycin + Vancomycin NOT routine initially.
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Gram-positive bacteremia before ID + Vancomycin + Vancomycin NOT routine initially.
+  >
+  > *Source:* **Gram-positive bacteremia before ID**   **Vancomycin**  
+
+> [!warning]
+> **Vancomycin NOT routine initially.** **Add only if specific indication.** **If added, review at 48–72h — stop if cultures neg
+

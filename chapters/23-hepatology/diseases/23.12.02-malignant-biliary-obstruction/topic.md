@@ -274,3 +274,22 @@ mindmap
    C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Malignant biliary obstruction*
+
+**Q1.** Which of the following features is most specific or characteristic of Malignant biliary obstruction?
+
+  - **A.** CA19-9
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CA19-9
+  >
+  > *Source:* e of malignant obstructive jaundice
+- **Double duct sign**: Dilated CBD + Dilated Pancreatic Duct
+- **CA19-9** elevated (not specific)
+- **Surgery**: Whipple's (Pancreaticoduodenectomy) if resectable
+
+

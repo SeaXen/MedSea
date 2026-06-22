@@ -279,3 +279,21 @@ A: Common in elderly; ↓ BP after meals due to splanchnic pooling
 - [[Falls in the elderly]]
 - [[Falls prevention and multifactorial intervention]]
 - [[../Ageing and Disease MOC|Ageing and Disease MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 32: Ageing & Disease — Syncope and presyncope in the elderly*
+
+**Q1.** Which of the following features is most specific or characteristic of Syncope and presyncope in the elderly?
+
+  - **A.** Mnemonic for Syncope and presyncope in the elderly
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Syncope and presyncope in the elderly
+  >
+  > *Source:* **Mnemonic for Syncope and presyncope in the elderly** — see Core Clinical Content key points
+- **'5 Fried criteria'** for frailty: Weight loss, Exhaustion, Weakness, Slow walking, ↓ activity
+- **'DIA
+

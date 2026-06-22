@@ -428,4 +428,32 @@ mindmap
 **Heading Hub:** [[../Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[../00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Drug-Induced Parkinsonism*
+
+**Q1.** Which of the following features is most specific or characteristic of Drug-Induced Parkinsonism?
+
+  - **A.** MAcRO
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MAcRO
+  >
+  > *Source:* (antipsychotics, antiemetics) → **S**ymmetrical, **S**ubacute (**DIPS**) - use: clinical features
+- **MAcRO** — **M**etoclopramide + **A**ntipsychotics (typical>atypical) + **c**alcium (channel blocke
+
+**Q2.** In the management of Drug-Induced Parkinsonism, which of the following should be avoided or is contraindicated?
+
+  - **A.** dopamine blockers (avoid in possible)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — dopamine blockers (avoid in possible)
+  >
+  > *Source:* Prevention: avoid dopamine blockers if possible, use lowest dose, monitor
+

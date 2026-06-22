@@ -324,3 +324,20 @@ mindmap
    C. A complication seen late in the disease course of Portal Hypertension and Complications
    D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Precipitating factors*
+
+**Q1.** What is the most appropriate first-line therapy for Precipitating factors?
+
+  - **A.** Alkalosis + Treat Cause, Acetazolamide
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Alkalosis + Treat Cause, Acetazolamide
+  >
+  > *Source:* **Alkalosis**   Diuretics, Vomiting   **Treat Cause, Acetazolamide (Caution)**  
+
+### 4.
+

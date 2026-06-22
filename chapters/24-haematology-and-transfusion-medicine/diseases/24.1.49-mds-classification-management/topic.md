@@ -451,3 +451,49 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — MDS Classification & Management*
+
+**Q1.** Which of the following features is most specific or characteristic of MDS Classification & Management?
+
+  - **A.** "del5q = Lenalidomide"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "del5q = Lenalidomide"
+  >
+  > *Source:* reatment algorithm |
+| **"IPSS-M = Molecular IPSS"** | Adds 17 genes; TP53 VAF >10% = Very High |
+| **"del5q = Lenalidomide"** | Isolated del5q specific treatment |
+
+---
+
+**Q2.** Which landmark clinical trial provided evidence relevant to the management of MDS Classification & Management (specifically: ↓ transfusion burden
+
+5)?
+
+  - **A.** MEDALIST trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — MEDALIST trial
+  >
+  > *Source:* **What is the first-line treatment for Lower-Risk MDS with ring sideroblasts and transfusion dependence?**
+   - **Luspatercept** (ActRIIB-Fc) – MEDALIST trial showed ↓ transfusion burden
+
+5
+
+**Q3.** What is the most appropriate first-line therapy for MDS Classification & Management?
+
+  - **A.** 1st + Luspatercept + SF3B1 mut / RS
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — 1st + Luspatercept + SF3B1 mut / RS
+  >
+  > *Source:* **1st**   **Luspatercept**   **SF3B1 mut / RS+ (ring sideroblasts ≥15%)** with transfusion dependence (MEDALIST)
+

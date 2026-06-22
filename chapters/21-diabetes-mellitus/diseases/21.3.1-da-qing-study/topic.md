@@ -103,3 +103,44 @@ By the end of this note you should be able to:
 - **A**dditive: NOT (exercise alone > combined)
 - **R**esults: legacy effect proven
 - **Y**ear 20: CVD/mortality benefit**</think>
+---
+
+> Auto-generated study sections for "Type 2 diabetes prevention" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Type 2 diabetes prevention?
+  A: By the end of this note you should be able to:
+- Q: What is Design of Type 2 diabetes prevention?
+  A: Cluster RCT (33 clinics); 577 IGT participants
+- Q: What is Location of Type 2 diabetes prevention?
+  A: Da Qing, China
+- Q: What is Duration of Type 2 diabetes prevention?
+  A: 6 years active intervention; 20-year follow-up
+- Q: What is Design of Type 2 diabetes prevention?
+  A: Cluster RCT (China); 577 IGT; 6y intervention, 20y follow-up
+- Q: What is Arms of Type 2 diabetes prevention?
+  A: Diet (31%), Exercise (46%), Diet+Exercise (42%)
+- Q: What is the prognosis of Type 2 diabetes prevention?
+  A: Combined: DM 43%↓, CVD events 41%↓, CVD death 32%↓, all-cause death 29%↓
+- Q: What is Exercise alone of Type 2 diabetes prevention?
+  A: Most effective single intervention (46%)
+- Q: What is Legacy effect of Type 2 diabetes prevention?
+  A: Benefits persist 14y post-intervention
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes prevention?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes prevention
+   C. A complication seen late in the disease course of Type 2 diabetes prevention
+   D. A condition that mimics Type 2 diabetes prevention but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes prevention presents with: Design — Cluster RCT (33 clinics); 577 IGT participants; Location — Da Qing, China; Duration — 6 years active intervention; 20-year follow-up. What is the most likely diagnosis?
+   A. **Type 2 diabetes prevention**
+   B. A condition that mimics Type 2 diabetes prevention but is not the same entity
+   C. A complication of Type 2 diabetes prevention rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes prevention
+

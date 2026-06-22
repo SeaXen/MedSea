@@ -146,3 +146,69 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[HbA1c diagnosis]], [[Impaired fasting glucose (IFG)]], [[Impaired glucose tolerance (IGT)]], [[Type 2 diabetes prevention]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Increased HbA1c risk category*
+
+**Q1.** Which of the following features is most specific or characteristic of Increased HbA1c risk category?
+
+  - **A.** Pregnancy
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Pregnancy
+  >
+  > *Source:* dialysis)** | **Falsely LOW** | ↓ RBC lifespan, ESA use | FPG, OGTT, fructosamine |
+| **Pregnancy (2nd/3rd trimester)** | **Falsely LOW** | ↑ RBC turnover, haemodilution | OGTT (diagnostic standard) |
+
+**Q2.** What is the most appropriate first-line therapy for Increased HbA1c risk category?
+
+  - **A.** Lifestyle
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Lifestyle
+  >
+  > *Source:* **Lifestyle** (same evidence as IFG/IGT):
+- DPP, DPS, Da Qing all included HbA1c-defined prediabetes subsets
+- Weight loss 5–7%, 150 min/week activity, Mediterranean/DASH diet
+---
+
+> Auto-generated study sections for "Prediabetic states" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (7 generated)
+
+- Q: What is the definition of Prediabetic states?
+  A: # Increased HbA1c Risk Category (Prediabetes by HbA1c)
+- Q: What is ADA vs NICE HbA1c prediabetes of Prediabetic states?
+  A: ADA 39–47 (5.7–6.4%), NICE 42–47 (6.0–6.4%)
+- Q: What is Falsely LOW HbA1c of Prediabetic states?
+  A: Haemoglobinopathies, haemolysis, CKD, pregnancy, recent transfusion
+- Q: What is Falsely HIGH HbA1c of Prediabetic states?
+  A: Iron deficiency, splenectomy, opioids
+- Q: What is Pregnancy of Prediabetic states?
+  A: OGTT only — HbA1c not diagnostic
+- Q: What is Anaemia of Prediabetic states?
+  A: Treat iron deficiency first, then recheck HbA1c
+- Q: What is Ethnicity of Prediabetic states?
+  A: Black African-Caribbean: HbA1c reads higher at same glucose
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Prediabetic states?**
+   A. **# Increased HbA1c Risk Category (Prediabetes by HbA1c)**
+   B. An unrelated condition not matching the clinical picture of Prediabetic states
+   C. A complication seen late in the disease course of Prediabetic states
+   D. A condition that mimics Prediabetic states but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Prediabetic states presents with: Q1. Which of the following features is most specific or characteristic of Increased HbA1c risk category?; B. A feature common to many acute inflammatory conditions; C. A non-specific sign that does not localise the diagnosis. What is the most likely diagnosis?
+   A. **Prediabetic states**
+   B. A condition that mimics Prediabetic states but is not the same entity
+   C. A complication of Prediabetic states rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Prediabetic states
+

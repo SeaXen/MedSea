@@ -261,3 +261,60 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Clinical presentation" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Clinical presentation?
+  A: Latent Autoimmune Diabetes in Adults: adult-onset autoimmune diabetes with slow progression
+- Q: What is Age at onset of Clinical presentation?
+  A: >30 years (peak 40-60)
+- Q: What is the epidemiology of Clinical presentation?
+  A: 2-12% of adult-onset diabetes; ~50% of non-obese T2DM
+- Q: What is Autoantibodies of Clinical presentation?
+  A: GAD65+ (90%); IA-2, ZnT8, IAA less common
+- Q: What is Progression of Clinical presentation?
+  A: Slow: insulin required at ~3-7 years (vs months in classic T1DM)
+- Q: What is Genetics of Clinical presentation?
+  A: HLA-DR3/DR4 (like T1DM); TCF7L2 (like T2DM) - hybrid
+- Q: What is Age of Clinical presentation?
+  A: >=30 years at diagnosis
+- Q: What is Autoantibodies of Clinical presentation?
+  A: >=1 islet autoantibody (GAD65, IA-2, ZnT8, IAA)
+- Q: What is Insulin independence of Clinical presentation?
+  A: Not insulin-requiring for >=6 months after diagnosis
+- Q: What is Age of Clinical presentation?
+  A: >=30 years at diagnosis
+- Q: What is Autoantibodies of Clinical presentation?
+  A: >=1 islet autoantibody (GAD65, IA-2, ZnT8, IAA)
+- Q: What is the definition of Clinical presentation?
+  A: Adult-onset (>30y) autoimmune diabetes; slow progression
+- Q: What are the clinical features of Clinical presentation?
+  A: GAD65+ (90%); single Ab often; initial non-insulin response
+- Q: What is the investigation of choice for Clinical presentation?
+  A: Age >=30, 1+ Ab, insulin-independent >=6 months
+- Q: What is vs T1DM of Clinical presentation?
+  A: Adult, slow, no DKA, single Ab, preserved C-peptide
+- Q: What is vs T2DM of Clinical presentation?
+  A: Non-obese, GAD65+, C-peptide low-normal, fails oral agents
+- Q: How is Clinical presentation managed?
+  A: Metformin/DPP-4i/GLP-1 RA initially; avoid SU; transition to insulin when C-peptide low or HbA1c uncontrolled
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Clinical presentation?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Clinical presentation
+   C. A complication seen late in the disease course of Clinical presentation
+   D. A condition that mimics Clinical presentation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Clinical presentation presents with: Age at onset — >30 years (peak 40-60); Prevalence — 2-12% of adult-onset diabetes; ~50% of non-obese T2DM; Autoantibodies — GAD65+ (90%); IA-2, ZnT8, IAA less common. What is the most likely diagnosis?
+   A. **Clinical presentation**
+   B. A condition that mimics Clinical presentation but is not the same entity
+   C. A complication of Clinical presentation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Clinical presentation
+

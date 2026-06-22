@@ -624,3 +624,26 @@ C, B, A, B, B, B, B, B, B, A
 
 ### SBAs
 1-A, 2-A, 3-A, 4-A, 5-A
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 19: Clinical Biochemistry / Hypocalcaemia**
+
+**Q1.** A patient is being evaluated for Hypocalcaemia. Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+
+**Q2.** Which of the following best describes the underlying pathophysiology / definition of Hypocalcaemia?
+
+  - **A.** Correction Formula: Corrected Ca = Measured Ca + 0.02 × (40 - Albumin g/L) [or ×0.8 per 1g/dL Albumin]
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — Correction Formula: Corrected Ca = Measured Ca + 0.02 × (40 - Albumin g/L) [or ×0.8 per 1g/dL Albumin]
+

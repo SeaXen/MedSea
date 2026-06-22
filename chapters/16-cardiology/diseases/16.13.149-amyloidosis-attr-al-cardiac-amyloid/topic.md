@@ -190,3 +190,19 @@ E. All of the above
 **Tags:** #medicine #cardiology #davidson #fcps #mrcp
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Amyloidosis ATTR AL   cardiac amyloid*
+
+**Q1.** What is the most appropriate first-line therapy for Amyloidosis ATTR AL   cardiac amyloid?
+
+  - **A.** Diuretics
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Diuretics
+  >
+  > *Source:* **Diuretics** for congestion.
+

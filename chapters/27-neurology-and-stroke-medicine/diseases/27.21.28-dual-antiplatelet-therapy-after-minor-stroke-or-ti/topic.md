@@ -555,3 +555,19 @@ DAPT after minor stroke or high-risk TIA is a **selected early secondary-prevent
 8. **A** — Ibuprofen/NSAID co-use is a classic bleeding concern.  
 9. **A** — DAPT alone is the wrong long-term strategy for AF-related cardioembolic stroke if anticoagulation is indicated.  
 10. **A** — DAPT is a selective early short-term strategy, not a universal lifelong one.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Dual antiplatelet therapy after minor stroke or TIA*
+
+**Q1.** What is the most appropriate first-line therapy for Dual antiplatelet therapy after minor stroke or TIA?
+
+  - **A.** Start DAPT early if appropriate and bleeding risk is acceptable
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Start DAPT early if appropriate and bleeding risk is acceptable
+  >
+  > *Source:* Start DAPT early if appropriate and bleeding risk is acceptable.
+

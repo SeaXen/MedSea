@@ -319,3 +319,21 @@ CSF ↔ [[Lumbar Puncture]], [[CNS Infections]], [[Meningitis]], [[Encephalitis]
 ## Local Navigation
 **Hub:** [[01_Fundamentals_Examination/Fundamentals & Examination Hub]] | [[01_Fundamentals_Examination/Investigations Hub]] | [[Neurology MOC]]
 **Related:** [[Lumbar Puncture]], [[CNS Infections]], [[Meningitis]], [[Encephalitis]], [[Guillain-Barre]], [[Multiple Sclerosis]], [[SAH]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — CSF Analysis & Interpretation*
+
+**Q1.** What is the most appropriate first-line therapy for CSF Analysis & Interpretation?
+
+  - **A.** Meningitis:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Meningitis:
+  >
+  > *Source:* **Meningitis:**
+- Empirical: ceftriaxone 2g IV 12-hrly + dexamethasone 10mg IV 6-hrly + ampicillin 2g IV 4-hrly (if >50 yr or Listeria risk)
+- Add aciclovir 10 mg/kg IV 8-hrly if HSV encephalitis susp
+

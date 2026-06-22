@@ -128,3 +128,28 @@ modified: 2026-06-13
 - [[Type 1 Diabetes Mellitus/Glucose monitoring/Time in range (TIR) metrics]]
 - [[Type 1 Diabetes Mellitus/Insulin therapy/Insulin pump therapy (CSII)]]
 - [[Diabetic Emergencies/Hypoglycaemia classification (Level 1/2/3)]]
+---
+
+> Auto-generated study sections for "Glucose monitoring" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Glucose monitoring?
+  A: Flash Glucose Monitoring (isCGM) = Intermittently scanned Continuous Glucose Monitoring.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Glucose monitoring?**
+   A. **Flash Glucose Monitoring (isCGM) = Intermittently scanned Continuous Glucose Monitoring.**
+   B. An unrelated condition not matching the clinical picture of Glucose monitoring
+   C. A complication seen late in the disease course of Glucose monitoring
+   D. A condition that mimics Glucose monitoring but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Glucose monitoring presents with: Flash Glucose Monitoring (isCGM) = Intermittently scanned Continuous Glucose Monitoring. Sensor worn for 14 days; user scans with reader/phone to get glucose value + 8h trend graph.; Device: FreeStyle Libre (Libre 2, Libre 3).; FCPS/MRCP relevance: NICE NG17 recommends as option for T1DM; exam questions on technology, indications, limitations vs rtCGM.. What is the most likely diagnosis?
+   A. **Glucose monitoring**
+   B. A condition that mimics Glucose monitoring but is not the same entity
+   C. A complication of Glucose monitoring rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Glucose monitoring
+

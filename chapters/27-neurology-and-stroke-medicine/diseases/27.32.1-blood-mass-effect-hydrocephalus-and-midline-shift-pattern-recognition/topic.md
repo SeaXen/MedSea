@@ -706,3 +706,19 @@ Emergency CT interpretation in neurology depends on disciplined pattern recognit
 8. **A. Anticoagulant use** — can worsen bleeding and change management urgency.
 9. **A. Atrophy rather than acute pressure hydrocephalus** — enlarged ventricles with enlarged sulci favors ex vacuo change.
 10. **A. Posterior fossa** — easy to miss, clinically critical.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Blood*
+
+**Q1.** Which of the following features is most specific or characteristic of Blood?
+
+  - **A.** B. Compress the brainstem and fourth ventricle
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — B. Compress the brainstem and fourth ventricle
+  >
+  > *Source:* **B. Compress the brainstem and fourth ventricle** — key posterior fossa danger
+

@@ -278,3 +278,20 @@ A: Long-acting opioid agonist; risk of QTc prolongation; used in maintenance the
 
 - [[../Substance Use Disorders|Substance Use Disorders]] (heading hub)
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Opioid use disorder and overdose*
+
+**Q1.** Which of the following features is most specific or characteristic of Opioid use disorder and overdose?
+
+  - **A.** Mnemonic for Opioid use disorder and overdose
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Opioid use disorder and overdose
+  >
+  > *Source:* **Mnemonic for Opioid use disorder and overdose** — see key points in Core Clinical Content
+- **'SIG E CAPS'** for depression criteria: Sleep, Interest, Guilt, Energy, Concentration, Appetite, Psychom
+

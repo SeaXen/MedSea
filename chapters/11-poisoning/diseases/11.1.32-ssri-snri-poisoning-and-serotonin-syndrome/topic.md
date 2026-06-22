@@ -513,3 +513,33 @@ Serotonin syndrome = 5-HT excess → Hunter Criteria (clonus-based). Triad: neur
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — SSRI-SNRI Poisoning and Serotonin Syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of SSRI-SNRI Poisoning and Serotonin Syndrome?
+
+  - **A.** Clonus
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Clonus
+  >
+  > *Source:* ---------|
+| **Onset** | **Hours** (rapid) | **Days** (gradual) | Minutes-hours | Minutes-hours |
+| **Clonus** | **YES (Hallmark)** | No | No | No |
+| **Hyperreflexia** | **YES** | Normal/↑ | Yes | No
+
+**Q2.** What is the most appropriate first-line therapy for SSRI-SNRI Poisoning and Serotonin Syndrome?
+
+  - **A.** Cardiovascular
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Cardiovascular
+  >
+  > *Source:* **Cardiovascular**: treat tachycardia/HTN with short-acting agents (esmolol, nicardipine)
+

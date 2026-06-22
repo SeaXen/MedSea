@@ -411,3 +411,20 @@ mindmap
    C. A complication seen late in the disease course of Hematology
    D. A condition that mimics Hematology but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Warfarin Management*
+
+**Q1.** What is the most appropriate first-line therapy for Warfarin Management?
+
+  - **A.** Stop Bridging + INR Therapeutic ≥2.0 x + NO Bridging for Low Risk
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Stop Bridging + INR Therapeutic ≥2.0 x + NO Bridging for Low Risk
+  >
+  > *Source:* **Stop Bridging**   When **INR Therapeutic ≥2.0 x 2 Days**   —   —  
+
+> [!warning] **NO Bridging for Low Risk**: AF (CHA₂DS₂-VASc <5), VTE >3mo, Mechanical Aortic Valve (No Risk Factors).
+

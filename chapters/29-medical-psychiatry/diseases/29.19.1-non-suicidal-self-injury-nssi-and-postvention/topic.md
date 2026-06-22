@@ -278,3 +278,22 @@ A: DBT (first-line for NSSI/BPD), CBT, addressing underlying distress
 - [[../Suicide and Self-Harm|Suicide and Self-Harm]] (heading hub)
 - [[Suicide risk assessment and prevention]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Non-suicidal self-injury (NSSI) and postvention*
+
+**Q1.** Which of the following features is most specific or characteristic of Non-suicidal self-injury (NSSI) and postvention?
+
+  - **A.** Mnemonic for Non-suicidal self-injury
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Non-suicidal self-injury
+  >
+  > *Source:* **Mnemonic for Non-suicidal self-injury (NSSI) and postvention** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'ABCDEFGHI'** — M
+

@@ -147,3 +147,91 @@ modified: 2026-06-13
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Diabetic nephropathy vs other proteinuric diseases*
+
+**Q1.** Which of the following features is most specific or characteristic of Diabetic nephropathy vs other proteinuric diseases?
+
+  - **A.** Immunofluorescence
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Immunofluorescence
+  >
+  > *Source:* matrix expansion | **Spikes** (GBM), subepithelial deposits | Amorphous deposits, Congo red +ve |
+| **Immunofluorescence** | Linear IgG (non-specific), albumin | Non-specific IgM/C3 in sclerotic areas
+
+**Q2.** What is the most appropriate first-line therapy for Diabetic nephropathy vs other proteinuric diseases?
+
+  - **A.** Rituximab
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Rituximab
+  >
+  > *Source:* **MN**   **Rituximab** (first-line); SGLT2i + ACEi/ARB
+---
+
+> Auto-generated study sections for "Diabetic nephropathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Diabetic nephropathy?
+  A: | Clinical dilemma | ~30% of proteinuric diabetes have non-DKD component |
+- Q: What is Clinical dilemma of Diabetic nephropathy?
+  A: ~30% of proteinuric diabetes have non-DKD component
+- Q: What is Biopsy yield of Diabetic nephropathy?
+  A: Non-diabetic pathology in 20–30% of biopsied diabetics with proteinuria
+- Q: What is Rapid decline of Diabetic nephropathy?
+  A: eGFR drop >5 mL/min/yr
+- Q: What is Active sediment of Diabetic nephropathy?
+  A: RBC >10/µL, RBC/WBC casts
+- Q: What is No retinopathy of Diabetic nephropathy?
+  A: DM >10y with A3 proteinuria
+- Q: What are the clinical features of Diabetic nephropathy?
+  A: Fever, rash, arthralgia, haemoptysis
+- Q: What is Short duration of Diabetic nephropathy?
+  A: DM <5y with heavy proteinuria
+- Q: What is Rapid decline of Diabetic nephropathy?
+  A: eGFR drop >5 mL/min/yr
+- Q: What is Active sediment of Diabetic nephropathy?
+  A: RBC >10/µL, RBC/WBC casts
+- Q: What is No retinopathy of Diabetic nephropathy?
+  A: DM >10y with A3 proteinuria
+- Q: What are the clinical features of Diabetic nephropathy?
+  A: Fever, rash, arthralgia, haemoptysis
+- Q: What is Short duration of Diabetic nephropathy?
+  A: DM <5y with heavy proteinuria
+- Q: What is Immunosuppression considered of Diabetic nephropathy?
+  A: Before starting steroids/rituximab/etc.
+- Q: What is Red flags of Diabetic nephropathy?
+  A: Rapid eGFR decline, active sediment, no retinopathy, systemic symptoms, FH
+- Q: What is Urine microscopy of Diabetic nephropathy?
+  A: RBC casts = GN; WBC casts = AIN/pyelonephritis
+- Q: What is Diabetic nephropathy indicated for?
+  A: Rapid decline, active sediment, no retinopathy, systemic features, short DM duration
+- Q: What is Common non-DKD of Diabetic nephropathy?
+  A: Hypertensive nephrosclerosis, GN (IgA, membranous), amyloidosis, myeloma
+- Q: What is Not all proteinuria in DM = DKD of Diabetic nephropathy?
+  A: ~20–30% have non-diabetic component
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic nephropathy?**
+   A. **| Clinical dilemma | ~30% of proteinuric diabetes have non-DKD component |**
+   B. An unrelated condition not matching the clinical picture of Diabetic nephropathy
+   C. A complication seen late in the disease course of Diabetic nephropathy
+   D. A condition that mimics Diabetic nephropathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic nephropathy presents with: Clinical dilemma — ~30% of proteinuric diabetes have non-DKD component; Biopsy yield — Non-diabetic pathology in 20–30% of biopsied diabetics with proteinuria; Key principle — Not all proteinuria in diabetes = DKD. What is the most likely diagnosis?
+   A. **Diabetic nephropathy**
+   B. A condition that mimics Diabetic nephropathy but is not the same entity
+   C. A complication of Diabetic nephropathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic nephropathy
+

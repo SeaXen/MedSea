@@ -172,3 +172,52 @@ flowchart TD
 - **I**ron: deficiency -> HbA1c HIGH
 - **V**alidation: no DCCT standard for GA/Fructosamine
 - **E**xtreme: ESRD = HbA1c useless**</think>
+---
+
+> Auto-generated study sections for "Diabetes in CKD and dialysis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Diabetes in CKD and dialysis?
+  A: By the end of this note you should be able to:
+- Q: What is Problem of Diabetes in CKD and dialysis?
+  A: HbA1c underestimates true glycaemia in CKD/ESRD
+- Q: What is the mechanism of Diabetes in CKD and dialysis?
+  A: ↓RBC lifespan (uraemia, ESA, blood loss); ↑carbamylation of Hb
+- Q: What is Magnitude of Diabetes in CKD and dialysis?
+  A: HbA1c 5-15% lower than true mean glucose in ESRD
+- Q: What is Problem of Diabetes in CKD and dialysis?
+  A: HbA1c underestimates true glycaemia in CKD/ESRD
+- Q: What is the mechanism of Diabetes in CKD and dialysis?
+  A: ↓RBC lifespan (uraemia, ESA, blood loss); ↑carbamylation of Hb
+- Q: What is Magnitude of Diabetes in CKD and dialysis?
+  A: HbA1c 5-15% lower than true mean glucose in ESRD
+- Q: What is HbA1c in CKD of Diabetes in CKD and dialysis?
+  A: Falsely LOW (↓RBC lifespan, ESA); bias 5-25% by stage
+- Q: What is Iron deficiency of Diabetes in CKD and dialysis?
+  A: HbA1c falsely HIGH (prolonged RBC survival)
+- Q: What is Alternatives of Diabetes in CKD and dialysis?
+  A: Fructosamine (2-3 wk); Glycated Albumin (2-3 wk); CGM
+- Q: What is GA target of Diabetes in CKD and dialysis?
+  A: <18% (equiv HbA1c ~7.0%); <20% if high risk
+- Q: What is Fructosamine target of Diabetes in CKD and dialysis?
+  A: <280 umol/L (equiv HbA1c ~7.0%)
+- Q: What is Dialysis of Diabetes in CKD and dialysis?
+  A: HbA1c unreliable; use GA/Fructosamine/CGM
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in CKD and dialysis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in CKD and dialysis
+   C. A complication seen late in the disease course of Diabetes in CKD and dialysis
+   D. A condition that mimics Diabetes in CKD and dialysis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in CKD and dialysis presents with: Problem — HbA1c underestimates true glycaemia in CKD/ESRD; Mechanism — ↓RBC lifespan (uraemia, ESA, blood loss); ↑carbamylation of Hb; Magnitude — HbA1c 5-15% lower than true mean glucose in ESRD. What is the most likely diagnosis?
+   A. **Diabetes in CKD and dialysis**
+   B. A condition that mimics Diabetes in CKD and dialysis but is not the same entity
+   C. A complication of Diabetes in CKD and dialysis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in CKD and dialysis
+

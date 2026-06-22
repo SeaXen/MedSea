@@ -162,3 +162,107 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetic foot ulcer (DFU) classification]], [[Foot risk classification (IWGDF/Scottish)]], [[Charcot neuroarthropathy]], [[Amputation prevention and multidisciplinary care]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — dfu-management-offloading*
+
+**Q1.** What is the most appropriate first-line therapy for dfu-management-offloading?
+
+  - **A.** Felted foam / Insoles
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Felted foam / Insoles
+  >
+  > *Source:* **Felted foam / Insoles**   Adjunct / prevention   Minor ulcers, prevention   Insufficient alone for active ulcer
+---
+
+> Auto-generated study sections for "Diabetic foot disease" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Diabetic foot disease?
+  A: DFU management = MDT + TIME + OFFLOADING — offloading is cornerstone (Total Contact Cast gold standard); debridement essential; infection per IWGDF/PEDIS; vascular assessment mandatory; coordinate diabetology, podiatry, vascular, orthotics, microbiology.
+- Q: What is ABI (Ankle-Brachial Index) of Diabetic foot disease?
+  A: <0.9 = PAD; <0.5 = severe; >1.3 = non-compressible (medial calcification) — use TBI
+- Q: What is Toe-Brachial Index (TBI) of Diabetic foot disease?
+  A: <0.7 = PAD; <0.25 = critical limb ischaemia
+- Q: What is TcPO2 (Transcutaneous O2) of Diabetic foot disease?
+  A: <30 mmHg = poor healing; <20 = critical
+- Q: What is Duplex US / CTA / MRA of Diabetic foot disease?
+  A: Anatomic mapping for revascularisation
+- Q: What is Cornerstone of DFU healing of Diabetic foot disease?
+  A: Offloading — TCC gold standard (non-removable > removable)
+- Q: What is TIME of Diabetic foot disease?
+  A: Tissue (debridement), Infection, Moisture, Edge
+- Q: What is Debridement frequency of Diabetic foot disease?
+  A: Weekly sharp debridement at TCC change
+- Q: What is PEDIS Grade 2 infection of Diabetic foot disease?
+  A: Mild: erythema 0.5–2cm → narrow oral abx (flucloxacillin)
+- Q: What is PEDIS Grade 3 infection of Diabetic foot disease?
+  A: Moderate: >2cm or deep → broad-spectrum + imaging for bone
+- Q: What is PEDIS Grade 4 infection of Diabetic foot disease?
+  A: Severe: sepsis → IV broad + urgent surgical debridement
+- Q: What is Osteomyelitis of Diabetic foot disease?
+  A: Probe-to-bone +ve; ESR >70; MRI; bone biopsy definitive
+- Q: What is Antibiotic duration bone of Diabetic foot disease?
+  A: 6 weeks (2 IV + 4 oral)
+- Q: What is ABI <0.9 of Diabetic foot disease?
+  A: PAD; <0.5 severe; >1.3 calcified (use TBI)
+- Q: What is TcPO2 <30 mmHg of Diabetic foot disease?
+  A: Poor healing likely
+- Q: What is MDT referral of Diabetic foot disease?
+  A: Active ulcer = urgent 24–48h
+- Q: What is IWGDF Risk 3 of Diabetic foot disease?
+  A: 1–3m specialist MDT
+- Q: What is ABI (Ankle-Brachial Index) of Diabetic foot disease?
+  A: <0.9 = PAD; <0.5 = severe; >1.3 = non-compressible (medial calcification) — use TBI
+- Q: What is Toe-Brachial Index (TBI) of Diabetic foot disease?
+  A: <0.7 = PAD; <0.25 = critical limb ischaemia
+- Q: What is TcPO2 (Transcutaneous O2) of Diabetic foot disease?
+  A: <30 mmHg = poor healing; <20 = critical
+- Q: What is Duplex US / CTA / MRA of Diabetic foot disease?
+  A: Anatomic mapping for revascularisation
+- Q: What is Cornerstone of DFU healing of Diabetic foot disease?
+  A: Offloading — TCC gold standard (non-removable > removable)
+- Q: What is TIME of Diabetic foot disease?
+  A: Tissue (debridement), Infection, Moisture, Edge
+- Q: What is Debridement frequency of Diabetic foot disease?
+  A: Weekly sharp debridement at TCC change
+- Q: What is PEDIS Grade 2 infection of Diabetic foot disease?
+  A: Mild: erythema 0.5–2cm → narrow oral abx (flucloxacillin)
+- Q: What is PEDIS Grade 3 infection of Diabetic foot disease?
+  A: Moderate: >2cm or deep → broad-spectrum + imaging for bone
+- Q: What is PEDIS Grade 4 infection of Diabetic foot disease?
+  A: Severe: sepsis → IV broad + urgent surgical debridement
+- Q: What is Osteomyelitis of Diabetic foot disease?
+  A: Probe-to-bone +ve; ESR >70; MRI; bone biopsy definitive
+- Q: What is Antibiotic duration bone of Diabetic foot disease?
+  A: 6 weeks (2 IV + 4 oral)
+- Q: What is ABI <0.9 of Diabetic foot disease?
+  A: PAD; <0.5 severe; >1.3 calcified (use TBI)
+- Q: What is TcPO2 <30 mmHg of Diabetic foot disease?
+  A: Poor healing likely
+- Q: What is MDT referral of Diabetic foot disease?
+  A: Active ulcer = urgent 24–48h
+- Q: What is IWGDF Risk 3 of Diabetic foot disease?
+  A: 1–3m specialist MDT
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic foot disease?**
+   A. **DFU management = MDT + TIME + OFFLOADING — offloading is cornerstone (Total Contact Cast gold standard); debridement essential; infection per IWGDF/PEDIS; vascular assessment mandatory; coordinate dia**
+   B. An unrelated condition not matching the clinical picture of Diabetic foot disease
+   C. A complication seen late in the disease course of Diabetic foot disease
+   D. A condition that mimics Diabetic foot disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic foot disease presents with: Grade — Clinical Criteria; 1 (No infection) — No purulence, no inflammation; 2 (Mild) — ≥2 signs inflammation (erythema 0.5–2cm, warmth, induration) Limited to skin/subcut. What is the most likely diagnosis?
+   A. **Diabetic foot disease**
+   B. A condition that mimics Diabetic foot disease but is not the same entity
+   C. A complication of Diabetic foot disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic foot disease
+

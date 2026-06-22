@@ -294,3 +294,20 @@ Female genital mutilation
 - [[../Adolescent Mental Health and Behaviour|Adolescent Mental Health and Behaviour]] (heading hub)
 - [[../../Adolescent and transition medicine MOC|Adolescent and transition medicine MOC]]
 - [[../../Davidson Chapter 31 - Adolescent and transition medicine Hierarchy|Davidson Chapter 31 - Adolescent and transition medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 31: Adolescent Medicine — Female genital mutilation*
+
+**Q1.** Which of the following features is most specific or characteristic of Female genital mutilation?
+
+  - **A.** 'Fraser guidelines'
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — 'Fraser guidelines'
+  >
+  > *Source:* - **'Gillick competence'** - under-16 with sufficient understanding to make own medical decisions
+- **'Fraser guidelines'** - specific criteria for contraceptive/sexual health advice without parental 
+

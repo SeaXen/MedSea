@@ -615,3 +615,19 @@ see_also:
 > - 5 mnemonics with visual mindmap
 > - Revision card + spaced repetition tracker
 > - Cross-references verified
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — GDMT quadruple therapy ARNI ACEi ARB beta blocker MRA SGLT2i*
+
+**Q1.** What is the most appropriate first-line therapy for GDMT quadruple therapy ARNI ACEi ARB beta blocker MRA SGLT2i?
+
+  - **A.** Step
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Step
+  >
+  > *Source:* A[New HFrEF Diagnosis] --> B[**Step 1: ARNI** (preferred over ACEi)]
+

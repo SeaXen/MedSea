@@ -437,3 +437,19 @@ flowchart TD
 ## 30. Answer Key Pearls
 - Severe UC must be framed as an **admit-and-monitor emergency**, not as a routine outpatient flare.
 - Marking schemes often reward: **severity criteria, infection exclusion, IV steroids, DVT prophylaxis, surgical involvement, and escalation plan**.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 22: Gastroenterology — Acute severe ulcerative colitis*
+
+**Q1.** What is the most appropriate first-line therapy for Acute severe ulcerative colitis?
+
+  - **A.** IV corticosteroids
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — IV corticosteroids
+  >
+  > *Source:* **IV corticosteroids** are first-line therapy
+

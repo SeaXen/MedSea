@@ -194,3 +194,156 @@ flowchart TD
 - **L**ipodystrophy: lipoatrophy + lipohypertrophy = IR
 - **S**GLT2i/GLP-1: if T2DM + obesity/CKD/CV
 - **Y**ou screen: annual glucose/HbA1c**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Insulin resistance in HIV*
+
+**Q1.** Which of the following features is most specific or characteristic of Insulin resistance in HIV?
+
+  - **A.** Cushing syndrome
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cushing syndrome
+  >
+  > *Source:* -----------|
+| **Traditional metabolic syndrome** | Obesity, HTN, dyslipidaemia; no ART, no HIV |
+| **Cushing syndrome** | Cortisol excess; specific features |
+| **Acromegaly** | GH/IGF-1 excess |
+| *
+
+**Q2.** What is the most appropriate first-line therapy for Insulin resistance in HIV?
+
+  - **A.** Metformin
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Metformin
+  >
+  > *Source:* **Metformin**   1st line for IR (if eGFR >=30); weight neutral
+---
+
+> Auto-generated study sections for "Diabetes in HIV" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (50 generated)
+
+- Q: What is the definition of Diabetes in HIV?
+  A: By the end of this note you should be able to:
+- Q: What is the epidemiology of Diabetes in HIV?
+  A: IR in 40-60% PLWH; DM in 10-15% (vs 8-10% general)
+- Q: What is the mechanism of Diabetes in HIV?
+  A: Chronic inflammation, mitochondrial toxicity, ART, lipodystrophy
+- Q: What is the epidemiology of Diabetes in HIV?
+  A: IR in 40-60% PLWH; DM in 10-15% (vs 8-10% general)
+- Q: What is the mechanism of Diabetes in HIV?
+  A: Chronic inflammation, mitochondrial toxicity, ART, lipodystrophy
+- Q: What is Chronic inflammation of Diabetes in HIV?
+  A: ↑IL-6, TNF-α, CRP → ↓IRS-1 signalling
+- Q: What are the side effects of Diabetes in HIV?
+  A: NRTI (stavudine, zidovudine) → mtDNA depletion
+- Q: What is ART effects of Diabetes in HIV?
+  A: PI: ↓GLUT4, ↑lipogenesis; INSTI (DTG/BIC): weight gain, ↑adiposity
+- Q: What is Lipodystrophy of Diabetes in HIV?
+  A: Lipoatrophy → ↓adiponectin; lipohypertrophy → visceral fat
+- Q: What is HOMA-IR of Diabetes in HIV?
+  A: (Fasting insulin × fasting glucose) / 22.5; >2.5 = IR
+- Q: What is Fasting glucose/HbA1c of Diabetes in HIV?
+  A: Screen for diabetes (HbA1c falsely low in CKD)
+- Q: What is Lipid profile of Diabetes in HIV?
+  A: TG, HDL, LDL, apoB
+- Q: What is Adiponectin/leptin of Diabetes in HIV?
+  A: Low adiponectin = IR marker
+- Q: What is Visceral fat of Diabetes in HIV?
+  A: CT/MRI (gold standard); waist circumference surrogate
+- Q: What is HOMA-IR of Diabetes in HIV?
+  A: (Fasting insulin × fasting glucose) / 22.5; >2.5 = IR
+- Q: What is Fasting glucose/HbA1c of Diabetes in HIV?
+  A: Screen for diabetes (HbA1c falsely low in CKD)
+- Q: What is Lipid profile of Diabetes in HIV?
+  A: TG, HDL, LDL, apoB
+- Q: What is Adiponectin/leptin of Diabetes in HIV?
+  A: Low adiponectin = IR marker
+- Q: What is Visceral fat of Diabetes in HIV?
+  A: CT/MRI (gold standard); waist circumference surrogate
+- Q: What is Screen of Diabetes in HIV?
+  A: All PLWH: HCV Ab then RNA
+- Q: What is Treat of Diabetes in HIV?
+  A: DAA (SOF/VEL, GLE/PIB); 8-12 weeks
+- Q: What is Benefit of Diabetes in HIV?
+  A: SVR12 → ↓IR, ↓diabetes risk, ↓liver complications
+- Q: What is Chronic inflammation of Diabetes in HIV?
+  A: ↑IL-6, TNF-α, CRP → ↓IRS-1 signalling
+- Q: What are the side effects of Diabetes in HIV?
+  A: NRTI (stavudine, zidovudine) → mtDNA depletion
+- Q: What is ART effects of Diabetes in HIV?
+  A: PI: ↓GLUT4, ↑lipogenesis; INSTI (DTG/BIC): weight gain, ↑adiposity
+- Q: What is Lipodystrophy of Diabetes in HIV?
+  A: Lipoatrophy → ↓adiponectin; lipohypertrophy → visceral fat
+- Q: What is HCV co-infection of Diabetes in HIV?
+  A: HCV core protein → IRS-1 serine phosphorylation
+- Q: What is HOMA-IR of Diabetes in HIV?
+  A: (Fasting insulin × fasting glucose) / 22.5; >2.5 = IR
+- Q: What is Fasting glucose/HbA1c of Diabetes in HIV?
+  A: Screen for diabetes (HbA1c falsely low in CKD)
+- Q: What is Lipid profile of Diabetes in HIV?
+  A: TG, HDL, LDL, apoB
+- Q: What is Adiponectin/leptin of Diabetes in HIV?
+  A: Low adiponectin = IR marker
+- Q: What is Visceral fat of Diabetes in HIV?
+  A: CT/MRI (gold standard); waist circumference surrogate
+- Q: What is HCV RNA of Diabetes in HIV?
+  A: Screen all PLWH; treat if positive
+- Q: What is HOMA-IR of Diabetes in HIV?
+  A: (Fasting insulin × fasting glucose) / 22.5; >2.5 = IR
+- Q: What is Fasting glucose/HbA1c of Diabetes in HIV?
+  A: Screen for diabetes (HbA1c falsely low in CKD)
+- Q: What is Lipid profile of Diabetes in HIV?
+  A: TG, HDL, LDL, apoB
+- Q: What is Adiponectin/leptin of Diabetes in HIV?
+  A: Low adiponectin = IR marker
+- Q: What is Visceral fat of Diabetes in HIV?
+  A: CT/MRI (gold standard); waist circumference surrogate
+- Q: What is HCV RNA of Diabetes in HIV?
+  A: Screen all PLWH; treat if positive
+- Q: What is Screen of Diabetes in HIV?
+  A: All PLWH: HCV Ab then RNA
+- Q: What is Treat of Diabetes in HIV?
+  A: DAA (SOF/VEL, GLE/PIB); 8-12 weeks
+- Q: What is Benefit of Diabetes in HIV?
+  A: SVR12 → ↓IR, ↓diabetes risk, ↓liver complications
+- Q: What is Timing of Diabetes in HIV?
+  A: Treat early; before cirrhosis
+- Q: What is the mechanism of Diabetes in HIV?
+  A: Chronic inflammation, ART (PI/INSTI), mitochondrial toxicity, lipodystrophy, HCV
+- Q: What is the epidemiology of Diabetes in HIV?
+  A: IR 40-60%; DM 10-15% (vs 8-10% general)
+- Q: What is ART of Diabetes in HIV?
+  A: PI (lopinavir) > INSTI (DTG/BIC) > NNRTI for IR
+- Q: What is Lipodystrophy of Diabetes in HIV?
+  A: Lipoatrophy (face/limbs) + lipohypertrophy (abdomen) → IR
+- Q: What is HCV of Diabetes in HIV?
+  A: Co-infection common; DAA cure → ↓IR
+- Q: What is Screening of Diabetes in HIV?
+  A: Annual fasting glucose/HbA1c; HOMA-IR if available
+- Q: How is Diabetes in HIV managed?
+  A: ART switch (PI->INSTI); metformin; GLP-1/SGLT2i if T2DM; HCV cure
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in HIV?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in HIV
+   C. A complication seen late in the disease course of Diabetes in HIV
+   D. A condition that mimics Diabetes in HIV but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in HIV presents with: Prevalence — IR in 40-60% PLWH; DM in 10-15% (vs 8-10% general); Mechanisms — Chronic inflammation, mitochondrial toxicity, ART, lipodystrophy; Risk Factors — ART (PI, INSTI), lipodystrophy, HCV co-infection, visceral adiposity. What is the most likely diagnosis?
+   A. **Diabetes in HIV**
+   B. A condition that mimics Diabetes in HIV but is not the same entity
+   C. A complication of Diabetes in HIV rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in HIV
+

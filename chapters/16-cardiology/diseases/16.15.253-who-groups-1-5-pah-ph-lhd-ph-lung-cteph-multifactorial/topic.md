@@ -28,3 +28,30 @@ Pulmonary hypertension (PH) is **mean pulmonary artery pressure (mPAP) >20 mmHg*
 > - Group 1 (PAH) is the only form with **PAH-specific therapies**.
 > - Groups 2 and 3 dominate clinically — treat the underlying cause.
 > - **CTEPH (Group 4)** must be excluded in all PH (V/Q scan).
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — WHO Groups 1 5 PAH PH LHD PH Lung CTEPH Multifactorial*
+
+**Q1.** Which of the following features is most specific or characteristic of WHO Groups 1 5 PAH PH LHD PH Lung CTEPH Multifactorial?
+
+  - **A.** Don't miss PAH
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Don't miss PAH
+  >
+  > *Source:* **Don't miss PAH** (progressive dyspnoea, normal exam, easy to attribute to deconditioning or anxiety). **Echo is screening, not diagnostic** (RHC required)
+
+**Q2.** What is the most appropriate first-line therapy for WHO Groups 1 5 PAH PH LHD PH Lung CTEPH Multifactorial?
+
+  - **A.** General
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — General
+  >
+  > *Source:* **General**: exercise (supervised, rehabilitation), oxygen (if PaO2 <60), diuretics (oedema), anticoagulation (controversial — IPAH may benefit, NOT in connective tissue), digoxin (if AF), vaccination
+

@@ -69,3 +69,40 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #heading-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Diabetes?
+  A: Heading hub for Diabetes Prevention and Remission — covers 10 disease-level topic(s) per Davidson Ch25.
+- Q: What is Teplizumab of Diabetes?
+  A: Anti-CD3 monoclonal antibody · Delays stage 3 T1D by ~2 years in stage 2 (≥2 autoantibodies + dysglycaemia) · FDA approved
+- Q: How is Diabetes managed?
+  A: Abatacept, rituximab, alefacept, verapamil, IL-2, ATG/G-CSF · Mostly delay, not prevent
+- Q: What is DPP (US) of Diabetes?
+  A: Lifestyle 58% reduction · Metformin 31% reduction · Weight loss 7% + 150min/wk activity
+- Q: What is Da Qing (China) of Diabetes?
+  A: Diet, exercise, diet+exercise · 43% reduction at 20y · CVD/mortality benefit
+- Q: What is Finnish DPS of Diabetes?
+  A: Intensive lifestyle · 58% reduction · Weight loss, fibre, fat reduction, exercise
+- Q: What is Metformin prevention of Diabetes?
+  A: BMI ≥35, age <60, women with GDM history · Less effective than lifestyle
+- Q: What is DiRECT trial of Diabetes?
+  A: Low-calorie diet (825-853 kcal/d) 12-20wk → food reintroduction → maintenance · 46% remission at 1y, 36% at 2y
+- Q: What is Remission criteria of Diabetes?
+  A: HbA1c <48mmol/mol (6.5%) off all glucose-lowering meds ≥3 months · ADA/Diabetes UK consensus
+- Q: What is Low-calorie diet of Diabetes?
+  A: Formula meal replacements (soups/shakes) · 15kg mean weight loss → remission
+- Q: What is Maintenance of Diabetes?
+  A: Continued weight maintenance, physical activity, regular monitoring · Relapse if weight regain
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes?**
+   A. **Heading hub for Diabetes Prevention and Remission — covers 10 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetes
+   C. A complication seen late in the disease course of Diabetes
+   D. A condition that mimics Diabetes but has a different underlying cause
+

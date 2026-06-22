@@ -448,3 +448,19 @@ flowchart TD
 - **<35/50** = weak topic
 - **35-44/50** = acceptable but insecure
 - **45+/50** = exam-ready
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 22: Gastroenterology — Acute pancreatitis*
+
+**Q1.** What is the most appropriate first-line therapy for Acute pancreatitis?
+
+  - **A.** Use if there is cholangitis, extrapancreatic infection, or infected necrosis suspicion/confirmation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Use if there is cholangitis, extrapancreatic infection, or infected necrosis suspicion/confirmation
+  >
+  > *Source:* Use if there is cholangitis, extrapancreatic infection, or infected necrosis suspicion/confirmation
+

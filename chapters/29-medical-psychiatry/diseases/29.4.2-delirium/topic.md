@@ -281,3 +281,17 @@ A: Treat underlying cause; reorient; avoid restraints; antipsychotic if severely
 - [[Frontotemporal dementia and other dementias]]
 - [[Wernicke-Korsakoff syndrome and alcohol-related cognitive disorders]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 29: Medical Psychiatry / Delirium**
+
+**Q1.** Which of the following best describes the underlying pathophysiology / definition of Delirium?
+
+  - **A.** Delirium (acute confusional state) is an acute, fluctuating disturbance of attention, awareness, and cognition, usually caused by an underlying medical condition, substance, or med
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — Delirium (acute confusional state) is an acute, fluctuating disturbance of attention, awareness, and cognition, usually caused by an underlying medica
+

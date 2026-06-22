@@ -539,3 +539,32 @@ A, B, A, B, C, D, B, B, C, A
 
 ### SBAs
 1-A, 2-A, 3-A, 4-A, 5-A
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 19: Clinical Biochemistry — Wilson Disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Wilson Disease?
+
+  - **A.** Ocular
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Ocular
+  >
+  > *Source:* ing |
+| **Psychiatric** | Depression, Bipolar, Psychosis, Personality Change, Cognitive Decline |
+| **Ocular** | **Kayser-Fleischer Rings** (Pathognomonic; 95% Neuro, 50% Hepatic), Sunflower Cataract 
+
+**Q2.** What is the most appropriate first-line therapy for Wilson Disease?
+
+  - **A.** Trientine + 600-1200mg/day + 2nd Line
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Trientine + 600-1200mg/day + 2nd Line
+  >
+  > *Source:* **Trientine**   **600-1200mg/day** (Divided Doses)   **2nd Line** (If Penicillamine Intolerant)   Fewer SE; No Cross-Reaction with Penicillamine
+

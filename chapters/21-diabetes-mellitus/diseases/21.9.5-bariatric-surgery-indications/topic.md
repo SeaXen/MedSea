@@ -152,3 +152,121 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Post-surgery diabetes management]], [[Weight management and remission]], [[Type 2 diabetes remission]], [[Lifestyle intervention]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Bariatric surgery indications*
+
+**Q1.** Which of the following features is most specific or characteristic of Bariatric surgery indications?
+
+  - **A.** Consent
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Consent
+  >
+  > *Source:* take, micronutrient baseline |
+| **Anaesthetic** | Airway, Mallampati, VTE risk (Caprini score) |
+| **Consent** | Procedure-specific risks, lifelong supplementation, follow-up commitment |
+
+**Team**:
+---
+
+> Auto-generated study sections for "Metabolic surgery" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (38 generated)
+
+- Q: What is the definition of Metabolic surgery?
+  A: NICE NG191: BMI ≥35 + T2DM OR BMI ≥30 + recent T2DM (<10y); ADA: BMI ≥30 + T2DM; RYGB/Sleeve/OAGB = main procedures; 75–85% remission; multidisciplinary assessment mandatory; lifelong follow-up.
+- Q: What is BMI + T2DM of Metabolic surgery?
+  A: BMI ≥35 kg/m² + T2DM OR BMI ≥30 kg/m² + recent T2DM (<10 years)
+- Q: What is Ethnicity adjustment of Metabolic surgery?
+  A: South Asian/Chinese/Other Asian: BMI thresholds −2.5 kg/m² (i.e., ≥32.5 / ≥27.5)
+- Q: What is Failed non-surgical of Metabolic surgery?
+  A: Structured weight management (Tier 3) ≥12 months
+- Q: What is Age of Metabolic surgery?
+  A: 18–65 (consider >65 individually)
+- Q: What is Commitment of Metabolic surgery?
+  A: Lifelong follow-up, nutritional supplementation
+- Q: What is BMI + T2DM of Metabolic surgery?
+  A: BMI ≥30 kg/m² + T2DM (no duration limit)
+- Q: What are the complications of Metabolic surgery?
+  A: BMI ≥35 (any); BMI 30–34.9 + comorbidity
+- Q: What is Asian adjustment of Metabolic surgery?
+  A: BMI ≥27.5 + T2DM; BMI ≥25 + obesity complications
+- Q: What is NICE BMI threshold of Metabolic surgery?
+  A: ≥35 + T2DM OR ≥30 + recent T2DM (<10y)
+- Q: What is Ethnicity adjustment of Metabolic surgery?
+  A: South Asian: −2.5 BMI (threshold ≥32.5 / ≥27.5)
+- Q: What is ADA threshold of Metabolic surgery?
+  A: BMI ≥30 + T2DM
+- Q: What is Best remission of Metabolic surgery?
+  A: RYGB/OAGB 80–85%; Sleeve 70–80%
+- Q: What is Remission durability of Metabolic surgery?
+  A: RYGB 50–60% at 5y; Sleeve 40–50%
+- Q: What is the mechanism of Metabolic surgery?
+  A: RYGB/OAGB: incretin (GLP-1) + restriction + malabsorption; Sleeve: ghrelin ↓ + GLP-1 ↑
+- Q: What is Pre-op liver shrink of Metabolic surgery?
+  A: 800kcal 2 weeks pre-op
+- Q: What is Smoking cessation of Metabolic surgery?
+  A: ≥6 weeks pre-op
+- Q: What is SGLT2i pre-op of Metabolic surgery?
+  A: STOP (euglycaemic DKA risk)
+- Q: What is Lifelong supplements of Metabolic surgery?
+  A: B12, Iron, Ca/VitD, Folate, Thiamine, Multivitamin
+- Q: What is Follow-up of Metabolic surgery?
+  A: Annual lifelong nutritional monitoring mandatory
+- Q: What is BMI + T2DM of Metabolic surgery?
+  A: BMI ≥35 kg/m² + T2DM OR BMI ≥30 kg/m² + recent T2DM (<10 years)
+- Q: What is Ethnicity adjustment of Metabolic surgery?
+  A: South Asian/Chinese/Other Asian: BMI thresholds −2.5 kg/m² (i.e., ≥32.5 / ≥27.5)
+- Q: What is Failed non-surgical of Metabolic surgery?
+  A: Structured weight management (Tier 3) ≥12 months
+- Q: What is Age of Metabolic surgery?
+  A: 18–65 (consider >65 individually)
+- Q: What is BMI + T2DM of Metabolic surgery?
+  A: BMI ≥30 kg/m² + T2DM (no duration limit)
+- Q: What are the complications of Metabolic surgery?
+  A: BMI ≥35 (any); BMI 30–34.9 + comorbidity
+- Q: What is Asian adjustment of Metabolic surgery?
+  A: BMI ≥27.5 + T2DM; BMI ≥25 + obesity complications
+- Q: What is NICE BMI threshold of Metabolic surgery?
+  A: ≥35 + T2DM OR ≥30 + recent T2DM (<10y)
+- Q: What is Ethnicity adjustment of Metabolic surgery?
+  A: South Asian: −2.5 BMI (threshold ≥32.5 / ≥27.5)
+- Q: What is ADA threshold of Metabolic surgery?
+  A: BMI ≥30 + T2DM
+- Q: What is Best remission of Metabolic surgery?
+  A: RYGB/OAGB 80–85%; Sleeve 70–80%
+- Q: What is Remission durability of Metabolic surgery?
+  A: RYGB 50–60% at 5y; Sleeve 40–50%
+- Q: What is the mechanism of Metabolic surgery?
+  A: RYGB/OAGB: incretin (GLP-1) + restriction + malabsorption; Sleeve: ghrelin ↓ + GLP-1 ↑
+- Q: What is Pre-op liver shrink of Metabolic surgery?
+  A: 800kcal 2 weeks pre-op
+- Q: What is Smoking cessation of Metabolic surgery?
+  A: ≥6 weeks pre-op
+- Q: What is SGLT2i pre-op of Metabolic surgery?
+  A: STOP (euglycaemic DKA risk)
+- Q: What is Lifelong supplements of Metabolic surgery?
+  A: B12, Iron, Ca/VitD, Folate, Thiamine, Multivitamin
+- Q: What is Follow-up of Metabolic surgery?
+  A: Annual lifelong nutritional monitoring mandatory
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Metabolic surgery?**
+   A. **NICE NG191: BMI ≥35 + T2DM OR BMI ≥30 + recent T2DM (<10y); ADA: BMI ≥30 + T2DM; RYGB/Sleeve/OAGB = main procedures; 75–85% remission; multidisciplinary assessment mandatory; lifelong follow-up.**
+   B. An unrelated condition not matching the clinical picture of Metabolic surgery
+   C. A complication seen late in the disease course of Metabolic surgery
+   D. A condition that mimics Metabolic surgery but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Metabolic surgery presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — Bariatric surgery indications; Q1. Which of the following features is most specific or characteristic of Bariatric surgery indications?; B. A feature common to many acute inflammatory conditions. What is the most likely diagnosis?
+   A. **Metabolic surgery**
+   B. A condition that mimics Metabolic surgery but is not the same entity
+   C. A complication of Metabolic surgery rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Metabolic surgery
+

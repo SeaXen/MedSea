@@ -519,3 +519,26 @@ C, C, A, A, A, B, A, B, C, C
 
 ### SBAs
 1-A, 2-A, 3-A, 4-A, 5-A
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 19: Clinical Biochemistry / Osteoporosis**
+
+**Q1.** A patient is being evaluated for Osteoporosis. Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+
+**Q2.** Which of the following best describes the underlying pathophysiology / definition of Osteoporosis?
+
+  - **A.** Measurement Sites: **Lumbar Spine (L1-L4)** + **Total Hip / Femoral Neck** (Lowest T-Score Used).
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — Measurement Sites: **Lumbar Spine (L1-L4)** + **Total Hip / Femoral Neck** (Lowest T-Score Used).
+

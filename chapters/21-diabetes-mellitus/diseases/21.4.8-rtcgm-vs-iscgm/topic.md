@@ -162,3 +162,60 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[CGM metrics (TIR, TBR, TAR, GMI, CV)]], [[CGM-guided insulin adjustment]], [[Insulin pump therapy (CSII)/Hybrid closed-loop]], [[Insulin pump therapy (CSII)/Automated insulin delivery (AID) systems]]
+---
+
+> Auto-generated study sections for "Continuous glucose monitoring (CGM)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Continuous glucose monitoring (CGM)?
+  A: # rtCGM vs isCGM (Real-Time vs Intermittently-Scanned CGM)
+- Q: What is rtCGM vs isCGM main difference of Continuous glucose monitoring (CGM)?
+  A: rtCGM = automatic transmission + real-time alerts; isCGM = scan-dependent
+- Q: What is Libre 1 vs Libre 2 vs Libre 3 of Continuous glucose monitoring (CGM)?
+  A: Libre 1: no alarms; Libre 2: optional Bluetooth alarms; Libre 3: rtCGM (continuous + alarms)
+- Q: What is NICE T1DM of Continuous glucose monitoring (CGM)?
+  A: rtCGM for all (first-line)
+- Q: What is NICE T2DM on insulin of Continuous glucose monitoring (CGM)?
+  A: isCGM (Libre 2) first-line; rtCGM if not suitable
+- Q: What is CONCEPTT trial of Continuous glucose monitoring (CGM)?
+  A: rtCGM in pregnancy T1DM → ↓ LGA, ↓ NICU, ↓ hypertensive disorders
+- Q: What is Cost of Continuous glucose monitoring (CGM)?
+  A: Libre 2 cheaper (~£800–1000/yr) vs Dexcom G7 (~£1500–2000/yr)
+- Q: What is Data completeness of Continuous glucose monitoring (CGM)?
+  A: rtCGM auto; isCGM needs 8-hourly scans for valid AGP
+- Q: What is Pump integration of Continuous glucose monitoring (CGM)?
+  A: rtCGM required for HCL (Dexcom→Tandem/Omnipod 5/CamAPS; Guardian→780G)
+- Q: What is rtCGM vs isCGM main difference of Continuous glucose monitoring (CGM)?
+  A: rtCGM = automatic transmission + real-time alerts; isCGM = scan-dependent
+- Q: What is Libre 1 vs Libre 2 vs Libre 3 of Continuous glucose monitoring (CGM)?
+  A: Libre 1: no alarms; Libre 2: optional Bluetooth alarms; Libre 3: rtCGM (continuous + alarms)
+- Q: What is NICE T1DM of Continuous glucose monitoring (CGM)?
+  A: rtCGM for all (first-line)
+- Q: What is NICE T2DM on insulin of Continuous glucose monitoring (CGM)?
+  A: isCGM (Libre 2) first-line; rtCGM if not suitable
+- Q: What is CONCEPTT trial of Continuous glucose monitoring (CGM)?
+  A: rtCGM in pregnancy T1DM → ↓ LGA, ↓ NICU, ↓ hypertensive disorders
+- Q: What is Cost of Continuous glucose monitoring (CGM)?
+  A: Libre 2 cheaper (~£800–1000/yr) vs Dexcom G7 (~£1500–2000/yr)
+- Q: What is Data completeness of Continuous glucose monitoring (CGM)?
+  A: rtCGM auto; isCGM needs 8-hourly scans for valid AGP
+- Q: What is Pump integration of Continuous glucose monitoring (CGM)?
+  A: rtCGM required for HCL (Dexcom→Tandem/Omnipod 5/CamAPS; Guardian→780G)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Continuous glucose monitoring (CGM)?**
+   A. **# rtCGM vs isCGM (Real-Time vs Intermittently-Scanned CGM)**
+   B. An unrelated condition not matching the clinical picture of Continuous glucose monitoring (CGM)
+   C. A complication seen late in the disease course of Continuous glucose monitoring (CGM)
+   D. A condition that mimics Continuous glucose monitoring (CGM) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Continuous glucose monitoring (CGM) presents with: Feature — rtCGM (Real-Time CGM); Examples — Dexcom G6/G7, Medtronic Guardian 3/4, FreeStyle Libre 3, Eversense; Data transmission — Automatic (Bluetooth/BLE to phone/receiver). What is the most likely diagnosis?
+   A. **Continuous glucose monitoring (CGM)**
+   B. A condition that mimics Continuous glucose monitoring (CGM) but is not the same entity
+   C. A complication of Continuous glucose monitoring (CGM) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Continuous glucose monitoring (CGM)
+

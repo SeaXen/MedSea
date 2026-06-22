@@ -567,3 +567,34 @@ mindmap
 **Heading Hub:** [[12_CNS_Infections/CNS Infections Hub]]
 **Topic-Group Hub:** [[12_CNS_Infections/CNS Infections MOC]]
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — HSV Encephalitis*
+
+**Q1.** Which of the following features is most specific or characteristic of HSV Encephalitis?
+
+  - **A.** HSV PCR
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — HSV PCR
+  >
+  > *Source:* ; may be neutrophils early |
+| **Protein** | ↑ (0.5-1.5 g/L) |
+| **Glucose** | Normal (usually) |
+| **HSV PCR** | **Gold standard** (sensitivity 95-99%, specificity >99%) |
+| **Repeat LP** | If initia
+
+**Q2.** What is the most appropriate first-line therapy for HSV Encephalitis?
+
+  - **A.** EEG
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — EEG
+  >
+  > *Source:* **EEG**   For seizures   PLEDs characteristic
+

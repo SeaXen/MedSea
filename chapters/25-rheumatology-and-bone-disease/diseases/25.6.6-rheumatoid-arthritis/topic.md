@@ -522,3 +522,31 @@ mindmap
    C. A complication of Inflammatory Arthritis rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Inflammatory Arthritis
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Rheumatoid Arthritis*
+
+**Q1.** Which of the following features is most specific or characteristic of Rheumatoid Arthritis?
+
+  - **A.** Anti-CCP
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Anti-CCP
+  >
+  > *Source:* |------|------|----------------|
+| **RF** | Support diagnosis | 70-80% sensitive, 85% specific |
+| **Anti-CCP** | **Confirm diagnosis + prognosis** | 60-70% sensitive, **95-98% specific**; high titre 
+
+**Q2.** What is the most appropriate first-line therapy for Rheumatoid Arthritis?
+
+  - **A.** Combo csDMARD (if MTX alone inadequate)   Triple therapy: MTX + SSZ + HCQ   Equivalent efficacy to MTX + anti-TNF in som…
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Combo csDMARD (if MTX alone inadequate)   Triple therapy: MTX + SSZ + HCQ   Equivalent efficacy to MTX + anti-TNF in som…
+  >
+  > *Source:* Combo csDMARD** (if MTX alone inadequate)   **Triple therapy**: MTX + SSZ + HCQ   Equivalent efficacy to MTX + anti-TNF in some studies; cheaper
+

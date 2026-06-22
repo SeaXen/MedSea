@@ -131,3 +131,56 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Fasting plasma glucose]], [[HbA1c diagnosis]], [[Oral glucose tolerance test (OGTT)]], [[Diabetic Emergencies/Diabetic ketoacidosis (DKA)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Random glucose with symptoms*
+
+**Q1.** Which of the following features is most specific or characteristic of Random glucose with symptoms?
+
+  - **A.** New T1DM in child
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — New T1DM in child
+  >
+  > *Source:* ---
+**DKA**: Random glucose usually >14 mmol/L (often 20–40) + ketosis + acidosis → diagnosis clear
+**HHS**: Random glucose >30 mmol/L (often 40–60) + severe dehydration + no significant ketosis
+**New
+---
+
+> Auto-generated study sections for "Diagnostic criteria" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Diagnostic criteria?
+  A: Random plasma glucose ≥11.1 mmol/L (200 mg/dL) + classic hyperglycaemia symptoms = Diabetes — No confirmatory repeat required per ADA/WHO.
+- Q: What is Random glucose diagnostic threshold of Diagnostic criteria?
+  A: ≥11.1 mmol/L (200 mg/dL)
+- Q: What are the clinical features of Diagnostic criteria?
+  A: Polyuria + Polydipsia + Weight loss (classic triad)
+- Q: What is No repeat needed if of Diagnostic criteria?
+  A: Classic symptoms + random glucose ≥11.1
+- Q: What is Stress hyperglycaemia of Diagnostic criteria?
+  A: Do NOT diagnose diabetes — repeat when well
+- Q: What is Steroids of Diagnostic criteria?
+  A: Classify as drug-induced if persistent after taper
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diagnostic criteria?**
+   A. **Random plasma glucose ≥11.1 mmol/L (200 mg/dL) + classic hyperglycaemia symptoms = Diabetes — No confirmatory repeat required per ADA/WHO.**
+   B. An unrelated condition not matching the clinical picture of Diagnostic criteria
+   C. A complication seen late in the disease course of Diagnostic criteria
+   D. A condition that mimics Diagnostic criteria but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diagnostic criteria presents with: DKA: Random glucose usually >14 mmol/L (often 20–40) + ketosis + acidosis → diagnosis clear; HHS: Random glucose >30 mmol/L (often 40–60) + severe dehydration + no significant ketosis; New T1DM in child: Polyuria/polydipsia/weight loss + random glucose ≥11.1 → diagnostic. What is the most likely diagnosis?
+   A. **Diagnostic criteria**
+   B. A condition that mimics Diagnostic criteria but is not the same entity
+   C. A complication of Diagnostic criteria rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diagnostic criteria
+

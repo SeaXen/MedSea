@@ -506,3 +506,33 @@ mindmap
 
 **Last Updated:** 2026-06-15  
 **Next:** Build `7.1-7.4 Public Health & Control.md`
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 15b: STI — HIV-AIDS Cross-Reference*
+
+**Q1.** Which of the following features is most specific or characteristic of HIV-AIDS Cross-Reference?
+
+  - **A.** "HIV = Worse Syphilis Serology"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "HIV = Worse Syphilis Serology"
+  >
+  > *Source:* rue**, but **ART Restores Immunity** → **IRIS = Paradoxical Worsening** (Not Treatment Failure) |
+| **"HIV = Worse Syphilis Serology"** | **Yes (Atypical)** but **Penicillin Still Works**; **CSF Manda
+
+**Q2.** What is the most appropriate first-line therapy for HIV-AIDS Cross-Reference?
+
+  - **A.** Treatment Failure + More Common + CSF Mandatory if RPR No
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treatment Failure + More Common + CSF Mandatory if RPR No
+  >
+  > *Source:* **Treatment Failure**   **More Common** — **CSF Mandatory if RPR No 4-Fold Decline by 12 Months**  
+
+### HSV in HIV
+

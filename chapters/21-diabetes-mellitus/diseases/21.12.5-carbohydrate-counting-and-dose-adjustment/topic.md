@@ -138,3 +138,28 @@ Bolus Dose = (Carbohydrate grams ÷ ICR) + ((Current BG – Target BG) ÷ ISF)
 - [[Type 1 Diabetes Mellitus/Glucose monitoring/Time in range (TIR) metrics]]
 - [[Type 1 Diabetes Mellitus/Insulin therapy/Insulin pump therapy (CSII)]]
 - [[Diabetic Emergencies/Hypoglycaemia classification (Level 1/2/3)]]
+---
+
+> Auto-generated study sections for "Insulin therapy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Insulin therapy?
+  A: Carbohydrate Counting = matching rapid-acting insulin dose to carbohydrate intake using an Insulin-to-Carbohydrate Ratio (ICR).
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin therapy?**
+   A. **Carbohydrate Counting = matching rapid-acting insulin dose to carbohydrate intake using an Insulin-to-Carbohydrate Ratio (ICR).**
+   B. An unrelated condition not matching the clinical picture of Insulin therapy
+   C. A complication seen late in the disease course of Insulin therapy
+   D. A condition that mimics Insulin therapy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Insulin therapy presents with: Carbohydrate Counting = matching rapid-acting insulin dose to carbohydrate intake using an Insulin-to-Carbohydrate Ratio (ICR).; FCPS/MRCP relevance: Core T1DM self-management skill (DAFNE); exam questions on ICR/ISF calculations, dose adjustment algorithms, troubleshooting.. What is the most likely diagnosis?
+   A. **Insulin therapy**
+   B. A condition that mimics Insulin therapy but is not the same entity
+   C. A complication of Insulin therapy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Insulin therapy
+

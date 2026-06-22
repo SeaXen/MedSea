@@ -350,3 +350,34 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Prolymphocytic Leukaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Prolymphocytic Leukaemia?
+
+  - **A.** "PLL = >55% Prolymphocytes"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "PLL = >55% Prolymphocytes"
+  >
+  > *Source:* ocyte depletion, CMV/PJP prophylaxis mandatory** |
+
+| Mnemonic | Meaning |
+|----------|---------|
+| **"PLL = >55% Prolymphocytes"** | Diagnostic threshold |
+| **"B-PLL = CD20 Bright, CD5 Weak, ATM/TP5
+
+**Q2.** What is the most appropriate first-line therapy for Prolymphocytic Leukaemia?
+
+  - **A.** TP53-mutated + Venetoclax + BCL-2 inhibition
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — TP53-mutated + Venetoclax + BCL-2 inhibition
+  >
+  > *Source:* **TP53-mutated**   **Venetoclax** (± Rituximab)   **BCL-2 inhibition**; Effective in TP53-mut
+

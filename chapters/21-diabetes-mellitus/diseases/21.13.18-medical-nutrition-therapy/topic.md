@@ -155,3 +155,20 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Physical activity and exercise]], [[Weight management and remission]], [[Type 2 diabetes remission]], [[Metabolic surgery]]
+---
+
+> Auto-generated study sections for "Lifestyle intervention" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Lifestyle intervention?
+  A: MNT = cornerstone of T2DM management; 500kcal/day deficit → 0.5kg/week weight loss; carb 40–45% (low GI, ≥130g/day), protein 15–20%, fat <35% (<10% saturated); Mediterranean / DASH patterns; dietitian referral; 5–15% weight loss → remission possible.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Lifestyle intervention?**
+   A. **MNT = cornerstone of T2DM management; 500kcal/day deficit → 0.5kg/week weight loss; carb 40–45% (low GI, ≥130g/day), protein 15–20%, fat <35% (<10% saturated); Mediterranean / DASH patterns; dietitian**
+   B. An unrelated condition not matching the clinical picture of Lifestyle intervention
+   C. A complication seen late in the disease course of Lifestyle intervention
+   D. A condition that mimics Lifestyle intervention but has a different underlying cause
+

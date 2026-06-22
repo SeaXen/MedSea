@@ -662,3 +662,19 @@ MRI brain interpretation in neurology depends on sequence recognition. T1 provid
 8. **A. Post-contrast T1 imaging** — key for enhancement patterns.
 9. **A. One must identify the sequence before interpreting lesion signal** — foundational rule.
 10. **A. MRI is more sensitive for many structural epileptogenic lesions** — correct rationale.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — MRI brain sequences basics*
+
+**Q1.** Which of the following features is most specific or characteristic of MRI brain sequences basics?
+
+  - **A.** A. Post-contrast T1 imaging
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — A. Post-contrast T1 imaging
+  >
+  > *Source:* **A. Post-contrast T1 imaging** — key for enhancement patterns
+

@@ -300,3 +300,20 @@ mindmap
    C. A complication of Acute Liver Failure rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Acute Liver Failure
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Non-paracetamol drug-induced liver injury*
+
+**Q1.** What is the most appropriate first-line therapy for Non-paracetamol drug-induced liver injury?
+
+  - **A.** NAC in Non-Paracetamol ALF
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — NAC in Non-Paracetamol ALF
+  >
+  > *Source:* **NAC in Non-Paracetamol ALF**: RCT (ALFSG) showed improved transplant-free survival in early HE (Grade 1-2); routine use recommended by AASLD/EASL.
+
+---
+

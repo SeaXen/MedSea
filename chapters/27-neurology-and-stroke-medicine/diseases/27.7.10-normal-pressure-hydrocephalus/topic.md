@@ -596,4 +596,34 @@ mindmap
 **Heading Hub:** [[../Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[../00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Normal Pressure Hydrocephalus*
+
+**Q1.** Which of the following is characterised by the clinical triad: Wet, Wobbly, Wacky?
+
+  - **A.** Normal Pressure Hydrocephalus
+  - **B.** Stroke
+  - **C.** TIA
+  - **D.** Migraine
+
+  > **Answer: A** — Normal Pressure Hydrocephalus
+  >
+  > *Source:* ing, normal pressure) | __/5 |
+| 2 | Epidemiology (0.5–2.9% >65y; 5–10% of dementia) | __/5 |
+| 3 | Classic triad (Wet, Wobbly, Wacky) and gait features | __/5 |
+| 4 | MRI: Evans index, DESH, callosal
+
+**Q2.** Which of the following features is most specific or characteristic of Normal Pressure Hydrocephalus?
+
+  - **A.** NPH Imaging 'DESH':
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — NPH Imaging 'DESH':
+  >
+  > *Source:* **NPH Imaging 'DESH':** **D**isproportionately **E**nlarged **S**ubarachnoid-space **H**ydrocephalus — tight high-convexity sulci + enlarged ventricles (the hallmark triad)
+

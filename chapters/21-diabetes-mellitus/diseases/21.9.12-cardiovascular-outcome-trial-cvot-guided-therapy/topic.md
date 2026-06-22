@@ -147,3 +147,46 @@ T2DM + Metformin (if eGFR ≥30)
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[CKD and HF guided therapy]], [[NICE NG28 pathway]], [[DKD management]], [[Heart failure in diabetes]], [[SGLT2 inhibitors in HF]]
+---
+
+> Auto-generated study sections for "Treatment algorithms" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Treatment algorithms?
+  A: FDA 2008 mandate: All new T2DM drugs must demonstrate CV safety; CVOTs transformed T2DM management from glucose-centric to comorbidity-centric; SGLT2i = CV/renal benefit (EMPA-REG, CANVAS, CREDENCE, DAPA-HF, DELIVER); GLP-1 RA = CV benefit (LEADER, SUSTAIN-6, REWIND, FLOW); DPP-4i = neutral (SAVOR/EXAMINE: ↑ HF hosp); agent selection by comorbidity.
+- Q: What is FDA 2008 mandate of Treatment algorithms?
+  A: All new T2DM drugs require CVOT
+- Q: What is EMPA-REG of Treatment algorithms?
+  A: Empagliflozin: ↓ CV death 38%, HF hosp 35%
+- Q: What is CANVAS of Treatment algorithms?
+  A: Canagliflozin: ↓ MACE 14%; ↑ amputation
+- Q: What is DECLARE of Treatment algorithms?
+  A: Dapagliflozin: neutral MACE; ↓ HF hosp; renal benefit
+- Q: What is CREDENCE/DAPA-CKD/EMPA-KIDNEY of Treatment algorithms?
+  A: SGLT2i = renal benefit (CKD ± DM)
+- Q: What is DAPA-HF/EMPEROR/DELIVER of Treatment algorithms?
+  A: SGLT2i = HFrEF + HFpEF benefit (non-diabetic too)
+- Q: What is LEADER/SUSTAIN-6/REWIND of Treatment algorithms?
+  A: GLP-1 RA: CV benefit (liraglutide, semaglutide, dulaglutide)
+- Q: What is FLOW of Treatment algorithms?
+  A: Semaglutide: renal benefit in CKD
+- Q: What is STEP-HFpEF of Treatment algorithms?
+  A: Semaglutide 2.4mg: HFpEF + obesity benefit
+- Q: What is SAVOR/EXAMINE of Treatment algorithms?
+  A: Saxagliptin/Alogliptin: ↑ HF hosp — avoid in HF
+- Q: What is PROactive of Treatment algorithms?
+  A: Pioglitazone: ↓ MACE; ↑ HF hosp
+- Q: What is Rosiglitazone of Treatment algorithms?
+  A: Withdrawn (↑ MI/CV death)
+- Q: What is Agent selection of Treatment algorithms?
+  A: By comorbidity (ASCVD→SGLT2i+GLP-1; HF→SGLT2i; CKD→SGLT2i+GLP-1+Finerenone; Obesity→GLP-1)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Treatment algorithms?**
+   A. **FDA 2008 mandate: All new T2DM drugs must demonstrate CV safety; CVOTs transformed T2DM management from glucose-centric to comorbidity-centric; SGLT2i = CV/renal benefit (EMPA-REG, CANVAS, CREDENCE, D**
+   B. An unrelated condition not matching the clinical picture of Treatment algorithms
+   C. A complication seen late in the disease course of Treatment algorithms
+   D. A condition that mimics Treatment algorithms but has a different underlying cause
+

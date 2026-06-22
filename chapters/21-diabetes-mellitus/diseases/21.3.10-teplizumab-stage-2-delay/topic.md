@@ -128,3 +128,66 @@ By the end of this note you should be able to:
 - **O**ne-time: 14 days IV
 - **N**ever cures: only delays
 - **S**creening: Fr1da, ASK, TrialNet**</think>
+---
+
+> Auto-generated study sections for "Type 1 diabetes prevention" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Type 1 diabetes prevention?
+  A: By the end of this note you should be able to:
+- Q: What is Target of Type 1 diabetes prevention?
+  A: Stage 2 T1DM (2+ autoantibodies + dysglycaemia)
+- Q: What is Teplizumab of Type 1 diabetes prevention?
+  A: Anti-CD3 monoclonal antibody; FDA approved 2022
+- Q: What is Efficacy of Type 1 diabetes prevention?
+  A: Delays Stage 3 by median 2 years (48.4 vs 24.4 months)
+- Q: What is Autoantibodies of Type 1 diabetes prevention?
+  A: GAD65, IA-2, ZnT8, IAA (2+ for Stage 2)
+- Q: What is OGTT/FPG of Type 1 diabetes prevention?
+  A: Dysglycaemia (Stage 2)
+- Q: What is Type 1 diabetes prevention indicated for?
+  A: Stage 2 T1DM, age ≥8
+- Q: What is Dosing of Type 1 diabetes prevention?
+  A: Weight-based IV daily x 14 days
+- Q: How is Type 1 diabetes prevention monitored?
+  A: Lymphocytes, liver function, CRS
+- Q: What is Autoantibodies of Type 1 diabetes prevention?
+  A: GAD65, IA-2, ZnT8, IAA (2+ for Stage 2)
+- Q: What is OGTT/FPG of Type 1 diabetes prevention?
+  A: Dysglycaemia (Stage 2)
+- Q: What is HLA typing of Type 1 diabetes prevention?
+  A: DR3/DR4 (risk stratification)
+- Q: What is Type 1 diabetes prevention indicated for?
+  A: Stage 2 T1DM, age ≥8
+- Q: What is Dosing of Type 1 diabetes prevention?
+  A: Weight-based IV daily x 14 days
+- Q: How is Type 1 diabetes prevention monitored?
+  A: Lymphocytes, liver function, CRS
+- Q: What is Teplizumab of Type 1 diabetes prevention?
+  A: Anti-CD3 mAb; delays Stage 3 by ~2 years
+- Q: What is Type 1 diabetes prevention indicated for?
+  A: Stage 2 T1DM (2+ Abs + dysglycaemia), age ≥8
+- Q: What is Eligibility of Type 1 diabetes prevention?
+  A: 2+ autoantibodies + dysglycaemia (IFG/IGT)
+- Q: What is Screening of Type 1 diabetes prevention?
+  A: TrialNet (relatives); Fr1da (general population)
+- Q: What is Trial of Type 1 diabetes prevention?
+  A: TN-10: HR 0.48 (delays diagnosis ~2 years)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 1 diabetes prevention?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 1 diabetes prevention
+   C. A complication seen late in the disease course of Type 1 diabetes prevention
+   D. A condition that mimics Type 1 diabetes prevention but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 1 diabetes prevention presents with: Target — Stage 2 T1DM (2+ autoantibodies + dysglycaemia); Teplizumab — Anti-CD3 monoclonal antibody; FDA approved 2022; Efficacy — Delays Stage 3 by median 2 years (48.4 vs 24.4 months). What is the most likely diagnosis?
+   A. **Type 1 diabetes prevention**
+   B. A condition that mimics Type 1 diabetes prevention but is not the same entity
+   C. A complication of Type 1 diabetes prevention rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 1 diabetes prevention
+

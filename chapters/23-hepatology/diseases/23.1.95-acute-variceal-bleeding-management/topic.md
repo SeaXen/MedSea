@@ -280,3 +280,18 @@ mindmap
    C. A complication seen late in the disease course of Portal Hypertension and Complications
    D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Acute variceal bleeding management*
+
+**Q1.** What is the most appropriate first-line therapy for Acute variceal bleeding management?
+
+  - **A.** Continue Vasoactives + 2-5 days
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Continue Vasoactives + 2-5 days
+  >
+  > *Source:* **Continue Vasoactives**   Terlipressin 2mg q4-6h / Octreotide 50µg/h for **2-5 days**
+

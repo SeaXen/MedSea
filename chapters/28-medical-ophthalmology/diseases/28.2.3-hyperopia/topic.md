@@ -539,3 +539,26 @@ Hyperopia is corrected with convex lenses. Latent component requires cycloplegia
 
 ## Tags
 #medicine #davidson #ophthalmology #refractive #hyperopia #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / Hyperopia**
+
+**Q1.** A patient is being evaluated for Hyperopia. Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+
+**Q2.** Which of the following best describes the underlying pathophysiology / definition of Hyperopia?
+
+  - **A.** **Hyperopia (long-sightedness, hypermetropia):** Image focused behind the retina
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **Hyperopia (long-sightedness, hypermetropia):** Image focused behind the retina
+

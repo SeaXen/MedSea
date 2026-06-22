@@ -433,3 +433,19 @@ Neurophysiology complements imaging by providing objective information about ele
 - Structural and functional tests answer different questions.
 - EEG, NCS/EMG, and evoked potentials become most useful when symptoms outstrip imaging or when the physiological level of disease needs definition.
 - Integrated clinicoradiological and physiological reasoning prevents both overdiagnosis and underdiagnosis.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — How neurophysiology complements imaging*
+
+**Q1.** What is the most appropriate first-line therapy for How neurophysiology complements imaging?
+
+  - **A.** use imaging for anatomy and safety exclusions
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — use imaging for anatomy and safety exclusions
+  >
+  > *Source:* use imaging for anatomy and safety exclusions
+

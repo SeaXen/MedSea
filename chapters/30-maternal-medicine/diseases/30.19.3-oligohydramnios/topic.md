@@ -292,3 +292,17 @@ A: Treat cause if possible; amnioinfusion in labour (equivocal); hydration (mate
 - [[../Obstetric Disorders|Obstetric Disorders]] (heading hub)
 - [[../Maternal Medicine MOC|Maternal Medicine MOC]]
 - [[../Davidson Chapter 32 - Maternal Medicine Hierarchy|Davidson Chapter 32 - Maternal Medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 30: Maternal Medicine / Oligohydramnios**
+
+**Q1.** Which of the following best describes the underlying pathophysiology / definition of Oligohydramnios?
+
+  - **A.** Oligohydramnios is reduced amniotic fluid volume (AFI <5 cm or DVP <2 cm). It is associated with fetal renal anomalies, IUGR, pre-labour rupture of membranes, and post-term pregnan
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — Oligohydramnios is reduced amniotic fluid volume (AFI <5 cm or DVP <2 cm). It is associated with fetal renal anomalies, IUGR, pre-labour rupture of me
+

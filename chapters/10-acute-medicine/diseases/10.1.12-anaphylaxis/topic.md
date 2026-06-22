@@ -235,3 +235,17 @@ Observe ≥6 hours, prescribe adrenaline auto-injector on discharge
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-13
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 10: Acute Medicine / Anaphylaxis**
+
+**Q1.** A patient is diagnosed with Anaphylaxis. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+

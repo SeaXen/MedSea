@@ -370,4 +370,18 @@ D. Convert to pancreatitis automatically
 - **35-36/40** = acceptable but insecure
 - **37+/40** = exam-ready
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 22: Gastroenterology — Duodenal ulcer disease*
+
+**Q1.** What is the most appropriate first-line therapy for Duodenal ulcer disease?
+
+  - **A.** give eradication regimen
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — give eradication regimen
+  >
+  > *Source:* give eradication regimen
 

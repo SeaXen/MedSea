@@ -174,3 +174,60 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Impaired fasting glucose (IFG)]], [[Oral glucose tolerance test (OGTT)]], [[Type 2 diabetes prevention/Diabetes Prevention Program (DPP)]], [[Type 2 diabetes prevention/Finnish Diabetes Prevention Study]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Impaired glucose tolerance (IGT)*
+
+**Q1.** What is the most appropriate first-line therapy for Impaired glucose tolerance (IGT)?
+
+  - **A.** Targets + Weight + Activity
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Targets + Weight + Activity
+  >
+  > *Source:* **Targets** (same as IFG):
+- **Weight**: 5–7% loss
+- **Activity**: ≥150 min/week moderate
+- **Diet**: Reduced fat (<30% kcal), high fibre, Mediterranean pattern
+
+---
+---
+
+> Auto-generated study sections for "Prediabetic states" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (7 generated)
+
+- Q: What is the definition of Prediabetic states?
+  A: 2-hr OGTT 7.8–11.0 mmol/L (140–199 mg/dL) — Reflects muscle insulin resistance; higher T2DM progression risk than IFG alone.
+- Q: What is the investigation of choice for Prediabetic states?
+  A: Only by OGTT — FPG/HbA1c cannot diagnose IGT
+- Q: What is IGT vs IFG progression of Prediabetic states?
+  A: IGT > IFG for T2DM progression
+- Q: What is IGT CVD risk of Prediabetic states?
+  A: Independent predictor, similar to diabetes
+- Q: What is Metformin for prevention of Prediabetic states?
+  A: ADA yes (high-risk IGT); NICE no
+- Q: What is Da Qing / DPS / DPP of Prediabetic states?
+  A: All in IGT populations — know risk reductions
+- Q: What is OGTT prep of Prediabetic states?
+  A: 3 days normal carbs, overnight fast
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Prediabetic states?**
+   A. **2-hr OGTT 7.8–11.0 mmol/L (140–199 mg/dL) — Reflects muscle insulin resistance; higher T2DM progression risk than IFG alone.**
+   B. An unrelated condition not matching the clinical picture of Prediabetic states
+   C. A complication seen late in the disease course of Prediabetic states
+   D. A condition that mimics Prediabetic states but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Prediabetic states presents with: CVD risk: IGT independently predicts CVD (HR 1.5–2.0), similar to diabetes in some cohorts.; Post-challenge hyperglycaemia → oxidative stress, endothelial dysfunction; Associated with: hypertension, dyslipidaemia (high TG, low HDL), prothrombotic state. What is the most likely diagnosis?
+   A. **Prediabetic states**
+   B. A condition that mimics Prediabetic states but is not the same entity
+   C. A complication of Prediabetic states rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Prediabetic states
+

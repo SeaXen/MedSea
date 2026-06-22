@@ -512,3 +512,31 @@ Penetrating ocular trauma / globe rupture is an emergency. Shield (no pressure),
 
 ## Tags
 #medicine #davidson #ophthalmology #open-globe #trauma #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Penetrating Ocular Trauma*
+
+**Q1.** Which of the following features is most specific or characteristic of Penetrating Ocular Trauma?
+
+  - **A.** "SNAKE for open globe"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "SNAKE for open globe"
+  >
+  > *Source:* **"SNAKE for open globe"** — Shield, NPO, Antiemetic, Key antibiotics (IV), Examine (do not press)
+2
+
+**Q2.** What is the most appropriate first-line therapy for Penetrating Ocular Trauma?
+
+  - **A.** Systemic antibiotic:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Systemic antibiotic:
+  >
+  > *Source:* **Systemic antibiotic:** IV ceftriaxone + vancomycin (endophthalmitis coverage)
+

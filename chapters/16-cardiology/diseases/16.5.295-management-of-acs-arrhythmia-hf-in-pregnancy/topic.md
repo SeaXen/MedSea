@@ -32,3 +32,19 @@
 > - DC cardioversion is **safe in pregnancy at any stage**
 > - **SCAD is the #1 cause of pregnancy MI** — think pregnancy-associated MI in any woman with chest pain, especially 3rd trimester/postpartum
 > - Stop ACEi/ARB/ARNI **before conception** in heart failure patients — substitute hydralazine-ISDN
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Management of ACS, arrhythmia, HF in pregnancy*
+
+**Q1.** Which of the following features is most specific or characteristic of Management of ACS, arrhythmia, HF in pregnancy?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

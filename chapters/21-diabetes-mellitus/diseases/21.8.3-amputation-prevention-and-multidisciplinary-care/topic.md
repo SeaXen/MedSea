@@ -169,3 +169,60 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetic foot ulcer (DFU) classification]], [[Foot risk classification (IWGDF/Scottish)]], [[DFU management]], [[Charcot neuroarthropathy]], [[Peripheral arterial disease/Critical limb ischaemia]]
+---
+
+> Auto-generated study sections for "Diabetic foot disease" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Diabetic foot disease?
+  A: 85% of diabetes-related amputations are preventable — MDT care reduces major amputation rate 50–80%; key pillars: early recognition, offloading, infection control, revascularisation, MDT coordination.
+- Q: What is Preventable amputations of Diabetic foot disease?
+  A: 85% (preceded by DFU)
+- Q: What is MDT impact of Diabetic foot disease?
+  A: ↓ Major amputation 50–80%
+- Q: What is Urgent referral of Diabetic foot disease?
+  A: Active ulcer/infection/ischaemia/Charcot → MDT 24–48h
+- Q: What is "Toe and Flow" of Diabetic foot disease?
+  A: Wound care + revascularisation — both needed
+- Q: What is Critical limb ischaemia of Diabetic foot disease?
+  A: Rest pain + tissue loss + ABI <0.5 / TBI <0.25
+- Q: What is Best major amputation of Diabetic foot disease?
+  A: BKA (below-knee) — best prosthetic outcome
+- Q: What is TCC for plantar ulcers of Diabetic foot disease?
+  A: Gold standard offloading; non-removable
+- Q: What is 5-year mortality post-BKA of Diabetic foot disease?
+  A: 50–70% — counsel patient/family
+- Q: What is Phantom pain of Diabetic foot disease?
+  A: Gabapentin, mirror therapy, desensitisation
+- Q: What is Quality indicator of Diabetic foot disease?
+  A: Minor:Major amputation ratio >1:1
+- Q: What is Preventable amputations of Diabetic foot disease?
+  A: 85% (preceded by DFU)
+- Q: What is MDT impact of Diabetic foot disease?
+  A: ↓ Major amputation 50–80%
+- Q: What is Urgent referral of Diabetic foot disease?
+  A: Active ulcer/infection/ischaemia/Charcot → MDT 24–48h
+- Q: What is "Toe and Flow" of Diabetic foot disease?
+  A: Wound care + revascularisation — both needed
+- Q: What is Critical limb ischaemia of Diabetic foot disease?
+  A: Rest pain + tissue loss + ABI <0.5 / TBI <0.25
+- Q: What is Best major amputation of Diabetic foot disease?
+  A: BKA (below-knee) — best prosthetic outcome
+- Q: What is TCC for plantar ulcers of Diabetic foot disease?
+  A: Gold standard offloading; non-removable
+- Q: What is 5-year mortality post-BKA of Diabetic foot disease?
+  A: 50–70% — counsel patient/family
+- Q: What is Phantom pain of Diabetic foot disease?
+  A: Gabapentin, mirror therapy, desensitisation
+- Q: What is Quality indicator of Diabetic foot disease?
+  A: Minor:Major amputation ratio >1:1
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic foot disease?**
+   A. **85% of diabetes-related amputations are preventable — MDT care reduces major amputation rate 50–80%; key pillars: early recognition, offloading, infection control, revascularisation, MDT coordination.**
+   B. An unrelated condition not matching the clinical picture of Diabetic foot disease
+   C. A complication seen late in the disease course of Diabetic foot disease
+   D. A condition that mimics Diabetic foot disease but has a different underlying cause
+

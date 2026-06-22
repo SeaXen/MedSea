@@ -190,3 +190,36 @@ E. All of the above
 **Tags:** #medicine #cardiology #davidson #fcps #mrcp
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Iron-overload cardiomyopathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Iron-overload cardiomyopathy?
+
+  - **A.** ECG
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ECG
+  >
+  > *Source:* rity
+- Hepatomegaly, skin pigmentation, diabetes, hypogonadism may suggest systemic iron overload
+- **ECG**: AF, conduction block, nonspecific ST-T change, ventricular ectopy
+- **Echo**: diastolic dys
+
+**Q2.** What is the most appropriate first-line therapy for Iron-overload cardiomyopathy?
+
+  - **A.** Phlebotomy + Iron chelation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Phlebotomy + Iron chelation
+  >
+  > *Source:* - Treat underlying iron overload aggressively.
+- **Phlebotomy** in hereditary haemochromatosis when appropriate.
+- **Iron chelation** in transfusional overload.
+- Standard heart-failure therapy as tol
+

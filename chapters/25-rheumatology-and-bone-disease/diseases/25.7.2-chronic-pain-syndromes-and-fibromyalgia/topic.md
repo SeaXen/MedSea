@@ -559,3 +559,34 @@ mindmap
    C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Chronic pain syndromes and fibromyalgia*
+
+**Q1.** Which of the following features is most specific or characteristic of Chronic pain syndromes and fibromyalgia?
+
+  - **A.** Biopsy of trigger points
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Biopsy of trigger points
+  >
+  > *Source:* eld, reinforces illness anxiety
+- **Multiple repeated investigations** when initial workup normal
+- **Biopsy of trigger points** (no diagnostic value)
+
+> [!tip] **"Reassurance Without Reassuring"**
+> 
+
+**Q2.** What is the most appropriate first-line therapy for Chronic pain syndromes and fibromyalgia?
+
+  - **A.** Sleep hygiene + CBT-I
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Sleep hygiene + CBT-I
+  >
+  > *Source:* **Sleep hygiene**   Regular schedule, no screens, cool room, no caffeine/alcohol before bed; treat insomnia   **CBT-I** first-line for chronic insomnia
+

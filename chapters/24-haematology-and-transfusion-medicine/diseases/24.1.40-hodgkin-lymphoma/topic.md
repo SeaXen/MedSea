@@ -1563,3 +1563,47 @@ E. Observation
 
 ## Tags
 #medicine #hematology #lymphoma #hodgkin #oncology #mrcp #fcps #davidson #chapter25
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Hodgkin Lymphoma*
+
+**Q1.** Which of the following features is most specific or characteristic of Hodgkin Lymphoma?
+
+  - **A.** Alcohol-induced nodal pain
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Alcohol-induced nodal pain
+  >
+  > *Source:* ht
+- **Pel-Ebstein fever** — cyclical (1–2 weeks fever, 1–2 weeks afebrile); classic but uncommon
+- **Alcohol-induced nodal pain** — rare but highly specific for HL
+
+---
+### First-Line Investigations
+
+
+**Q2.** Which landmark clinical trial provided evidence relevant to the management of Hodgkin Lymphoma (specifically: that early-stage non-bulky HL patients who are PET-negative after 3 cycles ABVD can safely omit radiotherapy without com)?
+
+  - **A.** RAPID trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — RAPID trial
+  >
+  > *Source:* Omit radiotherapy and observe — RAPID trial showed that early-stage non-bulky HL patients who are PET-negative after 3 cycles ABVD can safely omit radiotherapy without compromising outcomes.</details>
+
+**Q3.** What is the most appropriate first-line therapy for Hodgkin Lymphoma?
+
+  - **A.** Early unfavorable
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Early unfavorable
+  >
+  > *Source:* **Early unfavorable (I–IIA, with risk factors)**   4–6 cycles ABVD + ISRT
+

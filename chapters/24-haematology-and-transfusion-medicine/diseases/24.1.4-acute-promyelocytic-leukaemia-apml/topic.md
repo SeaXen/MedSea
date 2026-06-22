@@ -463,3 +463,33 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Acute Promyelocytic Leukaemia (APML)*
+
+**Q1.** Which of the following features is most specific or characteristic of Acute Promyelocytic Leukaemia (APML)?
+
+  - **A.** Other AML
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Other AML
+  >
+  > *Source:* LZF::RARA, t(5;17) NPM1::RARA, t(11;17) NuMA::RARA – **ATRA RESISTANT** = treat as standard AML |
+| **Other AML (non-M3)** | Different cytogenetics, no PML::RARA, no DIC typically, treated with 7+3 |
+
+
+**Q2.** What is the most appropriate first-line therapy for Acute Promyelocytic Leukaemia (APML)?
+
+  - **A.** FCPS/MRCP + ATRA + ATO = standard induction
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — FCPS/MRCP + ATRA + ATO = standard induction
+  >
+  > *Source:* Monitor: CBC, coagulation, LFT, electrolytes (K, Mg), ECG (QTc).
+
+> [!tip] **FCPS/MRCP**: **ATRA + ATO = standard induction**; NO anthracycline in low-risk (WBC<10).
+

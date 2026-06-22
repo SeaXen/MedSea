@@ -371,3 +371,33 @@ flowchart TD
 8. **B** — HSV-1 encephalitis (temporal lobe); start acyclovir immediately
 9. **B** — CSF leak (β-2 transferrin); surgical repair
 10. **B** — Mumps meningoencephalitis; supportive + notifiable disease
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Viral Meningitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Viral Meningitis?
+
+  - **A.** Partially treated bacterial
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Partially treated bacterial
+  >
+  > *Source:* |
+| **Autoimmune encephalitis** | Altered consciousness, seizures, dyskinesias | NMDA-R Ab, MRI |
+| **Partially treated bacterial** | Recent antibiotics, atypical CSF | History, CSF PCR |
+| **Drug-ind
+
+**Q2.** What is the most appropriate first-line therapy for Viral Meningitis?
+
+  - **A.** HSV-1/2
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — HSV-1/2
+  >
+  > *Source:* **HSV-1/2 (Mollaret's)**   Acyclovir 400-800mg PO 5×/d OR Valaciclovir 1g PO TDS   7-14 d acute; chronic suppression for recurrent
+

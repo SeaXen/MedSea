@@ -517,3 +517,32 @@ flowchart TD
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-15
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — Acute Respiratory Distress Syndrome (ARDS)*
+
+**Q1.** Which landmark clinical trial provided evidence relevant to the management of Acute Respiratory Distress Syndrome (ARDS) (specifically: mortality benefit of:
+   A)?
+
+  - **A.** PROSEVA trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — PROSEVA trial
+  >
+  > *Source:* The PROSEVA trial demonstrated mortality benefit of:
+   A
+
+**Q2.** What is the most appropriate first-line therapy for Acute Respiratory Distress Syndrome (ARDS)?
+
+  - **A.** Neuromuscular blockade
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Neuromuscular blockade
+  >
+  > *Source:* **Neuromuscular blockade (cisatracurium)**   P/F <150 in first 48 h (RCT ACURASYS)   Mortality ↓
+

@@ -386,3 +386,36 @@ flowchart TD
 
 ## Summary
 Functional weakness is diagnosed by **POSITIVE bedside signs** (Hoover's, hip abductor, give-way), NOT by exclusion. Sudden onset, often with stress trigger. **Hoover's sign** is the gold standard (sensitivity 85-95%, specificity >95%). Functional sensory loss shows **splitting midline**. Management: validate the diagnosis, **demonstrate Hoover's positively**, explain as "software" problem, refer for **distraction-based physiotherapy** and **CBT**. Avoid iatrogenic harm. Treat co-morbid depression/anxiety with **SSRI** (avoid paroxetine in pregnancy). Prognosis: 30-50% improve; worse with chronicity, litigation, refusal of treatment.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Functional Weakness & Sensory Symptoms*
+
+**Q1.** Which of the following features is most specific or characteristic of Functional Weakness & Sensory Symptoms?
+
+  - **A.** POSITIVE SIGNS
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — POSITIVE SIGNS
+  >
+  > *Source:* le indifference** (historical — NOT reliable)
+- **Spontaneous recovery** in some
+
+### Examination — **POSITIVE SIGNS** (KEY)
+
+#### Hoover's Sign (Lower Limb — gold standard)
+- **Procedure:** Patient s
+
+**Q2.** What is the most appropriate first-line therapy for Functional Weakness & Sensory Symptoms?
+
+  - **A.** ACT
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — ACT
+  >
+  > *Source:* **ACT** (Acceptance and Commitment Therapy)
+

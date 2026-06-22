@@ -449,3 +449,19 @@ Meningitis and encephalitis are major secondary headache emergencies. The diagno
 - Fever plus headache should trigger a search for CNS infection.
 - **Mental state change and seizures** are especially valuable for identifying encephalitic involvement.
 - **LP is central but must be safe**, and **treatment should be early**, not postponed for perfect diagnostics.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Meningitis and encephalitis clues*
+
+**Q1.** Which of the following features is most specific or characteristic of Meningitis and encephalitis clues?
+
+  - **A.** LP is central but must be safe
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — LP is central but must be safe
+  >
+  > *Source:* - **LP is central but must be safe**, and **treatment should be early**, not postponed for perfect diagnostics
+

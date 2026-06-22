@@ -375,3 +375,19 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Rickettsial Infections*
+
+**Q1.** What is the most appropriate first-line therapy for Rickettsial Infections?
+
+  - **A.** Doxycycline + Chloramphenicol + 7-14 Days
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Doxycycline + Chloramphenicol + 7-14 Days
+  >
+  > *Source:* **Severe/RMSF/Scrub Typhus with Complications**   **Doxycycline 100mg IV/PO BD** + **Chloramphenicol** (If CNS)   **Chloramphenicol 500mg IV QID**   **7-14 Days**
+

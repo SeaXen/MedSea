@@ -154,3 +154,42 @@ flowchart TD
 - **T**hresholds: UK ≥10% (QRISK3); US ≥7.5% (ASCVD)
 - **O**verestimation: well-controlled T2DM
 - **R**efinement: CAC score, Lp(a) if intermediate risk**</think>
+---
+
+> Auto-generated study sections for "Annual review and complication screening" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Annual review and complication screening?
+  A: By the end of this note you should be able to:
+- Q: What is CV Risk of Annual review and complication screening?
+  A: Diabetes = 2-4x CVD risk
+- Q: What causes Annual review and complication screening?
+  A: CVD (50-60% of diabetes deaths)
+- Q: What is Risk calculators of Annual review and complication screening?
+  A: QRISK3 (UK, includes DM details); ASCVD Pooled Cohort (US, binary DM)
+- Q: What is Statin of Annual review and complication screening?
+  A: Age 40-75: high-intensity atorvastatin 40-80mg; target LDL <1.8mmol/L
+- Q: What is Aspirin primary of Annual review and complication screening?
+  A: ADA: age 50-70, risk≥10%; ESC/NICE: not routinely
+- Q: What is BP targets of Annual review and complication screening?
+  A: ADA/ESC: <130/80; NICE: <130/80 if CKD/albuminuria
+- Q: What is LDL targets of Annual review and complication screening?
+  A: Primary: <1.8mmol/L; Secondary: <1.4mmol/L; Extreme: <1.0mmol/L
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Annual review and complication screening?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Annual review and complication screening
+   C. A complication seen late in the disease course of Annual review and complication screening
+   D. A condition that mimics Annual review and complication screening but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Annual review and complication screening presents with: CV Risk — Diabetes = 2-4x CVD risk; Leading cause death — CVD (50-60% of diabetes deaths); Equivalent — T2DM age >40 = CHD risk equivalent (historical). What is the most likely diagnosis?
+   A. **Annual review and complication screening**
+   B. A condition that mimics Annual review and complication screening but is not the same entity
+   C. A complication of Annual review and complication screening rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Annual review and complication screening
+

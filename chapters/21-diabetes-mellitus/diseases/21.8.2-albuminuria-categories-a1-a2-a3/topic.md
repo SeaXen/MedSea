@@ -127,3 +127,62 @@ modified: 2026-06-13
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — albuminuria-categories-a1-a2-a3*
+
+**Q1.** Which of the following features is most specific or characteristic of albuminuria-categories-a1-a2-a3?
+
+  - **A.** ACR vs PCR?
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ACR vs PCR?
+  >
+  > *Source:* rmal; urine protein electrophoresis |
+| Confusion | Clarification |
+|-----------|---------------|
+| **ACR vs PCR?** | ACR = albumin-specific (preferred for DKD); PCR = total protein (if non-albumin pr
+---
+
+> Auto-generated study sections for "Diabetic nephropathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Diabetic nephropathy?
+  A: | ACR (Albumin:Creatinine Ratio) | Spot urine albumin (mg) / creatinine (mmol) — preferred over 24h urine |
+- Q: What is ACR (Albumin:Creatinine Ratio) of Diabetic nephropathy?
+  A: Spot urine albumin (mg) / creatinine (mmol) — preferred over 24h urine
+- Q: What is Units of Diabetic nephropathy?
+  A: mg/mmol (UK) or mg/g (US); 1 mg/mmol ≈ 8.8 mg/g
+- Q: What is ACR categories of Diabetic nephropathy?
+  A: A1 <3; A2 3–30 (micro); A3 >30 (macro) mg/mmol
+- Q: What is Confirmation of Diabetic nephropathy?
+  A: 2/3 positive in 3–6 months (early morning)
+- Q: What is A2 (microalbuminuria) of Diabetic nephropathy?
+  A: Start ACEi/ARB (max dose); add SGLT2i if eGFR≥20
+- Q: What is A3 (macroalbuminuria) of Diabetic nephropathy?
+  A: ACEi/ARB max + SGLT2i + Finerenone (eGFR≥25, K+≤4.8); nephrology
+- Q: What is KDIGO heat map of Diabetic nephropathy?
+  A: G3aA2 = moderate; G3bA3 = very high risk
+- Q: What is Proteinuria target of Diabetic nephropathy?
+  A: ↓ACR ≥30% at 3–6mo; ultimate <3 mg/mmol
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic nephropathy?**
+   A. **| ACR (Albumin:Creatinine Ratio) | Spot urine albumin (mg) / creatinine (mmol) — preferred over 24h urine |**
+   B. An unrelated condition not matching the clinical picture of Diabetic nephropathy
+   C. A complication seen late in the disease course of Diabetic nephropathy
+   D. A condition that mimics Diabetic nephropathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic nephropathy presents with: ACR (Albumin:Creatinine Ratio) — Spot urine albumin (mg) / creatinine (mmol) — preferred over 24h urine; Units — mg/mmol (UK) or mg/g (US); 1 mg/mmol ≈ 8.8 mg/g; Timing — Early morning sample; avoid exercise, UTI, fever, menstruation, heart failure. What is the most likely diagnosis?
+   A. **Diabetic nephropathy**
+   B. A condition that mimics Diabetic nephropathy but is not the same entity
+   C. A complication of Diabetic nephropathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic nephropathy
+

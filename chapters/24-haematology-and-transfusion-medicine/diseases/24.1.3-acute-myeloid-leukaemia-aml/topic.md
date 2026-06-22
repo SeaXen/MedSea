@@ -490,3 +490,18 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Acute Myeloid Leukaemia (AML)*
+
+**Q1.** What is the most appropriate first-line therapy for Acute Myeloid Leukaemia (AML)?
+
+  - **A.** Favourable + NPM1mut without FLT3-ITD + CEBPAbiallelic
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Favourable + NPM1mut without FLT3-ITD + CEBPAbiallelic
+  >
+  > *Source:* **Favourable**   t(8;21)(RUNX1::RUNX1T1), inv(16)(CBFB::MYH11), **NPM1mut without FLT3-ITD** (or low AR <0.5), **CEBPAbiallelic**   80-90%   60-70%   **Consolidation: HiDAC × 3-4 cycles** (HSCT in CR1
+

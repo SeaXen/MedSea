@@ -547,3 +547,40 @@ C, B, B, B, B, B, C, B, B, B
 
 ### SBAs
 1-A, 2-A, 3-A, 4-A, 5-A
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 19: Clinical Biochemistry — SIADH*
+
+**Q1.** Which of the following features is most specific or characteristic of SIADH?
+
+  - **A.** SIADH vs CSW
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — SIADH vs CSW
+  >
+  > *Source:* Diuretic History (>1-2 Weeks) |
+
+---
+| Confusion | Clarification |
+|-----------|---------------|
+| **SIADH vs CSW** | **Volume Status is Key**: SIADH = Euvolaemic; CSW = Hypovolaemic |
+| **Urine Na⁺ i
+
+**Q2.** What is the most appropriate first-line therapy for SIADH?
+
+  - **A.** FLUID RESTRICTION
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — FLUID RESTRICTION
+  >
+  > *Source:* STEP 1: **FLUID RESTRICTION** (<1 L/day)
+         │
+         ├── Effective → Goal Na⁺ Rise 0.5-1 mmol/L/day; Target Na⁺ >130
+         ├── IF Na⁺ Rise <0.5 mmol/L/day OR Severe Symptoms → STEP 2
+      
+

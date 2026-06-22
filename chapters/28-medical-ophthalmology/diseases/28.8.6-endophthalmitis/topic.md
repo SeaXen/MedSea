@@ -676,3 +676,43 @@ D. Bone-spicule pigmentation
    C. A complication of 08_Retina_and_Vitreous rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as 08_Retina_and_Vitreous
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / Endophthalmitis**
+
+**Q1.** A patient is being evaluated for Endophthalmitis. Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+
+**Q2.** In the assessment of Endophthalmitis, severity and risk stratification are essential. Which approach is most appropriate?
+
+  - **A.** Formal severity scoring + clinical judgment
+  - **B.** Severity assessment is unnecessary if diagnosis is clear
+  - **C.** Single biomarker measurement is sufficient
+  - **D.** Severity assessment is delayed until treatment failure
+
+  > **Answer: A** — Formal severity scoring + clinical judgment
+
+**Q3.** A patient is diagnosed with Endophthalmitis. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+
+**Q4.** Which of the following best describes the underlying pathophysiology / definition of Endophthalmitis?
+
+  - **A.** Endophthalmitis is **inflammation of the intraocular cavities** — the aqueous humour and vitreous gel — of **infectious origin** in the vast majority of cases (rarely sterile). It 
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — Endophthalmitis is **inflammation of the intraocular cavities** — the aqueous humour and vitreous gel — of **infectious origin** in the vast majority 
+

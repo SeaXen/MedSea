@@ -163,3 +163,86 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[GDM management (diet, metformin, insulin)]], [[Pre-existing diabetes in pregnancy (type 1, type 2)]], [[Type 2 diabetes prevention]], [[Gestational diabetes mellitus (GDM) epidemiology]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Postpartum follow-up and future risk*
+
+**Q1.** Which of the following features is most specific or characteristic of Postpartum follow-up and future risk?
+
+  - **A.** OGTT
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — OGTT
+  >
+  > *Source:* mol/mol (6.0%) → repeat OGTT |
+| **FPG** | Annual (if HbA1c not available) | ≥6.1 mmol/L → OGTT |
+| **OGTT** | Every 1–3 years (if prediabetes) | Per diagnostic criteria |
+| **Lipids, BP, weight** | A
+---
+
+> Auto-generated study sections for "Diabetes in pregnancy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Diabetes in pregnancy?
+  A: # Postpartum Follow-Up and Future Risk After GDM
+- Q: What is the investigation of choice for Diabetes in pregnancy?
+  A: 75g OGTT at 6–12 weeks (NOT HbA1c)
+- Q: What is HbA1c postpartum of Diabetes in pregnancy?
+  A: Unreliable <3 months (↑ RBC turnover, iron deficiency)
+- Q: What is T2DM risk after GDM of Diabetes in pregnancy?
+  A: 7× lifetime; 50% at 10y, 70% at 20y
+- Q: What is Recurrent GDM of Diabetes in pregnancy?
+  A: 30–50% next pregnancy
+- Q: What is Breastfeeding of Diabetes in pregnancy?
+  A: ≥3 months exclusive → ↓ T2DM risk 30–50%
+- Q: What is Annual screen of Diabetes in pregnancy?
+  A: HbA1c or FPG; OGTT if prediabetes
+- Q: What is Metformin prevention of Diabetes in pregnancy?
+  A: ADA: yes (BMI ≥30, prior GDM); NICE: lifestyle only
+- Q: What is Contraception of Diabetes in pregnancy?
+  A: LARC first-line; avoid COCP if VTE risk
+- Q: What is CVD risk of Diabetes in pregnancy?
+  A: 2× independent of T2DM
+- Q: What is Weight retention of Diabetes in pregnancy?
+  A: Major modifiable risk factor for progression
+- Q: What is the investigation of choice for Diabetes in pregnancy?
+  A: 75g OGTT at 6–12 weeks (NOT HbA1c)
+- Q: What is HbA1c postpartum of Diabetes in pregnancy?
+  A: Unreliable <3 months (↑ RBC turnover, iron deficiency)
+- Q: What is T2DM risk after GDM of Diabetes in pregnancy?
+  A: 7× lifetime; 50% at 10y, 70% at 20y
+- Q: What is Recurrent GDM of Diabetes in pregnancy?
+  A: 30–50% next pregnancy
+- Q: What is Breastfeeding of Diabetes in pregnancy?
+  A: ≥3 months exclusive → ↓ T2DM risk 30–50%
+- Q: What is Annual screen of Diabetes in pregnancy?
+  A: HbA1c or FPG; OGTT if prediabetes
+- Q: What is Metformin prevention of Diabetes in pregnancy?
+  A: ADA: yes (BMI ≥30, prior GDM); NICE: lifestyle only
+- Q: What is Contraception of Diabetes in pregnancy?
+  A: LARC first-line; avoid COCP if VTE risk
+- Q: What is CVD risk of Diabetes in pregnancy?
+  A: 2× independent of T2DM
+- Q: What is Weight retention of Diabetes in pregnancy?
+  A: Major modifiable risk factor for progression
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in pregnancy?**
+   A. **# Postpartum Follow-Up and Future Risk After GDM**
+   B. An unrelated condition not matching the clinical picture of Diabetes in pregnancy
+   C. A complication seen late in the disease course of Diabetes in pregnancy
+   D. A condition that mimics Diabetes in pregnancy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in pregnancy presents with: Q1. Which of the following features is most specific or characteristic of Postpartum follow-up and future risk?; B. A feature common to many acute inflammatory conditions; C. A non-specific sign that does not localise the diagnosis. What is the most likely diagnosis?
+   A. **Diabetes in pregnancy**
+   B. A condition that mimics Diabetes in pregnancy but is not the same entity
+   C. A complication of Diabetes in pregnancy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in pregnancy
+

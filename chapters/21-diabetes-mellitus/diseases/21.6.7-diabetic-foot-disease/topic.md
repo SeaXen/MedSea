@@ -323,3 +323,83 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Diabetic foot disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Diabetic foot disease?
+
+  - **A.** ABI / TBI
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ABI / TBI
+  >
+  > *Source:* 3-monthly (2–3) |
+| **Vibration (128Hz)** | Neuropathy severity | <10s at hallux IP = abnormal |
+| **ABI / TBI** | PAD screening | ABI <0.9 diagnostic; TBI if ABI >1.4 (calcified vessels) |
+| **Probe-
+
+**Q2.** What is the most appropriate first-line therapy for Diabetic foot disease?
+
+  - **A.** TCC immobilisation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — TCC immobilisation
+  >
+  > *Source:* **0 (Development)**   Hot, swollen, erythematous; normal X-ray; MRI: marrow oedema   **TCC immobilisation** (non-weightbearing 8–12wk → weightbearing in TCC 4–8wk)
+---
+
+> Auto-generated study sections for "Microvascular Complications" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Microvascular Complications?
+  A: Foot ulceration, infection, or destruction in diabetes from neuropathy, ischaemia, or both
+- Q: What is the epidemiology of Microvascular Complications?
+  A: Lifetime DFU risk 15–25%; 85% amputations preceded by DFU; mortality 5yr post-amputation ~50–70%
+- Q: What is the pathogenesis of Microvascular Complications?
+  A: Neuropathy (LOPS → unrecognised trauma) + Ischaemia (PAD → impaired healing) + Immunopathy (↑infection risk)
+- Q: What causes Microvascular Complications?
+  A: Prior ulcer/amputation, LOPS, PAD, deformity, nephropathy, retinopathy, poor glycaemic control, smoking
+- Q: What is IWGDF Risk of Microvascular Complications?
+  A: 0: no LOPS/PAD; 1: LOPS; 2: LOPS+PAD/deformity; 3: hx ulcer/amputation
+- Q: What is Screening of Microvascular Complications?
+  A: Annual (0), 6-monthly (1), 3-monthly (2–3); 10g monofilament + vibration + ABI
+- Q: What is Wagner of Microvascular Complications?
+  A: 0: pre-ulcer; 1: superficial; 2: deep to tendon; 3: bone/abscess; 4: forefoot gangrene; 5: whole foot
+- Q: How is Microvascular Complications classified?
+  A: Grade 0–3 (depth) × Stage A–D (A=clean, B=infected, C=ischaemic, D=both)
+- Q: What is PEDIS Infection of Microvascular Complications?
+  A: 1: none; 2: mild (oral abx); 3: moderate (IV abx); 4: severe (sepsis + surgical)
+- Q: What is Offloading of Microvascular Complications?
+  A: TCC = gold standard (heals 80–90%); RCW if TCC contraindicated
+- Q: What is Charcot of Microvascular Complications?
+  A: Eichenholtz 0–3; hot swollen foot + preserved pulses = Charcot until proven otherwise; TCC immobilisation
+- Q: What is Probe-to-bone of Microvascular Complications?
+  A: Positive → osteomyelitis likely (PPV 89%); MRI gold standard
+- Q: What is MDT of Microvascular Complications?
+  A: Diabetologist, podiatrist, vascular, orthotist, microbiology, orthopaedics → reduces amputations 50–80%
+- Q: What is Revascularisation of Microvascular Complications?
+  A: Endovascular 1st → surgical bypass if unsuitable; urgent if tissue loss
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Microvascular Complications?**
+   A. **Diabetic foot disease: leading cause of non-traumatic lower limb amputation — IWGDF risk 0–3 drives screening/referral; Wagner 0–5 / UT Grade 0–3 × Stage A–D classify ulcers; TCC (total contact cast) **
+   B. An unrelated condition not matching the clinical picture of Microvascular Complications
+   C. A complication seen late in the disease course of Microvascular Complications
+   D. A condition that mimics Microvascular Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Microvascular Complications presents with: Definition — Foot ulceration, infection, or destruction in diabetes from neuropathy, ischaemia, or both; Epidemiology — Lifetime DFU risk 15–25%; 85% amputations preceded by DFU; mortality 5yr post-amputation ~50–70%; Pathophysiology — Neuropathy (LOPS → unrecognised trauma) + Ischaemia (PAD → impaired healing) + Immunopathy (↑infection risk). What is the most likely diagnosis?
+   A. **Microvascular Complications**
+   B. A condition that mimics Microvascular Complications but is not the same entity
+   C. A complication of Microvascular Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Microvascular Complications
+

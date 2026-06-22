@@ -139,3 +139,28 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetic kidney disease staging (KDIGO)]], [[GFR categories (G1-G5)]], [[Diabetic nephropathy]], [[DKD management]]
+---
+
+> Auto-generated study sections for "A2" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of A2?
+  A: KDIGO Albuminuria categories (A1–A3) based on UACR (Urine Albumin:Creatinine Ratio); A2 = microalbuminuria (earliest DKD); A3 = macroalbuminuria (overt nephropathy); confirm with 2/3 samples in 3–6 months.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes A2?**
+   A. **KDIGO Albuminuria categories (A1–A3) based on UACR (Urine Albumin:Creatinine Ratio); A2 = microalbuminuria (earliest DKD); A3 = macroalbuminuria (overt nephropathy); confirm with 2/3 samples in 3–6 mo**
+   B. An unrelated condition not matching the clinical picture of A2
+   C. A complication seen late in the disease course of A2
+   D. A condition that mimics A2 but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected A2 presents with: A1 — Annual UACR + eGFR; optimise BP/glucose/lipids; A2 — ACEi/ARB max dose (even if normotensive); add SGLT2i (eGFR ≥20); BP <130/80; 6-monthly monitoring; consider finerenone if T2DM; A3 — ACEi/ARB max + SGLT2i + finerenone (eGFR ≥25); nephrology referral; 3–6 monthly monitoring; GLP-1 RA if T2DM. What is the most likely diagnosis?
+   A. **A2**
+   B. A condition that mimics A2 but is not the same entity
+   C. A complication of A2 rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as A2
+

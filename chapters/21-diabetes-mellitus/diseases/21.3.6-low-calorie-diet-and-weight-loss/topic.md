@@ -145,3 +145,66 @@ By the end of this note you should be able to:
 - **S**upervision: medical (VLCD); dietitian (LCD)
 - **S**afety: monitoring (electrolytes, ketones, LFT)
 - **S**erious: cholelithiasis risk**</think>
+---
+
+> Auto-generated study sections for "Type 2 diabetes remission" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Type 2 diabetes remission?
+  A: By the end of this note you should be able to:
+- Q: What is VLCD of Type 2 diabetes remission?
+  A: <800 kcal/day; formula products; medical supervision required
+- Q: What is LCD of Type 2 diabetes remission?
+  A: 800-1200 kcal/day; formula or food-based
+- Q: What is VLCD of Type 2 diabetes remission?
+  A: <800 kcal/day; formula products; medical supervision required
+- Q: What is LCD of Type 2 diabetes remission?
+  A: 800-1200 kcal/day; formula or food-based
+- Q: What is Cholelithiasis of Type 2 diabetes remission?
+  A: Ursodeoxycholic acid 500mg BD (prophylaxis)
+- Q: What is Gout of Type 2 diabetes remission?
+  A: Allopurinol if flare; hydration
+- Q: What is Hypotension of Type 2 diabetes remission?
+  A: Fluid/electrolyte replacement; reduce diuretics
+- Q: What is Hair loss of Type 2 diabetes remission?
+  A: Reassurance; adequate protein
+- Q: What is Cholelithiasis of Type 2 diabetes remission?
+  A: Ursodeoxycholic acid 500mg BD (prophylaxis)
+- Q: What is Gout of Type 2 diabetes remission?
+  A: Allopurinol if flare; hydration
+- Q: What is Hypotension of Type 2 diabetes remission?
+  A: Fluid/electrolyte replacement; reduce diuretics
+- Q: What is Hair loss of Type 2 diabetes remission?
+  A: Reassurance; adequate protein
+- Q: What is Cold intolerance of Type 2 diabetes remission?
+  A: Reassurance; adequate clothing
+- Q: What is VLCD of Type 2 diabetes remission?
+  A: <800 kcal; 8-12 weeks; medical supervision; formula products
+- Q: What is Weight loss of Type 2 diabetes remission?
+  A: 1.5-2.5kg/week; 15kg average in DiRECT
+- Q: What is Remission predictor of Type 2 diabetes remission?
+  A: ≥15kg loss -> 86% remission
+- Q: What is Cholelithiasis of Type 2 diabetes remission?
+  A: Prophylaxis: ursodeoxycholic acid 500mg BD
+- Q: What is Reintroduction of Type 2 diabetes remission?
+  A: Stepwise (200kcal/week); dietitian-led
+- Q: What is Maintenance of Type 2 diabetes remission?
+  A: Monthly review; weight monitoring; relapse plan
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes remission?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes remission
+   C. A complication seen late in the disease course of Type 2 diabetes remission
+   D. A condition that mimics Type 2 diabetes remission but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes remission presents with: VLCD — <800 kcal/day; formula products; medical supervision required; LCD — 800-1200 kcal/day; formula or food-based; Weight loss — 1.5-2.5kg/week (VLCD); 0.5-1kg/week (LCD). What is the most likely diagnosis?
+   A. **Type 2 diabetes remission**
+   B. A condition that mimics Type 2 diabetes remission but is not the same entity
+   C. A complication of Type 2 diabetes remission rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes remission
+

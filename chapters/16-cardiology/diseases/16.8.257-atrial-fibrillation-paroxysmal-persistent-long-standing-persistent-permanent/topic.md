@@ -450,3 +450,19 @@ Score ≥3 = high bleeding risk (caution, not contraindication).
 **Status**: Full FCPS/MRCP note completed (A-to-Z depth)
 **Date completed**: 2026-06-09
 **Sources**: ESC AF Guidelines 2020, ACC/AHA/HRS 2019, AHA/ACC/HFSA HF 2022, EAST-AFNET 4, CASTLE-AF, CABANA, RACE-II, AFFIRM, RE-LY, ARISTOTLE, ROCKET-AF, ENGAGE-AF, Davidson, Braunwald, PasTest, MRCP question banks
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Atrial Fibrillation (AF)*
+
+**Q1.** What is the most appropriate first-line therapy for Atrial Fibrillation (AF)?
+
+  - **A.** Rate control
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Rate control
+  >
+  > *Source:* **Rate control** (AFFIRM): beta-blocker (1st line, especially in HF: bisoprolol, carvedilol; avoid in HF decompensation), non-dihydropyridine CCB (diltiazem, verapamil, avoid in HFrEF), digoxin (HF, s
+

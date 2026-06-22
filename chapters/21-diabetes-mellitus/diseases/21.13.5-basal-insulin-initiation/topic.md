@@ -145,3 +145,103 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Basal-bolus intensification]], [[Concentrated insulins (U-200, U-300, U-500)]], [[Pre-mixed insulin]], [[Treatment algorithms/NICE NG28 pathway]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Basal insulin initiation*
+
+**Q1.** What is the most appropriate first-line therapy for Basal insulin initiation?
+
+  - **A.** Metformin + Yes
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Metformin + Yes
+  >
+  > *Source:* **Metformin**   **Yes** (first-line)   Continue full dose
+---
+
+> Auto-generated study sections for "Insulin therapy in type 2 diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (31 generated)
+
+- Q: What is the definition of Insulin therapy in type 2 diabetes?
+  A: Basal insulin = first injectable for T2DM failing oral therapy; glargine U100 / detemir / degludec preferred; start 10 units or 0.1–0.2 u/kg; titrate 2–4 units weekly to fasting target (4–7 mmol/L); once daily (same time); combine with metformin ± SGLT2i/DPP-4i; stop sulfonylurea.
+- Q: What is Fasting glucose of Insulin therapy in type 2 diabetes?
+  A: Daily (self-monitored); review weekly
+- Q: What is HbA1c of Insulin therapy in type 2 diabetes?
+  A: 3 months post-initiation; then 6-monthly
+- Q: What is Hypoglycaemia of Insulin therapy in type 2 diabetes?
+  A: Review at each visit; ask about nocturnal
+- Q: What is Weight of Insulin therapy in type 2 diabetes?
+  A: Monthly (basal insulin ~2–4kg gain)
+- Q: What is Injection technique of Insulin therapy in type 2 diabetes?
+  A: Review annually (site rotation, needle length)
+- Q: What is Initiation trigger of Insulin therapy in type 2 diabetes?
+  A: HbA1c >58 on dual/triple oral therapy
+- Q: What is Preferred basal of Insulin therapy in type 2 diabetes?
+  A: Glargine U100, detemir, degludec (analogues > NPH)
+- Q: What is the dose of Insulin therapy in type 2 diabetes?
+  A: 10 units or 0.1–0.2 u/kg
+- Q: What is Titration of Insulin therapy in type 2 diabetes?
+  A: 2–4 units weekly to fasting 4–7 mmol/L
+- Q: What is Sulfonylurea of Insulin therapy in type 2 diabetes?
+  A: Stop when starting basal insulin
+- Q: What is Metformin/SGLT2i/GLP-1 of Insulin therapy in type 2 diabetes?
+  A: Continue with basal
+- Q: What is Degludec advantage of Insulin therapy in type 2 diabetes?
+  A: >42h duration; flexible timing; lowest nocturnal hypo
+- Q: What is Fasting target of Insulin therapy in type 2 diabetes?
+  A: 4–7 mmol/L (individualise)
+- Q: What is Nocturnal hypo of Insulin therapy in type 2 diabetes?
+  A: Reduce basal 10–20%; consider degludec
+- Q: What is Weight gain of Insulin therapy in type 2 diabetes?
+  A: ~2–4kg with basal insulin
+- Q: What is Fasting glucose of Insulin therapy in type 2 diabetes?
+  A: Daily (self-monitored); review weekly
+- Q: What is HbA1c of Insulin therapy in type 2 diabetes?
+  A: 3 months post-initiation; then 6-monthly
+- Q: What is Hypoglycaemia of Insulin therapy in type 2 diabetes?
+  A: Review at each visit; ask about nocturnal
+- Q: What is Weight of Insulin therapy in type 2 diabetes?
+  A: Monthly (basal insulin ~2–4kg gain)
+- Q: What is Injection technique of Insulin therapy in type 2 diabetes?
+  A: Review annually (site rotation, needle length)
+- Q: What is Initiation trigger of Insulin therapy in type 2 diabetes?
+  A: HbA1c >58 on dual/triple oral therapy
+- Q: What is Preferred basal of Insulin therapy in type 2 diabetes?
+  A: Glargine U100, detemir, degludec (analogues > NPH)
+- Q: What is the dose of Insulin therapy in type 2 diabetes?
+  A: 10 units or 0.1–0.2 u/kg
+- Q: What is Titration of Insulin therapy in type 2 diabetes?
+  A: 2–4 units weekly to fasting 4–7 mmol/L
+- Q: What is Sulfonylurea of Insulin therapy in type 2 diabetes?
+  A: Stop when starting basal insulin
+- Q: What is Metformin/SGLT2i/GLP-1 of Insulin therapy in type 2 diabetes?
+  A: Continue with basal
+- Q: What is Degludec advantage of Insulin therapy in type 2 diabetes?
+  A: >42h duration; flexible timing; lowest nocturnal hypo
+- Q: What is Fasting target of Insulin therapy in type 2 diabetes?
+  A: 4–7 mmol/L (individualise)
+- Q: What is Nocturnal hypo of Insulin therapy in type 2 diabetes?
+  A: Reduce basal 10–20%; consider degludec
+- Q: What is Weight gain of Insulin therapy in type 2 diabetes?
+  A: ~2–4kg with basal insulin
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin therapy in type 2 diabetes?**
+   A. **Basal insulin = first injectable for T2DM failing oral therapy; glargine U100 / detemir / degludec preferred; start 10 units or 0.1–0.2 u/kg; titrate 2–4 units weekly to fasting target (4–7 mmol/L); o**
+   B. An unrelated condition not matching the clinical picture of Insulin therapy in type 2 diabetes
+   C. A complication seen late in the disease course of Insulin therapy in type 2 diabetes
+   D. A condition that mimics Insulin therapy in type 2 diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Insulin therapy in type 2 diabetes presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — Basal insulin initiation; Q1. What is the most appropriate first-line therapy for Basal insulin initiation?; A. Metformin + Yes. What is the most likely diagnosis?
+   A. **Insulin therapy in type 2 diabetes**
+   B. A condition that mimics Insulin therapy in type 2 diabetes but is not the same entity
+   C. A complication of Insulin therapy in type 2 diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Insulin therapy in type 2 diabetes
+

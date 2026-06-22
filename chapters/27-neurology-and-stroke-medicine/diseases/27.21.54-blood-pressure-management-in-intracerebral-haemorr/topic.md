@@ -568,3 +568,19 @@ Blood pressure management in ICH focuses on **preventing hematoma expansion with
 8. **B** — This pattern suggests raised ICP and impending herniation.
 9. **B** — Over-lowering can compromise perfusion pressure.
 10. **A** — This best captures the aim and method of ICH BP management.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Blood pressure management in intracerebral haemorrhage*
+
+**Q1.** What is the most appropriate first-line therapy for Blood pressure management in intracerebral haemorrhage?
+
+  - **A.** If SBP is persistently high, use IV titratable therapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — If SBP is persistently high, use IV titratable therapy
+  >
+  > *Source:* If SBP is persistently high, use IV titratable therapy.
+

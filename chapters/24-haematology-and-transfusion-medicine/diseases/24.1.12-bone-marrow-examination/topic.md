@@ -356,3 +356,21 @@ mindmap
    C. A complication seen late in the disease course of Hematology
    D. A condition that mimics Hematology but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Bone Marrow Examination*
+
+**Q1.** Which of the following features is most specific or characteristic of Bone Marrow Examination?
+
+  - **A.** Cytogenetics/FISH
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cytogenetics/FISH
+  >
+  > *Source:* ron Stores, Infiltration |
+| **Flow Cytometry** | Immunophenotype, % Blasts/Abnormal Cells, MRD |
+| **Cytogenetics/FISH** | Karyotype, Specific Abnormalities |
+| **Molecular** | Mutation Panel Results
+

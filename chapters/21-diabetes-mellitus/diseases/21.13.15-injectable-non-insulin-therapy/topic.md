@@ -53,3 +53,20 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #topic-group-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Type 2 Diabetes Mellitus" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Type 2 Diabetes Mellitus?
+  A: Topic-Group hub for Injectable non-insulin therapy — covers 3 disease-level topic(s) per Davidson Ch25.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 Diabetes Mellitus?**
+   A. **Topic-Group hub for Injectable non-insulin therapy — covers 3 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Type 2 Diabetes Mellitus
+   C. A complication seen late in the disease course of Type 2 Diabetes Mellitus
+   D. A condition that mimics Type 2 Diabetes Mellitus but has a different underlying cause
+

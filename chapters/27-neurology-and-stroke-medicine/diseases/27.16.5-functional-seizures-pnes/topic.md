@@ -628,4 +628,44 @@ Score each domain 0–5 (5 = confident, 0 = no idea). Re-test monthly.
 **Heading Hub:** [[../Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[../00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Functional Seizures PNES*
+
+**Q1.** Which of the following features is most specific or characteristic of Functional Seizures PNES?
+
+  - **A.** Key symptoms:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Key symptoms:
+  >
+  > *Source:* - **Key symptoms:** Specific to the condition
+
+**Q2.** Which landmark clinical trial provided evidence relevant to the management of Functional Seizures PNES (specifically: CBT-informed therapy plus standardised medical care reduces seizure frequency and improves functioning in PNES)?
+
+  - **A.** CONVERT trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — CONVERT trial
+  >
+  > *Source:* Pharmacotherapy
+   **Answer:** B
+   **Explanation:** The CODES (Goldstein et al., 2020) and CONVERT trials showed CBT-informed therapy plus standardised medical care reduces seizure frequency and impr
+
+**Q3.** What is the most appropriate first-line therapy for Functional Seizures PNES?
+
+  - **A.** Rehabilitation:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Rehabilitation:
+  >
+  > *Source:* **Rehabilitation:** Physiotherapy, OT, speech therapy.
+

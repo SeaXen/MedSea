@@ -456,3 +456,47 @@ flowchart TD
 **Chapter MOC:** [[Neurology MOC]]  
 **Topic Hub:** [[Peripheral Neuropathy Hub]]  
 **Related Topics:** [[CIDP]], [[Vasculitic Neuropathy]], [[Amyloid Neuropathy]], [[Autonomic Function Testing]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Diabetic Neuropathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Diabetic Neuropathy?
+
+  - **A.** NCS/EMG
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — NCS/EMG
+  >
+  > *Source:* on |
+| **B12, folate, TSH, U&E, LFT, paraprotein, ANA, ANCA, SPEP** | Exclude mimics | Negative |
+| **NCS/EMG** | Diagnostic uncertainty, atypical | Axonal sensorimotor (↓SNAP/CMAP, no demyelinating f
+
+**Q2.** In the management of Diabetic Neuropathy, which of the following should be avoided or is contraindicated?
+
+  - **A.** beta-blockers (avoid in HRV poor)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — beta-blockers (avoid in HRV poor)
+  >
+  > *Source:* **Neurogenic bladder** | Intermittent self-catheterisation;bethanechol |
+| **Cardiac autonomic** | Avoid beta-blockers if HRV poor; consider ACE-i, beta-blocker in CAD |
+| **Sudomotor** | Glycopyrrola
+
+**Q3.** What is the most appropriate first-line therapy for Diabetic Neuropathy?
+
+  - **A.** Target HbA1c + DCCT/EDIC: + STENO-2:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Target HbA1c + DCCT/EDIC: + STENO-2:
+  >
+  > *Source:* ### Glycaemic Control (Only Disease-Modifying)
+- **Target HbA1c** <7% (T1DM: <6.5% if no hypoglycaemia risk; T2DM: 7-8% in frail/elderly)
+- **DCCT/EDIC:** Intensive control → 60% ↓ DSPN at 8-yr follow
+

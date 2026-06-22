@@ -54,3 +54,20 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #topic-group-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Diabetes in Special Populations" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Diabetes in Special Populations?
+  A: Topic-Group hub for Diabetes in the elderly — covers 4 disease-level topic(s) per Davidson Ch25.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in Special Populations?**
+   A. **Topic-Group hub for Diabetes in the elderly — covers 4 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetes in Special Populations
+   C. A complication seen late in the disease course of Diabetes in Special Populations
+   D. A condition that mimics Diabetes in Special Populations but has a different underlying cause
+

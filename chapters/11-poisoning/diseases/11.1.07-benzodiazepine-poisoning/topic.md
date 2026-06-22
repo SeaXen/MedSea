@@ -545,3 +545,32 @@ Benzodiazepine poisoning alone has ceiling effect on respiratory depression — 
 8. **B** - Flumazenil CONTRAINDICATED in TCA co-ingestion → unmasks TCA seizures + lowers seizure threshold. Also contraindicated: seizure disorder, chronic benzo use.
 9. **A** - Short-acting (alprazolam, lorazepam): withdrawal onset 6-12h, peak 24-48h. Long-acting (diazepam): onset 2-3 days, peak 5-7d. PRIME mnemonic.
 10. **B** - Unknown co-ingestion = flumazenil risky (TCA, seizure disorder). Supportive care (airway, ventilation) + observation + psych assessment is safest. Most recover with support.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Benzodiazepine Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Benzodiazepine Poisoning?
+
+  - **A.** CNS
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CNS
+  >
+  > *Source:* ## Pure Benzodiazepine OD
+- **CNS**: drowsiness → coma (GCS 8-15 typically), **paradoxical agitation** (elderly, children, high dose)
+- **Motor**: ataxia, dysarthria, **nystagmus** (horizontal gaze), 
+
+**Q2.** What is the most appropriate first-line therapy for Benzodiazepine Poisoning?
+
+  - **A.** Chronic benzodiazepine use / dependence — precipitated withdrawal (seizures, delirium)
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Chronic benzodiazepine use / dependence — precipitated withdrawal (seizures, delirium)
+  >
+  > *Source:* **Chronic benzodiazepine use / dependence** — precipitated withdrawal (seizures, delirium)
+

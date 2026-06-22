@@ -104,3 +104,32 @@ By the end of this note you should be able to:
 - **M**acrosomia = key differentiator from HNF1A
 - **O**rganic lipids: low HDL
 - **D**NA: HNF4A gene (20q13)</think>
+---
+
+> Auto-generated study sections for "Maturity onset diabetes of the young (MODY)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (3 generated)
+
+- Q: What is the definition of Maturity onset diabetes of the young (MODY)?
+  A: By the end of this note you should be able to:
+- Q: What is Sulfonylurea of Maturity onset diabetes of the young (MODY)?
+  A: Excellent response (gliclazide MR 1st line)
+- Q: How is Maturity onset diabetes of the young (MODY) monitored?
+  A: HbA1c 6-monthly; lipids annual
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Maturity onset diabetes of the young (MODY)?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Maturity onset diabetes of the young (MODY)
+   C. A complication seen late in the disease course of Maturity onset diabetes of the young (MODY)
+   D. A condition that mimics Maturity onset diabetes of the young (MODY) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Maturity onset diabetes of the young (MODY) presents with: Gene — HNF4A (hepatocyte nuclear factor 4-alpha); Prevalence — ~5-10% of MODY; Inheritance — Autosomal dominant. What is the most likely diagnosis?
+   A. **Maturity onset diabetes of the young (MODY)**
+   B. A condition that mimics Maturity onset diabetes of the young (MODY) but is not the same entity
+   C. A complication of Maturity onset diabetes of the young (MODY) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Maturity onset diabetes of the young (MODY)
+

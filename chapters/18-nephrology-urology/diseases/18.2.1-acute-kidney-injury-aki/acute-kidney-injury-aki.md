@@ -504,3 +504,20 @@ mindmap
 **Key takeaway:** KDIGO = Cr ↑26.5/48h OR 1.5× baseline OR UO <0.5 mL/kg/h × 6h. Staging: 1.5–1.9× (1), 2–2.9× (2), ≥3×/RRT/Cr>354 (3). Pre-renal: FeNa <1%, FeUrea <35%; ATN: FeNa >2%, muddy brown casts. AIN: fever/rash/eosinophilia/WBC casts. AEIOU for RRT. Contrast nephropathy peaks 48–72h; prevent with IV fluids. Rhabdo: CK>5000, fluids + alkalinisation. Obstruction: US → decompress (Foley/nephrostomy/stent).
 **Exam focus:** KDIGO criteria/staging, FeNa/FeUrea interpretation, cast identification, AEIOU, contrast nephropathy, rhabdo/TLS management, obstruction relief.
 **Clinical relevance:** Early recognition, timely intervention, RRT indications, prevention strategies.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — Acute Kidney Injury (AKI)*
+
+**Q1.** Which of the following is characterised by the clinical triad: fever, rash, eosinophilia?
+
+  - **A.** Acute Kidney Injury (AKI)
+  - **B.** A related condition in the same clinical area
+  - **C.** A common mimicker with overlapping features
+  - **D.** A complication rather than the underlying disease
+
+  > **Answer: A** — Acute Kidney Injury (AKI)
+  >
+  > *Source:* AIN triad (fever, rash, eosinophilia)
+6
+

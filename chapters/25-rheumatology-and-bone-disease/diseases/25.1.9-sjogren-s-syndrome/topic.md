@@ -475,3 +475,31 @@ mindmap
    C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Sjogren's syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of Sjogren's syndrome?
+
+  - **A.** Anti-La/SSB
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Anti-La/SSB
+  >
+  > *Source:* A** | **60-70%** | **Photosensitivity**, neonatal lupus (heart block), subacute cutaneous lupus |
+| **Anti-La/SSB** | **30-40%** | **Highly specific** (95%); almost always with Ro |
+| **ANA** | Positi
+
+**Q2.** What is the most appropriate first-line therapy for Sjogren's syndrome?
+
+  - **A.** Arthritis + MTX/SSZ
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Arthritis + MTX/SSZ
+  >
+  > *Source:* **Arthritis**   HCQ first; **MTX/SSZ** if persistent
+

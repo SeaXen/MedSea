@@ -442,3 +442,19 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 13: Austere Medicine — Environmental Health Emergencies*
+
+**Q1.** What is the most appropriate first-line therapy for Environmental Health Emergencies?
+
+  - **A.** During + Trauma + Drowning
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — During + Trauma + Drowning
+  >
+  > *Source:* **During**   **Trauma (Debris, Structural Collapse)**, **Drowning (Storm Surge)**, **Carbon Monoxide** (Generators)   **Shelter-in-Place**, **Stay Indoors**, **CO Detectors**
+

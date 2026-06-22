@@ -93,3 +93,19 @@ Atherosclerosis is a **chronic inflammatory disease** of large/medium elastic an
 > - **TCFA = thin cap (<65 µm) + large lipid + macrophages** = vulnerable
 > - **Most MIs from non-flow-limiting lesions** (50–70% stenosis)
 > - **Statins & PCSK9i** can **regress** plaque (serial IVUS)
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Atherosclerosis pathogenesis*
+
+**Q1.** What is the most appropriate first-line therapy for Atherosclerosis pathogenesis?
+
+  - **A.** PCSK9 inhibitors
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — PCSK9 inhibitors
+  >
+  > *Source:* **PCSK9 inhibitors** (evolocumab 140mg SC 2w or 420mg monthly, alirocumab 75/150mg 2w) for very high risk not at target.
+

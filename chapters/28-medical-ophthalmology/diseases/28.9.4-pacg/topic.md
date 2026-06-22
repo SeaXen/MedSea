@@ -565,3 +565,35 @@ PACG is an ophthalmic emergency presenting with severe pain, halos, ↓VA, fixed
 
 ## Tags
 #medicine #davidson #ophthalmology #glaucoma #PACG #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / PACG**
+
+**Q1.** A patient is being evaluated for PACG. Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+
+**Q2.** A patient is diagnosed with PACG. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+
+**Q3.** Which of the following best describes the underlying pathophysiology / definition of PACG?
+
+  - **A.** **PACG:** Glaucoma with closed or occludable angle on gonioscopy, leading to impaired aqueous outflow and raised IOP
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **PACG:** Glaucoma with closed or occludable angle on gonioscopy, leading to impaired aqueous outflow and raised IOP
+

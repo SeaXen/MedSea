@@ -568,3 +568,33 @@ mindmap
 **Heading Hub:** [[08_Peripheral_Neuropathy/Peripheral Neuropathy Hub]]
 **Topic-Group Hub:** [[08_Peripheral_Neuropathy/PN MOC]]
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Guillain-Barre Syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of Guillain-Barre Syndrome?
+
+  - **A.** Onset:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Onset:
+  >
+  > *Source:* ## History
+- **Antecedent event:** 1-3 weeks prior (respiratory 41%, GI 22%, other 38%)
+- **Onset:** Progressive weakness over **days to 4 weeks** (typically 1-2 weeks)
+- **Symmetric, ascending weakne
+
+**Q2.** What is the most appropriate first-line therapy for Guillain-Barre Syndrome?
+
+  - **A.** IVIG + 0.4 g/kg/day ×
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — IVIG + 0.4 g/kg/day ×
+  >
+  > *Source:* **IVIG**   **0.4 g/kg/day × 5 days** (total 2 g/kg)   **First-line**; pooled IgG; rapid onset (days); side effects: headache, aseptic meningitis, thrombosis, AKI
+

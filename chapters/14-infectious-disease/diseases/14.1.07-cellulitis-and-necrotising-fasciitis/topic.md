@@ -395,3 +395,21 @@ Related: [[Fever and Septic Syndrome Approach]], [[Sepsis and Septic Shock]], [[
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-13
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Cellulitis and Necrotising Fasciitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Cellulitis and Necrotising Fasciitis?
+
+  - **A.** MCQ 1
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MCQ 1
+  >
+  > *Source:* + **C**lindamycin + **V**anco = **PCV**
+- **Clindamycin in NF**: **T**oxin **I**nhibition = **TI**
+**MCQ 1**: B — Pain out of proportion = NF hallmark
+

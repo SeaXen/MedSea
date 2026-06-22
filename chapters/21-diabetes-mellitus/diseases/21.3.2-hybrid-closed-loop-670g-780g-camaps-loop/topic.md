@@ -137,3 +137,64 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Pump types (tethered, patch, closed-loop)]], [[Automated insulin delivery (AID) systems]], [[CGM-guided insulin adjustment]], [[Continuous glucose monitoring (CGM)]]
+---
+
+> Auto-generated study sections for "Insulin pump therapy (CSII)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Insulin pump therapy (CSII)?
+  A: # Hybrid Closed-Loop (HCL) Systems — 670G, 780G, CamAPS, Omnipod 5, Loop
+- Q: What is HCL = Hybrid Closed-Loop of Insulin pump therapy (CSII)?
+  A: Automates basal only; user gives meal bolus
+- Q: What is PID vs MPC of Insulin pump therapy (CSII)?
+  A: PID = reactive (Medtronic); MPC = predictive (Tandem, Omnipod, CamAPS)
+- Q: What are the clinical features of Insulin pump therapy (CSII)?
+  A: Auto-correction bolus (unique); adjustable target (100/110/120)
+- Q: What is Omnipod 5 of Insulin pump therapy (CSII)?
+  A: Tubeless HCL; phone controller; SmartAdjust MPC
+- Q: What is CamAPS FX of Insulin pump therapy (CSII)?
+  A: App-based HCL; works on multiple pumps (Ypsomed, Dana)
+- Q: What is NICE criteria HCL of Insulin pump therapy (CSII)?
+  A: T1DM; HbA1c ≥58 OR disabling hypos; education + carb counting
+- Q: What is Evidence of Insulin pump therapy (CSII)?
+  A: All systems: TIR +10–15%, TBR −50%, HbA1c −0.3–0.5%
+- Q: What is Exercise mode of Insulin pump therapy (CSII)?
+  A: Raises target (e.g., 140–160) → reduces insulin delivery
+- Q: What is DIY systems of Insulin pump therapy (CSII)?
+  A: Not regulated; support safety, don't discourage competent users
+- Q: What is HCL = Hybrid Closed-Loop of Insulin pump therapy (CSII)?
+  A: Automates basal only; user gives meal bolus
+- Q: What is PID vs MPC of Insulin pump therapy (CSII)?
+  A: PID = reactive (Medtronic); MPC = predictive (Tandem, Omnipod, CamAPS)
+- Q: What are the clinical features of Insulin pump therapy (CSII)?
+  A: Auto-correction bolus (unique); adjustable target (100/110/120)
+- Q: What is Omnipod 5 of Insulin pump therapy (CSII)?
+  A: Tubeless HCL; phone controller; SmartAdjust MPC
+- Q: What is CamAPS FX of Insulin pump therapy (CSII)?
+  A: App-based HCL; works on multiple pumps (Ypsomed, Dana)
+- Q: What is NICE criteria HCL of Insulin pump therapy (CSII)?
+  A: T1DM; HbA1c ≥58 OR disabling hypos; education + carb counting
+- Q: What is Evidence of Insulin pump therapy (CSII)?
+  A: All systems: TIR +10–15%, TBR −50%, HbA1c −0.3–0.5%
+- Q: What is Exercise mode of Insulin pump therapy (CSII)?
+  A: Raises target (e.g., 140–160) → reduces insulin delivery
+- Q: What is DIY systems of Insulin pump therapy (CSII)?
+  A: Not regulated; support safety, don't discourage competent users
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin pump therapy (CSII)?**
+   A. **# Hybrid Closed-Loop (HCL) Systems — 670G, 780G, CamAPS, Omnipod 5, Loop**
+   B. An unrelated condition not matching the clinical picture of Insulin pump therapy (CSII)
+   C. A complication seen late in the disease course of Insulin pump therapy (CSII)
+   D. A condition that mimics Insulin pump therapy (CSII) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Insulin pump therapy (CSII) presents with: FLAIR (2021) — 780G; PIVOTAL (2023) — 780G; Control-IQ RCT (2019) — Tandem. What is the most likely diagnosis?
+   A. **Insulin pump therapy (CSII)**
+   B. A condition that mimics Insulin pump therapy (CSII) but is not the same entity
+   C. A complication of Insulin pump therapy (CSII) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Insulin pump therapy (CSII)
+

@@ -212,3 +212,32 @@ Immunocompromised host skin infections presents with characteristic features as 
 ---
 
 > [!tip] **Exam focus:** Know definition, key clinical features, first-line management, and the most important complication. Always compare with the main differential.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 26: Dermatology — Immunocompromised host skin infections full*
+
+**Q1.** Which of the following features is most specific or characteristic of Immunocompromised host skin infections full?
+
+  - **A.** Immunocompromised skin
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Immunocompromised skin
+  >
+  > *Source:* **Immunocompromised skin** = Often atypical, severe, disseminated
+### MCQs
+1
+
+**Q2.** What is the most appropriate first-line therapy for Immunocompromised host skin infections full?
+
+  - **A.** First-line:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — First-line:
+  >
+  > *Source:* **First-line:** General measures (emollients, soap substitutes, trigger avoidance) and topical therapy (corticosteroids, calcineurin inhibitors, vitamin D analogues, antifungals as appropriate)
+

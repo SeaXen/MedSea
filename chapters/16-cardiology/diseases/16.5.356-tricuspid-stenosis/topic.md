@@ -315,3 +315,19 @@ Diagnosis is based on clinical signs of right-sided inflow obstruction plus echo
 8. **A** - Troponin belongs to ACS logic, not direct TS severity grading.
 9. **A** - Combined lesions often need surgical planning together.
 10. **A** - Prominent a wave is classic.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Tricuspid stenosis (rare)*
+
+**Q1.** Which of the following features is most specific or characteristic of Tricuspid stenosis (rare)?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

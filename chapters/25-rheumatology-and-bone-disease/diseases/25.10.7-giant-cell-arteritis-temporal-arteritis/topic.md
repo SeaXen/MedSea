@@ -458,3 +458,33 @@ mindmap
    C. A complication of Vasculitis rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Vasculitis
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Giant cell arteritis (temporal arteritis)*
+
+**Q1.** Which of the following features is most specific or characteristic of Giant cell arteritis (temporal arteritis)?
+
+  - **A.** Jaw claudication
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Jaw claudication
+  >
+  > *Source:* ------|
+| **New headache** | 70-90% | **Temporal**, throbbing, severe; may be occipital/frontal |
+| **Jaw claudication** | 40-50% | **Pain on chewing** — masseter ischaemia; **high specificity for GCA
+
+**Q2.** What is the most appropriate first-line therapy for Giant cell arteritis (temporal arteritis)?
+
+  - **A.** PMR-predominant
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — PMR-predominant
+  >
+  > *Source:* **PMR-predominant**   Pred 20-30mg daily (but screen for GCA)   Standard  
+
+### Taper Schedule (Standard)
+

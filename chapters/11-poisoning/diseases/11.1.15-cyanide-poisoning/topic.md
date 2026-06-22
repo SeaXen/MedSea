@@ -502,3 +502,32 @@ Cyanide poisoning = cytochrome c oxidase inhibition → histotoxic hypoxia. Hall
 7. **B** - Hydroxocobalamin causes transient hypertension (mechanism unclear, possibly NO scavenging). Monitor BP. Resolves spontaneously.
 8. **B** - Rhodanese (sulfurtransferase): uses thiosulfate as sulfur donor → converts CN⁻ → thiocyanate (SCN⁻) → renal excretion. Thiosulfate provides sulfur.
 9. **B** - Observe 24h: CN⁻ can redistribute, rebound toxicity. Monitor lactate, neurologic status, cardiac. Psych if DSH.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Cyanide Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Cyanide Poisoning?
+
+  - **A.** Lactate
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Lactate
+  >
+  > *Source:* * — **severe metabolic acidosis**, **venous pO₂ high** (venous > arterial), **lactate very high**
+- **Lactate** — **> 10 mmol/L = highly suggestive** (specificity > 90% for CN in fire victims)
+- **COH
+
+**Q2.** What is the most appropriate first-line therapy for Cyanide Poisoning?
+
+  - **A.** Lab interference
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Lab interference
+  >
+  > *Source:* **Lab interference**: falsely ↑ bilirubin, creatinine, glucose, lactate (colorimetric) — **use non-colorimetric methods if critical**
+

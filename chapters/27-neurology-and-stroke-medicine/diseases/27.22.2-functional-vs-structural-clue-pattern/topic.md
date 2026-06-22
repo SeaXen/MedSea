@@ -695,3 +695,19 @@ The distinction between functional and structural neurological patterns is a hig
 8. **B. Entrainment supporting functional tremor** — positive FND movement sign.
 9. **C. Persistent objective extensor plantar response** — strong structural clue.
 10. **A. It may cause iatrogenic harm and reinforce illness behavior** — important management principle.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Functional vs structural clue pattern*
+
+**Q1.** Which of the following features is most specific or characteristic of Functional vs structural clue pattern?
+
+  - **A.** B. Positive clinical signs of inconsistency/incongruence
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — B. Positive clinical signs of inconsistency/incongruence
+  >
+  > *Source:* **B. Positive clinical signs of inconsistency/incongruence** — correct diagnostic approach
+

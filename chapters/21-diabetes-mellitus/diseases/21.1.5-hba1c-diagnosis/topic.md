@@ -134,3 +134,32 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Diagnostic criteria" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (3 generated)
+
+- Q: What is the definition of Diagnostic criteria?
+  A: HbA1c ≥48 mmol/mol (6.5%) = Diabetes; 39–47 mmol/mol (5.7–6.4%) = Prediabetes
+- Q: What is Principle of Diagnostic criteria?
+  A: Non-enzymatic glycation of haemoglobin β-chain; reflects mean glucose over ~120 days (RBC lifespan)
+- Q: What is Units of Diagnostic criteria?
+  A: IFCC: mmol/mol; NGSP/DCCT: % (DCCT = IFCC × 0.0915 + 2.15)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diagnostic criteria?**
+   A. **| Definition | HbA1c ≥48 mmol/mol (6.5%) = Diabetes; 39–47 mmol/mol (5.7–6.4%) = Prediabetes |**
+   B. An unrelated condition not matching the clinical picture of Diagnostic criteria
+   C. A complication seen late in the disease course of Diagnostic criteria
+   D. A condition that mimics Diagnostic criteria but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diagnostic criteria presents with: Definition — HbA1c ≥48 mmol/mol (6.5%) = Diabetes; 39–47 mmol/mol (5.7–6.4%) = Prediabetes; Principle — Non-enzymatic glycation of haemoglobin β-chain; reflects mean glucose over ~120 days (RBC lifespan); Units — IFCC: mmol/mol; NGSP/DCCT: % (DCCT = IFCC × 0.0915 + 2.15). What is the most likely diagnosis?
+   A. **Diagnostic criteria**
+   B. A condition that mimics Diagnostic criteria but is not the same entity
+   C. A complication of Diagnostic criteria rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diagnostic criteria
+

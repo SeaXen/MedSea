@@ -187,3 +187,71 @@ By the end of this note you should be able to:
 - **P**regnancy: safe but insulin preferred
 - **R**enal <30 = contraindicated
 - **X**R preferred for GI tolerability</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Metformin*
+
+**Q1.** What is the most appropriate first-line therapy for Metformin?
+
+  - **A.** With meals
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — With meals
+  >
+  > *Source:* **With meals**   IR: with food; XR: with evening meal
+---
+
+> Auto-generated study sections for "Oral glucose lowering agents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Oral glucose lowering agents?
+  A: By the end of this note you should be able to:
+- Q: What is Drug Class of Oral glucose lowering agents?
+  A: Biguanide (only available agent)
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: [down]Hepatic gluconeogenesis ([up]AMPK -> [down]mTOR -> [down]gluconeogenic genes); [up]peripheral insulin sensitivity ([up]GLUT4); [down]intestinal glucose absorption; [up]GLP-1 secretion
+- Q: What is Pharmacokinetics of Oral glucose lowering agents?
+  A: Oral absorption 50-60%; no protein binding; renal excretion unchanged (t[half] 4-9h); not metabolised
+- Q: What is Dosing of Oral glucose lowering agents?
+  A: Immediate-release (IR): 500mg BD/TDS with meals -> max 3g/day; Extended-release (XR): 500mg OD with evening meal -> max 2g/day
+- Q: What is HbA1c Reduction of Oral glucose lowering agents?
+  A: Monotherapy: 1.0-1.5% (11-16 mmol/mol); Add-on: 0.5-1.0%
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: [down]Hepatic gluconeogenesis (AMPK), [up]insulin sensitivity, [up]GLP-1, [down]gut glucose absorption
+- Q: What is Dosing of Oral glucose lowering agents?
+  A: IR: 500mg BD/TDS meals -> max 3g; XR: 500mg OD evening meal -> max 2g; titrate weekly
+- Q: What is Renal dosing of Oral glucose lowering agents?
+  A: eGFR [ge]45: full; 30-44: half max; <30: STOP (contraindicated)
+- Q: What is Oral glucose lowering agents indicated for?
+  A: eGFR<30, acute acidosis, severe hepatic, contrast/sepsis/surgery (hold), alcohol excess
+- Q: What is B12 deficiency of Oral glucose lowering agents?
+  A: 10-30% on long-term; screen annually; replace if <200 pg/mL
+- Q: What is Lactic acidosis of Oral glucose lowering agents?
+  A: Rare (3-10/100,000 pt-yrs); mortality 30-50%; risk: renal failure, hypoxia, sepsis, contrast, alcohol, liver disease
+- Q: What is GI intolerance of Oral glucose lowering agents?
+  A: 20-30%; XR + titration + meals [down]risk; switch to XR if intolerant
+- Q: What is Weight of Oral glucose lowering agents?
+  A: Neutral or modest loss (1-3kg)
+- Q: What is CV benefit of Oral glucose lowering agents?
+  A: UKPDS: [down]MI (39%), [down]all-cause mortality (36%) in overweight T2DM; neutral in modern CVOTs
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Oral glucose lowering agents?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Oral glucose lowering agents
+   C. A complication seen late in the disease course of Oral glucose lowering agents
+   D. A condition that mimics Oral glucose lowering agents but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Oral glucose lowering agents presents with: Drug Class — Biguanide (only available agent); Mechanism — [down]Hepatic gluconeogenesis ([up]AMPK -> [down]mTOR -> [down]gluconeogenic genes); [up]peripheral insulin sensitivity ([up]GLUT4); [down]intestinal glucose absorption; [up]GLP-1 secretion; Pharmacokinetics — Oral absorption 50-60%; no protein binding; renal excretion unchanged (t[half] 4-9h); not metabolised. What is the most likely diagnosis?
+   A. **Oral glucose lowering agents**
+   B. A condition that mimics Oral glucose lowering agents but is not the same entity
+   C. A complication of Oral glucose lowering agents rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Oral glucose lowering agents
+

@@ -72,3 +72,19 @@ Comorbidities **drive symptoms, hospitalisation, and mortality** in HF. Treating
 <callout icon="🎯" color="rose_bg">
 **CLINICAL SIGNIFICANCE —** Comorbidity management is **as important as the 4 GDMT pillars**. **IV iron for iron deficiency** is one of the few interventions that improves symptoms AND hospitalisation. **SGLT2i** address HF, CKD, and DM in one drug.
 </callout>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Common comorbidities AF obesity CKD anemia iron deficiency*
+
+**Q1.** What is the most appropriate first-line therapy for Common comorbidities AF obesity CKD anemia iron deficiency?
+
+  - **A.** Rate control
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Rate control
+  >
+  > *Source:* **Rate control** (AFFIRM): beta-blocker (1st line, especially in HF: bisoprolol, carvedilol; avoid in HF decompensation), non-dihydropyridine CCB (diltiazem, verapamil, avoid in HFrEF), digoxin (HF, s
+

@@ -596,3 +596,22 @@ mindmap
    C. A complication seen late in the disease course of Clinical Approach to Musculoskeletal Disease
    D. A condition that mimics Clinical Approach to Musculoskeletal Disease but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Drugs in rheumatology*
+
+**Q1.** What is the most appropriate first-line therapy for Drugs in rheumatology?
+
+  - **A.** EULAR Treat-to-Target Principles
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — EULAR Treat-to-Target Principles
+  >
+  > *Source:* J --> K[Anti-TNF → non-TNF biologic → JAKi]
+```
+
+> [!important] **EULAR Treat-to-Target Principles**
+> 1.
+

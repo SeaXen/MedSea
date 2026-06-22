@@ -169,3 +169,93 @@ Complications / hypoglycaemia fear → More distress
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Annual review and complication screening]], [[Diabetes education and structured education/DAFNE (type 1)]], [[Diabetes education and structured education/DESMOND/X-PERT (type 2)]], [[Severe hypoglycaemia/Hypoglycaemia classification (level 1/2/3)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Psychosocial aspects*
+
+**Q1.** Which of the following features is most specific or characteristic of Psychosocial aspects?
+
+  - **A.** Scope
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Scope
+  >
+  > *Source:* nal burden of self-management demands | Pervasive low mood, anhedonia, neurovegetative symptoms |
+| **Scope** | Diabetes-specific | Global |
+| **Prevalence** | **30–45%** (much higher) | 10–18% |
+| **
+
+**Q2.** What is the most appropriate first-line therapy for Psychosocial aspects?
+
+  - **A.** Antidepressant choice in diabetes
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Antidepressant choice in diabetes
+  >
+  > *Source:* **Antidepressant choice in diabetes**:
+---
+
+> Auto-generated study sections for "Diabetes Monitoring and Quality of Care" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Diabetes Monitoring and Quality of Care?
+  A: Psychosocial comorbidity is the rule, not exception — Depression 2–3×, anxiety 20%, diabetes distress 30–45%, eating disorders ↑; all worsen glycaemic control and outcomes.
+- Q: What is Depression in diabetes of Diabetes Monitoring and Quality of Care?
+  A: 2–3× general population
+- Q: What is Diabetes distress of Diabetes Monitoring and Quality of Care?
+  A: 30–45% prevalence; NOT depression — responds to education/peer support
+- Q: What is Screening tools of Diabetes Monitoring and Quality of Care?
+  A: PHQ-9 (depression), GAD-7 (anxiety), DDS-17/PAID (diabetes distress)
+- Q: What is Diabulimia of Diabetes Monitoring and Quality of Care?
+  A: Insulin omission for weight loss — T1DM women; recurrent DKA, high HbA1c
+- Q: What is CBT-DM of Diabetes Monitoring and Quality of Care?
+  A: Diabetes-focused CBT — effective for distress AND HbA1c
+- Q: What is Antidepressant 1st line of Diabetes Monitoring and Quality of Care?
+  A: SSRI (sertraline/citalopram) — neutral weight/glycaemia
+- Q: What is Avoid of Diabetes Monitoring and Quality of Care?
+  A: Mirtazapine (weight↑), TCAs (weight↑, anticholinergic)
+- Q: What is Hypoglycaemia fear of Diabetes Monitoring and Quality of Care?
+  A: Causes high HbA1c, reduced activity, social isolation — CGM helps
+- Q: What is Eating disorder screen of Diabetes Monitoring and Quality of Care?
+  A: SCOFF / ESP — ask about insulin omission
+- Q: What is Depression in diabetes of Diabetes Monitoring and Quality of Care?
+  A: 2–3× general population
+- Q: What is Diabetes distress of Diabetes Monitoring and Quality of Care?
+  A: 30–45% prevalence; NOT depression — responds to education/peer support
+- Q: What is Screening tools of Diabetes Monitoring and Quality of Care?
+  A: PHQ-9 (depression), GAD-7 (anxiety), DDS-17/PAID (diabetes distress)
+- Q: What is Diabulimia of Diabetes Monitoring and Quality of Care?
+  A: Insulin omission for weight loss — T1DM women; recurrent DKA, high HbA1c
+- Q: What is CBT-DM of Diabetes Monitoring and Quality of Care?
+  A: Diabetes-focused CBT — effective for distress AND HbA1c
+- Q: What is Antidepressant 1st line of Diabetes Monitoring and Quality of Care?
+  A: SSRI (sertraline/citalopram) — neutral weight/glycaemia
+- Q: What is Avoid of Diabetes Monitoring and Quality of Care?
+  A: Mirtazapine (weight↑), TCAs (weight↑, anticholinergic)
+- Q: What is Hypoglycaemia fear of Diabetes Monitoring and Quality of Care?
+  A: Causes high HbA1c, reduced activity, social isolation — CGM helps
+- Q: What is Eating disorder screen of Diabetes Monitoring and Quality of Care?
+  A: SCOFF / ESP — ask about insulin omission
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes Monitoring and Quality of Care?**
+   A. **Psychosocial comorbidity is the rule, not exception — Depression 2–3×, anxiety 20%, diabetes distress 30–45%, eating disorders ↑; all worsen glycaemic control and outcomes.**
+   B. An unrelated condition not matching the clinical picture of Diabetes Monitoring and Quality of Care
+   C. A complication seen late in the disease course of Diabetes Monitoring and Quality of Care
+   D. A condition that mimics Diabetes Monitoring and Quality of Care but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes Monitoring and Quality of Care presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — Psychosocial aspects; Q1. Which of the following features is most specific or characteristic of Psychosocial aspects?; B. A feature common to many acute inflammatory conditions. What is the most likely diagnosis?
+   A. **Diabetes Monitoring and Quality of Care**
+   B. A condition that mimics Diabetes Monitoring and Quality of Care but is not the same entity
+   C. A complication of Diabetes Monitoring and Quality of Care rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes Monitoring and Quality of Care
+

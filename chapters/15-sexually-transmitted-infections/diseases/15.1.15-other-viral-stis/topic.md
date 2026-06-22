@@ -498,3 +498,20 @@ mindmap
 
 **Last Updated:** 2026-06-15  
 **Version:** Full FCPS/MRCP Template Upgrade
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 15b: STI — Other Viral STIs*
+
+**Q1.** Which of the following features is most specific or characteristic of Other Viral STIs?
+
+  - **A.** SV vs EBV:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — SV vs EBV:
+  >
+  > *Source:* lovir/Valganciclovir (1st Line), Foscarnet/Cidofovir (Resistant); Congenital → Valgan × 6m**  
+> **H**SV vs EBV: **HSV = Painful Vesicles/Ulcers, Recurrent; EBV = Mono (Fever, Pharyngitis, Splenomegal
+

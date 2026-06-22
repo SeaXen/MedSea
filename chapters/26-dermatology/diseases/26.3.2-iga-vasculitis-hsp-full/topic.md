@@ -424,3 +424,39 @@ Classic tetrad: (1) Palpable purpura on buttocks and lower legs (100%); (2) Arth
 ---
 
 > [!tip] **Exam focus:** Know definition, key clinical features, first-line management, and the most important complication. Always compare with the main differential.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 26: Dermatology — IgA Vasculitis HSP full*
+
+**Q1.** Which of the following features is most specific or characteristic of IgA Vasculitis HSP full?
+
+  - **A.** DIF Pattern:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — DIF Pattern:
+  >
+  > *Source:* capillaries/venules) ± C3, IgG, IgM |
+| **Timing** | Early lesion (<24-48h); perilesional skin |
+
+> **DIF Pattern:** **IgA > IgG/IgM** (dominant) — **pathognomonic for IgA vasculitis/HSP**
+
+### 4.3 Re
+
+**Q2.** What is the most appropriate first-line therapy for IgA Vasculitis HSP full?
+
+  - **A.** Crescentic GN + Pulse methylprednisolone + ACEi/ARB first-line
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Crescentic GN + Pulse methylprednisolone + ACEi/ARB first-line
+  >
+  > *Source:* **Crescentic GN**   **Pulse methylprednisolone** 500-1000 mg IV × 3-5 days + oral taper + Cyclophosphamide  
+
+> **ACEi/ARB first-line** for any proteinuria (BP control + antiproteinuric).
+
+### 5.3 Ref
+

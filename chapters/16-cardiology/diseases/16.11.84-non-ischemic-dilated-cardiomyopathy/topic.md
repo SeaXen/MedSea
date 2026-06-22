@@ -75,3 +75,19 @@ Insult (genetic, viral, toxic) → myocyte dysfunction/loss → neurohormonal ac
 <callout icon="🎯" color="rose_bg">
 **CLINICAL SIGNIFICANCE —** Non-ischaemic DCM is a heterogeneous group. **CMR is the key** — distinguishes ischaemic from non-ischaemic, identifies infiltrative and inflammatory causes. **Treat the cause** (alcohol abstinence, rate control) and the disease (GDMT + devices). LMNA and FLNC mutations warrant **early ICD** because of high SCD risk independent of EF.
 </callout>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Non-ischemic dilated cardiomyopathy*
+
+**Q1.** What is the most appropriate first-line therapy for Non-ischemic dilated cardiomyopathy?
+
+  - **A.** Diuretics
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Diuretics
+  >
+  > *Source:* **Diuretics** for congestion.
+

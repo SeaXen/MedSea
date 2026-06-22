@@ -29,3 +29,19 @@
 - **Arrhythmias** (atrial) if catheter in RA
 
 > **Pearls** — **AVF can cause high-output HF**. Check Qa/CO if symptomatic. **Avoid AVF in severe LV dysfunction** if possible. **Steal syndrome** = distal limb ischemia, may need flow reduction.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Dialysis access management*
+
+**Q1.** Which of the following features is most specific or characteristic of Dialysis access management?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

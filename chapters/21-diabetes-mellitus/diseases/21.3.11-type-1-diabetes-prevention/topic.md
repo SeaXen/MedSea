@@ -52,3 +52,20 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #topic-group-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Diabetes Prevention and Remission" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Diabetes Prevention and Remission?
+  A: Topic-Group hub for Type 1 diabetes prevention — covers 2 disease-level topic(s) per Davidson Ch25.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes Prevention and Remission?**
+   A. **Topic-Group hub for Type 1 diabetes prevention — covers 2 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetes Prevention and Remission
+   C. A complication seen late in the disease course of Diabetes Prevention and Remission
+   D. A condition that mimics Diabetes Prevention and Remission but has a different underlying cause
+

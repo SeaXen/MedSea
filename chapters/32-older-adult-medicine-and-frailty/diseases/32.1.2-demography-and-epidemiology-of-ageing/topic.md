@@ -279,3 +279,21 @@ A: Economic benefit from large working-age population before ageing
 - [[Biology and physiology of ageing]]
 - [[Theories and mechanisms of ageing]]
 - [[../Ageing and Disease MOC|Ageing and Disease MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 32: Ageing & Disease — Demography and epidemiology of ageing*
+
+**Q1.** Which of the following features is most specific or characteristic of Demography and epidemiology of ageing?
+
+  - **A.** Mnemonic for Demography and epidemiology of ageing
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Demography and epidemiology of ageing
+  >
+  > *Source:* **Mnemonic for Demography and epidemiology of ageing** — see Core Clinical Content key points
+- **'5 Fried criteria'** for frailty: Weight loss, Exhaustion, Weakness, Slow walking, ↓ activity
+- **'DIA
+

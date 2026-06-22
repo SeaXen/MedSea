@@ -511,3 +511,36 @@ Methanol poisoning = metabolism to formic acid → severe metabolic acidosis + o
 7. **B** - Formic acid inhibits cytochrome oxidase in optic nerve → mitochondrial damage. If treatment delayed, permanent blindness. Early fomepizole + dialysis may reverse if caught early.
 8. **B** - Osmolal gap = measured - calculated. Early toxic alcohol = high osmolal gap (parent alcohol). Late = gap normalizes as metabolized to acids (anion gap rises). Gap < 10 normal.
 9. **B** - Fomepizole dialyzed out → increase dose to 15 mg/kg q12h during/after dialysis. Continue until methanol level < 20 mmol/L and pH normal.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Methanol Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Methanol Poisoning?
+
+  - **A.** Visual disturbances
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Visual disturbances
+  >
+  > *Source:* e (12-24h+) — Anion Gap Metabolic Acidosis Phase
+- **Severe metabolic acidosis** (pH often < 7.2)
+- **Visual disturbances** — **HALLMARK**: blurred vision, photophobia, "snowfield" vision, **central s
+
+**Q2.** What is the most appropriate first-line therapy for Methanol Poisoning?
+
+  - **A.** Airway + Breathing + Circulation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Airway + Breathing + Circulation
+  >
+  > *Source:* Resuscitation (ABCDE)
+- **Airway**: intubate if GCS < 8
+- **Breathing**: high-flow O₂, ventilate to compensate for metabolic acidosis
+- **Circulation**: fluids, vasopressors if needed
+- **Correct acid
+

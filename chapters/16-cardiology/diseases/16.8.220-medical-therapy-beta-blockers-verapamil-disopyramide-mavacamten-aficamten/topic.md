@@ -56,3 +56,19 @@
 > - **Mavacamten** reduces gradient and improves symptoms (EXPLORER-HCM) — REMS-monitored.
 > - **Aficamten** is next-gen, shorter half-life, no REMS (SEQUOIA-HCM).
 > - **Avoid nitrates, PDE-5i, digoxin** in obstructive HCM.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Medical therapy beta blockers verapamil disopyrami*
+
+**Q1.** What is the most appropriate first-line therapy for Medical therapy beta blockers verapamil disopyrami?
+
+  - **A.** Rate control
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Rate control
+  >
+  > *Source:* **Rate control** (AFFIRM): beta-blocker (1st line, especially in HF: bisoprolol, carvedilol; avoid in HF decompensation), non-dihydropyridine CCB (diltiazem, verapamil, avoid in HFrEF), digoxin (HF, s
+

@@ -563,3 +563,19 @@ Influenza (A and B) and other respiratory viruses (RSV, hMPV, parainfluenza, ade
 10. **C** — Parainfluenza 1 and 2 = classic croup (barking cough, stridor). RSV = bronchiolitis. Influenza = flu syndrome. Adenovirus = pharyngoconjunctival fever, pneumonia. hMPV = RSV-like.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Influenza and Respiratory Viruses*
+
+**Q1.** What is the most appropriate first-line therapy for Influenza and Respiratory Viruses?
+
+  - **A.** Oseltamivir
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Oseltamivir
+  >
+  > *Source:* **Oseltamivir**   75mg BD PO ×5d (adult); renal adjust   ≤48h ideal; **still give if hospitalised/severe >48h**   Reduces duration 1–2d, complications, mortality in hospitalised; nausea common
+

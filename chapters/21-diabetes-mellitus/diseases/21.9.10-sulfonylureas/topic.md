@@ -272,3 +272,76 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Oral glucose lowering agents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (25 generated)
+
+- Q: What is the definition of Oral glucose lowering agents?
+  A: By the end of this note you should be able to:
+- Q: What is Drug Class of Oral glucose lowering agents?
+  A: Sulfonylureas (insulin secretagogues)
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: Bind SUR1 subunit of KATP channel → channel closure → membrane depolarisation → Ca²⁺ influx → insulin exocytosis (glucose-independent at high doses)
+- Q: What is Generations of Oral glucose lowering agents?
+  A: 1st gen: tolbutamide, chlorpropamide (long duration, more side effects); 2nd gen: glibenclamide (glyburide), glipizide, gliclazide, glimepiride (more potent, shorter duration); 3rd gen: glimepiride
+- Q: What is the dose of Oral glucose lowering agents?
+  A: Gliclazide MR: 30-120mg OD (max 120mg); Gliclazide: 40-320mg BD; Glimepiride: 1-6mg OD; Glipizide: 2.5-20mg BD; Glibenclamide: 2.5-15mg BD (AVOID in elderly/CKD)
+- Q: What is HbA1c Reduction of Oral glucose lowering agents?
+  A: 1.0-1.5% (11-16 mmol/mol) monotherapy
+- Q: What is Weight Change of Oral glucose lowering agents?
+  A: +2-4kg (insulin anabolic effect)
+- Q: What is Elderly (>75) of Oral glucose lowering agents?
+  A: Use gliclazide MR; start 30mg; target HbA1c 58-64; avoid glimepiride/glibenclamide
+- Q: What is CKD (eGFR<45) of Oral glucose lowering agents?
+  A: Gliclazide MR or glipizide only; dose reduce; monitor glucose
+- Q: What is Erratic meals of Oral glucose lowering agents?
+  A: Educate on regular meals; consider DPP-4i/SGLT2i/GLP-1 RA instead
+- Q: What is Alcohol of Oral glucose lowering agents?
+  A: Warn on fasting alcohol + SU = severe hypo
+- Q: What is β-blockers of Oral glucose lowering agents?
+  A: Mask autonomic symptoms; educate on neuroglycopenic signs
+- Q: What is Elderly (>75) of Oral glucose lowering agents?
+  A: Use gliclazide MR; start 30mg; target HbA1c 58-64; avoid glimepiride/glibenclamide
+- Q: What is CKD (eGFR<45) of Oral glucose lowering agents?
+  A: Gliclazide MR or glipizide only; dose reduce; monitor glucose
+- Q: What is Erratic meals of Oral glucose lowering agents?
+  A: Educate on regular meals; consider DPP-4i/SGLT2i/GLP-1 RA instead
+- Q: What is Alcohol of Oral glucose lowering agents?
+  A: Warn on fasting alcohol + SU = severe hypo
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: Bind SUR1 → close KATP channel → depolarisation → Ca²⁺ influx → insulin secretion (glucose-independent at high doses)
+- Q: What is Preferred agent of Oral glucose lowering agents?
+  A: Gliclazide MR: once daily, CKD safe, ↓hypo vs glimepiride, antioxidant
+- Q: What is AVOID of Oral glucose lowering agents?
+  A: Glibenclamide (prolonged active metabolites → severe/prolonged hypo in elderly/CKD)
+- Q: What is Hypoglycaemia risk of Oral glucose lowering agents?
+  A: Elderly, CKD, erratic meals, alcohol, β-blockers, high dose, glimepiride/glibenclamide
+- Q: What is Weight gain of Oral glucose lowering agents?
+  A: +2-4kg (insulin anabolic effect)
+- Q: What is CAROLINA trial of Oral glucose lowering agents?
+  A: Glimepiride ≈ linagliptin for MACE (non-inferior) but 3.8x more severe hypo; weight gain vs loss
+- Q: What is Renal dosing of Oral glucose lowering agents?
+  A: Gliclazide MR/glipizide safe; glimepiride caution; glibenclamide CONTRAINDICATED
+- Q: What is With insulin of Oral glucose lowering agents?
+  A: STOP SU when insulin started (↓hypo risk); continue Met ± SGLT2i/GLP-1 RA
+- Q: What is Deintensification of Oral glucose lowering agents?
+  A: Stop SU if recurrent hypo, elderly/frail; switch to DPP-4i/SGLT2i/GLP-1 RA
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Oral glucose lowering agents?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Oral glucose lowering agents
+   C. A complication seen late in the disease course of Oral glucose lowering agents
+   D. A condition that mimics Oral glucose lowering agents but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Oral glucose lowering agents presents with: Drug Class — Sulfonylureas (insulin secretagogues); Mechanism — Bind SUR1 subunit of KATP channel → channel closure → membrane depolarisation → Ca²⁺ influx → insulin exocytosis (glucose-independent at high doses); Generations — 1st gen: tolbutamide, chlorpropamide (long duration, more side effects); 2nd gen: glibenclamide (glyburide), glipizide, gliclazide, glimepiride (more potent, shorter duration); 3rd gen: glimepiride. What is the most likely diagnosis?
+   A. **Oral glucose lowering agents**
+   B. A condition that mimics Oral glucose lowering agents but is not the same entity
+   C. A complication of Oral glucose lowering agents rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Oral glucose lowering agents
+

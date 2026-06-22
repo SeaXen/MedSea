@@ -346,3 +346,21 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 9.*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 13: Austere Medicine — Soil & Food Contamination*
+
+**Q1.** Which of the following features is most specific or characteristic of Soil & Food Contamination?
+
+  - **A.** HACCP vs GMP
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — HACCP vs GMP
+  >
+  > *Source:* ** |
+| **MRL vs ADI** | **MRL = Legal Limit in Food**; **ADI = Safe Daily Intake for Lifetime** |
+| **HACCP vs GMP** | **HACCP = Hazard-Specific, Science-Based**; **GMP = General Hygiene/Manufacturing
+

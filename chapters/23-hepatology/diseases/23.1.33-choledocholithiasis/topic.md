@@ -325,3 +325,34 @@ mindmap
    C. A complication of Biliary Tract Disease rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Biliary Tract Disease
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 23: Hepatology / Choledocholithiasis**
+
+**Q1.** A patient presents with features consistent with Choledocholithiasis. The clinical picture is most consistent with: Key: **Intermittent Jaundice** = Classic for CBD Stones vs Constant in Malignant Obstruction What is the most likely diagnosis?
+
+  - **A.** Choledocholithiasis
+  - **B.** A closely related condition in the same clinical area
+  - **C.** A complication of Choledocholithiasis
+  - **D.** An unrelated mimic with overlapping features
+
+  > **Answer: A** — Choledocholithiasis
+
+**Q2.** In the assessment of Choledocholithiasis, severity and risk stratification are essential. Which approach is most appropriate?
+
+  - **A.** Formal severity scoring + clinical judgment
+  - **B.** Severity assessment is unnecessary if diagnosis is clear
+  - **C.** Single biomarker measurement is sufficient
+  - **D.** Severity assessment is delayed until treatment failure
+
+  > **Answer: A** — Formal severity scoring + clinical judgment
+
+**Q3.** Which of the following best describes the underlying pathophysiology / definition of Choledocholithiasis?
+
+  - **A.** A[Gallstones in GB] --> B[Migration into Cystic Duct]
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — A[Gallstones in GB] --> B[Migration into Cystic Duct]
+

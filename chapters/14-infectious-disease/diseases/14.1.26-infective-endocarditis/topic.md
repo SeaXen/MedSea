@@ -644,3 +644,32 @@ flowchart TD
 10. **B** — Culture-negative subacute community IE: Ceftriaxone + Vancomycin + Gentamicin covers typical + atypical; add doxycycline if *Bartonella/Coxiella* suspected.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Infective Endocarditis*
+
+**Q1.** Which of the following features is most specific or characteristic of Infective Endocarditis?
+
+  - **A.** DUKE MAJOR
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — DUKE MAJOR
+  >
+  > *Source:* aureus: 2–4 weeks possible** |
+- **DUKE MAJOR**: **B**lood cultures (typical organism, persistent) + **E**cho (vegetation, abscess, new regurg, dehiscence)
+- **DUKE MINOR**: **P**redisposition, **F**e
+
+**Q2.** What is the most appropriate first-line therapy for Infective Endocarditis?
+
+  - **A.** Native valve + Ceftriaxone
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Native valve + Ceftriaxone
+  >
+  > *Source:* **Native valve (community-acquired)**   **Ceftriaxone 2g IV 12h + Vancomycin 15–20mg/kg IV 6h** (+/- Gentamicin 3mg/kg IV OD ×2w)   Covers viridans strep, *S. gallolyticus*, *S. aureus*, *Enterococcus
+

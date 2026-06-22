@@ -347,3 +347,34 @@ mindmap
    C. A complication of Hepatology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hepatology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Palliative Care in Advanced Liver Disease*
+
+**Q1.** In the management of Palliative Care in Advanced Liver Disease, which of the following should be avoided or is contraindicated?
+
+  - **A.** Aggressive Lactulose (avoid in Distressing)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — Aggressive Lactulose (avoid in Distressing)
+  >
+  > *Source:* l q4-6h + Rifaximin 550mg BD |
+| **Severe (G3-4)** | **Comfort Measures**: Sedation (Midazolam SC), Avoid Aggressive Lactulose if Distressing, Focus on Comfort |
+
+### 4
+
+**Q2.** What is the most appropriate first-line therapy for Palliative Care in Advanced Liver Disease?
+
+  - **A.** Indwelling Catheter
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Indwelling Catheter
+  >
+  > *Source:* **Indwelling Catheter**   Tunneled Catheter (e.g., PleurX) for Home Drainage  
+
+### 2.
+

@@ -164,3 +164,105 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — DKA management protocol*
+
+**Q1.** What is the most appropriate first-line therapy for DKA management protocol?
+
+  - **A.** Dose
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Dose
+  >
+  > *Source:* **Dose**   0.1 U/kg/hr (e.g., 50U Actrapid/Humulin S in 50ml 0.9% NaCl = 1U/ml)
+---
+
+> Auto-generated study sections for "Diabetic ketoacidosis (DKA)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (32 generated)
+
+- Q: What is the definition of Diabetic ketoacidosis (DKA)?
+  A: | Guidelines | JBDS (UK, 2023) / ADA (US, 2024) — broadly aligned |
+- Q: What is Regimen of Diabetic ketoacidosis (DKA)?
+  A: Fixed-rate IV insulin infusion (FRII)
+- Q: What is the dose of Diabetic ketoacidosis (DKA)?
+  A: 0.1 U/kg/hr (e.g., 50U Actrapid/Humulin S in 50ml 0.9% NaCl = 1U/ml)
+- Q: What is Bolus? of Diabetic ketoacidosis (DKA)?
+  A: NO IV bolus — increases cerebral oedema risk
+- Q: What is Duration of Diabetic ketoacidosis (DKA)?
+  A: Until ketones <0.6 mmol/L AND pH >7.3 AND bicarbonate >18
+- Q: What is Glucose <14 of Diabetic ketoacidosis (DKA)?
+  A: Add 5% dextrose; DO NOT STOP INSULIN until ketone clearance
+- Q: What is Transition to SC of Diabetic ketoacidosis (DKA)?
+  A: Give 1st SC dose (basal/bolus) → continue FRII 30–60min → stop FRII
+- Q: What is pH <7.0 (severe) of Diabetic ketoacidosis (DKA)?
+  A: 100mmol NaHCO3 in 400ml water + 20mmol KCl over 2h
+- Q: What is pH 7.0–7.3 of Diabetic ketoacidosis (DKA)?
+  A: Do not give — no outcome benefit, paradoxical CNS acidosis risk
+- Q: What is Cerebral oedema of Diabetic ketoacidosis (DKA)?
+  A: Children <20y: avoid rapid osmolar drop >3 mOsm/kg/hr; mannitol 0.5–1g/kg if suspected; hyperventilation; ICU
+- Q: What is Hypokalaemia of Diabetic ketoacidosis (DKA)?
+  A: K+ replacement per protocol; cardiac monitor; hold insulin if K+ <3.3
+- Q: What is Hypoglycaemia of Diabetic ketoacidosis (DKA)?
+  A: Add 5% dextrose when glucose <14; don't stop insulin until ketones clear
+- Q: What is Hypophosphataemia of Diabetic ketoacidosis (DKA)?
+  A: If <0.3 mmol/L: IV phosphate (risk of hypocalcaemia)
+- Q: What is Hyperchloraemic acidosis of Diabetic ketoacidosis (DKA)?
+  A: From 0.9% NaCl; switch to 0.45% NaCl if Na+ rising rapidly
+- Q: What is Regimen of Diabetic ketoacidosis (DKA)?
+  A: Fixed-rate IV insulin infusion (FRII)
+- Q: What is the dose of Diabetic ketoacidosis (DKA)?
+  A: 0.1 U/kg/hr (e.g., 50U Actrapid/Humulin S in 50ml 0.9% NaCl = 1U/ml)
+- Q: What is Bolus? of Diabetic ketoacidosis (DKA)?
+  A: NO IV bolus — increases cerebral oedema risk
+- Q: What is Duration of Diabetic ketoacidosis (DKA)?
+  A: Until ketones <0.6 mmol/L AND pH >7.3 AND bicarbonate >18
+- Q: What is Glucose <14 of Diabetic ketoacidosis (DKA)?
+  A: Add 5% dextrose; DO NOT STOP INSULIN until ketone clearance
+- Q: What is Cerebral oedema of Diabetic ketoacidosis (DKA)?
+  A: Children <20y: avoid rapid osmolar drop >3 mOsm/kg/hr; mannitol 0.5–1g/kg if suspected; hyperventilation; ICU
+- Q: What is Hypokalaemia of Diabetic ketoacidosis (DKA)?
+  A: K+ replacement per protocol; cardiac monitor; hold insulin if K+ <3.3
+- Q: What is Hypoglycaemia of Diabetic ketoacidosis (DKA)?
+  A: Add 5% dextrose when glucose <14; don't stop insulin until ketones clear
+- Q: What is Hypophosphataemia of Diabetic ketoacidosis (DKA)?
+  A: If <0.3 mmol/L: IV phosphate (risk of hypocalcaemia)
+- Q: What is Hyperchloraemic acidosis of Diabetic ketoacidosis (DKA)?
+  A: From 0.9% NaCl; switch to 0.45% NaCl if Na+ rising rapidly
+- Q: What is Fluids of Diabetic ketoacidosis (DKA)?
+  A: 1L 0.9% NaCl/hr ×1, then 500ml/hr ×2, then 250ml/hr; total 5–7L over 24–48h
+- Q: What is Insulin of Diabetic ketoacidosis (DKA)?
+  A: FRII 0.1U/kg/hr; NO bolus; continue till ketones <0.6, pH >7.3, HCO3 >18
+- Q: What is K+ of Diabetic ketoacidosis (DKA)?
+  A: <3.0: 60–80mmol/L (hold insulin till >3.3); 3.0–3.5: 60; 3.5–5.5: 40; >5.5: hold
+- Q: What is Bicarb of Diabetic ketoacidosis (DKA)?
+  A: ONLY pH <7.0: 100mmol/2h
+- Q: What is Dextrose of Diabetic ketoacidosis (DKA)?
+  A: Start 5% dextrose when glucose <14; DO NOT stop insulin
+- Q: What is Transition of Diabetic ketoacidosis (DKA)?
+  A: 1st SC dose → overlap FRII 30–60min → stop FRII
+- Q: What is Cerebral oedema of Diabetic ketoacidosis (DKA)?
+  A: Children: mannitol 0.5–1g/kg; ICU; avoid rapid osmolar drop
+- Q: What is Precipitant of Diabetic ketoacidosis (DKA)?
+  A: Treat infection (antibiotics), stop SGLT2i, etc.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic ketoacidosis (DKA)?**
+   A. **| Guidelines | JBDS (UK, 2023) / ADA (US, 2024) — broadly aligned |**
+   B. An unrelated condition not matching the clinical picture of Diabetic ketoacidosis (DKA)
+   C. A complication seen late in the disease course of Diabetic ketoacidosis (DKA)
+   D. A condition that mimics Diabetic ketoacidosis (DKA) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic ketoacidosis (DKA) presents with: Guidelines — JBDS (UK, 2023) / ADA (US, 2024) — broadly aligned; Core Principles — 1) Fluid resuscitation 2) Insulin infusion 3) K+ replacement 4) Bicarbonate only if pH<7.0 5) Monitoring 6) Precipitant treatment 7) Transition to SC insulin. What is the most likely diagnosis?
+   A. **Diabetic ketoacidosis (DKA)**
+   B. A condition that mimics Diabetic ketoacidosis (DKA) but is not the same entity
+   C. A complication of Diabetic ketoacidosis (DKA) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic ketoacidosis (DKA)
+

@@ -232,3 +232,59 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Symptomatic presentation*
+
+**Q1.** What is the most appropriate first-line therapy for Symptomatic presentation?
+
+  - **A.** Add-on
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Add-on
+  >
+  > *Source:* **Add-on**   Per ADA/EASD algorithm (SGLT2i/GLP-1 RA for ASCVD/HF/CKD/obesity)
+---
+
+> Auto-generated study sections for "Clinical presentation and screening" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Clinical presentation and screening?
+  A: By the end of this note you should be able to:
+- Q: What are the clinical features of Clinical presentation and screening?
+  A: Insidious onset (months-years); often asymptomatic at diagnosis
+- Q: What is the investigation of choice for Clinical presentation and screening?
+  A: >40 years (increasing in younger due to obesity)
+- Q: What is Onset of Clinical presentation and screening?
+  A: Insidious (months-years); 50% asymptomatic at diagnosis
+- Q: What are the clinical features of Clinical presentation and screening?
+  A: Polyuria, polydipsia, fatigue, recurrent infections
+- Q: What is Weight loss of Clinical presentation and screening?
+  A: Occurs if significant insulin deficiency/catabolism
+- Q: What is Acanthosis nigricans of Clinical presentation and screening?
+  A: 30-50%; insulin resistance marker
+- Q: What is vs T1DM of Clinical presentation and screening?
+  A: Insidious, obese, no ketosis, negative autoantibodies
+- Q: What is vs LADA of Clinical presentation and screening?
+  A: Obese, negative autoantibodies, insulin resistance primary
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Clinical presentation and screening?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Clinical presentation and screening
+   C. A complication seen late in the disease course of Clinical presentation and screening
+   D. A condition that mimics Clinical presentation and screening but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Clinical presentation and screening presents with: Presentation — Insidious onset (months-years); often asymptomatic at diagnosis; Asymptomatic at Dx — ~50% detected on screening/incidental finding; Symptomatic — Osmotic symptoms, weight loss, infections, fatigue. What is the most likely diagnosis?
+   A. **Clinical presentation and screening**
+   B. A condition that mimics Clinical presentation and screening but is not the same entity
+   C. A complication of Clinical presentation and screening rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Clinical presentation and screening
+

@@ -438,3 +438,19 @@ Subarachnoid hemorrhage is the prototypical cause of thunderclap headache and mu
 - **CT first** is the key investigation rule.
 - Persistent high suspicion after negative CT requires more workup rather than false reassurance.
 - SAH complications and emergency thinking are heavily tested in FCPS/MRCP settings.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Subarachnoid hemorrhage and thunderclap headache*
+
+**Q1.** Which of the following features is most specific or characteristic of Subarachnoid hemorrhage and thunderclap headache?
+
+  - **A.** CT first
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CT first
+  >
+  > *Source:* - **CT first** is the key investigation rule
+

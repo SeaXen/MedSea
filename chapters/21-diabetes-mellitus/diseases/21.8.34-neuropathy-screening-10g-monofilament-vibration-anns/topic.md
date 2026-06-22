@@ -164,3 +164,89 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Distal symmetric polyneuropathy (DSPN)]], [[Autonomic neuropathy]], [[Mononeuropathies and radiculoplexus neuropathy]], [[Neuropathic pain management]], [[Foot risk classification (IWGDF/Scottish)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — neuropathy-screening-10g-monofilament,-vibration,-anns*
+
+**Q1.** Which of the following features is most specific or characteristic of neuropathy-screening-10g-monofilament,-vibration,-anns?
+
+  - **A.** NCS
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — NCS
+  >
+  > *Source:* ning fork** | **Confirmatory** (large fibre function) |
+| **ANNS** | **Symptom quantification** |
+| **NCS** | Not routine; if atypical/mononeuropathy/radiculoplexus |
+(N/A — screening tool)
+| Confusio
+---
+
+> Auto-generated study sections for "Diabetic neuropathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (22 generated)
+
+- Q: What is Monofilament sites of Diabetic neuropathy?
+  A: 3 per foot: hallux, 1st & 5th met heads
+- Q: What is the definition of Diabetic neuropathy?
+  A: Monofilament -ve at ≥1 of 6 sites
+- Q: What is the investigation of choice for Diabetic neuropathy?
+  A: 128Hz fork on hallux IP joint → malleolus
+- Q: What is Ankle reflex of Diabetic neuropathy?
+  A: Absent = neuropathy sign
+- Q: What is ANNS of Diabetic neuropathy?
+  A: 4 questions; ≥1 yes = positive
+- Q: What is MNSI of Diabetic neuropathy?
+  A: Questionnaire ≥7/15; Exam ≥2.5/10
+- Q: What is IWGDF Risk 0 of Diabetic neuropathy?
+  A: No LOPS, pulses present
+- Q: What is IWGDF Risk 1 of Diabetic neuropathy?
+  A: LOPS only, pulses present
+- Q: What is IWGDF Risk 2 of Diabetic neuropathy?
+  A: LOPS + (PAD or deformity)
+- Q: What is IWGDF Risk 3 of Diabetic neuropathy?
+  A: Prior ulcer/amputation, active Charcot, critical ischaemia
+- Q: What is NCS of Diabetic neuropathy?
+  A: Not routine; atypical features only
+- Q: What is Monofilament sites of Diabetic neuropathy?
+  A: 3 per foot: hallux, 1st & 5th met heads
+- Q: What is the definition of Diabetic neuropathy?
+  A: Monofilament -ve at ≥1 of 6 sites
+- Q: What is the investigation of choice for Diabetic neuropathy?
+  A: 128Hz fork on hallux IP joint → malleolus
+- Q: What is Ankle reflex of Diabetic neuropathy?
+  A: Absent = neuropathy sign
+- Q: What is ANNS of Diabetic neuropathy?
+  A: 4 questions; ≥1 yes = positive
+- Q: What is MNSI of Diabetic neuropathy?
+  A: Questionnaire ≥7/15; Exam ≥2.5/10
+- Q: What is IWGDF Risk 0 of Diabetic neuropathy?
+  A: No LOPS, pulses present
+- Q: What is IWGDF Risk 1 of Diabetic neuropathy?
+  A: LOPS only, pulses present
+- Q: What is IWGDF Risk 2 of Diabetic neuropathy?
+  A: LOPS + (PAD or deformity)
+- Q: What is IWGDF Risk 3 of Diabetic neuropathy?
+  A: Prior ulcer/amputation, active Charcot, critical ischaemia
+- Q: What is NCS of Diabetic neuropathy?
+  A: Not routine; atypical features only
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic neuropathy?**
+   A. **NICE 9 Care Process #8: Annual foot examination with 10g monofilament, vibration perception, ankle reflexes; ANNS/MNSI questionnaires; LOPS = monofilament -ve at ≥1 site; risk stratification per IWGDF**
+   B. An unrelated condition not matching the clinical picture of Diabetic neuropathy
+   C. A complication seen late in the disease course of Diabetic neuropathy
+   D. A condition that mimics Diabetic neuropathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic neuropathy presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — neuropathy-screening-10g-monofilament,-vibration,-anns; Q1. Which of the following features is most specific or characteristic of neuropathy-screening-10g-monofilament,-vibration,-anns?; B. A feature common to many acute inflammatory conditions. What is the most likely diagnosis?
+   A. **Diabetic neuropathy**
+   B. A condition that mimics Diabetic neuropathy but is not the same entity
+   C. A complication of Diabetic neuropathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic neuropathy
+

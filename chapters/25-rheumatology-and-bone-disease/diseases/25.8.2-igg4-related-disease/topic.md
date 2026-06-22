@@ -607,3 +607,22 @@ mindmap
    C. A complication of Polymyalgia Rheumatica and Related Disorders rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Polymyalgia Rheumatica and Related Disorders
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — IgG4-related disease*
+
+**Q1.** Which of the following features is most specific or characteristic of IgG4-related disease?
+
+  - **A.** IgG4+/IgG Ratio
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — IgG4+/IgG Ratio
+  >
+  > *Source:* atory infiltrate |
+| **IgG4+ Plasma Cells** | **>10 IgG4+ cells/HPF** (in most involved tissue) |
+| **IgG4+/IgG Ratio** | **>40%** (highly specific) |
+
+> [!critical] **Histology = Gold Standard** — **
+

@@ -278,3 +278,20 @@ A: Surface, Skin inspection, Keep moving, Incontinence/moisture, Nutrition/hydra
 - [[../Pressure Ulcers and Skin|Pressure Ulcers and Skin]] (heading hub)
 - [[Skin problems and wound care in the elderly]]
 - [[../Ageing and Disease MOC|Ageing and Disease MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 32: Ageing & Disease — Pressure ulcers (pressure sores) in the elderly*
+
+**Q1.** Which of the following features is most specific or characteristic of Pressure ulcers (pressure sores) in the elderly?
+
+  - **A.** Mnemonic for Pressure ulcers
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Pressure ulcers
+  >
+  > *Source:* **Mnemonic for Pressure ulcers (pressure sores) in the elderly** — see Core Clinical Content key points
+- **'SSKIN'** for pressure ulcer prevention: Surface, Skin inspection, Keep moving, Incontinence
+

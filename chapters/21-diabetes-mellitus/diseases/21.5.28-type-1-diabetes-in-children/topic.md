@@ -141,3 +141,93 @@ By the end of this note you should be able to:
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Type 1 diabetes in children*
+
+**Q1.** Which of the following features is most specific or characteristic of Type 1 diabetes in children?
+
+  - **A.** <5 years
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — <5 years
+  >
+  > *Source:* Age Group | Presentation |
+|-----------|--------------|
+| **<5 years** | Often DKA at diagnosis; non-specific symptoms (lethargy, polyuria) |
+| **5-12 years** | Classic osmotic symptoms; weight loss |
+
+**Q2.** What is the most appropriate first-line therapy for Type 1 diabetes in children?
+
+  - **A.** CGM
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — CGM
+  >
+  > *Source:* **CGM**   All T1DM (NICE); predictive alerts for hypoglycaemia
+---
+
+> Auto-generated study sections for "Diabetes in children and adolescents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Diabetes in children and adolescents?
+  A: By the end of this note you should be able to:
+- Q: What is the epidemiology of Diabetes in children and adolescents?
+  A: Rising 3-5%/year; peak 10-14y; bimodal 4-7 and 10-14y
+- Q: What are the clinical features of Diabetes in children and adolescents?
+  A: 25-30% in DKA at diagnosis (<5y highest risk)
+- Q: What is Individual Healthcare Plan of Diabetes in children and adolescents?
+  A: Required (school, parents, diabetes team)
+- Q: What is Insulin of Diabetes in children and adolescents?
+  A: Basal-bolus or CSII; CSII preferred (NICE)
+- Q: What is CGM of Diabetes in children and adolescents?
+  A: All T1DM (NICE); predictive alerts for hypoglycaemia
+- Q: What is Exercise of Diabetes in children and adolescents?
+  A: Pre-exercise carb if glucose <7; reduce basal if CSII
+- Q: What is Sick day rules of Diabetes in children and adolescents?
+  A: Check ketones if ill/glucose>14; supplemental insulin
+- Q: What is Individual Healthcare Plan of Diabetes in children and adolescents?
+  A: Required (school, parents, diabetes team)
+- Q: What is Insulin of Diabetes in children and adolescents?
+  A: Basal-bolus or CSII; CSII preferred (NICE)
+- Q: What is CGM of Diabetes in children and adolescents?
+  A: All T1DM (NICE); predictive alerts for hypoglycaemia
+- Q: What is Exercise of Diabetes in children and adolescents?
+  A: Pre-exercise carb if glucose <7; reduce basal if CSII
+- Q: What is the investigation of choice for Diabetes in children and adolescents?
+  A: 25-30% children; <5y highest risk
+- Q: What is HbA1c targets of Diabetes in children and adolescents?
+  A: <6y: <58; >6y: <53 mmol/mol (avoid severe hypo)
+- Q: What is CGM of Diabetes in children and adolescents?
+  A: NICE: all T1DM; predictive alerts for hypo
+- Q: What is CSII preferred of Diabetes in children and adolescents?
+  A: NICE: CSII if HbA1c>58 on MDI or severe hypo
+- Q: What is Screening of Diabetes in children and adolescents?
+  A: Annual thyroid, coeliac, lipids (age>12)
+- Q: What is Transition of Diabetes in children and adolescents?
+  A: 16-18y; joint clinics; psychologist; DAFNE-Youth
+- Q: What is Cerebral oedema of Diabetes in children and adolescents?
+  A: Kids DKA: mannitol 0.5-1g/kg; avoid rapid osmolar drop
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in children and adolescents?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in children and adolescents
+   C. A complication seen late in the disease course of Diabetes in children and adolescents
+   D. A condition that mimics Diabetes in children and adolescents but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in children and adolescents presents with: Incidence — Rising 3-5%/year; peak 10-14y; bimodal 4-7 and 10-14y; Presentation — 25-30% in DKA at diagnosis (<5y highest risk); Glycaemic Targets — HbA1c <53mmol/mol (7.0%) if achievable without severe hypo. What is the most likely diagnosis?
+   A. **Diabetes in children and adolescents**
+   B. A condition that mimics Diabetes in children and adolescents but is not the same entity
+   C. A complication of Diabetes in children and adolescents rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in children and adolescents
+

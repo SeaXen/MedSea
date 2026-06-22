@@ -190,3 +190,19 @@ E. All of the above
 **Tags:** #medicine #cardiology #davidson #fcps #mrcp
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Fibrinolysis indications contraindications agents rescue PCI*
+
+**Q1.** What is the most appropriate first-line therapy for Fibrinolysis indications contraindications agents rescue PCI?
+
+  - **A.** Adjunct
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Adjunct
+  >
+  > *Source:* **Adjunct**: aspirin 300mg chewable, clopidogrel 300mg (75y) or 75mg (>75y, no load), UFH bolus 60U/kg (max 4000) + 12U/kg/h (max 1000) for 48h OR enoxaparin 30mg IV then 1mg/kg SC q12h.
+

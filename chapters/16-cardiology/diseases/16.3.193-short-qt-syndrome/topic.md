@@ -57,3 +57,19 @@ LBBB, RBBB, ventricular paced rhythm, idiopathic VT (RVOT, LVOT), antidromic AVR
 ### Complications & Prognosis
 
 **SCD/VF** (0.1-0.5%/year, especially in AF with short refractory period). **Recurrent AVRT**. **AF**. **Cardiomyopathy** (tachycardia-mediated, from chronic AVRT/AF). **Syncope**. **Stroke** (AF).
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Short QT Syndrome*
+
+**Q1.** What is the most appropriate first-line therapy for Short QT Syndrome?
+
+  - **A.** Acute AF with WPW + DCCV synchronised + procainamide
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Acute AF with WPW + DCCV synchronised + procainamide
+  >
+  > *Source:* **Acute AF with WPW** (wide, irregular, haemodynamic instability): **DCCV synchronised 200J**; if stable, **procainamide** (slow AF, prolongs refractory period) or **ibutilide** — **AVOID** adenosine,
+

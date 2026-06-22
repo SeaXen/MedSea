@@ -147,3 +147,71 @@ By the end of this note you should be able to:
 - **I**nfant: tolbutamide if <10kg
 - **V**ariable: DEND needs higher dose
 - **E**nd: life-long; no cure**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Sulfonylurea responsiveness*
+
+**Q1.** What is the most appropriate first-line therapy for Sulfonylurea responsiveness?
+
+  - **A.** Dose adjustment
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Dose adjustment
+  >
+  > *Source:* **Dose adjustment**   As needed with growth
+---
+
+> Auto-generated study sections for "Neonatal diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Neonatal diabetes?
+  A: By the end of this note you should be able to:
+- Q: What is the mechanism of Neonatal diabetes?
+  A: KATP channel mutation prevents closure -> sulfonylurea binds SUR1 -> closes channel -> insulin secretion
+- Q: What is Responsiveness of Neonatal diabetes?
+  A: ~90% of KCNJ11/ABCC8 PNDM respond to sulfonylureas
+- Q: What is the mechanism of Neonatal diabetes?
+  A: KATP channel mutation prevents closure -> sulfonylurea binds SUR1 -> closes channel -> insulin secretion
+- Q: What is Responsiveness of Neonatal diabetes?
+  A: ~90% of KCNJ11/ABCC8 PNDM respond to sulfonylureas
+- Q: What is Genetic confirmation of Neonatal diabetes?
+  A: KCNJ11/ABCC8 activating mutation
+- Q: How is Neonatal diabetes monitored?
+  A: 4-6x/day during switch
+- Q: What is Genetic confirmation of Neonatal diabetes?
+  A: KCNJ11/ABCC8 activating mutation
+- Q: How is Neonatal diabetes monitored?
+  A: 4-6x/day during switch
+- Q: What is HbA1c of Neonatal diabetes?
+  A: 3-monthly after stable
+- Q: What is Response rate of Neonatal diabetes?
+  A: KCNJ11 95%, ABCC8 90%
+- Q: What is the mechanism of Neonatal diabetes?
+  A: SU binds SUR1 -> closes KATP -> insulin release
+- Q: What is the dose of Neonatal diabetes?
+  A: Higher than MODY (0.5-3 mg/kg/day)
+- Q: What is Switch of Neonatal diabetes?
+  A: Gliclazide MR 0.5 -> 3 mg/kg/day over weeks
+- Q: What is DEND/iDEND of Neonatal diabetes?
+  A: Higher doses needed; neuro monitoring
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Neonatal diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Neonatal diabetes
+   C. A complication seen late in the disease course of Neonatal diabetes
+   D. A condition that mimics Neonatal diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Neonatal diabetes presents with: Mechanism — KATP channel mutation prevents closure -> sulfonylurea binds SUR1 -> closes channel -> insulin secretion; Responsiveness — ~90% of KCNJ11/ABCC8 PNDM respond to sulfonylureas; Dose — Higher than MODY (0.5-3 mg/kg/day). What is the most likely diagnosis?
+   A. **Neonatal diabetes**
+   B. A condition that mimics Neonatal diabetes but is not the same entity
+   C. A complication of Neonatal diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Neonatal diabetes
+

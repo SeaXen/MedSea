@@ -585,3 +585,26 @@ flowchart TD
 10. **B** — Pasteurisation of dairy = single most effective prevention of human brucellosis.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 14: Infectious Disease / Brucellosis**
+
+**Q1.** A patient is being evaluated for Brucellosis. Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+
+**Q2.** A patient is diagnosed with Brucellosis. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+

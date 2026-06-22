@@ -221,3 +221,96 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Beta-cell dysfunction and failure*
+
+**Q1.** Which of the following features is most specific or characteristic of Beta-cell dysfunction and failure?
+
+  - **A.** MODY
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MODY
+  >
+  > *Source:* ------------------------|
+| **T1DM** | Autoimmune, rapid loss, autoantibodies 2+, low C-peptide |
+| **MODY** | Genetic, preserved C-peptide, specific gene defects |
+| **Secondary DM** | Pancreatic, en
+---
+
+> Auto-generated study sections for "Type 2 diabetes pathogenesis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Type 2 diabetes pathogenesis?
+  A: Progressive loss of beta-cell function and mass in T2DM
+- Q: What is Timeline of Type 2 diabetes pathogenesis?
+  A: Present at diagnosis (~50% function lost); continues ~4%/year decline
+- Q: What is Key Concept of Type 2 diabetes pathogenesis?
+  A: Beta-cell failure = inadequate insulin for degree of IR
+- Q: What are the side effects of Type 2 diabetes pathogenesis?
+  A: Chronic hyperglycaemia -> oxidative stress, ER stress, mitochondrial dysfunction -> apoptosis
+- Q: What is Amyloid (IAPP) of Type 2 diabetes pathogenesis?
+  A: Islet amyloid polypeptide deposits -> beta-cell toxicity; ~90% T2DM have islet amyloid
+- Q: What is ER Stress of Type 2 diabetes pathogenesis?
+  A: Misfolded proinsulin -> unfolded protein response -> CHOP-mediated apoptosis
+- Q: What is Dedifferentiation of Type 2 diabetes pathogenesis?
+  A: Beta-cells lose identity -> revert to progenitor-like or alpha-like cells (reversible?)
+- Q: What is Oxidative Stress of Type 2 diabetes pathogenesis?
+  A: Mitochondrial ROS -> DNA damage, apoptosis
+- Q: What is C-peptide of Type 2 diabetes pathogenesis?
+  A: Low = beta-cell failure; preserved = insulin resistance
+- Q: What is Proinsulin/Insulin of Type 2 diabetes pathogenesis?
+  A: Increased ratio = beta-cell stress
+- Q: What is OGTT with insulin of Type 2 diabetes pathogenesis?
+  A: First-phase loss; beta-cell glucose sensitivity
+- Q: What is HOMA-B of Type 2 diabetes pathogenesis?
+  A: Beta-cell function index (model-derived)
+- Q: What are the side effects of Type 2 diabetes pathogenesis?
+  A: Chronic hyperglycaemia -> oxidative stress, ER stress, mitochondrial dysfunction -> apoptosis
+- Q: What is Amyloid (IAPP) of Type 2 diabetes pathogenesis?
+  A: Islet amyloid polypeptide deposits -> beta-cell toxicity; ~90% T2DM have islet amyloid
+- Q: What is ER Stress of Type 2 diabetes pathogenesis?
+  A: Misfolded proinsulin -> unfolded protein response -> CHOP-mediated apoptosis
+- Q: What is Dedifferentiation of Type 2 diabetes pathogenesis?
+  A: Beta-cells lose identity -> revert to progenitor-like or alpha-like cells (reversible?)
+- Q: What is C-peptide of Type 2 diabetes pathogenesis?
+  A: Low = beta-cell failure; preserved = insulin resistance
+- Q: What is Proinsulin/Insulin of Type 2 diabetes pathogenesis?
+  A: Increased ratio = beta-cell stress
+- Q: What is OGTT with insulin of Type 2 diabetes pathogenesis?
+  A: First-phase loss; beta-cell glucose sensitivity
+- Q: What is HOMA-B of Type 2 diabetes pathogenesis?
+  A: Beta-cell function index (model-derived)
+- Q: What is Timeline of Type 2 diabetes pathogenesis?
+  A: ~50% function lost at diagnosis; ~4%/year decline
+- Q: What is the mechanism of Type 2 diabetes pathogenesis?
+  A: Glucolipotoxicity, IAPP amyloid, ER stress, dedifferentiation
+- Q: What is Amyloid of Type 2 diabetes pathogenesis?
+  A: IAPP deposits in ~90% T2DM; toxic to beta-cells
+- Q: What is Proinsulin/Insulin of Type 2 diabetes pathogenesis?
+  A: Increased ratio = beta-cell stress marker
+- Q: What is Dedifferentiation of Type 2 diabetes pathogenesis?
+  A: Beta-cells lose identity -> progenitor/alpha-like (potentially reversible)
+- Q: What is First-phase loss of Type 2 diabetes pathogenesis?
+  A: Earliest functional defect; precedes hyperglycaemia
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes pathogenesis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes pathogenesis
+   C. A complication seen late in the disease course of Type 2 diabetes pathogenesis
+   D. A condition that mimics Type 2 diabetes pathogenesis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes pathogenesis presents with: Definition — Progressive loss of beta-cell function and mass in T2DM; Timeline — Present at diagnosis (~50% function lost); continues ~4%/year decline; Key Concept — Beta-cell failure = inadequate insulin for degree of IR. What is the most likely diagnosis?
+   A. **Type 2 diabetes pathogenesis**
+   B. A condition that mimics Type 2 diabetes pathogenesis but is not the same entity
+   C. A complication of Type 2 diabetes pathogenesis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes pathogenesis
+

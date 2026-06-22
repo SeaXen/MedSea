@@ -130,3 +130,44 @@ flowchart TD
 - **T**argets: multiple tiers
 - **E**xplain: individualised
 - **T**ogether: shared decision-making**</think>
+---
+
+> Auto-generated study sections for "Glycaemic targets" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Glycaemic targets?
+  A: By the end of this note you should be able to:
+- Q: What is Standard target of Glycaemic targets?
+  A: <53 mmol/mol (7.0%)
+- Q: What is Individualisation of Glycaemic targets?
+  A: Based on age, comorbidities, hypoglycaemia risk, life expectancy
+- Q: What is Standard target of Glycaemic targets?
+  A: <53 mmol/mol (7.0%)
+- Q: What is Tight target of Glycaemic targets?
+  A: <48 (6.5%) if achievable without hypo, short duration, no CVD
+- Q: What is Loose target of Glycaemic targets?
+  A: <58-64 (7.5-8.0%) if elderly, frail, comorbidities, hypo risk
+- Q: What is CKD/ESRD of Glycaemic targets?
+  A: HbA1c unreliable; use fructosamine/GA; target relaxed
+- Q: What is Pregnancy of Glycaemic targets?
+  A: Pre-conception <48; pregnancy <43-48
+- Q: What is Elderly/frail of Glycaemic targets?
+  A: <58-64 to avoid hypoglycaemia
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Glycaemic targets?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Glycaemic targets
+   C. A complication seen late in the disease course of Glycaemic targets
+   D. A condition that mimics Glycaemic targets but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Glycaemic targets presents with: Standard target — <53 mmol/mol (7.0%); Individualisation — Based on age, comorbidities, hypoglycaemia risk, life expectancy; Measurement — NGSP/DCCT standardised; NGSP = IFCC × 0.0915 + 2.15. What is the most likely diagnosis?
+   A. **Glycaemic targets**
+   B. A condition that mimics Glycaemic targets but is not the same entity
+   C. A complication of Glycaemic targets rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Glycaemic targets
+

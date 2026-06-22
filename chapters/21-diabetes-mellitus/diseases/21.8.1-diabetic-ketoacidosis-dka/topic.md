@@ -300,3 +300,98 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Diabetic Emergencies" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (36 generated)
+
+- Q: What is the definition of Diabetic Emergencies?
+  A: Acute diabetic emergency: hyperglycaemia + ketonaemia + acidosis
+- Q: What is Diagnostic Triad of Diabetic Emergencies?
+  A: 1) Glucose >11.1 mmol/L (200 mg/dL) 2) Ketonaemia >3 mmol/L (or significant ketonuria) 3) pH <7.3 and/or bicarbonate <15 mmol/L
+- Q: What is the epidemiology of Diabetic Emergencies?
+  A: 4-8 per 1000 patient-years in T1DM; rising with SGLT2i use
+- Q: What is Mortality of Diabetic Emergencies?
+  A: <1% (mild/moderate); 5-10% (severe); higher in elderly/comorbidities
+- Q: What is Precipitants of Diabetic Emergencies?
+  A: Infection (pneumonia, UTI), insulin omission, MI, stroke, trauma, surgery, drugs (SGLT2i, steroids), pregnancy
+- Q: What is Regimen of Diabetic Emergencies?
+  A: Fixed-rate IV insulin infusion (FRII)
+- Q: What is the dose of Diabetic Emergencies?
+  A: 0.1 U/kg/hr (e.g., 50U Actrapid/Humulin S in 50ml 0.9% NaCl = 1U/ml)
+- Q: What is Bolus? of Diabetic Emergencies?
+  A: NO IV bolus - increases cerebral oedema risk
+- Q: What is Duration of Diabetic Emergencies?
+  A: Until ketones <0.6 mmol/L AND pH >7.3 AND bicarbonate >18
+- Q: What is Glucose <14 of Diabetic Emergencies?
+  A: Add 5% dextrose; DO NOT STOP INSULIN until ketone clearance
+- Q: What is pH <7.0 (severe) of Diabetic Emergencies?
+  A: 100mmol NaHCO3 in 400ml water + 20mmol KCl over 2h
+- Q: What is pH 7.0-7.3 of Diabetic Emergencies?
+  A: Do not give - no outcome benefit, paradoxical CNS acidosis risk
+- Q: What is Cerebral oedema of Diabetic Emergencies?
+  A: Children <20y; rapid osmolar drop; headache, bradycardia, hypertension, ↓GCS; mannitol 0.5-1g/kg; hyperventilation; ICU; avoid rapid osmolar drop >3 mOsm/kg/hr
+- Q: What is Hypokalaemia of Diabetic Emergencies?
+  A: K+ replacement per protocol; cardiac monitor; hold insulin if K+<3.3
+- Q: What is Hypoglycaemia of Diabetic Emergencies?
+  A: Add 5% dextrose when glucose <14; don't stop insulin until ketones clear
+- Q: What is Hypophosphataemia of Diabetic Emergencies?
+  A: If <0.3 mmol/L: IV phosphate (risk of hypocalcaemia)
+- Q: What is Hyperchloraemic acidosis of Diabetic Emergencies?
+  A: From 0.9% NaCl; switch to 0.45% if Na+ rising rapidly
+- Q: What is Regimen of Diabetic Emergencies?
+  A: Fixed-rate IV insulin infusion (FRII)
+- Q: What is the dose of Diabetic Emergencies?
+  A: 0.1 U/kg/hr (e.g., 50U Actrapid/Humulin S in 50ml 0.9% NaCl = 1U/ml)
+- Q: What is Bolus? of Diabetic Emergencies?
+  A: NO IV bolus - increases cerebral oedema risk
+- Q: What is Duration of Diabetic Emergencies?
+  A: Until ketones <0.6 mmol/L AND pH >7.3 AND bicarbonate >18
+- Q: What is Cerebral oedema of Diabetic Emergencies?
+  A: Children <20y; rapid osmolar drop; headache, bradycardia, hypertension, ↓GCS; mannitol 0.5-1g/kg; hyperventilation; ICU; avoid rapid osmolar drop >3 mOsm/kg/hr
+- Q: What is Hypokalaemia of Diabetic Emergencies?
+  A: K+ replacement per protocol; cardiac monitor; hold insulin if K+<3.3
+- Q: What is Hypoglycaemia of Diabetic Emergencies?
+  A: Add 5% dextrose when glucose <14; don't stop insulin until ketones clear
+- Q: What is Hypophosphataemia of Diabetic Emergencies?
+  A: If <0.3 mmol/L: IV phosphate (risk of hypocalcaemia)
+- Q: What is Hyperchloraemic acidosis of Diabetic Emergencies?
+  A: From 0.9% NaCl; switch to 0.45% if Na+ rising rapidly
+- Q: What is Diagnostic criteria of Diabetic Emergencies?
+  A: Glucose >11.1 + Ketones >3 + pH <7.3 / HCO3 <15
+- Q: What is Severity grading of Diabetic Emergencies?
+  A: Mild: pH 7.25-7.30; Mod: 7.0-7.24; Sev: <7.0
+- Q: What is Fluids of Diabetic Emergencies?
+  A: 1L/hr ×1, 500ml/hr ×2, 250ml/hr → total 5-7L over 24-48h
+- Q: What is Insulin of Diabetic Emergencies?
+  A: FRII 0.1 U/kg/hr; NO bolus; continue till ketones <0.6, pH >7.3, HCO3 >18
+- Q: What is K+ of Diabetic Emergencies?
+  A: <3.0: 60-80mmol/L (hold insulin till >3.3); 3.0-3.5: 60; 3.5-5.5: 40; >5.5: hold
+- Q: What is Bicarb of Diabetic Emergencies?
+  A: ONLY pH <7.0: 100mmol/2h
+- Q: What is Dextrose of Diabetic Emergencies?
+  A: Start 5% when glucose <14; DON'T stop insulin
+- Q: What is Euglycaemic DKA of Diabetic Emergencies?
+  A: Glucose <13.9; SGLT2i-associated; STOP SGLT2i; same Rx
+- Q: What is Cerebral oedema of Diabetic Emergencies?
+  A: Children: mannitol 0.5-1g/kg; ICU; avoid rapid osmolar drop >3 mOsm/kg/hr
+- Q: What is Precipitant of Diabetic Emergencies?
+  A: Treat infection, stop SGLT2i, restart insulin
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic Emergencies?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetic Emergencies
+   C. A complication seen late in the disease course of Diabetic Emergencies
+   D. A condition that mimics Diabetic Emergencies but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic Emergencies presents with: Diagnostic Triad — 1) Glucose >11.1 mmol/L (200 mg/dL) 2) Ketonaemia >3 mmol/L (or significant ketonuria) 3) pH <7.3 and/or bicarbonate <15 mmol/L; Incidence — 4-8 per 1000 patient-years in T1DM; rising with SGLT2i use; Mortality — <1% (mild/moderate); 5-10% (severe); higher in elderly/comorbidities. What is the most likely diagnosis?
+   A. **Diabetic Emergencies**
+   B. A condition that mimics Diabetic Emergencies but is not the same entity
+   C. A complication of Diabetic Emergencies rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic Emergencies
+

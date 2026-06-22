@@ -872,3 +872,33 @@ Tension-type headache is the **commonest primary headache** and typically presen
 8. **A. Regular sleep and stress management** — core non-pharmacological prevention.
 9. **C. Normal neurological examination, possibly with scalp tenderness** — expected in uncomplicated TTH.
 10. **C. Cluster headache causes short severe unilateral attacks with lacrimation and agitation** — that pattern distinguishes it clearly from TTH.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Tension-Type Headache*
+
+**Q1.** Which of the following features is most specific or characteristic of Tension-Type Headache?
+
+  - **A.** No routine imaging
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — No routine imaging
+  >
+  > *Source:* OOP4) | Normal in TTH; rules out mimics |
+| **MRI brain ± MRA** | Suspected secondary | Normal |
+
+> **No routine imaging** — TTH is a **clinical diagnosis**; imaging reserved for atypical features or 
+
+**Q2.** What is the most appropriate first-line therapy for Tension-Type Headache?
+
+  - **A.** Paracetamol
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Paracetamol
+  >
+  > *Source:* **Paracetamol**   500–1000 mg PO   Safe in pregnancy; less effective than NSAIDs
+

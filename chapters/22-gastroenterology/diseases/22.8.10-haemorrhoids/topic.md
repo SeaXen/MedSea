@@ -142,6 +142,16 @@ flowchart TD
 
 ## 17. Answer Key with Explanations
 
+## PasTest Scenario SBAs (Clinical Vignettes)
 
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 22: Gastroenterology / Haemorrhoids**
 
+**Q1.** Which of the following best describes the underlying pathophysiology / definition of Haemorrhoids?
+
+  - **A.** Haemorrhoids are symptomatic enlargement/displacement of normal anal vascular cushions causing bleeding, prolapse, discomfort, or pruritus.
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — Haemorrhoids are symptomatic enlargement/displacement of normal anal vascular cushions causing bleeding, prolapse, discomfort, or pruritus.
 

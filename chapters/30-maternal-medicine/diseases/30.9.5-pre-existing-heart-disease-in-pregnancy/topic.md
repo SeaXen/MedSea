@@ -288,3 +288,20 @@ A: For delivery in women with prosthetic valves or unrepaired cyanotic CHD
 - [[../Heart Disease in Pregnancy|Heart Disease in Pregnancy]] (heading hub)
 - [[../Maternal Medicine MOC|Maternal Medicine MOC]]
 - [[../Davidson Chapter 32 - Maternal Medicine Hierarchy|Davidson Chapter 32 - Maternal Medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 30: Maternal Medicine — Pre-existing heart disease in pregnancy*
+
+**Q1.** Which of the following features is most specific or characteristic of Pre-existing heart disease in pregnancy?
+
+  - **A.** Mnemonic for Pre-existing heart disease in pregnancy
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Pre-existing heart disease in pregnancy
+  >
+  > *Source:* **Mnemonic for Pre-existing heart disease in pregnancy** — see key points in Core Clinical Content
+- **'PRE-ECLAMPSIA' risk factors** — Previous PE, Renal disease, Extremes of age, Chronic HTN, Ethnic
+

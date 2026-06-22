@@ -510,3 +510,22 @@ Hydrogen sulfide poisoning = cytochrome oxidase inhibition → histotoxic hypoxi
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Hydrogen Sulfide Poisoning*
+
+**Q1.** What is the most appropriate first-line therapy for Hydrogen Sulfide Poisoning?
+
+  - **A.** RESCUE PROTOCOL + Self-contained breathing apparatus + Ventilate
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — RESCUE PROTOCOL + Self-contained breathing apparatus + Ventilate
+  >
+  > *Source:* **RESCUE PROTOCOL** — **DO NOT ENTER CONFINED SPACE WITHOUT SCBA**
+- **Self-contained breathing apparatus (SCBA) MANDATORY** for rescuers
+- **Ventilate** area before entry if possible
+- **Remove victi
+

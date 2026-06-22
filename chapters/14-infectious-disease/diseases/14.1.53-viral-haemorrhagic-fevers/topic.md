@@ -577,3 +577,19 @@ flowchart TD
 10. **B** — ISOLATE + PPE + Notify = absolute first action before any testing/treatment.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Viral Haemorrhagic Fevers*
+
+**Q1.** What is the most appropriate first-line therapy for Viral Haemorrhagic Fevers?
+
+  - **A.** ISOLATE   Negative pressure room; PPE: double gloves, impermeable gown, N95/FFP3, face shield, hood, boots; trained budd…
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — ISOLATE   Negative pressure room; PPE: double gloves, impermeable gown, N95/FFP3, face shield, hood, boots; trained budd…
+  >
+  > *Source:* ISOLATE**   **Negative pressure room**; **PPE**: double gloves, impermeable gown, N95/FFP3, face shield, hood, boots; **trained buddy system** for donning/doffing
+

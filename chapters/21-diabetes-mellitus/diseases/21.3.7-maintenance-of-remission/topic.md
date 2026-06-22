@@ -150,3 +150,61 @@ By the end of this note you should be able to:
 - **I**nsulin: if relapse -> restart
 - **O**ngoing: lifelong monitoring
 - **N**o cure: remission not cure**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Maintenance of remission*
+
+**Q1.** What is the most appropriate first-line therapy for Maintenance of remission?
+
+  - **A.** Relapse prevention plan
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Relapse prevention plan
+  >
+  > *Source:* **Relapse prevention plan**   Written plan; 3 "red flags" with actions
+---
+
+> Auto-generated study sections for "Type 2 diabetes remission" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Type 2 diabetes remission?
+  A: By the end of this note you should be able to:
+- Q: What is Relapse rate of Type 2 diabetes remission?
+  A: ~30-40% at 2 years; 60-70% at 5 years (DiRECT)
+- Q: What is Key predictor of Type 2 diabetes remission?
+  A: Weight regain; <2kg regain = sustained remission
+- Q: What is Relapse rate of Type 2 diabetes remission?
+  A: ~30-40% at 2 years; 60-70% at 5 years (DiRECT)
+- Q: What is Key predictor of Type 2 diabetes remission?
+  A: Weight regain; <2kg regain = sustained remission
+- Q: What is Relapse rate of Type 2 diabetes remission?
+  A: 30-40% at 2y; 60-70% at 5y (DiRECT)
+- Q: What is Key predictor of Type 2 diabetes remission?
+  A: Weight maintenance (<2kg regain)
+- Q: What is Relapse trigger of Type 2 diabetes remission?
+  A: Weight regain >2kg; HbA1c 42-47 -> intensify
+- Q: What is Predictors of success of Type 2 diabetes remission?
+  A: <3y T2DM; <50y; ≥15kg loss; preserved C-peptide; HbA1c<58
+- Q: How is Type 2 diabetes remission monitored?
+  A: Monthly weight (yr1); HbA1c 3-6mo; relapse plan
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes remission?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes remission
+   C. A complication seen late in the disease course of Type 2 diabetes remission
+   D. A condition that mimics Type 2 diabetes remission but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes remission presents with: Relapse rate — ~30-40% at 2 years; 60-70% at 5 years (DiRECT); Key predictor — Weight regain; <2kg regain = sustained remission; Relapse trigger — Weight regain >2kg; medication reintroduction. What is the most likely diagnosis?
+   A. **Type 2 diabetes remission**
+   B. A condition that mimics Type 2 diabetes remission but is not the same entity
+   C. A complication of Type 2 diabetes remission rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes remission
+

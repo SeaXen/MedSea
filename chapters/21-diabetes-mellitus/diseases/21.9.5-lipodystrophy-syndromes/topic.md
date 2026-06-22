@@ -160,3 +160,102 @@ By the end of this note you should be able to:
 - **M**etreleptin: ↓HbA1c 2-3%, ↓TG 50-60%
 - **E**cho: cardiomyopathy (CGL)
 - **S**evere: CGL1 (AGPAT2) - infantile**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Lipodystrophy syndromes*
+
+**Q1.** Which of the following features is most specific or characteristic of Lipodystrophy syndromes?
+
+  - **A.** Parent
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Parent
+  >
+  > *Source:* Local Navigation (for Dashboard UI)
+> **Parent**: [[../Monogenic and Atypical Diabetes|Monogenic and Atypical Diabetes]]  
+> **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hi
+
+**Q2.** What is the most appropriate first-line therapy for Lipodystrophy syndromes?
+
+  - **A.** Management
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Management
+  >
+  > *Source:* **Management**: Standard HF therapy; avoid TZDs; consider ICD if arrhythmic
+---
+
+> Auto-generated study sections for "Monogenic and Atypical Diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (24 generated)
+
+- Q: What is the definition of Monogenic and Atypical Diabetes?
+  A: Selective loss of adipose tissue -> metabolic complications
+- Q: How is Monogenic and Atypical Diabetes classified?
+  A: Generalised (CGL) vs Partial (FPLD); Genetic vs Acquired
+- Q: What is the epidemiology of Monogenic and Atypical Diabetes?
+  A: Rare: CGL 1:10M; FPLD 1:1M
+- Q: What is Monogenic and Atypical Diabetes indicated for?
+  A: FDA approved for GL; off-label for PL with severe metabolic complications
+- Q: What is the dose of Monogenic and Atypical Diabetes?
+  A: 0.06 mg/kg/day SC (adjust by response)
+- Q: What is Effects of Monogenic and Atypical Diabetes?
+  A: ↓HbA1c 2-3%; ↓TG 50-60%; ↓hepatic fat; ↑satiety
+- Q: How is Monogenic and Atypical Diabetes monitored?
+  A: Leptin levels; HbA1c, TG, LFT; TSH (thyroid autoimmunity risk)
+- Q: What are the side effects of Monogenic and Atypical Diabetes?
+  A: Anti-leptin antibodies (neutralising); hypoglycaemia; T-cell lymphoma (theoretical)
+- Q: What is Diabetes of Monogenic and Atypical Diabetes?
+  A: High-dose insulin; CSII; metreleptin
+- Q: What is Hypertriglyceridaemia of Monogenic and Atypical Diabetes?
+  A: Fibrates + omega-3; avoid alcohol/estrogen
+- Q: What is Cardiomyopathy of Monogenic and Atypical Diabetes?
+  A: Echo surveillance; standard HF therapy
+- Q: What is Monogenic and Atypical Diabetes indicated for?
+  A: FDA approved for GL; off-label for PL with severe metabolic complications
+- Q: What is the dose of Monogenic and Atypical Diabetes?
+  A: 0.06 mg/kg/day SC (adjust by response)
+- Q: What is Effects of Monogenic and Atypical Diabetes?
+  A: ↓HbA1c 2-3%; ↓TG 50-60%; ↓hepatic fat; ↑satiety
+- Q: How is Monogenic and Atypical Diabetes monitored?
+  A: Leptin levels; HbA1c, TG, LFT; TSH (thyroid autoimmunity risk)
+- Q: What is Diabetes of Monogenic and Atypical Diabetes?
+  A: High-dose insulin; CSII; metreleptin
+- Q: What is Hypertriglyceridaemia of Monogenic and Atypical Diabetes?
+  A: Fibrates + omega-3; avoid alcohol/estrogen
+- Q: What is Cardiomyopathy of Monogenic and Atypical Diabetes?
+  A: Echo surveillance; standard HF therapy
+- Q: What is Autoimmunity of Monogenic and Atypical Diabetes?
+  A: Screen (CGL2); treat if present
+- Q: What is Leptin of Monogenic and Atypical Diabetes?
+  A: LOW (hallmark); metreleptin replacement
+- Q: What is CGL of Monogenic and Atypical Diabetes?
+  A: AGPAT2, BSCL2; severe IR; infancy onset
+- Q: What is FPLD2 of Monogenic and Atypical Diabetes?
+  A: LMNA; puberty onset; limb fat loss; high CVD
+- Q: What is Metreleptin of Monogenic and Atypical Diabetes?
+  A: Leptin replacement; ↓HbA1c, ↓TG, ↓hepatic fat
+- Q: What are the complications of Monogenic and Atypical Diabetes?
+  A: Severe IR, diabetes, TG >20, hepatic steatosis, pancreatitis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Monogenic and Atypical Diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Monogenic and Atypical Diabetes
+   C. A complication seen late in the disease course of Monogenic and Atypical Diabetes
+   D. A condition that mimics Monogenic and Atypical Diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Monogenic and Atypical Diabetes presents with: Definition — Selective loss of adipose tissue -> metabolic complications; Classification — Generalised (CGL) vs Partial (FPLD); Genetic vs Acquired; Prevalence — Rare: CGL 1:10M; FPLD 1:1M. What is the most likely diagnosis?
+   A. **Monogenic and Atypical Diabetes**
+   B. A condition that mimics Monogenic and Atypical Diabetes but is not the same entity
+   C. A complication of Monogenic and Atypical Diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Monogenic and Atypical Diabetes
+

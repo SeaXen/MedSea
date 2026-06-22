@@ -313,3 +313,18 @@ mindmap
    C. A complication seen late in the disease course of Palliative Care
    D. A condition that mimics Palliative Care but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Supportive Care*
+
+**Q1.** What is the most appropriate first-line therapy for Supportive Care?
+
+  - **A.** Osmotic Laxative   Macrogol (Movicol) 1-2 sachets BD   First-Line
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Osmotic Laxative   Macrogol (Movicol) 1-2 sachets BD   First-Line
+  >
+  > *Source:* Osmotic Laxative**   **Macrogol (Movicol) 1-2 sachets BD**   **First-Line**
+

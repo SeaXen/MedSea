@@ -53,3 +53,19 @@ Acute pericarditis has a **characteristic 4-stage ECG evolution** that distingui
 > - **T wave inversion AFTER ST normalizes** = pericarditis (vs. Wellens in MI)
 > - **Stages 1 and 3** look like MI — but timing distinguishes them
 > - ECG **normalizes in 2 weeks** in 50%, 4 weeks in 75%
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — ECG evolution 4 stages*
+
+**Q1.** Which of the following features is most specific or characteristic of ECG evolution 4 stages?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

@@ -567,3 +567,17 @@ Proptosis is forward displacement of the globe (>21 mm or >2 mm asymmetry on Her
 
 ## Tags
 #medicine #davidson #ophthalmology #proptosis #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / Proptosis**
+
+**Q1.** Which of the following best describes the underlying pathophysiology / definition of Proptosis?
+
+  - **A.** **Proptosis (exophthalmos):** Forward displacement of the globe
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **Proptosis (exophthalmos):** Forward displacement of the globe
+

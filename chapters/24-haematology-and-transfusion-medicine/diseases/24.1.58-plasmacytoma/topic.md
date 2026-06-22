@@ -414,3 +414,16 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 24: Haematology / Plasmacytoma**
+
+**Q1.** Which of the following best describes the underlying pathophysiology / definition of Plasmacytoma?
+
+  - **A.** [!tip] **SBP vs Myeloma**: **SBP = Single lesion + BM <10% + NO CRAB**; **Myeloma = BM ≥10% or ≥1 CRAB/SLiM**. **EMP = Soft tissue + No bone/bone marrow involvement**.
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — [!tip] **SBP vs Myeloma**: **SBP = Single lesion + BM <10% + NO CRAB**; **Myeloma = BM ≥10% or ≥1 CRAB/SLiM**. **EMP = Soft tissue + No bone/bone marr
+

@@ -321,3 +321,20 @@ mindmap
    C. A complication of Alcoholic Liver Disease rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Alcoholic Liver Disease
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Alcoholic Liver Disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Alcoholic Liver Disease?
+
+  - **A.** Maddrey DF
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Maddrey DF
+  >
+  > *Source:* AST ↑↑ (AST>ALT), Bilirubin ↑↑, INR ↑, WBC ↑ | Synthetic failure (INR↑, Alb↓), thrombocytopenia |
+| **Maddrey DF** | **≥32 = Severe** | Not typically used |
+| **Imaging** | Hepatomegaly, fatty infiltr
+

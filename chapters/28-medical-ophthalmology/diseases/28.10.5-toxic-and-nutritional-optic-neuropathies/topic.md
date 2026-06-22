@@ -535,3 +535,49 @@ Toxic and nutritional optic neuropathies cause **bilateral, painless, gradual** 
 
 ## Tags
 #medicine #davidson #ophthalmology #toxic-optic #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Toxic and Nutritional Optic Neuropathies*
+
+**Q1.** Which of the following is characterised by the clinical triad: bilateral, painless, gradual + scotoma + dyschromatopsia?
+
+  - **A.** Toxic and Nutritional Optic Neuropathies
+  - **B.** A related condition in the same clinical area
+  - **C.** A common mimicker with overlapping features
+  - **D.** A complication rather than the underlying disease
+
+  > **Answer: A** — Toxic and Nutritional Optic Neuropathies
+  >
+  > *Source:* ion completed
+
+---
+## Must Know / Should Know / Nice to Know
+### Must Know (Core for passing)
+- [x] Classic triad (bilateral, painless, gradual + scotoma + dyschromatopsia)
+- [x] Ethambutol dose (>15 
+
+**Q2.** Which of the following features is most specific or characteristic of Toxic and Nutritional Optic Neuropathies?
+
+  - **A.** Caecocentral scotoma
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Caecocentral scotoma
+  >
+  > *Source:* **Bilateral, painless, gradual ↓VA** (symmetric or near-symmetric)
+- **Caecocentral scotoma** (between fixation point and blind spot) — the hallmark visual field defect
+- **Dyschromatopsia** (↓colour 
+
+**Q3.** What is the most appropriate first-line therapy for Toxic and Nutritional Optic Neuropathies?
+
+  - **A.** Treat underlying cause
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat underlying cause
+  >
+  > *Source:* **Treat underlying cause** (alcoholism, malabsorption, malignancy)
+

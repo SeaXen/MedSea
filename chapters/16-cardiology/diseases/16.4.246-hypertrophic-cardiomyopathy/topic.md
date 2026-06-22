@@ -320,3 +320,32 @@ Diagnosis is made by imaging evidence of unexplained LV hypertrophy in the appro
 8. **A** - Septal reduction is considered for severe symptomatic obstructive disease refractory to medication.
 9. **A** - AF worsens hemodynamics and embolic risk.
 10. **A** - Troponin still follows standard ACS assessment principles.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Hypertrophic cardiomyopathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Hypertrophic cardiomyopathy?
+
+  - **A.** Echocardiography
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Echocardiography
+  >
+  > *Source:* rmur becomes louder with standing/Valsalva and softer with squatting/handgrip
+- S4 may be present
+- **Echocardiography**: key test; defines hypertrophy pattern, SAM, LVOTO gradient, MR, diastolic func
+
+**Q2.** What is the most appropriate first-line therapy for Hypertrophic cardiomyopathy?
+
+  - **A.** Use vasodilators/diuretics cautiously in obstructive HCM because they may worsen LVOTO
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Use vasodilators/diuretics cautiously in obstructive HCM because they may worsen LVOTO
+  >
+  > *Source:* Use vasodilators/diuretics cautiously in obstructive HCM because they may worsen LVOTO
+

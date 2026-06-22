@@ -127,3 +127,60 @@ By the end of this note you should be able to:
 - **A**dverse: lymphopenia, infections, CRS
 - **L**ong-term: unknown durability
 - **S**tage 1/2: prevention; Stage 3: preservation**</think>
+---
+
+> Auto-generated study sections for "Type 1 diabetes prevention" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Type 1 diabetes prevention?
+  A: By the end of this note you should be able to:
+- Q: What is Goal of Type 1 diabetes prevention?
+  A: Delay or prevent Stage 3 T1DM in at-risk individuals
+- Q: What is Target of Type 1 diabetes prevention?
+  A: Stage 1-2 (2+ autoantibodies) or new-onset Stage 3
+- Q: What is Goal of Type 1 diabetes prevention?
+  A: Delay or prevent Stage 3 T1DM in at-risk individuals
+- Q: What is Target of Type 1 diabetes prevention?
+  A: Stage 1-2 (2+ autoantibodies) or new-onset Stage 3
+- Q: What is Autoantibodies of Type 1 diabetes prevention?
+  A: 2+ (GAD65, IA-2, ZnT8, IAA)
+- Q: How is Type 1 diabetes prevention classified?
+  A: 1 (normoglycaemia), 2 (dysglycaemia), or new-onset
+- Q: What is Age of Type 1 diabetes prevention?
+  A: Usually 8-45 years
+- Q: What is Autoantibodies of Type 1 diabetes prevention?
+  A: 2+ (GAD65, IA-2, ZnT8, IAA)
+- Q: How is Type 1 diabetes prevention classified?
+  A: 1 (normoglycaemia), 2 (dysglycaemia), or new-onset
+- Q: What is Age of Type 1 diabetes prevention?
+  A: Usually 8-45 years
+- Q: What is Exclusion of Type 1 diabetes prevention?
+  A: Active infection, immunosuppression, pregnancy
+- Q: What is Teplizumab of Type 1 diabetes prevention?
+  A: Only approved; delays Stage 3 by ~2 years
+- Q: What is Abatacept/Rituximab of Type 1 diabetes prevention?
+  A: Modest C-peptide preservation
+- Q: What is Verapamil/IL-2/ATG of Type 1 diabetes prevention?
+  A: Experimental; preserve beta-cell function
+- Q: How is Type 1 diabetes prevention classified?
+  A: Prevention target (teplizumab)
+- Q: What is Current status of Type 1 diabetes prevention?
+  A: Only teplizumab approved; rest trial phases
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 1 diabetes prevention?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 1 diabetes prevention
+   C. A complication seen late in the disease course of Type 1 diabetes prevention
+   D. A condition that mimics Type 1 diabetes prevention but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 1 diabetes prevention presents with: Goal — Delay or prevent Stage 3 T1DM in at-risk individuals; Target — Stage 1-2 (2+ autoantibodies) or new-onset Stage 3; Status — Mostly Phase 2/3 trials; teplizumab only approved. What is the most likely diagnosis?
+   A. **Type 1 diabetes prevention**
+   B. A condition that mimics Type 1 diabetes prevention but is not the same entity
+   C. A complication of Type 1 diabetes prevention rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 1 diabetes prevention
+

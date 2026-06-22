@@ -1110,3 +1110,19 @@ Heart failure is a common, high-yield cardiology syndrome where the heart fails 
 8. **B** — AF with rapid ventricular response commonly precipitates HF decompensation.
 9. **A** — Raised JVP and hepatomegaly are classic systemic venous congestion signs.
 10. **B** — Diuretics improve symptoms, but neurohormonal therapy changes long-term outcomes.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Heart failure (valve destruction)*
+
+**Q1.** Which of the following features is most specific or characteristic of Heart failure (valve destruction)?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

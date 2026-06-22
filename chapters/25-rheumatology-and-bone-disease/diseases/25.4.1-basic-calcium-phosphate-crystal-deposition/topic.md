@@ -408,3 +408,20 @@ mindmap
    C. A complication of Crystal Arthropathies rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Crystal Arthropathies
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Basic calcium phosphate crystal deposition*
+
+**Q1.** What is the most appropriate first-line therapy for Basic calcium phosphate crystal deposition?
+
+  - **A.** Treat Underlying
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat Underlying
+  >
+  > *Source:* **Treat Underlying**   CKD/dialysis optimisation  
+
+---
+

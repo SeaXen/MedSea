@@ -190,3 +190,19 @@ E. All of the above
 **Tags:** #medicine #cardiology #davidson #fcps #mrcp
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Fabry disease (LVH, arrhythmia, enzyme replacement)*
+
+**Q1.** What is the most appropriate first-line therapy for Fabry disease (LVH, arrhythmia, enzyme replacement)?
+
+  - **A.** Diuretics
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Diuretics
+  >
+  > *Source:* **Diuretics** for congestion.
+

@@ -603,3 +603,19 @@ Driving, work, and recurrence counseling after stroke is a core part of rehabili
 8. **A** — Fatigue and concentration problems support phased return.
 9. **B** — New symptoms require urgent assessment.
 10. **B** — This counseling must be individualized and documented.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Driving, work, and recurrence counseling after stroke*
+
+**Q1.** What is the most appropriate first-line therapy for Driving, work, and recurrence counseling after stroke?
+
+  - **A.** use OT/driving assessment where available
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — use OT/driving assessment where available
+  >
+  > *Source:* use OT/driving assessment where available
+

@@ -153,3 +153,20 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Basal insulin initiation]], [[Basal-bolus intensification]], [[Pre-mixed insulin]], [[Insulin therapy in type 2 diabetes]]
+---
+
+> Auto-generated study sections for "Insulin therapy in type 2 diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Insulin therapy in type 2 diabetes?
+  A: Concentrated insulins = higher units/mL for high insulin resistance; U200: degludec (Tresiba 200), lispro (Humalog 200); U300: glargine (Toujeo); U500: human regular (Humulin R U500); do not convert units — prescribe and dispense in units; dedicated pens/syringes only.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin therapy in type 2 diabetes?**
+   A. **Concentrated insulins = higher units/mL for high insulin resistance; U200: degludec (Tresiba 200), lispro (Humalog 200); U300: glargine (Toujeo); U500: human regular (Humulin R U500); do not convert u**
+   B. An unrelated condition not matching the clinical picture of Insulin therapy in type 2 diabetes
+   C. A complication seen late in the disease course of Insulin therapy in type 2 diabetes
+   D. A condition that mimics Insulin therapy in type 2 diabetes but has a different underlying cause
+

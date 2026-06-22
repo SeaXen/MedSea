@@ -618,3 +618,30 @@ Early mobilization and multidisciplinary recovery planning are central to modern
 8. **B. Position -> sit -> transfer -> stand/walk** — correct graded sequence.
 9. **B. Recovery depends on more than mobility alone** — this is why multidisciplinary care helps.
 10. **B. Early mobilization should be graded, monitored, and individualized** — key exam phrase.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Early mobilization and multidisciplinary recovery planning*
+
+**Q1.** Which of the following features is most specific or characteristic of Early mobilization and multidisciplinary recovery planning?
+
+  - **A.** A. Physiotherapist
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — A. Physiotherapist
+  >
+  > *Source:* **A. Physiotherapist** — key mobility professional
+
+**Q2.** What is the most appropriate first-line therapy for Early mobilization and multidisciplinary recovery planning?
+
+  - **A.** Start early but safely
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Start early but safely
+  >
+  > *Source:* Start early but safely.
+

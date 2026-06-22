@@ -389,3 +389,37 @@ flowchart TD
 
 ## Summary
 **Radiation myelopathy** has two forms: **early transient** (1-6 mo, Lhermitte's, recovers) and **late delayed** (6 mo-20y, irreversible, often progressive). **Cord tolerance** is ~45-50 Gy conventional; risk rises steeply above 55 Gy. Mechanism involves oligodendrocyte and vascular endothelial damage. Diagnosis is one of exclusion - exclude compression, recurrence, paraneoplastic, infection. **Management:** IV methylprednisolone (acute), hyperbaric O2 trial, bevacizumab (refractory), supportive. Prevention through careful RT planning is paramount. Early type has good prognosis; late type has 50% chance of permanent deficit.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Radiation Myelopathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Radiation Myelopathy?
+
+  - **A.** Lhermitte's sign
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Lhermitte's sign
+  >
+  > *Source:* Radiation myelopathy vs recurrence** | No pain, focal cord change; exclude compression urgently |
+| **Lhermitte's sign** | Non-specific; MS, B12, cord compression, RT all cause |
+| **Early vs late pro
+
+**Q2.** What is the most appropriate first-line therapy for Radiation Myelopathy?
+
+  - **A.** Exclude compression
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Exclude compression
+  >
+  > *Source:* ### Emergency
+- No specific emergency Rx for radiation myelopathy
+- **Exclude compression** urgently
+- Consider dexamethasone if diagnostic uncertainty or acute progression
+
+### Disease-Modifying
+

@@ -283,3 +283,22 @@ A: Non-invasive; for treatment-resistant depression; rTMS effective
 - [[Mood stabilisers (lithium, valproate, lamotrigine)]]
 - [[Anxiolytics and hypnotics (benzodiazepines, Z-drugs, buspirone)]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — ECT (electroconvulsive therapy) and other biologic*
+
+**Q1.** Which of the following features is most specific or characteristic of ECT (electroconvulsive therapy) and other biologic?
+
+  - **A.** Mnemonic for ECT
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for ECT
+  >
+  > *Source:* **Mnemonic for ECT (electroconvulsive therapy) and other biological treatments** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'
+

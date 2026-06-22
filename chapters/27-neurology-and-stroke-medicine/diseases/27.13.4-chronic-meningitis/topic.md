@@ -393,3 +393,34 @@ flowchart TD
 8. **B** — IRIS = continue both + add steroids (don't stop ART)
 9. **B** — Carcinomatous = intrathecal MTX + systemic + radiotherapy
 10. **B** — Hydrocephalus in TBM = VP shunt/EVD (don't stop treatment)
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Chronic Meningitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Chronic Meningitis?
+
+  - **A.** TB:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — TB:
+  >
+  > *Source:* :** Leptomeningeal enhancement, nerve root enhancement, subependymal deposits
+
+### Specific Tests
+- **TB:** TB PCR (Xpert MTB/RIF Ultra), ADA, IGRA (supportive, not diagnostic in active TBM)
+- **Crypt
+
+**Q2.** What is the most appropriate first-line therapy for Chronic Meningitis?
+
+  - **A.** IRIS
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — IRIS
+  >
+  > *Source:* **IRIS** risk on ART initiation — start ART 4-6 weeks after antifungal
+

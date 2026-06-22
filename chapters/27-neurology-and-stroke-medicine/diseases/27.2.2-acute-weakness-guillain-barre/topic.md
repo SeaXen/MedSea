@@ -474,3 +474,34 @@ status: full-fcps-mrcp-note
 
 **Heading Hub:** [[01_Fundamentals_Examination/Emergency Approach Hub]]
 **Topic-Group Hub:** [[01_Fundamentals_Examination/Emergency Hub]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Acute Weakness & Guillain-Barre*
+
+**Q1.** Which of the following features is most specific or characteristic of Acute Weakness & Guillain-Barre?
+
+  - **A.** MRI spine
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MRI spine
+  >
+  > *Source:* | **Anti-ganglioside antibodies** | Anti-GM1 (AMAN), Anti-GQ1b (MFS, Bickerstaff) |
+
+### Imaging
+- **MRI spine** (if atypical — exclude cord lesion)
+- **MRI brachial/lumbar plexus** (enhancement of ne
+
+**Q2.** What is the most appropriate first-line therapy for Acute Weakness & Guillain-Barre?
+
+  - **A.** Autonomic:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Autonomic:
+  >
+  > *Source:* **Autonomic:** Treat bradycardia (atropine, pacing), hypertension (labetalol), hypotension (fluids, vasopressors)
+

@@ -463,3 +463,25 @@ status: full-fcps-mrcp-note
 
 **Heading Hub:** [[01_Fundamentals_Examination/Fundamentals & Examination Hub]]
 **Topic-Group Hub:** [[01_Fundamentals_Examination/Investigations Hub]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Autonomic Function Testing*
+
+**Q1.** What is the most appropriate first-line therapy for Autonomic Function Testing?
+
+  - **A.** Nocturia
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Nocturia
+  >
+  > *Source:* **Nocturia**   Desmopressin (caution Na+ ↓)  
+
+### Erectile Dysfunction
+- PDE5 inhibitors (caution with nitrates), vacuum devices
+
+### Hyperhidrosis
+- Topical antiperspirants, botulinum toxin, iontoph
+

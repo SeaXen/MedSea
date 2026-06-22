@@ -372,3 +372,23 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Congenital Dyserythropoietic Anaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Congenital Dyserythropoietic Anaemia?
+
+  - **A.** "CDA II = Binuclear = 2 Nuclei = SEC23B"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "CDA II = Binuclear = 2 Nuclei = SEC23B"
+  >
+  > *Source:* neficial in CDA II**; **Controversial in CDA I** |
+
+| Mnemonic | Meaning |
+|----------|---------|
+| **"CDA II = Binuclear = 2 Nuclei = SEC23B"** | CDA II hallmarks |
+| **"CDA I = Multi-Nuclear = 3+ Nu
+

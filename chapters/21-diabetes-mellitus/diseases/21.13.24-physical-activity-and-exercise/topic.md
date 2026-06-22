@@ -146,3 +146,83 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Medical nutrition therapy]], [[Weight management and remission]], [[Frailty and individualised HbA1c targets]], [[Hypoglycaemia in hospital]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Physical activity and exercise*
+
+**Q1.** What is the most appropriate first-line therapy for Physical activity and exercise?
+
+  - **A.** <4.0 mmol/L + Treat hypo first
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — <4.0 mmol/L + Treat hypo first
+  >
+  > *Source:* **<4.0 mmol/L**   **Treat hypo first**; delay exercise
+---
+
+> Auto-generated study sections for "Lifestyle intervention" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Lifestyle intervention?
+  A: ADA/NICE/ESC: 150min/week moderate aerobic + 2–3x/week resistance; post-meal walk ↓ PP glucose 1–2mmol/L; HIIT time-efficient; exercise snippets (sedentary breaks) every 30min; adjust insulin/carbs; CGM-guided; avoid if glucose >14 + ketones.
+- Q: What is Aerobic minimum of Lifestyle intervention?
+  A: 150min/week moderate (≥3 days, no >2 days off)
+- Q: What is Resistance of Lifestyle intervention?
+  A: 2–3x/week, non-consecutive, major muscle groups
+- Q: What is Sedentary breaks of Lifestyle intervention?
+  A: Every 30min — 2–3min walk
+- Q: What is Post-meal walk of Lifestyle intervention?
+  A: 10–15min → ↓ PP glucose 1–2mmol/L
+- Q: What is Pre-exercise glucose <4 of Lifestyle intervention?
+  A: Treat hypo first
+- Q: What is Pre-exercise glucose >14 + ketones of Lifestyle intervention?
+  A: Do not exercise
+- Q: What is T1DM on insulin of Lifestyle intervention?
+  A: ↓ Bolus 25–50%; ↓ Basal 20–50% (temp basal); carb snack if <7
+- Q: What is Delayed hypo of Lifestyle intervention?
+  A: 6–12h post-aerobic; reduce overnight basal
+- Q: What is Neuropathy of Lifestyle intervention?
+  A: Non-weight-bearing (cycling, swimming)
+- Q: What is HIIT of Lifestyle intervention?
+  A: Time-efficient; screen first; not for unfit/comorbid
+- Q: What is Aerobic minimum of Lifestyle intervention?
+  A: 150min/week moderate (≥3 days, no >2 days off)
+- Q: What is Resistance of Lifestyle intervention?
+  A: 2–3x/week, non-consecutive, major muscle groups
+- Q: What is Sedentary breaks of Lifestyle intervention?
+  A: Every 30min — 2–3min walk
+- Q: What is Post-meal walk of Lifestyle intervention?
+  A: 10–15min → ↓ PP glucose 1–2mmol/L
+- Q: What is Pre-exercise glucose <4 of Lifestyle intervention?
+  A: Treat hypo first
+- Q: What is Pre-exercise glucose >14 + ketones of Lifestyle intervention?
+  A: Do not exercise
+- Q: What is T1DM on insulin of Lifestyle intervention?
+  A: ↓ Bolus 25–50%; ↓ Basal 20–50% (temp basal); carb snack if <7
+- Q: What is Delayed hypo of Lifestyle intervention?
+  A: 6–12h post-aerobic; reduce overnight basal
+- Q: What is Neuropathy of Lifestyle intervention?
+  A: Non-weight-bearing (cycling, swimming)
+- Q: What is HIIT of Lifestyle intervention?
+  A: Time-efficient; screen first; not for unfit/comorbid
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Lifestyle intervention?**
+   A. **ADA/NICE/ESC: 150min/week moderate aerobic + 2–3x/week resistance; post-meal walk ↓ PP glucose 1–2mmol/L; HIIT time-efficient; exercise snippets (sedentary breaks) every 30min; adjust insulin/carbs; C**
+   B. An unrelated condition not matching the clinical picture of Lifestyle intervention
+   C. A complication seen late in the disease course of Lifestyle intervention
+   D. A condition that mimics Lifestyle intervention but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Lifestyle intervention presents with: Q1. What is the most appropriate first-line therapy for Physical activity and exercise?; A. <4.0 mmol/L + Treat hypo first; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Lifestyle intervention**
+   B. A condition that mimics Lifestyle intervention but is not the same entity
+   C. A complication of Lifestyle intervention rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Lifestyle intervention
+

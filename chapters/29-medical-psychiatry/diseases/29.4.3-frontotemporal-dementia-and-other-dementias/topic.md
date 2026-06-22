@@ -281,3 +281,22 @@ A: 30% familial; MAPT, GRN, C9ORF72 mutations
 - [[Vascular dementia and dementia with Lewy bodies]]
 - [[Wernicke-Korsakoff syndrome and alcohol-related cognitive disorders]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Frontotemporal dementia and other dementias*
+
+**Q1.** Which of the following features is most specific or characteristic of Frontotemporal dementia and other dementias?
+
+  - **A.** Mnemonic for Frontotemporal dementia and other dementias
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Frontotemporal dementia and other dementias
+  >
+  > *Source:* **Mnemonic for Frontotemporal dementia and other dementias** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'ABCDEFGHI'** — MSE c
+

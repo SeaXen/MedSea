@@ -674,3 +674,19 @@ Atrial fibrillation is a major cause of cardioembolic stroke and recurrent embol
 8. **B** — NSAIDs increase bleeding risk when anticoagulation is used.
 9. **B** — Multiple cortical infarcts in different territories are classic for embolic stroke.
 10. **C** — AF-related prevention is fundamentally a balance between recurrent embolism and bleeding risk.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Atrial fibrillation-related stroke prevention*
+
+**Q1.** What is the most appropriate first-line therapy for Atrial fibrillation-related stroke prevention?
+
+  - **A.** oral anticoagulation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — oral anticoagulation
+  >
+  > *Source:* Start or resume **oral anticoagulation** once safe.
+

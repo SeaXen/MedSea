@@ -455,3 +455,34 @@ mindmap
    C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Tuberculous arthritis*
+
+**Q1.** Which of the following features is most specific or characteristic of Tuberculous arthritis?
+
+  - **A.** Xpert MTB/RIF
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Xpert MTB/RIF
+  >
+  > *Source:* 90%** (low yield) |
+| **AFB Culture** | **Positive 30-50%** (gold standard but slow: 4-8 weeks) |
+| **Xpert MTB/RIF (PCR)** | **Rapid (2h), sensitivity ~80%** — **1st line diagnostic** |
+| **ADA (Aden
+
+**Q2.** What is the most appropriate first-line therapy for Tuberculous arthritis?
+
+  - **A.** Ethambutol + Visual acuity/colour vision + renal dose adjust
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Ethambutol + Visual acuity/colour vision + renal dose adjust
+  >
+  > *Source:* **Ethambutol (E)**   15mg/kg (max 1.2g)   **Visual acuity/colour vision** (optic neuritis); **renal dose adjust**  
+
+> [!critical] **Pyridoxine 10mg daily WITH Isoniazid** — prevents peripheral neurop
+

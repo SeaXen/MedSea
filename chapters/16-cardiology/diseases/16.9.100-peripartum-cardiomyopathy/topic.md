@@ -302,3 +302,19 @@ Diagnosis requires:
   A: LV thrombus/embolism and cardiogenic shock.
 - Q: Common HF symptom clue?
   A: Orthopnea/PND rather than simple physiologic breathlessness.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Peripartum cardiomyopathy*
+
+**Q1.** What is the most appropriate first-line therapy for Peripartum cardiomyopathy?
+
+  - **A.** Diuretics
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Diuretics
+  >
+  > *Source:* **Diuretics** for congestion.
+

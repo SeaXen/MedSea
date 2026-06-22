@@ -495,3 +495,35 @@ Presbyopia is the universal age-related loss of near focusing. Caused by lens sc
 
 ## Tags
 #medicine #davidson #ophthalmology #refractive #presbyopia #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / Presbyopia**
+
+**Q1.** A patient presents with features consistent with Presbyopia. The clinical picture is most consistent with: Difficulty reading fine print, especially in low light What is the most likely diagnosis?
+
+  - **A.** Presbyopia
+  - **B.** A closely related condition in the same clinical area
+  - **C.** A complication of Presbyopia
+  - **D.** An unrelated mimic with overlapping features
+
+  > **Answer: A** — Presbyopia
+
+**Q2.** A patient is diagnosed with Presbyopia. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+
+**Q3.** Which of the following best describes the underlying pathophysiology / definition of Presbyopia?
+
+  - **A.** **Presbyopia:** Age-related, progressive loss of accommodation (near focusing ability)
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **Presbyopia:** Age-related, progressive loss of accommodation (near focusing ability)
+

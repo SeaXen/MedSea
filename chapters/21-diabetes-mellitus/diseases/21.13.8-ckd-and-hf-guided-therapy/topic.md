@@ -153,3 +153,84 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[CVOT guided therapy]], [[NICE NG28 pathway]], [[DKD management]], [[Heart failure in diabetes/HFrEF and HFpEF]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — CKD and HF guided therapy*
+
+**Q1.** What is the most appropriate first-line therapy for CKD and HF guided therapy?
+
+  - **A.** SGLT2i + first add-on
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — SGLT2i + first add-on
+  >
+  > *Source:* **SGLT2i (dapagliflozin/empagliflozin 10mg)** — **first add-on** (HF + CKD)
+3.
+---
+
+> Auto-generated study sections for "Treatment algorithms" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Treatment algorithms?
+  A: Modern T2DM algorithm = comorbidity-driven (not HbA1c-driven); SGLT2i/GLP-1 RA first if CKD/HF/CVD; SGLT2i eGFR ≥20; GLP-1 RA eGFR ≥15; finerenone eGFR ≥25 A2/A3; avoid SU, TZD, saxagliptin/alogliptin in HF; metformin if eGFR ≥30.
+- Q: What is Algorithm shift of Treatment algorithms?
+  A: Comorbidity-first (not HbA1c-first)
+- Q: What is SGLT2i in CKD of Treatment algorithms?
+  A: eGFR ≥20 (dapa/empa); cana ≥30
+- Q: What is SGLT2i in HF of Treatment algorithms?
+  A: HFrEF + HFpEF — dapa/empa both
+- Q: What is GLP-1 RA in CKD of Treatment algorithms?
+  A: No dose adjust down to eGFR 15
+- Q: What is GLP-1 RA in HF of Treatment algorithms?
+  A: Semaglutide 2.4mg for HFpEF + obesity (STEP-HFpEF)
+- Q: What is Finerenone of Treatment algorithms?
+  A: eGFR ≥25 + A2/A3; monitor K+ at 4w
+- Q: What is Avoid in HF of Treatment algorithms?
+  A: TZDs (contraindicated), saxagliptin/alogliptin (↑ HF hosp)
+- Q: What is Avoid in CKD of Treatment algorithms?
+  A: SU (hypo), TZD (HF), metformin <30
+- Q: What is Metformin eGFR of Treatment algorithms?
+  A: ≥30 (max 1g BD if 30–45); <30 stop
+- Q: What is Sequence of Treatment algorithms?
+  A: Metformin → SGLT2i/GLP-1 RA (if CKD/HF/CVD) → others
+- Q: What is Algorithm shift of Treatment algorithms?
+  A: Comorbidity-first (not HbA1c-first)
+- Q: What is SGLT2i in CKD of Treatment algorithms?
+  A: eGFR ≥20 (dapa/empa); cana ≥30
+- Q: What is SGLT2i in HF of Treatment algorithms?
+  A: HFrEF + HFpEF — dapa/empa both
+- Q: What is GLP-1 RA in CKD of Treatment algorithms?
+  A: No dose adjust down to eGFR 15
+- Q: What is GLP-1 RA in HF of Treatment algorithms?
+  A: Semaglutide 2.4mg for HFpEF + obesity (STEP-HFpEF)
+- Q: What is Finerenone of Treatment algorithms?
+  A: eGFR ≥25 + A2/A3; monitor K+ at 4w
+- Q: What is Avoid in HF of Treatment algorithms?
+  A: TZDs (contraindicated), saxagliptin/alogliptin (↑ HF hosp)
+- Q: What is Avoid in CKD of Treatment algorithms?
+  A: SU (hypo), TZD (HF), metformin <30
+- Q: What is Metformin eGFR of Treatment algorithms?
+  A: ≥30 (max 1g BD if 30–45); <30 stop
+- Q: What is Sequence of Treatment algorithms?
+  A: Metformin → SGLT2i/GLP-1 RA (if CKD/HF/CVD) → others
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Treatment algorithms?**
+   A. **Modern T2DM algorithm = comorbidity-driven (not HbA1c-driven); SGLT2i/GLP-1 RA first if CKD/HF/CVD; SGLT2i eGFR ≥20; GLP-1 RA eGFR ≥15; finerenone eGFR ≥25 A2/A3; avoid SU, TZD, saxagliptin/alogliptin**
+   B. An unrelated condition not matching the clinical picture of Treatment algorithms
+   C. A complication seen late in the disease course of Treatment algorithms
+   D. A condition that mimics Treatment algorithms but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Treatment algorithms presents with: Q1. What is the most appropriate first-line therapy for CKD and HF guided therapy?; A. SGLT2i + first add-on; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Treatment algorithms**
+   B. A condition that mimics Treatment algorithms but is not the same entity
+   C. A complication of Treatment algorithms rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Treatment algorithms
+

@@ -176,3 +176,79 @@ By the end of this note you should be able to:
 - **E**xocrine: often preserved (faecal elastase normal)
 - **R**esectable: Whipple if early
 - **D**iabetes persists post-surgery usually**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Pancreatic cancer diabetes*
+
+**Q1.** Which of the following features is most specific or characteristic of Pancreatic cancer diabetes?
+
+  - **A.** CA19-9
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CA19-9
+  >
+  > *Source:* | **CT pancreas protocol** | Gold standard (arterial/venous phase); mass, duct dilatation, mets |
+| **CA19-9** | Tumour marker (sensitivity 80%; specificity 90%); >37 U/mL |
+| **MRCP** | If CT equivoc
+---
+
+> Auto-generated study sections for "Pancreatic diabetes (type 3c)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Pancreatic diabetes (type 3c)?
+  A: New-onset diabetes as paraneoplastic manifestation of pancreatic adenocarcinoma
+- Q: What is the epidemiology of Pancreatic diabetes (type 3c)?
+  A: 1% of new-onset DM >50y = pancreatic cancer; 25% of pancreatic cancer present with DM
+- Q: What is Timing of Pancreatic diabetes (type 3c)?
+  A: Diabetes precedes cancer diagnosis by 6-36 months (median 12)
+- Q: What is the definition of Pancreatic diabetes (type 3c)?
+  A: New-onset diabetes as paraneoplastic manifestation of pancreatic adenocarcinoma
+- Q: What is the epidemiology of Pancreatic diabetes (type 3c)?
+  A: 1% of new-onset DM >50y = pancreatic cancer; 25% of pancreatic cancer present with DM
+- Q: What is Timing of Pancreatic diabetes (type 3c)?
+  A: Diabetes precedes cancer diagnosis by 6-36 months (median 12)
+- Q: What is Insulin of Pancreatic diabetes (type 3c)?
+  A: Preferred (flexible, no hypoglycaemia if dosed correctly)
+- Q: What is Steroids of Pancreatic diabetes (type 3c)?
+  A: If on chemo; adjust insulin
+- Q: What is SGLT2i/GLP-1 RA of Pancreatic diabetes (type 3c)?
+  A: Caution (weight loss, GI); consider if CVD/CKD
+- Q: What is Insulin of Pancreatic diabetes (type 3c)?
+  A: Preferred (flexible, no hypoglycaemia if dosed correctly)
+- Q: What is Steroids of Pancreatic diabetes (type 3c)?
+  A: If on chemo; adjust insulin
+- Q: What is SGLT2i/GLP-1 RA of Pancreatic diabetes (type 3c)?
+  A: Caution (weight loss, GI); consider if CVD/CKD
+- Q: What is Surgery (Whipple) of Pancreatic diabetes (type 3c)?
+  A: Diabetes may persist/resolve; insulin perioperative
+- Q: What is Red flag of Pancreatic diabetes (type 3c)?
+  A: New DM >50y + weight loss -> CT pancreas
+- Q: What is the epidemiology of Pancreatic diabetes (type 3c)?
+  A: 1% of new DM >50y = pancreatic cancer
+- Q: What is Timing of Pancreatic diabetes (type 3c)?
+  A: DM precedes cancer by 6-36 months (median 12)
+- Q: What is CA19-9 of Pancreatic diabetes (type 3c)?
+  A: >37 U/mL supportive
+- Q: What is CT pancreas of Pancreatic diabetes (type 3c)?
+  A: Gold standard; protocol essential
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Pancreatic diabetes (type 3c)?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Pancreatic diabetes (type 3c)
+   C. A complication seen late in the disease course of Pancreatic diabetes (type 3c)
+   D. A condition that mimics Pancreatic diabetes (type 3c) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Pancreatic diabetes (type 3c) presents with: Definition — New-onset diabetes as paraneoplastic manifestation of pancreatic adenocarcinoma; Incidence — 1% of new-onset DM >50y = pancreatic cancer; 25% of pancreatic cancer present with DM; Timing — Diabetes precedes cancer diagnosis by 6-36 months (median 12). What is the most likely diagnosis?
+   A. **Pancreatic diabetes (type 3c)**
+   B. A condition that mimics Pancreatic diabetes (type 3c) but is not the same entity
+   C. A complication of Pancreatic diabetes (type 3c) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Pancreatic diabetes (type 3c)
+

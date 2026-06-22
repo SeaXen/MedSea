@@ -360,3 +360,32 @@ A: Always (↓ Valsalva)
 - [[Hydrocephalus after SAH]]
 - [[Other complications of SAH]]
 - [[../Stroke Medicine MOC|Stroke Medicine MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Acute medical management of SAH*
+
+**Q1.** Which of the following features is most specific or characteristic of Acute medical management of SAH?
+
+  - **A.** Acute medical management of SAH
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Acute medical management of SAH
+  >
+  > *Source:* - **Acute medical management of SAH** — see key points above
+- **'ACoA → bitemporal hemianopia'** — Anterior communicating artery aneurysm compresses the optic chiasm from above
+- **'PCoA → pupil-invo
+
+**Q2.** What is the most appropriate first-line therapy for Acute medical management of SAH?
+
+  - **A.** Pre-securing
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Pre-securing
+  >
+  > *Source:* **Pre-securing**: aim SBP **< 160 mmHg** to reduce rebleeding risk; use IV nicardipine, labetalol, or clevidipine.
+

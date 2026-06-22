@@ -279,3 +279,21 @@ A: Nutrient sensing; inhibited by caloric restriction; mTOR inhibitors (rapamyci
 - [[Biology and physiology of ageing]]
 - [[Demography and epidemiology of ageing]]
 - [[../Ageing and Disease MOC|Ageing and Disease MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 32: Ageing & Disease — Theories and mechanisms of ageing*
+
+**Q1.** Which of the following features is most specific or characteristic of Theories and mechanisms of ageing?
+
+  - **A.** Mnemonic for Theories and mechanisms of ageing
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Theories and mechanisms of ageing
+  >
+  > *Source:* **Mnemonic for Theories and mechanisms of ageing** — see Core Clinical Content key points
+- **'5 Fried criteria'** for frailty: Weight loss, Exhaustion, Weakness, Slow walking, ↓ activity
+- **'DIAPPER
+

@@ -553,3 +553,36 @@ mindmap
 **Heading Hub:** [[07_Motor_Neurone_Disease/MND Hub]]
 **Topic-Group Hub:** [[07_Motor_Neurone_Disease/MND MOC]]
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Amyotrophic Lateral Sclerosis*
+
+**Q1.** Which of the following features is most specific or characteristic of Amyotrophic Lateral Sclerosis?
+
+  - **A.** Sensation, eye movements, bowel/bladder ALWAYS spared
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Sensation, eye movements, bowel/bladder ALWAYS spared
+  >
+  > *Source:* ve/Behavioural:** 15% frontotemporal dementia (C9orf72); emotional lability (pseudobulbar affect)
+- **Sensation, eye movements, bowel/bladder ALWAYS spared** (key)
+
+### Examination
+| Domain | UMN Sign
+
+**Q2.** What is the most appropriate first-line therapy for Amyotrophic Lateral Sclerosis?
+
+  - **A.** Tofersen + SOD1 mutation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Tofersen + SOD1 mutation
+  >
+  > *Source:* **Tofersen**   Antisense oligonucleotide against SOD1   For **SOD1 mutation** ALS only (FDA approved 2023)  
+
+### Symptomatic Management
+

@@ -595,3 +595,19 @@ Early neurological deterioration after stroke is a practical stroke-unit emergen
 8. **A** — CT is essential for detecting the major structural complications.
 9. **A** — This cluster suggests respiratory/systemic deterioration.
 10. **A** — END requires urgent, organized, cause-directed action.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Early neurological deterioration after stroke*
+
+**Q1.** What is the most appropriate first-line therapy for Early neurological deterioration after stroke?
+
+  - **A.** Seizure:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Seizure:
+  >
+  > *Source:* **Seizure:** treat seizure and reassess baseline afterward.
+

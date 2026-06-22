@@ -67,3 +67,19 @@ Cardiac amyloidosis is **infiltration of myocardium by misfolded protein fibrils
 > - **Bone scan Perugini ≥2 + no monoclonal protein = ATTR-CM** (no biopsy needed).
 > - **Tafamidis** is the first disease-modifying drug for ATTR-CM.
 > - **Avoid CCB and digoxin** in amyloidosis — bind amyloid fibrils.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Cardiac Amyloidosis ATTR AL   diagnosis PYP scan b*
+
+**Q1.** What is the most appropriate first-line therapy for Cardiac Amyloidosis ATTR AL   diagnosis PYP scan b?
+
+  - **A.** Rate control
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Rate control
+  >
+  > *Source:* **Rate control** (AFFIRM): beta-blocker (1st line, especially in HF: bisoprolol, carvedilol; avoid in HF decompensation), non-dihydropyridine CCB (diltiazem, verapamil, avoid in HFrEF), digoxin (HF, s
+

@@ -279,3 +279,64 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Dual GIP" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Dual GIP?
+  A: By the end of this note you should be able to:
+- Q: What is Drug Class of Dual GIP?
+  A: Dual glucose-dependent insulinotropic polypeptide (GIP) and glucagon-like peptide-1 (GLP-1) receptor agonist
+- Q: What is the mechanism of Dual GIP?
+  A: Dual agonism: GIP-R + GLP-1R -> [up]insulin, [down]glucagon, [up]satiety, [down]gastric emptying; GIP adds: [up]insulin secretion (synergistic with GLP-1), [up]adipocyte lipid storage, [down]food intake (central)
+- Q: What is Agent of Dual GIP?
+  A: Tirzepatide (Mounjaro) -- only dual agonist approved currently
+- Q: What is the dose of Dual GIP?
+  A: 2.5 -> 5 -> 7.5 -> 10 -> 12.5 -> 15 mg SC weekly
+- Q: What is HbA1c Reduction of Dual GIP?
+  A: 1.8-2.5% (20-28 mmol/mol) -- superior to semaglutide 1mg
+- Q: What is Weight Loss of Dual GIP?
+  A: 8-12kg (T2DM); 15-20% body weight (obesity, 15mg) -- superior to semaglutide
+- Q: What is Pharmacokinetics of Dual GIP?
+  A: SC weekly; half-life ~5 days; no renal/hepatic dose adjustment
+- Q: What is the mechanism of Dual GIP?
+  A: Dual GIP/GLP-1 RA -> [up]insulin, [down]glucagon, [down]gastric emptying, [up]satiety; GIP adds: [up]insulin synergy, [up]adipocyte lipid storage, [down]food intake (central)
+- Q: What is Agents of Dual GIP?
+  A: Tirzepatide (Mounjaro) -- only dual agonist approved
+- Q: What is the dose of Dual GIP?
+  A: 2.5 -> 5 -> 7.5 -> 10 -> 12.5 -> 15 mg SC weekly (titrate q4wk)
+- Q: What is HbA1c Reduction of Dual GIP?
+  A: 1.8-2.5% (20-28 mmol/mol) -- superior to semaglutide 1mg
+- Q: What is Weight Loss of Dual GIP?
+  A: T2DM: 8-12kg; Obesity: 15-20% body weight (SURMOUNT) -- superior to semaglutide
+- Q: What is CVOT of Dual GIP?
+  A: SURPASS-CVOT ongoing; SURPASS-4: CV safety in high risk
+- Q: What is GI SE of Dual GIP?
+  A: Nausea 20-30%; slow titration mandatory; anti-emetics PRN
+- Q: What is Pancreatitis of Dual GIP?
+  A: Rare; STOP if suspected; avoid if history
+- Q: What is MTC/MEN2 of Dual GIP?
+  A: Contraindicated (rodent C-cell tumours)
+- Q: What is Pregnancy of Dual GIP?
+  A: Contraindicated; stop [ge]2mo pre-conception
+- Q: What is Renal/Hepatic of Dual GIP?
+  A: No dose adjustment
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Dual GIP?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Dual GIP
+   C. A complication seen late in the disease course of Dual GIP
+   D. A condition that mimics Dual GIP but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Dual GIP presents with: Drug Class — Dual glucose-dependent insulinotropic polypeptide (GIP) and glucagon-like peptide-1 (GLP-1) receptor agonist; Mechanism — Dual agonism: GIP-R + GLP-1R -> [up]insulin, [down]glucagon, [up]satiety, [down]gastric emptying; GIP adds: [up]insulin secretion (synergistic with GLP-1), [up]adipocyte lipid storage, [down]food intake (central); Agent — Tirzepatide (Mounjaro) -- only dual agonist approved currently. What is the most likely diagnosis?
+   A. **Dual GIP**
+   B. A condition that mimics Dual GIP but is not the same entity
+   C. A complication of Dual GIP rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Dual GIP
+

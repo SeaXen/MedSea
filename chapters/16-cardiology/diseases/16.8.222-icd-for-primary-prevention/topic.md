@@ -28,3 +28,19 @@
 - **WCD** for high-risk waiting periods (post-diagnosis, awaiting reassessment)
 
 > **Pearls** — **Always optimize GDMT 3+ months first** before implanting ICD for non-ischemic CM (EF may recover). Use **HCM-SCD calculator** for HCM. Reassess EF after recovery periods.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — ICD for primary prevention*
+
+**Q1.** What is the most appropriate first-line therapy for ICD for primary prevention?
+
+  - **A.** Implant technique
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Implant technique
+  >
+  > *Source:* **Implant technique**: left pre-pectoral, subclavian or axillary vein access, RV lead to apex or septum, atrial lead to RA appendage, CS lead for LV (CRT-D).
+

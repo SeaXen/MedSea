@@ -292,3 +292,33 @@ mindmap
 ---
 
 *Last Updated: 2025-06-17 | Based on Davidson 24e Ch 11 | FCPS/MRCP Focused*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Mpox and Emerging Viral Infections*
+
+**Q1.** Which of the following features is most specific or characteristic of Mpox and Emerging Viral Infections?
+
+  - **A.** Prodrome
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Prodrome
+  >
+  > *Source:* atures |
+|-------|----------|----------|
+| **Incubation** | 5-21 days (median 7) | Asymptomatic |
+| **Prodrome** | 1-5 days before rash | **Fever**, **lymphadenopathy** (cervical, inguinal, submandibu
+
+**Q2.** What is the most appropriate first-line therapy for Mpox and Emerging Viral Infections?
+
+  - **A.** Tecovirimat + 600 mg PO bd ×
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Tecovirimat + 600 mg PO bd ×
+  >
+  > *Source:* **Tecovirimat (TPOXX)**   **First-line**: Severe disease, immunocompromised, children <8, pregnancy, ocular/genital involvement, atypical   **600 mg PO bd × 14 days** (weight-based IV if unable oral)
+

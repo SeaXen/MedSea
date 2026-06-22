@@ -314,3 +314,24 @@ mindmap
    C. A complication of Biliary Tract Disease rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Biliary Tract Disease
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Acute cholangitis*
+
+**Q1.** Which of the following is characterised by the clinical triad: Fever, Pain, Jaundice?
+
+  - **A.** Acute cholangitis
+  - **B.** NAFLD
+  - **C.** ALD
+  - **D.** Viral hepatitis
+
+  > **Answer: A** — Acute cholangitis
+  >
+  > *Source:* **When do you use MRCP vs ERCP in cholangitis?**
+
+---
+## Confusions & Mnemonics
+| Confusion | Clarification |
+|-----------|---------------|
+| Charcot vs Reynolds | **Charcot = Triad (Fever, Pain, Jaun
+

@@ -558,3 +558,19 @@ mindmap
 **Key takeaway:** **SUI**: leakage with stress (cough/sneeze), no urgency; **PFMT 1st line**, duloxetine drug, **TVT/TOT (women)**, **AUS (men post-prostatectomy)**. **UUI**: urgency + frequency + nocturia; **bladder training 1st line**, **anticholinergics/mirabegron**, refractory = **botox/SNM/PTNS**. **Overflow**: constant dribbling + **high PVR >100mL**; **CIC gold standard**; treat cause. **Assessment**: 3-day diary, cough stress test, PVR, urodynamics if complex. **Post-prostatectomy**: PFMT 0–3mo, **AUS >12mo**. **Vaginal oestrogen**: post-menopausal adjunct. **Elderly**: prompted voiding, habit training.
 **Exam focus:** Types & features, assessment algorithm, PFMT vs bladder training, duloxetine vs anticholinergics/mirabegron, TVT vs AUS, botox/SNM for refractory UUI, CIC for overflow, post-prostatectomy timeline, urodynamics interpretation.
 **Clinical relevance:** UI massively impacts QoL; stepwise conservative → pharmacological → surgical approach; most patients improve with PFMT/bladder training; surgery reserved for refractory.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — Urinary Incontinence*
+
+**Q1.** What is the most appropriate first-line therapy for Urinary Incontinence?
+
+  - **A.** Lifestyle
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Lifestyle
+  >
+  > *Source:* **Lifestyle**   Weight loss (BMI <25), smoking cessation, fluid management (1.5–2L/day, reduce caffeine/alcohol), treat constipation
+

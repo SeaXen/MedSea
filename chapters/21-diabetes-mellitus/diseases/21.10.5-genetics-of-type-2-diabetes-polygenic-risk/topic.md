@@ -224,3 +224,75 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Genetics of type 2 diabetes (polygenic risk)*
+
+**Q1.** What is the most appropriate first-line therapy for Genetics of type 2 diabetes (polygenic risk)?
+
+  - **A.** PRS screening
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — PRS screening
+  >
+  > *Source:* **PRS screening**   Not recommended for general population
+---
+
+> Auto-generated study sections for "Type 2 diabetes pathogenesis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (17 generated)
+
+- Q: What is the definition of Type 2 diabetes pathogenesis?
+  A: # Genetics of type 2 diabetes (polygenic risk)
+- Q: What is Heritability of Type 2 diabetes pathogenesis?
+  A: 30-70% (family studies); higher than T1DM
+- Q: What is Architecture of Type 2 diabetes pathogenesis?
+  A: Polygenic: 400+ loci identified (GWAS); each small effect (OR 1.05-1.3)
+- Q: What is TCF7L2 of Type 2 diabetes pathogenesis?
+  A: Strongest signal (OR ~1.4); Wnt signalling, proinsulin processing
+- Q: What is PRS of Type 2 diabetes pathogenesis?
+  A: Research stratification; not clinical
+- Q: What is Family history of Type 2 diabetes pathogenesis?
+  A: Best clinical predictor (empiric)
+- Q: What is Monogenic gene panel of Type 2 diabetes pathogenesis?
+  A: If MODY suspected
+- Q: What is PRS of Type 2 diabetes pathogenesis?
+  A: Research stratification; not clinical
+- Q: What is Family history of Type 2 diabetes pathogenesis?
+  A: Best clinical predictor (empiric)
+- Q: What is Monogenic gene panel of Type 2 diabetes pathogenesis?
+  A: If MODY suspected
+- Q: What is Heritability of Type 2 diabetes pathogenesis?
+  A: 30-70%; 400+ loci (GWAS)
+- Q: What is Strongest gene of Type 2 diabetes pathogenesis?
+  A: TCF7L2 (OR 1.4) -> Wnt signalling, proinsulin processing
+- Q: What is Obesity gene of Type 2 diabetes pathogenesis?
+  A: FTO (OR 1.3 via BMI)
+- Q: What is PPARG of Type 2 diabetes pathogenesis?
+  A: Pro12Ala protective; TZD target
+- Q: What is KCNJ11 of Type 2 diabetes pathogenesis?
+  A: Kir6.2; activating -> neonatal DM; common variant -> T2DM risk
+- Q: What is GRS/PRS of Type 2 diabetes pathogenesis?
+  A: Explains ~10-15% variance; not diagnostic; research only
+- Q: What is Monogenic vs polygenic of Type 2 diabetes pathogenesis?
+  A: MODY: single gene, dominant, high penetrance; T2DM: 400+ loci, small effects
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes pathogenesis?**
+   A. **# Genetics of type 2 diabetes (polygenic risk)**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes pathogenesis
+   C. A complication seen late in the disease course of Type 2 diabetes pathogenesis
+   D. A condition that mimics Type 2 diabetes pathogenesis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes pathogenesis presents with: Heritability — 30-70% (family studies); higher than T1DM; Architecture — Polygenic: 400+ loci identified (GWAS); each small effect (OR 1.05-1.3); TCF7L2 — Strongest signal (OR ~1.4); Wnt signalling, proinsulin processing. What is the most likely diagnosis?
+   A. **Type 2 diabetes pathogenesis**
+   B. A condition that mimics Type 2 diabetes pathogenesis but is not the same entity
+   C. A complication of Type 2 diabetes pathogenesis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes pathogenesis
+

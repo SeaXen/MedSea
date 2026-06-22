@@ -513,3 +513,32 @@ mindmap
    C. A complication of Polymyalgia Rheumatica and Related Disorders rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Polymyalgia Rheumatica and Related Disorders
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Other granulomatous conditions*
+
+**Q1.** Which of the following features is most specific or characteristic of Other granulomatous conditions?
+
+  - **A.** Bilateral Hilar Lymphadenopathy
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Bilateral Hilar Lymphadenopathy
+  >
+  > *Source:* ## Pulmonary (90%+)
+| Manifestation | Description |
+|---------------|-------------|
+| **Bilateral Hilar Lymphadenopathy (BHL)** | **Hallmark** — symmetrical, discrete, "potato nodes"; **paratracheal n
+
+**Q2.** What is the most appropriate first-line therapy for Other granulomatous conditions?
+
+  - **A.** Cardiac + High-dose steroids + immunosuppression
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Cardiac + High-dose steroids + immunosuppression
+  >
+  > *Source:* **Cardiac**   **High-dose steroids** (pulse MP → pred 1mg/kg) + **immunosuppression** (MTX, AZA, MMF)   Pacemaker/ICD for conduction defects
+

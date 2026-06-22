@@ -147,3 +147,73 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — hypoglycaemia-in-hospital-insulin-error*
+
+**Q1.** What is the most appropriate first-line therapy for hypoglycaemia-in-hospital-insulin-error?
+
+  - **A.** Insulin prescribing + Insulin passport + double-check
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Insulin prescribing + Insulin passport + double-check
+  >
+  > *Source:* **Insulin prescribing**   **Insulin passport**; **double-check** by 2 nurses; **standard concentrations**; separate rapid/basal syringes; **no abbreviations** (U for units)
+---
+
+> Auto-generated study sections for "Severe hypoglycaemia" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (16 generated)
+
+- Q: What is the definition of Severe hypoglycaemia?
+  A: Blood glucose <3.9 mmol/L in hospitalised patient with diabetes
+- Q: What is the epidemiology of Severe hypoglycaemia?
+  A: 10–25% of inpatients with diabetes; severe (<3.0) 3–8%
+- Q: What is Mortality association of Severe hypoglycaemia?
+  A: Hospital hypoglycaemia → ↑30-day mortality (independent predictor)
+- Q: What is CGM (real-time) of Severe hypoglycaemia?
+  A: Detects nocturnal/unrecognised hypo; alerts staff
+- Q: What is Capillary glucose of Severe hypoglycaemia?
+  A: Point-of-care confirmation; q4h if on insulin
+- Q: What is Medication review of Severe hypoglycaemia?
+  A: Identify culprit (insulin, SU, GLP-1 RA + insulin)
+- Q: What is Insulin error of Severe hypoglycaemia?
+  A: Sudden hypo after dose; check prescription vs administration
+- Q: What is NPO-related of Severe hypoglycaemia?
+  A: Hypo during fasting; insulin not held/reduced
+- Q: What is Renal failure of Severe hypoglycaemia?
+  A: Progressive hypo over days; eGFR <30 on renal-cleared drugs
+- Q: What is the epidemiology of Severe hypoglycaemia?
+  A: 10–25% inpatients with diabetes; severe 3–8%
+- Q: What causes Severe hypoglycaemia?
+  A: Insulin errors (wrong dose/type/patient), NPO without adjustment, renal failure, sliding scale overuse
+- Q: What is Insulin safety of Severe hypoglycaemia?
+  A: Passport, double-check, no abbreviations, standard concentrations
+- Q: What is NPO protocol of Severe hypoglycaemia?
+  A: Continue basal (50–80%), hold rapid, glucose infusion if >12h NPO
+- Q: What is Renal failure of Severe hypoglycaemia?
+  A: eGFR<30 → ↓insulin/SU 50%; pharmacist alert
+- Q: What is CGM in hospital of Severe hypoglycaemia?
+  A: Reduces severe hypo 50%; real-time alerts
+- Q: What is Mortality of Severe hypoglycaemia?
+  A: Hospital hypo → ↑30-day mortality (independent)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Severe hypoglycaemia?**
+   A. **| Definition | Blood glucose <3.9 mmol/L in hospitalised patient with diabetes |**
+   B. An unrelated condition not matching the clinical picture of Severe hypoglycaemia
+   C. A complication seen late in the disease course of Severe hypoglycaemia
+   D. A condition that mimics Severe hypoglycaemia but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Severe hypoglycaemia presents with: Definition — Blood glucose <3.9 mmol/L in hospitalised patient with diabetes; Incidence — 10–25% of inpatients with diabetes; severe (<3.0) 3–8%; Mortality association — Hospital hypoglycaemia → ↑30-day mortality (independent predictor). What is the most likely diagnosis?
+   A. **Severe hypoglycaemia**
+   B. A condition that mimics Severe hypoglycaemia but is not the same entity
+   C. A complication of Severe hypoglycaemia rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Severe hypoglycaemia
+

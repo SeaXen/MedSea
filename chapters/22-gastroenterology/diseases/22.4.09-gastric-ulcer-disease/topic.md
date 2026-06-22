@@ -724,3 +724,32 @@ flowchart TD
 
 ---
 *End of Gastric ulcer disease — Full FCPS/MRCP Topic Note*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 22: Gastroenterology — Gastric ulcer disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Gastric ulcer disease?
+
+  - **A.** CMV/TB/syphilis ulcer
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CMV/TB/syphilis ulcer
+  >
+  > *Source:* **Crohn's disease** | Younger, diarrhoea, perianal disease, skip lesions, granulomas on biopsy |
+| **CMV/TB/syphilis ulcer** | Immunocompromised; specific histology/IHC |
+| **Vasculitis (PAN, Behçet)*
+
+**Q2.** What is the most appropriate first-line therapy for Gastric ulcer disease?
+
+  - **A.** If NSAID mandatory
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — If NSAID mandatory
+  >
+  > *Source:* **If NSAID mandatory**: continue PPI co-therapy (BD during healing, then OD maintenance).
+

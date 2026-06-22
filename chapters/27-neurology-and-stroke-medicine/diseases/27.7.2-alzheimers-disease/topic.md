@@ -547,3 +547,52 @@ mindmap
 **Heading Hub:** [[06_Dementia_Cognitive_Disorders/Dementia Hub]]
 **Topic-Group Hub:** [[06_Dementia_Cognitive_Disorders/Dementia MOC]]
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Alzheimers Disease*
+
+**Q1.** Which of the following is characterised by the clinical triad: gait, urinary, cognitive?
+
+  - **A.** Alzheimers Disease
+  - **B.** Stroke
+  - **C.** TIA
+  - **D.** Migraine
+
+  > **Answer: A** — Alzheimers Disease
+  >
+  > *Source:* nality change early; <65y |
+| **MCI** | Pre-dementia stage; annual conversion ~10-15% |
+| **NPH** | Triad (gait, urinary, cognitive); reversible with shunt |
+
+---
+## 14
+
+**Q2.** Which of the following features is most specific or characteristic of Alzheimers Disease?
+
+  - **A.** FDG-PET
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — FDG-PET
+  >
+  > *Source:* *Aβ42/40 ratio** | ↓ |
+
+### Specialist Investigations
+| Test | Indication |
+|------|------------|
+| **FDG-PET (glucose metabolism)** | Atypical presentations, biomarker-negative |
+| **Amyloid PET (Flo
+
+**Q3.** What is the most appropriate first-line therapy for Alzheimers Disease?
+
+  - **A.** Cognitive stimulation therapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Cognitive stimulation therapy
+  >
+  > *Source:* **Cognitive stimulation therapy (CST)** — evidence-based
+

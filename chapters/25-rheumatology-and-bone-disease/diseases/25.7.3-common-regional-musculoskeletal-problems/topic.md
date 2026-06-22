@@ -687,3 +687,22 @@ mindmap
    C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Common regional musculoskeletal problems*
+
+**Q1.** Which of the following features is most specific or characteristic of Common regional musculoskeletal problems?
+
+  - **A.** Pain location
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Pain location
+  >
+  > *Source:* compartmental); **arthroscopy** (only for locked knee, meniscal tear) |
+
+---
+### Clinical Pattern
+- **Pain location**: **Groin** (most specific), **lateral hip**, **anterior thigh**, **referred to kne
+

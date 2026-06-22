@@ -301,3 +301,19 @@ mindmap
 ---
 
 *Last Updated: 2025-06-17 | Based on Davidson 24e Ch 11 | FCPS/MRCP Focused*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Cestode and Trematode Infections*
+
+**Q1.** What is the most appropriate first-line therapy for Cestode and Trematode Infections?
+
+  - **A.** Seizure control
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Seizure control
+  >
+  > *Source:* **Seizure control**   AEDs (levetiracetam, valproate)   As needed
+

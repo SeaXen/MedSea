@@ -153,3 +153,50 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Diabetes in children and adolescents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Diabetes in children and adolescents?
+  A: By the end of this note you should be able to:
+- Q: What is Trend of Diabetes in children and adolescents?
+  A: Rising with childhood obesity; 10-19y peak; T2DM > T1DM in some ethnic groups
+- Q: What causes Diabetes in children and adolescents?
+  A: Obesity (BMI >= 95th percentile), FH T2DM, ethnicity (South Asian, African-Caribbean), acanthosis nigricans, PCOS, maternal GDM
+- Q: What is HbA1c / FPG / OGTT of Diabetes in children and adolescents?
+  A: Diagnosis (ADA criteria)
+- Q: What is Autoantibodies of Diabetes in children and adolescents?
+  A: Exclude T1DM (negative in T2DM)
+- Q: What is C-peptide of Diabetes in children and adolescents?
+  A: Preserved in T2DM
+- Q: What is Screening of Diabetes in children and adolescents?
+  A: Age >= 10 or puberty + BMI >= 85th percentile + 2 RF (ADA)
+- Q: What are the clinical features of Diabetes in children and adolescents?
+  A: Obesity, acanthosis nigricans, FH T2DM, negative Abs
+- Q: What is 1st line of Diabetes in children and adolescents?
+  A: Lifestyle + Metformin
+- Q: What is 2nd line of Diabetes in children and adolescents?
+  A: GLP-1 RA (liraglutide) or SGLT2i (dapagliflozin) if HbA1c > 75
+- Q: What is Comorbidities of Diabetes in children and adolescents?
+  A: PCOS, NAFLD, HTN, dyslipidaemia, sleep apnoea
+- Q: What is HbA1c target of Diabetes in children and adolescents?
+  A: <53 (7.0%) if achievable without hypo
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in children and adolescents?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in children and adolescents
+   C. A complication seen late in the disease course of Diabetes in children and adolescents
+   D. A condition that mimics Diabetes in children and adolescents but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in children and adolescents presents with: Trend — Rising with childhood obesity; 10-19y peak; T2DM > T1DM in some ethnic groups; Risk Factors — Obesity (BMI >= 95th percentile), FH T2DM, ethnicity (South Asian, African-Caribbean), acanthosis nigricans, PCOS, maternal GDM; Screening — ADA: age >= 10 or puberty + BMI >= 85th percentile + 2 risk factors. What is the most likely diagnosis?
+   A. **Diabetes in children and adolescents**
+   B. A condition that mimics Diabetes in children and adolescents but is not the same entity
+   C. A complication of Diabetes in children and adolescents rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in children and adolescents
+

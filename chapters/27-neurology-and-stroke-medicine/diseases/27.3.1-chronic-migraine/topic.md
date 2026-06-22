@@ -450,3 +450,35 @@ flowchart TD
 
 ## Summary
 **Chronic migraine** (ICHD-3 1.3) = headache **≥15 days/month for >3 months** with migraine features on **≥8 days/month**. **Always exclude and treat MOH first** (withdrawal often unmasks true chronic migraine). Risk factors: high baseline frequency, MOH, obesity, depression, allodynia. Pathophysiology: trigeminovascular + central sensitisation + CGRP, 5-HT, NO dysregulation. **First-line prophylaxis:** topiramate, propranolol, amitriptyline. **Advanced:** if ≥2 oral fail → **onabotulinumtoxinA 155–195 U q12w (PREEMPT)** OR **CGRP mAbs** (erenumab, fremanezumab, galcanezumab, eptinezumab). Acute Rx limited to ≤10–15 days/month (avoid opioids). Red flags (SNOOP4) mandate imaging. Chronic migraine ↔ episodic transition in 25–50% with effective treatment.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Chronic Migraine*
+
+**Q1.** Which of the following features is most specific or characteristic of Chronic Migraine?
+
+  - **A.** MRI brain
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MRI brain
+  >
+  > *Source:* All | Must be normal |
+| **BP, BMI, depression screen** | All | Comorbidities |
+
+### Neuroimaging
+- **MRI brain (± MRA, MRV):** Only if red flags or atypical features
+- **CT head:** If sudden onset, f
+
+**Q2.** What is the most appropriate first-line therapy for Chronic Migraine?
+
+  - **A.** Withdraw
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Withdraw
+  >
+  > *Source:* **Withdraw** overused acute Rx (sudden for triptans; taper over 2–4 wk for opioids/barbiturates)
+

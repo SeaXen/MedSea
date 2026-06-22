@@ -31,3 +31,19 @@ Inflammatory myocarditis from **anti-CTLA4** (ipilimumab) + **anti-PD1/PD-L1** (
 - May resume ICI after recovery (controversial)
 
 > **Pearls** — **HIGH mortality (30–50%)**. **Stop ICI + start high-dose steroids** immediately. Can be **fulminant** — monitor closely. Often associated with **myositis/myasthenia** (overlap syndrome). Early recognition critical.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Immune checkpoint inhibitor myocarditis*
+
+**Q1.** Which of the following features is most specific or characteristic of Immune checkpoint inhibitor myocarditis?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

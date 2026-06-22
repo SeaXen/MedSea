@@ -302,3 +302,69 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Diabetic kidney disease staging (KDIGO)*
+
+**Q1.** What is the most appropriate first-line therapy for Diabetic kidney disease staging (KDIGO)?
+
+  - **A.** ACR <3 mg/mmol
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — ACR <3 mg/mmol
+  >
+  > *Source:* **ACR <3 mg/mmol (normoalbuminuria)**   Ideal but rarely achieved in established DKD
+---
+
+> Auto-generated study sections for "Microvascular Complications" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Microvascular Complications?
+  A: Chronic kidney disease attributed to diabetes: persistent albuminuria (ACR ≥3 mg/mmol) and/or eGFR <60 mL/min/1.73m² in diabetes
+- Q: What is the epidemiology of Microvascular Complications?
+  A: ~40% T1DM, ~30% T2DM develop DKD; leading cause of ESRD (40–50% of dialysis starts)
+- Q: What causes Microvascular Complications?
+  A: HbA1c, hypertension, duration, smoking, dyslipidaemia, family history, ethnicity (South Asian, African-Caribbean)
+- Q: What is the pathogenesis of Microvascular Complications?
+  A: Hyperglycaemia → hyperfiltration → glomerular hypertension → mesangial expansion → basement membrane thickening → Kimmelstiel-Wilson nodules → sclerosis
+- Q: What is KDIGO Staging of Microvascular Complications?
+  A: G1–5 (eGFR) × A1–3 (ACR); heat map for risk; G3aA2 = moderate, G3bA3 = very high
+- Q: What is the investigation of choice for Microvascular Complications?
+  A: Persistent ACR ≥3 mg/mmol (2/3 in 3–6mo) + DM (≥10y or retinopathy)
+- Q: What is ACEi/ARB of Microvascular Complications?
+  A: Max tolerated dose; target ACR <3 or ↓30%; rise in Cr ≤30% acceptable; K+ ≤5.5
+- Q: What is SGLT2i of Microvascular Complications?
+  A: 1st line add-on; eGFR ≥20 (dapa/empa) / ≥30 (cana); continue to dialysis; CREDENCE, DAPA-CKD, EMPA-KIDNEY
+- Q: What is Finerenone of Microvascular Complications?
+  A: Non-steroidal MRA; eGFR ≥25, K+ ≤4.8; FIDELIO/FIGARO; add if ACR≥30 on ACEi/ARB+SGLT2i
+- Q: What is GLP-1 RA of Microvascular Complications?
+  A: Semaglutide (FLOW ✓), liraglutide (LEADER renal ✓); CV/renal benefit
+- Q: What is BP Target of Microvascular Complications?
+  A: <130/80; ACEi/ARB + CCB/thiazide; avoid dual RAS blockade
+- Q: What is Proteinuria Target of Microvascular Complications?
+  A: ↓ACR ≥30% at 3–6mo; ultimate <3 mg/mmol
+- Q: What is HbA1c in CKD of Microvascular Complications?
+  A: Falsely LOW (↓RBC lifespan); use fructosamine/glycated albumin; target individualised
+- Q: What is Referral of Microvascular Complications?
+  A: G4–5, rapid decline >5mL/min/yr, active sediment, ACR>70 without retinopathy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Microvascular Complications?**
+   A. **DKD = leading cause of ESRD worldwide — KDIGO staging (GFR G1–5 × Albuminuria A1–3); ACEi/ARB max tolerated + SGLT2i (1st line, eGFR≥20) + finerenone (eGFR≥25) + GLP-1 RA; proteinuria reduction target**
+   B. An unrelated condition not matching the clinical picture of Microvascular Complications
+   C. A complication seen late in the disease course of Microvascular Complications
+   D. A condition that mimics Microvascular Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Microvascular Complications presents with: Epidemiology — ~40% T1DM, ~30% T2DM develop DKD; leading cause of ESRD (40–50% of dialysis starts); Risk Factors — HbA1c, hypertension, duration, smoking, dyslipidaemia, family history, ethnicity (South Asian, African-Caribbean); Pathophysiology — Hyperglycaemia → hyperfiltration → glomerular hypertension → mesangial expansion → basement membrane thickening → Kimmelstiel-Wilson nodules → sclerosis. What is the most likely diagnosis?
+   A. **Microvascular Complications**
+   B. A condition that mimics Microvascular Complications but is not the same entity
+   C. A complication of Microvascular Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Microvascular Complications
+

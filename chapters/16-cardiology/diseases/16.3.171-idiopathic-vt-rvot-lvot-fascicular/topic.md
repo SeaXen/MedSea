@@ -57,3 +57,19 @@ Vasovagal syncope, orthostatic hypotension, reflex syncope, neurocardiogenic, ca
 ### Complications & Prognosis
 
 **Syncope**, **HF** (loss of AV synchrony, ↑LV filling pressure), **Pacemaker syndrome** (loss of AV synchrony in VVI mode — fatigue, syncope, hypotension), **Battery depletion** (5-10y), **Lead complications** (dislodgement 1-5%, fracture, infection 0.5-2%, pneumothorax 1%), **Infections** (endocarditis 0.5-2%), **Twiddler syndrome** (patient manipulates), **Failure to capture/sense** (high threshold, lead fracture, EMI), **SCD** in untreated.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Idiopathic VT RVOT LVOT fascicular*
+
+**Q1.** What is the most appropriate first-line therapy for Idiopathic VT RVOT LVOT fascicular?
+
+  - **A.** Choice + DDD + VVI
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Choice + DDD + VVI
+  >
+  > *Source:* **Choice**: **DDD** (dual chamber, AV synchrony, preferred in sinus rhythm, AV block), **VVI** (single chamber, AF, infrequent), **AAI** (rare, pure sinus dysfunction).
+

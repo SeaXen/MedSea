@@ -275,3 +275,16 @@ mindmap
    C. A complication seen late in the disease course of Portal Hypertension and Complications
    D. A condition that mimics Portal Hypertension and Complications but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 23: Hepatology / Ascites**
+
+**Q1.** A patient is being evaluated for Ascites. Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+

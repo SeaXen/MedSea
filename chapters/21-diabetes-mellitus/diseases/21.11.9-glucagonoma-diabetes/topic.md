@@ -149,3 +149,56 @@ By the end of this note you should be able to:
 - **O**peration: distal pancreatectomy (+splenectomy)
 - **A**utoimmune: no
 - **D**iagnosis: glucagon >500 + NME + DM**</think>
+---
+
+> Auto-generated study sections for "Endocrine diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Endocrine diabetes?
+  A: Alpha-cell tumour secreting glucagon causing diabetes
+- Q: What is the epidemiology of Endocrine diabetes?
+  A: 1:20-50 million; ~1% of pancreatic NETs
+- Q: What is the mechanism of Endocrine diabetes?
+  A: Glucagon -> ↑HGP, ↓insulin effect -> diabetes
+- Q: What is the definition of Endocrine diabetes?
+  A: Alpha-cell tumour secreting glucagon causing diabetes
+- Q: What is the epidemiology of Endocrine diabetes?
+  A: 1:20-50 million; ~1% of pancreatic NETs
+- Q: What is the mechanism of Endocrine diabetes?
+  A: Glucagon -> ↑HGP, ↓insulin effect -> diabetes
+- Q: What is Somatostatin analogues of Endocrine diabetes?
+  A: Octreotide/lanreotide -> ↓glucagon; improves rash, weight loss, DM
+- Q: What is Insulin of Endocrine diabetes?
+  A: If DM uncontrolled
+- Q: What is Metformin of Endocrine diabetes?
+  A: If insulin resistance component
+- Q: What is Anticoagulation of Endocrine diabetes?
+  A: Prophylactic (DVT risk)
+- Q: What is Somatostatin analogues of Endocrine diabetes?
+  A: Octreotide/lanreotide -> ↓glucagon; improves rash, weight loss, DM
+- Q: What is Insulin of Endocrine diabetes?
+  A: If DM uncontrolled
+- Q: What is Metformin of Endocrine diabetes?
+  A: If insulin resistance component
+- Q: What is Anticoagulation of Endocrine diabetes?
+  A: Prophylactic (DVT risk)
+- Q: What is Zinc supplementation of Endocrine diabetes?
+  A: Improves rash (hypoaminoacidaemia)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Endocrine diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Endocrine diabetes
+   C. A complication seen late in the disease course of Endocrine diabetes
+   D. A condition that mimics Endocrine diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Endocrine diabetes presents with: Definition — Alpha-cell tumour secreting glucagon causing diabetes; Incidence — 1:20-50 million; ~1% of pancreatic NETs; Mechanism — Glucagon -> ↑HGP, ↓insulin effect -> diabetes. What is the most likely diagnosis?
+   A. **Endocrine diabetes**
+   B. A condition that mimics Endocrine diabetes but is not the same entity
+   C. A complication of Endocrine diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Endocrine diabetes
+

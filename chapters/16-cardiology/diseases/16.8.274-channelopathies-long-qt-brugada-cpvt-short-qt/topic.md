@@ -190,3 +190,19 @@ E. All of the above
 **Tags:** #medicine #cardiology #davidson #fcps #mrcp
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Channelopathies Long QT Brugada CPVT Short QT*
+
+**Q1.** What is the most appropriate first-line therapy for Channelopathies Long QT Brugada CPVT Short QT?
+
+  - **A.** Acute AF with WPW + DCCV synchronised + procainamide
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Acute AF with WPW + DCCV synchronised + procainamide
+  >
+  > *Source:* **Acute AF with WPW** (wide, irregular, haemodynamic instability): **DCCV synchronised 200J**; if stable, **procainamide** (slow AF, prolongs refractory period) or **ibutilide** — **AVOID** adenosine,
+

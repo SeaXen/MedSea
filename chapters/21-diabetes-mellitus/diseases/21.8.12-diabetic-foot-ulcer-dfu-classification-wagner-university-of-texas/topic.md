@@ -130,3 +130,43 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetic foot ulcer (DFU) management]], [[Foot risk classification (IWGDF/Scottish)]], [[Charcot neuroarthropathy]], [[Amputation prevention and multidisciplinary care]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — diabetic-foot-ulcer-dfu-classification-wagner*
+
+**Q1.** What is the most appropriate first-line therapy for diabetic-foot-ulcer-dfu-classification-wagner?
+
+  - **A.** Wagner + Antibiotics + MRI
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Wagner + Antibiotics + MRI
+  >
+  > *Source:* **Wagner 3 / UT 3A/3B**   **Antibiotics** (IV if PEDIS 3) + **MRI** for osteomyelitis
+---
+
+> Auto-generated study sections for "Diabetic foot disease" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Diabetic foot disease?
+  A: # Diabetic foot ulcer (DFU) classification (Wagner, University of Texas)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic foot disease?**
+   A. **# Diabetic foot ulcer (DFU) classification (Wagner, University of Texas)**
+   B. An unrelated condition not matching the clinical picture of Diabetic foot disease
+   C. A complication seen late in the disease course of Diabetic foot disease
+   D. A condition that mimics Diabetic foot disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic foot disease presents with: 1 — Superficial ulcer; 2 — Deep ulcer; 3 — Ulcer with osteomyelitis. What is the most likely diagnosis?
+   A. **Diabetic foot disease**
+   B. A condition that mimics Diabetic foot disease but is not the same entity
+   C. A complication of Diabetic foot disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic foot disease
+

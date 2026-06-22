@@ -388,3 +388,22 @@ flowchart TD
 
 ## Summary
 **Kleine-Levin Syndrome** is a rare, relapsing-remitting primary hypersomnia of adolescence (M:F 2:1, median onset 15 years). Cardinal features: **hypersomnia (≥18h/day) + cognitive dysfunction + behavioural changes (hyperphagia, hypersexuality, irritability)**. Episodes last 2-30 days; inter-episodic period is normal. Trigger: infection (35%). **CSF hypocretin is NORMAL** (differentiates from narcolepsy type 1). Best prophylactic: **Lithium** (serum 0.6-1.0 mmol/L). Self-limiting course, 7-12 years median duration, 60-70% recover. ~20% have persistent cognitive impairment. Avoid lithium in pregnancy (Ebstein anomaly). Supportive care for acute episodes.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Kleine-Levin Syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of Kleine-Levin Syndrome?
+
+  - **A.** EEG
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — EEG
+  >
+  > *Source:* al sleep latency |
+| **CSF hypocretin-1** | Exclude narcolepsy type 1 | **NORMAL** (low in NT1) |
+| **EEG** | Exclude encephalitis | Normal (or non-specific slowing during episode) |
+| **SPECT** (duri
+

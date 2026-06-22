@@ -279,3 +279,23 @@ A: Hypophosphataemia, hypokalaemia, hypomagnesaemia, fluid overload with reintro
 - [[Bulimia nervosa]]
 - [[Binge eating disorder and ARFID]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Anorexia nervosa*
+
+**Q1.** Which of the following features is most specific or characteristic of Anorexia nervosa?
+
+  - **A.** Mnemonic for Anorexia nervosa
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Anorexia nervosa
+  >
+  > *Source:* **Mnemonic for Anorexia nervosa** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'ABCDEFGHI'** — MSE components
+- **'4 A's'** of 
+

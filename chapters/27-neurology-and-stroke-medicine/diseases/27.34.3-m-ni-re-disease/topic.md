@@ -620,3 +620,30 @@ Ménière disease is a high-yield peripheral vestibular disorder defined by recu
 8. **A. Endolymphatic hydrops** — classical explanation.
 9. **A. It helps define recurrence, duration, and hearing association of attacks** — clinically useful.
 10. **C. Recurrent spontaneous vertigo with fluctuating auditory symptoms due to presumed inner-ear fluid dysregulation** — best summary.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Ménière disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Ménière disease?
+
+  - **A.** B. Minutes to hours
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — B. Minutes to hours
+  >
+  > *Source:* **B. Minutes to hours** — typical pattern
+
+**Q2.** In the management of Ménière disease, which of the following should be avoided or is contraindicated?
+
+  - **A.** be ignored in older patients or those (avoid in atypical attacks)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — be ignored in older patients or those (avoid in atypical attacks)
+  >
+  > *Source:* - Hearing symptoms should not be ignored in older patients or those with atypical attacks, as alternative otologic or central causes may exist
+

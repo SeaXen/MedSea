@@ -557,3 +557,35 @@ mindmap
    C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Osteomyelitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Osteomyelitis?
+
+  - **A.** Draining Sinus
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Draining Sinus
+  >
+  > *Source:* **; WBC elevated |
+
+### Chronic Osteomyelitis
+| Feature | Description |
+|---------|-------------|
+| **Draining Sinus** | **Pathognomonic** — purulent discharge, may communicate with bone |
+| **Sequest
+
+**Q2.** What is the most appropriate first-line therapy for Osteomyelitis?
+
+  - **A.** Acute Haematogenous + Oral step-down
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Acute Haematogenous + Oral step-down
+  >
+  > *Source:* **Acute Haematogenous**   **IV 2 weeks** → **Oral step-down 4-6 weeks total** (culture-directed)
+

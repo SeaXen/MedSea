@@ -648,3 +648,19 @@ mindmap
 
 **Last Updated:** 2026-06-15  
 **Next:** Build `7.1-7.4 Occupational Health.md`
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 13: Austere Medicine — Environmental Medicine - Chemical Hazards & Toxicology*
+
+**Q1.** What is the most appropriate first-line therapy for Environmental Medicine - Chemical Hazards & Toxicology?
+
+  - **A.** Arsenic + >35 µg/g Cr
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Arsenic + >35 µg/g Cr
+  >
+  > *Source:* **Arsenic**   Urinary Inorganic As+MMA+DMA   Urine   **>35 µg/g Cr**
+

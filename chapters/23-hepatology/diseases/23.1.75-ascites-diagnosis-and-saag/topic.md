@@ -323,3 +323,18 @@ mindmap
    C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Ascites diagnosis and SAAG*
+
+**Q1.** What is the most appropriate first-line therapy for Ascites diagnosis and SAAG?
+
+  - **A.** Serial LVP + Albumin
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Serial LVP + Albumin
+  >
+  > *Source:* **Serial LVP + Albumin**   First-line   Every 2-4 weeks; albumin 8g/L removed
+

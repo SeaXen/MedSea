@@ -288,3 +288,20 @@ A: Cyclophosphamide (1st trimester); MMF; methotrexate; ACEI/ARB
 - [[../Connective Tissue Disease in Pregnancy|Connective Tissue Disease in Pregnancy]] (heading hub)
 - [[../Maternal Medicine MOC|Maternal Medicine MOC]]
 - [[../Davidson Chapter 32 - Maternal Medicine Hierarchy|Davidson Chapter 32 - Maternal Medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 30: Maternal Medicine — Systemic lupus erythematosus (SLE) in pregnancy*
+
+**Q1.** Which of the following features is most specific or characteristic of Systemic lupus erythematosus (SLE) in pregnancy?
+
+  - **A.** Mnemonic for Systemic lupus erythematosus
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Systemic lupus erythematosus
+  >
+  > *Source:* **Mnemonic for Systemic lupus erythematosus (SLE) in pregnancy** — see key points in Core Clinical Content
+- **'PRE-ECLAMPSIA' risk factors** — Previous PE, Renal disease, Extremes of age, Chronic HTN
+

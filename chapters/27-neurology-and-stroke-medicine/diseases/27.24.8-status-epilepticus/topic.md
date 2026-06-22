@@ -504,3 +504,31 @@ mindmap
 8. **A. IV glucose** — must be corrected immediately.
 9. **B. It may cause hypotension/arrhythmia during infusion** — important caution.
 10. **B. Continue specialist ICU/anesthetic management with EEG guidance and repeated cause review** — the core principle in super-refractory cases.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Status Epilepticus*
+
+**Q1.** Which landmark clinical trial provided evidence relevant to the management of Status Epilepticus (specifically: equal efficacy to fosphenytoin/valproate but better safety (no cardiac monitoring, few interactions, safe in pregnancy, )?
+
+  - **A.** ESETT trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — ESETT trial
+  >
+  > *Source:* **Q:** Which 2nd line IV ASM is preferred and why?
+   **A:** Levetiracetam 20-60mg/kg IV — ESETT trial showed equal efficacy to fosphenytoin/valproate but better safety (no cardiac monitoring, few int
+
+**Q2.** What is the most appropriate first-line therapy for Status Epilepticus?
+
+  - **A.** Glucose + Check immediately + Thiamine
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Glucose + Check immediately + Thiamine
+  >
+  > *Source:* **Glucose**   **Check immediately** — if <4 mmol/L or unknown: 50ml 50% dextrose IV + **Thiamine 100mg IV** (before glucose in malnutrition/alcohol)
+

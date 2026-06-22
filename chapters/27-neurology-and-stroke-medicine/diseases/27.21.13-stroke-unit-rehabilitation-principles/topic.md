@@ -641,3 +641,19 @@ Stroke unit rehabilitation principles are a central part of modern stroke medici
 8. **A. Swallow screening and feeding safety plan** — directly reduces aspiration risk.
 9. **A. Post-stroke depression** — must be recognized and addressed.
 10. **B. Begin early with caregiver, equipment, and follow-up planning** — safest discharge principle.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Stroke unit rehabilitation principles*
+
+**Q1.** What is the most appropriate first-line therapy for Stroke unit rehabilitation principles?
+
+  - **A.** Start rehabilitation early once medically safe
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Start rehabilitation early once medically safe
+  >
+  > *Source:* Start rehabilitation early once medically safe.
+

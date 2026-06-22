@@ -164,3 +164,48 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[CGM-guided insulin adjustment]], [[rtCGM vs isCGM]], [[Time in range (TIR) targets]], [[HbA1c targets (individualised)]], [[HbA1c interpretation in CKD]]
+---
+
+> Auto-generated study sections for "Continuous glucose monitoring (CGM)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Continuous glucose monitoring (CGM)?
+  A: # CGM metrics (TIR, TBR, TAR, GMI, CV)
+- Q: What is TIR target (most adults) of Continuous glucose monitoring (CGM)?
+  A: >70% (70–180 mg/dL / 3.9–10.0 mmol/L)
+- Q: What is TBR target of Continuous glucose monitoring (CGM)?
+  A: <4% (<70 mg/dL); Level 2 <54 mg/dL <1%
+- Q: What is TAR target of Continuous glucose monitoring (CGM)?
+  A: <25% (>180 mg/dL); Level 2 >250 mg/dL <5%
+- Q: What is Pregnancy TIR range of Continuous glucose monitoring (CGM)?
+  A: 3.5–7.8 mmol/L (63–140 mg/dL); target >70%
+- Q: What is Elderly/frail TIR of Continuous glucose monitoring (CGM)?
+  A: >50%; TBR <1% (<70); TAR <10% (>250)
+- Q: What is GMI formula of Continuous glucose monitoring (CGM)?
+  A: 3.31 + 0.02392 × mean glucose (mg/dL)
+- Q: What is CV target of Continuous glucose monitoring (CGM)?
+  A: <36% = low variability
+- Q: What is AGP minimum wear of Continuous glucose monitoring (CGM)?
+  A: 14 days, >70% data capture
+- Q: What is Each 5% TIR ↑ of Continuous glucose monitoring (CGM)?
+  A: ≈ 0.3–0.5% HbA1c ↓ ≈ 15–20% microvascular risk ↓
+- Q: What is rtCGM vs isCGM of Continuous glucose monitoring (CGM)?
+  A: rtCGM = real-time alerts; isCGM = scan-dependent
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Continuous glucose monitoring (CGM)?**
+   A. **# CGM metrics (TIR, TBR, TAR, GMI, CV)**
+   B. An unrelated condition not matching the clinical picture of Continuous glucose monitoring (CGM)
+   C. A complication seen late in the disease course of Continuous glucose monitoring (CGM)
+   D. A condition that mimics Continuous glucose monitoring (CGM) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Continuous glucose monitoring (CGM) presents with: 1. Review AGP (14-day); ├─ Data completeness >70%?; ├─ TIR >70%? → Continue. What is the most likely diagnosis?
+   A. **Continuous glucose monitoring (CGM)**
+   B. A condition that mimics Continuous glucose monitoring (CGM) but is not the same entity
+   C. A complication of Continuous glucose monitoring (CGM) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Continuous glucose monitoring (CGM)
+

@@ -463,3 +463,42 @@ mindmap
    C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Antiphospholipid syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of Antiphospholipid syndrome?
+
+  - **A.** LA vs aCL vs anti-β2GPI
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — LA vs aCL vs anti-β2GPI
+  >
+  > *Source:* |
+| **LA vs aCL vs anti-β2GPI** | **LA = most specific for thrombosis** (functional assay)
+
+**Q2.** Which landmark clinical trial provided evidence relevant to the management of Antiphospholipid syndrome (specifically: **higher thrombosis recurrence** vs warfarin)?
+
+  - **A.** TRAPS trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — TRAPS trial
+  >
+  > *Source:* *; consider **LMWH** (therapeutic); **increase INR target** |
+| **DOACs** | **INFERIOR in APS** — **TRAPS trial (rivaroxaban)** and **ASTRO-APS (apixaban)** showed **higher thrombosis recurrence** vs 
+
+**Q3.** What is the most appropriate first-line therapy for Antiphospholipid syndrome?
+
+  - **A.** First venous thrombosis + Warfarin INR + lifelong
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — First venous thrombosis + Warfarin INR + lifelong
+  >
+  > *Source:* **First venous thrombosis**   **Warfarin INR 2.5-3.5** (target 3.0) — **lifelong** if unprovoked/APS
+

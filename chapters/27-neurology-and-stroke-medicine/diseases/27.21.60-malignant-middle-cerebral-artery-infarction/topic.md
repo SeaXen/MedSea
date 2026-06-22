@@ -535,3 +535,22 @@ Malignant MCA infarction is a severe space-occupying hemispheric infarct with hi
 8. **A** — Repeat CT confirms the structural reason for deterioration.
 9. **B** — Malignant swelling suspicion should trigger early contact.
 10. **A** — That is the core take-home message.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Malignant middle cerebral artery infarction*
+
+**Q1.** In the management of Malignant middle cerebral artery infarction, which of the following should be avoided or is contraindicated?
+
+  - **A.** hypotension and unnecessary delays (avoid in imaging)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — hypotension and unnecessary delays (avoid in imaging)
+  >
+  > *Source:* - Avoid hypotension and unnecessary delays in imaging.
+
+### Neurocritical escalation
+- Urgent repeat CT if drowsiness or worsening deficit develops
+

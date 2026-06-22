@@ -911,3 +911,37 @@ mindmap
 **Topic-Group Hub:** [[Motor Neurone Disease Hub]]
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]
 **Related Topics:** [[Amyotrophic Lateral Sclerosis]], [[Kennedys Disease]], [[Primary Lateral Sclerosis]], [[Progressive Muscular Atrophy]], [[Spinal Muscular Atrophy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — ALS Mimics & Differential Diagnosis*
+
+**Q1.** Which of the following features is most specific or characteristic of ALS Mimics & Differential Diagnosis?
+
+  - **A.** NO wasting early
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — NO wasting early
+  >
+  > *Source:* ic
+
+**MMN:**
+- Asymmetric, predominantly DISTAL upper limb weakness (wrist drop, hand clumsiness)
+- **NO wasting early** (key — distinguishes from ALS)
+- **NO UMN signs**
+- **NO sensory symptoms**
+- C
+
+**Q2.** What is the most appropriate first-line therapy for ALS Mimics & Differential Diagnosis?
+
+  - **A.** Occupational therapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Occupational therapy
+  >
+  > *Source:* **Occupational therapy** — equipment, ADL
+

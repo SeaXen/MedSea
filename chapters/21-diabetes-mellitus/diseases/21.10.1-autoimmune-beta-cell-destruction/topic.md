@@ -207,3 +207,58 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Type 1 diabetes pathogenesis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (16 generated)
+
+- Q: What is the definition of Type 1 diabetes pathogenesis?
+  A: By the end of this note you should be able to:
+- Q: What is Process of Type 1 diabetes pathogenesis?
+  A: T-cell mediated autoimmune destruction of pancreatic beta-cells
+- Q: What is Timeline of Type 1 diabetes pathogenesis?
+  A: Months to years from autoimmunity onset to clinical diabetes
+- Q: What is the epidemiology of Type 1 diabetes pathogenesis?
+  A: Rising 3-5% annually; peak age 10-14 years
+- Q: What is Genetics of Type 1 diabetes pathogenesis?
+  A: HLA-DR3/DR4-DQ2/DQ8 (40-50% heritability); 50+ non-HLA loci
+- Q: What is Autoantibodies of Type 1 diabetes pathogenesis?
+  A: 1+ positive = autoimmune; 2+ = high risk
+- Q: What is C-peptide of Type 1 diabetes pathogenesis?
+  A: Low/undetectable = T1DM; preserved = T2DM/MODY
+- Q: What is HLA typing of Type 1 diabetes pathogenesis?
+  A: Research/family screening; not routine
+- Q: What is Autoantibodies of Type 1 diabetes pathogenesis?
+  A: 1+ positive = autoimmune; 2+ = high risk
+- Q: What is C-peptide of Type 1 diabetes pathogenesis?
+  A: Low/undetectable = T1DM; preserved = T2DM/MODY
+- Q: What is HLA typing of Type 1 diabetes pathogenesis?
+  A: Research/family screening; not routine
+- Q: What is Autoimmunity of Type 1 diabetes pathogenesis?
+  A: CD4+/CD8+ T-cell mediated beta-cell destruction; insulitis
+- Q: What is Autoantibodies of Type 1 diabetes pathogenesis?
+  A: GAD65 (70-80%), IA-2 (50-70%), ZnT8 (60-80%), IAA (children)
+- Q: What is Staging of Type 1 diabetes pathogenesis?
+  A: Stage 1: 2+ Ab + normal glucose; Stage 2: 2+ Ab + IFG/IGT; Stage 3: clinical
+- Q: What is Teplizumab of Type 1 diabetes pathogenesis?
+  A: Anti-CD3 mAb; delays Stage 3 by ~2 years in Stage 2
+- Q: What is LADA of Type 1 diabetes pathogenesis?
+  A: Adult-onset, GAD65+, slow progression, initial non-insulin response
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 1 diabetes pathogenesis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 1 diabetes pathogenesis
+   C. A complication seen late in the disease course of Type 1 diabetes pathogenesis
+   D. A condition that mimics Type 1 diabetes pathogenesis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 1 diabetes pathogenesis presents with: Process — T-cell mediated autoimmune destruction of pancreatic beta-cells; Timeline — Months to years from autoimmunity onset to clinical diabetes; Incidence — Rising 3-5% annually; peak age 10-14 years. What is the most likely diagnosis?
+   A. **Type 1 diabetes pathogenesis**
+   B. A condition that mimics Type 1 diabetes pathogenesis but is not the same entity
+   C. A complication of Type 1 diabetes pathogenesis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 1 diabetes pathogenesis
+

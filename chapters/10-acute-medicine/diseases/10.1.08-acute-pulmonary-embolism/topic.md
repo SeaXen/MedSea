@@ -628,3 +628,35 @@ flowchart TD
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-15
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — Acute Pulmonary Embolism*
+
+**Q1.** Which of the following features is most specific or characteristic of Acute Pulmonary Embolism?
+
+  - **A.** ECG
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ECG
+  >
+  > *Source:* tenderness | 11% |
+| Loud P2 (pulmonary HTN) | 23% |
+| Hypotension (massive) | ~10% |
+### Bedside
+- **ECG**: sinus tachy (most common), S1Q3T3 (specific but rare), RBBB, TWI V1–V4 (RV strain)
+- **ABG*
+
+**Q2.** What is the most appropriate first-line therapy for Acute Pulmonary Embolism?
+
+  - **A.** Catheter-directed therapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Catheter-directed therapy
+  >
+  > *Source:* **Catheter-directed therapy** emerging
+

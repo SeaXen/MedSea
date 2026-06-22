@@ -278,3 +278,23 @@ A: Risk assessment (especially for child-related interests); treatment often cou
 - [[../Sexual and Gender Disorders|Sexual and Gender Disorders]] (heading hub)
 - [[Sexual dysfunction]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Gender dysphoria and paraphilias*
+
+**Q1.** Which of the following features is most specific or characteristic of Gender dysphoria and paraphilias?
+
+  - **A.** Mnemonic for Gender dysphoria and paraphilias
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Gender dysphoria and paraphilias
+  >
+  > *Source:* **Mnemonic for Gender dysphoria and paraphilias** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'ABCDEFGHI'** — MSE components
+-
+

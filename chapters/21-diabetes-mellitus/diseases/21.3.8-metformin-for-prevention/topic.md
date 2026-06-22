@@ -128,3 +128,36 @@ By the end of this note you should be able to:
 - **I**ndication: prediabetes + high-risk features
 - **O**nly if: BMI≥35/age<60/GDM/rising HbA1c
 - **N**ot for everyone: high-risk only**</think>
+---
+
+> Auto-generated study sections for "Type 2 diabetes prevention" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (5 generated)
+
+- Q: What is the definition of Type 2 diabetes prevention?
+  A: By the end of this note you should be able to:
+- Q: What is Evidence of Type 2 diabetes prevention?
+  A: DPP metformin arm (31% reduction); ADA/USPSTF endorsement
+- Q: What is Type 2 diabetes prevention indicated for?
+  A: Prediabetes (IGT/IFG/HbA1c 39-47) with high risk features
+- Q: What is Evidence of Type 2 diabetes prevention?
+  A: DPP metformin arm (31% reduction); ADA/USPSTF endorsement
+- Q: What is Type 2 diabetes prevention indicated for?
+  A: Prediabetes (IGT/IFG/HbA1c 39-47) with high risk features
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes prevention?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes prevention
+   C. A complication seen late in the disease course of Type 2 diabetes prevention
+   D. A condition that mimics Type 2 diabetes prevention but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes prevention presents with: Evidence — DPP metformin arm (31% reduction); ADA/USPSTF endorsement; Indication — Prediabetes (IGT/IFG/HbA1c 39-47) with high risk features; Efficacy — 31% reduction (DPP); less than lifestyle (58%). What is the most likely diagnosis?
+   A. **Type 2 diabetes prevention**
+   B. A condition that mimics Type 2 diabetes prevention but is not the same entity
+   C. A complication of Type 2 diabetes prevention rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes prevention
+

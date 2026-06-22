@@ -474,3 +474,32 @@ flowchart TD
 ### SBAs: 1-B, 2-A, 3-B, 4-B, 5-A, 6-A, 7-B, 8-A, 9-C, 10-A
 
 **Local Navigation:** [[../00_Index/Peripheral Neuropathy Hub]] | [[Davidson Chapter 25 - Neurology Hierarchy]] | [[Neurology MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Chronic Inflammatory Demyelinating Polyneuropathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Chronic Inflammatory Demyelinating Polyneuropathy?
+
+  - **A.** Albuminocytologic dissociation
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Albuminocytologic dissociation
+  >
+  > *Source:* uction block, temporal dispersion, prolonged/absent F-waves); sural sparing pattern |
+| CSF | All | **Albuminocytologic dissociation** (protein >0.45 g/L, WCC <10); 95% in typical CIDP |
+| MRI brachia
+
+**Q2.** What is the most appropriate first-line therapy for Chronic Inflammatory Demyelinating Polyneuropathy?
+
+  - **A.** Occupational therapy:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Occupational therapy:
+  >
+  > *Source:* **Occupational therapy:** ADL aids, energy conservation
+

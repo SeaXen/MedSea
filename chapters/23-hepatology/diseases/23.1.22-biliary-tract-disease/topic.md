@@ -474,3 +474,20 @@ mindmap
    C. A complication of Biliary Tract Disease rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Biliary Tract Disease
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Biliary Tract Disease*
+
+**Q1.** Which of the following is characterised by the clinical triad: Fever, Pain, Jaundice?
+
+  - **A.** Biliary Tract Disease
+  - **B.** NAFLD
+  - **C.** ALD
+  - **D.** Viral hepatitis
+
+  > **Answer: A** — Biliary Tract Disease
+  >
+  > *Source:* GE High Prob: Stone on Imaging, Cholangitis, Bilirubin>4.3, CBD>6mm+Stones**
+- **I**nfected Bile: **Charcot's Triad (Fever, Pain, Jaundice); Reynolds' Pentad (+AMS, Hypotension)**
+- **A**scending Chol
+

@@ -164,3 +164,59 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Severe hypoglycaemia]], [[Distal symmetric polyneuropathy]], [[Autonomic neuropathy]], [[Continuous glucose monitoring (CGM)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Iatrogenic hypoglycaemia unawareness*
+
+**Q1.** What is the most appropriate first-line therapy for Iatrogenic hypoglycaemia unawareness?
+
+  - **A.** CGM with alerts + Threshold
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — CGM with alerts + Threshold
+  >
+  > *Source:* **CGM with alerts**   **Threshold 4.0–4.5 mmol/L**; predictive low alerts
+---
+
+> Auto-generated study sections for "Acute complications" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Acute complications?
+  A: Hypoglycaemia unawareness (HU) = loss of autonomic warning symptoms (adrenergic: tremor, sweating, palpitations); prevalence 20–25% T1DM; severe hypoglycaemia risk 6×; caused by recurrent antecedent hypoglycaemia + autonomic neuropathy; reversible with 2–3 weeks hypo avoidance (CGM, higher targets, HCL).
+- Q: What is Impaired Awareness of Hypoglycaemia (IAH) of Acute complications?
+  A: Diminished ability to perceive onset of hypoglycaemia (Gold score ≥4, Clarke score ≥4)
+- Q: What is Hypoglycaemia Unawareness (HU) of Acute complications?
+  A: Complete loss of warning symptoms until neuroglycopenia (confusion, coma)
+- Q: What is HAAF (Hypoglycaemia-Associated Autonomic Failure) of Acute complications?
+  A: Recurrent hypoglycaemia → blunted counter-regulatory response (↓ epinephrine, ↓ glucagon) → further hypoglycaemia risk
+- Q: What is Recurrent antecedent hypoglycaemia of Acute complications?
+  A: ↑ Brain glucose transport → ↓ perception of falling glucose; ↓ sympathoadrenal response
+- Q: What is Defective glucose counter-regulation of Acute complications?
+  A: Loss of glucagon response (intrinsic α-cell defect in T1DM); blunted epinephrine (HAAF)
+- Q: What is Autonomic neuropathy of Acute complications?
+  A: ↓ Adrenergic symptoms (tremor, palpitations, sweating) — not required for IAH
+- Q: What is Cortisol/GH of Acute complications?
+  A: Preserved (late responders; not protective)
+- Q: What is Neuroglycopenia of Acute complications?
+  A: Brain glucose <1.5 mmol/L → cognitive dysfunction, confusion, seizures
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute complications?**
+   A. **Hypoglycaemia unawareness (HU) = loss of autonomic warning symptoms (adrenergic: tremor, sweating, palpitations); prevalence 20–25% T1DM; severe hypoglycaemia risk 6×; caused by recurrent antecedent h**
+   B. An unrelated condition not matching the clinical picture of Acute complications
+   C. A complication seen late in the disease course of Acute complications
+   D. A condition that mimics Acute complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Acute complications presents with: Impaired Awareness of Hypoglycaemia (IAH) — Diminished ability to perceive onset of hypoglycaemia (Gold score ≥4, Clarke score ≥4); Hypoglycaemia Unawareness (HU) — Complete loss of warning symptoms until neuroglycopenia (confusion, coma); HAAF (Hypoglycaemia-Associated Autonomic Failure) — Recurrent hypoglycaemia → blunted counter-regulatory response (↓ epinephrine, ↓ glucagon) → further hypoglycaemia risk. What is the most likely diagnosis?
+   A. **Acute complications**
+   B. A condition that mimics Acute complications but is not the same entity
+   C. A complication of Acute complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Acute complications
+

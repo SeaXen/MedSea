@@ -54,3 +54,19 @@
 - Use **DAPT / PRECISE-DAPT / ARC-HBR** to tailor duration
 
 *Sea Knowledge · Cardiology · Chronic Coronary Syndromes · v1.0 · For FCPS / MRCP exam prep*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Post PCI management DAPT duration stent thrombosis*
+
+**Q1.** What is the most appropriate first-line therapy for Post PCI management DAPT duration stent thrombosis?
+
+  - **A.** ACS
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — ACS
+  >
+  > *Source:* **ACS**: aspirin 300mg load + ticagrelor 180mg load (or prasugrel 60mg load) → 90mg BD ticagrelor + aspirin 75-100mg daily for 12 months (PLATO).
+

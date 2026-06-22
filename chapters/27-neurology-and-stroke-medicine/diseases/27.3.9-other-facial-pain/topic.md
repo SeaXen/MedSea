@@ -481,4 +481,20 @@ mindmap
 **Heading Hub:** [[../Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[../00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Other Facial Pain*
+
+**Q1.** Which of the following features is most specific or characteristic of Other Facial Pain?
+
+  - **A.** ABCs of AFP
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ABCs of AFP
+  >
+  > *Source:* **ABCs of AFP** = **A**typical **F**acial **P**ain = chronic, **B**ilateral, **A**bnormal sensation, no neurological signs, **C**onstant, **D**eep, **S**uperficial burning, **E**xclude organic cause (
+

@@ -261,3 +261,19 @@ By the end of this note you should be able to:
    C. A complication seen late in the disease course of Hepatology in Special Situations
    D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Hepatology in Special Situations*
+
+**Q1.** Which of the following features is most specific or characteristic of Hepatology in Special Situations?
+
+  - **A.** ICP vs Obstetric Cholestasis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ICP vs Obstetric Cholestasis
+  >
+  > *Source:* icaemia, Encephalopathy, DIC, Renal; **HELLP**: Haemolysis (LDH↑), Elevated LFTs, Low Platelets |
+| **ICP vs Obstetric Cholestasis** | **Same condition**; ICP = modern term; **Bile Acids >40** diagnos
+

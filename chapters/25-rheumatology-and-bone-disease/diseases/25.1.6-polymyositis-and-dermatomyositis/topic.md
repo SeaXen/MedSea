@@ -474,3 +474,32 @@ mindmap
    C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Polymyositis and dermatomyositis*
+
+**Q1.** Which of the following features is most specific or characteristic of Polymyositis and dermatomyositis?
+
+  - **A.** Heliotrope Rash
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Heliotrope Rash
+  >
+  > *Source:* **High-Yield for OSCE/Viva**
+| Sign | Location | Description |
+|------|----------|-------------|
+| **Heliotrope Rash** | **Periorbital** | **Violaceous/heliotrope** eyelid edema + rash — **pathognomon
+
+**Q2.** What is the most appropriate first-line therapy for Polymyositis and dermatomyositis?
+
+  - **A.** Mycophenolate + 1st choice for ILD
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Mycophenolate + 1st choice for ILD
+  >
+  > *Source:* **Mycophenolate (MMF)**   **1st choice for ILD**   2-3g/day (divided)   FBC, LFT, U&E q1-3mo; diarrhoea → enteric
+

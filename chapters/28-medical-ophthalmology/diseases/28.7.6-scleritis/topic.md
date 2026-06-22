@@ -664,3 +664,43 @@ D. Retinal detachment
    C. A complication of 07_Uveal_Tract rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as 07_Uveal_Tract
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / Scleritis**
+
+**Q1.** A patient presents with features consistent with Scleritis. The clinical picture is most consistent with: **Severe, deep, boring pain** — radiates to brow, temple, jaw, or sinuses; **wakes patient from sleep** (classic) What is the most likely diagnosis?
+
+  - **A.** Scleritis
+  - **B.** A closely related condition in the same clinical area
+  - **C.** A complication of Scleritis
+  - **D.** An unrelated mimic with overlapping features
+
+  > **Answer: A** — Scleritis
+
+**Q2.** In the assessment of Scleritis, severity and risk stratification are essential. Which approach is most appropriate?
+
+  - **A.** Formal severity scoring + clinical judgment
+  - **B.** Severity assessment is unnecessary if diagnosis is clear
+  - **C.** Single biomarker measurement is sufficient
+  - **D.** Severity assessment is delayed until treatment failure
+
+  > **Answer: A** — Formal severity scoring + clinical judgment
+
+**Q3.** A patient is diagnosed with Scleritis. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+
+**Q4.** Which of the following best describes the underlying pathophysiology / definition of Scleritis?
+
+  - **A.** Inflammation of the **sclera proper** (the dense avascular collagen coat of the eye). It is a **chronic, painful, potentially blinding** condition that almost always indicates an u
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — Inflammation of the **sclera proper** (the dense avascular collagen coat of the eye). It is a **chronic, painful, potentially blinding** condition tha
+

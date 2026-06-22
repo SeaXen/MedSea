@@ -468,3 +468,34 @@ mindmap
 10. **B** — Type IV critical = neonatal/early infancy surgery.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Ebstein anomaly*
+
+**Q1.** Which of the following features is most specific or characteristic of Ebstein anomaly?
+
+  - **A.** RBBB pattern
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — RBBB pattern
+  >
+  > *Source:* /posterior displaced
+- **Displacement index** measured from mitral annular plane (not TV annulus)
+- **RBBB pattern** on ECG is typical (right ventricle conduction delay)
+### MCQs
+1
+
+**Q2.** What is the most appropriate first-line therapy for Ebstein anomaly?
+
+  - **A.** Cox-Maze / Ablation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Cox-Maze / Ablation
+  >
+  > *Source:* **Cox-Maze / Ablation**   For atrial arrhythmias
+

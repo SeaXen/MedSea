@@ -170,3 +170,88 @@ By the end of this note you should be able to:
 - **K**now: monitor glucose/HbA1c 3-monthly on BB
 - **O**ptimise: low-dose thiazide + cardio-selective BB
 - **K**alium: check K+ on thiazides**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Thiazide diuretic and beta-blocker diabetes*
+
+**Q1.** Which of the following features is most specific or characteristic of Thiazide diuretic and beta-blocker diabetes?
+
+  - **A.** Antipsychotic DM
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Antipsychotic DM
+  >
+  > *Source:* obesity/insulin resistance |
+| **Steroid diabetes** | Known steroid use; post-prandial pattern |
+| **Antipsychotic DM** | Weight gain; specific agent history |
+| Condition | Distinguishing Features |
+---
+
+> Auto-generated study sections for "Drug induced diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (22 generated)
+
+- Q: What is the definition of Drug induced diabetes?
+  A: By the end of this note you should be able to:
+- Q: What is Thiazides of Drug induced diabetes?
+  A: ↑Diabetes risk 20-30% (dose-dependent)
+- Q: What is Beta-blockers of Drug induced diabetes?
+  A: ↑Risk 20-25%; masks hypoglycaemia
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Hypokalaemia -> ↓insulin secretion; ↓insulin sensitivity
+- Q: What is Thiazides of Drug induced diabetes?
+  A: ↑Diabetes risk 20-30% (dose-dependent)
+- Q: What is Beta-blockers of Drug induced diabetes?
+  A: ↑Risk 20-25%; masks hypoglycaemia
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Hypokalaemia -> ↓insulin secretion; ↓insulin sensitivity
+- Q: What is Glucose/HbA1c of Drug induced diabetes?
+  A: Screen before/after initiation; monitor
+- Q: What is Potassium of Drug induced diabetes?
+  A: Check if on thiazides (hypokalaemia -> ↓insulin)
+- Q: What is Glucose/HbA1c of Drug induced diabetes?
+  A: Screen before/after initiation; monitor
+- Q: What is Potassium of Drug induced diabetes?
+  A: Check if on thiazides (hypokalaemia -> ↓insulin)
+- Q: What is Glucose/HbA1c of Drug induced diabetes?
+  A: Screen before/after initiation; monitor
+- Q: What is Potassium of Drug induced diabetes?
+  A: Check if on thiazides (hypokalaemia -> ↓insulin)
+- Q: What is Lipids of Drug induced diabetes?
+  A: Beta-blockers may worsen TG/HDL
+- Q: What is Glucose/HbA1c of Drug induced diabetes?
+  A: Screen before/after initiation; monitor
+- Q: What is Potassium of Drug induced diabetes?
+  A: Check if on thiazides (hypokalaemia -> ↓insulin)
+- Q: What is Lipids of Drug induced diabetes?
+  A: Beta-blockers may worsen TG/HDL
+- Q: What is Thiazide of Drug induced diabetes?
+  A: Dose-dependent DM risk; hypokalaemia -> ↓insulin secretion; low-dose (12.5-25mg)
+- Q: What is Beta-blocker of Drug induced diabetes?
+  A: Non-selective > cardio-selective; masks hypoglycaemia
+- Q: What is Vasodilating BB of Drug induced diabetes?
+  A: Carvedilol, nebivolol -> improve insulin sensitivity
+- Q: How is Drug induced diabetes monitored?
+  A: Essential on thiazides (hypokalaemia -> ↓insulin)
+- Q: What is the dose of Drug induced diabetes?
+  A: 12.5-25mg HCTZ preferred
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug induced diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Drug induced diabetes
+   C. A complication seen late in the disease course of Drug induced diabetes
+   D. A condition that mimics Drug induced diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Drug induced diabetes presents with: Thiazides — ↑Diabetes risk 20-30% (dose-dependent); Beta-blockers — ↑Risk 20-25%; masks hypoglycaemia; Mechanism (Thiazide) — Hypokalaemia -> ↓insulin secretion; ↓insulin sensitivity. What is the most likely diagnosis?
+   A. **Drug induced diabetes**
+   B. A condition that mimics Drug induced diabetes but is not the same entity
+   C. A complication of Drug induced diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Drug induced diabetes
+

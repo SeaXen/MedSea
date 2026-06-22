@@ -200,3 +200,69 @@ for parent, topic, section, content in notes:
     print(f"Created: {topic} ({result.get('bytes_written', 'error')} bytes)")
 
 print("Algorithm note complete")
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — EASD 2023+ consensus algorithm*
+
+**Q1.** What is the most appropriate first-line therapy for EASD 2023+ consensus algorithm?
+
+  - **A.** GLP-1 RA
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — GLP-1 RA
+  >
+  > *Source:* **GLP-1 RA**   SGLT2i   Same as above
+---
+
+> Auto-generated study sections for "ADA" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of ADA?
+  A: By the end of this note you should be able to:
+- Q: What is Guideline of ADA?
+  A: ADA/EASD Consensus Report 2023 (Diabetes Care, Diabetologia) -- updated annually
+- Q: What is Philosophy of ADA?
+  A: Person-centred care -- individualised targets, shared decision-making, comorbidity-driven drug selection
+- Q: What is Key Shift of ADA?
+  A: Comorbidity-first -- ASCVD/HF/CKD/obesity determine 1st add-on after metformin, NOT glucose-lowering potency alone
+- Q: What is Step 1 of ADA?
+  A: Lifestyle + Metformin (unless contraindicated)
+- Q: What is Step 2 of ADA?
+  A: Assess comorbidities -- ASCVD/HF/CKD/Obesity drive choice
+- Q: What is ASCVD of ADA?
+  A: GLP-1 RA (liraglutide, semaglutide, dulaglutide) OR SGLT2i (empagliflozin, canagliflozin, dapagliflozin)
+- Q: What is HF of ADA?
+  A: SGLT2i 1st line (dapagliflozin, empagliflozin) -- all HF types
+- Q: What is CKD of ADA?
+  A: SGLT2i 1st line (dapa [ge]25, empa [ge]20, cana [ge]30) -- continue to dialysis
+- Q: What is Obesity of ADA?
+  A: GLP-1 RA (semaglutide 2.4mg, liraglutide 3mg) OR Tirzepatide 15mg
+- Q: What is No comorbidity of ADA?
+  A: SGLT2i/GLP-1 RA/DPP-4i/TZD -- consider cost, access, patient preference
+- Q: How is ADA managed?
+  A: Met + SGLT2i + GLP-1 RA = optimal CV/renal/weight combo
+- Q: What is Insulin start of ADA?
+  A: Basal 0.1-0.2 U/kg; continue Met [plus/minus] SGLT2i/GLP-1 RA; stop SU
+- Q: What is NICE NG28 of ADA?
+  A: Met -> dual (add SGLT2i if ASCVD/HF/CKD) -> triple -> insulin; GLP-1 RA if BMI[ge]35
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes ADA?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of ADA
+   C. A complication seen late in the disease course of ADA
+   D. A condition that mimics ADA but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected ADA presents with: Guideline — ADA/EASD Consensus Report 2023 (Diabetes Care, Diabetologia) -- updated annually; Philosophy — Person-centred care -- individualised targets, shared decision-making, comorbidity-driven drug selection; Key Shift — Comorbidity-first -- ASCVD/HF/CKD/obesity determine 1st add-on after metformin, NOT glucose-lowering potency alone. What is the most likely diagnosis?
+   A. **ADA**
+   B. A condition that mimics ADA but is not the same entity
+   C. A complication of ADA rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as ADA
+

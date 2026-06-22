@@ -30,3 +30,19 @@
 > - **Primary MR** → surgery; **secondary MR** → GDMT + TEER (COAPT)
 > - **PISA** is the workhorse for EROA calculation
 > - **Pulmonary vein systolic reversal** = severe MR
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Hemodynamic assessment VC width EROA regurgitant volume*
+
+**Q1.** Which of the following features is most specific or characteristic of Hemodynamic assessment VC width EROA regurgitant volume?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

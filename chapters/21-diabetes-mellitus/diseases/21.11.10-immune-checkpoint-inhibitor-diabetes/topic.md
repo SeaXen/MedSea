@@ -163,3 +163,74 @@ By the end of this note you should be able to:
 - **T**ype 1: fulminant
 - **E**lderly: median age 60s
 - **S**hared decision: oncologist + endocrinologist**</think>
+---
+
+> Auto-generated study sections for "Drug induced diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (24 generated)
+
+- Q: What is the definition of Drug induced diabetes?
+  A: By the end of this note you should be able to:
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 0.5-1.5% on anti-PD-1/PD-L1; higher with combination
+- Q: What is Onset of Drug induced diabetes?
+  A: Median 6-12 weeks; can occur anytime
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Anti-PD-1/PD-L1 -> loss of peripheral tolerance -> autoimmune beta-cell destruction
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 0.5-1.5% on anti-PD-1/PD-L1; higher with combination
+- Q: What is Onset of Drug induced diabetes?
+  A: Median 6-12 weeks; can occur anytime
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Anti-PD-1/PD-L1 -> loss of peripheral tolerance -> autoimmune beta-cell destruction
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Immune checkpoint blockade -> loss of tolerance -> autoimmune beta-cell destruction
+- Q: What is Agents of Drug induced diabetes?
+  A: Anti-PD-1 (pembrolizumab, nivolumab), Anti-PD-L1 (atezolizumab, durvalumab, avelumab)
+- Q: What is Onset of Drug induced diabetes?
+  A: Weeks-months after ICI initiation
+- Q: What is Insulin of Drug induced diabetes?
+  A: Lifelong (fulminant beta-cell destruction)
+- Q: What is Regimen of Drug induced diabetes?
+  A: Basal-bolus or CSII
+- Q: What is ICI continuation of Drug induced diabetes?
+  A: Multidisciplinary decision (oncologist + endocrinologist)
+- Q: What is Steroids of Drug induced diabetes?
+  A: Generally avoided (worsens hyperglycaemia)
+- Q: What is Insulin of Drug induced diabetes?
+  A: Lifelong (fulminant beta-cell destruction)
+- Q: What is Regimen of Drug induced diabetes?
+  A: Basal-bolus or CSII
+- Q: What is ICI continuation of Drug induced diabetes?
+  A: Multidisciplinary decision (oncologist + endocrinologist)
+- Q: What is Steroids of Drug induced diabetes?
+  A: Generally avoided (worsens hyperglycaemia)
+- Q: How is Drug induced diabetes monitored?
+  A: Standard T1DM follow-up
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 0.5-1.5% on anti-PD-1/PD-L1
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Immune checkpoint blockade -> autoimmune beta-cell destruction
+- Q: What are the clinical features of Drug induced diabetes?
+  A: Acute; DKA in 60-80%; autoantibodies often negative initially
+- Q: How is Drug induced diabetes managed?
+  A: Standard DKA protocol; lifelong insulin; ICI continuation debated
+- Q: What is ICI agents of Drug induced diabetes?
+  A: Anti-PD-1 (pembrolizumab, nivolumab); anti-PD-L1 (atezolizumab, durvalumab, avelumab)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug induced diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Drug induced diabetes
+   C. A complication seen late in the disease course of Drug induced diabetes
+   D. A condition that mimics Drug induced diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Drug induced diabetes presents with: Incidence — 0.5-1.5% on anti-PD-1/PD-L1; higher with combination; Onset — Median 6-12 weeks; can occur anytime; Mechanism — Anti-PD-1/PD-L1 -> loss of peripheral tolerance -> autoimmune beta-cell destruction. What is the most likely diagnosis?
+   A. **Drug induced diabetes**
+   B. A condition that mimics Drug induced diabetes but is not the same entity
+   C. A complication of Drug induced diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Drug induced diabetes
+

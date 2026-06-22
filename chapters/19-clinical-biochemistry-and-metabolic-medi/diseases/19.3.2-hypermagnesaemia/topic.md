@@ -515,3 +515,21 @@ B, B, C, C, B, B, C, B, C, B
 
 ### SBAs
 1-A, 2-A, 3-A, 4-A, 5-A
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 19: Clinical Biochemistry — Hypermagnesaemia*
+
+**Q1.** What is the most appropriate first-line therapy for Hypermagnesaemia?
+
+  - **A.** Review Medications
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Review Medications
+  >
+  > *Source:* **Review Medications**   Stop Mg²⁺-Containing Antacids/Laxatives/Enemas  
+
+### Step 2: Enhance Excretion
+

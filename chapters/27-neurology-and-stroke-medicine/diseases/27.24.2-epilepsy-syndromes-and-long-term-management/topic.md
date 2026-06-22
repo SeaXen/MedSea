@@ -569,3 +569,30 @@ mindmap
 8. **A. Carbamazepine** — may worsen generalized myoclonic/absence seizures.
 9. **B. Vasovagal syncope** — presyncope and rapid full recovery are key clues.
 10. **B. MRI identifies structural epileptogenic lesions that affect prognosis and management** — EEG and MRI answer different questions.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Epilepsy syndromes and long-term management*
+
+**Q1.** Which of the following features is most specific or characteristic of Epilepsy syndromes and long-term management?
+
+  - **A.** B. Temporal lobe
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — B. Temporal lobe
+  >
+  > *Source:* **B. Temporal lobe** — epigastric aura and automatisms are highly typical
+
+**Q2.** What is the most appropriate first-line therapy for Epilepsy syndromes and long-term management?
+
+  - **A.** start medication when recurrence risk justifies it
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — start medication when recurrence risk justifies it
+  >
+  > *Source:* start medication when recurrence risk justifies it
+

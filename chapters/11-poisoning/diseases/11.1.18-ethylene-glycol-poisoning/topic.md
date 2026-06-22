@@ -509,3 +509,34 @@ Ethylene glycol poisoning = glycolic acid (metabolic acidosis) + oxalic acid (ca
 7. **B** - Some antifreeze contains fluorescein → urine fluorescence. Supports EG diagnosis but not universal (not all EG has it). Absence doesn't exclude EG.
 8. **B** - Early: parent alcohol (EG) → high osmolal gap, normal anion gap. As metabolized → glycolic/oxalic acid → anion gap rises, osmolal gap normalizes. Gap = measured - (2×Na + glu/18 + BUN/2.8 + EtOH/4.6).
 9. **B** - Fomepizole dialyzed out → increase to 15 mg/kg q12h during/after dialysis. Continue until EG level < 20 mmol/L and pH normal.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Ethylene Glycol Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Ethylene Glycol Poisoning?
+
+  - **A.** Urinalysis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Urinalysis
+  >
+  > *Source:* **Urinalysis** — **calcium oxalate crystals** (envelope/dumbbell/needle) — **HALLMARK**
+5
+
+**Q2.** What is the most appropriate first-line therapy for Ethylene Glycol Poisoning?
+
+  - **A.** PREFERRED + Loading + 15 mg/kg IV
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — PREFERRED + Loading + 15 mg/kg IV
+  >
+  > *Source:* Antidote: Fomepizole — **PREFERRED** (Same as Methanol)
+- **Loading**: **15 mg/kg IV** over 30 min
+- **Maintenance**: **10 mg/kg IV q12h** × 4 doses, then **15 mg/kg q12h** if dialysis planned
+- **Dur
+

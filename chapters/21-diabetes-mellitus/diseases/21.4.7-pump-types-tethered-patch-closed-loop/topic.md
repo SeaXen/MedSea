@@ -151,3 +151,68 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Hybrid closed-loop (670G, 780G, CamAPS, Loop)]], [[Automated insulin delivery (AID) systems]], [[CGM-guided insulin adjustment]], [[Continuous glucose monitoring (CGM)]]
+---
+
+> Auto-generated study sections for "Insulin pump therapy (CSII)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Insulin pump therapy (CSII)?
+  A: CSII = Continuous Subcutaneous Insulin Infusion — Tethered (tubed), Patch (tubeless), and Closed-Loop (AID) systems; only rapid-acting insulin used; NICE criteria for funding.
+- Q: What is NICE CSII criteria T1DM of Insulin pump therapy (CSII)?
+  A: HbA1c ≥69 mmol/mol (8.5%) OR disabling hypos + DAFNE + carb counting
+- Q: What is Tethered pumps of Insulin pump therapy (CSII)?
+  A: Medtronic 780G, Tandem t:slim X2, Ypsomed — tubing
+- Q: What is Patch pumps of Insulin pump therapy (CSII)?
+  A: Omnipod 5 (AID), Omnipod DASH — tubeless, pod on body
+- Q: What is HCL systems of Insulin pump therapy (CSII)?
+  A: 780G (PID), Control-IQ (MPC), Omnipod 5 (MPC), CamAPS FX (MPC)
+- Q: What is Basal rate of Insulin pump therapy (CSII)?
+  A: Units/hour; 24+ programmable segments
+- Q: What is Temp basal of Insulin pump therapy (CSII)?
+  A: % of programmed; exercise 50–80%, illness 120–150%
+- Q: How is Insulin pump therapy (CSII) classified?
+  A: Standard, extended/square, dual/multi-wave
+- Q: What is IOB of Insulin pump therapy (CSII)?
+  A: Active insulin tracking 3–5h; prevents stacking
+- Q: What is Infusion set change of Insulin pump therapy (CSII)?
+  A: Every 2–3 days (72h max); rotate sites
+- Q: What is Lipohypertrophy of Insulin pump therapy (CSII)?
+  A: Causes erratic absorption — must rotate sites
+- Q: What is NICE CSII criteria T1DM of Insulin pump therapy (CSII)?
+  A: HbA1c ≥69 mmol/mol (8.5%) OR disabling hypos + DAFNE + carb counting
+- Q: What is Tethered pumps of Insulin pump therapy (CSII)?
+  A: Medtronic 780G, Tandem t:slim X2, Ypsomed — tubing
+- Q: What is Patch pumps of Insulin pump therapy (CSII)?
+  A: Omnipod 5 (AID), Omnipod DASH — tubeless, pod on body
+- Q: What is HCL systems of Insulin pump therapy (CSII)?
+  A: 780G (PID), Control-IQ (MPC), Omnipod 5 (MPC), CamAPS FX (MPC)
+- Q: What is Basal rate of Insulin pump therapy (CSII)?
+  A: Units/hour; 24+ programmable segments
+- Q: What is Temp basal of Insulin pump therapy (CSII)?
+  A: % of programmed; exercise 50–80%, illness 120–150%
+- Q: How is Insulin pump therapy (CSII) classified?
+  A: Standard, extended/square, dual/multi-wave
+- Q: What is IOB of Insulin pump therapy (CSII)?
+  A: Active insulin tracking 3–5h; prevents stacking
+- Q: What is Infusion set change of Insulin pump therapy (CSII)?
+  A: Every 2–3 days (72h max); rotate sites
+- Q: What is Lipohypertrophy of Insulin pump therapy (CSII)?
+  A: Causes erratic absorption — must rotate sites
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin pump therapy (CSII)?**
+   A. **CSII = Continuous Subcutaneous Insulin Infusion — Tethered (tubed), Patch (tubeless), and Closed-Loop (AID) systems; only rapid-acting insulin used; NICE criteria for funding.**
+   B. An unrelated condition not matching the clinical picture of Insulin pump therapy (CSII)
+   C. A complication seen late in the disease course of Insulin pump therapy (CSII)
+   D. A condition that mimics Insulin pump therapy (CSII) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Insulin pump therapy (CSII) presents with: Tethered (Tubed) — Traditional; Patch (Tubeless) — Wearable/pod; Closed-Loop / AID — Hybrid (HCL). What is the most likely diagnosis?
+   A. **Insulin pump therapy (CSII)**
+   B. A condition that mimics Insulin pump therapy (CSII) but is not the same entity
+   C. A complication of Insulin pump therapy (CSII) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Insulin pump therapy (CSII)
+

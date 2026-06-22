@@ -147,3 +147,65 @@ By the end of this note you should be able to:
 - **I**NSTI: DTG/BIC better metabolic than PI
 - **S**witch: PI -> INSTI if metabolic issues
 - **K**now: darunavir = metabolic winner**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Protease inhibitor diabetes*
+
+**Q1.** What is the most appropriate first-line therapy for Protease inhibitor diabetes?
+
+  - **A.** Metabolic Rx
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Metabolic Rx
+  >
+  > *Source:* **Metabolic Rx**   Metformin 1st line for IR; SGLT2i/GLP-1 RA if T2DM
+---
+
+> Auto-generated study sections for "Drug induced diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Drug induced diabetes?
+  A: By the end of this note you should be able to:
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 5-15% on PI-based ART develop diabetes
+- Q: What is Risk of Drug induced diabetes?
+  A: Older PIs (indinavir, lopinavir) > newer PIs (atazanavir, darunavir)
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 5-15% on PI-based ART develop diabetes
+- Q: What is Risk of Drug induced diabetes?
+  A: Older PIs (indinavir, lopinavir) > newer PIs (atazanavir, darunavir)
+- Q: What is Lipoatrophy of Drug induced diabetes?
+  A: Avoid stavudine/ZDV; switch to TAF/ABC; tesamorelin if HIV
+- Q: What is Lipohypertrophy of Drug induced diabetes?
+  A: Weight loss; switch ART; surgical (liposuction)
+- Q: What is Older PI of Drug induced diabetes?
+  A: Indinavir, lopinavir -> high IR, lipodystrophy, dyslipidaemia
+- Q: What is Newer PI of Drug induced diabetes?
+  A: Atazanavir, darunavir -> lower metabolic risk
+- Q: What is Darunavir of Drug induced diabetes?
+  A: Best metabolic profile among PIs
+- Q: What is Statin + PI of Drug induced diabetes?
+  A: Atorvastatin ≤20mg; rosuvastatin 10mg; avoid simvastatin
+- Q: What is Metformin of Drug induced diabetes?
+  A: 1st line for IR
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug induced diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Drug induced diabetes
+   C. A complication seen late in the disease course of Drug induced diabetes
+   D. A condition that mimics Drug induced diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Drug induced diabetes presents with: Incidence — 5-15% on PI-based ART develop diabetes; Risk — Older PIs (indinavir, lopinavir) > newer PIs (atazanavir, darunavir); Mechanism — Insulin resistance, lipodystrophy, mitochondrial toxicity. What is the most likely diagnosis?
+   A. **Drug induced diabetes**
+   B. A condition that mimics Drug induced diabetes but is not the same entity
+   C. A complication of Drug induced diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Drug induced diabetes
+

@@ -241,3 +241,18 @@ flowchart TD
    C. A complication of Hepatology in Special Situations rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hepatology in Special Situations
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Liver disease in critical illness*
+
+**Q1.** What is the most appropriate first-line therapy for Liver disease in critical illness?
+
+  - **A.** Treat the Cause + Restore Perfusion
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat the Cause + Restore Perfusion
+  >
+  > *Source:* **Treat the Cause**   **Restore Perfusion** (Fluids, Vasopressors, Inotropes, Blood)
+

@@ -502,3 +502,19 @@ Barbiturate poisoning = GABAₐ duration ↑ (mimics GABA) → **NO ceiling on r
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Barbiturate Poisoning*
+
+**Q1.** What is the most appropriate first-line therapy for Barbiturate Poisoning?
+
+  - **A.** Glucose
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Glucose
+  >
+  > *Source:* **Glucose**: monitor q2-4h, treat hypoglycemia
+

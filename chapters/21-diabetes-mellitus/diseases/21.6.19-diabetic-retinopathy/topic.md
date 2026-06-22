@@ -283,3 +283,65 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Diabetic retinopathy*
+
+**Q1.** What is the most appropriate first-line therapy for Diabetic retinopathy?
+
+  - **A.** Centre-involving DMO + Anti-VEGF
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Centre-involving DMO + Anti-VEGF
+  >
+  > *Source:* **Centre-involving DMO**   **Anti-VEGF** (Ranibizumab 0.5mg, Aflibercept 2mg, Bevacizumab 1.25mg off-label)   Dexamethasone implant (Ozurdex) if anti-VEGF inadequate   Monthly loading ×3, then treat-a
+---
+
+> Auto-generated study sections for "Microvascular Complications" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Microvascular Complications?
+  A: Microvascular retinal damage from chronic hyperglycaemia → capillary occlusion, leakage, neovascularisation
+- Q: What is the epidemiology of Microvascular Complications?
+  A: Any DR: ~35% T1DM, ~25% T2DM; Vision-threatening DR: ~10% T1DM, ~5% T2DM
+- Q: What causes Microvascular Complications?
+  A: Duration of diabetes, HbA1c, hypertension, dyslipidaemia, pregnancy, nephropathy, anaemia
+- Q: What is the pathogenesis of Microvascular Complications?
+  A: Pericyte loss → capillary basement membrane thickening → occlusion → ischaemia → VEGF → leakage + neovascularisation
+- Q: What is Screening of Microvascular Complications?
+  A: Digital photography; Annual (2-yearly if no DR); ETDRS grading
+- Q: What is ETDRS referral thresholds of Microvascular Complications?
+  A: Severe NPDR (43–53): 2–4 weeks; PDR (61+): 1–2 weeks; DMO (M1): 2–4 weeks
+- Q: What is 4:2:1 Rule of Microvascular Complications?
+  A: Severe NPDR: 4 quadrant haem OR 2 quadrant venous beading OR 1 quadrant IRMA
+- Q: How is Microvascular Complications managed?
+  A: Centre-involving: Anti-VEGF 1st line (Ranibizumab/Aflibercept/Bevacizumab); Non-centre: Laser
+- Q: What is Vitreous haemorrhage of Microvascular Complications?
+  A: Observe 3mo → Vitrectomy if non-clearing; Early if PDR (DRVS)
+- Q: What is Tractional RD of Microvascular Complications?
+  A: Vitrectomy urgent if macula threatened
+- Q: What is Systemic control of Microvascular Complications?
+  A: HbA1c <53, BP <130/80, Fenofibrate for DR progression
+- Q: What is Pregnancy of Microvascular Complications?
+  A: Screen each trimester; rapid progression risk
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Microvascular Complications?**
+   A. **Diabetic retinopathy: leading cause of blindness in working-age adults — microvascular complication; ETDRS grading drives screening/referral; NPDR → PDR → DMO; Anti-VEGF 1st line for DMO; PRP for PDR;**
+   B. An unrelated condition not matching the clinical picture of Microvascular Complications
+   C. A complication seen late in the disease course of Microvascular Complications
+   D. A condition that mimics Microvascular Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Microvascular Complications presents with: Definition — Microvascular retinal damage from chronic hyperglycaemia → capillary occlusion, leakage, neovascularisation; Prevalence — Any DR: ~35% T1DM, ~25% T2DM; Vision-threatening DR: ~10% T1DM, ~5% T2DM; Incidence — T1DM: ~90% at 20y; T2DM: ~60% at 20y. What is the most likely diagnosis?
+   A. **Microvascular Complications**
+   B. A condition that mimics Microvascular Complications but is not the same entity
+   C. A complication of Microvascular Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Microvascular Complications
+

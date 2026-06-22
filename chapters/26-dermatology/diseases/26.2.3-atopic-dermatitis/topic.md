@@ -898,3 +898,37 @@ Atopic dermatitis is the most common chronic inflammatory skin disease (15-20% c
 **Chapter MOC:** [[Dermatology MOC]]  
 **Drug Reference:** [[../00_Index/Dermatology Drug Reference]]  
 **Related Topics:** [[Contact Dermatitis]], [[Psoriasis Vulgaris (Chronic Plaque)]], [[Asteatotic Eczema]], [[Nummular Eczema]], [[Gravitational Eczema]], [[Pompholyx]], [[Eczema Herpeticum]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 26: Dermatology — Atopic Dermatitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Atopic Dermatitis?
+
+  - **A.** Pruritus
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Pruritus
+  >
+  > *Source:* ---
+### History
+- **Pruritus** (hallmark, worse at night, sleep disturbance)
+- **Chronic relapsing** course (>6 months)
+- **Personal/family atopy** (asthma, allergic rhinitis, food allergy, AD)
+- **Ea
+
+**Q2.** What is the most appropriate first-line therapy for Atopic Dermatitis?
+
+  - **A.** Pimecrolimus
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Pimecrolimus
+  >
+  > *Source:* **Pimecrolimus**   1% cream   Mild-moderate, face/flexures   Less burning   Less potent than tacrolimus  
+
+### Biologics / JAK Inhibitors (Licensed for Moderate-Severe AD)
+

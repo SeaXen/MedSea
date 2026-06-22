@@ -612,3 +612,19 @@ Dilated cardiomyopathy is a syndrome of ventricular dilation and systolic dysfun
 8. **A** — AF materially affects symptoms, stroke risk, and management in DCM.
 9. **A** — Peripartum cardiomyopathy is a classic DCM-like syndrome in the postpartum setting.
 10. **A** — Prognosis depends heavily on cause, reversibility, EF, arrhythmia burden, and response to therapy.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Myocardial infarction with non-obstructive coronar*
+
+**Q1.** Which of the following features is most specific or characteristic of Myocardial infarction with non-obstructive coronar?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

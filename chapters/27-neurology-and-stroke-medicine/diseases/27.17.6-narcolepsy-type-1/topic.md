@@ -539,3 +539,34 @@ flowchart TD
 ## Summary
 
 Narcolepsy Type 1 is characterised by **excessive daytime sleepiness + cataplexy** (or low CSF hypocretin-1), caused by **autoimmune destruction of orexin neurons** in the lateral hypothalamus (>90% loss). Strong HLA-DQB1*06:02 association (>95%). Classic **tetrad**: EDS, cataplexy, hypnagogic hallucinations, sleep paralysis. **Diagnosis**: PSG + MSLT (mean sleep latency ≤8 min + ≥2 SOREMPs); CSF hypocretin ≤110 pg/mL confirms. **Treatment**: scheduled naps + behavioural measures; **modafinil first-line for EDS**; **sodium oxybate most effective for cataplexy + EDS** (controlled substance); alternative agents include pitolisant, solriamfetol, venlafaxine. **DVLA notification required**. Modafinil induces CYP3A4 → reduces OCP efficacy. Lifelong condition with stable course; prognosis depends on treatment adherence and accident prevention.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Narcolepsy Type 1*
+
+**Q1.** Which of the following features is most specific or characteristic of Narcolepsy Type 1?
+
+  - **A.** CSF hypocretin-1
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CSF hypocretin-1
+  >
+  > *Source:* Investigations
+| Investigation | Indication | Finding |
+|---------------|------------|---------|
+| **CSF hypocretin-1 (orexin-A)** | Atypical/diagnostic uncertainty | ≤110 pg/mL (diagnostic) |
+| **HLA
+
+**Q2.** What is the most appropriate first-line therapy for Narcolepsy Type 1?
+
+  - **A.** Modafinil
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Modafinil
+  >
+  > *Source:* **Modafinil**   Wake-promoter   100-400mg/day (split BD)   **First-line**; minimal side effects; CYP3A4 inducer; ↓ OCP efficacy
+

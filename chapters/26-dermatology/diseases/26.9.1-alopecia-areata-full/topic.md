@@ -476,3 +476,21 @@ SALT = (0.50 × 40) + (0.20 × 18) = 20 + 3.6 = 23.6% → MILD
 ---
 
 > [!tip] **Exam focus:** Know definition, key clinical features, first-line management, and the most important complication. Always compare with the main differential.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 26: Dermatology — Alopecia Areata full*
+
+**Q1.** Which of the following features is most specific or characteristic of Alopecia Areata full?
+
+  - **A.** Exclamation Mark Hairs
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Exclamation Mark Hairs
+  >
+  > *Source:* -------|-------------|
+| **Patches** | Well-circumscribed, smooth, non-scarring, **no scaling** |
+| **Exclamation Mark Hairs** | **Short, broken hairs** (3-4 mm) tapering at base — **pathognomonic** a
+

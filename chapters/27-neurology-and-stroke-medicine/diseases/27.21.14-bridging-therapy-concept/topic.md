@@ -536,3 +536,19 @@ Bridging therapy is the sequential reperfusion strategy of **IV thrombolysis fol
 8. **A** — Direct thrombectomy and bridging differ mainly by whether the lytic step is appropriate.  
 9. **A** — It combines pharmacologic and mechanical reperfusion.  
 10. **A** — Hemorrhage exclusion plus LVO confirmation are the prerequisites.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Bridging therapy concept*
+
+**Q1.** What is the most appropriate first-line therapy for Bridging therapy concept?
+
+  - **A.** eligible for IV thrombolysis
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — eligible for IV thrombolysis
+  >
+  > *Source:* If an LVO patient is **eligible for IV thrombolysis**, give it promptly according to protocol.
+

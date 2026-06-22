@@ -706,3 +706,33 @@ D. Anti-complement C5
    C. A complication of 12_Systemic_Disease_Manifestations rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as 12_Systemic_Disease_Manifestations
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Behçet's Disease (Ocular)*
+
+**Q1.** Which of the following features is most specific or characteristic of Behçet's Disease (Ocular)?
+
+  - **A.** Uveitis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Uveitis
+  >
+  > *Source:* **Uveitis** — typically **bilateral recurrent panuveitis with hypopyon**; anterior uveitis with hypopyon is dramatic but treatable; retinal vasculitis is the sight-threatening feature
+
+### Other Syste
+
+**Q2.** What is the most appropriate first-line therapy for Behçet's Disease (Ocular)?
+
+  - **A.** Step + Intensive topical steroid + cycloplegic
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Step + Intensive topical steroid + cycloplegic
+  >
+  > *Source:* **Step 1 — Acute anterior uveitis (with hypopyon):**
+- **Intensive topical steroid** (prednisolone acetate 1% hourly) + **cycloplegic** (atropine 1% BD)
+- **Sub-Tenon's / periocular triamcinolone** if
+

@@ -176,3 +176,79 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Distal symmetric polyneuropathy (DSPN)*
+
+**Q1.** What is the most appropriate first-line therapy for Distal symmetric polyneuropathy (DSPN)?
+
+  - **A.** UKPDS
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — UKPDS
+  >
+  > *Source:* **UKPDS (T2DM)**   Intensive → modest ↓ microvascular (less clear for DSPN)
+---
+
+> Auto-generated study sections for "Diabetic neuropathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Diabetic neuropathy?
+  A: Symmetric, length-dependent sensorimotor polyneuropathy from chronic hyperglycaemia
+- Q: What is the epidemiology of Diabetic neuropathy?
+  A: ~50% T2DM at 20y; ~20% T1DM at 20y
+- Q: What causes Diabetic neuropathy?
+  A: HbA1c, duration, age, HTN, dyslipidaemia, smoking, height
+- Q: What is 10g monofilament of Diabetic neuropathy?
+  A: Screening (LOPS); 6 sites/foot
+- Q: What is 128Hz tuning fork of Diabetic neuropathy?
+  A: Vibration perception; <10s at hallux = abnormal
+- Q: What is ANNS of Diabetic neuropathy?
+  A: Symptom questionnaire (score ≥3 = likely DSPN)
+- Q: What is NCS of Diabetic neuropathy?
+  A: Confirm atypical/mononeuropathy/radiculoplexus; not routine for typical DSPN
+- Q: What is 10g monofilament of Diabetic neuropathy?
+  A: Screening (LOPS); 6 sites/foot
+- Q: What is 128Hz tuning fork of Diabetic neuropathy?
+  A: Vibration perception; <10s at hallux = abnormal
+- Q: What is ANNS of Diabetic neuropathy?
+  A: Symptom questionnaire (score ≥3 = likely DSPN)
+- Q: What is NCS of Diabetic neuropathy?
+  A: Confirm atypical/mononeuropathy/radiculoplexus; not routine for typical DSPN
+- Q: What is Bloods (exclude mimics) of Diabetic neuropathy?
+  A: B12, folate, TSH, ESR, SPEP, HIV, ANA, ANCA, alcohol history
+- Q: What is DSPN of Diabetic neuropathy?
+  A: Stocking-glove sensory loss, absent ankle reflexes; painful 10–20%
+- Q: What is Screening of Diabetic neuropathy?
+  A: Annual: 10g monofilament + vibration + ANNS
+- Q: What is Toronto Score of Diabetic neuropathy?
+  A: 0–5 mild, 6–8 mod, ≥9 severe
+- Q: What is Pain Rx 1st line of Diabetic neuropathy?
+  A: Duloxetine, Pregabalin, Gabapentin, Amitriptyline
+- Q: What is Renal adjust of Diabetic neuropathy?
+  A: Pregabalin/Gabapentin — MUST adjust for eGFR
+- Q: What is Glycaemic control of Diabetic neuropathy?
+  A: DCCT/UKPDS: intensive ↓DSPN
+- Q: What is Mimics of Diabetic neuropathy?
+  A: B12, alcohol, CIDP, vasculitis — exclude if atypical
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic neuropathy?**
+   A. **| Definition | Symmetric, length-dependent sensorimotor polyneuropathy from chronic hyperglycaemia |**
+   B. An unrelated condition not matching the clinical picture of Diabetic neuropathy
+   C. A complication seen late in the disease course of Diabetic neuropathy
+   D. A condition that mimics Diabetic neuropathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic neuropathy presents with: Definition — Symmetric, length-dependent sensorimotor polyneuropathy from chronic hyperglycaemia; Prevalence — ~50% T2DM at 20y; ~20% T1DM at 20y; Risk Factors — HbA1c, duration, age, HTN, dyslipidaemia, smoking, height. What is the most likely diagnosis?
+   A. **Diabetic neuropathy**
+   B. A condition that mimics Diabetic neuropathy but is not the same entity
+   C. A complication of Diabetic neuropathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic neuropathy
+

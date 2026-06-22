@@ -54,3 +54,20 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #topic-group-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Diabetic Emergencies" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Diabetic Emergencies?
+  A: Topic-Group hub for Hyperosmolar hyperglycaemic state (HHS) — covers 4 disease-level topic(s) per Davidson Ch25.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic Emergencies?**
+   A. **Topic-Group hub for Hyperosmolar hyperglycaemic state (HHS) — covers 4 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetic Emergencies
+   C. A complication seen late in the disease course of Diabetic Emergencies
+   D. A condition that mimics Diabetic Emergencies but has a different underlying cause
+

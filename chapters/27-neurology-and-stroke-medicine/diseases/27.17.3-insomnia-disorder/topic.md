@@ -568,3 +568,19 @@ flowchart TD
 ## Summary
 
 Insomnia disorder is a **24-hour hyperarousal state** characterised by persistent difficulty with sleep initiation, maintenance, or early morning awakening with daytime impairment, lasting ≥3 months. The **Spielman 3P model** (predisposing, precipitating, perpetuating) explains chronicity. **CBT-I is first-line** for chronic insomnia in all major guidelines — superior long-term efficacy to hypnotics. **Pharmacotherapy** (BZDs, Z-drugs) is restricted to ≤4 weeks due to dependence risk; **prolonged-release melatonin** is first-line in ≥55 years. PSG is reserved for suspected mimics (OSA, PLMD, narcolepsy). Complications include depression, accidents, hypnotic dependence, and increased cardiovascular risk. DVLA notification required if driving affected. Always screen for and treat comorbidities (depression, anxiety, OSA, RLS, PLMD, circadian disorders).
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Insomnia Disorder*
+
+**Q1.** What is the most appropriate first-line therapy for Insomnia Disorder?
+
+  - **A.** Identify stressor
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Identify stressor
+  >
+  > *Source:* **Identify stressor**   Treat/address if possible
+

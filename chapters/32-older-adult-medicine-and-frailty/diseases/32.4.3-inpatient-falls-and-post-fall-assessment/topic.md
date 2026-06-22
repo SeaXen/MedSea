@@ -280,3 +280,21 @@ A: ECG, bloods (FBC, U&E, HbA1c, Ca, ECG), urinalysis, sepsis screen; imaging as
 - [[Syncope and presyncope in the elderly]]
 - [[Falls prevention and multifactorial intervention]]
 - [[../Ageing and Disease MOC|Ageing and Disease MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 32: Ageing & Disease — Inpatient falls and post-fall assessment*
+
+**Q1.** Which of the following features is most specific or characteristic of Inpatient falls and post-fall assessment?
+
+  - **A.** Mnemonic for Inpatient falls and post-fall assessment
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Inpatient falls and post-fall assessment
+  >
+  > *Source:* **Mnemonic for Inpatient falls and post-fall assessment** — see Core Clinical Content key points
+- **'5 Fried criteria'** for frailty: Weight loss, Exhaustion, Weakness, Slow walking, ↓ activity
+- **'
+

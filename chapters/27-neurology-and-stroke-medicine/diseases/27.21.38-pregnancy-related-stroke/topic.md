@@ -566,3 +566,31 @@ Pregnancy-related stroke is an important neuro-obstetric emergency in which stan
 - **SBA 8: B** — Maternal stabilization is the first principle.
 - **SBA 9: A** — Pregnancy can coexist with arterial dissection within young-stroke differentials.
 - **SBA 10: A** — Team coordination is often necessary.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Pregnancy-related stroke*
+
+**Q1.** In the management of Pregnancy-related stroke, which of the following should be avoided or is contraindicated?
+
+  - **A.** be delayed by excessive fear (avoid in maternal stroke is suspected)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — be delayed by excessive fear (avoid in maternal stroke is suspected)
+  >
+  > *Source:* - Imaging should not be delayed by excessive fear when maternal stroke is suspected.
+- Multidisciplinary discussion is often needed for anticoagulation, delivery timing, and postpartum care
+
+**Q2.** What is the most appropriate first-line therapy for Pregnancy-related stroke?
+
+  - **A.** Use pregnancy-safe, mechanism-based treatment
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Use pregnancy-safe, mechanism-based treatment
+  >
+  > *Source:* Use pregnancy-safe, mechanism-based treatment.
+

@@ -137,3 +137,44 @@ flowchart TD
 - **I**nheritance: autosomal dominant
 - **C**ascade: 1st degree relatives
 - **VUS**: segregation + functional studies</think>
+---
+
+> Auto-generated study sections for "Maturity onset diabetes of the young (MODY)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Maturity onset diabetes of the young (MODY)?
+  A: By the end of this note you should be able to:
+- Q: What is the epidemiology of Maturity onset diabetes of the young (MODY)?
+  A: 1-2% of diabetes; underdiagnosed
+- Q: What is Cost-effectiveness of Maturity onset diabetes of the young (MODY)?
+  A: Testing cost-effective if probability > 6%
+- Q: What is the epidemiology of Maturity onset diabetes of the young (MODY)?
+  A: 1-2% of diabetes; underdiagnosed
+- Q: What is Cost-effectiveness of Maturity onset diabetes of the young (MODY)?
+  A: Testing cost-effective if probability > 6%
+- Q: What is the investigation of choice for Maturity onset diabetes of the young (MODY)?
+  A: Probability > 6% (UK calculator)
+- Q: What is Maturity onset diabetes of the young (MODY) indicated for?
+  A: <25y, BMI<25, 3-gen FH, neg Abs, C-pep preserved, off insulin >3y
+- Q: What is Calculator of Maturity onset diabetes of the young (MODY)?
+  A: UK MODY probability calculator (online)
+- Q: What is VUS of Maturity onset diabetes of the young (MODY)?
+  A: Segregation analysis; functional assays
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Maturity onset diabetes of the young (MODY)?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Maturity onset diabetes of the young (MODY)
+   C. A complication seen late in the disease course of Maturity onset diabetes of the young (MODY)
+   D. A condition that mimics Maturity onset diabetes of the young (MODY) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Maturity onset diabetes of the young (MODY) presents with: MODY prevalence — 1-2% of diabetes; underdiagnosed; Cost-effectiveness — Testing cost-effective if probability > 6%; Sensitivity — Targeted panel > whole exome for known genes. What is the most likely diagnosis?
+   A. **Maturity onset diabetes of the young (MODY)**
+   B. A condition that mimics Maturity onset diabetes of the young (MODY) but is not the same entity
+   C. A complication of Maturity onset diabetes of the young (MODY) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Maturity onset diabetes of the young (MODY)
+

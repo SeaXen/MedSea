@@ -558,3 +558,30 @@ Lateral medullary syndrome is a classic posterior-circulation brainstem stroke s
 - **SBA 8: B** — Aspiration pneumonia is a major early complication.
 - **SBA 9: A** — Crossed sensory loss and dysphagia strongly localize to lateral medulla.
 - **SBA 10: B** — CT cannot safely exclude early posterior-circulation infarction.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Lateral medullary syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of Lateral medullary syndrome?
+
+  - **A.** MCQ 3: C
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MCQ 3: C
+  >
+  > *Source:* - **MCQ 3: C** — This is the hallmark crossed sensory pattern
+
+**Q2.** What is the most appropriate first-line therapy for Lateral medullary syndrome?
+
+  - **A.** Start antiplatelet therapy if non-cardioembolic and no contraindication after hemorrhage is excluded
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Start antiplatelet therapy if non-cardioembolic and no contraindication after hemorrhage is excluded
+  >
+  > *Source:* Start antiplatelet therapy if non-cardioembolic and no contraindication after hemorrhage is excluded.
+

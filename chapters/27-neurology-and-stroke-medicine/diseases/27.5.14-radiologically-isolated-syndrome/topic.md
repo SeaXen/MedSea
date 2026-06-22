@@ -358,3 +358,21 @@ mindmap
 **Chapter Hierarchy:** [[../../Davidson Chapter 25 - Neurology Hierarchy]]
 **Chapter MOC:** [[../../Neurology MOC]]
 **Drug Reference:** [[../../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Radiologically Isolated Syndrome*
+
+**Q1.** Which landmark clinical trial provided evidence relevant to the management of Radiologically Isolated Syndrome (specifically: dimethyl fumarate reduced conversion to MS)?
+
+  - **A.** ARISE trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — ARISE trial
+  >
+  > *Source:* Surgery
+   **Answer:** A
+   **Explanation:** RIS: ARISE trial showed dimethyl fumarate reduced conversion to MS
+

@@ -140,3 +140,64 @@ By the end of this note you should be able to:
 - **A**longed: ≥5y prolonged remission
 - **C**ode: HbA1c<48, no meds, ≥3mo
 - **R**EMISSION = Remission: HbA1c<48, no meds, ≥3mo**</think>
+---
+
+> Auto-generated study sections for "Type 2 diabetes remission" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is Consensus of Type 2 diabetes remission?
+  A: ADA/EASD/Diabetes UK/Diabetes UK (2021)
+- Q: What is the definition of Type 2 diabetes remission?
+  A: HbA1c <48 mmol/mol (6.5%) off ALL glucose-lowering medications ≥3 months
+- Q: What is Consensus of Type 2 diabetes remission?
+  A: ADA/EASD/Diabetes UK/Diabetes UK (2021)
+- Q: What is the definition of Type 2 diabetes remission?
+  A: HbA1c <48 mmol/mol (6.5%) off ALL glucose-lowering medications ≥3 months
+- Q: What is HbA1c of Type 2 diabetes remission?
+  A: At 3 months off meds; then 3-6 monthly
+- Q: What is FPG of Type 2 diabetes remission?
+  A: If HbA1c unreliable (CKD, haemoglobinopathy)
+- Q: What is HbA1c of Type 2 diabetes remission?
+  A: At 3 months off meds; then 3-6 monthly
+- Q: What is FPG of Type 2 diabetes remission?
+  A: If HbA1c unreliable (CKD, haemoglobinopathy)
+- Q: What is HbA1c of Type 2 diabetes remission?
+  A: At 3 months off meds; then 3-6 monthly
+- Q: What is FPG of Type 2 diabetes remission?
+  A: If HbA1c unreliable (CKD, haemoglobinopathy)
+- Q: What is CGM of Type 2 diabetes remission?
+  A: TIR >70% supportive but not diagnostic
+- Q: What is HbA1c of Type 2 diabetes remission?
+  A: At 3 months off meds; then 3-6 monthly
+- Q: What is FPG of Type 2 diabetes remission?
+  A: If HbA1c unreliable (CKD, haemoglobinopathy)
+- Q: What is CGM of Type 2 diabetes remission?
+  A: TIR >70% supportive but not diagnostic
+- Q: What is the definition of Type 2 diabetes remission?
+  A: HbA1c <48 mmol/mol (6.5%) off ALL meds ≥3 months
+- Q: What is Categories of Type 2 diabetes remission?
+  A: Complete (<48 off meds), Partial (FPG 5.6-6.9), Prolonged (≥5y)
+- Q: What is Exclusions of Type 2 diabetes remission?
+  A: On any med, <3mo off meds, HbA1c ≥48
+- Q: What is Relapse of Type 2 diabetes remission?
+  A: HbA1c ≥48 on 2 occasions -> restart treatment
+- Q: How is Type 2 diabetes remission monitored?
+  A: 3-6 monthly HbA1c; counsel on weight maintenance
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes remission?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes remission
+   C. A complication seen late in the disease course of Type 2 diabetes remission
+   D. A condition that mimics Type 2 diabetes remission but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes remission presents with: Consensus — ADA/EASD/Diabetes UK/Diabetes UK (2021); Definition — HbA1c <48 mmol/mol (6.5%) off ALL glucose-lowering medications ≥3 months; Alternative — FPG <7.0 mmol/L or eA1c <48 mmol/mol (if HbA1c unreliable). What is the most likely diagnosis?
+   A. **Type 2 diabetes remission**
+   B. A condition that mimics Type 2 diabetes remission but is not the same entity
+   C. A complication of Type 2 diabetes remission rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes remission
+

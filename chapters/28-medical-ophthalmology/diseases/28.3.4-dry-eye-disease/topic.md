@@ -508,3 +508,22 @@ Dry eye disease is multifactorial, classified as aqueous-deficient or evaporativ
 
 ## Tags
 #medicine #davidson #ophthalmology #dry-eye #Sjogren #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Dry Eye Disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Dry Eye Disease?
+
+  - **A.** Tear osmolarity
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Tear osmolarity
+  >
+  > *Source:* ce damage | Oxford / NEI grading |
+| **Lissamine / Rose bengal** | Devitalised cells | Negative |
+| **Tear osmolarity** | Hyperosmolarity | >308 mOsm/L diagnostic |
+| **InflammaDry** | MMP-9 | Positiv
+

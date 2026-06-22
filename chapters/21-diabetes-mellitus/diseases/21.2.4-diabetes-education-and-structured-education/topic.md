@@ -151,3 +151,40 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Annual review and complication screening]], [[Glycaemic targets]], [[Psychosocial aspects]], [[Diabetes Monitoring and Quality of Care]]
+---
+
+> Auto-generated study sections for "Diabetes Monitoring and Quality of Care" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Diabetes Monitoring and Quality of Care?
+  A: Structured education = NICE quality standard — offer at diagnosis (T1DM: DAFNE; T2DM: DESMOND/X-PERT); evidence: HbA1c −5 to −10 mmol/mol, ↑ knowledge, ↑ QoL, cost-effective; digital options emerging.
+- Q: What is DAFNE of Diabetes Monitoring and Quality of Care?
+  A: T1DM — carb counting + insulin dose adjustment (ICR, ISF); 5-day group
+- Q: What is DESMOND of Diabetes Monitoring and Quality of Care?
+  A: T2DM — lifestyle, beliefs, self-management; 1-day group
+- Q: What is X-PERT of Diabetes Monitoring and Quality of Care?
+  A: T2DM — 6 weekly sessions; progressive; insulin module
+- Q: What is the investigation of choice for Diabetes Monitoring and Quality of Care?
+  A: T1DM: DAFNE; T2DM: DESMOND/X-PERT
+- Q: What is QISMET of Diabetes Monitoring and Quality of Care?
+  A: Quality standard accreditation — required for NICE compliance
+- Q: What is HbA1c benefit DAFNE of Diabetes Monitoring and Quality of Care?
+  A: −5 to −10 mmol/mol; ↓ severe hypo 50–60%
+- Q: What is HbA1c benefit DESMOND of Diabetes Monitoring and Quality of Care?
+  A: −3 to −6 mmol/mol
+- Q: What is Cost-effectiveness of Diabetes Monitoring and Quality of Care?
+  A: DAFNE cost-saving; DESMOND/X-PERT <£20k/QALY
+- Q: What is Digital options of Diabetes Monitoring and Quality of Care?
+  A: DAFNE Online, Oviva, Liva — supplement or replace if accessible
+- Q: What is Refresher of Diabetes Monitoring and Quality of Care?
+  A: Annual review should assess need for top-up education
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes Monitoring and Quality of Care?**
+   A. **Structured education = NICE quality standard — offer at diagnosis (T1DM: DAFNE; T2DM: DESMOND/X-PERT); evidence: HbA1c −5 to −10 mmol/mol, ↑ knowledge, ↑ QoL, cost-effective; digital options emerging.**
+   B. An unrelated condition not matching the clinical picture of Diabetes Monitoring and Quality of Care
+   C. A complication seen late in the disease course of Diabetes Monitoring and Quality of Care
+   D. A condition that mimics Diabetes Monitoring and Quality of Care but has a different underlying cause
+

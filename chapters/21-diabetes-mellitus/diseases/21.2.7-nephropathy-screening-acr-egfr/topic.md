@@ -160,3 +160,48 @@ By the end of this note you should be able to:
 - **N**ephrology refer: G4-5, rapid decline, active sediment
 - **T**wo of three: confirm ACR
 - **R**apid decline: >5 mL/min/yr**</think>
+---
+
+> Auto-generated study sections for "Annual review and complication screening" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Annual review and complication screening?
+  A: By the end of this note you should be able to:
+- Q: What is Screening target of Annual review and complication screening?
+  A: All diabetes patients annually
+- Q: What is Method of Annual review and complication screening?
+  A: Spot urine ACR + eGFR (CKD-EPI)
+- Q: What is Screening of Annual review and complication screening?
+  A: Annual spot urine ACR + eGFR (CKD-EPI)
+- Q: What is ACR categories of Annual review and complication screening?
+  A: A1 <3; A2 3-30 (micro); A3 >30 (macro) mg/mmol
+- Q: What is GFR categories of Annual review and complication screening?
+  A: G1-G5 (≥90, 60-89, 45-59, 30-44, 15-29, <15)
+- Q: What is Heat map of Annual review and complication screening?
+  A: G3aA2=moderate; G3bA3=very high risk
+- Q: What is ACEi/ARB of Annual review and complication screening?
+  A: Max tolerated; target ACR <3 or ↓30%
+- Q: What is SGLT2i of Annual review and complication screening?
+  A: 1st line add-on (eGFR≥20 dapa/empa; ≥30 cana)
+- Q: What is Finerenone of Annual review and complication screening?
+  A: eGFR≥25, K+≤4.8; ACR≥30 on ACEi+SGLT2i
+- Q: What is Proteinuria target of Annual review and complication screening?
+  A: ↓ACR ≥30% at 3-6mo; ideal <3 mg/mmol
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Annual review and complication screening?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Annual review and complication screening
+   C. A complication seen late in the disease course of Annual review and complication screening
+   D. A condition that mimics Annual review and complication screening but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Annual review and complication screening presents with: Screening target — All diabetes patients annually; Method — Spot urine ACR + eGFR (CKD-EPI); Goal — Early DKD detection; slow progression. What is the most likely diagnosis?
+   A. **Annual review and complication screening**
+   B. A condition that mimics Annual review and complication screening but is not the same entity
+   C. A complication of Annual review and complication screening rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Annual review and complication screening
+

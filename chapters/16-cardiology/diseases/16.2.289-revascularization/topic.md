@@ -190,3 +190,44 @@ E. All of the above
 **Tags:** #medicine #cardiology #davidson #fcps #mrcp
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 16: Cardiology / Revascularization (PCI vs CABG)**
+
+**Q1.** A patient presents with features consistent with Revascularization (PCI vs CABG). The clinical picture is most consistent with: Clinical presentation of Revascularization varies by acuity (acute vs chronic), severity, and patient factors. **Cardina What is the most likely diagnosis?
+
+  - **A.** Revascularization (PCI vs CABG)
+  - **B.** A closely related condition in the same clinical area
+  - **C.** A complication of Revascularization (PCI vs CABG)
+  - **D.** An unrelated mimic with overlapping features
+
+  > **Answer: A** — Revascularization (PCI vs CABG)
+
+**Q2.** A patient is being evaluated for Revascularization (PCI vs CABG). Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+
+**Q3.** In the assessment of Revascularization (PCI vs CABG), severity and risk stratification are essential. Which approach is most appropriate?
+
+  - **A.** Formal severity scoring + clinical judgment
+  - **B.** Severity assessment is unnecessary if diagnosis is clear
+  - **C.** Single biomarker measurement is sufficient
+  - **D.** Severity assessment is delayed until treatment failure
+
+  > **Answer: A** — Formal severity scoring + clinical judgment
+
+**Q4.** A patient is diagnosed with Revascularization (PCI vs CABG). What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+

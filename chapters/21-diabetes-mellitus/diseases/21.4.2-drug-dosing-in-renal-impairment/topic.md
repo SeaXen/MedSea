@@ -221,3 +221,129 @@ flowchart TD
 - **I**mpairment: dose per stage
 - **N**ot all same: SGLT2i diff; DPP-4i diff; SU diff
 - **G**FR: CKD-EPI equation**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Drug dosing in renal impairment*
+
+**Q1.** What is the most appropriate first-line therapy for Drug dosing in renal impairment?
+
+  - **A.** G3a
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — G3a
+  >
+  > *Source:* **G3a (45-59)**   10-20%   Monitor for hypo
+---
+
+> Auto-generated study sections for "Diabetes in CKD and dialysis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (44 generated)
+
+- Q: What is the definition of Diabetes in CKD and dialysis?
+  A: By the end of this note you should be able to:
+- Q: What is eGFR estimation of Diabetes in CKD and dialysis?
+  A: CKD-EPI 2021 (creatinine ± cystatin C)
+- Q: How is Diabetes in CKD and dialysis classified?
+  A: G1 >=90, G2 60-89, G3a 45-59, G3b 30-44, G4 15-29, G5 <15
+- Q: What is eGFR estimation of Diabetes in CKD and dialysis?
+  A: CKD-EPI 2021 (creatinine ± cystatin C)
+- Q: How is Diabetes in CKD and dialysis classified?
+  A: G1 >=90, G2 60-89, G3a 45-59, G3b 30-44, G4 15-29, G5 <15
+- Q: What is eGFR (CKD-EPI) of Diabetes in CKD and dialysis?
+  A: Dosing guide; baseline, 3-6 monthly if <60
+- Q: What is HbA1c of Diabetes in CKD and dialysis?
+  A: Target per CKD stage (falsely low in G4-5)
+- Q: What is K+ of Diabetes in CKD and dialysis?
+  A: Monitor with SGLT2i, ACEi/ARB, K+-sparing diuretics
+- Q: What is eGFR (CKD-EPI) of Diabetes in CKD and dialysis?
+  A: Dosing guide; baseline, 3-6 monthly if <60
+- Q: What is HbA1c of Diabetes in CKD and dialysis?
+  A: Target per CKD stage (falsely low in G4-5)
+- Q: What is K+ of Diabetes in CKD and dialysis?
+  A: Monitor with SGLT2i, ACEi/ARB, K+-sparing diuretics
+- Q: What is Metformin of Diabetes in CKD and dialysis?
+  A: eGFR < 30
+- Q: What is Glibenclamide of Diabetes in CKD and dialysis?
+  A: All CKD (prolonged hypo)
+- Q: What is Saxagliptin of Diabetes in CKD and dialysis?
+  A: HF risk (avoid if HF)
+- Q: What is Pioglitazone of Diabetes in CKD and dialysis?
+  A: eGFR < 30 (HF, fracture)
+- Q: What is Canagliflozin of Diabetes in CKD and dialysis?
+  A: eGFR < 30 (amputation risk)
+- Q: What is eGFR (CKD-EPI) of Diabetes in CKD and dialysis?
+  A: Dosing guide; baseline, 3-6 monthly if <60
+- Q: What is HbA1c of Diabetes in CKD and dialysis?
+  A: Target per CKD stage (falsely low in G4-5)
+- Q: What is K+ of Diabetes in CKD and dialysis?
+  A: Monitor with SGLT2i, ACEi/ARB, K+-sparing diuretics
+- Q: What is Glucose of Diabetes in CKD and dialysis?
+  A: SMBG/CGM; adjust insulin doses
+- Q: What is eGFR (CKD-EPI) of Diabetes in CKD and dialysis?
+  A: Dosing guide; baseline, 3-6 monthly if <60
+- Q: What is HbA1c of Diabetes in CKD and dialysis?
+  A: Target per CKD stage (falsely low in G4-5)
+- Q: What is K+ of Diabetes in CKD and dialysis?
+  A: Monitor with SGLT2i, ACEi/ARB, K+-sparing diuretics
+- Q: What is Glucose of Diabetes in CKD and dialysis?
+  A: SMBG/CGM; adjust insulin doses
+- Q: What is Metformin of Diabetes in CKD and dialysis?
+  A: eGFR < 30
+- Q: What is Glibenclamide of Diabetes in CKD and dialysis?
+  A: All CKD (prolonged hypo)
+- Q: What is Saxagliptin of Diabetes in CKD and dialysis?
+  A: HF risk (avoid if HF)
+- Q: What is Pioglitazone of Diabetes in CKD and dialysis?
+  A: eGFR < 30 (HF, fracture)
+- Q: What is Canagliflozin of Diabetes in CKD and dialysis?
+  A: eGFR < 30 (amputation risk)
+- Q: What is Exenatide XR of Diabetes in CKD and dialysis?
+  A: eGFR < 30 (limited data)
+- Q: What is Metformin of Diabetes in CKD and dialysis?
+  A: eGFR >=45 full; 30-44 half; <30 CONTRAINDICATED
+- Q: What is SGLT2i of Diabetes in CKD and dialysis?
+  A: Dapa/Empa: initiate >=20, continue to dialysis; Cana >=30
+- Q: What is Linagliptin of Diabetes in CKD and dialysis?
+  A: NO renal adjustment (biliary excretion)
+- Q: What is Sitagliptin of Diabetes in CKD and dialysis?
+  A: 50mg (30-44), 25mg (<30)
+- Q: What is Sulfonylureas of Diabetes in CKD and dialysis?
+  A: Gliclazide MR safe; glimepiride caution; glibenclamide AVOID
+- Q: What is GLP-1 RA of Diabetes in CKD and dialysis?
+  A: No dose adjustment (all stages)
+- Q: What is Insulin of Diabetes in CKD and dialysis?
+  A: Reduce 25-50% in G4-5; 50-75% in dialysis
+- Q: What is Metformin of Diabetes in CKD and dialysis?
+  A: eGFR >=45 full; 30-44 half; <30 CONTRAINDICATED
+- Q: What is SGLT2i of Diabetes in CKD and dialysis?
+  A: Dapa/Empa: initiate >=20, continue to dialysis; Cana >=30
+- Q: What is Linagliptin of Diabetes in CKD and dialysis?
+  A: NO renal adjustment (biliary excretion)
+- Q: What is Sitagliptin of Diabetes in CKD and dialysis?
+  A: 50mg (30-44), 25mg (<30)
+- Q: What is Sulfonylureas of Diabetes in CKD and dialysis?
+  A: Gliclazide MR safe; glimepiride caution; glibenclamide AVOID
+- Q: What is GLP-1 RA of Diabetes in CKD and dialysis?
+  A: No dose adjustment (all stages)
+- Q: What is Insulin of Diabetes in CKD and dialysis?
+  A: Reduce 25-50% in G4-5; 50-75% in dialysis
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in CKD and dialysis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in CKD and dialysis
+   C. A complication seen late in the disease course of Diabetes in CKD and dialysis
+   D. A condition that mimics Diabetes in CKD and dialysis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in CKD and dialysis presents with: eGFR estimation — CKD-EPI 2021 (creatinine ± cystatin C); CKD Stages — G1 >=90, G2 60-89, G3a 45-59, G3b 30-44, G4 15-29, G5 <15; Drug clearance — ↓ renal excretion; ↑ half-life; ↑ hypoglycaemia risk. What is the most likely diagnosis?
+   A. **Diabetes in CKD and dialysis**
+   B. A condition that mimics Diabetes in CKD and dialysis but is not the same entity
+   C. A complication of Diabetes in CKD and dialysis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in CKD and dialysis
+

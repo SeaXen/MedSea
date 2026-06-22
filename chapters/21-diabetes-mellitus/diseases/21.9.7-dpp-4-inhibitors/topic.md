@@ -188,3 +188,77 @@ flowchart TD
 - **A**void saxagliptin in HF (SAVOR: ↑HF hosp)
 - **X**A: saxagliptin ↑HF hosp
 - **A**logliptin: EXAMINE (post-ACS)</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — DPP-4 inhibitors*
+
+**Q1.** What is the most appropriate first-line therapy for DPP-4 inhibitors?
+
+  - **A.** Arthralgia + STOP DPP-4i
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Arthralgia + STOP DPP-4i
+  >
+  > *Source:* **Arthralgia**   **STOP DPP-4i**; switch agent class; resolves in weeks
+---
+
+> Auto-generated study sections for "Oral glucose lowering agents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (18 generated)
+
+- Q: What is the definition of Oral glucose lowering agents?
+  A: By the end of this note you should be able to:
+- Q: What is Drug Class of Oral glucose lowering agents?
+  A: Dipeptidyl peptidase-4 inhibitors
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: Inhibit DPP-4 enzyme → ↓degradation of endogenous GLP-1 & GIP → ↑glucose-dependent insulin secretion, ↓glucagon secretion
+- Q: What is the dose of Oral glucose lowering agents?
+  A: Linagliptin 5mg OD (no renal adjust); Sitagliptin 100mg OD (50mg if eGFR 30-45, 25mg if <30); Vildagliptin 50mg BD (50mg OD if eGFR<30); Alogliptin 25mg OD (12.5mg if eGFR 30-45, 6.25mg if <30); Saxagliptin 5mg OD (2.5mg if eGFR≤50)
+- Q: What is HbA1c Reduction of Oral glucose lowering agents?
+  A: 0.5-0.8% (5-9 mmol/mol)
+- Q: What is Weight Change of Oral glucose lowering agents?
+  A: Neutral (0 to –0.5kg)
+- Q: What is Hypoglycaemia Risk of Oral glucose lowering agents?
+  A: Very low (glucose-dependent action)
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: Inhibit DPP-4 → ↑endogenous GLP-1/GIP → ↑insulin, ↓glucagon (glucose-dependent)
+- Q: What is Weight of Oral glucose lowering agents?
+  A: Neutral (0 to –0.5kg)
+- Q: What is Hypoglycaemia of Oral glucose lowering agents?
+  A: Very low (glucose-dependent)
+- Q: What is Renal dosing of Oral glucose lowering agents?
+  A: Linagliptin: NO adjustment (biliary excretion); others: dose reduce per eGFR
+- Q: What is Key agent of Oral glucose lowering agents?
+  A: Linagliptin 5mg OD — 1st choice for CKD, no adjust, CV neutral (CARMELINA, CAROLINA)
+- Q: What is Saxagliptin of Oral glucose lowering agents?
+  A: ↑HF hospitalisation (SAVOR: HR 1.27); avoid in HF
+- Q: What is CVOT of Oral glucose lowering agents?
+  A: All CV neutral (TECOS, SAVOR, EXAMINE, CARMELINA, CAROLINA)
+- Q: What is Bullous pemphigoid of Oral glucose lowering agents?
+  A: Class effect; tense blisters; STOP drug, dermatology
+- Q: What is Arthralgia of Oral glucose lowering agents?
+  A: Class effect; STOP drug
+- Q: What is Pancreatitis of Oral glucose lowering agents?
+  A: Rare; STOP if suspected
+- Q: What is Position in algorithm of Oral glucose lowering agents?
+  A: 2nd/3rd line if SGLT2i/GLP-1 RA not tolerated/contraindicated; no CV/renal benefit
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Oral glucose lowering agents?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Oral glucose lowering agents
+   C. A complication seen late in the disease course of Oral glucose lowering agents
+   D. A condition that mimics Oral glucose lowering agents but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Oral glucose lowering agents presents with: Drug Class — Dipeptidyl peptidase-4 inhibitors; Mechanism — Inhibit DPP-4 enzyme → ↓degradation of endogenous GLP-1 & GIP → ↑glucose-dependent insulin secretion, ↓glucagon secretion; HbA1c Reduction — 0.5-0.8% (5-9 mmol/mol). What is the most likely diagnosis?
+   A. **Oral glucose lowering agents**
+   B. A condition that mimics Oral glucose lowering agents but is not the same entity
+   C. A complication of Oral glucose lowering agents rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Oral glucose lowering agents
+

@@ -477,3 +477,36 @@ Retinal vasculitis is inflammation of retinal vessels, often with perivascular s
 
 ## Tags
 #medicine #davidson #ophthalmology #retinal-vasculitis #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Retinal Vasculitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Retinal Vasculitis?
+
+  - **A.** occlusive
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — occlusive
+  >
+  > *Source:* — site helps identify cause |
+| "Behçet's vasculitis is non-occlusive" | Behçet's is classically an **occlusive** vasculitis with hypopyon — a key exam clue |
+| "Sarcoidosis never causes vasculitis" |
+
+**Q2.** What is the most appropriate first-line therapy for Retinal Vasculitis?
+
+  - **A.** Systemic steroid + Immunosuppression: + Anti-VEGF
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Systemic steroid + Immunosuppression: + Anti-VEGF
+  >
+  > *Source:* - Treat underlying cause
+- **Systemic steroid** (severe)
+- **Immunosuppression:** MTX, azathioprine, MMF, cyclosporine
+- **Anti-VEGF** for CMO, neovascularisation
+- **Laser / PRP** for ischaemia, neov
+

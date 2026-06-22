@@ -154,3 +154,103 @@ flowchart TD
 - **E**mergency: R4 (PDR) 1-2 weeks
 - **E**nsure quality: certified graders, arbitration, failsafe
 - **N**o DR = 2-yearly**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Retinopathy screening*
+
+**Q1.** What is the most appropriate first-line therapy for Retinopathy screening?
+
+  - **A.** Arbitration
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Arbitration
+  >
+  > *Source:* **Arbitration**   2nd grader for discordant/ungradable
+---
+
+> Auto-generated study sections for "Annual review and complication screening" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (31 generated)
+
+- Q: What is the definition of Annual review and complication screening?
+  A: By the end of this note you should be able to:
+- Q: What is Programme of Annual review and complication screening?
+  A: UK National Diabetic Eye Screening Programme (NDESP)
+- Q: What is Method of Annual review and complication screening?
+  A: Digital retinal photography (mydriatic, 45°, 2-field)
+- Q: What is Coverage target of Annual review and complication screening?
+  A: >80% eligible population
+- Q: What is 4 of Annual review and complication screening?
+  A: Haemorrhages/microaneurysms in 4 quadrants
+- Q: What is 2 of Annual review and complication screening?
+  A: Venous beading in 2 quadrants
+- Q: What is 1 of Annual review and complication screening?
+  A: IRMA in 1 quadrant
+- Q: What is Digital photography of Annual review and complication screening?
+  A: Screening (mydriatic, 45°, 2-field)
+- Q: What is OCT of Annual review and complication screening?
+  A: DMO diagnosis (CST); not for DR grading
+- Q: What is Fluorescein angiography of Annual review and complication screening?
+  A: Pre-laser; NVE/NVD confirmation
+- Q: What is Digital photography of Annual review and complication screening?
+  A: Screening (mydriatic, 45°, 2-field)
+- Q: What is OCT of Annual review and complication screening?
+  A: DMO diagnosis (CST); not for DR grading
+- Q: What is Fluorescein angiography of Annual review and complication screening?
+  A: Pre-laser; NVE/NVD confirmation
+- Q: What is 4 of Annual review and complication screening?
+  A: Haemorrhages/microaneurysms in 4 quadrants
+- Q: What is 2 of Annual review and complication screening?
+  A: Venous beading in 2 quadrants
+- Q: What is 1 of Annual review and complication screening?
+  A: IRMA in 1 quadrant
+- Q: What is Digital photography of Annual review and complication screening?
+  A: Screening (mydriatic, 45°, 2-field)
+- Q: What is OCT of Annual review and complication screening?
+  A: DMO diagnosis (CST); not for DR grading
+- Q: What is Fluorescein angiography of Annual review and complication screening?
+  A: Pre-laser; NVE/NVD confirmation
+- Q: What is HbA1c, BP, lipids of Annual review and complication screening?
+  A: Systemic risk factor documentation
+- Q: What is Digital photography of Annual review and complication screening?
+  A: Screening (mydriatic, 45°, 2-field)
+- Q: What is OCT of Annual review and complication screening?
+  A: DMO diagnosis (CST); not for DR grading
+- Q: What is Fluorescein angiography of Annual review and complication screening?
+  A: Pre-laser; NVE/NVD confirmation
+- Q: What is HbA1c, BP, lipids of Annual review and complication screening?
+  A: Systemic risk factor documentation
+- Q: What is Screening method of Annual review and complication screening?
+  A: Digital photography, mydriatic, 45°, 2-field (macula + disc)
+- Q: What is Intervals of Annual review and complication screening?
+  A: No DR (R0): 2-yearly; Mild NPDR (R1): annual; Mod NPDR (R2): 6-12mo; Severe NPDR (R3): urgent 2-4wk; PDR (R4): urgent 1-2wk
+- Q: What is 4:2:1 Rule of Annual review and complication screening?
+  A: Severe NPDR: 4 quad haem OR 2 quad venous beading OR 1 quad IRMA
+- Q: What is M1 (DMO) of Annual review and complication screening?
+  A: Thickening ≤1DD from fovea → urgent referral 2-4 weeks
+- Q: What is NVD vs NVE of Annual review and complication screening?
+  A: NVD on disc (high risk); NVE >1DD from disc
+- Q: What is High-risk PDR of Annual review and complication screening?
+  A: NVD ≥1/3 disc, NVE ≥1/2 disc, VH/pre-retinal haem
+- Q: What is Quality of Annual review and complication screening?
+  A: Certified graders; arbitration; failsafe for non-attenders
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Annual review and complication screening?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Annual review and complication screening
+   C. A complication seen late in the disease course of Annual review and complication screening
+   D. A condition that mimics Annual review and complication screening but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Annual review and complication screening presents with: Programme — UK National Diabetic Eye Screening Programme (NDESP); Method — Digital retinal photography (mydriatic, 45°, 2-field); Coverage target — >80% eligible population. What is the most likely diagnosis?
+   A. **Annual review and complication screening**
+   B. A condition that mimics Annual review and complication screening but is not the same entity
+   C. A complication of Annual review and complication screening rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Annual review and complication screening
+

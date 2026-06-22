@@ -202,3 +202,56 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Type 2 diabetes pathogenesis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Type 2 diabetes pathogenesis?
+  A: By the end of this note you should be able to:
+- Q: What is Incretin Effect of Type 2 diabetes pathogenesis?
+  A: Oral glucose -> 50-70% greater insulin vs IV glucose
+- Q: What is Loss in T2DM of Type 2 diabetes pathogenesis?
+  A: Decreased 50-70% of incretin effect; GIP action severely impaired
+- Q: What is DPP-4 of Type 2 diabetes pathogenesis?
+  A: Degrades GLP-1/GIP (t-half ~2 min)
+- Q: What is IVGTT vs OGTT of Type 2 diabetes pathogenesis?
+  A: Incretin effect = (AUCinsulinOGTT - AUCinsulinIVGTT) / AUCinsulinOGTT
+- Q: What is GLP-1/GIP assays of Type 2 diabetes pathogenesis?
+  A: Research; not routine
+- Q: What is DPP-4 activity of Type 2 diabetes pathogenesis?
+  A: Not clinically measured
+- Q: What is IVGTT vs OGTT of Type 2 diabetes pathogenesis?
+  A: Incretin effect = (AUCinsulinOGTT - AUCinsulinIVGTT) / AUCinsulinOGTT
+- Q: What is GLP-1/GIP assays of Type 2 diabetes pathogenesis?
+  A: Research; not routine
+- Q: What is DPP-4 activity of Type 2 diabetes pathogenesis?
+  A: Not clinically measured
+- Q: What is Incretin effect of Type 2 diabetes pathogenesis?
+  A: Oral > IV glucose insulin response (50-70%); lost in T2DM
+- Q: What is GLP-1 of Type 2 diabetes pathogenesis?
+  A: Reduced secretion; effect relatively preserved
+- Q: What is GIP of Type 2 diabetes pathogenesis?
+  A: Severe insulinotropic defect in T2DM (despite normal levels)
+- Q: What is DPP-4 of Type 2 diabetes pathogenesis?
+  A: Degrades both (t-half 2 min); target for DPP-4i
+- Q: What is Therapeutics of Type 2 diabetes pathogenesis?
+  A: GLP-1 RA (replace), DPP-4i (preserve), Tirzepatide (dual)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes pathogenesis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes pathogenesis
+   C. A complication seen late in the disease course of Type 2 diabetes pathogenesis
+   D. A condition that mimics Type 2 diabetes pathogenesis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes pathogenesis presents with: Incretin Effect — Oral glucose -> 50-70% greater insulin vs IV glucose; Loss in T2DM — Decreased 50-70% of incretin effect; GIP action severely impaired; DPP-4 — Degrades GLP-1/GIP (t-half ~2 min). What is the most likely diagnosis?
+   A. **Type 2 diabetes pathogenesis**
+   B. A condition that mimics Type 2 diabetes pathogenesis but is not the same entity
+   C. A complication of Type 2 diabetes pathogenesis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes pathogenesis
+

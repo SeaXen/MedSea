@@ -740,3 +740,18 @@ mindmap
    C. A complication seen late in the disease course of Soft Tissue Rheumatism and Chronic Pain Syndromes
    D. A condition that mimics Soft Tissue Rheumatism and Chronic Pain Syndromes but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Regional soft tissue rheumatism*
+
+**Q1.** What is the most appropriate first-line therapy for Regional soft tissue rheumatism?
+
+  - **A.** Injection   Corticosteroid (image-guided, single/joint) — short-term benefit; avoid repeated in weight-bearing tendons (…
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Injection   Corticosteroid (image-guided, single/joint) — short-term benefit; avoid repeated in weight-bearing tendons (…
+  >
+  > *Source:* Injection**   **Corticosteroid** (image-guided, single/joint) — short-term benefit; **avoid repeated** in weight-bearing tendons (rupture)
+

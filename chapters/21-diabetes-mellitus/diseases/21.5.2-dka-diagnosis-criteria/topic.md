@@ -140,3 +140,51 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — DKA diagnosis criteria*
+
+**Q1.** Which of the following features is most specific or characteristic of DKA diagnosis criteria?
+
+  - **A.** Blood ketones
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Blood ketones
+  >
+  > *Source:* ------|-------------|
+| **Blood glucose** | Confirm hyperglycaemia | Portal/venous >11.1 mmol/L |
+| **Blood ketones (β-hydroxybutyrate)** | Confirm ketonaemia | >3 mmol/L diagnostic; superior to urine
+---
+
+> Auto-generated study sections for "Diabetic ketoacidosis (DKA)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (4 generated)
+
+- Q: What is the definition of Diabetic ketoacidosis (DKA)?
+  A: Acute diabetic emergency: hyperglycaemia + ketonaemia + acidosis
+- Q: What is Diagnostic Triad of Diabetic ketoacidosis (DKA)?
+  A: 1) Glucose >11.1 mmol/L (200 mg/dL) 2) Ketonaemia >3 mmol/L (or significant ketonuria) 3) pH <7.3 and/or bicarbonate <15 mmol/L
+- Q: What is the epidemiology of Diabetic ketoacidosis (DKA)?
+  A: 4–8 per 1000 patient-years in T1DM; rising with SGLT2i use
+- Q: What is Mortality of Diabetic ketoacidosis (DKA)?
+  A: <1% (mild/moderate); 5–10% (severe); higher in elderly/comorbidities
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic ketoacidosis (DKA)?**
+   A. **| Definition | Acute diabetic emergency: hyperglycaemia + ketonaemia + acidosis |**
+   B. An unrelated condition not matching the clinical picture of Diabetic ketoacidosis (DKA)
+   C. A complication seen late in the disease course of Diabetic ketoacidosis (DKA)
+   D. A condition that mimics Diabetic ketoacidosis (DKA) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic ketoacidosis (DKA) presents with: Diagnostic Triad — 1) Glucose >11.1 mmol/L (200 mg/dL) 2) Ketonaemia >3 mmol/L (or significant ketonuria) 3) pH <7.3 and/or bicarbonate <15 mmol/L; Incidence — 4–8 per 1000 patient-years in T1DM; rising with SGLT2i use; Mortality — <1% (mild/moderate); 5–10% (severe); higher in elderly/comorbidities. What is the most likely diagnosis?
+   A. **Diabetic ketoacidosis (DKA)**
+   B. A condition that mimics Diabetic ketoacidosis (DKA) but is not the same entity
+   C. A complication of Diabetic ketoacidosis (DKA) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic ketoacidosis (DKA)
+

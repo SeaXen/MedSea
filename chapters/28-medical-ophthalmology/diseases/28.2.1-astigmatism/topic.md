@@ -483,3 +483,26 @@ Astigmatism is very common. Regular astigmatism corrects with cylindrical specta
 
 ## Tags
 #medicine #davidson #ophthalmology #refractive #astigmatism #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / Astigmatism**
+
+**Q1.** A patient is diagnosed with Astigmatism. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+
+**Q2.** Which of the following best describes the underlying pathophysiology / definition of Astigmatism?
+
+  - **A.** **Astigmatism:** Refractive error where light focuses at multiple points, not one
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **Astigmatism:** Refractive error where light focuses at multiple points, not one
+

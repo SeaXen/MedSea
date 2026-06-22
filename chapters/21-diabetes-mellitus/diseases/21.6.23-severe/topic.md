@@ -117,3 +117,34 @@ modified: 2026-06-13
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "moderate" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (4 generated)
+
+- Q: What is the definition of moderate?
+  A: | Grading System | JBDS (UK) / ADA (US) — similar cut-offs |
+- Q: What is Grading System of moderate?
+  A: JBDS (UK) / ADA (US) — similar cut-offs
+- Q: What is Mild of moderate?
+  A: pH 7.25–7.30, bicarb 15–18, alert, K+ >3.5
+- Q: What is Moderate of moderate?
+  A: pH 7.00–7.24, bicarb 10–15, alert/drowsy, K+ 3.0–3.5
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes moderate?**
+   A. **| Grading System | JBDS (UK) / ADA (US) — similar cut-offs |**
+   B. An unrelated condition not matching the clinical picture of moderate
+   C. A complication seen late in the disease course of moderate
+   D. A condition that mimics moderate but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected moderate presents with: Grading System — JBDS (UK) / ADA (US) — similar cut-offs; Mild — pH 7.25–7.30, bicarb 15–18, alert, K+ >3.5; Moderate — pH 7.00–7.24, bicarb 10–15, alert/drowsy, K+ 3.0–3.5. What is the most likely diagnosis?
+   A. **moderate**
+   B. A condition that mimics moderate but is not the same entity
+   C. A complication of moderate rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as moderate
+

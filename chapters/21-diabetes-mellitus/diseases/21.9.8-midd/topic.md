@@ -146,3 +146,82 @@ By the end of this note you should be able to:
 - **I**nsulin often needed
 - **O**phthalmoplegia: chronic progressive (MELAS)
 - **N**ephropathy: FSGS (MIDD); rare in MELAS</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — MIDD)*
+
+**Q1.** Which of the following features is most specific or characteristic of MIDD)?
+
+  - **A.** All diabetes + deafness = MIDD?
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — All diabetes + deafness = MIDD?
+  >
+  > *Source:* o deafness; no maternal inheritance |
+| Confusion | Clarification |
+|-----------|---------------|
+| **All diabetes + deafness = MIDD?** | NO - Alport (COL4A5), Wolfram (WFS1), maternal inheritance key
+---
+
+> Auto-generated study sections for "m.3243A>G (MELAS" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of m.3243A>G (MELAS?
+  A: By the end of this note you should be able to:
+- Q: What is Mutation of m.3243A>G (MELAS?
+  A: m.3243A>G in tRNA-Leu (UUR)
+- Q: What is Syndromes of m.3243A>G (MELAS?
+  A: MELAS (mitochondrial encephalomyopathy, lactic acidosis, stroke-like episodes) / MIDD (maternally inherited diabetes and deafness)
+- Q: What is Inheritance of m.3243A>G (MELAS?
+  A: Maternal (mtDNA); heteroplasmy determines severity
+- Q: How is m.3243A>G (MELAS managed?
+  A: Insulin often needed (progressive beta-cell failure)
+- Q: What is Avoid of m.3243A>G (MELAS?
+  A: Metformin (lactic acidosis risk); glitazones (fluid retention)
+- Q: What is SGLT2i of m.3243A>G (MELAS?
+  A: Caution (renal impairment, low BMI)
+- Q: What is GLP-1 RA of m.3243A>G (MELAS?
+  A: Caution (weight loss may worsen myopathy)
+- Q: What is Insulin of m.3243A>G (MELAS?
+  A: Often required; variable doses
+- Q: How is m.3243A>G (MELAS managed?
+  A: Insulin often needed (progressive beta-cell failure)
+- Q: What is Avoid of m.3243A>G (MELAS?
+  A: Metformin (lactic acidosis risk); glitazones (fluid retention)
+- Q: What is SGLT2i of m.3243A>G (MELAS?
+  A: Caution (renal impairment, low BMI)
+- Q: What is GLP-1 RA of m.3243A>G (MELAS?
+  A: Caution (weight loss may worsen myopathy)
+- Q: What is Mutation of m.3243A>G (MELAS?
+  A: m.3243A>G (tRNA-Leu UUR)
+- Q: What is Inheritance of m.3243A>G (MELAS?
+  A: Maternal; heteroplasmy determines severity
+- Q: What is MIDD of m.3243A>G (MELAS?
+  A: Diabetes + sensorineural deafness
+- Q: What is MELAS of m.3243A>G (MELAS?
+  A: Stroke-like episodes, lactic acidosis, myopathy
+- Q: What is Heteroplasmy of m.3243A>G (MELAS?
+  A: Low = MIDD; High = MELAS
+- Q: How is m.3243A>G (MELAS managed?
+  A: Insulin often needed; avoid metformin; monitor heart/kidney
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes m.3243A>G (MELAS?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of m.3243A>G (MELAS
+   C. A complication seen late in the disease course of m.3243A>G (MELAS
+   D. A condition that mimics m.3243A>G (MELAS but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected m.3243A>G (MELAS presents with: Mutation — m.3243A>G in tRNA-Leu (UUR); Syndromes — MELAS (mitochondrial encephalomyopathy, lactic acidosis, stroke-like episodes) / MIDD (maternally inherited diabetes and deafness); Inheritance — Maternal (mtDNA); heteroplasmy determines severity. What is the most likely diagnosis?
+   A. **m.3243A>G (MELAS**
+   B. A condition that mimics m.3243A>G (MELAS but is not the same entity
+   C. A complication of m.3243A>G (MELAS rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as m.3243A>G (MELAS
+

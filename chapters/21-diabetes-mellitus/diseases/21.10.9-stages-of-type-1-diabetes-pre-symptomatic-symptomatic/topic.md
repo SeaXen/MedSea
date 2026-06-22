@@ -214,3 +214,54 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Type 1 diabetes pathogenesis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Type 1 diabetes pathogenesis?
+  A: # Stages of type 1 diabetes (pre-symptomatic, symptomatic)
+- Q: What is Staging System of Type 1 diabetes pathogenesis?
+  A: ADA/JDRF/Endocrine Society 2015 (updated 2021)
+- Q: What is Purpose of Type 1 diabetes pathogenesis?
+  A: Standardise pre-clinical phases; enable prevention trials
+- Q: What is Type 1 diabetes pathogenesis indicated for?
+  A: Stage 2 T1DM, age >=8 years
+- Q: What is the dose of Type 1 diabetes pathogenesis?
+  A: Weight-based IV daily x14 days
+- Q: What is Effect of Type 1 diabetes pathogenesis?
+  A: Median delay to Stage 3: 48.4 vs 24.4 months (HR 0.48)
+- Q: What are the side effects of Type 1 diabetes pathogenesis?
+  A: Lymphopenia (transient), rash, cytokine release
+- Q: What is Type 1 diabetes pathogenesis indicated for?
+  A: Stage 2 T1DM, age >=8 years
+- Q: What is the dose of Type 1 diabetes pathogenesis?
+  A: Weight-based IV daily x14 days
+- Q: What is Effect of Type 1 diabetes pathogenesis?
+  A: Median delay to Stage 3: 48.4 vs 24.4 months (HR 0.48)
+- Q: What are the side effects of Type 1 diabetes pathogenesis?
+  A: Lymphopenia (transient), rash, cytokine release
+- Q: How is Type 1 diabetes pathogenesis classified?
+  A: 2+ Ab + normal glucose; monitoring q6-12mo
+- Q: What is Teplizumab of Type 1 diabetes pathogenesis?
+  A: Anti-CD3 mAb; 14-day IV; delays Stage 3 by ~2 years
+- Q: What is LADA of Type 1 diabetes pathogenesis?
+  A: Often Stage 2 equivalent but adult-onset, slower
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 1 diabetes pathogenesis?**
+   A. **# Stages of type 1 diabetes (pre-symptomatic, symptomatic)**
+   B. An unrelated condition not matching the clinical picture of Type 1 diabetes pathogenesis
+   C. A complication seen late in the disease course of Type 1 diabetes pathogenesis
+   D. A condition that mimics Type 1 diabetes pathogenesis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 1 diabetes pathogenesis presents with: Staging System — ADA/JDRF/Endocrine Society 2015 (updated 2021); Purpose — Standardise pre-clinical phases; enable prevention trials. What is the most likely diagnosis?
+   A. **Type 1 diabetes pathogenesis**
+   B. A condition that mimics Type 1 diabetes pathogenesis but is not the same entity
+   C. A complication of Type 1 diabetes pathogenesis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 1 diabetes pathogenesis
+

@@ -129,3 +129,49 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Oral glucose tolerance test (OGTT)*
+
+**Q1.** What is the most appropriate first-line therapy for Oral glucose tolerance test (OGTT)?
+
+  - **A.** Discordant FPG/HbA1c
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Discordant FPG/HbA1c
+  >
+  > *Source:* **Discordant FPG/HbA1c**   OGTT as tie-breaker   Use if HbA1c unreliable
+---
+
+> Auto-generated study sections for "Diagnostic criteria" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (4 generated)
+
+- Q: What is the definition of Diagnostic criteria?
+  A: 75g OGTT: Fasting + 2h post-load glucose; Gold standard for glucose tolerance
+- Q: What is Protocol of Diagnostic criteria?
+  A: ≥8h fast → baseline FPG → 75g anhydrous glucose in 250–300ml water over 5min → 2h sample (patient seated, no smoking)
+- Q: What is Diagnostic Cut-offs (WHO/ADA) of Diagnostic criteria?
+  A: 2h ≥11.1 mmol/L = Diabetes; 2h 7.8–11.0 = IGT; FPG 6.1–6.9 = IFG
+- Q: What is GDM Criteria (IADPSG) of Diagnostic criteria?
+  A: FBG ≥5.1, 1h ≥10.0, 2h ≥8.5 mmol/L (one abnormal = GDM)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diagnostic criteria?**
+   A. **| Definition | 75g OGTT: Fasting + 2h post-load glucose; Gold standard for glucose tolerance |**
+   B. An unrelated condition not matching the clinical picture of Diagnostic criteria
+   C. A complication seen late in the disease course of Diagnostic criteria
+   D. A condition that mimics Diagnostic criteria but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diagnostic criteria presents with: Protocol — ≥8h fast → baseline FPG → 75g anhydrous glucose in 250–300ml water over 5min → 2h sample (patient seated, no smoking); Diagnostic Cut-offs (WHO/ADA) — 2h ≥11.1 mmol/L = Diabetes; 2h 7.8–11.0 = IGT; FPG 6.1–6.9 = IFG; GDM Criteria (IADPSG) — FBG ≥5.1, 1h ≥10.0, 2h ≥8.5 mmol/L (one abnormal = GDM). What is the most likely diagnosis?
+   A. **Diagnostic criteria**
+   B. A condition that mimics Diagnostic criteria but is not the same entity
+   C. A complication of Diagnostic criteria rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diagnostic criteria
+

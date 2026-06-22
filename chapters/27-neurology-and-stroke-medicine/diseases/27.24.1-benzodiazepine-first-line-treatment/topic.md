@@ -544,3 +544,19 @@ Benzodiazepines are the **rapid first-line antiseizure drugs** in convulsive sta
 8. **A** — benzodiazepines are central in alcohol withdrawal-related seizures.
 9. **A** — oversedation can obscure persistent non-convulsive ictal activity.
 10. **B** — always reassess, monitor, and escalate when needed.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Benzodiazepine first-line treatment*
+
+**Q1.** What is the most appropriate first-line therapy for Benzodiazepine first-line treatment?
+
+  - **A.** Give benzodiazepine promptly
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Give benzodiazepine promptly
+  >
+  > *Source:* Give benzodiazepine promptly.
+

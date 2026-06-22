@@ -124,3 +124,46 @@ By the end of this note you should be able to:
 - **I**nsulin: MDI or CSII
 - **O**utcomes: HbA1c↓, hypo↓, QoL↑
 - **N**at. curriculum: standardised**</think>
+---
+
+> Auto-generated study sections for "Diabetes education and structured education" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Diabetes education and structured education?
+  A: By the end of this note you should be able to:
+- Q: What is Full name of Diabetes education and structured education?
+  A: Dose Adjustment For Normal Eating
+- Q: What is Target of Diabetes education and structured education?
+  A: Type 1 diabetes on basal-bolus insulin (MDI or CSII)
+- Q: What is Format of Diabetes education and structured education?
+  A: 5-day group course (or 5x1-day weekly); 6-8 participants
+- Q: What is Programme of Diabetes education and structured education?
+  A: Dose Adjustment For Normal Eating; 5-day group course
+- Q: What is Target of Diabetes education and structured education?
+  A: T1DM on basal-bolus (MDI/CSII); HbA1c>58 or severe hypo
+- Q: What is Core skills of Diabetes education and structured education?
+  A: Carb counting, ICR, ISF, correction doses, sick days
+- Q: What is the prognosis of Diabetes education and structured education?
+  A: HbA1c ↓0.5-1.0%; severe hypo ↓50-70%; QoL ↑
+- Q: What is DAFNE-HART of Diabetes education and structured education?
+  A: DAFNE + pump skills for CSII users
+- Q: What is Quality of Diabetes education and structured education?
+  A: Trained educators; standardised curriculum; audit
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes education and structured education?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes education and structured education
+   C. A complication seen late in the disease course of Diabetes education and structured education
+   D. A condition that mimics Diabetes education and structured education but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes education and structured education presents with: Full name — Dose Adjustment For Normal Eating; Target — Type 1 diabetes on basal-bolus insulin (MDI or CSII); Format — 5-day group course (or 5x1-day weekly); 6-8 participants. What is the most likely diagnosis?
+   A. **Diabetes education and structured education**
+   B. A condition that mimics Diabetes education and structured education but is not the same entity
+   C. A complication of Diabetes education and structured education rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes education and structured education
+

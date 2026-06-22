@@ -435,3 +435,32 @@ mindmap
    C. A complication of Soft Tissue Rheumatism and Chronic Pain Syndromes rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Soft Tissue Rheumatism and Chronic Pain Syndromes
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Complex regional pain syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of Complex regional pain syndrome?
+
+  - **A.** SYMPATHETIC BLOCK
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — SYMPATHETIC BLOCK
+  >
+  > *Source:* opathic agents\nGabapentin, Amitriptyline, Duloxetine]
+    C2 --> C3[NSAIDs (adjunct)]
+    C3 --> D[**SYMPATHETIC BLOCK**\nStellate ganglion / Lumbar sympathetic\nDiagnostic + Therapeutic]
+    D --> E
+
+**Q2.** What is the most appropriate first-line therapy for Complex regional pain syndrome?
+
+  - **A.** Mirror Therapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Mirror Therapy
+  >
+  > *Source:* B2 --> B3[**Mirror Therapy**\nVisual feedback for cortical reorganisation]
+

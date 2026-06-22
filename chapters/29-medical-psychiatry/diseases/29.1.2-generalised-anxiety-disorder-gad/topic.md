@@ -278,3 +278,20 @@ A: 5-HT1A partial agonist; non-sedating, no dependence; takes 2-4 weeks
 
 - [[../Anxiety and Stress-Related Disorders|Anxiety and Stress-Related Disorders]] (heading hub)
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Generalised anxiety disorder (GAD)*
+
+**Q1.** Which of the following features is most specific or characteristic of Generalised anxiety disorder (GAD)?
+
+  - **A.** Mnemonic for Generalised anxiety disorder
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Generalised anxiety disorder
+  >
+  > *Source:* **Mnemonic for Generalised anxiety disorder (GAD)** — see key points in Core Clinical Content
+- **'SIG E CAPS'** for depression criteria: Sleep, Interest, Guilt, Energy, Concentration, Appetite, Psych
+

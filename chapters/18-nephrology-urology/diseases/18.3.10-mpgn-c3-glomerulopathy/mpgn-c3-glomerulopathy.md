@@ -463,3 +463,19 @@ mindmap
 **Management**: Treat cause (DAAs for HCV, clone-directed for MGUS). Supportive: ACEi/ARB, SGLT2i. C3G: MMF+steroids ± CNI; eculizumab/iptacopan emerging for progressive C3NeF+.  
 **Transplant**: High recurrence in C3G (DDD > C3GN). CFH mutation → liver-kidney transplant.  
 **Exam focus**: IF classification, EM distinction DDD vs C3GN, complement profile, immunofixation mandate, C3NeF, HCV treatment, transplant recurrence.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — MPGN and C3 Glomerulopathy (DDD, C3GN)*
+
+**Q1.** What is the most appropriate first-line therapy for MPGN and C3 Glomerulopathy (DDD, C3GN)?
+
+  - **A.** Monoclonal gammopathy + Treat underlying clone
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Monoclonal gammopathy + Treat underlying clone
+  >
+  > *Source:* **Monoclonal gammopathy**   **Treat underlying clone** (bortezomib/dex ± rituximab ± daratumumab)
+

@@ -322,3 +322,18 @@ mindmap
    C. A complication seen late in the disease course of Liver Tumours
    D. A condition that mimics Liver Tumours but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — HCC surveillance, LI-RADS, and screening*
+
+**Q1.** What is the most appropriate first-line therapy for HCC surveillance, LI-RADS, and screening?
+
+  - **A.** Treat as HCC
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat as HCC
+  >
+  > *Source:* B --> LR-5  G[**Treat as HCC** — No Biopsy Needed]
+

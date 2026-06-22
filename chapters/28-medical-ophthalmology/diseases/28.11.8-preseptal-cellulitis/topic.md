@@ -567,3 +567,35 @@ Preseptal (periorbital) cellulitis is infection of the eyelid **anterior to the 
 
 ## Tags
 #medicine #davidson #ophthalmology #preseptal #cellulitis #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Preseptal Cellulitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Preseptal Cellulitis?
+
+  - **A.** orbital cellulitis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — orbital cellulitis
+  >
+  > *Source:* r / submandibular lymphadenopathy
+- ± Fever (usually low-grade)
+
+### Complications
+- Progression to **orbital cellulitis** (failure of orbital septum to contain infection) — a key red flag
+- Local abs
+
+**Q2.** What is the most appropriate first-line therapy for Preseptal Cellulitis?
+
+  - **A.** Flucloxacillin
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Flucloxacillin
+  >
+  > *Source:* OR **Flucloxacillin** (if Staph suspected) + amoxicillin (Hib cover)
+

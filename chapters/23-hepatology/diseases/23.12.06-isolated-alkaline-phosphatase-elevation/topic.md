@@ -331,3 +331,21 @@ mindmap
    C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Isolated alkaline phosphatase elevation*
+
+**Q1.** Which of the following features is most specific or characteristic of Isolated alkaline phosphatase elevation?
+
+  - **A.** Standard teaching
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Standard teaching
+  >
+  > *Source:* Confusion | Clarification |
+|-----------|---------------|
+| GGT normal = Bone | **Standard teaching**: GGT is hepatocyte-specific; bone ALP doesn't raise GGT |
+| Physiological pregnancy ALP | **3rd tr
+

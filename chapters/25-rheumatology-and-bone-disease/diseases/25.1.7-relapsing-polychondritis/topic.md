@@ -531,3 +531,33 @@ mindmap
    C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Relapsing polychondritis*
+
+**Q1.** Which of the following is characterised by the clinical triad: auricular chondritis sparing lobes, nasal chondritis/saddle nose, respiratory chondritis/laryngitis?
+
+  - **A.** Relapsing polychondritis
+  - **B.** RA
+  - **C.** SLE
+  - **D.** Polymyalgia
+
+  > **Answer: A** — Relapsing polychondritis
+  >
+  > *Source:* Diagnosis?" | **Relapsing Polychondritis** — classic triad (auricular chondritis sparing lobes, nasal chondritis/saddle nose, respiratory chondritis/laryngitis)
+
+**Q2.** Which of the following features is most specific or characteristic of Relapsing polychondritis?
+
+  - **A.** Key Differentiator
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Key Differentiator
+  >
+  > *Source:* Auricular Chondritis — **Most Common (85-95%)** 🎯
+| Feature | Detail |
+|---------|--------|
+| **Appearance** | **Painful, red, swollen, tender** — **"cauliflower ear" late** |
+| **Key Differentiator**
+

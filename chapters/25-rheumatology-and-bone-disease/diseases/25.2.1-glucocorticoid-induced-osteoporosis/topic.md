@@ -429,3 +429,18 @@ mindmap
    C. A complication of Bone Metabolic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Bone Metabolic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Glucocorticoid-induced osteoporosis*
+
+**Q1.** What is the most appropriate first-line therapy for Glucocorticoid-induced osteoporosis?
+
+  - **A.** Teriparatide
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Teriparatide
+  >
+  > *Source:* D --> Severe (T ≤-3.5 + fracture) / GIOP with fractures  G[**Teriparatide 20µg daily ×24mo**\n> Oral BP for GIOP (superior BMD/fracture)]
+

@@ -622,3 +622,19 @@ Perioperative and in-hospital stroke recognition is a high-yield safety topic in
 8. **B. It may present mainly with reduced consciousness, dysphagia, or ataxia** — classic posterior-circulation nuance.
 9. **A. Hypoglycemic mimic rather than definite stroke** — improvement after correction supports mimic.
 10. **B. Treat new focal deficits as stroke emergencies and image urgently** — core principle.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Perioperative and in-hospital stroke recognition*
+
+**Q1.** Which of the following features is most specific or characteristic of Perioperative and in-hospital stroke recognition?
+
+  - **A.** A. Thromboembolic stroke
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — A. Thromboembolic stroke
+  >
+  > *Source:* **A. Thromboembolic stroke** — anticoagulant interruption is a key clue
+

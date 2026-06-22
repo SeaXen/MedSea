@@ -148,3 +148,72 @@ By the end of this note you should be able to:
 - **C**ost-effective testing: probability > 6%
 - **I**nhritance: MODY autosomal dominant; neonatal mostly de novo
 - **S**ulfonylurea: HNF1A, HNF4A, KCNJ11, ABCC8 responsive
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Monogenic diabetes in children*
+
+**Q1.** Which of the following features is most specific or characteristic of Monogenic diabetes in children?
+
+  - **A.** Targeted testing
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Targeted testing
+  >
+  > *Source:* tive in MODY/neonatal |
+| **C-peptide** | Preserved |
+| **Genetic panel** | If probability > 6% |
+| **Targeted testing** | If FH suggests specific gene |
+| Condition | Distinguishing Features |
+|-----
+---
+
+> Auto-generated study sections for "Diabetes in children and adolescents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Diabetes in children and adolescents?
+  A: By the end of this note you should be able to:
+- Q: What is MODY of Diabetes in children and adolescents?
+  A: 1-2% of diabetes; autosomal dominant; onset < 25y
+- Q: What is Neonatal DM of Diabetes in children and adolescents?
+  A: < 6 months; 1:100,000-500,000; KCNJ11/ABCC8 most common
+- Q: What is Inheritance of Diabetes in children and adolescents?
+  A: Autosomal dominant (MODY); mostly de novo (neonatal)
+- Q: What is Prenatal of Diabetes in children and adolescents?
+  A: Available if familial mutation known
+- Q: What is Inheritance of Diabetes in children and adolescents?
+  A: Autosomal dominant (MODY); mostly de novo (neonatal)
+- Q: What is Prenatal of Diabetes in children and adolescents?
+  A: Available if familial mutation known
+- Q: What is Family screening of Diabetes in children and adolescents?
+  A: Offer to relatives
+- Q: What is MODY red flags of Diabetes in children and adolescents?
+  A: < 25y, non-obese, 3-gen FH, negative Abs, C-peptide preserved
+- Q: What is GCK-MODY of Diabetes in children and adolescents?
+  A: Mild fasting hyperglycaemia; no treatment
+- Q: What is HNF1A-MODY of Diabetes in children and adolescents?
+  A: Sulfonylurea responsive (excellent)
+- Q: What is Neonatal DM of Diabetes in children and adolescents?
+  A: < 6 months; KCNJ11/ABCC8 -> sulfonylurea responsive (90%)
+- Q: What is the investigation of choice for Diabetes in children and adolescents?
+  A: Probability > 6% cost-effective
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in children and adolescents?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in children and adolescents
+   C. A complication seen late in the disease course of Diabetes in children and adolescents
+   D. A condition that mimics Diabetes in children and adolescents but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in children and adolescents presents with: MODY — 1-2% of diabetes; autosomal dominant; onset < 25y; Neonatal DM — < 6 months; 1:100,000-500,000; KCNJ11/ABCC8 most common; Prevalence — ~100,000 MODY in UK; underdiagnosed. What is the most likely diagnosis?
+   A. **Diabetes in children and adolescents**
+   B. A condition that mimics Diabetes in children and adolescents but is not the same entity
+   C. A complication of Diabetes in children and adolescents rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in children and adolescents
+

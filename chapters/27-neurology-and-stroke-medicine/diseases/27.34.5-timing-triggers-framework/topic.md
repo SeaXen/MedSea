@@ -729,3 +729,35 @@ The timing-triggers framework is a **high-yield bedside sorting tool** for verti
 8. **C** — dysarthria plus direction-changing nystagmus strongly supports central concern and imaging.
 9. **B** — structured history is especially valuable when symptom descriptions are vague.
 10. **B** — this is the best summary of the method.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Timing-triggers framework*
+
+**Q1.** Which of the following features is most specific or characteristic of Timing-triggers framework?
+
+  - **A.** who needs bedside maneuvers
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — who needs bedside maneuvers
+  >
+  > *Source:* on-changing nystagmus
+- suggests **central vertigo**
+### First principle
+The framework helps decide **who needs bedside maneuvers**, **who needs neuro-examination**, and **who needs imaging**, rather 
+
+**Q2.** In the management of Timing-triggers framework, which of the following should be avoided or is contraindicated?
+
+  - **A.** reflex overuse of vestibular suppressants (avoid in all dizzy patients)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — reflex overuse of vestibular suppressants (avoid in all dizzy patients)
+  >
+  > *Source:* ss
+- broaden review to functional, multisensory, medication-related, or chronic vestibular causes
+- Avoid reflex overuse of vestibular suppressants in all dizzy patients; they may mask evolution and d
+

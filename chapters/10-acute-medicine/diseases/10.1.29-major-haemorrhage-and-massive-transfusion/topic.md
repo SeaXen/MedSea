@@ -605,3 +605,21 @@ flowchart TD
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-15
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — Major Haemorrhage and Massive Transfusion*
+
+**Q1.** Which landmark clinical trial provided evidence relevant to the management of Major Haemorrhage and Massive Transfusion (specifically: TXA in trauma:
+    A)?
+
+  - **A.** CRASH-2 trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — CRASH-2 trial
+  >
+  > *Source:* CRASH-2 trial showed TXA in trauma:
+    A
+

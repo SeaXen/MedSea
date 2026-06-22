@@ -179,3 +179,60 @@ Booking (10-12w)
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[GDM management (diet, metformin, insulin)]], [[Pre-existing diabetes in pregnancy (type 1, type 2)]], [[Postpartum follow-up and future risk]], [[Gestational diabetes mellitus (GDM) epidemiology]]
+---
+
+> Auto-generated study sections for "Diabetes in pregnancy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Diabetes in pregnancy?
+  A: Two major approaches: IADPSG/ADA/WHO = Universal one-step 75g OGTT; NICE = Selective two-step (risk factors → OGTT).
+- Q: What is IADPSG fasting threshold of Diabetes in pregnancy?
+  A: 5.1 mmol/L (lower than NICE 5.6)
+- Q: What is IADPSG 1-hour threshold of Diabetes in pregnancy?
+  A: 10.0 mmol/L (unique to IADPSG)
+- Q: What is IADPSG 2-hour threshold of Diabetes in pregnancy?
+  A: 8.5 mmol/L (lower than NICE 7.8)
+- Q: What is NICE screening of Diabetes in pregnancy?
+  A: Risk-factor based — not universal
+- Q: What is NICE OGTT of Diabetes in pregnancy?
+  A: Fasting + 2h only (no 1h)
+- Q: What is Previous GDM of Diabetes in pregnancy?
+  A: OGTT at booking + repeat 24–28w
+- Q: What is Overt diabetes in pregnancy of Diabetes in pregnancy?
+  A: FPG ≥7.0 / HbA1c ≥48 at booking → pre-existing, not GDM
+- Q: What is HAPO study of Diabetes in pregnancy?
+  A: Basis for IADPSG — continuous risk, no clear threshold
+- Q: What is the epidemiology of Diabetes in pregnancy?
+  A: IADPSG 15–25%; NICE 5–10%
+- Q: What is Cost-effectiveness of Diabetes in pregnancy?
+  A: NICE selective approach favoured in UK health economic models
+- Q: What is IADPSG fasting threshold of Diabetes in pregnancy?
+  A: 5.1 mmol/L (lower than NICE 5.6)
+- Q: What is IADPSG 1-hour threshold of Diabetes in pregnancy?
+  A: 10.0 mmol/L (unique to IADPSG)
+- Q: What is IADPSG 2-hour threshold of Diabetes in pregnancy?
+  A: 8.5 mmol/L (lower than NICE 7.8)
+- Q: What is NICE screening of Diabetes in pregnancy?
+  A: Risk-factor based — not universal
+- Q: What is NICE OGTT of Diabetes in pregnancy?
+  A: Fasting + 2h only (no 1h)
+- Q: What is Previous GDM of Diabetes in pregnancy?
+  A: OGTT at booking + repeat 24–28w
+- Q: What is Overt diabetes in pregnancy of Diabetes in pregnancy?
+  A: FPG ≥7.0 / HbA1c ≥48 at booking → pre-existing, not GDM
+- Q: What is HAPO study of Diabetes in pregnancy?
+  A: Basis for IADPSG — continuous risk, no clear threshold
+- Q: What is the epidemiology of Diabetes in pregnancy?
+  A: IADPSG 15–25%; NICE 5–10%
+- Q: What is Cost-effectiveness of Diabetes in pregnancy?
+  A: NICE selective approach favoured in UK health economic models
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in pregnancy?**
+   A. **Two major approaches: IADPSG/ADA/WHO = Universal one-step 75g OGTT; NICE = Selective two-step (risk factors → OGTT).**
+   B. An unrelated condition not matching the clinical picture of Diabetes in pregnancy
+   C. A complication seen late in the disease course of Diabetes in pregnancy
+   D. A condition that mimics Diabetes in pregnancy but has a different underlying cause
+

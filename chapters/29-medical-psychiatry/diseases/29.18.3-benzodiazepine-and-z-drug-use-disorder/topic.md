@@ -278,3 +278,20 @@ A: Convert to long-acting (diazepam), then taper slowly (5-10% every 1-2 weeks)
 
 - [[../Substance Use Disorders|Substance Use Disorders]] (heading hub)
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Benzodiazepine and Z-drug use disorder*
+
+**Q1.** Which of the following features is most specific or characteristic of Benzodiazepine and Z-drug use disorder?
+
+  - **A.** Mnemonic for Benzodiazepine and Z-drug use disorder
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Benzodiazepine and Z-drug use disorder
+  >
+  > *Source:* **Mnemonic for Benzodiazepine and Z-drug use disorder** — see key points in Core Clinical Content
+- **'SIG E CAPS'** for depression criteria: Sleep, Interest, Guilt, Energy, Concentration, Appetite, P
+

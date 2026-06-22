@@ -127,3 +127,33 @@ status: full-fcps-mrcp-note
 - Vesicles (Ramsay Hunt)
 - Hyperacusis, severe (worse prognosis)
 - Recurrent (other cause, Melkersson-Rosenthal syndrome)
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Bells Palsy*
+
+**Q1.** Which of the following features is most specific or characteristic of Bells Palsy?
+
+  - **A.** Inability to close eye
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Inability to close eye
+  >
+  > *Source:* **Acute onset** (hours-days), often upon waking
+- **Unilateral facial weakness** (forehead + lower face - LMN)
+- **Inability to close eye** on affected side (key feature - LMN)
+- **Hyperacusis** (stap
+
+**Q2.** What is the most appropriate first-line therapy for Bells Palsy?
+
+  - **A.** Prednisolone
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Prednisolone
+  >
+  > *Source:* **Prednisolone 50mg daily × 10 days** (start within 72 hours, optimal benefit)
+

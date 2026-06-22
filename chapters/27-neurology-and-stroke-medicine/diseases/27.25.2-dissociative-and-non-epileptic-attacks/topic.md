@@ -450,3 +450,32 @@ Dissociative and non-epileptic attacks are an important high-yield presentation 
 8. Explanation, psychological/rehabilitative management, and trigger/comorbidity treatment.
 9. Because epilepsy may have a normal interictal EEG and PNES may require event capture.
 10. Dissociative attacks / functional seizures.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Dissociative and non-epileptic attacks*
+
+**Q1.** In the management of Dissociative and non-epileptic attacks, which of the following should be avoided or is contraindicated?
+
+  - **A.** unnecessary polypharmacy (avoid in unexplained episodes)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — unnecessary polypharmacy (avoid in unexplained episodes)
+  >
+  > *Source:* - Avoid unnecessary polypharmacy for unexplained episodes.
+### Video-EEG
+- **Indication:** diagnostic uncertainty, possible coexisting epilepsy, frequent events
+
+**Q2.** What is the most appropriate first-line therapy for Dissociative and non-epileptic attacks?
+
+  - **A.** Give a clear positive explanation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Give a clear positive explanation
+  >
+  > *Source:* Give a clear positive explanation.
+

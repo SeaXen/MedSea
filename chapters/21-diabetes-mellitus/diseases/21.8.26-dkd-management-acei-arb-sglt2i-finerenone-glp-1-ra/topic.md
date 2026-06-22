@@ -162,3 +162,107 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetic kidney disease staging (KDIGO)]], [[GFR categories (G1-G5)]], [[Albuminuria categories (A1/A2/A3)]], [[Diabetic nephropathy]], [[Diabetes in CKD and dialysis]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — dkd-management-acei-arb,-sglt2i,-finerenone,-glp-1-ra*
+
+**Q1.** What is the most appropriate first-line therapy for dkd-management-acei-arb,-sglt2i,-finerenone,-glp-1-ra?
+
+  - **A.** Pregnancy + STOP ACEi/ARB/Finerenone/SGLT2i
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Pregnancy + STOP ACEi/ARB/Finerenone/SGLT2i
+  >
+  > *Source:* **Pregnancy**   **STOP ACEi/ARB/Finerenone/SGLT2i**; methyldopa/labetalol/nifedipine for BP; insulin for glucose
+---
+
+> Auto-generated study sections for "Diabetic nephropathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Diabetic nephropathy?
+  A: # DKD management (ACEi-ARB, SGLT2i, finerenone, GLP-1 RA)
+- Q: What is Diabetic nephropathy indicated for?
+  A: All DKD A2/A3 (even normotensive)
+- Q: What is the dose of Diabetic nephropathy?
+  A: Maximum tolerated (e.g., ramipril 10mg, losartan 100mg)
+- Q: What is the mechanism of Diabetic nephropathy?
+  A: Efferent arteriolar dilatation → ↓ intraglomerular pressure
+- Q: How is Diabetic nephropathy monitored?
+  A: K+, creatinine at 1–2 weeks, then 3–6 monthly
+- Q: What is Acceptable rise of Diabetic nephropathy?
+  A: Creatinine <30% (eGFR drop <30%) = expected; >30% → halve dose
+- Q: What is Hyperkalaemia of Diabetic nephropathy?
+  A: K+ >5.5 → reduce/hold; >6.0 → stop; treat K+, restart low dose
+- Q: What is the first-line treatment for Diabetic nephropathy?
+  A: ACEi/ARB max dose (even if normotensive)
+- Q: What is SGLT2i in DKD of Diabetic nephropathy?
+  A: eGFR ≥20 (dapa/empa); cana ≥30; add to ACEi/ARB
+- Q: What is Finerenone of Diabetic nephropathy?
+  A: eGFR ≥25 + A2/A3; monitor K+ at 4w; hold if >5.5
+- Q: What is GLP-1 RA renal of Diabetic nephropathy?
+  A: No dose adjust down to eGFR 15; FLOW trial benefit
+- Q: What is ACEi + ARB combo of Diabetic nephropathy?
+  A: Contraindicated — ↑ hyperkalaemia, AKI, no extra benefit
+- Q: What is Creatinine rise ACEi/ARB of Diabetic nephropathy?
+  A: <30% acceptable (haemodynamic); >30% → reduce dose
+- Q: What is BP target KDIGO of Diabetic nephropathy?
+  A: <120/80; NICE/ADA <130/80
+- Q: What is Metformin in DKD of Diabetic nephropathy?
+  A: G3a: max 1g BD; G3b/G4: contraindicated (NICE)
+- Q: What is SGLT2i eGFR dip of Diabetic nephropathy?
+  A: Initial 3–5 mL drop expected — do not stop
+- Q: What is Patiromer/SZC of Diabetic nephropathy?
+  A: K+ binders enable RAASi/SGLT2i/finerenone continuation
+- Q: What is Diabetic nephropathy indicated for?
+  A: All DKD A2/A3 (even normotensive)
+- Q: What is the dose of Diabetic nephropathy?
+  A: Maximum tolerated (e.g., ramipril 10mg, losartan 100mg)
+- Q: What is the mechanism of Diabetic nephropathy?
+  A: Efferent arteriolar dilatation → ↓ intraglomerular pressure
+- Q: How is Diabetic nephropathy monitored?
+  A: K+, creatinine at 1–2 weeks, then 3–6 monthly
+- Q: What is Acceptable rise of Diabetic nephropathy?
+  A: Creatinine <30% (eGFR drop <30%) = expected; >30% → halve dose
+- Q: What is Hyperkalaemia of Diabetic nephropathy?
+  A: K+ >5.5 → reduce/hold; >6.0 → stop; treat K+, restart low dose
+- Q: What is the first-line treatment for Diabetic nephropathy?
+  A: ACEi/ARB max dose (even if normotensive)
+- Q: What is SGLT2i in DKD of Diabetic nephropathy?
+  A: eGFR ≥20 (dapa/empa); cana ≥30; add to ACEi/ARB
+- Q: What is Finerenone of Diabetic nephropathy?
+  A: eGFR ≥25 + A2/A3; monitor K+ at 4w; hold if >5.5
+- Q: What is GLP-1 RA renal of Diabetic nephropathy?
+  A: No dose adjust down to eGFR 15; FLOW trial benefit
+- Q: What is ACEi + ARB combo of Diabetic nephropathy?
+  A: Contraindicated — ↑ hyperkalaemia, AKI, no extra benefit
+- Q: What is Creatinine rise ACEi/ARB of Diabetic nephropathy?
+  A: <30% acceptable (haemodynamic); >30% → reduce dose
+- Q: What is BP target KDIGO of Diabetic nephropathy?
+  A: <120/80; NICE/ADA <130/80
+- Q: What is Metformin in DKD of Diabetic nephropathy?
+  A: G3a: max 1g BD; G3b/G4: contraindicated (NICE)
+- Q: What is SGLT2i eGFR dip of Diabetic nephropathy?
+  A: Initial 3–5 mL drop expected — do not stop
+- Q: What is Patiromer/SZC of Diabetic nephropathy?
+  A: K+ binders enable RAASi/SGLT2i/finerenone continuation
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic nephropathy?**
+   A. **# DKD management (ACEi-ARB, SGLT2i, finerenone, GLP-1 RA)**
+   B. An unrelated condition not matching the clinical picture of Diabetic nephropathy
+   C. A complication seen late in the disease course of Diabetic nephropathy
+   D. A condition that mimics Diabetic nephropathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic nephropathy presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — dkd-management-acei-arb,-sglt2i,-finerenone,-glp-1-ra; Q1. What is the most appropriate first-line therapy for dkd-management-acei-arb,-sglt2i,-finerenone,-glp-1-ra?; A. Pregnancy + STOP ACEi/ARB/Finerenone/SGLT2i. What is the most likely diagnosis?
+   A. **Diabetic nephropathy**
+   B. A condition that mimics Diabetic nephropathy but is not the same entity
+   C. A complication of Diabetic nephropathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic nephropathy
+

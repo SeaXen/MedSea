@@ -376,3 +376,20 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Prothrombin Gene Mutation*
+
+**Q1.** What is the most appropriate first-line therapy for Prothrombin Gene Mutation?
+
+  - **A.** Antithrombin Deficiency + Warfarin
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Antithrombin Deficiency + Warfarin
+  >
+  > *Source:* **Antithrombin Deficiency**   **Warfarin** (DOACs less reliable)   Indefinite  
+
+> [!tip] **DOACs = First-line for Prothrombin G20210A**.
+

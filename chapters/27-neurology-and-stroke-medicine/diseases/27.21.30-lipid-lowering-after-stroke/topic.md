@@ -507,3 +507,19 @@ Lipid lowering after stroke is a core secondary prevention intervention, especia
 8. **A** — Lipid profile follow-up confirms response.
 9. **A** — Prior ICH makes some prevention choices more individualized.
 10. **A** — This is the core practical message.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Lipid lowering after stroke*
+
+**Q1.** What is the most appropriate first-line therapy for Lipid lowering after stroke?
+
+  - **A.** high-intensity statin therapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — high-intensity statin therapy
+  >
+  > *Source:* Use **high-intensity statin therapy** in appropriate ischemic stroke/TIA survivors unless contraindicated or not tolerated.
+

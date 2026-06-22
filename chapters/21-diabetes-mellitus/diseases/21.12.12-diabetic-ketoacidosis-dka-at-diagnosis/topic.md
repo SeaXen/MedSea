@@ -153,3 +153,38 @@ modified: 2026-06-13
 - [[Diabetic Emergencies/Diabetic ketoacidosis (DKA) management protocol]]
 - [[Diabetic Emergencies/DKA diagnosis criteria]]
 - [[Diabetic Emergencies/DKA severity grading]]
+---
+
+> Auto-generated study sections for "Clinical presentation" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Clinical presentation?
+  A: DKA at diagnosis = first presentation of T1DM with diabetic ketoacidosis.
+- Q: What is Age <5 years of Clinical presentation?
+  A: Strict protocol adherence
+- Q: What is Severe acidosis (pH <7.1) of Clinical presentation?
+  A: Avoid rapid glucose fall (>5 mmol/L/h)
+- Q: What is High urea / severe dehydration of Clinical presentation?
+  A: Gradual rehydration (48h deficit replacement)
+- Q: What is Bicarbonate use of Clinical presentation?
+  A: Avoid unless pH <6.9
+- Q: What is Early insulin bolus of Clinical presentation?
+  A: Never bolus — infusion only
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Clinical presentation?**
+   A. **DKA at diagnosis = first presentation of T1DM with diabetic ketoacidosis.**
+   B. An unrelated condition not matching the clinical picture of Clinical presentation
+   C. A complication seen late in the disease course of Clinical presentation
+   D. A condition that mimics Clinical presentation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Clinical presentation presents with: DKA at diagnosis = first presentation of T1DM with diabetic ketoacidosis.; Prevalence: 25–40% of new T1DM in children; 15–25% in adults.; FCPS/MRCP relevance: High-yield acute presentation; exam questions on diagnostic criteria, severity grading, initial management, cerebral oedema prevention.. What is the most likely diagnosis?
+   A. **Clinical presentation**
+   B. A condition that mimics Clinical presentation but is not the same entity
+   C. A complication of Clinical presentation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Clinical presentation
+

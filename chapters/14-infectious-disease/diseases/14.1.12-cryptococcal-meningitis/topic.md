@@ -399,3 +399,21 @@ mindmap
 ---
 
 *Generated for FCPS/MRCP exam preparation. Based on Davidson Medicine 24th Ed Chapter 11.*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Cryptococcal Meningitis*
+
+**Q1.** What is the most appropriate first-line therapy for Cryptococcal Meningitis?
+
+  - **A.** Alternative + Voriconazole + Itraconazole
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Alternative + Voriconazole + Itraconazole
+  >
+  > *Source:* **Alternative**   **Voriconazole 200mg BD** / **Itraconazole 200mg BD**   If Fluconazole Intolerance  
+
+> [!tip] **Fluconazole 800mg Daily** = **High Dose for CNS Penetration**.
+

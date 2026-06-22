@@ -507,3 +507,19 @@ A, B, B, A, C, B, A, A, B, B
 
 ### SBAs
 1-A, 2-A, 3-A, 4-A, 5-A
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 19: Clinical Biochemistry — Respiratory Alkalosis*
+
+**Q1.** What is the most appropriate first-line therapy for Respiratory Alkalosis?
+
+  - **A.** Symptomatic Relief   Rebreathing (Paper Bag) for Anxiety-Induced; Calcium Gluconate for Tetany
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Symptomatic Relief   Rebreathing (Paper Bag) for Anxiety-Induced; Calcium Gluconate for Tetany
+  >
+  > *Source:* Symptomatic Relief**   **Rebreathing (Paper Bag)** for Anxiety-Induced; Calcium Gluconate for Tetany
+

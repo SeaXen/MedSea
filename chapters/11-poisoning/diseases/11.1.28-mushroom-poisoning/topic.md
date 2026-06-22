@@ -563,3 +563,34 @@ Mushroom poisoning classified by onset: **< 6h = GI irritants; > 6h = toxic**. *
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Mushroom Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Mushroom Poisoning?
+
+  - **A.** Latent
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Latent
+  >
+  > *Source:* Amanita phalloides (Death Cap) — **DEADLY**
+| Phase | Time | Features |
+|-------|------|----------|
+| **Latent** | 6-24h (6-12h typical) | **Asymptomatic** — **"deceptive recovery"** |
+| **GI** | 6-24
+
+**Q2.** What is the most appropriate first-line therapy for Mushroom Poisoning?
+
+  - **A.** Plasma exchange + removes amatoxins + early use recommended
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Plasma exchange + removes amatoxins + early use recommended
+  >
+  > *Source:* **Plasma exchange (TPE)**: **removes amatoxins** (protein-bound), **early use recommended** in severe cases
+

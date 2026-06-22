@@ -141,3 +141,28 @@ modified: 2026-06-13
 - [[Type 1 Diabetes Mellitus/Insulin therapy/Insulin pump therapy (CSII)]]
 - [[Type 2 Diabetes Mellitus/Insulin therapy in type 2 diabetes]]
 - [[Diabetic Emergencies/Hypoglycaemia classification (Level 1/2/3)]]
+---
+
+> Auto-generated study sections for "Insulin therapy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Insulin therapy?
+  A: Insulin analogues = recombinant human insulin with amino acid modifications altering pharmacokinetics.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin therapy?**
+   A. **Insulin analogues = recombinant human insulin with amino acid modifications altering pharmacokinetics.**
+   B. An unrelated condition not matching the clinical picture of Insulin therapy
+   C. A complication seen late in the disease course of Insulin therapy
+   D. A condition that mimics Insulin therapy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Insulin therapy presents with: Insulin analogues = recombinant human insulin with amino acid modifications altering pharmacokinetics.; FCPS/MRCP relevance: Core prescribing knowledge; exam questions on onset/peak/duration, conversion, pump compatibility, cost-effectiveness.. What is the most likely diagnosis?
+   A. **Insulin therapy**
+   B. A condition that mimics Insulin therapy but is not the same entity
+   C. A complication of Insulin therapy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Insulin therapy
+

@@ -148,3 +148,46 @@ Ungradable → Re-screen 4-6 weeks (cataract → refer for surgery)
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Non-proliferative diabetic retinopathy (NPDR)]], [[Proliferative diabetic retinopathy (PDR)]], [[Diabetic macular oedema (DMO)]], [[Retinopathy treatment (laser, anti-VEGF, vitrectomy)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Retinopathy screening and grading (ETDRS)*
+
+**Q1.** Which of the following features is most specific or characteristic of Retinopathy screening and grading (ETDRS)?
+
+  - **A.** Quality standards
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Quality standards
+  >
+  > *Source:* R0 at two consecutive screens** |
+| **Age range** | **12 years and older** (all diabetes types) |
+| **Quality standards** | Sensitivity **>95%** for referable retinopathy; Specificity **>80%** |
+| **F
+---
+
+> Auto-generated study sections for "Diabetic retinopathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Diabetic retinopathy?
+  A: English National Diabetic Eye Screening Programme (ENDESP) — digital mydriatic photography; ETDRS-based grading R0–R3 (retinopathy) + M0–M1 (maculopathy); annual if R1–R2, 2-yearly if R0 ×2; urgent referral R3/M1.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic retinopathy?**
+   A. **English National Diabetic Eye Screening Programme (ENDESP) — digital mydriatic photography; ETDRS-based grading R0–R3 (retinopathy) + M0–M1 (maculopathy); annual if R1–R2, 2-yearly if R0 ×2; urgent re**
+   B. An unrelated condition not matching the clinical picture of Diabetic retinopathy
+   C. A complication seen late in the disease course of Diabetic retinopathy
+   D. A condition that mimics Diabetic retinopathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic retinopathy presents with: Q1. Which of the following features is most specific or characteristic of Retinopathy screening and grading (ETDRS)?; B. A feature common to many acute inflammatory conditions; C. A non-specific sign that does not localise the diagnosis. What is the most likely diagnosis?
+   A. **Diabetic retinopathy**
+   B. A condition that mimics Diabetic retinopathy but is not the same entity
+   C. A complication of Diabetic retinopathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic retinopathy
+

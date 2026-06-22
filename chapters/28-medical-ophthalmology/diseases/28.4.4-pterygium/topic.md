@@ -477,3 +477,35 @@ Pterygium is a UV-related fibrovascular growth onto cornea. Conservative treatme
 
 ## Tags
 #medicine #davidson #ophthalmology #pterygium #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / Pterygium**
+
+**Q1.** A patient presents with features consistent with Pterygium. The clinical picture is most consistent with: Visible wing-shaped tissue encroaching onto cornea (nasal most common) What is the most likely diagnosis?
+
+  - **A.** Pterygium
+  - **B.** A closely related condition in the same clinical area
+  - **C.** A complication of Pterygium
+  - **D.** An unrelated mimic with overlapping features
+
+  > **Answer: A** — Pterygium
+
+**Q2.** A patient is diagnosed with Pterygium. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+
+**Q3.** Which of the following best describes the underlying pathophysiology / definition of Pterygium?
+
+  - **A.** **Pterygium:** Wing-shaped fibrovascular proliferation of bulbar conjunctiva extending onto the cornea
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **Pterygium:** Wing-shaped fibrovascular proliferation of bulbar conjunctiva extending onto the cornea
+

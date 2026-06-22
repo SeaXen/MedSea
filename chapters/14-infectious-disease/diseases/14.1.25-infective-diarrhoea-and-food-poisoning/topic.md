@@ -391,3 +391,35 @@ Related: [[Fever and Septic Syndrome Approach]], [[Sepsis and Septic Shock]], [[
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-13
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Infective Diarrhoea and Food Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Infective Diarrhoea and Food Poisoning?
+
+  - **A.** C. difficile toxin/PCR
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — C. difficile toxin/PCR
+  >
+  > *Source:* ed for Giardia, Crypto, Cyclospora, helminths | Low sensitivity (3 samples); operator-dependent |
+| **C. difficile toxin/PCR** | Gold standard for CDI | PCR more sensitive; toxin more specific |
+
+### 
+
+**Q2.** What is the most appropriate first-line therapy for Infective Diarrhoea and Food Poisoning?
+
+  - **A.** Severe dehydration + IV Ringer's Lactate / Normal Saline + ORS
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Severe dehydration + IV Ringer's Lactate / Normal Saline + ORS
+  >
+  > *Source:* **Severe dehydration**   **IV Ringer's Lactate / Normal Saline** 100mL/kg over 3h (adults: 1L bolus, reassess)  
+
+> **ORS** = WHO reduced osmolarity (245 mOsm/L); **Zinc 20mg/day × 10–14d** in childre
+

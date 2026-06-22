@@ -400,3 +400,36 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Secondary Polycythaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Secondary Polycythaemia?
+
+  - **A.** "Secondary = EPO High"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "Secondary = EPO High"
+  >
+  > *Source:* |
+
+| Mnemonic | Meaning |
+|----------|---------|
+| **"PV = JAK2+ , EPO Low"** | PV vs Secondary |
+| **"Secondary = EPO High"** | Key lab |
+| **"Appropriate = Hypoxia"** | COPD, Altitude, OSA |
+| **"In
+
+**Q2.** What is the most appropriate first-line therapy for Secondary Polycythaemia?
+
+  - **A.** Appropriate + Treat underlying cause + Phlebotomy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Appropriate + Treat underlying cause + Phlebotomy
+  >
+  > *Source:* **Appropriate (Hypoxia)**   **Treat underlying cause**: CPAP for OSA, Smoking cessation, Treat COPD/Heart disease; **Phlebotomy** if symptomatic (Hct >0.54)
+

@@ -216,3 +216,80 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Type 2 diabetes pathogenesis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (27 generated)
+
+- Q: What is the definition of Type 2 diabetes pathogenesis?
+  A: By the end of this note you should be able to:
+- Q: What are the side effects of Type 2 diabetes pathogenesis?
+  A: Chronic hyperglycaemia -> beta-cell dysfunction
+- Q: What is Oxidative stress of Type 2 diabetes pathogenesis?
+  A: Mitochondrial ROS -> DNA damage, protein/lipid oxidation
+- Q: What is ER stress of Type 2 diabetes pathogenesis?
+  A: Misfolded proinsulin -> UPR -> CHOP -> apoptosis
+- Q: What is PKC activation of Type 2 diabetes pathogenesis?
+  A: DAG -> PKC -> NF-kappaB -> inflammation
+- Q: What is AGE formation of Type 2 diabetes pathogenesis?
+  A: Non-enzymatic glycation -> RAGE -> inflammation
+- Q: What is Hexosamine pathway of Type 2 diabetes pathogenesis?
+  A: GFAT -> O-GlcNAc modification of proteins
+- Q: What is Ceramides of Type 2 diabetes pathogenesis?
+  A: De novo synthesis -> down Akt, up PP2A -> apoptosis
+- Q: What is DAG/PKC of Type 2 diabetes pathogenesis?
+  A: PKC-theta -> IRS-1 serine phosphorylation
+- Q: What is Mitochondrial dysfunction of Type 2 diabetes pathogenesis?
+  A: Incomplete fatty acid oxidation -> ROS
+- Q: What is ER stress of Type 2 diabetes pathogenesis?
+  A: Saturated FFA -> UPR -> CHOP
+- Q: What is Inflammation of Type 2 diabetes pathogenesis?
+  A: FFA -> TLR4 -> NF-kappaB -> cytokines
+- Q: What is Glucose + FFA of Type 2 diabetes pathogenesis?
+  A: up Ceramide synthesis (glucose provides substrate)
+- Q: What is Beta-cell specificity of Type 2 diabetes pathogenesis?
+  A: High glucokinase -> glucose metabolism; low FFA oxidation -> lipid accumulation
+- Q: What is Oxidative stress of Type 2 diabetes pathogenesis?
+  A: Mitochondrial ROS -> DNA damage, protein/lipid oxidation
+- Q: What is ER stress of Type 2 diabetes pathogenesis?
+  A: Misfolded proinsulin -> UPR -> CHOP -> apoptosis
+- Q: What is PKC activation of Type 2 diabetes pathogenesis?
+  A: DAG -> PKC -> NF-kappaB -> inflammation
+- Q: What is AGE formation of Type 2 diabetes pathogenesis?
+  A: Non-enzymatic glycation -> RAGE -> inflammation
+- Q: What is Ceramides of Type 2 diabetes pathogenesis?
+  A: De novo synthesis -> down Akt, up PP2A -> apoptosis
+- Q: What is DAG/PKC of Type 2 diabetes pathogenesis?
+  A: PKC-theta -> IRS-1 serine phosphorylation
+- Q: What is Mitochondrial dysfunction of Type 2 diabetes pathogenesis?
+  A: Incomplete fatty acid oxidation -> ROS
+- Q: What is ER stress of Type 2 diabetes pathogenesis?
+  A: Saturated FFA -> UPR -> CHOP
+- Q: What is Glucose + FFA of Type 2 diabetes pathogenesis?
+  A: up Ceramide synthesis (glucose provides substrate)
+- Q: What is Beta-cell specificity of Type 2 diabetes pathogenesis?
+  A: High glucokinase -> glucose metabolism; low FFA oxidation -> lipid accumulation
+- Q: What are the side effects of Type 2 diabetes pathogenesis?
+  A: Chronic hyperglycaemia -> oxidative stress, ER stress, AGE, PKC
+- Q: What is Ceramides of Type 2 diabetes pathogenesis?
+  A: Key lipotoxic mediator; down Akt, up PP2A, apoptosis
+- Q: What is Reversibility of Type 2 diabetes pathogenesis?
+  A: Early intervention can reverse; chronic -> irreversible loss
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes pathogenesis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes pathogenesis
+   C. A complication seen late in the disease course of Type 2 diabetes pathogenesis
+   D. A condition that mimics Type 2 diabetes pathogenesis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes pathogenesis presents with: Glucotoxicity — Chronic hyperglycaemia -> beta-cell dysfunction; Lipotoxicity — Chronic FFA excess -> beta-cell dysfunction; Glucolipotoxicity — Synergistic; both required for full beta-cell failure. What is the most likely diagnosis?
+   A. **Type 2 diabetes pathogenesis**
+   B. A condition that mimics Type 2 diabetes pathogenesis but is not the same entity
+   C. A complication of Type 2 diabetes pathogenesis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes pathogenesis
+

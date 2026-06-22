@@ -283,3 +283,22 @@ A: Skin, hair, nose, body shape, symmetry; mirror checking, camouflaging
 - [[Phobias (specific, social, agoraphobia)]]
 - [[Adjustment disorder and acute stress reaction]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Hoarding disorder and body dysmorphic disorder*
+
+**Q1.** Which of the following features is most specific or characteristic of Hoarding disorder and body dysmorphic disorder?
+
+  - **A.** Mnemonic for Hoarding disorder and body dysmorphic disorder
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Hoarding disorder and body dysmorphic disorder
+  >
+  > *Source:* **Mnemonic for Hoarding disorder and body dysmorphic disorder** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'ABCDEFGHI'** — MS
+

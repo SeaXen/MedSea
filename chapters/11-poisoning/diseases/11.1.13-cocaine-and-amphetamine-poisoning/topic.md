@@ -523,3 +523,31 @@ Sympathomimetic toxidrome = catecholamine excess → HTN, tachycardia, diaphores
 7. **B** - Beta-blocker blocks β₂ vasodilation → unopposed α₁ vasoconstriction → severe hypertension, coronary vasospasm. Treat with phentolamine/nitrates. Never beta-blockers in cocaine.
 8. **B** - Rhabdo: CK > 5000 = high AKI risk. Aggressive IV fluids (target urine output > 2-3 mL/kg/hr). Alkalinize urine (NaHCO₃) if CK very high. Monitor K⁺, Ca²⁺, PO₄.
 9. **B** - Amphetamine psychosis: can persist days-weeks. Low-dose antipsychotic (risperidone, olanzapine) + benzos. Avoid if seizure risk, anticholinergic burden. Most resolve.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Cocaine and Amphetamine Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Cocaine and Amphetamine Poisoning?
+
+  - **A.** Autonomic
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Autonomic
+  >
+  > *Source:* iety, paranoia, psychosis, **hyperreflexia**, tremor, myoclonus, **seizures**, headache, ICH risk
+- **Autonomic**: **diaphoresis** (WET skin — key vs anticholinergic), mydriasis, **hyperthermia** (oft
+
+**Q2.** What is the most appropriate first-line therapy for Cocaine and Amphetamine Poisoning?
+
+  - **A.** Target
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Target
+  >
+  > *Source:* **Target**: sedation (RASS -1 to 0), control agitation, prevent/treat seizures, lower BP/HR secondarily
+

@@ -452,3 +452,19 @@ For cross-reference and exam preparation:
 - [[Lacunar syndromes]]
 - [[Cortical vs subcortical stroke patterns]]
 - [[Stroke mimics and common pitfalls]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Anterior vs posterior circulation stroke clues*
+
+**Q1.** Which of the following features is most specific or characteristic of Anterior vs posterior circulation stroke clues?
+
+  - **A.** Answer: X
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Answer: X
+  >
+  > *Source:* For explicit MCQ/SBA answer lines, the **Answer: X** annotations within each MCQ/SBA item provide the key
+

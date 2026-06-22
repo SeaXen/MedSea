@@ -278,3 +278,20 @@ A: Perceptual disturbances, synaesthesia; bad trips, flashbacks (HPPD)
 
 - [[../Substance Use Disorders|Substance Use Disorders]] (heading hub)
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Stimulant and other substance use disorders*
+
+**Q1.** Which of the following features is most specific or characteristic of Stimulant and other substance use disorders?
+
+  - **A.** Mnemonic for Stimulant and other substance use disorders
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Stimulant and other substance use disorders
+  >
+  > *Source:* **Mnemonic for Stimulant and other substance use disorders** — see key points in Core Clinical Content
+- **'SIG E CAPS'** for depression criteria: Sleep, Interest, Guilt, Energy, Concentration, Appeti
+

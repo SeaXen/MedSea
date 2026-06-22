@@ -500,3 +500,19 @@ flowchart TD
 **Heading Hub:** [[06_Dementia_Cognitive_Disorders/Dementia & Cognitive Disorders Hub]]  
 **Topic-Group Hub:** [[06_Dementia_Cognitive_Disorders/Cognitive Assessment & Other Hub]]  
 **Related Topics:** [[Cognitive Screening]], [[Dementia with Lewy Bodies]], [[Alzheimers Disease]], [[Frontotemporal Dementia]], [[Delirium vs Dementia]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Traumatic Brain Injury & CTE*
+
+**Q1.** What is the most appropriate first-line therapy for Traumatic Brain Injury & CTE?
+
+  - **A.** Hyperosmolar therapy + Mannitol + 5% Hypertonic saline
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Hyperosmolar therapy + Mannitol + 5% Hypertonic saline
+  >
+  > *Source:* **Hyperosmolar therapy**   **Mannitol 20% 0.25-1g/kg** OR **5% Hypertonic saline 150-250ml** for ICP >20 mmHg
+

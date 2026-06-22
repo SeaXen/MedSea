@@ -165,3 +165,113 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[SGLT2 inhibitors in HF (DAPA-HF, EMPEROR, DELIVER)]], [[GLP-1 RA in HF (FIGHT, STEP-HFpEF)]], [[Cardiovascular risk in diabetes]], [[Diabetes in CKD and dialysis]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — HFrEF and HFpEF in diabetes*
+
+**Q1.** What is the most appropriate first-line therapy for HFrEF and HFpEF in diabetes?
+
+  - **A.** GLP-1 RA + Semaglutide + STEP-HFpEF, FIGHT
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — GLP-1 RA + Semaglutide + STEP-HFpEF, FIGHT
+  >
+  > *Source:* **GLP-1 RA**   **Semaglutide**   **STEP-HFpEF, FIGHT** — ↓ symptoms, weight, NT-proBNP (symptomatic HFpEF, BMI ≥30)
+---
+
+> Auto-generated study sections for "Heart failure in diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (36 generated)
+
+- Q: What is the definition of Heart failure in diabetes?
+  A: Diabetes = 2–5× HF risk; HFpEF more common in T2DM (obesity, HTN, metabolic); HFrEF also increased; diabetic cardiomyopathy = metabolic + structural remodelling; NT-proBNP lower in obesity/diabetes — adjust thresholds; SGLT2i/GLP-1 RA = disease-modifying.
+- Q: What is Metabolic of Heart failure in diabetes?
+  A: Impaired glucose oxidation → ↑ fatty acid oxidation → ↓ cardiac efficiency; insulin resistance; lipotoxicity
+- Q: What is Structural of Heart failure in diabetes?
+  A: LV hypertrophy (concentric > eccentric), fibrosis (interstitial > replacement), diastolic dysfunction
+- Q: What is Microvascular of Heart failure in diabetes?
+  A: Coronary microvascular dysfunction (↓ flow reserve) without epicardial CAD
+- Q: What is Autonomic of Heart failure in diabetes?
+  A: CV autonomic neuropathy → resting tachycardia, exercise intolerance, silent ischaemia
+- Q: What is Inflammatory of Heart failure in diabetes?
+  A: Systemic inflammation (IL-6, TNF-α, CRP) → myocardial inflammation
+- Q: What is NT-proBNP of Heart failure in diabetes?
+  A: 3–6 monthly (trend more than absolute)
+- Q: What is eGFR, K+ of Heart failure in diabetes?
+  A: 1–2w post SGLT2i/MRA/ARNI change; then 3–6m
+- Q: What is HbA1c of Heart failure in diabetes?
+  A: 6 monthly (target individualised; avoid hypoglycaemia)
+- Q: What is Weight of Heart failure in diabetes?
+  A: Each visit (fluid status + semaglutide effect)
+- Q: What is Echo of Heart failure in diabetes?
+  A: 6–12 monthly if stable; sooner if decompensation
+- Q: What is Diabetes HF risk of Heart failure in diabetes?
+  A: 2–5× higher; HFpEF more common in T2DM
+- Q: What is Diabetic cardiomyopathy of Heart failure in diabetes?
+  A: Metabolic + structural + microvascular + autonomic
+- Q: What is NT-proBNP in obesity/diabetes of Heart failure in diabetes?
+  A: Falsely low — use lower thresholds (chronic >50–75 pg/mL)
+- Q: What is HFrEF 4 pillars + SGLT2i of Heart failure in diabetes?
+  A: ARNI, BB, MRA, SGLT2i — all Class I
+- Q: What is SGLT2i in HF of Heart failure in diabetes?
+  A: eGFR ≥20; DAPA-HF, EMPEROR-Reduced, DELIVER, EMPEROR-Preserved
+- Q: How is Heart failure in diabetes managed?
+  A: SGLT2i (first disease-modifying); semaglutide if obese
+- Q: What is DPP-4i to avoid of Heart failure in diabetes?
+  A: Saxagliptin, alogliptin (↑ HF hosp)
+- Q: What is TZDs in HF of Heart failure in diabetes?
+  A: Contraindicated (fluid retention)
+- Q: What is Metformin in HF of Heart failure in diabetes?
+  A: Safe if eGFR ≥30
+- Q: What is Semaglutide HFpEF of Heart failure in diabetes?
+  A: STEP-HFpEF: ↓ symptoms, weight, NT-proBNP
+- Q: What is NT-proBNP of Heart failure in diabetes?
+  A: 3–6 monthly (trend more than absolute)
+- Q: What is eGFR, K+ of Heart failure in diabetes?
+  A: 1–2w post SGLT2i/MRA/ARNI change; then 3–6m
+- Q: What is HbA1c of Heart failure in diabetes?
+  A: 6 monthly (target individualised; avoid hypoglycaemia)
+- Q: What is Weight of Heart failure in diabetes?
+  A: Each visit (fluid status + semaglutide effect)
+- Q: What is Echo of Heart failure in diabetes?
+  A: 6–12 monthly if stable; sooner if decompensation
+- Q: What is Diabetes HF risk of Heart failure in diabetes?
+  A: 2–5× higher; HFpEF more common in T2DM
+- Q: What is Diabetic cardiomyopathy of Heart failure in diabetes?
+  A: Metabolic + structural + microvascular + autonomic
+- Q: What is NT-proBNP in obesity/diabetes of Heart failure in diabetes?
+  A: Falsely low — use lower thresholds (chronic >50–75 pg/mL)
+- Q: What is HFrEF 4 pillars + SGLT2i of Heart failure in diabetes?
+  A: ARNI, BB, MRA, SGLT2i — all Class I
+- Q: What is SGLT2i in HF of Heart failure in diabetes?
+  A: eGFR ≥20; DAPA-HF, EMPEROR-Reduced, DELIVER, EMPEROR-Preserved
+- Q: How is Heart failure in diabetes managed?
+  A: SGLT2i (first disease-modifying); semaglutide if obese
+- Q: What is DPP-4i to avoid of Heart failure in diabetes?
+  A: Saxagliptin, alogliptin (↑ HF hosp)
+- Q: What is TZDs in HF of Heart failure in diabetes?
+  A: Contraindicated (fluid retention)
+- Q: What is Metformin in HF of Heart failure in diabetes?
+  A: Safe if eGFR ≥30
+- Q: What is Semaglutide HFpEF of Heart failure in diabetes?
+  A: STEP-HFpEF: ↓ symptoms, weight, NT-proBNP
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Heart failure in diabetes?**
+   A. **Diabetes = 2–5× HF risk; HFpEF more common in T2DM (obesity, HTN, metabolic); HFrEF also increased; diabetic cardiomyopathy = metabolic + structural remodelling; NT-proBNP lower in obesity/diabetes — **
+   B. An unrelated condition not matching the clinical picture of Heart failure in diabetes
+   C. A complication seen late in the disease course of Heart failure in diabetes
+   D. A condition that mimics Heart failure in diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Heart failure in diabetes presents with: Q1. What is the most appropriate first-line therapy for HFrEF and HFpEF in diabetes?; A. GLP-1 RA + Semaglutide + STEP-HFpEF, FIGHT; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Heart failure in diabetes**
+   B. A condition that mimics Heart failure in diabetes but is not the same entity
+   C. A complication of Heart failure in diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Heart failure in diabetes
+

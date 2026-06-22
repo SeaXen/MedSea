@@ -292,3 +292,17 @@ A: Regular scans; growth; wellbeing; symphysis-fundal height
 - [[../Obstetric Disorders|Obstetric Disorders]] (heading hub)
 - [[../Maternal Medicine MOC|Maternal Medicine MOC]]
 - [[../Davidson Chapter 32 - Maternal Medicine Hierarchy|Davidson Chapter 32 - Maternal Medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 30: Maternal Medicine / Polyhydramnios**
+
+**Q1.** Which of the following best describes the underlying pathophysiology / definition of Polyhydramnios?
+
+  - **A.** Polyhydramnios is excessive amniotic fluid volume (AFI >25 cm or deepest vertical pocket >8 cm). It affects 1-2% of pregnancies and is associated with fetal anomalies (especially G
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — Polyhydramnios is excessive amniotic fluid volume (AFI >25 cm or deepest vertical pocket >8 cm). It affects 1-2% of pregnancies and is associated with
+

@@ -174,3 +174,81 @@ flowchart TD
 - **I**nsulin: reduce 25-50% in CKD; stop bolus; simplify basal
 - **S**top sulfonylureas **FIRST** (highest risk)
 - **K**now: glucagon ineffective if glycogen depleted (starvation/alcohol)</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Hypoglycaemia risk in elderly*
+
+**Q1.** What is the most appropriate first-line therapy for Hypoglycaemia risk in elderly?
+
+  - **A.** Technology
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Technology
+  >
+  > *Source:* **Technology**   CGM with predictive alerts (low glucose suspend if pump); SMBG 4x/day if no CGM
+---
+
+> Auto-generated study sections for "Diabetes in the elderly" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Diabetes in the elderly?
+  A: Glucose < 3.9 mmol/L (Level 1); < 3.0 mmol/L (Level 2); severe = requires assistance (Level 3)
+- Q: What is the epidemiology of Diabetes in the elderly?
+  A: Elderly T2DM: 2-3x higher than younger; insulin/SU = highest risk
+- Q: What is Risk of Diabetes in the elderly?
+  A: 5x higher in frail vs fit; 2x in >75y vs <65y
+- Q: What is the definition of Diabetes in the elderly?
+  A: Glucose < 3.9 mmol/L (Level 1); < 3.0 mmol/L (Level 2); severe = requires assistance (Level 3)
+- Q: What is the epidemiology of Diabetes in the elderly?
+  A: Elderly T2DM: 2-3x higher than younger; insulin/SU = highest risk
+- Q: What is Risk of Diabetes in the elderly?
+  A: 5x higher in frail vs fit; 2x in >75y vs <65y
+- Q: What are the clinical features of Diabetes in the elderly?
+  A: Confusion, falls, agitation, drowsiness (not classic autonomic)
+- Q: What is Neuroglycopenic of Diabetes in the elderly?
+  A: Predominant: confusion, drowsiness, speech difficulty
+- Q: What is Autonomic blunted of Diabetes in the elderly?
+  A: Reduced sweating, tremor, palpitations
+- Q: What is Nocturnal of Diabetes in the elderly?
+  A: Common; "dead in bed" syndrome (T1DM)
+- Q: What are the clinical features of Diabetes in the elderly?
+  A: Confusion, falls, agitation, drowsiness (not classic autonomic)
+- Q: What is Neuroglycopenic of Diabetes in the elderly?
+  A: Predominant: confusion, drowsiness, speech difficulty
+- Q: What is Autonomic blunted of Diabetes in the elderly?
+  A: Reduced sweating, tremor, palpitations
+- Q: What is Nocturnal of Diabetes in the elderly?
+  A: Common; "dead in bed" syndrome (T1DM)
+- Q: What is Risk of Diabetes in the elderly?
+  A: 5x higher in frail; 2x in >75y; renal/polypharmacy/cognitive = multipliers
+- Q: What are the clinical features of Diabetes in the elderly?
+  A: Atypical: confusion, falls, agitation (not tremor/sweat)
+- Q: What is Prevention of Diabetes in the elderly?
+  A: STOP SU; reduce insulin; relax targets; CGM alerts; carer education
+- Q: What is Nocturnal of Diabetes in the elderly?
+  A: Bedtime glucose 7-10; basal reduction; CGM predictive alerts
+- Q: What is Renal of Diabetes in the elderly?
+  A: Insulin ↓ 25-50% if eGFR < 45; stop SU if eGFR < 45
+- Q: What is Cognitive of Diabetes in the elderly?
+  A: Carer-administered insulin; CGM remote monitoring; simplified regimen
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in the elderly?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in the elderly
+   C. A complication seen late in the disease course of Diabetes in the elderly
+   D. A condition that mimics Diabetes in the elderly but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in the elderly presents with: Definition — Glucose < 3.9 mmol/L (Level 1); < 3.0 mmol/L (Level 2); severe = requires assistance (Level 3); Incidence — Elderly T2DM: 2-3x higher than younger; insulin/SU = highest risk; Risk — 5x higher in frail vs fit; 2x in >75y vs <65y. What is the most likely diagnosis?
+   A. **Diabetes in the elderly**
+   B. A condition that mimics Diabetes in the elderly but is not the same entity
+   C. A complication of Diabetes in the elderly rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in the elderly
+

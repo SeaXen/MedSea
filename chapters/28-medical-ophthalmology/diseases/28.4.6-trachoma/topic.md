@@ -509,3 +509,26 @@ Trachoma is the leading infectious cause of blindness, caused by Chlamydia trach
 
 ## Tags
 #medicine #davidson #ophthalmology #trachoma #chlamydia #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / Trachoma**
+
+**Q1.** A patient is diagnosed with Trachoma. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+
+**Q2.** Which of the following best describes the underlying pathophysiology / definition of Trachoma?
+
+  - **A.** **Trachoma:** Chronic keratoconjunctivitis caused by Chlamydia trachomatis serotypes A, B, Ba, and C
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **Trachoma:** Chronic keratoconjunctivitis caused by Chlamydia trachomatis serotypes A, B, Ba, and C
+

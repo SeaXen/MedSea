@@ -141,3 +141,57 @@ GAD65 NEGATIVE
 - [[Type 1 Diabetes Mellitus/Autoantibody testing/Zinc transporter 8 (ZnT8) autoantibodies]]
 - [[Type 1 Diabetes Mellitus/Clinical presentation/LADA (Latent Autoimmune Diabetes in Adults)]]
 - [[Monogenic and Atypical Diabetes/Neonatal diabetes]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — GAD65 autoantibodies*
+
+**Q1.** Which of the following features is most specific or characteristic of GAD65 autoantibodies?
+
+  - **A.** Age
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Age
+  >
+  > *Source:* Criterion | Role of GAD65 |
+|-----------|---------------|
+| **Age** | Typically >30 years (often 30–50) |
+| **Presentation** | Non-ketotic, non-insulin requiring initially |
+| **Autoantibodies** | **G
+---
+
+> Auto-generated study sections for "Autoantibody testing" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Autoantibody testing?
+  A: GAD65 autoantibodies = antibodies against glutamic acid decarboxylase 65 kDa isoform (GAD2).
+- Q: What is Age of Autoantibody testing?
+  A: Typically >30 years (often 30–50)
+- Q: What are the clinical features of Autoantibody testing?
+  A: Non-ketotic, non-insulin requiring initially
+- Q: What is Autoantibodies of Autoantibody testing?
+  A: GAD65 positive in 70–80%; IA-2/IAA/ZnT8 often negative
+- Q: What is Progression of Autoantibody testing?
+  A: Insulin requirement within 6 months to 6 years
+- Q: What is HLA association of Autoantibody testing?
+  A: DR3-DQ2 / DR4-DQ8 (similar to T1DM)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoantibody testing?**
+   A. **GAD65 autoantibodies = antibodies against glutamic acid decarboxylase 65 kDa isoform (GAD2).**
+   B. An unrelated condition not matching the clinical picture of Autoantibody testing
+   C. A complication seen late in the disease course of Autoantibody testing
+   D. A condition that mimics Autoantibody testing but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoantibody testing presents with: GAD65 autoantibodies = antibodies against glutamic acid decarboxylase 65 kDa isoform (GAD2).; FCPS/MRCP relevance: Most sensitive single autoantibody for T1DM; primary marker for LADA; exam questions on sensitivity, LADA diagnosis, neurological associations (stiff person syndrome).. What is the most likely diagnosis?
+   A. **Autoantibody testing**
+   B. A condition that mimics Autoantibody testing but is not the same entity
+   C. A complication of Autoantibody testing rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoantibody testing
+

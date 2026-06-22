@@ -396,3 +396,23 @@ flowchart TD
 
 ## Summary
 Functional Movement Disorders diagnosed POSITIVELY by **distractibility, entrainment, incongruence, inconsistency**. Most common: tremor (40-50%). Key tests: **entrainment** (opposite hand tapping), **whack-a-mole** (tremor shifts), **co-activation** sign. FMD differs from PD by being variable, distractible, and lacking true rest tremor/rigidity. First-line treatment: **distraction-based physiotherapy** + explanation. **Avoid L-dopa, dopamine agonists, antipsychotics, DBS** (no role). Treat comorbidity (depression, anxiety) with **SSRI**. ~30-50% improve with treatment. Prognosis: poor with chronicity, litigation, refusal of treatment.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Functional Movement Disorders*
+
+**Q1.** Which of the following features is most specific or characteristic of Functional Movement Disorders?
+
+  - **A.** Incongruence
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Incongruence
+  >
+  > *Source:* ixed dystonia** in adult (functional often, organic rare)
+- **Inconsistency** (variable patterns)
+- **Incongruence** (no sensory tricks, no task-specificity)
+- **Distractibility**
+- **Co-contraction**
+

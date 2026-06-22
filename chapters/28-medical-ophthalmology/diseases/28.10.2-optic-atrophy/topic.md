@@ -624,3 +624,34 @@ Optic atrophy is **pallor of the optic disc from retinal ganglion cell axon loss
 
 ## Tags
 #medicine #davidson #ophthalmology #optic-atrophy #fcps #mrcp #Leber
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Optic Atrophy*
+
+**Q1.** Which of the following features is most specific or characteristic of Optic Atrophy?
+
+  - **A.** Temporal pallor
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Temporal pallor
+  >
+  > *Source:* OPA1 gene** mutation (most common)
+- **Insidious, bilateral, symmetric** vision loss in childhood
+- **Temporal pallor** (pathognomonic but not always present)
+- Mild to moderate ↓VA (6/9 to 6/36)
+- **
+
+**Q2.** What is the most appropriate first-line therapy for Optic Atrophy?
+
+  - **A.** Occupational therapy, mobility training
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Occupational therapy, mobility training
+  >
+  > *Source:* **Occupational therapy, mobility training**
+

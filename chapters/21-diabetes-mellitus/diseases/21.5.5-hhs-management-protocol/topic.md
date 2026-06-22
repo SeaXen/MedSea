@@ -235,3 +235,61 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — HHS management protocol*
+
+**Q1.** What is the most appropriate first-line therapy for HHS management protocol?
+
+  - **A.** Potassium
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Potassium
+  >
+  > *Source:* **Potassium**   Same as DKA -- replace per level  
+
+### Monitoring
+---
+
+> Auto-generated study sections for "Hyperosmolar hyperglycaemic state (HHS)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Hyperosmolar hyperglycaemic state (HHS)?
+  A: By the end of this note you should be able to:
+- Q: What is the investigation of choice for Hyperosmolar hyperglycaemic state (HHS)?
+  A: Glucose >30 mmol/L + Osmolality >320 mOsm/kg + pH >7.3 + Bicarbonate >18 + Minimal ketones
+- Q: What is Mortality of Hyperosmolar hyperglycaemic state (HHS)?
+  A: 10-20% (vs 1-5% DKA) - higher in elderly, comorbidities
+- Q: What is Key Principle of Hyperosmolar hyperglycaemic state (HHS)?
+  A: FLUIDS FIRST - insulin delayed 1-2h after fluid resuscitation
+- Q: What is Fluids FIRST of Hyperosmolar hyperglycaemic state (HHS)?
+  A: 1L 0.9% NaCl/hr before insulin; deficit 8-12L over 24-48h
+- Q: What is the dose of Hyperosmolar hyperglycaemic state (HHS)?
+  A: 0.05 U/kg/hr (vs 0.1 in DKA); delay 1-2h
+- Q: What is Osmolality decline of Hyperosmolar hyperglycaemic state (HHS)?
+  A: <3 mOsm/kg/hr -- prevent cerebral oedema
+- Q: What is Mortality predictors of Hyperosmolar hyperglycaemic state (HHS)?
+  A: Age >70, coma, hypotension, osmolality >350, comorbidities, delayed presentation
+- Q: What is Neurological signs of Hyperosmolar hyperglycaemic state (HHS)?
+  A: Hemiparesis, seizures common -- resolve with treatment
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hyperosmolar hyperglycaemic state (HHS)?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Hyperosmolar hyperglycaemic state (HHS)
+   C. A complication seen late in the disease course of Hyperosmolar hyperglycaemic state (HHS)
+   D. A condition that mimics Hyperosmolar hyperglycaemic state (HHS) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hyperosmolar hyperglycaemic state (HHS) presents with: Diagnosis — Glucose >30 mmol/L + Osmolality >320 mOsm/kg + pH >7.3 + Bicarbonate >18 + Minimal ketones; Mortality — 10-20% (vs 1-5% DKA) - higher in elderly, comorbidities; Key Principle — FLUIDS FIRST - insulin delayed 1-2h after fluid resuscitation. What is the most likely diagnosis?
+   A. **Hyperosmolar hyperglycaemic state (HHS)**
+   B. A condition that mimics Hyperosmolar hyperglycaemic state (HHS) but is not the same entity
+   C. A complication of Hyperosmolar hyperglycaemic state (HHS) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hyperosmolar hyperglycaemic state (HHS)
+

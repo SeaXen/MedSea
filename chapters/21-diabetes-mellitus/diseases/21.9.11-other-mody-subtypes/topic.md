@@ -131,3 +131,32 @@ By the end of this note you should be able to:
 - **P**renatal: if familial
 - **E**xome if panel negative
 - **S**equencing: confirm VUS**</think>
+---
+
+> Auto-generated study sections for "Maturity onset diabetes of the young (MODY)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (3 generated)
+
+- Q: What is the definition of Maturity onset diabetes of the young (MODY)?
+  A: By the end of this note you should be able to:
+- Q: What is Gene of Maturity onset diabetes of the young (MODY)?
+  A: KCNJ11 (11p15.1) - Kir6.2 subunit
+- Q: What are the clinical features of Maturity onset diabetes of the young (MODY)?
+  A: Overlap with neonatal diabetes
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Maturity onset diabetes of the young (MODY)?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Maturity onset diabetes of the young (MODY)
+   C. A complication seen late in the disease course of Maturity onset diabetes of the young (MODY)
+   D. A condition that mimics Maturity onset diabetes of the young (MODY) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Maturity onset diabetes of the young (MODY) presents with: Collective prevalence — ~5-10% of MODY; Key subtypes — HNF1B (MODY5), PDX1 (MODY4), NEUROD1 (MODY6), KCNJ11 (MODY13), BLK (MODY11), APPL1 (MODY14). What is the most likely diagnosis?
+   A. **Maturity onset diabetes of the young (MODY)**
+   B. A condition that mimics Maturity onset diabetes of the young (MODY) but is not the same entity
+   C. A complication of Maturity onset diabetes of the young (MODY) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Maturity onset diabetes of the young (MODY)
+

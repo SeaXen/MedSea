@@ -618,3 +618,33 @@ Fungal pneumonias are opportunistic infections stratified by host immunity. In *
 10. **B** — Blastomyces = broad-based budding yeast (single wide-based daughter cell). Narrow-based = Candida. Spherule = Coccidioides. Intracellular = Histoplasma. Capsule = Cryptococcus.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Fungal Pneumonias*
+
+**Q1.** Which of the following features is most specific or characteristic of Fungal Pneumonias?
+
+  - **A.** BAL galactomannan
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — BAL galactomannan
+  >
+  > *Source:* |
+| **Serum galactomannan** | Blood | Aspergillus | Screening in neutropenic; serial monitoring |
+| **BAL galactomannan** | BAL | Aspergillus | Higher specificity for IPA |
+| **Serum β-D-glucan** | Bl
+
+**Q2.** What is the most appropriate first-line therapy for Fungal Pneumonias?
+
+  - **A.** Invasive aspergillosis + Voriconazole + ≥6–12 weeks
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Invasive aspergillosis + Voriconazole + ≥6–12 weeks
+  >
+  > *Source:* **Invasive aspergillosis**   **Voriconazole** 6mg/kg IV BD ×2d → 4mg/kg IV/PO BD (TDM target 1–5.5 mg/L)   Isavuconazole 372mg (200mg ×3) IV/PO BD ×2d → 372mg OD (no TDM needed); L-AmB 3–5mg/kg IV OD 
+

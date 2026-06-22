@@ -475,3 +475,19 @@ Related: [[../Cardiology MOC|Cardiology MOC]] · [[../Davidson Chapter 16 - Card
 **Status**: Full FCPS/MRCP note completed (A-to-Z depth)
 **Date completed**: 2026-06-10
 **Sources**: ESC Supraventricular Arrhythmia Guidelines 2019, AHA/ACC/HRS SVT Guidelines 2015, Pediatric WPW Guidelines, Davidson, Braunwald, Zipes, PasTest, MRCP question banks, EP lab manuals
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Conduction abnormalities (AV blocks*
+
+**Q1.** Which of the following features is most specific or characteristic of Conduction abnormalities (AV blocks?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

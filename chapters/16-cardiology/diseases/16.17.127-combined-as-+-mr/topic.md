@@ -23,3 +23,19 @@
 - Consider TAVI + future TEER (MitraClip) for high-risk
 
 > **Pearls** — AS usually the **dominant lesion** in AS+MR. TAVI may improve functional MR over time. Combined surgery for true severe dual valve disease. **Low-flow AS** common — measure with dobutamine stress if EF <50%.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Combined AS + MR*
+
+**Q1.** Which of the following features is most specific or characteristic of Combined AS + MR?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

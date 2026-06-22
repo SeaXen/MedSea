@@ -152,3 +152,107 @@ Step 5: Referral to hypertension specialist
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Statin therapy in diabetes (intensity, targets)]], [[Aspirin primary prevention]], [[ASCVD risk calculators (QRISK3, ASCVD Pooled Cohort)]], [[Diabetic nephropathy/DKD management (ACEi/ARB, SGLT2i, finerenone, GLP-1 RA)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — bp-targets-in-diabetes-nice-ada-esc*
+
+**Q1.** What is the most appropriate first-line therapy for bp-targets-in-diabetes-nice-ada-esc?
+
+  - **A.** Spironolactone
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Spironolactone
+  >
+  > *Source:* **Spironolactone**   4th line (resistant)   Potent in resistant HTN   Hyperkalaemia, gynaecomastia
+---
+
+> Auto-generated study sections for "Atherosclerotic cardiovascular disease (ASCVD)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: # BP targets in diabetes (NICE, ADA, ESC)
+- Q: What is BP (clinic) of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Every visit until controlled; then 3–6 monthly
+- Q: What is Home BP (HBPM) of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: 7-day averages (discard day 1); target <135/85
+- Q: What is ABPM of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: If white coat suspected
+- Q: What is Renal function (U&E, eGFR) of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: 1–2w post ACEi/ARB/diuretic change; then 6–12 monthly
+- Q: What is Potassium of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Same as renal; check if on spironolactone/ACEi/ARB + SGLT2i
+- Q: What is Orthostatic BP of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Annual (elderly, autonomic neuropathy)
+- Q: What is NICE target of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: <140/90 general; <130/80 if CKD (ACR≥30 or eGFR<60)
+- Q: What is ADA/ESC target of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: <130/80 for all diabetes
+- Q: What is ACCORD BP of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Intensive <120: ↓ stroke but no CV death/MI benefit, ↑ AKI/hypotension
+- Q: What is SPRINT of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Non-diabetes: intensive <120 ↓ CV events; not directly applicable to diabetes
+- Q: What is the first-line treatment for Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ACEi or ARB (renal protection, CV benefit, ↓ new diabetes)
+- Q: What is Add-on of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: CCB (amlodipine) or thiazide-like (indapamide/chlorthalidone)
+- Q: What is Beta-blockers of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Not 1st line in diabetes (mask hypo, weight gain, insulin resistance)
+- Q: What is Resistant HTN of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Spironolactone 25mg (if K+ ≤4.5, eGFR >45) — best evidence
+- Q: What is CKD + diabetes of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ACEi/ARB mandatory; max dose; monitor K+/creat 1–2w
+- Q: What is Pregnancy of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Labetalol, nifedipine, methyldopa; avoid ACEi/ARB
+- Q: What is BP (clinic) of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Every visit until controlled; then 3–6 monthly
+- Q: What is Home BP (HBPM) of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: 7-day averages (discard day 1); target <135/85
+- Q: What is ABPM of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: If white coat suspected
+- Q: What is Renal function (U&E, eGFR) of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: 1–2w post ACEi/ARB/diuretic change; then 6–12 monthly
+- Q: What is Potassium of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Same as renal; check if on spironolactone/ACEi/ARB + SGLT2i
+- Q: What is Orthostatic BP of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Annual (elderly, autonomic neuropathy)
+- Q: What is NICE target of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: <140/90 general; <130/80 if CKD (ACR≥30 or eGFR<60)
+- Q: What is ADA/ESC target of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: <130/80 for all diabetes
+- Q: What is ACCORD BP of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Intensive <120: ↓ stroke but no CV death/MI benefit, ↑ AKI/hypotension
+- Q: What is SPRINT of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Non-diabetes: intensive <120 ↓ CV events; not directly applicable to diabetes
+- Q: What is the first-line treatment for Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ACEi or ARB (renal protection, CV benefit, ↓ new diabetes)
+- Q: What is Add-on of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: CCB (amlodipine) or thiazide-like (indapamide/chlorthalidone)
+- Q: What is Beta-blockers of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Not 1st line in diabetes (mask hypo, weight gain, insulin resistance)
+- Q: What is Resistant HTN of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Spironolactone 25mg (if K+ ≤4.5, eGFR >45) — best evidence
+- Q: What is CKD + diabetes of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ACEi/ARB mandatory; max dose; monitor K+/creat 1–2w
+- Q: What is Pregnancy of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Labetalol, nifedipine, methyldopa; avoid ACEi/ARB
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Atherosclerotic cardiovascular disease (ASCVD)?**
+   A. **# BP targets in diabetes (NICE, ADA, ESC)**
+   B. An unrelated condition not matching the clinical picture of Atherosclerotic cardiovascular disease (ASCVD)
+   C. A complication seen late in the disease course of Atherosclerotic cardiovascular disease (ASCVD)
+   D. A condition that mimics Atherosclerotic cardiovascular disease (ASCVD) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Atherosclerotic cardiovascular disease (ASCVD) presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — bp-targets-in-diabetes-nice-ada-esc; Q1. What is the most appropriate first-line therapy for bp-targets-in-diabetes-nice-ada-esc?; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Atherosclerotic cardiovascular disease (ASCVD)**
+   B. A condition that mimics Atherosclerotic cardiovascular disease (ASCVD) but is not the same entity
+   C. A complication of Atherosclerotic cardiovascular disease (ASCVD) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Atherosclerotic cardiovascular disease (ASCVD)
+

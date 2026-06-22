@@ -240,3 +240,19 @@ Continuous seizure activity >5 minutes **or** recurrent seizures without recover
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-13
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — Status Epilepticus*
+
+**Q1.** Which of the following features is most specific or characteristic of Status Epilepticus?
+
+  - **A.** MCQ 8
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MCQ 8
+  >
+  > *Source:* **MCQ 8**: C — Hypertension not typical (usually hypotension from meds/shock)
+

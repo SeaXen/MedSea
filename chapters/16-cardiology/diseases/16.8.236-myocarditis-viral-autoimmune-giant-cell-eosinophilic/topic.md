@@ -33,3 +33,19 @@ Inflammation of myocardium with **non-ischemic** injury. Multiple subtypes.
 - **Avoid exercise** for 3–6 months (recover)
 
 > **Pearls** — **CMR with LGE** = key diagnostic test. **Giant cell, eosinophilic, sarcoid** → immunosuppress. **Lymphocytic viral** → supportive, no immunosuppress. **No NSAIDs, no exercise** during acute phase. Fulminant may recover with MCS support.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Myocarditis viral autoimmune giant cell eosinophilic*
+
+**Q1.** Which of the following features is most specific or characteristic of Myocarditis viral autoimmune giant cell eosinophilic?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

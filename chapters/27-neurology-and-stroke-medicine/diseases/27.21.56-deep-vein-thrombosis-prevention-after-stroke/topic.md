@@ -573,3 +573,19 @@ DVT prevention after stroke is a balance between thrombosis prevention and intra
 8. **B** — Recent lysis changes the timing of prophylactic antithrombotics.
 9. **B** — PE can be overshadowed by more obvious respiratory diagnoses.
 10. **A** — This summarizes the stroke-unit approach accurately.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Deep-vein thrombosis prevention after stroke*
+
+**Q1.** What is the most appropriate first-line therapy for Deep-vein thrombosis prevention after stroke?
+
+  - **A.** Use nursing and physiotherapy support for leg movement and repositioning
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Use nursing and physiotherapy support for leg movement and repositioning
+  >
+  > *Source:* Use nursing and physiotherapy support for leg movement and repositioning.
+

@@ -156,3 +156,66 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — foot-risk-classification-iwgdf-scottish*
+
+**Q1.** Which of the following features is most specific or characteristic of foot-risk-classification-iwgdf-scottish?
+
+  - **A.** ABI / TBI
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ABI / TBI
+  >
+  > *Source:* dial malleolus | Confirms neuropathy |
+| **Pedal pulses** | DP + PT (both feet) | PAD if absent |
+| **ABI / TBI** | ABI <0.9 diagnostic; TBI if ABI >1.4 | Confirms PAD |
+| **Deformity inspection** | V
+---
+
+> Auto-generated study sections for "Diabetic foot disease" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Diabetic foot disease?
+  A: By the end of this note you should be able to:
+- Q: What is Purpose of Diabetic foot disease?
+  A: Stratify diabetic patients by foot ulcer/amputation risk
+- Q: What is Tools of Diabetic foot disease?
+  A: 10g monofilament (LOPS), vibration (128Hz), pedal pulses, ABI, deformity inspection
+- Q: What is the prognosis of Diabetic foot disease?
+  A: Risk 0-3 drives screening interval and referral pathway
+- Q: What is Risk 0 of Diabetic foot disease?
+  A: No LOPS, no PAD, no deformity -> Annual
+- Q: What is Risk 1 of Diabetic foot disease?
+  A: LOPS only -> 6-monthly + Podiatry
+- Q: What is Risk 2 of Diabetic foot disease?
+  A: LOPS + PAD/deformity -> 3-6mo + Podiatry + Vascular
+- Q: What is Risk 3 of Diabetic foot disease?
+  A: Prior ulcer/amputation -> 1-3mo + MDT Foot Clinic
+- Q: What is LOPS of Diabetic foot disease?
+  A: 10g monofilament miss >=1/6 sites
+- Q: What is PAD of Diabetic foot disease?
+  A: Absent pulses OR ABI <0.9
+- Q: What is MDT of Diabetic foot disease?
+  A: Diabetologist, podiatrist, vascular, orthotist, microbiology, orthopaedics -> amputations reduced 50-80%
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic foot disease?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetic foot disease
+   C. A complication seen late in the disease course of Diabetic foot disease
+   D. A condition that mimics Diabetic foot disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic foot disease presents with: Purpose — Stratify diabetic patients by foot ulcer/amputation risk; Tools — 10g monofilament (LOPS), vibration (128Hz), pedal pulses, ABI, deformity inspection; Outcome — Risk 0-3 drives screening interval and referral pathway. What is the most likely diagnosis?
+   A. **Diabetic foot disease**
+   B. A condition that mimics Diabetic foot disease but is not the same entity
+   C. A complication of Diabetic foot disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic foot disease
+

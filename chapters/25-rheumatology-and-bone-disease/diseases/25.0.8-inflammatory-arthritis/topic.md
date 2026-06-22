@@ -64,3 +64,34 @@ Related: [[../Rheumatology MOC|Rheumatology MOC]] · [[../Davidson Chapter 26 - 
    C. A complication seen late in the disease course of Rheumatology
    D. A condition that mimics Rheumatology but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Inflammatory Arthritis*
+
+**Q1.** Which of the following is characterised by the clinical triad: arthritis, conjunctivitis, urethritis?
+
+  - **A.** Inflammatory Arthritis
+  - **B.** RA
+  - **C.** SLE
+  - **D.** Polymyalgia
+
+  > **Answer: A** — Inflammatory Arthritis
+  >
+  > *Source:* , 6 domains (joints, skin, nail, dactylitis, enthesis, spine)
+- **Reactive arthritis**: post-GU/GI, triad (arthritis, conjunctivitis, urethritis), HLA-B27
+- **Enteropathic**: IBD-associated, treat inf
+
+**Q2.** Which of the following features is most specific or characteristic of Inflammatory Arthritis?
+
+  - **A.** Undifferentiated
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Undifferentiated
+  >
+  > *Source:* tis, urethritis), HLA-B27
+- **Enteropathic**: IBD-associated, treat inflammation → joints improve
+- **Undifferentiated**: features not meeting specific criteria
+- **JIA**: ILAR classification (systemi
+

@@ -418,3 +418,32 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Renal Anaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Renal Anaemia?
+
+  - **A.** B12/Folate Deficiency
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — B12/Folate Deficiency
+  >
+  > *Source:* er |
+| **Iron Deficiency Anaemia** | **Low Ferritin, Low TSAT, Microcytic**; Renal = normocytic |
+| **B12/Folate Deficiency** | **Macrocytic**, specific levels low |
+| **Myelodysplasia** | Dysplasia, 
+
+**Q2.** What is the most appropriate first-line therapy for Renal Anaemia?
+
+  - **A.** AVOID Hb >11.5 g/dL
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — AVOID Hb >11.5 g/dL
+  >
+  > *Source:* **AVOID Hb >11.5 g/dL** (CHOIR, CREATE, TREAT trials: ↑ stroke, thrombosis, CV death, tumour progression)
+

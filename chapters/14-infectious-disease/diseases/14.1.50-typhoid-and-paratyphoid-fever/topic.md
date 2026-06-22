@@ -639,3 +639,35 @@ flowchart TD
 10. **B** — Chronic carrier with gallstones persistent after 6 weeks cipro → cholecystectomy + continue antibiotics.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Typhoid and Paratyphoid Fever*
+
+**Q1.** Which of the following features is most specific or characteristic of Typhoid and Paratyphoid Fever?
+
+  - **A.** Rose spots
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Rose spots
+  >
+  > *Source:* always present) |
+| **Relative bradycardia** | Pulse not commensurate with fever (Faget's sign) |
+| **Rose spots** | Faint salmon macules on trunk (pathognomonic but only 10–30%); blanch on pressure |
+
+**Q2.** What is the most appropriate first-line therapy for Typhoid and Paratyphoid Fever?
+
+  - **A.** Cefixime + Ceftriaxone =
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Cefixime + Ceftriaxone =
+  >
+  > *Source:* **Cefixime**   20mg/kg PO 12h (max 400mg)   7–14 days   Alternative oral; less reliable for resistant strains  
+
+> [!tip]
+> **Ceftriaxone = 1st-line (IV/IM); Azithromycin = 1st-line oral.** **Ciproflo
+

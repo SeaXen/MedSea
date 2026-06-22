@@ -577,3 +577,35 @@ Intravenous alteplase eligibility is a time-critical reperfusion decision in acu
 8. **A** — Reperfusion benefit falls with time; unnecessary delay harms outcomes.  
 9. **A** — Confirmed ICH is a classic contraindication category.  
 10. **B** — Posterior circulation strokes may be highly disabling despite a modest NIHSS.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Intravenous alteplase eligibility*
+
+**Q1.** Which of the following features is most specific or characteristic of Intravenous alteplase eligibility?
+
+  - **A.** do not delay alteplase for unnecessary tests
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — do not delay alteplase for unnecessary tests
+  >
+  > *Source:* y pathway considered
+- Renal function/electrolytes
+- ECG
+
+> [!tip]
+> In a clearly eligible patient, **do not delay alteplase for unnecessary tests** if hemorrhage has been excluded and no specific lab
+
+**Q2.** What is the most appropriate first-line therapy for Intravenous alteplase eligibility?
+
+  - **A.** Administer IV alteplase according to protocol without avoidable delay
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Administer IV alteplase according to protocol without avoidable delay
+  >
+  > *Source:* Administer IV alteplase according to protocol without avoidable delay.
+

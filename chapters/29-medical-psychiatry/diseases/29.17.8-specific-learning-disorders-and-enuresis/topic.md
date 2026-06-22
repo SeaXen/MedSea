@@ -284,3 +284,22 @@ A: Primary (never dry) vs secondary (dry then relapses); monosymptomatic vs non-
 - [[Autism spectrum disorder and intellectual disability]]
 - [[Conduct disorder and oppositional defiant disorder in children]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Specific learning disorders and enuresis*
+
+**Q1.** Which of the following features is most specific or characteristic of Specific learning disorders and enuresis?
+
+  - **A.** Mnemonic for Specific learning disorders and enuresis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Specific learning disorders and enuresis
+  >
+  > *Source:* **Mnemonic for Specific learning disorders and enuresis** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'ABCDEFGHI'** — MSE comp
+

@@ -129,3 +129,28 @@ modified: 2026-06-13
 - [[Type 1 Diabetes Mellitus/Glucose monitoring/Capillary blood glucose (SMBG)]]
 - [[Type 1 Diabetes Mellitus/Insulin therapy/Carbohydrate counting and dose adjustment]]
 - [[Classification and Diagnosis of Diabetes Mellitus/HbA1c diagnosis]]
+---
+
+> Auto-generated study sections for "Glucose monitoring" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Glucose monitoring?
+  A: Time in Range (TIR) = percentage of time glucose spends within target range (3.9–10 mmol/L) as measured by CGM.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Glucose monitoring?**
+   A. **Time in Range (TIR) = percentage of time glucose spends within target range (3.9–10 mmol/L) as measured by CGM.**
+   B. An unrelated condition not matching the clinical picture of Glucose monitoring
+   C. A complication seen late in the disease course of Glucose monitoring
+   D. A condition that mimics Glucose monitoring but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Glucose monitoring presents with: Time in Range (TIR) = percentage of time glucose spends within target range (3.9–10 mmol/L) as measured by CGM.; FCPS/MRCP relevance: Emerging standard for glycaemic assessment; ATTD consensus; correlates with complications; exam questions on targets, interpretation, relationship to HbA1c.. What is the most likely diagnosis?
+   A. **Glucose monitoring**
+   B. A condition that mimics Glucose monitoring but is not the same entity
+   C. A complication of Glucose monitoring rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Glucose monitoring
+

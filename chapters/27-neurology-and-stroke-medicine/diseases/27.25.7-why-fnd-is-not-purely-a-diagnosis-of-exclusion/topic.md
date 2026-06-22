@@ -352,3 +352,19 @@ FND is a genuine neurological disorder diagnosed by **positive clinical evidence
 8. Hoover’s sign, entrainment, midline splitting, distractibility, preserved automatic movement.
 9. Reassess urgently for structural neurological disease.
 10. It allows earlier rehabilitation and clearer management.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Why FND is not purely a diagnosis of exclusion*
+
+**Q1.** What is the most appropriate first-line therapy for Why FND is not purely a diagnosis of exclusion?
+
+  - **A.** Early explanation reduces repeated hospital use and diagnostic drift
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Early explanation reduces repeated hospital use and diagnostic drift
+  >
+  > *Source:* Early explanation reduces repeated hospital use and diagnostic drift.
+

@@ -443,3 +443,19 @@ flowchart TD
 | **Diagnosis** | Genetic (IKBKG); skin biopsy (eosinophilic spongiosis) |
 | **Management** | Supportive, multidisciplinary; ASM for seizures; laser for detachment |
 | **Genetic** | 50% recurrence; prenatal testing available |
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Incontinentia Pigmenti*
+
+**Q1.** What is the most appropriate first-line therapy for Incontinentia Pigmenti?
+
+  - **A.** Skin
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Skin
+  >
+  > *Source:* **Skin**   Skin care; topical steroids for inflammation
+

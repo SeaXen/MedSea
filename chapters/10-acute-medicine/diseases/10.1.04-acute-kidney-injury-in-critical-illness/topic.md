@@ -493,3 +493,19 @@ AKI in critical illness = common, high mortality. **KDIGO** criteria (Cr + UO) f
 8. **B** — Rhabdo: aggressive IV crystalloid, target UO 200–300 mL/h.
 9. **B** — AIN: drugs (NSAIDs, penicillins, PPIs, allopurinol).
 10. **B** — AKIKI: wait-and-see; ELAIN: early may help.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — Acute Kidney Injury in Critical Illness*
+
+**Q1.** What is the most appropriate first-line therapy for Acute Kidney Injury in Critical Illness?
+
+  - **A.** Drug dosing
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Drug dosing
+  >
+  > *Source:* **Drug dosing**: adjust ALL renally cleared drugs (use eGFR/CrCl)
+

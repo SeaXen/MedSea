@@ -572,3 +572,34 @@ Primary congenital glaucoma is caused by isolated trabeculodysgenesis (CYP1B1, a
 
 ## Tags
 #medicine #davidson #ophthalmology #congenital-glaucoma #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Congenital Glaucoma*
+
+**Q1.** Which of the following is characterised by the clinical triad: photophobia, epiphora, blepharospasm?
+
+  - **A.** Congenital Glaucoma
+  - **B.** A related condition in the same clinical area
+  - **C.** A common mimicker with overlapping features
+  - **D.** A complication rather than the underlying disease
+
+  > **Answer: A** — Congenital Glaucoma
+  >
+  > *Source:* # Learning Objectives
+- [ ] Define primary congenital glaucoma (PCG)
+- [ ] Recall epidemiology and genetics (CYP1B1)
+- [ ] Recognise the classic triad (photophobia, epiphora, blepharospasm)
+- [ ] Exam
+
+**Q2.** What is the most appropriate first-line therapy for Congenital Glaucoma?
+
+  - **A.** Treat amblyopia
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat amblyopia
+  >
+  > *Source:* **Treat amblyopia** — refractive correction, patching
+

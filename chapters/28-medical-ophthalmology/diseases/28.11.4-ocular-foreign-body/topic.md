@@ -496,3 +496,23 @@ Ocular FB may be superficial or intraocular. Always evert upper lid for subtarsa
 
 ## Tags
 #medicine #davidson #ophthalmology #FB #trauma #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Ocular Foreign Body*
+
+**Q1.** Which of the following features is most specific or characteristic of Ocular Foreign Body?
+
+  - **A.** "Iron = Siderosis, Copper = Chalcosis"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "Iron = Siderosis, Copper = Chalcosis"
+  >
+  > *Source:* **"Iron = Siderosis, Copper = Chalcosis"** — chronic metal-specific complications
+
+---
+### MCQs
+1
+

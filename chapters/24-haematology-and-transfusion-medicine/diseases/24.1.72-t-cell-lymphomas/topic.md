@@ -470,3 +470,35 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — T-cell Lymphomas*
+
+**Q1.** Which of the following features is most specific or characteristic of T-cell Lymphomas?
+
+  - **A.** Genetics
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Genetics
+  >
+  > *Source:* inaemia**, **Autoimmune phenomena (AIHA, ITP)** |
+| **EBV** | **EBV+ B-cells** (not neoplastic) |
+| **Genetics** | **TET2, RHOA, IDH2 mutations** (diagnostic) |
+
+### ALCL (ALK+)
+| Feature | Details |
+
+
+**Q2.** What is the most appropriate first-line therapy for T-cell Lymphomas?
+
+  - **A.** Consolidation + Auto-HSCT in CR1
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Consolidation + Auto-HSCT in CR1
+  >
+  > *Source:* **Consolidation**   **Auto-HSCT in CR1** (Standard for fit patients)
+

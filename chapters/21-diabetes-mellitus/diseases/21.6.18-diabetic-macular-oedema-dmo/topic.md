@@ -173,3 +173,51 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Diabetic macular oedema (DMO)*
+
+**Q1.** What is the most appropriate first-line therapy for Diabetic macular oedema (DMO)?
+
+  - **A.** Protocol T + baseline VA ≤69 letters
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Protocol T + baseline VA ≤69 letters
+  >
+  > *Source:* **Protocol T (DRCR.net) Key Finding**: **Aflibercept > Ranibizumab > Bevacizumab** for **baseline VA ≤69 letters (≤6/12)**; all similar if VA good.
+---
+
+> Auto-generated study sections for "Diabetic retinopathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (5 generated)
+
+- Q: What is the definition of Diabetic retinopathy?
+  A: Retinal thickening ≤1DD (disc diameter) from fovea due to VEGF-mediated vascular leakage
+- Q: What is the epidemiology of Diabetic retinopathy?
+  A: ~7% T1DM, ~5% T2DM; leading cause of vision loss in DR
+- Q: What causes Diabetic retinopathy?
+  A: HbA1c, hypertension, dyslipidaemia, duration, pregnancy, renal disease
+- Q: What is Non-centre DMO of Diabetic retinopathy?
+  A: Focal/grid laser to leaking microaneurysms >1DD from fovea
+- Q: What is Failed anti-VEGF of Diabetic retinopathy?
+  A: Consider if persistent after 6+ injections
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic retinopathy?**
+   A. **| Definition | Retinal thickening ≤1DD (disc diameter) from fovea due to VEGF-mediated vascular leakage |**
+   B. An unrelated condition not matching the clinical picture of Diabetic retinopathy
+   C. A complication seen late in the disease course of Diabetic retinopathy
+   D. A condition that mimics Diabetic retinopathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic retinopathy presents with: Definition — Retinal thickening ≤1DD (disc diameter) from fovea due to VEGF-mediated vascular leakage; Prevalence — ~7% T1DM, ~5% T2DM; leading cause of vision loss in DR; Risk Factors — HbA1c, hypertension, dyslipidaemia, duration, pregnancy, renal disease. What is the most likely diagnosis?
+   A. **Diabetic retinopathy**
+   B. A condition that mimics Diabetic retinopathy but is not the same entity
+   C. A complication of Diabetic retinopathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic retinopathy
+

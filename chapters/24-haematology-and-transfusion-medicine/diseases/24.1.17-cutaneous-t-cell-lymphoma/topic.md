@@ -403,3 +403,32 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Cutaneous T-cell Lymphoma*
+
+**Q1.** Which of the following features is most specific or characteristic of Cutaneous T-cell Lymphoma?
+
+  - **A.** SS vs Erythrodermic CTCL
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — SS vs Erythrodermic CTCL
+  >
+  > *Source:* l TCR** |
+| **MF vs Parapsoriasis** | **Parapsoriasis: No atypia, No clonality, Benign course** |
+| **SS vs Erythrodermic CTCL** | **SS = Erythroderma + >1000 Sézary/µL** (Specific leukaemic phase) |
+
+
+**Q2.** What is the most appropriate first-line therapy for Cutaneous T-cell Lymphoma?
+
+  - **A.** Extracorporeal Photopheresis + SS / Erythrodermic MF + Leukapheresis
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Extracorporeal Photopheresis + SS / Erythrodermic MF + Leukapheresis
+  >
+  > *Source:* **Extracorporeal Photopheresis (ECP)**   **SS / Erythrodermic MF**   **Leukapheresis + 8-MOP + UVA**, **2 days q2-4wk**, **First-line for SS**
+

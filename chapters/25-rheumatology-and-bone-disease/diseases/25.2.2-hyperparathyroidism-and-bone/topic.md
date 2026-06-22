@@ -439,3 +439,30 @@ mindmap
    C. A complication of Bone Metabolic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Bone Metabolic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Hyperparathyroidism and bone*
+
+**Q1.** Which of the following features is most specific or characteristic of Hyperparathyroidism and bone?
+
+  - **A.** Subperiosteal Resorption
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Subperiosteal Resorption
+  >
+  > *Source:* *High-turnover bone disease** — subperiosteal resorption, brown tumours, pathological fractures |
+| **Subperiosteal Resorption** | **Radial aspect of middle phalanges** — **pathognomonic X-ray sign** 
+
+**Q2.** What is the most appropriate first-line therapy for Hyperparathyroidism and bone?
+
+  - **A.** Indication + Non-surgical candidates
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Indication + Non-surgical candidates
+  >
+  > *Source:* **Indication**   **Non-surgical candidates** with symptomatic hypercalcaemia; refractory PHPT
+

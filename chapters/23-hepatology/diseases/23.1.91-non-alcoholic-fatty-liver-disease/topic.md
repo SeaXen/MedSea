@@ -175,3 +175,18 @@ flowchart TD
    C. A complication of Non Alcoholic Fatty Liver Disease rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Non Alcoholic Fatty Liver Disease
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Non-Alcoholic Fatty Liver Disease*
+
+**Q1.** What is the most appropriate first-line therapy for Non-Alcoholic Fatty Liver Disease?
+
+  - **A.** Weight loss + Histologic improvement in NASH
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Weight loss + Histologic improvement in NASH
+  >
+  > *Source:* **Weight loss 7-10%**   **Histologic improvement in NASH** (reduces ballooning, inflammation, fibrosis)
+

@@ -161,3 +161,20 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Annual review and complication screening]], [[Diabetes education and structured education]], [[Psychosocial aspects]], [[Frailty and individualised HbA1c targets]], [[CGM metrics (TIR, TBR, TAR, GMI, CV)]]
+---
+
+> Auto-generated study sections for "Diabetes Monitoring and Quality of Care" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Diabetes Monitoring and Quality of Care?
+  A: No single target — individualise by diabetes type, duration, age, frailty, complications, hypoglycaemia risk, pregnancy; NICE/ADA/ESC broadly aligned: T1DM <48 mmol/mol (6.5%); T2DM <48–58; pregnancy <48; elderly <53–75 by frailty.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes Monitoring and Quality of Care?**
+   A. **No single target — individualise by diabetes type, duration, age, frailty, complications, hypoglycaemia risk, pregnancy; NICE/ADA/ESC broadly aligned: T1DM <48 mmol/mol (6.5%); T2DM <48–58; pregnancy **
+   B. An unrelated condition not matching the clinical picture of Diabetes Monitoring and Quality of Care
+   C. A complication seen late in the disease course of Diabetes Monitoring and Quality of Care
+   D. A condition that mimics Diabetes Monitoring and Quality of Care but has a different underlying cause
+

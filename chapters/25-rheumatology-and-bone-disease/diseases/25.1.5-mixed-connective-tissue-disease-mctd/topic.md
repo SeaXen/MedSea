@@ -448,3 +448,24 @@ mindmap
    C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Mixed connective tissue disease (MCTD)*
+
+**Q1.** Which of the following features is most specific or characteristic of Mixed connective tissue disease (MCTD)?
+
+  - **A.** Trigeminal Neuropathy
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Trigeminal Neuropathy
+  >
+  > *Source:* SLE-like serositis |
+
+### Other
+| Feature | Frequency | Detail |
+|---------|-----------|--------|
+| **Trigeminal Neuropathy** | **10-20%** | Sensory loss V1/V2 — **specific for MCTD** |
+| **Lymphadeno
+

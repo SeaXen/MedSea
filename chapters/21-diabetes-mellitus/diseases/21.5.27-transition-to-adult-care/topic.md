@@ -131,3 +131,81 @@ flowchart TD
 - **O**utreach: named coordinator prevents loss to follow-up
 - **N**ext: adult service 3mo follow-up
 - **N**eed: MDT (diabetologist, nurse, dietitian, psychologist)</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Transition to adult care*
+
+**Q1.** What is the most appropriate first-line therapy for Transition to adult care?
+
+  - **A.** Eating disorders
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Eating disorders
+  >
+  > *Source:* **Eating disorders**   Diabulimia (insulin omission for weight loss); screen DEPS-R
+---
+
+> Auto-generated study sections for "Diabetes in children and adolescents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Diabetes in children and adolescents?
+  A: Planned transfer from paediatric to adult diabetes services
+- Q: What is Age of Diabetes in children and adolescents?
+  A: 16-18 years (individualised)
+- Q: What is Gap Risk of Diabetes in children and adolescents?
+  A: 30-60% loss to follow-up during transition
+- Q: What is Adherence of Diabetes in children and adolescents?
+  A: CGM/SMBG, insulin omission, bolus skipping
+- Q: What is Eating disorders of Diabetes in children and adolescents?
+  A: Diabulimia (insulin omission for weight loss); screen DEPS-R
+- Q: What is Contraception of Diabetes in children and adolescents?
+  A: Pre-conception counselling; folic acid 5mg if T1DM/T2DM
+- Q: What is Alcohol of Diabetes in children and adolescents?
+  A: Hypoglycaemia risk; carb content; glucagon ineffective if drunk
+- Q: What is Driving of Diabetes in children and adolescents?
+  A: DVLA rules: hypo awareness, 3 monthly reviews if on insulin
+- Q: What is Employment of Diabetes in children and adolescents?
+  A: Shift work, safety-critical jobs, rights (Equality Act)
+- Q: What is Adherence of Diabetes in children and adolescents?
+  A: CGM/SMBG, insulin omission, bolus skipping
+- Q: What is Eating disorders of Diabetes in children and adolescents?
+  A: Diabulimia (insulin omission for weight loss); screen DEPS-R
+- Q: What is Contraception of Diabetes in children and adolescents?
+  A: Pre-conception counselling; folic acid 5mg if T1DM/T2DM
+- Q: What is Alcohol of Diabetes in children and adolescents?
+  A: Hypoglycaemia risk; carb content; glucagon ineffective if drunk
+- Q: What is Driving of Diabetes in children and adolescents?
+  A: DVLA rules: hypo awareness, 3 monthly reviews if on insulin
+- Q: What is Age of Diabetes in children and adolescents?
+  A: 16-18 years (individualised); prep starts 14-16
+- Q: What is Joint clinics of Diabetes in children and adolescents?
+  A: 2-3 shared paediatric-adult appointments
+- Q: What is DAFNE-Youth of Diabetes in children and adolescents?
+  A: Structured education for young adults
+- Q: What is Psychology of Diabetes in children and adolescents?
+  A: Screen: eating disorders (DEPS-R), depression (PHQ-9), distress (PAID)
+- Q: What is Key topics of Diabetes in children and adolescents?
+  A: Driving, alcohol, contraception, employment, eating disorders
+- Q: What is Loss to follow-up of Diabetes in children and adolescents?
+  A: 30-60% during transition; named coordinator reduces
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in children and adolescents?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in children and adolescents
+   C. A complication seen late in the disease course of Diabetes in children and adolescents
+   D. A condition that mimics Diabetes in children and adolescents but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in children and adolescents presents with: Definition — Planned transfer from paediatric to adult diabetes services; Age — 16-18 years (individualised); Gap Risk — 30-60% loss to follow-up during transition. What is the most likely diagnosis?
+   A. **Diabetes in children and adolescents**
+   B. A condition that mimics Diabetes in children and adolescents but is not the same entity
+   C. A complication of Diabetes in children and adolescents rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in children and adolescents
+

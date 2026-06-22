@@ -246,3 +246,81 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Hypoglycaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Hypoglycaemia?
+
+  - **A.** Whipple's triad
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Whipple's triad
+  >
+  > *Source:* ; <3.0 = Level 2 |
+| **CGM** | Detect nocturnal/unrecognised | TIR/TBR metrics; alerts for <3.9 |
+| **Whipple's triad** | Diagnostic | Symptoms + low glucose + relief with glucose |
+| **Insulin/C-pept
+
+**Q2.** What is the most appropriate first-line therapy for Hypoglycaemia?
+
+  - **A.** Hospital insulin error
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Hospital insulin error
+  >
+  > *Source:* **Hospital insulin error**   Same + root cause analysis; insulin passport; double-check protocol; CGM in hospital  
+
+### Glucagon Formulations
+---
+
+> Auto-generated study sections for "Acute complications" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Acute complications?
+  A: By the end of this note you should be able to:
+- Q: What is Level 1 (Alert) of Acute complications?
+  A: Glucose <3.9 mmol/L (70 mg/dL) - threshold for neuroendocrine response
+- Q: What is Level 2 (Clinical) of Acute complications?
+  A: Glucose <3.0 mmol/L (54 mg/dL) - clinically significant
+- Q: What is Level 3 (Severe) of Acute complications?
+  A: Severe - requires assistance (unconscious/seizure)
+- Q: What is the epidemiology of Acute complications?
+  A: 2-3 severe episodes/patient-year
+- Q: What is Mortality of Acute complications?
+  A: ~4-10% of T1DM deaths; "dead in bed" syndrome
+- Q: How is Acute complications classified?
+  A: Level 1: <3.9; Level 2: <3.0; Level 3: severe (needs help)
+- Q: How is Acute complications managed?
+  A: 15-20g fast carbs → recheck 15min → repeat if <3.9 → complex carb if meal >1h
+- Q: What is Unconscious + IV of Acute complications?
+  A: 75-80ml 20% dextrose (or 150ml 10%) IV bolus → 10% dextrose infusion
+- Q: What is Unconscious, no IV of Acute complications?
+  A: Glucagon 1mg IM/SC (adult), 0.5mg <25kg; Nasal 3mg (Baqsimi)
+- Q: What is Unawareness reversal of Acute complications?
+  A: Avoid <3.9 for 2-3 weeks → restores autonomic symptoms; CGM alarms; higher targets
+- Q: What is Hospital prevention of Acute complications?
+  A: Insulin passport; double-check protocol; CGM in hospital; reduce sliding scale
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Acute complications?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Acute complications
+   C. A complication seen late in the disease course of Acute complications
+   D. A condition that mimics Acute complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Acute complications presents with: Level 1 (Alert) — Glucose <3.9 mmol/L (70 mg/dL) - threshold for neuroendocrine response; Level 2 (Clinical) — Glucose <3.0 mmol/L (54 mg/dL) - clinically significant; Level 3 (Severe) — Severe - requires assistance (unconscious/seizure). What is the most likely diagnosis?
+   A. **Acute complications**
+   B. A condition that mimics Acute complications but is not the same entity
+   C. A complication of Acute complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Acute complications
+

@@ -348,3 +348,43 @@ A: Gait, incontinence, dementia
 - [[Hydrocephalus after SAH]]
 - [[Other complications of SAH]]
 - [[../Stroke Medicine MOC|Stroke Medicine MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Hydrocephalus after SAH*
+
+**Q1.** Which of the following is characterised by the clinical triad: hypertension, bradycardia, irregular respiration?
+
+  - **A.** Hydrocephalus after SAH
+  - **B.** Ischaemic stroke
+  - **C.** Migraine
+  - **D.** Meningitis
+
+  > **Answer: A** — Hydrocephalus after SAH
+  >
+  > *Source:* - **Clinical features**: rapid deterioration in GCS, pupillary changes, Cushing's triad (hypertension, bradycardia, irregular respiration)
+
+**Q2.** Which of the following features is most specific or characteristic of Hydrocephalus after SAH?
+
+  - **A.** Hydrocephalus after SAH
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Hydrocephalus after SAH
+  >
+  > *Source:* - **Headache, vomiting, papilloedema** (signs of raised ICP)
+- **Hydrocephalus after SAH** — see key points above
+- **'ACoA → bitemporal hemianopia'** — Anterior communicating artery aneurysm compress
+
+**Q3.** What is the most appropriate first-line therapy for Hydrocephalus after SAH?
+
+  - **A.** Chronic: VP shunt (ventriculoperitoneal) with programmable valve
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Chronic: VP shunt (ventriculoperitoneal) with programmable valve
+  >
+  > *Source:* **Chronic**: VP shunt (ventriculoperitoneal) with programmable valve.
+

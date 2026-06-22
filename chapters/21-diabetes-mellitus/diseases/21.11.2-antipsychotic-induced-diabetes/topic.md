@@ -160,3 +160,105 @@ By the end of this note you should be able to:
 - **I**nert: lurasidone, ziprasidone lowest
 - **C**lozapine = olanzapine highest
 - **D**irect beta-cell toxicity: clozapine/olanzapine**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Antipsychotic-induced diabetes*
+
+**Q1.** Which of the following features is most specific or characteristic of Antipsychotic-induced diabetes?
+
+  - **A.** Cushing syndrome
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cushing syndrome
+  >
+  > *Source:* atures |
+|-----------|-------------------------|
+| **T2DM** | No antipsychotic; obesity primary |
+| **Cushing syndrome** | Cortisol excess; specific features |
+| **Steroid diabetes** | Corticosteroid
+---
+
+> Auto-generated study sections for "Drug induced diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (30 generated)
+
+- Q: What is the definition of Drug induced diabetes?
+  A: By the end of this note you should be able to:
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 10-30% develop glucose dysregulation
+- Q: What is Risk hierarchy of Drug induced diabetes?
+  A: Olanzapine ≈ Clozapine > Risperidone > Aripiprazole > Lurasidone > Ziprasidone
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 10-30% develop glucose dysregulation
+- Q: What is Risk hierarchy of Drug induced diabetes?
+  A: Olanzapine ≈ Clozapine > Risperidone > Aripiprazole > Lurasidone > Ziprasidone
+- Q: What is Weight gain of Drug induced diabetes?
+  A: 5-15kg (clozapine/olanzapine highest)
+- Q: What is Dyslipidaemia of Drug induced diabetes?
+  A: ↑TG, ↓HDL, ↑LDL
+- Q: What is Glucose of Drug induced diabetes?
+  A: Impaired fasting glucose -> diabetes
+- Q: What is Weight gain of Drug induced diabetes?
+  A: 5-15kg (clozapine/olanzapine highest)
+- Q: What is Dyslipidaemia of Drug induced diabetes?
+  A: ↑TG, ↓HDL, ↑LDL
+- Q: What is Glucose of Drug induced diabetes?
+  A: Impaired fasting glucose -> diabetes
+- Q: What is Weight/BMI of Drug induced diabetes?
+  A: Baseline, 4 weeks, 8 weeks, 12 weeks, quarterly
+- Q: What is Fasting glucose/HbA1c of Drug induced diabetes?
+  A: Baseline, 12 weeks, annually
+- Q: What is Lipid profile of Drug induced diabetes?
+  A: Baseline, 12 weeks, annually
+- Q: What is Weight/BMI of Drug induced diabetes?
+  A: Baseline, 4 weeks, 8 weeks, 12 weeks, quarterly
+- Q: What is Fasting glucose/HbA1c of Drug induced diabetes?
+  A: Baseline, 12 weeks, annually
+- Q: What is Lipid profile of Drug induced diabetes?
+  A: Baseline, 12 weeks, annually
+- Q: What is Weight/BMI of Drug induced diabetes?
+  A: Baseline, 4 weeks, 8 weeks, 12 weeks, quarterly
+- Q: What is Fasting glucose/HbA1c of Drug induced diabetes?
+  A: Baseline, 12 weeks, annually
+- Q: What is Lipid profile of Drug induced diabetes?
+  A: Baseline, 12 weeks, annually
+- Q: What is Prolactin of Drug induced diabetes?
+  A: If on risperidone/paliperidone
+- Q: What is Weight/BMI of Drug induced diabetes?
+  A: Baseline, 4 weeks, 8 weeks, 12 weeks, quarterly
+- Q: What is Fasting glucose/HbA1c of Drug induced diabetes?
+  A: Baseline, 12 weeks, annually
+- Q: What is Lipid profile of Drug induced diabetes?
+  A: Baseline, 12 weeks, annually
+- Q: What is Prolactin of Drug induced diabetes?
+  A: If on risperidone/paliperidone
+- Q: What is Highest risk of Drug induced diabetes?
+  A: Clozapine = Olanzapine > Risperidone > Aripiprazole/Lurasidone
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Weight gain -> insulin resistance; direct beta-cell toxicity (clozapine/olanzapine)
+- Q: How is Drug induced diabetes monitored?
+  A: Weight q4wk x12wk; glucose/lipids 12wk, annually
+- Q: What is the first-line treatment for Drug induced diabetes?
+  A: Metformin (weight neutral/loss); GLP-1 RA/SGLT2i if T2DM
+- Q: What is Switch strategy of Drug induced diabetes?
+  A: High risk -> low risk if psychiatric stable
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug induced diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Drug induced diabetes
+   C. A complication seen late in the disease course of Drug induced diabetes
+   D. A condition that mimics Drug induced diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Drug induced diabetes presents with: Incidence — 10-30% develop glucose dysregulation; Risk hierarchy — Olanzapine ≈ Clozapine > Risperidone > Aripiprazole > Lurasidone > Ziprasidone; Mechanism — Weight gain, insulin resistance, direct beta-cell toxicity (clozapine/olanzapine). What is the most likely diagnosis?
+   A. **Drug induced diabetes**
+   B. A condition that mimics Drug induced diabetes but is not the same entity
+   C. A complication of Drug induced diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Drug induced diabetes
+

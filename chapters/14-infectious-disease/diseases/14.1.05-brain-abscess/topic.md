@@ -576,3 +576,19 @@ flowchart TD
 10. **B** — Oral step-down after improvement: metronidazole PO + co-amoxiclav/linezolid PO for last 2–4 weeks.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Brain Abscess*
+
+**Q1.** What is the most appropriate first-line therapy for Brain Abscess?
+
+  - **A.** Immunocompromised
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Immunocompromised
+  >
+  > *Source:* **Immunocompromised (HIV CD4<100)**   **Pyrimethamine + Sulfadiazine + Folinic acid (for Toxoplasma) + broad antibacterial**   Toxoplasma #1; empirical anti-Toxoplasma if multiple ring-enhancing
+

@@ -161,3 +161,69 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Meglitinides]], [[Thiazolidinediones (pioglitazone)]], [[Dumping syndrome]], [[Post-surgery diabetes management]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Alpha-glucosidase inhibitors*
+
+**Q1.** What is the most appropriate first-line therapy for Alpha-glucosidase inhibitors?
+
+  - **A.** Add-on + not in NICE pathway
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Add-on + not in NICE pathway
+  >
+  > *Source:* **Add-on**   Rarely used; **not in NICE pathway** (limited evidence, GI side effects)
+---
+
+> Auto-generated study sections for "Oral glucose lowering agents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Oral glucose lowering agents?
+  A: Acarbose (Glucobay) = reversible alpha-glucosidase inhibitor; delays complex carbohydrate digestion in small intestinal brush border; ↓ post-prandial glucose excursion; no hypoglycaemia as monotherapy; GI side effects (flatulence, diarrhoea, abdominal pain) limit use; rarely used in UK; contraindicated IBD, obstruction.
+- Q: What is the dose of Oral glucose lowering agents?
+  A: 50–100mg TDS with meals
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: Delays carbohydrate absorption → blunts insulin surge
+- Q: What is Alternative of Oral glucose lowering agents?
+  A: Octreotide (if acarbose fails)
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: Reversible alpha-glucosidase inhibitor (brush border) → delays carb absorption
+- Q: What is Main effect of Oral glucose lowering agents?
+  A: ↓ Post-prandial glucose (2–3mmol/L); minimal fasting effect
+- Q: What is HbA1c reduction of Oral glucose lowering agents?
+  A: −0.5 to −0.8%
+- Q: What is Hypoglycaemia of Oral glucose lowering agents?
+  A: None as monotherapy
+- Q: What are the side effects of Oral glucose lowering agents?
+  A: Flatulence 40–80% (colonic fermentation); diarrhoea
+- Q: What is Titration of Oral glucose lowering agents?
+  A: Start 25mg TDS → 50mg TDS → max 100mg TDS over 4–8w
+- Q: What is Administration of Oral glucose lowering agents?
+  A: With first bite of meal
+- Q: What is Oral glucose lowering agents indicated for?
+  A: IBD, obstruction, chronic intestinal disease
+- Q: What is Renal of Oral glucose lowering agents?
+  A: No adjustment (eGFR ≥25); avoid <25
+- Q: What is Special use of Oral glucose lowering agents?
+  A: Late dumping syndrome post-bariatric (acarbose 50–100mg TDS)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Oral glucose lowering agents?**
+   A. **Acarbose (Glucobay) = reversible alpha-glucosidase inhibitor; delays complex carbohydrate digestion in small intestinal brush border; ↓ post-prandial glucose excursion; no hypoglycaemia as monotherapy**
+   B. An unrelated condition not matching the clinical picture of Oral glucose lowering agents
+   C. A complication seen late in the disease course of Oral glucose lowering agents
+   D. A condition that mimics Oral glucose lowering agents but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Oral glucose lowering agents presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — Alpha-glucosidase inhibitors; Q1. What is the most appropriate first-line therapy for Alpha-glucosidase inhibitors?; A. Add-on + not in NICE pathway. What is the most likely diagnosis?
+   A. **Oral glucose lowering agents**
+   B. A condition that mimics Oral glucose lowering agents but is not the same entity
+   C. A complication of Oral glucose lowering agents rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Oral glucose lowering agents
+

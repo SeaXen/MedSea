@@ -565,3 +565,22 @@ flowchart TD
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-15
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — Raised Intracranial Pressure*
+
+**Q1.** What is the most appropriate first-line therapy for Raised Intracranial Pressure?
+
+  - **A.** Airway + Breathing + PaCO₂
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Airway + Breathing + PaCO₂
+  >
+  > *Source:* ### Step 1: ABCDE + Position
+- **Airway**: intubate if GCS ≤8 or deteriorating
+- **Breathing**: controlled ventilation, target **PaCO₂ 4.5–5.0 kPa (35–38 mmHg)**
+- **Head-up 30°**, head midline (avoid
+

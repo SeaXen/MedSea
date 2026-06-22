@@ -121,3 +121,46 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetic foot ulcer (DFU) classification]], [[Diabetic foot ulcer (DFU) management]], [[Charcot neuroarthropathy]], [[Amputation prevention and multidisciplinary care]]
+---
+
+> Auto-generated study sections for "Foot risk classification (IWGDF" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (10 generated)
+
+- Q: What is IWGDF Risk 0 of Foot risk classification (IWGDF?
+  A: No LOPS, no PAD, no deformity → annual screen
+- Q: What is IWGDF Risk 1 of Foot risk classification (IWGDF?
+  A: LOPS only → annual + podiatry for nails
+- Q: What is IWGDF Risk 2 of Foot risk classification (IWGDF?
+  A: LOPS + (PAD OR deformity) → 3–6m podiatry MDT
+- Q: What is IWGDF Risk 3 of Foot risk classification (IWGDF?
+  A: Prior ulcer/amputation, active Charcot, critical ischaemia → 1–3m specialist MDT
+- Q: What is Scottish Low of Foot risk classification (IWGDF?
+  A: = IWGDF 0+1 (no risk factors)
+- Q: What is Scottish Moderate of Foot risk classification (IWGDF?
+  A: = IWGDF 2 (one risk factor)
+- Q: What is Scottish High of Foot risk classification (IWGDF?
+  A: = IWGDF 3
+- Q: What is Monofilament sites of Foot risk classification (IWGDF?
+  A: 6 sites: hallux, 1st/3rd/5th met heads, dorsum, heel
+- Q: What is the definition of Foot risk classification (IWGDF?
+  A: Monofilament -ve at ≥1 site
+- Q: What is Active disease of Foot risk classification (IWGDF?
+  A: Urgent MDT 24–48h (ulcer, infection, ischaemia, active Charcot)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Foot risk classification (IWGDF?**
+   A. **IWGDF 2019/2023 = 4 categories (Risk 0–3); Scottish = 3 categories (Low/Moderate/High); both based on neuropathy, ischaemia, deformity, prior ulcer/amputation; determines screening frequency and refer**
+   B. An unrelated condition not matching the clinical picture of Foot risk classification (IWGDF
+   C. A complication seen late in the disease course of Foot risk classification (IWGDF
+   D. A condition that mimics Foot risk classification (IWGDF but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Foot risk classification (IWGDF presents with: 0 (Very Low) — No LOPS, No PAD, No deformity; 1 (Low) — LOPS only; 2 (Moderate) — LOPS + PAD OR LOPS + Deformity. What is the most likely diagnosis?
+   A. **Foot risk classification (IWGDF**
+   B. A condition that mimics Foot risk classification (IWGDF but is not the same entity
+   C. A complication of Foot risk classification (IWGDF rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Foot risk classification (IWGDF
+

@@ -57,3 +57,19 @@ SVT with aberrancy (RBBB, LBBB, pre-existing), SVT with pre-excitation (WPW anti
 ### Complications & Prognosis
 
 **SCD**. **Cerebrovascular event** (hypoperfusion, AF/VF). **Heart failure** (cardiomyopathy, post-shock). **Post-shock complications** (skin burns, lead displacement, infection, anxiety). **Storms** (≥3 VT/VF in 24h — 50% mortality). **Cardiac arrest**.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Catecholaminergic Polymorphic Ventricular Tachycardia CPVT*
+
+**Q1.** What is the most appropriate first-line therapy for Catecholaminergic Polymorphic Ventricular Tachycardia CPVT?
+
+  - **A.** Long-term
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Long-term
+  >
+  > *Source:* **Long-term**: ICD (secondary prevention if survived SCD, sustained VT with haemodynamic compromise; primary prevention if LVEF≤35% + NYHA II-III + GDMT 3m + life expectancy >1y — MADIT-II, SCD-HeFT).
+

@@ -193,3 +193,48 @@ flowchart TD
 - **S**top metformin (eGFR<15); stop SU
 - **U**nique PD: dialysate glucose -> insulin needs
 - **S**top SU: hypo risk; glic MR if essential**</think>
+---
+
+> Auto-generated study sections for "Diabetes in CKD and dialysis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Diabetes in CKD and dialysis?
+  A: By the end of this note you should be able to:
+- Q: What is the epidemiology of Diabetes in CKD and dialysis?
+  A: 20-30% dialysis patients have diabetes; leading cause of ESRD
+- Q: What is Mortality of Diabetes in CKD and dialysis?
+  A: DM on dialysis: 2x mortality vs non-DM; CVD main cause
+- Q: What is the epidemiology of Diabetes in CKD and dialysis?
+  A: 20-30% dialysis patients have diabetes
+- Q: What is Mortality of Diabetes in CKD and dialysis?
+  A: DM on dialysis: 2x mortality vs non-DM; CVD main cause
+- Q: What is HbA1c of Diabetes in CKD and dialysis?
+  A: Unreliable in dialysis; use GA <20% / fructosamine <320
+- Q: What is Insulin of Diabetes in CKD and dialysis?
+  A: Reduce 50-75%; U-100 preferred; variable needs
+- Q: What is HD vs PD of Diabetes in CKD and dialysis?
+  A: HD: variable, post-HD hypo; PD: stable, ↑dose (dialysate glucose)
+- Q: How is Diabetes in CKD and dialysis monitored?
+  A: GA <20% / Fructosamine <320; CGM emerging
+- Q: What is Pre/post HD of Diabetes in CKD and dialysis?
+  A: Pre-HD high; post-HD rapid drop -> monitor 1-2h post
+- Q: What is Medications of Diabetes in CKD and dialysis?
+  A: SGLT2i continue; metformin STOP; SU avoid; linagliptin preferred DPP-4i
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in CKD and dialysis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in CKD and dialysis
+   C. A complication seen late in the disease course of Diabetes in CKD and dialysis
+   D. A condition that mimics Diabetes in CKD and dialysis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in CKD and dialysis presents with: Prevalence — 20-30% dialysis patients have diabetes; leading cause of ESRD; Mortality — DM on dialysis: 2x mortality vs non-DM; CVD main cause; HbA1c — Unreliable in dialysis (falsely low); use GA/fructosamine/CGM. What is the most likely diagnosis?
+   A. **Diabetes in CKD and dialysis**
+   B. A condition that mimics Diabetes in CKD and dialysis but is not the same entity
+   C. A complication of Diabetes in CKD and dialysis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in CKD and dialysis
+

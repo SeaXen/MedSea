@@ -494,3 +494,22 @@ mindmap
 - [[Antivenom Adverse Reactions and Management]]
 - [[General Principles of Envenomation]]
 - [[Envenomation MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 12: Envenomation — Snake Envenomation- Global Epidemiology and Snake *
+
+**Q1.** Which of the following features is most specific or characteristic of Snake Envenomation- Global Epidemiology and Snake ?
+
+  - **A.** Venom Detection Kit
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Venom Detection Kit
+  >
+  > *Source:* | Limits species list |
+| **Photo / specimen** | Safe only | Match with guide; never touch live |
+| **Venom Detection Kit (VDK)** | Australia | Species-specific (Brown, Tiger, Taipan, Black) |
+| **ELI
+

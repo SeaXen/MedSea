@@ -427,6 +427,20 @@ D. Missing coeliac disease only
 
 ## 28. Answer Key with Explanations
 
+## PasTest Scenario SBAs (Clinical Vignettes)
 
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 22: Gastroenterology — Dysphagia alarm features and urgent endoscopy*
 
+**Q1.** Which of the following features is most specific or characteristic of Dysphagia alarm features and urgent endoscopy?
+
+  - **A.** Upper GI endoscopy
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Upper GI endoscopy
+  >
+  > *Source:* ve dysphagia + weight loss** → malignancy until proven otherwise
+### First-line in gastroenterology
+**Upper GI endoscopy** is usually the key first test in adult oesophageal dysphagia, especially with
 

@@ -638,3 +638,34 @@ mindmap
    C. A complication of Autoimmune Rheumatic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Autoimmune Rheumatic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Systemic Lupus Erythematosus*
+
+**Q1.** Which of the following features is most specific or characteristic of Systemic Lupus Erythematosus?
+
+  - **A.** Alopecia
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Alopecia
+  >
+  > *Source:* | **Vasculitic lesions** | Palpable purpura, periungual infarcts, livedo reticularis | Moderate |
+| **Alopecia** | **Non-scarring** (diffuse, frontal), **scarring** (discoid) | Non-specific |
+
+> [!imp
+
+**Q2.** What is the most appropriate first-line therapy for Systemic Lupus Erythematosus?
+
+  - **A.** Hydroxychloroquine + Lifelong
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Hydroxychloroquine + Lifelong
+  >
+  > *Source:* **Hydroxychloroquine**   200-400mg daily (≤5mg/kg IBW)   **Lifelong**   ↓ flares, ↓ damage, ↑ survival, ↓ thrombosis, ↓ LN risk, safe in pregnancy  
+
+### Organ-Specific Add-Ons
+

@@ -363,3 +363,32 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Apparent Polycythaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Apparent Polycythaemia?
+
+  - **A.** "RCM Normal = Apparent; RCM High = True"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "RCM Normal = Apparent; RCM High = True"
+  >
+  > *Source:* Fake High Hb"** | Gaisböck syndrome |
+| **"NO Phlebotomy in Apparent = Iron Def"** | Management |
+| **"RCM Normal = Apparent; RCM High = True"** | Diagnostic key |
+| **"JAK2 Neg + EPO Normal = Apparen
+
+**Q2.** What is the most appropriate first-line therapy for Apparent Polycythaemia?
+
+  - **A.** Treat Underlying Cause + Stop Diuretics + Treat Dehydration
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat Underlying Cause + Stop Diuretics + Treat Dehydration
+  >
+  > *Source:* **Treat Underlying Cause**   **Stop Diuretics** (if possible), **Treat Dehydration**, **Manage Obesity/HTN**
+

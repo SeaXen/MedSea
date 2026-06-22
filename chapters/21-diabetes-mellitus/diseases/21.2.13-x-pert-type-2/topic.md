@@ -118,3 +118,42 @@ By the end of this note you should be able to:
 - **P**articipants: 10-15
 - **T**rainer: trained lay + HCP
 - **S**elf-efficacy: improved</think>
+---
+
+> Auto-generated study sections for "DESMOND" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of DESMOND?
+  A: By the end of this note you should be able to:
+- Q: What is DESMOND of DESMOND?
+  A: Diabetes Education and Self-Management for Ongoing and Newly Diagnosed
+- Q: What is X-PERT of DESMOND?
+  A: eXpert Patient Education Research Training
+- Q: What is DESMOND of DESMOND?
+  A: 1-day group; newly diagnosed T2DM; self-management, lifestyle
+- Q: What is X-PERT of DESMOND?
+  A: 6-week group; T2DM any duration; lifestyle, medications, monitoring
+- Q: What is the prognosis of DESMOND?
+  A: HbA1c ↓0.3-1.0%; weight ↓2-4kg; self-efficacy ↑
+- Q: What is NICE of DESMOND?
+  A: Offer at diagnosis; annual review; quality-assured programmes
+- Q: What is Educators of DESMOND?
+  A: Trained lay + healthcare professionals
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes DESMOND?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of DESMOND
+   C. A complication seen late in the disease course of DESMOND
+   D. A condition that mimics DESMOND but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected DESMOND presents with: DESMOND — Diabetes Education and Self-Management for Ongoing and Newly Diagnosed; X-PERT — eXpert Patient Education Research Training; Target — Newly diagnosed T2DM (DESMOND); T2DM any duration (X-PERT). What is the most likely diagnosis?
+   A. **DESMOND**
+   B. A condition that mimics DESMOND but is not the same entity
+   C. A complication of DESMOND rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as DESMOND
+

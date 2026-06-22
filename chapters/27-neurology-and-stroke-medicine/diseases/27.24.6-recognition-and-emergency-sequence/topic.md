@@ -672,3 +672,32 @@ Recognition and emergency sequence in status epilepticus is a **time-critical ne
 8. **B** — seizure duration strongly affects outcome and treatment response.
 9. **B** — fever + meningism + seizures strongly suggests CNS infection.
 10. **A** — prompt benzodiazepine is first-line pharmacologic therapy.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Recognition and emergency sequence*
+
+**Q1.** Which of the following features is most specific or characteristic of Recognition and emergency sequence?
+
+  - **A.** MRI brain
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MRI brain
+  >
+  > *Source:* t, trauma, immunocompromised state, persistent altered consciousness, suspected structural lesion
+- **MRI brain** later if CT nondiagnostic and structural cause suspected
+- **Lumbar puncture** if meni
+
+**Q2.** What is the most appropriate first-line therapy for Recognition and emergency sequence?
+
+  - **A.** Refractory
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Refractory
+  >
+  > *Source:* **Refractory**: ICU + anesthetic therapy + EEG-guided care
+

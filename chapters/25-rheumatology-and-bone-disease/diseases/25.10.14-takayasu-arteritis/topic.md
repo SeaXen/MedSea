@@ -550,3 +550,35 @@ mindmap
    C. A complication of Vasculitis rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Vasculitis
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Takayasu arteritis*
+
+**Q1.** Which of the following features is most specific or characteristic of Takayasu arteritis?
+
+  - **A.** Asymmetric blood pressure
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Asymmetric blood pressure
+  >
+  > *Source:* TB, lymphoma
+
+### Vascular (Occlusive Phase — late)
+| Pattern | Features |
+|---------|----------|
+| **Asymmetric blood pressure** | **>10 mmHg** between arms (key) |
+| **Diminished/absent pulses** | *
+
+**Q2.** What is the most appropriate first-line therapy for Takayasu arteritis?
+
+  - **A.** csDMARD + MTX + AZA
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — csDMARD + MTX + AZA
+  >
+  > *Source:* **csDMARD** (concurrent)   **MTX 20-25 mg weekly** OR **AZA 2 mg/kg/day** OR **MMF 2-3 g/day**   Steroid-sparing; from outset in most cases
+

@@ -276,3 +276,77 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Gestational diabetes mellitus (GDM)*
+
+**Q1.** Which of the following features is most specific or characteristic of Gestational diabetes mellitus (GDM)?
+
+  - **A.** Step 2
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Step 2
+  >
+  > *Source:* DM** | Early OGTT at booking + repeat 24–28w if normal |
+| **No risk factors** | No routine OGTT |
+
+**Step 2**: 75g OGTT diagnostic thresholds (if offered):
+
+| Time | Threshold |
+|------|-----------|
+---
+
+> Auto-generated study sections for "Diabetes in Special Populations" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Diabetes in Special Populations?
+  A: Glucose intolerance with onset or first recognition in pregnancy (excluding pre-existing diabetes)
+- Q: What is the epidemiology of Diabetes in Special Populations?
+  A: 2-14% pregnancies (varies by population, criteria); IADPSG criteria -> up diagnosis 2-3x vs older criteria
+- Q: What causes Diabetes in Special Populations?
+  A: BMI >=30, previous GDM, previous macrosomia (>4.5kg), family history T2DM, ethnicity (South Asian, African-Caribbean, Middle Eastern), age >40, PCOS, corticosteroid use
+- Q: What is the pathogenesis of Diabetes in Special Populations?
+  A: Placental hormones (hPL, progesterone, cortisol, oestrogen) -> insulin resistance up 2-3x by 3rd trimester; pancreatic beta-cells fail to compensate
+- Q: What are the complications of Diabetes in Special Populations?
+  A: Fetal: macrosomia, shoulder dystocia, neonatal hypoglycaemia, hyperbilirubinaemia, RDS, stillbirth; Maternal: pre-eclampsia, C-section, future T2DM (50% at 10y), future GDM (recurrence 30-50%)
+- Q: What is IADPSG GDM of Diabetes in Special Populations?
+  A: Universal 75g OGTT 24-28wk; FBG>=5.1, 1h>=10.0, 2h>=8.5; 1 abnormal = GDM
+- Q: What is NICE GDM of Diabetes in Special Populations?
+  A: Risk factors (BMI>=30, prev GDM, macrosomia, FH, ethnicity, age>40) -> OGTT; FBG>=5.6 OR 2h>=7.8
+- Q: What is GDM Targets of Diabetes in Special Populations?
+  A: FBG <5.3, 1h <7.8, 2h <6.4 mmol/L; SMBG 4x/day (FBG + 1h post-meal)
+- Q: How is Diabetes in Special Populations managed?
+  A: Diet -> Metformin (if FBG>5.5 or 1h>7.0) -> Insulin (basal-bolus/basal)
+- Q: What is Pre-existing DM of Diabetes in Special Populations?
+  A: Pre-conception HbA1c <48; Folic acid 5mg OD -> 12wks; Stop ACEi/ARB/statin/SGLT2i/GLP-1 RA/SU
+- Q: What is Intrapartum of Diabetes in Special Populations?
+  A: Insulin IV infusion; target 4-7 mmol/L; reduce postpartum
+- Q: What is Postpartum of Diabetes in Special Populations?
+  A: OGTT 6-13 weeks; annual HbA1c; lifetime T2DM risk 50%
+- Q: What is Metformin in GDM of Diabetes in Special Populations?
+  A: MiG trial: safe, crosses placenta but no teratogenicity; 1st line oral; max 2g/day
+- Q: What is Glibenclamide of Diabetes in Special Populations?
+  A: 2nd line if metformin fails; crosses placenta; up neonatal hypoglycaemia
+- Q: What is Drugs to STOP of Diabetes in Special Populations?
+  A: ACEi/ARB, statins, SGLT2i, GLP-1 RA, sulfonylureas (except glibenclamide), TZDs
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in Special Populations?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in Special Populations
+   C. A complication seen late in the disease course of Diabetes in Special Populations
+   D. A condition that mimics Diabetes in Special Populations but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in Special Populations presents with: Definition — Glucose intolerance with onset or first recognition in pregnancy (excluding pre-existing diabetes); Incidence — 2-14% pregnancies (varies by population, criteria); IADPSG criteria -> up diagnosis 2-3x vs older criteria; Risk Factors — BMI >=30, previous GDM, previous macrosomia (>4.5kg), family history T2DM, ethnicity (South Asian, African-Caribbean, Middle Eastern), age >40, PCOS, corticosteroid use. What is the most likely diagnosis?
+   A. **Diabetes in Special Populations**
+   B. A condition that mimics Diabetes in Special Populations but is not the same entity
+   C. A complication of Diabetes in Special Populations rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in Special Populations
+

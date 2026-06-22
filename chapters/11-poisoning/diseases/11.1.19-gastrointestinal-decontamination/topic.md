@@ -514,3 +514,24 @@ flowchart TD
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Gastrointestinal Decontamination*
+
+**Q1.** In the management of Gastrointestinal Decontamination, which of the following should be avoided or is contraindicated?
+
+  - **A.** be employed routinely (avoid in the management of poisoned pat)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — be employed routinely (avoid in the management of poisoned pat)
+  >
+  > *Source:* trauma (NG tube)
+## Gastric Lavage — **NOT ROUTINE**
+### Position (AACT/EAPCCT)
+> **"Gastric lavage should not be employed routinely in the management of poisoned patients."**
+
+### Indications (VERY R
+

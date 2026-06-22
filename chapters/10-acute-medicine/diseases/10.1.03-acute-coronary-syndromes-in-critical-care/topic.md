@@ -465,3 +465,36 @@ ACS spectrum: STEMI (STE + trop), NSTEMI (trop+ no STE), Unstable Angina (trop-)
 8. **B** — Stop ticagrelor 5 days before CABG (3 for clopidogrel).
 9. **B** — Free wall rupture = sudden PEA + tamponade.
 10. **B** — Noradrenaline + Impella/VA-ECMO; IABP no longer routine.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — Acute Coronary Syndromes in Critical Care*
+
+**Q1.** Which of the following features is most specific or characteristic of Acute Coronary Syndromes in Critical Care?
+
+  - **A.** Post-CABG
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Post-CABG
+  >
+  > *Source:* neuropathy → painless MI |
+| **Women** | Back/jaw pain, nausea, fatigue, dyspnoea > chest pain |
+| **Post-CABG** | Atypical due to denervation |
+### ECG (Immediate — within 10 min of arrival)
+| Findin
+
+**Q2.** What is the most appropriate first-line therapy for Acute Coronary Syndromes in Critical Care?
+
+  - **A.** Pharmacoinvasive + Contraindications to fibrinolysis
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Pharmacoinvasive + Contraindications to fibrinolysis
+  >
+  > *Source:* **Pharmacoinvasive**   PCI 3–24h post-lysis   After successful fibrinolysis  
+
+> **Contraindications to fibrinolysis**: Active bleeding, recent stroke/surgery, aortic dissection, severe hypertension, 
+

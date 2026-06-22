@@ -539,3 +539,33 @@ flowchart TD
 **Chapter MOC:** [[Neurology MOC]]
 **Drug Reference:** [[../00_Index/Neurology Drug Reference]]
 **Related Topics:** [[ILAE 2017 Seizure Classification]], [[First Seizure Management]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Status Epilepticus Management*
+
+**Q1.** Which of the following features is most specific or characteristic of Status Epilepticus Management?
+
+  - **A.** NCSE Red flags:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — NCSE Red flags:
+  >
+  > *Source:* hemisphere |
+| Myoclonic SE | Continuous myoclonic jerks ± altered awareness (post-anoxic, PME) |
+
+**NCSE Red flags:** unexplained prolonged confusion/coma post-seizure; fluctuating consciousness with
+
+**Q2.** What is the most appropriate first-line therapy for Status Epilepticus Management?
+
+  - **A.** Glucose + 50 ml
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Glucose + 50 ml
+  >
+  > *Source:* **Glucose**   <4 mmol/L or unknown → **50 ml 50% dextrose IV + thiamine 100 mg IV** first if at risk
+

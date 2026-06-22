@@ -141,3 +141,75 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[HFrEF and HFpEF in diabetes]], [[GLP-1 RA in HF (FIGHT, STEP-HFpEF)]], [[DKD management (ACEi/ARB, SGLT2i, finerenone, GLP-1 RA)]], [[Diabetes in CKD and dialysis]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — sglt2-inhibitors-in-hf-dapa-hf-emperor-deliver*
+
+**Q1.** What is the most appropriate first-line therapy for sglt2-inhibitors-in-hf-dapa-hf-emperor-deliver?
+
+  - **A.** With T2DM
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — With T2DM
+  >
+  > *Source:* **With T2DM**   Same; also glycaemic benefit   10mg OD   Initiate >=20 (HF), >=45 (DM only)  
+
+### Monitoring
+---
+
+> Auto-generated study sections for "Heart failure in diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (16 generated)
+
+- Q: What is the definition of Heart failure in diabetes?
+  A: # SGLT2 inhibitors in HF (DAPA-HF, EMPEROR, DELIVER)
+- Q: What is Metabolic of Heart failure in diabetes?
+  A: ↑ Ketone bodies (β-hydroxybutyrate) → efficient cardiac fuel; ↓ glucose oxidation
+- Q: What is Haemodynamic of Heart failure in diabetes?
+  A: Osmotic diuresis → ↓ preload; natriuresis → ↓ afterload; ↓ ventricular filling pressures
+- Q: What is Anti-inflammatory/anti-fibrotic of Heart failure in diabetes?
+  A: ↓ NLRP3 inflammasome, ↓ IL-6, TNF-α, ↓ cardiac fibrosis
+- Q: What is Ion transport of Heart failure in diabetes?
+  A: ↑ Na+/H+ exchange inhibition; ↓ intracellular Na+/Ca2+ overload
+- Q: What is Renal of Heart failure in diabetes?
+  A: ↑ Tubuloglomerular feedback → afferent constriction → ↓ intraglomerular pressure
+- Q: What is SGLT2i HF license of Heart failure in diabetes?
+  A: Dapagliflozin & Empagliflozin only (not canagliflozin)
+- Q: What is DAPA-HF / EMPEROR-Reduced of Heart failure in diabetes?
+  A: HFrEF: 25–26% ↓ CV death/HF hosp
+- Q: What is DELIVER / EMPEROR-Preserved of Heart failure in diabetes?
+  A: HFpEF: 18–21% ↓; benefit across EF spectrum
+- Q: What is the mechanism of Heart failure in diabetes?
+  A: Metabolic (ketones), haemodynamic, anti-inflammatory
+- Q: What is eGFR threshold of Heart failure in diabetes?
+  A: ≥20 mL/min for HF indication
+- Q: What is the dose of Heart failure in diabetes?
+  A: 10mg OD (dapagliflozin/empagliflozin)
+- Q: What is Not dependent on diabetes of Heart failure in diabetes?
+  A: Benefit identical in non-diabetic HF
+- Q: What is Genital infections of Heart failure in diabetes?
+  A: Common (5–10%); treat, usually continue
+- Q: What is Euglycaemic DKA of Heart failure in diabetes?
+  A: Rare; stop if ill/surgery/fasting; check ketones
+- Q: What is Four pillars HFrEF of Heart failure in diabetes?
+  A: ARNI + BB + MRA + SGLT2i
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Heart failure in diabetes?**
+   A. **# SGLT2 inhibitors in HF (DAPA-HF, EMPEROR, DELIVER)**
+   B. An unrelated condition not matching the clinical picture of Heart failure in diabetes
+   C. A complication seen late in the disease course of Heart failure in diabetes
+   D. A condition that mimics Heart failure in diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Heart failure in diabetes presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — sglt2-inhibitors-in-hf-dapa-hf-emperor-deliver; Q1. What is the most appropriate first-line therapy for sglt2-inhibitors-in-hf-dapa-hf-emperor-deliver?; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Heart failure in diabetes**
+   B. A condition that mimics Heart failure in diabetes but is not the same entity
+   C. A complication of Heart failure in diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Heart failure in diabetes
+

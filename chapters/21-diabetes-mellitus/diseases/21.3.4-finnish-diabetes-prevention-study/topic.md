@@ -117,3 +117,53 @@ By the end of this note you should be able to:
 - **3** year sustained: 3.5kg vs 0.8kg
 - **Y**ears follow-up: 13 (median)
 - **S**ustained: legacy effect proven**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Finnish Diabetes Prevention Study*
+
+**Q1.** What is the most appropriate first-line therapy for Finnish Diabetes Prevention Study?
+
+  - **A.** Post-intervention
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Post-intervention
+  >
+  > *Source:* **Post-intervention**   Annual   Follow-up  
+
+### Goals (All Must Be Met for Max Benefit)
+---
+
+> Auto-generated study sections for "Type 2 diabetes prevention" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (5 generated)
+
+- Q: What is the definition of Type 2 diabetes prevention?
+  A: By the end of this note you should be able to:
+- Q: What is Reduction of Type 2 diabetes prevention?
+  A: 58% at 4y; 43% at 13y
+- Q: What is Goals of Type 2 diabetes prevention?
+  A: Weight ≥5%; fat <30%; fibre ≥15g/1000kcal; exercise ≥30min/day
+- Q: What is Comparison of Type 2 diabetes prevention?
+  A: Similar to DPP (58%); better long-term follow-up (13y)
+- Q: What is Key difference vs DPP of Type 2 diabetes prevention?
+  A: Finnish DPS: individual counselling; DPP: group + individual
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes prevention?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes prevention
+   C. A complication seen late in the disease course of Type 2 diabetes prevention
+   D. A condition that mimics Type 2 diabetes prevention but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes prevention presents with: Design — RCT; 522 IGT participants; Duration — Mean 4 years intervention; median 13-year follow-up; Population — IGT (WHO 1999), BMI >25, age 40-65. What is the most likely diagnosis?
+   A. **Type 2 diabetes prevention**
+   B. A condition that mimics Type 2 diabetes prevention but is not the same entity
+   C. A complication of Type 2 diabetes prevention rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes prevention
+

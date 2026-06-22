@@ -17,3 +17,19 @@
 - **SCD-HeFT** (2005): LVEF ≤35% ischemic CM → ↓ mortality 23%
 
 > **Pearls** — **Don't** implant <40 d post-MI (EF may recover). **Don't** in NYHA IV unless CRT-D/LVAD/HTx candidate. Optimize GDMT first.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — ICD indication post-MI*
+
+**Q1.** What is the most appropriate first-line therapy for ICD indication post-MI?
+
+  - **A.** Implant technique
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Implant technique
+  >
+  > *Source:* **Implant technique**: left pre-pectoral, subclavian or axillary vein access, RV lead to apex or septum, atrial lead to RA appendage, CS lead for LV (CRT-D).
+

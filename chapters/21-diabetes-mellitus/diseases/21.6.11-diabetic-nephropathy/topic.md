@@ -159,3 +159,93 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[DKD management]], [[Diabetic kidney disease staging (KDIGO)]], [[GFR categories (G1-G5)]], [[Albuminuria categories (A1/A2/A3)]], [[Diabetic nephropathy vs other proteinuric diseases]], [[Diabetes in CKD and dialysis]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Diabetic nephropathy*
+
+**Q1.** What is the most appropriate first-line therapy for Diabetic nephropathy?
+
+  - **A.** RENAAL, IDNT, MICRO-HOPE   First-line; max tolerated dose; ↓ intraglomerular pressure
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — RENAAL, IDNT, MICRO-HOPE   First-line; max tolerated dose; ↓ intraglomerular pressure
+  >
+  > *Source:* RENAAL, IDNT, MICRO-HOPE   **First-line**; max tolerated dose; ↓ intraglomerular pressure
+---
+
+> Auto-generated study sections for "Microvascular Complications" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Microvascular Complications?
+  A: # Diabetic Nephropathy (Diabetic Kidney Disease - DKD)
+- Q: What is Haemodynamic of Microvascular Complications?
+  A: Hyperfiltration → glomerular hypertension → afferent/efferent arteriolar dysregulation
+- Q: What is Metabolic of Microvascular Complications?
+  A: AGE formation, PKC activation, polyol pathway, hexosamine pathway → oxidative stress
+- Q: What is Inflammatory of Microvascular Complications?
+  A: NF-κB, TGF-β, MCP-1, TNF-α → macrophage infiltration, fibrosis
+- Q: What is RAAS of Microvascular Complications?
+  A: ↑ Ang II → efferent constriction → glomerular hypertension; direct profibrotic
+- Q: What is SGLT2-mediated of Microvascular Complications?
+  A: Proximal tubular glucose reabsorption → ↑ distal NaCl delivery → macula densa → afferent dilatation
+- Q: What causes Microvascular Complications?
+  A: 40–50% incident dialysis
+- Q: How is Microvascular Complications classified?
+  A: Hyperfiltration → microalbuminuria (A2) → macroalbuminuria (A3) → ↓GFR → ESRD
+- Q: What is Normoalbuminuric DKD of Microvascular Complications?
+  A: 30–50% T2DM; screen with eGFR too
+- Q: What is Screening of Microvascular Complications?
+  A: UACR + eGFR annual (T1DM from 5y; T2DM from dx)
+- Q: What is KDIGO G+A of Microvascular Complications?
+  A: 6 GFR categories (G1–5) + 3 Albuminuria (A1–3) = risk matrix
+- Q: What is the first-line treatment for Microvascular Complications?
+  A: ACEi/ARB max dose (unless K+ >5.5, bilateral RAS)
+- Q: What is SGLT2i in DKD of Microvascular Complications?
+  A: eGFR ≥20 (dapagliflozin/empagliflozin); CREDENCE, DAPA-CKD, EMPA-KIDNEY
+- Q: What is Finerenone of Microvascular Complications?
+  A: eGFR ≥25, A2/A3; monitor K+ at 4w
+- Q: What is GLP-1 RA of Microvascular Complications?
+  A: eGFR ≥15; FLOW trial renal benefit
+- Q: What is No retinopathy + DKD of Microvascular Complications?
+  A: Think non-diabetic kidney disease → biopsy
+- Q: What causes Microvascular Complications?
+  A: 40–50% incident dialysis
+- Q: How is Microvascular Complications classified?
+  A: Hyperfiltration → microalbuminuria (A2) → macroalbuminuria (A3) → ↓GFR → ESRD
+- Q: What is Normoalbuminuric DKD of Microvascular Complications?
+  A: 30–50% T2DM; screen with eGFR too
+- Q: What is Screening of Microvascular Complications?
+  A: UACR + eGFR annual (T1DM from 5y; T2DM from dx)
+- Q: What is KDIGO G+A of Microvascular Complications?
+  A: 6 GFR categories (G1–5) + 3 Albuminuria (A1–3) = risk matrix
+- Q: What is the first-line treatment for Microvascular Complications?
+  A: ACEi/ARB max dose (unless K+ >5.5, bilateral RAS)
+- Q: What is SGLT2i in DKD of Microvascular Complications?
+  A: eGFR ≥20 (dapagliflozin/empagliflozin); CREDENCE, DAPA-CKD, EMPA-KIDNEY
+- Q: What is Finerenone of Microvascular Complications?
+  A: eGFR ≥25, A2/A3; monitor K+ at 4w
+- Q: What is GLP-1 RA of Microvascular Complications?
+  A: eGFR ≥15; FLOW trial renal benefit
+- Q: What is No retinopathy + DKD of Microvascular Complications?
+  A: Think non-diabetic kidney disease → biopsy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Microvascular Complications?**
+   A. **# Diabetic Nephropathy (Diabetic Kidney Disease - DKD)**
+   B. An unrelated condition not matching the clinical picture of Microvascular Complications
+   C. A complication seen late in the disease course of Microvascular Complications
+   D. A condition that mimics Microvascular Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Microvascular Complications presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — Diabetic nephropathy; Q1. What is the most appropriate first-line therapy for Diabetic nephropathy?; A. RENAAL, IDNT, MICRO-HOPE First-line; max tolerated dose; ↓ intraglomerular pressure. What is the most likely diagnosis?
+   A. **Microvascular Complications**
+   B. A condition that mimics Microvascular Complications but is not the same entity
+   C. A complication of Microvascular Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Microvascular Complications
+

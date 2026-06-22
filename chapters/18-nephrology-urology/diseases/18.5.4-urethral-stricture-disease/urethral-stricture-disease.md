@@ -491,3 +491,23 @@ mindmap
 - **PFUDD** → **SPC acutely → Delayed Anastomotic Urethroplasty at 3–6mo**  
 **Post-op**: VCUG before catheter removal; surveillance uroflowmetry q3mo (recurrence peaks 3–12mo).  
 **Exam focus**: Bulbar most common, RGU+VCUG, SPC for retention, DVIU vs EPA vs Graft criteria, PFUDD delayed repair, BXO two-stage, success rates.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — Urethral Stricture Disease*
+
+**Q1.** What is the most appropriate first-line therapy for Urethral Stricture Disease?
+
+  - **A.** Suprapubic catheter + Urethral catheter + Definitive planning
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Suprapubic catheter + Urethral catheter + Definitive planning
+  >
+  > *Source:* Step   Action  
+ ------ -------- 
+  1   **Suprapubic catheter (SPC)** — safest, avoids false passages  
+  2   **Urethral catheter** — only if easy passage; gentle, coudé tip  
+  3   **Definitive plann
+

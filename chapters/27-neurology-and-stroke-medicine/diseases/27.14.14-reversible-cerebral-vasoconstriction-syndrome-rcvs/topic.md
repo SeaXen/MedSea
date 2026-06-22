@@ -92,3 +92,22 @@ status: full-fcps-mrcp-note
 - Mortality: very low
 - Multidisciplinary essential
 - Long-term: avoid triggers, monitor, family screening if familial
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Reversible Cerebral Vasoconstriction Syndrome (RCVS)*
+
+**Q1.** Which of the following features is most specific or characteristic of Reversible Cerebral Vasoconstriction Syndrome (RCVS)?
+
+  - **A.** Recurrent thunderclap headaches
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Recurrent thunderclap headaches
+  >
+  > *Source:* **Thunderclap headache** (sudden, severe, reaches maximum in seconds-minutes)
+- **Recurrent thunderclap headaches** (over 1-4 weeks) - characteristic
+- Nausea, vomiting, photophobia
+- Focal neurologic
+

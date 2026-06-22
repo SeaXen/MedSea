@@ -602,3 +602,19 @@ Glucose, oxygen, and temperature control are central stroke-unit interventions. 
 8. **A** — Tight insulin control can easily cause hypoglycaemia.
 9. **B** — Oxygen use in stroke is indication-based, not automatic.
 10. **B** — This is the core principle of supportive physiological care.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Glucose, oxygen, and temperature control in stroke*
+
+**Q1.** What is the most appropriate first-line therapy for Glucose, oxygen, and temperature control in stroke?
+
+  - **A.** Give supplemental oxygen only if hypoxic or clinically indicated
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Give supplemental oxygen only if hypoxic or clinically indicated
+  >
+  > *Source:* Give supplemental oxygen only if hypoxic or clinically indicated.
+

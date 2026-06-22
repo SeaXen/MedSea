@@ -492,4 +492,20 @@ mindmap
 **Heading Hub:** [[../Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[../00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Giant Cell Arteritis*
+
+**Q1.** Which of the following features is most specific or characteristic of Giant Cell Arteritis?
+
+  - **A.** JAW CLAUDICATION
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — JAW CLAUDICATION
+  >
+  > *Source:* **JAW CLAUDICATION** = **J**aw pain **A**nd **W**asting with eating - **CLA**ssic **U**nique to **D**ifferentiate **IC**A ischaemia **A**rteritis (use: jaw claudication has highest specificity >90% fo
+

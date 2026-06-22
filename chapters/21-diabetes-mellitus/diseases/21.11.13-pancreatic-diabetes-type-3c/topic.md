@@ -53,3 +53,20 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #topic-group-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Secondary Diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Secondary Diabetes?
+  A: Topic-Group hub for Pancreatic diabetes (type 3c) — covers 3 disease-level topic(s) per Davidson Ch25.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Secondary Diabetes?**
+   A. **Topic-Group hub for Pancreatic diabetes (type 3c) — covers 3 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Secondary Diabetes
+   C. A complication seen late in the disease course of Secondary Diabetes
+   D. A condition that mimics Secondary Diabetes but has a different underlying cause
+

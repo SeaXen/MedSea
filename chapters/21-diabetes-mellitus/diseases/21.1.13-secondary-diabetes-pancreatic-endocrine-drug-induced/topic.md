@@ -158,3 +158,42 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Secondary Diabetes/Pancreatic diabetes (type 3c)]], [[Secondary Diabetes/Endocrine diabetes]], [[Secondary Diabetes/Drug-induced diabetes]], [[Corticosteroid-induced diabetes]], [[Chronic pancreatitis diabetes]]
+---
+
+> Auto-generated study sections for "Epidemiology and classification" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Epidemiology and classification?
+  A: # Secondary Diabetes (Pancreatic, Endocrine, Drug-Induced) — Epidemiology & Classification
+- Q: What is the epidemiology of Epidemiology and classification?
+  A: 20–50% on chronic steroids develop hyperglycaemia
+- Q: What is Pattern of Epidemiology and classification?
+  A: Post-prandial predominant (↑ hepatic output, ↓ peripheral uptake); fasting often normal initially
+- Q: What is the dose of Epidemiology and classification?
+  A: >7.5mg prednisolone/day ↑ risk; cumulative dose matters
+- Q: What is Reversibility of Epidemiology and classification?
+  A: Often improves on taper; may unmask underlying T2DM
+- Q: What is the epidemiology of Epidemiology and classification?
+  A: 20–50% on chronic steroids develop hyperglycaemia
+- Q: What is Pattern of Epidemiology and classification?
+  A: Post-prandial predominant (↑ hepatic output, ↓ peripheral uptake); fasting often normal initially
+- Q: What is the dose of Epidemiology and classification?
+  A: >7.5mg prednisolone/day ↑ risk; cumulative dose matters
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Epidemiology and classification?**
+   A. **# Secondary Diabetes (Pancreatic, Endocrine, Drug-Induced) — Epidemiology & Classification**
+   B. An unrelated condition not matching the clinical picture of Epidemiology and classification
+   C. A complication seen late in the disease course of Epidemiology and classification
+   D. A condition that mimics Epidemiology and classification but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Epidemiology and classification presents with: Category — Key Examples; Pancreatic (Type 3c) — Chronic pancreatitis, pancreatectomy, CF, pancreatic cancer, haemochromatosis; Endocrine — Cushing's, acromegaly, phaeochromocytoma, glucagonoma, thyrotoxicosis, somatostatinoma. What is the most likely diagnosis?
+   A. **Epidemiology and classification**
+   B. A condition that mimics Epidemiology and classification but is not the same entity
+   C. A complication of Epidemiology and classification rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Epidemiology and classification
+

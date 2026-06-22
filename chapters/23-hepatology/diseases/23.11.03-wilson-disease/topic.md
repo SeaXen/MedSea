@@ -219,3 +219,34 @@ flowchart TD
    C. A complication of Inherited and Metabolic Liver Disease rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Inherited and Metabolic Liver Disease
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Wilson Disease*
+
+**Q1.** Which of the following features is most specific or characteristic of Wilson Disease?
+
+  - **A.** Specificity
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Specificity
+  >
+  > *Source:* Pitfalls** | **Acute phase reactant** → may be NORMAL in ALF, inflammation, pregnancy, estrogen |
+| **Specificity** | Not specific (low in malnutrition, nephrotic syndrome, Menkes disease) |
+
+> **FCPS
+
+**Q2.** What is the most appropriate first-line therapy for Wilson Disease?
+
+  - **A.** Tetrathiomolybdate
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Tetrathiomolybdate
+  >
+  > *Source:* **Tetrathiomolybdate**   Experimental   Inhibits copper absorption + chelates   Pulmonary fibrosis risk  
+
+> **First-line**: Penicillamine OR Trientine (trientine preferred for neuro/less side effects
+

@@ -157,3 +157,53 @@ Screen FPG or HbA1c
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Impaired glucose tolerance (IGT)]], [[Increased HbA1c risk category]], [[Type 2 diabetes prevention/Diabetes Prevention Program (DPP)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Impaired fasting glucose (IFG)*
+
+**Q1.** What is the most appropriate first-line therapy for Impaired fasting glucose (IFG)?
+
+  - **A.** Evidence + ~58% risk reduction
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Evidence + ~58% risk reduction
+  >
+  > *Source:* **Evidence**: DPP, Finnish DPS, Da Qing all show **~58% risk reduction** with intensive lifestyle.
+---
+
+> Auto-generated study sections for "Prediabetic states" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Prediabetic states?
+  A: FPG 6.1–6.9 mmol/L (110–125 mg/dL) — Isolated IFG reflects hepatic insulin resistance; ~5–10%/year progression to T2DM.
+- Q: What is ADA vs WHO IFG cut-off of Prediabetic states?
+  A: ADA 5.6 (100), WHO 6.1 (110) mmol/L — know both
+- Q: What is the pathogenesis of Prediabetic states?
+  A: IFG = hepatic IR; IGT = muscle IR
+- Q: What is Progression risk of Prediabetic states?
+  A: Combined IFG+IGT > IGT alone > IFG alone
+- Q: What is Prediabetic states indicated for?
+  A: Age 25–59, BMI ≥30, high-risk IFG
+- Q: What is Screening interval IFG of Prediabetic states?
+  A: Annual (not 3-yearly)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Prediabetic states?**
+   A. **FPG 6.1–6.9 mmol/L (110–125 mg/dL) — Isolated IFG reflects hepatic insulin resistance; ~5–10%/year progression to T2DM.**
+   B. An unrelated condition not matching the clinical picture of Prediabetic states
+   C. A complication seen late in the disease course of Prediabetic states
+   D. A condition that mimics Prediabetic states but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Prediabetic states presents with: Q1. What is the most appropriate first-line therapy for Impaired fasting glucose (IFG)?; A. Evidence + ~58% risk reduction; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Prediabetic states**
+   B. A condition that mimics Prediabetic states but is not the same entity
+   C. A complication of Prediabetic states rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Prediabetic states
+

@@ -70,3 +70,34 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #heading-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Diabetes?
+  A: Heading hub for Diabetic Emergencies — covers 12 disease-level topic(s) per Davidson Ch25.
+- Q: What is the investigation of choice for Diabetes?
+  A: Glucose >11.1 · Ketonaemia >3 mmol/L or significant ketonuria · pH <7.3 · Bicarbonate <15
+- Q: What is DKA severity of Diabetes?
+  A: Mild: pH 7.25-7.30, K+ >3.5 · Moderate: pH 7.0-7.24, K+ 3.0-3.5 · Severe: pH <7.0, K+ <3.0
+- Q: How is Diabetes managed?
+  A: 1) Fluids: 0.9% NaCl 1L/hr ×1-2h then adjust · 2) Insulin: FRII 0.1U/kg/hr · 3) K+: replace per level · 4) Bicarb if pH <7.0 · 5) Monitor: glucose q1h, ketones q2-4h, VBG q2-4h
+- Q: What is Euglycaemic DKA of Diabetes?
+  A: Glucose <13.9 mmol/L · On SGLT2i · Same ketone/pH criteria · Stop SGLT2i
+- Q: What is HHS vs DKA of Diabetes?
+  A: HHS: older, type 2, higher glucose, higher osmolality, no acidosis, higher mortality (10-20% vs 1-5%)
+- Q: What is Hypoglycaemia levels of Diabetes?
+  A: Level 1: <3.9 mmol/L · Level 2: <3.0 mmol/L · Level 3: severe (requires assistance)
+- Q: What is Glucagon of Diabetes?
+  A: 1mg IM/SC adult · 0.5mg <25kg child · Nasal 3mg · IV dextrose 10-20% if IV access
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes?**
+   A. **Heading hub for Diabetic Emergencies — covers 12 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetes
+   C. A complication seen late in the disease course of Diabetes
+   D. A condition that mimics Diabetes but has a different underlying cause
+

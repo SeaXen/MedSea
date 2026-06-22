@@ -303,3 +303,109 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Insulin therapy*
+
+**Q1.** What is the most appropriate first-line therapy for Insulin therapy?
+
+  - **A.** Auto-mode
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Auto-mode
+  >
+  > *Source:* **Auto-mode (HCL)**   Algorithm adjusts basal ± micro-bolus; meal announcement needed  
+
+### Concentrated Insulins in T2DM
+---
+
+> Auto-generated study sections for "Type 1 Diabetes Mellitus" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (33 generated)
+
+- Q: What is the definition of Type 1 Diabetes Mellitus?
+  A: Exogenous insulin replacement for absolute (T1DM) or relative (T2DM) insulin deficiency
+- Q: What is T1DM of Type 1 Diabetes Mellitus?
+  A: 100% require insulin from diagnosis; basal-bolus (MDI) or CSII
+- Q: What is T2DM of Type 1 Diabetes Mellitus?
+  A: ~30% eventually require insulin; progressive β-cell failure; start when HbA1c>58 on dual/triple oral
+- Q: What is the dose of Type 1 Diabetes Mellitus?
+  A: Estimate: 0.3–0.5 U/kg/day (higher in obesity, puberty, pregnancy, steroids)
+- Q: What is Basal : Bolus Split of Type 1 Diabetes Mellitus?
+  A: Basal 40–50% TDD, Bolus 50–60% TDD (pre-meal + correction)
+- Q: What is ICR of Type 1 Diabetes Mellitus?
+  A: 1 unit rapid insulin per X grams carbohydrate (500/TDD rule)
+- Q: What is ISF of Type 1 Diabetes Mellitus?
+  A: 1 unit rapid insulin drops BG by Y mmol/L (100/TDD rule)
+- Q: What is Target pre-meal of Type 1 Diabetes Mellitus?
+  A: 4–7 mmol/L (individualised)
+- Q: What is the dose of Type 1 Diabetes Mellitus?
+  A: (Current BG − Target) ÷ ISF
+- Q: What is Bolus timing of Type 1 Diabetes Mellitus?
+  A: Rapid: 10–15 min before meal; Ultra-rapid: at meal start
+- Q: What is Basal rates of Type 1 Diabetes Mellitus?
+  A: 24h profile from MDI basal (e.g., 0.5–1.5 U/h); Dawn phenomenon: ↑3–5am
+- Q: What is Bolus calculator of Type 1 Diabetes Mellitus?
+  A: ICR, ISF, target BG, active insulin time (3–5h)
+- Q: What is Suspend on low (SAP) of Type 1 Diabetes Mellitus?
+  A: Threshold 3.9–3.5 mmol/L; suspend 30–120 min
+- Q: What is Auto-mode (HCL) of Type 1 Diabetes Mellitus?
+  A: Algorithm adjusts basal ± micro-bolus; meal announcement needed
+- Q: What is ICR of Type 1 Diabetes Mellitus?
+  A: 1 unit rapid insulin per X grams carbohydrate (500/TDD rule)
+- Q: What is ISF of Type 1 Diabetes Mellitus?
+  A: 1 unit rapid insulin drops BG by Y mmol/L (100/TDD rule)
+- Q: What is Target pre-meal of Type 1 Diabetes Mellitus?
+  A: 4–7 mmol/L (individualised)
+- Q: What is the dose of Type 1 Diabetes Mellitus?
+  A: (Current BG − Target) ÷ ISF
+- Q: What is Basal rates of Type 1 Diabetes Mellitus?
+  A: 24h profile from MDI basal (e.g., 0.5–1.5 U/h); Dawn phenomenon: ↑3–5am
+- Q: What is Bolus calculator of Type 1 Diabetes Mellitus?
+  A: ICR, ISF, target BG, active insulin time (3–5h)
+- Q: What is Suspend on low (SAP) of Type 1 Diabetes Mellitus?
+  A: Threshold 3.9–3.5 mmol/L; suspend 30–120 min
+- Q: What is TDD estimate of Type 1 Diabetes Mellitus?
+  A: 0.3–0.5 U/kg/day (T1DM 0.5–0.7; T2DM 0.3–0.5)
+- Q: What is Basal:Bolus split of Type 1 Diabetes Mellitus?
+  A: Basal 40–50% TDD; Bolus 50–60% TDD
+- Q: What is ICR of Type 1 Diabetes Mellitus?
+  A: 500 ÷ TDD = g carb per 1U (e.g., TDD 50 → 10g/U)
+- Q: What is ISF of Type 1 Diabetes Mellitus?
+  A: 100 ÷ TDD = mmol/L drop per 1U (e.g., TDD 50 → 2 mmol/L/U)
+- Q: What is Rapid analogues of Type 1 Diabetes Mellitus?
+  A: Lispro, Aspart, Glulisine — 10–15min onset, 1–2h peak, 3–5h duration
+- Q: What is Ultra-rapid of Type 1 Diabetes Mellitus?
+  A: Fiasp, Lyumjev — 5–10min onset; inject at meal start
+- Q: What is Long-acting of Type 1 Diabetes Mellitus?
+  A: Glargine U-100, Detemir — 24h, once daily
+- Q: What is Ultra-long of Type 1 Diabetes Mellitus?
+  A: Glargine U-300, Degludec — >42h, flexible timing, ↓nocturnal hypo
+- Q: What is Concentrated of Type 1 Diabetes Mellitus?
+  A: Degludec U-200, Glargine U-300, Regular U-500 — for >200U/day
+- Q: What is Type 1 Diabetes Mellitus indicated for?
+  A: HbA1c>58 on MDI, severe hypo, Dawn phenomenon, pregnancy, lifestyle
+- Q: What is T2DM insulin start of Type 1 Diabetes Mellitus?
+  A: Basal 0.1–0.2 U/kg; continue Met ± SGLT2i/GLP-1 RA; stop SU
+- Q: What is Pump (CSII) of Type 1 Diabetes Mellitus?
+  A: Rapid only; programmable basal; bolus calculator; SAP/HCL
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 1 Diabetes Mellitus?**
+   A. **Insulin therapy: essential for all T1DM; progressive in T2DM — Basal-bolus (MDI) standard: basal 40–50% TDD (glargine/degludec) + bolus 50–60% TDD (rapid analogues); CSII/pump if HbA1c>58 on MDI, seve**
+   B. An unrelated condition not matching the clinical picture of Type 1 Diabetes Mellitus
+   C. A complication seen late in the disease course of Type 1 Diabetes Mellitus
+   D. A condition that mimics Type 1 Diabetes Mellitus but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 1 Diabetes Mellitus presents with: Definition — Exogenous insulin replacement for absolute (T1DM) or relative (T2DM) insulin deficiency; T1DM — 100% require insulin from diagnosis; basal-bolus (MDI) or CSII; T2DM — ~30% eventually require insulin; progressive β-cell failure; start when HbA1c>58 on dual/triple oral. What is the most likely diagnosis?
+   A. **Type 1 Diabetes Mellitus**
+   B. A condition that mimics Type 1 Diabetes Mellitus but is not the same entity
+   C. A complication of Type 1 Diabetes Mellitus rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 1 Diabetes Mellitus
+

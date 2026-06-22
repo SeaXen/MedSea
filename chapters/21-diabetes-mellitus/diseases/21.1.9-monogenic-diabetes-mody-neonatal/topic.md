@@ -148,3 +148,46 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Monogenic and Atypical Diabetes/Maturity-onset diabetes of the young (MODY)]], [[Monogenic and Atypical Diabetes/Neonatal diabetes]], [[Monogenic and Atypical Diabetes/Mitochondrial diabetes/m.3243A>G (MELAS/MIDD)]], [[MODY genetic testing indications]]
+---
+
+> Auto-generated study sections for "Epidemiology and classification" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Epidemiology and classification?
+  A: # Monogenic Diabetes (MODY, Neonatal) — Epidemiology & Classification
+- Q: What is Monogenic proportion of Epidemiology and classification?
+  A: 1–5% of diabetes
+- Q: What is Most common MODY of Epidemiology and classification?
+  A: GCK (MODY 2) — 30–50% = mild fasting hyperglycaemia, no treatment
+- Q: What are the clinical features of Epidemiology and classification?
+  A: HNF1A (MODY 3) — 30–50% = sulfonylurea-responsive
+- Q: What is HNF1B (MODY 5) of Epidemiology and classification?
+  A: Renal cysts + diabetes + genital anomalies + gout
+- Q: What is Neonatal diabetes <6m of Epidemiology and classification?
+  A: Mandatory genetic testing — KCNJ11/ABCC8 = sulfonylurea-responsive
+- Q: What is Transient neonatal of Epidemiology and classification?
+  A: 6q24 (PLAGL1) — remits by 18mo, recurs later
+- Q: What is Mitochondrial m.3243A>G of Epidemiology and classification?
+  A: MELAS/MIDD; maternal inheritance; deafness; avoid metformin
+- Q: What is the investigation of choice for Epidemiology and classification?
+  A: Dx <25y + FHx + Ab negative + preserved C-peptide
+- Q: What is GCK in pregnancy of Epidemiology and classification?
+  A: No treatment unless 2-hr >7.8; insulin if needed
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Epidemiology and classification?**
+   A. **# Monogenic Diabetes (MODY, Neonatal) — Epidemiology & Classification**
+   B. An unrelated condition not matching the clinical picture of Epidemiology and classification
+   C. A complication seen late in the disease course of Epidemiology and classification
+   D. A condition that mimics Epidemiology and classification but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Epidemiology and classification presents with: MODY 2 — GCK; MODY 3 — HNF1A; MODY 1 — HNF4A. What is the most likely diagnosis?
+   A. **Epidemiology and classification**
+   B. A condition that mimics Epidemiology and classification but is not the same entity
+   C. A complication of Epidemiology and classification rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Epidemiology and classification
+

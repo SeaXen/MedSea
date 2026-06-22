@@ -398,3 +398,21 @@ mindmap
    C. A complication of Autoimmune Liver Disease rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Autoimmune Liver Disease
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Primary sclerosing cholangitis (PSC)*
+
+**Q1.** Which of the following features is most specific or characteristic of Primary sclerosing cholangitis (PSC)?
+
+  - **A.** 65-85% PSC Positive
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — 65-85% PSC Positive
+  >
+  > *Source:* illance | **Annual MRI/MRCP + 6-12m CA19-9** — No Proven Survival Benefit But Standard |
+| p-ANCA | **65-85% PSC Positive** — Not Diagnostic; Also in UC, AIH |
+
+---
+

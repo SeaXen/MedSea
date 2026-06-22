@@ -593,3 +593,18 @@ mindmap
    C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Septic arthritis*
+
+**Q1.** What is the most appropriate first-line therapy for Septic arthritis?
+
+  - **A.** IMMEDIATE JOINT ASPIRATION + DO NOT DELAY FOR ANTIBIOTICS
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — IMMEDIATE JOINT ASPIRATION + DO NOT DELAY FOR ANTIBIOTICS
+  >
+  > *Source:* A[Suspected Septic Arthritis] --> B[**IMMEDIATE JOINT ASPIRATION**\nSend: cell count, Gram stain, culture, crystals, glucose\n**DO NOT DELAY FOR ANTIBIOTICS**]
+

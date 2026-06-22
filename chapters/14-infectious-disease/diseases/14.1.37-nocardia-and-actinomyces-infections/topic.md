@@ -239,3 +239,21 @@ mindmap
 ---
 
 *Last Updated: 2025-06-17 | Based on Davidson 24e Ch 11 | FCPS/MRCP Focused*
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Nocardia and Actinomyces Infections*
+
+**Q1.** What is the most appropriate first-line therapy for Nocardia and Actinomyces Infections?
+
+  - **A.** Adjunct + Surgical drainage/debridement + Duration
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Adjunct + Surgical drainage/debridement + Duration
+  >
+  > *Source:* **Adjunct**   **Surgical drainage/debridement** (abscesses, necrotic tissue, IUD removal)   As needed  
+
+> [!warning] **Duration**: Actinomycosis requires **prolonged therapy (6-12 months)** to preven
+

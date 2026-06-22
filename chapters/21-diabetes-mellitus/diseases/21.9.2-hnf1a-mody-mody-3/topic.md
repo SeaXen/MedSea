@@ -180,3 +180,50 @@ By the end of this note you should be able to:
 - **L**ow CRP: <1 mg/L (diastolic)
 - **F**amily: autosomal dominant, 3 generations
 - **A**ge: 10-30y typical**</think>
+---
+
+> Auto-generated study sections for "Maturity onset diabetes of the young (MODY)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Maturity onset diabetes of the young (MODY)?
+  A: By the end of this note you should be able to:
+- Q: What is Inheritance of Maturity onset diabetes of the young (MODY)?
+  A: Autosomal dominant (50% offspring risk)
+- Q: What is Prenatal of Maturity onset diabetes of the young (MODY)?
+  A: Available if mutation known
+- Q: What is Inheritance of Maturity onset diabetes of the young (MODY)?
+  A: Autosomal dominant (50% offspring risk)
+- Q: What is Prenatal of Maturity onset diabetes of the young (MODY)?
+  A: Available if mutation known
+- Q: What is Family screening of Maturity onset diabetes of the young (MODY)?
+  A: Offer testing to 1st degree relatives
+- Q: What is Most common MODY of Maturity onset diabetes of the young (MODY)?
+  A: HNF1A-MODY = 50-65% of all MODY
+- Q: What are the clinical features of Maturity onset diabetes of the young (MODY)?
+  A: Young, non-obese, negative Abs, low CRP, low renal threshold
+- Q: What is Sulfonylurea of Maturity onset diabetes of the young (MODY)?
+  A: Excellent response; 1st line; often replaces insulin
+- Q: What is CRP of Maturity onset diabetes of the young (MODY)?
+  A: Low (<1 mg/L) - diagnostic clue vs T2DM
+- Q: What is Genetics of Maturity onset diabetes of the young (MODY)?
+  A: HNF1A (12q24); autosomal dominant; >90% penetrance by 25y
+- Q: What is Low renal threshold of Maturity onset diabetes of the young (MODY)?
+  A: Glycosuria at glucose <10 mmol/L
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Maturity onset diabetes of the young (MODY)?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Maturity onset diabetes of the young (MODY)
+   C. A complication seen late in the disease course of Maturity onset diabetes of the young (MODY)
+   D. A condition that mimics Maturity onset diabetes of the young (MODY) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Maturity onset diabetes of the young (MODY) presents with: Gene — HNF1A (hepatocyte nuclear factor 1-alpha); Prevalence — Most common MODY (50-65% of MODY); Inheritance — Autosomal dominant; high penetrance (>90% by 25y). What is the most likely diagnosis?
+   A. **Maturity onset diabetes of the young (MODY)**
+   B. A condition that mimics Maturity onset diabetes of the young (MODY) but is not the same entity
+   C. A complication of Maturity onset diabetes of the young (MODY) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Maturity onset diabetes of the young (MODY)
+

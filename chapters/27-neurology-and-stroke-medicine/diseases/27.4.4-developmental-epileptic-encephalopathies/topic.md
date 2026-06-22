@@ -373,3 +373,21 @@ mindmap
 **Chapter Hierarchy:** [[../../Davidson Chapter 25 - Neurology Hierarchy]]
 **Chapter MOC:** [[../../Neurology MOC]]
 **Drug Reference:** [[../../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Developmental Epileptic Encephalopathies*
+
+**Q1.** Which of the following features is most specific or characteristic of Developmental Epileptic Encephalopathies?
+
+  - **A.** Lennox-Gastaut = LGS
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Lennox-Gastaut = LGS
+  >
+  > *Source:* **Lennox-Gastaut = LGS** — Triad: multiple seizure types (tonic, atonic, atypical absence), slow spike-wave, cognitive impairment; resistant
+
+---
+

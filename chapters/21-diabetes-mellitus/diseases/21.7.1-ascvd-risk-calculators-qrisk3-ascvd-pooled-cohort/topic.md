@@ -176,3 +176,60 @@ If 10-year risk **5–7.5%** (borderline) or **7.5–20%** (intermediate), these
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetes as cardiovascular risk equivalent]], [[Statin therapy in diabetes (intensity, targets)]], [[Aspirin primary prevention]], [[BP targets in diabetes (NICE, ADA, ESC)]]
+---
+
+> Auto-generated study sections for "Atherosclerotic cardiovascular disease (ASCVD)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: # ASCVD risk calculators (QRISK3, ASCVD Pooled Cohort)
+- Q: What is QRISK3 unique variables of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Deprivation (Townsend), detailed ethnicity, CKD (eGFR+ACR), RA, SLE, steroids, antipsychotics, SMI, migraine, ED
+- Q: What is QRISK3 diabetes of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: T1 vs T2 separate; duration included
+- Q: What is ASCVD Pooled Cohort of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Race-specific equations (Black/White/Other); no CKD, no deprivation
+- Q: What is Statin threshold QRISK3 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ≥10% 10-year CVD risk (NICE CG181)
+- Q: What is Statin threshold ASCVD of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ≥7.5% 10-year hard ASCVD risk (ACC/AHA)
+- Q: What is Diabetes as risk equivalent of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: T1DM >40y or >10y duration; T2DM >40y → automatic high-intensity statin
+- Q: What is Risk enhancers of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Albuminuria, eGFR<60, retinopathy, neuropathy, ABI<0.9, family history, hsCRP≥2, Lp(a)≥50
+- Q: What is HbA1c in calculators of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Not included in either
+- Q: What is Communication of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Use heart age, visual aids, shared decision-making
+- Q: What is Limitations of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: <40y not validated; >79/84 not validated; frailty not captured
+- Q: What is QRISK3 unique variables of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Deprivation (Townsend), detailed ethnicity, CKD (eGFR+ACR), RA, SLE, steroids, antipsychotics, SMI, migraine, ED
+- Q: What is QRISK3 diabetes of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: T1 vs T2 separate; duration included
+- Q: What is ASCVD Pooled Cohort of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Race-specific equations (Black/White/Other); no CKD, no deprivation
+- Q: What is Statin threshold QRISK3 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ≥10% 10-year CVD risk (NICE CG181)
+- Q: What is Statin threshold ASCVD of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: ≥7.5% 10-year hard ASCVD risk (ACC/AHA)
+- Q: What is Diabetes as risk equivalent of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: T1DM >40y or >10y duration; T2DM >40y → automatic high-intensity statin
+- Q: What is Risk enhancers of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Albuminuria, eGFR<60, retinopathy, neuropathy, ABI<0.9, family history, hsCRP≥2, Lp(a)≥50
+- Q: What is HbA1c in calculators of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Not included in either
+- Q: What is Communication of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Use heart age, visual aids, shared decision-making
+- Q: What is Limitations of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: <40y not validated; >79/84 not validated; frailty not captured
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Atherosclerotic cardiovascular disease (ASCVD)?**
+   A. **# ASCVD risk calculators (QRISK3, ASCVD Pooled Cohort)**
+   B. An unrelated condition not matching the clinical picture of Atherosclerotic cardiovascular disease (ASCVD)
+   C. A complication seen late in the disease course of Atherosclerotic cardiovascular disease (ASCVD)
+   D. A condition that mimics Atherosclerotic cardiovascular disease (ASCVD) but has a different underlying cause
+

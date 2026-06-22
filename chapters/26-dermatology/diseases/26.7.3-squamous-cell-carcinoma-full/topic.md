@@ -482,3 +482,31 @@ Primary SCC
 ---
 
 > [!tip] **Exam focus:** Know definition, key clinical features, first-line management, and the most important complication. Always compare with the main differential.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 26: Dermatology — Squamous Cell Carcinoma full*
+
+**Q1.** Which of the following features is most specific or characteristic of Squamous Cell Carcinoma full?
+
+  - **A.** Management:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Management:
+  >
+  > *Source:* r + well-differentiated squamous epithelium; **often considered well-differentiated SCC variant**
+- **Management:** Excision (diagnostic/therapeutic); not observation (cannot clinically distinguish fr
+
+**Q2.** What is the most appropriate first-line therapy for Squamous Cell Carcinoma full?
+
+  - **A.** Electrodessication & Curettage
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Electrodessication & Curettage
+  >
+  > *Source:* **Electrodessication & Curettage (C&E)**   Low-risk in situ / superficial trunk   N/A   90-95%
+

@@ -466,3 +466,19 @@ mindmap
 **Differential**: Appendix testis torsion (blue dot, localised), Epididymo-orchitis (gradual, fever, Prehn's +, pyuria), Incarcerated hernia.  
 **Neonatal**: Prenatal often non-salvageable; perinatal viable → urgent exploration + contralateral fixation.  
 **Exam focus**: Time window, absent cremasteric, bell-clapper bilateral, detorsion counterclockwise, bilateral fixation, blue dot differential, Prehn's sign negative.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — Testicular Torsion*
+
+**Q1.** What is the most appropriate first-line therapy for Testicular Torsion?
+
+  - **A.** Prenatal
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Prenatal
+  >
+  > *Source:* **Prenatal (in utero)**   Usually non-salvageable; observe contralateral
+

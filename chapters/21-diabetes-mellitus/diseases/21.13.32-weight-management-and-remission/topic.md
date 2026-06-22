@@ -166,3 +166,81 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Medical nutrition therapy]], [[Physical activity and exercise]], [[Type 2 diabetes remission]], [[Metabolic surgery/Bariatric surgery indications]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Weight management and remission*
+
+**Q1.** What is the most appropriate first-line therapy for Weight management and remission?
+
+  - **A.** Semaglutide + −15–17%
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Semaglutide + −15–17%
+  >
+  > *Source:* **Semaglutide 2.4mg** (Wegovy)   2.4mg weekly   **−15–17%**   STEP trials: remission in T2DM subset
+---
+
+> Auto-generated study sections for "Lifestyle intervention" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Lifestyle intervention?
+  A: HbA1c <48 off meds ≥2 months
+- Q: What is Weight loss for metabolic benefit of Lifestyle intervention?
+  A: 5–10% clinically significant
+- Q: What is Weight loss for remission of Lifestyle intervention?
+  A: >15kg (or >15% body weight)
+- Q: What is DiRECT protocol of Lifestyle intervention?
+  A: 800kcal formula 12–20w → food reintro → maintenance
+- Q: What is DiRECT remission of Lifestyle intervention?
+  A: 46% at 1y; 70–80% if >15kg loss
+- Q: What is DiRECT maintenance of Lifestyle intervention?
+  A: Monthly support; 2kg regain trigger
+- Q: What is Semaglutide 2.4mg of Lifestyle intervention?
+  A: −15–17% weight; remission in subset
+- Q: What is Tirzepatide 15mg of Lifestyle intervention?
+  A: −20–22% weight loss
+- Q: What is Bariatric surgery of Lifestyle intervention?
+  A: RYGB/Sleeve: 75–85% remission at 1y
+- Q: What is Relapse prevention of Lifestyle intervention?
+  A: Monthly support; weekly weigh; >300min activity
+- Q: What is the definition of Lifestyle intervention?
+  A: HbA1c <48 off meds ≥2 months
+- Q: What is Weight loss for metabolic benefit of Lifestyle intervention?
+  A: 5–10% clinically significant
+- Q: What is Weight loss for remission of Lifestyle intervention?
+  A: >15kg (or >15% body weight)
+- Q: What is DiRECT protocol of Lifestyle intervention?
+  A: 800kcal formula 12–20w → food reintro → maintenance
+- Q: What is DiRECT remission of Lifestyle intervention?
+  A: 46% at 1y; 70–80% if >15kg loss
+- Q: What is DiRECT maintenance of Lifestyle intervention?
+  A: Monthly support; 2kg regain trigger
+- Q: What is Semaglutide 2.4mg of Lifestyle intervention?
+  A: −15–17% weight; remission in subset
+- Q: What is Tirzepatide 15mg of Lifestyle intervention?
+  A: −20–22% weight loss
+- Q: What is Bariatric surgery of Lifestyle intervention?
+  A: RYGB/Sleeve: 75–85% remission at 1y
+- Q: What is Relapse prevention of Lifestyle intervention?
+  A: Monthly support; weekly weigh; >300min activity
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Lifestyle intervention?**
+   A. **Weight loss 5–15% → metabolic benefit; Remission = HbA1c <48 mmol/mol off glucose meds ≥2 months; DiRECT: 800kcal formula 12–20w → 46% remission at 1y (15kg loss); 70% if >15kg loss; maintenance criti**
+   B. An unrelated condition not matching the clinical picture of Lifestyle intervention
+   C. A complication seen late in the disease course of Lifestyle intervention
+   D. A condition that mimics Lifestyle intervention but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Lifestyle intervention presents with: HbA1c — <48 mmol/mol (6.5%); Duration — ≥2 months sustained; Medication — Off ALL glucose-lowering medications. What is the most likely diagnosis?
+   A. **Lifestyle intervention**
+   B. A condition that mimics Lifestyle intervention but is not the same entity
+   C. A complication of Lifestyle intervention rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Lifestyle intervention
+

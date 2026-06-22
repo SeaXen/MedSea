@@ -474,3 +474,34 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Chronic Myeloid Leukaemia (CML)*
+
+**Q1.** Which of the following features is most specific or characteristic of Chronic Myeloid Leukaemia (CML)?
+
+  - **A.** "CML = Ph+ = BCR-ABL"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "CML = Ph+ = BCR-ABL"
+  >
+  > *Source:* 19%, **Basophils ≥20%**, Platelets <100, **ACA** |
+
+| Mnemonic | Meaning |
+|----------|---------|
+| **"CML = Ph+ = BCR-ABL"** | Diagnostic triad |
+| **"3-6-12-18: 10, 1, 0.1, 0.01"** | ELN 2020 milest
+
+**Q2.** What is the most appropriate first-line therapy for Chronic Myeloid Leukaemia (CML)?
+
+  - **A.** Bosutinib + Diarrhoea
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Bosutinib + Diarrhoea
+  >
+  > *Source:* **Bosutinib**   **Diarrhoea** (70%), hepatotoxicity, rash   Loperamide, dose with food, LFT monitoring
+

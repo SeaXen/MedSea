@@ -536,3 +536,32 @@ CCB poisoning = L-type Ca²⁺ channel blockade → hypotension + bradycardia/he
 7. **B** - HIET: insulin 1 U/kg/hr IV (same for BB and CCB). + dextrose to maintain glucose 5-10 mmol/L + K⁺ replacement. Improves myocardial metabolism via Ca²⁺-independent pathways.
 8. **B** - Verapamil: strongest SA/AV node depression → sinus brady, PR prolongation, AV block (1st, 2nd, 3rd degree). Diltiazem similar but less.
 9. **B** - Glucagon: adjunct in CCB (bypasses receptor via cAMP). FIRST LINE for BB. In CCB: calcium + HIET are primary. Glucagon less effective than in BB.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Calcium Channel Blocker Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Calcium Channel Blocker Poisoning?
+
+  - **A.** Hyperglycemia
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Hyperglycemia
+  >
+  > *Source:* **Hypotension** (refractory, vasodilatory + cardiogenic components)
+- **Bradycardia / Heart block** (SA/AV node depression — **non-DHP > DHP**; DHP may have initial reflex tachycardia)
+- **Hyperglycem
+
+**Q2.** What is the most appropriate first-line therapy for Calcium Channel Blocker Poisoning?
+
+  - **A.** Calcium
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Calcium
+  >
+  > *Source:* **Calcium** — may improve conduction (primary therapy)
+

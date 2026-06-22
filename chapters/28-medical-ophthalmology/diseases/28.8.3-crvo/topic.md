@@ -567,3 +567,35 @@ CRVO is sudden painless monocular vision loss with "blood and thunder" fundus (d
 
 ## Tags
 #medicine #davidson #ophthalmology #CRVO #retina #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / CRVO**
+
+**Q1.** A patient presents with features consistent with CRVO. The clinical picture is most consistent with: **Sudden, painless, monocular ↓VA** (variable severity) What is the most likely diagnosis?
+
+  - **A.** CRVO
+  - **B.** A closely related condition in the same clinical area
+  - **C.** A complication of CRVO
+  - **D.** An unrelated mimic with overlapping features
+
+  > **Answer: A** — CRVO
+
+**Q2.** A patient is being evaluated for CRVO. Based on standard diagnostic approach, what is the most appropriate first-line investigation?
+
+  - **A.** Approach described in standard diagnostic workup
+  - **B.** An advanced/invasive test as first-line
+  - **C.** Empirical treatment without investigation
+  - **D.** Watchful waiting without further testing
+
+  > **Answer: A** — Approach described in standard diagnostic workup
+
+**Q3.** Which of the following best describes the underlying pathophysiology / definition of CRVO?
+
+  - **A.** **CRVO:** Occlusion of the central retinal vein at the lamina cribrosa
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **CRVO:** Occlusion of the central retinal vein at the lamina cribrosa
+

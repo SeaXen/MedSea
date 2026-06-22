@@ -484,3 +484,46 @@ HZO is VZV reactivation in V1, with ocular involvement in 50% (higher with nasoc
 
 ## Tags
 #medicine #davidson #ophthalmology #HZO #VZV #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Herpes Zoster Ophthalmicus*
+
+**Q1.** Which of the following features is most specific or characteristic of Herpes Zoster Ophthalmicus?
+
+  - **A.** Uveitis:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Uveitis:
+  >
+  > *Source:* ** (lagophthalmos from lid involvement)
+  - **Neurotrophic keratopathy** (post-herpetic, chronic)
+- **Uveitis:** Often with sectoral iris atrophy (patchy iris depigmentation) — characteristic of VZV
+-
+
+**Q2.** In the management of Herpes Zoster Ophthalmicus, which of the following should be avoided or is contraindicated?
+
+  - **A.** steroid monotherapy (avoid in active VZV)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — steroid monotherapy (avoid in active VZV)
+  >
+  > *Source:* |
+| "Topical steroid alone for HZO keratitis" | Steroids must be COVERED by antivirals — never steroid monotherapy in active VZV. |
+| "PHN is rare" | PHN occurs in 10-20% overall, up to 50% in those >
+
+**Q3.** What is the most appropriate first-line therapy for Herpes Zoster Ophthalmicus?
+
+  - **A.** Topical steroid
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Topical steroid
+  >
+  > *Source:* **Topical steroid** for stromal keratitis, uveitis, scleritis (under antiviral cover)
+

@@ -146,3 +146,84 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Severe hypoglycaemia]], [[Insulin therapy in type 2 diabetes]], [[Diabetes in the elderly]], [[Diabetes in CKD and dialysis]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — insulin error*
+
+**Q1.** Which of the following features is most specific or characteristic of insulin error?
+
+  - **A.** Wrong dose
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Wrong dose
+  >
+  > *Source:* Common Insulin Errors in Hospital
+| Error Type | Examples | Prevention |
+|------------|----------|------------|
+| **Wrong dose** | 10 units instead of 1; 40 units instead of 4; decimal point | **Unit-
+---
+
+> Auto-generated study sections for "Hypoglycaemia in hospital" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (20 generated)
+
+- Q: What is the definition of Hypoglycaemia in hospital?
+  A: Level 1: 3.0–3.9; Level 2: <3.0; Level 3: <2.0 or needs help
+- Q: What is Most common insulin error of Hypoglycaemia in hospital?
+  A: Wrong dose (especially 10x), wrong insulin, wrong timing
+- Q: What is Sliding scale of Hypoglycaemia in hospital?
+  A: Supplemental only — never sole regimen
+- Q: What is Never omit basal of Hypoglycaemia in hospital?
+  A: Reduce 20–50% if concerned; never hold without review
+- Q: What is NPO patient of Hypoglycaemia in hospital?
+  A: Basal insulin still needed (reduce 20–50%); dextrose if prolonged
+- Q: What is Renal impairment of Hypoglycaemia in hospital?
+  A: Reduce insulin 30–50% (eGFR <30); monitor q4–6h
+- Q: What is Concentrated insulin of Hypoglycaemia in hospital?
+  A: U200/U300/U500 — separate prescribing, dedicated syringes
+- Q: How is Hypoglycaemia in hospital managed?
+  A: IV 20% dextrose 100mL + glucagon 1mg IM
+- Q: What is Reporting of Hypoglycaemia in hospital?
+  A: All Level 2/3 mandatory; root cause for Level 3
+- Q: What is Target inpatient glucose of Hypoglycaemia in hospital?
+  A: 5–10 mmol/L (avoid <4.0)
+- Q: What is the definition of Hypoglycaemia in hospital?
+  A: Level 1: 3.0–3.9; Level 2: <3.0; Level 3: <2.0 or needs help
+- Q: What is Most common insulin error of Hypoglycaemia in hospital?
+  A: Wrong dose (especially 10x), wrong insulin, wrong timing
+- Q: What is Sliding scale of Hypoglycaemia in hospital?
+  A: Supplemental only — never sole regimen
+- Q: What is Never omit basal of Hypoglycaemia in hospital?
+  A: Reduce 20–50% if concerned; never hold without review
+- Q: What is NPO patient of Hypoglycaemia in hospital?
+  A: Basal insulin still needed (reduce 20–50%); dextrose if prolonged
+- Q: What is Renal impairment of Hypoglycaemia in hospital?
+  A: Reduce insulin 30–50% (eGFR <30); monitor q4–6h
+- Q: What is Concentrated insulin of Hypoglycaemia in hospital?
+  A: U200/U300/U500 — separate prescribing, dedicated syringes
+- Q: How is Hypoglycaemia in hospital managed?
+  A: IV 20% dextrose 100mL + glucagon 1mg IM
+- Q: What is Reporting of Hypoglycaemia in hospital?
+  A: All Level 2/3 mandatory; root cause for Level 3
+- Q: What is Target inpatient glucose of Hypoglycaemia in hospital?
+  A: 5–10 mmol/L (avoid <4.0)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hypoglycaemia in hospital?**
+   A. **Inpatient hypoglycaemia = 10–20% of diabetes admissions; insulin errors = leading preventable cause (wrong dose, wrong insulin, wrong timing, sliding scale misuse); protocolised regimens + capillary g**
+   B. An unrelated condition not matching the clinical picture of Hypoglycaemia in hospital
+   C. A complication seen late in the disease course of Hypoglycaemia in hospital
+   D. A condition that mimics Hypoglycaemia in hospital but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hypoglycaemia in hospital presents with: Category — Capillary / Venous Glucose; Level 1 (Alert) — 3.9–3.0 mmol/L (70–54 mg/dL); Level 2 (Clinically Significant) — <3.0 mmol/L (<54 mg/dL). What is the most likely diagnosis?
+   A. **Hypoglycaemia in hospital**
+   B. A condition that mimics Hypoglycaemia in hospital but is not the same entity
+   C. A complication of Hypoglycaemia in hospital rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hypoglycaemia in hospital
+

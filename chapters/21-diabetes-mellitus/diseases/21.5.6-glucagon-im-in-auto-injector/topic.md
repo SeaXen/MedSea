@@ -244,3 +244,67 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — glucagon-im,-in,-auto-injector*
+
+**Q1.** What is the most appropriate first-line therapy for glucagon-im,-in,-auto-injector?
+
+  - **A.** CGM in hospital
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — CGM in hospital
+  >
+  > *Source:* **CGM in hospital**   Real-time alerts; reduces severe hypo 50%
+---
+
+> Auto-generated study sections for "Severe hypoglycaemia" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Severe hypoglycaemia?
+  A: By the end of this note you should be able to:
+- Q: What is Severe hypoglycaemia indicated for?
+  A: Severe hypoglycaemia (unconscious/seizure/unable to swallow) when IV access unavailable
+- Q: What is the mechanism of Severe hypoglycaemia?
+  A: Stimulates hepatic glycogenolysis and gluconeogenesis -> increases blood glucose
+- Q: What is Requirement of Severe hypoglycaemia?
+  A: Requires hepatic glycogen stores -- ineffective if depleted
+- Q: What is Blood glucose of Severe hypoglycaemia?
+  A: Confirm hypo before/after; recheck 15min post-glucagon
+- Q: What is Ketones of Severe hypoglycaemia?
+  A: If DKA suspected -- glucagon contraindicated (requires insulin)
+- Q: What is Blood glucose of Severe hypoglycaemia?
+  A: Confirm hypo before/after; recheck 15min post-glucagon
+- Q: What is Ketones of Severe hypoglycaemia?
+  A: If DKA suspected -- glucagon contraindicated (requires insulin)
+- Q: What is Severe hypoglycaemia indicated for?
+  A: Severe hypo (unconscious/seizure/unable to swallow) + NO IV access
+- Q: What is the dose of Severe hypoglycaemia?
+  A: 1mg IM/SC (GlucaGen); 3mg IN (Baqsimi); 1mg auto-injector (Gvoke)
+- Q: What is Onset/Duration of Severe hypoglycaemia?
+  A: 10-15min onset; 60-90min duration
+- Q: What is Failure of Severe hypoglycaemia?
+  A: If no response 15min -> IV dextrose; do NOT repeat glucagon (glycogen depleted)
+- Q: What is Post-glucagon of Severe hypoglycaemia?
+  A: Recheck 15min; complex carbs if glucose>3.9; monitor 1-2h
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Severe hypoglycaemia?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Severe hypoglycaemia
+   C. A complication seen late in the disease course of Severe hypoglycaemia
+   D. A condition that mimics Severe hypoglycaemia but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Severe hypoglycaemia presents with: Indication — Severe hypoglycaemia (unconscious/seizure/unable to swallow) when IV access unavailable; Mechanism — Stimulates hepatic glycogenolysis and gluconeogenesis -> increases blood glucose; Requirement — Requires hepatic glycogen stores -- ineffective if depleted. What is the most likely diagnosis?
+   A. **Severe hypoglycaemia**
+   B. A condition that mimics Severe hypoglycaemia but is not the same entity
+   C. A complication of Severe hypoglycaemia rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Severe hypoglycaemia
+

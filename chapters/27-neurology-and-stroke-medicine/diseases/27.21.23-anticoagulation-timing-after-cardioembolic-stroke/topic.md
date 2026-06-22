@@ -567,3 +567,19 @@ Anticoagulation after cardioembolic stroke is essential for preventing recurrent
 8. **A** — Large severe infarct is least likely to receive very early anticoagulation.  
 9. **A** — Cardioembolic mechanism changes the long-term prevention pathway.  
 10. **A** — Excessive delay can expose the patient to recurrent embolism before protection begins.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Anticoagulation timing after cardioembolic stroke*
+
+**Q1.** What is the most appropriate first-line therapy for Anticoagulation timing after cardioembolic stroke?
+
+  - **A.** earlier in TIA/small stroke + later in larger stroke
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — earlier in TIA/small stroke + later in larger stroke
+  >
+  > *Source:* Start anticoagulation **earlier in TIA/small stroke**, **later in larger stroke**.
+

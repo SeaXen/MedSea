@@ -274,3 +274,58 @@ mindmap
 
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Oral glucose lowering agents" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (16 generated)
+
+- Q: What is the definition of Oral glucose lowering agents?
+  A: SGLT2 inhibitors: empagliflozin, dapagliflozin, canagliflozin, ertugliflozin — ↓renal glucose reabsorption → glucosuria; proven CV death↓, HF hosp↓, CKD progression↓; euglycaemic DKA risk; genital mycotic infections.
+- Q: What is Drug Class of Oral glucose lowering agents?
+  A: Sodium-glucose co-transporter 2 inhibitors
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: Inhibit SGLT2 in proximal tubule (S1 segment) → ↓glucose reabsorption → ↑urinary glucose excretion (~70–90g/day) → ↓plasma glucose, ↓weight, ↓BP, ↓intraglomerular pressure
+- Q: What is the dose of Oral glucose lowering agents?
+  A: Empagliflozin 10/25mg OD; Dapagliflozin 10mg OD; Canagliflozin 100/300mg OD; Ertugliflozin 5/15mg OD
+- Q: What is HbA1c Reduction of Oral glucose lowering agents?
+  A: 0.5–1.0% (5–11 mmol/mol) as add-on; weight loss 2–3kg; SBP ↓3–5 mmHg
+- Q: What is Pharmacokinetics of Oral glucose lowering agents?
+  A: Oral, ~80% bioavailability; hepatic glucuronidation (UGT1A9); renal excretion <2%; t½ 12–17h
+- Q: What is the mechanism of Oral glucose lowering agents?
+  A: Inhibit SGLT2 in proximal tubule (S1) → glucosuria ~70–90g/day → ↓glucose, ↓weight, ↓BP, ↓intraglomerular pressure
+- Q: What is eGFR thresholds of Oral glucose lowering agents?
+  A: Empa: initiate ≥45 (T2DM) / ≥20 (HF/CKD); Dapa: ≥45/≥25; Cana: ≥30; Ertu: ≥45
+- Q: What is CV benefit of Oral glucose lowering agents?
+  A: Empa: EMPA-REG (CV death↓); Cana: CANVAS (MACE↓); Dapa: DECLARE (HF hosp↓)
+- Q: What is HF benefit of Oral glucose lowering agents?
+  A: All HFrEF/HFpEF: Dapa (DAPA-HF, DELIVER), Empa (EMPEROR-Red/Pres) — 1st line for HF in DM
+- Q: What is CKD benefit of Oral glucose lowering agents?
+  A: Cana (CREDENCE), Dapa (DAPA-CKD), Empa (EMPA-KIDNEY) — continue to dialysis
+- Q: What is Euglycaemic DKA of Oral glucose lowering agents?
+  A: Glucose <13.9 + ketones >3 + pH <7.3; STOP SGLT2i, standard DKA Rx; check ketones if unwell
+- Q: What is Genital infections of Oral glucose lowering agents?
+  A: 10–15% (women > men); topical antifungals; recurrent → stop
+- Q: What is Amputation of Oral glucose lowering agents?
+  A: Canagliflozin: ↑toe/midfoot amputation (CANVAS); avoid if active DFU/PAD
+- Q: What is Fournier's gangrene of Oral glucose lowering agents?
+  A: Rare (<0.1%); necrotising perineal infection; STOP SGLT2i, surgical emergency
+- Q: What is Sick-day rules of Oral glucose lowering agents?
+  A: STOP if: illness, fasting, surgery (3d pre), low carb, alcohol, dehydration
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Oral glucose lowering agents?**
+   A. **SGLT2 inhibitors: empagliflozin, dapagliflozin, canagliflozin, ertugliflozin — ↓renal glucose reabsorption → glucosuria; proven CV death↓, HF hosp↓, CKD progression↓; euglycaemic DKA risk; genital myc**
+   B. An unrelated condition not matching the clinical picture of Oral glucose lowering agents
+   C. A complication seen late in the disease course of Oral glucose lowering agents
+   D. A condition that mimics Oral glucose lowering agents but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Oral glucose lowering agents presents with: Drug Class — Sodium-glucose co-transporter 2 inhibitors; Mechanism — Inhibit SGLT2 in proximal tubule (S1 segment) → ↓glucose reabsorption → ↑urinary glucose excretion (~70–90g/day) → ↓plasma glucose, ↓weight, ↓BP, ↓intraglomerular pressure; Agents & Doses — Empagliflozin 10/25mg OD; Dapagliflozin 10mg OD; Canagliflozin 100/300mg OD; Ertugliflozin 5/15mg OD. What is the most likely diagnosis?
+   A. **Oral glucose lowering agents**
+   B. A condition that mimics Oral glucose lowering agents but is not the same entity
+   C. A complication of Oral glucose lowering agents rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Oral glucose lowering agents
+

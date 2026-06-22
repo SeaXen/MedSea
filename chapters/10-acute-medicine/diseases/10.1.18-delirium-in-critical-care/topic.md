@@ -633,3 +633,33 @@ flowchart TD
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-15
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — Delirium in Critical Care*
+
+**Q1.** Which of the following features is most specific or characteristic of Delirium in Critical Care?
+
+  - **A.** Inattention
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Inattention
+  >
+  > *Source:* **Acute onset** (hours-days), **fluctuating course** (often worse at night — "sundowning")
+- **Inattention** (key feature): difficulty focusing, can't follow conversation
+- **Disorganised thinking**
+-
+
+**Q2.** What is the most appropriate first-line therapy for Delirium in Critical Care?
+
+  - **A.** IV haloperidol
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — IV haloperidol
+  >
+  > *Source:* **IV haloperidol** not licensed in UK (use oral/IM/NG)
+

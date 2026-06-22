@@ -635,3 +635,22 @@ The distinction between **provoked** and **unprovoked** seizure is central to fi
 8. **A** — focal deficit raises concern for structural pathology.
 9. **B** — prevention of recurrent provoking factor is key.
 10. **A** — this distinction affects work-up, prognosis, and treatment.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Provoked vs unprovoked seizure*
+
+**Q1.** In the management of Provoked vs unprovoked seizure, which of the following should be avoided or is contraindicated?
+
+  - **A.** automatically starting chronic ASM (avoid in every provoked seizure)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — automatically starting chronic ASM (avoid in every provoked seizure)
+  >
+  > *Source:* ablished
+- counsel about driving, swimming, machinery, heights, sleep deprivation, alcohol excess
+- Avoid automatically starting chronic ASM for every provoked seizure.
+- In women of childbearing pote
+

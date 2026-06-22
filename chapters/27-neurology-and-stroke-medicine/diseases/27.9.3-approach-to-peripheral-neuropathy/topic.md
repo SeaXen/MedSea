@@ -472,4 +472,23 @@ mindmap
 **Heading Hub:** [[../Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[../00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Approach to Peripheral Neuropathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Approach to Peripheral Neuropathy?
+
+  - **A.** emyelinating vs
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — emyelinating vs
+  >
+  > *Source:* **DAM-MMM** — Classifying peripheral neuropathy:
+   - **D**emyelinating vs **A**xonal (first key branch on NCS)
+   - **M**ixed (sensorimotor, small + large fibre)
+   - **M**ononeuropathy (single nerve
+

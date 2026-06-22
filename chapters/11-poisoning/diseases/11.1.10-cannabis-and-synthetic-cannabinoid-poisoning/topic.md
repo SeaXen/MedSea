@@ -486,3 +486,21 @@ flowchart TD
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Cannabis and Synthetic Cannabinoid Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Cannabis and Synthetic Cannabinoid Poisoning?
+
+  - **A.** Specialized testing
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Specialized testing
+  >
+  > *Source:* cannabis; **most standard screens MISS synthetic cannabinoids** (constantly changing structures)
+- **Specialized testing**: LC-MS/MS for specific SCRA (not routinely available acutely)
+- **ECG**: tach
+

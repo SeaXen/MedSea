@@ -157,3 +157,85 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Bariatric surgery indications]], [[Weight management and remission]], [[Type 2 diabetes remission]], [[Diabetes in pregnancy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Post-surgery diabetes management*
+
+**Q1.** What is the most appropriate first-line therapy for Post-surgery diabetes management?
+
+  - **A.** Metformin   Continue if eGFR ≥30 (adjust for weight loss)  
+
+### Day 3–7
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Metformin   Continue if eGFR ≥30 (adjust for weight loss)  
+
+### Day 3–7
+  >
+  > *Source:* Metformin**   **Continue if eGFR ≥30** (adjust for weight loss)  
+
+### Day 3–7
+---
+
+> Auto-generated study sections for "Metabolic surgery" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Metabolic surgery?
+  A: Post-bariatric glucose management: IV insulin → SC 50–70% dose reduction within days; rapid remission (incretin effect); dumping syndrome (early/late); nutritional deficiencies (B12, iron, Ca, D, thiamine); lifelong supplementation + monitoring; contraception 12–18m; pregnancy planning.
+- Q: What is Post-op insulin reduction of Metabolic surgery?
+  A: 50–70% dose reduction (incretin effect)
+- Q: What is Rapid remission of Metabolic surgery?
+  A: Often within days off all meds
+- Q: What is Dumping syndrome of Metabolic surgery?
+  A: Early (osmotic, 15–30min) vs Late (reactive hypo, 1–3h)
+- Q: How is Metabolic surgery managed?
+  A: Small meals, fluid separate, lie down post-meal, low sugar
+- Q: What is B12 deficiency of Metabolic surgery?
+  A: IM 1mg 3-monthly lifelong (ileal bypass)
+- Q: What is Iron deficiency of Metabolic surgery?
+  A: 6-monthly ferritin; oral/IV replacement
+- Q: What is Thiamine of Metabolic surgery?
+  A: Prophylactic 100mg daily; Wernicke's risk with vomiting
+- Q: What is DEXA of Metabolic surgery?
+  A: Baseline, 2y, q2–3y (high fracture risk)
+- Q: What is Contraception of Metabolic surgery?
+  A: LARC; avoid oral (malabsorption); wait 12–18m for pregnancy
+- Q: What is Post-op insulin reduction of Metabolic surgery?
+  A: 50–70% dose reduction (incretin effect)
+- Q: What is Rapid remission of Metabolic surgery?
+  A: Often within days off all meds
+- Q: What is Dumping syndrome of Metabolic surgery?
+  A: Early (osmotic, 15–30min) vs Late (reactive hypo, 1–3h)
+- Q: How is Metabolic surgery managed?
+  A: Small meals, fluid separate, lie down post-meal, low sugar
+- Q: What is B12 deficiency of Metabolic surgery?
+  A: IM 1mg 3-monthly lifelong (ileal bypass)
+- Q: What is Iron deficiency of Metabolic surgery?
+  A: 6-monthly ferritin; oral/IV replacement
+- Q: What is Thiamine of Metabolic surgery?
+  A: Prophylactic 100mg daily; Wernicke's risk with vomiting
+- Q: What is DEXA of Metabolic surgery?
+  A: Baseline, 2y, q2–3y (high fracture risk)
+- Q: What is Contraception of Metabolic surgery?
+  A: LARC; avoid oral (malabsorption); wait 12–18m for pregnancy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Metabolic surgery?**
+   A. **Post-bariatric glucose management: IV insulin → SC 50–70% dose reduction within days; rapid remission (incretin effect); dumping syndrome (early/late); nutritional deficiencies (B12, iron, Ca, D, thia**
+   B. An unrelated condition not matching the clinical picture of Metabolic surgery
+   C. A complication seen late in the disease course of Metabolic surgery
+   D. A condition that mimics Metabolic surgery but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Metabolic surgery presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — Post-surgery diabetes management; Q1. What is the most appropriate first-line therapy for Post-surgery diabetes management?; A. Metformin Continue if eGFR ≥30 (adjust for weight loss). What is the most likely diagnosis?
+   A. **Metabolic surgery**
+   B. A condition that mimics Metabolic surgery but is not the same entity
+   C. A complication of Metabolic surgery rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Metabolic surgery
+

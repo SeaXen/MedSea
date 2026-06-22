@@ -189,3 +189,22 @@ flowchart TD
    C. A complication seen late in the disease course of Acute Liver Failure
    D. A condition that mimics Acute Liver Failure but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — ICU supportive care*
+
+**Q1.** What is the most appropriate first-line therapy for ICU supportive care?
+
+  - **A.** rFVIIa + NOT Routine + Do NOT Correct INR Routinely
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — rFVIIa + NOT Routine + Do NOT Correct INR Routinely
+  >
+  > *Source:* **rFVIIa**   **NOT Routine** (Thrombosis Risk)   Life-Threatening Bleeding Only  
+
+> **Do NOT Correct INR Routinely** — Only for Active Bleeding or Invasive Procedures
+
+---
+

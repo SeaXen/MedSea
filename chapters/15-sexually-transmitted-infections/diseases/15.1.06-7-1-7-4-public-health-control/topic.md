@@ -632,3 +632,21 @@ mindmap
 
 **Last Updated:** 2026-06-15  
 **Chapter 13: Sexually Transmitted Infections — COMPLETE (15 Files)**
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 15b: STI — 7.1-7.4 Public Health & Control*
+
+**Q1.** Which of the following features is most specific or characteristic of 7.1-7.4 Public Health & Control?
+
+  - **A.** "Condoms = 100% Effective"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "Condoms = 100% Effective"
+  >
+  > *Source:* gins"** | **NO.** **Benefit Even If Sexually Active (Protects Against Types Not Yet Acquired)** |
+| **"Condoms = 100% Effective"** | **NO.** **85-98% (Consistent Correct Use); Typical Use ~85%** |
+| *
+

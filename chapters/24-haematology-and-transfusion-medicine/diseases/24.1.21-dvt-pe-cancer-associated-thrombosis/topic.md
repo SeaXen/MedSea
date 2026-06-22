@@ -470,3 +470,41 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — DVT PE & Cancer-associated Thrombosis*
+
+**Q1.** Which landmark clinical trial provided evidence relevant to the management of DVT PE & Cancer-associated Thrombosis (specifically: CAT
+
+| Agent | Evidence | Preferred In |
+|-------|----------|--------------|
+| **LMWH (Dalteparin/Tinzaparin/Enoxaparin))?
+
+  - **A.** CASSINI trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — CASSINI trial
+  >
+  > *Source:* | Intermediate | Consider (outpatient chemo) |
+| **≥3** | High | **Prophylactic LMWH/DOAC** (AVERT, CASSINI trials) |
+
+### Treatment of Established CAT
+
+| Agent | Evidence | Preferred In |
+|-------|--
+
+**Q2.** What is the most appropriate first-line therapy for DVT PE & Cancer-associated Thrombosis?
+
+  - **A.** Warfarin + LMWH overlap ≥5d + INR + DOACs = First-line for VTE
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Warfarin + LMWH overlap ≥5d + INR + DOACs = First-line for VTE
+  >
+  > *Source:* **Warfarin**   **LMWH overlap ≥5d + INR 2-3**  
+
+> [!tip] **DOACs = First-line for VTE** (no monitoring, fixed dose, less bleeding than warfarin).
+

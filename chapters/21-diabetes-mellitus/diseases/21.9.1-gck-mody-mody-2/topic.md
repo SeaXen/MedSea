@@ -121,3 +121,38 @@ By the end of this note you should be able to:
 - **E**xcellent prognosis
 - **N**o microvascular complications
 - **T**reatment: **NONE**</think>
+---
+
+> Auto-generated study sections for "Maturity onset diabetes of the young (MODY)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Maturity onset diabetes of the young (MODY)?
+  A: By the end of this note you should be able to:
+- Q: How is Maturity onset diabetes of the young (MODY) managed?
+  A: Stable mild hyperglycaemia; no complications
+- Q: What is Fasting glucose of Maturity onset diabetes of the young (MODY)?
+  A: 5.5-8.0 mmol/L (stable lifelong)
+- Q: What is HbA1c of Maturity onset diabetes of the young (MODY)?
+  A: 39-58 mmol/mol (5.7-7.5%)
+- Q: What are the complications of Maturity onset diabetes of the young (MODY)?
+  A: Virtually none (no micro/macrovascular)
+- Q: What is Pregnancy of Maturity onset diabetes of the young (MODY)?
+  A: Treat ONLY if mother has GCK mutation & fetus does NOT
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Maturity onset diabetes of the young (MODY)?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Maturity onset diabetes of the young (MODY)
+   C. A complication seen late in the disease course of Maturity onset diabetes of the young (MODY)
+   D. A condition that mimics Maturity onset diabetes of the young (MODY) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Maturity onset diabetes of the young (MODY) presents with: Gene — GCK (glucokinase); Prevalence — 2nd most common MODY (30-35% of MODY); Mechanism — Glucokinase = pancreatic glucose sensor; heterozygous loss -> ↑glucose set-point. What is the most likely diagnosis?
+   A. **Maturity onset diabetes of the young (MODY)**
+   B. A condition that mimics Maturity onset diabetes of the young (MODY) but is not the same entity
+   C. A complication of Maturity onset diabetes of the young (MODY) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Maturity onset diabetes of the young (MODY)
+

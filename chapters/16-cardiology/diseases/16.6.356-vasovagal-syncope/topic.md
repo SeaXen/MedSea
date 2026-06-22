@@ -491,3 +491,22 @@ mindmap
 10. **B** — Supine + no prodrome + injury + LBBB = cardiac syncope red flags → admit/workup.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Vasovagal syncope*
+
+**Q1.** Which of the following features is most specific or characteristic of Vasovagal syncope?
+
+  - **A.** Typical VVS
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Typical VVS
+  >
+  > *Source:* *no post-ictal confusion** |
+| **Post-event** | Fatigue, nausea may persist 15-60 min |
+| Feature | **Typical VVS** | **Atypical / Cardiac Red Flags** |
+|---------|-----------------|------------------
+

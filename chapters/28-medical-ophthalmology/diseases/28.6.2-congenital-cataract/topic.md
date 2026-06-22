@@ -650,3 +650,19 @@ Congenital cataract is a lens opacity present at birth (or within first year). M
 
 ## Tags
 #medicine #davidson #ophthalmology #congenital #cataract #fcps #mrcp #leukocoria #retinoblastoma #rubella #galactosaemia #amblyopia
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Congenital Cataract*
+
+**Q1.** What is the most appropriate first-line therapy for Congenital Cataract?
+
+  - **A.** Hypoglycaemia:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Hypoglycaemia:
+  >
+  > *Source:* **Hypoglycaemia:** Treat underlying cause
+

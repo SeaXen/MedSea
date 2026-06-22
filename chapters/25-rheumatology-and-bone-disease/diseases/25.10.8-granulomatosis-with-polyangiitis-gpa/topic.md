@@ -498,3 +498,31 @@ mindmap
    C. A complication of Vasculitis rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Vasculitis
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Granulomatosis with polyangiitis (GPA)*
+
+**Q1.** Which of the following features is most specific or characteristic of Granulomatosis with polyangiitis (GPA)?
+
+  - **A.** Chronic sinusitis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Chronic sinusitis
+  >
+  > *Source:* System | Manifestations | FCPS/MRCP Pearl |
+|--------|----------------|-----------------|
+| **Upper Respiratory (ENT)** | **Chronic sinusitis** (crusting, purulent), **epistaxis**, **saddle nose defor
+
+**Q2.** What is the most appropriate first-line therapy for Granulomatosis with polyangiitis (GPA)?
+
+  - **A.** Rituximab + All severity + 375mg/m² IV weekly ×4
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Rituximab + All severity + 375mg/m² IV weekly ×4
+  >
+  > *Source:* **Rituximab**   **All severity** (RAVE trial: non-inferior to CYC for remission)   **375mg/m² IV weekly ×4** (or 1000mg ×2 2wks apart) + pred taper; **preferred for relapsing, childbearing, CYC contra
+

@@ -357,3 +357,32 @@ Related: [[Movement Disorders Hub]], [[Hyperkinetic Movement Disorders Hub]], [[
 ## Local Navigation
 - [[Movement Disorders Hub]] | [[Hyperkinetic Movement Disorders Hub]]
 - [[ADHD]] | [[OCD]] | [[Chorea]] | [[Dystonia]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Tics & Tourette Syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of Tics & Tourette Syndrome?
+
+  - **A.** MRI brain
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MRI brain
+  >
+  > *Source:* (Yale Global Tic Severity Scale)** | Severity monitoring | Score 0-50 (motor 0-25, vocal 0-25) |
+| **MRI brain** | Atypical features | Excludes structural; often normal |
+| **Copper studies, cerulopla
+
+**Q2.** What is the most appropriate first-line therapy for Tics & Tourette Syndrome?
+
+  - **A.** ADHD:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — ADHD:
+  >
+  > *Source:* **ADHD:** Methylphenidate, atomoxetine, clonidine (some drugs worsen tics, but evidence is weak; treat ADHD)
+

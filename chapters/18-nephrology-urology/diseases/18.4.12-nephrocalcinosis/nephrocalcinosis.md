@@ -464,3 +464,19 @@ mindmap
 **Management**: Treat cause + hydration (2.5–3L) + **citrate** (inhibits crystallisation) + thiazide if hypercalciuria. **RTA1 alkali reverses** via ↑ citrate.  
 **Key discriminators**: Bartter = nephrocalcinosis YES; Gitelman = nephrocalcinosis NO (hypocalciuria). MSK = paintbrush calyces. Phosphate nephropathy = elderly + oral phosphate prep. Cortical necrosis = obstetric/HUS.  
 **Exam focus**: Medullary vs cortical, RTA1 mechanism, Bartter vs Gitelman Ca²⁺, MSK imaging, citrate/thiazide roles, reversibility.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — Nephrocalcinosis*
+
+**Q1.** What is the most appropriate first-line therapy for Nephrocalcinosis?
+
+  - **A.** Treat underlying cause
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat underlying cause
+  >
+  > *Source:* **Treat underlying cause**   Essential — stops progression
+

@@ -498,3 +498,22 @@ ICU monitoring, supportive care
 
 **Heading Hub:** [[01_Fundamentals_Examination/Emergency Approach Hub]]
 **Topic-Group Hub:** [[01_Fundamentals_Examination/Emergency Hub]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Neurological Emergencies Approach*
+
+**Q1.** Which of the following is characterised by the clinical triad: HTN, bradycardia, irregular breathing?
+
+  - **A.** Neurological Emergencies Approach
+  - **B.** Stroke
+  - **C.** TIA
+  - **D.** Migraine
+
+  > **Answer: A** — Neurological Emergencies Approach
+  >
+  > *Source:* - Asymmetric pupils, anisocoria, abnormal reactivity
+- Focal deficit (hemiparesis, cranial nerve)
+- Cushing's triad (HTN, bradycardia, irregular breathing) — raised ICP
+- Examples: stroke, tumour, abs
+

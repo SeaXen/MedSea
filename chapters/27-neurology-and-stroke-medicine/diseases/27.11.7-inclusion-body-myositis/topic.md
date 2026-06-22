@@ -414,3 +414,31 @@ flowchart TD
 **Topic Hub:** [[Muscle Disorders Hub]]  
 **Chapter MOC:** [[Neurology MOC]]  
 **Related Topics:** [[Polymyositis]], [[Dermatomyositis]], [[Muscular Dystrophies]], [[Motor Neurone Disease]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Inclusion Body Myositis*
+
+**Q1.** Which of the following features is most specific or characteristic of Inclusion Body Myositis?
+
+  - **A.** Finger flexor weakness
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Finger flexor weakness
+  >
+  > *Source:* **Finger flexor weakness** (especially flexor digitorum profundus) — **loss of key grip, fine motor (buttoning, writing)**
+2
+
+**Q2.** What is the most appropriate first-line therapy for Inclusion Body Myositis?
+
+  - **A.** Occupational therapy:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Occupational therapy:
+  >
+  > *Source:* **Occupational therapy:** Adaptive devices (jar openers, button hooks)
+

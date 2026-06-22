@@ -190,3 +190,30 @@ E. All of the above
 **Tags:** #medicine #cardiology #davidson #fcps #mrcp
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — P2 flail, chordal rupture, Barlow's*
+
+**Q1.** Which of the following features is most specific or characteristic of P2 flail, chordal rupture, Barlow's?
+
+  - **A.** Often asymptomatic
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Often asymptomatic
+  >
+  > *Source:* *Often asymptomatic** (incidental echo). **Symptoms**: palpitations, atypical chest pain, dyspnoea, fatigue, syncope, panic/anxiety
+
+**Q2.** What is the most appropriate first-line therapy for P2 flail, chordal rupture, Barlow's?
+
+  - **A.** Asymptomatic, mild MR
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Asymptomatic, mild MR
+  >
+  > *Source:* **Asymptomatic, mild MR**: monitor (echo every 3-5y), reassurance, lifestyle (avoid dehydration in autonomic dysfunction).
+

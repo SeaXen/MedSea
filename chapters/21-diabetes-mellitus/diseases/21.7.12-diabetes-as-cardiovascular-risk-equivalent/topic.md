@@ -141,3 +141,86 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Statin therapy in diabetes (intensity, targets)]], [[Aspirin primary prevention]], [[BP targets in diabetes (NICE, ADA, ESC)]], [[ASCVD risk calculators (QRISK3, ASCVD Pooled Cohort)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — diabetes-as-cardiovascular-risk-equivalent*
+
+**Q1.** Which of the following features is most specific or characteristic of diabetes-as-cardiovascular-risk-equivalent?
+
+  - **A.** Angina
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Angina
+  >
+  > *Source:* Presentation | Typical Features |
+|-------------|------------------|
+| **Angina** | Exertional chest pain; may be atypical/silent in diabetes |
+| **MI** | May be silent (autonomic neuropathy); troponi
+---
+
+> Auto-generated study sections for "Atherosclerotic cardiovascular disease (ASCVD)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Historical concept: "Diabetes = CHD risk equivalent" (Haffner 1998, NCEP ATP III) — 10-year CVD risk in diabetes ≈ prior MI.
+- Q: What is Haffner 1998 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: T2DM no prior MI = 20.2% 7-yr MI risk ≈ non-DM with prior MI (18.8%)
+- Q: What is Historical label of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: "Diabetes = CHD risk equivalent" (NCEP ATP III)
+- Q: What is Current view of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Risk continuum — not all diabetes equal; use calculators + enhancers
+- Q: What is NICE approach of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: QRISK3 includes diabetes type + duration; no binary equivalent
+- Q: What is T1DM high-risk criteria of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Age >40 OR duration >10y OR microvascular complications
+- Q: What is T2DM high-risk of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Age >40 (ADA high-intensity statin); QRISK3 ≥10% (NICE)
+- Q: What is ESC very high risk of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Diabetes + CVD / target organ damage / >20y duration → LDL <1.4
+- Q: What is Statin intensity of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Match to risk tier, not diabetes label alone
+- Q: What is Aspirin of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: No longer primary prevention for all — selective only
+- Q: What is SGLT2i/GLP-1 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Now foundational for T2DM + CVD/CKD/HF — independent of glucose
+- Q: What is Haffner 1998 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: T2DM no prior MI = 20.2% 7-yr MI risk ≈ non-DM with prior MI (18.8%)
+- Q: What is Historical label of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: "Diabetes = CHD risk equivalent" (NCEP ATP III)
+- Q: What is Current view of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Risk continuum — not all diabetes equal; use calculators + enhancers
+- Q: What is NICE approach of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: QRISK3 includes diabetes type + duration; no binary equivalent
+- Q: What is T1DM high-risk criteria of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Age >40 OR duration >10y OR microvascular complications
+- Q: What is T2DM high-risk of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Age >40 (ADA high-intensity statin); QRISK3 ≥10% (NICE)
+- Q: What is ESC very high risk of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Diabetes + CVD / target organ damage / >20y duration → LDL <1.4
+- Q: What is Statin intensity of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Match to risk tier, not diabetes label alone
+- Q: What is Aspirin of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: No longer primary prevention for all — selective only
+- Q: What is SGLT2i/GLP-1 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Now foundational for T2DM + CVD/CKD/HF — independent of glucose
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Atherosclerotic cardiovascular disease (ASCVD)?**
+   A. **Historical concept: "Diabetes = CHD risk equivalent" (Haffner 1998, NCEP ATP III) — 10-year CVD risk in diabetes ≈ prior MI.**
+   B. An unrelated condition not matching the clinical picture of Atherosclerotic cardiovascular disease (ASCVD)
+   C. A complication seen late in the disease course of Atherosclerotic cardiovascular disease (ASCVD)
+   D. A condition that mimics Atherosclerotic cardiovascular disease (ASCVD) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Atherosclerotic cardiovascular disease (ASCVD) presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — diabetes-as-cardiovascular-risk-equivalent; Q1. Which of the following features is most specific or characteristic of diabetes-as-cardiovascular-risk-equivalent?; B. A feature common to many acute inflammatory conditions. What is the most likely diagnosis?
+   A. **Atherosclerotic cardiovascular disease (ASCVD)**
+   B. A condition that mimics Atherosclerotic cardiovascular disease (ASCVD) but is not the same entity
+   C. A complication of Atherosclerotic cardiovascular disease (ASCVD) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Atherosclerotic cardiovascular disease (ASCVD)
+

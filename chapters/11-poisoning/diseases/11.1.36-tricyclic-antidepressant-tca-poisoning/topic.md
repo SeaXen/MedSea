@@ -543,3 +543,19 @@ TCA poisoning = Na channel blockade + anticholinergic + α₁ blockade. Triad: Q
 8. **B** - QRS < 100 ms = no cardiotoxicity. Anticholinergic features alone → supportive. NaHCO₃ only if QRS > 100 ms (or arrhythmia/hypotension). Physostigmine contraindicated if any QRS widening.
 9. **C** - Lidocaine (Class Ib) is acceptable for VT/VF. ALL others are contraindicated: flumazenil (unmasks seizures), phenytoin (worsens Na block), procainamide (Class Ia, additive Na block).
 10. **C** - Continuous ECG until QRS < 100 ms stable for 24 hours. Late recurrence of cardiotoxicity is rare (unlike organophosphate IMS) but 24h observation standard.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Tricyclic Antidepressant (TCA) Poisoning*
+
+**Q1.** What is the most appropriate first-line therapy for Tricyclic Antidepressant (TCA) Poisoning?
+
+  - **A.** Lidocaine + acceptable
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Lidocaine + acceptable
+  >
+  > *Source:* **Lidocaine** (Class Ib) — **acceptable** (shorter binding, use-dependent)
+

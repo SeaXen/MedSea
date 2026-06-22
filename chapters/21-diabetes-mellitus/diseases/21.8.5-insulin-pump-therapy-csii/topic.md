@@ -242,3 +242,67 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Insulin pump therapy (CSII)*
+
+**Q1.** What is the most appropriate first-line therapy for Insulin pump therapy (CSII)?
+
+  - **A.** Occlusion alarm
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Occlusion alarm
+  >
+  > *Source:* **Occlusion alarm**   Change set + reservoir + insulin; check for DKA if >4h
+---
+
+> Auto-generated study sections for "Diabetes Technology and Digital Health" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Diabetes Technology and Digital Health?
+  A: By the end of this note you should be able to:
+- Q: What is CSII of Diabetes Technology and Digital Health?
+  A: Continuous subcutaneous insulin infusion - rapid analogue only
+- Q: What is Usage of Diabetes Technology and Digital Health?
+  A: ~30-40% T1DM in UK; increasing with AID
+- Q: What is Diabetes Technology and Digital Health indicated for?
+  A: HbA1c>58 on MDI, severe hypo, Dawn phenomenon, pregnancy, lifestyle
+- Q: What is Basal rates of Diabetes Technology and Digital Health?
+  A: 24h profile from MDI basal (e.g., 0.5-1.5 U/h); Dawn: +20-30% 3-5am
+- Q: What is ICR (Insulin:Carb Ratio) of Diabetes Technology and Digital Health?
+  A: 500/TDD = g carb per 1U (e.g., TDD 50 → 10g/U)
+- Q: What is ISF (Insulin Sensitivity Factor) of Diabetes Technology and Digital Health?
+  A: 100/TDD = mmol/L drop per 1U (e.g., TDD 50 → 2 mmol/L/U)
+- Q: What is Target BG of Diabetes Technology and Digital Health?
+  A: 5.5-6.5 mmol/L (individualised)
+- Q: What is Active insulin time of Diabetes Technology and Digital Health?
+  A: 3-5 hours (prevents stacking)
+- Q: What is Basal rates of Diabetes Technology and Digital Health?
+  A: 24h profile from MDI basal (e.g., 0.5-1.5 U/h); Dawn: +20-30% 3-5am
+- Q: What is ICR (Insulin:Carb Ratio) of Diabetes Technology and Digital Health?
+  A: 500/TDD = g carb per 1U (e.g., TDD 50 → 10g/U)
+- Q: What is ISF (Insulin Sensitivity Factor) of Diabetes Technology and Digital Health?
+  A: 100/TDD = mmol/L drop per 1U (e.g., TDD 50 → 2 mmol/L/U)
+- Q: What is Target BG of Diabetes Technology and Digital Health?
+  A: 5.5-6.5 mmol/L (individualised)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes Technology and Digital Health?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes Technology and Digital Health
+   C. A complication seen late in the disease course of Diabetes Technology and Digital Health
+   D. A condition that mimics Diabetes Technology and Digital Health but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes Technology and Digital Health presents with: CSII — Continuous subcutaneous insulin infusion - rapid analogue only; Usage — ~30-40% T1DM in UK; increasing with AID; Indications (NICE) — HbA1c>58 on MDI, severe hypo, Dawn phenomenon, pregnancy, lifestyle. What is the most likely diagnosis?
+   A. **Diabetes Technology and Digital Health**
+   B. A condition that mimics Diabetes Technology and Digital Health but is not the same entity
+   C. A complication of Diabetes Technology and Digital Health rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes Technology and Digital Health
+

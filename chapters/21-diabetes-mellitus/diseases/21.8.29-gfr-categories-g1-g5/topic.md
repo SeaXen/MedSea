@@ -113,3 +113,40 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetic kidney disease staging (KDIGO)]], [[Albuminuria categories (A1/A2/A3)]], [[Diabetic nephropathy]], [[DKD management]]
+---
+
+> Auto-generated study sections for "Diabetic nephropathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Diabetic nephropathy?
+  A: KDIGO GFR categories (G1–G5) based on CKD-EPI 2021 creatinine equation (race-free); requires chronicity >3 months; determines drug dosing, monitoring, referral.
+- Q: What is GFR categories of Diabetic nephropathy?
+  A: G1 ≥90, G2 60–89, G3a 45–59, G3b 30–44, G4 15–29, G5 <15
+- Q: What is CKD-EPI 2021 of Diabetic nephropathy?
+  A: Race-free; preferred over MDRD
+- Q: What is Chronicity of Diabetic nephropathy?
+  A: eGFR <60 on ≥2 occasions ≥90 days apart
+- Q: What is Metformin cutoff of Diabetic nephropathy?
+  A: G3a: max 1g BD; G3b (<45): contraindicated (NICE)
+- Q: What is SGLT2i in CKD of Diabetic nephropathy?
+  A: Dapagliflozin/Empagliflozin ≥20; Canagliflozin ≥45
+- Q: What is Linagliptin of Diabetic nephropathy?
+  A: No dose adjustment at any eGFR
+- Q: What is Finerenone of Diabetic nephropathy?
+  A: eGFR ≥25 + A2/A3
+- Q: How is Diabetic nephropathy monitored?
+  A: K+/Cr at 1–2w after start/change, then 6m
+- Q: What is Nephrology referral of Diabetic nephropathy?
+  A: eGFR <30 (G4) or ACR >70 or rapid decline
+- Q: What is Cystatin C of Diabetic nephropathy?
+  A: Use if creatinine unreliable (low muscle mass, amputees)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic nephropathy?**
+   A. **KDIGO GFR categories (G1–G5) based on CKD-EPI 2021 creatinine equation (race-free); requires chronicity >3 months; determines drug dosing, monitoring, referral.**
+   B. An unrelated condition not matching the clinical picture of Diabetic nephropathy
+   C. A complication seen late in the disease course of Diabetic nephropathy
+   D. A condition that mimics Diabetic nephropathy but has a different underlying cause
+

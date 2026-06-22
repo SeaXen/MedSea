@@ -380,3 +380,20 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Immune Haemolytic Anaemia (AIHA)*
+
+**Q1.** What is the most appropriate first-line therapy for Immune Haemolytic Anaemia (AIHA)?
+
+  - **A.** Refractory + Immunosuppressants + Avoid IVIG as monotherapy
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Refractory + Immunosuppressants + Avoid IVIG as monotherapy
+  >
+  > *Source:* **Refractory**   **Immunosuppressants**: Azathioprine, MMF, Cyclophosphamide, Cyclosporine, Tacrolimus, Bortezomib, Daratumumab, Fostamatinib (Syk inhibitor)   Case-by-case   Variable  
+
+> [!warning] 
+

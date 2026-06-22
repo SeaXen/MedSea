@@ -335,3 +335,33 @@ A: IA nimodipine, balloon angioplasty
 - [[Hydrocephalus after SAH]]
 - [[Other complications of SAH]]
 - [[../Stroke Medicine MOC|Stroke Medicine MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Delayed cerebral ischaemia and vasospasm*
+
+**Q1.** Which of the following features is most specific or characteristic of Delayed cerebral ischaemia and vasospasm?
+
+  - **A.** Delayed cerebral ischaemia and vasospasm
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Delayed cerebral ischaemia and vasospasm
+  >
+  > *Source:* - **Delayed cerebral ischaemia and vasospasm** — see key points above
+- **'ACoA → bitemporal hemianopia'** — Anterior communicating artery aneurysm compresses the optic chiasm from above
+- **'PCoA → p
+
+**Q2.** What is the most appropriate first-line therapy for Delayed cerebral ischaemia and vasospasm?
+
+  - **A.** Euvolaemia + induced hypertension
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Euvolaemia + induced hypertension
+  >
+  > *Source:* **Euvolaemia + induced hypertension** — IV crystalloid; target SBP 160–200 mmHg with noradrenaline/phenylephrine (only after aneurysm is secured).
+2.
+

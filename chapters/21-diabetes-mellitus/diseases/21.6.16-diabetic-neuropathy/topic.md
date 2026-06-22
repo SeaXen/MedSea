@@ -284,3 +284,85 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Diabetic neuropathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Diabetic neuropathy?
+
+  - **A.** 10g monofilament
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — 10g monofilament
+  >
+  > *Source:* iting 6–18mo |
+
+---
+| Investigation | Role | Key Details |
+|---------------|------|-------------|
+| **10g monofilament** | Screening (LOPS) | Apply to 6 sites/foot (hallux, 1st/3rd/5th met heads, medi
+
+**Q2.** What is the most appropriate first-line therapy for Diabetic neuropathy?
+
+  - **A.** Neurogenic bladder
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Neurogenic bladder
+  >
+  > *Source:* **Neurogenic bladder**   Timed voiding, CIC, anticholinergics (oxybutynin), botulinum toxin, sacral neuromodulation  
+
+### Glycaemic Control for Prevention
+---
+
+> Auto-generated study sections for "Microvascular Complications" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Microvascular Complications?
+  A: Nerve damage from chronic hyperglycaemia: metabolic (polyol pathway, AGEs, PKC), vascular (endoneurial ischaemia), oxidative stress
+- Q: What is the epidemiology of Microvascular Complications?
+  A: DSPN: ~50% T2DM, ~20% T1DM at 20y; Autonomic: ~20–40%; Painful DSPN: 10–20% of DSPN
+- Q: What causes Microvascular Complications?
+  A: HbA1c, duration, age, hypertension, dyslipidaemia, smoking, alcohol, height, HLA-DR3/4
+- Q: What is the pathogenesis of Microvascular Complications?
+  A: Polyol pathway (sorbitol accumulation) → osmotic swelling; AGEs → protein cross-linking; PKC-β → vascular dysfunction; oxidative stress → mitochondrial dysfunction
+- Q: What is DSPN of Microvascular Complications?
+  A: Stocking-glove sensory loss, absent ankle reflexes; painful 10–20% (burning, nocturnal)
+- Q: What is Screening of Microvascular Complications?
+  A: Annual: 10g monofilament (6 sites/foot) + 128Hz tuning fork + ANNS; LOPS = cannot feel monofilament
+- Q: What is Autonomic CV of Microvascular Complications?
+  A: Orthostatic hypotension (↓SBP≥20), resting tachycardia, silent MI, HRV ↓
+- Q: What is Autonomic GI of Microvascular Complications?
+  A: Gastroparesis: nausea, vomiting, early satiety, erratic glucose; gastric emptying T½ >120min
+- Q: What is Autonomic GU of Microvascular Complications?
+  A: ED (50% men), retrograde ejaculation, neurogenic bladder
+- Q: What is Mononeuropathies of Microvascular Complications?
+  A: Cranial III (ptosis, diplopia, pupil sparing), median (CTS), peroneal (foot drop); self-limiting 6–12wk
+- Q: How is Microvascular Complications managed?
+  A: 1st line: Duloxetine, Pregabalin, Gabapentin, Amitriptyline; renal adjust pregabalin/gabapentin
+- Q: What is Glycaemic control of Microvascular Complications?
+  A: DCCT/UKPDS: intensive control ↓DSPN 60% (T1DM), ↓microvascular (T2DM)
+- Q: What is Non-diabetic mimics of Microvascular Complications?
+  A: B12 deficiency, alcohol, CIDP, vasculitis, amyloid — exclude if atypical
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Microvascular Complications?**
+   A. **Diabetic neuropathy: most common diabetic complication — DSPN (distal symmetric polyneuropathy, 50% T2DM); Autonomic (CV: orthostatic hypotension, silent MI; GI: gastroparesis; GU: ED, bladder); Monon**
+   B. An unrelated condition not matching the clinical picture of Microvascular Complications
+   C. A complication seen late in the disease course of Microvascular Complications
+   D. A condition that mimics Microvascular Complications but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Microvascular Complications presents with: Prevalence — DSPN: ~50% T2DM, ~20% T1DM at 20y; Autonomic: ~20–40%; Painful DSPN: 10–20% of DSPN; Risk Factors — HbA1c, duration, age, hypertension, dyslipidaemia, smoking, alcohol, height, HLA-DR3/4; Pathophysiology — Polyol pathway (sorbitol accumulation) → osmotic swelling; AGEs → protein cross-linking; PKC-β → vascular dysfunction; oxidative stress → mitochondrial dysfunction. What is the most likely diagnosis?
+   A. **Microvascular Complications**
+   B. A condition that mimics Microvascular Complications but is not the same entity
+   C. A complication of Microvascular Complications rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Microvascular Complications
+

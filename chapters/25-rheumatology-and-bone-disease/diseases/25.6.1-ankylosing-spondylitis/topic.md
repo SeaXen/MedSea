@@ -494,3 +494,35 @@ mindmap
    C. A complication of Inflammatory Arthritis rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Inflammatory Arthritis
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Ankylosing spondylitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Ankylosing spondylitis?
+
+  - **A.** Recurrent, alternating eyes
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Recurrent, alternating eyes
+  >
+  > *Source:* tis (JIA)
+> - **Urgent ophthalmology** — topical steroids + cycloplegics; systemic if recurrent
+> - **Recurrent, alternating eyes** — hallmark
+
+### Enthesitis Sites
+| Site | Clinical Relevance |
+|----
+
+**Q2.** What is the most appropriate first-line therapy for Ankylosing spondylitis?
+
+  - **A.** Switch to + Avoid in IBD
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Switch to + Avoid in IBD
+  >
+  > *Source:* Anti-TNF Failure**   Switch to **Anti-IL-17** (secukinumab 150mg SC monthly, ixekizumab 80mg SC q4wk, bimekizumab 160mg SC q4wk)   **Avoid in IBD** (can flare Crohn's); Candida risk
+

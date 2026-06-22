@@ -591,3 +591,46 @@ flowchart TD
 10. **B** — Raised ICP: head up 30°, normocapnia (PaCO₂ 4.5–5 kPa), mannitol 0.5–1g/kg or hypertonic saline. Avoid aggressive hyperventilation (↓ cerebral perfusion).
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Acute Bacterial Meningitis*
+
+**Q1.** Which of the following is characterised by the clinical triad: fever, neck stiffness, altered mental status?
+
+  - **A.** Acute Bacterial Meningitis
+  - **B.** Encephalitis
+  - **C.** Brain abscess
+  - **D.** Subarachnoid haemorrhage
+
+  > **Answer: A** — Acute Bacterial Meningitis
+  >
+  > *Source:* # Learning Objectives
+- Recognise classic triad (fever, neck stiffness, altered mental status) — only in 44–66%
+- Perform LP safely: contraindications, CSF interpretation (opening pressure, cells, pro
+
+**Q2.** Which of the following features is most specific or characteristic of Acute Bacterial Meningitis?
+
+  - **A.** Petechial / purpuric rash
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Petechial / purpuric rash
+  >
+  > *Source:* *Brudzinski's sign** | Neck flexion → involuntary hip/knee flexion |
+| **Photophobia** | Common |
+| **Petechial / purpuric rash** | **Meningococcal sepsis** (specific, NOT in pneumococcal) |
+| **Focal
+
+**Q3.** What is the most appropriate first-line therapy for Acute Bacterial Meningitis?
+
+  - **A.** Ceftriaxone + Add Amoxicillin for Listeria
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Ceftriaxone + Add Amoxicillin for Listeria
+  >
+  > *Source:* **Adults >50y / Immunocompromised / Alcoholics / Pregnancy (Listeria risk)**   **Ceftriaxone 2g 12h + Vancomycin 15–20mg/kg 6h + Amoxicillin 2g IV 4h**   **Add Amoxicillin for Listeria** (cephalospori
+

@@ -473,3 +473,31 @@ Macular hole is full-thickness foveal defect, causing central scotoma and metamo
 
 ## Tags
 #medicine #davidson #ophthalmology #macular-hole #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Macular Hole*
+
+**Q1.** Which of the following features is most specific or characteristic of Macular Hole?
+
+  - **A.** "OCT Shows the Hole"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "OCT Shows the Hole"
+  >
+  > *Source:* **"OCT Shows the Hole"** — OCT is the diagnostic gold standard
+4
+
+**Q2.** What is the most appropriate first-line therapy for Macular Hole?
+
+  - **A.** Ocriplasmin
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Ocriplasmin
+  >
+  > *Source:* **Ocriplasmin (Jetrea)** — enzymatic vitreolysis, for small holes with VMT (limited use)
+

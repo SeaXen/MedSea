@@ -55,3 +55,26 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #topic-group-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Diabetic Emergencies" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (4 generated)
+
+- Q: What is the definition of Diabetic Emergencies?
+  A: Topic-Group hub for Severe hypoglycaemia — covers 3 disease-level topic(s) per Davidson Ch25.
+- Q: How is Diabetic Emergencies classified?
+  A: Level 1: <3.9 mmol/L (alert) · Level 2: <3.0 mmol/L (clinically significant) · Level 3: severe (requires assistance)
+- Q: What is Glucagon of Diabetic Emergencies?
+  A: 1mg IM/SC adult · 0.5mg <25kg child · Nasal 3mg (Baqsimi) · Auto-injector (Gvoke) · IV dextrose 10-20% if IV access
+- Q: What is Hospital hypoglycaemia of Diabetic Emergencies?
+  A: Common (insulin errors, NPO without dose adjustment, renal failure) · Insulin passports · Dose review protocols · CGM in hospital
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic Emergencies?**
+   A. **Topic-Group hub for Severe hypoglycaemia — covers 3 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetic Emergencies
+   C. A complication seen late in the disease course of Diabetic Emergencies
+   D. A condition that mimics Diabetic Emergencies but has a different underlying cause
+

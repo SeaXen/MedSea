@@ -369,3 +369,21 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — G-CSF & Growth Factors*
+
+**Q1.** Which of the following features is most specific or characteristic of G-CSF & Growth Factors?
+
+  - **A.** G-CSF vs GM-CSF
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — G-CSF vs GM-CSF
+  >
+  > *Source:* Confusion | Clarification |
+|-----------|---------------|
+| **G-CSF vs GM-CSF** | **G-CSF = Neutrophil Specific**; **GM-CSF = Multi-lineage (More Side Effects)** |
+| **Filgrastim vs Pegfilgrastim** | 
+

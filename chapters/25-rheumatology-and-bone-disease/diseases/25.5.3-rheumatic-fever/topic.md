@@ -507,3 +507,34 @@ mindmap
    C. A complication of Infectious Arthritis and Bone Infections rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Infectious Arthritis and Bone Infections
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Rheumatic fever*
+
+**Q1.** Which of the following features is most specific or characteristic of Rheumatic fever?
+
+  - **A.** ASO Titre
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ASO Titre
+  >
+  > *Source:* se RF if other causes excluded
+
+---
+| Test | Role | Key Findings |
+|------|------|--------------|
+| **ASO Titre** | **Classic** — peaks **3-6 weeks** post-infection; **rising titre diagnostic** | Sing
+
+**Q2.** What is the most appropriate first-line therapy for Rheumatic fever?
+
+  - **A.** Severe Carditis/CHF
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Severe Carditis/CHF
+  >
+  > *Source:* C --> C2[**Severe Carditis/CHF**: Prednisolone 1-2mg/kg/day\nTaper over 2-6 weeks; Diuretics, ACEi for CHF]
+

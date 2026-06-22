@@ -452,3 +452,33 @@ flowchart TD
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]
 **Chapter MOC:** [[Neurology MOC]]
 **Related Topics:** [[Myasthenia Gravis]], [[Paraneoplastic Cerebellar Degeneration]], [[Cancer Screening in PNS]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Lambert-Eaton Myasthenic Syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of Lambert-Eaton Myasthenic Syndrome?
+
+  - **A.** Anti-SOX1
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Anti-SOX1
+  >
+  > *Source:* ----|
+| **Anti-P/Q VGCC** | All suspected LEMS | Positive in 90% paraneoplastic, 50% idiopathic |
+| **Anti-SOX1** | All LEMS | Highly specific for SCLC-LEMS |
+| **AChR antibody** | Exclude MG | Negati
+
+**Q2.** What is the most appropriate first-line therapy for Lambert-Eaton Myasthenic Syndrome?
+
+  - **A.** SCLC:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — SCLC:
+  >
+  > *Source:* **SCLC:** Treat per oncological protocol; tumour treatment often improves LEMS
+

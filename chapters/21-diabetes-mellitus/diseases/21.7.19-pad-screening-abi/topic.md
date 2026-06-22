@@ -156,3 +156,20 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Critical limb ischaemia]], [[Diabetic foot disease/Foot risk classification]], [[Distal symmetric polyneuropathy (DSPN)]], [[Diabetes in CKD and dialysis]]
+---
+
+> Auto-generated study sections for "Peripheral arterial disease (PAD)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Peripheral arterial disease (PAD)?
+  A: ABI = Ankle-Brachial Index = highest ankle SBP / highest brachial SBP; screen diabetics ≥50y (or <50y with risk factors); diabetes calcifies vessels → ABI >1.3 = non-compressible (use TBI); <0.9 = PAD; <0.4 (0.5 in DM) = CLI.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Peripheral arterial disease (PAD)?**
+   A. **ABI = Ankle-Brachial Index = highest ankle SBP / highest brachial SBP; screen diabetics ≥50y (or <50y with risk factors); diabetes calcifies vessels → ABI >1.3 = non-compressible (use TBI); <0.9 = PAD**
+   B. An unrelated condition not matching the clinical picture of Peripheral arterial disease (PAD)
+   C. A complication seen late in the disease course of Peripheral arterial disease (PAD)
+   D. A condition that mimics Peripheral arterial disease (PAD) but has a different underlying cause
+

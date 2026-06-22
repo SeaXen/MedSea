@@ -605,3 +605,24 @@ flowchart TD
 10. **C** — CXR clearance not a criterion for IV→oral switch in SSTI (CXR irrelevant). Clinical stability criteria apply.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Skin and Soft Tissue Infections (SSTI)*
+
+**Q1.** Which of the following features is most specific or characteristic of Skin and Soft Tissue Infections (SSTI)?
+
+  - **A.** Pain out of proportion to exam
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Pain out of proportion to exam
+  >
+  > *Source:* Fasciitis — SURGICAL EMERGENCY
+| Clinical Clue | Significance |
+|---------------|--------------|
+| **Pain out of proportion to exam** | Early hallmark |
+| **Rapid progression** (hours) | |
+| **Skin ch
+

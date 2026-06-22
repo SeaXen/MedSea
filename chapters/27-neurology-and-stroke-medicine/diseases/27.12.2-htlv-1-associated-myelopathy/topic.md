@@ -460,4 +460,20 @@ mindmap
 **Heading Hub:** [[../Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[../00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — HTLV-1 Associated Myelopathy*
+
+**Q1.** Which of the following features is most specific or characteristic of HTLV-1 Associated Myelopathy?
+
+  - **A.** HAM/TSP Differential "MP3-MS"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — HAM/TSP Differential "MP3-MS"
+  >
+  > *Source:* **HAM/TSP Differential "MP3-MS"** — **M**ultiple Sclerosis (usually asymmetric, brain lesions, OCB); **P**araparesis from compression/tumour (MRI diagnostic); **P**araneoplastic (anti-CRMP5, anti-amph
+

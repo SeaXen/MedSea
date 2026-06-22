@@ -257,3 +257,19 @@ Related: [[ICU Admission Criteria]], [[Critical Care Monitoring]], [[ABCDE Appro
 ---
 
 **Status**: Full FCPS/MRCP topic note completed — 2026-06-13
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 10: Acute Medicine — End-of-Life Decisions in Acute Medicine*
+
+**Q1.** Which of the following features is most specific or characteristic of End-of-Life Decisions in Acute Medicine?
+
+  - **A.** MCQ 2
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MCQ 2
+  >
+  > *Source:* **MCQ 2**: B — Capacity is decision-specific
+

@@ -85,3 +85,69 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #heading-hub #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Type 2 diabetes mellitus*
+
+**Q1.** Which of the following features is most specific or characteristic of Type 2 diabetes mellitus?
+
+  - **A.** Central obesity
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Central obesity
+  >
+  > *Source:* # IDF (Central obesity MANDATORY + ≥2 others)
+| Component | Threshold |
+|-----------|-----------|
+| **Central obesity** | **Mandatory**: M ≥94cm, F ≥80cm (ethnic-specific) |
+| **Plus ≥2 of**: TG, HDL,
+---
+
+> Auto-generated study sections for "Diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Diabetes?
+  A: Heading hub for Type 2 Diabetes Mellitus — covers 25 disease-level topic(s) per Davidson Ch25.
+- Q: What is Screening of Diabetes?
+  A: ADA: age ≥35 or BMI ≥25 + risk factor · NICE: risk assessment + HbA1c/FPG · USPSTF: 35-70 BMI ≥25
+- Q: What is Metformin of Diabetes?
+  A: 1st line · Start 500mg OD → 2g/day · Contraindicated eGFR <30 · B12 monitoring · Lactic acidosis rare
+- Q: What is Sulfonylureas of Diabetes?
+  A: ↑Insulin secretion · Hypoglycaemia (esp. elderly, CKD) · Weight gain · 2nd/3rd line
+- Q: What is DPP-4i of Diabetes?
+  A: Weight neutral · Low hypoglycaemia · Linagliptin no renal dose adjust · Neutral CV
+- Q: What is SGLT2i of Diabetes?
+  A: ↓Glucose reabsorption · CV/renal benefit · Genital mycotic infection · Euglycaemic DKA risk · eGFR thresholds
+- Q: What is TZDs of Diabetes?
+  A: Pioglitazone · ↑Insulin sensitivity · Fluid retention, HF, fracture, bladder cancer · 2nd/3rd line
+- Q: What is GLP-1 RA of Diabetes?
+  A: Semaglutide, liraglutide, dulaglutide · CV benefit · Weight loss · Nausea, pancreatitis risk
+- Q: What is Tirzepatide of Diabetes?
+  A: Dual GIP/GLP-1 · Superior HbA1c/weight vs semaglutide · SURPASS/SURMOUNT trials
+- Q: What is ADA/EASD 2023 of Diabetes?
+  A: ASCVD/HF/CKD → SGLT2i/GLP-1 RA 1st line · Obesity → GLP-1 RA/tirzepatide · Cost/access considered
+- Q: What is NICE NG28 of Diabetes?
+  A: Metformin → dual → triple → insulin · SGLT2i if ASCVD/HF/CKD · GLP-1 RA if BMI ≥35
+- Q: What is Bariatric surgery of Diabetes?
+  A: BMI ≥35 (or ≥30 with comorbidities) · Remission rates 60-80% (RYGB/SG)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes?**
+   A. **Heading hub for Type 2 Diabetes Mellitus — covers 25 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetes
+   C. A complication seen late in the disease course of Diabetes
+   D. A condition that mimics Diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes presents with: Q1. Which of the following features is most specific or characteristic of Type 2 diabetes mellitus?; B. A feature common to many acute inflammatory conditions; C. A non-specific sign that does not localise the diagnosis. What is the most likely diagnosis?
+   A. **Diabetes**
+   B. A condition that mimics Diabetes but is not the same entity
+   C. A complication of Diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes
+

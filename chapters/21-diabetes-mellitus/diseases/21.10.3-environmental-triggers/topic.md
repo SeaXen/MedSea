@@ -201,3 +201,57 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Environmental triggers*
+
+**Q1.** What is the most appropriate first-line therapy for Environmental triggers?
+
+  - **A.** Hydrolysed formula
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Hydrolysed formula
+  >
+  > *Source:* **Hydrolysed formula**   TRIGR: no reduction in T1DM autoantibodies
+---
+
+> Auto-generated study sections for "Type 1 diabetes pathogenesis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (8 generated)
+
+- Q: What is the definition of Type 1 diabetes pathogenesis?
+  A: By the end of this note you should be able to:
+- Q: What is Trigger Hypothesis of Type 1 diabetes pathogenesis?
+  A: Environmental factors initiate autoimmunity in genetically susceptible
+- Q: What is Evidence of Type 1 diabetes pathogenesis?
+  A: Migrant studies (risk follows destination); seasonal variation; twin discordance
+- Q: What is Viral triggers of Type 1 diabetes pathogenesis?
+  A: Enterovirus (Coxsackie B) strongest; molecular mimicry; seasonal peaks
+- Q: What is Dietary of Type 1 diabetes pathogenesis?
+  A: Cow's milk (BSA) controversial; TRIGR negative; gluten timing unclear
+- Q: What is Vitamin D of Type 1 diabetes pathogenesis?
+  A: Latitude gradient; low 25(OH)D association; supplementation not proven preventive
+- Q: What is Microbiome of Type 1 diabetes pathogenesis?
+  A: Dysbiosis, low diversity; antibiotic use risk factor
+- Q: What is Hygiene hypothesis of Type 1 diabetes pathogenesis?
+  A: Reduced early infections -> increased autoimmunity
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 1 diabetes pathogenesis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 1 diabetes pathogenesis
+   C. A complication seen late in the disease course of Type 1 diabetes pathogenesis
+   D. A condition that mimics Type 1 diabetes pathogenesis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 1 diabetes pathogenesis presents with: Trigger Hypothesis — Environmental factors initiate autoimmunity in genetically susceptible; Evidence — Migrant studies (risk follows destination); seasonal variation; twin discordance. What is the most likely diagnosis?
+   A. **Type 1 diabetes pathogenesis**
+   B. A condition that mimics Type 1 diabetes pathogenesis but is not the same entity
+   C. A complication of Type 1 diabetes pathogenesis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 1 diabetes pathogenesis
+

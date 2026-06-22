@@ -567,3 +567,49 @@ mindmap
    C. A complication of Crystal Arthropathies rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Crystal Arthropathies
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Gout*
+
+**Q1.** Which of the following features is most specific or characteristic of Gout?
+
+  - **A.** Diagnostic support
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Diagnostic support
+  >
+  > *Source:* out = Yellow Needles" (Negative)**; **"Pseudogout = Blue Rhomboids" (Positive)**
+
+### Serum Urate
+- **Diagnostic support** (not diagnostic alone)
+- **Target for ULT**: **<300 µmol/L (5 mg/dL)**; **<36
+
+**Q2.** Which landmark clinical trial provided evidence relevant to the management of Gout (specifically: CVD |
+| **Probenecid** | 500mg BD → ↑ 1g BD (max 2g BD) | Urate, renal function, urine pH | **Uricosuric** — needs GFR >)?
+
+  - **A.** CARES trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — CARES trial
+  >
+  > *Source:* daily → ↑ 80mg if urate not <300 µmol/L | Urate, LFT, CV monitoring | **Non-purine** (OK in CKD); **CARES trial**: ↑ CV death vs allopurinol — **2nd line**; avoid in established CVD |
+| **Probenecid**
+
+**Q3.** What is the most appropriate first-line therapy for Gout?
+
+  - **A.** Treat Early
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat Early
+  >
+  > *Source:* ### Acute Flare — **Treat Early (within 24h)**
+
+```mermaid
+flowchart TD
+

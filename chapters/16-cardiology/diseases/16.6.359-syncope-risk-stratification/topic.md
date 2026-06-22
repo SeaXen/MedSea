@@ -448,3 +448,21 @@ E --> E5[Cardiac MRI if ARVC/HCM/infiltrative suspected]
 - **45+/50** = strong exam-ready topic
 
 ## Exam Answer Modes
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Syncope risk stratification*
+
+**Q1.** What is the most appropriate first-line therapy for Syncope risk stratification?
+
+  - **A.** Discharging cardiac syncope + Over-admitting reflex syncope + Missing OH
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Discharging cardiac syncope + Over-admitting reflex syncope + Missing OH
+  >
+  > *Source:* - **Discharging cardiac syncope** → SCD, recurrent syncope with injury, stroke (if AF missed)
+- **Over-admitting reflex syncope** → resource waste, nosocomial risk, delay in reflex-specific Rx
+- **Mis
+

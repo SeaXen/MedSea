@@ -456,3 +456,33 @@ mindmap
 **Complications**: Ureteric strictures, bladder fibrosis/contracture, non-functioning kidney → **nephrectomy if <10% function + symptomatic**.  
 **HIV**: Atypical disseminated; **rifabutin for ART interactions**; IRIS risk on starting ART.  
 **Exam focus**: Sterile pyuria, 9-month regimen, putty kidney, ethambutol vision monitoring, HIV ART interactions, nephrectomy criteria.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — Renal Tuberculosis*
+
+**Q1.** Which of the following features is most specific or characteristic of Renal Tuberculosis?
+
+  - **A.** Sterile pyuria
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Sterile pyuria
+  >
+  > *Source:* Symptom/Sign | Frequency | Notes |
+|--------------|-----------|-------|
+| **Sterile pyuria** | **90–95%** | **Hallmark** — WBC in urine, no growth on routine culture |
+| **Flank pain** | 50–70% | Dull
+
+**Q2.** What is the most appropriate first-line therapy for Renal Tuberculosis?
+
+  - **A.** Intensive + HRZE + 2 months
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Intensive + HRZE + 2 months
+  >
+  > *Source:* **Intensive**   **HRZE** (Isoniazid, Rifampicin, Pyrazinamide, Ethambutol)   **2 months**   Pyridoxine 10–25mg/day with INH
+

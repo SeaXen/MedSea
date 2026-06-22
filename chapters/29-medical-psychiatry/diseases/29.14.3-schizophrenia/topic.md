@@ -278,3 +278,17 @@ A: ↑ Dopamine in mesolimbic pathway (positive); ↓ in mesocortical (negative)
 
 - [[../Psychotic Disorders|Psychotic Disorders]] (heading hub)
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 29: Medical Psychiatry / Schizophrenia**
+
+**Q1.** Which of the following best describes the underlying pathophysiology / definition of Schizophrenia?
+
+  - **A.** Schizophrenia is a chronic psychiatric disorder characterised by positive symptoms (hallucinations, delusions, disorganised speech), negative symptoms (avolition, alogia, flat affe
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — Schizophrenia is a chronic psychiatric disorder characterised by positive symptoms (hallucinations, delusions, disorganised speech), negative symptoms
+

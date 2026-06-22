@@ -135,3 +135,44 @@ By the end of this note you should be able to:
 - **N**on-invasive: CGM trend
 - **C**alibration: some CGM need SMBG
 - **Y**es: structured = pattern management**</think>
+---
+
+> Auto-generated study sections for "Glycaemic targets" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Glycaemic targets?
+  A: Capillary blood glucose testing by patient
+- Q: What is Standard of Glycaemic targets?
+  A: Fingerstick glucose meter; ISO 15197 accuracy (±15% >100 mg/dL)
+- Q: What is SMBG of Glycaemic targets?
+  A: Daily decision-making; dose adjustment
+- Q: What is CGM of Glycaemic targets?
+  A: Pattern recognition; nocturnal hypo detection
+- Q: What is HbA1c of Glycaemic targets?
+  A: 3-month average; long-term control
+- Q: What is SMBG of Glycaemic targets?
+  A: Daily decision-making; dose adjustment
+- Q: What is CGM of Glycaemic targets?
+  A: Pattern recognition; nocturnal hypo detection
+- Q: What is HbA1c of Glycaemic targets?
+  A: 3-month average; long-term control
+- Q: What is CGM vs SMBG of Glycaemic targets?
+  A: CGM reduces SMBG need; SMBG for calibration/confirmation
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Glycaemic targets?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Glycaemic targets
+   C. A complication seen late in the disease course of Glycaemic targets
+   D. A condition that mimics Glycaemic targets but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Glycaemic targets presents with: Definition — Capillary blood glucose testing by patient; Standard — Fingerstick glucose meter; ISO 15197 accuracy (±15% >100 mg/dL); CGM alternative — rtCGM/isCGM; reduces SMBG need. What is the most likely diagnosis?
+   A. **Glycaemic targets**
+   B. A condition that mimics Glycaemic targets but is not the same entity
+   C. A complication of Glycaemic targets rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Glycaemic targets
+

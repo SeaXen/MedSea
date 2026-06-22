@@ -469,3 +469,30 @@ STEMI is a **time-critical occlusive coronary thrombosis** requiring **immediate
 10. **D** — DAPT 12 months post-STEMI with stent (guideline standard).
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — STEMI ECG criteria (ST elevation*
+
+**Q1.** Which of the following features is most specific or characteristic of STEMI ECG criteria (ST elevation?
+
+  - **A.** painless in 20-30%
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — painless in 20-30%
+  >
+  > *Source:* evere crushing central chest pain >20 min at rest, diaphoresis, dyspnoea, nausea, radiation to jaw/left arm, **painless in 20-30%** (diabetics, elderly, women, post-CABG). Examination: tachycardia, S3
+
+**Q2.** What is the most appropriate first-line therapy for STEMI ECG criteria (ST elevation?
+
+  - **A.** Primary PCI <90 min
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Primary PCI <90 min
+  >
+  > *Source:* **Primary PCI <90 min** with DES preferred (or <120 min if transfer).
+

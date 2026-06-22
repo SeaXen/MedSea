@@ -556,3 +556,32 @@ Digoxin poisoning = Na⁺/K⁺-ATPase inhibition → ↑ intracellular Ca²⁺ �
 8. **B** - Digoxin + calcium: theoretical risk of 'stone heart' (irreversible contracture) from Ca²⁺ overload in digoxin-toxic myocytes. AVOID calcium. Treat hyperK with Fab.
 9. **B** - Atropine often ineffective (not vagal). Temporary pacing if hemodynamically unstable (syncope, hypotension) awaiting Fab. Fab is definitive.
 10. **B** - Fab-digoxin complex renally cleared. In renal failure: can still give Fab (lifesaving). Monitor for rebound toxicity (complex not cleared → dissociates). May need repeat Fab.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Digoxin Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Digoxin Poisoning?
+
+  - **A.** Tachyarrhythmias
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Tachyarrhythmias
+  >
+  > *Source:* "**:
+  - **Bradyarrhythmias**: sinus brady, SA block, AV block (1°, 2°, 3°), junctional rhythms
+  - **Tachyarrhythmias**: PAT with block (classic), atrial tachycardia, **bidirectional ventricular tach
+
+**Q2.** What is the most appropriate first-line therapy for Digoxin Poisoning?
+
+  - **A.** Circulation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Circulation
+  >
+  > *Source:* **Circulation**: treat arrhythmias, hypotension
+

@@ -602,3 +602,32 @@ flowchart TD
 10. **B** — HSV PCR may be negative <72h. Repeat at 48–72h; continue aciclovir; pursue MRI, EEG, autoantibody panel.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Viral Encephalitis and Meningitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Viral Encephalitis and Meningitis?
+
+  - **A.** CSF HSV PCR
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CSF HSV PCR
+  >
+  > *Source:* Test | Indication | Interpretation |
+|------|------------|----------------|
+| **CSF HSV PCR** | All suspected encephalitis | **Gold standard for HSV**; sensitivity 95–98%, specificity >99%; may be -ve
+
+**Q2.** What is the most appropriate first-line therapy for Viral Encephalitis and Meningitis?
+
+  - **A.** HSV-1/2 + IV Aciclovir + 10mg/kg IV
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — HSV-1/2 + IV Aciclovir + 10mg/kg IV
+  >
+  > *Source:* **HSV-1/2**   **IV Aciclovir**   **10mg/kg IV 8h** (adjust renal)   **14–21 days**   **Start IMMEDIATELY** — do not wait for PCR; renal adjust essential
+

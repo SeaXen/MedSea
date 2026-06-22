@@ -296,3 +296,73 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — GLP-1 receptor agonists (tirzepatide)*
+
+**Q1.** What is the most appropriate first-line therapy for GLP-1 receptor agonists (tirzepatide)?
+
+  - **A.** Slow titration
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Slow titration
+  >
+  > *Source:* **Slow titration**   Mandatory -- 4 weeks per step
+---
+
+> Auto-generated study sections for "Injectable non insulin therapy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (16 generated)
+
+- Q: What is the definition of Injectable non insulin therapy?
+  A: By the end of this note you should be able to:
+- Q: What is Drug Class of Injectable non insulin therapy?
+  A: Glucagon-like peptide-1 receptor agonists
+- Q: What is the mechanism of Injectable non insulin therapy?
+  A: GLP-1R agonism -> [up]glucose-dependent insulin secretion, [down]glucagon secretion, [down]gastric emptying, [up]satiety (hypothalamic), [up][beta]-cell proliferation (preclinical)
+- Q: What is the dose of Injectable non insulin therapy?
+  A: Semaglutide SC: 0.25->0.5->1.0 mg weekly (Ozempic); Semaglutide oral: 3->7->14 mg daily (Rybelsus); Liraglutide: 0.6->1.2->1.8 mg daily (Victoza); Dulaglutide: 0.75/1.5 mg weekly (Trulicity); Exenatide XR: 2mg weekly (Bydureon); Lixisenatide: 10->20 mcg daily (Lyxumia)
+- Q: What is HbA1c Reduction of Injectable non insulin therapy?
+  A: Semaglutide 1.5-2.0%; Liraglutide 1.0-1.5%; Dulaglutide 1.0-1.5%
+- Q: What is Weight Loss of Injectable non insulin therapy?
+  A: Semaglutide 5-10kg; Liraglutide 3-5kg; Dulaglutide 3-4kg
+- Q: What is Pharmacokinetics of Injectable non insulin therapy?
+  A: SC: weekly (semaglutide, dulaglutide, exenatide XR) or daily (liraglutide, lixisenatide); Oral: daily, fasting + 30min before food/water
+- Q: What is the mechanism of Injectable non insulin therapy?
+  A: GLP-1R agonism -> [up]glucose-dependent insulin, [down]glucagon, [down]gastric emptying, [up]satiety
+- Q: What is CVOT Evidence of Injectable non insulin therapy?
+  A: Semaglutide SC (SUSTAIN-6), Liraglutide (LEADER), Dulaglutide (REWIND), Oral semaglutide (PIONEER-6), Albiglutide (HARMONY) -- ALL [check] MACE[down]
+- Q: What is Weight loss of Injectable non insulin therapy?
+  A: Semaglutide 5-10kg (2.4mg -> 15kg); Liraglutide 3-5kg; Dulaglutide 3-4kg
+- Q: What is Injectable non insulin therapy indicated for?
+  A: ASCVD -> Semaglutide/Liraglutide/Dulaglutide; Obesity -> Semaglutide 2.4mg/Liraglutide 3mg; CKD -> Semaglutide (FLOW), Dulaglutide, Liraglutide
+- Q: What are the side effects of Injectable non insulin therapy?
+  A: Nausea 20-30%; slow titration mandatory; anti-emetics PRN
+- Q: What is Pancreatitis of Injectable non insulin therapy?
+  A: Rare (~0.1-0.2%); STOP if suspected; avoid if history
+- Q: What is Retinopathy (semaglutide) of Injectable non insulin therapy?
+  A: Transient worsening (SUSTAIN-6: 3.0% vs 1.8%); rapid HbA1c drop >1.5%/3mo risk; baseline retinal exam if proliferative DR
+- Q: What is Pregnancy of Injectable non insulin therapy?
+  A: Contraindicated; stop [ge]2mo pre-conception
+- Q: What is Hypoglycaemia of Injectable non insulin therapy?
+  A: Rare monotherapy; [down]insulin/SU dose when combining
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Injectable non insulin therapy?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Injectable non insulin therapy
+   C. A complication seen late in the disease course of Injectable non insulin therapy
+   D. A condition that mimics Injectable non insulin therapy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Injectable non insulin therapy presents with: Drug Class — Glucagon-like peptide-1 receptor agonists; Mechanism — GLP-1R agonism -> [up]glucose-dependent insulin secretion, [down]glucagon secretion, [down]gastric emptying, [up]satiety (hypothalamic), [up][beta]-cell proliferation (preclinical); HbA1c Reduction — Semaglutide 1.5-2.0%; Liraglutide 1.0-1.5%; Dulaglutide 1.0-1.5%. What is the most likely diagnosis?
+   A. **Injectable non insulin therapy**
+   B. A condition that mimics Injectable non insulin therapy but is not the same entity
+   C. A complication of Injectable non insulin therapy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Injectable non insulin therapy
+

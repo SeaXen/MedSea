@@ -518,3 +518,19 @@ Tenecteplase and alteplase are both thrombolytic agents used in eligible acute i
 8. **A** — The high-yield difference is bolus-only versus bolus-plus-infusion delivery.  
 9. **A** — This is a reperfusion-workflow topic in hyperacute stroke.  
 10. **A** — Both are thrombolytic reperfusion drugs for eligible acute ischemic stroke.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Tenecteplase vs alteplase practical points*
+
+**Q1.** What is the most appropriate first-line therapy for Tenecteplase vs alteplase practical points?
+
+  - **A.** Then follow local protocol for alteplase or tenecteplase use
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Then follow local protocol for alteplase or tenecteplase use
+  >
+  > *Source:* Then follow local protocol for alteplase or tenecteplase use.
+

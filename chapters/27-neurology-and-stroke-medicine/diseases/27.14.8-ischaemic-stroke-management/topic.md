@@ -166,3 +166,19 @@ status: full-fcps-mrcp-note
 - Rehabilitation: critical (multidisciplinary, OT, PT, SLT, psychology, social)
 - Quality of life: significant impact on patient and family
 - Long-term: secondary prevention, lifestyle, monitor
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Ischaemic Stroke Management*
+
+**Q1.** What is the most appropriate first-line therapy for Ischaemic Stroke Management?
+
+  - **A.** Combined with IV thrombolysis
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Combined with IV thrombolysis
+  >
+  > *Source:* **Combined with IV thrombolysis** if within window (bridging therapy)
+

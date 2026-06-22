@@ -265,3 +265,72 @@ mindmap
 
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Fasting plasma glucose*
+
+**Q1.** Which of the following features is most specific or characteristic of Fasting plasma glucose?
+
+  - **A.** FPG
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — FPG
+  >
+  > *Source:* ---
+| Investigation | Role | Key Details / Findings |
+|---------------|------|------------------------|
+| **FPG** | Primary diagnostic / screening | ≥7.0 mmol/L = DM; 6.1–6.9 = IFG; <6.1 = normal
+---
+
+> Auto-generated study sections for "Diagnostic criteria" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (14 generated)
+
+- Q: What is the definition of Diagnostic criteria?
+  A: Fasting plasma glucose ≥7.0 mmol/L (126 mg/dL) after ≥8h caloric restriction
+- Q: What is Prediabetes (IFG) of Diagnostic criteria?
+  A: FPG 6.1–6.9 mmol/L (110–125 mg/dL)
+- Q: What is Normal of Diagnostic criteria?
+  A: FPG <6.1 mmol/L (<110 mg/dL)
+- Q: What is the epidemiology of Diagnostic criteria?
+  A: 537M adults (2021) → 783M by 2045 (IDF); ~90% type 2
+- Q: What is Peak Age of Diagnostic criteria?
+  A: Type 2: >40y; Type 1: bimodal (4–7y, 10–14y)
+- Q: What is Sex Ratio of Diagnostic criteria?
+  A: Slight male predominance in type 2
+- Q: What causes Diagnostic criteria?
+  A: Obesity, family history, ethnicity (South Asian, African-Caribbean), gestational DM, PCOS, antipsychotics, steroids
+- Q: What is FPG cut-offs of Diagnostic criteria?
+  A: Normal <6.1; IFG 6.1–6.9; DM ≥7.0 mmol/L
+- Q: What is Confirmatory rule of Diagnostic criteria?
+  A: Asymptomatic: two abnormal tests (same test different day, or two different tests). Symptomatic + random ≥11.1: single test sufficient.
+- Q: What is Pre-analytical of Diagnostic criteria?
+  A: Fluoride tube, ≥8h fast, process ≤1h (glycolysis artefact)
+- Q: What is HbA1c equivalent of Diagnostic criteria?
+  A: ≥48 mmol/mol (6.5%) = DM; 39–47 = prediabetes
+- Q: What is OGTT of Diagnostic criteria?
+  A: 2h ≥11.1 = DM; 7.8–11.0 = IGT (rarely used for T2DM dx)
+- Q: What is Screening age of Diagnostic criteria?
+  A: ADA: ≥35y; NICE: risk score → test if high
+- Q: What is IFG vs IGT of Diagnostic criteria?
+  A: IFG = hepatic IR; IGT = muscle IR; both = higher risk
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diagnostic criteria?**
+   A. **FPG ≥7.0 mmol/L (126 mg/dL) = Diabetes — primary diagnostic test per ADA/WHO.**
+   B. An unrelated condition not matching the clinical picture of Diagnostic criteria
+   C. A complication seen late in the disease course of Diagnostic criteria
+   D. A condition that mimics Diagnostic criteria but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diagnostic criteria presents with: Definition — Fasting plasma glucose ≥7.0 mmol/L (126 mg/dL) after ≥8h caloric restriction; Prediabetes (IFG) — FPG 6.1–6.9 mmol/L (110–125 mg/dL); Normal — FPG <6.1 mmol/L (<110 mg/dL). What is the most likely diagnosis?
+   A. **Diagnostic criteria**
+   B. A condition that mimics Diagnostic criteria but is not the same entity
+   C. A complication of Diagnostic criteria rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diagnostic criteria
+

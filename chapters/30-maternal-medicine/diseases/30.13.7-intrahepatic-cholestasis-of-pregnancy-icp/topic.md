@@ -288,3 +288,20 @@ A: Weekly bile acids and LFT; weekly CTG from 34 weeks; growth scans; patient ed
 - [[../Liver and Gastrointestinal Disease in Pregnancy|Liver and Gastrointestinal Disease in Pregnancy]] (heading hub)
 - [[../Maternal Medicine MOC|Maternal Medicine MOC]]
 - [[../Davidson Chapter 32 - Maternal Medicine Hierarchy|Davidson Chapter 32 - Maternal Medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 30: Maternal Medicine — Intrahepatic cholestasis of pregnancy (ICP)*
+
+**Q1.** Which of the following features is most specific or characteristic of Intrahepatic cholestasis of pregnancy (ICP)?
+
+  - **A.** Mnemonic for Intrahepatic cholestasis of pregnancy
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Intrahepatic cholestasis of pregnancy
+  >
+  > *Source:* **Mnemonic for Intrahepatic cholestasis of pregnancy (ICP)** — see key points in Core Clinical Content
+- **'PRE-ECLAMPSIA' risk factors** — Previous PE, Renal disease, Extremes of age, Chronic HTN, Et
+

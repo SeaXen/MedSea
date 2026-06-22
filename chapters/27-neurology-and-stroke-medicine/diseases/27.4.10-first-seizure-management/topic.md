@@ -494,3 +494,24 @@ flowchart TD
 **Chapter MOC:** [[Neurology MOC]]
 **Drug Reference:** [[../00_Index/Neurology Drug Reference]]
 **Related Topics:** [[ILAE 2017 Seizure Classification]], [[Status Epilepticus Management]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — First Seizure Management*
+
+**Q1.** Which of the following features is most specific or characteristic of First Seizure Management?
+
+  - **A.** Detailed witness account
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Detailed witness account
+  >
+  > *Source:* | **Cervical myelopathy** | Lhermitte's, long-tract signs | MRI cervical spine |
+
+---
+### History
+- **Detailed witness account** is the single most useful diagnostic tool
+- **Pre-ictal:** prodrome (au
+

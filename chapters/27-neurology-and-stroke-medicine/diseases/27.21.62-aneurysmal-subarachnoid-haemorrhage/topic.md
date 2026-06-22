@@ -365,3 +365,21 @@ A: HTN, smoking, family, ADPKD
 - [[Hydrocephalus after SAH]]
 - [[Other complications of SAH]]
 - [[../Stroke Medicine MOC|Stroke Medicine MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Aneurysmal subarachnoid haemorrhage*
+
+**Q1.** Which of the following features is most specific or characteristic of Aneurysmal subarachnoid haemorrhage?
+
+  - **A.** Aneurysmal subarachnoid haemorrhage
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Aneurysmal subarachnoid haemorrhage
+  >
+  > *Source:* - **Aneurysmal subarachnoid haemorrhage** — see key points above
+- **'ACoA → bitemporal hemianopia'** — Anterior communicating artery aneurysm compresses the optic chiasm from above
+- **'PCoA → pupil-
+

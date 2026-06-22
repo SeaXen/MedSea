@@ -28,3 +28,19 @@ Hypertension workup has two goals: (1) identify **secondary causes** (5–10% of
 > - **Aldosterone:renin ratio** for primary hyperaldosteronism (stop interfering drugs first)
 > - Pheochromocytoma: **α-block first, β-block after**
 > - **UACR** is the simplest screen for hypertensive nephropathy
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Workup secondary causes target organ damage*
+
+**Q1.** Which of the following features is most specific or characteristic of Workup secondary causes target organ damage?
+
+  - **A.** Cardinal symptoms
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cardinal symptoms
+  >
+  > *Source:* **Cardinal symptoms**: chest pain (typical: central, crushing, radiating to jaw/left arm, exertion-related; atypical more common in women, elderly, diabetics), dyspnoea (exertional, orthopnoea, PND, n
+

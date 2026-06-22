@@ -551,3 +551,32 @@ CVST is an important and often missed stroke mimic/variant in young adults and p
 - **SBA 8: A** — Migraine and meningitis are common early distractors.
 - **SBA 9: B** — An arterial-only pathway can miss a venous thrombosis.
 - **SBA 10: B** — Deterioration with edema/seizures is a neurocritical emergency.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Cerebral Venous Sinus Thrombosis (CVST)*
+
+**Q1.** Which of the following features is most specific or characteristic of Cerebral Venous Sinus Thrombosis (CVST)?
+
+  - **A.** D-dimer
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — D-dimer
+  >
+  > *Source:* ften bilateral, parasagittal, not respecting arterial territory, often haemorrhagic - on SWI/GRE)
+- **D-dimer** (often elevated, but can be normal - sensitive but not specific)
+- **Bloods**: FBC, coag
+
+**Q2.** What is the most appropriate first-line therapy for Cerebral Venous Sinus Thrombosis (CVST)?
+
+  - **A.** Treat underlying
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat underlying
+  >
+  > *Source:* **Treat underlying**:
+

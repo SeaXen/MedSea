@@ -415,3 +415,34 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 24: Haematology / ITP**
+
+**Q1.** A patient presents with features consistent with ITP. The clinical picture is most consistent with: Bleeding Assessment Tools: **WHO Bleeding Scale**, **IBLS (ITP Bleeding Scale)** What is the most likely diagnosis?
+
+  - **A.** ITP
+  - **B.** A closely related condition in the same clinical area
+  - **C.** A complication of ITP
+  - **D.** An unrelated mimic with overlapping features
+
+  > **Answer: A** — ITP
+
+**Q2.** A patient is diagnosed with ITP. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+
+**Q3.** Which of the following best describes the underlying pathophysiology / definition of ITP?
+
+  - **A.** [!tip] **FCPS/MRCP**: **ITP = Diagnosis of exclusion**. **Plt <100, otherwise normal CBC/film**. **Antiplatelet autoantibodies (GPIIb/IIIa, GPIb/IX) – not routinely tested**. **Tre
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — [!tip] **FCPS/MRCP**: **ITP = Diagnosis of exclusion**. **Plt <100, otherwise normal CBC/film**. **Antiplatelet autoantibodies (GPIIb/IIIa, GPIb/IX) –
+

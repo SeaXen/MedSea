@@ -66,3 +66,30 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #heading-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Diabetes?
+  A: Heading hub for Classification and Diagnosis of Diabetes Mellitus — covers 12 disease-level topic(s) per Davidson Ch25.
+- Q: What is Diagnostic criteria (ADA/WHO) of Diabetes?
+  A: FPG ≥7.0 mmol/L · 2h-OGTT ≥11.1 mmol/L · HbA1c ≥48 mmol/mol (6.5%) · Random ≥11.1 + symptoms → confirm with repeat unless unequivocal
+- Q: What is Prediabetes of Diabetes?
+  A: IFG: FPG 6.1-6.9 · IGT: 2h-OGTT 7.8-11.0 · HbA1c 39-47 mmol/mol (5.7-6.4%)
+- Q: How is Diabetes classified?
+  A: Age, BMI, ketosis, autoantibodies, C-peptide, family history
+- Q: What is Monogenic red flags of Diabetes?
+  A: Age <25, non-obese, strong FH (3 generations), negative autoantibodies, non-insulin requiring
+- Q: What is the investigation of choice for Diabetes?
+  A: IADPSG: 75g OGTT → FBG ≥5.1, 1h ≥10.0, 2h ≥8.5 mmol/L · NICE: risk factors + OGTT
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes?**
+   A. **Heading hub for Classification and Diagnosis of Diabetes Mellitus — covers 12 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetes
+   C. A complication seen late in the disease course of Diabetes
+   D. A condition that mimics Diabetes but has a different underlying cause
+

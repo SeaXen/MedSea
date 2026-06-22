@@ -370,3 +370,26 @@ flowchart TD
 
 ## Summary
 Functional visual symptoms are diagnosed by **POSITIVE bedside signs**: **OKN preserved** in "blindness" (gold standard), **tubular visual field** (non-expanding on Goldmann), **monocular diplopia** (organic usually binocular), **convergence spasm** (miosis, not mydriasis). **Pupils preserved**. ~30% of neuro-ophthalmology referrals are functional. First-line treatment: **Explanation + reassurance** (validate, demonstrate OKN positively, "software problem" analogy). 50% improve with explanation alone. Avoid iatrogenic harm (unnecessary procedures). Treat comorbidity (depression, anxiety, migraine). Prognosis: ~50% improve; worse with chronicity, secondary gain.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Functional Visual Symptoms*
+
+**Q1.** Which of the following features is most specific or characteristic of Functional Visual Symptoms?
+
+  - **A.** POSITIVE SIGNS
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — POSITIVE SIGNS
+  >
+  > *Source:* organic)
+- **Stress trigger**
+- **Other FND symptoms**
+
+### Examination — **POSITIVE SIGNS** (KEY)
+
+#### Tubular Visual Field
+- **Goldmann perimetry** (kinetic) showing field that **does NOT expand** 
+

@@ -542,3 +542,22 @@ mindmap
 - [[Envenomation MOC]]
 - [[../Chapter 7 - Poisoning/General Toxicology Principles]] (cross-chapter)
 - [[../Templates/Envenomation Topic Template]] (template reference)
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 12: Envenomation — Clinical Assessment and Scoring Systems*
+
+**Q1.** Which of the following features is most specific or characteristic of Clinical Assessment and Scoring Systems?
+
+  - **A.** Venom detection kit
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Venom detection kit
+  >
+  > *Source:* RDS |
+| **Tropical screen** | All snakebites | Baseline | Malaria, dengue, typhoid (co-endemic) |
+| **Venom detection kit (VDK)** | Australia only | When available | Species-specific identification |
+
+

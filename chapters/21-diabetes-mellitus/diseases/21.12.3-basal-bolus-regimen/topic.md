@@ -164,3 +164,28 @@ Avoid NPH — higher variability, peak → nocturnal hypo
 - [[Type 1 Diabetes Mellitus/Insulin therapy/Insulin pump therapy (CSII)]]
 - [[Diabetic Emergencies/Diabetic ketoacidosis (DKA) management protocol]]
 - [[Type 2 Diabetes Mellitus/Insulin therapy in type 2 diabetes]]
+---
+
+> Auto-generated study sections for "Insulin therapy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Insulin therapy?
+  A: Basal-Bolus Regimen (MDI) = Multiple Daily Injections: once/twice-daily long-acting basal insulin + rapid-acting bolus insulin with each meal.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin therapy?**
+   A. **Basal-Bolus Regimen (MDI) = Multiple Daily Injections: once/twice-daily long-acting basal insulin + rapid-acting bolus insulin with each meal.**
+   B. An unrelated condition not matching the clinical picture of Insulin therapy
+   C. A complication seen late in the disease course of Insulin therapy
+   D. A condition that mimics Insulin therapy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Insulin therapy presents with: Basal-Bolus Regimen (MDI) = Multiple Daily Injections: once/twice-daily long-acting basal insulin + rapid-acting bolus insulin with each meal.; Gold standard for T1DM not on pump therapy.; FCPS/MRCP relevance: Core management; exam questions on dose calculation, titration, troubleshooting, conversion to/from pump.. What is the most likely diagnosis?
+   A. **Insulin therapy**
+   B. A condition that mimics Insulin therapy but is not the same entity
+   C. A complication of Insulin therapy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Insulin therapy
+

@@ -288,3 +288,20 @@ A: Fetal scalp blood pH; pH >7.25 continue; <7.2 deliver; 7.2-7.25 repeat in 30 
 - [[../Labour, Delivery and Postpartum|Labour, Delivery and Postpartum]] (heading hub)
 - [[../Maternal Medicine MOC|Maternal Medicine MOC]]
 - [[../Davidson Chapter 32 - Maternal Medicine Hierarchy|Davidson Chapter 32 - Maternal Medicine Hierarchy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 30: Maternal Medicine — Fetal monitoring in labour*
+
+**Q1.** Which of the following features is most specific or characteristic of Fetal monitoring in labour?
+
+  - **A.** Mnemonic for Fetal monitoring in labour
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Fetal monitoring in labour
+  >
+  > *Source:* **Mnemonic for Fetal monitoring in labour** — see key points in Core Clinical Content
+- **'PRE-ECLAMPSIA' risk factors** — Previous PE, Renal disease, Extremes of age, Chronic HTN, Ethnicity, Antiphos
+

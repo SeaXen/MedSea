@@ -433,3 +433,33 @@ flowchart TD
 8. **B** — Efavirenz toxicity = switch to integrase inhibitor
 9. **B** — No response to empirical Toxo Rx → biopsy for PCNSL
 10. **B** — Cognitive decline + normal MRI + CD4 low = HAND
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — HIV CNS Complications*
+
+**Q1.** Which of the following features is most specific or characteristic of HIV CNS Complications?
+
+  - **A.** CSF analysis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CSF analysis
+  >
+  > *Source:* es with disease activity |
+| **MRI brain with contrast** | All focal/global | See imaging table |
+| **CSF analysis** | Most cases | OI-specific tests |
+| **Toxoplasma serology** | All (IgG) | Usually 
+
+**Q2.** What is the most appropriate first-line therapy for HIV CNS Complications?
+
+  - **A.** ART intensification
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — ART intensification
+  >
+  > *Source:* **ART intensification** (optimize immune reconstitution) — only proven therapy
+

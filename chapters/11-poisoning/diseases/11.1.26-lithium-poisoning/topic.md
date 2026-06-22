@@ -523,3 +523,21 @@ Lithium poisoning = narrow therapeutic index (0.4-1.0 mmol/L). **Acute**: GI pro
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Lithium Poisoning*
+
+**Q1.** What is the most appropriate first-line therapy for Lithium Poisoning?
+
+  - **A.** Activated charcoal + NOT effective + Whole bowel irrigation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Activated charcoal + NOT effective + Whole bowel irrigation
+  >
+  > *Source:* Decontamination
+- **Activated charcoal**: **NOT effective** (lithium not adsorbed)
+- **Whole bowel irrigation**: **INDICATED for sustained-release** (lithium carbonate SR) — PEG 1-2 L/hr until clear e
+

@@ -480,3 +480,19 @@ mindmap
 10. **B** — Normal QT polymorphic VT = treat underlying cause (ischaemia/HD); amiodarone/lidocaine if needed; Mg2+ not first-line as QT not prolonged.
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Torsades de pointes (Mg, pacing, isoproterenol)*
+
+**Q1.** What is the most appropriate first-line therapy for Torsades de pointes (Mg, pacing, isoproterenol)?
+
+  - **A.** Long-term
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Long-term
+  >
+  > *Source:* **Long-term**: ICD (secondary prevention if survived SCD, sustained VT with haemodynamic compromise; primary prevention if LVEF≤35% + NYHA II-III + GDMT 3m + life expectancy >1y — MADIT-II, SCD-HeFT).
+

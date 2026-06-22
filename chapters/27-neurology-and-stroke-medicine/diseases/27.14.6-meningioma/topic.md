@@ -450,3 +450,35 @@ status: full-fcps-mrcp-note
 
 ## Local Navigation
 **Heading Hub:** [[Brain Tumours Hub]]  **Topic-Group Hub:** [[Extra-Axial & Metastatic Hub]]  **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  **Chapter MOC:** [[Neurology MOC]]  **Drug Reference:** [[../00_Index/Neurology Drug Reference]]  **Related Topics:** [[Vestibular Schwannoma]], [[Schwannoma]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Meningioma*
+
+**Q1.** Which of the following features is most specific or characteristic of Meningioma?
+
+  - **A.** Dural tail
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Dural tail
+  >
+  > *Source:* **MRI Findings:**
+- T1 iso- to hypointense; T2 iso- to hyperintense
+- **Homogeneous, intense contrast enhancement** (98%)
+- **Dural tail** (60-70%) — not specific
+- **CSF cleft sign** (extra-axial)
+- 
+
+**Q2.** What is the most appropriate first-line therapy for Meningioma?
+
+  - **A.** Proton therapy:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Proton therapy:
+  >
+  > *Source:* **Proton therapy:** Selected cases (skull base, paediatric)
+

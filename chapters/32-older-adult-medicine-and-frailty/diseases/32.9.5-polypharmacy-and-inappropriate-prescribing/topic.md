@@ -279,3 +279,21 @@ A: Adverse drug reaction misinterpreted as new condition; new drug added
 - [[Pharmacology and prescribing in the elderly]]
 - [[Adverse drug reactions in the elderly]]
 - [[../Ageing and Disease MOC|Ageing and Disease MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 32: Ageing & Disease — Polypharmacy and inappropriate prescribing*
+
+**Q1.** Which of the following features is most specific or characteristic of Polypharmacy and inappropriate prescribing?
+
+  - **A.** Mnemonic for Polypharmacy and inappropriate prescribing
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Polypharmacy and inappropriate prescribing
+  >
+  > *Source:* **Mnemonic for Polypharmacy and inappropriate prescribing** — see Core Clinical Content key points
+- **'5 Fried criteria'** for frailty: Weight loss, Exhaustion, Weakness, Slow walking, ↓ activity
+- *
+

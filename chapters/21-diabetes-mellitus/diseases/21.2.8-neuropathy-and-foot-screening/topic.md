@@ -164,3 +164,95 @@ flowchart TD
 - **E**ANNS: 4 questions, ≥3 = likely DSPN
 - **T**riage: normal=annual; possible=6mo; LOPS=refer podiatry
 - **S**ummary: monofilament primary, fork confirmatory, ANNS symptomatic</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Neuropathy and foot screening*
+
+**Q1.** Which of the following features is most specific or characteristic of Neuropathy and foot screening?
+
+  - **A.** NCS
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — NCS
+  >
+  > *Source:* ning fork** | **Confirmatory** (large fibre function) |
+| **ANNS** | **Symptom quantification** |
+| **NCS** | Not routine; if atypical/mononeuropathy/radiculoplexus |
+(N/A — screening tool)
+| Confusio
+---
+
+> Auto-generated study sections for "Annual review and complication screening" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (25 generated)
+
+- Q: What is the definition of Annual review and complication screening?
+  A: By the end of this note you should be able to:
+- Q: What is Screening target of Annual review and complication screening?
+  A: All diabetes patients annually
+- Q: What is Tools of Annual review and complication screening?
+  A: 10g Semmes-Weinstein monofilament, 128Hz tuning fork, ANNS questionnaire
+- Q: What is Screening target of Annual review and complication screening?
+  A: All diabetes patients annually
+- Q: What is Tools of Annual review and complication screening?
+  A: 10g Semmes-Weinstein monofilament, 128Hz tuning fork, ANNS questionnaire
+- Q: What is Daily foot inspection of Annual review and complication screening?
+  A: Check soles, between toes; mirror if needed
+- Q: What is Footwear of Annual review and complication screening?
+  A: Wide toe box, cushioned sole, no seams; avoid barefoot
+- Q: What is Skin care of Annual review and complication screening?
+  A: Moisturise (not between toes); no corn plasters
+- Q: What is Nail care of Annual review and complication screening?
+  A: Straight across; podiatry if difficult
+- Q: What is Placement of Annual review and complication screening?
+  A: Bony prominence: hallux IP joint (dorsal), medial malleolus
+- Q: What is Activation of Annual review and complication screening?
+  A: Strike against hand/knee; do not strike hard surface
+- Q: What is Timing of Annual review and complication screening?
+  A: Patient indicates when vibration stops; examiner feels residual
+- Q: What is Normal of Annual review and complication screening?
+  A: >10 seconds at hallux IP joint
+- Q: What is Daily foot inspection of Annual review and complication screening?
+  A: Check soles, between toes; mirror if needed
+- Q: What is Footwear of Annual review and complication screening?
+  A: Wide toe box, cushioned sole, no seams; avoid barefoot
+- Q: What is Skin care of Annual review and complication screening?
+  A: Moisturise (not between toes); no corn plasters
+- Q: What is Nail care of Annual review and complication screening?
+  A: Straight across; podiatry if difficult
+- Q: What is Red flags of Annual review and complication screening?
+  A: New lesion, colour change, swelling, heat, pain → urgent review
+- Q: What is Annual screen of Annual review and complication screening?
+  A: All DM (T1DM from Dx, T2DM from Dx)
+- Q: What is Tools of Annual review and complication screening?
+  A: 10g monofilament (6 sites), 128Hz tuning fork, ANNS
+- Q: What is Monofilament of Annual review and complication screening?
+  A: Hallux, 1st/3rd/5th met heads, medial/lateral heel; buckle = 10g
+- Q: What is Tuning fork of Annual review and complication screening?
+  A: 128Hz on hallux IP >10s normal; ≤10s abnormal
+- Q: What is ANNS of Annual review and complication screening?
+  A: 4 questions; score ≥3 = likely DSPN
+- Q: What is LOPS of Annual review and complication screening?
+  A: Miss ≥3 monofilament sites OR vibration <5s OR ANNS ≥7 → refer podiatry
+- Q: What is IWGDF risk of Annual review and complication screening?
+  A: 0: normal; 1: LOPS; 2: LOPS+PAD/deformity; 3: hx ulcer/amp
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Annual review and complication screening?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Annual review and complication screening
+   C. A complication seen late in the disease course of Annual review and complication screening
+   D. A condition that mimics Annual review and complication screening but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Annual review and complication screening presents with: Screening target — All diabetes patients annually; Tools — 10g Semmes-Weinstein monofilament, 128Hz tuning fork, ANNS questionnaire; Goal — Identify LOPS (loss of protective sensation) → refer podiatry/foot clinic. What is the most likely diagnosis?
+   A. **Annual review and complication screening**
+   B. A condition that mimics Annual review and complication screening but is not the same entity
+   C. A complication of Annual review and complication screening rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Annual review and complication screening
+

@@ -157,3 +157,65 @@ By the end of this note you should be able to:
 - **O**phthalmology: annual optic nerve assessment
 - **A**taxia: cerebellar atrophy late
 - **D**iabetes: both mellitus and insipidus**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Wolfram syndrome*
+
+**Q1.** What is the most appropriate first-line therapy for Wolfram syndrome?
+
+  - **A.** Insulin requirement + low initially + brittle
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Insulin requirement + low initially + brittle
+  >
+  > *Source:* **Insulin requirement**   Often **low initially** (0.3–0.5u/kg); becomes **brittle** with erratic absorption
+---
+
+> Auto-generated study sections for "Monogenic and Atypical Diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (12 generated)
+
+- Q: What is the definition of Monogenic and Atypical Diabetes?
+  A: By the end of this note you should be able to:
+- Q: What is Diabetes Mellitus of Monogenic and Atypical Diabetes?
+  A: Onset 4-10y; insulin-requiring; non-autoimmune
+- Q: What is Diabetes Insipidus of Monogenic and Atypical Diabetes?
+  A: Central (pituitary); polyuria/polydipsia; onset ~14y
+- Q: What is Optic Atrophy of Monogenic and Atypical Diabetes?
+  A: Progressive; onset ~11y; colour vision loss; legal blindness by adulthood
+- Q: What is Deafness of Monogenic and Atypical Diabetes?
+  A: Sensorineural; high-frequency; onset ~13y
+- Q: What is Neurological of Monogenic and Atypical Diabetes?
+  A: Ataxia, peripheral neuropathy, autonomic dysfunction, psychiatric
+- Q: What is Urinary of Monogenic and Atypical Diabetes?
+  A: Neurogenic bladder; recurrent UTIs
+- Q: What is DIDMOAD of Monogenic and Atypical Diabetes?
+  A: Diabetes Insipidus, Diabetes Mellitus, Optic Atrophy, Deafness
+- Q: What is Gene of Monogenic and Atypical Diabetes?
+  A: WFS1 (autosomal recessive); WFS2/CISD2
+- Q: What is Progression of Monogenic and Atypical Diabetes?
+  A: DM (4-10y) -> OA (11y) -> Deafness (13y) -> DI (14y) -> Neuro
+- Q: What is Life expectancy of Monogenic and Atypical Diabetes?
+  A: Reduced (median ~30y); respiratory failure, neurogenic bladder
+- Q: What is Inheritance of Monogenic and Atypical Diabetes?
+  A: Autosomal recessive (WFS1, CISD2)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Monogenic and Atypical Diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Monogenic and Atypical Diabetes
+   C. A complication seen late in the disease course of Monogenic and Atypical Diabetes
+   D. A condition that mimics Monogenic and Atypical Diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Monogenic and Atypical Diabetes presents with: Acronym — DIDMOAD: Diabetes Insipidus, Diabetes Mellitus, Optic Atrophy, Deafness; Gene — WFS1 (wolframin) - 4p16.1; also WFS2 (CISD2); Inheritance — Autosomal recessive. What is the most likely diagnosis?
+   A. **Monogenic and Atypical Diabetes**
+   B. A condition that mimics Monogenic and Atypical Diabetes but is not the same entity
+   C. A complication of Monogenic and Atypical Diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Monogenic and Atypical Diabetes
+

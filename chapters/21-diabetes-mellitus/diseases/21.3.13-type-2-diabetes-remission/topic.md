@@ -58,3 +58,30 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #topic-group-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Diabetes Prevention and Remission" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Diabetes Prevention and Remission?
+  A: Topic-Group hub for Type 2 diabetes remission — covers 4 disease-level topic(s) per Davidson Ch25.
+- Q: What is DiRECT Trial of Diabetes Prevention and Remission?
+  A: Low-calorie diet (825-853 kcal/d) 12-20wk → food reintroduction → maintenance · 46% remission at 1y, 36% at 2y, 23% at 5y
+- Q: What is Remission Criteria of Diabetes Prevention and Remission?
+  A: HbA1c <48mmol/mol (6.5%) off ALL glucose-lowering medications for ≥3 months (ADA/Diabetes UK consensus 2021)
+- Q: What is Low-Calorie Diet of Diabetes Prevention and Remission?
+  A: Formula meal replacements (soups/shakes) · ~15kg mean weight loss → remission · Structured support essential
+- Q: What is Predictors of Diabetes Prevention and Remission?
+  A: Shorter duration (<6y), lower baseline HbA1c, greater weight loss, C-peptide preserved
+- Q: What is Maintenance of Diabetes Prevention and Remission?
+  A: Continued weight maintenance, regular physical activity, monthly support, self-monitoring · Relapse if weight regain
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes Prevention and Remission?**
+   A. **Topic-Group hub for Type 2 diabetes remission — covers 4 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetes Prevention and Remission
+   C. A complication seen late in the disease course of Diabetes Prevention and Remission
+   D. A condition that mimics Diabetes Prevention and Remission but has a different underlying cause
+

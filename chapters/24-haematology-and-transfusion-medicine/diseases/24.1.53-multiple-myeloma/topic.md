@@ -566,3 +566,29 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Multiple Myeloma*
+
+**Q1.** Which landmark clinical trial provided evidence relevant to the management of Multiple Myeloma (specifically: harm in non-t(11;14))?
+
+  - **A.** BELLINI trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — BELLINI trial
+  >
+  > *Source:* **Venetoclax ONLY if t(11;14) (BCL-2 dependent)** – BELLINI trial showed harm in non-t(11;14)
+
+**Q2.** What is the most appropriate first-line therapy for Multiple Myeloma?
+
+  - **A.** Dara-Rd + Preferred
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Dara-Rd + Preferred
+  >
+  > *Source:* **Dara-Rd**   Daratumumab + Lenalidomide + Dex   MAIA   **Preferred** for fit TIE
+

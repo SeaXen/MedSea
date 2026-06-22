@@ -44,3 +44,19 @@ Catheter ablation is the **first-line curative therapy** for most AV nodal-depen
 
 - **AVNRT**: non-inducibility; single AV-nodal echo acceptable; no PR prolongation.
 - **AVRT/WPW**: loss of pre-excitation (delta wave absent), non-inducibility of AVRT/AF conduction over AP.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — AVNRT AVRT WPW syndrome*
+
+**Q1.** What is the most appropriate first-line therapy for AVNRT AVRT WPW syndrome?
+
+  - **A.** Acute AF with WPW + DCCV synchronised + procainamide
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Acute AF with WPW + DCCV synchronised + procainamide
+  >
+  > *Source:* **Acute AF with WPW** (wide, irregular, haemodynamic instability): **DCCV synchronised 200J**; if stable, **procainamide** (slow AF, prolongs refractory period) or **ibutilide** — **AVOID** adenosine,
+

@@ -283,3 +283,22 @@ A: ≥3 days to 1 month; trauma-related; similar to PTSD but shorter
 - [[Phobias (specific, social, agoraphobia)]]
 - [[Hoarding disorder and body dysmorphic disorder]]
 - [[../Medical Psychiatry MOC|Medical Psychiatry MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 29: Medical Psychiatry — Adjustment disorder and acute stress reaction*
+
+**Q1.** Which of the following features is most specific or characteristic of Adjustment disorder and acute stress reaction?
+
+  - **A.** Mnemonic for Adjustment disorder and acute stress reaction
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Adjustment disorder and acute stress reaction
+  >
+  > *Source:* **Mnemonic for Adjustment disorder and acute stress reaction** — see Core Clinical Content key points
+- **'SIG E CAPS'** — depression criteria
+- **'DIG FAST'** — mania symptoms
+- **'ABCDEFGHI'** — MSE
+

@@ -91,3 +91,30 @@ ACS is the **spectrum of acute myocardial ischaemia** due to sudden reduction in
 > - **Posterior MI** = ST depression V1–V3 + ST elevation V7–V9
 > - **New LBBB** alone no longer diagnostic — use **Sgarbossa criteria**
 > - **GRACE score** best validated for in-hospital and 6-month mortality
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — ACS classification STEMI NSTEMI UA*
+
+**Q1.** Which of the following features is most specific or characteristic of ACS classification STEMI NSTEMI UA?
+
+  - **A.** STEMI
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — STEMI
+  >
+  > *Source:* *STEMI**: severe crushing central chest pain >20 min, diaphoresis, dyspnoea, nausea, radiation to jaw/left arm. **NSTEMI/UA**: crescendo angina, rest pain, new-onset severe. Atypical more common in wo
+
+**Q2.** What is the most appropriate first-line therapy for ACS classification STEMI NSTEMI UA?
+
+  - **A.** STEMI
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — STEMI
+  >
+  > *Source:* **STEMI**: Primary PCI <90 min (or <120 if transfer) with DES.
+

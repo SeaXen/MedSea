@@ -487,3 +487,37 @@ flowchart TD
 | **Management** | HSCT (early ALD/MLD), gene therapy (MLD), ERT (Fabry), supportive |
 | **Red flags** | Adrenal insufficiency + white matter disease = ALD; macrocephaly = Canavan/Alexander |
 | **Newborn screening** | X-ALD allows pre-symptomatic HSCT |
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Leukodystrophies*
+
+**Q1.** Which of the following features is most specific or characteristic of Leukodystrophies?
+
+  - **A.** MRI brain ± spine
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MRI brain ± spine
+  >
+  > *Source:* on, ovarian dysgenesis, optic atrophy |
+
+---
+### First-Line
+| Test | Finding |
+|------|---------|
+| **MRI brain ± spine** | Pattern recognition (key diagnostic) |
+| **VLCFA (very long chain fatty acid
+
+**Q2.** What is the most appropriate first-line therapy for Leukodystrophies?
+
+  - **A.** Fabry
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Fabry
+  >
+  > *Source:* **Fabry**   Enzyme replacement (agalsidase α/β)   All symptomatic; chaperone (migalastat) for amenable mutations
+

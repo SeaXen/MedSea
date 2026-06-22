@@ -162,3 +162,70 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Basal insulin initiation]], [[Basal-bolus intensification]], [[Concentrated insulins (U-200, U-300, U-500)]], [[Treatment algorithms/NICE NG28 pathway]]
+---
+
+> Auto-generated study sections for "Insulin therapy in type 2 diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Insulin therapy in type 2 diabetes?
+  A: Pre-mixed insulin = fixed ratio of rapid-acting + intermediate-acting (NPH or protamine) in one pen; BD dosing (pre-breakfast, pre-dinner); for patients with regular meals, unable to carb count; inferior post-prandial control vs basal-bolus; higher hypoglycaemia risk; not first-line (NICE: only if basal-bolus not feasible).
+- Q: What is Regular meal pattern of Insulin therapy in type 2 diabetes?
+  A: Fixed mealtimes (breakfast, dinner ~12h apart); similar carb content
+- Q: What is Unable/Unwilling to carb count of Insulin therapy in type 2 diabetes?
+  A: Cognitive impairment, literacy issues, no structured education access
+- Q: What is Basal-bolus not feasible of Insulin therapy in type 2 diabetes?
+  A: Injection burden (4–5/day), needle phobia, poor dexterity
+- Q: What is Simplification of Insulin therapy in type 2 diabetes?
+  A: Elderly, care home, complex regimens failing
+- Q: What is Cost-conscious of Insulin therapy in type 2 diabetes?
+  A: Single pen vs multiple; but analogues cost similar
+- Q: What is Pre-mixed ratios of Insulin therapy in type 2 diabetes?
+  A: 30/70 (Novomix 30), 25/75 (Humalog Mix 25), 50/50 (Humalog Mix 50)
+- Q: What is Dosing of Insulin therapy in type 2 diabetes?
+  A: BD (pre-breakfast, pre-dinner)
+- Q: What is Best for of Insulin therapy in type 2 diabetes?
+  A: Regular meals, unable to carb count, elderly
+- Q: What is Avoid if of Insulin therapy in type 2 diabetes?
+  A: Variable meals, shift work, hypoglycaemia unawareness
+- Q: What is Post-prandial control of Insulin therapy in type 2 diabetes?
+  A: Inferior to basal-bolus
+- Q: What is Hypoglycaemia risk of Insulin therapy in type 2 diabetes?
+  A: Higher (nocturnal intermediate peak)
+- Q: What is NICE position of Insulin therapy in type 2 diabetes?
+  A: Only if basal-bolus not feasible
+- Q: What is Titration of Insulin therapy in type 2 diabetes?
+  A: Weekly; adjust breakfast dose by pre-dinner glucose, dinner dose by fasting
+- Q: What is Switch to basal-bolus of Insulin therapy in type 2 diabetes?
+  A: If HbA1c not controlled, recurrent hypo, variable lifestyle
+- Q: What is Key limitation of Insulin therapy in type 2 diabetes?
+  A: Fixed rapid:intermediate ratio → mismatch with meals
+- Q: What is Pre-mixed ratios of Insulin therapy in type 2 diabetes?
+  A: 30/70 (Novomix 30), 25/75 (Humalog Mix 25), 50/50 (Humalog Mix 50)
+- Q: What is Dosing of Insulin therapy in type 2 diabetes?
+  A: BD (pre-breakfast, pre-dinner)
+- Q: What is Best for of Insulin therapy in type 2 diabetes?
+  A: Regular meals, unable to carb count, elderly
+- Q: What is Avoid if of Insulin therapy in type 2 diabetes?
+  A: Variable meals, shift work, hypoglycaemia unawareness
+- Q: What is Post-prandial control of Insulin therapy in type 2 diabetes?
+  A: Inferior to basal-bolus
+- Q: What is Hypoglycaemia risk of Insulin therapy in type 2 diabetes?
+  A: Higher (nocturnal intermediate peak)
+- Q: What is NICE position of Insulin therapy in type 2 diabetes?
+  A: Only if basal-bolus not feasible
+- Q: What is Titration of Insulin therapy in type 2 diabetes?
+  A: Weekly; adjust breakfast dose by pre-dinner glucose, dinner dose by fasting
+- Q: What is Switch to basal-bolus of Insulin therapy in type 2 diabetes?
+  A: If HbA1c not controlled, recurrent hypo, variable lifestyle
+- Q: What is Key limitation of Insulin therapy in type 2 diabetes?
+  A: Fixed rapid:intermediate ratio → mismatch with meals
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Insulin therapy in type 2 diabetes?**
+   A. **Pre-mixed insulin = fixed ratio of rapid-acting + intermediate-acting (NPH or protamine) in one pen; BD dosing (pre-breakfast, pre-dinner); for patients with regular meals, unable to carb count; infer**
+   B. An unrelated condition not matching the clinical picture of Insulin therapy in type 2 diabetes
+   C. A complication seen late in the disease course of Insulin therapy in type 2 diabetes
+   D. A condition that mimics Insulin therapy in type 2 diabetes but has a different underlying cause
+

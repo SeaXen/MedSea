@@ -115,3 +115,23 @@ status: full-fcps-mrcp-note
 - Drug resistance (clopidogrel - CYP2C19)
 - Fall risk
 - Cognitive decline, dementia
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Stroke Prevention*
+
+**Q1.** Which of the following features is most specific or characteristic of Stroke Prevention?
+
+  - **A.** CADASIL, MELAS, homocystinuria
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — CADASIL, MELAS, homocystinuria
+  >
+  > *Source:* ldren), hydroxyurea, transfusions
+- **Fabry disease**: enzyme replacement (agalsidase alfa, beta)
+- **CADASIL, MELAS, homocystinuria**: specific management
+## Lifestyle
+- **Smoking cessation**: most i
+

@@ -175,3 +175,95 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[GDM screening (IADPSG, NICE, ADA)]], [[Pre-existing diabetes in pregnancy (type 1, type 2)]], [[Postpartum follow-up and future risk]], [[Diabetes in pregnancy/GDM management (diet, metformin, insulin)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — gdm-management-diet-metformin-insulin*
+
+**Q1.** What is the most appropriate first-line therapy for gdm-management-diet-metformin-insulin?
+
+  - **A.** Calories
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Calories
+  >
+  > *Source:* **Calories**   1800-2000 kcal (adjust for BMI)
+---
+
+> Auto-generated study sections for "Diabetes in pregnancy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (27 generated)
+
+- Q: What is the definition of Diabetes in pregnancy?
+  A: Stepwise management: Medical nutrition therapy (MNT) → Metformin (if fasting/pre-prandial not at target) → Insulin (if post-prandial not at target or metformin contraindicated/declined).
+- Q: What is Diabetes in pregnancy indicated for?
+  A: Fasting ≥5.3 mmol/L OR pre-prandial ≥ target despite MNT (NICE)
+- Q: What is the dose of Diabetes in pregnancy?
+  A: 500 mg OD with evening meal
+- Q: What is Titration of Diabetes in pregnancy?
+  A: 500 mg weekly to 500 mg BD → 1g BD (max 2g/day in pregnancy; 3g non-pregnant)
+- Q: How is Diabetes in pregnancy monitored?
+  A: eGFR q4–6 weeks; stop if <30
+- Q: What is Folic acid of Diabetes in pregnancy?
+  A: Continue 5mg daily (metformin ↓ folate absorption)
+- Q: What is B12 of Diabetes in pregnancy?
+  A: Monitor annually if long-term
+- Q: What is GDM targets (NICE) of Diabetes in pregnancy?
+  A: Fasting <5.3; 1h post-prandial <7.8; 2h <6.4 mmol/L
+- Q: How is Diabetes in pregnancy managed?
+  A: MNT → Metformin → Insulin
+- Q: What is the dose of Diabetes in pregnancy?
+  A: 2g/day (vs 3g non-pregnant)
+- Q: What is Metformin advantage of Diabetes in pregnancy?
+  A: Less weight gain, less hypo, higher satisfaction; 20–45% need add-on insulin
+- Q: What is Insulin for fasting of Diabetes in pregnancy?
+  A: Basal only (NPH/detemir/glargine) at bedtime
+- Q: What is Insulin for post-prandial of Diabetes in pregnancy?
+  A: Rapid analogue (aspart/lispro) pre-meal
+- Q: What is Delivery timing of Diabetes in pregnancy?
+  A: Diet/metformin: 38–40w; Insulin: 37–38+6w; Complications: earlier
+- Q: What is the investigation of choice for Diabetes in pregnancy?
+  A: OGTT at 6–12 weeks (not HbA1c)
+- Q: What is T2DM risk of Diabetes in pregnancy?
+  A: 50% at 10y, 70% at 20y — lifelong annual screen
+- Q: What is Metformin breastfeeding of Diabetes in pregnancy?
+  A: Safe — minimal milk transfer
+- Q: What is GDM targets (NICE) of Diabetes in pregnancy?
+  A: Fasting <5.3; 1h post-prandial <7.8; 2h <6.4 mmol/L
+- Q: How is Diabetes in pregnancy managed?
+  A: MNT → Metformin → Insulin
+- Q: What is the dose of Diabetes in pregnancy?
+  A: 2g/day (vs 3g non-pregnant)
+- Q: What is Metformin advantage of Diabetes in pregnancy?
+  A: Less weight gain, less hypo, higher satisfaction; 20–45% need add-on insulin
+- Q: What is Insulin for fasting of Diabetes in pregnancy?
+  A: Basal only (NPH/detemir/glargine) at bedtime
+- Q: What is Insulin for post-prandial of Diabetes in pregnancy?
+  A: Rapid analogue (aspart/lispro) pre-meal
+- Q: What is Delivery timing of Diabetes in pregnancy?
+  A: Diet/metformin: 38–40w; Insulin: 37–38+6w; Complications: earlier
+- Q: What is the investigation of choice for Diabetes in pregnancy?
+  A: OGTT at 6–12 weeks (not HbA1c)
+- Q: What is T2DM risk of Diabetes in pregnancy?
+  A: 50% at 10y, 70% at 20y — lifelong annual screen
+- Q: What is Metformin breastfeeding of Diabetes in pregnancy?
+  A: Safe — minimal milk transfer
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in pregnancy?**
+   A. **Stepwise management: Medical nutrition therapy (MNT) → Metformin (if fasting/pre-prandial not at target) → Insulin (if post-prandial not at target or metformin contraindicated/declined).**
+   B. An unrelated condition not matching the clinical picture of Diabetes in pregnancy
+   C. A complication seen late in the disease course of Diabetes in pregnancy
+   D. A condition that mimics Diabetes in pregnancy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in pregnancy presents with: Auto-generated PasTest/Mediscope-style scenario SBAs grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. Source: Ch 21: Diabetes — gdm-management-diet-metformin-insulin; Q1. What is the most appropriate first-line therapy for gdm-management-diet-metformin-insulin?; B. An advanced/surgical therapy reserved for refractory disease. What is the most likely diagnosis?
+   A. **Diabetes in pregnancy**
+   B. A condition that mimics Diabetes in pregnancy but is not the same entity
+   C. A complication of Diabetes in pregnancy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in pregnancy
+

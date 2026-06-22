@@ -144,3 +144,28 @@ IAA NEGATIVE
 - [[Type 1 Diabetes Mellitus/Autoantibody testing/Zinc transporter 8 (ZnT8) autoantibodies]]
 - [[Type 1 Diabetes Mellitus/Clinical presentation/Classic symptomatic presentation]]
 - [[Monogenic and Atypical Diabetes/Neonatal diabetes]]
+---
+
+> Auto-generated study sections for "Autoantibody testing" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Autoantibody testing?
+  A: Insulin Autoantibodies (IAA) = antibodies against native human insulin.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoantibody testing?**
+   A. **Insulin Autoantibodies (IAA) = antibodies against native human insulin.**
+   B. An unrelated condition not matching the clinical picture of Autoantibody testing
+   C. A complication seen late in the disease course of Autoantibody testing
+   D. A condition that mimics Autoantibody testing but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoantibody testing presents with: Insulin Autoantibodies (IAA) = antibodies against native human insulin.; Critical distinction: IAA = autoantibodies (pre-insulin therapy); IAA vs Insulin Antibodies (IA) = antibodies induced by exogenous insulin therapy.; FCPS/MRCP relevance: Only valid before insulin initiation; exam questions on timing, assay interference, paediatric sensitivity.. What is the most likely diagnosis?
+   A. **Autoantibody testing**
+   B. A condition that mimics Autoantibody testing but is not the same entity
+   C. A complication of Autoantibody testing rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoantibody testing
+

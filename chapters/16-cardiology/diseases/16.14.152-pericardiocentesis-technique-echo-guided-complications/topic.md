@@ -72,3 +72,41 @@ Send for:
 > - **Don't drain >1 L initially** (decompression syndrome)
 > - **Send fluid for cytology** in 3 separate samples (↑ diagnostic yield)
 > - **Continued drainage** is more effective than single aspiration
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Pericardiocentesis technique echo guided complications*
+
+**Q1.** Which of the following is characterised by the clinical triad: hypotension, JVP, muffled heart sounds?
+
+  - **A.** Pericardiocentesis technique echo guided complications
+  - **B.** Hypertensive heart disease
+  - **C.** Ischaemic heart disease
+  - **D.** Valvular heart disease
+
+  > **Answer: A** — Pericardiocentesis technique echo guided complications
+  >
+  > *Source:* **Tamponade**: Beck's triad (hypotension, JVP, muffled heart sounds), pulsus paradoxus (>10 mmHg drop in SBP with inspiration), electrical alternans
+
+**Q2.** Which of the following features is most specific or characteristic of Pericardiocentesis technique echo guided complications?
+
+  - **A.** Pericarditis pain
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Pericarditis pain
+  >
+  > *Source:* **Pericarditis pain**: pleuritic, ↑lying, ↓leaning forward, **trapezius ridge radiation** (specific for pericardial)
+
+**Q3.** What is the most appropriate first-line therapy for Pericardiocentesis technique echo guided complications?
+
+  - **A.** NSAIDs + colchicine
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — NSAIDs + colchicine
+  >
+  > *Source:* **NSAIDs** (ibuprofen 600-800mg TDS, aspirin 750-1000mg TDS, indomethacin) + **colchicine 0.5mg BD** (1-3 months) for first episode and recurrence.
+

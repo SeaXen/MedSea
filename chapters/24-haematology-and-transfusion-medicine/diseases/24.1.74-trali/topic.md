@@ -402,3 +402,18 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — TRALI*
+
+**Q1.** What is the most appropriate first-line therapy for TRALI?
+
+  - **A.** ABG, CXR + , Echo, Blood Cultures
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — ABG, CXR + , Echo, Blood Cultures
+  >
+  > *Source:* Investigations**   ABG, CXR, **BNP/NT-proBNP**, Echo, Blood Cultures (Exclude Sepsis), **Send Unit + Patient Sample for Donor Antibody Testing**
+

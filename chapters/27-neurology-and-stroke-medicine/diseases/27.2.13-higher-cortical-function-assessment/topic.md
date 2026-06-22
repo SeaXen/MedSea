@@ -290,3 +290,31 @@ Aphasia ↔ [[Stroke Syndromes]], [[Cranial Nerve Examination]]; Memory loss ↔
 ## Local Navigation
 **Hub:** [[01_Fundamentals_Examination/Fundamentals & Examination Hub]] | [[01_Fundamentals_Examination/Clinical Assessment Hub]] | [[Neurology MOC]]
 **Related:** [[Aphasia]], [[Dementia Workup]], [[Stroke Syndromes]], [[Neglect]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Higher Cortical Function Assessment*
+
+**Q1.** Which of the following features is most specific or characteristic of Higher Cortical Function Assessment?
+
+  - **A.** MCQs:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MCQs:
+  >
+  > *Source:* **WATER** (aphasia) — **W**ernicke, **A**nomia, **T**ranscortical, **E**xpressive (Broca), **R**eceptive (Wernicke/Conduction), **G**lobal
+**MCQs:** 1B-Verbal fluency tests executive; 2B-Wernicke supe
+
+**Q2.** What is the most appropriate first-line therapy for Higher Cortical Function Assessment?
+
+  - **A.** Behavioural:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Behavioural:
+  >
+  > *Source:* **Behavioural:** Non-pharm first (reorientation, routine, environment).
+

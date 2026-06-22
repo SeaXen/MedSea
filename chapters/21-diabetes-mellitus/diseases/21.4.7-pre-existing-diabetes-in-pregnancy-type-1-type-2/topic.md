@@ -176,3 +176,113 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — pre-existing-diabetes-in-pregnancy-type-1-type-2*
+
+**Q1.** What is the most appropriate first-line therapy for pre-existing-diabetes-in-pregnancy-type-1-type-2?
+
+  - **A.** Screening
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Screening
+  >
+  > *Source:* **Screening**   Retinal, renal, cardiac, thyroid (T1DM), contraception until ready  
+
+### Medication Safety in Pregnancy
+---
+
+> Auto-generated study sections for "Diabetes in pregnancy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (35 generated)
+
+- Q: What is the definition of Diabetes in pregnancy?
+  A: Diabetes diagnosed before pregnancy (T1DM or T2DM)
+- Q: What is the epidemiology of Diabetes in pregnancy?
+  A: ~1% pregnancies (increasing with T2DM)
+- Q: What is HbA1c of Diabetes in pregnancy?
+  A: Pre-conception (target <48); monthly in pregnancy (falsely low 2nd/3rd tri)
+- Q: What is SMBG of Diabetes in pregnancy?
+  A: 7x/day (pre/post meals, bedtime, 3am)
+- Q: What is CGM of Diabetes in pregnancy?
+  A: Recommended (NICE: all T1DM in pregnancy)
+- Q: What is Retinal screen of Diabetes in pregnancy?
+  A: Pre-conception, each trimester, 6mo postpartum
+- Q: What is Renal (ACR/eGFR) of Diabetes in pregnancy?
+  A: Pre-conception, each trimester
+- Q: What is Timing of Diabetes in pregnancy?
+  A: 38-39 weeks if well-controlled; 37-38 if complications
+- Q: What is Glucose target of Diabetes in pregnancy?
+  A: 4-7 mmol/L (72-126 mg/dL)
+- Q: What is Insulin of Diabetes in pregnancy?
+  A: IV insulin infusion (sliding scale or algorithm); stop SC insulin
+- Q: How is Diabetes in pregnancy monitored?
+  A: Hourly glucose; ketone monitoring
+- Q: What is Insulin of Diabetes in pregnancy?
+  A: Dramatic drop (reduce to pre-pregnancy doses)
+- Q: What is Breastfeeding of Diabetes in pregnancy?
+  A: Adjust insulin/calories; monitor for hypoglycaemia
+- Q: What is Contraception of Diabetes in pregnancy?
+  A: Discuss pre-delivery; LARC preferred
+- Q: What is Follow-up of Diabetes in pregnancy?
+  A: 6-13 week review; annual HbA1c; retinal/renal screen
+- Q: What is HbA1c of Diabetes in pregnancy?
+  A: Pre-conception (target <48); monthly in pregnancy (falsely low 2nd/3rd tri)
+- Q: What is SMBG of Diabetes in pregnancy?
+  A: 7x/day (pre/post meals, bedtime, 3am)
+- Q: What is CGM of Diabetes in pregnancy?
+  A: Recommended (NICE: all T1DM in pregnancy)
+- Q: What is Retinal screen of Diabetes in pregnancy?
+  A: Pre-conception, each trimester, 6mo postpartum
+- Q: What is Renal (ACR/eGFR) of Diabetes in pregnancy?
+  A: Pre-conception, each trimester
+- Q: What is Thyroid (T1DM) of Diabetes in pregnancy?
+  A: Pre-conception, each trimester
+- Q: What is Timing of Diabetes in pregnancy?
+  A: 38-39 weeks if well-controlled; 37-38 if complications
+- Q: What is Glucose target of Diabetes in pregnancy?
+  A: 4-7 mmol/L (72-126 mg/dL)
+- Q: What is Insulin of Diabetes in pregnancy?
+  A: IV insulin infusion (sliding scale or algorithm); stop SC insulin
+- Q: What is Insulin of Diabetes in pregnancy?
+  A: Dramatic drop (reduce to pre-pregnancy doses)
+- Q: What is Breastfeeding of Diabetes in pregnancy?
+  A: Adjust insulin/calories; monitor for hypoglycaemia
+- Q: What is Contraception of Diabetes in pregnancy?
+  A: Discuss pre-delivery; LARC preferred
+- Q: What is Follow-up of Diabetes in pregnancy?
+  A: 6-13 week review; annual HbA1c; retinal/renal screen
+- Q: What is Pre-conception HbA1c of Diabetes in pregnancy?
+  A: <48 mmol/mol (6.5%)
+- Q: What is Folic acid of Diabetes in pregnancy?
+  A: 5mg OD (>=3mo pre-conception -> 12 weeks)
+- Q: What is Teratogens to STOP of Diabetes in pregnancy?
+  A: ACEi/ARB, statins, SGLT2i, GLP-1 RA, sulfonylureas, TZDs
+- Q: What is Glycaemic targets of Diabetes in pregnancy?
+  A: FBG <5.3, 1h <7.8, 2h <6.4 mmol/L
+- Q: What is Insulin of Diabetes in pregnancy?
+  A: Basal-bolus or CSII; requirements 2-3x increase in 3rd trimester
+- Q: What is Intrapartum of Diabetes in pregnancy?
+  A: IV insulin infusion; target 4-7 mmol/L
+- Q: What is Postpartum of Diabetes in pregnancy?
+  A: Insulin requirements drop; OGTT 6-13wk if T2DM; annual screen
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in pregnancy?**
+   A. **# Pre-existing diabetes in pregnancy (type 1, type 2)**
+   B. An unrelated condition not matching the clinical picture of Diabetes in pregnancy
+   C. A complication seen late in the disease course of Diabetes in pregnancy
+   D. A condition that mimics Diabetes in pregnancy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in pregnancy presents with: Definition — Diabetes diagnosed before pregnancy (T1DM or T2DM); Prevalence — ~1% pregnancies (increasing with T2DM); Risk — Miscarriage, congenital anomalies, macrosomia, pre-eclampsia, stillbirth. What is the most likely diagnosis?
+   A. **Diabetes in pregnancy**
+   B. A condition that mimics Diabetes in pregnancy but is not the same entity
+   C. A complication of Diabetes in pregnancy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in pregnancy
+

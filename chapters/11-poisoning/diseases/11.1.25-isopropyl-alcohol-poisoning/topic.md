@@ -495,3 +495,36 @@ Isopropyl alcohol poisoning = metabolism to acetone (ketone) → **ketosis WITHO
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Isopropyl Alcohol Poisoning*
+
+**Q1.** Which of the following features is most specific or characteristic of Isopropyl Alcohol Poisoning?
+
+  - **A.** Ketosis WITHOUT metabolic acidosis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Ketosis WITHOUT metabolic acidosis
+  >
+  > *Source:* **CNS depression** (rapid, profound — "drunk" but more severe)
+- **Ketosis WITHOUT metabolic acidosis** — **HALLMARK**
+- **Hemorrhagic gastritis** — hematemesis, melena, abdominal pain (direct irritat
+
+**Q2.** What is the most appropriate first-line therapy for Isopropyl Alcohol Poisoning?
+
+  - **A.** Airway + Breathing + Circulation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Airway + Breathing + Circulation
+  >
+  > *Source:* Supportive Care (ONLY — No Antidote, No Dialysis)
+- **Airway**: protect if GCS < 8 — intubation
+- **Breathing**: O₂, ventilate if needed
+- **Circulation**: fluids for hypotension
+- **GI**: PPI/H2 bloc
+

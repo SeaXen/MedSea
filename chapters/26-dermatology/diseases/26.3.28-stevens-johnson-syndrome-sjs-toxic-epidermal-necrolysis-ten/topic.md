@@ -880,3 +880,34 @@ Stevens-Johnson Syndrome (SJS) and Toxic Epidermal Necrolysis (TEN) represent a 
 **Chapter MOC:** [[Dermatology MOC]]  
 **Drug Reference:** [[../00_Index/Dermatology Drug Reference]]  
 **Related Topics:** [[Erythema Multiforme]], [[DRESS Syndrome]], [[AGEP]], [[Fixed Drug Eruption]], [[Drug Eruptions Hub]], [[Toxic Epidermal Necrolysis]], [[SCORTEN]], [[HLA Drug Associations]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 26: Dermatology — Stevens-Johnson Syndrome (SJS) & Toxic Epidermal N*
+
+**Q1.** Which of the following features is most specific or characteristic of Stevens-Johnson Syndrome (SJS) & Toxic Epidermal N?
+
+  - **A.** Drug exposure:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Drug exposure:
+  >
+  > *Source:* ---
+### History
+- **Prodrome (1-3 days):** Fever, malaise, myalgia, arthralgia, cough, sore throat
+- **Drug exposure:** Typically 1-4 weeks prior (allopurinol up to 8 weeks)
+- **Mucosal symptoms:** Or
+
+**Q2.** What is the most appropriate first-line therapy for Stevens-Johnson Syndrome (SJS) & Toxic Epidermal N?
+
+  - **A.** Ciclosporin
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Ciclosporin
+  >
+  > *Source:* **Ciclosporin**   3-5mg/kg/day IV/oral   Growing evidence for mortality benefit   SCORTEN ≥3, alternative to IVIG
+

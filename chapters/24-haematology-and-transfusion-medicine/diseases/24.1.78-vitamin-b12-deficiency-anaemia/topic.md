@@ -483,3 +483,23 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Vitamin B12 Deficiency Anaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Vitamin B12 Deficiency Anaemia?
+
+  - **A.** MMA
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MMA
+  >
+  > *Source:* ---
+### First-Line
+| Test | Expected in B12 Deficiency |
+|------|---------------------------|
+| **Serum B12** | **Low (<150-200 pg/mL)** |
+| **MMA (Methylmalonic Acid)** | **Elevated** (Most Sensitive
+

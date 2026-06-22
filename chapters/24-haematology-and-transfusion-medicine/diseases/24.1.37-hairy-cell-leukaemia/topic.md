@@ -401,3 +401,23 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Hairy Cell Leukaemia*
+
+**Q1.** What is the most appropriate first-line therapy for Hairy Cell Leukaemia?
+
+  - **A.** Symptomatic cytopenias + Massive splenomegaly + Recurrent infections
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Symptomatic cytopenias + Massive splenomegaly + Recurrent infections
+  >
+  > *Source:* ### Treatment Indications
+- **Symptomatic cytopenias**: Hb <10, ANC <1.0, Plt <100
+- **Massive splenomegaly** causing symptoms
+- **Recurrent infections**
+- **Constitutional symptoms**
+- **Autoimmune c
+

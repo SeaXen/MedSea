@@ -367,3 +367,33 @@ Related: [[Movement Disorders Hub]], [[Hyperkinetic Movement Disorders Hub]], [[
 ## Local Navigation
 - [[Movement Disorders Hub]] | [[Hyperkinetic Movement Disorders Hub]]
 - [[Wilsons Disease]] | [[Drug-Induced Parkinsonism]] | [[Chorea]] | [[Parkinsons Disease]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Dystonia*
+
+**Q1.** Which of the following features is most specific or characteristic of Dystonia?
+
+  - **A.** Worsened by action
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Worsened by action
+  >
+  > *Source:* *Cardinal features:**
+- **Patterned, twisting movements/postures** (the "twist")
+- **Worsened by action** (task-specific or voluntary)
+- **Sensory tricks (geste antagoniste):** Touching the affected a
+
+**Q2.** What is the most appropriate first-line therapy for Dystonia?
+
+  - **A.** Principles:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Principles:
+  >
+  > *Source:* **Principles:** Treat underlying cause; botulinum toxin for focal; oral agents for generalised; surgery (DBS) for refractory.
+

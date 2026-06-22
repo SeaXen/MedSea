@@ -382,3 +382,35 @@ mindmap
    C. A complication of Vasculitis rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Vasculitis
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Eosinophilic granulomatosis with polyangiitis (EPA)*
+
+**Q1.** Which of the following features is most specific or characteristic of Eosinophilic granulomatosis with polyangiitis (EPA)?
+
+  - **A.** Eosinophil Count
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Eosinophil Count
+  >
+  > *Source:* y** for systolic function, wall motion
+
+---
+| Test | Typical Finding |
+|------|-----------------|
+| **Eosinophil Count** | **>1.5×10⁹/L or >10%** (key diagnostic criterion) |
+| **p-ANCA / MPO** | **Po
+
+**Q2.** What is the most appropriate first-line therapy for Eosinophilic granulomatosis with polyangiitis (EPA)?
+
+  - **A.** Mepolizumab
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Mepolizumab
+  >
+  > *Source:* F --> Yes  G[**Mepolizumab 300mg SC q4wk**\n(Anti-IL-5, FDA approved for EGPA)\nSTEROID-SPARING, reduces relapse]
+

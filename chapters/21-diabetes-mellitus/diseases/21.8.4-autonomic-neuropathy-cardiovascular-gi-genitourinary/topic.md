@@ -152,3 +152,78 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Distal symmetric polyneuropathy (DSPN)]], [[Mononeuropathies and radiculoplexus neuropathy]], [[Neuropathic pain management]], [[Neuropathy screening (10g monofilament, vibration, ANNS)]]
+---
+
+> Auto-generated study sections for "Diabetic neuropathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (26 generated)
+
+- Q: What is the definition of Diabetic neuropathy?
+  A: Autonomic neuropathy = common, underdiagnosed; CV: orthostatic hypotension, silent MI, exercise intolerance; GI: gastroparesis (nausea, vomiting, erratic glucose); GU: neurogenic bladder, ED; sudomotor: anhidrosis, gustatory sweating; mortality ↑ 2–3× (CV autonomic).
+- Q: What are the clinical features of Diabetic neuropathy?
+  A: Nausea, vomiting (undigested food), early satiety, bloating, erratic glucose, weight loss
+- Q: What is the investigation of choice for Diabetic neuropathy?
+  A: Gastric emptying scintigraphy (gold standard): 4h retention >10% (solids) / 4h >60% (liquids); C13 breath test alternative
+- Q: What is Exclude of Diabetic neuropathy?
+  A: Mechanical obstruction (endoscopy/CT), medications (opioids, GLP-1 RA, anticholinergics)
+- Q: What is CAN mortality of Diabetic neuropathy?
+  A: 2–3× higher (sudden death, silent MI)
+- Q: What is Orthostatic hypotension of Diabetic neuropathy?
+  A: SBP drop ≥20 / DBP ≥10 in 3min standing
+- Q: What is Silent MI of Diabetic neuropathy?
+  A: 25–50% diabetic MI painless; screen with ECG/stress test
+- Q: What is Ewing battery of Diabetic neuropathy?
+  A: HRV (deep breathing), 30:15 ratio, Valsalva, orthostatic BP, handgrip
+- Q: What is the investigation of choice for Diabetic neuropathy?
+  A: Gastric emptying scintigraphy (4h retention >10% solids)
+- Q: What is Gastroparesis diet of Diabetic neuropathy?
+  A: Small frequent, low fat/fibre, liquid/blended
+- Q: What is Prokinetics of Diabetic neuropathy?
+  A: Metoclopramide (max 5d), domperidone, erythromycin, prucalopride
+- Q: What is the epidemiology of Diabetic neuropathy?
+  A: 50–75% diabetic men; 3× non-diabetic
+- Q: What is ED 1st line of Diabetic neuropathy?
+  A: PDE5 inhibitors (sildenafil, tadalafil)
+- Q: What is Sudomotor of Diabetic neuropathy?
+  A: Anhidrosis (dry feet), gustatory sweating (face/neck with eating)
+- Q: What are the clinical features of Diabetic neuropathy?
+  A: Nausea, vomiting (undigested food), early satiety, bloating, erratic glucose, weight loss
+- Q: What is the investigation of choice for Diabetic neuropathy?
+  A: Gastric emptying scintigraphy (gold standard): 4h retention >10% (solids) / 4h >60% (liquids); C13 breath test alternative
+- Q: What is CAN mortality of Diabetic neuropathy?
+  A: 2–3× higher (sudden death, silent MI)
+- Q: What is Orthostatic hypotension of Diabetic neuropathy?
+  A: SBP drop ≥20 / DBP ≥10 in 3min standing
+- Q: What is Silent MI of Diabetic neuropathy?
+  A: 25–50% diabetic MI painless; screen with ECG/stress test
+- Q: What is Ewing battery of Diabetic neuropathy?
+  A: HRV (deep breathing), 30:15 ratio, Valsalva, orthostatic BP, handgrip
+- Q: What is the investigation of choice for Diabetic neuropathy?
+  A: Gastric emptying scintigraphy (4h retention >10% solids)
+- Q: What is Gastroparesis diet of Diabetic neuropathy?
+  A: Small frequent, low fat/fibre, liquid/blended
+- Q: What is Prokinetics of Diabetic neuropathy?
+  A: Metoclopramide (max 5d), domperidone, erythromycin, prucalopride
+- Q: What is the epidemiology of Diabetic neuropathy?
+  A: 50–75% diabetic men; 3× non-diabetic
+- Q: What is ED 1st line of Diabetic neuropathy?
+  A: PDE5 inhibitors (sildenafil, tadalafil)
+- Q: What is Sudomotor of Diabetic neuropathy?
+  A: Anhidrosis (dry feet), gustatory sweating (face/neck with eating)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic neuropathy?**
+   A. **Autonomic neuropathy = common, underdiagnosed; CV: orthostatic hypotension, silent MI, exercise intolerance; GI: gastroparesis (nausea, vomiting, erratic glucose); GU: neurogenic bladder, ED; sudomoto**
+   B. An unrelated condition not matching the clinical picture of Diabetic neuropathy
+   C. A complication seen late in the disease course of Diabetic neuropathy
+   D. A condition that mimics Diabetic neuropathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic neuropathy presents with: Orthostatic hypotension — SBP drop ≥20 / DBP ≥10 within 3min standing; syncope, falls, "coat-hanger" pain; Resting tachycardia — HR >100 bpm (denervation supersensitivity); Fixed heart rate — Loss of respiratory sinus arrhythmia (RSA). What is the most likely diagnosis?
+   A. **Diabetic neuropathy**
+   B. A condition that mimics Diabetic neuropathy but is not the same entity
+   C. A complication of Diabetic neuropathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic neuropathy
+

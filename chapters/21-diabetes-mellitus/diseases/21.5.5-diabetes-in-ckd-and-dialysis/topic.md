@@ -55,3 +55,26 @@ see_also:
 ## Tags
 
 #medicine #diabetes #davidson #topic-group-hub #fcps #mrcp
+---
+
+> Auto-generated study sections for "Diabetes in Special Populations" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (4 generated)
+
+- Q: What is the definition of Diabetes in Special Populations?
+  A: Topic-Group hub for Diabetes in CKD and dialysis — covers 3 disease-level topic(s) per Davidson Ch25.
+- Q: What is HbA1c in CKD of Diabetes in Special Populations?
+  A: Falsely LOW in CKD/ESRD (↓RBC lifespan, ESA use) · Use fructosamine (2-3wk avg) or glycated albumin (3wk) · Target HbA1c may be misleading
+- Q: What is Drug Dosing (eGFR) of Diabetes in Special Populations?
+  A: Metformin: ≥45 full, 30-45 half, <30 contraindicated · SGLT2i: initiate ≥45/30, continue ≥20/15 · GLP-1 RA: no adjustment · DPP-4i: adjust (linagliptin no adjust) · SU: avoid glibenclamide, gliclazide OK · Insulin: ↓25-50%
+- Q: What is Dialysis of Diabetes in Special Populations?
+  A: Glucose-free dialysate → hypoglycaemia risk · Insulin requirements variable (pre/post dialysis) · Monitor pre/post dialysis glucose · Peritoneal dialysis: glucose absorption from dialysate
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in Special Populations?**
+   A. **Topic-Group hub for Diabetes in CKD and dialysis — covers 3 disease-level topic(s) per Davidson Ch25.**
+   B. An unrelated condition not matching the clinical picture of Diabetes in Special Populations
+   C. A complication seen late in the disease course of Diabetes in Special Populations
+   D. A condition that mimics Diabetes in Special Populations but has a different underlying cause
+

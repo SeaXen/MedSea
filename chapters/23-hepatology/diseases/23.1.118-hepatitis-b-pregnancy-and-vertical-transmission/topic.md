@@ -312,3 +312,18 @@ mindmap
    C. A complication seen late in the disease course of Viral Hepatitis
    D. A condition that mimics Viral Hepatitis but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Hepatitis B pregnancy and vertical transmission*
+
+**Q1.** What is the most appropriate first-line therapy for Hepatitis B pregnancy and vertical transmission?
+
+  - **A.** Safety + Category B
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Safety + Category B
+  >
+  > *Source:* **Safety**   **Category B** — No Teratogenicity; Safe in Pregnancy
+

@@ -391,3 +391,18 @@ mindmap
    C. A complication seen late in the disease course of Hepatology in Special Situations
    D. A condition that mimics Hepatology in Special Situations but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Viral Hepatitis in Pregnancy*
+
+**Q1.** What is the most appropriate first-line therapy for Viral Hepatitis in Pregnancy?
+
+  - **A.** Safety + Category B
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Safety + Category B
+  >
+  > *Source:* **Safety**   **Category B** — No Teratogenicity; Safe in Pregnancy
+

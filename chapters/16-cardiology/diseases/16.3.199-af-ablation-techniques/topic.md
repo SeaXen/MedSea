@@ -53,3 +53,19 @@ Multifocal AT (≥3 P morphologies, irregular but P waves), atrial flutter with 
 ### Investigations
 
 **ECG** (12-lead, rhythm strip). **Holter** (24-48h) for paroxysmal. **Event recorder/ILR** for infrequent. **Echo** (LA size, LV function, valves, PASP). **Bloods**: FBC, U&E, LFT, **TFT (always — hyperthyroidism)**, coagulation, BNP, troponin. **CXR** (pulmonary oedema, cardiomegaly). **TOE** if cardioversion or ablation (exclude LA thrombus).
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — AF ablation techniques*
+
+**Q1.** What is the most appropriate first-line therapy for AF ablation techniques?
+
+  - **A.** Rate control
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Rate control
+  >
+  > *Source:* **Rate control** (AFFIRM): beta-blocker (1st line, especially in HF: bisoprolol, carvedilol; avoid in HF decompensation), non-dihydropyridine CCB (diltiazem, verapamil, avoid in HFrEF), digoxin (HF, s
+

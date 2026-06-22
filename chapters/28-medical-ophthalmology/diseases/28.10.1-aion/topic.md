@@ -563,3 +563,17 @@ AION is infarction of the optic nerve head, with two main types. **A-AION (GCA)*
 
 ## Tags
 #medicine #davidson #ophthalmology #AION #GCA #fcps #mrcp #temporal-arteritis
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / AION**
+
+**Q1.** Which of the following best describes the underlying pathophysiology / definition of AION?
+
+  - **A.** **AION:** Infarction of the optic nerve head (anterior portion), supplied by posterior ciliary arteries
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **AION:** Infarction of the optic nerve head (anterior portion), supplied by posterior ciliary arteries
+

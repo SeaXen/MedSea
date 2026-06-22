@@ -163,3 +163,64 @@ By the end of this note you should be able to:
 - **I**nflammation: treated
 - **C**hronic: if long-term steroids -> consider pre-existing DM
 - **A**drenal: suppression if long-term**</think>
+---
+
+> Auto-generated study sections for "Drug induced diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Drug induced diabetes?
+  A: Hyperglycaemia induced by glucocorticoid therapy
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 20-50% on steroids develop hyperglycaemia
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Cortisol -> ↑HGP, ↓insulin sensitivity, ↓β-cell function
+- Q: What is SMBG of Drug induced diabetes?
+  A: Pre-meal + 2h post-meal + bedtime
+- Q: What is HbA1c of Drug induced diabetes?
+  A: Falsely low if new/rapid onset; rising if chronic
+- Q: What is SMBG of Drug induced diabetes?
+  A: Pre-meal + 2h post-meal + bedtime
+- Q: What is HbA1c of Drug induced diabetes?
+  A: Falsely low if new/rapid onset; rising if chronic
+- Q: What is Prednisolone >20mg of Drug induced diabetes?
+  A: Basal-bolus (NPH BD or glargine OD + rapid analogue pre-meal)
+- Q: What is Prednisolone 10-20mg of Drug induced diabetes?
+  A: NPH insulin BD (0.2-0.3 U/kg/day)
+- Q: What is Prednisolone <10mg of Drug induced diabetes?
+  A: May not need insulin; monitor
+- Q: What is IV methylprednisolone pulse of Drug induced diabetes?
+  A: IV insulin infusion (sliding scale)
+- Q: What is Prednisolone >20mg of Drug induced diabetes?
+  A: Basal-bolus (NPH BD or glargine OD + rapid analogue pre-meal)
+- Q: What is Prednisolone 10-20mg of Drug induced diabetes?
+  A: NPH insulin BD (0.2-0.3 U/kg/day)
+- Q: What is Prednisolone <10mg of Drug induced diabetes?
+  A: May not need insulin; monitor
+- Q: What is Pattern of Drug induced diabetes?
+  A: Post-prandial >> fasting (peaks 4-8h post-AM steroid)
+- Q: What is NPH insulin of Drug induced diabetes?
+  A: 2/3 AM, 1/3 PM (covers steroid peak)
+- Q: What is Sliding scale of Drug induced diabetes?
+  A: NOT recommended as sole therapy
+- Q: What is Taper of Drug induced diabetes?
+  A: Reduce insulin proportionally to steroid taper
+- Q: What is HbA1c of Drug induced diabetes?
+  A: Falsely low if recent onset
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug induced diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Drug induced diabetes
+   C. A complication seen late in the disease course of Drug induced diabetes
+   D. A condition that mimics Drug induced diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Drug induced diabetes presents with: Definition — Hyperglycaemia induced by glucocorticoid therapy; Incidence — 20-50% on steroids develop hyperglycaemia; Mechanism — Cortisol -> ↑HGP, ↓insulin sensitivity, ↓β-cell function. What is the most likely diagnosis?
+   A. **Drug induced diabetes**
+   B. A condition that mimics Drug induced diabetes but is not the same entity
+   C. A complication of Drug induced diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Drug induced diabetes
+

@@ -368,3 +368,27 @@ mindmap
 **Chapter Hierarchy:** [[../../Davidson Chapter 25 - Neurology Hierarchy]]
 **Chapter MOC:** [[../../Neurology MOC]]
 **Drug Reference:** [[../../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Drug-Resistant Epilepsy & Surgical Evaluation*
+
+**Q1.** In the management of Drug-Resistant Epilepsy & Surgical Evaluation, which of the following should be avoided or is contraindicated?
+
+  - **A.** enzyme-inducing ASMs (avoid in women of childbearing age)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — enzyme-inducing ASMs (avoid in women of childbearing age)
+  >
+  > *Source:* Avoid enzyme-inducing ASMs in women of childbearing age.
+
+---
+| Drug | Interaction / Caution | Management |
+|------|----------------------|------------|
+| | | |
+
+---
+| Complication | Frequency | Preve
+

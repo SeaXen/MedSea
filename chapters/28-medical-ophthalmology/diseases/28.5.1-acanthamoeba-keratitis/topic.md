@@ -520,3 +520,22 @@ Acanthamoeba keratitis is a sight-threatening corneal infection caused by a free
 
 ## Tags
 #medicine #davidson #ophthalmology #acanthamoeba #keratitis #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Acanthamoeba Keratitis*
+
+**Q1.** Which of the following features is most specific or characteristic of Acanthamoeba Keratitis?
+
+  - **A.** Severe pain OUT OF PROPORTION to signs
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Severe pain OUT OF PROPORTION to signs
+  >
+  > *Source:* **Severe pain OUT OF PROPORTION to signs** (key)
+- Red eye, photophobia, lacrimation
+- Early: punctate epitheliopathy, **pseudodendrites** (no terminal bulbs)
+- **Radial keratoneuritis** (perineural i
+

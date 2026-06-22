@@ -850,3 +850,31 @@ Neurological localization becomes faster and safer when you classify syndromes i
 8. **A. Right parietal cortex** — neglect suggests non-dominant parietal lesion.
 9. **D. Aphasia** — cannot be explained by peripheral disease.
 10. **C. Thoracic spinal cord** — umbilical sensory level suggests thoracic cord involvement.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Cortical vs brainstem vs spinal vs peripheral pattern*
+
+**Q1.** Which of the following features is most specific or characteristic of Cortical vs brainstem vs spinal vs peripheral pattern?
+
+  - **A.** C. Spinal cord lesion
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — C. Spinal cord lesion
+  >
+  > *Source:* **C. Spinal cord lesion** — sensory level and retention are key
+
+**Q2.** In the management of Cortical vs brainstem vs spinal vs peripheral pattern, which of the following should be avoided or is contraindicated?
+
+  - **A.** drugs that worsen NMJ transmission (avoid in possible)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — drugs that worsen NMJ transmission (avoid in possible)
+  >
+  > *Source:* - In suspected myasthenia, avoid drugs that worsen NMJ transmission when possible.
+- Renal/hepatic failure may mimic peripheral or encephalopathic states and also change drug choice
+

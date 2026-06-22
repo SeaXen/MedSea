@@ -89,3 +89,30 @@ Continuous axial flow pump across the aortic valve — unloads LV, pumps blood f
 <callout icon="🎯" color="rose_bg">
 **CLINICAL SIGNIFICANCE —** MCS is a **bridge**, not a destination. **SCAI staging** guides timing — early escalation (A → B → C) improves outcomes. **Impella** unloads the LV (DanGer Shock 2024), **VA-ECMO** provides full support but increases LV afterload (often paired with Impella). MCS decisions belong to the **Heart Team**.
 </callout>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Mechanical support IABP Impella VA ECMO*
+
+**Q1.** Which of the following features is most specific or characteristic of Mechanical support IABP Impella VA ECMO?
+
+  - **A.** D-dimer
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — D-dimer
+  >
+  > *Source:* **D-dimer** is sensitive but not specific
+
+**Q2.** What is the most appropriate first-line therapy for Mechanical support IABP Impella VA ECMO?
+
+  - **A.** Haemodynamic support
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Haemodynamic support
+  >
+  > *Source:* **Haemodynamic support**: oxygen, IV fluids (cautious — over-resuscitation worsens RV, monitor), vasopressors (norepinephrine first-line for shock), inotropes (dobutamine if low CO and adequate BP), m
+

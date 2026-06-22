@@ -158,3 +158,43 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Hyperosmolar hyperglycaemic state (HHS)], [[Diabetic ketoacidosis (DKA)], [[HHS mortality and prognosis]], [[DKA complications (cerebral oedema, hypokalaemia)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — HHS vs DKA differentiation*
+
+**Q1.** What is the most appropriate first-line therapy for HHS vs DKA differentiation?
+
+  - **A.** Fluids   URGENT (1–2L 0
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Fluids   URGENT (1–2L 0
+  >
+  > *Source:* Fluids**   **URGENT** (1–2L 0.9% NaCl first hour)   **URGENT** (1–2L first hour)   **URGENT**
+---
+
+> Auto-generated study sections for "Hyperosmolar hyperglycaemic state (HHS)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Hyperosmolar hyperglycaemic state (HHS)?
+  A: HHS vs DKA = spectrum of hyperglycaemic emergencies; HHS: glucose >30, minimal ketones, pH >7.3, older, mortality 10–20%; DKA: glucose 14–30, high ketones, pH <7.3, younger, mortality 1–2%; Mixed (30–40%) = features of both; treat based on dominant pathology.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Hyperosmolar hyperglycaemic state (HHS)?**
+   A. **HHS vs DKA = spectrum of hyperglycaemic emergencies; HHS: glucose >30, minimal ketones, pH >7.3, older, mortality 10–20%; DKA: glucose 14–30, high ketones, pH <7.3, younger, mortality 1–2%; Mixed (30–**
+   B. An unrelated condition not matching the clinical picture of Hyperosmolar hyperglycaemic state (HHS)
+   C. A complication seen late in the disease course of Hyperosmolar hyperglycaemic state (HHS)
+   D. A condition that mimics Hyperosmolar hyperglycaemic state (HHS) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Hyperosmolar hyperglycaemic state (HHS) presents with: Age — >60y (median 70); Diabetes Type — T2DM (>90%); Onset — Days–weeks (gradual). What is the most likely diagnosis?
+   A. **Hyperosmolar hyperglycaemic state (HHS)**
+   B. A condition that mimics Hyperosmolar hyperglycaemic state (HHS) but is not the same entity
+   C. A complication of Hyperosmolar hyperglycaemic state (HHS) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Hyperosmolar hyperglycaemic state (HHS)
+

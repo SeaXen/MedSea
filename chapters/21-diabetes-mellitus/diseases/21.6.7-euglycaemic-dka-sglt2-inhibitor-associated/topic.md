@@ -161,3 +161,55 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Diabetic ketoacidosis (DKA)], [[DKA complications (cerebral oedema, hypokalaemia)], [[SGLT2 inhibitors], [[Diabetes in pregnancy]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — euglycaemic-dka-sglt2-inhibitor-associated*
+
+**Q1.** Which of the following features is most specific or characteristic of euglycaemic-dka-sglt2-inhibitor-associated?
+
+  - **A.** SGLT2i history
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — SGLT2i history
+  >
+  > *Source:* carbonate <15 |
+| **Glucose** | <13.9 mmol/L (may be 5–13 mmol/L) |
+| **U&E, K+** | Same as DKA |
+| **SGLT2i history** | **ASK SPECIFICALLY** — patients may not volunteer |
+| Condition | Distinguishin
+---
+
+> Auto-generated study sections for "Diabetic ketoacidosis (DKA)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (5 generated)
+
+- Q: What is the definition of Diabetic ketoacidosis (DKA)?
+  A: Euglycaemic DKA (euDKA) = DKA with blood glucose <14 mmol/L (typically 8–13 mmol/L); SGLT2i major risk factor; same acidosis/ketosis as typical DKA but delayed recognition; stop SGLT2i immediately; dextrose infusion earlier; same insulin/fluid/K+ management.
+- Q: What is Glycosuria of Diabetic ketoacidosis (DKA)?
+  A: ↓ Glucose reabsorption → ↓ glucose availability → ↓ insulin secretion
+- Q: What is Glucagon ↑ of Diabetic ketoacidosis (DKA)?
+  A: Low glucose + low insulin → ↑ glucagon → ↑ lipolysis + ketogenesis
+- Q: What is Volume depletion of Diabetic ketoacidosis (DKA)?
+  A: Osmotic diuresis → ↑ catecholamines, cortisol → ↑ lipolysis
+- Q: What is Renal ketone handling of Diabetic ketoacidosis (DKA)?
+  A: SGLT2i may ↓ renal ketone clearance
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic ketoacidosis (DKA)?**
+   A. **Euglycaemic DKA (euDKA) = DKA with blood glucose <14 mmol/L (typically 8–13 mmol/L); SGLT2i major risk factor; same acidosis/ketosis as typical DKA but delayed recognition; stop SGLT2i immediately; de**
+   B. An unrelated condition not matching the clinical picture of Diabetic ketoacidosis (DKA)
+   C. A complication seen late in the disease course of Diabetic ketoacidosis (DKA)
+   D. A condition that mimics Diabetic ketoacidosis (DKA) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic ketoacidosis (DKA) presents with: Euglycaemic DKA = Triad of:; 1. Blood glucose <14 mmol/L (often 8–13 mmol/L; rarely <8); 2. Ketonaemia (β-hydroxybutyrate ≥3 mmol/L) OR ketonuria (+++). What is the most likely diagnosis?
+   A. **Diabetic ketoacidosis (DKA)**
+   B. A condition that mimics Diabetic ketoacidosis (DKA) but is not the same entity
+   C. A complication of Diabetic ketoacidosis (DKA) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic ketoacidosis (DKA)
+

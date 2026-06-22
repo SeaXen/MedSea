@@ -660,3 +660,34 @@ flowchart TD
 10. **B** — PCT-guided: stop antibiotics if PCT <0.25 ng/mL OR >80% drop from peak (reduces duration without harm).
 
 ---
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 14: Infectious Disease — Community-Acquired Pneumonia (CAP)*
+
+**Q1.** Which of the following features is most specific or characteristic of Community-Acquired Pneumonia (CAP)?
+
+  - **A.** Legionella urinary antigen
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Legionella urinary antigen
+  >
+  > *Source:* ram stain + culture** | **Inpatient (ward + ICU)** — before antibiotics; expectorated > induced |
+| **Legionella urinary antigen** | **All inpatients** (serogroup 1 only; rapid, specific) |
+| **Pneumo
+
+**Q2.** What is the most appropriate first-line therapy for Community-Acquired Pneumonia (CAP)?
+
+  - **A.** Clarithromycin
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Clarithromycin
+  >
+  > *Source:* **Clarithromycin** (if atypical suspected)   500mg PO 12h   5 days  
+
+### Outpatient WITH Comorbidities (COPD, Heart Failure, Diabetes, Liver Disease, Alcohol, Steroids, Asplenia) OR Recent Antibiotic
+

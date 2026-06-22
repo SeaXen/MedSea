@@ -178,3 +178,105 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Charcot neuroarthropathy*
+
+**Q1.** Which of the following features is most specific or characteristic of Charcot neuroarthropathy?
+
+  - **A.** DVT
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — DVT
+  >
+  > *Source:* l |
+| **Gout** | **Exquisitely painful**; monoarticular (1st MTP common); tophi; urate crystals |
+| **DVT** | Calf tenderness, swelling, +ve D-dimer/US; foot not typically hot/deformed |
+| **Fracture*
+
+**Q2.** What is the most appropriate first-line therapy for Charcot neuroarthropathy?
+
+  - **A.** Total Contact Cast + Gold standard + 12–24 weeks
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Total Contact Cast + Gold standard + 12–24 weeks
+  >
+  > *Source:* **Total Contact Cast (TCC)**   **Gold standard** — non-removable offloading; change weekly for skin check; **12–24 weeks** until quiescent (Stage 2–3)
+---
+
+> Auto-generated study sections for "Diabetic foot disease" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (25 generated)
+
+- Q: What is the definition of Diabetic foot disease?
+  A: Neuropathic osteoarthropathy: joint destruction from repetitive trauma on insensate foot
+- Q: What is the epidemiology of Diabetic foot disease?
+  A: 0.1-0.5% diabetes; 1-2% with neuropathy
+- Q: What causes Diabetic foot disease?
+  A: Severe peripheral neuropathy (LOPS), prior ulcer, trauma, recent surgery, organ transplant
+- Q: What is Clinical exam of Diabetic foot disease?
+  A: Hot swollen foot, preserved pulses, deformity, neuropathy (LOPS)
+- Q: What is X-ray of Diabetic foot disease?
+  A: Eichenholtz staging; fragmentation, dislocation
+- Q: What is MRI of Diabetic foot disease?
+  A: Gold standard early: marrow oedema, joint effusion (Stage 0)
+- Q: What is Bone scan of Diabetic foot disease?
+  A: Increased uptake (non-specific); if MRI contraindicated
+- Q: What is Inflammatory markers of Diabetic foot disease?
+  A: ESR/CRP usually normal (vs osteomyelitis)
+- Q: What is Skin temperature (infrared) of Diabetic foot disease?
+  A: Weekly (difference >2°C = active)
+- Q: What is Serial X-rays of Diabetic foot disease?
+  A: 4-6 weekly (Eichenholtz progression)
+- Q: What is MRI of Diabetic foot disease?
+  A: If diagnostic uncertainty (Stage 0)
+- Q: What is Clinical exam of Diabetic foot disease?
+  A: Hot swollen foot, preserved pulses, deformity, neuropathy (LOPS)
+- Q: What is X-ray of Diabetic foot disease?
+  A: Eichenholtz staging; fragmentation, dislocation
+- Q: What is MRI of Diabetic foot disease?
+  A: Gold standard early: marrow oedema, joint effusion (Stage 0)
+- Q: What is Bone scan of Diabetic foot disease?
+  A: Increased uptake (non-specific); if MRI contraindicated
+- Q: What is Inflammatory markers of Diabetic foot disease?
+  A: ESR/CRP usually normal (vs osteomyelitis)
+- Q: What is Bone turnover markers of Diabetic foot disease?
+  A: Increased NTX, CTX in active phase
+- Q: What is Skin temperature (infrared) of Diabetic foot disease?
+  A: Weekly (difference >2°C = active)
+- Q: What is Serial X-rays of Diabetic foot disease?
+  A: 4-6 weekly (Eichenholtz progression)
+- Q: What is the investigation of choice for Diabetic foot disease?
+  A: Hot swollen foot + preserved pulses = Charcot until proven otherwise
+- Q: What is Eichenholtz 0-3 of Diabetic foot disease?
+  A: 0: normal X-ray/MRI oedema; 1: fragmentation; 2: coalescence; 3: reconstruction
+- Q: What is Immobilisation of Diabetic foot disease?
+  A: TCC non-WB 8-12wk -> WB 4-8wk -> custom footwear
+- Q: What is Key differentiator of Diabetic foot disease?
+  A: Preserved pulses (vs osteomyelitis/cellulitis)
+- Q: What is Bisphosphonates of Diabetic foot disease?
+  A: Not standard; zoledronic acid 5mg some evidence for reduced turnover
+- Q: What is Surgical of Diabetic foot disease?
+  A: Chronic unstable deformity -> arthrodesis/exostectomy
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic foot disease?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetic foot disease
+   C. A complication seen late in the disease course of Diabetic foot disease
+   D. A condition that mimics Diabetic foot disease but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic foot disease presents with: Incidence — 0.1-0.5% diabetes; 1-2% with neuropathy; Risk Factors — Severe peripheral neuropathy (LOPS), prior ulcer, trauma, recent surgery, organ transplant; Pathophysiology — Neurotraumatic: repetitive microtrauma on insensate foot + Neurovascular: autonomic dysregulation -> increased blood flow -> bone resorption (RANKL/OPG). What is the most likely diagnosis?
+   A. **Diabetic foot disease**
+   B. A condition that mimics Diabetic foot disease but is not the same entity
+   C. A complication of Diabetic foot disease rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic foot disease
+

@@ -143,3 +143,92 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[GLP-1 receptor agonists]], [[Insulin therapy in type 2 diabetes]], [[Incretin physiology]], [[Incretin physiology]]
+---
+
+> Auto-generated study sections for "Injectable non insulin therapy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (37 generated)
+
+- Q: What is the definition of Injectable non insulin therapy?
+  A: Pramlintide = synthetic amylin analogue (amylin co-secreted with insulin by β-cells); adjunct to insulin in T1DM/T2DM; slows gastric emptying, suppresses post-prandial glucagon, promotes satiety; ↓ post-prandial glucose, ↓ weight; nausea main side effect; not licensed UK (US FDA only).
+- Q: What is Co-secreted with of Injectable non insulin therapy?
+  A: Insulin (1:10–1:100 molar ratio) from β-cells
+- Q: What is Deficient in of Injectable non insulin therapy?
+  A: T1DM (absolute); T2DM (relative, impaired secretion)
+- Q: What is Actions of Injectable non insulin therapy?
+  A: Slows gastric emptying; suppresses post-prandial glucagon; promotes satiety (hypothalamic); inhibits digestive enzymes
+- Q: What is Net effect of Injectable non insulin therapy?
+  A: Reduces post-prandial glucose excursion without increasing hypoglycaemia risk (when insulin adjusted)
+- Q: What is Gastroparesis of Injectable non insulin therapy?
+  A: Worsens delayed emptying
+- Q: What is Hypoglycaemia unawareness of Injectable non insulin therapy?
+  A: Risk of severe hypo with insulin reduction complexity
+- Q: What is Severe renal impairment (eGFR <30) of Injectable non insulin therapy?
+  A: Limited data; avoid
+- Q: What is Pregnancy of Injectable non insulin therapy?
+  A: Category C; no human data
+- Q: What is Paediatric of Injectable non insulin therapy?
+  A: Not studied <18y
+- Q: What is Pramlintide of Injectable non insulin therapy?
+  A: Amylin analogue (synthetic); 3 proline substitutions
+- Q: What is Amylin physiology of Injectable non insulin therapy?
+  A: Co-secreted with insulin; slows gastric emptying, suppresses glucagon, satiety
+- Q: What is Deficient in of Injectable non insulin therapy?
+  A: T1DM (absolute), T2DM (relative)
+- Q: What is Dosing T1DM of Injectable non insulin therapy?
+  A: Start 15µg pre-meal → 30–60µg
+- Q: What is Dosing T2DM of Injectable non insulin therapy?
+  A: Start 60µg pre-meal → 120µg
+- Q: What is Insulin reduction of Injectable non insulin therapy?
+  A: Reduce mealtime insulin 50% at initiation
+- Q: What are the side effects of Injectable non insulin therapy?
+  A: Nausea 30–50% (dose-limiting); slow titration
+- Q: What is Weight loss of Injectable non insulin therapy?
+  A: −1.5 to −2.5 kg
+- Q: What is HbA1c reduction of Injectable non insulin therapy?
+  A: −0.3 to −0.5%
+- Q: What is vs GLP-1 RA of Injectable non insulin therapy?
+  A: GLP-1 RA preferred (better efficacy, less nausea, global availability)
+- Q: What is UK status of Injectable non insulin therapy?
+  A: Not licensed (US FDA only)
+- Q: What is Gastroparesis of Injectable non insulin therapy?
+  A: Worsens delayed emptying
+- Q: What is Hypoglycaemia unawareness of Injectable non insulin therapy?
+  A: Risk of severe hypo with insulin reduction complexity
+- Q: What is Severe renal impairment (eGFR <30) of Injectable non insulin therapy?
+  A: Limited data; avoid
+- Q: What is Pregnancy of Injectable non insulin therapy?
+  A: Category C; no human data
+- Q: What is Paediatric of Injectable non insulin therapy?
+  A: Not studied <18y
+- Q: What is Pramlintide of Injectable non insulin therapy?
+  A: Amylin analogue (synthetic); 3 proline substitutions
+- Q: What is Amylin physiology of Injectable non insulin therapy?
+  A: Co-secreted with insulin; slows gastric emptying, suppresses glucagon, satiety
+- Q: What is Deficient in of Injectable non insulin therapy?
+  A: T1DM (absolute), T2DM (relative)
+- Q: What is Dosing T1DM of Injectable non insulin therapy?
+  A: Start 15µg pre-meal → 30–60µg
+- Q: What is Dosing T2DM of Injectable non insulin therapy?
+  A: Start 60µg pre-meal → 120µg
+- Q: What is Insulin reduction of Injectable non insulin therapy?
+  A: Reduce mealtime insulin 50% at initiation
+- Q: What are the side effects of Injectable non insulin therapy?
+  A: Nausea 30–50% (dose-limiting); slow titration
+- Q: What is Weight loss of Injectable non insulin therapy?
+  A: −1.5 to −2.5 kg
+- Q: What is HbA1c reduction of Injectable non insulin therapy?
+  A: −0.3 to −0.5%
+- Q: What is vs GLP-1 RA of Injectable non insulin therapy?
+  A: GLP-1 RA preferred (better efficacy, less nausea, global availability)
+- Q: What is UK status of Injectable non insulin therapy?
+  A: Not licensed (US FDA only)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Injectable non insulin therapy?**
+   A. **Pramlintide = synthetic amylin analogue (amylin co-secreted with insulin by β-cells); adjunct to insulin in T1DM/T2DM; slows gastric emptying, suppresses post-prandial glucagon, promotes satiety; ↓ po**
+   B. An unrelated condition not matching the clinical picture of Injectable non insulin therapy
+   C. A complication seen late in the disease course of Injectable non insulin therapy
+   D. A condition that mimics Injectable non insulin therapy but has a different underlying cause
+

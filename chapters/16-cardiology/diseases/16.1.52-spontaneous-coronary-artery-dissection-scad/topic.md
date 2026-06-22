@@ -30,3 +30,30 @@
 > - **Conservative management** first-line (heals spontaneously)
 > - **PCI high-risk** in SCAD (dissection can extend)
 > - **β-blockers reduce recurrence**
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Spontaneous coronary artery dissection SCAD*
+
+**Q1.** Which of the following features is most specific or characteristic of Spontaneous coronary artery dissection SCAD?
+
+  - **A.** Typical angina
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Typical angina
+  >
+  > *Source:* *Typical angina** (3): (1) substernal chest discomfort (pressure, heaviness, squeezing, tightness), (2) precipitated by exertion or emotional stress, (3) relieved by rest or nitrates within minutes. *
+
+**Q2.** What is the most appropriate first-line therapy for Spontaneous coronary artery dissection SCAD?
+
+  - **A.** Revascularisation
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Revascularisation
+  >
+  > *Source:* **Revascularisation** (PCI vs CABG): consider if (1) refractory symptoms despite GDMT, (2) high-risk anatomy (left main, 3-vessel, proximal LAD, SYNTAX score), (3) LV dysfunction with viable myocardiu
+

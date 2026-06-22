@@ -192,3 +192,74 @@ flowchart TD
 - **I**NSTI: DTG/BIC weight gain > RAL/DOR neutral
 - **C**ombination: PI + statin -> atorva ≤20mg; rosa 10mg; avoid simva
 - **S**witch: PI -> INSTI if suppressed; metabolic improvement</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — ART-associated metabolic syndrome*
+
+**Q1.** Which of the following features is most specific or characteristic of ART-associated metabolic syndrome?
+
+  - **A.** Cushing syndrome
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Cushing syndrome
+  >
+  > *Source:* initiation/switch |
+| **Traditional metabolic syndrome** | No ART; obesity, HTN, dyslipidaemia |
+| **Cushing syndrome** | Cortisol excess; specific features |
+| **Hypothyroidism** | TSH ↑; dyslipidaem
+---
+
+> Auto-generated study sections for "Diabetes in HIV" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Diabetes in HIV?
+  A: ART-induced metabolic disturbances: dyslipidaemia, insulin resistance, lipodystrophy, diabetes
+- Q: What is the epidemiology of Diabetes in HIV?
+  A: 20-50% on ART; PI > INSTI > NNRTI
+- Q: What is Risk of Diabetes in HIV?
+  A: PI (lopinavir, atazanavir) > INSTI (dolutegravir, bictegravir) > NNRTI
+- Q: What is PI of Diabetes in HIV?
+  A: Lopinavir/r > atazanavir/r: dyslipidaemia, IR, lipodystrophy
+- Q: What is INSTI of Diabetes in HIV?
+  A: Dolutegravir/bictegravir: weight gain, IR; raltegravir/doravirine neutral
+- Q: What is NRTI of Diabetes in HIV?
+  A: TAF > TDF weight gain; stavudine/ZDV -> severe lipodystrophy
+- Q: What is Screening of Diabetes in HIV?
+  A: Annual: glucose, lipids, weight, BMI, waist circumference
+- Q: How is Diabetes in HIV managed?
+  A: Switch PI -> INSTI (DTG/BIC); metabolic Rx (metformin, statin, GLP-1/SGLT2i)
+- Q: What is Statin + PI of Diabetes in HIV?
+  A: Atorvastatin ≤20mg; rosuvastatin 10mg; avoid simvastatin
+- Q: What is PI of Diabetes in HIV?
+  A: Lopinavir/r > atazanavir/r: dyslipidaemia, IR, lipodystrophy
+- Q: What is INSTI of Diabetes in HIV?
+  A: Dolutegravir/bictegravir: weight gain, IR; raltegravir/doravirine neutral
+- Q: What is NRTI of Diabetes in HIV?
+  A: TAF > TDF weight gain; stavudine/ZDV -> severe lipodystrophy
+- Q: What is Screening of Diabetes in HIV?
+  A: Annual: glucose, lipids, weight, BMI, waist circumference
+- Q: How is Diabetes in HIV managed?
+  A: Switch PI -> INSTI (DTG/BIC); metabolic Rx (metformin, statin, GLP-1/SGLT2i)
+- Q: What is Statin + PI of Diabetes in HIV?
+  A: Atorvastatin ≤20mg; rosuvastatin 10mg; avoid simvastatin
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in HIV?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in HIV
+   C. A complication seen late in the disease course of Diabetes in HIV
+   D. A condition that mimics Diabetes in HIV but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in HIV presents with: Prevalence — 20-50% on ART; PI > INSTI > NNRTI; Risk — PI (lopinavir, atazanavir) > INSTI (dolutegravir, bictegravir) > NNRTI; Mechanism — PI: ↓GLUT4, ↑lipogenesis; INSTI: weight gain, ↑adiposity. What is the most likely diagnosis?
+   A. **Diabetes in HIV**
+   B. A condition that mimics Diabetes in HIV but is not the same entity
+   C. A complication of Diabetes in HIV rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in HIV
+

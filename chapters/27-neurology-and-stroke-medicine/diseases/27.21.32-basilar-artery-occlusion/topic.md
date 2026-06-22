@@ -584,3 +584,19 @@ Basilar artery occlusion is a high-mortality posterior circulation stroke caused
 8. **A** — The basilar artery is formed by the union of the vertebral arteries.  
 9. **A** — Brainstem stroke can rapidly threaten ventilation and airway protection.  
 10. **B** — Severe disability or death is common if BAO is not recognized and treated promptly.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Basilar artery occlusion*
+
+**Q1.** What is the most appropriate first-line therapy for Basilar artery occlusion?
+
+  - **A.** Use antiplatelet, anticoagulation, statin, or vascular risk-factor control according to the true mechanism
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Use antiplatelet, anticoagulation, statin, or vascular risk-factor control according to the true mechanism
+  >
+  > *Source:* Use antiplatelet, anticoagulation, statin, or vascular risk-factor control according to the true mechanism.
+

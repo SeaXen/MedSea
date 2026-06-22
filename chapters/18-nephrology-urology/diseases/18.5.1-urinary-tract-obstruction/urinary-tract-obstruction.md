@@ -467,3 +467,21 @@ mindmap
 **Key takeaway:** Upper tract: stones (commonest), UPJ, stricture, tumour. Lower tract: BPH (commonest), stricture, tumour. **Acute bilateral/solitary kidney = AKI = urgent decompression (Foley, nephrostomy, stent)**. **Infected obstruction = emergency nephrostomy + IV antibiotics**. US first-line (hydronephrosis grading SFU 1–4); CT KUB gold standard for stones; MAG3 for UPJ function. **Post-obstructive diuresis: replace mL-for-mL 0.45% saline + KCl**. BPH: alpha-blocker ± 5-ARI; TURP/HoLEP definitive. UPJ = pyeloplasty. Stricture = urethroplasty. Retroperitoneal fibrosis = steroids ± tamoxifen. Neurogenic bladder = CIC. **Relief <2 weeks reversible; >4–6 weeks irreversible CKD**.
 **Exam focus:** Causes by level, acute vs chronic presentation, emergency decompression, infected obstruction, imaging algorithm, post-obstructive diuresis, BPH management, UPJ pyeloplasty, relief timeline.
 **Clinical relevance:** Early recognition and decompression prevents irreversible renal damage; post-obstructive diuresis can be life-threatening if not managed.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — Urinary Tract Obstruction*
+
+**Q1.** What is the most appropriate first-line therapy for Urinary Tract Obstruction?
+
+  - **A.** Renal colic
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Renal colic
+  >
+  > *Source:* **Renal colic (stone)**   NSAIDs + alpha-blocker (tamsulosin) for <10mm; stent/nephrostomy if infected/severe AKI  
+
+### Definitive Treatment by Cause
+

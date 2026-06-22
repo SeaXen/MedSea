@@ -117,3 +117,28 @@ modified: 2026-06-13
 - [[Type 1 Diabetes Mellitus/Glucose monitoring/Time in range (TIR) metrics]]
 - [[Type 1 Diabetes Mellitus/Insulin therapy/Carbohydrate counting and dose adjustment]]
 - [[Diabetic Emergencies/Hypoglycaemia classification (Level 1/2/3)]]
+---
+
+> Auto-generated study sections for "Glucose monitoring" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Glucose monitoring?
+  A: Self-Monitoring of Blood Glucose (SMBG) = capillary blood glucose measured by patient using a glucometer.
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Glucose monitoring?**
+   A. **Self-Monitoring of Blood Glucose (SMBG) = capillary blood glucose measured by patient using a glucometer.**
+   B. An unrelated condition not matching the clinical picture of Glucose monitoring
+   C. A complication seen late in the disease course of Glucose monitoring
+   D. A condition that mimics Glucose monitoring but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Glucose monitoring presents with: Self-Monitoring of Blood Glucose (SMBG) = capillary blood glucose measured by patient using a glucometer.; FCPS/MRCP relevance: Core skill for T1DM management; exam questions on technique, frequency, targets, and interpretation of patterns.. What is the most likely diagnosis?
+   A. **Glucose monitoring**
+   B. A condition that mimics Glucose monitoring but is not the same entity
+   C. A complication of Glucose monitoring rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Glucose monitoring
+

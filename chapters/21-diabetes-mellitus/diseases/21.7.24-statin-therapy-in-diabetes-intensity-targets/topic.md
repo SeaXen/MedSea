@@ -155,3 +155,68 @@ Statin intolerance (muscle symptoms, LFT rise)
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[ASCVD risk calculators (QRISK3, ASCVD Pooled Cohort)]], [[Aspirin primary prevention]], [[BP targets in diabetes (NICE, ADA, ESC)]], [[Diabetes as cardiovascular risk equivalent]]
+---
+
+> Auto-generated study sections for "Atherosclerotic cardiovascular disease (ASCVD)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Diabetes = high CVD risk — NICE: atorvastatin 20mg primary prevention (QRISK3 ≥10%); high-intensity 80mg secondary; ADA/ACC: high-intensity for most diabetes; LDL target <1.8 (secondary) or <2.6 (primary); non-HDL <2.6/3.4; ezetimibe/PCSK9i if not at target.
+- Q: What is NICE primary prevention of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Atorvastatin 20mg if T2DM + QRISK3 ≥10%
+- Q: What is NICE T1DM of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Atorvastatin 20mg if >40y OR >10y duration OR microvascular complications
+- Q: What is NICE secondary prevention of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Atorvastatin 80mg (high-intensity)
+- Q: What is ADA/ACC age 40–75 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: High-intensity statin (atorva 40–80 / rosuva 20–40) for all diabetes
+- Q: What is ESC very high risk of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: LDL <1.4; non-HDL <1.8
+- Q: What is NICE targets of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Primary: Non-HDL <2.6 or >40% reduction; Secondary: LDL <1.8 or Non-HDL <2.2
+- Q: What is First add-on of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Ezetimibe 10mg (15–20% further LDL reduction)
+- Q: What is PCSK9i of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: If LDL not at target on max statin + ezetimibe; very high risk
+- Q: What is Statin intolerance of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Switch statin → reduce dose → ezetimibe → bempedoic acid → PCSK9i
+- Q: What is Statin + diabetes risk of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Small ↑ HbA1c/new T2DM; do not stop for this — CVD benefit >> risk
+- Q: What is NICE primary prevention of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Atorvastatin 20mg if T2DM + QRISK3 ≥10%
+- Q: What is NICE T1DM of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Atorvastatin 20mg if >40y OR >10y duration OR microvascular complications
+- Q: What is NICE secondary prevention of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Atorvastatin 80mg (high-intensity)
+- Q: What is ADA/ACC age 40–75 of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: High-intensity statin (atorva 40–80 / rosuva 20–40) for all diabetes
+- Q: What is ESC very high risk of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: LDL <1.4; non-HDL <1.8
+- Q: What is NICE targets of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Primary: Non-HDL <2.6 or >40% reduction; Secondary: LDL <1.8 or Non-HDL <2.2
+- Q: What is First add-on of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Ezetimibe 10mg (15–20% further LDL reduction)
+- Q: What is PCSK9i of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: If LDL not at target on max statin + ezetimibe; very high risk
+- Q: What is Statin intolerance of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Switch statin → reduce dose → ezetimibe → bempedoic acid → PCSK9i
+- Q: What is Statin + diabetes risk of Atherosclerotic cardiovascular disease (ASCVD)?
+  A: Small ↑ HbA1c/new T2DM; do not stop for this — CVD benefit >> risk
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Atherosclerotic cardiovascular disease (ASCVD)?**
+   A. **Diabetes = high CVD risk — NICE: atorvastatin 20mg primary prevention (QRISK3 ≥10%); high-intensity 80mg secondary; ADA/ACC: high-intensity for most diabetes; LDL target <1.8 (secondary) or <2.6 (prim**
+   B. An unrelated condition not matching the clinical picture of Atherosclerotic cardiovascular disease (ASCVD)
+   C. A complication seen late in the disease course of Atherosclerotic cardiovascular disease (ASCVD)
+   D. A condition that mimics Atherosclerotic cardiovascular disease (ASCVD) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Atherosclerotic cardiovascular disease (ASCVD) presents with: Intensity — Statins & Doses; High — Atorvastatin 40–80mg, Rosuvastatin 20–40mg; Moderate — Atorvastatin 10–20mg, Rosuvastatin 10mg, Simvastatin 20–40mg, Pravastatin 40–80mg. What is the most likely diagnosis?
+   A. **Atherosclerotic cardiovascular disease (ASCVD)**
+   B. A condition that mimics Atherosclerotic cardiovascular disease (ASCVD) but is not the same entity
+   C. A complication of Atherosclerotic cardiovascular disease (ASCVD) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Atherosclerotic cardiovascular disease (ASCVD)
+

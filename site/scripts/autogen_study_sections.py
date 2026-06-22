@@ -36,6 +36,7 @@ SRC_TO_PUB = {
     'Maternal Medicine':                     '30-maternal-medicine',
     'Adolescent and Transition Medicine':    '31-adolescence-transition-and-young-adult-m',
     'Ageing and Disease':                    '32-older-adult-medicine-and-frailty',
+    'Diabetes':                              '21-diabetes-mellitus',
     'Endocrinology':                        '20-endocrinology',
     'Medical Ophthalmology':                '28-medical-ophthalmology',
 }
@@ -53,6 +54,7 @@ CH_LABELS = {
     '30-maternal-medicine':                  'Ch 30: Maternal Medicine',
     '31-adolescence-transition-and-young-adult-m': 'Ch 31: Adolescent & Transition Medicine',
     '32-older-adult-medicine-and-frailty':   'Ch 32: Ageing and Disease',
+    '21-diabetes-mellitus':                  'Ch 21: Diabetes Mellitus',
 }
 
 # ---------------------------------------------------------------------------

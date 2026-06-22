@@ -417,3 +417,23 @@ mindmap
    C. A complication of Drug Induced Liver Injury rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Drug Induced Liver Injury
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Drug-Induced Liver Injury*
+
+**Q1.** What is the most appropriate first-line therapy for Drug-Induced Liver Injury?
+
+  - **A.** Total + 300 mg/kg + Continue NAC
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Total + 300 mg/kg + Continue NAC
+  >
+  > *Source:* **Total**   **300 mg/kg**     21 hours  
+
+> **Continue NAC** if: INR >1.3, ALT rising, encephalopathy, renal failure, or <8h post-ingestion with nomogram above line.
+
+### Paracetamol Nomogram (UK)
+- *
+

@@ -133,3 +133,67 @@ By the end of this note you should be able to:
 - **M**edical: pegvisomant (GH receptor antagonist)
 - **I**nsulin resistance: GH -> ↓GLUT4, ↓insulin signalling
 - **A**cromegaly features: coarse features, macroglossia, sleep apnoea**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Acromegaly diabetes*
+
+**Q1.** What is the most appropriate first-line therapy for Acromegaly diabetes?
+
+  - **A.** Pituitary adenoma
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Pituitary adenoma
+  >
+  > *Source:* **Pituitary adenoma**   Transsphenoidal surgery (first-line)
+---
+
+> Auto-generated study sections for "Endocrine diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Endocrine diabetes?
+  A: GH/IGF-1 excess causing insulin resistance and diabetes
+- Q: What is the epidemiology of Endocrine diabetes?
+  A: 50% impaired glucose tolerance; 25% diabetes
+- Q: What is the definition of Endocrine diabetes?
+  A: GH/IGF-1 excess causing insulin resistance and diabetes
+- Q: What is the epidemiology of Endocrine diabetes?
+  A: 50% impaired glucose tolerance; 25% diabetes
+- Q: What is Diabetes of Endocrine diabetes?
+  A: Often mild-moderate; post-prandial hyperglycaemia
+- Q: What are the clinical features of Endocrine diabetes?
+  A: Coarse features, macroglossia, sweating, prognathism, large hands/feet
+- Q: What is Cardiovascular of Endocrine diabetes?
+  A: Hypertension, cardiomyopathy, premature atherosclerosis
+- Q: What is Respiratory of Endocrine diabetes?
+  A: Sleep apnoea (macroglossia, soft tissue hypertrophy)
+- Q: What is the mechanism of Endocrine diabetes?
+  A: GH/IGF-1 -> insulin resistance (↓IRS-1, ↑lipolysis)
+- Q: What is the epidemiology of Endocrine diabetes?
+  A: 25% DM; 50% IGT
+- Q: What is the investigation of choice for Endocrine diabetes?
+  A: OGTT: GH not suppressed <1 ug/L; IGF-1 >ULN
+- Q: How is Endocrine diabetes managed?
+  A: Metformin 1st line; improves with biochemical control
+- Q: What is Definitive cure of Endocrine diabetes?
+  A: Transsphenoidal surgery -> often resolves DM
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Endocrine diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Endocrine diabetes
+   C. A complication seen late in the disease course of Endocrine diabetes
+   D. A condition that mimics Endocrine diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Endocrine diabetes presents with: Definition — GH/IGF-1 excess causing insulin resistance and diabetes; Prevalence — 50% impaired glucose tolerance; 25% diabetes; Mechanism — GH/IGF-1 -> insulin resistance, ↓insulin signalling, ↑lipolysis. What is the most likely diagnosis?
+   A. **Endocrine diabetes**
+   B. A condition that mimics Endocrine diabetes but is not the same entity
+   C. A complication of Endocrine diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Endocrine diabetes
+

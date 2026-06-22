@@ -430,3 +430,37 @@ Medication-overuse headache is a classic exam topic because it is common, easily
 8. The underlying migraine disorder.
 9. A headache diary.
 10. Limit acute-treatment days and maintain an effective preventive strategy.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Medication-Overuse Headache*
+
+**Q1.** Which of the following features is most specific or characteristic of Medication-Overuse Headache?
+
+  - **A.** MRI brain
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — MRI brain
+  >
+  > *Source:* e Rx)
+- **Neurological exam** — must be normal
+- **BP, BMI, depression screen**
+
+### Neuroimaging
+- **MRI brain** — only if red flags or atypical features
+- Most patients with MOH do NOT need imaging
+
+
+**Q2.** What is the most appropriate first-line therapy for Medication-Overuse Headache?
+
+  - **A.** Sudden complete withdrawal
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Sudden complete withdrawal
+  >
+  > *Source:* **Sudden complete withdrawal**   Triptans, simple analgesics   First-line for most
+

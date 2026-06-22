@@ -461,3 +461,41 @@ mindmap
    C. A complication of Vasculitis rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Vasculitis
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Behçet's disease*
+
+**Q1.** Which of the following is characterised by the clinical triad: oral, genital, ocular?
+
+  - **A.** Behçet's disease
+  - **B.** RA
+  - **C.** SLE
+  - **D.** Polymyalgia
+
+  > **Answer: A** — Behçet's disease
+  >
+  > *Source:* Diagnosis?" | **Behçet's Disease** — classic triad (oral, genital, ocular)
+
+**Q2.** Which of the following features is most specific or characteristic of Behçet's disease?
+
+  - **A.** Pathergy Test
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Pathergy Test
+  >
+  > *Source:* Lesions** | **Pseudofolliculitis** (sterile pustules), **Erythema nodosum**, acneiform | 60-80% |
+| **Pathergy Test** | **Sterile needle prick → papule/pustule at 24-48h** — **60-70% Turkey/Japan, <10
+
+**Q3.** What is the most appropriate first-line therapy for Behçet's disease?
+
+  - **A.** Colchicine
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Colchicine
+  >
+  > *Source:* B --> Mild  C[**Colchicine 0.5-1mg BD**\n1st line for mucocutaneous]
+

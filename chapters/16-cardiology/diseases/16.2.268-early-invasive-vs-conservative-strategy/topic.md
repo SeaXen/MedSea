@@ -648,3 +648,50 @@ see_also:
 > - 6 mnemonics with visual mindmap
 > - Revision card + spaced repetition tracker
 > - Cross-references verified
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Early invasive vs conservative strategy*
+
+**Q1.** Which of the following features is most specific or characteristic of Early invasive vs conservative strategy?
+
+  - **A.** Chest Pain
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Chest Pain
+  >
+  > *Source:* ## 3.1 History - Cardinal Symptoms
+
+| Symptom | NSTEMI | Unstable Angina | Differentiating Feature |
+|---------|--------|-----------------|------------------------|
+| **Chest Pain** | Typical, >20 min
+
+**Q2.** Which landmark clinical trial provided evidence relevant to the management of Early invasive vs conservative strategy (specifically: ticagrelor superior to clopidogrel for CV death/MI/stroke in ACS)?
+
+  - **A.** PLATO trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — PLATO trial
+  >
+  > *Source:* Any are equivalent
+
+> **Answer: B**  
+> **Explanation:** PLATO trial showed ticagrelor superior to clopidogrel for CV death/MI/stroke in ACS
+
+**Q3.** What is the most appropriate first-line therapy for Early invasive vs conservative strategy?
+
+  - **A.** Key Trial Evidence: + Early Invasive: + NO mortality benefit
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Key Trial Evidence: + Early Invasive: + NO mortality benefit
+  >
+  > *Source:* **Key Trial Evidence:**
+- **Early Invasive:** Reduces composite of death/MI/revasc (NNT~20), **NO mortality benefit**
+- **Very Early (<2h):** No added benefit over ≤24h in stable patients (PREVAIL, EA
+

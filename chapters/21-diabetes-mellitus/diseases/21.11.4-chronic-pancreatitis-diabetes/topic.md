@@ -154,3 +154,71 @@ By the end of this note you should be able to:
 - **E**xocrine replacement: essential
 - **A**lcohol/smoking: aetiology
 - **S**teatorrhoea: hallmark**</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Chronic pancreatitis diabetes*
+
+**Q1.** What is the most appropriate first-line therapy for Chronic pancreatitis diabetes?
+
+  - **A.** Pancreatic enzymes + Enteric-coated microspheres
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Pancreatic enzymes + Enteric-coated microspheres
+  >
+  > *Source:* **Pancreatic enzymes**   **Enteric-coated microspheres**; 25,000-50,000 U lipase/meal; with snacks
+---
+
+> Auto-generated study sections for "Pancreatic diabetes (type 3c)" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Pancreatic diabetes (type 3c)?
+  A: Diabetes secondary to chronic pancreatitis with exocrine insufficiency
+- Q: What is the epidemiology of Pancreatic diabetes (type 3c)?
+  A: 50% of CP develop diabetes at 20 years
+- Q: What is the mechanism of Pancreatic diabetes (type 3c)?
+  A: Pancreatic destruction -> loss of islets + exocrine tissue
+- Q: What is the definition of Pancreatic diabetes (type 3c)?
+  A: Diabetes secondary to chronic pancreatitis with exocrine insufficiency
+- Q: What is the epidemiology of Pancreatic diabetes (type 3c)?
+  A: 50% of CP develop diabetes at 20 years
+- Q: What is the mechanism of Pancreatic diabetes (type 3c)?
+  A: Pancreatic destruction -> loss of islets + exocrine tissue
+- Q: What is Insulin of Pancreatic diabetes (type 3c)?
+  A: Preferred (flexible, physiologic); high doses often needed due to ↓glucagon
+- Q: What is SGLT2i/GLP-1 RA of Pancreatic diabetes (type 3c)?
+  A: Caution (weight loss, GI effects); consider if CVD/CKD
+- Q: What is Sulfonylureas of Pancreatic diabetes (type 3c)?
+  A: Avoid (hypo risk with erratic absorption)
+- Q: What is Metformin of Pancreatic diabetes (type 3c)?
+  A: If eGFR allows; weight neutral
+- Q: What is Glucagon of Pancreatic diabetes (type 3c)?
+  A: Ineffective (alpha cell loss); use IV dextrose for severe hypo
+- Q: What is Insulin of Pancreatic diabetes (type 3c)?
+  A: Preferred (flexible, physiologic); high doses often needed due to ↓glucagon
+- Q: What is SGLT2i/GLP-1 RA of Pancreatic diabetes (type 3c)?
+  A: Caution (weight loss, GI effects); consider if CVD/CKD
+- Q: What is Sulfonylureas of Pancreatic diabetes (type 3c)?
+  A: Avoid (hypo risk with erratic absorption)
+- Q: What is Metformin of Pancreatic diabetes (type 3c)?
+  A: If eGFR allows; weight neutral
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Pancreatic diabetes (type 3c)?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Pancreatic diabetes (type 3c)
+   C. A complication seen late in the disease course of Pancreatic diabetes (type 3c)
+   D. A condition that mimics Pancreatic diabetes (type 3c) but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Pancreatic diabetes (type 3c) presents with: Definition — Diabetes secondary to chronic pancreatitis with exocrine insufficiency; Incidence — 50% of CP develop diabetes at 20 years; Mechanism — Pancreatic destruction -> loss of islets + exocrine tissue. What is the most likely diagnosis?
+   A. **Pancreatic diabetes (type 3c)**
+   B. A condition that mimics Pancreatic diabetes (type 3c) but is not the same entity
+   C. A complication of Pancreatic diabetes (type 3c) rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Pancreatic diabetes (type 3c)
+

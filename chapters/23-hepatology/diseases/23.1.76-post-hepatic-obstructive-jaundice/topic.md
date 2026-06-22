@@ -382,3 +382,23 @@ mindmap
    C. A complication of Jaundice and LFT Interpretation rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Jaundice and LFT Interpretation
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Post-hepatic (obstructive) jaundice*
+
+**Q1.** Which of the following is characterised by the clinical triad: Pain, Fever, Jaundice?
+
+  - **A.** Post-hepatic (obstructive) jaundice
+  - **B.** NAFLD
+  - **C.** ALD
+  - **D.** Viral hepatitis
+
+  > **Answer: A** — Post-hepatic (obstructive) jaundice
+  >
+  > *Source:* tones, stents); Pancreatitis risk |
+| **MRCP** | Best non-invasive diagnostic |
+| **Cholangitis** | Charcot's triad (Pain, Fever, Jaundice) + Reynolds' pentad (Shock, Confusion) |
+
+---
+## Viva Questio
+

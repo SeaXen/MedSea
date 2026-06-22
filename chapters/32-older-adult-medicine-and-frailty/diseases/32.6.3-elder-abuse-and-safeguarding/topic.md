@@ -278,3 +278,21 @@ A: Police, social services, health, voluntary sector; coordinated response
 - [[../Legal, Ethical, and Advance Care Planning|Legal, Ethical, and Advance Care Planning]] (heading hub)
 - [[Advance care planning and end-of-life decision-making]]
 - [[../Ageing and Disease MOC|Ageing and Disease MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 32: Ageing & Disease — Elder abuse and safeguarding*
+
+**Q1.** Which of the following features is most specific or characteristic of Elder abuse and safeguarding?
+
+  - **A.** Mnemonic for Elder abuse and safeguarding
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Mnemonic for Elder abuse and safeguarding
+  >
+  > *Source:* **Mnemonic for Elder abuse and safeguarding** — see Core Clinical Content key points
+- **'SSKIN'** for pressure ulcer prevention: Surface, Skin inspection, Keep moving, Incontinence, Nutrition
+- **'WH
+

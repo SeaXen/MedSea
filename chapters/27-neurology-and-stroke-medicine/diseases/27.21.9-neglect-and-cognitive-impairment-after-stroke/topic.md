@@ -561,3 +561,19 @@ Neglect and cognitive impairment after stroke are major determinants of rehabili
 8. **A** — executive dysfunction affects planning and judgment.
 9. **A** — simplify and supervise rather than overestimate independence.
 10. **B** — cognition and insight often determine real-world outcome.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Neglect and cognitive impairment after stroke*
+
+**Q1.** What is the most appropriate first-line therapy for Neglect and cognitive impairment after stroke?
+
+  - **A.** use supervision and cueing for safety
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — use supervision and cueing for safety
+  >
+  > *Source:* use supervision and cueing for safety
+

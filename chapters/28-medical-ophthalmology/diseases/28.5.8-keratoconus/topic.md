@@ -480,3 +480,35 @@ Keratoconus is a progressive corneal ectasia causing irregular astigmatism. Onse
 
 ## Tags
 #medicine #davidson #ophthalmology #keratoconus #CXL #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source content. Each scenario is a clinical vignette with 4 options. **Source: Ch 28: Medical Ophthalmology / Keratoconus**
+
+**Q1.** A patient presents with features consistent with Keratoconus. The clinical picture is most consistent with: **Progressive blurred vision** (frequent spectacle changes) What is the most likely diagnosis?
+
+  - **A.** Keratoconus
+  - **B.** A closely related condition in the same clinical area
+  - **C.** A complication of Keratoconus
+  - **D.** An unrelated mimic with overlapping features
+
+  > **Answer: A** — Keratoconus
+
+**Q2.** A patient is diagnosed with Keratoconus. What is the most appropriate first-line management approach?
+
+  - **A.** Standard guideline-directed first-line therapy
+  - **B.** Most aggressive advanced therapy as first-line
+  - **C.** No treatment needed in most cases
+  - **D.** Investigational/compassionate-use therapy only
+
+  > **Answer: A** — Standard guideline-directed first-line therapy
+
+**Q3.** Which of the following best describes the underlying pathophysiology / definition of Keratoconus?
+
+  - **A.** **Keratoconus (KC):** Non-inflammatory, progressive thinning and protrusion of the cornea, resulting in irregular astigmatism
+  - **B.** A common misattribution to a similar but distinct condition
+  - **C.** An outdated or disproven mechanism
+  - **D.** A complication rather than the underlying disease process
+
+  > **Answer: A** — **Keratoconus (KC):** Non-inflammatory, progressive thinning and protrusion of the cornea, resulting in irregular astigmatism
+

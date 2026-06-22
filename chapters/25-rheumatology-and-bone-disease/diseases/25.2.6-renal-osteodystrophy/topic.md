@@ -407,3 +407,18 @@ mindmap
    C. A complication of Bone Metabolic Diseases rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Bone Metabolic Diseases
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Renal osteodystrophy*
+
+**Q1.** What is the most appropriate first-line therapy for Renal osteodystrophy?
+
+  - **A.** Calcium-based + Avoid if
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Calcium-based + Avoid if
+  >
+  > *Source:* **Calcium-based**   Calcium carbonate, Calcium acetate   First-line (cheap, most patients)   **Avoid if** vascular calcification, high Ca, adynamic bone
+

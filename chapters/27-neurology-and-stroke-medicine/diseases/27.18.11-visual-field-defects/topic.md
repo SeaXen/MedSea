@@ -507,3 +507,24 @@ mindmap
 
 ## Local Navigation
 **Hub:** [[Neuro-ophthalmology Hub]] | **Chapter MOC:** [[Neurology MOC]] | **Related:** [[Optic Neuritis]], [[Idiopathic Intracranial Hypertension]], [[Pituitary Tumours]], [[Stroke]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Visual Field Defects*
+
+**Q1.** What is the most appropriate first-line therapy for Visual Field Defects?
+
+  - **A.** Prisms + Vision rehabilitation + Driving assessment
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Prisms + Vision rehabilitation + Driving assessment
+  >
+  > *Source:* MOG   Steroids taper, IVIG, rituximab   MOG titre  
+
+### Symptomatic
+- **Prisms** for hemianopia (limited benefit)
+- **Vision rehabilitation** for permanent defects
+- **Driving assessment** — DVLA: ≥1
+

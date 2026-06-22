@@ -121,3 +121,73 @@ By the end of this note you should be able to:
 - **J**uvenile: remission? no (PNDM)
 - **1** (KCNJ11) + 1 (ABCC8) = 2 genes
 - **1** in 100,000-500,000</think>
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — KCNJ11 and ABCC8 neonatal diabetes*
+
+**Q1.** What is the most appropriate first-line therapy for KCNJ11 and ABCC8 neonatal diabetes?
+
+  - **A.** Insulin taper
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Insulin taper
+  >
+  > *Source:* **Insulin taper**   Gradual over 2-4 weeks as SU established  
+
+### DEND/iDEND Specific
+---
+
+> Auto-generated study sections for "Neonatal diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (15 generated)
+
+- Q: What is the definition of Neonatal diabetes?
+  A: Diabetes diagnosed <6 months age
+- Q: What is Genetics of Neonatal diabetes?
+  A: Activating mutations in KCNJ11 (Kir6.2) or ABCC8 (SUR1)
+- Q: What is the epidemiology of Neonatal diabetes?
+  A: ~1:100,000-500,000 live births; 40-50% of neonatal DM
+- Q: What is Age of Neonatal diabetes?
+  A: <6 months (often <1 month)
+- Q: What are the clinical features of Neonatal diabetes?
+  A: Hyperglycaemia, dehydration, ketoacidosis
+- Q: What is Birth weight of Neonatal diabetes?
+  A: Often low (reduced fetal insulin -> ↓growth)
+- Q: What is Neurological of Neonatal diabetes?
+  A: DEND (developmental delay, epilepsy, neonatal diabetes)
+- Q: What is Epilepsy of Neonatal diabetes?
+  A: Anticonvulsants (sodium channel blockers may help)
+- Q: What is Developmental of Neonatal diabetes?
+  A: Early intervention; physiotherapy, speech therapy
+- Q: What is Genes of Neonatal diabetes?
+  A: KCNJ11 (Kir6.2), ABCC8 (SUR1) - KATP channel subunits
+- Q: What is PNDM of Neonatal diabetes?
+  A: Diabetes <6mo; no remission
+- Q: What is TNDM of Neonatal diabetes?
+  A: 6q24 imprinting; remission by 18mo, relapse later
+- Q: What is Sulfonylurea of Neonatal diabetes?
+  A: 90% switch successfully (KCNJ11/ABCC8)
+- Q: What is DEND/iDEND of Neonatal diabetes?
+  A: Developmental delay, epilepsy; higher SU doses needed
+- Q: What is the mechanism of Neonatal diabetes?
+  A: Mutated KATP stays open -> ↓insulin; SU closes channel
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Neonatal diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Neonatal diabetes
+   C. A complication seen late in the disease course of Neonatal diabetes
+   D. A condition that mimics Neonatal diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Neonatal diabetes presents with: Definition — Diabetes diagnosed <6 months age; Genetics — Activating mutations in KCNJ11 (Kir6.2) or ABCC8 (SUR1); Incidence — ~1:100,000-500,000 live births; 40-50% of neonatal DM. What is the most likely diagnosis?
+   A. **Neonatal diabetes**
+   B. A condition that mimics Neonatal diabetes but is not the same entity
+   C. A complication of Neonatal diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Neonatal diabetes
+

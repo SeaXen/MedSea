@@ -135,3 +135,38 @@ By the end of this note you should be able to:
 - **N**ext: PNDM if no remission
 - **T**est: 6q24 methylation assay
 - **T**emporary: not cured, just remission</think>
+---
+
+> Auto-generated study sections for "Neonatal diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (6 generated)
+
+- Q: What is the definition of Neonatal diabetes?
+  A: By the end of this note you should be able to:
+- Q: What is TNDM of Neonatal diabetes?
+  A: 6q24 imprinting (70%); remission by 18mo; relapse 50% in adulthood
+- Q: What is PNDM of Neonatal diabetes?
+  A: KCNJ11/ABCC8 (90% SU switch); INS/GCK/PDX1 = insulin
+- Q: What is 6q24 of Neonatal diabetes?
+  A: Paternal UPD/duplication; HYMAI/PLAGL1 overexpression
+- Q: What is Relapse of Neonatal diabetes?
+  A: TNDM relapse ~50% in adolescence/young adulthood
+- Q: What is Birth weight of Neonatal diabetes?
+  A: Low in both (IUGR)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Neonatal diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Neonatal diabetes
+   C. A complication seen late in the disease course of Neonatal diabetes
+   D. A condition that mimics Neonatal diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Neonatal diabetes presents with: Feature — Transient (TNDM); Proportion — ~50% of neonatal DM; Genetics — 6q24 imprinting (70%); ZFP57, HYMAI. What is the most likely diagnosis?
+   A. **Neonatal diabetes**
+   B. A condition that mimics Neonatal diabetes but is not the same entity
+   C. A complication of Neonatal diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Neonatal diabetes
+

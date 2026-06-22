@@ -542,3 +542,19 @@ mindmap
 **Chapter Hierarchy:** [[../../Davidson Chapter 25 - Neurology Hierarchy]]
 **Chapter MOC:** [[../../Neurology MOC]]
 **Drug Reference:** [[../../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Idiopathic Intracranial Hypertension*
+
+**Q1.** What is the most appropriate first-line therapy for Idiopathic Intracranial Hypertension?
+
+  - **A.** Fulminant IIH with rapid visual loss   IV acetazolamide + serial LPs + surgery   Hours-days
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Fulminant IIH with rapid visual loss   IV acetazolamide + serial LPs + surgery   Hours-days
+  >
+  > *Source:* **Fulminant IIH with rapid visual loss**   IV acetazolamide + serial LPs + surgery   Hours-days
+

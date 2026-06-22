@@ -565,3 +565,34 @@ Sympathomimetic toxidrome = catecholamine excess → HTN, tachycardia, diaphores
 8. **D** - Explanation 8
 9. **A** - Explanation 9
 10. **B** - Explanation 10
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 11: Poisoning — Sympathomimetic Toxidrome*
+
+**Q1.** Which of the following features is most specific or characteristic of Sympathomimetic Toxidrome?
+
+  - **A.** Diaphoresis
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Diaphoresis
+  >
+  > *Source:* - **Intracranial hemorrhage** (cocaine: vasculitis, aneurysm rupture)
+
+### Autonomic / Metabolic
+- **Diaphoresis** (profuse sweating) — **KEY vs anticholinergic (dry)**
+- **Mydriasis** (dilated pupils
+
+**Q2.** What is the most appropriate first-line therapy for Sympathomimetic Toxidrome?
+
+  - **A.** Target
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Target
+  >
+  > *Source:* **Target**: sedation (RASS -1 to 0), control agitation, prevent/treat seizures, lower BP/HR secondarily
+

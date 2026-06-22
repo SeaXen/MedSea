@@ -231,3 +231,48 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Clinical presentation" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (11 generated)
+
+- Q: What is the definition of Clinical presentation?
+  A: By the end of this note you should be able to:
+- Q: What are the clinical features of Clinical presentation?
+  A: Acute/subacute onset (days-weeks)
+- Q: What is the investigation of choice for Clinical presentation?
+  A: 25-30% of T1DM children; higher in <5 years
+- Q: What is Peak age of Clinical presentation?
+  A: 10-14 years (bimodal: 4-7, 10-14)
+- Q: What is Seasonal variation of Clinical presentation?
+  A: Winter peak (viral triggers)
+- Q: What is Classic triad of Clinical presentation?
+  A: Polyuria, polydipsia, weight loss (despite polyphagia)
+- Q: What is the investigation of choice for Clinical presentation?
+  A: 25-30% children; <5y highest risk; medical emergency
+- Q: What are the clinical features of Clinical presentation?
+  A: Days to weeks before presentation
+- Q: What is Age peak of Clinical presentation?
+  A: 4-7y and 10-14y (bimodal)
+- Q: What is vs T2DM of Clinical presentation?
+  A: Acute, lean, ketosis, autoantibodies 2+
+- Q: What is vs LADA of Clinical presentation?
+  A: Acute vs subacute; child/adolescent vs adult
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Clinical presentation?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Clinical presentation
+   C. A complication seen late in the disease course of Clinical presentation
+   D. A condition that mimics Clinical presentation but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Clinical presentation presents with: Presentation — Acute/subacute onset (days-weeks); DKA at diagnosis — 25-30% of T1DM children; higher in <5 years; Peak age — 10-14 years (bimodal: 4-7, 10-14). What is the most likely diagnosis?
+   A. **Clinical presentation**
+   B. A condition that mimics Clinical presentation but is not the same entity
+   C. A complication of Clinical presentation rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Clinical presentation
+

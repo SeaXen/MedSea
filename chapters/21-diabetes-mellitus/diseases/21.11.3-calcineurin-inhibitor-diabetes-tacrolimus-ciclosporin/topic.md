@@ -171,3 +171,52 @@ By the end of this note you should be able to:
 - **M**etformin: if eGFR>=30
 - **U**niversal: screen all transplant
 - **S**teroid-free: reduces risk**</think>
+---
+
+> Auto-generated study sections for "Drug induced diabetes" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (13 generated)
+
+- Q: What is the definition of Drug induced diabetes?
+  A: By the end of this note you should be able to:
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 10-30% post-transplant (NODAT)
+- Q: What is Tacrolimus of Drug induced diabetes?
+  A: Higher risk than ciclosporin (2-3x)
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Beta-cell toxicity + insulin resistance
+- Q: What is the epidemiology of Drug induced diabetes?
+  A: 10-30% post-transplant (NODAT)
+- Q: What is Tacrolimus of Drug induced diabetes?
+  A: Higher risk than ciclosporin (2-3x)
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Beta-cell toxicity + insulin resistance
+- Q: What is NODAT of Drug induced diabetes?
+  A: 10-30% post-transplant; tacrolimus > ciclosporin (2-3x)
+- Q: What is the mechanism of Drug induced diabetes?
+  A: Tacrolimus: beta-cell toxicity + IR; ciclosporin: mainly IR
+- Q: What causes Drug induced diabetes?
+  A: Tacrolimus, age>40, obesity, HCV, FH, steroids
+- Q: How is Drug induced diabetes monitored?
+  A: Glucose weekly x1mo, then monthly x3mo, then 3-monthly
+- Q: How is Drug induced diabetes managed?
+  A: Minimise tacrolimus; switch to ciclosporin; metformin/SGLT2i/GLP-1 RA
+- Q: What is Switch of Drug induced diabetes?
+  A: Tacrolimus -> ciclosporin if NODAT persistent
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Drug induced diabetes?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Drug induced diabetes
+   C. A complication seen late in the disease course of Drug induced diabetes
+   D. A condition that mimics Drug induced diabetes but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Drug induced diabetes presents with: Incidence — 10-30% post-transplant (NODAT); Tacrolimus — Higher risk than ciclosporin (2-3x); Mechanism — Beta-cell toxicity + insulin resistance. What is the most likely diagnosis?
+   A. **Drug induced diabetes**
+   B. A condition that mimics Drug induced diabetes but is not the same entity
+   C. A complication of Drug induced diabetes rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Drug induced diabetes
+

@@ -572,3 +572,20 @@ A: ≥ 2 / 7d, worsening
 - [[Immediate antiplatelet strategy after TIA]]
 - [[ABCD2 score and its limitations]]
 - [[../Stroke Medicine MOC|Stroke Medicine MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — TIA vs mimic differentiation*
+
+**Q1.** Which of the following features is most specific or characteristic of TIA vs mimic differentiation?
+
+  - **A.** Duration
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Duration
+  >
+  > *Source:* maximal | **Gradual spread (march)** | Post-seizure | Gradual | Acute | Abrupt, stress-related |
+| **Duration** | Minutes-hours (<1h typical) | 20-60 min + headache | **<48h** (Todd's) | Until glucose
+

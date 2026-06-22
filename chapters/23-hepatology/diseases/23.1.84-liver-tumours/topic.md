@@ -307,3 +307,19 @@ mindmap
    C. A complication of Liver Tumours rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Liver Tumours
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Liver Tumours*
+
+**Q1.** Which of the following features is most specific or characteristic of Liver Tumours?
+
+  - **A.** AFP in HCC
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — AFP in HCC
+  >
+  > *Source:* ut not HCC** (cholangiocarcinoma, metastases); **LR-TIV**: Tumour in vein (portal/hepatic vein) |
+| **AFP in HCC** | >20 = suspicious; >200 + mass = diagnostic (with imaging); not sensitive enough alo
+

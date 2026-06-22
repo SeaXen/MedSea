@@ -411,3 +411,30 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Sideroblastic Anaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Sideroblastic Anaemia?
+
+  - **A.** Lead vs Sideroblastic
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Lead vs Sideroblastic
+  >
+  > *Source:* MDS** | **MDS-RS = SF3B1 mut + ring sideroblasts ≥15%**; good prognosis, luspatercept eligible |
+| **Lead vs Sideroblastic** | Lead **causes** sideroblastic anaemia; **basophilic stippling** is hallma
+
+**Q2.** What is the most appropriate first-line therapy for Sideroblastic Anaemia?
+
+  - **A.** Treat the Cause
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat the Cause
+  >
+  > *Source:* ### Reversible Causes – **Treat the Cause**
+

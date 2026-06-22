@@ -336,3 +336,20 @@ mindmap
    C. A complication of Acute Liver Failure rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Acute Liver Failure
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Clinical assessment and prognosis*
+
+**Q1.** What is the most appropriate first-line therapy for Clinical assessment and prognosis?
+
+  - **A.** 3-4 + ICU, Intubate + 550mg BD NG
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — 3-4 + ICU, Intubate + 550mg BD NG
+  >
+  > *Source:* **3-4**   **ICU, Intubate (GCS<8)**   PR 300ml/700ml q4-6h   **550mg BD NG**   **Consider**   Prophylactic (Some Units)  
+
+> **Cerebral Oedema**: Main risk in G3-4; Target ICP <20 mmHg; CPP >60 mmHg; 
+

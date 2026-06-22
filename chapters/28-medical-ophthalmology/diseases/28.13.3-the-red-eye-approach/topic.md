@@ -624,3 +624,19 @@ Red eye is a symptom, not a diagnosis. The most important sign of seriousness is
 
 ## Tags
 #medicine #davidson #ophthalmology #red-eye #approach #fcps #mrcp
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — The Red Eye (Approach)*
+
+**Q1.** What is the most appropriate first-line therapy for The Red Eye (Approach)?
+
+  - **A.** Never prescribe topical steroids
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Never prescribe topical steroids
+  >
+  > *Source:* **Never prescribe topical steroids** before ophthalmology review (worsens HSV keratitis, fungal)
+

@@ -458,3 +458,34 @@ PSP is a sporadic 4R-tauopathy with median survival 6-9 years, presenting with *
 **Topic-Group Hub:** [[05_Movement_Disorders/Parkinsonism Hub]]
 **Chapter MOC:** [[Neurology MOC]]
 **Related:** [[Parkinsons Disease]], [[Multiple System Atrophy]], [[Corticobasal Degeneration]], [[Dementia with Lewy Bodies]], [[Vascular Parkinsonism]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Progressive Supranuclear Palsy*
+
+**Q1.** Which of the following features is most specific or characteristic of Progressive Supranuclear Palsy?
+
+  - **A.** Early falls
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Early falls
+  >
+  > *Source:* *History:**
+- **Early falls (often backwards, within 1 year)** — most specific feature
+- **Vertical gaze palsy** — first downgaze, then upgaze
+- **Axial rigidity > limb rigidity**
+- **Bradykinesia**, 
+
+**Q2.** What is the most appropriate first-line therapy for Progressive Supranuclear Palsy?
+
+  - **A.** Levodopa trial:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Levodopa trial:
+  >
+  > *Source:* **Levodopa trial:** Up to 1000 mg/day for 3 months — usually no/minimal response. 20-30% may have transient benefit.
+

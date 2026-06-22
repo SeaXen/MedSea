@@ -350,3 +350,18 @@ mindmap
    C. A complication of Osteoarthritis and Related Disorders rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Osteoarthritis and Related Disorders
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 25: Rheumatology — Erosive osteoarthritis*
+
+**Q1.** What is the most appropriate first-line therapy for Erosive osteoarthritis?
+
+  - **A.** Anti-inflammatory   NSAIDs (COX-2 + PPI), IA corticosteroids (for flares)
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Anti-inflammatory   NSAIDs (COX-2 + PPI), IA corticosteroids (for flares)
+  >
+  > *Source:* Anti-inflammatory**   **NSAIDs** (COX-2 + PPI), **IA corticosteroids** (for flares)
+

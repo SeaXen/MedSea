@@ -708,3 +708,39 @@ Secondary cataract is a lens opacity due to an identifiable cause — **systemic
 
 ## Tags
 #medicine #davidson #ophthalmology #secondary #cataract #fcps #mrcp #diabetes #steroids #uveitis #myotonic-dystrophy #wilson-disease #galactosaemia
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 28: Medical Ophthalmology — Secondary Cataract*
+
+**Q1.** Which of the following features is most specific or characteristic of Secondary Cataract?
+
+  - **A.** Slit-lamp examination
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Slit-lamp examination
+  >
+  > *Source:* n
+
+---
+### Mandatory
+- **Detailed drug history**
+- **Systemic evaluation** for underlying disease
+- **Slit-lamp examination** for specific pattern
+
+### Systemic Workup (directed)
+- **Fasting glucose, 
+
+**Q2.** What is the most appropriate first-line therapy for Secondary Cataract?
+
+  - **A.** Smaller pupil
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Smaller pupil
+  >
+  > *Source:* **Smaller pupil** in uveitic — use iris hooks
+

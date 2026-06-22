@@ -146,3 +146,60 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[CGM metrics (TIR, TBR, TAR, GMI, CV)]], [[rtCGM vs isCGM]], [[Insulin pump therapy (CSII)/Hybrid closed-loop]], [[Insulin pump therapy (CSII)/Automated insulin delivery (AID) systems]]
+---
+
+> Auto-generated study sections for "Glucose monitoring" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (21 generated)
+
+- Q: What is the definition of Glucose monitoring?
+  A: Pattern management using CGM trends replaces reactive SMBG corrections; adjust basal/bolus based on AGP patterns; pre-bolus timing critical; foundation for automated insulin delivery (AID).
+- Q: What is Trend arrow ↑↑ of Glucose monitoring?
+  A: Add 10–20% to pre-meal bolus; 20–30% to correction
+- Q: What is Trend arrow ↓↓ of Glucose monitoring?
+  A: Reduce 20% or delay bolus; reduce/cancel correction
+- Q: What is Dawn phenomenon of Glucose monitoring?
+  A: Overnight rise 3–8 AM → ↑ basal 2–3 AM
+- Q: What is Somogyi of Glucose monitoring?
+  A: Nocturnal hypo → morning high → CGM proves nocturnal low → ↓ basal
+- Q: What is ISF (Rule of 100) of Glucose monitoring?
+  A: 100 ÷ TDD = mmol/L per unit (T1DM)
+- Q: What is ICR (Rule of 500) of Glucose monitoring?
+  A: 500 ÷ TDD = g carb per unit
+- Q: What is Pre-bolus timing of Glucose monitoring?
+  A: 15–20 min before meal (rapid analogue)
+- Q: What is AID systems of Glucose monitoring?
+  A: HCL = automates basal only; user does meal bolus
+- Q: What is the investigation of choice for Glucose monitoring?
+  A: Skip meal, watch trend → flat (→) = correct basal
+- Q: What is Exercise aerobic of Glucose monitoring?
+  A: Reduce basal 50–80% 60–90 min prior; snack if <7 or ↓
+- Q: What is Trend arrow ↑↑ of Glucose monitoring?
+  A: Add 10–20% to pre-meal bolus; 20–30% to correction
+- Q: What is Trend arrow ↓↓ of Glucose monitoring?
+  A: Reduce 20% or delay bolus; reduce/cancel correction
+- Q: What is Dawn phenomenon of Glucose monitoring?
+  A: Overnight rise 3–8 AM → ↑ basal 2–3 AM
+- Q: What is Somogyi of Glucose monitoring?
+  A: Nocturnal hypo → morning high → CGM proves nocturnal low → ↓ basal
+- Q: What is ISF (Rule of 100) of Glucose monitoring?
+  A: 100 ÷ TDD = mmol/L per unit (T1DM)
+- Q: What is ICR (Rule of 500) of Glucose monitoring?
+  A: 500 ÷ TDD = g carb per unit
+- Q: What is Pre-bolus timing of Glucose monitoring?
+  A: 15–20 min before meal (rapid analogue)
+- Q: What is AID systems of Glucose monitoring?
+  A: HCL = automates basal only; user does meal bolus
+- Q: What is the investigation of choice for Glucose monitoring?
+  A: Skip meal, watch trend → flat (→) = correct basal
+- Q: What is Exercise aerobic of Glucose monitoring?
+  A: Reduce basal 50–80% 60–90 min prior; snack if <7 or ↓
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Glucose monitoring?**
+   A. **Pattern management using CGM trends replaces reactive SMBG corrections; adjust basal/bolus based on AGP patterns; pre-bolus timing critical; foundation for automated insulin delivery (AID).**
+   B. An unrelated condition not matching the clinical picture of Glucose monitoring
+   C. A complication seen late in the disease course of Glucose monitoring
+   D. A condition that mimics Glucose monitoring but has a different underlying cause
+

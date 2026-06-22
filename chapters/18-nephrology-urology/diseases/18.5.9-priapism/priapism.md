@@ -455,3 +455,19 @@ mindmap
 **Non-ischaemic (High-flow, 5%)**: Post-trauma, painless, non-rigid, **high flow** → **embolisation** (90% success).  
 **Stuttering**: Recurrent ischaemic episodes → **hydroxyurea prophylaxis**.  
 **Exam focus**: Ischaemic vs non-ischaemic differentiation, >4hr emergency, aspiration/irrigation/phenylephrine protocol, phenylephrine monitoring, shunt sequence, sickle cell exchange target, non-ischaemic embolisation, glans soft in ischaemic.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 18: Nephrology & Urology — Priapism*
+
+**Q1.** What is the most appropriate first-line therapy for Priapism?
+
+  - **A.** Phenylephrine + 100–500 μg/mL
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Phenylephrine + 100–500 μg/mL
+  >
+  > *Source:* **Phenylephrine**   **100–500 μg/mL** (dilute 1mg in 100–200mL NS) — inject 1mL q3–5min × max 1mg (monitor BP/HR)
+

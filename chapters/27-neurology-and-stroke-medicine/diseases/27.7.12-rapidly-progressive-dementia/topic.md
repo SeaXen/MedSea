@@ -615,4 +615,22 @@ mindmap
 **Heading Hub:** [[../Hub]]  
 **Chapter Hierarchy:** [[Davidson Chapter 25 - Neurology Hierarchy]]  
 **Chapter MOC:** [[Neurology MOC]]  
-**Drug Reference:** [[../00_Index/Neurology Drug Reference]]  
+**Drug Reference:** [[../00_Index/Neurology Drug Reference]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Rapidly Progressive Dementia*
+
+**Q1.** Which of the following is characterised by the clinical triad: dementia, myoclonus, PSWCs?
+
+  - **A.** Rapidly Progressive Dementia
+  - **B.** Stroke
+  - **C.** Migraine with aura
+  - **D.** Focal seizure
+
+  > **Answer: A** — Rapidly Progressive Dementia
+  >
+  > *Source:* | Day 1 | __ | Definition (<2 years); broad differential; treatable causes first | |
+| Day 3 | __ | CJD triad (dementia, myoclonus, PSWCs); MRI cortical ribboning; RT-QuIC | |
+| Day 7 | __ | Autoimmun
+

@@ -666,3 +666,30 @@ PFO is a common anatomical finding and only sometimes a meaningful stroke mechan
 8. **A** — Antiplatelet therapy is often used when closure is not done and anticoagulation is not otherwise indicated.
 9. **A** — Young stroke has a broad differential beyond PFO.
 10. **C** — PFO relevance depends on patient profile, stroke pattern, workup exclusion, and associated features.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Patent foramen ovale and selected young-stroke pre*
+
+**Q1.** In the management of Patent foramen ovale and selected young-stroke pre, which of the following should be avoided or is contraindicated?
+
+  - **A.** be chosen casually (avoid in every PFO)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — be chosen casually (avoid in every PFO)
+  >
+  > *Source:* - Anticoagulation should not be chosen casually for every PFO; it is usually reserved for selected thromboembolic contexts
+
+**Q2.** What is the most appropriate first-line therapy for Patent foramen ovale and selected young-stroke pre?
+
+  - **A.** Use individualized secondary prevention
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Use individualized secondary prevention
+  >
+  > *Source:* Use individualized secondary prevention.
+

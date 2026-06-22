@@ -181,3 +181,79 @@ flowchart TD
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Neuropathic pain management*
+
+**Q1.** What is the most appropriate first-line therapy for Neuropathic pain management?
+
+  - **A.** Duloxetine
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Duloxetine
+  >
+  > *Source:* **Duloxetine**   Nausea, dry mouth, insomnia, sexual dysfunction, ↑ BP   Take with food; morning dosing; monitor BP
+---
+
+> Auto-generated study sections for "Diabetic neuropathy" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (19 generated)
+
+- Q: What is the definition of Diabetic neuropathy?
+  A: | Painful DSPN | 10–20% of DSPN; burning, shooting, lancinating, allodynia, hyperalgesia |
+- Q: What is Painful DSPN of Diabetic neuropathy?
+  A: 10–20% of DSPN; burning, shooting, lancinating, allodynia, hyperalgesia
+- Q: What is Impact of Diabetic neuropathy?
+  A: ↓QoL, sleep disturbance, depression, anxiety, ↓function
+- Q: What is Clinical exam of Diabetic neuropathy?
+  A: Sensory signs (stocking-glove), allodynia mapping
+- Q: What is NCS of Diabetic neuropathy?
+  A: Confirm DSPN; exclude mononeuropathy/radiculoplexus
+- Q: What is the investigation of choice for Diabetic neuropathy?
+  A: Thermal/mechanical thresholds; research/specialist
+- Q: What is Skin biopsy of Diabetic neuropathy?
+  A: Intraepidermal nerve fibre density (IENFD); specialist
+- Q: What is Clinical exam of Diabetic neuropathy?
+  A: Sensory signs (stocking-glove), allodynia mapping
+- Q: What is NCS of Diabetic neuropathy?
+  A: Confirm DSPN; exclude mononeuropathy/radiculoplexus
+- Q: What is the investigation of choice for Diabetic neuropathy?
+  A: Thermal/mechanical thresholds; research/specialist
+- Q: What is Skin biopsy of Diabetic neuropathy?
+  A: Intraepidermal nerve fibre density (IENFD); specialist
+- Q: What is Pain scales of Diabetic neuropathy?
+  A: NRS (0–10), DN4, PainDETECT, MSPQ
+- Q: What is 1st line of Diabetic neuropathy?
+  A: Duloxetine, Pregabalin, Gabapentin, Amitriptyline — 4–6 week trial
+- Q: What is Renal dosing of Diabetic neuropathy?
+  A: Pregabalin/Gabapentin MUST adjust by eGFR (table above)
+- Q: What is Amitriptyline of Diabetic neuropathy?
+  A: Avoid elderly, CVD, glaucoma; anticholinergic burden
+- Q: What is Combination of Diabetic neuropathy?
+  A: Duloxetine + Pregabalin (different mechanisms)
+- Q: What is 2nd line of Diabetic neuropathy?
+  A: Tramadol/Tapentadol PRN (opioid risks)
+- Q: What is 3rd line of Diabetic neuropathy?
+  A: Capsaicin 8% patch, Lidocaine 5% plaster, SCS (refractory)
+- Q: What is Non-drug of Diabetic neuropathy?
+  A: CBT, exercise, TENS, acupuncture (adjunct)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetic neuropathy?**
+   A. **| Painful DSPN | 10–20% of DSPN; burning, shooting, lancinating, allodynia, hyperalgesia |**
+   B. An unrelated condition not matching the clinical picture of Diabetic neuropathy
+   C. A complication seen late in the disease course of Diabetic neuropathy
+   D. A condition that mimics Diabetic neuropathy but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetic neuropathy presents with: Painful DSPN — 10–20% of DSPN; burning, shooting, lancinating, allodynia, hyperalgesia; Impact — ↓QoL, sleep disturbance, depression, anxiety, ↓function; Guidelines — NICE CG173, NeuPSIG, ADA, AAN — broadly aligned on 1st line agents. What is the most likely diagnosis?
+   A. **Diabetic neuropathy**
+   B. A condition that mimics Diabetic neuropathy but is not the same entity
+   C. A complication of Diabetic neuropathy rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetic neuropathy
+

@@ -25,3 +25,30 @@ Endocarditis with **no causative organism identified** on standard blood culture
 - **Surgery often needed** for diagnosis + management
 
 > **Pearls** — Most common cause: **prior antibiotics**. HACEK and **Bartonella** are classically missed. **Q fever** needs phase I IgG titer >1:800. PCR on valve tissue is becoming standard. Empiric: **doxycycline + rifampin** ± gentamicin.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Culture-negative endocarditis*
+
+**Q1.** Which of the following features is most specific or characteristic of Culture-negative endocarditis?
+
+  - **A.** Duke major
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Duke major
+  >
+  > *Source:* **Duke major** — blood culture (typical ×2, persistent), imaging (echo vegetation, abscess, dehiscence)
+
+**Q2.** What is the most appropriate first-line therapy for Culture-negative endocarditis?
+
+  - **A.** Indications for surgery + Uncontrolled infection + Prevention of embolism
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Indications for surgery + Uncontrolled infection + Prevention of embolism
+  >
+  > *Source:* **Indications for surgery** (class I): (1) **HF** (acute AR, MR, prosthetic dysfunction), (2) **Uncontrolled infection** (abscess, fistula, persistent bacteraemia, fungal, prosthetic dehiscence), (3) 
+

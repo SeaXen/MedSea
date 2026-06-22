@@ -141,3 +141,28 @@ IA-2 POSITIVE
 - [[Type 1 Diabetes Mellitus/Autoantibody testing/Zinc transporter 8 (ZnT8) autoantibodies]]
 - [[Type 1 Diabetes Mellitus/Clinical presentation/LADA (Latent Autoimmune Diabetes in Adults)]]
 - [[Monogenic and Atypical Diabetes/Neonatal diabetes]]
+---
+
+> Auto-generated study sections for "Autoantibody testing" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Autoantibody testing?
+  A: IA-2 autoantibodies = antibodies against insulinoma-associated antigen-2 (tyrosine phosphatase-like protein, ICA512).
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoantibody testing?**
+   A. **IA-2 autoantibodies = antibodies against insulinoma-associated antigen-2 (tyrosine phosphatase-like protein, ICA512).**
+   B. An unrelated condition not matching the clinical picture of Autoantibody testing
+   C. A complication seen late in the disease course of Autoantibody testing
+   D. A condition that mimics Autoantibody testing but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoantibody testing presents with: IA-2 autoantibodies = antibodies against insulinoma-associated antigen-2 (tyrosine phosphatase-like protein, ICA512).; FCPS/MRCP relevance: Part of T1DM autoantibody panel; exam questions on sensitivity, specificity, predictive value, distinction from GAD65.. What is the most likely diagnosis?
+   A. **Autoantibody testing**
+   B. A condition that mimics Autoantibody testing but is not the same entity
+   C. A complication of Autoantibody testing rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoantibody testing
+

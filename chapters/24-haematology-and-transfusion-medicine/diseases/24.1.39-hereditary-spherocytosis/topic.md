@@ -371,3 +371,34 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Hereditary Spherocytosis*
+
+**Q1.** Which of the following features is most specific or characteristic of Hereditary Spherocytosis?
+
+  - **A.** "EMA = Gold Standard"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "EMA = Gold Standard"
+  >
+  > *Source:* nd 3, Protein 4.2"** | Protein defects |
+| **"Spherocytes = No Central Pallor"** | Film finding |
+| **"EMA = Gold Standard"** | Diagnostic test |
+| **"Splenectomy ≥6yr = Penicillin Life"** | Post-sple
+
+**Q2.** What is the most appropriate first-line therapy for Hereditary Spherocytosis?
+
+  - **A.** Vaccinations + Pre-splenectomy + COVID, Flu
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Vaccinations + Pre-splenectomy + COVID, Flu
+  >
+  > *Source:* **Vaccinations**   **Pre-splenectomy**: PCV13, PPSV23, MenACWY, Hib, **COVID, Flu**  
+
+### Splenectomy – **Curative for Haemolysis**
+

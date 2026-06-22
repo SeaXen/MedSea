@@ -213,3 +213,21 @@ By the end of this note you should be able to:
    C. A complication seen late in the disease course of Liver Transplantation
    D. A condition that mimics Liver Transplantation but has a different underlying cause
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Liver Transplantation Detailed*
+
+**Q1.** Which of the following features is most specific or characteristic of Liver Transplantation Detailed?
+
+  - **A.** ntibodies:
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — ntibodies:
+  >
+  > *Source:* ancy**
+- **L**iver Recurrence: **HCV=DAA Cure, HBV=HBIG+TDF, AIH=Steroids+Aza, HCC=Milan Low**
+- **A**ntibodies: **Donor-Specific (DSA) → AMR Risk**
+- **N**ew Oncology: **PTLD (EBV), Skin Ca (SCC), De
+

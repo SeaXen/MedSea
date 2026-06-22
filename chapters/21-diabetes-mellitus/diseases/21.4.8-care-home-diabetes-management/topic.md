@@ -190,3 +190,86 @@ flowchart TD
 - **M**onitoring: 6-monthly HbA1c; daily foot check; annual specialist
 - **N**o sliding scale: basal + CHO-matched bolus only
 - **S**liding scale: NO - reactive, erratic, hypo risk</think>
+---
+
+> Auto-generated study sections for "Diabetes in the elderly" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (30 generated)
+
+- Q: What is the definition of Diabetes in the elderly?
+  A: By the end of this note you should be able to:
+- Q: What is the epidemiology of Diabetes in the elderly?
+  A: 25-30% care home residents have diabetes
+- Q: What is Frailty of Diabetes in the elderly?
+  A: Majority Rockwood >=5 (moderate-severe frailty)
+- Q: What is Comorbidities of Diabetes in the elderly?
+  A: Dementia, CKD, CVD, polypharmacy common
+- Q: What is the epidemiology of Diabetes in the elderly?
+  A: 25-30% care home residents have diabetes
+- Q: What is Frailty of Diabetes in the elderly?
+  A: Majority Rockwood >=5 (moderate-severe frailty)
+- Q: What is Comorbidities of Diabetes in the elderly?
+  A: Dementia, CKD, CVD, polypharmacy common
+- Q: What is Hypo recognition of Diabetes in the elderly?
+  A: Atypical signs (confusion, agitation, falls)
+- Q: What is Glucagon administration of Diabetes in the elderly?
+  A: IM/SC 1mg; nasal 3mg; annual competency
+- Q: What is Glucose gel of Diabetes in the elderly?
+  A: 15-20g buccal; technique
+- Q: How is Diabetes in the elderly monitored?
+  A: SMBG/CGM technique; recording
+- Q: What is Insulin pens of Diabetes in the elderly?
+  A: Priming, dialling, injection technique
+- Q: What is Hypo recognition of Diabetes in the elderly?
+  A: Atypical signs (confusion, agitation, falls)
+- Q: What is Glucagon administration of Diabetes in the elderly?
+  A: IM/SC 1mg; nasal 3mg; annual competency
+- Q: What is Glucose gel of Diabetes in the elderly?
+  A: 15-20g buccal; technique
+- Q: How is Diabetes in the elderly monitored?
+  A: SMBG/CGM technique; recording
+- Q: What is Insulin pens of Diabetes in the elderly?
+  A: Priming, dialling, injection technique
+- Q: What is Foot checks of Diabetes in the elderly?
+  A: Daily visual; annual specialist
+- Q: What is HbA1c targets of Diabetes in the elderly?
+  A: Independent <58; mild dep <64; severe dep/dementia <69; palliative: none
+- Q: What is Insulin of Diabetes in the elderly?
+  A: Basal + CHO-matched bolus; avoid sliding scale
+- Q: What is Hypoglycaemia of Diabetes in the elderly?
+  A: Atypical (confusion, falls); glucagon 1mg IM/SC carer-trained
+- Q: What is Staff training of Diabetes in the elderly?
+  A: Hypo recognition, glucagon, glucose gel, insulin pens, foot checks
+- Q: What is MDT of Diabetes in the elderly?
+  A: GP, DSN, care home manager, dietitian, podiatrist
+- Q: What is Review of Diabetes in the elderly?
+  A: 6-monthly HbA1c; annual specialist; foot check daily
+- Q: What is HbA1c targets of Diabetes in the elderly?
+  A: Independent <58; mild dep <64; severe dep/dementia <69; palliative: none
+- Q: What is Insulin of Diabetes in the elderly?
+  A: Basal + CHO-matched bolus; avoid sliding scale
+- Q: What is Hypoglycaemia of Diabetes in the elderly?
+  A: Atypical (confusion, falls); glucagon 1mg IM/SC carer-trained
+- Q: What is Staff training of Diabetes in the elderly?
+  A: Hypo recognition, glucagon, glucose gel, insulin pens, foot checks
+- Q: What is MDT of Diabetes in the elderly?
+  A: GP, DSN, care home manager, dietitian, podiatrist
+- Q: What is Review of Diabetes in the elderly?
+  A: 6-monthly HbA1c; annual specialist; foot check daily
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Diabetes in the elderly?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Diabetes in the elderly
+   C. A complication seen late in the disease course of Diabetes in the elderly
+   D. A condition that mimics Diabetes in the elderly but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Diabetes in the elderly presents with: Prevalence — 25-30% care home residents have diabetes; Frailty — Majority Rockwood >=5 (moderate-severe frailty); Comorbidities — Dementia, CKD, CVD, polypharmacy common. What is the most likely diagnosis?
+   A. **Diabetes in the elderly**
+   B. A condition that mimics Diabetes in the elderly but is not the same entity
+   C. A complication of Diabetes in the elderly rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Diabetes in the elderly
+

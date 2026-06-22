@@ -408,3 +408,19 @@ flowchart TD
 
 ## Summary
 **Syringomyelia** is a fluid cavity within the cord; **Chiari I** (tonsillar descent ≥5mm) is the most common association. **Cape sensory loss** (dissociated pain/temp loss C4-T2 with preserved touch) is pathognomonic, due to central cord damage of crossing spinothalamic fibres. Hand wasting, Charcot joints, scoliosis, and brainstem features (Chiari) are common. **MRI whole spine + brain** with cine flow imaging is diagnostic. **Posterior fossa decompression + C1 laminectomy + duraplasty** is standard for symptomatic Chiari I. Asymptomatic Chiari is monitored. Syrinx shunts are used for isolated or persistent syrinx. Prognosis post-surgery is good (70-90% improvement).
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Syringomyelia & Chiari Malformation*
+
+**Q1.** What is the most appropriate first-line therapy for Syringomyelia & Chiari Malformation?
+
+  - **A.** Posterior fossa decompression
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Posterior fossa decompression
+  >
+  > *Source:* **Posterior fossa decompression (PFDD)**   Chiari I with syrinx/symptoms   70-90% improvement
+

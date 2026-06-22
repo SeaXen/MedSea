@@ -182,3 +182,20 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[CKD and HF guided therapy]], [[CVOT guided therapy]], [[Basal insulin initiation]], [[Pre-mixed insulin]], [[Diabetes education and structured education]], [[Glycaemic targets]]
+---
+
+> Auto-generated study sections for "Treatment algorithms" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (1 generated)
+
+- Q: What is the definition of Treatment algorithms?
+  A: # NICE NG28 Pathway (Type 2 Diabetes Management)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Treatment algorithms?**
+   A. **# NICE NG28 Pathway (Type 2 Diabetes Management)**
+   B. An unrelated condition not matching the clinical picture of Treatment algorithms
+   C. A complication seen late in the disease course of Treatment algorithms
+   D. A condition that mimics Treatment algorithms but has a different underlying cause
+

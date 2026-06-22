@@ -388,3 +388,22 @@ A: Controversial, may ↓ early rebleed
 - [[Hydrocephalus after SAH]]
 - [[Other complications of SAH]]
 - [[../Stroke Medicine MOC|Stroke Medicine MOC]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Other complications of SAH*
+
+**Q1.** Which of the following features is most specific or characteristic of Other complications of SAH?
+
+  - **A.** Other complications of SAH
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — Other complications of SAH
+  >
+  > *Source:* pasm]]
+- **Long-term cognitive/mood impairment**: memory, executive function, depression, fatigue
+- **Other complications of SAH** — see key points above
+- **'ACoA → bitemporal hemianopia'** — Anterio
+

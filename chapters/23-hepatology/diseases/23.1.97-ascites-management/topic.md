@@ -331,3 +331,23 @@ mindmap
    C. A complication of Portal Hypertension and Complications rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Portal Hypertension and Complications
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 23: Hepatology — Ascites management*
+
+**Q1.** What is the most appropriate first-line therapy for Ascites management?
+
+  - **A.** 400 mg + 160 mg + 100:40
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — 400 mg + 160 mg + 100:40
+  >
+  > *Source:* Step   Spironolactone   Furosemide   Ratio  
+ ------ ---------------- ------------ ------- 
+  1   100 mg   —   —  
+  2   200 mg   40 mg   100:40  
+  3   300 mg   80 mg   100:40  
+  4 (MAX)   **400 mg*
+

@@ -136,3 +136,57 @@ By the end of this note you should be able to:
 > **Hierarchy**: [[../../Davidson Chapter 25 - Diabetes Hierarchy|Diabetes Hierarchy]]  
 > **Template**: [[../../../Templates/Diabetes Topic Template|Diabetes Topic Template]]  
 > **See also**: [[Autoantibody testing]], [[Type 1 diabetes mellitus]], [[Clinical presentation]], [[Latent autoimmune diabetes in adults (LADA)]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 21: Diabetes — Zinc transporter 8 (ZnT8) autoantibodies*
+
+**Q1.** Which of the following features is most specific or characteristic of Zinc transporter 8 (ZnT8) autoantibodies?
+
+  - **A.** IA-2
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — IA-2
+  >
+  > *Source:* ---|
+| **GAD65** | Glutamic acid decarboxylase | **70–80%** | 98% | Most common; persists years |
+| **IA-2 (IA-2β)** | Insulinoma-associated antigen-2 | **60–70%** | 99% | More specific for progressio
+---
+
+> Auto-generated study sections for "Autoantibody testing" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (7 generated)
+
+- Q: What is the definition of Autoantibody testing?
+  A: ZnT8 = 4th major T1DM autoantibody (Slc30A8 gene; zinc transporter in β-cell secretory granules); 60–80% positive at diagnosis; added to GAD65, IA-2, IAA panel → ↑ sensitivity to ~98%; ZnT8-R/W/Q arginine/tryptophan/glutamine variants at position 325; not yet routine in all centres.
+- Q: What is Full name of Autoantibody testing?
+  A: Zinc Transporter 8 (ZnT8; SLC30A8)
+- Q: What is Location of Autoantibody testing?
+  A: β-cell secretory granule membrane
+- Q: What is Function of Autoantibody testing?
+  A: Transports Zn2+ into granules → insulin crystallization (Zn2+-insulin hexamers)
+- Q: What is Gene of Autoantibody testing?
+  A: SLC30A8 (chromosome 8q24)
+- Q: What is Polymorphism of Autoantibody testing?
+  A: rs13266634 (C/T) → Arg325Trp (R/W); also Gln (Q) variant
+- Q: What is Antibody target of Autoantibody testing?
+  A: C-terminal domain (intracellular)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Autoantibody testing?**
+   A. **ZnT8 = 4th major T1DM autoantibody (Slc30A8 gene; zinc transporter in β-cell secretory granules); 60–80% positive at diagnosis; added to GAD65, IA-2, IAA panel → ↑ sensitivity to ~98%; ZnT8-R/W/Q argi**
+   B. An unrelated condition not matching the clinical picture of Autoantibody testing
+   C. A complication seen late in the disease course of Autoantibody testing
+   D. A condition that mimics Autoantibody testing but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Autoantibody testing presents with: Use Case — Value; Diagnosis (atypical presentation) — Antibody-negative "T2DM" → ZnT8+ confirms autoimmune; LADA — ZnT8+ in GAD65+/IA-2- cases → confirms autoimmune. What is the most likely diagnosis?
+   A. **Autoantibody testing**
+   B. A condition that mimics Autoantibody testing but is not the same entity
+   C. A complication of Autoantibody testing rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Autoantibody testing
+

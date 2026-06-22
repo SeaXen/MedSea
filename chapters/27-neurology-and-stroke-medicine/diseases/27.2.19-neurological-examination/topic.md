@@ -815,3 +815,21 @@ The **systematic neurological examination** is the cornerstone of neurological p
 **Chapter MOC:** [[Neurology MOC]]
 **Drug Reference:** [[00_Index/Neurology Drug Reference]]
 **Related Topics:** [[Neurological History Taking]], [[Cranial Nerve Examination]], [[Motor System Examination]], [[Sensory System Examination]], [[Coordination & Gait Examination]], [[Higher Cortical Function Assessment]]
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Neurological Examination*
+
+**Q1.** What is the most appropriate first-line therapy for Neurological Examination?
+
+  - **A.** Structure: + Synthesis:
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Structure: + Synthesis:
+  >
+  > *Source:* ### Reporting Examination Findings (PACES)
+- **Structure:** End-of-bed → Higher cortical → CN → Motor (tone, power, reflexes) → Sensory → Coordination → Gait → Summary
+- **Synthesis:** "Mr X has a lef
+

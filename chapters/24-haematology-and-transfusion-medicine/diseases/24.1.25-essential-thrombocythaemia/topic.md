@@ -414,3 +414,33 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Essential Thrombocythaemia*
+
+**Q1.** Which of the following features is most specific or characteristic of Essential Thrombocythaemia?
+
+  - **A.** "Anagrelide = Platelet Only"
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — "Anagrelide = Platelet Only"
+  >
+  > *Source:* |
+| **"IPSET: Age>60 = 2pts"** | Risk scoring |
+| **"HU = 1st Line Cyto"** | Hydroxyurea first |
+| **"Anagrelide = Platelet Only"** | Platelet-specific |
+| **"IFN = Pregnancy Safe"** | Interferon in p
+
+**Q2.** What is the most appropriate first-line therapy for Essential Thrombocythaemia?
+
+  - **A.** Hydroxyurea + First-line cytoreduction + Plt <400
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Hydroxyurea + First-line cytoreduction + Plt <400
+  >
+  > *Source:* **Hydroxyurea (HU)**   **First-line cytoreduction**   15 mg/kg/day (round to 500mg)   **Plt <400**, WBC >3, Hb >10; CBC q2-4wk titrate → q3mo stable
+

@@ -88,3 +88,19 @@ Conduction system disease can occur at the AV node, His bundle, or bundle branch
 > - **New LBBB in chest pain = reperfusion** (don't wait for Sgarbossa score to act).
 > - **Bifascicular block + syncope = EP study ± pacemaker**, even if no documented block.
 > - **Alternating LBBB / RBBB** = "bilateral bundle branch block" = high risk of asystole → permanent pacing.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Conduction abnormalities AV blocks bundle branch b*
+
+**Q1.** What is the most appropriate first-line therapy for Conduction abnormalities AV blocks bundle branch b?
+
+  - **A.** Choice + DDD + VVI
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Choice + DDD + VVI
+  >
+  > *Source:* **Choice**: **DDD** (dual chamber, AV synchrony, preferred in sinus rhythm, AV block), **VVI** (single chamber, AF, infrequent), **AAI** (rare, pure sinus dysfunction).
+

@@ -399,3 +399,34 @@ mindmap
    C. A complication of Hematology rather than the primary diagnosis
    D. An unrelated condition in the same clinical category as Hematology
 
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 24: Haematology — Antiphospholipid Syndrome*
+
+**Q1.** Which landmark clinical trial provided evidence relevant to the management of Antiphospholipid Syndrome (specifically: **↑ arterial thrombosis** (stroke, MI) with rivaroxaban/apixaban vs warfarin
+
+5)?
+
+  - **A.** RAPS trial
+  - **B.** A different but related trial in the same area
+  - **C.** A guideline (not a trial) addressing the same question
+  - **D.** An observational/cohort study addressing similar outcomes
+
+  > **Answer: A** — RAPS trial
+  >
+  > *Source:* **Why are DOACs contraindicated in triple positive APS?**
+   - **TRAPS, ASTRO-APS, RAPS trials** showed **↑ arterial thrombosis** (stroke, MI) with rivaroxaban/apixaban vs warfarin
+
+5
+
+**Q2.** What is the most appropriate first-line therapy for Antiphospholipid Syndrome?
+
+  - **A.** First Venous Thrombosis + Warfarin + INR
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — First Venous Thrombosis + Warfarin + INR
+  >
+  > *Source:* **First Venous Thrombosis**   **Warfarin**   **INR 2-3** (standard)
+

@@ -123,3 +123,46 @@ By the end of this note you should be able to:
 - **M**etformin: less than lifestyle
 - **I**GT only (not IFG alone)
 - **N**NT: lifestyle 7, metformin 14</think>
+---
+
+> Auto-generated study sections for "Type 2 diabetes prevention" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (10 generated)
+
+- Q: What is the definition of Type 2 diabetes prevention?
+  A: By the end of this note you should be able to:
+- Q: What is Design of Type 2 diabetes prevention?
+  A: RCT; 3234 participants; 2.8 years average follow-up
+- Q: What is Population of Type 2 diabetes prevention?
+  A: IGT (FPG 5.3-6.9, 2h 7.8-11.0), BMI ≥24, age ≥25
+- Q: What is Design of Type 2 diabetes prevention?
+  A: RCT; 3234 participants; 2.8 years average follow-up
+- Q: What is Population of Type 2 diabetes prevention?
+  A: IGT (FPG 5.3-6.9, 2h 7.8-11.0), BMI ≥24, age ≥25
+- Q: What is Lifestyle of Type 2 diabetes prevention?
+  A: 58% reduction; 7% weight loss; 150min/week exercise
+- Q: What is Metformin of Type 2 diabetes prevention?
+  A: 31% reduction; less effective than lifestyle
+- Q: What is Age ≥60 of Type 2 diabetes prevention?
+  A: Lifestyle 71% (best), Metformin minimal
+- Q: What is BMI ≥35 of Type 2 diabetes prevention?
+  A: Metformin effective (53%)
+- Q: What is NNT of Type 2 diabetes prevention?
+  A: Lifestyle 7, Metformin 14 (3 years)
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes prevention?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes prevention
+   C. A complication seen late in the disease course of Type 2 diabetes prevention
+   D. A condition that mimics Type 2 diabetes prevention but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes prevention presents with: Design — RCT; 3234 participants; 2.8 years average follow-up; Population — IGT (FPG 5.3-6.9, 2h 7.8-11.0), BMI ≥24, age ≥25; Arms — Lifestyle vs Metformin 850mg BD vs Placebo. What is the most likely diagnosis?
+   A. **Type 2 diabetes prevention**
+   B. A condition that mimics Type 2 diabetes prevention but is not the same entity
+   C. A complication of Type 2 diabetes prevention rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes prevention
+

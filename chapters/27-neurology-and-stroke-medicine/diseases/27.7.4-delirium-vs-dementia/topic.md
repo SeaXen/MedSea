@@ -305,3 +305,32 @@ status: full-fcps-mrcp-note
 8. **B** — Memantine for moderate-severe AD
 9. **B** — Superimposed delirium most common
 10. **B** — Low-dose haloperidol + non-pharm
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Delirium vs Dementia*
+
+**Q1.** Which of the following features is most specific or characteristic of Delirium vs Dementia?
+
+  - **A.** AVOID
+  - **B.** A feature common to many acute inflammatory conditions
+  - **C.** A non-specific sign that does not localise the diagnosis
+  - **D.** An investigation finding rather than a clinical feature
+
+  > **Answer: A** — AVOID
+  >
+  > *Source:* Reversible dementia | 2-5%; always test B12, TSH, syphilis, HIV, Ca, CT |
+| Antipsychotics in DLB | **AVOID** typical antipsychotics; quetiapine/pimavanserin |
+| Thiamine timing | **BEFORE** glucose i
+
+**Q2.** What is the most appropriate first-line therapy for Delirium vs Dementia?
+
+  - **A.** Treat cause
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Treat cause
+  >
+  > *Source:* **Treat cause**   Antibiotics, electrolytes, antidotes
+

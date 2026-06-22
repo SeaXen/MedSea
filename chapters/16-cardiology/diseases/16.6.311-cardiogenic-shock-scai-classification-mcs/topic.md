@@ -49,3 +49,19 @@
 > - Inotropes ↑ myocardial O₂ demand — can worsen ischemia
 > - **VA-ECMO** complications: limb ischemia, LV distension, Harlequin (north-south) syndrome
 > - Mortality remains 40–60% despite MCS — early recognition is key
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 16: Cardiology — Cardiogenic shock SCAI classification MCS*
+
+**Q1.** What is the most appropriate first-line therapy for Cardiogenic shock SCAI classification MCS?
+
+  - **A.** Warm-wet
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — Warm-wet
+  >
+  > *Source:* **Warm-wet** (congestion, perfusion OK): IV loop diuretic (furosemide 40-80mg IV, 2.5x home dose, or continuous infusion 10-40mg/h), consider thiazide (metolazone 2.5-5mg, chlorothiazide) for diuretic
+

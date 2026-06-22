@@ -580,3 +580,30 @@ Acute ischaemic stroke BP management is based on **perfusion preservation with s
 8. **A** — High BP after alteplase raises risk of symptomatic intracranial haemorrhage.
 9. **B** — Treating reversible triggers may remove the need for antihypertensives.
 10. **B** — AIS BP management is individualized balancing perfusion versus bleeding/end-organ risk.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Blood pressure management in acute ischaemic stroke*
+
+**Q1.** In the management of Blood pressure management in acute ischaemic stroke, which of the following should be avoided or is contraindicated?
+
+  - **A.** in asthma/COPD (avoid in bronchospasm)
+  - **B.** Standard guideline-directed first-line therapy
+  - **C.** Routine supportive care (fluids, oxygen, monitoring)
+  - **D.** Symptom-directed treatment as needed
+
+  > **Answer: A** — in asthma/COPD (avoid in bronchospasm)
+  >
+  > *Source:* - **Labetalol**: caution in asthma/COPD with bronchospasm, bradycardia, high-grade heart block, acute decompensated HF
+
+**Q2.** What is the most appropriate first-line therapy for Blood pressure management in acute ischaemic stroke?
+
+  - **A.** IV titratable agents
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — IV titratable agents
+  >
+  > *Source:* Use **IV titratable agents** when rapid control is necessary.
+

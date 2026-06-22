@@ -217,3 +217,44 @@ mindmap
 ---
 ## Tags
 #medicine #diabetes #davidson #fcps #mrcp #full-fcps-mrcp-note
+---
+
+> Auto-generated study sections for "Type 2 diabetes pathogenesis" — Ch 21: Diabetes Mellitus.
+
+## Flashcards (9 generated)
+
+- Q: What is the definition of Type 2 diabetes pathogenesis?
+  A: Impaired biological response to physiological insulin concentrations
+- Q: What is the epidemiology of Type 2 diabetes pathogenesis?
+  A: ~50% adults have some degree; central to T2DM, MetS, CVD
+- Q: What is Tissue Specificity of Type 2 diabetes pathogenesis?
+  A: Liver (HGP), Muscle (glucose disposal), Adipose (lipolysis)
+- Q: What is the definition of Type 2 diabetes pathogenesis?
+  A: Impaired response to physiological insulin; central to T2DM
+- Q: What is Key mediator of Type 2 diabetes pathogenesis?
+  A: Serine phosphorylation of IRS-1 -> blocks PI3K-Akt
+- Q: What are the side effects of Type 2 diabetes pathogenesis?
+  A: Ceramides, DAG -> PKC/JNK activation -> IRS-1 serine phosphorylation
+- Q: What is Adipose inflammation of Type 2 diabetes pathogenesis?
+  A: TNF-alpha, IL-6, MCP-1; decreased adiponectin, increased leptin
+- Q: What is Tissue effects of Type 2 diabetes pathogenesis?
+  A: Liver: increased HGP; Muscle: decreased glucose disposal; Adipose: increased FFA
+- Q: What is HOMA-IR of Type 2 diabetes pathogenesis?
+  A: (Insulin x Glucose)/22.5; >2.5 suggests IR
+
+## MCQs (1 generated)
+
+1. **Which of the following best describes Type 2 diabetes pathogenesis?**
+   A. **By the end of this note you should be able to:**
+   B. An unrelated condition not matching the clinical picture of Type 2 diabetes pathogenesis
+   C. A complication seen late in the disease course of Type 2 diabetes pathogenesis
+   D. A condition that mimics Type 2 diabetes pathogenesis but has a different underlying cause
+
+## SBA Questions (1 generated)
+
+1. A patient with suspected Type 2 diabetes pathogenesis presents with: Definition — Impaired biological response to physiological insulin concentrations; Prevalence — ~50% adults have some degree; central to T2DM, MetS, CVD; Tissue Specificity — Liver (HGP), Muscle (glucose disposal), Adipose (lipolysis). What is the most likely diagnosis?
+   A. **Type 2 diabetes pathogenesis**
+   B. A condition that mimics Type 2 diabetes pathogenesis but is not the same entity
+   C. A complication of Type 2 diabetes pathogenesis rather than the primary diagnosis
+   D. An unrelated condition in the same clinical category as Type 2 diabetes pathogenesis
+

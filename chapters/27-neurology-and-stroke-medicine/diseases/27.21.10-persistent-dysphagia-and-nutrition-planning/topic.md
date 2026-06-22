@@ -658,3 +658,19 @@ Persistent dysphagia after stroke is a common and clinically important rehabilit
 8. **B** — Oral hygiene reduces aspiration pneumonia risk.
 9. **A** — Communication problems do not prove swallowing safety.
 10. **B** — Dysphagia care is multidisciplinary and extends beyond feeding alone.
+
+## PasTest Scenario SBAs (Clinical Vignettes)
+
+> **Auto-generated PasTest/Mediscope-style scenario SBAs** grounded in the authored source. Each scenario tests a real clinical fact (triad, specific sign, contraindication, trial, first-line Rx) extracted from the topic. *Source: Ch 27: Neurology & Stroke — Persistent dysphagia and nutrition planning*
+
+**Q1.** What is the most appropriate first-line therapy for Persistent dysphagia and nutrition planning?
+
+  - **A.** give hydration safely via appropriate route
+  - **B.** An advanced/surgical therapy reserved for refractory disease
+  - **C.** Symptomatic treatment only, no disease-modifying therapy
+  - **D.** Empiric broad-spectrum therapy without specific indication
+
+  > **Answer: A** — give hydration safely via appropriate route
+  >
+  > *Source:* give hydration safely via appropriate route
+
